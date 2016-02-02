@@ -1,0 +1,1 @@
+class ahz$1 {}

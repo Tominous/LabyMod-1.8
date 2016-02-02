@@ -1,0 +1,1 @@
+class beh$1 {}

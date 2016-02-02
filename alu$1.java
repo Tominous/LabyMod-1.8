@@ -1,0 +1,1 @@
+class alu$1 {}

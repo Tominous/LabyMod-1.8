@@ -1,0 +1,1 @@
+class bgx$1 {}

@@ -1,0 +1,1 @@
+class akh$1 {}

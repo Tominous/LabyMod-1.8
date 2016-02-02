@@ -1,0 +1,1 @@
+class ady$1 {}

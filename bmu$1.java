@@ -1,0 +1,1 @@
+class bmu$1 {}

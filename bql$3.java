@@ -1,0 +1,1 @@
+class bql$3 {}

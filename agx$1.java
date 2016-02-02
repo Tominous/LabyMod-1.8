@@ -1,0 +1,1 @@
+class agx$1 {}

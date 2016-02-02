@@ -1,0 +1,1 @@
+class aky$1 {}

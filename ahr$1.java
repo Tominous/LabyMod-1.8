@@ -1,0 +1,1 @@
+class ahr$1 {}

@@ -1,0 +1,1 @@
+class bhk$1 {}

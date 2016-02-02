@@ -1,0 +1,1 @@
+class akf$2 {}

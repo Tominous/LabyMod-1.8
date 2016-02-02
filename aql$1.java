@@ -1,0 +1,1 @@
+class aql$1 {}

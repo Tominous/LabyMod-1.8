@@ -1,0 +1,1 @@
+class awh$1 {}

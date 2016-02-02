@@ -1,0 +1,1 @@
+class bcy$4 {}

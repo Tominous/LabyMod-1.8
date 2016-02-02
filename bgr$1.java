@@ -1,0 +1,1 @@
+class bgr$1 {}

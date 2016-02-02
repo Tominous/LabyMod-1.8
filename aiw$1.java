@@ -1,0 +1,1 @@
+class aiw$1 {}

@@ -1,0 +1,1 @@
+class bfn$1 {}

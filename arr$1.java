@@ -1,0 +1,1 @@
+class arr$1 {}

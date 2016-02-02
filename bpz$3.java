@@ -1,0 +1,1 @@
+class bpz$3 {}

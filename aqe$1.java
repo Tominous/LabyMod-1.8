@@ -1,0 +1,1 @@
+class aqe$1 {}

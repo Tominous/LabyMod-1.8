@@ -1,0 +1,1 @@
+class ahb$1 {}

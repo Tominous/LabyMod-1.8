@@ -1,0 +1,1 @@
+class aho$1 {}

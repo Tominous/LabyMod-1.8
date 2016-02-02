@@ -1,0 +1,1 @@
+class ags$1 {}

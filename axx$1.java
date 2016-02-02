@@ -1,0 +1,1 @@
+class axx$1 {}

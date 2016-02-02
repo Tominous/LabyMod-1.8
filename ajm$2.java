@@ -1,0 +1,1 @@
+class ajm$2 {}

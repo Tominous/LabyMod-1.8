@@ -1,0 +1,1 @@
+class afn$1 {}

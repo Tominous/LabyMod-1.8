@@ -1,0 +1,1 @@
+class avq$1 {}

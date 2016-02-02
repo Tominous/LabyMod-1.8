@@ -1,0 +1,1 @@
+class aqj$1 {}

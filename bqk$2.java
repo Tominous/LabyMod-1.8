@@ -1,0 +1,1 @@
+class bqk$2 {}

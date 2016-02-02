@@ -1,0 +1,1 @@
+class ack$1 {}
