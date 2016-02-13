@@ -26,6 +26,11 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.net.URL;
+import java.net.URLConnection;
+import java.nio.channels.Channels;
+import java.nio.channels.FileChannel;
+import java.nio.channels.ReadableByteChannel;
 import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.security.MessageDigest;
@@ -178,57 +183,67 @@ public class Utils
     }
   }
   
+  public static void downloadFile(String s, File dest)
+    throws IOException
+  {
+    URL website = new URL(s);
+    URLConnection web = website.openConnection();
+    web.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
+    ReadableByteChannel rbc = Channels.newChannel(web.getInputStream());
+    FileOutputStream fos = new FileOutputStream(dest);
+    fos.getChannel().transferFrom(rbc, 0L, Long.MAX_VALUE);
+    fos.close();
+  }
+  
   public static boolean copyJars(ArrayList<File> mods, File destinationJar)
   {
+    ProgressBarUpdater.title = "Install LabyMod in " + destinationJar.getName();
     try
     {
       ArrayList<String> entryList = new ArrayList();
       JarOutputStream tempJar = new JarOutputStream(new FileOutputStream(
         destinationJar));
       byte[] buffer = new byte['Є'];
-      for (File jarFile : mods) {
-        if (isShaderMod(jarFile))
+      for (File jarFile : mods)
+      {
+        ProgressBarUpdater.title = "Install " + jarFile.getName();
+        System.out.println(Main.debug + "Install " + jarFile.getName());
+        try
         {
-          installShaderMod(jarFile);
-        }
-        else
-        {
-          System.out.println(Main.debug + "Install " + jarFile.getName());
-          try
+          JarFile jar = new JarFile(jarFile);
+          Enumeration<JarEntry> entries = jar.entries();
+          while (entries.hasMoreElements())
           {
-            JarFile jar = new JarFile(jarFile);
-            Enumeration<JarEntry> entries = jar.entries();
-            while (entries.hasMoreElements())
+            JarEntry entry = new JarEntry(
+              ((JarEntry)entries.nextElement()).getName());
+            if ((!entry.getName().startsWith("META-INF/")) && (!entry.getName().startsWith("Updater.jar")) && 
+              (!entryList.contains(entry.getName())))
             {
-              JarEntry entry = new JarEntry(
-                ((JarEntry)entries.nextElement()).getName());
-              if ((!entry.getName().startsWith("META-INF/")) && (!entry.getName().startsWith("Updater.jar")) && 
-                (!entryList.contains(entry.getName())))
+              ProgressBarUpdater.subTitle = "Copy " + entry.getName();
+              entryList.add(entry.getName());
+              InputStream entryStream = jar
+                .getInputStream(entry);
+              tempJar.putNextEntry(entry);
+              int bytesRead;
+              while ((bytesRead = entryStream.read(buffer)) != -1)
               {
-                entryList.add(entry.getName());
-                InputStream entryStream = jar
-                  .getInputStream(entry);
-                tempJar.putNextEntry(entry);
                 int bytesRead;
-                while ((bytesRead = entryStream.read(buffer)) != -1)
-                {
-                  int bytesRead;
-                  tempJar.write(buffer, 0, bytesRead);
-                }
-                entryStream.close();
-                tempJar.flush();
-                tempJar.closeEntry();
+                tempJar.write(buffer, 0, bytesRead);
               }
+              entryStream.close();
+              tempJar.flush();
+              tempJar.closeEntry();
+              ProgressBarUpdater.next();
             }
-            jar.close();
           }
-          catch (Exception error)
-          {
-            error.printStackTrace();
-            error("Error while installing " + jarFile.getName() + " (" + 
-              error.getMessage() + ")");
-            return false;
-          }
+          jar.close();
+        }
+        catch (Exception error)
+        {
+          error.printStackTrace();
+          error("Error while installing " + jarFile.getName() + " (" + 
+            error.getMessage() + ")");
+          return false;
         }
       }
       tempJar.close();
@@ -240,7 +255,36 @@ public class Utils
         error.getMessage() + ")");
       return false;
     }
+    ProgressBarUpdater.subTitle = "";
     return true;
+  }
+  
+  public static int count(ArrayList<File> mods)
+  {
+    System.out.println("Reading all files..");
+    ProgressBarUpdater.title = "Reading all files..";
+    int amount = 0;
+    try
+    {
+      ArrayList<String> entryList = new ArrayList();
+      for (File jarFile : mods) {
+        try
+        {
+          JarFile jar = new JarFile(jarFile);
+          amount += jar.size();
+          jar.close();
+        }
+        catch (Exception error)
+        {
+          error.printStackTrace();
+        }
+      }
+    }
+    catch (Exception error)
+    {
+      error.printStackTrace();
+    }
+    return amount;
   }
   
   private static void installShaderMod(File jarFile)
@@ -454,11 +498,32 @@ public class Utils
     return true;
   }
   
+  public static boolean deleteDirSilent(File dir)
+  {
+    if (dir.exists())
+    {
+      if (dir.isDirectory())
+      {
+        String[] children = dir.list();
+        for (int i = 0; i < children.length; i++)
+        {
+          boolean success = deleteDir(new File(dir, children[i]));
+          if (!success) {
+            return false;
+          }
+        }
+      }
+      System.out.println(Main.debug + "delete " + dir.getName());
+      if (!dir.delete()) {
+        return false;
+      }
+    }
+    return true;
+  }
+  
   public static void error(String message)
   {
-    if (message != null)
-    {
-      Main.installing = false;
+    if (message != null) {
       showErrorMessage(message);
     }
   }

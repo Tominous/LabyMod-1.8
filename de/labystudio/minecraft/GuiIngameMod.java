@@ -52,6 +52,7 @@ import org.lwjgl.opengl.GL11;
 import pe;
 import pf;
 import wm;
+import zw;
 import zx;
 
 public class GuiIngameMod
@@ -66,6 +67,7 @@ public class GuiIngameMod
   
   jy inventoryBackground = new jy("textures/gui/container/inventory.png");
   SimpleDateFormat dt1 = new SimpleDateFormat("HH:mm");
+  zx itemArrow = new zx(zw.b(262));
   private final ave mc;
   private final DrawUtils draw;
   
@@ -190,7 +192,7 @@ public class GuiIngameMod
         ModGui.addMainLabel("Timer", Color.cl("c") + ModGui.translateTimer(LabyMod.getInstance().lavaTime) + "", ModGui.mainList);
       }
     }
-    if ((ConfigManager.settings.clicktest != 0) && (ClickCounter.getClickResult() != 0.0D)) {
+    if ((ConfigManager.settings.clickTest) && (ClickCounter.getClickResult() != 0.0D)) {
       ModGui.addMainLabel("Clicks", ModGui.truncateTo(ClickCounter.getClickResult(), 1) + "", ModGui.mainList);
     }
     if (ConfigManager.settings.afkTimer.booleanValue()) {
@@ -305,6 +307,7 @@ public class GuiIngameMod
   
   public void drawArmorHotbar()
   {
+    boolean armorAdd = false;
     if ((ConfigManager.settings.hud != 0) && (Allowed.armorHud()) && 
       (!ConfigManager.settings.armorHudPositionOnTop))
     {
@@ -315,12 +318,14 @@ public class GuiIngameMod
         this.draw.drawItem(item, this.draw.getWidth() / 2 - 110, this.draw.getHeight() - 18 - nextY);
         drawArmorStatus(item, this.draw.getWidth() / 2 - 110, this.draw.getHeight() - 18 - nextY + 4, false);
         nextY += 15;
+        armorAdd = true;
       }
       if (isNotEmpty(3).booleanValue())
       {
         zx item = this.mc.h.bi.e(3);
         this.draw.drawItem(item, this.draw.getWidth() / 2 - 110, this.draw.getHeight() - 18 - nextY);
         drawArmorStatus(item, this.draw.getWidth() / 2 - 110, this.draw.getHeight() - 18 - nextY + 5, false);
+        armorAdd = true;
       }
       nextY = 0;
       if (isNotEmpty(0).booleanValue())
@@ -336,6 +341,35 @@ public class GuiIngameMod
         this.draw.drawItem(item, this.draw.getWidth() / 2 + 96, this.draw.getHeight() - 18 - nextY);
         drawArmorStatus(item, this.draw.getWidth() / 2 + 113, this.draw.getHeight() - 18 - nextY + 5, true);
       }
+    }
+    if ((ConfigManager.settings.showArrow) && (this.mc.h != null) && (this.mc.h.bi.b(zw.b(261))))
+    {
+      int left = 0;
+      if ((!ConfigManager.settings.armorHudPositionOnTop) && (armorAdd)) {
+        switch (ConfigManager.settings.hud)
+        {
+        case 1: 
+          left = 43;
+          break;
+        case 2: 
+          left = 65;
+          break;
+        case 3: 
+          left = 13;
+          break;
+        case 4: 
+          left = 42;
+        }
+      }
+      int count = 0;
+      if (this.mc.h.bi.a != null) {
+        for (zx item : this.mc.h.bi.a) {
+          if ((item != null) && (item.b() != null) && (zw.b(item.b()) == 262)) {
+            count += item.b;
+          }
+        }
+      }
+      this.draw.drawItem(this.itemArrow, this.draw.getWidth() / 2 - 116 - left, this.draw.getHeight() - 20, count + "x");
     }
   }
   
@@ -599,7 +633,7 @@ public class GuiIngameMod
   
   private void drawOnlineFriendsOnServer()
   {
-    int friendSlots = 0;
+    int friendSlots = 4;
     try
     {
       if ((ConfigManager.settings.showOnlineFriends) && 
@@ -765,7 +799,7 @@ public class GuiIngameMod
   public void a(float p_175180_1_)
   {
     super.a(p_175180_1_);
-    Timings.start();
+    Timings.start("Render IngameGui");
     
     ModGui.mainList = 0;
     ModGui.offList = 0;
@@ -813,6 +847,6 @@ public class GuiIngameMod
       ModAPI.callEvent(new RenderOverlayEvent(p_175180_1_));
     }
     LabyMod.getInstance().overlay(0, 0);
-    Timings.stop();
+    Timings.stop("Render IngameGui");
   }
 }

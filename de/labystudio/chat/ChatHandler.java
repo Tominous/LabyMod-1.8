@@ -40,7 +40,7 @@ public class ChatHandler
   
   public ChatHandler()
   {
-    Timings.start();
+    Timings.start("ChatHandler");
     Runtime.getRuntime().addShutdownHook(new Thread(new Runnable()
     {
       public void run()
@@ -57,7 +57,7 @@ public class ChatHandler
     }));
     instance = this;
     this.chats = new ArrayList();
-    Timings.stop();
+    Timings.stop("ChatHandler");
   }
   
   public SingleChat getChat(String player)
@@ -194,7 +194,7 @@ public class ChatHandler
   
   public void initDatabase()
   {
-    
+    Timings.start("Chat initDatabase");
     try
     {
       initConnection();
@@ -220,7 +220,7 @@ public class ChatHandler
     {
       e.printStackTrace();
     }
-    Timings.stop();
+    Timings.stop("Chat initDatabase");
   }
   
   public void updateChats(LabyModPlayer player)

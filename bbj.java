@@ -1,6 +1,7 @@
 import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.ModSettings;
 import de.labystudio.utils.Allowed;
+import de.labystudio.utils.LeftHand;
 
 public class bbj
   extends bbo
@@ -82,20 +83,30 @@ public class bbj
       if (entityIn.av()) {
         bfl.b(0.0F, 0.2F, 0.0F);
       }
+      if (LeftHand.use(entityIn)) {
+        bfl.a(-1.0F, 1.0F, 1.0F);
+      }
       this.e.a(scale);
+      this.f.a(scale);
+      if (LeftHand.use(entityIn)) {
+        bfl.a(-1.0F, 1.0F, 1.0F);
+      }
       this.g.a(scale);
       this.h.a(scale);
       this.i.a(scale);
       this.j.a(scale);
       this.k.a(scale);
-      this.f.a(scale);
     }
     bfl.F();
   }
   
   public void a(float p_78087_1_, float p_78087_2_, float p_78087_3_, float p_78087_4_, float p_78087_5_, float p_78087_6_, pk entityIn)
   {
-    this.e.g = (p_78087_4_ / 57.295776F);
+    if (LeftHand.use(entityIn)) {
+      this.e.g = (p_78087_4_ / 57.295776F * -1.0F);
+    } else {
+      this.e.g = (p_78087_4_ / 57.295776F);
+    }
     this.e.f = (p_78087_5_ / 57.295776F);
     this.h.f = (ns.b(p_78087_1_ * 0.6662F + 3.1415927F) * 2.0F * p_78087_2_ * 0.5F);
     this.i.f = (ns.b(p_78087_1_ * 0.6662F) * 2.0F * p_78087_2_ * 0.5F);
@@ -119,7 +130,9 @@ public class bbj
     }
     this.h.g = 0.0F;
     this.h.h = 0.0F;
-    switch (this.m)
+    
+    int item = this.m;
+    switch (item)
     {
     case 0: 
     case 2: 
@@ -198,7 +211,20 @@ public class bbj
       this.h.f += ns.a(p_78087_3_ * 0.067F) * 0.05F;
       this.i.f -= ns.a(p_78087_3_ * 0.067F) * 0.05F;
     }
-    a(this.e, this.f);
+    if (LeftHand.use(entityIn))
+    {
+      this.f.f = this.e.f;
+      this.f.g = (-this.e.g);
+      this.f.h = (-this.e.h);
+      this.f.c = this.e.c;
+      this.f.d = this.e.d;
+      this.f.e = (-this.e.e);
+      this.e.g = (p_78087_4_ / 57.295776F);
+    }
+    else
+    {
+      a(this.e, this.f);
+    }
   }
   
   public void a(bbo model)

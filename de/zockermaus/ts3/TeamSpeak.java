@@ -13,15 +13,16 @@ import org.apache.logging.log4j.Logger;
 public class TeamSpeak
 {
   private static final Logger logger = LogManager.getLogger("TeamSpeak");
+  public static String chatPrefix = Color.cl("8") + "[" + Color.cl("5") + Color.cl("l") + "TeamSpeak" + Color.cl("8") + "] " + Color.cl("7");
   public static TeamSpeakOverlayWindow overlayWindows;
   
   public static void enable()
   {
-    Timings.start();
+    Timings.start("Enable TeamSpeak");
     setupChat();
     new TeamSpeakController(new TeamSpeakListener());
     overlayWindows = new TeamSpeakOverlayWindow();
-    Timings.stop();
+    Timings.stop("Enable TeamSpeak");
   }
   
   public static void setupChat()

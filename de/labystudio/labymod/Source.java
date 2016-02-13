@@ -3,8 +3,8 @@ package de.labystudio.labymod;
 public class Source
 {
   public static String mod_Name = "LabyMod";
-  public static String mod_VersionName = "2.7.50";
-  public static int mod_VersionId = 12;
+  public static String mod_VersionName = "2.7.60";
+  public static int mod_VersionId = 13;
   public static String mod_VersionType = "";
   public static String mod_Author = "LabyStudio";
   public static String mod_SecondAuthor = "Zockermaus";

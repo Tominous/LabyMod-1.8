@@ -60,10 +60,9 @@ public class ShadersTex
   
   public static int[] getIntArray(int size)
   {
-    if (intArray == null) {
-      intArray = new int[1048576];
-    }
-    if (intArray.length < size) {
+    if (intArray.length < size)
+    {
+      intArray = null;
       intArray = new int[roundUpPOT(size)];
     }
     return intArray;

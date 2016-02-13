@@ -550,7 +550,7 @@ public class CustomItemProperties
     if ((this.type == 1) && (this.items.length == 1))
     {
       zw item = zw.b(this.items[0]);
-      if ((item == zy.bz) && (this.damage != null) && (this.damage.getCountRanges() > 0))
+      if ((item == zy.bz) && (this.damage.getCountRanges() > 0))
       {
         RangeInt range = this.damage.getRange(0);
         int valDamage = range.getMin();

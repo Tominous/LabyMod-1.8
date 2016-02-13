@@ -1,4 +1,5 @@
 import de.labystudio.labymod.LabyMod;
+import de.labystudio.utils.LeftHand;
 import java.util.UUID;
 
 public class bbr
@@ -98,6 +99,9 @@ public class bbr
   
   public void a(pk entityIn, float p_78088_2_, float p_78088_3_, float p_78088_4_, float p_78088_5_, float p_78088_6_, float scale)
   {
+    if (LeftHand.use(entityIn)) {
+      bfl.a(-1.0F, 1.0F, 1.0F);
+    }
     super.a(entityIn, p_78088_2_, p_78088_3_, p_78088_4_, p_78088_5_, p_78088_6_, scale);
     bfl.E();
     if (this.r)

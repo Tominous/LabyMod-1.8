@@ -28,7 +28,7 @@ public class AutoTextLoader
   
   public static void load()
   {
-    
+    Timings.start("Load AutoText Config");
     if (!autoText.isEmpty()) {
       return;
     }
@@ -44,7 +44,7 @@ public class AutoTextLoader
     if (autoText == null) {
       autoText = new HashMap();
     }
-    Timings.stop();
+    Timings.stop("Load AutoText Config");
   }
   
   public static void create()

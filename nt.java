@@ -1,92 +1,47 @@
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import java.util.ArrayList;
-import java.util.Arrays;
+import de.labystudio.modapi.ModAPI;
+import de.labystudio.modapi.events.RenderWorldEvent;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class nt
 {
   private static final Logger b = ;
-  private final List c;
-  private final List d;
+  private final List<String> c;
+  private final List<Long> d;
   public boolean a;
   private String e;
-  private final Map f;
-  private static final String __OBFID = "CL_00001497";
-  public boolean profilerGlobalEnabled;
-  private boolean profilerLocalEnabled;
-  private static final String SCHEDULED_EXECUTABLES = "scheduledExecutables";
-  private static final String TICK = "tick";
-  private static final String PRE_RENDER_ERRORS = "preRenderErrors";
-  private static final String RENDER = "render";
-  private static final String DISPLAY = "display";
+  private final Map<String, Long> f;
   
   public nt()
   {
     this.c = Lists.newArrayList();
-    
     this.d = Lists.newArrayList();
     
     this.e = "";
-    
     this.f = Maps.newHashMap();
-    
-    this.profilerGlobalEnabled = true;
-    this.profilerLocalEnabled = this.profilerGlobalEnabled;
   }
   
-  private static final int HASH_SCHEDULED_EXECUTABLES = "scheduledExecutables".hashCode();
-  private static final int HASH_TICK = "tick".hashCode();
-  private static final int HASH_PRE_RENDER_ERRORS = "preRenderErrors".hashCode();
-  private static final int HASH_RENDER = "render".hashCode();
-  private static final int HASH_DISPLAY = "display".hashCode();
+  private void labymod(String name)
+  {
+    if ((name.equals("litParticles")) && (ModAPI.enabled())) {
+      ModAPI.callEvent(new RenderWorldEvent());
+    }
+  }
   
   public void a()
   {
     this.f.clear();
     this.e = "";
     this.c.clear();
-    
-    this.profilerLocalEnabled = this.profilerGlobalEnabled;
   }
   
   public void a(String name)
   {
-    if (Lagometer.isActive())
-    {
-      int hashName = name.hashCode();
-      if ((hashName == HASH_SCHEDULED_EXECUTABLES) && (name.equals("scheduledExecutables")))
-      {
-        Lagometer.timerScheduledExecutables.start();
-      }
-      else if ((hashName == HASH_TICK) && (name.equals("tick")) && (Config.isMinecraftThread()))
-      {
-        Lagometer.timerScheduledExecutables.end();
-        Lagometer.timerTick.start();
-      }
-      else if ((hashName == HASH_PRE_RENDER_ERRORS) && (name.equals("preRenderErrors")))
-      {
-        Lagometer.timerTick.end();
-      }
-    }
-    if (Config.isFastRender())
-    {
-      int hashName = name.hashCode();
-      if ((hashName == HASH_RENDER) && (name.equals("render"))) {
-        bfl.clearEnabled = false;
-      } else if ((hashName == HASH_DISPLAY) && (name.equals("display"))) {
-        bfl.clearEnabled = true;
-      }
-    }
-    if (!this.profilerLocalEnabled) {
-      return;
-    }
     if (this.a)
     {
       if (this.e.length() > 0) {
@@ -100,25 +55,79 @@ public class nt
   
   public void b()
   {
-    if (!this.profilerLocalEnabled) {
-      return;
-    }
     if (this.a)
     {
-      long var1 = System.nanoTime();
-      long var3 = ((Long)this.d.remove(this.d.size() - 1)).longValue();
+      long i = System.nanoTime();
+      long j = ((Long)this.d.remove(this.d.size() - 1)).longValue();
       this.c.remove(this.c.size() - 1);
-      long var5 = var1 - var3;
+      long k = i - j;
       if (this.f.containsKey(this.e)) {
-        this.f.put(this.e, Long.valueOf(((Long)this.f.get(this.e)).longValue() + var5));
+        this.f.put(this.e, Long.valueOf(((Long)this.f.get(this.e)).longValue() + k));
       } else {
-        this.f.put(this.e, Long.valueOf(var5));
+        this.f.put(this.e, Long.valueOf(k));
       }
-      if (var5 > 100000000L) {
-        b.warn("Something's taking too long! '" + this.e + "' took aprox " + var5 / 1000000.0D + " ms");
+      if (k > 100000000L) {
+        b.warn("Something's taking too long! '" + this.e + "' took aprox " + k / 1000000.0D + " ms");
       }
       this.e = (!this.c.isEmpty() ? (String)this.c.get(this.c.size() - 1) : "");
     }
+  }
+  
+  public List<nt.a> b(String p_76321_1_)
+  {
+    if (!this.a) {
+      return null;
+    }
+    long i = this.f.containsKey("root") ? ((Long)this.f.get("root")).longValue() : 0L;
+    long j = this.f.containsKey(p_76321_1_) ? ((Long)this.f.get(p_76321_1_)).longValue() : -1L;
+    List<nt.a> list = Lists.newArrayList();
+    if (p_76321_1_.length() > 0) {
+      p_76321_1_ = p_76321_1_ + ".";
+    }
+    long k = 0L;
+    for (String s : this.f.keySet()) {
+      if ((s.length() > p_76321_1_.length()) && (s.startsWith(p_76321_1_)) && (s.indexOf(".", p_76321_1_.length() + 1) < 0)) {
+        k += ((Long)this.f.get(s)).longValue();
+      }
+    }
+    float f = (float)k;
+    if (k < j) {
+      k = j;
+    }
+    if (i < k) {
+      i = k;
+    }
+    for (String s1 : this.f.keySet()) {
+      if ((s1.length() > p_76321_1_.length()) && (s1.startsWith(p_76321_1_)) && (s1.indexOf(".", p_76321_1_.length() + 1) < 0))
+      {
+        long l = ((Long)this.f.get(s1)).longValue();
+        double d0 = l * 100.0D / k;
+        double d1 = l * 100.0D / i;
+        String s2 = s1.substring(p_76321_1_.length());
+        list.add(new nt.a(s2, d0, d1));
+      }
+    }
+    for (String s3 : this.f.keySet()) {
+      this.f.put(s3, Long.valueOf(((Long)this.f.get(s3)).longValue() * 999L / 1000L));
+    }
+    if ((float)k > f) {
+      list.add(new nt.a("unspecified", ((float)k - f) * 100.0D / k, ((float)k - f) * 100.0D / i));
+    }
+    Collections.sort(list);
+    list.add(0, new nt.a(p_76321_1_, 100.0D, k * 100.0D / i));
+    return list;
+  }
+  
+  public void c(String name)
+  {
+    labymod(name);
+    b();
+    a(name);
+  }
+  
+  public String c()
+  {
+    return this.c.size() == 0 ? "[UNKNOWN]" : (String)this.c.get(this.c.size() - 1);
   }
   
   public static final class a
@@ -144,78 +153,5 @@ public class nt
     {
       return (this.c.hashCode() & 0xAAAAAA) + 4473924;
     }
-  }
-  
-  public List b(String p_76321_1_)
-  {
-    this.profilerLocalEnabled = this.profilerGlobalEnabled;
-    if (!this.profilerLocalEnabled) {
-      return new ArrayList(Arrays.asList(new nt.a[] { new nt.a("root", 0.0D, 0.0D) }));
-    }
-    if (!this.a) {
-      return null;
-    }
-    long var3 = this.f.containsKey("root") ? ((Long)this.f.get("root")).longValue() : 0L;
-    long var5 = this.f.containsKey(p_76321_1_) ? ((Long)this.f.get(p_76321_1_)).longValue() : -1L;
-    ArrayList var7 = Lists.newArrayList();
-    if (p_76321_1_.length() > 0) {
-      p_76321_1_ = p_76321_1_ + ".";
-    }
-    long var8 = 0L;
-    Iterator var10 = this.f.keySet().iterator();
-    while (var10.hasNext())
-    {
-      String var11 = (String)var10.next();
-      if ((var11.length() > p_76321_1_.length()) && (var11.startsWith(p_76321_1_)) && (var11.indexOf(".", p_76321_1_.length() + 1) < 0)) {
-        var8 += ((Long)this.f.get(var11)).longValue();
-      }
-    }
-    float var20 = (float)var8;
-    if (var8 < var5) {
-      var8 = var5;
-    }
-    if (var3 < var8) {
-      var3 = var8;
-    }
-    Iterator var21 = this.f.keySet().iterator();
-    while (var21.hasNext())
-    {
-      String var12 = (String)var21.next();
-      if ((var12.length() > p_76321_1_.length()) && (var12.startsWith(p_76321_1_)) && (var12.indexOf(".", p_76321_1_.length() + 1) < 0))
-      {
-        long var13 = ((Long)this.f.get(var12)).longValue();
-        double var15 = var13 * 100.0D / var8;
-        double var17 = var13 * 100.0D / var3;
-        String var19 = var12.substring(p_76321_1_.length());
-        var7.add(new nt.a(var19, var15, var17));
-      }
-    }
-    var21 = this.f.keySet().iterator();
-    while (var21.hasNext())
-    {
-      String var12 = (String)var21.next();
-      
-      this.f.put(var12, Long.valueOf(((Long)this.f.get(var12)).longValue() * 950L / 1000L));
-    }
-    if ((float)var8 > var20) {
-      var7.add(new nt.a("unspecified", ((float)var8 - var20) * 100.0D / var8, ((float)var8 - var20) * 100.0D / var3));
-    }
-    Collections.sort(var7);
-    var7.add(0, new nt.a(p_76321_1_, 100.0D, var8 * 100.0D / var3));
-    return var7;
-  }
-  
-  public void c(String name)
-  {
-    if (!this.profilerLocalEnabled) {
-      return;
-    }
-    b();
-    a(name);
-  }
-  
-  public String c()
-  {
-    return this.c.size() == 0 ? "[UNKNOWN]" : (String)this.c.get(this.c.size() - 1);
   }
 }

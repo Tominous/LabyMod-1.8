@@ -29,7 +29,6 @@ public class ModSettings
   public boolean lavaTime = false;
   public Boolean showFPS = Boolean.valueOf(false);
   public Boolean extraChat = Boolean.valueOf(false);
-  public int clicktest = 0;
   public boolean showCoords = false;
   public Boolean oldDMG = Boolean.valueOf(true);
   public Boolean oldHearts = Boolean.valueOf(true);
@@ -103,4 +102,10 @@ public class ModSettings
   public boolean stopWatch = false;
   public boolean armorHudPositionOnTop = false;
   public boolean leftHand = false;
+  public boolean teamSpeakAlertTypeChat = true;
+  public boolean chatAlertType = false;
+  public boolean clickTest = false;
+  public boolean chatPositionRight = true;
+  public boolean leftBow = false;
+  public boolean showArrow = false;
 }

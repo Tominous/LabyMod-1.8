@@ -8,6 +8,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.io.PrintWriter;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.Logger;
@@ -42,7 +43,7 @@ public class ConfigManager
   
   public static void loadProperties(boolean loop)
   {
-    
+    Timings.start("Load Config");
     try
     {
       loaded = true;
@@ -63,6 +64,7 @@ public class ConfigManager
       }
       catch (IOException e)
       {
+        e.printStackTrace();
         if (loop) {
           delete();
         }
@@ -82,19 +84,27 @@ public class ConfigManager
     }
     catch (Exception error)
     {
+      error.printStackTrace();
       if (loop) {
         delete();
       }
       return;
     }
-    Timings.stop();
+    Timings.stop("Load Config");
   }
   
   private static void delete()
   {
     LabyMod.getInstance().logger.info("Settings could not be loaded.");
-    if (configFile.exists()) {
-      configFile.delete();
+    if (configFile.exists())
+    {
+      System.out.println("Delete broken config file..");
+      settings = (ModSettings)new Gson().fromJson(new Gson().toJson(new ModSettings()), ModSettings.class);
+      save();
+    }
+    else
+    {
+      System.out.println("Can't delete the config file?! @ " + configFile.getAbsolutePath());
     }
     loadProperties(false);
   }

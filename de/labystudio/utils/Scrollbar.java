@@ -19,6 +19,7 @@ public class Scrollbar
   private int left;
   private int top;
   private int right;
+  private int speed;
   int clickY;
   boolean hold;
   
@@ -37,9 +38,24 @@ public class Scrollbar
     this.scrollY = scrollY;
   }
   
+  public void setSpeed(int speed)
+  {
+    this.speed = speed;
+  }
+  
+  public int getSpeed()
+  {
+    return this.speed;
+  }
+  
   public void init()
   {
     setDefaultPosition();
+  }
+  
+  public void setEntryHeight(int entryHeight)
+  {
+    this.entryHeight = entryHeight;
   }
   
   public Scrollbar(int entryHeight)
@@ -188,12 +204,12 @@ public class Scrollbar
     if (wheel > 0)
     {
       if (this.scrollY < 0) {
-        this.scrollY += 20;
+        this.scrollY += this.speed;
       }
     }
     else if ((wheel < 0) && 
       (this.listSize * this.entryHeight + this.scrollY > this.posBottom - this.posTop)) {
-      this.scrollY -= 20;
+      this.scrollY -= this.speed;
     }
     if (this.listSize * this.entryHeight + this.scrollY < this.posBottom - this.posTop) {
       this.scrollY += this.posBottom - this.posTop - (this.listSize * this.entryHeight + this.scrollY);

@@ -19,7 +19,7 @@ public class FriendsLoader
   
   public static void loadFriends()
   {
-    
+    Timings.start("Load Friends Config");
     if (!friends.isEmpty()) {
       return;
     }
@@ -35,7 +35,7 @@ public class FriendsLoader
     if (friends == null) {
       friends = new HashMap();
     }
-    Timings.stop();
+    Timings.stop("Load Friends Config");
   }
   
   public static void create()

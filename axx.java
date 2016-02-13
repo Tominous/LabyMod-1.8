@@ -14,6 +14,7 @@ public class axx
   avs b;
   avs c;
   avs d;
+  avs e;
   private final axu field_175361_a;
   private String field_175360_f;
   private static final String __OBFID = "CL_00001932";
@@ -54,14 +55,14 @@ public class axx
     }
     else
     {
-      this.n.add(this.a = new avs(1, this.l / 2 + 40, this.m / 2 - 50, 80, 20, ""));
-      this.n.add(this.b = new avs(2, this.l / 2 + 40, this.m / 2 - 25, 80, 20, ""));
-      this.n.add(this.c = new avs(3, this.l / 2 + 40, this.m / 2, 80, 20, ""));
+      this.n.add(this.a = new avs(1, this.l / 2 + 40, this.m / 2 - 58, 80, 20, ""));
+      this.n.add(this.b = new avs(2, this.l / 2 + 40, this.m / 2 - 33, 80, 20, ""));
+      this.n.add(this.c = new avs(3, this.l / 2 + 40, this.m / 2 - 8, 80, 20, ""));
     }
-    this.n.add(this.d = new avs(40, this.l / 2 + 40, this.m / 2 + 25, 80, 20, ""));
-    refreshButton();
+    this.n.add(this.d = new avs(40, this.l / 2 + 40, this.m / 2 + 17, 80, 20, ""));
+    this.n.add(this.e = new avs(10, 2, 2, 80, 20, ""));
     
-    this.n.add(new avs(10, 2, 2, 80, 20, "Cape Settings"));
+    refreshButton();
   }
   
   public void refreshButton()
@@ -71,6 +72,8 @@ public class axx
       this.a.j = getStatus("Hat", wo.g);
       this.b.j = getStatus("Jacket", wo.b);
       this.c.j = getStatus("Pants", wo.f);
+    }
+    if (this.d != null) {
       if (!this.advanced)
       {
         this.d.j = "Advanced..";
@@ -79,6 +82,20 @@ public class axx
       {
         this.d.j = "Simple..";
         this.d.i = (this.m / 2 + 55);
+      }
+    }
+    if (this.e != null)
+    {
+      this.e.j = "Cape Settings";
+      if (this.advanced)
+      {
+        this.e.i = (this.m / 2 + 55);
+        this.e.h = (this.l / 2 - 120);
+      }
+      else
+      {
+        this.e.i = (this.m / 2 + 43);
+        this.e.h = (this.l / 2 + 40);
       }
     }
   }

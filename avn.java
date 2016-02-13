@@ -115,7 +115,7 @@ public class avn
     int charH = imgHeight / 16;
     
     float kx = imgWidth / 128.0F;
-    this.scaleFactor = Config.limit(kx, 1.0F, 2.0F);
+    this.scaleFactor = kx;
     
     int[] ai = new int[imgWidth * imgHeight];
     bufferedimage.getRGB(0, 0, imgWidth, imgHeight, ai, 0, imgWidth);
@@ -508,7 +508,7 @@ public class avn
       }
       var2 += var6;
       if ((var3) && (var6 > 0.0F)) {
-        var2 += 1.0F / this.scaleFactor;
+        var2 += 1.0F;
       }
     }
     return (int)var2;

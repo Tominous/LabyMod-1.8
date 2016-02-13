@@ -6,7 +6,6 @@ import de.labystudio.labymod.ModSettings;
 import de.labystudio.listener.GommeHD;
 import de.labystudio.utils.Color;
 import de.labystudio.utils.DrawUtils;
-import de.labystudio.utils.ServerManager;
 import de.zockermaus.serverpinger.ServerData;
 import de.zockermaus.serverpinger.ServerPinger;
 import java.io.IOException;
@@ -20,6 +19,7 @@ public class axp
   private int f;
   int confirmDisconnect = 0;
   avs returnToMenu;
+  ServerPinger pinger;
   
   public axp()
   {
@@ -55,6 +55,10 @@ public class axp
     }
     this.n.add(new avs(9, this.l - 70, 4, 67, 20, t));
     super.b();
+    
+    ServerPinger server = new ServerPinger(LabyMod.getInstance().ip, LabyMod.getInstance().port);
+    server.start();
+    this.pinger = server;
   }
   
   protected void a(avs button)
@@ -119,8 +123,6 @@ public class axp
     super.actionPermformed(button);
   }
   
-  long update = 0L;
-  
   public void drawServerInfo()
   {
     if (!ConfigManager.settings.infoInMenu) {
@@ -130,48 +132,41 @@ public class axp
       return;
     }
     String ip = LabyMod.getInstance().ip;
-    if (this.update + 10000L < System.currentTimeMillis())
-    {
-      this.update = System.currentTimeMillis();
-      ServerPinger server = new ServerPinger(LabyMod.getInstance().ip, LabyMod.getInstance().port);
-      server.start();
-    }
-    if (ServerManager.contains(ip)) {
+    if ((this.pinger != null) && (this.pinger.getCurrentData() != null) && (this.pinger.getCurrentData().motd != null)) {
       try
       {
-        ServerData server = ServerManager.get(ip);
-        if (server != null)
+        int i = LabyMod.getInstance().draw.getHeight() - 32;
+        String st = Color.c + "c" + LabyMod.getInstance().ip.toUpperCase() + " " + Color.c + "5Players: " + Color.c + "f" + this.pinger.getCurrentData().players + "/" + this.pinger.getCurrentData().maxPlayers + " " + Color.c + "5Ping:" + Color.c + "f " + Color.c + "a" + this.pinger.getCurrentData().ms + "ms";
+        DrawUtils.a(1, i - 2, LabyMod.getInstance().draw.getStringWidth(st) + 5, this.m - 1, Integer.MIN_VALUE);
+        LabyMod.getInstance().draw.drawString(st, 3.0D, i);
+        i += 10;
+        if (this.pinger.getCurrentData().motd.contains("\n"))
         {
-          int i = LabyMod.getInstance().draw.getHeight() - 32;
-          String st = Color.c + "c" + LabyMod.getInstance().ip.toUpperCase() + " " + Color.c + "5Players: " + Color.c + "f" + server.players + "/" + server.maxPlayers + " " + Color.c + "5Ping:" + Color.c + "f " + Color.c + "a" + server.ms + "ms";
-          DrawUtils.a(1, i - 2, LabyMod.getInstance().draw.getStringWidth(st) + 5, this.m - 1, Integer.MIN_VALUE);
-          LabyMod.getInstance().draw.drawString(st, 3.0D, i);
+          String[] s = this.pinger.getCurrentData().motd.split("\n");
+          LabyMod.getInstance().draw.drawString(s[0], 3.0D, i);
           i += 10;
-          if (server.motd.contains("\n"))
+          LabyMod.getInstance().draw.drawString(s[1], 3.0D, i);
+        }
+        else
+        {
+          int l = 45;
+          if (this.pinger.getCurrentData().motd.length() > l)
           {
-            String[] s = server.motd.split("\n");
-            LabyMod.getInstance().draw.drawString(s[0], 3.0D, i);
+            LabyMod.getInstance().draw.drawString(this.pinger.getCurrentData().motd.substring(0, l), 3.0D, i);
             i += 10;
-            LabyMod.getInstance().draw.drawString(s[1], 3.0D, i);
+            LabyMod.getInstance().draw.drawString(this.pinger.getCurrentData().motd.substring(l, this.pinger.getCurrentData().motd.length()), 3.0D, i);
           }
           else
           {
-            int l = 45;
-            if (server.motd.length() > l)
-            {
-              LabyMod.getInstance().draw.drawString(server.motd.substring(0, l), 3.0D, i);
-              i += 10;
-              LabyMod.getInstance().draw.drawString(server.motd.substring(l, server.motd.length()), 3.0D, i);
-            }
-            else
-            {
-              LabyMod.getInstance().draw.drawString(server.motd, 3.0D, i);
-            }
+            LabyMod.getInstance().draw.drawString(this.pinger.getCurrentData().motd, 3.0D, i);
           }
-          LabyMod.getInstance().playerPing = server.ms;
         }
+        LabyMod.getInstance().playerPing = this.pinger.getCurrentData().ms;
       }
-      catch (Exception error) {}
+      catch (Exception error)
+      {
+        error.printStackTrace();
+      }
     } else if (!this.j.F()) {
       LabyMod.getInstance().draw.drawString(Color.cl("c") + "Loading server information..", 2.0D, LabyMod.getInstance().draw.getHeight() - 10);
     }

@@ -1,6 +1,7 @@
 import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.ModSettings;
 import de.labystudio.utils.Allowed;
+import de.labystudio.utils.LeftHand;
 import org.lwjgl.opengl.GL11;
 
 public class bfn
@@ -276,10 +277,14 @@ public class bfn
     a((bew)abstractclientplayer, partialTicks);
     bfl.B();
     bfl.E();
-    if (ConfigManager.settings.leftHand)
+    if (LeftHand.use(this.d))
     {
       GL11.glScaled(-1.0D, 1.0D, 1.0D);
       bfl.p();
+    }
+    else
+    {
+      bfl.o();
     }
     if (this.d != null)
     {

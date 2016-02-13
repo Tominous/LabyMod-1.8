@@ -2,7 +2,9 @@ package de.zockermaus.ts3;
 
 import de.labystudio.chat.EnumAlertType;
 import de.labystudio.gui.GuiAchievementMod;
+import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
+import de.labystudio.labymod.ModSettings;
 import de.labystudio.utils.Color;
 
 public class TeamSpeakListener
@@ -18,7 +20,15 @@ public class TeamSpeakListener
       m = Color.cl("9") + user.getNickName() + Color.cl("a") + " pokes you: " + pokeMessage;
     }
     TeamSpeak.infoAll(m);
-    LabyMod.getInstance().achievementGui.displayBroadcast(user.getNickName(), TeamSpeak.url(pokeMessage), EnumAlertType.TEAMSPEAK);
+    if (ConfigManager.settings.teamSpeakAlertTypeChat)
+    {
+      if (ConfigManager.settings.alertsTeamSpeak) {
+        LabyMod.getInstance().displayMessageInChat(TeamSpeak.chatPrefix + m);
+      }
+    }
+    else {
+      LabyMod.getInstance().achievementGui.displayBroadcast(user.getNickName(), TeamSpeak.url(pokeMessage), EnumAlertType.TEAMSPEAK);
+    }
     TeamSpeak.overlayWindows.openInfo(user.getClientId(), "You Have Been Poked", m);
   }
   
@@ -56,7 +66,15 @@ public class TeamSpeakListener
     }
     TeamSpeak.addChat(target, user, message, EnumTargetMode.USER);
     if (TeamSpeakController.getInstance().me.getClientId() != user.getClientId()) {
-      LabyMod.getInstance().achievementGui.displayBroadcast(user.getNickName(), TeamSpeak.url(message), EnumAlertType.TEAMSPEAK);
+      if (ConfigManager.settings.teamSpeakAlertTypeChat)
+      {
+        if (ConfigManager.settings.alertsTeamSpeak) {
+          LabyMod.getInstance().displayMessageInChat(TeamSpeak.chatPrefix + Color.cl("9") + user.getNickName() + Color.cl("7") + ": " + TeamSpeak.url(message));
+        }
+      }
+      else {
+        LabyMod.getInstance().achievementGui.displayBroadcast(user.getNickName(), TeamSpeak.url(message), EnumAlertType.TEAMSPEAK);
+      }
     }
   }
   
@@ -64,7 +82,15 @@ public class TeamSpeakListener
   {
     TeamSpeak.addChat(null, user, message, EnumTargetMode.CHANNEL);
     if ((TeamSpeakController.getInstance().me != null) && (TeamSpeakController.getInstance().me.getClientId() != user.getClientId())) {
-      LabyMod.getInstance().achievementGui.displayBroadcast(user.getNickName(), TeamSpeak.url(message), EnumAlertType.TEAMSPEAK);
+      if (ConfigManager.settings.teamSpeakAlertTypeChat)
+      {
+        if (ConfigManager.settings.alertsTeamSpeak) {
+          LabyMod.getInstance().displayMessageInChat(TeamSpeak.chatPrefix + Color.cl("9") + user.getNickName() + Color.cl("7") + ": " + TeamSpeak.url(message));
+        }
+      }
+      else {
+        LabyMod.getInstance().achievementGui.displayBroadcast(user.getNickName(), TeamSpeak.url(message), EnumAlertType.TEAMSPEAK);
+      }
     }
   }
   

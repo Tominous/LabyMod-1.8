@@ -111,14 +111,13 @@ public class GuiAchievementMod
   public void updateAchievementWindow()
   {
     int y = 0;
-    Timings.start();
+    Timings.start("UpdateAchievementWindow");
     for (int stack = this.time.size() - 1; stack > 0; stack--)
     {
       String title = (String)this.title.get(stack);
       String message = (String)this.message.get(stack);
       long time = ((Long)this.time.get(stack)).longValue();
       message = ModGui.shortString(message, LabyMod.getInstance().draw.getWidth() / 8);
-      
       double var1 = (ave.J() - time) / 3000.0D;
       
       double backup = var1;
@@ -170,8 +169,7 @@ public class GuiAchievementMod
       bfl.f();
       draw(title, message, var6, type, x);
     }
-    Timings.stop();
-    Timings.draw();
+    Timings.stop("UpdateAchievementWindow");
   }
   
   private void draw(String title, String message, int y, int type, int xx)

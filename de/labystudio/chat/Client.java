@@ -68,7 +68,7 @@ public class Client
   
   public void init()
   {
-    Timings.start();
+    Timings.start("Client Init");
     this.clientConnection.init();
     this.running = true;
     Runtime.getRuntime().addShutdownHook(new Thread(new Runnable()
@@ -80,7 +80,7 @@ public class Client
         }
       }
     }));
-    Timings.stop();
+    Timings.stop("Client Init");
   }
   
   public void run() {}

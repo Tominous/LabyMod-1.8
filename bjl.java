@@ -11,6 +11,7 @@ import de.labystudio.modapi.events.RenderNametagEvent;
 import de.labystudio.utils.Allowed;
 import de.labystudio.utils.Color;
 import de.labystudio.utils.FriendsLoader;
+import de.labystudio.utils.LeftHand;
 import java.nio.FloatBuffer;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
@@ -387,6 +388,9 @@ public abstract class bjl<T extends pr>
       if ((ConfigManager.settings.oldDMG.booleanValue()) && (Allowed.animations()) && (
         (layerrenderer.toString().contains("LayerBipedArmor")) || (layerrenderer.toString().startsWith("bkx@")))) {
         var12 = true;
+      }
+      if ((LeftHand.use(entitylivingbaseIn)) && ((layerrenderer.toString().contains("LayerCape")) || (layerrenderer.toString().startsWith("bkp@")))) {
+        bfl.a(-1.0F, 1.0F, 1.0F);
       }
       boolean flag = a(entitylivingbaseIn, partialTicks, var12);
       layerrenderer.a(entitylivingbaseIn, p_177093_2_, p_177093_3_, partialTicks, p_177093_5_, p_177093_6_, p_177093_7_, p_177093_8_);

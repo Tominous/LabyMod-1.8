@@ -7,7 +7,6 @@ import awx;
 import axu;
 import bfl;
 import de.labystudio.capes.CapeManager;
-import de.labystudio.gui.extras.SliderClicks;
 import de.labystudio.gui.extras.SliderColor;
 import de.labystudio.gui.extras.SliderCoords;
 import de.labystudio.gui.extras.SliderSize;
@@ -95,10 +94,12 @@ public class GuiModSettings
       
       addToggle(r, Boolean.valueOf(ConfigManager.settings.showBossBar), 63, "Bossbar", "This option allows you to remove the boss health bar, but the text above it will still be displayed.");
       addToggle(r, Boolean.valueOf(ConfigManager.settings.showClock), 83, "Clock", "Displays your current real life time.");
+      
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showArrow), 93, "Arrow amount", "Displays the current amount of arrows in your inventory");
     }
     if (this.currentTab.equals("Formatting"))
     {
-      addSwitchNoOff(r, ConfigManager.settings.layout, 8, 9, "Brackets", 10, "Colon", 11, "Angle brackets", "Gui layout");
+      addSwitchNoOff(r, ConfigManager.settings.layout, 8, 9, "Colon", 10, "Brackets", 11, "Angle brackets", "Gui layout");
       
       addToggle(r, Boolean.valueOf(ConfigManager.settings.bold), 29, "Bold", "");
       addToggle(r, Boolean.valueOf(ConfigManager.settings.underline), 30, "Underline", "");
@@ -147,7 +148,7 @@ public class GuiModSettings
     if (this.currentTab.equals("Extras"))
     {
       addToggle(r, Boolean.valueOf(ConfigManager.settings.box), 7, "HG Box", "All game information from Brawl Hardcore Games in an information box");
-      addSliderClicks(r, "Clicktest");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.clickTest), 90, "Clicktest", "Test your clickspeed");
       
       addToggle(r, Boolean.valueOf(ConfigManager.settings.lavaTime), 35, "Lavachallenge Timer", "It starts a Timer as you touch lava");
       addToggle(r, Boolean.valueOf(ConfigManager.settings.showMyName), 55, "Show my Name", "It will displays your own ingame name above your Head");
@@ -160,7 +161,8 @@ public class GuiModSettings
       addToggle(r, ConfigManager.settings.tabPing, 45, "Ping on Tab", "You can see the ping of every player on the tablist");
       addToggle(r, Boolean.valueOf(ConfigManager.settings.showOnlineFriends), 57, "Show Online Friends", "Shows the player head of all online friends in the top or bottom of the screen");
       addToggle(r, Boolean.valueOf(ConfigManager.settings.speedFOV), 71, "SpeedFOV", "If this option is set to OFF, the speed potion effect will no longer increase your FOV.");
-      addToggle(r, Boolean.valueOf(ConfigManager.settings.leftHand), 87, "Use left hand", "Switch your first person hand to the left side");
+      addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.leftHand), 87, "Main hand", "Right", "Left", "Swap the position of your main hand");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.leftBow), 92, "Swap bow", "Swap the position of your hand if you holding a bow");
     }
     if (this.currentTab.equals("Server Support"))
     {
@@ -195,9 +197,11 @@ public class GuiModSettings
     if (this.currentTab.equals("TeamSpeak"))
     {
       addToggle(r, ConfigManager.settings.teamSpeak, 65, "TeamSpeak", "If you run TeamSpeak you're able to accses it using Minecraft, you'll be able to see channels, join them, etc.");
-      addToggle(r, Boolean.valueOf(ConfigManager.settings.alertsTeamSpeak), 4, "TS Alerts", "Shows a message from TeamSpeak as an achievement");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.alertsTeamSpeak), 4, "TS Alerts", "Shows a message from TeamSpeak as an achievement or chat message");
       addToggleSub(r, ConfigManager.settings.teamSpakIngameClients, ConfigManager.settings.teamSpeak, 70, "TS Clients", "Showing you who is in the channel and who is currently talking.");
       addToggleSub(r, Boolean.valueOf(ConfigManager.settings.teamSpakIngame), ConfigManager.settings.teamSpeak, 69, "TS Channel", "If this option is on, the channel you're currently in will be displayed below your coordinates.");
+      addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.teamSpeakAlertTypeChat), 88, "Alert type", "Achievment", "Chat", "With this function you can choose the type of the Teamspeak message. Either as Achievment or in the normal chat.");
+      
       addSliderColor(r, "TS Silent", 6);
       addSliderColor(r, "TS Talking", 7);
       addSliderColor(r, "TS Away", 10);
@@ -210,6 +214,8 @@ public class GuiModSettings
       addToggle(r, ConfigManager.settings.chatFilter, 78, "Chat Filter", "You can filter your chat by certain keywords, or commands definded at \"filters\"");
       addToggle(r, Boolean.valueOf(ConfigManager.settings.autoText), 77, "AutoText", "Your previously defined chat messages will be sended by pressing a single key");
       addToggle(r, ConfigManager.settings.extraChat, 38, "Extra Chat", "You can see all private messages in an extra chat on the right side of the screen");
+      addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.chatAlertType), 89, "LabyMod Chat Notify Type", "Achievment", "Chat", "With this function you can choose the type of the LabyMod Chat message. Either as Achievment or in the normal chat.");
+      addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.chatPositionRight), 91, "Chat Position", "Right", "Left", "The Position of the Minecraft Chat");
     }
   }
   
@@ -517,6 +523,24 @@ public class GuiModSettings
       break;
     case 87: 
       ConfigManager.settings.leftHand = (!ConfigManager.settings.leftHand);
+      break;
+    case 88: 
+      ConfigManager.settings.teamSpeakAlertTypeChat = (!ConfigManager.settings.teamSpeakAlertTypeChat);
+      break;
+    case 89: 
+      ConfigManager.settings.chatAlertType = (!ConfigManager.settings.chatAlertType);
+      break;
+    case 90: 
+      ConfigManager.settings.clickTest = (!ConfigManager.settings.clickTest);
+      break;
+    case 91: 
+      ConfigManager.settings.chatPositionRight = (!ConfigManager.settings.chatPositionRight);
+      break;
+    case 92: 
+      ConfigManager.settings.leftBow = (!ConfigManager.settings.leftBow);
+      break;
+    case 93: 
+      ConfigManager.settings.showArrow = (!ConfigManager.settings.showArrow);
     }
     if (button.k != -3) {
       b();
@@ -607,29 +631,6 @@ public class GuiModSettings
       return;
     }
     SliderSize b = new SliderSize(-3, this.x, this.y, 77);
-    this.n.add(b);
-    this.x += 100;
-    if (this.x > this.l - 110)
-    {
-      this.x = 120;
-      this.y += this.sy;
-    }
-  }
-  
-  private void addSliderClicks(boolean refresh, String title)
-  {
-    if (refresh)
-    {
-      this.draw.drawString(title + ":", this.x + 1, this.y - 12);
-      this.x += 100;
-      if (this.x > this.l - 110)
-      {
-        this.x = 120;
-        this.y += this.sy;
-      }
-      return;
-    }
-    SliderClicks b = new SliderClicks(-3, this.x, this.y, 80);
     this.n.add(b);
     this.x += 100;
     if (this.x > this.l - 110)

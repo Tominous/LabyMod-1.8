@@ -153,10 +153,14 @@ public class avt
   
   private void a(eu p_146237_1_, int p_146237_2_, int p_146237_3_, boolean p_146237_4_)
   {
-    if ((p_146237_1_ != null) && (ModAPI.enabled())) {
-      ModAPI.callEvent(new ChatReceivedEvent(p_146237_1_.c(), p_146237_1_.d()));
+    if ((p_146237_1_ != null) && (ModAPI.enabled()) && (!p_146237_4_)) {
+      ModAPI.callEvent(new ChatReceivedEvent(p_146237_1_.d(), p_146237_1_.c()));
     }
-    if (ChatListener.isServerMSG(p_146237_1_.c()))
+    boolean leftChat = ChatListener.isServerMSG(Color.removeColor(p_146237_1_.c()));
+    if (!ConfigManager.settings.chatPositionRight) {
+      leftChat = !leftChat;
+    }
+    if (leftChat)
     {
       GuiNewModChat.setChatLine(p_146237_1_, p_146237_2_, p_146237_3_, p_146237_4_);
       return;

@@ -5,18 +5,16 @@ import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
 import de.labystudio.utils.Color;
-import de.labystudio.utils.DrawUtils;
 import de.labystudio.utils.ModGui;
-import java.util.ArrayList;
 
 public class Timolia
 {
   public static String timoliaLobby = "";
   public static String timoliaRequestPlayer = "";
   public static String timoliaRequestKit = "";
-  public static ArrayList<String> timoliaSettings = new ArrayList();
   public static int timoliaStatsPlus = 0;
   public static int timoliaStatsMinus = 0;
+  public static int winStreak = 0;
   public static boolean isTimolia = false;
   
   public static void updateTimolia()
@@ -34,7 +32,6 @@ public class Timolia
     timoliaLobby = "";
     timoliaRequestPlayer = "";
     timoliaRequestKit = "";
-    timoliaSettings.clear();
     timoliaStatsPlus = 0;
     timoliaStatsMinus = 0;
   }
@@ -107,7 +104,6 @@ public class Timolia
     if ((clean.startsWith("Kit: ")) && (clean.contains(" | Einstellungen: ")) && 
       (!clean.contains(" | Einstellungen: -")))
     {
-      ArrayList<String> list = new ArrayList();
       String settings = "";
       if ((!clean.contains(timoliaRequestKit)) || (!timoliaRequestKit.isEmpty()) || (timoliaRequestKit.equals("?"))) {
         try
@@ -120,39 +116,27 @@ public class Timolia
         {
           settings = "";
         }
-      } else {
-        settings = clean.replace("Kit: " + timoliaRequestKit + " | Einstellungen: ", "");
       }
-      if (settings.contains(", "))
-      {
-        String[] split = settings.split(", ");
-        for (String s : split) {
-          list.add(s);
-        }
-      }
-      else
-      {
-        list.add(settings);
-      }
-      timoliaSettings = list;
     }
     if (clean.startsWith(timoliaRequestPlayer + " hat seine Herausforderung zurückgezogen!"))
     {
       timoliaRequestPlayer = "";
       timoliaRequestKit = "";
-      timoliaSettings.clear();
     }
     if ((clean.startsWith("Du hast den Kampf gegen ")) || (clean.startsWith("Dein Team hat den Kampf gegen das Team von ")))
     {
-      if (clean.contains("gewonnen")) {
+      if (clean.contains("gewonnen"))
+      {
         timoliaStatsPlus += 1;
+        winStreak += 1;
       }
-      if (clean.contains("verloren")) {
+      if (clean.contains("verloren"))
+      {
         timoliaStatsMinus += 1;
+        winStreak = 0;
       }
       timoliaRequestPlayer = "";
       timoliaRequestKit = "";
-      timoliaSettings.clear();
     }
   }
   
@@ -178,29 +162,25 @@ public class Timolia
       ModGui.addMainLabel("Stats", Color.cl("a") + timoliaStatsPlus + Color.cl("7") + " | " + Color.cl("c") + timoliaStatsMinus, ModGui.mainList);
       if (!timoliaRequestPlayer.isEmpty())
       {
-        LabyMod.getInstance().draw.drawString(Color.c(1) + "Kampf herausforderung:", 2.0D, ModGui.mainList);
-        ModGui.mainListNext();
-        if (!timoliaRequestPlayer.equals("?"))
-        {
-          LabyMod.getInstance().draw.addString(Color.c(1) + "Gegner" + Color.c(2) + ": " + Color.c(3) + timoliaRequestPlayer, ModGui.mainList);
-          ModGui.mainListNext();
+        String gegner = "Gegner";
+        if (!isInMatch()) {
+          gegner = "Herausforderung";
         }
-        if (!timoliaRequestKit.equalsIgnoreCase(timoliaRequestPlayer))
-        {
-          LabyMod.getInstance().draw.addString(Color.c(1) + "Kit" + Color.c(2) + ": " + Color.c(3) + timoliaRequestKit, ModGui.mainList);
-          ModGui.mainListNext();
+        if (!timoliaRequestPlayer.equals("?")) {
+          ModGui.addMainLabel(gegner, timoliaRequestPlayer, ModGui.mainList);
         }
-        if (!timoliaSettings.isEmpty())
-        {
-          LabyMod.getInstance().draw.addString(Color.c(1) + "Einstellungen:", ModGui.mainList);
-          ModGui.mainListNext();
-          for (String s : timoliaSettings)
-          {
-            LabyMod.getInstance().draw.addString(Color.c(2) + "- " + Color.c(3) + s, ModGui.mainList);
-            ModGui.mainListNext();
-          }
+        if (isInMatch()) {
+          ModGui.addMainLabel("Kit", timoliaRequestKit, ModGui.mainList);
         }
       }
+      if (winStreak != 0) {
+        ModGui.addMainLabel("Winstreak", "" + winStreak, ModGui.mainList);
+      }
     }
+  }
+  
+  public static boolean isInMatch()
+  {
+    return !timoliaRequestKit.equalsIgnoreCase(timoliaRequestPlayer);
   }
 }

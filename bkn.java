@@ -51,13 +51,6 @@ public abstract class bkn
       }
       a(var12, p_177182_9_);
       boolean var13 = b(p_177182_9_);
-      if (Config.isCustomItems())
-      {
-        if (CustomItems.bindCustomArmorTexture(var10, var13 ? 2 : 1, null)) {}
-      }
-      else {
-        this.a.a(a(var11, var13));
-      }
       if (Reflector.ForgeHooksClient_getArmorTexture.exists())
       {
         int var14 = var11.b(var10);
@@ -87,6 +80,13 @@ public abstract class bkn
           }
         }
         return;
+      }
+      if (Config.isCustomItems())
+      {
+        if (CustomItems.bindCustomArmorTexture(var10, var13 ? 2 : 1, null)) {}
+      }
+      else {
+        this.a.a(a(var11, var13));
       }
       switch (bkn.1.a[var11.x_().ordinal()])
       {

@@ -39,6 +39,7 @@ import de.labystudio.modapi.ModAPI;
 import de.labystudio.modapi.ModManager;
 import de.labystudio.modapi.events.GameTickEvent;
 import de.labystudio.modapi.events.JoinedServerEvent;
+import de.labystudio.modapi.events.PluginMessageReceivedEvent;
 import de.labystudio.packets.EnumConnectionState;
 import de.labystudio.packets.PacketPlayServerStatus;
 import de.labystudio.utils.Allowed;
@@ -97,7 +98,6 @@ public class LabyMod
   public ArrayList<String> gameTypes = new ArrayList();
   public ArrayList<String> serverMSG = new ArrayList();
   public HashMap<String, String> serverPing = new HashMap();
-  public ArrayList<String> serverAddress = new ArrayList();
   public ArrayList<String> commandQueue = new ArrayList();
   public ArrayList<bdc> onlinePlayers = new ArrayList();
   public boolean chat = true;
@@ -177,13 +177,12 @@ public class LabyMod
     instance = this;
     System.out.println("[LabyMod] Loading labymod..");
     L.load();
-    Timings.start();
+    Timings.start("Enable LabyMod");
     this.mc = ave.A();
     this.textureManager = new TextureManager();
     this.draw = new DrawUtils();
     ConfigManager.loadProperties(true);
     this.achievementGui = new GuiAchievementMod(this.mc);
-    addServerAddress();
     this.client = new Client();
     this.handler = new ChatHandler();
     this.handler.initDatabase();
@@ -195,7 +194,7 @@ public class LabyMod
     StatsLoader.loadstats();
     if (ConfigManager.settings == null)
     {
-      Timings.stop();
+      Timings.stop("Enable LabyMod");
       return;
     }
     if (ConfigManager.settings.teamSpeak.booleanValue()) {
@@ -229,7 +228,7 @@ public class LabyMod
         }
       }
     });
-    Timings.stop();
+    Timings.stop("Enable LabyMod");
     System.out.println("[LabyMod] Loaded!");
   }
   
@@ -246,33 +245,6 @@ public class LabyMod
     return getInstance().autoUpdaterLatestVersionId > getInstance().autoUpdaterCurrentVersionId;
   }
   
-  public void addServerAddress()
-  {
-    this.serverAddress.clear();
-    for (int i = 1; i <= 4; i++)
-    {
-      this.serverAddress.add(i + ".mc-hg.com");
-      this.serverAddress.add(i + ".mcctf.com");
-    }
-    this.serverAddress.add("1.kitbrawl.com");
-    this.serverAddress.add("1.pvp.brawl.com");
-    this.serverAddress.add("1.creative.brawl.com");
-    for (int i = 1; i <= 6; i++)
-    {
-      this.serverAddress.add(i + ".sgg.brawl.com");
-      this.serverAddress.add(i + ".sg.brawl.com");
-    }
-    for (int i = 1; i <= 10; i++) {
-      this.serverAddress.add(i + ".mc-warz.com");
-    }
-    for (int i = 1; i <= 15; i++) {
-      this.serverAddress.add(i + ".minecraftparty.com");
-    }
-    for (int i = 1; i <= 12; i++) {
-      this.serverAddress.add(i + ".mc-war.com");
-    }
-  }
-  
   public void resetIP()
   {
     if (((this.ip == null) || (!this.ip.replace(" ", "").isEmpty())) && 
@@ -286,7 +258,7 @@ public class LabyMod
   
   public void resetMod()
   {
-    Timings.start();
+    Timings.start("Reset Mod");
     this.scroll = 0;
     this.lavaTime = 0;
     this.playerPing = 0;
@@ -310,7 +282,7 @@ public class LabyMod
     ModGui.reset();
     Games.reset();
     Revayd.reset();
-    Timings.stop();
+    Timings.stop("Reset Mod");
   }
   
   public String getHeader()
@@ -343,6 +315,11 @@ public class LabyMod
     }
   }
   
+  public void displayMessageInChat(String message)
+  {
+    ave.A().q.d().a(new fa(message));
+  }
+  
   public void sendMessage(String friendName, String message, EnumAlertType type)
   {
     this.achievementGui.displayMessage(friendName, message, type);
@@ -357,7 +334,15 @@ public class LabyMod
     if (!this.client.hasNotifications(player)) {
       return;
     }
-    this.achievementGui.displayMessage(prefix + player.getName(), message, EnumAlertType.CHAT);
+    if (ConfigManager.settings.chatAlertType)
+    {
+      if (ConfigManager.settings.alertsChat) {
+        getInstance().displayMessageInChat(ClientConnection.chatPrefix + Color.cl("e") + prefix + player.getName() + Color.cl("7") + " " + message);
+      }
+    }
+    else {
+      this.achievementGui.displayMessage(prefix + player.getName(), message, EnumAlertType.CHAT);
+    }
   }
   
   public String getPlayerName()
@@ -404,7 +389,7 @@ public class LabyMod
   
   public void secondLoop()
   {
-    Timings.start();
+    Timings.start("LabyMod Tick");
     this.min += 1;
     if (isInGame())
     {
@@ -435,8 +420,6 @@ public class LabyMod
       ChatHandler.updateIsWriting(null, "");
     }
     CapeManager.onTickInGame();
-    
-    ClickCounter.calc(this.min);
     if (this.min >= 60)
     {
       this.min = 0;
@@ -450,7 +433,7 @@ public class LabyMod
     if (Brawl.startingTime > 0) {
       Brawl.startingTime -= 1;
     }
-    Timings.stop();
+    Timings.stop("LabyMod Tick");
   }
   
   public void minutesLoop()
@@ -548,13 +531,15 @@ public class LabyMod
   
   public void overlay(int mouseX, int mouseY)
   {
-    
-    if (this.achievementGui != null) {
+    Timings.start("Overlay LabyMod");
+    if ((this.achievementGui != null) && (
+      (!ConfigManager.settings.chatAlertType) || (!ConfigManager.settings.teamSpeakAlertTypeChat))) {
       this.achievementGui.updateAchievementWindow();
     }
     DrawUtils.updateMouse(mouseX, mouseY);
     KeyListener.handle();
-    Timings.stop();
+    Timings.draw();
+    Timings.stop("Overlay LabyMod");
   }
   
   public void onRender()
@@ -609,6 +594,9 @@ public class LabyMod
   
   public void pluginMessage(String channel, em data)
   {
+    if (ModAPI.enabled()) {
+      ModAPI.callEvent(new PluginMessageReceivedEvent(channel, data));
+    }
     try
     {
       if ((data != null) && (channel != null) && (channel.equals("LABYMOD")))

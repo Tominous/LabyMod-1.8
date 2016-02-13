@@ -1,49 +1,65 @@
 package installer;
 
-import java.awt.Rectangle;
+import installer.labystudio.frame.FrameMain;
 import java.io.File;
+import java.util.ArrayList;
 
 public class Main
 {
-  public static String modVersion = "2.7.5";
+  public static String modVersion = "2.7.6";
   public static String mcVersion = "1.8.8";
-  public static String mcVanillaJar = "1.8.8";
-  public static String installerStatus = "None";
-  public static Installer mainFrame;
-  public static Modlist offFrame;
-  public static String notCompatible = null;
-  public static String optifine = "1.8.8_HD_U_G7";
   public static File[] mods = null;
-  public static boolean installing = false;
   public static String debug = "[DEBUG] ";
-  public static String compatibleMods = "http://LabyMod.net/compatible_mods";
-  public static int status = 0;
-  protected static boolean installMods = false;
-  public static String text = "This installer will install LabyMod and if you want install other mods automaticly\nIf you're done you can start the Launcher and select the new profile.\n\nImportant:\nBe sure you have closed minecraft and have launched the installer from your desktop.";
+  public static String text = "This installer will automatically install LabyMod an if you wish,\nyou can add several mods provided on our website.\n\nIf you've successfully installed LabyMod,\nopen the Minecraft launcher and select the LabyMod profile.\n\nMake sure you've closed Minecraft before the\ninstallation and launch the installer from your desktop.";
+  public static ArrayList<ModTemplate> modTempates = new ArrayList();
+  
+  private static void setupTemplates()
+  {
+    String dir = "http://www.labymod.net/mods/";
+    modTempates.add(new ModTemplate("Optifine 1.8.8 HD U G7", true, dir + "OptiFine_1.8.8_HD_U_G7.jar"));
+    modTempates.add(new ModTemplate("Toggle Sneak/Sprint", false, dir + "ToggleSneak_v5_mc1.8.8.zip"));
+    modTempates.add(new ModTemplate("Damage Indicator", false, dir + "DamageIndicator_v3.zip"));
+    modTempates.add(new ModTemplate("XaerosMinimap", false, dir + "XaerosMinimap_v2.zip"));
+    modTempates.add(new ModTemplate("DirectionHUD", false, dir + "DirectionHud_v3_mc1.8.8.zip"));
+  }
+  
+  public static class ModTemplate
+  {
+    private String modName;
+    private boolean recommended;
+    private String download;
+    
+    public ModTemplate(String modName, boolean recommended, String download)
+    {
+      this.modName = modName;
+      this.recommended = recommended;
+      this.download = download;
+    }
+    
+    public boolean isEnabled()
+    {
+      return this.recommended;
+    }
+    
+    public String getModName()
+    {
+      return this.modName;
+    }
+    
+    public void setEnabled(boolean enabled)
+    {
+      this.recommended = enabled;
+    }
+    
+    public String getDownload()
+    {
+      return this.download;
+    }
+  }
   
   public static void main(String[] args)
   {
-    Installer.main();
-    Modlist.main();
-    
-    new Update().start();
-  }
-  
-  static class Update
-    extends Thread
-  {
-    public void run()
-    {
-      for (;;)
-      {
-        Main.offFrame.setBounds(Main.mainFrame.getBounds().x + 332, Main.mainFrame.getBounds().y, Main.offFrame.getWidth(), Main.offFrame.getHeight());
-        if ((Main.mainFrame.isFocused()) && 
-          (Utils.getPlatform() == Utils.OS.WINDOWS))
-        {
-          Main.offFrame.setAlwaysOnTop(true);
-          Main.offFrame.setAlwaysOnTop(false);
-        }
-      }
-    }
+    setupTemplates();
+    new FrameMain();
   }
 }

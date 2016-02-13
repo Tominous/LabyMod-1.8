@@ -18,7 +18,7 @@ public class FilterLoader
   
   public static void loadFilters()
   {
-    
+    Timings.start("Load Filter Config");
     if (!filters.isEmpty()) {
       return;
     }
@@ -34,7 +34,7 @@ public class FilterLoader
     if (filters == null) {
       filters = new ArrayList();
     }
-    Timings.stop();
+    Timings.stop("Load Filter Config");
   }
   
   public static void create()

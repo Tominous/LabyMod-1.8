@@ -14,7 +14,7 @@ public class ModThread
     {
       for (;;)
       {
-        if (ConfigManager.settings.clicktest == 0)
+        if (!ConfigManager.settings.clickTest)
         {
           LabyMod.getInstance().secondLoop();
           synchronized (this)

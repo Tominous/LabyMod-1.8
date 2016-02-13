@@ -63,7 +63,11 @@ public class L
   
   public static void updateLang()
   {
-    String mcLang = ave.A().S().c().a();
+    String get = "en";
+    if ((ave.A() != null) && (ave.A().S() != null) && (ave.A().S().c() != null) && (ave.A().S().c().a() != null)) {
+      get = ave.A().S().c().a();
+    }
+    String mcLang = get;
     if (mcLang.startsWith("en")) {
       setLang("en");
     }
@@ -110,8 +114,11 @@ public class L
   
   public static String translate(String key, boolean format, Object... args)
   {
-    if (lastMCCode != ave.A().S().c().a()) {
-      updateLang();
+    String get = "en";
+    if ((ave.A() != null) && (ave.A().S() != null) && (ave.A().S().c() != null) && (ave.A().S().c().a() != null)) {
+      if (lastMCCode != ave.A().S().c().a()) {
+        updateLang();
+      }
     }
     if ((key == null) || (language == null)) {
       return "unknown";

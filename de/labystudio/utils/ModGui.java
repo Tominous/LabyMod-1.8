@@ -13,6 +13,7 @@ import bqs;
 import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
+import de.labystudio.labymod.Timings;
 import java.math.BigDecimal;
 import java.util.List;
 import ns;
@@ -32,8 +33,10 @@ public class ModGui
   
   public static String translateTimer(int time)
   {
+    Timings.start("Translate Timer");
     String formata = time / 60 < 10 ? "0" + time / 60 : Integer.toString(time / 60);
     String formatb = time % 60 < 10 ? "0" + time % 60 : Integer.toString(time % 60);
+    Timings.stop("Translate Timer");
     return formata + ":" + formatb;
   }
   
@@ -49,6 +52,7 @@ public class ModGui
   
   public static void smoothFPS()
   {
+    Timings.start("Smooth FPS");
     if (!ConfigManager.settings.smoothFPS) {
       return;
     }
@@ -69,6 +73,7 @@ public class ModGui
     {
       smoothFPS = 0;
     }
+    Timings.stop("Smooth FPS");
   }
   
   public static int getFPS()
@@ -81,6 +86,7 @@ public class ModGui
   
   public static String getF()
   {
+    Timings.start("Calculate F Direction");
     if (!LabyMod.getInstance().isInGame()) {
       return "0.0 ";
     }
@@ -94,11 +100,13 @@ public class ModGui
     if ((output.equals("4.0")) || (output.startsWith("9"))) {
       output = "0.0";
     }
+    Timings.stop("Calculate F Direction");
     return output + " ";
   }
   
   public static String getD()
   {
+    Timings.start("Calculate F Direction String");
     String XZD = getXZD();
     if (XZD.contains("Z-")) {
       return "North ";
@@ -112,6 +120,7 @@ public class ModGui
     if (XZD.contains("X-")) {
       return "West ";
     }
+    Timings.stop("Calculate F Direction String");
     return "";
   }
   
@@ -213,7 +222,13 @@ public class ModGui
   
   public static String truncateCoords(double i)
   {
-    return "" + truncateDecimal(i, ConfigManager.settings.truncateCoords);
+    Timings.start("Truncate Coords");
+    String a = "" + (int)i;
+    if (ConfigManager.settings.truncateCoords != 0) {
+      a = "" + truncateDecimal(i, ConfigManager.settings.truncateCoords);
+    }
+    Timings.stop("Truncate Coords");
+    return a;
   }
   
   private static BigDecimal truncateDecimal(double x, int numberofDecimals)

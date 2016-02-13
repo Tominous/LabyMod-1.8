@@ -47,9 +47,9 @@ public abstract class PacketHandler
   
   private void handlePacket(Packet packet)
   {
-    Timings.start();
+    Timings.start("HandlePacket " + packet.getClass().getSimpleName());
     packet.handle(this);
-    Timings.stop();
+    Timings.stop("HandlePacket " + packet.getClass().getSimpleName());
   }
   
   public abstract void handle(PacketLoginData paramPacketLoginData);

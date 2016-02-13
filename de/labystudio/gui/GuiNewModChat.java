@@ -42,7 +42,7 @@ public class GuiNewModChat
       if (!getChatOpen()) {
         resetScroll();
       }
-      if ((ConfigManager.settings.extraChat.booleanValue()) || (ConfigManager.settings.chatFilter.booleanValue()))
+      if ((ConfigManager.settings.extraChat.booleanValue()) || (ConfigManager.settings.chatFilter.booleanValue()) || (ConfigManager.settings.chatPositionRight))
       {
         int var2 = getLineCount();
         boolean var3 = false;

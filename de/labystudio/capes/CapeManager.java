@@ -151,7 +151,7 @@ public class CapeManager
     if (ave.A().f == null) {
       return;
     }
-    Timings.start();
+    Timings.start("CapeManager GameTick");
     if (checking) {
       return;
     }
@@ -187,7 +187,7 @@ public class CapeManager
     };
     checkThread.setPriority(1);
     checkThread.start();
-    Timings.stop();
+    Timings.stop("CapeManager GameTick");
   }
   
   public static boolean setCape(wn player, jy capeLocation)
@@ -311,7 +311,9 @@ public class CapeManager
             };
             bma object = new CapeDownloader(null, found, null, iib);
             debug("loading texture of " + player.getName());
-            texturemanager.a(capeLocation, object);
+            if (!texturemanager.a(capeLocation, object)) {
+              System.out.println("[ERROR] Failed to load cape of " + player.getName() + " (" + capeLocation + ")");
+            }
             customCapes.put(player.getId(), capeLocation);
             debug("SAVE CAPE CUSTOM OF " + player.getName());
           }

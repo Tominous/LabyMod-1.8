@@ -97,6 +97,7 @@ public class ClientConnection
   private Queue<Packet> packets;
   private HashMap<String, String> sentFiles;
   private static String capeKey = null;
+  public static String chatPrefix = Color.cl("8") + "[" + Color.cl("c") + Color.cl("l") + "Chat" + Color.cl("8") + "] " + Color.cl("7");
   
   public ClientConnection(Client client)
   {
@@ -267,7 +268,15 @@ public class ClientConnection
     LabyMod.getInstance().intentionally = true;
     closeChannel();
     LabyMod.getInstance().lastKickReason = packet.getReason();
-    LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.DISCONNECTED, packet.getReason(), EnumAlertType.CHAT);
+    if (ConfigManager.settings.chatAlertType)
+    {
+      if (ConfigManager.settings.alertsChat) {
+        LabyMod.getInstance().displayMessageInChat(chatPrefix + Color.cl("4") + "DISCONNECTED" + Color.cl("7") + ": " + packet.getReason());
+      }
+    }
+    else {
+      LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.DISCONNECTED, packet.getReason(), EnumAlertType.CHAT);
+    }
   }
   
   public void closeChannel()
@@ -315,7 +324,15 @@ public class ClientConnection
     {
       closeChannel();
       if (LabyMod.getInstance().mc.m != null) {
-        LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.DISCONNECTED, packet.getReason(), EnumAlertType.CHAT);
+        if (ConfigManager.settings.chatAlertType)
+        {
+          if (ConfigManager.settings.alertsChat) {
+            LabyMod.getInstance().displayMessageInChat(chatPrefix + Color.cl("4") + "DISCONNECTED" + Color.cl("7") + ": " + packet.getReason());
+          }
+        }
+        else {
+          LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.DISCONNECTED, packet.getReason(), EnumAlertType.CHAT);
+        }
       }
       System.out.println(packet.getReason());
       if (packet.getReason().contains("Bad Login")) {
@@ -442,7 +459,15 @@ public class ClientConnection
   
   public void handle(PacketServerMessage packet)
   {
-    LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.MESSAGE, packet.getMessage(), EnumAlertType.CHAT);
+    if (ConfigManager.settings.chatAlertType)
+    {
+      if (ConfigManager.settings.alertsChat) {
+        LabyMod.getInstance().displayMessageInChat(chatPrefix + Color.cl("9") + "Message" + Color.cl("7") + ": " + packet.getMessage());
+      }
+    }
+    else {
+      LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.MESSAGE, packet.getMessage(), EnumAlertType.CHAT);
+    }
   }
   
   public void handle(PacketMessage packet)
@@ -489,11 +514,33 @@ public class ClientConnection
       for (LabyModPlayer p : getClient().requests) {
         if (p.getName().equalsIgnoreCase(packet.getSearched()))
         {
-          LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.INFO, packet.getSearched() + " has been added to your contacts!", EnumAlertType.CHAT);
+          if (ConfigManager.settings.chatAlertType)
+          {
+            if (ConfigManager.settings.alertsChat) {
+              LabyMod.getInstance().displayMessageInChat(chatPrefix + Color.cl("e") + packet.getSearched() + " has been added to your contacts!");
+            }
+          }
+          else {
+            LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.INFO, packet.getSearched() + " has been added to your contacts!", EnumAlertType.CHAT);
+          }
           return;
         }
       }
-      LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.INFO, "A request has been sent to " + packet.getSearched(), EnumAlertType.CHAT);
+      if (ConfigManager.settings.chatAlertType)
+      {
+        if (ConfigManager.settings.alertsChat) {
+          LabyMod.getInstance().displayMessageInChat(chatPrefix + Color.cl("e") + "A request has been sent to " + packet.getSearched());
+        }
+      }
+      else {
+        LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.INFO, "A request has been sent to " + packet.getSearched(), EnumAlertType.CHAT);
+      }
+    }
+    else if (ConfigManager.settings.chatAlertType)
+    {
+      if (ConfigManager.settings.alertsChat) {
+        LabyMod.getInstance().displayMessageInChat(chatPrefix + Color.cl("4") + "ERROR" + Color.cl("7") + ": " + packet.getReason());
+      }
     }
     else
     {
@@ -588,7 +635,15 @@ public class ClientConnection
     {
       LabyMod.getInstance().lastKickReason = "Invalid session";
       System.out.println("[LabyMod] No Session, aborting");
-      LabyMod.getInstance().achievementGui.displayBroadcast(Color.cl("c") + "Error", "Invalid Session", EnumAlertType.CHAT);
+      if (ConfigManager.settings.chatAlertType)
+      {
+        if (ConfigManager.settings.alertsChat) {
+          LabyMod.getInstance().displayMessageInChat(chatPrefix + Color.cl("4") + "Error" + Color.cl("7") + ": Invalid Session");
+        }
+      }
+      else {
+        LabyMod.getInstance().achievementGui.displayBroadcast(Color.cl("c") + "Error", "Invalid Session", EnumAlertType.CHAT);
+      }
       setIntentionally(true);
       return;
     }

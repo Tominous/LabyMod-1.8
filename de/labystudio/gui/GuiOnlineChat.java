@@ -101,7 +101,7 @@ public class GuiOnlineChat
   
   public void b()
   {
-    Timings.start();
+    Timings.start("LabyMod Chat init");
     Keyboard.enableRepeatEvents(true);
     this.scrollFriendList = 0;
     this.scrollScreenBrowser = 0;
@@ -127,7 +127,7 @@ public class GuiOnlineChat
     
     refreshButtons();
     updateChatlog();
-    Timings.stop();
+    Timings.stop("LabyMod Chat init");
   }
   
   private void refreshButtons()
@@ -305,7 +305,7 @@ public class GuiOnlineChat
   
   private void updateButtons()
   {
-    Timings.start();
+    Timings.start("LabyMod Chat update buttons");
     updateReconnectButton();
     updateShowSettingsButton();
     updateShowFileSharingButton();
@@ -315,7 +315,7 @@ public class GuiOnlineChat
     updateAddFriendScreenButton();
     updateSettingsButton();
     updateStatusButton();
-    Timings.stop();
+    Timings.stop("LabyMod Chat update buttons");
   }
   
   private void updateStatusButton()
@@ -778,7 +778,15 @@ public class GuiOnlineChat
           {
             this.micLine.stop();
             this.micLine.close();
-            LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.ERROR, "Recording is too short!", EnumAlertType.CHAT);
+            if (ConfigManager.settings.chatAlertType)
+            {
+              if (ConfigManager.settings.alertsChat) {
+                LabyMod.getInstance().displayMessageInChat(ClientConnection.chatPrefix + de.labystudio.utils.Color.cl("c") + "Recording is too short!");
+              }
+            }
+            else {
+              LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.ERROR, "Recording is too short!", EnumAlertType.CHAT);
+            }
           }
           else
           {
@@ -1032,7 +1040,21 @@ public class GuiOnlineChat
         } else {
           LabyMod.getInstance().client.getClientConnection().sendPacket(new PacketPlayFriendRemove(this.showPlayerSettingsPlayer));
         }
-        LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.INFO, L._("", new Object[] { LabyMod.getInstance().selectedPlayer.getName() }), EnumAlertType.CHAT);
+        if (ConfigManager.settings.chatAlertType)
+        {
+          if (ConfigManager.settings.alertsChat) {
+            LabyMod.getInstance().displayMessageInChat(ClientConnection.chatPrefix + de.labystudio.utils.Color.cl("e") + L._("", new Object[] { LabyMod.getInstance().selectedPlayer.getName() }));
+          }
+        }
+        else {
+          LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.INFO, L._("", new Object[] { LabyMod.getInstance().selectedPlayer.getName() }), EnumAlertType.CHAT);
+        }
+      }
+      else if (ConfigManager.settings.chatAlertType)
+      {
+        if (ConfigManager.settings.alertsChat) {
+          LabyMod.getInstance().displayMessageInChat(ClientConnection.chatPrefix + de.labystudio.utils.Color.cl("c") + L._("gui_chat_message_offline", new Object[0]));
+        }
       }
       else
       {
@@ -1190,16 +1212,52 @@ public class GuiOnlineChat
       if ((mouseY > this.showPlayerSettingsY + 14) && (mouseY < this.showPlayerSettingsY + 29))
       {
         if (LabyMod.getInstance().selectedPlayer != null) {
-          if (LabyMod.getInstance().selectedPlayer.isRequest()) {
-            LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.ERROR, L._("gui_chat_message_nofriends", new Object[] { LabyMod.getInstance().selectedPlayer.getName() }), EnumAlertType.CHAT);
-          } else if (!LabyMod.getInstance().selectedPlayer.isOnline()) {
-            LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.ERROR, L._("gui_chat_message_isoffline", new Object[0]), EnumAlertType.CHAT);
-          } else if ((LabyMod.getInstance().selectedPlayer.getServerInfo().getServerIp() != null) && (!LabyMod.getInstance().selectedPlayer.getServerInfo().getServerIp().replace(" ", "").isEmpty()))
+          if (LabyMod.getInstance().selectedPlayer.isRequest())
           {
-            if (LabyMod.getInstance().selectedPlayer.getServerInfo().getServerIp().equalsIgnoreCase("Hidden")) {
-              LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.ERROR, L._("gui_chat_message_cantfollow", new Object[0]), EnumAlertType.CHAT);
-            } else {
+            if (ConfigManager.settings.chatAlertType)
+            {
+              if (ConfigManager.settings.alertsChat) {
+                LabyMod.getInstance().displayMessageInChat(ClientConnection.chatPrefix + de.labystudio.utils.Color.cl("c") + L._("gui_chat_message_nofriends", new Object[] { LabyMod.getInstance().selectedPlayer.getName() }));
+              }
+            }
+            else {
+              LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.ERROR, L._("gui_chat_message_nofriends", new Object[] { LabyMod.getInstance().selectedPlayer.getName() }), EnumAlertType.CHAT);
+            }
+          }
+          else if (!LabyMod.getInstance().selectedPlayer.isOnline())
+          {
+            if (ConfigManager.settings.chatAlertType)
+            {
+              if (ConfigManager.settings.alertsChat) {
+                LabyMod.getInstance().displayMessageInChat(ClientConnection.chatPrefix + de.labystudio.utils.Color.cl("c") + L._("gui_chat_message_isoffline", new Object[0]));
+              }
+            }
+            else {
+              LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.ERROR, L._("gui_chat_message_isoffline", new Object[0]), EnumAlertType.CHAT);
+            }
+          }
+          else if ((LabyMod.getInstance().selectedPlayer.getServerInfo().getServerIp() != null) && (!LabyMod.getInstance().selectedPlayer.getServerInfo().getServerIp().replace(" ", "").isEmpty()))
+          {
+            if (LabyMod.getInstance().selectedPlayer.getServerInfo().getServerIp().equalsIgnoreCase("Hidden"))
+            {
+              if (ConfigManager.settings.chatAlertType)
+              {
+                if (ConfigManager.settings.alertsChat) {
+                  LabyMod.getInstance().displayMessageInChat(ClientConnection.chatPrefix + de.labystudio.utils.Color.cl("c") + L._("gui_chat_message_cantfollow", new Object[0]));
+                }
+              }
+              else {
+                LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.ERROR, L._("gui_chat_message_cantfollow", new Object[0]), EnumAlertType.CHAT);
+              }
+            }
+            else {
               LabyMod.getInstance().connectToServer(LabyMod.getInstance().selectedPlayer.getServerInfo().getServerIp());
+            }
+          }
+          else if (ConfigManager.settings.chatAlertType)
+          {
+            if (ConfigManager.settings.alertsChat) {
+              LabyMod.getInstance().displayMessageInChat(de.labystudio.utils.Color.cl("c") + L._("gui_chat_message_notplaying", new Object[0]));
             }
           }
           else {

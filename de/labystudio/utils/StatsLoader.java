@@ -18,7 +18,7 @@ public class StatsLoader
   
   public static void loadstats()
   {
-    
+    Timings.start("Load Game stats config");
     if (!stats.isEmpty()) {
       return;
     }
@@ -34,7 +34,7 @@ public class StatsLoader
     if (stats == null) {
       stats = new HashMap();
     }
-    Timings.stop();
+    Timings.stop("Load Game stats config");
   }
   
   public static void create()
