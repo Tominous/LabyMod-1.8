@@ -52,9 +52,9 @@ public class ClickCounter
       try
       {
         double total = 0.0D;
-        for (Iterator i$ = clickList.values().iterator(); i$.hasNext();)
+        for (Iterator localIterator = clickList.values().iterator(); localIterator.hasNext();)
         {
-          int s = ((Integer)i$.next()).intValue();
+          int s = ((Integer)localIterator.next()).intValue();
           total += s;
         }
         if (total != 0.0D)

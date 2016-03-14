@@ -15,6 +15,9 @@ import de.labystudio.capes.CapeManager;
 import de.labystudio.capes.CapeMover;
 import de.labystudio.capes.CapeUploader;
 import de.labystudio.capes.MoveCallback;
+import de.labystudio.cosmetic.CosmeticManager;
+import de.labystudio.downloader.ModInfoDownloader;
+import de.labystudio.downloader.UserCapeDownloader;
 import de.labystudio.gui.extras.ModGuiTextField;
 import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
@@ -23,6 +26,7 @@ import de.labystudio.labymod.Source;
 import de.labystudio.utils.Color;
 import de.labystudio.utils.DrawUtils;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import org.lwjgl.input.Keyboard;
@@ -33,7 +37,8 @@ public class GuiCapeSettings
   extends axu
 {
   private axu lastScreen;
-  private long cooldown = 0L;
+  private static long cdPriority = 0L;
+  private static long cdRefresh = 0L;
   boolean hasCape = false;
   boolean moveCape = false;
   boolean accept = false;
@@ -44,6 +49,7 @@ public class GuiCapeSettings
   ModGuiTextField e;
   avs f;
   avs g;
+  avs h;
   
   public GuiCapeSettings(axu lastScreen)
   {
@@ -54,7 +60,7 @@ public class GuiCapeSettings
   
   public void checkCape()
   {
-    this.hasCape = CapeManager.hasLabyModCape(ave.A().L().e().getId());
+    this.hasCape = LabyMod.getInstance().getCapeManager().hasLabyModCape(ave.A().L().e().getId());
   }
   
   public void b()
@@ -63,10 +69,11 @@ public class GuiCapeSettings
     this.moveCape = false;
     this.n.clear();
     
-    this.n.add(this.a = new avs(1, this.l / 2 - 110, this.m / 2 - 28, 80, 20, ""));
-    this.n.add(this.b = new avs(2, this.l / 2 - 110, this.m / 2 + 11, 80, 20, ""));
-    this.n.add(this.c = new avs(3, this.l / 2 - 110, this.m / 2 + 35, 80, 20, ""));
-    this.n.add(this.d = new avs(4, this.l / 2 - 110, this.m / 2 + 59, 80, 20, ""));
+    this.n.add(this.a = new avs(1, this.l / 2 - 110, this.m / 2 - 28 - 20, 80, 20, ""));
+    this.n.add(this.b = new avs(2, this.l / 2 - 110, this.m / 2 + 11 - 20, 80, 20, ""));
+    this.n.add(this.c = new avs(3, this.l / 2 - 110, this.m / 2 + 35 - 20, 80, 20, ""));
+    this.n.add(this.d = new avs(4, this.l / 2 - 110, this.m / 2 + 59 - 20, 80, 20, ""));
+    this.n.add(this.h = new avs(7, this.l / 2 - 110, this.m / 2 + 82 - 20, 80, 20, ""));
     this.e = new ModGuiTextField(0, this.j.k, this.l / 2 - 100, this.m / 4 - 30, 200, 20);
     this.e.setBlacklistWord(" ");
     this.n.add(this.f = new avs(5, this.l / 2 - 100, this.m / 4 - 5, 200, 20, ""));
@@ -79,7 +86,7 @@ public class GuiCapeSettings
   public void refreshButtons()
   {
     if (ConfigManager.settings.capePriority.equals("of")) {
-      this.a.j = "Optifine";
+      this.a.j = "OptiFine";
     } else {
       this.a.j = "LabyMod";
     }
@@ -91,6 +98,7 @@ public class GuiCapeSettings
       this.f.j = "Move";
     }
     this.g.j = (Color.cl("6") + "Donate");
+    this.h.j = "Refresh";
   }
   
   public String getStatus(String name, wo part)
@@ -119,8 +127,8 @@ public class GuiCapeSettings
         } else {
           ConfigManager.settings.capePriority = "of";
         }
-        this.cooldown = System.currentTimeMillis();
-        CapeManager.refresh();
+        cdPriority = System.currentTimeMillis();
+        LabyMod.getInstance().getCapeManager().refresh();
         refreshButtons();
         ConfigManager.save();
       }
@@ -152,7 +160,7 @@ public class GuiCapeSettings
           {
             public void done()
             {
-              CapeManager.refresh();
+              LabyMod.getInstance().getCapeManager().refresh();
               GuiCapeSettings.this.checkCape();
               GuiCapeSettings.this.b();
             }
@@ -161,7 +169,9 @@ public class GuiCapeSettings
             {
               GuiCapeSettings.this.b();
             }
-          }).start();
+          })
+          
+            .start();
         }
       }
       else if (button.k == 6)
@@ -172,6 +182,15 @@ public class GuiCapeSettings
       {
         this.j.t.b();
         this.j.a(this.lastScreen);
+      }
+      else if (button.k == 7)
+      {
+        cdRefresh = System.currentTimeMillis();
+        LabyMod.getInstance().getCapeManager().refresh();
+        LabyMod.getInstance().getCosmeticManager().getCosmetics().clear();
+        new UserCapeDownloader();
+        new ModInfoDownloader();
+        refreshButtons();
       }
     }
   }
@@ -207,12 +226,20 @@ public class GuiCapeSettings
     a(this.q, "Cape Settings", this.l / 2, 20, 16777215);
     
     boolean z = this.a.l;
-    this.a.l = (this.cooldown + 2000L < System.currentTimeMillis());
+    this.a.l = (cdPriority + 2000L < System.currentTimeMillis());
     if ((this.a.l != z) && (this.a.l)) {
       refreshButtons();
     }
     if (!this.a.l) {
-      this.a.j = ("Refresh.. " + getLoading());
+      this.a.j = ("Switch.. " + getLoading());
+    }
+    boolean t = this.h.l;
+    this.h.l = (cdRefresh + 10000L < System.currentTimeMillis());
+    if ((this.h.l != t) && (this.h.l)) {
+      refreshButtons();
+    }
+    if (!this.h.l) {
+      this.h.j = ("Refresh.. " + getLoading());
     }
     this.c.l = ((!CapeUploader.openUpload) && (!CapeUploader.upload));
     if (CapeUploader.upload) {
@@ -287,8 +314,8 @@ public class GuiCapeSettings
     this.d.m = info;
     if (info)
     {
-      LabyMod.getInstance().draw.drawString("Priority:", this.l / 2 - 110, this.m / 2 - 40);
-      LabyMod.getInstance().draw.drawString("My cape:", this.l / 2 - 110, this.m / 2 + 0);
+      LabyMod.getInstance().draw.drawString("Priority:", this.l / 2 - 110, this.m / 2 - 40 - 20);
+      LabyMod.getInstance().draw.drawString("My cape:", this.l / 2 - 110, this.m / 2 + 0 - 20);
       if (this.j.h != null) {
         drawEntityOnScreen(this.l / 2 + 40, this.m / 2 + 80, 30, (this.l / 2 + 35 - mouseX) * -1.0F, this.m / 2 - 20 - mouseY, this.j.h);
       }

@@ -18,7 +18,7 @@ import io.netty.channel.SimpleChannelInboundHandler;
 class bdg$2
   extends ChannelInitializer<Channel>
 {
-  bdg$2(bdg parambdg, bdd parambdd, bde parambde) {}
+  bdg$2(bdg this$0, bdd parambdd, bde parambde) {}
   
   protected void initChannel(Channel p_initChannel_1_)
     throws Exception
@@ -27,7 +27,7 @@ class bdg$2
     {
       p_initChannel_1_.config().setOption(ChannelOption.TCP_NODELAY, Boolean.valueOf(true));
     }
-    catch (ChannelException var3) {}
+    catch (ChannelException localChannelException) {}
     p_initChannel_1_.pipeline().addLast(new ChannelHandler[] { new SimpleChannelInboundHandler()
     {
       public void channelActive(ChannelHandlerContext p_channelActive_1_)

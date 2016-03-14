@@ -30,7 +30,8 @@ public class PacketPrepender
           int varInt = buf.readVarIntFromBuffer();
           if (buffer.readableBytes() < varInt)
           {
-            buffer.resetReaderIndex(); return;
+            buffer.resetReaderIndex();
+            return;
           }
           objects.add(buffer.readBytes(varInt));
         }

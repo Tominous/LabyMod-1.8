@@ -95,7 +95,7 @@ public class ng
       KeyFactory keyfactory = KeyFactory.getInstance("RSA");
       return keyfactory.generatePublic(encodedkeyspec);
     }
-    catch (NoSuchAlgorithmException var3) {}catch (InvalidKeySpecException var4) {}
+    catch (NoSuchAlgorithmException localNoSuchAlgorithmException) {}catch (InvalidKeySpecException localInvalidKeySpecException) {}
     a.error("Public key reconstitute failed!");
     return null;
   }

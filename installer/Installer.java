@@ -61,7 +61,7 @@ public class Installer
     }
     Utils.dbg("LabyMod Version: " + jarInstaller.getName());
     
-    String labyModProfileName = "LabyMod";
+    String labyModProfileName = "LabyMod-" + Main.mcVersion;
     File dirVersionLabyMod = new File(dirVersions, labyModProfileName);
     try
     {

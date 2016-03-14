@@ -38,12 +38,12 @@ public class GuiAccountManager
     this.username = new ModGuiTextField(-1, this.draw.fontRenderer, this.l / 2 - 100, this.m / 2 - 50, 200, 20);
     this.username.setBlacklistWord(" ");
     this.username.a(AccountManager.accountManagerUsername);
-    this.username.f(32);
+    this.username.f(64);
     this.password = new ModGuiTextField(-1, this.draw.fontRenderer, this.l / 2 - 100, this.m / 2, 200, 20);
     this.password.setBlacklistWord(" ");
     this.password.a(AccountManager.accountManagerPassword);
     this.password.setPasswordBox(true);
-    this.password.f(32);
+    this.password.f(64);
     
     this.done = new avs(0, this.l / 2 - 100, this.m / 2 + 28, "Login");
     this.n.add(this.done);

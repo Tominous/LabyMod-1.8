@@ -63,7 +63,9 @@ public class avs
     double k = 0.7D;
     GL11.glScaled(k, k, k);
     for (int i = 0; i < 3; i++) {
-      DrawUtils.a((int)((LabyMod.getInstance().draw.getWidth() / 2 - 140) / k), (int)((LabyMod.getInstance().draw.getHeight() - 30 - 10 * getRange(this.info, 300)) / k), (int)((LabyMod.getInstance().draw.getWidth() / 2 + 140) / k), (int)((LabyMod.getInstance().draw.getHeight() - 15) / k), l);
+      DrawUtils.a((int)((LabyMod.getInstance().draw.getWidth() / 2 - 140) / k), 
+        (int)((LabyMod.getInstance().draw.getHeight() - 30 - 10 * getRange(this.info, 300)) / k), 
+        (int)((LabyMod.getInstance().draw.getWidth() / 2 + 140) / k), (int)((LabyMod.getInstance().draw.getHeight() - 15) / k), l);
     }
     drawContent(this.info, (int)(LabyMod.getInstance().draw.getWidth() / 2 / k), (int)((LabyMod.getInstance().draw.getHeight() - 25 - 10 * getRange(this.info, 300)) / k), 300);
     GL11.glPopMatrix();

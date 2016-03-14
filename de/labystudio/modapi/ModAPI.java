@@ -22,9 +22,9 @@ public class ModAPI
   {
     try
     {
-      for (Iterator i$ = event.getListenerMethods().entrySet().iterator(); i$.hasNext();)
+      for (Iterator localIterator1 = event.getListenerMethods().entrySet().iterator(); localIterator1.hasNext();)
       {
-        callListeners = (Map.Entry)i$.next();
+        callListeners = (Map.Entry)localIterator1.next();
         for (Method method : (List)callListeners.getValue()) {
           try
           {

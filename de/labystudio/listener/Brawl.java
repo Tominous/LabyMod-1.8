@@ -31,7 +31,12 @@ public class Brawl
   public static void updateHG()
   {
     if ((!LabyMod.getInstance().ip.isEmpty()) && (
-      (LabyMod.getInstance().ip.contains("mc-hg.com")) || (LabyMod.getInstance().ip.contains("nosoup")) || (LabyMod.getInstance().ip.contains("likekits.eu")) || (LabyMod.getInstance().ip.contains("minehg.net")) || (LabyMod.getInstance().ip.contains("rumblemc.com")) || (LabyMod.getInstance().ip.contains("rumblehg.com")))) {
+      (LabyMod.getInstance().ip.contains("mc-hg.com")) || 
+      (LabyMod.getInstance().ip.contains("nosoup")) || 
+      (LabyMod.getInstance().ip.contains("likekits.eu")) || 
+      (LabyMod.getInstance().ip.contains("minehg.net")) || 
+      (LabyMod.getInstance().ip.contains("rumblemc.com")) || 
+      (LabyMod.getInstance().ip.contains("rumblehg.com")))) {
       isHG = true;
     }
     isHG = false;

@@ -15,6 +15,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 import org.apache.logging.log4j.LogManager;
@@ -121,14 +123,28 @@ public class ChatHandler
     
     List<LabyModPlayer> f = new ArrayList();
     f.addAll(LabyMod.getInstance().client.friends);
-    for (LabyModPlayer p : f) {
-      if (p.isOnline()) {
-        list.add(p);
-      }
+    if (ConfigManager.settings.showSettingsFriend == 3)
+    {
+      list.addAll(f);
+      Collections.sort(list, new Comparator()
+      {
+        public int compare(LabyModPlayer a, LabyModPlayer b)
+        {
+          return (int)(b.getLastMessage() - a.getLastMessage());
+        }
+      });
     }
-    for (LabyModPlayer p : f) {
-      if (!p.isOnline()) {
-        list.add(p);
+    else
+    {
+      for (LabyModPlayer p : f) {
+        if (p.isOnline()) {
+          list.add(p);
+        }
+      }
+      for (LabyModPlayer p : f) {
+        if (!p.isOnline()) {
+          list.add(p);
+        }
       }
     }
     return list;
@@ -312,8 +328,10 @@ public class ChatHandler
   {
     int newMessages = 0;
     for (LabyModPlayer p : LabyMod.getInstance().client.getFriends()) {
-      if (p.getName().equals(sender)) {
+      if (p.getName().equals(sender))
+      {
         p.messages += 1;
+        p.setLastMessage(System.currentTimeMillis());
       }
     }
   }

@@ -1,9 +1,9 @@
 class axn$1
   extends avs
 {
-  axn$1(axn paramaxn, int x0, int x1, int x2, int x3, int x4, String x5)
+  axn$1(axn this$0, int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
   {
-    super(x0, x1, x2, x3, x4, x5);
+    super(buttonId, x, y, widthIn, heightIn, buttonText);
   }
   
   public void a(bpz soundHandlerIn)

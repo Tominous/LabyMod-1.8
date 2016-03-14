@@ -3,7 +3,7 @@ import java.net.UnknownHostException;
 class azk$1
   implements Runnable
 {
-  azk$1(azk paramazk) {}
+  azk$1(azk this$0) {}
   
   public void run()
   {

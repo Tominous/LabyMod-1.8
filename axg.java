@@ -40,7 +40,11 @@ public class axg
       {
         boolean setNull = false;
         bdd serveraddress = bdd.a(this.g.b());
-        if ((this.pinger != null) && (this.pinger.getCurrentData() != null) && (this.pinger.getCurrentData().maxPlayers == 0) && (this.pinger.getCurrentData().players == 0) && (this.pinger.getCurrentData().serverName.equals(serveraddress.a()))) {
+        if ((this.pinger != null) && 
+          (this.pinger.getCurrentData() != null) && 
+          (this.pinger.getCurrentData().maxPlayers == 0) && 
+          (this.pinger.getCurrentData().players == 0) && 
+          (this.pinger.getCurrentData().serverName.equals(serveraddress.a()))) {
           setNull = true;
         }
         ServerPinger server = new ServerPinger(serveraddress.a(), serveraddress.b());

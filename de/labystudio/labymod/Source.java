@@ -3,8 +3,8 @@ package de.labystudio.labymod;
 public class Source
 {
   public static String mod_Name = "LabyMod";
-  public static String mod_VersionName = "2.7.60";
-  public static int mod_VersionId = 13;
+  public static String mod_VersionName = "2.7.71";
+  public static int mod_VersionId = 14;
   public static String mod_VersionType = "";
   public static String mod_Author = "LabyStudio";
   public static String mod_SecondAuthor = "Zockermaus";
@@ -15,15 +15,17 @@ public class Source
   public static String url_stats = "stats.php";
   public static String url_minotar = "https://minotar.net/skin";
   public static String url_serverIP = "mod.labystudio.de";
-  public static String url_Update = "http://LabyMod.net";
-  public static String url_donate = "http://LabyMod.net/donate";
+  public static String url_Update = "https://LabyMod.net";
+  public static String url_donate = "https://LabyMod.net/donate";
   public static int url_serverPort = 30336;
   public static int debug_serverPort = 30337;
   public static String ts_labymod = "ts3server://ts.labymod.net";
   public static String url_cape_optifine = "http://s.optifine.net/capes/";
   public static String url_cape_labymod = "http://labystudio.de/capes/";
-  public static String url_cape_donators = "http://www.labymod.net/php/requirements.php";
-  public static String url_cape_donators_second = "http://www.labystudio.de/php/requirements.php";
+  public static String url_cape_donators = "https://www.labymod.net/php/userCapes.php";
+  public static String url_cape_donators_second = "http://www.labystudio.de/php/userCapes.php";
+  public static String url_mod_info = "https://www.labymod.net/php/modInfo.php?ver=1.8.8";
+  public static String url_mod_info_second = "http://www.labystudio.de/php/modInfo.php";
   public static String url_changeCape = "http://www.labystudio.de/php/changeCape.php";
   public static String url_moveCape = "http://www.labystudio.de/php/moveCape.php";
   public static String file_friendTags = "LabyMod/friend_tags.json";

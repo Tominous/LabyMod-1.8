@@ -1,5 +1,6 @@
 package de.labystudio.modapi.events;
 
+import de.labystudio.labymod.LabyMod;
 import de.labystudio.modapi.Event;
 import de.labystudio.modapi.Listener;
 import java.lang.reflect.Method;
@@ -15,5 +16,10 @@ public class RenderWorldEvent
   public Map<Listener, List<Method>> getListenerMethods()
   {
     return listenerMethods;
+  }
+  
+  public float getPartialTicks()
+  {
+    return LabyMod.getInstance().getPartialTicks();
   }
 }

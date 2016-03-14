@@ -4,7 +4,7 @@ import java.net.IDN;
 class axi$1
   implements Predicate<String>
 {
-  axi$1(axi paramaxi) {}
+  axi$1(axi this$0) {}
   
   public boolean a(String p_apply_1_)
   {

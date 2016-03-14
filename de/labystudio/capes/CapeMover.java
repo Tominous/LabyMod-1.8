@@ -29,7 +29,7 @@ public class CapeMover
     if (output.equalsIgnoreCase("OK"))
     {
       LabyMod.getInstance().achievementGui.displayBroadcast("CapeManager", Color.cl("a") + "Cape moved to " + this.move + "!", EnumAlertType.LABYMOD);
-      CapeManager.refresh();
+      LabyMod.getInstance().getCapeManager().refresh();
       this.callback.done();
     }
     else

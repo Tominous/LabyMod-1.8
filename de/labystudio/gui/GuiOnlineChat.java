@@ -39,7 +39,9 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.TimeZone;
 import javax.sound.sampled.AudioFileFormat.Type;
@@ -56,8 +58,6 @@ import org.lwjgl.opengl.GL11;
 public class GuiOnlineChat
   extends GuiMenuScreen
 {
-  DrawUtils draw;
-  
   GuiOnlineChat()
   {
     super(null);
@@ -66,6 +66,8 @@ public class GuiOnlineChat
     this.draw = LabyMod.getInstance().draw;
   }
   
+  DateFormat df = new SimpleDateFormat("HH:mm");
+  DrawUtils draw;
   int copyLine = 0;
   long micCooldown = 0L;
   long switchScreen = 0L;
@@ -251,11 +253,6 @@ public class GuiOnlineChat
     bfl.k();
     
     drawOpenScreenshots();
-    if (LabyMod.getInstance().imageViewer)
-    {
-      this.switchScreen = System.currentTimeMillis();
-      return;
-    }
     if ((LabyMod.getInstance().selectedPlayer != null) && 
       (!ChatHandler.getMyFriends().contains(LabyMod.getInstance().selectedPlayer)))
     {
@@ -430,6 +427,9 @@ public class GuiOnlineChat
     if (ConfigManager.settings.showSettingsFriend == 2) {
       this.showSettingsButton.j = (de.labystudio.utils.Color.cl("e") + "Rq");
     }
+    if (ConfigManager.settings.showSettingsFriend == 3) {
+      this.showSettingsButton.j = (de.labystudio.utils.Color.cl("6") + "<-");
+    }
     this.showSettingsButton.l = (!this.showSettingsBox);
   }
   
@@ -549,13 +549,12 @@ public class GuiOnlineChat
     }
     this.draw.drawString(status, (int)((this.l / 2 - 25) / k), (int)(this.m / 2 / k - 34.0D));
     GL11.glPopMatrix();
-    
-    Date date = new Date();
-    DateFormat df = new SimpleDateFormat("HH:mm");
-    if (!LabyMod.getInstance().selectedPlayer.getTimeZone().isEmpty()) {
-      df.setTimeZone(TimeZone.getTimeZone(LabyMod.getInstance().selectedPlayer.getTimeZone()));
+    if ((LabyMod.getInstance().selectedPlayer.isOnline()) && (!LabyMod.getInstance().selectedPlayer.getTimeZone().isEmpty()))
+    {
+      this.df.setCalendar(Calendar.getInstance());
+      this.df.setTimeZone(TimeZone.getTimeZone(LabyMod.getInstance().selectedPlayer.getTimeZone()));
+      this.draw.drawString(this.df.format(this.df.getCalendar().getTime()) + " " + this.df.getTimeZone().getDisplayName(), this.l / 2 - 40, this.m / 2 - 25);
     }
-    this.draw.drawString(df.format(date) + " " + df.getTimeZone().getDisplayName(), this.l / 2 - 40, this.m / 2 - 25);
     if ((LabyMod.getInstance().selectedPlayer.isOnline()) && (LabyMod.getInstance().selectedPlayer.getContactsAmount() != 0)) {
       this.draw.drawString(L._("gui_chat_contacts", new Object[0]) + ": " + de.labystudio.utils.Color.cl("7") + LabyMod.getInstance().selectedPlayer.getContactsAmount(), this.l / 2 - 40, this.m / 2 - 13);
     }
@@ -627,6 +626,7 @@ public class GuiOnlineChat
       chat.addMessage(new TitleChatComponent(LabyMod.getInstance().getPlayerName(), System.currentTimeMillis(), LabyMod.getInstance().client.getClientConnection().getThisDay()));
     }
     chat.addMessage(new MessageChatComponent(LabyMod.getInstance().getPlayerName(), System.currentTimeMillis(), message));
+    LabyMod.getInstance().selectedPlayer.setLastMessage(System.currentTimeMillis());
     updateChatlog();
   }
   
@@ -659,6 +659,39 @@ public class GuiOnlineChat
         line.draw(x, currentY);
         currentY -= line.getYSize();
         this.chatLastY = (currentY - 20);
+      }
+    }
+    DrawUtils.a(x - 5, minY, this.draw.getWidth() - 5, minY + 31, de.labystudio.utils.Color.toRGB(0, 0, 0, 240));
+    this.draw.overlayBackground(x - 4, minY + 1, this.draw.getWidth() - x - 2, minY + 30);
+    
+    String status = de.labystudio.utils.Color.cl("4") + "OFFLINE";
+    if (LabyMod.getInstance().selectedPlayer.getStatus() == LabyModPlayer.OnlineStatus.ONLINE) {
+      status = de.labystudio.utils.Color.cl("a") + "ONLINE";
+    }
+    if (LabyMod.getInstance().selectedPlayer.getStatus() == LabyModPlayer.OnlineStatus.BUSY) {
+      status = de.labystudio.utils.Color.cl("5") + "BUSY";
+    }
+    if (LabyMod.getInstance().selectedPlayer.getStatus() == LabyModPlayer.OnlineStatus.AWAY) {
+      status = de.labystudio.utils.Color.cl("b") + "AWAY";
+    }
+    LabyMod.getInstance().textureManager.drawPlayerHead(LabyMod.getInstance().selectedPlayer.getName(), x, minY + 8, 0.7D);
+    LabyMod.getInstance().draw.drawString(LabyMod.getInstance().selectedPlayer.getName(), x + 26, minY + 6);
+    LabyMod.getInstance().draw.drawString(de.labystudio.utils.Color.cl("7") + LabyMod.getInstance().selectedPlayer.getMotd(), x + 26, minY + 17);
+    LabyMod.getInstance().draw.drawRightString(status, this.draw.getWidth() - 8, minY + 3);
+    if ((LabyMod.getInstance().selectedPlayer.isOnline()) && (!LabyMod.getInstance().selectedPlayer.getTimeZone().isEmpty()))
+    {
+      this.df.setCalendar(Calendar.getInstance());
+      this.df.setTimeZone(TimeZone.getTimeZone(LabyMod.getInstance().selectedPlayer.getTimeZone()));
+      LabyMod.getInstance().draw.drawRightString(this.df.format(this.df.getCalendar().getTime()) + " Uhr", this.draw.getWidth() - 8, minY + 15);
+    }
+    ServerInfo serverInfo = LabyMod.getInstance().selectedPlayer.getServerInfo();
+    if (serverInfo != null) {
+      if ((serverInfo.getServerIp() == null) || (serverInfo.getServerIp().replace(" ", "").isEmpty())) {
+        LabyMod.getInstance().draw.drawRightString(de.labystudio.utils.Color.cl("c") + "Not playing " + de.labystudio.utils.Color.cl("7") + "| ", this.draw.getWidth() - 10 - this.draw.getStringWidth(status), minY + 3);
+      } else if (serverInfo.getServerIp().equals("Hidden")) {
+        LabyMod.getInstance().draw.drawRightString(de.labystudio.utils.Color.cl("4") + "Hidden serverip " + de.labystudio.utils.Color.cl("7") + "| ", this.draw.getWidth() - 10 - this.draw.getStringWidth(status), minY + 3);
+      } else {
+        LabyMod.getInstance().draw.drawRightString(de.labystudio.utils.Color.cl("e") + serverInfo.getServerIp() + " " + de.labystudio.utils.Color.cl("7") + "| ", this.draw.getWidth() - 10 - this.draw.getStringWidth(status), minY + 3);
       }
     }
   }
@@ -719,7 +752,7 @@ public class GuiOnlineChat
       this.currentAudioFile = createNewAudioFile();
       new rec().start();
     }
-    catch (Exception error) {}
+    catch (Exception localException) {}
   }
   
   private void drawInfo(String title, String message)
@@ -802,7 +835,7 @@ public class GuiOnlineChat
         }
       }
     }
-    catch (Exception error) {}
+    catch (Exception localException) {}
   }
   
   int micLevel = 0;
@@ -875,7 +908,7 @@ public class GuiOnlineChat
       {
         AudioSystem.write(ais, fileType, GuiOnlineChat.this.currentAudioFile);
       }
-      catch (Exception e) {}
+      catch (Exception localException) {}
     }
   }
   
@@ -1173,7 +1206,7 @@ public class GuiOnlineChat
   }
   
   int SBSizeX = 70;
-  int SBSizeY = 42;
+  int SBSizeY = 54;
   LabyModPlayer showPlayerSettingsPlayer;
   
   private void drawSettingsBox()
@@ -1185,6 +1218,7 @@ public class GuiOnlineChat
     this.draw.drawString(de.labystudio.utils.Color.cl("b") + isSettings(0) + L._("gui_chat_filter_all", new Object[0]), this.showSettingsX + 5, this.showSettingsY + 5);
     this.draw.drawString(de.labystudio.utils.Color.cl("a") + isSettings(1) + L._("gui_chat_filter_online", new Object[0]), this.showSettingsX + 5, this.showSettingsY + 17);
     this.draw.drawString(de.labystudio.utils.Color.cl("e") + isSettings(2) + L._("gui_chat_filter_requests", new Object[0]), this.showSettingsX + 5, this.showSettingsY + 29);
+    this.draw.drawString(de.labystudio.utils.Color.cl("6") + isSettings(3) + L._("gui_chat_filter_recent", new Object[0]), this.showSettingsX + 5, this.showSettingsY + 41);
   }
   
   private String isSettings(int i)
@@ -1331,8 +1365,11 @@ public class GuiOnlineChat
       if ((mouseY > this.showSettingsY + 17) && (mouseY < this.showSettingsY + 29)) {
         ConfigManager.settings.showSettingsFriend = 1;
       }
-      if ((mouseY > this.showSettingsY + 29) && (mouseY < this.showSettingsY + this.SBSizeY)) {
+      if ((mouseY > this.showSettingsY + 29) && (mouseY < this.showSettingsY + 41)) {
         ConfigManager.settings.showSettingsFriend = 2;
+      }
+      if ((mouseY > this.showSettingsY + 41) && (mouseY < this.showSettingsY + this.SBSizeY)) {
+        ConfigManager.settings.showSettingsFriend = 3;
       }
       ConfigManager.save();
       b();
@@ -1533,14 +1570,15 @@ public class GuiOnlineChat
       return;
     }
     List<MessageChatComponent> lines = getCurrentChatlog();
+    Iterator localIterator;
     if (lines != null) {
-      for (MessageChatComponent line : lines) {
+      for (localIterator = lines.iterator(); localIterator.hasNext();)
+      {
+        line = (MessageChatComponent)localIterator.next();
         line.click(mouseX, mouseY, mouseButton);
       }
     }
-    if (LabyMod.getInstance().imageViewer) {
-      return;
-    }
+    MessageChatComponent line;
     if (this.screenSelector)
     {
       screenClick(mouseX, mouseY, mouseButton);
@@ -1865,7 +1903,7 @@ public class GuiOnlineChat
   
   private String trlS(int i)
   {
-    if (i == 0) {
+    if ((i == 0) || (i == 3)) {
       return L._("gui_chat_nofriends_all", new Object[0]);
     }
     if (i == 1) {
@@ -1919,9 +1957,6 @@ public class GuiOnlineChat
       for (MessageChatComponent line : lines) {
         line.handleMouseInput();
       }
-    }
-    if (LabyMod.getInstance().imageViewer) {
-      return;
     }
     int var1 = Mouse.getEventDWheel();
     if (var1 != 0)

@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -407,9 +408,13 @@ public abstract class pk
       }
       List<aug> list1 = this.o.a(this, aR().a(x, y, z));
       aug axisalignedbb = aR();
-      for (aug axisalignedbb1 : list1) {
+      for (Iterator localIterator1 = list1.iterator(); localIterator1.hasNext();)
+      {
+        axisalignedbb1 = (aug)localIterator1.next();
+        
         y = axisalignedbb1.b(aR(), y);
       }
+      aug axisalignedbb1;
       a(aR().c(0.0D, y, 0.0D));
       boolean flag1 = (this.C) || ((d4 != y) && (d4 < 0.0D));
       for (aug axisalignedbb2 : list1) {

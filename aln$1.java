@@ -1,7 +1,7 @@
 class aln$1
   implements m
 {
-  aln$1(aln paramaln) {}
+  aln$1(aln this$0) {}
   
   public String e_()
   {

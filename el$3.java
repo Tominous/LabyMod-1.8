@@ -1,8 +1,8 @@
  enum el$3
 {
-  el$3(int x0)
+  el$3(int protocolId)
   {
-    super(paramString, paramInt, x0, null);
+    super(paramString, paramInt, protocolId, null);
     
     a(fg.a, jv.class);
     a(fg.b, jr.class);

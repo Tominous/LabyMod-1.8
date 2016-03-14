@@ -149,7 +149,7 @@ public class GuiMenuScreen
           GL11.glPopMatrix();
         }
       }
-      catch (Exception error) {}
+      catch (Exception localException) {}
     }
   }
 }

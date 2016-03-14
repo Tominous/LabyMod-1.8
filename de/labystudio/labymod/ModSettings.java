@@ -55,7 +55,7 @@ public class ModSettings
   public Boolean afkTimer = Boolean.valueOf(true);
   public boolean showOnlineFriends = false;
   public boolean oldTablist = false;
-  public Boolean guiPositionRight = Boolean.valueOf(true);
+  public Boolean guiPositionRight = Boolean.valueOf(false);
   public boolean onlineFriendsPositionOnTop = true;
   public boolean confirmDisconnect = false;
   public boolean hideMod = false;
@@ -108,4 +108,12 @@ public class ModSettings
   public boolean chatPositionRight = true;
   public boolean leftBow = false;
   public boolean showArrow = false;
+  public boolean mojangStatus = true;
+  public boolean mojangStatusChat = false;
+  public boolean spotfiyTrack = false;
+  public boolean showBiome = false;
+  public boolean cosmetics = true;
+  public Boolean gameHiveMC = Boolean.valueOf(true);
+  public boolean hiveAutoScramble = false;
+  public boolean oldInventory = true;
 }

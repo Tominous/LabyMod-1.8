@@ -16,6 +16,7 @@ public class LabyModPlayer
   public int messages = 0;
   private boolean notify = true;
   private boolean typing = false;
+  private long lastMessage;
   
   public LabyModPlayer(String name, UUID id, boolean notify)
   {
@@ -194,5 +195,15 @@ public class LabyModPlayer
   public boolean isTyping()
   {
     return this.typing;
+  }
+  
+  public void setLastMessage(long lastMessage)
+  {
+    this.lastMessage = lastMessage;
+  }
+  
+  public long getLastMessage()
+  {
+    return this.lastMessage;
   }
 }

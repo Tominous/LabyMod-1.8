@@ -5,6 +5,7 @@ import de.labystudio.gui.GuiMenuScreen;
 import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
+import de.labystudio.mojangstatus.RenderMojangService;
 import de.labystudio.utils.Color;
 import java.io.IOException;
 import java.util.List;
@@ -360,6 +361,7 @@ public class azh
     if (this.y != null) {
       a(Lists.newArrayList(Splitter.on("\n").split(this.y)), mouseX, mouseY);
     }
+    RenderMojangService.renderOnMultiplayerGui();
   }
   
   public void f()

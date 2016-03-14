@@ -29,7 +29,7 @@ public class StatsLoader
     {
       json = IOUtils.toString(new FileInputStream(Source.file_stats));
     }
-    catch (FileNotFoundException e) {}catch (IOException e) {}
+    catch (FileNotFoundException localFileNotFoundException) {}catch (IOException localIOException) {}
     stats = (HashMap)Utils.ConvertJsonToObject.getFromJSON(json, HashMap.class);
     if (stats == null) {
       stats = new HashMap();
@@ -47,7 +47,7 @@ public class StatsLoader
         }
         new File(Source.file_stats).createNewFile();
       }
-      catch (IOException e) {}
+      catch (IOException localIOException) {}
     }
   }
   
@@ -62,7 +62,7 @@ public class StatsLoader
       w.flush();
       w.close();
     }
-    catch (FileNotFoundException e) {}
+    catch (FileNotFoundException localFileNotFoundException) {}
   }
   
   public static boolean isHighScore(int i, ArrayList<String> list)
@@ -80,7 +80,7 @@ public class StatsLoader
           return false;
         }
       }
-      catch (Exception error) {}
+      catch (Exception localException) {}
     }
     return true;
   }

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class Timings
 {
@@ -59,37 +60,41 @@ public class Timings
     if (!isTiming()) {
       return;
     }
-    if (lastUpdate + 1000L < System.currentTimeMillis())
-    {
-      lastUpdate = System.currentTimeMillis();
-      ArrayList<String> rem = new ArrayList();
-      for (String k : result.keySet())
+    if (lastUpdate + 1000L < System.currentTimeMillis()) {
+      try
       {
-        Debug d = (Debug)result.get(k);
-        if (d.created + 1000L < System.currentTimeMillis()) {
-          rem.add(k);
-        }
-      }
-      for (String k : rem) {
-        result.remove(k);
-      }
-      cache = new ArrayList(result.values());
-      Collections.sort(cache, new Comparator()
-      {
-        public int compare(Timings.Debug o1, Timings.Debug o2)
+        lastUpdate = System.currentTimeMillis();
+        ArrayList<String> rem = new ArrayList();
+        for (String k : result.keySet())
         {
-          return o2.time - o1.time;
+          Debug d = (Debug)result.get(k);
+          if (d.created + 1000L < System.currentTimeMillis()) {
+            rem.add(k);
+          }
         }
-      });
-      lost.clear();
-      lost.putAll(open);
+        for (String k : rem) {
+          result.remove(k);
+        }
+        cache = new ArrayList(result.values());
+        Collections.sort(cache, new Comparator()
+        {
+          public int compare(Timings.Debug o1, Timings.Debug o2)
+          {
+            return o2.time - o1.time;
+          }
+        });
+        lost.clear();
+        lost.putAll(open);
+      }
+      catch (Exception localException) {}
     }
     DrawUtils.a(LabyMod.getInstance().draw.getWidth() - 190, 5, LabyMod.getInstance().draw.getWidth() - 151, 10 + cache.size() * 5 + 2 + lost.size() * 5 + 10, Color.toRGB(20, 20, 20, 100));
     
     DrawUtils.a(LabyMod.getInstance().draw.getWidth() - 150, 5, LabyMod.getInstance().draw.getWidth() - 5, 10 + cache.size() * 5, Color.toRGB(20, 20, 20, 100));
     int i = 0;
-    for (Debug debug : cache)
+    for (??? = cache.iterator(); ???.hasNext();)
     {
+      debug = (Debug)???.next();
       String color = "a";
       int ms = debug.time;
       if (ms > 2) {
@@ -108,6 +113,7 @@ public class Timings
       LabyMod.getInstance().draw.drawString(out, LabyMod.getInstance().draw.getWidth() - 148, 7 + i, 0.5D);
       i += 5;
     }
+    Debug debug;
     int missing = 0;
     DrawUtils.a(LabyMod.getInstance().draw.getWidth() - 150, 10 + cache.size() * 5 + 2, LabyMod.getInstance().draw.getWidth() - 5, 10 + cache.size() * 5 + 2 + lost.size() * 5 + 10, Color.toRGB(20, 20, 20, 100));
     for (String l : lost.keySet())

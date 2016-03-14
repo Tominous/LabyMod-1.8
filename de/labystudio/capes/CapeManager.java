@@ -2,6 +2,7 @@ package de.labystudio.capes;
 
 import ave;
 import bdb;
+import bdc;
 import bet;
 import bfm;
 import bma;
@@ -16,12 +17,9 @@ import de.labystudio.utils.Debug;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
@@ -30,120 +28,51 @@ import wn;
 
 public class CapeManager
 {
-  private static HashMap<UUID, jy> locationCape = new HashMap();
-  private static HashMap<UUID, jy> customCapes = new HashMap();
-  private static ArrayList<UUID> ignore = new ArrayList();
-  private static HashMap<UUID, Integer> donators;
-  public static boolean checking = false;
+  private HashMap<UUID, jy> locationCape = new HashMap();
+  private HashMap<UUID, Cape> customCapes = new HashMap();
+  private ArrayList<UUID> ignore = new ArrayList();
+  private ArrayList<jy> delete = new ArrayList();
+  private HashMap<UUID, Integer> donators;
+  private boolean checking = false;
   
-  public static void refresh()
+  public void setDonators(HashMap<UUID, Integer> donators)
   {
-    customCapes.clear();
-    ignore.clear();
-    if ((donators == null) && (!checking))
-    {
-      Thread checkThread = new Thread()
-      {
-        public void run()
-        {
-          CapeManager.checking = true;
-          CapeManager.access$002(CapeManager.downloadUserCapeInformation(Source.url_cape_donators));
-          if ((CapeManager.donators == null) || (CapeManager.donators.isEmpty()))
-          {
-            System.out.println("Can't download the requirements file. Trying the second file..");
-            CapeManager.access$002(CapeManager.downloadUserCapeInformation(Source.url_cape_donators_second));
-          }
-          CapeManager.checking = false;
-        }
-      };
-      checkThread.setPriority(1);
-      checkThread.start();
-    }
+    this.donators = donators;
+  }
+  
+  public HashMap<UUID, Integer> getDonators()
+  {
+    return this.donators;
+  }
+  
+  public void refresh()
+  {
+    this.customCapes.clear();
+    this.ignore.clear();
     clearTextures();
   }
   
-  public static HashMap<UUID, jy> getLocationCape()
+  public HashMap<UUID, jy> getLocationCape()
   {
-    return locationCape;
+    return this.locationCape;
   }
   
-  public static HashMap<UUID, Integer> downloadUserCapeInformation(String page)
+  private void clearTextures()
   {
-    try
-    {
-      HashMap<UUID, Integer> list = new HashMap();
-      HttpURLConnection connection = (HttpURLConnection)new URL(page).openConnection();
-      connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
-      connection.setRequestProperty("Cookie", "foo=bar");
-      connection.connect();
-      BufferedReader r = new BufferedReader(new InputStreamReader(connection.getInputStream(), Charset.forName("UTF-8")));
-      
-      String s = "";
-      String line;
-      while ((line = r.readLine()) != null) {
-        s = s + line;
-      }
-      if (s.contains("#"))
-      {
-        String[] split = s.split("#");
-        LabyMod.getInstance().autoUpdaterCurrentVersionId = Integer.parseInt(Source.mod_VersionName.replace(".", ""));
-        try
-        {
-          LabyMod.getInstance().autoUpdaterLatestVersionId = Integer.parseInt(split[0].replace(".", ""));
-          LabyMod.getInstance().latestVersionName = split[0];
-          System.out.println("[LabyMod] The latest LabyMod version is v" + LabyMod.getInstance().latestVersionName + ", you are currently using LabyMod version v" + Source.mod_VersionName);
-        }
-        catch (Exception error)
-        {
-          LabyMod.getInstance().autoUpdaterLatestVersionId = LabyMod.getInstance().autoUpdaterCurrentVersionId;
-        }
-        s = split[1];
-      }
-      String[] split = s.split(", ");
-      for (String user : split) {
-        try
-        {
-          if (user.contains("@"))
-          {
-            String[] split2 = user.split("@");
-            String uuid = split2[0];
-            String capeType = split2[1];
-            try
-            {
-              list.put(UUID.fromString(uuid), Integer.valueOf(Integer.parseInt(capeType)));
-            }
-            catch (Exception error)
-            {
-              System.out.println("[LabyMod] Failed to save cape of " + uuid + " (" + capeType + ")");
-            }
-          }
-        }
-        catch (Exception error)
-        {
-          System.out.println("[LabyMod] Failed to read cape of " + user);
-        }
-      }
-      System.out.println("[LabyMod] Loaded " + list.size() + " labymod capes");
-      return list;
-    }
-    catch (Exception error)
-    {
-      error.printStackTrace();
-    }
-    return new HashMap();
+    this.locationCape.clear();
   }
   
-  private static void clearTextures()
+  public ArrayList<UUID> getIgnore()
   {
-    locationCape.clear();
+    return this.ignore;
   }
   
-  public static ArrayList<UUID> getIgnore()
+  public ArrayList<jy> getDelete()
   {
-    return ignore;
+    return this.delete;
   }
   
-  public static void onTickInGame()
+  public void onTickInGame()
   {
     if (!LabyMod.getInstance().isInGame()) {
       return;
@@ -152,62 +81,128 @@ public class CapeManager
       return;
     }
     Timings.start("CapeManager GameTick");
-    if (checking) {
+    if (this.checking) {
       return;
     }
     if (!ConfigManager.settings.capes.booleanValue())
     {
-      customCapes.clear();
-      ignore.clear();
+      this.customCapes.clear();
+      this.ignore.clear();
       return;
     }
-    if (donators == null) {
+    if (this.donators == null) {
       refresh();
     }
-    checking = true;
+    this.checking = true;
     ArrayList<wn> entitys = new ArrayList();
-    ArrayList<GameProfile> profile = new ArrayList();
+    ArrayList<UUID> rem = new ArrayList();
+    final ArrayList<GameProfile> profile = new ArrayList();
     entitys.addAll(ave.A().f.j);
+    rem.addAll(this.customCapes.keySet());
     for (wn player : entitys)
     {
+      rem.remove(player.aK());
       profile.add(player.cd());
-      if ((!ignore.contains(player.aK())) && 
+      if ((!this.ignore.contains(player.aK())) && 
       
-        (customCapes.containsKey(player.aK()))) {
-        setCape(player, (jy)customCapes.get(player.aK()));
+        (this.customCapes.containsKey(player.aK())))
+      {
+        loc = null;
+        EnumCapePriority type = null;
+        Cape cape = (Cape)this.customCapes.get(player.aK());
+        if (getCapePriority() == EnumCapePriority.OPTIFINE)
+        {
+          if (cape.getOptifine() == null)
+          {
+            loc = cape.getLabymod();
+            type = EnumCapePriority.LABYMOD;
+          }
+          else
+          {
+            loc = cape.getOptifine();
+            type = EnumCapePriority.OPTIFINE;
+          }
+        }
+        else if (cape.getLabymod() == null)
+        {
+          loc = cape.getOptifine();
+          type = EnumCapePriority.OPTIFINE;
+        }
+        else
+        {
+          loc = cape.getLabymod();
+          type = EnumCapePriority.LABYMOD;
+        }
+        setCape(player, loc, type);
       }
     }
-    Thread checkThread = new Thread()
+    jy loc;
+    Object checkThread = new Thread()
     {
       public void run()
       {
-        CapeManager.checkCapeURLs(this.val$profile);
-        CapeManager.checking = false;
+        CapeManager.this.checkCapeURLs(profile);
+        CapeManager.this.checking = false;
       }
     };
-    checkThread.setPriority(1);
-    checkThread.start();
+    ((Thread)checkThread).setPriority(1);
+    ((Thread)checkThread).start();
+    
+    ArrayList<bdc> list = new ArrayList();
+    list.addAll(LabyMod.getInstance().onlinePlayers);
+    for (bdc player : list) {
+      rem.remove(player.a().getId());
+    }
+    if (rem.size() > 20) {
+      for (UUID uuid : rem) {
+        if (this.customCapes.containsKey(uuid))
+        {
+          Cape cape = (Cape)this.customCapes.get(uuid);
+          if (!cape.isMineconCape())
+          {
+            if (cape.getLabymod() != null)
+            {
+              this.customCapes.remove(uuid);
+              this.ignore.remove(uuid);
+              this.locationCape.remove(uuid);
+              this.delete.add(cape.getLabymod());
+            }
+            if (cape.getOptifine() != null)
+            {
+              this.customCapes.remove(uuid);
+              this.delete.add(cape.getOptifine());
+              this.ignore.remove(uuid);
+              this.locationCape.remove(uuid);
+            }
+          }
+        }
+      }
+    }
     Timings.stop("CapeManager GameTick");
   }
   
-  public static boolean setCape(wn player, jy capeLocation)
+  public boolean setCape(wn player, jy capeLocation, EnumCapePriority type)
   {
     if (capeLocation == null) {
       return false;
     }
-    if ((locationCape != null) && (((locationCape.containsKey(player.aK())) && (locationCape.get(player.aK()) != capeLocation)) || (!locationCape.containsKey(player.aK())))) {
-      System.out.println("[LabyMod] Applying cape for: " + player.e_() + " (" + capeLocation.a() + ")");
+    if ((this.locationCape != null) && (((this.locationCape.containsKey(player.aK())) && (this.locationCape.get(player.aK()) != capeLocation)) || (!this.locationCape.containsKey(player.aK())))) {
+      if (type == null) {
+        System.out.println("[LabyMod] Applying cape for: " + player.e_() + " (" + capeLocation.a() + ")");
+      } else {
+        System.out.println("[LabyMod] Applying " + type.name().toLowerCase() + " cape for: " + player.e_() + " (" + capeLocation.a() + ")");
+      }
     }
-    locationCape.put(player.aK(), capeLocation);
+    this.locationCape.put(player.aK(), capeLocation);
     return true;
   }
   
-  private static void checkCapeURLs(ArrayList<GameProfile> playerProfile)
+  private void checkCapeURLs(ArrayList<GameProfile> playerProfile)
   {
     for (GameProfile player : playerProfile) {
-      if ((!customCapes.containsKey(player.getId())) && 
+      if ((!this.customCapes.containsKey(player.getId())) && 
       
-        (!ignore.contains(player.getId())))
+        (!this.ignore.contains(player.getId())))
       {
         String found = null;
         boolean stop = false;
@@ -255,7 +250,10 @@ public class CapeManager
                 capeLocation = LabyMod.getInstance().texture_labycape3;
               }
               debug(player.getName() + " texture set to " + capeLocation);
-              customCapes.put(player.getId(), capeLocation);
+              Cape cape = new Cape();
+              cape.setLabymod(capeLocation);
+              cape.setMineconCape(true);
+              this.customCapes.put(player.getId(), cape);
               debug("SAVE CAPE " + type + " OF " + player.getName());
               stop = true;
               continue;
@@ -292,7 +290,7 @@ public class CapeManager
         if (!stop) {
           if (found == null)
           {
-            ignore.add(player.getId());
+            this.ignore.add(player.getId());
             debug(player.getName() + " ignored.");
           }
           else
@@ -304,7 +302,7 @@ public class CapeManager
             {
               public BufferedImage a(BufferedImage var1)
               {
-                return CapeManager.parseCape(var1);
+                return CapeManager.this.parseCape(var1);
               }
               
               public void a() {}
@@ -314,7 +312,18 @@ public class CapeManager
             if (!texturemanager.a(capeLocation, object)) {
               System.out.println("[ERROR] Failed to load cape of " + player.getName() + " (" + capeLocation + ")");
             }
-            customCapes.put(player.getId(), capeLocation);
+            Cape cape = null;
+            if (!this.customCapes.containsKey(player.getId())) {
+              cape = new Cape();
+            } else {
+              cape = (Cape)this.customCapes.get(player.getId());
+            }
+            if (found.contains(Source.url_cape_optifine)) {
+              cape.setOptifine(capeLocation);
+            } else {
+              cape.setLabymod(capeLocation);
+            }
+            this.customCapes.put(player.getId(), cape);
             debug("SAVE CAPE CUSTOM OF " + player.getName());
           }
         }
@@ -322,14 +331,14 @@ public class CapeManager
     }
   }
   
-  private static void debug(String msg)
+  private void debug(String msg)
   {
     if (Debug.capes()) {
       System.out.println("[DEBUG] " + msg);
     }
   }
   
-  private static BufferedImage parseCape(BufferedImage img)
+  private BufferedImage parseCape(BufferedImage img)
   {
     int imageWidth = 64;
     int imageHeight = 32;
@@ -349,7 +358,7 @@ public class CapeManager
     return imgNew;
   }
   
-  private static ArrayList<String> getUrlList(UUID uuid)
+  private ArrayList<String> getUrlList(UUID uuid)
   {
     ArrayList<String> list = new ArrayList();
     if (getCapePriority() == EnumCapePriority.OPTIFINE)
@@ -369,34 +378,27 @@ public class CapeManager
     return list;
   }
   
-  public static boolean hasLabyModCape(UUID uuid)
+  public boolean hasLabyModCape(UUID uuid)
   {
-    if ((donators != null) && (donators.containsKey(uuid))) {
+    if ((this.donators != null) && (this.donators.containsKey(uuid))) {
       return true;
     }
     return false;
   }
   
-  public static Integer getLabyModCape(UUID uuid)
+  public Integer getLabyModCape(UUID uuid)
   {
     if (hasLabyModCape(uuid)) {
-      return (Integer)donators.get(uuid);
+      return (Integer)this.donators.get(uuid);
     }
     return Integer.valueOf(0);
   }
   
-  private static EnumCapePriority getCapePriority()
+  private EnumCapePriority getCapePriority()
   {
     if (ConfigManager.settings.capePriority.equals("of")) {
       return EnumCapePriority.OPTIFINE;
     }
     return EnumCapePriority.LABYMOD;
-  }
-  
-  public static enum EnumCapePriority
-  {
-    LABYMOD,  OPTIFINE;
-    
-    private EnumCapePriority() {}
   }
 }

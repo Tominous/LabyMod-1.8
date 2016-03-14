@@ -85,12 +85,12 @@ public abstract class axu
   {
     try
     {
-      Transferable transferable = Toolkit.getDefaultToolkit().getSystemClipboard().getContents((Object)null);
+      Transferable transferable = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null);
       if ((transferable != null) && (transferable.isDataFlavorSupported(DataFlavor.stringFlavor))) {
         return (String)transferable.getTransferData(DataFlavor.stringFlavor);
       }
     }
-    catch (Exception var1) {}
+    catch (Exception localException) {}
     return "";
   }
   
@@ -102,7 +102,7 @@ public abstract class axu
         StringSelection stringselection = new StringSelection(copyText);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringselection, (ClipboardOwner)null);
       }
-      catch (Exception var2) {}
+      catch (Exception localException) {}
     }
   }
   
@@ -199,7 +199,7 @@ public abstract class axu
             itemstack = zx.a((dn)nbtbase);
           }
         }
-        catch (ec var11) {}
+        catch (ec localec1) {}
         if (itemstack != null) {
           a(itemstack, p_175272_2_, p_175272_3_);
         } else {
@@ -528,7 +528,7 @@ public abstract class axu
     try
     {
       Class<?> oclass = Class.forName("java.awt.Desktop");
-      Object object = oclass.getMethod("getDesktop", new Class[0]).invoke((Object)null, new Object[0]);
+      Object object = oclass.getMethod("getDesktop", new Class[0]).invoke(null, new Object[0]);
       oclass.getMethod("browse", new Class[] { URI.class }).invoke(object, new Object[] { p_175282_1_ });
     }
     catch (Throwable throwable)

@@ -11,6 +11,7 @@ import de.labystudio.utils.StatsLoader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import org.lwjgl.input.Keyboard;
@@ -423,7 +424,9 @@ public class Mario
       this.draw.drawChatBackground(0, 32, this.l, this.m - 33);
     }
     DrawUtils.a(0, 0, this.l, this.m, new java.awt.Color(107, 140, 255).getRGB());
-    for (Location terrain : getTerrain()) {
+    for (Iterator localIterator1 = getTerrain().iterator(); localIterator1.hasNext();)
+    {
+      terrain = (Location)localIterator1.next();
       if (terrain.type == EnumPixelType.CLOUD) {
         drawPixel(terrain.getX(), terrain.getY(), java.awt.Color.WHITE.getRGB());
       }
@@ -435,8 +438,9 @@ public class Mario
       loc = getPlayerHeadLocation();
       drawPixel(loc.getX(), loc.getY(), java.awt.Color.BLUE.getRGB());
     }
-    for (Location terrain : getTerrain())
+    for (Location terrain = getTerrain().iterator(); terrain.hasNext();)
     {
+      terrain = (Location)terrain.next();
       if (terrain.type == EnumPixelType.LAVA) {
         drawPixel(terrain.getX(), terrain.getY(), java.awt.Color.ORANGE.getRGB());
       }
@@ -456,6 +460,7 @@ public class Mario
         drawPixel(terrain.getX(), terrain.getY(), new java.awt.Color(255, 165, 66).getRGB());
       }
     }
+    Location terrain;
     ArrayList<Location> toRem = new ArrayList();
     for (Location lm : getTerrain()) {
       if (loc.getX() < 0) {

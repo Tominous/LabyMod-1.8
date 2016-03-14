@@ -960,8 +960,9 @@ public class amy
         i += nibblearray.a().length;
       }
     }
+    int i1;
     if (flag) {
-      for (int i1 = 0; i1 < this.d.length; i1++) {
+      for (i1 = 0; i1 < this.d.length; i1++) {
         if (((p_177439_2_ & 1 << i1) != 0) && (this.d[i1] != null))
         {
           amw nibblearray1 = this.d[i1].i();
@@ -970,11 +971,10 @@ public class amy
         }
       }
     }
-    int k1;
     if (p_177439_3_)
     {
       System.arraycopy(p_177439_1_, i, this.e, 0, this.e.length);
-      k1 = i + this.e.length;
+      i1 = i + this.e.length;
     }
     for (int j1 = 0; j1 < this.d.length; j1++) {
       if ((this.d[j1] != null) && ((p_177439_2_ & 1 << j1) != 0)) {

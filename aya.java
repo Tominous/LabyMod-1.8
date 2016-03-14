@@ -1,11 +1,12 @@
 import com.google.common.collect.Lists;
-import de.labystudio.gui.GuiLabyModMenu;
 import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
 import de.labystudio.labymod.Source;
 import de.labystudio.utils.Color;
 import de.labystudio.utils.DrawUtils;
+import de.labystudio.utils.ServerBroadcast;
+import de.labystudio.utils.TextureManager;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -55,12 +56,14 @@ public class aya
   private int I;
   private jy J;
   private avs K;
+  private boolean labyModMessage = false;
   
   public aya()
   {
     this.y = a;
     this.r = "missingno";
     BufferedReader bufferedreader = null;
+    this.labyModMessage = false;
     try
     {
       List<String> list = Lists.newArrayList();
@@ -87,18 +90,18 @@ public class aya
         {
           bufferedreader.close();
         }
-        catch (IOException var11) {}
+        catch (IOException localIOException) {}
       }
       this.i = h.nextFloat();
     }
-    catch (IOException var12) {}finally
+    catch (IOException localIOException1) {}finally
     {
       if (bufferedreader != null) {
         try
         {
           bufferedreader.close();
         }
-        catch (IOException var11) {}
+        catch (IOException localIOException3) {}
       }
     }
     this.x = "";
@@ -119,6 +122,13 @@ public class aya
   
   public void setUpdate()
   {
+    if ((LabyMod.getInstance().getServerBroadcast() != null) && (LabyMod.getInstance().getServerBroadcast().getLine1() != ""))
+    {
+      this.x = LabyMod.getInstance().getServerBroadcast().getLine1();
+      this.y = LabyMod.getInstance().getServerBroadcast().getLine2();
+      this.z = LabyMod.getInstance().getServerBroadcast().getUrl();
+      this.labyModMessage = true;
+    }
     if (LabyMod.getInstance().chatPacketUpdate)
     {
       this.x = ("A new LabyMod Version " + LabyMod.getInstance().latestVersionName + " is available!");
@@ -143,7 +153,6 @@ public class aya
   
   public void b()
   {
-    initAnim();
     this.u = new blz(256, 256);
     this.J = this.j.P().a("background", this.u);
     Calendar calendar = Calendar.getInstance();
@@ -259,7 +268,6 @@ public class aya
       this.n.add(new avs(15, this.l / 2 - 100, p_73969_1_ + p_73969_2_ * 2, Color.clc("e") + "Option 2: " + Color.clc("c") + "Delete LabyMod config file"));
       return;
     }
-    this.n.add(new avs(17, 2, 2, 20, 20, "?"));
   }
   
   private void c(int p_73972_1_, int p_73972_2_)
@@ -326,9 +334,6 @@ public class aya
         this.j.a(new aya());
       }
     }
-    if (button.k == 17) {
-      this.j.a(new GuiLabyModMenu(this));
-    }
   }
   
   private void a()
@@ -352,7 +357,7 @@ public class aya
         try
         {
           Class<?> oclass = Class.forName("java.awt.Desktop");
-          Object object = oclass.getMethod("getDesktop", new Class[0]).invoke((Object)null, new Object[0]);
+          Object object = oclass.getMethod("getDesktop", new Class[0]).invoke(null, new Object[0]);
           oclass.getMethod("browse", new Class[] { URI.class }).invoke(object, new Object[] { new URI(this.z) });
         }
         catch (Throwable throwable)
@@ -497,8 +502,8 @@ public class aya
   
   public void a(int mouseX, int mouseY, float partialTicks)
   {
-    if (((this.x == null) || (this.x.isEmpty())) && 
-      (LabyMod.getInstance().chatPacketUpdate))
+    if ((!this.labyModMessage) && (
+      (LabyMod.getInstance().chatPacketUpdate) || (LabyMod.getInstance().getServerBroadcast() != null)))
     {
       setUpdate();
       b();
@@ -543,7 +548,18 @@ public class aya
     c(this.q, "" + Source.mod_Name + " " + Source.mod_VersionName + " " + Source.mod_VersionType, 2, this.m - 10, -1);
     c(this.q, s, 2, this.m - 20, -1);
     
-    anim();
+    bfl.c(1.0F, 1.0F, 1.0F);
+    
+    LabyMod.getInstance().draw.drawCenteredString("LabyMod Developer", this.l - 55, this.m - 29, 0.8D);
+    int m = 48;
+    LabyMod.getInstance().textureManager.drawPlayerHead("LabyStudio", this.l - 50 - m, this.m - 18, 0.4D);
+    LabyMod.getInstance().draw.drawCenteredString("LabyStudio", this.l - 43 - m, this.m - 7, 0.6D);
+    m = 10;
+    LabyMod.getInstance().textureManager.drawPlayerHead("Zockermaus", this.l - 50 - m, this.m - 18, 0.4D);
+    LabyMod.getInstance().draw.drawCenteredString("Zockermaus", this.l - 43 - m, this.m - 7, 0.6D);
+    m = -25;
+    LabyMod.getInstance().textureManager.drawPlayerHead("_qlow", this.l - 50 - m, this.m - 18, 0.4D);
+    LabyMod.getInstance().draw.drawCenteredString("_qlow", this.l - 44 - m, this.m - 7, 0.6D);
     if ((this.x != null) && (this.x.length() > 0))
     {
       a(this.F - 2, this.G - 2, this.H + 2, this.I - 1, 1428160512);
@@ -567,52 +583,5 @@ public class aya
         this.j.a(guiconfirmopenlink);
       }
     }
-  }
-  
-  long animTime = 0L;
-  int speed = 3;
-  
-  public void initAnim()
-  {
-    this.animTime = System.currentTimeMillis();
-  }
-  
-  public void anim()
-  {
-    long at = this.animTime + this.speed * 80;
-    long i = (System.currentTimeMillis() - at) * 10L;
-    int sec = (int)(i / 100L);
-    
-    a(0, Color.cl("e") + Source.mod_Name + " by " + Source.mod_Author);
-    a(170, Color.cl("e") + "and by " + Source.mod_SecondAuthor);
-    if (sec > 400) {
-      initAnim();
-    }
-  }
-  
-  public void pop(int y, String msg)
-  {
-    LabyMod.getInstance().draw.drawRightString(msg, LabyMod.getInstance().draw.getWidth() - 1, LabyMod.getInstance().draw.getHeight() - 10 + y);
-  }
-  
-  public void a(int s, String text)
-  {
-    long at = this.animTime + this.speed * 80;
-    long i = (System.currentTimeMillis() - at) * 10L;
-    int sec = (int)(i / 100L);
-    int y = 10;
-    if ((sec > 10 + s) && (sec < 24 + s)) {
-      y = -(sec - (20 + s));
-    }
-    if ((sec >= 24 + s) && (sec < 27 + s)) {
-      y = sec - (24 + s);
-    }
-    if ((sec >= 27 + s) && (sec < 170 + s)) {
-      y = 0;
-    }
-    if ((sec >= 170 + s) && (sec < 240 + s)) {
-      y = sec - (170 + s);
-    }
-    pop(y, text);
   }
 }

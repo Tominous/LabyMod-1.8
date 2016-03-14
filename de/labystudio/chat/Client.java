@@ -147,7 +147,9 @@ public class Client
             }
           });
         }
-      }).start();
+      })
+      
+        .start();
     }
   }
   
@@ -205,7 +207,9 @@ public class Client
                 e.printStackTrace();
               }
             }
-          }).start();
+          })
+          
+            .start();
         }
       }
     }

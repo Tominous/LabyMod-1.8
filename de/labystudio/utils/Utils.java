@@ -47,7 +47,7 @@ public class Utils
       }
       return IOUtils.toString(inStr);
     }
-    catch (Exception ex) {}
+    catch (Exception localException) {}
     return null;
   }
   
@@ -112,6 +112,29 @@ public class Utils
     }
   }
   
+  public static String parseTimeNormal(long time)
+  {
+    long formata = time / 600L % 60L;
+    long formatb = time / 60L % 60L;
+    long formatc = time % 60L;
+    long formatd = time / 600L / 60L % 24L;
+    long formate = time / 600L / 60L / 24L;
+    String out = "";
+    if (formate != 0L) {
+      out = out + formate + "d ";
+    }
+    if (formatd != 0L) {
+      out = out + formatd + "h ";
+    }
+    if (formatb != 0L) {
+      out = out + formatb + "m ";
+    }
+    if (formatc != 0L) {
+      out = out + formatc + "s";
+    }
+    return out;
+  }
+  
   public static String performPost(URL url, String parameters, String contentType, boolean returnErrorPage)
     throws IOException
   {
@@ -145,6 +168,7 @@ public class Utils
       if (returnErrorPage)
       {
         InputStream stream = connection.getErrorStream();
+        BufferedReader reader;
         if (stream != null) {
           reader = new BufferedReader(new InputStreamReader(stream));
         } else {
@@ -174,7 +198,7 @@ public class Utils
     {
       return new URL(input);
     }
-    catch (MalformedURLException e) {}
+    catch (MalformedURLException localMalformedURLException) {}
     return null;
   }
   

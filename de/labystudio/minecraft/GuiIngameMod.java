@@ -23,11 +23,13 @@ import de.labystudio.labymod.Timings;
 import de.labystudio.listener.Brawl;
 import de.labystudio.listener.Games;
 import de.labystudio.listener.GommeHD;
+import de.labystudio.listener.HiveMC;
 import de.labystudio.listener.JumpLeague;
 import de.labystudio.listener.Revayd;
 import de.labystudio.listener.Timolia;
 import de.labystudio.modapi.ModAPI;
 import de.labystudio.modapi.events.RenderOverlayEvent;
+import de.labystudio.spotify.SpotifyManager;
 import de.labystudio.utils.Allowed;
 import de.labystudio.utils.Color;
 import de.labystudio.utils.DrawUtils;
@@ -47,6 +49,7 @@ import java.util.List;
 import java.util.Map;
 import jy;
 import ns;
+import org.apache.commons.lang3.SystemUtils;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 import pe;
@@ -167,6 +170,9 @@ public class GuiIngameMod
     }
     if (!f.isEmpty()) {
       ModGui.addMainLabel("F", f, ModGui.mainList);
+    }
+    if (ConfigManager.settings.showBiome) {
+      ModGui.addMainLabel("Biome", ModGui.getBiom() + "", ModGui.mainList);
     }
     if ((!this.mc.F()) && (LabyMod.getInstance().playerPing != 0) && (ConfigManager.settings.showPing)) {
       ModGui.addMainLabel("Ping", LabyMod.getInstance().playerPing + "", ModGui.mainList);
@@ -629,6 +635,7 @@ public class GuiIngameMod
     Timolia.drawTimoliaGui();
     Revayd.drawRevaydGui();
     Brawl.drawBrawl();
+    HiveMC.drawHiveGui();
   }
   
   private void drawOnlineFriendsOnServer()
@@ -675,7 +682,7 @@ public class GuiIngameMod
         }
       }
     }
-    catch (Exception error) {}
+    catch (Exception localException) {}
   }
   
   public void drawTeamSpeak()
@@ -710,6 +717,37 @@ public class GuiIngameMod
         this.draw.addString(client, ModGui.mainList);
         ModGui.mainListNext();
       }
+    }
+  }
+  
+  public void drawSpotify()
+  {
+    if (!ConfigManager.settings.spotfiyTrack) {
+      return;
+    }
+    if ((LabyMod.getInstance().getSpotifyManager() == null) || (!SystemUtils.IS_OS_WINDOWS))
+    {
+      ModGui.mainListNext();
+      ModGui.addMainLabel("Spotify", "Windows support only", ModGui.mainList);
+      return;
+    }
+    if (LabyMod.getInstance().getSpotifyManager().getArtistName() == null)
+    {
+      if ((LabyMod.getInstance().getSpotifyManager().getSpotifyTitle() != null) && (!LabyMod.getInstance().getSpotifyManager().getSpotifyTitle().equals("?")))
+      {
+        if (ModGui.mainList != 2) {
+          ModGui.mainListNext();
+        }
+        ModGui.addMainLabel("Spotify", LabyMod.getInstance().getSpotifyManager().getSpotifyTitle(), ModGui.mainList);
+      }
+    }
+    else
+    {
+      if (ModGui.mainList != 2) {
+        ModGui.mainListNext();
+      }
+      ModGui.addMainLabel("Track", LabyMod.getInstance().getSpotifyManager().getTrackName(), ModGui.mainList);
+      ModGui.addMainLabel("Artist", LabyMod.getInstance().getSpotifyManager().getArtistName(), ModGui.mainList);
     }
   }
   
@@ -786,6 +824,7 @@ public class GuiIngameMod
       drawGameModes();
       drawHGGui();
       drawTeamSpeak();
+      drawSpotify();
       drawPotions();
     }
     GL11.glPopMatrix();
@@ -800,6 +839,8 @@ public class GuiIngameMod
   {
     super.a(p_175180_1_);
     Timings.start("Render IngameGui");
+    
+    LabyMod.getInstance().setPartialTicks(p_175180_1_);
     
     ModGui.mainList = 0;
     ModGui.offList = 0;

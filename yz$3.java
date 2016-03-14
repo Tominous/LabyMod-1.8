@@ -1,18 +1,13 @@
 final class yz$3
   extends yz
 {
-  yz$3(int x0, String x1)
+  yz$3(int ☃, String ☃)
   {
-    super(x0, x1);
+    super(☃, ☃);
   }
   
   public zw e()
   {
-    return zw.a(afi.cF);
-  }
-  
-  public int f()
-  {
-    return agi.b.f.a();
+    return zy.y;
   }
 }

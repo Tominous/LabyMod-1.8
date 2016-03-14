@@ -11,6 +11,7 @@ import de.labystudio.utils.Color;
 import de.labystudio.utils.Utils;
 import eu;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.UUID;
 import pr;
 
@@ -203,6 +204,7 @@ public class GommeHDBed
   
   public static void renderPlayerTag(pr entity, double x, double y, double z)
   {
+    Hologram g;
     if ((!GommeHD.gommeHDServer_BW) || (!ConfigManager.settings.showBWTeams.booleanValue()) || (!GommeHD.isGommeHD()))
     {
       if ((!Manager.holograms.isEmpty()) || (!respawn.isEmpty()))
@@ -215,7 +217,9 @@ public class GommeHDBed
             rem.add(g);
           }
         }
-        for (Hologram g : rem) {
+        for (??? = rem.iterator(); ???.hasNext();)
+        {
+          g = (Hologram)???.next();
           Manager.holograms.remove(g);
         }
         respawn.clear();
@@ -274,7 +278,7 @@ public class GommeHDBed
           }
         }
       }
-      catch (Exception error) {}
+      catch (Exception localException) {}
     } else if (entity.I) {
       respawn.add(entity.aK());
     }

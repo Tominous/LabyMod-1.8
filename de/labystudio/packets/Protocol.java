@@ -46,6 +46,7 @@ public class Protocol
     register(23, PacketPlayFriendStatus.class, EnumConnectionState.PLAY);
     register(24, PacketPlayFriendPlayingOn.class, EnumConnectionState.PLAY);
     register(25, PacketPlayTyping.class, EnumConnectionState.PLAY);
+    register(26, PacketMojangStatus.class, EnumConnectionState.PLAY);
     
     register(60, PacketDisconnect.class, EnumConnectionState.ALL);
     register(61, PacketKick.class, EnumConnectionState.ALL);

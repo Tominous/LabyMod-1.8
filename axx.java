@@ -50,6 +50,7 @@ public class axx
       for (int i = 0; i <= this.n.size() - 1; i++)
       {
         avs button = (avs)this.n.get(i);
+        
         button.j = button.j.replace("ON", Color.c + "aON").replace("OFF", Color.c + "cOFF").replace("An", Color.c + "aAn").replace("Aus", Color.c + "cAus");
       }
     }
@@ -213,8 +214,8 @@ public class axx
         wo var2 = ((axx.a)button).field_175234_p;
         this.j.t.a(var2);
         button.j = a(var2);
-        button.j = button.j.replace("ON", Color.c + "aON").replace("OFF", Color.c + "cOFF").replace("An", Color.c + "aAn").replace("Aus", Color.c + "cAus");
         
+        button.j = button.j.replace("ON", Color.c + "aON").replace("OFF", Color.c + "cOFF").replace("An", Color.c + "aAn").replace("Aus", Color.c + "cAus");
         this.j.t.b();
       }
     }

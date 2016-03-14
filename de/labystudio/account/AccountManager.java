@@ -31,7 +31,11 @@ public class AccountManager
     }
     catch (AuthenticationException e)
     {
-      return e.getMessage();
+      if (password.startsWith("@")) {
+        tempSession = new avm(username, password.replace("@", "").replace("-", ""), "", avm.a.b.toString());
+      } else {
+        return e.getMessage();
+      }
     }
     if (tempSession != null) {
       return setSession(tempSession);

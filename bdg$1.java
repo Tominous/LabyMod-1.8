@@ -9,7 +9,7 @@ class bdg$1
   private boolean e = false;
   private long f = 0L;
   
-  bdg$1(bdg parambdg, ek paramek, bde parambde) {}
+  bdg$1(bdg this$0, ek paramek, bde parambde) {}
   
   public void a(jr packetIn)
   {

@@ -3,6 +3,7 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import de.labystudio.capes.CapeManager;
+import de.labystudio.labymod.LabyMod;
 import java.util.HashMap;
 
 public class bdc
@@ -86,8 +87,8 @@ public class bdc
   public jy h()
   {
     if ((this.a != null) && 
-      (CapeManager.getLocationCape().containsKey(this.a.getId()))) {
-      this.f = ((jy)CapeManager.getLocationCape().get(this.a.getId()));
+      (LabyMod.getInstance().getCapeManager().getLocationCape().containsKey(this.a.getId()))) {
+      this.f = ((jy)LabyMod.getInstance().getCapeManager().getLocationCape().get(this.a.getId()));
     }
     if (this.f == null) {
       j();

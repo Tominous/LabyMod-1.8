@@ -30,7 +30,7 @@ public class FriendsLoader
     {
       json = IOUtils.toString(new FileInputStream(Source.file_friendTags), Charset.forName("UTF-8"));
     }
-    catch (FileNotFoundException e) {}catch (IOException e) {}
+    catch (FileNotFoundException localFileNotFoundException) {}catch (IOException localIOException) {}
     friends = (Map)Utils.ConvertJsonToObject.getFromJSON(json, Map.class);
     if (friends == null) {
       friends = new HashMap();
@@ -48,7 +48,7 @@ public class FriendsLoader
         }
         new File(Source.file_friendTags).createNewFile();
       }
-      catch (IOException e) {}
+      catch (IOException localIOException) {}
     }
   }
   
@@ -75,6 +75,6 @@ public class FriendsLoader
       w.flush();
       w.close();
     }
-    catch (FileNotFoundException e) {}
+    catch (FileNotFoundException localFileNotFoundException) {}
   }
 }

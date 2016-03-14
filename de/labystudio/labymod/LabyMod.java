@@ -17,6 +17,9 @@ import bdb;
 import bdc;
 import bde;
 import bew;
+import bmj;
+import bmk;
+import bml;
 import com.mojang.authlib.GameProfile;
 import de.labystudio.capes.CapeManager;
 import de.labystudio.chat.ChatHandler;
@@ -24,12 +27,16 @@ import de.labystudio.chat.Client;
 import de.labystudio.chat.ClientConnection;
 import de.labystudio.chat.EnumAlertType;
 import de.labystudio.chat.LabyModPlayer;
+import de.labystudio.cosmetic.CosmeticManager;
+import de.labystudio.downloader.ModInfoDownloader;
+import de.labystudio.downloader.UserCapeDownloader;
 import de.labystudio.gui.GuiAchievementMod;
 import de.labystudio.hologram.Manager;
 import de.labystudio.language.L;
 import de.labystudio.listener.Brawl;
 import de.labystudio.listener.Games;
 import de.labystudio.listener.GommeHD;
+import de.labystudio.listener.HiveMC;
 import de.labystudio.listener.JumpLeague;
 import de.labystudio.listener.KeyListener;
 import de.labystudio.listener.Revayd;
@@ -42,6 +49,7 @@ import de.labystudio.modapi.events.JoinedServerEvent;
 import de.labystudio.modapi.events.PluginMessageReceivedEvent;
 import de.labystudio.packets.EnumConnectionState;
 import de.labystudio.packets.PacketPlayServerStatus;
+import de.labystudio.spotify.SpotifyManager;
 import de.labystudio.utils.Allowed;
 import de.labystudio.utils.AutoTextLoader;
 import de.labystudio.utils.Color;
@@ -50,6 +58,8 @@ import de.labystudio.utils.FilterLoader;
 import de.labystudio.utils.FriendsLoader;
 import de.labystudio.utils.LOGO;
 import de.labystudio.utils.ModGui;
+import de.labystudio.utils.ServerBroadcast;
+import de.labystudio.utils.ServiceStatus;
 import de.labystudio.utils.StatsLoader;
 import de.labystudio.utils.TextureManager;
 import de.zockermaus.ts3.TeamSpeak;
@@ -72,11 +82,10 @@ import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 import jy;
+import org.apache.commons.lang3.SystemUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.lwjgl.opengl.GL11;
-import pk;
-import wn;
+import org.lwjgl.opengl.Display;
 
 public class LabyMod
   extends avp
@@ -98,6 +107,7 @@ public class LabyMod
   public ArrayList<String> gameTypes = new ArrayList();
   public ArrayList<String> serverMSG = new ArrayList();
   public HashMap<String, String> serverPing = new HashMap();
+  public HashMap<String, ServiceStatus> mojangStatus = new HashMap();
   public ArrayList<String> commandQueue = new ArrayList();
   public ArrayList<bdc> onlinePlayers = new ArrayList();
   public boolean chat = true;
@@ -120,10 +130,6 @@ public class LabyMod
   public Client client;
   public boolean newMessage = false;
   public long lastRecon = 0L;
-  public boolean imageViewer = false;
-  public boolean audioPlayer = false;
-  public double downloadedBytes = 0.0D;
-  public long downloadedFileId = 0L;
   public String lastKickReason = "";
   public LabyModPlayer selectedPlayer = null;
   public jy texture_img = new jy("img.png");
@@ -151,6 +157,11 @@ public class LabyMod
   public int autoUpdaterCurrentVersionId = 0;
   public String latestVersionName = "?";
   public boolean chatPacketUpdate = false;
+  private float partialTicks;
+  private ServerBroadcast serverBroadcast;
+  private CapeManager capeManager;
+  private CosmeticManager cosmeticManager;
+  private SpotifyManager spotifyManager;
   private static LabyMod instance;
   private static boolean overwrite = false;
   int min;
@@ -169,6 +180,14 @@ public class LabyMod
     {
       overwrite = true;
       ave.A().q = new GuiIngameMod(ave.A());
+    }
+    try
+    {
+      Display.setTitle("Minecraft 1.8.8 | LabyMod " + Source.mod_VersionName);
+    }
+    catch (Exception e)
+    {
+      e.printStackTrace();
     }
   }
   
@@ -192,6 +211,11 @@ public class LabyMod
     FilterLoader.loadFilters();
     AutoTextLoader.load();
     StatsLoader.loadstats();
+    this.capeManager = new CapeManager();
+    this.cosmeticManager = new CosmeticManager();
+    if (SystemUtils.IS_OS_WINDOWS) {
+      this.spotifyManager = new SpotifyManager();
+    }
     if (ConfigManager.settings == null)
     {
       Timings.stop("Enable LabyMod");
@@ -200,7 +224,8 @@ public class LabyMod
     if (ConfigManager.settings.teamSpeak.booleanValue()) {
       TeamSpeak.enable();
     }
-    CapeManager.refresh();
+    new UserCapeDownloader();
+    new ModInfoDownloader();
     ModManager.loadMods();
     if (!LOGO.isLogo(getPlayerName())) {
       ConfigManager.settings.logomode = false;
@@ -232,9 +257,44 @@ public class LabyMod
     System.out.println("[LabyMod] Loaded!");
   }
   
+  public SpotifyManager getSpotifyManager()
+  {
+    return this.spotifyManager;
+  }
+  
+  public CapeManager getCapeManager()
+  {
+    return this.capeManager;
+  }
+  
+  public CosmeticManager getCosmeticManager()
+  {
+    return this.cosmeticManager;
+  }
+  
   public Client getClient()
   {
     return this.client;
+  }
+  
+  public float getPartialTicks()
+  {
+    return this.partialTicks;
+  }
+  
+  public void setPartialTicks(float partialTicks)
+  {
+    this.partialTicks = partialTicks;
+  }
+  
+  public ServerBroadcast getServerBroadcast()
+  {
+    return this.serverBroadcast;
+  }
+  
+  public void setServerBroadcast(ServerBroadcast serverBroadcast)
+  {
+    this.serverBroadcast = serverBroadcast;
   }
   
   public boolean isUpdateAvailable()
@@ -282,6 +342,7 @@ public class LabyMod
     ModGui.reset();
     Games.reset();
     Revayd.reset();
+    HiveMC.reset();
     Timings.stop("Reset Mod");
   }
   
@@ -391,6 +452,9 @@ public class LabyMod
   {
     Timings.start("LabyMod Tick");
     this.min += 1;
+    if ((getSpotifyManager() != null) && (ConfigManager.settings.spotfiyTrack)) {
+      getSpotifyManager().updateTitle();
+    }
     if (isInGame())
     {
       this.onlinePlayers.clear();
@@ -419,7 +483,9 @@ public class LabyMod
     if (this.mc.m == null) {
       ChatHandler.updateIsWriting(null, "");
     }
-    CapeManager.onTickInGame();
+    if (getCapeManager() != null) {
+      getCapeManager().onTickInGame();
+    }
     if (this.min >= 60)
     {
       this.min = 0;
@@ -533,8 +599,23 @@ public class LabyMod
   {
     Timings.start("Overlay LabyMod");
     if ((this.achievementGui != null) && (
-      (!ConfigManager.settings.chatAlertType) || (!ConfigManager.settings.teamSpeakAlertTypeChat))) {
+      (!ConfigManager.settings.chatAlertType) || (!ConfigManager.settings.teamSpeakAlertTypeChat) || (!ConfigManager.settings.mojangStatusChat))) {
       this.achievementGui.updateAchievementWindow();
+    }
+    if (getCapeManager().getDelete().size() != 0)
+    {
+      ArrayList<jy> list = new ArrayList();
+      list.addAll(getCapeManager().getDelete());
+      for (jy res : list)
+      {
+        bmk itextureobject = ave.A().P().b(res);
+        if (itextureobject != null)
+        {
+          System.out.println("[LabyMod] Remove cape " + res.a() + "");
+          bml.a(itextureobject.b());
+        }
+      }
+      getCapeManager().getDelete().clear();
     }
     DrawUtils.updateMouse(mouseX, mouseY);
     KeyListener.handle();
@@ -568,28 +649,9 @@ public class LabyMod
     em packetBuffer = new em(Unpooled.buffer());
     packetBuffer.a("LabyMod v" + Source.mod_VersionName);
     this.mc.u().a(new im("LABYMOD", packetBuffer));
-  }
-  
-  public boolean isWolf(pk entityIn)
-  {
-    if (entityIn == null) {
-      return false;
+    if (this.chatPacketUpdate) {
+      displayMessageInChat(Color.cl("c") + "LabyMod is outdated!" + Color.cl("7") + " Download the latest version " + Color.cl("e") + "v" + this.latestVersionName + Color.cl("7") + " at " + Color.cl("9") + Source.url_Update + "");
     }
-    if (!(entityIn instanceof wn)) {
-      return false;
-    }
-    return entityIn.aK().toString().equals("34e57efa-5783-46c7-a9fc-890296aaba1f");
-  }
-  
-  public boolean isDragon(pk entityIn)
-  {
-    if (entityIn == null) {
-      return false;
-    }
-    if (!(entityIn instanceof wn)) {
-      return false;
-    }
-    return (entityIn.aK().toString().equals("b153998c-0a18-4500-b3d0-24cccb7525ba")) || (entityIn.aK().toString().equals("9e17cc5c-36d7-48d1-80de-40310ead7fbd")) || (entityIn.aK().toString().equals("de231590-d66d-4947-855a-68cdfe2ce254")) || (entityIn.aK().toString().equals("d4ca3485-6cab-4f7a-aea7-7e0ff5fb6927")) || (entityIn.aK().toString().equals("72f0c79d-7a8d-4881-ad29-110c2ef8f81b"));
   }
   
   public void pluginMessage(String channel, em data)
@@ -616,13 +678,5 @@ public class LabyMod
       Map<String, Boolean> list;
       error.printStackTrace();
     }
-  }
-  
-  public static void motionBlur()
-  {
-    float b = 0.5F;
-    GL11.glAccum(259, b - 0.005F);
-    GL11.glAccum(256, 1.0F - (b - 0.005F));
-    GL11.glAccum(258, 1.0F);
   }
 }

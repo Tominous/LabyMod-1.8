@@ -42,6 +42,7 @@ public class ModThread
     }
     catch (Exception e)
     {
+      e.printStackTrace();
       System.out.println("Failed to loop (LabyMod)");
     }
   }

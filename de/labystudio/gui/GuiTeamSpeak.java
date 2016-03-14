@@ -419,7 +419,7 @@ public class GuiTeamSpeak
     for (Chat chat : TeamSpeak.chats)
     {
       DrawUtils.a(5 + slot, this.draw.getHeight() - 33, 50 + slot, this.draw.getHeight() - 20, 835640000);
-      String c = "";
+      c = "";
       if (TeamSpeak.selectedChat == chat.getSlotId())
       {
         DrawUtils.a(5 + slot + 1, this.draw.getHeight() - 33 + 1, 50 + slot - 1, this.draw.getHeight() - 20 - 1, Integer.MAX_VALUE);
@@ -436,6 +436,7 @@ public class GuiTeamSpeak
       this.draw.drawCenteredString(c + name, 27 + slot, this.draw.getHeight() - 30);
       slot += 46;
     }
+    String c;
     if (selected != null)
     {
       int y = 0;
@@ -461,8 +462,9 @@ public class GuiTeamSpeak
   {
     int slot = 0;
     Chat close = null;
-    for (Chat chat : TeamSpeak.chats)
+    for (Iterator localIterator1 = TeamSpeak.chats.iterator(); localIterator1.hasNext();)
     {
+      chat = (Chat)localIterator1.next();
       if ((mouseX > 5 + slot) && (mouseX < 50 + slot) && (mouseY > this.draw.getHeight() - 33) && (mouseY < this.draw.getHeight() - 20))
       {
         TeamSpeak.scrollChat = 0;
@@ -478,6 +480,7 @@ public class GuiTeamSpeak
       }
       slot += 46;
     }
+    Chat chat;
     if (close != null) {
       TeamSpeak.chats.remove(close);
     }
@@ -553,6 +556,7 @@ public class GuiTeamSpeak
       if (30 + slot + TeamSpeak.scrollChannel < 20) {
         TeamSpeak.outOfView.add(Integer.valueOf(channel.getChannelId()));
       }
+      String c2;
       if ((30 + slot + TeamSpeak.scrollChannel + 10 < TeamSpeak.ySplit) && (30 + slot + TeamSpeak.scrollChannel > 20))
       {
         String c = Color.cl("7");
@@ -573,7 +577,7 @@ public class GuiTeamSpeak
         }
         else
         {
-          String c2 = Color.cl("2");
+          c2 = Color.cl("2");
           if (channel.getIsPassword()) {
             c2 = Color.cl("e");
           }
@@ -658,8 +662,9 @@ public class GuiTeamSpeak
   {
     ArrayList<TeamSpeakChannel> list = new ArrayList();
     int next = 0;
-    for (TeamSpeakChannel channel : TeamSpeakBridge.getChannels())
+    for (Iterator localIterator1 = TeamSpeakBridge.getChannels().iterator(); localIterator1.hasNext();)
     {
+      channel = (TeamSpeakChannel)localIterator1.next();
       TeamSpeakChannel ch = TeamSpeak.getFromOrder(next);
       if (channel.getChannelOrder() == 0)
       {
@@ -674,6 +679,7 @@ public class GuiTeamSpeak
         list.add(ch);
       }
     }
+    TeamSpeakChannel channel;
     int slot = 0;
     for (TeamSpeakChannel channel : list)
     {
@@ -795,9 +801,9 @@ public class GuiTeamSpeak
       if (user.getServerGroups() == null) {
         return;
       }
-      for (Iterator i$ = user.getServerGroups().iterator(); i$.hasNext();)
+      for (Iterator localIterator = user.getServerGroups().iterator(); localIterator.hasNext();)
       {
-        int groupId = ((Integer)i$.next()).intValue();
+        int groupId = ((Integer)localIterator.next()).intValue();
         TeamSpeakServerGroup group = TeamSpeakController.getInstance().getServerGroup(groupId);
         if (group != null)
         {

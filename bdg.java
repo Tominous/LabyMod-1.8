@@ -153,6 +153,7 @@ public class bdg
   private void b(final bde server)
   {
     final bdd serveraddress = bdd.a(server.b);
+    
     ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup)ek.d.c())).handler(new ChannelInitializer()
     {
       protected void initChannel(Channel p_initChannel_1_)
@@ -162,7 +163,7 @@ public class bdg
         {
           p_initChannel_1_.config().setOption(ChannelOption.TCP_NODELAY, Boolean.valueOf(true));
         }
-        catch (ChannelException var3) {}
+        catch (ChannelException localChannelException) {}
         p_initChannel_1_.pipeline().addLast(new ChannelHandler[] { new SimpleChannelInboundHandler()
         {
           public void channelActive(ChannelHandlerContext p_channelActive_1_)
@@ -227,7 +228,9 @@ public class bdg
           }
         } });
       }
-    })).channel(NioSocketChannel.class)).connect(serveraddress.a(), serveraddress.b());
+    }))
+    
+      .channel(NioSocketChannel.class)).connect(serveraddress.a(), serveraddress.b());
   }
   
   public void a()

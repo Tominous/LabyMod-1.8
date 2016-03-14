@@ -10,11 +10,17 @@ public class bjh
   public float a;
   private final bfo d;
   private final bmj e;
+  private static final String __OBFID = "CL_00001003";
+  private bov modelLocation = null;
   
-  public bjh(bmj textureManager, bou modelManager)
+  public bjh(bmj p_i46165_1_, bou p_i46165_2_)
   {
-    this.e = textureManager;
-    this.d = new bfo(modelManager);
+    this.e = p_i46165_1_;
+    if (Reflector.ItemModelMesherForge_Constructor.exists()) {
+      this.d = ((bfo)Reflector.newInstance(Reflector.ItemModelMesherForge_Constructor, new Object[] { p_i46165_2_ }));
+    } else {
+      this.d = new bfo(p_i46165_2_);
+    }
     b();
   }
   
@@ -28,75 +34,98 @@ public class bjh
     return this.d;
   }
   
-  protected void a(zw itm, int subType, String identifier)
+  protected void a(zw p_175048_1_, int p_175048_2_, String p_175048_3_)
   {
-    this.d.a(itm, subType, new bov(identifier, "inventory"));
+    this.d.a(p_175048_1_, p_175048_2_, new bov(p_175048_3_, "inventory"));
   }
   
-  protected void a(afh blk, int subType, String identifier)
+  protected void a(afh p_175029_1_, int p_175029_2_, String p_175029_3_)
   {
-    a(zw.a(blk), subType, identifier);
+    a(zw.a(p_175029_1_), p_175029_2_, p_175029_3_);
   }
   
-  private void a(afh blk, String identifier)
+  private void a(afh p_175031_1_, String p_175031_2_)
   {
-    a(blk, 0, identifier);
+    a(p_175031_1_, 0, p_175031_2_);
   }
   
-  private void a(zw itm, String identifier)
+  private void a(zw p_175047_1_, String p_175047_2_)
   {
-    a(itm, 0, identifier);
+    a(p_175047_1_, 0, p_175047_2_);
   }
   
-  private void a(boq model, zx stack)
+  private void a(boq p_175036_1_, zx p_175036_2_)
   {
-    a(model, -1, stack);
+    a(p_175036_1_, -1, p_175036_2_);
   }
   
-  private void a(boq model, int color)
+  public void a(boq p_175035_1_, int p_175035_2_)
   {
-    a(model, color, (zx)null);
+    a(p_175035_1_, p_175035_2_, (zx)null);
   }
   
-  private void a(boq model, int color, zx stack)
+  private void a(boq p_175045_1_, int p_175045_2_, zx p_175045_3_)
   {
-    bfx tessellator = bfx.a();
-    bfd worldrenderer = tessellator.c();
-    worldrenderer.a(7, bms.b);
-    for (cq enumfacing : cq.values()) {
-      a(worldrenderer, model.a(enumfacing), color, stack);
+    bfx var4 = bfx.a();
+    bfd var5 = var4.c();
+    
+    boolean renderTextureMap = ave.A().T().isTextureBound();
+    
+    boolean multiTexture = (Config.isMultiTexture()) && (renderTextureMap);
+    if (multiTexture) {
+      var5.setBlockLayer(adf.a);
     }
-    a(worldrenderer, model.a(), color, stack);
-    tessellator.b();
+    var5.a(7, bms.b);
+    
+    cq[] var6 = cq.n;
+    int var7 = var6.length;
+    for (int var8 = 0; var8 < var7; var8++)
+    {
+      cq var9 = var6[var8];
+      a(var5, p_175045_1_.a(var9), p_175045_2_, p_175045_3_);
+    }
+    a(var5, p_175045_1_.a(), p_175045_2_, p_175045_3_);
+    var4.b();
+    if (multiTexture)
+    {
+      var5.setBlockLayer(null);
+      
+      bfl.bindCurrentTexture();
+    }
   }
   
-  public void a(zx stack, boq model)
+  public void a(zx p_180454_1_, boq p_180454_2_)
   {
-    if (stack != null)
+    if (p_180454_1_ != null)
     {
       bfl.E();
       bfl.a(0.5F, 0.5F, 0.5F);
-      if (model.d())
+      if (p_180454_2_.d())
       {
         bfl.b(180.0F, 0.0F, 1.0F, 0.0F);
         bfl.b(-0.5F, -0.5F, -0.5F);
         bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
         bfl.B();
-        bfi.a.a(stack);
+        bfi.a.a(p_180454_1_);
       }
       else
       {
+        if (Config.isCustomItems()) {
+          p_180454_2_ = CustomItems.getCustomItemModel(p_180454_1_, p_180454_2_, this.modelLocation);
+        }
         bfl.b(-0.5F, -0.5F, -0.5F);
-        a(model, stack);
-        if (stack.t()) {
-          a(model);
+        a(p_180454_2_, p_180454_1_);
+        if (p_180454_1_.t()) {
+          if ((!Config.isCustomItems()) || (!CustomItems.renderCustomEffect(this, p_180454_1_, p_180454_2_))) {
+            a(p_180454_2_);
+          }
         }
       }
       bfl.F();
     }
   }
   
-  private void a(boq model)
+  private void a(boq p_180451_1_)
   {
     bfl.a(false);
     bfl.c(514);
@@ -106,17 +135,17 @@ public class bjh
     bfl.n(5890);
     bfl.E();
     bfl.a(8.0F, 8.0F, 8.0F);
-    float f = (float)(ave.J() % 3000L) / 3000.0F / 8.0F;
-    bfl.b(f, 0.0F, 0.0F);
+    float var2 = (float)(ave.J() % 3000L) / 3000.0F / 8.0F;
+    bfl.b(var2, 0.0F, 0.0F);
     bfl.b(-50.0F, 0.0F, 0.0F, 1.0F);
-    a(model, -8372020);
+    a(p_180451_1_, -8372020);
     bfl.F();
     bfl.E();
     bfl.a(8.0F, 8.0F, 8.0F);
-    float f1 = (float)(ave.J() % 4873L) / 4873.0F / 8.0F;
-    bfl.b(-f1, 0.0F, 0.0F);
+    float var3 = (float)(ave.J() % 4873L) / 4873.0F / 8.0F;
+    bfl.b(-var3, 0.0F, 0.0F);
     bfl.b(10.0F, 0.0F, 0.0F, 1.0F);
-    a(model, -8372020);
+    a(p_180451_1_, -8372020);
     bfl.F();
     bfl.n(5888);
     bfl.b(770, 771);
@@ -126,117 +155,151 @@ public class bjh
     this.e.a(bmh.g);
   }
   
-  private void a(bfd renderer, bgg quad)
+  private void a(bfd p_175038_1_, bgg p_175038_2_)
   {
-    df vec3i = quad.d().m();
-    renderer.b(vec3i.n(), vec3i.o(), vec3i.p());
+    df var3 = p_175038_2_.d().m();
+    p_175038_1_.b(var3.n(), var3.o(), var3.p());
   }
   
-  private void a(bfd renderer, bgg quad, int color)
+  private void a(bfd p_175033_1_, bgg p_175033_2_, int p_175033_3_)
   {
-    renderer.a(quad.a());
-    renderer.a(color);
-    a(renderer, quad);
-  }
-  
-  private void a(bfd renderer, List<bgg> quads, int color, zx stack)
-  {
-    boolean flag = (color == -1) && (stack != null);
-    int i = 0;
-    for (int j = quads.size(); i < j; i++)
+    if (p_175033_1_.isMultiTexture())
     {
-      bgg bakedquad = (bgg)quads.get(i);
-      int k = color;
-      if ((flag) && (bakedquad.b()))
-      {
-        k = stack.b().a(stack, bakedquad.c());
-        if (bfk.a) {
-          k = bml.c(k);
-        }
-        k |= 0xFF000000;
+      p_175033_1_.a(p_175033_2_.getVertexDataSingle());
+      p_175033_1_.putSprite(p_175033_2_.getSprite());
+    }
+    else
+    {
+      p_175033_1_.a(p_175033_2_.a());
+    }
+    if (Reflector.ForgeHooksClient_putQuadColor.exists())
+    {
+      if (Reflector.IColoredBakedQuad.isInstance(p_175033_2_)) {
+        Reflector.call(Reflector.ForgeHooksClient_putQuadColor, new Object[] { p_175033_1_, p_175033_2_, Integer.valueOf(p_175033_3_) });
+      } else {
+        p_175033_1_.a(p_175033_3_);
       }
-      a(renderer, bakedquad, k);
+      return;
+    }
+    p_175033_1_.a(p_175033_3_);
+    a(p_175033_1_, p_175033_2_);
+  }
+  
+  private void a(bfd p_175032_1_, List p_175032_2_, int p_175032_3_, zx p_175032_4_)
+  {
+    boolean var5 = (p_175032_3_ == -1) && (p_175032_4_ != null);
+    int var6 = 0;
+    for (int var7 = p_175032_2_.size(); var6 < var7; var6++)
+    {
+      bgg var8 = (bgg)p_175032_2_.get(var6);
+      int var9 = p_175032_3_;
+      if ((var5) && (var8.b()))
+      {
+        var9 = p_175032_4_.b().a(p_175032_4_, var8.c());
+        if (Config.isCustomColors()) {
+          var9 = CustomColorizer.getColorFromItemStack(p_175032_4_, var8.c(), var9);
+        }
+        if (bfk.a) {
+          var9 = bml.c(var9);
+        }
+        var9 |= 0xFF000000;
+      }
+      a(p_175032_1_, var8, var9);
     }
   }
   
-  public boolean a(zx stack)
+  public boolean a(zx p_175050_1_)
   {
-    boq ibakedmodel = this.d.a(stack);
-    return ibakedmodel == null ? false : ibakedmodel.c();
+    boq var2 = this.d.a(p_175050_1_);
+    return var2 == null ? false : var2.c();
   }
   
-  private void b(zx stack)
+  private void b(zx p_175046_1_)
   {
-    boq ibakedmodel = this.d.a(stack);
-    zw item = stack.b();
-    if (item != null)
+    boq var2 = this.d.a(p_175046_1_);
+    zw var3 = p_175046_1_.b();
+    if (var3 != null)
     {
-      boolean flag = ibakedmodel.c();
-      if (!flag) {
+      boolean var4 = var2.c();
+      if (!var4) {
         bfl.a(2.0F, 2.0F, 2.0F);
       }
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     }
   }
   
-  public void a(zx p_181564_1_, bgr.b p_181564_2_)
+  public void a(zx p_500168_1_, bgr.b p_500168_2_)
   {
-    if (p_181564_1_ != null)
+    if (p_500168_1_ != null)
     {
-      boq ibakedmodel = this.d.a(p_181564_1_);
-      a(p_181564_1_, ibakedmodel, p_181564_2_);
+      boq var3 = this.d.a(p_500168_1_);
+      a(p_500168_1_, var3, p_500168_2_);
     }
   }
   
-  public void a(zx stack, pr entityToRenderFor, bgr.b cameraTransformType)
+  public void a(zx p_175049_1_, pr p_175049_2_, bgr.b p_175049_3_)
   {
-    if ((stack != null) && (entityToRenderFor != null))
+    if ((p_175049_1_ != null) && (p_175049_2_ != null))
     {
-      boq ibakedmodel = this.d.a(stack);
-      if ((entityToRenderFor instanceof wn))
+      boq var4 = this.d.a(p_175049_1_);
+      if ((p_175049_2_ instanceof wn))
       {
-        wn entityplayer = (wn)entityToRenderFor;
-        zw item = stack.b();
-        bov modelresourcelocation = null;
-        if ((item == zy.aR) && (entityplayer.bG != null))
+        wn var5 = (wn)p_175049_2_;
+        zw var6 = p_175049_1_.b();
+        bov var7 = null;
+        if ((var6 == zy.aR) && (var5.bG != null))
         {
-          modelresourcelocation = new bov("fishing_rod_cast", "inventory");
+          var7 = new bov("fishing_rod_cast", "inventory");
         }
-        else if ((item == zy.f) && (entityplayer.bQ() != null))
+        else if ((var6 == zy.f) && (var5.bQ() != null))
         {
-          int i = stack.l() - entityplayer.bR();
-          if (i >= 18) {
-            modelresourcelocation = new bov("bow_pulling_2", "inventory");
-          } else if (i > 13) {
-            modelresourcelocation = new bov("bow_pulling_1", "inventory");
-          } else if (i > 0) {
-            modelresourcelocation = new bov("bow_pulling_0", "inventory");
+          int var8 = p_175049_1_.l() - var5.bR();
+          if (var8 >= 18) {
+            var7 = new bov("bow_pulling_2", "inventory");
+          } else if (var8 > 13) {
+            var7 = new bov("bow_pulling_1", "inventory");
+          } else if (var8 > 0) {
+            var7 = new bov("bow_pulling_0", "inventory");
           }
         }
-        if (modelresourcelocation != null) {
-          ibakedmodel = this.d.a().a(modelresourcelocation);
+        else if (Reflector.ForgeItem_getModel.exists())
+        {
+          var7 = (bov)Reflector.call(var6, Reflector.ForgeItem_getModel, new Object[] { p_175049_1_, var5, Integer.valueOf(var5.bR()) });
+        }
+        this.modelLocation = var7;
+        if (var7 != null) {
+          var4 = this.d.a().a(var7);
         }
       }
-      a(stack, ibakedmodel, cameraTransformType);
+      a(p_175049_1_, var4, p_175049_3_);
+      
+      this.modelLocation = null;
     }
   }
   
-  protected void a(zx stack, boq model, bgr.b cameraTransformType)
+  protected void a(zx p_175040_1_, boq p_175040_2_, bgr.b p_175040_3_)
   {
     this.e.a(bmh.g);
     this.e.b(bmh.g).b(false, false);
-    b(stack);
+    b(p_175040_1_);
     bfl.B();
     bfl.a(516, 0.1F);
     bfl.l();
     bfl.a(770, 771, 1, 0);
     bfl.E();
-    bgr itemcameratransforms = model.f();
-    itemcameratransforms.a(cameraTransformType);
-    if (a(itemcameratransforms.b(cameraTransformType))) {
-      bfl.e(1028);
+    if (Reflector.ForgeHooksClient_handleCameraTransforms.exists())
+    {
+      p_175040_2_ = (boq)Reflector.call(Reflector.ForgeHooksClient_handleCameraTransforms, new Object[] { p_175040_2_, p_175040_3_ });
     }
-    a(stack, model);
+    else
+    {
+      bgr var4 = p_175040_2_.f();
+      var4.a(p_175040_3_);
+      if (a(var4.b(p_175040_3_))) {
+        bfl.e(1028);
+      }
+    }
+    a(p_175040_1_, p_175040_2_);
     bfl.e(1029);
     bfl.F();
     bfl.C();
@@ -245,14 +308,14 @@ public class bjh
     this.e.b(bmh.g).a();
   }
   
-  private boolean a(bgq p_183005_1_)
+  private boolean a(bgq p_500169_1_)
   {
-    return (p_183005_1_.d.x < 0.0F ? 1 : 0) ^ (p_183005_1_.d.y < 0.0F ? 1 : 0) ^ (p_183005_1_.d.z < 0.0F ? 1 : 0);
+    return (p_500169_1_.d.x < 0.0F ? 1 : 0) ^ (p_500169_1_.d.y < 0.0F ? 1 : 0) ^ (p_500169_1_.d.z < 0.0F ? 1 : 0);
   }
   
-  public void a(zx stack, int x, int y)
+  public void a(zx p_175042_1_, int p_175042_2_, int p_175042_3_)
   {
-    boq ibakedmodel = this.d.a(stack);
+    boq var4 = this.d.a(p_175042_1_);
     bfl.E();
     this.e.a(bmh.g);
     this.e.b(bmh.g).b(false, false);
@@ -262,9 +325,13 @@ public class bjh
     bfl.l();
     bfl.b(770, 771);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    a(x, y, ibakedmodel.c());
-    ibakedmodel.f().a(bgr.b.e);
-    a(stack, ibakedmodel);
+    a(p_175042_2_, p_175042_3_, var4.c());
+    if (Reflector.ForgeHooksClient_handleCameraTransforms.exists()) {
+      var4 = (boq)Reflector.call(Reflector.ForgeHooksClient_handleCameraTransforms, new Object[] { var4, bgr.b.e });
+    } else {
+      var4.f().a(bgr.b.e);
+    }
+    a(p_175042_1_, var4);
     bfl.c();
     bfl.C();
     bfl.f();
@@ -273,13 +340,13 @@ public class bjh
     this.e.b(bmh.g).a();
   }
   
-  private void a(int xPosition, int yPosition, boolean isGui3d)
+  private void a(int p_180452_1_, int p_180452_2_, boolean p_180452_3_)
   {
-    bfl.b(xPosition, yPosition, 100.0F + this.a);
+    bfl.b(p_180452_1_, p_180452_2_, 100.0F + this.a);
     bfl.b(8.0F, 8.0F, 0.0F);
     bfl.a(1.0F, 1.0F, -1.0F);
     bfl.a(0.5F, 0.5F, 0.5F);
-    if (isGui3d)
+    if (p_180452_3_)
     {
       bfl.a(40.0F, 40.0F, 40.0F);
       bfl.b(210.0F, 1.0F, 0.0F, 0.0F);
@@ -294,94 +361,114 @@ public class bjh
     }
   }
   
-  public void b(final zx stack, int xPosition, int yPosition)
+  public void b(final zx p_180450_1_, int p_180450_2_, int p_180450_3_)
   {
-    if ((stack != null) && (stack.b() != null))
+    if ((p_180450_1_ != null) && (p_180450_1_.b() != null))
     {
       this.a += 50.0F;
       try
       {
-        a(stack, xPosition, yPosition);
+        a(p_180450_1_, p_180450_2_, p_180450_3_);
       }
-      catch (Throwable throwable)
+      catch (Throwable var7)
       {
-        b crashreport = b.a(throwable, "Rendering item");
-        c crashreportcategory = crashreport.a("Item being rendered");
-        crashreportcategory.a("Item Type", new Callable()
+        b var5 = b.a(var7, "Rendering item");
+        c var6 = var5.a("Item being rendered");
+        var6.a("Item Type", new Callable()
         {
+          private static final String __OBFID = "CL_00001004";
+          
           public String a()
             throws Exception
           {
-            return String.valueOf(stack.b());
+            return String.valueOf(p_180450_1_.b());
           }
         });
-        crashreportcategory.a("Item Aux", new Callable()
+        var6.a("Item Aux", new Callable()
         {
+          private static final String __OBFID = "CL_00001005";
+          
           public String a()
             throws Exception
           {
-            return String.valueOf(stack.i());
+            return String.valueOf(p_180450_1_.i());
           }
         });
-        crashreportcategory.a("Item NBT", new Callable()
+        var6.a("Item NBT", new Callable()
         {
+          private static final String __OBFID = "CL_00001006";
+          
           public String a()
             throws Exception
           {
-            return String.valueOf(stack.o());
+            return String.valueOf(p_180450_1_.o());
           }
         });
-        crashreportcategory.a("Item Foil", new Callable()
+        var6.a("Item Foil", new Callable()
         {
+          private static final String __OBFID = "CL_00001007";
+          
           public String a()
             throws Exception
           {
-            return String.valueOf(stack.t());
+            return String.valueOf(p_180450_1_.t());
           }
         });
-        throw new e(crashreport);
+        throw new e(var5);
       }
       this.a -= 50.0F;
     }
   }
   
-  public void a(avn fr, zx stack, int xPosition, int yPosition)
+  public void a(avn p_175030_1_, zx p_175030_2_, int p_175030_3_, int p_175030_4_)
   {
-    a(fr, stack, xPosition, yPosition, (String)null);
+    a(p_175030_1_, p_175030_2_, p_175030_3_, p_175030_4_, (String)null);
   }
   
-  public void a(avn fr, zx stack, int xPosition, int yPosition, String text)
+  public void a(avn p_180453_1_, zx p_180453_2_, int p_180453_3_, int p_180453_4_, String p_180453_5_)
   {
-    if (stack != null)
+    if (p_180453_2_ != null)
     {
-      if ((stack.b != 1) || (text != null))
+      if ((p_180453_2_.b != 1) || (p_180453_5_ != null))
       {
-        String s = text == null ? String.valueOf(stack.b) : text;
-        if ((text == null) && (stack.b < 1)) {
-          s = a.m + String.valueOf(stack.b);
+        String var6 = p_180453_5_ == null ? String.valueOf(p_180453_2_.b) : p_180453_5_;
+        if ((p_180453_5_ == null) && (p_180453_2_.b < 1)) {
+          var6 = a.m + String.valueOf(p_180453_2_.b);
         }
         bfl.f();
         bfl.i();
         bfl.k();
-        fr.a(s, xPosition + 19 - 2 - fr.a(s), yPosition + 6 + 3, 16777215);
+        p_180453_1_.a(var6, p_180453_3_ + 19 - 2 - p_180453_1_.a(var6), p_180453_4_ + 6 + 3, 16777215);
         bfl.e();
         bfl.j();
       }
-      if (stack.g())
+      boolean itemDamaged = p_180453_2_.g();
+      if (Reflector.ForgeItem_showDurabilityBar.exists()) {
+        itemDamaged = Reflector.callBoolean(p_180453_2_.b(), Reflector.ForgeItem_showDurabilityBar, new Object[] { p_180453_2_ });
+      }
+      if (itemDamaged)
       {
-        int j = (int)Math.round(13.0D - stack.h() * 13.0D / stack.j());
-        int i = (int)Math.round(255.0D - stack.h() * 255.0D / stack.j());
+        int var10 = (int)Math.round(13.0D - p_180453_2_.h() * 13.0D / p_180453_2_.j());
+        int var7 = (int)Math.round(255.0D - p_180453_2_.h() * 255.0D / p_180453_2_.j());
+        if (Reflector.ForgeItem_getDurabilityForDisplay.exists())
+        {
+          double health = Reflector.callDouble(p_180453_2_.b(), Reflector.ForgeItem_getDurabilityForDisplay, new Object[] { p_180453_2_ });
+          var10 = (int)Math.round(13.0D - health * 13.0D);
+          var7 = (int)Math.round(255.0D - health * 255.0D);
+        }
         bfl.f();
         bfl.i();
         bfl.x();
         bfl.c();
         bfl.k();
-        bfx tessellator = bfx.a();
-        bfd worldrenderer = tessellator.c();
-        a(worldrenderer, xPosition + 2, yPosition + 13, 13, 2, 0, 0, 0, 255);
-        a(worldrenderer, xPosition + 2, yPosition + 13, 12, 1, (255 - i) / 4, 64, 0, 255);
-        a(worldrenderer, xPosition + 2, yPosition + 13, j, 1, 255 - i, i, 0, 255);
-        bfl.l();
+        bfx var8 = bfx.a();
+        bfd var9 = var8.c();
+        a(var9, p_180453_3_ + 2, p_180453_4_ + 13, 13, 2, 0, 0, 0, 255);
+        a(var9, p_180453_3_ + 2, p_180453_4_ + 13, 12, 1, (255 - var7) / 4, 64, 0, 255);
+        a(var9, p_180453_3_ + 2, p_180453_4_ + 13, var10, 1, 255 - var7, var7, 0, 255);
+        if (!Reflector.ForgeHooksClient.exists()) {
+          bfl.l();
+        }
         bfl.d();
         bfl.w();
         bfl.e();
@@ -390,13 +477,13 @@ public class bjh
     }
   }
   
-  private void a(bfd p_181565_1_, int p_181565_2_, int p_181565_3_, int p_181565_4_, int p_181565_5_, int p_181565_6_, int p_181565_7_, int p_181565_8_, int p_181565_9_)
+  private void a(bfd p_500170_1_, int p_500170_2_, int p_500170_3_, int p_500170_4_, int p_500170_5_, int p_500170_6_, int p_500170_7_, int p_500170_8_, int p_500170_9_)
   {
-    p_181565_1_.a(7, bms.f);
-    p_181565_1_.b(p_181565_2_ + 0, p_181565_3_ + 0, 0.0D).b(p_181565_6_, p_181565_7_, p_181565_8_, p_181565_9_).d();
-    p_181565_1_.b(p_181565_2_ + 0, p_181565_3_ + p_181565_5_, 0.0D).b(p_181565_6_, p_181565_7_, p_181565_8_, p_181565_9_).d();
-    p_181565_1_.b(p_181565_2_ + p_181565_4_, p_181565_3_ + p_181565_5_, 0.0D).b(p_181565_6_, p_181565_7_, p_181565_8_, p_181565_9_).d();
-    p_181565_1_.b(p_181565_2_ + p_181565_4_, p_181565_3_ + 0, 0.0D).b(p_181565_6_, p_181565_7_, p_181565_8_, p_181565_9_).d();
+    p_500170_1_.a(7, bms.f);
+    p_500170_1_.b(p_500170_2_ + 0, p_500170_3_ + 0, 0.0D).b(p_500170_6_, p_500170_7_, p_500170_8_, p_500170_9_).d();
+    p_500170_1_.b(p_500170_2_ + 0, p_500170_3_ + p_500170_5_, 0.0D).b(p_500170_6_, p_500170_7_, p_500170_8_, p_500170_9_).d();
+    p_500170_1_.b(p_500170_2_ + p_500170_4_, p_500170_3_ + p_500170_5_, 0.0D).b(p_500170_6_, p_500170_7_, p_500170_8_, p_500170_9_).d();
+    p_500170_1_.b(p_500170_2_ + p_500170_4_, p_500170_3_ + 0, 0.0D).b(p_500170_6_, p_500170_7_, p_500170_8_, p_500170_9_).d();
     bfx.a().b();
   }
   
@@ -849,9 +936,11 @@ public class bjh
     a(zy.by, "nether_wart");
     this.d.a(zy.bz, new bfp()
     {
-      public bov a(zx stack)
+      private static final String __OBFID = "CL_00002440";
+      
+      public bov a(zx p_178113_1_)
       {
-        return aai.f(stack.i()) ? new bov("bottle_splash", "inventory") : new bov("bottle_drinkable", "inventory");
+        return aai.f(p_178113_1_.i()) ? new bov("bottle_splash", "inventory") : new bov("bottle_drinkable", "inventory");
       }
     });
     a(zy.bA, "glass_bottle");
@@ -865,7 +954,9 @@ public class bjh
     a(zy.bI, "speckled_melon");
     this.d.a(zy.bJ, new bfp()
     {
-      public bov a(zx stack)
+      private static final String __OBFID = "CL_00002439";
+      
+      public bov a(zx p_178113_1_)
       {
         return new bov("spawn_egg", "inventory");
       }
@@ -904,7 +995,9 @@ public class bjh
     a(zy.co, "name_tag");
     this.d.a(zy.cE, new bfp()
     {
-      public bov a(zx stack)
+      private static final String __OBFID = "CL_00002438";
+      
+      public bov a(zx p_178113_1_)
       {
         return new bov("banner", "inventory");
       }
@@ -925,14 +1018,18 @@ public class bjh
     a(zy.cD, "prismarine_crystals");
     this.d.a(zy.cd, new bfp()
     {
-      public bov a(zx stack)
+      private static final String __OBFID = "CL_00002437";
+      
+      public bov a(zx p_178113_1_)
       {
         return new bov("enchanted_book", "inventory");
       }
     });
     this.d.a(zy.bd, new bfp()
     {
-      public bov a(zx stack)
+      private static final String __OBFID = "CL_00002436";
+      
+      public bov a(zx p_178113_1_)
       {
         return new bov("filled_map", "inventory");
       }
@@ -946,6 +1043,9 @@ public class bjh
     a(afi.bg, aho.a.k.a(), "brown_mushroom_block");
     a(afi.bh, aho.a.k.a(), "red_mushroom_block");
     a(afi.bI, "dragon_egg");
+    if (Reflector.ModelLoader_onRegisterItems.exists()) {
+      Reflector.call(Reflector.ModelLoader_onRegisterItems, new Object[] { this.d });
+    }
   }
   
   public void a(bni resourceManager)

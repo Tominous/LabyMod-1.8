@@ -29,7 +29,7 @@ public class FilterLoader
     {
       json = IOUtils.toString(new FileInputStream(Source.file_filters));
     }
-    catch (FileNotFoundException e) {}catch (IOException e) {}
+    catch (FileNotFoundException localFileNotFoundException) {}catch (IOException localIOException) {}
     filters = (ArrayList)Utils.ConvertJsonToObject.getFromJSON(json, ArrayList.class);
     if (filters == null) {
       filters = new ArrayList();
@@ -47,7 +47,7 @@ public class FilterLoader
         }
         new File(Source.file_filters).createNewFile();
       }
-      catch (IOException e) {}
+      catch (IOException localIOException) {}
     }
   }
   
@@ -62,6 +62,6 @@ public class FilterLoader
       w.flush();
       w.close();
     }
-    catch (FileNotFoundException e) {}
+    catch (FileNotFoundException localFileNotFoundException) {}
   }
 }

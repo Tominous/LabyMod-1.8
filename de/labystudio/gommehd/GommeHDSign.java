@@ -72,7 +72,7 @@ public class GommeHDSign
           return true;
         }
       }
-      catch (Exception error) {}
+      catch (Exception localException) {}
     }
     return false;
   }
@@ -136,7 +136,7 @@ public class GommeHDSign
         }
       }
     }
-    catch (Exception error) {}
+    catch (Exception localException) {}
     return false;
   }
   
@@ -145,9 +145,15 @@ public class GommeHDSign
     try
     {
       String map = getMap(text).toLowerCase();
+      String[] arrayOfString1;
+      int i;
+      String str1;
       if ((!LabyMod.getInstance().gommeHDSearchBlacklist.isEmpty()) && (LabyMod.getInstance().gommeHDSearch.isEmpty()))
       {
-        for (String l : LabyMod.getInstance().gommeHDSearchBlacklist.toLowerCase().split(",")) {
+        arrayOfString1 = LabyMod.getInstance().gommeHDSearchBlacklist.toLowerCase().split(",");i = arrayOfString1.length;
+        for (str1 = 0; str1 < i; str1++)
+        {
+          String l = arrayOfString1[str1];
           if (map.contains(l)) {
             return false;
           }
@@ -157,9 +163,13 @@ public class GommeHDSign
       if (LabyMod.getInstance().gommeHDSearch.isEmpty()) {
         return true;
       }
+      String l;
       if (LabyMod.getInstance().gommeHDSearchBlacklist.isEmpty())
       {
-        for (String l : LabyMod.getInstance().gommeHDSearch.toLowerCase().split(",")) {
+        arrayOfString1 = LabyMod.getInstance().gommeHDSearch.toLowerCase().split(",");i = arrayOfString1.length;
+        for (str1 = 0; str1 < i; str1++)
+        {
+          l = arrayOfString1[str1];
           if (map.contains(l)) {
             return true;
           }
@@ -168,12 +178,18 @@ public class GommeHDSign
       else
       {
         boolean result = false;
-        for (String l : LabyMod.getInstance().gommeHDSearch.toLowerCase().split(",")) {
+        String[] arrayOfString2 = LabyMod.getInstance().gommeHDSearch.toLowerCase().split(",");str1 = arrayOfString2.length;
+        for (l = 0; l < str1; l++)
+        {
+          String l = arrayOfString2[l];
           if (map.contains(l)) {
             result = true;
           }
         }
-        for (String l : LabyMod.getInstance().gommeHDSearchBlacklist.toLowerCase().split(",")) {
+        arrayOfString2 = LabyMod.getInstance().gommeHDSearchBlacklist.toLowerCase().split(",");String str2 = arrayOfString2.length;
+        for (l = 0; l < str2; l++)
+        {
+          String l = arrayOfString2[l];
           if (map.contains(l)) {
             result = false;
           }
@@ -181,7 +197,7 @@ public class GommeHDSign
         return result;
       }
     }
-    catch (Exception error) {}
+    catch (Exception localException) {}
     return false;
   }
   

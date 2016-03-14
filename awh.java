@@ -9,6 +9,7 @@ import de.labystudio.utils.Color;
 import de.labystudio.utils.DrawUtils;
 import de.labystudio.utils.FriendsLoader;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import org.lwjgl.opengl.GL11;
 
@@ -108,10 +109,14 @@ public class awh
     if (this.h != null)
     {
       var18 = this.f.k.c(this.h.d(), width - 50);
-      for (String s2 : var18) {
+      for (??? = var18.iterator(); ???.hasNext();)
+      {
+        s2 = (String)???.next();
+        
         var16 = Math.max(var16, this.f.k.a(s2));
       }
     }
+    String s2;
     if (var17 != null)
     {
       a(width / 2 - var16 / 2 - 1, var15 - 1, width / 2 + var16 / 2 + 1, var15 + var17.size() * this.f.k.a, Integer.MIN_VALUE);
@@ -244,7 +249,7 @@ public class awh
       bfl.f();
       bfl.d();
     }
-    catch (Exception error) {}
+    catch (Exception localException) {}
   }
   
   protected void a(int p_175245_1_, int p_175245_2_, int p_175245_3_, bdc networkPlayerInfoIn)

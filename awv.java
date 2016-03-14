@@ -168,6 +168,7 @@ public class awv
   
   public void a()
   {
+    String s;
     if (this.i)
     {
       this.a.b(this.a.a(-1, this.a.i(), false) - this.a.i());
@@ -180,7 +181,7 @@ public class awv
       int i = this.a.a(-1, this.a.i(), false);
       this.t.clear();
       this.s = 0;
-      String s = this.a.b().substring(i).toLowerCase();
+      s = this.a.b().substring(i).toLowerCase();
       String s1 = this.a.b().substring(0, this.a.i());
       a(s1, s);
       if (this.t.isEmpty()) {

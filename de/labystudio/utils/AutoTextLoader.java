@@ -39,7 +39,7 @@ public class AutoTextLoader
     {
       json = IOUtils.toString(new FileInputStream(Source.file_autoText));
     }
-    catch (FileNotFoundException e) {}catch (IOException e) {}
+    catch (FileNotFoundException localFileNotFoundException) {}catch (IOException localIOException) {}
     autoText = (HashMap)Utils.ConvertJsonToObject.getFromJSON(json, HashMap.class);
     if (autoText == null) {
       autoText = new HashMap();
@@ -57,7 +57,7 @@ public class AutoTextLoader
         }
         new File(Source.file_autoText).createNewFile();
       }
-      catch (IOException e) {}
+      catch (IOException localIOException) {}
     }
   }
   
@@ -72,7 +72,7 @@ public class AutoTextLoader
       w.flush();
       w.close();
     }
-    catch (FileNotFoundException e) {}
+    catch (FileNotFoundException localFileNotFoundException) {}
   }
   
   static boolean repeat = false;
@@ -117,7 +117,7 @@ public class AutoTextLoader
             LabyMod.getInstance().sendChatMessage((String)autoText.get(set));
           }
         }
-        catch (Exception error) {}
+        catch (Exception localException) {}
       }
     }
   }

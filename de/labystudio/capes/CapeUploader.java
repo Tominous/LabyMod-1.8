@@ -90,7 +90,7 @@ public class CapeUploader
           if (output.equalsIgnoreCase("OK"))
           {
             LabyMod.getInstance().achievementGui.displayBroadcast("CapeManager", Color.cl("a") + "Cape uploaded!", EnumAlertType.LABYMOD);
-            CapeManager.refresh();
+            LabyMod.getInstance().getCapeManager().refresh();
           }
           else
           {
@@ -102,12 +102,12 @@ public class CapeUploader
       {
         os.close();
       }
-      catch (Exception e) {}
+      catch (Exception localException1) {}
       try
       {
         is.close();
       }
-      catch (Exception e) {}
+      catch (Exception localException2) {}
       upload = false;
     }
     catch (Exception e)
@@ -121,12 +121,12 @@ public class CapeUploader
       {
         os.close();
       }
-      catch (Exception e) {}
+      catch (Exception localException5) {}
       try
       {
         is.close();
       }
-      catch (Exception e) {}
+      catch (Exception localException6) {}
     }
     openUpload = false;
   }

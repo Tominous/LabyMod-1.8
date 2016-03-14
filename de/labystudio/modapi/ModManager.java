@@ -86,7 +86,7 @@ public class ModManager
         file = new File(src.getLocation().toURI());
         jar = new JarFile(file);
       }
-      catch (Exception error) {}
+      catch (Exception localException1) {}
       if ((file == null) || (jar == null) || (!file.exists())) {
         return;
       }

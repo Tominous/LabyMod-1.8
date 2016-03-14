@@ -100,11 +100,12 @@ public abstract class yz
   private acj[] s;
   private zx t;
   
-  public yz(int index, String label)
+  public yz(int ☃, String ☃)
   {
-    this.n = index;
-    this.o = label;
-    a[index] = this;
+    this.n = ☃;
+    this.o = ☃;
+    
+    a[☃] = this;
   }
   
   public int a()
@@ -142,9 +143,9 @@ public abstract class yz
     return this.p;
   }
   
-  public yz a(String texture)
+  public yz a(String ☃)
   {
-    this.p = texture;
+    this.p = ☃;
     return this;
   }
   
@@ -185,50 +186,51 @@ public abstract class yz
     return this.s;
   }
   
-  public yz a(acj... types)
+  public yz a(acj... ☃)
   {
-    this.s = types;
+    this.s = ☃;
     return this;
   }
   
-  public boolean a(acj enchantmentType)
+  public boolean a(acj ☃)
   {
     if (this.s == null) {
       return false;
     }
-    for (acj enumenchantmenttype : this.s) {
-      if (enumenchantmenttype == enchantmentType) {
+    for (acj ☃ : this.s) {
+      if (☃ == ☃) {
         return true;
       }
     }
     return false;
   }
   
-  public void a(List<zx> p_78018_1_)
+  public void a(List<zx> ☃)
   {
-    for (zw item : zw.e) {
-      if ((item != null) && (item.c() == this)) {
-        item.a(item, this, p_78018_1_);
+    for (zw ☃ : zw.e) {
+      if ((☃ != null) && 
+        (☃.c() == this)) {
+        ☃.a(☃, this, ☃);
       }
     }
     if (n() != null) {
-      a(p_78018_1_, n());
+      a(☃, n());
     }
   }
   
-  public void a(List<zx> itemList, acj... enchantmentType)
+  public void a(List<zx> ☃, acj... ☃)
   {
-    for (aci enchantment : aci.b) {
-      if ((enchantment != null) && (enchantment.C != null))
+    for (aci ☃ : aci.b) {
+      if ((☃ != null) && (☃.C != null))
       {
-        boolean flag = false;
-        for (int i = 0; (i < enchantmentType.length) && (!flag); i++) {
-          if (enchantment.C == enchantmentType[i]) {
-            flag = true;
+        boolean ☃ = false;
+        for (int ☃ = 0; (☃ < ☃.length) && (!☃); ☃++) {
+          if (☃.C == ☃[☃]) {
+            ☃ = true;
           }
         }
-        if (flag) {
-          itemList.add(zy.cd.a(new acl(enchantment, enchantment.b())));
+        if (☃) {
+          ☃.add(zy.cd.a(new acl(☃, ☃.b())));
         }
       }
     }

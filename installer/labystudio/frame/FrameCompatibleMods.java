@@ -108,7 +108,7 @@ public class FrameCompatibleMods
       y += 20;
     }
     this.textArea = new JTextArea();
-    this.textArea.setBounds(10, 106, 258, 150);
+    this.textArea.setBounds(10, 130, 258, 126);
     this.textArea.setEditable(false);
     this.textArea.setEnabled(true);
     this.textArea.setFont(new Font("Dialog", 0, 10));
@@ -158,7 +158,7 @@ public class FrameCompatibleMods
     btnBack.setBounds(298, 331, 126, 39);
     mainPanel.add(btnBack);
     
-    JLabel label = new JLabel(new ImageIcon(FrameCompatibleMods.class.getResource("/installer/images/feature1.jpg")));
+    JLabel label = new JLabel(new ImageIcon(FrameCompatibleMods.class.getResource("/installer/images/addons.jpg")));
     label.setBounds(298, 11, 357, 309);
     mainPanel.add(label);
     

@@ -34,6 +34,7 @@ import de.labystudio.packets.PacketLoginRequest;
 import de.labystudio.packets.PacketLoginTime;
 import de.labystudio.packets.PacketLoginVersion;
 import de.labystudio.packets.PacketMessage;
+import de.labystudio.packets.PacketMojangStatus;
 import de.labystudio.packets.PacketPing;
 import de.labystudio.packets.PacketPlayAcceptFriendRequest;
 import de.labystudio.packets.PacketPlayChangeOptions;
@@ -52,6 +53,9 @@ import de.labystudio.packets.PacketServerMessage;
 import de.labystudio.utils.Color;
 import de.labystudio.utils.Debug;
 import de.labystudio.utils.LOGO;
+import de.labystudio.utils.MojangService;
+import de.labystudio.utils.ServiceStatus;
+import de.labystudio.utils.Utils;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
@@ -141,16 +145,23 @@ public class ClientConnection
         {
           ClientConnection.this.setConnectionState(EnumConnectionState.OFFLINE);
           LabyMod.getInstance().lastKickReason = error.getMessage();
+          System.out.println("UnresolvedAddressException: " + error.getMessage());
           error.printStackTrace();
         }
         catch (Throwable throwable)
         {
           ClientConnection.this.setConnectionState(EnumConnectionState.OFFLINE);
           LabyMod.getInstance().lastKickReason = throwable.getMessage();
+          System.out.println("Throwable: " + throwable.getMessage());
+          if (throwable.getMessage().contains("no further information")) {
+            LabyMod.getInstance().lastKickReason = "The Chat is temporarily offline.";
+          }
           throwable.printStackTrace();
         }
       }
-    }).start();
+    })
+    
+      .start();
   }
   
   public void setIntentionally(boolean status)
@@ -268,6 +279,7 @@ public class ClientConnection
     LabyMod.getInstance().intentionally = true;
     closeChannel();
     LabyMod.getInstance().lastKickReason = packet.getReason();
+    System.out.println("PacketKick: " + packet.getReason());
     if (ConfigManager.settings.chatAlertType)
     {
       if (ConfigManager.settings.alertsChat) {
@@ -323,6 +335,8 @@ public class ClientConnection
     if (getState() != EnumConnectionState.OFFLINE)
     {
       closeChannel();
+      LabyMod.getInstance().lastKickReason = packet.getReason();
+      System.out.println("PacketDisconnect: " + packet.getReason());
       if (LabyMod.getInstance().mc.m != null) {
         if (ConfigManager.settings.chatAlertType)
         {
@@ -349,6 +363,7 @@ public class ClientConnection
       {
         getClient().requests.clear();
         getClient().friends.clear();
+        LabyMod.getInstance().mojangStatus.clear();
       }
       if (isChannelOpen()) {
         this.ch.close();
@@ -404,7 +419,9 @@ public class ClientConnection
               e.printStackTrace();
             }
           }
-        }).start();
+        })
+        
+          .start();
       }
     }
   }
@@ -614,8 +631,11 @@ public class ClientConnection
   
   public void handle(PacketLoginVersion packet)
   {
-    if (Source.mod_VersionId < packet.getVersionID()) {
+    if (Source.mod_VersionId < packet.getVersionID())
+    {
       LabyMod.getInstance().chatPacketUpdate = true;
+      LabyMod.getInstance().latestVersionName = packet.getVersionName();
+      LabyMod.getInstance().lastKickReason = ("Please update LabyMod to v" + packet.getVersionName());
     }
   }
   
@@ -678,4 +698,48 @@ public class ClientConnection
   }
   
   public void handle(PacketEncryptionResponse packet) {}
+  
+  public void handle(PacketMojangStatus packet)
+  {
+    ServiceStatus status = new ServiceStatus(packet.getStatus());
+    
+    String m = status.getColor();
+    if (ConfigManager.settings.mojangStatus) {
+      if (ConfigManager.settings.mojangStatusChat)
+      {
+        if (status.getColor().equals("yellow")) {
+          m = Color.cl("e") + packet.getMojangService().getName() + Color.cl("7") + " is running slowly";
+        }
+        if (status.getColor().equals("red")) {
+          m = Color.cl("c") + packet.getMojangService().getName() + Color.cl("7") + " is offline";
+        }
+        if (status.getColor().equals("green")) {
+          if ((LabyMod.getInstance().mojangStatus.containsKey(packet.getMojangService().getName())) && (((ServiceStatus)LabyMod.getInstance().mojangStatus.get(packet.getMojangService().getName())).getCreated() / 1000L != System.currentTimeMillis() / 1000L)) {
+            m = Color.cl("a") + packet.getMojangService().getName() + Color.cl("7") + " is back online " + Color.cl("c") + "(" + Utils.parseTimeNormal((System.currentTimeMillis() - ((ServiceStatus)LabyMod.getInstance().mojangStatus.get(packet.getMojangService().getName())).getCreated()) / 1000L) + " downtime)";
+          } else {
+            m = Color.cl("a") + packet.getMojangService().getName() + Color.cl("7") + " is back online";
+          }
+        }
+        LabyMod.getInstance().displayMessageInChat(Color.cl("8") + "[" + Color.cl("5") + Color.cl("l") + "Mojang" + Color.cl("8") + "] " + Color.cl("7") + m);
+      }
+      else
+      {
+        if (status.getColor().equals("yellow")) {
+          m = Color.cl("e") + "Is running slowly";
+        }
+        if (status.getColor().equals("red")) {
+          m = Color.cl("c") + "Is offline";
+        }
+        if (status.getColor().equals("green")) {
+          if ((LabyMod.getInstance().mojangStatus.containsKey(packet.getMojangService().getName())) && (((ServiceStatus)LabyMod.getInstance().mojangStatus.get(packet.getMojangService().getName())).getCreated() / 1000L != System.currentTimeMillis() / 1000L)) {
+            m = Color.cl("a") + "Is back online " + Color.cl("c") + "(" + Utils.parseTimeNormal((System.currentTimeMillis() - ((ServiceStatus)LabyMod.getInstance().mojangStatus.get(packet.getMojangService().getName())).getCreated()) / 1000L) + " downtime)";
+          } else {
+            m = Color.cl("a") + "Is back online";
+          }
+        }
+        LabyMod.getInstance().achievementGui.displayBroadcast(Color.cl("5") + packet.getMojangService().getName(), m, EnumAlertType.LABYMOD);
+      }
+    }
+    LabyMod.getInstance().mojangStatus.put(packet.getMojangService().getName(), status);
+  }
 }

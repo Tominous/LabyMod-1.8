@@ -4,7 +4,7 @@ import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 class bdc$1
   implements bnp.a
 {
-  bdc$1(bdc parambdc) {}
+  bdc$1(bdc this$0) {}
   
   public void a(MinecraftProfileTexture.Type p_180521_1_, jy location, MinecraftProfileTexture profileTexture)
   {

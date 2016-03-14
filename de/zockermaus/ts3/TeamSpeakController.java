@@ -15,6 +15,7 @@ import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class TeamSpeakController
@@ -218,149 +219,158 @@ public class TeamSpeakController
     {
       handleNotifyMessage(message);
     }
-    else if ((message.startsWith("clid")) && (message.contains("|")))
-    {
-      ArrayList<Integer> ids = new ArrayList();
-      String[] clients = message.split("[|]");
-      for (String client : clients)
-      {
-        String[] clientargs = client.split(" ");
-        Argument[] args = new Argument[clientargs.length];
-        for (int i = 0; i < args.length; i++) {
-          args[i] = new Argument(clientargs[i]);
-        }
-        TeamSpeakUser user = null;
-        if (TeamSpeakUser.contains(args[0].getAsInt())) {
-          user = getInstance().getUser(args[0].getAsInt());
-        } else {
-          user = new TeamSpeakUser(args[0].getAsInt());
-        }
-        if (user != null)
-        {
-          user.updateChannelId(args[1].getAsInt());
-          user.updateDatabaseId(args[2].getAsInt());
-          user.updateNickname(TeamSpeak.fix(args[3].getValue()));
-          user.updateTyping(args[4].getAsBoolean());
-          user.updateAway(args[5].getAsBoolean(), TeamSpeak.fix(args[6].getValue()));
-          user.updateTalkStatus(args[7].getAsBoolean());
-          user.updateClientInput(args[8].getAsBoolean());
-          user.updateClientOutput(args[9].getAsBoolean());
-          user.updateClientInputHardware(args[10].getAsBoolean());
-          user.updateClientOutputHardware(args[11].getAsBoolean());
-          user.updateTalkPower(args[12].getAsInt());
-          user.updateTalker(args[13].getAsBoolean());
-          user.updatePrioritySpeaker(args[14].getAsBoolean());
-          user.updateRecording(args[15].getAsBoolean());
-          user.updateChannelCommander(args[16].getAsBoolean());
-          user.updateMuted(args[17].getAsBoolean());
-          user.updateUid(args[18].getValue());
-          user.updateServerGroups(args[19].getAsIntArray());
-          user.updateChannelGroupId(args[20].getAsInt());
-          user.updateIconId(args[21].getAsInt());
-          user.updateCountry(args[22].getValue());
-          
-          ids.add(Integer.valueOf(user.getClientId()));
-        }
-      }
-      List<TeamSpeakUser> users = TeamSpeakUser.getUsers();
-      Collections.synchronizedList(users);
-      ArrayList<TeamSpeakUser> rem = new ArrayList();
-      for (TeamSpeakUser user : users) {
-        if (!ids.contains(Integer.valueOf(user.getClientId()))) {
-          rem.add(user);
-        }
-      }
-      for (TeamSpeakUser user : rem) {
-        TeamSpeakUser.unregisterUser(user);
-      }
-    }
-    else if ((message.startsWith("cid")) && (message.contains("|")))
-    {
-      ArrayList<Integer> ids = new ArrayList();
-      String[] channels = message.split("[|]");
-      for (String channel : channels)
-      {
-        String[] channelargs = channel.split(" ");
-        Argument[] args = new Argument[channelargs.length];
-        for (int i = 0; i < args.length; i++) {
-          args[i] = new Argument(channelargs[i]);
-        }
-        TeamSpeakChannel ch = null;
-        if (TeamSpeakChannel.contains(args[0].getAsInt())) {
-          ch = getInstance().getChannel(args[0].getAsInt());
-        } else {
-          ch = new TeamSpeakChannel(args[0].getAsInt());
-        }
-        ch.updatePID(args[1].getAsInt());
-        ch.updateChannelOrder(args[2].getAsInt());
-        ch.updateChannelName(TeamSpeak.fix(args[3].getValue()));
-        ch.updateTopic(args[4].getValue());
-        ch.updateFlagDefault(args[5].getAsBoolean());
-        ch.updateIsPassword(args[6].getAsBoolean());
-        ch.updatePermanent(args[7].getAsBoolean());
-        ch.updateSemiPermanent(args[8].getAsBoolean());
-        ch.updateChannelCodec(args[9].getAsInt());
-        ch.updateChannelCodecQuality(args[10].getAsInt());
-        ch.updateTalkPower(args[11].getAsInt());
-        ch.updateIconID(args[12].getAsInt());
-        ch.updateMaxClients(args[13].getAsInt());
-        ch.updateMaxFamilyClients(args[14].getAsInt());
-        ch.updateFlagAreSubscribed(args[15].getAsBoolean());
-        if (args.length == 17) {
-          ch.updateTotalClients(args[16].getAsInt());
-        }
-        ids.add(Integer.valueOf(ch.getChannelId()));
-      }
-      List<TeamSpeakChannel> ch = TeamSpeakChannel.getChannels();
-      Collections.synchronizedList(ch);
-      ArrayList<TeamSpeakChannel> rem = new ArrayList();
-      for (TeamSpeakChannel c : ch) {
-        if (!ids.contains(Integer.valueOf(c.getChannelId()))) {
-          rem.add(c);
-        }
-      }
-      for (TeamSpeakChannel c : rem) {
-        TeamSpeakChannel.deleteChannel(c);
-      }
-    }
-    else if ((message.startsWith("clid")) && (!message.contains("|")) && (message.contains("cid")))
-    {
-      String[] sargs = message.split(" ");
-      Argument[] args = new Argument[sargs.length];
-      for (int i = 0; i < args.length; i++) {
-        args[i] = new Argument(sargs[i]);
-      }
-      if (args.length == 2)
-      {
-        TeamSpeakUser user = getUser(args[0].getAsInt());
-        if (user != null)
-        {
-          user.updateChannelId(args[1].getAsInt());
-          this.me = user;
-        }
-      }
-    }
-    else if ((message.startsWith("ip=")) && (message.contains("port=")))
-    {
-      String[] sargs = message.split(" ");
-      Argument[] args = new Argument[sargs.length];
-      for (int i = 0; i < args.length; i++) {
-        args[i] = new Argument(sargs[i]);
-      }
-      if (args.length >= 2)
-      {
-        this.serverIP = args[0].getValue();
-        this.serverPort = args[1].getAsInt();
-        TeamSpeak.print("Connected to " + this.serverIP + ":" + this.serverPort);
-        TeamSpeak.setupChat();
-        for (ControlListener listener : this.listeners) {
-          listener.onConnect();
-        }
-      }
-    }
     else
     {
-      handleOther(message);
+      Object users;
+      Object rem;
+      if ((message.startsWith("clid")) && (message.contains("|")))
+      {
+        ArrayList<Integer> ids = new ArrayList();
+        String[] clients = message.split("[|]");
+        for (String client : clients)
+        {
+          String[] clientargs = client.split(" ");
+          Argument[] args = new Argument[clientargs.length];
+          for (int i = 0; i < args.length; i++) {
+            args[i] = new Argument(clientargs[i]);
+          }
+          TeamSpeakUser user = null;
+          if (TeamSpeakUser.contains(args[0].getAsInt())) {
+            user = getInstance().getUser(args[0].getAsInt());
+          } else {
+            user = new TeamSpeakUser(args[0].getAsInt());
+          }
+          if (user != null)
+          {
+            user.updateChannelId(args[1].getAsInt());
+            user.updateDatabaseId(args[2].getAsInt());
+            user.updateNickname(TeamSpeak.fix(args[3].getValue()));
+            user.updateTyping(args[4].getAsBoolean());
+            user.updateAway(args[5].getAsBoolean(), TeamSpeak.fix(args[6].getValue()));
+            user.updateTalkStatus(args[7].getAsBoolean());
+            user.updateClientInput(args[8].getAsBoolean());
+            user.updateClientOutput(args[9].getAsBoolean());
+            user.updateClientInputHardware(args[10].getAsBoolean());
+            user.updateClientOutputHardware(args[11].getAsBoolean());
+            user.updateTalkPower(args[12].getAsInt());
+            user.updateTalker(args[13].getAsBoolean());
+            user.updatePrioritySpeaker(args[14].getAsBoolean());
+            user.updateRecording(args[15].getAsBoolean());
+            user.updateChannelCommander(args[16].getAsBoolean());
+            user.updateMuted(args[17].getAsBoolean());
+            user.updateUid(args[18].getValue());
+            user.updateServerGroups(args[19].getAsIntArray());
+            user.updateChannelGroupId(args[20].getAsInt());
+            user.updateIconId(args[21].getAsInt());
+            user.updateCountry(args[22].getValue());
+            
+            ids.add(Integer.valueOf(user.getClientId()));
+          }
+        }
+        users = TeamSpeakUser.getUsers();
+        Collections.synchronizedList((List)users);
+        rem = new ArrayList();
+        for (TeamSpeakUser user : (List)users) {
+          if (!ids.contains(Integer.valueOf(user.getClientId()))) {
+            ((ArrayList)rem).add(user);
+          }
+        }
+        for (TeamSpeakUser user : (ArrayList)rem) {
+          TeamSpeakUser.unregisterUser(user);
+        }
+      }
+      else if ((message.startsWith("cid")) && (message.contains("|")))
+      {
+        ArrayList<Integer> ids = new ArrayList();
+        String[] channels = message.split("[|]");
+        for (String channel : channels)
+        {
+          String[] channelargs = channel.split(" ");
+          Argument[] args = new Argument[channelargs.length];
+          for (int i = 0; i < args.length; i++) {
+            args[i] = new Argument(channelargs[i]);
+          }
+          TeamSpeakChannel ch = null;
+          if (TeamSpeakChannel.contains(args[0].getAsInt())) {
+            ch = getInstance().getChannel(args[0].getAsInt());
+          } else {
+            ch = new TeamSpeakChannel(args[0].getAsInt());
+          }
+          ch.updatePID(args[1].getAsInt());
+          ch.updateChannelOrder(args[2].getAsInt());
+          ch.updateChannelName(TeamSpeak.fix(args[3].getValue()));
+          ch.updateTopic(args[4].getValue());
+          ch.updateFlagDefault(args[5].getAsBoolean());
+          ch.updateIsPassword(args[6].getAsBoolean());
+          ch.updatePermanent(args[7].getAsBoolean());
+          ch.updateSemiPermanent(args[8].getAsBoolean());
+          ch.updateChannelCodec(args[9].getAsInt());
+          ch.updateChannelCodecQuality(args[10].getAsInt());
+          ch.updateTalkPower(args[11].getAsInt());
+          ch.updateIconID(args[12].getAsInt());
+          ch.updateMaxClients(args[13].getAsInt());
+          ch.updateMaxFamilyClients(args[14].getAsInt());
+          ch.updateFlagAreSubscribed(args[15].getAsBoolean());
+          if (args.length == 17) {
+            ch.updateTotalClients(args[16].getAsInt());
+          }
+          ids.add(Integer.valueOf(ch.getChannelId()));
+        }
+        Object ch = TeamSpeakChannel.getChannels();
+        Collections.synchronizedList((List)ch);
+        Object rem = new ArrayList();
+        for (TeamSpeakChannel c : (List)ch) {
+          if (!ids.contains(Integer.valueOf(c.getChannelId()))) {
+            ((ArrayList)rem).add(c);
+          }
+        }
+        for (TeamSpeakChannel c : (ArrayList)rem) {
+          TeamSpeakChannel.deleteChannel(c);
+        }
+      }
+      else if ((message.startsWith("clid")) && (!message.contains("|")) && (message.contains("cid")))
+      {
+        String[] sargs = message.split(" ");
+        Argument[] args = new Argument[sargs.length];
+        for (int i = 0; i < args.length; i++) {
+          args[i] = new Argument(sargs[i]);
+        }
+        if (args.length == 2)
+        {
+          TeamSpeakUser user = getUser(args[0].getAsInt());
+          if (user != null)
+          {
+            user.updateChannelId(args[1].getAsInt());
+            this.me = user;
+          }
+        }
+      }
+      else
+      {
+        int i;
+        if ((message.startsWith("ip=")) && (message.contains("port=")))
+        {
+          String[] sargs = message.split(" ");
+          Argument[] args = new Argument[sargs.length];
+          for (i = 0; i < args.length; i++) {
+            args[i] = new Argument(sargs[i]);
+          }
+          if (args.length >= 2)
+          {
+            this.serverIP = args[0].getValue();
+            this.serverPort = args[1].getAsInt();
+            TeamSpeak.print("Connected to " + this.serverIP + ":" + this.serverPort);
+            TeamSpeak.setupChat();
+            for (ControlListener listener : this.listeners) {
+              listener.onConnect();
+            }
+          }
+        }
+        else
+        {
+          handleOther(message);
+        }
+      }
     }
   }
   
@@ -430,228 +440,257 @@ public class TeamSpeakController
       updateInformation(EnumUpdateType.CLIENTS);
       TeamSpeak.updateScroll(user.getChannelId(), true);
     }
-    else if (cmd.equalsIgnoreCase("clientleftview"))
-    {
-      TeamSpeakUser user;
-      TeamSpeakUser user;
-      if ((args.length > 5) && (args[5].isInt()))
-      {
-        user = getUser(args[5].getAsInt());
-        if (args[3].getAsInt() == 3) {
-          for (ControlListener listener : this.listeners)
-          {
-            listener.onClientTimout(user);
-            TeamSpeakUser.unregisterUser(user);
-          }
-        } else {
-          for (ControlListener listener : this.listeners)
-          {
-            listener.onClientDisconnected(user, args[4].getValue());
-            TeamSpeakUser.unregisterUser(user);
-          }
-        }
-      }
-      else
-      {
-        user = getUser(args[3].getAsInt());
-        if (args[2].getAsInt() == 3) {
-          for (ControlListener listener : this.listeners)
-          {
-            listener.onClientTimout(user);
-            TeamSpeakUser.unregisterUser(user);
-          }
-        } else {
-          for (ControlListener listener : this.listeners)
-          {
-            listener.onClientDisconnected(user, "Disconnected");
-            TeamSpeakUser.unregisterUser(user);
-          }
-        }
-      }
-      updateInformation(EnumUpdateType.CLIENTS);
-      TeamSpeakUser user = getUser(args[3].getAsInt());
-      if (user != null) {
-        TeamSpeak.updateScroll(user.getChannelId(), false);
-      }
-    }
-    else if (cmd.equalsIgnoreCase("clientupdated"))
-    {
-      TeamSpeakUser user = getUser(args[1].getAsInt());
-      if (user == null) {
-        return;
-      }
-      if (args[2].getKey().equalsIgnoreCase("client_input_muted")) {
-        user.updateClientInput(args[2].getAsBoolean());
-      } else if (args[2].getKey().equalsIgnoreCase("client_output_muted")) {
-        user.updateClientOutput(args[2].getAsBoolean());
-      } else if (args[2].getKey().equalsIgnoreCase("client_input_hardware")) {
-        user.updateClientInputHardware(args[2].getAsBoolean());
-      } else if (args[2].getKey().equalsIgnoreCase("client_output_hardware")) {
-        user.updateClientOutputHardware(args[2].getAsBoolean());
-      } else if (args[2].getKey().equalsIgnoreCase("client_away")) {
-        if (args.length == 4) {
-          user.updateAway(args[2].getAsBoolean(), args[3].getValue());
-        } else {
-          user.updateAway(args[2].getAsBoolean());
-        }
-      }
-      updateInformation(EnumUpdateType.CLIENTS);
-    }
-    else if ((cmd.equalsIgnoreCase("channeldeleted")) || (cmd.equalsIgnoreCase("channelcreated")) || (cmd.equalsIgnoreCase("channeledited")))
-    {
-      updateInformation(EnumUpdateType.CHANNELS);
-    }
-    else if (cmd.equalsIgnoreCase("connectstatuschange"))
-    {
-      if (args[1].getValue().equalsIgnoreCase("disconnected")) {
-        for (ControlListener listener : this.listeners)
-        {
-          reset();
-          listener.onDisconnect();
-        }
-      } else if (args[1].getValue().equalsIgnoreCase("connection_established")) {
-        updateInformation(EnumUpdateType.ALL);
-      }
-    }
     else
     {
-      TeamSpeakUser user;
-      String msg;
-      if (cmd.equalsIgnoreCase("clientpoke"))
-      {
-        user = getUser(args[1].getAsInt());
-        msg = TeamSpeak.fix(args[4].getValue());
-        for (ControlListener listener : this.listeners) {
-          listener.onPokeRecieved(user, msg);
-        }
-      }
-      else
+      ControlListener listener;
+      if (cmd.equalsIgnoreCase("clientleftview"))
       {
         TeamSpeakUser user;
-        if (cmd.equalsIgnoreCase("textmessage"))
+        TeamSpeakUser user;
+        if ((args.length > 5) && (args[5].isInt()))
         {
-          int targetMode = args[1].getAsInt();
-          TeamSpeakUser target;
-          TeamSpeakUser user;
-          if (targetMode == 1)
-          {
-            target = getUser(args[3].getAsInt());
-            user = getUser(args[4].getAsInt());
-            if (user == null) {
-              return;
-            }
+          user = getUser(args[5].getAsInt());
+          if (args[3].getAsInt() == 3) {
             for (ControlListener listener : this.listeners)
             {
-              if (user.isTyping()) {
-                user.updateTyping(false);
-              }
-              listener.onMessageRecieved(target, user, TeamSpeak.fix(args[2].getValue()));
+              listener.onClientTimout(user);
+              TeamSpeakUser.unregisterUser(user);
             }
-          }
-          TeamSpeakUser user;
-          if (targetMode == 2)
-          {
-            user = getUser(args[3].getAsInt());
-            if (user == null) {
-              return;
-            }
+          } else {
             for (ControlListener listener : this.listeners)
             {
-              if (user.isTyping()) {
-                user.updateTyping(false);
-              }
-              listener.onChannelMessageRecieved(user, TeamSpeak.fix(args[2].getValue()));
-            }
-          }
-          if (targetMode == 3)
-          {
-            user = getUser(args[3].getAsInt());
-            if (user == null) {
-              return;
-            }
-            for (ControlListener listener : this.listeners)
-            {
-              if (user.isTyping()) {
-                user.updateTyping(false);
-              }
-              listener.onServerMessageRecieved(user, TeamSpeak.fix(args[2].getValue()));
+              listener.onClientDisconnected(user, args[4].getValue());
+              TeamSpeakUser.unregisterUser(user);
             }
           }
         }
         else
         {
-          TeamSpeakUser user;
-          if (cmd.equalsIgnoreCase("clientchatcomposing"))
-          {
-            user = getUser(args[1].getAsInt());
-            if (user == null) {
-              return;
-            }
+          user = getUser(args[3].getAsInt());
+          if (args[2].getAsInt() == 3) {
             for (ControlListener listener : this.listeners)
             {
-              listener.onClientStartTyping(user);
-              user.updateTyping(true);
+              listener.onClientTimout(user);
+              TeamSpeakUser.unregisterUser(user);
+            }
+          } else {
+            for (??? = this.listeners.iterator(); ???.hasNext();)
+            {
+              listener = (ControlListener)???.next();
+              
+              listener.onClientDisconnected(user, "Disconnected");
+              TeamSpeakUser.unregisterUser(user);
             }
           }
-          else if (cmd.equalsIgnoreCase("clientmoved"))
-          {
-            int channel = args[1].getAsInt();
-            TeamSpeakUser user = getUser(args[2].getAsInt());
-            if (user != null) {
-              TeamSpeak.updateScroll(user.getChannelId(), false);
-            }
-            updateInformation(EnumUpdateType.CLIENTS);
-            TeamSpeak.updateScroll(channel, true);
+        }
+        updateInformation(EnumUpdateType.CLIENTS);
+        TeamSpeakUser user = getUser(args[3].getAsInt());
+        if (user != null) {
+          TeamSpeak.updateScroll(user.getChannelId(), false);
+        }
+      }
+      else
+      {
+        TeamSpeakUser user;
+        if (cmd.equalsIgnoreCase("clientupdated"))
+        {
+          user = getUser(args[1].getAsInt());
+          if (user == null) {
+            return;
           }
-          else if (cmd.equalsIgnoreCase("currentserverconnectionchanged"))
-          {
+          if (args[2].getKey().equalsIgnoreCase("client_input_muted")) {
+            user.updateClientInput(args[2].getAsBoolean());
+          } else if (args[2].getKey().equalsIgnoreCase("client_output_muted")) {
+            user.updateClientOutput(args[2].getAsBoolean());
+          } else if (args[2].getKey().equalsIgnoreCase("client_input_hardware")) {
+            user.updateClientInputHardware(args[2].getAsBoolean());
+          } else if (args[2].getKey().equalsIgnoreCase("client_output_hardware")) {
+            user.updateClientOutputHardware(args[2].getAsBoolean());
+          } else if (args[2].getKey().equalsIgnoreCase("client_away")) {
+            if (args.length == 4) {
+              user.updateAway(args[2].getAsBoolean(), args[3].getValue());
+            } else {
+              user.updateAway(args[2].getAsBoolean());
+            }
+          }
+          updateInformation(EnumUpdateType.CLIENTS);
+        }
+        else if ((cmd.equalsIgnoreCase("channeldeleted")) || (cmd.equalsIgnoreCase("channelcreated")) || (cmd.equalsIgnoreCase("channeledited")))
+        {
+          updateInformation(EnumUpdateType.CHANNELS);
+        }
+        else if (cmd.equalsIgnoreCase("connectstatuschange"))
+        {
+          if (args[1].getValue().equalsIgnoreCase("disconnected")) {
+            for (ControlListener listener : this.listeners)
+            {
+              reset();
+              listener.onDisconnect();
+            }
+          } else if (args[1].getValue().equalsIgnoreCase("connection_established")) {
             updateInformation(EnumUpdateType.ALL);
           }
-          else if (cmd.equalsIgnoreCase("servergrouplist"))
+        }
+        else
+        {
+          TeamSpeakUser user;
+          String msg;
+          ControlListener listener;
+          if (cmd.equalsIgnoreCase("clientpoke"))
           {
-            TeamSpeakServerGroup.getGroups().clear();
-            String[] channels = message.replace("servergrouplist", "").replace(" schandlerid=1 ", "").replace(" schandlerid=0 ", "").split("[|]");
-            for (String channel : channels)
+            user = getUser(args[1].getAsInt());
+            msg = TeamSpeak.fix(args[4].getValue());
+            for (listener = this.listeners.iterator(); listener.hasNext();)
             {
-              String[] channelargs = channel.split(" ");
-              args = new Argument[channelargs.length];
-              for (int i = 0; i < args.length; i++) {
-                args[i] = new Argument(channelargs[i]);
-              }
-              TeamSpeakServerGroup group = new TeamSpeakServerGroup(args[0].getAsInt());
-              group.setGroupName(args[1].getValue());
-              group.setType(args[2].getAsInt());
-              group.setIconId(args[3].getAsInt());
-              group.setSavebd(args[4].getAsInt());
-              TeamSpeakServerGroup.addGroup(group);
-            }
-          }
-          else if (cmd.equalsIgnoreCase("channelgrouplist"))
-          {
-            TeamSpeakChannelGroup.getGroups().clear();
-            String[] channels = message.replace("channelgrouplist", "").replace(" schandlerid=1 ", "").replace(" schandlerid=0 ", "").split("[|]");
-            for (String channel : channels)
-            {
-              String[] channelargs = channel.split(" ");
-              args = new Argument[channelargs.length];
-              for (int i = 0; i < args.length; i++) {
-                args[i] = new Argument(channelargs[i]);
-              }
-              TeamSpeakChannelGroup group = new TeamSpeakChannelGroup(args[0].getAsInt());
-              group.setGroupName(args[1].getValue());
-              group.setType(args[2].getAsInt());
-              group.setIconId(args[3].getAsInt());
-              group.setSavebd(args[4].getAsInt());
-              group.setNamemode(args[5].getAsInt());
-              group.setNameModifyPower(args[6].getAsInt());
-              group.setNameMemberAddPower(args[7].getAsInt());
-              group.setNameMemberRemovePower(args[8].getAsInt());
-              TeamSpeakChannelGroup.addGroup(group);
+              listener = (ControlListener)listener.next();
+              
+              listener.onPokeRecieved(user, msg);
             }
           }
           else
           {
-            updateInformation(EnumUpdateType.ALL);
+            TeamSpeakUser user;
+            Object user;
+            ControlListener listener;
+            if (cmd.equalsIgnoreCase("textmessage"))
+            {
+              int targetMode = args[1].getAsInt();
+              TeamSpeakUser target;
+              if (targetMode == 1)
+              {
+                target = getUser(args[3].getAsInt());
+                user = getUser(args[4].getAsInt());
+                if (user == null) {
+                  return;
+                }
+                for (ControlListener listener : this.listeners)
+                {
+                  if (user.isTyping()) {
+                    user.updateTyping(false);
+                  }
+                  listener.onMessageRecieved(target, user, TeamSpeak.fix(args[2].getValue()));
+                }
+              }
+              TeamSpeakUser user;
+              if (targetMode == 2)
+              {
+                user = getUser(args[3].getAsInt());
+                if (user == null) {
+                  return;
+                }
+                for (ControlListener listener : this.listeners)
+                {
+                  if (user.isTyping()) {
+                    user.updateTyping(false);
+                  }
+                  listener.onChannelMessageRecieved(user, TeamSpeak.fix(args[2].getValue()));
+                }
+              }
+              if (targetMode == 3)
+              {
+                user = getUser(args[3].getAsInt());
+                if (user == null) {
+                  return;
+                }
+                for (user = this.listeners.iterator(); user.hasNext();)
+                {
+                  listener = (ControlListener)user.next();
+                  if (((TeamSpeakUser)user).isTyping()) {
+                    ((TeamSpeakUser)user).updateTyping(false);
+                  }
+                  listener.onServerMessageRecieved((TeamSpeakUser)user, TeamSpeak.fix(args[2].getValue()));
+                }
+              }
+            }
+            else
+            {
+              TeamSpeakUser user;
+              ControlListener listener;
+              if (cmd.equalsIgnoreCase("clientchatcomposing"))
+              {
+                user = getUser(args[1].getAsInt());
+                if (user == null) {
+                  return;
+                }
+                for (user = this.listeners.iterator(); ((Iterator)user).hasNext();)
+                {
+                  listener = (ControlListener)((Iterator)user).next();
+                  
+                  listener.onClientStartTyping(user);
+                  user.updateTyping(true);
+                }
+              }
+              else
+              {
+                Object user;
+                if (cmd.equalsIgnoreCase("clientmoved"))
+                {
+                  int channel = args[1].getAsInt();
+                  user = getUser(args[2].getAsInt());
+                  if (user != null) {
+                    TeamSpeak.updateScroll(((TeamSpeakUser)user).getChannelId(), false);
+                  }
+                  updateInformation(EnumUpdateType.CLIENTS);
+                  TeamSpeak.updateScroll(channel, true);
+                }
+                else if (cmd.equalsIgnoreCase("currentserverconnectionchanged"))
+                {
+                  updateInformation(EnumUpdateType.ALL);
+                }
+                else if (cmd.equalsIgnoreCase("servergrouplist"))
+                {
+                  TeamSpeakServerGroup.getGroups().clear();
+                  String[] channels = message.replace("servergrouplist", "").replace(" schandlerid=1 ", "").replace(" schandlerid=0 ", "").split("[|]");
+                  user = channels;listener = user.length;
+                  for (listener = 0; listener < listener; listener++)
+                  {
+                    String channel = user[listener];
+                    
+                    String[] channelargs = channel.split(" ");
+                    args = new Argument[channelargs.length];
+                    for (int i = 0; i < args.length; i++) {
+                      args[i] = new Argument(channelargs[i]);
+                    }
+                    TeamSpeakServerGroup group = new TeamSpeakServerGroup(args[0].getAsInt());
+                    group.setGroupName(args[1].getValue());
+                    group.setType(args[2].getAsInt());
+                    group.setIconId(args[3].getAsInt());
+                    group.setSavebd(args[4].getAsInt());
+                    TeamSpeakServerGroup.addGroup(group);
+                  }
+                }
+                else if (cmd.equalsIgnoreCase("channelgrouplist"))
+                {
+                  TeamSpeakChannelGroup.getGroups().clear();
+                  String[] channels = message.replace("channelgrouplist", "").replace(" schandlerid=1 ", "").replace(" schandlerid=0 ", "").split("[|]");
+                  user = channels;listener = user.length;
+                  for (listener = 0; listener < listener; listener++)
+                  {
+                    String channel = user[listener];
+                    
+                    String[] channelargs = channel.split(" ");
+                    args = new Argument[channelargs.length];
+                    for (int i = 0; i < args.length; i++) {
+                      args[i] = new Argument(channelargs[i]);
+                    }
+                    TeamSpeakChannelGroup group = new TeamSpeakChannelGroup(args[0].getAsInt());
+                    group.setGroupName(args[1].getValue());
+                    group.setType(args[2].getAsInt());
+                    group.setIconId(args[3].getAsInt());
+                    group.setSavebd(args[4].getAsInt());
+                    group.setNamemode(args[5].getAsInt());
+                    group.setNameModifyPower(args[6].getAsInt());
+                    group.setNameMemberAddPower(args[7].getAsInt());
+                    group.setNameMemberRemovePower(args[8].getAsInt());
+                    TeamSpeakChannelGroup.addGroup(group);
+                  }
+                }
+                else
+                {
+                  updateInformation(EnumUpdateType.ALL);
+                }
+              }
+            }
           }
         }
       }

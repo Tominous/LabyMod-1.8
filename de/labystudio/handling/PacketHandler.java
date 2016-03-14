@@ -18,6 +18,7 @@ import de.labystudio.packets.PacketLoginRequest;
 import de.labystudio.packets.PacketLoginTime;
 import de.labystudio.packets.PacketLoginVersion;
 import de.labystudio.packets.PacketMessage;
+import de.labystudio.packets.PacketMojangStatus;
 import de.labystudio.packets.PacketPing;
 import de.labystudio.packets.PacketPlayAcceptFriendRequest;
 import de.labystudio.packets.PacketPlayChangeOptions;
@@ -113,4 +114,6 @@ public abstract class PacketHandler
   public abstract void handle(PacketEncryptionRequest paramPacketEncryptionRequest);
   
   public abstract void handle(PacketEncryptionResponse paramPacketEncryptionResponse);
+  
+  public abstract void handle(PacketMojangStatus paramPacketMojangStatus);
 }

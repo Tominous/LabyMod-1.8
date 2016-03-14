@@ -12,7 +12,7 @@ import io.netty.channel.SimpleChannelInboundHandler;
 class bdg$2$1
   extends SimpleChannelInboundHandler<ByteBuf>
 {
-  bdg$2$1(bdg.2 param2) {}
+  bdg$2$1(bdg.2 this$1) {}
   
   public void channelActive(ChannelHandlerContext p_channelActive_1_)
     throws Exception

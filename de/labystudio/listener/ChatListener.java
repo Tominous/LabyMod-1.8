@@ -27,6 +27,7 @@ public class ChatListener
     KitPvPServers.serverInfectMCChat(clean, raw);
     KitPvPServers.serverMineHGChat(clean, raw);
     Revayd.serverRevaydChat(clean, raw);
+    HiveMC.serverHiveChat(clean, raw);
   }
   
   public static boolean allowedToPrint(String raw, String clean)

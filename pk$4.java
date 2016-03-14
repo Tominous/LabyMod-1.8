@@ -3,7 +3,7 @@ import java.util.concurrent.Callable;
 class pk$4
   implements Callable<String>
 {
-  pk$4(pk parampk) {}
+  pk$4(pk this$0) {}
   
   public String a()
     throws Exception

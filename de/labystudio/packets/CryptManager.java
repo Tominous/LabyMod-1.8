@@ -97,7 +97,7 @@ public class CryptManager
       KeyFactory var2 = KeyFactory.getInstance("RSA");
       return var2.generatePublic(var1);
     }
-    catch (NoSuchAlgorithmException var3) {}catch (InvalidKeySpecException var4) {}
+    catch (NoSuchAlgorithmException localNoSuchAlgorithmException) {}catch (InvalidKeySpecException localInvalidKeySpecException) {}
     System.err.println("Public key reconstitute failed!");
     return null;
   }

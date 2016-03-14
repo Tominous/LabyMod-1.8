@@ -54,6 +54,7 @@ public class TeamSpeak
       message = colors(message);
       message = url(message);
     }
+    Chat openChat;
     if (mode == EnumTargetMode.USER)
     {
       TeamSpeakUser chatOwner = sender;
@@ -67,7 +68,7 @@ public class TeamSpeak
         error("User is offline");
         return;
       }
-      Chat openChat = null;
+      openChat = null;
       for (Chat chat : chats) {
         if (chat.getSlotId() == chatOwner.getClientId())
         {
@@ -172,6 +173,7 @@ public class TeamSpeak
     message = message.replace("\\p", "|");
     message = message.replace("\\s", " ");
     message = message.replace("\\\\", "\\");
+    message = message.replace("\\n", " ");
     return message;
   }
   
@@ -266,9 +268,9 @@ public class TeamSpeak
   
   public static boolean isChannelNotInView(int channelId)
   {
-    for (Iterator i$ = outOfView.iterator(); i$.hasNext();)
+    for (Iterator localIterator = outOfView.iterator(); localIterator.hasNext();)
     {
-      int ch = ((Integer)i$.next()).intValue();
+      int ch = ((Integer)localIterator.next()).intValue();
       if (ch == channelId) {
         return true;
       }

@@ -1,4 +1,5 @@
 import com.google.common.collect.Lists;
+import de.labystudio.cosmetic.CosmeticManager;
 import de.labystudio.gommehd.GommeHDBed;
 import de.labystudio.hologram.Hologram;
 import de.labystudio.hologram.Manager;
@@ -445,7 +446,7 @@ public abstract class bjl<T extends pr>
         {
           avn fontrenderer = c();
           bfl.E();
-          bfl.b((float)x, (float)y + entity.K + 0.5F - (entity.j_() ? entity.K / 2.0F : 0.0F), (float)z);
+          bfl.b((float)x, (float)y + entity.K + 0.5F - (entity.j_() ? entity.K / 2.0F : 0.0F) + LabyMod.getInstance().getCosmeticManager().getNameTagHeight(entity), (float)z);
           GL11.glNormal3f(0.0F, 1.0F, 0.0F);
           bfl.b(-this.b.e, 0.0F, 1.0F, 0.0F);
           bfl.b(this.b.f, 1.0F, 0.0F, 0.0F);
@@ -507,7 +508,7 @@ public abstract class bjl<T extends pr>
         }
         else
         {
-          a(entity, x, y - (entity.j_() ? entity.K / 2.0F : 0.0D), z, s, 0.02666667F, d0);
+          a(entity, x, y - (entity.j_() ? entity.K / 2.0F : 0.0D) + LabyMod.getInstance().getCosmeticManager().getNameTagHeight(entity), z, s, 0.02666667F, d0);
         }
       }
     }
@@ -564,7 +565,7 @@ public abstract class bjl<T extends pr>
         bfl.F();
       }
     }
-    catch (Exception error) {}
+    catch (Exception localException1) {}
   }
   
   protected boolean a(T entity)

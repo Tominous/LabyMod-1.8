@@ -252,10 +252,28 @@ public class GuiFilter
     super.a(mouseX, mouseY, partialTicks);
     if (this.help.a())
     {
-      this.draw.drawRightString("If a word of this list is written", mouseX, mouseY);
-      this.draw.drawRightString("in the chat, it will automatically", mouseX, mouseY + 10);
-      this.draw.drawRightString("be displayed in an extra chat to ", mouseX, mouseY + 20);
-      this.draw.drawRightString("the right of the normal chat.", mouseX, mouseY + 30);
+      int i = 0;
+      this.draw.drawRightString("If a word of this list is written", mouseX, mouseY);i += 10;
+      this.draw.drawRightString("in the chat, it will automatically", mouseX, mouseY + i);i += 10;
+      this.draw.drawRightString("be displayed in an extra chat to ", mouseX, mouseY + i);i += 10;
+      this.draw.drawRightString("the right of the normal chat.", mouseX, mouseY + i);i += 10;
+      this.draw.drawRightString("If you add " + Color.cl("b") + "%k%" + Color.cl("f") + " in front of a specific word,", mouseX, mouseY + i, 0.5D);i += 5;
+      this.draw.drawRightString("you want to filter out of the chat " + Color.cl("c") + "(e.g. %k%Test)" + Color.cl("f") + ",", mouseX, mouseY + i, 0.5D);i += 5;
+      this.draw.drawRightString("the message will be highlighted and WON'T be shown on the extra Chat.", mouseX, mouseY + i, 0.5D);i += 10;
+      this.draw.drawRightString("To avoid specific words from a message,", mouseX, mouseY + i, 0.5D);i += 5;
+      this.draw.drawRightString("you can create a blacklist with " + Color.cl("b") + "%b%" + Color.cl("f") + ". " + Color.cl("c") + "(e.g. Test%b%Hello)" + Color.cl("f") + "", mouseX, mouseY + i, 0.5D);i += 5;
+      this.draw.drawRightString("Now, the word 'Test' would be filtered, but", mouseX, mouseY + i, 0.5D);i += 5;
+      this.draw.drawRightString("if the same message contains 'Hello' it would be ignored.", mouseX, mouseY + i, 0.5D);i += 5;
+      this.draw.drawRightString("This you can do also with more Words", mouseX, mouseY + i, 0.5D);i += 5;
+      this.draw.drawRightString("" + Color.cl("c") + "(e.g. Test%b%Hello%b%How are you%b%Minecraft)" + Color.cl("f") + "", mouseX, mouseY + i, 0.5D);i += 10;
+      this.draw.drawRightString("To get a Sound alert on specific Messages,", mouseX, mouseY + i, 0.5D);i += 5;
+      this.draw.drawRightString("just add " + Color.cl("b") + "%s%" + Color.cl("f") + " at the end of the word " + Color.cl("c") + "(e.g. Test%s%)", mouseX, mouseY + i, 0.5D);i += 5;
+      this.draw.drawRightString("Now you would hear a sound, when 'Test' is written in the Chat.", mouseX, mouseY + i, 0.5D);i += 10;
+      this.draw.drawRightString("The whole thing with " + Color.cl("b") + "%k%" + Color.cl("f") + ", " + Color.cl("b") + "%b%" + Color.cl("f") + " and " + Color.cl("b") + "%s%" + Color.cl("f") + " can also be combined:", mouseX, mouseY + i, 0.5D);i += 5;
+      this.draw.drawRightString("" + Color.cl("c") + "%k%Test%b%Hello%s%", mouseX, mouseY + i, 0.5D);i += 5;
+      this.draw.drawRightString("->Now, the message would be", mouseX, mouseY + i, 0.5D);i += 5;
+      this.draw.drawRightString("highlighted and you can hear a sound alert,", mouseX, mouseY + i, 0.5D);i += 5;
+      this.draw.drawRightString("if it isn't containing the word 'Hello'", mouseX, mouseY + i, 0.5D);i += 5;
     }
     if (this.toggle.a()) {
       if (FilterLoader.enabled) {

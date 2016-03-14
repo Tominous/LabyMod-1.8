@@ -35,7 +35,7 @@ public class ConfigManager
         w.flush();
         w.close();
       }
-      catch (FileNotFoundException e) {}
+      catch (FileNotFoundException localFileNotFoundException) {}
     } else {
       LabyMod.getInstance().logger.info("Settings could not be saved.");
     }

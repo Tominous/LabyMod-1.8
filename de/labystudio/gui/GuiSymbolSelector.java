@@ -90,7 +90,7 @@ public class GuiSymbolSelector
         ((avs)this.n.get(1)).l = false;
       }
     }
-    catch (Exception error) {}
+    catch (Exception localException1) {}
     if (this.page == 0) {
       ((avs)this.n.get(0)).l = false;
     } else {

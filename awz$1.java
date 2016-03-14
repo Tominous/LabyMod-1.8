@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 class awz$1
   extends Thread
 {
-  awz$1(awz paramawz, String x0, String paramString1, int paramInt)
+  awz$1(awz this$0, String x0, String paramString1, int paramInt)
   {
     super(x0);
   }

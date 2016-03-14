@@ -391,7 +391,8 @@ public class azk
     //   0	304	0	this	azk
     //   45	166	1	bytebuf	io.netty.buffer.ByteBuf
     //   50	166	2	bytebuf1	io.netty.buffer.ByteBuf
-    //   62	227	3	bufferedimage	java.awt.image.BufferedImage
+    //   62	26	3	bufferedimage	java.awt.image.BufferedImage
+    //   224	65	3	bufferedimage	java.awt.image.BufferedImage
     //   124	54	4	throwable	Throwable
     //   208	13	5	localObject	Object
     // Exception table:

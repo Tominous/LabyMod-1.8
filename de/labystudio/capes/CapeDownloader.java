@@ -58,11 +58,13 @@ public class CapeDownloader
               var2 = CapeDownloader.this.imageBuffer.a(var2);
             }
             CapeDownloader.this.a(var2);
+            return;
           }
         }
         catch (Exception var6)
         {
           CapeDownloader.logger.error("Couldn't download http texture", var6);
+          return;
         }
         finally
         {

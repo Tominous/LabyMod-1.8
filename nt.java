@@ -3,28 +3,21 @@ import com.google.common.collect.Maps;
 import de.labystudio.modapi.ModAPI;
 import de.labystudio.modapi.events.RenderWorldEvent;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class nt
 {
   private static final Logger b = ;
-  private final List<String> c;
-  private final List<Long> d;
+  private final List<String> c = Lists.newArrayList();
+  private final List<Long> d = Lists.newArrayList();
   public boolean a;
-  private String e;
-  private final Map<String, Long> f;
-  
-  public nt()
-  {
-    this.c = Lists.newArrayList();
-    this.d = Lists.newArrayList();
-    
-    this.e = "";
-    this.f = Maps.newHashMap();
-  }
+  private String e = "";
+  private final Map<String, Long> f = Maps.newHashMap();
   
   private void labymod(String name)
   {
@@ -85,11 +78,14 @@ public class nt
       p_76321_1_ = p_76321_1_ + ".";
     }
     long k = 0L;
-    for (String s : this.f.keySet()) {
+    for (Iterator localIterator = this.f.keySet().iterator(); localIterator.hasNext();)
+    {
+      s = (String)localIterator.next();
       if ((s.length() > p_76321_1_.length()) && (s.startsWith(p_76321_1_)) && (s.indexOf(".", p_76321_1_.length() + 1) < 0)) {
         k += ((Long)this.f.get(s)).longValue();
       }
     }
+    String s;
     float f = (float)k;
     if (k < j) {
       k = j;

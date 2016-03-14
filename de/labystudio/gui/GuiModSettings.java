@@ -61,7 +61,6 @@ public class GuiModSettings
       this.ey = 21;
     }
     this.n.add(new avs(1, 2, this.m - 21, 99, 20, "Done"));
-    this.n.add(new avs(-5, 110, 4, 20, 20, "?"));
     
     addTab("Ingame");
     addTab("Formatting");
@@ -96,6 +95,8 @@ public class GuiModSettings
       addToggle(r, Boolean.valueOf(ConfigManager.settings.showClock), 83, "Clock", "Displays your current real life time.");
       
       addToggle(r, Boolean.valueOf(ConfigManager.settings.showArrow), 93, "Arrow amount", "Displays the current amount of arrows in your inventory");
+      
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showBiome), 97, "Show biome", "Shows the world biome of your position");
     }
     if (this.currentTab.equals("Formatting"))
     {
@@ -112,8 +113,8 @@ public class GuiModSettings
       addSliderColor(r, "Title", 4);
       addSliderColor(r, "Info", 5);
       
-      this.draw.drawString(Color.c(4) + "Preview:", 135.0D, 5.0D);
-      this.draw.drawString(ModGui.createLabel("X", ModGui.getX()), 135.0D, 15.0D);
+      this.draw.drawString(Color.c(4) + "Preview:", 108.0D, 5.0D);
+      this.draw.drawString(ModGui.createLabel("X", ModGui.getX()), 108.0D, 15.0D);
     }
     if (this.currentTab.equals("Animations"))
     {
@@ -126,6 +127,7 @@ public class GuiModSettings
       addToggleA(r, ConfigManager.settings.oldBlockhit, 43, "Blockhit", "the 1.8 does not support the blockhit animation. By choosing 1.7 you will see the wellknown animation again");
       addToggleA(r, Boolean.valueOf(ConfigManager.settings.oldFishing), 46, "Fishing", "In the 1.8 the rod is scaled different and shown in another angle, in the 1.7 we scaled it as u are used to it");
       addToggleA(r, Boolean.valueOf(ConfigManager.settings.oldSneak), 79, "Sneaking", "In the 1.7 sneaking is made smoother similar to the sneaking animation in 1.7");
+      addToggleCustom(r, Boolean.valueOf(ConfigManager.settings.oldInventory), 102, "Inventory", Color.cl("c") + "1.8 Shift", "1.7 Shift", "In 1.7, the inventory will stay in the middle of the screen, regardless of whether you've got an active effect or not. In 1.8, the inventory is shifted to the right, if you've got an active effect.");
     }
     if (this.currentTab.equals("Gui Settings"))
     {
@@ -142,8 +144,8 @@ public class GuiModSettings
       addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.onlineFriendsPositionOnTop), 60, "Online Friends position", "Bottom", "Top", "Change the position of the ingame friendlist");
       addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.armorHudPositionOnTop), 86, "Armor HUD position", "Hotbar", "Top", "Change the position of the armor hud");
       
-      this.draw.drawString(Color.c(4) + "Preview:", 135.0D, 5.0D);
-      this.draw.drawString(ModGui.createLabel("X", ModGui.getX()), 135.0D, 15.0D);
+      this.draw.drawString(Color.c(4) + "Preview:", 108.0D, 5.0D);
+      this.draw.drawString(ModGui.createLabel("X", ModGui.getX()), 108.0D, 15.0D);
     }
     if (this.currentTab.equals("Extras"))
     {
@@ -163,6 +165,12 @@ public class GuiModSettings
       addToggle(r, Boolean.valueOf(ConfigManager.settings.speedFOV), 71, "SpeedFOV", "If this option is set to OFF, the speed potion effect will no longer increase your FOV.");
       addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.leftHand), 87, "Main hand", "Right", "Left", "Swap the position of your main hand");
       addToggle(r, Boolean.valueOf(ConfigManager.settings.leftBow), 92, "Swap bow", "Swap the position of your hand if you holding a bow");
+      
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.spotfiyTrack), 96, "Spotify Track", "Shows you your current playing spotify track");
+      
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.cosmetics), 98, "Cosmetics", "Shows cosmetics like wings, hats..");
+      
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.hiveAutoScramble), 101, "Hive autoscramble", "Automaticly run the command '/scramble' if you join a SG Server");
     }
     if (this.currentTab.equals("Server Support"))
     {
@@ -171,6 +179,7 @@ public class GuiModSettings
       
       addToggle(r, ConfigManager.settings.gamePlayMinity, 17, "PlayMinity", "Shows the game information about PlayMinity");
       addToggle(r, ConfigManager.settings.gameGommeHD, 18, "GommeHD", "Shows the game information about GommeHD");
+      addToggle(r, ConfigManager.settings.gameHiveMC, 74, "HiveMC", "Shows the game information about HiveMC");
     }
     if (this.currentTab.equals("GommeHD.net"))
     {
@@ -193,6 +202,8 @@ public class GuiModSettings
       addToggle(r, Boolean.valueOf(ConfigManager.settings.miniGames), 36, "Minigames", "Minigames in Minecraft");
       addToggle(r, Boolean.valueOf(ConfigManager.settings.quickPlay), 84, "QuickPlay", "Shows in the main menu the latest server and your directconnect server");
       addToggle(r, Boolean.valueOf(ConfigManager.settings.stopWatch), 85, "Stopwatch", "A simple stopwatch in Minecraft. It lets you measure the time, which will also be displayed in the GUI.");
+      
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.mojangStatus), 94, "Mojang Status", "Displays the current offline servers of Mojang in your server list");
     }
     if (this.currentTab.equals("TeamSpeak"))
     {
@@ -216,6 +227,7 @@ public class GuiModSettings
       addToggle(r, ConfigManager.settings.extraChat, 38, "Extra Chat", "You can see all private messages in an extra chat on the right side of the screen");
       addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.chatAlertType), 89, "LabyMod Chat Notify Type", "Achievment", "Chat", "With this function you can choose the type of the LabyMod Chat message. Either as Achievment or in the normal chat.");
       addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.chatPositionRight), 91, "Chat Position", "Right", "Left", "The Position of the Minecraft Chat");
+      addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.mojangStatusChat), 95, "Mojang Status type", "Achievment", "Chat", "With this function you can choose the type of the Mojang Status message. Either as Achievment or in the normal chat.");
     }
   }
   
@@ -229,10 +241,6 @@ public class GuiModSettings
       }
       return;
     }
-    if (button.k == -5) {
-      this.j.a(new GuiLabyModMenu(this));
-    }
-    int i;
     switch (button.k)
     {
     case 0: 
@@ -308,31 +316,31 @@ public class GuiModSettings
       ConfigManager.settings.showNickname = Boolean.valueOf(!ConfigManager.settings.showNickname.booleanValue());
       break;
     case 24: 
-      i = Color.colorToID(ConfigManager.settings.color1);
+      int i = Color.colorToID(ConfigManager.settings.color1);
       i = manageInt(i);
       ConfigManager.settings.color1 = Color.IDToColor(i);
       b();
       break;
     case 25: 
-      i = Color.colorToID(ConfigManager.settings.color2);
+      int i = Color.colorToID(ConfigManager.settings.color2);
       i = manageInt(i);
       ConfigManager.settings.color2 = Color.IDToColor(i);
       b();
       break;
     case 26: 
-      i = Color.colorToID(ConfigManager.settings.color3);
+      int i = Color.colorToID(ConfigManager.settings.color3);
       i = manageInt(i);
       ConfigManager.settings.color3 = Color.IDToColor(i);
       b();
       break;
     case 27: 
-      i = Color.colorToID(ConfigManager.settings.color4);
+      int i = Color.colorToID(ConfigManager.settings.color4);
       i = manageInt(i);
       ConfigManager.settings.color4 = Color.IDToColor(i);
       b();
       break;
     case 28: 
-      i = Color.colorToID(ConfigManager.settings.color5);
+      int i = Color.colorToID(ConfigManager.settings.color5);
       i = manageInt(i);
       ConfigManager.settings.color5 = Color.IDToColor(i);
       b();
@@ -401,7 +409,7 @@ public class GuiModSettings
       ConfigManager.settings.betterRefresh = (!ConfigManager.settings.betterRefresh);
       break;
     case 50: 
-      i = ConfigManager.settings.potionsize;
+      int i = ConfigManager.settings.potionsize;
       i = manageInt2(i);
       ConfigManager.settings.potionsize = i;
       break;
@@ -440,7 +448,7 @@ public class GuiModSettings
       break;
     case 62: 
       ConfigManager.settings.capes = Boolean.valueOf(!ConfigManager.settings.capes.booleanValue());
-      CapeManager.refresh();
+      LabyMod.getInstance().getCapeManager().refresh();
       break;
     case 63: 
       ConfigManager.settings.showBossBar = (!ConfigManager.settings.showBossBar);
@@ -484,6 +492,7 @@ public class GuiModSettings
       ConfigManager.settings.gommePosLeft = (!ConfigManager.settings.gommePosLeft);
       break;
     case 74: 
+      ConfigManager.settings.gameHiveMC = Boolean.valueOf(!ConfigManager.settings.gameHiveMC.booleanValue());
       break;
     case 75: 
       ConfigManager.settings.showBWTimer = Boolean.valueOf(!ConfigManager.settings.showBWTimer.booleanValue());
@@ -541,6 +550,27 @@ public class GuiModSettings
       break;
     case 93: 
       ConfigManager.settings.showArrow = (!ConfigManager.settings.showArrow);
+      break;
+    case 94: 
+      ConfigManager.settings.mojangStatus = (!ConfigManager.settings.mojangStatus);
+      break;
+    case 95: 
+      ConfigManager.settings.mojangStatusChat = (!ConfigManager.settings.mojangStatusChat);
+      break;
+    case 96: 
+      ConfigManager.settings.spotfiyTrack = (!ConfigManager.settings.spotfiyTrack);
+      break;
+    case 97: 
+      ConfigManager.settings.showBiome = (!ConfigManager.settings.showBiome);
+      break;
+    case 98: 
+      ConfigManager.settings.cosmetics = (!ConfigManager.settings.cosmetics);
+      break;
+    case 101: 
+      ConfigManager.settings.hiveAutoScramble = (!ConfigManager.settings.hiveAutoScramble);
+      break;
+    case 102: 
+      ConfigManager.settings.oldInventory = (!ConfigManager.settings.oldInventory);
     }
     if (button.k != -3) {
       b();

@@ -120,10 +120,15 @@ public class GommeHD
   private static void chatBedWars(String clean, String raw)
   {
     String BWPrefix = "[BedWars] ";
+    String str1;
+    String u;
     if (clean.startsWith(BWPrefix + "Du bist nun in Team "))
     {
       ArrayList<String> i = new ArrayList();
-      for (String u : raw.split(" ")) {
+      String[] arrayOfString = raw.split(" ");int i = arrayOfString.length;
+      for (str1 = 0; str1 < i; str1++)
+      {
+        u = arrayOfString[str1];
         i.add(u);
       }
       gommeHDServer_BW_Team = (String)i.get(i.size() - 1);
@@ -148,11 +153,15 @@ public class GommeHD
     if (clean.startsWith(BWPrefix + "Du bist nun Spectator")) {
       gommeHDServer_BW_Team = "Spectator";
     }
+    boolean k;
     if (clean.startsWith(BWPrefix + "Map: "))
     {
       String map = clean.replace(BWPrefix + "Map: ", "");
-      boolean k = false;
-      for (EnumBWMap type : EnumBWMap.values()) {
+      k = false;
+      EnumBWMap[] arrayOfEnumBWMap = EnumBWMap.values();str1 = arrayOfEnumBWMap.length;
+      for (u = 0; u < str1; u++)
+      {
+        EnumBWMap type = arrayOfEnumBWMap[u];
         if (map.toLowerCase().contains(type.name().toLowerCase()))
         {
           GommeHDBed.setPreset(type);

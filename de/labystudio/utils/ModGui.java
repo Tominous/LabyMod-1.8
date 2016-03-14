@@ -1,5 +1,6 @@
 package de.labystudio.utils;
 
+import ady;
 import aug;
 import auh;
 import aui;
@@ -17,7 +18,6 @@ import de.labystudio.labymod.Timings;
 import java.math.BigDecimal;
 import java.util.List;
 import ns;
-import nt;
 import pk;
 import pr;
 import uo;
@@ -194,6 +194,24 @@ public class ModGui
   public static int getRealFPS()
   {
     return fps;
+  }
+  
+  public static String getBiom()
+  {
+    if (ave.A().f == null) {
+      return "?";
+    }
+    if (ave.A().h == null) {
+      return "?";
+    }
+    if (ave.A().h.c() == null) {
+      return "?";
+    }
+    ady gen = ave.A().f.b(ave.A().h.c());
+    if (gen == null) {
+      return "?";
+    }
+    return gen.ah;
   }
   
   public static String getX()
@@ -393,7 +411,6 @@ public class ModGui
     if (var2 != null) {
       if (LabyMod.getInstance().mc.f != null)
       {
-        LabyMod.getInstance().mc.A.a("pick");
         LabyMod.getInstance().mc.i = null;
         double var3 = 30.0D;
         LabyMod.getInstance().mc.s = var2.a(var3, p_78473_1_);
@@ -455,7 +472,6 @@ public class ModGui
             LabyMod.getInstance().mc.i = pointedEntity;
           }
         }
-        LabyMod.getInstance().mc.A.b();
       }
     }
   }

@@ -3,6 +3,7 @@ package de.labystudio.utils;
 import ave;
 import de.labystudio.listener.Brawl;
 import de.labystudio.listener.GommeHD;
+import de.labystudio.listener.HiveMC;
 import de.labystudio.listener.Hypixel;
 import de.labystudio.listener.JumpLeague;
 import de.labystudio.listener.KitPvPServers;
@@ -36,6 +37,8 @@ public class Allowed
     Rewinside.updateRewinside();
     Servers.updateDeinProjektHost();
     Timolia.updateTimolia();
+    Servers.updateMineVerse();
+    HiveMC.updateHiveMC();
     
     food = true;
     gui = true;
@@ -70,7 +73,7 @@ public class Allowed
   
   public static boolean chat()
   {
-    return (!Servers.isDeinProjektHost()) && (chat);
+    return (!Servers.isDeinProjektHost()) && (!Servers.isMineVerse()) && (chat);
   }
   
   public static boolean unfairExtra()

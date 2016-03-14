@@ -1,3 +1,5 @@
+import de.labystudio.labymod.ConfigManager;
+import de.labystudio.labymod.ModSettings;
 import java.util.Collection;
 
 public abstract class ayw
@@ -20,6 +22,9 @@ public abstract class ayw
   {
     if (!this.j.h.bl().isEmpty())
     {
+      if (!ConfigManager.settings.oldInventory) {
+        this.i = (160 + (this.l - this.f - 200) / 2);
+      }
       this.u = true;
     }
     else
