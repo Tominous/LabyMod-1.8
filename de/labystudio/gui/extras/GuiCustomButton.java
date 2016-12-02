@@ -35,22 +35,22 @@ public class GuiCustomButton
   public GuiCustomButton(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
   {
     super(buttonId, x, y, widthIn, heightIn, buttonText);
-    f = 200;
-    g = 20;
-    l = true;
-    m = true;
-    k = buttonId;
-    h = x;
-    i = y;
-    f = widthIn;
-    g = heightIn;
-    j = buttonText;
+    this.f = 200;
+    this.g = 20;
+    this.l = true;
+    this.m = true;
+    this.k = buttonId;
+    this.h = x;
+    this.i = y;
+    this.f = widthIn;
+    this.g = heightIn;
+    this.j = buttonText;
   }
   
   protected int a(boolean mouseOver)
   {
     int i = 1;
-    if (!l) {
+    if (!this.l) {
       i = 0;
     } else if (mouseOver) {
       i = 2;
@@ -60,13 +60,13 @@ public class GuiCustomButton
   
   public void drawInfoBox()
   {
-    if (!n) {
-      showInfo = System.currentTimeMillis();
+    if (!this.n) {
+      this.showInfo = System.currentTimeMillis();
     }
-    if (info.isEmpty()) {
+    if (this.info.isEmpty()) {
       return;
     }
-    if (showInfo + 300L > System.currentTimeMillis()) {
+    if (this.showInfo + 300L > System.currentTimeMillis()) {
       return;
     }
     int l = Integer.MIN_VALUE;
@@ -74,11 +74,11 @@ public class GuiCustomButton
     double k = 0.7D;
     GL11.glScaled(k, k, k);
     for (int i = 0; i < 3; i++) {
-      DrawUtils.a((int)((getInstancedraw.getWidth() / 2 - 140) / k), 
-        (int)((getInstancedraw.getHeight() - 30 - 10 * getRange(info, 300)) / k), 
-        (int)((getInstancedraw.getWidth() / 2 + 140) / k), (int)((getInstancedraw.getHeight() - 15) / k), l);
+      DrawUtils.a((int)((LabyMod.getInstance().draw.getWidth() / 2 - 140) / k), 
+        (int)((LabyMod.getInstance().draw.getHeight() - 30 - 10 * getRange(this.info, 300)) / k), 
+        (int)((LabyMod.getInstance().draw.getWidth() / 2 + 140) / k), (int)((LabyMod.getInstance().draw.getHeight() - 15) / k), l);
     }
-    drawContent(info, (int)(getInstancedraw.getWidth() / 2 / k), (int)((getInstancedraw.getHeight() - 25 - 10 * getRange(info, 300)) / k), 300);
+    drawContent(this.info, (int)(LabyMod.getInstance().draw.getWidth() / 2 / k), (int)((LabyMod.getInstance().draw.getHeight() - 25 - 10 * getRange(this.info, 300)) / k), 300);
     GL11.glPopMatrix();
   }
   
@@ -89,7 +89,7 @@ public class GuiCustomButton
     String done = "";
     for (int i = 0; i <= range; i++)
     {
-      getInstancedraw.drawCenteredString(next, x, y + i * 12);
+      LabyMod.getInstance().draw.drawCenteredString(next, x, y + i * 12);
       done = done + next;
       next = getFirstStrings(max, msg.replace(done, ""));
     }
@@ -102,7 +102,7 @@ public class GuiCustomButton
     for (int i = 0; i < string.length(); i++)
     {
       char c = string.charAt(i);
-      k += getInstancedraw.getStringWidth(new String(new char[] { c }));
+      k += LabyMod.getInstance().draw.getStringWidth(new String(new char[] { c }));
       if (pixels > k)
       {
         result = result + new String(new char[] { c });
@@ -132,7 +132,7 @@ public class GuiCustomButton
         range++;
         k = 0;
       }
-      k += getInstancedraw.getStringWidth("" + a);
+      k += LabyMod.getInstance().draw.getStringWidth("" + a);
     }
     return range;
   }
@@ -146,36 +146,36 @@ public class GuiCustomButton
   
   public void a(ave mc, int mouseX, int mouseY)
   {
-    if (m)
+    if (this.m)
     {
-      avn var4 = k;
+      avn var4 = mc.k;
       mc.P().a(buttonTextures);
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-      n = ((mouseX >= h) && (mouseY >= i) && (mouseX < h + f) && (mouseY < i + g));
-      int var5 = a(n);
+      this.n = ((mouseX >= this.h) && (mouseY >= this.i) && (mouseX < this.h + this.f) && (mouseY < this.i + this.g));
+      int var5 = a(this.n);
       bfl.l();
       bfl.a(770, 771, 1, 0);
       bfl.b(770, 771);
-      if (!noGui)
+      if (!this.noGui)
       {
-        b(h, i, 0, 46 + var5 * 20, f / 2, g);
-        b(h + f / 2, i, 200 - f / 2, 46 + var5 * 20, f / 2, g);
+        b(this.h, this.i, 0, 46 + var5 * 20, this.f / 2, this.g);
+        b(this.h + this.f / 2, this.i, 200 - this.f / 2, 46 + var5 * 20, this.f / 2, this.g);
       }
       b(mc, mouseX, mouseY);
       int var6 = 14737632;
-      if (!l) {
+      if (!this.l) {
         var6 = 10526880;
-      } else if (n) {
+      } else if (this.n) {
         var6 = 16777120;
       }
-      if (centered)
+      if (this.centered)
       {
-        a(var4, j, h + f / 2, i + (g - 8) / 2, var6);
+        a(var4, this.j, this.h + this.f / 2, this.i + (this.g - 8) / 2, var6);
       }
       else
       {
-        c(k, Color.cl("f") + j, h + 6, i + (g - 8) / 2, 0);
-        a(var4, subTitle, h + 40 + (h + f / 2 - (h + 30)) * 2 - subTitle.length(), i + (g - 8) / 2, var6);
+        c(mc.k, Color.cl("f") + this.j, this.h + 6, this.i + (this.g - 8) / 2, 0);
+        a(var4, this.subTitle, this.h + 40 + (this.h + this.f / 2 - (this.h + 30)) * 2 - this.subTitle.length(), this.i + (this.g - 8) / 2, var6);
       }
     }
   }
@@ -186,12 +186,12 @@ public class GuiCustomButton
   
   public boolean c(ave mc, int mouseX, int mouseY)
   {
-    return (l) && (m) && (mouseX >= h) && (mouseY >= i) && (mouseX < h + f) && (mouseY < i + g);
+    return (this.l) && (this.m) && (mouseX >= this.h) && (mouseY >= this.i) && (mouseX < this.h + this.f) && (mouseY < this.i + this.g);
   }
   
   public boolean a()
   {
-    return n;
+    return this.n;
   }
   
   public void b(int mouseX, int mouseY) {}
@@ -203,11 +203,11 @@ public class GuiCustomButton
   
   public int b()
   {
-    return f;
+    return this.f;
   }
   
   public void a(int width)
   {
-    f = width;
+    this.f = width;
   }
 }

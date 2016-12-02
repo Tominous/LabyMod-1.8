@@ -29,7 +29,7 @@ public class BattyUtils
   public static String constructCoordVisString()
   {
     String var1 = "";
-    var1 = var1 + uishowCoords;
+    var1 = var1 + ui.showCoords;
     return var1;
   }
   
@@ -37,7 +37,7 @@ public class BattyUtils
   {
     String var1;
     String var1;
-    if (uihideTimer) {
+    if (ui.hideTimer) {
       var1 = "false";
     } else {
       var1 = "true";
@@ -48,7 +48,7 @@ public class BattyUtils
   public static String constructCoordLocString()
   {
     String var1 = "";
-    var1 = var1 + uicoordLocation;
+    var1 = var1 + ui.coordLocation;
     return var1;
   }
   
@@ -56,7 +56,7 @@ public class BattyUtils
   {
     String var1;
     String var1;
-    if (uitimerRunning) {
+    if (ui.timerRunning) {
       var1 = "true";
     } else {
       var1 = "false";
@@ -68,7 +68,7 @@ public class BattyUtils
   {
     String var1;
     String var1;
-    if (uihideFPS) {
+    if (ui.hideFPS) {
       var1 = "false";
     } else {
       var1 = "true";
@@ -79,14 +79,14 @@ public class BattyUtils
   public static String constructFPSLocString()
   {
     String var1 = "";
-    var1 = var1 + uifpsLocation;
+    var1 = var1 + ui.fpsLocation;
     return var1;
   }
   
   public static String constructTimerLocString()
   {
     String var1 = "";
-    var1 = var1 + uitimerLocation;
+    var1 = var1 + ui.timerLocation;
     return var1;
   }
   
@@ -94,22 +94,22 @@ public class BattyUtils
   {
     Logger.getLogger("Minecraft").info(var1);
     String[] var2 = var1.split("\\|");
-    uihourCounter = Integer.parseInt(var2[0]);
-    uiminuteCounter = Integer.parseInt(var2[1]);
-    uisecondCounter = Integer.parseInt(var2[2]);
+    ui.hourCounter = Integer.parseInt(var2[0]);
+    ui.minuteCounter = Integer.parseInt(var2[1]);
+    ui.secondCounter = Integer.parseInt(var2[2]);
   }
   
   public static String constructTimeString()
   {
     String var1 = "";
-    var1 = var1 + (uihourCounter >= 10 ? "" : "0");
-    var1 = var1 + uihourCounter;
+    var1 = var1 + (ui.hourCounter >= 10 ? "" : "0");
+    var1 = var1 + ui.hourCounter;
     var1 = var1 + ":";
-    var1 = var1 + (uiminuteCounter >= 10 ? "" : "0");
-    var1 = var1 + uiminuteCounter;
+    var1 = var1 + (ui.minuteCounter >= 10 ? "" : "0");
+    var1 = var1 + ui.minuteCounter;
     var1 = var1 + ":";
-    var1 = var1 + (uisecondCounter >= 10 ? "" : "0");
-    var1 = var1 + uisecondCounter;
+    var1 = var1 + (ui.secondCounter >= 10 ? "" : "0");
+    var1 = var1 + ui.secondCounter;
     return var1;
   }
   
@@ -120,48 +120,48 @@ public class BattyUtils
   
   public static void resetTimer()
   {
-    uiresetTimer = false;
-    uitickCounter = (uihourCounter = uiminuteCounter = uisecondCounter = 0);
+    ui.resetTimer = false;
+    ui.tickCounter = (ui.hourCounter = ui.minuteCounter = ui.secondCounter = 0);
     
     BattyConfig.storeRuntimeOptions();
   }
   
   public static void addOneSecond()
   {
-    uisecondCounter += 1;
-    if (uisecondCounter >= 60)
+    ui.secondCounter += 1;
+    if (ui.secondCounter >= 60)
     {
-      uisecondCounter -= 60;
-      uiminuteCounter += 1;
+      ui.secondCounter -= 60;
+      ui.minuteCounter += 1;
     }
-    if (uiminuteCounter >= 60)
+    if (ui.minuteCounter >= 60)
     {
-      uiminuteCounter -= 60;
-      uihourCounter += 1;
+      ui.minuteCounter -= 60;
+      ui.hourCounter += 1;
     }
   }
   
   public static void updateTimer(int var1)
   {
-    if (uiresetTimer) {
+    if (ui.resetTimer) {
       resetTimer();
     }
-    if (uitoggleTimer)
+    if (ui.toggleTimer)
     {
-      uitoggleTimer = false;
-      uitickCounter = 0;
-      uitimerRunning = (!uitimerRunning);
+      ui.toggleTimer = false;
+      ui.tickCounter = 0;
+      ui.timerRunning = (!ui.timerRunning);
       BattyConfig.storeRuntimeOptions();
     }
-    if (uitimerRunning)
+    if (ui.timerRunning)
     {
-      if (uitickCounter == 0) {
-        uitickCounter = var1;
+      if (ui.tickCounter == 0) {
+        ui.tickCounter = var1;
       }
-      if (var1 - uitickCounter >= 20)
+      if (var1 - ui.tickCounter >= 20)
       {
         addOneSecond();
-        uitickCounter += 20;
+        ui.tickCounter += 20;
       }
     }
   }

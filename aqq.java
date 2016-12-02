@@ -1,122 +1,110 @@
 import com.google.common.collect.Maps;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 import java.util.concurrent.Callable;
 
 public abstract class aqq
   extends any
 {
   private aqs d;
-  protected Map e = Maps.newHashMap();
-  private static final String __OBFID = "CL_00000505";
-  private nq structureLongMap = new nq();
+  protected Map<Long, aqu> e = Maps.newHashMap();
   
   public abstract String a();
   
-  protected final void a(adm worldIn, final int p_180701_2_, final int p_180701_3_, int p_180701_4_, int p_180701_5_, ans p_180701_6_)
+  protected final void a(adm ☃, final int ☃, final int ☃, int ☃, int ☃, ans ☃)
   {
-    a(worldIn);
-    if (!structureLongMap.b(adg.a(p_180701_2_, p_180701_3_)))
+    a(☃);
+    if (this.e.containsKey(Long.valueOf(adg.a(☃, ☃)))) {
+      return;
+    }
+    this.b.nextInt();
+    try
     {
-      b.nextInt();
-      try
+      if (a(☃, ☃))
       {
-        if (a(p_180701_2_, p_180701_3_))
+        aqu ☃ = b(☃, ☃);
+        this.e.put(Long.valueOf(adg.a(☃, ☃)), ☃);
+        a(☃, ☃, ☃);
+      }
+    }
+    catch (Throwable ☃)
+    {
+      b ☃ = b.a(☃, "Exception preparing structure feature");
+      c ☃ = ☃.a("Feature being prepared");
+      
+      ☃.a("Is feature chunk", new Callable()
+      {
+        public String a()
+          throws Exception
         {
-          aqu var7 = b(p_180701_2_, p_180701_3_);
-          e.put(Long.valueOf(adg.a(p_180701_2_, p_180701_3_)), var7);
-          
-          structureLongMap.a(adg.a(p_180701_2_, p_180701_3_), var7);
-          
-          a(p_180701_2_, p_180701_3_, var7);
+          return aqq.this.a(☃, ☃) ? "True" : "False";
         }
-      }
-      catch (Throwable var10)
+      });
+      ☃.a("Chunk location", String.format("%d,%d", new Object[] { Integer.valueOf(☃), Integer.valueOf(☃) }));
+      
+      ☃.a("Chunk pos hash", new Callable()
       {
-        b var8 = b.a(var10, "Exception preparing structure feature");
-        c var9 = var8.a("Feature being prepared");
-        var9.a("Is feature chunk", new Callable()
+        public String a()
+          throws Exception
         {
-          private static final String __OBFID = "CL_00000506";
-          
-          public String a()
-            throws Exception
-          {
-            return a(p_180701_2_, p_180701_3_) ? "True" : "False";
-          }
-        });
-        var9.a("Chunk location", String.format("%d,%d", new Object[] { Integer.valueOf(p_180701_2_), Integer.valueOf(p_180701_3_) }));
-        var9.a("Chunk pos hash", new Callable()
+          return String.valueOf(adg.a(☃, ☃));
+        }
+      });
+      ☃.a("Structure type", new Callable()
+      {
+        public String a()
+          throws Exception
         {
-          private static final String __OBFID = "CL_00000507";
-          
-          public String a()
-            throws Exception
-          {
-            return String.valueOf(adg.a(p_180701_2_, p_180701_3_));
-          }
-        });
-        var9.a("Structure type", new Callable()
-        {
-          private static final String __OBFID = "CL_00000508";
-          
-          public String a()
-            throws Exception
-          {
-            return getClass().getCanonicalName();
-          }
-        });
-        throw new e(var8);
-      }
+          return aqq.this.getClass().getCanonicalName();
+        }
+      });
+      throw new e(☃);
     }
   }
   
-  public boolean a(adm worldIn, Random p_175794_2_, adg p_175794_3_)
+  public boolean a(adm ☃, Random ☃, adg ☃)
   {
-    a(worldIn);
-    int var4 = (a << 4) + 8;
-    int var5 = (b << 4) + 8;
-    boolean var6 = false;
-    Iterator var7 = e.values().iterator();
-    while (var7.hasNext())
-    {
-      aqu var8 = (aqu)var7.next();
-      if ((var8.d()) && (var8.a(p_175794_3_)) && (var8.a().a(var4, var5, var4 + 15, var5 + 15)))
+    a(☃);
+    
+    int ☃ = (☃.a << 4) + 8;
+    int ☃ = (☃.b << 4) + 8;
+    
+    boolean ☃ = false;
+    for (aqu ☃ : this.e.values()) {
+      if ((☃.d()) && (☃.a(☃)) && 
+        (☃.a().a(☃, ☃, ☃ + 15, ☃ + 15)))
       {
-        var8.a(worldIn, p_175794_2_, new aqe(var4, var5, var4 + 15, var5 + 15));
-        var8.b(p_175794_3_);
-        var6 = true;
-        a(var8.e(), var8.f(), var8);
+        ☃.a(☃, ☃, new aqe(☃, ☃, ☃ + 15, ☃ + 15));
+        ☃.b(☃);
+        ☃ = true;
+        
+        a(☃.e(), ☃.f(), ☃);
       }
     }
-    return var6;
+    return ☃;
   }
   
-  public boolean b(cj p_175795_1_)
+  public boolean b(cj ☃)
   {
-    a(c);
-    return c(p_175795_1_) != null;
+    a(this.c);
+    return c(☃) != null;
   }
   
-  protected aqu c(cj p_175797_1_)
+  protected aqu c(cj ☃)
   {
-    Iterator var2 = e.values().iterator();
-    while (var2.hasNext())
-    {
-      aqu var3 = (aqu)var2.next();
-      if ((var3.d()) && (var3.a().b(p_175797_1_)))
+    for (aqu ☃ : this.e.values()) {
+      if ((☃.d()) && 
+        (☃.a().b(☃)))
       {
-        Iterator var4 = var3.b().iterator();
-        while (var4.hasNext())
+        Iterator<aqt> ☃ = ☃.b().iterator();
+        while (☃.hasNext())
         {
-          aqt var5 = (aqt)var4.next();
-          if (var5.c().b(p_175797_1_)) {
-            return var3;
+          aqt ☃ = (aqt)☃.next();
+          if (☃.c().b(☃)) {
+            return ☃;
           }
         }
       }
@@ -124,125 +112,103 @@ public abstract class aqq
     return null;
   }
   
-  public boolean a(adm worldIn, cj p_175796_2_)
+  public boolean a(adm ☃, cj ☃)
   {
-    a(worldIn);
-    Iterator var3 = e.values().iterator();
-    aqu var4;
-    do
-    {
-      if (!var3.hasNext()) {
-        return false;
+    a(☃);
+    for (aqu ☃ : this.e.values()) {
+      if ((☃.d()) && 
+        (☃.a().b(☃))) {
+        return true;
       }
-      var4 = (aqu)var3.next();
-    } while ((!var4.d()) || (!var4.a().b(p_175796_2_)));
-    return true;
+    }
+    return false;
   }
   
-  public cj b(adm worldIn, cj p_180706_2_)
+  public cj b(adm ☃, cj ☃)
   {
-    c = worldIn;
-    a(worldIn);
-    b.setSeed(worldIn.J());
-    long var3 = b.nextLong();
-    long var5 = b.nextLong();
-    long var7 = (p_180706_2_.n() >> 4) * var3;
-    long var9 = (p_180706_2_.p() >> 4) * var5;
-    b.setSeed(var7 ^ var9 ^ worldIn.J());
-    a(worldIn, p_180706_2_.n() >> 4, p_180706_2_.p() >> 4, 0, 0, (ans)null);
-    double var11 = Double.MAX_VALUE;
-    cj var13 = null;
-    Iterator var14 = e.values().iterator();
-    while (var14.hasNext())
-    {
-      aqu var15 = (aqu)var14.next();
-      if (var15.d())
+    this.c = ☃;
+    
+    a(☃);
+    
+    this.b.setSeed(☃.J());
+    long ☃ = this.b.nextLong();
+    long ☃ = this.b.nextLong();
+    long ☃ = (☃.n() >> 4) * ☃;
+    long ☃ = (☃.p() >> 4) * ☃;
+    this.b.setSeed(☃ ^ ☃ ^ ☃.J());
+    
+    a(☃, ☃.n() >> 4, ☃.p() >> 4, 0, 0, null);
+    
+    double ☃ = Double.MAX_VALUE;
+    cj ☃ = null;
+    for (aqu ☃ : this.e.values()) {
+      if (☃.d())
       {
-        aqt var16 = (aqt)var15.b().get(0);
-        cj var17 = var16.a();
-        double var18 = var17.i(p_180706_2_);
-        if (var18 < var11)
+        aqt ☃ = (aqt)☃.b().get(0);
+        cj ☃ = ☃.a();
+        
+        double ☃ = ☃.i(☃);
+        if (☃ < ☃)
         {
-          var11 = var18;
-          var13 = var17;
+          ☃ = ☃;
+          ☃ = ☃;
         }
       }
     }
-    if (var13 != null) {
-      return var13;
+    if (☃ != null) {
+      return ☃;
     }
-    List var20 = z_();
-    if (var20 != null)
+    List<cj> ☃ = z_();
+    if (☃ != null)
     {
-      cj var21 = null;
-      Iterator var22 = var20.iterator();
-      while (var22.hasNext())
+      cj ☃ = null;
+      for (cj ☃ : ☃)
       {
-        cj var17 = (cj)var22.next();
-        double var18 = var17.i(p_180706_2_);
-        if (var18 < var11)
+        double ☃ = ☃.i(☃);
+        if (☃ < ☃)
         {
-          var11 = var18;
-          var21 = var17;
+          ☃ = ☃;
+          ☃ = ☃;
         }
       }
-      return var21;
+      return ☃;
     }
     return null;
   }
   
-  protected List z_()
+  protected List<cj> z_()
   {
     return null;
   }
   
-  private void a(adm worldIn)
+  private void a(adm ☃)
   {
-    if (d == null)
+    dn ☃;
+    if (this.d == null)
     {
-      if (Reflector.ForgeWorld_getPerWorldStorage.exists())
+      this.d = ((aqs)☃.a(aqs.class, a()));
+      if (this.d == null)
       {
-        aua mapStorage = (aua)Reflector.call(worldIn, Reflector.ForgeWorld_getPerWorldStorage, new Object[0]);
-        d = ((aqs)mapStorage.a(aqs.class, a()));
+        this.d = new aqs(a());
+        ☃.a(a(), this.d);
       }
       else
       {
-        d = ((aqs)worldIn.a(aqs.class, a()));
-      }
-      if (d == null)
-      {
-        d = new aqs(a());
-        if (Reflector.ForgeWorld_getPerWorldStorage.exists())
+        ☃ = this.d.a();
+        for (String ☃ : ☃.c())
         {
-          aua mapStorage = (aua)Reflector.call(worldIn, Reflector.ForgeWorld_getPerWorldStorage, new Object[0]);
-          mapStorage.a(a(), d);
-        }
-        else
-        {
-          worldIn.a(a(), d);
-        }
-      }
-      else
-      {
-        dn var2 = d.a();
-        Iterator var3 = var2.c().iterator();
-        while (var3.hasNext())
-        {
-          String var4 = (String)var3.next();
-          eb var5 = var2.a(var4);
-          if (var5.a() == 10)
+          eb ☃ = ☃.a(☃);
+          if (☃.a() == 10)
           {
-            dn var6 = (dn)var5;
-            if ((var6.c("ChunkX")) && (var6.c("ChunkZ")))
+            dn ☃ = (dn)☃;
+            if ((☃.c("ChunkX")) && (☃.c("ChunkZ")))
             {
-              int var7 = var6.f("ChunkX");
-              int var8 = var6.f("ChunkZ");
-              aqu var9 = aqr.a(var6, worldIn);
-              if (var9 != null)
-              {
-                e.put(Long.valueOf(adg.a(var7, var8)), var9);
-                
-                structureLongMap.a(adg.a(var7, var8), var9);
+              int ☃ = ☃.f("ChunkX");
+              int ☃ = ☃.f("ChunkZ");
+              
+              aqu ☃ = aqr.a(☃, ☃);
+              if (☃ != null) {
+                this.e.put(Long.valueOf(adg.a(☃, ☃)), ☃);
               }
             }
           }
@@ -251,10 +217,10 @@ public abstract class aqq
     }
   }
   
-  private void a(int p_143026_1_, int p_143026_2_, aqu p_143026_3_)
+  private void a(int ☃, int ☃, aqu ☃)
   {
-    d.a(p_143026_3_.a(p_143026_1_, p_143026_2_), p_143026_1_, p_143026_2_);
-    d.c();
+    this.d.a(☃.a(☃, ☃), ☃, ☃);
+    this.d.c();
   }
   
   protected abstract boolean a(int paramInt1, int paramInt2);

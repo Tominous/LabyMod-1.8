@@ -1,19 +1,13 @@
 import java.util.concurrent.Callable;
 
 class bfk$2
-  implements Callable
+  implements Callable<String>
 {
-  final bfk a;
-  private static final String __OBFID = "CL_00000948";
-  
-  bfk$2(bfk p_i1243_1_)
-  {
-    a = p_i1243_1_;
-  }
+  bfk$2(bfk this$0) {}
   
   public String a()
     throws Exception
   {
-    return Am.getClass().getCanonicalName();
+    return bfk.a(this.this$0).m.getClass().getCanonicalName();
   }
 }

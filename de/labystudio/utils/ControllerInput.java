@@ -67,7 +67,7 @@ public class ControllerInput
         }
       }
     }
-    bew player = Ah;
+    bew player = ave.A().h;
     if ((controllers == null) || (player == null)) {
       return;
     }
@@ -91,14 +91,14 @@ public class ControllerInput
       active = false;
       if (oldInput != null)
       {
-        b = oldInput;
+        player.b = oldInput;
         oldInput = null;
       }
     }
     if (!active) {
       return;
     }
-    boolean ingame = Am == null;
+    boolean ingame = ave.A().m == null;
     if (delay < System.currentTimeMillis())
     {
       if (controllers.isButtonPressed(4))
@@ -149,10 +149,10 @@ public class ControllerInput
       if (controllers.isButtonPressed(6))
       {
         if (ingame) {
-          if (At.aA >= 2) {
-            At.aA = 0;
+          if (ave.A().t.aA >= 2) {
+            ave.A().t.aA = 0;
           } else {
-            At.aA += 1;
+            ave.A().t.aA += 1;
           }
         }
         delay = System.currentTimeMillis() + 200L;
@@ -170,45 +170,45 @@ public class ControllerInput
     }
     if (ingame)
     {
-      inputc = ((controllers.isButtonPressed(2)) || (controllers.isButtonPressed(9)));
-      inputb = ((0.0F + controllers.getAxisValue(0) > 0.5D ? -1 : controllers.getAxisValue(0) < -0.5D ? 1 : 0) * (At.aA == 2 ? -1 : 1));
-      inputa = ((0.0F + controllers.getAxisValue(1) > 0.5D ? -1 : controllers.getAxisValue(1) < -0.5D ? 1 : 0) * (At.aA == 2 ? -1 : 1));
-      inputd = controllers.isButtonPressed(8);
-      if (inputd)
+      input.c = ((controllers.isButtonPressed(2)) || (controllers.isButtonPressed(9)));
+      input.b = ((0.0F + controllers.getAxisValue(0) > 0.5D ? -1 : controllers.getAxisValue(0) < -0.5D ? 1 : 0) * (ave.A().t.aA == 2 ? -1 : 1));
+      input.a = ((0.0F + controllers.getAxisValue(1) > 0.5D ? -1 : controllers.getAxisValue(1) < -0.5D ? 1 : 0) * (ave.A().t.aA == 2 ? -1 : 1));
+      input.d = controllers.isButtonPressed(8);
+      if (input.d)
       {
-        inputa = ((float)(inputa * 0.3D));
-        inputb = ((float)(inputb * 0.3D));
+        input.a = ((float)(input.a * 0.3D));
+        input.b = ((float)(input.b * 0.3D));
       }
-      else if (inputb > 0.0F)
+      else if (input.b > 0.0F)
       {
         player.d(true);
       }
     }
     else
     {
-      inputc = false;
-      inputb = 0.0F;
-      inputa = 0.0F;
-      inputd = false;
+      input.c = false;
+      input.b = 0.0F;
+      input.a = 0.0F;
+      input.d = false;
     }
     if (oldInput == null) {
-      oldInput = b;
+      oldInput = player.b;
     }
-    b = input;
+    player.b = input;
   }
   
   public static void mouseTick()
   {
-    if ((!active) || (controllers == null) || (Ah == null) || ((Am instanceof axp))) {
+    if ((!active) || (controllers == null) || (ave.A().h == null) || ((ave.A().m instanceof axp))) {
       return;
     }
     try
     {
       float inputX = controllers.getAxisValue(3);
       float inputY = controllers.getAxisValue(2);
-      if (Am == null)
+      if (ave.A().m == null)
       {
-        float multiplier = 4.0F * At.a * (Ah.aw() ? 1.5F : 1.0F);
+        float multiplier = 4.0F * ave.A().t.a * (ave.A().h.aw() ? 1.5F : 1.0F);
         dxField.setInt(null, (int)(inputX * multiplier));
         dyField.setInt(null, (int)(inputY * -multiplier));
         mouseX = Mouse.getX();
@@ -216,7 +216,7 @@ public class ControllerInput
       }
       else
       {
-        float multiplier = 2.0F * At.a;
+        float multiplier = 2.0F * ave.A().t.a;
         if ((inputX != 1.0F) && (inputX != -1.0F)) {
           inputX = 0.0F;
         }

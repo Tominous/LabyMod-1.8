@@ -37,42 +37,38 @@ public class arn
   public static final arn I = new arn(33, 55610);
   public static final arn J = new arn(34, 8476209);
   public static final arn K = new arn(35, 7340544);
-  public int L;
+  public final int L;
   public final int M;
-  private static final String __OBFID = "CL_00000544";
   
-  private arn(int index, int color)
+  private arn(int ☃, int ☃)
   {
-    if ((index >= 0) && (index <= 63))
-    {
-      M = index;
-      L = color;
-      a[index] = this;
-    }
-    else
-    {
+    if ((☃ < 0) || (☃ > 63)) {
       throw new IndexOutOfBoundsException("Map colour ID must be between 0 and 63 (inclusive)");
     }
+    this.M = ☃;
+    this.L = ☃;
+    a[☃] = this;
   }
   
-  public int a(int p_151643_1_)
+  public int a(int ☃)
   {
-    short var2 = 220;
-    if (p_151643_1_ == 3) {
-      var2 = 135;
+    int ☃ = 220;
+    if (☃ == 3) {
+      ☃ = 135;
     }
-    if (p_151643_1_ == 2) {
-      var2 = 255;
+    if (☃ == 2) {
+      ☃ = 255;
     }
-    if (p_151643_1_ == 1) {
-      var2 = 220;
+    if (☃ == 1) {
+      ☃ = 220;
     }
-    if (p_151643_1_ == 0) {
-      var2 = 180;
+    if (☃ == 0) {
+      ☃ = 180;
     }
-    int var3 = (L >> 16 & 0xFF) * var2 / 255;
-    int var4 = (L >> 8 & 0xFF) * var2 / 255;
-    int var5 = (L & 0xFF) * var2 / 255;
-    return 0xFF000000 | var3 << 16 | var4 << 8 | var5;
+    int ☃ = (this.L >> 16 & 0xFF) * ☃ / 255;
+    int ☃ = (this.L >> 8 & 0xFF) * ☃ / 255;
+    int ☃ = (this.L & 0xFF) * ☃ / 255;
+    
+    return 0xFF000000 | ☃ << 16 | ☃ << 8 | ☃;
   }
 }

@@ -12,8 +12,8 @@ public class afx
   public afx(boolean ☃)
   {
     super(☃);
-    j(M.b().a(O, cq.c).a(a, Boolean.valueOf(false)).a(b, afx.a.a));
-    A = true;
+    j(this.M.b().a(O, cq.c).a(a, Boolean.valueOf(false)).a(b, afx.a.a));
+    this.A = true;
   }
   
   public String f()
@@ -56,7 +56,7 @@ public class afx
   
   protected boolean l(alz ☃)
   {
-    return (N) || (((Boolean)☃.b(a)).booleanValue());
+    return (this.N) || (((Boolean)☃.b(a)).booleanValue());
   }
   
   protected int a(adq ☃, cj ☃, alz ☃)
@@ -139,7 +139,7 @@ public class afx
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (!bA.e) {
+    if (!☃.bA.e) {
       return false;
     }
     ☃ = ☃.a(b);
@@ -195,7 +195,7 @@ public class afx
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (N) {
+    if (this.N) {
       ☃.a(☃, k(☃).a(a, Boolean.valueOf(true)), 4);
     }
     k(☃, ☃, ☃);
@@ -262,17 +262,17 @@ public class afx
     
     private a(String ☃)
     {
-      c = ☃;
+      this.c = ☃;
     }
     
     public String toString()
     {
-      return c;
+      return this.c;
     }
     
     public String l()
     {
-      return c;
+      return this.c;
     }
   }
   

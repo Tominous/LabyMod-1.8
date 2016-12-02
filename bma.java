@@ -1,10 +1,7 @@
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.Proxy;
-import java.net.Proxy.Type;
 import java.net.URL;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.imageio.ImageIO;
@@ -23,68 +20,65 @@ public class bma
   private BufferedImage l;
   private Thread m;
   private boolean n;
-  private static final String __OBFID = "CL_00001049";
-  public Boolean imageFound = null;
-  public boolean pipeline = false;
   
-  public bma(File p_i1049_1_, String p_i1049_2_, jy p_i1049_3_, bfm p_i1049_4_)
+  public bma(File ☃, String ☃, jy ☃, bfm ☃)
   {
-    super(p_i1049_3_);
-    i = p_i1049_1_;
-    j = p_i1049_2_;
-    k = p_i1049_4_;
+    super(☃);
+    this.i = ☃;
+    this.j = ☃;
+    this.k = ☃;
   }
   
   private void g()
   {
-    if (!n) {
-      if (l != null)
-      {
-        n = true;
-        if (f != null) {
-          c();
-        }
-        bml.a(super.b(), l);
+    if (this.n) {
+      return;
+    }
+    if (this.l != null)
+    {
+      if (this.f != null) {
+        c();
       }
+      bml.a(super.b(), this.l);
+      this.n = true;
     }
   }
   
   public int b()
   {
     g();
+    
     return super.b();
   }
   
-  public void a(BufferedImage p_147641_1_)
+  public void a(BufferedImage ☃)
   {
-    l = p_147641_1_;
-    if (k != null) {
-      k.a();
+    this.l = ☃;
+    if (this.k != null) {
+      this.k.a();
     }
-    imageFound = Boolean.valueOf(l != null);
   }
   
-  public void a(bni p_110551_1_)
+  public void a(bni ☃)
     throws IOException
   {
-    if ((l == null) && (f != null)) {
-      super.a(p_110551_1_);
+    if ((this.l == null) && (this.f != null)) {
+      super.a(☃);
     }
-    if (m == null) {
-      if ((i != null) && (i.isFile()))
+    if (this.m == null) {
+      if ((this.i != null) && (this.i.isFile()))
       {
-        g.debug("Loading http texture from local cache ({})", new Object[] { i });
+        g.debug("Loading http texture from local cache ({})", new Object[] { this.i });
         try
         {
-          l = ImageIO.read(i);
-          if (k != null) {
-            a(k.a(l));
+          this.l = ImageIO.read(this.i);
+          if (this.k != null) {
+            a(this.k.a(this.l));
           }
-          imageFound = Boolean.valueOf(l != null);
         }
-        catch (IOException var3)
+        catch (IOException ☃)
         {
-          g.error("Couldn't load skin " + i, var3);
+          g.error("Couldn't load skin " + this.i, ☃);
           d();
         }
       }
@@ -97,114 +91,50 @@ public class bma
   
   protected void d()
   {
-    m = new Thread("Texture Downloader #" + h.incrementAndGet())
+    this.m = new Thread("Texture Downloader #" + h.incrementAndGet())
     {
-      private static final String __OBFID = "CL_00001050";
-      
       public void run()
       {
-        HttpURLConnection var1 = null;
+        HttpURLConnection ☃ = null;
         bma.f().debug("Downloading http texture from {} to {}", new Object[] { bma.a(bma.this), bma.b(bma.this) });
-        if (bma.this.shouldPipeline())
-        {
-          bma.this.loadPipelined();
-          return;
-        }
         try
         {
-          var1 = (HttpURLConnection)new URL(bma.a(bma.this)).openConnection(ave.A().O());
-          var1.setDoInput(true);
-          var1.setDoOutput(false);
-          var1.connect();
-          if (var1.getResponseCode() / 100 == 2)
-          {
-            BufferedImage var2;
-            BufferedImage var2;
-            if (bma.b(bma.this) != null)
-            {
-              FileUtils.copyInputStreamToFile(var1.getInputStream(), bma.b(bma.this));
-              var2 = ImageIO.read(bma.b(bma.this));
-            }
-            else
-            {
-              var2 = bml.a(var1.getInputStream());
-            }
-            if (bma.c(bma.this) != null) {
-              var2 = bma.c(bma.this).a(var2);
-            }
-            a(var2);
+          ☃ = (HttpURLConnection)new URL(bma.a(bma.this)).openConnection(ave.A().O());
+          ☃.setDoInput(true);
+          ☃.setDoOutput(false);
+          ☃.connect();
+          if (☃.getResponseCode() / 100 != 2) {
+            return;
           }
-          else if (var1.getErrorStream() != null)
+          BufferedImage ☃;
+          BufferedImage ☃;
+          if (bma.b(bma.this) != null)
           {
-            Config.readAll(var1.getErrorStream());
+            FileUtils.copyInputStreamToFile(☃.getInputStream(), bma.b(bma.this));
+            ☃ = ImageIO.read(bma.b(bma.this));
           }
+          else
+          {
+            ☃ = bml.a(☃.getInputStream());
+          }
+          if (bma.c(bma.this) != null) {
+            ☃ = bma.c(bma.this).a(☃);
+          }
+          bma.this.a(☃);
         }
-        catch (Exception var6)
+        catch (Exception ☃)
         {
-          bma.f().error("Couldn't download http texture: " + var6.getClass().getName() + ": " + var6.getMessage());
+          bma.f().error("Couldn't download http texture", ☃);
         }
         finally
         {
-          if (var1 != null) {
-            var1.disconnect();
+          if (☃ != null) {
+            ☃.disconnect();
           }
-          imageFound = Boolean.valueOf(l != null);
         }
       }
     };
-    m.setDaemon(true);
-    m.start();
-  }
-  
-  private boolean shouldPipeline()
-  {
-    if (!pipeline) {
-      return false;
-    }
-    Proxy proxy = ave.A().O();
-    if ((proxy.type() != Proxy.Type.DIRECT) && (proxy.type() != Proxy.Type.SOCKS)) {
-      return false;
-    }
-    if (!j.startsWith("http://")) {
-      return false;
-    }
-    return true;
-  }
-  
-  private void loadPipelined()
-  {
-    try
-    {
-      HttpRequest req = HttpPipeline.makeRequest(j, ave.A().O());
-      HttpResponse resp = HttpPipeline.executeRequest(req);
-      if (resp.getStatus() / 100 == 2)
-      {
-        byte[] body = resp.getBody();
-        ByteArrayInputStream bais = new ByteArrayInputStream(body);
-        BufferedImage var2;
-        BufferedImage var2;
-        if (i != null)
-        {
-          FileUtils.copyInputStreamToFile(bais, i);
-          var2 = ImageIO.read(i);
-        }
-        else
-        {
-          var2 = bml.a(bais);
-        }
-        if (k != null) {
-          var2 = k.a(var2);
-        }
-        a(var2);
-      }
-    }
-    catch (Exception var6)
-    {
-      g.error("Couldn't download http texture: " + var6.getClass().getName() + ": " + var6.getMessage());
-    }
-    finally
-    {
-      imageFound = Boolean.valueOf(l != null);
-    }
+    this.m.setDaemon(true);
+    this.m.start();
   }
 }

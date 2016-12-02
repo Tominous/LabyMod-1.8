@@ -48,12 +48,12 @@ public class lt
   
   public lt(MinecraftServer ☃, File ☃)
   {
-    f = ☃;
-    g = ☃;
+    this.f = ☃;
+    this.g = ☃;
     
     GsonBuilder ☃ = new GsonBuilder();
     ☃.registerTypeHierarchyAdapter(lt.a.class, new lt.b(null));
-    b = ☃.create();
+    this.b = ☃.create();
     
     b();
   }
@@ -65,12 +65,12 @@ public class lt
     {
       public void onProfileLookupSucceeded(GameProfile ☃)
       {
-        a[0] = ☃;
+        this.a[0] = ☃;
       }
       
       public void onProfileLookupFailed(GameProfile ☃, Exception ☃)
       {
-        a[0] = null;
+        this.a[0] = null;
       }
     };
     ☃.aE().findProfilesByNames(new String[] { ☃ }, Agent.MINECRAFT, ☃);
@@ -100,42 +100,42 @@ public class lt
     }
     String ☃ = ☃.getName().toLowerCase(Locale.ROOT);
     lt.a ☃ = new lt.a(☃, ☃, null);
-    if (d.containsKey(☃))
+    if (this.d.containsKey(☃))
     {
-      lt.a ☃ = (lt.a)d.get(☃);
-      c.remove(☃.a().getName().toLowerCase(Locale.ROOT));
-      e.remove(☃);
+      lt.a ☃ = (lt.a)this.d.get(☃);
+      this.c.remove(☃.a().getName().toLowerCase(Locale.ROOT));
+      this.e.remove(☃);
     }
-    c.put(☃.getName().toLowerCase(Locale.ROOT), ☃);
-    d.put(☃, ☃);
-    e.addFirst(☃);
+    this.c.put(☃.getName().toLowerCase(Locale.ROOT), ☃);
+    this.d.put(☃, ☃);
+    this.e.addFirst(☃);
     c();
   }
   
   public GameProfile a(String ☃)
   {
     String ☃ = ☃.toLowerCase(Locale.ROOT);
-    lt.a ☃ = (lt.a)c.get(☃);
+    lt.a ☃ = (lt.a)this.c.get(☃);
     if ((☃ != null) && (new Date().getTime() >= lt.a.a(☃).getTime()))
     {
-      d.remove(☃.a().getId());
-      c.remove(☃.a().getName().toLowerCase(Locale.ROOT));
-      e.remove(☃.a());
+      this.d.remove(☃.a().getId());
+      this.c.remove(☃.a().getName().toLowerCase(Locale.ROOT));
+      this.e.remove(☃.a());
       ☃ = null;
     }
     if (☃ != null)
     {
       GameProfile ☃ = ☃.a();
-      e.remove(☃);
-      e.addFirst(☃);
+      this.e.remove(☃);
+      this.e.addFirst(☃);
     }
     else
     {
-      GameProfile ☃ = a(f, ☃);
+      GameProfile ☃ = a(this.f, ☃);
       if (☃ != null)
       {
         a(☃);
-        ☃ = (lt.a)c.get(☃);
+        ☃ = (lt.a)this.c.get(☃);
       }
     }
     c();
@@ -144,24 +144,24 @@ public class lt
   
   public String[] a()
   {
-    List<String> ☃ = Lists.newArrayList(c.keySet());
+    List<String> ☃ = Lists.newArrayList(this.c.keySet());
     return (String[])☃.toArray(new String[☃.size()]);
   }
   
   public GameProfile a(UUID ☃)
   {
-    lt.a ☃ = (lt.a)d.get(☃);
+    lt.a ☃ = (lt.a)this.d.get(☃);
     return ☃ == null ? null : ☃.a();
   }
   
   private lt.a b(UUID ☃)
   {
-    lt.a ☃ = (lt.a)d.get(☃);
+    lt.a ☃ = (lt.a)this.d.get(☃);
     if (☃ != null)
     {
       GameProfile ☃ = ☃.a();
-      e.remove(☃);
-      e.addFirst(☃);
+      this.e.remove(☃);
+      this.e.addFirst(☃);
     }
     return ☃;
   }
@@ -171,12 +171,12 @@ public class lt
     BufferedReader ☃ = null;
     try
     {
-      ☃ = Files.newReader(g, Charsets.UTF_8);
-      List<lt.a> ☃ = (List)b.fromJson(☃, h);
+      ☃ = Files.newReader(this.g, Charsets.UTF_8);
+      List<lt.a> ☃ = (List)this.b.fromJson(☃, h);
       
-      c.clear();
-      d.clear();
-      e.clear();
+      this.c.clear();
+      this.d.clear();
+      this.e.clear();
       for (lt.a ☃ : Lists.reverse(☃)) {
         if (☃ != null) {
           a(☃.a(), ☃.b());
@@ -191,11 +191,11 @@ public class lt
   
   public void c()
   {
-    String ☃ = b.toJson(a(1000));
+    String ☃ = this.b.toJson(a(1000));
     BufferedWriter ☃ = null;
     try
     {
-      ☃ = Files.newWriter(g, Charsets.UTF_8);
+      ☃ = Files.newWriter(this.g, Charsets.UTF_8);
       ☃.write(☃);
     }
     catch (FileNotFoundException ☃) {}catch (IOException ☃) {}finally
@@ -207,7 +207,7 @@ public class lt
   private List<lt.a> a(int ☃)
   {
     ArrayList<lt.a> ☃ = Lists.newArrayList();
-    List<GameProfile> ☃ = Lists.newArrayList(Iterators.limit(e.iterator(), ☃));
+    List<GameProfile> ☃ = Lists.newArrayList(Iterators.limit(this.e.iterator(), ☃));
     for (GameProfile ☃ : ☃)
     {
       lt.a ☃ = b(☃.getId());
@@ -284,18 +284,18 @@ public class lt
     
     private a(GameProfile ☃, Date ☃)
     {
-      b = ☃;
-      c = ☃;
+      this.b = ☃;
+      this.c = ☃;
     }
     
     public GameProfile a()
     {
-      return b;
+      return this.b;
     }
     
     public Date b()
     {
-      return c;
+      return this.c;
     }
   }
   

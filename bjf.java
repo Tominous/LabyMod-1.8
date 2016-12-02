@@ -11,9 +11,9 @@ public class bjf
   public bjf(biu renderManagerIn, bjh p_i46167_2_)
   {
     super(renderManagerIn);
-    a = p_i46167_2_;
-    c = 0.15F;
-    d = 0.75F;
+    this.a = p_i46167_2_;
+    this.c = 0.15F;
+    this.d = 0.75F;
   }
   
   private int a(uz itemIn, double p_177077_2_, double p_177077_4_, double p_177077_6_, float p_177077_8_, boq p_177077_9_)
@@ -26,12 +26,12 @@ public class bjf
     boolean flag = p_177077_9_.c();
     int i = a(itemstack);
     float f = 0.25F;
-    float f1 = ns.a((itemIn.o() + p_177077_8_) / 10.0F + a) * 0.1F + 0.1F;
-    float f2 = fbfd.y;
+    float f1 = ns.a((itemIn.o() + p_177077_8_) / 10.0F + itemIn.a) * 0.1F + 0.1F;
+    float f2 = p_177077_9_.f().b(bgr.b.f).d.y;
     bfl.b((float)p_177077_2_, (float)p_177077_4_ + f1 + 0.25F * f2, (float)p_177077_6_);
-    if ((flag) || (b.g != null))
+    if ((flag) || (this.b.g != null))
     {
-      float f3 = ((itemIn.o() + p_177077_8_) / 20.0F + a) * 57.295776F;
+      float f3 = ((itemIn.o() + p_177077_8_) / 20.0F + itemIn.a) * 57.295776F;
       bfl.b(f3, 0.0F, 1.0F, 0.0F);
     }
     if (!flag)
@@ -48,13 +48,13 @@ public class bjf
   private int a(zx stack)
   {
     int i = 1;
-    if (b > 48) {
+    if (stack.b > 48) {
       i = 5;
-    } else if (b > 32) {
+    } else if (stack.b > 32) {
       i = 4;
-    } else if (b > 16) {
+    } else if (stack.b > 16) {
       i = 3;
-    } else if (b > 1) {
+    } else if (stack.b > 1) {
       i = 2;
     }
     return i;

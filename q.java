@@ -69,7 +69,7 @@ public class q
     int ☃ = 0;
     for (lf ☃ : ☃)
     {
-      a.c("You have been IP banned.");
+      ☃.a.c("You have been IP banned.");
       ☃[(☃++)] = ☃.e_();
     }
     if (☃.isEmpty()) {

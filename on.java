@@ -5,22 +5,22 @@ public class on
   
   public on(String ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public boolean a()
   {
-    return (b == null) || (b.isEmpty());
+    return (this.b == null) || (this.b.isEmpty());
   }
   
   public String b()
   {
-    return b;
+    return this.b;
   }
   
   public void a(dn ☃)
   {
-    ☃.a("Lock", b);
+    ☃.a("Lock", this.b);
   }
   
   public static on b(dn ☃)

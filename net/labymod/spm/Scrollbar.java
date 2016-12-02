@@ -24,12 +24,12 @@ public class Scrollbar
   
   public int getScrollY()
   {
-    return scrollY;
+    return this.scrollY;
   }
   
   public void reset()
   {
-    scrollY = 0;
+    this.scrollY = 0;
   }
   
   public void setScrollY(int scrollY)
@@ -44,7 +44,7 @@ public class Scrollbar
   
   public int getSpeed()
   {
-    return speed;
+    return this.speed;
   }
   
   public void init() {}
@@ -67,17 +67,17 @@ public class Scrollbar
   public void setPosition(int left, int top, int right, int bottom)
   {
     this.left = left;
-    posTop = top;
+    this.posTop = top;
     this.right = right;
-    posBottom = bottom;
+    this.posBottom = bottom;
     calc();
   }
   
   public void calc()
   {
-    double s = entryHeight;
-    double totalPixels = listSize * entryHeight;
-    double backLength = posBottom - posTop;
+    double s = this.entryHeight;
+    double totalPixels = this.listSize * this.entryHeight;
+    double backLength = this.posBottom - this.posTop;
     double pixelInView = backLength;
     if (pixelInView >= totalPixels) {
       return;
@@ -86,18 +86,18 @@ public class Scrollbar
     double dTotalPixels = totalPixels;
     double scale = dPixelInView / dTotalPixels;
     double barLength = scale * backLength;
-    double scroll = scrollY / scale * scale * scale;
-    top = ((int)-scroll + posTop);
+    double scroll = this.scrollY / scale * scale * scale;
+    this.top = ((int)-scroll + this.posTop);
     this.barLength = barLength;
     this.backLength = backLength;
   }
   
   public boolean isHidden()
   {
-    if (listSize == 0) {
+    if (this.listSize == 0) {
       return true;
     }
-    if (posBottom - posTop >= listSize * entryHeight) {
+    if (this.posBottom - this.posTop >= this.listSize * this.entryHeight) {
       return true;
     }
     return false;
@@ -117,22 +117,22 @@ public class Scrollbar
     bfl.j(7425);
     bfl.x();
     worldrenderer.a(7, bms.i);
-    worldrenderer.b(left, posBottom, 0.0D).a(0.0D, 1.0D).b(0, 0, 0, 255).d();
-    worldrenderer.b(right, posBottom, 0.0D).a(1.0D, 1.0D).b(0, 0, 0, 255).d();
-    worldrenderer.b(right, posTop, 0.0D).a(1.0D, 0.0D).b(0, 0, 0, 255).d();
-    worldrenderer.b(left, posTop, 0.0D).a(0.0D, 0.0D).b(0, 0, 0, 255).d();
+    worldrenderer.b(this.left, this.posBottom, 0.0D).a(0.0D, 1.0D).b(0, 0, 0, 255).d();
+    worldrenderer.b(this.right, this.posBottom, 0.0D).a(1.0D, 1.0D).b(0, 0, 0, 255).d();
+    worldrenderer.b(this.right, this.posTop, 0.0D).a(1.0D, 0.0D).b(0, 0, 0, 255).d();
+    worldrenderer.b(this.left, this.posTop, 0.0D).a(0.0D, 0.0D).b(0, 0, 0, 255).d();
     tessellator.b();
     worldrenderer.a(7, bms.i);
-    worldrenderer.b(left, top + barLength, 0.0D).a(0.0D, 1.0D).b(128, 128, 128, 255).d();
-    worldrenderer.b(right, top + barLength, 0.0D).a(1.0D, 1.0D).b(128, 128, 128, 255).d();
-    worldrenderer.b(right, top, 0.0D).a(1.0D, 0.0D).b(128, 128, 128, 255).d();
-    worldrenderer.b(left, top, 0.0D).a(0.0D, 0.0D).b(128, 128, 128, 255).d();
+    worldrenderer.b(this.left, this.top + this.barLength, 0.0D).a(0.0D, 1.0D).b(128, 128, 128, 255).d();
+    worldrenderer.b(this.right, this.top + this.barLength, 0.0D).a(1.0D, 1.0D).b(128, 128, 128, 255).d();
+    worldrenderer.b(this.right, this.top, 0.0D).a(1.0D, 0.0D).b(128, 128, 128, 255).d();
+    worldrenderer.b(this.left, this.top, 0.0D).a(0.0D, 0.0D).b(128, 128, 128, 255).d();
     tessellator.b();
     worldrenderer.a(7, bms.i);
-    worldrenderer.b(left, top + barLength - 1.0D, 0.0D).a(0.0D, 1.0D).b(192, 192, 192, 255).d();
-    worldrenderer.b(right - 1, top + barLength - 1.0D, 0.0D).a(1.0D, 1.0D).b(192, 192, 192, 255).d();
-    worldrenderer.b(right - 1, top, 0.0D).a(1.0D, 0.0D).b(192, 192, 192, 255).d();
-    worldrenderer.b(left, top, 0.0D).a(0.0D, 0.0D).b(192, 192, 192, 255).d();
+    worldrenderer.b(this.left, this.top + this.barLength - 1.0D, 0.0D).a(0.0D, 1.0D).b(192, 192, 192, 255).d();
+    worldrenderer.b(this.right - 1, this.top + this.barLength - 1.0D, 0.0D).a(1.0D, 1.0D).b(192, 192, 192, 255).d();
+    worldrenderer.b(this.right - 1, this.top, 0.0D).a(1.0D, 0.0D).b(192, 192, 192, 255).d();
+    worldrenderer.b(this.left, this.top, 0.0D).a(0.0D, 0.0D).b(192, 192, 192, 255).d();
     tessellator.b();
     bfl.w();
     bfl.j(7424);
@@ -146,44 +146,44 @@ public class Scrollbar
     boolean click = false;
     if (!drag)
     {
-      hold = false;
-      if ((x < right) && (x > left) && (y > top) && (y < top + barLength))
+      this.hold = false;
+      if ((x < this.right) && (x > this.left) && (y > this.top) && (y < this.top + this.barLength))
       {
-        hold = true;
+        this.hold = true;
       }
-      else if ((x < right) && (x > left) && (y > posTop) && (y < posBottom))
+      else if ((x < this.right) && (x > this.left) && (y > this.posTop) && (y < this.posBottom))
       {
         drag = true;
         click = true;
       }
     }
-    else if (!hold)
+    else if (!this.hold)
     {
       return;
     }
-    int b = scrollY;
-    double scale = backLength / (listSize * entryHeight);
+    int b = this.scrollY;
+    double scale = this.backLength / (this.listSize * this.entryHeight);
     int calc = (int)(-y / scale);
     if (drag) {
-      scrollY = (calc - clickY);
+      this.scrollY = (calc - this.clickY);
     } else {
-      clickY = (calc - scrollY);
+      this.clickY = (calc - this.scrollY);
     }
-    if ((listSize * entryHeight + scrollY < posBottom - posTop) && 
+    if ((this.listSize * this.entryHeight + this.scrollY < this.posBottom - this.posTop) && 
       (!click)) {
-      scrollY = b;
+      this.scrollY = b;
     }
-    if ((scrollY > 0) && 
+    if ((this.scrollY > 0) && 
       (!click)) {
-      scrollY = b;
+      this.scrollY = b;
     }
     if (click)
     {
-      if (listSize * entryHeight + scrollY < posBottom - posTop) {
-        scrollY += posBottom - posTop - (listSize * entryHeight + scrollY);
+      if (this.listSize * this.entryHeight + this.scrollY < this.posBottom - this.posTop) {
+        this.scrollY += this.posBottom - this.posTop - (this.listSize * this.entryHeight + this.scrollY);
       }
-      if (scrollY > 0) {
-        scrollY = 0;
+      if (this.scrollY > 0) {
+        this.scrollY = 0;
       }
     }
   }
@@ -193,19 +193,19 @@ public class Scrollbar
     int wheel = Mouse.getEventDWheel();
     if (wheel > 0)
     {
-      if (scrollY < 0) {
-        scrollY += speed;
+      if (this.scrollY < 0) {
+        this.scrollY += this.speed;
       }
     }
     else if ((wheel < 0) && 
-      (listSize * entryHeight + scrollY > posBottom - posTop)) {
-      scrollY -= speed;
+      (this.listSize * this.entryHeight + this.scrollY > this.posBottom - this.posTop)) {
+      this.scrollY -= this.speed;
     }
-    if (listSize * entryHeight + scrollY < posBottom - posTop) {
-      scrollY += posBottom - posTop - (listSize * entryHeight + scrollY);
+    if (this.listSize * this.entryHeight + this.scrollY < this.posBottom - this.posTop) {
+      this.scrollY += this.posBottom - this.posTop - (this.listSize * this.entryHeight + this.scrollY);
     }
-    if (scrollY > 0) {
-      scrollY = 0;
+    if (this.scrollY > 0) {
+      this.scrollY = 0;
     }
   }
 }

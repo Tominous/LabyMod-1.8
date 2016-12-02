@@ -19,19 +19,19 @@ public class aul
   
   public aul(auo ☃, String ☃)
   {
-    a = ☃;
-    b = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.d = ☃;
   }
   
   public String b()
   {
-    return b;
+    return this.b;
   }
   
   public String c()
   {
-    return d;
+    return this.d;
   }
   
   public void a(String ☃)
@@ -39,18 +39,18 @@ public class aul
     if (☃ == null) {
       throw new IllegalArgumentException("Name cannot be null");
     }
-    d = ☃;
-    a.b(this);
+    this.d = ☃;
+    this.a.b(this);
   }
   
   public Collection<String> d()
   {
-    return c;
+    return this.c;
   }
   
   public String e()
   {
-    return e;
+    return this.e;
   }
   
   public void b(String ☃)
@@ -58,19 +58,19 @@ public class aul
     if (☃ == null) {
       throw new IllegalArgumentException("Prefix cannot be null");
     }
-    e = ☃;
-    a.b(this);
+    this.e = ☃;
+    this.a.b(this);
   }
   
   public String f()
   {
-    return f;
+    return this.f;
   }
   
   public void c(String ☃)
   {
-    f = ☃;
-    a.b(this);
+    this.f = ☃;
+    this.a.b(this);
   }
   
   public String d(String ☃)
@@ -88,46 +88,46 @@ public class aul
   
   public boolean g()
   {
-    return g;
+    return this.g;
   }
   
   public void a(boolean ☃)
   {
-    g = ☃;
-    a.b(this);
+    this.g = ☃;
+    this.a.b(this);
   }
   
   public boolean h()
   {
-    return h;
+    return this.h;
   }
   
   public void b(boolean ☃)
   {
-    h = ☃;
-    a.b(this);
+    this.h = ☃;
+    this.a.b(this);
   }
   
   public auq.a i()
   {
-    return i;
+    return this.i;
   }
   
   public auq.a j()
   {
-    return j;
+    return this.j;
   }
   
   public void a(auq.a ☃)
   {
-    i = ☃;
-    a.b(this);
+    this.i = ☃;
+    this.a.b(this);
   }
   
   public void b(auq.a ☃)
   {
-    j = ☃;
-    a.b(this);
+    this.j = ☃;
+    this.a.b(this);
   }
   
   public int k()
@@ -150,11 +150,11 @@ public class aul
   
   public void a(a ☃)
   {
-    k = ☃;
+    this.k = ☃;
   }
   
   public a l()
   {
-    return k;
+    return this.k;
   }
 }

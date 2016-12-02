@@ -41,54 +41,54 @@ public abstract class lx
   
   public lx(MinecraftServer ☃)
   {
-    h = ☃;
+    this.h = ☃;
     
-    k.a(false);
-    l.a(false);
+    this.k.a(false);
+    this.l.a(false);
     
-    e = 8;
+    this.e = 8;
   }
   
   public void a(ek ☃, lf ☃)
   {
     GameProfile ☃ = ☃.cd();
     
-    lt ☃ = h.aF();
+    lt ☃ = this.h.aF();
     GameProfile ☃ = ☃.a(☃.getId());
     String ☃ = ☃ == null ? ☃.getName() : ☃.getName();
     ☃.a(☃);
     
     dn ☃ = a(☃);
-    ☃.a(h.a(am));
-    c.a((le)o);
+    ☃.a(this.h.a(☃.am));
+    ☃.c.a((le)☃.o);
     
     String ☃ = "local";
     if (☃.b() != null) {
       ☃ = ☃.b().toString();
     }
-    f.info(☃.e_() + "[" + ☃ + "] logged in with entity id " + ☃.F() + " at (" + s + ", " + t + ", " + u + ")");
+    f.info(☃.e_() + "[" + ☃ + "] logged in with entity id " + ☃.F() + " at (" + ☃.s + ", " + ☃.t + ", " + ☃.u + ")");
     
-    le ☃ = h.a(am);
+    le ☃ = this.h.a(☃.am);
     ato ☃ = ☃.P();
     
     cj ☃ = ☃.M();
     
     a(☃, null, ☃);
     
-    lm ☃ = new lm(h, ☃, ☃);
-    ☃.a(new gt(☃.F(), c.b(), ☃.t(), t.q(), ☃.aa(), p(), ☃.u(), ☃.Q().b("reducedDebugInfo")));
+    lm ☃ = new lm(this.h, ☃, ☃);
+    ☃.a(new gt(☃.F(), ☃.c.b(), ☃.t(), ☃.t.q(), ☃.aa(), p(), ☃.u(), ☃.Q().b("reducedDebugInfo")));
     ☃.a(new gg("MC|Brand", new em(Unpooled.buffer()).a(c().getServerModName())));
     ☃.a(new fw(☃.y(), ☃.z()));
     ☃.a(new ht(☃));
-    ☃.a(new gx(bA));
-    ☃.a(new hi(bi.c));
+    ☃.a(new gx(☃.bA));
+    ☃.a(new hi(☃.bi.c));
     
     ☃.A().d();
     ☃.A().b(☃);
     
     a((kk)☃.Z(), ☃);
     
-    h.aH();
+    this.h.aH();
     fb ☃;
     fb ☃;
     if (!☃.e_().equalsIgnoreCase(☃)) {
@@ -100,10 +100,10 @@ public abstract class lx
     a(☃);
     c(☃);
     
-    ☃.a(s, t, u, y, z);
+    ☃.a(☃.s, ☃.t, ☃.u, ☃.y, ☃.z);
     b(☃, ☃);
-    if (h.ab().length() > 0) {
-      ☃.a(h.ab(), h.ac());
+    if (this.h.ab().length() > 0) {
+      ☃.a(this.h.ab(), this.h.ac());
     }
     for (pf ☃ : ☃.bl()) {
       ☃.a(new ib(☃.F(), ☃));
@@ -114,10 +114,10 @@ public abstract class lx
       pk ☃ = pm.a(☃.m("Riding"), ☃);
       if (☃ != null)
       {
-        n = true;
+        ☃.n = true;
         ☃.d(☃);
         ☃.a(☃);
-        n = false;
+        ☃.n = false;
       }
     }
   }
@@ -126,7 +126,7 @@ public abstract class lx
   {
     Set<auk> ☃ = Sets.newHashSet();
     for (aul ☃ : ☃.g()) {
-      a.a(new hr(☃, 0));
+      ☃.a.a(new hr(☃, 0));
     }
     for (int ☃ = 0; ☃ < 19; ☃++)
     {
@@ -135,7 +135,7 @@ public abstract class lx
       {
         List<ff> ☃ = ☃.d(☃);
         for (ff ☃ : ☃) {
-          a.a(☃);
+          ☃.a.a(☃);
         }
         ☃.add(☃);
       }
@@ -144,32 +144,32 @@ public abstract class lx
   
   public void a(le[] ☃)
   {
-    p = ☃[0].O().e();
+    this.p = ☃[0].O().e();
     ☃[0].af().a(new amq()
     {
       public void a(ams ☃, double ☃)
       {
-        a(new hg(☃, hg.a.a));
+        lx.this.a(new hg(☃, hg.a.a));
       }
       
       public void a(ams ☃, double ☃, double ☃, long ☃)
       {
-        a(new hg(☃, hg.a.b));
+        lx.this.a(new hg(☃, hg.a.b));
       }
       
       public void a(ams ☃, double ☃, double ☃)
       {
-        a(new hg(☃, hg.a.c));
+        lx.this.a(new hg(☃, hg.a.c));
       }
       
       public void a(ams ☃, int ☃)
       {
-        a(new hg(☃, hg.a.e));
+        lx.this.a(new hg(☃, hg.a.e));
       }
       
       public void b(ams ☃, int ☃)
       {
-        a(new hg(☃, hg.a.f));
+        lx.this.a(new hg(☃, hg.a.f));
       }
       
       public void b(ams ☃, double ☃) {}
@@ -186,7 +186,7 @@ public abstract class lx
     }
     ☃.t().a(☃);
     
-    b.c((int)s >> 4, (int)u >> 4);
+    ☃.b.c((int)☃.s >> 4, (int)☃.u >> 4);
   }
   
   public int d()
@@ -196,9 +196,9 @@ public abstract class lx
   
   public dn a(lf ☃)
   {
-    dn ☃ = h.d[0].P().i();
+    dn ☃ = this.h.d[0].P().i();
     dn ☃;
-    if ((☃.e_().equals(h.S())) && (☃ != null))
+    if ((☃.e_().equals(this.h.S())) && (☃ != null))
     {
       ☃.f(☃);
       dn ☃ = ☃;
@@ -206,15 +206,15 @@ public abstract class lx
     }
     else
     {
-      ☃ = p.b(☃);
+      ☃ = this.p.b(☃);
     }
     return ☃;
   }
   
   protected void b(lf ☃)
   {
-    p.a(☃);
-    mv ☃ = (mv)o.get(☃.aK());
+    this.p.a(☃);
+    mv ☃ = (mv)this.o.get(☃.aK());
     if (☃ != null) {
       ☃.b();
     }
@@ -222,19 +222,19 @@ public abstract class lx
   
   public void c(lf ☃)
   {
-    i.add(☃);
-    j.put(☃.aK(), ☃);
+    this.i.add(☃);
+    this.j.put(☃.aK(), ☃);
     
     a(new gz(gz.a.a, new lf[] { ☃ }));
     
-    le ☃ = h.a(am);
+    le ☃ = this.h.a(☃.am);
     
     ☃.d(☃);
     a(☃, null);
-    for (int ☃ = 0; ☃ < i.size(); ☃++)
+    for (int ☃ = 0; ☃ < this.i.size(); ☃++)
     {
-      lf ☃ = (lf)i.get(☃);
-      a.a(new gz(gz.a.a, new lf[] { ☃ }));
+      lf ☃ = (lf)this.i.get(☃);
+      ☃.a.a(new gz(gz.a.a, new lf[] { ☃ }));
     }
   }
   
@@ -248,29 +248,29 @@ public abstract class lx
     ☃.b(na.f);
     b(☃);
     le ☃ = ☃.u();
-    if (m != null)
+    if (☃.m != null)
     {
-      ☃.f(m);
+      ☃.f(☃.m);
       f.debug("removing player mount");
     }
     ☃.e(☃);
     ☃.t().c(☃);
-    i.remove(☃);
+    this.i.remove(☃);
     UUID ☃ = ☃.aK();
-    lf ☃ = (lf)j.get(☃);
+    lf ☃ = (lf)this.j.get(☃);
     if (☃ == ☃)
     {
-      j.remove(☃);
-      o.remove(☃);
+      this.j.remove(☃);
+      this.o.remove(☃);
     }
     a(new gz(gz.a.e, new lf[] { ☃ }));
   }
   
   public String a(SocketAddress ☃, GameProfile ☃)
   {
-    if (k.a(☃))
+    if (this.k.a(☃))
     {
-      md ☃ = (md)k.b(☃);
+      md ☃ = (md)this.k.b(☃);
       String ☃ = "You are banned from this server!\nReason: " + ☃.d();
       if (☃.c() != null) {
         ☃ = ☃ + "\nYour ban will be removed on " + g.format(☃.c());
@@ -280,16 +280,16 @@ public abstract class lx
     if (!e(☃)) {
       return "You are not white-listed on this server!";
     }
-    if (l.a(☃))
+    if (this.l.a(☃))
     {
-      lv ☃ = l.b(☃);
+      lv ☃ = this.l.b(☃);
       String ☃ = "Your IP address is banned from this server!\nReason: " + ☃.d();
       if (☃.c() != null) {
         ☃ = ☃ + "\nYour ban will be removed on " + g.format(☃.c());
       }
       return ☃;
     }
-    if ((i.size() >= e) && (!f(☃))) {
+    if ((this.i.size() >= this.e) && (!f(☃))) {
       return "The server is full!";
     }
     return null;
@@ -299,28 +299,28 @@ public abstract class lx
   {
     UUID ☃ = wn.a(☃);
     List<lf> ☃ = Lists.newArrayList();
-    for (int ☃ = 0; ☃ < i.size(); ☃++)
+    for (int ☃ = 0; ☃ < this.i.size(); ☃++)
     {
-      lf ☃ = (lf)i.get(☃);
+      lf ☃ = (lf)this.i.get(☃);
       if (☃.aK().equals(☃)) {
         ☃.add(☃);
       }
     }
-    lf ☃ = (lf)j.get(☃.getId());
+    lf ☃ = (lf)this.j.get(☃.getId());
     if ((☃ != null) && (!☃.contains(☃))) {
       ☃.add(☃);
     }
     for (lf ☃ : ☃) {
-      a.c("You logged in from another location");
+      ☃.a.c("You logged in from another location");
     }
     lg ☃;
     lg ☃;
-    if (h.X()) {
-      ☃ = new ky(h.a(0));
+    if (this.h.X()) {
+      ☃ = new ky(this.h.a(0));
     } else {
-      ☃ = new lg(h.a(0));
+      ☃ = new lg(this.h.a(0));
     }
-    return new lf(h, h.a(0), ☃, ☃);
+    return new lf(this.h, this.h.a(0), ☃, ☃);
   }
   
   public lf a(lf ☃, int ☃, boolean ☃)
@@ -328,31 +328,31 @@ public abstract class lx
     ☃.u().s().b(☃);
     ☃.u().s().b(☃);
     ☃.u().t().c(☃);
-    i.remove(☃);
-    h.a(am).f(☃);
+    this.i.remove(☃);
+    this.h.a(☃.am).f(☃);
     
     cj ☃ = ☃.ch();
     boolean ☃ = ☃.ci();
     
-    am = ☃;
+    ☃.am = ☃;
     lg ☃;
     lg ☃;
-    if (h.X()) {
-      ☃ = new ky(h.a(am));
+    if (this.h.X()) {
+      ☃ = new ky(this.h.a(☃.am));
     } else {
-      ☃ = new lg(h.a(am));
+      ☃ = new lg(this.h.a(☃.am));
     }
-    lf ☃ = new lf(h, h.a(am), ☃.cd(), ☃);
-    a = a;
+    lf ☃ = new lf(this.h, this.h.a(☃.am), ☃.cd(), ☃);
+    ☃.a = ☃.a;
     ☃.a(☃, ☃);
     ☃.d(☃.F());
     ☃.o(☃);
     
-    le ☃ = h.a(am);
+    le ☃ = this.h.a(☃.am);
     a(☃, ☃, ☃);
     if (☃ != null)
     {
-      cj ☃ = wn.a(h.a(am), ☃, ☃);
+      cj ☃ = wn.a(this.h.a(☃.am), ☃, ☃);
       if (☃ != null)
       {
         ☃.b(☃.n() + 0.5F, ☃.o() + 0.1F, ☃.p() + 0.5F, 0.0F, 0.0F);
@@ -360,24 +360,24 @@ public abstract class lx
       }
       else
       {
-        a.a(new gm(0, 0.0F));
+        ☃.a.a(new gm(0, 0.0F));
       }
     }
-    b.c((int)s >> 4, (int)u >> 4);
-    while ((!☃.a(☃, ☃.aR()).isEmpty()) && (t < 256.0D)) {
-      ☃.b(s, t + 1.0D, u);
+    ☃.b.c((int)☃.s >> 4, (int)☃.u >> 4);
+    while ((!☃.a(☃, ☃.aR()).isEmpty()) && (☃.t < 256.0D)) {
+      ☃.b(☃.s, ☃.t + 1.0D, ☃.u);
     }
-    a.a(new he(am, o.aa(), o.P().u(), c.b()));
+    ☃.a.a(new he(☃.am, ☃.o.aa(), ☃.o.P().u(), ☃.c.b()));
     cj ☃ = ☃.M();
-    a.a(s, t, u, y, z);
-    a.a(new ht(☃));
-    a.a(new ho(bD, bC, bB));
+    ☃.a.a(☃.s, ☃.t, ☃.u, ☃.y, ☃.z);
+    ☃.a.a(new ht(☃));
+    ☃.a.a(new ho(☃.bD, ☃.bC, ☃.bB));
     b(☃, ☃);
     
     ☃.t().a(☃);
     ☃.d(☃);
-    i.add(☃);
-    j.put(☃.aK(), ☃);
+    this.i.add(☃);
+    this.j.put(☃.aK(), ☃);
     
     ☃.g_();
     ☃.i(☃.bn());
@@ -386,51 +386,51 @@ public abstract class lx
   
   public void a(lf ☃, int ☃)
   {
-    int ☃ = am;
-    le ☃ = h.a(am);
-    am = ☃;
+    int ☃ = ☃.am;
+    le ☃ = this.h.a(☃.am);
+    ☃.am = ☃;
     
-    le ☃ = h.a(am);
+    le ☃ = this.h.a(☃.am);
     
-    a.a(new he(am, o.aa(), o.P().u(), c.b()));
+    ☃.a.a(new he(☃.am, ☃.o.aa(), ☃.o.P().u(), ☃.c.b()));
     
     ☃.f(☃);
-    I = false;
+    ☃.I = false;
     
     a(☃, ☃, ☃, ☃);
     a(☃, ☃);
     
-    a.a(s, t, u, y, z);
-    c.a(☃);
+    ☃.a.a(☃.s, ☃.t, ☃.u, ☃.y, ☃.z);
+    ☃.c.a(☃);
     b(☃, ☃);
     f(☃);
     for (pf ☃ : ☃.bl()) {
-      a.a(new ib(☃.F(), ☃));
+      ☃.a.a(new ib(☃.F(), ☃));
     }
   }
   
   public void a(pk ☃, int ☃, le ☃, le ☃)
   {
-    double ☃ = s;
-    double ☃ = u;
+    double ☃ = ☃.s;
+    double ☃ = ☃.u;
     double ☃ = 8.0D;
-    float ☃ = y;
+    float ☃ = ☃.y;
     
-    B.a("moving");
-    if (am == -1)
+    ☃.B.a("moving");
+    if (☃.am == -1)
     {
       ☃ = ns.a(☃ / ☃, ☃.af().b() + 16.0D, ☃.af().d() - 16.0D);
       ☃ = ns.a(☃ / ☃, ☃.af().c() + 16.0D, ☃.af().e() - 16.0D);
-      ☃.b(☃, t, ☃, y, z);
+      ☃.b(☃, ☃.t, ☃, ☃.y, ☃.z);
       if (☃.ai()) {
         ☃.a(☃, false);
       }
     }
-    else if (am == 0)
+    else if (☃.am == 0)
     {
       ☃ = ns.a(☃ * ☃, ☃.af().b() + 16.0D, ☃.af().d() - 16.0D);
       ☃ = ns.a(☃ * ☃, ☃.af().c() + 16.0D, ☃.af().e() - 16.0D);
-      ☃.b(☃, t, ☃, y, z);
+      ☃.b(☃, ☃.t, ☃, ☃.y, ☃.z);
       if (☃.ai()) {
         ☃.a(☃, false);
       }
@@ -445,56 +445,56 @@ public abstract class lx
         ☃ = ☃.m();
       }
       ☃ = ☃.n();
-      t = ☃.o();
+      ☃.t = ☃.o();
       ☃ = ☃.p();
       
-      ☃.b(☃, t, ☃, 90.0F, 0.0F);
+      ☃.b(☃, ☃.t, ☃, 90.0F, 0.0F);
       if (☃.ai()) {
         ☃.a(☃, false);
       }
     }
-    B.b();
+    ☃.B.b();
     if (☃ != 1)
     {
-      B.a("placing");
+      ☃.B.a("placing");
       
       ☃ = ns.a((int)☃, -29999872, 29999872);
       ☃ = ns.a((int)☃, -29999872, 29999872);
       if (☃.ai())
       {
-        ☃.b(☃, t, ☃, y, z);
+        ☃.b(☃, ☃.t, ☃, ☃.y, ☃.z);
         ☃.u().a(☃, ☃);
         ☃.d(☃);
         ☃.a(☃, false);
       }
-      B.b();
+      ☃.B.b();
     }
     ☃.a(☃);
   }
   
   public void e()
   {
-    if (++u > 600)
+    if (++this.u > 600)
     {
-      a(new gz(gz.a.c, i));
-      u = 0;
+      a(new gz(gz.a.c, this.i));
+      this.u = 0;
     }
   }
   
   public void a(ff ☃)
   {
-    for (int ☃ = 0; ☃ < i.size(); ☃++) {
-      i.get(☃)).a.a(☃);
+    for (int ☃ = 0; ☃ < this.i.size(); ☃++) {
+      ((lf)this.i.get(☃)).a.a(☃);
     }
   }
   
   public void a(ff ☃, int ☃)
   {
-    for (int ☃ = 0; ☃ < i.size(); ☃++)
+    for (int ☃ = 0; ☃ < this.i.size(); ☃++)
     {
-      lf ☃ = (lf)i.get(☃);
-      if (am == ☃) {
-        a.a(☃);
+      lf ☃ = (lf)this.i.get(☃);
+      if (☃.am == ☃) {
+        ☃.a.a(☃);
       }
     }
   }
@@ -523,9 +523,9 @@ public abstract class lx
       a(☃);
       return;
     }
-    for (int ☃ = 0; ☃ < i.size(); ☃++)
+    for (int ☃ = 0; ☃ < this.i.size(); ☃++)
     {
-      lf ☃ = (lf)i.get(☃);
+      lf ☃ = (lf)this.i.get(☃);
       if (☃.bO() != ☃) {
         ☃.a(☃);
       }
@@ -535,7 +535,7 @@ public abstract class lx
   public String b(boolean ☃)
   {
     String ☃ = "";
-    List<lf> ☃ = Lists.newArrayList(i);
+    List<lf> ☃ = Lists.newArrayList(this.i);
     for (int ☃ = 0; ☃ < ☃.size(); ☃++)
     {
       if (☃ > 0) {
@@ -551,55 +551,55 @@ public abstract class lx
   
   public String[] f()
   {
-    String[] ☃ = new String[i.size()];
-    for (int ☃ = 0; ☃ < i.size(); ☃++) {
-      ☃[☃] = ((lf)i.get(☃)).e_();
+    String[] ☃ = new String[this.i.size()];
+    for (int ☃ = 0; ☃ < this.i.size(); ☃++) {
+      ☃[☃] = ((lf)this.i.get(☃)).e_();
     }
     return ☃;
   }
   
   public GameProfile[] g()
   {
-    GameProfile[] ☃ = new GameProfile[i.size()];
-    for (int ☃ = 0; ☃ < i.size(); ☃++) {
-      ☃[☃] = ((lf)i.get(☃)).cd();
+    GameProfile[] ☃ = new GameProfile[this.i.size()];
+    for (int ☃ = 0; ☃ < this.i.size(); ☃++) {
+      ☃[☃] = ((lf)this.i.get(☃)).cd();
     }
     return ☃;
   }
   
   public mc h()
   {
-    return k;
+    return this.k;
   }
   
   public lu i()
   {
-    return l;
+    return this.l;
   }
   
   public void a(GameProfile ☃)
   {
-    m.a(new lz(☃, h.p(), m.b(☃)));
+    this.m.a(new lz(☃, this.h.p(), this.m.b(☃)));
   }
   
   public void b(GameProfile ☃)
   {
-    m.c(☃);
+    this.m.c(☃);
   }
   
   public boolean e(GameProfile ☃)
   {
-    return (!q) || (m.d(☃)) || (n.d(☃));
+    return (!this.q) || (this.m.d(☃)) || (this.n.d(☃));
   }
   
   public boolean h(GameProfile ☃)
   {
-    return (m.d(☃)) || ((h.T()) && (h.d[0].P().v()) && (h.S().equalsIgnoreCase(☃.getName()))) || (t);
+    return (this.m.d(☃)) || ((this.h.T()) && (this.h.d[0].P().v()) && (this.h.S().equalsIgnoreCase(☃.getName()))) || (this.t);
   }
   
   public lf a(String ☃)
   {
-    for (lf ☃ : i) {
+    for (lf ☃ : this.i) {
       if (☃.e_().equalsIgnoreCase(☃)) {
         return ☃;
       }
@@ -614,17 +614,17 @@ public abstract class lx
   
   public void a(wn ☃, double ☃, double ☃, double ☃, double ☃, int ☃, ff ☃)
   {
-    for (int ☃ = 0; ☃ < i.size(); ☃++)
+    for (int ☃ = 0; ☃ < this.i.size(); ☃++)
     {
-      lf ☃ = (lf)i.get(☃);
+      lf ☃ = (lf)this.i.get(☃);
       if (☃ != ☃) {
-        if (am == ☃)
+        if (☃.am == ☃)
         {
-          double ☃ = ☃ - s;
-          double ☃ = ☃ - t;
-          double ☃ = ☃ - u;
+          double ☃ = ☃ - ☃.s;
+          double ☃ = ☃ - ☃.t;
+          double ☃ = ☃ - ☃.u;
           if (☃ * ☃ + ☃ * ☃ + ☃ * ☃ < ☃ * ☃) {
-            a.a(☃);
+            ☃.a.a(☃);
           }
         }
       }
@@ -633,87 +633,87 @@ public abstract class lx
   
   public void j()
   {
-    for (int ☃ = 0; ☃ < i.size(); ☃++) {
-      b((lf)i.get(☃));
+    for (int ☃ = 0; ☃ < this.i.size(); ☃++) {
+      b((lf)this.i.get(☃));
     }
   }
   
   public void d(GameProfile ☃)
   {
-    n.a(new mf(☃));
+    this.n.a(new mf(☃));
   }
   
   public void c(GameProfile ☃)
   {
-    n.c(☃);
+    this.n.c(☃);
   }
   
   public me k()
   {
-    return n;
+    return this.n;
   }
   
   public String[] l()
   {
-    return n.a();
+    return this.n.a();
   }
   
   public ly m()
   {
-    return m;
+    return this.m;
   }
   
   public String[] n()
   {
-    return m.a();
+    return this.m.a();
   }
   
   public void a() {}
   
   public void b(lf ☃, le ☃)
   {
-    ams ☃ = h.d[0].af();
-    a.a(new hg(☃, hg.a.d));
-    a.a(new hu(☃.K(), ☃.L(), ☃.Q().b("doDaylightCycle")));
+    ams ☃ = this.h.d[0].af();
+    ☃.a.a(new hg(☃, hg.a.d));
+    ☃.a.a(new hu(☃.K(), ☃.L(), ☃.Q().b("doDaylightCycle")));
     if (☃.S())
     {
-      a.a(new gm(1, 0.0F));
-      a.a(new gm(7, ☃.j(1.0F)));
-      a.a(new gm(8, ☃.h(1.0F)));
+      ☃.a.a(new gm(1, 0.0F));
+      ☃.a.a(new gm(7, ☃.j(1.0F)));
+      ☃.a.a(new gm(8, ☃.h(1.0F)));
     }
   }
   
   public void f(lf ☃)
   {
-    ☃.a(bj);
+    ☃.a(☃.bj);
     ☃.r();
-    a.a(new hi(bi.c));
+    ☃.a.a(new hi(☃.bi.c));
   }
   
   public int o()
   {
-    return i.size();
+    return this.i.size();
   }
   
   public int p()
   {
-    return e;
+    return this.e;
   }
   
   public String[] q()
   {
-    return h.d[0].O().e().f();
+    return this.h.d[0].O().e().f();
   }
   
   public void a(boolean ☃)
   {
-    q = ☃;
+    this.q = ☃;
   }
   
   public List<lf> b(String ☃)
   {
     List<lf> ☃ = Lists.newArrayList();
-    for (lf ☃ : i) {
+    for (lf ☃ : this.i) {
       if (☃.w().equals(☃)) {
         ☃.add(☃);
       }
@@ -723,12 +723,12 @@ public abstract class lx
   
   public int s()
   {
-    return r;
+    return this.r;
   }
   
   public MinecraftServer c()
   {
-    return h;
+    return this.h;
   }
   
   public dn t()
@@ -738,34 +738,34 @@ public abstract class lx
   
   public void a(adp.a ☃)
   {
-    s = ☃;
+    this.s = ☃;
   }
   
   private void a(lf ☃, lf ☃, adm ☃)
   {
     if (☃ != null) {
-      c.a(c.b());
-    } else if (s != null) {
-      c.a(s);
+      ☃.c.a(☃.c.b());
+    } else if (this.s != null) {
+      ☃.c.a(this.s);
     }
-    c.b(☃.P().r());
+    ☃.c.b(☃.P().r());
   }
   
   public void c(boolean ☃)
   {
-    t = ☃;
+    this.t = ☃;
   }
   
   public void u()
   {
-    for (int ☃ = 0; ☃ < i.size(); ☃++) {
-      i.get(☃)).a.c("Server closed");
+    for (int ☃ = 0; ☃ < this.i.size(); ☃++) {
+      ((lf)this.i.get(☃)).a.c("Server closed");
     }
   }
   
   public void a(eu ☃, boolean ☃)
   {
-    h.a(☃);
+    this.h.a(☃);
     byte ☃ = ☃ ? 1 : 0;
     a(new fy(☃, ☃));
   }
@@ -778,10 +778,10 @@ public abstract class lx
   public mv a(wn ☃)
   {
     UUID ☃ = ☃.aK();
-    mv ☃ = ☃ == null ? null : (mv)o.get(☃);
+    mv ☃ = ☃ == null ? null : (mv)this.o.get(☃);
     if (☃ == null)
     {
-      File ☃ = new File(h.a(0).O().b(), "stats");
+      File ☃ = new File(this.h.a(0).O().b(), "stats");
       File ☃ = new File(☃, ☃.toString() + ".json");
       if (!☃.exists())
       {
@@ -790,20 +790,20 @@ public abstract class lx
           ☃.renameTo(☃);
         }
       }
-      ☃ = new mv(h, ☃);
+      ☃ = new mv(this.h, ☃);
       ☃.a();
-      o.put(☃, ☃);
+      this.o.put(☃, ☃);
     }
     return ☃;
   }
   
   public void a(int ☃)
   {
-    r = ☃;
-    if (h.d == null) {
+    this.r = ☃;
+    if (this.h.d == null) {
       return;
     }
-    for (le ☃ : h.d) {
+    for (le ☃ : this.h.d) {
       if (☃ != null) {
         ☃.t().a(☃);
       }
@@ -812,12 +812,12 @@ public abstract class lx
   
   public List<lf> v()
   {
-    return i;
+    return this.i;
   }
   
   public lf a(UUID ☃)
   {
-    return (lf)j.get(☃);
+    return (lf)this.j.get(☃);
   }
   
   public boolean f(GameProfile ☃)

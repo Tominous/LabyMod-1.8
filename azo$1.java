@@ -15,11 +15,11 @@ class azo$1
   
   protected String c()
   {
-    return val$path;
+    return this.val$path;
   }
   
   protected String b()
   {
-    return val$finalCount + " resource pack" + (val$finalCount == 1 ? "" : "s");
+    return this.val$finalCount + " resource pack" + (this.val$finalCount == 1 ? "" : "s");
   }
 }

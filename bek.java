@@ -4,13 +4,13 @@ public class bek
   protected bek(adm ☃, double ☃, double ☃, double ☃, double ☃, double ☃, double ☃)
   {
     super(☃, ☃, ☃, ☃);
-    i = 0.04F;
+    this.i = 0.04F;
     k();
     if ((☃ == 0.0D) && ((☃ != 0.0D) || (☃ != 0.0D)))
     {
-      v = ☃;
-      w = (☃ + 0.1D);
-      x = ☃;
+      this.v = ☃;
+      this.w = (☃ + 0.1D);
+      this.x = ☃;
     }
   }
   

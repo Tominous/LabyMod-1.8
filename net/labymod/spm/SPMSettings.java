@@ -138,14 +138,14 @@ public class SPMSettings
   
   public SPMSettings(File file)
   {
-    keyBindings = ((SPMBinding[])ArrayUtils.addAll(new SPMBinding[] { keyBindAttack, keyBindUseItem, keyBindForward, keyBindLeft, keyBindBack, keyBindRight, keyBindJump, keyBindSneak, keyBindSprint, keyBindDrop, keyBindInventory, keyBindChat, keyBindPlayerList, keyBindPickBlock, keyBindCommand, keyBindScreenshot, keyBindTogglePerspective, keyBindSmoothCamera, keyBindStreamStartStop, keyBindStreamPauseUnpause, keyBindStreamCommercials, keyBindStreamToggleMic, keyBindFullscreen, keyBindSpectatorOutlines }, keyBindsHotbar));
-    difficulty = oj.c;
-    lastServer = "";
-    fovSetting = 70.0F;
-    language = "en_US";
-    forceUnicodeFont = false;
-    optionsFile = file;
-    renderDistanceChunks = 8;
+    this.keyBindings = ((SPMBinding[])ArrayUtils.addAll(new SPMBinding[] { this.keyBindAttack, this.keyBindUseItem, this.keyBindForward, this.keyBindLeft, this.keyBindBack, this.keyBindRight, this.keyBindJump, this.keyBindSneak, this.keyBindSprint, this.keyBindDrop, this.keyBindInventory, this.keyBindChat, this.keyBindPlayerList, this.keyBindPickBlock, this.keyBindCommand, this.keyBindScreenshot, this.keyBindTogglePerspective, this.keyBindSmoothCamera, this.keyBindStreamStartStop, this.keyBindStreamPauseUnpause, this.keyBindStreamCommercials, this.keyBindStreamToggleMic, this.keyBindFullscreen, this.keyBindSpectatorOutlines }, this.keyBindsHotbar));
+    this.difficulty = oj.c;
+    this.lastServer = "";
+    this.fovSetting = 70.0F;
+    this.language = "en_US";
+    this.forceUnicodeFont = false;
+    this.optionsFile = file;
+    this.renderDistanceChunks = 8;
     loadOptions();
   }
   
@@ -153,218 +153,218 @@ public class SPMSettings
   {
     try
     {
-      if (!optionsFile.exists()) {
+      if (!this.optionsFile.exists()) {
         return;
       }
-      BufferedReader bufferedreader = new BufferedReader(new FileReader(optionsFile));
+      BufferedReader bufferedreader = new BufferedReader(new FileReader(this.optionsFile));
       String s = "";
-      mapSoundLevels.clear();
+      this.mapSoundLevels.clear();
       while ((s = bufferedreader.readLine()) != null) {
         try
         {
           String[] astring = s.split(":");
           if (astring[0].equals("mouseSensitivity")) {
-            mouseSensitivity = parseFloat(astring[1]);
+            this.mouseSensitivity = parseFloat(astring[1]);
           }
           if (astring[0].equals("fov")) {
-            fovSetting = (parseFloat(astring[1]) * 40.0F + 70.0F);
+            this.fovSetting = (parseFloat(astring[1]) * 40.0F + 70.0F);
           }
           if (astring[0].equals("gamma")) {
-            gammaSetting = parseFloat(astring[1]);
+            this.gammaSetting = parseFloat(astring[1]);
           }
           if (astring[0].equals("saturation")) {
-            saturation = parseFloat(astring[1]);
+            this.saturation = parseFloat(astring[1]);
           }
           if (astring[0].equals("invertYMouse")) {
-            invertMouse = astring[1].equals("true");
+            this.invertMouse = astring[1].equals("true");
           }
           if (astring[0].equals("renderDistance")) {
-            renderDistanceChunks = Integer.parseInt(astring[1]);
+            this.renderDistanceChunks = Integer.parseInt(astring[1]);
           }
           if (astring[0].equals("guiScale")) {
-            guiScale = Integer.parseInt(astring[1]);
+            this.guiScale = Integer.parseInt(astring[1]);
           }
           if (astring[0].equals("particles")) {
-            particleSetting = Integer.parseInt(astring[1]);
+            this.particleSetting = Integer.parseInt(astring[1]);
           }
           if (astring[0].equals("bobView")) {
-            viewBobbing = astring[1].equals("true");
+            this.viewBobbing = astring[1].equals("true");
           }
           if (astring[0].equals("anaglyph3d")) {
-            anaglyph = astring[1].equals("true");
+            this.anaglyph = astring[1].equals("true");
           }
           if (astring[0].equals("maxFps")) {
-            limitFramerate = Integer.parseInt(astring[1]);
+            this.limitFramerate = Integer.parseInt(astring[1]);
           }
           if (astring[0].equals("fboEnable")) {
-            fboEnable = astring[1].equals("true");
+            this.fboEnable = astring[1].equals("true");
           }
           if (astring[0].equals("difficulty")) {
-            difficulty = oj.a(Integer.parseInt(astring[1]));
+            this.difficulty = oj.a(Integer.parseInt(astring[1]));
           }
           if (astring[0].equals("fancyGraphics")) {
-            fancyGraphics = astring[1].equals("true");
+            this.fancyGraphics = astring[1].equals("true");
           }
           if (astring[0].equals("ao")) {
             if (astring[1].equals("true")) {
-              ambientOcclusion = 2;
+              this.ambientOcclusion = 2;
             } else if (astring[1].equals("false")) {
-              ambientOcclusion = 0;
+              this.ambientOcclusion = 0;
             } else {
-              ambientOcclusion = Integer.parseInt(astring[1]);
+              this.ambientOcclusion = Integer.parseInt(astring[1]);
             }
           }
           if (astring[0].equals("renderClouds")) {
             if (astring[1].equals("true")) {
-              clouds = 2;
+              this.clouds = 2;
             } else if (astring[1].equals("false")) {
-              clouds = 0;
+              this.clouds = 0;
             } else if (astring[1].equals("fast")) {
-              clouds = 1;
+              this.clouds = 1;
             }
           }
           if (astring[0].equals("resourcePacks"))
           {
-            resourcePacks = ((List)gson.fromJson(s.substring(s.indexOf(':') + 1), typeListString));
-            if (resourcePacks == null) {
-              resourcePacks = Lists.newArrayList();
+            this.resourcePacks = ((List)gson.fromJson(s.substring(s.indexOf(':') + 1), typeListString));
+            if (this.resourcePacks == null) {
+              this.resourcePacks = Lists.newArrayList();
             }
           }
           if (astring[0].equals("incompatibleResourcePacks"))
           {
-            field_183018_l = ((List)gson.fromJson(s.substring(s.indexOf(':') + 1), typeListString));
-            if (field_183018_l == null) {
-              field_183018_l = Lists.newArrayList();
+            this.field_183018_l = ((List)gson.fromJson(s.substring(s.indexOf(':') + 1), typeListString));
+            if (this.field_183018_l == null) {
+              this.field_183018_l = Lists.newArrayList();
             }
           }
           if ((astring[0].equals("lastServer")) && (astring.length >= 2)) {
-            lastServer = s.substring(s.indexOf(':') + 1);
+            this.lastServer = s.substring(s.indexOf(':') + 1);
           }
           if ((astring[0].equals("lang")) && (astring.length >= 2)) {
-            language = astring[1];
+            this.language = astring[1];
           }
           if (astring[0].equals("chatVisibility")) {
-            chatVisibility = wn.b.a(Integer.parseInt(astring[1]));
+            this.chatVisibility = wn.b.a(Integer.parseInt(astring[1]));
           }
           if (astring[0].equals("chatColors")) {
-            chatColours = astring[1].equals("true");
+            this.chatColours = astring[1].equals("true");
           }
           if (astring[0].equals("chatLinks")) {
-            chatLinks = astring[1].equals("true");
+            this.chatLinks = astring[1].equals("true");
           }
           if (astring[0].equals("chatLinksPrompt")) {
-            chatLinksPrompt = astring[1].equals("true");
+            this.chatLinksPrompt = astring[1].equals("true");
           }
           if (astring[0].equals("chatOpacity")) {
-            chatOpacity = parseFloat(astring[1]);
+            this.chatOpacity = parseFloat(astring[1]);
           }
           if (astring[0].equals("snooperEnabled")) {
-            snooperEnabled = astring[1].equals("true");
+            this.snooperEnabled = astring[1].equals("true");
           }
           if (astring[0].equals("fullscreen")) {
-            fullScreen = astring[1].equals("true");
+            this.fullScreen = astring[1].equals("true");
           }
           if (astring[0].equals("enableVsync")) {
-            enableVsync = astring[1].equals("true");
+            this.enableVsync = astring[1].equals("true");
           }
           if (astring[0].equals("useVbo")) {
-            useVbo = astring[1].equals("true");
+            this.useVbo = astring[1].equals("true");
           }
           if (astring[0].equals("hideServerAddress")) {
-            hideServerAddress = astring[1].equals("true");
+            this.hideServerAddress = astring[1].equals("true");
           }
           if (astring[0].equals("advancedItemTooltips")) {
-            advancedItemTooltips = astring[1].equals("true");
+            this.advancedItemTooltips = astring[1].equals("true");
           }
           if (astring[0].equals("pauseOnLostFocus")) {
-            pauseOnLostFocus = astring[1].equals("true");
+            this.pauseOnLostFocus = astring[1].equals("true");
           }
           if (astring[0].equals("touchscreen")) {
-            touchscreen = astring[1].equals("true");
+            this.touchscreen = astring[1].equals("true");
           }
           if (astring[0].equals("overrideHeight")) {
-            overrideHeight = Integer.parseInt(astring[1]);
+            this.overrideHeight = Integer.parseInt(astring[1]);
           }
           if (astring[0].equals("overrideWidth")) {
-            overrideWidth = Integer.parseInt(astring[1]);
+            this.overrideWidth = Integer.parseInt(astring[1]);
           }
           if (astring[0].equals("heldItemTooltips")) {
-            heldItemTooltips = astring[1].equals("true");
+            this.heldItemTooltips = astring[1].equals("true");
           }
           if (astring[0].equals("chatHeightFocused")) {
-            chatHeightFocused = parseFloat(astring[1]);
+            this.chatHeightFocused = parseFloat(astring[1]);
           }
           if (astring[0].equals("chatHeightUnfocused")) {
-            chatHeightUnfocused = parseFloat(astring[1]);
+            this.chatHeightUnfocused = parseFloat(astring[1]);
           }
           if (astring[0].equals("chatScale")) {
-            chatScale = parseFloat(astring[1]);
+            this.chatScale = parseFloat(astring[1]);
           }
           if (astring[0].equals("chatWidth")) {
-            chatWidth = parseFloat(astring[1]);
+            this.chatWidth = parseFloat(astring[1]);
           }
           if (astring[0].equals("showInventoryAchievementHint")) {
-            showInventoryAchievementHint = astring[1].equals("true");
+            this.showInventoryAchievementHint = astring[1].equals("true");
           }
           if (astring[0].equals("mipmapLevels")) {
-            mipmapLevels = Integer.parseInt(astring[1]);
+            this.mipmapLevels = Integer.parseInt(astring[1]);
           }
           if (astring[0].equals("streamBytesPerPixel")) {
-            streamBytesPerPixel = parseFloat(astring[1]);
+            this.streamBytesPerPixel = parseFloat(astring[1]);
           }
           if (astring[0].equals("streamMicVolume")) {
-            streamMicVolume = parseFloat(astring[1]);
+            this.streamMicVolume = parseFloat(astring[1]);
           }
           if (astring[0].equals("streamSystemVolume")) {
-            streamGameVolume = parseFloat(astring[1]);
+            this.streamGameVolume = parseFloat(astring[1]);
           }
           if (astring[0].equals("streamKbps")) {
-            streamKbps = parseFloat(astring[1]);
+            this.streamKbps = parseFloat(astring[1]);
           }
           if (astring[0].equals("streamFps")) {
-            streamFps = parseFloat(astring[1]);
+            this.streamFps = parseFloat(astring[1]);
           }
           if (astring[0].equals("streamCompression")) {
-            streamCompression = Integer.parseInt(astring[1]);
+            this.streamCompression = Integer.parseInt(astring[1]);
           }
           if (astring[0].equals("streamSendMetadata")) {
-            streamSendMetadata = astring[1].equals("true");
+            this.streamSendMetadata = astring[1].equals("true");
           }
           if ((astring[0].equals("streamPreferredServer")) && (astring.length >= 2)) {
-            streamPreferredServer = s.substring(s.indexOf(':') + 1);
+            this.streamPreferredServer = s.substring(s.indexOf(':') + 1);
           }
           if (astring[0].equals("streamChatEnabled")) {
-            streamChatEnabled = Integer.parseInt(astring[1]);
+            this.streamChatEnabled = Integer.parseInt(astring[1]);
           }
           if (astring[0].equals("streamChatUserFilter")) {
-            streamChatUserFilter = Integer.parseInt(astring[1]);
+            this.streamChatUserFilter = Integer.parseInt(astring[1]);
           }
           if (astring[0].equals("streamMicToggleBehavior")) {
-            streamMicToggleBehavior = Integer.parseInt(astring[1]);
+            this.streamMicToggleBehavior = Integer.parseInt(astring[1]);
           }
           if (astring[0].equals("forceUnicodeFont")) {
-            forceUnicodeFont = astring[1].equals("true");
+            this.forceUnicodeFont = astring[1].equals("true");
           }
           if (astring[0].equals("allowBlockAlternatives")) {
-            allowBlockAlternatives = astring[1].equals("true");
+            this.allowBlockAlternatives = astring[1].equals("true");
           }
           if (astring[0].equals("reducedDebugInfo")) {
-            reducedDebugInfo = astring[1].equals("true");
+            this.reducedDebugInfo = astring[1].equals("true");
           }
           if (astring[0].equals("useNativeTransport")) {
-            field_181150_U = astring[1].equals("true");
+            this.field_181150_U = astring[1].equals("true");
           }
           if (astring[0].equals("entityShadows")) {
-            field_181151_V = astring[1].equals("true");
+            this.field_181151_V = astring[1].equals("true");
           }
-          for (SPMBinding keybinding : keyBindings) {
+          for (SPMBinding keybinding : this.keyBindings) {
             if (astring[0].equals("key_" + keybinding.getKeyDescription())) {
               keybinding.setKeyCode(Integer.parseInt(astring[1]));
             }
           }
           for (bpg soundcategory : bpg.values()) {
             if (astring[0].equals("soundCategory_" + soundcategory.a())) {
-              mapSoundLevels.put(soundcategory, Float.valueOf(parseFloat(astring[1])));
+              this.mapSoundLevels.put(soundcategory, Float.valueOf(parseFloat(astring[1])));
             }
           }
           for (wo enumplayermodelparts : wo.values()) {

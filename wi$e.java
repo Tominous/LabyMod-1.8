@@ -8,21 +8,21 @@ class wi$e
   
   public wi$e(zw ☃, wi.g ☃)
   {
-    a = new zx(☃);
-    b = ☃;
+    this.a = new zx(☃);
+    this.b = ☃;
   }
   
   public wi$e(zx ☃, wi.g ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public void a(ada ☃, Random ☃)
   {
     int ☃ = 1;
-    if (b != null) {
-      ☃ = b.a(☃);
+    if (this.b != null) {
+      ☃ = this.b.a(☃);
     }
     zx ☃;
     zx ☃;
@@ -30,12 +30,12 @@ class wi$e
     if (☃ < 0)
     {
       zx ☃ = new zx(zy.bO, 1, 0);
-      ☃ = new zx(a.b(), -☃, a.i());
+      ☃ = new zx(this.a.b(), -☃, this.a.i());
     }
     else
     {
       ☃ = new zx(zy.bO, ☃, 0);
-      ☃ = new zx(a.b(), 1, a.i());
+      ☃ = new zx(this.a.b(), 1, this.a.i());
     }
     ☃.add(new acz(☃, ☃));
   }

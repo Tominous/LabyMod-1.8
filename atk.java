@@ -29,12 +29,12 @@ public class atk
   public List<ats> b()
     throws atq
   {
-    if ((a == null) || (!a.exists()) || (!a.isDirectory())) {
+    if ((this.a == null) || (!this.a.exists()) || (!this.a.isDirectory())) {
       throw new atq("Unable to read or access folder where game worlds are saved!");
     }
     List<ats> ☃ = Lists.newArrayList();
     
-    File[] ☃ = a.listFiles();
+    File[] ☃ = this.a.listFiles();
     for (File ☃ : ☃) {
       if (☃.isDirectory())
       {
@@ -65,7 +65,7 @@ public class atk
   
   public atp a(String ☃, boolean ☃)
   {
-    return new atj(a, ☃, ☃);
+    return new atj(this.a, ☃, ☃);
   }
   
   public boolean a(String ☃)
@@ -93,7 +93,7 @@ public class atk
     List<File> ☃ = Lists.newArrayList();
     List<File> ☃ = Lists.newArrayList();
     List<File> ☃ = Lists.newArrayList();
-    File ☃ = new File(a, ☃);
+    File ☃ = new File(this.a, ☃);
     File ☃ = new File(☃, "DIM-1");
     File ☃ = new File(☃, "DIM1");
     
@@ -137,7 +137,7 @@ public class atk
   
   private void g(String ☃)
   {
-    File ☃ = new File(a, ☃);
+    File ☃ = new File(this.a, ☃);
     if (!☃.exists())
     {
       b.warn("Unable to create level.dat_mcr backup");

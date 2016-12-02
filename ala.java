@@ -6,22 +6,22 @@ public class ala
   public void b(dn ☃)
   {
     super.b(☃);
-    ☃.a("OutputSignal", a);
+    ☃.a("OutputSignal", this.a);
   }
   
   public void a(dn ☃)
   {
     super.a(☃);
-    a = ☃.f("OutputSignal");
+    this.a = ☃.f("OutputSignal");
   }
   
   public int b()
   {
-    return a;
+    return this.a;
   }
   
   public void a(int ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
 }

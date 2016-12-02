@@ -3,6 +3,6 @@ final class aea$3
 {
   public int a(ady ☃, cj ☃)
   {
-    return ar;
+    return ☃.ar;
   }
 }

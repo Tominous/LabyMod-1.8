@@ -22,7 +22,7 @@ public class anj
   
   public anj(File ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
   
   public amy a(adm ☃, int ☃, int ☃)
@@ -30,10 +30,10 @@ public class anj
   {
     adg ☃ = new adg(☃, ☃);
     
-    dn ☃ = (dn)b.get(☃);
+    dn ☃ = (dn)this.b.get(☃);
     if (☃ == null)
     {
-      DataInputStream ☃ = ani.c(d, ☃, ☃);
+      DataInputStream ☃ = ani.c(this.d, ☃, ☃);
       if (☃ != null) {
         ☃ = dx.a(☃);
       } else {
@@ -59,7 +59,7 @@ public class anj
     amy ☃ = a(☃, ☃);
     if (!☃.a(☃, ☃))
     {
-      a.error("Chunk file at " + ☃ + "," + ☃ + " is in the wrong location; relocating. (Expected " + ☃ + ", " + ☃ + ", got " + a + ", " + b + ")");
+      a.error("Chunk file at " + ☃ + "," + ☃ + " is in the wrong location; relocating. (Expected " + ☃ + ", " + ☃ + ", got " + ☃.a + ", " + ☃.b + ")");
       ☃.a("xPos", ☃);
       ☃.a("zPos", ☃);
       ☃ = a(☃, ☃);
@@ -87,26 +87,26 @@ public class anj
   
   protected void a(adg ☃, dn ☃)
   {
-    if (!c.contains(☃)) {
-      b.put(☃, ☃);
+    if (!this.c.contains(☃)) {
+      this.b.put(☃, ☃);
     }
     auc.a().a(this);
   }
   
   public boolean c()
   {
-    if (b.isEmpty())
+    if (this.b.isEmpty())
     {
-      if (e) {
-        a.info("ThreadedAnvilChunkStorage ({}): All chunks are saved", new Object[] { d.getName() });
+      if (this.e) {
+        a.info("ThreadedAnvilChunkStorage ({}): All chunks are saved", new Object[] { this.d.getName() });
       }
       return false;
     }
-    adg ☃ = (adg)b.keySet().iterator().next();
+    adg ☃ = (adg)this.b.keySet().iterator().next();
     try
     {
-      c.add(☃);
-      dn ☃ = (dn)b.remove(☃);
+      this.c.add(☃);
+      dn ☃ = (dn)this.b.remove(☃);
       if (☃ != null) {
         try
         {
@@ -121,14 +121,14 @@ public class anj
     }
     finally
     {
-      c.remove(☃);
+      this.c.remove(☃);
     }
   }
   
   private void b(adg ☃, dn ☃)
     throws IOException
   {
-    DataOutputStream ☃ = ani.d(d, a, b);
+    DataOutputStream ☃ = ani.d(this.d, ☃.a, ☃.b);
     dx.a(☃, ☃);
     ☃.close();
   }
@@ -143,20 +143,20 @@ public class anj
   {
     try
     {
-      e = true;
+      this.e = true;
       while (c()) {}
     }
     finally
     {
-      e = false;
+      this.e = false;
     }
   }
   
   private void a(amy ☃, adm ☃, dn ☃)
   {
     ☃.a("V", (byte)1);
-    ☃.a("xPos", a);
-    ☃.a("zPos", b);
+    ☃.a("xPos", ☃.a);
+    ☃.a("zPos", ☃.b);
     ☃.a("LastUpdate", ☃.K());
     ☃.a("HeightMap", ☃.q());
     ☃.a("TerrainPopulated", ☃.t());
@@ -166,7 +166,7 @@ public class anj
     amz[] ☃ = ☃.h();
     du ☃ = new du();
     
-    boolean ☃ = !t.o();
+    boolean ☃ = !☃.t.o();
     for (amz ☃ : ☃) {
       if (☃ != null)
       {
@@ -244,11 +244,11 @@ public class anj
         dn ☃ = new dn();
         jy ☃ = (jy)afh.c.c(☃.a());
         ☃.a("i", ☃ == null ? "" : ☃.toString());
-        ☃.a("x", a.n());
-        ☃.a("y", a.o());
-        ☃.a("z", a.p());
-        ☃.a("t", (int)(b - ☃));
-        ☃.a("p", c);
+        ☃.a("x", ☃.a.n());
+        ☃.a("y", ☃.a.o());
+        ☃.a("z", ☃.a.p());
+        ☃.a("t", (int)(☃.b - ☃));
+        ☃.a("p", ☃.c);
         
         ☃.a(☃);
       }
@@ -271,7 +271,7 @@ public class anj
     int ☃ = 16;
     amz[] ☃ = new amz[☃];
     
-    boolean ☃ = !t.o();
+    boolean ☃ = !☃.t.o();
     for (int ☃ = 0; ☃ < ☃.c(); ☃++)
     {
       dn ☃ = ☃.b(☃);

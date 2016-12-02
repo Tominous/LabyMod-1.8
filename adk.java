@@ -1,11 +1,9 @@
-import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeMap;
 
 public class adk
 {
-  private TreeMap a = new TreeMap();
-  private static final String __OBFID = "CL_00000136";
+  private TreeMap<String, adk.a> a = new TreeMap();
   
   public adk()
   {
@@ -26,79 +24,94 @@ public class adk
     a("reducedDebugInfo", "false", adk.b.b);
   }
   
-  public void a(String key, String value, adk.b type)
+  public void a(String ☃, String ☃, adk.b ☃)
   {
-    a.put(key, new adk.a(value, type));
+    this.a.put(☃, new adk.a(☃, ☃));
   }
   
-  public void a(String key, String ruleValue)
+  public void a(String ☃, String ☃)
   {
-    adk.a var3 = (adk.a)a.get(key);
-    if (var3 != null) {
-      var3.a(ruleValue);
+    adk.a ☃ = (adk.a)this.a.get(☃);
+    if (☃ != null) {
+      ☃.a(☃);
     } else {
-      a(key, ruleValue, adk.b.a);
+      a(☃, ☃, adk.b.a);
     }
   }
   
-  public String a(String name)
+  public String a(String ☃)
   {
-    adk.a var2 = (adk.a)a.get(name);
-    return var2 != null ? var2.a() : "";
+    adk.a ☃ = (adk.a)this.a.get(☃);
+    if (☃ != null) {
+      return ☃.a();
+    }
+    return "";
   }
   
-  public boolean b(String name)
+  public boolean b(String ☃)
   {
-    adk.a var2 = (adk.a)a.get(name);
-    return var2 != null ? var2.b() : false;
+    adk.a ☃ = (adk.a)this.a.get(☃);
+    if (☃ != null) {
+      return ☃.b();
+    }
+    return false;
   }
   
-  public int c(String name)
+  public int c(String ☃)
   {
-    adk.a var2 = (adk.a)a.get(name);
-    return var2 != null ? var2.c() : 0;
+    adk.a ☃ = (adk.a)this.a.get(☃);
+    if (☃ != null) {
+      return ☃.c();
+    }
+    return 0;
   }
   
   public dn a()
   {
-    dn var1 = new dn();
-    Iterator var2 = a.keySet().iterator();
-    while (var2.hasNext())
+    dn ☃ = new dn();
+    for (String ☃ : this.a.keySet())
     {
-      String var3 = (String)var2.next();
-      adk.a var4 = (adk.a)a.get(var3);
-      var1.a(var3, var4.a());
+      adk.a ☃ = (adk.a)this.a.get(☃);
+      ☃.a(☃, ☃.a());
     }
-    return var1;
+    return ☃;
   }
   
-  public void a(dn nbt)
+  public void a(dn ☃)
   {
-    Set var2 = nbt.c();
-    Iterator var3 = var2.iterator();
-    while (var3.hasNext())
+    Set<String> ☃ = ☃.c();
+    for (String ☃ : ☃)
     {
-      String var4 = (String)var3.next();
-      String var6 = nbt.j(var4);
-      a(var4, var6);
+      String ☃ = ☃;
+      String ☃ = ☃.j(☃);
+      
+      a(☃, ☃);
     }
   }
   
   public String[] b()
   {
-    Set var1 = a.keySet();
-    return (String[])var1.toArray(new String[var1.size()]);
+    Set<String> ☃ = this.a.keySet();
+    return (String[])☃.toArray(new String[☃.size()]);
   }
   
-  public boolean e(String name)
+  public boolean e(String ☃)
   {
-    return a.containsKey(name);
+    return this.a.containsKey(☃);
   }
   
-  public boolean a(String key, adk.b otherValue)
+  public boolean a(String ☃, adk.b ☃)
   {
-    adk.a var3 = (adk.a)a.get(key);
-    return (var3 != null) && ((var3.e() == otherValue) || (otherValue == adk.b.a));
+    adk.a ☃ = (adk.a)this.a.get(☃);
+    if ((☃ != null) && ((☃.e() == ☃) || (☃ == adk.b.a))) {
+      return true;
+    }
+    return false;
+  }
+  
+  public static enum b
+  {
+    private b() {}
   }
   
   static class a
@@ -108,68 +121,48 @@ public class adk
     private int c;
     private double d;
     private final adk.b e;
-    private static final String __OBFID = "CL_00000137";
     
-    public a(String value, adk.b type)
+    public a(String ☃, adk.b ☃)
     {
-      e = type;
-      a(value);
+      this.e = ☃;
+      a(☃);
     }
     
-    public void a(String value)
+    public void a(String ☃)
     {
-      a = value;
-      if (value != null)
-      {
-        if (value.equals("false"))
-        {
-          b = false;
-          return;
-        }
-        if (value.equals("true"))
-        {
-          b = true;
-          return;
-        }
-      }
-      b = Boolean.parseBoolean(value);
-      c = (b ? 1 : 0);
+      this.a = ☃;
+      this.b = Boolean.parseBoolean(☃);
+      this.c = (this.b ? 1 : 0);
       try
       {
-        c = Integer.parseInt(value);
+        this.c = Integer.parseInt(☃);
       }
-      catch (NumberFormatException var4) {}
+      catch (NumberFormatException localNumberFormatException) {}
       try
       {
-        d = Double.parseDouble(value);
+        this.d = Double.parseDouble(☃);
       }
-      catch (NumberFormatException var3) {}
+      catch (NumberFormatException localNumberFormatException1) {}
     }
     
     public String a()
     {
-      return a;
+      return this.a;
     }
     
     public boolean b()
     {
-      return b;
+      return this.b;
     }
     
     public int c()
     {
-      return c;
+      return this.c;
     }
     
     public adk.b e()
     {
-      return e;
+      return this.e;
     }
-  }
-  
-  public static enum b
-  {
-    private static final b[] d = { a, b, c };
-    private static final String __OBFID = "CL_00002151";
   }
 }

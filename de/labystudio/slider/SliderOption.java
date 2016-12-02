@@ -23,64 +23,64 @@ public class SliderOption
   
   public SliderOption(boolean isFloat, boolean isBoolean, float valMin, float valMax, float valStep, SliderCallback callback)
   {
-    enumFloat = isFloat;
-    enumBoolean = isBoolean;
-    valueMin = valMin;
-    valueMax = valMax;
-    valueStep = valStep;
+    this.enumFloat = isFloat;
+    this.enumBoolean = isBoolean;
+    this.valueMin = valMin;
+    this.valueMax = valMax;
+    this.valueStep = valStep;
     this.callback = callback;
   }
   
   public boolean getEnumFloat()
   {
-    return enumFloat;
+    return this.enumFloat;
   }
   
   public boolean getEnumBoolean()
   {
-    return enumBoolean;
+    return this.enumBoolean;
   }
   
   public float getValueMin()
   {
-    return valueMin;
+    return this.valueMin;
   }
   
   public float getValueMax()
   {
-    return valueMax;
+    return this.valueMax;
   }
   
   public SliderCallback getCallback()
   {
-    return callback;
+    return this.callback;
   }
   
   public void setValueMax(float value)
   {
-    valueMax = value;
+    this.valueMax = value;
   }
   
   public float normalizeValue(float value)
   {
-    return ns.a((snapToStepClamp(value) - valueMin) / (valueMax - valueMin), 0.0F, 1.0F);
+    return ns.a((snapToStepClamp(value) - this.valueMin) / (this.valueMax - this.valueMin), 0.0F, 1.0F);
   }
   
   public float denormalizeValue(float value)
   {
-    return snapToStepClamp(valueMin + (valueMax - valueMin) * ns.a(value, 0.0F, 1.0F));
+    return snapToStepClamp(this.valueMin + (this.valueMax - this.valueMin) * ns.a(value, 0.0F, 1.0F));
   }
   
   public float snapToStepClamp(float value)
   {
     value = snapToStep(value);
-    return ns.a(value, valueMin, valueMax);
+    return ns.a(value, this.valueMin, this.valueMax);
   }
   
   protected float snapToStep(float value)
   {
-    if (valueStep > 0.0F) {
-      value = valueStep * Math.round(value / valueStep);
+    if (this.valueStep > 0.0F) {
+      value = this.valueStep * Math.round(value / this.valueStep);
     }
     return value;
   }

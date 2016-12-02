@@ -10,22 +10,22 @@ class wi$d
   
   public wi$d(zw ☃, wi.g ☃, zw ☃, wi.g ☃)
   {
-    a = new zx(☃);
-    b = ☃;
-    c = new zx(☃);
-    d = ☃;
+    this.a = new zx(☃);
+    this.b = ☃;
+    this.c = new zx(☃);
+    this.d = ☃;
   }
   
   public void a(ada ☃, Random ☃)
   {
     int ☃ = 1;
-    if (b != null) {
-      ☃ = b.a(☃);
+    if (this.b != null) {
+      ☃ = this.b.a(☃);
     }
     int ☃ = 1;
-    if (d != null) {
-      ☃ = d.a(☃);
+    if (this.d != null) {
+      ☃ = this.d.a(☃);
     }
-    ☃.add(new acz(new zx(a.b(), ☃, a.i()), new zx(zy.bO), new zx(c.b(), ☃, c.i())));
+    ☃.add(new acz(new zx(this.a.b(), ☃, this.a.i()), new zx(zy.bO), new zx(this.c.b(), ☃, this.c.i())));
   }
 }

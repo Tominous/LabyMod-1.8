@@ -5,12 +5,12 @@ public class cp<K, V>
   
   public cp(V ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public V a(K ☃)
   {
     V ☃ = super.a(☃);
-    return (V)(☃ == null ? a : ☃);
+    return (V)(☃ == null ? this.a : ☃);
   }
 }

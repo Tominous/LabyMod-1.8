@@ -11,9 +11,9 @@ public class ge
   
   public ge(int ☃, int ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public void a(fj ☃)
@@ -24,31 +24,31 @@ public class ge
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readUnsignedByte();
-    b = ☃.readShort();
-    c = ☃.readShort();
+    this.a = ☃.readUnsignedByte();
+    this.b = ☃.readShort();
+    this.c = ☃.readShort();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(a);
-    ☃.writeShort(b);
-    ☃.writeShort(c);
+    ☃.writeByte(this.a);
+    ☃.writeShort(this.b);
+    ☃.writeShort(this.c);
   }
   
   public int a()
   {
-    return a;
+    return this.a;
   }
   
   public int b()
   {
-    return b;
+    return this.b;
   }
   
   public int c()
   {
-    return c;
+    return this.c;
   }
 }

@@ -7,15 +7,15 @@ public class yt
   
   public yt()
   {
-    h = 1;
+    this.h = 1;
     d(384);
     a(yz.j);
   }
   
   public void a(zx ☃, adm ☃, wn ☃, int ☃)
   {
-    boolean ☃ = (bA.d) || (ack.a(yB, ☃) > 0);
-    if ((☃) || (bi.b(zy.g)))
+    boolean ☃ = (☃.bA.d) || (ack.a(aci.y.B, ☃) > 0);
+    if ((☃) || (☃.bi.b(zy.g)))
     {
       int ☃ = d(☃) - ☃;
       float ☃ = ☃ / 20.0F;
@@ -30,27 +30,27 @@ public class yt
       if (☃ == 1.0F) {
         ☃.a(true);
       }
-      int ☃ = ack.a(vB, ☃);
+      int ☃ = ack.a(aci.v.B, ☃);
       if (☃ > 0) {
         ☃.b(☃.j() + ☃ * 0.5D + 0.5D);
       }
-      int ☃ = ack.a(wB, ☃);
+      int ☃ = ack.a(aci.w.B, ☃);
       if (☃ > 0) {
         ☃.a(☃);
       }
-      if (ack.a(xB, ☃) > 0) {
+      if (ack.a(aci.x.B, ☃) > 0) {
         ☃.e(100);
       }
       ☃.a(1, ☃);
       
       ☃.a(☃, "random.bow", 1.0F, 1.0F / (g.nextFloat() * 0.4F + 1.2F) + ☃ * 0.5F);
       if (☃) {
-        a = 2;
+        ☃.a = 2;
       } else {
-        bi.a(zy.g);
+        ☃.bi.a(zy.g);
       }
       ☃.b(na.ad[zw.b(this)]);
-      if (!D) {
+      if (!☃.D) {
         ☃.d(☃);
       }
     }
@@ -73,7 +73,7 @@ public class yt
   
   public zx a(zx ☃, adm ☃, wn ☃)
   {
-    if ((bA.d) || (bi.b(zy.g))) {
+    if ((☃.bA.d) || (☃.bi.b(zy.g))) {
       ☃.a(☃, d(☃));
     }
     return ☃;

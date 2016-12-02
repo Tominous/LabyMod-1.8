@@ -21,14 +21,14 @@ public class atm
   
   public atm(File ☃, String ☃, boolean ☃)
   {
-    b = new File(☃, ☃);
-    b.mkdirs();
-    c = new File(b, "playerdata");
-    d = new File(b, "data");
-    d.mkdirs();
-    f = ☃;
+    this.b = new File(☃, ☃);
+    this.b.mkdirs();
+    this.c = new File(this.b, "playerdata");
+    this.d = new File(this.b, "data");
+    this.d.mkdirs();
+    this.f = ☃;
     if (☃) {
-      c.mkdirs();
+      this.c.mkdirs();
     }
     h();
   }
@@ -37,11 +37,11 @@ public class atm
   {
     try
     {
-      File ☃ = new File(b, "session.lock");
+      File ☃ = new File(this.b, "session.lock");
       DataOutputStream ☃ = new DataOutputStream(new FileOutputStream(☃));
       try
       {
-        ☃.writeLong(e);
+        ☃.writeLong(this.e);
       }
       finally
       {
@@ -57,7 +57,7 @@ public class atm
   
   public File b()
   {
-    return b;
+    return this.b;
   }
   
   public void c()
@@ -65,11 +65,11 @@ public class atm
   {
     try
     {
-      File ☃ = new File(b, "session.lock");
+      File ☃ = new File(this.b, "session.lock");
       DataInputStream ☃ = new DataInputStream(new FileInputStream(☃));
       try
       {
-        if (☃.readLong() != e) {
+        if (☃.readLong() != this.e) {
           throw new adn("The save is being accessed from another location, aborting");
         }
       }
@@ -91,7 +91,7 @@ public class atm
   
   public ato d()
   {
-    File ☃ = new File(b, "level.dat");
+    File ☃ = new File(this.b, "level.dat");
     if (☃.exists()) {
       try
       {
@@ -105,7 +105,7 @@ public class atm
         ☃.printStackTrace();
       }
     }
-    ☃ = new File(b, "level.dat_old");
+    ☃ = new File(this.b, "level.dat_old");
     if (☃.exists()) {
       try
       {
@@ -130,9 +130,9 @@ public class atm
     ☃.a("Data", ☃);
     try
     {
-      File ☃ = new File(b, "level.dat_new");
-      File ☃ = new File(b, "level.dat_old");
-      File ☃ = new File(b, "level.dat");
+      File ☃ = new File(this.b, "level.dat_new");
+      File ☃ = new File(this.b, "level.dat_old");
+      File ☃ = new File(this.b, "level.dat");
       
       dx.a(☃, new FileOutputStream(☃));
       if (☃.exists()) {
@@ -161,9 +161,9 @@ public class atm
     ☃.a("Data", ☃);
     try
     {
-      File ☃ = new File(b, "level.dat_new");
-      File ☃ = new File(b, "level.dat_old");
-      File ☃ = new File(b, "level.dat");
+      File ☃ = new File(this.b, "level.dat_new");
+      File ☃ = new File(this.b, "level.dat_old");
+      File ☃ = new File(this.b, "level.dat");
       
       dx.a(☃, new FileOutputStream(☃));
       if (☃.exists()) {
@@ -190,8 +190,8 @@ public class atm
     {
       dn ☃ = new dn();
       ☃.e(☃);
-      File ☃ = new File(c, ☃.aK().toString() + ".dat.tmp");
-      File ☃ = new File(c, ☃.aK().toString() + ".dat");
+      File ☃ = new File(this.c, ☃.aK().toString() + ".dat.tmp");
+      File ☃ = new File(this.c, ☃.aK().toString() + ".dat");
       dx.a(☃, new FileOutputStream(☃));
       if (☃.exists()) {
         ☃.delete();
@@ -209,7 +209,7 @@ public class atm
     dn ☃ = null;
     try
     {
-      File ☃ = new File(c, ☃.aK().toString() + ".dat");
+      File ☃ = new File(this.c, ☃.aK().toString() + ".dat");
       if ((☃.exists()) && (☃.isFile())) {
         ☃ = dx.a(new FileInputStream(☃));
       }
@@ -231,7 +231,7 @@ public class atm
   
   public String[] f()
   {
-    String[] ☃ = c.list();
+    String[] ☃ = this.c.list();
     if (☃ == null) {
       ☃ = new String[0];
     }
@@ -247,11 +247,11 @@ public class atm
   
   public File a(String ☃)
   {
-    return new File(d, ☃ + ".dat");
+    return new File(this.d, ☃ + ".dat");
   }
   
   public String g()
   {
-    return f;
+    return this.f;
   }
 }

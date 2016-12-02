@@ -4,12 +4,12 @@ public class arv
   public arv(long ☃, ase ☃)
   {
     super(☃);
-    a = ☃;
+    this.a = ☃;
   }
   
   public int[] a(int ☃, int ☃, int ☃, int ☃)
   {
-    int[] ☃ = a.a(☃ - 1, ☃ - 1, ☃ + 2, ☃ + 2);
+    int[] ☃ = this.a.a(☃ - 1, ☃ - 1, ☃ + 2, ☃ + 2);
     
     int[] ☃ = asc.a(☃ * ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
@@ -17,32 +17,32 @@ public class arv
       {
         a(☃ + ☃, ☃ + ☃);
         int ☃ = ☃[(☃ + 1 + (☃ + 1) * (☃ + 2))];
-        if ((!a(☃, ☃, ☃, ☃, ☃, ☃, saz, Jaz)) && 
-          (!b(☃, ☃, ☃, ☃, ☃, ☃, abaz, aaaz)) && 
-          (!b(☃, ☃, ☃, ☃, ☃, ☃, acaz, aaaz)) && 
-          (!b(☃, ☃, ☃, ☃, ☃, ☃, Vaz, uaz))) {
-          if (☃ == raz)
+        if ((!a(☃, ☃, ☃, ☃, ☃, ☃, ady.s.az, ady.J.az)) && 
+          (!b(☃, ☃, ☃, ☃, ☃, ☃, ady.ab.az, ady.aa.az)) && 
+          (!b(☃, ☃, ☃, ☃, ☃, ☃, ady.ac.az, ady.aa.az)) && 
+          (!b(☃, ☃, ☃, ☃, ☃, ☃, ady.V.az, ady.u.az))) {
+          if (☃ == ady.r.az)
           {
             int ☃ = ☃[(☃ + 1 + (☃ + 1 - 1) * (☃ + 2))];
             int ☃ = ☃[(☃ + 1 + 1 + (☃ + 1) * (☃ + 2))];
             int ☃ = ☃[(☃ + 1 - 1 + (☃ + 1) * (☃ + 2))];
             int ☃ = ☃[(☃ + 1 + (☃ + 1 + 1) * (☃ + 2))];
-            if ((☃ == Baz) || (☃ == Baz) || (☃ == Baz) || (☃ == Baz)) {
-              ☃[(☃ + ☃ * ☃)] = Xaz;
+            if ((☃ == ady.B.az) || (☃ == ady.B.az) || (☃ == ady.B.az) || (☃ == ady.B.az)) {
+              ☃[(☃ + ☃ * ☃)] = ady.X.az;
             } else {
               ☃[(☃ + ☃ * ☃)] = ☃;
             }
           }
-          else if (☃ == vaz)
+          else if (☃ == ady.v.az)
           {
             int ☃ = ☃[(☃ + 1 + (☃ + 1 - 1) * (☃ + 2))];
             int ☃ = ☃[(☃ + 1 + 1 + (☃ + 1) * (☃ + 2))];
             int ☃ = ☃[(☃ + 1 - 1 + (☃ + 1) * (☃ + 2))];
             int ☃ = ☃[(☃ + 1 + (☃ + 1 + 1) * (☃ + 2))];
-            if ((☃ == raz) || (☃ == raz) || (☃ == raz) || (☃ == raz) || (☃ == Taz) || (☃ == Taz) || (☃ == Taz) || (☃ == Taz) || (☃ == Baz) || (☃ == Baz) || (☃ == Baz) || (☃ == Baz)) {
-              ☃[(☃ + ☃ * ☃)] = qaz;
-            } else if ((☃ == Kaz) || (☃ == Kaz) || (☃ == Kaz) || (☃ == Kaz)) {
-              ☃[(☃ + ☃ * ☃)] = Maz;
+            if ((☃ == ady.r.az) || (☃ == ady.r.az) || (☃ == ady.r.az) || (☃ == ady.r.az) || (☃ == ady.T.az) || (☃ == ady.T.az) || (☃ == ady.T.az) || (☃ == ady.T.az) || (☃ == ady.B.az) || (☃ == ady.B.az) || (☃ == ady.B.az) || (☃ == ady.B.az)) {
+              ☃[(☃ + ☃ * ☃)] = ady.q.az;
+            } else if ((☃ == ady.K.az) || (☃ == ady.K.az) || (☃ == ady.K.az) || (☃ == ady.K.az)) {
+              ☃[(☃ + ☃ * ☃)] = ady.M.az;
             } else {
               ☃[(☃ + ☃ * ☃)] = ☃;
             }

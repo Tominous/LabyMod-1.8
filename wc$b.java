@@ -9,13 +9,13 @@ public class wc$b
   {
     int ☃ = ☃.nextInt(5);
     if (☃ <= 1) {
-      a = cH;
+      this.a = pe.c.H;
     } else if (☃ <= 2) {
-      a = gH;
+      this.a = pe.g.H;
     } else if (☃ <= 3) {
-      a = lH;
+      this.a = pe.l.H;
     } else if (☃ <= 4) {
-      a = pH;
+      this.a = pe.p.H;
     }
   }
 }

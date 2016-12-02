@@ -16,24 +16,24 @@ public class ayj
   
   public ayj(axu screen, avh settings)
   {
-    i = screen;
-    r = settings;
+    this.i = screen;
+    this.r = settings;
   }
   
   public void b()
   {
-    s = new ayi(this, j);
-    n.add(new avs(200, l / 2 - 155, m - 29, 150, 20, bnq.a("gui.done", new Object[0])));
-    n.add(t = new avs(201, l / 2 - 155 + 160, m - 29, 150, 20, bnq.a("controls.resetAll", new Object[0])));
-    n.add(new avs(202, l / 2 - 155 + 160, 42, 150, 20, "SettingsProfiles"));
-    a = bnq.a("controls.title", new Object[0]);
+    this.s = new ayi(this, this.j);
+    this.n.add(new avs(200, this.l / 2 - 155, this.m - 29, 150, 20, bnq.a("gui.done", new Object[0])));
+    this.n.add(this.t = new avs(201, this.l / 2 - 155 + 160, this.m - 29, 150, 20, bnq.a("controls.resetAll", new Object[0])));
+    this.n.add(new avs(202, this.l / 2 - 155 + 160, 42, 150, 20, "SettingsProfiles"));
+    this.a = bnq.a("controls.title", new Object[0]);
     int i = 0;
     for (avh.a gamesettings$options : h)
     {
       if (gamesettings$options.a()) {
-        n.add(new awj(gamesettings$options.c(), l / 2 - 155 + i % 2 * 160, 18 + 24 * (i >> 1), gamesettings$options));
+        this.n.add(new awj(gamesettings$options.c(), this.l / 2 - 155 + i % 2 * 160, 18 + 24 * (i >> 1), gamesettings$options));
       } else {
-        n.add(new awe(gamesettings$options.c(), l / 2 - 155 + i % 2 * 160, 18 + 24 * (i >> 1), gamesettings$options, r.c(gamesettings$options)));
+        this.n.add(new awe(gamesettings$options.c(), this.l / 2 - 155 + i % 2 * 160, 18 + 24 * (i >> 1), gamesettings$options, this.r.c(gamesettings$options)));
       }
       i++;
     }
@@ -43,44 +43,44 @@ public class ayj
     throws IOException
   {
     super.k();
-    s.p();
+    this.s.p();
   }
   
   protected void a(avs button)
     throws IOException
   {
-    if (k == 200)
+    if (button.k == 200)
     {
-      j.a(i);
+      this.j.a(this.i);
     }
-    else if (k == 201)
+    else if (button.k == 201)
     {
-      for (avb keybinding : j.t.aw) {
+      for (avb keybinding : this.j.t.aw) {
         keybinding.b(keybinding.h());
       }
       avb.b();
     }
-    else if ((k < 100) && ((button instanceof awe)))
+    else if ((button.k < 100) && ((button instanceof awe)))
     {
-      r.a(((awe)button).c(), 1);
-      j = r.c(avh.a.a(k));
+      this.r.a(((awe)button).c(), 1);
+      button.j = this.r.c(avh.a.a(button.k));
     }
-    else if (k == 202)
+    else if (button.k == 202)
     {
-      j.a(new GuiSPM(this));
+      this.j.a(new GuiSPM(this));
     }
   }
   
   protected void a(int mouseX, int mouseY, int mouseButton)
     throws IOException
   {
-    if (f != null)
+    if (this.f != null)
     {
-      r.a(f, -100 + mouseButton);
-      f = null;
+      this.r.a(this.f, -100 + mouseButton);
+      this.f = null;
       avb.b();
     }
-    else if ((mouseButton != 0) || (!s.b(mouseX, mouseY, mouseButton)))
+    else if ((mouseButton != 0) || (!this.s.b(mouseX, mouseY, mouseButton)))
     {
       super.a(mouseX, mouseY, mouseButton);
     }
@@ -88,7 +88,7 @@ public class ayj
   
   protected void b(int mouseX, int mouseY, int state)
   {
-    if ((state != 0) || (!s.c(mouseX, mouseY, state))) {
+    if ((state != 0) || (!this.s.c(mouseX, mouseY, state))) {
       super.b(mouseX, mouseY, state);
     }
   }
@@ -96,17 +96,17 @@ public class ayj
   protected void a(char typedChar, int keyCode)
     throws IOException
   {
-    if (f != null)
+    if (this.f != null)
     {
       if (keyCode == 1) {
-        r.a(f, 0);
+        this.r.a(this.f, 0);
       } else if (keyCode != 0) {
-        r.a(f, keyCode);
+        this.r.a(this.f, keyCode);
       } else if (typedChar > 0) {
-        r.a(f, typedChar + 'Ā');
+        this.r.a(this.f, typedChar + 'Ā');
       }
-      f = null;
-      g = ave.J();
+      this.f = null;
+      this.g = ave.J();
       avb.b();
     }
     else
@@ -118,17 +118,17 @@ public class ayj
   public void a(int mouseX, int mouseY, float partialTicks)
   {
     c();
-    s.a(mouseX, mouseY, partialTicks);
-    a(q, a, l / 2, 8, 16777215);
+    this.s.a(mouseX, mouseY, partialTicks);
+    a(this.q, this.a, this.l / 2, 8, 16777215);
     boolean flag = true;
-    for (avb keybinding : r.aw) {
+    for (avb keybinding : this.r.aw) {
       if (keybinding.i() != keybinding.h())
       {
         flag = false;
         break;
       }
     }
-    t.l = (!flag);
+    this.t.l = (!flag);
     super.a(mouseX, mouseY, partialTicks);
   }
 }

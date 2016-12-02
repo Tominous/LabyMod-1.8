@@ -9,7 +9,7 @@ public class gw
   
   public gw(cj ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(fj ☃)
@@ -20,17 +20,17 @@ public class gw
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.c();
+    this.a = ☃.c();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a);
+    ☃.a(this.a);
   }
   
   public cj a()
   {
-    return a;
+    return this.a;
   }
 }

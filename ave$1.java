@@ -7,7 +7,7 @@ class ave$1
   {
     try
     {
-      return String.format(p_74535_1_, new Object[] { avh.c(this$0.t.ae.i()) });
+      return String.format(p_74535_1_, new Object[] { avh.c(this.this$0.t.ae.i()) });
     }
     catch (Exception exception)
     {

@@ -8,7 +8,7 @@ public class aje
   protected aje()
   {
     super(arm.k);
-    j(M.b().a(a, Integer.valueOf(0)));
+    j(this.M.b().a(a, Integer.valueOf(0)));
     float ☃ = 0.375F;
     a(0.5F - ☃, 0.0F, 0.5F - ☃, 0.5F + ☃, 1.0F, 0.5F + ☃);
     a(true);

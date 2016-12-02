@@ -8,7 +8,7 @@ class bjx$1
   
   protected void a()
   {
-    c = new bca(0.5F, true);
-    d = new bca(1.0F, true);
+    this.c = new bca(0.5F, true);
+    this.d = new bca(1.0F, true);
   }
 }

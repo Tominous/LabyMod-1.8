@@ -20,11 +20,11 @@ class ll$4
       ☃.config().setOption(ChannelOption.TCP_NODELAY, Boolean.valueOf(true));
     }
     catch (ChannelException localChannelException) {}
-    ☃.pipeline().addLast("timeout", new ReadTimeoutHandler(30)).addLast("legacy_query", new lj(a)).addLast("splitter", new eq()).addLast("decoder", new en(fg.a)).addLast("prepender", new er()).addLast("encoder", new eo(fg.b));
+    ☃.pipeline().addLast("timeout", new ReadTimeoutHandler(30)).addLast("legacy_query", new lj(this.a)).addLast("splitter", new eq()).addLast("decoder", new en(fg.a)).addLast("prepender", new er()).addLast("encoder", new eo(fg.b));
     
     ek ☃ = new ek(fg.a);
-    ll.a(a).add(☃);
+    ll.a(this.a).add(☃);
     ☃.pipeline().addLast("packet_handler", ☃);
-    ☃.a(new ln(ll.b(a), ☃));
+    ☃.a(new ln(ll.b(this.a), ☃));
   }
 }

@@ -6,12 +6,12 @@ public class asy
   
   public asy(asw ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public asx a(adq ☃, pk ☃, pk ☃, float ☃)
   {
-    return a(☃, ☃, s, aRb, u, ☃);
+    return a(☃, ☃, ☃.s, ☃.aR().b, ☃.u, ☃);
   }
   
   public asx a(adq ☃, pk ☃, cj ☃, float ☃)
@@ -21,57 +21,57 @@ public class asy
   
   private asx a(adq ☃, pk ☃, double ☃, double ☃, double ☃, float ☃)
   {
-    a.a();
-    c.a(☃, ☃);
-    asv ☃ = c.a(☃);
-    asv ☃ = c.a(☃, ☃, ☃, ☃);
+    this.a.a();
+    this.c.a(☃, ☃);
+    asv ☃ = this.c.a(☃);
+    asv ☃ = this.c.a(☃, ☃, ☃, ☃);
     
     asx ☃ = a(☃, ☃, ☃, ☃);
     
-    c.a();
+    this.c.a();
     return ☃;
   }
   
   private asx a(pk ☃, asv ☃, asv ☃, float ☃)
   {
-    e = 0.0F;
-    f = ☃.b(☃);
-    g = f;
+    ☃.e = 0.0F;
+    ☃.f = ☃.b(☃);
+    ☃.g = ☃.f;
     
-    a.a();
-    a.a(☃);
+    this.a.a();
+    this.a.a(☃);
     
     asv ☃ = ☃;
-    while (!a.e())
+    while (!this.a.e())
     {
-      asv ☃ = a.c();
+      asv ☃ = this.a.c();
       if (☃.equals(☃)) {
         return a(☃, ☃);
       }
       if (☃.b(☃) < ☃.b(☃)) {
         ☃ = ☃;
       }
-      i = true;
+      ☃.i = true;
       
-      int ☃ = c.a(b, ☃, ☃, ☃, ☃);
+      int ☃ = this.c.a(this.b, ☃, ☃, ☃, ☃);
       for (int ☃ = 0; ☃ < ☃; ☃++)
       {
-        asv ☃ = b[☃];
+        asv ☃ = this.b[☃];
         
-        float ☃ = e + ☃.b(☃);
-        if ((☃ < ☃ * 2.0F) && ((!☃.a()) || (☃ < e)))
+        float ☃ = ☃.e + ☃.b(☃);
+        if ((☃ < ☃ * 2.0F) && ((!☃.a()) || (☃ < ☃.e)))
         {
-          h = ☃;
-          e = ☃;
-          f = ☃.b(☃);
+          ☃.h = ☃;
+          ☃.e = ☃;
+          ☃.f = ☃.b(☃);
           if (☃.a())
           {
-            a.a(☃, e + f);
+            this.a.a(☃, ☃.e + ☃.f);
           }
           else
           {
-            g = (e + f);
-            a.a(☃);
+            ☃.g = (☃.e + ☃.f);
+            this.a.a(☃);
           }
         }
       }
@@ -86,17 +86,17 @@ public class asy
   {
     int ☃ = 1;
     asv ☃ = ☃;
-    while (h != null)
+    while (☃.h != null)
     {
       ☃++;
-      ☃ = h;
+      ☃ = ☃.h;
     }
     asv[] ☃ = new asv[☃];
     ☃ = ☃;
     ☃[(--☃)] = ☃;
-    while (h != null)
+    while (☃.h != null)
     {
-      ☃ = h;
+      ☃ = ☃.h;
       ☃[(--☃)] = ☃;
     }
     return new asx(☃);

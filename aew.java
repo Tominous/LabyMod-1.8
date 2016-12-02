@@ -8,17 +8,17 @@ public class aew
   protected void a(ady ☃)
   {
     a();
-    if (b.nextInt(5) == 0)
+    if (this.b.nextInt(5) == 0)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      M.b(a, b, a.r(c.a(☃, 0, ☃)));
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      this.M.b(this.a, this.b, this.a.r(this.c.a(☃, 0, ☃)));
     }
-    if ((c.n() == 0) && (c.p() == 0))
+    if ((this.c.n() == 0) && (this.c.p() == 0))
     {
-      ug ☃ = new ug(a);
-      ☃.b(0.0D, 128.0D, 0.0D, b.nextFloat() * 360.0F, 0.0F);
-      a.d(☃);
+      ug ☃ = new ug(this.a);
+      ☃.b(0.0D, 128.0D, 0.0D, this.b.nextFloat() * 360.0F, 0.0F);
+      this.a.d(☃);
     }
   }
 }

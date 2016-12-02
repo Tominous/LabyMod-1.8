@@ -9,12 +9,12 @@ class bnm$3
   
   public void onSuccess(Object p_onSuccess_1_)
   {
-    this$0.a(val$file1);
-    val$settablefuture.set(null);
+    this.this$0.a(this.val$file1);
+    this.val$settablefuture.set(null);
   }
   
   public void onFailure(Throwable p_onFailure_1_)
   {
-    val$settablefuture.setException(p_onFailure_1_);
+    this.val$settablefuture.setException(p_onFailure_1_);
   }
 }

@@ -9,19 +9,19 @@ public class iv
   
   public iv(int ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readShort();
+    this.a = ☃.readShort();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeShort(a);
+    ☃.writeShort(this.a);
   }
   
   public void a(ic ☃)
@@ -31,6 +31,6 @@ public class iv
   
   public int a()
   {
-    return a;
+    return this.a;
   }
 }

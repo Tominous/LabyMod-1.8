@@ -8,8 +8,8 @@ class la$1
   public String a()
     throws Exception
   {
-    String ☃ = "Once per " + a + " ticks";
-    if (a == Integer.MAX_VALUE) {
+    String ☃ = "Once per " + this.a + " ticks";
+    if (this.a == Integer.MAX_VALUE) {
       ☃ = "Maximum (" + ☃ + ")";
     }
     return ☃;

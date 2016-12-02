@@ -9,33 +9,33 @@ public class rv
   
   public rv(py ☃, double ☃)
   {
-    b = ☃;
-    a = ☃;
+    this.b = ☃;
+    this.a = ☃;
     a(1);
   }
   
   public boolean a()
   {
-    if ((b.bd() == null) && (!b.at())) {
+    if ((this.b.bd() == null) && (!this.b.at())) {
       return false;
     }
-    aui ☃ = tc.a(b, 5, 4);
+    aui ☃ = tc.a(this.b, 5, 4);
     if (☃ == null) {
       return false;
     }
-    c = a;
-    d = b;
-    e = c;
+    this.c = ☃.a;
+    this.d = ☃.b;
+    this.e = ☃.c;
     return true;
   }
   
   public void c()
   {
-    b.s().a(c, d, e, a);
+    this.b.s().a(this.c, this.d, this.e, this.a);
   }
   
   public boolean b()
   {
-    return !b.s().m();
+    return !this.b.s().m();
   }
 }

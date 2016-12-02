@@ -20,19 +20,19 @@ public class aii
     if ((☃ instanceof alm))
     {
       alm ☃ = (alm)☃;
-      if (f != ☃)
+      if (☃.f != ☃)
       {
         if (☃) {
           ☃.a(☃, ☃);
         }
-        f = ☃;
+        ☃.f = ☃;
       }
     }
   }
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (D) {
+    if (☃.D) {
       return true;
     }
     akw ☃ = ☃.s(☃);
@@ -49,7 +49,7 @@ public class aii
   
   public void a(adm ☃, cj ☃, wn ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
     akw ☃ = ☃.s(☃);

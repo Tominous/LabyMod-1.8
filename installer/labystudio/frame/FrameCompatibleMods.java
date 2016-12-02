@@ -45,7 +45,7 @@ public class FrameCompatibleMods
     }
     setDefaultCloseOperation(3);
     setVisible(true);
-    setSize(sizeA, sizeB);
+    setSize(this.sizeA, this.sizeB);
     setTitle("LabyMod Installer");
     setResizable(false);
     Utils.centerWindow(this, null);
@@ -77,7 +77,7 @@ public class FrameCompatibleMods
           Utils.error("You may only choose one OptiFine version!");
           return;
         }
-        dispose();
+        FrameCompatibleMods.this.dispose();
         new FrameList();
       }
     });
@@ -134,7 +134,7 @@ public class FrameCompatibleMods
     {
       public void actionPerformed(ActionEvent e)
       {
-        dispose();
+        FrameCompatibleMods.this.dispose();
         new FrameMain();
       }
     });
@@ -153,10 +153,10 @@ public class FrameCompatibleMods
         FrameCompatibleMods.this.initList();
       }
     });
-    clearButton = new JButton("Clear");
-    clearButton.setBounds(10, 377, 86, 28);
-    mainPanel.add(clearButton);
-    clearButton.addActionListener(new ActionListener()
+    this.clearButton = new JButton("Clear");
+    this.clearButton.setBounds(10, 377, 86, 28);
+    mainPanel.add(this.clearButton);
+    this.clearButton.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent e)
       {
@@ -164,22 +164,22 @@ public class FrameCompatibleMods
         FrameCompatibleMods.this.initList();
       }
     });
-    clearButton.setFont(new Font("Dialog", 0, 15));
+    this.clearButton.setFont(new Font("Dialog", 0, 15));
     
     JLabel label = new JLabel(new ImageIcon(FrameCompatibleMods.class.getResource("/installer/images/addons.jpg")));
     label.setBounds(298, 11, 357, 305);
     mainPanel.add(label);
     
-    textArea = new JTextArea();
-    textArea.setBounds(662, 11, 284, 379);
-    mainPanel.add(textArea);
-    textArea.setEditable(false);
-    textArea.setEnabled(true);
-    textArea.setFont(new Font("Dialog", 0, 10));
-    textArea.setLineWrap(true);
-    textArea.setOpaque(false);
-    textArea.setText("");
-    textArea.setWrapStyleWord(true);
+    this.textArea = new JTextArea();
+    this.textArea.setBounds(662, 11, 284, 379);
+    mainPanel.add(this.textArea);
+    this.textArea.setEditable(false);
+    this.textArea.setEnabled(true);
+    this.textArea.setFont(new Font("Dialog", 0, 10));
+    this.textArea.setLineWrap(true);
+    this.textArea.setOpaque(false);
+    this.textArea.setText("");
+    this.textArea.setWrapStyleWord(true);
     
     show();
     
@@ -191,7 +191,7 @@ public class FrameCompatibleMods
     String list = "";
     if (Main.mods != null)
     {
-      setSize(sizeA + 300, sizeB);
+      setSize(this.sizeA + 300, this.sizeB);
       File[] arrayOfFile;
       int j = (arrayOfFile = Main.mods).length;
       for (int i = 0; i < j; i++)
@@ -202,11 +202,11 @@ public class FrameCompatibleMods
     }
     else
     {
-      setSize(sizeA, sizeB);
+      setSize(this.sizeA, this.sizeB);
     }
-    textArea.setText(list);
-    if (clearButton != null) {
-      clearButton.setEnabled(!list.isEmpty());
+    this.textArea.setText(list);
+    if (this.clearButton != null) {
+      this.clearButton.setEnabled(!list.isEmpty());
     }
   }
   

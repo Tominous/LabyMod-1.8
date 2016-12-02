@@ -20,20 +20,20 @@ public class MineconRenderer
   
   public void render(bet abstractClientPlayer)
   {
-    if (stars == null) {
-      stars = new ArrayList();
+    if (this.stars == null) {
+      this.stars = new ArrayList();
     }
     ave mc = ave.A();
     float partialTicks = LabyMod.getInstance().getPartialTicks();
     mc.P().a(starTexture);
-    if (lastSpawn < System.currentTimeMillis())
+    if (this.lastSpawn < System.currentTimeMillis())
     {
-      stars.add(new Star(random));
-      lastSpawn = (System.currentTimeMillis() + random.nextInt(1000));
+      this.stars.add(new Star(random));
+      this.lastSpawn = (System.currentTimeMillis() + random.nextInt(1000));
     }
     bfl.E();
     transform(abstractClientPlayer, partialTicks);
-    Iterator<Star> it = stars.iterator();
+    Iterator<Star> it = this.stars.iterator();
     while (it.hasNext())
     {
       Star star = (Star)it.next();
@@ -48,10 +48,10 @@ public class MineconRenderer
   private void transform(bet entity, float partialTicks)
   {
     bfl.b(0.0F, 0.0F, 0.125F);
-    double d0 = bq + (bt - bq) * partialTicks - (p + (s - p) * partialTicks);
-    double d1 = br + (bu - br) * partialTicks - (q + (t - q) * partialTicks);
-    double d2 = bs + (bv - bs) * partialTicks - (r + (u - r) * partialTicks);
-    float f = aJ + (aI - aJ) * partialTicks;
+    double d0 = entity.bq + (entity.bt - entity.bq) * partialTicks - (entity.p + (entity.s - entity.p) * partialTicks);
+    double d1 = entity.br + (entity.bu - entity.br) * partialTicks - (entity.q + (entity.t - entity.q) * partialTicks);
+    double d2 = entity.bs + (entity.bv - entity.bs) * partialTicks - (entity.r + (entity.u - entity.r) * partialTicks);
+    float f = entity.aJ + (entity.aI - entity.aJ) * partialTicks;
     double d3 = ns.a(f * 3.1415927F / 180.0F);
     double d4 = -ns.b(f * 3.1415927F / 180.0F);
     float f1 = (float)d1 * 10.0F;
@@ -61,8 +61,8 @@ public class MineconRenderer
     if (f2 < 0.0F) {
       f2 = 0.0F;
     }
-    float f4 = bn + (bo - bn) * partialTicks;
-    f1 += ns.a((L + (M - L) * partialTicks) * 6.0F) * 32.0F * f4;
+    float f4 = entity.bn + (entity.bo - entity.bn) * partialTicks;
+    f1 += ns.a((entity.L + (entity.M - entity.L) * partialTicks) * 6.0F) * 32.0F * f4;
     if (entity.av()) {
       f1 += 25.0F;
     }

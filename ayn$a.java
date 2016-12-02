@@ -8,6 +8,6 @@ class ayn$a
   
   public void b(int mouseX, int mouseY)
   {
-    this$0.a(bnq.a("gui.cancel", new Object[0]), mouseX, mouseY);
+    this.this$0.a(bnq.a("gui.cancel", new Object[0]), mouseX, mouseY);
   }
 }

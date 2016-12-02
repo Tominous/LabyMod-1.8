@@ -11,36 +11,36 @@ public class in
   
   public in(pk ☃, in.a ☃)
   {
-    a = ☃.F();
-    b = ☃;
+    this.a = ☃.F();
+    this.b = ☃;
   }
   
   public in(pk ☃, aui ☃)
   {
     this(☃, in.a.c);
-    c = ☃;
+    this.c = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.e();
-    b = ((in.a)☃.a(in.a.class));
-    if (b == in.a.c) {
-      c = new aui(☃.readFloat(), ☃.readFloat(), ☃.readFloat());
+    this.a = ☃.e();
+    this.b = ((in.a)☃.a(in.a.class));
+    if (this.b == in.a.c) {
+      this.c = new aui(☃.readFloat(), ☃.readFloat(), ☃.readFloat());
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a);
-    ☃.a(b);
-    if (b == in.a.c)
+    ☃.b(this.a);
+    ☃.a(this.b);
+    if (this.b == in.a.c)
     {
-      ☃.writeFloat((float)c.a);
-      ☃.writeFloat((float)c.b);
-      ☃.writeFloat((float)c.c);
+      ☃.writeFloat((float)this.c.a);
+      ☃.writeFloat((float)this.c.b);
+      ☃.writeFloat((float)this.c.c);
     }
   }
   
@@ -51,17 +51,17 @@ public class in
   
   public pk a(adm ☃)
   {
-    return ☃.a(a);
+    return ☃.a(this.a);
   }
   
   public in.a a()
   {
-    return b;
+    return this.b;
   }
   
   public aui b()
   {
-    return c;
+    return this.c;
   }
   
   public static enum a

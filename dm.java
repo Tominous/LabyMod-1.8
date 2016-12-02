@@ -11,20 +11,20 @@ public class dm
   
   public dm(byte ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   void a(DataOutput ☃)
     throws IOException
   {
-    ☃.writeByte(b);
+    ☃.writeByte(this.b);
   }
   
   void a(DataInput ☃, int ☃, dw ☃)
     throws IOException
   {
     ☃.a(72L);
-    b = ☃.readByte();
+    this.b = ☃.readByte();
   }
   
   public byte a()
@@ -34,12 +34,12 @@ public class dm
   
   public String toString()
   {
-    return "" + b + "b";
+    return "" + this.b + "b";
   }
   
   public eb b()
   {
-    return new dm(b);
+    return new dm(this.b);
   }
   
   public boolean equals(Object ☃)
@@ -47,43 +47,43 @@ public class dm
     if (super.equals(☃))
     {
       dm ☃ = (dm)☃;
-      return b == b;
+      return this.b == ☃.b;
     }
     return false;
   }
   
   public int hashCode()
   {
-    return super.hashCode() ^ b;
+    return super.hashCode() ^ this.b;
   }
   
   public long c()
   {
-    return b;
+    return this.b;
   }
   
   public int d()
   {
-    return b;
+    return this.b;
   }
   
   public short e()
   {
-    return (short)b;
+    return (short)this.b;
   }
   
   public byte f()
   {
-    return b;
+    return this.b;
   }
   
   public double g()
   {
-    return b;
+    return this.b;
   }
   
   public float h()
   {
-    return b;
+    return this.b;
   }
 }

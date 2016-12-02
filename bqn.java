@@ -53,17 +53,17 @@ public class bqn
   
   public bqn(ave ☃, final Property ☃)
   {
-    f = ☃;
-    c = new bqj();
-    d = new bqk();
+    this.f = ☃;
+    this.c = new bqj();
+    this.d = new bqk();
     
-    c.a(this);
-    d.a(this);
+    this.c.a(this);
+    this.d.a(this);
     
-    c.a("nmt37qblda36pvonovdkbopzfzw3wlq");
-    d.a("nmt37qblda36pvonovdkbopzfzw3wlq");
+    this.c.a("nmt37qblda36pvonovdkbopzfzw3wlq");
+    this.d.a("nmt37qblda36pvonovdkbopzfzw3wlq");
     
-    g.b().a(a.f);
+    this.g.b().a(a.f);
     if ((☃ != null) && (!Strings.isNullOrEmpty(☃.getValue())) && (bqs.l))
     {
       Thread ☃ = new Thread("Twitch authenticator")
@@ -81,7 +81,7 @@ public class bqn
               String ☃ = ni.h(☃, "user_name");
               bqn.G().debug(bqn.a, "Authenticated with twitch; username is {}", new Object[] { ☃ });
               AuthToken ☃ = new AuthToken();
-              data = ☃.getValue();
+              ☃.data = ☃.getValue();
               
               bqn.a(bqn.this).a(☃, ☃);
               bqn.b(bqn.this).c(☃);
@@ -91,7 +91,7 @@ public class bqn
               {
                 public void run()
                 {
-                  f();
+                  bqn.this.f();
                 }
               });
               bqn.a(bqn.this).C();
@@ -143,27 +143,27 @@ public class bqn
   {
     b.debug(a, "Shutdown streaming");
     
-    c.E();
+    this.c.E();
     
-    d.p();
+    this.d.p();
   }
   
   public void g()
   {
-    int ☃ = f.t.S;
-    boolean ☃ = (e != null) && (d.d(e));
-    boolean ☃ = (d.h() == bqk.c.c) && ((e == null) || (d.e(e) == bqk.a.e));
+    int ☃ = this.f.t.S;
+    boolean ☃ = (this.e != null) && (this.d.d(this.e));
+    boolean ☃ = (this.d.h() == bqk.c.c) && ((this.e == null) || (this.d.e(this.e) == bqk.a.e));
     if (☃ == 2)
     {
       if (☃)
       {
         b.debug(a, "Disconnecting from twitch chat per user options");
-        d.l(e);
+        this.d.l(this.e);
       }
     }
     else if (☃ == 1)
     {
-      if ((☃) && (c.q()))
+      if ((☃) && (this.c.q()))
       {
         b.debug(a, "Connecting to twitch chat per user options");
         F();
@@ -173,7 +173,7 @@ public class bqn
       if ((☃) && (!k()))
       {
         b.debug(a, "Disconnecting from twitch chat as user is no longer streaming");
-        d.l(e);
+        this.d.l(this.e);
       }
       else if ((☃) && (k()))
       {
@@ -181,19 +181,19 @@ public class bqn
         F();
       }
     }
-    c.K();
-    d.q();
+    this.c.K();
+    this.d.q();
   }
   
   protected void F()
   {
-    bqk.c ☃ = d.h();
-    String ☃ = c.l().name;
-    e = ☃;
+    bqk.c ☃ = this.d.h();
+    String ☃ = this.c.l().name;
+    this.e = ☃;
     if (☃ != bqk.c.c) {
       b.warn("Invalid twitch chat state {}", new Object[] { ☃ });
-    } else if (d.e(e) == bqk.a.e) {
-      d.j(☃);
+    } else if (this.d.e(this.e) == bqk.a.e) {
+      this.d.j(☃);
     } else {
       b.warn("Invalid twitch chat state {}", new Object[] { ☃ });
     }
@@ -201,27 +201,27 @@ public class bqn
   
   public void h()
   {
-    if ((!c.m()) || (c.p())) {
+    if ((!this.c.m()) || (this.c.p())) {
       return;
     }
     long ☃ = System.nanoTime();
-    long ☃ = 1000000000 / k;
+    long ☃ = 1000000000 / this.k;
     
-    long ☃ = ☃ - l;
+    long ☃ = ☃ - this.l;
     boolean ☃ = ☃ >= ☃;
     if (☃)
     {
-      FrameBuffer ☃ = c.Q();
+      FrameBuffer ☃ = this.c.Q();
       
-      bfw ☃ = f.b();
+      bfw ☃ = this.f.b();
       
-      i.a(true);
+      this.i.a(true);
       
       bfl.n(5889);
       bfl.E();
       bfl.D();
       
-      bfl.a(0.0D, i.c, i.d, 0.0D, 1000.0D, 3000.0D);
+      bfl.a(0.0D, this.i.c, this.i.d, 0.0D, 1000.0D, 3000.0D);
       bfl.n(5888);
       bfl.E();
       bfl.D();
@@ -229,16 +229,16 @@ public class bqn
       bfl.b(0.0F, 0.0F, -2000.0F);
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
       
-      bfl.b(0, 0, i.c, i.d);
+      bfl.b(0, 0, this.i.c, this.i.d);
       
       bfl.w();
       bfl.c();
       bfl.k();
       
-      float ☃ = i.c;
-      float ☃ = i.d;
-      float ☃ = c / a;
-      float ☃ = d / b;
+      float ☃ = this.i.c;
+      float ☃ = this.i.d;
+      float ☃ = ☃.c / ☃.a;
+      float ☃ = ☃.d / ☃.b;
       
       ☃.c();
       GL11.glTexParameterf(3553, 10241, 9729.0F);
@@ -260,36 +260,36 @@ public class bqn
       bfl.F();
       bfl.n(5888);
       
-      c.a(☃);
-      i.e();
+      this.c.a(☃);
+      this.i.e();
       
-      c.b(☃);
-      l = ☃;
+      this.c.b(☃);
+      this.l = ☃;
     }
   }
   
   public boolean i()
   {
-    return c.q();
+    return this.c.q();
   }
   
   public boolean j()
   {
-    return c.n();
+    return this.c.n();
   }
   
   public boolean k()
   {
-    return c.m();
+    return this.c.m();
   }
   
   public void a(bqh ☃, long ☃)
   {
-    if ((!k()) || (!j)) {
+    if ((!k()) || (!this.j)) {
       return;
     }
-    long ☃ = c.x();
-    if (!c.a(☃.c(), ☃ + ☃, ☃.a(), ☃.b())) {
+    long ☃ = this.c.x();
+    if (!this.c.a(☃.c(), ☃ + ☃, ☃.a(), ☃.b())) {
       b.warn(a, "Couldn't send stream metadata action at {}: {}", new Object[] { Long.valueOf(☃ + ☃), ☃ });
     } else {
       b.debug(a, "Sent stream metadata action at {}: {}", new Object[] { Long.valueOf(☃ + ☃), ☃ });
@@ -298,17 +298,17 @@ public class bqn
   
   public void a(bqh ☃, long ☃, long ☃)
   {
-    if ((!k()) || (!j)) {
+    if ((!k()) || (!this.j)) {
       return;
     }
-    long ☃ = c.x();
+    long ☃ = this.c.x();
     String ☃ = ☃.a();
     String ☃ = ☃.b();
     
-    long ☃ = c.b(☃.c(), ☃ + ☃, ☃, ☃);
+    long ☃ = this.c.b(☃.c(), ☃ + ☃, ☃, ☃);
     if (☃ < 0L) {
       b.warn(a, "Could not send stream metadata sequence from {} to {}: {}", new Object[] { Long.valueOf(☃ + ☃), Long.valueOf(☃ + ☃), ☃ });
-    } else if (c.a(☃.c(), ☃ + ☃, ☃, ☃, ☃)) {
+    } else if (this.c.a(☃.c(), ☃ + ☃, ☃, ☃, ☃)) {
       b.debug(a, "Sent stream metadata sequence from {} to {}: {}", new Object[] { Long.valueOf(☃ + ☃), Long.valueOf(☃ + ☃), ☃ });
     } else {
       b.warn(a, "Half-sent stream metadata sequence from {} to {}: {}", new Object[] { Long.valueOf(☃ + ☃), Long.valueOf(☃ + ☃), ☃ });
@@ -317,12 +317,12 @@ public class bqn
   
   public boolean l()
   {
-    return c.p();
+    return this.c.p();
   }
   
   public void m()
   {
-    if (c.G()) {
+    if (this.c.G()) {
       b.debug(a, "Requested commercial from Twitch");
     } else {
       b.warn(a, "Could not request commercial from Twitch");
@@ -331,16 +331,16 @@ public class bqn
   
   public void n()
   {
-    c.I();
-    o = true;
+    this.c.I();
+    this.o = true;
     
     p();
   }
   
   public void o()
   {
-    c.J();
-    o = false;
+    this.c.J();
+    this.o = false;
     
     p();
   }
@@ -349,54 +349,54 @@ public class bqn
   {
     if (k())
     {
-      float ☃ = f.t.M;
-      boolean ☃ = (o) || (☃ <= 0.0F);
-      c.b(☃ ? 0.0F : ☃);
+      float ☃ = this.f.t.M;
+      boolean ☃ = (this.o) || (☃ <= 0.0F);
+      this.c.b(☃ ? 0.0F : ☃);
       
-      c.a(D() ? 0.0F : f.t.L);
+      this.c.a(D() ? 0.0F : this.f.t.L);
     }
   }
   
   public void q()
   {
-    avh ☃ = f.t;
-    VideoParams ☃ = c.a(b(N), a(O), c(K), f.d / f.e);
-    switch (P)
+    avh ☃ = this.f.t;
+    VideoParams ☃ = this.c.a(b(☃.N), a(☃.O), c(☃.K), this.f.d / this.f.e);
+    switch (☃.P)
     {
     case 2: 
-      encodingCpuUsage = EncodingCpuUsage.TTV_ECU_HIGH;
+      ☃.encodingCpuUsage = EncodingCpuUsage.TTV_ECU_HIGH;
       break;
     case 1: 
-      encodingCpuUsage = EncodingCpuUsage.TTV_ECU_MEDIUM;
+      ☃.encodingCpuUsage = EncodingCpuUsage.TTV_ECU_MEDIUM;
       break;
     case 0: 
-      encodingCpuUsage = EncodingCpuUsage.TTV_ECU_LOW;
+      ☃.encodingCpuUsage = EncodingCpuUsage.TTV_ECU_LOW;
     }
-    if (i == null) {
-      i = new bfw(outputWidth, outputHeight, false);
+    if (this.i == null) {
+      this.i = new bfw(☃.outputWidth, ☃.outputHeight, false);
     } else {
-      i.a(outputWidth, outputHeight);
+      this.i.a(☃.outputWidth, ☃.outputHeight);
     }
-    if ((R != null) && (R.length() > 0)) {
+    if ((☃.R != null) && (☃.R.length() > 0)) {
       for (IngestServer ☃ : s()) {
-        if (serverUrl.equals(R))
+        if (☃.serverUrl.equals(☃.R))
         {
-          c.a(☃);
+          this.c.a(☃);
           break;
         }
       }
     }
-    k = targetFps;
-    j = Q;
-    c.a(☃);
+    this.k = ☃.targetFps;
+    this.j = ☃.Q;
+    this.c.a(☃);
     
-    b.info(a, "Streaming at {}/{} at {} kbps to {}", new Object[] { Integer.valueOf(outputWidth), Integer.valueOf(outputHeight), Integer.valueOf(maxKbps), c.s().serverUrl });
-    c.a(null, "Minecraft", null);
+    b.info(a, "Streaming at {}/{} at {} kbps to {}", new Object[] { Integer.valueOf(☃.outputWidth), Integer.valueOf(☃.outputHeight), Integer.valueOf(☃.maxKbps), this.c.s().serverUrl });
+    this.c.a(null, "Minecraft", null);
   }
   
   public void r()
   {
-    if (c.H()) {
+    if (this.c.H()) {
       b.info(a, "Stopped streaming to Twitch");
     } else {
       b.warn(a, "Could not stop streaming to Twitch");
@@ -408,12 +408,12 @@ public class bqn
     if (ErrorCode.succeeded(☃))
     {
       b.debug(a, "Login attempt successful");
-      n = true;
+      this.n = true;
     }
     else
     {
       b.warn(a, "Login attempt unsuccessful: {} (error code {})", new Object[] { ErrorCode.getString(☃), Integer.valueOf(☃.getValue()) });
-      n = false;
+      this.n = false;
     }
   }
   
@@ -421,7 +421,7 @@ public class bqn
   {
     b.debug(a, "Broadcast state changed to {}", new Object[] { ☃ });
     if (☃ == bqj.a.b) {
-      c.a(bqj.a.d);
+      this.c.a(bqj.a.d);
     }
   }
   
@@ -432,13 +432,13 @@ public class bqn
   
   public void a(StreamInfo ☃)
   {
-    b.debug(a, "Stream info updated; {} viewers on stream ID {}", new Object[] { Integer.valueOf(viewers), Long.valueOf(streamId) });
+    b.debug(a, "Stream info updated; {} viewers on stream ID {}", new Object[] { Integer.valueOf(☃.viewers), Long.valueOf(☃.streamId) });
   }
   
   public void b(ErrorCode ☃)
   {
     b.warn(a, "Issue submitting frame: {} (Error code {})", new Object[] { ErrorCode.getString(☃), Integer.valueOf(☃.getValue()) });
-    f.q.d().a(new fa("Issue streaming frame: " + ☃ + " (" + ErrorCode.getString(☃) + ")"), 2);
+    this.f.q.d().a(new fa("Issue streaming frame: " + ☃ + " (" + ErrorCode.getString(☃) + ")"), 2);
   }
   
   public void b()
@@ -461,13 +461,13 @@ public class bqn
       ☃.b().d(Boolean.valueOf(true));
       eu ☃ = new fb("stream.unavailable.soundflower.chat", new Object[] { ☃ });
       ☃.b().a(a.e);
-      f.q.d().a(☃);
+      this.f.q.d().a(☃);
     }
     else
     {
       eu ☃ = new fb("stream.unavailable.unknown.chat", new Object[] { ErrorCode.getString(☃) });
       ☃.b().a(a.e);
-      f.q.d().a(☃);
+      this.f.q.d().a(☃);
     }
   }
   
@@ -475,7 +475,7 @@ public class bqn
   {
     b.debug(a, "Ingest test state changed to {}", new Object[] { ☃ });
     if (☃ == bql.b.f) {
-      m = true;
+      this.m = true;
     }
   }
   
@@ -496,12 +496,12 @@ public class bqn
   
   public IngestServer[] s()
   {
-    return c.t().getServers();
+    return this.c.t().getServers();
   }
   
   public void u()
   {
-    bql ☃ = c.M();
+    bql ☃ = this.c.M();
     if (☃ != null) {
       ☃.a(this);
     }
@@ -509,17 +509,17 @@ public class bqn
   
   public bql v()
   {
-    return c.w();
+    return this.c.w();
   }
   
   public boolean w()
   {
-    return c.o();
+    return this.c.o();
   }
   
   public int x()
   {
-    return k() ? c.j().viewers : 0;
+    return k() ? this.c.j().viewers : 0;
   }
   
   public void d(ErrorCode ☃)
@@ -540,41 +540,41 @@ public class bqn
   {
     for (ChatRawMessage ☃ : ☃)
     {
-      a(userName, ☃);
-      if (a(modes, subscriptions, f.t.T))
+      a(☃.userName, ☃);
+      if (a(☃.modes, ☃.subscriptions, this.f.t.T))
       {
-        eu ☃ = new fa(userName);
-        eu ☃ = new fb("chat.stream." + (action ? "emote" : "text"), new Object[] { g, ☃, a.a(message) });
-        if (action) {
+        eu ☃ = new fa(☃.userName);
+        eu ☃ = new fb("chat.stream." + (☃.action ? "emote" : "text"), new Object[] { this.g, ☃, a.a(☃.message) });
+        if (☃.action) {
           ☃.b().b(Boolean.valueOf(true));
         }
         eu ☃ = new fa("");
         ☃.a(new fb("stream.userinfo.chatTooltip", new Object[0]));
-        for (eu ☃ : bab.a(modes, subscriptions, null))
+        for (eu ☃ : bab.a(☃.modes, ☃.subscriptions, null))
         {
           ☃.a("\n");
           ☃.a(☃);
         }
         ☃.b().a(new ew(ew.a.a, ☃));
-        ☃.b().a(new et(et.a.d, userName));
+        ☃.b().a(new et(et.a.d, ☃.userName));
         
-        f.q.d().a(☃);
+        this.f.q.d().a(☃);
       }
     }
   }
   
   private void a(String ☃, ChatRawMessage ☃)
   {
-    ChatUserInfo ☃ = (ChatUserInfo)h.get(☃);
+    ChatUserInfo ☃ = (ChatUserInfo)this.h.get(☃);
     if (☃ == null)
     {
       ☃ = new ChatUserInfo();
-      displayName = ☃;
-      h.put(☃, ☃);
+      ☃.displayName = ☃;
+      this.h.put(☃, ☃);
     }
-    subscriptions = subscriptions;
-    modes = modes;
-    nameColorARGB = nameColorARGB;
+    ☃.subscriptions = ☃.subscriptions;
+    ☃.modes = ☃.modes;
+    ☃.nameColorARGB = ☃.nameColorARGB;
   }
   
   private boolean a(Set<ChatUserMode> ☃, Set<ChatUserSubscription> ☃, int ☃)
@@ -603,13 +603,13 @@ public class bqn
   public void a(String ☃, ChatUserInfo[] ☃, ChatUserInfo[] ☃, ChatUserInfo[] ☃)
   {
     for (ChatUserInfo ☃ : ☃) {
-      h.remove(displayName);
+      this.h.remove(☃.displayName);
     }
     for (ChatUserInfo ☃ : ☃) {
-      h.put(displayName, ☃);
+      this.h.put(☃.displayName, ☃);
     }
     for (ChatUserInfo ☃ : ☃) {
-      h.put(displayName, ☃);
+      this.h.put(☃.displayName, ☃);
     }
   }
   
@@ -621,32 +621,32 @@ public class bqn
   public void b(String ☃)
   {
     b.debug(a, "Chat disconnected");
-    h.clear();
+    this.h.clear();
   }
   
   public boolean y()
   {
-    return (e != null) && (e.equals(c.l().name));
+    return (this.e != null) && (this.e.equals(this.c.l().name));
   }
   
   public String z()
   {
-    return e;
+    return this.e;
   }
   
   public ChatUserInfo e(String ☃)
   {
-    return (ChatUserInfo)h.get(☃);
+    return (ChatUserInfo)this.h.get(☃);
   }
   
   public void f(String ☃)
   {
-    d.a(e, ☃);
+    this.d.a(this.e, ☃);
   }
   
   public boolean A()
   {
-    return (r) && (c.b());
+    return (r) && (this.c.b());
   }
   
   public ErrorCode B()
@@ -654,30 +654,30 @@ public class bqn
     if (!r) {
       return ErrorCode.TTV_EC_OS_TOO_OLD;
     }
-    return c.A();
+    return this.c.A();
   }
   
   public boolean C()
   {
-    return n;
+    return this.n;
   }
   
   public void a(boolean ☃)
   {
-    p = ☃;
+    this.p = ☃;
     p();
   }
   
   public boolean D()
   {
-    boolean ☃ = f.t.U == 1;
+    boolean ☃ = this.f.t.U == 1;
     
-    return (o) || (f.t.L <= 0.0F) || (☃ != p);
+    return (this.o) || (this.f.t.L <= 0.0F) || (☃ != this.p);
   }
   
   public bqm.a E()
   {
-    return q;
+    return this.q;
   }
   
   public void a(ErrorCode ☃, AuthToken ☃) {}

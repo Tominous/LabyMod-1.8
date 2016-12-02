@@ -9,14 +9,14 @@ public class aac
   
   public zx b(zx ☃, adm ☃, wn ☃)
   {
-    if (!bA.d) {
-      b -= 1;
+    if (!☃.bA.d) {
+      ☃.b -= 1;
     }
-    if (!D) {
+    if (!☃.D) {
       ☃.bk();
     }
     ☃.b(na.ad[zw.b(this)]);
-    if (b <= 0) {
+    if (☃.b <= 0) {
       return new zx(zy.aw);
     }
     return ☃;

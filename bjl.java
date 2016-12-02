@@ -1,11 +1,11 @@
 import com.google.common.collect.Lists;
 import de.labystudio.cosmetic.Cosmetic;
 import de.labystudio.cosmetic.CosmeticManager;
+import de.labystudio.cosmetic.CosmeticUser;
 import de.labystudio.cosmetic.EnumCosmetic;
 import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
-import de.labystudio.listener.GommeHD;
 import de.labystudio.modapi.ModAPI;
 import de.labystudio.modapi.events.RenderNametagEvent;
 import de.labystudio.utils.Allowed;
@@ -13,7 +13,7 @@ import de.labystudio.utils.Color;
 import de.labystudio.utils.FriendsLoader;
 import de.labystudio.utils.LeftHand;
 import java.nio.FloatBuffer;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -32,23 +32,23 @@ public abstract class bjl<T extends pr>
   public bjl(biu renderManagerIn, bbo modelBaseIn, float shadowSizeIn)
   {
     super(renderManagerIn);
-    f = modelBaseIn;
-    c = shadowSizeIn;
+    this.f = modelBaseIn;
+    this.c = shadowSizeIn;
   }
   
   protected <V extends pr, U extends blb<V>> boolean a(U layer)
   {
-    return h.add(layer);
+    return this.h.add(layer);
   }
   
   protected <V extends pr, U extends blb<V>> boolean b(U layer)
   {
-    return h.remove(layer);
+    return this.h.remove(layer);
   }
   
   public bbo b()
   {
-    return f;
+    return this.f;
   }
   
   protected float a(float par1, float par2, float par3)
@@ -66,18 +66,18 @@ public abstract class bjl<T extends pr>
   {
     bfl.E();
     bfl.p();
-    fp = d(entity, partialTicks);
-    fq = entity.au();
-    fr = entity.j_();
+    this.f.p = d(entity, partialTicks);
+    this.f.q = entity.au();
+    this.f.r = entity.j_();
     try
     {
-      float f = a(aJ, aI, partialTicks);
-      float f1 = a(aL, aK, partialTicks);
+      float f = a(entity.aJ, entity.aI, partialTicks);
+      float f1 = a(entity.aL, entity.aK, partialTicks);
       float f2 = f1 - f;
-      if ((entity.au()) && ((m instanceof pr)))
+      if ((entity.au()) && ((entity.m instanceof pr)))
       {
-        pr entitylivingbase = (pr)m;
-        f = a(aJ, aI, partialTicks);
+        pr entitylivingbase = (pr)entity.m;
+        f = a(entitylivingbase.aJ, entitylivingbase.aI, partialTicks);
         f2 = f1 - f;
         float f3 = ns.g(f2);
         if (f3 < -85.0F) {
@@ -91,7 +91,7 @@ public abstract class bjl<T extends pr>
           f += f3 * 0.2F;
         }
       }
-      float f7 = B + (z - B) * partialTicks;
+      float f7 = entity.B + (entity.z - entity.B) * partialTicks;
       a(entity, x, y, z);
       float f8 = b(entity, partialTicks);
       a(entity, f8, f, partialTicks);
@@ -100,8 +100,8 @@ public abstract class bjl<T extends pr>
       a(entity, partialTicks);
       float f4 = 0.0625F;
       bfl.b(0.0F, -1.5078125F, 0.0F);
-      float f5 = aA + (aB - aA) * partialTicks;
-      float f6 = aC - aB * (1.0F - partialTicks);
+      float f5 = entity.aA + (entity.aB - entity.aA) * partialTicks;
+      float f6 = entity.aC - entity.aB * (1.0F - partialTicks);
       if (entity.j_()) {
         f6 *= 3.0F;
       }
@@ -111,7 +111,7 @@ public abstract class bjl<T extends pr>
       bfl.d();
       this.f.a(entity, f6, f5, partialTicks);
       this.f.a(f6, f5, f8, f2, f7, 0.0625F, entity);
-      if (i)
+      if (this.i)
       {
         boolean flag1 = c(entity);
         a(entity, f6, f5, f8, f2, f7, 0.0625F);
@@ -142,7 +142,7 @@ public abstract class bjl<T extends pr>
     bfl.g(bqs.q);
     bfl.o();
     bfl.F();
-    if (!i) {
+    if (!this.i) {
       super.a(entity, x, y, z, entityYaw, partialTicks);
     }
   }
@@ -187,7 +187,7 @@ public abstract class bjl<T extends pr>
   protected void a(T entitylivingbaseIn, float p_77036_2_, float p_77036_3_, float p_77036_4_, float p_77036_5_, float p_77036_6_, float p_77036_7_)
   {
     boolean flag = !entitylivingbaseIn.ax();
-    boolean flag1 = (!flag) && (!entitylivingbaseIn.f(Ah));
+    boolean flag1 = (!flag) && (!entitylivingbaseIn.f(ave.A().h));
     if ((flag) || (flag1))
     {
       if (!c(entitylivingbaseIn)) {
@@ -202,7 +202,7 @@ public abstract class bjl<T extends pr>
         bfl.b(770, 771);
         bfl.a(516, 0.003921569F);
       }
-      f.a(entitylivingbaseIn, p_77036_2_, p_77036_3_, p_77036_4_, p_77036_5_, p_77036_6_, p_77036_7_);
+      this.f.a(entitylivingbaseIn, p_77036_2_, p_77036_3_, p_77036_4_, p_77036_5_, p_77036_6_, p_77036_7_);
       if (flag1)
       {
         bfl.k();
@@ -223,7 +223,7 @@ public abstract class bjl<T extends pr>
     float f = entitylivingbaseIn.c(partialTicks);
     int i = a(entitylivingbaseIn, f, partialTicks);
     boolean flag = (i >> 24 & 0xFF) > 0;
-    boolean flag1 = (au > 0) || (ax > 0);
+    boolean flag1 = (entitylivingbaseIn.au > 0) || (entitylivingbaseIn.ax > 0);
     if ((!flag) && (!flag1)) {
       return false;
     }
@@ -254,22 +254,22 @@ public abstract class bjl<T extends pr>
     GL11.glTexEnvi(8960, bqs.F, 7681);
     GL11.glTexEnvi(8960, bqs.G, bqs.x);
     GL11.glTexEnvi(8960, bqs.J, 770);
-    g.position(0);
+    this.g.position(0);
     if (flag1)
     {
-      if (settingsoldDMG)
+      if (ConfigManager.settings.oldDMG)
       {
-        g.put(f);
-        g.put(0.0F);
-        g.put(0.0F);
-        g.put(0.2F);
+        this.g.put(f);
+        this.g.put(0.0F);
+        this.g.put(0.0F);
+        this.g.put(0.2F);
       }
       else
       {
-        g.put(1.0F);
-        g.put(0.0F);
-        g.put(0.0F);
-        g.put(0.3F);
+        this.g.put(1.0F);
+        this.g.put(0.0F);
+        this.g.put(0.0F);
+        this.g.put(0.3F);
       }
     }
     else
@@ -278,13 +278,13 @@ public abstract class bjl<T extends pr>
       float f2 = (i >> 16 & 0xFF) / 255.0F;
       float f3 = (i >> 8 & 0xFF) / 255.0F;
       float f4 = (i & 0xFF) / 255.0F;
-      g.put(f2);
-      g.put(f3);
-      g.put(f4);
-      g.put(1.0F - f1);
+      this.g.put(f2);
+      this.g.put(f3);
+      this.g.put(f4);
+      this.g.put(1.0F - f1);
     }
-    g.flip();
-    GL11.glTexEnv(8960, 8705, g);
+    this.g.flip();
+    GL11.glTexEnv(8960, 8705, this.g);
     bfl.g(bqs.s);
     bfl.w();
     bfl.i(e.b());
@@ -350,9 +350,9 @@ public abstract class bjl<T extends pr>
   protected void a(T bat, float p_77043_2_, float p_77043_3_, float partialTicks)
   {
     bfl.b(180.0F - p_77043_3_, 0.0F, 1.0F, 0.0F);
-    if (ax > 0)
+    if (bat.ax > 0)
     {
-      float f = (ax + partialTicks - 1.0F) / 20.0F * 1.6F;
+      float f = (bat.ax + partialTicks - 1.0F) / 20.0F * 1.6F;
       f = ns.c(f);
       if (f > 1.0F) {
         f = 1.0F;
@@ -364,7 +364,7 @@ public abstract class bjl<T extends pr>
       String s = a.a(bat.e_());
       if ((s != null) && ((s.equals("Dinnerbone")) || (s.equals("Grumm"))) && ((!(bat instanceof wn)) || (((wn)bat).a(wo.a))))
       {
-        bfl.b(0.0F, K + 0.1F, 0.0F);
+        bfl.b(0.0F, bat.K + 0.1F, 0.0F);
         bfl.b(180.0F, 0.0F, 0.0F, 1.0F);
       }
     }
@@ -377,15 +377,15 @@ public abstract class bjl<T extends pr>
   
   protected float b(T livingBase, float partialTicks)
   {
-    return W + partialTicks;
+    return livingBase.W + partialTicks;
   }
   
   protected void a(T entitylivingbaseIn, float p_177093_2_, float p_177093_3_, float partialTicks, float p_177093_5_, float p_177093_6_, float p_177093_7_, float p_177093_8_)
   {
-    for (blb<T> layerrenderer : h)
+    for (blb<T> layerrenderer : this.h)
     {
       boolean var12 = layerrenderer.b();
-      if ((settingsoldDMG) && (Allowed.animations()) && 
+      if ((ConfigManager.settings.oldDMG) && (Allowed.animations()) && 
         ((layerrenderer instanceof bkx))) {
         var12 = true;
       }
@@ -417,12 +417,9 @@ public abstract class bjl<T extends pr>
     if (ModAPI.enabled()) {
       ModAPI.callEvent(new RenderNametagEvent(entity, x, y, z));
     }
-    double d0;
-    double height;
-    double lh;
     if (a(entity))
     {
-      d0 = entity.h(bc);
+      double d0 = entity.h(this.b.c);
       float f = entity.av() ? 32.0F : 64.0F;
       if (d0 < f * f)
       {
@@ -434,9 +431,6 @@ public abstract class bjl<T extends pr>
         String b = s;
         s = FriendsLoader.getNick(s, Color.removeColor(entity.e_()));
         nick = !b.equals(s);
-        if ((GommeHD.isGommeHD()) && (settingsgommeOldUserColor)) {
-          s = s.replace(Color.cl("8"), Color.cl("a"));
-        }
         if (nick)
         {
           String tag = entity.f_().c().replace(Color.removeColor(entity.e_()), "");
@@ -451,12 +445,12 @@ public abstract class bjl<T extends pr>
           avn fontrenderer = c();
           bfl.E();
           
-          bfl.b((float)x, (float)y + K + 0.5F - (entity.j_() ? K / 2.0F : 0.0F) + 
-            LabyMod.getInstance().getCosmeticManager().getNameTagHeight(entity), (float)z);
+          bfl.b((float)x, (float)y + entity.K + 0.5F - (entity
+            .j_() ? entity.K / 2.0F : 0.0F) + LabyMod.getInstance().getCosmeticManager().getNameTagHeight(entity), (float)z);
           
           GL11.glNormal3f(0.0F, 1.0F, 0.0F);
-          bfl.b(-be, 0.0F, 1.0F, 0.0F);
-          bfl.b(bf, 1.0F, 0.0F, 0.0F);
+          bfl.b(-this.b.e, 0.0F, 1.0F, 0.0F);
+          bfl.b(this.b.f, 1.0F, 0.0F, 0.0F);
           bfl.a(-0.02666667F, -0.02666667F, 0.02666667F);
           bfl.b(0.0F, 9.374999F, 0.0F);
           bfl.f();
@@ -485,11 +479,12 @@ public abstract class bjl<T extends pr>
         {
           avn fontrenderer = c();
           bfl.E();
-          bfl.b((float)x, (float)y + K + 0.5F - (entity.j_() ? K / 2.0F : 0.0F) + 
-            LabyMod.getInstance().getCosmeticManager().getNameTagHeight(entity), (float)z);
+          bfl.b((float)x, (float)y + entity.K + 0.5F - (entity
+            .j_() ? entity.K / 2.0F : 0.0F) + LabyMod.getInstance().getCosmeticManager().getNameTagHeight(entity), (float)z);
+          
           GL11.glNormal3f(0.0F, 1.0F, 0.0F);
-          bfl.b(-be, 0.0F, 1.0F, 0.0F);
-          bfl.b(bf, 1.0F, 0.0F, 0.0F);
+          bfl.b(-this.b.e, 0.0F, 1.0F, 0.0F);
+          bfl.b(this.b.f, 1.0F, 0.0F, 0.0F);
           bfl.a(-0.02666667F, -0.02666667F, 0.02666667F);
           bfl.f();
           bfl.a(false);
@@ -516,18 +511,17 @@ public abstract class bjl<T extends pr>
         }
         else
         {
-          ArrayList<Cosmetic> list = LabyMod.getInstance().getCosmeticManager().getCosmetic(entity);
-          height = LabyMod.getInstance().getCosmeticManager().getNameTagHeight(list);
-          a(entity, x, y - (entity.j_() ? K / 2.0F : 0.0D) + height, z, s, 0.02666667F, d0);
-          if (list != null)
+          double height = LabyMod.getInstance().getCosmeticManager().getNameTagHeight(entity);
+          a(entity, x, y - (entity.j_() ? entity.K / 2.0F : 0.0D) + height, z, s, 0.02666667F, d0);
+          CosmeticUser user = LabyMod.getInstance().getCosmeticManager().getCosmeticUser(entity);
+          if (user != null)
           {
-            lh = 0.0D;
-            for (Cosmetic cos : list) {
-              if (cos.getType() == EnumCosmetic.RANK)
-              {
-                lh += 0.25D;
-                a(entity, x, y - (entity.j_() ? K / 2.0F : 0.0D) + height + lh, z, d.replace("&", Color.c), 0.02666667F, d0);
-              }
+            Cosmetic rankCosmetic = (Cosmetic)user.getCosmeticHashMap().get(EnumCosmetic.RANK);
+            if (rankCosmetic != null)
+            {
+              double lh = 0.0D;
+              lh += 0.25D;
+              a(entity, x, y - (entity.j_() ? entity.K / 2.0F : 0.0D) + height + lh, z, rankCosmetic.d.replace("&", Color.c), 0.02666667F, d0);
             }
           }
         }
@@ -537,7 +531,7 @@ public abstract class bjl<T extends pr>
   
   protected boolean a(T entity)
   {
-    bew entityplayersp = Ah;
+    bew entityplayersp = ave.A().h;
     if (((entity instanceof wn)) && (entity != entityplayersp))
     {
       auq team = entity.bO();
@@ -559,16 +553,16 @@ public abstract class bjl<T extends pr>
         return true;
       }
     }
-    boolean check = entity != b.c;
-    if (settingsshowMyName) {
+    boolean check = entity != this.b.c;
+    if (ConfigManager.settings.showMyName) {
       check = true;
     }
-    return (ave.v()) && (check) && (!entity.f(entityplayersp)) && (l == null);
+    return (ave.v()) && (check) && (!entity.f(entityplayersp)) && (entity.l == null);
   }
   
   public void a(boolean renderOutlinesIn)
   {
-    i = renderOutlinesIn;
+    this.i = renderOutlinesIn;
   }
   
   static

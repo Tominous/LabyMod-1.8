@@ -27,20 +27,20 @@ public class bgm
   public bgm(Collection<bgm.d> ☃)
   {
     for (bgm.d ☃ : ☃) {
-      b.put(bgm.d.a(☃), ☃);
+      this.b.put(bgm.d.a(☃), ☃);
     }
   }
   
   public bgm(List<bgm> ☃)
   {
     for (bgm ☃ : ☃) {
-      b.putAll(b);
+      this.b.putAll(☃.b);
     }
   }
   
   public bgm.d b(String ☃)
   {
-    bgm.d ☃ = (bgm.d)b.get(☃);
+    bgm.d ☃ = (bgm.d)this.b.get(☃);
     if (☃ == null) {
       throw new bgm.b();
     }
@@ -55,14 +55,14 @@ public class bgm
     if ((☃ instanceof bgm))
     {
       bgm ☃ = (bgm)☃;
-      return b.equals(b);
+      return this.b.equals(☃.b);
     }
     return false;
   }
   
   public int hashCode()
   {
-    return b.hashCode();
+    return this.b.hashCode();
   }
   
   public static class d
@@ -72,13 +72,13 @@ public class bgm
     
     public d(String ☃, List<bgm.c> ☃)
     {
-      a = ☃;
-      b = ☃;
+      this.a = ☃;
+      this.b = ☃;
     }
     
     public List<bgm.c> b()
     {
-      return b;
+      return this.b;
     }
     
     public boolean equals(Object ☃)
@@ -90,10 +90,10 @@ public class bgm
         return false;
       }
       d ☃ = (d)☃;
-      if (!a.equals(a)) {
+      if (!this.a.equals(☃.a)) {
         return false;
       }
-      if (!b.equals(b)) {
+      if (!this.b.equals(☃.b)) {
         return false;
       }
       return true;
@@ -101,8 +101,8 @@ public class bgm
     
     public int hashCode()
     {
-      int ☃ = a.hashCode();
-      ☃ = 31 * ☃ + b.hashCode();
+      int ☃ = this.a.hashCode();
+      ☃ = 31 * ☃ + this.b.hashCode();
       return ☃;
     }
   }
@@ -116,30 +116,30 @@ public class bgm
     
     public c(jy ☃, bor ☃, boolean ☃, int ☃)
     {
-      a = ☃;
-      b = ☃;
-      c = ☃;
-      d = ☃;
+      this.a = ☃;
+      this.b = ☃;
+      this.c = ☃;
+      this.d = ☃;
     }
     
     public jy a()
     {
-      return a;
+      return this.a;
     }
     
     public bor b()
     {
-      return b;
+      return this.b;
     }
     
     public boolean c()
     {
-      return c;
+      return this.c;
     }
     
     public int d()
     {
-      return d;
+      return this.d;
     }
     
     public boolean equals(Object ☃)
@@ -150,16 +150,16 @@ public class bgm
       if ((☃ instanceof c))
       {
         c ☃ = (c)☃;
-        return (a.equals(a)) && (b == b) && (c == c);
+        return (this.a.equals(☃.a)) && (this.b == ☃.b) && (this.c == ☃.c);
       }
       return false;
     }
     
     public int hashCode()
     {
-      int ☃ = a.hashCode();
-      ☃ = 31 * ☃ + (b != null ? b.hashCode() : 0);
-      ☃ = 31 * ☃ + (c ? 1 : 0);
+      int ☃ = this.a.hashCode();
+      ☃ = 31 * ☃ + (this.b != null ? this.b.hashCode() : 0);
+      ☃ = 31 * ☃ + (this.c ? 1 : 0);
       return ☃;
     }
     

@@ -15,11 +15,11 @@ public class PlayerInQueue
   
   public bet getPlayer()
   {
-    return player;
+    return this.player;
   }
   
   public boolean isRefresh()
   {
-    return refresh;
+    return this.refresh;
   }
 }

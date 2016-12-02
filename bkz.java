@@ -5,7 +5,7 @@ public class bkz
   
   public bkz(bjp ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(tr ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
@@ -15,7 +15,7 @@ public class bkz
     }
     bgd ☃ = ave.A().ae();
     
-    a.a(bmh.g);
+    this.a.a(bmh.g);
     bfl.o();
     bfl.e(1028);
     bfl.E();
@@ -38,7 +38,7 @@ public class bkz
     bfl.F();
     
     bfl.E();
-    a.b()).a.c(0.0625F);
+    ((bbt)this.a.b()).a.c(0.0625F);
     bfl.a(1.0F, -1.0F, 1.0F);
     bfl.b(0.0F, 0.7F, -0.2F);
     bfl.b(12.0F, 0.0F, 1.0F, 0.0F);

@@ -78,7 +78,7 @@ public class FriendsLoader
   
   public static String getNick(String name, String blank)
   {
-    if ((!Allowed.nick()) || (!settingstags) || (friends.isEmpty())) {
+    if ((!Allowed.nick()) || (!ConfigManager.settings.tags) || (friends.isEmpty())) {
       return name;
     }
     if ((friends.containsKey(blank)) && 

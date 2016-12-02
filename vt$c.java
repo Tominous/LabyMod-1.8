@@ -6,45 +6,45 @@ class vt$c
   public vt$c(vt ☃)
   {
     super(☃);
-    g = ☃;
+    this.g = ☃;
   }
   
   public void c()
   {
-    if ((!f) || (g.s().m()))
+    if ((!this.f) || (this.g.s().m()))
     {
-      g.k(0.0F);
-      vt.a(g, false);
+      this.g.k(0.0F);
+      vt.a(this.g, false);
       return;
     }
-    double ☃ = b - g.s;
-    double ☃ = c - g.t;
-    double ☃ = d - g.u;
+    double ☃ = this.b - this.g.s;
+    double ☃ = this.c - this.g.t;
+    double ☃ = this.d - this.g.u;
     double ☃ = ☃ * ☃ + ☃ * ☃ + ☃ * ☃;
     ☃ = ns.a(☃);
     ☃ /= ☃;
     
     float ☃ = (float)(ns.b(☃, ☃) * 180.0D / 3.1415927410125732D) - 90.0F;
     
-    g.y = a(g.y, ☃, 30.0F);
-    g.aI = g.y;
+    this.g.y = a(this.g.y, ☃, 30.0F);
+    this.g.aI = this.g.y;
     
-    float ☃ = (float)(e * g.a(vy.d).e());
-    g.k(g.bI() + (☃ - g.bI()) * 0.125F);
-    double ☃ = Math.sin((g.W + g.F()) * 0.5D) * 0.05D;
-    double ☃ = Math.cos(g.y * 3.1415927F / 180.0F);
-    double ☃ = Math.sin(g.y * 3.1415927F / 180.0F);
-    g.v += ☃ * ☃;
-    g.x += ☃ * ☃;
+    float ☃ = (float)(this.e * this.g.a(vy.d).e());
+    this.g.k(this.g.bI() + (☃ - this.g.bI()) * 0.125F);
+    double ☃ = Math.sin((this.g.W + this.g.F()) * 0.5D) * 0.05D;
+    double ☃ = Math.cos(this.g.y * 3.1415927F / 180.0F);
+    double ☃ = Math.sin(this.g.y * 3.1415927F / 180.0F);
+    this.g.v += ☃ * ☃;
+    this.g.x += ☃ * ☃;
     
-    ☃ = Math.sin((g.W + g.F()) * 0.75D) * 0.05D;
-    g.w += ☃ * (☃ + ☃) * 0.25D;
-    g.w += g.bI() * ☃ * 0.1D;
+    ☃ = Math.sin((this.g.W + this.g.F()) * 0.75D) * 0.05D;
+    this.g.w += ☃ * (☃ + ☃) * 0.25D;
+    this.g.w += this.g.bI() * ☃ * 0.1D;
     
-    qp ☃ = g.p();
-    double ☃ = g.s + ☃ / ☃ * 2.0D;
-    double ☃ = g.aS() + g.t + ☃ / ☃ * 1.0D;
-    double ☃ = g.u + ☃ / ☃ * 2.0D;
+    qp ☃ = this.g.p();
+    double ☃ = this.g.s + ☃ / ☃ * 2.0D;
+    double ☃ = this.g.aS() + this.g.t + ☃ / ☃ * 1.0D;
+    double ☃ = this.g.u + ☃ / ☃ * 2.0D;
     double ☃ = ☃.e();
     double ☃ = ☃.f();
     double ☃ = ☃.g();
@@ -54,7 +54,7 @@ class vt$c
       ☃ = ☃;
       ☃ = ☃;
     }
-    g.p().a(☃ + (☃ - ☃) * 0.125D, ☃ + (☃ - ☃) * 0.125D, ☃ + (☃ - ☃) * 0.125D, 10.0F, 40.0F);
-    vt.a(g, true);
+    this.g.p().a(☃ + (☃ - ☃) * 0.125D, ☃ + (☃ - ☃) * 0.125D, ☃ + (☃ - ☃) * 0.125D, 10.0F, 40.0F);
+    vt.a(this.g, true);
   }
 }

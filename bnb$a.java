@@ -13,25 +13,25 @@ class bnb$a
   
   public bnb$a(InputStream ☃, jy ☃, String ☃)
   {
-    a = ☃;
+    this.a = ☃;
     ByteArrayOutputStream ☃ = new ByteArrayOutputStream();
     new Exception().printStackTrace(new PrintStream(☃));
-    b = ("Leaked resource: '" + ☃ + "' loaded from pack: '" + ☃ + "'\n" + ☃.toString());
+    this.b = ("Leaked resource: '" + ☃ + "' loaded from pack: '" + ☃ + "'\n" + ☃.toString());
   }
   
   public void close()
     throws IOException
   {
-    a.close();
+    this.a.close();
     
-    c = true;
+    this.c = true;
   }
   
   protected void finalize()
     throws Throwable
   {
-    if (!c) {
-      bnb.b().warn(b);
+    if (!this.c) {
+      bnb.b().warn(this.b);
     }
     super.finalize();
   }
@@ -39,6 +39,6 @@ class bnb$a
   public int read()
     throws IOException
   {
-    return a.read();
+    return this.a.read();
   }
 }

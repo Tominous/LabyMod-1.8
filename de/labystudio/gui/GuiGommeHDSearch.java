@@ -31,42 +31,42 @@ public class GuiGommeHDSearch
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    draw = getInstancedraw;
-    n.clear();
+    this.draw = LabyMod.getInstance().draw;
+    this.n.clear();
     boolean var2 = true;
     
-    buttonClear = new avs(0, l / 2 + 81, m / 2 - 53, 20, 20, Color.c + "4" + "X");
-    n.add(buttonClear);
+    this.buttonClear = new avs(0, this.l / 2 + 81, this.m / 2 - 53, 20, 20, Color.c + "4" + "X");
+    this.n.add(this.buttonClear);
     
-    field_146302_g = new avw(2, draw.fontRenderer, l / 2 - 99, m / 2 - 53, 178, 20);
-    field_146302_g.b(true);
-    field_146302_g.a(GommeHDSign.search);
-    field_146302_g.f(400);
-    buttonClear.l = ((field_146302_g.b().length() > 0) && (field_146302_g.b().split(":").length > 0));
+    this.field_146302_g = new avw(2, this.draw.fontRenderer, this.l / 2 - 99, this.m / 2 - 53, 178, 20);
+    this.field_146302_g.b(true);
+    this.field_146302_g.a(GommeHDSign.search);
+    this.field_146302_g.f(400);
+    this.buttonClear.l = ((this.field_146302_g.b().length() > 0) && (this.field_146302_g.b().split(":").length > 0));
     
-    field_146302_g2 = new avw(2, draw.fontRenderer, l / 2 + 10, m / 2 - 12, 90, 20);
-    field_146302_g2.a(GommeHDSign.partySize + "");
-    field_146302_g2.f(2);
+    this.field_146302_g2 = new avw(2, this.draw.fontRenderer, this.l / 2 + 10, this.m / 2 - 12, 90, 20);
+    this.field_146302_g2.a(GommeHDSign.partySize + "");
+    this.field_146302_g2.f(2);
     
-    field_146302_g3 = new avw(8, draw.fontRenderer, l / 2 + 10, m / 2 + 29, 90, 20);
-    field_146302_g3.a(GommeHDSign.blacklist + "");
-    field_146302_g3.f(400);
+    this.field_146302_g3 = new avw(8, this.draw.fontRenderer, this.l / 2 + 10, this.m / 2 + 29, 90, 20);
+    this.field_146302_g3.a(GommeHDSign.blacklist + "");
+    this.field_146302_g3.f(400);
     
-    gommeSeachAllowedButton = new avs(1, l / 2 - 100, m / 2 - 12, 90, 20, getSymbol(GommeHDSign.allowed));
-    n.add(gommeSeachAllowedButton);
+    this.gommeSeachAllowedButton = new avs(1, this.l / 2 - 100, this.m / 2 - 12, 90, 20, getSymbol(GommeHDSign.allowed));
+    this.n.add(this.gommeSeachAllowedButton);
     
-    gommeAutoJoinButton = new avs(2, l / 2 - 100, m / 2 + 28, 90, 20, getSymbol(GommeHDSign.autoJoin));
-    n.add(gommeAutoJoinButton);
+    this.gommeAutoJoinButton = new avs(2, this.l / 2 - 100, this.m / 2 + 28, 90, 20, getSymbol(GommeHDSign.autoJoin));
+    this.n.add(this.gommeAutoJoinButton);
     
-    gommeSoundButton = new avs(3, l / 2 - 100, m / 2 + 65, 90, 20, getSymbol(GommeHDSign.sound));
-    n.add(gommeSoundButton);
+    this.gommeSoundButton = new avs(3, this.l / 2 - 100, this.m / 2 + 65, 90, 20, getSymbol(GommeHDSign.sound));
+    this.n.add(this.gommeSoundButton);
     
-    gommeNightMode = new avs(4, l / 2 + 9, m / 2 + 65, 93, 20, getSymbol(GommeHDSign.nightMode));
-    n.add(gommeNightMode);
+    this.gommeNightMode = new avs(4, this.l / 2 + 9, this.m / 2 + 65, 93, 20, getSymbol(GommeHDSign.nightMode));
+    this.n.add(this.gommeNightMode);
     
-    avs b = new avs(-1, l - 53, m - 23, 50, 20, "Search");
-    l = false;
-    n.add(b);
+    avs b = new avs(-1, this.l - 53, this.m - 23, 50, 20, "Search");
+    b.l = false;
+    this.n.add(b);
   }
   
   public String getSymbol(boolean b)
@@ -79,11 +79,11 @@ public class GuiGommeHDSearch
   
   protected void a(avs button)
   {
-    switch (k)
+    switch (button.k)
     {
     case 0: 
-      field_146302_g.a("");
-      buttonClear.l = false;
+      this.field_146302_g.a("");
+      this.buttonClear.l = false;
       break;
     case 1: 
       GommeHDSign.allowed = !GommeHDSign.allowed;
@@ -92,23 +92,23 @@ public class GuiGommeHDSearch
         GommeHDSign.autoJoin = false;
         GommeHDSign.sound = false;
       }
-      j = getSymbol(GommeHDSign.allowed);
-      gommeAutoJoinButton.j = getSymbol(GommeHDSign.autoJoin);
+      button.j = getSymbol(GommeHDSign.allowed);
+      this.gommeAutoJoinButton.j = getSymbol(GommeHDSign.autoJoin);
       
-      j = getSymbol(GommeHDSign.allowed);
-      gommeSoundButton.j = getSymbol(GommeHDSign.sound);
+      button.j = getSymbol(GommeHDSign.allowed);
+      this.gommeSoundButton.j = getSymbol(GommeHDSign.sound);
       break;
     case 2: 
       GommeHDSign.autoJoin = !GommeHDSign.autoJoin;
-      j = getSymbol(GommeHDSign.autoJoin);
+      button.j = getSymbol(GommeHDSign.autoJoin);
       break;
     case 3: 
       GommeHDSign.sound = !GommeHDSign.sound;
-      j = getSymbol(GommeHDSign.sound);
+      button.j = getSymbol(GommeHDSign.sound);
       break;
     case 4: 
       GommeHDSign.nightMode = !GommeHDSign.nightMode;
-      j = getSymbol(GommeHDSign.nightMode);
+      button.j = getSymbol(GommeHDSign.nightMode);
     }
     save();
   }
@@ -117,22 +117,22 @@ public class GuiGommeHDSearch
   {
     save();
     if (LabyMod.getInstance().isInGame()) {
-      j.a(new axp());
+      this.j.a(new axp());
     } else {
-      j.a(new azh(new aya()));
+      this.j.a(new azh(new aya()));
     }
   }
   
   public void save()
   {
-    GommeHDSign.search = field_146302_g.b();
-    GommeHDSign.blacklist = field_146302_g3.b();
-    if (!field_146302_g2.b().isEmpty())
+    GommeHDSign.search = this.field_146302_g.b();
+    GommeHDSign.blacklist = this.field_146302_g3.b();
+    if (!this.field_146302_g2.b().isEmpty())
     {
-      if (isNumeric(field_146302_g2.b())) {
-        GommeHDSign.partySize = Integer.parseInt(field_146302_g2.b());
+      if (isNumeric(this.field_146302_g2.b())) {
+        GommeHDSign.partySize = Integer.parseInt(this.field_146302_g2.b());
       } else {
-        field_146302_g2.a("0");
+        this.field_146302_g2.a("0");
       }
     }
     else {
@@ -152,22 +152,22 @@ public class GuiGommeHDSearch
   
   protected void a(char typedChar, int keyCode)
   {
-    if (field_146302_g.a(typedChar, keyCode))
+    if (this.field_146302_g.a(typedChar, keyCode))
     {
-      buttonClear.l = ((field_146302_g.b().length() > 0) && (field_146302_g.b().split(":").length > 0));
+      this.buttonClear.l = ((this.field_146302_g.b().length() > 0) && (this.field_146302_g.b().split(":").length > 0));
       save();
     }
-    if (field_146302_g3.a(typedChar, keyCode)) {
+    if (this.field_146302_g3.a(typedChar, keyCode)) {
       save();
     }
     if ((isNumeric(typedChar + "")) || (keyCode == 14))
     {
-      if (field_146302_g2.a(typedChar, keyCode)) {
+      if (this.field_146302_g2.a(typedChar, keyCode)) {
         save();
       }
     }
     else if (keyCode == 1) {
-      j.a(null);
+      this.j.a(null);
     }
   }
   
@@ -175,42 +175,42 @@ public class GuiGommeHDSearch
     throws IOException
   {
     super.a(mouseX, mouseY, mouseButton);
-    field_146302_g.a(mouseX, mouseY, mouseButton);
-    field_146302_g2.a(mouseX, mouseY, mouseButton);
-    field_146302_g3.a(mouseX, mouseY, mouseButton);
+    this.field_146302_g.a(mouseX, mouseY, mouseButton);
+    this.field_146302_g2.a(mouseX, mouseY, mouseButton);
+    this.field_146302_g3.a(mouseX, mouseY, mouseButton);
   }
   
   public void a(int mouseX, int mouseY, float partialTicks)
   {
     c();
     
-    gommeAutoJoinButton.l = GommeHDSign.allowed;
-    gommeSoundButton.l = GommeHDSign.allowed;
+    this.gommeAutoJoinButton.l = GommeHDSign.allowed;
+    this.gommeSoundButton.l = GommeHDSign.allowed;
     
-    draw.drawCenteredString("" + Color.c + "fGommeHD Map Search", l / 2, m / 2 - 70);
-    draw.drawString("" + Color.c + "fColored Signs:", l / 2 - 99, m / 2 - 24);
-    draw.drawString("" + Color.c + "fParty size:", l / 2 + 10, m / 2 - 24);
+    this.draw.drawCenteredString("" + Color.c + "fGommeHD Map Search", this.l / 2, this.m / 2 - 70);
+    this.draw.drawString("" + Color.c + "fColored Signs:", this.l / 2 - 99, this.m / 2 - 24);
+    this.draw.drawString("" + Color.c + "fParty size:", this.l / 2 + 10, this.m / 2 - 24);
     
-    draw.drawString("" + Color.c + "fAutojoin:", l / 2 - 99, m / 2 + 17);
-    draw.drawString("" + Color.c + "fBlacklist:", l / 2 + 10, m / 2 + 17);
+    this.draw.drawString("" + Color.c + "fAutojoin:", this.l / 2 - 99, this.m / 2 + 17);
+    this.draw.drawString("" + Color.c + "fBlacklist:", this.l / 2 + 10, this.m / 2 + 17);
     
-    draw.drawString("" + Color.c + "fSounds:", l / 2 - 99, m / 2 + 55);
+    this.draw.drawString("" + Color.c + "fSounds:", this.l / 2 - 99, this.m / 2 + 55);
     
-    draw.drawString("" + Color.c + "fNightmode:", l / 2 + 10, m / 2 + 55);
+    this.draw.drawString("" + Color.c + "fNightmode:", this.l / 2 + 10, this.m / 2 + 55);
     
-    draw.drawBox(l / 2 + 80, m / 2 - 54, l / 2 - 99 + 201, m / 2 - 53 + 21);
+    this.draw.drawBox(this.l / 2 + 80, this.m / 2 - 54, this.l / 2 - 99 + 201, this.m / 2 - 53 + 21);
     
-    field_146302_g.g();
-    field_146302_g2.g();
-    field_146302_g3.g();
+    this.field_146302_g.g();
+    this.field_146302_g2.g();
+    this.field_146302_g3.g();
     if ((!GommeHDSign.search.isEmpty()) && 
       (GommeHDSign.search.toLowerCase().contains(GommeHDSign.blacklist.toLowerCase())))
     {
       if (GommeHDSign.blacklist.length() < 13) {
-        draw.drawString(Color.c + "c" + GommeHDSign.blacklist, l / 2 + 14, m / 2 + 35);
+        this.draw.drawString(Color.c + "c" + GommeHDSign.blacklist, this.l / 2 + 14, this.m / 2 + 35);
       }
       if (GommeHDSign.search.length() < 22) {
-        draw.drawString(GommeHDSign.search.replace(GommeHDSign.blacklist, Color.c + "c" + GommeHDSign.blacklist + Color.c + "f"), l / 2 - 95, m / 2 - 47);
+        this.draw.drawString(GommeHDSign.search.replace(GommeHDSign.blacklist, Color.c + "c" + GommeHDSign.blacklist + Color.c + "f"), this.l / 2 - 95, this.m / 2 - 47);
       }
     }
     super.a(mouseX, mouseY, partialTicks);

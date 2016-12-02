@@ -7,7 +7,7 @@ public class azq
   extends azp
 {
   private static final Logger c = ;
-  private final bnk d = a.R().a;
+  private final bnk d = this.a.R().a;
   private final jy e;
   
   public azq(azo ☃)
@@ -16,13 +16,13 @@ public class azq
     blz ☃;
     try
     {
-      ☃ = new blz(d.a());
+      ☃ = new blz(this.d.a());
     }
     catch (IOException ☃)
     {
       ☃ = bml.a;
     }
-    e = a.P().a("texturepackicon", ☃);
+    this.e = this.a.P().a("texturepackicon", ☃);
   }
   
   protected int a()
@@ -34,7 +34,7 @@ public class azq
   {
     try
     {
-      boj ☃ = (boj)d.a(a.R().b, "pack");
+      boj ☃ = (boj)this.d.a(this.a.R().b, "pack");
       if (☃ != null) {
         return ☃.a().d();
       }
@@ -77,7 +77,7 @@ public class azq
   
   protected void d()
   {
-    a.P().a(e);
+    this.a.P().a(this.e);
   }
   
   protected boolean e()

@@ -5,8 +5,8 @@ public class zv
   
   public zv(zw.a ☃)
   {
-    a = ☃;
-    h = 1;
+    this.a = ☃;
+    this.h = 1;
     d(☃.a());
     a(yz.i);
   }
@@ -38,8 +38,8 @@ public class zv
   
   protected boolean a(zx ☃, wn ☃, adm ☃, cj ☃, alz ☃)
   {
-    ☃.a(☃.n() + 0.5F, ☃.o() + 0.5F, ☃.p() + 0.5F, cH.c(), (cH.d() + 1.0F) / 2.0F, cH.e() * 0.8F);
-    if (D) {
+    ☃.a(☃.n() + 0.5F, ☃.o() + 0.5F, ☃.p() + 0.5F, ☃.c().H.c(), (☃.c().H.d() + 1.0F) / 2.0F, ☃.c().H.e() * 0.8F);
+    if (☃.D) {
       return true;
     }
     ☃.a(☃, ☃);
@@ -55,6 +55,6 @@ public class zv
   
   public String g()
   {
-    return a.toString();
+    return this.a.toString();
   }
 }

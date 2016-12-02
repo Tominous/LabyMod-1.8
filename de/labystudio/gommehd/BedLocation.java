@@ -17,21 +17,21 @@ public class BedLocation
   
   public int getX()
   {
-    return x;
+    return this.x;
   }
   
   public int getY()
   {
-    return y;
+    return this.y;
   }
   
   public int getZ()
   {
-    return z;
+    return this.z;
   }
   
   public EnumBWTeam getTeam()
   {
-    return team;
+    return this.team;
   }
 }

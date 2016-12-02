@@ -25,10 +25,10 @@ public class GuiTags
   public GuiTags()
   {
     super(null);
-    childScreen = this;
-    draw = getInstancedraw;
-    editor = false;
-    id = "Tags";
+    this.childScreen = this;
+    this.draw = LabyMod.getInstance().draw;
+    this.editor = false;
+    this.id = "Tags";
   }
   
   String selectedFriend = "";
@@ -39,20 +39,20 @@ public class GuiTags
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    n.clear();
-    n.add(btnAddFriend = new avs(0, l / 2 - 154, m - 26, 100, 20, L.f("gui_tags_addfriend", new Object[0])));
-    n.add(btnEditFriend = new avs(1, l / 2 - 50, m - 26, 100, 20, L.f("gui_tags_editfriend", new Object[0])));
-    n.add(btnDeleteFriend = new avs(2, l / 2 + 4 + 50, m - 26, 100, 20, L.f("gui_tags_deletefriend", new Object[0])));
+    this.n.clear();
+    this.n.add(this.btnAddFriend = new avs(0, this.l / 2 - 154, this.m - 26, 100, 20, L.f("gui_tags_addfriend", new Object[0])));
+    this.n.add(this.btnEditFriend = new avs(1, this.l / 2 - 50, this.m - 26, 100, 20, L.f("gui_tags_editfriend", new Object[0])));
+    this.n.add(this.btnDeleteFriend = new avs(2, this.l / 2 + 4 + 50, this.m - 26, 100, 20, L.f("gui_tags_deletefriend", new Object[0])));
     
     super.b();
-    initEditor(selectedFriend);
+    initEditor(this.selectedFriend);
     if (FriendsLoader.friends == null) {
-      scrollbar = new Scrollbar(0);
+      this.scrollbar = new Scrollbar(0);
     } else {
-      scrollbar = new Scrollbar(FriendsLoader.friends.size());
+      this.scrollbar = new Scrollbar(FriendsLoader.friends.size());
     }
-    scrollbar.setPosition(l / 2 + 154, 40, l / 2 + 160, m - 40);
-    scrollbar.update(35);
+    this.scrollbar.setPosition(this.l / 2 + 154, 40, this.l / 2 + 160, this.m - 40);
+    this.scrollbar.update(35);
   }
   
   private void drawFriends()
@@ -62,17 +62,17 @@ public class GuiTags
       for (String friend : FriendsLoader.friends.keySet())
       {
         String nick = (String)FriendsLoader.friends.get(friend);
-        if (selectedFriend.equalsIgnoreCase(friend)) {
-          DrawUtils.a(l / 2 - 151, 50 + scrollbar.getScrollY() + listY - 4, l / 2 + 158, 50 + scrollbar.getScrollY() + listY + 30, 632207020);
+        if (this.selectedFriend.equalsIgnoreCase(friend)) {
+          DrawUtils.a(this.l / 2 - 151, 50 + this.scrollbar.getScrollY() + listY - 4, this.l / 2 + 158, 50 + this.scrollbar.getScrollY() + listY + 30, 632207020);
         }
         bfl.c(1.0F, 1.0F, 1.0F);
         GL11.glColor3f(1.0F, 1.0F, 1.0F);
-        getInstancetextureManager.drawPlayerHead(friend, l / 2 - 150, 50 + scrollbar.getScrollY() + listY, 1.0D);
-        draw.drawString(Color.cl("l") + friend, l / 2 - 110, 50 + scrollbar.getScrollY() + listY);
+        LabyMod.getInstance().textureManager.drawPlayerHead(friend, this.l / 2 - 150, 50 + this.scrollbar.getScrollY() + listY, 1.0D);
+        this.draw.drawString(Color.cl("l") + friend, this.l / 2 - 110, 50 + this.scrollbar.getScrollY() + listY);
         if (nick.isEmpty()) {
-          draw.drawString(Color.cl("c") + L.f("gui_tags_nonickname", new Object[0]) + Color.cl("r"), l / 2 - 110, 25 + scrollbar.getScrollY() + listY + 35);
+          this.draw.drawString(Color.cl("c") + L.f("gui_tags_nonickname", new Object[0]) + Color.cl("r"), this.l / 2 - 110, 25 + this.scrollbar.getScrollY() + listY + 35);
         } else {
-          draw.drawString(Color.cl("e") + L.f("gui_tags_nickname", new Object[0]) + ": " + Color.cl("r") + nick.replace("&", Color.c) + Color.cl("r"), l / 2 - 110, 25 + scrollbar.getScrollY() + listY + 35);
+          this.draw.drawString(Color.cl("e") + L.f("gui_tags_nickname", new Object[0]) + ": " + Color.cl("r") + nick.replace("&", Color.c) + Color.cl("r"), this.l / 2 - 110, 25 + this.scrollbar.getScrollY() + listY + 35);
         }
         listY += 35;
       }
@@ -84,12 +84,12 @@ public class GuiTags
   {
     super.a(mouseX, mouseY, mouseButton);
     
-    scrollbar.mouseAction(mouseX, mouseY, false);
+    this.scrollbar.mouseAction(mouseX, mouseY, false);
     int listY;
-    if (editor)
+    if (this.editor)
     {
-      editName.a(mouseX, mouseY, mouseButton);
-      editNick.a(mouseX, mouseY, mouseButton);
+      this.editName.a(mouseX, mouseY, mouseButton);
+      this.editNick.a(mouseX, mouseY, mouseButton);
     }
     else
     {
@@ -97,9 +97,9 @@ public class GuiTags
       for (String friend : FriendsLoader.friends.keySet())
       {
         String nick = (String)FriendsLoader.friends.get(friend);
-        if ((mouseX > l / 2 - 151) && (mouseX < l / 2 + 160) && (mouseY > 50 + scrollbar.getScrollY() + listY - 4) && (mouseY < 50 + scrollbar.getScrollY() + listY + 31))
+        if ((mouseX > this.l / 2 - 151) && (mouseX < this.l / 2 + 160) && (mouseY > 50 + this.scrollbar.getScrollY() + listY - 4) && (mouseY < 50 + this.scrollbar.getScrollY() + listY + 31))
         {
-          selectedFriend = friend;
+          this.selectedFriend = friend;
           return;
         }
         listY += 35;
@@ -109,14 +109,14 @@ public class GuiTags
   
   protected void a(int mouseX, int mouseY, int clickedMouseButton, long timeSinceLastClick)
   {
-    scrollbar.mouseAction(mouseX, mouseY, true);
+    this.scrollbar.mouseAction(mouseX, mouseY, true);
     super.a(mouseX, mouseY, clickedMouseButton, timeSinceLastClick);
   }
   
   public void k()
     throws IOException
   {
-    scrollbar.mouseInput();
+    this.scrollbar.mouseInput();
     super.k();
   }
   
@@ -124,36 +124,36 @@ public class GuiTags
     throws IOException
   {
     super.actionPermformed(button);
-    if (k == 0)
+    if (button.k == 0)
     {
-      selectedFriend = "";
+      this.selectedFriend = "";
       edit("");
     }
-    if (k == 1) {
-      edit(selectedFriend);
+    if (button.k == 1) {
+      edit(this.selectedFriend);
     }
-    if (k == 2)
+    if (button.k == 2)
     {
-      FriendsLoader.friends.remove(selectedFriend);
+      FriendsLoader.friends.remove(this.selectedFriend);
       FriendsLoader.saveFriends();
       b();
-      selectedFriend = "";
+      this.selectedFriend = "";
     }
-    if (k == 3)
+    if (button.k == 3)
     {
-      if ((!selectedFriend.isEmpty()) && 
-        (!editName.b().equals(selectedFriend))) {
-        FriendsLoader.friends.remove(selectedFriend);
+      if ((!this.selectedFriend.isEmpty()) && 
+        (!this.editName.b().equals(this.selectedFriend))) {
+        FriendsLoader.friends.remove(this.selectedFriend);
       }
-      selectedFriend = editName.b();
-      FriendsLoader.friends.put(editName.b(), editNick.b());
-      editor = false;
+      this.selectedFriend = this.editName.b();
+      FriendsLoader.friends.put(this.editName.b(), this.editNick.b());
+      this.editor = false;
       FriendsLoader.saveFriends();
       b();
     }
-    if (k == 4)
+    if (button.k == 4)
     {
-      editor = false;
+      this.editor = false;
       b();
     }
   }
@@ -161,11 +161,11 @@ public class GuiTags
   protected void a(char typedChar, int keyCode)
     throws IOException
   {
-    editName.a(typedChar, keyCode);
-    editNick.a(typedChar, keyCode);
-    if ((editor) && (done.l) && (
+    this.editName.a(typedChar, keyCode);
+    this.editNick.a(typedChar, keyCode);
+    if ((this.editor) && (this.done.l) && (
       (keyCode == 28) || (keyCode == 156))) {
-      a(done);
+      a(this.done);
     }
     super.a(typedChar, keyCode);
   }
@@ -177,9 +177,9 @@ public class GuiTags
   
   private void edit(String name)
   {
-    editor = true;
-    selectedFriend = name;
-    focus = false;
+    this.editor = true;
+    this.selectedFriend = name;
+    this.focus = false;
     initEditor(name);
   }
   
@@ -187,56 +187,56 @@ public class GuiTags
   
   private void initEditor(String name)
   {
-    if (!editor) {
+    if (!this.editor) {
       return;
     }
-    for (int i = 0; i <= n.size() - 1; i++)
+    for (int i = 0; i <= this.n.size() - 1; i++)
     {
-      avs b = (avs)n.get(i);
-      m = false;
+      avs b = (avs)this.n.get(i);
+      b.m = false;
     }
-    editName = new ModGuiTextField(-1, draw.fontRenderer, l / 2 - 100, m / 2 - 50, 200, 20);
-    editName.f(16);
-    editName.setBlacklistWord(" ");
-    editName.a(name);
-    editNick = new ModGuiTextField(-1, draw.fontRenderer, l / 2 - 100, m / 2, 200, 20);
-    editNick.f(50);
+    this.editName = new ModGuiTextField(-1, this.draw.fontRenderer, this.l / 2 - 100, this.m / 2 - 50, 200, 20);
+    this.editName.f(16);
+    this.editName.setBlacklistWord(" ");
+    this.editName.a(name);
+    this.editNick = new ModGuiTextField(-1, this.draw.fontRenderer, this.l / 2 - 100, this.m / 2, 200, 20);
+    this.editNick.f(50);
     if (FriendsLoader.friends.containsKey(name)) {
-      editNick.a((String)FriendsLoader.friends.get(name));
+      this.editNick.a((String)FriendsLoader.friends.get(name));
     }
-    avs cancel = new avs(4, l / 2 - 100, m / 2 + 53, L.f("button_cancel", new Object[0]));
-    n.add(cancel);
+    avs cancel = new avs(4, this.l / 2 - 100, this.m / 2 + 53, L.f("button_cancel", new Object[0]));
+    this.n.add(cancel);
     
-    done = new avs(3, l / 2 - 100, m / 2 + 28, L.f("button_done", new Object[0]));
-    n.add(done);
+    this.done = new avs(3, this.l / 2 - 100, this.m / 2 + 28, L.f("button_done", new Object[0]));
+    this.n.add(this.done);
     
-    btnDeleteFriend.m = false;
-    btnEditFriend.m = false;
-    btnAddFriend.m = false;
+    this.btnDeleteFriend.m = false;
+    this.btnEditFriend.m = false;
+    this.btnAddFriend.m = false;
   }
   
   private void drawEditor()
   {
-    draw.drawString(L.f("gui_tags_playername", new Object[0]) + ":", l / 2 - 100, m / 2 - 63);
-    draw.drawString(L.f("gui_tags_nickname", new Object[0]) + ":", l / 2 - 100, m / 2 - 13);
-    if ((editName != null) && (editNick != null))
+    this.draw.drawString(L.f("gui_tags_playername", new Object[0]) + ":", this.l / 2 - 100, this.m / 2 - 63);
+    this.draw.drawString(L.f("gui_tags_nickname", new Object[0]) + ":", this.l / 2 - 100, this.m / 2 - 13);
+    if ((this.editName != null) && (this.editNick != null))
     {
-      editName.g();
-      editNick.g();
-      if (done != null) {
-        done.l = ((!editName.b().replace(" ", "").isEmpty()) && ((!FriendsLoader.friends.containsKey(editName.b())) || (editName.b().equals(selectedFriend))));
+      this.editName.g();
+      this.editNick.g();
+      if (this.done != null) {
+        this.done.l = ((!this.editName.b().replace(" ", "").isEmpty()) && ((!FriendsLoader.friends.containsKey(this.editName.b())) || (this.editName.b().equals(this.selectedFriend))));
       }
     }
-    if (!focus)
+    if (!this.focus)
     {
-      editName.b(true);
-      focus = true;
+      this.editName.b(true);
+      this.focus = true;
     }
   }
   
   public void a(int mouseX, int mouseY, float partialTicks)
   {
-    if (editor)
+    if (this.editor)
     {
       c(0);
       drawEditor();
@@ -246,23 +246,23 @@ public class GuiTags
     if (LabyMod.getInstance().isInGame())
     {
       bfl.l();
-      draw.drawTransparentBackground(0, 32, l, m - 33);
+      this.draw.drawTransparentBackground(0, 32, this.l, this.m - 33);
     }
     else
     {
       c();
-      draw.drawChatBackground(0, 32, l, m - 33);
+      this.draw.drawChatBackground(0, 32, this.l, this.m - 33);
     }
     drawFriends();
     
     bfl.k();
-    draw.overlayBackground(0, 32);
-    draw.overlayBackground(m - 33, m);
+    this.draw.overlayBackground(0, 32);
+    this.draw.overlayBackground(this.m - 33, this.m);
     
-    scrollbar.draw();
+    this.scrollbar.draw();
     
-    btnEditFriend.l = (!selectedFriend.isEmpty());
-    btnDeleteFriend.l = (!selectedFriend.isEmpty());
+    this.btnEditFriend.l = (!this.selectedFriend.isEmpty());
+    this.btnDeleteFriend.l = (!this.selectedFriend.isEmpty());
     
     super.a(mouseX, mouseY, partialTicks);
   }

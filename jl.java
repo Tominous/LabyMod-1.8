@@ -10,19 +10,19 @@ public class jl
   
   public jl(GameProfile ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = new GameProfile(null, ☃.c(16));
+    this.a = new GameProfile(null, ☃.c(16));
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a.getName());
+    ☃.a(this.a.getName());
   }
   
   public void a(jk ☃)
@@ -32,6 +32,6 @@ public class jl
   
   public GameProfile a()
   {
-    return a;
+    return this.a;
   }
 }

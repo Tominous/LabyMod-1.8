@@ -12,41 +12,41 @@ public class alw
   
   public alw(adm ☃, cj ☃, cq ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
     if (☃)
     {
-      d = ☃;
-      c = ☃.a(☃);
+      this.d = ☃;
+      this.c = ☃.a(☃);
     }
     else
     {
-      d = ☃.d();
-      c = ☃.a(☃, 2);
+      this.d = ☃.d();
+      this.c = ☃.a(☃, 2);
     }
   }
   
   public boolean a()
   {
-    e.clear();
-    f.clear();
+    this.e.clear();
+    this.f.clear();
     
-    afh ☃ = a.p(c).c();
-    if (!als.a(☃, a, c, d, false))
+    afh ☃ = this.a.p(this.c).c();
+    if (!als.a(☃, this.a, this.c, this.d, false))
     {
       if (☃.k() != 1) {
         return false;
       }
-      f.add(c);
+      this.f.add(this.c);
       return true;
     }
-    if (!a(c)) {
+    if (!a(this.c)) {
       return false;
     }
-    for (int ☃ = 0; ☃ < e.size(); ☃++)
+    for (int ☃ = 0; ☃ < this.e.size(); ☃++)
     {
-      cj ☃ = (cj)e.get(☃);
-      if ((a.p(☃).c() == afi.cE) && 
+      cj ☃ = (cj)this.e.get(☃);
+      if ((this.a.p(☃).c() == afi.cE) && 
         (!b(☃))) {
         return false;
       }
@@ -56,75 +56,75 @@ public class alw
   
   private boolean a(cj ☃)
   {
-    afh ☃ = a.p(☃).c();
+    afh ☃ = this.a.p(☃).c();
     if (☃.t() == arm.a) {
       return true;
     }
-    if (!als.a(☃, a, ☃, d, false)) {
+    if (!als.a(☃, this.a, ☃, this.d, false)) {
       return true;
     }
-    if (☃.equals(b)) {
+    if (☃.equals(this.b)) {
       return true;
     }
-    if (e.contains(☃)) {
+    if (this.e.contains(☃)) {
       return true;
     }
     int ☃ = 1;
-    if (☃ + e.size() > 12) {
+    if (☃ + this.e.size() > 12) {
       return false;
     }
     while (☃ == afi.cE)
     {
-      cj ☃ = ☃.a(d.d(), ☃);
-      ☃ = a.p(☃).c();
-      if ((☃.t() == arm.a) || (!als.a(☃, a, ☃, d, false)) || (☃.equals(b))) {
+      cj ☃ = ☃.a(this.d.d(), ☃);
+      ☃ = this.a.p(☃).c();
+      if ((☃.t() == arm.a) || (!als.a(☃, this.a, ☃, this.d, false)) || (☃.equals(this.b))) {
         break;
       }
       ☃++;
-      if (☃ + e.size() > 12) {
+      if (☃ + this.e.size() > 12) {
         return false;
       }
     }
     int ☃ = 0;
     for (int ☃ = ☃ - 1; ☃ >= 0; ☃--)
     {
-      e.add(☃.a(d.d(), ☃));
+      this.e.add(☃.a(this.d.d(), ☃));
       ☃++;
     }
     for (int ☃ = 1;; ☃++)
     {
-      cj ☃ = ☃.a(d, ☃);
+      cj ☃ = ☃.a(this.d, ☃);
       
-      int ☃ = e.indexOf(☃);
+      int ☃ = this.e.indexOf(☃);
       if (☃ > -1)
       {
         a(☃, ☃);
         for (int ☃ = 0; ☃ <= ☃ + ☃; ☃++)
         {
-          cj ☃ = (cj)e.get(☃);
-          if ((a.p(☃).c() == afi.cE) && 
+          cj ☃ = (cj)this.e.get(☃);
+          if ((this.a.p(☃).c() == afi.cE) && 
             (!b(☃))) {
             return false;
           }
         }
         return true;
       }
-      ☃ = a.p(☃).c();
+      ☃ = this.a.p(☃).c();
       if (☃.t() == arm.a) {
         return true;
       }
-      if ((!als.a(☃, a, ☃, d, true)) || (☃.equals(b))) {
+      if ((!als.a(☃, this.a, ☃, this.d, true)) || (☃.equals(this.b))) {
         return false;
       }
       if (☃.k() == 1)
       {
-        f.add(☃);
+        this.f.add(☃);
         return true;
       }
-      if (e.size() >= 12) {
+      if (this.e.size() >= 12) {
         return false;
       }
-      e.add(☃);
+      this.e.add(☃);
       ☃++;
     }
   }
@@ -135,20 +135,20 @@ public class alw
     List<cj> ☃ = Lists.newArrayList();
     List<cj> ☃ = Lists.newArrayList();
     
-    ☃.addAll(e.subList(0, ☃));
-    ☃.addAll(e.subList(e.size() - ☃, e.size()));
-    ☃.addAll(e.subList(☃, e.size() - ☃));
+    ☃.addAll(this.e.subList(0, ☃));
+    ☃.addAll(this.e.subList(this.e.size() - ☃, this.e.size()));
+    ☃.addAll(this.e.subList(☃, this.e.size() - ☃));
     
-    e.clear();
-    e.addAll(☃);
-    e.addAll(☃);
-    e.addAll(☃);
+    this.e.clear();
+    this.e.addAll(☃);
+    this.e.addAll(☃);
+    this.e.addAll(☃);
   }
   
   private boolean b(cj ☃)
   {
     for (cq ☃ : ) {
-      if ((☃.k() != d.k()) && 
+      if ((☃.k() != this.d.k()) && 
         (!a(☃.a(☃)))) {
         return false;
       }
@@ -158,11 +158,11 @@ public class alw
   
   public List<cj> c()
   {
-    return e;
+    return this.e;
   }
   
   public List<cj> d()
   {
-    return f;
+    return this.f;
   }
 }

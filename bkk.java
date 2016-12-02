@@ -8,7 +8,7 @@ public class bkk
   public bkk(biu ☃)
   {
     super(☃);
-    f = new bbz();
+    this.f = new bbz();
   }
   
   private float a(float ☃, float ☃, float ☃)
@@ -28,8 +28,8 @@ public class bkk
     bfl.E();
     bfl.p();
     
-    float ☃ = a(A, y, ☃);
-    float ☃ = B + (z - B) * ☃;
+    float ☃ = a(☃.A, ☃.y, ☃);
+    float ☃ = ☃.B + (☃.z - ☃.B) * ☃;
     
     bfl.b((float)☃, (float)☃, (float)☃);
     
@@ -41,7 +41,7 @@ public class bkk
     
     c(☃);
     
-    f.a(☃, 0.0F, 0.0F, 0.0F, ☃, ☃, ☃);
+    this.f.a(☃, 0.0F, 0.0F, 0.0F, ☃, ☃, ☃);
     
     bfl.F();
     

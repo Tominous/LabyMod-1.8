@@ -23,52 +23,52 @@ public class CuboidRegion
   
   public void render(Vector3 cameraPos)
   {
-    if ((firstPoint != null) && (secondPoint != null))
+    if ((this.firstPoint != null) && (this.secondPoint != null))
     {
-      grid.render(cameraPos);
-      box.render(cameraPos);
-      firstPoint.render(cameraPos);
-      secondPoint.render(cameraPos);
+      this.grid.render(cameraPos);
+      this.box.render(cameraPos);
+      this.firstPoint.render(cameraPos);
+      this.secondPoint.render(cameraPos);
     }
-    else if (firstPoint != null)
+    else if (this.firstPoint != null)
     {
-      firstPoint.render(cameraPos);
+      this.firstPoint.render(cameraPos);
     }
-    else if (secondPoint != null)
+    else if (this.secondPoint != null)
     {
-      secondPoint.render(cameraPos);
+      this.secondPoint.render(cameraPos);
     }
   }
   
   public void setCuboidPoint(int id, double x, double y, double z)
   {
     if (id == 0) {
-      (firstPoint = new PointCube(x, y, z)).setColour(LineColour.CUBOIDPOINT1);
+      (this.firstPoint = new PointCube(x, y, z)).setColour(LineColour.CUBOIDPOINT1);
     } else if (id == 1) {
-      (secondPoint = new PointCube(x, y, z)).setColour(LineColour.CUBOIDPOINT2);
+      (this.secondPoint = new PointCube(x, y, z)).setColour(LineColour.CUBOIDPOINT2);
     }
-    if ((firstPoint != null) && (secondPoint != null))
+    if ((this.firstPoint != null) && (this.secondPoint != null))
     {
-      BoundingBox bounds = new BoundingBox(firstPoint, secondPoint);
-      grid = new Render3DGrid(LineColour.CUBOIDGRID, bounds);
-      box = new Render3DBox(LineColour.CUBOIDBOX, bounds);
+      BoundingBox bounds = new BoundingBox(this.firstPoint, this.secondPoint);
+      this.grid = new Render3DGrid(LineColour.CUBOIDGRID, bounds);
+      this.box = new Render3DBox(LineColour.CUBOIDBOX, bounds);
     }
   }
   
   public void clear()
   {
-    firstPoint = null;
-    secondPoint = null;
+    this.firstPoint = null;
+    this.secondPoint = null;
   }
   
   public PointCube getFirstPoint()
   {
-    return firstPoint;
+    return this.firstPoint;
   }
   
   public PointCube getSecondPoint()
   {
-    return secondPoint;
+    return this.secondPoint;
   }
   
   public RegionType getType()
@@ -78,17 +78,17 @@ public class CuboidRegion
   
   public void expandVert()
   {
-    setFirstSecond(new PointCube(firstPoint.getPoint().getX(), 0.0D, firstPoint.getPoint().getZ()), new PointCube(secondPoint
-      .getPoint().getX(), 255.0D, secondPoint.getPoint().getZ()));
+    setFirstSecond(new PointCube(this.firstPoint.getPoint().getX(), 0.0D, this.firstPoint.getPoint().getZ()), new PointCube(this.secondPoint
+      .getPoint().getX(), 255.0D, this.secondPoint.getPoint().getZ()));
   }
   
   public void setFirstSecond(PointCube first, PointCube second)
   {
-    (firstPoint = first).setColour(LineColour.CUBOIDPOINT1);
-    (secondPoint = second).setColour(LineColour.CUBOIDPOINT2);
+    (this.firstPoint = first).setColour(LineColour.CUBOIDPOINT1);
+    (this.secondPoint = second).setColour(LineColour.CUBOIDPOINT2);
     
-    BoundingBox bounds = new BoundingBox(firstPoint, secondPoint);
-    grid = new Render3DGrid(LineColour.CUBOIDGRID, bounds);
-    box = new Render3DBox(LineColour.CUBOIDBOX, bounds);
+    BoundingBox bounds = new BoundingBox(this.firstPoint, this.secondPoint);
+    this.grid = new Render3DGrid(LineColour.CUBOIDGRID, bounds);
+    this.box = new Render3DBox(LineColour.CUBOIDBOX, bounds);
   }
 }

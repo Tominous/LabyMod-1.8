@@ -25,7 +25,7 @@ public class GuiClearSet
   public GuiClearSet(String setName, String key, String name, axu parent)
   {
     super((awx)null, bnq.a("gui.xaero_clear_set_message", new Object[0]) + ": " + setName + "?", bnq.a("gui.xaero_clear_set_message2", new Object[0]), 0);
-    parentScreen = parent;
+    this.parentScreen = parent;
     this.key = key;
     this.name = name;
   }
@@ -33,16 +33,16 @@ public class GuiClearSet
   protected void a(avs button)
     throws IOException
   {
-    switch (k)
+    switch (button.k)
     {
     case 0: 
-      WaypointSet set = (WaypointSet)waypointMapgetkey)).sets.get(name);
+      WaypointSet set = (WaypointSet)((WaypointWorld)Minimap.waypointMap.get(this.key)).sets.get(this.name);
       if (set != null) {
-        list.clear();
+        set.list.clear();
       }
       XaeroMinimap.getSettings().saveWaypoints();
     case 1: 
-      j.a(parentScreen);
+      this.j.a(this.parentScreen);
     }
   }
 }

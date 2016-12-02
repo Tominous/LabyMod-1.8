@@ -8,11 +8,11 @@ public class sq<T extends pr>
   public sq(qa ☃, Class<T> ☃, boolean ☃, Predicate<? super T> ☃)
   {
     super(☃, ☃, 10, ☃, false, ☃);
-    g = ☃;
+    this.g = ☃;
   }
   
   public boolean a()
   {
-    return (!g.cl()) && (super.a());
+    return (!this.g.cl()) && (super.a());
   }
 }

@@ -20,17 +20,17 @@ public class ModelBipedRotationAnglesEvent
   public ModelBipedRotationAnglesEvent(bbj modelBiped, pk entityIn)
   {
     this.modelBiped = modelBiped;
-    entity = entityIn;
+    this.entity = entityIn;
   }
   
   public bbj getModelBiped()
   {
-    return modelBiped;
+    return this.modelBiped;
   }
   
   public pk getEntity()
   {
-    return entity;
+    return this.entity;
   }
   
   public void setCancelled(boolean cancelled)
@@ -40,7 +40,7 @@ public class ModelBipedRotationAnglesEvent
   
   public boolean isCancelled()
   {
-    return cancelled;
+    return this.cancelled;
   }
   
   public Map<Listener, List<Method>> getListenerMethods()

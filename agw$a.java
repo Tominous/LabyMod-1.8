@@ -21,7 +21,7 @@ public enum agw$a
       {
         public boolean a(agw.a ☃)
         {
-          return ☃.a() == a;
+          return ☃.a() == this.a;
         }
       });
       k[☃.ordinal()] = ((a[])☃.toArray(new a[☃.size()]));
@@ -35,20 +35,20 @@ public enum agw$a
   
   private agw$a(agw.b ☃, int ☃, String ☃, String ☃)
   {
-    l = ☃;
-    m = ☃;
-    n = ☃;
-    o = ☃;
+    this.l = ☃;
+    this.m = ☃;
+    this.n = ☃;
+    this.o = ☃;
   }
   
   public agw.b a()
   {
-    return l;
+    return this.l;
   }
   
   public int b()
   {
-    return m;
+    return this.m;
   }
   
   public static a a(agw.b ☃, int ☃)
@@ -67,16 +67,16 @@ public enum agw$a
   
   public String toString()
   {
-    return n;
+    return this.n;
   }
   
   public String l()
   {
-    return n;
+    return this.n;
   }
   
   public String d()
   {
-    return o;
+    return this.o;
   }
 }

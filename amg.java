@@ -7,7 +7,7 @@ public class amg
   
   private amg(afh ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public static amg a(afh ☃)
@@ -17,7 +17,7 @@ public class amg
   
   public boolean a(alz ☃)
   {
-    if ((☃ == null) || (☃.c() != a)) {
+    if ((☃ == null) || (☃.c() != this.a)) {
       return false;
     }
     return true;

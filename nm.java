@@ -7,9 +7,9 @@ public class nm<V>
   
   public nm()
   {
-    d = 0.75F;
-    c = 12;
-    a = new nm.a[16];
+    this.d = 0.75F;
+    this.c = 12;
+    this.a = new nm.a[16];
   }
   
   private static int g(int ☃)
@@ -26,9 +26,9 @@ public class nm<V>
   public V a(int ☃)
   {
     int ☃ = g(☃);
-    for (nm.a<V> ☃ = a[a(☃, a.length)]; ☃ != null; ☃ = c) {
-      if (a == ☃) {
-        return (V)b;
+    for (nm.a<V> ☃ = this.a[a(☃, this.a.length)]; ☃ != null; ☃ = ☃.c) {
+      if (☃.a == ☃) {
+        return (V)☃.b;
       }
     }
     return null;
@@ -42,8 +42,8 @@ public class nm<V>
   final nm.a<V> c(int ☃)
   {
     int ☃ = g(☃);
-    for (nm.a<V> ☃ = a[a(☃, a.length)]; ☃ != null; ☃ = c) {
-      if (a == ☃) {
+    for (nm.a<V> ☃ = this.a[a(☃, this.a.length)]; ☃ != null; ☃ = ☃.c) {
+      if (☃.a == ☃) {
         return ☃;
       }
     }
@@ -53,11 +53,11 @@ public class nm<V>
   public void a(int ☃, V ☃)
   {
     int ☃ = g(☃);
-    int ☃ = a(☃, a.length);
-    for (nm.a<V> ☃ = a[☃]; ☃ != null; ☃ = c) {
-      if (a == ☃)
+    int ☃ = a(☃, this.a.length);
+    for (nm.a<V> ☃ = this.a[☃]; ☃ != null; ☃ = ☃.c) {
+      if (☃.a == ☃)
       {
-        b = ☃;
+        ☃.b = ☃;
         return;
       }
     }
@@ -66,22 +66,22 @@ public class nm<V>
   
   private void h(int ☃)
   {
-    nm.a<V>[] ☃ = a;
+    nm.a<V>[] ☃ = this.a;
     int ☃ = ☃.length;
     if (☃ == 1073741824)
     {
-      c = Integer.MAX_VALUE;
+      this.c = Integer.MAX_VALUE;
       return;
     }
     nm.a<V>[] ☃ = new nm.a[☃];
     a(☃);
-    a = ☃;
-    c = ((int)(☃ * d));
+    this.a = ☃;
+    this.c = ((int)(☃ * this.d));
   }
   
   private void a(nm.a<V>[] ☃)
   {
-    nm.a<V>[] ☃ = a;
+    nm.a<V>[] ☃ = this.a;
     int ☃ = ☃.length;
     for (int ☃ = 0; ☃ < ☃.length; ☃++)
     {
@@ -91,9 +91,9 @@ public class nm<V>
         ☃[☃] = null;
         do
         {
-          nm.a<V> ☃ = c;
-          int ☃ = a(d, ☃);
-          c = ☃[☃];
+          nm.a<V> ☃ = ☃.c;
+          int ☃ = a(☃.d, ☃);
+          ☃.c = ☃[☃];
           ☃[☃] = ☃;
           ☃ = ☃;
         } while (☃ != null);
@@ -104,25 +104,25 @@ public class nm<V>
   public V d(int ☃)
   {
     nm.a<V> ☃ = e(☃);
-    return ☃ == null ? null : b;
+    return ☃ == null ? null : ☃.b;
   }
   
   final nm.a<V> e(int ☃)
   {
     int ☃ = g(☃);
-    int ☃ = a(☃, a.length);
-    nm.a<V> ☃ = a[☃];
+    int ☃ = a(☃, this.a.length);
+    nm.a<V> ☃ = this.a[☃];
     nm.a<V> ☃ = ☃;
     while (☃ != null)
     {
-      nm.a<V> ☃ = c;
-      if (a == ☃)
+      nm.a<V> ☃ = ☃.c;
+      if (☃.a == ☃)
       {
-        b -= 1;
+        this.b -= 1;
         if (☃ == ☃) {
-          a[☃] = ☃;
+          this.a[☃] = ☃;
         } else {
-          c = ☃;
+          ☃.c = ☃;
         }
         return ☃;
       }
@@ -134,11 +134,11 @@ public class nm<V>
   
   public void c()
   {
-    nm.a<V>[] ☃ = a;
+    nm.a<V>[] ☃ = this.a;
     for (int ☃ = 0; ☃ < ☃.length; ☃++) {
       ☃[☃] = null;
     }
-    b = 0;
+    this.b = 0;
   }
   
   static class a<V>
@@ -150,20 +150,20 @@ public class nm<V>
     
     a(int ☃, int ☃, V ☃, a<V> ☃)
     {
-      b = ☃;
-      c = ☃;
-      a = ☃;
-      d = ☃;
+      this.b = ☃;
+      this.c = ☃;
+      this.a = ☃;
+      this.d = ☃;
     }
     
     public final int a()
     {
-      return a;
+      return this.a;
     }
     
     public final V b()
     {
-      return (V)b;
+      return (V)this.b;
     }
     
     public final boolean equals(Object ☃)
@@ -187,7 +187,7 @@ public class nm<V>
     
     public final int hashCode()
     {
-      return nm.f(a);
+      return nm.f(this.a);
     }
     
     public final String toString()
@@ -198,10 +198,10 @@ public class nm<V>
   
   private void a(int ☃, int ☃, V ☃, int ☃)
   {
-    nm.a<V> ☃ = a[☃];
-    a[☃] = new nm.a(☃, ☃, ☃, ☃);
-    if (b++ >= c) {
-      h(2 * a.length);
+    nm.a<V> ☃ = this.a[☃];
+    this.a[☃] = new nm.a(☃, ☃, ☃, ☃);
+    if (this.b++ >= this.c) {
+      h(2 * this.a.length);
     }
   }
 }

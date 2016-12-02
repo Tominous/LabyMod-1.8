@@ -19,7 +19,7 @@ class bqn$1
   {
     try
     {
-      URL ☃ = new URL("https://api.twitch.tv/kraken?oauth_token=" + URLEncoder.encode(a.getValue(), "UTF-8"));
+      URL ☃ = new URL("https://api.twitch.tv/kraken?oauth_token=" + URLEncoder.encode(this.a.getValue(), "UTF-8"));
       String ☃ = nj.a(☃);
       JsonObject ☃ = ni.l(new JsonParser().parse(☃), "Response");
       JsonObject ☃ = ni.s(☃, "token");
@@ -28,32 +28,32 @@ class bqn$1
         String ☃ = ni.h(☃, "user_name");
         bqn.G().debug(bqn.a, "Authenticated with twitch; username is {}", new Object[] { ☃ });
         AuthToken ☃ = new AuthToken();
-        data = a.getValue();
+        ☃.data = this.a.getValue();
         
-        bqn.a(b).a(☃, ☃);
-        bqn.b(b).c(☃);
-        bqn.b(b).a(☃);
+        bqn.a(this.b).a(☃, ☃);
+        bqn.b(this.b).c(☃);
+        bqn.b(this.b).a(☃);
         
         Runtime.getRuntime().addShutdownHook(new Thread("Twitch shutdown hook")
         {
           public void run()
           {
-            b.f();
+            bqn.1.this.b.f();
           }
         });
-        bqn.a(b).C();
+        bqn.a(this.b).C();
         
-        bqn.b(b).n();
+        bqn.b(this.b).n();
       }
       else
       {
-        bqn.a(b, bqm.a.b);
+        bqn.a(this.b, bqm.a.b);
         bqn.G().error(bqn.a, "Given twitch access token is invalid");
       }
     }
     catch (IOException ☃)
     {
-      bqn.a(b, bqm.a.a);
+      bqn.a(this.b, bqm.a.a);
       bqn.G().error(bqn.a, "Could not authenticate with twitch", ☃);
     }
   }

@@ -13,11 +13,11 @@ public class asv
   
   public asv(int ☃, int ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
     
-    j = a(☃, ☃, ☃);
+    this.j = a(☃, ☃, ☃);
   }
   
   public static int a(int ☃, int ☃, int ☃)
@@ -27,17 +27,17 @@ public class asv
   
   public float a(asv ☃)
   {
-    float ☃ = a - a;
-    float ☃ = b - b;
-    float ☃ = c - c;
+    float ☃ = ☃.a - this.a;
+    float ☃ = ☃.b - this.b;
+    float ☃ = ☃.c - this.c;
     return ns.c(☃ * ☃ + ☃ * ☃ + ☃ * ☃);
   }
   
   public float b(asv ☃)
   {
-    float ☃ = a - a;
-    float ☃ = b - b;
-    float ☃ = c - c;
+    float ☃ = ☃.a - this.a;
+    float ☃ = ☃.b - this.b;
+    float ☃ = ☃.c - this.c;
     return ☃ * ☃ + ☃ * ☃ + ☃ * ☃;
   }
   
@@ -46,23 +46,23 @@ public class asv
     if ((☃ instanceof asv))
     {
       asv ☃ = (asv)☃;
-      return (j == j) && (a == a) && (b == b) && (c == c);
+      return (this.j == ☃.j) && (this.a == ☃.a) && (this.b == ☃.b) && (this.c == ☃.c);
     }
     return false;
   }
   
   public int hashCode()
   {
-    return j;
+    return this.j;
   }
   
   public boolean a()
   {
-    return d >= 0;
+    return this.d >= 0;
   }
   
   public String toString()
   {
-    return a + ", " + b + ", " + c;
+    return this.a + ", " + this.b + ", " + this.c;
   }
 }

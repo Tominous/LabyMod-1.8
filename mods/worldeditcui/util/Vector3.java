@@ -7,7 +7,7 @@ public class Vector3
 {
   public Vector3(pk entity, double partialTicks)
   {
-    this(p + (s - p) * partialTicks, q + (t - q) * partialTicks, r + (u - r) * partialTicks);
+    this(entity.p + (entity.s - entity.p) * partialTicks, entity.q + (entity.t - entity.q) * partialTicks, entity.r + (entity.u - entity.r) * partialTicks);
   }
   
   public Vector3(double x, double y, double z)
@@ -44,17 +44,17 @@ public class Vector3
   
   public double getX()
   {
-    return x;
+    return this.x;
   }
   
   public double getY()
   {
-    return y;
+    return this.y;
   }
   
   public double getZ()
   {
-    return z;
+    return this.z;
   }
   
   public Vector3 add(Vector3 that)
@@ -94,22 +94,22 @@ public class Vector3
   
   public Vector3 ceil()
   {
-    return new Vector3(Math.ceil(x), Math.ceil(y), Math.ceil(z));
+    return new Vector3(Math.ceil(this.x), Math.ceil(this.y), Math.ceil(this.z));
   }
   
   public Vector3 floor()
   {
-    return new Vector3(Math.floor(x), Math.floor(y), Math.floor(z));
+    return new Vector3(Math.floor(this.x), Math.floor(this.y), Math.floor(this.z));
   }
   
   public Vector3 round()
   {
-    return new Vector3(Math.round(x), Math.round(y), Math.round(z));
+    return new Vector3(Math.round(this.x), Math.round(this.y), Math.round(this.z));
   }
   
   public Vector3 abs()
   {
-    return new Vector3(Math.abs(x), Math.abs(y), Math.abs(z));
+    return new Vector3(Math.abs(this.x), Math.abs(this.y), Math.abs(this.z));
   }
   
   public double distance(Vector3 a)
@@ -159,7 +159,7 @@ public class Vector3
   
   public String toString()
   {
-    return String.format("{ %f, %f, %f }", new Object[] { Double.valueOf(x), Double.valueOf(y), Double.valueOf(z) });
+    return String.format("{ %f, %f, %f }", new Object[] { Double.valueOf(this.x), Double.valueOf(this.y), Double.valueOf(this.z) });
   }
   
   public static double length(Vector3 a)
@@ -209,32 +209,32 @@ public class Vector3
   
   public static Vector3 ceil(Vector3 o)
   {
-    return new Vector3(Math.ceil(x), Math.ceil(y), Math.ceil(z));
+    return new Vector3(Math.ceil(o.x), Math.ceil(o.y), Math.ceil(o.z));
   }
   
   public static Vector3 floor(Vector3 o)
   {
-    return new Vector3(Math.floor(x), Math.floor(y), Math.floor(z));
+    return new Vector3(Math.floor(o.x), Math.floor(o.y), Math.floor(o.z));
   }
   
   public static Vector3 round(Vector3 o)
   {
-    return new Vector3(Math.round(x), Math.round(y), Math.round(z));
+    return new Vector3(Math.round(o.x), Math.round(o.y), Math.round(o.z));
   }
   
   public static Vector3 abs(Vector3 o)
   {
-    return new Vector3(Math.abs(x), Math.abs(y), Math.abs(z));
+    return new Vector3(Math.abs(o.x), Math.abs(o.y), Math.abs(o.z));
   }
   
   public static Vector3 min(Vector3 o1, Vector3 o2)
   {
-    return new Vector3(Math.min(x, x), Math.min(y, y), Math.min(z, z));
+    return new Vector3(Math.min(o1.x, o2.x), Math.min(o1.y, o2.y), Math.min(o1.z, o2.z));
   }
   
   public static Vector3 max(Vector3 o1, Vector3 o2)
   {
-    return new Vector3(Math.max(x, x), Math.max(y, y), Math.max(z, z));
+    return new Vector3(Math.max(o1.x, o2.x), Math.max(o1.y, o2.y), Math.max(o1.z, o2.z));
   }
   
   public static Vector3 rand()
@@ -250,17 +250,17 @@ public class Vector3
   
   public static Vector3 pow(Vector3 o, double power)
   {
-    return new Vector3(Math.pow(x, power), Math.pow(y, power), Math.pow(z, power));
+    return new Vector3(Math.pow(o.x, power), Math.pow(o.y, power), Math.pow(o.z, power));
   }
   
   public static Vector2 toVector2(Vector3 o)
   {
-    return new Vector2(x, z);
+    return new Vector2(o.x, o.z);
   }
   
   public static Vector2m toVector2m(Vector3 o)
   {
-    return new Vector2m(Double.valueOf(x), Double.valueOf(z));
+    return new Vector2m(Double.valueOf(o.x), Double.valueOf(o.z));
   }
   
   public static double[] toArray(Vector3 a)
@@ -288,7 +288,7 @@ public class Vector3
   
   public int hashCode()
   {
-    return (int)(x * y % z);
+    return (int)(this.x * this.y % this.z);
   }
   
   public static final Vector3 ZERO = new Vector3(0.0D, 0.0D, 0.0D);

@@ -17,7 +17,7 @@ public class ModGuiResourcePacks
   
   protected String e()
   {
-    return title;
+    return this.title;
   }
   
   public void setTitle(String title)

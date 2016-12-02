@@ -11,43 +11,43 @@ public class rq
   
   public rq(py ☃, double ☃, float ☃)
   {
-    a = ☃;
-    f = ☃;
-    g = ☃;
+    this.a = ☃;
+    this.f = ☃;
+    this.g = ☃;
     a(1);
   }
   
   public boolean a()
   {
-    b = a.u();
-    if (b == null) {
+    this.b = this.a.u();
+    if (this.b == null) {
       return false;
     }
-    if (b.h(a) > g * g) {
+    if (this.b.h(this.a) > this.g * this.g) {
       return false;
     }
-    aui ☃ = tc.a(a, 16, 7, new aui(b.s, b.t, b.u));
+    aui ☃ = tc.a(this.a, 16, 7, new aui(this.b.s, this.b.t, this.b.u));
     if (☃ == null) {
       return false;
     }
-    c = a;
-    d = b;
-    e = c;
+    this.c = ☃.a;
+    this.d = ☃.b;
+    this.e = ☃.c;
     return true;
   }
   
   public boolean b()
   {
-    return (!a.s().m()) && (b.ai()) && (b.h(a) < g * g);
+    return (!this.a.s().m()) && (this.b.ai()) && (this.b.h(this.a) < this.g * this.g);
   }
   
   public void d()
   {
-    b = null;
+    this.b = null;
   }
   
   public void c()
   {
-    a.s().a(c, d, e, f);
+    this.a.s().a(this.c, this.d, this.e, this.f);
   }
 }

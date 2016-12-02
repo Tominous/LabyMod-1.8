@@ -12,24 +12,24 @@ public class bdo
   {
     super(☃, ☃, ☃, ☃, ☃, ☃, ☃);
     
-    v = ☃;
-    w = ☃;
-    x = ☃;
-    az = ☃;
-    aA = ☃;
-    aB = ☃;
-    s = (p = ☃ + ☃);
-    t = (q = ☃ + ☃);
-    u = (r = ☃ + ☃);
+    this.v = ☃;
+    this.w = ☃;
+    this.x = ☃;
+    this.az = ☃;
+    this.aA = ☃;
+    this.aB = ☃;
+    this.s = (this.p = ☃ + ☃);
+    this.t = (this.q = ☃ + ☃);
+    this.u = (this.r = ☃ + ☃);
     
-    float ☃ = V.nextFloat() * 0.6F + 0.4F;
-    a = (h = V.nextFloat() * 0.5F + 0.2F);
-    ar = (as = at = 1.0F * ☃);
-    as *= 0.9F;
-    ar *= 0.9F;
+    float ☃ = this.V.nextFloat() * 0.6F + 0.4F;
+    this.a = (this.h = this.V.nextFloat() * 0.5F + 0.2F);
+    this.ar = (this.as = this.at = 1.0F * ☃);
+    this.as *= 0.9F;
+    this.ar *= 0.9F;
     
-    g = ((int)(Math.random() * 10.0D) + 30);
-    T = true;
+    this.g = ((int)(Math.random() * 10.0D) + 30);
+    this.T = true;
     k((int)(Math.random() * 26.0D + 1.0D + 224.0D));
   }
   
@@ -37,7 +37,7 @@ public class bdo
   {
     int ☃ = super.b(☃);
     
-    float ☃ = f / g;
+    float ☃ = this.f / this.g;
     ☃ *= ☃;
     ☃ *= ☃;
     
@@ -53,7 +53,7 @@ public class bdo
   public float c(float ☃)
   {
     float ☃ = super.c(☃);
-    float ☃ = f / g;
+    float ☃ = this.f / this.g;
     ☃ *= ☃;
     ☃ *= ☃;
     return ☃ * (1.0F - ☃) + ☃;
@@ -61,20 +61,20 @@ public class bdo
   
   public void t_()
   {
-    p = s;
-    q = t;
-    r = u;
+    this.p = this.s;
+    this.q = this.t;
+    this.r = this.u;
     
-    float ☃ = f / g;
+    float ☃ = this.f / this.g;
     ☃ = 1.0F - ☃;
     
     float ☃ = 1.0F - ☃;
     ☃ *= ☃;
     ☃ *= ☃;
-    s = (az + v * ☃);
-    t = (aA + w * ☃ - ☃ * 1.2F);
-    u = (aB + x * ☃);
-    if (f++ >= g) {
+    this.s = (this.az + this.v * ☃);
+    this.t = (this.aA + this.w * ☃ - ☃ * 1.2F);
+    this.u = (this.aB + this.x * ☃);
+    if (this.f++ >= this.g) {
       J();
     }
   }

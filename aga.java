@@ -10,9 +10,9 @@ public class aga
   public aga(boolean ☃)
   {
     super(arm.d);
-    b = ☃;
+    this.b = ☃;
     
-    j(M.b().a(a, Integer.valueOf(0)));
+    j(this.M.b().a(a, Integer.valueOf(0)));
     a(0.0F, 0.0F, 0.0F, 1.0F, 0.375F, 1.0F);
     a(yz.d);
     
@@ -33,7 +33,7 @@ public class aga
   
   public void f(adm ☃, cj ☃)
   {
-    if (t.o()) {
+    if (☃.t.o()) {
       return;
     }
     alz ☃ = ☃.p(☃);
@@ -45,7 +45,7 @@ public class aga
     
     ☃ = Math.round(☃ * ns.b(☃));
     ☃ = ns.a(☃, 0, 15);
-    if (b) {
+    if (this.b) {
       ☃ = 15 - ☃;
     }
     if (((Integer)☃.b(a)).intValue() != ☃) {
@@ -57,10 +57,10 @@ public class aga
   {
     if (☃.cn())
     {
-      if (D) {
+      if (☃.D) {
         return true;
       }
-      if (b)
+      if (this.b)
       {
         ☃.a(☃, afi.cl.Q().a(a, ☃.b(a)), 4);
         afi.cl.f(☃, ☃);
@@ -127,7 +127,7 @@ public class aga
   
   public void a(zw ☃, yz ☃, List<zx> ☃)
   {
-    if (!b) {
+    if (!this.b) {
       super.a(☃, ☃, ☃);
     }
   }

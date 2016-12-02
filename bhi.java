@@ -32,22 +32,22 @@ public class bhi
     if ((☃ == afi.K) && (☃.a(☃) < 0.5F))
     {
       ☃ = ☃.a(alt.N, Boolean.valueOf(true));
-      c.b().a(☃, c.a(☃, ☃, ☃), ☃, ☃, ☃, true);
+      this.c.b().a(☃, this.c.a(☃, ☃, ☃), ☃, ☃, ☃, true);
     }
     else if ((☃.g()) && (!☃.d()))
     {
       alt.a ☃ = ☃ == afi.F ? alt.a.b : alt.a.a;
       alz ☃ = afi.K.Q().a(alt.b, ☃).a(alt.a, ☃.b(als.a));
       ☃ = ☃.a(alt.N, Boolean.valueOf(☃.a(☃) >= 0.5F));
-      c.b().a(☃, c.a(☃, ☃, ☃), ☃, ☃, ☃, true);
+      this.c.b().a(☃, this.c.a(☃, ☃, ☃), ☃, ☃, ☃, true);
       
       ☃.c((float)☃ - ☃.n(), (float)☃ - ☃.o(), (float)☃ - ☃.p());
       ☃.a(als.b, Boolean.valueOf(true));
-      c.b().a(☃, c.a(☃, ☃, ☃), ☃, ☃, ☃, true);
+      this.c.b().a(☃, this.c.a(☃, ☃, ☃), ☃, ☃, ☃, true);
     }
     else
     {
-      c.b().a(☃, c.a(☃, ☃, ☃), ☃, ☃, ☃, false);
+      this.c.b().a(☃, this.c.a(☃, ☃, ☃), ☃, ☃, ☃, false);
     }
     ☃.c(0.0D, 0.0D, 0.0D);
     ☃.b();

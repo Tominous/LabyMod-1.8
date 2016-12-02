@@ -68,21 +68,21 @@ public class agj
     }
     for (int ☃ = 0; ☃ < 1000; ☃++)
     {
-      cj ☃ = ☃.a(s.nextInt(16) - s.nextInt(16), s.nextInt(8) - s.nextInt(8), s.nextInt(16) - s.nextInt(16));
-      if (pcJ == arm.a)
+      cj ☃ = ☃.a(☃.s.nextInt(16) - ☃.s.nextInt(16), ☃.s.nextInt(8) - ☃.s.nextInt(8), ☃.s.nextInt(16) - ☃.s.nextInt(16));
+      if (☃.p(☃).c().J == arm.a)
       {
-        if (D)
+        if (☃.D)
         {
           for (int ☃ = 0; ☃ < 128; ☃++)
           {
-            double ☃ = s.nextDouble();
-            float ☃ = (s.nextFloat() - 0.5F) * 0.2F;
-            float ☃ = (s.nextFloat() - 0.5F) * 0.2F;
-            float ☃ = (s.nextFloat() - 0.5F) * 0.2F;
+            double ☃ = ☃.s.nextDouble();
+            float ☃ = (☃.s.nextFloat() - 0.5F) * 0.2F;
+            float ☃ = (☃.s.nextFloat() - 0.5F) * 0.2F;
+            float ☃ = (☃.s.nextFloat() - 0.5F) * 0.2F;
             
-            double ☃ = ☃.n() + (☃.n() - ☃.n()) * ☃ + (s.nextDouble() - 0.5D) * 1.0D + 0.5D;
-            double ☃ = ☃.o() + (☃.o() - ☃.o()) * ☃ + s.nextDouble() * 1.0D - 0.5D;
-            double ☃ = ☃.p() + (☃.p() - ☃.p()) * ☃ + (s.nextDouble() - 0.5D) * 1.0D + 0.5D;
+            double ☃ = ☃.n() + (☃.n() - ☃.n()) * ☃ + (☃.s.nextDouble() - 0.5D) * 1.0D + 0.5D;
+            double ☃ = ☃.o() + (☃.o() - ☃.o()) * ☃ + ☃.s.nextDouble() * 1.0D - 0.5D;
+            double ☃ = ☃.p() + (☃.p() - ☃.p()) * ☃ + (☃.s.nextDouble() - 0.5D) * 1.0D + 0.5D;
             ☃.a(cy.y, ☃, ☃, ☃, ☃, ☃, ☃, new int[0]);
           }
         }

@@ -15,18 +15,18 @@ public enum afe$b
   
   private afe$b(int ☃, String ☃)
   {
-    l = ☃;
-    m = ☃;
+    this.l = ☃;
+    this.m = ☃;
   }
   
   public int a()
   {
-    return l;
+    return this.l;
   }
   
   public String toString()
   {
-    return m;
+    return this.m;
   }
   
   public boolean c()
@@ -44,6 +44,6 @@ public enum afe$b
   
   public String l()
   {
-    return m;
+    return this.m;
   }
 }

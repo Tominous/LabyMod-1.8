@@ -14,7 +14,7 @@ public class yl
   public float a(zx ☃, afh ☃)
   {
     if ((☃.t() == arm.d) || (☃.t() == arm.k) || (☃.t() == arm.l)) {
-      return a;
+      return this.a;
     }
     return super.a(☃, ☃);
   }

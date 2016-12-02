@@ -25,15 +25,15 @@ public class ayy
   public ayy(wm ☃, adm ☃, op ☃)
   {
     super(new xs(☃, ☃));
-    F = ☃;
-    H = ((xs)h);
-    I = ☃;
+    this.F = ☃;
+    this.H = ((xs)this.h);
+    this.I = ☃;
   }
   
   protected void b(int ☃, int ☃)
   {
-    q.a(I.f_().c(), 12, 5, 4210752);
-    q.a(F.f_().c(), 8, g - 96 + 2, 4210752);
+    this.q.a(this.I.f_().c(), 12, 5, 4210752);
+    this.q.a(this.F.f_().c(), 8, this.g - 96 + 2, 4210752);
   }
   
   public void e()
@@ -46,15 +46,15 @@ public class ayy
   {
     super.a(☃, ☃, ☃);
     
-    int ☃ = (l - f) / 2;
-    int ☃ = (m - g) / 2;
+    int ☃ = (this.l - this.f) / 2;
+    int ☃ = (this.m - this.g) / 2;
     for (int ☃ = 0; ☃ < 3; ☃++)
     {
       int ☃ = ☃ - (☃ + 60);
       int ☃ = ☃ - (☃ + 14 + 19 * ☃);
       if ((☃ >= 0) && (☃ >= 0) && (☃ < 108) && (☃ < 19) && 
-        (H.a(j.h, ☃))) {
-        j.c.a(H.d, ☃);
+        (this.H.a(this.j.h, ☃))) {
+        this.j.c.a(this.H.d, ☃);
       }
     }
   }
@@ -62,16 +62,16 @@ public class ayy
   protected void a(float ☃, int ☃, int ☃)
   {
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    j.P().a(C);
-    int ☃ = (l - f) / 2;
-    int ☃ = (m - g) / 2;
-    b(☃, ☃, 0, 0, f, g);
+    this.j.P().a(C);
+    int ☃ = (this.l - this.f) / 2;
+    int ☃ = (this.m - this.g) / 2;
+    b(☃, ☃, 0, 0, this.f, this.g);
     
     bfl.E();
     bfl.n(5889);
     bfl.E();
     bfl.D();
-    avr ☃ = new avr(j);
+    avr ☃ = new avr(this.j);
     
     bfl.b((☃.a() - 320) / 2 * ☃.e(), (☃.b() - 240) / 2 * ☃.e(), 320 * ☃.e(), 240 * ☃.e());
     bfl.b(-0.34F, 0.23F, 0.0F);
@@ -88,15 +88,15 @@ public class ayy
     bfl.a(☃, ☃, ☃);
     bfl.b(180.0F, 0.0F, 0.0F, 1.0F);
     
-    j.P().a(D);
+    this.j.P().a(D);
     bfl.b(20.0F, 1.0F, 0.0F, 0.0F);
-    float ☃ = A + (z - A) * ☃;
+    float ☃ = this.A + (this.z - this.A) * ☃;
     bfl.b((1.0F - ☃) * 0.2F, (1.0F - ☃) * 0.1F, (1.0F - ☃) * 0.25F);
     bfl.b(-(1.0F - ☃) * 90.0F - 90.0F, 0.0F, 1.0F, 0.0F);
     bfl.b(180.0F, 1.0F, 0.0F, 0.0F);
     
-    float ☃ = w + (v - w) * ☃ + 0.25F;
-    float ☃ = w + (v - w) * ☃ + 0.75F;
+    float ☃ = this.w + (this.v - this.w) * ☃ + 0.25F;
+    float ☃ = this.w + (this.v - this.w) * ☃ + 0.75F;
     ☃ = (☃ - ns.b(☃)) * 1.6F - 0.3F;
     ☃ = (☃ - ns.b(☃)) * 1.6F - 0.3F;
     if (☃ < 0.0F) {
@@ -118,7 +118,7 @@ public class ayy
     bfl.C();
     avc.a();
     bfl.n(5889);
-    bfl.b(0, 0, j.d, j.e);
+    bfl.b(0, 0, this.j.d, this.j.e);
     bfl.F();
     bfl.n(5888);
     bfl.F();
@@ -126,9 +126,9 @@ public class ayy
     avc.a();
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     
-    ayx.a().a(H.f);
+    ayx.a().a(this.H.f);
     
-    int ☃ = H.e();
+    int ☃ = this.H.e();
     for (int ☃ = 0; ☃ < 3; ☃++)
     {
       int ☃ = ☃ + 60;
@@ -136,9 +136,9 @@ public class ayy
       int ☃ = 86;
       
       String ☃ = ayx.a().b();
-      e = 0.0F;
-      j.P().a(C);
-      int ☃ = H.g[☃];
+      this.e = 0.0F;
+      this.j.P().a(C);
+      int ☃ = this.H.g[☃];
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
       if (☃ == 0)
       {
@@ -147,9 +147,9 @@ public class ayy
       else
       {
         String ☃ = "" + ☃;
-        avn ☃ = j.l;
+        avn ☃ = this.j.l;
         int ☃ = 6839882;
-        if (((☃ < ☃ + 1) || (j.h.bB < ☃)) && (!j.h.bA.d))
+        if (((☃ < ☃ + 1) || (this.j.h.bB < ☃)) && (!this.j.h.bA.d))
         {
           b(☃, ☃ + 14 + 19 * ☃, 0, 185, 108, 19);
           b(☃ + 1, ☃ + 15 + 19 * ☃, 16 * ☃, 239, 16, 16);
@@ -173,7 +173,7 @@ public class ayy
           ☃.a(☃, ☃, ☃ + 16 + 19 * ☃, ☃, ☃);
           ☃ = 8453920;
         }
-        ☃ = j.k;
+        ☃ = this.j.k;
         ☃.a(☃, ☃ + 86 - ☃.a(☃), ☃ + 16 + 19 * ☃ + 7, ☃);
       }
     }
@@ -183,12 +183,12 @@ public class ayy
   {
     super.a(☃, ☃, ☃);
     
-    boolean ☃ = j.h.bA.d;
-    int ☃ = H.e();
+    boolean ☃ = this.j.h.bA.d;
+    int ☃ = this.H.e();
     for (int ☃ = 0; ☃ < 3; ☃++)
     {
-      int ☃ = H.g[☃];
-      int ☃ = H.h[☃];
+      int ☃ = this.H.g[☃];
+      int ☃ = this.H.h[☃];
       int ☃ = ☃ + 1;
       if ((c(60, 14 + 19 * ☃, 108, 17, ☃, ☃)) && (☃ > 0) && (☃ >= 0))
       {
@@ -204,9 +204,9 @@ public class ayy
           if (☃ >= 0) {
             ☃.add("");
           }
-          if (j.h.bB < ☃)
+          if (this.j.h.bB < ☃)
           {
-            ☃.add(a.m.toString() + "Level Requirement: " + H.g[☃]);
+            ☃.add(a.m.toString() + "Level Requirement: " + this.H.g[☃]);
           }
           else
           {
@@ -237,37 +237,37 @@ public class ayy
   
   public void a()
   {
-    zx ☃ = h.a(0).d();
-    if (!zx.b(☃, B))
+    zx ☃ = this.h.a(0).d();
+    if (!zx.b(☃, this.B))
     {
-      B = ☃;
+      this.B = ☃;
       do
       {
-        x += G.nextInt(4) - G.nextInt(4);
-      } while ((v <= x + 1.0F) && (v >= x - 1.0F));
+        this.x += this.G.nextInt(4) - this.G.nextInt(4);
+      } while ((this.v <= this.x + 1.0F) && (this.v >= this.x - 1.0F));
     }
-    u += 1;
-    w = v;
-    A = z;
+    this.u += 1;
+    this.w = this.v;
+    this.A = this.z;
     
     boolean ☃ = false;
     for (int ☃ = 0; ☃ < 3; ☃++) {
-      if (H.g[☃] != 0) {
+      if (this.H.g[☃] != 0) {
         ☃ = true;
       }
     }
     if (☃) {
-      z += 0.2F;
+      this.z += 0.2F;
     } else {
-      z -= 0.2F;
+      this.z -= 0.2F;
     }
-    z = ns.a(z, 0.0F, 1.0F);
+    this.z = ns.a(this.z, 0.0F, 1.0F);
     
-    float ☃ = (x - v) * 0.4F;
+    float ☃ = (this.x - this.v) * 0.4F;
     float ☃ = 0.2F;
     ☃ = ns.a(☃, -☃, ☃);
-    y += (☃ - y) * 0.9F;
+    this.y += (☃ - this.y) * 0.9F;
     
-    v += y;
+    this.v += this.y;
   }
 }

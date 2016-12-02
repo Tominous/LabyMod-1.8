@@ -7,7 +7,7 @@ public class ahu
   protected ahu()
   {
     super(arm.q);
-    j(M.b().a(a, ahu.a.e).a(b, Boolean.valueOf(false)));
+    j(this.M.b().a(a, ahu.a.e).a(b, Boolean.valueOf(false)));
     a(yz.d);
   }
   
@@ -134,7 +134,7 @@ public class ahu
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (D) {
+    if (☃.D) {
       return true;
     }
     ☃ = ☃.a(b);
@@ -219,24 +219,24 @@ public class ahu
     
     private a(int ☃, String ☃, cq ☃)
     {
-      j = ☃;
-      k = ☃;
-      l = ☃;
+      this.j = ☃;
+      this.k = ☃;
+      this.l = ☃;
     }
     
     public int a()
     {
-      return j;
+      return this.j;
     }
     
     public cq c()
     {
-      return l;
+      return this.l;
     }
     
     public String toString()
     {
-      return k;
+      return this.k;
     }
     
     public static a a(int ☃)
@@ -283,7 +283,7 @@ public class ahu
     
     public String l()
     {
-      return k;
+      return this.k;
     }
   }
 }

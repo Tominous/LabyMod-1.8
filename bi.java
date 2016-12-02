@@ -26,7 +26,7 @@ public class bi
   public void a(m ☃, String[] ☃)
     throws bz
   {
-    adm ☃ = (☃ instanceof wn) ? o : MinecraftServer.N().a(0);
+    adm ☃ = (☃ instanceof wn) ? ((wn)☃).o : MinecraftServer.N().a(0);
     ☃.a(new fb("commands.seed.success", new Object[] { Long.valueOf(☃.J()) }));
   }
 }

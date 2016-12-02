@@ -9,7 +9,7 @@ import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
 import de.labystudio.utils.Utils;
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -18,8 +18,8 @@ import pk;
 
 public class CosmeticManager
 {
-  private HashMap<String, ArrayList<Cosmetic>> offlineCosmetics = new HashMap();
-  private HashMap<String, ArrayList<Cosmetic>> onlineCosmetics = new HashMap();
+  private HashMap<String, CosmeticUser> offlineCosmetics = new HashMap();
+  private HashMap<String, CosmeticUser> onlineCosmetics = new HashMap();
   private LoadingCache<String, String> hashCache = CacheBuilder.newBuilder().expireAfterAccess(30L, TimeUnit.SECONDS).build(new CacheLoader()
   {
     public String load(String uuid)
@@ -30,17 +30,17 @@ public class CosmeticManager
   });
   public boolean colorPicker = false;
   
-  public HashMap<String, ArrayList<Cosmetic>> getOfflineCosmetics()
+  public HashMap<String, CosmeticUser> getOfflineCosmetics()
   {
-    return offlineCosmetics;
+    return this.offlineCosmetics;
   }
   
-  public HashMap<String, ArrayList<Cosmetic>> getOnlineCosmetics()
+  public HashMap<String, CosmeticUser> getOnlineCosmetics()
   {
-    return onlineCosmetics;
+    return this.onlineCosmetics;
   }
   
-  public ArrayList<Cosmetic> getCosmetic(pk entityIn)
+  public CosmeticUser getCosmeticUser(pk entityIn)
   {
     if (entityIn == null) {
       return null;
@@ -48,23 +48,23 @@ public class CosmeticManager
     if (entityIn.aK() == null) {
       return null;
     }
-    if (!settingscosmetics) {
+    if (!ConfigManager.settings.cosmetics) {
       return null;
     }
     String hash = null;
     try
     {
-      hash = (String)hashCache.get(entityIn.aK().toString());
+      hash = (String)this.hashCache.get(entityIn.aK().toString());
     }
     catch (ExecutionException e)
     {
       e.printStackTrace();
       return null;
     }
-    if (!offlineCosmetics.containsKey(hash)) {
+    if (!this.offlineCosmetics.containsKey(hash)) {
       return null;
     }
-    return (ArrayList)offlineCosmetics.get(hash);
+    return (CosmeticUser)this.offlineCosmetics.get(hash);
   }
   
   public boolean hasCosmetic(EnumCosmetic[] types)
@@ -72,76 +72,74 @@ public class CosmeticManager
     if (!LabyMod.getInstance().isInGame()) {
       return false;
     }
-    ArrayList<Cosmetic> all = getCosmetic(Ah);
-    if (all == null) {
+    CosmeticUser user = getCosmeticUser(ave.A().h);
+    if (user == null) {
       return false;
     }
-    for (Cosmetic cos : all) {
-      for (EnumCosmetic type : types) {
-        if (type == cos.getType()) {
-          return true;
-        }
+    for (EnumCosmetic cos : types) {
+      if (user.getEnumList().contains(cos)) {
+        return true;
       }
     }
     return false;
   }
   
+  public Cosmetic getCosmeticByType(EnumCosmetic type)
+  {
+    if (!LabyMod.getInstance().isInGame()) {
+      return null;
+    }
+    CosmeticUser user = getCosmeticUser(ave.A().h);
+    return user == null ? null : (Cosmetic)user.getCosmeticHashMap().get(type);
+  }
+  
   public boolean hasCosmetic(EnumCosmetic type)
   {
-    return hasCosmetic(new EnumCosmetic[] { type });
+    if (!LabyMod.getInstance().isInGame()) {
+      return false;
+    }
+    CosmeticUser user = getCosmeticUser(ave.A().h);
+    return user == null ? false : user.getEnumList().contains(type);
   }
   
   public double getNameTagHeight(pk entityIn)
   {
-    return getNameTagHeight(getCosmetic(entityIn));
-  }
-  
-  public double getNameTagHeight(ArrayList<Cosmetic> cos)
-  {
-    if (cos == null) {
-      return 0.0D;
-    }
-    double out = 0.0D;
-    for (Cosmetic cosmetic : cos) {
-      if (height > out) {
-        out = height;
-      }
-    }
-    return out;
+    CosmeticUser user = getCosmeticUser(entityIn);
+    return user == null ? 0.0D : user.getNameTagHeight();
   }
   
   public void load()
   {
-    if (settingscosmeticsWolfTail) {
+    if (ConfigManager.settings.cosmeticsWolfTail) {
       GuiCosmetics.setCosmetic(new Cosmetic(EnumCosmetic.WOLFTAIL, ""), false);
     }
-    if (settingscosmeticsWings)
+    if (ConfigManager.settings.cosmeticsWings)
     {
       Cosmetic cos = new Cosmetic(EnumCosmetic.WINGS, "");
-      a = settingscolorR;
-      b = settingscolorG;
-      c = settingscolorB;
+      cos.a = ConfigManager.settings.colorR;
+      cos.b = ConfigManager.settings.colorG;
+      cos.c = ConfigManager.settings.colorB;
       GuiCosmetics.setCosmetic(cos, false);
     }
-    if (settingscosmeticsOcelot) {
+    if (ConfigManager.settings.cosmeticsOcelot) {
       GuiCosmetics.setCosmetic(new Cosmetic(EnumCosmetic.OCELOTTAIL, ""), false);
     }
-    if (settingscosmeticsDeadmau) {
+    if (ConfigManager.settings.cosmeticsDeadmau) {
       GuiCosmetics.setCosmetic(new Cosmetic(EnumCosmetic.DEADMAU5, ""), false);
     }
-    if (settingscosmeticsBlaze) {
+    if (ConfigManager.settings.cosmeticsBlaze) {
       GuiCosmetics.setCosmetic(new Cosmetic(EnumCosmetic.BLAZE, ""), false);
     }
-    if (settingscosmeticsWither) {
+    if (ConfigManager.settings.cosmeticsWither) {
       GuiCosmetics.setCosmetic(new Cosmetic(EnumCosmetic.WITHER, ""), false);
     }
-    if (settingscosmeticsHat) {
+    if (ConfigManager.settings.cosmeticsHat) {
       GuiCosmetics.setCosmetic(new Cosmetic(EnumCosmetic.HAT, ""), false);
     }
-    if (settingscosmeticsTool != 0) {
-      GuiCosmetics.setCosmetic(new Cosmetic(EnumCosmetic.TOOL, "1:" + settingscosmeticsTool), false);
+    if (ConfigManager.settings.cosmeticsTool != 0) {
+      GuiCosmetics.setCosmetic(new Cosmetic(EnumCosmetic.TOOL, "1:" + ConfigManager.settings.cosmeticsTool), false);
     }
-    if (settingscosmeticsHalo) {
+    if (ConfigManager.settings.cosmeticsHalo) {
       GuiCosmetics.setCosmetic(new Cosmetic(EnumCosmetic.HALO, ""), false);
     }
   }

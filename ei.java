@@ -14,8 +14,8 @@ public class ei
   
   public ei(int ☃)
   {
-    b = ☃;
-    a = new Inflater();
+    this.b = ☃;
+    this.a = new Inflater();
   }
   
   protected void decode(ChannelHandlerContext ☃, ByteBuf ☃, List<Object> ☃)
@@ -32,26 +32,26 @@ public class ei
     }
     else
     {
-      if (☃ < b) {
-        throw new DecoderException("Badly compressed packet - size of " + ☃ + " is below server threshold of " + b);
+      if (☃ < this.b) {
+        throw new DecoderException("Badly compressed packet - size of " + ☃ + " is below server threshold of " + this.b);
       }
       if (☃ > 2097152) {
         throw new DecoderException("Badly compressed packet - size of " + ☃ + " is larger than protocol maximum of " + 2097152);
       }
       byte[] ☃ = new byte[☃.readableBytes()];
       ☃.readBytes(☃);
-      a.setInput(☃);
+      this.a.setInput(☃);
       
       byte[] ☃ = new byte[☃];
-      a.inflate(☃);
+      this.a.inflate(☃);
       ☃.add(Unpooled.wrappedBuffer(☃));
       
-      a.reset();
+      this.a.reset();
     }
   }
   
   public void a(int ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
 }

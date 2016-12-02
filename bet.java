@@ -1,6 +1,5 @@
 import com.mojang.authlib.GameProfile;
 import de.labystudio.capes.CapeManager;
-import de.labystudio.capes.EnumCapePriority;
 import de.labystudio.capes.MineconRenderer;
 import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
@@ -15,21 +14,20 @@ public abstract class bet
   private bdc a;
   private String nameClear = null;
   private jy locationCape;
-  public EnumCapePriority capeType = null;
   private MineconRenderer mineconParticleRender;
   
   public bet(adm worldIn, GameProfile playerProfile)
   {
     super(worldIn, playerProfile);
     
-    locationCape = null;
-    nameClear = playerProfile.getName();
-    if ((nameClear != null) && (!nameClear.isEmpty())) {
-      nameClear = nx.a(nameClear);
+    this.locationCape = null;
+    this.nameClear = playerProfile.getName();
+    if ((this.nameClear != null) && (!this.nameClear.isEmpty())) {
+      this.nameClear = nx.a(this.nameClear);
     }
     LabyMod.getInstance().getCapeManager().downloadCape(this, false, false);
-    if (settingsmineconParticle) {
-      mineconParticleRender = new MineconRenderer();
+    if (ConfigManager.settings.mineconParticle) {
+      this.mineconParticleRender = new MineconRenderer();
     }
   }
   
@@ -46,10 +44,10 @@ public abstract class bet
   
   protected bdc b()
   {
-    if (a == null) {
-      a = ave.A().u().a(aK());
+    if (this.a == null) {
+      this.a = ave.A().u().a(aK());
     }
-    return a;
+    return this.a;
   }
   
   public boolean g()
@@ -61,7 +59,6 @@ public abstract class bet
   public jy i()
   {
     bdc networkplayerinfo = b();
-    
     return networkplayerinfo == null ? bmz.a(aK()) : networkplayerinfo.g();
   }
   
@@ -69,12 +66,11 @@ public abstract class bet
   {
     bdc networkplayerinfo = b();
     jy original = networkplayerinfo == null ? null : networkplayerinfo.h();
-    boolean originalAvailable = (LabyMod.getInstance().getCapeManager().getCapePriority() == EnumCapePriority.ORIGINAL) && (original != null);
-    if ((!originalAvailable) && (settingscapes) && (locationCape != null)) {
-      return locationCape;
+    if ((ConfigManager.settings.capes) && (this.locationCape != null)) {
+      return this.locationCape;
     }
-    if ((original != null) && (mineconParticleRender != null) && (settingsmineconParticle)) {
-      mineconParticleRender.render(this);
+    if ((original != null) && (this.mineconParticleRender != null) && (ConfigManager.settings.mineconParticle)) {
+      this.mineconParticleRender.render(this);
     }
     return original;
   }
@@ -99,20 +95,19 @@ public abstract class bet
   public String l()
   {
     bdc networkplayerinfo = b();
-    
     return networkplayerinfo == null ? bmz.b(aK()) : networkplayerinfo.f();
   }
   
   public float o()
   {
     float f = 1.0F;
-    if (bA.b) {
+    if (this.bA.b) {
       f *= 1.1F;
     }
     qc iattributeinstance = a(vy.d);
-    if ((settingsspeedFOV) && (Allowed.unfairExtra()))
+    if ((ConfigManager.settings.speedFOV) && (Allowed.unfairExtra()))
     {
-      f = (float)(f * ((iattributeinstance.e() / bA.b() + 1.0D) / 2.0D));
+      f = (float)(f * ((iattributeinstance.e() / this.bA.b() + 1.0D) / 2.0D));
     }
     else
     {
@@ -120,9 +115,9 @@ public abstract class bet
       if (aw()) {
         speed = 0.13000000312924387D;
       }
-      f = (float)(f * ((speed / bA.b() + 1.0D) / 2.0D));
+      f = (float)(f * ((speed / this.bA.b() + 1.0D) / 2.0D));
     }
-    if ((bA.b() == 0.0F) || (Float.isNaN(f)) || (Float.isInfinite(f))) {
+    if ((this.bA.b() == 0.0F) || (Float.isNaN(f)) || (Float.isInfinite(f))) {
       f = 1.0F;
     }
     if ((bS()) && (bQ().b() == zy.f))
@@ -141,13 +136,12 @@ public abstract class bet
   
   public String getNameClear()
   {
-    return nameClear;
+    return this.nameClear;
   }
   
-  public void setLocationOfCape(jy locationOfCape, EnumCapePriority capeType)
+  public void setLocationOfCape(jy locationOfCape, boolean optifine)
   {
-    locationCape = locationOfCape;
-    this.capeType = capeType;
-    Debug.debug("[LabyMod] Loaded " + capeType.name() + " cape of " + getNameClear());
+    this.locationCape = locationOfCape;
+    Debug.debug("[LabyMod] Loaded " + (optifine ? "Optifine" : "LabyMod") + " cape of " + getNameClear());
   }
 }

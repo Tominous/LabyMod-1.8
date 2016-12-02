@@ -5,6 +5,6 @@ class bnm$2
   
   public void run()
   {
-    val$minecraft.a(val$guiscreenworking);
+    this.val$minecraft.a(this.val$guiscreenworking);
   }
 }

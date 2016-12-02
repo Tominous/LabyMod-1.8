@@ -8,14 +8,14 @@ public class lk
   
   public lk(MinecraftServer ☃, ek ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public void a(jc ☃)
   {
-    b.a(☃.a());
-    b.a(new lo(a, b));
+    this.b.a(☃.a());
+    this.b.a(new lo(this.a, this.b));
   }
   
   public void a(eu ☃) {}

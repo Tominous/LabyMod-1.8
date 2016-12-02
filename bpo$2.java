@@ -2,20 +2,24 @@ import java.util.concurrent.Callable;
 import net.minecraft.client.ClientBrandRetriever;
 
 class bpo$2
-  implements Callable
+  implements Callable<String>
 {
-  private static final String __OBFID = "CL_00001131";
-  
   bpo$2(bpo parambpo) {}
   
   public String a()
     throws Exception
   {
-    String var1 = ClientBrandRetriever.getClientModName();
-    if (!var1.equals("vanilla")) {
-      return "Definitely; Client brand changed to '" + var1 + "'";
+    String ☃ = ClientBrandRetriever.getClientModName();
+    if (!☃.equals("vanilla")) {
+      return "Definitely; Client brand changed to '" + ☃ + "'";
     }
-    var1 = this$0.getServerModName();
-    return ave.class.getSigners() == null ? "Very likely; Jar signature invalidated" : !var1.equals("vanilla") ? "Definitely; Server brand changed to '" + var1 + "'" : "Probably not. Jar signature remains and both client + server brands are untouched.";
+    ☃ = this.a.getServerModName();
+    if (!☃.equals("vanilla")) {
+      return "Definitely; Server brand changed to '" + ☃ + "'";
+    }
+    if (ave.class.getSigners() == null) {
+      return "Very likely; Jar signature invalidated";
+    }
+    return "Probably not. Jar signature remains and both client + server brands are untouched.";
   }
 }

@@ -53,7 +53,7 @@ public class ModGui
   
   public static void smoothFPS()
   {
-    if (!settingssmoothFPS) {
+    if (!ConfigManager.settings.smoothFPS) {
       return;
     }
     try
@@ -77,7 +77,7 @@ public class ModGui
   
   public static int getFPS()
   {
-    if (settingssmoothFPS) {
+    if (ConfigManager.settings.smoothFPS) {
       return smoothFPS;
     }
     return getRealFPS();
@@ -88,7 +88,7 @@ public class ModGui
     if (!LabyMod.getInstance().isInGame()) {
       return "0.0 ";
     }
-    double f = ns.g(Ah.y);
+    double f = ns.g(ave.A().h.y);
     if (f <= 0.0D) {
       f += 360.0D;
     }
@@ -159,25 +159,25 @@ public class ModGui
     String xN = "X-";
     String zP = "Z+";
     String zN = "Z-";
-    if (settingslayout == 1)
+    if (ConfigManager.settings.layout == 1)
     {
       a = "";
       b = " ";
       c = "";
     }
-    if (settingslayout == 2)
+    if (ConfigManager.settings.layout == 2)
     {
       a = "[";
       b = ", ";
       c = "]";
     }
-    if (settingslayout == 3)
+    if (ConfigManager.settings.layout == 3)
     {
       a = "<";
       b = ", ";
       c = ">";
     }
-    if (settingslayout == 4)
+    if (ConfigManager.settings.layout == 4)
     {
       a = "(";
       b = ", ";
@@ -294,20 +294,20 @@ public class ModGui
   
   public static String getBiom()
   {
-    if (Af == null) {
+    if (ave.A().f == null) {
       return "?";
     }
-    if (Ah == null) {
+    if (ave.A().h == null) {
       return "?";
     }
-    if (Ah.c() == null) {
+    if (ave.A().h.c() == null) {
       return "?";
     }
-    ady gen = Af.b(Ah.c());
+    ady gen = ave.A().f.b(ave.A().h.c());
     if (gen == null) {
       return "?";
     }
-    return ah;
+    return gen.ah;
   }
   
   public static String getX()
@@ -315,10 +315,10 @@ public class ModGui
     if (!LabyMod.getInstance().isInGame()) {
       return "?";
     }
-    if (settingstruncateCoords == 0) {
-      return "" + Ah.c().n();
+    if (ConfigManager.settings.truncateCoords == 0) {
+      return "" + ave.A().h.c().n();
     }
-    return truncateCoords(Ah.s);
+    return truncateCoords(ave.A().h.s);
   }
   
   public static String getY()
@@ -326,10 +326,10 @@ public class ModGui
     if (!LabyMod.getInstance().isInGame()) {
       return "?";
     }
-    if (settingstruncateCoords == 0) {
-      return "" + Ah.c().o();
+    if (ConfigManager.settings.truncateCoords == 0) {
+      return "" + ave.A().h.c().o();
     }
-    return truncateCoords(Ah.t);
+    return truncateCoords(ave.A().h.t);
   }
   
   public static String getZ()
@@ -337,16 +337,16 @@ public class ModGui
     if (!LabyMod.getInstance().isInGame()) {
       return "?";
     }
-    if (settingstruncateCoords == 0) {
-      return "" + Ah.c().p();
+    if (ConfigManager.settings.truncateCoords == 0) {
+      return "" + ave.A().h.c().p();
     }
-    return truncateCoords(Ah.u);
+    return truncateCoords(ave.A().h.u);
   }
   
   public static String truncateCoords(double i)
   {
-    if (settingstruncateCoords != 0) {
-      return truncateDecimal(i, settingstruncateCoords) + "";
+    if (ConfigManager.settings.truncateCoords != 0) {
+      return truncateDecimal(i, ConfigManager.settings.truncateCoords) + "";
     }
     return (int)i + "";
   }
@@ -373,19 +373,19 @@ public class ModGui
   
   public static String createLabel(String get, String set)
   {
-    if (settingslayout == 0) {
+    if (ConfigManager.settings.layout == 0) {
       return "";
     }
-    if (settingslayout == 1) {
+    if (ConfigManager.settings.layout == 1) {
       return Color.c(1) + get + Color.c(2) + ": " + Color.c(3) + set;
     }
-    if (settingslayout == 2) {
+    if (ConfigManager.settings.layout == 2) {
       return Color.c(2) + "[" + Color.c(1) + get + Color.c(2) + "] " + Color.c(3) + set;
     }
-    if (settingslayout == 3) {
+    if (ConfigManager.settings.layout == 3) {
       return Color.c(1) + get + Color.c(2) + "> " + Color.c(3) + set;
     }
-    if (settingslayout == 4) {
+    if (ConfigManager.settings.layout == 4) {
       return Color.c(2) + "(" + Color.c(1) + get + Color.c(2) + ") " + Color.c(3) + set;
     }
     return "Error";
@@ -394,9 +394,9 @@ public class ModGui
   public static void addMainLabel(String prefix, String text, int y)
   {
     if (isSwitch()) {
-      getInstancedraw.addRightLabel(prefix, text, y);
+      LabyMod.getInstance().draw.addRightLabel(prefix, text, y);
     } else {
-      getInstancedraw.addLabel(prefix, text, y);
+      LabyMod.getInstance().draw.addLabel(prefix, text, y);
     }
     mainListNext();
   }
@@ -404,9 +404,9 @@ public class ModGui
   public static void addOffLabel(String prefix, String text, int y)
   {
     if (isSwitch()) {
-      getInstancedraw.addLabel(prefix, text, y);
+      LabyMod.getInstance().draw.addLabel(prefix, text, y);
     } else {
-      getInstancedraw.addRightLabel(prefix, text, y);
+      LabyMod.getInstance().draw.addRightLabel(prefix, text, y);
     }
     offListNext();
   }
@@ -414,9 +414,9 @@ public class ModGui
   public static void addBoxLabel(String prefix, String text, int y)
   {
     if (isSwitch()) {
-      getInstancedraw.drawCenteredString(prefix + text, getInstancedraw.getWidth() - 60, y);
+      LabyMod.getInstance().draw.drawCenteredString(prefix + text, LabyMod.getInstance().draw.getWidth() - 60, y);
     } else {
-      getInstancedraw.drawCenteredString(prefix + text, 60, y);
+      LabyMod.getInstance().draw.drawCenteredString(prefix + text, 60, y);
     }
     mainListNext();
   }
@@ -425,16 +425,16 @@ public class ModGui
   {
     if (isSwitch())
     {
-      getInstancedraw.drawCenteredString(prefix, getInstancedraw.getWidth() - 60 - 4, y);
+      LabyMod.getInstance().draw.drawCenteredString(prefix, LabyMod.getInstance().draw.getWidth() - 60 - 4, y);
       mainListNext();
-      getInstancedraw.drawCenteredString(text, getInstancedraw.getWidth() - 60 - 4, y + 10);
+      LabyMod.getInstance().draw.drawCenteredString(text, LabyMod.getInstance().draw.getWidth() - 60 - 4, y + 10);
       mainListNext();
     }
     else
     {
-      getInstancedraw.drawCenteredString(prefix, 64, y);
+      LabyMod.getInstance().draw.drawCenteredString(prefix, 64, y);
       mainListNext();
-      getInstancedraw.drawCenteredString(text, 64, y + 10);
+      LabyMod.getInstance().draw.drawCenteredString(text, 64, y + 10);
       mainListNext();
     }
   }
@@ -467,7 +467,7 @@ public class ModGui
   
   public static boolean isSwitch()
   {
-    return settingsguiPositionRight;
+    return ConfigManager.settings.guiPositionRight;
   }
   
   public static void drawEntityOnScreen(double x, double y, double size, pr entity)
@@ -480,11 +480,11 @@ public class ModGui
     bfl.b((float)x, (float)y, 50.0F);
     bfl.a((float)-size - 25.0F, (float)size + 25.0F, (float)size);
     bfl.b(180.0F, 0.0F, 0.0F, 1.0F);
-    float var6 = aI;
-    float var7 = y;
-    float var8 = z;
-    float var9 = aL;
-    float var10 = aK;
+    float var6 = entity.aI;
+    float var7 = entity.y;
+    float var8 = entity.z;
+    float var9 = entity.aL;
+    float var10 = entity.aK;
     bfl.b(135.0F, 0.0F, 1.0F, 0.0F);
     
     bfl.b(-135.0F, 0.0F, 1.0F, 0.0F);
@@ -494,11 +494,11 @@ public class ModGui
     var11.a(false);
     var11.a(entity, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F);
     var11.a(true);
-    aI = var6;
-    y = var7;
-    z = var8;
-    aL = var9;
-    aK = var10;
+    entity.aI = var6;
+    entity.y = var7;
+    entity.z = var8;
+    entity.aL = var9;
+    entity.aK = var10;
     bfl.F();
     avc.a();
     bfl.C();
@@ -509,24 +509,24 @@ public class ModGui
   
   public static void getMouseOver(float p_78473_1_)
   {
-    pk var2 = getInstancemc.ac();
+    pk var2 = LabyMod.getInstance().mc.ac();
     if (var2 != null) {
-      if (getInstancemc.f != null)
+      if (LabyMod.getInstance().mc.f != null)
       {
-        getInstancemc.i = null;
+        LabyMod.getInstance().mc.i = null;
         double var3 = 30.0D;
-        getInstancemc.s = var2.a(var3, p_78473_1_);
+        LabyMod.getInstance().mc.s = var2.a(var3, p_78473_1_);
         double var5 = var3;
         aui var7 = var2.d(p_78473_1_);
-        if (getInstancemc.s != null) {
-          var5 = getInstancemc.s.c.f(var7);
+        if (LabyMod.getInstance().mc.s != null) {
+          var5 = LabyMod.getInstance().mc.s.c.f(var7);
         }
         aui var8 = var2.d(p_78473_1_);
-        aui var9 = var7.b(a * var3, b * var3, c * var3);
+        aui var9 = var7.b(var8.a * var3, var8.b * var3, var8.c * var3);
         pointedEntity = null;
         aui var10 = null;
         float var11 = 1.0F;
-        List var12 = getInstancemc.f.b(var2, var2.aR().a(a * var3, b * var3, c * var3).b(var11, var11, var11));
+        List var12 = LabyMod.getInstance().mc.f.b(var2, var2.aR().a(var8.a * var3, var8.b * var3, var8.c * var3).b(var11, var11, var11));
         double var13 = var5;
         for (int var15 = 0; var15 < var12.size(); var15++)
         {
@@ -541,37 +541,37 @@ public class ModGui
               if ((0.0D < var13) || (var13 == 0.0D))
               {
                 pointedEntity = var16;
-                var10 = var19 == null ? var7 : c;
+                var10 = var19 == null ? var7 : var19.c;
                 var13 = 0.0D;
               }
             }
             else if (var19 != null)
             {
-              double var20 = var7.f(c);
+              double var20 = var7.f(var19.c);
               if ((var20 < var13) || (var13 == 0.0D)) {
-                if (var16 == m)
+                if (var16 == var2.m)
                 {
                   if (var13 == 0.0D)
                   {
                     pointedEntity = var16;
-                    var10 = c;
+                    var10 = var19.c;
                   }
                 }
                 else
                 {
                   pointedEntity = var16;
-                  var10 = c;
+                  var10 = var19.c;
                   var13 = var20;
                 }
               }
             }
           }
         }
-        if ((pointedEntity != null) && ((var13 < var5) || (getInstancemc.s == null)))
+        if ((pointedEntity != null) && ((var13 < var5) || (LabyMod.getInstance().mc.s == null)))
         {
-          getInstancemc.s = new auh(pointedEntity, var10);
+          LabyMod.getInstance().mc.s = new auh(pointedEntity, var10);
           if (((pointedEntity instanceof pr)) || ((pointedEntity instanceof uo))) {
-            getInstancemc.i = pointedEntity;
+            LabyMod.getInstance().mc.i = pointedEntity;
           }
         }
       }

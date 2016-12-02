@@ -8,6 +8,6 @@ class bmj$1
   public String a()
     throws Exception
   {
-    return val$textureObjf.getClass().getName();
+    return this.val$textureObjf.getClass().getName();
   }
 }

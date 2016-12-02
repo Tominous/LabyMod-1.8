@@ -16,12 +16,12 @@ public class PacketServerMessage
   
   public void read(PacketBuf buf)
   {
-    message = buf.readString();
+    this.message = buf.readString();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeString(message);
+    buf.writeString(this.message);
   }
   
   public void handle(PacketHandler packetHandler)
@@ -31,6 +31,6 @@ public class PacketServerMessage
   
   public String getMessage()
   {
-    return message;
+    return this.message;
   }
 }

@@ -16,7 +16,7 @@ public class bji
   protected void a(vu ☃, float ☃)
   {
     int ☃ = ☃.cm();
-    float ☃ = (c + (b - c) * ☃) / (☃ * 0.5F + 1.0F);
+    float ☃ = (☃.c + (☃.b - ☃.c) * ☃) / (☃ * 0.5F + 1.0F);
     float ☃ = 1.0F / (☃ + 1.0F);
     float ☃ = ☃;
     bfl.a(☃ * ☃, 1.0F / ☃ * ☃, ☃ * ☃);

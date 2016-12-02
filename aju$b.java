@@ -5,16 +5,16 @@ public enum aju$b
   
   private aju$b(String ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
   
   public String toString()
   {
-    return f;
+    return this.f;
   }
   
   public String l()
   {
-    return f;
+    return this.f;
   }
 }

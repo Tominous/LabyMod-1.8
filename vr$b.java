@@ -10,48 +10,48 @@ class vr$b
   public vr$b(vr ☃)
   {
     super(☃);
-    g = ☃;
+    this.g = ☃;
   }
   
   public void c()
   {
-    if (!f) {
+    if (!this.f) {
       return;
     }
-    double ☃ = b - g.s;
-    double ☃ = c - g.t;
-    double ☃ = d - g.u;
+    double ☃ = this.b - this.g.s;
+    double ☃ = this.c - this.g.t;
+    double ☃ = this.d - this.g.u;
     
     double ☃ = ☃ * ☃ + ☃ * ☃ + ☃ * ☃;
-    if (h-- <= 0)
+    if (this.h-- <= 0)
     {
-      h += g.bc().nextInt(5) + 2;
+      this.h += this.g.bc().nextInt(5) + 2;
       
       ☃ = ns.a(☃);
-      if (b(b, c, d, ☃))
+      if (b(this.b, this.c, this.d, ☃))
       {
-        g.v += ☃ / ☃ * 0.1D;
-        g.w += ☃ / ☃ * 0.1D;
-        g.x += ☃ / ☃ * 0.1D;
+        this.g.v += ☃ / ☃ * 0.1D;
+        this.g.w += ☃ / ☃ * 0.1D;
+        this.g.x += ☃ / ☃ * 0.1D;
       }
       else
       {
-        f = false;
+        this.f = false;
       }
     }
   }
   
   private boolean b(double ☃, double ☃, double ☃, double ☃)
   {
-    double ☃ = (☃ - g.s) / ☃;
-    double ☃ = (☃ - g.t) / ☃;
-    double ☃ = (☃ - g.u) / ☃;
+    double ☃ = (☃ - this.g.s) / ☃;
+    double ☃ = (☃ - this.g.t) / ☃;
+    double ☃ = (☃ - this.g.u) / ☃;
     
-    aug ☃ = g.aR();
+    aug ☃ = this.g.aR();
     for (int ☃ = 1; ☃ < ☃; ☃++)
     {
       ☃ = ☃.c(☃, ☃, ☃);
-      if (!g.o.a(g, ☃).isEmpty()) {
+      if (!this.g.o.a(this.g, ☃).isEmpty()) {
         return false;
       }
     }

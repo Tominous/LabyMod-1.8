@@ -12,10 +12,10 @@ class bql$2
     switch (bql.3.a[☃.ordinal()])
     {
     case 1: 
-      a.h = RTMPState.lookupValue((int)☃);
+      this.a.h = RTMPState.lookupValue((int)☃);
       break;
     case 2: 
-      a.g = ☃;
+      this.a.g = ☃;
     }
   }
 }

@@ -52,22 +52,22 @@ public abstract class akw
   
   public adm z()
   {
-    return b;
+    return this.b;
   }
   
   public void a(adm ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public boolean t()
   {
-    return b != null;
+    return this.b != null;
   }
   
   public void a(dn ☃)
   {
-    c = new cj(☃.f("x"), ☃.f("y"), ☃.f("z"));
+    this.c = new cj(☃.f("x"), ☃.f("y"), ☃.f("z"));
   }
   
   public void b(dn ☃)
@@ -77,9 +77,9 @@ public abstract class akw
       throw new RuntimeException(getClass() + " is missing a mapping! This is a bug!");
     }
     ☃.a("id", ☃);
-    ☃.a("x", c.n());
-    ☃.a("y", c.o());
-    ☃.a("z", c.p());
+    ☃.a("x", this.c.n());
+    ☃.a("y", this.c.o());
+    ☃.a("z", this.c.p());
   }
   
   public static akw c(dn ☃)
@@ -106,32 +106,32 @@ public abstract class akw
   
   public int u()
   {
-    if (h == -1)
+    if (this.h == -1)
     {
-      alz ☃ = b.p(c);
-      h = ☃.c().c(☃);
+      alz ☃ = this.b.p(this.c);
+      this.h = ☃.c().c(☃);
     }
-    return h;
+    return this.h;
   }
   
   public void p_()
   {
-    if (b != null)
+    if (this.b != null)
     {
-      alz ☃ = b.p(c);
-      h = ☃.c().c(☃);
-      b.b(c, this);
+      alz ☃ = this.b.p(this.c);
+      this.h = ☃.c().c(☃);
+      this.b.b(this.c, this);
       if (w() != afi.a) {
-        b.e(c, w());
+        this.b.e(this.c, w());
       }
     }
   }
   
   public double a(double ☃, double ☃, double ☃)
   {
-    double ☃ = c.n() + 0.5D - ☃;
-    double ☃ = c.o() + 0.5D - ☃;
-    double ☃ = c.p() + 0.5D - ☃;
+    double ☃ = this.c.n() + 0.5D - ☃;
+    double ☃ = this.c.o() + 0.5D - ☃;
+    double ☃ = this.c.p() + 0.5D - ☃;
     return ☃ * ☃ + ☃ * ☃ + ☃ * ☃;
   }
   
@@ -142,15 +142,15 @@ public abstract class akw
   
   public cj v()
   {
-    return c;
+    return this.c;
   }
   
   public afh w()
   {
-    if (e == null) {
-      e = b.p(c).c();
+    if (this.e == null) {
+      this.e = this.b.p(this.c).c();
     }
-    return e;
+    return this.e;
   }
   
   public ff y_()
@@ -160,17 +160,17 @@ public abstract class akw
   
   public boolean x()
   {
-    return d;
+    return this.d;
   }
   
   public void y()
   {
-    d = true;
+    this.d = true;
   }
   
   public void D()
   {
-    d = false;
+    this.d = false;
   }
   
   public boolean c(int ☃, int ☃)
@@ -180,8 +180,8 @@ public abstract class akw
   
   public void E()
   {
-    e = null;
-    h = -1;
+    this.e = null;
+    this.h = -1;
   }
   
   public void a(c ☃)
@@ -191,20 +191,20 @@ public abstract class akw
       public String a()
         throws Exception
       {
-        return (String)akw.G().get(getClass()) + " // " + getClass().getCanonicalName();
+        return (String)akw.G().get(akw.this.getClass()) + " // " + akw.this.getClass().getCanonicalName();
       }
     });
-    if (b == null) {
+    if (this.b == null) {
       return;
     }
-    c.a(☃, c, w(), u());
+    c.a(☃, this.c, w(), u());
     
     ☃.a("Actual block type", new Callable()
     {
       public String a()
         throws Exception
       {
-        int ☃ = afh.a(b.p(c).c());
+        int ☃ = afh.a(akw.this.b.p(akw.this.c).c());
         try
         {
           return String.format("ID #%d (%s // %s)", new Object[] { Integer.valueOf(☃), afh.c(☃).a(), afh.c(☃).getClass().getCanonicalName() });
@@ -218,7 +218,7 @@ public abstract class akw
       public String a()
         throws Exception
       {
-        alz ☃ = b.p(c);
+        alz ☃ = akw.this.b.p(akw.this.c);
         int ☃ = ☃.c().c(☃);
         if (☃ < 0) {
           return "Unknown? (Got " + ☃ + ")";
@@ -232,7 +232,7 @@ public abstract class akw
   
   public void a(cj ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public boolean F()

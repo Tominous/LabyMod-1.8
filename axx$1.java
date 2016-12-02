@@ -8,15 +8,15 @@ class axx$1
   
   public void ok(String message)
   {
-    this$0.g.l = true;
+    this.this$0.g.l = true;
     if (message.isEmpty()) {
-      this$0.output = (Color.cl("a") + "Your skin has been changed, reconnect in order to see it!");
+      this.this$0.output = (Color.cl("a") + "Your skin has been changed, reconnect in order to see it!");
     } else if (message.contains("Current IP not secured")) {
-      this$0.output = (Color.cl("c") + "Your IP has been changed since your last login into the Minecraft website!");
+      this.this$0.output = (Color.cl("c") + "Your IP has been changed since your last login into the Minecraft website!");
     } else if (message.contains("The request requires user authentication")) {
-      this$0.output = (Color.cl("c") + "Invalid session id. (Try restarting your game)");
+      this.this$0.output = (Color.cl("c") + "Invalid session id. (Try restarting your game)");
     } else {
-      this$0.output = message;
+      this.this$0.output = message;
     }
   }
 }

@@ -30,17 +30,17 @@ public class aqk$a
     int ☃ = ☃ * 16 + 8 - 29;
     cq ☃ = cq.c.a.a(☃);
     
-    a.add(new aql.h(☃, ☃, ☃, ☃));
+    this.a.add(new aql.h(☃, ☃, ☃, ☃));
     c();
     
-    d = true;
+    this.d = true;
   }
   
   public void a(adm ☃, Random ☃, aqe ☃)
   {
-    if (!d)
+    if (!this.d)
     {
-      a.clear();
+      this.a.clear();
       b(☃, ☃, e(), f());
     }
     super.a(☃, ☃, ☃);
@@ -48,7 +48,7 @@ public class aqk$a
   
   public boolean a(adg ☃)
   {
-    if (c.contains(☃)) {
+    if (this.c.contains(☃)) {
       return false;
     }
     return super.a(☃);
@@ -58,7 +58,7 @@ public class aqk$a
   {
     super.b(☃);
     
-    c.add(☃);
+    this.c.add(☃);
   }
   
   public void a(dn ☃)
@@ -66,11 +66,11 @@ public class aqk$a
     super.a(☃);
     
     du ☃ = new du();
-    for (adg ☃ : c)
+    for (adg ☃ : this.c)
     {
       dn ☃ = new dn();
-      ☃.a("X", a);
-      ☃.a("Z", b);
+      ☃.a("X", ☃.a);
+      ☃.a("Z", ☃.b);
       ☃.a(☃);
     }
     ☃.a("Processed", ☃);
@@ -85,7 +85,7 @@ public class aqk$a
       for (int ☃ = 0; ☃ < ☃.c(); ☃++)
       {
         dn ☃ = ☃.b(☃);
-        c.add(new adg(☃.f("X"), ☃.f("Z")));
+        this.c.add(new adg(☃.f("X"), ☃.f("Z")));
       }
     }
   }

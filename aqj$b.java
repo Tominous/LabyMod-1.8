@@ -12,9 +12,9 @@ public class aqj$b
   {
     super(☃);
     
-    m = ☃;
-    l = ☃;
-    b = ☃.nextInt();
+    this.m = ☃;
+    this.l = ☃;
+    this.b = ☃.nextInt();
   }
   
   public static b a(List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃, int ☃)
@@ -30,19 +30,19 @@ public class aqj$b
   {
     super.b(☃);
     
-    b = ☃.f("Seed");
+    this.b = ☃.f("Seed");
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
     
-    ☃.a("Seed", b);
+    ☃.a("Seed", this.b);
   }
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
   {
-    Random ☃ = new Random(b);
+    Random ☃ = new Random(this.b);
     for (int ☃ = 0; ☃ <= 4; ☃++) {
       for (int ☃ = 3; ☃ <= 4; ☃++)
       {

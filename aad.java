@@ -43,7 +43,7 @@ public class aad
         }
         else
         {
-          return b.a(☃, ☃);
+          return this.b.a(☃, ☃);
         }
       }
       double ☃;
@@ -66,8 +66,8 @@ public class aad
   
   public aad(va.a ☃)
   {
-    h = 1;
-    b = ☃;
+    this.h = 1;
+    this.b = ☃;
     a(yz.e);
     agg.N.a(this, a);
   }
@@ -77,20 +77,20 @@ public class aad
     alz ☃ = ☃.p(☃);
     if (afe.d(☃))
     {
-      if (!D)
+      if (!☃.D)
       {
         afe.b ☃ = (☃.c() instanceof afe) ? (afe.b)☃.b(((afe)☃.c()).n()) : afe.b.a;
         double ☃ = 0.0D;
         if (☃.c()) {
           ☃ = 0.5D;
         }
-        va ☃ = va.a(☃, ☃.n() + 0.5D, ☃.o() + 0.0625D + ☃, ☃.p() + 0.5D, b);
+        va ☃ = va.a(☃, ☃.n() + 0.5D, ☃.o() + 0.0625D + ☃, ☃.p() + 0.5D, this.b);
         if (☃.s()) {
           ☃.a(☃.q());
         }
         ☃.d(☃);
       }
-      b -= 1;
+      ☃.b -= 1;
       return true;
     }
     return false;

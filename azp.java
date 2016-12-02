@@ -34,41 +34,41 @@ public abstract class azp
   
   public azp(azo resourcePacksGUIIn)
   {
-    b = resourcePacksGUIIn;
-    a = ave.A();
+    this.b = resourcePacksGUIIn;
+    this.a = ave.A();
   }
   
   public void a(int slotIndex, int x, int y, int listWidth, int slotHeight, int mouseX, int mouseY, boolean isSelected)
   {
     int i = a();
     this.listWidth = listWidth;
-    if (pack != null)
+    if (this.pack != null)
     {
       ResourcePacks24.getInstance().getDraw();DrawUtils.a(x + 32, y, 
-        ResourcePacks24.getInstance().getDraw().getWidth() - 30, y + 32, Color.toRGB(hoverAnimation, hoverAnimation, hoverAnimation, hoverAnimation));
+        ResourcePacks24.getInstance().getDraw().getWidth() - 30, y + 32, Color.toRGB(this.hoverAnimation, this.hoverAnimation, this.hoverAnimation, this.hoverAnimation));
     }
-    if ((pack != null) && (ResourcePacks24.getInstance().getSelectedPack() == pack))
+    if ((this.pack != null) && (ResourcePacks24.getInstance().getSelectedPack() == this.pack))
     {
       ResourcePacks24.getInstance().getDraw();DrawUtils.a(x, y, ResourcePacks24.getInstance().getDraw().getWidth() - 30, y + 32, -2147470229);
     }
-    if (pack != null)
+    if (this.pack != null)
     {
       if ((y > ResourcePacks24.getInstance().getDraw().getHeight()) || (y < 0)) {
         return;
       }
-      if (pack.getPremiumId() != 0)
+      if (this.pack.getPremiumId() != 0)
       {
-        int s = ResourcePacks24.getInstance().getDraw().getStringWidth(pack.getCreator() + " " + pack.getBestPossibleName());
+        int s = ResourcePacks24.getInstance().getDraw().getStringWidth(this.pack.getCreator() + " " + this.pack.getBestPossibleName());
         GL11.glPushMatrix();
         GL11.glScaled(0.5D, 0.5D, 0.5D);
-        zx item = itemIron;
-        switch (pack.getPremiumId())
+        zx item = this.itemIron;
+        switch (this.pack.getPremiumId())
         {
         case 2: 
-          item = itemGold;
+          item = this.itemGold;
           break;
         case 3: 
-          item = itemDiamond;
+          item = this.itemDiamond;
         }
         ResourcePacks24.getInstance().getDraw().drawItem(item, (int)((x + 55 + s) / 0.5D), (int)((y + 1) / 0.5D));
         GL11.glPopMatrix();
@@ -78,36 +78,36 @@ public abstract class azp
     else
     {
       ResourcePacks24.getInstance().getDraw();DrawUtils.a(x + 32, y, x + listWidth - 5, y + 32, 
-        Color.toRGB(hoverAnimation, hoverAnimation, hoverAnimation, hoverAnimation));
+        Color.toRGB(this.hoverAnimation, this.hoverAnimation, this.hoverAnimation, this.hoverAnimation));
       boolean selected = false;
       bnm.a current = null;
-      for (bnm.a entry : a.R().c()) {
+      for (bnm.a entry : this.a.R().c()) {
         if (entry.d().equals(getTitle()))
         {
           selected = true;
           break;
         }
       }
-      for (bnm.a entry : a.R().b()) {
+      for (bnm.a entry : this.a.R().b()) {
         if (entry.d().equals(getTitle()))
         {
           current = entry;
           break;
         }
       }
-      if ((!b.f().contains(this)) && (!selected) && (!folder)) {
+      if ((!this.b.f().contains(this)) && (!selected) && (!this.folder)) {
         if ((mouseX > x + 183 - 5) && (mouseX < x + 183 + 10) && (mouseY > y - 5) && (mouseY < y + 10))
         {
           GL11.glPushMatrix();
           GL11.glScaled(0.7D, 0.7D, 0.7D);
-          ResourcePacks24.getInstance().getDraw().drawItem(itemBarrier, (int)((x + 183 - 1) / 0.7D), (int)((y - 1) / 0.7D));
+          ResourcePacks24.getInstance().getDraw().drawItem(this.itemBarrier, (int)((x + 183 - 1) / 0.7D), (int)((y - 1) / 0.7D));
           GL11.glPopMatrix();
         }
         else
         {
           GL11.glPushMatrix();
           GL11.glScaled(0.5D, 0.5D, 0.5D);
-          ResourcePacks24.getInstance().getDraw().drawItem(itemBarrier, (int)((x + 183) / 0.5D), (int)(y / 0.5D));
+          ResourcePacks24.getInstance().getDraw().drawItem(this.itemBarrier, (int)((x + 183) / 0.5D), (int)(y / 0.5D));
           GL11.glPopMatrix();
         }
       }
@@ -119,9 +119,9 @@ public abstract class azp
     }
     d();
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    if (pack == null)
+    if (this.pack == null)
     {
-      if (folder) {
+      if (this.folder) {
         ave.A().P().a(ResourcePacks24.RESOURCE_FOLDER);
       }
       avp.a(x, y, 0.0F, 0.0F, 32, 32, 32.0F, 32.0F);
@@ -131,28 +131,28 @@ public abstract class azp
       ResourcePacks24.getInstance().getDraw();DrawUtils.a(x, y, x + 32, y + 32, Integer.MIN_VALUE);
       ResourcePacks24.getInstance().getDraw().drawCenteredString("?", x + 16, y + 7, 2.0D);
       bfl.c(1.0F, 1.0F, 1.0F);
-      pack.drawImage(x, y, 32, 32, 0.13D);
+      this.pack.drawImage(x, y, 32, 32, 0.13D);
     }
     String s = c();
     String s1 = b();
-    if (((a.t.A) || (isSelected)) && (e()))
+    if (((this.a.t.A) || (isSelected)) && (e()))
     {
-      hoverAnimation += 18;
-      if (hoverAnimation > 100) {
-        hoverAnimation = 100;
+      this.hoverAnimation += 18;
+      if (this.hoverAnimation > 100) {
+        this.hoverAnimation = 100;
       }
     }
     else
     {
-      hoverAnimation -= 18;
-      if (hoverAnimation < 0) {
-        hoverAnimation = 0;
+      this.hoverAnimation -= 18;
+      if (this.hoverAnimation < 0) {
+        this.hoverAnimation = 0;
       }
     }
-    if (((a.t.A) || (isSelected)) && (e()))
+    if (((this.a.t.A) || (isSelected)) && (e()))
     {
-      a.P().a(c);
-      if (pack == null) {
+      this.a.P().a(c);
+      if (this.pack == null) {
         avp.a(x, y, x + 32, y + 32, -1601138544);
       }
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
@@ -168,10 +168,10 @@ public abstract class azp
         s = d.d();
         s1 = f.d();
       }
-      if (folder) {
+      if (this.folder) {
         ResourcePacks24.getInstance().getDraw().drawCenteredString(getTitle().equals("..") ? "BACK" : "OPEN", x + 16, y + 12, 1.0D);
       }
-      if ((pack == null) && (!folder)) {
+      if ((this.pack == null) && (!this.folder)) {
         if (f())
         {
           if (j < 32) {
@@ -206,22 +206,22 @@ public abstract class azp
         }
       }
     }
-    int i1 = a.k.a(s);
+    int i1 = this.a.k.a(s);
     
     int w = 157;
-    if (pack != null) {
+    if (this.pack != null) {
       w = listWidth - 150;
     }
     if (i1 > w) {
-      s = a.k.a(s, 157 - a.k.a("...")) + "...";
+      s = this.a.k.a(s, 157 - this.a.k.a("...")) + "...";
     }
-    a.k.a(s, x + 32 + 2, y + 1, 16777215);
+    this.a.k.a(s, x + 32 + 2, y + 1, 16777215);
     
-    List<String> list = a.k.c(s1, w);
-    if (pack == null)
+    List<String> list = this.a.k.c(s1, w);
+    if (this.pack == null)
     {
       for (int l = 0; (l < 2) && (l < list.size()); l++) {
-        a.k.a((String)list.get(l), x + 32 + 2, y + 12 + 10 * l, 8421504);
+        this.a.k.a((String)list.get(l), x + 32 + 2, y + 12 + 10 * l, 8421504);
       }
     }
     else
@@ -230,16 +230,16 @@ public abstract class azp
       double k = 0.6D;
       GL11.glScaled(k, k, k);
       for (int l = 0; (l < 2) && (l < list.size()); l++) {
-        a.k.a((String)list.get(l), (float)((x + 32 + 2) / k), (float)((y + 12 + 10 * l) / k), 8421504);
+        this.a.k.a((String)list.get(l), (float)((x + 32 + 2) / k), (float)((y + 12 + 10 * l) / k), 8421504);
       }
       GL11.glPopMatrix();
       
-      ResourcePacks24.getInstance().getDraw().drawRightString(Color.cl("a") + pack.getDownloads() + " Downloads", x + listWidth - 15, y + 1);
-      ResourcePacks24.getInstance().getDraw().drawRightString(Color.cl("7") + ResourcePacks24.simpleDateFormat.format(Long.valueOf(pack.getUpTime() * 1000L)) + "", x + listWidth - 15, y + 12);
-      ResourcePacks24.getInstance().getDraw().drawRightString(Color.cl("b") + pack.getVotes() + " Votes", x + listWidth - 15, y + 22);
+      ResourcePacks24.getInstance().getDraw().drawRightString(Color.cl("a") + this.pack.getDownloads() + " Downloads", x + listWidth - 15, y + 1);
+      ResourcePacks24.getInstance().getDraw().drawRightString(Color.cl("7") + ResourcePacks24.simpleDateFormat.format(Long.valueOf(this.pack.getUpTime() * 1000L)) + "", x + listWidth - 15, y + 12);
+      ResourcePacks24.getInstance().getDraw().drawRightString(Color.cl("b") + this.pack.getVotes() + " Votes", x + listWidth - 15, y + 22);
       
       ResourcePacks24.getInstance().getDraw();DrawUtils.a(x, y + 25, x + 32, y + 32, Integer.MIN_VALUE);
-      ResourcePacks24.getInstance().getDraw().drawString(Color.cl("f") + Color.cl("f") + pack.getSize(), x + 1, y + 27, 0.6D);
+      ResourcePacks24.getInstance().getDraw().drawString(Color.cl("f") + Color.cl("f") + this.pack.getSize(), x + 1, y + 27, 0.6D);
     }
   }
   
@@ -268,41 +268,41 @@ public abstract class azp
   
   protected boolean f()
   {
-    return !b.a(this);
+    return !this.b.a(this);
   }
   
   protected boolean g()
   {
-    return b.a(this);
+    return this.b.a(this);
   }
   
   protected boolean h()
   {
-    List<azp> list = b.b(this);
+    List<azp> list = this.b.b(this);
     int i = list.indexOf(this);
     return (i > 0) && (((azp)list.get(i - 1)).e());
   }
   
   protected boolean i()
   {
-    List<azp> list = b.b(this);
+    List<azp> list = this.b.b(this);
     int i = list.indexOf(this);
     return (i >= 0) && (i < list.size() - 1) && (((azp)list.get(i + 1)).e());
   }
   
   public boolean a(int slotIndex, int p_148278_2_, int p_148278_3_, int p_148278_4_, int p_148278_5_, int p_148278_6_)
   {
-    if (pack != null)
+    if (this.pack != null)
     {
-      ResourcePacks24.getInstance().setSelectedPack(pack);
+      ResourcePacks24.getInstance().setSelectedPack(this.pack);
       return true;
     }
-    if (folder)
+    if (this.folder)
     {
       if (getTitle().equals(".."))
       {
         ResourcePacks24.getInstance().setPath("");
-        b.refreshPackList();
+        this.b.refreshPackList();
       }
       else
       {
@@ -311,7 +311,7 @@ public abstract class azp
           if (entry.getDirPath().equals(getTitle()))
           {
             ResourcePacks24.getInstance().setPath(entry.getDirPath());
-            b.refreshPackList();
+            this.b.refreshPackList();
             break;
           }
         }
@@ -319,34 +319,34 @@ public abstract class azp
       return true;
     }
     boolean selected = false;
-    for (bnm.a entry : a.R().c()) {
+    for (bnm.a entry : this.a.R().c()) {
       if (entry.d().equals(getTitle()))
       {
         selected = true;
         break;
       }
     }
-    if ((p_148278_5_ > 178) && (p_148278_5_ < 193) && (p_148278_6_ > 0) && (p_148278_6_ < 10) && (!b.f().contains(this)) && (!selected))
+    if ((p_148278_5_ > 178) && (p_148278_5_ < 193) && (p_148278_6_ > 0) && (p_148278_6_ < 10) && (!this.b.f().contains(this)) && (!selected))
     {
-      a.a(new awy(new awx()
+      this.a.a(new awy(new awx()
       {
         public void a(boolean result, int id)
         {
           if (result)
           {
             File folder = ave.A().R().d();
-            File pack = new File(folder.getAbsolutePath(), getTitle());
+            File pack = new File(folder.getAbsolutePath(), azp.this.getTitle());
             if (pack.delete())
             {
-              System.out.println("[Resourcepack24] Deleted " + getTitle() + " successfully!");
+              System.out.println("[Resourcepack24] Deleted " + azp.this.getTitle() + " successfully!");
             }
             else
             {
-              ResourcePacks24.getInstance().getDeletedPacks().add(getTitle());
-              System.out.println("[Resourcepack24] Can't delete " + getTitle() + ", try again later..");
+              ResourcePacks24.getInstance().getDeletedPacks().add(azp.this.getTitle());
+              System.out.println("[Resourcepack24] Can't delete " + azp.this.getTitle() + ", try again later..");
             }
           }
-          a.a(new azo(b.getParentScreen()));
+          azp.this.a.a(new azo(azp.this.b.getParentScreen()));
         }
       }, Color.cl("c") + "Delete this pack?", getTitle(), 0));
       return true;
@@ -355,56 +355,56 @@ public abstract class azp
     {
       if (f())
       {
-        b.g();
+        this.b.g();
         int j = a();
         if (j != 1)
         {
           String s1 = bnq.a("resourcePack.incompatible.confirm.title", new Object[0]);
           String s = bnq.a("resourcePack.incompatible.confirm." + (j > 1 ? "new" : "old"), new Object[0]);
-          a.a(new awy(new awx()
+          this.a.a(new awy(new awx()
           {
             public void a(boolean result, int id)
             {
-              List<azp> list2 = b.b(azp.this);
-              a.a(b);
+              List<azp> list2 = azp.this.b.b(azp.this);
+              azp.this.a.a(azp.this.b);
               if (result)
               {
                 list2.remove(azp.this);
-                b.f().add(0, azp.this);
+                azp.this.b.f().add(0, azp.this);
               }
             }
           }, s1, s, 0));
         }
         else
         {
-          b.b(this).remove(this);
-          b.f().add(0, this);
+          this.b.b(this).remove(this);
+          this.b.f().add(0, this);
         }
         return true;
       }
       if ((p_148278_5_ < 16) && (g()))
       {
-        b.b(this).remove(this);
-        b.a().add(0, this);
-        b.g();
+        this.b.b(this).remove(this);
+        this.b.a().add(0, this);
+        this.b.g();
         return true;
       }
       if ((p_148278_5_ > 16) && (p_148278_6_ < 16) && (h()))
       {
-        Object list1 = b.b(this);
+        Object list1 = this.b.b(this);
         int k = ((List)list1).indexOf(this);
         ((List)list1).remove(this);
         ((List)list1).add(k - 1, this);
-        b.g();
+        this.b.g();
         return true;
       }
       if ((p_148278_5_ > 16) && (p_148278_6_ > 16) && (i()))
       {
-        Object list = b.b(this);
+        Object list = this.b.b(this);
         int i = ((List)list).indexOf(this);
         ((List)list).remove(this);
         ((List)list).add(i + 1, this);
-        b.g();
+        this.b.g();
         return true;
       }
     }

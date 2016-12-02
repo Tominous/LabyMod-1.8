@@ -10,8 +10,8 @@ public class aak
   
   protected aak(String ☃)
   {
-    a = ☃;
-    h = 1;
+    this.a = ☃;
+    this.h = 1;
     a(yz.f);
     
     b.put("records." + ☃, this);
@@ -22,12 +22,12 @@ public class aak
     alz ☃ = ☃.p(☃);
     if ((☃.c() == afi.aN) && (!((Boolean)☃.b(ahq.a)).booleanValue()))
     {
-      if (D) {
+      if (☃.D) {
         return true;
       }
       ((ahq)afi.aN).a(☃, ☃, ☃, ☃);
       ☃.a(null, 1005, ☃, zw.b(this));
-      b -= 1;
+      ☃.b -= 1;
       ☃.b(na.X);
       return true;
     }
@@ -41,7 +41,7 @@ public class aak
   
   public String g()
   {
-    return di.a("item.record." + a + ".desc");
+    return di.a("item.record." + this.a + ".desc");
   }
   
   public aaj g(zx ☃)

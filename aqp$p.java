@@ -15,12 +15,12 @@ abstract class aqp$p
   
   protected void a(dn ☃)
   {
-    ☃.a("EntryDoor", d.name());
+    ☃.a("EntryDoor", this.d.name());
   }
   
   protected void b(dn ☃)
   {
-    d = aqp.p.a.valueOf(☃.j("EntryDoor"));
+    this.d = aqp.p.a.valueOf(☃.j("EntryDoor"));
   }
   
   protected void a(adm ☃, Random ☃, aqe ☃, aqp.p.a ☃, int ☃, int ☃, int ☃)
@@ -87,17 +87,17 @@ abstract class aqp$p
   
   protected aqt a(aqp.m ☃, List<aqt> ☃, Random ☃, int ☃, int ☃)
   {
-    if (m != null) {
-      switch (aqp.3.b[m.ordinal()])
+    if (this.m != null) {
+      switch (aqp.3.b[this.m.ordinal()])
       {
       case 1: 
-        return aqp.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.c - 1, m, d());
+        return aqp.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.c - 1, this.m, d());
       case 2: 
-        return aqp.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.f + 1, m, d());
+        return aqp.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.f + 1, this.m, d());
       case 3: 
-        return aqp.a(☃, ☃, ☃, l.a - 1, l.b + ☃, l.c + ☃, m, d());
+        return aqp.a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃, this.l.c + ☃, this.m, d());
       case 4: 
-        return aqp.a(☃, ☃, ☃, l.d + 1, l.b + ☃, l.c + ☃, m, d());
+        return aqp.a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃, this.l.c + ☃, this.m, d());
       }
     }
     return null;
@@ -105,17 +105,17 @@ abstract class aqp$p
   
   protected aqt b(aqp.m ☃, List<aqt> ☃, Random ☃, int ☃, int ☃)
   {
-    if (m != null) {
-      switch (aqp.3.b[m.ordinal()])
+    if (this.m != null) {
+      switch (aqp.3.b[this.m.ordinal()])
       {
       case 1: 
-        return aqp.a(☃, ☃, ☃, l.a - 1, l.b + ☃, l.c + ☃, cq.e, d());
+        return aqp.a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃, this.l.c + ☃, cq.e, d());
       case 2: 
-        return aqp.a(☃, ☃, ☃, l.a - 1, l.b + ☃, l.c + ☃, cq.e, d());
+        return aqp.a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃, this.l.c + ☃, cq.e, d());
       case 3: 
-        return aqp.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.c - 1, cq.c, d());
+        return aqp.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.c - 1, cq.c, d());
       case 4: 
-        return aqp.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.c - 1, cq.c, d());
+        return aqp.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.c - 1, cq.c, d());
       }
     }
     return null;
@@ -123,17 +123,17 @@ abstract class aqp$p
   
   protected aqt c(aqp.m ☃, List<aqt> ☃, Random ☃, int ☃, int ☃)
   {
-    if (m != null) {
-      switch (aqp.3.b[m.ordinal()])
+    if (this.m != null) {
+      switch (aqp.3.b[this.m.ordinal()])
       {
       case 1: 
-        return aqp.a(☃, ☃, ☃, l.d + 1, l.b + ☃, l.c + ☃, cq.f, d());
+        return aqp.a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃, this.l.c + ☃, cq.f, d());
       case 2: 
-        return aqp.a(☃, ☃, ☃, l.d + 1, l.b + ☃, l.c + ☃, cq.f, d());
+        return aqp.a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃, this.l.c + ☃, cq.f, d());
       case 3: 
-        return aqp.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.f + 1, cq.d, d());
+        return aqp.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.f + 1, cq.d, d());
       case 4: 
-        return aqp.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.f + 1, cq.d, d());
+        return aqp.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.f + 1, cq.d, d());
       }
     }
     return null;
@@ -141,7 +141,7 @@ abstract class aqp$p
   
   protected static boolean a(aqe ☃)
   {
-    return (☃ != null) && (b > 10);
+    return (☃ != null) && (☃.b > 10);
   }
   
   public static enum a

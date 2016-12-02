@@ -7,30 +7,30 @@ public class tu$e
   public tu$e(tu paramtu1, tu ☃)
   {
     super(☃);
-    c = ☃;
+    this.c = ☃;
   }
   
   public boolean c()
   {
-    return a;
+    return this.a;
   }
   
   public boolean d()
   {
-    return d;
+    return this.d;
   }
   
   public void a(boolean ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
   
   public void b()
   {
-    if (a)
+    if (this.a)
     {
-      c.b(tu.b.c);
-      a = false;
+      this.c.b(tu.b.c);
+      this.a = false;
     }
   }
 }

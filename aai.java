@@ -28,11 +28,11 @@ public class aai
   {
     if ((!☃.n()) || (!☃.o().b("CustomPotionEffects", 9)))
     {
-      List<pf> ☃ = (List)a.get(Integer.valueOf(☃.i()));
+      List<pf> ☃ = (List)this.a.get(Integer.valueOf(☃.i()));
       if (☃ == null)
       {
         ☃ = abe.b(☃.i(), false);
-        a.put(Integer.valueOf(☃.i()), ☃);
+        this.a.put(Integer.valueOf(☃.i()), ☃);
       }
       return ☃;
     }
@@ -51,21 +51,21 @@ public class aai
   
   public List<pf> e(int ☃)
   {
-    List<pf> ☃ = (List)a.get(Integer.valueOf(☃));
+    List<pf> ☃ = (List)this.a.get(Integer.valueOf(☃));
     if (☃ == null)
     {
       ☃ = abe.b(☃, false);
-      a.put(Integer.valueOf(☃), ☃);
+      this.a.put(Integer.valueOf(☃), ☃);
     }
     return ☃;
   }
   
   public zx b(zx ☃, adm ☃, wn ☃)
   {
-    if (!bA.d) {
-      b -= 1;
+    if (!☃.bA.d) {
+      ☃.b -= 1;
     }
-    if (!D)
+    if (!☃.D)
     {
       List<pf> ☃ = h(☃);
       if (☃ != null) {
@@ -75,12 +75,12 @@ public class aai
       }
     }
     ☃.b(na.ad[zw.b(this)]);
-    if (!bA.d)
+    if (!☃.bA.d)
     {
-      if (b <= 0) {
+      if (☃.b <= 0) {
         return new zx(zy.bA);
       }
-      bi.a(new zx(zy.bA));
+      ☃.bi.a(new zx(zy.bA));
     }
     return ☃;
   }
@@ -99,11 +99,11 @@ public class aai
   {
     if (f(☃.i()))
     {
-      if (!bA.d) {
-        b -= 1;
+      if (!☃.bA.d) {
+        ☃.b -= 1;
       }
       ☃.a(☃, "random.bow", 0.5F, 0.4F / (g.nextFloat() * 0.4F + 0.8F));
-      if (!D) {
+      if (!☃.D) {
         ☃.d(new xc(☃, ☃, ☃));
       }
       ☃.b(na.ad[zw.b(this)]);

@@ -7,6 +7,6 @@ public class aeq
   {
     super(☃);
     
-    au.clear();
+    this.au.clear();
   }
 }

@@ -13,11 +13,11 @@ public class aeo
     a(0.8F, 0.4F);
     a(e);
     
-    au.add(new ady.c(tp.class, 5, 2, 6));
+    this.au.add(new ady.c(tp.class, 5, 2, 6));
     
-    as.A = 64537;
-    as.B = 4;
-    as.C = 10;
+    this.as.A = 64537;
+    this.as.B = 4;
+    this.as.C = 10;
   }
   
   public agw.a a(Random ☃, cj ☃)
@@ -56,13 +56,13 @@ public class aeo
     double ☃ = af.a((☃.n() + 8) / 200.0D, (☃.p() + 8) / 200.0D);
     if (☃ < -0.8D)
     {
-      as.B = 15;
-      as.C = 5;
+      this.as.B = 15;
+      this.as.C = 5;
     }
     else
     {
-      as.B = 4;
-      as.C = 10;
+      this.as.B = 4;
+      this.as.C = 10;
       
       ag.a(agi.b.c);
       for (int ☃ = 0; ☃ < 7; ☃++)
@@ -73,7 +73,7 @@ public class aeo
         ag.b(☃, ☃, ☃.a(☃, ☃, ☃));
       }
     }
-    if (aD)
+    if (this.aD)
     {
       ag.a(agi.b.a);
       for (int ☃ = 0; ☃ < 10; ☃++)
@@ -91,9 +91,9 @@ public class aeo
   {
     aeo ☃ = new aeo(☃);
     ☃.a("Sunflower Plains");
-    aD = true;
+    ☃.aD = true;
     ☃.b(9286496);
-    aj = 14273354;
+    ☃.aj = 14273354;
     return ☃;
   }
 }

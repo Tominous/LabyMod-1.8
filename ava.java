@@ -6,23 +6,23 @@ public class ava
   
   public ava(int ☃, eu ☃, int ☃)
   {
-    b = ☃;
-    a = ☃;
-    c = ☃;
+    this.b = ☃;
+    this.a = ☃;
+    this.c = ☃;
   }
   
   public eu a()
   {
-    return b;
+    return this.b;
   }
   
   public int b()
   {
-    return a;
+    return this.a;
   }
   
   public int c()
   {
-    return c;
+    return this.c;
   }
 }

@@ -4,7 +4,7 @@ public class ars
   public ars(long ☃, ase ☃)
   {
     super(☃);
-    a = ☃;
+    this.a = ☃;
   }
   
   public int[] a(int ☃, int ☃, int ☃, int ☃)
@@ -13,7 +13,7 @@ public class ars
     int ☃ = ☃ - 1;
     int ☃ = ☃ + 2;
     int ☃ = ☃ + 2;
-    int[] ☃ = a.a(☃, ☃, ☃, ☃);
+    int[] ☃ = this.a.a(☃, ☃, ☃, ☃);
     
     int[] ☃ = asc.a(☃ * ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {

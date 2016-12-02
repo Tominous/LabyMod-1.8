@@ -57,10 +57,10 @@ public class BetterHatListener
     {
       bfl.G();
       bfl.j();
-      getBipedHeadweark = false;
+      ((ModelRendererUV)event.getBipedHeadwear()).k = false;
       ((ModelRendererUV)event.getBipedHeadwear()).applyRotation(event.getBipedHead());
       ((ModelRendererUV)event.getBipedHeadwear()).renderBetterHat(event.getScale());
-      getBipedHeadweark = true;
+      ((ModelRendererUV)event.getBipedHeadwear()).k = true;
     }
   }
 }

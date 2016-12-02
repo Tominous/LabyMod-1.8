@@ -15,12 +15,12 @@ public class mw
   
   public mw(String ☃, eu ☃, mx ☃)
   {
-    e = ☃;
-    a = ☃;
-    b = ☃;
-    c = new auv(this);
+    this.e = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = new auv(this);
     
-    auu.a.put(c.a(), c);
+    auu.a.put(this.c.a(), this.c);
   }
   
   public mw(String ☃, eu ☃)
@@ -30,17 +30,17 @@ public class mw
   
   public mw i()
   {
-    f = true;
+    this.f = true;
     return this;
   }
   
   public mw h()
   {
-    if (na.a.containsKey(e)) {
-      throw new RuntimeException("Duplicate stat id: \"" + agete)).a + "\" and \"" + a + "\" at id " + e);
+    if (na.a.containsKey(this.e)) {
+      throw new RuntimeException("Duplicate stat id: \"" + ((mw)na.a.get(this.e)).a + "\" and \"" + this.a + "\" at id " + this.e);
     }
     na.b.add(this);
-    na.a.put(e, this);
+    na.a.put(this.e, this);
     
     return this;
   }
@@ -52,7 +52,7 @@ public class mw
   
   public String a(int ☃)
   {
-    return b.a(☃);
+    return this.b.a(☃);
   }
   
   private static NumberFormat k = NumberFormat.getIntegerInstance(Locale.US);
@@ -113,9 +113,9 @@ public class mw
   
   public eu e()
   {
-    eu ☃ = a.f();
+    eu ☃ = this.a.f();
     ☃.b().a(a.h);
-    ☃.b().a(new ew(ew.a.b, new fa(e)));
+    ☃.b().a(new ew(ew.a.b, new fa(this.e)));
     return ☃;
   }
   
@@ -137,32 +137,32 @@ public class mw
     }
     mw ☃ = (mw)☃;
     
-    return e.equals(e);
+    return this.e.equals(☃.e);
   }
   
   public int hashCode()
   {
-    return e.hashCode();
+    return this.e.hashCode();
   }
   
   public String toString()
   {
-    return "Stat{id=" + e + ", nameId=" + a + ", awardLocallyOnly=" + f + ", formatter=" + b + ", objectiveCriteria=" + c + '}';
+    return "Stat{id=" + this.e + ", nameId=" + this.a + ", awardLocallyOnly=" + this.f + ", formatter=" + this.b + ", objectiveCriteria=" + this.c + '}';
   }
   
   public auu k()
   {
-    return c;
+    return this.c;
   }
   
   public Class<? extends mz> l()
   {
-    return d;
+    return this.d;
   }
   
   public mw b(Class<? extends mz> ☃)
   {
-    d = ☃;
+    this.d = ☃;
     return this;
   }
 }

@@ -15,7 +15,7 @@ public class ais
   protected ais()
   {
     super(true);
-    j(M.b().a(b, afe.b.a).a(N, Boolean.valueOf(false)));
+    j(this.M.b().a(b, afe.b.a).a(N, Boolean.valueOf(false)));
   }
   
   protected boolean a(adm ☃, cj ☃, alz ☃, boolean ☃, int ☃)

@@ -5,7 +5,7 @@ public class bli
   
   public bli(bki ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(wd ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
@@ -16,7 +16,7 @@ public class bli
     }
     bfl.c(1.0F, 1.0F, 1.0F);
     bfl.E();
-    if (a.b().r)
+    if (this.a.b().r)
     {
       bfl.b(0.0F, 0.625F, 0.0F);
       bfl.b(-20.0F, -1.0F, 0.0F, 0.0F);
@@ -24,7 +24,7 @@ public class bli
       float ☃ = 0.5F;
       bfl.a(☃, ☃, ☃);
     }
-    a.b()).f.c(0.0625F);
+    ((bck)this.a.b()).f.c(0.0625F);
     bfl.b(-0.0625F, 0.53125F, 0.21875F);
     
     zw ☃ = ☃.b();
@@ -55,7 +55,7 @@ public class bli
         bfl.b(180.0F, 0.0F, 0.0F, 1.0F);
         bfl.b(0.0F, -0.0625F, 0.0F);
       }
-      a.C_();
+      this.a.C_();
       
       bfl.b(0.0625F, -0.125F, 0.0F);
       

@@ -13,13 +13,13 @@ public class PacketHelloPing
   
   public void read(PacketBuf buf)
   {
-    a = buf.readLong();
+    this.a = buf.readLong();
     buf.readInt();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeLong(a);
+    buf.writeLong(this.a);
     buf.writeInt(17);
   }
   

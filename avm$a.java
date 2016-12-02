@@ -8,7 +8,7 @@ public enum avm$a
   
   private avm$a(String ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
   
   public static a a(String ☃)
@@ -20,7 +20,7 @@ public enum avm$a
   {
     c = Maps.newHashMap();
     for (a ☃ : values()) {
-      c.put(d, ☃);
+      c.put(☃.d, ☃);
     }
   }
 }

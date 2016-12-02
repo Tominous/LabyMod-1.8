@@ -8,11 +8,11 @@ public enum EnumConnectionState
   
   private EnumConnectionState(int t)
   {
-    number = t;
+    this.number = t;
   }
   
   public int getConnectionStateId()
   {
-    return number;
+    return this.number;
   }
 }

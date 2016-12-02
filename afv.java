@@ -8,7 +8,7 @@ public class afv
   public afv(arm ☃)
   {
     super(☃);
-    j(M.b().a(a, zd.a));
+    j(this.M.b().a(a, zd.a));
     a(yz.b);
   }
   

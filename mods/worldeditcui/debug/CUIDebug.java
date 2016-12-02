@@ -21,7 +21,7 @@ public class CUIDebug
   
   public CUIDebug(WorldEditCUI controller)
   {
-    debugMode = false;
+    this.debugMode = false;
     this.controller = controller;
   }
   
@@ -35,11 +35,11 @@ public class CUIDebug
     logger.addHandler(handler);
     try
     {
-      debugFile = new File("worldeditcui.debug.log");
-      debugMode = controller.getConfiguration().isDebugMode();
-      if (debugMode)
+      this.debugFile = new File("worldeditcui.debug.log");
+      this.debugMode = this.controller.getConfiguration().isDebugMode();
+      if (this.debugMode)
       {
-        FileHandler newHandler = new FileHandler(debugFile.getAbsolutePath());
+        FileHandler newHandler = new FileHandler(this.debugFile.getAbsolutePath());
         newHandler.setFormatter(formatter);
         logger.addHandler(newHandler);
       }
@@ -53,7 +53,7 @@ public class CUIDebug
   
   public void debug(String message)
   {
-    if (debugMode) {
+    if (this.debugMode) {
       logger.info("WorldEditCUI Debug - " + message);
     }
   }

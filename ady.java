@@ -25,13 +25,13 @@ public abstract class ady
     
     public a(float ☃, float ☃)
     {
-      a = ☃;
-      b = ☃;
+      this.a = ☃;
+      this.b = ☃;
     }
     
     public a a()
     {
-      return new a(a * 0.8F, b * 0.6F);
+      return new a(this.a * 0.8F, this.b * 0.6F);
     }
   }
   
@@ -116,15 +116,15 @@ public abstract class ady
     s.k();
     X.k();
     
-    V.d(Waz + 128).a("Redwood Taiga Hills M");
+    V.d(W.az + 128).a("Redwood Taiga Hills M");
     for (ady ☃ : aE) {
       if (☃ != null)
       {
-        if (o.containsKey(ah)) {
-          throw new Error("Biome \"" + ah + "\" is defined as both ID " + ogetah)).az + " and " + az);
+        if (o.containsKey(☃.ah)) {
+          throw new Error("Biome \"" + ☃.ah + "\" is defined as both ID " + ((ady)o.get(☃.ah)).az + " and " + ☃.az);
         }
-        o.put(ah, ☃);
-        if (az < 128) {
+        o.put(☃.ah, ☃);
+        if (☃.az < 128) {
           n.add(☃);
         }
       }
@@ -144,8 +144,8 @@ public abstract class ady
   public alz ak = afi.c.Q();
   public alz al = afi.d.Q();
   public int am = 5169201;
-  public float an = aa;
-  public float ao = ab;
+  public float an = a.a;
+  public float ao = a.b;
   public float ap = 0.5F;
   public float aq = 0.5F;
   public int ar = 16777215;
@@ -160,27 +160,27 @@ public abstract class ady
   
   protected ady(int ☃)
   {
-    az = ☃;
+    this.az = ☃;
     aE[☃] = this;
-    as = a();
+    this.as = a();
     
-    au.add(new ady.c(tv.class, 12, 4, 4));
-    au.add(new ady.c(tu.class, 10, 3, 3));
-    au.add(new ady.c(tt.class, 10, 4, 4));
-    au.add(new ady.c(tn.class, 10, 4, 4));
-    au.add(new ady.c(to.class, 8, 4, 4));
+    this.au.add(new ady.c(tv.class, 12, 4, 4));
+    this.au.add(new ady.c(tu.class, 10, 3, 3));
+    this.au.add(new ady.c(tt.class, 10, 4, 4));
+    this.au.add(new ady.c(tn.class, 10, 4, 4));
+    this.au.add(new ady.c(to.class, 8, 4, 4));
     
-    at.add(new ady.c(wc.class, 100, 4, 4));
-    at.add(new ady.c(we.class, 100, 4, 4));
-    at.add(new ady.c(wa.class, 100, 4, 4));
-    at.add(new ady.c(vn.class, 100, 4, 4));
-    at.add(new ady.c(wb.class, 100, 4, 4));
-    at.add(new ady.c(vo.class, 10, 1, 4));
-    at.add(new ady.c(wd.class, 5, 1, 1));
+    this.at.add(new ady.c(wc.class, 100, 4, 4));
+    this.at.add(new ady.c(we.class, 100, 4, 4));
+    this.at.add(new ady.c(wa.class, 100, 4, 4));
+    this.at.add(new ady.c(vn.class, 100, 4, 4));
+    this.at.add(new ady.c(wb.class, 100, 4, 4));
+    this.at.add(new ady.c(vo.class, 10, 1, 4));
+    this.at.add(new ady.c(wd.class, 5, 1, 1));
     
-    av.add(new ady.c(tx.class, 10, 4, 4));
+    this.av.add(new ady.c(tx.class, 10, 4, 4));
     
-    aw.add(new ady.c(tk.class, 10, 8, 8));
+    this.aw.add(new ady.c(tk.class, 10, 8, 8));
   }
   
   protected aeb a()
@@ -193,21 +193,21 @@ public abstract class ady
     if ((☃ > 0.1F) && (☃ < 0.2F)) {
       throw new IllegalArgumentException("Please avoid temperatures in the range 0.1 - 0.2 because of snow");
     }
-    ap = ☃;
-    aq = ☃;
+    this.ap = ☃;
+    this.aq = ☃;
     return this;
   }
   
   protected final ady a(ady.a ☃)
   {
-    an = a;
-    ao = b;
+    this.an = ☃.a;
+    this.ao = ☃.b;
     return this;
   }
   
   protected ady b()
   {
-    ay = false;
+    this.ay = false;
     return this;
   }
   
@@ -218,9 +218,9 @@ public abstract class ady
   public aoh a(Random ☃)
   {
     if (☃.nextInt(10) == 0) {
-      return aB;
+      return this.aB;
     }
-    return aA;
+    return this.aA;
   }
   
   public aot b(Random ☃)
@@ -238,19 +238,19 @@ public abstract class ady
   
   protected ady c()
   {
-    ax = true;
+    this.ax = true;
     return this;
   }
   
   protected ady a(String ☃)
   {
-    ah = ☃;
+    this.ah = ☃;
     return this;
   }
   
   protected ady a(int ☃)
   {
-    am = ☃;
+    this.am = ☃;
     return this;
   }
   
@@ -262,17 +262,17 @@ public abstract class ady
   
   protected ady c(int ☃)
   {
-    aj = ☃;
+    this.aj = ☃;
     return this;
   }
   
   protected ady a(int ☃, boolean ☃)
   {
-    ai = ☃;
+    this.ai = ☃;
     if (☃) {
-      aj = ((☃ & 0xFEFEFE) >> 1);
+      this.aj = ((☃ & 0xFEFEFE) >> 1);
     } else {
-      aj = ☃;
+      this.aj = ☃;
     }
     return this;
   }
@@ -289,13 +289,13 @@ public abstract class ady
     switch (ady.1.a[☃.ordinal()])
     {
     case 1: 
-      return at;
+      return this.at;
     case 2: 
-      return au;
+      return this.au;
     case 3: 
-      return av;
+      return this.av;
     case 4: 
-      return aw;
+      return this.aw;
     }
     return Collections.emptyList();
   }
@@ -310,14 +310,14 @@ public abstract class ady
     public c(Class<? extends ps> ☃, int ☃, int ☃, int ☃)
     {
       super();
-      b = ☃;
-      c = ☃;
-      d = ☃;
+      this.b = ☃;
+      this.c = ☃;
+      this.d = ☃;
     }
     
     public String toString()
     {
-      return b.getSimpleName() + "*(" + c + "-" + d + "):" + a;
+      return this.b.getSimpleName() + "*(" + this.c + "-" + this.d + "):" + this.a;
     }
   }
   
@@ -331,12 +331,12 @@ public abstract class ady
     if (j()) {
       return false;
     }
-    return ay;
+    return this.ay;
   }
   
   public boolean f()
   {
-    return aq > 0.85F;
+    return this.aq > 0.85F;
   }
   
   public float g()
@@ -346,12 +346,12 @@ public abstract class ady
   
   public final int h()
   {
-    return (int)(aq * 65536.0F);
+    return (int)(this.aq * 65536.0F);
   }
   
   public final float i()
   {
-    return aq;
+    return this.aq;
   }
   
   public final float a(cj ☃)
@@ -359,14 +359,14 @@ public abstract class ady
     if (☃.o() > 64)
     {
       float ☃ = (float)(ae.a(☃.n() * 1.0D / 8.0D, ☃.p() * 1.0D / 8.0D) * 4.0D);
-      return ap - (☃ + ☃.o() - 64.0F) * 0.05F / 30.0F;
+      return this.ap - (☃ + ☃.o() - 64.0F) * 0.05F / 30.0F;
     }
-    return ap;
+    return this.ap;
   }
   
   public void a(adm ☃, Random ☃, cj ☃)
   {
-    as.a(☃, ☃, this, ☃);
+    this.as.a(☃, ☃, this, ☃);
   }
   
   public int b(cj ☃)
@@ -387,7 +387,7 @@ public abstract class ady
   
   public boolean j()
   {
-    return ax;
+    return this.ax;
   }
   
   public void a(adm ☃, Random ☃, ans ☃, int ☃, int ☃, double ☃)
@@ -398,8 +398,8 @@ public abstract class ady
   public final void b(adm ☃, Random ☃, ans ☃, int ☃, int ☃, double ☃)
   {
     int ☃ = ☃.F();
-    alz ☃ = ak;
-    alz ☃ = al;
+    alz ☃ = this.ak;
+    alz ☃ = this.al;
     int ☃ = -1;
     int ☃ = (int)(☃ / 3.0D + 3.0D + ☃.nextDouble() * 0.25D);
     
@@ -426,8 +426,8 @@ public abstract class ady
             }
             else if ((☃ >= ☃ - 4) && (☃ <= ☃ + 1))
             {
-              ☃ = ak;
-              ☃ = al;
+              ☃ = this.ak;
+              ☃ = this.al;
             }
             if ((☃ < ☃) && ((☃ == null) || (☃.c().t() == arm.a))) {
               if (a(☃.c(☃, ☃, ☃)) < 0.15F) {
@@ -469,7 +469,7 @@ public abstract class ady
   
   protected ady k()
   {
-    return d(az + 128);
+    return d(this.az + 128);
   }
   
   protected ady d(int ☃)
@@ -495,10 +495,10 @@ public abstract class ady
   
   public ady.b m()
   {
-    if (ap < 0.2D) {
+    if (this.ap < 0.2D) {
       return ady.b.b;
     }
-    if (ap < 1.0D) {
+    if (this.ap < 1.0D) {
       return ady.b.c;
     }
     return ady.b.d;

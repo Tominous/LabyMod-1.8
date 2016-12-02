@@ -19,42 +19,42 @@ public class js
   
   public eu a()
   {
-    return a;
+    return this.a;
   }
   
   public void a(eu ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public js.a b()
   {
-    return b;
+    return this.b;
   }
   
   public void a(js.a ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public js.c c()
   {
-    return c;
+    return this.c;
   }
   
   public void a(js.c ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public void a(String ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
   
   public String d()
   {
-    return d;
+    return this.d;
   }
   
   public static class a
@@ -65,28 +65,28 @@ public class js
     
     public a(int ☃, int ☃)
     {
-      a = ☃;
-      b = ☃;
+      this.a = ☃;
+      this.b = ☃;
     }
     
     public int a()
     {
-      return a;
+      return this.a;
     }
     
     public int b()
     {
-      return b;
+      return this.b;
     }
     
     public GameProfile[] c()
     {
-      return c;
+      return this.c;
     }
     
     public void a(GameProfile[] ☃)
     {
-      c = ☃;
+      this.c = ☃;
     }
     
     public static class a
@@ -146,18 +146,18 @@ public class js
     
     public c(String ☃, int ☃)
     {
-      a = ☃;
-      b = ☃;
+      this.a = ☃;
+      this.b = ☃;
     }
     
     public String a()
     {
-      return a;
+      return this.a;
     }
     
     public int b()
     {
-      return b;
+      return this.b;
     }
     
     public static class a

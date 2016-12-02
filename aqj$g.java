@@ -10,8 +10,8 @@ public class aqj$g
   {
     super(☃);
     
-    m = ☃;
-    l = ☃;
+    this.m = ☃;
+    this.l = ☃;
   }
   
   public void a(aqt ☃, List<aqt> ☃, Random ☃)

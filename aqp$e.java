@@ -14,22 +14,22 @@ public class aqp$e
   {
     super(☃);
     
-    m = ☃;
-    d = a(☃);
-    l = ☃;
-    b = (☃.d() > 6);
+    this.m = ☃;
+    this.d = a(☃);
+    this.l = ☃;
+    this.b = (☃.d() > 6);
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("Tall", b);
+    ☃.a("Tall", this.b);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    b = ☃.n("Tall");
+    this.b = ☃.n("Tall");
   }
   
   public static e a(List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃, int ☃)
@@ -51,12 +51,12 @@ public class aqp$e
       return false;
     }
     int ☃ = 11;
-    if (!b) {
+    if (!this.b) {
       ☃ = 6;
     }
     a(☃, ☃, 0, 0, 0, 13, ☃ - 1, 14, true, ☃, aqp.c());
     
-    a(☃, ☃, ☃, d, 4, 1, 0);
+    a(☃, ☃, ☃, this.d, 4, 1, 0);
     
     a(☃, ☃, ☃, 0.07F, 2, 1, 1, 11, 4, 13, afi.G.Q(), afi.G.Q(), false);
     
@@ -70,7 +70,7 @@ public class aqp$e
         
         a(☃, afi.aa.Q(), 2, 3, ☃, ☃);
         a(☃, afi.aa.Q(), 11, 3, ☃, ☃);
-        if (b)
+        if (this.b)
         {
           a(☃, ☃, 1, 6, ☃, 1, 9, ☃, afi.f.Q(), afi.f.Q(), false);
           a(☃, ☃, 12, 6, ☃, 12, 9, ☃, afi.f.Q(), afi.f.Q(), false);
@@ -80,7 +80,7 @@ public class aqp$e
       {
         a(☃, ☃, 1, 1, ☃, 1, 4, ☃, afi.X.Q(), afi.X.Q(), false);
         a(☃, ☃, 12, 1, ☃, 12, 4, ☃, afi.X.Q(), afi.X.Q(), false);
-        if (b)
+        if (this.b)
         {
           a(☃, ☃, 1, 6, ☃, 1, 9, ☃, afi.X.Q(), afi.X.Q(), false);
           a(☃, ☃, 12, 6, ☃, 12, 9, ☃, afi.X.Q(), afi.X.Q(), false);
@@ -93,7 +93,7 @@ public class aqp$e
       a(☃, ☃, 6, 1, ☃, 7, 3, ☃, afi.X.Q(), afi.X.Q(), false);
       a(☃, ☃, 9, 1, ☃, 10, 3, ☃, afi.X.Q(), afi.X.Q(), false);
     }
-    if (b)
+    if (this.b)
     {
       a(☃, ☃, 1, 5, 1, 3, 5, 13, afi.f.Q(), afi.f.Q(), false);
       a(☃, ☃, 10, 5, 1, 12, 5, 13, afi.f.Q(), afi.f.Q(), false);
@@ -145,7 +145,7 @@ public class aqp$e
       a(☃, afi.aa.Q(), ☃, 8, ☃ + 1, ☃);
     }
     a(☃, ☃, ☃, 3, 3, 5, ob.a(a, new ob[] { zy.cd.a(☃, 1, 5, 2) }), 1 + ☃.nextInt(4));
-    if (b)
+    if (this.b)
     {
       a(☃, afi.a.Q(), 12, 9, 1, ☃);
       a(☃, ☃, ☃, 12, 8, 1, ob.a(a, new ob[] { zy.cd.a(☃, 1, 5, 2) }), 1 + ☃.nextInt(4));

@@ -18,11 +18,11 @@ public class NameHistory
   
   public UUIDFetcher[] getChanges()
   {
-    return changes;
+    return this.changes;
   }
   
   public UUID getUUID()
   {
-    return uuid;
+    return this.uuid;
   }
 }

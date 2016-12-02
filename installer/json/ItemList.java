@@ -13,28 +13,28 @@ public class ItemList
   
   public ItemList(String s)
   {
-    split(s, sp, items);
+    split(s, this.sp, this.items);
   }
   
   public ItemList(String s, String sp)
   {
     this.sp = s;
-    split(s, sp, items);
+    split(s, sp, this.items);
   }
   
   public ItemList(String s, String sp, boolean isMultiToken)
   {
-    split(s, sp, items, isMultiToken);
+    split(s, sp, this.items, isMultiToken);
   }
   
   public List<String> getItems()
   {
-    return items;
+    return this.items;
   }
   
   public String[] getArray()
   {
-    return (String[])items.toArray();
+    return (String[])this.items.toArray();
   }
   
   public void split(String s, String sp, List<String> append, boolean isMultiToken)
@@ -85,7 +85,7 @@ public class ItemList
     if (item == null) {
       return;
     }
-    items.add(i, item.trim());
+    this.items.add(i, item.trim());
   }
   
   public void add(String item)
@@ -93,56 +93,56 @@ public class ItemList
     if (item == null) {
       return;
     }
-    items.add(item.trim());
+    this.items.add(item.trim());
   }
   
   public void addAll(ItemList list)
   {
-    items.addAll(items);
+    this.items.addAll(list.items);
   }
   
   public void addAll(String s)
   {
-    split(s, sp, items);
+    split(s, this.sp, this.items);
   }
   
   public void addAll(String s, String sp)
   {
-    split(s, sp, items);
+    split(s, sp, this.items);
   }
   
   public void addAll(String s, String sp, boolean isMultiToken)
   {
-    split(s, sp, items, isMultiToken);
+    split(s, sp, this.items, isMultiToken);
   }
   
   public String get(int i)
   {
-    return (String)items.get(i);
+    return (String)this.items.get(i);
   }
   
   public int size()
   {
-    return items.size();
+    return this.items.size();
   }
   
   public String toString()
   {
-    return toString(sp);
+    return toString(this.sp);
   }
   
   public String toString(String sp)
   {
     StringBuffer sb = new StringBuffer();
-    for (int i = 0; i < items.size(); i++) {
+    for (int i = 0; i < this.items.size(); i++) {
       if (i == 0)
       {
-        sb.append((String)items.get(i));
+        sb.append((String)this.items.get(i));
       }
       else
       {
         sb.append(sp);
-        sb.append((String)items.get(i));
+        sb.append((String)this.items.get(i));
       }
     }
     return sb.toString();
@@ -150,12 +150,12 @@ public class ItemList
   
   public void clear()
   {
-    items.clear();
+    this.items.clear();
   }
   
   public void reset()
   {
-    sp = ",";
-    items.clear();
+    this.sp = ",";
+    this.items.clear();
   }
 }

@@ -48,9 +48,9 @@ public class au
     }
     String ☃ = ☃[0];
     aui ☃ = ☃.d();
-    double ☃ = (float)b(a, ☃[1], true);
-    double ☃ = (float)b(b, ☃[2], true);
-    double ☃ = (float)b(c, ☃[3], true);
+    double ☃ = (float)b(☃.a, ☃[1], true);
+    double ☃ = (float)b(☃.b, ☃[2], true);
+    double ☃ = (float)b(☃.c, ☃[3], true);
     double ☃ = (float)c(☃[4]);
     double ☃ = (float)c(☃[5]);
     double ☃ = (float)c(☃[6]);

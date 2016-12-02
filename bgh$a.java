@@ -98,7 +98,7 @@ class bgh$a
   private Vector3f d(JsonObject ☃)
   {
     Vector3f ☃ = a(☃, "to");
-    if ((x < -16.0F) || (y < -16.0F) || (z < -16.0F) || (x > 32.0F) || (y > 32.0F) || (z > 32.0F)) {
+    if ((☃.x < -16.0F) || (☃.y < -16.0F) || (☃.z < -16.0F) || (☃.x > 32.0F) || (☃.y > 32.0F) || (☃.z > 32.0F)) {
       throw new JsonParseException("'to' specifier exceeds the allowed boundaries: " + ☃);
     }
     return ☃;
@@ -107,7 +107,7 @@ class bgh$a
   private Vector3f e(JsonObject ☃)
   {
     Vector3f ☃ = a(☃, "from");
-    if ((x < -16.0F) || (y < -16.0F) || (z < -16.0F) || (x > 32.0F) || (y > 32.0F) || (z > 32.0F)) {
+    if ((☃.x < -16.0F) || (☃.y < -16.0F) || (☃.z < -16.0F) || (☃.x > 32.0F) || (☃.y > 32.0F) || (☃.z > 32.0F)) {
       throw new JsonParseException("'from' specifier exceeds the allowed boundaries: " + ☃);
     }
     return ☃;

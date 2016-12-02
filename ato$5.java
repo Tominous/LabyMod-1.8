@@ -8,6 +8,6 @@ class ato$5
   public String a()
     throws Exception
   {
-    return String.format("%d game time, %d day time", new Object[] { Long.valueOf(ato.g(a)), Long.valueOf(ato.h(a)) });
+    return String.format("%d game time, %d day time", new Object[] { Long.valueOf(ato.g(this.a)), Long.valueOf(ato.h(this.a)) });
   }
 }

@@ -7,28 +7,28 @@ class akz$1
   
   public cj c()
   {
-    return a.c;
+    return this.a.c;
   }
   
   public aui d()
   {
-    return new aui(a.c.n() + 0.5D, a.c.o() + 0.5D, a.c.p() + 0.5D);
+    return new aui(this.a.c.n() + 0.5D, this.a.c.o() + 0.5D, this.a.c.p() + 0.5D);
   }
   
   public adm e()
   {
-    return a.z();
+    return this.a.z();
   }
   
   public void a(String ☃)
   {
     super.a(☃);
-    a.p_();
+    this.a.p_();
   }
   
   public void h()
   {
-    a.z().h(a.c);
+    this.a.z().h(this.a.c);
   }
   
   public int i()
@@ -38,9 +38,9 @@ class akz$1
   
   public void a(ByteBuf ☃)
   {
-    ☃.writeInt(a.c.n());
-    ☃.writeInt(a.c.o());
-    ☃.writeInt(a.c.p());
+    ☃.writeInt(this.a.c.n());
+    ☃.writeInt(this.a.c.o());
+    ☃.writeInt(this.a.c.p());
   }
   
   public pk f()

@@ -1,42 +1,41 @@
-class nq$a
+class nq$a<V>
 {
   final long a;
-  Object b;
-  a c;
+  V b;
+  a<V> c;
   final int d;
-  private static final String __OBFID = "CL_00001493";
   
-  nq$a(int p_i1553_1_, long p_i1553_2_, Object p_i1553_4_, a p_i1553_5_)
+  nq$a(int ☃, long ☃, V ☃, a<V> ☃)
   {
-    b = p_i1553_4_;
-    c = p_i1553_5_;
-    a = p_i1553_2_;
-    d = p_i1553_1_;
+    this.b = ☃;
+    this.c = ☃;
+    this.a = ☃;
+    this.d = ☃;
   }
   
   public final long a()
   {
-    return a;
+    return this.a;
   }
   
-  public final Object b()
+  public final V b()
   {
-    return b;
+    return (V)this.b;
   }
   
-  public final boolean equals(Object p_equals_1_)
+  public final boolean equals(Object ☃)
   {
-    if (!(p_equals_1_ instanceof a)) {
+    if (!(☃ instanceof a)) {
       return false;
     }
-    a var2 = (a)p_equals_1_;
-    Long var3 = Long.valueOf(a());
-    Long var4 = Long.valueOf(var2.a());
-    if ((var3 == var4) || ((var3 != null) && (var3.equals(var4))))
+    a<V> ☃ = (a)☃;
+    Object ☃ = Long.valueOf(a());
+    Object ☃ = Long.valueOf(☃.a());
+    if ((☃ == ☃) || ((☃ != null) && (☃.equals(☃))))
     {
-      Object var5 = b();
-      Object var6 = var2.b();
-      if ((var5 == var6) || ((var5 != null) && (var5.equals(var6)))) {
+      Object ☃ = b();
+      Object ☃ = ☃.b();
+      if ((☃ == ☃) || ((☃ != null) && (☃.equals(☃)))) {
         return true;
       }
     }
@@ -45,7 +44,7 @@ class nq$a
   
   public final int hashCode()
   {
-    return nq.f(a);
+    return nq.f(this.a);
   }
   
   public final String toString()

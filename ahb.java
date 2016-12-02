@@ -10,8 +10,8 @@ public class ahb
   protected ahb(boolean ☃)
   {
     super(arm.e);
-    j(M.b().a(a, cq.c));
-    b = ☃;
+    j(this.M.b().a(a, cq.c));
+    this.b = ☃;
   }
   
   public zw a(alz ☃, Random ☃, int ☃)
@@ -26,7 +26,7 @@ public class ahb
   
   private void e(adm ☃, cj ☃, alz ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
     afh ☃ = ☃.p(☃.c()).c();
@@ -49,7 +49,7 @@ public class ahb
   
   public void c(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (!b) {
+    if (!this.b) {
       return;
     }
     cq ☃ = (cq)☃.b(a);
@@ -81,7 +81,7 @@ public class ahb
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (D) {
+    if (☃.D) {
       return true;
     }
     akw ☃ = ☃.s(☃);

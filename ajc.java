@@ -8,7 +8,7 @@ public class ajc
   public ajc(boolean ☃)
   {
     super(arm.t);
-    a = ☃;
+    this.a = ☃;
     if (☃) {
       a(1.0F);
     }
@@ -16,34 +16,34 @@ public class ajc
   
   public void c(adm ☃, cj ☃, alz ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
-    if ((a) && (!☃.z(☃))) {
+    if ((this.a) && (!☃.z(☃))) {
       ☃.a(☃, afi.bJ.Q(), 2);
-    } else if ((!a) && (☃.z(☃))) {
+    } else if ((!this.a) && (☃.z(☃))) {
       ☃.a(☃, afi.bK.Q(), 2);
     }
   }
   
   public void a(adm ☃, cj ☃, alz ☃, afh ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
-    if ((a) && (!☃.z(☃))) {
+    if ((this.a) && (!☃.z(☃))) {
       ☃.a(☃, this, 4);
-    } else if ((!a) && (☃.z(☃))) {
+    } else if ((!this.a) && (☃.z(☃))) {
       ☃.a(☃, afi.bK.Q(), 2);
     }
   }
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
-    if ((a) && (!☃.z(☃))) {
+    if ((this.a) && (!☃.z(☃))) {
       ☃.a(☃, afi.bJ.Q(), 2);
     }
   }

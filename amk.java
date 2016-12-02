@@ -9,12 +9,12 @@ public class amk
   protected amk(String ☃)
   {
     super(☃, Boolean.class);
-    a = ImmutableSet.of(Boolean.valueOf(true), Boolean.valueOf(false));
+    this.a = ImmutableSet.of(Boolean.valueOf(true), Boolean.valueOf(false));
   }
   
   public Collection<Boolean> c()
   {
-    return a;
+    return this.a;
   }
   
   public static amk a(String ☃)

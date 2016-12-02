@@ -10,7 +10,7 @@ public abstract class aih
   public aih()
   {
     super(arm.e);
-    alz ☃ = M.b();
+    alz ☃ = this.M.b();
     if (l()) {
       ☃ = ☃.a(b, Boolean.valueOf(false));
     } else {
@@ -124,24 +124,24 @@ public abstract class aih
     
     private a(int ☃, String ☃, arn ☃)
     {
-      c = ☃;
-      d = ☃;
-      e = ☃;
+      this.c = ☃;
+      this.d = ☃;
+      this.e = ☃;
     }
     
     public int a()
     {
-      return c;
+      return this.c;
     }
     
     public arn c()
     {
-      return e;
+      return this.e;
     }
     
     public String toString()
     {
-      return d;
+      return this.d;
     }
     
     public static a a(int ☃)
@@ -154,12 +154,12 @@ public abstract class aih
     
     public String l()
     {
-      return d;
+      return this.d;
     }
     
     public String d()
     {
-      return d;
+      return this.d;
     }
   }
 }

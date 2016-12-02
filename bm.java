@@ -28,9 +28,9 @@ public class bm
     cj ☃ = ☃.c();
     aui ☃ = ☃.d();
     
-    double ☃ = a;
-    double ☃ = b;
-    double ☃ = c;
+    double ☃ = ☃.a;
+    double ☃ = ☃.b;
+    double ☃ = ☃.c;
     if (☃.length >= 4)
     {
       ☃ = b(☃, ☃[1], true);
@@ -76,7 +76,7 @@ public class bm
     if (☃ == null) {
       throw new bz("commands.summon.failed", new Object[0]);
     }
-    ☃.b(☃, ☃, ☃, y, z);
+    ☃.b(☃, ☃, ☃, ☃.y, ☃.z);
     if (!☃) {
       if ((☃ instanceof ps)) {
         ((ps)☃).a(☃.E(new cj(☃)), null);
@@ -91,7 +91,7 @@ public class bm
       pk ☃ = pm.a(☃.m("Riding"), ☃);
       if (☃ != null)
       {
-        ☃.b(☃, ☃, ☃, y, z);
+        ☃.b(☃, ☃, ☃, ☃.y, ☃.z);
         ☃.d(☃);
         ☃.a(☃);
       }

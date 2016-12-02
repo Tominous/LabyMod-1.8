@@ -17,14 +17,14 @@ public class WorldEditCUI
   public void initialise()
   {
     instance = this;
-    selection = new CuboidRegion(this);
-    configuration = CUIConfiguration.create();
-    debugger = new CUIDebug(this);
+    this.selection = new CuboidRegion(this);
+    this.configuration = CUIConfiguration.create();
+    this.debugger = new CUIDebug(this);
     try
     {
-      selection.initialise();
-      configuration.initialise();
-      debugger.initialise();
+      this.selection.initialise();
+      this.configuration.initialise();
+      this.debugger.initialise();
     }
     catch (InitialisationException e)
     {
@@ -39,17 +39,17 @@ public class WorldEditCUI
   
   public CUIConfiguration getConfiguration()
   {
-    return configuration;
+    return this.configuration;
   }
   
   public CUIDebug getDebugger()
   {
-    return debugger;
+    return this.debugger;
   }
   
   public BaseRegion getSelection()
   {
-    return selection;
+    return this.selection;
   }
   
   public void setSelection(BaseRegion selection)

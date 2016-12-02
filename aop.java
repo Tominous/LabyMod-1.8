@@ -8,8 +8,8 @@ public class aop
   
   public aop(int ☃)
   {
-    a = afi.aL;
-    b = ☃;
+    this.a = afi.aL;
+    this.b = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
@@ -17,7 +17,7 @@ public class aop
     if (☃.p(☃).c().t() != arm.h) {
       return false;
     }
-    int ☃ = ☃.nextInt(b - 2) + 2;
+    int ☃ = ☃.nextInt(this.b - 2) + 2;
     int ☃ = 1;
     for (int ☃ = ☃.n() - ☃; ☃ <= ☃.n() + ☃; ☃++) {
       for (int ☃ = ☃.p() - ☃; ☃ <= ☃.p() + ☃; ☃++)
@@ -30,7 +30,7 @@ public class aop
             cj ☃ = new cj(☃, ☃, ☃);
             afh ☃ = ☃.p(☃).c();
             if ((☃ == afi.d) || (☃ == afi.aL)) {
-              ☃.a(☃, a.Q(), 2);
+              ☃.a(☃, this.a.Q(), 2);
             }
           }
         }

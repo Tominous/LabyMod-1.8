@@ -40,7 +40,7 @@ public abstract class auq
     {
       g = Maps.newHashMap();
       for (a ☃ : values()) {
-        g.put(e, ☃);
+        g.put(☃.e, ☃);
       }
     }
     
@@ -56,8 +56,8 @@ public abstract class auq
     
     private a(String ☃, int ☃)
     {
-      e = ☃;
-      f = ☃;
+      this.e = ☃;
+      this.f = ☃;
     }
   }
 }

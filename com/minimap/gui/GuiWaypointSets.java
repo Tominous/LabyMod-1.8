@@ -14,18 +14,18 @@ public class GuiWaypointSets
   public GuiWaypointSets(String c, String worldID, boolean canCreate)
   {
     WaypointWorld w = (WaypointWorld)Minimap.waypointMap.get(worldID);
-    int size = sets.size() + (canCreate ? 1 : 0);
-    options = new String[size];
-    Object[] keys = sets.keySet().toArray();
+    int size = w.sets.size() + (canCreate ? 1 : 0);
+    this.options = new String[size];
+    Object[] keys = w.sets.keySet().toArray();
     for (int i = 0; i < keys.length; i++)
     {
-      options[i] = ((String)keys[i]);
-      if (options[i].equals(c)) {
-        currentSet = i;
+      this.options[i] = ((String)keys[i]);
+      if (this.options[i].equals(c)) {
+        this.currentSet = i;
       }
     }
     if (canCreate) {
-      options[(options.length - 1)] = ("§8" + bnq.a("gui.xaero_create_set", new Object[0]));
+      this.options[(this.options.length - 1)] = ("§8" + bnq.a("gui.xaero_create_set", new Object[0]));
     }
   }
 }

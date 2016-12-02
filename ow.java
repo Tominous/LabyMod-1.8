@@ -75,49 +75,49 @@ public class ow
   
   public boolean a()
   {
-    return v;
+    return this.v;
   }
   
   public ow b()
   {
-    v = true;
+    this.v = true;
     return this;
   }
   
   public boolean c()
   {
-    return y;
+    return this.y;
   }
   
   public ow d()
   {
-    y = true;
+    this.y = true;
     return this;
   }
   
   public boolean e()
   {
-    return q;
+    return this.q;
   }
   
   public float f()
   {
-    return t;
+    return this.t;
   }
   
   public boolean g()
   {
-    return r;
+    return this.r;
   }
   
   public boolean h()
   {
-    return s;
+    return this.s;
   }
   
   protected ow(String ☃)
   {
-    p = ☃;
+    this.p = ☃;
   }
   
   public pk i()
@@ -132,36 +132,36 @@ public class ow
   
   protected ow k()
   {
-    q = true;
+    this.q = true;
     
-    t = 0.0F;
+    this.t = 0.0F;
     return this;
   }
   
   protected ow l()
   {
-    r = true;
+    this.r = true;
     return this;
   }
   
   protected ow m()
   {
-    s = true;
+    this.s = true;
     
-    t = 0.0F;
+    this.t = 0.0F;
     return this;
   }
   
   protected ow n()
   {
-    u = true;
+    this.u = true;
     return this;
   }
   
   public eu b(pr ☃)
   {
     pr ☃ = ☃.bt();
-    String ☃ = "death.attack." + p;
+    String ☃ = "death.attack." + this.p;
     String ☃ = ☃ + ".player";
     if ((☃ != null) && (di.c(☃))) {
       return new fb(☃, new Object[] { ☃.f_(), ☃.f_() });
@@ -171,40 +171,40 @@ public class ow
   
   public boolean o()
   {
-    return u;
+    return this.u;
   }
   
   public String p()
   {
-    return p;
+    return this.p;
   }
   
   public ow q()
   {
-    w = true;
+    this.w = true;
     return this;
   }
   
   public boolean r()
   {
-    return w;
+    return this.w;
   }
   
   public boolean s()
   {
-    return x;
+    return this.x;
   }
   
   public ow t()
   {
-    x = true;
+    this.x = true;
     return this;
   }
   
   public boolean u()
   {
     pk ☃ = j();
-    if (((☃ instanceof wn)) && (bA.d)) {
+    if (((☃ instanceof wn)) && (((wn)☃).bA.d)) {
       return true;
     }
     return false;

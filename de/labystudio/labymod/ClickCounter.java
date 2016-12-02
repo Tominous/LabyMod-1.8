@@ -13,14 +13,14 @@ public class ClickCounter
   
   public static void click()
   {
-    if (settingsclickTest) {
+    if (ConfigManager.settings.clickTest) {
       clicks += 1.0D;
     }
   }
   
   public static void tick()
   {
-    if ((settingsclickTest) && 
+    if ((ConfigManager.settings.clickTest) && 
       (time < System.currentTimeMillis()))
     {
       result = clicks;

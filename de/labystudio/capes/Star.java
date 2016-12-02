@@ -18,20 +18,20 @@ public class Star
   
   public Star(Random random)
   {
-    x = (random.nextDouble() * 400.0D);
-    y = (random.nextDouble() * 900.0D * 2.0D);
-    duration = System.currentTimeMillis();
-    motion = ((random.nextDouble() - 0.5D) * 10.0D);
-    maxSize = (random.nextDouble() + 0.9D);
+    this.x = (random.nextDouble() * 400.0D);
+    this.y = (random.nextDouble() * 900.0D * 2.0D);
+    this.duration = System.currentTimeMillis();
+    this.motion = ((random.nextDouble() - 0.5D) * 10.0D);
+    this.maxSize = (random.nextDouble() + 0.9D);
   }
   
   public void draw()
   {
-    long zero = System.currentTimeMillis() - duration;
-    double scale = zero / lastDuration / maxSize;
-    if (zero >= lastDuration)
+    long zero = System.currentTimeMillis() - this.duration;
+    double scale = zero / this.lastDuration / this.maxSize;
+    if (zero >= this.lastDuration)
     {
-      killed = true;
+      this.killed = true;
       return;
     }
     bfl.E();
@@ -39,8 +39,8 @@ public class Star
     bfl.a(scale, scale, scale);
     bfl.l();
     GL11.glColor4f(255.0F, 255.0F, 255.0F, (float)(0.6000000238418579D - scale));
-    bfl.b((x - 200.0D - (scale + motion) * 100.0D) / scale, (y + 150.0D - scale * 100.0D) / scale, -135.0D / scale);
-    getInstancedraw.b(0, 0, 0, 0, 240, 250);
+    bfl.b((this.x - 200.0D - (scale + this.motion) * 100.0D) / scale, (this.y + 150.0D - scale * 100.0D) / scale, -135.0D / scale);
+    LabyMod.getInstance().draw.b(0, 0, 0, 0, 240, 250);
     bfl.k();
     GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
     bfl.F();
@@ -48,6 +48,6 @@ public class Star
   
   public boolean isKilled()
   {
-    return killed;
+    return this.killed;
   }
 }

@@ -14,7 +14,7 @@ abstract class ayf$e
   
   protected ayf$e(ayf paramayf, ave ☃)
   {
-    super(☃, l, m, 32, m - 64, 20);
+    super(☃, paramayf.l, paramayf.m, 32, paramayf.m - 64, 20);
     
     b(false);
     a(true, 20);
@@ -29,70 +29,70 @@ abstract class ayf$e
   
   protected void a()
   {
-    A.c();
+    this.A.c();
   }
   
   protected void a(int ☃, int ☃, bfx ☃)
   {
     if (!Mouse.isButtonDown(0)) {
-      v = -1;
+      this.v = -1;
     }
-    if (v == 0) {
-      ayf.a(A, ☃ + 115 - 18, ☃ + 1, 0, 0);
+    if (this.v == 0) {
+      ayf.a(this.A, ☃ + 115 - 18, ☃ + 1, 0, 0);
     } else {
-      ayf.a(A, ☃ + 115 - 18, ☃ + 1, 0, 18);
+      ayf.a(this.A, ☃ + 115 - 18, ☃ + 1, 0, 18);
     }
-    if (v == 1) {
-      ayf.a(A, ☃ + 165 - 18, ☃ + 1, 0, 0);
+    if (this.v == 1) {
+      ayf.a(this.A, ☃ + 165 - 18, ☃ + 1, 0, 0);
     } else {
-      ayf.a(A, ☃ + 165 - 18, ☃ + 1, 0, 18);
+      ayf.a(this.A, ☃ + 165 - 18, ☃ + 1, 0, 18);
     }
-    if (v == 2) {
-      ayf.a(A, ☃ + 215 - 18, ☃ + 1, 0, 0);
+    if (this.v == 2) {
+      ayf.a(this.A, ☃ + 215 - 18, ☃ + 1, 0, 0);
     } else {
-      ayf.a(A, ☃ + 215 - 18, ☃ + 1, 0, 18);
+      ayf.a(this.A, ☃ + 215 - 18, ☃ + 1, 0, 18);
     }
-    if (y != -1)
+    if (this.y != -1)
     {
       int ☃ = 79;
       int ☃ = 18;
-      if (y == 1) {
+      if (this.y == 1) {
         ☃ = 129;
-      } else if (y == 2) {
+      } else if (this.y == 2) {
         ☃ = 179;
       }
-      if (z == 1) {
+      if (this.z == 1) {
         ☃ = 36;
       }
-      ayf.a(A, ☃ + ☃, ☃ + 1, ☃, 0);
+      ayf.a(this.A, ☃ + ☃, ☃ + 1, ☃, 0);
     }
   }
   
   protected void a(int ☃, int ☃)
   {
-    v = -1;
+    this.v = -1;
     if ((☃ >= 79) && (☃ < 115)) {
-      v = 0;
+      this.v = 0;
     } else if ((☃ >= 129) && (☃ < 165)) {
-      v = 1;
+      this.v = 1;
     } else if ((☃ >= 179) && (☃ < 215)) {
-      v = 2;
+      this.v = 2;
     }
-    if (v >= 0)
+    if (this.v >= 0)
     {
-      d(v);
-      a.W().a(bpf.a(new jy("gui.button.press"), 1.0F));
+      d(this.v);
+      this.a.W().a(bpf.a(new jy("gui.button.press"), 1.0F));
     }
   }
   
   protected final int b()
   {
-    return w.size();
+    return this.w.size();
   }
   
   protected final mu c(int ☃)
   {
-    return (mu)w.get(☃);
+    return (mu)this.w.get(☃);
   }
   
   protected abstract String b(int paramInt);
@@ -101,23 +101,23 @@ abstract class ayf$e
   {
     if (☃ != null)
     {
-      String ☃ = ☃.a(ayf.b(A).a(☃));
-      A.c(ayf.e(A), ☃, ☃ - ayf.f(A).a(☃), ☃ + 5, ☃ ? 16777215 : 9474192);
+      String ☃ = ☃.a(ayf.b(this.A).a(☃));
+      this.A.c(ayf.e(this.A), ☃, ☃ - ayf.f(this.A).a(☃), ☃ + 5, ☃ ? 16777215 : 9474192);
     }
     else
     {
       String ☃ = "-";
-      A.c(ayf.g(A), ☃, ☃ - ayf.h(A).a(☃), ☃ + 5, ☃ ? 16777215 : 9474192);
+      this.A.c(ayf.g(this.A), ☃, ☃ - ayf.h(this.A).a(☃), ☃ + 5, ☃ ? 16777215 : 9474192);
     }
   }
   
   protected void b(int ☃, int ☃)
   {
-    if ((☃ < d) || (☃ > e)) {
+    if ((☃ < this.d) || (☃ > this.e)) {
       return;
     }
     int ☃ = c(☃, ☃);
-    int ☃ = b / 2 - 92 - 16;
+    int ☃ = this.b / 2 - 92 - 16;
     if (☃ >= 0)
     {
       if ((☃ < ☃ + 40) || (☃ > ☃ + 40 + 20)) {
@@ -143,10 +143,10 @@ abstract class ayf$e
       {
         int ☃ = ☃ + 12;
         int ☃ = ☃ - 12;
-        int ☃ = ayf.i(A).a(☃);
-        ayf.a(A, ☃ - 3, ☃ - 3, ☃ + ☃ + 3, ☃ + 8 + 3, -1073741824, -1073741824);
+        int ☃ = ayf.i(this.A).a(☃);
+        ayf.a(this.A, ☃ - 3, ☃ - 3, ☃ + ☃ + 3, ☃ + 8 + 3, -1073741824, -1073741824);
         
-        ayf.j(A).a(☃, ☃, ☃, -1);
+        ayf.j(this.A).a(☃, ☃, ☃, -1);
       }
     }
   }
@@ -165,29 +165,29 @@ abstract class ayf$e
     {
       int ☃ = ☃ + 12;
       int ☃ = ☃ - 12;
-      int ☃ = ayf.k(A).a(☃);
-      ayf.b(A, ☃ - 3, ☃ - 3, ☃ + ☃ + 3, ☃ + 8 + 3, -1073741824, -1073741824);
+      int ☃ = ayf.k(this.A).a(☃);
+      ayf.b(this.A, ☃ - 3, ☃ - 3, ☃ + ☃ + 3, ☃ + 8 + 3, -1073741824, -1073741824);
       
-      ayf.l(A).a(☃, ☃, ☃, -1);
+      ayf.l(this.A).a(☃, ☃, ☃, -1);
     }
   }
   
   protected void d(int ☃)
   {
-    if (☃ != y)
+    if (☃ != this.y)
     {
-      y = ☃;
-      z = -1;
+      this.y = ☃;
+      this.z = -1;
     }
-    else if (z == -1)
+    else if (this.z == -1)
     {
-      z = 1;
+      this.z = 1;
     }
     else
     {
-      y = -1;
-      z = 0;
+      this.y = -1;
+      this.z = 0;
     }
-    Collections.sort(w, x);
+    Collections.sort(this.w, this.x);
   }
 }

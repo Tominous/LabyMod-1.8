@@ -38,8 +38,8 @@ public class GuiNameHistory
   protected void a(int mouseX, int mouseY, int mouseButton)
     throws IOException
   {
-    search.a(mouseX, mouseY, mouseButton);
-    chatField.a(mouseX, mouseY, mouseButton);
+    this.search.a(mouseX, mouseY, mouseButton);
+    this.chatField.a(mouseX, mouseY, mouseButton);
     super.a(mouseX, mouseY, mouseButton);
   }
   
@@ -47,41 +47,41 @@ public class GuiNameHistory
     throws IOException
   {
     super.a(typedChar, keyCode);
-    if (chatField.m())
+    if (this.chatField.m())
     {
-      text = chatField.b();
+      this.text = this.chatField.b();
       if (keyCode == 1)
       {
-        j.a((axu)null);
+        this.j.a((axu)null);
       }
       else if ((keyCode != 28) && (keyCode != 156))
       {
         if ((keyCode != 200) && 
           (keyCode != 208)) {
           if (keyCode == 201) {
-            j.q.d().b(j.q.d().i() - 1);
+            this.j.q.d().b(this.j.q.d().i() - 1);
           } else if (keyCode == 209) {
-            j.q.d().b(-j.q.d().i() + 1);
+            this.j.q.d().b(-this.j.q.d().i() + 1);
           } else {
-            chatField.a(typedChar, keyCode);
+            this.chatField.a(typedChar, keyCode);
           }
         }
       }
       else
       {
-        String var3 = chatField.b().trim();
+        String var3 = this.chatField.b().trim();
         if (var3.length() > 0) {
           f(var3);
         }
-        j.a((axu)null);
+        this.j.a((axu)null);
       }
     }
-    if (search.m())
+    if (this.search.m())
     {
       if (keyCode == 28) {
-        history = NameMCUtil.getNameHistory(search.b());
+        this.history = NameMCUtil.getNameHistory(this.search.b());
       }
-      search.a(typedChar, keyCode);
+      this.search.a(typedChar, keyCode);
     }
   }
   
@@ -94,62 +94,62 @@ public class GuiNameHistory
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    chatField = new avw(0, q, 4, m - 12, l - 4, 12);
-    chatField.f(500);
-    chatField.a(false);
-    chatField.b(true);
-    chatField.a(text);
-    chatField.f();
+    this.chatField = new avw(0, this.q, 4, this.m - 12, this.l - 4, 12);
+    this.chatField.f(500);
+    this.chatField.a(false);
+    this.chatField.b(true);
+    this.chatField.a(this.text);
+    this.chatField.f();
     
-    search = new ModGuiTextField(0, q, l - 190, 5, 140, 18);
-    search.f(100);
-    search.b(false);
+    this.search = new ModGuiTextField(0, this.q, this.l - 190, 5, 140, 18);
+    this.search.f(100);
+    this.search.b(false);
     
-    searchButton = new avs(24, l - 46, 4, 42, 20, "Search");
-    n.add(searchButton);
+    this.searchButton = new avs(24, this.l - 46, 4, 42, 20, "Search");
+    this.n.add(this.searchButton);
   }
   
   protected void a(avs button)
   {
-    switch (k)
+    switch (button.k)
     {
     case 0: 
-      j.a(new awv(text));
+      this.j.a(new awv(this.text));
       break;
     case 24: 
-      history = NameMCUtil.getNameHistory(search.b());
+      this.history = NameMCUtil.getNameHistory(this.search.b());
     }
   }
   
   public void a(int mouseX, int mouseY, float partialTicks)
   {
-    draw = getInstancedraw;
-    a(2, m - 14, l - 2, m - 2, Integer.MIN_VALUE);
-    a(l - 193, 3, l - 3, 25, Integer.MIN_VALUE);
-    if ((history != null) && (history.getChanges().length > 1)) {
-      a(l - 193, 27, l - 3, 35 + history.getChanges().length * 10, Integer.MIN_VALUE);
+    this.draw = LabyMod.getInstance().draw;
+    a(2, this.m - 14, this.l - 2, this.m - 2, Integer.MIN_VALUE);
+    a(this.l - 193, 3, this.l - 3, 25, Integer.MIN_VALUE);
+    if ((this.history != null) && (this.history.getChanges().length > 1)) {
+      a(this.l - 193, 27, this.l - 3, 35 + this.history.getChanges().length * 10, Integer.MIN_VALUE);
     }
-    chatField.g();
-    search.g();
+    this.chatField.g();
+    this.search.g();
     
-    searchButton.l = ((!search.b().isEmpty()) && (search.b().length() > 2) && (search.b().length() <= 16));
+    this.searchButton.l = ((!this.search.b().isEmpty()) && (this.search.b().length() > 2) && (this.search.b().length() <= 16));
     
     super.a(mouseX, mouseY, partialTicks);
-    if ((history != null) && (history.getChanges().length != 0))
+    if ((this.history != null) && (this.history.getChanges().length != 0))
     {
-      if (history.getChanges().length == 1)
+      if (this.history.getChanges().length == 1)
       {
-        draw.drawString(Color.cl("c") + "No name changes found", l - 190, 28.0D);
+        this.draw.drawString(Color.cl("c") + "No name changes found", this.l - 190, 28.0D);
       }
       else
       {
         boolean currentNameDisplayed = true;
         int yPosition = 30;
-        for (UUIDFetcher change : history.getChanges())
+        for (UUIDFetcher change : this.history.getChanges())
         {
-          if (changedToAt != 0L)
+          if (change.changedToAt != 0L)
           {
-            long time = System.currentTimeMillis() - changedToAt;
+            long time = System.currentTimeMillis() - change.changedToAt;
             long secs = time / 1000L;
             long mins = secs / 60L;
             long hours = mins / 60L;
@@ -177,24 +177,24 @@ public class GuiNameHistory
             }
             if (currentNameDisplayed)
             {
-              draw.drawString(Color.cl("a") + Color.cl("l") + "x " + Color.cl("7") + name + Color.cl("8") + " - " + Color.cl("e") + date, l - 190, yPosition);
+              this.draw.drawString(Color.cl("a") + Color.cl("l") + "x " + Color.cl("7") + change.name + Color.cl("8") + " - " + Color.cl("e") + date, this.l - 190, yPosition);
               currentNameDisplayed = false;
             }
             else
             {
-              draw.drawString(Color.cl("c") + Color.cl("l") + "x " + Color.cl("7") + name + Color.cl("8") + " - " + Color.cl("e") + date, l - 190, yPosition);
+              this.draw.drawString(Color.cl("c") + Color.cl("l") + "x " + Color.cl("7") + change.name + Color.cl("8") + " - " + Color.cl("e") + date, this.l - 190, yPosition);
             }
           }
           else
           {
-            draw.drawString(Color.cl("4") + Color.cl("l") + "x " + Color.cl("7") + name, l - 190, yPosition);
+            this.draw.drawString(Color.cl("4") + Color.cl("l") + "x " + Color.cl("7") + change.name, this.l - 190, yPosition);
           }
           yPosition += 10;
         }
       }
     }
     else {
-      draw.drawString(Color.cl("4") + "Not found", l - 190, 28.0D);
+      this.draw.drawString(Color.cl("4") + "Not found", this.l - 190, 28.0D);
     }
   }
 }

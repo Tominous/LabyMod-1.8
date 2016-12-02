@@ -23,12 +23,12 @@ public class HiveMC
   
   public static void updateHiveMC()
   {
-    isHive = (getInstanceip.toLowerCase().contains("hivemc")) || (getInstanceip.toLowerCase().contains("hive.sexy"));
+    isHive = (LabyMod.getInstance().ip.toLowerCase().contains("hivemc")) || (LabyMod.getInstance().ip.toLowerCase().contains("hive.sexy"));
   }
   
   public static boolean isHive()
   {
-    return (isHive) && (settingsgameHiveMC);
+    return (isHive) && (ConfigManager.settings.gameHiveMC);
   }
   
   public static void serverHiveChat(String clean, String raw)
@@ -80,7 +80,7 @@ public class HiveMC
       {
         error.printStackTrace();
       }
-      if (settingshiveAutoScramble) {
+      if (ConfigManager.settings.hiveAutoScramble) {
         LabyMod.getInstance().sendCommand("scramble");
       }
     }

@@ -1,5 +1,5 @@
 public class bmf$a
-  implements Comparable
+  implements Comparable<a>
 {
   private final bmi a;
   private final int b;
@@ -7,78 +7,74 @@ public class bmf$a
   private final int d;
   private boolean e;
   private float f = 1.0F;
-  private static final String __OBFID = "CL_00001055";
   
-  public bmf$a(bmi p_i45094_1_, int p_i45094_2_)
+  public bmf$a(bmi ☃, int ☃)
   {
-    a = p_i45094_1_;
-    b = p_i45094_1_.c();
-    c = p_i45094_1_.d();
-    d = p_i45094_2_;
-    e = (bmf.a(c, p_i45094_2_) > bmf.a(b, p_i45094_2_));
+    this.a = ☃;
+    this.b = ☃.c();
+    this.c = ☃.d();
+    this.d = ☃;
+    
+    this.e = (bmf.a(this.c, ☃) > bmf.a(this.b, ☃));
   }
   
   public bmi a()
   {
-    return a;
+    return this.a;
   }
   
   public int b()
   {
-    return e ? bmf.a((int)(c * f), d) : bmf.a((int)(b * f), d);
+    return this.e ? bmf.a((int)(this.c * this.f), this.d) : bmf.a((int)(this.b * this.f), this.d);
   }
   
   public int c()
   {
-    return e ? bmf.a((int)(b * f), d) : bmf.a((int)(c * f), d);
+    return this.e ? bmf.a((int)(this.b * this.f), this.d) : bmf.a((int)(this.c * this.f), this.d);
   }
   
   public void d()
   {
-    e = (!e);
+    this.e = (!this.e);
   }
   
   public boolean e()
   {
-    return e;
+    return this.e;
   }
   
-  public void a(int p_94196_1_)
+  public void a(int ☃)
   {
-    if ((b > p_94196_1_) && (c > p_94196_1_)) {
-      f = (p_94196_1_ / Math.min(b, c));
+    if ((this.b <= ☃) || (this.c <= ☃)) {
+      return;
     }
+    this.f = (☃ / Math.min(this.b, this.c));
   }
   
   public String toString()
   {
-    return "Holder{width=" + b + ", height=" + c + ", name=" + a.i() + '}';
+    return "Holder{width=" + this.b + ", height=" + this.c + '}';
   }
   
-  public int a(a p_compareTo_1_)
+  public int a(a ☃)
   {
-    int var2;
-    int var2;
-    if (c() == p_compareTo_1_.c())
+    int ☃;
+    int ☃;
+    if (c() == ☃.c())
     {
-      if (b() == p_compareTo_1_.b())
+      if (b() == ☃.b())
       {
-        if (a.i() == null) {
-          return a.i() == null ? 0 : -1;
+        if (this.a.i() == null) {
+          return ☃.a.i() == null ? 0 : -1;
         }
-        return a.i().compareTo(a.i());
+        return this.a.i().compareTo(☃.a.i());
       }
-      var2 = b() < p_compareTo_1_.b() ? 1 : -1;
+      ☃ = b() < ☃.b() ? 1 : -1;
     }
     else
     {
-      var2 = c() < p_compareTo_1_.c() ? 1 : -1;
+      ☃ = c() < ☃.c() ? 1 : -1;
     }
-    return var2;
-  }
-  
-  public int compareTo(Object p_compareTo_1_)
-  {
-    return a((a)p_compareTo_1_);
+    return ☃;
   }
 }

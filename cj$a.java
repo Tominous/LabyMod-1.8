@@ -13,31 +13,31 @@ public final class cj$a
   public cj$a(int ☃, int ☃, int ☃)
   {
     super(0, 0, 0);
-    c = ☃;
-    d = ☃;
-    e = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.e = ☃;
   }
   
   public int n()
   {
-    return c;
+    return this.c;
   }
   
   public int o()
   {
-    return d;
+    return this.d;
   }
   
   public int p()
   {
-    return e;
+    return this.e;
   }
   
   public a c(int ☃, int ☃, int ☃)
   {
-    c = ☃;
-    d = ☃;
-    e = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.e = ☃;
     return this;
   }
 }

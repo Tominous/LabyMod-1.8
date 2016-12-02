@@ -7,7 +7,7 @@ public class bkr
   
   public bkr(bio ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public void a(vn ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
@@ -18,12 +18,12 @@ public class bkr
     boolean ☃ = ☃.ax();
     bfl.a(!☃);
     
-    b.a(a);
+    this.b.a(a);
     
     bfl.n(5890);
     bfl.D();
     
-    float ☃ = W + ☃;
+    float ☃ = ☃.W + ☃;
     bfl.b(☃ * 0.01F, ☃ * 0.01F, 0.0F);
     
     bfl.n(5888);
@@ -33,8 +33,8 @@ public class bkr
     bfl.f();
     bfl.b(1, 1);
     
-    c.a(b.b());
-    c.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
+    this.c.a(this.b.b());
+    this.c.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
     
     bfl.n(5890);
     bfl.D();

@@ -4,10 +4,10 @@ public class abr
   
   public void a(abt ☃)
   {
-    for (int ☃ = 0; ☃ < a.length; ☃++)
+    for (int ☃ = 0; ☃ < this.a.length; ☃++)
     {
-      afh ☃ = (afh)a[☃][0];
-      zx ☃ = (zx)a[☃][1];
+      afh ☃ = (afh)this.a[☃][0];
+      zx ☃ = (zx)this.a[☃][1];
       ☃.a(new zx(☃), new Object[] { "###", "###", "###", Character.valueOf('#'), ☃ });
       
       ☃.a(☃, new Object[] { "#", Character.valueOf('#'), ☃ });

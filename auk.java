@@ -8,47 +8,47 @@ public class auk
   
   public auk(auo ☃, String ☃, auu ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    e = ☃;
-    d = ☃.c();
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.e = ☃;
+    this.d = ☃.c();
   }
   
   public auo a()
   {
-    return a;
+    return this.a;
   }
   
   public String b()
   {
-    return b;
+    return this.b;
   }
   
   public auu c()
   {
-    return c;
+    return this.c;
   }
   
   public String d()
   {
-    return e;
+    return this.e;
   }
   
   public void a(String ☃)
   {
-    e = ☃;
-    a.b(this);
+    this.e = ☃;
+    this.a.b(this);
   }
   
   public auu.a e()
   {
-    return d;
+    return this.d;
   }
   
   public void a(auu.a ☃)
   {
-    d = ☃;
-    a.b(this);
+    this.d = ☃;
+    this.a.b(this);
   }
 }

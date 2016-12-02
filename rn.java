@@ -13,9 +13,9 @@ public class rn
   
   public rn(py ☃, double ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
-    e = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.e = ☃;
     a(1);
     if (!(☃.s() instanceof sv)) {
       throw new IllegalArgumentException("Unsupported mob for MoveThroughVillageGoal");
@@ -25,53 +25,53 @@ public class rn
   public boolean a()
   {
     f();
-    if ((e) && (a.o.w())) {
+    if ((this.e) && (this.a.o.w())) {
       return false;
     }
-    tf ☃ = a.o.ae().a(new cj(a), 0);
+    tf ☃ = this.a.o.ae().a(new cj(this.a), 0);
     if (☃ == null) {
       return false;
     }
-    d = a(☃);
-    if (d == null) {
+    this.d = a(☃);
+    if (this.d == null) {
       return false;
     }
-    sv ☃ = (sv)a.s();
+    sv ☃ = (sv)this.a.s();
     boolean ☃ = ☃.g();
     ☃.b(false);
-    c = ☃.a(d.d());
+    this.c = ☃.a(this.d.d());
     ☃.b(☃);
-    if (c != null) {
+    if (this.c != null) {
       return true;
     }
-    aui ☃ = tc.a(a, 10, 7, new aui(d.d().n(), d.d().o(), d.d().p()));
+    aui ☃ = tc.a(this.a, 10, 7, new aui(this.d.d().n(), this.d.d().o(), this.d.d().p()));
     if (☃ == null) {
       return false;
     }
     ☃.b(false);
-    c = a.s().a(a, b, c);
+    this.c = this.a.s().a(☃.a, ☃.b, ☃.c);
     ☃.b(☃);
-    return c != null;
+    return this.c != null;
   }
   
   public boolean b()
   {
-    if (a.s().m()) {
+    if (this.a.s().m()) {
       return false;
     }
-    float ☃ = a.J + 4.0F;
-    return a.b(d.d()) > ☃ * ☃;
+    float ☃ = this.a.J + 4.0F;
+    return this.a.b(this.d.d()) > ☃ * ☃;
   }
   
   public void c()
   {
-    a.s().a(c, b);
+    this.a.s().a(this.c, this.b);
   }
   
   public void d()
   {
-    if ((a.s().m()) || (a.b(d.d()) < 16.0D)) {
-      f.add(d);
+    if ((this.a.s().m()) || (this.a.b(this.d.d()) < 16.0D)) {
+      this.f.add(this.d);
     }
   }
   
@@ -82,7 +82,7 @@ public class rn
     List<te> ☃ = ☃.f();
     for (te ☃ : ☃)
     {
-      int ☃ = ☃.b(ns.c(a.s), ns.c(a.t), ns.c(a.u));
+      int ☃ = ☃.b(ns.c(this.a.s), ns.c(this.a.t), ns.c(this.a.u));
       if (☃ < ☃) {
         if (!a(☃))
         {
@@ -96,7 +96,7 @@ public class rn
   
   private boolean a(te ☃)
   {
-    for (te ☃ : f) {
+    for (te ☃ : this.f) {
       if (☃.d().equals(☃.d())) {
         return true;
       }
@@ -106,8 +106,8 @@ public class rn
   
   private void f()
   {
-    if (f.size() > 15) {
-      f.remove(0);
+    if (this.f.size() > 15) {
+      this.f.remove(0);
     }
   }
 }

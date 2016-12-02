@@ -57,14 +57,14 @@ public abstract class wn
   public wn(adm worldIn, GameProfile gameProfileIn)
   {
     super(worldIn);
-    aq = a(gameProfileIn);
-    bH = gameProfileIn;
-    bj = new xy(bi, !D, this);
-    bk = bj;
+    this.aq = a(gameProfileIn);
+    this.bH = gameProfileIn;
+    this.bj = new xy(this.bi, !worldIn.D, this);
+    this.bk = this.bj;
     cj blockpos = worldIn.M();
     b(blockpos.n() + 0.5D, blockpos.o() + 1, blockpos.p() + 0.5D, 0.0F, 0.0F);
-    aV = 180.0F;
-    X = 20;
+    this.aV = 180.0F;
+    this.X = 20;
   }
   
   protected void aX()
@@ -77,69 +77,69 @@ public abstract class wn
   protected void h()
   {
     super.h();
-    ac.a(16, Byte.valueOf((byte)0));
-    ac.a(17, Float.valueOf(0.0F));
-    ac.a(18, Integer.valueOf(0));
-    ac.a(10, Byte.valueOf((byte)0));
+    this.ac.a(16, Byte.valueOf((byte)0));
+    this.ac.a(17, Float.valueOf(0.0F));
+    this.ac.a(18, Integer.valueOf(0));
+    this.ac.a(10, Byte.valueOf((byte)0));
   }
   
   public zx bQ()
   {
-    return g;
+    return this.g;
   }
   
   public int bR()
   {
-    return h;
+    return this.h;
   }
   
   public boolean bS()
   {
-    return g != null;
+    return this.g != null;
   }
   
   public int bT()
   {
-    return bS() ? g.l() - h : 0;
+    return bS() ? this.g.l() - this.h : 0;
   }
   
   public void bU()
   {
-    if (g != null) {
-      g.b(o, this, h);
+    if (this.g != null) {
+      this.g.b(this.o, this, this.h);
     }
     bV();
   }
   
   public void bV()
   {
-    g = null;
-    h = 0;
-    if (!o.D) {
+    this.g = null;
+    this.h = 0;
+    if (!this.o.D) {
       f(false);
     }
   }
   
   public boolean bW()
   {
-    return (bS()) && (g.b().e(g) == aba.d);
+    return (bS()) && (this.g.b().e(this.g) == aba.d);
   }
   
   public void t_()
   {
-    T = v();
+    this.T = v();
     if (v()) {
-      C = false;
+      this.C = false;
     }
-    if (g != null)
+    if (this.g != null)
     {
-      zx itemstack = bi.h();
-      if (itemstack == g)
+      zx itemstack = this.bi.h();
+      if (itemstack == this.g)
       {
-        if ((h <= 25) && (h % 4 == 0)) {
+        if ((this.h <= 25) && (this.h % 4 == 0)) {
           b(itemstack, 5);
         }
-        if ((--h == 0) && (!o.D)) {
+        if ((--this.h == 0) && (!this.o.D)) {
           s();
         }
       }
@@ -148,89 +148,89 @@ public abstract class wn
         bV();
       }
     }
-    if (bp > 0) {
-      bp -= 1;
+    if (this.bp > 0) {
+      this.bp -= 1;
     }
     if (bJ())
     {
-      b += 1;
-      if (b > 100) {
-        b = 100;
+      this.b += 1;
+      if (this.b > 100) {
+        this.b = 100;
       }
-      if (!o.D) {
+      if (!this.o.D) {
         if (!p()) {
           a(true, true, false);
-        } else if (o.w()) {
+        } else if (this.o.w()) {
           a(false, true, true);
         }
       }
     }
-    else if (b > 0)
+    else if (this.b > 0)
     {
-      b += 1;
-      if (b >= 110) {
-        b = 0;
+      this.b += 1;
+      if (this.b >= 110) {
+        this.b = 0;
       }
     }
     super.t_();
-    if ((!o.D) && (bk != null) && (!bk.a(this)))
+    if ((!this.o.D) && (this.bk != null) && (!this.bk.a(this)))
     {
       n();
-      bk = bj;
+      this.bk = this.bj;
     }
-    if ((at()) && (bA.a)) {
+    if ((at()) && (this.bA.a)) {
       N();
     }
-    bq = bt;
-    br = bu;
-    bs = bv;
-    double d5 = s - bt;
-    double d0 = t - bu;
-    double d1 = u - bv;
+    this.bq = this.bt;
+    this.br = this.bu;
+    this.bs = this.bv;
+    double d5 = this.s - this.bt;
+    double d0 = this.t - this.bu;
+    double d1 = this.u - this.bv;
     double d2 = 10.0D;
     if (d5 > d2) {
-      bq = (bt = s);
+      this.bq = (this.bt = this.s);
     }
     if (d1 > d2) {
-      bs = (bv = u);
+      this.bs = (this.bv = this.u);
     }
     if (d0 > d2) {
-      br = (bu = t);
+      this.br = (this.bu = this.t);
     }
     if (d5 < -d2) {
-      bq = (bt = s);
+      this.bq = (this.bt = this.s);
     }
     if (d1 < -d2) {
-      bs = (bv = u);
+      this.bs = (this.bv = this.u);
     }
     if (d0 < -d2) {
-      br = (bu = t);
+      this.br = (this.bu = this.t);
     }
-    bt += d5 * 0.25D;
-    bv += d1 * 0.25D;
-    bu += d0 * 0.25D;
-    if (m == null) {
-      e = null;
+    this.bt += d5 * 0.25D;
+    this.bv += d1 * 0.25D;
+    this.bu += d0 * 0.25D;
+    if (this.m == null) {
+      this.e = null;
     }
-    if (!o.D)
+    if (!this.o.D)
     {
-      bl.a(this);
+      this.bl.a(this);
       b(na.g);
       if (ai()) {
         b(na.h);
       }
     }
     int i = 29999999;
-    double d3 = ns.a(s, -2.9999999E7D, 2.9999999E7D);
-    double d4 = ns.a(u, -2.9999999E7D, 2.9999999E7D);
-    if ((d3 != s) || (d4 != u)) {
-      b(d3, t, d4);
+    double d3 = ns.a(this.s, -2.9999999E7D, 2.9999999E7D);
+    double d4 = ns.a(this.u, -2.9999999E7D, 2.9999999E7D);
+    if ((d3 != this.s) || (d4 != this.u)) {
+      b(d3, this.t, d4);
     }
   }
   
   public int L()
   {
-    return bA.a ? 0 : 80;
+    return this.bA.a ? 0 : 80;
   }
   
   protected String P()
@@ -250,48 +250,48 @@ public abstract class wn
   
   public void a(String name, float volume, float pitch)
   {
-    o.a(this, name, volume, pitch);
+    this.o.a(this, name, volume, pitch);
   }
   
   protected void b(zx itemStackIn, int p_71010_2_)
   {
     if (itemStackIn.m() == aba.c) {
-      a("random.drink", 0.5F, o.s.nextFloat() * 0.1F + 0.9F);
+      a("random.drink", 0.5F, this.o.s.nextFloat() * 0.1F + 0.9F);
     }
     if (itemStackIn.m() == aba.b)
     {
       for (int i = 0; i < p_71010_2_; i++)
       {
-        aui vec3 = new aui((V.nextFloat() - 0.5D) * 0.1D, Math.random() * 0.1D + 0.1D, 0.0D);
-        vec3 = vec3.a(-z * 3.1415927F / 180.0F);
-        vec3 = vec3.b(-y * 3.1415927F / 180.0F);
-        double d0 = -V.nextFloat() * 0.6D - 0.3D;
-        aui vec31 = new aui((V.nextFloat() - 0.5D) * 0.3D, d0, 0.6D);
-        vec31 = vec31.a(-z * 3.1415927F / 180.0F);
-        vec31 = vec31.b(-y * 3.1415927F / 180.0F);
-        vec31 = vec31.b(s, t + aS(), u);
+        aui vec3 = new aui((this.V.nextFloat() - 0.5D) * 0.1D, Math.random() * 0.1D + 0.1D, 0.0D);
+        vec3 = vec3.a(-this.z * 3.1415927F / 180.0F);
+        vec3 = vec3.b(-this.y * 3.1415927F / 180.0F);
+        double d0 = -this.V.nextFloat() * 0.6D - 0.3D;
+        aui vec31 = new aui((this.V.nextFloat() - 0.5D) * 0.3D, d0, 0.6D);
+        vec31 = vec31.a(-this.z * 3.1415927F / 180.0F);
+        vec31 = vec31.b(-this.y * 3.1415927F / 180.0F);
+        vec31 = vec31.b(this.s, this.t + aS(), this.u);
         if (itemStackIn.f()) {
-          o.a(cy.K, a, b, c, a, b + 0.05D, c, new int[] { zw.b(itemStackIn.b()), itemStackIn.i() });
+          this.o.a(cy.K, vec31.a, vec31.b, vec31.c, vec3.a, vec3.b + 0.05D, vec3.c, new int[] { zw.b(itemStackIn.b()), itemStackIn.i() });
         } else {
-          o.a(cy.K, a, b, c, a, b + 0.05D, c, new int[] { zw.b(itemStackIn.b()) });
+          this.o.a(cy.K, vec31.a, vec31.b, vec31.c, vec3.a, vec3.b + 0.05D, vec3.c, new int[] { zw.b(itemStackIn.b()) });
         }
       }
-      a("random.eat", 0.5F + 0.5F * V.nextInt(2), (V.nextFloat() - V.nextFloat()) * 0.2F + 1.0F);
+      a("random.eat", 0.5F + 0.5F * this.V.nextInt(2), (this.V.nextFloat() - this.V.nextFloat()) * 0.2F + 1.0F);
     }
   }
   
   protected void s()
   {
-    if (g != null)
+    if (this.g != null)
     {
-      b(g, 16);
-      int i = g.b;
-      zx itemstack = g.b(o, this);
-      if ((itemstack != g) || ((itemstack != null) && (b != i)))
+      b(this.g, 16);
+      int i = this.g.b;
+      zx itemstack = this.g.b(this.o, this);
+      if ((itemstack != this.g) || ((itemstack != null) && (itemstack.b != i)))
       {
-        bi.a[bi.c] = itemstack;
-        if (b == 0) {
-          bi.a[bi.c] = null;
+        this.bi.a[this.bi.c] = itemstack;
+        if (itemstack.b == 0) {
+          this.bi.a[this.bi.c] = null;
         }
       }
       bV();
@@ -303,9 +303,9 @@ public abstract class wn
     if (id == 9) {
       s();
     } else if (id == 23) {
-      bI = false;
+      this.bI = false;
     } else if (id == 22) {
-      bI = true;
+      this.bI = true;
     } else {
       super.a(id);
     }
@@ -318,32 +318,32 @@ public abstract class wn
   
   protected void n()
   {
-    bk = bj;
+    this.bk = this.bj;
   }
   
   public void ak()
   {
-    if ((!o.D) && (av()))
+    if ((!this.o.D) && (av()))
     {
       a((pk)null);
       c(false);
     }
     else
     {
-      double d0 = s;
-      double d1 = t;
-      double d2 = u;
-      float f = y;
-      float f1 = z;
+      double d0 = this.s;
+      double d1 = this.t;
+      double d2 = this.u;
+      float f = this.y;
+      float f1 = this.z;
       super.ak();
-      bn = bo;
-      bo = 0.0F;
-      l(s - d0, t - d1, u - d2);
-      if ((m instanceof tt))
+      this.bn = this.bo;
+      this.bo = 0.0F;
+      l(this.s - d0, this.t - d1, this.u - d2);
+      if ((this.m instanceof tt))
       {
-        z = f1;
-        y = f;
-        aI = m).aI;
+        this.z = f1;
+        this.y = f;
+        this.aI = ((tt)this.m).aI;
       }
     }
   }
@@ -353,68 +353,68 @@ public abstract class wn
     a(0.6F, 1.8F);
     super.I();
     i(bu());
-    ax = 0;
+    this.ax = 0;
   }
   
   protected void bK()
   {
     super.bK();
     bx();
-    aK = y;
+    this.aK = this.y;
   }
   
   public void m()
   {
-    if (bm > 0) {
-      bm -= 1;
+    if (this.bm > 0) {
+      this.bm -= 1;
     }
-    if ((o.aa() == oj.a) && (o.Q().b("naturalRegeneration")))
+    if ((this.o.aa() == oj.a) && (this.o.Q().b("naturalRegeneration")))
     {
-      if ((bn() < bu()) && (W % 20 == 0)) {
+      if ((bn() < bu()) && (this.W % 20 == 0)) {
         h(1.0F);
       }
-      if ((bl.c()) && (W % 10 == 0)) {
-        bl.a(bl.a() + 1);
+      if ((this.bl.c()) && (this.W % 10 == 0)) {
+        this.bl.a(this.bl.a() + 1);
       }
     }
-    bi.k();
-    bn = bo;
+    this.bi.k();
+    this.bn = this.bo;
     super.m();
     qc iattributeinstance = a(vy.d);
-    if (!o.D) {
-      iattributeinstance.a(bA.b());
+    if (!this.o.D) {
+      iattributeinstance.a(this.bA.b());
     }
-    aM = bF;
+    this.aM = this.bF;
     if (aw()) {
-      aM = ((float)(aM + bF * 0.3D));
+      this.aM = ((float)(this.aM + this.bF * 0.3D));
     }
     k((float)iattributeinstance.e());
-    float f = ns.a(v * v + x * x);
-    float f1 = (float)(Math.atan(-w * 0.20000000298023224D) * 15.0D);
+    float f = ns.a(this.v * this.v + this.x * this.x);
+    float f1 = (float)(Math.atan(-this.w * 0.20000000298023224D) * 15.0D);
     if (f > 0.1F) {
       f = 0.1F;
     }
-    if ((!C) || (bn() <= 0.0F)) {
+    if ((!this.C) || (bn() <= 0.0F)) {
       f = 0.0F;
     }
-    if ((C) || (bn() <= 0.0F)) {
+    if ((this.C) || (bn() <= 0.0F)) {
       f1 = 0.0F;
     }
-    bo += (f - bo) * 0.4F;
-    aF += (f1 - aF) * 0.8F;
+    this.bo += (f - this.bo) * 0.4F;
+    this.aF += (f1 - this.aF) * 0.8F;
     if ((bn() > 0.0F) && (!v()))
     {
       aug axisalignedbb = null;
-      if ((m != null) && (!m.I)) {
-        axisalignedbb = aR().a(m.aR()).b(1.0D, 0.0D, 1.0D);
+      if ((this.m != null) && (!this.m.I)) {
+        axisalignedbb = aR().a(this.m.aR()).b(1.0D, 0.0D, 1.0D);
       } else {
         axisalignedbb = aR().b(1.0D, 0.5D, 1.0D);
       }
-      List<pk> list = o.b(this, axisalignedbb);
+      List<pk> list = this.o.b(this, axisalignedbb);
       for (int i = 0; i < list.size(); i++)
       {
         pk entity = (pk)list.get(i);
-        if (!I) {
+        if (!entity.I) {
           d(entity);
         }
       }
@@ -428,40 +428,40 @@ public abstract class wn
   
   public int bX()
   {
-    return ac.c(18);
+    return this.ac.c(18);
   }
   
   public void r(int p_85040_1_)
   {
-    ac.b(18, Integer.valueOf(p_85040_1_));
+    this.ac.b(18, Integer.valueOf(p_85040_1_));
   }
   
   public void s(int p_85039_1_)
   {
     int i = bX();
-    ac.b(18, Integer.valueOf(i + p_85039_1_));
+    this.ac.b(18, Integer.valueOf(i + p_85039_1_));
   }
   
   public void a(ow cause)
   {
     super.a(cause);
     a(0.2F, 0.2F);
-    b(s, t, u);
-    w = 0.10000000149011612D;
+    b(this.s, this.t, this.u);
+    this.w = 0.10000000149011612D;
     if (e_().equals("Notch")) {
       a(new zx(zy.e, 1), true, false);
     }
-    if (!o.Q().b("keepInventory")) {
-      bi.n();
+    if (!this.o.Q().b("keepInventory")) {
+      this.bi.n();
     }
     if (cause != null)
     {
-      v = (-ns.b((aw + y) * 3.1415927F / 180.0F) * 0.1F);
-      x = (-ns.a((aw + y) * 3.1415927F / 180.0F) * 0.1F);
+      this.v = (-ns.b((this.aw + this.y) * 3.1415927F / 180.0F) * 0.1F);
+      this.x = (-ns.a((this.aw + this.y) * 3.1415927F / 180.0F) * 0.1F);
     }
     else
     {
-      v = (x = 0.0D);
+      this.v = (this.x = 0.0D);
     }
     b(na.y);
     a(na.h);
@@ -525,7 +525,7 @@ public abstract class wn
   
   public uz a(boolean dropAll)
   {
-    return a(bi.a(bi.c, (dropAll) && (bi.h() != null) ? bi.h().b : 1), false, true);
+    return a(this.bi.a(this.bi.c, (dropAll) && (this.bi.h() != null) ? this.bi.h().b : 1), false, true);
   }
   
   public uz a(zx itemStackIn, boolean unused)
@@ -538,34 +538,34 @@ public abstract class wn
     if (droppedItem == null) {
       return null;
     }
-    if (b == 0) {
+    if (droppedItem.b == 0) {
       return null;
     }
-    double d0 = t - 0.30000001192092896D + aS();
-    uz entityitem = new uz(o, s, d0, u, droppedItem);
+    double d0 = this.t - 0.30000001192092896D + aS();
+    uz entityitem = new uz(this.o, this.s, d0, this.u, droppedItem);
     entityitem.a(40);
     if (traceItem) {
       entityitem.c(e_());
     }
     if (dropAround)
     {
-      float f = V.nextFloat() * 0.5F;
-      float f1 = V.nextFloat() * 3.1415927F * 2.0F;
-      v = (-ns.a(f1) * f);
-      x = (ns.b(f1) * f);
-      w = 0.20000000298023224D;
+      float f = this.V.nextFloat() * 0.5F;
+      float f1 = this.V.nextFloat() * 3.1415927F * 2.0F;
+      entityitem.v = (-ns.a(f1) * f);
+      entityitem.x = (ns.b(f1) * f);
+      entityitem.w = 0.20000000298023224D;
     }
     else
     {
       float f2 = 0.3F;
-      v = (-ns.a(y / 180.0F * 3.1415927F) * ns.b(z / 180.0F * 3.1415927F) * f2);
-      x = (ns.b(y / 180.0F * 3.1415927F) * ns.b(z / 180.0F * 3.1415927F) * f2);
-      w = (-ns.a(z / 180.0F * 3.1415927F) * f2 + 0.1F);
-      float f3 = V.nextFloat() * 3.1415927F * 2.0F;
-      f2 = 0.02F * V.nextFloat();
-      v += Math.cos(f3) * f2;
-      w += (V.nextFloat() - V.nextFloat()) * 0.1F;
-      x += Math.sin(f3) * f2;
+      entityitem.v = (-ns.a(this.y / 180.0F * 3.1415927F) * ns.b(this.z / 180.0F * 3.1415927F) * f2);
+      entityitem.x = (ns.b(this.y / 180.0F * 3.1415927F) * ns.b(this.z / 180.0F * 3.1415927F) * f2);
+      entityitem.w = (-ns.a(this.z / 180.0F * 3.1415927F) * f2 + 0.1F);
+      float f3 = this.V.nextFloat() * 3.1415927F * 2.0F;
+      f2 = 0.02F * this.V.nextFloat();
+      entityitem.v += Math.cos(f3) * f2;
+      entityitem.w += (this.V.nextFloat() - this.V.nextFloat()) * 0.1F;
+      entityitem.x += Math.sin(f3) * f2;
     }
     a(entityitem);
     if (traceItem) {
@@ -576,16 +576,16 @@ public abstract class wn
   
   protected void a(uz itemIn)
   {
-    o.d(itemIn);
+    this.o.d(itemIn);
   }
   
   public float a(afh p_180471_1_)
   {
-    float f = bi.a(p_180471_1_);
+    float f = this.bi.a(p_180471_1_);
     if (f > 1.0F)
     {
       int i = ack.c(this);
-      zx itemstack = bi.h();
+      zx itemstack = this.bi.h();
       if ((i > 0) && (itemstack != null)) {
         f += i * i + 1;
       }
@@ -616,7 +616,7 @@ public abstract class wn
     if ((a(arm.h)) && (!ack.j(this))) {
       f /= 5.0F;
     }
-    if (!C) {
+    if (!this.C) {
       f /= 5.0F;
     }
     return f;
@@ -624,68 +624,68 @@ public abstract class wn
   
   public boolean b(afh blockToHarvest)
   {
-    return bi.b(blockToHarvest);
+    return this.bi.b(blockToHarvest);
   }
   
   public void a(dn tagCompund)
   {
     super.a(tagCompund);
-    aq = a(bH);
+    this.aq = a(this.bH);
     du nbttaglist = tagCompund.c("Inventory", 10);
-    bi.b(nbttaglist);
-    bi.c = tagCompund.f("SelectedItemSlot");
-    bw = tagCompund.n("Sleeping");
-    b = tagCompund.e("SleepTimer");
-    bD = tagCompund.h("XpP");
-    bB = tagCompund.f("XpLevel");
-    bC = tagCompund.f("XpTotal");
-    f = tagCompund.f("XpSeed");
-    if (f == 0) {
-      f = V.nextInt();
+    this.bi.b(nbttaglist);
+    this.bi.c = tagCompund.f("SelectedItemSlot");
+    this.bw = tagCompund.n("Sleeping");
+    this.b = tagCompund.e("SleepTimer");
+    this.bD = tagCompund.h("XpP");
+    this.bB = tagCompund.f("XpLevel");
+    this.bC = tagCompund.f("XpTotal");
+    this.f = tagCompund.f("XpSeed");
+    if (this.f == 0) {
+      this.f = this.V.nextInt();
     }
     r(tagCompund.f("Score"));
-    if (bw)
+    if (this.bw)
     {
-      bx = new cj(this);
+      this.bx = new cj(this);
       a(true, true, false);
     }
     if ((tagCompund.b("SpawnX", 99)) && (tagCompund.b("SpawnY", 99)) && (tagCompund.b("SpawnZ", 99)))
     {
-      c = new cj(tagCompund.f("SpawnX"), tagCompund.f("SpawnY"), tagCompund.f("SpawnZ"));
-      d = tagCompund.n("SpawnForced");
+      this.c = new cj(tagCompund.f("SpawnX"), tagCompund.f("SpawnY"), tagCompund.f("SpawnZ"));
+      this.d = tagCompund.n("SpawnForced");
     }
-    bl.a(tagCompund);
-    bA.b(tagCompund);
+    this.bl.a(tagCompund);
+    this.bA.b(tagCompund);
     if (tagCompund.b("EnderItems", 9))
     {
       du nbttaglist1 = tagCompund.c("EnderItems", 10);
-      a.a(nbttaglist1);
+      this.a.a(nbttaglist1);
     }
   }
   
   public void b(dn tagCompound)
   {
     super.b(tagCompound);
-    tagCompound.a("Inventory", bi.a(new du()));
-    tagCompound.a("SelectedItemSlot", bi.c);
-    tagCompound.a("Sleeping", bw);
-    tagCompound.a("SleepTimer", (short)b);
-    tagCompound.a("XpP", bD);
-    tagCompound.a("XpLevel", bB);
-    tagCompound.a("XpTotal", bC);
-    tagCompound.a("XpSeed", f);
+    tagCompound.a("Inventory", this.bi.a(new du()));
+    tagCompound.a("SelectedItemSlot", this.bi.c);
+    tagCompound.a("Sleeping", this.bw);
+    tagCompound.a("SleepTimer", (short)this.b);
+    tagCompound.a("XpP", this.bD);
+    tagCompound.a("XpLevel", this.bB);
+    tagCompound.a("XpTotal", this.bC);
+    tagCompound.a("XpSeed", this.f);
     tagCompound.a("Score", bX());
-    if (c != null)
+    if (this.c != null)
     {
-      tagCompound.a("SpawnX", c.n());
-      tagCompound.a("SpawnY", c.o());
-      tagCompound.a("SpawnZ", c.p());
-      tagCompound.a("SpawnForced", d);
+      tagCompound.a("SpawnX", this.c.n());
+      tagCompound.a("SpawnY", this.c.o());
+      tagCompound.a("SpawnZ", this.c.p());
+      tagCompound.a("SpawnForced", this.d);
     }
-    bl.b(tagCompound);
-    bA.a(tagCompound);
-    tagCompound.a("EnderItems", a.h());
-    zx itemstack = bi.h();
+    this.bl.b(tagCompound);
+    this.bA.a(tagCompound);
+    tagCompound.a("EnderItems", this.a.h());
+    zx itemstack = this.bi.h();
     if ((itemstack != null) && (itemstack.b() != null)) {
       tagCompound.a("SelectedItem", itemstack.b(new dn()));
     }
@@ -696,25 +696,25 @@ public abstract class wn
     if (b(source)) {
       return false;
     }
-    if ((bA.a) && (!source.g())) {
+    if ((this.bA.a) && (!source.g())) {
       return false;
     }
-    aQ = 0;
+    this.aQ = 0;
     if (bn() <= 0.0F) {
       return false;
     }
-    if ((bJ()) && (!o.D)) {
+    if ((bJ()) && (!this.o.D)) {
       a(true, true, false);
     }
     if (source.r())
     {
-      if (o.aa() == oj.a) {
+      if (this.o.aa() == oj.a) {
         amount = 0.0F;
       }
-      if (o.aa() == oj.b) {
+      if (this.o.aa() == oj.b) {
         amount = amount / 2.0F + 1.0F;
       }
-      if (o.aa() == oj.d) {
+      if (this.o.aa() == oj.d) {
         amount = amount * 3.0F / 2.0F;
       }
     }
@@ -722,8 +722,8 @@ public abstract class wn
       return false;
     }
     pk entity = source.j();
-    if (((entity instanceof wq)) && (c != null)) {
-      entity = c;
+    if (((entity instanceof wq)) && (((wq)entity).c != null)) {
+      entity = ((wq)entity).c;
     }
     return super.a(source, amount);
   }
@@ -737,23 +737,23 @@ public abstract class wn
   
   protected void j(float p_70675_1_)
   {
-    bi.a(p_70675_1_);
+    this.bi.a(p_70675_1_);
   }
   
   public int br()
   {
-    return bi.m();
+    return this.bi.m();
   }
   
   public float bY()
   {
     int i = 0;
-    for (zx itemstack : bi.b) {
+    for (zx itemstack : this.bi.b) {
       if (itemstack != null) {
         i++;
       }
     }
-    return i / bi.b.length;
+    return i / this.bi.b.length;
   }
   
   protected void d(ow damageSrc, float damageAmount)
@@ -810,12 +810,12 @@ public abstract class wn
     {
       if ((itemstack != null) && ((p_70998_1_ instanceof pr)))
       {
-        if (bA.d) {
+        if (this.bA.d) {
           itemstack = itemstack1;
         }
         if (itemstack.a(this, (pr)p_70998_1_))
         {
-          if ((b <= 0) && (!bA.d)) {
+          if ((itemstack.b <= 0) && (!this.bA.d)) {
             ca();
           }
           return true;
@@ -824,10 +824,10 @@ public abstract class wn
       return false;
     }
     if ((itemstack != null) && (itemstack == bZ())) {
-      if ((b <= 0) && (!bA.d)) {
+      if ((itemstack.b <= 0) && (!this.bA.d)) {
         ca();
-      } else if ((b < b) && (bA.d)) {
-        b = b;
+      } else if ((itemstack.b < itemstack1.b) && (this.bA.d)) {
+        itemstack.b = itemstack1.b;
       }
     }
     return true;
@@ -835,12 +835,12 @@ public abstract class wn
   
   public zx bZ()
   {
-    return bi.h();
+    return this.bi.h();
   }
   
   public void ca()
   {
-    bi.a(bi.c, (zx)null);
+    this.bi.a(this.bi.c, (zx)null);
   }
   
   public double am()
@@ -867,7 +867,7 @@ public abstract class wn
         }
         if ((f > 0.0F) || (f1 > 0.0F))
         {
-          boolean flag = (O > 0.0F) && (!C) && (!k_()) && (!V()) && (!a(pe.q)) && (m == null) && ((targetEntity instanceof pr));
+          boolean flag = (this.O > 0.0F) && (!this.C) && (!k_()) && (!V()) && (!a(pe.q)) && (this.m == null) && ((targetEntity instanceof pr));
           if ((flag) && (f > 0.0F)) {
             f *= 1.5F;
           }
@@ -879,26 +879,26 @@ public abstract class wn
             flag1 = true;
             targetEntity.e(1);
           }
-          double d0 = v;
-          double d1 = w;
-          double d2 = x;
+          double d0 = targetEntity.v;
+          double d1 = targetEntity.w;
+          double d2 = targetEntity.x;
           boolean flag2 = targetEntity.a(ow.a(this), f);
           if (flag2)
           {
             if (i > 0)
             {
-              targetEntity.g(-ns.a(y * 3.1415927F / 180.0F) * i * 0.5F, 0.1D, ns.b(y * 3.1415927F / 180.0F) * i * 0.5F);
-              v *= 0.6D;
-              x *= 0.6D;
+              targetEntity.g(-ns.a(this.y * 3.1415927F / 180.0F) * i * 0.5F, 0.1D, ns.b(this.y * 3.1415927F / 180.0F) * i * 0.5F);
+              this.v *= 0.6D;
+              this.x *= 0.6D;
               d(false);
             }
-            if (((targetEntity instanceof lf)) && (G))
+            if (((targetEntity instanceof lf)) && (targetEntity.G))
             {
-              a.a(new hm(targetEntity));
-              G = false;
-              v = d0;
-              w = d1;
-              x = d2;
+              ((lf)targetEntity).a.a(new hm(targetEntity));
+              targetEntity.G = false;
+              targetEntity.v = d0;
+              targetEntity.w = d1;
+              targetEntity.x = d2;
             }
             if (flag) {
               b(targetEntity);
@@ -918,7 +918,7 @@ public abstract class wn
             pk entity = targetEntity;
             if ((targetEntity instanceof ue))
             {
-              ud ientitymultipart = a;
+              ud ientitymultipart = ((ue)targetEntity).a;
               if ((ientitymultipart instanceof pr)) {
                 entity = (pr)ientitymultipart;
               }
@@ -926,7 +926,7 @@ public abstract class wn
             if ((itemstack != null) && ((entity instanceof pr)))
             {
               itemstack.a((pr)entity, this);
-              if (b <= 0) {
+              if (itemstack.b <= 0) {
                 ca();
               }
             }
@@ -957,15 +957,15 @@ public abstract class wn
   public void J()
   {
     super.J();
-    bj.b(this);
-    if (bk != null) {
-      bk.b(this);
+    this.bj.b(this);
+    if (this.bk != null) {
+      this.bk.b(this);
     }
   }
   
   public boolean aj()
   {
-    return (!bw) && (super.aj());
+    return (!this.bw) && (super.aj());
   }
   
   public boolean cc()
@@ -975,28 +975,28 @@ public abstract class wn
   
   public GameProfile cd()
   {
-    return bH;
+    return this.bH;
   }
   
   public wn.a a(cj bedLocation)
   {
-    if (!o.D)
+    if (!this.o.D)
     {
       if ((bJ()) || (!ai())) {
         return wn.a.e;
       }
-      if (!o.t.d()) {
+      if (!this.o.t.d()) {
         return wn.a.b;
       }
-      if (o.w()) {
+      if (this.o.w()) {
         return wn.a.c;
       }
-      if ((Math.abs(s - bedLocation.n()) > 3.0D) || (Math.abs(t - bedLocation.o()) > 2.0D) || (Math.abs(u - bedLocation.p()) > 3.0D)) {
+      if ((Math.abs(this.s - bedLocation.n()) > 3.0D) || (Math.abs(this.t - bedLocation.o()) > 2.0D) || (Math.abs(this.u - bedLocation.p()) > 3.0D)) {
         return wn.a.d;
       }
       double d0 = 8.0D;
       double d1 = 5.0D;
-      List<vv> list = o.a(vv.class, new aug(bedLocation.n() - d0, bedLocation.o() - d1, bedLocation.p() - d0, bedLocation.n() + d0, bedLocation.o() + d1, bedLocation.p() + d0));
+      List<vv> list = this.o.a(vv.class, new aug(bedLocation.n() - d0, bedLocation.o() - d1, bedLocation.p() - d0, bedLocation.n() + d0, bedLocation.o() + d1, bedLocation.p() + d0));
       if (!list.isEmpty()) {
         return wn.a.f;
       }
@@ -1005,9 +1005,9 @@ public abstract class wn
       a((pk)null);
     }
     a(0.2F, 0.2F);
-    if (o.e(bedLocation))
+    if (this.o.e(bedLocation))
     {
-      cq enumfacing = (cq)o.p(bedLocation).b(age.O);
+      cq enumfacing = (cq)this.o.p(bedLocation).b(age.O);
       float f = 0.5F;
       float f1 = 0.5F;
       switch (enumfacing)
@@ -1031,62 +1031,62 @@ public abstract class wn
     {
       b(bedLocation.n() + 0.5F, bedLocation.o() + 0.6875F, bedLocation.p() + 0.5F);
     }
-    bw = true;
-    b = 0;
-    bx = bedLocation;
-    v = (x = w = 0.0D);
-    if (!o.D) {
-      o.d();
+    this.bw = true;
+    this.b = 0;
+    this.bx = bedLocation;
+    this.v = (this.x = this.w = 0.0D);
+    if (!this.o.D) {
+      this.o.d();
     }
     return wn.a.a;
   }
   
   private void a(cq p_175139_1_)
   {
-    by = 0.0F;
-    bz = 0.0F;
+    this.by = 0.0F;
+    this.bz = 0.0F;
     switch (p_175139_1_)
     {
     case d: 
-      bz = -1.8F;
+      this.bz = -1.8F;
       break;
     case c: 
-      bz = 1.8F;
+      this.bz = 1.8F;
       break;
     case e: 
-      by = 1.8F;
+      this.by = 1.8F;
       break;
     case f: 
-      by = -1.8F;
+      this.by = -1.8F;
     }
   }
   
   public void a(boolean p_70999_1_, boolean updateWorldFlag, boolean setSpawn)
   {
     a(0.6F, 1.8F);
-    alz iblockstate = o.p(bx);
-    if ((bx != null) && (iblockstate.c() == afi.C))
+    alz iblockstate = this.o.p(this.bx);
+    if ((this.bx != null) && (iblockstate.c() == afi.C))
     {
-      o.a(bx, iblockstate.a(afg.b, Boolean.valueOf(false)), 4);
-      cj blockpos = afg.a(o, bx, 0);
+      this.o.a(this.bx, iblockstate.a(afg.b, Boolean.valueOf(false)), 4);
+      cj blockpos = afg.a(this.o, this.bx, 0);
       if (blockpos == null) {
-        blockpos = bx.a();
+        blockpos = this.bx.a();
       }
       b(blockpos.n() + 0.5F, blockpos.o() + 0.1F, blockpos.p() + 0.5F);
     }
-    bw = false;
-    if ((!o.D) && (updateWorldFlag)) {
-      o.d();
+    this.bw = false;
+    if ((!this.o.D) && (updateWorldFlag)) {
+      this.o.d();
     }
-    b = (p_70999_1_ ? 0 : 100);
+    this.b = (p_70999_1_ ? 0 : 100);
     if (setSpawn) {
-      a(bx, false);
+      a(this.bx, false);
     }
   }
   
   private boolean p()
   {
-    return o.p(bx).c() == afi.C;
+    return this.o.p(this.bx).c() == afi.C;
   }
   
   public static cj a(adm worldIn, cj bedLocation, boolean forceSpawn)
@@ -1106,9 +1106,9 @@ public abstract class wn
   
   public float ce()
   {
-    if (bx != null)
+    if (this.bx != null)
     {
-      cq enumfacing = (cq)o.p(bx).b(age.O);
+      cq enumfacing = (cq)this.o.p(this.bx).b(age.O);
       switch (enumfacing)
       {
       case d: 
@@ -1126,42 +1126,42 @@ public abstract class wn
   
   public boolean bJ()
   {
-    return bw;
+    return this.bw;
   }
   
   public boolean cf()
   {
-    return (bw) && (b >= 100);
+    return (this.bw) && (this.b >= 100);
   }
   
   public int cg()
   {
-    return b;
+    return this.b;
   }
   
   public void b(eu chatComponent) {}
   
   public cj ch()
   {
-    return c;
+    return this.c;
   }
   
   public boolean ci()
   {
-    return d;
+    return this.d;
   }
   
   public void a(cj pos, boolean forced)
   {
     if (pos != null)
     {
-      c = pos;
-      d = forced;
+      this.c = pos;
+      this.d = forced;
     }
     else
     {
-      c = null;
-      d = false;
+      this.c = null;
+      this.d = false;
     }
   }
   
@@ -1187,23 +1187,23 @@ public abstract class wn
   
   public void g(float strafe, float forward)
   {
-    double d0 = s;
-    double d1 = t;
-    double d2 = u;
-    if ((bA.b) && (m == null))
+    double d0 = this.s;
+    double d1 = this.t;
+    double d2 = this.u;
+    if ((this.bA.b) && (this.m == null))
     {
-      double d3 = w;
-      float f = aM;
-      aM = (bA.a() * (aw() ? 2 : 1));
+      double d3 = this.w;
+      float f = this.aM;
+      this.aM = (this.bA.a() * (aw() ? 2 : 1));
       super.g(strafe, forward);
-      w = (d3 * 0.6D);
-      aM = f;
+      this.w = (d3 * 0.6D);
+      this.aM = f;
     }
     else
     {
       super.g(strafe, forward);
     }
-    k(s - d0, t - d1, u - d2);
+    k(this.s - d0, this.t - d1, this.u - d2);
   }
   
   public float bI()
@@ -1213,7 +1213,7 @@ public abstract class wn
   
   public void k(double p_71000_1_, double p_71000_3_, double p_71000_5_)
   {
-    if (m == null) {
+    if (this.m == null) {
       if (a(arm.h))
       {
         int i = Math.round(ns.a(p_71000_1_ * p_71000_1_ + p_71000_3_ * p_71000_3_ + p_71000_5_ * p_71000_5_) * 100.0F);
@@ -1238,7 +1238,7 @@ public abstract class wn
           a(na.n, (int)Math.round(p_71000_3_ * 100.0D));
         }
       }
-      else if (C)
+      else if (this.C)
       {
         int k = Math.round(ns.a(p_71000_1_ * p_71000_1_ + p_71000_5_ * p_71000_5_) * 100.0F);
         if (k > 0)
@@ -1270,28 +1270,28 @@ public abstract class wn
   
   private void l(double p_71015_1_, double p_71015_3_, double p_71015_5_)
   {
-    if (m != null)
+    if (this.m != null)
     {
       int i = Math.round(ns.a(p_71015_1_ * p_71015_1_ + p_71015_3_ * p_71015_3_ + p_71015_5_ * p_71015_5_) * 100.0F);
       if (i > 0) {
-        if ((m instanceof va))
+        if ((this.m instanceof va))
         {
           a(na.q, i);
-          if (e == null) {
-            e = new cj(this);
-          } else if (e.c(ns.c(s), ns.c(t), ns.c(u)) >= 1000000.0D) {
+          if (this.e == null) {
+            this.e = new cj(this);
+          } else if (this.e.c(ns.c(this.s), ns.c(this.t), ns.c(this.u)) >= 1000000.0D) {
             b(mr.q);
           }
         }
-        else if ((m instanceof ux))
+        else if ((this.m instanceof ux))
         {
           a(na.r, i);
         }
-        else if ((m instanceof tt))
+        else if ((this.m instanceof tt))
         {
           a(na.s, i);
         }
-        else if ((m instanceof tp))
+        else if ((this.m instanceof tp))
         {
           a(na.t, i);
         }
@@ -1301,7 +1301,7 @@ public abstract class wn
   
   public void e(float distance, float damageMultiplier)
   {
-    if (!bA.c)
+    if (!this.bA.c)
     {
       if (distance >= 2.0F) {
         a(na.m, (int)Math.round(distance * 100.0D));
@@ -1329,93 +1329,93 @@ public abstract class wn
     }
     pm.a entitylist$entityegginfo = (pm.a)pm.a.get(Integer.valueOf(pm.a(entityLivingIn)));
     if (entitylist$entityegginfo != null) {
-      b(d);
+      b(entitylist$entityegginfo.d);
     }
   }
   
   public void aA()
   {
-    if (!bA.b) {
+    if (!this.bA.b) {
       super.aA();
     }
   }
   
   public zx q(int slotIn)
   {
-    return bi.e(slotIn);
+    return this.bi.e(slotIn);
   }
   
   public void u(int amount)
   {
     s(amount);
-    int i = Integer.MAX_VALUE - bC;
+    int i = Integer.MAX_VALUE - this.bC;
     if (amount > i) {
       amount = i;
     }
-    bD += amount / ck();
-    for (bC += amount; bD >= 1.0F; bD /= ck())
+    this.bD += amount / ck();
+    for (this.bC += amount; this.bD >= 1.0F; this.bD /= ck())
     {
-      bD = ((bD - 1.0F) * ck());
+      this.bD = ((this.bD - 1.0F) * ck());
       a(1);
     }
   }
   
   public int cj()
   {
-    return f;
+    return this.f;
   }
   
   public void b(int levels)
   {
-    bB -= levels;
-    if (bB < 0)
+    this.bB -= levels;
+    if (this.bB < 0)
     {
-      bB = 0;
-      bD = 0.0F;
-      bC = 0;
+      this.bB = 0;
+      this.bD = 0.0F;
+      this.bC = 0;
     }
-    f = V.nextInt();
+    this.f = this.V.nextInt();
   }
   
   public void a(int levels)
   {
-    bB += levels;
-    if (bB < 0)
+    this.bB += levels;
+    if (this.bB < 0)
     {
-      bB = 0;
-      bD = 0.0F;
-      bC = 0;
+      this.bB = 0;
+      this.bD = 0.0F;
+      this.bC = 0;
     }
-    if ((levels > 0) && (bB % 5 == 0) && (i < W - 100.0F))
+    if ((levels > 0) && (this.bB % 5 == 0) && (this.i < this.W - 100.0F))
     {
-      float f = bB > 30 ? 1.0F : bB / 30.0F;
-      o.a(this, "random.levelup", f * 0.75F, 1.0F);
-      i = W;
+      float f = this.bB > 30 ? 1.0F : this.bB / 30.0F;
+      this.o.a(this, "random.levelup", f * 0.75F, 1.0F);
+      this.i = this.W;
     }
   }
   
   public int ck()
   {
-    return bB >= 15 ? 37 + (bB - 15) * 5 : bB >= 30 ? 112 + (bB - 30) * 9 : 7 + bB * 2;
+    return this.bB >= 15 ? 37 + (this.bB - 15) * 5 : this.bB >= 30 ? 112 + (this.bB - 30) * 9 : 7 + this.bB * 2;
   }
   
   public void a(float p_71020_1_)
   {
-    if (!bA.a) {
-      if (!o.D) {
-        bl.a(p_71020_1_);
+    if (!this.bA.a) {
+      if (!this.o.D) {
+        this.bl.a(p_71020_1_);
       }
     }
   }
   
   public xg cl()
   {
-    return bl;
+    return this.bl;
   }
   
   public boolean j(boolean ignoreHunger)
   {
-    return ((ignoreHunger) || (bl.c())) && (!bA.a);
+    return ((ignoreHunger) || (this.bl.c())) && (!this.bA.a);
   }
   
   public boolean cm()
@@ -1425,11 +1425,11 @@ public abstract class wn
   
   public void a(zx stack, int duration)
   {
-    if (stack != g)
+    if (stack != this.g)
     {
-      g = stack;
-      h = duration;
-      if (!o.D) {
+      this.g = stack;
+      this.h = duration;
+      if (!this.o.D) {
         f(true);
       }
     }
@@ -1437,28 +1437,28 @@ public abstract class wn
   
   public boolean cn()
   {
-    return bA.e;
+    return this.bA.e;
   }
   
   public boolean a(cj p_175151_1_, cq p_175151_2_, zx p_175151_3_)
   {
-    if (bA.e) {
+    if (this.bA.e) {
       return true;
     }
     if (p_175151_3_ == null) {
       return false;
     }
     cj blockpos = p_175151_1_.a(p_175151_2_.d());
-    afh block = o.p(blockpos).c();
+    afh block = this.o.p(blockpos).c();
     return (p_175151_3_.d(block)) || (p_175151_3_.x());
   }
   
   protected int b(wn player)
   {
-    if (o.Q().b("keepInventory")) {
+    if (this.o.Q().b("keepInventory")) {
       return 0;
     }
-    int i = bB * 7;
+    int i = this.bB * 7;
     return i > 100 ? 100 : i;
   }
   
@@ -1476,33 +1476,33 @@ public abstract class wn
   {
     if (respawnFromEnd)
     {
-      bi.b(bi);
+      this.bi.b(oldPlayer.bi);
       i(oldPlayer.bn());
-      bl = bl;
-      bB = bB;
-      bC = bC;
-      bD = bD;
+      this.bl = oldPlayer.bl;
+      this.bB = oldPlayer.bB;
+      this.bC = oldPlayer.bC;
+      this.bD = oldPlayer.bD;
       r(oldPlayer.bX());
-      an = an;
-      ao = ao;
-      ap = ap;
+      this.an = oldPlayer.an;
+      this.ao = oldPlayer.ao;
+      this.ap = oldPlayer.ap;
     }
-    else if (o.Q().b("keepInventory"))
+    else if (this.o.Q().b("keepInventory"))
     {
-      bi.b(bi);
-      bB = bB;
-      bC = bC;
-      bD = bD;
+      this.bi.b(oldPlayer.bi);
+      this.bB = oldPlayer.bB;
+      this.bC = oldPlayer.bC;
+      this.bD = oldPlayer.bD;
       r(oldPlayer.bX());
     }
-    f = f;
-    a = a;
+    this.f = oldPlayer.f;
+    this.a = oldPlayer.a;
     H().b(10, Byte.valueOf(oldPlayer.H().a(10)));
   }
   
   protected boolean s_()
   {
-    return !bA.b;
+    return !this.bA.b;
   }
   
   public void t() {}
@@ -1511,27 +1511,27 @@ public abstract class wn
   
   public String e_()
   {
-    return bH.getName();
+    return this.bH.getName();
   }
   
   public yd co()
   {
-    return a;
+    return this.a;
   }
   
   public zx p(int slotIn)
   {
-    return slotIn == 0 ? bi.h() : bi.b[(slotIn - 1)];
+    return slotIn == 0 ? this.bi.h() : this.bi.b[(slotIn - 1)];
   }
   
   public zx bA()
   {
-    return bi.h();
+    return this.bi.h();
   }
   
   public void c(int slotIn, zx stack)
   {
-    bi.b[slotIn] = stack;
+    this.bi.b[slotIn] = stack;
   }
   
   public boolean f(wn player)
@@ -1550,17 +1550,17 @@ public abstract class wn
   
   public zx[] as()
   {
-    return bi.b;
+    return this.bi.b;
   }
   
   public boolean aL()
   {
-    return !bA.b;
+    return !this.bA.b;
   }
   
   public auo cp()
   {
-    return o.Z();
+    return this.o.Z();
   }
   
   public auq bO()
@@ -1586,8 +1586,8 @@ public abstract class wn
     if (av()) {
       f -= 0.08F;
     }
-    if ((settingsoldSneak) && (Ah != null) && (equals(Ah)) && 
-      (At.aA == 0) && (Allowed.sneakingAnimation())) {
+    if ((ConfigManager.settings.oldSneak) && (ave.A().h != null) && (equals(ave.A().h)) && 
+      (ave.A().t.aA == 0) && (Allowed.sneakingAnimation())) {
       f = OldSneaking.getCustomEyeHeight(this);
     }
     if (TiltSupport.tiltCamera != null) {
@@ -1639,18 +1639,18 @@ public abstract class wn
   
   public boolean u_()
   {
-    return Nd[0].Q().b("sendCommandFeedback");
+    return net.minecraft.server.MinecraftServer.N().d[0].Q().b("sendCommandFeedback");
   }
   
   public boolean d(int inventorySlot, zx itemStackIn)
   {
-    if ((inventorySlot >= 0) && (inventorySlot < bi.a.length))
+    if ((inventorySlot >= 0) && (inventorySlot < this.bi.a.length))
     {
-      bi.a(inventorySlot, itemStackIn);
+      this.bi.a(inventorySlot, itemStackIn);
       return true;
     }
     int i = inventorySlot - 100;
-    if ((i >= 0) && (i < bi.b.length))
+    if ((i >= 0) && (i < this.bi.b.length))
     {
       int k = i + 1;
       if ((itemStackIn != null) && (itemStackIn.b() != null)) {
@@ -1664,13 +1664,13 @@ public abstract class wn
           return false;
         }
       }
-      bi.a(i + bi.a.length, itemStackIn);
+      this.bi.a(i + this.bi.a.length, itemStackIn);
       return true;
     }
     int j = inventorySlot - 200;
-    if ((j >= 0) && (j < a.o_()))
+    if ((j >= 0) && (j < this.a.o_()))
     {
-      a.a(j, itemStackIn);
+      this.a.a(j, itemStackIn);
       return true;
     }
     return false;
@@ -1678,12 +1678,12 @@ public abstract class wn
   
   public boolean cq()
   {
-    return bI;
+    return this.bI;
   }
   
   public void k(boolean reducedDebug)
   {
-    bI = reducedDebug;
+    this.bI = reducedDebug;
   }
   
   public static enum a
@@ -1699,13 +1699,13 @@ public abstract class wn
     
     private b(int id, String resourceKey)
     {
-      e = id;
-      f = resourceKey;
+      this.e = id;
+      this.f = resourceKey;
     }
     
     public int a()
     {
-      return e;
+      return this.e;
     }
     
     public static b a(int id)
@@ -1715,14 +1715,14 @@ public abstract class wn
     
     public String b()
     {
-      return f;
+      return this.f;
     }
     
     static
     {
       d = new b[values().length];
       for (b entityplayer$enumchatvisibility : values()) {
-        d[e] = entityplayer$enumchatvisibility;
+        d[entityplayer$enumchatvisibility.e] = entityplayer$enumchatvisibility;
       }
     }
   }

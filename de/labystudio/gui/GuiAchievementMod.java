@@ -38,16 +38,16 @@ public class GuiAchievementMod
   
   public void displayBroadcast(String title, String message, EnumAlertType type)
   {
-    if ((type == EnumAlertType.CHAT) && (!settingsalertsChat)) {
+    if ((type == EnumAlertType.CHAT) && (!ConfigManager.settings.alertsChat)) {
       return;
     }
-    if ((type == EnumAlertType.TEAMSPEAK) && (!settingsalertsTeamSpeak)) {
+    if ((type == EnumAlertType.TEAMSPEAK) && (!ConfigManager.settings.alertsTeamSpeak)) {
       return;
     }
     this.title.add(title);
     this.message.add(message);
-    time.add(Long.valueOf(ave.J()));
-    out.add(Boolean.valueOf(false));
+    this.time.add(Long.valueOf(ave.J()));
+    this.out.add(Boolean.valueOf(false));
     this.type.add(Integer.valueOf(0));
     single();
   }
@@ -56,54 +56,54 @@ public class GuiAchievementMod
   
   private void single()
   {
-    single = true;
+    this.single = true;
   }
   
   public void displayMessage(String player, String message, EnumAlertType type)
   {
-    if ((type == EnumAlertType.CHAT) && (!settingsalertsChat)) {
+    if ((type == EnumAlertType.CHAT) && (!ConfigManager.settings.alertsChat)) {
       return;
     }
-    if ((type == EnumAlertType.TEAMSPEAK) && (!settingsalertsTeamSpeak)) {
+    if ((type == EnumAlertType.TEAMSPEAK) && (!ConfigManager.settings.alertsTeamSpeak)) {
       return;
     }
-    if (title.contains(player))
+    if (this.title.contains(player))
     {
-      int i = title.indexOf(player);
+      int i = this.title.indexOf(player);
       this.message.set(i, message);
-      out.set(i, Boolean.valueOf(false));
-      time.set(i, Long.valueOf(ave.J() - 150L));
+      this.out.set(i, Boolean.valueOf(false));
+      this.time.set(i, Long.valueOf(ave.J() - 150L));
       return;
     }
-    title.add(player);
+    this.title.add(player);
     this.message.add(message);
-    time.add(Long.valueOf(ave.J()));
-    out.add(Boolean.valueOf(false));
+    this.time.add(Long.valueOf(ave.J()));
+    this.out.add(Boolean.valueOf(false));
     this.type.add(Integer.valueOf(1));
     single();
   }
   
   private void updateAchievementWindowScale()
   {
-    bfl.b(0, 0, mc.d, mc.e);
+    bfl.b(0, 0, this.mc.d, this.mc.e);
     bfl.n(5889);
     bfl.D();
     bfl.n(5888);
     bfl.D();
-    width = mc.d;
-    height = mc.e;
-    avr var1 = new avr(mc);
-    width = var1.a();
-    height = var1.b();
+    this.width = this.mc.d;
+    this.height = this.mc.e;
+    avr var1 = new avr(this.mc);
+    this.width = var1.a();
+    this.height = var1.b();
     bfl.m(256);
     bfl.n(5889);
     bfl.D();
-    bfl.a(0.0D, width, height, 0.0D, 1000.0D, 3000.0D);
+    bfl.a(0.0D, this.width, this.height, 0.0D, 1000.0D, 3000.0D);
     bfl.n(5888);
     bfl.D();
     bfl.b(0.0F, 0.0F, -2000.0F);
-    if (time.size() >= 3) {
-      single = false;
+    if (this.time.size() >= 3) {
+      this.single = false;
     }
   }
   
@@ -115,12 +115,12 @@ public class GuiAchievementMod
       String title = (String)this.title.get(stack);
       String message = (String)this.message.get(stack);
       long time = ((Long)this.time.get(stack)).longValue();
-      message = ModGui.shortString(message, getInstancedraw.getWidth() / 8);
+      message = ModGui.shortString(message, LabyMod.getInstance().draw.getWidth() / 8);
       double var1 = (ave.J() - time) / 3000.0D;
       
       double backup = var1;
       if ((var1 < 0.0D) || (var1 > 1.0D)) {
-        out.set(stack, Boolean.valueOf(true));
+        this.out.set(stack, Boolean.valueOf(true));
       }
       if (var1 > 0.5D) {
         var1 = 0.5D;
@@ -137,11 +137,11 @@ public class GuiAchievementMod
       }
       var3 *= var3;
       var3 *= var3;
-      int var5 = width - 160;
+      int var5 = this.width - 160;
       int var6 = 0 - (int)(var3 * 36.0D);
       int x = 0;
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-      if (((Boolean)out.get(stack)).booleanValue())
+      if (((Boolean)this.out.get(stack)).booleanValue())
       {
         int var62 = (int)(var6 - backup * 300.0D + 300.0D);
         if (var62 + 72 < 0.0D)
@@ -149,11 +149,11 @@ public class GuiAchievementMod
           this.title.remove(stack);
           this.message.remove(stack);
           this.time.remove(stack);
-          out.remove(stack);
+          this.out.remove(stack);
           this.type.remove(stack);
           continue;
         }
-        if (!single) {
+        if (!this.single) {
           x = var62 * 4 * -1;
         } else {
           var6 = var62;
@@ -163,7 +163,7 @@ public class GuiAchievementMod
       y = var6 + 32;
       int type = ((Integer)this.type.get(stack)).intValue();
       bfl.w();
-      mc.P().a(achievementBg);
+      this.mc.P().a(achievementBg);
       bfl.f();
       draw(title, message, var6, type, x);
     }
@@ -171,7 +171,7 @@ public class GuiAchievementMod
   
   private void draw(String title, String message, int y, int type, int xx)
   {
-    int length = getInstancedraw.getStringWidth(message);
+    int length = LabyMod.getInstance().draw.getStringWidth(message);
     if (length < 160) {
       length = 160;
     }
@@ -182,7 +182,7 @@ public class GuiAchievementMod
       length += 26;
     }
     length += 10;
-    int x = getInstancedraw.getWidth() - length + xx;
+    int x = LabyMod.getInstance().draw.getWidth() - length + xx;
     if (length > 160)
     {
       for (int i = length; i >= 0; i--) {
@@ -198,15 +198,15 @@ public class GuiAchievementMod
     }
     if (type == 0)
     {
-      mc.k.a(title, x + 6, y + 7, 65280);
-      mc.k.a(message, x + 6, y + 18, -1);
+      this.mc.k.a(title, x + 6, y + 7, 65280);
+      this.mc.k.a(message, x + 6, y + 18, -1);
     }
     if (type == 1)
     {
-      mc.k.a(title, x + 6 + 24, y + 7, 65280);
-      mc.k.a(message, x + 6 + 24, y + 18, -1);
+      this.mc.k.a(title, x + 6 + 24, y + 7, 65280);
+      this.mc.k.a(message, x + 6 + 24, y + 18, -1);
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-      getInstancetextureManager.drawPlayerHead(title, x + 5, y + 8, 0.7D);
+      LabyMod.getInstance().textureManager.drawPlayerHead(title, x + 5, y + 8, 0.7D);
     }
   }
 }

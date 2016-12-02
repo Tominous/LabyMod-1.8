@@ -9,19 +9,19 @@ public class jq
   
   public jq(long ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readLong();
+    this.a = ☃.readLong();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeLong(a);
+    ☃.writeLong(this.a);
   }
   
   public void a(jp ☃)

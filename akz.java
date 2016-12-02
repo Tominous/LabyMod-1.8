@@ -7,28 +7,28 @@ public class akz
   {
     public cj c()
     {
-      return c;
+      return akz.this.c;
     }
     
     public aui d()
     {
-      return new aui(c.n() + 0.5D, c.o() + 0.5D, c.p() + 0.5D);
+      return new aui(akz.this.c.n() + 0.5D, akz.this.c.o() + 0.5D, akz.this.c.p() + 0.5D);
     }
     
     public adm e()
     {
-      return z();
+      return akz.this.z();
     }
     
     public void a(String ☃)
     {
       super.a(☃);
-      p_();
+      akz.this.p_();
     }
     
     public void h()
     {
-      z().h(c);
+      akz.this.z().h(akz.this.c);
     }
     
     public int i()
@@ -38,9 +38,9 @@ public class akz
     
     public void a(ByteBuf ☃)
     {
-      ☃.writeInt(c.n());
-      ☃.writeInt(c.o());
-      ☃.writeInt(c.p());
+      ☃.writeInt(akz.this.c.n());
+      ☃.writeInt(akz.this.c.o());
+      ☃.writeInt(akz.this.c.p());
     }
     
     public pk f()
@@ -52,20 +52,20 @@ public class akz
   public void b(dn ☃)
   {
     super.b(☃);
-    a.a(☃);
+    this.a.a(☃);
   }
   
   public void a(dn ☃)
   {
     super.a(☃);
-    a.b(☃);
+    this.a.b(☃);
   }
   
   public ff y_()
   {
     dn ☃ = new dn();
     b(☃);
-    return new ft(c, 2, ☃);
+    return new ft(this.c, 2, ☃);
   }
   
   public boolean F()
@@ -75,11 +75,11 @@ public class akz
   
   public adc b()
   {
-    return a;
+    return this.a;
   }
   
   public n c()
   {
-    return a.n();
+    return this.a.n();
   }
 }

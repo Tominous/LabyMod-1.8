@@ -27,91 +27,91 @@ public class SliderColor
   public SliderColor(int id, int x, int y, int size, int color)
   {
     super(id, x, y, size + 5, 20, "");
-    sliderValue = 1.0F;
-    field_146132_r = 0.0F;
-    field_146131_s = 1.0F;
+    this.sliderValue = 1.0F;
+    this.field_146132_r = 0.0F;
+    this.field_146131_s = 1.0F;
     this.size = (size - 5);
-    colorID = color;
+    this.colorID = color;
     this.color = getColor();
     ave var7 = ave.A();
     updateText();
-    valueMin = 0;
-    valueMax = 15.0F;
-    valueStep = 1.0F;
+    this.valueMin = 0;
+    this.valueMax = 15.0F;
+    this.valueStep = 1.0F;
   }
   
   public void setColor(int newColor)
   {
-    switch (colorID)
+    switch (this.colorID)
     {
     case 1: 
-      settingscolor1 = Color.IDToColor(newColor);
+      ConfigManager.settings.color1 = Color.IDToColor(newColor);
       break;
     case 2: 
-      settingscolor2 = Color.IDToColor(newColor);
+      ConfigManager.settings.color2 = Color.IDToColor(newColor);
       break;
     case 3: 
-      settingscolor3 = Color.IDToColor(newColor);
+      ConfigManager.settings.color3 = Color.IDToColor(newColor);
       break;
     case 4: 
-      settingscolor4 = Color.IDToColor(newColor);
+      ConfigManager.settings.color4 = Color.IDToColor(newColor);
       break;
     case 5: 
-      settingscolor5 = Color.IDToColor(newColor);
+      ConfigManager.settings.color5 = Color.IDToColor(newColor);
       break;
     case 6: 
-      settingscolor6 = Color.IDToColor(newColor);
+      ConfigManager.settings.color6 = Color.IDToColor(newColor);
       break;
     case 7: 
-      settingscolor7 = Color.IDToColor(newColor);
+      ConfigManager.settings.color7 = Color.IDToColor(newColor);
       break;
     case 8: 
-      settingscolor8 = Color.IDToColor(newColor);
+      ConfigManager.settings.color8 = Color.IDToColor(newColor);
       break;
     case 9: 
-      settingscolor9 = Color.IDToColor(newColor);
+      ConfigManager.settings.color9 = Color.IDToColor(newColor);
       break;
     case 10: 
-      settingscolor10 = Color.IDToColor(newColor);
+      ConfigManager.settings.color10 = Color.IDToColor(newColor);
     }
   }
   
   public int getColor()
   {
-    switch (colorID)
+    switch (this.colorID)
     {
     case 1: 
-      return Color.colorToID(settingscolor1);
+      return Color.colorToID(ConfigManager.settings.color1);
     case 2: 
-      return Color.colorToID(settingscolor2);
+      return Color.colorToID(ConfigManager.settings.color2);
     case 3: 
-      return Color.colorToID(settingscolor3);
+      return Color.colorToID(ConfigManager.settings.color3);
     case 4: 
-      return Color.colorToID(settingscolor4);
+      return Color.colorToID(ConfigManager.settings.color4);
     case 5: 
-      return Color.colorToID(settingscolor5);
+      return Color.colorToID(ConfigManager.settings.color5);
     case 6: 
-      return Color.colorToID(settingscolor6);
+      return Color.colorToID(ConfigManager.settings.color6);
     case 7: 
-      return Color.colorToID(settingscolor7);
+      return Color.colorToID(ConfigManager.settings.color7);
     case 8: 
-      return Color.colorToID(settingscolor8);
+      return Color.colorToID(ConfigManager.settings.color8);
     case 9: 
-      return Color.colorToID(settingscolor9);
+      return Color.colorToID(ConfigManager.settings.color9);
     case 10: 
-      return Color.colorToID(settingscolor10);
+      return Color.colorToID(ConfigManager.settings.color10);
     }
     return 0;
   }
   
   public int getX()
   {
-    return h;
+    return this.h;
   }
   
   public int getY()
   {
-    return i;
+    return this.i;
   }
   
   protected int a(boolean mouseOver)
@@ -121,41 +121,41 @@ public class SliderColor
   
   public float denormalizeValue(float p_148262_1_)
   {
-    return snapToStepClamp(valueMin + (valueMax - valueMin) * ns.a(p_148262_1_, 0.0F, 1.0F));
+    return snapToStepClamp(this.valueMin + (this.valueMax - this.valueMin) * ns.a(p_148262_1_, 0.0F, 1.0F));
   }
   
   public float snapToStepClamp(float p_148268_1_)
   {
     p_148268_1_ = snapToStep(p_148268_1_);
-    return ns.a(p_148268_1_, valueMin, valueMax);
+    return ns.a(p_148268_1_, this.valueMin, this.valueMax);
   }
   
   protected float snapToStep(float p_148264_1_)
   {
-    if (valueStep > 0.0F) {
-      p_148264_1_ = valueStep * Math.round(p_148264_1_ / valueStep);
+    if (this.valueStep > 0.0F) {
+      p_148264_1_ = this.valueStep * Math.round(p_148264_1_ / this.valueStep);
     }
     return p_148264_1_;
   }
   
   public void updateText()
   {
-    color = getColor();
-    j = "";
+    this.color = getColor();
+    this.j = "";
   }
   
   protected void b(ave mc, int mouseX, int mouseY)
   {
-    if (m)
+    if (this.m)
     {
-      if (dragging)
+      if (this.dragging)
       {
-        sliderValue = ((mouseX - (getX() + 4)) / (f - 8));
-        sliderValue = ns.a(sliderValue, 0.0F, 1.0F);
-        sliderValue = ((mouseX - (h + 4)) / (f - 8));
-        sliderValue = ns.a(sliderValue, 0.0F, 1.0F);
-        sliderValue = denormalizeValue(sliderValue);
-        setColor((int)sliderValue);
+        this.sliderValue = ((mouseX - (getX() + 4)) / (this.f - 8));
+        this.sliderValue = ns.a(this.sliderValue, 0.0F, 1.0F);
+        this.sliderValue = ((mouseX - (this.h + 4)) / (this.f - 8));
+        this.sliderValue = ns.a(this.sliderValue, 0.0F, 1.0F);
+        this.sliderValue = denormalizeValue(this.sliderValue);
+        setColor((int)this.sliderValue);
         updateText();
       }
       mc.P().a(a);
@@ -163,9 +163,9 @@ public class SliderColor
       for (int a = 0; a <= 2; a++) {
         for (int i = 0; i <= 15; i++) {
           if (i == getColor()) {
-            c(k, Color.IDToColor(i) + Color.clc("l") + "▌", getX() + (int)(i * 100 / valueMax * 0.76D) + 2, getY() + a * 5 + 1, 0);
+            c(mc.k, Color.IDToColor(i) + Color.clc("l") + "▌", getX() + (int)(i * 100 / this.valueMax * 0.76D) + 2, getY() + a * 5 + 1, 0);
           } else {
-            c(k, Color.IDToColor(i) + "*", getX() + (int)(i * 100 / valueMax * 0.76D) + 2, getY() + 5 + 1, 0);
+            c(mc.k, Color.IDToColor(i) + "*", getX() + (int)(i * 100 / this.valueMax * 0.76D) + 2, getY() + 5 + 1, 0);
           }
         }
       }
@@ -176,11 +176,11 @@ public class SliderColor
   {
     if (super.c(mc, mouseX, mouseY))
     {
-      sliderValue = ((mouseX - (getX() + 4)) / (f - 8));
-      sliderValue = ns.a(sliderValue, 0.0F, 1.0F);
-      setColor((int)sliderValue);
+      this.sliderValue = ((mouseX - (getX() + 4)) / (this.f - 8));
+      this.sliderValue = ns.a(this.sliderValue, 0.0F, 1.0F);
+      setColor((int)this.sliderValue);
       updateText();
-      dragging = true;
+      this.dragging = true;
       return true;
     }
     return false;
@@ -188,7 +188,7 @@ public class SliderColor
   
   public void a(int mouseX, int mouseY)
   {
-    dragging = false;
+    this.dragging = false;
     ConfigManager.save();
   }
 }

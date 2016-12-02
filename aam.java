@@ -3,7 +3,7 @@ public class aam
 {
   public aam()
   {
-    h = 1;
+    this.h = 1;
     a(yz.e);
   }
   
@@ -15,8 +15,8 @@ public class aam
       if ((!☃.cl()) && (!☃.j_()))
       {
         ☃.l(true);
-        o.a(☃, "mob.horse.leather", 0.5F, 1.0F);
-        b -= 1;
+        ☃.o.a(☃, "mob.horse.leather", 0.5F, 1.0F);
+        ☃.b -= 1;
       }
       return true;
     }

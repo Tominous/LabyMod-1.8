@@ -11,14 +11,14 @@ class bdc$1
     switch (bdc.2.a[☃.ordinal()])
     {
     case 1: 
-      bdc.a(a, ☃);
-      bdc.a(a, ☃.getMetadata("model"));
-      if (bdc.a(a) == null) {
-        bdc.a(a, "default");
+      bdc.a(this.a, ☃);
+      bdc.a(this.a, ☃.getMetadata("model"));
+      if (bdc.a(this.a) == null) {
+        bdc.a(this.a, "default");
       }
       break;
     case 2: 
-      bdc.b(a, ☃);
+      bdc.b(this.a, ☃);
     }
   }
 }

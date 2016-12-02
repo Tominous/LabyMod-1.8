@@ -37,7 +37,7 @@ public class v
     if (☃ > 524288) {
       throw new bz("commands.compare.tooManyBlocks", new Object[] { Integer.valueOf(☃), Integer.valueOf(524288) });
     }
-    if ((b < 0) || (e >= 256) || (b < 0) || (e >= 256)) {
+    if ((☃.b < 0) || (☃.e >= 256) || (☃.b < 0) || (☃.e >= 256)) {
       throw new bz("commands.compare.outOfWorld", new Object[0]);
     }
     adm ☃ = ☃.e();
@@ -50,12 +50,12 @@ public class v
       ☃ = true;
     }
     ☃ = 0;
-    cj ☃ = new cj(a - a, b - b, c - c);
+    cj ☃ = new cj(☃.a - ☃.a, ☃.b - ☃.b, ☃.c - ☃.c);
     cj.a ☃ = new cj.a();
     cj.a ☃ = new cj.a();
-    for (int ☃ = c; ☃ <= f; ☃++) {
-      for (int ☃ = b; ☃ <= e; ☃++) {
-        for (int ☃ = a; ☃ <= d; ☃++)
+    for (int ☃ = ☃.c; ☃ <= ☃.f; ☃++) {
+      for (int ☃ = ☃.b; ☃ <= ☃.e; ☃++) {
+        for (int ☃ = ☃.a; ☃ <= ☃.d; ☃++)
         {
           ☃.c(☃, ☃, ☃);
           ☃.c(☃ + ☃.n(), ☃ + ☃.o(), ☃ + ☃.p());

@@ -11,9 +11,9 @@ public class ii
   
   public ii(int ☃, short ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public void a(ic ☃)
@@ -24,26 +24,26 @@ public class ii
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readByte();
-    b = ☃.readShort();
-    c = (☃.readByte() != 0);
+    this.a = ☃.readByte();
+    this.b = ☃.readShort();
+    this.c = (☃.readByte() != 0);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(a);
-    ☃.writeShort(b);
-    ☃.writeByte(c ? 1 : 0);
+    ☃.writeByte(this.a);
+    ☃.writeShort(this.b);
+    ☃.writeByte(this.c ? 1 : 0);
   }
   
   public int a()
   {
-    return a;
+    return this.a;
   }
   
   public short b()
   {
-    return b;
+    return this.b;
   }
 }

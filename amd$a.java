@@ -8,13 +8,13 @@ class amd$a
   
   public amd$a(adm ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public amc a(cj ☃)
     throws Exception
   {
-    return new amc(a, ☃, b);
+    return new amc(this.a, ☃, this.b);
   }
 }

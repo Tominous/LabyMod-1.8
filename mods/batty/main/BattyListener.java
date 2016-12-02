@@ -23,7 +23,7 @@ public class BattyListener
   {
     if ((event.getScreen() instanceof aya))
     {
-      getInstancegetBatheartguitimerRunning = false;
+      BattyMod.getInstance().getBatheartgui().timerRunning = false;
       BattyConfig.storeRuntimeOptions();
     }
   }
@@ -40,10 +40,10 @@ public class BattyListener
       gui.hideUnhideStopWatch();
     }
     if (BattyUI.resetTimerkey.f()) {
-      resetTimer = true;
+      gui.resetTimer = true;
     }
     if (BattyUI.startstopTimerkey.f()) {
-      toggleTimer = true;
+      gui.toggleTimer = true;
     }
     if (BattyUI.moveCoordScreenPos.f()) {
       gui.rotateScreenCoords();

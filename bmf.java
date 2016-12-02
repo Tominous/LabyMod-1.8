@@ -1,181 +1,173 @@
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
 public class bmf
 {
   private final int a;
-  private final Set b = Sets.newHashSetWithExpectedSize(256);
-  private final List c = Lists.newArrayListWithCapacity(256);
+  private final Set<bmf.a> b = Sets.newHashSetWithExpectedSize(256);
+  private final List<bmf.b> c = Lists.newArrayListWithCapacity(256);
   private int d;
   private int e;
   private final int f;
   private final int g;
   private final boolean h;
   private final int i;
-  private static final String __OBFID = "CL_00001054";
   
-  public bmf(int p_i45095_1_, int p_i45095_2_, boolean p_i45095_3_, int p_i45095_4_, int p_i45095_5_)
+  public bmf(int ☃, int ☃, boolean ☃, int ☃, int ☃)
   {
-    a = p_i45095_5_;
-    f = p_i45095_1_;
-    g = p_i45095_2_;
-    h = p_i45095_3_;
-    i = p_i45095_4_;
+    this.a = ☃;
+    this.f = ☃;
+    this.g = ☃;
+    this.h = ☃;
+    this.i = ☃;
   }
   
   public int a()
   {
-    return d;
+    return this.d;
   }
   
   public int b()
   {
-    return e;
+    return this.e;
   }
   
-  public void a(bmi p_110934_1_)
+  public void a(bmi ☃)
   {
-    bmf.a var2 = new bmf.a(p_110934_1_, a);
-    if (i > 0) {
-      var2.a(i);
+    bmf.a ☃ = new bmf.a(☃, this.a);
+    if (this.i > 0) {
+      ☃.a(this.i);
     }
-    b.add(var2);
+    this.b.add(☃);
   }
   
   public void c()
   {
-    bmf.a[] var1 = (bmf.a[])b.toArray(new bmf.a[b.size()]);
-    Arrays.sort(var1);
-    bmf.a[] var2 = var1;
-    int var3 = var1.length;
-    for (int var4 = 0; var4 < var3; var4++)
-    {
-      bmf.a var5 = var2[var4];
-      if (!a(var5))
+    bmf.a[] ☃ = (bmf.a[])this.b.toArray(new bmf.a[this.b.size()]);
+    Arrays.sort(☃);
+    for (bmf.a ☃ : ☃) {
+      if (!a(☃))
       {
-        String var6 = String.format("Unable to fit: %s, size: %dx%d, atlas: %dx%d, atlasMax: %dx%d - Maybe try a lower resolution resourcepack?", new Object[] { var5.a().i(), Integer.valueOf(var5.a().c()), Integer.valueOf(var5.a().d()), Integer.valueOf(d), Integer.valueOf(e), Integer.valueOf(f), Integer.valueOf(g) });
+        String ☃ = String.format("Unable to fit: %s - size: %dx%d - Maybe try a lowerresolution resourcepack?", new Object[] { ☃.a().i(), Integer.valueOf(☃.a().c()), Integer.valueOf(☃.a().d()) });
         
-        throw new bmg(var5, var6);
+        throw new bmg(☃, ☃);
       }
     }
-    if (h)
+    if (this.h)
     {
-      d = ns.b(d);
-      e = ns.b(e);
+      this.d = ns.b(this.d);
+      this.e = ns.b(this.e);
     }
   }
   
-  public List d()
+  public List<bmi> d()
   {
-    ArrayList var1 = Lists.newArrayList();
-    Iterator var2 = c.iterator();
-    while (var2.hasNext())
-    {
-      bmf.b var3 = (bmf.b)var2.next();
-      var3.a(var1);
+    List<bmf.b> ☃ = Lists.newArrayList();
+    for (bmf.b ☃ : this.c) {
+      ☃.a(☃);
     }
-    ArrayList var7 = Lists.newArrayList();
-    Iterator var8 = var1.iterator();
-    while (var8.hasNext())
+    List<bmi> ☃ = Lists.newArrayList();
+    for (bmf.b ☃ : ☃)
     {
-      bmf.b var4 = (bmf.b)var8.next();
-      bmf.a var5 = var4.a();
-      bmi var6 = var5.a();
-      var6.a(d, e, var4.b(), var4.c(), var5.e());
-      var7.add(var6);
+      bmf.a ☃ = ☃.a();
+      
+      bmi ☃ = ☃.a();
+      ☃.a(this.d, this.e, ☃.b(), ☃.c(), ☃.e());
+      
+      ☃.add(☃);
     }
-    return var7;
+    return ☃;
   }
   
-  private static int b(int p_147969_0_, int p_147969_1_)
+  private static int b(int ☃, int ☃)
   {
-    return (p_147969_0_ >> p_147969_1_) + ((p_147969_0_ & (1 << p_147969_1_) - 1) == 0 ? 0 : 1) << p_147969_1_;
+    return (☃ >> ☃) + ((☃ & (1 << ☃) - 1) == 0 ? 0 : 1) << ☃;
   }
   
-  private boolean a(bmf.a p_94310_1_)
+  private boolean a(bmf.a ☃)
   {
-    for (int var2 = 0; var2 < c.size(); var2++)
+    for (int ☃ = 0; ☃ < this.c.size(); ☃++)
     {
-      if (((bmf.b)c.get(var2)).a(p_94310_1_)) {
+      if (((bmf.b)this.c.get(☃)).a(☃)) {
         return true;
       }
-      p_94310_1_.d();
-      if (((bmf.b)c.get(var2)).a(p_94310_1_)) {
+      ☃.d();
+      if (((bmf.b)this.c.get(☃)).a(☃)) {
         return true;
       }
-      p_94310_1_.d();
+      ☃.d();
     }
-    return b(p_94310_1_);
+    return b(☃);
   }
   
-  private boolean b(bmf.a p_94311_1_)
+  private boolean b(bmf.a ☃)
   {
-    int var2 = Math.min(p_94311_1_.b(), p_94311_1_.c());
-    boolean var3 = (d == 0) && (e == 0);
-    boolean var4;
-    boolean var4;
-    if (h)
+    int ☃ = Math.min(☃.b(), ☃.c());
+    boolean ☃ = (this.d == 0) && (this.e == 0);
+    boolean ☃;
+    boolean ☃;
+    if (this.h)
     {
-      int var5 = ns.b(d);
-      int var6 = ns.b(e);
-      int var7 = ns.b(d + var2);
-      int var8 = ns.b(e + var2);
-      boolean var9 = var7 <= f;
-      boolean var10 = var8 <= g;
-      if ((!var9) && (!var10)) {
+      int ☃ = ns.b(this.d);
+      int ☃ = ns.b(this.e);
+      int ☃ = ns.b(this.d + ☃);
+      int ☃ = ns.b(this.e + ☃);
+      
+      boolean ☃ = ☃ <= this.f;
+      boolean ☃ = ☃ <= this.g;
+      if ((!☃) && (!☃)) {
         return false;
       }
-      boolean var11 = var5 != var7;
-      boolean var12 = var6 != var8;
-      boolean var4;
-      if ((var11 ^ var12)) {
-        var4 = !var11;
+      boolean ☃ = ☃ != ☃;
+      boolean ☃ = ☃ != ☃;
+      boolean ☃;
+      if ((☃ ^ ☃)) {
+        ☃ = !☃;
       } else {
-        var4 = (var9) && (var5 <= var6);
+        ☃ = (☃) && (☃ <= ☃);
       }
     }
     else
     {
-      boolean var13 = d + var2 <= f;
-      boolean var14 = e + var2 <= g;
-      if ((!var13) && (!var14)) {
+      boolean ☃ = this.d + ☃ <= this.f;
+      boolean ☃ = this.e + ☃ <= this.g;
+      if ((!☃) && (!☃)) {
         return false;
       }
-      var4 = (var13) && ((var3) || (d <= e));
+      ☃ = (☃) && ((☃) || (this.d <= this.e));
     }
-    int var5 = Math.max(p_94311_1_.b(), p_94311_1_.c());
-    if (ns.b((!var4 ? e : d) + var5) > (!var4 ? g : f)) {
+    int ☃ = Math.max(☃.b(), ☃.c());
+    if (ns.b((☃ ? this.e : this.d) + ☃) > (☃ ? this.g : this.f)) {
       return false;
     }
-    bmf.b var15;
-    if (var4)
+    bmf.b ☃;
+    if (☃)
     {
-      if (p_94311_1_.b() > p_94311_1_.c()) {
-        p_94311_1_.d();
+      if (☃.b() > ☃.c()) {
+        ☃.d();
       }
-      if (e == 0) {
-        e = p_94311_1_.c();
+      if (this.e == 0) {
+        this.e = ☃.c();
       }
-      bmf.b var15 = new bmf.b(d, 0, p_94311_1_.b(), e);
-      d += p_94311_1_.b();
+      bmf.b ☃ = new bmf.b(this.d, 0, ☃.b(), this.e);
+      this.d += ☃.b();
     }
     else
     {
-      var15 = new bmf.b(0, e, d, p_94311_1_.c());
-      e += p_94311_1_.c();
+      ☃ = new bmf.b(0, this.e, this.d, ☃.c());
+      this.e += ☃.c();
     }
-    var15.a(p_94311_1_);
-    c.add(var15);
+    ☃.a(☃);
+    this.c.add(☃);
+    
     return true;
   }
   
   public static class a
-    implements Comparable
+    implements Comparable<a>
   {
     private final bmi a;
     private final int b;
@@ -183,79 +175,75 @@ public class bmf
     private final int d;
     private boolean e;
     private float f = 1.0F;
-    private static final String __OBFID = "CL_00001055";
     
-    public a(bmi p_i45094_1_, int p_i45094_2_)
+    public a(bmi ☃, int ☃)
     {
-      a = p_i45094_1_;
-      b = p_i45094_1_.c();
-      c = p_i45094_1_.d();
-      d = p_i45094_2_;
-      e = (bmf.a(c, p_i45094_2_) > bmf.a(b, p_i45094_2_));
+      this.a = ☃;
+      this.b = ☃.c();
+      this.c = ☃.d();
+      this.d = ☃;
+      
+      this.e = (bmf.a(this.c, ☃) > bmf.a(this.b, ☃));
     }
     
     public bmi a()
     {
-      return a;
+      return this.a;
     }
     
     public int b()
     {
-      return e ? bmf.a((int)(c * f), d) : bmf.a((int)(b * f), d);
+      return this.e ? bmf.a((int)(this.c * this.f), this.d) : bmf.a((int)(this.b * this.f), this.d);
     }
     
     public int c()
     {
-      return e ? bmf.a((int)(b * f), d) : bmf.a((int)(c * f), d);
+      return this.e ? bmf.a((int)(this.b * this.f), this.d) : bmf.a((int)(this.c * this.f), this.d);
     }
     
     public void d()
     {
-      e = (!e);
+      this.e = (!this.e);
     }
     
     public boolean e()
     {
-      return e;
+      return this.e;
     }
     
-    public void a(int p_94196_1_)
+    public void a(int ☃)
     {
-      if ((b > p_94196_1_) && (c > p_94196_1_)) {
-        f = (p_94196_1_ / Math.min(b, c));
+      if ((this.b <= ☃) || (this.c <= ☃)) {
+        return;
       }
+      this.f = (☃ / Math.min(this.b, this.c));
     }
     
     public String toString()
     {
-      return "Holder{width=" + b + ", height=" + c + ", name=" + a.i() + '}';
+      return "Holder{width=" + this.b + ", height=" + this.c + '}';
     }
     
-    public int a(a p_compareTo_1_)
+    public int a(a ☃)
     {
-      int var2;
-      int var2;
-      if (c() == p_compareTo_1_.c())
+      int ☃;
+      int ☃;
+      if (c() == ☃.c())
       {
-        if (b() == p_compareTo_1_.b())
+        if (b() == ☃.b())
         {
-          if (a.i() == null) {
-            return a.i() == null ? 0 : -1;
+          if (this.a.i() == null) {
+            return ☃.a.i() == null ? 0 : -1;
           }
-          return a.i().compareTo(a.i());
+          return this.a.i().compareTo(☃.a.i());
         }
-        var2 = b() < p_compareTo_1_.b() ? 1 : -1;
+        ☃ = b() < ☃.b() ? 1 : -1;
       }
       else
       {
-        var2 = c() < p_compareTo_1_.c() ? 1 : -1;
+        ☃ = c() < ☃.c() ? 1 : -1;
       }
-      return var2;
-    }
-    
-    public int compareTo(Object p_compareTo_1_)
-    {
-      return a((a)p_compareTo_1_);
+      return ☃;
     }
   }
   
@@ -265,111 +253,101 @@ public class bmf
     private final int b;
     private final int c;
     private final int d;
-    private List e;
+    private List<b> e;
     private bmf.a f;
-    private static final String __OBFID = "CL_00001056";
     
-    public b(int p_i1277_1_, int p_i1277_2_, int p_i1277_3_, int p_i1277_4_)
+    public b(int ☃, int ☃, int ☃, int ☃)
     {
-      a = p_i1277_1_;
-      b = p_i1277_2_;
-      c = p_i1277_3_;
-      d = p_i1277_4_;
+      this.a = ☃;
+      this.b = ☃;
+      this.c = ☃;
+      this.d = ☃;
     }
     
     public bmf.a a()
     {
-      return f;
+      return this.f;
     }
     
     public int b()
     {
-      return a;
+      return this.a;
     }
     
     public int c()
     {
-      return b;
+      return this.b;
     }
     
-    public boolean a(bmf.a p_94182_1_)
+    public boolean a(bmf.a ☃)
     {
-      if (f != null) {
+      if (this.f != null) {
         return false;
       }
-      int var2 = p_94182_1_.b();
-      int var3 = p_94182_1_.c();
-      if ((var2 <= c) && (var3 <= d))
+      int ☃ = ☃.b();
+      int ☃ = ☃.c();
+      if ((☃ > this.c) || (☃ > this.d)) {
+        return false;
+      }
+      if ((☃ == this.c) && (☃ == this.d))
       {
-        if ((var2 == c) && (var3 == d))
+        this.f = ☃;
+        return true;
+      }
+      if (this.e == null)
+      {
+        this.e = Lists.newArrayListWithCapacity(1);
+        
+        this.e.add(new b(this.a, this.b, ☃, ☃));
+        
+        int ☃ = this.c - ☃;
+        int ☃ = this.d - ☃;
+        if ((☃ > 0) && (☃ > 0))
         {
-          f = p_94182_1_;
+          int ☃ = Math.max(this.d, ☃);
+          int ☃ = Math.max(this.c, ☃);
+          if (☃ >= ☃)
+          {
+            this.e.add(new b(this.a, this.b + ☃, ☃, ☃));
+            this.e.add(new b(this.a + ☃, this.b, ☃, this.d));
+          }
+          else
+          {
+            this.e.add(new b(this.a + ☃, this.b, ☃, ☃));
+            this.e.add(new b(this.a, this.b + ☃, this.c, ☃));
+          }
+        }
+        else if (☃ == 0)
+        {
+          this.e.add(new b(this.a, this.b + ☃, ☃, ☃));
+        }
+        else if (☃ == 0)
+        {
+          this.e.add(new b(this.a + ☃, this.b, ☃, ☃));
+        }
+      }
+      for (b ☃ : this.e) {
+        if (☃.a(☃)) {
           return true;
         }
-        if (e == null)
-        {
-          e = Lists.newArrayListWithCapacity(1);
-          e.add(new b(a, b, var2, var3));
-          int var4 = c - var2;
-          int var5 = d - var3;
-          if ((var5 > 0) && (var4 > 0))
-          {
-            int var6 = Math.max(d, var4);
-            int var7 = Math.max(c, var5);
-            if (var6 >= var7)
-            {
-              e.add(new b(a, b + var3, var2, var5));
-              e.add(new b(a + var2, b, var4, d));
-            }
-            else
-            {
-              e.add(new b(a + var2, b, var4, var3));
-              e.add(new b(a, b + var3, c, var5));
-            }
-          }
-          else if (var4 == 0)
-          {
-            e.add(new b(a, b + var3, var2, var5));
-          }
-          else if (var5 == 0)
-          {
-            e.add(new b(a + var2, b, var4, var3));
-          }
-        }
-        Iterator var8 = e.iterator();
-        b var9;
-        do
-        {
-          if (!var8.hasNext()) {
-            return false;
-          }
-          var9 = (b)var8.next();
-        } while (!var9.a(p_94182_1_));
-        return true;
       }
       return false;
     }
     
-    public void a(List p_94184_1_)
+    public void a(List<b> ☃)
     {
-      if (f != null)
-      {
-        p_94184_1_.add(this);
-      }
-      else if (e != null)
-      {
-        Iterator var2 = e.iterator();
-        while (var2.hasNext())
-        {
-          b var3 = (b)var2.next();
-          var3.a(p_94184_1_);
+      if (this.f != null) {
+        ☃.add(this);
+      } else if (this.e != null) {
+        for (b ☃ : this.e) {
+          ☃.a(☃);
         }
       }
     }
     
     public String toString()
     {
-      return "Slot{originX=" + a + ", originY=" + b + ", width=" + c + ", height=" + d + ", texture=" + f + ", subSlots=" + e + '}';
+      return "Slot{originX=" + this.a + ", originY=" + this.b + ", width=" + this.c + ", height=" + this.d + ", texture=" + this.f + ", subSlots=" + this.e + '}';
     }
   }
 }

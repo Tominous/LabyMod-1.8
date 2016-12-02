@@ -14,10 +14,10 @@ public class LineInfo
   public LineInfo(float lineWidth, float r, float g, float b, float a, int depthfunc)
   {
     this.lineWidth = lineWidth;
-    red = r;
-    green = g;
-    blue = b;
-    alpha = a;
+    this.red = r;
+    this.green = g;
+    this.blue = b;
+    this.alpha = a;
     this.depthfunc = depthfunc;
   }
   
@@ -28,22 +28,22 @@ public class LineInfo
   
   public LineInfo(LineInfo orig)
   {
-    lineWidth = lineWidth;
-    red = red;
-    green = green;
-    blue = blue;
-    alpha = alpha;
-    depthfunc = depthfunc;
+    this.lineWidth = orig.lineWidth;
+    this.red = orig.red;
+    this.green = orig.green;
+    this.blue = orig.blue;
+    this.alpha = orig.alpha;
+    this.depthfunc = orig.depthfunc;
   }
   
   public void prepareRender()
   {
-    GL11.glLineWidth(lineWidth);
-    GL11.glDepthFunc(depthfunc);
+    GL11.glLineWidth(this.lineWidth);
+    GL11.glDepthFunc(this.depthfunc);
   }
   
   public void prepareColour()
   {
-    GL11.glColor4f(red, green, blue, alpha);
+    GL11.glColor4f(this.red, this.green, this.blue, this.alpha);
   }
 }

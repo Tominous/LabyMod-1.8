@@ -1,5 +1,4 @@
 import java.io.IOException;
-import shadersmod.client.MultiTexID;
 
 public abstract interface bmk
 {
@@ -11,6 +10,4 @@ public abstract interface bmk
     throws IOException;
   
   public abstract int b();
-  
-  public abstract MultiTexID getMultiTexID();
 }

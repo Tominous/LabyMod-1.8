@@ -14,47 +14,47 @@ public class amd$b
   
   public amd$b(cj ☃, cq ☃, cq ☃, LoadingCache<cj, amc> ☃, int ☃, int ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
-    e = ☃;
-    f = ☃;
-    g = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.e = ☃;
+    this.f = ☃;
+    this.g = ☃;
   }
   
   public cj a()
   {
-    return a;
+    return this.a;
   }
   
   public cq b()
   {
-    return b;
+    return this.b;
   }
   
   public cq c()
   {
-    return c;
+    return this.c;
   }
   
   public int d()
   {
-    return e;
+    return this.e;
   }
   
   public int e()
   {
-    return f;
+    return this.f;
   }
   
   public amc a(int ☃, int ☃, int ☃)
   {
-    return (amc)d.getUnchecked(amd.a(a, b(), c(), ☃, ☃, ☃));
+    return (amc)this.d.getUnchecked(amd.a(this.a, b(), c(), ☃, ☃, ☃));
   }
   
   public String toString()
   {
-    return Objects.toStringHelper(this).add("up", c).add("forwards", b).add("frontTopLeft", a).toString();
+    return Objects.toStringHelper(this).add("up", this.c).add("forwards", this.b).add("frontTopLeft", this.a).toString();
   }
 }

@@ -9,7 +9,7 @@ public class io
   
   public io(int ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(ic ☃)
@@ -20,17 +20,17 @@ public class io
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.e();
+    this.a = ☃.e();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a);
+    ☃.b(this.a);
   }
   
   public int a()
   {
-    return a;
+    return this.a;
   }
 }

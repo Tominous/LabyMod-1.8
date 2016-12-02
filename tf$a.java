@@ -5,7 +5,7 @@ class tf$a
   
   tf$a(tf paramtf, pr ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
 }

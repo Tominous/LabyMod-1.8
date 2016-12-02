@@ -47,24 +47,24 @@ public class TeamSpeakOverlayWindow
     if (message.length() > 70) {
       message = message.substring(0, 70) + "..";
     }
-    info.add(new InfoMessage(clientId, message));
-    infoTitle = title;
-    if (info.size() > 15) {
-      info.remove(0);
+    this.info.add(new InfoMessage(clientId, message));
+    this.infoTitle = title;
+    if (this.info.size() > 15) {
+      this.info.remove(0);
     }
     calcInfo();
   }
   
   public void openInput(int targetId, String title, String message, PopUpCallback callBack)
   {
-    inputTitle = title;
-    input = message;
-    inputTarget = targetId;
-    inputCallBack = callBack;
-    inputField = new ModGuiTextField(0, getInstancemc.k, 0, 0, 159, 10);
-    inputField.a("");
-    inputField.f(50);
-    inputField.b(true);
+    this.inputTitle = title;
+    this.input = message;
+    this.inputTarget = targetId;
+    this.inputCallBack = callBack;
+    this.inputField = new ModGuiTextField(0, LabyMod.getInstance().mc.k, 0, 0, 159, 10);
+    this.inputField.a("");
+    this.inputField.f(50);
+    this.inputField.b(true);
     calcInput();
   }
   
@@ -72,70 +72,70 @@ public class TeamSpeakOverlayWindow
   
   private void resetInfo()
   {
-    info.clear();
-    infoTitle = null;
-    infoDrag = false;
-    infoPosX = 0;
-    infoPosY = 0;
-    infoLengthX = 0;
-    infoLengthY = 0;
-    infoClickX = 0;
-    infoClickY = 0;
-    closedInfo = true;
+    this.info.clear();
+    this.infoTitle = null;
+    this.infoDrag = false;
+    this.infoPosX = 0;
+    this.infoPosY = 0;
+    this.infoLengthX = 0;
+    this.infoLengthY = 0;
+    this.infoClickX = 0;
+    this.infoClickY = 0;
+    this.closedInfo = true;
   }
   
   boolean closedInput = false;
   
   private void resetinput()
   {
-    input = null;
-    inputTitle = null;
-    inputDrag = false;
-    inputPosX = 0;
-    inputPosY = 0;
-    inputLengthX = 0;
-    inputLengthY = 0;
-    inputClickX = 0;
-    inputClickY = 0;
-    inputTarget = 0;
-    closedInput = true;
-    inputField = null;
+    this.input = null;
+    this.inputTitle = null;
+    this.inputDrag = false;
+    this.inputPosX = 0;
+    this.inputPosY = 0;
+    this.inputLengthX = 0;
+    this.inputLengthY = 0;
+    this.inputClickX = 0;
+    this.inputClickY = 0;
+    this.inputTarget = 0;
+    this.closedInput = true;
+    this.inputField = null;
   }
   
   public void drawWindow(int mouseX, int mouseY)
   {
-    if (!info.isEmpty()) {
+    if (!this.info.isEmpty()) {
       drawInfo(mouseX, mouseY);
     }
-    if (input != null) {
+    if (this.input != null) {
       drawInput(mouseX, mouseY);
     }
   }
   
   public boolean isInInfoScreen(int mouseX, int mouseY)
   {
-    if (closedInfo) {
+    if (this.closedInfo) {
       return true;
     }
-    return (mouseX > infoPosX - 1) && (mouseX < infoPosX + infoLengthX + 1) && (mouseY > infoPosY - 1) && (mouseY < infoPosY + infoLengthY + 1);
+    return (mouseX > this.infoPosX - 1) && (mouseX < this.infoPosX + this.infoLengthX + 1) && (mouseY > this.infoPosY - 1) && (mouseY < this.infoPosY + this.infoLengthY + 1);
   }
   
   public boolean isInInfoFrame(int mouseX, int mouseY)
   {
-    return (mouseX > infoPosX - 1) && (mouseX < infoPosX + infoLengthX + 1) && (mouseY > infoPosY - 1) && (mouseY < infoPosY + 15);
+    return (mouseX > this.infoPosX - 1) && (mouseX < this.infoPosX + this.infoLengthX + 1) && (mouseY > this.infoPosY - 1) && (mouseY < this.infoPosY + 15);
   }
   
   public boolean isInInputScreen(int mouseX, int mouseY)
   {
-    if (closedInput) {
+    if (this.closedInput) {
       return true;
     }
-    return (mouseX > inputPosX - 1) && (mouseX < inputPosX + inputLengthX + 1) && (mouseY > inputPosY - 1) && (mouseY < inputPosY + inputLengthY + 1);
+    return (mouseX > this.inputPosX - 1) && (mouseX < this.inputPosX + this.inputLengthX + 1) && (mouseY > this.inputPosY - 1) && (mouseY < this.inputPosY + this.inputLengthY + 1);
   }
   
   public boolean isInInputFrame(int mouseX, int mouseY)
   {
-    return (mouseX > inputPosX - 1) && (mouseX < inputPosX + inputLengthX + 1) && (mouseY > inputPosY - 1) && (mouseY < inputPosY + 15);
+    return (mouseX > this.inputPosX - 1) && (mouseX < this.inputPosX + this.inputLengthX + 1) && (mouseY > this.inputPosY - 1) && (mouseY < this.inputPosY + 15);
   }
   
   public boolean isInScreen(int mouseX, int mouseY)
@@ -150,25 +150,25 @@ public class TeamSpeakOverlayWindow
   
   private void calcInfo()
   {
-    int max = getInstancedraw.getStringWidth(infoTitle);
-    for (InfoMessage infoMessage : info)
+    int max = LabyMod.getInstance().draw.getStringWidth(this.infoTitle);
+    for (InfoMessage infoMessage : this.info)
     {
-      int l = getInstancedraw.getStringWidth(message);
+      int l = LabyMod.getInstance().draw.getStringWidth(infoMessage.message);
       if (l > max) {
         max = l;
       }
     }
-    infoLengthX = (20 + max);
-    infoLengthY = (40 + info.size() * 10);
-    if (info.size() == 1) {
+    this.infoLengthX = (20 + max);
+    this.infoLengthY = (40 + this.info.size() * 10);
+    if (this.info.size() == 1) {
       posInfo();
     }
   }
   
   private void calcInput()
   {
-    int max = getInstancedraw.getStringWidth(inputTitle);
-    int l = getInstancedraw.getStringWidth(input);
+    int max = LabyMod.getInstance().draw.getStringWidth(this.inputTitle);
+    int l = LabyMod.getInstance().draw.getStringWidth(this.input);
     if (l > max) {
       max = l;
     }
@@ -176,89 +176,89 @@ public class TeamSpeakOverlayWindow
     if (max > 165) {
       k = max + 10;
     }
-    inputLengthX = k;
-    inputLengthY = 62;
+    this.inputLengthX = k;
+    this.inputLengthY = 62;
     
-    inputPosX = (getInstancedraw.getWidth() / 2 - inputLengthX / 2);
-    inputPosY = (getInstancedraw.getHeight() / 2 - inputLengthY / 2);
+    this.inputPosX = (LabyMod.getInstance().draw.getWidth() / 2 - this.inputLengthX / 2);
+    this.inputPosY = (LabyMod.getInstance().draw.getHeight() / 2 - this.inputLengthY / 2);
   }
   
   private void posInfo()
   {
-    infoPosX = (getInstancedraw.getWidth() / 2 - infoLengthX / 2);
-    infoPosY = (getInstancedraw.getHeight() / 2 - infoLengthY / 2);
+    this.infoPosX = (LabyMod.getInstance().draw.getWidth() / 2 - this.infoLengthX / 2);
+    this.infoPosY = (LabyMod.getInstance().draw.getHeight() / 2 - this.infoLengthY / 2);
   }
   
   private void drawInfo(int mouseX, int mouseY)
   {
-    DrawUtils.a(infoPosX - 1, infoPosY - 1, infoPosX + infoLengthX + 1, infoPosY + infoLengthY + 1, java.awt.Color.BLACK.getRGB());
-    DrawUtils.a(infoPosX, infoPosY, infoPosX + infoLengthX, infoPosY + infoLengthY, java.awt.Color.GRAY.getRGB());
-    DrawUtils.a(infoPosX, infoPosY, infoPosX + infoLengthX, infoPosY + 15, java.awt.Color.WHITE.getRGB());
+    DrawUtils.a(this.infoPosX - 1, this.infoPosY - 1, this.infoPosX + this.infoLengthX + 1, this.infoPosY + this.infoLengthY + 1, java.awt.Color.BLACK.getRGB());
+    DrawUtils.a(this.infoPosX, this.infoPosY, this.infoPosX + this.infoLengthX, this.infoPosY + this.infoLengthY, java.awt.Color.GRAY.getRGB());
+    DrawUtils.a(this.infoPosX, this.infoPosY, this.infoPosX + this.infoLengthX, this.infoPosY + 15, java.awt.Color.WHITE.getRGB());
     
-    getInstancedraw.drawString(de.labystudio.utils.Color.cl("6") + infoTitle, infoPosX + 3, infoPosY + 3);
+    LabyMod.getInstance().draw.drawString(de.labystudio.utils.Color.cl("6") + this.infoTitle, this.infoPosX + 3, this.infoPosY + 3);
     String c = de.labystudio.utils.Color.cl("c");
-    if ((mouseX > infoPosX + infoLengthX - 20) && (mouseX < infoPosX + infoLengthX) && (mouseY > infoPosY + 3) && (mouseY < infoPosY + 15)) {
+    if ((mouseX > this.infoPosX + this.infoLengthX - 20) && (mouseX < this.infoPosX + this.infoLengthX) && (mouseY > this.infoPosY + 3) && (mouseY < this.infoPosY + 15)) {
       c = de.labystudio.utils.Color.cl("4");
     }
-    getInstancedraw.drawString(c + "x", infoPosX + infoLengthX - 13, infoPosY + 3);
+    LabyMod.getInstance().draw.drawString(c + "x", this.infoPosX + this.infoLengthX - 13, this.infoPosY + 3);
     
     int slot = 0;
-    for (InfoMessage infoMessage : info)
+    for (InfoMessage infoMessage : this.info)
     {
-      getInstancedraw.drawString(message, infoPosX + 3, infoPosY + 20 + slot);
+      LabyMod.getInstance().draw.drawString(infoMessage.message, this.infoPosX + 3, this.infoPosY + 20 + slot);
       slot += 10;
     }
-    DrawUtils.a(infoPosX + infoLengthX / 2 - 25, infoPosY + infoLengthY - 15, infoPosX + infoLengthX / 2 + 25, infoPosY + infoLengthY - 2, java.awt.Color.BLACK.getRGB());
-    DrawUtils.a(infoPosX + infoLengthX / 2 - 24, infoPosY + infoLengthY - 14, infoPosX + infoLengthX / 2 + 24, infoPosY + infoLengthY - 3, java.awt.Color.DARK_GRAY.getRGB());
-    if ((mouseX > infoPosX + infoLengthX / 2 - 24) && (mouseX < infoPosX + infoLengthX / 2 + 24) && (mouseY > infoPosY + infoLengthY - 14) && (mouseY < infoPosY + infoLengthY - 3)) {
-      DrawUtils.a(infoPosX + infoLengthX / 2 - 24, infoPosY + infoLengthY - 14, infoPosX + infoLengthX / 2 + 24, infoPosY + infoLengthY - 3, java.awt.Color.GRAY.getRGB() + 40);
+    DrawUtils.a(this.infoPosX + this.infoLengthX / 2 - 25, this.infoPosY + this.infoLengthY - 15, this.infoPosX + this.infoLengthX / 2 + 25, this.infoPosY + this.infoLengthY - 2, java.awt.Color.BLACK.getRGB());
+    DrawUtils.a(this.infoPosX + this.infoLengthX / 2 - 24, this.infoPosY + this.infoLengthY - 14, this.infoPosX + this.infoLengthX / 2 + 24, this.infoPosY + this.infoLengthY - 3, java.awt.Color.DARK_GRAY.getRGB());
+    if ((mouseX > this.infoPosX + this.infoLengthX / 2 - 24) && (mouseX < this.infoPosX + this.infoLengthX / 2 + 24) && (mouseY > this.infoPosY + this.infoLengthY - 14) && (mouseY < this.infoPosY + this.infoLengthY - 3)) {
+      DrawUtils.a(this.infoPosX + this.infoLengthX / 2 - 24, this.infoPosY + this.infoLengthY - 14, this.infoPosX + this.infoLengthX / 2 + 24, this.infoPosY + this.infoLengthY - 3, java.awt.Color.GRAY.getRGB() + 40);
     }
-    getInstancedraw.drawCenteredString("OK", infoPosX + infoLengthX / 2, infoPosY + infoLengthY - 12);
-    while (infoPosX + infoLengthX > getInstancedraw.getWidth()) {
-      infoPosX -= 1;
+    LabyMod.getInstance().draw.drawCenteredString("OK", this.infoPosX + this.infoLengthX / 2, this.infoPosY + this.infoLengthY - 12);
+    while (this.infoPosX + this.infoLengthX > LabyMod.getInstance().draw.getWidth()) {
+      this.infoPosX -= 1;
     }
   }
   
   private void drawInput(int mouseX, int mouseY)
   {
-    if (inputCallBack.tick(inputTarget))
+    if (this.inputCallBack.tick(this.inputTarget))
     {
       resetinput();
       return;
     }
-    DrawUtils.a(inputPosX - 1, inputPosY - 1, inputPosX + inputLengthX + 1, inputPosY + inputLengthY + 1, java.awt.Color.BLACK.getRGB());
-    DrawUtils.a(inputPosX, inputPosY, inputPosX + inputLengthX, inputPosY + inputLengthY, java.awt.Color.GRAY.getRGB());
-    DrawUtils.a(inputPosX, inputPosY, inputPosX + inputLengthX, inputPosY + 15, java.awt.Color.WHITE.getRGB());
+    DrawUtils.a(this.inputPosX - 1, this.inputPosY - 1, this.inputPosX + this.inputLengthX + 1, this.inputPosY + this.inputLengthY + 1, java.awt.Color.BLACK.getRGB());
+    DrawUtils.a(this.inputPosX, this.inputPosY, this.inputPosX + this.inputLengthX, this.inputPosY + this.inputLengthY, java.awt.Color.GRAY.getRGB());
+    DrawUtils.a(this.inputPosX, this.inputPosY, this.inputPosX + this.inputLengthX, this.inputPosY + 15, java.awt.Color.WHITE.getRGB());
     
-    getInstancedraw.drawString(de.labystudio.utils.Color.cl("6") + inputTitle, inputPosX + 3, inputPosY + 3);
+    LabyMod.getInstance().draw.drawString(de.labystudio.utils.Color.cl("6") + this.inputTitle, this.inputPosX + 3, this.inputPosY + 3);
     String c = de.labystudio.utils.Color.cl("c");
-    if ((mouseX > inputPosX + inputLengthX - 20) && (mouseX < inputPosX + inputLengthX) && (mouseY > inputPosY + 3) && (mouseY < inputPosY + 15)) {
+    if ((mouseX > this.inputPosX + this.inputLengthX - 20) && (mouseX < this.inputPosX + this.inputLengthX) && (mouseY > this.inputPosY + 3) && (mouseY < this.inputPosY + 15)) {
       c = de.labystudio.utils.Color.cl("4");
     }
-    getInstancedraw.drawString(c + "x", inputPosX + inputLengthX - 13, inputPosY + 3);
+    LabyMod.getInstance().draw.drawString(c + "x", this.inputPosX + this.inputLengthX - 13, this.inputPosY + 3);
     
-    getInstancedraw.drawString(input, inputPosX + 3, inputPosY + 20);
+    LabyMod.getInstance().draw.drawString(this.input, this.inputPosX + 3, this.inputPosY + 20);
     
-    DrawUtils.a(inputPosX + inputLengthX / 2 - 60, inputPosY + inputLengthY - 15, inputPosX + inputLengthX / 2 - 10, inputPosY + inputLengthY - 2, java.awt.Color.BLACK.getRGB());
-    DrawUtils.a(inputPosX + inputLengthX / 2 - 60 + 1, inputPosY + inputLengthY - 14, inputPosX + inputLengthX / 2 - 11, inputPosY + inputLengthY - 3, java.awt.Color.DARK_GRAY.getRGB());
-    if ((mouseX > inputPosX + inputLengthX / 2 - 60 + 1) && (mouseX < inputPosX + inputLengthX / 2 + 11) && (mouseY > inputPosY + inputLengthY - 14) && (mouseY < inputPosY + inputLengthY - 3)) {
-      DrawUtils.a(inputPosX + inputLengthX / 2 - 60 + 1, inputPosY + inputLengthY - 14, inputPosX + inputLengthX / 2 - 11, inputPosY + inputLengthY - 3, java.awt.Color.GRAY.getRGB() + 40);
+    DrawUtils.a(this.inputPosX + this.inputLengthX / 2 - 60, this.inputPosY + this.inputLengthY - 15, this.inputPosX + this.inputLengthX / 2 - 10, this.inputPosY + this.inputLengthY - 2, java.awt.Color.BLACK.getRGB());
+    DrawUtils.a(this.inputPosX + this.inputLengthX / 2 - 60 + 1, this.inputPosY + this.inputLengthY - 14, this.inputPosX + this.inputLengthX / 2 - 11, this.inputPosY + this.inputLengthY - 3, java.awt.Color.DARK_GRAY.getRGB());
+    if ((mouseX > this.inputPosX + this.inputLengthX / 2 - 60 + 1) && (mouseX < this.inputPosX + this.inputLengthX / 2 + 11) && (mouseY > this.inputPosY + this.inputLengthY - 14) && (mouseY < this.inputPosY + this.inputLengthY - 3)) {
+      DrawUtils.a(this.inputPosX + this.inputLengthX / 2 - 60 + 1, this.inputPosY + this.inputLengthY - 14, this.inputPosX + this.inputLengthX / 2 - 11, this.inputPosY + this.inputLengthY - 3, java.awt.Color.GRAY.getRGB() + 40);
     }
-    getInstancedraw.drawCenteredString("OK", inputPosX + inputLengthX / 2 - 35, inputPosY + inputLengthY - 12);
+    LabyMod.getInstance().draw.drawCenteredString("OK", this.inputPosX + this.inputLengthX / 2 - 35, this.inputPosY + this.inputLengthY - 12);
     
-    DrawUtils.a(inputPosX + inputLengthX / 2 + 10, inputPosY + inputLengthY - 15, inputPosX + inputLengthX / 2 + 60, inputPosY + inputLengthY - 2, java.awt.Color.BLACK.getRGB());
-    DrawUtils.a(inputPosX + inputLengthX / 2 + 11, inputPosY + inputLengthY - 14, inputPosX + inputLengthX / 2 + 60 - 1, inputPosY + inputLengthY - 3, java.awt.Color.DARK_GRAY.getRGB());
-    if ((mouseX > inputPosX + inputLengthX / 2 + 10) && (mouseX < inputPosX + inputLengthX / 2 + 60) && (mouseY > inputPosY + inputLengthY - 14) && (mouseY < inputPosY + inputLengthY - 3)) {
-      DrawUtils.a(inputPosX + inputLengthX / 2 + 11, inputPosY + inputLengthY - 14, inputPosX + inputLengthX / 2 + 60 - 1, inputPosY + inputLengthY - 3, java.awt.Color.GRAY.getRGB() + 40);
+    DrawUtils.a(this.inputPosX + this.inputLengthX / 2 + 10, this.inputPosY + this.inputLengthY - 15, this.inputPosX + this.inputLengthX / 2 + 60, this.inputPosY + this.inputLengthY - 2, java.awt.Color.BLACK.getRGB());
+    DrawUtils.a(this.inputPosX + this.inputLengthX / 2 + 11, this.inputPosY + this.inputLengthY - 14, this.inputPosX + this.inputLengthX / 2 + 60 - 1, this.inputPosY + this.inputLengthY - 3, java.awt.Color.DARK_GRAY.getRGB());
+    if ((mouseX > this.inputPosX + this.inputLengthX / 2 + 10) && (mouseX < this.inputPosX + this.inputLengthX / 2 + 60) && (mouseY > this.inputPosY + this.inputLengthY - 14) && (mouseY < this.inputPosY + this.inputLengthY - 3)) {
+      DrawUtils.a(this.inputPosX + this.inputLengthX / 2 + 11, this.inputPosY + this.inputLengthY - 14, this.inputPosX + this.inputLengthX / 2 + 60 - 1, this.inputPosY + this.inputLengthY - 3, java.awt.Color.GRAY.getRGB() + 40);
     }
-    getInstancedraw.drawCenteredString("Cancel", inputPosX + inputLengthX / 2 + 35, inputPosY + inputLengthY - 12);
+    LabyMod.getInstance().draw.drawCenteredString("Cancel", this.inputPosX + this.inputLengthX / 2 + 35, this.inputPosY + this.inputLengthY - 12);
     
-    inputField.a = (inputPosX + 3);
-    inputField.f = (inputPosY + 32);
+    this.inputField.a = (this.inputPosX + 3);
+    this.inputField.f = (this.inputPosY + 32);
     
-    inputField.a = (inputPosX + inputLengthX / 2 - 80);
+    this.inputField.a = (this.inputPosX + this.inputLengthX / 2 - 80);
     
-    inputField.g();
+    this.inputField.g();
   }
   
   public void mouseClicked(int mouseX, int mouseY, int mouseButton)
@@ -268,63 +268,63 @@ public class TeamSpeakOverlayWindow
     }
     if (isInInfoFrame(mouseX, mouseY))
     {
-      infoClickX = (mouseX - infoPosX);
-      infoClickY = (mouseY - infoPosY);
-      infoDrag = true;
+      this.infoClickX = (mouseX - this.infoPosX);
+      this.infoClickY = (mouseY - this.infoPosY);
+      this.infoDrag = true;
     }
     if (isInInputFrame(mouseX, mouseY))
     {
-      inputClickX = (mouseX - inputPosX);
-      inputClickY = (mouseY - inputPosY);
-      inputDrag = true;
+      this.inputClickX = (mouseX - this.inputPosX);
+      this.inputClickY = (mouseY - this.inputPosY);
+      this.inputDrag = true;
     }
     int slot;
-    if (!info.isEmpty())
+    if (!this.info.isEmpty())
     {
-      if ((mouseX > infoPosX + infoLengthX / 2 - 24) && (mouseX < infoPosX + infoLengthX / 2 + 24) && (mouseY > infoPosY + infoLengthY - 14) && (mouseY < infoPosY + infoLengthY - 3)) {
+      if ((mouseX > this.infoPosX + this.infoLengthX / 2 - 24) && (mouseX < this.infoPosX + this.infoLengthX / 2 + 24) && (mouseY > this.infoPosY + this.infoLengthY - 14) && (mouseY < this.infoPosY + this.infoLengthY - 3)) {
         resetInfo();
       }
-      if ((mouseX > infoPosX + infoLengthX - 20) && (mouseX < infoPosX + infoLengthX) && (mouseY > infoPosY + 3) && (mouseY < infoPosY + 15)) {
+      if ((mouseX > this.infoPosX + this.infoLengthX - 20) && (mouseX < this.infoPosX + this.infoLengthX) && (mouseY > this.infoPosY + 3) && (mouseY < this.infoPosY + 15)) {
         resetInfo();
       }
       slot = 0;
-      for (InfoMessage infoMessage : info)
+      for (InfoMessage infoMessage : this.info)
       {
-        getInstancedraw.drawString(message, infoPosX + 3, infoPosY + 20 + slot);
-        int l = infoLengthX;
-        TeamSpeakUser user = TeamSpeakController.getInstance().getUser(clientId);
+        LabyMod.getInstance().draw.drawString(infoMessage.message, this.infoPosX + 3, this.infoPosY + 20 + slot);
+        int l = this.infoLengthX;
+        TeamSpeakUser user = TeamSpeakController.getInstance().getUser(infoMessage.clientId);
         if (user != null) {
-          l = getInstancedraw.getStringWidth(user.getNickName());
+          l = LabyMod.getInstance().draw.getStringWidth(user.getNickName());
         }
-        if ((mouseX > infoPosX) && (mouseX < infoPosX + l) && (mouseY > infoPosY + 20 + slot) && (mouseY < infoPosY + 20 + slot + 10))
+        if ((mouseX > this.infoPosX) && (mouseX < this.infoPosX + l) && (mouseY > this.infoPosY + 20 + slot) && (mouseY < this.infoPosY + 20 + slot + 10))
         {
           TeamSpeak.callBack = true;
-          TeamSpeak.callBackClient = clientId;
+          TeamSpeak.callBackClient = infoMessage.clientId;
           break;
         }
         slot += 10;
       }
     }
-    if (input != null)
+    if (this.input != null)
     {
-      if ((mouseX > inputPosX + inputLengthX / 2 - 60 + 1) && (mouseX < inputPosX + inputLengthX / 2 + 11) && (mouseY > inputPosY + inputLengthY - 14) && (mouseY < inputPosY + inputLengthY - 3))
+      if ((mouseX > this.inputPosX + this.inputLengthX / 2 - 60 + 1) && (mouseX < this.inputPosX + this.inputLengthX / 2 + 11) && (mouseY > this.inputPosY + this.inputLengthY - 14) && (mouseY < this.inputPosY + this.inputLengthY - 3))
       {
-        inputCallBack.ok(inputTarget, inputField.b());
+        this.inputCallBack.ok(this.inputTarget, this.inputField.b());
         resetinput();
       }
-      if ((mouseX > inputPosX + inputLengthX / 2 + 10) && (mouseX < inputPosX + inputLengthX / 2 + 60) && (mouseY > inputPosY + inputLengthY - 14) && (mouseY < inputPosY + inputLengthY - 3))
+      if ((mouseX > this.inputPosX + this.inputLengthX / 2 + 10) && (mouseX < this.inputPosX + this.inputLengthX / 2 + 60) && (mouseY > this.inputPosY + this.inputLengthY - 14) && (mouseY < this.inputPosY + this.inputLengthY - 3))
       {
-        inputCallBack.cancel();
+        this.inputCallBack.cancel();
         resetinput();
       }
-      if ((mouseX > inputPosX + inputLengthX - 20) && (mouseX < inputPosX + inputLengthX) && (mouseY > inputPosY + 3) && (mouseY < inputPosY + 15))
+      if ((mouseX > this.inputPosX + this.inputLengthX - 20) && (mouseX < this.inputPosX + this.inputLengthX) && (mouseY > this.inputPosY + 3) && (mouseY < this.inputPosY + 15))
       {
-        inputCallBack.cancel();
+        this.inputCallBack.cancel();
         resetinput();
       }
     }
-    if (inputField != null) {
-      inputField.a(mouseX, mouseY, mouseButton);
+    if (this.inputField != null) {
+      this.inputField.a(mouseX, mouseY, mouseButton);
     }
   }
   
@@ -333,14 +333,14 @@ public class TeamSpeakOverlayWindow
     if (!isOpen()) {
       return;
     }
-    if ((keyCode == 28) && (inputField != null) && (inputField.m()) && 
-      (inputCallBack != null) && (inputField != null))
+    if ((keyCode == 28) && (this.inputField != null) && (this.inputField.m()) && 
+      (this.inputCallBack != null) && (this.inputField != null))
     {
-      inputCallBack.ok(inputTarget, inputField.b());
+      this.inputCallBack.ok(this.inputTarget, this.inputField.b());
       resetinput();
     }
-    if (inputField != null) {
-      inputField.a(typedChar, keyCode);
+    if (this.inputField != null) {
+      this.inputField.a(typedChar, keyCode);
     }
   }
   
@@ -349,41 +349,41 @@ public class TeamSpeakOverlayWindow
     if (!isOpen()) {
       return;
     }
-    if ((infoDrag) && (!inputDrag))
+    if ((this.infoDrag) && (!this.inputDrag))
     {
-      if ((mouseX - infoClickX > 0) && (mouseX - infoClickX < getInstancedraw.getWidth() - infoLengthX)) {
-        infoPosX = (mouseX - infoClickX);
+      if ((mouseX - this.infoClickX > 0) && (mouseX - this.infoClickX < LabyMod.getInstance().draw.getWidth() - this.infoLengthX)) {
+        this.infoPosX = (mouseX - this.infoClickX);
       }
-      if ((mouseY - infoClickY > 0) && (mouseY - infoClickY < getInstancedraw.getHeight() - infoLengthY)) {
-        infoPosY = (mouseY - infoClickY);
+      if ((mouseY - this.infoClickY > 0) && (mouseY - this.infoClickY < LabyMod.getInstance().draw.getHeight() - this.infoLengthY)) {
+        this.infoPosY = (mouseY - this.infoClickY);
       }
     }
-    if (inputDrag)
+    if (this.inputDrag)
     {
-      if ((mouseX - inputClickX > 0) && (mouseX - inputClickX < getInstancedraw.getWidth() - inputLengthX)) {
-        inputPosX = (mouseX - inputClickX);
+      if ((mouseX - this.inputClickX > 0) && (mouseX - this.inputClickX < LabyMod.getInstance().draw.getWidth() - this.inputLengthX)) {
+        this.inputPosX = (mouseX - this.inputClickX);
       }
-      if ((mouseY - inputClickY > 0) && (mouseY - inputClickY < getInstancedraw.getHeight() - inputLengthY)) {
-        inputPosY = (mouseY - inputClickY);
+      if ((mouseY - this.inputClickY > 0) && (mouseY - this.inputClickY < LabyMod.getInstance().draw.getHeight() - this.inputLengthY)) {
+        this.inputPosY = (mouseY - this.inputClickY);
       }
     }
   }
   
   public void mouseReleased(int mouseX, int mouseY, int state)
   {
-    infoDrag = false;
-    inputDrag = false;
-    closedInfo = false;
-    closedInput = false;
+    this.infoDrag = false;
+    this.inputDrag = false;
+    this.closedInfo = false;
+    this.closedInput = false;
   }
   
   public boolean allow()
   {
-    return (!closedInfo) && (!closedInput);
+    return (!this.closedInfo) && (!this.closedInput);
   }
   
   public boolean isOpen()
   {
-    return (!info.isEmpty()) || (input != null);
+    return (!this.info.isEmpty()) || (this.input != null);
   }
 }

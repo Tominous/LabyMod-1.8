@@ -8,8 +8,8 @@ public class ln
   
   public ln(MinecraftServer ☃, ek ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public void a(jc ☃)
@@ -17,27 +17,27 @@ public class ln
     switch (ln.1.a[☃.a().ordinal()])
     {
     case 1: 
-      b.a(el.d);
+      this.b.a(el.d);
       if (☃.b() > 47)
       {
         fa ☃ = new fa("Outdated server! I'm still on 1.8.8");
-        b.a(new jj(☃));
-        b.a(☃);
+        this.b.a(new jj(☃));
+        this.b.a(☃);
       }
       else if (☃.b() < 47)
       {
         fa ☃ = new fa("Outdated client! Please use 1.8.8");
-        b.a(new jj(☃));
-        b.a(☃);
+        this.b.a(new jj(☃));
+        this.b.a(☃);
       }
       else
       {
-        b.a(new lo(a, b));
+        this.b.a(new lo(this.a, this.b));
       }
       break;
     case 2: 
-      b.a(el.c);
-      b.a(new lp(a, b));
+      this.b.a(el.c);
+      this.b.a(new lp(this.a, this.b));
       break;
     default: 
       throw new UnsupportedOperationException("Invalid intention " + ☃.a());

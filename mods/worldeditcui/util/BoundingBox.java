@@ -13,18 +13,18 @@ public class BoundingBox
   
   public BoundingBox(Vector3 p1, Vector3 p2)
   {
-    min = new Vector3(Math.min(p1.getX(), p2.getX()), Math.min(p1.getY(), p2.getY()), Math.min(p1.getZ(), p2.getZ())).subtract(MIN_VEC);
-    max = new Vector3(Math.max(p1.getX(), p2.getX()), Math.max(p1.getY(), p2.getY()), Math.max(p1.getZ(), p2.getZ())).add(MAX_VEC);
+    this.min = new Vector3(Math.min(p1.getX(), p2.getX()), Math.min(p1.getY(), p2.getY()), Math.min(p1.getZ(), p2.getZ())).subtract(MIN_VEC);
+    this.max = new Vector3(Math.max(p1.getX(), p2.getX()), Math.max(p1.getY(), p2.getY()), Math.max(p1.getZ(), p2.getZ())).add(MAX_VEC);
   }
   
   public Vector3 getMin()
   {
-    return min;
+    return this.min;
   }
   
   public Vector3 getMax()
   {
-    return max;
+    return this.max;
   }
   
   private static final Vector3 MIN_VEC = new Vector3(0.02D, 0.02D, 0.02D);

@@ -15,87 +15,87 @@ public class tg
   
   public tg(adm ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a()
   {
-    if (a.w())
+    if (this.a.w())
     {
-      c = 0;
+      this.c = 0;
       return;
     }
-    if (c == 2) {
+    if (this.c == 2) {
       return;
     }
-    if (c == 0)
+    if (this.c == 0)
     {
-      float ☃ = a.c(0.0F);
+      float ☃ = this.a.c(0.0F);
       if ((☃ < 0.5D) || (☃ > 0.501D)) {
         return;
       }
-      c = (a.s.nextInt(10) == 0 ? 1 : 2);
-      b = false;
-      if (c == 2) {
+      this.c = (this.a.s.nextInt(10) == 0 ? 1 : 2);
+      this.b = false;
+      if (this.c == 2) {
         return;
       }
     }
-    if (c == -1) {
+    if (this.c == -1) {
       return;
     }
-    if (!b) {
+    if (!this.b) {
       if (b()) {
-        b = true;
+        this.b = true;
       } else {
         return;
       }
     }
-    if (e > 0)
+    if (this.e > 0)
     {
-      e -= 1;
+      this.e -= 1;
       return;
     }
-    e = 2;
-    if (d > 0)
+    this.e = 2;
+    if (this.d > 0)
     {
       c();
-      d -= 1;
+      this.d -= 1;
     }
     else
     {
-      c = 2;
+      this.c = 2;
     }
   }
   
   private boolean b()
   {
-    List<wn> ☃ = a.j;
+    List<wn> ☃ = this.a.j;
     for (wn ☃ : ☃) {
       if (!☃.v())
       {
-        f = a.ae().a(new cj(☃), 1);
-        if ((f != null) && 
+        this.f = this.a.ae().a(new cj(☃), 1);
+        if ((this.f != null) && 
         
-          (f.c() >= 10) && 
+          (this.f.c() >= 10) && 
           
-          (f.d() >= 20) && 
+          (this.f.d() >= 20) && 
           
-          (f.e() >= 20))
+          (this.f.e() >= 20))
         {
-          cj ☃ = f.a();
-          float ☃ = f.b();
+          cj ☃ = this.f.a();
+          float ☃ = this.f.b();
           
           boolean ☃ = false;
           for (int ☃ = 0; ☃ < 10; ☃++)
           {
-            float ☃ = a.s.nextFloat() * 3.1415927F * 2.0F;
-            g = (☃.n() + (int)(ns.b(☃) * ☃ * 0.9D));
-            h = ☃.o();
-            i = (☃.p() + (int)(ns.a(☃) * ☃ * 0.9D));
+            float ☃ = this.a.s.nextFloat() * 3.1415927F * 2.0F;
+            this.g = (☃.n() + (int)(ns.b(☃) * ☃ * 0.9D));
+            this.h = ☃.o();
+            this.i = (☃.p() + (int)(ns.a(☃) * ☃ * 0.9D));
             ☃ = false;
-            for (tf ☃ : a.ae().b()) {
-              if (☃ != f) {
-                if (☃.a(new cj(g, h, i)))
+            for (tf ☃ : this.a.ae().b()) {
+              if (☃ != this.f) {
+                if (☃.a(new cj(this.g, this.h, this.i)))
                 {
                   ☃ = true;
                   break;
@@ -109,11 +109,11 @@ public class tg
           if (☃) {
             return false;
           }
-          aui ☃ = a(new cj(g, h, i));
+          aui ☃ = a(new cj(this.g, this.h, this.i));
           if (☃ != null)
           {
-            e = 0;
-            d = 20;
+            this.e = 0;
+            this.d = 20;
             return true;
           }
         }
@@ -124,15 +124,15 @@ public class tg
   
   private boolean c()
   {
-    aui ☃ = a(new cj(g, h, i));
+    aui ☃ = a(new cj(this.g, this.h, this.i));
     if (☃ == null) {
       return false;
     }
     we ☃;
     try
     {
-      ☃ = new we(a);
-      ☃.a(a.E(new cj(☃)), null);
+      ☃ = new we(this.a);
+      ☃.a(this.a.E(new cj(☃)), null);
       ☃.m(false);
     }
     catch (Exception ☃)
@@ -140,10 +140,10 @@ public class tg
       ☃.printStackTrace();
       return false;
     }
-    ☃.b(a, b, c, a.s.nextFloat() * 360.0F, 0.0F);
-    a.d(☃);
-    cj ☃ = f.a();
-    ☃.a(☃, f.b());
+    ☃.b(☃.a, ☃.b, ☃.c, this.a.s.nextFloat() * 360.0F, 0.0F);
+    this.a.d(☃);
+    cj ☃ = this.f.a();
+    ☃.a(☃, this.f.b());
     return true;
   }
   
@@ -151,9 +151,9 @@ public class tg
   {
     for (int ☃ = 0; ☃ < 10; ☃++)
     {
-      cj ☃ = ☃.a(a.s.nextInt(16) - 8, a.s.nextInt(6) - 3, a.s.nextInt(16) - 8);
-      if (f.a(☃)) {
-        if (adt.a(ps.a.a, a, ☃)) {
+      cj ☃ = ☃.a(this.a.s.nextInt(16) - 8, this.a.s.nextInt(6) - 3, this.a.s.nextInt(16) - 8);
+      if (this.f.a(☃)) {
+        if (adt.a(ps.a.a, this.a, ☃)) {
           return new aui(☃.n(), ☃.o(), ☃.p());
         }
       }

@@ -23,7 +23,7 @@ public class Configuration
     if (!exactFile.getParentFile().exists()) {
       exactFile.getParentFile().mkdir();
     }
-    configFile = exactFile;
+    this.configFile = exactFile;
     if (!exactFile.exists()) {
       createConfig();
     }
@@ -34,17 +34,17 @@ public class Configuration
   {
     try
     {
-      for (Map.Entry<String, Object> defaultValue : defaultValues.entrySet()) {
-        configValues.put(defaultValue.getKey(), new Property((String)defaultValue.getValue()));
+      for (Map.Entry<String, Object> defaultValue : this.defaultValues.entrySet()) {
+        this.configValues.put(defaultValue.getKey(), new Property((String)defaultValue.getValue()));
       }
-      BufferedReader reader = new BufferedReader(new FileReader(configFile));
+      BufferedReader reader = new BufferedReader(new FileReader(this.configFile));
       
       String line = null;
       while ((line = reader.readLine()) != null) {
         if (!line.equals(""))
         {
           String[] optionSplit = line.split(":");
-          configValues.put(optionSplit[0], new Property(optionSplit[1]));
+          this.configValues.put(optionSplit[0], new Property(optionSplit[1]));
         }
       }
       reader.close();
@@ -65,29 +65,29 @@ public class Configuration
   
   private void createConfig()
   {
-    configValues.clear();
-    for (Map.Entry<String, Object> defaultValue : defaultValues.entrySet()) {
-      configValues.put(defaultValue.getKey(), new Property(String.valueOf(defaultValue.getValue())));
+    this.configValues.clear();
+    for (Map.Entry<String, Object> defaultValue : this.defaultValues.entrySet()) {
+      this.configValues.put(defaultValue.getKey(), new Property(String.valueOf(defaultValue.getValue())));
     }
     save();
   }
   
   public Property get(String key)
   {
-    return (Property)configValues.get(key);
+    return (Property)this.configValues.get(key);
   }
   
   public void set(String key, Property property)
   {
-    configValues.put(key, property);
+    this.configValues.put(key, property);
   }
   
   public void save()
   {
-    configFile.delete();
+    this.configFile.delete();
     try
     {
-      configFile.createNewFile();
+      this.configFile.createNewFile();
     }
     catch (IOException e)
     {
@@ -95,8 +95,8 @@ public class Configuration
     }
     try
     {
-      PrintWriter writer = new PrintWriter(configFile);
-      for (Map.Entry<String, Property> values : configValues.entrySet()) {
+      PrintWriter writer = new PrintWriter(this.configFile);
+      for (Map.Entry<String, Property> values : this.configValues.entrySet()) {
         writer.println((String)values.getKey() + ":" + ((Property)values.getValue()).getValue());
       }
       writer.close();

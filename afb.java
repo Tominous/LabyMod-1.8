@@ -7,7 +7,7 @@ public class afb
     x();
     b(6000001.0F);
     K();
-    t = true;
+    this.t = true;
   }
   
   public int b()

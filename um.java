@@ -25,7 +25,7 @@ public class um
   {
     super(☃);
     b(true);
-    T = p();
+    this.T = p();
     a(0.5F, 1.975F);
   }
   
@@ -43,38 +43,38 @@ public class um
   protected void h()
   {
     super.h();
-    ac.a(10, Byte.valueOf((byte)0));
-    ac.a(11, a);
-    ac.a(12, b);
-    ac.a(13, c);
-    ac.a(14, d);
-    ac.a(15, e);
-    ac.a(16, f);
+    this.ac.a(10, Byte.valueOf((byte)0));
+    this.ac.a(11, a);
+    this.ac.a(12, b);
+    this.ac.a(13, c);
+    this.ac.a(14, d);
+    this.ac.a(15, e);
+    this.ac.a(16, f);
   }
   
   public zx bA()
   {
-    return g[0];
+    return this.g[0];
   }
   
   public zx p(int ☃)
   {
-    return g[☃];
+    return this.g[☃];
   }
   
   public zx q(int ☃)
   {
-    return g[(☃ + 1)];
+    return this.g[(☃ + 1)];
   }
   
   public void c(int ☃, zx ☃)
   {
-    g[☃] = ☃;
+    this.g[☃] = ☃;
   }
   
   public zx[] as()
   {
-    return g;
+    return this.g;
   }
   
   public boolean d(int ☃, zx ☃)
@@ -88,7 +88,7 @@ public class um
     else
     {
       ☃ = ☃ - 100 + 1;
-      if ((☃ < 0) || (☃ >= g.length)) {
+      if ((☃ < 0) || (☃ >= this.g.length)) {
         return false;
       }
     }
@@ -105,11 +105,11 @@ public class um
     super.b(☃);
     
     du ☃ = new du();
-    for (int ☃ = 0; ☃ < g.length; ☃++)
+    for (int ☃ = 0; ☃ < this.g.length; ☃++)
     {
       dn ☃ = new dn();
-      if (g[☃] != null) {
-        g[☃].b(☃);
+      if (this.g[☃] != null) {
+        this.g[☃].b(☃);
       }
       ☃.a(☃);
     }
@@ -122,7 +122,7 @@ public class um
     
     ☃.a("ShowArms", q());
     
-    ☃.a("DisabledSlots", bi);
+    ☃.a("DisabledSlots", this.bi);
     ☃.a("NoGravity", p());
     ☃.a("NoBasePlate", r());
     if (s()) {
@@ -137,8 +137,8 @@ public class um
     if (☃.b("Equipment", 9))
     {
       du ☃ = ☃.c("Equipment", 10);
-      for (int ☃ = 0; ☃ < g.length; ☃++) {
-        g[☃] = zx.a(☃.b(☃));
+      for (int ☃ = 0; ☃ < this.g.length; ☃++) {
+        this.g[☃] = zx.a(☃.b(☃));
       }
     }
     e(☃.n("Invisible"));
@@ -147,12 +147,12 @@ public class um
     
     l(☃.n("ShowArms"));
     
-    bi = ☃.f("DisabledSlots");
+    this.bi = ☃.f("DisabledSlots");
     k(☃.n("NoGravity"));
     m(☃.n("NoBasePlate"));
     n(☃.n("Marker"));
-    bj = (!s());
-    T = p();
+    this.bj = (!s());
+    this.T = p();
     dn ☃ = ☃.m("Pose");
     h(☃);
   }
@@ -200,23 +200,23 @@ public class um
   private dn z()
   {
     dn ☃ = new dn();
-    if (!a.equals(bk)) {
-      ☃.a("Head", bk.a());
+    if (!a.equals(this.bk)) {
+      ☃.a("Head", this.bk.a());
     }
-    if (!b.equals(bl)) {
-      ☃.a("Body", bl.a());
+    if (!b.equals(this.bl)) {
+      ☃.a("Body", this.bl.a());
     }
-    if (!c.equals(bm)) {
-      ☃.a("LeftArm", bm.a());
+    if (!c.equals(this.bm)) {
+      ☃.a("LeftArm", this.bm.a());
     }
-    if (!d.equals(bn)) {
-      ☃.a("RightArm", bn.a());
+    if (!d.equals(this.bn)) {
+      ☃.a("RightArm", this.bn.a());
     }
-    if (!e.equals(bo)) {
-      ☃.a("LeftLeg", bo.a());
+    if (!e.equals(this.bo)) {
+      ☃.a("LeftLeg", this.bo.a());
     }
-    if (!f.equals(bp)) {
-      ☃.a("RightLeg", bp.a());
+    if (!f.equals(this.bp)) {
+      ☃.a("RightLeg", this.bp.a());
     }
     return ☃;
   }
@@ -230,7 +230,7 @@ public class um
   
   protected void bL()
   {
-    List<pk> ☃ = o.b(this, aR());
+    List<pk> ☃ = this.o.b(this, aR());
     if ((☃ != null) && (!☃.isEmpty())) {
       for (int ☃ = 0; ☃ < ☃.size(); ☃++)
       {
@@ -248,7 +248,7 @@ public class um
     if (s()) {
       return false;
     }
-    if ((o.D) || (☃.v())) {
+    if ((this.o.D) || (☃.v())) {
       return true;
     }
     int ☃ = 0;
@@ -257,13 +257,13 @@ public class um
     if ((☃) && ((☃.b() instanceof yj)))
     {
       yj ☃ = (yj)☃.b();
-      if (b == 3) {
+      if (☃.b == 3) {
         ☃ = 1;
-      } else if (b == 2) {
+      } else if (☃.b == 2) {
         ☃ = 2;
-      } else if (b == 1) {
+      } else if (☃.b == 1) {
         ☃ = 3;
-      } else if (b == 0) {
+      } else if (☃.b == 0) {
         ☃ = 4;
       }
     }
@@ -277,39 +277,39 @@ public class um
     
     int ☃ = 0;
     boolean ☃ = n();
-    double ☃ = ☃ ? b * 2.0D : b;
+    double ☃ = ☃ ? ☃.b * 2.0D : ☃.b;
     if (☃ >= 0.1D) {
-      if ((☃ < 0.1D + (☃ ? 0.8D : 0.45D)) && (g[1] != null))
+      if ((☃ < 0.1D + (☃ ? 0.8D : 0.45D)) && (this.g[1] != null))
       {
         ☃ = 1;
         break label383;
       }
     }
     if (☃ >= 0.9D + (☃ ? 0.3D : 0.0D)) {
-      if ((☃ < 0.9D + (☃ ? 1.0D : 0.7D)) && (g[3] != null))
+      if ((☃ < 0.9D + (☃ ? 1.0D : 0.7D)) && (this.g[3] != null))
       {
         ☃ = 3;
         break label383;
       }
     }
     if (☃ >= 0.4D) {
-      if ((☃ < 0.4D + (☃ ? 1.0D : 0.8D)) && (g[2] != null))
+      if ((☃ < 0.4D + (☃ ? 1.0D : 0.8D)) && (this.g[2] != null))
       {
         ☃ = 2;
         break label383;
       }
     }
-    if ((☃ >= 1.6D) && (g[4] != null)) {
+    if ((☃ >= 1.6D) && (this.g[4] != null)) {
       ☃ = 4;
     }
     label383:
-    boolean ☃ = g[☃] != null;
-    if (((bi & 1 << ☃) != 0) || ((bi & 1 << ☃) != 0))
+    boolean ☃ = this.g[☃] != null;
+    if (((this.bi & 1 << ☃) != 0) || ((this.bi & 1 << ☃) != 0))
     {
       ☃ = ☃;
-      if ((bi & 1 << ☃) != 0)
+      if ((this.bi & 1 << ☃) != 0)
       {
-        if ((bi & 0x1) != 0) {
+        if ((this.bi & 0x1) != 0) {
           return true;
         }
         ☃ = 0;
@@ -328,40 +328,40 @@ public class um
   
   private void a(wn ☃, int ☃)
   {
-    zx ☃ = g[☃];
-    if ((☃ != null) && ((bi & 1 << ☃ + 8) != 0)) {
+    zx ☃ = this.g[☃];
+    if ((☃ != null) && ((this.bi & 1 << ☃ + 8) != 0)) {
       return;
     }
-    if ((☃ == null) && ((bi & 1 << ☃ + 16) != 0)) {
+    if ((☃ == null) && ((this.bi & 1 << ☃ + 16) != 0)) {
       return;
     }
-    int ☃ = bi.c;
-    zx ☃ = bi.a(☃);
-    if ((bA.d) && ((☃ == null) || (☃.b() == zw.a(afi.a))) && (☃ != null))
+    int ☃ = ☃.bi.c;
+    zx ☃ = ☃.bi.a(☃);
+    if ((☃.bA.d) && ((☃ == null) || (☃.b() == zw.a(afi.a))) && (☃ != null))
     {
       zx ☃ = ☃.k();
-      b = 1;
+      ☃.b = 1;
       c(☃, ☃);
       return;
     }
-    if ((☃ != null) && (b > 1))
+    if ((☃ != null) && (☃.b > 1))
     {
       if (☃ != null) {
         return;
       }
       zx ☃ = ☃.k();
-      b = 1;
+      ☃.b = 1;
       c(☃, ☃);
-      b -= 1;
+      ☃.b -= 1;
       return;
     }
     c(☃, ☃);
-    bi.a(☃, ☃);
+    ☃.bi.a(☃, ☃);
   }
   
   public boolean a(ow ☃, float ☃)
   {
-    if (o.D) {
+    if (this.o.D) {
       return false;
     }
     if (ow.j.equals(☃))
@@ -369,7 +369,7 @@ public class um
       J();
       return false;
     }
-    if ((b(☃)) || (h) || (s())) {
+    if ((b(☃)) || (this.h) || (s())) {
       return false;
     }
     if (☃.c())
@@ -400,7 +400,7 @@ public class um
     if ((☃.i() instanceof wq)) {
       ☃.i().J();
     }
-    if (((☃.j() instanceof wn)) && (!jbA.e)) {
+    if (((☃.j() instanceof wn)) && (!((wn)☃.j()).bA.e)) {
       return false;
     }
     if (☃.u())
@@ -409,8 +409,8 @@ public class um
       J();
       return false;
     }
-    long ☃ = o.K();
-    if ((☃ - i <= 5L) || (☃))
+    long ☃ = this.o.K();
+    if ((☃ - this.i <= 5L) || (☃))
     {
       C();
       A();
@@ -418,7 +418,7 @@ public class um
     }
     else
     {
-      i = ☃;
+      this.i = ☃;
     }
     return false;
   }
@@ -435,8 +435,8 @@ public class um
   
   private void A()
   {
-    if ((o instanceof le)) {
-      ((le)o).a(cy.M, s, t + K / 1.5D, u, 10, J / 4.0F, K / 4.0F, J / 4.0F, 0.05D, new int[] { afh.f(afi.f.Q()) });
+    if ((this.o instanceof le)) {
+      ((le)this.o).a(cy.M, this.s, this.t + this.K / 1.5D, this.u, 10, this.J / 4.0F, this.K / 4.0F, this.J / 4.0F, 0.05D, new int[] { afh.f(afi.f.Q()) });
     }
   }
   
@@ -457,33 +457,33 @@ public class um
   
   private void C()
   {
-    afh.a(o, new cj(this), new zx(zy.cj));
+    afh.a(this.o, new cj(this), new zx(zy.cj));
     D();
   }
   
   private void D()
   {
-    for (int ☃ = 0; ☃ < g.length; ☃++) {
-      if ((g[☃] != null) && (g[☃].b > 0))
+    for (int ☃ = 0; ☃ < this.g.length; ☃++) {
+      if ((this.g[☃] != null) && (this.g[☃].b > 0))
       {
-        if (g[☃] != null) {
-          afh.a(o, new cj(this).a(), g[☃]);
+        if (this.g[☃] != null) {
+          afh.a(this.o, new cj(this).a(), this.g[☃]);
         }
-        g[☃] = null;
+        this.g[☃] = null;
       }
     }
   }
   
   protected float h(float ☃, float ☃)
   {
-    aJ = A;
-    aI = y;
+    this.aJ = this.A;
+    this.aI = this.y;
     return 0.0F;
   }
   
   public float aS()
   {
-    return j_() ? K * 0.5F : K * 0.9F;
+    return j_() ? this.K * 0.5F : this.K * 0.9F;
   }
   
   public void g(float ☃, float ☃)
@@ -498,46 +498,46 @@ public class um
   {
     super.t_();
     
-    dc ☃ = ac.h(11);
-    if (!bk.equals(☃)) {
+    dc ☃ = this.ac.h(11);
+    if (!this.bk.equals(☃)) {
       a(☃);
     }
-    dc ☃ = ac.h(12);
-    if (!bl.equals(☃)) {
+    dc ☃ = this.ac.h(12);
+    if (!this.bl.equals(☃)) {
       b(☃);
     }
-    dc ☃ = ac.h(13);
-    if (!bm.equals(☃)) {
+    dc ☃ = this.ac.h(13);
+    if (!this.bm.equals(☃)) {
       c(☃);
     }
-    dc ☃ = ac.h(14);
-    if (!bn.equals(☃)) {
+    dc ☃ = this.ac.h(14);
+    if (!this.bn.equals(☃)) {
       d(☃);
     }
-    dc ☃ = ac.h(15);
-    if (!bo.equals(☃)) {
+    dc ☃ = this.ac.h(15);
+    if (!this.bo.equals(☃)) {
       e(☃);
     }
-    dc ☃ = ac.h(16);
-    if (!bp.equals(☃)) {
+    dc ☃ = this.ac.h(16);
+    if (!this.bp.equals(☃)) {
       f(☃);
     }
     boolean ☃ = s();
-    if ((!bj) && (☃)) {
+    if ((!this.bj) && (☃)) {
       a(false);
-    } else if ((bj) && (!☃)) {
+    } else if ((this.bj) && (!☃)) {
       a(true);
     } else {
       return;
     }
-    bj = ☃;
+    this.bj = ☃;
   }
   
   private void a(boolean ☃)
   {
-    double ☃ = s;
-    double ☃ = t;
-    double ☃ = u;
+    double ☃ = this.s;
+    double ☃ = this.t;
+    double ☃ = this.u;
     if (☃) {
       a(0.5F, 1.975F);
     } else {
@@ -548,12 +548,12 @@ public class um
   
   protected void B()
   {
-    e(h);
+    e(this.h);
   }
   
   public void e(boolean ☃)
   {
-    h = ☃;
+    this.h = ☃;
     super.e(☃);
   }
   
@@ -574,148 +574,148 @@ public class um
   
   private void j(boolean ☃)
   {
-    byte ☃ = ac.a(10);
+    byte ☃ = this.ac.a(10);
     if (☃) {
       ☃ = (byte)(☃ | 0x1);
     } else {
       ☃ = (byte)(☃ & 0xFFFFFFFE);
     }
-    ac.b(10, Byte.valueOf(☃));
+    this.ac.b(10, Byte.valueOf(☃));
   }
   
   public boolean n()
   {
-    return (ac.a(10) & 0x1) != 0;
+    return (this.ac.a(10) & 0x1) != 0;
   }
   
   private void k(boolean ☃)
   {
-    byte ☃ = ac.a(10);
+    byte ☃ = this.ac.a(10);
     if (☃) {
       ☃ = (byte)(☃ | 0x2);
     } else {
       ☃ = (byte)(☃ & 0xFFFFFFFD);
     }
-    ac.b(10, Byte.valueOf(☃));
+    this.ac.b(10, Byte.valueOf(☃));
   }
   
   public boolean p()
   {
-    return (ac.a(10) & 0x2) != 0;
+    return (this.ac.a(10) & 0x2) != 0;
   }
   
   private void l(boolean ☃)
   {
-    byte ☃ = ac.a(10);
+    byte ☃ = this.ac.a(10);
     if (☃) {
       ☃ = (byte)(☃ | 0x4);
     } else {
       ☃ = (byte)(☃ & 0xFFFFFFFB);
     }
-    ac.b(10, Byte.valueOf(☃));
+    this.ac.b(10, Byte.valueOf(☃));
   }
   
   public boolean q()
   {
-    return (ac.a(10) & 0x4) != 0;
+    return (this.ac.a(10) & 0x4) != 0;
   }
   
   private void m(boolean ☃)
   {
-    byte ☃ = ac.a(10);
+    byte ☃ = this.ac.a(10);
     if (☃) {
       ☃ = (byte)(☃ | 0x8);
     } else {
       ☃ = (byte)(☃ & 0xFFFFFFF7);
     }
-    ac.b(10, Byte.valueOf(☃));
+    this.ac.b(10, Byte.valueOf(☃));
   }
   
   public boolean r()
   {
-    return (ac.a(10) & 0x8) != 0;
+    return (this.ac.a(10) & 0x8) != 0;
   }
   
   private void n(boolean ☃)
   {
-    byte ☃ = ac.a(10);
+    byte ☃ = this.ac.a(10);
     if (☃) {
       ☃ = (byte)(☃ | 0x10);
     } else {
       ☃ = (byte)(☃ & 0xFFFFFFEF);
     }
-    ac.b(10, Byte.valueOf(☃));
+    this.ac.b(10, Byte.valueOf(☃));
   }
   
   public boolean s()
   {
-    return (ac.a(10) & 0x10) != 0;
+    return (this.ac.a(10) & 0x10) != 0;
   }
   
   public void a(dc ☃)
   {
-    bk = ☃;
-    ac.b(11, ☃);
+    this.bk = ☃;
+    this.ac.b(11, ☃);
   }
   
   public void b(dc ☃)
   {
-    bl = ☃;
-    ac.b(12, ☃);
+    this.bl = ☃;
+    this.ac.b(12, ☃);
   }
   
   public void c(dc ☃)
   {
-    bm = ☃;
-    ac.b(13, ☃);
+    this.bm = ☃;
+    this.ac.b(13, ☃);
   }
   
   public void d(dc ☃)
   {
-    bn = ☃;
-    ac.b(14, ☃);
+    this.bn = ☃;
+    this.ac.b(14, ☃);
   }
   
   public void e(dc ☃)
   {
-    bo = ☃;
-    ac.b(15, ☃);
+    this.bo = ☃;
+    this.ac.b(15, ☃);
   }
   
   public void f(dc ☃)
   {
-    bp = ☃;
-    ac.b(16, ☃);
+    this.bp = ☃;
+    this.ac.b(16, ☃);
   }
   
   public dc t()
   {
-    return bk;
+    return this.bk;
   }
   
   public dc u()
   {
-    return bl;
+    return this.bl;
   }
   
   public dc v()
   {
-    return bm;
+    return this.bm;
   }
   
   public dc w()
   {
-    return bn;
+    return this.bn;
   }
   
   public dc x()
   {
-    return bo;
+    return this.bo;
   }
   
   public dc y()
   {
-    return bp;
+    return this.bp;
   }
   
   public boolean ad()

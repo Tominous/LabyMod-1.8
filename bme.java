@@ -3,57 +3,53 @@ import java.io.IOException;
 import java.io.InputStream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import shadersmod.client.ShadersTex;
 
 public class bme
   extends bly
 {
   private static final Logger g = ;
   protected final jy f;
-  private static final String __OBFID = "CL_00001052";
   
-  public bme(jy p_i1275_1_)
+  public bme(jy ☃)
   {
-    f = p_i1275_1_;
+    this.f = ☃;
   }
   
-  public void a(bni p_110551_1_)
+  public void a(bni ☃)
     throws IOException
   {
     c();
-    InputStream var2 = null;
+    
+    InputStream ☃ = null;
     try
     {
-      bnh var3 = p_110551_1_.a(f);
-      var2 = var3.b();
-      BufferedImage var4 = bml.a(var2);
-      boolean var5 = false;
-      boolean var6 = false;
-      if (var3.c()) {
+      bnh ☃ = ☃.a(this.f);
+      ☃ = ☃.b();
+      BufferedImage ☃ = bml.a(☃);
+      
+      boolean ☃ = false;
+      boolean ☃ = false;
+      if (☃.c()) {
         try
         {
-          bon var7 = (bon)var3.a("texture");
-          if (var7 != null)
+          bon ☃ = (bon)☃.a("texture");
+          if (☃ != null)
           {
-            var5 = var7.a();
-            var6 = var7.b();
+            ☃ = ☃.a();
+            ☃ = ☃.b();
           }
         }
-        catch (RuntimeException var11)
+        catch (RuntimeException ☃)
         {
-          g.warn("Failed reading metadata of: " + f, var11);
+          g.warn("Failed reading metadata of: " + this.f, ☃);
         }
       }
-      if (Config.isShaders()) {
-        ShadersTex.loadSimpleTexture(b(), var4, var5, var6, p_110551_1_, f, getMultiTexID());
-      } else {
-        bml.a(b(), var4, var5, var6);
-      }
+      bml.a(b(), ☃, ☃, ☃);
     }
     finally
     {
-      if (var2 != null) {
-        var2.close();
+      if (☃ != null) {
+        ☃.close();
       }
     }
   }

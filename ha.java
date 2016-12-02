@@ -10,22 +10,22 @@ public class ha
   
   public ha(wn ☃, cj ☃)
   {
-    a = ☃.F();
-    b = ☃;
+    this.a = ☃.F();
+    this.b = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.e();
-    b = ☃.c();
+    this.a = ☃.e();
+    this.b = ☃.c();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a);
-    ☃.a(b);
+    ☃.b(this.a);
+    ☃.a(this.b);
   }
   
   public void a(fj ☃)
@@ -35,11 +35,11 @@ public class ha
   
   public wn a(adm ☃)
   {
-    return (wn)☃.a(a);
+    return (wn)☃.a(this.a);
   }
   
   public cj a()
   {
-    return b;
+    return this.b;
   }
 }

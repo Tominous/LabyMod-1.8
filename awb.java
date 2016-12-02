@@ -8,31 +8,31 @@ public class awb
   public awb(awg.b ☃, int ☃, int ☃, int ☃, String ☃, boolean ☃)
   {
     super(☃, ☃, ☃, 150, 20, "");
-    p = ☃;
-    o = ☃;
-    j = c();
-    q = ☃;
+    this.p = ☃;
+    this.o = ☃;
+    this.j = c();
+    this.q = ☃;
   }
   
   private String c()
   {
-    return bnq.a(p, new Object[0]) + ": " + (o ? bnq.a("gui.yes", new Object[0]) : bnq.a("gui.no", new Object[0]));
+    return bnq.a(this.p, new Object[0]) + ": " + (this.o ? bnq.a("gui.yes", new Object[0]) : bnq.a("gui.no", new Object[0]));
   }
   
   public void b(boolean ☃)
   {
-    o = ☃;
-    j = c();
-    q.a(k, ☃);
+    this.o = ☃;
+    this.j = c();
+    this.q.a(this.k, ☃);
   }
   
   public boolean c(ave ☃, int ☃, int ☃)
   {
     if (super.c(☃, ☃, ☃))
     {
-      o = (!o);
-      j = c();
-      q.a(k, o);
+      this.o = (!this.o);
+      this.j = c();
+      this.q.a(this.k, this.o);
       return true;
     }
     return false;

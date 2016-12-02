@@ -18,9 +18,9 @@ public class bfn
   
   public bfn(ave mcIn)
   {
-    c = mcIn;
-    g = mcIn.af();
-    h = mcIn.ag();
+    this.c = mcIn;
+    this.g = mcIn.af();
+    this.h = mcIn.ag();
   }
   
   public void a(pr entityIn, zx heldStack, bgr.b transform)
@@ -30,14 +30,14 @@ public class bfn
       zw item = heldStack.b();
       afh block = afh.a(item);
       bfl.E();
-      if (h.a(heldStack))
+      if (this.h.a(heldStack))
       {
         bfl.a(2.0F, 2.0F, 2.0F);
         if (a(block)) {
           bfl.a(false);
         }
       }
-      h.a(heldStack, entityIn, transform);
+      this.h.a(heldStack, entityIn, transform);
       if (a(block)) {
         bfl.a(true);
       }
@@ -61,7 +61,7 @@ public class bfn
   
   private void a(bet clientPlayer)
   {
-    int i = c.f.b(new cj(s, t + clientPlayer.aS(), u), 0);
+    int i = this.c.f.b(new cj(clientPlayer.s, clientPlayer.t + clientPlayer.aS(), clientPlayer.u), 0);
     float f = i & 0xFFFF;
     float f1 = i >> 16;
     bqs.a(bqs.r, f, f1);
@@ -69,10 +69,10 @@ public class bfn
   
   private void a(bew entityplayerspIn, float partialTicks)
   {
-    float f = i + (g - i) * partialTicks;
-    float f1 = h + (f - h) * partialTicks;
-    bfl.b((z - f) * 0.1F, 1.0F, 0.0F, 0.0F);
-    bfl.b((y - f1) * 0.1F, 0.0F, 1.0F, 0.0F);
+    float f = entityplayerspIn.i + (entityplayerspIn.g - entityplayerspIn.i) * partialTicks;
+    float f1 = entityplayerspIn.h + (entityplayerspIn.f - entityplayerspIn.h) * partialTicks;
+    bfl.b((entityplayerspIn.z - f) * 0.1F, 1.0F, 0.0F, 0.0F);
+    bfl.b((entityplayerspIn.y - f1) * 0.1F, 0.0F, 1.0F, 0.0F);
   }
   
   private float c(float p_178100_1_)
@@ -90,7 +90,7 @@ public class bfn
     bfl.b(64.0F, 1.0F, 0.0F, 0.0F);
     bfl.b(-62.0F, 0.0F, 0.0F, 1.0F);
     bfl.b(0.25F, -0.85F, 0.75F);
-    renderPlayerIn.b(c.h);
+    renderPlayerIn.b(this.c.h);
     bfl.F();
   }
   
@@ -101,14 +101,14 @@ public class bfn
     bfl.b(45.0F, 1.0F, 0.0F, 0.0F);
     bfl.b(41.0F, 0.0F, 0.0F, 1.0F);
     bfl.b(-0.3F, -1.1F, 0.45F);
-    renderPlayerIn.c(c.h);
+    renderPlayerIn.c(this.c.h);
     bfl.F();
   }
   
   private void b(bet clientPlayer)
   {
-    c.P().a(clientPlayer.i());
-    biv<bet> render = g.a(c.h);
+    this.c.P().a(clientPlayer.i());
+    biv<bet> render = this.g.a(this.c.h);
     bln renderplayer = (bln)render;
     if (!clientPlayer.ax())
     {
@@ -144,7 +144,7 @@ public class bfn
     bfl.b(0.0F, 1.0F, 0.0F, 0.0F);
     bfl.b(-1.0F, -1.0F, 0.0F);
     bfl.a(0.015625F, 0.015625F, 0.015625F);
-    c.P().a(a);
+    this.c.P().a(a);
     bfx tessellator = bfx.a();
     bfd worldrenderer = tessellator.c();
     GL11.glNormal3f(0.0F, 0.0F, -1.0F);
@@ -154,9 +154,9 @@ public class bfn
     worldrenderer.b(135.0D, -7.0D, 0.0D).a(1.0D, 0.0D).d();
     worldrenderer.b(-7.0D, -7.0D, 0.0D).a(0.0D, 0.0D).d();
     tessellator.b();
-    atg mapdata = zy.bd.a(d, c.f);
+    atg mapdata = zy.bd.a(this.d, this.c.f);
     if (mapdata != null) {
-      c.o.k().a(mapdata, false);
+      this.c.o.k().a(mapdata, false);
     }
   }
   
@@ -173,17 +173,17 @@ public class bfn
     float f4 = ns.a(ns.c(p_178095_3_) * 3.1415927F);
     bfl.b(f4 * 70.0F, 0.0F, 1.0F, 0.0F);
     bfl.b(f3 * -20.0F, 0.0F, 0.0F, 1.0F);
-    c.P().a(clientPlayer.i());
+    this.c.P().a(clientPlayer.i());
     bfl.b(-1.0F, 3.6F, 3.5F);
     bfl.b(120.0F, 0.0F, 0.0F, 1.0F);
     bfl.b(200.0F, 1.0F, 0.0F, 0.0F);
     bfl.b(-135.0F, 0.0F, 1.0F, 0.0F);
     bfl.a(1.0F, 1.0F, 1.0F);
     bfl.b(5.6F, 0.0F, 0.0F);
-    biv<bet> render = g.a(c.h);
+    biv<bet> render = this.g.a(this.c.h);
     bfl.p();
     bln renderplayer = (bln)render;
-    renderplayer.b(c.h);
+    renderplayer.b(this.c.h);
     bfl.o();
   }
   
@@ -198,7 +198,7 @@ public class bfn
   private void a(bet clientPlayer, float p_178104_2_)
   {
     float f = clientPlayer.bR() - p_178104_2_ + 1.0F;
-    float f1 = f / d.l();
+    float f1 = f / this.d.l();
     float f2 = ns.e(ns.b(f / 4.0F * 3.1415927F) * 0.1F);
     if (f1 >= 0.8F) {
       f2 = 0.0F;
@@ -213,14 +213,14 @@ public class bfn
   
   private void b(float equipProgress, float swingProgress)
   {
-    if ((settingsoldBow) && (Allowed.animations()) && 
-      (c != null) && (c.h != null) && (c.h.bQ() != null) && (c.h.bQ().b() != null) && 
-      (zw.b(c.h.bQ().b()) == 261)) {
+    if ((ConfigManager.settings.oldBow) && (Allowed.animations()) && 
+      (this.c != null) && (this.c.h != null) && (this.c.h.bQ() != null) && (this.c.h.bQ().b() != null) && 
+      (zw.b(this.c.h.bQ().b()) == 261)) {
       bfl.b(0.0F, 0.0F, -0.08F);
     }
-    if ((settingsoldFishing) && (Allowed.animations()) && 
-      (c != null) && (c.h != null) && (c.h.bZ() != null) && (c.h.bZ().b() != null) && 
-      (zw.b(c.h.bZ().b()) == 346)) {
+    if ((ConfigManager.settings.oldFishing) && (Allowed.animations()) && 
+      (this.c != null) && (this.c.h != null) && (this.c.h.bZ() != null) && (this.c.h.bZ().b() != null) && 
+      (zw.b(this.c.h.bZ().b()) == 346)) {
       bfl.b(0.1F, -0.02F, -0.335F);
     }
     bfl.b(0.56F, -0.52F, -0.71999997F);
@@ -240,7 +240,7 @@ public class bfn
     bfl.b(-12.0F, 0.0F, 1.0F, 0.0F);
     bfl.b(-8.0F, 1.0F, 0.0F, 0.0F);
     bfl.b(-0.9F, 0.2F, 0.0F);
-    float f = d.l() - (clientPlayer.bR() - p_178098_1_ + 1.0F);
+    float f = this.d.l() - (clientPlayer.bR() - p_178098_1_ + 1.0F);
     float f1 = f / 20.0F;
     f1 = (f1 * f1 + f1 * 2.0F) / 3.0F;
     if (f1 > 1.0F) {
@@ -267,17 +267,17 @@ public class bfn
   
   public void a(float partialTicks)
   {
-    float f = 1.0F - (this.f + (e - this.f) * partialTicks);
-    bet abstractclientplayer = c.h;
+    float f = 1.0F - (this.f + (this.e - this.f) * partialTicks);
+    bet abstractclientplayer = this.c.h;
     float f1 = abstractclientplayer.l(partialTicks);
-    float f2 = B + (z - B) * partialTicks;
-    float f3 = A + (y - A) * partialTicks;
+    float f2 = abstractclientplayer.B + (abstractclientplayer.z - abstractclientplayer.B) * partialTicks;
+    float f3 = abstractclientplayer.A + (abstractclientplayer.y - abstractclientplayer.A) * partialTicks;
     a(f2, f3);
     a(abstractclientplayer);
     a((bew)abstractclientplayer, partialTicks);
     bfl.B();
     bfl.E();
-    if (LeftHand.use(d))
+    if (LeftHand.use(this.d))
     {
       GL11.glScaled(-1.0D, 1.0D, 1.0D);
       bfl.p();
@@ -286,17 +286,17 @@ public class bfn
     {
       bfl.o();
     }
-    if (d != null)
+    if (this.d != null)
     {
-      if (d.b() == zy.bd)
+      if (this.d.b() == zy.bd)
       {
         a(abstractclientplayer, f2, f, f1);
       }
       else if (abstractclientplayer.bR() > 0)
       {
-        aba enumaction = d.m();
+        aba enumaction = this.d.m();
         float var10 = 0.0F;
-        if ((settingsoldBlockhit) && (Allowed.animations())) {
+        if ((ConfigManager.settings.oldBlockhit) && (Allowed.animations())) {
           var10 = f1;
         }
         switch (enumaction)
@@ -323,7 +323,7 @@ public class bfn
         d(f1);
         b(f, f1);
       }
-      a(abstractclientplayer, d, bgr.b.c);
+      a(abstractclientplayer, this.d, bgr.b.c);
     }
     else if (!abstractclientplayer.ax())
     {
@@ -337,31 +337,31 @@ public class bfn
   public void b(float partialTicks)
   {
     
-    if (c.h.aj())
+    if (this.c.h.aj())
     {
-      alz iblockstate = c.f.p(new cj(c.h));
-      wn entityplayer = c.h;
+      alz iblockstate = this.c.f.p(new cj(this.c.h));
+      wn entityplayer = this.c.h;
       for (int i = 0; i < 8; i++)
       {
-        double d0 = s + ((i >> 0) % 2 - 0.5F) * J * 0.8F;
-        double d1 = t + ((i >> 1) % 2 - 0.5F) * 0.1F;
-        double d2 = u + ((i >> 2) % 2 - 0.5F) * J * 0.8F;
+        double d0 = entityplayer.s + ((i >> 0) % 2 - 0.5F) * entityplayer.J * 0.8F;
+        double d1 = entityplayer.t + ((i >> 1) % 2 - 0.5F) * 0.1F;
+        double d2 = entityplayer.u + ((i >> 2) % 2 - 0.5F) * entityplayer.J * 0.8F;
         cj blockpos = new cj(d0, d1 + entityplayer.aS(), d2);
-        alz iblockstate1 = c.f.p(blockpos);
+        alz iblockstate1 = this.c.f.p(blockpos);
         if (iblockstate1.c().w()) {
           iblockstate = iblockstate1;
         }
       }
       if (iblockstate.c().b() != -1) {
-        a(partialTicks, c.ae().a().a(iblockstate));
+        a(partialTicks, this.c.ae().a().a(iblockstate));
       }
     }
-    if (!c.h.v())
+    if (!this.c.h.v())
     {
-      if (c.h.a(arm.h)) {
+      if (this.c.h.a(arm.h)) {
         e(partialTicks);
       }
-      if (c.h.at()) {
+      if (this.c.h.at()) {
         f(partialTicks);
       }
     }
@@ -370,7 +370,7 @@ public class bfn
   
   private void a(float p_178108_1_, bmi p_178108_2_)
   {
-    c.P().a(bmh.g);
+    this.c.P().a(bmh.g);
     bfx tessellator = bfx.a();
     bfd worldrenderer = tessellator.c();
     float f = 0.1F;
@@ -397,10 +397,10 @@ public class bfn
   
   private void e(float p_78448_1_)
   {
-    c.P().a(b);
+    this.c.P().a(b);
     bfx tessellator = bfx.a();
     bfd worldrenderer = tessellator.c();
-    float f = c.h.c(p_78448_1_);
+    float f = this.c.h.c(p_78448_1_);
     bfl.c(f, f, f, 0.5F);
     bfl.l();
     bfl.a(770, 771, 1, 0);
@@ -411,8 +411,8 @@ public class bfn
     float f4 = -1.0F;
     float f5 = 1.0F;
     float f6 = -0.5F;
-    float f7 = -c.h.y / 64.0F;
-    float f8 = c.h.z / 64.0F;
+    float f7 = -this.c.h.y / 64.0F;
+    float f8 = this.c.h.z / 64.0F;
     worldrenderer.a(7, bms.g);
     worldrenderer.b(-1.0D, -1.0D, -0.5D).a(4.0F + f7, 4.0F + f8).d();
     worldrenderer.b(1.0D, -1.0D, -0.5D).a(0.0F + f7, 4.0F + f8).d();
@@ -437,8 +437,8 @@ public class bfn
     for (int i = 0; i < 2; i++)
     {
       bfl.E();
-      bmi textureatlassprite = c.T().a("minecraft:blocks/fire_layer_1");
-      c.P().a(bmh.g);
+      bmi textureatlassprite = this.c.T().a("minecraft:blocks/fire_layer_1");
+      this.c.P().a(bmh.g);
       float f1 = textureatlassprite.e();
       float f2 = textureatlassprite.f();
       float f3 = textureatlassprite.g();
@@ -466,39 +466,39 @@ public class bfn
   
   public void a()
   {
-    this.f = e;
-    wn entityplayer = c.h;
-    zx itemstack = bi.h();
+    this.f = this.e;
+    wn entityplayer = this.c.h;
+    zx itemstack = entityplayer.bi.h();
     boolean flag = false;
-    if ((d != null) && (itemstack != null))
+    if ((this.d != null) && (itemstack != null))
     {
-      if (!d.c(itemstack)) {
+      if (!this.d.c(itemstack)) {
         flag = true;
       }
     }
-    else if ((d == null) && (itemstack == null)) {
+    else if ((this.d == null) && (itemstack == null)) {
       flag = false;
     } else {
       flag = true;
     }
     float f = 0.4F;
     float f1 = flag ? 0.0F : 1.0F;
-    float f2 = ns.a(f1 - e, -f, f);
-    e += f2;
-    if (e < 0.1F)
+    float f2 = ns.a(f1 - this.e, -f, f);
+    this.e += f2;
+    if (this.e < 0.1F)
     {
-      d = itemstack;
-      i = bi.c;
+      this.d = itemstack;
+      this.i = entityplayer.bi.c;
     }
   }
   
   public void b()
   {
-    e = 0.0F;
+    this.e = 0.0F;
   }
   
   public void c()
   {
-    e = 0.0F;
+    this.e = 0.0F;
   }
 }

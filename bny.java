@@ -11,16 +11,16 @@ public class bny
   
   public bny()
   {
-    b.registerTypeHierarchyAdapter(eu.class, new eu.a());
-    b.registerTypeHierarchyAdapter(ez.class, new ez.a());
-    b.registerTypeAdapterFactory(new nr());
+    this.b.registerTypeHierarchyAdapter(eu.class, new eu.a());
+    this.b.registerTypeHierarchyAdapter(ez.class, new ez.a());
+    this.b.registerTypeAdapterFactory(new nr());
   }
   
   public <T extends bnw> void a(bnx<T> ☃, Class<T> ☃)
   {
-    a.a(☃.a(), new bny.a(☃, ☃, null));
-    b.registerTypeAdapter(☃, ☃);
-    c = null;
+    this.a.a(☃.a(), new bny.a(☃, ☃, null));
+    this.b.registerTypeAdapter(☃, ☃);
+    this.c = null;
   }
   
   public <T extends bnw> T a(String ☃, JsonObject ☃)
@@ -34,19 +34,19 @@ public class bny
     if (!☃.get(☃).isJsonObject()) {
       throw new IllegalArgumentException("Invalid metadata for '" + ☃ + "' - expected object, found " + ☃.get(☃));
     }
-    bny.a<?> ☃ = (bny.a)a.a(☃);
+    bny.a<?> ☃ = (bny.a)this.a.a(☃);
     if (☃ == null) {
       throw new IllegalArgumentException("Don't know how to handle metadata section '" + ☃ + "'");
     }
-    return (bnw)a().fromJson(☃.getAsJsonObject(☃), b);
+    return (bnw)a().fromJson(☃.getAsJsonObject(☃), ☃.b);
   }
   
   private Gson a()
   {
-    if (c == null) {
-      c = b.create();
+    if (this.c == null) {
+      this.c = this.b.create();
     }
-    return c;
+    return this.c;
   }
   
   class a<T extends bnw>
@@ -56,8 +56,8 @@ public class bny
     
     private a(Class<T> ☃)
     {
-      a = ☃;
-      b = ☃;
+      this.a = ☃;
+      this.b = ☃;
     }
   }
 }

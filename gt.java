@@ -16,50 +16,50 @@ public class gt
   
   public gt(int ☃, adp.a ☃, boolean ☃, int ☃, oj ☃, int ☃, adr ☃, boolean ☃)
   {
-    a = ☃;
-    d = ☃;
-    e = ☃;
-    c = ☃;
-    f = ☃;
-    b = ☃;
-    g = ☃;
-    h = ☃;
+    this.a = ☃;
+    this.d = ☃;
+    this.e = ☃;
+    this.c = ☃;
+    this.f = ☃;
+    this.b = ☃;
+    this.g = ☃;
+    this.h = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readInt();
+    this.a = ☃.readInt();
     
     int ☃ = ☃.readUnsignedByte();
-    b = ((☃ & 0x8) == 8);
+    this.b = ((☃ & 0x8) == 8);
     ☃ &= 0xFFFFFFF7;
-    c = adp.a.a(☃);
+    this.c = adp.a.a(☃);
     
-    d = ☃.readByte();
-    e = oj.a(☃.readUnsignedByte());
-    f = ☃.readUnsignedByte();
-    g = adr.a(☃.c(16));
-    if (g == null) {
-      g = adr.b;
+    this.d = ☃.readByte();
+    this.e = oj.a(☃.readUnsignedByte());
+    this.f = ☃.readUnsignedByte();
+    this.g = adr.a(☃.c(16));
+    if (this.g == null) {
+      this.g = adr.b;
     }
-    h = ☃.readBoolean();
+    this.h = ☃.readBoolean();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeInt(a);
-    int ☃ = c.a();
-    if (b) {
+    ☃.writeInt(this.a);
+    int ☃ = this.c.a();
+    if (this.b) {
       ☃ |= 0x8;
     }
     ☃.writeByte(☃);
-    ☃.writeByte(d);
-    ☃.writeByte(e.a());
-    ☃.writeByte(f);
-    ☃.a(g.a());
-    ☃.writeBoolean(h);
+    ☃.writeByte(this.d);
+    ☃.writeByte(this.e.a());
+    ☃.writeByte(this.f);
+    ☃.a(this.g.a());
+    ☃.writeBoolean(this.h);
   }
   
   public void a(fj ☃)
@@ -69,41 +69,41 @@ public class gt
   
   public int a()
   {
-    return a;
+    return this.a;
   }
   
   public boolean b()
   {
-    return b;
+    return this.b;
   }
   
   public adp.a c()
   {
-    return c;
+    return this.c;
   }
   
   public int d()
   {
-    return d;
+    return this.d;
   }
   
   public oj e()
   {
-    return e;
+    return this.e;
   }
   
   public int f()
   {
-    return f;
+    return this.f;
   }
   
   public adr g()
   {
-    return g;
+    return this.g;
   }
   
   public boolean h()
   {
-    return h;
+    return this.h;
   }
 }

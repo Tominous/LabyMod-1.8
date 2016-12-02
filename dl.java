@@ -12,14 +12,14 @@ public class dl
   
   public dl(byte[] ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   void a(DataOutput ☃)
     throws IOException
   {
-    ☃.writeInt(b.length);
-    ☃.write(b);
+    ☃.writeInt(this.b.length);
+    ☃.write(this.b);
   }
   
   void a(DataInput ☃, int ☃, dw ☃)
@@ -28,8 +28,8 @@ public class dl
     ☃.a(192L);
     int ☃ = ☃.readInt();
     ☃.a(8 * ☃);
-    b = new byte[☃];
-    ☃.readFully(b);
+    this.b = new byte[☃];
+    ☃.readFully(this.b);
   }
   
   public byte a()
@@ -39,31 +39,31 @@ public class dl
   
   public String toString()
   {
-    return "[" + b.length + " bytes]";
+    return "[" + this.b.length + " bytes]";
   }
   
   public eb b()
   {
-    byte[] ☃ = new byte[b.length];
-    System.arraycopy(b, 0, ☃, 0, b.length);
+    byte[] ☃ = new byte[this.b.length];
+    System.arraycopy(this.b, 0, ☃, 0, this.b.length);
     return new dl(☃);
   }
   
   public boolean equals(Object ☃)
   {
     if (super.equals(☃)) {
-      return Arrays.equals(b, b);
+      return Arrays.equals(this.b, ((dl)☃).b);
     }
     return false;
   }
   
   public int hashCode()
   {
-    return super.hashCode() ^ Arrays.hashCode(b);
+    return super.hashCode() ^ Arrays.hashCode(this.b);
   }
   
   public byte[] c()
   {
-    return b;
+    return this.b;
   }
 }

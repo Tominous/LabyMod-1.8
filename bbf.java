@@ -9,30 +9,30 @@ public class bbf
   public bbf()
   {
     int ☃ = -16;
-    a = new bct(this, 0, 0);
-    a.a(-8.0F, -8.0F, -8.0F, 16, 16, 16);
-    a.d += 24 + ☃;
+    this.a = new bct(this, 0, 0);
+    this.a.a(-8.0F, -8.0F, -8.0F, 16, 16, 16);
+    this.a.d += 24 + ☃;
     
     Random ☃ = new Random(1660L);
-    for (int ☃ = 0; ☃ < b.length; ☃++)
+    for (int ☃ = 0; ☃ < this.b.length; ☃++)
     {
-      b[☃] = new bct(this, 0, 0);
+      this.b[☃] = new bct(this, 0, 0);
       
       float ☃ = ((☃ % 3 - ☃ / 3 % 2 * 0.5F + 0.25F) / 2.0F * 2.0F - 1.0F) * 5.0F;
       float ☃ = (☃ / 3 / 2.0F * 2.0F - 1.0F) * 5.0F;
       int ☃ = ☃.nextInt(7) + 8;
-      b[☃].a(-1.0F, 0.0F, -1.0F, 2, ☃, 2);
+      this.b[☃].a(-1.0F, 0.0F, -1.0F, 2, ☃, 2);
       
-      b[☃].c = ☃;
-      b[☃].e = ☃;
-      b[☃].d = (31 + ☃);
+      this.b[☃].c = ☃;
+      this.b[☃].e = ☃;
+      this.b[☃].d = (31 + ☃);
     }
   }
   
   public void a(float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, pk ☃)
   {
-    for (int ☃ = 0; ☃ < b.length; ☃++) {
-      b[☃].f = (0.2F * ns.a(☃ * 0.3F + ☃) + 0.4F);
+    for (int ☃ = 0; ☃ < this.b.length; ☃++) {
+      this.b[☃].f = (0.2F * ns.a(☃ * 0.3F + ☃) + 0.4F);
     }
   }
   
@@ -43,8 +43,8 @@ public class bbf
     bfl.E();
     bfl.b(0.0F, 0.6F, 0.0F);
     
-    a.a(☃);
-    for (bct ☃ : b) {
+    this.a.a(☃);
+    for (bct ☃ : this.b) {
       ☃.a(☃);
     }
     bfl.F();

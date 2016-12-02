@@ -1,5 +1,4 @@
 import java.util.List;
-import shadersmod.client.ShadersTex;
 
 public class bmp
   extends bmi
@@ -7,65 +6,66 @@ public class bmp
   public double j;
   public double k;
   public static String l;
-  private static final String __OBFID = "CL_00001071";
   
-  public bmp(String p_i1286_1_)
+  public bmp(String ☃)
   {
-    super(p_i1286_1_);
-    l = p_i1286_1_;
+    super(☃);
+    l = ☃;
   }
   
   public void j()
   {
-    ave var1 = ave.A();
-    if ((f != null) && (h != null)) {
-      a(f, h.s, h.u, h.y, false, false);
+    ave ☃ = ave.A();
+    if ((☃.f != null) && (☃.h != null)) {
+      a(☃.f, ☃.h.s, ☃.h.u, ☃.h.y, false, false);
     } else {
-      a((adm)null, 0.0D, 0.0D, 0.0D, true, false);
+      a(null, 0.0D, 0.0D, 0.0D, true, false);
     }
   }
   
-  public void a(adm worldIn, double p_94241_2_, double p_94241_4_, double p_94241_6_, boolean p_94241_8_, boolean p_94241_9_)
+  public void a(adm ☃, double ☃, double ☃, double ☃, boolean ☃, boolean ☃)
   {
-    if (!a.isEmpty())
+    if (this.a.isEmpty()) {
+      return;
+    }
+    double ☃ = 0.0D;
+    if ((☃ != null) && (!☃))
     {
-      double var10 = 0.0D;
-      if ((worldIn != null) && (!p_94241_8_))
-      {
-        cj var12 = worldIn.M();
-        double var13 = var12.n() - p_94241_2_;
-        double var15 = var12.p() - p_94241_4_;
-        p_94241_6_ %= 360.0D;
-        var10 = -((p_94241_6_ - 90.0D) * 3.141592653589793D / 180.0D - Math.atan2(var15, var13));
-        if (!t.d()) {
-          var10 = Math.random() * 3.141592653589793D * 2.0D;
-        }
+      cj ☃ = ☃.M();
+      double ☃ = ☃.n() - ☃;
+      double ☃ = ☃.p() - ☃;
+      ☃ %= 360.0D;
+      ☃ = -((☃ - 90.0D) * 3.141592653589793D / 180.0D - Math.atan2(☃, ☃));
+      if (!☃.t.d()) {
+        ☃ = Math.random() * 3.1415927410125732D * 2.0D;
       }
-      if (p_94241_9_)
-      {
-        j = var10;
+    }
+    if (☃)
+    {
+      this.j = ☃;
+    }
+    else
+    {
+      double ☃ = ☃ - this.j;
+      while (☃ < -3.141592653589793D) {
+        ☃ += 6.283185307179586D;
       }
-      else
-      {
-        for (double var17 = var10 - j; var17 < -3.141592653589793D; var17 += 6.283185307179586D) {}
-        while (var17 >= 3.141592653589793D) {
-          var17 -= 6.283185307179586D;
-        }
-        var17 = ns.a(var17, -1.0D, 1.0D);
-        k += var17 * 0.1D;
-        k *= 0.8D;
-        j += k;
+      while (☃ >= 3.141592653589793D) {
+        ☃ -= 6.283185307179586D;
       }
-      for (int var18 = (int)((j / 6.283185307179586D + 1.0D) * a.size()) % a.size(); var18 < 0; var18 = (var18 + a.size()) % a.size()) {}
-      if (var18 != h)
-      {
-        h = var18;
-        if (Config.isShaders()) {
-          ShadersTex.uploadTexSub((int[][])a.get(h), f, g, d, e, false, false);
-        } else {
-          bml.a((int[][])a.get(h), f, g, d, e, false, false);
-        }
-      }
+      ☃ = ns.a(☃, -1.0D, 1.0D);
+      this.k += ☃ * 0.1D;
+      this.k *= 0.8D;
+      this.j += this.k;
+    }
+    int ☃ = (int)((this.j / 6.283185307179586D + 1.0D) * this.a.size()) % this.a.size();
+    while (☃ < 0) {
+      ☃ = (☃ + this.a.size()) % this.a.size();
+    }
+    if (☃ != this.h)
+    {
+      this.h = ☃;
+      bml.a((int[][])this.a.get(this.h), this.f, this.g, this.d, this.e, false, false);
     }
   }
 }

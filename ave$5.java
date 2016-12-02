@@ -8,6 +8,6 @@ class ave$5
   public String a()
     throws Exception
   {
-    return ave.a(this$0);
+    return ave.a(this.this$0);
   }
 }

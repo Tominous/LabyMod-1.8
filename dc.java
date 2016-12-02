@@ -6,24 +6,24 @@ public class dc
   
   public dc(float ☃, float ☃, float ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public dc(du ☃)
   {
-    a = ☃.e(0);
-    b = ☃.e(1);
-    c = ☃.e(2);
+    this.a = ☃.e(0);
+    this.b = ☃.e(1);
+    this.c = ☃.e(2);
   }
   
   public du a()
   {
     du ☃ = new du();
-    ☃.a(new dr(a));
-    ☃.a(new dr(b));
-    ☃.a(new dr(c));
+    ☃.a(new dr(this.a));
+    ☃.a(new dr(this.b));
+    ☃.a(new dr(this.c));
     return ☃;
   }
   
@@ -33,21 +33,21 @@ public class dc
       return false;
     }
     dc ☃ = (dc)☃;
-    return (a == a) && (b == b) && (c == c);
+    return (this.a == ☃.a) && (this.b == ☃.b) && (this.c == ☃.c);
   }
   
   public float b()
   {
-    return a;
+    return this.a;
   }
   
   public float c()
   {
-    return b;
+    return this.b;
   }
   
   public float d()
   {
-    return c;
+    return this.c;
   }
 }

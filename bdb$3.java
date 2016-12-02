@@ -1,15 +1,13 @@
 import java.util.concurrent.Callable;
 
 class bdb$3
-  implements Callable
+  implements Callable<String>
 {
-  private static final String __OBFID = "CL_00000885";
-  
   bdb$3(bdb parambdb) {}
   
   public String a()
     throws Exception
   {
-    return cthis$0).h.w();
+    return bdb.c(this.a).h.w();
   }
 }

@@ -12,28 +12,28 @@ public class fu
   
   public fu(cj ☃, afh ☃, int ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.c();
-    b = ☃.readUnsignedByte();
-    c = ☃.readUnsignedByte();
-    d = afh.c(☃.e() & 0xFFF);
+    this.a = ☃.c();
+    this.b = ☃.readUnsignedByte();
+    this.c = ☃.readUnsignedByte();
+    this.d = afh.c(☃.e() & 0xFFF);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a);
-    ☃.writeByte(b);
-    ☃.writeByte(c);
-    ☃.b(afh.a(d) & 0xFFF);
+    ☃.a(this.a);
+    ☃.writeByte(this.b);
+    ☃.writeByte(this.c);
+    ☃.b(afh.a(this.d) & 0xFFF);
   }
   
   public void a(fj ☃)
@@ -43,21 +43,21 @@ public class fu
   
   public cj a()
   {
-    return a;
+    return this.a;
   }
   
   public int b()
   {
-    return b;
+    return this.b;
   }
   
   public int c()
   {
-    return c;
+    return this.c;
   }
   
   public afh d()
   {
-    return d;
+    return this.d;
   }
 }

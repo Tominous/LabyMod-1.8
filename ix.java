@@ -10,30 +10,30 @@ public class ix
   
   public ix(cj ☃, eu[] ☃)
   {
-    a = ☃;
-    b = new eu[] { ☃[0], ☃[1], ☃[2], ☃[3] };
+    this.a = ☃;
+    this.b = new eu[] { ☃[0], ☃[1], ☃[2], ☃[3] };
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.c();
-    b = new eu[4];
+    this.a = ☃.c();
+    this.b = new eu[4];
     for (int ☃ = 0; ☃ < 4; ☃++)
     {
       String ☃ = ☃.c(384);
       eu ☃ = eu.a.a(☃);
-      b[☃] = ☃;
+      this.b[☃] = ☃;
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a);
+    ☃.a(this.a);
     for (int ☃ = 0; ☃ < 4; ☃++)
     {
-      eu ☃ = b[☃];
+      eu ☃ = this.b[☃];
       String ☃ = eu.a.a(☃);
       ☃.a(☃);
     }
@@ -46,11 +46,11 @@ public class ix
   
   public cj a()
   {
-    return a;
+    return this.a;
   }
   
   public eu[] b()
   {
-    return b;
+    return this.b;
   }
 }

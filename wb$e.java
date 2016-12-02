@@ -9,22 +9,22 @@ class wb$e
   
   public wb$e(wb ☃)
   {
-    a = ☃;
+    this.a = ☃;
     a(2);
   }
   
   public boolean a()
   {
-    return (a.u() == null) && ((a.C) || (a.V()) || (a.ab()));
+    return (this.a.u() == null) && ((this.a.C) || (this.a.V()) || (this.a.ab()));
   }
   
   public void e()
   {
-    if (--c <= 0)
+    if (--this.c <= 0)
     {
-      c = (40 + a.bc().nextInt(60));
-      b = a.bc().nextInt(360);
+      this.c = (40 + this.a.bc().nextInt(60));
+      this.b = this.a.bc().nextInt(360);
     }
-    ((wb.d)a.q()).a(b, false);
+    ((wb.d)this.a.q()).a(this.b, false);
   }
 }

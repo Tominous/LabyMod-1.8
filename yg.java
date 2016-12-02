@@ -8,10 +8,10 @@ public class yg
   
   public yg(og ☃, int ☃, int ☃, int ☃)
   {
-    d = ☃;
-    a = ☃;
-    f = ☃;
-    g = ☃;
+    this.d = ☃;
+    this.a = ☃;
+    this.f = ☃;
+    this.g = ☃;
   }
   
   public void a(zx ☃, zx ☃)
@@ -22,7 +22,7 @@ public class yg
     if (☃.b() != ☃.b()) {
       return;
     }
-    int ☃ = b - b;
+    int ☃ = ☃.b - ☃.b;
     if (☃ > 0) {
       a(☃, ☃);
     }
@@ -44,7 +44,7 @@ public class yg
   
   public zx d()
   {
-    return d.a(a);
+    return this.d.a(this.a);
   }
   
   public boolean e()
@@ -54,18 +54,18 @@ public class yg
   
   public void d(zx ☃)
   {
-    d.a(a, ☃);
+    this.d.a(this.a, ☃);
     f();
   }
   
   public void f()
   {
-    d.p_();
+    this.d.p_();
   }
   
   public int a()
   {
-    return d.q_();
+    return this.d.q_();
   }
   
   public int b(zx ☃)
@@ -80,12 +80,12 @@ public class yg
   
   public zx a(int ☃)
   {
-    return d.a(a, ☃);
+    return this.d.a(this.a, ☃);
   }
   
   public boolean a(og ☃, int ☃)
   {
-    return (☃ == d) && (☃ == a);
+    return (☃ == this.d) && (☃ == this.a);
   }
   
   public boolean a(wn ☃)

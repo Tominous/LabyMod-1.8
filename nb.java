@@ -12,7 +12,7 @@ public class nb
   
   public boolean b(mq ☃)
   {
-    return (c == null) || (a(c));
+    return (☃.c == null) || (a(☃.c));
   }
   
   public int c(mq ☃)
@@ -21,10 +21,10 @@ public class nb
       return 0;
     }
     int ☃ = 0;
-    mq ☃ = c;
+    mq ☃ = ☃.c;
     while ((☃ != null) && (!a(☃)))
     {
-      ☃ = c;
+      ☃ = ☃.c;
       ☃++;
     }
     return ☃;
@@ -40,24 +40,24 @@ public class nb
   
   public void a(wn ☃, mw ☃, int ☃)
   {
-    my ☃ = (my)a.get(☃);
+    my ☃ = (my)this.a.get(☃);
     if (☃ == null)
     {
       ☃ = new my();
-      a.put(☃, ☃);
+      this.a.put(☃, ☃);
     }
     ☃.a(☃);
   }
   
   public int a(mw ☃)
   {
-    my ☃ = (my)a.get(☃);
+    my ☃ = (my)this.a.get(☃);
     return ☃ == null ? 0 : ☃.a();
   }
   
   public <T extends mz> T b(mw ☃)
   {
-    my ☃ = (my)a.get(☃);
+    my ☃ = (my)this.a.get(☃);
     if (☃ != null) {
       return ☃.b();
     }
@@ -66,11 +66,11 @@ public class nb
   
   public <T extends mz> T a(mw ☃, T ☃)
   {
-    my ☃ = (my)a.get(☃);
+    my ☃ = (my)this.a.get(☃);
     if (☃ == null)
     {
       ☃ = new my();
-      a.put(☃, ☃);
+      this.a.put(☃, ☃);
     }
     ☃.a(☃);
     

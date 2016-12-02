@@ -28,16 +28,16 @@ public class aax
     if (☃ != null)
     {
       if (☃ == 0) {
-        return b;
+        return ☃.b;
       }
-      return c;
+      return ☃.c;
     }
     return 16777215;
   }
   
   public boolean a(zx ☃, wn ☃, adm ☃, cj ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (D) {
+    if (☃.D) {
       return true;
     }
     if (!☃.a(☃.a(☃), ☃, ☃)) {
@@ -53,8 +53,8 @@ public class aax
         ☃.a(pm.b(☃.i()));
         ☃.p_();
         ☃.h(☃);
-        if (!bA.d) {
-          b -= 1;
+        if (!☃.bA.d) {
+          ☃.b -= 1;
         }
         return true;
       }
@@ -71,8 +71,8 @@ public class aax
       if (((☃ instanceof pr)) && (☃.s())) {
         ☃.a(☃.q());
       }
-      if (!bA.d) {
-        b -= 1;
+      if (!☃.bA.d) {
+        ☃.b -= 1;
       }
     }
     return true;
@@ -80,20 +80,20 @@ public class aax
   
   public zx a(zx ☃, adm ☃, wn ☃)
   {
-    if (D) {
+    if (☃.D) {
       return ☃;
     }
     auh ☃ = a(☃, ☃, true);
     if (☃ == null) {
       return ☃;
     }
-    if (a == auh.a.b)
+    if (☃.a == auh.a.b)
     {
       cj ☃ = ☃.a();
       if (!☃.a(☃, ☃)) {
         return ☃;
       }
-      if (!☃.a(☃, b, ☃)) {
+      if (!☃.a(☃, ☃.b, ☃)) {
         return ☃;
       }
       if ((☃.p(☃).c() instanceof ahv))
@@ -104,8 +104,8 @@ public class aax
           if (((☃ instanceof pr)) && (☃.s())) {
             ((ps)☃).a(☃.q());
           }
-          if (!bA.d) {
-            b -= 1;
+          if (!☃.bA.d) {
+            ☃.b -= 1;
           }
           ☃.b(na.ad[zw.b(this)]);
         }
@@ -126,9 +126,9 @@ public class aax
       if ((☃ instanceof pr))
       {
         ps ☃ = (ps)☃;
-        ☃.b(☃, ☃, ☃, ns.g(s.nextFloat() * 360.0F), 0.0F);
-        aK = y;
-        aI = y;
+        ☃.b(☃, ☃, ☃, ns.g(☃.s.nextFloat() * 360.0F), 0.0F);
+        ☃.aK = ☃.y;
+        ☃.aI = ☃.y;
         
         ☃.a(☃.E(new cj(☃)), null);
         ☃.d(☃);
@@ -141,7 +141,7 @@ public class aax
   public void a(zw ☃, yz ☃, List<zx> ☃)
   {
     for (pm.a ☃ : pm.a.values()) {
-      ☃.add(new zx(☃, 1, a));
+      ☃.add(new zx(☃, 1, ☃.a));
     }
   }
 }

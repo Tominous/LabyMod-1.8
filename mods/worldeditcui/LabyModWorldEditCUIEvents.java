@@ -33,26 +33,26 @@ public class LabyModWorldEditCUIEvents
   @EventHandler
   public void onRender(RenderWorldEvent e)
   {
-    main.onPostRenderEntities(e.getPartialTicks());
+    this.main.onPostRenderEntities(e.getPartialTicks());
   }
   
   @EventHandler
   public void onJoin(JoinedServerEvent e)
   {
-    main.visible = true;
+    this.main.visible = true;
   }
   
   @EventHandler
   public void onTick(GameTickEvent e)
   {
-    if (Af == null) {
+    if (ave.A().f == null) {
       return;
     }
-    if (Af == prevWorld) {
+    if (ave.A().f == this.prevWorld) {
       return;
     }
-    prevWorld = Af;
-    ((CuboidRegion)main.getController().getSelection()).clear();
+    this.prevWorld = ave.A().f;
+    ((CuboidRegion)this.main.getController().getSelection()).clear();
   }
   
   @EventHandler
@@ -61,28 +61,28 @@ public class LabyModWorldEditCUIEvents
     String clean = e.getCleanMsg();
     if (clean.equals("Selection cleared."))
     {
-      ((CuboidRegion)main.getController().getSelection()).clear(); return;
+      ((CuboidRegion)this.main.getController().getSelection()).clear(); return;
     }
     Object s;
     Object pos1;
     Vector pos2;
     if ((e.getMsg().startsWith("§r§d")) && 
-      (clean.startsWith("Region expanded")) && (lastExpandSent != -1L))
+      (clean.startsWith("Region expanded")) && (this.lastExpandSent != -1L))
     {
-      CuboidRegion region = (CuboidRegion)main.getController().getSelection();
+      CuboidRegion region = (CuboidRegion)this.main.getController().getSelection();
       if ((region.getFirstPoint() == null) || 
         (region.getSecondPoint() == null))
       {
-        lastExpandSent = -1L;
-        lastArgs = null;
+        this.lastExpandSent = -1L;
+        this.lastArgs = null;
         return;
       }
-      if (lastArgs.toLowerCase().equals("vert"))
+      if (this.lastArgs.toLowerCase().equals("vert"))
       {
         region.expandVert();
         return;
       }
-      String[] args = lastArgs.split(" ");
+      String[] args = this.lastArgs.split(" ");
       List<Vector> dirs = new ArrayList();
       int reverseChange = 0;
       int change = Integer.parseInt(args[0]);
@@ -155,20 +155,20 @@ public class LabyModWorldEditCUIEvents
         .getX(), ((Vector)pos1).getY(), ((Vector)pos1).getZ()), new PointCube(pos2
         .getX(), pos2.getY(), pos2.getZ()));
       
-      lastExpandSent = -1L;
-      lastArgs = null; return;
+      this.lastExpandSent = -1L;
+      this.lastArgs = null; return;
     }
     int reverseChange;
     Vector3 pointCube1;
     Vector3 pointCube2;
     Object pos2;
     if ((e.getMsg().startsWith("§r§d")) && 
-      (clean.startsWith("Region contracted")) && (lastContractSent != -1L))
+      (clean.startsWith("Region contracted")) && (this.lastContractSent != -1L))
     {
-      String[] args = lastContractArgs.split(" ");
+      String[] args = this.lastContractArgs.split(" ");
       List<Vector> dirs = new ArrayList();
       
-      CuboidRegion region = (CuboidRegion)main.getController().getSelection();
+      CuboidRegion region = (CuboidRegion)this.main.getController().getSelection();
       int change = Integer.parseInt(args[0]);
       reverseChange = 0;
       String[] split;
@@ -246,15 +246,15 @@ public class LabyModWorldEditCUIEvents
         .getX(), pos1.getY(), pos1.getZ()), new PointCube(((Vector)pos2)
         .getX(), ((Vector)pos2).getY(), ((Vector)pos2).getZ()));
       
-      lastContractArgs = null;
-      lastContractSent = -1L;
+      this.lastContractArgs = null;
+      this.lastContractSent = -1L;
       return;
     }
-    if ((e.getMsg().startsWith("§r§d")) && (clean.equals("Region shifted.")) && (lastShiftSent != -1L))
+    if ((e.getMsg().startsWith("§r§d")) && (clean.equals("Region shifted.")) && (this.lastShiftSent != -1L))
     {
-      String[] args = lastShiftArgs.split(" ");
+      String[] args = this.lastShiftArgs.split(" ");
       
-      CuboidRegion region = (CuboidRegion)main.getController().getSelection();
+      CuboidRegion region = (CuboidRegion)this.main.getController().getSelection();
       
       List<Vector> dirs = new ArrayList();
       int change = Integer.parseInt(args[0]);
@@ -295,8 +295,8 @@ public class LabyModWorldEditCUIEvents
         .getX(), pos1.getY(), pos1.getZ()), new PointCube(pos2
         .getX(), pos2.getY(), pos2.getZ()));
       
-      lastShiftArgs = null;
-      lastShiftSent = -1L;
+      this.lastShiftArgs = null;
+      this.lastShiftSent = -1L;
       return;
     }
     if ((!e.getMsg().startsWith("§r§d")) || (
@@ -306,7 +306,7 @@ public class LabyModWorldEditCUIEvents
     int point = clean.startsWith("First") ? 0 : 1;
     String[] coords = clean.split("\\)")[0].split("\\(")[1].split(", ");
     
-    ((CuboidRegion)main.getController().getSelection()).setCuboidPoint(point, 
+    ((CuboidRegion)this.main.getController().getSelection()).setCuboidPoint(point, 
       Double.parseDouble(coords[0]), 
       Double.parseDouble(coords[1]), Double.parseDouble(coords[2]));
   }
@@ -317,15 +317,15 @@ public class LabyModWorldEditCUIEvents
     if (e.getMessage().toLowerCase().startsWith("//shift "))
     {
       RegionUtils.setLastYawAndPitch();
-      lastShiftSent = System.currentTimeMillis();
-      lastShiftArgs = e.getMessage().toLowerCase().replace("//shift ", "");
+      this.lastShiftSent = System.currentTimeMillis();
+      this.lastShiftArgs = e.getMessage().toLowerCase().replace("//shift ", "");
       return;
     }
     if (e.getMessage().toLowerCase().startsWith("//contract "))
     {
       RegionUtils.setLastYawAndPitch();
-      lastContractSent = System.currentTimeMillis();
-      lastContractArgs = e.getMessage().toLowerCase().replace("//contract ", "");
+      this.lastContractSent = System.currentTimeMillis();
+      this.lastContractArgs = e.getMessage().toLowerCase().replace("//contract ", "");
       return;
     }
     if (!e.getMessage().toLowerCase().startsWith("//expand ")) {
@@ -334,13 +334,13 @@ public class LabyModWorldEditCUIEvents
     if ((e.getMessage().toLowerCase().endsWith(" vert")) || 
       (e.getMessage().toLowerCase().endsWith(" vertical")))
     {
-      lastExpandSent = System.currentTimeMillis();
-      lastArgs = "vert";
+      this.lastExpandSent = System.currentTimeMillis();
+      this.lastArgs = "vert";
       return;
     }
     RegionUtils.setLastYawAndPitch();
-    lastArgs = e.getMessage().toLowerCase().replace("//expand ", "");
-    lastExpandSent = System.currentTimeMillis();
+    this.lastArgs = e.getMessage().toLowerCase().replace("//expand ", "");
+    this.lastExpandSent = System.currentTimeMillis();
   }
   
   private String lastArgs = null;

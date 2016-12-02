@@ -15,68 +15,68 @@ public class awy
   
   public awy(awx ☃, String ☃, String ☃, int ☃)
   {
-    a = ☃;
-    f = ☃;
-    r = ☃;
-    i = ☃;
+    this.a = ☃;
+    this.f = ☃;
+    this.r = ☃;
+    this.i = ☃;
     
-    g = bnq.a("gui.yes", new Object[0]);
-    h = bnq.a("gui.no", new Object[0]);
+    this.g = bnq.a("gui.yes", new Object[0]);
+    this.h = bnq.a("gui.no", new Object[0]);
   }
   
   public awy(awx ☃, String ☃, String ☃, String ☃, String ☃, int ☃)
   {
-    a = ☃;
-    f = ☃;
-    r = ☃;
-    g = ☃;
-    h = ☃;
-    i = ☃;
+    this.a = ☃;
+    this.f = ☃;
+    this.r = ☃;
+    this.g = ☃;
+    this.h = ☃;
+    this.i = ☃;
   }
   
   public void b()
   {
-    n.add(new awe(0, l / 2 - 155, m / 6 + 96, g));
-    n.add(new awe(1, l / 2 - 155 + 160, m / 6 + 96, h));
+    this.n.add(new awe(0, this.l / 2 - 155, this.m / 6 + 96, this.g));
+    this.n.add(new awe(1, this.l / 2 - 155 + 160, this.m / 6 + 96, this.h));
     
-    s.clear();
-    s.addAll(q.c(r, l - 50));
+    this.s.clear();
+    this.s.addAll(this.q.c(this.r, this.l - 50));
   }
   
   protected void a(avs ☃)
   {
-    a.a(k == 0, i);
+    this.a.a(☃.k == 0, this.i);
   }
   
   public void a(int ☃, int ☃, float ☃)
   {
     c();
     
-    a(q, f, l / 2, 70, 16777215);
+    a(this.q, this.f, this.l / 2, 70, 16777215);
     
     int ☃ = 90;
-    for (String ☃ : s)
+    for (String ☃ : this.s)
     {
-      a(q, ☃, l / 2, ☃, 16777215);
-      ☃ += q.a;
+      a(this.q, ☃, this.l / 2, ☃, 16777215);
+      ☃ += this.q.a;
     }
     super.a(☃, ☃, ☃);
   }
   
   public void b(int ☃)
   {
-    t = ☃;
-    for (avs ☃ : n) {
-      l = false;
+    this.t = ☃;
+    for (avs ☃ : this.n) {
+      ☃.l = false;
     }
   }
   
   public void e()
   {
     super.e();
-    if (--t == 0) {
-      for (avs ☃ : n) {
-        l = true;
+    if (--this.t == 0) {
+      for (avs ☃ : this.n) {
+        ☃.l = true;
       }
     }
   }

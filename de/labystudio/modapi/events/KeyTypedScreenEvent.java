@@ -25,17 +25,17 @@ public class KeyTypedScreenEvent
   
   public axu getScreen()
   {
-    return screen;
+    return this.screen;
   }
   
   public int getKeyCode()
   {
-    return keyCode;
+    return this.keyCode;
   }
   
   public char getTypedChar()
   {
-    return typedChar;
+    return this.typedChar;
   }
   
   public Map<Listener, List<Method>> getListenerMethods()

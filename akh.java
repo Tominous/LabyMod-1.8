@@ -8,7 +8,7 @@ public class akh
   protected akh(arm ☃)
   {
     super(☃);
-    j(M.b().a(a, cq.c).a(b, Boolean.valueOf(false)).a(N, akh.a.b));
+    j(this.M.b().a(a, cq.c).a(b, Boolean.valueOf(false)).a(N, akh.a.b));
     float ☃ = 0.5F;
     float ☃ = 1.0F;
     a(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
@@ -87,7 +87,7 @@ public class akh
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (J == arm.f) {
+    if (this.J == arm.f) {
       return true;
     }
     ☃ = ☃.a(b);
@@ -99,7 +99,7 @@ public class akh
   
   public void a(adm ☃, cj ☃, alz ☃, afh ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
     cj ☃ = ☃.a(((cq)☃.b(a)).d());
@@ -173,7 +173,7 @@ public class akh
   
   private static boolean c(afh ☃)
   {
-    return ((J.k()) && (☃.d())) || (☃ == afi.aX) || ((☃ instanceof ahh)) || ((☃ instanceof aju));
+    return ((☃.J.k()) && (☃.d())) || (☃ == afi.aX) || ((☃ instanceof ahh)) || ((☃ instanceof aju));
   }
   
   public adf m()
@@ -212,17 +212,17 @@ public class akh
     
     private a(String ☃)
     {
-      c = ☃;
+      this.c = ☃;
     }
     
     public String toString()
     {
-      return c;
+      return this.c;
     }
     
     public String l()
     {
-      return c;
+      return this.c;
     }
   }
 }

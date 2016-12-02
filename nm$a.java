@@ -7,20 +7,20 @@ class nm$a<V>
   
   nm$a(int ☃, int ☃, V ☃, a<V> ☃)
   {
-    b = ☃;
-    c = ☃;
-    a = ☃;
-    d = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.a = ☃;
+    this.d = ☃;
   }
   
   public final int a()
   {
-    return a;
+    return this.a;
   }
   
   public final V b()
   {
-    return (V)b;
+    return (V)this.b;
   }
   
   public final boolean equals(Object ☃)
@@ -44,7 +44,7 @@ class nm$a<V>
   
   public final int hashCode()
   {
-    return nm.f(a);
+    return nm.f(this.a);
   }
   
   public final String toString()

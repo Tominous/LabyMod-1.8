@@ -6,36 +6,36 @@ public class qm
   
   public qm(pr ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a()
   {
-    double ☃ = a.s - a.p;
-    double ☃ = a.u - a.r;
+    double ☃ = this.a.s - this.a.p;
+    double ☃ = this.a.u - this.a.r;
     if (☃ * ☃ + ☃ * ☃ > 2.500000277905201E-7D)
     {
-      a.aI = a.y;
-      a.aK = a(a.aI, a.aK, 75.0F);
-      c = a.aK;
-      b = 0;
+      this.a.aI = this.a.y;
+      this.a.aK = a(this.a.aI, this.a.aK, 75.0F);
+      this.c = this.a.aK;
+      this.b = 0;
       return;
     }
     float ☃ = 75.0F;
-    if (Math.abs(a.aK - c) > 15.0F)
+    if (Math.abs(this.a.aK - this.c) > 15.0F)
     {
-      b = 0;
-      c = a.aK;
+      this.b = 0;
+      this.c = this.a.aK;
     }
     else
     {
-      b += 1;
+      this.b += 1;
       int ☃ = 10;
-      if (b > 10) {
-        ☃ = Math.max(1.0F - (b - 10) / 10.0F, 0.0F) * 75.0F;
+      if (this.b > 10) {
+        ☃ = Math.max(1.0F - (this.b - 10) / 10.0F, 0.0F) * 75.0F;
       }
     }
-    a.aI = a(a.aK, a.aI, ☃);
+    this.a.aI = a(this.a.aK, this.a.aI, ☃);
   }
   
   private float a(float ☃, float ☃, float ☃)

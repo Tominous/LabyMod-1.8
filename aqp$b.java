@@ -12,21 +12,21 @@ public class aqp$b
   {
     super(☃);
     
-    m = ☃;
-    l = ☃;
-    a = ((☃ == cq.c) || (☃ == cq.d) ? ☃.e() : ☃.c());
+    this.m = ☃;
+    this.l = ☃;
+    this.a = ((☃ == cq.c) || (☃ == cq.d) ? ☃.e() : ☃.c());
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("Steps", a);
+    ☃.a("Steps", this.a);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    a = ☃.f("Steps");
+    this.a = ☃.f("Steps");
   }
   
   public static aqe a(List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃)
@@ -39,7 +39,7 @@ public class aqp$b
     if (☃ == null) {
       return null;
     }
-    if (cb == b) {
+    if (☃.c().b == ☃.b) {
       for (int ☃ = 3; ☃ >= 1; ☃--)
       {
         ☃ = aqe.a(☃, ☃, ☃, -1, -1, 0, 5, 5, ☃ - 1, ☃);
@@ -56,7 +56,7 @@ public class aqp$b
     if (a(☃, ☃)) {
       return false;
     }
-    for (int ☃ = 0; ☃ < a; ☃++)
+    for (int ☃ = 0; ☃ < this.a; ☃++)
     {
       a(☃, afi.bf.Q(), 0, 0, ☃, ☃);
       a(☃, afi.bf.Q(), 1, 0, ☃, ☃);

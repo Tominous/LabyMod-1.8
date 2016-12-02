@@ -10,8 +10,8 @@ public class fw
   
   public fw(oj ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public void a(fj ☃)
@@ -22,22 +22,22 @@ public class fw
   public void a(em ☃)
     throws IOException
   {
-    a = oj.a(☃.readUnsignedByte());
+    this.a = oj.a(☃.readUnsignedByte());
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(a.a());
+    ☃.writeByte(this.a.a());
   }
   
   public boolean a()
   {
-    return b;
+    return this.b;
   }
   
   public oj b()
   {
-    return a;
+    return this.a;
   }
 }

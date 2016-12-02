@@ -15,73 +15,73 @@ public class bnm$a
   
   private bnm$a(bnm this$0, File resourcePackFileIn)
   {
-    b = resourcePackFileIn;
+    this.b = resourcePackFileIn;
   }
   
   public void setDirPath(String path)
   {
-    dirPath = path;
+    this.dirPath = path;
   }
   
   public String getDirPath()
   {
-    return dirPath;
+    return this.dirPath;
   }
   
   public File getResourcePackFile()
   {
-    return b;
+    return this.b;
   }
   
   public void a()
     throws IOException
   {
-    c = (b.isDirectory() ? new bnd(b) : new bnc(b));
-    d = ((boj)c.a(this$0.b, "pack"));
+    this.c = (this.b.isDirectory() ? new bnd(this.b) : new bnc(this.b));
+    this.d = ((boj)this.c.a(this.this$0.b, "pack"));
     try
     {
-      e = c.a();
+      this.e = this.c.a();
     }
     catch (IOException localIOException) {}
-    if (e == null) {
-      e = this$0.a.a();
+    if (this.e == null) {
+      this.e = this.this$0.a.a();
     }
     b();
   }
   
   public void a(bmj textureManagerIn)
   {
-    if (f == null) {
-      f = textureManagerIn.a("texturepackicon", new blz(e));
+    if (this.f == null) {
+      this.f = textureManagerIn.a("texturepackicon", new blz(this.e));
     }
-    textureManagerIn.a(f);
+    textureManagerIn.a(this.f);
   }
   
   public void b()
   {
-    if ((c instanceof Closeable)) {
-      IOUtils.closeQuietly((Closeable)c);
+    if ((this.c instanceof Closeable)) {
+      IOUtils.closeQuietly((Closeable)this.c);
     }
   }
   
   public bnk c()
   {
-    return c;
+    return this.c;
   }
   
   public String d()
   {
-    return c.b();
+    return this.c.b();
   }
   
   public String e()
   {
-    return d == null ? a.m + "Invalid pack.mcmeta (or missing 'pack' section)" : d.a().d();
+    return this.d == null ? a.m + "Invalid pack.mcmeta (or missing 'pack' section)" : this.d.a().d();
   }
   
   public int f()
   {
-    return d.b();
+    return this.d.b();
   }
   
   public boolean equals(Object p_equals_1_)
@@ -96,6 +96,6 @@ public class bnm$a
   
   public String toString()
   {
-    return String.format("%s:%s:%d", new Object[] { b.getName(), b.isDirectory() ? "folder" : "zip", Long.valueOf(b.lastModified()) });
+    return String.format("%s:%s:%d", new Object[] { this.b.getName(), this.b.isDirectory() ? "folder" : "zip", Long.valueOf(this.b.lastModified()) });
   }
 }

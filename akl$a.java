@@ -16,19 +16,19 @@ public enum akl$a
   
   private akl$a(int ☃, String ☃, String ☃)
   {
-    d = ☃;
-    e = ☃;
-    f = ☃;
+    this.d = ☃;
+    this.e = ☃;
+    this.f = ☃;
   }
   
   public int a()
   {
-    return d;
+    return this.d;
   }
   
   public String toString()
   {
-    return e;
+    return this.e;
   }
   
   public static a a(int ☃)
@@ -41,11 +41,11 @@ public enum akl$a
   
   public String l()
   {
-    return e;
+    return this.e;
   }
   
   public String c()
   {
-    return f;
+    return this.f;
   }
 }

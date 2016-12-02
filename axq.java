@@ -38,25 +38,25 @@ public class axq
   
   public axq(axa ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
   
   public void b()
   {
-    n.clear();
+    this.n.clear();
     Keyboard.enableRepeatEvents(true);
     
-    g = bnq.a("createWorld.customize.presets.title", new Object[0]);
-    h = bnq.a("createWorld.customize.presets.share", new Object[0]);
-    i = bnq.a("createWorld.customize.presets.list", new Object[0]);
-    t = new avw(2, q, 50, 40, l - 100, 20);
-    r = new axq.b();
+    this.g = bnq.a("createWorld.customize.presets.title", new Object[0]);
+    this.h = bnq.a("createWorld.customize.presets.share", new Object[0]);
+    this.i = bnq.a("createWorld.customize.presets.list", new Object[0]);
+    this.t = new avw(2, this.q, 50, 40, this.l - 100, 20);
+    this.r = new axq.b();
     
-    t.f(1230);
-    t.a(f.a());
+    this.t.f(1230);
+    this.t.a(this.f.a());
     
-    n.add(s = new avs(0, l / 2 - 155, m - 28, 150, 20, bnq.a("createWorld.customize.presets.select", new Object[0])));
-    n.add(new avs(1, l / 2 + 5, m - 28, 150, 20, bnq.a("gui.cancel", new Object[0])));
+    this.n.add(this.s = new avs(0, this.l / 2 - 155, this.m - 28, 150, 20, bnq.a("createWorld.customize.presets.select", new Object[0])));
+    this.n.add(new avs(1, this.l / 2 + 5, this.m - 28, 150, 20, bnq.a("gui.cancel", new Object[0])));
     
     a();
   }
@@ -64,7 +64,7 @@ public class axq
   public void k()
   {
     super.k();
-    r.p();
+    this.r.p();
   }
   
   public void m()
@@ -74,27 +74,27 @@ public class axq
   
   protected void a(int ☃, int ☃, int ☃)
   {
-    t.a(☃, ☃, ☃);
+    this.t.a(☃, ☃, ☃);
     super.a(☃, ☃, ☃);
   }
   
   protected void a(char ☃, int ☃)
   {
-    if (!t.a(☃, ☃)) {
+    if (!this.t.a(☃, ☃)) {
       super.a(☃, ☃);
     }
   }
   
   protected void a(avs ☃)
   {
-    if ((k == 0) && (g()))
+    if ((☃.k == 0) && (g()))
     {
-      f.a(t.b());
-      j.a(f);
+      this.f.a(this.t.b());
+      this.j.a(this.f);
     }
-    else if (k == 1)
+    else if (☃.k == 1)
     {
-      j.a(f);
+      this.j.a(this.f);
     }
   }
   
@@ -102,30 +102,30 @@ public class axq
   {
     c();
     
-    r.a(☃, ☃, ☃);
-    a(q, g, l / 2, 8, 16777215);
-    c(q, h, 50, 30, 10526880);
-    c(q, i, 50, 70, 10526880);
+    this.r.a(☃, ☃, ☃);
+    a(this.q, this.g, this.l / 2, 8, 16777215);
+    c(this.q, this.h, 50, 30, 10526880);
+    c(this.q, this.i, 50, 70, 10526880);
     
-    t.g();
+    this.t.g();
     super.a(☃, ☃, ☃);
   }
   
   public void e()
   {
-    t.a();
+    this.t.a();
     super.e();
   }
   
   public void a()
   {
     boolean ☃ = g();
-    s.l = ☃;
+    this.s.l = ☃;
   }
   
   private boolean g()
   {
-    return ((r.u > -1) && (r.u < a.size())) || (t.b().length() > 1);
+    return ((this.r.u > -1) && (this.r.u < a.size())) || (this.t.b().length() > 1);
   }
   
   class b
@@ -135,7 +135,7 @@ public class axq
     
     public b()
     {
-      super(l, m, 80, m - 37, 24);
+      super(axq.this.l, axq.this.m, 80, axq.this.m - 37, 24);
     }
     
     private void a(int ☃, int ☃, zw ☃, int ☃)
@@ -146,7 +146,7 @@ public class axq
       
       avc.c();
       
-      k.a(new zx(☃, 1, ☃), ☃ + 2, ☃ + 2);
+      axq.this.k.a(new zx(☃, 1, ☃), ☃ + 2, ☃ + 2);
       avc.a();
       
       bfl.C();
@@ -160,7 +160,7 @@ public class axq
     private void d(int ☃, int ☃, int ☃, int ☃)
     {
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-      a.P().a(avp.c);
+      this.a.P().a(avp.c);
       
       float ☃ = 0.0078125F;
       float ☃ = 0.0078125F;
@@ -183,14 +183,14 @@ public class axq
     
     protected void a(int ☃, boolean ☃, int ☃, int ☃)
     {
-      u = ☃;
+      this.u = ☃;
       axq.this.a();
-      axq.f(axq.this).a(fgeteu)).d);
+      axq.f(axq.this).a(((axq.a)axq.f().get(axq.e(axq.this).u)).d);
     }
     
     protected boolean a(int ☃)
     {
-      return ☃ == u;
+      return ☃ == this.u;
     }
     
     protected void a() {}
@@ -198,8 +198,8 @@ public class axq
     protected void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
     {
       axq.a ☃ = (axq.a)axq.f().get(☃);
-      a(☃, ☃, a, b);
-      q.a(c, ☃ + 18 + 5, ☃ + 6, 16777215);
+      a(☃, ☃, ☃.a, ☃.b);
+      axq.this.q.a(☃.c, ☃ + 18 + 5, ☃ + 6, 16777215);
     }
   }
   
@@ -219,7 +219,7 @@ public class axq
     for (int ☃ = ☃.length - 1; ☃ >= 0; ☃--) {
       ☃.c().add(☃[☃]);
     }
-    ☃.a(az);
+    ☃.a(☃.az);
     ☃.d();
     if (☃ != null) {
       for (String ☃ : ☃) {
@@ -238,10 +238,10 @@ public class axq
     
     public a(zw ☃, int ☃, String ☃, String ☃)
     {
-      a = ☃;
-      b = ☃;
-      c = ☃;
-      d = ☃;
+      this.a = ☃;
+      this.b = ☃;
+      this.c = ☃;
+      this.d = ☃;
     }
   }
 }

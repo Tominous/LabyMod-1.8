@@ -9,24 +9,24 @@ public class kc$a
   
   private void a(String ☃)
   {
-    b.add(0, ☃);
+    this.b.add(0, ☃);
   }
   
   public String b()
   {
-    return StringUtils.join(b, "->");
+    return StringUtils.join(this.b, "->");
   }
   
   public String toString()
   {
-    if (a != null)
+    if (this.a != null)
     {
-      if (!b.isEmpty()) {
-        return a + " " + b();
+      if (!this.b.isEmpty()) {
+        return this.a + " " + b();
       }
-      return a;
+      return this.a;
     }
-    if (!b.isEmpty()) {
+    if (!this.b.isEmpty()) {
       return "(Unknown file) " + b();
     }
     return "(Unknown file)";

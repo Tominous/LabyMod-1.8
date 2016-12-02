@@ -8,6 +8,6 @@ class ato$6
   public String a()
     throws Exception
   {
-    return String.valueOf(ato.i(a));
+    return String.valueOf(ato.i(this.a));
   }
 }

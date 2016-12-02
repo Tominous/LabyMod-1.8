@@ -27,22 +27,22 @@ public class MouseClickedScreenEvent
   
   public axu getScreen()
   {
-    return screen;
+    return this.screen;
   }
   
   public int getMouseX()
   {
-    return mouseX;
+    return this.mouseX;
   }
   
   public int getMouseY()
   {
-    return mouseY;
+    return this.mouseY;
   }
   
   public int getButton()
   {
-    return button;
+    return this.button;
   }
   
   public Map<Listener, List<Method>> getListenerMethods()

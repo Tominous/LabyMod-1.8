@@ -17,16 +17,16 @@ public enum RegionType
   
   public String getKey()
   {
-    return key;
+    return this.key;
   }
   
   public String getName()
   {
-    return name;
+    return this.name;
   }
   
   public Class<? extends BaseRegion> getRegionClass()
   {
-    return regionClass;
+    return this.regionClass;
   }
 }

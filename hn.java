@@ -11,25 +11,25 @@ public class hn
   
   public hn(int ☃, int ☃, zx ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = (☃ == null ? null : ☃.k());
+    this.a = ☃;
+    this.b = ☃;
+    this.c = (☃ == null ? null : ☃.k());
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.e();
-    b = ☃.readShort();
-    c = ☃.i();
+    this.a = ☃.e();
+    this.b = ☃.readShort();
+    this.c = ☃.i();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a);
-    ☃.writeShort(b);
-    ☃.a(c);
+    ☃.b(this.a);
+    ☃.writeShort(this.b);
+    ☃.a(this.c);
   }
   
   public void a(fj ☃)
@@ -39,16 +39,16 @@ public class hn
   
   public zx a()
   {
-    return c;
+    return this.c;
   }
   
   public int b()
   {
-    return a;
+    return this.a;
   }
   
   public int c()
   {
-    return b;
+    return this.b;
   }
 }

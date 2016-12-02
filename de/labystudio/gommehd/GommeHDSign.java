@@ -50,12 +50,12 @@ public class GommeHDSign
   public static ArrayList<String> getText(aln sign)
   {
     ArrayList<String> text = new ArrayList();
-    avn var20 = Ak;
+    avn var20 = ave.A().k;
     byte var14 = 0;
-    for (int var15 = 0; var15 < a.length; var15++) {
-      if (a[var15] != null)
+    for (int var15 = 0; var15 < sign.a.length; var15++) {
+      if (sign.a[var15] != null)
       {
-        eu var16 = a[var15];
+        eu var16 = sign.a[var15];
         List var17 = avu.a(var16, 90, var20, false, true);
         String var18 = (var17 != null) && (var17.size() > 0) ? ((eu)var17.get(0)).d() : "";
         text.add(var18);
@@ -265,10 +265,10 @@ public class GommeHDSign
   
   public static void render(aln sign)
   {
-    if (updateSign > 50) {
-      updateSign = 0;
+    if (sign.updateSign > 50) {
+      sign.updateSign = 0;
     }
-    if ((updateSign == 0) && (allowed) && (GommeHD.isGommeHD()))
+    if ((sign.updateSign == 0) && (allowed) && (GommeHD.isGommeHD()))
     {
       sign.setText(new ArrayList());
       sign.setAvailable(sign.getText());
@@ -277,7 +277,7 @@ public class GommeHDSign
       sign.setSize(sign.getText());
       sign.setEmpty(sign.getText());
     }
-    updateSign += 1;
+    sign.updateSign += 1;
     if ((allowed) && 
       (GommeHD.isGommeHD()) && 
       (!sign.getText().isEmpty()))

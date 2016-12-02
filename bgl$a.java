@@ -5,6 +5,6 @@ final class bgl$a
   
   private bgl$a(bgl ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
 }

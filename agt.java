@@ -16,7 +16,7 @@ public class agt
   public agt(arm ☃, arn ☃)
   {
     super(☃, ☃);
-    j(M.b().a(a, Boolean.valueOf(false)).a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)));
+    j(this.M.b().a(a, Boolean.valueOf(false)).a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)));
     a(yz.c);
   }
   
@@ -111,11 +111,11 @@ public class agt
     if (☃ == afi.cv) {
       return false;
     }
-    if ((((☃ instanceof agt)) && (J == J)) || ((☃ instanceof agu))) {
+    if ((((☃ instanceof agt)) && (☃.J == this.J)) || ((☃ instanceof agu))) {
       return true;
     }
-    if ((J.k()) && (☃.d())) {
-      return J != arm.C;
+    if ((☃.J.k()) && (☃.d())) {
+      return ☃.J != arm.C;
     }
     return false;
   }
@@ -127,7 +127,7 @@ public class agt
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (D) {
+    if (☃.D) {
       return true;
     }
     return zz.a(☃, ☃, ☃);

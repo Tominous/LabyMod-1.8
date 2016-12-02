@@ -46,14 +46,14 @@ class bdg$2
           for (char ☃ : ☃) {
             ☃.writeChar(☃);
           }
-          ☃.writeShort(7 + 2 * a.a().length());
+          ☃.writeShort(7 + 2 * bdg.2.this.a.a().length());
           ☃.writeByte(127);
-          ☃ = a.a().toCharArray();
+          ☃ = bdg.2.this.a.a().toCharArray();
           ☃.writeShort(☃.length);
           for (char ☃ : ☃) {
             ☃.writeChar(☃);
           }
-          ☃.writeInt(a.b());
+          ☃.writeInt(bdg.2.this.a.b());
           
           ☃.channel().writeAndFlush(☃).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
         }
@@ -79,10 +79,10 @@ class bdg$2
             int ☃ = ns.a(☃[4], -1);
             int ☃ = ns.a(☃[5], -1);
             
-            b.f = -1;
-            b.g = ☃;
-            b.d = ☃;
-            b.c = (a.h + "" + ☃ + "" + a.i + "/" + a.h + ☃);
+            bdg.2.this.b.f = -1;
+            bdg.2.this.b.g = ☃;
+            bdg.2.this.b.d = ☃;
+            bdg.2.this.b.c = (a.h + "" + ☃ + "" + a.i + "/" + a.h + ☃);
           }
         }
         ☃.close();

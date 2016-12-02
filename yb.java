@@ -9,13 +9,13 @@ public class yb
   
   public yb(wm ☃, acy ☃, adm ☃)
   {
-    a = ☃;
-    g = ☃;
+    this.a = ☃;
+    this.g = ☃;
     
-    f = new ya(d, ☃);
-    a(new yg(f, 0, 36, 53));
-    a(new yg(f, 1, 62, 53));
-    a(new yc(d, ☃, f, 2, 120, 53));
+    this.f = new ya(☃.d, ☃);
+    a(new yg(this.f, 0, 36, 53));
+    a(new yg(this.f, 1, 62, 53));
+    a(new yc(☃.d, ☃, this.f, 2, 120, 53));
     for (int ☃ = 0; ☃ < 3; ☃++) {
       for (int ☃ = 0; ☃ < 9; ☃++) {
         a(new yg(☃, ☃ + ☃ * 9 + 9, 8 + ☃ * 18, 84 + ☃ * 18));
@@ -28,7 +28,7 @@ public class yb
   
   public ya e()
   {
-    return f;
+    return this.f;
   }
   
   public void a(xn ☃)
@@ -43,26 +43,26 @@ public class yb
   
   public void a(og ☃)
   {
-    f.h();
+    this.f.h();
     super.a(☃);
   }
   
   public void d(int ☃)
   {
-    f.d(☃);
+    this.f.d(☃);
   }
   
   public void b(int ☃, int ☃) {}
   
   public boolean a(wn ☃)
   {
-    return a.v_() == ☃;
+    return this.a.v_() == ☃;
   }
   
   public zx b(wn ☃, int ☃)
   {
     zx ☃ = null;
-    yg ☃ = (yg)c.get(☃);
+    yg ☃ = (yg)this.c.get(☃);
     if ((☃ != null) && (☃.e()))
     {
       zx ☃ = ☃.d();
@@ -91,12 +91,12 @@ public class yb
       {
         return null;
       }
-      if (b == 0) {
+      if (☃.b == 0) {
         ☃.d(null);
       } else {
         ☃.f();
       }
-      if (b == b) {
+      if (☃.b == ☃.b) {
         return null;
       }
       ☃.a(☃, ☃);
@@ -107,17 +107,17 @@ public class yb
   public void b(wn ☃)
   {
     super.b(☃);
-    a.a_(null);
+    this.a.a_(null);
     
     super.b(☃);
-    if (g.D) {
+    if (this.g.D) {
       return;
     }
-    zx ☃ = f.b(0);
+    zx ☃ = this.f.b(0);
     if (☃ != null) {
       ☃.a(☃, false);
     }
-    ☃ = f.b(1);
+    ☃ = this.f.b(1);
     if (☃ != null) {
       ☃.a(☃, false);
     }

@@ -10,8 +10,8 @@ public class aqw$m
   {
     super(☃, ☃);
     
-    m = ☃;
-    l = ☃;
+    this.m = ☃;
+    this.l = ☃;
   }
   
   public static m a(aqw.k ☃, List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃, int ☃)
@@ -25,13 +25,13 @@ public class aqw$m
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
   {
-    if (h < 0)
+    if (this.h < 0)
     {
-      h = b(☃, ☃);
-      if (h < 0) {
+      this.h = b(☃, ☃);
+      if (this.h < 0) {
         return true;
       }
-      l.a(0, h - l.e + 7 - 1, 0);
+      this.l.a(0, this.h - this.l.e + 7 - 1, 0);
     }
     a(☃, ☃, 1, 1, 1, 7, 4, 4, afi.a.Q(), afi.a.Q(), false);
     a(☃, ☃, 2, 1, 6, 8, 4, 10, afi.a.Q(), afi.a.Q(), false);
@@ -119,7 +119,7 @@ public class aqw$m
     
     a(☃, afi.a.Q(), 2, 1, 0, ☃);
     a(☃, afi.a.Q(), 2, 2, 0, ☃);
-    a(☃, afi.aa.Q().a(akf.a, m), 2, 3, 1, ☃);
+    a(☃, afi.aa.Q().a(akf.a, this.m), 2, 3, 1, ☃);
     a(☃, ☃, ☃, 2, 1, 0, cq.b(a(afi.ao, 1)));
     a(☃, ☃, 1, 0, -1, 3, 2, -1, afi.a.Q(), afi.a.Q(), false);
     if ((a(☃, 2, 0, -1, ☃).c().t() == arm.a) && (a(☃, 2, -1, -1, ☃).c().t() != arm.a)) {

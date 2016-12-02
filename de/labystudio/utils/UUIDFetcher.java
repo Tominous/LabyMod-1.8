@@ -33,7 +33,7 @@ public class UUIDFetcher
     {
       public void run()
       {
-        val$action.accept(UUIDFetcher.getUUID(name));
+        this.val$action.accept(UUIDFetcher.getUUID(name));
       }
     });
   }
@@ -49,7 +49,7 @@ public class UUIDFetcher
     {
       public void run()
       {
-        val$action.accept(UUIDFetcher.getUUIDAt(name, timestamp));
+        this.val$action.accept(UUIDFetcher.getUUIDAt(name, timestamp));
       }
     });
   }
@@ -68,9 +68,9 @@ public class UUIDFetcher
       if (data == null) {
         return null;
       }
-      uuidCache.put(name, id);
-      nameCache.put(id, name);
-      return id;
+      uuidCache.put(name, data.id);
+      nameCache.put(data.id, data.name);
+      return data.id;
     }
     catch (Exception e)
     {
@@ -85,7 +85,7 @@ public class UUIDFetcher
     {
       public void run()
       {
-        val$action.accept(UUIDFetcher.getName(uuid));
+        this.val$action.accept(UUIDFetcher.getName(uuid));
       }
     });
   }
@@ -101,9 +101,9 @@ public class UUIDFetcher
       connection.setReadTimeout(5000);
       UUIDFetcher[] nameHistory = (UUIDFetcher[])gson.fromJson(new BufferedReader(new InputStreamReader(connection.getInputStream())), UUIDFetcher[].class);
       UUIDFetcher currentNameData = nameHistory[(nameHistory.length - 1)];
-      uuidCache.put(name.toLowerCase(), uuid);
-      nameCache.put(uuid, name);
-      return name;
+      uuidCache.put(currentNameData.name.toLowerCase(), uuid);
+      nameCache.put(uuid, currentNameData.name);
+      return currentNameData.name;
     }
     catch (Exception e)
     {

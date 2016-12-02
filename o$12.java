@@ -7,10 +7,10 @@ final class o$12
   
   public boolean a(pk ☃)
   {
-    int ☃ = o.a((int)Math.floor(y));
-    if (a > b) {
-      return (☃ >= a) || (☃ <= b);
+    int ☃ = o.a((int)Math.floor(☃.y));
+    if (this.a > this.b) {
+      return (☃ >= this.a) || (☃ <= this.b);
     }
-    return (☃ >= a) && (☃ <= b);
+    return (☃ >= this.a) && (☃ <= this.b);
   }
 }

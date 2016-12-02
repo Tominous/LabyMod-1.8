@@ -29,17 +29,17 @@ public class L
     
     public void add(String key, String translation)
     {
-      translations.put(key.toLowerCase(), translation);
+      this.translations.put(key.toLowerCase(), translation);
     }
     
     public String get(String key)
     {
-      return (String)translations.get(key.toLowerCase());
+      return (String)this.translations.get(key.toLowerCase());
     }
     
     public String getName()
     {
-      return name;
+      return this.name;
     }
   }
   
@@ -99,7 +99,7 @@ public class L
       prop.load(input);
       Language lang = new Language(name);
       for (Map.Entry<Object, Object> s : prop.entrySet()) {
-        translations.put(s.getKey().toString(), s.getValue().toString());
+        lang.translations.put(s.getKey().toString(), s.getValue().toString());
       }
       lang.put(name, lang);
     }

@@ -9,42 +9,42 @@ public class rt
   
   public rt(ty ☃)
   {
-    a = ☃;
+    this.a = ☃;
     a(3);
   }
   
   public boolean a()
   {
-    if (!a.o.w()) {
+    if (!this.a.o.w()) {
       return false;
     }
-    if (a.bc().nextInt(8000) != 0) {
+    if (this.a.bc().nextInt(8000) != 0) {
       return false;
     }
-    b = ((wi)a.o.a(wi.class, a.aR().b(6.0D, 2.0D, 6.0D), a));
-    return b != null;
+    this.b = ((wi)this.a.o.a(wi.class, this.a.aR().b(6.0D, 2.0D, 6.0D), this.a));
+    return this.b != null;
   }
   
   public boolean b()
   {
-    return c > 0;
+    return this.c > 0;
   }
   
   public void c()
   {
-    c = 400;
-    a.a(true);
+    this.c = 400;
+    this.a.a(true);
   }
   
   public void d()
   {
-    a.a(false);
-    b = null;
+    this.a.a(false);
+    this.b = null;
   }
   
   public void e()
   {
-    a.p().a(b, 30.0F, 30.0F);
-    c -= 1;
+    this.a.p().a(this.b, 30.0F, 30.0F);
+    this.c -= 1;
   }
 }

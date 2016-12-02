@@ -19,6 +19,6 @@ public class Preset
   
   public String getName()
   {
-    return bnq.a(name, new Object[0]);
+    return bnq.a(this.name, new Object[0]);
   }
 }

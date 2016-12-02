@@ -41,7 +41,7 @@ public class bpx
   private boolean f;
   private int g = 0;
   private final Map<String, bpj> h = HashBiMap.create();
-  private final Map<bpj, String> i = ((BiMap)h).inverse();
+  private final Map<bpj, String> i = ((BiMap)this.h).inverse();
   private Map<bpj, bpw> j = Maps.newHashMap();
   private final Multimap<bpg, String> k = HashMultimap.create();
   private final List<bpk> l = Lists.newArrayList();
@@ -50,8 +50,8 @@ public class bpx
   
   public bpx(bpz ☃, avh ☃)
   {
-    c = ☃;
-    d = ☃;
+    this.c = ☃;
+    this.d = ☃;
     try
     {
       SoundSystemConfig.addLibrary(LibraryLWJGLOpenAL.class);
@@ -71,7 +71,7 @@ public class bpx
   
   private synchronized void i()
   {
-    if (f) {
+    if (this.f) {
       return;
     }
     try
@@ -116,8 +116,8 @@ public class bpx
     {
       b.error(a, "Error starting SoundSystem. Turning off sounds & music", ☃);
       
-      d.a(bpg.a, 0.0F);
-      d.b();
+      this.d.a(bpg.a, 0.0F);
+      this.d.b();
     }
   }
   
@@ -126,62 +126,62 @@ public class bpx
     if ((☃ == null) || (☃ == bpg.a)) {
       return 1.0F;
     }
-    return d.a(☃);
+    return this.d.a(☃);
   }
   
   public void a(bpg ☃, float ☃)
   {
-    if (!f) {
+    if (!this.f) {
       return;
     }
     if (☃ == bpg.a)
     {
-      e.setMasterVolume(☃);
+      this.e.setMasterVolume(☃);
       return;
     }
-    for (String ☃ : k.get(☃))
+    for (String ☃ : this.k.get(☃))
     {
-      bpj ☃ = (bpj)h.get(☃);
-      float ☃ = a(☃, (bpw)j.get(☃), ☃);
+      bpj ☃ = (bpj)this.h.get(☃);
+      float ☃ = a(☃, (bpw)this.j.get(☃), ☃);
       if (☃ <= 0.0F) {
         b(☃);
       } else {
-        e.setVolume(☃, ☃);
+        this.e.setVolume(☃, ☃);
       }
     }
   }
   
   public void b()
   {
-    if (f)
+    if (this.f)
     {
       c();
       
-      e.cleanup();
-      f = false;
+      this.e.cleanup();
+      this.f = false;
     }
   }
   
   public void c()
   {
-    if (f)
+    if (this.f)
     {
-      for (String ☃ : h.keySet()) {
-        e.stop(☃);
+      for (String ☃ : this.h.keySet()) {
+        this.e.stop(☃);
       }
-      h.clear();
-      m.clear();
-      l.clear();
-      k.clear();
-      j.clear();
-      n.clear();
+      this.h.clear();
+      this.m.clear();
+      this.l.clear();
+      this.k.clear();
+      this.j.clear();
+      this.n.clear();
     }
   }
   
   public void d()
   {
-    g += 1;
-    for (bpk ☃ : l)
+    this.g += 1;
+    for (bpk ☃ : this.l)
     {
       ☃.c();
       if (☃.k())
@@ -190,51 +190,51 @@ public class bpx
       }
       else
       {
-        String ☃ = (String)i.get(☃);
+        String ☃ = (String)this.i.get(☃);
         
-        e.setVolume(☃, a(☃, (bpw)j.get(☃), c.a(☃.a()).d()));
-        e.setPitch(☃, a(☃, (bpw)j.get(☃)));
-        e.setPosition(☃, ☃.g(), ☃.h(), ☃.i());
+        this.e.setVolume(☃, a(☃, (bpw)this.j.get(☃), this.c.a(☃.a()).d()));
+        this.e.setPitch(☃, a(☃, (bpw)this.j.get(☃)));
+        this.e.setPosition(☃, ☃.g(), ☃.h(), ☃.i());
       }
     }
-    Iterator<Map.Entry<String, bpj>> ☃ = h.entrySet().iterator();
+    Iterator<Map.Entry<String, bpj>> ☃ = this.h.entrySet().iterator();
     while (☃.hasNext())
     {
       Map.Entry<String, bpj> ☃ = (Map.Entry)☃.next();
       
       String ☃ = (String)☃.getKey();
       bpj ☃ = (bpj)☃.getValue();
-      if (!e.playing(☃))
+      if (!this.e.playing(☃))
       {
-        int ☃ = ((Integer)n.get(☃)).intValue();
-        if (☃ <= g)
+        int ☃ = ((Integer)this.n.get(☃)).intValue();
+        if (☃ <= this.g)
         {
           int ☃ = ☃.d();
           if ((☃.b()) && (☃ > 0)) {
-            m.put(☃, Integer.valueOf(g + ☃));
+            this.m.put(☃, Integer.valueOf(this.g + ☃));
           }
           ☃.remove();
           b.debug(a, "Removed channel {} because it's not playing anymore", new Object[] { ☃ });
-          e.removeSource(☃);
-          n.remove(☃);
+          this.e.removeSource(☃);
+          this.n.remove(☃);
           
-          j.remove(☃);
+          this.j.remove(☃);
           try
           {
-            k.remove(c.a(☃.a()).d(), ☃);
+            this.k.remove(this.c.a(☃.a()).d(), ☃);
           }
           catch (RuntimeException localRuntimeException) {}
           if ((☃ instanceof bpk)) {
-            l.remove(☃);
+            this.l.remove(☃);
           }
         }
       }
     }
-    Iterator<Map.Entry<bpj, Integer>> ☃ = m.entrySet().iterator();
+    Iterator<Map.Entry<bpj, Integer>> ☃ = this.m.entrySet().iterator();
     while (☃.hasNext())
     {
       Map.Entry<bpj, Integer> ☃ = (Map.Entry)☃.next();
-      if (g >= ((Integer)☃.getValue()).intValue())
+      if (this.g >= ((Integer)☃.getValue()).intValue())
       {
         bpj ☃ = (bpj)☃.getKey();
         if ((☃ instanceof bpk)) {
@@ -248,38 +248,38 @@ public class bpx
   
   public boolean a(bpj ☃)
   {
-    if (!f) {
+    if (!this.f) {
       return false;
     }
-    String ☃ = (String)i.get(☃);
+    String ☃ = (String)this.i.get(☃);
     if (☃ == null) {
       return false;
     }
-    return (e.playing(☃)) || ((n.containsKey(☃)) && (((Integer)n.get(☃)).intValue() <= g));
+    return (this.e.playing(☃)) || ((this.n.containsKey(☃)) && (((Integer)this.n.get(☃)).intValue() <= this.g));
   }
   
   public void b(bpj ☃)
   {
-    if (!f) {
+    if (!this.f) {
       return;
     }
-    String ☃ = (String)i.get(☃);
+    String ☃ = (String)this.i.get(☃);
     if (☃ != null) {
-      e.stop(☃);
+      this.e.stop(☃);
     }
   }
   
   public void c(bpj ☃)
   {
-    if (!f) {
+    if (!this.f) {
       return;
     }
-    if (e.getMasterVolume() <= 0.0F)
+    if (this.e.getMasterVolume() <= 0.0F)
     {
       b.debug(a, "Skipped playing soundEvent: {}, master volume was zero", new Object[] { ☃.a() });
       return;
     }
-    bpy ☃ = c.a(☃.a());
+    bpy ☃ = this.c.a(☃.a());
     if (☃ == null)
     {
       b.warn(a, "Unable to play unknown soundEvent: {}", new Object[] { ☃.a() });
@@ -310,24 +310,24 @@ public class bpx
     
     String ☃ = ns.a(ThreadLocalRandom.current()).toString();
     if (☃.d()) {
-      e.newStreamingSource(false, ☃, a(☃), ☃.toString(), ☃, ☃.g(), ☃.h(), ☃.i(), ☃.j().a(), ☃);
+      this.e.newStreamingSource(false, ☃, a(☃), ☃.toString(), ☃, ☃.g(), ☃.h(), ☃.i(), ☃.j().a(), ☃);
     } else {
-      e.newSource(false, ☃, a(☃), ☃.toString(), ☃, ☃.g(), ☃.h(), ☃.i(), ☃.j().a(), ☃);
+      this.e.newSource(false, ☃, a(☃), ☃.toString(), ☃, ☃.g(), ☃.h(), ☃.i(), ☃.j().a(), ☃);
     }
     b.debug(a, "Playing sound {} for event {} as channel {}", new Object[] { ☃.a(), ☃.c(), ☃ });
     
-    e.setPitch(☃, (float)☃);
-    e.setVolume(☃, ☃);
-    e.play(☃);
+    this.e.setPitch(☃, (float)☃);
+    this.e.setVolume(☃, ☃);
+    this.e.play(☃);
     
-    n.put(☃, Integer.valueOf(g + 20));
-    h.put(☃, ☃);
-    j.put(☃, ☃);
+    this.n.put(☃, Integer.valueOf(this.g + 20));
+    this.h.put(☃, ☃);
+    this.j.put(☃, ☃);
     if (☃ != bpg.a) {
-      k.put(☃, ☃);
+      this.k.put(☃, ☃);
     }
     if ((☃ instanceof bpk)) {
-      l.add((bpk)☃);
+      this.l.add((bpk)☃);
     }
   }
   
@@ -343,25 +343,25 @@ public class bpx
   
   public void e()
   {
-    for (String ☃ : h.keySet())
+    for (String ☃ : this.h.keySet())
     {
       b.debug(a, "Pausing channel {}", new Object[] { ☃ });
-      e.pause(☃);
+      this.e.pause(☃);
     }
   }
   
   public void f()
   {
-    for (String ☃ : h.keySet())
+    for (String ☃ : this.h.keySet())
     {
       b.debug(a, "Resuming channel {}", new Object[] { ☃ });
-      e.play(☃);
+      this.e.play(☃);
     }
   }
   
   public void a(bpj ☃, int ☃)
   {
-    m.put(☃, Integer.valueOf(g + ☃));
+    this.m.put(☃, Integer.valueOf(this.g + ☃));
   }
   
   private static URL a(jy ☃)
@@ -381,7 +381,7 @@ public class bpx
           public InputStream getInputStream()
             throws IOException
           {
-            return ave.A().Q().a(a).b();
+            return ave.A().Q().a(bpx.2.this.a).b();
           }
         };
       }
@@ -398,15 +398,15 @@ public class bpx
   
   public void a(wn ☃, float ☃)
   {
-    if ((!f) || (☃ == null)) {
+    if ((!this.f) || (☃ == null)) {
       return;
     }
-    float ☃ = B + (z - B) * ☃;
-    float ☃ = A + (y - A) * ☃;
+    float ☃ = ☃.B + (☃.z - ☃.B) * ☃;
+    float ☃ = ☃.A + (☃.y - ☃.A) * ☃;
     
-    double ☃ = p + (s - p) * ☃;
-    double ☃ = q + (t - q) * ☃ + ☃.aS();
-    double ☃ = r + (u - r) * ☃;
+    double ☃ = ☃.p + (☃.s - ☃.p) * ☃;
+    double ☃ = ☃.q + (☃.t - ☃.q) * ☃ + ☃.aS();
+    double ☃ = ☃.r + (☃.u - ☃.r) * ☃;
     
     float ☃ = ns.b((☃ + 90.0F) * 0.017453292F);
     float ☃ = ns.a((☃ + 90.0F) * 0.017453292F);
@@ -425,8 +425,8 @@ public class bpx
     float ☃ = ☃;
     float ☃ = ☃ * ☃;
     
-    e.setListenerPosition((float)☃, (float)☃, (float)☃);
-    e.setListenerOrientation(☃, ☃, ☃, ☃, ☃, ☃);
+    this.e.setListenerPosition((float)☃, (float)☃, (float)☃);
+    this.e.setListenerOrientation(☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   class a
@@ -438,14 +438,14 @@ public class bpx
     {
       synchronized (SoundSystemConfig.THREAD_SYNC)
       {
-        if (soundLibrary == null) {
+        if (this.soundLibrary == null) {
           return false;
         }
-        Source ☃ = (Source)soundLibrary.getSources().get(☃);
+        Source ☃ = (Source)this.soundLibrary.getSources().get(☃);
         if (☃ == null) {
           return false;
         }
-        return (☃.playing()) || (☃.paused()) || (preLoad);
+        return (☃.playing()) || (☃.paused()) || (☃.preLoad);
       }
     }
   }

@@ -62,8 +62,8 @@ public class GuiIngameMod
   public GuiIngameMod(ave mcIn)
   {
     super(mcIn);
-    mc = mcIn;
-    draw = getInstancedraw;
+    this.mc = mcIn;
+    this.draw = LabyMod.getInstance().draw;
   }
   
   jy inventoryBackground = new jy("textures/gui/container/inventory.png");
@@ -82,7 +82,7 @@ public class GuiIngameMod
     if (LabyMod.getInstance().isChatGUI()) {
       return;
     }
-    if (!settingspotionEffects) {
+    if (!ConfigManager.settings.potionEffects) {
       return;
     }
     if (!Allowed.potions()) {
@@ -90,12 +90,12 @@ public class GuiIngameMod
     }
     double aa = 1.7D;
     double bb = 0.7D;
-    if (settingspotionsize == 0)
+    if (ConfigManager.settings.potionsize == 0)
     {
       aa = 2.4D;
       bb = 0.5D;
     }
-    else if (settingspotionsize != 1)
+    else if (ConfigManager.settings.potionsize != 1)
     {
       aa = 1.3D;
       bb = 0.9D;
@@ -106,7 +106,7 @@ public class GuiIngameMod
     }
     int var2 = (int)(last * aa);
     int var1 = -5;
-    Collection var4 = mc.h.bl();
+    Collection var4 = this.mc.h.bl();
     if (!var4.isEmpty())
     {
       bfl.a(bb, bb, bb);
@@ -116,12 +116,12 @@ public class GuiIngameMod
       if (var4.size() > 5) {
         var5 = 132 / (var4.size() - 1);
       }
-      for (Iterator var6 = mc.h.bl().iterator(); var6.hasNext(); var2 += var5)
+      for (Iterator var6 = this.mc.h.bl().iterator(); var6.hasNext(); var2 += var5)
       {
         pf var7 = (pf)var6.next();
         pe var8 = pe.a[var7.a()];
         bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.P().a(inventoryBackground);
+        this.mc.P().a(this.inventoryBackground);
         if (var8.e())
         {
           int var9 = var8.f();
@@ -135,9 +135,9 @@ public class GuiIngameMod
         } else if (var7.c() == 3) {
           var11 = var11 + " " + bnq.a("enchantment.level.4", new Object[0]);
         }
-        draw.fontRenderer.a(Color.c(1) + var11, var1 + 10 + 18, var2 + 6, 16777215);
+        this.draw.fontRenderer.a(Color.c(1) + var11, var1 + 10 + 18, var2 + 6, 16777215);
         String var10 = pe.a(var7);
-        draw.fontRenderer.a(Color.c(3) + var10, var1 + 10 + 18, var2 + 6 + 10, 8355711);
+        this.draw.fontRenderer.a(Color.c(3) + var10, var1 + 10 + 18, var2 + 6 + 10, 8355711);
       }
     }
   }
@@ -152,114 +152,111 @@ public class GuiIngameMod
   public void drawMainGui(int set)
   {
     ModGui.mainList = set;
-    if (settingsshowFPS) {
+    if (ConfigManager.settings.showFPS) {
       ModGui.addMainLabel("FPS", ModGui.getFPS() + "", ModGui.mainList);
     }
-    if (settingsshowCoords)
+    if (ConfigManager.settings.showCoords)
     {
       ModGui.addMainLabel("X", ModGui.getX() + "", ModGui.mainList);
       ModGui.addMainLabel("Y", ModGui.getY() + "", ModGui.mainList);
       ModGui.addMainLabel("Z", ModGui.getZ() + "", ModGui.mainList);
     }
     String f = "";
-    if (settingsfLayoutNumber) {
+    if (ConfigManager.settings.fLayoutNumber) {
       f = f + ModGui.getF();
     }
-    if (settingsfLayoutDirection) {
+    if (ConfigManager.settings.fLayoutDirection) {
       f = f + ModGui.getD();
     }
-    if (settingsfLayoutXAndZ) {
+    if (ConfigManager.settings.fLayoutXAndZ) {
       f = f + ModGui.getXZD();
     }
     if (!f.isEmpty()) {
       ModGui.addMainLabel("F", f, ModGui.mainList);
     }
-    if (settingsshowBiome) {
+    if (ConfigManager.settings.showBiome) {
       ModGui.addMainLabel("Biome", ModGui.getBiom() + "", ModGui.mainList);
     }
-    if ((!mc.F()) && (getInstanceplayerPing != 0) && (settingsshowPing)) {
-      ModGui.addMainLabel("Ping", getInstanceplayerPing + "", ModGui.mainList);
+    if ((!this.mc.F()) && (LabyMod.getInstance().playerPing != 0) && (ConfigManager.settings.showPing)) {
+      ModGui.addMainLabel("Ping", LabyMod.getInstance().playerPing + "", ModGui.mainList);
     }
-    if ((settingsshowOnlinePlayers) && (getInstanceonlinePlayers.size() >= 2)) {
-      ModGui.addMainLabel("Online", getInstanceonlinePlayers.size() + "", ModGui.mainList);
+    if ((ConfigManager.settings.showOnlinePlayers) && (LabyMod.getInstance().onlinePlayers.size() >= 2)) {
+      ModGui.addMainLabel("Online", LabyMod.getInstance().onlinePlayers.size() + "", ModGui.mainList);
     }
-    if ((settingsshowServerIP) && (!getInstanceip.isEmpty())) {
-      ModGui.addMainLabel("IP", getInstanceip + "", ModGui.mainList);
+    if ((ConfigManager.settings.showServerIP) && (!LabyMod.getInstance().ip.isEmpty())) {
+      ModGui.addMainLabel("IP", LabyMod.getInstance().ip + "", ModGui.mainList);
     }
-    if ((settingslavaTime) && (getInstancelavaTime != 0)) {
-      if (getInstanceremoveChallenge == 0) {
-        ModGui.addMainLabel("Timer", ModGui.translateTimer(getInstancelavaTime) + "", ModGui.mainList);
+    if ((ConfigManager.settings.lavaTime) && (LabyMod.getInstance().lavaTime != 0)) {
+      if (LabyMod.getInstance().removeChallenge == 0) {
+        ModGui.addMainLabel("Timer", ModGui.translateTimer(LabyMod.getInstance().lavaTime) + "", ModGui.mainList);
       } else {
-        ModGui.addMainLabel("Timer", Color.cl("c") + ModGui.translateTimer(getInstancelavaTime) + "", ModGui.mainList);
+        ModGui.addMainLabel("Timer", Color.cl("c") + ModGui.translateTimer(LabyMod.getInstance().lavaTime) + "", ModGui.mainList);
       }
     }
-    if ((settingsclickTest) && (ClickCounter.getClickResult() != 0.0D)) {
+    if ((ConfigManager.settings.clickTest) && (ClickCounter.getClickResult() != 0.0D)) {
       ModGui.addMainLabel("Clicks", (int)ClickCounter.getClickResult() + "", ModGui.mainList);
     }
-    if (settingsafkTimer) {
-      if (getInstanceisAFK) {
-        ModGui.addMainLabel("AFK", ModGui.translateTimer((int)((getInstancelastMove - System.currentTimeMillis()) * -1L / 1000L)) + "", ModGui.mainList);
-      } else if (getInstancekeepTime + 5000L > System.currentTimeMillis()) {
-        ModGui.addMainLabel("AFK", Color.cl("c") + ModGui.translateTimer((int)((getInstancelastTimeAFK - getInstancekeepTime) * -1L / 1000L)) + "", ModGui.mainList);
+    if (ConfigManager.settings.afkTimer) {
+      if (LabyMod.getInstance().isAFK) {
+        ModGui.addMainLabel("AFK", ModGui.translateTimer((int)((LabyMod.getInstance().lastMove - System.currentTimeMillis()) * -1L / 1000L)) + "", ModGui.mainList);
+      } else if (LabyMod.getInstance().keepTime + 5000L > System.currentTimeMillis()) {
+        ModGui.addMainLabel("AFK", Color.cl("c") + ModGui.translateTimer((int)((LabyMod.getInstance().lastTimeAFK - LabyMod.getInstance().keepTime) * -1L / 1000L)) + "", ModGui.mainList);
       }
     }
-    if ((settingsshowKills) && (Games.kills != 0)) {
+    if ((ConfigManager.settings.showKills) && (Games.kills != 0)) {
       ModGui.addMainLabel("Kills", Games.kills + "", ModGui.mainList);
     }
-    if ((settingsshowNickname) && (!getInstancenickname.isEmpty())) {
-      ModGui.addMainLabel("Nick", getInstancenickname, ModGui.mainList);
-    }
-    if (settingsshowClock)
+    if (ConfigManager.settings.showClock)
     {
-      if (lastTimeCacheUpdate < System.currentTimeMillis())
+      if (this.lastTimeCacheUpdate < System.currentTimeMillis())
       {
-        lastTimeCacheUpdate = (System.currentTimeMillis() + 2000L);
-        if (settingstwelveHourClock) {
-          timeCache = dt2.format(Long.valueOf(System.currentTimeMillis()));
+        this.lastTimeCacheUpdate = (System.currentTimeMillis() + 2000L);
+        if (ConfigManager.settings.twelveHourClock) {
+          this.timeCache = this.dt2.format(Long.valueOf(System.currentTimeMillis()));
         } else {
-          timeCache = dt1.format(Long.valueOf(System.currentTimeMillis()));
+          this.timeCache = this.dt1.format(Long.valueOf(System.currentTimeMillis()));
         }
       }
-      ModGui.addMainLabel("Clock", "" + timeCache, ModGui.mainList);
+      ModGui.addMainLabel("Clock", "" + this.timeCache, ModGui.mainList);
     }
-    if (settingsshowDate)
+    if (ConfigManager.settings.showDate)
     {
-      if (lastDateCacheUpdate < System.currentTimeMillis())
+      if (this.lastDateCacheUpdate < System.currentTimeMillis())
       {
-        lastDateCacheUpdate = (System.currentTimeMillis() + 2000L);
-        dateCache = ModGui.getDate();
+        this.lastDateCacheUpdate = (System.currentTimeMillis() + 2000L);
+        this.dateCache = ModGui.getDate();
       }
-      ModGui.addMainLabel("Date", dateCache, ModGui.mainList);
+      ModGui.addMainLabel("Date", this.dateCache, ModGui.mainList);
     }
   }
   
   public Boolean isNotEmpty(int slot)
   {
     if (slot == -1) {
-      return Boolean.valueOf(mc.h.bi.h() != null);
+      return Boolean.valueOf(this.mc.h.bi.h() != null);
     }
-    return Boolean.valueOf(mc.h.bi.e(slot) != null);
+    return Boolean.valueOf(this.mc.h.bi.e(slot) != null);
   }
   
   public void drawArmorTop()
   {
-    if ((settingshud != 0) && (Allowed.armorHud()) && 
-      (settingsarmorHudPositionOnTop))
+    if ((ConfigManager.settings.hud != 0) && (Allowed.armorHud()) && 
+      (ConfigManager.settings.armorHudPositionOnTop))
     {
       if (isNotEmpty(-1).booleanValue()) {
-        addArmor(mc.h.bi.h());
+        addArmor(this.mc.h.bi.h());
       }
       if (isNotEmpty(3).booleanValue()) {
-        addArmor(mc.h.bi.e(3));
+        addArmor(this.mc.h.bi.e(3));
       }
       if (isNotEmpty(2).booleanValue()) {
-        addArmor(mc.h.bi.e(2));
+        addArmor(this.mc.h.bi.e(2));
       }
       if (isNotEmpty(1).booleanValue()) {
-        addArmor(mc.h.bi.e(1));
+        addArmor(this.mc.h.bi.e(1));
       }
       if (isNotEmpty(0).booleanValue()) {
-        addArmor(mc.h.bi.e(0));
+        addArmor(this.mc.h.bi.e(0));
       }
     }
   }
@@ -267,45 +264,45 @@ public class GuiIngameMod
   public void drawArmorHotbar()
   {
     boolean armorAdd = false;
-    if ((settingshud != 0) && (Allowed.armorHud()) && 
-      (!settingsarmorHudPositionOnTop))
+    if ((ConfigManager.settings.hud != 0) && (Allowed.armorHud()) && 
+      (!ConfigManager.settings.armorHudPositionOnTop))
     {
       int nextY = 0;
       if (isNotEmpty(2).booleanValue())
       {
-        zx item = mc.h.bi.e(2);
-        draw.drawItem(item, draw.getWidth() / 2 - 110, draw.getHeight() - 18 - nextY);
-        drawArmorStatus(item, draw.getWidth() / 2 - 110, draw.getHeight() - 18 - nextY + 4, false);
+        zx item = this.mc.h.bi.e(2);
+        this.draw.drawItem(item, this.draw.getWidth() / 2 - 110, this.draw.getHeight() - 18 - nextY);
+        drawArmorStatus(item, this.draw.getWidth() / 2 - 110, this.draw.getHeight() - 18 - nextY + 4, false);
         nextY += 15;
         armorAdd = true;
       }
       if (isNotEmpty(3).booleanValue())
       {
-        zx item = mc.h.bi.e(3);
-        draw.drawItem(item, draw.getWidth() / 2 - 110, draw.getHeight() - 18 - nextY);
-        drawArmorStatus(item, draw.getWidth() / 2 - 110, draw.getHeight() - 18 - nextY + 5, false);
+        zx item = this.mc.h.bi.e(3);
+        this.draw.drawItem(item, this.draw.getWidth() / 2 - 110, this.draw.getHeight() - 18 - nextY);
+        drawArmorStatus(item, this.draw.getWidth() / 2 - 110, this.draw.getHeight() - 18 - nextY + 5, false);
         armorAdd = true;
       }
       nextY = 0;
       if (isNotEmpty(0).booleanValue())
       {
-        zx item = mc.h.bi.e(0);
-        draw.drawItem(item, draw.getWidth() / 2 + 96, draw.getHeight() - 18 - nextY);
-        drawArmorStatus(item, draw.getWidth() / 2 + 113, draw.getHeight() - 18 - nextY + 4, true);
+        zx item = this.mc.h.bi.e(0);
+        this.draw.drawItem(item, this.draw.getWidth() / 2 + 96, this.draw.getHeight() - 18 - nextY);
+        drawArmorStatus(item, this.draw.getWidth() / 2 + 113, this.draw.getHeight() - 18 - nextY + 4, true);
         nextY += 15;
       }
       if (isNotEmpty(1).booleanValue())
       {
-        zx item = mc.h.bi.e(1);
-        draw.drawItem(item, draw.getWidth() / 2 + 96, draw.getHeight() - 18 - nextY);
-        drawArmorStatus(item, draw.getWidth() / 2 + 113, draw.getHeight() - 18 - nextY + 5, true);
+        zx item = this.mc.h.bi.e(1);
+        this.draw.drawItem(item, this.draw.getWidth() / 2 + 96, this.draw.getHeight() - 18 - nextY);
+        drawArmorStatus(item, this.draw.getWidth() / 2 + 113, this.draw.getHeight() - 18 - nextY + 5, true);
       }
     }
-    if ((settingsshowArrow) && (mc.h != null) && (mc.h.bi.b(zw.b(261))))
+    if ((ConfigManager.settings.showArrow) && (this.mc.h != null) && (this.mc.h.bi.b(zw.b(261))))
     {
       int left = 0;
-      if ((!settingsarmorHudPositionOnTop) && (armorAdd)) {
-        switch (settingshud)
+      if ((!ConfigManager.settings.armorHudPositionOnTop) && (armorAdd)) {
+        switch (ConfigManager.settings.hud)
         {
         case 1: 
           left = 43;
@@ -321,14 +318,14 @@ public class GuiIngameMod
         }
       }
       int count = 0;
-      if (mc.h.bi.a != null) {
-        for (zx item : mc.h.bi.a) {
+      if (this.mc.h.bi.a != null) {
+        for (zx item : this.mc.h.bi.a) {
           if ((item != null) && (item.b() != null) && (zw.b(item.b()) == 262)) {
-            count += b;
+            count += item.b;
           }
         }
       }
-      draw.drawItem(itemArrow, draw.getWidth() / 2 - 116 - left, draw.getHeight() - 20, count + "x");
+      this.draw.drawItem(this.itemArrow, this.draw.getWidth() / 2 - 116 - left, this.draw.getHeight() - 20, count + "x");
     }
   }
   
@@ -336,14 +333,14 @@ public class GuiIngameMod
   {
     if (ModGui.isSwitch())
     {
-      draw.drawItem(item, 2, ModGui.offList);
+      this.draw.drawItem(item, 2, ModGui.offList);
       drawArmorStatus(item, 20, ModGui.offList + 5, true);
     }
     else
     {
-      double k = getInstancedraw.getScale(settingssize);
-      draw.drawRightItem(item, (int)((draw.getWidth() - 28) / k), ModGui.offList);
-      drawArmorStatus(item, (int)((draw.getWidth() - 20) / k), ModGui.offList + 5, false);
+      double k = LabyMod.getInstance().draw.getScale(ConfigManager.settings.size);
+      this.draw.drawRightItem(item, (int)((this.draw.getWidth() - 28) / k), ModGui.offList);
+      drawArmorStatus(item, (int)((this.draw.getWidth() - 20) / k), ModGui.offList + 5, false);
     }
     ModGui.offListNext(14);
   }
@@ -352,42 +349,42 @@ public class GuiIngameMod
   {
     if (left)
     {
-      if ((settingshud == 1) && 
+      if ((ConfigManager.settings.hud == 1) && 
         (item.j() - item.h() > 0)) {
-        draw.drawString(item.j() - item.h() + "", x, y);
+        this.draw.drawString(item.j() - item.h() + "", x, y);
       }
-      if ((settingshud == 2) && 
+      if ((ConfigManager.settings.hud == 2) && 
         (item.j() - item.h() > 0)) {
-        draw.drawString(item.j() - item.h() + "/" + item.j(), x, y);
+        this.draw.drawString(item.j() - item.h() + "/" + item.j(), x, y);
       }
-      if ((settingshud == 4) && 
+      if ((ConfigManager.settings.hud == 4) && 
         (item.j() - item.h() > 0))
       {
         double armor = item.j() - item.h();
         double max = item.j();
         String name = Math.round(100.0D / max * armor) + "%";
-        draw.drawString(name, x, y);
+        this.draw.drawString(name, x, y);
       }
     }
     else
     {
-      double k = getInstancedraw.getScale(settingssize);
+      double k = LabyMod.getInstance().draw.getScale(ConfigManager.settings.size);
       String name = "";
       if (item.j() - item.h() > 0)
       {
-        if (settingshud == 2) {
+        if (ConfigManager.settings.hud == 2) {
           name = item.j() - item.h() + "/" + item.j();
         }
-        if (settingshud == 1) {
+        if (ConfigManager.settings.hud == 1) {
           name = item.j() - item.h() + "";
         }
-        if (settingshud == 4)
+        if (ConfigManager.settings.hud == 4)
         {
           double armor = item.j() - item.h();
           double max = item.j();
           name = Math.round(100.0D / max * armor) + "%";
         }
-        draw.drawRightString(name, x, y);
+        this.draw.drawRightString(name, x, y);
       }
     }
   }
@@ -395,19 +392,19 @@ public class GuiIngameMod
   public void drawRadar()
   {
     int b = 0;
-    if (settingsshowLiveTicker)
+    if (ConfigManager.settings.showLiveTicker)
     {
-      draw.drawCenteredString(getInstanceLIVETICKER.replace("&", Color.c), draw.getWidth() / 2, 2);
+      this.draw.drawCenteredString(LabyMod.getInstance().LIVETICKER.replace("&", Color.c), this.draw.getWidth() / 2, 2);
       b += 10;
     }
-    if (((!settingsradarCoordinate) && (!settingsradarDirection)) || (!Allowed.gui())) {
+    if (((!ConfigManager.settings.radarCoordinate) && (!ConfigManager.settings.radarDirection)) || (!Allowed.gui())) {
       return;
     }
-    int point = draw.getWidth() / 2;
-    int i = (int)ns.g(mc.h.y) * -1 - 360;
+    int point = this.draw.getWidth() / 2;
+    int i = (int)ns.g(this.mc.h.y) * -1 - 360;
     int o = 45;
     if ((bfc.c != null) && (bfc.b > 0)) {
-      if (settingsshowBossBar) {
+      if (ConfigManager.settings.showBossBar) {
         b += 15;
       } else {
         b += 9;
@@ -416,15 +413,15 @@ public class GuiIngameMod
     for (int a = 0; a <= 2; a++) {
       for (double k = 0.0D; k <= 3.5D; k += 0.5D)
       {
-        if ((draw.getWidth() / 2 + i > point - 50) && (draw.getWidth() / 2 + i < point + 50))
+        if ((this.draw.getWidth() / 2 + i > point - 50) && (this.draw.getWidth() / 2 + i < point + 50))
         {
           int m = 0;
-          if (settingsradarCoordinate)
+          if (ConfigManager.settings.radarCoordinate)
           {
-            draw.drawCenteredString(Color.c(3) + k, draw.getWidth() / 2 + i, 4 + b + m);
+            this.draw.drawCenteredString(Color.c(3) + k, this.draw.getWidth() / 2 + i, 4 + b + m);
             m += 10;
           }
-          if (settingsradarDirection)
+          if (ConfigManager.settings.radarDirection)
           {
             String n = "South";
             if (k == 0.5D) {
@@ -453,7 +450,7 @@ public class GuiIngameMod
             } else {
               n = Color.c(1) + n;
             }
-            draw.drawCenteredString(Color.c(3) + n, draw.getWidth() / 2 + i, 4 + b + m);
+            this.draw.drawCenteredString(Color.c(3) + n, this.draw.getWidth() / 2 + i, 4 + b + m);
           }
         }
         i += o;
@@ -468,61 +465,68 @@ public class GuiIngameMod
     Timolia.drawTimoliaGui();
     Revayd.drawRevaydGui();
     HiveMC.drawHiveGui();
+    if ((ConfigManager.settings.showNickname) && (!LabyMod.getInstance().nickname.isEmpty())) {
+      ModGui.addMainLabel("Nick", LabyMod.getInstance().nickname, ModGui.mainList);
+    }
   }
   
   private void drawOnlineFriendsOnServer()
   {
     int friendSlots = 4;
-    try
-    {
-      if ((settingsshowOnlineFriends) && 
-        (!LabyMod.getInstance().isChatGUI()) && (ChatHandler.getMyFriends() != null) && (FriendsLoader.friends != null))
+    if (ConfigManager.settings.showOnlineFriends) {
+      try
       {
-        ArrayList<String> chatFriends = new ArrayList();
-        Iterator<LabyModPlayer> itera = ChatHandler.getMyFriends().iterator();
-        while (itera.hasNext()) {
-          chatFriends.add(((LabyModPlayer)itera.next()).getName().toLowerCase());
-        }
-        Iterator<bdc> iter = getInstanceonlinePlayers.iterator();
-        while (iter.hasNext())
+        if ((!LabyMod.getInstance().isChatGUI()) && (ChatHandler.getMyFriends() != null) && (FriendsLoader.friends != null))
         {
-          bdc p = (bdc)iter.next();
-          if (getInstancedraw.getWidth() / 2 - 120 - friendSlots * 16 > 0) {
-            if ((p != null) && (FriendsLoader.friends != null) && (p.a() != null) && (p.a().getName() != null)) {
-              if ((FriendsLoader.friends.containsKey(p.a().getName())) || (chatFriends.contains(p.a().getName().toLowerCase()))) {
-                if (settingsonlineFriendsPositionOnTop)
-                {
-                  int x = getInstancedraw.getWidth() / 6 * 5;
-                  a(x - friendSlots * 10 - 2, 0, x - friendSlots * 10 + 8, 9, Integer.MIN_VALUE);
-                  a(x - friendSlots * 10 - 1, 1, x - friendSlots * 10 + 7, 8, Integer.MAX_VALUE);
-                  bfl.c(1.0F, 1.0F, 1.0F);
-                  getInstancetextureManager.drawPlayerHead(p.a().getName(), x - friendSlots * 10, 4.5D, 0.19D);
-                  friendSlots++;
-                }
-                else
-                {
-                  int x = getInstancedraw.getWidth() / 2 - 120;
-                  a(x - friendSlots * 16 - 2, draw.getHeight() - 1, x - friendSlots * 16 + 14, draw.getHeight() - 18, Integer.MIN_VALUE);
-                  a(x - friendSlots * 16 - 1, draw.getHeight() - 2, x - friendSlots * 16 + 13, draw.getHeight() - 17, Integer.MAX_VALUE);
-                  bfl.c(1.0F, 1.0F, 1.0F);
-                  getInstancetextureManager.drawPlayerHead(p.a().getName(), x - friendSlots * 16 + 0.4D, draw.getHeight() - 12.5D, 0.37D);
-                  friendSlots++;
+          ArrayList<String> chatFriends = new ArrayList();
+          Iterator<LabyModPlayer> itera = ChatHandler.getMyFriends().iterator();
+          while (itera.hasNext()) {
+            chatFriends.add(((LabyModPlayer)itera.next()).getName().toLowerCase());
+          }
+          Iterator<bdc> iter = LabyMod.getInstance().onlinePlayers.iterator();
+          while (iter.hasNext())
+          {
+            bdc p = (bdc)iter.next();
+            if (LabyMod.getInstance().draw.getWidth() / 2 - 120 - friendSlots * 16 > 0) {
+              if ((p != null) && (FriendsLoader.friends != null) && (p.a() != null) && (p.a().getName() != null)) {
+                if ((FriendsLoader.friends.containsKey(p.a().getName())) || (chatFriends.contains(p.a().getName().toLowerCase()))) {
+                  if (ConfigManager.settings.onlineFriendsPositionOnTop)
+                  {
+                    int x = LabyMod.getInstance().draw.getWidth() / 6 * 5;
+                    a(x - friendSlots * 10 - 2, 0, x - friendSlots * 10 + 8, 9, Integer.MIN_VALUE);
+                    a(x - friendSlots * 10 - 1, 1, x - friendSlots * 10 + 7, 8, Integer.MAX_VALUE);
+                    bfl.c(1.0F, 1.0F, 1.0F);
+                    LabyMod.getInstance().textureManager.drawPlayerHead(p.a().getName(), x - friendSlots * 10, 4.5D, 0.19D);
+                    friendSlots++;
+                  }
+                  else
+                  {
+                    int x = LabyMod.getInstance().draw.getWidth() / 2 - 120;
+                    a(x - friendSlots * 16 - 2, this.draw.getHeight() - 1, x - friendSlots * 16 + 14, this.draw.getHeight() - 18, Integer.MIN_VALUE);
+                    a(x - friendSlots * 16 - 1, this.draw.getHeight() - 2, x - friendSlots * 16 + 13, this.draw.getHeight() - 17, Integer.MAX_VALUE);
+                    bfl.c(1.0F, 1.0F, 1.0F);
+                    LabyMod.getInstance().textureManager.drawPlayerHead(p.a().getName(), x - friendSlots * 16 + 0.4D, this.draw.getHeight() - 12.5D, 0.37D);
+                    friendSlots++;
+                  }
                 }
               }
             }
           }
         }
       }
+      catch (Exception error)
+      {
+        error.printStackTrace();
+      }
     }
-    catch (Exception localException) {}
   }
   
   public void drawTeamSpeak()
   {
-    if (!settingsteamSpeak) {
+    if (!ConfigManager.settings.teamSpeak) {
       return;
     }
-    if ((!settingsteamSpakIngame) && (!settingsteamSpakIngameClients)) {
+    if ((!ConfigManager.settings.teamSpakIngame) && (!ConfigManager.settings.teamSpakIngameClients)) {
       return;
     }
     TeamSpeakUser me = TeamSpeakController.getInstance().me();
@@ -536,17 +540,17 @@ public class GuiIngameMod
       return;
     }
     String channelName = channel.getChannelName();
-    if (settingsteamSpakIngame) {
+    if (ConfigManager.settings.teamSpakIngame) {
       ModGui.addMainLabel(channelName, "", ModGui.mainList);
     }
-    if (settingsteamSpakIngameClients) {
+    if (ConfigManager.settings.teamSpakIngameClients) {
       for (TeamSpeakUser user : users)
       {
         String client = TeamSpeak.getTalkColor(user) + "  ⬤ " + Color.cl("f") + user.getNickName() + TeamSpeak.getAway(user);
         if (ModGui.isSwitch()) {
           client = Color.cl("f") + user.getNickName() + TeamSpeak.getAway(user) + TeamSpeak.getTalkColor(user) + "  ⬤ ";
         }
-        draw.addString(client, ModGui.mainList);
+        this.draw.addString(client, ModGui.mainList);
         ModGui.mainListNext();
       }
     }
@@ -554,7 +558,7 @@ public class GuiIngameMod
   
   public void drawSpotify()
   {
-    if (!settingsspotfiyTrack) {
+    if (!ConfigManager.settings.spotfiyTrack) {
       return;
     }
     if ((LabyMod.getInstance().getSpotifyManager() == null) || (!SystemUtils.IS_OS_WINDOWS))
@@ -597,33 +601,33 @@ public class GuiIngameMod
     if (GuiStopWatch.running)
     {
       int b = 0;
-      if (((settingsradarCoordinate) || (settingsradarDirection)) && (Allowed.gui())) {
-        if ((settingsradarCoordinate) && (settingsradarDirection)) {
+      if (((ConfigManager.settings.radarCoordinate) || (ConfigManager.settings.radarDirection)) && (Allowed.gui())) {
+        if ((ConfigManager.settings.radarCoordinate) && (ConfigManager.settings.radarDirection)) {
           b = 22;
         } else {
           b = 11;
         }
       }
       if ((bfc.c != null) && (bfc.b > 0)) {
-        if (settingsshowBossBar) {
+        if (ConfigManager.settings.showBossBar) {
           b += 15;
         } else {
           b += 9;
         }
       }
-      draw.drawCenteredString(GuiStopWatch.parseTime(GuiStopWatch.getTimer()), draw.getWidth() / 2, b + 5, 2.0D);
+      this.draw.drawCenteredString(GuiStopWatch.parseTime(GuiStopWatch.getTimer()), this.draw.getWidth() / 2, b + 5, 2.0D);
     }
   }
   
   public void drawGui()
   {
-    if (!settingsgui) {
+    if (!ConfigManager.settings.gui) {
       return;
     }
     if (!LabyMod.getInstance().isInGame()) {
       return;
     }
-    if (mc.t.aB) {
+    if (this.mc.t.aB) {
       return;
     }
     if (!Allowed.gui()) {
@@ -633,8 +637,8 @@ public class GuiIngameMod
     ModGui.offList = 2;
     
     GL11.glPushMatrix();
-    GL11.glScaled(draw.getScale(settingssize), draw.getScale(settingssize), draw.getScale(settingssize));
-    if (settingsalertsChat)
+    GL11.glScaled(this.draw.getScale(ConfigManager.settings.size), this.draw.getScale(ConfigManager.settings.size), this.draw.getScale(ConfigManager.settings.size));
+    if (ConfigManager.settings.alertsChat)
     {
       LabyMod.getInstance().getClient();
       if (!Client.isBusy())
@@ -644,7 +648,7 @@ public class GuiIngameMod
         temp.addAll(LabyMod.getInstance().getClient().getFriends());
         for (LabyModPlayer p : temp) {
           if (p.isNotify()) {
-            amount += messages;
+            amount += p.messages;
           }
         }
         if (amount != 0)
@@ -654,7 +658,7 @@ public class GuiIngameMod
             a = "s";
           }
           String s = Color.cl("c") + amount + " new message" + a;
-          draw.addRightString(s, ModGui.offList);
+          this.draw.addRightString(s, ModGui.offList);
           ModGui.offListNext();
         }
       }
@@ -679,7 +683,7 @@ public class GuiIngameMod
     
     ModGui.mainList = 0;
     ModGui.offList = 0;
-    if (!settingshideMod)
+    if (!ConfigManager.settings.hideMod)
     {
       drawGui();
       drawOnlineFriendsOnServer();
@@ -697,27 +701,27 @@ public class GuiIngameMod
       ModGui.frames = 0;
       ModGui.frameTimer = System.currentTimeMillis();
     }
-    if ((mouseLocation != Mouse.getX()) || (mc.h.ba != 0.0F) || (mc.h.O != 0.0F))
+    if ((this.mouseLocation != Mouse.getX()) || (this.mc.h.ba != 0.0F) || (this.mc.h.O != 0.0F))
     {
-      if (getInstanceisAFK)
+      if (LabyMod.getInstance().isAFK)
       {
         ChatHandler.setAFK(false);
-        getInstancelastTimeAFK = getInstancelastMove;
-        getInstancekeepTime = System.currentTimeMillis();
+        LabyMod.getInstance().lastTimeAFK = LabyMod.getInstance().lastMove;
+        LabyMod.getInstance().keepTime = System.currentTimeMillis();
       }
-      getInstancelastMove = System.currentTimeMillis();
+      LabyMod.getInstance().lastMove = System.currentTimeMillis();
     }
-    mouseLocation = Mouse.getX();
-    if (getInstancelastMove + 20000L < System.currentTimeMillis())
+    this.mouseLocation = Mouse.getX();
+    if (LabyMod.getInstance().lastMove + 20000L < System.currentTimeMillis())
     {
-      if (!getInstanceisAFK) {
+      if (!LabyMod.getInstance().isAFK) {
         ChatHandler.setAFK(true);
       }
-      getInstanceisAFK = true;
+      LabyMod.getInstance().isAFK = true;
     }
     else
     {
-      getInstanceisAFK = false;
+      LabyMod.getInstance().isAFK = false;
     }
     if (ModAPI.enabled()) {
       ModAPI.callEvent(new RenderOverlayEvent(p_175180_1_));

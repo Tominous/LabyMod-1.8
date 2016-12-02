@@ -4,12 +4,12 @@ public class asi
   public asi(long ☃, ase ☃)
   {
     super(☃);
-    a = ☃;
+    this.a = ☃;
   }
   
   public int[] a(int ☃, int ☃, int ☃, int ☃)
   {
-    int[] ☃ = a.a(☃, ☃, ☃, ☃);
+    int[] ☃ = this.a.a(☃, ☃, ☃, ☃);
     
     int[] ☃ = asc.a(☃ * ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {

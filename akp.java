@@ -14,16 +14,16 @@ public class akp
   protected akp(arm ☃, int ☃, arn ☃)
   {
     super(☃, ☃);
-    j(M.b().a(a, Integer.valueOf(0)));
-    b = ☃;
+    j(this.M.b().a(a, Integer.valueOf(0)));
+    this.b = ☃;
   }
   
   protected int f(adm ☃, cj ☃)
   {
-    int ☃ = Math.min(☃.a(pk.class, a(☃)).size(), b);
+    int ☃ = Math.min(☃.a(pk.class, a(☃)).size(), this.b);
     if (☃ > 0)
     {
-      float ☃ = Math.min(b, ☃) / b;
+      float ☃ = Math.min(this.b, ☃) / this.b;
       return ns.f(☃ * 15.0F);
     }
     return 0;

@@ -11,142 +11,142 @@ public class RealmsBufferBuilder
   
   public RealmsBufferBuilder(bfd ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public RealmsBufferBuilder from(bfd ☃)
   {
-    b = ☃;
+    this.b = ☃;
     return this;
   }
   
   public void sortQuads(float ☃, float ☃, float ☃)
   {
-    b.a(☃, ☃, ☃);
+    this.b.a(☃, ☃, ☃);
   }
   
   public void fixupQuadColor(int ☃)
   {
-    b.a(☃);
+    this.b.a(☃);
   }
   
   public ByteBuffer getBuffer()
   {
-    return b.f();
+    return this.b.f();
   }
   
   public void postNormal(float ☃, float ☃, float ☃)
   {
-    b.b(☃, ☃, ☃);
+    this.b.b(☃, ☃, ☃);
   }
   
   public int getDrawMode()
   {
-    return b.i();
+    return this.b.i();
   }
   
   public void offset(double ☃, double ☃, double ☃)
   {
-    b.c(☃, ☃, ☃);
+    this.b.c(☃, ☃, ☃);
   }
   
   public void restoreState(bfd.a ☃)
   {
-    b.a(☃);
+    this.b.a(☃);
   }
   
   public void endVertex()
   {
-    b.d();
+    this.b.d();
   }
   
   public RealmsBufferBuilder normal(float ☃, float ☃, float ☃)
   {
-    return from(b.c(☃, ☃, ☃));
+    return from(this.b.c(☃, ☃, ☃));
   }
   
   public void end()
   {
-    b.e();
+    this.b.e();
   }
   
   public void begin(int ☃, bmu ☃)
   {
-    b.a(☃, ☃);
+    this.b.a(☃, ☃);
   }
   
   public RealmsBufferBuilder color(int ☃, int ☃, int ☃, int ☃)
   {
-    return from(b.b(☃, ☃, ☃, ☃));
+    return from(this.b.b(☃, ☃, ☃, ☃));
   }
   
   public void faceTex2(int ☃, int ☃, int ☃, int ☃)
   {
-    b.a(☃, ☃, ☃, ☃);
+    this.b.a(☃, ☃, ☃, ☃);
   }
   
   public void postProcessFacePosition(double ☃, double ☃, double ☃)
   {
-    b.a(☃, ☃, ☃);
+    this.b.a(☃, ☃, ☃);
   }
   
   public void fixupVertexColor(float ☃, float ☃, float ☃, int ☃)
   {
-    b.b(☃, ☃, ☃, ☃);
+    this.b.b(☃, ☃, ☃, ☃);
   }
   
   public RealmsBufferBuilder color(float ☃, float ☃, float ☃, float ☃)
   {
-    return from(b.a(☃, ☃, ☃, ☃));
+    return from(this.b.a(☃, ☃, ☃, ☃));
   }
   
   public RealmsVertexFormat getVertexFormat()
   {
-    return new RealmsVertexFormat(b.g());
+    return new RealmsVertexFormat(this.b.g());
   }
   
   public void faceTint(float ☃, float ☃, float ☃, int ☃)
   {
-    b.a(☃, ☃, ☃, ☃);
+    this.b.a(☃, ☃, ☃, ☃);
   }
   
   public RealmsBufferBuilder tex2(int ☃, int ☃)
   {
-    return from(b.a(☃, ☃));
+    return from(this.b.a(☃, ☃));
   }
   
   public void putBulkData(int[] ☃)
   {
-    b.a(☃);
+    this.b.a(☃);
   }
   
   public RealmsBufferBuilder tex(double ☃, double ☃)
   {
-    return from(b.a(☃, ☃));
+    return from(this.b.a(☃, ☃));
   }
   
   public int getVertexCount()
   {
-    return b.h();
+    return this.b.h();
   }
   
   public void clear()
   {
-    b.b();
+    this.b.b();
   }
   
   public RealmsBufferBuilder vertex(double ☃, double ☃, double ☃)
   {
-    return from(b.b(☃, ☃, ☃));
+    return from(this.b.b(☃, ☃, ☃));
   }
   
   public void fixupQuadColor(float ☃, float ☃, float ☃)
   {
-    b.d(☃, ☃, ☃);
+    this.b.d(☃, ☃, ☃);
   }
   
   public void noColor()
   {
-    b.c();
+    this.b.c();
   }
 }

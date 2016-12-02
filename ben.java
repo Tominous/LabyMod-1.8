@@ -5,9 +5,9 @@ public class ben
   {
     super(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
     
-    v = ☃;
-    w = ☃;
-    x = ☃;
+    this.v = ☃;
+    this.w = ☃;
+    this.x = ☃;
   }
   
   public static class a

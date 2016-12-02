@@ -26,9 +26,9 @@ public class ad
       throw new cf("commands.execute.usage", new Object[0]);
     }
     final pk ☃ = a(☃, ☃[0], pk.class);
-    final double ☃ = b(s, ☃[1], false);
-    double ☃ = b(t, ☃[2], false);
-    final double ☃ = b(u, ☃[3], false);
+    final double ☃ = b(☃.s, ☃[1], false);
+    double ☃ = b(☃.t, ☃[2], false);
+    final double ☃ = b(☃.u, ☃[3], false);
     final cj ☃ = new cj(☃, ☃, ☃);
     
     int ☃ = 4;
@@ -78,12 +78,12 @@ public class ad
       
       public aui d()
       {
-        return new aui(☃, ☃, f);
+        return new aui(☃, ☃, this.f);
       }
       
       public adm e()
       {
-        return ☃o;
+        return ☃.o;
       }
       
       public pk f()
@@ -94,7 +94,7 @@ public class ad
       public boolean u_()
       {
         MinecraftServer ☃ = MinecraftServer.N();
-        return (☃ == null) || (d[0].Q().b("commandBlockOutput"));
+        return (☃ == null) || (☃.d[0].Q().b("commandBlockOutput"));
       }
       
       public void a(n.a ☃, int ☃)

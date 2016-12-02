@@ -22,10 +22,10 @@ public class tx
   {
     super(☃);
     a(0.95F, 0.95F);
-    V.setSeed(1 + F());
-    bq = (1.0F / (V.nextFloat() + 1.0F) * 0.2F);
+    this.V.setSeed(1 + F());
+    this.bq = (1.0F / (this.V.nextFloat() + 1.0F) * 0.2F);
     
-    i.a(0, new tx.a(this));
+    this.i.a(0, new tx.a(this));
   }
   
   protected void aX()
@@ -37,7 +37,7 @@ public class tx
   
   public float aS()
   {
-    return K * 0.5F;
+    return this.K * 0.5F;
   }
   
   protected String z()
@@ -72,7 +72,7 @@ public class tx
   
   protected void b(boolean ☃, int ☃)
   {
-    int ☃ = V.nextInt(3 + ☃) + 1;
+    int ☃ = this.V.nextInt(3 + ☃) + 1;
     for (int ☃ = 0; ☃ < ☃; ☃++) {
       a(new zx(zy.aW, 1, zd.p.b()), 0.0F);
     }
@@ -80,97 +80,97 @@ public class tx
   
   public boolean V()
   {
-    return o.a(aR().b(0.0D, -0.6000000238418579D, 0.0D), arm.h, this);
+    return this.o.a(aR().b(0.0D, -0.6000000238418579D, 0.0D), arm.h, this);
   }
   
   public void m()
   {
     super.m();
     
-    b = a;
-    bk = c;
+    this.b = this.a;
+    this.bk = this.c;
     
-    bm = bl;
-    bo = bn;
+    this.bm = this.bl;
+    this.bo = this.bn;
     
-    bl += bq;
-    if (bl > 6.283185307179586D) {
-      if (o.D)
+    this.bl += this.bq;
+    if (this.bl > 6.283185307179586D) {
+      if (this.o.D)
       {
-        bl = 6.2831855F;
+        this.bl = 6.2831855F;
       }
       else
       {
-        bl = ((float)(bl - 6.283185307179586D));
-        if (V.nextInt(10) == 0) {
-          bq = (1.0F / (V.nextFloat() + 1.0F) * 0.2F);
+        this.bl = ((float)(this.bl - 6.283185307179586D));
+        if (this.V.nextInt(10) == 0) {
+          this.bq = (1.0F / (this.V.nextFloat() + 1.0F) * 0.2F);
         }
-        o.a(this, (byte)19);
+        this.o.a(this, (byte)19);
       }
     }
-    if (Y)
+    if (this.Y)
     {
-      if (bl < 3.1415927F)
+      if (this.bl < 3.1415927F)
       {
-        float ☃ = bl / 3.1415927F;
-        bn = (ns.a(☃ * ☃ * 3.1415927F) * 3.1415927F * 0.25F);
+        float ☃ = this.bl / 3.1415927F;
+        this.bn = (ns.a(☃ * ☃ * 3.1415927F) * 3.1415927F * 0.25F);
         if (☃ > 0.75D)
         {
-          bp = 1.0F;
-          br = 1.0F;
+          this.bp = 1.0F;
+          this.br = 1.0F;
         }
         else
         {
-          br *= 0.8F;
+          this.br *= 0.8F;
         }
       }
       else
       {
-        bn = 0.0F;
-        bp *= 0.9F;
-        br *= 0.99F;
+        this.bn = 0.0F;
+        this.bp *= 0.9F;
+        this.br *= 0.99F;
       }
-      if (!o.D)
+      if (!this.o.D)
       {
-        v = (bs * bp);
-        w = (bt * bp);
-        x = (bu * bp);
+        this.v = (this.bs * this.bp);
+        this.w = (this.bt * this.bp);
+        this.x = (this.bu * this.bp);
       }
-      float ☃ = ns.a(v * v + x * x);
+      float ☃ = ns.a(this.v * this.v + this.x * this.x);
       
-      aI += (-(float)ns.b(v, x) * 180.0F / 3.1415927F - aI) * 0.1F;
-      y = aI;
-      c = ((float)(c + 3.141592653589793D * br * 1.5D));
-      a += (-(float)ns.b(☃, w) * 180.0F / 3.1415927F - a) * 0.1F;
+      this.aI += (-(float)ns.b(this.v, this.x) * 180.0F / 3.1415927F - this.aI) * 0.1F;
+      this.y = this.aI;
+      this.c = ((float)(this.c + 3.141592653589793D * this.br * 1.5D));
+      this.a += (-(float)ns.b(☃, this.w) * 180.0F / 3.1415927F - this.a) * 0.1F;
     }
     else
     {
-      bn = (ns.e(ns.a(bl)) * 3.1415927F * 0.25F);
-      if (!o.D)
+      this.bn = (ns.e(ns.a(this.bl)) * 3.1415927F * 0.25F);
+      if (!this.o.D)
       {
-        v = 0.0D;
-        w -= 0.08D;
-        w *= 0.9800000190734863D;
-        x = 0.0D;
+        this.v = 0.0D;
+        this.w -= 0.08D;
+        this.w *= 0.9800000190734863D;
+        this.x = 0.0D;
       }
-      a = ((float)(a + (-90.0F - a) * 0.02D));
+      this.a = ((float)(this.a + (-90.0F - this.a) * 0.02D));
     }
   }
   
   public void g(float ☃, float ☃)
   {
-    d(v, w, x);
+    d(this.v, this.w, this.x);
   }
   
   public boolean bR()
   {
-    return (t > 45.0D) && (t < o.F()) && (super.bR());
+    return (this.t > 45.0D) && (this.t < this.o.F()) && (super.bR());
   }
   
   public void a(byte ☃)
   {
     if (☃ == 19) {
-      bl = 0.0F;
+      this.bl = 0.0F;
     } else {
       super.a(☃);
     }
@@ -178,14 +178,14 @@ public class tx
   
   public void b(float ☃, float ☃, float ☃)
   {
-    bs = ☃;
-    bt = ☃;
-    bu = ☃;
+    this.bs = ☃;
+    this.bt = ☃;
+    this.bu = ☃;
   }
   
   public boolean n()
   {
-    return (bs != 0.0F) || (bt != 0.0F) || (bu != 0.0F);
+    return (this.bs != 0.0F) || (this.bt != 0.0F) || (this.bu != 0.0F);
   }
   
   static class a
@@ -195,7 +195,7 @@ public class tx
     
     public a(tx ☃)
     {
-      a = ☃;
+      this.a = ☃;
     }
     
     public boolean a()
@@ -205,18 +205,18 @@ public class tx
     
     public void e()
     {
-      int ☃ = a.bh();
+      int ☃ = this.a.bh();
       if (☃ > 100)
       {
-        a.b(0.0F, 0.0F, 0.0F);
+        this.a.b(0.0F, 0.0F, 0.0F);
       }
-      else if ((a.bc().nextInt(50) == 0) || (!tx.a(a)) || (!a.n()))
+      else if ((this.a.bc().nextInt(50) == 0) || (!tx.a(this.a)) || (!this.a.n()))
       {
-        float ☃ = a.bc().nextFloat() * 3.1415927F * 2.0F;
+        float ☃ = this.a.bc().nextFloat() * 3.1415927F * 2.0F;
         float ☃ = ns.b(☃) * 0.2F;
-        float ☃ = -0.1F + a.bc().nextFloat() * 0.2F;
+        float ☃ = -0.1F + this.a.bc().nextFloat() * 0.2F;
         float ☃ = ns.a(☃) * 0.2F;
-        a.b(☃, ☃, ☃);
+        this.a.b(☃, ☃, ☃);
       }
     }
   }

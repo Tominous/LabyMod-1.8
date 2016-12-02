@@ -11,34 +11,34 @@ public class awr
   
   public awr(RealmsScreen ☃)
   {
-    a = ☃;
-    n = Collections.synchronizedList(Lists.newArrayList());
+    this.a = ☃;
+    this.n = Collections.synchronizedList(Lists.newArrayList());
   }
   
   public RealmsScreen a()
   {
-    return a;
+    return this.a;
   }
   
   public void b()
   {
-    a.init();
+    this.a.init();
     super.b();
   }
   
   public void a(String ☃, int ☃, int ☃, int ☃)
   {
-    super.a(q, ☃, ☃, ☃, ☃);
+    super.a(this.q, ☃, ☃, ☃, ☃);
   }
   
   public void b(String ☃, int ☃, int ☃, int ☃)
   {
-    super.c(q, ☃, ☃, ☃, ☃);
+    super.c(this.q, ☃, ☃, ☃, ☃);
   }
   
   public void b(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    a.blit(☃, ☃, ☃, ☃, ☃, ☃);
+    this.a.blit(☃, ☃, ☃, ☃, ☃, ☃);
     super.b(☃, ☃, ☃, ☃, ☃, ☃);
   }
   
@@ -64,7 +64,7 @@ public class awr
   
   public void a(int ☃, int ☃, float ☃)
   {
-    a.render(☃, ☃, ☃);
+    this.a.render(☃, ☃, ☃);
   }
   
   public void a(zx ☃, int ☃, int ☃)
@@ -84,49 +84,49 @@ public class awr
   
   public void e()
   {
-    a.tick();
+    this.a.tick();
     super.e();
   }
   
   public int h()
   {
-    return q.a;
+    return this.q.a;
   }
   
   public int c(String ☃)
   {
-    return q.a(☃);
+    return this.q.a(☃);
   }
   
   public void c(String ☃, int ☃, int ☃, int ☃)
   {
-    q.a(☃, ☃, ☃, ☃);
+    this.q.a(☃, ☃, ☃, ☃);
   }
   
   public List<String> a(String ☃, int ☃)
   {
-    return q.c(☃, ☃);
+    return this.q.c(☃, ☃);
   }
   
   public final void a(avs ☃)
   {
-    a.buttonClicked(((awp)☃).f());
+    this.a.buttonClicked(((awp)☃).f());
   }
   
   public void i()
   {
-    n.clear();
+    this.n.clear();
   }
   
   public void a(RealmsButton ☃)
   {
-    n.add(☃.getProxy());
+    this.n.add(☃.getProxy());
   }
   
   public List<RealmsButton> j()
   {
-    List<RealmsButton> ☃ = Lists.newArrayListWithExpectedSize(n.size());
-    for (avs ☃ : n) {
+    List<RealmsButton> ☃ = Lists.newArrayListWithExpectedSize(this.n.size());
+    for (avs ☃ : this.n) {
       ☃.add(((awp)☃).f());
     }
     return ☃;
@@ -134,50 +134,50 @@ public class awr
   
   public void b(RealmsButton ☃)
   {
-    n.remove(☃);
+    this.n.remove(☃);
   }
   
   public void a(int ☃, int ☃, int ☃)
   {
-    a.mouseClicked(☃, ☃, ☃);
+    this.a.mouseClicked(☃, ☃, ☃);
     super.a(☃, ☃, ☃);
   }
   
   public void k()
   {
-    a.mouseEvent();
+    this.a.mouseEvent();
     super.k();
   }
   
   public void l()
   {
-    a.keyboardEvent();
+    this.a.keyboardEvent();
     super.l();
   }
   
   public void b(int ☃, int ☃, int ☃)
   {
-    a.mouseReleased(☃, ☃, ☃);
+    this.a.mouseReleased(☃, ☃, ☃);
   }
   
   public void a(int ☃, int ☃, int ☃, long ☃)
   {
-    a.mouseDragged(☃, ☃, ☃, ☃);
+    this.a.mouseDragged(☃, ☃, ☃, ☃);
   }
   
   public void a(char ☃, int ☃)
   {
-    a.keyPressed(☃, ☃);
+    this.a.keyPressed(☃, ☃);
   }
   
   public void a(boolean ☃, int ☃)
   {
-    a.confirmResult(☃, ☃);
+    this.a.confirmResult(☃, ☃);
   }
   
   public void m()
   {
-    a.removed();
+    this.a.removed();
     super.m();
   }
 }

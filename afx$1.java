@@ -7,6 +7,6 @@ class afx$1
   
   public boolean a(pk ☃)
   {
-    return (☃ != null) && (☃.aP() == a);
+    return (☃ != null) && (☃.aP() == this.a);
   }
 }

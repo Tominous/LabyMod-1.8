@@ -4,7 +4,7 @@ public class art
   public art(long ☃, ase ☃)
   {
     super(☃);
-    a = ☃;
+    this.a = ☃;
   }
   
   public int[] a(int ☃, int ☃, int ☃, int ☃)
@@ -13,7 +13,7 @@ public class art
     int ☃ = ☃ - 1;
     int ☃ = ☃ + 2;
     int ☃ = ☃ + 2;
-    int[] ☃ = a.a(☃, ☃, ☃, ☃);
+    int[] ☃ = this.a.a(☃, ☃, ☃, ☃);
     
     int[] ☃ = asc.a(☃ * ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
@@ -26,7 +26,7 @@ public class art
         int ☃ = ☃[(☃ + 1 + (☃ + 1) * ☃)];
         a(☃ + ☃, ☃ + ☃);
         if ((☃ == 0) && (☃ == 0) && (☃ == 0) && (☃ == 0) && (☃ == 0) && (a(100) == 0)) {
-          ☃[(☃ + ☃ * ☃)] = Daz;
+          ☃[(☃ + ☃ * ☃)] = ady.D.az;
         } else {
           ☃[(☃ + ☃ * ☃)] = ☃;
         }

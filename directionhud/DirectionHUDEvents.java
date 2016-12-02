@@ -29,10 +29,10 @@ public class DirectionHUDEvents
     if (!DirectionHUD.optionEnable) {
       return;
     }
-    if (mct.aB) {
+    if (mc.t.aB) {
       return;
     }
-    if ((!mcw) && (mcm != null) && ((!(mcm instanceof awv)) || (!DirectionHUD.showWhileChat))) {
+    if ((!mc.w) && (mc.m != null) && ((!(mc.m instanceof awv)) || (!DirectionHUD.showWhileChat))) {
       return;
     }
     GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -43,7 +43,7 @@ public class DirectionHUDEvents
   
   private static void displayHUD(ave mc)
   {
-    int direction = ns.c(h.y * 256.0F / 360.0F + 0.5D) & 0xFF;
+    int direction = ns.c(mc.h.y * 256.0F / 360.0F + 0.5D) & 0xFF;
     
     int yBase = getY(1, 12);
     int xBase = getX(65);
@@ -54,10 +54,10 @@ public class DirectionHUDEvents
     } else {
       drawTexturedModalRect(xBase, yBase, direction - 128, 12, 65, 12, -100.0F);
     }
-    k.a("§" + DirectionHUD.optionMarkerColor
+    mc.k.a("§" + DirectionHUD.optionMarkerColor
       .toLowerCase() + "|", xBase + 32, yBase + 1, 16777215);
     
-    k.a("§" + DirectionHUD.optionMarkerColor
+    mc.k.a("§" + DirectionHUD.optionMarkerColor
       .toLowerCase() + "|§r", xBase + 32, yBase + 5, 16777215);
   }
   

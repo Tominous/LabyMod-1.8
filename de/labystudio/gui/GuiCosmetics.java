@@ -6,6 +6,7 @@ import avw;
 import axu;
 import de.labystudio.cosmetic.Cosmetic;
 import de.labystudio.cosmetic.CosmeticManager;
+import de.labystudio.cosmetic.CosmeticUser;
 import de.labystudio.cosmetic.EnumCosmetic;
 import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
@@ -17,9 +18,8 @@ import de.labystudio.utils.Color;
 import de.labystudio.utils.DrawUtils;
 import de.labystudio.utils.Utils;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 import zw;
@@ -47,29 +47,29 @@ public class GuiCosmetics
   
   private void refreshButtons()
   {
-    n.clear();
+    this.n.clear();
     boolean flag = false;
     int y = 0;
     int x = 0;
     UUID uuid = LabyMod.getInstance().getPlayerUUID();
-    ArrayList<Cosmetic> onlineList = new ArrayList();
+    CosmeticUser cosmeticUser = null;
     String hash = Utils.sha1(uuid.toString());
-    if ((uuid != null) && (LabyMod.getInstance().getCosmeticManager().getOnlineCosmetics().containsKey(hash))) {
-      onlineList = (ArrayList)LabyMod.getInstance().getCosmeticManager().getOnlineCosmetics().get(hash);
-    }
-    n.add(
-      buttonEnableAll = new avs(2, 3, 3, 100, 20, "Cosmetics: " + (settingscosmetics ? Color.cl("a") + "Enabled" : new StringBuilder().append(Color.cl("c")).append("Disabled").toString())));
-    n.add(buttonDone = new avs(0, l / 2 - 100, m - 43, "Done"));
+    
+    CosmeticUser cosmeticOnlineUser = uuid == null ? null : (CosmeticUser)LabyMod.getInstance().getCosmeticManager().getOnlineCosmetics().get(hash);
+    CosmeticUser cosmeticOfflineUser = uuid == null ? null : (CosmeticUser)LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics().get(hash);
+    
+    this.n.add(this.buttonEnableAll = new avs(2, 3, 3, 100, 20, "Cosmetics: " + (ConfigManager.settings.cosmetics ? Color.cl("a") + "Enabled" : new StringBuilder().append(Color.cl("c")).append("Disabled").toString())));
+    this.n.add(this.buttonDone = new avs(0, this.l / 2 - 100, this.m - 43, "Done"));
     SliderOption option = new SliderOption(0.0F, 50.0F, new SliderCallback()
     {
       public void setValue(int i)
       {
-        settingswingsScale = i;
+        ConfigManager.settings.wingsScale = i;
       }
       
       public int getValue()
       {
-        return settingswingsScale;
+        return ConfigManager.settings.wingsScale;
       }
       
       public String getTitle(int value)
@@ -77,19 +77,17 @@ public class GuiCosmetics
         return value + 75 + "%";
       }
     });
-    n.add(new CustomSlider(10, l - 52, 4, option, 50, 20));
-    for (EnumCosmetic cosmetic : EnumCosmetic.values()) {
-      if ((cosmetic != EnumCosmetic.TAG) && (cosmetic != EnumCosmetic.NONE) && (cosmetic != EnumCosmetic.CENSORED) && (cosmetic != EnumCosmetic.PIXELBIESTER) && (cosmetic != EnumCosmetic.RANK) && (cosmetic != EnumCosmetic.HALLOWEEN))
+    this.n.add(new CustomSlider(10, this.l - 52, 4, option, 50, 20));
+    for (EnumCosmetic enumCosmetic : EnumCosmetic.values()) {
+      if ((enumCosmetic != EnumCosmetic.TAG) && (enumCosmetic != EnumCosmetic.NONE) && (enumCosmetic != EnumCosmetic.CENSORED) && (enumCosmetic != EnumCosmetic.PIXELBIESTER) && (enumCosmetic != EnumCosmetic.RANK) && (enumCosmetic != EnumCosmetic.HALLOWEEN) && (enumCosmetic != EnumCosmetic.XMAS))
       {
         avs button;
-        n.add(button = new avs(-1, l / 2 + x - 175, m / 4 + y, 70, 20, Color.booleanToColor(Boolean.valueOf(isEnabled(cosmetic))) + cosmetic.name()));
-        l = (selected != cosmetic);
-        for (Cosmetic onlineCos : onlineList) {
-          if (onlineCos.getType() == cosmetic)
-          {
-            l = false;
-            j = (Color.cl("7") + cosmetic.name() + Color.cl("a") + " ✔");
-          }
+        this.n.add(button = new avs(-1, this.l / 2 + x - 175, this.m / 4 + y, 70, 20, Color.booleanToColor(Boolean.valueOf(isEnabled(enumCosmetic))) + enumCosmetic.name()));
+        button.l = (this.selected != enumCosmetic);
+        if ((cosmeticOnlineUser != null) && (cosmeticOnlineUser.getEnumList().contains(enumCosmetic)))
+        {
+          button.l = false;
+          button.j = (Color.cl("7") + enumCosmetic.name() + Color.cl("a") + " ✔");
         }
         x += 70;
         if (x > 280)
@@ -99,46 +97,26 @@ public class GuiCosmetics
         }
       }
     }
-    if (selected != null)
+    if (this.selected != null)
     {
-      if (selected != EnumCosmetic.TOOL) {
-        n.add(new avs(1, l / 2 - 100 - 50, m / 2, selected.name() + ": " + (
-          isEnabled(selected) ? Color.cl("a") + "Enabled" : new StringBuilder().append(Color.cl("c")).append("Disabled").toString())));
+      if (this.selected != EnumCosmetic.TOOL) {
+        this.n.add(new avs(1, this.l / 2 - 100 - 50, this.m / 2, this.selected.name() + ": " + (isEnabled(this.selected) ? Color.cl("a") + "Enabled" : new StringBuilder().append(Color.cl("c")).append("Disabled").toString())));
       }
-      if (selected == EnumCosmetic.TOOL)
+      if (this.selected == EnumCosmetic.TOOL)
       {
-        toolId = new avw(-1, getInstancedraw.fontRenderer, l / 2, m / 2, 50, 20);
-        toolId.a(settingscosmeticsTool + "");
+        this.toolId = new avw(-1, LabyMod.getInstance().draw.fontRenderer, this.l / 2, this.m / 2, 50, 20);
+        this.toolId.a(ConfigManager.settings.cosmeticsTool + "");
       }
-      if ((selected == EnumCosmetic.WOLFTAIL) || (selected == EnumCosmetic.OCELOTTAIL) || (selected == EnumCosmetic.DEADMAU5)) {
-        n.add(buttonTemplate = new avs(3, l / 2 - 150, m / 2 + 25, "Download Skin Template"));
+      if ((this.selected == EnumCosmetic.WOLFTAIL) || (this.selected == EnumCosmetic.OCELOTTAIL) || (this.selected == EnumCosmetic.DEADMAU5)) {
+        this.n.add(this.buttonTemplate = new avs(3, this.l / 2 - 150, this.m / 2 + 25, "Download Skin Template"));
       }
     }
-    n.add(new avs(4, 105, 3, 80, 20, "Open Webpanel"));
+    this.n.add(new avs(4, 105, 3, 100, 20, Color.cl("e") + "Online Cosmetics"));
   }
   
   private boolean isEnabled(EnumCosmetic cosmetic)
   {
-    return getCosmetic(cosmetic) != null;
-  }
-  
-  private Cosmetic getCosmetic(EnumCosmetic cosmetic)
-  {
-    UUID uuid = LabyMod.getInstance().getPlayerUUID();
-    if (uuid == null) {
-      return null;
-    }
-    String hash = Utils.sha1(uuid.toString());
-    if (!LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics().containsKey(hash)) {
-      return null;
-    }
-    ArrayList<Cosmetic> list = (ArrayList)LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics().get(hash);
-    for (Cosmetic cos : list) {
-      if (cos.getType() == cosmetic) {
-        return cos;
-      }
-    }
-    return null;
+    return LabyMod.getInstance().getCosmeticManager().hasCosmetic(cosmetic);
   }
   
   public static Cosmetic setCosmetic(Cosmetic cosmetic, boolean overwrite)
@@ -148,20 +126,15 @@ public class GuiCosmetics
       return null;
     }
     String hash = Utils.sha1(uuid.toString());
-    if (!LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics().containsKey(hash)) {
-      LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics().put(hash, new ArrayList());
+    CosmeticUser user = (CosmeticUser)LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics().get(hash);
+    if (user == null) {
+      user = new CosmeticUser();
     }
-    ArrayList<Cosmetic> setList = new ArrayList();
-    ArrayList<Cosmetic> list = (ArrayList)LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics().get(hash);
-    for (Cosmetic cos : list) {
-      if ((cos.getType() != cosmetic.getType()) || (!overwrite)) {
-        setList.add(cos);
-      }
+    if ((!user.getEnumList().contains(cosmetic.getType())) || (overwrite)) {
+      user.addToCosmeticList(cosmetic);
     }
-    if (overwrite) {
-      setList.add(cosmetic);
-    }
-    LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics().put(hash, setList);
+    user.updateData();
+    LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics().put(hash, user);
     return null;
   }
   
@@ -172,119 +145,112 @@ public class GuiCosmetics
       return null;
     }
     String hash = Utils.sha1(uuid.toString());
-    if (!LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics().containsKey(hash)) {
+    CosmeticUser user = (CosmeticUser)LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics().get(hash);
+    if (user == null) {
       return null;
     }
-    ArrayList<Cosmetic> list = (ArrayList)LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics().get(hash);
-    Iterator it = list.iterator();
-    while (it.hasNext())
-    {
-      Cosmetic next = (Cosmetic)it.next();
-      if (next.getType() == type) {
-        it.remove();
-      }
-    }
+    user.getCosmeticHashMap().remove(type);
     return null;
   }
   
   protected void a(avs button)
     throws IOException
   {
-    if (k == -1) {
+    if (button.k == -1) {
       for (EnumCosmetic cosmetic : EnumCosmetic.values()) {
         if ((cosmetic != EnumCosmetic.TAG) && (cosmetic != EnumCosmetic.NONE)) {
-          if (j.contains(cosmetic.name()))
+          if (button.j.contains(cosmetic.name()))
           {
-            selected = cosmetic;
+            this.selected = cosmetic;
             refreshButtons();
           }
         }
       }
     }
-    if (k == 0)
+    if (button.k == 0)
     {
       ConfigManager.save();
-      ave.A().a(lastScreen);
+      ave.A().a(this.lastScreen);
     }
-    if (k == 2)
+    if (button.k == 2)
     {
-      settingscosmetics = (!settingscosmetics);
+      ConfigManager.settings.cosmetics = (!ConfigManager.settings.cosmetics);
       ConfigManager.save();
       refreshButtons();
     }
-    if (k == 3) {
-      LabyMod.getInstance().openWebpage("https://www.labymod.net/images/skin_template.png");
+    if (button.k == 3) {
+      LabyMod.getInstance().openWebpage("https://www.labymod.net/images/skin_template.png", true);
     }
-    if (k == 4) {
-      LabyMod.getInstance().openWebpage("https://labymod.net/#getKeyModal");
+    if (button.k == 4) {
+      LabyMod.getInstance().openWebpage("https://www.labymod.net/#login", true);
     }
-    if ((k == 1) && (selected != null))
+    if ((button.k == 1) && (this.selected != null))
     {
-      if (isEnabled(selected))
+      if (isEnabled(this.selected))
       {
-        removeCosmetic(selected);
-        if (selected == EnumCosmetic.WOLFTAIL) {
-          settingscosmeticsWolfTail = false;
+        removeCosmetic(this.selected);
+        if (this.selected == EnumCosmetic.WOLFTAIL) {
+          ConfigManager.settings.cosmeticsWolfTail = false;
         }
-        if (selected == EnumCosmetic.WINGS) {
-          settingscosmeticsWings = false;
+        if (this.selected == EnumCosmetic.WINGS) {
+          ConfigManager.settings.cosmeticsWings = false;
         }
-        if (selected == EnumCosmetic.OCELOTTAIL) {
-          settingscosmeticsOcelot = false;
+        if (this.selected == EnumCosmetic.OCELOTTAIL) {
+          ConfigManager.settings.cosmeticsOcelot = false;
         }
-        if (selected == EnumCosmetic.DEADMAU5) {
-          settingscosmeticsDeadmau = false;
+        if (this.selected == EnumCosmetic.DEADMAU5) {
+          ConfigManager.settings.cosmeticsDeadmau = false;
         }
-        if (selected == EnumCosmetic.BLAZE) {
-          settingscosmeticsBlaze = false;
+        if (this.selected == EnumCosmetic.BLAZE) {
+          ConfigManager.settings.cosmeticsBlaze = false;
         }
-        if (selected == EnumCosmetic.WITHER) {
-          settingscosmeticsWither = false;
+        if (this.selected == EnumCosmetic.WITHER) {
+          ConfigManager.settings.cosmeticsWither = false;
         }
-        if (selected == EnumCosmetic.HAT) {
-          settingscosmeticsHat = false;
+        if (this.selected == EnumCosmetic.HAT) {
+          ConfigManager.settings.cosmeticsHat = false;
         }
-        if (selected == EnumCosmetic.TOOL) {
-          settingscosmeticsTool = 0;
+        if (this.selected == EnumCosmetic.TOOL) {
+          ConfigManager.settings.cosmeticsTool = 0;
         }
-        if (selected == EnumCosmetic.HALO) {
-          settingscosmeticsHalo = false;
+        if (this.selected == EnumCosmetic.HALO) {
+          ConfigManager.settings.cosmeticsHalo = false;
         }
         ConfigManager.save();
       }
       else
       {
-        Cosmetic cos = new Cosmetic(selected, "");
-        if (selected == EnumCosmetic.WOLFTAIL) {
-          settingscosmeticsWolfTail = true;
+        Cosmetic cos = new Cosmetic(this.selected, "");
+        if (this.selected == EnumCosmetic.WOLFTAIL) {
+          ConfigManager.settings.cosmeticsWolfTail = true;
         }
-        if (selected == EnumCosmetic.WINGS)
+        if (this.selected == EnumCosmetic.WINGS)
         {
-          a = settingscolorR;
-          b = settingscolorG;
-          c = settingscolorB;
-          settingscosmeticsWings = true;
+          cos.a = ConfigManager.settings.colorR;
+          cos.b = ConfigManager.settings.colorG;
+          cos.c = ConfigManager.settings.colorB;
+          ConfigManager.settings.cosmeticsWings = true;
         }
-        if (selected == EnumCosmetic.OCELOTTAIL) {
-          settingscosmeticsOcelot = true;
+        if (this.selected == EnumCosmetic.OCELOTTAIL) {
+          ConfigManager.settings.cosmeticsOcelot = true;
         }
-        if (selected == EnumCosmetic.DEADMAU5) {
-          settingscosmeticsDeadmau = true;
+        if (this.selected == EnumCosmetic.DEADMAU5) {
+          ConfigManager.settings.cosmeticsDeadmau = true;
         }
-        if (selected == EnumCosmetic.BLAZE) {
-          settingscosmeticsBlaze = true;
+        if (this.selected == EnumCosmetic.BLAZE) {
+          ConfigManager.settings.cosmeticsBlaze = true;
         }
-        if (selected == EnumCosmetic.WITHER) {
-          settingscosmeticsWither = true;
+        if (this.selected == EnumCosmetic.WITHER) {
+          ConfigManager.settings.cosmeticsWither = true;
         }
-        if (selected == EnumCosmetic.HAT) {
-          settingscosmeticsHat = true;
+        if (this.selected == EnumCosmetic.HAT) {
+          ConfigManager.settings.cosmeticsHat = true;
         }
-        if (selected == EnumCosmetic.TOOL) {
-          settingscosmeticsTool = 0;
+        if (this.selected == EnumCosmetic.TOOL) {
+          ConfigManager.settings.cosmeticsTool = 0;
         }
-        if (selected == EnumCosmetic.HALO) {
-          settingscosmeticsHalo = true;
+        if (this.selected == EnumCosmetic.HALO) {
+          ConfigManager.settings.cosmeticsHalo = true;
         }
         setCosmetic(cos, true);
         ConfigManager.save();
@@ -297,63 +263,61 @@ public class GuiCosmetics
   {
     c(0);
     
-    getInstancedraw.drawCenteredString("LabyMod Cosmetics", l / 2, m / 4 - 20);
-    getInstancedraw.drawRightString("Wings scale", l - 55, 10.0D);
-    if (selected != null)
+    LabyMod.getInstance().draw.drawCenteredString("Free LabyMod Offline Cosmetics", this.l / 2, this.m / 4 - 20);
+    LabyMod.getInstance().draw.drawRightString("Wings scale", this.l - 55, 10.0D);
+    if (this.selected != null)
     {
-      getInstancedraw.drawString("Offline cosmetic:", l / 2 - 150, m / 2 - 15);
-      if (Ah != null)
+      LabyMod.getInstance().draw.drawString("Offline cosmetic:", this.l / 2 - 150, this.m / 2 - 15);
+      if (ave.A().h != null)
       {
-        if ((selected == EnumCosmetic.TOOL) || (selected == EnumCosmetic.WINGS) || (selected == EnumCosmetic.WOLFTAIL) || (selected == EnumCosmetic.OCELOTTAIL)) {
-          DrawUtils.drawEntityOnScreen(l / 2 + 50 + 60, m / 2 + 50 + 40, 20, mouseX - l / 2 - 10 - 100, -mouseY + m / 2 - 30 + 40, 180, 
-            Ah);
+        if ((this.selected == EnumCosmetic.TOOL) || (this.selected == EnumCosmetic.WINGS) || (this.selected == EnumCosmetic.WOLFTAIL) || (this.selected == EnumCosmetic.OCELOTTAIL)) {
+          DrawUtils.drawEntityOnScreen(this.l / 2 + 50 + 60, this.m / 2 + 50 + 40, 20, mouseX - this.l / 2 - 10 - 100, -mouseY + this.m / 2 - 30 + 40, 180, 0, 
+            ave.A().h);
         } else {
-          DrawUtils.drawEntityOnScreen(l / 2 + 50 + 60, m / 2 + 50 + 40, 20, -mouseX + l / 2 + 10 + 100, -mouseY + m / 2 - 30 + 40, 0, 
-            Ah);
+          DrawUtils.drawEntityOnScreen(this.l / 2 + 50 + 60, this.m / 2 + 50 + 40, 20, -mouseX + this.l / 2 + 10 + 100, -mouseY + this.m / 2 - 30 + 40, 0, 0, 
+            ave.A().h);
         }
-        if (j.F()) {
-          getInstancedraw.drawString(Color.cl("c") + "Preview is not live!", 3.0D, m - 10);
+        if (this.j.F()) {
+          LabyMod.getInstance().draw.drawString(Color.cl("c") + "Live preview only in multiplayer!", 3.0D, this.m - 10);
         }
       }
-      if ((toolId != null) && (selected != null) && (selected == EnumCosmetic.TOOL))
+      if ((this.toolId != null) && (this.selected != null) && (this.selected == EnumCosmetic.TOOL))
       {
-        getInstancedraw.drawRightString(Color.cl("c") + "OFF " + Color.cl("f") + "     Item id:", l / 2 - 10, m / 2 + 5);
-        zx item = new zx(zw.b(settingscosmeticsTool));
+        LabyMod.getInstance().draw.drawRightString(Color.cl("c") + "OFF " + Color.cl("f") + "     Item id:", this.l / 2 - 10, this.m / 2 + 5);
+        
+        zx item = new zx(zw.b(ConfigManager.settings.cosmeticsTool));
         if ((item != null) && (item.b() != null)) {
-          getInstancedraw.drawItem(item, l / 2 - 85, m / 2);
+          LabyMod.getInstance().draw.drawItem(item, this.l / 2 - 85, this.m / 2);
         }
-        toolId.g();
+        this.toolId.g();
       }
-      if (selected == EnumCosmetic.WINGS)
+      if (this.selected == EnumCosmetic.WINGS)
       {
         int x = 50;
         
-        int colorPickerPositionY = m / 2 + 40;
-        a(l / 2 - 100 - x, colorPickerPositionY, l / 2 + 100 - x, colorPickerPositionY + 10, Integer.MIN_VALUE);
-        float percent = settingscolorR / 255.0F * 200.0F;
-        a((int)percent + l / 2 - 101 - x, colorPickerPositionY - 3, (int)percent + 2 + l / 2 - 99 - x, colorPickerPositionY + 10 + 3, Integer.MAX_VALUE);
+        int colorPickerPositionY = this.m / 2 + 40;
+        a(this.l / 2 - 100 - x, colorPickerPositionY, this.l / 2 + 100 - x, colorPickerPositionY + 10, Integer.MIN_VALUE);
+        float percent = ConfigManager.settings.colorR / 255.0F * 200.0F;
+        a((int)percent + this.l / 2 - 101 - x, colorPickerPositionY - 3, (int)percent + 2 + this.l / 2 - 99 - x, colorPickerPositionY + 10 + 3, Integer.MAX_VALUE);
+        a((int)percent + this.l / 2 - 100 - x, colorPickerPositionY - 2, (int)percent + 2 + this.l / 2 - 100 - x, colorPickerPositionY + 10 + 2, 
+          Color.toRGB(ConfigManager.settings.colorR, 0, 0, 200));
+        LabyMod.getInstance().draw.drawCenteredString(Color.cl("c") + ConfigManager.settings.colorR + "", this.l / 2 - x, colorPickerPositionY + 1);
         
-        a((int)percent + l / 2 - 100 - x, colorPickerPositionY - 2, (int)percent + 2 + l / 2 - 100 - x, colorPickerPositionY + 10 + 2, 
-          Color.toRGB(settingscolorR, 0, 0, 200));
-        getInstancedraw.drawCenteredString(Color.cl("c") + settingscolorR + "", l / 2 - x, colorPickerPositionY + 1);
+        colorPickerPositionY = this.m / 2 + 60;
+        a(this.l / 2 - 100 - x, colorPickerPositionY, this.l / 2 + 100 - x, colorPickerPositionY + 10, Integer.MIN_VALUE);
+        percent = ConfigManager.settings.colorG / 255.0F * 200.0F;
+        a((int)percent + this.l / 2 - 101 - x, colorPickerPositionY - 3, (int)percent + 2 + this.l / 2 - 99 - x, colorPickerPositionY + 10 + 3, Integer.MAX_VALUE);
+        a((int)percent + this.l / 2 - 100 - x, colorPickerPositionY - 2, (int)percent + 2 + this.l / 2 - 100 - x, colorPickerPositionY + 10 + 2, 
+          Color.toRGB(0, ConfigManager.settings.colorG, 0, 200));
+        LabyMod.getInstance().draw.drawCenteredString(Color.cl("2") + ConfigManager.settings.colorG + "", this.l / 2 - x, colorPickerPositionY + 1);
         
-        colorPickerPositionY = m / 2 + 60;
-        a(l / 2 - 100 - x, colorPickerPositionY, l / 2 + 100 - x, colorPickerPositionY + 10, Integer.MIN_VALUE);
-        percent = settingscolorG / 255.0F * 200.0F;
-        a((int)percent + l / 2 - 101 - x, colorPickerPositionY - 3, (int)percent + 2 + l / 2 - 99 - x, colorPickerPositionY + 10 + 3, Integer.MAX_VALUE);
-        
-        a((int)percent + l / 2 - 100 - x, colorPickerPositionY - 2, (int)percent + 2 + l / 2 - 100 - x, colorPickerPositionY + 10 + 2, 
-          Color.toRGB(0, settingscolorG, 0, 200));
-        getInstancedraw.drawCenteredString(Color.cl("2") + settingscolorG + "", l / 2 - x, colorPickerPositionY + 1);
-        
-        colorPickerPositionY = m / 2 + 80;
-        a(l / 2 - 100 - x, colorPickerPositionY, l / 2 + 100 - x, colorPickerPositionY + 10, Integer.MIN_VALUE);
-        percent = settingscolorB / 255.0F * 200.0F;
-        a((int)percent + l / 2 - 101 - x, colorPickerPositionY - 3, (int)percent + 2 + l / 2 - 99 - x, colorPickerPositionY + 10 + 3, Integer.MAX_VALUE);
-        
-        a((int)percent + l / 2 - 100 - x, colorPickerPositionY - 2, (int)percent + 2 + l / 2 - 100 - x, colorPickerPositionY + 10 + 2, 
-          Color.toRGB(0, 0, settingscolorB, 200));
-        getInstancedraw.drawCenteredString(Color.cl("9") + settingscolorB + "", l / 2 - x, colorPickerPositionY + 1);
+        colorPickerPositionY = this.m / 2 + 80;
+        a(this.l / 2 - 100 - x, colorPickerPositionY, this.l / 2 + 100 - x, colorPickerPositionY + 10, Integer.MIN_VALUE);
+        percent = ConfigManager.settings.colorB / 255.0F * 200.0F;
+        a((int)percent + this.l / 2 - 101 - x, colorPickerPositionY - 3, (int)percent + 2 + this.l / 2 - 99 - x, colorPickerPositionY + 10 + 3, Integer.MAX_VALUE);
+        a((int)percent + this.l / 2 - 100 - x, colorPickerPositionY - 2, (int)percent + 2 + this.l / 2 - 100 - x, colorPickerPositionY + 10 + 2, 
+          Color.toRGB(0, 0, ConfigManager.settings.colorB, 200));
+        LabyMod.getInstance().draw.drawCenteredString(Color.cl("9") + ConfigManager.settings.colorB + "", this.l / 2 - x, colorPickerPositionY + 1);
       }
     }
     super.a(mouseX, mouseY, partialTicks);
@@ -364,34 +328,34 @@ public class GuiCosmetics
   {
     try
     {
-      if ((toolId != null) && (toolId.a(typedChar, keyCode)))
+      if ((this.toolId != null) && (this.toolId.a(typedChar, keyCode)))
       {
         try
         {
-          settingscosmeticsTool = Integer.parseInt(toolId.b());
+          ConfigManager.settings.cosmeticsTool = Integer.parseInt(this.toolId.b());
         }
         catch (Exception error)
         {
-          settingscosmeticsTool = 0;
-          toolId.a("0");
+          ConfigManager.settings.cosmeticsTool = 0;
+          this.toolId.a("0");
         }
-        if (zw.b(settingscosmeticsTool) != null)
+        if (zw.b(ConfigManager.settings.cosmeticsTool) != null)
         {
-          setCosmetic(new Cosmetic(EnumCosmetic.TOOL, "1:" + settingscosmeticsTool), true);
+          setCosmetic(new Cosmetic(EnumCosmetic.TOOL, "1:" + ConfigManager.settings.cosmeticsTool), true);
         }
         else
         {
-          settingscosmeticsTool = 0;
+          ConfigManager.settings.cosmeticsTool = 0;
           removeCosmetic(EnumCosmetic.TOOL);
         }
-        avw field = toolId;
+        avw field = this.toolId;
         refreshButtons();
-        toolId = field;
+        this.toolId = field;
       }
       if (keyCode == 1)
       {
         ConfigManager.save();
-        ave.A().a(lastScreen);
+        ave.A().a(this.lastScreen);
         return;
       }
     }
@@ -405,8 +369,8 @@ public class GuiCosmetics
   protected void a(int mouseX, int mouseY, int mouseButton)
     throws IOException
   {
-    if ((selected != null) && (selected == EnumCosmetic.TOOL) && (toolId != null)) {
-      toolId.a(mouseX, mouseY, mouseButton);
+    if ((this.selected != null) && (this.selected == EnumCosmetic.TOOL) && (this.toolId != null)) {
+      this.toolId.a(mouseX, mouseY, mouseButton);
     }
     super.a(mouseX, mouseY, mouseButton);
   }
@@ -414,42 +378,42 @@ public class GuiCosmetics
   protected void a(int mouseX, int mouseY, int clickedMouseButton, long timeSinceLastClick)
   {
     int x = -50;
-    int colorPickerPositionY = m / 2 + 40;
-    if ((mouseX > l / 2 + x - 100) && (mouseX < l / 2 + x + 100) && 
+    int colorPickerPositionY = this.m / 2 + 40;
+    if ((mouseX > this.l / 2 + x - 100) && (mouseX < this.l / 2 + x + 100) && 
       (mouseY > colorPickerPositionY) && (mouseY < colorPickerPositionY + 10))
     {
-      settingscolorR = ((int)((mouseX - (l / 2 - 100 + x)) * 1.285D));
+      ConfigManager.settings.colorR = ((int)((mouseX - (this.l / 2 - 100 + x)) * 1.285D));
       
-      Cosmetic cos = getCosmetic(EnumCosmetic.WINGS);
+      Cosmetic cos = LabyMod.getInstance().getCosmeticManager().getCosmeticByType(EnumCosmetic.WINGS);
       if (cos != null)
       {
-        a = settingscolorR;
+        cos.a = ConfigManager.settings.colorR;
         setCosmetic(cos, true);
       }
     }
-    colorPickerPositionY = m / 2 + 60;
-    if ((mouseX > l / 2 + x - 100) && (mouseX < l / 2 + x + 100) && 
+    colorPickerPositionY = this.m / 2 + 60;
+    if ((mouseX > this.l / 2 + x - 100) && (mouseX < this.l / 2 + x + 100) && 
       (mouseY > colorPickerPositionY) && (mouseY < colorPickerPositionY + 10))
     {
-      settingscolorG = ((int)((mouseX - (l / 2 - 100 + x)) * 1.285D));
+      ConfigManager.settings.colorG = ((int)((mouseX - (this.l / 2 - 100 + x)) * 1.285D));
       
-      Cosmetic cos = getCosmetic(EnumCosmetic.WINGS);
+      Cosmetic cos = LabyMod.getInstance().getCosmeticManager().getCosmeticByType(EnumCosmetic.WINGS);
       if (cos != null)
       {
-        b = settingscolorG;
+        cos.b = ConfigManager.settings.colorG;
         setCosmetic(cos, true);
       }
     }
-    colorPickerPositionY = m / 2 + 80;
-    if ((mouseX > l / 2 + x - 100) && (mouseX < l / 2 + x + 100) && 
+    colorPickerPositionY = this.m / 2 + 80;
+    if ((mouseX > this.l / 2 + x - 100) && (mouseX < this.l / 2 + x + 100) && 
       (mouseY > colorPickerPositionY) && (mouseY < colorPickerPositionY + 10))
     {
-      settingscolorB = ((int)((mouseX - (l / 2 - 100 + x)) * 1.285D));
+      ConfigManager.settings.colorB = ((int)((mouseX - (this.l / 2 - 100 + x)) * 1.285D));
       
-      Cosmetic cos = getCosmetic(EnumCosmetic.WINGS);
+      Cosmetic cos = LabyMod.getInstance().getCosmeticManager().getCosmeticByType(EnumCosmetic.WINGS);
       if (cos != null)
       {
-        c = settingscolorB;
+        cos.c = ConfigManager.settings.colorB;
         setCosmetic(cos, true);
       }
     }

@@ -20,13 +20,13 @@ public class PacketPlayRequestAddFriend
     for (int i = 0; i < a.length; i++) {
       a[i] = buf.readByte();
     }
-    name = new String(a);
+    this.name = new String(a);
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeInt(name.getBytes().length);
-    buf.writeBytes(name.getBytes());
+    buf.writeInt(this.name.getBytes().length);
+    buf.writeBytes(this.name.getBytes());
   }
   
   public void handle(PacketHandler packetHandler)
@@ -36,6 +36,6 @@ public class PacketPlayRequestAddFriend
   
   public String getName()
   {
-    return name;
+    return this.name;
   }
 }

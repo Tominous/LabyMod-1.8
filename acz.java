@@ -19,12 +19,12 @@ public class acz
   
   public acz(zx ☃, zx ☃, zx ☃, int ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
-    e = ☃;
-    f = true;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.e = ☃;
+    this.f = true;
   }
   
   public acz(zx ☃, zx ☃)
@@ -39,94 +39,94 @@ public class acz
   
   public zx a()
   {
-    return a;
+    return this.a;
   }
   
   public zx b()
   {
-    return b;
+    return this.b;
   }
   
   public boolean c()
   {
-    return b != null;
+    return this.b != null;
   }
   
   public zx d()
   {
-    return c;
+    return this.c;
   }
   
   public int e()
   {
-    return d;
+    return this.d;
   }
   
   public int f()
   {
-    return e;
+    return this.e;
   }
   
   public void g()
   {
-    d += 1;
+    this.d += 1;
   }
   
   public void a(int ☃)
   {
-    e += ☃;
+    this.e += ☃;
   }
   
   public boolean h()
   {
-    return d >= e;
+    return this.d >= this.e;
   }
   
   public void i()
   {
-    d = e;
+    this.d = this.e;
   }
   
   public boolean j()
   {
-    return f;
+    return this.f;
   }
   
   public void a(dn ☃)
   {
     dn ☃ = ☃.m("buy");
-    a = zx.a(☃);
+    this.a = zx.a(☃);
     dn ☃ = ☃.m("sell");
-    c = zx.a(☃);
+    this.c = zx.a(☃);
     if (☃.b("buyB", 10)) {
-      b = zx.a(☃.m("buyB"));
+      this.b = zx.a(☃.m("buyB"));
     }
     if (☃.b("uses", 99)) {
-      d = ☃.f("uses");
+      this.d = ☃.f("uses");
     }
     if (☃.b("maxUses", 99)) {
-      e = ☃.f("maxUses");
+      this.e = ☃.f("maxUses");
     } else {
-      e = 7;
+      this.e = 7;
     }
     if (☃.b("rewardExp", 1)) {
-      f = ☃.n("rewardExp");
+      this.f = ☃.n("rewardExp");
     } else {
-      f = true;
+      this.f = true;
     }
   }
   
   public dn k()
   {
     dn ☃ = new dn();
-    ☃.a("buy", a.b(new dn()));
-    ☃.a("sell", c.b(new dn()));
-    if (b != null) {
-      ☃.a("buyB", b.b(new dn()));
+    ☃.a("buy", this.a.b(new dn()));
+    ☃.a("sell", this.c.b(new dn()));
+    if (this.b != null) {
+      ☃.a("buyB", this.b.b(new dn()));
     }
-    ☃.a("uses", d);
-    ☃.a("maxUses", e);
-    ☃.a("rewardExp", f);
+    ☃.a("uses", this.d);
+    ☃.a("maxUses", this.e);
+    ☃.a("rewardExp", this.f);
     return ☃;
   }
 }

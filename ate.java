@@ -5,7 +5,7 @@ public abstract class ate
   
   public ate(String ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public abstract void a(dn paramdn);
@@ -19,11 +19,11 @@ public abstract class ate
   
   public void a(boolean ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public boolean d()
   {
-    return b;
+    return this.b;
   }
 }

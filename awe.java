@@ -11,17 +11,17 @@ public class awe
   public awe(int ☃, int ☃, int ☃, int ☃, int ☃, String ☃)
   {
     super(☃, ☃, ☃, ☃, ☃, ☃);
-    o = null;
+    this.o = null;
   }
   
   public awe(int ☃, int ☃, int ☃, avh.a ☃, String ☃)
   {
     super(☃, ☃, ☃, 150, 20, ☃);
-    o = ☃;
+    this.o = ☃;
   }
   
   public avh.a c()
   {
-    return o;
+    return this.o;
   }
 }

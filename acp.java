@@ -30,6 +30,6 @@ public class acp
   
   public boolean a(aci ☃)
   {
-    return (super.a(☃)) && (B != sB);
+    return (super.a(☃)) && (☃.B != s.B);
   }
 }

@@ -26,7 +26,7 @@ public class abq
     if (☃ == null) {
       return false;
     }
-    return e < 4;
+    return ☃.e < 4;
   }
   
   public zx a(xp ☃)
@@ -40,7 +40,7 @@ public class abq
       }
     }
     ☃ = ☃.k();
-    b = 1;
+    ☃.b = 1;
     if (☃.o() == null) {
       ☃.d(new dn());
     }

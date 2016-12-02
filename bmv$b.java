@@ -4,11 +4,11 @@ public enum bmv$b
   
   private bmv$b(String ☃)
   {
-    h = ☃;
+    this.h = ☃;
   }
   
   public String a()
   {
-    return h;
+    return this.h;
   }
 }

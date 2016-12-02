@@ -1,12 +1,11 @@
+import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.gson.JsonSyntaxException;
+import com.minimap.XaeroMinimap;
+import com.minimap.events.Events;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.nio.FloatBuffer;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.Callable;
 import org.apache.logging.log4j.LogManager;
@@ -16,10 +15,7 @@ import org.lwjgl.opengl.ContextCapabilities;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GLContext;
-import org.lwjgl.util.glu.GLU;
 import org.lwjgl.util.glu.Project;
-import shadersmod.client.Shaders;
-import shadersmod.client.ShadersRender;
 
 public class bfk
   implements bnj
@@ -33,7 +29,7 @@ public class bfk
   private final bni i;
   private Random j = new Random();
   private float k;
-  public bfn c;
+  public final bfn c;
   private final avq l;
   private int m;
   private pk n;
@@ -65,9 +61,9 @@ public class bfk
   private float[] N = new float['Ѐ'];
   private float[] O = new float['Ѐ'];
   private FloatBuffer P = avd.h(16);
-  public float Q;
-  public float R;
-  public float S;
+  private float Q;
+  private float R;
+  private float S;
   private float T;
   private float U;
   private int V = 0;
@@ -80,79 +76,65 @@ public class bfk
   public static final int d = ab.length;
   private int ac;
   private boolean ad;
-  public int ae;
-  private static final String __OBFID = "CL_00000947";
-  private boolean initialized = false;
-  private adm updatedWorld = null;
-  private boolean showDebugInfo = false;
-  public boolean fogStandard = false;
-  private float clipDistance = 128.0F;
-  private long lastServerTime = 0L;
-  private int lastServerTicks = 0;
-  private int serverWaitTime = 0;
-  private int serverWaitTimeCurrent = 0;
-  private float avgServerTimeDiff = 0.0F;
-  private float avgServerTickDiff = 0.0F;
-  private long lastErrorCheckTimeMs = 0L;
-  private blr[] fxaaShaders = new blr[10];
+  private int ae;
   
-  public bfk(ave mcIn, bni p_i45076_2_)
+  public bfk(ave mcIn, bni resourceManagerIn)
   {
-    ac = d;
-    ad = false;
-    ae = 0;
-    h = mcIn;
-    i = p_i45076_2_;
-    c = mcIn.ah();
-    l = new avq(mcIn.P());
-    G = new blz(16, 16);
-    I = mcIn.P().a("lightMap", G);
-    H = G.e();
-    aa = null;
-    for (int var3 = 0; var3 < 32; var3++) {
-      for (int var4 = 0; var4 < 32; var4++)
+    this.ac = d;
+    this.ad = false;
+    this.ae = 0;
+    this.h = mcIn;
+    this.i = resourceManagerIn;
+    this.c = mcIn.ah();
+    this.l = new avq(mcIn.P());
+    this.G = new blz(16, 16);
+    this.I = mcIn.P().a("lightMap", this.G);
+    this.H = this.G.e();
+    this.aa = null;
+    for (int i = 0; i < 32; i++) {
+      for (int j = 0; j < 32; j++)
       {
-        float var5 = var4 - 16;
-        float var6 = var3 - 16;
-        float var7 = ns.c(var5 * var5 + var6 * var6);
-        N[(var3 << 5 | var4)] = (-var6 / var7);
-        O[(var3 << 5 | var4)] = (var5 / var7);
+        float f = j - 16;
+        float f1 = i - 16;
+        float f2 = ns.c(f * f + f1 * f1);
+        this.N[(i << 5 | j)] = (-f1 / f2);
+        this.O[(i << 5 | j)] = (f / f2);
       }
     }
   }
   
   public boolean a()
   {
-    return (bqs.O) && (aa != null);
+    return (bqs.O) && (this.aa != null);
   }
   
   public void b()
   {
-    if (aa != null) {
-      aa.a();
+    if (this.aa != null) {
+      this.aa.a();
     }
-    aa = null;
-    ac = d;
+    this.aa = null;
+    this.ac = d;
   }
   
   public void c()
   {
-    ad = (!ad);
+    this.ad = (!this.ad);
   }
   
-  public void a(pk p_175066_1_)
+  public void a(pk entityIn)
   {
     if (bqs.O)
     {
-      if (aa != null) {
-        aa.a();
+      if (this.aa != null) {
+        this.aa.a();
       }
-      aa = null;
-      if ((p_175066_1_ instanceof vn)) {
+      this.aa = null;
+      if ((entityIn instanceof vn)) {
         a(new jy("shaders/post/creeper.json"));
-      } else if ((p_175066_1_ instanceof wc)) {
+      } else if ((entityIn instanceof wc)) {
         a(new jy("shaders/post/spider.json"));
-      } else if ((p_175066_1_ instanceof vo)) {
+      } else if ((entityIn instanceof vo)) {
         a(new jy("shaders/post/invert.json"));
       }
     }
@@ -161,56 +143,53 @@ public class bfk
   public void d()
   {
     if (bqs.O) {
-      if ((h.ac() instanceof wn))
+      if ((this.h.ac() instanceof wn))
       {
-        if (aa != null) {
-          aa.a();
+        if (this.aa != null) {
+          this.aa.a();
         }
-        ac = ((ac + 1) % (ab.length + 1));
-        if (ac != d) {
-          a(ab[ac]);
+        this.ac = ((this.ac + 1) % (ab.length + 1));
+        if (this.ac != d) {
+          a(ab[this.ac]);
         } else {
-          aa = null;
+          this.aa = null;
         }
       }
     }
   }
   
-  private void a(jy p_175069_1_)
+  private void a(jy resourceLocationIn)
   {
-    if (!bqs.i()) {
-      return;
-    }
     try
     {
-      aa = new blr(h.P(), i, h.b(), p_175069_1_);
-      aa.a(h.d, h.e);
-      ad = true;
+      this.aa = new blr(this.h.P(), this.i, this.h.b(), resourceLocationIn);
+      this.aa.a(this.h.d, this.h.e);
+      this.ad = true;
     }
-    catch (IOException var3)
+    catch (IOException ioexception)
     {
-      e.warn("Failed to load shader: " + p_175069_1_, var3);
-      ac = d;
-      ad = false;
+      e.warn("Failed to load shader: " + resourceLocationIn, ioexception);
+      this.ac = d;
+      this.ad = false;
     }
-    catch (JsonSyntaxException var4)
+    catch (JsonSyntaxException jsonsyntaxexception)
     {
-      e.warn("Failed to load shader: " + p_175069_1_, var4);
-      ac = d;
-      ad = false;
+      e.warn("Failed to load shader: " + resourceLocationIn, jsonsyntaxexception);
+      this.ac = d;
+      this.ad = false;
     }
   }
   
   public void a(bni resourceManager)
   {
-    if (aa != null) {
-      aa.a();
+    if (this.aa != null) {
+      this.aa.a();
     }
-    aa = null;
-    if (ac != d) {
-      a(ab[ac]);
+    this.aa = null;
+    if (this.ac != d) {
+      a(ab[this.ac]);
     } else {
-      a(h.ac());
+      a(this.h.ac());
     }
   }
   
@@ -221,416 +200,372 @@ public class bfk
     }
     l();
     m();
-    T = U;
-    r = q;
-    if (h.t.aF)
+    this.T = this.U;
+    this.r = this.q;
+    if (this.h.t.aF)
     {
-      float var1 = h.t.a * 0.6F + 0.2F;
-      float var2 = var1 * var1 * var1 * 8.0F;
-      u = o.a(s, 0.05F * var2);
-      v = p.a(t, 0.05F * var2);
-      w = 0.0F;
-      s = 0.0F;
-      t = 0.0F;
+      float f = this.h.t.a * 0.6F + 0.2F;
+      float f1 = f * f * f * 8.0F;
+      this.u = this.o.a(this.s, 0.05F * f1);
+      this.v = this.p.a(this.t, 0.05F * f1);
+      this.w = 0.0F;
+      this.s = 0.0F;
+      this.t = 0.0F;
     }
     else
     {
-      u = 0.0F;
-      v = 0.0F;
-      o.a();
-      p.a();
+      this.u = 0.0F;
+      this.v = 0.0F;
+      this.o.a();
+      this.p.a();
     }
-    if (h.ac() == null) {
-      h.a(h.h);
+    if (this.h.ac() == null) {
+      this.h.a(this.h.h);
     }
-    float var1 = h.f.o(new cj(h.ac()));
-    float var2 = h.t.c / 32.0F;
-    float var3 = var1 * (1.0F - var2) + var2;
-    U += (var3 - U) * 0.1F;
-    m += 1;
-    c.a();
+    float f3 = this.h.f.o(new cj(this.h.ac()));
+    float f4 = this.h.t.c / 32.0F;
+    float f2 = f3 * (1.0F - f4) + f4;
+    this.U += (f2 - this.U) * 0.1F;
+    this.m += 1;
+    this.c.a();
     o();
-    A = z;
+    this.A = this.z;
     if (bfc.d)
     {
-      z += 0.05F;
-      if (z > 1.0F) {
-        z = 1.0F;
+      this.z += 0.05F;
+      if (this.z > 1.0F) {
+        this.z = 1.0F;
       }
       bfc.d = false;
     }
-    else if (z > 0.0F)
+    else if (this.z > 0.0F)
     {
-      z -= 0.0125F;
+      this.z -= 0.0125F;
     }
   }
   
   public blr f()
   {
-    return aa;
+    return this.aa;
   }
   
-  public void a(int p_147704_1_, int p_147704_2_)
+  public void a(int width, int height)
   {
     if (bqs.O)
     {
-      if (aa != null) {
-        aa.a(p_147704_1_, p_147704_2_);
+      if (this.aa != null) {
+        this.aa.a(width, height);
       }
-      h.g.a(p_147704_1_, p_147704_2_);
+      this.h.g.a(width, height);
     }
   }
   
-  public void a(float p_78473_1_)
+  public void a(float partialTicks)
   {
-    pk var2 = h.ac();
-    if (var2 != null) {
-      if (h.f != null)
+    pk entity = this.h.ac();
+    if (entity != null) {
+      if (this.h.f != null)
       {
-        h.A.a("pick");
-        h.i = null;
-        double var3 = h.c.d();
-        h.s = var2.a(var3, p_78473_1_);
-        double var5 = var3;
-        aui var7 = var2.e(p_78473_1_);
-        boolean var8 = false;
-        boolean var9 = true;
-        if (h.c.i())
+        this.h.A.a("pick");
+        this.h.i = null;
+        double d0 = this.h.c.d();
+        this.h.s = entity.a(d0, partialTicks);
+        double d1 = d0;
+        aui vec3 = entity.e(partialTicks);
+        boolean flag = false;
+        int i = 3;
+        if (this.h.c.i())
         {
-          var3 = 6.0D;
-          var5 = 6.0D;
+          d0 = 6.0D;
+          d1 = 6.0D;
         }
-        else
+        else if (d0 > 3.0D)
         {
-          if (var3 > 3.0D) {
-            var8 = true;
-          }
-          var3 = var3;
+          flag = true;
         }
-        if (h.s != null) {
-          var5 = h.s.c.f(var7);
+        if (this.h.s != null) {
+          d1 = this.h.s.c.f(vec3);
         }
-        aui var10 = var2.d(p_78473_1_);
-        aui var11 = var7.b(a * var3, b * var3, c * var3);
-        n = null;
-        aui var12 = null;
-        float var13 = 1.0F;
-        List var14 = h.f.a(var2, var2.aR().a(a * var3, b * var3, c * var3).b(var13, var13, var13), Predicates.and(po.d, new bfk.1(this)));
-        double var15 = var5;
-        for (int var17 = 0; var17 < var14.size(); var17++)
+        aui vec31 = entity.d(partialTicks);
+        aui vec32 = vec3.b(vec31.a * d0, vec31.b * d0, vec31.c * d0);
+        this.n = null;
+        aui vec33 = null;
+        float f = 1.0F;
+        List<pk> list = this.h.f.a(entity, entity.aR().a(vec31.a * d0, vec31.b * d0, vec31.c * d0).b(f, f, f), Predicates.and(po.d, new Predicate()
         {
-          pk var18 = (pk)var14.get(var17);
-          float var19 = var18.ao();
-          aug var20 = var18.aR().b(var19, var19, var19);
-          auh var21 = var20.a(var7, var11);
-          if (var20.a(var7))
+          public boolean a(pk p_apply_1_)
           {
-            if (var15 >= 0.0D)
+            return p_apply_1_.ad();
+          }
+        }));
+        double d2 = d1;
+        for (int j = 0; j < list.size(); j++)
+        {
+          pk entity1 = (pk)list.get(j);
+          float f1 = entity1.ao();
+          aug axisalignedbb = entity1.aR().b(f1, f1, f1);
+          auh movingobjectposition = axisalignedbb.a(vec3, vec32);
+          if (axisalignedbb.a(vec3))
+          {
+            if (d2 >= 0.0D)
             {
-              n = var18;
-              var12 = var21 == null ? var7 : c;
-              var15 = 0.0D;
+              this.n = entity1;
+              vec33 = movingobjectposition == null ? vec3 : movingobjectposition.c;
+              d2 = 0.0D;
             }
           }
-          else if (var21 != null)
+          else if (movingobjectposition != null)
           {
-            double var22 = var7.f(c);
-            if ((var22 < var15) || (var15 == 0.0D))
-            {
-              boolean canRiderInteract = false;
-              if (Reflector.ForgeEntity_canRiderInteract.exists()) {
-                canRiderInteract = Reflector.callBoolean(var18, Reflector.ForgeEntity_canRiderInteract, new Object[0]);
-              }
-              if ((var18 == m) && (!canRiderInteract))
+            double d3 = vec3.f(movingobjectposition.c);
+            if ((d3 < d2) || (d2 == 0.0D)) {
+              if (entity1 == entity.m)
               {
-                if (var15 == 0.0D)
+                if (d2 == 0.0D)
                 {
-                  n = var18;
-                  var12 = c;
+                  this.n = entity1;
+                  vec33 = movingobjectposition.c;
                 }
               }
               else
               {
-                n = var18;
-                var12 = c;
-                var15 = var22;
+                this.n = entity1;
+                vec33 = movingobjectposition.c;
+                d2 = d3;
               }
             }
           }
         }
-        if ((n != null) && (var8) && (var7.f(var12) > 3.0D))
+        if ((this.n != null) && (flag) && (vec3.f(vec33) > 3.0D))
         {
-          n = null;
-          h.s = new auh(auh.a.a, var12, (cq)null, new cj(var12));
+          this.n = null;
+          this.h.s = new auh(auh.a.a, vec33, (cq)null, new cj(vec33));
         }
-        if ((n != null) && ((var15 < var5) || (h.s == null)))
+        if ((this.n != null) && ((d2 < d1) || (this.h.s == null)))
         {
-          h.s = new auh(n, var12);
-          if (((n instanceof pr)) || ((n instanceof uo))) {
-            h.i = n;
+          this.h.s = new auh(this.n, vec33);
+          if (((this.n instanceof pr)) || ((this.n instanceof uo))) {
+            this.h.i = this.n;
           }
         }
-        h.A.b();
+        this.h.A.b();
       }
     }
   }
   
   private void l()
   {
-    float var1 = 1.0F;
-    if ((h.ac() instanceof bet))
+    float f = 1.0F;
+    if ((this.h.ac() instanceof bet))
     {
-      bet var2 = (bet)h.ac();
-      var1 = var2.o();
+      bet abstractclientplayer = (bet)this.h.ac();
+      f = abstractclientplayer.o();
     }
-    y = x;
-    x += (var1 - x) * 0.5F;
-    if (x > 1.5F) {
-      x = 1.5F;
+    this.y = this.x;
+    this.x += (f - this.x) * 0.5F;
+    if (this.x > 1.5F) {
+      this.x = 1.5F;
     }
-    if (x < 0.1F) {
-      x = 0.1F;
+    if (this.x < 0.1F) {
+      this.x = 0.1F;
     }
   }
   
   private float a(float partialTicks, boolean p_78481_2_)
   {
-    if (W) {
+    if (this.W) {
       return 90.0F;
     }
-    pk var3 = h.ac();
-    float var4 = 70.0F;
+    pk entity = this.h.ac();
+    float f = 70.0F;
     if (p_78481_2_)
     {
-      var4 = h.t.aH;
-      var4 *= (y + (x - y) * partialTicks);
+      f = this.h.t.aH;
+      f *= (this.y + (this.x - this.y) * partialTicks);
     }
-    boolean zoomActive = false;
-    if (h.m == null) {
-      zoomActive = avh.a(h.t.ofKeyBindZoom);
-    }
-    if (zoomActive)
+    if (((entity instanceof pr)) && (((pr)entity).bn() <= 0.0F))
     {
-      if (!Config.zoomMode)
-      {
-        Config.zoomMode = true;
-        h.t.aF = true;
-      }
-      if (Config.zoomMode) {
-        var4 /= 4.0F;
-      }
+      float f1 = ((pr)entity).ax + partialTicks;
+      f /= ((1.0F - 500.0F / (f1 + 500.0F)) * 2.0F + 1.0F);
     }
-    else if (Config.zoomMode)
-    {
-      Config.zoomMode = false;
-      h.t.aF = false;
-      
-      o = new nv();
-      p = new nv();
-      
-      h.g.ac = true;
+    afh block = auz.a(this.h.f, entity, partialTicks);
+    if (block.t() == arm.h) {
+      f = f * 60.0F / 70.0F;
     }
-    if (((var3 instanceof pr)) && (((pr)var3).bn() <= 0.0F))
-    {
-      float var5 = ax + partialTicks;
-      var4 /= ((1.0F - 500.0F / (var5 + 500.0F)) * 2.0F + 1.0F);
-    }
-    afh var6 = auz.a(h.f, var3, partialTicks);
-    if (var6.t() == arm.h) {
-      var4 = var4 * 60.0F / 70.0F;
-    }
-    return var4;
+    return f;
   }
   
-  private void d(float p_78482_1_)
+  private void d(float partialTicks)
   {
-    if ((h.ac() instanceof pr))
+    if ((this.h.ac() instanceof pr))
     {
-      pr var2 = (pr)h.ac();
-      float var3 = au - p_78482_1_;
-      if (var2.bn() <= 0.0F)
+      pr entitylivingbase = (pr)this.h.ac();
+      float f = entitylivingbase.au - partialTicks;
+      if (entitylivingbase.bn() <= 0.0F)
       {
-        float var4 = ax + p_78482_1_;
-        bfl.b(40.0F - 8000.0F / (var4 + 200.0F), 0.0F, 0.0F, 1.0F);
+        float f1 = entitylivingbase.ax + partialTicks;
+        bfl.b(40.0F - 8000.0F / (f1 + 200.0F), 0.0F, 0.0F, 1.0F);
       }
-      if (var3 < 0.0F) {
+      if (f < 0.0F) {
         return;
       }
-      var3 /= av;
-      var3 = ns.a(var3 * var3 * var3 * var3 * 3.1415927F);
-      float var4 = aw;
-      bfl.b(-var4, 0.0F, 1.0F, 0.0F);
-      bfl.b(-var3 * 14.0F, 0.0F, 0.0F, 1.0F);
-      bfl.b(var4, 0.0F, 1.0F, 0.0F);
+      f /= entitylivingbase.av;
+      f = ns.a(f * f * f * f * 3.1415927F);
+      float f2 = entitylivingbase.aw;
+      bfl.b(-f2, 0.0F, 1.0F, 0.0F);
+      bfl.b(-f * 14.0F, 0.0F, 0.0F, 1.0F);
+      bfl.b(f2, 0.0F, 1.0F, 0.0F);
     }
   }
   
-  private void e(float p_78475_1_)
+  private void e(float partialTicks)
   {
-    if ((h.ac() instanceof wn))
+    if ((this.h.ac() instanceof wn))
     {
-      wn var2 = (wn)h.ac();
-      float var3 = M - L;
-      float var4 = -(M + var3 * p_78475_1_);
-      float var5 = bn + (bo - bn) * p_78475_1_;
-      float var6 = aE + (aF - aE) * p_78475_1_;
-      bfl.b(ns.a(var4 * 3.1415927F) * var5 * 0.5F, -Math.abs(ns.b(var4 * 3.1415927F) * var5), 0.0F);
-      bfl.b(ns.a(var4 * 3.1415927F) * var5 * 3.0F, 0.0F, 0.0F, 1.0F);
-      bfl.b(Math.abs(ns.b(var4 * 3.1415927F - 0.2F) * var5) * 5.0F, 1.0F, 0.0F, 0.0F);
-      bfl.b(var6, 1.0F, 0.0F, 0.0F);
+      wn entityplayer = (wn)this.h.ac();
+      float f = entityplayer.M - entityplayer.L;
+      float f1 = -(entityplayer.M + f * partialTicks);
+      float f2 = entityplayer.bn + (entityplayer.bo - entityplayer.bn) * partialTicks;
+      float f3 = entityplayer.aE + (entityplayer.aF - entityplayer.aE) * partialTicks;
+      bfl.b(ns.a(f1 * 3.1415927F) * f2 * 0.5F, -Math.abs(ns.b(f1 * 3.1415927F) * f2), 0.0F);
+      bfl.b(ns.a(f1 * 3.1415927F) * f2 * 3.0F, 0.0F, 0.0F, 1.0F);
+      bfl.b(Math.abs(ns.b(f1 * 3.1415927F - 0.2F) * f2) * 5.0F, 1.0F, 0.0F, 0.0F);
+      bfl.b(f3, 1.0F, 0.0F, 0.0F);
     }
   }
   
-  private void f(float p_78467_1_)
+  private void f(float partialTicks)
   {
-    pk var2 = h.ac();
-    float var3 = var2.aS();
-    double var4 = p + (s - p) * p_78467_1_;
-    double var6 = q + (t - q) * p_78467_1_ + var3;
-    double var8 = r + (u - r) * p_78467_1_;
-    if (((var2 instanceof pr)) && (((pr)var2).bJ()))
+    pk entity = this.h.ac();
+    float f = entity.aS();
+    double d0 = entity.p + (entity.s - entity.p) * partialTicks;
+    double d1 = entity.q + (entity.t - entity.q) * partialTicks + f;
+    double d2 = entity.r + (entity.u - entity.r) * partialTicks;
+    if (((entity instanceof pr)) && (((pr)entity).bJ()))
     {
-      var3 = (float)(var3 + 1.0D);
+      f = (float)(f + 1.0D);
       bfl.b(0.0F, 0.3F, 0.0F);
-      if (!h.t.aG)
+      if (!this.h.t.aG)
       {
-        cj var27 = new cj(var2);
-        alz var11 = h.f.p(var27);
-        afh var29 = var11.c();
-        if (Reflector.ForgeHooksClient_orientBedCamera.exists())
+        cj blockpos = new cj(entity);
+        alz iblockstate = this.h.f.p(blockpos);
+        afh block = iblockstate.c();
+        if (block == afi.C)
         {
-          Reflector.callVoid(Reflector.ForgeHooksClient_orientBedCamera, new Object[] { h.f, var27, var11, var2 });
+          int j = ((cq)iblockstate.b(afg.O)).b();
+          bfl.b(j * 90, 0.0F, 1.0F, 0.0F);
         }
-        else if (var29 == afi.C)
-        {
-          int var30 = ((cq)var11.b(afg.O)).b();
-          bfl.b(var30 * 90, 0.0F, 1.0F, 0.0F);
-        }
-        bfl.b(A + (y - A) * p_78467_1_ + 180.0F, 0.0F, -1.0F, 0.0F);
-        bfl.b(B + (z - B) * p_78467_1_, -1.0F, 0.0F, 0.0F);
+        bfl.b(entity.A + (entity.y - entity.A) * partialTicks + 180.0F, 0.0F, -1.0F, 0.0F);
+        bfl.b(entity.B + (entity.z - entity.B) * partialTicks, -1.0F, 0.0F, 0.0F);
       }
     }
-    else if (h.t.aA > 0)
+    else if (this.h.t.aA > 0)
     {
-      double var10 = r + (q - r) * p_78467_1_;
-      if (h.t.aG)
+      double d3 = this.r + (this.q - this.r) * partialTicks;
+      if (this.h.t.aG)
       {
-        bfl.b(0.0F, 0.0F, (float)-var10);
+        bfl.b(0.0F, 0.0F, (float)-d3);
       }
       else
       {
-        float var12 = y;
-        float var13 = z;
-        if (h.t.aA == 2) {
-          var13 += 180.0F;
+        float f1 = entity.y;
+        float f2 = entity.z;
+        if (this.h.t.aA == 2) {
+          f2 += 180.0F;
         }
-        double var14 = -ns.a(var12 / 180.0F * 3.1415927F) * ns.b(var13 / 180.0F * 3.1415927F) * var10;
-        double var16 = ns.b(var12 / 180.0F * 3.1415927F) * ns.b(var13 / 180.0F * 3.1415927F) * var10;
-        double var18 = -ns.a(var13 / 180.0F * 3.1415927F) * var10;
-        for (int var20 = 0; var20 < 8; var20++)
+        double d4 = -ns.a(f1 / 180.0F * 3.1415927F) * ns.b(f2 / 180.0F * 3.1415927F) * d3;
+        double d5 = ns.b(f1 / 180.0F * 3.1415927F) * ns.b(f2 / 180.0F * 3.1415927F) * d3;
+        double d6 = -ns.a(f2 / 180.0F * 3.1415927F) * d3;
+        for (int i = 0; i < 8; i++)
         {
-          float var21 = (var20 & 0x1) * 2 - 1;
-          float var22 = (var20 >> 1 & 0x1) * 2 - 1;
-          float var23 = (var20 >> 2 & 0x1) * 2 - 1;
-          var21 *= 0.1F;
-          var22 *= 0.1F;
-          var23 *= 0.1F;
-          auh var24 = h.f.a(new aui(var4 + var21, var6 + var22, var8 + var23), new aui(var4 - var14 + var21 + var23, var6 - var18 + var22, var8 - var16 + var23));
-          if (var24 != null)
+          float f3 = (i & 0x1) * 2 - 1;
+          float f4 = (i >> 1 & 0x1) * 2 - 1;
+          float f5 = (i >> 2 & 0x1) * 2 - 1;
+          f3 *= 0.1F;
+          f4 *= 0.1F;
+          f5 *= 0.1F;
+          auh movingobjectposition = this.h.f.a(new aui(d0 + f3, d1 + f4, d2 + f5), new aui(d0 - d4 + f3 + f5, d1 - d6 + f4, d2 - d5 + f5));
+          if (movingobjectposition != null)
           {
-            double var25 = c.f(new aui(var4, var6, var8));
-            if (var25 < var10) {
-              var10 = var25;
+            double d7 = movingobjectposition.c.f(new aui(d0, d1, d2));
+            if (d7 < d3) {
+              d3 = d7;
             }
           }
         }
-        if (h.t.aA == 2) {
+        if (this.h.t.aA == 2) {
           bfl.b(180.0F, 0.0F, 1.0F, 0.0F);
         }
-        bfl.b(z - var13, 1.0F, 0.0F, 0.0F);
-        bfl.b(y - var12, 0.0F, 1.0F, 0.0F);
-        bfl.b(0.0F, 0.0F, (float)-var10);
-        bfl.b(var12 - y, 0.0F, 1.0F, 0.0F);
-        bfl.b(var13 - z, 1.0F, 0.0F, 0.0F);
+        bfl.b(entity.z - f2, 1.0F, 0.0F, 0.0F);
+        bfl.b(entity.y - f1, 0.0F, 1.0F, 0.0F);
+        bfl.b(0.0F, 0.0F, (float)-d3);
+        bfl.b(f1 - entity.y, 0.0F, 1.0F, 0.0F);
+        bfl.b(f2 - entity.z, 1.0F, 0.0F, 0.0F);
       }
     }
     else
     {
       bfl.b(0.0F, 0.0F, -0.1F);
     }
-    if (!h.t.aG)
+    if (!this.h.t.aG)
     {
-      bfl.b(B + (z - B) * p_78467_1_, 1.0F, 0.0F, 0.0F);
-      if ((var2 instanceof tm))
+      bfl.b(entity.B + (entity.z - entity.B) * partialTicks, 1.0F, 0.0F, 0.0F);
+      if ((entity instanceof tm))
       {
-        tm var28 = (tm)var2;
-        bfl.b(aL + (aK - aL) * p_78467_1_ + 180.0F, 0.0F, 1.0F, 0.0F);
+        tm entityanimal = (tm)entity;
+        bfl.b(entityanimal.aL + (entityanimal.aK - entityanimal.aL) * partialTicks + 180.0F, 0.0F, 1.0F, 0.0F);
       }
       else
       {
-        bfl.b(A + (y - A) * p_78467_1_ + 180.0F, 0.0F, 1.0F, 0.0F);
+        bfl.b(entity.A + (entity.y - entity.A) * partialTicks + 180.0F, 0.0F, 1.0F, 0.0F);
       }
     }
-    bfl.b(0.0F, -var3, 0.0F);
-    var4 = p + (s - p) * p_78467_1_;
-    var6 = q + (t - q) * p_78467_1_ + var3;
-    var8 = r + (u - r) * p_78467_1_;
-    B = h.g.a(var4, var6, var8, p_78467_1_);
+    bfl.b(0.0F, -f, 0.0F);
+    d0 = entity.p + (entity.s - entity.p) * partialTicks;
+    d1 = entity.q + (entity.t - entity.q) * partialTicks + f;
+    d2 = entity.r + (entity.u - entity.r) * partialTicks;
+    this.B = this.h.g.a(d0, d1, d2, partialTicks);
   }
   
-  public void a(float partialTicks, int pass)
+  private void a(float partialTicks, int pass)
   {
-    k = (h.t.c * 16);
-    if (Config.isFogFancy()) {
-      k *= 0.95F;
-    }
-    if (Config.isFogFast()) {
-      k *= 0.83F;
-    }
+    this.k = (this.h.t.c * 16);
     bfl.n(5889);
     bfl.D();
-    float var3 = 0.07F;
-    if (h.t.e) {
-      bfl.b(-(pass * 2 - 1) * var3, 0.0F, 0.0F);
+    float f = 0.07F;
+    if (this.h.t.e) {
+      bfl.b(-(pass * 2 - 1) * f, 0.0F, 0.0F);
     }
-    clipDistance = (k * 2.0F);
-    if (clipDistance < 173.0F) {
-      clipDistance = 173.0F;
-    }
-    if (h.f.t.q() == 1) {
-      clipDistance = 256.0F;
-    }
-    if (X != 1.0D)
+    if (this.X != 1.0D)
     {
-      bfl.b((float)Y, (float)-Z, 0.0F);
-      bfl.a(X, X, 1.0D);
+      bfl.b((float)this.Y, (float)-this.Z, 0.0F);
+      bfl.a(this.X, this.X, 1.0D);
     }
-    Project.gluPerspective(a(partialTicks, true), h.d / h.e, 0.05F, clipDistance);
+    Project.gluPerspective(a(partialTicks, true), this.h.d / this.h.e, 0.05F, this.k * ns.a);
     bfl.n(5888);
     bfl.D();
-    if (h.t.e) {
+    if (this.h.t.e) {
       bfl.b((pass * 2 - 1) * 0.1F, 0.0F, 0.0F);
     }
     d(partialTicks);
-    if (h.t.d) {
+    if (this.h.t.d) {
       e(partialTicks);
     }
-    float var4 = h.h.bI + (h.h.bH - h.h.bI) * partialTicks;
-    if (var4 > 0.0F)
+    float f1 = this.h.h.bI + (this.h.h.bH - this.h.h.bI) * partialTicks;
+    if (f1 > 0.0F)
     {
-      byte var5 = 20;
-      if (h.h.a(pe.k)) {
-        var5 = 7;
+      int i = 20;
+      if (this.h.h.a(pe.k)) {
+        i = 7;
       }
-      float var6 = 5.0F / (var4 * var4 + 5.0F) - var4 * 0.04F;
-      var6 *= var6;
-      bfl.b((m + partialTicks) * var5, 0.0F, 1.0F, 1.0F);
-      bfl.a(1.0F / var6, 1.0F, 1.0F);
-      bfl.b(-(m + partialTicks) * var5, 0.0F, 1.0F, 1.0F);
+      float f2 = 5.0F / (f1 * f1 + 5.0F) - f1 * 0.04F;
+      f2 *= f2;
+      bfl.b((this.m + partialTicks) * i, 0.0F, 1.0F, 1.0F);
+      bfl.a(1.0F / f2, 1.0F, 1.0F);
+      bfl.b(-(this.m + partialTicks) * i, 0.0F, 1.0F, 1.0F);
     }
     f(partialTicks);
-    if (W) {
-      switch (V)
+    if (this.W) {
+      switch (this.V)
       {
       case 0: 
         bfl.b(90.0F, 0.0F, 1.0F, 0.0F);
@@ -650,57 +585,42 @@ public class bfk
     }
   }
   
-  public void b(float p_78476_1_, int p_78476_2_)
+  private void b(float partialTicks, int xOffset)
   {
-    if (!W)
+    if (!this.W)
     {
       bfl.n(5889);
       bfl.D();
-      float var3 = 0.07F;
-      if (h.t.e) {
-        bfl.b(-(p_78476_2_ * 2 - 1) * var3, 0.0F, 0.0F);
+      float f = 0.07F;
+      if (this.h.t.e) {
+        bfl.b(-(xOffset * 2 - 1) * f, 0.0F, 0.0F);
       }
-      if (Config.isShaders()) {
-        Shaders.applyHandDepth();
-      }
-      Project.gluPerspective(a(p_78476_1_, false), h.d / h.e, 0.05F, k * 2.0F);
+      Project.gluPerspective(a(partialTicks, false), this.h.d / this.h.e, 0.05F, this.k * 2.0F);
       bfl.n(5888);
       bfl.D();
-      if (h.t.e) {
-        bfl.b((p_78476_2_ * 2 - 1) * 0.1F, 0.0F, 0.0F);
+      if (this.h.t.e) {
+        bfl.b((xOffset * 2 - 1) * 0.1F, 0.0F, 0.0F);
       }
-      boolean var4 = false;
-      if ((!Config.isShaders()) || (!Shaders.isHandRendered))
+      bfl.E();
+      d(partialTicks);
+      if (this.h.t.d) {
+        e(partialTicks);
+      }
+      boolean flag = ((this.h.ac() instanceof pr)) && (((pr)this.h.ac()).bJ());
+      if ((this.h.t.aA == 0) && (!flag) && (!this.h.t.az) && (!this.h.c.a()))
       {
-        bfl.E();
-        d(p_78476_1_);
-        if (h.t.d) {
-          e(p_78476_1_);
-        }
-        var4 = ((h.ac() instanceof pr)) && (((pr)h.ac()).bJ());
-        if ((h.t.aA == 0) && (!var4) && (!h.t.az) && (!h.c.a()))
-        {
-          i();
-          if (Config.isShaders()) {
-            ShadersRender.renderItemFP(c, p_78476_1_);
-          } else {
-            c.a(p_78476_1_);
-          }
-          h();
-        }
-        bfl.F();
+        i();
+        this.c.a(partialTicks);
+        h();
       }
-      if ((Config.isShaders()) && (!Shaders.isCompositeRendered)) {
-        return;
-      }
-      h();
-      if ((h.t.aA == 0) && (!var4))
+      bfl.F();
+      if ((this.h.t.aA == 0) && (!flag))
       {
-        c.b(p_78476_1_);
-        d(p_78476_1_);
+        this.c.b(partialTicks);
+        d(partialTicks);
       }
-      if (h.t.d) {
-        e(p_78476_1_);
+      if (this.h.t.d) {
+        e(partialTicks);
       }
     }
   }
@@ -710,9 +630,6 @@ public class bfk
     bfl.g(bqs.r);
     bfl.x();
     bfl.g(bqs.q);
-    if (Config.isShaders()) {
-      Shaders.disableLightmap();
-    }
   }
   
   public void i()
@@ -720,11 +637,11 @@ public class bfk
     bfl.g(bqs.r);
     bfl.n(5890);
     bfl.D();
-    float var1 = 0.00390625F;
-    bfl.a(var1, var1, var1);
+    float f = 0.00390625F;
+    bfl.a(f, f, f);
     bfl.b(8.0F, 8.0F, 8.0F);
     bfl.n(5888);
-    h.P().a(I);
+    this.h.P().a(this.I);
     GL11.glTexParameteri(3553, 10241, 9729);
     GL11.glTexParameteri(3553, 10240, 9729);
     GL11.glTexParameteri(3553, 10242, 10496);
@@ -732,344 +649,302 @@ public class bfk
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     bfl.w();
     bfl.g(bqs.q);
-    if (Config.isShaders()) {
-      Shaders.enableLightmap();
-    }
   }
   
   private void m()
   {
-    L = ((float)(L + (Math.random() - Math.random()) * Math.random() * Math.random()));
-    L = ((float)(L * 0.9D));
-    K += (L - K) * 1.0F;
-    J = true;
+    this.L = ((float)(this.L + (Math.random() - Math.random()) * Math.random() * Math.random()));
+    this.L = ((float)(this.L * 0.9D));
+    this.K += (this.L - this.K) * 1.0F;
+    this.J = true;
   }
   
   private void g(float partialTicks)
   {
-    if (J)
+    if (this.J)
     {
-      h.A.a("lightTex");
-      bdb var2 = h.f;
-      if (var2 != null)
+      this.h.A.a("lightTex");
+      adm world = this.h.f;
+      if (world != null)
       {
-        if (CustomColorizer.updateLightmap(var2, K, H, h.h.a(pe.r)))
+        float f = world.b(1.0F);
+        float f1 = f * 0.95F + 0.05F;
+        for (int i = 0; i < 256; i++)
         {
-          G.d();
-          J = false;
-          h.A.b();
-          
-          return;
-        }
-        float var3 = var2.b(1.0F);
-        float var4 = var3 * 0.95F + 0.05F;
-        for (int var5 = 0; var5 < 256; var5++)
-        {
-          float var6 = t.p()[(var5 / 16)] * var4;
-          float var7 = t.p()[(var5 % 16)] * (K * 0.1F + 1.5F);
-          if (var2.ac() > 0) {
-            var6 = t.p()[(var5 / 16)];
+          float f2 = world.t.p()[(i / 16)] * f1;
+          float f3 = world.t.p()[(i % 16)] * (this.K * 0.1F + 1.5F);
+          if (world.ac() > 0) {
+            f2 = world.t.p()[(i / 16)];
           }
-          float var8 = var6 * (var3 * 0.65F + 0.35F);
-          float var9 = var6 * (var3 * 0.65F + 0.35F);
-          float var12 = var7 * ((var7 * 0.6F + 0.4F) * 0.6F + 0.4F);
-          float var13 = var7 * (var7 * var7 * 0.6F + 0.4F);
-          float var14 = var8 + var7;
-          float var15 = var9 + var12;
-          float var16 = var6 + var13;
-          var14 = var14 * 0.96F + 0.03F;
-          var15 = var15 * 0.96F + 0.03F;
-          var16 = var16 * 0.96F + 0.03F;
-          if (z > 0.0F)
+          float f4 = f2 * (f * 0.65F + 0.35F);
+          float f5 = f2 * (f * 0.65F + 0.35F);
+          float f6 = f3 * ((f3 * 0.6F + 0.4F) * 0.6F + 0.4F);
+          float f7 = f3 * (f3 * f3 * 0.6F + 0.4F);
+          float f8 = f4 + f3;
+          float f9 = f5 + f6;
+          float f10 = f2 + f7;
+          f8 = f8 * 0.96F + 0.03F;
+          f9 = f9 * 0.96F + 0.03F;
+          f10 = f10 * 0.96F + 0.03F;
+          if (this.z > 0.0F)
           {
-            float var17 = A + (z - A) * partialTicks;
-            var14 = var14 * (1.0F - var17) + var14 * 0.7F * var17;
-            var15 = var15 * (1.0F - var17) + var15 * 0.6F * var17;
-            var16 = var16 * (1.0F - var17) + var16 * 0.6F * var17;
+            float f11 = this.A + (this.z - this.A) * partialTicks;
+            f8 = f8 * (1.0F - f11) + f8 * 0.7F * f11;
+            f9 = f9 * (1.0F - f11) + f9 * 0.6F * f11;
+            f10 = f10 * (1.0F - f11) + f10 * 0.6F * f11;
           }
-          if (t.q() == 1)
+          if (world.t.q() == 1)
           {
-            var14 = 0.22F + var7 * 0.75F;
-            var15 = 0.28F + var12 * 0.75F;
-            var16 = 0.25F + var13 * 0.75F;
+            f8 = 0.22F + f3 * 0.75F;
+            f9 = 0.28F + f6 * 0.75F;
+            f10 = 0.25F + f7 * 0.75F;
           }
-          if (h.h.a(pe.r))
+          if (this.h.h.a(pe.r))
           {
-            float var17 = a(h.h, partialTicks);
-            float var18 = 1.0F / var14;
-            if (var18 > 1.0F / var15) {
-              var18 = 1.0F / var15;
+            float f15 = a(this.h.h, partialTicks);
+            float f12 = 1.0F / f8;
+            if (f12 > 1.0F / f9) {
+              f12 = 1.0F / f9;
             }
-            if (var18 > 1.0F / var16) {
-              var18 = 1.0F / var16;
+            if (f12 > 1.0F / f10) {
+              f12 = 1.0F / f10;
             }
-            var14 = var14 * (1.0F - var17) + var14 * var18 * var17;
-            var15 = var15 * (1.0F - var17) + var15 * var18 * var17;
-            var16 = var16 * (1.0F - var17) + var16 * var18 * var17;
+            f8 = f8 * (1.0F - f15) + f8 * f12 * f15;
+            f9 = f9 * (1.0F - f15) + f9 * f12 * f15;
+            f10 = f10 * (1.0F - f15) + f10 * f12 * f15;
           }
-          if (var14 > 1.0F) {
-            var14 = 1.0F;
+          if (f8 > 1.0F) {
+            f8 = 1.0F;
           }
-          if (var15 > 1.0F) {
-            var15 = 1.0F;
+          if (f9 > 1.0F) {
+            f9 = 1.0F;
           }
-          if (var16 > 1.0F) {
-            var16 = 1.0F;
+          if (f10 > 1.0F) {
+            f10 = 1.0F;
           }
-          float var17 = h.t.aI;
-          float var18 = 1.0F - var14;
-          float var19 = 1.0F - var15;
-          float var20 = 1.0F - var16;
-          var18 = 1.0F - var18 * var18 * var18 * var18;
-          var19 = 1.0F - var19 * var19 * var19 * var19;
-          var20 = 1.0F - var20 * var20 * var20 * var20;
-          var14 = var14 * (1.0F - var17) + var18 * var17;
-          var15 = var15 * (1.0F - var17) + var19 * var17;
-          var16 = var16 * (1.0F - var17) + var20 * var17;
-          var14 = var14 * 0.96F + 0.03F;
-          var15 = var15 * 0.96F + 0.03F;
-          var16 = var16 * 0.96F + 0.03F;
-          if (var14 > 1.0F) {
-            var14 = 1.0F;
+          float f16 = this.h.t.aI;
+          float f17 = 1.0F - f8;
+          float f13 = 1.0F - f9;
+          float f14 = 1.0F - f10;
+          f17 = 1.0F - f17 * f17 * f17 * f17;
+          f13 = 1.0F - f13 * f13 * f13 * f13;
+          f14 = 1.0F - f14 * f14 * f14 * f14;
+          f8 = f8 * (1.0F - f16) + f17 * f16;
+          f9 = f9 * (1.0F - f16) + f13 * f16;
+          f10 = f10 * (1.0F - f16) + f14 * f16;
+          f8 = f8 * 0.96F + 0.03F;
+          f9 = f9 * 0.96F + 0.03F;
+          f10 = f10 * 0.96F + 0.03F;
+          if (f8 > 1.0F) {
+            f8 = 1.0F;
           }
-          if (var15 > 1.0F) {
-            var15 = 1.0F;
+          if (f9 > 1.0F) {
+            f9 = 1.0F;
           }
-          if (var16 > 1.0F) {
-            var16 = 1.0F;
+          if (f10 > 1.0F) {
+            f10 = 1.0F;
           }
-          if (var14 < 0.0F) {
-            var14 = 0.0F;
+          if (f8 < 0.0F) {
+            f8 = 0.0F;
           }
-          if (var15 < 0.0F) {
-            var15 = 0.0F;
+          if (f9 < 0.0F) {
+            f9 = 0.0F;
           }
-          if (var16 < 0.0F) {
-            var16 = 0.0F;
+          if (f10 < 0.0F) {
+            f10 = 0.0F;
           }
-          short var21 = 255;
-          int var22 = (int)(var14 * 255.0F);
-          int var23 = (int)(var15 * 255.0F);
-          int var24 = (int)(var16 * 255.0F);
-          H[var5] = (var21 << 24 | var22 << 16 | var23 << 8 | var24);
+          int j = 255;
+          int k = (int)(f8 * 255.0F);
+          int l = (int)(f9 * 255.0F);
+          int i1 = (int)(f10 * 255.0F);
+          this.H[i] = (j << 24 | k << 16 | l << 8 | i1);
         }
-        G.d();
-        J = false;
-        h.A.b();
+        this.G.d();
+        this.J = false;
+        this.h.A.b();
       }
     }
   }
   
-  private float a(pr p_180438_1_, float partialTicks)
+  private float a(pr entitylivingbaseIn, float partialTicks)
   {
-    int var3 = p_180438_1_.b(pe.r).b();
-    return var3 > 200 ? 1.0F : 0.7F + ns.a((var3 - partialTicks) * 3.1415927F * 0.2F) * 0.3F;
+    int i = entitylivingbaseIn.b(pe.r).b();
+    return i > 200 ? 1.0F : 0.7F + ns.a((i - partialTicks) * 3.1415927F * 0.2F) * 0.3F;
   }
   
-  public void a(float partialTicks, long nanoTimeStart)
+  public void a(float p_181560_1_, long p_181560_2_)
   {
-    frameInit();
-    
-    boolean var4 = Display.isActive();
-    if ((!var4) && (h.t.z) && ((!h.t.A) || (!Mouse.isButtonDown(1))))
+    boolean flag = Display.isActive();
+    if ((!flag) && (this.h.t.z) && ((!this.h.t.A) || (!Mouse.isButtonDown(1))))
     {
-      if (ave.J() - E > 500L) {
-        h.p();
+      if (ave.J() - this.E > 500L) {
+        this.h.p();
       }
     }
     else {
-      E = ave.J();
+      this.E = ave.J();
     }
-    h.A.a("mouse");
-    if ((var4) && (ave.a) && (h.w) && (!Mouse.isInsideWindow()))
+    this.h.A.a("mouse");
+    if ((flag) && (ave.a) && (this.h.w) && (!Mouse.isInsideWindow()))
     {
       Mouse.setGrabbed(false);
       Mouse.setCursorPosition(Display.getWidth() / 2, Display.getHeight() / 2);
       Mouse.setGrabbed(true);
     }
-    if ((h.w) && (var4))
+    if ((this.h.w) && (flag))
     {
-      h.u.c();
-      float var5 = h.t.a * 0.6F + 0.2F;
-      float var6 = var5 * var5 * var5 * 8.0F;
-      float var7 = h.u.a * var6;
-      float var8 = h.u.b * var6;
-      byte var9 = 1;
-      if (h.t.b) {
-        var9 = -1;
+      this.h.u.c();
+      float f = this.h.t.a * 0.6F + 0.2F;
+      float f1 = f * f * f * 8.0F;
+      float f2 = this.h.u.a * f1;
+      float f3 = this.h.u.b * f1;
+      int i = 1;
+      if (this.h.t.b) {
+        i = -1;
       }
-      if (h.t.aF)
+      if (this.h.t.aF)
       {
-        s += var7;
-        t += var8;
-        float var10 = partialTicks - w;
-        w = partialTicks;
-        var7 = u * var10;
-        var8 = v * var10;
-        h.h.c(var7, var8 * var9);
+        this.s += f2;
+        this.t += f3;
+        float f4 = p_181560_1_ - this.w;
+        this.w = p_181560_1_;
+        f2 = this.u * f4;
+        f3 = this.v * f4;
+        this.h.h.c(f2, f3 * i);
       }
       else
       {
-        s = 0.0F;
-        t = 0.0F;
-        h.h.c(var7, var8 * var9);
+        this.s = 0.0F;
+        this.t = 0.0F;
+        this.h.h.c(f2, f3 * i);
       }
     }
-    h.A.b();
-    if (!h.r)
+    this.h.A.b();
+    if (!this.h.r)
     {
-      a = h.t.e;
-      final avr var17 = new avr(h);
-      int var18 = var17.a();
-      int var19 = var17.b();
-      final int var20 = Mouse.getX() * var18 / h.d;
-      final int var21 = var19 - Mouse.getY() * var19 / h.e - 1;
-      int var22 = h.t.g;
-      if (h.f != null)
+      a = this.h.t.e;
+      final avr scaledresolution = new avr(this.h);
+      int i1 = scaledresolution.a();
+      int j1 = scaledresolution.b();
+      final int k1 = Mouse.getX() * i1 / this.h.d;
+      final int l1 = j1 - Mouse.getY() * j1 / this.h.e - 1;
+      int i2 = this.h.t.g;
+      if (this.h.f != null)
       {
-        h.A.a("level");
-        int var11 = Math.min(ave.ai(), var22);
-        var11 = Math.max(var11, 60);
-        long var12 = System.nanoTime() - nanoTimeStart;
-        long var14 = Math.max(1000000000 / var11 / 4 - var12, 0L);
-        b(partialTicks, System.nanoTime() + var14);
+        this.h.A.a("level");
+        int j = Math.min(ave.ai(), i2);
+        j = Math.max(j, 60);
+        long k = System.nanoTime() - p_181560_2_;
+        long l = Math.max(1000000000 / j / 4 - k, 0L);
+        b(p_181560_1_, System.nanoTime() + l);
         if (bqs.O)
         {
-          h.g.c();
-          if ((aa != null) && (ad))
+          this.h.g.c();
+          if ((this.aa != null) && (this.ad))
           {
             bfl.n(5890);
             bfl.E();
             bfl.D();
-            aa.a(partialTicks);
+            this.aa.a(p_181560_1_);
             bfl.F();
           }
-          h.b().a(true);
+          this.h.b().a(true);
         }
-        F = System.nanoTime();
-        h.A.c("gui");
-        if ((!h.t.az) || (h.m != null))
+        this.F = System.nanoTime();
+        this.h.A.c("gui");
+        if ((!this.h.t.az) || (this.h.m != null))
         {
           bfl.a(516, 0.1F);
-          h.q.a(partialTicks);
-          if ((h.t.ofShowFps) && (!h.t.aB)) {
-            Config.drawFps();
-          }
-          if (h.t.aB) {
-            Lagometer.showLagometer(var17);
-          }
+          this.h.q.a(p_181560_1_);
         }
-        h.A.b();
+        this.h.A.b();
       }
       else
       {
-        bfl.b(0, 0, h.d, h.e);
+        bfl.b(0, 0, this.h.d, this.h.e);
         bfl.n(5889);
         bfl.D();
         bfl.n(5888);
         bfl.D();
         j();
-        F = System.nanoTime();
+        this.F = System.nanoTime();
       }
-      if (h.m != null)
+      if (this.h.m != null)
       {
         bfl.m(256);
         try
         {
-          if (Reflector.ForgeHooksClient_drawScreen.exists()) {
-            Reflector.callVoid(Reflector.ForgeHooksClient_drawScreen, new Object[] { h.m, Integer.valueOf(var20), Integer.valueOf(var21), Float.valueOf(partialTicks) });
-          } else {
-            h.m.a(var20, var21, partialTicks);
-          }
+          this.h.m.a(k1, l1, p_181560_1_);
         }
-        catch (Throwable var16)
+        catch (Throwable throwable)
         {
-          b var23 = b.a(var16, "Rendering screen");
-          c var13 = var23.a("Screen render details");
-          var13.a("Screen name", new bfk.2(this));
-          var13.a("Mouse location", new Callable()
+          b crashreport = b.a(throwable, "Rendering screen");
+          c crashreportcategory = crashreport.a("Screen render details");
+          crashreportcategory.a("Screen name", new Callable()
           {
-            private static final String __OBFID = "CL_00000950";
-            
             public String a()
               throws Exception
             {
-              return String.format("Scaled: (%d, %d). Absolute: (%d, %d)", new Object[] { Integer.valueOf(var20), Integer.valueOf(var21), Integer.valueOf(Mouse.getX()), Integer.valueOf(Mouse.getY()) });
+              return bfk.a(bfk.this).m.getClass().getCanonicalName();
             }
           });
-          var13.a("Screen size", new Callable()
+          crashreportcategory.a("Mouse location", new Callable()
           {
-            private static final String __OBFID = "CL_00000951";
-            
             public String a()
               throws Exception
             {
-              return String.format("Scaled: (%d, %d). Absolute: (%d, %d). Scale factor of %d", new Object[] { Integer.valueOf(var17.a()), Integer.valueOf(var17.b()), Integer.valueOf(ad), Integer.valueOf(ae), Integer.valueOf(var17.e()) });
+              return String.format("Scaled: (%d, %d). Absolute: (%d, %d)", new Object[] { Integer.valueOf(k1), Integer.valueOf(l1), Integer.valueOf(Mouse.getX()), Integer.valueOf(Mouse.getY()) });
             }
           });
-          throw new e(var23);
+          crashreportcategory.a("Screen size", new Callable()
+          {
+            public String a()
+              throws Exception
+            {
+              return String.format("Scaled: (%d, %d). Absolute: (%d, %d). Scale factor of %d", new Object[] { Integer.valueOf(scaledresolution.a()), Integer.valueOf(scaledresolution.b()), Integer.valueOf(bfk.a(bfk.this).d), Integer.valueOf(bfk.a(bfk.this).e), Integer.valueOf(scaledresolution.e()) });
+            }
+          });
+          throw new e(crashreport);
         }
       }
     }
-    frameFinish();
-    
-    waitForServerThread();
-    
-    Lagometer.updateLagometer();
-    if (h.t.ofProfiler) {
-      h.t.aC = true;
-    }
   }
   
-  public void b(float p_152430_1_)
+  public void b(float partialTicks)
   {
     j();
-    h.q.c(new avr(h));
+    this.h.q.c(new avr(this.h));
   }
   
   private boolean n()
   {
-    if (!D) {
+    if (!this.D) {
       return false;
     }
-    pk var1 = h.ac();
-    boolean var2 = ((var1 instanceof wn)) && (!h.t.az);
-    if ((var2) && (!bA.e))
+    pk entity = this.h.ac();
+    boolean flag = ((entity instanceof wn)) && (!this.h.t.az);
+    if ((flag) && (!((wn)entity).bA.e))
     {
-      zx var3 = ((wn)var1).bZ();
-      if ((h.s != null) && (h.s.a == auh.a.b))
+      zx itemstack = ((wn)entity).bZ();
+      if ((this.h.s != null) && (this.h.s.a == auh.a.b))
       {
-        cj var4 = h.s.a();
-        afh var5 = h.f.p(var4).c();
-        if (h.c.l() == adp.a.e)
-        {
-          boolean hasTileEntity;
-          boolean hasTileEntity;
-          if (Reflector.ForgeBlock_hasTileEntity.exists())
-          {
-            alz bs = h.f.p(var4);
-            hasTileEntity = Reflector.callBoolean(var5, Reflector.ForgeBlock_hasTileEntity, new Object[] { bs });
-          }
-          else
-          {
-            hasTileEntity = var5.z();
-          }
-          var2 = (hasTileEntity) && ((h.f.s(var4) instanceof og));
-        }
-        else
-        {
-          var2 = (var3 != null) && ((var3.c(var5)) || (var3.d(var5)));
+        cj blockpos = this.h.s.a();
+        afh block = this.h.f.p(blockpos).c();
+        if (this.h.c.l() == adp.a.e) {
+          flag = (block.z()) && ((this.h.f.s(blockpos) instanceof og));
+        } else {
+          flag = (itemstack != null) && ((itemstack.c(block)) || (itemstack.d(block)));
         }
       }
     }
-    return var2;
+    return flag;
   }
   
-  private void h(float p_175067_1_)
+  private void h(float partialTicks)
   {
-    if ((h.t.aB) && (!h.t.az) && (!h.h.cq()) && (!h.t.w))
+    if ((this.h.t.aB) && (!this.h.t.az) && (!this.h.h.cq()) && (!this.h.t.w))
     {
-      pk var2 = h.ac();
+      pk entity = this.h.ac();
       bfl.l();
       bfl.a(770, 771, 1, 0);
       GL11.glLineWidth(1.0F);
@@ -1078,8 +953,8 @@ public class bfk
       bfl.E();
       bfl.n(5888);
       bfl.D();
-      f(p_175067_1_);
-      bfl.b(0.0F, var2.aS(), 0.0F);
+      f(partialTicks);
+      bfl.b(0.0F, entity.aS(), 0.0F);
       bfr.a(new aug(0.0D, 0.0D, 0.0D, 0.005D, 1.0E-4D, 1.0E-4D), 255, 0, 0, 255);
       bfr.a(new aug(0.0D, 0.0D, 0.0D, 1.0E-4D, 1.0E-4D, 0.005D), 0, 0, 255, 255);
       bfr.a(new aug(0.0D, 0.0D, 0.0D, 1.0E-4D, 0.0033D, 1.0E-4D), 0, 255, 0, 255);
@@ -1093,19 +968,15 @@ public class bfk
   public void b(float partialTicks, long finishTimeNano)
   {
     g(partialTicks);
-    if (h.ac() == null) {
-      h.a(h.h);
+    if (this.h.ac() == null) {
+      this.h.a(this.h.h);
     }
     a(partialTicks);
-    if (Config.isShaders()) {
-      Shaders.beginRender(h, partialTicks, finishTimeNano);
-    }
     bfl.j();
     bfl.d();
-    
-    bfl.a(516, 0.1F);
-    h.A.a("center");
-    if (h.t.e)
+    bfl.a(516, 0.5F);
+    this.h.A.a("center");
+    if (this.h.t.e)
     {
       b = 0;
       bfl.a(false, true, true, false);
@@ -1119,236 +990,129 @@ public class bfk
     {
       a(2, partialTicks, finishTimeNano);
     }
-    h.A.b();
+    this.h.A.b();
   }
   
   private void a(int pass, float partialTicks, long finishTimeNano)
   {
-    boolean isShaders = Config.isShaders();
-    if (isShaders) {
-      Shaders.beginRenderPass(pass, partialTicks, finishTimeNano);
-    }
-    bfr var5 = h.g;
-    bec var6 = h.j;
-    boolean var7 = n();
+    bfr renderglobal = this.h.g;
+    bec effectrenderer = this.h.j;
+    boolean flag = n();
     bfl.o();
-    h.A.c("clear");
-    if (isShaders) {
-      Shaders.setViewport(0, 0, h.d, h.e);
-    } else {
-      bfl.b(0, 0, h.d, h.e);
-    }
+    this.h.A.c("clear");
+    bfl.b(0, 0, this.h.d, this.h.e);
     i(partialTicks);
     bfl.m(16640);
-    if (isShaders) {
-      Shaders.clearRenderBuffer();
-    }
-    h.A.c("camera");
+    this.h.A.c("camera");
     a(partialTicks, pass);
-    if (isShaders) {
-      Shaders.setCamera(partialTicks);
-    }
-    auz.a(h.h, h.t.aA == 2);
-    h.A.c("frustum");
+    auz.a(this.h.h, this.h.t.aA == 2);
+    this.h.A.c("frustum");
     bib.a();
-    h.A.c("culling");
-    bic var8 = new bic();
-    pk var9 = h.ac();
-    double var10 = P + (s - P) * partialTicks;
-    double var12 = Q + (t - Q) * partialTicks;
-    double var14 = R + (u - R) * partialTicks;
-    if (isShaders) {
-      ShadersRender.setFrustrumPosition(var8, var10, var12, var14);
-    } else {
-      var8.a(var10, var12, var14);
-    }
-    if (((Config.isSkyEnabled()) || (Config.isSunMoonEnabled()) || (Config.isStarsEnabled())) && (!Shaders.isShadowPass))
+    this.h.A.c("culling");
+    bia icamera = new bic();
+    pk entity = this.h.ac();
+    double d0 = entity.P + (entity.s - entity.P) * partialTicks;
+    double d1 = entity.Q + (entity.t - entity.Q) * partialTicks;
+    double d2 = entity.R + (entity.u - entity.R) * partialTicks;
+    icamera.a(d0, d1, d2);
+    if (this.h.t.c >= 4)
     {
       a(-1, partialTicks);
-      h.A.c("sky");
+      this.h.A.c("sky");
       bfl.n(5889);
       bfl.D();
-      
-      Project.gluPerspective(a(partialTicks, true), h.d / h.e, 0.05F, clipDistance);
+      Project.gluPerspective(a(partialTicks, true), this.h.d / this.h.e, 0.05F, this.k * 2.0F);
       bfl.n(5888);
-      if (isShaders) {
-        Shaders.beginSky();
-      }
-      var5.a(partialTicks, pass);
-      if (isShaders) {
-        Shaders.endSky();
-      }
+      renderglobal.a(partialTicks, pass);
       bfl.n(5889);
       bfl.D();
-      
-      Project.gluPerspective(a(partialTicks, true), h.d / h.e, 0.05F, clipDistance);
+      Project.gluPerspective(a(partialTicks, true), this.h.d / this.h.e, 0.05F, this.k * ns.a);
       bfl.n(5888);
-    }
-    else
-    {
-      bfl.k();
     }
     a(0, partialTicks);
     bfl.j(7425);
-    if (t + var9.aS() < 128.0D + h.t.ofCloudsHeight * 128.0F) {
-      a(var5, partialTicks, pass);
+    if (entity.t + entity.aS() < 128.0D) {
+      a(renderglobal, partialTicks, pass);
     }
-    h.A.c("prepareterrain");
+    this.h.A.c("prepareterrain");
     a(0, partialTicks);
-    h.P().a(bmh.g);
+    this.h.P().a(bmh.g);
     avc.a();
-    h.A.c("terrain_setup");
-    if (isShaders) {
-      ShadersRender.setupTerrain(var5, var9, partialTicks, var8, ae++, h.h.v());
-    } else {
-      var5.a(var9, partialTicks, var8, ae++, h.h.v());
-    }
+    this.h.A.c("terrain_setup");
+    renderglobal.a(entity, partialTicks, icamera, this.ae++, this.h.h.v());
     if ((pass == 0) || (pass == 2))
     {
-      h.A.c("updatechunks");
-      
-      Lagometer.timerChunkUpload.start();
-      if (isShaders) {
-        ShadersRender.updateChunks(var5, finishTimeNano);
-      } else {
-        h.g.a(finishTimeNano);
-      }
-      Lagometer.timerChunkUpload.end();
+      this.h.A.c("updatechunks");
+      this.h.g.a(finishTimeNano);
     }
-    h.A.c("terrain");
-    
-    Lagometer.timerTerrain.start();
-    if ((h.t.ofSmoothFps) && (pass > 0))
-    {
-      h.A.c("finish");
-      GL11.glFinish();
-      h.A.c("terrain");
-    }
+    this.h.A.c("terrain");
     bfl.n(5888);
     bfl.E();
     bfl.c();
-    if (isShaders) {
-      ShadersRender.beginTerrainSolid();
-    }
-    var5.a(adf.a, partialTicks, pass, var9);
+    renderglobal.a(adf.a, partialTicks, pass, entity);
     bfl.d();
-    if (isShaders) {
-      ShadersRender.beginTerrainCutoutMipped();
-    }
-    var5.a(adf.b, partialTicks, pass, var9);
-    h.P().b(bmh.g).b(false, false);
-    if (isShaders) {
-      ShadersRender.beginTerrainCutout();
-    }
-    var5.a(adf.c, partialTicks, pass, var9);
-    h.P().b(bmh.g).a();
-    if (isShaders) {
-      ShadersRender.endTerrain();
-    }
-    Lagometer.timerTerrain.end();
+    renderglobal.a(adf.b, partialTicks, pass, entity);
+    this.h.P().b(bmh.g).b(false, false);
+    renderglobal.a(adf.c, partialTicks, pass, entity);
+    this.h.P().b(bmh.g).a();
     bfl.j(7424);
     bfl.a(516, 0.1F);
-    if (!W)
+    if (!this.W)
     {
       bfl.n(5888);
       bfl.F();
       bfl.E();
       avc.b();
-      h.A.c("entities");
-      if (Reflector.ForgeHooksClient_setRenderPass.exists()) {
-        Reflector.callVoid(Reflector.ForgeHooksClient_setRenderPass, new Object[] { Integer.valueOf(0) });
-      }
-      var5.a(var9, var8, partialTicks);
-      if (Reflector.ForgeHooksClient_setRenderPass.exists()) {
-        Reflector.callVoid(Reflector.ForgeHooksClient_setRenderPass, new Object[] { Integer.valueOf(-1) });
-      }
+      this.h.A.c("entities");
+      renderglobal.a(entity, icamera, partialTicks);
       avc.a();
       h();
       bfl.n(5888);
       bfl.F();
       bfl.E();
-      if ((h.s != null) && (var9.a(arm.h)) && (var7))
+      if ((this.h.s != null) && (entity.a(arm.h)) && (flag))
       {
-        wn var16 = (wn)var9;
+        wn entityplayer = (wn)entity;
         bfl.c();
-        h.A.c("outline");
-        
-        boolean hasForgeMethod = Reflector.ForgeHooksClient_onDrawBlockHighlight.exists();
-        if (hasForgeMethod)
-        {
-          if (Reflector.callBoolean(Reflector.ForgeHooksClient_onDrawBlockHighlight, new Object[] { var5, var16, h.s, Integer.valueOf(0), var16.bA(), Float.valueOf(partialTicks) })) {}
-        }
-        else if (!h.t.az) {
-          var5.a(var16, h.s, 0, partialTicks);
-        }
+        this.h.A.c("outline");
+        renderglobal.a(entityplayer, this.h.s, 0, partialTicks);
         bfl.d();
       }
     }
     bfl.n(5888);
     bfl.F();
-    if ((var7) && (h.s != null) && (!var9.a(arm.h)))
+    if ((flag) && (this.h.s != null) && (!entity.a(arm.h)))
     {
-      wn var16 = (wn)var9;
+      wn entityplayer1 = (wn)entity;
       bfl.c();
-      h.A.c("outline");
-      
-      boolean hasForgeMethod = Reflector.ForgeHooksClient_onDrawBlockHighlight.exists();
-      if (hasForgeMethod)
-      {
-        if (Reflector.callBoolean(Reflector.ForgeHooksClient_onDrawBlockHighlight, new Object[] { var5, var16, h.s, Integer.valueOf(0), var16.bA(), Float.valueOf(partialTicks) })) {}
-      }
-      else if (!h.t.az) {
-        var5.a(var16, h.s, 0, partialTicks);
-      }
+      this.h.A.c("outline");
+      renderglobal.a(entityplayer1, this.h.s, 0, partialTicks);
       bfl.d();
     }
-    if (!x.isEmpty())
-    {
-      h.A.c("destroyProgress");
-      bfl.l();
-      bfl.a(770, 1, 1, 0);
-      h.P().b(bmh.g).b(false, false);
-      var5.a(bfx.a(), bfx.a().c(), var9, partialTicks);
-      h.P().b(bmh.g).a();
-    }
+    this.h.A.c("destroyProgress");
+    bfl.l();
+    bfl.a(770, 1, 1, 0);
+    this.h.P().b(bmh.g).b(false, false);
+    renderglobal.a(bfx.a(), bfx.a().c(), entity, partialTicks);
+    this.h.P().b(bmh.g).a();
     bfl.k();
-    if (!W)
+    if (!this.W)
     {
       i();
-      h.A.c("litParticles");
-      if (isShaders) {
-        Shaders.beginLitParticles();
-      }
-      var6.b(var9, partialTicks);
+      this.h.A.c("litParticles");
+      effectrenderer.b(entity, partialTicks);
       avc.a();
       a(0, partialTicks);
-      h.A.c("particles");
-      if (isShaders) {
-        Shaders.beginParticles();
-      }
-      var6.a(var9, partialTicks);
-      if (isShaders) {
-        Shaders.endParticles();
-      }
+      this.h.A.c("particles");
+      effectrenderer.a(entity, partialTicks);
       h();
     }
     bfl.a(false);
     bfl.o();
-    h.A.c("weather");
-    if (isShaders) {
-      Shaders.beginWeather();
-    }
+    this.h.A.c("weather");
     c(partialTicks);
-    if (isShaders) {
-      Shaders.endWeather();
-    }
     bfl.a(true);
-    if (isShaders)
-    {
-      ShadersRender.renderHand0(this, partialTicks, pass);
-      Shaders.preWater();
-    }
-    var5.a(var9, partialTicks);
+    renderglobal.a(entity, partialTicks);
     bfl.k();
     bfl.o();
     bfl.a(770, 771, 1, 0);
@@ -1356,144 +1120,110 @@ public class bfk
     a(0, partialTicks);
     bfl.l();
     bfl.a(false);
-    h.P().a(bmh.g);
+    this.h.P().a(bmh.g);
     bfl.j(7425);
-    h.A.c("translucent");
-    if (isShaders) {
-      Shaders.beginWater();
-    }
-    var5.a(adf.d, partialTicks, pass, var9);
-    if (isShaders) {
-      Shaders.endWater();
-    }
-    if ((Reflector.ForgeHooksClient_setRenderPass.exists()) && (!W))
-    {
-      avc.b();
-      h.A.c("entities");
-      Reflector.callVoid(Reflector.ForgeHooksClient_setRenderPass, new Object[] { Integer.valueOf(1) });
-      h.g.a(var9, var8, partialTicks);
-      Reflector.callVoid(Reflector.ForgeHooksClient_setRenderPass, new Object[] { Integer.valueOf(-1) });
-      avc.a();
-    }
+    this.h.A.c("translucent");
+    renderglobal.a(adf.d, partialTicks, pass, entity);
     bfl.j(7424);
     bfl.a(true);
     bfl.o();
     bfl.k();
     bfl.n();
-    if (t + var9.aS() >= 128.0D + h.t.ofCloudsHeight * 128.0F)
+    if (entity.t + entity.aS() >= 128.0D)
     {
-      h.A.c("aboveClouds");
-      a(var5, partialTicks, pass);
+      this.h.A.c("aboveClouds");
+      a(renderglobal, partialTicks, pass);
     }
-    if (Reflector.ForgeHooksClient_dispatchRenderLast.exists())
-    {
-      h.A.c("forge_render_last");
-      Reflector.callVoid(Reflector.ForgeHooksClient_dispatchRenderLast, new Object[] { var5, Float.valueOf(partialTicks) });
-    }
-    h.A.c("hand");
+    XaeroMinimap.events.renderLast(partialTicks);
     
-    boolean handRendered = Reflector.callBoolean(Reflector.ForgeHooksClient_renderFirstPersonHand, new Object[] { h.g, Float.valueOf(partialTicks), Integer.valueOf(pass) });
-    if ((!handRendered) && (C) && (!Shaders.isShadowPass))
+    this.h.A.c("hand");
+    if (this.C)
     {
-      if (isShaders)
-      {
-        ShadersRender.renderHand1(this, partialTicks, pass);
-        Shaders.renderCompositeFinal();
-      }
       bfl.m(256);
-      if (isShaders) {
-        ShadersRender.renderFPOverlay(this, partialTicks, pass);
-      } else {
-        b(partialTicks, pass);
-      }
+      b(partialTicks, pass);
       h(partialTicks);
-    }
-    if (isShaders) {
-      Shaders.endRender();
     }
   }
   
-  private void a(bfr p_180437_1_, float partialTicks, int pass)
+  private void a(bfr renderGlobalIn, float partialTicks, int pass)
   {
-    if ((h.t.c >= 4) && (!Config.isCloudsOff()) && (Shaders.shouldRenderClouds(h.t)))
+    if (this.h.t.e() != 0)
     {
-      h.A.c("clouds");
+      this.h.A.c("clouds");
       bfl.n(5889);
       bfl.D();
-      
-      Project.gluPerspective(a(partialTicks, true), h.d / h.e, 0.05F, clipDistance * 4.0F);
+      Project.gluPerspective(a(partialTicks, true), this.h.d / this.h.e, 0.05F, this.k * 4.0F);
       bfl.n(5888);
       bfl.E();
       a(0, partialTicks);
-      p_180437_1_.b(partialTicks, pass);
+      renderGlobalIn.b(partialTicks, pass);
       bfl.n();
       bfl.F();
       bfl.n(5889);
       bfl.D();
-      
-      Project.gluPerspective(a(partialTicks, true), h.d / h.e, 0.05F, clipDistance);
+      Project.gluPerspective(a(partialTicks, true), this.h.d / this.h.e, 0.05F, this.k * ns.a);
       bfl.n(5888);
     }
   }
   
   private void o()
   {
-    float var1 = h.f.j(1.0F);
-    if (!Config.isRainFancy()) {
-      var1 /= 2.0F;
+    float f = this.h.f.j(1.0F);
+    if (!this.h.t.i) {
+      f /= 2.0F;
     }
-    if ((var1 != 0.0F) && (Config.isRainSplash()))
+    if (f != 0.0F)
     {
-      j.setSeed(m * 312987231L);
-      pk var2 = h.ac();
-      bdb var3 = h.f;
-      cj var4 = new cj(var2);
-      byte var5 = 10;
-      double var6 = 0.0D;
-      double var8 = 0.0D;
-      double var10 = 0.0D;
-      int var12 = 0;
-      int var13 = (int)(100.0F * var1 * var1);
-      if (h.t.aL == 1) {
-        var13 >>= 1;
-      } else if (h.t.aL == 2) {
-        var13 = 0;
+      this.j.setSeed(this.m * 312987231L);
+      pk entity = this.h.ac();
+      adm world = this.h.f;
+      cj blockpos = new cj(entity);
+      int i = 10;
+      double d0 = 0.0D;
+      double d1 = 0.0D;
+      double d2 = 0.0D;
+      int j = 0;
+      int k = (int)(100.0F * f * f);
+      if (this.h.t.aL == 1) {
+        k >>= 1;
+      } else if (this.h.t.aL == 2) {
+        k = 0;
       }
-      for (int var14 = 0; var14 < var13; var14++)
+      for (int l = 0; l < k; l++)
       {
-        cj var15 = var3.q(var4.a(j.nextInt(var5) - j.nextInt(var5), 0, j.nextInt(var5) - j.nextInt(var5)));
-        ady var16 = var3.b(var15);
-        cj var17 = var15.b();
-        afh var18 = var3.p(var17).c();
-        if ((var15.o() <= var4.o() + var5) && (var15.o() >= var4.o() - var5) && (var16.e()) && (var16.a(var15) >= 0.15F))
+        cj blockpos1 = world.q(blockpos.a(this.j.nextInt(i) - this.j.nextInt(i), 0, this.j.nextInt(i) - this.j.nextInt(i)));
+        ady biomegenbase = world.b(blockpos1);
+        cj blockpos2 = blockpos1.b();
+        afh block = world.p(blockpos2).c();
+        if ((blockpos1.o() <= blockpos.o() + i) && (blockpos1.o() >= blockpos.o() - i) && (biomegenbase.e()) && (biomegenbase.a(blockpos1) >= 0.15F))
         {
-          double var19 = j.nextDouble();
-          double var21 = j.nextDouble();
-          if (var18.t() == arm.i)
+          double d3 = this.j.nextDouble();
+          double d4 = this.j.nextDouble();
+          if (block.t() == arm.i)
           {
-            h.f.a(cy.l, var15.n() + var19, var15.o() + 0.1F - var18.D(), var15.p() + var21, 0.0D, 0.0D, 0.0D, new int[0]);
+            this.h.f.a(cy.l, blockpos1.n() + d3, blockpos1.o() + 0.1F - block.D(), blockpos1.p() + d4, 0.0D, 0.0D, 0.0D, new int[0]);
           }
-          else if (var18.t() != arm.a)
+          else if (block.t() != arm.a)
           {
-            var18.a(var3, var17);
-            var12++;
-            if (j.nextInt(var12) == 0)
+            block.a(world, blockpos2);
+            j++;
+            if (this.j.nextInt(j) == 0)
             {
-              var6 = var17.n() + var19;
-              var8 = var17.o() + 0.1F + var18.E() - 1.0D;
-              var10 = var17.p() + var21;
+              d0 = blockpos2.n() + d3;
+              d1 = blockpos2.o() + 0.1F + block.E() - 1.0D;
+              d2 = blockpos2.p() + d4;
             }
-            h.f.a(cy.N, var17.n() + var19, var17.o() + 0.1F + var18.E(), var17.p() + var21, 0.0D, 0.0D, 0.0D, new int[0]);
+            this.h.f.a(cy.N, blockpos2.n() + d3, blockpos2.o() + 0.1F + block.E(), blockpos2.p() + d4, 0.0D, 0.0D, 0.0D, new int[0]);
           }
         }
       }
-      if ((var12 > 0) && (j.nextInt(3) < M++))
+      if ((j > 0) && (this.j.nextInt(3) < this.M++))
       {
-        M = 0;
-        if ((var8 > var4.o() + 1) && (var3.q(var4).o() > ns.d(var4.o()))) {
-          h.f.a(var6, var8, var10, "ambient.weather.rain", 0.1F, 0.5F, false);
+        this.M = 0;
+        if ((d1 > blockpos.o() + 1) && (world.q(blockpos).o() > ns.d(blockpos.o()))) {
+          this.h.f.a(d0, d1, d2, "ambient.weather.rain", 0.1F, 0.5F, false);
         } else {
-          h.f.a(var6, var8, var10, "ambient.weather.rain", 0.2F, 1.0F, false);
+          this.h.f.a(d0, d1, d2, "ambient.weather.rain", 0.2F, 1.0F, false);
         }
       }
     }
@@ -1501,139 +1231,123 @@ public class bfk
   
   protected void c(float partialTicks)
   {
-    if (Reflector.ForgeWorldProvider_getWeatherRenderer.exists())
+    float f = this.h.f.j(partialTicks);
+    if (f > 0.0F)
     {
-      anm worldProvider = h.f.t;
-      Object weatherRenderer = Reflector.call(worldProvider, Reflector.ForgeWorldProvider_getWeatherRenderer, new Object[0]);
-      if (weatherRenderer != null)
-      {
-        Reflector.callVoid(weatherRenderer, Reflector.IRenderHandler_render, new Object[] { Float.valueOf(partialTicks), h.f, h });
-        return;
-      }
-    }
-    float var2 = h.f.j(partialTicks);
-    if (var2 > 0.0F)
-    {
-      if (Config.isRainOff()) {
-        return;
-      }
       i();
-      pk var3 = h.ac();
-      bdb var4 = h.f;
-      int var5 = ns.c(s);
-      int var6 = ns.c(t);
-      int var7 = ns.c(u);
-      bfx var8 = bfx.a();
-      bfd var9 = var8.c();
+      pk entity = this.h.ac();
+      adm world = this.h.f;
+      int i = ns.c(entity.s);
+      int j = ns.c(entity.t);
+      int k = ns.c(entity.u);
+      bfx tessellator = bfx.a();
+      bfd worldrenderer = tessellator.c();
       bfl.p();
       GL11.glNormal3f(0.0F, 1.0F, 0.0F);
       bfl.l();
       bfl.a(770, 771, 1, 0);
       bfl.a(516, 0.1F);
-      double var10 = P + (s - P) * partialTicks;
-      double var12 = Q + (t - Q) * partialTicks;
-      double var14 = R + (u - R) * partialTicks;
-      int var16 = ns.c(var12);
-      byte var17 = 5;
-      if (Config.isRainFancy()) {
-        var17 = 10;
+      double d0 = entity.P + (entity.s - entity.P) * partialTicks;
+      double d1 = entity.Q + (entity.t - entity.Q) * partialTicks;
+      double d2 = entity.R + (entity.u - entity.R) * partialTicks;
+      int l = ns.c(d1);
+      int i1 = 5;
+      if (this.h.t.i) {
+        i1 = 10;
       }
-      byte var18 = -1;
-      float var19 = m + partialTicks;
-      var9.c(-var10, -var12, -var14);
-      if (Config.isRainFancy()) {
-        var17 = 10;
-      }
+      int j1 = -1;
+      float f1 = this.m + partialTicks;
+      worldrenderer.c(-d0, -d1, -d2);
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-      cj.a var20 = new cj.a();
-      for (int var21 = var7 - var17; var21 <= var7 + var17; var21++) {
-        for (int var22 = var5 - var17; var22 <= var5 + var17; var22++)
+      cj.a blockpos$mutableblockpos = new cj.a();
+      for (int k1 = k - i1; k1 <= k + i1; k1++) {
+        for (int l1 = i - i1; l1 <= i + i1; l1++)
         {
-          int var23 = (var21 - var7 + 16) * 32 + var22 - var5 + 16;
-          double var24 = N[var23] * 0.5D;
-          double var26 = O[var23] * 0.5D;
-          var20.c(var22, 0, var21);
-          ady var28 = var4.b(var20);
-          if ((var28.e()) || (var28.d()))
+          int i2 = (k1 - k + 16) * 32 + l1 - i + 16;
+          double d3 = this.N[i2] * 0.5D;
+          double d4 = this.O[i2] * 0.5D;
+          blockpos$mutableblockpos.c(l1, 0, k1);
+          ady biomegenbase = world.b(blockpos$mutableblockpos);
+          if ((biomegenbase.e()) || (biomegenbase.d()))
           {
-            int var29 = var4.q(var20).o();
-            int var30 = var6 - var17;
-            int var31 = var6 + var17;
-            if (var30 < var29) {
-              var30 = var29;
+            int j2 = world.q(blockpos$mutableblockpos).o();
+            int k2 = j - i1;
+            int l2 = j + i1;
+            if (k2 < j2) {
+              k2 = j2;
             }
-            if (var31 < var29) {
-              var31 = var29;
+            if (l2 < j2) {
+              l2 = j2;
             }
-            int var32 = var29;
-            if (var29 < var16) {
-              var32 = var16;
+            int i3 = j2;
+            if (j2 < l) {
+              i3 = l;
             }
-            if (var30 != var31)
+            if (k2 != l2)
             {
-              j.setSeed(var22 * var22 * 3121 + var22 * 45238971 ^ var21 * var21 * 418711 + var21 * 13761);
-              var20.c(var22, var30, var21);
-              float var33 = var28.a(var20);
-              if (var4.v().a(var33, var29) >= 0.15F)
+              this.j.setSeed(l1 * l1 * 3121 + l1 * 45238971 ^ k1 * k1 * 418711 + k1 * 13761);
+              blockpos$mutableblockpos.c(l1, k2, k1);
+              float f2 = biomegenbase.a(blockpos$mutableblockpos);
+              if (world.v().a(f2, j2) >= 0.15F)
               {
-                if (var18 != 0)
+                if (j1 != 0)
                 {
-                  if (var18 >= 0) {
-                    var8.b();
+                  if (j1 >= 0) {
+                    tessellator.b();
                   }
-                  var18 = 0;
-                  h.P().a(f);
-                  var9.a(7, bms.d);
+                  j1 = 0;
+                  this.h.P().a(f);
+                  worldrenderer.a(7, bms.d);
                 }
-                double var34 = ((m + var22 * var22 * 3121 + var22 * 45238971 + var21 * var21 * 418711 + var21 * 13761 & 0x1F) + partialTicks) / 32.0D * (3.0D + j.nextDouble());
-                double var36 = var22 + 0.5F - s;
-                double var38 = var21 + 0.5F - u;
-                float var40 = ns.a(var36 * var36 + var38 * var38) / var17;
-                float var41 = ((1.0F - var40 * var40) * 0.5F + 0.5F) * var2;
-                var20.c(var22, var32, var21);
-                int var42 = var4.b(var20, 0);
-                int var43 = var42 >> 16 & 0xFFFF;
-                int var44 = var42 & 0xFFFF;
-                var9.b(var22 - var24 + 0.5D, var30, var21 - var26 + 0.5D).a(0.0D, var30 * 0.25D + var34).a(1.0F, 1.0F, 1.0F, var41).a(var43, var44).d();
-                var9.b(var22 + var24 + 0.5D, var30, var21 + var26 + 0.5D).a(1.0D, var30 * 0.25D + var34).a(1.0F, 1.0F, 1.0F, var41).a(var43, var44).d();
-                var9.b(var22 + var24 + 0.5D, var31, var21 + var26 + 0.5D).a(1.0D, var31 * 0.25D + var34).a(1.0F, 1.0F, 1.0F, var41).a(var43, var44).d();
-                var9.b(var22 - var24 + 0.5D, var31, var21 - var26 + 0.5D).a(0.0D, var31 * 0.25D + var34).a(1.0F, 1.0F, 1.0F, var41).a(var43, var44).d();
+                double d5 = ((this.m + l1 * l1 * 3121 + l1 * 45238971 + k1 * k1 * 418711 + k1 * 13761 & 0x1F) + partialTicks) / 32.0D * (3.0D + this.j.nextDouble());
+                double d6 = l1 + 0.5F - entity.s;
+                double d7 = k1 + 0.5F - entity.u;
+                float f3 = ns.a(d6 * d6 + d7 * d7) / i1;
+                float f4 = ((1.0F - f3 * f3) * 0.5F + 0.5F) * f;
+                blockpos$mutableblockpos.c(l1, i3, k1);
+                int j3 = world.b(blockpos$mutableblockpos, 0);
+                int k3 = j3 >> 16 & 0xFFFF;
+                int l3 = j3 & 0xFFFF;
+                worldrenderer.b(l1 - d3 + 0.5D, k2, k1 - d4 + 0.5D).a(0.0D, k2 * 0.25D + d5).a(1.0F, 1.0F, 1.0F, f4).a(k3, l3).d();
+                worldrenderer.b(l1 + d3 + 0.5D, k2, k1 + d4 + 0.5D).a(1.0D, k2 * 0.25D + d5).a(1.0F, 1.0F, 1.0F, f4).a(k3, l3).d();
+                worldrenderer.b(l1 + d3 + 0.5D, l2, k1 + d4 + 0.5D).a(1.0D, l2 * 0.25D + d5).a(1.0F, 1.0F, 1.0F, f4).a(k3, l3).d();
+                worldrenderer.b(l1 - d3 + 0.5D, l2, k1 - d4 + 0.5D).a(0.0D, l2 * 0.25D + d5).a(1.0F, 1.0F, 1.0F, f4).a(k3, l3).d();
               }
               else
               {
-                if (var18 != 1)
+                if (j1 != 1)
                 {
-                  if (var18 >= 0) {
-                    var8.b();
+                  if (j1 >= 0) {
+                    tessellator.b();
                   }
-                  var18 = 1;
-                  h.P().a(g);
-                  var9.a(7, bms.d);
+                  j1 = 1;
+                  this.h.P().a(g);
+                  worldrenderer.a(7, bms.d);
                 }
-                double var34 = ((m & 0x1FF) + partialTicks) / 512.0F;
-                double var36 = j.nextDouble() + var19 * 0.01D * (float)j.nextGaussian();
-                double var38 = j.nextDouble() + var19 * (float)j.nextGaussian() * 0.001D;
-                double var49 = var22 + 0.5F - s;
-                double var50 = var21 + 0.5F - u;
-                float var51 = ns.a(var49 * var49 + var50 * var50) / var17;
-                float var45 = ((1.0F - var51 * var51) * 0.3F + 0.5F) * var2;
-                var20.c(var22, var32, var21);
-                int var46 = (var4.b(var20, 0) * 3 + 15728880) / 4;
-                int var47 = var46 >> 16 & 0xFFFF;
-                int var48 = var46 & 0xFFFF;
-                var9.b(var22 - var24 + 0.5D, var30, var21 - var26 + 0.5D).a(0.0D + var36, var30 * 0.25D + var34 + var38).a(1.0F, 1.0F, 1.0F, var45).a(var47, var48).d();
-                var9.b(var22 + var24 + 0.5D, var30, var21 + var26 + 0.5D).a(1.0D + var36, var30 * 0.25D + var34 + var38).a(1.0F, 1.0F, 1.0F, var45).a(var47, var48).d();
-                var9.b(var22 + var24 + 0.5D, var31, var21 + var26 + 0.5D).a(1.0D + var36, var31 * 0.25D + var34 + var38).a(1.0F, 1.0F, 1.0F, var45).a(var47, var48).d();
-                var9.b(var22 - var24 + 0.5D, var31, var21 - var26 + 0.5D).a(0.0D + var36, var31 * 0.25D + var34 + var38).a(1.0F, 1.0F, 1.0F, var45).a(var47, var48).d();
+                double d8 = ((this.m & 0x1FF) + partialTicks) / 512.0F;
+                double d9 = this.j.nextDouble() + f1 * 0.01D * (float)this.j.nextGaussian();
+                double d10 = this.j.nextDouble() + f1 * (float)this.j.nextGaussian() * 0.001D;
+                double d11 = l1 + 0.5F - entity.s;
+                double d12 = k1 + 0.5F - entity.u;
+                float f6 = ns.a(d11 * d11 + d12 * d12) / i1;
+                float f5 = ((1.0F - f6 * f6) * 0.3F + 0.5F) * f;
+                blockpos$mutableblockpos.c(l1, i3, k1);
+                int i4 = (world.b(blockpos$mutableblockpos, 0) * 3 + 15728880) / 4;
+                int j4 = i4 >> 16 & 0xFFFF;
+                int k4 = i4 & 0xFFFF;
+                worldrenderer.b(l1 - d3 + 0.5D, k2, k1 - d4 + 0.5D).a(0.0D + d9, k2 * 0.25D + d8 + d10).a(1.0F, 1.0F, 1.0F, f5).a(j4, k4).d();
+                worldrenderer.b(l1 + d3 + 0.5D, k2, k1 + d4 + 0.5D).a(1.0D + d9, k2 * 0.25D + d8 + d10).a(1.0F, 1.0F, 1.0F, f5).a(j4, k4).d();
+                worldrenderer.b(l1 + d3 + 0.5D, l2, k1 + d4 + 0.5D).a(1.0D + d9, l2 * 0.25D + d8 + d10).a(1.0F, 1.0F, 1.0F, f5).a(j4, k4).d();
+                worldrenderer.b(l1 - d3 + 0.5D, l2, k1 - d4 + 0.5D).a(0.0D + d9, l2 * 0.25D + d8 + d10).a(1.0F, 1.0F, 1.0F, f5).a(j4, k4).d();
               }
             }
           }
         }
       }
-      if (var18 >= 0) {
-        var8.b();
+      if (j1 >= 0) {
+        tessellator.b();
       }
-      var9.c(0.0D, 0.0D, 0.0D);
+      worldrenderer.c(0.0D, 0.0D, 0.0D);
       bfl.o();
       bfl.k();
       bfl.a(516, 0.1F);
@@ -1643,11 +1357,11 @@ public class bfk
   
   public void j()
   {
-    avr var1 = new avr(h);
+    avr scaledresolution = new avr(this.h);
     bfl.m(256);
     bfl.n(5889);
     bfl.D();
-    bfl.a(0.0D, var1.c(), var1.d(), 0.0D, 1000.0D, 3000.0D);
+    bfl.a(0.0D, scaledresolution.c(), scaledresolution.d(), 0.0D, 1000.0D, 3000.0D);
     bfl.n(5888);
     bfl.D();
     bfl.b(0.0F, 0.0F, -2000.0F);
@@ -1655,284 +1369,212 @@ public class bfk
   
   private void i(float partialTicks)
   {
-    bdb var2 = h.f;
-    pk var3 = h.ac();
-    float var4 = 0.25F + 0.75F * h.t.c / 32.0F;
-    var4 = 1.0F - (float)Math.pow(var4, 0.25D);
-    aui var5 = var2.a(h.ac(), partialTicks);
-    
-    var5 = CustomColorizer.getWorldSkyColor(var5, var2, h.ac(), partialTicks);
-    
-    float var6 = (float)a;
-    float var7 = (float)b;
-    float var8 = (float)c;
-    aui var9 = var2.f(partialTicks);
-    
-    var9 = CustomColorizer.getWorldFogColor(var9, var2, h.ac(), partialTicks);
-    
-    Q = ((float)a);
-    R = ((float)b);
-    S = ((float)c);
-    if (h.t.c >= 4)
+    adm world = this.h.f;
+    pk entity = this.h.ac();
+    float f = 0.25F + 0.75F * this.h.t.c / 32.0F;
+    f = 1.0F - (float)Math.pow(f, 0.25D);
+    aui vec3 = world.a(this.h.ac(), partialTicks);
+    float f1 = (float)vec3.a;
+    float f2 = (float)vec3.b;
+    float f3 = (float)vec3.c;
+    aui vec31 = world.f(partialTicks);
+    this.Q = ((float)vec31.a);
+    this.R = ((float)vec31.b);
+    this.S = ((float)vec31.c);
+    if (this.h.t.c >= 4)
     {
-      double var10 = -1.0D;
-      aui var12 = ns.a(var2.d(partialTicks)) > 0.0F ? new aui(var10, 0.0D, 0.0D) : new aui(1.0D, 0.0D, 0.0D);
-      float var13 = (float)var3.d(partialTicks).b(var12);
-      if (var13 < 0.0F) {
-        var13 = 0.0F;
+      double d0 = -1.0D;
+      aui vec32 = ns.a(world.d(partialTicks)) > 0.0F ? new aui(d0, 0.0D, 0.0D) : new aui(1.0D, 0.0D, 0.0D);
+      float f5 = (float)entity.d(partialTicks).b(vec32);
+      if (f5 < 0.0F) {
+        f5 = 0.0F;
       }
-      if (var13 > 0.0F)
+      if (f5 > 0.0F)
       {
-        float[] var14 = t.a(var2.c(partialTicks), partialTicks);
-        if (var14 != null)
+        float[] afloat = world.t.a(world.c(partialTicks), partialTicks);
+        if (afloat != null)
         {
-          var13 *= var14[3];
-          Q = (Q * (1.0F - var13) + var14[0] * var13);
-          R = (R * (1.0F - var13) + var14[1] * var13);
-          S = (S * (1.0F - var13) + var14[2] * var13);
+          f5 *= afloat[3];
+          this.Q = (this.Q * (1.0F - f5) + afloat[0] * f5);
+          this.R = (this.R * (1.0F - f5) + afloat[1] * f5);
+          this.S = (this.S * (1.0F - f5) + afloat[2] * f5);
         }
       }
     }
-    Q += (var6 - Q) * var4;
-    R += (var7 - R) * var4;
-    S += (var8 - S) * var4;
-    float var19 = var2.j(partialTicks);
-    if (var19 > 0.0F)
+    this.Q += (f1 - this.Q) * f;
+    this.R += (f2 - this.R) * f;
+    this.S += (f3 - this.S) * f;
+    float f8 = world.j(partialTicks);
+    if (f8 > 0.0F)
     {
-      float var11 = 1.0F - var19 * 0.5F;
-      float var20 = 1.0F - var19 * 0.4F;
-      Q *= var11;
-      R *= var11;
-      S *= var20;
+      float f4 = 1.0F - f8 * 0.5F;
+      float f10 = 1.0F - f8 * 0.4F;
+      this.Q *= f4;
+      this.R *= f4;
+      this.S *= f10;
     }
-    float var11 = var2.h(partialTicks);
-    if (var11 > 0.0F)
+    float f9 = world.h(partialTicks);
+    if (f9 > 0.0F)
     {
-      float var20 = 1.0F - var11 * 0.5F;
-      Q *= var20;
-      R *= var20;
-      S *= var20;
+      float f11 = 1.0F - f9 * 0.5F;
+      this.Q *= f11;
+      this.R *= f11;
+      this.S *= f11;
     }
-    afh var21 = auz.a(h.f, var3, partialTicks);
-    if (B)
+    afh block = auz.a(this.h.f, entity, partialTicks);
+    if (this.B)
     {
-      aui var22 = var2.e(partialTicks);
-      Q = ((float)a);
-      R = ((float)b);
-      S = ((float)c);
+      aui vec33 = world.e(partialTicks);
+      this.Q = ((float)vec33.a);
+      this.R = ((float)vec33.b);
+      this.S = ((float)vec33.c);
     }
-    else if (var21.t() == arm.h)
+    else if (block.t() == arm.h)
     {
-      float var13 = ack.a(var3) * 0.2F;
-      if (((var3 instanceof pr)) && (((pr)var3).a(pe.o))) {
-        var13 = var13 * 0.3F + 0.6F;
+      float f12 = ack.a(entity) * 0.2F;
+      if (((entity instanceof pr)) && (((pr)entity).a(pe.o))) {
+        f12 = f12 * 0.3F + 0.6F;
       }
-      Q = (0.02F + var13);
-      R = (0.02F + var13);
-      S = (0.2F + var13);
-      
-      aui colUnderwater = CustomColorizer.getUnderwaterColor(h.f, h.ac().s, h.ac().t + 1.0D, h.ac().u);
-      if (colUnderwater != null)
-      {
-        Q = ((float)a);
-        R = ((float)b);
-        S = ((float)c);
-      }
+      this.Q = (0.02F + f12);
+      this.R = (0.02F + f12);
+      this.S = (0.2F + f12);
     }
-    else if (var21.t() == arm.i)
+    else if (block.t() == arm.i)
     {
-      Q = 0.6F;
-      R = 0.1F;
-      S = 0.0F;
+      this.Q = 0.6F;
+      this.R = 0.1F;
+      this.S = 0.0F;
     }
-    float var13 = T + (U - T) * partialTicks;
-    Q *= var13;
-    R *= var13;
-    S *= var13;
-    
-    double fogYFactor = t.j();
-    
-    double var23 = (Q + (t - Q) * partialTicks) * fogYFactor;
-    if (((var3 instanceof pr)) && (((pr)var3).a(pe.q)))
+    float f13 = this.T + (this.U - this.T) * partialTicks;
+    this.Q *= f13;
+    this.R *= f13;
+    this.S *= f13;
+    double d1 = (entity.Q + (entity.t - entity.Q) * partialTicks) * world.t.j();
+    if (((entity instanceof pr)) && (((pr)entity).a(pe.q)))
     {
-      int var16 = ((pr)var3).b(pe.q).b();
-      if (var16 < 20) {
-        var23 *= (1.0F - var16 / 20.0F);
+      int i = ((pr)entity).b(pe.q).b();
+      if (i < 20) {
+        d1 *= (1.0F - i / 20.0F);
       } else {
-        var23 = 0.0D;
+        d1 = 0.0D;
       }
     }
-    if (var23 < 1.0D)
+    if (d1 < 1.0D)
     {
-      if (var23 < 0.0D) {
-        var23 = 0.0D;
+      if (d1 < 0.0D) {
+        d1 = 0.0D;
       }
-      var23 *= var23;
-      Q = ((float)(Q * var23));
-      R = ((float)(R * var23));
-      S = ((float)(S * var23));
+      d1 *= d1;
+      this.Q = ((float)(this.Q * d1));
+      this.R = ((float)(this.R * d1));
+      this.S = ((float)(this.S * d1));
     }
-    if (z > 0.0F)
+    if (this.z > 0.0F)
     {
-      float var24 = A + (z - A) * partialTicks;
-      Q = (Q * (1.0F - var24) + Q * 0.7F * var24);
-      R = (R * (1.0F - var24) + R * 0.6F * var24);
-      S = (S * (1.0F - var24) + S * 0.6F * var24);
+      float f14 = this.A + (this.z - this.A) * partialTicks;
+      this.Q = (this.Q * (1.0F - f14) + this.Q * 0.7F * f14);
+      this.R = (this.R * (1.0F - f14) + this.R * 0.6F * f14);
+      this.S = (this.S * (1.0F - f14) + this.S * 0.6F * f14);
     }
-    if (((var3 instanceof pr)) && (((pr)var3).a(pe.r)))
+    if (((entity instanceof pr)) && (((pr)entity).a(pe.r)))
     {
-      float var24 = a((pr)var3, partialTicks);
-      float var17 = 1.0F / Q;
-      if (var17 > 1.0F / R) {
-        var17 = 1.0F / R;
+      float f15 = a((pr)entity, partialTicks);
+      float f6 = 1.0F / this.Q;
+      if (f6 > 1.0F / this.R) {
+        f6 = 1.0F / this.R;
       }
-      if (var17 > 1.0F / S) {
-        var17 = 1.0F / S;
+      if (f6 > 1.0F / this.S) {
+        f6 = 1.0F / this.S;
       }
-      Q = (Q * (1.0F - var24) + Q * var17 * var24);
-      R = (R * (1.0F - var24) + R * var17 * var24);
-      S = (S * (1.0F - var24) + S * var17 * var24);
+      this.Q = (this.Q * (1.0F - f15) + this.Q * f6 * f15);
+      this.R = (this.R * (1.0F - f15) + this.R * f6 * f15);
+      this.S = (this.S * (1.0F - f15) + this.S * f6 * f15);
     }
-    if (h.t.e)
+    if (this.h.t.e)
     {
-      float var24 = (Q * 30.0F + R * 59.0F + S * 11.0F) / 100.0F;
-      float var17 = (Q * 30.0F + R * 70.0F) / 100.0F;
-      float var18 = (Q * 30.0F + S * 70.0F) / 100.0F;
-      Q = var24;
-      R = var17;
-      S = var18;
+      float f16 = (this.Q * 30.0F + this.R * 59.0F + this.S * 11.0F) / 100.0F;
+      float f17 = (this.Q * 30.0F + this.R * 70.0F) / 100.0F;
+      float f7 = (this.Q * 30.0F + this.S * 70.0F) / 100.0F;
+      this.Q = f16;
+      this.R = f17;
+      this.S = f7;
     }
-    if (Reflector.EntityViewRenderEvent_FogColors_Constructor.exists())
-    {
-      Object event = Reflector.newInstance(Reflector.EntityViewRenderEvent_FogColors_Constructor, new Object[] { this, var3, var21, Float.valueOf(partialTicks), Float.valueOf(Q), Float.valueOf(R), Float.valueOf(S) });
-      Reflector.postForgeBusEvent(event);
-      
-      Q = Reflector.getFieldValueFloat(event, Reflector.EntityViewRenderEvent_FogColors_red, Q);
-      R = Reflector.getFieldValueFloat(event, Reflector.EntityViewRenderEvent_FogColors_green, R);
-      S = Reflector.getFieldValueFloat(event, Reflector.EntityViewRenderEvent_FogColors_blue, S);
-    }
-    Shaders.setClearColor(Q, R, S, 0.0F);
+    bfl.a(this.Q, this.R, this.S, 0.0F);
   }
   
   private void a(int p_78468_1_, float partialTicks)
   {
-    pk var3 = h.ac();
-    boolean var4 = false;
-    
-    fogStandard = false;
-    if ((var3 instanceof wn)) {
-      var4 = bA.d;
+    pk entity = this.h.ac();
+    boolean flag = false;
+    if ((entity instanceof wn)) {
+      flag = ((wn)entity).bA.d;
     }
-    GL11.glFog(2918, a(Q, R, S, 1.0F));
+    GL11.glFog(2918, a(this.Q, this.R, this.S, 1.0F));
     GL11.glNormal3f(0.0F, -1.0F, 0.0F);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    afh var5 = auz.a(h.f, var3, partialTicks);
-    
-    Object event = Reflector.newInstance(Reflector.EntityViewRenderEvent_FogDensity_Constructor, new Object[] { this, var3, var5, Float.valueOf(partialTicks), Float.valueOf(0.1F) });
-    if (Reflector.postForgeBusEvent(event))
+    afh block = auz.a(this.h.f, entity, partialTicks);
+    if (((entity instanceof pr)) && (((pr)entity).a(pe.q)))
     {
-      float density = Reflector.getFieldValueFloat(event, Reflector.EntityViewRenderEvent_FogDensity_density, 0.0F);
-      bfl.a(density);
-    }
-    else if (((var3 instanceof pr)) && (((pr)var3).a(pe.q)))
-    {
-      float var6 = 5.0F;
-      int var7 = ((pr)var3).b(pe.q).b();
-      if (var7 < 20) {
-        var6 = 5.0F + (k - 5.0F) * (1.0F - var7 / 20.0F);
+      float f1 = 5.0F;
+      int i = ((pr)entity).b(pe.q).b();
+      if (i < 20) {
+        f1 = 5.0F + (this.k - 5.0F) * (1.0F - i / 20.0F);
       }
-      if (Config.isShaders()) {
-        Shaders.setFog(9729);
-      } else {
-        bfl.d(9729);
-      }
+      bfl.d(9729);
       if (p_78468_1_ == -1)
       {
         bfl.b(0.0F);
-        bfl.c(var6 * 0.8F);
+        bfl.c(f1 * 0.8F);
       }
       else
       {
-        bfl.b(var6 * 0.25F);
-        bfl.c(var6);
+        bfl.b(f1 * 0.25F);
+        bfl.c(f1);
       }
-      if (getCapabilitiesGL_NV_fog_distance) {
-        if (Config.isFogFancy()) {
-          GL11.glFogi(34138, 34139);
-        }
+      if (GLContext.getCapabilities().GL_NV_fog_distance) {
+        GL11.glFogi(34138, 34139);
       }
     }
-    else if (B)
+    else if (this.B)
     {
-      if (Config.isShaders()) {
-        Shaders.setFog(2048);
-      } else {
-        bfl.d(2048);
-      }
+      bfl.d(2048);
       bfl.a(0.1F);
     }
-    else if (var5.t() == arm.h)
+    else if (block.t() == arm.h)
     {
-      if (Config.isShaders()) {
-        Shaders.setFog(2048);
-      } else {
-        bfl.d(2048);
-      }
-      if (((var3 instanceof pr)) && (((pr)var3).a(pe.o))) {
+      bfl.d(2048);
+      if (((entity instanceof pr)) && (((pr)entity).a(pe.o))) {
         bfl.a(0.01F);
       } else {
-        bfl.a(0.1F - ack.a(var3) * 0.03F);
-      }
-      if (Config.isClearWater()) {
-        bfl.a(0.02F);
+        bfl.a(0.1F - ack.a(entity) * 0.03F);
       }
     }
-    else if (var5.t() == arm.i)
+    else if (block.t() == arm.i)
     {
-      if (Config.isShaders()) {
-        Shaders.setFog(2048);
-      } else {
-        bfl.d(2048);
-      }
+      bfl.d(2048);
       bfl.a(2.0F);
     }
     else
     {
-      float var6 = k;
-      
-      fogStandard = true;
-      if (Config.isShaders()) {
-        Shaders.setFog(9729);
-      } else {
-        bfl.d(9729);
-      }
+      float f = this.k;
+      bfl.d(9729);
       if (p_78468_1_ == -1)
       {
         bfl.b(0.0F);
-        bfl.c(var6);
+        bfl.c(f);
       }
       else
       {
-        bfl.b(var6 * Config.getFogStart());
-        bfl.c(var6);
+        bfl.b(f * 0.75F);
+        bfl.c(f);
       }
-      if (getCapabilitiesGL_NV_fog_distance)
+      if (GLContext.getCapabilities().GL_NV_fog_distance) {
+        GL11.glFogi(34138, 34139);
+      }
+      if (this.h.f.t.b((int)entity.s, (int)entity.u))
       {
-        if (Config.isFogFancy()) {
-          GL11.glFogi(34138, 34139);
-        }
-        if (Config.isFogFast()) {
-          GL11.glFogi(34138, 34140);
-        }
-      }
-      if (h.f.t.b((int)s, (int)u))
-      {
-        bfl.b(var6 * 0.05F);
-        
-        bfl.c(var6);
-      }
-      if (Reflector.ForgeHooksClient_onFogRender.exists()) {
-        Reflector.callVoid(Reflector.ForgeHooksClient_onFogRender, new Object[] { this, var3, var5, Float.valueOf(partialTicks), Integer.valueOf(p_78468_1_), Float.valueOf(var6) });
+        bfl.b(f * 0.05F);
+        bfl.c(Math.min(f, 192.0F) * 0.5F);
       }
     }
     bfl.g();
@@ -1940,229 +1582,16 @@ public class bfk
     bfl.a(1028, 4608);
   }
   
-  private FloatBuffer a(float p_78469_1_, float p_78469_2_, float p_78469_3_, float p_78469_4_)
+  private FloatBuffer a(float red, float green, float blue, float alpha)
   {
-    if (Config.isShaders()) {
-      Shaders.setFogColor(p_78469_1_, p_78469_2_, p_78469_3_);
-    }
-    P.clear();
-    P.put(p_78469_1_).put(p_78469_2_).put(p_78469_3_).put(p_78469_4_);
-    P.flip();
-    return P;
+    this.P.clear();
+    this.P.put(red).put(green).put(blue).put(alpha);
+    this.P.flip();
+    return this.P;
   }
   
   public avq k()
   {
-    return l;
-  }
-  
-  private void waitForServerThread()
-  {
-    serverWaitTimeCurrent = 0;
-    if ((!Config.isSmoothWorld()) || (!Config.isSingleProcessor()))
-    {
-      lastServerTime = 0L;
-      lastServerTicks = 0;
-      return;
-    }
-    if (!h.E()) {
-      return;
-    }
-    bpo srv = h.G();
-    if (srv == null) {
-      return;
-    }
-    boolean paused = h.V();
-    if ((paused) || ((h.m instanceof axs)))
-    {
-      if ((h.m instanceof axs)) {
-        Config.sleep(20L);
-      }
-      lastServerTime = 0L;
-      lastServerTicks = 0;
-      return;
-    }
-    if (serverWaitTime > 0)
-    {
-      Lagometer.timerServer.start();
-      
-      Config.sleep(serverWaitTime);
-      
-      Lagometer.timerServer.end();
-      
-      serverWaitTimeCurrent = serverWaitTime;
-    }
-    long timeNow = System.nanoTime() / 1000000L;
-    if ((lastServerTime == 0L) || (lastServerTicks == 0))
-    {
-      lastServerTime = timeNow;
-      lastServerTicks = srv.at();
-      avgServerTickDiff = 1.0F;
-      avgServerTimeDiff = 50.0F;
-      return;
-    }
-    long timeDiff = timeNow - lastServerTime;
-    if (timeDiff < 0L)
-    {
-      lastServerTime = timeNow;
-      timeDiff = 0L;
-    }
-    if (timeDiff < 50L) {
-      return;
-    }
-    lastServerTime = timeNow;
-    
-    int ticks = srv.at();
-    
-    int tickDiff = ticks - lastServerTicks;
-    if (tickDiff < 0)
-    {
-      lastServerTicks = ticks;
-      tickDiff = 0;
-    }
-    if (tickDiff < 1) {
-      if (serverWaitTime < 100) {
-        serverWaitTime += 2;
-      }
-    }
-    if (tickDiff > 1) {
-      if (serverWaitTime > 0) {
-        serverWaitTime -= 1;
-      }
-    }
-    lastServerTicks = ticks;
-  }
-  
-  private void frameInit()
-  {
-    if (!initialized)
-    {
-      TextureUtils.registerResourceListener();
-      if ((Config.getBitsOs() == 64) && (Config.getBitsJre() == 32)) {
-        Config.setNotify64BitJava(true);
-      }
-      initialized = true;
-    }
-    Config.isActing();
-    
-    Config.checkDisplayMode();
-    
-    adm world = h.f;
-    if (world != null)
-    {
-      if (Config.getNewRelease() != null)
-      {
-        String userEdition = "HD_U".replace("HD_U", "HD Ultra").replace("L", "Light");
-        String fullNewVer = userEdition + " " + Config.getNewRelease();
-        fa msg = new fa("A new §eOptiFine§f version is available: §e" + fullNewVer + "§f");
-        h.q.d().a(msg);
-        Config.setNewRelease(null);
-      }
-      if (Config.isNotify64BitJava())
-      {
-        Config.setNotify64BitJava(false);
-        fa msg = new fa("You can install §e64-bit Java§f to increase performance");
-        h.q.d().a(msg);
-      }
-    }
-    if ((h.m instanceof aya)) {
-      updateMainMenu((aya)h.m);
-    }
-    if (updatedWorld != world)
-    {
-      RandomMobs.worldChanged(updatedWorld, world);
-      
-      Config.updateThreadPriorities();
-      
-      lastServerTime = 0L;
-      lastServerTicks = 0;
-      
-      updatedWorld = world;
-    }
-    if (!setFxaaShader(Shaders.configAntialiasingLevel)) {
-      Shaders.configAntialiasingLevel = 0;
-    }
-  }
-  
-  private void frameFinish()
-  {
-    if (h.f != null)
-    {
-      long now = System.currentTimeMillis();
-      if (now > lastErrorCheckTimeMs + 10000L)
-      {
-        lastErrorCheckTimeMs = now;
-        
-        int err = GL11.glGetError();
-        if (err != 0)
-        {
-          String text = GLU.gluErrorString(err);
-          fa msg = new fa("§eOpenGL Error§f: " + err + " (" + text + ")");
-          h.q.d().a(msg);
-        }
-      }
-    }
-  }
-  
-  private void updateMainMenu(aya mainGui)
-  {
-    try
-    {
-      String str = null;
-      Calendar calendar = Calendar.getInstance();
-      calendar.setTime(new Date());
-      int day = calendar.get(5);
-      int month = calendar.get(2) + 1;
-      if ((day == 8) && (month == 4)) {
-        str = "Happy birthday, OptiFine!";
-      }
-      if ((day == 14) && (month == 8)) {
-        str = "Happy birthday, sp614x!";
-      }
-      if (str == null) {
-        return;
-      }
-      Field[] fs = aya.class.getDeclaredFields();
-      for (int i = 0; i < fs.length; i++) {
-        if (fs[i].getType() == String.class)
-        {
-          fs[i].setAccessible(true);
-          fs[i].set(mainGui, str);
-          break;
-        }
-      }
-    }
-    catch (Throwable e) {}
-  }
-  
-  public boolean setFxaaShader(int fxaaLevel)
-  {
-    if (!bqs.i()) {
-      return false;
-    }
-    if ((aa != null) && (aa != fxaaShaders[2]) && (aa != fxaaShaders[4])) {
-      return true;
-    }
-    if ((fxaaLevel == 2) || (fxaaLevel == 4))
-    {
-      if ((aa != null) && (aa == fxaaShaders[fxaaLevel])) {
-        return true;
-      }
-      if (h.f == null) {
-        return true;
-      }
-      a(new jy("shaders/post/fxaa_of_" + fxaaLevel + "x.json"));
-      
-      fxaaShaders[fxaaLevel] = aa;
-      
-      return ad;
-    }
-    if (aa == null) {
-      return true;
-    }
-    aa.a();
-    aa = null;
-    
-    return true;
+    return this.l;
   }
 }

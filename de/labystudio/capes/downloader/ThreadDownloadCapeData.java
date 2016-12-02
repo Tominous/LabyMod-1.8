@@ -3,6 +3,7 @@ package de.labystudio.capes.downloader;
 import ave;
 import bfm;
 import bme;
+import bmj;
 import bml;
 import bni;
 import de.labystudio.capes.CapeCallback;
@@ -12,6 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.imageio.ImageIO;
 import jy;
@@ -31,26 +33,28 @@ public class ThreadDownloadCapeData
   public Boolean imageFound = null;
   public boolean pipeline = false;
   private CapeCallback callBack;
+  private jy resourceLocation;
   
   public ThreadDownloadCapeData(File p_i1049_1_, String p_i1049_2_, jy p_i1049_3_, bfm p_i1049_4_, CapeCallback callBack)
   {
-    super(p_i1049_3_);
-    cacheFile = p_i1049_1_;
-    imageUrl = p_i1049_2_;
-    imageBuffer = p_i1049_4_;
+    super(null);
+    this.cacheFile = p_i1049_1_;
+    this.imageUrl = p_i1049_2_;
+    this.imageBuffer = p_i1049_4_;
     this.callBack = callBack;
+    this.resourceLocation = p_i1049_3_;
   }
   
   private void checkTextureUploaded()
   {
-    if ((!textureUploaded) && 
-      (bufferedImage != null))
+    if ((!this.textureUploaded) && 
+      (this.bufferedImage != null))
     {
-      textureUploaded = true;
-      if (f != null) {
+      this.textureUploaded = true;
+      if (this.f != null) {
         c();
       }
-      bml.a(super.b(), bufferedImage);
+      bml.a(super.b(), this.bufferedImage);
     }
   }
   
@@ -62,34 +66,34 @@ public class ThreadDownloadCapeData
   
   public void setBufferedImage(BufferedImage p_147641_1_)
   {
-    bufferedImage = p_147641_1_;
-    if (imageBuffer != null) {
-      imageBuffer.a();
+    this.bufferedImage = p_147641_1_;
+    if (this.imageBuffer != null) {
+      this.imageBuffer.a();
     }
-    imageFound = Boolean.valueOf(bufferedImage != null);
+    this.imageFound = Boolean.valueOf(this.bufferedImage != null);
   }
   
   public void a(bni p_110551_1_)
     throws IOException
   {
-    if ((bufferedImage == null) && (f != null)) {
+    if ((this.bufferedImage == null) && (this.f != null)) {
       super.a(p_110551_1_);
     }
-    if (imageThread == null) {
-      if ((cacheFile != null) && (cacheFile.isFile()))
+    if (this.imageThread == null) {
+      if ((this.cacheFile != null) && (this.cacheFile.isFile()))
       {
-        Debug.debug("Loading http texture from local cache (" + cacheFile + ")");
+        Debug.debug("Loading http texture from local cache (" + this.cacheFile + ")");
         try
         {
-          bufferedImage = ImageIO.read(cacheFile);
-          if (imageBuffer != null) {
-            setBufferedImage(imageBuffer.a(bufferedImage));
+          this.bufferedImage = ImageIO.read(this.cacheFile);
+          if (this.imageBuffer != null) {
+            setBufferedImage(this.imageBuffer.a(this.bufferedImage));
           }
-          imageFound = Boolean.valueOf(bufferedImage != null);
+          this.imageFound = Boolean.valueOf(this.bufferedImage != null);
         }
         catch (IOException var3)
         {
-          Debug.debug("Couldn't load skin " + cacheFile);
+          Debug.debug("Couldn't load skin " + this.cacheFile);
           loadTextureFromServer();
         }
       }
@@ -102,17 +106,17 @@ public class ThreadDownloadCapeData
   
   protected void loadTextureFromServer()
   {
-    imageThread = new Thread("Texture Downloader #" + threadDownloadCounter.incrementAndGet())
+    this.imageThread = new Thread("Texture Downloader #" + threadDownloadCounter.incrementAndGet())
     {
       private static final String __OBFID = "CL_00001050";
       
       public void run()
       {
         HttpURLConnection var1 = null;
-        Debug.debug("Downloading http texture from " + imageUrl + " to " + cacheFile);
+        Debug.debug("Downloading http texture from " + ThreadDownloadCapeData.this.imageUrl + " to " + ThreadDownloadCapeData.this.cacheFile);
         try
         {
-          var1 = (HttpURLConnection)new URL(imageUrl).openConnection(ave.A().O());
+          var1 = (HttpURLConnection)new URL(ThreadDownloadCapeData.this.imageUrl).openConnection(ave.A().O());
           var1.setDoInput(true);
           var1.setDoOutput(false);
           var1.connect();
@@ -120,19 +124,19 @@ public class ThreadDownloadCapeData
           {
             BufferedImage var2;
             BufferedImage var2;
-            if (cacheFile != null)
+            if (ThreadDownloadCapeData.this.cacheFile != null)
             {
-              FileUtils.copyInputStreamToFile(var1.getInputStream(), cacheFile);
-              var2 = ImageIO.read(cacheFile);
+              FileUtils.copyInputStreamToFile(var1.getInputStream(), ThreadDownloadCapeData.this.cacheFile);
+              var2 = ImageIO.read(ThreadDownloadCapeData.this.cacheFile);
             }
             else
             {
               var2 = bml.a(var1.getInputStream());
             }
-            if (imageBuffer != null) {
-              var2 = imageBuffer.a(var2);
+            if (ThreadDownloadCapeData.this.imageBuffer != null) {
+              var2 = ThreadDownloadCapeData.this.imageBuffer.a(var2);
             }
-            setBufferedImage(var2);
+            ThreadDownloadCapeData.this.setBufferedImage(var2);
           }
           else if (var1.getErrorStream() != null)
           {
@@ -148,15 +152,20 @@ public class ThreadDownloadCapeData
           if (var1 != null) {
             var1.disconnect();
           }
-          imageFound = Boolean.valueOf(bufferedImage != null);
-          if (imageFound.booleanValue()) {
-            callBack.done();
-          } else {
-            callBack.failed("Texture not found");
+          ThreadDownloadCapeData.this.imageFound = Boolean.valueOf(ThreadDownloadCapeData.this.bufferedImage != null);
+          if (ThreadDownloadCapeData.this.imageFound.booleanValue())
+          {
+            ThreadDownloadCapeData.this.callBack.done();
+          }
+          else
+          {
+            ThreadDownloadCapeData.this.callBack.failed("Texture not found");
+            
+            ave.A().P().b.remove(ThreadDownloadCapeData.this.resourceLocation);
           }
         }
       }
     };
-    imageThread.start();
+    this.imageThread.start();
   }
 }

@@ -8,18 +8,18 @@ public class any
   
   public void a(amv ☃, adm ☃, int ☃, int ☃, ans ☃)
   {
-    int ☃ = a;
-    c = ☃;
+    int ☃ = this.a;
+    this.c = ☃;
     
-    b.setSeed(☃.J());
-    long ☃ = b.nextLong();
-    long ☃ = b.nextLong();
+    this.b.setSeed(☃.J());
+    long ☃ = this.b.nextLong();
+    long ☃ = this.b.nextLong();
     for (int ☃ = ☃ - ☃; ☃ <= ☃ + ☃; ☃++) {
       for (int ☃ = ☃ - ☃; ☃ <= ☃ + ☃; ☃++)
       {
         long ☃ = ☃ * ☃;
         long ☃ = ☃ * ☃;
-        b.setSeed(☃ ^ ☃ ^ ☃.J());
+        this.b.setSeed(☃ ^ ☃ ^ ☃.J());
         a(☃, ☃, ☃, ☃, ☃, ☃);
       }
     }

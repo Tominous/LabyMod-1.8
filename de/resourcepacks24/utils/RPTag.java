@@ -7,7 +7,7 @@ public class RPTag
   
   public RPTag(String name, boolean enabled)
   {
-    tagName = name;
+    this.tagName = name;
     this.enabled = enabled;
   }
   
@@ -18,12 +18,12 @@ public class RPTag
   
   public boolean isEnabled()
   {
-    return enabled;
+    return this.enabled;
   }
   
   public String getTagName()
   {
-    return tagName;
+    return this.tagName;
   }
   
   public boolean hasTag(String tagName, int status)

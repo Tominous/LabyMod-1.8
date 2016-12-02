@@ -13,11 +13,11 @@ public class Message
   
   public TeamSpeakUser getUser()
   {
-    return user;
+    return this.user;
   }
   
   public String getMessage()
   {
-    return message;
+    return this.message;
   }
 }

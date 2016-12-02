@@ -63,18 +63,18 @@ public class ll
   
   public ll(MinecraftServer ☃)
   {
-    f = ☃;
-    d = true;
+    this.f = ☃;
+    this.d = true;
   }
   
   public void a(InetAddress ☃, int ☃)
     throws IOException
   {
-    synchronized (g)
+    synchronized (this.g)
     {
       Class<? extends ServerSocketChannel> ☃;
       no<? extends EventLoopGroup> ☃;
-      if ((Epoll.isAvailable()) && (f.ai()))
+      if ((Epoll.isAvailable()) && (this.f.ai()))
       {
         Class<? extends ServerSocketChannel> ☃ = EpollServerSocketChannel.class;
         no<? extends EventLoopGroup> ☃ = b;
@@ -86,7 +86,7 @@ public class ll
         ☃ = a;
         e.info("Using default channel type");
       }
-      g.add(((ServerBootstrap)((ServerBootstrap)new ServerBootstrap().channel(☃)).childHandler(new ChannelInitializer()
+      this.g.add(((ServerBootstrap)((ServerBootstrap)new ServerBootstrap().channel(☃)).childHandler(new ChannelInitializer()
       {
         protected void initChannel(Channel ☃)
           throws Exception
@@ -110,7 +110,7 @@ public class ll
   public SocketAddress a()
   {
     ChannelFuture ☃;
-    synchronized (g)
+    synchronized (this.g)
     {
       ☃ = ((ServerBootstrap)((ServerBootstrap)new ServerBootstrap().channel(LocalServerChannel.class)).childHandler(new ChannelInitializer()
       {
@@ -124,15 +124,15 @@ public class ll
         }
       }).group((EventLoopGroup)a.c()).localAddress(LocalAddress.ANY)).bind().syncUninterruptibly();
       
-      g.add(☃);
+      this.g.add(☃);
     }
     return ☃.channel().localAddress();
   }
   
   public void b()
   {
-    d = false;
-    for (ChannelFuture ☃ : g) {
+    this.d = false;
+    for (ChannelFuture ☃ : this.g) {
       try
       {
         ☃.channel().close().sync();
@@ -146,9 +146,9 @@ public class ll
   
   public void c()
   {
-    synchronized (h)
+    synchronized (this.h)
     {
-      Iterator<ek> ☃ = h.iterator();
+      Iterator<ek> ☃ = this.h.iterator();
       while (☃.hasNext())
       {
         final ek ☃ = (ek)☃.next();
@@ -202,6 +202,6 @@ public class ll
   
   public MinecraftServer d()
   {
-    return f;
+    return this.f;
   }
 }

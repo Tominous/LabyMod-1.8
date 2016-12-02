@@ -27,22 +27,22 @@ public class RenderSkullEvent
   
   public alo getSkull()
   {
-    return skull;
+    return this.skull;
   }
   
   public double getX()
   {
-    return x;
+    return this.x;
   }
   
   public double getY()
   {
-    return y;
+    return this.y;
   }
   
   public double getZ()
   {
-    return z;
+    return this.z;
   }
   
   public Map<Listener, List<Method>> getListenerMethods()

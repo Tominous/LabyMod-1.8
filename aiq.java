@@ -16,10 +16,10 @@ public class aiq
   public void a(adm ☃, cj ☃, alz ☃, float ☃, int ☃)
   {
     super.a(☃, ☃, ☃, ☃, ☃);
-    if (D) {
+    if (☃.D) {
       return;
     }
-    if ((((Integer)☃.b(a)).intValue() >= 7) && (s.nextInt(50) == 0)) {
+    if ((((Integer)☃.b(a)).intValue() >= 7) && (☃.s.nextInt(50) == 0)) {
       a(☃, ☃, new zx(zy.bU));
     }
   }

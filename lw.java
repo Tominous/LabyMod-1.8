@@ -60,7 +60,7 @@ public class lw
     {
       public void onProfileLookupSucceeded(GameProfile ☃)
       {
-        a.aF().a(☃);
+        this.a.aF().a(☃);
         ☃.add(☃);
       }
       

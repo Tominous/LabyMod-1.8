@@ -11,13 +11,13 @@ public class tc
   
   public static aui a(py ☃, int ☃, int ☃, aui ☃)
   {
-    a = ☃.a(s, t, u);
+    a = ☃.a(☃.s, ☃.t, ☃.u);
     return c(☃, ☃, ☃, a);
   }
   
   public static aui b(py ☃, int ☃, int ☃, aui ☃)
   {
-    a = new aui(s, t, u).d(☃);
+    a = new aui(☃.s, ☃.t, ☃.u).d(☃);
     return c(☃, ☃, ☃, a);
   }
   
@@ -31,7 +31,7 @@ public class tc
     boolean ☃;
     if (☃.ck())
     {
-      double ☃ = ☃.ch().c(ns.c(s), ns.c(t), ns.c(u)) + 4.0D;
+      double ☃ = ☃.ch().c(ns.c(☃.s), ns.c(☃.t), ns.c(☃.u)) + 4.0D;
       double ☃ = ☃.ci() + ☃;
       ☃ = ☃ < ☃ * ☃;
     }
@@ -44,25 +44,25 @@ public class tc
       int ☃ = ☃.nextInt(2 * ☃ + 1) - ☃;
       int ☃ = ☃.nextInt(2 * ☃ + 1) - ☃;
       int ☃ = ☃.nextInt(2 * ☃ + 1) - ☃;
-      if ((☃ == null) || (☃ * a + ☃ * c >= 0.0D))
+      if ((☃ == null) || (☃ * ☃.a + ☃ * ☃.c >= 0.0D))
       {
         if ((☃.ck()) && (☃ > 1))
         {
           cj ☃ = ☃.ch();
-          if (s > ☃.n()) {
+          if (☃.s > ☃.n()) {
             ☃ -= ☃.nextInt(☃ / 2);
           } else {
             ☃ += ☃.nextInt(☃ / 2);
           }
-          if (u > ☃.p()) {
+          if (☃.u > ☃.p()) {
             ☃ -= ☃.nextInt(☃ / 2);
           } else {
             ☃ += ☃.nextInt(☃ / 2);
           }
         }
-        ☃ += ns.c(s);
-        ☃ += ns.c(t);
-        ☃ += ns.c(u);
+        ☃ += ns.c(☃.s);
+        ☃ += ns.c(☃.t);
+        ☃ += ns.c(☃.u);
         
         cj ☃ = new cj(☃, ☃, ☃);
         if ((!☃) || (☃.e(☃)))

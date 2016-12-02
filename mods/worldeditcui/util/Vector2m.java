@@ -27,71 +27,71 @@ public class Vector2m
   
   public void setY(float y)
   {
-    z = y;
+    this.z = y;
   }
   
   public Vector2 add(Vector2 that)
   {
-    x += x;
-    z += z;
+    this.x += that.x;
+    this.z += that.z;
     return this;
   }
   
   public Vector2 subtract(Vector2 that)
   {
-    x -= x;
-    z -= z;
+    this.x -= that.x;
+    this.z -= that.z;
     return this;
   }
   
   public Vector2 scale(double scale)
   {
-    x *= scale;
-    z *= scale;
+    this.x *= scale;
+    this.z *= scale;
     return this;
   }
   
   public Vector2 cross(Vector2 that)
   {
-    double tmp = z;
-    z = (-x);
-    x = tmp;
+    double tmp = this.z;
+    this.z = (-this.x);
+    this.x = tmp;
     return this;
   }
   
   public Vector2 ceil()
   {
-    x = ((float)Math.ceil(x));
-    z = ((float)Math.ceil(z));
+    this.x = ((float)Math.ceil(this.x));
+    this.z = ((float)Math.ceil(this.z));
     return this;
   }
   
   public Vector2 floor()
   {
-    x = ((float)Math.floor(x));
-    z = ((float)Math.floor(z));
+    this.x = ((float)Math.floor(this.x));
+    this.z = ((float)Math.floor(this.z));
     return this;
   }
   
   public Vector2 round()
   {
-    x = Math.round(x);
-    z = Math.round(z);
+    this.x = Math.round(this.x);
+    this.z = Math.round(this.z);
     return this;
   }
   
   public Vector2 abs()
   {
-    x = Math.abs(x);
-    z = Math.abs(z);
+    this.x = Math.abs(this.x);
+    this.z = Math.abs(this.z);
     return this;
   }
   
   public Vector2 normalize()
   {
     double length = length();
-    x *= 1.0D / length;
-    z *= 1.0D / length;
+    this.x *= 1.0D / length;
+    this.z *= 1.0D / length;
     return this;
   }
 }

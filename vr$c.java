@@ -6,60 +6,60 @@ class vr$c
   
   public vr$c(vr ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public boolean a()
   {
-    return b.u() != null;
+    return this.b.u() != null;
   }
   
   public void c()
   {
-    a = 0;
+    this.a = 0;
   }
   
   public void d()
   {
-    b.a(false);
+    this.b.a(false);
   }
   
   public void e()
   {
-    pr ☃ = b.u();
+    pr ☃ = this.b.u();
     
     double ☃ = 64.0D;
-    if ((☃.h(b) < ☃ * ☃) && (b.t(☃)))
+    if ((☃.h(this.b) < ☃ * ☃) && (this.b.t(☃)))
     {
-      adm ☃ = b.o;
+      adm ☃ = this.b.o;
       
-      a += 1;
-      if (a == 10) {
-        ☃.a(null, 1007, new cj(b), 0);
+      this.a += 1;
+      if (this.a == 10) {
+        ☃.a(null, 1007, new cj(this.b), 0);
       }
-      if (a == 20)
+      if (this.a == 20)
       {
         double ☃ = 4.0D;
-        aui ☃ = b.d(1.0F);
+        aui ☃ = this.b.d(1.0F);
         
-        double ☃ = s - (b.s + a * ☃);
-        double ☃ = aRb + K / 2.0F - (0.5D + b.t + b.K / 2.0F);
-        double ☃ = u - (b.u + c * ☃);
+        double ☃ = ☃.s - (this.b.s + ☃.a * ☃);
+        double ☃ = ☃.aR().b + ☃.K / 2.0F - (0.5D + this.b.t + this.b.K / 2.0F);
+        double ☃ = ☃.u - (this.b.u + ☃.c * ☃);
         
-        ☃.a(null, 1008, new cj(b), 0);
-        wu ☃ = new wu(☃, b, ☃, ☃, ☃);
-        e = b.cf();
-        s = (b.s + a * ☃);
-        t = (b.t + b.K / 2.0F + 0.5D);
-        u = (b.u + c * ☃);
+        ☃.a(null, 1008, new cj(this.b), 0);
+        wu ☃ = new wu(☃, this.b, ☃, ☃, ☃);
+        ☃.e = this.b.cf();
+        ☃.s = (this.b.s + ☃.a * ☃);
+        ☃.t = (this.b.t + this.b.K / 2.0F + 0.5D);
+        ☃.u = (this.b.u + ☃.c * ☃);
         ☃.d(☃);
-        a = -40;
+        this.a = -40;
       }
     }
-    else if (a > 0)
+    else if (this.a > 0)
     {
-      a -= 1;
+      this.a -= 1;
     }
-    b.a(a > 10);
+    this.b.a(this.a > 10);
   }
 }

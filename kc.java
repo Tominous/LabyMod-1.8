@@ -12,31 +12,31 @@ public class kc
   
   public kc(String ☃)
   {
-    a.add(new kc.a(null));
-    b = ☃;
+    this.a.add(new kc.a(null));
+    this.b = ☃;
   }
   
   public kc(String ☃, Throwable ☃)
   {
     super(☃);
-    a.add(new kc.a(null));
-    b = ☃;
+    this.a.add(new kc.a(null));
+    this.b = ☃;
   }
   
   public void a(String ☃)
   {
-    kc.a.a((kc.a)a.get(0), ☃);
+    kc.a.a((kc.a)this.a.get(0), ☃);
   }
   
   public void b(String ☃)
   {
-    kc.a.b((kc.a)a.get(0), ☃);
-    a.add(0, new kc.a(null));
+    kc.a.b((kc.a)this.a.get(0), ☃);
+    this.a.add(0, new kc.a(null));
   }
   
   public String getMessage()
   {
-    return "Invalid " + ((kc.a)a.get(a.size() - 1)).toString() + ": " + b;
+    return "Invalid " + ((kc.a)this.a.get(this.a.size() - 1)).toString() + ": " + this.b;
   }
   
   public static kc a(Exception ☃)
@@ -58,24 +58,24 @@ public class kc
     
     private void a(String ☃)
     {
-      b.add(0, ☃);
+      this.b.add(0, ☃);
     }
     
     public String b()
     {
-      return StringUtils.join(b, "->");
+      return StringUtils.join(this.b, "->");
     }
     
     public String toString()
     {
-      if (a != null)
+      if (this.a != null)
       {
-        if (!b.isEmpty()) {
-          return a + " " + b();
+        if (!this.b.isEmpty()) {
+          return this.a + " " + b();
         }
-        return a;
+        return this.a;
       }
-      if (!b.isEmpty()) {
+      if (!this.b.isEmpty()) {
         return "(Unknown file) " + b();
       }
       return "(Unknown file)";

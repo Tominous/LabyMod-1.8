@@ -5,7 +5,7 @@ public class bkq
   
   public bkq(bis ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(vo ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
@@ -33,7 +33,7 @@ public class bkq
     bqs.a(bqs.r, ☃ / 1.0F, ☃ / 1.0F);
     
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    a.a(bmh.g);
+    this.a.a(bmh.g);
     ☃.a(☃, 1.0F);
     bfl.F();
     bfl.C();

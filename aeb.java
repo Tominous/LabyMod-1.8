@@ -9,35 +9,35 @@ public class aeb
   
   public void a(adm ☃, Random ☃, ady ☃, cj ☃)
   {
-    if (a != null) {
+    if (this.a != null) {
       throw new RuntimeException("Already decorating");
     }
-    a = ☃;
+    this.a = ☃;
     String ☃ = ☃.P().B();
     if (☃ != null) {
-      d = ant.a.a(☃).b();
+      this.d = ant.a.a(☃).b();
     } else {
-      d = ant.a.a("").b();
+      this.d = ant.a.a("").b();
     }
-    b = ☃;
-    c = ☃;
+    this.b = ☃;
+    this.c = ☃;
     
-    h = new apj(afi.d.Q(), d.I);
-    i = new apj(afi.n.Q(), d.M);
-    j = new apj(afi.b.Q().a(ajy.a, ajy.a.b), d.Q);
-    k = new apj(afi.b.Q().a(ajy.a, ajy.a.d), d.U);
-    l = new apj(afi.b.Q().a(ajy.a, ajy.a.f), d.Y);
-    m = new apj(afi.q.Q(), d.ac);
-    n = new apj(afi.p.Q(), d.ag);
-    o = new apj(afi.o.Q(), d.ak);
-    p = new apj(afi.aC.Q(), d.ao);
-    q = new apj(afi.ag.Q(), d.as);
-    r = new apj(afi.x.Q(), d.aw);
+    this.h = new apj(afi.d.Q(), this.d.I);
+    this.i = new apj(afi.n.Q(), this.d.M);
+    this.j = new apj(afi.b.Q().a(ajy.a, ajy.a.b), this.d.Q);
+    this.k = new apj(afi.b.Q().a(ajy.a, ajy.a.d), this.d.U);
+    this.l = new apj(afi.b.Q().a(ajy.a, ajy.a.f), this.d.Y);
+    this.m = new apj(afi.q.Q(), this.d.ac);
+    this.n = new apj(afi.p.Q(), this.d.ag);
+    this.o = new apj(afi.o.Q(), this.d.ak);
+    this.p = new apj(afi.aC.Q(), this.d.ao);
+    this.q = new apj(afi.ag.Q(), this.d.as);
+    this.r = new apj(afi.x.Q(), this.d.aw);
     
     a(☃);
     
-    a = null;
-    b = null;
+    this.a = null;
+    this.b = null;
   }
   
   protected aot e = new aop(4);
@@ -78,221 +78,221 @@ public class aeb
   protected void a(ady ☃)
   {
     a();
-    for (int ☃ = 0; ☃ < I; ☃++)
+    for (int ☃ = 0; ☃ < this.I; ☃++)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      f.b(a, b, a.r(c.a(☃, 0, ☃)));
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      this.f.b(this.a, this.b, this.a.r(this.c.a(☃, 0, ☃)));
     }
-    for (int ☃ = 0; ☃ < J; ☃++)
+    for (int ☃ = 0; ☃ < this.J; ☃++)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      e.b(a, b, a.r(c.a(☃, 0, ☃)));
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      this.e.b(this.a, this.b, this.a.r(this.c.a(☃, 0, ☃)));
     }
-    for (int ☃ = 0; ☃ < H; ☃++)
+    for (int ☃ = 0; ☃ < this.H; ☃++)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      g.b(a, b, a.r(c.a(☃, 0, ☃)));
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      this.g.b(this.a, this.b, this.a.r(this.c.a(☃, 0, ☃)));
     }
-    int ☃ = A;
-    if (b.nextInt(10) == 0) {
+    int ☃ = this.A;
+    if (this.b.nextInt(10) == 0) {
       ☃++;
     }
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
       
-      aoh ☃ = ☃.a(b);
+      aoh ☃ = ☃.a(this.b);
       ☃.e();
       
-      cj ☃ = a.m(c.a(☃, 0, ☃));
-      if (☃.b(a, b, ☃)) {
-        ☃.a(a, b, ☃);
+      cj ☃ = this.a.m(this.c.a(☃, 0, ☃));
+      if (☃.b(this.a, this.b, ☃)) {
+        ☃.a(this.a, this.b, ☃);
       }
     }
-    for (int ☃ = 0; ☃ < K; ☃++)
+    for (int ☃ = 0; ☃ < this.K; ☃++)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      v.b(a, b, a.m(c.a(☃, 0, ☃)));
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      this.v.b(this.a, this.b, this.a.m(this.c.a(☃, 0, ☃)));
     }
-    for (int ☃ = 0; ☃ < B; ☃++)
+    for (int ☃ = 0; ☃ < this.B; ☃++)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = a.m(c.a(☃, 0, ☃)).o() + 32;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.a.m(this.c.a(☃, 0, ☃)).o() + 32;
       if (☃ > 0)
       {
-        int ☃ = b.nextInt(☃);
+        int ☃ = this.b.nextInt(☃);
         
-        cj ☃ = c.a(☃, ☃, ☃);
-        agw.a ☃ = ☃.a(b, ☃);
+        cj ☃ = this.c.a(☃, ☃, ☃);
+        agw.a ☃ = ☃.a(this.b, ☃);
         agw ☃ = ☃.a().a();
         if (☃.t() != arm.a)
         {
-          s.a(☃, ☃);
-          s.b(a, b, ☃);
+          this.s.a(☃, ☃);
+          this.s.b(this.a, this.b, ☃);
         }
       }
     }
-    for (int ☃ = 0; ☃ < C; ☃++)
+    for (int ☃ = 0; ☃ < this.C; ☃++)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = a.m(c.a(☃, 0, ☃)).o() * 2;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.a.m(this.c.a(☃, 0, ☃)).o() * 2;
       if (☃ > 0)
       {
-        int ☃ = b.nextInt(☃);
+        int ☃ = this.b.nextInt(☃);
         
-        ☃.b(b).b(a, b, c.a(☃, ☃, ☃));
+        ☃.b(this.b).b(this.a, this.b, this.c.a(☃, ☃, ☃));
       }
     }
-    for (int ☃ = 0; ☃ < D; ☃++)
+    for (int ☃ = 0; ☃ < this.D; ☃++)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = a.m(c.a(☃, 0, ☃)).o() * 2;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.a.m(this.c.a(☃, 0, ☃)).o() * 2;
       if (☃ > 0)
       {
-        int ☃ = b.nextInt(☃);
+        int ☃ = this.b.nextInt(☃);
         
-        new aoq().b(a, b, c.a(☃, ☃, ☃));
+        new aoq().b(this.a, this.b, this.c.a(☃, ☃, ☃));
       }
     }
-    for (int ☃ = 0; ☃ < z; ☃++)
+    for (int ☃ = 0; ☃ < this.z; ☃++)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = a.m(c.a(☃, 0, ☃)).o() * 2;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.a.m(this.c.a(☃, 0, ☃)).o() * 2;
       if (☃ > 0)
       {
-        int ☃ = b.nextInt(☃);
+        int ☃ = this.b.nextInt(☃);
         
-        cj ☃ = c.a(☃, ☃, ☃);
+        cj ☃ = this.c.a(☃, ☃, ☃);
         while (☃.o() > 0)
         {
           cj ☃ = ☃.b();
-          if (!a.d(☃)) {
+          if (!this.a.d(☃)) {
             break;
           }
           ☃ = ☃;
         }
-        y.b(a, b, ☃);
+        this.y.b(this.a, this.b, ☃);
       }
     }
-    for (int ☃ = 0; ☃ < E; ☃++)
+    for (int ☃ = 0; ☃ < this.E; ☃++)
     {
-      if (b.nextInt(4) == 0)
+      if (this.b.nextInt(4) == 0)
       {
-        int ☃ = b.nextInt(16) + 8;
-        int ☃ = b.nextInt(16) + 8;
-        cj ☃ = a.m(c.a(☃, 0, ☃));
-        t.b(a, b, ☃);
+        int ☃ = this.b.nextInt(16) + 8;
+        int ☃ = this.b.nextInt(16) + 8;
+        cj ☃ = this.a.m(this.c.a(☃, 0, ☃));
+        this.t.b(this.a, this.b, ☃);
       }
-      if (b.nextInt(8) == 0)
+      if (this.b.nextInt(8) == 0)
       {
-        int ☃ = b.nextInt(16) + 8;
-        int ☃ = b.nextInt(16) + 8;
-        int ☃ = a.m(c.a(☃, 0, ☃)).o() * 2;
+        int ☃ = this.b.nextInt(16) + 8;
+        int ☃ = this.b.nextInt(16) + 8;
+        int ☃ = this.a.m(this.c.a(☃, 0, ☃)).o() * 2;
         if (☃ > 0)
         {
-          int ☃ = b.nextInt(☃);
-          cj ☃ = c.a(☃, ☃, ☃);
-          u.b(a, b, ☃);
+          int ☃ = this.b.nextInt(☃);
+          cj ☃ = this.c.a(☃, ☃, ☃);
+          this.u.b(this.a, this.b, ☃);
         }
       }
     }
-    if (b.nextInt(4) == 0)
+    if (this.b.nextInt(4) == 0)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = a.m(c.a(☃, 0, ☃)).o() * 2;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.a.m(this.c.a(☃, 0, ☃)).o() * 2;
       if (☃ > 0)
       {
-        int ☃ = b.nextInt(☃);
-        t.b(a, b, c.a(☃, ☃, ☃));
+        int ☃ = this.b.nextInt(☃);
+        this.t.b(this.a, this.b, this.c.a(☃, ☃, ☃));
       }
     }
-    if (b.nextInt(8) == 0)
+    if (this.b.nextInt(8) == 0)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = a.m(c.a(☃, 0, ☃)).o() * 2;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.a.m(this.c.a(☃, 0, ☃)).o() * 2;
       if (☃ > 0)
       {
-        int ☃ = b.nextInt(☃);
-        u.b(a, b, c.a(☃, ☃, ☃));
+        int ☃ = this.b.nextInt(☃);
+        this.u.b(this.a, this.b, this.c.a(☃, ☃, ☃));
       }
     }
-    for (int ☃ = 0; ☃ < F; ☃++)
+    for (int ☃ = 0; ☃ < this.F; ☃++)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = a.m(c.a(☃, 0, ☃)).o() * 2;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.a.m(this.c.a(☃, 0, ☃)).o() * 2;
       if (☃ > 0)
       {
-        int ☃ = b.nextInt(☃);
-        w.b(a, b, c.a(☃, ☃, ☃));
+        int ☃ = this.b.nextInt(☃);
+        this.w.b(this.a, this.b, this.c.a(☃, ☃, ☃));
       }
     }
     for (int ☃ = 0; ☃ < 10; ☃++)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = a.m(c.a(☃, 0, ☃)).o() * 2;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.a.m(this.c.a(☃, 0, ☃)).o() * 2;
       if (☃ > 0)
       {
-        int ☃ = b.nextInt(☃);
-        w.b(a, b, c.a(☃, ☃, ☃));
+        int ☃ = this.b.nextInt(☃);
+        this.w.b(this.a, this.b, this.c.a(☃, ☃, ☃));
       }
     }
-    if (b.nextInt(32) == 0)
+    if (this.b.nextInt(32) == 0)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = a.m(c.a(☃, 0, ☃)).o() * 2;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.a.m(this.c.a(☃, 0, ☃)).o() * 2;
       if (☃ > 0)
       {
-        int ☃ = b.nextInt(☃);
-        new apl().b(a, b, c.a(☃, ☃, ☃));
+        int ☃ = this.b.nextInt(☃);
+        new apl().b(this.a, this.b, this.c.a(☃, ☃, ☃));
       }
     }
-    for (int ☃ = 0; ☃ < G; ☃++)
+    for (int ☃ = 0; ☃ < this.G; ☃++)
     {
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = b.nextInt(16) + 8;
-      int ☃ = a.m(c.a(☃, 0, ☃)).o() * 2;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.b.nextInt(16) + 8;
+      int ☃ = this.a.m(this.c.a(☃, 0, ☃)).o() * 2;
       if (☃ > 0)
       {
-        int ☃ = b.nextInt(☃);
-        x.b(a, b, c.a(☃, ☃, ☃));
+        int ☃ = this.b.nextInt(☃);
+        this.x.b(this.a, this.b, this.c.a(☃, ☃, ☃));
       }
     }
-    if (L)
+    if (this.L)
     {
       for (int ☃ = 0; ☃ < 50; ☃++)
       {
-        int ☃ = b.nextInt(16) + 8;
-        int ☃ = b.nextInt(16) + 8;
-        int ☃ = b.nextInt(248) + 8;
+        int ☃ = this.b.nextInt(16) + 8;
+        int ☃ = this.b.nextInt(16) + 8;
+        int ☃ = this.b.nextInt(248) + 8;
         if (☃ > 0)
         {
-          int ☃ = b.nextInt(☃);
-          cj ☃ = c.a(☃, ☃, ☃);
-          new apr(afi.i).b(a, b, ☃);
+          int ☃ = this.b.nextInt(☃);
+          cj ☃ = this.c.a(☃, ☃, ☃);
+          new apr(afi.i).b(this.a, this.b, ☃);
         }
       }
       for (int ☃ = 0; ☃ < 20; ☃++)
       {
-        int ☃ = b.nextInt(16) + 8;
-        int ☃ = b.nextInt(16) + 8;
-        int ☃ = b.nextInt(b.nextInt(b.nextInt(240) + 8) + 8);
-        cj ☃ = c.a(☃, ☃, ☃);
+        int ☃ = this.b.nextInt(16) + 8;
+        int ☃ = this.b.nextInt(16) + 8;
+        int ☃ = this.b.nextInt(this.b.nextInt(this.b.nextInt(240) + 8) + 8);
+        cj ☃ = this.c.a(☃, ☃, ☃);
         
-        new apr(afi.k).b(a, b, ☃);
+        new apr(afi.k).b(this.a, this.b, ☃);
       }
     }
   }
@@ -315,8 +315,8 @@ public class aeb
     }
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
-      cj ☃ = c.a(b.nextInt(16), b.nextInt(☃ - ☃) + ☃, b.nextInt(16));
-      ☃.b(a, b, ☃);
+      cj ☃ = this.c.a(this.b.nextInt(16), this.b.nextInt(☃ - ☃) + ☃, this.b.nextInt(16));
+      ☃.b(this.a, this.b, ☃);
     }
   }
   
@@ -324,23 +324,23 @@ public class aeb
   {
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
-      cj ☃ = c.a(b.nextInt(16), b.nextInt(☃) + b.nextInt(☃) + ☃ - ☃, b.nextInt(16));
-      ☃.b(a, b, ☃);
+      cj ☃ = this.c.a(this.b.nextInt(16), this.b.nextInt(☃) + this.b.nextInt(☃) + ☃ - ☃, this.b.nextInt(16));
+      ☃.b(this.a, this.b, ☃);
     }
   }
   
   protected void a()
   {
-    a(d.J, h, d.K, d.L);
-    a(d.N, i, d.O, d.P);
-    a(d.V, k, d.W, d.X);
-    a(d.R, j, d.S, d.T);
-    a(d.Z, l, d.aa, d.ab);
-    a(d.ad, m, d.ae, d.af);
-    a(d.ah, n, d.ai, d.aj);
-    a(d.al, o, d.am, d.an);
-    a(d.ap, p, d.aq, d.ar);
-    a(d.at, q, d.au, d.av);
-    b(d.ax, r, d.ay, d.az);
+    a(this.d.J, this.h, this.d.K, this.d.L);
+    a(this.d.N, this.i, this.d.O, this.d.P);
+    a(this.d.V, this.k, this.d.W, this.d.X);
+    a(this.d.R, this.j, this.d.S, this.d.T);
+    a(this.d.Z, this.l, this.d.aa, this.d.ab);
+    a(this.d.ad, this.m, this.d.ae, this.d.af);
+    a(this.d.ah, this.n, this.d.ai, this.d.aj);
+    a(this.d.al, this.o, this.d.am, this.d.an);
+    a(this.d.ap, this.p, this.d.aq, this.d.ar);
+    a(this.d.at, this.q, this.d.au, this.d.av);
+    b(this.d.ax, this.r, this.d.ay, this.d.az);
   }
 }

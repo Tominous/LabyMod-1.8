@@ -10,29 +10,29 @@ public class axt
   
   public axt(axu ☃, String ☃)
   {
-    a = ☃;
-    g = ☃;
+    this.a = ☃;
+    this.g = ☃;
   }
   
   public void e()
   {
-    f.a();
+    this.f.a();
   }
   
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    n.clear();
-    n.add(new avs(0, l / 2 - 100, m / 4 + 96 + 12, bnq.a("selectWorld.renameButton", new Object[0])));
-    n.add(new avs(1, l / 2 - 100, m / 4 + 120 + 12, bnq.a("gui.cancel", new Object[0])));
+    this.n.clear();
+    this.n.add(new avs(0, this.l / 2 - 100, this.m / 4 + 96 + 12, bnq.a("selectWorld.renameButton", new Object[0])));
+    this.n.add(new avs(1, this.l / 2 - 100, this.m / 4 + 120 + 12, bnq.a("gui.cancel", new Object[0])));
     
-    atr ☃ = j.f();
-    ato ☃ = ☃.c(g);
+    atr ☃ = this.j.f();
+    ato ☃ = ☃.c(this.g);
     String ☃ = ☃.k();
     
-    f = new avw(2, q, l / 2 - 100, 60, 200, 20);
-    f.b(true);
-    f.a(☃);
+    this.f = new avw(2, this.q, this.l / 2 - 100, 60, 200, 20);
+    this.f.b(true);
+    this.f.a(☃);
   }
   
   public void m()
@@ -42,28 +42,28 @@ public class axt
   
   protected void a(avs ☃)
   {
-    if (!l) {
+    if (!☃.l) {
       return;
     }
-    if (k == 1)
+    if (☃.k == 1)
     {
-      j.a(a);
+      this.j.a(this.a);
     }
-    else if (k == 0)
+    else if (☃.k == 0)
     {
-      atr ☃ = j.f();
-      ☃.a(g, f.b().trim());
+      atr ☃ = this.j.f();
+      ☃.a(this.g, this.f.b().trim());
       
-      j.a(a);
+      this.j.a(this.a);
     }
   }
   
   protected void a(char ☃, int ☃)
   {
-    f.a(☃, ☃);
-    n.get(0)).l = (f.b().trim().length() > 0);
+    this.f.a(☃, ☃);
+    ((avs)this.n.get(0)).l = (this.f.b().trim().length() > 0);
     if ((☃ == 28) || (☃ == 156)) {
-      a((avs)n.get(0));
+      a((avs)this.n.get(0));
     }
   }
   
@@ -71,17 +71,17 @@ public class axt
   {
     super.a(☃, ☃, ☃);
     
-    f.a(☃, ☃, ☃);
+    this.f.a(☃, ☃, ☃);
   }
   
   public void a(int ☃, int ☃, float ☃)
   {
     c();
     
-    a(q, bnq.a("selectWorld.renameTitle", new Object[0]), l / 2, 20, 16777215);
-    c(q, bnq.a("selectWorld.enterName", new Object[0]), l / 2 - 100, 47, 10526880);
+    a(this.q, bnq.a("selectWorld.renameTitle", new Object[0]), this.l / 2, 20, 16777215);
+    c(this.q, bnq.a("selectWorld.enterName", new Object[0]), this.l / 2 - 100, 47, 10526880);
     
-    f.g();
+    this.f.g();
     
     super.a(☃, ☃, ☃);
   }

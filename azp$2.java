@@ -7,12 +7,12 @@ class azp$2
   
   public void a(boolean result, int id)
   {
-    List<azp> list2 = this$0.b.b(this$0);
-    this$0.a.a(this$0.b);
+    List<azp> list2 = this.this$0.b.b(this.this$0);
+    this.this$0.a.a(this.this$0.b);
     if (result)
     {
-      list2.remove(this$0);
-      this$0.b.f().add(0, this$0);
+      list2.remove(this.this$0);
+      this.this$0.b.f().add(0, this.this$0);
     }
   }
 }

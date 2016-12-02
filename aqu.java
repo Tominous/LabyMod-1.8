@@ -13,23 +13,23 @@ public abstract class aqu
   
   public aqu(int ☃, int ☃)
   {
-    c = ☃;
-    d = ☃;
+    this.c = ☃;
+    this.d = ☃;
   }
   
   public aqe a()
   {
-    return b;
+    return this.b;
   }
   
   public LinkedList<aqt> b()
   {
-    return a;
+    return this.a;
   }
   
   public void a(adm ☃, Random ☃, aqe ☃)
   {
-    Iterator<aqt> ☃ = a.iterator();
+    Iterator<aqt> ☃ = this.a.iterator();
     while (☃.hasNext())
     {
       aqt ☃ = (aqt)☃.next();
@@ -42,9 +42,9 @@ public abstract class aqu
   
   protected void c()
   {
-    b = aqe.a();
-    for (aqt ☃ : a) {
-      b.b(☃.c());
+    this.b = aqe.a();
+    for (aqt ☃ : this.a) {
+      this.b.b(☃.c());
     }
   }
   
@@ -55,10 +55,10 @@ public abstract class aqu
     ☃.a("id", aqr.a(this));
     ☃.a("ChunkX", ☃);
     ☃.a("ChunkZ", ☃);
-    ☃.a("BB", b.g());
+    ☃.a("BB", this.b.g());
     
     du ☃ = new du();
-    for (aqt ☃ : a) {
+    for (aqt ☃ : this.a) {
       ☃.a(☃.b());
     }
     ☃.a("Children", ☃);
@@ -72,14 +72,14 @@ public abstract class aqu
   
   public void a(adm ☃, dn ☃)
   {
-    c = ☃.f("ChunkX");
-    d = ☃.f("ChunkZ");
+    this.c = ☃.f("ChunkX");
+    this.d = ☃.f("ChunkZ");
     if (☃.c("BB")) {
-      b = new aqe(☃.l("BB"));
+      this.b = new aqe(☃.l("BB"));
     }
     du ☃ = ☃.c("Children", 10);
     for (int ☃ = 0; ☃ < ☃.c(); ☃++) {
-      a.add(aqr.b(☃.b(☃), ☃));
+      this.a.add(aqr.b(☃.b(☃), ☃));
     }
     b(☃);
   }
@@ -90,29 +90,29 @@ public abstract class aqu
   {
     int ☃ = ☃.F() - ☃;
     
-    int ☃ = b.d() + 1;
+    int ☃ = this.b.d() + 1;
     if (☃ < ☃) {
       ☃ += ☃.nextInt(☃ - ☃);
     }
-    int ☃ = ☃ - b.e;
-    b.a(0, ☃, 0);
-    for (aqt ☃ : a) {
+    int ☃ = ☃ - this.b.e;
+    this.b.a(0, ☃, 0);
+    for (aqt ☃ : this.a) {
       ☃.a(0, ☃, 0);
     }
   }
   
   protected void a(adm ☃, Random ☃, int ☃, int ☃)
   {
-    int ☃ = ☃ - ☃ + 1 - b.d();
+    int ☃ = ☃ - ☃ + 1 - this.b.d();
     int ☃ = 1;
     if (☃ > 1) {
       ☃ = ☃ + ☃.nextInt(☃);
     } else {
       ☃ = ☃;
     }
-    int ☃ = ☃ - b.b;
-    b.a(0, ☃, 0);
-    for (aqt ☃ : a) {
+    int ☃ = ☃ - this.b.b;
+    this.b.a(0, ☃, 0);
+    for (aqt ☃ : this.a) {
       ☃.a(0, ☃, 0);
     }
   }
@@ -131,11 +131,11 @@ public abstract class aqu
   
   public int e()
   {
-    return c;
+    return this.c;
   }
   
   public int f()
   {
-    return d;
+    return this.d;
   }
 }

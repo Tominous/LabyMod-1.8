@@ -1,15 +1,13 @@
 import java.util.concurrent.Callable;
 
 class bmh$3
-  implements Callable
+  implements Callable<String>
 {
-  private static final String __OBFID = "CL_00001061";
-  
-  bmh$3(bmh parambmh, bmi parambmi) {}
+  bmh$3(bmh this$0, bmi parambmi) {}
   
   public String a()
     throws Exception
   {
-    return val$var29.k() + " frames";
+    return this.val$textureatlassprite1.k() + " frames";
   }
 }

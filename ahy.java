@@ -27,7 +27,7 @@ public class ahy
   {
     super.a(☃, ☃, ☃, ☃, ☃);
     
-    int ☃ = 15 + s.nextInt(15) + s.nextInt(15);
+    int ☃ = 15 + ☃.s.nextInt(15) + ☃.s.nextInt(15);
     b(☃, ☃, ☃);
   }
   

@@ -7,7 +7,7 @@ public abstract class bhd<T extends akw>
   
   protected void a(jy ☃)
   {
-    bmj ☃ = b.e;
+    bmj ☃ = this.b.e;
     if (☃ != null) {
       ☃.a(☃);
     }
@@ -15,17 +15,17 @@ public abstract class bhd<T extends akw>
   
   protected adm b()
   {
-    return b.f;
+    return this.b.f;
   }
   
   public void a(bhc ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public avn c()
   {
-    return b.a();
+    return this.b.a();
   }
   
   public boolean a()

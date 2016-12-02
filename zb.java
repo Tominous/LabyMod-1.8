@@ -5,7 +5,7 @@ public class zb
   
   public zb(afh ☃)
   {
-    a = ☃;
+    this.a = ☃;
     a(yz.d);
   }
   
@@ -22,12 +22,12 @@ public class zb
     if (!☃.a(☃, ☃, ☃)) {
       return false;
     }
-    if (!a.d(☃, ☃)) {
+    if (!this.a.d(☃, ☃)) {
       return false;
     }
-    a(☃, ☃, cq.a(y), a);
+    a(☃, ☃, cq.a(☃.y), this.a);
     
-    b -= 1;
+    ☃.b -= 1;
     return true;
   }
   

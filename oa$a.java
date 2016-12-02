@@ -4,6 +4,6 @@ public class oa$a
   
   public oa$a(int ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
 }

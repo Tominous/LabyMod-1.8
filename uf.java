@@ -9,11 +9,11 @@ public class uf
   public uf(adm ☃)
   {
     super(☃);
-    k = true;
+    this.k = true;
     a(2.0F, 2.0F);
-    b = 5;
+    this.b = 5;
     
-    a = V.nextInt(100000);
+    this.a = this.V.nextInt(100000);
   }
   
   public uf(adm ☃, double ☃, double ☃, double ☃)
@@ -29,23 +29,23 @@ public class uf
   
   protected void h()
   {
-    ac.a(8, Integer.valueOf(b));
+    this.ac.a(8, Integer.valueOf(this.b));
   }
   
   public void t_()
   {
-    p = s;
-    q = t;
-    r = u;
-    a += 1;
+    this.p = this.s;
+    this.q = this.t;
+    this.r = this.u;
+    this.a += 1;
     
-    ac.b(8, Integer.valueOf(b));
+    this.ac.b(8, Integer.valueOf(this.b));
     
-    int ☃ = ns.c(s);
-    int ☃ = ns.c(t);
-    int ☃ = ns.c(u);
-    if (((o.t instanceof anp)) && (o.p(new cj(☃, ☃, ☃)).c() != afi.ab)) {
-      o.a(new cj(☃, ☃, ☃), afi.ab.Q());
+    int ☃ = ns.c(this.s);
+    int ☃ = ns.c(this.t);
+    int ☃ = ns.c(this.u);
+    if (((this.o.t instanceof anp)) && (this.o.p(new cj(☃, ☃, ☃)).c() != afi.ab)) {
+      this.o.a(new cj(☃, ☃, ☃), afi.ab.Q());
     }
   }
   
@@ -63,14 +63,14 @@ public class uf
     if (b(☃)) {
       return false;
     }
-    if ((!I) && (!o.D))
+    if ((!this.I) && (!this.o.D))
     {
-      b = 0;
-      if (b <= 0)
+      this.b = 0;
+      if (this.b <= 0)
       {
         J();
-        if (!o.D) {
-          o.a(null, s, t, u, 6.0F, true);
+        if (!this.o.D) {
+          this.o.a(null, this.s, this.t, this.u, 6.0F, true);
         }
       }
     }

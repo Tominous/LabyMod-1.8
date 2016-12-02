@@ -9,18 +9,18 @@ class aqp$k
     {
       float ☃ = ☃.nextFloat();
       if (☃ < 0.2F) {
-        a = afi.bf.a(ajz.O);
+        this.a = afi.bf.a(ajz.O);
       } else if (☃ < 0.5F) {
-        a = afi.bf.a(ajz.N);
+        this.a = afi.bf.a(ajz.N);
       } else if (☃ < 0.55F) {
-        a = afi.be.a(ahz.a.c.a());
+        this.a = afi.be.a(ahz.a.c.a());
       } else {
-        a = afi.bf.Q();
+        this.a = afi.bf.Q();
       }
     }
     else
     {
-      a = afi.a.Q();
+      this.a = afi.a.Q();
     }
   }
 }

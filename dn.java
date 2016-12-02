@@ -15,9 +15,9 @@ public class dn
   void a(DataOutput ☃)
     throws IOException
   {
-    for (String ☃ : b.keySet())
+    for (String ☃ : this.b.keySet())
     {
-      eb ☃ = (eb)b.get(☃);
+      eb ☃ = (eb)this.b.get(☃);
       a(☃, ☃, ☃);
     }
     ☃.writeByte(0);
@@ -30,7 +30,7 @@ public class dn
     if (☃ > 512) {
       throw new RuntimeException("Tried to read NBT tag with too high complexity, depth > 512");
     }
-    b.clear();
+    this.b.clear();
     byte ☃;
     while ((☃ = a(☃, ☃)) != 0)
     {
@@ -38,7 +38,7 @@ public class dn
       ☃.a(224 + 16 * ☃.length());
       
       eb ☃ = a(☃, ☃, ☃, ☃ + 1, ☃);
-      if (b.put(☃, ☃) != null) {
+      if (this.b.put(☃, ☃) != null) {
         ☃.a(288L);
       }
     }
@@ -46,7 +46,7 @@ public class dn
   
   public Set<String> c()
   {
-    return b.keySet();
+    return this.b.keySet();
   }
   
   public byte a()
@@ -56,52 +56,52 @@ public class dn
   
   public void a(String ☃, eb ☃)
   {
-    b.put(☃, ☃);
+    this.b.put(☃, ☃);
   }
   
   public void a(String ☃, byte ☃)
   {
-    b.put(☃, new dm(☃));
+    this.b.put(☃, new dm(☃));
   }
   
   public void a(String ☃, short ☃)
   {
-    b.put(☃, new dz(☃));
+    this.b.put(☃, new dz(☃));
   }
   
   public void a(String ☃, int ☃)
   {
-    b.put(☃, new dt(☃));
+    this.b.put(☃, new dt(☃));
   }
   
   public void a(String ☃, long ☃)
   {
-    b.put(☃, new dv(☃));
+    this.b.put(☃, new dv(☃));
   }
   
   public void a(String ☃, float ☃)
   {
-    b.put(☃, new dr(☃));
+    this.b.put(☃, new dr(☃));
   }
   
   public void a(String ☃, double ☃)
   {
-    b.put(☃, new dp(☃));
+    this.b.put(☃, new dp(☃));
   }
   
   public void a(String ☃, String ☃)
   {
-    b.put(☃, new ea(☃));
+    this.b.put(☃, new ea(☃));
   }
   
   public void a(String ☃, byte[] ☃)
   {
-    b.put(☃, new dl(☃));
+    this.b.put(☃, new dl(☃));
   }
   
   public void a(String ☃, int[] ☃)
   {
-    b.put(☃, new ds(☃));
+    this.b.put(☃, new ds(☃));
   }
   
   public void a(String ☃, boolean ☃)
@@ -111,12 +111,12 @@ public class dn
   
   public eb a(String ☃)
   {
-    return (eb)b.get(☃);
+    return (eb)this.b.get(☃);
   }
   
   public byte b(String ☃)
   {
-    eb ☃ = (eb)b.get(☃);
+    eb ☃ = (eb)this.b.get(☃);
     if (☃ != null) {
       return ☃.a();
     }
@@ -125,7 +125,7 @@ public class dn
   
   public boolean c(String ☃)
   {
-    return b.containsKey(☃);
+    return this.b.containsKey(☃);
   }
   
   public boolean b(String ☃, int ☃)
@@ -148,7 +148,7 @@ public class dn
       if (!b(☃, 99)) {
         return 0;
       }
-      return ((eb.a)b.get(☃)).f();
+      return ((eb.a)this.b.get(☃)).f();
     }
     catch (ClassCastException ☃) {}
     return 0;
@@ -161,7 +161,7 @@ public class dn
       if (!b(☃, 99)) {
         return 0;
       }
-      return ((eb.a)b.get(☃)).e();
+      return ((eb.a)this.b.get(☃)).e();
     }
     catch (ClassCastException ☃) {}
     return 0;
@@ -174,7 +174,7 @@ public class dn
       if (!b(☃, 99)) {
         return 0;
       }
-      return ((eb.a)b.get(☃)).d();
+      return ((eb.a)this.b.get(☃)).d();
     }
     catch (ClassCastException ☃) {}
     return 0;
@@ -187,7 +187,7 @@ public class dn
       if (!b(☃, 99)) {
         return 0L;
       }
-      return ((eb.a)b.get(☃)).c();
+      return ((eb.a)this.b.get(☃)).c();
     }
     catch (ClassCastException ☃) {}
     return 0L;
@@ -200,7 +200,7 @@ public class dn
       if (!b(☃, 99)) {
         return 0.0F;
       }
-      return ((eb.a)b.get(☃)).h();
+      return ((eb.a)this.b.get(☃)).h();
     }
     catch (ClassCastException ☃) {}
     return 0.0F;
@@ -213,7 +213,7 @@ public class dn
       if (!b(☃, 99)) {
         return 0.0D;
       }
-      return ((eb.a)b.get(☃)).g();
+      return ((eb.a)this.b.get(☃)).g();
     }
     catch (ClassCastException ☃) {}
     return 0.0D;
@@ -226,7 +226,7 @@ public class dn
       if (!b(☃, 8)) {
         return "";
       }
-      return ((eb)b.get(☃)).a_();
+      return ((eb)this.b.get(☃)).a_();
     }
     catch (ClassCastException ☃) {}
     return "";
@@ -239,7 +239,7 @@ public class dn
       if (!b(☃, 7)) {
         return new byte[0];
       }
-      return ((dl)b.get(☃)).c();
+      return ((dl)this.b.get(☃)).c();
     }
     catch (ClassCastException ☃)
     {
@@ -254,7 +254,7 @@ public class dn
       if (!b(☃, 11)) {
         return new int[0];
       }
-      return ((ds)b.get(☃)).c();
+      return ((ds)this.b.get(☃)).c();
     }
     catch (ClassCastException ☃)
     {
@@ -269,7 +269,7 @@ public class dn
       if (!b(☃, 10)) {
         return new dn();
       }
-      return (dn)b.get(☃);
+      return (dn)this.b.get(☃);
     }
     catch (ClassCastException ☃)
     {
@@ -284,7 +284,7 @@ public class dn
       if (b(☃) != 9) {
         return new du();
       }
-      du ☃ = (du)b.get(☃);
+      du ☃ = (du)this.b.get(☃);
       if ((☃.c() > 0) && (☃.f() != ☃)) {
         return new du();
       }
@@ -303,13 +303,13 @@ public class dn
   
   public void o(String ☃)
   {
-    b.remove(☃);
+    this.b.remove(☃);
   }
   
   public String toString()
   {
     StringBuilder ☃ = new StringBuilder("{");
-    for (Map.Entry<String, eb> ☃ : b.entrySet())
+    for (Map.Entry<String, eb> ☃ : this.b.entrySet())
     {
       if (☃.length() != 1) {
         ☃.append(',');
@@ -321,7 +321,7 @@ public class dn
   
   public boolean c_()
   {
-    return b.isEmpty();
+    return this.b.isEmpty();
   }
   
   private b a(final String ☃, final int ☃, ClassCastException ☃)
@@ -353,8 +353,8 @@ public class dn
   public eb b()
   {
     dn ☃ = new dn();
-    for (String ☃ : b.keySet()) {
-      ☃.a(☃, ((eb)b.get(☃)).b());
+    for (String ☃ : this.b.keySet()) {
+      ☃.a(☃, ((eb)this.b.get(☃)).b());
     }
     return ☃;
   }
@@ -364,14 +364,14 @@ public class dn
     if (super.equals(☃))
     {
       dn ☃ = (dn)☃;
-      return b.entrySet().equals(b.entrySet());
+      return this.b.entrySet().equals(☃.b.entrySet());
     }
     return false;
   }
   
   public int hashCode()
   {
-    return super.hashCode() ^ b.hashCode();
+    return super.hashCode() ^ this.b.hashCode();
   }
   
   private static void a(String ☃, eb ☃, DataOutput ☃)
@@ -419,9 +419,9 @@ public class dn
   
   public void a(dn ☃)
   {
-    for (String ☃ : b.keySet())
+    for (String ☃ : ☃.b.keySet())
     {
-      eb ☃ = (eb)b.get(☃);
+      eb ☃ = (eb)☃.b.get(☃);
       if (☃.a() == 10)
       {
         if (b(☃, 10))

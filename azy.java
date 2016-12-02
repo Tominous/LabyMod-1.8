@@ -10,54 +10,54 @@ public class azy
   
   public azy(axu ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void b()
   {
-    f = bnq.a("options.stream.ingest.title", new Object[0]);
-    g = new azy.a(j);
-    if (!j.Y().w()) {
-      j.Y().u();
+    this.f = bnq.a("options.stream.ingest.title", new Object[0]);
+    this.g = new azy.a(this.j);
+    if (!this.j.Y().w()) {
+      this.j.Y().u();
     }
-    n.add(new avs(1, l / 2 - 155, m - 24 - 6, 150, 20, bnq.a("gui.done", new Object[0])));
-    n.add(new avs(2, l / 2 + 5, m - 24 - 6, 150, 20, bnq.a("options.stream.ingest.reset", new Object[0])));
+    this.n.add(new avs(1, this.l / 2 - 155, this.m - 24 - 6, 150, 20, bnq.a("gui.done", new Object[0])));
+    this.n.add(new avs(2, this.l / 2 + 5, this.m - 24 - 6, 150, 20, bnq.a("options.stream.ingest.reset", new Object[0])));
   }
   
   public void k()
   {
     super.k();
-    g.p();
+    this.g.p();
   }
   
   public void m()
   {
-    if (j.Y().w()) {
-      j.Y().v().m();
+    if (this.j.Y().w()) {
+      this.j.Y().v().m();
     }
   }
   
   protected void a(avs ☃)
   {
-    if (!l) {
+    if (!☃.l) {
       return;
     }
-    if (k == 1)
+    if (☃.k == 1)
     {
-      j.a(a);
+      this.j.a(this.a);
     }
     else
     {
-      j.t.R = "";
-      j.t.b();
+      this.j.t.R = "";
+      this.j.t.b();
     }
   }
   
   public void a(int ☃, int ☃, float ☃)
   {
     c();
-    g.a(☃, ☃, ☃);
-    a(q, f, l / 2, 20, 16777215);
+    this.g.a(☃, ☃, ☃);
+    a(this.q, this.f, this.l / 2, 20, 16777215);
     
     super.a(☃, ☃, ☃);
   }
@@ -67,35 +67,35 @@ public class azy
   {
     public a(ave ☃)
     {
-      super(l, m, 32, m - 35, (int)(k.a * 3.5D));
+      super(azy.this.l, azy.this.m, 32, azy.this.m - 35, (int)(☃.k.a * 3.5D));
       b(false);
     }
     
     protected int b()
     {
-      return a.Y().s().length;
+      return this.a.Y().s().length;
     }
     
     protected void a(int ☃, boolean ☃, int ☃, int ☃)
     {
-      a.t.R = a.Y().s()[☃].serverUrl;
-      a.t.b();
+      this.a.t.R = this.a.Y().s()[☃].serverUrl;
+      this.a.t.b();
     }
     
     protected boolean a(int ☃)
     {
-      return a.Y().s()[☃].serverUrl.equals(a.t.R);
+      return this.a.Y().s()[☃].serverUrl.equals(this.a.t.R);
     }
     
     protected void a() {}
     
     protected void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
     {
-      IngestServer ☃ = a.Y().s()[☃];
-      String ☃ = serverUrl.replaceAll("\\{stream_key\\}", "");
-      String ☃ = (int)bitrateKbps + " kbps";
+      IngestServer ☃ = this.a.Y().s()[☃];
+      String ☃ = ☃.serverUrl.replaceAll("\\{stream_key\\}", "");
+      String ☃ = (int)☃.bitrateKbps + " kbps";
       String ☃ = null;
-      bql ☃ = a.Y().v();
+      bql ☃ = this.a.Y().v();
       if (☃ != null)
       {
         if (☃ == ☃.c())
@@ -105,7 +105,7 @@ public class azy
         }
         else if (☃ < ☃.d())
         {
-          if (bitrateKbps == 0.0F) {
+          if (☃.bitrateKbps == 0.0F) {
             ☃ = a.m + "Down!";
           }
         }
@@ -114,20 +114,20 @@ public class azy
           ☃ = a.q + "1234" + a.v + " kbps";
         }
       }
-      else if (bitrateKbps == 0.0F) {
+      else if (☃.bitrateKbps == 0.0F) {
         ☃ = a.m + "Down!";
       }
       ☃ -= 15;
       if (a(☃)) {
         ☃ = a.j + "(Preferred)";
-      } else if (defaultServer) {
+      } else if (☃.defaultServer) {
         ☃ = a.k + "(Default)";
       }
-      c(azy.a(azy.this), serverName, ☃ + 2, ☃ + 5, 16777215);
-      c(azy.b(azy.this), ☃, ☃ + 2, ☃ + ca + 5 + 3, 3158064);
-      c(azy.d(azy.this), ☃, d() - 5 - azy.e(azy.this).a(☃), ☃ + 5, 8421504);
+      azy.this.c(azy.a(azy.this), ☃.serverName, ☃ + 2, ☃ + 5, 16777215);
+      azy.this.c(azy.b(azy.this), ☃, ☃ + 2, ☃ + azy.c(azy.this).a + 5 + 3, 3158064);
+      azy.this.c(azy.d(azy.this), ☃, d() - 5 - azy.e(azy.this).a(☃), ☃ + 5, 8421504);
       if (☃ != null) {
-        c(azy.f(azy.this), ☃, d() - 5 - azy.g(azy.this).a(☃), ☃ + 5 + 3 + ha, 8421504);
+        azy.this.c(azy.f(azy.this), ☃, d() - 5 - azy.g(azy.this).a(☃), ☃ + 5 + 3 + azy.h(azy.this).a, 8421504);
       }
     }
     

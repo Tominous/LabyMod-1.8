@@ -14,7 +14,7 @@ public class agl
   
   private void f(adm ☃, cj ☃, alz ☃)
   {
-    ☃.a(☃, b(J).Q().a(b, ☃.b(b)), 2);
+    ☃.a(☃, b(this.J).Q().a(b, ☃.b(b)), 2);
   }
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
@@ -22,14 +22,14 @@ public class agl
     int ☃ = ((Integer)☃.b(b)).intValue();
     
     int ☃ = 1;
-    if ((J == arm.i) && (!t.n())) {
+    if ((this.J == arm.i) && (!☃.t.n())) {
       ☃ = 2;
     }
     int ☃ = a(☃);
     if (☃ > 0)
     {
       int ☃ = -100;
-      a = 0;
+      this.a = 0;
       for (cq ☃ : cq.c.a) {
         ☃ = a(☃, ☃.a(☃), ☃);
       }
@@ -46,16 +46,16 @@ public class agl
           ☃ = ☃ + 8;
         }
       }
-      if ((a >= 2) && (J == arm.h))
+      if ((this.a >= 2) && (this.J == arm.h))
       {
         alz ☃ = ☃.p(☃.b());
         if (☃.c().t().a()) {
           ☃ = 0;
-        } else if ((☃.c().t() == J) && (((Integer)☃.b(b)).intValue() == 0)) {
+        } else if ((☃.c().t() == this.J) && (((Integer)☃.b(b)).intValue() == 0)) {
           ☃ = 0;
         }
       }
-      if ((J == arm.i) && 
+      if ((this.J == arm.i) && 
         (☃ < 8) && (☃ < 8) && 
         (☃ > ☃) && 
         (☃.nextInt(4) != 0)) {
@@ -89,7 +89,7 @@ public class agl
     int ☃;
     if (h(☃, ☃.b(), ☃))
     {
-      if ((J == arm.i) && 
+      if ((this.J == arm.i) && 
         (☃.p(☃.b()).c().t() == arm.h))
       {
         ☃.a(☃.b(), afi.b.Q());
@@ -123,7 +123,7 @@ public class agl
     if (h(☃, ☃, ☃))
     {
       if (☃.c() != afi.a) {
-        if (J == arm.i) {
+        if (this.J == arm.i) {
           e(☃, ☃);
         } else {
           ☃.c().b(☃, ☃, ☃, 0);
@@ -141,7 +141,7 @@ public class agl
       {
         cj ☃ = ☃.a(☃);
         alz ☃ = ☃.p(☃);
-        if ((!g(☃, ☃, ☃)) && ((☃.c().t() != J) || (((Integer)☃.b(b)).intValue() > 0))) {
+        if ((!g(☃, ☃, ☃)) && ((☃.c().t() != this.J) || (((Integer)☃.b(b)).intValue() > 0))) {
           if (g(☃, ☃.b(), ☃))
           {
             if (☃ < 4)
@@ -169,7 +169,7 @@ public class agl
     {
       cj ☃ = ☃.a(☃);
       alz ☃ = ☃.p(☃);
-      if ((!g(☃, ☃, ☃)) && ((☃.c().t() != J) || (((Integer)☃.b(b)).intValue() > 0)))
+      if ((!g(☃, ☃, ☃)) && ((☃.c().t() != this.J) || (((Integer)☃.b(b)).intValue() > 0)))
       {
         int ☃;
         int ☃;
@@ -197,10 +197,10 @@ public class agl
     if (((☃ instanceof agh)) || (☃ == afi.an) || (☃ == afi.au) || (☃ == afi.aM)) {
       return true;
     }
-    if (J == arm.E) {
+    if (☃.J == arm.E) {
       return true;
     }
-    return J.c();
+    return ☃.J.c();
   }
   
   protected int a(adm ☃, cj ☃, int ☃)
@@ -210,7 +210,7 @@ public class agl
       return ☃;
     }
     if (☃ == 0) {
-      a += 1;
+      this.a += 1;
     }
     if (☃ >= 8) {
       ☃ = 0;
@@ -221,7 +221,7 @@ public class agl
   private boolean h(adm ☃, cj ☃, alz ☃)
   {
     arm ☃ = ☃.c().t();
-    return (☃ != J) && (☃ != arm.i) && (!g(☃, ☃, ☃));
+    return (☃ != this.J) && (☃ != arm.i) && (!g(☃, ☃, ☃));
   }
   
   public void c(adm ☃, cj ☃, alz ☃)

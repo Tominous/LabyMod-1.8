@@ -4,11 +4,11 @@ public enum bpj$a
   
   private bpj$a(int ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public int a()
   {
-    return c;
+    return this.c;
   }
 }

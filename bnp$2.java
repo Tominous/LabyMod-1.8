@@ -9,19 +9,19 @@ class bnp$2
   
   public BufferedImage a(BufferedImage image)
   {
-    if (val$iimagebuffer != null) {
-      image = val$iimagebuffer.a(image);
+    if (this.val$iimagebuffer != null) {
+      image = this.val$iimagebuffer.a(image);
     }
     return image;
   }
   
   public void a()
   {
-    if (val$iimagebuffer != null) {
-      val$iimagebuffer.a();
+    if (this.val$iimagebuffer != null) {
+      this.val$iimagebuffer.a();
     }
-    if (val$skinAvailableCallback != null) {
-      val$skinAvailableCallback.a(val$p_152789_2_, val$resourcelocation, val$profileTexture);
+    if (this.val$skinAvailableCallback != null) {
+      this.val$skinAvailableCallback.a(this.val$p_152789_2_, this.val$resourcelocation, this.val$profileTexture);
     }
   }
 }

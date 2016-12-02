@@ -7,20 +7,20 @@ public class yv
   
   public yv(afh ☃)
   {
-    h = 1;
-    a = ☃;
+    this.h = 1;
+    this.a = ☃;
     a(yz.f);
   }
   
   public zx a(zx ☃, adm ☃, wn ☃)
   {
-    boolean ☃ = a == afi.a;
+    boolean ☃ = this.a == afi.a;
     
     auh ☃ = a(☃, ☃, ☃);
     if (☃ == null) {
       return ☃;
     }
-    if (a == auh.a.b)
+    if (☃.a == auh.a.b)
     {
       cj ☃ = ☃.a();
       if (!☃.a(☃, ☃)) {
@@ -28,7 +28,7 @@ public class yv
       }
       if (☃)
       {
-        if (!☃.a(☃.a(b), b, ☃)) {
+        if (!☃.a(☃.a(☃.b), ☃.b, ☃)) {
           return ☃;
         }
         alz ☃ = ☃.p(☃);
@@ -48,14 +48,14 @@ public class yv
       }
       else
       {
-        if (a == afi.a) {
+        if (this.a == afi.a) {
           return new zx(zy.aw);
         }
-        cj ☃ = ☃.a(b);
-        if (!☃.a(☃, b, ☃)) {
+        cj ☃ = ☃.a(☃.b);
+        if (!☃.a(☃, ☃.b, ☃)) {
           return ☃;
         }
-        if ((a(☃, ☃)) && (!bA.d))
+        if ((a(☃, ☃)) && (!☃.bA.d))
         {
           ☃.b(na.ad[zw.b(this)]);
           return new zx(zy.aw);
@@ -67,13 +67,13 @@ public class yv
   
   private zx a(zx ☃, wn ☃, zw ☃)
   {
-    if (bA.d) {
+    if (☃.bA.d) {
       return ☃;
     }
-    if (--b <= 0) {
+    if (--☃.b <= 0) {
       return new zx(☃);
     }
-    if (!bi.a(new zx(☃))) {
+    if (!☃.bi.a(new zx(☃))) {
       ☃.a(new zx(☃, 1, 0), false);
     }
     return ☃;
@@ -81,30 +81,30 @@ public class yv
   
   public boolean a(adm ☃, cj ☃)
   {
-    if (a == afi.a) {
+    if (this.a == afi.a) {
       return false;
     }
     arm ☃ = ☃.p(☃).c().t();
     boolean ☃ = !☃.a();
     if ((☃.d(☃)) || (☃))
     {
-      if ((t.n()) && (a == afi.i))
+      if ((☃.t.n()) && (this.a == afi.i))
       {
         int ☃ = ☃.n();
         int ☃ = ☃.o();
         int ☃ = ☃.p();
         
-        ☃.a(☃ + 0.5F, ☃ + 0.5F, ☃ + 0.5F, "random.fizz", 0.5F, 2.6F + (s.nextFloat() - s.nextFloat()) * 0.8F);
+        ☃.a(☃ + 0.5F, ☃ + 0.5F, ☃ + 0.5F, "random.fizz", 0.5F, 2.6F + (☃.s.nextFloat() - ☃.s.nextFloat()) * 0.8F);
         for (int ☃ = 0; ☃ < 8; ☃++) {
           ☃.a(cy.m, ☃ + Math.random(), ☃ + Math.random(), ☃ + Math.random(), 0.0D, 0.0D, 0.0D, new int[0]);
         }
       }
       else
       {
-        if ((!D) && (☃) && (!☃.d())) {
+        if ((!☃.D) && (☃) && (!☃.d())) {
           ☃.b(☃, true);
         }
-        ☃.a(☃, a.Q(), 3);
+        ☃.a(☃, this.a.Q(), 3);
       }
       return true;
     }

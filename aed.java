@@ -8,16 +8,16 @@ public class aed
   {
     super(☃);
     
-    au.clear();
-    ak = afi.m.Q();
-    al = afi.m.Q();
+    this.au.clear();
+    this.ak = afi.m.Q();
+    this.al = afi.m.Q();
     
-    as.A = 64537;
-    as.D = 2;
-    as.F = 50;
-    as.G = 10;
+    this.as.A = 64537;
+    this.as.D = 2;
+    this.as.F = 50;
+    this.as.G = 10;
     
-    au.clear();
+    this.au.clear();
   }
   
   public void a(adm ☃, Random ☃, cj ☃)

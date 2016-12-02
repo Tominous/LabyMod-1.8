@@ -55,112 +55,112 @@ public class Pack
   
   public int getId()
   {
-    return id;
+    return this.id;
   }
   
   public String getName()
   {
-    return name;
+    return this.name;
   }
   
   public String getIngameName()
   {
-    return ingameName;
+    return this.ingameName;
   }
   
   public String getNewName()
   {
-    return newName;
+    return this.newName;
   }
   
   public long getUpTime()
   {
-    return upTime;
+    return this.upTime;
   }
   
   public String getCreator()
   {
-    return creator;
+    return this.creator;
   }
   
   public String getSize()
   {
-    return size;
+    return this.size;
   }
   
   public int getStatus()
   {
-    return status;
+    return this.status;
   }
   
   public int getDownloads()
   {
-    return downloads;
+    return this.downloads;
   }
   
   public String getHashName()
   {
-    return hashName;
+    return this.hashName;
   }
   
   public int getPremiumId()
   {
-    return premiumId;
+    return this.premiumId;
   }
   
   public int getVotes()
   {
-    return votes;
+    return this.votes;
   }
   
   public int getTag_bedwars()
   {
-    return tag_bedwars;
+    return this.tag_bedwars;
   }
   
   public int getTag_hg()
   {
-    return tag_hg;
+    return this.tag_hg;
   }
   
   public int getTag_pot()
   {
-    return tag_pot;
+    return this.tag_pot;
   }
   
   public int getTag_pvp()
   {
-    return tag_pvp;
+    return this.tag_pvp;
   }
   
   public int getTag_sg()
   {
-    return tag_sg;
+    return this.tag_sg;
   }
   
   public int getTag_skywars()
   {
-    return tag_skywars;
+    return this.tag_skywars;
   }
   
   public int getTag_smyp()
   {
-    return tag_smyp;
+    return this.tag_smyp;
   }
   
   public int getTag_uhc()
   {
-    return tag_uhc;
+    return this.tag_uhc;
   }
   
   public int getTag_yt()
   {
-    return tag_yt;
+    return this.tag_yt;
   }
   
   public String getDesc()
   {
-    return desc;
+    return this.desc;
   }
   
   public void setDesc(String desc)
@@ -170,14 +170,14 @@ public class Pack
   
   public String getBestPossibleName()
   {
-    if (ingameName != null) {
-      return ingameName;
+    if (this.ingameName != null) {
+      return this.ingameName;
     }
-    if (newName != null) {
-      return newName;
+    if (this.newName != null) {
+      return this.newName;
     }
-    if (name != null) {
-      return name;
+    if (this.name != null) {
+      return this.name;
     }
     return "?";
   }

@@ -19,11 +19,11 @@ public class GuiSettings
   
   public void b()
   {
-    n.add(new avs(0, l / 2 - 100, m / 6 + 150, "Done"));
-    n.add(a = new avs(1, l / 2 - 100, m / 6 + 30, ""));
-    n.add(b = new avs(2, l / 2 - 100, m / 6 + 70, ""));
+    this.n.add(new avs(0, this.l / 2 - 100, this.m / 6 + 150, "Done"));
+    this.n.add(this.a = new avs(1, this.l / 2 - 100, this.m / 6 + 30, ""));
+    this.n.add(this.b = new avs(2, this.l / 2 - 100, this.m / 6 + 70, ""));
     
-    n.add(slider = new SliderDMI(3, l / 2 - 100, m / 6 + 110, 197));
+    this.n.add(this.slider = new SliderDMI(3, this.l / 2 - 100, this.m / 6 + 110, 197));
     
     refresh();
   }
@@ -31,34 +31,34 @@ public class GuiSettings
   public void refresh()
   {
     String s = Color.cl("a") + "Enabled";
-    if (!settingsenabled) {
+    if (!Settings.settings.enabled) {
       s = Color.cl("c") + "Disabled";
     }
-    a.j = s;
+    this.a.j = s;
     
     s = "Hearts";
-    if (!settingsDMILayout) {
+    if (!Settings.settings.DMILayout) {
       s = "Number";
     }
-    b.j = s;
+    this.b.j = s;
   }
   
   protected void a(avs button)
     throws IOException
   {
-    if (k == 0)
+    if (button.k == 0)
     {
       Settings.save();
-      j.a(ModAPI.getLastScreen());
+      this.j.a(ModAPI.getLastScreen());
     }
-    if (k == 1)
+    if (button.k == 1)
     {
-      settingsenabled = (!settingsenabled);
+      Settings.settings.enabled = (!Settings.settings.enabled);
       refresh();
     }
-    if (k == 2)
+    if (button.k == 2)
     {
-      settingsDMILayout = (!settingsDMILayout);
+      Settings.settings.DMILayout = (!Settings.settings.DMILayout);
       refresh();
     }
     super.a(button);
@@ -70,7 +70,7 @@ public class GuiSettings
     if (keyCode == 1)
     {
       Settings.save();
-      j.a(ModAPI.getLastScreen());
+      this.j.a(ModAPI.getLastScreen());
     }
   }
   
@@ -78,9 +78,9 @@ public class GuiSettings
   {
     c();
     
-    getInstancedraw.drawString("Damage Indicator:", l / 2 - 100, m / 6 + 20);
-    getInstancedraw.drawString("Layout:", l / 2 - 100, m / 6 + 60);
-    getInstancedraw.drawString("Scale:", l / 2 - 100, m / 6 + 100);
+    LabyMod.getInstance().draw.drawString("Damage Indicator:", this.l / 2 - 100, this.m / 6 + 20);
+    LabyMod.getInstance().draw.drawString("Layout:", this.l / 2 - 100, this.m / 6 + 60);
+    LabyMod.getInstance().draw.drawString("Scale:", this.l / 2 - 100, this.m / 6 + 100);
     
     super.a(mouseX, mouseY, partialTicks);
   }

@@ -7,7 +7,7 @@ public class aom
   
   public aom(afm ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
@@ -15,9 +15,9 @@ public class aom
     for (int ☃ = 0; ☃ < 64; ☃++)
     {
       cj ☃ = ☃.a(☃.nextInt(8) - ☃.nextInt(8), ☃.nextInt(4) - ☃.nextInt(4), ☃.nextInt(8) - ☃.nextInt(8));
-      if ((☃.d(☃)) && ((!t.o()) || (☃.o() < 255)) && 
-        (a.f(☃, ☃, a.Q()))) {
-        ☃.a(☃, a.Q(), 2);
+      if ((☃.d(☃)) && ((!☃.t.o()) || (☃.o() < 255)) && 
+        (this.a.f(☃, ☃, this.a.Q()))) {
+        ☃.a(☃, this.a.Q(), 2);
       }
     }
     return true;

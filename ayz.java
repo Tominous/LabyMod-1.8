@@ -8,25 +8,25 @@ public class ayz
   public ayz(wm ☃, og ☃)
   {
     super(new xu(☃, ☃));
-    v = ☃;
-    w = ☃;
+    this.v = ☃;
+    this.w = ☃;
   }
   
   protected void b(int ☃, int ☃)
   {
-    String ☃ = w.f_().c();
-    q.a(☃, f / 2 - q.a(☃) / 2, 6, 4210752);
-    q.a(v.f_().c(), 8, g - 96 + 2, 4210752);
+    String ☃ = this.w.f_().c();
+    this.q.a(☃, this.f / 2 - this.q.a(☃) / 2, 6, 4210752);
+    this.q.a(this.v.f_().c(), 8, this.g - 96 + 2, 4210752);
   }
   
   protected void a(float ☃, int ☃, int ☃)
   {
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    j.P().a(u);
-    int ☃ = (l - f) / 2;
-    int ☃ = (m - g) / 2;
-    b(☃, ☃, 0, 0, f, g);
-    if (alh.a(w))
+    this.j.P().a(u);
+    int ☃ = (this.l - this.f) / 2;
+    int ☃ = (this.m - this.g) / 2;
+    b(☃, ☃, 0, 0, this.f, this.g);
+    if (alh.a(this.w))
     {
       int ☃ = i(13);
       b(☃ + 56, ☃ + 36 + 12 - ☃, 176, 12 - ☃, 14, ☃ + 1);
@@ -37,8 +37,8 @@ public class ayz
   
   private int h(int ☃)
   {
-    int ☃ = w.a_(2);
-    int ☃ = w.a_(3);
+    int ☃ = this.w.a_(2);
+    int ☃ = this.w.a_(3);
     if ((☃ == 0) || (☃ == 0)) {
       return 0;
     }
@@ -47,10 +47,10 @@ public class ayz
   
   private int i(int ☃)
   {
-    int ☃ = w.a_(1);
+    int ☃ = this.w.a_(1);
     if (☃ == 0) {
       ☃ = 200;
     }
-    return w.a_(0) * ☃ / ☃;
+    return this.w.a_(0) * ☃ / ☃;
   }
 }

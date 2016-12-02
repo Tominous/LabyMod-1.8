@@ -7,38 +7,38 @@ public class atf
   
   public atf(byte ☃, byte ☃, byte ☃, byte ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
   }
   
   public atf(atf ☃)
   {
-    a = a;
-    b = b;
-    c = c;
-    d = d;
+    this.a = ☃.a;
+    this.b = ☃.b;
+    this.c = ☃.c;
+    this.d = ☃.d;
   }
   
   public byte a()
   {
-    return a;
+    return this.a;
   }
   
   public byte b()
   {
-    return b;
+    return this.b;
   }
   
   public byte c()
   {
-    return c;
+    return this.c;
   }
   
   public byte d()
   {
-    return d;
+    return this.d;
   }
   
   public boolean equals(Object ☃)
@@ -50,16 +50,16 @@ public class atf
       return false;
     }
     atf ☃ = (atf)☃;
-    if (a != a) {
+    if (this.a != ☃.a) {
       return false;
     }
-    if (d != d) {
+    if (this.d != ☃.d) {
       return false;
     }
-    if (b != b) {
+    if (this.b != ☃.b) {
       return false;
     }
-    if (c != c) {
+    if (this.c != ☃.c) {
       return false;
     }
     return true;
@@ -67,10 +67,10 @@ public class atf
   
   public int hashCode()
   {
-    int ☃ = a;
-    ☃ = 31 * ☃ + b;
-    ☃ = 31 * ☃ + c;
-    ☃ = 31 * ☃ + d;
+    int ☃ = this.a;
+    ☃ = 31 * ☃ + this.b;
+    ☃ = 31 * ☃ + this.c;
+    ☃ = 31 * ☃ + this.d;
     return ☃;
   }
 }

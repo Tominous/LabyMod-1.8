@@ -10,13 +10,13 @@ public class big
     {
       protected void a()
       {
-        c = new bas(0.5F);
-        d = new bas(1.0F);
+        this.c = new bas(0.5F);
+        this.d = new bas(1.0F);
       }
     };
     a(☃);
     a(new bky(this));
-    a(new bks(ae));
+    a(new bks(a().e));
   }
   
   protected jy a(um ☃)

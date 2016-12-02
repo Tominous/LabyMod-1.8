@@ -12,34 +12,34 @@ public class it
   
   public it(float ☃, float ☃, boolean ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readFloat();
-    b = ☃.readFloat();
+    this.a = ☃.readFloat();
+    this.b = ☃.readFloat();
     
     byte ☃ = ☃.readByte();
-    c = ((☃ & 0x1) > 0);
-    d = ((☃ & 0x2) > 0);
+    this.c = ((☃ & 0x1) > 0);
+    this.d = ((☃ & 0x2) > 0);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeFloat(a);
-    ☃.writeFloat(b);
+    ☃.writeFloat(this.a);
+    ☃.writeFloat(this.b);
     
     byte ☃ = 0;
-    if (c) {
+    if (this.c) {
       ☃ = (byte)(☃ | 0x1);
     }
-    if (d) {
+    if (this.d) {
       ☃ = (byte)(☃ | 0x2);
     }
     ☃.writeByte(☃);
@@ -52,21 +52,21 @@ public class it
   
   public float a()
   {
-    return a;
+    return this.a;
   }
   
   public float b()
   {
-    return b;
+    return this.b;
   }
   
   public boolean c()
   {
-    return c;
+    return this.c;
   }
   
   public boolean d()
   {
-    return d;
+    return this.d;
   }
 }

@@ -5,6 +5,6 @@ class ave$16
   
   public void run()
   {
-    this$0.e();
+    this.this$0.e();
   }
 }

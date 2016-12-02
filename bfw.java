@@ -16,17 +16,17 @@ public class bfw
   
   public bfw(int ☃, int ☃, boolean ☃)
   {
-    e = ☃;
+    this.e = ☃;
     
-    f = -1;
-    g = -1;
-    h = -1;
+    this.f = -1;
+    this.g = -1;
+    this.h = -1;
     
-    i = new float[4];
-    i[0] = 1.0F;
-    i[1] = 1.0F;
-    i[2] = 1.0F;
-    i[3] = 0.0F;
+    this.i = new float[4];
+    this.i[0] = 1.0F;
+    this.i[1] = 1.0F;
+    this.i[2] = 1.0F;
+    this.i[3] = 0.0F;
     
     a(☃, ☃);
   }
@@ -35,12 +35,12 @@ public class bfw
   {
     if (!bqs.i())
     {
-      c = ☃;
-      d = ☃;
+      this.c = ☃;
+      this.d = ☃;
       return;
     }
     bfl.j();
-    if (f >= 0) {
+    if (this.f >= 0) {
       a();
     }
     b(☃, ☃);
@@ -56,54 +56,54 @@ public class bfw
     }
     d();
     e();
-    if (h > -1)
+    if (this.h > -1)
     {
-      bqs.h(h);
-      h = -1;
+      bqs.h(this.h);
+      this.h = -1;
     }
-    if (g > -1)
+    if (this.g > -1)
     {
-      bml.a(g);
-      g = -1;
+      bml.a(this.g);
+      this.g = -1;
     }
-    if (f > -1)
+    if (this.f > -1)
     {
       bqs.h(bqs.c, 0);
-      bqs.i(f);
-      f = -1;
+      bqs.i(this.f);
+      this.f = -1;
     }
   }
   
   public void b(int ☃, int ☃)
   {
-    c = ☃;
-    d = ☃;
+    this.c = ☃;
+    this.d = ☃;
     
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
     if (!bqs.i())
     {
       f();
       return;
     }
-    f = bqs.g();
-    g = bml.a();
-    if (e) {
-      h = bqs.h();
+    this.f = bqs.g();
+    this.g = bml.a();
+    if (this.e) {
+      this.h = bqs.h();
     }
     a(9728);
-    bfl.i(g);
-    GL11.glTexImage2D(3553, 0, 32856, a, b, 0, 6408, 5121, (ByteBuffer)null);
+    bfl.i(this.g);
+    GL11.glTexImage2D(3553, 0, 32856, this.a, this.b, 0, 6408, 5121, (ByteBuffer)null);
     
-    bqs.h(bqs.c, f);
-    bqs.a(bqs.c, bqs.e, 3553, g, 0);
-    if (e)
+    bqs.h(bqs.c, this.f);
+    bqs.a(bqs.c, bqs.e, 3553, this.g, 0);
+    if (this.e)
     {
-      bqs.i(bqs.d, h);
+      bqs.i(bqs.d, this.h);
       
-      bqs.a(bqs.d, 33190, a, b);
+      bqs.a(bqs.d, 33190, this.a, this.b);
       
-      bqs.b(bqs.c, bqs.f, bqs.d, h);
+      bqs.b(bqs.c, bqs.f, bqs.d, this.h);
     }
     f();
     d();
@@ -113,8 +113,8 @@ public class bfw
   {
     if (bqs.i())
     {
-      j = ☃;
-      bfl.i(g);
+      this.j = ☃;
+      bfl.i(this.g);
       GL11.glTexParameterf(3553, 10241, ☃);
       GL11.glTexParameterf(3553, 10240, ☃);
       GL11.glTexParameterf(3553, 10242, 10496.0F);
@@ -147,7 +147,7 @@ public class bfw
   public void c()
   {
     if (bqs.i()) {
-      bfl.i(g);
+      bfl.i(this.g);
     }
   }
   
@@ -162,9 +162,9 @@ public class bfw
   {
     if (bqs.i())
     {
-      bqs.h(bqs.c, f);
+      bqs.h(bqs.c, this.f);
       if (☃) {
-        bfl.b(0, 0, c, d);
+        bfl.b(0, 0, this.c, this.d);
       }
     }
   }
@@ -178,10 +178,10 @@ public class bfw
   
   public void a(float ☃, float ☃, float ☃, float ☃)
   {
-    i[0] = ☃;
-    i[1] = ☃;
-    i[2] = ☃;
-    i[3] = ☃;
+    this.i[0] = ☃;
+    this.i[1] = ☃;
+    this.i[2] = ☃;
+    this.i[3] = ☃;
   }
   
   public void c(int ☃, int ☃)
@@ -221,8 +221,8 @@ public class bfw
     
     float ☃ = ☃;
     float ☃ = ☃;
-    float ☃ = c / a;
-    float ☃ = d / b;
+    float ☃ = this.c / this.a;
+    float ☃ = this.d / this.b;
     
     bfx ☃ = bfx.a();
     bfd ☃ = ☃.c();
@@ -242,9 +242,9 @@ public class bfw
   public void f()
   {
     a(true);
-    bfl.a(i[0], i[1], i[2], i[3]);
+    bfl.a(this.i[0], this.i[1], this.i[2], this.i[3]);
     int ☃ = 16384;
-    if (e)
+    if (this.e)
     {
       bfl.a(1.0D);
       ☃ |= 0x100;

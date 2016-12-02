@@ -22,16 +22,16 @@ public class PacketLoginOptions
   
   public void read(PacketBuf buf)
   {
-    showServer = buf.readBoolean();
-    status = buf.readOnlineStatus();
-    timeZone = TimeZone.getTimeZone(buf.readString());
+    this.showServer = buf.readBoolean();
+    this.status = buf.readOnlineStatus();
+    this.timeZone = TimeZone.getTimeZone(buf.readString());
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeBoolean(showServer);
-    buf.writeOnlineStatus(status);
-    buf.writeString(timeZone.getID());
+    buf.writeBoolean(this.showServer);
+    buf.writeOnlineStatus(this.status);
+    buf.writeString(this.timeZone.getID());
   }
   
   public void handle(PacketHandler packetHandler)
@@ -41,7 +41,7 @@ public class PacketLoginOptions
   
   public Options getOptions()
   {
-    return new Options(showServer, status, timeZone);
+    return new Options(this.showServer, this.status, this.timeZone);
   }
   
   public static class Options
@@ -59,17 +59,17 @@ public class PacketLoginOptions
     
     public boolean isShowServer()
     {
-      return showServer;
+      return this.showServer;
     }
     
     public LabyModPlayer.OnlineStatus getOnlineStatus()
     {
-      return onlineStatus;
+      return this.onlineStatus;
     }
     
     public TimeZone getTimeZone()
     {
-      return timeZone;
+      return this.timeZone;
     }
   }
 }

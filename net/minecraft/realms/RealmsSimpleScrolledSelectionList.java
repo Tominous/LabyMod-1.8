@@ -8,27 +8,27 @@ public class RealmsSimpleScrolledSelectionList
   
   public RealmsSimpleScrolledSelectionList(int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    proxy = new awt(this, ☃, ☃, ☃, ☃, ☃);
+    this.proxy = new awt(this, ☃, ☃, ☃, ☃, ☃);
   }
   
   public void render(int ☃, int ☃, float ☃)
   {
-    proxy.a(☃, ☃, ☃);
+    this.proxy.a(☃, ☃, ☃);
   }
   
   public int width()
   {
-    return proxy.e();
+    return this.proxy.e();
   }
   
   public int ym()
   {
-    return proxy.f();
+    return this.proxy.f();
   }
   
   public int xm()
   {
-    return proxy.g();
+    return this.proxy.g();
   }
   
   protected void renderItem(int ☃, int ☃, int ☃, int ☃, Tezzelator ☃, int ☃, int ☃) {}
@@ -59,22 +59,22 @@ public class RealmsSimpleScrolledSelectionList
   
   public int getScrollbarPosition()
   {
-    return proxy.e() / 2 + 124;
+    return this.proxy.e() / 2 + 124;
   }
   
   public void mouseEvent()
   {
-    proxy.p();
+    this.proxy.p();
   }
   
   public void scroll(int ☃)
   {
-    proxy.h(☃);
+    this.proxy.h(☃);
   }
   
   public int getScroll()
   {
-    return proxy.n();
+    return this.proxy.n();
   }
   
   protected void renderList(int ☃, int ☃, int ☃, int ☃) {}

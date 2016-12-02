@@ -11,11 +11,11 @@ public class xu
   
   public xu(wm ☃, og ☃)
   {
-    a = ☃;
+    this.a = ☃;
     
     a(new yg(☃, 0, 56, 17));
     a(new xt(☃, 1, 56, 53));
-    a(new xv(d, ☃, 2, 116, 35));
+    a(new xv(☃.d, ☃, 2, 116, 35));
     for (int ☃ = 0; ☃ < 3; ☃++) {
       for (int ☃ = 0; ☃ < 9; ☃++) {
         a(new yg(☃, ☃ + ☃ * 9 + 9, 8 + ☃ * 18, 84 + ☃ * 18));
@@ -29,48 +29,48 @@ public class xu
   public void a(xn ☃)
   {
     super.a(☃);
-    ☃.a(this, a);
+    ☃.a(this, this.a);
   }
   
   public void b()
   {
     super.b();
-    for (int ☃ = 0; ☃ < e.size(); ☃++)
+    for (int ☃ = 0; ☃ < this.e.size(); ☃++)
     {
-      xn ☃ = (xn)e.get(☃);
-      if (f != a.a_(2)) {
-        ☃.a(this, 2, a.a_(2));
+      xn ☃ = (xn)this.e.get(☃);
+      if (this.f != this.a.a_(2)) {
+        ☃.a(this, 2, this.a.a_(2));
       }
-      if (h != a.a_(0)) {
-        ☃.a(this, 0, a.a_(0));
+      if (this.h != this.a.a_(0)) {
+        ☃.a(this, 0, this.a.a_(0));
       }
-      if (i != a.a_(1)) {
-        ☃.a(this, 1, a.a_(1));
+      if (this.i != this.a.a_(1)) {
+        ☃.a(this, 1, this.a.a_(1));
       }
-      if (g != a.a_(3)) {
-        ☃.a(this, 3, a.a_(3));
+      if (this.g != this.a.a_(3)) {
+        ☃.a(this, 3, this.a.a_(3));
       }
     }
-    f = a.a_(2);
-    h = a.a_(0);
-    i = a.a_(1);
-    g = a.a_(3);
+    this.f = this.a.a_(2);
+    this.h = this.a.a_(0);
+    this.i = this.a.a_(1);
+    this.g = this.a.a_(3);
   }
   
   public void b(int ☃, int ☃)
   {
-    a.b(☃, ☃);
+    this.a.b(☃, ☃);
   }
   
   public boolean a(wn ☃)
   {
-    return a.a(☃);
+    return this.a.a(☃);
   }
   
   public zx b(wn ☃, int ☃)
   {
     zx ☃ = null;
-    yg ☃ = (yg)c.get(☃);
+    yg ☃ = (yg)this.c.get(☃);
     if ((☃ != null) && (☃.e()))
     {
       zx ☃ = ☃.d();
@@ -111,12 +111,12 @@ public class xu
       {
         return null;
       }
-      if (b == 0) {
+      if (☃.b == 0) {
         ☃.d(null);
       } else {
         ☃.f();
       }
-      if (b == b) {
+      if (☃.b == ☃.b) {
         return null;
       }
       ☃.a(☃, ☃);

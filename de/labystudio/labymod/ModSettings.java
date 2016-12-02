@@ -90,7 +90,6 @@ public class ModSettings
   public boolean autoText = false;
   public boolean chatFilter = false;
   public boolean oldSneak = false;
-  public String capePriority = "labymod";
   public boolean autoLeave = false;
   public boolean ignoreRequests = false;
   public boolean oldBlockBuild = true;
@@ -134,11 +133,9 @@ public class ModSettings
   public boolean showLiveTicker = true;
   public boolean controller = false;
   public boolean skyblock = true;
-  public boolean gommeOldUserColor = false;
   public int month = -1;
   public boolean nameHistory = true;
   public boolean gommeBedTimer = false;
-  public boolean notePad = false;
   public boolean api = true;
   public boolean mineconParticle = true;
 }

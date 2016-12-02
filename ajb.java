@@ -19,7 +19,7 @@ public class ajb
   public ajb()
   {
     super(arm.q);
-    j(M.b().a(a, ajb.a.c).a(b, ajb.a.c).a(N, ajb.a.c).a(O, ajb.a.c).a(P, Integer.valueOf(0)));
+    j(this.M.b().a(a, ajb.a.c).a(b, ajb.a.c).a(N, ajb.a.c).a(O, ajb.a.c).a(P, Integer.valueOf(0)));
     a(0.0F, 0.0F, 0.0F, 1.0F, 0.0625F, 1.0F);
   }
   
@@ -80,8 +80,8 @@ public class ajb
   {
     ☃ = a(☃, ☃, ☃, ☃);
     
-    List<cj> ☃ = Lists.newArrayList(R);
-    R.clear();
+    List<cj> ☃ = Lists.newArrayList(this.R);
+    this.R.clear();
     for (cj ☃ : ☃) {
       ☃.c(☃, this);
     }
@@ -96,9 +96,9 @@ public class ajb
     
     ☃ = a(☃, ☃, ☃);
     
-    Q = false;
+    this.Q = false;
     int ☃ = ☃.A(☃);
-    Q = true;
+    this.Q = true;
     if ((☃ > 0) && (☃ > ☃ - 1)) {
       ☃ = ☃;
     }
@@ -137,9 +137,9 @@ public class ajb
       if (☃.p(☃) == ☃) {
         ☃.a(☃, ☃, 2);
       }
-      R.add(☃);
+      this.R.add(☃);
       for (cq ☃ : cq.values()) {
-        R.add(☃.a(☃));
+        this.R.add(☃.a(☃));
       }
     }
     return ☃;
@@ -158,7 +158,7 @@ public class ajb
   
   public void c(adm ☃, cj ☃, alz ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
     e(☃, ☃, ☃);
@@ -182,7 +182,7 @@ public class ajb
   public void b(adm ☃, cj ☃, alz ☃)
   {
     super.b(☃, ☃, ☃);
-    if (D) {
+    if (☃.D) {
       return;
     }
     for (cq ☃ : cq.values()) {
@@ -217,7 +217,7 @@ public class ajb
   
   public void a(adm ☃, cj ☃, alz ☃, afh ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
     if (d(☃, ☃))
@@ -238,7 +238,7 @@ public class ajb
   
   public int b(adq ☃, cj ☃, alz ☃, cq ☃)
   {
-    if (!Q) {
+    if (!this.Q) {
       return 0;
     }
     return a(☃, ☃, ☃, ☃);
@@ -246,7 +246,7 @@ public class ajb
   
   public int a(adq ☃, cj ☃, alz ☃, cq ☃)
   {
-    if (!Q) {
+    if (!this.Q) {
       return 0;
     }
     int ☃ = ((Integer)☃.b(P)).intValue();
@@ -320,7 +320,7 @@ public class ajb
   
   public boolean i()
   {
-    return Q;
+    return this.Q;
   }
   
   private int b(int ☃)
@@ -394,7 +394,7 @@ public class ajb
     
     private a(String ☃)
     {
-      d = ☃;
+      this.d = ☃;
     }
     
     public String toString()
@@ -404,7 +404,7 @@ public class ajb
     
     public String l()
     {
-      return d;
+      return this.d;
     }
   }
 }

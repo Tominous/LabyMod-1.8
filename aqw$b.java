@@ -15,31 +15,31 @@ public class aqw$b
   {
     super(☃, ☃);
     
-    m = ☃;
-    l = ☃;
+    this.m = ☃;
+    this.l = ☃;
     
-    a = a(☃);
-    b = a(☃);
-    c = a(☃);
-    d = a(☃);
+    this.a = a(☃);
+    this.b = a(☃);
+    this.c = a(☃);
+    this.d = a(☃);
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("CA", afh.c.b(a));
-    ☃.a("CB", afh.c.b(b));
-    ☃.a("CC", afh.c.b(c));
-    ☃.a("CD", afh.c.b(d));
+    ☃.a("CA", afh.c.b(this.a));
+    ☃.a("CB", afh.c.b(this.b));
+    ☃.a("CC", afh.c.b(this.c));
+    ☃.a("CD", afh.c.b(this.d));
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    a = afh.c(☃.f("CA"));
-    b = afh.c(☃.f("CB"));
-    c = afh.c(☃.f("CC"));
-    d = afh.c(☃.f("CD"));
+    this.a = afh.c(☃.f("CA"));
+    this.b = afh.c(☃.f("CB"));
+    this.c = afh.c(☃.f("CC"));
+    this.d = afh.c(☃.f("CD"));
   }
   
   private afh a(Random ☃)
@@ -65,13 +65,13 @@ public class aqw$b
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
   {
-    if (h < 0)
+    if (this.h < 0)
     {
-      h = b(☃, ☃);
-      if (h < 0) {
+      this.h = b(☃, ☃);
+      if (this.h < 0) {
         return true;
       }
-      l.a(0, h - l.e + 4 - 1, 0);
+      this.l.a(0, this.h - this.l.e + 4 - 1, 0);
     }
     a(☃, ☃, 0, 1, 0, 12, 4, 8, afi.a.Q(), afi.a.Q(), false);
     
@@ -90,14 +90,14 @@ public class aqw$b
     a(☃, ☃, 9, 0, 1, 9, 0, 7, afi.j.Q(), afi.j.Q(), false);
     for (int ☃ = 1; ☃ <= 7; ☃++)
     {
-      a(☃, a.a(ns.a(☃, 2, 7)), 1, 1, ☃, ☃);
-      a(☃, a.a(ns.a(☃, 2, 7)), 2, 1, ☃, ☃);
-      a(☃, b.a(ns.a(☃, 2, 7)), 4, 1, ☃, ☃);
-      a(☃, b.a(ns.a(☃, 2, 7)), 5, 1, ☃, ☃);
-      a(☃, c.a(ns.a(☃, 2, 7)), 7, 1, ☃, ☃);
-      a(☃, c.a(ns.a(☃, 2, 7)), 8, 1, ☃, ☃);
-      a(☃, d.a(ns.a(☃, 2, 7)), 10, 1, ☃, ☃);
-      a(☃, d.a(ns.a(☃, 2, 7)), 11, 1, ☃, ☃);
+      a(☃, this.a.a(ns.a(☃, 2, 7)), 1, 1, ☃, ☃);
+      a(☃, this.a.a(ns.a(☃, 2, 7)), 2, 1, ☃, ☃);
+      a(☃, this.b.a(ns.a(☃, 2, 7)), 4, 1, ☃, ☃);
+      a(☃, this.b.a(ns.a(☃, 2, 7)), 5, 1, ☃, ☃);
+      a(☃, this.c.a(ns.a(☃, 2, 7)), 7, 1, ☃, ☃);
+      a(☃, this.c.a(ns.a(☃, 2, 7)), 8, 1, ☃, ☃);
+      a(☃, this.d.a(ns.a(☃, 2, 7)), 10, 1, ☃, ☃);
+      a(☃, this.d.a(ns.a(☃, 2, 7)), 11, 1, ☃, ☃);
     }
     for (int ☃ = 0; ☃ < 9; ☃++) {
       for (int ☃ = 0; ☃ < 13; ☃++)

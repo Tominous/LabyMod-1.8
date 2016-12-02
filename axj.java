@@ -8,23 +8,23 @@ public class axj
   
   public axj(String ☃, String ☃)
   {
-    a = ☃;
-    f = ☃;
+    this.a = ☃;
+    this.f = ☃;
   }
   
   public void b()
   {
     super.b();
     
-    n.add(new avs(0, l / 2 - 100, 140, bnq.a("gui.cancel", new Object[0])));
+    this.n.add(new avs(0, this.l / 2 - 100, 140, bnq.a("gui.cancel", new Object[0])));
   }
   
   public void a(int ☃, int ☃, float ☃)
   {
-    a(0, 0, l, m, -12574688, -11530224);
+    a(0, 0, this.l, this.m, -12574688, -11530224);
     
-    a(q, a, l / 2, 90, 16777215);
-    a(q, f, l / 2, 110, 16777215);
+    a(this.q, this.a, this.l / 2, 90, 16777215);
+    a(this.q, this.f, this.l / 2, 110, 16777215);
     
     super.a(☃, ☃, ☃);
   }
@@ -33,6 +33,6 @@ public class axj
   
   protected void a(avs ☃)
   {
-    j.a(null);
+    this.j.a(null);
   }
 }

@@ -17,12 +17,12 @@ public class PacketPlayDenyFriendRequest
   
   public void read(PacketBuf buf)
   {
-    denied = ((LabyModPlayerRequester)buf.readPlayer());
+    this.denied = ((LabyModPlayerRequester)buf.readPlayer());
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writePlayer(denied);
+    buf.writePlayer(this.denied);
   }
   
   public void handle(PacketHandler packetHandler)
@@ -32,6 +32,6 @@ public class PacketPlayDenyFriendRequest
   
   public LabyModPlayerRequester getDenied()
   {
-    return denied;
+    return this.denied;
   }
 }

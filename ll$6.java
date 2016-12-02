@@ -8,6 +8,6 @@ class ll$6
   public String a()
     throws Exception
   {
-    return a.toString();
+    return this.a.toString();
   }
 }

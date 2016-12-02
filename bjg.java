@@ -1,173 +1,180 @@
 import org.lwjgl.opengl.GL11;
-import shadersmod.client.ShadersTex;
 
 public class bjg
-  extends biv
+  extends biv<uo>
 {
   private static final jy a = new jy("textures/map/map_background.png");
   private final ave e = ave.A();
   private final bov f = new bov("item_frame", "normal");
   private final bov g = new bov("item_frame", "map");
   private bjh h;
-  private static final String __OBFID = "CL_00001002";
   
-  public bjg(biu p_i46166_1_, bjh p_i46166_2_)
+  public bjg(biu ☃, bjh ☃)
   {
-    super(p_i46166_1_);
-    h = p_i46166_2_;
+    super(☃);
+    this.h = ☃;
   }
   
-  public void a(uo p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
+  public void a(uo ☃, double ☃, double ☃, double ☃, float ☃, float ☃)
   {
     bfl.E();
-    cj var10 = p_76986_1_.n();
-    double var11 = var10.n() - s + p_76986_2_;
-    double var13 = var10.o() - t + p_76986_4_;
-    double var15 = var10.p() - u + p_76986_6_;
-    bfl.b(var11 + 0.5D, var13 + 0.5D, var15 + 0.5D);
-    bfl.b(180.0F - y, 0.0F, 1.0F, 0.0F);
-    b.a.a(bmh.g);
-    bgd var17 = e.ae();
-    bou var18 = var17.a().b();
-    boq var19;
-    boq var19;
-    if ((p_76986_1_.o() != null) && (p_76986_1_.o().b() == zy.bd)) {
-      var19 = var18.a(g);
+    
+    cj ☃ = ☃.n();
+    double ☃ = ☃.n() - ☃.s + ☃;
+    double ☃ = ☃.o() - ☃.t + ☃;
+    double ☃ = ☃.p() - ☃.u + ☃;
+    bfl.b(☃ + 0.5D, ☃ + 0.5D, ☃ + 0.5D);
+    bfl.b(180.0F - ☃.y, 0.0F, 1.0F, 0.0F);
+    
+    this.b.a.a(bmh.g);
+    bgd ☃ = this.e.ae();
+    bou ☃ = ☃.a().b();
+    boq ☃;
+    boq ☃;
+    if ((☃.o() != null) && (☃.o().b() == zy.bd)) {
+      ☃ = ☃.a(this.g);
     } else {
-      var19 = var18.a(f);
+      ☃ = ☃.a(this.f);
     }
     bfl.E();
     bfl.b(-0.5F, -0.5F, -0.5F);
-    var17.b().a(var19, 1.0F, 1.0F, 1.0F, 1.0F);
+    ☃.b().a(☃, 1.0F, 1.0F, 1.0F, 1.0F);
     bfl.F();
+    
     bfl.b(0.0F, 0.0F, 0.4375F);
-    b(p_76986_1_);
+    b(☃);
+    
     bfl.F();
-    a(p_76986_1_, p_76986_2_ + b.g() * 0.3F, p_76986_4_ - 0.25D, p_76986_6_ + b.i() * 0.3F);
+    a(☃, ☃ + ☃.b.g() * 0.3F, ☃ - 0.25D, ☃ + ☃.b.i() * 0.3F);
   }
   
-  protected jy a(uo p_110775_1_)
+  protected jy a(uo ☃)
   {
     return null;
   }
   
-  private void b(uo p_82402_1_)
+  private void b(uo ☃)
   {
-    zx var2 = p_82402_1_.o();
-    if (var2 != null)
+    zx ☃ = ☃.o();
+    if (☃ == null) {
+      return;
+    }
+    uz ☃ = new uz(☃.o, 0.0D, 0.0D, 0.0D, ☃);
+    zw ☃ = ☃.l().b();
+    ☃.l().b = 1;
+    ☃.a = 0.0F;
+    
+    bfl.E();
+    bfl.f();
+    
+    int ☃ = ☃.p();
+    if (☃ == zy.bd) {
+      ☃ = ☃ % 4 * 2;
+    }
+    bfl.b(☃ * 360.0F / 8.0F, 0.0F, 0.0F, 1.0F);
+    if (☃ == zy.bd)
     {
-      uz var3 = new uz(o, 0.0D, 0.0D, 0.0D, var2);
-      zw var4 = var3.l().b();
-      lb = 1;
-      a = 0.0F;
-      bfl.E();
-      bfl.f();
-      int var5 = p_82402_1_.p();
-      if ((var4 instanceof aab)) {
-        var5 = var5 % 4 * 2;
+      this.b.a.a(a);
+      
+      bfl.b(180.0F, 0.0F, 0.0F, 1.0F);
+      float ☃ = 0.0078125F;
+      bfl.a(☃, ☃, ☃);
+      bfl.b(-64.0F, -64.0F, 0.0F);
+      
+      atg ☃ = zy.bd.a(☃.l(), ☃.o);
+      bfl.b(0.0F, 0.0F, -1.0F);
+      if (☃ != null) {
+        this.e.o.k().a(☃, true);
       }
-      bfl.b(var5 * 360.0F / 8.0F, 0.0F, 0.0F, 1.0F);
-      if (!Reflector.postForgeBusEvent(Reflector.RenderItemInFrameEvent_Constructor, new Object[] { p_82402_1_, this })) {
-        if ((var4 instanceof aab))
+    }
+    else
+    {
+      bmi ☃ = null;
+      if (☃ == zy.aQ)
+      {
+        ☃ = this.e.T().a(bmp.l);
+        this.e.P().a(bmh.g);
+        if ((☃ instanceof bmp))
         {
-          b.a.a(a);
-          bfl.b(180.0F, 0.0F, 0.0F, 1.0F);
-          float var6 = 0.0078125F;
-          bfl.a(var6, var6, var6);
-          bfl.b(-64.0F, -64.0F, 0.0F);
-          atg var7 = zy.bd.a(var3.l(), o);
-          bfl.b(0.0F, 0.0F, -1.0F);
-          if (var7 != null) {
-            e.o.k().a(var7, true);
-          }
+          bmp ☃ = (bmp)☃;
+          
+          double ☃ = ☃.j;
+          double ☃ = ☃.k;
+          ☃.j = 0.0D;
+          ☃.k = 0.0D;
+          ☃.a(☃.o, ☃.s, ☃.u, ns.g(180 + ☃.b.b() * 90), false, true);
+          ☃.j = ☃;
+          ☃.k = ☃;
         }
         else
         {
-          bmi var12 = null;
-          if (var4 == zy.aQ)
-          {
-            var12 = e.T().a(bmp.l);
-            if (Config.isShaders()) {
-              ShadersTex.bindTextureMapForUpdateAndRender(e.P(), bmh.g);
-            } else {
-              e.P().a(bmh.g);
-            }
-            if ((var12 instanceof bmp))
-            {
-              bmp var13 = (bmp)var12;
-              double var8 = j;
-              double var10 = k;
-              j = 0.0D;
-              k = 0.0D;
-              var13.a(o, s, u, ns.g(180 + b.b() * 90), false, true);
-              j = var8;
-              k = var10;
-            }
-            else
-            {
-              var12 = null;
-            }
-          }
-          bfl.a(0.5F, 0.5F, 0.5F);
-          if ((!h.a(var3.l())) || ((var4 instanceof aat))) {
-            bfl.b(180.0F, 0.0F, 1.0F, 0.0F);
-          }
-          bfl.a();
-          avc.b();
-          h.a(var3.l(), bgr.b.g);
-          avc.a();
-          bfl.b();
-          if ((var12 != null) && (var12.k() > 0)) {
-            var12.j();
-          }
+          ☃ = null;
         }
       }
-      bfl.e();
-      bfl.F();
+      bfl.a(0.5F, 0.5F, 0.5F);
+      if ((!this.h.a(☃.l())) || ((☃ instanceof aat))) {
+        bfl.b(180.0F, 0.0F, 1.0F, 0.0F);
+      }
+      bfl.a();
+      avc.b();
+      this.h.a(☃.l(), bgr.b.g);
+      avc.a();
+      bfl.b();
+      if ((☃ != null) && 
+        (☃.k() > 0)) {
+        ☃.j();
+      }
     }
-    if (Config.isShaders()) {
-      ShadersTex.updatingTex = null;
-    }
+    bfl.e();
+    bfl.F();
   }
   
-  protected void a(uo p_147914_1_, double p_147914_2_, double p_147914_4_, double p_147914_6_)
+  protected void a(uo ☃, double ☃, double ☃, double ☃)
   {
-    if ((ave.v()) && (p_147914_1_.o() != null) && (p_147914_1_.o().s()) && (b.d == p_147914_1_))
+    if ((ave.v()) && (☃.o() != null) && (☃.o().s()) && (this.b.d == ☃))
     {
-      float var8 = 1.6F;
-      float var9 = 0.016666668F * var8;
-      double var10 = p_147914_1_.h(b.c);
-      float var12 = p_147914_1_.av() ? 32.0F : 64.0F;
-      if (var10 < var12 * var12)
+      float ☃ = 1.6F;
+      float ☃ = 0.016666668F * ☃;
+      double ☃ = ☃.h(this.b.c);
+      
+      float ☃ = ☃.av() ? 32.0F : 64.0F;
+      if (☃ < ☃ * ☃)
       {
-        String var13 = p_147914_1_.o().q();
-        if (p_147914_1_.av())
+        String ☃ = ☃.o().q();
+        if (☃.av())
         {
-          avn var14 = c();
+          avn ☃ = c();
           bfl.E();
-          bfl.b((float)p_147914_2_ + 0.0F, (float)p_147914_4_ + K + 0.5F, (float)p_147914_6_);
+          bfl.b((float)☃ + 0.0F, (float)☃ + ☃.K + 0.5F, (float)☃);
           GL11.glNormal3f(0.0F, 1.0F, 0.0F);
-          bfl.b(-b.e, 0.0F, 1.0F, 0.0F);
-          bfl.b(b.f, 1.0F, 0.0F, 0.0F);
-          bfl.a(-var9, -var9, var9);
+          
+          bfl.b(-this.b.e, 0.0F, 1.0F, 0.0F);
+          bfl.b(this.b.f, 1.0F, 0.0F, 0.0F);
+          
+          bfl.a(-☃, -☃, ☃);
           bfl.f();
-          bfl.b(0.0F, 0.25F / var9, 0.0F);
+          
+          bfl.b(0.0F, 0.25F / ☃, 0.0F);
           bfl.a(false);
           bfl.l();
           bfl.b(770, 771);
-          bfx var15 = bfx.a();
-          bfd var16 = var15.c();
-          int var17 = var14.a(var13) / 2;
+          
+          bfx ☃ = bfx.a();
+          bfd ☃ = ☃.c();
+          
+          int ☃ = ☃.a(☃) / 2;
+          
           bfl.x();
-          var16.a(7, bms.f);
-          var16.b(-var17 - 1, -1.0D, 0.0D).a(0.0F, 0.0F, 0.0F, 0.25F).d();
-          var16.b(-var17 - 1, 8.0D, 0.0D).a(0.0F, 0.0F, 0.0F, 0.25F).d();
-          var16.b(var17 + 1, 8.0D, 0.0D).a(0.0F, 0.0F, 0.0F, 0.25F).d();
-          var16.b(var17 + 1, -1.0D, 0.0D).a(0.0F, 0.0F, 0.0F, 0.25F).d();
-          var15.b();
+          ☃.a(7, bms.f);
+          ☃.b(-☃ - 1, -1.0D, 0.0D).a(0.0F, 0.0F, 0.0F, 0.25F).d();
+          ☃.b(-☃ - 1, 8.0D, 0.0D).a(0.0F, 0.0F, 0.0F, 0.25F).d();
+          ☃.b(☃ + 1, 8.0D, 0.0D).a(0.0F, 0.0F, 0.0F, 0.25F).d();
+          ☃.b(☃ + 1, -1.0D, 0.0D).a(0.0F, 0.0F, 0.0F, 0.25F).d();
+          ☃.b();
           bfl.w();
+          
           bfl.a(true);
-          var14.a(var13, -var14.a(var13) / 2, 0, 553648127);
+          ☃.a(☃, -☃.a(☃) / 2, 0, 553648127);
           bfl.e();
           bfl.k();
           bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
@@ -175,24 +182,9 @@ public class bjg
         }
         else
         {
-          a(p_147914_1_, var13, p_147914_2_, p_147914_4_, p_147914_6_, 64);
+          a(☃, ☃, ☃, ☃, ☃, 64);
         }
       }
     }
-  }
-  
-  protected jy a(pk p_110775_1_)
-  {
-    return a((uo)p_110775_1_);
-  }
-  
-  protected void a(pk p_177067_1_, double p_177067_2_, double p_177067_4_, double p_177067_6_)
-  {
-    a((uo)p_177067_1_, p_177067_2_, p_177067_4_, p_177067_6_);
-  }
-  
-  public void a(pk p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-  {
-    a((uo)p_76986_1_, p_76986_2_, p_76986_4_, p_76986_6_, p_76986_8_, p_76986_9_);
   }
 }

@@ -30,19 +30,19 @@ public class aqp
     
     public f(Class<? extends aqp.p> ☃, int ☃, int ☃)
     {
-      a = ☃;
-      b = ☃;
-      d = ☃;
+      this.a = ☃;
+      this.b = ☃;
+      this.d = ☃;
     }
     
     public boolean a(int ☃)
     {
-      return (d == 0) || (c < d);
+      return (this.d == 0) || (this.c < this.d);
     }
     
     public boolean a()
     {
-      return (d == 0) || (c < d);
+      return (this.d == 0) || (this.c < this.d);
     }
   }
   
@@ -68,7 +68,7 @@ public class aqp
     c = Lists.newArrayList();
     for (aqp.f ☃ : b)
     {
-      c = 0;
+      ☃.c = 0;
       c.add(☃);
     }
     d = null;
@@ -80,10 +80,10 @@ public class aqp
     a = 0;
     for (aqp.f ☃ : c)
     {
-      if ((d > 0) && (c < d)) {
+      if ((☃.d > 0) && (☃.c < ☃.d)) {
         ☃ = true;
       }
-      a += b;
+      a += ☃.b;
     }
     return ☃;
   }
@@ -139,17 +139,17 @@ public class aqp
       ☃ = ☃.nextInt(a);
       for (aqp.f ☃ : c)
       {
-        ☃ -= b;
+        ☃ -= ☃.b;
         if (☃ < 0)
         {
-          if ((!☃.a(☃)) || (☃ == a)) {
+          if ((!☃.a(☃)) || (☃ == ☃.a)) {
             break;
           }
-          aqp.p ☃ = a(a, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
+          aqp.p ☃ = a(☃.a, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
           if (☃ != null)
           {
-            c += 1;
-            a = ☃;
+            ☃.c += 1;
+            ☃.a = ☃;
             if (!☃.a()) {
               c.remove(☃);
             }
@@ -159,7 +159,7 @@ public class aqp
       }
     }
     aqe ☃ = aqp.b.a(☃, ☃, ☃, ☃, ☃, ☃);
-    if ((☃ != null) && (b > 1)) {
+    if ((☃ != null) && (☃.b > 1)) {
       return new aqp.b(☃, ☃, ☃, ☃);
     }
     return null;
@@ -170,14 +170,14 @@ public class aqp
     if (☃ > 50) {
       return null;
     }
-    if ((Math.abs(☃ - ca) > 112) || (Math.abs(☃ - cc) > 112)) {
+    if ((Math.abs(☃ - ☃.c().a) > 112) || (Math.abs(☃ - ☃.c().c) > 112)) {
       return null;
     }
     aqt ☃ = b(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃ + 1);
     if (☃ != null)
     {
       ☃.add(☃);
-      c.add(☃);
+      ☃.c.add(☃);
     }
     return ☃;
   }
@@ -196,12 +196,12 @@ public class aqp
     
     protected void a(dn ☃)
     {
-      ☃.a("EntryDoor", d.name());
+      ☃.a("EntryDoor", this.d.name());
     }
     
     protected void b(dn ☃)
     {
-      d = aqp.p.a.valueOf(☃.j("EntryDoor"));
+      this.d = aqp.p.a.valueOf(☃.j("EntryDoor"));
     }
     
     protected void a(adm ☃, Random ☃, aqe ☃, aqp.p.a ☃, int ☃, int ☃, int ☃)
@@ -268,17 +268,17 @@ public class aqp
     
     protected aqt a(aqp.m ☃, List<aqt> ☃, Random ☃, int ☃, int ☃)
     {
-      if (m != null) {
-        switch (aqp.3.b[m.ordinal()])
+      if (this.m != null) {
+        switch (aqp.3.b[this.m.ordinal()])
         {
         case 1: 
-          return aqp.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.c - 1, m, d());
+          return aqp.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.c - 1, this.m, d());
         case 2: 
-          return aqp.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.f + 1, m, d());
+          return aqp.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.f + 1, this.m, d());
         case 3: 
-          return aqp.a(☃, ☃, ☃, l.a - 1, l.b + ☃, l.c + ☃, m, d());
+          return aqp.a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃, this.l.c + ☃, this.m, d());
         case 4: 
-          return aqp.a(☃, ☃, ☃, l.d + 1, l.b + ☃, l.c + ☃, m, d());
+          return aqp.a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃, this.l.c + ☃, this.m, d());
         }
       }
       return null;
@@ -286,17 +286,17 @@ public class aqp
     
     protected aqt b(aqp.m ☃, List<aqt> ☃, Random ☃, int ☃, int ☃)
     {
-      if (m != null) {
-        switch (aqp.3.b[m.ordinal()])
+      if (this.m != null) {
+        switch (aqp.3.b[this.m.ordinal()])
         {
         case 1: 
-          return aqp.a(☃, ☃, ☃, l.a - 1, l.b + ☃, l.c + ☃, cq.e, d());
+          return aqp.a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃, this.l.c + ☃, cq.e, d());
         case 2: 
-          return aqp.a(☃, ☃, ☃, l.a - 1, l.b + ☃, l.c + ☃, cq.e, d());
+          return aqp.a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃, this.l.c + ☃, cq.e, d());
         case 3: 
-          return aqp.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.c - 1, cq.c, d());
+          return aqp.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.c - 1, cq.c, d());
         case 4: 
-          return aqp.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.c - 1, cq.c, d());
+          return aqp.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.c - 1, cq.c, d());
         }
       }
       return null;
@@ -304,17 +304,17 @@ public class aqp
     
     protected aqt c(aqp.m ☃, List<aqt> ☃, Random ☃, int ☃, int ☃)
     {
-      if (m != null) {
-        switch (aqp.3.b[m.ordinal()])
+      if (this.m != null) {
+        switch (aqp.3.b[this.m.ordinal()])
         {
         case 1: 
-          return aqp.a(☃, ☃, ☃, l.d + 1, l.b + ☃, l.c + ☃, cq.f, d());
+          return aqp.a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃, this.l.c + ☃, cq.f, d());
         case 2: 
-          return aqp.a(☃, ☃, ☃, l.d + 1, l.b + ☃, l.c + ☃, cq.f, d());
+          return aqp.a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃, this.l.c + ☃, cq.f, d());
         case 3: 
-          return aqp.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.f + 1, cq.d, d());
+          return aqp.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.f + 1, cq.d, d());
         case 4: 
-          return aqp.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.f + 1, cq.d, d());
+          return aqp.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.f + 1, cq.d, d());
         }
       }
       return null;
@@ -322,7 +322,7 @@ public class aqp
     
     protected static boolean a(aqe ☃)
     {
-      return (☃ != null) && (b > 10);
+      return (☃ != null) && (☃.b > 10);
     }
     
     public static enum a
@@ -342,21 +342,21 @@ public class aqp
     {
       super();
       
-      m = ☃;
-      l = ☃;
-      a = ((☃ == cq.c) || (☃ == cq.d) ? ☃.e() : ☃.c());
+      this.m = ☃;
+      this.l = ☃;
+      this.a = ((☃ == cq.c) || (☃ == cq.d) ? ☃.e() : ☃.c());
     }
     
     protected void a(dn ☃)
     {
       super.a(☃);
-      ☃.a("Steps", a);
+      ☃.a("Steps", this.a);
     }
     
     protected void b(dn ☃)
     {
       super.b(☃);
-      a = ☃.f("Steps");
+      this.a = ☃.f("Steps");
     }
     
     public static aqe a(List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃)
@@ -369,7 +369,7 @@ public class aqp
       if (☃ == null) {
         return null;
       }
-      if (cb == b) {
+      if (☃.c().b == ☃.b) {
         for (int ☃ = 3; ☃ >= 1; ☃--)
         {
           ☃ = aqe.a(☃, ☃, ☃, -1, -1, 0, 5, 5, ☃ - 1, ☃);
@@ -386,7 +386,7 @@ public class aqp
       if (a(☃, ☃)) {
         return false;
       }
-      for (int ☃ = 0; ☃ < a; ☃++)
+      for (int ☃ = 0; ☃ < this.a; ☃++)
       {
         a(☃, afi.bf.Q(), 0, 0, ☃, ☃);
         a(☃, afi.bf.Q(), 1, 0, ☃, ☃);
@@ -422,17 +422,17 @@ public class aqp
     {
       super();
       
-      a = true;
-      m = cq.c.a.a(☃);
-      d = aqp.p.a.a;
-      switch (aqp.3.b[m.ordinal()])
+      this.a = true;
+      this.m = cq.c.a.a(☃);
+      this.d = aqp.p.a.a;
+      switch (aqp.3.b[this.m.ordinal()])
       {
       case 1: 
       case 2: 
-        l = new aqe(☃, 64, ☃, ☃ + 5 - 1, 74, ☃ + 5 - 1);
+        this.l = new aqe(☃, 64, ☃, ☃ + 5 - 1, 74, ☃ + 5 - 1);
         break;
       default: 
-        l = new aqe(☃, 64, ☃, ☃ + 5 - 1, 74, ☃ + 5 - 1);
+        this.l = new aqe(☃, 64, ☃, ☃ + 5 - 1, 74, ☃ + 5 - 1);
       }
     }
     
@@ -440,27 +440,27 @@ public class aqp
     {
       super();
       
-      a = false;
-      m = ☃;
-      d = a(☃);
-      l = ☃;
+      this.a = false;
+      this.m = ☃;
+      this.d = a(☃);
+      this.l = ☃;
     }
     
     protected void a(dn ☃)
     {
       super.a(☃);
-      ☃.a("Source", a);
+      ☃.a("Source", this.a);
     }
     
     protected void b(dn ☃)
     {
       super.b(☃);
-      a = ☃.n("Source");
+      this.a = ☃.n("Source");
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
     {
-      if (a) {
+      if (this.a) {
         aqp.a(aqp.c.class);
       }
       a((aqp.m)☃, ☃, ☃, 1, 1);
@@ -482,7 +482,7 @@ public class aqp
       }
       a(☃, ☃, 0, 0, 0, 4, 10, 4, true, ☃, aqp.c());
       
-      a(☃, ☃, ☃, d, 1, 7, 0);
+      a(☃, ☃, ☃, this.d, 1, 7, 0);
       
       a(☃, ☃, ☃, aqp.p.a.a, 1, 1, 4);
       
@@ -524,8 +524,8 @@ public class aqp
     
     public cj a()
     {
-      if (b != null) {
-        return b.a();
+      if (this.b != null) {
+        return this.b.a();
       }
       return super.a();
     }
@@ -543,35 +543,35 @@ public class aqp
     {
       super();
       
-      m = ☃;
-      d = a(☃);
-      l = ☃;
+      this.m = ☃;
+      this.d = a(☃);
+      this.l = ☃;
       
-      a = (☃.nextInt(2) == 0);
-      b = (☃.nextInt(2) == 0);
+      this.a = (☃.nextInt(2) == 0);
+      this.b = (☃.nextInt(2) == 0);
     }
     
     protected void a(dn ☃)
     {
       super.a(☃);
-      ☃.a("Left", a);
-      ☃.a("Right", b);
+      ☃.a("Left", this.a);
+      ☃.a("Right", this.b);
     }
     
     protected void b(dn ☃)
     {
       super.b(☃);
-      a = ☃.n("Left");
-      b = ☃.n("Right");
+      this.a = ☃.n("Left");
+      this.b = ☃.n("Right");
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
     {
       a((aqp.m)☃, ☃, ☃, 1, 1);
-      if (a) {
+      if (this.a) {
         b((aqp.m)☃, ☃, ☃, 1, 2);
       }
-      if (b) {
+      if (this.b) {
         c((aqp.m)☃, ☃, ☃, 1, 2);
       }
     }
@@ -592,7 +592,7 @@ public class aqp
       }
       a(☃, ☃, 0, 0, 0, 4, 4, 6, true, ☃, aqp.c());
       
-      a(☃, ☃, ☃, d, 1, 1, 0);
+      a(☃, ☃, ☃, this.d, 1, 1, 0);
       
       a(☃, ☃, ☃, aqp.p.a.a, 1, 1, 6);
       
@@ -600,10 +600,10 @@ public class aqp
       a(☃, ☃, ☃, 0.1F, 3, 2, 1, afi.aa.Q());
       a(☃, ☃, ☃, 0.1F, 1, 2, 5, afi.aa.Q());
       a(☃, ☃, ☃, 0.1F, 3, 2, 5, afi.aa.Q());
-      if (a) {
+      if (this.a) {
         a(☃, ☃, 0, 1, 2, 0, 3, 4, afi.a.Q(), afi.a.Q(), false);
       }
-      if (b) {
+      if (this.b) {
         a(☃, ☃, 4, 1, 2, 4, 3, 4, afi.a.Q(), afi.a.Q(), false);
       }
       return true;
@@ -622,21 +622,21 @@ public class aqp
     {
       super();
       
-      m = ☃;
-      d = a(☃);
-      l = ☃;
+      this.m = ☃;
+      this.d = a(☃);
+      this.l = ☃;
     }
     
     protected void a(dn ☃)
     {
       super.a(☃);
-      ☃.a("Chest", b);
+      ☃.a("Chest", this.b);
     }
     
     protected void b(dn ☃)
     {
       super.b(☃);
-      b = ☃.n("Chest");
+      this.b = ☃.n("Chest");
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -660,7 +660,7 @@ public class aqp
       }
       a(☃, ☃, 0, 0, 0, 4, 4, 6, true, ☃, aqp.c());
       
-      a(☃, ☃, ☃, d, 1, 1, 0);
+      a(☃, ☃, ☃, this.d, 1, 1, 0);
       
       a(☃, ☃, ☃, aqp.p.a.a, 1, 1, 6);
       
@@ -672,10 +672,10 @@ public class aqp
       for (int ☃ = 2; ☃ <= 4; ☃++) {
         a(☃, afi.U.a(akb.a.f.a()), 2, 1, ☃, ☃);
       }
-      if ((!b) && 
+      if ((!this.b) && 
         (☃.b(new cj(a(3, 3), d(2), b(3, 3)))))
       {
-        b = true;
+        this.b = true;
         a(☃, ☃, ☃, 3, 2, 3, ob.a(a, new ob[] { zy.cd.b(☃) }), 2 + ☃.nextInt(2));
       }
       return true;
@@ -691,9 +691,9 @@ public class aqp
     {
       super();
       
-      m = ☃;
-      d = a(☃);
-      l = ☃;
+      this.m = ☃;
+      this.d = a(☃);
+      this.l = ☃;
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -717,7 +717,7 @@ public class aqp
       }
       a(☃, ☃, 0, 0, 0, 4, 10, 7, true, ☃, aqp.c());
       
-      a(☃, ☃, ☃, d, 1, 7, 0);
+      a(☃, ☃, ☃, this.d, 1, 7, 0);
       
       a(☃, ☃, ☃, aqp.p.a.a, 1, 1, 7);
       
@@ -747,14 +747,14 @@ public class aqp
     {
       super();
       
-      m = ☃;
-      d = a(☃);
-      l = ☃;
+      this.m = ☃;
+      this.d = a(☃);
+      this.l = ☃;
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
     {
-      if ((m == cq.c) || (m == cq.f)) {
+      if ((this.m == cq.c) || (this.m == cq.f)) {
         b((aqp.m)☃, ☃, ☃, 1, 1);
       } else {
         c((aqp.m)☃, ☃, ☃, 1, 1);
@@ -777,8 +777,8 @@ public class aqp
       }
       a(☃, ☃, 0, 0, 0, 4, 4, 4, true, ☃, aqp.c());
       
-      a(☃, ☃, ☃, d, 1, 1, 0);
-      if ((m == cq.c) || (m == cq.f)) {
+      a(☃, ☃, ☃, this.d, 1, 1, 0);
+      if ((this.m == cq.c) || (this.m == cq.f)) {
         a(☃, ☃, 0, 1, 1, 0, 3, 3, afi.a.Q(), afi.a.Q(), false);
       } else {
         a(☃, ☃, 4, 1, 1, 4, 3, 3, afi.a.Q(), afi.a.Q(), false);
@@ -792,7 +792,7 @@ public class aqp
   {
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
     {
-      if ((m == cq.c) || (m == cq.f)) {
+      if ((this.m == cq.c) || (this.m == cq.f)) {
         c((aqp.m)☃, ☃, ☃, 1, 1);
       } else {
         b((aqp.m)☃, ☃, ☃, 1, 1);
@@ -806,8 +806,8 @@ public class aqp
       }
       a(☃, ☃, 0, 0, 0, 4, 4, 4, true, ☃, aqp.c());
       
-      a(☃, ☃, ☃, d, 1, 1, 0);
-      if ((m == cq.c) || (m == cq.f)) {
+      a(☃, ☃, ☃, this.d, 1, 1, 0);
+      if ((this.m == cq.c) || (this.m == cq.f)) {
         a(☃, ☃, 4, 1, 1, 4, 3, 3, afi.a.Q(), afi.a.Q(), false);
       } else {
         a(☃, ☃, 0, 1, 1, 0, 3, 3, afi.a.Q(), afi.a.Q(), false);
@@ -828,22 +828,22 @@ public class aqp
     {
       super();
       
-      m = ☃;
-      d = a(☃);
-      l = ☃;
-      a = ☃.nextInt(5);
+      this.m = ☃;
+      this.d = a(☃);
+      this.l = ☃;
+      this.a = ☃.nextInt(5);
     }
     
     protected void a(dn ☃)
     {
       super.a(☃);
-      ☃.a("Type", a);
+      ☃.a("Type", this.a);
     }
     
     protected void b(dn ☃)
     {
       super.b(☃);
-      a = ☃.f("Type");
+      this.a = ☃.f("Type");
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -869,12 +869,12 @@ public class aqp
       }
       a(☃, ☃, 0, 0, 0, 10, 6, 10, true, ☃, aqp.c());
       
-      a(☃, ☃, ☃, d, 4, 1, 0);
+      a(☃, ☃, ☃, this.d, 4, 1, 0);
       
       a(☃, ☃, 4, 1, 10, 6, 3, 10, afi.a.Q(), afi.a.Q(), false);
       a(☃, ☃, 0, 1, 4, 0, 3, 6, afi.a.Q(), afi.a.Q(), false);
       a(☃, ☃, 10, 1, 4, 10, 3, 6, afi.a.Q(), afi.a.Q(), false);
-      switch (a)
+      switch (this.a)
       {
       default: 
         break;
@@ -967,9 +967,9 @@ public class aqp
     {
       super();
       
-      m = ☃;
-      d = a(☃);
-      l = ☃;
+      this.m = ☃;
+      this.d = a(☃);
+      this.l = ☃;
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -993,7 +993,7 @@ public class aqp
       }
       a(☃, ☃, 0, 0, 0, 8, 4, 10, true, ☃, aqp.c());
       
-      a(☃, ☃, ☃, d, 1, 1, 0);
+      a(☃, ☃, ☃, this.d, 1, 1, 0);
       
       a(☃, ☃, 1, 1, 10, 3, 3, 10, afi.a.Q(), afi.a.Q(), false);
       
@@ -1028,22 +1028,22 @@ public class aqp
     {
       super();
       
-      m = ☃;
-      d = a(☃);
-      l = ☃;
-      b = (☃.d() > 6);
+      this.m = ☃;
+      this.d = a(☃);
+      this.l = ☃;
+      this.b = (☃.d() > 6);
     }
     
     protected void a(dn ☃)
     {
       super.a(☃);
-      ☃.a("Tall", b);
+      ☃.a("Tall", this.b);
     }
     
     protected void b(dn ☃)
     {
       super.b(☃);
-      b = ☃.n("Tall");
+      this.b = ☃.n("Tall");
     }
     
     public static e a(List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃, int ☃)
@@ -1065,12 +1065,12 @@ public class aqp
         return false;
       }
       int ☃ = 11;
-      if (!b) {
+      if (!this.b) {
         ☃ = 6;
       }
       a(☃, ☃, 0, 0, 0, 13, ☃ - 1, 14, true, ☃, aqp.c());
       
-      a(☃, ☃, ☃, d, 4, 1, 0);
+      a(☃, ☃, ☃, this.d, 4, 1, 0);
       
       a(☃, ☃, ☃, 0.07F, 2, 1, 1, 11, 4, 13, afi.G.Q(), afi.G.Q(), false);
       
@@ -1084,7 +1084,7 @@ public class aqp
           
           a(☃, afi.aa.Q(), 2, 3, ☃, ☃);
           a(☃, afi.aa.Q(), 11, 3, ☃, ☃);
-          if (b)
+          if (this.b)
           {
             a(☃, ☃, 1, 6, ☃, 1, 9, ☃, afi.f.Q(), afi.f.Q(), false);
             a(☃, ☃, 12, 6, ☃, 12, 9, ☃, afi.f.Q(), afi.f.Q(), false);
@@ -1094,7 +1094,7 @@ public class aqp
         {
           a(☃, ☃, 1, 1, ☃, 1, 4, ☃, afi.X.Q(), afi.X.Q(), false);
           a(☃, ☃, 12, 1, ☃, 12, 4, ☃, afi.X.Q(), afi.X.Q(), false);
-          if (b)
+          if (this.b)
           {
             a(☃, ☃, 1, 6, ☃, 1, 9, ☃, afi.X.Q(), afi.X.Q(), false);
             a(☃, ☃, 12, 6, ☃, 12, 9, ☃, afi.X.Q(), afi.X.Q(), false);
@@ -1107,7 +1107,7 @@ public class aqp
         a(☃, ☃, 6, 1, ☃, 7, 3, ☃, afi.X.Q(), afi.X.Q(), false);
         a(☃, ☃, 9, 1, ☃, 10, 3, ☃, afi.X.Q(), afi.X.Q(), false);
       }
-      if (b)
+      if (this.b)
       {
         a(☃, ☃, 1, 5, 1, 3, 5, 13, afi.f.Q(), afi.f.Q(), false);
         a(☃, ☃, 10, 5, 1, 12, 5, 13, afi.f.Q(), afi.f.Q(), false);
@@ -1159,7 +1159,7 @@ public class aqp
         a(☃, afi.aa.Q(), ☃, 8, ☃ + 1, ☃);
       }
       a(☃, ☃, ☃, 3, 3, 5, ob.a(a, new ob[] { zy.cd.a(☃, 1, 5, 2) }), 1 + ☃.nextInt(4));
-      if (b)
+      if (this.b)
       {
         a(☃, afi.a.Q(), 12, 9, 1, ☃);
         a(☃, ☃, ☃, 12, 8, 1, ob.a(a, new ob[] { zy.cd.a(☃, 1, 5, 2) }), 1 + ☃.nextInt(4));
@@ -1182,54 +1182,54 @@ public class aqp
     {
       super();
       
-      m = ☃;
-      d = a(☃);
-      l = ☃;
+      this.m = ☃;
+      this.d = a(☃);
+      this.l = ☃;
       
-      a = ☃.nextBoolean();
-      b = ☃.nextBoolean();
-      c = ☃.nextBoolean();
-      e = (☃.nextInt(3) > 0);
+      this.a = ☃.nextBoolean();
+      this.b = ☃.nextBoolean();
+      this.c = ☃.nextBoolean();
+      this.e = (☃.nextInt(3) > 0);
     }
     
     protected void a(dn ☃)
     {
       super.a(☃);
-      ☃.a("leftLow", a);
-      ☃.a("leftHigh", b);
-      ☃.a("rightLow", c);
-      ☃.a("rightHigh", e);
+      ☃.a("leftLow", this.a);
+      ☃.a("leftHigh", this.b);
+      ☃.a("rightLow", this.c);
+      ☃.a("rightHigh", this.e);
     }
     
     protected void b(dn ☃)
     {
       super.b(☃);
-      a = ☃.n("leftLow");
-      b = ☃.n("leftHigh");
-      c = ☃.n("rightLow");
-      e = ☃.n("rightHigh");
+      this.a = ☃.n("leftLow");
+      this.b = ☃.n("leftHigh");
+      this.c = ☃.n("rightLow");
+      this.e = ☃.n("rightHigh");
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
     {
       int ☃ = 3;
       int ☃ = 5;
-      if ((m == cq.e) || (m == cq.c))
+      if ((this.m == cq.e) || (this.m == cq.c))
       {
         ☃ = 8 - ☃;
         ☃ = 8 - ☃;
       }
       a((aqp.m)☃, ☃, ☃, 5, 1);
-      if (a) {
+      if (this.a) {
         b((aqp.m)☃, ☃, ☃, ☃, 1);
       }
-      if (b) {
+      if (this.b) {
         b((aqp.m)☃, ☃, ☃, ☃, 7);
       }
-      if (c) {
+      if (this.c) {
         c((aqp.m)☃, ☃, ☃, ☃, 1);
       }
-      if (e) {
+      if (this.e) {
         c((aqp.m)☃, ☃, ☃, ☃, 7);
       }
     }
@@ -1250,17 +1250,17 @@ public class aqp
       }
       a(☃, ☃, 0, 0, 0, 9, 8, 10, true, ☃, aqp.c());
       
-      a(☃, ☃, ☃, d, 4, 3, 0);
-      if (a) {
+      a(☃, ☃, ☃, this.d, 4, 3, 0);
+      if (this.a) {
         a(☃, ☃, 0, 3, 1, 0, 5, 3, afi.a.Q(), afi.a.Q(), false);
       }
-      if (c) {
+      if (this.c) {
         a(☃, ☃, 9, 3, 1, 9, 5, 3, afi.a.Q(), afi.a.Q(), false);
       }
-      if (b) {
+      if (this.b) {
         a(☃, ☃, 0, 5, 7, 0, 7, 9, afi.a.Q(), afi.a.Q(), false);
       }
-      if (e) {
+      if (this.e) {
         a(☃, ☃, 9, 5, 7, 9, 7, 9, afi.a.Q(), afi.a.Q(), false);
       }
       a(☃, ☃, 5, 1, 10, 7, 3, 10, afi.a.Q(), afi.a.Q(), false);
@@ -1300,26 +1300,26 @@ public class aqp
     {
       super();
       
-      m = ☃;
-      l = ☃;
+      this.m = ☃;
+      this.l = ☃;
     }
     
     protected void a(dn ☃)
     {
       super.a(☃);
-      ☃.a("Mob", a);
+      ☃.a("Mob", this.a);
     }
     
     protected void b(dn ☃)
     {
       super.b(☃);
-      a = ☃.n("Mob");
+      this.a = ☃.n("Mob");
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
     {
       if (☃ != null) {
-        b = this;
+        ((aqp.m)☃).b = this;
       }
     }
     
@@ -1373,8 +1373,8 @@ public class aqp
       int ☃ = cq.d.b();
       int ☃ = cq.f.b();
       int ☃ = cq.e.b();
-      if (m != null) {
-        switch (aqp.3.b[m.ordinal()])
+      if (this.m != null) {
+        switch (aqp.3.b[this.m.ordinal()])
         {
         case 2: 
           ☃ = cq.d.b();
@@ -1405,13 +1405,13 @@ public class aqp
       a(☃, afi.bG.a(☃).a(ago.b, Boolean.valueOf(☃.nextFloat() > 0.9F)), 7, 3, 9, ☃);
       a(☃, afi.bG.a(☃).a(ago.b, Boolean.valueOf(☃.nextFloat() > 0.9F)), 7, 3, 10, ☃);
       a(☃, afi.bG.a(☃).a(ago.b, Boolean.valueOf(☃.nextFloat() > 0.9F)), 7, 3, 11, ☃);
-      if (!a)
+      if (!this.a)
       {
         ☃ = d(3);
         cj ☃ = new cj(a(5, 6), ☃, b(5, 6));
         if (☃.b(☃))
         {
-          a = true;
+          this.a = true;
           ☃.a(☃, afi.ac.Q(), 2);
           
           akw ☃ = ☃.s(☃);
@@ -1433,18 +1433,18 @@ public class aqp
       {
         float ☃ = ☃.nextFloat();
         if (☃ < 0.2F) {
-          a = afi.bf.a(ajz.O);
+          this.a = afi.bf.a(ajz.O);
         } else if (☃ < 0.5F) {
-          a = afi.bf.a(ajz.N);
+          this.a = afi.bf.a(ajz.N);
         } else if (☃ < 0.55F) {
-          a = afi.be.a(ahz.a.c.a());
+          this.a = afi.be.a(ahz.a.c.a());
         } else {
-          a = afi.bf.Q();
+          this.a = afi.bf.Q();
         }
       }
       else
       {
-        a = afi.a.Q();
+        this.a = afi.a.Q();
       }
     }
   }

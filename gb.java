@@ -9,7 +9,7 @@ public class gb
   
   public gb(int ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(fj ☃)
@@ -20,12 +20,12 @@ public class gb
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readUnsignedByte();
+    this.a = ☃.readUnsignedByte();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(a);
+    ☃.writeByte(this.a);
   }
 }

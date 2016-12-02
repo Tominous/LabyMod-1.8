@@ -18,7 +18,7 @@ public class mj
   
   public void a(eu ☃)
   {
-    b.append(☃.c());
+    this.b.append(☃.c());
   }
   
   public boolean a(int ☃, String ☃)

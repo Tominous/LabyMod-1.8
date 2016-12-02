@@ -40,119 +40,119 @@ public class awv
   
   public awv(String defaultText)
   {
-    u = defaultText;
+    this.u = defaultText;
   }
   
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    h = j.q.d().c().size();
-    a = new avw(0, q, 4, m - 12, l - 4 - 20, 12);
-    a.f(100);
-    a.a(false);
-    a.b(true);
-    a.a(u);
-    a.d(false);
+    this.h = this.j.q.d().c().size();
+    this.a = new avw(0, this.q, 4, this.m - 12, this.l - 4 - 20, 12);
+    this.a.f(100);
+    this.a.a(false);
+    this.a.b(true);
+    this.a.a(this.u);
+    this.a.d(false);
     
     int i = 0;
-    if (settingschatFilter)
+    if (ConfigManager.settings.chatFilter)
     {
       avs button;
-      n.add(button = new avs(2, l - 48 - i, 4, 45, 20, Color.cl("a") + "Filter"));
-      l = Allowed.chat();
+      this.n.add(button = new avs(2, this.l - 48 - i, 4, 45, 20, Color.cl("a") + "Filter"));
+      button.l = Allowed.chat();
       i += 47;
     }
-    if (settingsautoText)
+    if (ConfigManager.settings.autoText)
     {
       avs button;
-      n.add(button = new avs(3, l - 54 - i, 4, 50, 20, Color.cl("a") + "AutoText"));
-      l = Allowed.chat();
+      this.n.add(button = new avs(3, this.l - 54 - i, 4, 50, 20, Color.cl("a") + "AutoText"));
+      button.l = Allowed.chat();
       i += 47;
     }
-    if (settingsnameHistory)
+    if (ConfigManager.settings.nameHistory)
     {
       avs button;
-      n.add(button = new avs(4, l - 76 - i, 4, 67, 20, Color.cl("a") + "NameHistory"));
+      this.n.add(button = new avs(4, this.l - 76 - i, 4, 67, 20, Color.cl("a") + "NameHistory"));
     }
-    a.f();
+    this.a.f();
     
-    scrollbar.setPosition(l - 6, m - 145, l - 5, m - 20);
-    scrollbar.update(20);
-    scrollbar.setSpeed(10);
-    scrollbar.setEntryHeight(20);
+    this.scrollbar.setPosition(this.l - 6, this.m - 145, this.l - 5, this.m - 20);
+    this.scrollbar.update(20);
+    this.scrollbar.setSpeed(10);
+    this.scrollbar.setEntryHeight(20);
   }
   
   protected void a(avs button)
     throws IOException
   {
     super.a(button);
-    if (k == 2) {
-      j.a(new GuiFilter(a.b()));
+    if (button.k == 2) {
+      this.j.a(new GuiFilter(this.a.b()));
     }
-    if (k == 3) {
-      j.a(new GuiAutoText(a.b()));
+    if (button.k == 3) {
+      this.j.a(new GuiAutoText(this.a.b()));
     }
-    if (k == 4) {
-      j.a(new GuiNameHistory(a.b()));
+    if (button.k == 4) {
+      this.j.a(new GuiNameHistory(this.a.b()));
     }
   }
   
   public void m()
   {
     Keyboard.enableRepeatEvents(false);
-    j.q.d().d();
+    this.j.q.d().d();
   }
   
   public void e()
   {
-    a.a();
+    this.a.a();
   }
   
   protected void a(char typedChar, int keyCode)
     throws IOException
   {
-    r = false;
+    this.r = false;
     if (keyCode == 15) {
       a();
     } else {
-      i = false;
+      this.i = false;
     }
     if (keyCode == 1)
     {
-      j.a((axu)null);
+      this.j.a((axu)null);
     }
     else if ((keyCode != 28) && (keyCode != 156))
     {
       if (keyCode == 200)
       {
         b(-1);
-        a.f();
+        this.a.f();
       }
       else if (keyCode == 208)
       {
         b(1);
-        a.f();
+        this.a.f();
       }
       else if (keyCode == 201)
       {
-        j.q.d().b(j.q.d().i() - 1);
+        this.j.q.d().b(this.j.q.d().i() - 1);
       }
       else if (keyCode == 209)
       {
-        j.q.d().b(-j.q.d().i() + 1);
+        this.j.q.d().b(-this.j.q.d().i() + 1);
       }
       else
       {
-        a.a(typedChar, keyCode);
+        this.a.a(typedChar, keyCode);
       }
     }
     else
     {
-      String s = a.b().trim();
+      String s = this.a.b().trim();
       if (s.length() > 0) {
         f(s);
       }
-      j.a((axu)null);
+      this.j.a((axu)null);
     }
   }
   
@@ -172,9 +172,9 @@ public class awv
       if (!r()) {
         i *= 7;
       }
-      j.q.d().b(i);
+      this.j.q.d().b(i);
     }
-    scrollbar.mouseInput();
+    this.scrollbar.mouseInput();
   }
   
   protected void a(int mouseX, int mouseY, int mouseButton)
@@ -182,16 +182,16 @@ public class awv
   {
     if (mouseButton == 0)
     {
-      eu ichatcomponent = j.q.d().a(Mouse.getX(), Mouse.getY());
+      eu ichatcomponent = this.j.q.d().a(Mouse.getX(), Mouse.getY());
       if (a(ichatcomponent))
       {
-        a.f();
+        this.a.f();
         return;
       }
     }
     if (mouseButton == 1)
     {
-      eu iChatClickHover = j.q.d().a(Mouse.getX(), Mouse.getY());
+      eu iChatClickHover = this.j.q.d().a(Mouse.getX(), Mouse.getY());
       if ((iChatClickHover != null) && (iChatClickHover.b() != null) && (iChatClickHover.b().h() != null))
       {
         String value = iChatClickHover.b().h().b();
@@ -204,25 +204,25 @@ public class awv
         }
       }
     }
-    boolean hoverSymbols = (mouseX > l - 2 - 13) && (mouseX < l - 2) && (mouseY > m - 14) && (mouseY < m - 2);
+    boolean hoverSymbols = (mouseX > this.l - 2 - 13) && (mouseX < this.l - 2) && (mouseY > this.m - 14) && (mouseY < this.m - 2);
     if ((hoverSymbols) && (Allowed.chat())) {
-      symbolsGui = (!symbolsGui);
+      this.symbolsGui = (!this.symbolsGui);
     }
-    scrollbar.mouseAction(mouseX, mouseY, false);
-    if (symbolsGui)
+    this.scrollbar.mouseAction(mouseX, mouseY, false);
+    if (this.symbolsGui)
     {
       int row = 0;
       int column = 0;
-      for (int i = 0; i < symbolsString.length(); i++)
+      for (int i = 0; i < this.symbolsString.length(); i++)
       {
-        String symbol = symbolsString.charAt(i) + "";
-        if ((column * 10 + scrollbar.getScrollY() > -5) && (column * 10 + scrollbar.getScrollY() < 125))
+        String symbol = this.symbolsString.charAt(i) + "";
+        if ((column * 10 + this.scrollbar.getScrollY() > -5) && (column * 10 + this.scrollbar.getScrollY() < 125))
         {
-          if ((mouseX > l - 93 + row * 10 - 5) && (mouseX < l - 93 + row * 10 + 6)) {}
-          boolean hoverSymbol = (mouseY > m - 147 + column * 10 + scrollbar.getScrollY() - 5) && (mouseY < m - 147 + column * 10 + scrollbar.getScrollY() + 6);
+          if ((mouseX > this.l - 93 + row * 10 - 5) && (mouseX < this.l - 93 + row * 10 + 6)) {}
+          boolean hoverSymbol = (mouseY > this.m - 147 + column * 10 + this.scrollbar.getScrollY() - 5) && (mouseY < this.m - 147 + column * 10 + this.scrollbar.getScrollY() + 6);
           if (hoverSymbol)
           {
-            a.a(symbol.charAt(0), 0);
+            this.a.a(symbol.charAt(0), 0);
             break;
           }
         }
@@ -234,16 +234,16 @@ public class awv
         }
       }
     }
-    a.a(mouseX, mouseY, mouseButton);
+    this.a.a(mouseX, mouseY, mouseButton);
     super.a(mouseX, mouseY, mouseButton);
   }
   
   protected void a(String newChatText, boolean shouldOverwrite)
   {
     if (shouldOverwrite) {
-      a.a(newChatText);
+      this.a.a(newChatText);
     } else {
-      a.b(newChatText);
+      this.a.b(newChatText);
     }
   }
   
@@ -252,38 +252,38 @@ public class awv
     String s;
     if (this.i)
     {
-      a.b(a.a(-1, a.i(), false) - a.i());
-      if (this.s >= t.size()) {
+      this.a.b(this.a.a(-1, this.a.i(), false) - this.a.i());
+      if (this.s >= this.t.size()) {
         this.s = 0;
       }
     }
     else
     {
-      int i = a.a(-1, a.i(), false);
-      t.clear();
+      int i = this.a.a(-1, this.a.i(), false);
+      this.t.clear();
       this.s = 0;
-      s = a.b().substring(i).toLowerCase();
-      String s1 = a.b().substring(0, a.i());
+      s = this.a.b().substring(i).toLowerCase();
+      String s1 = this.a.b().substring(0, this.a.i());
       a(s1, s);
-      if (t.isEmpty()) {
+      if (this.t.isEmpty()) {
         return;
       }
       this.i = true;
-      a.b(i - a.i());
+      this.a.b(i - this.a.i());
     }
-    if (t.size() > 1)
+    if (this.t.size() > 1)
     {
       StringBuilder stringbuilder = new StringBuilder();
-      for (String s2 : t)
+      for (String s2 : this.t)
       {
         if (stringbuilder.length() > 0) {
           stringbuilder.append(", ");
         }
         stringbuilder.append(s2);
       }
-      j.q.d().a(new fa(stringbuilder.toString()), 1);
+      this.j.q.d().a(new fa(stringbuilder.toString()), 1);
     }
-    a.b((String)t.get(this.s++));
+    this.a.b((String)this.t.get(this.s++));
   }
   
   private void a(String p_146405_1_, String p_146405_2_)
@@ -291,45 +291,45 @@ public class awv
     if (p_146405_1_.length() >= 1)
     {
       cj blockpos = null;
-      if ((j.s != null) && (j.s.a == auh.a.b)) {
-        blockpos = j.s.a();
+      if ((this.j.s != null) && (this.j.s.a == auh.a.b)) {
+        blockpos = this.j.s.a();
       }
-      j.h.a.a(new id(p_146405_1_, blockpos));
-      r = true;
+      this.j.h.a.a(new id(p_146405_1_, blockpos));
+      this.r = true;
     }
   }
   
   public void b(int msgPos)
   {
-    int i = h + msgPos;
-    int j = jq.d().c().size();
+    int i = this.h + msgPos;
+    int j = this.j.q.d().c().size();
     i = ns.a(i, 0, j);
-    if (i != h) {
+    if (i != this.h) {
       if (i == j)
       {
-        h = j;
-        a.a(g);
+        this.h = j;
+        this.a.a(this.g);
       }
       else
       {
-        if (h == j) {
-          g = a.b();
+        if (this.h == j) {
+          this.g = this.a.b();
         }
-        a.a((String)jq.d().c().get(i));
-        h = i;
+        this.a.a((String)this.j.q.d().c().get(i));
+        this.h = i;
       }
     }
   }
   
   public void a(int mouseX, int mouseY, float partialTicks)
   {
-    a(2, m - 14, l - 2 - 15, m - 2, Integer.MIN_VALUE);
-    a.g();
-    eu ichatcomponent = j.q.d().a(Mouse.getX(), Mouse.getY());
+    a(2, this.m - 14, this.l - 2 - 15, this.m - 2, Integer.MIN_VALUE);
+    this.a.g();
+    eu ichatcomponent = this.j.q.d().a(Mouse.getX(), Mouse.getY());
     if ((ichatcomponent != null) && (ichatcomponent.b().i() != null)) {
       a(ichatcomponent, mouseX, mouseY);
     }
-    eu iChatClickHover = j.q.d().a(Mouse.getX(), Mouse.getY());
+    eu iChatClickHover = this.j.q.d().a(Mouse.getX(), Mouse.getY());
     try
     {
       if ((iChatClickHover != null) && (iChatClickHover.b() != null) && (iChatClickHover.b().h() != null))
@@ -344,9 +344,9 @@ public class awv
             ArrayList<String> lines = new ArrayList();
             boolean currentName = true;
             for (UUIDFetcher change : history.getChanges()) {
-              if (changedToAt != 0L)
+              if (change.changedToAt != 0L)
               {
-                long time = System.currentTimeMillis() - changedToAt;
+                long time = System.currentTimeMillis() - change.changedToAt;
                 long secs = time / 1000L;
                 long mins = secs / 60L;
                 long hours = mins / 60L;
@@ -376,11 +376,11 @@ public class awv
                   c = "6";
                 }
                 currentName = false;
-                lines.add(Color.cl(c) + name + Color.cl("8") + " - " + Color.cl("8") + date);
+                lines.add(Color.cl(c) + change.name + Color.cl("8") + " - " + Color.cl("8") + date);
               }
               else
               {
-                lines.add(Color.cl("a") + name);
+                lines.add(Color.cl("a") + change.name);
               }
             }
             a(lines, mouseX, mouseY);
@@ -400,26 +400,26 @@ public class awv
     {
       error.printStackTrace();
     }
-    a(l - 2 - 13, m - 14, l - 2, m - 2, Integer.MIN_VALUE);
-    boolean hoverSymbols = (mouseX > l - 2 - 13) && (mouseX < l - 2) && (mouseY > m - 14) && (mouseY < m - 2);
-    a(j.k, symbolsGui ? "-" : "+", l - 8, m - 12, hoverSymbols ? -100000 : -1);
-    if (symbolsGui)
+    a(this.l - 2 - 13, this.m - 14, this.l - 2, this.m - 2, Integer.MIN_VALUE);
+    boolean hoverSymbols = (mouseX > this.l - 2 - 13) && (mouseX < this.l - 2) && (mouseY > this.m - 14) && (mouseY < this.m - 2);
+    a(this.j.k, this.symbolsGui ? "-" : "+", this.l - 8, this.m - 12, hoverSymbols ? -100000 : -1);
+    if (this.symbolsGui)
     {
-      scrollbar.calc();
-      a(l - 100, m - 150, l - 2, m - 16, Integer.MIN_VALUE);
-      a(l - 6, m - 145, l - 5, m - 20, Integer.MIN_VALUE);
-      a(l - 7, scrollbar.top, l - 4, (int)(scrollbar.top + scrollbar.barLength), Integer.MAX_VALUE);
+      this.scrollbar.calc();
+      a(this.l - 100, this.m - 150, this.l - 2, this.m - 16, Integer.MIN_VALUE);
+      a(this.l - 6, this.m - 145, this.l - 5, this.m - 20, Integer.MIN_VALUE);
+      a(this.l - 7, this.scrollbar.top, this.l - 4, (int)(this.scrollbar.top + this.scrollbar.barLength), Integer.MAX_VALUE);
       
       int row = 0;
       int column = 0;
-      for (int i = 0; i < symbolsString.length(); i++)
+      for (int i = 0; i < this.symbolsString.length(); i++)
       {
-        String symbol = symbolsString.charAt(i) + "";
-        if ((column * 10 + scrollbar.getScrollY() > -5) && (column * 10 + scrollbar.getScrollY() < 125))
+        String symbol = this.symbolsString.charAt(i) + "";
+        if ((column * 10 + this.scrollbar.getScrollY() > -5) && (column * 10 + this.scrollbar.getScrollY() < 125))
         {
-          if ((mouseX > l - 93 + row * 10 - 5) && (mouseX < l - 93 + row * 10 + 6)) {}
-          boolean hoverSymbol = (mouseY > m - 147 + column * 10 + scrollbar.getScrollY() - 5) && (mouseY < m - 147 + column * 10 + scrollbar.getScrollY() + 6);
-          a(j.k, symbol, l - 93 + row * 10, m - 147 + column * 10 + scrollbar
+          if ((mouseX > this.l - 93 + row * 10 - 5) && (mouseX < this.l - 93 + row * 10 + 6)) {}
+          boolean hoverSymbol = (mouseY > this.m - 147 + column * 10 + this.scrollbar.getScrollY() - 5) && (mouseY < this.m - 147 + column * 10 + this.scrollbar.getScrollY() + 6);
+          a(this.j.k, symbol, this.l - 93 + row * 10, this.m - 147 + column * 10 + this.scrollbar
             .getScrollY(), hoverSymbol ? 41536 : -1);
         }
         row++;
@@ -452,31 +452,31 @@ public class awv
   
   protected void a(int mouseX, int mouseY, int clickedMouseButton, long timeSinceLastClick)
   {
-    scrollbar.mouseAction(mouseX, mouseY, true);
+    this.scrollbar.mouseAction(mouseX, mouseY, true);
     super.a(mouseX, mouseY, clickedMouseButton, timeSinceLastClick);
   }
   
   public void a(String[] p_146406_1_)
   {
-    if (r)
+    if (this.r)
     {
-      i = false;
-      t.clear();
+      this.i = false;
+      this.t.clear();
       for (String s : p_146406_1_) {
         if (s.length() > 0) {
-          t.add(s);
+          this.t.add(s);
         }
       }
-      String s1 = a.b().substring(a.a(-1, a.i(), false));
+      String s1 = this.a.b().substring(this.a.a(-1, this.a.i(), false));
       String s2 = StringUtils.getCommonPrefix(p_146406_1_);
       if ((s2.length() > 0) && (!s1.equalsIgnoreCase(s2)))
       {
-        a.b(a.a(-1, a.i(), false) - a.i());
-        a.b(s2);
+        this.a.b(this.a.a(-1, this.a.i(), false) - this.a.i());
+        this.a.b(s2);
       }
-      else if (t.size() > 0)
+      else if (this.t.size() > 0)
       {
-        i = true;
+        this.i = true;
         a();
       }
     }

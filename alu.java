@@ -16,15 +16,15 @@ public class alu
   
   public alu(alz ☃, cq ☃, boolean ☃, boolean ☃)
   {
-    a = ☃;
-    f = ☃;
-    g = ☃;
-    h = ☃;
+    this.a = ☃;
+    this.f = ☃;
+    this.g = ☃;
+    this.h = ☃;
   }
   
   public alz b()
   {
-    return a;
+    return this.a;
   }
   
   public int u()
@@ -34,17 +34,17 @@ public class alu
   
   public boolean d()
   {
-    return g;
+    return this.g;
   }
   
   public cq e()
   {
-    return f;
+    return this.f;
   }
   
   public boolean g()
   {
-    return h;
+    return this.h;
   }
   
   public float a(float ☃)
@@ -52,107 +52,107 @@ public class alu
     if (☃ > 1.0F) {
       ☃ = 1.0F;
     }
-    return j + (i - j) * ☃;
+    return this.j + (this.i - this.j) * ☃;
   }
   
   public float b(float ☃)
   {
-    if (g) {
-      return (a(☃) - 1.0F) * f.g();
+    if (this.g) {
+      return (a(☃) - 1.0F) * this.f.g();
     }
-    return (1.0F - a(☃)) * f.g();
+    return (1.0F - a(☃)) * this.f.g();
   }
   
   public float c(float ☃)
   {
-    if (g) {
-      return (a(☃) - 1.0F) * f.h();
+    if (this.g) {
+      return (a(☃) - 1.0F) * this.f.h();
     }
-    return (1.0F - a(☃)) * f.h();
+    return (1.0F - a(☃)) * this.f.h();
   }
   
   public float d(float ☃)
   {
-    if (g) {
-      return (a(☃) - 1.0F) * f.i();
+    if (this.g) {
+      return (a(☃) - 1.0F) * this.f.i();
     }
-    return (1.0F - a(☃)) * f.i();
+    return (1.0F - a(☃)) * this.f.i();
   }
   
   private List<pk> k = Lists.newArrayList();
   
   private void a(float ☃, float ☃)
   {
-    if (g) {
+    if (this.g) {
       ☃ = 1.0F - ☃;
     } else {
       ☃ -= 1.0F;
     }
-    aug ☃ = afi.M.a(b, c, a, ☃, f);
+    aug ☃ = afi.M.a(this.b, this.c, this.a, ☃, this.f);
     if (☃ != null)
     {
-      List<pk> ☃ = b.b(null, ☃);
+      List<pk> ☃ = this.b.b(null, ☃);
       if (!☃.isEmpty())
       {
-        k.addAll(☃);
-        for (pk ☃ : k) {
-          if ((a.c() == afi.cE) && (g)) {
-            switch (alu.1.a[f.k().ordinal()])
+        this.k.addAll(☃);
+        for (pk ☃ : this.k) {
+          if ((this.a.c() == afi.cE) && (this.g)) {
+            switch (alu.1.a[this.f.k().ordinal()])
             {
             case 1: 
-              v = f.g();
+              ☃.v = this.f.g();
               break;
             case 2: 
-              w = f.h();
+              ☃.w = this.f.h();
               break;
             case 3: 
-              x = f.i();
+              ☃.x = this.f.i();
             }
           } else {
-            ☃.d(☃ * f.g(), ☃ * f.h(), ☃ * f.i());
+            ☃.d(☃ * this.f.g(), ☃ * this.f.h(), ☃ * this.f.i());
           }
         }
-        k.clear();
+        this.k.clear();
       }
     }
   }
   
   public void h()
   {
-    if ((j < 1.0F) && (b != null))
+    if ((this.j < 1.0F) && (this.b != null))
     {
-      j = (i = 1.0F);
-      b.t(c);
+      this.j = (this.i = 1.0F);
+      this.b.t(this.c);
       y();
-      if (b.p(c).c() == afi.M)
+      if (this.b.p(this.c).c() == afi.M)
       {
-        b.a(c, a, 3);
-        b.d(c, a.c());
+        this.b.a(this.c, this.a, 3);
+        this.b.d(this.c, this.a.c());
       }
     }
   }
   
   public void c()
   {
-    j = i;
-    if (j >= 1.0F)
+    this.j = this.i;
+    if (this.j >= 1.0F)
     {
       a(1.0F, 0.25F);
-      b.t(c);
+      this.b.t(this.c);
       y();
-      if (b.p(c).c() == afi.M)
+      if (this.b.p(this.c).c() == afi.M)
       {
-        b.a(c, a, 3);
-        b.d(c, a.c());
+        this.b.a(this.c, this.a, 3);
+        this.b.d(this.c, this.a.c());
       }
       return;
     }
-    i += 0.5F;
-    if (i >= 1.0F) {
-      i = 1.0F;
+    this.i += 0.5F;
+    if (this.i >= 1.0F) {
+      this.i = 1.0F;
     }
-    if (g) {
-      a(i, i - j + 0.0625F);
+    if (this.g) {
+      a(this.i, this.i - this.j + 0.0625F);
     }
   }
   
@@ -160,20 +160,20 @@ public class alu
   {
     super.a(☃);
     
-    a = afh.c(☃.f("blockId")).a(☃.f("blockData"));
-    f = cq.a(☃.f("facing"));
-    j = (i = ☃.h("progress"));
-    g = ☃.n("extending");
+    this.a = afh.c(☃.f("blockId")).a(☃.f("blockData"));
+    this.f = cq.a(☃.f("facing"));
+    this.j = (this.i = ☃.h("progress"));
+    this.g = ☃.n("extending");
   }
   
   public void b(dn ☃)
   {
     super.b(☃);
     
-    ☃.a("blockId", afh.a(a.c()));
-    ☃.a("blockData", a.c().c(a));
-    ☃.a("facing", f.a());
-    ☃.a("progress", j);
-    ☃.a("extending", g);
+    ☃.a("blockId", afh.a(this.a.c()));
+    ☃.a("blockData", this.a.c().c(this.a));
+    ☃.a("facing", this.f.a());
+    ☃.a("progress", this.j);
+    ☃.a("extending", this.g);
   }
 }

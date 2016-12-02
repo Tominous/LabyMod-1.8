@@ -44,12 +44,12 @@ public class FancyTextField
   
   public FancyTextField(int p_i45542_1_, avn p_i45542_2_, int p_i45542_3_, int p_i45542_4_, int p_i45542_5_, int p_i45542_6_)
   {
-    field_175208_g = p_i45542_1_;
-    fontRendererInstance = p_i45542_2_;
-    xPosition = p_i45542_3_;
-    yPosition = p_i45542_4_;
-    width = p_i45542_5_;
-    height = p_i45542_6_;
+    this.field_175208_g = p_i45542_1_;
+    this.fontRendererInstance = p_i45542_2_;
+    this.xPosition = p_i45542_3_;
+    this.yPosition = p_i45542_4_;
+    this.width = p_i45542_5_;
+    this.height = p_i45542_6_;
   }
   
   public void setPassword(boolean password)
@@ -59,27 +59,27 @@ public class FancyTextField
   
   public boolean isPassword()
   {
-    return password;
+    return this.password;
   }
   
   public void func_175207_a(awg.b p_175207_1_)
   {
-    field_175210_x = p_175207_1_;
+    this.field_175210_x = p_175207_1_;
   }
   
   public void updateCursorCounter()
   {
-    cursorCounter += 1;
+    this.cursorCounter += 1;
   }
   
   public void setText(String p_146180_1_)
   {
-    if (field_175209_y.apply(p_146180_1_))
+    if (this.field_175209_y.apply(p_146180_1_))
     {
-      if (p_146180_1_.length() > maxStringLength) {
-        text = p_146180_1_.substring(0, maxStringLength);
+      if (p_146180_1_.length() > this.maxStringLength) {
+        this.text = p_146180_1_.substring(0, this.maxStringLength);
       } else {
-        text = p_146180_1_;
+        this.text = p_146180_1_;
       }
       setCursorPositionEnd();
     }
@@ -87,31 +87,31 @@ public class FancyTextField
   
   public String getText()
   {
-    return text;
+    return this.text;
   }
   
   public String getSelectedText()
   {
-    int i = cursorPosition < selectionEnd ? cursorPosition : selectionEnd;
-    int j = cursorPosition < selectionEnd ? selectionEnd : cursorPosition;
-    return text.substring(i, j);
+    int i = this.cursorPosition < this.selectionEnd ? this.cursorPosition : this.selectionEnd;
+    int j = this.cursorPosition < this.selectionEnd ? this.selectionEnd : this.cursorPosition;
+    return this.text.substring(i, j);
   }
   
   public void func_175205_a(Predicate p_175205_1_)
   {
-    field_175209_y = p_175205_1_;
+    this.field_175209_y = p_175205_1_;
   }
   
   public void writeText(String p_146191_1_)
   {
     String s1 = "";
     String s2 = f.a(p_146191_1_);
-    int i = cursorPosition < selectionEnd ? cursorPosition : selectionEnd;
-    int j = cursorPosition < selectionEnd ? selectionEnd : cursorPosition;
-    int k = maxStringLength - text.length() - (i - j);
+    int i = this.cursorPosition < this.selectionEnd ? this.cursorPosition : this.selectionEnd;
+    int j = this.cursorPosition < this.selectionEnd ? this.selectionEnd : this.cursorPosition;
+    int k = this.maxStringLength - this.text.length() - (i - j);
     boolean flag = false;
-    if (text.length() > 0) {
-      s1 = s1 + text.substring(0, i);
+    if (this.text.length() > 0) {
+      s1 = s1 + this.text.substring(0, i);
     }
     int l;
     int l;
@@ -125,55 +125,55 @@ public class FancyTextField
       s1 = s1 + s2;
       l = s2.length();
     }
-    if ((text.length() > 0) && (j < text.length())) {
-      s1 = s1 + text.substring(j);
+    if ((this.text.length() > 0) && (j < this.text.length())) {
+      s1 = s1 + this.text.substring(j);
     }
-    if (field_175209_y.apply(s1))
+    if (this.field_175209_y.apply(s1))
     {
-      text = s1;
-      moveCursorBy(i - selectionEnd + l);
-      if (field_175210_x != null) {
-        field_175210_x.a(field_175208_g, text);
+      this.text = s1;
+      moveCursorBy(i - this.selectionEnd + l);
+      if (this.field_175210_x != null) {
+        this.field_175210_x.a(this.field_175208_g, this.text);
       }
     }
   }
   
   public void deleteWords(int p_146177_1_)
   {
-    if (text.length() != 0) {
-      if (selectionEnd != cursorPosition) {
+    if (this.text.length() != 0) {
+      if (this.selectionEnd != this.cursorPosition) {
         writeText("");
       } else {
-        deleteFromCursor(getNthWordFromCursor(p_146177_1_) - cursorPosition);
+        deleteFromCursor(getNthWordFromCursor(p_146177_1_) - this.cursorPosition);
       }
     }
   }
   
   public void deleteFromCursor(int p_146175_1_)
   {
-    if (text.length() != 0) {
-      if (selectionEnd != cursorPosition)
+    if (this.text.length() != 0) {
+      if (this.selectionEnd != this.cursorPosition)
       {
         writeText("");
       }
       else
       {
         boolean flag = p_146175_1_ < 0;
-        int j = flag ? cursorPosition + p_146175_1_ : cursorPosition;
-        int k = flag ? cursorPosition : cursorPosition + p_146175_1_;
+        int j = flag ? this.cursorPosition + p_146175_1_ : this.cursorPosition;
+        int k = flag ? this.cursorPosition : this.cursorPosition + p_146175_1_;
         String s = "";
         if (j >= 0) {
-          s = text.substring(0, j);
+          s = this.text.substring(0, j);
         }
-        if (k < text.length()) {
-          s = s + text.substring(k);
+        if (k < this.text.length()) {
+          s = s + this.text.substring(k);
         }
-        text = s;
+        this.text = s;
         if (flag) {
           moveCursorBy(p_146175_1_);
         }
-        if (field_175210_x != null) {
-          field_175210_x.a(field_175208_g, text);
+        if (this.field_175210_x != null) {
+          this.field_175210_x.a(this.field_175208_g, this.text);
         }
       }
     }
@@ -181,7 +181,7 @@ public class FancyTextField
   
   public int func_175206_d()
   {
-    return field_175208_g;
+    return this.field_175208_g;
   }
   
   public int getNthWordFromCursor(int p_146187_1_)
@@ -203,19 +203,19 @@ public class FancyTextField
     {
       if (flag1)
       {
-        while ((p_146197_3_) && (k > 0) && (text.charAt(k - 1) == ' ')) {
+        while ((p_146197_3_) && (k > 0) && (this.text.charAt(k - 1) == ' ')) {
           k--;
         }
-        while ((k > 0) && (text.charAt(k - 1) != ' ')) {
+        while ((k > 0) && (this.text.charAt(k - 1) != ' ')) {
           k--;
         }
       }
-      int j1 = text.length();
-      k = text.indexOf(' ', k);
+      int j1 = this.text.length();
+      k = this.text.indexOf(' ', k);
       if (k == -1) {
         k = j1;
       } else {
-        while ((p_146197_3_) && (k < j1) && (text.charAt(k) == ' ')) {
+        while ((p_146197_3_) && (k < j1) && (this.text.charAt(k) == ' ')) {
           k++;
         }
       }
@@ -225,15 +225,15 @@ public class FancyTextField
   
   public void moveCursorBy(int p_146182_1_)
   {
-    setCursorPosition(selectionEnd + p_146182_1_);
+    setCursorPosition(this.selectionEnd + p_146182_1_);
   }
   
   public void setCursorPosition(int p_146190_1_)
   {
-    cursorPosition = p_146190_1_;
-    int j = text.length();
-    cursorPosition = ns.a(cursorPosition, 0, j);
-    setSelectionPos(cursorPosition);
+    this.cursorPosition = p_146190_1_;
+    int j = this.text.length();
+    this.cursorPosition = ns.a(this.cursorPosition, 0, j);
+    setSelectionPos(this.cursorPosition);
   }
   
   public void setCursorPositionZero()
@@ -243,12 +243,12 @@ public class FancyTextField
   
   public void setCursorPositionEnd()
   {
-    setCursorPosition(text.length());
+    setCursorPosition(this.text.length());
   }
   
   public boolean textboxKeyTyped(char p_146201_1_, int p_146201_2_)
   {
-    if (!isFocused) {
+    if (!this.isFocused) {
       return false;
     }
     if (axu.g(p_146201_2_))
@@ -264,7 +264,7 @@ public class FancyTextField
     }
     if (axu.e(p_146201_2_))
     {
-      if (isEnabled) {
+      if (this.isEnabled) {
         writeText(axu.o());
       }
       return true;
@@ -272,7 +272,7 @@ public class FancyTextField
     if (axu.d(p_146201_2_))
     {
       axu.e(getSelectedText());
-      if (isEnabled) {
+      if (this.isEnabled) {
         writeText("");
       }
       return true;
@@ -282,11 +282,11 @@ public class FancyTextField
     case 14: 
       if (axu.q())
       {
-        if (isEnabled) {
+        if (this.isEnabled) {
           deleteWords(-1);
         }
       }
-      else if (isEnabled) {
+      else if (this.isEnabled) {
         deleteFromCursor(-1);
       }
       return true;
@@ -329,7 +329,7 @@ public class FancyTextField
       return true;
     case 207: 
       if (axu.r()) {
-        setSelectionPos(text.length());
+        setSelectionPos(this.text.length());
       } else {
         setCursorPositionEnd();
       }
@@ -337,18 +337,18 @@ public class FancyTextField
     case 211: 
       if (axu.q())
       {
-        if (isEnabled) {
+        if (this.isEnabled) {
           deleteWords(1);
         }
       }
-      else if (isEnabled) {
+      else if (this.isEnabled) {
         deleteFromCursor(1);
       }
       return true;
     }
     if (f.a(p_146201_1_))
     {
-      if (isEnabled) {
+      if (this.isEnabled) {
         writeText(Character.toString(p_146201_1_));
       }
       return true;
@@ -358,18 +358,18 @@ public class FancyTextField
   
   public void mouseClicked(int p_146192_1_, int p_146192_2_, int p_146192_3_)
   {
-    boolean flag = (p_146192_1_ >= xPosition) && (p_146192_1_ < xPosition + width) && (p_146192_2_ >= yPosition) && (p_146192_2_ < yPosition + height);
-    if (canLoseFocus) {
+    boolean flag = (p_146192_1_ >= this.xPosition) && (p_146192_1_ < this.xPosition + this.width) && (p_146192_2_ >= this.yPosition) && (p_146192_2_ < this.yPosition + this.height);
+    if (this.canLoseFocus) {
       setFocused(flag);
     }
-    if ((isFocused) && (flag) && (p_146192_3_ == 0))
+    if ((this.isFocused) && (flag) && (p_146192_3_ == 0))
     {
-      int l = p_146192_1_ - xPosition;
-      if (enableBackgroundDrawing) {
+      int l = p_146192_1_ - this.xPosition;
+      if (this.enableBackgroundDrawing) {
         l -= 4;
       }
-      String s = fontRendererInstance.a(text.substring(lineScrollOffset), getWidth());
-      setCursorPosition(fontRendererInstance.a(s, l).length() + lineScrollOffset);
+      String s = this.fontRendererInstance.a(this.text.substring(this.lineScrollOffset), getWidth());
+      setCursorPosition(this.fontRendererInstance.a(s, l).length() + this.lineScrollOffset);
     }
   }
   
@@ -381,29 +381,29 @@ public class FancyTextField
         setText(getText().replace(" ", ""));
       }
       if (getEnableBackgroundDrawing()) {
-        if (isFocused)
+        if (this.isFocused)
         {
-          if (fadeGreater < 1) {
-            fadeGreater += 1;
+          if (this.fadeGreater < 1) {
+            this.fadeGreater += 1;
           }
-          a(xPosition - fadeGreater, yPosition - fadeGreater, xPosition + width + fadeGreater, yPosition + height + fadeGreater, new Color(255, 255, 255, 100).getRGB());
+          a(this.xPosition - this.fadeGreater, this.yPosition - this.fadeGreater, this.xPosition + this.width + this.fadeGreater, this.yPosition + this.height + this.fadeGreater, new Color(255, 255, 255, 100).getRGB());
         }
         else
         {
-          if (fadeGreater > -2) {
-            fadeGreater -= 1;
+          if (this.fadeGreater > -2) {
+            this.fadeGreater -= 1;
           }
-          a(xPosition - fadeGreater, yPosition - fadeGreater, xPosition + width + fadeGreater, yPosition + height + fadeGreater, new Color(255, 255, 255, 40).getRGB());
+          a(this.xPosition - this.fadeGreater, this.yPosition - this.fadeGreater, this.xPosition + this.width + this.fadeGreater, this.yPosition + this.height + this.fadeGreater, new Color(255, 255, 255, 40).getRGB());
         }
       }
-      int i = isEnabled ? enabledColor : disabledColor;
-      int j = cursorPosition - lineScrollOffset;
-      int k = selectionEnd - lineScrollOffset;
-      String s = fontRendererInstance.a(text.substring(lineScrollOffset), getWidth());
+      int i = this.isEnabled ? this.enabledColor : this.disabledColor;
+      int j = this.cursorPosition - this.lineScrollOffset;
+      int k = this.selectionEnd - this.lineScrollOffset;
+      String s = this.fontRendererInstance.a(this.text.substring(this.lineScrollOffset), getWidth());
       boolean flag = (j >= 0) && (j <= s.length());
-      boolean flag1 = (isFocused) && (cursorCounter / 6 % 2 == 0) && (flag);
-      int l = enableBackgroundDrawing ? xPosition + 4 : xPosition;
-      int i1 = enableBackgroundDrawing ? yPosition + (height - 8) / 2 : yPosition;
+      boolean flag1 = (this.isFocused) && (this.cursorCounter / 6 % 2 == 0) && (flag);
+      int l = this.enableBackgroundDrawing ? this.xPosition + 4 : this.xPosition;
+      int i1 = this.enableBackgroundDrawing ? this.yPosition + (this.height - 8) / 2 : this.yPosition;
       int j1 = l;
       if (k > s.length()) {
         k = s.length();
@@ -420,13 +420,13 @@ public class FancyTextField
       if (s.length() > 0)
       {
         String s1 = flag ? s.substring(0, j) : s;
-        j1 = fontRendererInstance.a(s1, l, i1, i);
+        j1 = this.fontRendererInstance.a(s1, l, i1, i);
       }
-      boolean flag2 = (cursorPosition < text.length()) || (text.length() >= getMaxStringLength());
+      boolean flag2 = (this.cursorPosition < this.text.length()) || (this.text.length() >= getMaxStringLength());
       int k1 = j1;
       if (!flag)
       {
-        k1 = j > 0 ? l + width : l;
+        k1 = j > 0 ? l + this.width : l;
       }
       else if (flag2)
       {
@@ -434,17 +434,17 @@ public class FancyTextField
         j1--;
       }
       if ((s.length() > 0) && (flag) && (j < s.length())) {
-        j1 = fontRendererInstance.a(s.substring(j), j1, i1, i);
+        j1 = this.fontRendererInstance.a(s.substring(j), j1, i1, i);
       }
       if (flag1) {
         if (flag2) {
-          avp.a(k1, i1 - 1, k1 + 1, i1 + 1 + fontRendererInstance.a, -3092272);
+          avp.a(k1, i1 - 1, k1 + 1, i1 + 1 + this.fontRendererInstance.a, -3092272);
         }
       }
       if (k != j)
       {
-        int l1 = l + fontRendererInstance.a(s.substring(0, k));
-        drawCursorVertical(k1, i1 - 1, l1 - 1, i1 + 1 + fontRendererInstance.a);
+        int l1 = l + this.fontRendererInstance.a(s.substring(0, k));
+        drawCursorVertical(k1, i1 - 1, l1 - 1, i1 + 1 + this.fontRendererInstance.a);
       }
     }
   }
@@ -463,11 +463,11 @@ public class FancyTextField
       p_146188_2_ = p_146188_4_;
       p_146188_4_ = i1;
     }
-    if (p_146188_3_ > xPosition + width) {
-      p_146188_3_ = xPosition + width;
+    if (p_146188_3_ > this.xPosition + this.width) {
+      p_146188_3_ = this.xPosition + this.width;
     }
-    if (p_146188_1_ > xPosition + width) {
-      p_146188_1_ = xPosition + width;
+    if (p_146188_1_ > this.xPosition + this.width) {
+      p_146188_1_ = this.xPosition + this.width;
     }
     bfx tessellator = bfx.a();
     bfd worldrenderer = tessellator.c();
@@ -487,112 +487,112 @@ public class FancyTextField
   
   public void setMaxStringLength(int p_146203_1_)
   {
-    maxStringLength = p_146203_1_;
-    if (text.length() > p_146203_1_) {
-      text = text.substring(0, p_146203_1_);
+    this.maxStringLength = p_146203_1_;
+    if (this.text.length() > p_146203_1_) {
+      this.text = this.text.substring(0, p_146203_1_);
     }
   }
   
   public int getMaxStringLength()
   {
-    return maxStringLength;
+    return this.maxStringLength;
   }
   
   public int getCursorPosition()
   {
-    return cursorPosition;
+    return this.cursorPosition;
   }
   
   public boolean getEnableBackgroundDrawing()
   {
-    return enableBackgroundDrawing;
+    return this.enableBackgroundDrawing;
   }
   
   public void setEnableBackgroundDrawing(boolean p_146185_1_)
   {
-    enableBackgroundDrawing = p_146185_1_;
+    this.enableBackgroundDrawing = p_146185_1_;
   }
   
   public void setTextColor(int p_146193_1_)
   {
-    enabledColor = p_146193_1_;
+    this.enabledColor = p_146193_1_;
   }
   
   public void setDisabledTextColour(int p_146204_1_)
   {
-    disabledColor = p_146204_1_;
+    this.disabledColor = p_146204_1_;
   }
   
   public void setFocused(boolean p_146195_1_)
   {
-    if ((p_146195_1_) && (!isFocused)) {
-      cursorCounter = 0;
+    if ((p_146195_1_) && (!this.isFocused)) {
+      this.cursorCounter = 0;
     }
-    isFocused = p_146195_1_;
+    this.isFocused = p_146195_1_;
   }
   
   public boolean isFocused()
   {
-    return isFocused;
+    return this.isFocused;
   }
   
   public void setEnabled(boolean p_146184_1_)
   {
-    isEnabled = p_146184_1_;
+    this.isEnabled = p_146184_1_;
   }
   
   public int getSelectionEnd()
   {
-    return selectionEnd;
+    return this.selectionEnd;
   }
   
   public int getWidth()
   {
-    return getEnableBackgroundDrawing() ? width - 8 : width;
+    return getEnableBackgroundDrawing() ? this.width - 8 : this.width;
   }
   
   public void setSelectionPos(int p_146199_1_)
   {
-    int j = text.length();
+    int j = this.text.length();
     if (p_146199_1_ > j) {
       p_146199_1_ = j;
     }
     if (p_146199_1_ < 0) {
       p_146199_1_ = 0;
     }
-    selectionEnd = p_146199_1_;
-    if (fontRendererInstance != null)
+    this.selectionEnd = p_146199_1_;
+    if (this.fontRendererInstance != null)
     {
-      if (lineScrollOffset > j) {
-        lineScrollOffset = j;
+      if (this.lineScrollOffset > j) {
+        this.lineScrollOffset = j;
       }
       int k = getWidth();
-      String s = fontRendererInstance.a(text.substring(lineScrollOffset), k);
-      int l = s.length() + lineScrollOffset;
-      if (p_146199_1_ == lineScrollOffset) {
-        lineScrollOffset -= fontRendererInstance.a(text, k, true).length();
+      String s = this.fontRendererInstance.a(this.text.substring(this.lineScrollOffset), k);
+      int l = s.length() + this.lineScrollOffset;
+      if (p_146199_1_ == this.lineScrollOffset) {
+        this.lineScrollOffset -= this.fontRendererInstance.a(this.text, k, true).length();
       }
       if (p_146199_1_ > l) {
-        lineScrollOffset += p_146199_1_ - l;
-      } else if (p_146199_1_ <= lineScrollOffset) {
-        lineScrollOffset -= lineScrollOffset - p_146199_1_;
+        this.lineScrollOffset += p_146199_1_ - l;
+      } else if (p_146199_1_ <= this.lineScrollOffset) {
+        this.lineScrollOffset -= this.lineScrollOffset - p_146199_1_;
       }
-      lineScrollOffset = ns.a(lineScrollOffset, 0, j);
+      this.lineScrollOffset = ns.a(this.lineScrollOffset, 0, j);
     }
   }
   
   public void setCanLoseFocus(boolean p_146205_1_)
   {
-    canLoseFocus = p_146205_1_;
+    this.canLoseFocus = p_146205_1_;
   }
   
   public boolean getVisible()
   {
-    return visible;
+    return this.visible;
   }
   
   public void setVisible(boolean p_146189_1_)
   {
-    visible = p_146189_1_;
+    this.visible = p_146189_1_;
   }
 }

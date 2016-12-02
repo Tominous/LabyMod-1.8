@@ -31,12 +31,12 @@ public class RealmsScreen
   
   public RealmsScreen()
   {
-    proxy = new awr(this);
+    this.proxy = new awr(this);
   }
   
   public awr getProxy()
   {
-    return proxy;
+    return this.proxy;
   }
   
   public void init() {}
@@ -45,17 +45,17 @@ public class RealmsScreen
   
   public void drawCenteredString(String ☃, int ☃, int ☃, int ☃)
   {
-    proxy.a(☃, ☃, ☃, ☃);
+    this.proxy.a(☃, ☃, ☃, ☃);
   }
   
   public void drawString(String ☃, int ☃, int ☃, int ☃)
   {
-    proxy.b(☃, ☃, ☃, ☃);
+    this.proxy.b(☃, ☃, ☃, ☃);
   }
   
   public void blit(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    proxy.b(☃, ☃, ☃, ☃, ☃, ☃);
+    this.proxy.b(☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   public static void blit(int ☃, int ☃, float ☃, float ☃, int ☃, int ☃, int ☃, int ☃, float ☃, float ☃)
@@ -70,44 +70,44 @@ public class RealmsScreen
   
   public void fillGradient(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    proxy.a(☃, ☃, ☃, ☃, ☃, ☃);
+    this.proxy.a(☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   public void renderBackground()
   {
-    proxy.c();
+    this.proxy.c();
   }
   
   public boolean isPauseScreen()
   {
-    return proxy.d();
+    return this.proxy.d();
   }
   
   public void renderBackground(int ☃)
   {
-    proxy.b_(☃);
+    this.proxy.b_(☃);
   }
   
   public void render(int ☃, int ☃, float ☃)
   {
-    for (int ☃ = 0; ☃ < proxy.j().size(); ☃++) {
-      ((RealmsButton)proxy.j().get(☃)).render(☃, ☃);
+    for (int ☃ = 0; ☃ < this.proxy.j().size(); ☃++) {
+      ((RealmsButton)this.proxy.j().get(☃)).render(☃, ☃);
     }
   }
   
   public void renderTooltip(zx ☃, int ☃, int ☃)
   {
-    proxy.a(☃, ☃, ☃);
+    this.proxy.a(☃, ☃, ☃);
   }
   
   public void renderTooltip(String ☃, int ☃, int ☃)
   {
-    proxy.a(☃, ☃, ☃);
+    this.proxy.a(☃, ☃, ☃);
   }
   
   public void renderTooltip(List<String> ☃, int ☃, int ☃)
   {
-    proxy.a(☃, ☃, ☃);
+    this.proxy.a(☃, ☃, ☃);
   }
   
   public static void bindFace(String ☃, String ☃)
@@ -130,32 +130,32 @@ public class RealmsScreen
   
   public int width()
   {
-    return proxy.l;
+    return this.proxy.l;
   }
   
   public int height()
   {
-    return proxy.m;
+    return this.proxy.m;
   }
   
   public int fontLineHeight()
   {
-    return proxy.h();
+    return this.proxy.h();
   }
   
   public int fontWidth(String ☃)
   {
-    return proxy.c(☃);
+    return this.proxy.c(☃);
   }
   
   public void fontDrawShadow(String ☃, int ☃, int ☃, int ☃)
   {
-    proxy.c(☃, ☃, ☃, ☃);
+    this.proxy.c(☃, ☃, ☃, ☃);
   }
   
   public List<String> fontSplit(String ☃, int ☃)
   {
-    return proxy.a(☃, ☃);
+    return this.proxy.a(☃, ☃);
   }
   
   public void buttonClicked(RealmsButton ☃) {}
@@ -172,22 +172,22 @@ public class RealmsScreen
   
   public void buttonsClear()
   {
-    proxy.i();
+    this.proxy.i();
   }
   
   public void buttonsAdd(RealmsButton ☃)
   {
-    proxy.a(☃);
+    this.proxy.a(☃);
   }
   
   public List<RealmsButton> buttons()
   {
-    return proxy.j();
+    return this.proxy.j();
   }
   
   public void buttonsRemove(RealmsButton ☃)
   {
-    proxy.b(☃);
+    this.proxy.b(☃);
   }
   
   public RealmsEditBox newEditBox(int ☃, int ☃, int ☃, int ☃, int ☃)

@@ -9,15 +9,15 @@ public class xp
   public xp(xi ☃, int ☃, int ☃)
   {
     int ☃ = ☃ * ☃;
-    a = new zx[☃];
-    d = ☃;
-    b = ☃;
-    c = ☃;
+    this.a = new zx[☃];
+    this.d = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public int o_()
   {
-    return a.length;
+    return this.a.length;
   }
   
   public zx a(int ☃)
@@ -25,15 +25,15 @@ public class xp
     if (☃ >= o_()) {
       return null;
     }
-    return a[☃];
+    return this.a[☃];
   }
   
   public zx c(int ☃, int ☃)
   {
-    if ((☃ < 0) || (☃ >= b) || (☃ < 0) || (☃ > c)) {
+    if ((☃ < 0) || (☃ >= this.b) || (☃ < 0) || (☃ > this.c)) {
       return null;
     }
-    return a(☃ + ☃ * b);
+    return a(☃ + ☃ * this.b);
   }
   
   public String e_()
@@ -56,10 +56,10 @@ public class xp
   
   public zx b(int ☃)
   {
-    if (a[☃] != null)
+    if (this.a[☃] != null)
     {
-      zx ☃ = a[☃];
-      a[☃] = null;
+      zx ☃ = this.a[☃];
+      this.a[☃] = null;
       return ☃;
     }
     return null;
@@ -67,20 +67,20 @@ public class xp
   
   public zx a(int ☃, int ☃)
   {
-    if (a[☃] != null)
+    if (this.a[☃] != null)
     {
-      if (a[☃].b <= ☃)
+      if (this.a[☃].b <= ☃)
       {
-        zx ☃ = a[☃];
-        a[☃] = null;
-        d.a(this);
+        zx ☃ = this.a[☃];
+        this.a[☃] = null;
+        this.d.a(this);
         return ☃;
       }
-      zx ☃ = a[☃].a(☃);
-      if (a[☃].b == 0) {
-        a[☃] = null;
+      zx ☃ = this.a[☃].a(☃);
+      if (this.a[☃].b == 0) {
+        this.a[☃] = null;
       }
-      d.a(this);
+      this.d.a(this);
       return ☃;
     }
     return null;
@@ -88,8 +88,8 @@ public class xp
   
   public void a(int ☃, zx ☃)
   {
-    a[☃] = ☃;
-    d.a(this);
+    this.a[☃] = ☃;
+    this.d.a(this);
   }
   
   public int q_()
@@ -127,18 +127,18 @@ public class xp
   
   public void l()
   {
-    for (int ☃ = 0; ☃ < a.length; ☃++) {
-      a[☃] = null;
+    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
+      this.a[☃] = null;
     }
   }
   
   public int h()
   {
-    return c;
+    return this.c;
   }
   
   public int i()
   {
-    return b;
+    return this.b;
   }
 }

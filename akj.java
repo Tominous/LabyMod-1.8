@@ -12,7 +12,7 @@ public class akj
   public akj()
   {
     super(arm.q);
-    j(M.b().a(a, cq.c).a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)));
+    j(this.M.b().a(a, cq.c).a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)));
     a(yz.d);
     a(true);
   }
@@ -179,7 +179,7 @@ public class akj
     } else if ((☃) && (!☃)) {
       ☃.a(☃.n() + 0.5D, ☃.o() + 0.1D, ☃.p() + 0.5D, "random.click", 0.4F, 0.7F);
     } else if ((!☃) && (☃)) {
-      ☃.a(☃.n() + 0.5D, ☃.o() + 0.1D, ☃.p() + 0.5D, "random.bowhit", 0.4F, 1.2F / (s.nextFloat() * 0.2F + 0.9F));
+      ☃.a(☃.n() + 0.5D, ☃.o() + 0.1D, ☃.p() + 0.5D, "random.bowhit", 0.4F, 1.2F / (☃.s.nextFloat() * 0.2F + 0.9F));
     }
   }
   

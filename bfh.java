@@ -11,23 +11,23 @@ public abstract class bfh
   
   public void a(double ☃, double ☃, double ☃)
   {
-    b = true;
-    a.clear();
+    this.b = true;
+    this.a.clear();
     
-    c = ☃;
-    d = ☃;
-    e = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.e = ☃;
   }
   
   public void a(bht ☃)
   {
     cj ☃ = ☃.j();
-    bfl.b((float)(☃.n() - c), (float)(☃.o() - d), (float)(☃.p() - e));
+    bfl.b((float)(☃.n() - this.c), (float)(☃.o() - this.d), (float)(☃.p() - this.e));
   }
   
   public void a(bht ☃, adf ☃)
   {
-    a.add(☃);
+    this.a.add(☃);
   }
   
   public abstract void a(adf paramadf);

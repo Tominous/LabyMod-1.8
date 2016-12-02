@@ -7,7 +7,7 @@ public class bla
   
   public bla(bjs ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public void a(tt ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
@@ -15,9 +15,9 @@ public class bla
     if (!☃.cl()) {
       return;
     }
-    b.a(a);
-    c.a(b.b());
-    c.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
+    this.b.a(a);
+    this.c.a(this.b.b());
+    this.c.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   public boolean b()

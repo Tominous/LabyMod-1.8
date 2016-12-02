@@ -20,34 +20,34 @@ public class FancyButton
   
   public void a(ave mc, int mouseX, int mouseY)
   {
-    if (m)
+    if (this.m)
     {
-      avn fontrenderer = k;
+      avn fontrenderer = mc.k;
       mc.P().a(a);
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-      n = ((mouseX >= h) && (mouseY >= i) && (mouseX < h + f) && (mouseY < i + g));
+      this.n = ((mouseX >= this.h) && (mouseY >= this.i) && (mouseX < this.h + this.f) && (mouseY < this.i + this.g));
       
-      int k = a(n);
+      int k = a(this.n);
       if (this.l)
       {
-        if ((!n) && (fade < 100)) {
-          fade += 2;
+        if ((!this.n) && (this.fade < 100)) {
+          this.fade += 2;
         }
-        if ((n) && (fade > 70)) {
-          fade -= 2;
+        if ((this.n) && (this.fade > 70)) {
+          this.fade -= 2;
         }
-        avp.a(h, i, h + f, i + g, new Color(52, 152, 219, fade)
+        avp.a(this.h, this.i, this.h + this.f, this.i + this.g, new Color(52, 152, 219, this.fade)
           .getRGB());
       }
       else
       {
-        avp.a(h, i, h + f, i + g, new Color(44, 62, 80, 100)
+        avp.a(this.h, this.i, this.h + this.f, this.i + this.g, new Color(44, 62, 80, 100)
           .getRGB());
       }
       b(mc, mouseX, mouseY);
       int l = 14737632;
       
-      a(fontrenderer, j, h + f / 2, i + (g - 8) / 2, l);
+      a(fontrenderer, this.j, this.h + this.f / 2, this.i + (this.g - 8) / 2, l);
     }
   }
 }

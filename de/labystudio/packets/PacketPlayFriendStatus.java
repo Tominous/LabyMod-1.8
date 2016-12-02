@@ -20,14 +20,14 @@ public class PacketPlayFriendStatus
   
   public void read(PacketBuf buf)
   {
-    player = buf.readPlayer();
-    playerInfo = buf.readServerInfo();
+    this.player = buf.readPlayer();
+    this.playerInfo = buf.readServerInfo();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writePlayer(player);
-    buf.writeServerInfo(playerInfo);
+    buf.writePlayer(this.player);
+    buf.writeServerInfo(this.playerInfo);
   }
   
   public void handle(PacketHandler packetHandler)
@@ -37,11 +37,11 @@ public class PacketPlayFriendStatus
   
   public LabyModPlayer getPlayer()
   {
-    return player;
+    return this.player;
   }
   
   public ServerInfo getPlayerInfo()
   {
-    return playerInfo;
+    return this.playerInfo;
   }
 }

@@ -6,7 +6,7 @@ public class ahp
   public ahp()
   {
     super(arm.w, false);
-    L = 0.98F;
+    this.L = 0.98F;
     a(true);
     a(yz.b);
   }
@@ -29,7 +29,7 @@ public class ahp
     }
     else
     {
-      if (t.n())
+      if (☃.t.n())
       {
         ☃.g(☃);
         return;
@@ -54,7 +54,7 @@ public class ahp
     if (☃.b(ads.b, ☃) <= 11 - p()) {
       return;
     }
-    if (t.n())
+    if (☃.t.n())
     {
       ☃.g(☃);
       return;

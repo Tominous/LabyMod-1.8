@@ -12,7 +12,7 @@ public class agh
   protected agh(arm ☃)
   {
     super(☃);
-    j(M.b().a(a, cq.c).a(b, Boolean.valueOf(false)).a(N, agh.b.a).a(O, Boolean.valueOf(false)).a(P, agh.a.b));
+    j(this.M.b().a(a, cq.c).a(b, Boolean.valueOf(false)).a(N, agh.b.a).a(O, Boolean.valueOf(false)).a(P, agh.a.b));
   }
   
   public String f()
@@ -106,7 +106,7 @@ public class agh
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (J == arm.f) {
+    if (this.J == arm.f) {
       return true;
     }
     cj ☃ = ☃.b(P) == agh.a.b ? ☃ : ☃.b();
@@ -171,7 +171,7 @@ public class agh
       }
       if (☃)
       {
-        if (!D) {
+        if (!☃.D) {
           b(☃, ☃, ☃, 0);
         }
       }
@@ -269,7 +269,7 @@ public class agh
   public void a(adm ☃, cj ☃, alz ☃, wn ☃)
   {
     cj ☃ = ☃.b();
-    if ((bA.d) && (☃.b(P) == agh.a.a) && (☃.p(☃).c() == this)) {
+    if ((☃.bA.d) && (☃.b(P) == agh.a.a) && (☃.p(☃).c() == this)) {
       ☃.g(☃);
     }
   }

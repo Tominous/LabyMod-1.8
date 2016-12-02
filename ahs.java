@@ -60,7 +60,7 @@ public abstract class ahs
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
     if ((((Boolean)☃.b(b)).booleanValue()) && (((Boolean)☃.b(a)).booleanValue()))
@@ -74,8 +74,8 @@ public abstract class ahs
       int ☃ = 32;
       int ☃ = ☃ * ☃;
       int ☃ = ☃ / 2;
-      if (N == null) {
-        N = new int[☃ * ☃ * ☃];
+      if (this.N == null) {
+        this.N = new int[☃ * ☃ * ☃];
       }
       if (☃.a(new cj(☃ - ☃, ☃ - ☃, ☃ - ☃), new cj(☃ + ☃, ☃ + ☃, ☃ + ☃)))
       {
@@ -86,11 +86,11 @@ public abstract class ahs
             {
               afh ☃ = ☃.p(☃.c(☃ + ☃, ☃ + ☃, ☃ + ☃)).c();
               if ((☃ == afi.r) || (☃ == afi.s)) {
-                N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] = 0;
+                this.N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] = 0;
               } else if (☃.t() == arm.j) {
-                N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] = -2;
+                this.N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] = -2;
               } else {
-                N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] = -1;
+                this.N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] = -1;
               }
             }
           }
@@ -99,25 +99,25 @@ public abstract class ahs
           for (int ☃ = -☃; ☃ <= ☃; ☃++) {
             for (int ☃ = -☃; ☃ <= ☃; ☃++) {
               for (int ☃ = -☃; ☃ <= ☃; ☃++) {
-                if (N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] == ☃ - 1)
+                if (this.N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] == ☃ - 1)
                 {
-                  if (N[((☃ + ☃ - 1) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] == -2) {
-                    N[((☃ + ☃ - 1) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] = ☃;
+                  if (this.N[((☃ + ☃ - 1) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] == -2) {
+                    this.N[((☃ + ☃ - 1) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] = ☃;
                   }
-                  if (N[((☃ + ☃ + 1) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] == -2) {
-                    N[((☃ + ☃ + 1) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] = ☃;
+                  if (this.N[((☃ + ☃ + 1) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] == -2) {
+                    this.N[((☃ + ☃ + 1) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃))] = ☃;
                   }
-                  if (N[((☃ + ☃) * ☃ + (☃ + ☃ - 1) * ☃ + (☃ + ☃))] == -2) {
-                    N[((☃ + ☃) * ☃ + (☃ + ☃ - 1) * ☃ + (☃ + ☃))] = ☃;
+                  if (this.N[((☃ + ☃) * ☃ + (☃ + ☃ - 1) * ☃ + (☃ + ☃))] == -2) {
+                    this.N[((☃ + ☃) * ☃ + (☃ + ☃ - 1) * ☃ + (☃ + ☃))] = ☃;
                   }
-                  if (N[((☃ + ☃) * ☃ + (☃ + ☃ + 1) * ☃ + (☃ + ☃))] == -2) {
-                    N[((☃ + ☃) * ☃ + (☃ + ☃ + 1) * ☃ + (☃ + ☃))] = ☃;
+                  if (this.N[((☃ + ☃) * ☃ + (☃ + ☃ + 1) * ☃ + (☃ + ☃))] == -2) {
+                    this.N[((☃ + ☃) * ☃ + (☃ + ☃ + 1) * ☃ + (☃ + ☃))] = ☃;
                   }
-                  if (N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃ - 1))] == -2) {
-                    N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃ - 1))] = ☃;
+                  if (this.N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃ - 1))] == -2) {
+                    this.N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃ - 1))] = ☃;
                   }
-                  if (N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃ + 1))] == -2) {
-                    N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃ + 1))] = ☃;
+                  if (this.N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃ + 1))] == -2) {
+                    this.N[((☃ + ☃) * ☃ + (☃ + ☃) * ☃ + (☃ + ☃ + 1))] = ☃;
                   }
                 }
               }
@@ -125,7 +125,7 @@ public abstract class ahs
           }
         }
       }
-      int ☃ = N[(☃ * ☃ + ☃ * ☃ + ☃)];
+      int ☃ = this.N[(☃ * ☃ + ☃ * ☃ + ☃)];
       if (☃ >= 0) {
         ☃.a(☃, ☃.a(b, Boolean.valueOf(false)), 4);
       } else {
@@ -164,7 +164,7 @@ public abstract class ahs
   
   public void a(adm ☃, cj ☃, alz ☃, float ☃, int ☃)
   {
-    if (!D)
+    if (!☃.D)
     {
       int ☃ = d(☃);
       if (☃ > 0)
@@ -174,9 +174,9 @@ public abstract class ahs
           ☃ = 10;
         }
       }
-      if (s.nextInt(☃) == 0)
+      if (☃.s.nextInt(☃) == 0)
       {
-        zw ☃ = a(☃, s, ☃);
+        zw ☃ = a(☃, ☃.s, ☃);
         a(☃, ☃, new zx(☃, 1, a(☃)));
       }
       ☃ = 200;
@@ -200,19 +200,19 @@ public abstract class ahs
   
   public boolean c()
   {
-    return !R;
+    return !this.R;
   }
   
   public void b(boolean ☃)
   {
-    P = ☃;
-    R = ☃;
-    O = (☃ ? 0 : 1);
+    this.P = ☃;
+    this.R = ☃;
+    this.O = (☃ ? 0 : 1);
   }
   
   public adf m()
   {
-    return P ? adf.b : adf.a;
+    return this.P ? adf.b : adf.a;
   }
   
   public boolean w()

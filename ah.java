@@ -29,7 +29,7 @@ public class ah
     wn ☃ = ☃.length >= 2 ? a(☃, ☃[1]) : b(☃);
     
     ☃.a(☃);
-    O = 0.0F;
+    ☃.O = 0.0F;
     if (☃.e().Q().b("sendCommandFeedback")) {
       ☃.a(new fb("gameMode.changed", new Object[0]));
     }

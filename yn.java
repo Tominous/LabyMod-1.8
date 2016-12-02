@@ -8,7 +8,7 @@ public class yn
   
   public boolean a(zx ☃, wn ☃, adm ☃, cj ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (D) {
+    if (☃.D) {
       return true;
     }
     if (☃ != cq.b) {
@@ -20,7 +20,7 @@ public class yn
     if (!☃) {
       ☃ = ☃.a();
     }
-    int ☃ = ns.c(y * 4.0F / 360.0F + 0.5D) & 0x3;
+    int ☃ = ns.c(☃.y * 4.0F / 360.0F + 0.5D) & 0x3;
     cq ☃ = cq.b(☃);
     cj ☃ = ☃.a(☃);
     if ((!☃.a(☃, ☃, ☃)) || (!☃.a(☃, ☃, ☃))) {
@@ -37,7 +37,7 @@ public class yn
         alz ☃ = ☃.a(afg.a, afg.a.a);
         ☃.a(☃, ☃, 3);
       }
-      b -= 1;
+      ☃.b -= 1;
       return true;
     }
     return false;

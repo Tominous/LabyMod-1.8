@@ -16,12 +16,12 @@ public class aqe
   {
     if (☃.length == 6)
     {
-      a = ☃[0];
-      b = ☃[1];
-      c = ☃[2];
-      d = ☃[3];
-      e = ☃[4];
-      f = ☃[5];
+      this.a = ☃[0];
+      this.b = ☃[1];
+      this.c = ☃[2];
+      this.d = ☃[3];
+      this.e = ☃[4];
+      this.f = ☃[5];
     }
   }
   
@@ -53,112 +53,112 @@ public class aqe
   
   public aqe(aqe ☃)
   {
-    a = a;
-    b = b;
-    c = c;
-    d = d;
-    e = e;
-    f = f;
+    this.a = ☃.a;
+    this.b = ☃.b;
+    this.c = ☃.c;
+    this.d = ☃.d;
+    this.e = ☃.e;
+    this.f = ☃.f;
   }
   
   public aqe(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
-    e = ☃;
-    f = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.e = ☃;
+    this.f = ☃;
   }
   
   public aqe(df ☃, df ☃)
   {
-    a = Math.min(☃.n(), ☃.n());
-    b = Math.min(☃.o(), ☃.o());
-    c = Math.min(☃.p(), ☃.p());
-    d = Math.max(☃.n(), ☃.n());
-    e = Math.max(☃.o(), ☃.o());
-    f = Math.max(☃.p(), ☃.p());
+    this.a = Math.min(☃.n(), ☃.n());
+    this.b = Math.min(☃.o(), ☃.o());
+    this.c = Math.min(☃.p(), ☃.p());
+    this.d = Math.max(☃.n(), ☃.n());
+    this.e = Math.max(☃.o(), ☃.o());
+    this.f = Math.max(☃.p(), ☃.p());
   }
   
   public aqe(int ☃, int ☃, int ☃, int ☃)
   {
-    a = ☃;
-    c = ☃;
-    d = ☃;
-    f = ☃;
+    this.a = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.f = ☃;
     
-    b = 1;
-    e = 512;
+    this.b = 1;
+    this.e = 512;
   }
   
   public boolean a(aqe ☃)
   {
-    return (d >= a) && (a <= d) && (f >= c) && (c <= f) && (e >= b) && (b <= e);
+    return (this.d >= ☃.a) && (this.a <= ☃.d) && (this.f >= ☃.c) && (this.c <= ☃.f) && (this.e >= ☃.b) && (this.b <= ☃.e);
   }
   
   public boolean a(int ☃, int ☃, int ☃, int ☃)
   {
-    return (d >= ☃) && (a <= ☃) && (f >= ☃) && (c <= ☃);
+    return (this.d >= ☃) && (this.a <= ☃) && (this.f >= ☃) && (this.c <= ☃);
   }
   
   public void b(aqe ☃)
   {
-    a = Math.min(a, a);
-    b = Math.min(b, b);
-    c = Math.min(c, c);
-    d = Math.max(d, d);
-    e = Math.max(e, e);
-    f = Math.max(f, f);
+    this.a = Math.min(this.a, ☃.a);
+    this.b = Math.min(this.b, ☃.b);
+    this.c = Math.min(this.c, ☃.c);
+    this.d = Math.max(this.d, ☃.d);
+    this.e = Math.max(this.e, ☃.e);
+    this.f = Math.max(this.f, ☃.f);
   }
   
   public void a(int ☃, int ☃, int ☃)
   {
-    a += ☃;
-    b += ☃;
-    c += ☃;
-    d += ☃;
-    e += ☃;
-    f += ☃;
+    this.a += ☃;
+    this.b += ☃;
+    this.c += ☃;
+    this.d += ☃;
+    this.e += ☃;
+    this.f += ☃;
   }
   
   public boolean b(df ☃)
   {
-    return (☃.n() >= a) && (☃.n() <= d) && (☃.p() >= c) && (☃.p() <= f) && (☃.o() >= b) && (☃.o() <= e);
+    return (☃.n() >= this.a) && (☃.n() <= this.d) && (☃.p() >= this.c) && (☃.p() <= this.f) && (☃.o() >= this.b) && (☃.o() <= this.e);
   }
   
   public df b()
   {
-    return new df(d - a, e - b, f - c);
+    return new df(this.d - this.a, this.e - this.b, this.f - this.c);
   }
   
   public int c()
   {
-    return d - a + 1;
+    return this.d - this.a + 1;
   }
   
   public int d()
   {
-    return e - b + 1;
+    return this.e - this.b + 1;
   }
   
   public int e()
   {
-    return f - c + 1;
+    return this.f - this.c + 1;
   }
   
   public df f()
   {
-    return new cj(a + (d - a + 1) / 2, b + (e - b + 1) / 2, c + (f - c + 1) / 2);
+    return new cj(this.a + (this.d - this.a + 1) / 2, this.b + (this.e - this.b + 1) / 2, this.c + (this.f - this.c + 1) / 2);
   }
   
   public String toString()
   {
-    return Objects.toStringHelper(this).add("x0", a).add("y0", b).add("z0", c).add("x1", d).add("y1", e).add("z1", f).toString();
+    return Objects.toStringHelper(this).add("x0", this.a).add("y0", this.b).add("z0", this.c).add("x1", this.d).add("y1", this.e).add("z1", this.f).toString();
   }
   
   public ds g()
   {
-    return new ds(new int[] { a, b, c, d, e, f });
+    return new ds(new int[] { this.a, this.b, this.c, this.d, this.e, this.f });
   }
 }

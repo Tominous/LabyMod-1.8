@@ -17,7 +17,7 @@ public class agc
   public agc()
   {
     super(true);
-    j(M.b().a(N, Boolean.valueOf(false)).a(b, afe.b.a));
+    j(this.M.b().a(N, Boolean.valueOf(false)).a(b, afe.b.a));
     a(true);
   }
   
@@ -33,7 +33,7 @@ public class agc
   
   public void a(adm ☃, cj ☃, alz ☃, pk ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
     if (((Boolean)☃.b(N)).booleanValue()) {
@@ -46,7 +46,7 @@ public class agc
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if ((D) || (!((Boolean)☃.b(N)).booleanValue())) {
+    if ((☃.D) || (!((Boolean)☃.b(N)).booleanValue())) {
       return;
     }
     e(☃, ☃, ☃);

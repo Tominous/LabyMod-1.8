@@ -13,8 +13,8 @@ public class akd
   protected akd(arm ☃, boolean ☃)
   {
     super(☃);
-    j(M.b().a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, Boolean.valueOf(false)));
-    a = ☃;
+    j(this.M.b().a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, Boolean.valueOf(false)));
+    this.a = ☃;
     a(yz.c);
   }
   
@@ -25,7 +25,7 @@ public class akd
   
   public zw a(alz ☃, Random ☃, int ☃)
   {
-    if (!a) {
+    if (!this.a) {
       return null;
     }
     return super.a(☃, ☃, ☃);

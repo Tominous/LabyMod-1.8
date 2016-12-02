@@ -17,13 +17,13 @@ public class bpq$b
     throws IOException
   {
     super("LanServerDetector #" + bpq.a().incrementAndGet());
-    a = ☃;
+    this.a = ☃;
     setDaemon(true);
     
-    c = new MulticastSocket(4445);
-    b = InetAddress.getByName("224.0.2.60");
-    c.setSoTimeout(5000);
-    c.joinGroup(b);
+    this.c = new MulticastSocket(4445);
+    this.b = InetAddress.getByName("224.0.2.60");
+    this.c.setSoTimeout(5000);
+    this.c.joinGroup(this.b);
   }
   
   public void run()
@@ -34,7 +34,7 @@ public class bpq$b
       DatagramPacket ☃ = new DatagramPacket(☃, ☃.length);
       try
       {
-        c.receive(☃);
+        this.c.receive(☃);
       }
       catch (SocketTimeoutException ☃)
       {
@@ -47,13 +47,13 @@ public class bpq$b
       }
       String ☃ = new String(☃.getData(), ☃.getOffset(), ☃.getLength());
       bpq.b().debug(☃.getAddress() + ": " + ☃);
-      a.a(☃, ☃.getAddress());
+      this.a.a(☃, ☃.getAddress());
     }
     try
     {
-      c.leaveGroup(b);
+      this.c.leaveGroup(this.b);
     }
     catch (IOException localIOException1) {}
-    c.close();
+    this.c.close();
   }
 }

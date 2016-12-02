@@ -6,7 +6,7 @@ public class aaa
   public aaa(ahs ☃)
   {
     super(☃);
-    b = ☃;
+    this.b = ☃;
     
     d(0);
     a(true);
@@ -19,11 +19,11 @@ public class aaa
   
   public int a(zx ☃, int ☃)
   {
-    return b.h(b.a(☃.i()));
+    return this.b.h(this.b.a(☃.i()));
   }
   
   public String e_(zx ☃)
   {
-    return super.a() + "." + b.b(☃.i()).d();
+    return super.a() + "." + this.b.b(☃.i()).d();
   }
 }

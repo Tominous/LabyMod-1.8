@@ -18,29 +18,29 @@ public abstract class vd
   public void a(ow ☃)
   {
     super.a(☃);
-    if (o.Q().b("doEntityDrops")) {
-      oi.a(o, this, this);
+    if (this.o.Q().b("doEntityDrops")) {
+      oi.a(this.o, this, this);
     }
   }
   
   public zx a(int ☃)
   {
-    return a[☃];
+    return this.a[☃];
   }
   
   public zx a(int ☃, int ☃)
   {
-    if (a[☃] != null)
+    if (this.a[☃] != null)
     {
-      if (a[☃].b <= ☃)
+      if (this.a[☃].b <= ☃)
       {
-        zx ☃ = a[☃];
-        a[☃] = null;
+        zx ☃ = this.a[☃];
+        this.a[☃] = null;
         return ☃;
       }
-      zx ☃ = a[☃].a(☃);
-      if (a[☃].b == 0) {
-        a[☃] = null;
+      zx ☃ = this.a[☃].a(☃);
+      if (this.a[☃].b == 0) {
+        this.a[☃] = null;
       }
       return ☃;
     }
@@ -49,10 +49,10 @@ public abstract class vd
   
   public zx b(int ☃)
   {
-    if (a[☃] != null)
+    if (this.a[☃] != null)
     {
-      zx ☃ = a[☃];
-      a[☃] = null;
+      zx ☃ = this.a[☃];
+      this.a[☃] = null;
       return ☃;
     }
     return null;
@@ -60,9 +60,9 @@ public abstract class vd
   
   public void a(int ☃, zx ☃)
   {
-    a[☃] = ☃;
-    if ((☃ != null) && (b > q_())) {
-      b = q_();
+    this.a[☃] = ☃;
+    if ((☃ != null) && (☃.b > q_())) {
+      ☃.b = q_();
     }
   }
   
@@ -70,7 +70,7 @@ public abstract class vd
   
   public boolean a(wn ☃)
   {
-    if (I) {
+    if (this.I) {
       return false;
     }
     if (☃.h(this) > 64.0D) {
@@ -100,14 +100,14 @@ public abstract class vd
   
   public void c(int ☃)
   {
-    b = false;
+    this.b = false;
     super.c(☃);
   }
   
   public void J()
   {
-    if (b) {
-      oi.a(o, this, this);
+    if (this.b) {
+      oi.a(this.o, this, this);
     }
     super.J();
   }
@@ -117,12 +117,12 @@ public abstract class vd
     super.b(☃);
     
     du ☃ = new du();
-    for (int ☃ = 0; ☃ < a.length; ☃++) {
-      if (a[☃] != null)
+    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
+      if (this.a[☃] != null)
       {
         dn ☃ = new dn();
         ☃.a("Slot", (byte)☃);
-        a[☃].b(☃);
+        this.a[☃].b(☃);
         ☃.a(☃);
       }
     }
@@ -134,20 +134,20 @@ public abstract class vd
     super.a(☃);
     
     du ☃ = ☃.c("Items", 10);
-    a = new zx[o_()];
+    this.a = new zx[o_()];
     for (int ☃ = 0; ☃ < ☃.c(); ☃++)
     {
       dn ☃ = ☃.b(☃);
       int ☃ = ☃.d("Slot") & 0xFF;
-      if ((☃ >= 0) && (☃ < a.length)) {
-        a[☃] = zx.a(☃);
+      if ((☃ >= 0) && (☃ < this.a.length)) {
+        this.a[☃] = zx.a(☃);
       }
     }
   }
   
   public boolean e(wn ☃)
   {
-    if (!o.D) {
+    if (!this.o.D) {
       ☃.a(this);
     }
     return true;
@@ -158,9 +158,9 @@ public abstract class vd
     int ☃ = 15 - xi.b(this);
     float ☃ = 0.98F + ☃ * 0.001F;
     
-    v *= ☃;
-    w *= 0.0D;
-    x *= ☃;
+    this.v *= ☃;
+    this.w *= 0.0D;
+    this.x *= ☃;
   }
   
   public int a_(int ☃)
@@ -189,8 +189,8 @@ public abstract class vd
   
   public void l()
   {
-    for (int ☃ = 0; ☃ < a.length; ☃++) {
-      a[☃] = null;
+    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
+      this.a[☃] = null;
     }
   }
 }

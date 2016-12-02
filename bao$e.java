@@ -10,9 +10,9 @@ public class bao$e
   
   public bao$e(avm ☃, PropertyMap ☃, PropertyMap ☃, Proxy ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
   }
 }

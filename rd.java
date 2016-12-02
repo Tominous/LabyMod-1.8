@@ -22,11 +22,11 @@ public abstract class rd
   
   public void a(int ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public int j()
   {
-    return a;
+    return this.a;
   }
 }

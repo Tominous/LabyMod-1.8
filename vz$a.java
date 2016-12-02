@@ -10,39 +10,39 @@ class vz$a
   public vz$a(vz ☃)
   {
     super(☃, 1.0D, 10);
-    a = ☃;
+    this.a = ☃;
     
     a(1);
   }
   
   public boolean a()
   {
-    if (a.u() != null) {
+    if (this.a.u() != null) {
       return false;
     }
-    if (!a.s().m()) {
+    if (!this.a.s().m()) {
       return false;
     }
-    Random ☃ = a.bc();
+    Random ☃ = this.a.bc();
     if (☃.nextInt(10) == 0)
     {
-      b = cq.a(☃);
+      this.b = cq.a(☃);
       
-      cj ☃ = new cj(a.s, a.t + 0.5D, a.u).a(b);
-      alz ☃ = a.o.p(☃);
+      cj ☃ = new cj(this.a.s, this.a.t + 0.5D, this.a.u).a(this.b);
+      alz ☃ = this.a.o.p(☃);
       if (ahz.d(☃))
       {
-        c = true;
+        this.c = true;
         return true;
       }
     }
-    c = false;
+    this.c = false;
     return super.a();
   }
   
   public boolean b()
   {
-    if (c) {
+    if (this.c) {
       return false;
     }
     return super.b();
@@ -50,19 +50,19 @@ class vz$a
   
   public void c()
   {
-    if (!c)
+    if (!this.c)
     {
       super.c();
       return;
     }
-    adm ☃ = a.o;
-    cj ☃ = new cj(a.s, a.t + 0.5D, a.u).a(b);
+    adm ☃ = this.a.o;
+    cj ☃ = new cj(this.a.s, this.a.t + 0.5D, this.a.u).a(this.b);
     alz ☃ = ☃.p(☃);
     if (ahz.d(☃))
     {
       ☃.a(☃, afi.be.Q().a(ahz.a, ahz.a.a(☃)), 3);
-      a.y();
-      a.J();
+      this.a.y();
+      this.a.J();
     }
   }
 }

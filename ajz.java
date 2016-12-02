@@ -12,7 +12,7 @@ public class ajz
   public ajz()
   {
     super(arm.e);
-    j(M.b().a(a, ajz.a.a));
+    j(this.M.b().a(a, ajz.a.a));
     a(yz.b);
   }
   
@@ -61,19 +61,19 @@ public class ajz
     
     private a(int ☃, String ☃, String ☃)
     {
-      f = ☃;
-      g = ☃;
-      h = ☃;
+      this.f = ☃;
+      this.g = ☃;
+      this.h = ☃;
     }
     
     public int a()
     {
-      return f;
+      return this.f;
     }
     
     public String toString()
     {
-      return g;
+      return this.g;
     }
     
     public static a a(int ☃)
@@ -86,12 +86,12 @@ public class ajz
     
     public String l()
     {
-      return g;
+      return this.g;
     }
     
     public String c()
     {
-      return h;
+      return this.h;
     }
   }
 }

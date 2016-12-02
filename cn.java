@@ -37,14 +37,14 @@ public class cn
     }
     uz ☃ = new uz(☃, ☃, ☃, ☃, ☃);
     
-    double ☃ = s.nextDouble() * 0.1D + 0.2D;
-    v = (☃.g() * ☃);
-    w = 0.20000000298023224D;
-    x = (☃.i() * ☃);
+    double ☃ = ☃.s.nextDouble() * 0.1D + 0.2D;
+    ☃.v = (☃.g() * ☃);
+    ☃.w = 0.20000000298023224D;
+    ☃.x = (☃.i() * ☃);
     
-    v += s.nextGaussian() * 0.007499999832361937D * ☃;
-    w += s.nextGaussian() * 0.007499999832361937D * ☃;
-    x += s.nextGaussian() * 0.007499999832361937D * ☃;
+    ☃.v += ☃.s.nextGaussian() * 0.007499999832361937D * ☃;
+    ☃.w += ☃.s.nextGaussian() * 0.007499999832361937D * ☃;
+    ☃.x += ☃.s.nextGaussian() * 0.007499999832361937D * ☃;
     
     ☃.d(☃);
   }

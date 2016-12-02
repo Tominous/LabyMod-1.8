@@ -291,8 +291,8 @@ public class TeamSpeak
     if (!defaultScreen)
     {
       defaultScreen = true;
-      xSplit = getInstancedraw.getWidth() / 3 * 2;
-      ySplit = getInstancedraw.getHeight() / 4 * 3;
+      xSplit = LabyMod.getInstance().draw.getWidth() / 3 * 2;
+      ySplit = LabyMod.getInstance().draw.getHeight() / 4 * 3;
     }
   }
   

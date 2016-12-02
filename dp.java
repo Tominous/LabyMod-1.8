@@ -11,20 +11,20 @@ public class dp
   
   public dp(double ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   void a(DataOutput ☃)
     throws IOException
   {
-    ☃.writeDouble(b);
+    ☃.writeDouble(this.b);
   }
   
   void a(DataInput ☃, int ☃, dw ☃)
     throws IOException
   {
     ☃.a(128L);
-    b = ☃.readDouble();
+    this.b = ☃.readDouble();
   }
   
   public byte a()
@@ -34,12 +34,12 @@ public class dp
   
   public String toString()
   {
-    return "" + b + "d";
+    return "" + this.b + "d";
   }
   
   public eb b()
   {
-    return new dp(b);
+    return new dp(this.b);
   }
   
   public boolean equals(Object ☃)
@@ -47,44 +47,44 @@ public class dp
     if (super.equals(☃))
     {
       dp ☃ = (dp)☃;
-      return b == b;
+      return this.b == ☃.b;
     }
     return false;
   }
   
   public int hashCode()
   {
-    long ☃ = Double.doubleToLongBits(b);
+    long ☃ = Double.doubleToLongBits(this.b);
     return super.hashCode() ^ (int)(☃ ^ ☃ >>> 32);
   }
   
   public long c()
   {
-    return Math.floor(b);
+    return Math.floor(this.b);
   }
   
   public int d()
   {
-    return ns.c(b);
+    return ns.c(this.b);
   }
   
   public short e()
   {
-    return (short)(ns.c(b) & 0xFFFF);
+    return (short)(ns.c(this.b) & 0xFFFF);
   }
   
   public byte f()
   {
-    return (byte)(ns.c(b) & 0xFF);
+    return (byte)(ns.c(this.b) & 0xFF);
   }
   
   public double g()
   {
-    return b;
+    return this.b;
   }
   
   public float h()
   {
-    return (float)b;
+    return (float)this.b;
   }
 }

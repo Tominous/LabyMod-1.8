@@ -24,19 +24,19 @@ public class fk
   
   public fk(pk ☃, int ☃, int ☃)
   {
-    a = ☃.F();
-    b = ns.c(s * 32.0D);
-    c = ns.c(t * 32.0D);
-    d = ns.c(u * 32.0D);
-    h = ns.d(z * 256.0F / 360.0F);
-    i = ns.d(y * 256.0F / 360.0F);
-    j = ☃;
-    k = ☃;
+    this.a = ☃.F();
+    this.b = ns.c(☃.s * 32.0D);
+    this.c = ns.c(☃.t * 32.0D);
+    this.d = ns.c(☃.u * 32.0D);
+    this.h = ns.d(☃.z * 256.0F / 360.0F);
+    this.i = ns.d(☃.y * 256.0F / 360.0F);
+    this.j = ☃;
+    this.k = ☃;
     if (☃ > 0)
     {
-      double ☃ = v;
-      double ☃ = w;
-      double ☃ = x;
+      double ☃ = ☃.v;
+      double ☃ = ☃.w;
+      double ☃ = ☃.x;
       double ☃ = 3.9D;
       if (☃ < -☃) {
         ☃ = -☃;
@@ -56,47 +56,47 @@ public class fk
       if (☃ > ☃) {
         ☃ = ☃;
       }
-      e = ((int)(☃ * 8000.0D));
-      f = ((int)(☃ * 8000.0D));
-      g = ((int)(☃ * 8000.0D));
+      this.e = ((int)(☃ * 8000.0D));
+      this.f = ((int)(☃ * 8000.0D));
+      this.g = ((int)(☃ * 8000.0D));
     }
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.e();
-    j = ☃.readByte();
-    b = ☃.readInt();
-    c = ☃.readInt();
-    d = ☃.readInt();
-    h = ☃.readByte();
-    i = ☃.readByte();
-    k = ☃.readInt();
-    if (k > 0)
+    this.a = ☃.e();
+    this.j = ☃.readByte();
+    this.b = ☃.readInt();
+    this.c = ☃.readInt();
+    this.d = ☃.readInt();
+    this.h = ☃.readByte();
+    this.i = ☃.readByte();
+    this.k = ☃.readInt();
+    if (this.k > 0)
     {
-      e = ☃.readShort();
-      f = ☃.readShort();
-      g = ☃.readShort();
+      this.e = ☃.readShort();
+      this.f = ☃.readShort();
+      this.g = ☃.readShort();
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a);
-    ☃.writeByte(j);
-    ☃.writeInt(b);
-    ☃.writeInt(c);
-    ☃.writeInt(d);
-    ☃.writeByte(h);
-    ☃.writeByte(i);
-    ☃.writeInt(k);
-    if (k > 0)
+    ☃.b(this.a);
+    ☃.writeByte(this.j);
+    ☃.writeInt(this.b);
+    ☃.writeInt(this.c);
+    ☃.writeInt(this.d);
+    ☃.writeByte(this.h);
+    ☃.writeByte(this.i);
+    ☃.writeInt(this.k);
+    if (this.k > 0)
     {
-      ☃.writeShort(e);
-      ☃.writeShort(f);
-      ☃.writeShort(g);
+      ☃.writeShort(this.e);
+      ☃.writeShort(this.f);
+      ☃.writeShort(this.g);
     }
   }
   
@@ -107,91 +107,91 @@ public class fk
   
   public int a()
   {
-    return a;
+    return this.a;
   }
   
   public int b()
   {
-    return b;
+    return this.b;
   }
   
   public int c()
   {
-    return c;
+    return this.c;
   }
   
   public int d()
   {
-    return d;
+    return this.d;
   }
   
   public int e()
   {
-    return e;
+    return this.e;
   }
   
   public int f()
   {
-    return f;
+    return this.f;
   }
   
   public int g()
   {
-    return g;
+    return this.g;
   }
   
   public int h()
   {
-    return h;
+    return this.h;
   }
   
   public int i()
   {
-    return i;
+    return this.i;
   }
   
   public int j()
   {
-    return j;
+    return this.j;
   }
   
   public int k()
   {
-    return k;
+    return this.k;
   }
   
   public void a(int ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public void b(int ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public void c(int ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
   
   public void d(int ☃)
   {
-    e = ☃;
+    this.e = ☃;
   }
   
   public void e(int ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
   
   public void f(int ☃)
   {
-    g = ☃;
+    this.g = ☃;
   }
   
   public void g(int ☃)
   {
-    k = ☃;
+    this.k = ☃;
   }
 }

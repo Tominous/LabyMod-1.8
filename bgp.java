@@ -219,24 +219,24 @@ public class bgp
     
     private b(cq ☃, int ☃, int ☃)
     {
-      e = ☃;
-      f = ☃;
-      g = ☃;
+      this.e = ☃;
+      this.f = ☃;
+      this.g = ☃;
     }
     
     public cq a()
     {
-      return e;
+      return this.e;
     }
     
     public int b()
     {
-      return f;
+      return this.f;
     }
     
     public int c()
     {
-      return g;
+      return this.g;
     }
     
     private boolean d()
@@ -254,39 +254,39 @@ public class bgp
     
     public a(bgp.b ☃, int ☃, int ☃)
     {
-      a = ☃;
-      b = ☃;
-      c = ☃;
-      d = ☃;
+      this.a = ☃;
+      this.b = ☃;
+      this.c = ☃;
+      this.d = ☃;
     }
     
     public void a(int ☃)
     {
-      if (☃ < b) {
-        b = ☃;
-      } else if (☃ > c) {
-        c = ☃;
+      if (☃ < this.b) {
+        this.b = ☃;
+      } else if (☃ > this.c) {
+        this.c = ☃;
       }
     }
     
     public bgp.b a()
     {
-      return a;
+      return this.a;
     }
     
     public int b()
     {
-      return b;
+      return this.b;
     }
     
     public int c()
     {
-      return c;
+      return this.c;
     }
     
     public int d()
     {
-      return d;
+      return this.d;
     }
   }
 }

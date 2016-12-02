@@ -33,19 +33,19 @@ public class DrawUtils
   
   public DrawUtils()
   {
-    mc = ave.A();
-    itemRenderer = mc.ag();
-    fontRenderer = mc.k;
+    this.mc = ave.A();
+    this.itemRenderer = this.mc.ag();
+    this.fontRenderer = this.mc.k;
   }
   
   public bjh getItemRenderer()
   {
-    return itemRenderer;
+    return this.itemRenderer;
   }
   
   public avn getFontRenderer()
   {
-    return fontRenderer;
+    return this.fontRenderer;
   }
   
   public static void updateMouse(int x, int y)
@@ -69,7 +69,7 @@ public class DrawUtils
   
   public void addRightLabel(String prefix, String text, int slot)
   {
-    drawRightString(ModGui.createLabel(prefix, text), (int)((getWidth() - 2) / getScale(settingssize)), slot);
+    drawRightString(ModGui.createLabel(prefix, text), (int)((getWidth() - 2) / getScale(ConfigManager.settings.size)), slot);
   }
   
   public void addLabel(String prefix, String text, int slot)
@@ -79,7 +79,7 @@ public class DrawUtils
   
   public void addNoScaleLabel(String prefix, String text, int slot)
   {
-    if (settingsguiPositionRight) {
+    if (ConfigManager.settings.guiPositionRight) {
       drawRightString(ModGui.createLabel(prefix, text), getWidth() - 2, slot);
     } else {
       drawString(ModGui.createLabel(prefix, text), 2.0D, slot);
@@ -88,8 +88,8 @@ public class DrawUtils
   
   public void addString(String text, int slot)
   {
-    if (settingsguiPositionRight) {
-      drawRightString(text, (int)((getWidth() - 2) / getScale(settingssize)), slot);
+    if (ConfigManager.settings.guiPositionRight) {
+      drawRightString(text, (int)((getWidth() - 2) / getScale(ConfigManager.settings.size)), slot);
     } else {
       drawString(text, 2.0D, slot);
     }
@@ -97,8 +97,8 @@ public class DrawUtils
   
   public void addRightString(String text, int slot)
   {
-    if (!settingsguiPositionRight) {
-      drawRightString(text, (int)((getWidth() - 2) / getScale(settingssize)), slot);
+    if (!ConfigManager.settings.guiPositionRight) {
+      drawRightString(text, (int)((getWidth() - 2) / getScale(ConfigManager.settings.size)), slot);
     } else {
       drawString(text, 2.0D, slot);
     }
@@ -106,7 +106,7 @@ public class DrawUtils
   
   public void addNoScaleString(String text, int slot)
   {
-    if (settingsguiPositionRight) {
+    if (ConfigManager.settings.guiPositionRight) {
       drawRightString(text, getWidth() - 2, slot);
     } else {
       drawString(text, 2.0D, slot);
@@ -120,27 +120,27 @@ public class DrawUtils
   
   public void drawString(String text, double x, double y)
   {
-    c(fontRenderer, text, (int)x, (int)y, 16777215);
+    c(this.fontRenderer, text, (int)x, (int)y, 16777215);
   }
   
   public void drawString(String text, double x, double y, double size)
   {
     GL11.glPushMatrix();
     GL11.glScaled(size, size, size);
-    c(fontRenderer, text, (int)(x / size), (int)(y / size), 16777215);
+    c(this.fontRenderer, text, (int)(x / size), (int)(y / size), 16777215);
     GL11.glPopMatrix();
   }
   
   public void drawCenteredString(String text, int x, int y)
   {
-    a(fontRenderer, text, x, y, 16777215);
+    a(this.fontRenderer, text, x, y, 16777215);
   }
   
   public void drawCenteredString(String text, double x, double y, double size)
   {
     GL11.glPushMatrix();
     GL11.glScaled(size, size, size);
-    a(fontRenderer, text, (int)(x / size), (int)(y / size), 16777215);
+    a(this.fontRenderer, text, (int)(x / size), (int)(y / size), 16777215);
     GL11.glPopMatrix();
   }
   
@@ -148,7 +148,7 @@ public class DrawUtils
   {
     GL11.glPushMatrix();
     GL11.glScaled(size, size, size);
-    c(fontRenderer, text, (int)(x / size - getStringWidth(text)), (int)(y / size), 16777215);
+    c(this.fontRenderer, text, (int)(x / size - getStringWidth(text)), (int)(y / size), 16777215);
     GL11.glPopMatrix();
   }
   
@@ -156,27 +156,27 @@ public class DrawUtils
   {
     GL11.glPushMatrix();
     GL11.glScaled(size, size, size);
-    fontRenderer.a(text, (int)(x / size - fontRenderer.a(text) / 2), (int)(y / size), 16777215);
+    this.fontRenderer.a(text, (int)(x / size - this.fontRenderer.a(text) / 2), (int)(y / size), 16777215);
     GL11.glPopMatrix();
   }
   
   public void drawItem(zx item, int x, int y)
   {
     avc.c();
-    itemRenderer.b(item, x, y);
-    itemRenderer.a(fontRenderer, item, x, y, "");
-    itemRenderer.a(fontRenderer, item, x, y);
+    this.itemRenderer.b(item, x, y);
+    this.itemRenderer.a(this.fontRenderer, item, x, y, "");
+    this.itemRenderer.a(this.fontRenderer, item, x, y);
     bfl.f();
   }
   
   public void drawRightItem(zx item, int x, int y)
   {
     GL11.glPushMatrix();
-    GL11.glTranslated((100 - settingssize) / 5, 0.0D, 0.0D);
+    GL11.glTranslated((100 - ConfigManager.settings.size) / 5, 0.0D, 0.0D);
     avc.c();
-    itemRenderer.b(item, x, y);
-    itemRenderer.a(fontRenderer, item, x, y, "");
-    itemRenderer.a(fontRenderer, item, x, y);
+    this.itemRenderer.b(item, x, y);
+    this.itemRenderer.a(this.fontRenderer, item, x, y, "");
+    this.itemRenderer.a(this.fontRenderer, item, x, y);
     bfl.f();
     GL11.glPopMatrix();
   }
@@ -184,8 +184,8 @@ public class DrawUtils
   public void drawItem(zx item, double x, double y, String s)
   {
     avc.c();
-    itemRenderer.b(item, (int)x, (int)y);
-    itemRenderer.a(fontRenderer, item, (int)x, (int)y, s);
+    this.itemRenderer.b(item, (int)x, (int)y);
+    this.itemRenderer.a(this.fontRenderer, item, (int)x, (int)y, s);
     bfl.f();
   }
   
@@ -196,24 +196,24 @@ public class DrawUtils
   
   public int getHeight()
   {
-    avr res = new avr(mc);
+    avr res = new avr(this.mc);
     return res.b();
   }
   
   public int getWidth()
   {
-    avr res = new avr(mc);
+    avr res = new avr(this.mc);
     return res.a();
   }
   
   public int getRight(String text)
   {
-    return fontRenderer.a(text) - 2;
+    return this.fontRenderer.a(text) - 2;
   }
   
   public void addRightString(String prefix, String text, int slot)
   {
-    c(fontRenderer, ModGui.createLabel(prefix, text), mc.d - getRight(ModGui.createLabel(prefix, text)) - 2, slot, 16777215);
+    c(this.fontRenderer, ModGui.createLabel(prefix, text), this.mc.d - getRight(ModGui.createLabel(prefix, text)) - 2, slot, 16777215);
   }
   
   public List<String> splitEqually(String text, int size)
@@ -231,8 +231,8 @@ public class DrawUtils
     for (int u = 0; u <= settings; u++) {
       s = s + " ";
     }
-    avr res = new avr(mc);
-    return res.a() - fontRenderer.a(s) - 5;
+    avr res = new avr(this.mc);
+    return res.a() - this.fontRenderer.a(s) - 5;
   }
   
   public int getMiddleScreen(int settings)
@@ -241,13 +241,13 @@ public class DrawUtils
     for (int u = 0; u <= settings; u++) {
       s = s + " ";
     }
-    avr res = new avr(mc);
-    return res.a() / 2 - fontRenderer.a(s);
+    avr res = new avr(this.mc);
+    return res.a() / 2 - this.fontRenderer.a(s);
   }
   
   public int getStringWidth(String text)
   {
-    return fontRenderer.a(text);
+    return this.fontRenderer.a(text);
   }
   
   public double getScale(int scale)
@@ -282,7 +282,7 @@ public class DrawUtils
     bfl.n();
     bfx tessellator = bfx.a();
     bfd worldrenderer = tessellator.c();
-    mc.P().a(b);
+    this.mc.P().a(b);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     float f = 32.0F;
     worldrenderer.a(7, bms.i);
@@ -299,7 +299,7 @@ public class DrawUtils
     bfl.n();
     bfx tessellator = bfx.a();
     bfd worldrenderer = tessellator.c();
-    mc.P().a(avp.b);
+    this.mc.P().a(avp.b);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     float f = 32.0F;
     int amountScrolled = 0;
@@ -345,7 +345,7 @@ public class DrawUtils
       bfl.n();
       bfx tessellator = bfx.a();
       bfd worldrenderer = tessellator.c();
-      mc.P().a(avp.b);
+      this.mc.P().a(avp.b);
       float f = 32.0F;
       int amountScrolled = 0;
       a(left, top, right, bottom, Integer.MIN_VALUE);
@@ -388,7 +388,7 @@ public class DrawUtils
     int startAlpha = 255;
     bfx tessellator = bfx.a();
     bfd worldrenderer = tessellator.c();
-    mc.P().a(avp.b);
+    this.mc.P().a(avp.b);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     float f = 32.0F;
     worldrenderer.a(7, bms.i);
@@ -405,7 +405,7 @@ public class DrawUtils
     int startAlpha = 255;
     bfx tessellator = bfx.a();
     bfd worldrenderer = tessellator.c();
-    mc.P().a(avp.b);
+    this.mc.P().a(avp.b);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     float f = 32.0F;
     worldrenderer.a(7, bms.i);
@@ -434,45 +434,47 @@ public class DrawUtils
     bfx tessellator = bfx.a();
     bfd worldrenderer = tessellator.c();
     worldrenderer.a(7, bms.g);
-    worldrenderer.b(x + 0.0D, y + height, e).a((float)(textureX + 0.0D) * f, (float)(textureY + height) * f1).d();
-    worldrenderer.b(x + width, y + height, e).a((float)(textureX + width) * f, (float)(textureY + height) * f1).d();
-    worldrenderer.b(x + width, y + 0.0D, e).a((float)(textureX + width) * f, (float)(textureY + 0.0D) * f1).d();
-    worldrenderer.b(x + 0.0D, y + 0.0D, e).a((float)(textureX + 0.0D) * f, (float)(textureY + 0.0D) * f1).d();
+    worldrenderer.b(x + 0.0D, y + height, this.e).a((float)(textureX + 0.0D) * f, (float)(textureY + height) * f1).d();
+    worldrenderer.b(x + width, y + height, this.e).a((float)(textureX + width) * f, (float)(textureY + height) * f1).d();
+    worldrenderer.b(x + width, y + 0.0D, this.e).a((float)(textureX + width) * f, (float)(textureY + 0.0D) * f1).d();
+    worldrenderer.b(x + 0.0D, y + 0.0D, this.e).a((float)(textureX + 0.0D) * f, (float)(textureY + 0.0D) * f1).d();
     tessellator.b();
   }
   
-  public static void drawEntityOnScreen(int x, int y, int size, float mouseX, float mouseY, int rotation, pr entity)
+  public static void drawEntityOnScreen(int x, int y, int size, float mouseX, float mouseY, int rotationX, int rotationY, pr entity)
   {
     bfl.g();
     bfl.E();
     bfl.b(x, y, 50.0F);
     bfl.a(-size - 30.0F, size + 30.0F, size);
     bfl.b(180.0F, 0.0F, 0.0F, 1.0F);
-    float var6 = aI;
-    float var7 = y;
-    float var8 = z;
-    float var9 = aL;
-    float var10 = aK;
+    float var6 = entity.aI;
+    float var7 = entity.y;
+    float var8 = entity.z;
+    float var9 = entity.aL;
+    float var10 = entity.aK;
     bfl.b(135.0F, 0.0F, 1.0F, 0.0F);
     avc.b();
-    bfl.b(-135.0F + rotation, 0.0F, 1.0F, 0.0F);
+    
+    bfl.b(-135.0F + rotationX, 0.0F, 1.0F, 0.0F);
+    bfl.b(rotationY, 1.0F, 0.0F, 0.0F);
     bfl.b(-(float)Math.atan(mouseY / 40.0F) * 20.0F, 1.0F, 0.0F, 0.0F);
-    aI = ((float)Math.atan(mouseX / 40.0F) * 20.0F);
-    y = ((float)Math.atan(mouseX / 40.0F) * 40.0F);
-    z = (-(float)Math.atan(mouseY / 40.0F) * 20.0F);
-    aK = y;
-    aL = y;
+    entity.aI = ((float)Math.atan(mouseX / 40.0F) * 20.0F);
+    entity.y = ((float)Math.atan(mouseX / 40.0F) * 40.0F);
+    entity.z = (-(float)Math.atan(mouseY / 40.0F) * 20.0F);
+    entity.aK = entity.y;
+    entity.aL = entity.y;
     bfl.b(0.0F, 0.0F, 0.0F);
     biu var11 = ave.A().af();
     var11.a(180.0F);
     var11.a(false);
-    var11.a(entity, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F);
+    var11.a(entity, 0.0D, rotationY == 0 ? 0.0D : -1.0D, 0.0D, 0.0F, 1.0F);
     var11.a(true);
-    aI = var6;
-    y = var7;
-    z = var8;
-    aL = var9;
-    aK = var10;
+    entity.aI = var6;
+    entity.y = var7;
+    entity.z = var8;
+    entity.aL = var9;
+    entity.aK = var10;
     bfl.F();
     avc.a();
     bfl.C();
@@ -486,7 +488,7 @@ public class DrawUtils
     if (text == null) {
       return text;
     }
-    return fontRenderer.a(text, width, false);
+    return this.fontRenderer.a(text, width, false);
   }
   
   public List<String> listFormattedStringToWidth(String str, int wrapWidth)
@@ -494,6 +496,6 @@ public class DrawUtils
     if (wrapWidth < 10) {
       wrapWidth = 10;
     }
-    return fontRenderer.c(str, wrapWidth);
+    return this.fontRenderer.c(str, wrapWidth);
   }
 }

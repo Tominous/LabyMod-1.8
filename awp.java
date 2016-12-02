@@ -8,33 +8,33 @@ public class awp
   public awp(RealmsButton ☃, int ☃, int ☃, int ☃, String ☃)
   {
     super(☃, ☃, ☃, ☃);
-    o = ☃;
+    this.o = ☃;
   }
   
   public awp(RealmsButton ☃, int ☃, int ☃, int ☃, String ☃, int ☃, int ☃)
   {
     super(☃, ☃, ☃, ☃, ☃, ☃);
-    o = ☃;
+    this.o = ☃;
   }
   
   public int c()
   {
-    return k;
+    return this.k;
   }
   
   public boolean d()
   {
-    return l;
+    return this.l;
   }
   
   public void b(boolean ☃)
   {
-    l = ☃;
+    this.l = ☃;
   }
   
   public void a(String ☃)
   {
-    j = ☃;
+    this.j = ☃;
   }
   
   public int b()
@@ -44,35 +44,35 @@ public class awp
   
   public int e()
   {
-    return i;
+    return this.i;
   }
   
   public boolean c(ave ☃, int ☃, int ☃)
   {
     if (super.c(☃, ☃, ☃)) {
-      o.clicked(☃, ☃);
+      this.o.clicked(☃, ☃);
     }
     return super.c(☃, ☃, ☃);
   }
   
   public void a(int ☃, int ☃)
   {
-    o.released(☃, ☃);
+    this.o.released(☃, ☃);
   }
   
   public void b(ave ☃, int ☃, int ☃)
   {
-    o.renderBg(☃, ☃);
+    this.o.renderBg(☃, ☃);
   }
   
   public RealmsButton f()
   {
-    return o;
+    return this.o;
   }
   
   public int a(boolean ☃)
   {
-    return o.getYImage(☃);
+    return this.o.getYImage(☃);
   }
   
   public int c(boolean ☃)
@@ -82,6 +82,6 @@ public class awp
   
   public int g()
   {
-    return g;
+    return this.g;
   }
 }

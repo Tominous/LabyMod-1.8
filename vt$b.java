@@ -7,11 +7,11 @@ class vt$b
   
   public vt$b(vt ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public boolean a(pr ☃)
   {
-    return (((☃ instanceof wn)) || ((☃ instanceof tx))) && (☃.h(a) > 9.0D);
+    return (((☃ instanceof wn)) || ((☃ instanceof tx))) && (☃.h(this.a) > 9.0D);
   }
 }

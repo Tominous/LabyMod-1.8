@@ -11,14 +11,14 @@ public class alt
   public alt()
   {
     super(arm.H);
-    j(M.b().a(a, cq.c).a(b, alt.a.a).a(N, Boolean.valueOf(false)));
+    j(this.M.b().a(a, cq.c).a(b, alt.a.a).a(N, Boolean.valueOf(false)));
     a(i);
     c(0.5F);
   }
   
   public void a(adm ☃, cj ☃, alz ☃, wn ☃)
   {
-    if (bA.d)
+    if (☃.bA.d)
     {
       cq ☃ = (cq)☃.b(a);
       if (☃ != null)
@@ -209,17 +209,17 @@ public class alt
     
     private a(String ☃)
     {
-      c = ☃;
+      this.c = ☃;
     }
     
     public String toString()
     {
-      return c;
+      return this.c;
     }
     
     public String l()
     {
-      return c;
+      return this.c;
     }
   }
 }

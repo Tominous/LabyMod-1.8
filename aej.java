@@ -12,29 +12,29 @@ public class aej
   public aej(int ☃, boolean ☃)
   {
     super(☃);
-    aD = ☃;
+    this.aD = ☃;
     if (☃) {
-      as.A = 2;
+      this.as.A = 2;
     } else {
-      as.A = 50;
+      this.as.A = 50;
     }
-    as.C = 25;
-    as.B = 4;
+    this.as.C = 25;
+    this.as.B = 4;
     if (!☃) {
-      at.add(new ady.c(ts.class, 2, 1, 1));
+      this.at.add(new ady.c(ts.class, 2, 1, 1));
     }
-    au.add(new ady.c(tn.class, 10, 4, 4));
+    this.au.add(new ady.c(tn.class, 10, 4, 4));
   }
   
   public aoh a(Random ☃)
   {
     if (☃.nextInt(10) == 0) {
-      return aB;
+      return this.aB;
     }
     if (☃.nextInt(2) == 0) {
       return new aov(aE, aG);
     }
-    if ((!aD) && (☃.nextInt(3) == 0)) {
+    if ((!this.aD) && (☃.nextInt(3) == 0)) {
       return new ape(false, 10, 20, aE, aF);
     }
     return new apv(false, 4 + ☃.nextInt(7), aE, aF, true);

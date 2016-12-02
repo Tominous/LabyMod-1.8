@@ -22,21 +22,21 @@ public class adr
   
   private adr(int ☃, String ☃, int ☃)
   {
-    j = ☃;
-    k = ☃;
-    l = true;
-    i = ☃;
+    this.j = ☃;
+    this.k = ☃;
+    this.l = true;
+    this.i = ☃;
     a[☃] = this;
   }
   
   public String a()
   {
-    return j;
+    return this.j;
   }
   
   public String b()
   {
-    return "generator." + j;
+    return "generator." + this.j;
   }
   
   public String c()
@@ -46,7 +46,7 @@ public class adr
   
   public int d()
   {
-    return k;
+    return this.k;
   }
   
   public adr a(int ☃)
@@ -59,30 +59,30 @@ public class adr
   
   private adr a(boolean ☃)
   {
-    l = ☃;
+    this.l = ☃;
     return this;
   }
   
   public boolean e()
   {
-    return l;
+    return this.l;
   }
   
   private adr i()
   {
-    m = true;
+    this.m = true;
     return this;
   }
   
   public boolean f()
   {
-    return m;
+    return this.m;
   }
   
   public static adr a(String ☃)
   {
     for (int ☃ = 0; ☃ < a.length; ☃++) {
-      if ((a[☃] != null) && (aj.equalsIgnoreCase(☃))) {
+      if ((a[☃] != null) && (a[☃].j.equalsIgnoreCase(☃))) {
         return a[☃];
       }
     }
@@ -91,17 +91,17 @@ public class adr
   
   public int g()
   {
-    return i;
+    return this.i;
   }
   
   public boolean h()
   {
-    return n;
+    return this.n;
   }
   
   private adr j()
   {
-    n = true;
+    this.n = true;
     return this;
   }
 }

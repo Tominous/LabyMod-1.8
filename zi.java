@@ -55,10 +55,10 @@ public class zi
     for (int ☃ = 0; ☃ < ☃.c(); ☃++)
     {
       dn ☃ = ☃.b(☃);
-      if (☃.e("id") == b.B)
+      if (☃.e("id") == ☃.b.B)
       {
-        if (☃.e("lvl") < c) {
-          ☃.a("lvl", (short)c);
+        if (☃.e("lvl") < ☃.c) {
+          ☃.a("lvl", (short)☃.c);
         }
         ☃ = false;
         break;
@@ -68,8 +68,8 @@ public class zi
     {
       dn ☃ = new dn();
       
-      ☃.a("id", (short)b.B);
-      ☃.a("lvl", (short)c);
+      ☃.a("id", (short)☃.b.B);
+      ☃.a("lvl", (short)☃.c);
       
       ☃.a(☃);
     }

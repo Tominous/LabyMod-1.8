@@ -5,22 +5,22 @@ public class akv$a
   
   public akv$a(float[] ☃)
   {
-    a = ☃;
-    b = 1;
+    this.a = ☃;
+    this.b = 1;
   }
   
   protected void a()
   {
-    b += 1;
+    this.b += 1;
   }
   
   public float[] b()
   {
-    return a;
+    return this.a;
   }
   
   public int c()
   {
-    return b;
+    return this.b;
   }
 }

@@ -8,30 +8,30 @@ class vz$b
   
   public vz$b(vz ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void f()
   {
-    if (b == 0) {
-      b = 20;
+    if (this.b == 0) {
+      this.b = 20;
     }
   }
   
   public boolean a()
   {
-    return b > 0;
+    return this.b > 0;
   }
   
   public void e()
   {
-    b -= 1;
-    if (b <= 0)
+    this.b -= 1;
+    if (this.b <= 0)
     {
-      adm ☃ = a.o;
-      Random ☃ = a.bc();
+      adm ☃ = this.a.o;
+      Random ☃ = this.a.bc();
       
-      cj ☃ = new cj(a);
+      cj ☃ = new cj(this.a);
       for (int ☃ = 0; (☃ <= 5) && (☃ >= -5); ☃ = ☃ <= 0 ? 1 - ☃ : 0 - ☃) {
         for (int ☃ = 0; (☃ <= 10) && (☃ >= -10); ☃ = ☃ <= 0 ? 1 - ☃ : 0 - ☃) {
           for (int ☃ = 0; (☃ <= 10) && (☃ >= -10); ☃ = ☃ <= 0 ? 1 - ☃ : 0 - ☃)

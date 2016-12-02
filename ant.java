@@ -92,87 +92,87 @@ public class ant
   
   private ant(ant.a ☃)
   {
-    a = b;
-    b = c;
-    c = d;
-    d = e;
-    e = f;
-    f = g;
-    g = h;
-    h = i;
-    i = j;
-    j = k;
-    k = l;
-    l = m;
-    m = n;
-    n = o;
-    o = p;
-    p = q;
-    q = r;
+    this.a = ☃.b;
+    this.b = ☃.c;
+    this.c = ☃.d;
+    this.d = ☃.e;
+    this.e = ☃.f;
+    this.f = ☃.g;
+    this.g = ☃.h;
+    this.h = ☃.i;
+    this.i = ☃.j;
+    this.j = ☃.k;
+    this.k = ☃.l;
+    this.l = ☃.m;
+    this.m = ☃.n;
+    this.n = ☃.o;
+    this.o = ☃.p;
+    this.p = ☃.q;
+    this.q = ☃.r;
     
-    r = s;
-    s = t;
-    t = u;
-    u = v;
-    v = w;
-    w = x;
-    x = y;
-    y = z;
-    z = A;
-    A = B;
-    B = C;
-    C = D;
-    D = E;
-    E = F;
+    this.r = ☃.s;
+    this.s = ☃.t;
+    this.t = ☃.u;
+    this.u = ☃.v;
+    this.v = ☃.w;
+    this.w = ☃.x;
+    this.x = ☃.y;
+    this.y = ☃.z;
+    this.z = ☃.A;
+    this.A = ☃.B;
+    this.B = ☃.C;
+    this.C = ☃.D;
+    this.D = ☃.E;
+    this.E = ☃.F;
     
-    F = G;
-    G = H;
-    H = I;
+    this.F = ☃.G;
+    this.G = ☃.H;
+    this.H = ☃.I;
     
-    I = J;
-    J = K;
-    K = L;
-    L = M;
-    M = N;
-    N = O;
-    O = P;
-    P = Q;
-    Q = R;
-    R = S;
-    S = T;
-    T = U;
-    U = V;
-    V = W;
-    W = X;
-    X = Y;
-    Y = Z;
-    Z = aa;
-    aa = ab;
-    ab = ac;
-    ac = ad;
-    ad = ae;
-    ae = af;
-    af = ag;
-    ag = ah;
-    ah = ai;
-    ai = aj;
-    aj = ak;
-    ak = al;
-    al = am;
-    am = an;
-    an = ao;
-    ao = ap;
-    ap = aq;
-    aq = ar;
-    ar = as;
-    as = at;
-    at = au;
-    au = av;
-    av = aw;
-    aw = ax;
-    ax = ay;
-    ay = az;
-    az = aA;
+    this.I = ☃.J;
+    this.J = ☃.K;
+    this.K = ☃.L;
+    this.L = ☃.M;
+    this.M = ☃.N;
+    this.N = ☃.O;
+    this.O = ☃.P;
+    this.P = ☃.Q;
+    this.Q = ☃.R;
+    this.R = ☃.S;
+    this.S = ☃.T;
+    this.T = ☃.U;
+    this.U = ☃.V;
+    this.V = ☃.W;
+    this.W = ☃.X;
+    this.X = ☃.Y;
+    this.Y = ☃.Z;
+    this.Z = ☃.aa;
+    this.aa = ☃.ab;
+    this.ab = ☃.ac;
+    this.ac = ☃.ad;
+    this.ad = ☃.ae;
+    this.ae = ☃.af;
+    this.af = ☃.ag;
+    this.ag = ☃.ah;
+    this.ah = ☃.ai;
+    this.ai = ☃.aj;
+    this.aj = ☃.ak;
+    this.ak = ☃.al;
+    this.al = ☃.am;
+    this.am = ☃.an;
+    this.an = ☃.ao;
+    this.ao = ☃.ap;
+    this.ap = ☃.aq;
+    this.aq = ☃.ar;
+    this.ar = ☃.as;
+    this.as = ☃.at;
+    this.at = ☃.au;
+    this.au = ☃.av;
+    this.av = ☃.aw;
+    this.aw = ☃.ax;
+    this.ax = ☃.ay;
+    this.ay = ☃.az;
+    this.az = ☃.aA;
   }
   
   public static class a
@@ -283,87 +283,87 @@ public class ant
     
     public void a()
     {
-      b = 684.412F;
-      c = 684.412F;
-      d = 512.0F;
-      e = 512.0F;
-      f = 200.0F;
-      g = 200.0F;
-      h = 0.5F;
-      i = 80.0F;
-      j = 160.0F;
-      k = 80.0F;
-      l = 8.5F;
-      m = 12.0F;
-      n = 1.0F;
-      o = 0.0F;
-      p = 1.0F;
-      q = 0.0F;
-      r = 63;
+      this.b = 684.412F;
+      this.c = 684.412F;
+      this.d = 512.0F;
+      this.e = 512.0F;
+      this.f = 200.0F;
+      this.g = 200.0F;
+      this.h = 0.5F;
+      this.i = 80.0F;
+      this.j = 160.0F;
+      this.k = 80.0F;
+      this.l = 8.5F;
+      this.m = 12.0F;
+      this.n = 1.0F;
+      this.o = 0.0F;
+      this.p = 1.0F;
+      this.q = 0.0F;
+      this.r = 63;
       
-      s = true;
-      t = true;
-      u = 8;
-      v = true;
-      w = true;
-      x = true;
-      y = true;
-      z = true;
-      A = true;
-      B = true;
-      C = 4;
-      D = true;
-      E = 80;
-      F = false;
+      this.s = true;
+      this.t = true;
+      this.u = 8;
+      this.v = true;
+      this.w = true;
+      this.x = true;
+      this.y = true;
+      this.z = true;
+      this.A = true;
+      this.B = true;
+      this.C = 4;
+      this.D = true;
+      this.E = 80;
+      this.F = false;
       
-      G = -1;
-      H = 4;
-      I = 4;
+      this.G = -1;
+      this.H = 4;
+      this.I = 4;
       
-      J = 33;
-      K = 10;
-      L = 0;
-      M = 256;
-      N = 33;
-      O = 8;
-      P = 0;
-      Q = 256;
-      R = 33;
-      S = 10;
-      T = 0;
-      U = 80;
-      V = 33;
-      W = 10;
-      X = 0;
-      Y = 80;
-      Z = 33;
-      aa = 10;
-      ab = 0;
-      ac = 80;
-      ad = 17;
-      ae = 20;
-      af = 0;
-      ag = 128;
-      ah = 9;
-      ai = 20;
-      aj = 0;
-      ak = 64;
-      al = 9;
-      am = 2;
-      an = 0;
-      ao = 32;
-      ap = 8;
-      aq = 8;
-      ar = 0;
-      as = 16;
-      at = 8;
-      au = 1;
-      av = 0;
-      aw = 16;
-      ax = 7;
-      ay = 1;
-      az = 16;
-      aA = 16;
+      this.J = 33;
+      this.K = 10;
+      this.L = 0;
+      this.M = 256;
+      this.N = 33;
+      this.O = 8;
+      this.P = 0;
+      this.Q = 256;
+      this.R = 33;
+      this.S = 10;
+      this.T = 0;
+      this.U = 80;
+      this.V = 33;
+      this.W = 10;
+      this.X = 0;
+      this.Y = 80;
+      this.Z = 33;
+      this.aa = 10;
+      this.ab = 0;
+      this.ac = 80;
+      this.ad = 17;
+      this.ae = 20;
+      this.af = 0;
+      this.ag = 128;
+      this.ah = 9;
+      this.ai = 20;
+      this.aj = 0;
+      this.ak = 64;
+      this.al = 9;
+      this.am = 2;
+      this.an = 0;
+      this.ao = 32;
+      this.ap = 8;
+      this.aq = 8;
+      this.ar = 0;
+      this.as = 16;
+      this.at = 8;
+      this.au = 1;
+      this.av = 0;
+      this.aw = 16;
+      this.ax = 7;
+      this.ay = 1;
+      this.az = 16;
+      this.aA = 16;
     }
     
     public boolean equals(Object ☃)
@@ -375,238 +375,238 @@ public class ant
         return false;
       }
       a ☃ = (a)☃;
-      if (aa != aa) {
+      if (this.aa != ☃.aa) {
         return false;
       }
-      if (ac != ac) {
+      if (this.ac != ☃.ac) {
         return false;
       }
-      if (ab != ab) {
+      if (this.ab != ☃.ab) {
         return false;
       }
-      if (Z != Z) {
+      if (this.Z != ☃.Z) {
         return false;
       }
-      if (Float.compare(l, l) != 0) {
+      if (Float.compare(☃.l, this.l) != 0) {
         return false;
       }
-      if (Float.compare(o, o) != 0) {
+      if (Float.compare(☃.o, this.o) != 0) {
         return false;
       }
-      if (Float.compare(n, n) != 0) {
+      if (Float.compare(☃.n, this.n) != 0) {
         return false;
       }
-      if (Float.compare(q, q) != 0) {
+      if (Float.compare(☃.q, this.q) != 0) {
         return false;
       }
-      if (Float.compare(p, p) != 0) {
+      if (Float.compare(☃.p, this.p) != 0) {
         return false;
       }
-      if (H != H) {
+      if (this.H != ☃.H) {
         return false;
       }
-      if (ae != ae) {
+      if (this.ae != ☃.ae) {
         return false;
       }
-      if (ag != ag) {
+      if (this.ag != ☃.ag) {
         return false;
       }
-      if (af != af) {
+      if (this.af != ☃.af) {
         return false;
       }
-      if (ad != ad) {
+      if (this.ad != ☃.ad) {
         return false;
       }
-      if (Float.compare(b, b) != 0) {
+      if (Float.compare(☃.b, this.b) != 0) {
         return false;
       }
-      if (Float.compare(h, h) != 0) {
+      if (Float.compare(☃.h, this.h) != 0) {
         return false;
       }
-      if (Float.compare(f, f) != 0) {
+      if (Float.compare(☃.f, this.f) != 0) {
         return false;
       }
-      if (Float.compare(g, g) != 0) {
+      if (Float.compare(☃.g, this.g) != 0) {
         return false;
       }
-      if (au != au) {
+      if (this.au != ☃.au) {
         return false;
       }
-      if (aw != aw) {
+      if (this.aw != ☃.aw) {
         return false;
       }
-      if (av != av) {
+      if (this.av != ☃.av) {
         return false;
       }
-      if (at != at) {
+      if (this.at != ☃.at) {
         return false;
       }
-      if (W != W) {
+      if (this.W != ☃.W) {
         return false;
       }
-      if (Y != Y) {
+      if (this.Y != ☃.Y) {
         return false;
       }
-      if (X != X) {
+      if (this.X != ☃.X) {
         return false;
       }
-      if (V != V) {
+      if (this.V != ☃.V) {
         return false;
       }
-      if (K != K) {
+      if (this.K != ☃.K) {
         return false;
       }
-      if (M != M) {
+      if (this.M != ☃.M) {
         return false;
       }
-      if (L != L) {
+      if (this.L != ☃.L) {
         return false;
       }
-      if (J != J) {
+      if (this.J != ☃.J) {
         return false;
       }
-      if (u != u) {
+      if (this.u != ☃.u) {
         return false;
       }
-      if (G != G) {
+      if (this.G != ☃.G) {
         return false;
       }
-      if (am != am) {
+      if (this.am != ☃.am) {
         return false;
       }
-      if (ao != ao) {
+      if (this.ao != ☃.ao) {
         return false;
       }
-      if (an != an) {
+      if (this.an != ☃.an) {
         return false;
       }
-      if (al != al) {
+      if (this.al != ☃.al) {
         return false;
       }
-      if (S != S) {
+      if (this.S != ☃.S) {
         return false;
       }
-      if (U != U) {
+      if (this.U != ☃.U) {
         return false;
       }
-      if (T != T) {
+      if (this.T != ☃.T) {
         return false;
       }
-      if (R != R) {
+      if (this.R != ☃.R) {
         return false;
       }
-      if (O != O) {
+      if (this.O != ☃.O) {
         return false;
       }
-      if (Q != Q) {
+      if (this.Q != ☃.Q) {
         return false;
       }
-      if (P != P) {
+      if (this.P != ☃.P) {
         return false;
       }
-      if (N != N) {
+      if (this.N != ☃.N) {
         return false;
       }
-      if (Float.compare(c, c) != 0) {
+      if (Float.compare(☃.c, this.c) != 0) {
         return false;
       }
-      if (ai != ai) {
+      if (this.ai != ☃.ai) {
         return false;
       }
-      if (ak != ak) {
+      if (this.ak != ☃.ak) {
         return false;
       }
-      if (aj != aj) {
+      if (this.aj != ☃.aj) {
         return false;
       }
-      if (ah != ah) {
+      if (this.ah != ☃.ah) {
         return false;
       }
-      if (az != az) {
+      if (this.az != ☃.az) {
         return false;
       }
-      if (ay != ay) {
+      if (this.ay != ☃.ay) {
         return false;
       }
-      if (ax != ax) {
+      if (this.ax != ☃.ax) {
         return false;
       }
-      if (aA != aA) {
+      if (this.aA != ☃.aA) {
         return false;
       }
-      if (E != E) {
+      if (this.E != ☃.E) {
         return false;
       }
-      if (Float.compare(e, e) != 0) {
+      if (Float.compare(☃.e, this.e) != 0) {
         return false;
       }
-      if (Float.compare(i, i) != 0) {
+      if (Float.compare(☃.i, this.i) != 0) {
         return false;
       }
-      if (Float.compare(j, j) != 0) {
+      if (Float.compare(☃.j, this.j) != 0) {
         return false;
       }
-      if (Float.compare(k, k) != 0) {
+      if (Float.compare(☃.k, this.k) != 0) {
         return false;
       }
-      if (aq != aq) {
+      if (this.aq != ☃.aq) {
         return false;
       }
-      if (as != as) {
+      if (this.as != ☃.as) {
         return false;
       }
-      if (ar != ar) {
+      if (this.ar != ☃.ar) {
         return false;
       }
-      if (ap != ap) {
+      if (this.ap != ☃.ap) {
         return false;
       }
-      if (I != I) {
+      if (this.I != ☃.I) {
         return false;
       }
-      if (r != r) {
+      if (this.r != ☃.r) {
         return false;
       }
-      if (Float.compare(m, m) != 0) {
+      if (Float.compare(☃.m, this.m) != 0) {
         return false;
       }
-      if (Float.compare(d, d) != 0) {
+      if (Float.compare(☃.d, this.d) != 0) {
         return false;
       }
-      if (s != s) {
+      if (this.s != ☃.s) {
         return false;
       }
-      if (t != t) {
+      if (this.t != ☃.t) {
         return false;
       }
-      if (D != D) {
+      if (this.D != ☃.D) {
         return false;
       }
-      if (F != F) {
+      if (this.F != ☃.F) {
         return false;
       }
-      if (x != x) {
+      if (this.x != ☃.x) {
         return false;
       }
-      if (A != A) {
+      if (this.A != ☃.A) {
         return false;
       }
-      if (v != v) {
+      if (this.v != ☃.v) {
         return false;
       }
-      if (y != y) {
+      if (this.y != ☃.y) {
         return false;
       }
-      if (z != z) {
+      if (this.z != ☃.z) {
         return false;
       }
-      if (w != w) {
+      if (this.w != ☃.w) {
         return false;
       }
-      if (B != B) {
+      if (this.B != ☃.B) {
         return false;
       }
-      if (C != C) {
+      if (this.C != ☃.C) {
         return false;
       }
       return true;
@@ -614,84 +614,84 @@ public class ant
     
     public int hashCode()
     {
-      int ☃ = b != 0.0F ? Float.floatToIntBits(b) : 0;
-      ☃ = 31 * ☃ + (c != 0.0F ? Float.floatToIntBits(c) : 0);
-      ☃ = 31 * ☃ + (d != 0.0F ? Float.floatToIntBits(d) : 0);
-      ☃ = 31 * ☃ + (e != 0.0F ? Float.floatToIntBits(e) : 0);
-      ☃ = 31 * ☃ + (f != 0.0F ? Float.floatToIntBits(f) : 0);
-      ☃ = 31 * ☃ + (g != 0.0F ? Float.floatToIntBits(g) : 0);
-      ☃ = 31 * ☃ + (h != 0.0F ? Float.floatToIntBits(h) : 0);
-      ☃ = 31 * ☃ + (i != 0.0F ? Float.floatToIntBits(i) : 0);
-      ☃ = 31 * ☃ + (j != 0.0F ? Float.floatToIntBits(j) : 0);
-      ☃ = 31 * ☃ + (k != 0.0F ? Float.floatToIntBits(k) : 0);
-      ☃ = 31 * ☃ + (l != 0.0F ? Float.floatToIntBits(l) : 0);
-      ☃ = 31 * ☃ + (m != 0.0F ? Float.floatToIntBits(m) : 0);
-      ☃ = 31 * ☃ + (n != 0.0F ? Float.floatToIntBits(n) : 0);
-      ☃ = 31 * ☃ + (o != 0.0F ? Float.floatToIntBits(o) : 0);
-      ☃ = 31 * ☃ + (p != 0.0F ? Float.floatToIntBits(p) : 0);
-      ☃ = 31 * ☃ + (q != 0.0F ? Float.floatToIntBits(q) : 0);
-      ☃ = 31 * ☃ + r;
-      ☃ = 31 * ☃ + (s ? 1 : 0);
-      ☃ = 31 * ☃ + (t ? 1 : 0);
-      ☃ = 31 * ☃ + u;
-      ☃ = 31 * ☃ + (v ? 1 : 0);
-      ☃ = 31 * ☃ + (w ? 1 : 0);
-      ☃ = 31 * ☃ + (x ? 1 : 0);
-      ☃ = 31 * ☃ + (y ? 1 : 0);
-      ☃ = 31 * ☃ + (z ? 1 : 0);
-      ☃ = 31 * ☃ + (A ? 1 : 0);
-      ☃ = 31 * ☃ + (B ? 1 : 0);
-      ☃ = 31 * ☃ + C;
-      ☃ = 31 * ☃ + (D ? 1 : 0);
-      ☃ = 31 * ☃ + E;
-      ☃ = 31 * ☃ + (F ? 1 : 0);
-      ☃ = 31 * ☃ + G;
-      ☃ = 31 * ☃ + H;
-      ☃ = 31 * ☃ + I;
-      ☃ = 31 * ☃ + J;
-      ☃ = 31 * ☃ + K;
-      ☃ = 31 * ☃ + L;
-      ☃ = 31 * ☃ + M;
-      ☃ = 31 * ☃ + N;
-      ☃ = 31 * ☃ + O;
-      ☃ = 31 * ☃ + P;
-      ☃ = 31 * ☃ + Q;
-      ☃ = 31 * ☃ + R;
-      ☃ = 31 * ☃ + S;
-      ☃ = 31 * ☃ + T;
-      ☃ = 31 * ☃ + U;
-      ☃ = 31 * ☃ + V;
-      ☃ = 31 * ☃ + W;
-      ☃ = 31 * ☃ + X;
-      ☃ = 31 * ☃ + Y;
-      ☃ = 31 * ☃ + Z;
-      ☃ = 31 * ☃ + aa;
-      ☃ = 31 * ☃ + ab;
-      ☃ = 31 * ☃ + ac;
-      ☃ = 31 * ☃ + ad;
-      ☃ = 31 * ☃ + ae;
-      ☃ = 31 * ☃ + af;
-      ☃ = 31 * ☃ + ag;
-      ☃ = 31 * ☃ + ah;
-      ☃ = 31 * ☃ + ai;
-      ☃ = 31 * ☃ + aj;
-      ☃ = 31 * ☃ + ak;
-      ☃ = 31 * ☃ + al;
-      ☃ = 31 * ☃ + am;
-      ☃ = 31 * ☃ + an;
-      ☃ = 31 * ☃ + ao;
-      ☃ = 31 * ☃ + ap;
-      ☃ = 31 * ☃ + aq;
-      ☃ = 31 * ☃ + ar;
-      ☃ = 31 * ☃ + as;
-      ☃ = 31 * ☃ + at;
-      ☃ = 31 * ☃ + au;
-      ☃ = 31 * ☃ + av;
-      ☃ = 31 * ☃ + aw;
-      ☃ = 31 * ☃ + ax;
-      ☃ = 31 * ☃ + ay;
-      ☃ = 31 * ☃ + az;
-      ☃ = 31 * ☃ + aA;
+      int ☃ = this.b != 0.0F ? Float.floatToIntBits(this.b) : 0;
+      ☃ = 31 * ☃ + (this.c != 0.0F ? Float.floatToIntBits(this.c) : 0);
+      ☃ = 31 * ☃ + (this.d != 0.0F ? Float.floatToIntBits(this.d) : 0);
+      ☃ = 31 * ☃ + (this.e != 0.0F ? Float.floatToIntBits(this.e) : 0);
+      ☃ = 31 * ☃ + (this.f != 0.0F ? Float.floatToIntBits(this.f) : 0);
+      ☃ = 31 * ☃ + (this.g != 0.0F ? Float.floatToIntBits(this.g) : 0);
+      ☃ = 31 * ☃ + (this.h != 0.0F ? Float.floatToIntBits(this.h) : 0);
+      ☃ = 31 * ☃ + (this.i != 0.0F ? Float.floatToIntBits(this.i) : 0);
+      ☃ = 31 * ☃ + (this.j != 0.0F ? Float.floatToIntBits(this.j) : 0);
+      ☃ = 31 * ☃ + (this.k != 0.0F ? Float.floatToIntBits(this.k) : 0);
+      ☃ = 31 * ☃ + (this.l != 0.0F ? Float.floatToIntBits(this.l) : 0);
+      ☃ = 31 * ☃ + (this.m != 0.0F ? Float.floatToIntBits(this.m) : 0);
+      ☃ = 31 * ☃ + (this.n != 0.0F ? Float.floatToIntBits(this.n) : 0);
+      ☃ = 31 * ☃ + (this.o != 0.0F ? Float.floatToIntBits(this.o) : 0);
+      ☃ = 31 * ☃ + (this.p != 0.0F ? Float.floatToIntBits(this.p) : 0);
+      ☃ = 31 * ☃ + (this.q != 0.0F ? Float.floatToIntBits(this.q) : 0);
+      ☃ = 31 * ☃ + this.r;
+      ☃ = 31 * ☃ + (this.s ? 1 : 0);
+      ☃ = 31 * ☃ + (this.t ? 1 : 0);
+      ☃ = 31 * ☃ + this.u;
+      ☃ = 31 * ☃ + (this.v ? 1 : 0);
+      ☃ = 31 * ☃ + (this.w ? 1 : 0);
+      ☃ = 31 * ☃ + (this.x ? 1 : 0);
+      ☃ = 31 * ☃ + (this.y ? 1 : 0);
+      ☃ = 31 * ☃ + (this.z ? 1 : 0);
+      ☃ = 31 * ☃ + (this.A ? 1 : 0);
+      ☃ = 31 * ☃ + (this.B ? 1 : 0);
+      ☃ = 31 * ☃ + this.C;
+      ☃ = 31 * ☃ + (this.D ? 1 : 0);
+      ☃ = 31 * ☃ + this.E;
+      ☃ = 31 * ☃ + (this.F ? 1 : 0);
+      ☃ = 31 * ☃ + this.G;
+      ☃ = 31 * ☃ + this.H;
+      ☃ = 31 * ☃ + this.I;
+      ☃ = 31 * ☃ + this.J;
+      ☃ = 31 * ☃ + this.K;
+      ☃ = 31 * ☃ + this.L;
+      ☃ = 31 * ☃ + this.M;
+      ☃ = 31 * ☃ + this.N;
+      ☃ = 31 * ☃ + this.O;
+      ☃ = 31 * ☃ + this.P;
+      ☃ = 31 * ☃ + this.Q;
+      ☃ = 31 * ☃ + this.R;
+      ☃ = 31 * ☃ + this.S;
+      ☃ = 31 * ☃ + this.T;
+      ☃ = 31 * ☃ + this.U;
+      ☃ = 31 * ☃ + this.V;
+      ☃ = 31 * ☃ + this.W;
+      ☃ = 31 * ☃ + this.X;
+      ☃ = 31 * ☃ + this.Y;
+      ☃ = 31 * ☃ + this.Z;
+      ☃ = 31 * ☃ + this.aa;
+      ☃ = 31 * ☃ + this.ab;
+      ☃ = 31 * ☃ + this.ac;
+      ☃ = 31 * ☃ + this.ad;
+      ☃ = 31 * ☃ + this.ae;
+      ☃ = 31 * ☃ + this.af;
+      ☃ = 31 * ☃ + this.ag;
+      ☃ = 31 * ☃ + this.ah;
+      ☃ = 31 * ☃ + this.ai;
+      ☃ = 31 * ☃ + this.aj;
+      ☃ = 31 * ☃ + this.ak;
+      ☃ = 31 * ☃ + this.al;
+      ☃ = 31 * ☃ + this.am;
+      ☃ = 31 * ☃ + this.an;
+      ☃ = 31 * ☃ + this.ao;
+      ☃ = 31 * ☃ + this.ap;
+      ☃ = 31 * ☃ + this.aq;
+      ☃ = 31 * ☃ + this.ar;
+      ☃ = 31 * ☃ + this.as;
+      ☃ = 31 * ☃ + this.at;
+      ☃ = 31 * ☃ + this.au;
+      ☃ = 31 * ☃ + this.av;
+      ☃ = 31 * ☃ + this.aw;
+      ☃ = 31 * ☃ + this.ax;
+      ☃ = 31 * ☃ + this.ay;
+      ☃ = 31 * ☃ + this.az;
+      ☃ = 31 * ☃ + this.aA;
       return ☃;
     }
     
@@ -712,92 +712,92 @@ public class ant
       ant.a ☃ = new ant.a();
       try
       {
-        b = ni.a(☃, "coordinateScale", b);
-        c = ni.a(☃, "heightScale", c);
-        e = ni.a(☃, "lowerLimitScale", e);
-        d = ni.a(☃, "upperLimitScale", d);
-        f = ni.a(☃, "depthNoiseScaleX", f);
-        g = ni.a(☃, "depthNoiseScaleZ", g);
-        h = ni.a(☃, "depthNoiseScaleExponent", h);
-        i = ni.a(☃, "mainNoiseScaleX", i);
-        j = ni.a(☃, "mainNoiseScaleY", j);
-        k = ni.a(☃, "mainNoiseScaleZ", k);
-        l = ni.a(☃, "baseSize", l);
-        m = ni.a(☃, "stretchY", m);
-        n = ni.a(☃, "biomeDepthWeight", n);
-        o = ni.a(☃, "biomeDepthOffset", o);
-        p = ni.a(☃, "biomeScaleWeight", p);
-        q = ni.a(☃, "biomeScaleOffset", q);
-        r = ni.a(☃, "seaLevel", r);
+        ☃.b = ni.a(☃, "coordinateScale", ☃.b);
+        ☃.c = ni.a(☃, "heightScale", ☃.c);
+        ☃.e = ni.a(☃, "lowerLimitScale", ☃.e);
+        ☃.d = ni.a(☃, "upperLimitScale", ☃.d);
+        ☃.f = ni.a(☃, "depthNoiseScaleX", ☃.f);
+        ☃.g = ni.a(☃, "depthNoiseScaleZ", ☃.g);
+        ☃.h = ni.a(☃, "depthNoiseScaleExponent", ☃.h);
+        ☃.i = ni.a(☃, "mainNoiseScaleX", ☃.i);
+        ☃.j = ni.a(☃, "mainNoiseScaleY", ☃.j);
+        ☃.k = ni.a(☃, "mainNoiseScaleZ", ☃.k);
+        ☃.l = ni.a(☃, "baseSize", ☃.l);
+        ☃.m = ni.a(☃, "stretchY", ☃.m);
+        ☃.n = ni.a(☃, "biomeDepthWeight", ☃.n);
+        ☃.o = ni.a(☃, "biomeDepthOffset", ☃.o);
+        ☃.p = ni.a(☃, "biomeScaleWeight", ☃.p);
+        ☃.q = ni.a(☃, "biomeScaleOffset", ☃.q);
+        ☃.r = ni.a(☃, "seaLevel", ☃.r);
         
-        s = ni.a(☃, "useCaves", s);
-        t = ni.a(☃, "useDungeons", t);
-        u = ni.a(☃, "dungeonChance", u);
-        v = ni.a(☃, "useStrongholds", v);
-        w = ni.a(☃, "useVillages", w);
-        x = ni.a(☃, "useMineShafts", x);
-        y = ni.a(☃, "useTemples", y);
-        z = ni.a(☃, "useMonuments", z);
-        A = ni.a(☃, "useRavines", A);
-        B = ni.a(☃, "useWaterLakes", B);
-        C = ni.a(☃, "waterLakeChance", C);
-        D = ni.a(☃, "useLavaLakes", D);
-        E = ni.a(☃, "lavaLakeChance", E);
-        F = ni.a(☃, "useLavaOceans", F);
+        ☃.s = ni.a(☃, "useCaves", ☃.s);
+        ☃.t = ni.a(☃, "useDungeons", ☃.t);
+        ☃.u = ni.a(☃, "dungeonChance", ☃.u);
+        ☃.v = ni.a(☃, "useStrongholds", ☃.v);
+        ☃.w = ni.a(☃, "useVillages", ☃.w);
+        ☃.x = ni.a(☃, "useMineShafts", ☃.x);
+        ☃.y = ni.a(☃, "useTemples", ☃.y);
+        ☃.z = ni.a(☃, "useMonuments", ☃.z);
+        ☃.A = ni.a(☃, "useRavines", ☃.A);
+        ☃.B = ni.a(☃, "useWaterLakes", ☃.B);
+        ☃.C = ni.a(☃, "waterLakeChance", ☃.C);
+        ☃.D = ni.a(☃, "useLavaLakes", ☃.D);
+        ☃.E = ni.a(☃, "lavaLakeChance", ☃.E);
+        ☃.F = ni.a(☃, "useLavaOceans", ☃.F);
         
-        G = ni.a(☃, "fixedBiome", G);
-        if ((G >= 38) || (G < -1)) {
-          G = -1;
-        } else if (G >= xaz) {
-          G += 2;
+        ☃.G = ni.a(☃, "fixedBiome", ☃.G);
+        if ((☃.G >= 38) || (☃.G < -1)) {
+          ☃.G = -1;
+        } else if (☃.G >= ady.x.az) {
+          ☃.G += 2;
         }
-        H = ni.a(☃, "biomeSize", H);
-        I = ni.a(☃, "riverSize", I);
+        ☃.H = ni.a(☃, "biomeSize", ☃.H);
+        ☃.I = ni.a(☃, "riverSize", ☃.I);
         
-        J = ni.a(☃, "dirtSize", J);
-        K = ni.a(☃, "dirtCount", K);
-        L = ni.a(☃, "dirtMinHeight", L);
-        M = ni.a(☃, "dirtMaxHeight", M);
-        N = ni.a(☃, "gravelSize", N);
-        O = ni.a(☃, "gravelCount", O);
-        P = ni.a(☃, "gravelMinHeight", P);
-        Q = ni.a(☃, "gravelMaxHeight", Q);
-        R = ni.a(☃, "graniteSize", R);
-        S = ni.a(☃, "graniteCount", S);
-        T = ni.a(☃, "graniteMinHeight", T);
-        U = ni.a(☃, "graniteMaxHeight", U);
-        V = ni.a(☃, "dioriteSize", V);
-        W = ni.a(☃, "dioriteCount", W);
-        X = ni.a(☃, "dioriteMinHeight", X);
-        Y = ni.a(☃, "dioriteMaxHeight", Y);
-        Z = ni.a(☃, "andesiteSize", Z);
-        aa = ni.a(☃, "andesiteCount", aa);
-        ab = ni.a(☃, "andesiteMinHeight", ab);
-        ac = ni.a(☃, "andesiteMaxHeight", ac);
-        ad = ni.a(☃, "coalSize", ad);
-        ae = ni.a(☃, "coalCount", ae);
-        af = ni.a(☃, "coalMinHeight", af);
-        ag = ni.a(☃, "coalMaxHeight", ag);
-        ah = ni.a(☃, "ironSize", ah);
-        ai = ni.a(☃, "ironCount", ai);
-        aj = ni.a(☃, "ironMinHeight", aj);
-        ak = ni.a(☃, "ironMaxHeight", ak);
-        al = ni.a(☃, "goldSize", al);
-        am = ni.a(☃, "goldCount", am);
-        an = ni.a(☃, "goldMinHeight", an);
-        ao = ni.a(☃, "goldMaxHeight", ao);
-        ap = ni.a(☃, "redstoneSize", ap);
-        aq = ni.a(☃, "redstoneCount", aq);
-        ar = ni.a(☃, "redstoneMinHeight", ar);
-        as = ni.a(☃, "redstoneMaxHeight", as);
-        at = ni.a(☃, "diamondSize", at);
-        au = ni.a(☃, "diamondCount", au);
-        av = ni.a(☃, "diamondMinHeight", av);
-        aw = ni.a(☃, "diamondMaxHeight", aw);
-        ax = ni.a(☃, "lapisSize", ax);
-        ay = ni.a(☃, "lapisCount", ay);
-        az = ni.a(☃, "lapisCenterHeight", az);
-        aA = ni.a(☃, "lapisSpread", aA);
+        ☃.J = ni.a(☃, "dirtSize", ☃.J);
+        ☃.K = ni.a(☃, "dirtCount", ☃.K);
+        ☃.L = ni.a(☃, "dirtMinHeight", ☃.L);
+        ☃.M = ni.a(☃, "dirtMaxHeight", ☃.M);
+        ☃.N = ni.a(☃, "gravelSize", ☃.N);
+        ☃.O = ni.a(☃, "gravelCount", ☃.O);
+        ☃.P = ni.a(☃, "gravelMinHeight", ☃.P);
+        ☃.Q = ni.a(☃, "gravelMaxHeight", ☃.Q);
+        ☃.R = ni.a(☃, "graniteSize", ☃.R);
+        ☃.S = ni.a(☃, "graniteCount", ☃.S);
+        ☃.T = ni.a(☃, "graniteMinHeight", ☃.T);
+        ☃.U = ni.a(☃, "graniteMaxHeight", ☃.U);
+        ☃.V = ni.a(☃, "dioriteSize", ☃.V);
+        ☃.W = ni.a(☃, "dioriteCount", ☃.W);
+        ☃.X = ni.a(☃, "dioriteMinHeight", ☃.X);
+        ☃.Y = ni.a(☃, "dioriteMaxHeight", ☃.Y);
+        ☃.Z = ni.a(☃, "andesiteSize", ☃.Z);
+        ☃.aa = ni.a(☃, "andesiteCount", ☃.aa);
+        ☃.ab = ni.a(☃, "andesiteMinHeight", ☃.ab);
+        ☃.ac = ni.a(☃, "andesiteMaxHeight", ☃.ac);
+        ☃.ad = ni.a(☃, "coalSize", ☃.ad);
+        ☃.ae = ni.a(☃, "coalCount", ☃.ae);
+        ☃.af = ni.a(☃, "coalMinHeight", ☃.af);
+        ☃.ag = ni.a(☃, "coalMaxHeight", ☃.ag);
+        ☃.ah = ni.a(☃, "ironSize", ☃.ah);
+        ☃.ai = ni.a(☃, "ironCount", ☃.ai);
+        ☃.aj = ni.a(☃, "ironMinHeight", ☃.aj);
+        ☃.ak = ni.a(☃, "ironMaxHeight", ☃.ak);
+        ☃.al = ni.a(☃, "goldSize", ☃.al);
+        ☃.am = ni.a(☃, "goldCount", ☃.am);
+        ☃.an = ni.a(☃, "goldMinHeight", ☃.an);
+        ☃.ao = ni.a(☃, "goldMaxHeight", ☃.ao);
+        ☃.ap = ni.a(☃, "redstoneSize", ☃.ap);
+        ☃.aq = ni.a(☃, "redstoneCount", ☃.aq);
+        ☃.ar = ni.a(☃, "redstoneMinHeight", ☃.ar);
+        ☃.as = ni.a(☃, "redstoneMaxHeight", ☃.as);
+        ☃.at = ni.a(☃, "diamondSize", ☃.at);
+        ☃.au = ni.a(☃, "diamondCount", ☃.au);
+        ☃.av = ni.a(☃, "diamondMinHeight", ☃.av);
+        ☃.aw = ni.a(☃, "diamondMaxHeight", ☃.aw);
+        ☃.ax = ni.a(☃, "lapisSize", ☃.ax);
+        ☃.ay = ni.a(☃, "lapisCount", ☃.ay);
+        ☃.az = ni.a(☃, "lapisCenterHeight", ☃.az);
+        ☃.aA = ni.a(☃, "lapisSpread", ☃.aA);
       }
       catch (Exception localException) {}
       return ☃;
@@ -807,87 +807,87 @@ public class ant
     {
       JsonObject ☃ = new JsonObject();
       
-      ☃.addProperty("coordinateScale", Float.valueOf(b));
-      ☃.addProperty("heightScale", Float.valueOf(c));
-      ☃.addProperty("lowerLimitScale", Float.valueOf(e));
-      ☃.addProperty("upperLimitScale", Float.valueOf(d));
-      ☃.addProperty("depthNoiseScaleX", Float.valueOf(f));
-      ☃.addProperty("depthNoiseScaleZ", Float.valueOf(g));
-      ☃.addProperty("depthNoiseScaleExponent", Float.valueOf(h));
-      ☃.addProperty("mainNoiseScaleX", Float.valueOf(i));
-      ☃.addProperty("mainNoiseScaleY", Float.valueOf(j));
-      ☃.addProperty("mainNoiseScaleZ", Float.valueOf(k));
-      ☃.addProperty("baseSize", Float.valueOf(l));
-      ☃.addProperty("stretchY", Float.valueOf(m));
-      ☃.addProperty("biomeDepthWeight", Float.valueOf(n));
-      ☃.addProperty("biomeDepthOffset", Float.valueOf(o));
-      ☃.addProperty("biomeScaleWeight", Float.valueOf(p));
-      ☃.addProperty("biomeScaleOffset", Float.valueOf(q));
-      ☃.addProperty("seaLevel", Integer.valueOf(r));
+      ☃.addProperty("coordinateScale", Float.valueOf(☃.b));
+      ☃.addProperty("heightScale", Float.valueOf(☃.c));
+      ☃.addProperty("lowerLimitScale", Float.valueOf(☃.e));
+      ☃.addProperty("upperLimitScale", Float.valueOf(☃.d));
+      ☃.addProperty("depthNoiseScaleX", Float.valueOf(☃.f));
+      ☃.addProperty("depthNoiseScaleZ", Float.valueOf(☃.g));
+      ☃.addProperty("depthNoiseScaleExponent", Float.valueOf(☃.h));
+      ☃.addProperty("mainNoiseScaleX", Float.valueOf(☃.i));
+      ☃.addProperty("mainNoiseScaleY", Float.valueOf(☃.j));
+      ☃.addProperty("mainNoiseScaleZ", Float.valueOf(☃.k));
+      ☃.addProperty("baseSize", Float.valueOf(☃.l));
+      ☃.addProperty("stretchY", Float.valueOf(☃.m));
+      ☃.addProperty("biomeDepthWeight", Float.valueOf(☃.n));
+      ☃.addProperty("biomeDepthOffset", Float.valueOf(☃.o));
+      ☃.addProperty("biomeScaleWeight", Float.valueOf(☃.p));
+      ☃.addProperty("biomeScaleOffset", Float.valueOf(☃.q));
+      ☃.addProperty("seaLevel", Integer.valueOf(☃.r));
       
-      ☃.addProperty("useCaves", Boolean.valueOf(s));
-      ☃.addProperty("useDungeons", Boolean.valueOf(t));
-      ☃.addProperty("dungeonChance", Integer.valueOf(u));
-      ☃.addProperty("useStrongholds", Boolean.valueOf(v));
-      ☃.addProperty("useVillages", Boolean.valueOf(w));
-      ☃.addProperty("useMineShafts", Boolean.valueOf(x));
-      ☃.addProperty("useTemples", Boolean.valueOf(y));
-      ☃.addProperty("useMonuments", Boolean.valueOf(z));
-      ☃.addProperty("useRavines", Boolean.valueOf(A));
-      ☃.addProperty("useWaterLakes", Boolean.valueOf(B));
-      ☃.addProperty("waterLakeChance", Integer.valueOf(C));
-      ☃.addProperty("useLavaLakes", Boolean.valueOf(D));
-      ☃.addProperty("lavaLakeChance", Integer.valueOf(E));
-      ☃.addProperty("useLavaOceans", Boolean.valueOf(F));
+      ☃.addProperty("useCaves", Boolean.valueOf(☃.s));
+      ☃.addProperty("useDungeons", Boolean.valueOf(☃.t));
+      ☃.addProperty("dungeonChance", Integer.valueOf(☃.u));
+      ☃.addProperty("useStrongholds", Boolean.valueOf(☃.v));
+      ☃.addProperty("useVillages", Boolean.valueOf(☃.w));
+      ☃.addProperty("useMineShafts", Boolean.valueOf(☃.x));
+      ☃.addProperty("useTemples", Boolean.valueOf(☃.y));
+      ☃.addProperty("useMonuments", Boolean.valueOf(☃.z));
+      ☃.addProperty("useRavines", Boolean.valueOf(☃.A));
+      ☃.addProperty("useWaterLakes", Boolean.valueOf(☃.B));
+      ☃.addProperty("waterLakeChance", Integer.valueOf(☃.C));
+      ☃.addProperty("useLavaLakes", Boolean.valueOf(☃.D));
+      ☃.addProperty("lavaLakeChance", Integer.valueOf(☃.E));
+      ☃.addProperty("useLavaOceans", Boolean.valueOf(☃.F));
       
-      ☃.addProperty("fixedBiome", Integer.valueOf(G));
-      ☃.addProperty("biomeSize", Integer.valueOf(H));
-      ☃.addProperty("riverSize", Integer.valueOf(I));
+      ☃.addProperty("fixedBiome", Integer.valueOf(☃.G));
+      ☃.addProperty("biomeSize", Integer.valueOf(☃.H));
+      ☃.addProperty("riverSize", Integer.valueOf(☃.I));
       
-      ☃.addProperty("dirtSize", Integer.valueOf(J));
-      ☃.addProperty("dirtCount", Integer.valueOf(K));
-      ☃.addProperty("dirtMinHeight", Integer.valueOf(L));
-      ☃.addProperty("dirtMaxHeight", Integer.valueOf(M));
-      ☃.addProperty("gravelSize", Integer.valueOf(N));
-      ☃.addProperty("gravelCount", Integer.valueOf(O));
-      ☃.addProperty("gravelMinHeight", Integer.valueOf(P));
-      ☃.addProperty("gravelMaxHeight", Integer.valueOf(Q));
-      ☃.addProperty("graniteSize", Integer.valueOf(R));
-      ☃.addProperty("graniteCount", Integer.valueOf(S));
-      ☃.addProperty("graniteMinHeight", Integer.valueOf(T));
-      ☃.addProperty("graniteMaxHeight", Integer.valueOf(U));
-      ☃.addProperty("dioriteSize", Integer.valueOf(V));
-      ☃.addProperty("dioriteCount", Integer.valueOf(W));
-      ☃.addProperty("dioriteMinHeight", Integer.valueOf(X));
-      ☃.addProperty("dioriteMaxHeight", Integer.valueOf(Y));
-      ☃.addProperty("andesiteSize", Integer.valueOf(Z));
-      ☃.addProperty("andesiteCount", Integer.valueOf(aa));
-      ☃.addProperty("andesiteMinHeight", Integer.valueOf(ab));
-      ☃.addProperty("andesiteMaxHeight", Integer.valueOf(ac));
-      ☃.addProperty("coalSize", Integer.valueOf(ad));
-      ☃.addProperty("coalCount", Integer.valueOf(ae));
-      ☃.addProperty("coalMinHeight", Integer.valueOf(af));
-      ☃.addProperty("coalMaxHeight", Integer.valueOf(ag));
-      ☃.addProperty("ironSize", Integer.valueOf(ah));
-      ☃.addProperty("ironCount", Integer.valueOf(ai));
-      ☃.addProperty("ironMinHeight", Integer.valueOf(aj));
-      ☃.addProperty("ironMaxHeight", Integer.valueOf(ak));
-      ☃.addProperty("goldSize", Integer.valueOf(al));
-      ☃.addProperty("goldCount", Integer.valueOf(am));
-      ☃.addProperty("goldMinHeight", Integer.valueOf(an));
-      ☃.addProperty("goldMaxHeight", Integer.valueOf(ao));
-      ☃.addProperty("redstoneSize", Integer.valueOf(ap));
-      ☃.addProperty("redstoneCount", Integer.valueOf(aq));
-      ☃.addProperty("redstoneMinHeight", Integer.valueOf(ar));
-      ☃.addProperty("redstoneMaxHeight", Integer.valueOf(as));
-      ☃.addProperty("diamondSize", Integer.valueOf(at));
-      ☃.addProperty("diamondCount", Integer.valueOf(au));
-      ☃.addProperty("diamondMinHeight", Integer.valueOf(av));
-      ☃.addProperty("diamondMaxHeight", Integer.valueOf(aw));
-      ☃.addProperty("lapisSize", Integer.valueOf(ax));
-      ☃.addProperty("lapisCount", Integer.valueOf(ay));
-      ☃.addProperty("lapisCenterHeight", Integer.valueOf(az));
-      ☃.addProperty("lapisSpread", Integer.valueOf(aA));
+      ☃.addProperty("dirtSize", Integer.valueOf(☃.J));
+      ☃.addProperty("dirtCount", Integer.valueOf(☃.K));
+      ☃.addProperty("dirtMinHeight", Integer.valueOf(☃.L));
+      ☃.addProperty("dirtMaxHeight", Integer.valueOf(☃.M));
+      ☃.addProperty("gravelSize", Integer.valueOf(☃.N));
+      ☃.addProperty("gravelCount", Integer.valueOf(☃.O));
+      ☃.addProperty("gravelMinHeight", Integer.valueOf(☃.P));
+      ☃.addProperty("gravelMaxHeight", Integer.valueOf(☃.Q));
+      ☃.addProperty("graniteSize", Integer.valueOf(☃.R));
+      ☃.addProperty("graniteCount", Integer.valueOf(☃.S));
+      ☃.addProperty("graniteMinHeight", Integer.valueOf(☃.T));
+      ☃.addProperty("graniteMaxHeight", Integer.valueOf(☃.U));
+      ☃.addProperty("dioriteSize", Integer.valueOf(☃.V));
+      ☃.addProperty("dioriteCount", Integer.valueOf(☃.W));
+      ☃.addProperty("dioriteMinHeight", Integer.valueOf(☃.X));
+      ☃.addProperty("dioriteMaxHeight", Integer.valueOf(☃.Y));
+      ☃.addProperty("andesiteSize", Integer.valueOf(☃.Z));
+      ☃.addProperty("andesiteCount", Integer.valueOf(☃.aa));
+      ☃.addProperty("andesiteMinHeight", Integer.valueOf(☃.ab));
+      ☃.addProperty("andesiteMaxHeight", Integer.valueOf(☃.ac));
+      ☃.addProperty("coalSize", Integer.valueOf(☃.ad));
+      ☃.addProperty("coalCount", Integer.valueOf(☃.ae));
+      ☃.addProperty("coalMinHeight", Integer.valueOf(☃.af));
+      ☃.addProperty("coalMaxHeight", Integer.valueOf(☃.ag));
+      ☃.addProperty("ironSize", Integer.valueOf(☃.ah));
+      ☃.addProperty("ironCount", Integer.valueOf(☃.ai));
+      ☃.addProperty("ironMinHeight", Integer.valueOf(☃.aj));
+      ☃.addProperty("ironMaxHeight", Integer.valueOf(☃.ak));
+      ☃.addProperty("goldSize", Integer.valueOf(☃.al));
+      ☃.addProperty("goldCount", Integer.valueOf(☃.am));
+      ☃.addProperty("goldMinHeight", Integer.valueOf(☃.an));
+      ☃.addProperty("goldMaxHeight", Integer.valueOf(☃.ao));
+      ☃.addProperty("redstoneSize", Integer.valueOf(☃.ap));
+      ☃.addProperty("redstoneCount", Integer.valueOf(☃.aq));
+      ☃.addProperty("redstoneMinHeight", Integer.valueOf(☃.ar));
+      ☃.addProperty("redstoneMaxHeight", Integer.valueOf(☃.as));
+      ☃.addProperty("diamondSize", Integer.valueOf(☃.at));
+      ☃.addProperty("diamondCount", Integer.valueOf(☃.au));
+      ☃.addProperty("diamondMinHeight", Integer.valueOf(☃.av));
+      ☃.addProperty("diamondMaxHeight", Integer.valueOf(☃.aw));
+      ☃.addProperty("lapisSize", Integer.valueOf(☃.ax));
+      ☃.addProperty("lapisCount", Integer.valueOf(☃.ay));
+      ☃.addProperty("lapisCenterHeight", Integer.valueOf(☃.az));
+      ☃.addProperty("lapisSpread", Integer.valueOf(☃.aA));
       
       return ☃;
     }

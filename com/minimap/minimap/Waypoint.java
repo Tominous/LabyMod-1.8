@@ -35,10 +35,10 @@ public class Waypoint
   
   public Waypoint(int x, int y, int z, String name, String symbol, int color, int type)
   {
-    disabled = false;
+    this.disabled = false;
     this.type = 0;
-    rotation = false;
-    yaw = 0;
+    this.rotation = false;
+    this.yaw = 0;
     this.x = x;
     this.y = y;
     this.z = z;
@@ -58,19 +58,19 @@ public class Waypoint
   
   public String getName()
   {
-    return bnq.a(name, new Object[0]);
+    return bnq.a(this.name, new Object[0]);
   }
   
   public void drawIconInWorld(bfd worldrenderer, bfx tessellator, avn fontrenderer, String text, float textSize, boolean background, boolean showDistance)
   {
-    bfl.a(getSettingswaypointsScale, getSettingswaypointsScale, 1.0F);
-    if (type == 0)
+    bfl.a(XaeroMinimap.getSettings().waypointsScale, XaeroMinimap.getSettings().waypointsScale, 1.0F);
+    if (this.type == 0)
     {
-      int c = ModSettings.COLORS[color];
+      int c = ModSettings.COLORS[this.color];
       float l = (c >> 16 & 0xFF) / 255.0F;
       float i1 = (c >> 8 & 0xFF) / 255.0F;
       float j1 = (c & 0xFF) / 255.0F;
-      int s = fontrenderer.a(symbol) / 2;
+      int s = fontrenderer.a(this.symbol) / 2;
       bfl.x();
       worldrenderer.a(7, bms.e);
       bfl.c(l, i1, j1, 0.4705882F);
@@ -80,8 +80,8 @@ public class Waypoint
       worldrenderer.b(4.0D, -9.0D, 0.0D).d();
       tessellator.b();
       bfl.w();
-      fontrenderer.a(symbol, -s, -8, 553648127);
-      fontrenderer.a(symbol, -s, -8, -1);
+      fontrenderer.a(this.symbol, -s, -8, 553648127);
+      fontrenderer.a(this.symbol, -s, -8, -1);
       bfl.a(textSize / 2.0F, textSize / 2.0F, 1.0F);
       int t = fontrenderer.a(text) / 2;
       if (background)
@@ -99,7 +99,7 @@ public class Waypoint
       fontrenderer.a(text, -t, 2, 553648127);
       fontrenderer.a(text, -t, 2, -1);
     }
-    else if (type == 1)
+    else if (this.type == 1)
     {
       ave.A().P().a(InterfaceHandler.guiTextures);
       float f = 0.00390625F;
@@ -137,18 +137,18 @@ public class Waypoint
   
   public void drawIconOnGUI(int drawX, int drawY)
   {
-    if (type == 0)
+    if (this.type == 0)
     {
       int rectX2 = drawX + 9;
       int rectY2 = drawY + 9;
-      avp.a(drawX, drawY, rectX2, rectY2, ModSettings.COLORS[color]);
-      int j = Ak.a(symbol) / 2;
-      Ak.a(symbol, drawX + 5 - j, drawY + 1, Minimap.radarPlayers.hashCode());
+      avp.a(drawX, drawY, rectX2, rectY2, ModSettings.COLORS[this.color]);
+      int j = ave.A().k.a(this.symbol) / 2;
+      ave.A().k.a(this.symbol, drawX + 5 - j, drawY + 1, Minimap.radarPlayers.hashCode());
     }
-    else if (type == 1)
+    else if (this.type == 1)
     {
       ave.A().P().a(InterfaceHandler.guiTextures);
-      Aq.b(drawX, drawY, 0, 78, 9, 9);
+      ave.A().q.b(drawX, drawY, 0, 78, 9, 9);
     }
   }
 }

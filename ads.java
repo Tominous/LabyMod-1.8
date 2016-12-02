@@ -4,6 +4,6 @@ public enum ads
   
   private ads(int ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
 }

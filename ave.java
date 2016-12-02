@@ -161,30 +161,30 @@ public class ave
   public ave(bao gameConfig)
   {
     S = this;
-    v = c.a;
-    ak = c.c;
-    N = c.b;
-    al = d.b;
-    O = a.b;
-    P = a.c;
-    aB = new bna(new bmy(c.c, c.d).a());
-    am = (a.d == null ? Proxy.NO_PROXY : a.d);
-    aK = new YggdrasilAuthenticationService(a.d, UUID.randomUUID().toString()).createMinecraftSessionService();
-    ae = a.a;
-    K.info("Setting user: " + ae.c());
-    K.info("(Session ID is " + ae.a() + ")");
-    au = d.a;
-    d = (b.a > 0 ? b.a : 1);
-    e = (b.b > 0 ? b.b : 1);
-    ah = b.a;
-    ai = b.b;
-    T = b.c;
-    at = as();
-    aj = new bpo(this);
-    if (e.a != null)
+    this.v = gameConfig.c.a;
+    this.ak = gameConfig.c.c;
+    this.N = gameConfig.c.b;
+    this.al = gameConfig.d.b;
+    this.O = gameConfig.a.b;
+    this.P = gameConfig.a.c;
+    this.aB = new bna(new bmy(gameConfig.c.c, gameConfig.c.d).a());
+    this.am = (gameConfig.a.d == null ? Proxy.NO_PROXY : gameConfig.a.d);
+    this.aK = new YggdrasilAuthenticationService(gameConfig.a.d, UUID.randomUUID().toString()).createMinecraftSessionService();
+    this.ae = gameConfig.a.a;
+    K.info("Setting user: " + this.ae.c());
+    K.info("(Session ID is " + this.ae.a() + ")");
+    this.au = gameConfig.d.a;
+    this.d = (gameConfig.b.a > 0 ? gameConfig.b.a : 1);
+    this.e = (gameConfig.b.b > 0 ? gameConfig.b.b : 1);
+    this.ah = gameConfig.b.a;
+    this.ai = gameConfig.b.b;
+    this.T = gameConfig.b.c;
+    this.at = as();
+    this.aj = new bpo(this);
+    if (gameConfig.e.a != null)
     {
-      aq = e.a;
-      ar = e.b;
+      this.aq = gameConfig.e.a;
+      this.ar = gameConfig.e.b;
     }
     ImageIO.setUseCache(false);
     kb.c();
@@ -359,54 +359,54 @@ public class ave
   private void am()
     throws LWJGLException, IOException
   {
-    t = new avh(this, v);
-    aA.add(aB);
+    this.t = new avh(this, this.v);
+    this.aA.add(this.aB);
     at();
-    if ((t.C > 0) && (t.B > 0))
+    if ((this.t.C > 0) && (this.t.B > 0))
     {
-      d = t.B;
-      e = t.C;
+      this.d = this.t.B;
+      this.e = this.t.C;
     }
     K.info("LWJGL Version: " + Sys.getVersion());
     ar();
     aq();
     ap();
     bqs.a();
-    aF = new bfw(d, e, true);
-    aF.a(0.0F, 0.0F, 0.0F, 0.0F);
+    this.aF = new bfw(this.d, this.e, true);
+    this.aF.a(0.0F, 0.0F, 0.0F, 0.0F);
     an();
-    aC = new bnm(N, new File(v, "server-resource-packs"), aB, az, t);
-    ay = new bnn(az);
-    aD = new bns(az, t.aM);
-    ay.a(aD);
+    this.aC = new bnm(this.N, new File(this.v, "server-resource-packs"), this.aB, this.az, this.t);
+    this.ay = new bnn(this.az);
+    this.aD = new bns(this.az, this.t.aM);
+    this.ay.a(this.aD);
     e();
-    R = new bmj(ay);
-    ay.a(R);
-    a(R);
+    this.R = new bmj(this.ay);
+    this.ay.a(this.R);
+    a(this.R);
     ao();
-    aL = new bnp(R, new File(ak, "skins"), aK);
-    an = new atk(new File(v, "saves"));
-    aH = new bpz(ay, t);
-    ay.a(aH);
-    aI = new bpv(this);
-    k = new avn(t, new jy("textures/font/ascii.png"), R, false);
-    if (t.aM != null)
+    this.aL = new bnp(this.R, new File(this.ak, "skins"), this.aK);
+    this.an = new atk(new File(this.v, "saves"));
+    this.aH = new bpz(this.ay, this.t);
+    this.ay.a(this.aH);
+    this.aI = new bpv(this);
+    this.k = new avn(this.t, new jy("textures/font/ascii.png"), this.R, false);
+    if (this.t.aM != null)
     {
-      k.a(d());
-      k.b(aD.b());
+      this.k.a(d());
+      this.k.b(this.aD.b());
     }
-    l = new avn(t, new jy("textures/font/ascii_sga.png"), R, false);
-    ay.a(k);
-    ay.a(l);
-    ay.a(new bnf());
-    ay.a(new bne());
+    this.l = new avn(this.t, new jy("textures/font/ascii_sga.png"), this.R, false);
+    this.ay.a(this.k);
+    this.ay.a(this.l);
+    this.ay.a(new bnf());
+    this.ay.a(new bne());
     mr.f.a(new ms()
     {
       public String a(String p_74535_1_)
       {
         try
         {
-          return String.format(p_74535_1_, new Object[] { avh.c(t.ae.i()) });
+          return String.format(p_74535_1_, new Object[] { avh.c(ave.this.t.ae.i()) });
         }
         catch (Exception exception)
         {
@@ -414,7 +414,7 @@ public class ave
         }
       }
     });
-    u = new avf();
+    this.u = new avf();
     b("Pre startup");
     bfl.w();
     bfl.j(7425);
@@ -428,69 +428,69 @@ public class ave
     bfl.D();
     bfl.n(5888);
     b("Startup");
-    aG = new bmh("textures");
-    aG.a(t.J);
-    R.a(bmh.g, aG);
-    R.a(bmh.g);
-    aG.a(false, t.J > 0);
-    aP = new bou(aG);
-    ay.a(aP);
-    ab = new bjh(R, aP);
-    aa = new biu(R, ab);
-    ac = new bfn(this);
-    ay.a(ab);
-    o = new bfk(this, ay);
-    ay.a(o);
-    aQ = new bgd(aP.c(), t);
-    ay.a(aQ);
-    g = new bfr(this);
-    ay.a(g);
-    p = new ayd(this);
-    bfl.b(0, 0, d, e);
-    j = new bec(f, R);
+    this.aG = new bmh("textures");
+    this.aG.a(this.t.J);
+    this.R.a(bmh.g, this.aG);
+    this.R.a(bmh.g);
+    this.aG.a(false, this.t.J > 0);
+    this.aP = new bou(this.aG);
+    this.ay.a(this.aP);
+    this.ab = new bjh(this.R, this.aP);
+    this.aa = new biu(this.R, this.ab);
+    this.ac = new bfn(this);
+    this.ay.a(this.ab);
+    this.o = new bfk(this, this.ay);
+    this.ay.a(this.o);
+    this.aQ = new bgd(this.aP.c(), this.t);
+    this.ay.a(this.aQ);
+    this.g = new bfr(this);
+    this.ay.a(this.g);
+    this.p = new ayd(this);
+    bfl.b(0, 0, this.d, this.e);
+    this.j = new bec(this.f, this.R);
     b("Post startup");
-    q = new avo(this);
-    if (aq != null) {
-      a(new awz(new aya(), this, aq, ar));
+    this.q = new avo(this);
+    if (this.aq != null) {
+      a(new awz(new aya(), this, this.aq, this.ar));
     } else {
       a(new aya());
     }
-    R.c(aJ);
-    aJ = null;
-    n = new avi(this);
-    if ((t.s) && (!T)) {
+    this.R.c(this.aJ);
+    this.aJ = null;
+    this.n = new avi(this);
+    if ((this.t.s) && (!this.T)) {
       q();
     }
     try
     {
-      Display.setVSyncEnabled(t.t);
+      Display.setVSyncEnabled(this.t.t);
     }
     catch (OpenGLException var2)
     {
-      t.t = false;
-      t.b();
+      this.t.t = false;
+      this.t.b();
     }
-    g.b();
+    this.g.b();
   }
   
   private void an()
   {
-    az.a(new boo(), bon.class);
-    az.a(new boe(), bod.class);
-    az.a(new bob(), boa.class);
-    az.a(new bok(), boj.class);
-    az.a(new boh(), bog.class);
+    this.az.a(new boo(), bon.class);
+    this.az.a(new boe(), bod.class);
+    this.az.a(new bob(), boa.class);
+    this.az.a(new bok(), boj.class);
+    this.az.a(new boh(), bog.class);
   }
   
   private void ao()
   {
     try
     {
-      aE = new bqn(this, (Property)Iterables.getFirst(O.get("twitch_access_token"), null));
+      this.aE = new bqn(this, (Property)Iterables.getFirst(this.O.get("twitch_access_token"), null));
     }
     catch (Throwable throwable)
     {
-      aE = new bqo(throwable);
+      this.aE = new bqo(throwable);
       K.error("Couldn't initialize twitch stream");
     }
   }
@@ -512,7 +512,7 @@ public class ave
         Thread.sleep(1000L);
       }
       catch (InterruptedException localInterruptedException) {}
-      if (T) {
+      if (this.T) {
         au();
       }
       Display.create();
@@ -522,16 +522,16 @@ public class ave
   private void aq()
     throws LWJGLException
   {
-    if (T)
+    if (this.T)
     {
       Display.setFullscreen(true);
       DisplayMode displaymode = Display.getDisplayMode();
-      d = Math.max(1, displaymode.getWidth());
-      e = Math.max(1, displaymode.getHeight());
+      this.d = Math.max(1, displaymode.getWidth());
+      this.e = Math.max(1, displaymode.getHeight());
     }
     else
     {
-      Display.setDisplayMode(new DisplayMode(d, e));
+      Display.setDisplayMode(new DisplayMode(this.d, this.e));
     }
   }
   
@@ -544,8 +544,8 @@ public class ave
       InputStream inputstream1 = null;
       try
       {
-        inputstream = aB.c(new jy("icons/icon_16x16.png"));
-        inputstream1 = aB.c(new jy("icons/icon_32x32.png"));
+        inputstream = this.aB.c(new jy("icons/icon_16x16.png"));
+        inputstream1 = this.aB.c(new jy("icons/icon_32x32.png"));
         if ((inputstream != null) && (inputstream1 != null)) {
           Display.setIcon(new ByteBuffer[] { a(inputstream), a(inputstream1) });
         }
@@ -577,12 +577,12 @@ public class ave
   
   public bfw b()
   {
-    return aF;
+    return this.aF;
   }
   
   public String c()
   {
-    return al;
+    return this.al;
   }
   
   private void at()
@@ -591,7 +591,7 @@ public class ave
     {
       public void run()
       {
-        while (B) {
+        while (ave.this.B) {
           try
           {
             Thread.sleep(2147483647L);
@@ -606,13 +606,13 @@ public class ave
   
   public void a(b crash)
   {
-    V = true;
-    W = crash;
+    this.V = true;
+    this.W = crash;
   }
   
   public void c(b crashReportIn)
   {
-    File file1 = new File(Av, "crash-reports");
+    File file1 = new File(A().v, "crash-reports");
     File file2 = new File(file1, "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-client.txt");
     kb.a(crashReportIn.e());
     if (crashReportIn.f() != null)
@@ -634,36 +634,36 @@ public class ave
   
   public boolean d()
   {
-    return (aD.a()) || (t.aN);
+    return (this.aD.a()) || (this.t.aN);
   }
   
   public void e()
   {
-    List<bnk> list = Lists.newArrayList(aA);
-    for (bnm.a resourcepackrepository$entry : aC.c()) {
+    List<bnk> list = Lists.newArrayList(this.aA);
+    for (bnm.a resourcepackrepository$entry : this.aC.c()) {
       list.add(resourcepackrepository$entry.c());
     }
-    if (aC.e() != null) {
-      list.add(aC.e());
+    if (this.aC.e() != null) {
+      list.add(this.aC.e());
     }
     try
     {
-      ay.a(list);
+      this.ay.a(list);
     }
     catch (RuntimeException runtimeexception)
     {
       K.info("Caught error stitching, removing all assigned resourcepacks", runtimeexception);
       list.clear();
-      list.addAll(aA);
-      aC.a(Collections.emptyList());
-      ay.a(list);
-      t.k.clear();
-      t.l.clear();
-      t.b();
+      list.addAll(this.aA);
+      this.aC.a(Collections.emptyList());
+      this.ay.a(list);
+      this.t.k.clear();
+      this.t.l.clear();
+      this.t.b();
     }
-    aD.a(list);
-    if (g != null) {
-      g.a();
+    this.aD.a(list);
+    if (this.g != null) {
+      this.g.a();
     }
   }
   
@@ -720,8 +720,8 @@ public class ave
     }
     label229:
     Display.setDisplayMode(displaymode);
-    d = displaymode.getWidth();
-    e = displaymode.getHeight();
+    this.d = displaymode.getWidth();
+    this.e = displaymode.getHeight();
   }
   
   private void a(bmj textureManagerInstance)
@@ -744,9 +744,9 @@ public class ave
     InputStream inputstream = null;
     try
     {
-      inputstream = aB.a(L);
-      aJ = textureManagerInstance.a("logo", new blz(ImageIO.read(inputstream)));
-      textureManagerInstance.a(aJ);
+      inputstream = this.aB.a(L);
+      this.aJ = textureManagerInstance.a("logo", new blz(ImageIO.read(inputstream)));
+      textureManagerInstance.a(this.aJ);
     }
     catch (IOException ioexception)
     {
@@ -759,9 +759,9 @@ public class ave
     bfx tessellator = bfx.a();
     bfd worldrenderer = tessellator.c();
     worldrenderer.a(7, bms.i);
-    worldrenderer.b(0.0D, e, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
-    worldrenderer.b(d, e, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
-    worldrenderer.b(d, 0.0D, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
+    worldrenderer.b(0.0D, this.e, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
+    worldrenderer.b(this.d, this.e, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
+    worldrenderer.b(this.d, 0.0D, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
     worldrenderer.b(0.0D, 0.0D, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
     tessellator.b();
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
@@ -792,25 +792,25 @@ public class ave
   
   public atr f()
   {
-    return an;
+    return this.an;
   }
   
   public void a(axu guiScreenIn)
   {
-    if (m != null) {
-      m.m();
+    if (this.m != null) {
+      this.m.m();
     }
-    if ((guiScreenIn == null) && (f == null)) {
+    if ((guiScreenIn == null) && (this.f == null)) {
       guiScreenIn = new aya();
-    } else if ((guiScreenIn == null) && (h.bn() <= 0.0F)) {
+    } else if ((guiScreenIn == null) && (this.h.bn() <= 0.0F)) {
       guiScreenIn = new axe();
     }
     if ((guiScreenIn instanceof aya))
     {
-      t.aB = false;
-      q.d().a();
+      this.t.aB = false;
+      this.q.d().a();
     }
-    m = guiScreenIn;
+    this.m = guiScreenIn;
     if (guiScreenIn != null)
     {
       o();
@@ -818,18 +818,18 @@ public class ave
       int i = scaledresolution.a();
       int j = scaledresolution.b();
       guiScreenIn.a(this, i, j);
-      r = false;
+      this.r = false;
     }
     else
     {
-      aH.e();
+      this.aH.e();
       n();
     }
   }
   
   private void b(String message)
   {
-    if (U)
+    if (this.U)
     {
       int i = GL11.glGetError();
       if (i != 0)
@@ -909,149 +909,149 @@ public class ave
     throws IOException
   {
     long i = System.nanoTime();
-    A.a("root");
+    this.A.a("root");
     if ((Display.isCreated()) && (Display.isCloseRequested())) {
       m();
     }
-    if ((af) && (this.f != null))
+    if ((this.af) && (this.f != null))
     {
-      float f = Y.c;
-      Y.a();
-      Y.c = f;
+      float f = this.Y.c;
+      this.Y.a();
+      this.Y.c = f;
     }
     else
     {
-      Y.a();
+      this.Y.a();
     }
-    LabyMod.getInstance().setPartialTicks(Y.c);
+    LabyMod.getInstance().setPartialTicks(this.Y.c);
     
-    A.a("scheduledExecutables");
-    synchronized (aM)
+    this.A.a("scheduledExecutables");
+    synchronized (this.aM)
     {
-      while (!aM.isEmpty()) {
-        g.a((FutureTask)aM.poll(), K);
+      while (!this.aM.isEmpty()) {
+        g.a((FutureTask)this.aM.poll(), K);
       }
     }
-    A.b();
+    this.A.b();
     long l = System.nanoTime();
-    A.a("tick");
-    for (int j = 0; j < Y.b; j++) {
+    this.A.a("tick");
+    for (int j = 0; j < this.Y.b; j++) {
       s();
     }
-    A.c("preRenderErrors");
+    this.A.c("preRenderErrors");
     long i1 = System.nanoTime() - l;
     b("Pre render");
-    A.c("sound");
-    aH.a(h, Y.c);
-    A.b();
-    A.a("render");
+    this.A.c("sound");
+    this.aH.a(this.h, this.Y.c);
+    this.A.b();
+    this.A.a("render");
     bfl.E();
     bfl.m(16640);
-    aF.a(true);
-    A.a("display");
+    this.aF.a(true);
+    this.A.a("display");
     bfl.w();
-    if ((h != null) && (h.aj())) {
-      t.aA = 0;
+    if ((this.h != null) && (this.h.aj())) {
+      this.t.aA = 0;
     }
-    A.b();
-    if (!r)
+    this.A.b();
+    if (!this.r)
     {
-      A.c("gameRenderer");
-      o.a(Y.c, i);
-      A.b();
+      this.A.c("gameRenderer");
+      this.o.a(this.Y.c, i);
+      this.A.b();
     }
-    A.b();
-    if ((t.aB) && (t.aC) && (!t.az))
+    this.A.b();
+    if ((this.t.aB) && (this.t.aC) && (!this.t.az))
     {
-      if (!A.a) {
-        A.a();
+      if (!this.A.a) {
+        this.A.a();
       }
-      A.a = true;
+      this.A.a = true;
       a(i1);
     }
     else
     {
-      A.a = false;
-      J = System.nanoTime();
+      this.A.a = false;
+      this.J = System.nanoTime();
     }
-    p.a();
-    aF.e();
+    this.p.a();
+    this.aF.e();
     bfl.F();
     bfl.E();
-    aF.c(d, e);
+    this.aF.c(this.d, this.e);
     bfl.F();
     bfl.E();
-    o.b(Y.c);
+    this.o.b(this.Y.c);
     bfl.F();
-    A.a("root");
+    this.A.a("root");
     h();
     Thread.yield();
-    A.a("stream");
-    A.a("update");
-    aE.g();
-    A.c("submit");
-    aE.h();
-    A.b();
-    A.b();
+    this.A.a("stream");
+    this.A.a("update");
+    this.aE.g();
+    this.A.c("submit");
+    this.aE.h();
+    this.A.b();
+    this.A.b();
     b("Post render");
-    I += 1;
-    af = ((F()) && (m != null) && (m.d()) && (!aj.b()));
+    this.I += 1;
+    this.af = ((F()) && (this.m != null) && (this.m.d()) && (!this.aj.b()));
     long k = System.nanoTime();
-    y.a(k - z);
-    z = k;
-    while (J() >= H + 1000L)
+    this.y.a(k - this.z);
+    this.z = k;
+    while (J() >= this.H + 1000L)
     {
-      ao = I;
-      C = String.format("%d fps (%d chunk update%s) T: %s%s%s%s%s", new Object[] { Integer.valueOf(ao), Integer.valueOf(bht.a), bht.a != 1 ? "s" : "", t.g == avh.a.i.f() ? "inf" : Integer.valueOf(t.g), t.t ? " vsync" : "", t.i ? "" : " fast", t.h == 1 ? " fast-clouds" : t.h == 0 ? "" : " fancy-clouds", bqs.f() ? " vbo" : "" });
+      ao = this.I;
+      this.C = String.format("%d fps (%d chunk update%s) T: %s%s%s%s%s", new Object[] { Integer.valueOf(ao), Integer.valueOf(bht.a), bht.a != 1 ? "s" : "", this.t.g == avh.a.i.f() ? "inf" : Integer.valueOf(this.t.g), this.t.t ? " vsync" : "", this.t.i ? "" : " fast", this.t.h == 1 ? " fast-clouds" : this.t.h == 0 ? "" : " fancy-clouds", bqs.f() ? " vbo" : "" });
       bht.a = 0;
-      H += 1000L;
-      I = 0;
-      Z.b();
-      if (!Z.d()) {
-        Z.a();
+      this.H += 1000L;
+      this.I = 0;
+      this.Z.b();
+      if (!this.Z.d()) {
+        this.Z.a();
       }
     }
     if (k())
     {
-      A.a("fpslimit_wait");
+      this.A.a("fpslimit_wait");
       Display.sync(j());
-      A.b();
+      this.A.b();
     }
-    A.b();
+    this.A.b();
   }
   
   public void h()
   {
-    A.a("display_update");
+    this.A.a("display_update");
     Display.update();
-    A.b();
+    this.A.b();
     i();
   }
   
   protected void i()
   {
-    if ((!T) && (Display.wasResized()))
+    if ((!this.T) && (Display.wasResized()))
     {
-      int i = d;
-      int j = e;
-      d = Display.getWidth();
-      e = Display.getHeight();
-      if ((d != i) || (e != j))
+      int i = this.d;
+      int j = this.e;
+      this.d = Display.getWidth();
+      this.e = Display.getHeight();
+      if ((this.d != i) || (this.e != j))
       {
-        if (d <= 0) {
-          d = 1;
+        if (this.d <= 0) {
+          this.d = 1;
         }
-        if (e <= 0) {
-          e = 1;
+        if (this.e <= 0) {
+          this.e = 1;
         }
-        a(d, e);
+        a(this.d, this.e);
       }
     }
   }
   
   public int j()
   {
-    return (f == null) && (m != null) ? 30 : t.g;
+    return (this.f == null) && (this.m != null) ? 30 : this.t.g;
   }
   
   public boolean k()
@@ -1064,7 +1064,7 @@ public class ave
     try
     {
       b = new byte[0];
-      g.k();
+      this.g.k();
     }
     catch (Throwable localThrowable) {}
     try
@@ -1078,29 +1078,29 @@ public class ave
   
   private void b(int keyCount)
   {
-    List<nt.a> list = A.b(aR);
+    List<nt.a> list = this.A.b(this.aR);
     if ((list != null) && (!list.isEmpty()))
     {
       nt.a profiler$result = (nt.a)list.remove(0);
       if (keyCount == 0)
       {
-        if (c.length() > 0)
+        if (profiler$result.c.length() > 0)
         {
-          int i = aR.lastIndexOf(".");
+          int i = this.aR.lastIndexOf(".");
           if (i >= 0) {
-            aR = aR.substring(0, i);
+            this.aR = this.aR.substring(0, i);
           }
         }
       }
       else
       {
         keyCount--;
-        if ((keyCount < list.size()) && (!getc.equals("unspecified")))
+        if ((keyCount < list.size()) && (!((nt.a)list.get(keyCount)).c.equals("unspecified")))
         {
-          if (aR.length() > 0) {
-            aR += ".";
+          if (this.aR.length() > 0) {
+            this.aR += ".";
           }
-          aR += getc;
+          this.aR += ((nt.a)list.get(keyCount)).c;
         }
       }
     }
@@ -1108,15 +1108,15 @@ public class ave
   
   private void a(long elapsedTicksTime)
   {
-    if (A.a)
+    if (this.A.a)
     {
-      List<nt.a> list = A.b(aR);
+      List<nt.a> list = this.A.b(this.aR);
       nt.a profiler$result = (nt.a)list.remove(0);
       bfl.m(256);
       bfl.n(5889);
       bfl.g();
       bfl.D();
-      bfl.a(0.0D, d, e, 0.0D, 1000.0D, 3000.0D);
+      bfl.a(0.0D, this.d, this.e, 0.0D, 1000.0D, 3000.0D);
       bfl.n(5888);
       bfl.D();
       bfl.b(0.0F, 0.0F, -2000.0F);
@@ -1125,8 +1125,8 @@ public class ave
       bfx tessellator = bfx.a();
       bfd worldrenderer = tessellator.c();
       int i = 160;
-      int j = d - i - 10;
-      int k = e - i * 2;
+      int j = this.d - i - 10;
+      int k = this.e - i * 2;
       bfl.l();
       worldrenderer.a(7, bms.f);
       worldrenderer.b(j - i * 1.1F, k - i * 0.6F - 16.0F, 0.0D).b(200, 0, 0, 0).d();
@@ -1139,7 +1139,7 @@ public class ave
       for (int l = 0; l < list.size(); l++)
       {
         nt.a profiler$result1 = (nt.a)list.get(l);
-        int i1 = ns.c(a / 4.0D) + 1;
+        int i1 = ns.c(profiler$result1.a / 4.0D) + 1;
         worldrenderer.a(6, bms.f);
         int j1 = profiler$result1.a();
         int k1 = j1 >> 16 & 0xFF;
@@ -1148,7 +1148,7 @@ public class ave
         worldrenderer.b(j, k, 0.0D).b(k1, l1, i2, 255).d();
         for (int j2 = i1; j2 >= 0; j2--)
         {
-          float f = (float)((d0 + a * j2 / i1) * 3.141592653589793D * 2.0D / 100.0D);
+          float f = (float)((d0 + profiler$result1.a * j2 / i1) * 3.141592653589793D * 2.0D / 100.0D);
           float f1 = ns.a(f) * i;
           float f2 = ns.b(f) * i * 0.5F;
           worldrenderer.b(j + f1, k - f2, 0.0D).b(k1, l1, i2, 255).d();
@@ -1157,81 +1157,81 @@ public class ave
         worldrenderer.a(5, bms.f);
         for (int i3 = i1; i3 >= 0; i3--)
         {
-          float f3 = (float)((d0 + a * i3 / i1) * 3.141592653589793D * 2.0D / 100.0D);
+          float f3 = (float)((d0 + profiler$result1.a * i3 / i1) * 3.141592653589793D * 2.0D / 100.0D);
           float f4 = ns.a(f3) * i;
           float f5 = ns.b(f3) * i * 0.5F;
           worldrenderer.b(j + f4, k - f5, 0.0D).b(k1 >> 1, l1 >> 1, i2 >> 1, 255).d();
           worldrenderer.b(j + f4, k - f5 + 10.0F, 0.0D).b(k1 >> 1, l1 >> 1, i2 >> 1, 255).d();
         }
         tessellator.b();
-        d0 += a;
+        d0 += profiler$result1.a;
       }
       DecimalFormat decimalformat = new DecimalFormat("##0.00");
       bfl.w();
       String s = "";
-      if (!c.equals("unspecified")) {
+      if (!profiler$result.c.equals("unspecified")) {
         s = s + "[0] ";
       }
-      if (c.length() == 0) {
+      if (profiler$result.c.length() == 0) {
         s = s + "ROOT ";
       } else {
-        s = s + c + " ";
+        s = s + profiler$result.c + " ";
       }
       int l2 = 16777215;
       this.k.a(s, j - i, k - i / 2 - 16, l2);
-      this.k.a(s = decimalformat.format(b) + "%", j + i - this.k.a(s), k - i / 2 - 16, l2);
+      this.k.a(s = decimalformat.format(profiler$result.b) + "%", j + i - this.k.a(s), k - i / 2 - 16, l2);
       for (int k2 = 0; k2 < list.size(); k2++)
       {
         nt.a profiler$result2 = (nt.a)list.get(k2);
         String s1 = "";
-        if (c.equals("unspecified")) {
+        if (profiler$result2.c.equals("unspecified")) {
           s1 = s1 + "[?] ";
         } else {
           s1 = s1 + "[" + (k2 + 1) + "] ";
         }
-        s1 = s1 + c;
+        s1 = s1 + profiler$result2.c;
         this.k.a(s1, j - i, k + i / 2 + k2 * 8 + 20, profiler$result2.a());
-        this.k.a(s1 = decimalformat.format(a) + "%", j + i - 50 - this.k.a(s1), k + i / 2 + k2 * 8 + 20, profiler$result2.a());
-        this.k.a(s1 = decimalformat.format(b) + "%", j + i - this.k.a(s1), k + i / 2 + k2 * 8 + 20, profiler$result2.a());
+        this.k.a(s1 = decimalformat.format(profiler$result2.a) + "%", j + i - 50 - this.k.a(s1), k + i / 2 + k2 * 8 + 20, profiler$result2.a());
+        this.k.a(s1 = decimalformat.format(profiler$result2.b) + "%", j + i - this.k.a(s1), k + i / 2 + k2 * 8 + 20, profiler$result2.a());
       }
     }
   }
   
   public void m()
   {
-    B = false;
+    this.B = false;
   }
   
   public void n()
   {
     if (Display.isActive()) {
-      if (!w)
+      if (!this.w)
       {
-        w = true;
-        u.a();
+        this.w = true;
+        this.u.a();
         a((axu)null);
-        ag = 10000;
+        this.ag = 10000;
       }
     }
   }
   
   public void o()
   {
-    if (w)
+    if (this.w)
     {
       avb.a();
-      w = false;
-      u.b();
+      this.w = false;
+      this.u.b();
     }
   }
   
   public void p()
   {
-    if (m == null)
+    if (this.m == null)
     {
       a(new axp());
-      if ((F()) && (!aj.b())) {
-        aH.a();
+      if ((F()) && (!this.aj.b())) {
+        this.aH.a();
       }
     }
   }
@@ -1239,53 +1239,53 @@ public class ave
   private void b(boolean leftClick)
   {
     if (!leftClick) {
-      ag = 0;
+      this.ag = 0;
     }
-    if ((ag <= 0) && ((!h.bS()) || ((settingsoldBlockBuild) && (Allowed.blockBuild())))) {
-      if ((leftClick) && (s != null) && (s.a == auh.a.b))
+    if ((this.ag <= 0) && ((!this.h.bS()) || ((ConfigManager.settings.oldBlockBuild) && (Allowed.blockBuild())))) {
+      if ((leftClick) && (this.s != null) && (this.s.a == auh.a.b))
       {
-        cj blockpos = s.a();
-        if ((f.p(blockpos).c().t() != arm.a) && (c.c(blockpos, s.b)))
+        cj blockpos = this.s.a();
+        if ((this.f.p(blockpos).c().t() != arm.a) && (this.c.c(blockpos, this.s.b)))
         {
-          j.a(blockpos, s.b);
-          h.bw();
+          this.j.a(blockpos, this.s.b);
+          this.h.bw();
         }
       }
       else
       {
-        c.c();
+        this.c.c();
       }
     }
   }
   
   private void aw()
   {
-    if (ag <= 0)
+    if (this.ag <= 0)
     {
-      h.bw();
-      if (s == null)
+      this.h.bw();
+      if (this.s == null)
       {
         K.error("Null returned as 'hitResult', this shouldn't happen!");
-        if (c.g()) {
-          ag = 10;
+        if (this.c.g()) {
+          this.ag = 10;
         }
       }
       else
       {
-        switch (s.a)
+        switch (this.s.a)
         {
         case c: 
-          c.a(h, s.d);
+          this.c.a(this.h, this.s.d);
           break;
         case b: 
-          cj blockpos = s.a();
-          if (f.p(blockpos).c().t() != arm.a) {
-            c.b(blockpos, s.b);
+          cj blockpos = this.s.a();
+          if (this.f.p(blockpos).c().t() != arm.a) {
+            this.c.b(blockpos, this.s.b);
           }
           break;
         }
-        if (c.g()) {
-          ag = 10;
+        if (this.c.g()) {
+          this.ag = 10;
         }
       }
     }
@@ -1293,40 +1293,40 @@ public class ave
   
   private void ax()
   {
-    if (!c.m())
+    if (!this.c.m())
     {
-      ap = 4;
+      this.ap = 4;
       boolean flag = true;
-      zx itemstack = h.bi.h();
-      if (s == null) {
+      zx itemstack = this.h.bi.h();
+      if (this.s == null) {
         K.warn("Null returned as 'hitResult', this shouldn't happen!");
       } else {
-        switch (s.a)
+        switch (this.s.a)
         {
         case c: 
-          if (c.a(h, s.d, s)) {
+          if (this.c.a(this.h, this.s.d, this.s)) {
             flag = false;
-          } else if (c.b(h, s.d)) {
+          } else if (this.c.b(this.h, this.s.d)) {
             flag = false;
           }
           break;
         case b: 
-          cj blockpos = s.a();
-          if (f.p(blockpos).c().t() != arm.a)
+          cj blockpos = this.s.a();
+          if (this.f.p(blockpos).c().t() != arm.a)
           {
-            int i = itemstack != null ? b : 0;
-            if (c.a(h, f, itemstack, blockpos, s.b, s.c))
+            int i = itemstack != null ? itemstack.b : 0;
+            if (this.c.a(this.h, this.f, itemstack, blockpos, this.s.b, this.s.c))
             {
               flag = false;
-              h.bw();
+              this.h.bw();
             }
             if (itemstack == null) {
               return;
             }
-            if (b == 0) {
-              h.bi.a[h.bi.c] = null;
-            } else if ((b != i) || (c.h())) {
-              o.c.b();
+            if (itemstack.b == 0) {
+              this.h.bi.a[this.h.bi.c] = null;
+            } else if ((itemstack.b != i) || (this.c.h())) {
+              this.o.c.b();
             }
           }
           break;
@@ -1334,9 +1334,9 @@ public class ave
       }
       if (flag)
       {
-        zx itemstack1 = h.bi.h();
-        if ((itemstack1 != null) && (c.a(h, f, itemstack1))) {
-          o.c.c();
+        zx itemstack1 = this.h.bi.h();
+        if ((itemstack1 != null) && (this.c.a(this.h, this.f, itemstack1))) {
+          this.o.c.c();
         }
       }
     }
@@ -1346,39 +1346,39 @@ public class ave
   {
     try
     {
-      T = (!T);
-      t.s = T;
-      if (T)
+      this.T = (!this.T);
+      this.t.s = this.T;
+      if (this.T)
       {
         au();
-        d = Display.getDisplayMode().getWidth();
-        e = Display.getDisplayMode().getHeight();
-        if (d <= 0) {
-          d = 1;
+        this.d = Display.getDisplayMode().getWidth();
+        this.e = Display.getDisplayMode().getHeight();
+        if (this.d <= 0) {
+          this.d = 1;
         }
-        if (e <= 0) {
-          e = 1;
+        if (this.e <= 0) {
+          this.e = 1;
         }
       }
       else
       {
-        Display.setDisplayMode(new DisplayMode(ah, ai));
-        d = ah;
-        e = ai;
-        if (d <= 0) {
-          d = 1;
+        Display.setDisplayMode(new DisplayMode(this.ah, this.ai));
+        this.d = this.ah;
+        this.e = this.ai;
+        if (this.d <= 0) {
+          this.d = 1;
         }
-        if (e <= 0) {
-          e = 1;
+        if (this.e <= 0) {
+          this.e = 1;
         }
       }
-      if (m != null) {
-        a(d, e);
+      if (this.m != null) {
+        a(this.d, this.e);
       } else {
         ay();
       }
-      Display.setFullscreen(T);
-      Display.setVSyncEnabled(t.t);
+      Display.setFullscreen(this.T);
+      Display.setVSyncEnabled(this.t.t);
       h();
     }
     catch (Exception exception)
@@ -1389,71 +1389,71 @@ public class ave
   
   private void a(int width, int height)
   {
-    d = Math.max(1, width);
-    e = Math.max(1, height);
-    if (m != null)
+    this.d = Math.max(1, width);
+    this.e = Math.max(1, height);
+    if (this.m != null)
     {
       avr scaledresolution = new avr(this);
-      m.b(this, scaledresolution.a(), scaledresolution.b());
+      this.m.b(this, scaledresolution.a(), scaledresolution.b());
     }
-    n = new avi(this);
+    this.n = new avi(this);
     ay();
   }
   
   private void ay()
   {
-    aF.a(d, e);
-    if (o != null) {
-      o.a(d, e);
+    this.aF.a(this.d, this.e);
+    if (this.o != null) {
+      this.o.a(this.d, this.e);
     }
   }
   
   public bpv r()
   {
-    return aI;
+    return this.aI;
   }
   
   public void s()
     throws IOException
   {
-    if (ap > 0) {
-      ap -= 1;
+    if (this.ap > 0) {
+      this.ap -= 1;
     }
-    A.a("gui");
-    if (!af) {
-      q.c();
+    this.A.a("gui");
+    if (!this.af) {
+      this.q.c();
     }
     LabyMod.getInstance().gameTick();
     
-    A.b();
-    o.a(1.0F);
-    A.a("gameMode");
-    if ((!af) && (this.f != null)) {
-      c.e();
+    this.A.b();
+    this.o.a(1.0F);
+    this.A.a("gameMode");
+    if ((!this.af) && (this.f != null)) {
+      this.c.e();
     }
-    A.c("textures");
-    if (!af) {
-      R.e();
+    this.A.c("textures");
+    if (!this.af) {
+      this.R.e();
     }
-    if ((m == null) && (h != null))
+    if ((this.m == null) && (this.h != null))
     {
-      if (h.bn() <= 0.0F) {
+      if (this.h.bn() <= 0.0F) {
         a((axu)null);
-      } else if ((h.bJ()) && (this.f != null)) {
+      } else if ((this.h.bJ()) && (this.f != null)) {
         a(new axk());
       }
     }
-    else if ((m != null) && ((m instanceof axk)) && (!h.bJ())) {
+    else if ((this.m != null) && ((this.m instanceof axk)) && (!this.h.bJ())) {
       a((axu)null);
     }
-    if (m != null) {
-      ag = 10000;
+    if (this.m != null) {
+      this.ag = 10000;
     }
-    if (m != null)
+    if (this.m != null)
     {
       try
       {
-        m.p();
+        this.m.p();
       }
       catch (Throwable throwable1)
       {
@@ -1464,15 +1464,15 @@ public class ave
           public String a()
             throws Exception
           {
-            return m.getClass().getCanonicalName();
+            return ave.this.m.getClass().getCanonicalName();
           }
         });
         throw new e(crashreport);
       }
-      if (m != null) {
+      if (this.m != null) {
         try
         {
-          m.e();
+          this.m.e();
         }
         catch (Throwable throwable)
         {
@@ -1483,65 +1483,65 @@ public class ave
             public String a()
               throws Exception
             {
-              return m.getClass().getCanonicalName();
+              return ave.this.m.getClass().getCanonicalName();
             }
           });
           throw new e(crashreport1);
         }
       }
     }
-    if ((m == null) || (m.p))
+    if ((this.m == null) || (this.m.p))
     {
-      A.c("mouse");
+      this.A.c("mouse");
       while (Mouse.next())
       {
         int i = Mouse.getEventButton();
         avb.a(i - 100, Mouse.getEventButtonState());
         if (Mouse.getEventButtonState()) {
-          if ((h.v()) && (i == 2)) {
-            q.g().b();
+          if ((this.h.v()) && (i == 2)) {
+            this.q.g().b();
           } else {
             avb.a(i - 100);
           }
         }
-        long i1 = J() - x;
+        long i1 = J() - this.x;
         if (i1 <= 200L)
         {
           int j = Mouse.getEventDWheel();
           if (j != 0) {
-            if (h.v())
+            if (this.h.v())
             {
               j = j < 0 ? -1 : 1;
-              if (q.g().a())
+              if (this.q.g().a())
               {
-                q.g().b(-j);
+                this.q.g().b(-j);
               }
               else
               {
-                float f = ns.a(h.bA.a() + j * 0.005F, 0.0F, 0.2F);
-                h.bA.a(f);
+                float f = ns.a(this.h.bA.a() + j * 0.005F, 0.0F, 0.2F);
+                this.h.bA.a(f);
               }
             }
             else
             {
-              h.bi.d(j);
+              this.h.bi.d(j);
             }
           }
-          if (m == null)
+          if (this.m == null)
           {
-            if ((!w) && (Mouse.getEventButtonState())) {
+            if ((!this.w) && (Mouse.getEventButtonState())) {
               n();
             }
           }
-          else if (m != null) {
-            m.k();
+          else if (this.m != null) {
+            this.m.k();
           }
         }
       }
-      if (ag > 0) {
-        ag -= 1;
+      if (this.ag > 0) {
+        this.ag -= 1;
       }
-      A.c("keyboard");
+      this.A.c("keyboard");
       while (Keyboard.next())
       {
         int k = Keyboard.getEventKey() == 0 ? Keyboard.getEventCharacter() + 'Ā' : Keyboard.getEventKey();
@@ -1549,38 +1549,38 @@ public class ave
         if (Keyboard.getEventKeyState()) {
           avb.a(k);
         }
-        if (ax > 0L)
+        if (this.ax > 0L)
         {
-          if (J() - ax >= 6000L) {
+          if (J() - this.ax >= 6000L) {
             throw new e(new b("Manually triggered debug crash", new Throwable()));
           }
           if ((!Keyboard.isKeyDown(46)) || (!Keyboard.isKeyDown(61))) {
-            ax = -1L;
+            this.ax = -1L;
           }
         }
         else if ((Keyboard.isKeyDown(46)) && (Keyboard.isKeyDown(61)))
         {
-          ax = J();
+          this.ax = J();
         }
         Z();
         if (Keyboard.getEventKeyState())
         {
-          if ((k == 62) && (o != null)) {
+          if ((k == 62) && (this.o != null)) {
             if (!cancelShader) {
-              o.c();
+              this.o.c();
             }
           }
-          if (m != null)
+          if (this.m != null)
           {
-            m.l();
+            this.m.l();
           }
           else
           {
             if (k == 1) {
               p();
             }
-            if ((k == 32) && (Keyboard.isKeyDown(61)) && (q != null)) {
-              q.d().a();
+            if ((k == 32) && (Keyboard.isKeyDown(61)) && (this.q != null)) {
+              this.q.d().a();
             }
             if ((k == 31) && (Keyboard.isKeyDown(61))) {
               e();
@@ -1599,53 +1599,53 @@ public class ave
               e();
             }
             if ((k == 33) && (Keyboard.isKeyDown(61))) {
-              t.a(avh.a.f, axu.r() ? -1 : 1);
+              this.t.a(avh.a.f, axu.r() ? -1 : 1);
             }
             if ((k == 30) && (Keyboard.isKeyDown(61))) {
-              g.a();
+              this.g.a();
             }
             if ((k == 35) && (Keyboard.isKeyDown(61)))
             {
-              t.y = (!t.y);
-              t.b();
+              this.t.y = (!this.t.y);
+              this.t.b();
             }
             if ((k == 48) && (Keyboard.isKeyDown(61))) {
-              aa.b(!aa.b());
+              this.aa.b(!this.aa.b());
             }
             if ((k == 25) && (Keyboard.isKeyDown(61)))
             {
-              t.z = (!t.z);
-              t.b();
+              this.t.z = (!this.t.z);
+              this.t.b();
             }
             if (k == 59) {
-              t.az = (!t.az);
+              this.t.az = (!this.t.az);
             }
             if (k == 61)
             {
-              t.aB = (!t.aB);
-              t.aC = axu.r();
-              t.aD = axu.s();
+              this.t.aB = (!this.t.aB);
+              this.t.aC = axu.r();
+              this.t.aD = axu.s();
             }
-            if (t.an.f())
+            if (this.t.an.f())
             {
-              t.aA += 1;
-              if (t.aA > 2) {
-                t.aA = 0;
+              this.t.aA += 1;
+              if (this.t.aA > 2) {
+                this.t.aA = 0;
               }
               if (!cancelShader) {
-                if (t.aA == 0) {
-                  o.a(ac());
-                } else if (t.aA == 1) {
-                  o.a((pk)null);
+                if (this.t.aA == 0) {
+                  this.o.a(ac());
+                } else if (this.t.aA == 1) {
+                  this.o.a((pk)null);
                 }
               }
-              g.m();
+              this.g.m();
             }
-            if (t.ao.f()) {
-              t.aF = (!t.aF);
+            if (this.t.ao.f()) {
+              this.t.aF = (!this.t.aF);
             }
           }
-          if ((t.aB) && (t.aC))
+          if ((this.t.aB) && (this.t.aC))
           {
             if (k == 11) {
               b(0);
@@ -1659,85 +1659,85 @@ public class ave
         }
       }
       for (int l = 0; l < 9; l++) {
-        if (t.av[l].f()) {
-          if (h.v()) {
-            q.g().a(l);
+        if (this.t.av[l].f()) {
+          if (this.h.v()) {
+            this.q.g().a(l);
           } else {
-            h.bi.c = l;
+            this.h.bi.c = l;
           }
         }
       }
-      boolean flag = t.m != wn.b.c;
-      while (t.ae.f()) {
-        if (c.j())
+      boolean flag = this.t.m != wn.b.c;
+      while (this.t.ae.f()) {
+        if (this.c.j())
         {
-          h.u();
+          this.h.u();
         }
         else
         {
           u().a(new ig(ig.a.c));
-          a(new azc(h));
+          a(new azc(this.h));
         }
       }
-      while (t.ag.f()) {
-        if (!h.v()) {
-          h.a(axu.q());
+      while (this.t.ag.f()) {
+        if (!this.h.v()) {
+          this.h.a(axu.q());
         }
       }
-      while ((t.aj.f()) && (flag)) {
+      while ((this.t.aj.f()) && (flag)) {
         a(new awv());
       }
-      if ((m == null) && (t.al.f()) && (flag)) {
+      if ((this.m == null) && (this.t.al.f()) && (flag)) {
         a(new awv("/"));
       }
-      if (h.bS())
+      if (this.h.bS())
       {
-        if (!t.af.d()) {
-          c.c(h);
+        if (!this.t.af.d()) {
+          this.c.c(this.h);
         }
-        while (t.ah.f()) {}
-        while (t.af.f()) {}
-        while (t.ai.f()) {}
+        while (this.t.ah.f()) {}
+        while (this.t.af.f()) {}
+        while (this.t.ai.f()) {}
       }
-      while (t.ah.f())
+      while (this.t.ah.f())
       {
         aw();
         ClickCounter.click();
       }
-      while (t.af.f())
+      while (this.t.af.f())
       {
         ax();
         ClickCounter.click();
       }
-      while (t.ai.f()) {
+      while (this.t.ai.f()) {
         az();
       }
-      if ((t.af.d()) && (ap == 0) && (!h.bS())) {
+      if ((this.t.af.d()) && (this.ap == 0) && (!this.h.bS())) {
         ax();
       }
-      b((m == null) && (t.ah.d()) && (w));
+      b((this.m == null) && (this.t.ah.d()) && (this.w));
     }
     if (this.f != null)
     {
-      if (h != null)
+      if (this.h != null)
       {
-        as += 1;
-        if (as == 30)
+        this.as += 1;
+        if (this.as == 30)
         {
-          as = 0;
-          this.f.h(h);
+          this.as = 0;
+          this.f.h(this.h);
         }
       }
-      A.c("gameRenderer");
-      if (!af) {
-        o.e();
+      this.A.c("gameRenderer");
+      if (!this.af) {
+        this.o.e();
       }
-      A.c("levelRenderer");
-      if (!af) {
-        g.j();
+      this.A.c("levelRenderer");
+      if (!this.af) {
+        this.g.j();
       }
-      A.c("level");
-      if (!af)
+      this.A.c("level");
+      if (!this.af)
       {
         if (this.f.ac() > 0) {
           this.f.d(this.f.ac() - 1);
@@ -1745,18 +1745,18 @@ public class ave
         this.f.i();
       }
     }
-    else if (o.a())
+    else if (this.o.a())
     {
-      o.b();
+      this.o.b();
     }
-    if (!af)
+    if (!this.af)
     {
-      aI.c();
-      aH.c();
+      this.aI.c();
+      this.aH.c();
     }
     if (this.f != null)
     {
-      if (!af)
+      if (!this.af)
       {
         this.f.a(this.f.aa() != oj.a, true);
         try
@@ -1778,29 +1778,29 @@ public class ave
           throw new e(crashreport2);
         }
       }
-      A.c("animateTick");
-      if ((!af) && (this.f != null)) {
-        this.f.b(ns.c(h.s), ns.c(h.t), ns.c(h.u));
+      this.A.c("animateTick");
+      if ((!this.af) && (this.f != null)) {
+        this.f.b(ns.c(this.h.s), ns.c(this.h.t), ns.c(this.h.u));
       }
-      A.c("particles");
-      if (!af) {
+      this.A.c("particles");
+      if (!this.af) {
         this.j.a();
       }
     }
-    else if (av != null)
+    else if (this.av != null)
     {
-      A.c("pendingConnection");
-      av.a();
+      this.A.c("pendingConnection");
+      this.av.a();
     }
-    A.b();
-    x = J();
+    this.A.b();
+    this.x = J();
   }
   
   public void a(String folderName, String worldName, adp worldSettingsIn)
   {
     a((bdb)null);
     System.gc();
-    atp isavehandler = an.a(folderName, false);
+    atp isavehandler = this.an.a(folderName, false);
     ato worldinfo = isavehandler.d();
     if ((worldinfo == null) && (worldSettingsIn != null))
     {
@@ -1812,9 +1812,9 @@ public class ave
     }
     try
     {
-      aj = new bpo(this, folderName, worldName, worldSettingsIn);
-      aj.D();
-      aw = true;
+      this.aj = new bpo(this, folderName, worldName, worldSettingsIn);
+      this.aj.D();
+      this.aw = true;
     }
     catch (Throwable throwable)
     {
@@ -1824,14 +1824,14 @@ public class ave
       crashreportcategory.a("Level Name", worldName);
       throw new e(crashreport);
     }
-    n.a(bnq.a("menu.loadingLevel", new Object[0]));
-    while (!aj.ar())
+    this.n.a(bnq.a("menu.loadingLevel", new Object[0]));
+    while (!this.aj.ar())
     {
-      String s = aj.j();
+      String s = this.aj.j();
       if (s != null) {
-        n.c(bnq.a(s, new Object[0]));
+        this.n.c(bnq.a(s, new Object[0]));
       } else {
-        n.c("");
+        this.n.c("");
       }
       try
       {
@@ -1840,12 +1840,12 @@ public class ave
       catch (InterruptedException localInterruptedException) {}
     }
     a((axu)null);
-    SocketAddress socketaddress = aj.aq().a();
+    SocketAddress socketaddress = this.aj.aq().a();
     ek networkmanager = ek.a(socketaddress);
     networkmanager.a(new bcx(networkmanager, this, (axu)null));
     networkmanager.a(new jc(47, socketaddress.toString(), 0, el.d));
     networkmanager.a(new jl(L().e()));
-    av = networkmanager;
+    this.av = networkmanager;
   }
   
   public void a(bdb worldClientIn)
@@ -1861,162 +1861,162 @@ public class ave
       if (nethandlerplayclient != null) {
         nethandlerplayclient.b();
       }
-      if ((aj != null) && (aj.O()))
+      if ((this.aj != null) && (this.aj.O()))
       {
-        aj.w();
-        aj.a();
+        this.aj.w();
+        this.aj.a();
       }
-      aj = null;
-      p.b();
-      o.k().a();
+      this.aj = null;
+      this.p.b();
+      this.o.k().a();
     }
-    ad = null;
-    av = null;
-    if (n != null)
+    this.ad = null;
+    this.av = null;
+    if (this.n != null)
     {
-      n.b(loadingMessage);
-      n.c("");
+      this.n.b(loadingMessage);
+      this.n.c("");
     }
-    if ((worldClientIn == null) && (f != null))
+    if ((worldClientIn == null) && (this.f != null))
     {
-      aC.f();
-      q.i();
+      this.aC.f();
+      this.q.i();
       a((bde)null);
-      aw = false;
+      this.aw = false;
     }
-    aH.b();
-    f = worldClientIn;
+    this.aH.b();
+    this.f = worldClientIn;
     if (worldClientIn != null)
     {
-      if (g != null) {
-        g.a(worldClientIn);
+      if (this.g != null) {
+        this.g.a(worldClientIn);
       }
-      if (j != null) {
-        j.a(worldClientIn);
+      if (this.j != null) {
+        this.j.a(worldClientIn);
       }
-      if (h == null)
+      if (this.h == null)
       {
-        h = c.a(worldClientIn, new nb());
-        c.b(h);
+        this.h = this.c.a(worldClientIn, new nb());
+        this.c.b(this.h);
       }
-      h.I();
-      worldClientIn.d(h);
-      h.b = new bev(t);
-      c.a(h);
-      ad = h;
+      this.h.I();
+      worldClientIn.d(this.h);
+      this.h.b = new bev(this.t);
+      this.c.a(this.h);
+      this.ad = this.h;
     }
     else
     {
-      an.d();
-      h = null;
+      this.an.d();
+      this.h = null;
     }
     System.gc();
-    x = 0L;
+    this.x = 0L;
   }
   
   public void a(int dimension)
   {
-    f.g();
-    f.a();
+    this.f.g();
+    this.f.a();
     int i = 0;
     String s = null;
-    if (h != null)
+    if (this.h != null)
     {
-      i = h.F();
-      f.e(h);
-      s = h.w();
+      i = this.h.F();
+      this.f.e(this.h);
+      s = this.h.w();
     }
-    ad = null;
-    bew entityplayersp = h;
-    h = c.a(f, h == null ? new nb() : h.x());
-    h.H().a(entityplayersp.H().c());
-    h.am = dimension;
-    ad = h;
-    h.I();
-    h.f(s);
-    f.d(h);
-    c.b(h);
-    h.b = new bev(t);
-    h.d(i);
-    c.a(h);
-    h.k(entityplayersp.cq());
-    if ((m instanceof axe)) {
+    this.ad = null;
+    bew entityplayersp = this.h;
+    this.h = this.c.a(this.f, this.h == null ? new nb() : this.h.x());
+    this.h.H().a(entityplayersp.H().c());
+    this.h.am = dimension;
+    this.ad = this.h;
+    this.h.I();
+    this.h.f(s);
+    this.f.d(this.h);
+    this.c.b(this.h);
+    this.h.b = new bev(this.t);
+    this.h.d(i);
+    this.c.a(this.h);
+    this.h.k(entityplayersp.cq());
+    if ((this.m instanceof axe)) {
       a((axu)null);
     }
   }
   
   public final boolean t()
   {
-    return au;
+    return this.au;
   }
   
   public bcy u()
   {
-    return h != null ? h.a : null;
+    return this.h != null ? this.h.a : null;
   }
   
   public static boolean v()
   {
-    return (S == null) || (!St.az);
+    return (S == null) || (!S.t.az);
   }
   
   public static boolean w()
   {
-    return (S != null) && (St.i);
+    return (S != null) && (S.t.i);
   }
   
   public static boolean x()
   {
-    return (S != null) && (St.j != 0);
+    return (S != null) && (S.t.j != 0);
   }
   
   private void az()
   {
-    if (s != null)
+    if (this.s != null)
     {
-      boolean flag = h.bA.d;
+      boolean flag = this.h.bA.d;
       int i = 0;
       boolean flag1 = false;
       akw tileentity = null;
       zw item;
-      if (s.a == auh.a.b)
+      if (this.s.a == auh.a.b)
       {
-        cj blockpos = s.a();
-        afh block = f.p(blockpos).c();
+        cj blockpos = this.s.a();
+        afh block = this.f.p(blockpos).c();
         if (block.t() == arm.a) {
           return;
         }
-        zw item = block.c(f, blockpos);
+        zw item = block.c(this.f, blockpos);
         if (item == null) {
           return;
         }
         if ((flag) && (axu.q())) {
-          tileentity = f.s(blockpos);
+          tileentity = this.f.s(blockpos);
         }
         afh block1 = ((item instanceof yo)) && (!block.M()) ? afh.a(item) : block;
-        i = block1.j(f, blockpos);
+        i = block1.j(this.f, blockpos);
         flag1 = item.k();
       }
       else
       {
-        if ((s.a != auh.a.c) || (s.d == null) || (!flag)) {
+        if ((this.s.a != auh.a.c) || (this.s.d == null) || (!flag)) {
           return;
         }
         zw item;
-        if ((s.d instanceof uq))
+        if ((this.s.d instanceof uq))
         {
           item = zy.an;
         }
         else
         {
           zw item;
-          if ((s.d instanceof up))
+          if ((this.s.d instanceof up))
           {
             item = zy.cn;
           }
-          else if ((s.d instanceof uo))
+          else if ((this.s.d instanceof uo))
           {
-            uo entityitemframe = (uo)s.d;
+            uo entityitemframe = (uo)this.s.d;
             zx itemstack = entityitemframe.o();
             zw item;
             if (itemstack == null)
@@ -2033,9 +2033,9 @@ public class ave
           else
           {
             zw item;
-            if ((s.d instanceof va))
+            if ((this.s.d instanceof va))
             {
-              va entityminecart = (va)s.d;
+              va entityminecart = (va)this.s.d;
               zw item;
               zw item;
               zw item;
@@ -2065,21 +2065,21 @@ public class ave
             else
             {
               zw item;
-              if ((s.d instanceof ux))
+              if ((this.s.d instanceof ux))
               {
                 item = zy.aE;
               }
               else
               {
                 zw item;
-                if ((s.d instanceof um))
+                if ((this.s.d instanceof um))
                 {
                   item = zy.cj;
                 }
                 else
                 {
                   item = zy.bJ;
-                  i = pm.a(s.d);
+                  i = pm.a(this.s.d);
                   flag1 = true;
                   if (!pm.a.containsKey(Integer.valueOf(i))) {
                     return;
@@ -2090,7 +2090,7 @@ public class ave
           }
         }
       }
-      wm inventoryplayer = h.bi;
+      wm inventoryplayer = this.h.bi;
       if (tileentity == null)
       {
         inventoryplayer.a(item, i, flag1, flag);
@@ -2098,12 +2098,12 @@ public class ave
       else
       {
         zx itemstack1 = a(item, i, tileentity);
-        inventoryplayer.a(c, itemstack1);
+        inventoryplayer.a(inventoryplayer.c, itemstack1);
       }
       if (flag)
       {
-        int j = h.bj.c.size() - 9 + c;
-        c.a(inventoryplayer.a(c), j);
+        int j = this.h.bj.c.size() - 9 + inventoryplayer.c;
+        this.c.a(inventoryplayer.a(inventoryplayer.c), j);
       }
     }
   }
@@ -2165,7 +2165,7 @@ public class ave
     {
       public String call()
       {
-        return t.u ? "Yes" : "No";
+        return ave.this.t.u ? "Yes" : "No";
       }
     });
     theCrash.g().a("Is Modded", new Callable()
@@ -2191,13 +2191,13 @@ public class ave
         throws Exception
       {
         StringBuilder stringbuilder = new StringBuilder();
-        for (String s : t.k)
+        for (String s : ave.this.t.k)
         {
           if (stringbuilder.length() > 0) {
             stringbuilder.append(", ");
           }
           stringbuilder.append(s);
-          if (t.l.contains(s)) {
+          if (ave.this.t.l.contains(s)) {
             stringbuilder.append(" (incompatible)");
           }
         }
@@ -2217,7 +2217,7 @@ public class ave
       public String a()
         throws Exception
       {
-        return A.a ? A.c() : "N/A (disabled)";
+        return ave.this.A.a ? ave.this.A.c() : "N/A (disabled)";
       }
     });
     theCrash.g().a("CPU", new Callable()
@@ -2227,8 +2227,8 @@ public class ave
         return bqs.j();
       }
     });
-    if (f != null) {
-      f.a(theCrash);
+    if (this.f != null) {
+      this.f.a(theCrash);
     }
     return theCrash;
   }
@@ -2244,7 +2244,7 @@ public class ave
     {
       public void run()
       {
-        e();
+        ave.this.e();
       }
     });
   }
@@ -2252,26 +2252,26 @@ public class ave
   public void a(or playerSnooper)
   {
     playerSnooper.a("fps", Integer.valueOf(ao));
-    playerSnooper.a("vsync_enabled", Boolean.valueOf(t.t));
+    playerSnooper.a("vsync_enabled", Boolean.valueOf(this.t.t));
     playerSnooper.a("display_frequency", Integer.valueOf(Display.getDisplayMode().getFrequency()));
-    playerSnooper.a("display_type", T ? "fullscreen" : "windowed");
+    playerSnooper.a("display_type", this.T ? "fullscreen" : "windowed");
     playerSnooper.a("run_time", Long.valueOf((MinecraftServer.az() - playerSnooper.g()) / 60L * 1000L));
     playerSnooper.a("current_action", aA());
     String s = ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? "little" : "big";
     playerSnooper.a("endianness", s);
-    playerSnooper.a("resource_packs", Integer.valueOf(aC.c().size()));
+    playerSnooper.a("resource_packs", Integer.valueOf(this.aC.c().size()));
     int i = 0;
-    for (bnm.a resourcepackrepository$entry : aC.c()) {
+    for (bnm.a resourcepackrepository$entry : this.aC.c()) {
       playerSnooper.a("resource_pack[" + i++ + "]", resourcepackrepository$entry.d());
     }
-    if ((aj != null) && (aj.av() != null)) {
-      playerSnooper.a("snooper_partner", aj.av().f());
+    if ((this.aj != null) && (this.aj.av() != null)) {
+      playerSnooper.a("snooper_partner", this.aj.av().f());
     }
   }
   
   private String aA()
   {
-    return Q != null ? "multiplayer" : Q.d() ? "playing_lan" : aj != null ? "singleplayer" : aj.b() ? "hosting_lan" : "out_of_game";
+    return this.Q != null ? "multiplayer" : this.Q.d() ? "playing_lan" : this.aj != null ? "singleplayer" : this.aj.b() ? "hosting_lan" : "out_of_game";
   }
   
   public void b(or playerSnooper)
@@ -2279,99 +2279,99 @@ public class ave
     playerSnooper.b("opengl_version", GL11.glGetString(7938));
     playerSnooper.b("opengl_vendor", GL11.glGetString(7936));
     playerSnooper.b("client_brand", ClientBrandRetriever.getClientModName());
-    playerSnooper.b("launched_version", al);
+    playerSnooper.b("launched_version", this.al);
     ContextCapabilities contextcapabilities = GLContext.getCapabilities();
-    playerSnooper.b("gl_caps[ARB_arrays_of_arrays]", Boolean.valueOf(GL_ARB_arrays_of_arrays));
-    playerSnooper.b("gl_caps[ARB_base_instance]", Boolean.valueOf(GL_ARB_base_instance));
-    playerSnooper.b("gl_caps[ARB_blend_func_extended]", Boolean.valueOf(GL_ARB_blend_func_extended));
-    playerSnooper.b("gl_caps[ARB_clear_buffer_object]", Boolean.valueOf(GL_ARB_clear_buffer_object));
-    playerSnooper.b("gl_caps[ARB_color_buffer_float]", Boolean.valueOf(GL_ARB_color_buffer_float));
-    playerSnooper.b("gl_caps[ARB_compatibility]", Boolean.valueOf(GL_ARB_compatibility));
-    playerSnooper.b("gl_caps[ARB_compressed_texture_pixel_storage]", Boolean.valueOf(GL_ARB_compressed_texture_pixel_storage));
-    playerSnooper.b("gl_caps[ARB_compute_shader]", Boolean.valueOf(GL_ARB_compute_shader));
-    playerSnooper.b("gl_caps[ARB_copy_buffer]", Boolean.valueOf(GL_ARB_copy_buffer));
-    playerSnooper.b("gl_caps[ARB_copy_image]", Boolean.valueOf(GL_ARB_copy_image));
-    playerSnooper.b("gl_caps[ARB_depth_buffer_float]", Boolean.valueOf(GL_ARB_depth_buffer_float));
-    playerSnooper.b("gl_caps[ARB_compute_shader]", Boolean.valueOf(GL_ARB_compute_shader));
-    playerSnooper.b("gl_caps[ARB_copy_buffer]", Boolean.valueOf(GL_ARB_copy_buffer));
-    playerSnooper.b("gl_caps[ARB_copy_image]", Boolean.valueOf(GL_ARB_copy_image));
-    playerSnooper.b("gl_caps[ARB_depth_buffer_float]", Boolean.valueOf(GL_ARB_depth_buffer_float));
-    playerSnooper.b("gl_caps[ARB_depth_clamp]", Boolean.valueOf(GL_ARB_depth_clamp));
-    playerSnooper.b("gl_caps[ARB_depth_texture]", Boolean.valueOf(GL_ARB_depth_texture));
-    playerSnooper.b("gl_caps[ARB_draw_buffers]", Boolean.valueOf(GL_ARB_draw_buffers));
-    playerSnooper.b("gl_caps[ARB_draw_buffers_blend]", Boolean.valueOf(GL_ARB_draw_buffers_blend));
-    playerSnooper.b("gl_caps[ARB_draw_elements_base_vertex]", Boolean.valueOf(GL_ARB_draw_elements_base_vertex));
-    playerSnooper.b("gl_caps[ARB_draw_indirect]", Boolean.valueOf(GL_ARB_draw_indirect));
-    playerSnooper.b("gl_caps[ARB_draw_instanced]", Boolean.valueOf(GL_ARB_draw_instanced));
-    playerSnooper.b("gl_caps[ARB_explicit_attrib_location]", Boolean.valueOf(GL_ARB_explicit_attrib_location));
-    playerSnooper.b("gl_caps[ARB_explicit_uniform_location]", Boolean.valueOf(GL_ARB_explicit_uniform_location));
-    playerSnooper.b("gl_caps[ARB_fragment_layer_viewport]", Boolean.valueOf(GL_ARB_fragment_layer_viewport));
-    playerSnooper.b("gl_caps[ARB_fragment_program]", Boolean.valueOf(GL_ARB_fragment_program));
-    playerSnooper.b("gl_caps[ARB_fragment_shader]", Boolean.valueOf(GL_ARB_fragment_shader));
-    playerSnooper.b("gl_caps[ARB_fragment_program_shadow]", Boolean.valueOf(GL_ARB_fragment_program_shadow));
-    playerSnooper.b("gl_caps[ARB_framebuffer_object]", Boolean.valueOf(GL_ARB_framebuffer_object));
-    playerSnooper.b("gl_caps[ARB_framebuffer_sRGB]", Boolean.valueOf(GL_ARB_framebuffer_sRGB));
-    playerSnooper.b("gl_caps[ARB_geometry_shader4]", Boolean.valueOf(GL_ARB_geometry_shader4));
-    playerSnooper.b("gl_caps[ARB_gpu_shader5]", Boolean.valueOf(GL_ARB_gpu_shader5));
-    playerSnooper.b("gl_caps[ARB_half_float_pixel]", Boolean.valueOf(GL_ARB_half_float_pixel));
-    playerSnooper.b("gl_caps[ARB_half_float_vertex]", Boolean.valueOf(GL_ARB_half_float_vertex));
-    playerSnooper.b("gl_caps[ARB_instanced_arrays]", Boolean.valueOf(GL_ARB_instanced_arrays));
-    playerSnooper.b("gl_caps[ARB_map_buffer_alignment]", Boolean.valueOf(GL_ARB_map_buffer_alignment));
-    playerSnooper.b("gl_caps[ARB_map_buffer_range]", Boolean.valueOf(GL_ARB_map_buffer_range));
-    playerSnooper.b("gl_caps[ARB_multisample]", Boolean.valueOf(GL_ARB_multisample));
-    playerSnooper.b("gl_caps[ARB_multitexture]", Boolean.valueOf(GL_ARB_multitexture));
-    playerSnooper.b("gl_caps[ARB_occlusion_query2]", Boolean.valueOf(GL_ARB_occlusion_query2));
-    playerSnooper.b("gl_caps[ARB_pixel_buffer_object]", Boolean.valueOf(GL_ARB_pixel_buffer_object));
-    playerSnooper.b("gl_caps[ARB_seamless_cube_map]", Boolean.valueOf(GL_ARB_seamless_cube_map));
-    playerSnooper.b("gl_caps[ARB_shader_objects]", Boolean.valueOf(GL_ARB_shader_objects));
-    playerSnooper.b("gl_caps[ARB_shader_stencil_export]", Boolean.valueOf(GL_ARB_shader_stencil_export));
-    playerSnooper.b("gl_caps[ARB_shader_texture_lod]", Boolean.valueOf(GL_ARB_shader_texture_lod));
-    playerSnooper.b("gl_caps[ARB_shadow]", Boolean.valueOf(GL_ARB_shadow));
-    playerSnooper.b("gl_caps[ARB_shadow_ambient]", Boolean.valueOf(GL_ARB_shadow_ambient));
-    playerSnooper.b("gl_caps[ARB_stencil_texturing]", Boolean.valueOf(GL_ARB_stencil_texturing));
-    playerSnooper.b("gl_caps[ARB_sync]", Boolean.valueOf(GL_ARB_sync));
-    playerSnooper.b("gl_caps[ARB_tessellation_shader]", Boolean.valueOf(GL_ARB_tessellation_shader));
-    playerSnooper.b("gl_caps[ARB_texture_border_clamp]", Boolean.valueOf(GL_ARB_texture_border_clamp));
-    playerSnooper.b("gl_caps[ARB_texture_buffer_object]", Boolean.valueOf(GL_ARB_texture_buffer_object));
-    playerSnooper.b("gl_caps[ARB_texture_cube_map]", Boolean.valueOf(GL_ARB_texture_cube_map));
-    playerSnooper.b("gl_caps[ARB_texture_cube_map_array]", Boolean.valueOf(GL_ARB_texture_cube_map_array));
-    playerSnooper.b("gl_caps[ARB_texture_non_power_of_two]", Boolean.valueOf(GL_ARB_texture_non_power_of_two));
-    playerSnooper.b("gl_caps[ARB_uniform_buffer_object]", Boolean.valueOf(GL_ARB_uniform_buffer_object));
-    playerSnooper.b("gl_caps[ARB_vertex_blend]", Boolean.valueOf(GL_ARB_vertex_blend));
-    playerSnooper.b("gl_caps[ARB_vertex_buffer_object]", Boolean.valueOf(GL_ARB_vertex_buffer_object));
-    playerSnooper.b("gl_caps[ARB_vertex_program]", Boolean.valueOf(GL_ARB_vertex_program));
-    playerSnooper.b("gl_caps[ARB_vertex_shader]", Boolean.valueOf(GL_ARB_vertex_shader));
-    playerSnooper.b("gl_caps[EXT_bindable_uniform]", Boolean.valueOf(GL_EXT_bindable_uniform));
-    playerSnooper.b("gl_caps[EXT_blend_equation_separate]", Boolean.valueOf(GL_EXT_blend_equation_separate));
-    playerSnooper.b("gl_caps[EXT_blend_func_separate]", Boolean.valueOf(GL_EXT_blend_func_separate));
-    playerSnooper.b("gl_caps[EXT_blend_minmax]", Boolean.valueOf(GL_EXT_blend_minmax));
-    playerSnooper.b("gl_caps[EXT_blend_subtract]", Boolean.valueOf(GL_EXT_blend_subtract));
-    playerSnooper.b("gl_caps[EXT_draw_instanced]", Boolean.valueOf(GL_EXT_draw_instanced));
-    playerSnooper.b("gl_caps[EXT_framebuffer_multisample]", Boolean.valueOf(GL_EXT_framebuffer_multisample));
-    playerSnooper.b("gl_caps[EXT_framebuffer_object]", Boolean.valueOf(GL_EXT_framebuffer_object));
-    playerSnooper.b("gl_caps[EXT_framebuffer_sRGB]", Boolean.valueOf(GL_EXT_framebuffer_sRGB));
-    playerSnooper.b("gl_caps[EXT_geometry_shader4]", Boolean.valueOf(GL_EXT_geometry_shader4));
-    playerSnooper.b("gl_caps[EXT_gpu_program_parameters]", Boolean.valueOf(GL_EXT_gpu_program_parameters));
-    playerSnooper.b("gl_caps[EXT_gpu_shader4]", Boolean.valueOf(GL_EXT_gpu_shader4));
-    playerSnooper.b("gl_caps[EXT_multi_draw_arrays]", Boolean.valueOf(GL_EXT_multi_draw_arrays));
-    playerSnooper.b("gl_caps[EXT_packed_depth_stencil]", Boolean.valueOf(GL_EXT_packed_depth_stencil));
-    playerSnooper.b("gl_caps[EXT_paletted_texture]", Boolean.valueOf(GL_EXT_paletted_texture));
-    playerSnooper.b("gl_caps[EXT_rescale_normal]", Boolean.valueOf(GL_EXT_rescale_normal));
-    playerSnooper.b("gl_caps[EXT_separate_shader_objects]", Boolean.valueOf(GL_EXT_separate_shader_objects));
-    playerSnooper.b("gl_caps[EXT_shader_image_load_store]", Boolean.valueOf(GL_EXT_shader_image_load_store));
-    playerSnooper.b("gl_caps[EXT_shadow_funcs]", Boolean.valueOf(GL_EXT_shadow_funcs));
-    playerSnooper.b("gl_caps[EXT_shared_texture_palette]", Boolean.valueOf(GL_EXT_shared_texture_palette));
-    playerSnooper.b("gl_caps[EXT_stencil_clear_tag]", Boolean.valueOf(GL_EXT_stencil_clear_tag));
-    playerSnooper.b("gl_caps[EXT_stencil_two_side]", Boolean.valueOf(GL_EXT_stencil_two_side));
-    playerSnooper.b("gl_caps[EXT_stencil_wrap]", Boolean.valueOf(GL_EXT_stencil_wrap));
-    playerSnooper.b("gl_caps[EXT_texture_3d]", Boolean.valueOf(GL_EXT_texture_3d));
-    playerSnooper.b("gl_caps[EXT_texture_array]", Boolean.valueOf(GL_EXT_texture_array));
-    playerSnooper.b("gl_caps[EXT_texture_buffer_object]", Boolean.valueOf(GL_EXT_texture_buffer_object));
-    playerSnooper.b("gl_caps[EXT_texture_integer]", Boolean.valueOf(GL_EXT_texture_integer));
-    playerSnooper.b("gl_caps[EXT_texture_lod_bias]", Boolean.valueOf(GL_EXT_texture_lod_bias));
-    playerSnooper.b("gl_caps[EXT_texture_sRGB]", Boolean.valueOf(GL_EXT_texture_sRGB));
-    playerSnooper.b("gl_caps[EXT_vertex_shader]", Boolean.valueOf(GL_EXT_vertex_shader));
-    playerSnooper.b("gl_caps[EXT_vertex_weighting]", Boolean.valueOf(GL_EXT_vertex_weighting));
+    playerSnooper.b("gl_caps[ARB_arrays_of_arrays]", Boolean.valueOf(contextcapabilities.GL_ARB_arrays_of_arrays));
+    playerSnooper.b("gl_caps[ARB_base_instance]", Boolean.valueOf(contextcapabilities.GL_ARB_base_instance));
+    playerSnooper.b("gl_caps[ARB_blend_func_extended]", Boolean.valueOf(contextcapabilities.GL_ARB_blend_func_extended));
+    playerSnooper.b("gl_caps[ARB_clear_buffer_object]", Boolean.valueOf(contextcapabilities.GL_ARB_clear_buffer_object));
+    playerSnooper.b("gl_caps[ARB_color_buffer_float]", Boolean.valueOf(contextcapabilities.GL_ARB_color_buffer_float));
+    playerSnooper.b("gl_caps[ARB_compatibility]", Boolean.valueOf(contextcapabilities.GL_ARB_compatibility));
+    playerSnooper.b("gl_caps[ARB_compressed_texture_pixel_storage]", Boolean.valueOf(contextcapabilities.GL_ARB_compressed_texture_pixel_storage));
+    playerSnooper.b("gl_caps[ARB_compute_shader]", Boolean.valueOf(contextcapabilities.GL_ARB_compute_shader));
+    playerSnooper.b("gl_caps[ARB_copy_buffer]", Boolean.valueOf(contextcapabilities.GL_ARB_copy_buffer));
+    playerSnooper.b("gl_caps[ARB_copy_image]", Boolean.valueOf(contextcapabilities.GL_ARB_copy_image));
+    playerSnooper.b("gl_caps[ARB_depth_buffer_float]", Boolean.valueOf(contextcapabilities.GL_ARB_depth_buffer_float));
+    playerSnooper.b("gl_caps[ARB_compute_shader]", Boolean.valueOf(contextcapabilities.GL_ARB_compute_shader));
+    playerSnooper.b("gl_caps[ARB_copy_buffer]", Boolean.valueOf(contextcapabilities.GL_ARB_copy_buffer));
+    playerSnooper.b("gl_caps[ARB_copy_image]", Boolean.valueOf(contextcapabilities.GL_ARB_copy_image));
+    playerSnooper.b("gl_caps[ARB_depth_buffer_float]", Boolean.valueOf(contextcapabilities.GL_ARB_depth_buffer_float));
+    playerSnooper.b("gl_caps[ARB_depth_clamp]", Boolean.valueOf(contextcapabilities.GL_ARB_depth_clamp));
+    playerSnooper.b("gl_caps[ARB_depth_texture]", Boolean.valueOf(contextcapabilities.GL_ARB_depth_texture));
+    playerSnooper.b("gl_caps[ARB_draw_buffers]", Boolean.valueOf(contextcapabilities.GL_ARB_draw_buffers));
+    playerSnooper.b("gl_caps[ARB_draw_buffers_blend]", Boolean.valueOf(contextcapabilities.GL_ARB_draw_buffers_blend));
+    playerSnooper.b("gl_caps[ARB_draw_elements_base_vertex]", Boolean.valueOf(contextcapabilities.GL_ARB_draw_elements_base_vertex));
+    playerSnooper.b("gl_caps[ARB_draw_indirect]", Boolean.valueOf(contextcapabilities.GL_ARB_draw_indirect));
+    playerSnooper.b("gl_caps[ARB_draw_instanced]", Boolean.valueOf(contextcapabilities.GL_ARB_draw_instanced));
+    playerSnooper.b("gl_caps[ARB_explicit_attrib_location]", Boolean.valueOf(contextcapabilities.GL_ARB_explicit_attrib_location));
+    playerSnooper.b("gl_caps[ARB_explicit_uniform_location]", Boolean.valueOf(contextcapabilities.GL_ARB_explicit_uniform_location));
+    playerSnooper.b("gl_caps[ARB_fragment_layer_viewport]", Boolean.valueOf(contextcapabilities.GL_ARB_fragment_layer_viewport));
+    playerSnooper.b("gl_caps[ARB_fragment_program]", Boolean.valueOf(contextcapabilities.GL_ARB_fragment_program));
+    playerSnooper.b("gl_caps[ARB_fragment_shader]", Boolean.valueOf(contextcapabilities.GL_ARB_fragment_shader));
+    playerSnooper.b("gl_caps[ARB_fragment_program_shadow]", Boolean.valueOf(contextcapabilities.GL_ARB_fragment_program_shadow));
+    playerSnooper.b("gl_caps[ARB_framebuffer_object]", Boolean.valueOf(contextcapabilities.GL_ARB_framebuffer_object));
+    playerSnooper.b("gl_caps[ARB_framebuffer_sRGB]", Boolean.valueOf(contextcapabilities.GL_ARB_framebuffer_sRGB));
+    playerSnooper.b("gl_caps[ARB_geometry_shader4]", Boolean.valueOf(contextcapabilities.GL_ARB_geometry_shader4));
+    playerSnooper.b("gl_caps[ARB_gpu_shader5]", Boolean.valueOf(contextcapabilities.GL_ARB_gpu_shader5));
+    playerSnooper.b("gl_caps[ARB_half_float_pixel]", Boolean.valueOf(contextcapabilities.GL_ARB_half_float_pixel));
+    playerSnooper.b("gl_caps[ARB_half_float_vertex]", Boolean.valueOf(contextcapabilities.GL_ARB_half_float_vertex));
+    playerSnooper.b("gl_caps[ARB_instanced_arrays]", Boolean.valueOf(contextcapabilities.GL_ARB_instanced_arrays));
+    playerSnooper.b("gl_caps[ARB_map_buffer_alignment]", Boolean.valueOf(contextcapabilities.GL_ARB_map_buffer_alignment));
+    playerSnooper.b("gl_caps[ARB_map_buffer_range]", Boolean.valueOf(contextcapabilities.GL_ARB_map_buffer_range));
+    playerSnooper.b("gl_caps[ARB_multisample]", Boolean.valueOf(contextcapabilities.GL_ARB_multisample));
+    playerSnooper.b("gl_caps[ARB_multitexture]", Boolean.valueOf(contextcapabilities.GL_ARB_multitexture));
+    playerSnooper.b("gl_caps[ARB_occlusion_query2]", Boolean.valueOf(contextcapabilities.GL_ARB_occlusion_query2));
+    playerSnooper.b("gl_caps[ARB_pixel_buffer_object]", Boolean.valueOf(contextcapabilities.GL_ARB_pixel_buffer_object));
+    playerSnooper.b("gl_caps[ARB_seamless_cube_map]", Boolean.valueOf(contextcapabilities.GL_ARB_seamless_cube_map));
+    playerSnooper.b("gl_caps[ARB_shader_objects]", Boolean.valueOf(contextcapabilities.GL_ARB_shader_objects));
+    playerSnooper.b("gl_caps[ARB_shader_stencil_export]", Boolean.valueOf(contextcapabilities.GL_ARB_shader_stencil_export));
+    playerSnooper.b("gl_caps[ARB_shader_texture_lod]", Boolean.valueOf(contextcapabilities.GL_ARB_shader_texture_lod));
+    playerSnooper.b("gl_caps[ARB_shadow]", Boolean.valueOf(contextcapabilities.GL_ARB_shadow));
+    playerSnooper.b("gl_caps[ARB_shadow_ambient]", Boolean.valueOf(contextcapabilities.GL_ARB_shadow_ambient));
+    playerSnooper.b("gl_caps[ARB_stencil_texturing]", Boolean.valueOf(contextcapabilities.GL_ARB_stencil_texturing));
+    playerSnooper.b("gl_caps[ARB_sync]", Boolean.valueOf(contextcapabilities.GL_ARB_sync));
+    playerSnooper.b("gl_caps[ARB_tessellation_shader]", Boolean.valueOf(contextcapabilities.GL_ARB_tessellation_shader));
+    playerSnooper.b("gl_caps[ARB_texture_border_clamp]", Boolean.valueOf(contextcapabilities.GL_ARB_texture_border_clamp));
+    playerSnooper.b("gl_caps[ARB_texture_buffer_object]", Boolean.valueOf(contextcapabilities.GL_ARB_texture_buffer_object));
+    playerSnooper.b("gl_caps[ARB_texture_cube_map]", Boolean.valueOf(contextcapabilities.GL_ARB_texture_cube_map));
+    playerSnooper.b("gl_caps[ARB_texture_cube_map_array]", Boolean.valueOf(contextcapabilities.GL_ARB_texture_cube_map_array));
+    playerSnooper.b("gl_caps[ARB_texture_non_power_of_two]", Boolean.valueOf(contextcapabilities.GL_ARB_texture_non_power_of_two));
+    playerSnooper.b("gl_caps[ARB_uniform_buffer_object]", Boolean.valueOf(contextcapabilities.GL_ARB_uniform_buffer_object));
+    playerSnooper.b("gl_caps[ARB_vertex_blend]", Boolean.valueOf(contextcapabilities.GL_ARB_vertex_blend));
+    playerSnooper.b("gl_caps[ARB_vertex_buffer_object]", Boolean.valueOf(contextcapabilities.GL_ARB_vertex_buffer_object));
+    playerSnooper.b("gl_caps[ARB_vertex_program]", Boolean.valueOf(contextcapabilities.GL_ARB_vertex_program));
+    playerSnooper.b("gl_caps[ARB_vertex_shader]", Boolean.valueOf(contextcapabilities.GL_ARB_vertex_shader));
+    playerSnooper.b("gl_caps[EXT_bindable_uniform]", Boolean.valueOf(contextcapabilities.GL_EXT_bindable_uniform));
+    playerSnooper.b("gl_caps[EXT_blend_equation_separate]", Boolean.valueOf(contextcapabilities.GL_EXT_blend_equation_separate));
+    playerSnooper.b("gl_caps[EXT_blend_func_separate]", Boolean.valueOf(contextcapabilities.GL_EXT_blend_func_separate));
+    playerSnooper.b("gl_caps[EXT_blend_minmax]", Boolean.valueOf(contextcapabilities.GL_EXT_blend_minmax));
+    playerSnooper.b("gl_caps[EXT_blend_subtract]", Boolean.valueOf(contextcapabilities.GL_EXT_blend_subtract));
+    playerSnooper.b("gl_caps[EXT_draw_instanced]", Boolean.valueOf(contextcapabilities.GL_EXT_draw_instanced));
+    playerSnooper.b("gl_caps[EXT_framebuffer_multisample]", Boolean.valueOf(contextcapabilities.GL_EXT_framebuffer_multisample));
+    playerSnooper.b("gl_caps[EXT_framebuffer_object]", Boolean.valueOf(contextcapabilities.GL_EXT_framebuffer_object));
+    playerSnooper.b("gl_caps[EXT_framebuffer_sRGB]", Boolean.valueOf(contextcapabilities.GL_EXT_framebuffer_sRGB));
+    playerSnooper.b("gl_caps[EXT_geometry_shader4]", Boolean.valueOf(contextcapabilities.GL_EXT_geometry_shader4));
+    playerSnooper.b("gl_caps[EXT_gpu_program_parameters]", Boolean.valueOf(contextcapabilities.GL_EXT_gpu_program_parameters));
+    playerSnooper.b("gl_caps[EXT_gpu_shader4]", Boolean.valueOf(contextcapabilities.GL_EXT_gpu_shader4));
+    playerSnooper.b("gl_caps[EXT_multi_draw_arrays]", Boolean.valueOf(contextcapabilities.GL_EXT_multi_draw_arrays));
+    playerSnooper.b("gl_caps[EXT_packed_depth_stencil]", Boolean.valueOf(contextcapabilities.GL_EXT_packed_depth_stencil));
+    playerSnooper.b("gl_caps[EXT_paletted_texture]", Boolean.valueOf(contextcapabilities.GL_EXT_paletted_texture));
+    playerSnooper.b("gl_caps[EXT_rescale_normal]", Boolean.valueOf(contextcapabilities.GL_EXT_rescale_normal));
+    playerSnooper.b("gl_caps[EXT_separate_shader_objects]", Boolean.valueOf(contextcapabilities.GL_EXT_separate_shader_objects));
+    playerSnooper.b("gl_caps[EXT_shader_image_load_store]", Boolean.valueOf(contextcapabilities.GL_EXT_shader_image_load_store));
+    playerSnooper.b("gl_caps[EXT_shadow_funcs]", Boolean.valueOf(contextcapabilities.GL_EXT_shadow_funcs));
+    playerSnooper.b("gl_caps[EXT_shared_texture_palette]", Boolean.valueOf(contextcapabilities.GL_EXT_shared_texture_palette));
+    playerSnooper.b("gl_caps[EXT_stencil_clear_tag]", Boolean.valueOf(contextcapabilities.GL_EXT_stencil_clear_tag));
+    playerSnooper.b("gl_caps[EXT_stencil_two_side]", Boolean.valueOf(contextcapabilities.GL_EXT_stencil_two_side));
+    playerSnooper.b("gl_caps[EXT_stencil_wrap]", Boolean.valueOf(contextcapabilities.GL_EXT_stencil_wrap));
+    playerSnooper.b("gl_caps[EXT_texture_3d]", Boolean.valueOf(contextcapabilities.GL_EXT_texture_3d));
+    playerSnooper.b("gl_caps[EXT_texture_array]", Boolean.valueOf(contextcapabilities.GL_EXT_texture_array));
+    playerSnooper.b("gl_caps[EXT_texture_buffer_object]", Boolean.valueOf(contextcapabilities.GL_EXT_texture_buffer_object));
+    playerSnooper.b("gl_caps[EXT_texture_integer]", Boolean.valueOf(contextcapabilities.GL_EXT_texture_integer));
+    playerSnooper.b("gl_caps[EXT_texture_lod_bias]", Boolean.valueOf(contextcapabilities.GL_EXT_texture_lod_bias));
+    playerSnooper.b("gl_caps[EXT_texture_sRGB]", Boolean.valueOf(contextcapabilities.GL_EXT_texture_sRGB));
+    playerSnooper.b("gl_caps[EXT_vertex_shader]", Boolean.valueOf(contextcapabilities.GL_EXT_vertex_shader));
+    playerSnooper.b("gl_caps[EXT_vertex_weighting]", Boolean.valueOf(contextcapabilities.GL_EXT_vertex_weighting));
     playerSnooper.b("gl_caps[gl_max_vertex_uniforms]", Integer.valueOf(GL11.glGetInteger(35658)));
     GL11.glGetError();
     playerSnooper.b("gl_caps[gl_max_fragment_uniforms]", Integer.valueOf(GL11.glGetInteger(35657)));
@@ -2402,32 +2402,32 @@ public class ave
   
   public boolean ad()
   {
-    return t.r;
+    return this.t.r;
   }
   
   public void a(bde serverDataIn)
   {
-    Q = serverDataIn;
+    this.Q = serverDataIn;
   }
   
   public bde D()
   {
-    return Q;
+    return this.Q;
   }
   
   public boolean E()
   {
-    return aw;
+    return this.aw;
   }
   
   public boolean F()
   {
-    return (aw) && (aj != null);
+    return (this.aw) && (this.aj != null);
   }
   
   public bpo G()
   {
-    return aj;
+    return this.aj;
   }
   
   public static void H()
@@ -2443,7 +2443,7 @@ public class ave
   
   public or I()
   {
-    return Z;
+    return this.Z;
   }
   
   public static long J()
@@ -2453,82 +2453,82 @@ public class ave
   
   public boolean K()
   {
-    return T;
+    return this.T;
   }
   
   public avm L()
   {
-    return ae;
+    return this.ae;
   }
   
   public PropertyMap M()
   {
-    return O;
+    return this.O;
   }
   
   public PropertyMap N()
   {
-    if (P.isEmpty())
+    if (this.P.isEmpty())
     {
-      GameProfile gameprofile = aa().fillProfileProperties(ae.e(), false);
-      P.putAll(gameprofile.getProperties());
+      GameProfile gameprofile = aa().fillProfileProperties(this.ae.e(), false);
+      this.P.putAll(gameprofile.getProperties());
     }
-    return P;
+    return this.P;
   }
   
   public Proxy O()
   {
-    return am;
+    return this.am;
   }
   
   public bmj P()
   {
-    return R;
+    return this.R;
   }
   
   public bni Q()
   {
-    return ay;
+    return this.ay;
   }
   
   public bnm R()
   {
-    return aC;
+    return this.aC;
   }
   
   public bns S()
   {
-    return aD;
+    return this.aD;
   }
   
   public bmh T()
   {
-    return aG;
+    return this.aG;
   }
   
   public boolean U()
   {
-    return at;
+    return this.at;
   }
   
   public boolean V()
   {
-    return af;
+    return this.af;
   }
   
   public bpz W()
   {
-    return aH;
+    return this.aH;
   }
   
   public bpv.a X()
   {
-    return h != null ? bpv.a.b : (h.bA.d) && (h.bA.c) ? bpv.a.c : (h.o.t instanceof anp) ? bpv.a.g : (bfc.c != null) && (bfc.b > 0) ? bpv.a.f : (h.o.t instanceof ann) ? bpv.a.e : bpv.a.a;
+    return this.h != null ? bpv.a.b : (this.h.bA.d) && (this.h.bA.c) ? bpv.a.c : (this.h.o.t instanceof anp) ? bpv.a.g : (bfc.c != null) && (bfc.b > 0) ? bpv.a.f : (this.h.o.t instanceof ann) ? bpv.a.e : bpv.a.a;
   }
   
   public bqm Y()
   {
-    return aE;
+    return this.aE;
   }
   
   public void Z()
@@ -2538,10 +2538,10 @@ public class ave
       i = 0;
     }
     if ((i != 0) && (!Keyboard.isRepeatEvent())) {
-      if ((!(m instanceof ayj)) || (m).g <= J() - 20L)) {
+      if ((!(this.m instanceof ayj)) || (((ayj)this.m).g <= J() - 20L)) {
         if (Keyboard.getEventKeyState())
         {
-          if (i == t.ar.i())
+          if (i == this.t.ar.i())
           {
             if (Y().k()) {
               Y().r();
@@ -2551,22 +2551,22 @@ public class ave
                 public void a(boolean result, int id)
                 {
                   if (result) {
-                    Y().q();
+                    ave.this.Y().q();
                   }
-                  a((axu)null);
+                  ave.this.a((axu)null);
                 }
               }, bnq.a("stream.confirm_start", new Object[0]), "", 0));
             } else if ((Y().A()) && (Y().i()))
             {
-              if (f != null) {
-                q.d().a(new fa("Not ready to start streaming yet!"));
+              if (this.f != null) {
+                this.q.d().a(new fa("Not ready to start streaming yet!"));
               }
             }
             else {
-              baa.a(m);
+              baa.a(this.m);
             }
           }
-          else if (i == t.as.i())
+          else if (i == this.t.as.i())
           {
             if (Y().k()) {
               if (Y().l()) {
@@ -2576,22 +2576,22 @@ public class ave
               }
             }
           }
-          else if (i == t.at.i())
+          else if (i == this.t.at.i())
           {
             if (Y().k()) {
               Y().m();
             }
           }
-          else if (i == t.au.i()) {
-            aE.a(true);
-          } else if (i == t.ap.i()) {
+          else if (i == this.t.au.i()) {
+            this.aE.a(true);
+          } else if (i == this.t.ap.i()) {
             q();
-          } else if (i == t.am.i()) {
-            q.d().a(avj.a(v, d, e, aF));
+          } else if (i == this.t.am.i()) {
+            this.q.d().a(avj.a(this.v, this.d, this.e, this.aF));
           }
         }
-        else if (i == t.au.i()) {
-          aE.a(false);
+        else if (i == this.t.au.i()) {
+          this.aE.a(false);
         }
       }
     }
@@ -2599,23 +2599,23 @@ public class ave
   
   public MinecraftSessionService aa()
   {
-    return aK;
+    return this.aK;
   }
   
   public bnp ab()
   {
-    return aL;
+    return this.aL;
   }
   
   public pk ac()
   {
-    return ad;
+    return this.ad;
   }
   
   public void a(pk viewingEntity)
   {
-    ad = viewingEntity;
-    o.a(viewingEntity);
+    this.ad = viewingEntity;
+    this.o.a(viewingEntity);
   }
   
   public <V> ListenableFuture<V> a(Callable<V> callableToSchedule)
@@ -2624,9 +2624,9 @@ public class ave
     if (!aJ())
     {
       ListenableFutureTask<V> listenablefuturetask = ListenableFutureTask.create(callableToSchedule);
-      synchronized (aM)
+      synchronized (this.aM)
       {
-        aM.add(listenablefuturetask);
+        this.aM.add(listenablefuturetask);
         return listenablefuturetask;
       }
     }
@@ -2648,27 +2648,27 @@ public class ave
   
   public boolean aJ()
   {
-    return Thread.currentThread() == aO;
+    return Thread.currentThread() == this.aO;
   }
   
   public bgd ae()
   {
-    return aQ;
+    return this.aQ;
   }
   
   public biu af()
   {
-    return aa;
+    return this.aa;
   }
   
   public bjh ag()
   {
-    return ab;
+    return this.ab;
   }
   
   public bfn ah()
   {
-    return ac;
+    return this.ac;
   }
   
   public static int ai()
@@ -2678,7 +2678,7 @@ public class ave
   
   public nh aj()
   {
-    return y;
+    return this.y;
   }
   
   public static Map<String, String> ak()
@@ -2692,11 +2692,11 @@ public class ave
   
   public boolean al()
   {
-    return X;
+    return this.X;
   }
   
   public void a(boolean p_181537_1_)
   {
-    X = p_181537_1_;
+    this.X = p_181537_1_;
   }
 }

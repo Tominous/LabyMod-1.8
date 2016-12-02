@@ -8,6 +8,6 @@ class tu$a
   
   protected double a(pr ☃)
   {
-    return 4.0F + J;
+    return 4.0F + ☃.J;
   }
 }

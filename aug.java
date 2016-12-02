@@ -9,32 +9,32 @@ public class aug
   
   public aug(double ☃, double ☃, double ☃, double ☃, double ☃, double ☃)
   {
-    a = Math.min(☃, ☃);
-    b = Math.min(☃, ☃);
-    c = Math.min(☃, ☃);
-    d = Math.max(☃, ☃);
-    e = Math.max(☃, ☃);
-    f = Math.max(☃, ☃);
+    this.a = Math.min(☃, ☃);
+    this.b = Math.min(☃, ☃);
+    this.c = Math.min(☃, ☃);
+    this.d = Math.max(☃, ☃);
+    this.e = Math.max(☃, ☃);
+    this.f = Math.max(☃, ☃);
   }
   
   public aug(cj ☃, cj ☃)
   {
-    a = ☃.n();
-    b = ☃.o();
-    c = ☃.p();
-    d = ☃.n();
-    e = ☃.o();
-    f = ☃.p();
+    this.a = ☃.n();
+    this.b = ☃.o();
+    this.c = ☃.p();
+    this.d = ☃.n();
+    this.e = ☃.o();
+    this.f = ☃.p();
   }
   
   public aug a(double ☃, double ☃, double ☃)
   {
-    double ☃ = a;
-    double ☃ = b;
-    double ☃ = c;
-    double ☃ = d;
-    double ☃ = e;
-    double ☃ = f;
+    double ☃ = this.a;
+    double ☃ = this.b;
+    double ☃ = this.c;
+    double ☃ = this.d;
+    double ☃ = this.e;
+    double ☃ = this.f;
     if (☃ < 0.0D) {
       ☃ += ☃;
     } else if (☃ > 0.0D) {
@@ -55,24 +55,24 @@ public class aug
   
   public aug b(double ☃, double ☃, double ☃)
   {
-    double ☃ = a - ☃;
-    double ☃ = b - ☃;
-    double ☃ = c - ☃;
-    double ☃ = d + ☃;
-    double ☃ = e + ☃;
-    double ☃ = f + ☃;
+    double ☃ = this.a - ☃;
+    double ☃ = this.b - ☃;
+    double ☃ = this.c - ☃;
+    double ☃ = this.d + ☃;
+    double ☃ = this.e + ☃;
+    double ☃ = this.f + ☃;
     
     return new aug(☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   public aug a(aug ☃)
   {
-    double ☃ = Math.min(a, a);
-    double ☃ = Math.min(b, b);
-    double ☃ = Math.min(c, c);
-    double ☃ = Math.max(d, d);
-    double ☃ = Math.max(e, e);
-    double ☃ = Math.max(f, f);
+    double ☃ = Math.min(this.a, ☃.a);
+    double ☃ = Math.min(this.b, ☃.b);
+    double ☃ = Math.min(this.c, ☃.c);
+    double ☃ = Math.max(this.d, ☃.d);
+    double ☃ = Math.max(this.e, ☃.e);
+    double ☃ = Math.max(this.f, ☃.f);
     
     return new aug(☃, ☃, ☃, ☃, ☃, ☃);
   }
@@ -91,24 +91,24 @@ public class aug
   
   public aug c(double ☃, double ☃, double ☃)
   {
-    return new aug(a + ☃, b + ☃, c + ☃, d + ☃, e + ☃, f + ☃);
+    return new aug(this.a + ☃, this.b + ☃, this.c + ☃, this.d + ☃, this.e + ☃, this.f + ☃);
   }
   
   public double a(aug ☃, double ☃)
   {
-    if ((e <= b) || (b >= e) || (f <= c) || (c >= f)) {
+    if ((☃.e <= this.b) || (☃.b >= this.e) || (☃.f <= this.c) || (☃.c >= this.f)) {
       return ☃;
     }
-    if ((☃ > 0.0D) && (d <= a))
+    if ((☃ > 0.0D) && (☃.d <= this.a))
     {
-      double ☃ = a - d;
+      double ☃ = this.a - ☃.d;
       if (☃ < ☃) {
         ☃ = ☃;
       }
     }
-    else if ((☃ < 0.0D) && (a >= d))
+    else if ((☃ < 0.0D) && (☃.a >= this.d))
     {
-      double ☃ = d - a;
+      double ☃ = this.d - ☃.a;
       if (☃ > ☃) {
         ☃ = ☃;
       }
@@ -118,19 +118,19 @@ public class aug
   
   public double b(aug ☃, double ☃)
   {
-    if ((d <= a) || (a >= d) || (f <= c) || (c >= f)) {
+    if ((☃.d <= this.a) || (☃.a >= this.d) || (☃.f <= this.c) || (☃.c >= this.f)) {
       return ☃;
     }
-    if ((☃ > 0.0D) && (e <= b))
+    if ((☃ > 0.0D) && (☃.e <= this.b))
     {
-      double ☃ = b - e;
+      double ☃ = this.b - ☃.e;
       if (☃ < ☃) {
         ☃ = ☃;
       }
     }
-    else if ((☃ < 0.0D) && (b >= e))
+    else if ((☃ < 0.0D) && (☃.b >= this.e))
     {
-      double ☃ = e - b;
+      double ☃ = this.e - ☃.b;
       if (☃ > ☃) {
         ☃ = ☃;
       }
@@ -140,19 +140,19 @@ public class aug
   
   public double c(aug ☃, double ☃)
   {
-    if ((d <= a) || (a >= d) || (e <= b) || (b >= e)) {
+    if ((☃.d <= this.a) || (☃.a >= this.d) || (☃.e <= this.b) || (☃.b >= this.e)) {
       return ☃;
     }
-    if ((☃ > 0.0D) && (f <= c))
+    if ((☃ > 0.0D) && (☃.f <= this.c))
     {
-      double ☃ = c - f;
+      double ☃ = this.c - ☃.f;
       if (☃ < ☃) {
         ☃ = ☃;
       }
     }
-    else if ((☃ < 0.0D) && (c >= f))
+    else if ((☃ < 0.0D) && (☃.c >= this.f))
     {
-      double ☃ = f - c;
+      double ☃ = this.f - ☃.c;
       if (☃ > ☃) {
         ☃ = ☃;
       }
@@ -162,13 +162,13 @@ public class aug
   
   public boolean b(aug ☃)
   {
-    if ((d <= a) || (a >= d)) {
+    if ((☃.d <= this.a) || (☃.a >= this.d)) {
       return false;
     }
-    if ((e <= b) || (b >= e)) {
+    if ((☃.e <= this.b) || (☃.b >= this.e)) {
       return false;
     }
-    if ((f <= c) || (c >= f)) {
+    if ((☃.f <= this.c) || (☃.c >= this.f)) {
       return false;
     }
     return true;
@@ -176,13 +176,13 @@ public class aug
   
   public boolean a(aui ☃)
   {
-    if ((a <= a) || (a >= d)) {
+    if ((☃.a <= this.a) || (☃.a >= this.d)) {
       return false;
     }
-    if ((b <= b) || (b >= e)) {
+    if ((☃.b <= this.b) || (☃.b >= this.e)) {
       return false;
     }
-    if ((c <= c) || (c >= f)) {
+    if ((☃.c <= this.c) || (☃.c >= this.f)) {
       return false;
     }
     return true;
@@ -190,34 +190,34 @@ public class aug
   
   public double a()
   {
-    double ☃ = d - a;
-    double ☃ = e - b;
-    double ☃ = f - c;
+    double ☃ = this.d - this.a;
+    double ☃ = this.e - this.b;
+    double ☃ = this.f - this.c;
     return (☃ + ☃ + ☃) / 3.0D;
   }
   
   public aug d(double ☃, double ☃, double ☃)
   {
-    double ☃ = a + ☃;
-    double ☃ = b + ☃;
-    double ☃ = c + ☃;
-    double ☃ = d - ☃;
-    double ☃ = e - ☃;
-    double ☃ = f - ☃;
+    double ☃ = this.a + ☃;
+    double ☃ = this.b + ☃;
+    double ☃ = this.c + ☃;
+    double ☃ = this.d - ☃;
+    double ☃ = this.e - ☃;
+    double ☃ = this.f - ☃;
     
     return new aug(☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   public auh a(aui ☃, aui ☃)
   {
-    aui ☃ = ☃.a(☃, a);
-    aui ☃ = ☃.a(☃, d);
+    aui ☃ = ☃.a(☃, this.a);
+    aui ☃ = ☃.a(☃, this.d);
     
-    aui ☃ = ☃.b(☃, b);
-    aui ☃ = ☃.b(☃, e);
+    aui ☃ = ☃.b(☃, this.b);
+    aui ☃ = ☃.b(☃, this.e);
     
-    aui ☃ = ☃.c(☃, c);
-    aui ☃ = ☃.c(☃, f);
+    aui ☃ = ☃.c(☃, this.c);
+    aui ☃ = ☃.c(☃, this.f);
     if (!b(☃)) {
       ☃ = null;
     }
@@ -280,7 +280,7 @@ public class aug
     if (☃ == null) {
       return false;
     }
-    return (b >= b) && (b <= e) && (c >= c) && (c <= f);
+    return (☃.b >= this.b) && (☃.b <= this.e) && (☃.c >= this.c) && (☃.c <= this.f);
   }
   
   private boolean c(aui ☃)
@@ -288,7 +288,7 @@ public class aug
     if (☃ == null) {
       return false;
     }
-    return (a >= a) && (a <= d) && (c >= c) && (c <= f);
+    return (☃.a >= this.a) && (☃.a <= this.d) && (☃.c >= this.c) && (☃.c <= this.f);
   }
   
   private boolean d(aui ☃)
@@ -296,17 +296,17 @@ public class aug
     if (☃ == null) {
       return false;
     }
-    return (a >= a) && (a <= d) && (b >= b) && (b <= e);
+    return (☃.a >= this.a) && (☃.a <= this.d) && (☃.b >= this.b) && (☃.b <= this.e);
   }
   
   public String toString()
   {
-    return "box[" + a + ", " + b + ", " + c + " -> " + d + ", " + e + ", " + f + "]";
+    return "box[" + this.a + ", " + this.b + ", " + this.c + " -> " + this.d + ", " + this.e + ", " + this.f + "]";
   }
   
   public boolean b()
   {
-    if ((Double.isNaN(a)) || (Double.isNaN(b)) || (Double.isNaN(c)) || (Double.isNaN(d)) || (Double.isNaN(e)) || (Double.isNaN(f))) {
+    if ((Double.isNaN(this.a)) || (Double.isNaN(this.b)) || (Double.isNaN(this.c)) || (Double.isNaN(this.d)) || (Double.isNaN(this.e)) || (Double.isNaN(this.f))) {
       return true;
     }
     return false;

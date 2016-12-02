@@ -36,10 +36,10 @@ public class ItemPhysic
     
     public void b()
     {
-      n.clear();
-      n.add(rotationSpeedControl = new GuiSlideControl(1, l / 2 - 50, m / 2 - 10, 100, 20, "Rotation Speed: ", 0.0F, 100.0F, ItemPhysic.rotationSpeed, true));
+      this.n.clear();
+      this.n.add(this.rotationSpeedControl = new GuiSlideControl(1, this.l / 2 - 50, this.m / 2 - 10, 100, 20, "Rotation Speed: ", 0.0F, 100.0F, ItemPhysic.rotationSpeed, true));
       
-      n.add(new avs(2, l / 2 - 30, m / 2 + 20, 60, 20, "Save"));
+      this.n.add(new avs(2, this.l / 2 - 30, this.m / 2 + 20, 60, 20, "Save"));
       
       super.b();
     }
@@ -49,7 +49,7 @@ public class ItemPhysic
     {
       super.a(mouseX, mouseY, mouseButton);
       
-      ItemPhysic.rotationSpeed = rotationSpeedControl.GetValueAsFloat();
+      ItemPhysic.rotationSpeed = this.rotationSpeedControl.GetValueAsFloat();
       ItemPhysic.config.set("rotationSpeed", new Property(String.valueOf(ItemPhysic.rotationSpeed)));
       ItemPhysic.config.save();
     }
@@ -64,7 +64,7 @@ public class ItemPhysic
     {
       super.b(mouseX, mouseY, state);
       
-      ItemPhysic.rotationSpeed = rotationSpeedControl.GetValueAsFloat();
+      ItemPhysic.rotationSpeed = this.rotationSpeedControl.GetValueAsFloat();
       ItemPhysic.config.set("rotationSpeed", new Property(String.valueOf(ItemPhysic.rotationSpeed)));
       ItemPhysic.config.save();
     }
@@ -72,8 +72,8 @@ public class ItemPhysic
     protected void a(avs button)
       throws IOException
     {
-      if (k == 2) {
-        j.a(ModAPI.getLastScreen());
+      if (button.k == 2) {
+        this.j.a(ModAPI.getLastScreen());
       }
       super.a(button);
     }

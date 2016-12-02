@@ -10,24 +10,24 @@ public enum PlayerDirection
   
   private PlayerDirection(Vector vec, Vector leftDir, boolean isOrthogonal)
   {
-    dir = vec;
+    this.dir = vec;
     this.leftDir = leftDir;
     this.isOrthogonal = isOrthogonal;
   }
   
   public Vector vector()
   {
-    return dir;
+    return this.dir;
   }
   
   @Deprecated
   public Vector leftVector()
   {
-    return leftDir;
+    return this.leftDir;
   }
   
   public boolean isOrthogonal()
   {
-    return isOrthogonal;
+    return this.isOrthogonal;
   }
 }

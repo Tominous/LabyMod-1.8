@@ -13,8 +13,8 @@ public class gg
   
   public gg(String channelName, em dataIn)
   {
-    a = channelName;
-    b = dataIn;
+    this.a = channelName;
+    this.b = dataIn;
     if (dataIn.writerIndex() > 1048576) {
       throw new IllegalArgumentException("Payload may not be larger than 1048576 bytes");
     }
@@ -23,14 +23,14 @@ public class gg
   public void a(em buf)
     throws IOException
   {
-    a = buf.c(20);
+    this.a = buf.c(20);
     int i = buf.readableBytes();
     if ((i >= 0) && (i <= 1048576)) {
-      b = new em(buf.readBytes(i));
+      this.b = new em(buf.readBytes(i));
     } else {
       throw new IOException("Payload may not be larger than 1048576 bytes");
     }
-    LabyMod.getInstance().pluginMessage(a, b);
+    LabyMod.getInstance().pluginMessage(this.a, this.b);
   }
   
   public static void sendChannel(String aB, long bC)
@@ -52,8 +52,8 @@ public class gg
   public void b(em buf)
     throws IOException
   {
-    buf.a(a);
-    buf.writeBytes(b);
+    buf.a(this.a);
+    buf.writeBytes(this.b);
   }
   
   public void a(fj handler)
@@ -63,11 +63,11 @@ public class gg
   
   public String a()
   {
-    return a;
+    return this.a;
   }
   
   public em b()
   {
-    return b;
+    return this.b;
   }
 }

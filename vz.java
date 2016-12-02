@@ -10,15 +10,15 @@ public class vz
     super(☃);
     a(0.4F, 0.3F);
     
-    i.a(1, new ra(this));
+    this.i.a(1, new ra(this));
     
-    i.a(3, a = new vz.b(this));
+    this.i.a(3, this.a = new vz.b(this));
     
-    i.a(4, new rl(this, wn.class, 1.0D, false));
-    i.a(5, new vz.a(this));
+    this.i.a(4, new rl(this, wn.class, 1.0D, false));
+    this.i.a(5, new vz.a(this));
     
-    bi.a(1, new sm(this, true, new Class[0]));
-    bi.a(2, new sp(this, wn.class, true));
+    this.bi.a(1, new sm(this, true, new Class[0]));
+    this.bi.a(2, new sp(this, wn.class, true));
   }
   
   public double am()
@@ -66,7 +66,7 @@ public class vz
       return false;
     }
     if (((☃ instanceof ox)) || (☃ == ow.l)) {
-      a.f();
+      this.a.f();
     }
     return super.a(☃, ☃);
   }
@@ -83,14 +83,14 @@ public class vz
   
   public void t_()
   {
-    aI = y;
+    this.aI = this.y;
     
     super.t_();
   }
   
   public float a(cj ☃)
   {
-    if (o.p(☃.b()).c() == afi.b) {
+    if (this.o.p(☃.b()).c() == afi.b) {
       return 10.0F;
     }
     return super.a(☃);
@@ -105,7 +105,7 @@ public class vz
   {
     if (super.bR())
     {
-      wn ☃ = o.a(this, 5.0D);
+      wn ☃ = this.o.a(this, 5.0D);
       return ☃ == null;
     }
     return false;
@@ -124,30 +124,30 @@ public class vz
     
     public b(vz ☃)
     {
-      a = ☃;
+      this.a = ☃;
     }
     
     public void f()
     {
-      if (b == 0) {
-        b = 20;
+      if (this.b == 0) {
+        this.b = 20;
       }
     }
     
     public boolean a()
     {
-      return b > 0;
+      return this.b > 0;
     }
     
     public void e()
     {
-      b -= 1;
-      if (b <= 0)
+      this.b -= 1;
+      if (this.b <= 0)
       {
-        adm ☃ = a.o;
-        Random ☃ = a.bc();
+        adm ☃ = this.a.o;
+        Random ☃ = this.a.bc();
         
-        cj ☃ = new cj(a);
+        cj ☃ = new cj(this.a);
         for (int ☃ = 0; (☃ <= 5) && (☃ >= -5); ☃ = ☃ <= 0 ? 1 - ☃ : 0 - ☃) {
           for (int ☃ = 0; (☃ <= 10) && (☃ >= -10); ☃ = ☃ <= 0 ? 1 - ☃ : 0 - ☃) {
             for (int ☃ = 0; (☃ <= 10) && (☃ >= -10); ☃ = ☃ <= 0 ? 1 - ☃ : 0 - ☃)
@@ -182,39 +182,39 @@ public class vz
     public a(vz ☃)
     {
       super(1.0D, 10);
-      a = ☃;
+      this.a = ☃;
       
       a(1);
     }
     
     public boolean a()
     {
-      if (a.u() != null) {
+      if (this.a.u() != null) {
         return false;
       }
-      if (!a.s().m()) {
+      if (!this.a.s().m()) {
         return false;
       }
-      Random ☃ = a.bc();
+      Random ☃ = this.a.bc();
       if (☃.nextInt(10) == 0)
       {
-        b = cq.a(☃);
+        this.b = cq.a(☃);
         
-        cj ☃ = new cj(a.s, a.t + 0.5D, a.u).a(b);
-        alz ☃ = a.o.p(☃);
+        cj ☃ = new cj(this.a.s, this.a.t + 0.5D, this.a.u).a(this.b);
+        alz ☃ = this.a.o.p(☃);
         if (ahz.d(☃))
         {
-          c = true;
+          this.c = true;
           return true;
         }
       }
-      c = false;
+      this.c = false;
       return super.a();
     }
     
     public boolean b()
     {
-      if (c) {
+      if (this.c) {
         return false;
       }
       return super.b();
@@ -222,19 +222,19 @@ public class vz
     
     public void c()
     {
-      if (!c)
+      if (!this.c)
       {
         super.c();
         return;
       }
-      adm ☃ = a.o;
-      cj ☃ = new cj(a.s, a.t + 0.5D, a.u).a(b);
+      adm ☃ = this.a.o;
+      cj ☃ = new cj(this.a.s, this.a.t + 0.5D, this.a.u).a(this.b);
       alz ☃ = ☃.p(☃);
       if (ahz.d(☃))
       {
         ☃.a(☃, afi.be.Q().a(ahz.a, ahz.a.a(☃)), 3);
-        a.y();
-        a.J();
+        this.a.y();
+        this.a.J();
       }
     }
   }

@@ -28,25 +28,25 @@ public class mv
   
   public mv(MinecraftServer ☃, File ☃)
   {
-    c = ☃;
-    d = ☃;
+    this.c = ☃;
+    this.d = ☃;
   }
   
   public void a()
   {
-    if (d.isFile()) {
+    if (this.d.isFile()) {
       try
       {
-        a.clear();
-        a.putAll(a(FileUtils.readFileToString(d)));
+        this.a.clear();
+        this.a.putAll(a(FileUtils.readFileToString(this.d)));
       }
       catch (IOException ☃)
       {
-        b.error("Couldn't read statistics file " + d, ☃);
+        b.error("Couldn't read statistics file " + this.d, ☃);
       }
       catch (JsonParseException ☃)
       {
-        b.error("Couldn't parse statistics file " + d, ☃);
+        b.error("Couldn't parse statistics file " + this.d, ☃);
       }
     }
   }
@@ -55,7 +55,7 @@ public class mv
   {
     try
     {
-      FileUtils.writeStringToFile(d, a(a));
+      FileUtils.writeStringToFile(this.d, a(this.a));
     }
     catch (IOException ☃)
     {
@@ -67,28 +67,28 @@ public class mv
   {
     int ☃ = ☃.d() ? a(☃) : 0;
     super.a(☃, ☃, ☃);
-    e.add(☃);
+    this.e.add(☃);
     if ((☃.d()) && (☃ == 0) && (☃ > 0))
     {
-      g = true;
-      if (c.aB()) {
-        c.ap().a(new fb("chat.type.achievement", new Object[] { ☃.f_(), ☃.j() }));
+      this.g = true;
+      if (this.c.aB()) {
+        this.c.ap().a(new fb("chat.type.achievement", new Object[] { ☃.f_(), ☃.j() }));
       }
     }
     if ((☃.d()) && (☃ > 0) && (☃ == 0))
     {
-      g = true;
-      if (c.aB()) {
-        c.ap().a(new fb("chat.type.achievement.taken", new Object[] { ☃.f_(), ☃.j() }));
+      this.g = true;
+      if (this.c.aB()) {
+        this.c.ap().a(new fb("chat.type.achievement.taken", new Object[] { ☃.f_(), ☃.j() }));
       }
     }
   }
   
   public Set<mw> c()
   {
-    Set<mw> ☃ = Sets.newHashSet(e);
-    e.clear();
-    g = false;
+    Set<mw> ☃ = Sets.newHashSet(this.e);
+    this.e.clear();
+    this.g = false;
     return ☃;
   }
   
@@ -126,7 +126,7 @@ public class mv
             }
             catch (Throwable ☃)
             {
-              b.warn("Invalid statistic progress in " + d, ☃);
+              b.warn("Invalid statistic progress in " + this.d, ☃);
             }
           }
         }
@@ -134,7 +134,7 @@ public class mv
       }
       else
       {
-        b.warn("Invalid statistic in " + d + ": Don't know what " + (String)☃.getKey() + " is");
+        b.warn("Invalid statistic in " + this.d + ": Don't know what " + (String)☃.getKey() + " is");
       }
     }
     return ☃;
@@ -157,11 +157,11 @@ public class mv
         {
           b.warn("Couldn't save statistic " + ((mw)☃.getKey()).e() + ": error serializing progress", ☃);
         }
-        ☃.add(getKeye, ☃);
+        ☃.add(((mw)☃.getKey()).e, ☃);
       }
       else
       {
-        ☃.addProperty(getKeye, Integer.valueOf(((my)☃.getValue()).a()));
+        ☃.addProperty(((mw)☃.getKey()).e, Integer.valueOf(((my)☃.getValue()).a()));
       }
     }
     return ☃.toString();
@@ -169,23 +169,23 @@ public class mv
   
   public void d()
   {
-    for (mw ☃ : a.keySet()) {
-      e.add(☃);
+    for (mw ☃ : this.a.keySet()) {
+      this.e.add(☃);
     }
   }
   
   public void a(lf ☃)
   {
-    int ☃ = c.at();
+    int ☃ = this.c.at();
     Map<mw, Integer> ☃ = Maps.newHashMap();
-    if ((g) || (☃ - f > 300))
+    if ((this.g) || (☃ - this.f > 300))
     {
-      f = ☃;
+      this.f = ☃;
       for (mw ☃ : c()) {
         ☃.put(☃, Integer.valueOf(a(☃)));
       }
     }
-    a.a(new fr(☃));
+    ☃.a.a(new fr(☃));
   }
   
   public void b(lf ☃)
@@ -195,14 +195,14 @@ public class mv
       if (a(☃))
       {
         ☃.put(☃, Integer.valueOf(a(☃)));
-        e.remove(☃);
+        this.e.remove(☃);
       }
     }
-    a.a(new fr(☃));
+    ☃.a.a(new fr(☃));
   }
   
   public boolean e()
   {
-    return g;
+    return this.g;
   }
 }

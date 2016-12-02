@@ -38,7 +38,7 @@ public class ModInfoDownloader
     try
     {
       System.out.println("[ModInfo] Downloading Modinfo..");
-      HttpURLConnection connection = (HttpURLConnection)new URL(page + "?ver=" + "1.8.8" + "&lmver=" + "2.7.97").openConnection();
+      HttpURLConnection connection = (HttpURLConnection)new URL(page + "?ver=" + "1.8.8" + "&lmver=" + "2.7.98").openConnection();
       connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
       connection.setRequestProperty("Cookie", "foo=bar");
       
@@ -52,16 +52,16 @@ public class ModInfoDownloader
         json = json + line;
       }
       Debug.debug("[ModInfo] Content length: " + json.length());
-      getInstanceautoUpdaterCurrentVersionId = Integer.parseInt("2.7.97".replace(".", ""));
+      LabyMod.getInstance().autoUpdaterCurrentVersionId = Integer.parseInt("2.7.98".replace(".", ""));
       JsonParser parser = new JsonParser();
       JsonElement element = parser.parse(json);
       String latestVersion = element.getAsJsonObject().get("latest_version").getAsString();
-      getInstancelatestVersionName = latestVersion;
+      LabyMod.getInstance().latestVersionName = latestVersion;
       boolean supportApply = element.getAsJsonObject().get("support_apply").getAsBoolean();
-      getInstancesupportApply = supportApply;
-      getInstanceautoUpdaterLatestVersionId = Integer.parseInt(latestVersion.replace(".", ""));
-      System.out.println("[LabyMod] The latest LabyMod version is v" + getInstancelatestVersionName + ", you are currently using LabyMod version v" + "2.7.97");
-      if (getInstanceautoUpdaterLatestVersionId > getInstanceautoUpdaterCurrentVersionId) {
+      LabyMod.getInstance().supportApply = supportApply;
+      LabyMod.getInstance().autoUpdaterLatestVersionId = Integer.parseInt(latestVersion.replace(".", ""));
+      System.out.println("[LabyMod] The latest LabyMod version is v" + LabyMod.getInstance().latestVersionName + ", you are currently using LabyMod version v" + "2.7.98");
+      if (LabyMod.getInstance().autoUpdaterLatestVersionId > LabyMod.getInstance().autoUpdaterCurrentVersionId) {
         System.out.println("[LabyMod] You are outdated!");
       } else {
         System.out.println("[LabyMod] You are using the latest version.");
@@ -93,9 +93,9 @@ public class ModInfoDownloader
         for (JsonElement a : array)
         {
           String hash = a.getAsJsonObject().get("user").getAsString();
-          getInstancedumb.add(hash);
+          LabyMod.getInstance().dumb.add(hash);
         }
-        getInstancedumb_str = texture;
+        LabyMod.getInstance().dumb_str = texture;
       }
       catch (Exception error)
       {
@@ -107,7 +107,7 @@ public class ModInfoDownloader
     catch (Exception error)
     {
       Debug.debug("[ModInfo] Error: " + error.getMessage());
-      getInstanceautoUpdaterLatestVersionId = getInstanceautoUpdaterCurrentVersionId;
+      LabyMod.getInstance().autoUpdaterLatestVersionId = LabyMod.getInstance().autoUpdaterCurrentVersionId;
       error.printStackTrace();
     }
     return false;

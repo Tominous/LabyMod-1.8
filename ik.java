@@ -14,12 +14,12 @@ public class ik
   
   public ik(int ☃, int ☃, int ☃, int ☃, zx ☃, short ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    e = (☃ != null ? ☃.k() : null);
-    d = ☃;
-    f = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.e = (☃ != null ? ☃.k() : null);
+    this.d = ☃;
+    this.f = ☃;
   }
   
   public void a(ic ☃)
@@ -30,54 +30,54 @@ public class ik
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readByte();
-    b = ☃.readShort();
-    c = ☃.readByte();
-    d = ☃.readShort();
-    f = ☃.readByte();
+    this.a = ☃.readByte();
+    this.b = ☃.readShort();
+    this.c = ☃.readByte();
+    this.d = ☃.readShort();
+    this.f = ☃.readByte();
     
-    e = ☃.i();
+    this.e = ☃.i();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(a);
-    ☃.writeShort(b);
-    ☃.writeByte(c);
-    ☃.writeShort(d);
-    ☃.writeByte(f);
+    ☃.writeByte(this.a);
+    ☃.writeShort(this.b);
+    ☃.writeByte(this.c);
+    ☃.writeShort(this.d);
+    ☃.writeByte(this.f);
     
-    ☃.a(e);
+    ☃.a(this.e);
   }
   
   public int a()
   {
-    return a;
+    return this.a;
   }
   
   public int b()
   {
-    return b;
+    return this.b;
   }
   
   public int c()
   {
-    return c;
+    return this.c;
   }
   
   public short d()
   {
-    return d;
+    return this.d;
   }
   
   public zx e()
   {
-    return e;
+    return this.e;
   }
   
   public int f()
   {
-    return f;
+    return this.f;
   }
 }

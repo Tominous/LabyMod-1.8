@@ -10,7 +10,7 @@ public class zm
   
   public boolean a(zx ☃, wn ☃, adm ☃, cj ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (D) {
+    if (☃.D) {
       return true;
     }
     ☃ = ☃.a(☃);
@@ -22,8 +22,8 @@ public class zm
       ☃.a(☃.n() + 0.5D, ☃.o() + 0.5D, ☃.p() + 0.5D, "item.fireCharge.use", 1.0F, (g.nextFloat() - g.nextFloat()) * 0.2F + 1.0F);
       ☃.a(☃, afi.ab.Q());
     }
-    if (!bA.d) {
-      b -= 1;
+    if (!☃.bA.d) {
+      ☃.b -= 1;
     }
     return true;
   }

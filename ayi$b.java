@@ -8,30 +8,30 @@ public class ayi$b
   
   private ayi$b(ayi paramayi, avb ☃)
   {
-    b = ☃;
-    c = bnq.a(☃.g(), new Object[0]);
-    d = new avs(0, 0, 0, 75, 20, bnq.a(☃.g(), new Object[0]));
-    e = new avs(0, 0, 0, 50, 20, bnq.a("controls.reset", new Object[0]));
+    this.b = ☃;
+    this.c = bnq.a(☃.g(), new Object[0]);
+    this.d = new avs(0, 0, 0, 75, 20, bnq.a(☃.g(), new Object[0]));
+    this.e = new avs(0, 0, 0, 50, 20, bnq.a("controls.reset", new Object[0]));
   }
   
   public void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, boolean ☃)
   {
-    boolean ☃ = ba).f == b;
-    aa).k.a(c, ☃ + 90 - ayi.c(a), ☃ + ☃ / 2 - aa).k.a / 2, 16777215);
+    boolean ☃ = ayi.b(this.a).f == this.b;
+    ayi.a(this.a).k.a(this.c, ☃ + 90 - ayi.c(this.a), ☃ + ☃ / 2 - ayi.a(this.a).k.a / 2, 16777215);
     
-    e.h = (☃ + 190);
-    e.i = ☃;
-    e.l = (b.i() != b.h());
-    e.a(ayi.a(a), ☃, ☃);
+    this.e.h = (☃ + 190);
+    this.e.i = ☃;
+    this.e.l = (this.b.i() != this.b.h());
+    this.e.a(ayi.a(this.a), ☃, ☃);
     
-    d.h = (☃ + 105);
-    d.i = ☃;
-    d.j = avh.c(b.i());
+    this.d.h = (☃ + 105);
+    this.d.i = ☃;
+    this.d.j = avh.c(this.b.i());
     
     boolean ☃ = false;
-    if (b.i() != 0) {
-      for (avb ☃ : aa).t.aw) {
-        if ((☃ != b) && (☃.i() == b.i()))
+    if (this.b.i() != 0) {
+      for (avb ☃ : ayi.a(this.a).t.aw) {
+        if ((☃ != this.b) && (☃.i() == this.b.i()))
         {
           ☃ = true;
           break;
@@ -39,23 +39,23 @@ public class ayi$b
       }
     }
     if (☃) {
-      d.j = (a.p + "> " + a.o + d.j + a.p + " <");
+      this.d.j = (a.p + "> " + a.o + this.d.j + a.p + " <");
     } else if (☃) {
-      d.j = (a.m + d.j);
+      this.d.j = (a.m + this.d.j);
     }
-    d.a(ayi.a(a), ☃, ☃);
+    this.d.a(ayi.a(this.a), ☃, ☃);
   }
   
   public boolean a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    if (d.c(ayi.a(a), ☃, ☃))
+    if (this.d.c(ayi.a(this.a), ☃, ☃))
     {
-      ba).f = b;
+      ayi.b(this.a).f = this.b;
       return true;
     }
-    if (e.c(ayi.a(a), ☃, ☃))
+    if (this.e.c(ayi.a(this.a), ☃, ☃))
     {
-      aa).t.a(b, b.h());
+      ayi.a(this.a).t.a(this.b, this.b.h());
       avb.b();
       return true;
     }
@@ -64,8 +64,8 @@ public class ayi$b
   
   public void b(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    d.a(☃, ☃);
-    e.a(☃, ☃);
+    this.d.a(☃, ☃);
+    this.e.a(☃, ☃);
   }
   
   public void a(int ☃, int ☃, int ☃) {}

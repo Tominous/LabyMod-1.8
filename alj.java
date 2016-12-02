@@ -14,17 +14,17 @@ public class alj
     super.a(☃);
     
     du ☃ = ☃.c("Items", 10);
-    a = new zx[o_()];
+    this.a = new zx[o_()];
     if (☃.b("CustomName", 8)) {
-      f = ☃.j("CustomName");
+      this.f = ☃.j("CustomName");
     }
-    g = ☃.f("TransferCooldown");
+    this.g = ☃.f("TransferCooldown");
     for (int ☃ = 0; ☃ < ☃.c(); ☃++)
     {
       dn ☃ = ☃.b(☃);
       int ☃ = ☃.d("Slot");
-      if ((☃ >= 0) && (☃ < a.length)) {
-        a[☃] = zx.a(☃);
+      if ((☃ >= 0) && (☃ < this.a.length)) {
+        this.a[☃] = zx.a(☃);
       }
     }
   }
@@ -33,19 +33,19 @@ public class alj
   {
     super.b(☃);
     du ☃ = new du();
-    for (int ☃ = 0; ☃ < a.length; ☃++) {
-      if (a[☃] != null)
+    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
+      if (this.a[☃] != null)
       {
         dn ☃ = new dn();
         ☃.a("Slot", (byte)☃);
-        a[☃].b(☃);
+        this.a[☃].b(☃);
         ☃.a(☃);
       }
     }
     ☃.a("Items", ☃);
-    ☃.a("TransferCooldown", g);
+    ☃.a("TransferCooldown", this.g);
     if (l_()) {
-      ☃.a("CustomName", f);
+      ☃.a("CustomName", this.f);
     }
   }
   
@@ -56,27 +56,27 @@ public class alj
   
   public int o_()
   {
-    return a.length;
+    return this.a.length;
   }
   
   public zx a(int ☃)
   {
-    return a[☃];
+    return this.a[☃];
   }
   
   public zx a(int ☃, int ☃)
   {
-    if (a[☃] != null)
+    if (this.a[☃] != null)
     {
-      if (a[☃].b <= ☃)
+      if (this.a[☃].b <= ☃)
       {
-        zx ☃ = a[☃];
-        a[☃] = null;
+        zx ☃ = this.a[☃];
+        this.a[☃] = null;
         return ☃;
       }
-      zx ☃ = a[☃].a(☃);
-      if (a[☃].b == 0) {
-        a[☃] = null;
+      zx ☃ = this.a[☃].a(☃);
+      if (this.a[☃].b == 0) {
+        this.a[☃] = null;
       }
       return ☃;
     }
@@ -85,10 +85,10 @@ public class alj
   
   public zx b(int ☃)
   {
-    if (a[☃] != null)
+    if (this.a[☃] != null)
     {
-      zx ☃ = a[☃];
-      a[☃] = null;
+      zx ☃ = this.a[☃];
+      this.a[☃] = null;
       return ☃;
     }
     return null;
@@ -96,25 +96,25 @@ public class alj
   
   public void a(int ☃, zx ☃)
   {
-    a[☃] = ☃;
-    if ((☃ != null) && (b > q_())) {
-      b = q_();
+    this.a[☃] = ☃;
+    if ((☃ != null) && (☃.b > q_())) {
+      ☃.b = q_();
     }
   }
   
   public String e_()
   {
-    return l_() ? f : "container.hopper";
+    return l_() ? this.f : "container.hopper";
   }
   
   public boolean l_()
   {
-    return (f != null) && (f.length() > 0);
+    return (this.f != null) && (this.f.length() > 0);
   }
   
   public void a(String ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
   
   public int q_()
@@ -124,10 +124,10 @@ public class alj
   
   public boolean a(wn ☃)
   {
-    if (b.s(c) != this) {
+    if (this.b.s(this.c) != this) {
       return false;
     }
-    if (☃.e(c.n() + 0.5D, c.o() + 0.5D, c.p() + 0.5D) > 64.0D) {
+    if (☃.e(this.c.n() + 0.5D, this.c.o() + 0.5D, this.c.p() + 0.5D) > 64.0D) {
       return false;
     }
     return true;
@@ -144,10 +144,10 @@ public class alj
   
   public void c()
   {
-    if ((b == null) || (b.D)) {
+    if ((this.b == null) || (this.b.D)) {
       return;
     }
-    g -= 1;
+    this.g -= 1;
     if (!n())
     {
       d(0);
@@ -157,7 +157,7 @@ public class alj
   
   public boolean m()
   {
-    if ((b == null) || (b.D)) {
+    if ((this.b == null) || (this.b.D)) {
       return false;
     }
     if ((!n()) && (ahn.f(u())))
@@ -181,7 +181,7 @@ public class alj
   
   private boolean p()
   {
-    for (zx ☃ : a) {
+    for (zx ☃ : this.a) {
       if (☃ != null) {
         return false;
       }
@@ -191,8 +191,8 @@ public class alj
   
   private boolean q()
   {
-    for (zx ☃ : a) {
-      if ((☃ == null) || (b != ☃.c())) {
+    for (zx ☃ : this.a) {
+      if ((☃ == null) || (☃.b != ☃.c())) {
         return false;
       }
     }
@@ -214,7 +214,7 @@ public class alj
       {
         zx ☃ = a(☃).k();
         zx ☃ = a(☃, a(☃, 1), ☃);
-        if ((☃ == null) || (b == 0))
+        if ((☃ == null) || (☃.b == 0))
         {
           ☃.p_();
           return true;
@@ -234,7 +234,7 @@ public class alj
       for (int ☃ = 0; ☃ < ☃.length; ☃++)
       {
         zx ☃ = ☃.a(☃[☃]);
-        if ((☃ == null) || (b != ☃.c())) {
+        if ((☃ == null) || (☃.b != ☃.c())) {
           return false;
         }
       }
@@ -245,7 +245,7 @@ public class alj
       for (int ☃ = 0; ☃ < ☃; ☃++)
       {
         zx ☃ = ☃.a(☃);
-        if ((☃ == null) || (b != ☃.c())) {
+        if ((☃ == null) || (☃.b != ☃.c())) {
           return false;
         }
       }
@@ -324,7 +324,7 @@ public class alj
     {
       zx ☃ = ☃.k();
       zx ☃ = a(☃, ☃.a(☃, 1), null);
-      if ((☃ == null) || (b == 0))
+      if ((☃ == null) || (☃.b == 0))
       {
         ☃.p_();
         return true;
@@ -342,7 +342,7 @@ public class alj
     }
     zx ☃ = ☃.l().k();
     zx ☃ = a(☃, ☃, null);
-    if ((☃ == null) || (b == 0))
+    if ((☃ == null) || (☃.b == 0))
     {
       ☃ = true;
       
@@ -361,18 +361,18 @@ public class alj
     {
       ot ☃ = (ot)☃;
       int[] ☃ = ☃.a(☃);
-      for (int ☃ = 0; (☃ < ☃.length) && (☃ != null) && (b > 0); ☃++) {
+      for (int ☃ = 0; (☃ < ☃.length) && (☃ != null) && (☃.b > 0); ☃++) {
         ☃ = c(☃, ☃, ☃[☃], ☃);
       }
     }
     else
     {
       int ☃ = ☃.o_();
-      for (int ☃ = 0; (☃ < ☃) && (☃ != null) && (b > 0); ☃++) {
+      for (int ☃ = 0; (☃ < ☃) && (☃ != null) && (☃.b > 0); ☃++) {
         ☃ = c(☃, ☃, ☃, ☃);
       }
     }
-    if ((☃ != null) && (b == 0)) {
+    if ((☃ != null) && (☃.b == 0)) {
       ☃ = null;
     }
     return ☃;
@@ -411,11 +411,11 @@ public class alj
       }
       else if (a(☃, ☃))
       {
-        int ☃ = ☃.c() - b;
-        int ☃ = Math.min(b, ☃);
+        int ☃ = ☃.c() - ☃.b;
+        int ☃ = Math.min(☃.b, ☃);
         
-        b -= ☃;
-        b += ☃;
+        ☃.b -= ☃;
+        ☃.b += ☃;
         ☃ = ☃ > 0;
       }
       if (☃)
@@ -437,7 +437,7 @@ public class alj
   private og H()
   {
     cq ☃ = ahn.b(u());
-    return b(z(), c.n() + ☃.g(), c.o() + ☃.h(), c.p() + ☃.i());
+    return b(z(), this.c.n() + ☃.g(), this.c.o() + ☃.h(), this.c.p() + ☃.i());
   }
   
   public static og b(ali ☃)
@@ -475,7 +475,7 @@ public class alj
     {
       List<pk> ☃ = ☃.a(null, new aug(☃ - 0.5D, ☃ - 0.5D, ☃ - 0.5D, ☃ + 0.5D, ☃ + 0.5D, ☃ + 0.5D), po.c);
       if (☃.size() > 0) {
-        ☃ = (og)☃.get(s.nextInt(☃.size()));
+        ☃ = (og)☃.get(☃.s.nextInt(☃.size()));
       }
     }
     return ☃;
@@ -489,7 +489,7 @@ public class alj
     if (☃.i() != ☃.i()) {
       return false;
     }
-    if (b > ☃.c()) {
+    if (☃.b > ☃.c()) {
       return false;
     }
     if (!zx.a(☃, ☃)) {
@@ -500,32 +500,32 @@ public class alj
   
   public double A()
   {
-    return c.n() + 0.5D;
+    return this.c.n() + 0.5D;
   }
   
   public double B()
   {
-    return c.o() + 0.5D;
+    return this.c.o() + 0.5D;
   }
   
   public double C()
   {
-    return c.p() + 0.5D;
+    return this.c.p() + 0.5D;
   }
   
   public void d(int ☃)
   {
-    g = ☃;
+    this.g = ☃;
   }
   
   public boolean n()
   {
-    return g > 0;
+    return this.g > 0;
   }
   
   public boolean o()
   {
-    return g <= 1;
+    return this.g <= 1;
   }
   
   public String k()
@@ -552,8 +552,8 @@ public class alj
   
   public void l()
   {
-    for (int ☃ = 0; ☃ < a.length; ☃++) {
-      a[☃] = null;
+    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
+      this.a[☃] = null;
     }
   }
 }

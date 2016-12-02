@@ -5,17 +5,17 @@ public class nz<A, B>
   
   public nz(A ☃, B ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public A a()
   {
-    return (A)a;
+    return (A)this.a;
   }
   
   public B b()
   {
-    return (B)b;
+    return (B)this.b;
   }
 }

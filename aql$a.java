@@ -5,7 +5,7 @@ class aql$a
 {
   public boolean a(aql.v ☃)
   {
-    if ((c[cq.f.a()] != 0) && (!b[cq.f.a()].d)) {
+    if ((☃.c[cq.f.a()] != 0) && (!☃.b[cq.f.a()].d)) {
       return true;
     }
     return false;
@@ -14,8 +14,8 @@ class aql$a
   public aql.r a(cq ☃, aql.v ☃, Random ☃)
   {
     aql.v ☃ = ☃;
-    d = true;
-    b[cq.f.a()].d = true;
+    ☃.d = true;
+    ☃.b[cq.f.a()].d = true;
     return new aql.k(☃, ☃, ☃);
   }
 }

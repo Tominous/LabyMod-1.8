@@ -52,23 +52,23 @@ public class bnm
   
   public bnm(File dirResourcepacksIn, File dirServerResourcepacksIn, bnk rprDefaultResourcePackIn, bny rprMetadataSerializerIn, avh settings)
   {
-    e = dirResourcepacksIn;
-    f = dirServerResourcepacksIn;
-    a = rprDefaultResourcePackIn;
-    b = rprMetadataSerializerIn;
+    this.e = dirResourcepacksIn;
+    this.f = dirServerResourcepacksIn;
+    this.a = rprDefaultResourcePackIn;
+    this.b = rprMetadataSerializerIn;
     g();
     a();
-    Iterator<String> iterator = k.iterator();
+    Iterator<String> iterator = settings.k.iterator();
     String s;
     while (iterator.hasNext())
     {
       s = (String)iterator.next();
-      for (bnm.a resourcepackrepository$entry : j) {
+      for (bnm.a resourcepackrepository$entry : this.j) {
         if (resourcepackrepository$entry.d().equals(s))
         {
-          if ((resourcepackrepository$entry.f() == 1) || (l.contains(resourcepackrepository$entry.d())))
+          if ((resourcepackrepository$entry.f() == 1) || (settings.l.contains(resourcepackrepository$entry.d())))
           {
-            k.add(resourcepackrepository$entry);
+            this.k.add(resourcepackrepository$entry);
             break;
           }
           iterator.remove();
@@ -80,20 +80,20 @@ public class bnm
   
   private void g()
   {
-    if (e.exists())
+    if (this.e.exists())
     {
-      if ((!e.isDirectory()) && ((!e.delete()) || (!e.mkdirs()))) {
-        c.warn("Unable to recreate resourcepack folder, it exists but is not a directory: " + e);
+      if ((!this.e.isDirectory()) && ((!this.e.delete()) || (!this.e.mkdirs()))) {
+        c.warn("Unable to recreate resourcepack folder, it exists but is not a directory: " + this.e);
       }
     }
-    else if (!e.mkdirs()) {
-      c.warn("Unable to create resourcepack folder: " + e);
+    else if (!this.e.mkdirs()) {
+      c.warn("Unable to create resourcepack folder: " + this.e);
     }
   }
   
   private List<File> h()
   {
-    return e.isDirectory() ? Arrays.asList(e.listFiles(d)) : Collections.emptyList();
+    return this.e.isDirectory() ? Arrays.asList(this.e.listFiles(d)) : Collections.emptyList();
   }
   
   public void a()
@@ -102,11 +102,11 @@ public class bnm
     
     readAllAndFill(list, h(), "");
     
-    j.removeAll(list);
-    for (bnm.a resourcepackrepository$entry1 : j) {
+    this.j.removeAll(list);
+    for (bnm.a resourcepackrepository$entry1 : this.j) {
       resourcepackrepository$entry1.b();
     }
-    j = list;
+    this.j = list;
   }
   
   private void readAllAndFill(List<bnm.a> list, List<File> files, String path)
@@ -123,7 +123,7 @@ public class bnm
       if ((!file1.isDirectory()) || (!file1.getName().startsWith("dir_")))
       {
         bnm.a resourcepackrepository$entry = new bnm.a(file1, null);
-        if (!j.contains(resourcepackrepository$entry))
+        if (!this.j.contains(resourcepackrepository$entry))
         {
           try
           {
@@ -137,9 +137,9 @@ public class bnm
         }
         else
         {
-          int i = j.indexOf(resourcepackrepository$entry);
-          if ((i > -1) && (i < j.size())) {
-            list.add(j.get(i));
+          int i = this.j.indexOf(resourcepackrepository$entry);
+          if ((i > -1) && (i < this.j.size())) {
+            list.add(this.j.get(i));
           }
         }
         resourcepackrepository$entry.setDirPath(path.replaceFirst("dir_", ""));
@@ -149,23 +149,23 @@ public class bnm
   
   public List<bnm.a> b()
   {
-    return ImmutableList.copyOf(j);
+    return ImmutableList.copyOf(this.j);
   }
   
   public List<bnm.a> c()
   {
-    return ImmutableList.copyOf(k);
+    return ImmutableList.copyOf(this.k);
   }
   
   public void a(List<bnm.a> p_148527_1_)
   {
-    k.clear();
-    k.addAll(p_148527_1_);
+    this.k.clear();
+    this.k.addAll(p_148527_1_);
   }
   
   public File d()
   {
-    return e;
+    return this.e;
   }
   
   public ListenableFuture<Object> a(String url, String hash)
@@ -177,8 +177,8 @@ public class bnm
     } else {
       s = "legacy";
     }
-    final File file1 = new File(f, s);
-    h.lock();
+    final File file1 = new File(this.f, s);
+    this.h.lock();
     try
     {
       f();
@@ -212,12 +212,12 @@ public class bnm
         }
       }));
       final SettableFuture<Object> settablefuture = SettableFuture.create();
-      i = nj.a(file1, url, map, 52428800, guiscreenworking, minecraft.O());
-      Futures.addCallback(i, new FutureCallback()
+      this.i = nj.a(file1, url, map, 52428800, guiscreenworking, minecraft.O());
+      Futures.addCallback(this.i, new FutureCallback()
       {
         public void onSuccess(Object p_onSuccess_1_)
         {
-          a(file1);
+          bnm.this.a(file1);
           settablefuture.set(null);
         }
         
@@ -226,18 +226,18 @@ public class bnm
           settablefuture.setException(p_onFailure_1_);
         }
       });
-      ListenableFuture listenablefuture = i;
+      ListenableFuture listenablefuture = this.i;
       return listenablefuture;
     }
     finally
     {
-      h.unlock();
+      this.h.unlock();
     }
   }
   
   private void i()
   {
-    List<File> list = Lists.newArrayList(FileUtils.listFiles(f, TrueFileFilter.TRUE, (IOFileFilter)null));
+    List<File> list = Lists.newArrayList(FileUtils.listFiles(this.f, TrueFileFilter.TRUE, (IOFileFilter)null));
     Collections.sort(list, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
     int i = 0;
     for (File file1 : list) {
@@ -251,13 +251,13 @@ public class bnm
   
   public ListenableFuture<Object> a(File p_177319_1_)
   {
-    g = new bnc(p_177319_1_);
+    this.g = new bnc(p_177319_1_);
     return ave.A().B();
   }
   
   public bnk e()
   {
-    return g;
+    return this.g;
   }
   
   /* Error */
@@ -330,73 +330,73 @@ public class bnm
     
     private a(File resourcePackFileIn)
     {
-      b = resourcePackFileIn;
+      this.b = resourcePackFileIn;
     }
     
     public void setDirPath(String path)
     {
-      dirPath = path;
+      this.dirPath = path;
     }
     
     public String getDirPath()
     {
-      return dirPath;
+      return this.dirPath;
     }
     
     public File getResourcePackFile()
     {
-      return b;
+      return this.b;
     }
     
     public void a()
       throws IOException
     {
-      c = (b.isDirectory() ? new bnd(b) : new bnc(b));
-      d = ((boj)c.a(b, "pack"));
+      this.c = (this.b.isDirectory() ? new bnd(this.b) : new bnc(this.b));
+      this.d = ((boj)this.c.a(bnm.this.b, "pack"));
       try
       {
-        e = c.a();
+        this.e = this.c.a();
       }
       catch (IOException localIOException) {}
-      if (e == null) {
-        e = a.a();
+      if (this.e == null) {
+        this.e = bnm.this.a.a();
       }
       b();
     }
     
     public void a(bmj textureManagerIn)
     {
-      if (f == null) {
-        f = textureManagerIn.a("texturepackicon", new blz(e));
+      if (this.f == null) {
+        this.f = textureManagerIn.a("texturepackicon", new blz(this.e));
       }
-      textureManagerIn.a(f);
+      textureManagerIn.a(this.f);
     }
     
     public void b()
     {
-      if ((c instanceof Closeable)) {
-        IOUtils.closeQuietly((Closeable)c);
+      if ((this.c instanceof Closeable)) {
+        IOUtils.closeQuietly((Closeable)this.c);
       }
     }
     
     public bnk c()
     {
-      return c;
+      return this.c;
     }
     
     public String d()
     {
-      return c.b();
+      return this.c.b();
     }
     
     public String e()
     {
-      return d == null ? a.m + "Invalid pack.mcmeta (or missing 'pack' section)" : d.a().d();
+      return this.d == null ? a.m + "Invalid pack.mcmeta (or missing 'pack' section)" : this.d.a().d();
     }
     
     public int f()
     {
-      return d.b();
+      return this.d.b();
     }
     
     public boolean equals(Object p_equals_1_)
@@ -411,7 +411,7 @@ public class bnm
     
     public String toString()
     {
-      return String.format("%s:%s:%d", new Object[] { b.getName(), b.isDirectory() ? "folder" : "zip", Long.valueOf(b.lastModified()) });
+      return String.format("%s:%s:%d", new Object[] { this.b.getName(), this.b.isDirectory() ? "folder" : "zip", Long.valueOf(this.b.lastModified()) });
     }
   }
 }

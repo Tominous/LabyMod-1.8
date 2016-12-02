@@ -8,8 +8,8 @@ public class yf
   public yf(wn ☃, xp ☃, og ☃, int ☃, int ☃, int ☃)
   {
     super(☃, ☃, ☃, ☃);
-    b = ☃;
-    a = ☃;
+    this.b = ☃;
+    this.a = ☃;
   }
   
   public boolean a(zx ☃)
@@ -20,55 +20,55 @@ public class yf
   public zx a(int ☃)
   {
     if (e()) {
-      c += Math.min(☃, db);
+      this.c += Math.min(☃, d().b);
     }
     return super.a(☃);
   }
   
   protected void a(zx ☃, int ☃)
   {
-    c += ☃;
+    this.c += ☃;
     c(☃);
   }
   
   protected void c(zx ☃)
   {
-    if (c > 0) {
-      ☃.a(b.o, b, c);
+    if (this.c > 0) {
+      ☃.a(this.b.o, this.b, this.c);
     }
-    c = 0;
+    this.c = 0;
     if (☃.b() == zw.a(afi.ai)) {
-      b.b(mr.h);
+      this.b.b(mr.h);
     }
     if ((☃.b() instanceof aag)) {
-      b.b(mr.i);
+      this.b.b(mr.i);
     }
     if (☃.b() == zw.a(afi.al)) {
-      b.b(mr.j);
+      this.b.b(mr.j);
     }
     if ((☃.b() instanceof zv)) {
-      b.b(mr.l);
+      this.b.b(mr.l);
     }
     if (☃.b() == zy.P) {
-      b.b(mr.m);
+      this.b.b(mr.m);
     }
     if (☃.b() == zy.aZ) {
-      b.b(mr.n);
+      this.b.b(mr.n);
     }
     if (((☃.b() instanceof aag)) && (((aag)☃.b()).g() != zw.a.a)) {
-      b.b(mr.o);
+      this.b.b(mr.o);
     }
     if ((☃.b() instanceof aay)) {
-      b.b(mr.r);
+      this.b.b(mr.r);
     }
     if (☃.b() == zw.a(afi.bC)) {
-      b.b(mr.E);
+      this.b.b(mr.E);
     }
     if (☃.b() == zw.a(afi.X)) {
-      b.b(mr.G);
+      this.b.b(mr.G);
     }
     if ((☃.b() == zy.ao) && (☃.i() == 1)) {
-      b.b(mr.M);
+      this.b.b(mr.M);
     }
   }
   
@@ -76,19 +76,19 @@ public class yf
   {
     c(☃);
     
-    zx[] ☃ = abt.a().b(a, o);
+    zx[] ☃ = abt.a().b(this.a, ☃.o);
     for (int ☃ = 0; ☃ < ☃.length; ☃++)
     {
-      zx ☃ = a.a(☃);
+      zx ☃ = this.a.a(☃);
       zx ☃ = ☃[☃];
       if (☃ != null) {
-        a.a(☃, 1);
+        this.a.a(☃, 1);
       }
       if (☃ != null) {
-        if (a.a(☃) == null) {
-          a.a(☃, ☃);
-        } else if (!b.bi.a(☃)) {
-          b.a(☃, false);
+        if (this.a.a(☃) == null) {
+          this.a.a(☃, ☃);
+        } else if (!this.b.bi.a(☃)) {
+          this.b.a(☃, false);
         }
       }
     }

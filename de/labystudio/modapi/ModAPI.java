@@ -50,7 +50,7 @@ public class ModAPI
   
   public static boolean enabled()
   {
-    return (registeredEvents != 0) && (settingsapi);
+    return (registeredEvents != 0) && (ConfigManager.settings.api);
   }
   
   public static void registerListener(Listener listener)
@@ -96,7 +96,7 @@ public class ModAPI
   
   public static DrawUtils getDrawUtils()
   {
-    return getInstancedraw;
+    return LabyMod.getInstance().draw;
   }
   
   public static axu getLastScreen()

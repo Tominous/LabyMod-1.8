@@ -9,19 +9,19 @@ public class PacketPlayAcceptFriendRequest
   
   public PacketPlayAcceptFriendRequest(String playerName)
   {
-    player_name = playerName;
+    this.player_name = playerName;
   }
   
   public PacketPlayAcceptFriendRequest() {}
   
   public void read(PacketBuf buf)
   {
-    player_name = buf.readString();
+    this.player_name = buf.readString();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeString(player_name);
+    buf.writeString(this.player_name);
   }
   
   public void handle(PacketHandler packetHandler)

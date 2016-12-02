@@ -97,10 +97,10 @@ public class bd
         }
       }
     }
-    if ((☃ != ☃) && (d[0].Q().b("logAdminCommands"))) {
+    if ((☃ != ☃) && (☃.d[0].Q().b("logAdminCommands"))) {
       ☃.a(☃);
     }
-    boolean ☃ = d[0].Q().b("sendCommandFeedback");
+    boolean ☃ = ☃.d[0].Q().b("sendCommandFeedback");
     if ((☃ instanceof adc)) {
       ☃ = ((adc)☃).m();
     }

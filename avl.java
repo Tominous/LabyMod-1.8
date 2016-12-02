@@ -13,52 +13,52 @@ public class avl
   
   public avl(float ☃)
   {
-    a = ☃;
-    g = ave.J();
-    h = (System.nanoTime() / 1000000L);
+    this.a = ☃;
+    this.g = ave.J();
+    this.h = (System.nanoTime() / 1000000L);
   }
   
   public void a()
   {
     long ☃ = ave.J();
-    long ☃ = ☃ - g;
+    long ☃ = ☃ - this.g;
     long ☃ = System.nanoTime() / 1000000L;
     double ☃ = ☃ / 1000.0D;
     if ((☃ > 1000L) || (☃ < 0L))
     {
-      f = ☃;
+      this.f = ☃;
     }
     else
     {
-      i += ☃;
-      if (i > 1000L)
+      this.i += ☃;
+      if (this.i > 1000L)
       {
-        long ☃ = ☃ - h;
+        long ☃ = ☃ - this.h;
         
-        double ☃ = i / ☃;
-        j += (☃ - j) * 0.20000000298023224D;
+        double ☃ = this.i / ☃;
+        this.j += (☃ - this.j) * 0.20000000298023224D;
         
-        h = ☃;
-        i = 0L;
+        this.h = ☃;
+        this.i = 0L;
       }
-      if (i < 0L) {
-        h = ☃;
+      if (this.i < 0L) {
+        this.h = ☃;
       }
     }
-    g = ☃;
+    this.g = ☃;
     
-    double ☃ = (☃ - f) * j;
-    f = ☃;
+    double ☃ = (☃ - this.f) * this.j;
+    this.f = ☃;
     
     ☃ = ns.a(☃, 0.0D, 1.0D);
     
-    e = ((float)(e + ☃ * d * a));
+    this.e = ((float)(this.e + ☃ * this.d * this.a));
     
-    b = ((int)e);
-    e -= b;
-    if (b > 10) {
-      b = 10;
+    this.b = ((int)this.e);
+    this.e -= this.b;
+    if (this.b > 10) {
+      this.b = 10;
     }
-    c = e;
+    this.c = this.e;
   }
 }

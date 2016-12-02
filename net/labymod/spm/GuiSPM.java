@@ -35,7 +35,7 @@ public class GuiSPM
   public GuiSPM(axu lastScreen)
   {
     this.lastScreen = lastScreen;
-    scrollbar = new Scrollbar(10);
+    this.scrollbar = new Scrollbar(10);
     ProfileManager.getProfileManager().loadProfiles();
   }
   
@@ -43,19 +43,19 @@ public class GuiSPM
   {
     Keyboard.enableRepeatEvents(true);
     
-    n.add(doneButton = new avs(0, (l - l / 4) / 2 + l / 4 - 100, m - 30, "Done"));
-    n.add(addButton = new avs(1, (l - 5) / 4 - 20, m - 30, 23, 20, "+"));
+    this.n.add(this.doneButton = new avs(0, (this.l - this.l / 4) / 2 + this.l / 4 - 100, this.m - 30, "Done"));
+    this.n.add(this.addButton = new avs(1, (this.l - 5) / 4 - 20, this.m - 30, 23, 20, "+"));
     
-    n.add(loadButton = new avs(2, l - 70, 49, 60, 20, "Load"));
-    n.add(overwriteButton = new avs(3, l - 70, 70, 60, 20, "Overwrite"));
-    n.add(deleteButton = new avs(4, l - 70, 91, 60, 20, "Delete"));
+    this.n.add(this.loadButton = new avs(2, this.l - 70, 49, 60, 20, "Load"));
+    this.n.add(this.overwriteButton = new avs(3, this.l - 70, 70, 60, 20, "Overwrite"));
+    this.n.add(this.deleteButton = new avs(4, this.l - 70, 91, 60, 20, "Delete"));
     
-    addField = new avw(0, j.k, 6, m - 29, (l - 5) / 4 - 30, 18);
-    addField.f(25);
+    this.addField = new avw(0, this.j.k, 6, this.m - 29, (this.l - 5) / 4 - 30, 18);
+    this.addField.f(25);
     
-    scrollbar.setPosition(l / 4 - 5, 5, l / 4, m - 35);
-    scrollbar.setSpeed(10);
-    scrollbar.update(ProfileManager.getProfileManager().getProfiles().size());
+    this.scrollbar.setPosition(this.l / 4 - 5, 5, this.l / 4, this.m - 35);
+    this.scrollbar.setSpeed(10);
+    this.scrollbar.update(ProfileManager.getProfileManager().getProfiles().size());
     
     super.b();
   }
@@ -63,15 +63,15 @@ public class GuiSPM
   protected void a(avs button)
     throws IOException
   {
-    if (k == 0) {
-      ave.A().a(lastScreen);
+    if (button.k == 0) {
+      ave.A().a(this.lastScreen);
     }
     String green = "§a";
     String red = "§c";
-    if (k == 1) {
-      if (ProfileManager.getProfileManager().saveProfileAs(addField.b()))
+    if (button.k == 1) {
+      if (ProfileManager.getProfileManager().saveProfileAs(this.addField.b()))
       {
-        addField.a("");
+        this.addField.a("");
         displayMessage(green + "Profile successfully created");
       }
       else
@@ -79,10 +79,10 @@ public class GuiSPM
         displayMessage(red + "Failed to create profile");
       }
     }
-    if ((k == 2) && (selectedProfile != null)) {
-      if (ProfileManager.getProfileManager().loadProfile(selectedProfile))
+    if ((button.k == 2) && (this.selectedProfile != null)) {
+      if (ProfileManager.getProfileManager().loadProfile(this.selectedProfile))
       {
-        l = false;
+        button.l = false;
         displayMessage(green + "Profile successfully loaded");
       }
       else
@@ -90,22 +90,22 @@ public class GuiSPM
         displayMessage(red + "Failed to load profile");
       }
     }
-    if ((k == 3) && (selectedProfile != null)) {
-      if (ProfileManager.getProfileManager().saveProfileAs(selectedProfile))
+    if ((button.k == 3) && (this.selectedProfile != null)) {
+      if (ProfileManager.getProfileManager().saveProfileAs(this.selectedProfile))
       {
-        l = false;
+        button.l = false;
         displayMessage(green + "Profile successfully overwritten");
-        selectProfile(selectedProfile);
+        selectProfile(this.selectedProfile);
       }
       else
       {
         displayMessage(red + "Failed to overwrite profile");
       }
     }
-    if ((k == 4) && (selectedProfile != null)) {
-      if (ProfileManager.getProfileManager().deleteProfile(selectedProfile))
+    if ((button.k == 4) && (this.selectedProfile != null)) {
+      if (ProfileManager.getProfileManager().deleteProfile(this.selectedProfile))
       {
-        selectedProfile = null;
+        this.selectedProfile = null;
         displayMessage(green + "Profile successfully deleted");
       }
       else
@@ -119,86 +119,86 @@ public class GuiSPM
   private void displayMessage(String message)
   {
     this.message = message;
-    messageDisplayTime = (System.currentTimeMillis() + 2000L);
+    this.messageDisplayTime = (System.currentTimeMillis() + 2000L);
   }
   
   public void a(int mouseX, int mouseY, float partialTicks)
   {
     c(0);
-    DrawUtils.drawBackground(5, 5, l / 4, m - 35);
-    DrawUtils.drawBackground(l / 4 + 5, 5, l - 5, m - 35);
+    DrawUtils.drawBackground(5, 5, this.l / 4, this.m - 35);
+    DrawUtils.drawBackground(this.l / 4 + 5, 5, this.l - 5, this.m - 35);
     
-    int listY = 10 + scrollbar.getScrollY();
+    int listY = 10 + this.scrollbar.getScrollY();
     for (File profile : ProfileManager.getProfileManager().getProfiles())
     {
-      if (selectedProfile == profile) {
-        a(5, listY - 1, l / 4, listY + 9, Integer.MAX_VALUE);
+      if (this.selectedProfile == profile) {
+        a(5, listY - 1, this.l / 4, listY + 9, Integer.MAX_VALUE);
       }
-      c(j.k, profile.getName().replace(".txt", ""), 10, listY, Color.WHITE.getRGB());
+      c(this.j.k, profile.getName().replace(".txt", ""), 10, listY, Color.WHITE.getRGB());
       listY += 10;
     }
-    DrawUtils.overlayBackground(0, m - 35, l / 4, m);
-    DrawUtils.overlayBackground(0, 0, l / 4, 5);
-    addButton.l = ((!addField.b().replaceAll(" ", "").isEmpty()) && (isAlphaNumeric(addField.b())));
-    addField.g();
+    DrawUtils.overlayBackground(0, this.m - 35, this.l / 4, this.m);
+    DrawUtils.overlayBackground(0, 0, this.l / 4, 5);
+    this.addButton.l = ((!this.addField.b().replaceAll(" ", "").isEmpty()) && (isAlphaNumeric(this.addField.b())));
+    this.addField.g();
     
-    scrollbar.update(ProfileManager.getProfileManager().getProfiles().size());
-    scrollbar.draw();
+    this.scrollbar.update(ProfileManager.getProfileManager().getProfiles().size());
+    this.scrollbar.draw();
     
-    loadButton.m = (selectedProfile != null);
-    overwriteButton.m = (selectedProfile != null);
-    deleteButton.m = (selectedProfile != null);
-    if (selectedProfile != null)
+    this.loadButton.m = (this.selectedProfile != null);
+    this.overwriteButton.m = (this.selectedProfile != null);
+    this.deleteButton.m = (this.selectedProfile != null);
+    if (this.selectedProfile != null)
     {
       double k = 2.0D;
       bfl.E();
       bfl.a(k, k, k);
-      String name = selectedProfile.getName().replaceAll(".txt", "");
-      a(j.k, name, (int)(((l - l / 4) / 2 + l / 4) / k), (int)(17.0D / k), Color.WHITE.getRGB());
+      String name = this.selectedProfile.getName().replaceAll(".txt", "");
+      a(this.j.k, name, (int)(((this.l - this.l / 4) / 2 + this.l / 4) / k), (int)(17.0D / k), Color.WHITE.getRGB());
       bfl.F();
     }
-    if ((storedSettings != null) && (selectedProfile != null)) {
+    if ((this.storedSettings != null) && (this.selectedProfile != null)) {
       drawKeyBoard(mouseX, mouseY);
     }
-    if ((message != null) && (messageDisplayTime > System.currentTimeMillis())) {
-      c(j.k, message, l / 4 + 10, m - 47, Color.WHITE.getRGB());
+    if ((this.message != null) && (this.messageDisplayTime > System.currentTimeMillis())) {
+      c(this.j.k, this.message, this.l / 4 + 10, this.m - 47, Color.WHITE.getRGB());
     }
     super.a(mouseX, mouseY, partialTicks);
   }
   
   private void drawKeyBoard(int mouseX, int mouseY)
   {
-    hoverMessage = null;
+    this.hoverMessage = null;
     
-    drawKey(storedSettings.keyBindForward, 1, 2, mouseX, mouseY);
-    drawKey(storedSettings.keyBindBack, 1, 3, mouseX, mouseY);
-    drawKey(storedSettings.keyBindLeft, 0, 3, mouseX, mouseY);
-    drawKey(storedSettings.keyBindRight, 2, 3, mouseX, mouseY);
+    drawKey(this.storedSettings.keyBindForward, 1, 2, mouseX, mouseY);
+    drawKey(this.storedSettings.keyBindBack, 1, 3, mouseX, mouseY);
+    drawKey(this.storedSettings.keyBindLeft, 0, 3, mouseX, mouseY);
+    drawKey(this.storedSettings.keyBindRight, 2, 3, mouseX, mouseY);
     
-    drawKey(storedSettings.keyBindAttack, 10, 0, mouseX, mouseY);
-    drawKey(storedSettings.keyBindPickBlock, 11, 0, mouseX, mouseY);
-    drawKey(storedSettings.keyBindUseItem, 12, 0, mouseX, mouseY);
+    drawKey(this.storedSettings.keyBindAttack, 10, 0, mouseX, mouseY);
+    drawKey(this.storedSettings.keyBindPickBlock, 11, 0, mouseX, mouseY);
+    drawKey(this.storedSettings.keyBindUseItem, 12, 0, mouseX, mouseY);
     
-    drawKey(storedSettings.keyBindInventory, 4, 2, mouseX, mouseY);
-    drawKey(storedSettings.keyBindDrop, 4, 3, mouseX, mouseY);
-    drawKey(storedSettings.keyBindSprint, 4, 4, mouseX, mouseY);
-    drawKey(storedSettings.keyBindSneak, 4, 5, mouseX, mouseY);
-    drawKey(storedSettings.keyBindJump, 4, 6, mouseX, mouseY);
+    drawKey(this.storedSettings.keyBindInventory, 4, 2, mouseX, mouseY);
+    drawKey(this.storedSettings.keyBindDrop, 4, 3, mouseX, mouseY);
+    drawKey(this.storedSettings.keyBindSprint, 4, 4, mouseX, mouseY);
+    drawKey(this.storedSettings.keyBindSneak, 4, 5, mouseX, mouseY);
+    drawKey(this.storedSettings.keyBindJump, 4, 6, mouseX, mouseY);
     
     int i = 0;
-    for (SPMBinding keyBind : storedSettings.keyBindsHotbar)
+    for (SPMBinding keyBind : this.storedSettings.keyBindsHotbar)
     {
       drawKey(keyBind, i, 0, mouseX, mouseY);
       i++;
     }
-    if (hoverMessage != null)
+    if (this.hoverMessage != null)
     {
       Object list = new ArrayList();
-      ((List)list).add(bnq.a(hoverMessage, new Object[0]));
+      ((List)list).add(bnq.a(this.hoverMessage, new Object[0]));
       a((List)list, mouseX, mouseY);
       bfl.f();
     }
-    a(l / 4 + 20 + 170, 67, l / 4 + 20 + 221 - 1, 118, Integer.MAX_VALUE);
+    a(this.l / 4 + 20 + 170, 67, this.l / 4 + 20 + 221 - 1, 118, Integer.MAX_VALUE);
   }
   
   private void drawKey(SPMBinding keyBind, int x, int y, int mouseX, int mouseY)
@@ -208,7 +208,7 @@ public class GuiSPM
   
   private void drawKey(String name, int keyCode, int x, int y, int mouseX, int mouseY)
   {
-    int posX = l / 4 + 20 + x * 17;
+    int posX = this.l / 4 + 20 + x * 17;
     int posY = 50 + y * 17;
     a(posX, posY, posX + 16, posY + 16, Integer.MAX_VALUE);
     if (((keyCode >= 0) && (Keyboard.isKeyDown(keyCode))) || ((keyCode < 0) && (Mouse.isButtonDown(keyCode + 100)))) {
@@ -238,14 +238,14 @@ public class GuiSPM
       (shortName.length() > 2)) {
       shortName = shortName.substring(0, 2);
     }
-    a(j.k, shortName, posX + 8, posY + 4, Color.WHITE.getRGB());
+    a(this.j.k, shortName, posX + 8, posY + 4, Color.WHITE.getRGB());
     
     String fullName = bnq.a(name, new Object[0]);
     if ((mouseX > posX) && (mouseX < posX + 16) && (mouseY > posY) && (mouseY < posY + 16)) {
-      hoverMessage = fullName;
+      this.hoverMessage = fullName;
     }
     if ((x == 4) && (y > 1)) {
-      c(j.k, fullName, posX + 19, posY + 4, Color.WHITE.getRGB());
+      c(this.j.k, fullName, posX + 19, posY + 4, Color.WHITE.getRGB());
     }
   }
   
@@ -258,13 +258,13 @@ public class GuiSPM
   protected void a(int mouseX, int mouseY, int mouseButton)
     throws IOException
   {
-    addField.a(mouseX, mouseY, mouseButton);
-    scrollbar.mouseAction(mouseX, mouseY, false);
+    this.addField.a(mouseX, mouseY, mouseButton);
+    this.scrollbar.mouseAction(mouseX, mouseY, false);
     
-    int listY = 10 + scrollbar.getScrollY();
+    int listY = 10 + this.scrollbar.getScrollY();
     for (File profile : ProfileManager.getProfileManager().getProfiles())
     {
-      if ((mouseX > 5) && (mouseX < l / 4) && (mouseY > listY) && (mouseY < listY + 10)) {
+      if ((mouseX > 5) && (mouseX < this.l / 4) && (mouseY > listY) && (mouseY < listY + 10)) {
         selectProfile(profile);
       }
       listY += 10;
@@ -274,27 +274,27 @@ public class GuiSPM
   
   private void selectProfile(File profile)
   {
-    selectedProfile = profile;
-    loadButton.l = true;
-    overwriteButton.l = true;
-    deleteButton.l = true;
-    if (lastClick > System.currentTimeMillis())
+    this.selectedProfile = profile;
+    this.loadButton.l = true;
+    this.overwriteButton.l = true;
+    this.deleteButton.l = true;
+    if (this.lastClick > System.currentTimeMillis())
     {
       try
       {
-        a(loadButton);
+        a(this.loadButton);
       }
       catch (IOException e)
       {
         e.printStackTrace();
       }
-      lastClick = System.currentTimeMillis();
+      this.lastClick = System.currentTimeMillis();
     }
     else
     {
-      lastClick = (System.currentTimeMillis() + 200L);
+      this.lastClick = (System.currentTimeMillis() + 200L);
     }
-    storedSettings = new SPMSettings(selectedProfile);
+    this.storedSettings = new SPMSettings(this.selectedProfile);
   }
   
   protected void a(char typedChar, int keyCode)
@@ -302,30 +302,30 @@ public class GuiSPM
   {
     if ((keyCode != 1) || (
     
-      (!addField.a(typedChar, keyCode)) || 
+      (!this.addField.a(typedChar, keyCode)) || 
       
       (keyCode == 28))) {
-      a(addButton);
+      a(this.addButton);
     }
-    if ((keyCode == 211) && (selectedProfile != null)) {
-      a(deleteButton);
+    if ((keyCode == 211) && (this.selectedProfile != null)) {
+      a(this.deleteButton);
     }
-    if ((keyCode == 28) && (selectedProfile != null) && (!addField.m())) {
-      a(loadButton);
+    if ((keyCode == 28) && (this.selectedProfile != null) && (!this.addField.m())) {
+      a(this.loadButton);
     }
     super.a(typedChar, keyCode);
   }
   
   protected void a(int mouseX, int mouseY, int clickedMouseButton, long timeSinceLastClick)
   {
-    scrollbar.mouseAction(mouseX, mouseY, true);
+    this.scrollbar.mouseAction(mouseX, mouseY, true);
     super.a(mouseX, mouseY, clickedMouseButton, timeSinceLastClick);
   }
   
   public void k()
     throws IOException
   {
-    scrollbar.mouseInput();
+    this.scrollbar.mouseInput();
     super.k();
   }
 }

@@ -5,7 +5,7 @@ public class bao$d
   
   public bao$d(String ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
 }

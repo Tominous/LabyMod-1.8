@@ -12,39 +12,39 @@ public class aeg
   public aeg(int ☃, int ☃)
   {
     super(☃);
-    aG = ☃;
-    as.A = 10;
-    as.C = 2;
-    if (aG == 1)
+    this.aG = ☃;
+    this.as.A = 10;
+    this.as.C = 2;
+    if (this.aG == 1)
     {
-      as.A = 6;
-      as.B = 100;
-      as.C = 1;
+      this.as.A = 6;
+      this.as.B = 100;
+      this.as.C = 1;
     }
     a(5159473);
     a(0.7F, 0.8F);
-    if (aG == 2)
+    if (this.aG == 2)
     {
-      aj = 353825;
-      ai = 3175492;
+      this.aj = 353825;
+      this.ai = 3175492;
       a(0.6F, 0.6F);
     }
-    if (aG == 0) {
-      au.add(new ady.c(ua.class, 5, 4, 4));
+    if (this.aG == 0) {
+      this.au.add(new ady.c(ua.class, 5, 4, 4));
     }
-    if (aG == 3) {
-      as.A = 64537;
+    if (this.aG == 3) {
+      this.as.A = 64537;
     }
   }
   
   protected ady a(int ☃, boolean ☃)
   {
-    if (aG == 2)
+    if (this.aG == 2)
     {
-      aj = 353825;
-      ai = ☃;
+      this.aj = 353825;
+      this.ai = ☃;
       if (☃) {
-        aj = ((aj & 0xFEFEFE) >> 1);
+        this.aj = ((this.aj & 0xFEFEFE) >> 1);
       }
       return this;
     }
@@ -53,18 +53,18 @@ public class aeg
   
   public aoh a(Random ☃)
   {
-    if ((aG == 3) && (☃.nextInt(3) > 0)) {
+    if ((this.aG == 3) && (☃.nextInt(3) > 0)) {
       return aF;
     }
-    if ((aG == 2) || (☃.nextInt(5) == 0)) {
+    if ((this.aG == 2) || (☃.nextInt(5) == 0)) {
       return aE;
     }
-    return aA;
+    return this.aA;
   }
   
   public agw.a a(Random ☃, cj ☃)
   {
-    if (aG == 1)
+    if (this.aG == 1)
     {
       double ☃ = ns.a((1.0D + af.a(☃.n() / 48.0D, ☃.p() / 48.0D)) / 2.0D, 0.0D, 0.9999D);
       agw.a ☃ = agw.a.values()[((int)(☃ * agw.a.values().length))];
@@ -78,7 +78,7 @@ public class aeg
   
   public void a(adm ☃, Random ☃, cj ☃)
   {
-    if (aG == 3) {
+    if (this.aG == 3) {
       for (int ☃ = 0; ☃ < 4; ☃++) {
         for (int ☃ = 0; ☃ < 4; ☃++)
         {
@@ -103,7 +103,7 @@ public class aeg
       }
     }
     int ☃ = ☃.nextInt(5) - 3;
-    if (aG == 1) {
+    if (this.aG == 1) {
       ☃ += 2;
     }
     for (int ☃ = 0; ☃ < ☃; ☃++)
@@ -132,7 +132,7 @@ public class aeg
   public int b(cj ☃)
   {
     int ☃ = super.b(☃);
-    if (aG == 3) {
+    if (this.aG == 3) {
       return (☃ & 0xFEFEFE) + 2634762 >> 1;
     }
     return ☃;
@@ -140,16 +140,16 @@ public class aeg
   
   protected ady d(int ☃)
   {
-    if (az == taz)
+    if (this.az == ady.t.az)
     {
       aeg ☃ = new aeg(☃, 1);
-      ☃.a(new ady.a(an, ao + 0.2F));
+      ☃.a(new ady.a(this.an, this.ao + 0.2F));
       ☃.a("Flower Forest");
       ☃.a(6976549, true);
       ☃.a(8233509);
       return ☃;
     }
-    if ((az == Qaz) || (az == Raz)) {
+    if ((this.az == ady.Q.az) || (this.az == ady.R.az)) {
       new aem(☃, this)
       {
         public aoh a(Random ☃)
@@ -165,7 +165,7 @@ public class aeg
     {
       public void a(adm ☃, Random ☃, cj ☃)
       {
-        aE.a(☃, ☃, ☃);
+        this.aE.a(☃, ☃, ☃);
       }
     };
   }

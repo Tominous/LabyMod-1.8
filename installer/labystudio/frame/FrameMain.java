@@ -56,7 +56,7 @@ public class FrameMain
     {
       public void actionPerformed(ActionEvent e)
       {
-        dispose();
+        FrameMain.this.dispose();
         new FrameCompatibleMods();
       }
     });
@@ -74,17 +74,17 @@ public class FrameMain
     
     JTextArea textArea = new JTextArea();
     textPanel.setLayout(null);
-    infoArea = new JTextArea();
-    infoArea.setBounds(10, 78, 280, 238);
-    infoArea.setEditable(false);
-    infoArea.setEnabled(true);
-    infoArea.setFont(new Font("Dialog", 0, 12));
-    infoArea.setLineWrap(true);
-    infoArea.setOpaque(false);
-    infoArea.setPreferredSize(new Dimension(290, 144));
-    infoArea.setText("This installer will automatically install LabyMod and if you wish,\nyou can add several mods provided on our website.\n\nIf you've successfully installed LabyMod,\nopen the Minecraft launcher and select the LabyMod profile.\n\nMake sure you've closed Minecraft before the\ninstallation and launch the installer from your desktop.");
-    infoArea.setWrapStyleWord(true);
-    textPanel.add(infoArea);
+    this.infoArea = new JTextArea();
+    this.infoArea.setBounds(10, 78, 280, 238);
+    this.infoArea.setEditable(false);
+    this.infoArea.setEnabled(true);
+    this.infoArea.setFont(new Font("Dialog", 0, 12));
+    this.infoArea.setLineWrap(true);
+    this.infoArea.setOpaque(false);
+    this.infoArea.setPreferredSize(new Dimension(290, 144));
+    this.infoArea.setText("This installer will automatically install LabyMod and if you wish,\nyou can add several mods provided on our website.\n\nIf you've successfully installed LabyMod,\nopen the Minecraft launcher and select the LabyMod profile.\n\nMake sure you've closed Minecraft before the\ninstallation and launch the installer from your desktop.");
+    this.infoArea.setWrapStyleWord(true);
+    textPanel.add(this.infoArea);
     
     JLabel titleLabel = new JLabel();
     titleLabel.setText("LabyMod v2.7.9");

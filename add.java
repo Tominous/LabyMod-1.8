@@ -20,40 +20,40 @@ public abstract class add
   
   public add()
   {
-    a = 20;
-    b = "Pig";
-    c = Lists.newArrayList();
+    this.a = 20;
+    this.b = "Pig";
+    this.c = Lists.newArrayList();
     
-    g = 200;
-    h = 800;
-    i = 4;
+    this.g = 200;
+    this.h = 800;
+    this.i = 4;
     
-    k = 6;
-    l = 16;
-    m = 4;
+    this.k = 6;
+    this.l = 16;
+    this.m = 4;
   }
   
   private String f()
   {
     if (i() == null)
     {
-      if ((b != null) && (b.equals("Minecart"))) {
-        b = "MinecartRideable";
+      if ((this.b != null) && (this.b.equals("Minecart"))) {
+        this.b = "MinecartRideable";
       }
-      return b;
+      return this.b;
     }
     return add.a.a(i());
   }
   
   public void a(String ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   private boolean g()
   {
     cj ☃ = b();
-    return a().b(☃.n() + 0.5D, ☃.o() + 0.5D, ☃.p() + 0.5D, l);
+    return a().b(☃.n() + 0.5D, ☃.o() + 0.5D, ☃.p() + 0.5D, this.l);
   }
   
   public void c()
@@ -62,48 +62,48 @@ public abstract class add
       return;
     }
     cj ☃ = b();
-    if (aD)
+    if (a().D)
     {
-      double ☃ = ☃.n() + as.nextFloat();
-      double ☃ = ☃.o() + as.nextFloat();
-      double ☃ = ☃.p() + as.nextFloat();
+      double ☃ = ☃.n() + a().s.nextFloat();
+      double ☃ = ☃.o() + a().s.nextFloat();
+      double ☃ = ☃.p() + a().s.nextFloat();
       a().a(cy.l, ☃, ☃, ☃, 0.0D, 0.0D, 0.0D, new int[0]);
       a().a(cy.A, ☃, ☃, ☃, 0.0D, 0.0D, 0.0D, new int[0]);
-      if (a > 0) {
-        a -= 1;
+      if (this.a > 0) {
+        this.a -= 1;
       }
-      f = e;
-      e = ((e + 1000.0F / (a + 200.0F)) % 360.0D);
+      this.f = this.e;
+      this.e = ((this.e + 1000.0F / (this.a + 200.0F)) % 360.0D);
     }
     else
     {
-      if (a == -1) {
+      if (this.a == -1) {
         h();
       }
-      if (a > 0)
+      if (this.a > 0)
       {
-        a -= 1;
+        this.a -= 1;
         return;
       }
       boolean ☃ = false;
-      for (int ☃ = 0; ☃ < i; ☃++)
+      for (int ☃ = 0; ☃ < this.i; ☃++)
       {
         pk ☃ = pm.a(f(), a());
         if (☃ == null) {
           return;
         }
-        int ☃ = a().a(☃.getClass(), new aug(☃.n(), ☃.o(), ☃.p(), ☃.n() + 1, ☃.o() + 1, ☃.p() + 1).b(m, m, m)).size();
-        if (☃ >= k)
+        int ☃ = a().a(☃.getClass(), new aug(☃.n(), ☃.o(), ☃.p(), ☃.n() + 1, ☃.o() + 1, ☃.p() + 1).b(this.m, this.m, this.m)).size();
+        if (☃ >= this.k)
         {
           h();
           return;
         }
-        double ☃ = ☃.n() + (as.nextDouble() - as.nextDouble()) * m + 0.5D;
-        double ☃ = ☃.o() + as.nextInt(3) - 1;
-        double ☃ = ☃.p() + (as.nextDouble() - as.nextDouble()) * m + 0.5D;
+        double ☃ = ☃.n() + (a().s.nextDouble() - a().s.nextDouble()) * this.m + 0.5D;
+        double ☃ = ☃.o() + a().s.nextInt(3) - 1;
+        double ☃ = ☃.p() + (a().s.nextDouble() - a().s.nextDouble()) * this.m + 0.5D;
         ps ☃ = (☃ instanceof ps) ? (ps)☃ : null;
         
-        ☃.b(☃, ☃, ☃, as.nextFloat() * 360.0F, 0.0F);
+        ☃.b(☃, ☃, ☃, a().s.nextFloat() * 360.0F, 0.0F);
         if ((☃ == null) || ((☃.bR()) && (☃.bS())))
         {
           a(☃, true);
@@ -132,14 +132,14 @@ public abstract class add
         ☃.a(☃, ☃.b());
       }
       ☃.f(☃);
-      if ((o != null) && (☃)) {
-        o.d(☃);
+      if ((☃.o != null) && (☃)) {
+        ☃.o.d(☃);
       }
       pk ☃ = ☃;
       while (☃.b("Riding", 10))
       {
         dn ☃ = ☃.m("Riding");
-        pk ☃ = pm.a(☃.j("id"), o);
+        pk ☃ = pm.a(☃.j("id"), ☃.o);
         if (☃ != null)
         {
           dn ☃ = new dn();
@@ -150,9 +150,9 @@ public abstract class add
             ☃.a(☃, ☃.b());
           }
           ☃.f(☃);
-          ☃.b(s, t, u, y, z);
-          if ((o != null) && (☃)) {
-            o.d(☃);
+          ☃.b(☃.s, ☃.t, ☃.u, ☃.y, ☃.z);
+          if ((☃.o != null) && (☃)) {
+            ☃.o.d(☃);
           }
           ☃.a(☃);
         }
@@ -160,63 +160,63 @@ public abstract class add
         ☃ = ☃;
       }
     }
-    else if (((☃ instanceof pr)) && (o != null) && (☃))
+    else if (((☃ instanceof pr)) && (☃.o != null) && (☃))
     {
       if ((☃ instanceof ps)) {
-        ((ps)☃).a(o.E(new cj(☃)), null);
+        ((ps)☃).a(☃.o.E(new cj(☃)), null);
       }
-      o.d(☃);
+      ☃.o.d(☃);
     }
     return ☃;
   }
   
   private void h()
   {
-    if (h <= g) {
-      a = g;
+    if (this.h <= this.g) {
+      this.a = this.g;
     } else {
-      a = (g + as.nextInt(h - g));
+      this.a = (this.g + a().s.nextInt(this.h - this.g));
     }
-    if (c.size() > 0) {
-      a((add.a)oa.a(as, c));
+    if (this.c.size() > 0) {
+      a((add.a)oa.a(a().s, this.c));
     }
     a(1);
   }
   
   public void a(dn ☃)
   {
-    b = ☃.j("EntityId");
-    a = ☃.e("Delay");
+    this.b = ☃.j("EntityId");
+    this.a = ☃.e("Delay");
     
-    c.clear();
+    this.c.clear();
     if (☃.b("SpawnPotentials", 9))
     {
       du ☃ = ☃.c("SpawnPotentials", 10);
       for (int ☃ = 0; ☃ < ☃.c(); ☃++) {
-        c.add(new add.a(☃.b(☃)));
+        this.c.add(new add.a(☃.b(☃)));
       }
     }
     if (☃.b("SpawnData", 10)) {
-      a(new add.a(☃.m("SpawnData"), b));
+      a(new add.a(☃.m("SpawnData"), this.b));
     } else {
       a(null);
     }
     if (☃.b("MinSpawnDelay", 99))
     {
-      g = ☃.e("MinSpawnDelay");
-      h = ☃.e("MaxSpawnDelay");
-      i = ☃.e("SpawnCount");
+      this.g = ☃.e("MinSpawnDelay");
+      this.h = ☃.e("MaxSpawnDelay");
+      this.i = ☃.e("SpawnCount");
     }
     if (☃.b("MaxNearbyEntities", 99))
     {
-      k = ☃.e("MaxNearbyEntities");
-      l = ☃.e("RequiredPlayerRange");
+      this.k = ☃.e("MaxNearbyEntities");
+      this.l = ☃.e("RequiredPlayerRange");
     }
     if (☃.b("SpawnRange", 99)) {
-      m = ☃.e("SpawnRange");
+      this.m = ☃.e("SpawnRange");
     }
     if (a() != null) {
-      j = null;
+      this.j = null;
     }
   }
   
@@ -227,21 +227,21 @@ public abstract class add
       return;
     }
     ☃.a("EntityId", ☃);
-    ☃.a("Delay", (short)a);
-    ☃.a("MinSpawnDelay", (short)g);
-    ☃.a("MaxSpawnDelay", (short)h);
-    ☃.a("SpawnCount", (short)i);
-    ☃.a("MaxNearbyEntities", (short)k);
-    ☃.a("RequiredPlayerRange", (short)l);
-    ☃.a("SpawnRange", (short)m);
+    ☃.a("Delay", (short)this.a);
+    ☃.a("MinSpawnDelay", (short)this.g);
+    ☃.a("MaxSpawnDelay", (short)this.h);
+    ☃.a("SpawnCount", (short)this.i);
+    ☃.a("MaxNearbyEntities", (short)this.k);
+    ☃.a("RequiredPlayerRange", (short)this.l);
+    ☃.a("SpawnRange", (short)this.m);
     if (i() != null) {
       ☃.a("SpawnData", add.a.b(i()).b());
     }
-    if ((i() != null) || (c.size() > 0))
+    if ((i() != null) || (this.c.size() > 0))
     {
       du ☃ = new du();
-      if (c.size() > 0) {
-        for (add.a ☃ : c) {
+      if (this.c.size() > 0) {
+        for (add.a ☃ : this.c) {
           ☃.a(☃.a());
         }
       } else {
@@ -253,23 +253,23 @@ public abstract class add
   
   public pk a(adm ☃)
   {
-    if (j == null)
+    if (this.j == null)
     {
       pk ☃ = pm.a(f(), ☃);
       if (☃ != null)
       {
         ☃ = a(☃, false);
-        j = ☃;
+        this.j = ☃;
       }
     }
-    return j;
+    return this.j;
   }
   
   public boolean b(int ☃)
   {
-    if ((☃ == 1) && (aD))
+    if ((☃ == 1) && (a().D))
     {
-      a = g;
+      this.a = this.g;
       return true;
     }
     return false;
@@ -277,12 +277,12 @@ public abstract class add
   
   private add.a i()
   {
-    return d;
+    return this.d;
   }
   
   public void a(add.a ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
   
   public abstract void a(int paramInt);
@@ -293,12 +293,12 @@ public abstract class add
   
   public double d()
   {
-    return e;
+    return this.e;
   }
   
   public double e()
   {
-    return f;
+    return this.f;
   }
   
   public class a
@@ -327,17 +327,17 @@ public abstract class add
           ☃ = "MinecartRideable";
         }
       }
-      c = ☃;
-      d = ☃;
+      this.c = ☃;
+      this.d = ☃;
     }
     
     public dn a()
     {
       dn ☃ = new dn();
       
-      ☃.a("Properties", c);
-      ☃.a("Type", d);
-      ☃.a("Weight", a);
+      ☃.a("Properties", this.c);
+      ☃.a("Type", this.d);
+      ☃.a("Weight", this.a);
       
       return ☃;
     }

@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class amz
 {
   private int a;
@@ -8,160 +6,142 @@ public class amz
   private char[] d;
   private amw e;
   private amw f;
-  private static final String __OBFID = "CL_00000375";
   
-  public amz(int y, boolean storeSkylight)
+  public amz(int ☃, boolean ☃)
   {
-    a = y;
-    d = new char['က'];
-    e = new amw();
-    if (storeSkylight) {
-      f = new amw();
+    this.a = ☃;
+    this.d = new char['က'];
+    this.e = new amw();
+    if (☃) {
+      this.f = new amw();
     }
   }
   
-  public alz a(int x, int y, int z)
+  public alz a(int ☃, int ☃, int ☃)
   {
-    alz var4 = (alz)afh.d.a(d[(y << 8 | z << 4 | x)]);
-    return var4 != null ? var4 : afi.a.Q();
+    alz ☃ = (alz)afh.d.a(this.d[(☃ << 8 | ☃ << 4 | ☃)]);
+    if (☃ != null) {
+      return ☃;
+    }
+    return afi.a.Q();
   }
   
-  public void a(int x, int y, int z, alz state)
+  public void a(int ☃, int ☃, int ☃, alz ☃)
   {
-    if (Reflector.IExtendedBlockState.isInstance(state)) {
-      state = (alz)Reflector.call(state, Reflector.IExtendedBlockState_getClean, new Object[0]);
-    }
-    alz var5 = a(x, y, z);
-    afh var6 = var5.c();
-    afh var7 = state.c();
-    if (var6 != afi.a)
+    alz ☃ = a(☃, ☃, ☃);
+    afh ☃ = ☃.c();
+    afh ☃ = ☃.c();
+    if (☃ != afi.a)
     {
-      b -= 1;
-      if (var6.y()) {
-        c -= 1;
+      this.b -= 1;
+      if (☃.y()) {
+        this.c -= 1;
       }
     }
-    if (var7 != afi.a)
+    if (☃ != afi.a)
     {
-      b += 1;
-      if (var7.y()) {
-        c += 1;
+      this.b += 1;
+      if (☃.y()) {
+        this.c += 1;
       }
     }
-    d[(y << 8 | z << 4 | x)] = ((char)afh.d.b(state));
+    this.d[(☃ << 8 | ☃ << 4 | ☃)] = ((char)afh.d.b(☃));
   }
   
-  public afh b(int x, int y, int z)
+  public afh b(int ☃, int ☃, int ☃)
   {
-    return a(x, y, z).c();
+    return a(☃, ☃, ☃).c();
   }
   
-  public int c(int x, int y, int z)
+  public int c(int ☃, int ☃, int ☃)
   {
-    alz var4 = a(x, y, z);
-    return var4.c().c(var4);
+    alz ☃ = a(☃, ☃, ☃);
+    return ☃.c().c(☃);
   }
   
   public boolean a()
   {
-    return b == 0;
+    return this.b == 0;
   }
   
   public boolean b()
   {
-    return c > 0;
+    return this.c > 0;
   }
   
   public int d()
   {
-    return a;
+    return this.a;
   }
   
-  public void a(int x, int y, int z, int value)
+  public void a(int ☃, int ☃, int ☃, int ☃)
   {
-    f.a(x, y, z, value);
+    this.f.a(☃, ☃, ☃, ☃);
   }
   
-  public int d(int x, int y, int z)
+  public int d(int ☃, int ☃, int ☃)
   {
-    return f.a(x, y, z);
+    return this.f.a(☃, ☃, ☃);
   }
   
-  public void b(int x, int y, int z, int value)
+  public void b(int ☃, int ☃, int ☃, int ☃)
   {
-    e.a(x, y, z, value);
+    this.e.a(☃, ☃, ☃, ☃);
   }
   
-  public int e(int x, int y, int z)
+  public int e(int ☃, int ☃, int ☃)
   {
-    return e.a(x, y, z);
+    return this.e.a(☃, ☃, ☃);
   }
   
   public void e()
   {
-    List blockStates = afh.d.getObjectList();
-    int maxStateId = blockStates.size();
-    
-    int localBlockRefCount = 0;
-    int localTickRefCount = 0;
-    for (int y = 0; y < 16; y++)
-    {
-      int by = y << 8;
-      for (int z = 0; z < 16; z++)
-      {
-        int byz = by | z << 4;
-        for (int x = 0; x < 16; x++)
+    this.b = 0;
+    this.c = 0;
+    for (int ☃ = 0; ☃ < 16; ☃++) {
+      for (int ☃ = 0; ☃ < 16; ☃++) {
+        for (int ☃ = 0; ☃ < 16; ☃++)
         {
-          int stateId = d[(byz | x)];
-          if (stateId > 0)
+          afh ☃ = b(☃, ☃, ☃);
+          if (☃ != afi.a)
           {
-            localBlockRefCount++;
-            if (stateId < maxStateId)
-            {
-              alz bs = (alz)blockStates.get(stateId);
-              if (bs != null)
-              {
-                afh var4 = bs.c();
-                if (var4.y()) {
-                  localTickRefCount++;
-                }
-              }
+            this.b += 1;
+            if (☃.y()) {
+              this.c += 1;
             }
           }
         }
       }
     }
-    b = localBlockRefCount;
-    c = localTickRefCount;
   }
   
   public char[] g()
   {
-    return d;
+    return this.d;
   }
   
-  public void a(char[] dataArray)
+  public void a(char[] ☃)
   {
-    d = dataArray;
+    this.d = ☃;
   }
   
   public amw h()
   {
-    return e;
+    return this.e;
   }
   
   public amw i()
   {
-    return f;
+    return this.f;
   }
   
-  public void a(amw newBlocklightArray)
+  public void a(amw ☃)
   {
-    e = newBlocklightArray;
+    this.e = ☃;
   }
   
-  public void b(amw newSkylightArray)
+  public void b(amw ☃)
   {
-    f = newSkylightArray;
+    this.f = ☃;
   }
 }

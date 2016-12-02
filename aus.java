@@ -8,13 +8,13 @@ public class aus
   
   public aus(String ☃)
   {
-    j = ☃;
+    this.j = ☃;
     auu.a.put(☃, this);
   }
   
   public String a()
   {
-    return j;
+    return this.j;
   }
   
   public int a(List<wn> ☃)

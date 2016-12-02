@@ -38,7 +38,7 @@ public class agv
   protected agv()
   {
     super(arm.o);
-    j(M.b().a(a, Integer.valueOf(0)).a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, Boolean.valueOf(false)).a(Q, Boolean.valueOf(false)).a(R, Boolean.valueOf(false)).a(S, Integer.valueOf(0)));
+    j(this.M.b().a(a, Integer.valueOf(0)).a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, Boolean.valueOf(false)).a(Q, Boolean.valueOf(false)).a(R, Boolean.valueOf(false)).a(S, Integer.valueOf(0)));
     a(true);
   }
   
@@ -83,8 +83,8 @@ public class agv
   
   public void a(afh ☃, int ☃, int ☃)
   {
-    T.put(☃, Integer.valueOf(☃));
-    U.put(☃, Integer.valueOf(☃));
+    this.T.put(☃, Integer.valueOf(☃));
+    this.U.put(☃, Integer.valueOf(☃));
   }
   
   public aug a(adm ☃, cj ☃, alz ☃)
@@ -122,7 +122,7 @@ public class agv
     }
     afh ☃ = ☃.p(☃.b()).c();
     boolean ☃ = ☃ == afi.aV;
-    if (((t instanceof anp)) && (☃ == afi.h)) {
+    if (((☃.t instanceof anp)) && (☃ == afi.h)) {
       ☃ = true;
     }
     if ((!☃) && (☃.S()) && (e(☃, ☃)))
@@ -208,13 +208,13 @@ public class agv
   
   private int c(afh ☃)
   {
-    Integer ☃ = (Integer)U.get(☃);
+    Integer ☃ = (Integer)this.U.get(☃);
     return ☃ == null ? 0 : ☃.intValue();
   }
   
   private int d(afh ☃)
   {
-    Integer ☃ = (Integer)T.get(☃);
+    Integer ☃ = (Integer)this.T.get(☃);
     return ☃ == null ? 0 : ☃.intValue();
   }
   
@@ -288,7 +288,7 @@ public class agv
   
   public void c(adm ☃, cj ☃, alz ☃)
   {
-    if ((t.q() <= 0) && 
+    if ((☃.t.q() <= 0) && 
       (afi.aY.e(☃, ☃))) {
       return;
     }
@@ -297,7 +297,7 @@ public class agv
       ☃.g(☃);
       return;
     }
-    ☃.a(☃, this, a(☃) + s.nextInt(10));
+    ☃.a(☃, this, a(☃) + ☃.s.nextInt(10));
   }
   
   public void c(adm ☃, cj ☃, alz ☃, Random ☃)

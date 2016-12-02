@@ -11,9 +11,9 @@ public class ga
   
   public ga(int ☃, short ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public void a(fj ☃)
@@ -24,31 +24,31 @@ public class ga
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readUnsignedByte();
-    b = ☃.readShort();
-    c = ☃.readBoolean();
+    this.a = ☃.readUnsignedByte();
+    this.b = ☃.readShort();
+    this.c = ☃.readBoolean();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(a);
-    ☃.writeShort(b);
-    ☃.writeBoolean(c);
+    ☃.writeByte(this.a);
+    ☃.writeShort(this.b);
+    ☃.writeBoolean(this.c);
   }
   
   public int a()
   {
-    return a;
+    return this.a;
   }
   
   public short b()
   {
-    return b;
+    return this.b;
   }
   
   public boolean c()
   {
-    return c;
+    return this.c;
   }
 }

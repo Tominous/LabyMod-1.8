@@ -11,8 +11,8 @@ public class als
   public als(boolean ☃)
   {
     super(arm.H);
-    j(M.b().a(a, cq.c).a(b, Boolean.valueOf(false)));
-    N = ☃;
+    j(this.M.b().a(a, cq.c).a(b, Boolean.valueOf(false)));
+    this.N = ☃;
     a(i);
     c(0.5F);
     a(yz.d);
@@ -26,21 +26,21 @@ public class als
   public void a(adm ☃, cj ☃, alz ☃, pr ☃, zx ☃)
   {
     ☃.a(☃, ☃.a(a, a(☃, ☃, ☃)), 2);
-    if (!D) {
+    if (!☃.D) {
       e(☃, ☃, ☃);
     }
   }
   
   public void a(adm ☃, cj ☃, alz ☃, afh ☃)
   {
-    if (!D) {
+    if (!☃.D) {
       e(☃, ☃, ☃);
     }
   }
   
   public void c(adm ☃, cj ☃, alz ☃)
   {
-    if ((!D) && (☃.s(☃) == null)) {
+    if ((!☃.D) && (☃.s(☃) == null)) {
       e(☃, ☃, ☃);
     }
   }
@@ -90,7 +90,7 @@ public class als
   public boolean a(adm ☃, cj ☃, alz ☃, int ☃, int ☃)
   {
     cq ☃ = (cq)☃.b(a);
-    if (!D)
+    if (!☃.D)
     {
       boolean ☃ = a(☃, ☃, ☃);
       if ((☃) && (☃ == 1))
@@ -107,7 +107,7 @@ public class als
       if (a(☃, ☃, ☃, true))
       {
         ☃.a(☃, ☃.a(b, Boolean.valueOf(true)), 2);
-        ☃.a(☃.n() + 0.5D, ☃.o() + 0.5D, ☃.p() + 0.5D, "tile.piston.out", 0.5F, s.nextFloat() * 0.25F + 0.6F);
+        ☃.a(☃.n() + 0.5D, ☃.o() + 0.5D, ☃.p() + 0.5D, "tile.piston.out", 0.5F, ☃.s.nextFloat() * 0.25F + 0.6F);
       }
       else
       {
@@ -120,9 +120,9 @@ public class als
       if ((☃ instanceof alu)) {
         ((alu)☃).h();
       }
-      ☃.a(☃, afi.M.Q().a(alv.a, ☃).a(alv.b, N ? alt.a.b : alt.a.a), 3);
+      ☃.a(☃, afi.M.Q().a(alv.a, ☃).a(alv.b, this.N ? alt.a.b : alt.a.a), 3);
       ☃.a(☃, alv.a(a(☃), ☃, false, true));
-      if (N)
+      if (this.N)
       {
         cj ☃ = ☃.a(☃.g() * 2, ☃.h() * 2, ☃.i() * 2);
         afh ☃ = ☃.p(☃).c();
@@ -148,7 +148,7 @@ public class als
       {
         ☃.g(☃.a(☃));
       }
-      ☃.a(☃.n() + 0.5D, ☃.o() + 0.5D, ☃.p() + 0.5D, "tile.piston.in", 0.5F, s.nextFloat() * 0.15F + 0.6F);
+      ☃.a(☃.n() + 0.5D, ☃.o() + 0.5D, ☃.p() + 0.5D, "tile.piston.in", 0.5F, ☃.s.nextFloat() * 0.15F + 0.6F);
     }
     return true;
   }
@@ -222,9 +222,9 @@ public class als
   
   public static cq a(adm ☃, cj ☃, pr ☃)
   {
-    if ((ns.e((float)s - ☃.n()) < 2.0F) && (ns.e((float)u - ☃.p()) < 2.0F))
+    if ((ns.e((float)☃.s - ☃.n()) < 2.0F) && (ns.e((float)☃.u - ☃.p()) < 2.0F))
     {
-      double ☃ = t + ☃.aS();
+      double ☃ = ☃.t + ☃.aS();
       if (☃ - ☃.o() > 2.0D) {
         return cq.b;
       }
@@ -319,10 +319,10 @@ public class als
     cj ☃ = ☃.a(☃);
     if (☃)
     {
-      alt.a ☃ = N ? alt.a.b : alt.a.a;
+      alt.a ☃ = this.N ? alt.a.b : alt.a.a;
       alz ☃ = afi.K.Q().a(alt.a, ☃).a(alt.b, ☃);
       
-      alz ☃ = afi.M.Q().a(alv.a, ☃).a(alv.b, N ? alt.a.b : alt.a.a);
+      alz ☃ = afi.M.Q().a(alv.a, ☃).a(alv.b, this.N ? alt.a.b : alt.a.a);
       
       ☃.a(☃, ☃, 4);
       ☃.a(☃, alv.a(☃, ☃, true, false));

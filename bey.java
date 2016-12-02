@@ -6,8 +6,8 @@ public class bey
   
   public bey(String ☃, eu ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public xi a(wm ☃, wn ☃)
@@ -17,7 +17,7 @@ public class bey
   
   public String e_()
   {
-    return b.c();
+    return this.b.c();
   }
   
   public boolean l_()
@@ -27,11 +27,11 @@ public class bey
   
   public String k()
   {
-    return a;
+    return this.a;
   }
   
   public eu f_()
   {
-    return b;
+    return this.b;
   }
 }

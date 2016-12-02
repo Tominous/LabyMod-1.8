@@ -4,13 +4,13 @@ public enum bph$a$a
   
   private bph$a$a(String ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public static a a(String ☃)
   {
     for (a ☃ : ) {
-      if (c.equals(☃)) {
+      if (☃.c.equals(☃)) {
         return ☃;
       }
     }

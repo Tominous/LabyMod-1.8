@@ -16,25 +16,25 @@ public class is
   
   public is(pk ☃, is.a ☃, int ☃)
   {
-    a = ☃.F();
-    b = ☃;
-    c = ☃;
+    this.a = ☃.F();
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.e();
-    b = ((is.a)☃.a(is.a.class));
-    c = ☃.e();
+    this.a = ☃.e();
+    this.b = ((is.a)☃.a(is.a.class));
+    this.c = ☃.e();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a);
-    ☃.a(b);
-    ☃.b(c);
+    ☃.b(this.a);
+    ☃.a(this.b);
+    ☃.b(this.c);
   }
   
   public void a(ic ☃)
@@ -44,12 +44,12 @@ public class is
   
   public is.a b()
   {
-    return b;
+    return this.b;
   }
   
   public int c()
   {
-    return c;
+    return this.c;
   }
   
   public static enum a

@@ -10,22 +10,22 @@ public class gi
   
   public gi(pk ☃, byte ☃)
   {
-    a = ☃.F();
-    b = ☃;
+    this.a = ☃.F();
+    this.b = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readInt();
-    b = ☃.readByte();
+    this.a = ☃.readInt();
+    this.b = ☃.readByte();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeInt(a);
-    ☃.writeByte(b);
+    ☃.writeInt(this.a);
+    ☃.writeByte(this.b);
   }
   
   public void a(fj ☃)
@@ -35,11 +35,11 @@ public class gi
   
   public pk a(adm ☃)
   {
-    return ☃.a(a);
+    return ☃.a(this.a);
   }
   
   public byte a()
   {
-    return b;
+    return this.b;
   }
 }

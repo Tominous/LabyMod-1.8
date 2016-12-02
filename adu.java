@@ -12,17 +12,17 @@ public class adu
   
   public adu(le ☃)
   {
-    a = ☃;
-    b = new Random(☃.J());
+    this.a = ☃;
+    this.b = new Random(☃.J());
   }
   
   public void a(pk ☃, float ☃)
   {
-    if (a.t.q() == 1)
+    if (this.a.t.q() == 1)
     {
-      int ☃ = ns.c(s);
-      int ☃ = ns.c(t) - 1;
-      int ☃ = ns.c(u);
+      int ☃ = ns.c(☃.s);
+      int ☃ = ns.c(☃.t) - 1;
+      int ☃ = ns.c(☃.u);
       
       int ☃ = 1;
       int ☃ = 0;
@@ -36,12 +36,12 @@ public class adu
             
             boolean ☃ = ☃ < 0;
             
-            a.a(new cj(☃, ☃, ☃), ☃ ? afi.Z.Q() : afi.a.Q());
+            this.a.a(new cj(☃, ☃, ☃), ☃ ? afi.Z.Q() : afi.a.Q());
           }
         }
       }
-      ☃.b(☃, ☃, ☃, y, 0.0F);
-      v = (w = x = 0.0D);
+      ☃.b(☃, ☃, ☃, ☃.y, 0.0F);
+      ☃.v = (☃.w = ☃.x = 0.0D);
       
       return;
     }
@@ -57,21 +57,21 @@ public class adu
     int ☃ = 128;
     double ☃ = -1.0D;
     
-    int ☃ = ns.c(s);
-    int ☃ = ns.c(u);
+    int ☃ = ns.c(☃.s);
+    int ☃ = ns.c(☃.u);
     boolean ☃ = true;
     
     cj ☃ = cj.a;
     
     long ☃ = adg.a(☃, ☃);
-    if (c.b(☃))
+    if (this.c.b(☃))
     {
-      adu.a ☃ = (adu.a)c.a(☃);
+      adu.a ☃ = (adu.a)this.c.a(☃);
       
       ☃ = 0.0D;
       
       ☃ = ☃;
-      c = a.K();
+      ☃.c = this.a.K();
       ☃ = false;
     }
     else
@@ -80,13 +80,13 @@ public class adu
       for (int ☃ = -128; ☃ <= 128; ☃++) {
         for (int ☃ = -128; ☃ <= 128; ☃++)
         {
-          cj ☃ = ☃.a(☃, a.V() - 1 - ☃.o(), ☃);
+          cj ☃ = ☃.a(☃, this.a.V() - 1 - ☃.o(), ☃);
           while (☃.o() >= 0)
           {
             cj ☃ = ☃.b();
-            if (a.p(☃).c() == afi.aY)
+            if (this.a.p(☃).c() == afi.aY)
             {
-              while (a.p(☃ = ☃.b()).c() == afi.aY) {
+              while (this.a.p(☃ = ☃.b()).c() == afi.aY) {
                 ☃ = ☃;
               }
               double ☃ = ☃.i(☃);
@@ -105,24 +105,24 @@ public class adu
     {
       if (☃)
       {
-        c.a(☃, new adu.a(☃, a.K()));
-        d.add(Long.valueOf(☃));
+        this.c.a(☃, new adu.a(☃, this.a.K()));
+        this.d.add(Long.valueOf(☃));
       }
       double ☃ = ☃.n() + 0.5D;
       double ☃ = ☃.o() + 0.5D;
       double ☃ = ☃.p() + 0.5D;
       
-      amd.b ☃ = afi.aY.f(a, ☃);
+      amd.b ☃ = afi.aY.f(this.a, ☃);
       boolean ☃ = ☃.b().e().c() == cq.b.b;
       double ☃ = ☃.b().k() == cq.a.a ? ☃.a().p() : ☃.a().n();
-      ☃ = ☃.a().o() + 1 - aGb * ☃.e();
+      ☃ = ☃.a().o() + 1 - ☃.aG().b * ☃.e();
       if (☃) {
         ☃ += 1.0D;
       }
       if (☃.b().k() == cq.a.a) {
-        ☃ = ☃ + (1.0D - aGa) * ☃.d() * ☃.b().e().c().a();
+        ☃ = ☃ + (1.0D - ☃.aG().a) * ☃.d() * ☃.b().e().c().a();
       } else {
-        ☃ = ☃ + (1.0D - aGa) * ☃.d() * ☃.b().e().c().a();
+        ☃ = ☃ + (1.0D - ☃.aG().a) * ☃.d() * ☃.b().e().c().a();
       }
       float ☃ = 0.0F;
       float ☃ = 0.0F;
@@ -148,13 +148,13 @@ public class adu
         ☃ = -1.0F;
         ☃ = 1.0F;
       }
-      double ☃ = v;
-      double ☃ = x;
-      v = (☃ * ☃ + ☃ * ☃);
-      x = (☃ * ☃ + ☃ * ☃);
-      y = (☃ - ☃.aH().d().b() * 90 + ☃.b().b() * 90);
+      double ☃ = ☃.v;
+      double ☃ = ☃.x;
+      ☃.v = (☃ * ☃ + ☃ * ☃);
+      ☃.x = (☃ * ☃ + ☃ * ☃);
+      ☃.y = (☃ - ☃.aH().d().b() * 90 + ☃.b().b() * 90);
       
-      ☃.b(☃, ☃, ☃, y, z);
+      ☃.b(☃, ☃, ☃, ☃.y, ☃.z);
       return true;
     }
     return false;
@@ -165,29 +165,29 @@ public class adu
     int ☃ = 16;
     double ☃ = -1.0D;
     
-    int ☃ = ns.c(s);
-    int ☃ = ns.c(t);
-    int ☃ = ns.c(u);
+    int ☃ = ns.c(☃.s);
+    int ☃ = ns.c(☃.t);
+    int ☃ = ns.c(☃.u);
     
     int ☃ = ☃;
     int ☃ = ☃;
     int ☃ = ☃;
     int ☃ = 0;
     
-    int ☃ = b.nextInt(4);
+    int ☃ = this.b.nextInt(4);
     
     cj.a ☃ = new cj.a();
     for (int ☃ = ☃ - ☃; ☃ <= ☃ + ☃; ☃++)
     {
-      double ☃ = ☃ + 0.5D - s;
+      double ☃ = ☃ + 0.5D - ☃.s;
       for (int ☃ = ☃ - ☃; ☃ <= ☃ + ☃; ☃++)
       {
-        double ☃ = ☃ + 0.5D - u;
+        double ☃ = ☃ + 0.5D - ☃.u;
         label464:
-        for (int ☃ = a.V() - 1; ☃ >= 0; ☃--) {
-          if (a.d(☃.c(☃, ☃, ☃)))
+        for (int ☃ = this.a.V() - 1; ☃ >= 0; ☃--) {
+          if (this.a.d(☃.c(☃, ☃, ☃)))
           {
-            while ((☃ > 0) && (a.d(☃.c(☃, ☃ - 1, ☃)))) {
+            while ((☃ > 0) && (this.a.d(☃.c(☃, ☃ - 1, ☃)))) {
               ☃--;
             }
             for (int ☃ = ☃; ☃ < ☃ + 4; ☃++)
@@ -208,16 +208,16 @@ public class adu
                     int ☃ = ☃ + (☃ - 1) * ☃ - ☃ * ☃;
                     
                     ☃.c(☃, ☃, ☃);
-                    if ((☃ < 0) && (!a.p(☃).c().t().a())) {
+                    if ((☃ < 0) && (!this.a.p(☃).c().t().a())) {
                       break label464;
                     }
-                    if ((☃ >= 0) && (!a.d(☃))) {
+                    if ((☃ >= 0) && (!this.a.d(☃))) {
                       break label464;
                     }
                   }
                 }
               }
-              double ☃ = ☃ + 0.5D - t;
+              double ☃ = ☃ + 0.5D - ☃.t;
               double ☃ = ☃ * ☃ + ☃ * ☃ + ☃ * ☃;
               if ((☃ < 0.0D) || (☃ < ☃))
               {
@@ -235,15 +235,15 @@ public class adu
     if (☃ < 0.0D) {
       for (int ☃ = ☃ - ☃; ☃ <= ☃ + ☃; ☃++)
       {
-        double ☃ = ☃ + 0.5D - s;
+        double ☃ = ☃ + 0.5D - ☃.s;
         for (int ☃ = ☃ - ☃; ☃ <= ☃ + ☃; ☃++)
         {
-          double ☃ = ☃ + 0.5D - u;
+          double ☃ = ☃ + 0.5D - ☃.u;
           label839:
-          for (int ☃ = a.V() - 1; ☃ >= 0; ☃--) {
-            if (a.d(☃.c(☃, ☃, ☃)))
+          for (int ☃ = this.a.V() - 1; ☃ >= 0; ☃--) {
+            if (this.a.d(☃.c(☃, ☃, ☃)))
             {
-              while ((☃ > 0) && (a.d(☃.c(☃, ☃ - 1, ☃)))) {
+              while ((☃ > 0) && (this.a.d(☃.c(☃, ☃ - 1, ☃)))) {
                 ☃--;
               }
               for (int ☃ = ☃; ☃ < ☃ + 2; ☃++)
@@ -258,15 +258,15 @@ public class adu
                     int ☃ = ☃ + (☃ - 1) * ☃;
                     
                     ☃.c(☃, ☃, ☃);
-                    if ((☃ < 0) && (!a.p(☃).c().t().a())) {
+                    if ((☃ < 0) && (!this.a.p(☃).c().t().a())) {
                       break label839;
                     }
-                    if ((☃ >= 0) && (!a.d(☃))) {
+                    if ((☃ >= 0) && (!this.a.d(☃))) {
                       break label839;
                     }
                   }
                 }
-                double ☃ = ☃ + 0.5D - t;
+                double ☃ = ☃ + 0.5D - ☃.t;
                 double ☃ = ☃ * ☃ + ☃ * ☃ + ☃ * ☃;
                 if ((☃ < 0.0D) || (☃ < ☃))
                 {
@@ -297,7 +297,7 @@ public class adu
     }
     if (☃ < 0.0D)
     {
-      ☃ = ns.a(☃, 70, a.V() - 10);
+      ☃ = ns.a(☃, 70, this.a.V() - 10);
       ☃ = ☃;
       for (int ☃ = -1; ☃ <= 1; ☃++) {
         for (int ☃ = 1; ☃ < 3; ☃++) {
@@ -309,7 +309,7 @@ public class adu
             
             boolean ☃ = ☃ < 0;
             
-            a.a(new cj(☃, ☃, ☃), ☃ ? afi.Z.Q() : afi.a.Q());
+            this.a.a(new cj(☃, ☃, ☃), ☃ ? afi.Z.Q() : afi.a.Q());
           }
         }
       }
@@ -325,7 +325,7 @@ public class adu
           int ☃ = ☃ + (☃ - 1) * ☃;
           
           boolean ☃ = (☃ == 0) || (☃ == 3) || (☃ == -1) || (☃ == 3);
-          a.a(new cj(☃, ☃, ☃), ☃ ? afi.Z.Q() : ☃, 2);
+          this.a.a(new cj(☃, ☃, ☃), ☃ ? afi.Z.Q() : ☃, 2);
         }
       }
       for (int ☃ = 0; ☃ < 4; ☃++) {
@@ -336,7 +336,7 @@ public class adu
           int ☃ = ☃ + (☃ - 1) * ☃;
           
           cj ☃ = new cj(☃, ☃, ☃);
-          a.c(☃, a.p(☃).c());
+          this.a.c(☃, this.a.p(☃).c());
         }
       }
     }
@@ -347,16 +347,16 @@ public class adu
   {
     if (☃ % 100L == 0L)
     {
-      Iterator<Long> ☃ = d.iterator();
+      Iterator<Long> ☃ = this.d.iterator();
       long ☃ = ☃ - 300L;
       while (☃.hasNext())
       {
         Long ☃ = (Long)☃.next();
-        adu.a ☃ = (adu.a)c.a(☃.longValue());
-        if ((☃ == null) || (c < ☃))
+        adu.a ☃ = (adu.a)this.c.a(☃.longValue());
+        if ((☃ == null) || (☃.c < ☃))
         {
           ☃.remove();
-          c.d(☃.longValue());
+          this.c.d(☃.longValue());
         }
       }
     }
@@ -370,7 +370,7 @@ public class adu
     public a(cj ☃, long ☃)
     {
       super(☃.o(), ☃.p());
-      c = ☃;
+      this.c = ☃;
     }
   }
 }

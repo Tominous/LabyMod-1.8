@@ -15,9 +15,9 @@ public class zs
   
   public zs(int ☃, float ☃, boolean ☃)
   {
-    b = ☃;
-    d = ☃;
-    c = ☃;
+    this.b = ☃;
+    this.d = ☃;
+    this.c = ☃;
     a(yz.h);
   }
   
@@ -28,9 +28,9 @@ public class zs
   
   public zx b(zx ☃, adm ☃, wn ☃)
   {
-    b -= 1;
+    ☃.b -= 1;
     ☃.cl().a(this, ☃);
-    ☃.a(☃, "random.burp", 0.5F, s.nextFloat() * 0.1F + 0.9F);
+    ☃.a(☃, "random.burp", 0.5F, ☃.s.nextFloat() * 0.1F + 0.9F);
     
     c(☃, ☃, ☃);
     ☃.b(na.ad[zw.b(this)]);
@@ -40,8 +40,8 @@ public class zs
   
   protected void c(zx ☃, adm ☃, wn ☃)
   {
-    if ((!D) && (l > 0) && (s.nextFloat() < o)) {
-      ☃.c(new pf(l, m * 20, n));
+    if ((!☃.D) && (this.l > 0) && (☃.s.nextFloat() < this.o)) {
+      ☃.c(new pf(this.l, this.m * 20, this.n));
     }
   }
   
@@ -57,7 +57,7 @@ public class zs
   
   public zx a(zx ☃, adm ☃, wn ☃)
   {
-    if (☃.j(k)) {
+    if (☃.j(this.k)) {
       ☃.a(☃, d(☃));
     }
     return ☃;
@@ -65,31 +65,31 @@ public class zs
   
   public int h(zx ☃)
   {
-    return b;
+    return this.b;
   }
   
   public float i(zx ☃)
   {
-    return c;
+    return this.c;
   }
   
   public boolean g()
   {
-    return d;
+    return this.d;
   }
   
   public zs a(int ☃, int ☃, int ☃, float ☃)
   {
-    l = ☃;
-    m = ☃;
-    n = ☃;
-    o = ☃;
+    this.l = ☃;
+    this.m = ☃;
+    this.n = ☃;
+    this.o = ☃;
     return this;
   }
   
   public zs h()
   {
-    k = true;
+    this.k = true;
     return this;
   }
 }

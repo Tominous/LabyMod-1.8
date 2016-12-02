@@ -27,7 +27,7 @@ public class bh
     }
     lf ☃ = ☃.length > 0 ? a(☃, ☃[0]) : b(☃);
     cj ☃ = ☃.length > 3 ? a(☃, ☃, 1, true) : ☃.c();
-    if (o != null)
+    if (☃.o != null)
     {
       ☃.a(☃, true);
       a(☃, this, "commands.spawnpoint.success", new Object[] { ☃.e_(), Integer.valueOf(☃.n()), Integer.valueOf(☃.o()), Integer.valueOf(☃.p()) });

@@ -17,25 +17,25 @@ public enum ajh$a
   
   private ajh$a(int ☃, String ☃, String ☃, arn ☃)
   {
-    d = ☃;
-    e = ☃;
-    f = ☃;
-    g = ☃;
+    this.d = ☃;
+    this.e = ☃;
+    this.f = ☃;
+    this.g = ☃;
   }
   
   public int a()
   {
-    return d;
+    return this.d;
   }
   
   public String toString()
   {
-    return e;
+    return this.e;
   }
   
   public arn c()
   {
-    return f;
+    return this.f;
   }
   
   public static a a(int ☃)
@@ -48,11 +48,11 @@ public enum ajh$a
   
   public String l()
   {
-    return e;
+    return this.e;
   }
   
   public String d()
   {
-    return g;
+    return this.g;
   }
 }

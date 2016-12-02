@@ -9,7 +9,7 @@ public class qs<T extends pk>
   {
     public boolean a(pk ☃)
     {
-      return (☃.ai()) && (a.t().a(☃));
+      return (☃.ai()) && (qs.this.a.t().a(☃));
     }
   };
   protected py a;
@@ -29,36 +29,36 @@ public class qs<T extends pk>
   
   public qs(py ☃, Class<T> ☃, Predicate<? super T> ☃, float ☃, double ☃, double ☃)
   {
-    a = ☃;
-    i = ☃;
-    j = ☃;
-    f = ☃;
-    d = ☃;
-    e = ☃;
-    h = ☃.s();
+    this.a = ☃;
+    this.i = ☃;
+    this.j = ☃;
+    this.f = ☃;
+    this.d = ☃;
+    this.e = ☃;
+    this.h = ☃.s();
     a(1);
   }
   
   public boolean a()
   {
-    List<T> ☃ = a.o.a(i, a.aR().b(f, 3.0D, f), Predicates.and(new Predicate[] { po.d, c, j }));
+    List<T> ☃ = this.a.o.a(this.i, this.a.aR().b(this.f, 3.0D, this.f), Predicates.and(new Predicate[] { po.d, this.c, this.j }));
     if (☃.isEmpty()) {
       return false;
     }
-    b = ((pk)☃.get(0));
+    this.b = ((pk)☃.get(0));
     
-    aui ☃ = tc.b(a, 16, 7, new aui(b.s, b.t, b.u));
+    aui ☃ = tc.b(this.a, 16, 7, new aui(this.b.s, this.b.t, this.b.u));
     if (☃ == null) {
       return false;
     }
-    if (b.e(a, b, c) < b.h(a)) {
+    if (this.b.e(☃.a, ☃.b, ☃.c) < this.b.h(this.a)) {
       return false;
     }
-    g = h.a(a, b, c);
-    if (g == null) {
+    this.g = this.h.a(☃.a, ☃.b, ☃.c);
+    if (this.g == null) {
       return false;
     }
-    if (!g.b(☃)) {
+    if (!this.g.b(☃)) {
       return false;
     }
     return true;
@@ -66,25 +66,25 @@ public class qs<T extends pk>
   
   public boolean b()
   {
-    return !h.m();
+    return !this.h.m();
   }
   
   public void c()
   {
-    h.a(g, d);
+    this.h.a(this.g, this.d);
   }
   
   public void d()
   {
-    b = null;
+    this.b = null;
   }
   
   public void e()
   {
-    if (a.h(b) < 49.0D) {
-      a.s().a(e);
+    if (this.a.h(this.b) < 49.0D) {
+      this.a.s().a(this.e);
     } else {
-      a.s().a(d);
+      this.a.s().a(this.d);
     }
   }
 }

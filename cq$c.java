@@ -4,10 +4,9 @@ import java.util.Iterator;
 import java.util.Random;
 
 public enum cq$c
-  implements Predicate, Iterable
+  implements Predicate<cq>, Iterable<cq>
 {
-  private static final c[] c = { a, b };
-  private static final String __OBFID = "CL_00002319";
+  private cq$c() {}
   
   public cq[] a()
   {
@@ -21,24 +20,19 @@ public enum cq$c
     throw new Error("Someone's been tampering with the universe!");
   }
   
-  public cq a(Random rand)
+  public cq a(Random ☃)
   {
-    cq[] var2 = a();
-    return var2[rand.nextInt(var2.length)];
+    cq[] ☃ = a();
+    return ☃[☃.nextInt(☃.length)];
   }
   
-  public boolean a(cq facing)
+  public boolean a(cq ☃)
   {
-    return (facing != null) && (facing.k().d() == this);
+    return (☃ != null) && (☃.k().d() == this);
   }
   
-  public Iterator iterator()
+  public Iterator<cq> iterator()
   {
     return Iterators.forArray(a());
-  }
-  
-  public boolean apply(Object p_apply_1_)
-  {
-    return a((cq)p_apply_1_);
   }
 }

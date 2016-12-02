@@ -28,9 +28,9 @@ public class MessageChatComponent
     this.message = message;
     this.sender = sender;
     this.sentTime = sentTime;
-    id = LabyMod.random.nextLong();
-    if (id == 0L) {
-      id += 1L;
+    this.id = LabyMod.random.nextLong();
+    if (this.id == 0L) {
+      this.id += 1L;
     }
   }
   
@@ -41,39 +41,39 @@ public class MessageChatComponent
   
   public SingleChat getChat()
   {
-    return chat;
+    return this.chat;
   }
   
   public boolean isDownloaded()
   {
-    return downloaded;
+    return this.downloaded;
   }
   
   public long getId()
   {
-    return id;
+    return this.id;
   }
   
   public void draw(int x, int y)
   {
-    gx = x;
-    gy = y;
-    max = (getInstancedraw.getWidth() - 150);
+    this.gx = x;
+    this.gy = y;
+    this.max = (LabyMod.getInstance().draw.getWidth() - 150);
     String prefix = Color.cl("7");
     if (getSender().equals(LabyMod.getInstance().getPlayerName())) {
       prefix = Color.cl("f");
     }
     String msg = Color.cl("6") + "[" + format.format(new Date(getSentTime())) + "] " + prefix + getSender() + ": " + Color.cl("f") + getMessage().replace("´", "'");
-    range = getRange(msg);
-    y -= range * 12;
+    this.range = getRange(msg);
+    y -= this.range * 12;
     
-    String next = getFirstStrings(max, msg);
+    String next = getFirstStrings(this.max, msg);
     String done = "";
-    for (int i = 0; i <= range; i++)
+    for (int i = 0; i <= this.range; i++)
     {
-      getInstancedraw.drawString(next, x, y + i * 12);
+      LabyMod.getInstance().draw.drawString(next, x, y + i * 12);
       done = done + next;
-      next = getFirstStrings(max, msg.replace(done, ""));
+      next = getFirstStrings(this.max, msg.replace(done, ""));
     }
   }
   
@@ -84,7 +84,7 @@ public class MessageChatComponent
     for (int i = 0; i < string.length(); i++)
     {
       char c = string.charAt(i);
-      k += getInstancedraw.getStringWidth(new String(new char[] { c }));
+      k += LabyMod.getInstance().draw.getStringWidth(new String(new char[] { c }));
       if (pixels > k)
       {
         result = result + new String(new char[] { c });
@@ -109,44 +109,44 @@ public class MessageChatComponent
     for (int i = 0; i <= line.length() - 1; i++)
     {
       char a = line.charAt(i);
-      if (k > max)
+      if (k > this.max)
       {
         range++;
         k = 0;
       }
-      k += getInstancedraw.getStringWidth("" + a);
+      k += LabyMod.getInstance().draw.getStringWidth("" + a);
     }
     return range;
   }
   
   public int getYSize()
   {
-    return (range + 1) * 12;
+    return (this.range + 1) * 12;
   }
   
   public String getMessage()
   {
-    return message;
+    return this.message;
   }
   
   public String getSender()
   {
-    return sender;
+    return this.sender;
   }
   
   public long getSentTime()
   {
-    return sentTime;
+    return this.sentTime;
   }
   
   public void click(int mouseX, int mouseY, int mouseButton)
   {
-    range = getRange(message);
-    if ((mouseX > gx) && (mouseX < gx + getInstancedraw.getStringWidth(message) + 100) && (mouseY < gy + 12) && (mouseY > gy - getYSize() + 12))
+    this.range = getRange(this.message);
+    if ((mouseX > this.gx) && (mouseX < this.gx + LabyMod.getInstance().draw.getStringWidth(this.message) + 100) && (mouseY < this.gy + 12) && (mouseY > this.gy - getYSize() + 12))
     {
-      ArrayList<String> urls = Utils.extractDomains(message);
+      ArrayList<String> urls = Utils.extractDomains(this.message);
       if (!urls.isEmpty()) {
-        LabyMod.getInstance().openWebpage((String)urls.get(0));
+        LabyMod.getInstance().openWebpage((String)urls.get(0), true);
       }
     }
   }

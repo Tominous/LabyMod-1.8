@@ -9,10 +9,10 @@ public enum uq$a
   
   private uq$a(String ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    B = ☃;
-    C = ☃;
-    D = ☃;
-    E = ☃;
-    F = ☃;
+    this.B = ☃;
+    this.C = ☃;
+    this.D = ☃;
+    this.E = ☃;
+    this.F = ☃;
   }
 }

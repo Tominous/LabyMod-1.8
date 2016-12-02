@@ -9,14 +9,14 @@ public class to
     a(0.9F, 1.3F);
     
     ((sv)s()).a(true);
-    i.a(0, new ra(this));
-    i.a(1, new rv(this, 2.0D));
-    i.a(2, new qv(this, 1.0D));
-    i.a(3, new sh(this, 1.25D, zy.O, false));
-    i.a(4, new rc(this, 1.25D));
-    i.a(5, new rz(this, 1.0D));
-    i.a(6, new ri(this, wn.class, 6.0F));
-    i.a(7, new ry(this));
+    this.i.a(0, new ra(this));
+    this.i.a(1, new rv(this, 2.0D));
+    this.i.a(2, new qv(this, 1.0D));
+    this.i.a(3, new sh(this, 1.25D, zy.O, false));
+    this.i.a(4, new rc(this, 1.25D));
+    this.i.a(5, new rz(this, 1.0D));
+    this.i.a(6, new ri(this, wn.class, 6.0F));
+    this.i.a(7, new ry(this));
   }
   
   protected void aX()
@@ -59,11 +59,11 @@ public class to
   
   protected void b(boolean ☃, int ☃)
   {
-    int ☃ = V.nextInt(3) + V.nextInt(1 + ☃);
+    int ☃ = this.V.nextInt(3) + this.V.nextInt(1 + ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
       a(zy.aF, 1);
     }
-    ☃ = V.nextInt(3) + 1 + V.nextInt(1 + ☃);
+    ☃ = this.V.nextInt(3) + 1 + this.V.nextInt(1 + ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
       if (at()) {
         a(zy.bj, 1);
@@ -75,12 +75,12 @@ public class to
   
   public boolean a(wn ☃)
   {
-    zx ☃ = bi.h();
-    if ((☃ != null) && (☃.b() == zy.aw) && (!bA.d) && (!j_()))
+    zx ☃ = ☃.bi.h();
+    if ((☃ != null) && (☃.b() == zy.aw) && (!☃.bA.d) && (!j_()))
     {
-      if (b-- == 1) {
-        bi.a(bi.c, new zx(zy.aG));
-      } else if (!bi.a(new zx(zy.aG))) {
+      if (☃.b-- == 1) {
+        ☃.bi.a(☃.bi.c, new zx(zy.aG));
+      } else if (!☃.bi.a(new zx(zy.aG))) {
         ☃.a(new zx(zy.aG, 1, 0), false);
       }
       return true;
@@ -90,11 +90,11 @@ public class to
   
   public to b(ph ☃)
   {
-    return new to(o);
+    return new to(this.o);
   }
   
   public float aS()
   {
-    return K;
+    return this.K;
   }
 }

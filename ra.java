@@ -7,20 +7,20 @@ public class ra
   
   public ra(ps ☃)
   {
-    a = ☃;
+    this.a = ☃;
     a(4);
     ((sv)☃.s()).d(true);
   }
   
   public boolean a()
   {
-    return (a.V()) || (a.ab());
+    return (this.a.V()) || (this.a.ab());
   }
   
   public void e()
   {
-    if (a.bc().nextFloat() < 0.8F) {
-      a.r().a();
+    if (this.a.bc().nextFloat() < 0.8F) {
+      this.a.r().a();
     }
   }
 }

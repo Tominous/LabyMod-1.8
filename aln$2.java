@@ -5,12 +5,12 @@ class aln$2
   
   public String e_()
   {
-    return val$playerIn.e_();
+    return this.val$playerIn.e_();
   }
   
   public eu f_()
   {
-    return val$playerIn.f_();
+    return this.val$playerIn.f_();
   }
   
   public void a(eu component) {}
@@ -22,22 +22,22 @@ class aln$2
   
   public cj c()
   {
-    return this$0.c;
+    return this.this$0.c;
   }
   
   public aui d()
   {
-    return new aui(this$0.c.n() + 0.5D, this$0.c.o() + 0.5D, this$0.c.p() + 0.5D);
+    return new aui(this.this$0.c.n() + 0.5D, this.this$0.c.o() + 0.5D, this.this$0.c.p() + 0.5D);
   }
   
   public adm e()
   {
-    return val$playerIn.e();
+    return this.val$playerIn.e();
   }
   
   public pk f()
   {
-    return val$playerIn;
+    return this.val$playerIn;
   }
   
   public boolean u_()
@@ -47,6 +47,6 @@ class aln$2
   
   public void a(n.a type, int amount)
   {
-    aln.a(this$0).a(this, type, amount);
+    aln.a(this.this$0).a(this, type, amount);
   }
 }

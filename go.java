@@ -14,32 +14,32 @@ public class go
   
   public go(amy ☃, boolean ☃, int ☃)
   {
-    a = a;
-    b = b;
-    d = ☃;
+    this.a = ☃.a;
+    this.b = ☃.b;
+    this.d = ☃;
     
-    c = a(☃, ☃, !pt.o(), ☃);
+    this.c = a(☃, ☃, !☃.p().t.o(), ☃);
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readInt();
-    b = ☃.readInt();
-    d = ☃.readBoolean();
-    c = new go.a();
-    c.b = ☃.readShort();
-    c.a = ☃.a();
+    this.a = ☃.readInt();
+    this.b = ☃.readInt();
+    this.d = ☃.readBoolean();
+    this.c = new go.a();
+    this.c.b = ☃.readShort();
+    this.c.a = ☃.a();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeInt(a);
-    ☃.writeInt(b);
-    ☃.writeBoolean(d);
-    ☃.writeShort((short)(c.b & 0xFFFF));
-    ☃.a(c.a);
+    ☃.writeInt(this.a);
+    ☃.writeInt(this.b);
+    ☃.writeBoolean(this.d);
+    ☃.writeShort((short)(this.c.b & 0xFFFF));
+    ☃.a(this.c.a);
   }
   
   public void a(fj ☃)
@@ -49,7 +49,7 @@ public class go
   
   public byte[] a()
   {
-    return c.a;
+    return this.c.a;
   }
   
   protected static int a(int ☃, boolean ☃, boolean ☃)
@@ -72,31 +72,31 @@ public class go
       amz ☃ = ☃[☃];
       if ((☃ != null) && ((!☃) || (!☃.a())) && ((☃ & 1 << ☃) != 0))
       {
-        b |= 1 << ☃;
+        ☃.b |= 1 << ☃;
         ☃.add(☃);
       }
     }
-    a = new byte[a(Integer.bitCount(b), ☃, ☃)];
+    ☃.a = new byte[a(Integer.bitCount(☃.b), ☃, ☃)];
     int ☃ = 0;
     for (amz ☃ : ☃)
     {
       char[] ☃ = ☃.g();
       for (char ☃ : ☃)
       {
-        a[(☃++)] = ((byte)(☃ & 0xFF));
-        a[(☃++)] = ((byte)(☃ >> '\b' & 0xFF));
+        ☃.a[(☃++)] = ((byte)(☃ & 0xFF));
+        ☃.a[(☃++)] = ((byte)(☃ >> '\b' & 0xFF));
       }
     }
     for (amz ☃ : ☃) {
-      ☃ = a(☃.h().a(), a, ☃);
+      ☃ = a(☃.h().a(), ☃.a, ☃);
     }
     if (☃) {
       for (amz ☃ : ☃) {
-        ☃ = a(☃.i().a(), a, ☃);
+        ☃ = a(☃.i().a(), ☃.a, ☃);
       }
     }
     if (☃) {
-      a(☃.k(), a, ☃);
+      a(☃.k(), ☃.a, ☃);
     }
     return ☃;
   }
@@ -109,22 +109,22 @@ public class go
   
   public int b()
   {
-    return a;
+    return this.a;
   }
   
   public int c()
   {
-    return b;
+    return this.b;
   }
   
   public int d()
   {
-    return c.b;
+    return this.c.b;
   }
   
   public boolean e()
   {
-    return d;
+    return this.d;
   }
   
   public static class a

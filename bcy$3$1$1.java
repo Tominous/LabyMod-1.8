@@ -7,11 +7,11 @@ class bcy$3$1$1
   
   public void onSuccess(Object ☃)
   {
-    bcy.a(a.a.c).a(new iu(a.a.a, iu.a.a));
+    bcy.a(this.a.a.c).a(new iu(this.a.a.a, iu.a.a));
   }
   
   public void onFailure(Throwable ☃)
   {
-    bcy.a(a.a.c).a(new iu(a.a.a, iu.a.c));
+    bcy.a(this.a.a.c).a(new iu(this.a.a.a, iu.a.c));
   }
 }

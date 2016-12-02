@@ -17,10 +17,10 @@ public class sh
   
   public sh(py ☃, double ☃, zw ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
-    k = ☃;
-    l = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.k = ☃;
+    this.l = ☃;
     a(3);
     if (!(☃.s() instanceof sv)) {
       throw new IllegalArgumentException("Unsupported mob type for TemptGoal");
@@ -29,20 +29,20 @@ public class sh
   
   public boolean a()
   {
-    if (i > 0)
+    if (this.i > 0)
     {
-      i -= 1;
+      this.i -= 1;
       return false;
     }
-    h = a.o.a(a, 10.0D);
-    if (h == null) {
+    this.h = this.a.o.a(this.a, 10.0D);
+    if (this.h == null) {
       return false;
     }
-    zx ☃ = h.bZ();
+    zx ☃ = this.h.bZ();
     if (☃ == null) {
       return false;
     }
-    if (☃.b() != k) {
+    if (☃.b() != this.k) {
       return false;
     }
     return true;
@@ -50,60 +50,60 @@ public class sh
   
   public boolean b()
   {
-    if (l)
+    if (this.l)
     {
-      if (a.h(h) < 36.0D)
+      if (this.a.h(this.h) < 36.0D)
       {
-        if (h.e(c, d, e) > 0.010000000000000002D) {
+        if (this.h.e(this.c, this.d, this.e) > 0.010000000000000002D) {
           return false;
         }
-        if ((Math.abs(h.z - f) > 5.0D) || (Math.abs(h.y - g) > 5.0D)) {
+        if ((Math.abs(this.h.z - this.f) > 5.0D) || (Math.abs(this.h.y - this.g) > 5.0D)) {
           return false;
         }
       }
       else
       {
-        c = h.s;
-        d = h.t;
-        e = h.u;
+        this.c = this.h.s;
+        this.d = this.h.t;
+        this.e = this.h.u;
       }
-      f = h.z;
-      g = h.y;
+      this.f = this.h.z;
+      this.g = this.h.y;
     }
     return a();
   }
   
   public void c()
   {
-    c = h.s;
-    d = h.t;
-    e = h.u;
-    j = true;
-    m = ((sv)a.s()).e();
-    ((sv)a.s()).a(false);
+    this.c = this.h.s;
+    this.d = this.h.t;
+    this.e = this.h.u;
+    this.j = true;
+    this.m = ((sv)this.a.s()).e();
+    ((sv)this.a.s()).a(false);
   }
   
   public void d()
   {
-    h = null;
-    a.s().n();
-    i = 100;
-    j = false;
-    ((sv)a.s()).a(m);
+    this.h = null;
+    this.a.s().n();
+    this.i = 100;
+    this.j = false;
+    ((sv)this.a.s()).a(this.m);
   }
   
   public void e()
   {
-    a.p().a(h, 30.0F, a.bQ());
-    if (a.h(h) < 6.25D) {
-      a.s().n();
+    this.a.p().a(this.h, 30.0F, this.a.bQ());
+    if (this.a.h(this.h) < 6.25D) {
+      this.a.s().n();
     } else {
-      a.s().a(h, b);
+      this.a.s().a(this.h, this.b);
     }
   }
   
   public boolean f()
   {
-    return j;
+    return this.j;
   }
 }

@@ -15,7 +15,7 @@ public class up
     float ☃ = 0.125F;
     float ☃ = 0.1875F;
     float ☃ = 0.25F;
-    a(new aug(s - 0.1875D, t - 0.25D + 0.125D, u - 0.1875D, s + 0.1875D, t + 0.25D + 0.125D, u + 0.1875D));
+    a(new aug(this.s - 0.1875D, this.t - 0.25D + 0.125D, this.u - 0.1875D, this.s + 0.1875D, this.t + 0.25D + 0.125D, this.u + 0.1875D));
   }
   
   protected void h()
@@ -62,10 +62,10 @@ public class up
     
     boolean ☃ = false;
     if ((☃ != null) && (☃.b() == zy.cn) && 
-      (!o.D))
+      (!this.o.D))
     {
       double ☃ = 7.0D;
-      List<ps> ☃ = o.a(ps.class, new aug(s - ☃, t - ☃, u - ☃, s + ☃, t + ☃, u + ☃));
+      List<ps> ☃ = this.o.a(ps.class, new aug(this.s - ☃, this.t - ☃, this.u - ☃, this.s + ☃, this.t + ☃, this.u + ☃));
       for (ps ☃ : ☃) {
         if ((☃.cc()) && (☃.cd() == ☃))
         {
@@ -74,13 +74,13 @@ public class up
         }
       }
     }
-    if ((!o.D) && (!☃))
+    if ((!this.o.D) && (!☃))
     {
       J();
-      if (bA.d)
+      if (☃.bA.d)
       {
         double ☃ = 7.0D;
-        List<ps> ☃ = o.a(ps.class, new aug(s - ☃, t - ☃, u - ☃, s + ☃, t + ☃, u + ☃));
+        List<ps> ☃ = this.o.a(ps.class, new aug(this.s - ☃, this.t - ☃, this.u - ☃, this.s + ☃, this.t + ☃, this.u + ☃));
         for (ps ☃ : ☃) {
           if ((☃.cc()) && (☃.cd() == this)) {
             ☃.a(true, false);
@@ -93,13 +93,13 @@ public class up
   
   public boolean j()
   {
-    return o.p(a).c() instanceof agt;
+    return this.o.p(this.a).c() instanceof agt;
   }
   
   public static up a(adm ☃, cj ☃)
   {
     up ☃ = new up(☃, ☃);
-    n = true;
+    ☃.n = true;
     ☃.d(☃);
     return ☃;
   }

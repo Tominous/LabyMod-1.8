@@ -16,9 +16,9 @@ public class bgq
   
   public bgq(Vector3f ☃, Vector3f ☃, Vector3f ☃)
   {
-    b = new Vector3f(☃);
-    c = new Vector3f(☃);
-    d = new Vector3f(☃);
+    this.b = new Vector3f(☃);
+    this.c = new Vector3f(☃);
+    this.d = new Vector3f(☃);
   }
   
   public boolean equals(Object ☃)
@@ -30,13 +30,13 @@ public class bgq
       return false;
     }
     bgq ☃ = (bgq)☃;
-    if (!b.equals(b)) {
+    if (!this.b.equals(☃.b)) {
       return false;
     }
-    if (!d.equals(d)) {
+    if (!this.d.equals(☃.d)) {
       return false;
     }
-    if (!c.equals(c)) {
+    if (!this.c.equals(☃.c)) {
       return false;
     }
     return true;
@@ -44,9 +44,9 @@ public class bgq
   
   public int hashCode()
   {
-    int ☃ = b.hashCode();
-    ☃ = 31 * ☃ + c.hashCode();
-    ☃ = 31 * ☃ + d.hashCode();
+    int ☃ = this.b.hashCode();
+    ☃ = 31 * ☃ + this.c.hashCode();
+    ☃ = 31 * ☃ + this.d.hashCode();
     return ☃;
   }
   
@@ -66,14 +66,14 @@ public class bgq
       
       Vector3f ☃ = a(☃, "translation", b);
       ☃.scale(0.0625F);
-      x = ns.a(x, -1.5F, 1.5F);
-      y = ns.a(y, -1.5F, 1.5F);
-      z = ns.a(z, -1.5F, 1.5F);
+      ☃.x = ns.a(☃.x, -1.5F, 1.5F);
+      ☃.y = ns.a(☃.y, -1.5F, 1.5F);
+      ☃.z = ns.a(☃.z, -1.5F, 1.5F);
       
       Vector3f ☃ = a(☃, "scale", c);
-      x = ns.a(x, -4.0F, 4.0F);
-      y = ns.a(y, -4.0F, 4.0F);
-      z = ns.a(z, -4.0F, 4.0F);
+      ☃.x = ns.a(☃.x, -4.0F, 4.0F);
+      ☃.y = ns.a(☃.y, -4.0F, 4.0F);
+      ☃.z = ns.a(☃.z, -4.0F, 4.0F);
       
       return new bgq(☃, ☃, ☃);
     }

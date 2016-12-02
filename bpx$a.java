@@ -13,14 +13,14 @@ class bpx$a
   {
     synchronized (SoundSystemConfig.THREAD_SYNC)
     {
-      if (soundLibrary == null) {
+      if (this.soundLibrary == null) {
         return false;
       }
-      Source ☃ = (Source)soundLibrary.getSources().get(☃);
+      Source ☃ = (Source)this.soundLibrary.getSources().get(☃);
       if (☃ == null) {
         return false;
       }
-      return (☃.playing()) || (☃.paused()) || (preLoad);
+      return (☃.playing()) || (☃.paused()) || (☃.preLoad);
     }
   }
 }

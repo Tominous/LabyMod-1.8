@@ -13,27 +13,27 @@ public abstract class qf
   
   public qc a(qb ☃)
   {
-    return (qc)a.get(☃);
+    return (qc)this.a.get(☃);
   }
   
   public qc a(String ☃)
   {
-    return (qc)b.get(☃);
+    return (qc)this.b.get(☃);
   }
   
   public qc b(qb ☃)
   {
-    if (b.containsKey(☃.a())) {
+    if (this.b.containsKey(☃.a())) {
       throw new IllegalArgumentException("Attribute is already registered!");
     }
     qc ☃ = c(☃);
-    b.put(☃.a(), ☃);
-    a.put(☃, ☃);
+    this.b.put(☃.a(), ☃);
+    this.a.put(☃, ☃);
     
     qb ☃ = ☃.d();
     while (☃ != null)
     {
-      c.put(☃, ☃);
+      this.c.put(☃, ☃);
       ☃ = ☃.d();
     }
     return ☃;
@@ -43,7 +43,7 @@ public abstract class qf
   
   public Collection<qc> a()
   {
-    return b.values();
+    return this.b.values();
   }
   
   public void a(qc ☃) {}

@@ -34,13 +34,13 @@ import org.apache.commons.io.IOUtils;
 public class AccountManagerGUI
   extends axu
 {
-  public static final avn fontRendererObj = Ak;
+  public static final avn fontRendererObj = ave.A().k;
   private AccountList list;
   private static avr resolution;
   
   public AccountList getList()
   {
-    return list;
+    return this.list;
   }
   
   public AccountManagerGUI() {}
@@ -49,40 +49,40 @@ public class AccountManagerGUI
   {
     AccountManager.loadPlayerHead(userName);
     
-    statusMessage = ("§aAdded account: " + userName);
-    lastStatusMessageChanged = System.currentTimeMillis();
+    this.statusMessage = ("§aAdded account: " + userName);
+    this.lastStatusMessageChanged = System.currentTimeMillis();
   }
   
   public void b()
   {
     resolution = new avr(ave.A());
-    n.clear();
+    this.n.clear();
     if (AccountManager.accounts.size() != 0)
     {
-      list = new AccountList(ave.A(), resolution.a() - 20, resolution.b() - 50, 25, resolution.b() - 25, 20, 10);
+      this.list = new AccountList(ave.A(), resolution.a() - 20, resolution.b() - 50, 25, resolution.b() - 25, 20, 10);
       
       List<String> accounts = new ArrayList();
       for (Account acc : AccountManager.accounts) {
         accounts.add(acc.getUserName());
       }
-      list.setAccounts(this, accounts);
+      this.list.setAccounts(this, accounts);
     }
     else
     {
-      list = null;
+      this.list = null;
     }
     avs login = new FancyButton(3, 5, resolution.b() - 22, 60, 20, "Login");
-    l = false;
+    login.l = false;
     
     Object logout = new FancyButton(4, 70, resolution.b() - 22, 60, 20, "Logout");
-    l = false;
+    ((avs)logout).l = false;
     
-    n.add(new FancyButton(5, 135, resolution
+    this.n.add(new FancyButton(5, 135, resolution
       .b() - 22, 120, 20, "Add Account"));
-    n.add(login);
-    n.add(logout);
+    this.n.add(login);
+    this.n.add(logout);
     
-    n.add(new FancyButton(6, 5, 3, 20, 20, "§c«"));
+    this.n.add(new FancyButton(6, 5, 3, 20, 20, "§c«"));
     
     super.b();
   }
@@ -90,7 +90,7 @@ public class AccountManagerGUI
   public void a(int mouseX, int mouseY, float partialTicks)
   {
     c();
-    if (list == null)
+    if (this.list == null)
     {
       String info = "Something went wrong!";
       fontRendererObj.a(info, resolution.a() / 2 - fontRendererObj
@@ -99,18 +99,18 @@ public class AccountManagerGUI
     }
     else
     {
-      list.drawScreen(mouseX, mouseY, partialTicks);
+      this.list.drawScreen(mouseX, mouseY, partialTicks);
     }
-    if ((!statusMessage.equals("")) && ((lastStatusMessageChanged == -1L) || 
+    if ((!this.statusMessage.equals("")) && ((this.lastStatusMessageChanged == -1L) || 
     
-      (System.currentTimeMillis() - lastStatusMessageChanged < 2000L)))
+      (System.currentTimeMillis() - this.lastStatusMessageChanged < 2000L)))
     {
-      a(0, 10, l, 30, Color.BLACK.getRGB());
-      fontRendererObj.a(statusMessage, l / 2 - fontRendererObj
-        .a(statusMessage) / 2, 16, 16777215);
+      a(0, 10, this.l, 30, Color.BLACK.getRGB());
+      fontRendererObj.a(this.statusMessage, this.l / 2 - fontRendererObj
+        .a(this.statusMessage) / 2, 16, 16777215);
     }
     String devInfo = "AccountManager v1.0";
-    fontRendererObj.a(devInfo, l - fontRendererObj.a(devInfo) - 5, 5, 16777215);
+    fontRendererObj.a(devInfo, this.l - fontRendererObj.a(devInfo) - 5, 5, 16777215);
     
     super.a(mouseX, mouseY, partialTicks);
   }
@@ -122,13 +122,13 @@ public class AccountManagerGUI
     throws IOException
   {
     super.a(button);
-    if (k == 3) {
+    if (button.k == 3) {
       for (final Account account : AccountManager.accounts) {
-        if (account.getUserName().equals(list
+        if (account.getUserName().equals(this.list
           .getAccountEntry().getName()))
         {
-          statusMessage = "§eLogging in...";
-          lastStatusMessageChanged = -1L;
+          this.statusMessage = "§eLogging in...";
+          this.lastStatusMessageChanged = -1L;
           
           System.out.println("[AccountManager] Logging in... (" + account
             .getUserName() + ")");
@@ -144,8 +144,8 @@ public class AccountManagerGUI
                 if (result.equals(""))
                 {
                   account.setToCurrentUser();
-                  statusMessage = "§2Logged in! Enjoy playing!";
-                  lastStatusMessageChanged = 
+                  AccountManagerGUI.this.statusMessage = "§2Logged in! Enjoy playing!";
+                  AccountManagerGUI.this.lastStatusMessageChanged = 
                     System.currentTimeMillis();
                   
                   System.out
@@ -154,8 +154,8 @@ public class AccountManagerGUI
                 }
                 else
                 {
-                  statusMessage = "§4Failed to login! Invalid accessToken!";
-                  lastStatusMessageChanged = 
+                  AccountManagerGUI.this.statusMessage = "§4Failed to login! Invalid accessToken!";
+                  AccountManagerGUI.this.lastStatusMessageChanged = 
                     System.currentTimeMillis();
                   
                   AccountManagerGUI.this.logOut(account.getUuid().toString());
@@ -164,8 +164,8 @@ public class AccountManagerGUI
               catch (Exception e)
               {
                 e.printStackTrace();
-                statusMessage = ("§4Failed login! " + e.getMessage());
-                lastStatusMessageChanged = 
+                AccountManagerGUI.this.statusMessage = ("§4Failed login! " + e.getMessage());
+                AccountManagerGUI.this.lastStatusMessageChanged = 
                   System.currentTimeMillis();
               }
             }
@@ -175,22 +175,22 @@ public class AccountManagerGUI
         }
       }
     }
-    if (k == 4) {
+    if (button.k == 4) {
       for (Account account : AccountManager.accounts) {
-        if (account.getUserName().equals(list
+        if (account.getUserName().equals(this.list
           .getAccountEntry().getName())) {
           logOut(account.getUuid().toString());
         }
       }
     }
-    if (k == 5) {
-      j.a(new LoginGui());
+    if (button.k == 5) {
+      this.j.a(new LoginGui());
     }
-    if (k == 6) {
-      j.a(ModAPI.getLastScreen());
+    if (button.k == 6) {
+      this.j.a(ModAPI.getLastScreen());
     }
-    if (list != null) {
-      list.actionPerformed(button);
+    if (this.list != null) {
+      this.list.actionPerformed(button);
     }
   }
   
@@ -208,7 +208,7 @@ public class AccountManagerGUI
     for (Account acc : AccountManager.accounts) {
       accounts.add(acc.getUserName());
     }
-    list.setAccounts(this, accounts);
+    this.list.setAccounts(this, accounts);
     
     JsonParser parser = new JsonParser();
     String text = null;
@@ -301,8 +301,8 @@ public class AccountManagerGUI
     throws IOException
   {
     super.k();
-    if (list != null) {
-      list.handleMouseInput();
+    if (this.list != null) {
+      this.list.handleMouseInput();
     }
   }
   
@@ -310,13 +310,13 @@ public class AccountManagerGUI
     throws IOException
   {
     super.a(mouseX, mouseY, mouseButton);
-    if (list != null) {
-      list.mouseClicked(mouseX, mouseY, mouseButton);
+    if (this.list != null) {
+      this.list.mouseClicked(mouseX, mouseY, mouseButton);
     }
   }
   
   public List<avs> getButtonList()
   {
-    return n;
+    return this.n;
   }
 }

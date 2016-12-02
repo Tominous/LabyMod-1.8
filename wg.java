@@ -8,26 +8,26 @@ public class wg
   
   public wg(wn ☃, eu ☃)
   {
-    b = ☃;
-    d = ☃;
-    a = new ya(☃, this);
+    this.b = ☃;
+    this.d = ☃;
+    this.a = new ya(☃, this);
   }
   
   public wn v_()
   {
-    return b;
+    return this.b;
   }
   
   public void a_(wn ☃) {}
   
   public ada b_(wn ☃)
   {
-    return c;
+    return this.c;
   }
   
   public void a(ada ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public void a(acz ☃)
@@ -39,8 +39,8 @@ public class wg
   
   public eu f_()
   {
-    if (d != null) {
-      return d;
+    if (this.d != null) {
+      return this.d;
     }
     return new fb("entity.Villager.name", new Object[0]);
   }

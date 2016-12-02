@@ -39,7 +39,7 @@ public class ae
     wn ☃ = ☃.length > 1 ? a(☃, ☃[1]) : b(☃);
     if (☃)
     {
-      ☃.a(n.a.e, bB);
+      ☃.a(n.a.e, ☃.bB);
       if (☃)
       {
         ☃.a(-☃);
@@ -53,7 +53,7 @@ public class ae
     }
     else
     {
-      ☃.a(n.a.e, bC);
+      ☃.a(n.a.e, ☃.bC);
       if (☃) {
         throw new bz("commands.xp.failure.widthdrawXp", new Object[0]);
       }

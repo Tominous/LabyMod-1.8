@@ -18,20 +18,20 @@ public class aua
   
   public aua(atp ☃)
   {
-    b = ☃;
+    this.b = ☃;
     b();
   }
   
   public ate a(Class<? extends ate> ☃, String ☃)
   {
-    ate ☃ = (ate)a.get(☃);
+    ate ☃ = (ate)this.a.get(☃);
     if (☃ != null) {
       return ☃;
     }
-    if (b != null) {
+    if (this.b != null) {
       try
       {
-        File ☃ = b.a(☃);
+        File ☃ = this.b.a(☃);
         if ((☃ != null) && (☃.exists()))
         {
           try
@@ -56,26 +56,26 @@ public class aua
     }
     if (☃ != null)
     {
-      a.put(☃, ☃);
-      c.add(☃);
+      this.a.put(☃, ☃);
+      this.c.add(☃);
     }
     return ☃;
   }
   
   public void a(String ☃, ate ☃)
   {
-    if (a.containsKey(☃)) {
-      c.remove(a.remove(☃));
+    if (this.a.containsKey(☃)) {
+      this.c.remove(this.a.remove(☃));
     }
-    a.put(☃, ☃);
-    c.add(☃);
+    this.a.put(☃, ☃);
+    this.c.add(☃);
   }
   
   public void a()
   {
-    for (int ☃ = 0; ☃ < c.size(); ☃++)
+    for (int ☃ = 0; ☃ < this.c.size(); ☃++)
     {
-      ate ☃ = (ate)c.get(☃);
+      ate ☃ = (ate)this.c.get(☃);
       if (☃.d())
       {
         a(☃);
@@ -86,12 +86,12 @@ public class aua
   
   private void a(ate ☃)
   {
-    if (b == null) {
+    if (this.b == null) {
       return;
     }
     try
     {
-      File ☃ = b.a(a);
+      File ☃ = this.b.a(☃.a);
       if (☃ != null)
       {
         dn ☃ = new dn();
@@ -115,11 +115,11 @@ public class aua
   {
     try
     {
-      d.clear();
-      if (b == null) {
+      this.d.clear();
+      if (this.b == null) {
         return;
       }
-      File ☃ = b.a("idcounts");
+      File ☃ = this.b.a("idcounts");
       if ((☃ != null) && (☃.exists()))
       {
         DataInputStream ☃ = new DataInputStream(new FileInputStream(☃));
@@ -133,7 +133,7 @@ public class aua
             dz ☃ = (dz)☃;
             String ☃ = ☃;
             short ☃ = ☃.e();
-            d.put(☃, Short.valueOf(☃));
+            this.d.put(☃, Short.valueOf(☃));
           }
         }
       }
@@ -147,7 +147,7 @@ public class aua
   
   public int a(String ☃)
   {
-    Short ☃ = (Short)d.get(☃);
+    Short ☃ = (Short)this.d.get(☃);
     Short localShort1;
     if (☃ == null)
     {
@@ -157,19 +157,19 @@ public class aua
     {
       localShort1 = ☃;Short localShort2 = ☃ = Short.valueOf((short)(☃.shortValue() + 1));
     }
-    d.put(☃, ☃);
-    if (b == null) {
+    this.d.put(☃, ☃);
+    if (this.b == null) {
       return ☃.shortValue();
     }
     try
     {
-      File ☃ = b.a("idcounts");
+      File ☃ = this.b.a("idcounts");
       if (☃ != null)
       {
         dn ☃ = new dn();
-        for (String ☃ : d.keySet())
+        for (String ☃ : this.d.keySet())
         {
-          short ☃ = ((Short)d.get(☃)).shortValue();
+          short ☃ = ((Short)this.d.get(☃)).shortValue();
           ☃.a(☃, ☃);
         }
         DataOutputStream ☃ = new DataOutputStream(new FileOutputStream(☃));

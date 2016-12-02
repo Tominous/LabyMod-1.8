@@ -59,7 +59,7 @@ public class agm
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (D) {
+    if (☃.D) {
       return true;
     }
     akw ☃ = ☃.s(☃);

@@ -9,7 +9,7 @@ public class afr
   public afr()
   {
     super(arm.f, arn.m);
-    j(M.b().a(a, Integer.valueOf(0)));
+    j(this.M.b().a(a, Integer.valueOf(0)));
   }
   
   public void a(adm ☃, cj ☃, alz ☃, aug ☃, List<aug> ☃, pk ☃)
@@ -48,7 +48,7 @@ public class afr
   {
     int ☃ = ((Integer)☃.b(a)).intValue();
     float ☃ = ☃.o() + (6.0F + 3 * ☃) / 16.0F;
-    if ((!D) && (☃.at()) && (☃ > 0) && (aRb <= ☃))
+    if ((!☃.D) && (☃.at()) && (☃ > 0) && (☃.aR().b <= ☃))
     {
       ☃.N();
       
@@ -58,10 +58,10 @@ public class afr
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (D) {
+    if (☃.D) {
       return true;
     }
-    zx ☃ = bi.h();
+    zx ☃ = ☃.bi.h();
     if (☃ == null) {
       return true;
     }
@@ -71,8 +71,8 @@ public class afr
     {
       if (☃ < 3)
       {
-        if (!bA.d) {
-          bi.a(bi.c, new zx(zy.aw));
+        if (!☃.bA.d) {
+          ☃.bi.a(☃.bi.c, new zx(zy.aw));
         }
         ☃.b(na.I);
         
@@ -84,19 +84,19 @@ public class afr
     {
       if (☃ > 0)
       {
-        if (!bA.d)
+        if (!☃.bA.d)
         {
           zx ☃ = new zx(zy.bz, 1, 0);
-          if (!bi.a(☃)) {
+          if (!☃.bi.a(☃)) {
             ☃.d(new uz(☃, ☃.n() + 0.5D, ☃.o() + 1.5D, ☃.p() + 0.5D, ☃));
           } else if ((☃ instanceof lf)) {
-            ((lf)☃).a(bj);
+            ((lf)☃).a(☃.bj);
           }
           ☃.b(na.J);
           
-          b -= 1;
-          if (b <= 0) {
-            bi.a(bi.c, null);
+          ☃.b -= 1;
+          if (☃.b <= 0) {
+            ☃.bi.a(☃.bi.c, null);
           }
         }
         a(☃, ☃, ☃, ☃ - 1);
@@ -118,25 +118,25 @@ public class afr
       (aku.c(☃) > 0))
     {
       zx ☃ = ☃.k();
-      b = 1;
+      ☃.b = 1;
       aku.e(☃);
-      if ((b > 1) || (bA.d))
+      if ((☃.b > 1) || (☃.bA.d))
       {
-        if (!bi.a(☃)) {
+        if (!☃.bi.a(☃)) {
           ☃.d(new uz(☃, ☃.n() + 0.5D, ☃.o() + 1.5D, ☃.p() + 0.5D, ☃));
         } else if ((☃ instanceof lf)) {
-          ((lf)☃).a(bj);
+          ((lf)☃).a(☃.bj);
         }
         ☃.b(na.L);
-        if (!bA.d) {
-          b -= 1;
+        if (!☃.bA.d) {
+          ☃.b -= 1;
         }
       }
       else
       {
-        bi.a(bi.c, ☃);
+        ☃.bi.a(☃.bi.c, ☃);
       }
-      if (!bA.d) {
+      if (!☃.bA.d) {
         a(☃, ☃, ☃, ☃ - 1);
       }
       return true;
@@ -152,7 +152,7 @@ public class afr
   
   public void k(adm ☃, cj ☃)
   {
-    if (s.nextInt(20) != 1) {
+    if (☃.s.nextInt(20) != 1) {
       return;
     }
     alz ☃ = ☃.p(☃);

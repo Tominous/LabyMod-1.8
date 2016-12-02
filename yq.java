@@ -5,7 +5,7 @@ public class yq
 {
   public yq()
   {
-    h = 1;
+    this.h = 1;
     a(yz.e);
   }
   
@@ -13,12 +13,12 @@ public class yq
   {
     float ☃ = 1.0F;
     
-    float ☃ = B + (z - B) * ☃;
-    float ☃ = A + (y - A) * ☃;
+    float ☃ = ☃.B + (☃.z - ☃.B) * ☃;
+    float ☃ = ☃.A + (☃.y - ☃.A) * ☃;
     
-    double ☃ = p + (s - p) * ☃;
-    double ☃ = q + (t - q) * ☃ + ☃.aS();
-    double ☃ = r + (u - r) * ☃;
+    double ☃ = ☃.p + (☃.s - ☃.p) * ☃;
+    double ☃ = ☃.q + (☃.t - ☃.q) * ☃ + ☃.aS();
+    double ☃ = ☃.r + (☃.u - ☃.r) * ☃;
     
     aui ☃ = new aui(☃, ☃, ☃);
     
@@ -40,7 +40,7 @@ public class yq
     aui ☃ = ☃.d(☃);
     boolean ☃ = false;
     float ☃ = 1.0F;
-    List<pk> ☃ = ☃.b(☃, ☃.aR().a(a * ☃, b * ☃, c * ☃).b(☃, ☃, ☃));
+    List<pk> ☃ = ☃.b(☃, ☃.aR().a(☃.a * ☃, ☃.b * ☃, ☃.c * ☃).b(☃, ☃, ☃));
     for (int ☃ = 0; ☃ < ☃.size(); ☃++)
     {
       pk ☃ = (pk)☃.get(☃);
@@ -56,22 +56,22 @@ public class yq
     if (☃) {
       return ☃;
     }
-    if (a == auh.a.b)
+    if (☃.a == auh.a.b)
     {
       cj ☃ = ☃.a();
       if (☃.p(☃).c() == afi.aH) {
         ☃ = ☃.b();
       }
       ux ☃ = new ux(☃, ☃.n() + 0.5F, ☃.o() + 1.0F, ☃.p() + 0.5F);
-      y = (((ns.c(y * 4.0F / 360.0F + 0.5D) & 0x3) - 1) * 90);
+      ☃.y = (((ns.c(☃.y * 4.0F / 360.0F + 0.5D) & 0x3) - 1) * 90);
       if (!☃.a(☃, ☃.aR().b(-0.1D, -0.1D, -0.1D)).isEmpty()) {
         return ☃;
       }
-      if (!D) {
+      if (!☃.D) {
         ☃.d(☃);
       }
-      if (!bA.d) {
-        b -= 1;
+      if (!☃.bA.d) {
+        ☃.b -= 1;
       }
       ☃.b(na.ad[zw.b(this)]);
     }

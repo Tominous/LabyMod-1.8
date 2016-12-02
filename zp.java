@@ -11,13 +11,13 @@ public class zp
   {
     super(0, 0.0F, false);
     
-    b = ☃;
+    this.b = ☃;
   }
   
   public int h(zx ☃)
   {
     zp.a ☃ = zp.a.a(☃);
-    if ((b) && (☃.g())) {
+    if ((this.b) && (☃.g())) {
       return ☃.e();
     }
     return ☃.c();
@@ -26,7 +26,7 @@ public class zp
   public float i(zx ☃)
   {
     zp.a ☃ = zp.a.a(☃);
-    if ((b) && (☃.g())) {
+    if ((this.b) && (☃.g())) {
       return ☃.f();
     }
     return ☃.d();
@@ -45,9 +45,9 @@ public class zp
     zp.a ☃ = zp.a.a(☃);
     if (☃ == zp.a.d)
     {
-      ☃.c(new pf(uH, 1200, 3));
-      ☃.c(new pf(sH, 300, 2));
-      ☃.c(new pf(kH, 300, 1));
+      ☃.c(new pf(pe.u.H, 1200, 3));
+      ☃.c(new pf(pe.s.H, 300, 2));
+      ☃.c(new pf(pe.k.H, 300, 1));
     }
     super.c(☃, ☃, ☃);
   }
@@ -55,7 +55,7 @@ public class zp
   public void a(zw ☃, yz ☃, List<zx> ☃)
   {
     for (zp.a ☃ : ) {
-      if ((!b) || (☃.g())) {
+      if ((!this.b) || (☃.g())) {
         ☃.add(new zx(this, 1, ☃.a()));
       }
     }
@@ -64,7 +64,7 @@ public class zp
   public String e_(zx ☃)
   {
     zp.a ☃ = zp.a.a(☃);
-    return a() + "." + ☃.b() + "." + ((b) && (☃.g()) ? "cooked" : "raw");
+    return a() + "." + ☃.b() + "." + ((this.b) && (☃.g()) ? "cooked" : "raw");
   }
   
   public static enum a
@@ -88,59 +88,59 @@ public class zp
     
     private a(int ☃, String ☃, int ☃, float ☃, int ☃, float ☃)
     {
-      f = ☃;
-      g = ☃;
-      h = ☃;
-      i = ☃;
-      j = ☃;
-      k = ☃;
-      l = true;
+      this.f = ☃;
+      this.g = ☃;
+      this.h = ☃;
+      this.i = ☃;
+      this.j = ☃;
+      this.k = ☃;
+      this.l = true;
     }
     
     private a(int ☃, String ☃, int ☃, float ☃)
     {
-      f = ☃;
-      g = ☃;
-      h = ☃;
-      i = ☃;
-      j = 0;
-      k = 0.0F;
-      l = false;
+      this.f = ☃;
+      this.g = ☃;
+      this.h = ☃;
+      this.i = ☃;
+      this.j = 0;
+      this.k = 0.0F;
+      this.l = false;
     }
     
     public int a()
     {
-      return f;
+      return this.f;
     }
     
     public String b()
     {
-      return g;
+      return this.g;
     }
     
     public int c()
     {
-      return h;
+      return this.h;
     }
     
     public float d()
     {
-      return i;
+      return this.i;
     }
     
     public int e()
     {
-      return j;
+      return this.j;
     }
     
     public float f()
     {
-      return k;
+      return this.k;
     }
     
     public boolean g()
     {
-      return l;
+      return this.l;
     }
     
     public static a a(int ☃)

@@ -46,8 +46,8 @@ public class PingUtils
       PingUtils.StatusResponse response = null;
       try
       {
-        socket = new Socket(host1, port);
-        socket.setSoTimeout(timeout);
+        socket = new Socket(this.host1, this.port);
+        socket.setSoTimeout(this.timeout);
         
         oStr = socket.getOutputStream();
         DataOutputStream dataOut = new DataOutputStream(oStr);
@@ -62,7 +62,7 @@ public class PingUtils
         
         response = receiveResponse(dIn);
         
-        ms = ((int)(ave.J() - start));
+        response.ms = ((int)(ave.J() - start));
         
         dIn.close();
         dataOut.close();
@@ -130,8 +130,8 @@ public class PingUtils
       DataOutputStream handshake = new DataOutputStream(bOut);
       bOut.write(0);
       writeVarInt(handshake, 4);
-      writeString(handshake, host1);
-      handshake.writeShort(port);
+      writeString(handshake, this.host1);
+      handshake.writeShort(this.port);
       writeVarInt(handshake, 1);
       return bOut.toByteArray();
     }
@@ -250,10 +250,10 @@ public class PingUtils
     
     public String getDescription()
     {
-      if ((description == null) || (description.isEmpty())) {
-        return descriptions.getText();
+      if ((this.description == null) || (this.description.isEmpty())) {
+        return this.descriptions.getText();
       }
-      return description;
+      return this.description;
     }
     
     public void setDescription(String description)
@@ -263,12 +263,12 @@ public class PingUtils
     
     public Players getPlayers()
     {
-      return players;
+      return this.players;
     }
     
     public int getMs()
     {
-      return ms;
+      return this.ms;
     }
     
     public void setPlayers(Players players)
@@ -278,7 +278,7 @@ public class PingUtils
     
     public Version getVersion()
     {
-      return version;
+      return this.version;
     }
     
     public void setVersion(Version version)
@@ -288,7 +288,7 @@ public class PingUtils
     
     public String getFavicon()
     {
-      return favicon;
+      return this.favicon;
     }
     
     public void setFavicon(String favicon)
@@ -303,7 +303,7 @@ public class PingUtils
     
     public int getTime()
     {
-      return time;
+      return this.time;
     }
     
     public class Players
@@ -362,7 +362,7 @@ public class PingUtils
       
       public int getMax()
       {
-        return max;
+        return this.max;
       }
       
       public void setOnline(int online)
@@ -372,12 +372,12 @@ public class PingUtils
       
       public int getOnline()
       {
-        return online;
+        return this.online;
       }
       
       public List<PingUtils.StatusResponse.Player> getSample()
       {
-        return sample;
+        return this.sample;
       }
       
       public void setSample(List<PingUtils.StatusResponse.Player> sample)
@@ -396,7 +396,7 @@ public class PingUtils
       
       public String getText()
       {
-        return text;
+        return this.text;
       }
       
       public void setText(String text)
@@ -459,7 +459,7 @@ public class PingUtils
       
       public String getName()
       {
-        return name;
+        return this.name;
       }
       
       public void setId(String id)
@@ -469,7 +469,7 @@ public class PingUtils
       
       public String getId()
       {
-        return id;
+        return this.id;
       }
       
       public Player() {}
@@ -529,7 +529,7 @@ public class PingUtils
       
       public String getName()
       {
-        return name;
+        return this.name;
       }
       
       public void setProtocol(String protocol)
@@ -539,7 +539,7 @@ public class PingUtils
       
       public String getProtocol()
       {
-        return protocol;
+        return this.protocol;
       }
       
       public Version() {}

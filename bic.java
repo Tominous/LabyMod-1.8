@@ -13,23 +13,23 @@ public class bic
   
   public bic(bid ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(double ☃, double ☃, double ☃)
   {
-    b = ☃;
-    c = ☃;
-    d = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
   }
   
   public boolean b(double ☃, double ☃, double ☃, double ☃, double ☃, double ☃)
   {
-    return a.b(☃ - b, ☃ - c, ☃ - d, ☃ - b, ☃ - c, ☃ - d);
+    return this.a.b(☃ - this.b, ☃ - this.c, ☃ - this.d, ☃ - this.b, ☃ - this.c, ☃ - this.d);
   }
   
   public boolean a(aug ☃)
   {
-    return b(a, b, c, d, e, f);
+    return b(☃.a, ☃.b, ☃.c, ☃.d, ☃.e, ☃.f);
   }
 }

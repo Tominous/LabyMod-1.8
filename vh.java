@@ -5,12 +5,12 @@ public class vh
   {
     public void a(int ☃)
     {
-      o.a(vh.this, (byte)☃);
+      vh.this.o.a(vh.this, (byte)☃);
     }
     
     public adm a()
     {
-      return o;
+      return vh.this.o;
     }
     
     public cj b()
@@ -42,28 +42,28 @@ public class vh
   protected void a(dn ☃)
   {
     super.a(☃);
-    a.a(☃);
+    this.a.a(☃);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    a.b(☃);
+    this.a.b(☃);
   }
   
   public void a(byte ☃)
   {
-    a.b(☃);
+    this.a.b(☃);
   }
   
   public void t_()
   {
     super.t_();
-    a.c();
+    this.a.c();
   }
   
   public add j()
   {
-    return a;
+    return this.a;
   }
 }

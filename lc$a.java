@@ -13,117 +13,117 @@ class lc$a
   
   public lc$a(lc paramlc, int ☃, int ☃)
   {
-    c = new adg(☃, ☃);
-    ab.c(☃, ☃);
+    this.c = new adg(☃, ☃);
+    paramlc.a().b.c(☃, ☃);
   }
   
   public void a(lf ☃)
   {
-    if (b.contains(☃))
+    if (this.b.contains(☃))
     {
-      lc.c().debug("Failed to add player. {} already is in chunk {}, {}", new Object[] { ☃, Integer.valueOf(c.a), Integer.valueOf(c.b) });
+      lc.c().debug("Failed to add player. {} already is in chunk {}, {}", new Object[] { ☃, Integer.valueOf(this.c.a), Integer.valueOf(this.c.b) });
       return;
     }
-    if (b.isEmpty()) {
-      g = lc.a(a).K();
+    if (this.b.isEmpty()) {
+      this.g = lc.a(this.a).K();
     }
-    b.add(☃);
-    f.add(c);
+    this.b.add(☃);
+    ☃.f.add(this.c);
   }
   
   public void b(lf ☃)
   {
-    if (!b.contains(☃)) {
+    if (!this.b.contains(☃)) {
       return;
     }
-    amy ☃ = lc.a(a).a(c.a, c.b);
+    amy ☃ = lc.a(this.a).a(this.c.a, this.c.b);
     if (☃.i()) {
-      a.a(new go(☃, true, 0));
+      ☃.a.a(new go(☃, true, 0));
     }
-    b.remove(☃);
-    f.remove(c);
-    if (b.isEmpty())
+    this.b.remove(☃);
+    ☃.f.remove(this.c);
+    if (this.b.isEmpty())
     {
-      long ☃ = c.a + 2147483647L | c.b + 2147483647L << 32;
+      long ☃ = this.c.a + 2147483647L | this.c.b + 2147483647L << 32;
       a(☃);
-      lc.b(a).d(☃);
-      lc.c(a).remove(this);
-      if (e > 0) {
-        lc.d(a).remove(this);
+      lc.b(this.a).d(☃);
+      lc.c(this.a).remove(this);
+      if (this.e > 0) {
+        lc.d(this.a).remove(this);
       }
-      a.a().b.b(c.a, c.b);
+      this.a.a().b.b(this.c.a, this.c.b);
     }
   }
   
   public void a()
   {
-    a(lc.a(a).a(c.a, c.b));
+    a(lc.a(this.a).a(this.c.a, this.c.b));
   }
   
   private void a(amy ☃)
   {
-    ☃.c(☃.w() + lc.a(a).K() - g);
+    ☃.c(☃.w() + lc.a(this.a).K() - this.g);
     
-    g = lc.a(a).K();
+    this.g = lc.a(this.a).K();
   }
   
   public void a(int ☃, int ☃, int ☃)
   {
-    if (e == 0) {
-      lc.d(a).add(this);
+    if (this.e == 0) {
+      lc.d(this.a).add(this);
     }
-    f |= 1 << (☃ >> 4);
-    if (e < 64)
+    this.f |= 1 << (☃ >> 4);
+    if (this.e < 64)
     {
       short ☃ = (short)(☃ << 12 | ☃ << 8 | ☃);
-      for (int ☃ = 0; ☃ < e; ☃++) {
-        if (d[☃] == ☃) {
+      for (int ☃ = 0; ☃ < this.e; ☃++) {
+        if (this.d[☃] == ☃) {
           return;
         }
       }
-      d[(e++)] = ☃;
+      this.d[(this.e++)] = ☃;
     }
   }
   
   public void a(ff ☃)
   {
-    for (int ☃ = 0; ☃ < b.size(); ☃++)
+    for (int ☃ = 0; ☃ < this.b.size(); ☃++)
     {
-      lf ☃ = (lf)b.get(☃);
-      if (!f.contains(c)) {
-        a.a(☃);
+      lf ☃ = (lf)this.b.get(☃);
+      if (!☃.f.contains(this.c)) {
+        ☃.a.a(☃);
       }
     }
   }
   
   public void b()
   {
-    if (e == 0) {
+    if (this.e == 0) {
       return;
     }
-    if (e == 1)
+    if (this.e == 1)
     {
-      int ☃ = (d[0] >> 12 & 0xF) + c.a * 16;
-      int ☃ = d[0] & 0xFF;
-      int ☃ = (d[0] >> 8 & 0xF) + c.b * 16;
+      int ☃ = (this.d[0] >> 12 & 0xF) + this.c.a * 16;
+      int ☃ = this.d[0] & 0xFF;
+      int ☃ = (this.d[0] >> 8 & 0xF) + this.c.b * 16;
       
       cj ☃ = new cj(☃, ☃, ☃);
-      a(new fv(lc.a(a), ☃));
-      if (lc.a(a).p(☃).c().z()) {
-        a(lc.a(a).s(☃));
+      a(new fv(lc.a(this.a), ☃));
+      if (lc.a(this.a).p(☃).c().z()) {
+        a(lc.a(this.a).s(☃));
       }
     }
-    else if (e == 64)
+    else if (this.e == 64)
     {
-      int ☃ = c.a * 16;
-      int ☃ = c.b * 16;
+      int ☃ = this.c.a * 16;
+      int ☃ = this.c.b * 16;
       
-      a(new go(lc.a(a).a(c.a, c.b), false, f));
+      a(new go(lc.a(this.a).a(this.c.a, this.c.b), false, this.f));
       for (int ☃ = 0; ☃ < 16; ☃++) {
-        if ((f & 1 << ☃) != 0)
+        if ((this.f & 1 << ☃) != 0)
         {
           int ☃ = ☃ << 4;
-          List<akw> ☃ = lc.a(a).a(☃, ☃, ☃, ☃ + 16, ☃ + 16, ☃ + 16);
+          List<akw> ☃ = lc.a(this.a).a(☃, ☃, ☃, ☃ + 16, ☃ + 16, ☃ + 16);
           for (int ☃ = 0; ☃ < ☃.size(); ☃++) {
             a((akw)☃.get(☃));
           }
@@ -132,21 +132,21 @@ class lc$a
     }
     else
     {
-      a(new fz(e, d, lc.a(a).a(c.a, c.b)));
-      for (int ☃ = 0; ☃ < e; ☃++)
+      a(new fz(this.e, this.d, lc.a(this.a).a(this.c.a, this.c.b)));
+      for (int ☃ = 0; ☃ < this.e; ☃++)
       {
-        int ☃ = (d[☃] >> 12 & 0xF) + c.a * 16;
-        int ☃ = d[☃] & 0xFF;
-        int ☃ = (d[☃] >> 8 & 0xF) + c.b * 16;
+        int ☃ = (this.d[☃] >> 12 & 0xF) + this.c.a * 16;
+        int ☃ = this.d[☃] & 0xFF;
+        int ☃ = (this.d[☃] >> 8 & 0xF) + this.c.b * 16;
         
         cj ☃ = new cj(☃, ☃, ☃);
-        if (lc.a(a).p(☃).c().z()) {
-          a(lc.a(a).s(☃));
+        if (lc.a(this.a).p(☃).c().z()) {
+          a(lc.a(this.a).s(☃));
         }
       }
     }
-    e = 0;
-    f = 0;
+    this.e = 0;
+    this.f = 0;
   }
   
   private void a(akw ☃)

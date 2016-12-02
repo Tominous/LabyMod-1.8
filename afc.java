@@ -10,7 +10,7 @@ public abstract class afc
   protected afc(arm ☃, arn ☃)
   {
     super(☃, ☃);
-    A = true;
+    this.A = true;
   }
   
   protected boolean a(adm ☃, cj ☃, cq ☃)

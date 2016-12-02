@@ -12,63 +12,63 @@ public class aqa
   
   public aqa(int ☃, int ☃, afh ☃)
   {
-    a = ☃;
-    c = ☃;
-    b = ☃.Q();
+    this.a = ☃;
+    this.c = ☃;
+    this.b = ☃.Q();
   }
   
   public aqa(int ☃, int ☃, afh ☃, int ☃)
   {
     this(☃, ☃, ☃);
-    b = ☃.a(☃);
+    this.b = ☃.a(☃);
   }
   
   public int b()
   {
-    return c;
+    return this.c;
   }
   
   public alz c()
   {
-    return b;
+    return this.b;
   }
   
   private afh e()
   {
-    return b.c();
+    return this.b.c();
   }
   
   private int f()
   {
-    return b.c().c(b);
+    return this.b.c().c(this.b);
   }
   
   public int d()
   {
-    return d;
+    return this.d;
   }
   
   public void b(int ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
   
   public String toString()
   {
     String ☃;
-    if (a >= 3)
+    if (this.a >= 3)
     {
       jy ☃ = (jy)afh.c.c(e());
       String ☃ = ☃ == null ? "null" : ☃.toString();
-      if (c > 1) {
-        ☃ = c + "*" + ☃;
+      if (this.c > 1) {
+        ☃ = this.c + "*" + ☃;
       }
     }
     else
     {
       ☃ = Integer.toString(afh.a(e()));
-      if (c > 1) {
-        ☃ = c + "x" + ☃;
+      if (this.c > 1) {
+        ☃ = this.c + "x" + ☃;
       }
     }
     int ☃ = f();

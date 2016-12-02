@@ -8,31 +8,31 @@ public class ayr
   
   public ayr(og ☃, og ☃)
   {
-    super(new xo(☃, ☃, Ah));
-    v = ☃;
-    w = ☃;
-    p = false;
+    super(new xo(☃, ☃, ave.A().h));
+    this.v = ☃;
+    this.w = ☃;
+    this.p = false;
     
     int ☃ = 222;
     int ☃ = ☃ - 108;
-    x = (☃.o_() / 9);
+    this.x = (☃.o_() / 9);
     
-    g = (☃ + x * 18);
+    this.g = (☃ + this.x * 18);
   }
   
   protected void b(int ☃, int ☃)
   {
-    q.a(w.f_().c(), 8, 6, 4210752);
-    q.a(v.f_().c(), 8, g - 96 + 2, 4210752);
+    this.q.a(this.w.f_().c(), 8, 6, 4210752);
+    this.q.a(this.v.f_().c(), 8, this.g - 96 + 2, 4210752);
   }
   
   protected void a(float ☃, int ☃, int ☃)
   {
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    j.P().a(u);
-    int ☃ = (l - f) / 2;
-    int ☃ = (m - g) / 2;
-    b(☃, ☃, 0, 0, f, x * 18 + 17);
-    b(☃, ☃ + x * 18 + 17, 0, 126, f, 96);
+    this.j.P().a(u);
+    int ☃ = (this.l - this.f) / 2;
+    int ☃ = (this.m - this.g) / 2;
+    b(☃, ☃, 0, 0, this.f, this.x * 18 + 17);
+    b(☃, ☃ + this.x * 18 + 17, 0, 126, this.f, 96);
   }
 }

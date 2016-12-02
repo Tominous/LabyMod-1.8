@@ -20,16 +20,16 @@ public class PacketLoginRequest
   
   public List<LabyModPlayerRequester> getRequests()
   {
-    return requesters;
+    return this.requesters;
   }
   
   public void read(PacketBuf buf)
   {
-    requesters = new ArrayList();
+    this.requesters = new ArrayList();
     
     int a = buf.readInt();
     for (int i = 0; i < a; i++) {
-      requesters.add((LabyModPlayerRequester)buf.readPlayer());
+      this.requesters.add((LabyModPlayerRequester)buf.readPlayer());
     }
   }
   

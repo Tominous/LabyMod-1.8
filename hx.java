@@ -10,21 +10,21 @@ public class hx
   
   public hx(eu ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.d();
-    b = ☃.d();
+    this.a = ☃.d();
+    this.b = ☃.d();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a);
-    ☃.a(b);
+    ☃.a(this.a);
+    ☃.a(this.b);
   }
   
   public void a(fj ☃)
@@ -34,11 +34,11 @@ public class hx
   
   public eu a()
   {
-    return a;
+    return this.a;
   }
   
   public eu b()
   {
-    return b;
+    return this.b;
   }
 }

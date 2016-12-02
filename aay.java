@@ -8,17 +8,17 @@ public class aay
   
   public aay(zw.a ☃)
   {
-    b = ☃;
-    h = 1;
+    this.b = ☃;
+    this.h = 1;
     d(☃.a());
     a(yz.j);
     
-    a = (4.0F + ☃.c());
+    this.a = (4.0F + ☃.c());
   }
   
   public float g()
   {
-    return b.c();
+    return this.b.c();
   }
   
   public float a(zx ☃, afh ☃)
@@ -75,17 +75,17 @@ public class aay
   
   public int b()
   {
-    return b.e();
+    return this.b.e();
   }
   
   public String h()
   {
-    return b.toString();
+    return this.b.toString();
   }
   
   public boolean a(zx ☃, zx ☃)
   {
-    if (b.f() == ☃.b()) {
+    if (this.b.f() == ☃.b()) {
       return true;
     }
     return super.a(☃, ☃);
@@ -95,7 +95,7 @@ public class aay
   {
     Multimap<String, qd> ☃ = super.i();
     
-    ☃.put(vy.e.a(), new qd(f, "Weapon modifier", a, 0));
+    ☃.put(vy.e.a(), new qd(f, "Weapon modifier", this.a, 0));
     
     return ☃;
   }

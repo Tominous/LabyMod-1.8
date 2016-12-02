@@ -5,7 +5,7 @@ public class akm
   
   public akm()
   {
-    j(M.b().a(a, cq.c));
+    j(this.M.b().a(a, cq.c));
   }
   
   public void a(adq ☃, cj ☃)

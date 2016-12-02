@@ -31,9 +31,9 @@ public class Client
   
   public Client()
   {
-    clientConnection = new ClientConnection(this);
-    friends = new ArrayList();
-    requests = new ArrayList();
+    this.clientConnection = new ClientConnection(this);
+    this.friends = new ArrayList();
+    this.requests = new ArrayList();
   }
   
   public PacketLoginOptions.Options getOptions()
@@ -43,17 +43,17 @@ public class Client
   
   public static LabyModPlayer.OnlineStatus getOnlineStatus()
   {
-    return LabyModPlayer.OnlineStatus.fromPacketId(settingsonlineStatus);
+    return LabyModPlayer.OnlineStatus.fromPacketId(ConfigManager.settings.onlineStatus);
   }
   
   public boolean isShowServer()
   {
-    return settingsshowConntectedIP;
+    return ConfigManager.settings.showConntectedIP;
   }
   
   public void setOnlineStatus(LabyModPlayer.OnlineStatus status)
   {
-    settingsonlineStatus = status.getPacketId();
+    ConfigManager.settings.onlineStatus = status.getPacketId();
     getClientConnection().sendPacket(new PacketPlayChangeOptions(isShowServer(), status, getTimeZone()));
   }
   
@@ -64,14 +64,14 @@ public class Client
   
   public void init()
   {
-    clientConnection.init();
-    running = true;
+    this.clientConnection.init();
+    this.running = true;
     Runtime.getRuntime().addShutdownHook(new Thread(new Runnable()
     {
       public void run()
       {
-        if (clientConnection.getState() != EnumConnectionState.OFFLINE) {
-          clientConnection.sendPacket(new PacketDisconnect("Shutdown"));
+        if (Client.this.clientConnection.getState() != EnumConnectionState.OFFLINE) {
+          Client.this.clientConnection.sendPacket(new PacketDisconnect("Shutdown"));
         }
       }
     }));
@@ -81,28 +81,28 @@ public class Client
   
   public boolean isOnline()
   {
-    return clientConnection.getState() == EnumConnectionState.PLAY;
+    return this.clientConnection.getState() == EnumConnectionState.PLAY;
   }
   
   public ClientConnection getClientConnection()
   {
-    return clientConnection;
+    return this.clientConnection;
   }
   
   public List<LabyModPlayer> getFriends()
   {
-    return friends;
+    return this.friends;
   }
   
   public List<LabyModPlayerRequester> getRequests()
   {
-    return requests;
+    return this.requests;
   }
   
   public LabyModPlayer build()
   {
     LabyModPlayer a = null;
-    LabyMod.getInstance().getClient();a = new LabyModPlayer(LabyMod.getInstance().getPlayerName(), LabyMod.getInstance().getPlayerUUID(), settingsmotd, getOnlineStatus(), "", System.currentTimeMillis(), firstJoined, getFriends().size());
+    LabyMod.getInstance().getClient();a = new LabyModPlayer(LabyMod.getInstance().getPlayerName(), LabyMod.getInstance().getPlayerUUID(), ConfigManager.settings.motd, getOnlineStatus(), "", System.currentTimeMillis(), this.firstJoined, getFriends().size());
     a.updateServer(new ServerInfo(" ", 0));
     return a;
   }
@@ -120,24 +120,24 @@ public class Client
       {
         public void run()
         {
-          getClientConnection().setConnectionState(EnumConnectionState.OFFLINE);
-          if (getClientConnection().ch == null)
+          Client.this.getClientConnection().setConnectionState(EnumConnectionState.OFFLINE);
+          if (Client.this.getClientConnection().ch == null)
           {
-            getInstancegetClientrequests.clear();
+            LabyMod.getInstance().getClient().requests.clear();
             return;
           }
-          getClientConnection().ch.writeAndFlush(new PacketDisconnect("Logout")).addListener(new ChannelFutureListener()
+          Client.this.getClientConnection().ch.writeAndFlush(new PacketDisconnect("Logout")).addListener(new ChannelFutureListener()
           {
             public void operationComplete(ChannelFuture arg0)
               throws Exception
             {
-              getClientConnection().ch.close();
-              Iterator<LabyModPlayer> iter = getFriends().iterator();
+              Client.this.getClientConnection().ch.close();
+              Iterator<LabyModPlayer> iter = Client.this.getFriends().iterator();
               while (iter.hasNext()) {
                 ((LabyModPlayer)iter.next()).setOnline(LabyModPlayer.OnlineStatus.OFFLINE);
               }
-              getInstancegetClientrequests.clear();
-              clientConnection = new ClientConnection(Client.this);
+              LabyMod.getInstance().getClient().requests.clear();
+              Client.this.clientConnection = new ClientConnection(Client.this);
             }
           });
         }
@@ -168,8 +168,8 @@ public class Client
   
   public void newAccount()
   {
-    friends.clear();
-    requests.clear();
+    this.friends.clear();
+    this.requests.clear();
     reconnect();
     ChatHandler.getHandler().newAccount();
   }

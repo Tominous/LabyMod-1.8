@@ -17,40 +17,40 @@ public abstract class adc
   
   public int j()
   {
-    return b;
+    return this.b;
   }
   
   public eu k()
   {
-    return d;
+    return this.d;
   }
   
   public void a(dn ☃)
   {
-    ☃.a("Command", e);
-    ☃.a("SuccessCount", b);
-    ☃.a("CustomName", f);
-    ☃.a("TrackOutput", c);
-    if ((d != null) && (c)) {
-      ☃.a("LastOutput", eu.a.a(d));
+    ☃.a("Command", this.e);
+    ☃.a("SuccessCount", this.b);
+    ☃.a("CustomName", this.f);
+    ☃.a("TrackOutput", this.c);
+    if ((this.d != null) && (this.c)) {
+      ☃.a("LastOutput", eu.a.a(this.d));
     }
-    g.b(☃);
+    this.g.b(☃);
   }
   
   public void b(dn ☃)
   {
-    e = ☃.j("Command");
-    b = ☃.f("SuccessCount");
+    this.e = ☃.j("Command");
+    this.b = ☃.f("SuccessCount");
     if (☃.b("CustomName", 8)) {
-      f = ☃.j("CustomName");
+      this.f = ☃.j("CustomName");
     }
     if (☃.b("TrackOutput", 1)) {
-      c = ☃.n("TrackOutput");
+      this.c = ☃.n("TrackOutput");
     }
-    if ((☃.b("LastOutput", 8)) && (c)) {
-      d = eu.a.a(☃.j("LastOutput"));
+    if ((☃.b("LastOutput", 8)) && (this.c)) {
+      this.d = eu.a.a(☃.j("LastOutput"));
     }
-    g.a(☃);
+    this.g.a(☃);
   }
   
   public boolean a(int ☃, String ☃)
@@ -60,19 +60,19 @@ public abstract class adc
   
   public void a(String ☃)
   {
-    e = ☃;
-    b = 0;
+    this.e = ☃;
+    this.b = 0;
   }
   
   public String l()
   {
-    return e;
+    return this.e;
   }
   
   public void a(adm ☃)
   {
-    if (D) {
-      b = 0;
+    if (☃.D) {
+      this.b = 0;
     }
     MinecraftServer ☃ = MinecraftServer.N();
     if ((☃ != null) && (☃.O()) && (☃.al()))
@@ -80,8 +80,8 @@ public abstract class adc
       l ☃ = ☃.P();
       try
       {
-        d = null;
-        b = ☃.a(this, e);
+        this.d = null;
+        this.b = ☃.a(this, this.e);
       }
       catch (Throwable ☃)
       {
@@ -93,7 +93,7 @@ public abstract class adc
           public String a()
             throws Exception
           {
-            return l();
+            return adc.this.l();
           }
         });
         ☃.a("Name", new Callable()
@@ -101,7 +101,7 @@ public abstract class adc
           public String a()
             throws Exception
           {
-            return e_();
+            return adc.this.e_();
           }
         });
         throw new e(☃);
@@ -109,13 +109,13 @@ public abstract class adc
     }
     else
     {
-      b = 0;
+      this.b = 0;
     }
   }
   
   public String e_()
   {
-    return f;
+    return this.f;
   }
   
   public eu f_()
@@ -125,14 +125,14 @@ public abstract class adc
   
   public void b(String ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
   
   public void a(eu ☃)
   {
-    if ((c) && (e() != null) && (!eD))
+    if ((this.c) && (e() != null) && (!e().D))
     {
-      d = new fa("[" + a.format(new Date()) + "] ").a(☃);
+      this.d = new fa("[" + a.format(new Date()) + "] ").a(☃);
       h();
     }
   }
@@ -140,12 +140,12 @@ public abstract class adc
   public boolean u_()
   {
     MinecraftServer ☃ = MinecraftServer.N();
-    return (☃ == null) || (!☃.O()) || (d[0].Q().b("commandBlockOutput"));
+    return (☃ == null) || (!☃.O()) || (☃.d[0].Q().b("commandBlockOutput"));
   }
   
   public void a(n.a ☃, int ☃)
   {
-    g.a(this, ☃, ☃);
+    this.g.a(this, ☃, ☃);
   }
   
   public abstract void h();
@@ -156,25 +156,25 @@ public abstract class adc
   
   public void b(eu ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
   
   public void a(boolean ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public boolean m()
   {
-    return c;
+    return this.c;
   }
   
   public boolean a(wn ☃)
   {
-    if (!bA.d) {
+    if (!☃.bA.d) {
       return false;
     }
-    if (eD) {
+    if (☃.e().D) {
       ☃.a(this);
     }
     return true;
@@ -182,6 +182,6 @@ public abstract class adc
   
   public n n()
   {
-    return g;
+    return this.g;
   }
 }

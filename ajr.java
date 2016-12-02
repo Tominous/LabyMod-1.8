@@ -12,7 +12,7 @@ public class ajr
   protected ajr()
   {
     super(arm.m);
-    j(M.b().a(a, Boolean.valueOf(false)));
+    j(this.M.b().a(a, Boolean.valueOf(false)));
     a(yz.b);
   }
   

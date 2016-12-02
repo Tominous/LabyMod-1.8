@@ -16,10 +16,10 @@ public class aqo
   
   public aqo()
   {
-    d = Lists.newArrayList();
+    this.d = Lists.newArrayList();
     for (ady ☃ : ady.n()) {
-      if ((☃ != null) && (an > 0.0F)) {
-        d.add(☃);
+      if ((☃ != null) && (☃.an > 0.0F)) {
+        this.d.add(☃);
       }
     }
   }
@@ -29,11 +29,11 @@ public class aqo
     this();
     for (Map.Entry<String, String> ☃ : ☃.entrySet()) {
       if (((String)☃.getKey()).equals("distance")) {
-        h = ns.a((String)☃.getValue(), h, 1.0D);
+        this.h = ns.a((String)☃.getValue(), this.h, 1.0D);
       } else if (((String)☃.getKey()).equals("count")) {
-        g = new adg[ns.a((String)☃.getValue(), g.length, 1)];
+        this.g = new adg[ns.a((String)☃.getValue(), this.g.length, 1)];
       } else if (((String)☃.getKey()).equals("spread")) {
-        i = ns.a((String)☃.getValue(), i, 1);
+        this.i = ns.a((String)☃.getValue(), this.i, 1);
       }
     }
   }
@@ -45,39 +45,39 @@ public class aqo
   
   protected boolean a(int ☃, int ☃)
   {
-    if (!f)
+    if (!this.f)
     {
       Random ☃ = new Random();
       
-      ☃.setSeed(c.J());
+      ☃.setSeed(this.c.J());
       
       double ☃ = ☃.nextDouble() * 3.141592653589793D * 2.0D;
       int ☃ = 1;
-      for (int ☃ = 0; ☃ < g.length; ☃++)
+      for (int ☃ = 0; ☃ < this.g.length; ☃++)
       {
-        double ☃ = (1.25D * ☃ + ☃.nextDouble()) * (h * ☃);
+        double ☃ = (1.25D * ☃ + ☃.nextDouble()) * (this.h * ☃);
         int ☃ = (int)Math.round(Math.cos(☃) * ☃);
         int ☃ = (int)Math.round(Math.sin(☃) * ☃);
         
-        cj ☃ = c.v().a((☃ << 4) + 8, (☃ << 4) + 8, 112, d, ☃);
+        cj ☃ = this.c.v().a((☃ << 4) + 8, (☃ << 4) + 8, 112, this.d, ☃);
         if (☃ != null)
         {
           ☃ = ☃.n() >> 4;
           ☃ = ☃.p() >> 4;
         }
-        g[☃] = new adg(☃, ☃);
+        this.g[☃] = new adg(☃, ☃);
         
-        ☃ += 6.283185307179586D * ☃ / i;
-        if (☃ == i)
+        ☃ += 6.283185307179586D * ☃ / this.i;
+        if (☃ == this.i)
         {
           ☃ += 2 + ☃.nextInt(5);
-          i += 1 + ☃.nextInt(2);
+          this.i += 1 + ☃.nextInt(2);
         }
       }
-      f = true;
+      this.f = true;
     }
-    for (adg ☃ : g) {
-      if ((☃ == a) && (☃ == b)) {
+    for (adg ☃ : this.g) {
+      if ((☃ == ☃.a) && (☃ == ☃.b)) {
         return true;
       }
     }
@@ -87,7 +87,7 @@ public class aqo
   protected List<cj> z_()
   {
     List<cj> ☃ = Lists.newArrayList();
-    for (adg ☃ : g) {
+    for (adg ☃ : this.g) {
       if (☃ != null) {
         ☃.add(☃.a(64));
       }
@@ -97,9 +97,9 @@ public class aqo
   
   protected aqu b(int ☃, int ☃)
   {
-    aqo.a ☃ = new aqo.a(c, b, ☃, ☃);
-    while ((☃.b().isEmpty()) || (bget0b == null)) {
-      ☃ = new aqo.a(c, b, ☃, ☃);
+    aqo.a ☃ = new aqo.a(this.c, this.b, ☃, ☃);
+    while ((☃.b().isEmpty()) || (((aqp.m)☃.b().get(0)).b == null)) {
+      ☃ = new aqo.a(this.c, this.b, ☃, ☃);
     }
     return ☃;
   }
@@ -116,15 +116,15 @@ public class aqo
       aqp.b();
       
       aqp.m ☃ = new aqp.m(0, ☃, (☃ << 4) + 2, (☃ << 4) + 2);
-      a.add(☃);
-      ☃.a(☃, a, ☃);
+      this.a.add(☃);
+      ☃.a(☃, this.a, ☃);
       
-      List<aqt> ☃ = c;
+      List<aqt> ☃ = ☃.c;
       while (!☃.isEmpty())
       {
         int ☃ = ☃.nextInt(☃.size());
         aqt ☃ = (aqt)☃.remove(☃);
-        ☃.a(☃, a, ☃);
+        ☃.a(☃, this.a, ☃);
       }
       c();
       a(☃, ☃, 10);

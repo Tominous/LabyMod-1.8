@@ -12,57 +12,57 @@ public class RealmsButton
   
   public RealmsButton(int ☃, int ☃, int ☃, String ☃)
   {
-    proxy = new awp(this, ☃, ☃, ☃, ☃);
+    this.proxy = new awp(this, ☃, ☃, ☃, ☃);
   }
   
   public RealmsButton(int ☃, int ☃, int ☃, int ☃, int ☃, String ☃)
   {
-    proxy = new awp(this, ☃, ☃, ☃, ☃, ☃, ☃);
+    this.proxy = new awp(this, ☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   public avs getProxy()
   {
-    return proxy;
+    return this.proxy;
   }
   
   public int id()
   {
-    return proxy.c();
+    return this.proxy.c();
   }
   
   public boolean active()
   {
-    return proxy.d();
+    return this.proxy.d();
   }
   
   public void active(boolean ☃)
   {
-    proxy.b(☃);
+    this.proxy.b(☃);
   }
   
   public void msg(String ☃)
   {
-    proxy.a(☃);
+    this.proxy.a(☃);
   }
   
   public int getWidth()
   {
-    return proxy.b();
+    return this.proxy.b();
   }
   
   public int getHeight()
   {
-    return proxy.g();
+    return this.proxy.g();
   }
   
   public int y()
   {
-    return proxy.e();
+    return this.proxy.e();
   }
   
   public void render(int ☃, int ☃)
   {
-    proxy.a(ave.A(), ☃, ☃);
+    this.proxy.a(ave.A(), ☃, ☃);
   }
   
   public void clicked(int ☃, int ☃) {}
@@ -71,13 +71,13 @@ public class RealmsButton
   
   public void blit(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    proxy.b(☃, ☃, ☃, ☃, ☃, ☃);
+    this.proxy.b(☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   public void renderBg(int ☃, int ☃) {}
   
   public int getYImage(boolean ☃)
   {
-    return proxy.c(☃);
+    return this.proxy.c(☃);
   }
 }

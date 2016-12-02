@@ -13,17 +13,17 @@ class azp$1
     if (result)
     {
       File folder = ave.A().R().d();
-      File pack = new File(folder.getAbsolutePath(), this$0.getTitle());
+      File pack = new File(folder.getAbsolutePath(), this.this$0.getTitle());
       if (pack.delete())
       {
-        System.out.println("[Resourcepack24] Deleted " + this$0.getTitle() + " successfully!");
+        System.out.println("[Resourcepack24] Deleted " + this.this$0.getTitle() + " successfully!");
       }
       else
       {
-        ResourcePacks24.getInstance().getDeletedPacks().add(this$0.getTitle());
-        System.out.println("[Resourcepack24] Can't delete " + this$0.getTitle() + ", try again later..");
+        ResourcePacks24.getInstance().getDeletedPacks().add(this.this$0.getTitle());
+        System.out.println("[Resourcepack24] Can't delete " + this.this$0.getTitle() + ", try again later..");
       }
     }
-    this$0.a.a(new azo(this$0.b.getParentScreen()));
+    this.this$0.a.a(new azo(this.this$0.b.getParentScreen()));
   }
 }

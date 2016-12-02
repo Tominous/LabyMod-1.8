@@ -7,7 +7,7 @@ public class n
   
   public void a(final m ☃, n.a ☃, int ☃)
   {
-    String ☃ = c[☃.a()];
+    String ☃ = this.c[☃.a()];
     if (☃ == null) {
       return;
     }
@@ -72,7 +72,7 @@ public class n
     {
       return;
     }
-    String ☃ = d[☃.a()];
+    String ☃ = this.d[☃.a()];
     if (☃ == null) {
       return;
     }
@@ -112,8 +112,8 @@ public class n
     dn ☃ = new dn();
     for (n.a ☃ : n.a.values())
     {
-      String ☃ = c[☃.a()];
-      String ☃ = d[☃.a()];
+      String ☃ = this.c[☃.a()];
+      String ☃ = this.d[☃.a()];
       if ((☃ != null) && (☃ != null))
       {
         ☃.a(☃.b() + "Name", ☃);
@@ -132,26 +132,26 @@ public class n
       a(☃, ☃);
       return;
     }
-    if ((c == b) || (d == b))
+    if ((☃.c == b) || (☃.d == b))
     {
-      c = new String[a];
-      d = new String[a];
+      ☃.c = new String[a];
+      ☃.d = new String[a];
     }
-    c[☃.a()] = ☃;
-    d[☃.a()] = ☃;
+    ☃.c[☃.a()] = ☃;
+    ☃.d[☃.a()] = ☃;
   }
   
   private static void a(n ☃, n.a ☃)
   {
-    if ((c == b) || (d == b)) {
+    if ((☃.c == b) || (☃.d == b)) {
       return;
     }
-    c[☃.a()] = null;
-    d[☃.a()] = null;
+    ☃.c[☃.a()] = null;
+    ☃.d[☃.a()] = null;
     
     boolean ☃ = true;
     for (n.a ☃ : n.a.values()) {
-      if ((c[☃.a()] != null) && (d[☃.a()] != null))
+      if ((☃.c[☃.a()] != null) && (☃.d[☃.a()] != null))
       {
         ☃ = false;
         break;
@@ -159,15 +159,15 @@ public class n
     }
     if (☃)
     {
-      c = b;
-      d = b;
+      ☃.c = b;
+      ☃.d = b;
     }
   }
   
   public void a(n ☃)
   {
     for (n.a ☃ : ) {
-      a(this, ☃, c[☃.a()], d[☃.a()]);
+      a(this, ☃, ☃.c[☃.a()], ☃.d[☃.a()]);
     }
   }
   
@@ -178,18 +178,18 @@ public class n
     
     private a(int ☃, String ☃)
     {
-      f = ☃;
-      g = ☃;
+      this.f = ☃;
+      this.g = ☃;
     }
     
     public int a()
     {
-      return f;
+      return this.f;
     }
     
     public String b()
     {
-      return g;
+      return this.g;
     }
     
     public static String[] c()

@@ -12,33 +12,33 @@ public class hq
   
   public hq(auk ☃, int ☃)
   {
-    a = ☃.b();
-    b = ☃.d();
-    c = ☃.c().c();
-    d = ☃;
+    this.a = ☃.b();
+    this.b = ☃.d();
+    this.c = ☃.c().c();
+    this.d = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.c(16);
-    d = ☃.readByte();
-    if ((d == 0) || (d == 2))
+    this.a = ☃.c(16);
+    this.d = ☃.readByte();
+    if ((this.d == 0) || (this.d == 2))
     {
-      b = ☃.c(32);
-      c = auu.a.a(☃.c(16));
+      this.b = ☃.c(32);
+      this.c = auu.a.a(☃.c(16));
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a);
-    ☃.writeByte(d);
-    if ((d == 0) || (d == 2))
+    ☃.a(this.a);
+    ☃.writeByte(this.d);
+    if ((this.d == 0) || (this.d == 2))
     {
-      ☃.a(b);
-      ☃.a(c.a());
+      ☃.a(this.b);
+      ☃.a(this.c.a());
     }
   }
   
@@ -49,21 +49,21 @@ public class hq
   
   public String a()
   {
-    return a;
+    return this.a;
   }
   
   public String b()
   {
-    return b;
+    return this.b;
   }
   
   public int c()
   {
-    return d;
+    return this.d;
   }
   
   public auu.a d()
   {
-    return c;
+    return this.c;
   }
 }

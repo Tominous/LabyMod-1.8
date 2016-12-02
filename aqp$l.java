@@ -12,17 +12,17 @@ public class aqp$l
   {
     super(☃);
     
-    a = true;
-    m = cq.c.a.a(☃);
-    d = aqp.p.a.a;
-    switch (aqp.3.b[m.ordinal()])
+    this.a = true;
+    this.m = cq.c.a.a(☃);
+    this.d = aqp.p.a.a;
+    switch (aqp.3.b[this.m.ordinal()])
     {
     case 1: 
     case 2: 
-      l = new aqe(☃, 64, ☃, ☃ + 5 - 1, 74, ☃ + 5 - 1);
+      this.l = new aqe(☃, 64, ☃, ☃ + 5 - 1, 74, ☃ + 5 - 1);
       break;
     default: 
-      l = new aqe(☃, 64, ☃, ☃ + 5 - 1, 74, ☃ + 5 - 1);
+      this.l = new aqe(☃, 64, ☃, ☃ + 5 - 1, 74, ☃ + 5 - 1);
     }
   }
   
@@ -30,27 +30,27 @@ public class aqp$l
   {
     super(☃);
     
-    a = false;
-    m = ☃;
-    d = a(☃);
-    l = ☃;
+    this.a = false;
+    this.m = ☃;
+    this.d = a(☃);
+    this.l = ☃;
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("Source", a);
+    ☃.a("Source", this.a);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    a = ☃.n("Source");
+    this.a = ☃.n("Source");
   }
   
   public void a(aqt ☃, List<aqt> ☃, Random ☃)
   {
-    if (a) {
+    if (this.a) {
       aqp.a(aqp.c.class);
     }
     a((aqp.m)☃, ☃, ☃, 1, 1);
@@ -72,7 +72,7 @@ public class aqp$l
     }
     a(☃, ☃, 0, 0, 0, 4, 10, 4, true, ☃, aqp.c());
     
-    a(☃, ☃, ☃, d, 1, 7, 0);
+    a(☃, ☃, ☃, this.d, 1, 7, 0);
     
     a(☃, ☃, ☃, aqp.p.a.a, 1, 1, 4);
     

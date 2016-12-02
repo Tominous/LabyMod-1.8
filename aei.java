@@ -11,28 +11,28 @@ public class aei
   public aei(int ☃, boolean ☃)
   {
     super(☃);
-    aD = ☃;
+    this.aD = ☃;
     if (☃) {
-      ak = afi.aJ.Q();
+      this.ak = afi.aJ.Q();
     }
-    au.clear();
+    this.au.clear();
   }
   
   public void a(adm ☃, Random ☃, cj ☃)
   {
-    if (aD)
+    if (this.aD)
     {
       for (int ☃ = 0; ☃ < 3; ☃++)
       {
         int ☃ = ☃.nextInt(16) + 8;
         int ☃ = ☃.nextInt(16) + 8;
-        aE.b(☃, ☃, ☃.m(☃.a(☃, 0, ☃)));
+        this.aE.b(☃, ☃, ☃.m(☃.a(☃, 0, ☃)));
       }
       for (int ☃ = 0; ☃ < 2; ☃++)
       {
         int ☃ = ☃.nextInt(16) + 8;
         int ☃ = ☃.nextInt(16) + 8;
-        aF.b(☃, ☃, ☃.m(☃.a(☃, 0, ☃)));
+        this.aF.b(☃, ☃, ☃.m(☃.a(☃, 0, ☃)));
       }
     }
     super.a(☃, ☃, ☃);
@@ -45,10 +45,10 @@ public class aei
   
   protected ady d(int ☃)
   {
-    ady ☃ = new aei(☃, true).a(13828095, true).a(ah + " Spikes").c().a(0.0F, 0.5F).a(new ady.a(an + 0.1F, ao + 0.1F));
+    ady ☃ = new aei(☃, true).a(13828095, true).a(this.ah + " Spikes").c().a(0.0F, 0.5F).a(new ady.a(this.an + 0.1F, this.ao + 0.1F));
     
-    an = (an + 0.3F);
-    ao = (ao + 0.4F);
+    ☃.an = (this.an + 0.3F);
+    ☃.ao = (this.ao + 0.4F);
     
     return ☃;
   }

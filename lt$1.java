@@ -8,11 +8,11 @@ final class lt$1
   
   public void onProfileLookupSucceeded(GameProfile ☃)
   {
-    a[0] = ☃;
+    this.a[0] = ☃;
   }
   
   public void onProfileLookupFailed(GameProfile ☃, Exception ☃)
   {
-    a[0] = null;
+    this.a[0] = null;
   }
 }

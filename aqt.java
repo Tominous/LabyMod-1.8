@@ -11,7 +11,7 @@ public abstract class aqt
   
   protected aqt(int ☃)
   {
-    n = ☃;
+    this.n = ☃;
   }
   
   public dn b()
@@ -19,9 +19,9 @@ public abstract class aqt
     dn ☃ = new dn();
     
     ☃.a("id", aqr.a(this));
-    ☃.a("BB", l.g());
-    ☃.a("O", m == null ? -1 : m.b());
-    ☃.a("GD", n);
+    ☃.a("BB", this.l.g());
+    ☃.a("O", this.m == null ? -1 : this.m.b());
+    ☃.a("GD", this.n);
     
     a(☃);
     
@@ -33,11 +33,11 @@ public abstract class aqt
   public void a(adm ☃, dn ☃)
   {
     if (☃.c("BB")) {
-      l = new aqe(☃.l("BB"));
+      this.l = new aqe(☃.l("BB"));
     }
     int ☃ = ☃.f("O");
-    m = (☃ == -1 ? null : cq.b(☃));
-    n = ☃.f("GD");
+    this.m = (☃ == -1 ? null : cq.b(☃));
+    this.n = ☃.f("GD");
     
     b(☃);
   }
@@ -50,12 +50,12 @@ public abstract class aqt
   
   public aqe c()
   {
-    return l;
+    return this.l;
   }
   
   public int d()
   {
-    return n;
+    return this.n;
   }
   
   public static aqt a(List<aqt> ☃, aqe ☃)
@@ -70,17 +70,17 @@ public abstract class aqt
   
   public cj a()
   {
-    return new cj(l.f());
+    return new cj(this.l.f());
   }
   
   protected boolean a(adm ☃, aqe ☃)
   {
-    int ☃ = Math.max(l.a - 1, a);
-    int ☃ = Math.max(l.b - 1, b);
-    int ☃ = Math.max(l.c - 1, c);
-    int ☃ = Math.min(l.d + 1, d);
-    int ☃ = Math.min(l.e + 1, e);
-    int ☃ = Math.min(l.f + 1, f);
+    int ☃ = Math.max(this.l.a - 1, ☃.a);
+    int ☃ = Math.max(this.l.b - 1, ☃.b);
+    int ☃ = Math.max(this.l.c - 1, ☃.c);
+    int ☃ = Math.min(this.l.d + 1, ☃.d);
+    int ☃ = Math.min(this.l.e + 1, ☃.e);
+    int ☃ = Math.min(this.l.f + 1, ☃.f);
     
     cj.a ☃ = new cj.a();
     for (int ☃ = ☃; ☃ <= ☃; ☃++) {
@@ -121,44 +121,44 @@ public abstract class aqt
   
   protected int a(int ☃, int ☃)
   {
-    if (m == null) {
+    if (this.m == null) {
       return ☃;
     }
-    switch (aqt.1.a[m.ordinal()])
+    switch (aqt.1.a[this.m.ordinal()])
     {
     case 1: 
     case 2: 
-      return l.a + ☃;
+      return this.l.a + ☃;
     case 3: 
-      return l.d - ☃;
+      return this.l.d - ☃;
     case 4: 
-      return l.a + ☃;
+      return this.l.a + ☃;
     }
     return ☃;
   }
   
   protected int d(int ☃)
   {
-    if (m == null) {
+    if (this.m == null) {
       return ☃;
     }
-    return ☃ + l.b;
+    return ☃ + this.l.b;
   }
   
   protected int b(int ☃, int ☃)
   {
-    if (m == null) {
+    if (this.m == null) {
       return ☃;
     }
-    switch (aqt.1.a[m.ordinal()])
+    switch (aqt.1.a[this.m.ordinal()])
     {
     case 1: 
-      return l.f - ☃;
+      return this.l.f - ☃;
     case 2: 
-      return l.c + ☃;
+      return this.l.c + ☃;
     case 3: 
     case 4: 
-      return l.c + ☃;
+      return this.l.c + ☃;
     }
     return ☃;
   }
@@ -167,7 +167,7 @@ public abstract class aqt
   {
     if (☃ == afi.av)
     {
-      if ((m == cq.e) || (m == cq.f))
+      if ((this.m == cq.e) || (this.m == cq.f))
       {
         if (☃ == 1) {
           return 0;
@@ -177,7 +177,7 @@ public abstract class aqt
     }
     else if ((☃ instanceof agh))
     {
-      if (m == cq.d)
+      if (this.m == cq.d)
       {
         if (☃ == 0) {
           return 2;
@@ -188,17 +188,17 @@ public abstract class aqt
       }
       else
       {
-        if (m == cq.e) {
+        if (this.m == cq.e) {
           return ☃ + 1 & 0x3;
         }
-        if (m == cq.f) {
+        if (this.m == cq.f) {
           return ☃ + 3 & 0x3;
         }
       }
     }
     else if ((☃ == afi.aw) || (☃ == afi.ad) || (☃ == afi.bA) || (☃ == afi.bv) || (☃ == afi.bO))
     {
-      if (m == cq.d)
+      if (this.m == cq.d)
       {
         if (☃ == 2) {
           return 3;
@@ -207,7 +207,7 @@ public abstract class aqt
           return 2;
         }
       }
-      else if (m == cq.e)
+      else if (this.m == cq.e)
       {
         if (☃ == 0) {
           return 2;
@@ -222,7 +222,7 @@ public abstract class aqt
           return 1;
         }
       }
-      else if (m == cq.f)
+      else if (this.m == cq.f)
       {
         if (☃ == 0) {
           return 2;
@@ -240,7 +240,7 @@ public abstract class aqt
     }
     else if (☃ == afi.au)
     {
-      if (m == cq.d)
+      if (this.m == cq.d)
       {
         if (☃ == cq.c.a()) {
           return cq.d.a();
@@ -249,7 +249,7 @@ public abstract class aqt
           return cq.c.a();
         }
       }
-      else if (m == cq.e)
+      else if (this.m == cq.e)
       {
         if (☃ == cq.c.a()) {
           return cq.e.a();
@@ -264,7 +264,7 @@ public abstract class aqt
           return cq.d.a();
         }
       }
-      else if (m == cq.f)
+      else if (this.m == cq.f)
       {
         if (☃ == cq.c.a()) {
           return cq.f.a();
@@ -282,7 +282,7 @@ public abstract class aqt
     }
     else if (☃ == afi.aG)
     {
-      if (m == cq.d)
+      if (this.m == cq.d)
       {
         if (☃ == 3) {
           return 4;
@@ -291,7 +291,7 @@ public abstract class aqt
           return 3;
         }
       }
-      else if (m == cq.e)
+      else if (this.m == cq.e)
       {
         if (☃ == 3) {
           return 1;
@@ -306,7 +306,7 @@ public abstract class aqt
           return 4;
         }
       }
-      else if (m == cq.f)
+      else if (this.m == cq.f)
       {
         if (☃ == 3) {
           return 2;
@@ -325,13 +325,13 @@ public abstract class aqt
     else if ((☃ == afi.bR) || ((☃ instanceof age)))
     {
       cq ☃ = cq.b(☃);
-      if (m == cq.d)
+      if (this.m == cq.d)
       {
         if ((☃ == cq.d) || (☃ == cq.c)) {
           return ☃.d().b();
         }
       }
-      else if (m == cq.e)
+      else if (this.m == cq.e)
       {
         if (☃ == cq.c) {
           return cq.e.b();
@@ -346,7 +346,7 @@ public abstract class aqt
           return cq.d.b();
         }
       }
-      else if (m == cq.f)
+      else if (this.m == cq.f)
       {
         if (☃ == cq.c) {
           return cq.f.b();
@@ -364,13 +364,13 @@ public abstract class aqt
     }
     else if ((☃ == afi.J) || (☃ == afi.F) || (☃ == afi.ay) || (☃ == afi.z))
     {
-      if (m == cq.d)
+      if (this.m == cq.d)
       {
         if ((☃ == cq.c.a()) || (☃ == cq.d.a())) {
           return cq.a(☃).d().a();
         }
       }
-      else if (m == cq.e)
+      else if (this.m == cq.e)
       {
         if (☃ == cq.c.a()) {
           return cq.e.a();
@@ -385,7 +385,7 @@ public abstract class aqt
           return cq.d.a();
         }
       }
-      else if (m == cq.f)
+      else if (this.m == cq.f)
       {
         if (☃ == cq.c.a()) {
           return cq.f.a();
@@ -596,7 +596,7 @@ public abstract class aqt
   
   public void a(int ☃, int ☃, int ☃)
   {
-    l.a(☃, ☃, ☃);
+    this.l.a(☃, ☃, ☃);
   }
   
   public static abstract class a
@@ -607,7 +607,7 @@ public abstract class aqt
     
     public alz a()
     {
-      return a;
+      return this.a;
     }
   }
 }

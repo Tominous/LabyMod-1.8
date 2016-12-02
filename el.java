@@ -16,17 +16,17 @@ public enum el
   
   private el(int protocolId)
   {
-    j = Maps.newEnumMap(fg.class);
-    i = protocolId;
+    this.j = Maps.newEnumMap(fg.class);
+    this.i = protocolId;
   }
   
   protected el a(fg direction, Class<? extends ff> packetClass)
   {
-    BiMap<Integer, Class<? extends ff>> bimap = (BiMap)j.get(direction);
+    BiMap<Integer, Class<? extends ff>> bimap = (BiMap)this.j.get(direction);
     if (bimap == null)
     {
       bimap = HashBiMap.create();
-      j.put(direction, bimap);
+      this.j.put(direction, bimap);
     }
     if (bimap.containsValue(packetClass))
     {
@@ -40,19 +40,19 @@ public enum el
   
   public Integer a(fg direction, ff packetIn)
   {
-    return (Integer)((BiMap)j.get(direction)).inverse().get(packetIn.getClass());
+    return (Integer)((BiMap)this.j.get(direction)).inverse().get(packetIn.getClass());
   }
   
   public ff a(fg direction, int packetId)
     throws InstantiationException, IllegalAccessException
   {
-    Class<? extends ff> oclass = (Class)((BiMap)j.get(direction)).get(Integer.valueOf(packetId));
+    Class<? extends ff> oclass = (Class)((BiMap)this.j.get(direction)).get(Integer.valueOf(packetId));
     return oclass == null ? null : (ff)oclass.newInstance();
   }
   
   public int a()
   {
-    return i;
+    return this.i;
   }
   
   public static el a(int stateId)
@@ -79,8 +79,8 @@ public enum el
         throw new Error("Invalid protocol ID " + Integer.toString(i));
       }
       g[(i - e)] = enumconnectionstate;
-      for (fg enumpacketdirection : j.keySet()) {
-        for (Class<? extends ff> oclass : ((BiMap)j.get(enumpacketdirection)).values())
+      for (fg enumpacketdirection : enumconnectionstate.j.keySet()) {
+        for (Class<? extends ff> oclass : ((BiMap)enumconnectionstate.j.get(enumpacketdirection)).values())
         {
           if ((h.containsKey(oclass)) && (h.get(oclass) != enumconnectionstate)) {
             throw new Error("Packet " + oclass + " is already assigned to protocol " + h.get(oclass) + " - can't reassign to " + enumconnectionstate);

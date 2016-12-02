@@ -24,8 +24,8 @@ public class Mario
   
   public Mario()
   {
-    draw = getInstancedraw;
-    thread = null;
+    this.draw = LabyMod.getInstance().draw;
+    this.thread = null;
   }
   
   int lengthX = 0;
@@ -79,17 +79,17 @@ public class Mario
     
     public Location clone()
     {
-      return new Location(Mario.this, x, y, type);
+      return new Location(Mario.this, this.x, this.y, this.type);
     }
     
     public int getX()
     {
-      return x;
+      return this.x;
     }
     
     public int getY()
     {
-      return y;
+      return this.y;
     }
     
     public boolean collideWith(Location loc)
@@ -104,7 +104,7 @@ public class Mario
   public boolean collideWithPixelType(Location loc, EnumPixelType pixel)
   {
     for (Location terrain : getTerrain()) {
-      if ((terrain.collideWith(loc)) && (type == pixel)) {
+      if ((terrain.collideWith(loc)) && (terrain.type == pixel)) {
         return true;
       }
     }
@@ -115,7 +115,7 @@ public class Mario
   {
     for (Location terrain : getTerrain()) {
       if ((terrain.collideWith(loc)) && (
-        (type == EnumPixelType.BLOCK) || (type == EnumPixelType.TUBE) || (type == EnumPixelType.BONUS) || (type == EnumPixelType.CLOUDBLOCK))) {
+        (terrain.type == EnumPixelType.BLOCK) || (terrain.type == EnumPixelType.TUBE) || (terrain.type == EnumPixelType.BONUS) || (terrain.type == EnumPixelType.CLOUDBLOCK))) {
         return true;
       }
     }
@@ -125,21 +125,21 @@ public class Mario
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    n.clear();
+    this.n.clear();
     
-    quit = new avs(0, 5, 5, 30, 20, de.labystudio.utils.Color.cl("c") + "Quit");
-    n.add(quit);
+    this.quit = new avs(0, 5, 5, 30, 20, de.labystudio.utils.Color.cl("c") + "Quit");
+    this.n.add(this.quit);
     
-    lengthX = (l / 10 - 2);
-    lengthY = (m / 10 - 4);
-    if (gameOver)
+    this.lengthX = (this.l / 10 - 2);
+    this.lengthY = (this.m / 10 - 4);
+    if (this.gameOver)
     {
-      restart = new avs(1, l / 2 - 100, m - 25, 200, 20, "Play again");
-      n.add(restart);
+      this.restart = new avs(1, this.l / 2 - 100, this.m - 25, 200, 20, "Play again");
+      this.n.add(this.restart);
       super.b();
       return;
     }
-    if (thread == null) {
+    if (this.thread == null) {
       create();
     }
     super.b();
@@ -147,7 +147,7 @@ public class Mario
   
   private void create()
   {
-    gameOver = false;
+    this.gameOver = false;
     buildTerrain();
     spawnPlayer();
     start();
@@ -155,7 +155,7 @@ public class Mario
   
   private void spawnPlayer()
   {
-    playerLocation = new Location(5, 2, EnumPixelType.MARIO);
+    this.playerLocation = new Location(5, 2, EnumPixelType.MARIO);
   }
   
   public void moveTerrain(int x)
@@ -169,7 +169,7 @@ public class Mario
   private void buildTerrain()
   {
     for (int m = 0; m <= 50; m++) {
-      terrain.add(new Location(-1, m, EnumPixelType.BLOCK));
+      this.terrain.add(new Location(-1, m, EnumPixelType.BLOCK));
     }
     int x = 0;
     int y = 14;
@@ -179,16 +179,16 @@ public class Mario
         for (int tt = 0; tt <= 20; tt++)
         {
           for (int m = 0; m <= 50; m++) {
-            terrain.add(new Location(0 + x, y + m, EnumPixelType.BLOCK));
+            this.terrain.add(new Location(0 + x, y + m, EnumPixelType.BLOCK));
           }
           x++;
         }
       }
       for (int m = 0; m <= 50; m++) {
-        terrain.add(new Location(0 + x, y + m, EnumPixelType.BLOCK));
+        this.terrain.add(new Location(0 + x, y + m, EnumPixelType.BLOCK));
       }
       if (LabyMod.random.nextInt(20) == 0) {
-        terrain.add(new Location(0 + x, y - 1, EnumPixelType.BUSH));
+        this.terrain.add(new Location(0 + x, y - 1, EnumPixelType.BUSH));
       }
       x++;
       if (LabyMod.random.nextInt(10) == 0) {
@@ -211,12 +211,12 @@ public class Mario
       if (LabyMod.random.nextInt(5) == 0)
       {
         int mt = 0;
-        terrain.add(new Location(0 + x, y - mt - 1, EnumPixelType.TUBE));
+        this.terrain.add(new Location(0 + x, y - mt - 1, EnumPixelType.TUBE));
         mt++;
         for (int t = 0; t <= 1; t++) {
           if (LabyMod.random.nextBoolean())
           {
-            terrain.add(new Location(0 + x, y - mt - 1, EnumPixelType.TUBE));
+            this.terrain.add(new Location(0 + x, y - mt - 1, EnumPixelType.TUBE));
             mt++;
           }
         }
@@ -230,7 +230,7 @@ public class Mario
           for (int t = 0; t <= 4; t++) {
             if (LabyMod.random.nextBoolean())
             {
-              terrain.add(new Location(0 + x + mt, yy, EnumPixelType.CLOUD));
+              this.terrain.add(new Location(0 + x + mt, yy, EnumPixelType.CLOUD));
               mt++;
             }
           }
@@ -241,7 +241,7 @@ public class Mario
   
   public Location getPlayerLocation()
   {
-    return playerLocation;
+    return this.playerLocation;
   }
   
   public Location getPlayerHeadLocation()
@@ -261,36 +261,36 @@ public class Mario
   
   public ArrayList<Location> getTerrain()
   {
-    return terrain;
+    return this.terrain;
   }
   
   public boolean isOnGround()
   {
-    return fallDistance == 0.0D;
+    return this.fallDistance == 0.0D;
   }
   
   public int getFallDistance()
   {
-    return (int)fallDistance;
+    return (int)this.fallDistance;
   }
   
   private void start()
   {
-    thread = new Thread(new Runnable()
+    this.thread = new Thread(new Runnable()
     {
       public void run()
       {
         for (;;)
         {
-          if ((gameOver) || (j.m != Mario.this)) {
+          if ((Mario.this.gameOver) || (Mario.this.j.m != Mario.this)) {
             return;
           }
           Mario.this.tick();
           try
           {
-            synchronized (thread)
+            synchronized (Mario.this.thread)
             {
-              thread.wait(speed);
+              Mario.this.thread.wait(Mario.this.speed);
             }
           }
           catch (Exception e)
@@ -300,19 +300,19 @@ public class Mario
         }
       }
     });
-    thread.start();
+    this.thread.start();
   }
   
   private void gameOver()
   {
-    if (!gameOver)
+    if (!this.gameOver)
     {
       ArrayList<String> list = new ArrayList();
       if (StatsLoader.stats.containsKey("mario")) {
         list = (ArrayList)StatsLoader.stats.get("mario");
       }
-      if (StatsLoader.isHighScore(score, list)) {
-        list.add(0, "" + score);
+      if (StatsLoader.isHighScore(this.score, list)) {
+        list.add(0, "" + this.score);
       }
       if (list.size() > 15) {
         list.remove(15);
@@ -320,7 +320,7 @@ public class Mario
       StatsLoader.stats.put("mario", list);
       StatsLoader.savestats();
     }
-    gameOver = true;
+    this.gameOver = true;
     b();
   }
   
@@ -328,21 +328,21 @@ public class Mario
   
   private void tick()
   {
-    fallDistance += 1.0D;
-    if (collideWithBlock(playerLocation.clone().add(0, 1))) {
-      fallDistance = 0.0D;
+    this.fallDistance += 1.0D;
+    if (collideWithBlock(this.playerLocation.clone().add(0, 1))) {
+      this.fallDistance = 0.0D;
     }
     if (isPlayer())
     {
-      if ((!isOnGround()) && (LabyMod.random.nextInt(getFallDistance()) != 0) && (jumpVelocity == 0) && 
-        (!collideWithBlock(playerLocation.clone().add(0, 1)))) {
-        playerLocation.add(0, 1);
+      if ((!isOnGround()) && (LabyMod.random.nextInt(getFallDistance()) != 0) && (this.jumpVelocity == 0) && 
+        (!collideWithBlock(this.playerLocation.clone().add(0, 1)))) {
+        this.playerLocation.add(0, 1);
       }
-      if ((jumpVelocity > 0) && 
-        (!collideWithBlock(playerLocation.clone().add(0, -1))))
+      if ((this.jumpVelocity > 0) && 
+        (!collideWithBlock(this.playerLocation.clone().add(0, -1))))
       {
-        playerLocation.add(0, -1);
-        jumpVelocity -= 1;
+        this.playerLocation.add(0, -1);
+        this.jumpVelocity -= 1;
       }
       if (collideWithPixelType(getPlayerLocation(), EnumPixelType.LAVA)) {
         gameOver();
@@ -356,7 +356,7 @@ public class Mario
     }
     handleKeyBoardInput();
     
-    tick += 1;
+    this.tick += 1;
   }
   
   protected void a(int mouseX, int mouseY, int mouseButton)
@@ -368,11 +368,11 @@ public class Mario
   public void a(avs button)
     throws IOException
   {
-    if (k == 0) {
-      j.a(new GuiGames());
+    if (button.k == 0) {
+      this.j.a(new GuiGames());
     }
-    if (k == 1) {
-      j.a(new Mario());
+    if (button.k == 1) {
+      this.j.a(new Mario());
     }
     super.a(button);
   }
@@ -382,7 +382,7 @@ public class Mario
   {
     if (keyCode == 1)
     {
-      j.a(new GuiGames());
+      this.j.a(new GuiGames());
       return;
     }
     super.a(typedChar, keyCode);
@@ -390,23 +390,23 @@ public class Mario
   
   protected void handleKeyBoardInput()
   {
-    if (!gameOver)
+    if (!this.gameOver)
     {
       if (((Keyboard.isKeyDown(205)) || (Keyboard.isKeyDown(32))) && 
         (!collideWithBlock(getPlayerLocation().clone().add(1, 0))) && (!collideWithBlock(getPlayerHeadLocation().clone().add(1, 0))))
       {
         getPlayerLocation().add(1, 0);
-        score += 1;
+        this.score += 1;
       }
       if (((Keyboard.isKeyDown(203)) || (Keyboard.isKeyDown(30))) && 
         (!collideWithBlock(getPlayerLocation().clone().add(-1, 0))) && (!collideWithBlock(getPlayerHeadLocation().clone().add(-1, 0))))
       {
         getPlayerLocation().add(-1, 0);
-        score -= 1;
+        this.score -= 1;
       }
       if ((Keyboard.isKeyDown(57)) && 
         (isOnGround())) {
-        jumpVelocity = 3;
+        this.jumpVelocity = 3;
       }
     }
   }
@@ -416,18 +416,18 @@ public class Mario
     if (LabyMod.getInstance().isInGame())
     {
       bfl.l();
-      draw.drawTransparentBackground(0, 32, l, m - 33);
+      this.draw.drawTransparentBackground(0, 32, this.l, this.m - 33);
     }
     else
     {
       c();
-      draw.drawChatBackground(0, 32, l, m - 33);
+      this.draw.drawChatBackground(0, 32, this.l, this.m - 33);
     }
-    DrawUtils.a(0, 0, l, m, new java.awt.Color(107, 140, 255).getRGB());
+    DrawUtils.a(0, 0, this.l, this.m, new java.awt.Color(107, 140, 255).getRGB());
     for (Iterator localIterator1 = getTerrain().iterator(); localIterator1.hasNext();)
     {
       terrain = (Location)localIterator1.next();
-      if (type == EnumPixelType.CLOUD) {
+      if (terrain.type == EnumPixelType.CLOUD) {
         drawPixel(terrain.getX(), terrain.getY(), java.awt.Color.WHITE.getRGB());
       }
     }
@@ -441,22 +441,22 @@ public class Mario
     for (Location terrain = getTerrain().iterator(); terrain.hasNext();)
     {
       terrain = (Location)terrain.next();
-      if (type == EnumPixelType.LAVA) {
+      if (terrain.type == EnumPixelType.LAVA) {
         drawPixel(terrain.getX(), terrain.getY(), java.awt.Color.ORANGE.getRGB());
       }
-      if (type == EnumPixelType.BLOCK) {
+      if (terrain.type == EnumPixelType.BLOCK) {
         drawPixel(terrain.getX(), terrain.getY(), new java.awt.Color(231, 99, 24).getRGB());
       }
-      if (type == EnumPixelType.TUBE) {
+      if (terrain.type == EnumPixelType.TUBE) {
         drawPixel(terrain.getX(), terrain.getY(), new java.awt.Color(0, 173, 0).getRGB());
       }
-      if (type == EnumPixelType.BUSH) {
+      if (terrain.type == EnumPixelType.BUSH) {
         drawPixel(terrain.getX(), terrain.getY(), new java.awt.Color(189, 247, 24).getRGB());
       }
-      if (type == EnumPixelType.CLOUDBLOCK) {
+      if (terrain.type == EnumPixelType.CLOUDBLOCK) {
         drawPixel(terrain.getX(), terrain.getY(), new java.awt.Color(239, 239, 239).getRGB());
       }
-      if (type == EnumPixelType.BONUS) {
+      if (terrain.type == EnumPixelType.BONUS) {
         drawPixel(terrain.getX(), terrain.getY(), new java.awt.Color(255, 165, 66).getRGB());
       }
     }
@@ -470,12 +470,12 @@ public class Mario
     for (Location ll : toRem) {
       getTerrain().remove(ll);
     }
-    if (gameOver)
+    if (this.gameOver)
     {
       GL11.glPushMatrix();
       int k = 3;
       GL11.glScaled(k, k, k);
-      draw.drawCenteredString(de.labystudio.utils.Color.cl("c") + "Game Over", l / 2 / k, (m / 4 - 5) / k);
+      this.draw.drawCenteredString(de.labystudio.utils.Color.cl("c") + "Game Over", this.l / 2 / k, (this.m / 4 - 5) / k);
       GL11.glPopMatrix();
       int i;
       if (StatsLoader.stats.containsKey("mario"))
@@ -484,7 +484,7 @@ public class Mario
         i = 1;
         for (String sc : list)
         {
-          draw.drawString(i + ". Place - " + de.labystudio.utils.Color.cl("b") + sc + "m", l / 2 - 43, m / 4 - 5 + i * 10 + 20);
+          this.draw.drawString(i + ". Place - " + de.labystudio.utils.Color.cl("b") + sc + "m", this.l / 2 - 43, this.m / 4 - 5 + i * 10 + 20);
           i++;
           if (i > 10) {
             break;
@@ -493,18 +493,18 @@ public class Mario
       }
       else
       {
-        draw.drawCenteredString(de.labystudio.utils.Color.cl("f") + "No stats found", l / 2, m / 4 - 5 + 30);
+        this.draw.drawCenteredString(de.labystudio.utils.Color.cl("f") + "No stats found", this.l / 2, this.m / 4 - 5 + 30);
       }
     }
     bfl.k();
-    draw.overlayBackground(0, 32);
-    draw.overlayBackground(m - 33, m);
+    this.draw.overlayBackground(0, 32);
+    this.draw.overlayBackground(this.m - 33, this.m);
     
-    int s = score;
+    int s = this.score;
     if (s < 0) {
       s = 0;
     }
-    draw.drawString("Score: " + s + "m", 5.0D, m - 24);
+    this.draw.drawString("Score: " + s + "m", 5.0D, this.m - 24);
     
     super.a(mouseX, mouseY, partialTicks);
   }

@@ -13,27 +13,27 @@ public class LeftHand
 {
   public static boolean use(pk entity)
   {
-    boolean hand = settingsleftHand;
+    boolean hand = ConfigManager.settings.leftHand;
     if (entity == null) {
       return hand;
     }
-    if (!settingsleftBow) {
+    if (!ConfigManager.settings.leftBow) {
       return hand;
     }
     if (!(entity instanceof bet)) {
       return hand;
     }
     bet clientPlayer = (bet)entity;
-    if (bi == null) {
+    if (clientPlayer.bi == null) {
       return hand;
     }
-    if (bi.h() == null) {
+    if (clientPlayer.bi.h() == null) {
       return hand;
     }
-    if (bi.h().b() == null) {
+    if (clientPlayer.bi.h().b() == null) {
       return hand;
     }
-    if ((bi.h().b() instanceof yt)) {
+    if ((clientPlayer.bi.h().b() instanceof yt)) {
       return !hand;
     }
     return hand;
@@ -41,11 +41,11 @@ public class LeftHand
   
   public static boolean use(zx itemToRender)
   {
-    boolean hand = settingsleftHand;
+    boolean hand = ConfigManager.settings.leftHand;
     if ((itemToRender != null) && (itemToRender.b() != null) && ((itemToRender.b() instanceof aab))) {
       return false;
     }
-    if (!settingsleftBow) {
+    if (!ConfigManager.settings.leftBow) {
       return hand;
     }
     if (itemToRender == null) {

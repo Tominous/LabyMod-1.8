@@ -26,7 +26,7 @@ public class SPMBinding
     {
       SPMBinding keybinding = (SPMBinding)hash.a(keyCode);
       if (keybinding != null) {
-        pressTime += 1;
+        keybinding.pressTime += 1;
       }
     }
   }
@@ -37,7 +37,7 @@ public class SPMBinding
     {
       SPMBinding keybinding = (SPMBinding)hash.a(keyCode);
       if (keybinding != null) {
-        pressed = pressed;
+        keybinding.pressed = pressed;
       }
     }
   }
@@ -53,7 +53,7 @@ public class SPMBinding
   {
     hash.c();
     for (SPMBinding keybinding : keybindArray) {
-      hash.a(keyCode, keybinding);
+      hash.a(keybinding.keyCode, keybinding);
     }
   }
   
@@ -64,10 +64,10 @@ public class SPMBinding
   
   public SPMBinding(String description, int keyCode, String category)
   {
-    keyDescription = description;
+    this.keyDescription = description;
     this.keyCode = keyCode;
-    keyCodeDefault = keyCode;
-    keyCategory = category;
+    this.keyCodeDefault = keyCode;
+    this.keyCategory = category;
     keybindArray.add(this);
     hash.a(keyCode, this);
     keybindSet.add(category);
@@ -75,42 +75,42 @@ public class SPMBinding
   
   public boolean isKeyDown()
   {
-    return pressed;
+    return this.pressed;
   }
   
   public String getKeyCategory()
   {
-    return keyCategory;
+    return this.keyCategory;
   }
   
   public boolean isPressed()
   {
-    if (pressTime == 0) {
+    if (this.pressTime == 0) {
       return false;
     }
-    pressTime -= 1;
+    this.pressTime -= 1;
     return true;
   }
   
   private void unpressKey()
   {
-    pressTime = 0;
-    pressed = false;
+    this.pressTime = 0;
+    this.pressed = false;
   }
   
   public String getKeyDescription()
   {
-    return keyDescription;
+    return this.keyDescription;
   }
   
   public int getKeyCodeDefault()
   {
-    return keyCodeDefault;
+    return this.keyCodeDefault;
   }
   
   public int getKeyCode()
   {
-    return keyCode;
+    return this.keyCode;
   }
   
   public void setKeyCode(int keyCode)
@@ -120,9 +120,9 @@ public class SPMBinding
   
   public int compareTo(SPMBinding p_compareTo_1_)
   {
-    int i = bnq.a(keyCategory, new Object[0]).compareTo(bnq.a(keyCategory, new Object[0]));
+    int i = bnq.a(this.keyCategory, new Object[0]).compareTo(bnq.a(p_compareTo_1_.keyCategory, new Object[0]));
     if (i == 0) {
-      i = bnq.a(keyDescription, new Object[0]).compareTo(bnq.a(keyDescription, new Object[0]));
+      i = bnq.a(this.keyDescription, new Object[0]).compareTo(bnq.a(p_compareTo_1_.keyDescription, new Object[0]));
     }
     return i;
   }

@@ -16,24 +16,24 @@ public enum ahu$a
   
   private ahu$a(int ☃, String ☃, cq ☃)
   {
-    j = ☃;
-    k = ☃;
-    l = ☃;
+    this.j = ☃;
+    this.k = ☃;
+    this.l = ☃;
   }
   
   public int a()
   {
-    return j;
+    return this.j;
   }
   
   public cq c()
   {
-    return l;
+    return this.l;
   }
   
   public String toString()
   {
-    return k;
+    return this.k;
   }
   
   public static a a(int ☃)
@@ -80,6 +80,6 @@ public enum ahu$a
   
   public String l()
   {
-    return k;
+    return this.k;
   }
 }

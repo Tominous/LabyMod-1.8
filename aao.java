@@ -6,8 +6,8 @@ public class aao
   
   public aao(afh ☃, afh ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
     a(yz.l);
   }
   
@@ -19,10 +19,10 @@ public class aao
     if (!☃.a(☃.a(☃), ☃, ☃)) {
       return false;
     }
-    if ((☃.p(☃).c() == b) && (☃.d(☃.a())))
+    if ((☃.p(☃).c() == this.b) && (☃.d(☃.a())))
     {
-      ☃.a(☃.a(), a.Q());
-      b -= 1;
+      ☃.a(☃.a(), this.a.Q());
+      ☃.b -= 1;
       return true;
     }
     return false;

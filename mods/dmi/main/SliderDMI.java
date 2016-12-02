@@ -24,25 +24,25 @@ public class SliderDMI
   public SliderDMI(int id, int x, int y, int size)
   {
     super(id, x, y, size + 4, 20, "");
-    sliderValue = 1.0F;
-    field_146132_r = 0.0F;
-    field_146131_s = 1.0F;
+    this.sliderValue = 1.0F;
+    this.field_146132_r = 0.0F;
+    this.field_146131_s = 1.0F;
     this.size = (size - 5);
     ave var7 = ave.A();
     updateText();
-    valueMin = 0;
-    valueMax = 100.0F;
-    valueStep = 1.0F;
+    this.valueMin = 0;
+    this.valueMax = 100.0F;
+    this.valueStep = 1.0F;
   }
   
   public int getX()
   {
-    return h;
+    return this.h;
   }
   
   public int getY()
   {
-    return i;
+    return this.i;
   }
   
   protected int a(boolean mouseOver)
@@ -52,50 +52,50 @@ public class SliderDMI
   
   public float denormalizeValue(float p_148262_1_)
   {
-    return snapToStepClamp(valueMin + (valueMax - valueMin) * ns.a(p_148262_1_, 0.0F, 1.0F));
+    return snapToStepClamp(this.valueMin + (this.valueMax - this.valueMin) * ns.a(p_148262_1_, 0.0F, 1.0F));
   }
   
   public float snapToStepClamp(float p_148268_1_)
   {
     p_148268_1_ = snapToStep(p_148268_1_);
-    return ns.a(p_148268_1_, valueMin, valueMax);
+    return ns.a(p_148268_1_, this.valueMin, this.valueMax);
   }
   
   protected float snapToStep(float p_148264_1_)
   {
-    if (valueStep > 0.0F) {
-      p_148264_1_ = valueStep * Math.round(p_148264_1_ / valueStep);
+    if (this.valueStep > 0.0F) {
+      p_148264_1_ = this.valueStep * Math.round(p_148264_1_ / this.valueStep);
     }
     return p_148264_1_;
   }
   
   public void updateText()
   {
-    if (settingsscale == 50) {
-      j = ("" + Color.c + "a" + (settingsscale + 50) + "%");
+    if (Settings.settings.scale == 50) {
+      this.j = ("" + Color.c + "a" + (Settings.settings.scale + 50) + "%");
     } else {
-      j = (settingsscale + 50 + "%");
+      this.j = (Settings.settings.scale + 50 + "%");
     }
   }
   
   protected void b(ave mc, int mouseX, int mouseY)
   {
-    if (m)
+    if (this.m)
     {
-      if (dragging)
+      if (this.dragging)
       {
-        sliderValue = ((mouseX - (getX() + 4)) / (f - 8));
-        sliderValue = ns.a(sliderValue, 0.0F, 1.0F);
-        sliderValue = ((mouseX - (h + 4)) / (f - 8));
-        sliderValue = ns.a(sliderValue, 0.0F, 1.0F);
-        sliderValue = denormalizeValue(sliderValue);
-        settingsscale = ((int)sliderValue);
+        this.sliderValue = ((mouseX - (getX() + 4)) / (this.f - 8));
+        this.sliderValue = ns.a(this.sliderValue, 0.0F, 1.0F);
+        this.sliderValue = ((mouseX - (this.h + 4)) / (this.f - 8));
+        this.sliderValue = ns.a(this.sliderValue, 0.0F, 1.0F);
+        this.sliderValue = denormalizeValue(this.sliderValue);
+        Settings.settings.scale = ((int)this.sliderValue);
         updateText();
       }
       mc.P().a(a);
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-      b(getX() + (int)(settingsscale * 253 / valueMax * 0.76D), getY(), 0, 66, 4, 20);
-      b(getX() + (int)(settingsscale * 253 / valueMax * 0.76D) + 4, getY(), 196, 66, 4, 20);
+      b(getX() + (int)(Settings.settings.scale * 253 / this.valueMax * 0.76D), getY(), 0, 66, 4, 20);
+      b(getX() + (int)(Settings.settings.scale * 253 / this.valueMax * 0.76D) + 4, getY(), 196, 66, 4, 20);
     }
   }
   
@@ -103,11 +103,11 @@ public class SliderDMI
   {
     if (super.c(mc, mouseX, mouseY))
     {
-      sliderValue = ((mouseX - (getX() + 4)) / (f - 8));
-      sliderValue = ns.a(sliderValue, 0.0F, 1.0F);
-      settingsscale = ((int)sliderValue);
+      this.sliderValue = ((mouseX - (getX() + 4)) / (this.f - 8));
+      this.sliderValue = ns.a(this.sliderValue, 0.0F, 1.0F);
+      Settings.settings.scale = ((int)this.sliderValue);
       updateText();
-      dragging = true;
+      this.dragging = true;
       return true;
     }
     return false;
@@ -115,7 +115,7 @@ public class SliderDMI
   
   public void a(int mouseX, int mouseY)
   {
-    dragging = false;
+    this.dragging = false;
     ConfigManager.save();
   }
 }

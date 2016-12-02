@@ -8,7 +8,7 @@ public class afp
   protected afp()
   {
     super(arm.F);
-    j(M.b().a(a, Integer.valueOf(0)));
+    j(this.M.b().a(a, Integer.valueOf(0)));
     a(true);
   }
   

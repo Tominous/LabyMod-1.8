@@ -45,20 +45,20 @@ public class GuiAutoText
   
   public void addSymbol(String symbol)
   {
-    GuiCustomButton button = new GuiCustomButton(-1, l - 4 - 20 - z, 4 + y, 20, 20, symbol);
-    run = "true";
-    n.add(button);
-    z += 24;
-    if (z % (24 * lines) == 0)
+    GuiCustomButton button = new GuiCustomButton(-1, this.l - 4 - 20 - this.z, 4 + this.y, 20, 20, symbol);
+    button.run = "true";
+    this.n.add(button);
+    this.z += 24;
+    if (this.z % (24 * this.lines) == 0)
     {
-      z = 0;
-      y += 24;
+      this.z = 0;
+      this.y += 24;
     }
   }
   
   public void initAutoText()
   {
-    buttons.clear();
+    this.buttons.clear();
     AutoTextLoader.listening = false;
     AutoTextLoader.key = -1;
     AutoTextLoader.alt = false;
@@ -68,26 +68,26 @@ public class GuiAutoText
     for (String set : AutoTextLoader.autoText.keySet())
     {
       GuiCustomButton b = new GuiCustomButton(-3, 0, 0, 20, 20, Color.cl("c") + "X");
-      run = set;
-      n.add(b);
-      buttons.add(b);
+      b.run = set;
+      this.n.add(b);
+      this.buttons.add(b);
     }
   }
   
   public void drawAutoText()
   {
-    int i = 25 + scroll;
+    int i = 25 + this.scroll;
     int a = 0;
     for (String m : AutoTextLoader.autoText.keySet()) {
-      if (a < buttons.size())
+      if (a < this.buttons.size())
       {
-        GuiCustomButton b = (GuiCustomButton)buttons.get(a);
-        m = ((6 + i > 15) && (6 + i < 160));
-        if (m)
+        GuiCustomButton b = (GuiCustomButton)this.buttons.get(a);
+        b.m = ((6 + i > 15) && (6 + i < 160));
+        if (b.m)
         {
-          h = (l - 190);
-          i = (6 + i);
-          DrawUtils.a(l - 170, 6 + i, l - 7, 6 + i + 20, Integer.MIN_VALUE);
+          b.h = (this.l - 190);
+          b.i = (6 + i);
+          DrawUtils.a(this.l - 170, 6 + i, this.l - 7, 6 + i + 20, Integer.MIN_VALUE);
           String extra = "";
           if (AutoTextLoader.isAlt(m)) {
             extra = extra + "Alt+";
@@ -98,21 +98,21 @@ public class GuiAutoText
           if (AutoTextLoader.isCtrl(m)) {
             extra = extra + "Ctrl+";
           }
-          draw.drawString(Color.cl("7") + "[" + Color.cl("c") + extra + Keyboard.getKeyName(AutoTextLoader.getNormalKey(m)) + Color.cl("7") + "] " + Color.cl("e") + (String)AutoTextLoader.autoText.get(m), l - 167, 12 + i);
+          this.draw.drawString(Color.cl("7") + "[" + Color.cl("c") + extra + Keyboard.getKeyName(AutoTextLoader.getNormalKey(m)) + Color.cl("7") + "] " + Color.cl("e") + (String)AutoTextLoader.autoText.get(m), this.l - 167, 12 + i);
         }
-        allowScroll = (6 + i > 160);
+        this.allowScroll = (6 + i > 160);
         i += 22;
         a++;
       }
     }
     if (AutoTextLoader.autoText.size() < 5) {
-      scroll = 0;
+      this.scroll = 0;
     }
   }
   
   public void add()
   {
-    if (addButton.l)
+    if (this.addButton.l)
     {
       String buildHotkey = "";
       if (AutoTextLoader.alt) {
@@ -128,7 +128,7 @@ public class GuiAutoText
       while (AutoTextLoader.autoText.containsKey(key)) {
         key = key + ";";
       }
-      AutoTextLoader.autoText.put(key, commandInput.b());
+      AutoTextLoader.autoText.put(key, this.commandInput.b());
       initAutoText();
       AutoTextLoader.save();
     }
@@ -137,8 +137,8 @@ public class GuiAutoText
   protected void a(int mouseX, int mouseY, int mouseButton)
     throws IOException
   {
-    commandInput.a(mouseX, mouseY, mouseButton);
-    chatField.a(mouseX, mouseY, mouseButton);
+    this.commandInput.a(mouseX, mouseY, mouseButton);
+    this.chatField.a(mouseX, mouseY, mouseButton);
     super.a(mouseX, mouseY, mouseButton);
   }
   
@@ -146,37 +146,37 @@ public class GuiAutoText
     throws IOException
   {
     super.a(typedChar, keyCode);
-    if (chatField.m())
+    if (this.chatField.m())
     {
-      text = chatField.b();
+      this.text = this.chatField.b();
       if (keyCode == 1)
       {
-        j.a((axu)null);
+        this.j.a((axu)null);
       }
       else if ((keyCode != 28) && (keyCode != 156))
       {
         if ((keyCode != 200) && 
           (keyCode != 208)) {
           if (keyCode == 201) {
-            j.q.d().b(j.q.d().i() - 1);
+            this.j.q.d().b(this.j.q.d().i() - 1);
           } else if (keyCode == 209) {
-            j.q.d().b(-j.q.d().i() + 1);
+            this.j.q.d().b(-this.j.q.d().i() + 1);
           } else {
-            chatField.a(typedChar, keyCode);
+            this.chatField.a(typedChar, keyCode);
           }
         }
       }
       else
       {
-        String var3 = chatField.b().trim();
+        String var3 = this.chatField.b().trim();
         if (var3.length() > 0) {
           f(var3);
         }
-        j.a((axu)null);
+        this.j.a((axu)null);
       }
     }
-    if ((commandInput.m()) && (!AutoTextLoader.listening)) {
-      commandInput.a(typedChar, keyCode);
+    if ((this.commandInput.m()) && (!AutoTextLoader.listening)) {
+      this.commandInput.a(typedChar, keyCode);
     }
   }
   
@@ -195,55 +195,55 @@ public class GuiAutoText
       }
       if (var1 > 0)
       {
-        if (scroll < 0) {
-          scroll += 22;
+        if (this.scroll < 0) {
+          this.scroll += 22;
         }
       }
-      else if (allowScroll) {
-        scroll -= 22;
+      else if (this.allowScroll) {
+        this.scroll -= 22;
       }
     }
   }
   
   public void b()
   {
-    n.clear();
-    addButton = new avs(1, l - 192, 4, 30, 20, "");
-    n.add(addButton);
-    n.add(new avs(0, l - 48, 4, 45, 20, Color.cl("c") + "Close"));
-    help = new avs(-1, l - 215, 4, 20, 20, Color.cl("b") + "?");
-    n.add(help);
+    this.n.clear();
+    this.addButton = new avs(1, this.l - 192, 4, 30, 20, "");
+    this.n.add(this.addButton);
+    this.n.add(new avs(0, this.l - 48, 4, 45, 20, Color.cl("c") + "Close"));
+    this.help = new avs(-1, this.l - 215, 4, 20, 20, Color.cl("b") + "?");
+    this.n.add(this.help);
     String a = "✖";
     if (AutoTextLoader.enabled) {
       a = "✔";
     }
     a = Color.booleanToColor(Boolean.valueOf(AutoTextLoader.enabled)) + a;
-    toggle = new avs(2, l - 215, 27, 20, 20, a);
-    n.add(toggle);
+    this.toggle = new avs(2, this.l - 215, 27, 20, 20, a);
+    this.n.add(this.toggle);
     initAutoText();
     
     Keyboard.enableRepeatEvents(true);
-    chatField = new avw(0, q, 4, m - 12, l - 4, 12);
-    chatField.f(500);
-    chatField.a(false);
-    chatField.b(true);
-    chatField.a(text);
-    chatField.f();
+    this.chatField = new avw(0, this.q, 4, this.m - 12, this.l - 4, 12);
+    this.chatField.f(500);
+    this.chatField.a(false);
+    this.chatField.b(true);
+    this.chatField.a(this.text);
+    this.chatField.f();
     
-    commandInput = new ModGuiTextField(0, q, l - 160, 6, 110, 17);
-    commandInput.f(100);
-    commandInput.b(false);
+    this.commandInput = new ModGuiTextField(0, this.q, this.l - 160, 6, 110, 17);
+    this.commandInput.f(100);
+    this.commandInput.b(false);
   }
   
   protected void a(avs button)
   {
-    switch (k)
+    switch (button.k)
     {
     case 0: 
-      j.a(new awv(text));
+      this.j.a(new awv(this.text));
       break;
     case 1: 
-      if (!commandInput.b().replace(" ", "").isEmpty())
+      if (!this.commandInput.b().replace(" ", "").isEmpty())
       {
         AutoTextLoader.key = -1;
         AutoTextLoader.listening = true;
@@ -256,20 +256,20 @@ public class GuiAutoText
       AutoTextLoader.enabled = !AutoTextLoader.enabled;
       b();
     }
-    if (k == -5)
+    if (button.k == -5)
     {
-      chatField.a("&".charAt(0), 0);
-      chatField.a(j.replace(Color.c + "", "").substring(0, 1).charAt(0), 0);
+      this.chatField.a("&".charAt(0), 0);
+      this.chatField.a(button.j.replace(Color.c + "", "").substring(0, 1).charAt(0), 0);
     }
     if ((button instanceof GuiCustomButton))
     {
-      if (run.equals("true")) {
-        chatField.a(j.charAt(0), 0);
+      if (((GuiCustomButton)button).run.equals("true")) {
+        this.chatField.a(button.j.charAt(0), 0);
       }
-      if (k == -3)
+      if (button.k == -3)
       {
-        AutoTextLoader.autoText.remove(run);
-        buttons.remove(button);
+        AutoTextLoader.autoText.remove(((GuiCustomButton)button).run);
+        this.buttons.remove(button);
         b();
         AutoTextLoader.save();
       }
@@ -278,17 +278,17 @@ public class GuiAutoText
   
   public void a(int mouseX, int mouseY, float partialTicks)
   {
-    draw = getInstancedraw;
-    a(2, m - 14, l - 2, m - 2, Integer.MIN_VALUE);
-    a(l - 193, 27, l - 3, 169, Integer.MIN_VALUE);
-    a(l - 193, 3, l - 3, 25, Integer.MIN_VALUE);
-    addButton.l = (!commandInput.b().replace(" ", "").isEmpty());
-    chatField.g();
-    commandInput.g();
+    this.draw = LabyMod.getInstance().draw;
+    a(2, this.m - 14, this.l - 2, this.m - 2, Integer.MIN_VALUE);
+    a(this.l - 193, 27, this.l - 3, 169, Integer.MIN_VALUE);
+    a(this.l - 193, 3, this.l - 3, 25, Integer.MIN_VALUE);
+    this.addButton.l = (!this.commandInput.b().replace(" ", "").isEmpty());
+    this.chatField.g();
+    this.commandInput.g();
     drawAutoText();
     if (AutoTextLoader.listening)
     {
-      addButton.j = "> <";
+      this.addButton.j = "> <";
       if (AutoTextLoader.key != -1)
       {
         if (!contains(AutoTextLoader.key + "")) {
@@ -299,25 +299,25 @@ public class GuiAutoText
         AutoTextLoader.alt = false;
         AutoTextLoader.shift = false;
         AutoTextLoader.ctrl = false;
-        commandInput.a("");
+        this.commandInput.a("");
       }
     }
     else
     {
-      addButton.j = (Color.cl("a") + "Add");
+      this.addButton.j = (Color.cl("a") + "Add");
     }
     super.a(mouseX, mouseY, partialTicks);
-    if (help.a())
+    if (this.help.a())
     {
-      draw.drawRightString("First write a sentence then enter your hotkey", mouseX, mouseY);
-      draw.drawRightString("and by pressing the hotkey during gameplay", mouseX, mouseY + 10);
-      draw.drawRightString("your sentence will be written in the chat!", mouseX, mouseY + 20);
+      this.draw.drawRightString("First write a sentence then enter your hotkey", mouseX, mouseY);
+      this.draw.drawRightString("and by pressing the hotkey during gameplay", mouseX, mouseY + 10);
+      this.draw.drawRightString("your sentence will be written in the chat!", mouseX, mouseY + 20);
     }
-    if (toggle.a()) {
+    if (this.toggle.a()) {
       if (AutoTextLoader.enabled) {
-        draw.drawRightString(Color.cl("a") + "AutoText enabled", mouseX, mouseY);
+        this.draw.drawRightString(Color.cl("a") + "AutoText enabled", mouseX, mouseY);
       } else {
-        draw.drawRightString(Color.cl("c") + "AutoText disabled", mouseX, mouseY);
+        this.draw.drawRightString(Color.cl("c") + "AutoText disabled", mouseX, mouseY);
       }
     }
   }

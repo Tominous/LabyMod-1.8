@@ -4,12 +4,12 @@ public class asf
   public asf(long ☃, ase ☃)
   {
     super(☃);
-    a = ☃;
+    this.a = ☃;
   }
   
   public int[] a(int ☃, int ☃, int ☃, int ☃)
   {
-    int[] ☃ = a.a(☃ - 1, ☃ - 1, ☃ + 2, ☃ + 2);
+    int[] ☃ = this.a.a(☃ - 1, ☃ - 1, ☃ + 2, ☃ + 2);
     
     int[] ☃ = asc.a(☃ * ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
@@ -19,8 +19,8 @@ public class asf
         int ☃ = ☃[(☃ + 1 + (☃ + 1) * (☃ + 2))];
         if (a(57) == 0)
         {
-          if (☃ == qaz) {
-            ☃[(☃ + ☃ * ☃)] = (qaz + 128);
+          if (☃ == ady.q.az) {
+            ☃[(☃ + ☃ * ☃)] = (ady.q.az + 128);
           } else {
             ☃[(☃ + ☃ * ☃)] = ☃;
           }

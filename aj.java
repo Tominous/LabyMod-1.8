@@ -43,15 +43,15 @@ public class aj
         throw new bz("commands.give.tagError", new Object[] { ☃.getMessage() });
       }
     }
-    boolean ☃ = bi.a(☃);
+    boolean ☃ = ☃.bi.a(☃);
     if (☃)
     {
-      o.a(☃, "random.pop", 0.2F, ((☃.bc().nextFloat() - ☃.bc().nextFloat()) * 0.7F + 1.0F) * 2.0F);
-      bj.b();
+      ☃.o.a(☃, "random.pop", 0.2F, ((☃.bc().nextFloat() - ☃.bc().nextFloat()) * 0.7F + 1.0F) * 2.0F);
+      ☃.bj.b();
     }
-    if ((!☃) || (b > 0))
+    if ((!☃) || (☃.b > 0))
     {
-      ☃.a(n.a.d, ☃ - b);
+      ☃.a(n.a.d, ☃ - ☃.b);
       uz ☃ = ☃.a(☃, false);
       if (☃ != null)
       {
@@ -61,7 +61,7 @@ public class aj
     }
     else
     {
-      b = 1;
+      ☃.b = 1;
       ☃.a(n.a.d, ☃);
       uz ☃ = ☃.a(☃, false);
       if (☃ != null) {

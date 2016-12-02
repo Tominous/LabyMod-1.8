@@ -10,22 +10,22 @@ public class fq
   
   public fq(pk ☃, int ☃)
   {
-    a = ☃.F();
-    b = ☃;
+    this.a = ☃.F();
+    this.b = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.e();
-    b = ☃.readUnsignedByte();
+    this.a = ☃.e();
+    this.b = ☃.readUnsignedByte();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a);
-    ☃.writeByte(b);
+    ☃.b(this.a);
+    ☃.writeByte(this.b);
   }
   
   public void a(fj ☃)
@@ -35,11 +35,11 @@ public class fq
   
   public int a()
   {
-    return a;
+    return this.a;
   }
   
   public int b()
   {
-    return b;
+    return this.b;
   }
 }

@@ -29,10 +29,10 @@ public enum cy
   
   private cy(String ☃, int ☃, boolean ☃, int ☃)
   {
-    Q = ☃;
-    R = ☃;
-    S = ☃;
-    T = ☃;
+    this.Q = ☃;
+    this.R = ☃;
+    this.S = ☃;
+    this.T = ☃;
   }
   
   private cy(String ☃, int ☃, boolean ☃)
@@ -47,27 +47,27 @@ public enum cy
   
   public String b()
   {
-    return Q;
+    return this.Q;
   }
   
   public int c()
   {
-    return R;
+    return this.R;
   }
   
   public int d()
   {
-    return T;
+    return this.T;
   }
   
   public boolean e()
   {
-    return S;
+    return this.S;
   }
   
   public boolean f()
   {
-    return T > 0;
+    return this.T > 0;
   }
   
   public static cy a(int ☃)

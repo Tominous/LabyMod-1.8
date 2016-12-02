@@ -105,7 +105,7 @@ public class AutoTextLoader
       repeat = false;
       return;
     }
-    if ((getInstancemc.m == null) && (settingsautoText) && (enabled) && (!repeat) && (Allowed.chat())) {
+    if ((LabyMod.getInstance().mc.m == null) && (ConfigManager.settings.autoText) && (enabled) && (!repeat) && (Allowed.chat())) {
       for (String set : autoText.keySet()) {
         try
         {
@@ -124,7 +124,7 @@ public class AutoTextLoader
               try
               {
                 int layer = Integer.parseInt(text.split("%togglelayer%")[1]);
-                At.a(wo.values()[layer]);
+                ave.A().t.a(wo.values()[layer]);
               }
               catch (Exception error)
               {

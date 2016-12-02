@@ -14,7 +14,7 @@ public class PacketPlayServerStatus
   {
     this.serverIp = serverIp;
     this.port = port;
-    serverName = null;
+    this.serverName = null;
   }
   
   public PacketPlayServerStatus() {}
@@ -28,21 +28,21 @@ public class PacketPlayServerStatus
   
   public void read(PacketBuf buf)
   {
-    serverIp = buf.readString();
-    port = buf.readInt();
+    this.serverIp = buf.readString();
+    this.port = buf.readInt();
     if (buf.readBoolean()) {
-      serverName = buf.readString();
+      this.serverName = buf.readString();
     }
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeString(serverIp);
-    buf.writeInt(port);
-    if (serverName != null)
+    buf.writeString(this.serverIp);
+    buf.writeInt(this.port);
+    if (this.serverName != null)
     {
       buf.writeBoolean(true);
-      buf.writeString(serverName);
+      buf.writeString(this.serverName);
     }
     else
     {
@@ -57,24 +57,24 @@ public class PacketPlayServerStatus
   
   public String getServerIp()
   {
-    return serverIp;
+    return this.serverIp;
   }
   
   public int getPort()
   {
-    return port;
+    return this.port;
   }
   
   public String getServerName()
   {
-    return serverName;
+    return this.serverName;
   }
   
   public ServerInfo build()
   {
-    if (serverName == null) {
-      return new ServerInfo(serverIp, port);
+    if (this.serverName == null) {
+      return new ServerInfo(this.serverIp, this.port);
     }
-    return new ServerInfo(serverIp, port, serverName);
+    return new ServerInfo(this.serverIp, this.port, this.serverName);
   }
 }

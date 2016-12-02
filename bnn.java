@@ -24,19 +24,19 @@ public class bnn
   
   public bnn(bny ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
   
   public void a(bnk ☃)
   {
     for (String ☃ : ☃.c())
     {
-      e.add(☃);
-      bnb ☃ = (bnb)c.get(☃);
+      this.e.add(☃);
+      bnb ☃ = (bnb)this.c.get(☃);
       if (☃ == null)
       {
-        ☃ = new bnb(f);
-        c.put(☃, ☃);
+        ☃ = new bnb(this.f);
+        this.c.put(☃, ☃);
       }
       ☃.a(☃);
     }
@@ -44,13 +44,13 @@ public class bnn
   
   public Set<String> a()
   {
-    return e;
+    return this.e;
   }
   
   public bnh a(jy ☃)
     throws IOException
   {
-    bni ☃ = (bni)c.get(☃.b());
+    bni ☃ = (bni)this.c.get(☃.b());
     if (☃ != null) {
       return ☃.a(☃);
     }
@@ -60,7 +60,7 @@ public class bnn
   public List<bnh> b(jy ☃)
     throws IOException
   {
-    bni ☃ = (bni)c.get(☃.b());
+    bni ☃ = (bni)this.c.get(☃.b());
     if (☃ != null) {
       return ☃.b(☃);
     }
@@ -69,8 +69,8 @@ public class bnn
   
   private void b()
   {
-    c.clear();
-    e.clear();
+    this.c.clear();
+    this.e.clear();
   }
   
   public void a(List<bnk> ☃)
@@ -92,14 +92,14 @@ public class bnn
   
   public void a(bnj ☃)
   {
-    d.add(☃);
+    this.d.add(☃);
     
     ☃.a(this);
   }
   
   private void c()
   {
-    for (bnj ☃ : d) {
+    for (bnj ☃ : this.d) {
       ☃.a(this);
     }
   }

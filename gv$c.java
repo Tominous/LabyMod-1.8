@@ -5,33 +5,33 @@ public class gv$c
 {
   public gv$c()
   {
-    h = true;
+    this.h = true;
   }
   
   public gv$c(int ☃, byte ☃, byte ☃, boolean ☃)
   {
     super(☃);
-    e = ☃;
-    f = ☃;
-    h = true;
-    g = ☃;
+    this.e = ☃;
+    this.f = ☃;
+    this.h = true;
+    this.g = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
     super.a(☃);
-    e = ☃.readByte();
-    f = ☃.readByte();
-    g = ☃.readBoolean();
+    this.e = ☃.readByte();
+    this.f = ☃.readByte();
+    this.g = ☃.readBoolean();
   }
   
   public void b(em ☃)
     throws IOException
   {
     super.b(☃);
-    ☃.writeByte(e);
-    ☃.writeByte(f);
-    ☃.writeBoolean(g);
+    ☃.writeByte(this.e);
+    ☃.writeByte(this.f);
+    ☃.writeBoolean(this.g);
   }
 }

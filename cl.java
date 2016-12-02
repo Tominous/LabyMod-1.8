@@ -6,43 +6,43 @@ public class cl
   
   public cl(adm ☃, cj ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public adm i()
   {
-    return a;
+    return this.a;
   }
   
   public double a()
   {
-    return b.n() + 0.5D;
+    return this.b.n() + 0.5D;
   }
   
   public double b()
   {
-    return b.o() + 0.5D;
+    return this.b.o() + 0.5D;
   }
   
   public double c()
   {
-    return b.p() + 0.5D;
+    return this.b.p() + 0.5D;
   }
   
   public cj d()
   {
-    return b;
+    return this.b;
   }
   
   public int f()
   {
-    alz ☃ = a.p(b);
+    alz ☃ = this.a.p(this.b);
     return ☃.c().c(☃);
   }
   
   public <T extends akw> T h()
   {
-    return a.s(b);
+    return this.a.s(this.b);
   }
 }

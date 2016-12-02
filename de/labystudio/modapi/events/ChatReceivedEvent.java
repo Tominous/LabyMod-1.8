@@ -27,7 +27,7 @@ public class ChatReceivedEvent
   
   public boolean isCancelled()
   {
-    return cancelled;
+    return this.cancelled;
   }
   
   public void setCancelled(boolean cancelled)
@@ -37,16 +37,21 @@ public class ChatReceivedEvent
   
   public eu getComponent()
   {
-    return component;
+    return this.component;
   }
   
   public String getCleanMsg()
   {
-    return component.c();
+    return this.component.c();
   }
   
   public String getMsg()
   {
-    return component.d();
+    return this.component.d();
+  }
+  
+  public void setComponent(eu component)
+  {
+    this.component = component;
   }
 }

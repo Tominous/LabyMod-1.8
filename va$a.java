@@ -17,18 +17,18 @@ public enum va$a
   
   private va$a(int ☃, String ☃)
   {
-    i = ☃;
-    j = ☃;
+    this.i = ☃;
+    this.j = ☃;
   }
   
   public int a()
   {
-    return i;
+    return this.i;
   }
   
   public String b()
   {
-    return j;
+    return this.j;
   }
   
   public static a a(int ☃)

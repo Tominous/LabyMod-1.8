@@ -6,7 +6,7 @@ public class bbl
   
   public bbl()
   {
-    for (int ☃ = 0; ☃ < a.length; ☃++)
+    for (int ☃ = 0; ☃ < this.a.length; ☃++)
     {
       int ☃ = 0;
       int ☃ = ☃;
@@ -20,23 +20,23 @@ public class bbl
         ☃ = 24;
         ☃ = 19;
       }
-      a[☃] = new bct(this, ☃, ☃);
-      a[☃].a(-4.0F, 16 + ☃, -4.0F, 8, 1, 8);
+      this.a[☃] = new bct(this, ☃, ☃);
+      this.a[☃].a(-4.0F, 16 + ☃, -4.0F, 8, 1, 8);
     }
-    b = new bct(this, 0, 16);
-    b.a(-2.0F, 18.0F, -2.0F, 4, 4, 4);
+    this.b = new bct(this, 0, 16);
+    this.b.a(-2.0F, 18.0F, -2.0F, 4, 4, 4);
   }
   
   public void a(pr ☃, float ☃, float ☃, float ☃)
   {
     vu ☃ = (vu)☃;
     
-    float ☃ = c + (b - c) * ☃;
+    float ☃ = ☃.c + (☃.b - ☃.c) * ☃;
     if (☃ < 0.0F) {
       ☃ = 0.0F;
     }
-    for (int ☃ = 0; ☃ < a.length; ☃++) {
-      a[☃].d = (-(4 - ☃) * ☃ * 1.7F);
+    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
+      this.a[☃].d = (-(4 - ☃) * ☃ * 1.7F);
     }
   }
   
@@ -44,9 +44,9 @@ public class bbl
   {
     a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
     
-    b.a(☃);
-    for (int ☃ = 0; ☃ < a.length; ☃++) {
-      a[☃].a(☃);
+    this.b.a(☃);
+    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
+      this.a[☃].a(☃);
     }
   }
 }

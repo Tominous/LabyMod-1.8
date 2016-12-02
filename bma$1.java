@@ -8,61 +8,49 @@ import org.apache.logging.log4j.Logger;
 class bma$1
   extends Thread
 {
-  private static final String __OBFID = "CL_00001050";
-  
-  bma$1(bma parambma, String x0)
+  bma$1(bma parambma, String ☃)
   {
-    super(x0);
+    super(☃);
   }
   
   public void run()
   {
-    HttpURLConnection var1 = null;
-    bma.f().debug("Downloading http texture from {} to {}", new Object[] { bma.a(this$0), bma.b(this$0) });
-    if (bma.access$300(this$0))
-    {
-      bma.access$400(this$0);
-      return;
-    }
+    HttpURLConnection ☃ = null;
+    bma.f().debug("Downloading http texture from {} to {}", new Object[] { bma.a(this.a), bma.b(this.a) });
     try
     {
-      var1 = (HttpURLConnection)new URL(bma.a(this$0)).openConnection(ave.A().O());
-      var1.setDoInput(true);
-      var1.setDoOutput(false);
-      var1.connect();
-      if (var1.getResponseCode() / 100 == 2)
-      {
-        BufferedImage var2;
-        BufferedImage var2;
-        if (bma.b(this$0) != null)
-        {
-          FileUtils.copyInputStreamToFile(var1.getInputStream(), bma.b(this$0));
-          var2 = ImageIO.read(bma.b(this$0));
-        }
-        else
-        {
-          var2 = bml.a(var1.getInputStream());
-        }
-        if (bma.c(this$0) != null) {
-          var2 = bma.c(this$0).a(var2);
-        }
-        this$0.a(var2);
+      ☃ = (HttpURLConnection)new URL(bma.a(this.a)).openConnection(ave.A().O());
+      ☃.setDoInput(true);
+      ☃.setDoOutput(false);
+      ☃.connect();
+      if (☃.getResponseCode() / 100 != 2) {
+        return;
       }
-      else if (var1.getErrorStream() != null)
+      BufferedImage ☃;
+      BufferedImage ☃;
+      if (bma.b(this.a) != null)
       {
-        Config.readAll(var1.getErrorStream());
+        FileUtils.copyInputStreamToFile(☃.getInputStream(), bma.b(this.a));
+        ☃ = ImageIO.read(bma.b(this.a));
       }
+      else
+      {
+        ☃ = bml.a(☃.getInputStream());
+      }
+      if (bma.c(this.a) != null) {
+        ☃ = bma.c(this.a).a(☃);
+      }
+      this.a.a(☃);
     }
-    catch (Exception var6)
+    catch (Exception ☃)
     {
-      bma.f().error("Couldn't download http texture: " + var6.getClass().getName() + ": " + var6.getMessage());
+      bma.f().error("Couldn't download http texture", ☃);
     }
     finally
     {
-      if (var1 != null) {
-        var1.disconnect();
+      if (☃ != null) {
+        ☃.disconnect();
       }
-      this$0.imageFound = Boolean.valueOf(bma.access$600(this$0) != null);
     }
   }
 }

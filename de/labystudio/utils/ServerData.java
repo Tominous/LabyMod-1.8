@@ -16,102 +16,102 @@ public class ServerData
   
   public String getVersion()
   {
-    return version;
+    return this.version;
   }
   
   public void setVersion(String s)
   {
-    motd = s;
+    this.motd = s;
   }
   
   public String getFavicon()
   {
-    return favicon;
+    return this.favicon;
   }
   
   public void setFavicon(String s)
   {
-    favicon = s;
+    this.favicon = s;
   }
   
   public String getLatency()
   {
-    return latency;
+    return this.latency;
   }
   
   public void setLatency(String s)
   {
-    latency = s;
+    this.latency = s;
   }
   
   public String getOnline()
   {
-    return online;
+    return this.online;
   }
   
   public void setOnline(String s)
   {
-    online = s;
+    this.online = s;
   }
   
   public String getMax()
   {
-    return max;
+    return this.max;
   }
   
   public void setMax(String s)
   {
-    max = s;
+    this.max = s;
   }
   
   public String getMotd()
   {
-    return motd;
+    return this.motd;
   }
   
   public void setMotd(String s)
   {
-    motd = s;
+    this.motd = s;
   }
   
   public String getStrippedMotd()
   {
-    return strippedmotd;
+    return this.strippedmotd;
   }
   
   public void setStrippedMotd(String s)
   {
-    strippedmotd = s;
+    this.strippedmotd = s;
   }
   
   public String getProtocol()
   {
-    return protocol;
+    return this.protocol;
   }
   
   public void setProtocol(String s)
   {
-    protocol = s;
+    this.protocol = s;
   }
   
   public String getServer()
   {
-    return server;
+    return this.server;
   }
   
   public void setServer(String s)
   {
-    server = s;
+    this.server = s;
   }
   
   public String getAddress()
   {
-    return address;
+    return this.address;
   }
   
   public void setAddress(String s)
   {
-    address = s;
+    this.address = s;
   }
   
   public void setPing(int ping)
@@ -121,6 +121,6 @@ public class ServerData
   
   public int getPing()
   {
-    return ping;
+    return this.ping;
   }
 }

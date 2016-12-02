@@ -7,18 +7,18 @@ public class aqw$e
   
   public aqw$e(Class<? extends aqw.n> ☃, int ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.d = ☃;
   }
   
   public boolean a(int ☃)
   {
-    return (d == 0) || (c < d);
+    return (this.d == 0) || (this.c < this.d);
   }
   
   public boolean a()
   {
-    return (d == 0) || (c < d);
+    return (this.d == 0) || (this.c < this.d);
   }
 }

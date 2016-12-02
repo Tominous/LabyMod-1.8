@@ -31,12 +31,12 @@ public class azo
   
   public azo(axu parentScreenIn)
   {
-    f = parentScreenIn;
+    this.f = parentScreenIn;
   }
   
   public axu getParentScreen()
   {
-    return f;
+    return this.f;
   }
   
   public void b()
@@ -45,15 +45,15 @@ public class azo
     
     ResourcePacks24.getInstance();
     
-    n.add(new awe(3, l / 2 - 205, m - 48, 202, 20, "ResourcePacks24.de"));
+    this.n.add(new awe(3, this.l / 2 - 205, this.m - 48, 202, 20, "ResourcePacks24.de"));
     
-    n.add(new awe(2, l / 2 + 3, m - 48, 130, 20, "Open pack folder"));
-    n.add(buttonDone = new awe(1, l / 2 + 135, m - 48, 70, 20, bnq.a("gui.done", new Object[0])));
-    if (!s)
+    this.n.add(new awe(2, this.l / 2 + 3, this.m - 48, 130, 20, "Open pack folder"));
+    this.n.add(this.buttonDone = new awe(1, this.l / 2 + 135, this.m - 48, 70, 20, bnq.a("gui.done", new Object[0])));
+    if (!this.s)
     {
-      g = Lists.newArrayList();
-      h = Lists.newArrayList();
-      bnm resourcepackrepository = j.R();
+      this.g = Lists.newArrayList();
+      this.h = Lists.newArrayList();
+      bnm resourcepackrepository = this.j.R();
       resourcepackrepository.a();
       List<bnm.a> list = Lists.newArrayList(resourcepackrepository.b());
       list.removeAll(resourcepackrepository.c());
@@ -70,26 +70,26 @@ public class azo
       bnm.a resourcepackrepository$entry;
       list.removeAll(toRemove);
       for (bnm.a resourcepackrepository$entry : list) {
-        g.add(new azr(this, resourcepackrepository$entry));
+        this.g.add(new azr(this, resourcepackrepository$entry));
       }
       for (bnm.a resourcepackrepository$entry1 : Lists.reverse(resourcepackrepository.c())) {
-        h.add(new azr(this, resourcepackrepository$entry1));
+        this.h.add(new azr(this, resourcepackrepository$entry1));
       }
-      h.add(new azq(this));
+      this.h.add(new azq(this));
     }
-    i = new azt(j, 200, m, g);
-    i.i(l / 2 - 4 - 200);
-    i.d(7, 8);
-    r = new azv(j, 200, m, h);
-    r.i(l / 2 + 4);
-    r.d(7, 8);
+    this.i = new azt(this.j, 200, this.m, this.g);
+    this.i.i(this.l / 2 - 4 - 200);
+    this.i.d(7, 8);
+    this.r = new azv(this.j, 200, this.m, this.h);
+    this.r.i(this.l / 2 + 4);
+    this.r.d(7, 8);
     
-    i.d += 25;
-    avr res = new avr(j);
-    search = new avw(0, j.k, res.a() / 2 - 203, 33, 198, 20);
+    this.i.d += 25;
+    avr res = new avr(this.j);
+    this.search = new avw(0, this.j.k, res.a() / 2 - 203, 33, 198, 20);
     
-    packList.clear();
-    packList.addAll(i.f());
+    this.packList.clear();
+    this.packList.addAll(this.i.f());
     
     refreshPackList();
   }
@@ -98,39 +98,39 @@ public class azo
     throws IOException
   {
     super.k();
-    r.p();
-    i.p();
+    this.r.p();
+    this.i.p();
   }
   
   public boolean a(azp p_146961_1_)
   {
-    return h.contains(p_146961_1_);
+    return this.h.contains(p_146961_1_);
   }
   
   public List<azp> b(azp p_146962_1_)
   {
-    return a(p_146962_1_) ? h : g;
+    return a(p_146962_1_) ? this.h : this.g;
   }
   
   public List<azp> a()
   {
-    return g;
+    return this.g;
   }
   
   public List<azp> f()
   {
-    return h;
+    return this.h;
   }
   
   protected void a(avs button)
     throws IOException
   {
-    if (l)
+    if (button.l)
     {
       String s;
-      if (k == 2)
+      if (button.k == 2)
       {
-        File file1 = j.R().d();
+        File file1 = this.j.R().d();
         s = file1.getAbsolutePath();
         if (g.a() == g.a.d)
         {
@@ -176,35 +176,35 @@ public class azo
           Sys.openURL("file://" + s);
         }
       }
-      else if (k == 1)
+      else if (button.k == 1)
       {
         if ((this.s) && (!r()))
         {
           List<bnm.a> list = Lists.newArrayList();
-          for (azp resourcepacklistentry : h) {
+          for (azp resourcepacklistentry : this.h) {
             if ((resourcepacklistentry instanceof azr)) {
               list.add(((azr)resourcepacklistentry).j());
             }
           }
           Collections.reverse(list);
-          j.R().a(list);
-          j.t.k.clear();
-          j.t.l.clear();
+          this.j.R().a(list);
+          this.j.t.k.clear();
+          this.j.t.l.clear();
           for (bnm.a resourcepackrepository$entry : list)
           {
-            j.t.k.add(resourcepackrepository$entry.d());
+            this.j.t.k.add(resourcepackrepository$entry.d());
             if (resourcepackrepository$entry.f() != 1) {
-              j.t.l.add(resourcepackrepository$entry.d());
+              this.j.t.l.add(resourcepackrepository$entry.d());
             }
           }
-          j.t.b();
-          j.e();
+          this.j.t.b();
+          this.j.e();
         }
-        j.a(f);
+        this.j.a(this.f);
       }
-      else if (k == 3)
+      else if (button.k == 3)
       {
-        j.a(new ModGuiScreenResourcePacks(j, this));
+        this.j.a(new ModGuiScreenResourcePacks(this.j, this));
       }
     }
   }
@@ -213,9 +213,9 @@ public class azo
     throws IOException
   {
     super.a(mouseX, mouseY, mouseButton);
-    i.b(mouseX, mouseY, mouseButton);
-    r.b(mouseX, mouseY, mouseButton);
-    search.a(mouseX, mouseY, mouseButton);
+    this.i.b(mouseX, mouseY, mouseButton);
+    this.r.b(mouseX, mouseY, mouseButton);
+    this.search.a(mouseX, mouseY, mouseButton);
   }
   
   protected void b(int mouseX, int mouseY, int state)
@@ -226,29 +226,29 @@ public class azo
   public void a(int mouseX, int mouseY, float partialTicks)
   {
     c(0);
-    i.a(mouseX, mouseY, partialTicks);
-    r.a(mouseX, mouseY, partialTicks);
-    a(q, bnq.a("resourcePack.title", new Object[0]), l / 2, 16, 16777215);
+    this.i.a(mouseX, mouseY, partialTicks);
+    this.r.a(mouseX, mouseY, partialTicks);
+    a(this.q, bnq.a("resourcePack.title", new Object[0]), this.l / 2, 16, 16777215);
     
-    search.g();
-    if ((!search.m()) && (search.b().isEmpty())) {
-      j.k.a("Search..", search.a + 5, search.f + 6, Color.lightGray.getRGB());
+    this.search.g();
+    if ((!this.search.m()) && (this.search.b().isEmpty())) {
+      this.j.k.a("Search..", this.search.a + 5, this.search.f + 6, Color.lightGray.getRGB());
     }
-    if (buttonDone != null) {
-      buttonDone.j = (r() ? "Cancel" : "Done");
+    if (this.buttonDone != null) {
+      this.buttonDone.j = (r() ? "Cancel" : "Done");
     }
     super.a(mouseX, mouseY, partialTicks);
   }
   
   public void g()
   {
-    s = true;
+    this.s = true;
   }
   
   protected void a(char typedChar, int keyCode)
     throws IOException
   {
-    if (search.a(typedChar, keyCode)) {
+    if (this.search.a(typedChar, keyCode)) {
       refreshPackList();
     }
     super.a(typedChar, keyCode);
@@ -256,9 +256,9 @@ public class azo
   
   public void refreshPackList()
   {
-    String input = search.b().replace(" ", "");
+    String input = this.search.b().replace(" ", "");
     final String selectedPath = ResourcePacks24.getInstance().getPath();
-    i.f().clear();
+    this.i.f().clear();
     
     List<bnm.a> all = ave.A().R().b();
     final String path;
@@ -299,7 +299,7 @@ public class azo
               }
             };
             pack.setFolder(true);
-            i.f().add(pack);
+            this.i.f().add(pack);
             alreadyAdded.add(path);
           }
         }
@@ -326,10 +326,10 @@ public class azo
           }
         };
         pack.setFolder(true);
-        i.f().add(pack);
+        this.i.f().add(pack);
       }
     }
-    for (azp pack : packList) {
+    for (azp pack : this.packList) {
       if ((input.isEmpty()) || (pack.getTitle().toLowerCase().replace(" ", "").contains(input.toLowerCase()))) {
         if (input.isEmpty())
         {
@@ -345,10 +345,10 @@ public class azo
         }
         else
         {
-          i.f().add(pack);
+          this.i.f().add(pack);
         }
       }
     }
-    i.f().removeAll(h);
+    this.i.f().removeAll(this.h);
   }
 }

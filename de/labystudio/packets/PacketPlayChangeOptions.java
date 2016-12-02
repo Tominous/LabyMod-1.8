@@ -16,14 +16,14 @@ public class PacketPlayChangeOptions
   
   public PacketPlayChangeOptions(boolean showServer, LabyModPlayer.OnlineStatus status, TimeZone timeZone)
   {
-    options = new PacketLoginOptions.Options(showServer, status, timeZone);
+    this.options = new PacketLoginOptions.Options(showServer, status, timeZone);
   }
   
   public PacketPlayChangeOptions() {}
   
   public void read(PacketBuf buf)
   {
-    options = new PacketLoginOptions.Options(buf.readBoolean(), buf.readOnlineStatus(), TimeZone.getTimeZone(buf.readString()));
+    this.options = new PacketLoginOptions.Options(buf.readBoolean(), buf.readOnlineStatus(), TimeZone.getTimeZone(buf.readString()));
   }
   
   public void write(PacketBuf buf)
@@ -40,6 +40,6 @@ public class PacketPlayChangeOptions
   
   public PacketLoginOptions.Options getOptions()
   {
-    return options;
+    return this.options;
   }
 }

@@ -17,7 +17,7 @@ public class aln
     super.b(compound);
     for (int i = 0; i < 4; i++)
     {
-      String s = eu.a.a(a[i]);
+      String s = eu.a.a(this.a[i]);
       compound.a("Text" + (i + 1), s);
     }
     this.i.b(compound);
@@ -25,7 +25,7 @@ public class aln
   
   public void a(dn compound)
   {
-    g = false;
+    this.g = false;
     super.a(compound);
     m icommandsender = new m()
     {
@@ -48,17 +48,17 @@ public class aln
       
       public cj c()
       {
-        return c;
+        return aln.this.c;
       }
       
       public aui d()
       {
-        return new aui(c.n() + 0.5D, c.o() + 0.5D, c.p() + 0.5D);
+        return new aui(aln.this.c.n() + 0.5D, aln.this.c.o() + 0.5D, aln.this.c.p() + 0.5D);
       }
       
       public adm e()
       {
-        return b;
+        return aln.this.b;
       }
       
       public pk f()
@@ -81,16 +81,16 @@ public class aln
         eu ichatcomponent = eu.a.a(s);
         try
         {
-          a[i] = ev.a(icommandsender, ichatcomponent, (pk)null);
+          this.a[i] = ev.a(icommandsender, ichatcomponent, (pk)null);
         }
         catch (bz var7)
         {
-          a[i] = ichatcomponent;
+          this.a[i] = ichatcomponent;
         }
       }
       catch (JsonParseException var8)
       {
-        a[i] = new fa(s);
+        this.a[i] = new fa(s);
       }
     }
     this.i.a(compound);
@@ -99,8 +99,8 @@ public class aln
   public ff y_()
   {
     eu[] aichatcomponent = new eu[4];
-    System.arraycopy(a, 0, aichatcomponent, 0, 4);
-    return new hw(b, c, aichatcomponent);
+    System.arraycopy(this.a, 0, aichatcomponent, 0, 4);
+    return new hw(this.b, this.c, aichatcomponent);
   }
   
   public boolean F()
@@ -110,25 +110,25 @@ public class aln
   
   public boolean b()
   {
-    return g;
+    return this.g;
   }
   
   public void a(boolean isEditableIn)
   {
-    g = isEditableIn;
+    this.g = isEditableIn;
     if (!isEditableIn) {
-      h = null;
+      this.h = null;
     }
   }
   
   public void a(wn playerIn)
   {
-    h = playerIn;
+    this.h = playerIn;
   }
   
   public wn c()
   {
-    return h;
+    return this.h;
   }
   
   public boolean b(final wn playerIn)
@@ -154,12 +154,12 @@ public class aln
       
       public cj c()
       {
-        return c;
+        return aln.this.c;
       }
       
       public aui d()
       {
-        return new aui(c.n() + 0.5D, c.o() + 0.5D, c.p() + 0.5D);
+        return new aui(aln.this.c.n() + 0.5D, aln.this.c.o() + 0.5D, aln.this.c.p() + 0.5D);
       }
       
       public adm e()
@@ -182,9 +182,9 @@ public class aln
         aln.a(aln.this).a(this, type, amount);
       }
     };
-    for (int i = 0; i < a.length; i++)
+    for (int i = 0; i < this.a.length; i++)
     {
-      ez chatstyle = a[i] == null ? null : a[i].b();
+      ez chatstyle = this.a[i] == null ? null : this.a[i].b();
       if ((chatstyle != null) && (chatstyle.h() != null))
       {
         et clickevent = chatstyle.h();
@@ -198,7 +198,7 @@ public class aln
   
   public n d()
   {
-    return i;
+    return this.i;
   }
   
   public int updateSign = 0;
@@ -211,61 +211,61 @@ public class aln
   
   public void setText(ArrayList<String> arrayList)
   {
-    text = GommeHDSign.getText(this);
+    this.text = GommeHDSign.getText(this);
   }
   
   public ArrayList<String> getText()
   {
-    return text;
+    return this.text;
   }
   
   public void setAvailable(ArrayList<String> text)
   {
-    available = GommeHDSign.isAvailable(text);
+    this.available = GommeHDSign.isAvailable(text);
   }
   
   public boolean getAvailable()
   {
-    return available;
+    return this.available;
   }
   
   public void setSearch(ArrayList<String> text)
   {
-    search = GommeHDSign.search(text);
+    this.search = GommeHDSign.search(text);
   }
   
   public boolean getSearch()
   {
-    return search;
+    return this.search;
   }
   
   public void setSize(ArrayList<String> text)
   {
-    size = GommeHDSign.size(text);
+    this.size = GommeHDSign.size(text);
   }
   
   public void setEmpty(ArrayList<String> text)
   {
-    empty = GommeHDSign.isEmpty(text);
+    this.empty = GommeHDSign.isEmpty(text);
   }
   
   public boolean isEmpty()
   {
-    return empty;
+    return this.empty;
   }
   
   public boolean getSize()
   {
-    return size;
+    return this.size;
   }
   
   public void setFull(ArrayList<String> text)
   {
-    full = GommeHDSign.isFull(text);
+    this.full = GommeHDSign.isFull(text);
   }
   
   public boolean isFull()
   {
-    return full;
+    return this.full;
   }
 }

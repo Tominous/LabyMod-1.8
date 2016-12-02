@@ -35,81 +35,81 @@ public class Vector
   
   public Vector(Vector other)
   {
-    x = x;
-    y = y;
-    z = z;
+    this.x = other.x;
+    this.y = other.y;
+    this.z = other.z;
   }
   
   public Vector()
   {
-    x = 0.0D;
-    y = 0.0D;
-    z = 0.0D;
+    this.x = 0.0D;
+    this.y = 0.0D;
+    this.z = 0.0D;
   }
   
   public double getX()
   {
-    return x;
+    return this.x;
   }
   
   public int getBlockX()
   {
-    return (int)Math.round(x);
+    return (int)Math.round(this.x);
   }
   
   public Vector setX(double x)
   {
-    return new Vector(x, y, z);
+    return new Vector(x, this.y, this.z);
   }
   
   public Vector setX(int x)
   {
-    return new Vector(x, y, z);
+    return new Vector(x, this.y, this.z);
   }
   
   public double getY()
   {
-    return y;
+    return this.y;
   }
   
   public int getBlockY()
   {
-    return (int)Math.round(y);
+    return (int)Math.round(this.y);
   }
   
   public Vector setY(double y)
   {
-    return new Vector(x, y, z);
+    return new Vector(this.x, y, this.z);
   }
   
   public Vector setY(int y)
   {
-    return new Vector(x, y, z);
+    return new Vector(this.x, y, this.z);
   }
   
   public double getZ()
   {
-    return z;
+    return this.z;
   }
   
   public int getBlockZ()
   {
-    return (int)Math.round(z);
+    return (int)Math.round(this.z);
   }
   
   public Vector setZ(double z)
   {
-    return new Vector(x, y, z);
+    return new Vector(this.x, this.y, z);
   }
   
   public Vector setZ(int z)
   {
-    return new Vector(x, y, z);
+    return new Vector(this.x, this.y, z);
   }
   
   public Vector add(Vector other)
   {
-    return new Vector(x + x, y + y, z + z);
+    return new Vector(this.x + other.x, this.y + other.y, this.z + other.z);
   }
   
   public Vector add(double x, double y, double z)
@@ -124,19 +124,19 @@ public class Vector
   
   public Vector add(Vector... others)
   {
-    double newX = x;double newY = y;double newZ = z;
+    double newX = this.x;double newY = this.y;double newZ = this.z;
     for (Vector other : others)
     {
-      newX += x;
-      newY += y;
-      newZ += z;
+      newX += other.x;
+      newY += other.y;
+      newZ += other.z;
     }
     return new Vector(newX, newY, newZ);
   }
   
   public Vector subtract(Vector other)
   {
-    return new Vector(x - x, y - y, z - z);
+    return new Vector(this.x - other.x, this.y - other.y, this.z - other.z);
   }
   
   public Vector subtract(double x, double y, double z)
@@ -151,19 +151,19 @@ public class Vector
   
   public Vector subtract(Vector... others)
   {
-    double newX = x;double newY = y;double newZ = z;
+    double newX = this.x;double newY = this.y;double newZ = this.z;
     for (Vector other : others)
     {
-      newX -= x;
-      newY -= y;
-      newZ -= z;
+      newX -= other.x;
+      newY -= other.y;
+      newZ -= other.z;
     }
     return new Vector(newX, newY, newZ);
   }
   
   public Vector multiply(Vector other)
   {
-    return new Vector(x * x, y * y, z * z);
+    return new Vector(this.x * other.x, this.y * other.y, this.z * other.z);
   }
   
   public Vector multiply(double x, double y, double z)
@@ -178,34 +178,34 @@ public class Vector
   
   public Vector multiply(Vector... others)
   {
-    double newX = x;double newY = y;double newZ = z;
+    double newX = this.x;double newY = this.y;double newZ = this.z;
     for (Vector other : others)
     {
-      newX *= x;
-      newY *= y;
-      newZ *= z;
+      newX *= other.x;
+      newY *= other.y;
+      newZ *= other.z;
     }
     return new Vector(newX, newY, newZ);
   }
   
   public Vector multiply(double n)
   {
-    return new Vector(x * n, y * n, z * n);
+    return new Vector(this.x * n, this.y * n, this.z * n);
   }
   
   public Vector multiply(float n)
   {
-    return new Vector(x * n, y * n, z * n);
+    return new Vector(this.x * n, this.y * n, this.z * n);
   }
   
   public Vector multiply(int n)
   {
-    return new Vector(x * n, y * n, z * n);
+    return new Vector(this.x * n, this.y * n, this.z * n);
   }
   
   public Vector divide(Vector other)
   {
-    return new Vector(x / x, y / y, z / z);
+    return new Vector(this.x / other.x, this.y / other.y, this.z / other.z);
   }
   
   public Vector divide(double x, double y, double z)
@@ -220,38 +220,38 @@ public class Vector
   
   public Vector divide(int n)
   {
-    return new Vector(x / n, y / n, z / n);
+    return new Vector(this.x / n, this.y / n, this.z / n);
   }
   
   public Vector divide(double n)
   {
-    return new Vector(x / n, y / n, z / n);
+    return new Vector(this.x / n, this.y / n, this.z / n);
   }
   
   public Vector divide(float n)
   {
-    return new Vector(x / n, y / n, z / n);
+    return new Vector(this.x / n, this.y / n, this.z / n);
   }
   
   public double length()
   {
-    return Math.sqrt(x * x + y * y + z * z);
+    return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
   }
   
   public double lengthSq()
   {
-    return x * x + y * y + z * z;
+    return this.x * this.x + this.y * this.y + this.z * this.z;
   }
   
   public double distance(Vector other)
   {
-    return Math.sqrt(Math.pow(x - x, 2.0D) + Math.pow(y - y, 2.0D) + 
-      Math.pow(z - z, 2.0D));
+    return Math.sqrt(Math.pow(other.x - this.x, 2.0D) + Math.pow(other.y - this.y, 2.0D) + 
+      Math.pow(other.z - this.z, 2.0D));
   }
   
   public double distanceSq(Vector other)
   {
-    return Math.pow(x - x, 2.0D) + Math.pow(y - y, 2.0D) + Math.pow(z - z, 2.0D);
+    return Math.pow(other.x - this.x, 2.0D) + Math.pow(other.y - this.y, 2.0D) + Math.pow(other.z - this.z, 2.0D);
   }
   
   public Vector normalize()
@@ -261,17 +261,17 @@ public class Vector
   
   public double dot(Vector other)
   {
-    return x * x + y * y + z * z;
+    return this.x * other.x + this.y * other.y + this.z * other.z;
   }
   
   public Vector cross(Vector other)
   {
-    return new Vector(y * z - z * y, z * x - x * z, x * y - y * x);
+    return new Vector(this.y * other.z - this.z * other.y, this.z * other.x - this.x * other.z, this.x * other.y - this.y * other.x);
   }
   
   public boolean containedWithin(Vector min, Vector max)
   {
-    return (x >= x) && (x <= x) && (y >= y) && (y <= y) && (z >= z) && (z <= z);
+    return (this.x >= min.x) && (this.x <= max.x) && (this.y >= min.y) && (this.y <= max.y) && (this.z >= min.z) && (this.z <= max.z);
   }
   
   public boolean containedWithinBlock(Vector min, Vector max)
@@ -281,27 +281,27 @@ public class Vector
   
   public Vector clampY(int min, int max)
   {
-    return new Vector(x, Math.max(min, Math.min(max, y)), z);
+    return new Vector(this.x, Math.max(min, Math.min(max, this.y)), this.z);
   }
   
   public Vector floor()
   {
-    return new Vector(Math.floor(x), Math.floor(y), Math.floor(z));
+    return new Vector(Math.floor(this.x), Math.floor(this.y), Math.floor(this.z));
   }
   
   public Vector ceil()
   {
-    return new Vector(Math.ceil(x), Math.ceil(y), Math.ceil(z));
+    return new Vector(Math.ceil(this.x), Math.ceil(this.y), Math.ceil(this.z));
   }
   
   public Vector round()
   {
-    return new Vector(Math.floor(x + 0.5D), Math.floor(y + 0.5D), Math.floor(z + 0.5D));
+    return new Vector(Math.floor(this.x + 0.5D), Math.floor(this.y + 0.5D), Math.floor(this.z + 0.5D));
   }
   
   public Vector positive()
   {
-    return new Vector(Math.abs(x), Math.abs(y), Math.abs(z));
+    return new Vector(Math.abs(this.x), Math.abs(this.y), Math.abs(this.z));
   }
   
   public Vector transform2D(double angle, double aboutX, double aboutZ, double translateX, double translateZ)
@@ -312,38 +312,38 @@ public class Vector
     double x2 = x * Math.cos(angle) - z * Math.sin(angle);
     double z2 = x * Math.sin(angle) + z * Math.cos(angle);
     
-    return new Vector(x2 + aboutX + translateX, y, z2 + aboutZ + translateZ);
+    return new Vector(x2 + aboutX + translateX, this.y, z2 + aboutZ + translateZ);
   }
   
   public boolean isCollinearWith(Vector other)
   {
-    if ((x == 0.0D) && (y == 0.0D) && (z == 0.0D)) {
+    if ((this.x == 0.0D) && (this.y == 0.0D) && (this.z == 0.0D)) {
       return true;
     }
-    double otherX = x;
-    double otherY = y;
-    double otherZ = z;
+    double otherX = other.x;
+    double otherY = other.y;
+    double otherZ = other.z;
     if ((otherX == 0.0D) && (otherY == 0.0D) && (otherZ == 0.0D)) {
       return true;
     }
-    if ((x == 0.0D ? 1 : 0) != (otherX == 0.0D ? 1 : 0)) {
+    if ((this.x == 0.0D ? 1 : 0) != (otherX == 0.0D ? 1 : 0)) {
       return false;
     }
-    if ((y == 0.0D ? 1 : 0) != (otherY == 0.0D ? 1 : 0)) {
+    if ((this.y == 0.0D ? 1 : 0) != (otherY == 0.0D ? 1 : 0)) {
       return false;
     }
-    if ((z == 0.0D ? 1 : 0) != (otherZ == 0.0D ? 1 : 0)) {
+    if ((this.z == 0.0D ? 1 : 0) != (otherZ == 0.0D ? 1 : 0)) {
       return false;
     }
-    double quotientX = otherX / x;
+    double quotientX = otherX / this.x;
     if (!Double.isNaN(quotientX)) {
       return other.equals(multiply(quotientX));
     }
-    double quotientY = otherY / y;
+    double quotientY = otherY / this.y;
     if (!Double.isNaN(quotientY)) {
       return other.equals(multiply(quotientY));
     }
-    double quotientZ = otherZ / z;
+    double quotientZ = otherZ / this.z;
     if (!Double.isNaN(quotientZ)) {
       return other.equals(multiply(quotientZ));
     }
@@ -380,7 +380,7 @@ public class Vector
       return false;
     }
     Vector other = (Vector)obj;
-    return (x == x) && (y == y) && (z == z);
+    return (other.x == this.x) && (other.y == this.y) && (other.z == this.z);
   }
   
   public int compareTo(Vector other)
@@ -388,14 +388,14 @@ public class Vector
     if (other == null) {
       throw new IllegalArgumentException("null not supported");
     }
-    if (y != y) {
-      return Double.compare(y, y);
+    if (this.y != other.y) {
+      return Double.compare(this.y, other.y);
     }
-    if (z != z) {
-      return Double.compare(z, z);
+    if (this.z != other.z) {
+      return Double.compare(this.z, other.z);
     }
-    if (x != x) {
-      return Double.compare(x, x);
+    if (this.x != other.x) {
+      return Double.compare(this.x, other.x);
     }
     return 0;
   }
@@ -404,31 +404,31 @@ public class Vector
   {
     int hash = 7;
     
-    hash = 79 * hash + (int)(Double.doubleToLongBits(x) ^ Double.doubleToLongBits(x) >>> 32);
+    hash = 79 * hash + (int)(Double.doubleToLongBits(this.x) ^ Double.doubleToLongBits(this.x) >>> 32);
     
-    hash = 79 * hash + (int)(Double.doubleToLongBits(y) ^ Double.doubleToLongBits(y) >>> 32);
+    hash = 79 * hash + (int)(Double.doubleToLongBits(this.y) ^ Double.doubleToLongBits(this.y) >>> 32);
     
-    hash = 79 * hash + (int)(Double.doubleToLongBits(z) ^ Double.doubleToLongBits(z) >>> 32);
+    hash = 79 * hash + (int)(Double.doubleToLongBits(this.z) ^ Double.doubleToLongBits(this.z) >>> 32);
     return hash;
   }
   
   public String toString()
   {
-    return "(" + x + ", " + y + ", " + z + ")";
+    return "(" + this.x + ", " + this.y + ", " + this.z + ")";
   }
   
   public static Vector getMinimum(Vector v1, Vector v2)
   {
-    return new Vector(Math.min(x, x), Math.min(y, y), Math.min(z, z));
+    return new Vector(Math.min(v1.x, v2.x), Math.min(v1.y, v2.y), Math.min(v1.z, v2.z));
   }
   
   public static Vector getMaximum(Vector v1, Vector v2)
   {
-    return new Vector(Math.max(x, x), Math.max(y, y), Math.max(z, z));
+    return new Vector(Math.max(v1.x, v2.x), Math.max(v1.y, v2.y), Math.max(v1.z, v2.z));
   }
   
   public static Vector getMidpoint(Vector v1, Vector v2)
   {
-    return new Vector((x + x) / 2.0D, (y + y) / 2.0D, (z + z) / 2.0D);
+    return new Vector((v1.x + v2.x) / 2.0D, (v1.y + v2.y) / 2.0D, (v1.z + v2.z) / 2.0D);
   }
 }

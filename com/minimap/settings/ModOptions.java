@@ -26,29 +26,29 @@ public enum ModOptions
   
   private ModOptions(String par3Str, boolean par4, boolean par5)
   {
-    enumString = par3Str;
-    enumFloat = par4;
-    enumBoolean = par5;
+    this.enumString = par3Str;
+    this.enumFloat = par4;
+    this.enumBoolean = par5;
   }
   
   private ModOptions(String p_i45004_3_, boolean p_i45004_4_, boolean p_i45004_5_, float p_i45004_6_, float p_i45004_7_, float p_i45004_8_)
   {
-    enumString = p_i45004_3_;
-    enumFloat = p_i45004_4_;
-    enumBoolean = p_i45004_5_;
-    valueMin = p_i45004_6_;
-    valueMax = p_i45004_7_;
-    valueStep = p_i45004_8_;
+    this.enumString = p_i45004_3_;
+    this.enumFloat = p_i45004_4_;
+    this.enumBoolean = p_i45004_5_;
+    this.valueMin = p_i45004_6_;
+    this.valueMax = p_i45004_7_;
+    this.valueStep = p_i45004_8_;
   }
   
   public boolean getEnumFloat()
   {
-    return enumFloat;
+    return this.enumFloat;
   }
   
   public boolean getEnumBoolean()
   {
-    return enumBoolean;
+    return this.enumBoolean;
   }
   
   public int returnEnumOrdinal()
@@ -58,40 +58,40 @@ public enum ModOptions
   
   public float getValueMax()
   {
-    return valueMax;
+    return this.valueMax;
   }
   
   public void setValueMax(float p_148263_1_)
   {
-    valueMax = p_148263_1_;
+    this.valueMax = p_148263_1_;
   }
   
   public float normalizeValue(float p_148266_1_)
   {
-    return ns.a((snapToStepClamp(p_148266_1_) - valueMin) / (valueMax - valueMin), 0.0F, 1.0F);
+    return ns.a((snapToStepClamp(p_148266_1_) - this.valueMin) / (this.valueMax - this.valueMin), 0.0F, 1.0F);
   }
   
   public float denormalizeValue(float p_148262_1_)
   {
-    return snapToStepClamp(valueMin + (valueMax - valueMin) * ns.a(p_148262_1_, 0.0F, 1.0F));
+    return snapToStepClamp(this.valueMin + (this.valueMax - this.valueMin) * ns.a(p_148262_1_, 0.0F, 1.0F));
   }
   
   public float snapToStepClamp(float p_148268_1_)
   {
     p_148268_1_ = snapToStep(p_148268_1_);
-    return ns.a(p_148268_1_, valueMin, valueMax);
+    return ns.a(p_148268_1_, this.valueMin, this.valueMax);
   }
   
   protected float snapToStep(float p_148264_1_)
   {
-    if (valueStep > 0.0F) {
-      p_148264_1_ = valueStep * Math.round(p_148264_1_ / valueStep);
+    if (this.valueStep > 0.0F) {
+      p_148264_1_ = this.valueStep * Math.round(p_148264_1_ / this.valueStep);
     }
     return p_148264_1_;
   }
   
   public String getEnumString()
   {
-    return bnq.a(enumString, new Object[0]);
+    return bnq.a(this.enumString, new Object[0]);
   }
 }

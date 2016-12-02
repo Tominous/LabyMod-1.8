@@ -8,33 +8,33 @@ public class bpd
   {
     super(new jy("minecraft:minecart.base"));
     
-    k = ☃;
-    g = true;
-    h = 0;
+    this.k = ☃;
+    this.g = true;
+    this.h = 0;
   }
   
   public void c()
   {
-    if (k.I)
+    if (this.k.I)
     {
-      j = true;
+      this.j = true;
       return;
     }
-    d = ((float)k.s);
-    e = ((float)k.t);
-    f = ((float)k.u);
+    this.d = ((float)this.k.s);
+    this.e = ((float)this.k.t);
+    this.f = ((float)this.k.u);
     
-    float ☃ = ns.a(k.v * k.v + k.x * k.x);
+    float ☃ = ns.a(this.k.v * this.k.v + this.k.x * this.k.x);
     if (☃ >= 0.01D)
     {
-      l = ns.a(l + 0.0025F, 0.0F, 1.0F);
+      this.l = ns.a(this.l + 0.0025F, 0.0F, 1.0F);
       
-      b = (0.0F + ns.a(☃, 0.0F, 0.5F) * 0.7F);
+      this.b = (0.0F + ns.a(☃, 0.0F, 0.5F) * 0.7F);
     }
     else
     {
-      l = 0.0F;
-      b = 0.0F;
+      this.l = 0.0F;
+      this.b = 0.0F;
     }
   }
 }

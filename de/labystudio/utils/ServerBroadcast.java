@@ -15,16 +15,16 @@ public class ServerBroadcast
   
   public String getLine1()
   {
-    return line1;
+    return this.line1;
   }
   
   public String getLine2()
   {
-    return line2;
+    return this.line2;
   }
   
   public String getUrl()
   {
-    return url;
+    return this.url;
   }
 }

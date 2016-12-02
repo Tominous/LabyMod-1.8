@@ -24,105 +24,105 @@ public class pf
   
   public pf(int ☃, int ☃, int ☃, boolean ☃, boolean ☃)
   {
-    b = ☃;
-    c = ☃;
-    d = ☃;
-    f = ☃;
-    h = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.f = ☃;
+    this.h = ☃;
   }
   
   public pf(pf ☃)
   {
-    b = b;
-    c = c;
-    d = d;
-    f = f;
-    h = h;
+    this.b = ☃.b;
+    this.c = ☃.c;
+    this.d = ☃.d;
+    this.f = ☃.f;
+    this.h = ☃.h;
   }
   
   public void a(pf ☃)
   {
-    if (b != b) {
+    if (this.b != ☃.b) {
       a.warn("This method should only be called for matching effects!");
     }
-    if (d > d)
+    if (☃.d > this.d)
     {
-      d = d;
-      c = c;
+      this.d = ☃.d;
+      this.c = ☃.c;
     }
-    else if ((d == d) && (c < c))
+    else if ((☃.d == this.d) && (this.c < ☃.c))
     {
-      c = c;
+      this.c = ☃.c;
     }
-    else if ((!f) && (f))
+    else if ((!☃.f) && (this.f))
     {
-      f = f;
+      this.f = ☃.f;
     }
-    h = h;
+    this.h = ☃.h;
   }
   
   public int a()
   {
-    return b;
+    return this.b;
   }
   
   public int b()
   {
-    return c;
+    return this.c;
   }
   
   public int c()
   {
-    return d;
+    return this.d;
   }
   
   public void a(boolean ☃)
   {
-    e = ☃;
+    this.e = ☃;
   }
   
   public boolean e()
   {
-    return f;
+    return this.f;
   }
   
   public boolean f()
   {
-    return h;
+    return this.h;
   }
   
   public boolean a(pr ☃)
   {
-    if (c > 0)
+    if (this.c > 0)
     {
-      if (pe.a[b].a(c, d)) {
+      if (pe.a[this.b].a(this.c, this.d)) {
         b(☃);
       }
       i();
     }
-    return c > 0;
+    return this.c > 0;
   }
   
   private int i()
   {
-    return --c;
+    return --this.c;
   }
   
   public void b(pr ☃)
   {
-    if (c > 0) {
-      pe.a[b].a(☃, d);
+    if (this.c > 0) {
+      pe.a[this.b].a(☃, this.d);
     }
   }
   
   public String g()
   {
-    return pe.a[b].a();
+    return pe.a[this.b].a();
   }
   
   public int hashCode()
   {
-    return b;
+    return this.b;
   }
   
   public String toString()
@@ -133,13 +133,13 @@ public class pf
     } else {
       ☃ = g() + ", Duration: " + b();
     }
-    if (e) {
+    if (this.e) {
       ☃ = ☃ + ", Splash: true";
     }
-    if (!h) {
+    if (!this.h) {
       ☃ = ☃ + ", Particles: false";
     }
-    if (pe.a[b].j()) {
+    if (pe.a[this.b].j()) {
       return "(" + ☃ + ")";
     }
     return ☃;
@@ -151,7 +151,7 @@ public class pf
       return false;
     }
     pf ☃ = (pf)☃;
-    return (b == b) && (d == d) && (c == c) && (e == e) && (f == f);
+    return (this.b == ☃.b) && (this.d == ☃.d) && (this.c == ☃.c) && (this.e == ☃.e) && (this.f == ☃.f);
   }
   
   public dn a(dn ☃)
@@ -182,11 +182,11 @@ public class pf
   
   public void b(boolean ☃)
   {
-    g = ☃;
+    this.g = ☃;
   }
   
   public boolean h()
   {
-    return g;
+    return this.g;
   }
 }

@@ -7,7 +7,7 @@ public class bjm<T extends va>
   public bjm(biu ☃)
   {
     super(☃);
-    c = 0.5F;
+    this.c = 0.5F;
   }
   
   public void a(T ☃, double ☃, double ☃, double ☃, float ☃, float ☃)
@@ -25,15 +25,15 @@ public class bjm<T extends va>
     
     bfl.b(☃, ☃, ☃);
     
-    double ☃ = P + (s - P) * ☃;
-    double ☃ = Q + (t - Q) * ☃;
-    double ☃ = R + (u - R) * ☃;
+    double ☃ = ☃.P + (☃.s - ☃.P) * ☃;
+    double ☃ = ☃.Q + (☃.t - ☃.Q) * ☃;
+    double ☃ = ☃.R + (☃.u - ☃.R) * ☃;
     
     double ☃ = 0.30000001192092896D;
     
     aui ☃ = ☃.k(☃, ☃, ☃);
     
-    float ☃ = B + (z - B) * ☃;
+    float ☃ = ☃.B + (☃.z - ☃.B) * ☃;
     if (☃ != null)
     {
       aui ☃ = ☃.a(☃, ☃, ☃, ☃);
@@ -44,16 +44,16 @@ public class bjm<T extends va>
       if (☃ == null) {
         ☃ = ☃;
       }
-      ☃ += a - ☃;
-      ☃ += (b + b) / 2.0D - ☃;
-      ☃ += c - ☃;
+      ☃ += ☃.a - ☃;
+      ☃ += (☃.b + ☃.b) / 2.0D - ☃;
+      ☃ += ☃.c - ☃;
       
-      aui ☃ = ☃.b(-a, -b, -c);
+      aui ☃ = ☃.b(-☃.a, -☃.b, -☃.c);
       if (☃.b() != 0.0D)
       {
         ☃ = ☃.a();
-        ☃ = (float)(Math.atan2(c, a) * 180.0D / 3.141592653589793D);
-        ☃ = (float)(Math.atan(b) * 73.0D);
+        ☃ = (float)(Math.atan2(☃.c, ☃.a) * 180.0D / 3.141592653589793D);
+        ☃ = (float)(Math.atan(☃.b) * 73.0D);
       }
     }
     bfl.b((float)☃, (float)☃ + 0.375F, (float)☃);
@@ -87,7 +87,7 @@ public class bjm<T extends va>
       c(☃);
     }
     bfl.a(-1.0F, -1.0F, 1.0F);
-    a.a(☃, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
+    this.a.a(☃, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
     bfl.F();
     
     super.a(☃, ☃, ☃, ☃, ☃, ☃);

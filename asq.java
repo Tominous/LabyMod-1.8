@@ -4,7 +4,7 @@ public class asq
   public asq(long ☃, ase ☃)
   {
     super(☃);
-    a = ☃;
+    this.a = ☃;
   }
   
   public int[] a(int ☃, int ☃, int ☃, int ☃)
@@ -15,7 +15,7 @@ public class asq
     int ☃ = ☃ >> 2;
     int ☃ = (☃ >> 2) + 2;
     int ☃ = (☃ >> 2) + 2;
-    int[] ☃ = a.a(☃, ☃, ☃, ☃);
+    int[] ☃ = this.a.a(☃, ☃, ☃, ☃);
     
     int ☃ = ☃ - 1 << 2;
     int ☃ = ☃ - 1 << 2;

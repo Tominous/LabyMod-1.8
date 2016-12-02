@@ -10,8 +10,8 @@ public class iw
   
   public iw(int ☃, zx ☃)
   {
-    a = ☃;
-    b = (☃ != null ? ☃.k() : null);
+    this.a = ☃;
+    this.b = (☃ != null ? ☃.k() : null);
   }
   
   public void a(ic ☃)
@@ -22,24 +22,24 @@ public class iw
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readShort();
-    b = ☃.i();
+    this.a = ☃.readShort();
+    this.b = ☃.i();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeShort(a);
-    ☃.a(b);
+    ☃.writeShort(this.a);
+    ☃.a(this.b);
   }
   
   public int a()
   {
-    return a;
+    return this.a;
   }
   
   public zx b()
   {
-    return b;
+    return this.b;
   }
 }

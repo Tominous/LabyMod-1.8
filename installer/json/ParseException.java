@@ -30,7 +30,7 @@ public class ParseException
   
   public int getErrorType()
   {
-    return errorType;
+    return this.errorType;
   }
   
   public void setErrorType(int errorType)
@@ -40,7 +40,7 @@ public class ParseException
   
   public int getPosition()
   {
-    return position;
+    return this.position;
   }
   
   public void setPosition(int position)
@@ -50,7 +50,7 @@ public class ParseException
   
   public Object getUnexpectedObject()
   {
-    return unexpectedObject;
+    return this.unexpectedObject;
   }
   
   public void setUnexpectedObject(Object unexpectedObject)
@@ -61,19 +61,19 @@ public class ParseException
   public String toString()
   {
     StringBuffer sb = new StringBuffer();
-    switch (errorType)
+    switch (this.errorType)
     {
     case 0: 
-      sb.append("Unexpected character (").append(unexpectedObject).append(") at position ").append(position).append(".");
+      sb.append("Unexpected character (").append(this.unexpectedObject).append(") at position ").append(this.position).append(".");
       break;
     case 1: 
-      sb.append("Unexpected token ").append(unexpectedObject).append(" at position ").append(position).append(".");
+      sb.append("Unexpected token ").append(this.unexpectedObject).append(" at position ").append(this.position).append(".");
       break;
     case 2: 
-      sb.append("Unexpected exception at position ").append(position).append(": ").append(unexpectedObject);
+      sb.append("Unexpected exception at position ").append(this.position).append(": ").append(this.unexpectedObject);
       break;
     default: 
-      sb.append("Unkown error at position ").append(position).append(".");
+      sb.append("Unkown error at position ").append(this.position).append(".");
     }
     return sb.toString();
   }

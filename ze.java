@@ -29,7 +29,7 @@ public class ze
     {
       if (a(☃, ☃, ☃))
       {
-        if (!D) {
+        if (!☃.D) {
           ☃.b(2005, ☃, 0);
         }
         return true;
@@ -52,8 +52,8 @@ public class ze
         {
           alz ☃ = afi.bN.a(☃, ☃, ☃, ☃, ☃, ☃, 0, ☃);
           ☃.a(☃, ☃, 2);
-          if (!bA.d) {
-            b -= 1;
+          if (!☃.bA.d) {
+            ☃.b -= 1;
           }
         }
         return true;
@@ -68,14 +68,14 @@ public class ze
     if ((☃.c() instanceof afj))
     {
       afj ☃ = (afj)☃.c();
-      if (☃.a(☃, ☃, ☃, D))
+      if (☃.a(☃, ☃, ☃, ☃.D))
       {
-        if (!D)
+        if (!☃.D)
         {
-          if (☃.a(☃, s, ☃, ☃)) {
-            ☃.b(☃, s, ☃, ☃);
+          if (☃.a(☃, ☃.s, ☃, ☃)) {
+            ☃.b(☃, ☃.s, ☃, ☃);
           }
-          b -= 1;
+          ☃.b -= 1;
         }
         return true;
       }
@@ -111,7 +111,7 @@ public class ze
       if ((!☃.cm()) && (☃.cl() != ☃))
       {
         ☃.b(☃);
-        b -= 1;
+        ☃.b -= 1;
       }
       return true;
     }

@@ -6,64 +6,64 @@ public class asx
   
   public asx(asv[] ☃)
   {
-    a = ☃;
-    c = ☃.length;
+    this.a = ☃;
+    this.c = ☃.length;
   }
   
   public void a()
   {
-    b += 1;
+    this.b += 1;
   }
   
   public boolean b()
   {
-    return b >= c;
+    return this.b >= this.c;
   }
   
   public asv c()
   {
-    if (c > 0) {
-      return a[(c - 1)];
+    if (this.c > 0) {
+      return this.a[(this.c - 1)];
     }
     return null;
   }
   
   public asv a(int ☃)
   {
-    return a[☃];
+    return this.a[☃];
   }
   
   public int d()
   {
-    return c;
+    return this.c;
   }
   
   public void b(int ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public int e()
   {
-    return b;
+    return this.b;
   }
   
   public void c(int ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public aui a(pk ☃, int ☃)
   {
-    double ☃ = a[☃].a + (int)(J + 1.0F) * 0.5D;
-    double ☃ = a[☃].b;
-    double ☃ = a[☃].c + (int)(J + 1.0F) * 0.5D;
+    double ☃ = this.a[☃].a + (int)(☃.J + 1.0F) * 0.5D;
+    double ☃ = this.a[☃].b;
+    double ☃ = this.a[☃].c + (int)(☃.J + 1.0F) * 0.5D;
     return new aui(☃, ☃, ☃);
   }
   
   public aui a(pk ☃)
   {
-    return a(☃, b);
+    return a(☃, this.b);
   }
   
   public boolean a(asx ☃)
@@ -71,11 +71,11 @@ public class asx
     if (☃ == null) {
       return false;
     }
-    if (a.length != a.length) {
+    if (☃.a.length != this.a.length) {
       return false;
     }
-    for (int ☃ = 0; ☃ < a.length; ☃++) {
-      if ((a[☃].a != a[☃].a) || (a[☃].b != a[☃].b) || (a[☃].c != a[☃].c)) {
+    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
+      if ((this.a[☃].a != ☃.a[☃].a) || (this.a[☃].b != ☃.a[☃].b) || (this.a[☃].c != ☃.a[☃].c)) {
         return false;
       }
     }
@@ -88,6 +88,6 @@ public class asx
     if (☃ == null) {
       return false;
     }
-    return (a == (int)a) && (c == (int)c);
+    return (☃.a == (int)☃.a) && (☃.c == (int)☃.c);
   }
 }

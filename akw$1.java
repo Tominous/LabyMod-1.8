@@ -9,6 +9,6 @@ class akw$1
   public String a()
     throws Exception
   {
-    return (String)akw.G().get(a.getClass()) + " // " + a.getClass().getCanonicalName();
+    return (String)akw.G().get(this.a.getClass()) + " // " + this.a.getClass().getCanonicalName();
   }
 }

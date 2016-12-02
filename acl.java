@@ -7,7 +7,7 @@ public class acl
   public acl(aci ☃, int ☃)
   {
     super(☃.d());
-    b = ☃;
-    c = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
 }

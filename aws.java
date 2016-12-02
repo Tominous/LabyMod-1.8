@@ -8,57 +8,57 @@ public class aws
   public aws(RealmsScrolledSelectionList ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
     super(ave.A(), ☃, ☃, ☃, ☃, ☃);
-    u = ☃;
+    this.u = ☃;
   }
   
   protected int b()
   {
-    return u.getItemCount();
+    return this.u.getItemCount();
   }
   
   protected void a(int ☃, boolean ☃, int ☃, int ☃)
   {
-    u.selectItem(☃, ☃, ☃, ☃);
+    this.u.selectItem(☃, ☃, ☃, ☃);
   }
   
   protected boolean a(int ☃)
   {
-    return u.isSelectedItem(☃);
+    return this.u.isSelectedItem(☃);
   }
   
   protected void a()
   {
-    u.renderBackground();
+    this.u.renderBackground();
   }
   
   protected void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    u.renderItem(☃, ☃, ☃, ☃, ☃, ☃);
+    this.u.renderItem(☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   public int e()
   {
-    return b;
+    return this.b;
   }
   
   public int f()
   {
-    return j;
+    return this.j;
   }
   
   public int g()
   {
-    return i;
+    return this.i;
   }
   
   protected int k()
   {
-    return u.getMaxPosition();
+    return this.u.getMaxPosition();
   }
   
   protected int d()
   {
-    return u.getScrollbarPosition();
+    return this.u.getScrollbarPosition();
   }
   
   public void p()

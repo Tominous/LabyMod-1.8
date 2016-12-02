@@ -6,14 +6,14 @@ public class rj
   public rj(wi ☃)
   {
     super(☃, wn.class, 8.0F);
-    e = ☃;
+    this.e = ☃;
   }
   
   public boolean a()
   {
-    if (e.co())
+    if (this.e.co())
     {
-      b = e.v_();
+      this.b = this.e.v_();
       return true;
     }
     return false;

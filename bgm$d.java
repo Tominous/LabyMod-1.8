@@ -7,13 +7,13 @@ public class bgm$d
   
   public bgm$d(String ☃, List<bgm.c> ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public List<bgm.c> b()
   {
-    return b;
+    return this.b;
   }
   
   public boolean equals(Object ☃)
@@ -25,10 +25,10 @@ public class bgm$d
       return false;
     }
     d ☃ = (d)☃;
-    if (!a.equals(a)) {
+    if (!this.a.equals(☃.a)) {
       return false;
     }
-    if (!b.equals(b)) {
+    if (!this.b.equals(☃.b)) {
       return false;
     }
     return true;
@@ -36,8 +36,8 @@ public class bgm$d
   
   public int hashCode()
   {
-    int ☃ = a.hashCode();
-    ☃ = 31 * ☃ + b.hashCode();
+    int ☃ = this.a.hashCode();
+    ☃ = 31 * ☃ + this.b.hashCode();
     return ☃;
   }
 }

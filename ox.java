@@ -7,38 +7,38 @@ public class ox
   public ox(String ☃, pk ☃)
   {
     super(☃);
-    q = ☃;
+    this.q = ☃;
   }
   
   public ox v()
   {
-    r = true;
+    this.r = true;
     return this;
   }
   
   public boolean w()
   {
-    return r;
+    return this.r;
   }
   
   public pk j()
   {
-    return q;
+    return this.q;
   }
   
   public eu b(pr ☃)
   {
-    zx ☃ = (q instanceof pr) ? ((pr)q).bA() : null;
-    String ☃ = "death.attack." + p;
+    zx ☃ = (this.q instanceof pr) ? ((pr)this.q).bA() : null;
+    String ☃ = "death.attack." + this.p;
     String ☃ = ☃ + ".item";
     if ((☃ != null) && (☃.s()) && (di.c(☃))) {
-      return new fb(☃, new Object[] { ☃.f_(), q.f_(), ☃.C() });
+      return new fb(☃, new Object[] { ☃.f_(), this.q.f_(), ☃.C() });
     }
-    return new fb(☃, new Object[] { ☃.f_(), q.f_() });
+    return new fb(☃, new Object[] { ☃.f_(), this.q.f_() });
   }
   
   public boolean r()
   {
-    return (q != null) && ((q instanceof pr)) && (!(q instanceof wn));
+    return (this.q != null) && ((this.q instanceof pr)) && (!(this.q instanceof wn));
   }
 }

@@ -8,6 +8,6 @@ public abstract class aqt$a
   
   public alz a()
   {
-    return a;
+    return this.a;
   }
 }

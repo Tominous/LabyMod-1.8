@@ -27,18 +27,18 @@ public class GuiNewSet
   
   public GuiNewSet(axu par1GuiScreen)
   {
-    nameText = "";
-    parentGuiScreen = par1GuiScreen;
+    this.nameText = "";
+    this.parentGuiScreen = par1GuiScreen;
   }
   
   public void b()
   {
-    screenTitle = bnq.a("gui.xaero_create_set", new Object[0]);
-    n.clear();
-    n.add(new MySmallButton(200, l / 2 - 155, m / 6 + 168, bnq.a("gui.xaero_confirm", new Object[0])));
-    n.add(new MySmallButton(201, l / 2 + 5, m / 6 + 168, bnq.a("gui.xaero_cancel", new Object[0])));
-    (nameTextField = new avw(0, q, l / 2 - 100, 60, 200, 20)).a(nameText);
-    nameTextField.b(true);
+    this.screenTitle = bnq.a("gui.xaero_create_set", new Object[0]);
+    this.n.clear();
+    this.n.add(new MySmallButton(200, this.l / 2 - 155, this.m / 6 + 168, bnq.a("gui.xaero_confirm", new Object[0])));
+    this.n.add(new MySmallButton(201, this.l / 2 + 5, this.m / 6 + 168, bnq.a("gui.xaero_cancel", new Object[0])));
+    (this.nameTextField = new avw(0, this.q, this.l / 2 - 100, 60, 200, 20)).a(this.nameText);
+    this.nameTextField.b(true);
     Keyboard.enableRepeatEvents(true);
     updateConfirmButton();
   }
@@ -50,20 +50,20 @@ public class GuiNewSet
   
   private void updateConfirmButton()
   {
-    n.get(0)).l = ((nameTextField.b().length() > 0) && (getCurrentWorldsets.get(nameTextField.b()) == null));
+    ((avs)this.n.get(0)).l = ((this.nameTextField.b().length() > 0) && (Minimap.getCurrentWorld().sets.get(this.nameTextField.b()) == null));
   }
   
   protected void a(char par1, int par2)
     throws IOException
   {
-    if (nameTextField.m())
+    if (this.nameTextField.m())
     {
-      nameTextField.a(par1, par2);
-      nameTextField.a(nameText = nameTextField.b().replaceAll(":", ""));
+      this.nameTextField.a(par1, par2);
+      this.nameTextField.a(this.nameText = this.nameTextField.b().replaceAll(":", ""));
       updateConfirmButton();
     }
     if ((par2 == 28) || (par2 == 156)) {
-      a((avs)n.get(0));
+      a((avs)this.n.get(0));
     }
     super.a(par1, par2);
   }
@@ -72,23 +72,23 @@ public class GuiNewSet
     throws IOException
   {
     super.a(par1, par2, par3);
-    nameTextField.a(par1, par2, par3);
+    this.nameTextField.a(par1, par2, par3);
   }
   
   public void e()
   {
-    nameTextField.a();
+    this.nameTextField.a();
   }
   
   protected void a(avs par1GuiButton)
   {
-    if (l)
+    if (par1GuiButton.l)
     {
-      int var2 = j.t.aK;
-      if (k == 200)
+      int var2 = this.j.t.aK;
+      if (par1GuiButton.k == 200)
       {
-        getCurrentWorldsets.put(nameTextField.b(), new WaypointSet(Minimap.getCurrentWorld()));
-        getCurrentWorldcurrent = nameTextField.b();
+        Minimap.getCurrentWorld().sets.put(this.nameTextField.b(), new WaypointSet(Minimap.getCurrentWorld()));
+        Minimap.getCurrentWorld().current = this.nameTextField.b();
         Minimap.updateWaypoints();
         try
         {
@@ -98,17 +98,17 @@ public class GuiNewSet
         {
           e.printStackTrace();
         }
-        j.a(new GuiWaypoints(parentGuiScreen).parentScreen));
+        this.j.a(new GuiWaypoints(((GuiWaypoints)this.parentGuiScreen).parentScreen));
       }
-      if (k == 201) {
-        j.a(parentGuiScreen);
+      if (par1GuiButton.k == 201) {
+        this.j.a(this.parentGuiScreen);
       }
-      if (j.t.aK != var2)
+      if (this.j.t.aK != var2)
       {
-        avr res = new avr(j);
+        avr res = new avr(this.j);
         int var3 = res.a();
         int var4 = res.b();
-        a(j, var3, var4);
+        a(this.j, var3, var4);
       }
     }
   }
@@ -116,8 +116,8 @@ public class GuiNewSet
   public void a(int par1, int par2, float par3)
   {
     c();
-    a(q, screenTitle, l / 2, 20, 16777215);
-    nameTextField.g();
+    a(this.q, this.screenTitle, this.l / 2, 20, 16777215);
+    this.nameTextField.g();
     super.a(par1, par2, par3);
   }
 }

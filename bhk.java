@@ -29,7 +29,7 @@ public class bhk
   
   public void a(float p_180543_1_, float p_180543_2_, float p_180543_3_, cq p_180543_4_, float p_180543_5_, int p_180543_6_, GameProfile p_180543_7_, int p_180543_8_)
   {
-    bbo modelbase = h;
+    bbo modelbase = this.h;
     if (p_180543_8_ >= 0)
     {
       a(a[p_180543_8_]);
@@ -52,10 +52,10 @@ public class bhk
         break;
       case 2: 
         a(f);
-        modelbase = i;
+        modelbase = this.i;
         break;
       case 3: 
-        modelbase = i;
+        modelbase = this.i;
         jy resourcelocation = bmz.a();
         if (p_180543_7_ != null)
         {

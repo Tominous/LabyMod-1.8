@@ -6,7 +6,7 @@ public class sb
   
   public sb(py ☃)
   {
-    a = ☃;
+    this.a = ☃;
     if (!(☃.s() instanceof sv)) {
       throw new IllegalArgumentException("Unsupported mob type for RestrictOpenDoorGoal");
     }
@@ -14,45 +14,45 @@ public class sb
   
   public boolean a()
   {
-    if (a.o.w()) {
+    if (this.a.o.w()) {
       return false;
     }
-    cj ☃ = new cj(a);
+    cj ☃ = new cj(this.a);
     
-    tf ☃ = a.o.ae().a(☃, 16);
+    tf ☃ = this.a.o.ae().a(☃, 16);
     if (☃ == null) {
       return false;
     }
-    b = ☃.b(☃);
-    if (b == null) {
+    this.b = ☃.b(☃);
+    if (this.b == null) {
       return false;
     }
-    return b.b(☃) < 2.25D;
+    return this.b.b(☃) < 2.25D;
   }
   
   public boolean b()
   {
-    if (a.o.w()) {
+    if (this.a.o.w()) {
       return false;
     }
-    return (!b.i()) && (b.c(new cj(a)));
+    return (!this.b.i()) && (this.b.c(new cj(this.a)));
   }
   
   public void c()
   {
-    ((sv)a.s()).b(false);
-    ((sv)a.s()).c(false);
+    ((sv)this.a.s()).b(false);
+    ((sv)this.a.s()).c(false);
   }
   
   public void d()
   {
-    ((sv)a.s()).b(true);
-    ((sv)a.s()).c(true);
-    b = null;
+    ((sv)this.a.s()).b(true);
+    ((sv)this.a.s()).c(true);
+    this.b = null;
   }
   
   public void e()
   {
-    b.b();
+    this.b.b();
   }
 }

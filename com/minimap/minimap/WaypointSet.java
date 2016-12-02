@@ -10,6 +10,6 @@ public class WaypointSet
   public WaypointSet(WaypointWorld world)
   {
     this.world = world;
-    list = new ArrayList();
+    this.list = new ArrayList();
   }
 }

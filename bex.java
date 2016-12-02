@@ -15,12 +15,12 @@ public class bex
   {
     super(☃, ☃);
     
-    S = 0.0F;
-    T = true;
+    this.S = 0.0F;
+    this.T = true;
     
-    bZ = 0.25F;
+    this.bZ = 0.25F;
     
-    j = 10.0D;
+    this.j = 10.0D;
   }
   
   public boolean a(ow ☃, float ☃)
@@ -30,95 +30,95 @@ public class bex
   
   public void a(double ☃, double ☃, double ☃, float ☃, float ☃, int ☃, boolean ☃)
   {
-    c = ☃;
-    d = ☃;
-    e = ☃;
-    f = ☃;
-    g = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.e = ☃;
+    this.f = ☃;
+    this.g = ☃;
     
-    b = ☃;
+    this.b = ☃;
   }
   
   public void t_()
   {
-    bZ = 0.0F;
+    this.bZ = 0.0F;
     super.t_();
     
-    aA = aB;
-    double ☃ = s - p;
-    double ☃ = u - r;
+    this.aA = this.aB;
+    double ☃ = this.s - this.p;
+    double ☃ = this.u - this.r;
     float ☃ = ns.a(☃ * ☃ + ☃ * ☃) * 4.0F;
     if (☃ > 1.0F) {
       ☃ = 1.0F;
     }
-    aB += (☃ - aB) * 0.4F;
-    aC += aB;
-    if ((!a) && (ay()) && (bi.a[bi.c] != null))
+    this.aB += (☃ - this.aB) * 0.4F;
+    this.aC += this.aB;
+    if ((!this.a) && (ay()) && (this.bi.a[this.bi.c] != null))
     {
-      zx ☃ = bi.a[bi.c];
-      a(bi.a[bi.c], ☃.b().d(☃));
-      a = true;
+      zx ☃ = this.bi.a[this.bi.c];
+      a(this.bi.a[this.bi.c], ☃.b().d(☃));
+      this.a = true;
     }
-    else if ((a) && (!ay()))
+    else if ((this.a) && (!ay()))
     {
       bV();
-      a = false;
+      this.a = false;
     }
   }
   
   public void m()
   {
-    if (b > 0)
+    if (this.b > 0)
     {
-      double ☃ = s + (c - s) / b;
-      double ☃ = t + (d - t) / b;
-      double ☃ = u + (e - u) / b;
+      double ☃ = this.s + (this.c - this.s) / this.b;
+      double ☃ = this.t + (this.d - this.t) / this.b;
+      double ☃ = this.u + (this.e - this.u) / this.b;
       
-      double ☃ = f - y;
+      double ☃ = this.f - this.y;
       while (☃ < -180.0D) {
         ☃ += 360.0D;
       }
       while (☃ >= 180.0D) {
         ☃ -= 360.0D;
       }
-      y = ((float)(y + ☃ / b));
-      z = ((float)(z + (g - z) / b));
+      this.y = ((float)(this.y + ☃ / this.b));
+      this.z = ((float)(this.z + (this.g - this.z) / this.b));
       
-      b -= 1;
+      this.b -= 1;
       b(☃, ☃, ☃);
-      b(y, z);
+      b(this.y, this.z);
     }
-    bn = bo;
+    this.bn = this.bo;
     
     bx();
     
-    float ☃ = ns.a(v * v + x * x);
-    float ☃ = (float)Math.atan(-w * 0.20000000298023224D) * 15.0F;
+    float ☃ = ns.a(this.v * this.v + this.x * this.x);
+    float ☃ = (float)Math.atan(-this.w * 0.20000000298023224D) * 15.0F;
     if (☃ > 0.1F) {
       ☃ = 0.1F;
     }
-    if ((!C) || (bn() <= 0.0F)) {
+    if ((!this.C) || (bn() <= 0.0F)) {
       ☃ = 0.0F;
     }
-    if ((C) || (bn() <= 0.0F)) {
+    if ((this.C) || (bn() <= 0.0F)) {
       ☃ = 0.0F;
     }
-    bo += (☃ - bo) * 0.4F;
-    aF += (☃ - aF) * 0.8F;
+    this.bo += (☃ - this.bo) * 0.4F;
+    this.aF += (☃ - this.aF) * 0.8F;
   }
   
   public void c(int ☃, zx ☃)
   {
     if (☃ == 0) {
-      bi.a[bi.c] = ☃;
+      this.bi.a[this.bi.c] = ☃;
     } else {
-      bi.b[(☃ - 1)] = ☃;
+      this.bi.b[(☃ - 1)] = ☃;
     }
   }
   
   public void a(eu ☃)
   {
-    Aq.d().a(☃);
+    ave.A().q.d().a(☃);
   }
   
   public boolean a(int ☃, String ☃)
@@ -128,6 +128,6 @@ public class bex
   
   public cj c()
   {
-    return new cj(s + 0.5D, t + 0.5D, u + 0.5D);
+    return new cj(this.s + 0.5D, this.t + 0.5D, this.u + 0.5D);
   }
 }

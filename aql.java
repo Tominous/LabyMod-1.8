@@ -54,38 +54,38 @@ public class aql
     public r(cq ☃, aqe ☃)
     {
       super();
-      m = ☃;
-      l = ☃;
+      this.m = ☃;
+      this.l = ☃;
     }
     
     protected r(int ☃, cq ☃, aql.v ☃, int ☃, int ☃, int ☃)
     {
       super();
-      m = ☃;
-      k = ☃;
+      this.m = ☃;
+      this.k = ☃;
       
-      int ☃ = a;
+      int ☃ = ☃.a;
       int ☃ = ☃ % 5;
       int ☃ = ☃ / 5 % 5;
       int ☃ = ☃ / 25;
       if ((☃ == cq.c) || (☃ == cq.d)) {
-        l = new aqe(0, 0, 0, ☃ * 8 - 1, ☃ * 4 - 1, ☃ * 8 - 1);
+        this.l = new aqe(0, 0, 0, ☃ * 8 - 1, ☃ * 4 - 1, ☃ * 8 - 1);
       } else {
-        l = new aqe(0, 0, 0, ☃ * 8 - 1, ☃ * 4 - 1, ☃ * 8 - 1);
+        this.l = new aqe(0, 0, 0, ☃ * 8 - 1, ☃ * 4 - 1, ☃ * 8 - 1);
       }
       switch (aql.1.a[☃.ordinal()])
       {
       case 1: 
-        l.a(☃ * 8, ☃ * 4, -(☃ + ☃) * 8 + 1);
+        this.l.a(☃ * 8, ☃ * 4, -(☃ + ☃) * 8 + 1);
         break;
       case 2: 
-        l.a(☃ * 8, ☃ * 4, ☃ * 8);
+        this.l.a(☃ * 8, ☃ * 4, ☃ * 8);
         break;
       case 3: 
-        l.a(-(☃ + ☃) * 8 + 1, ☃ * 4, ☃ * 8);
+        this.l.a(-(☃ + ☃) * 8 + 1, ☃ * 4, ☃ * 8);
         break;
       default: 
-        l.a(☃ * 8, ☃ * 4, ☃ * 8);
+        this.l.a(☃ * 8, ☃ * 4, ☃ * 8);
       }
     }
     
@@ -184,21 +184,21 @@ public class aql
     {
       super();
       
-      m = ☃;
-      switch (aql.1.a[m.ordinal()])
+      this.m = ☃;
+      switch (aql.1.a[this.m.ordinal()])
       {
       case 1: 
       case 2: 
-        l = new aqe(☃, 39, ☃, ☃ + 58 - 1, 61, ☃ + 58 - 1);
+        this.l = new aqe(☃, 39, ☃, ☃ + 58 - 1, 61, ☃ + 58 - 1);
         break;
       default: 
-        l = new aqe(☃, 39, ☃, ☃ + 58 - 1, 61, ☃ + 58 - 1);
+        this.l = new aqe(☃, 39, ☃, ☃ + 58 - 1, 61, ☃ + 58 - 1);
       }
       List<aql.v> ☃ = a(☃);
       
-      o.d = true;
-      q.add(new aql.p(m, o));
-      q.add(new aql.j(m, p, ☃));
+      this.o.d = true;
+      this.q.add(new aql.p(this.m, this.o));
+      this.q.add(new aql.j(this.m, this.p, ☃));
       
       List<aql.i> ☃ = Lists.newArrayList();
       ☃.add(new aql.b(null));
@@ -211,21 +211,21 @@ public class aql
       for (Iterator ☃ = ☃.iterator(); ☃.hasNext();)
       {
         ☃ = (aql.v)☃.next();
-        if ((!d) && (!☃.b())) {
+        if ((!☃.d) && (!☃.b())) {
           for (aql.i ☃ : ☃) {
             if (☃.a(☃))
             {
-              q.add(☃.a(m, ☃, ☃));
+              this.q.add(☃.a(this.m, ☃, ☃));
               break;
             }
           }
         }
       }
       aql.v ☃;
-      int ☃ = l.b;
+      int ☃ = this.l.b;
       int ☃ = a(9, 22);
       int ☃ = b(9, 22);
-      for (aql.r ☃ : q) {
+      for (aql.r ☃ : this.q) {
         ☃.c().a(☃, ☃, ☃);
       }
       aqe ☃ = aqe.a(a(1, 1), d(1), b(1, 1), a(23, 21), d(8), b(23, 21));
@@ -233,10 +233,10 @@ public class aql
       aqe ☃ = aqe.a(a(22, 22), d(13), b(22, 22), a(35, 35), d(17), b(35, 35));
       
       int ☃ = ☃.nextInt();
-      q.add(new aql.u(m, ☃, ☃++));
-      q.add(new aql.u(m, ☃, ☃++));
+      this.q.add(new aql.u(this.m, ☃, ☃++));
+      this.q.add(new aql.u(this.m, ☃, ☃++));
       
-      q.add(new aql.q(m, ☃));
+      this.q.add(new aql.q(this.m, ☃));
     }
     
     private List<aql.v> a(Random ☃)
@@ -266,7 +266,7 @@ public class aql
           ☃[☃] = new aql.v(☃);
         }
       }
-      o = ☃[g];
+      this.o = ☃[g];
       for (int ☃ = 0; ☃ < 5; ☃++) {
         for (int ☃ = 0; ☃ < 5; ☃++) {
           for (int ☃ = 0; ☃ < 3; ☃++)
@@ -300,20 +300,20 @@ public class aql
       ☃[i].a(cq.d, ☃ = new aql.v(1001));
       aql.v ☃;
       ☃[j].a(cq.d, ☃ = new aql.v(1002));
-      d = true;
-      d = true;
-      d = true;
-      o.e = true;
+      ☃.d = true;
+      ☃.d = true;
+      ☃.d = true;
+      this.o.e = true;
       
-      p = ☃[b(☃.nextInt(4), 0, 2)];
-      p.d = true;
-      p.b[cq.f.a()].d = true;
-      p.b[cq.c.a()].d = true;
-      p.b[cq.f.a()].b[cq.c.a()].d = true;
-      p.b[cq.b.a()].d = true;
-      p.b[cq.f.a()].b[cq.b.a()].d = true;
-      p.b[cq.c.a()].b[cq.b.a()].d = true;
-      p.b[cq.f.a()].b[cq.c.a()].b[cq.b.a()].d = true;
+      this.p = ☃[b(☃.nextInt(4), 0, 2)];
+      this.p.d = true;
+      this.p.b[cq.f.a()].d = true;
+      this.p.b[cq.c.a()].d = true;
+      this.p.b[cq.f.a()].b[cq.c.a()].d = true;
+      this.p.b[cq.b.a()].d = true;
+      this.p.b[cq.f.a()].b[cq.b.a()].d = true;
+      this.p.b[cq.c.a()].b[cq.b.a()].d = true;
+      this.p.b[cq.f.a()].b[cq.c.a()].b[cq.b.a()].d = true;
       
       List<aql.v> ☃ = Lists.newArrayList();
       for (aql.v ☃ : ☃) {
@@ -336,20 +336,20 @@ public class aql
           ☃++;
           
           int ☃ = ☃.nextInt(6);
-          if (c[☃] != 0)
+          if (☃.c[☃] != 0)
           {
             int ☃ = cq.a(☃).d().a();
             
-            c[☃] = false;
-            b[☃].c[☃] = false;
-            if ((☃.a(☃++)) && (b[☃].a(☃++)))
+            ☃.c[☃] = false;
+            ☃.b[☃].c[☃] = false;
+            if ((☃.a(☃++)) && (☃.b[☃].a(☃++)))
             {
               ☃++;
             }
             else
             {
-              c[☃] = true;
-              b[☃].c[☃] = true;
+              ☃.c[☃] = true;
+              ☃.b[☃].c[☃] = true;
             }
           }
         }
@@ -363,7 +363,7 @@ public class aql
     
     public boolean a(adm ☃, Random ☃, aqe ☃)
     {
-      int ☃ = Math.max(☃.F(), 64) - l.b;
+      int ☃ = Math.max(☃.F(), 64) - this.l.b;
       
       a(☃, ☃, 0, 0, 0, 58, ☃, 58, false);
       
@@ -409,7 +409,7 @@ public class aql
         a(☃, ☃, 0 - ☃, 0 + ☃ * 2, -1 - ☃, 57 + ☃, 23, -1 - ☃, false);
         a(☃, ☃, 0 - ☃, 0 + ☃ * 2, 58 + ☃, 57 + ☃, 23, 58 + ☃, false);
       }
-      for (aql.r ☃ : q) {
+      for (aql.r ☃ : this.q) {
         if (☃.c().a(☃)) {
           ☃.a(☃, ☃, ☃);
         }
@@ -774,13 +774,13 @@ public class aql
       
       a(☃, ☃, 1, 1, 0, 2, 3, 0, b, b, false);
       a(☃, ☃, 5, 1, 0, 6, 3, 0, b, b, false);
-      if (k.c[cq.c.a()] != 0) {
+      if (this.k.c[cq.c.a()] != 0) {
         a(☃, ☃, 3, 1, 7, 4, 2, 7, false);
       }
-      if (k.c[cq.e.a()] != 0) {
+      if (this.k.c[cq.e.a()] != 0) {
         a(☃, ☃, 0, 1, 3, 1, 2, 4, false);
       }
-      if (k.c[cq.f.a()] != 0) {
+      if (this.k.c[cq.f.a()] != 0) {
         a(☃, ☃, 6, 1, 3, 7, 2, 4, false);
       }
       return true;
@@ -797,19 +797,19 @@ public class aql
     public s(cq ☃, aql.v ☃, Random ☃)
     {
       super(☃, ☃, 1, 1, 1);
-      o = ☃.nextInt(3);
+      this.o = ☃.nextInt(3);
     }
     
     public boolean a(adm ☃, Random ☃, aqe ☃)
     {
-      if (k.a / 25 > 0) {
-        a(☃, ☃, 0, 0, k.c[cq.a.a()]);
+      if (this.k.a / 25 > 0) {
+        a(☃, ☃, 0, 0, this.k.c[cq.a.a()]);
       }
-      if (k.b[cq.b.a()] == null) {
+      if (this.k.b[cq.b.a()] == null) {
         a(☃, ☃, 1, 4, 1, 6, 4, 6, a);
       }
-      boolean ☃ = (o != 0) && (☃.nextBoolean()) && (k.c[cq.a.a()] == 0) && (k.c[cq.b.a()] == 0) && (k.c() > 1);
-      if (o == 0)
+      boolean ☃ = (this.o != 0) && (☃.nextBoolean()) && (this.k.c[cq.a.a()] == 0) && (this.k.c[cq.b.a()] == 0) && (this.k.c() > 1);
+      if (this.o == 0)
       {
         a(☃, ☃, 0, 1, 0, 2, 1, 2, b, b, false);
         a(☃, ☃, 0, 3, 0, 2, 3, 2, b, b, false);
@@ -834,7 +834,7 @@ public class aql
         a(☃, ☃, 7, 2, 5, 7, 2, 7, a, a, false);
         a(☃, ☃, 5, 2, 7, 6, 2, 7, a, a, false);
         a(☃, e, 6, 2, 6, ☃);
-        if (k.c[cq.d.a()] != 0)
+        if (this.k.c[cq.d.a()] != 0)
         {
           a(☃, ☃, 3, 3, 0, 4, 3, 0, b, b, false);
         }
@@ -844,7 +844,7 @@ public class aql
           a(☃, ☃, 3, 2, 0, 4, 2, 0, a, a, false);
           a(☃, ☃, 3, 1, 0, 4, 1, 1, b, b, false);
         }
-        if (k.c[cq.c.a()] != 0)
+        if (this.k.c[cq.c.a()] != 0)
         {
           a(☃, ☃, 3, 3, 7, 4, 3, 7, b, b, false);
         }
@@ -854,7 +854,7 @@ public class aql
           a(☃, ☃, 3, 2, 7, 4, 2, 7, a, a, false);
           a(☃, ☃, 3, 1, 6, 4, 1, 7, b, b, false);
         }
-        if (k.c[cq.e.a()] != 0)
+        if (this.k.c[cq.e.a()] != 0)
         {
           a(☃, ☃, 0, 3, 3, 0, 3, 4, b, b, false);
         }
@@ -864,7 +864,7 @@ public class aql
           a(☃, ☃, 0, 2, 3, 0, 2, 4, a, a, false);
           a(☃, ☃, 0, 1, 3, 1, 1, 4, b, b, false);
         }
-        if (k.c[cq.f.a()] != 0)
+        if (this.k.c[cq.f.a()] != 0)
         {
           a(☃, ☃, 7, 3, 3, 7, 3, 4, b, b, false);
         }
@@ -875,7 +875,7 @@ public class aql
           a(☃, ☃, 6, 1, 3, 7, 1, 4, b, b, false);
         }
       }
-      else if (o == 1)
+      else if (this.o == 1)
       {
         a(☃, ☃, 2, 1, 2, 2, 3, 2, b, b, false);
         a(☃, ☃, 2, 1, 5, 2, 3, 5, b, b, false);
@@ -902,32 +902,32 @@ public class aql
         a(☃, a, 7, 2, 6, ☃);
         a(☃, a, 6, 2, 0, ☃);
         a(☃, a, 7, 2, 1, ☃);
-        if (k.c[cq.d.a()] == 0)
+        if (this.k.c[cq.d.a()] == 0)
         {
           a(☃, ☃, 1, 3, 0, 6, 3, 0, b, b, false);
           a(☃, ☃, 1, 2, 0, 6, 2, 0, a, a, false);
           a(☃, ☃, 1, 1, 0, 6, 1, 0, b, b, false);
         }
-        if (k.c[cq.c.a()] == 0)
+        if (this.k.c[cq.c.a()] == 0)
         {
           a(☃, ☃, 1, 3, 7, 6, 3, 7, b, b, false);
           a(☃, ☃, 1, 2, 7, 6, 2, 7, a, a, false);
           a(☃, ☃, 1, 1, 7, 6, 1, 7, b, b, false);
         }
-        if (k.c[cq.e.a()] == 0)
+        if (this.k.c[cq.e.a()] == 0)
         {
           a(☃, ☃, 0, 3, 1, 0, 3, 6, b, b, false);
           a(☃, ☃, 0, 2, 1, 0, 2, 6, a, a, false);
           a(☃, ☃, 0, 1, 1, 0, 1, 6, b, b, false);
         }
-        if (k.c[cq.f.a()] == 0)
+        if (this.k.c[cq.f.a()] == 0)
         {
           a(☃, ☃, 7, 3, 1, 7, 3, 6, b, b, false);
           a(☃, ☃, 7, 2, 1, 7, 2, 6, a, a, false);
           a(☃, ☃, 7, 1, 1, 7, 1, 6, b, b, false);
         }
       }
-      else if (o == 2)
+      else if (this.o == 2)
       {
         a(☃, ☃, 0, 1, 0, 0, 1, 7, b, b, false);
         a(☃, ☃, 7, 1, 0, 7, 1, 7, b, b, false);
@@ -948,16 +948,16 @@ public class aql
         a(☃, ☃, 7, 1, 3, 7, 2, 4, c, c, false);
         a(☃, ☃, 3, 1, 0, 4, 2, 0, c, c, false);
         a(☃, ☃, 3, 1, 7, 4, 2, 7, c, c, false);
-        if (k.c[cq.d.a()] != 0) {
+        if (this.k.c[cq.d.a()] != 0) {
           a(☃, ☃, 3, 1, 0, 4, 2, 0, false);
         }
-        if (k.c[cq.c.a()] != 0) {
+        if (this.k.c[cq.c.a()] != 0) {
           a(☃, ☃, 3, 1, 7, 4, 2, 7, false);
         }
-        if (k.c[cq.e.a()] != 0) {
+        if (this.k.c[cq.e.a()] != 0) {
           a(☃, ☃, 0, 1, 3, 0, 2, 4, false);
         }
-        if (k.c[cq.f.a()] != 0) {
+        if (this.k.c[cq.f.a()] != 0) {
           a(☃, ☃, 7, 1, 3, 7, 2, 4, false);
         }
       }
@@ -983,10 +983,10 @@ public class aql
     
     public boolean a(adm ☃, Random ☃, aqe ☃)
     {
-      if (k.a / 25 > 0) {
-        a(☃, ☃, 0, 0, k.c[cq.a.a()]);
+      if (this.k.a / 25 > 0) {
+        a(☃, ☃, 0, 0, this.k.c[cq.a.a()]);
       }
-      if (k.b[cq.b.a()] == null) {
+      if (this.k.b[cq.b.a()] == null) {
         a(☃, ☃, 1, 4, 1, 6, 4, 6, a);
       }
       for (int ☃ = 1; ☃ <= 6; ☃++) {
@@ -1017,7 +1017,7 @@ public class aql
       a(☃, ☃, 7, 1, 3, 7, 2, 4, c, c, false);
       a(☃, ☃, 3, 1, 0, 4, 2, 0, c, c, false);
       a(☃, ☃, 3, 1, 7, 4, 2, 7, c, c, false);
-      if (k.c[cq.d.a()] != 0) {
+      if (this.k.c[cq.d.a()] != 0) {
         a(☃, ☃, 3, 1, 0, 4, 2, 0, false);
       }
       return true;
@@ -1036,11 +1036,11 @@ public class aql
     
     public boolean a(adm ☃, Random ☃, aqe ☃)
     {
-      if (k.a / 25 > 0) {
-        a(☃, ☃, 0, 0, k.c[cq.a.a()]);
+      if (this.k.a / 25 > 0) {
+        a(☃, ☃, 0, 0, this.k.c[cq.a.a()]);
       }
-      aql.v ☃ = k.b[cq.b.a()];
-      if (b[cq.b.a()] == null) {
+      aql.v ☃ = this.k.b[cq.b.a()];
+      if (☃.b[cq.b.a()] == null) {
         a(☃, ☃, 1, 8, 1, 6, 8, 6, a);
       }
       a(☃, ☃, 0, 4, 0, 0, 4, 7, b, b, false);
@@ -1057,11 +1057,11 @@ public class aql
       a(☃, ☃, 5, 4, 5, 5, 4, 6, b, b, false);
       a(☃, ☃, 6, 4, 5, 6, 4, 5, b, b, false);
       
-      aql.v ☃ = k;
+      aql.v ☃ = this.k;
       for (int ☃ = 1; ☃ <= 5; ☃ += 4)
       {
         int ☃ = 0;
-        if (c[cq.d.a()] != 0)
+        if (☃.c[cq.d.a()] != 0)
         {
           a(☃, ☃, 2, ☃, ☃, 2, ☃ + 2, ☃, b, b, false);
           a(☃, ☃, 5, ☃, ☃, 5, ☃ + 2, ☃, b, b, false);
@@ -1073,7 +1073,7 @@ public class aql
           a(☃, ☃, 0, ☃ + 1, ☃, 7, ☃ + 1, ☃, a, a, false);
         }
         ☃ = 7;
-        if (c[cq.c.a()] != 0)
+        if (☃.c[cq.c.a()] != 0)
         {
           a(☃, ☃, 2, ☃, ☃, 2, ☃ + 2, ☃, b, b, false);
           a(☃, ☃, 5, ☃, ☃, 5, ☃ + 2, ☃, b, b, false);
@@ -1085,7 +1085,7 @@ public class aql
           a(☃, ☃, 0, ☃ + 1, ☃, 7, ☃ + 1, ☃, a, a, false);
         }
         int ☃ = 0;
-        if (c[cq.e.a()] != 0)
+        if (☃.c[cq.e.a()] != 0)
         {
           a(☃, ☃, ☃, ☃, 2, ☃, ☃ + 2, 2, b, b, false);
           a(☃, ☃, ☃, ☃, 5, ☃, ☃ + 2, 5, b, b, false);
@@ -1097,7 +1097,7 @@ public class aql
           a(☃, ☃, ☃, ☃ + 1, 0, ☃, ☃ + 1, 7, a, a, false);
         }
         ☃ = 7;
-        if (c[cq.f.a()] != 0)
+        if (☃.c[cq.f.a()] != 0)
         {
           a(☃, ☃, ☃, ☃, 2, ☃, ☃ + 2, 2, b, b, false);
           a(☃, ☃, ☃, ☃, 5, ☃, ☃ + 2, 5, b, b, false);
@@ -1126,17 +1126,17 @@ public class aql
     
     public boolean a(adm ☃, Random ☃, aqe ☃)
     {
-      aql.v ☃ = k.b[cq.f.a()];
-      aql.v ☃ = k;
-      if (k.a / 25 > 0)
+      aql.v ☃ = this.k.b[cq.f.a()];
+      aql.v ☃ = this.k;
+      if (this.k.a / 25 > 0)
       {
-        a(☃, ☃, 8, 0, c[cq.a.a()]);
-        a(☃, ☃, 0, 0, c[cq.a.a()]);
+        a(☃, ☃, 8, 0, ☃.c[cq.a.a()]);
+        a(☃, ☃, 0, 0, ☃.c[cq.a.a()]);
       }
-      if (b[cq.b.a()] == null) {
+      if (☃.b[cq.b.a()] == null) {
         a(☃, ☃, 1, 4, 1, 7, 4, 6, a);
       }
-      if (b[cq.b.a()] == null) {
+      if (☃.b[cq.b.a()] == null) {
         a(☃, ☃, 8, 4, 1, 14, 4, 6, a);
       }
       a(☃, ☃, 0, 3, 0, 0, 3, 7, b, b, false);
@@ -1158,22 +1158,22 @@ public class aql
       
       a(☃, e, 6, 2, 3, ☃);
       a(☃, e, 9, 2, 3, ☃);
-      if (c[cq.d.a()] != 0) {
+      if (☃.c[cq.d.a()] != 0) {
         a(☃, ☃, 3, 1, 0, 4, 2, 0, false);
       }
-      if (c[cq.c.a()] != 0) {
+      if (☃.c[cq.c.a()] != 0) {
         a(☃, ☃, 3, 1, 7, 4, 2, 7, false);
       }
-      if (c[cq.e.a()] != 0) {
+      if (☃.c[cq.e.a()] != 0) {
         a(☃, ☃, 0, 1, 3, 0, 2, 4, false);
       }
-      if (c[cq.d.a()] != 0) {
+      if (☃.c[cq.d.a()] != 0) {
         a(☃, ☃, 11, 1, 0, 12, 2, 0, false);
       }
-      if (c[cq.c.a()] != 0) {
+      if (☃.c[cq.c.a()] != 0) {
         a(☃, ☃, 11, 1, 7, 12, 2, 7, false);
       }
-      if (c[cq.f.a()] != 0) {
+      if (☃.c[cq.f.a()] != 0) {
         a(☃, ☃, 15, 1, 3, 15, 2, 4, false);
       }
       return true;
@@ -1192,17 +1192,17 @@ public class aql
     
     public boolean a(adm ☃, Random ☃, aqe ☃)
     {
-      aql.v ☃ = k.b[cq.c.a()];
-      aql.v ☃ = k;
-      if (k.a / 25 > 0)
+      aql.v ☃ = this.k.b[cq.c.a()];
+      aql.v ☃ = this.k;
+      if (this.k.a / 25 > 0)
       {
-        a(☃, ☃, 0, 8, c[cq.a.a()]);
-        a(☃, ☃, 0, 0, c[cq.a.a()]);
+        a(☃, ☃, 0, 8, ☃.c[cq.a.a()]);
+        a(☃, ☃, 0, 0, ☃.c[cq.a.a()]);
       }
-      if (b[cq.b.a()] == null) {
+      if (☃.b[cq.b.a()] == null) {
         a(☃, ☃, 1, 4, 1, 6, 4, 7, a);
       }
-      if (b[cq.b.a()] == null) {
+      if (☃.b[cq.b.a()] == null) {
         a(☃, ☃, 1, 4, 8, 6, 4, 14, a);
       }
       a(☃, ☃, 0, 3, 0, 0, 3, 15, b, b, false);
@@ -1245,22 +1245,22 @@ public class aql
       a(☃, b, 5, 3, 5, ☃);
       a(☃, b, 2, 3, 10, ☃);
       a(☃, b, 5, 3, 10, ☃);
-      if (c[cq.d.a()] != 0) {
+      if (☃.c[cq.d.a()] != 0) {
         a(☃, ☃, 3, 1, 0, 4, 2, 0, false);
       }
-      if (c[cq.f.a()] != 0) {
+      if (☃.c[cq.f.a()] != 0) {
         a(☃, ☃, 7, 1, 3, 7, 2, 4, false);
       }
-      if (c[cq.e.a()] != 0) {
+      if (☃.c[cq.e.a()] != 0) {
         a(☃, ☃, 0, 1, 3, 0, 2, 4, false);
       }
-      if (c[cq.c.a()] != 0) {
+      if (☃.c[cq.c.a()] != 0) {
         a(☃, ☃, 3, 1, 15, 4, 2, 15, false);
       }
-      if (c[cq.e.a()] != 0) {
+      if (☃.c[cq.e.a()] != 0) {
         a(☃, ☃, 0, 1, 11, 0, 2, 12, false);
       }
-      if (c[cq.f.a()] != 0) {
+      if (☃.c[cq.f.a()] != 0) {
         a(☃, ☃, 7, 1, 11, 7, 2, 12, false);
       }
       return true;
@@ -1279,19 +1279,19 @@ public class aql
     
     public boolean a(adm ☃, Random ☃, aqe ☃)
     {
-      aql.v ☃ = k.b[cq.f.a()];
-      aql.v ☃ = k;
-      aql.v ☃ = b[cq.b.a()];
-      aql.v ☃ = b[cq.b.a()];
-      if (k.a / 25 > 0)
+      aql.v ☃ = this.k.b[cq.f.a()];
+      aql.v ☃ = this.k;
+      aql.v ☃ = ☃.b[cq.b.a()];
+      aql.v ☃ = ☃.b[cq.b.a()];
+      if (this.k.a / 25 > 0)
       {
-        a(☃, ☃, 8, 0, c[cq.a.a()]);
-        a(☃, ☃, 0, 0, c[cq.a.a()]);
+        a(☃, ☃, 8, 0, ☃.c[cq.a.a()]);
+        a(☃, ☃, 0, 0, ☃.c[cq.a.a()]);
       }
-      if (b[cq.b.a()] == null) {
+      if (☃.b[cq.b.a()] == null) {
         a(☃, ☃, 1, 8, 1, 7, 8, 6, a);
       }
-      if (b[cq.b.a()] == null) {
+      if (☃.b[cq.b.a()] == null) {
         a(☃, ☃, 8, 8, 1, 14, 8, 6, a);
       }
       for (int ☃ = 1; ☃ <= 7; ☃++)
@@ -1331,40 +1331,40 @@ public class aql
       a(☃, e, 5, 4, 5, ☃);
       a(☃, e, 10, 4, 2, ☃);
       a(☃, e, 10, 4, 5, ☃);
-      if (c[cq.d.a()] != 0) {
+      if (☃.c[cq.d.a()] != 0) {
         a(☃, ☃, 3, 1, 0, 4, 2, 0, false);
       }
-      if (c[cq.c.a()] != 0) {
+      if (☃.c[cq.c.a()] != 0) {
         a(☃, ☃, 3, 1, 7, 4, 2, 7, false);
       }
-      if (c[cq.e.a()] != 0) {
+      if (☃.c[cq.e.a()] != 0) {
         a(☃, ☃, 0, 1, 3, 0, 2, 4, false);
       }
-      if (c[cq.d.a()] != 0) {
+      if (☃.c[cq.d.a()] != 0) {
         a(☃, ☃, 11, 1, 0, 12, 2, 0, false);
       }
-      if (c[cq.c.a()] != 0) {
+      if (☃.c[cq.c.a()] != 0) {
         a(☃, ☃, 11, 1, 7, 12, 2, 7, false);
       }
-      if (c[cq.f.a()] != 0) {
+      if (☃.c[cq.f.a()] != 0) {
         a(☃, ☃, 15, 1, 3, 15, 2, 4, false);
       }
-      if (c[cq.d.a()] != 0) {
+      if (☃.c[cq.d.a()] != 0) {
         a(☃, ☃, 3, 5, 0, 4, 6, 0, false);
       }
-      if (c[cq.c.a()] != 0) {
+      if (☃.c[cq.c.a()] != 0) {
         a(☃, ☃, 3, 5, 7, 4, 6, 7, false);
       }
-      if (c[cq.e.a()] != 0) {
+      if (☃.c[cq.e.a()] != 0) {
         a(☃, ☃, 0, 5, 3, 0, 6, 4, false);
       }
-      if (c[cq.d.a()] != 0) {
+      if (☃.c[cq.d.a()] != 0) {
         a(☃, ☃, 11, 5, 0, 12, 6, 0, false);
       }
-      if (c[cq.c.a()] != 0) {
+      if (☃.c[cq.c.a()] != 0) {
         a(☃, ☃, 11, 5, 7, 12, 6, 7, false);
       }
-      if (c[cq.f.a()] != 0) {
+      if (☃.c[cq.f.a()] != 0) {
         a(☃, ☃, 15, 5, 3, 15, 6, 4, false);
       }
       return true;
@@ -1383,19 +1383,19 @@ public class aql
     
     public boolean a(adm ☃, Random ☃, aqe ☃)
     {
-      aql.v ☃ = k.b[cq.c.a()];
-      aql.v ☃ = k;
-      aql.v ☃ = b[cq.b.a()];
-      aql.v ☃ = b[cq.b.a()];
-      if (k.a / 25 > 0)
+      aql.v ☃ = this.k.b[cq.c.a()];
+      aql.v ☃ = this.k;
+      aql.v ☃ = ☃.b[cq.b.a()];
+      aql.v ☃ = ☃.b[cq.b.a()];
+      if (this.k.a / 25 > 0)
       {
-        a(☃, ☃, 0, 8, c[cq.a.a()]);
-        a(☃, ☃, 0, 0, c[cq.a.a()]);
+        a(☃, ☃, 0, 8, ☃.c[cq.a.a()]);
+        a(☃, ☃, 0, 0, ☃.c[cq.a.a()]);
       }
-      if (b[cq.b.a()] == null) {
+      if (☃.b[cq.b.a()] == null) {
         a(☃, ☃, 1, 8, 1, 6, 8, 7, a);
       }
-      if (b[cq.b.a()] == null) {
+      if (☃.b[cq.b.a()] == null) {
         a(☃, ☃, 1, 8, 8, 6, 8, 14, a);
       }
       for (int ☃ = 1; ☃ <= 7; ☃++)
@@ -1417,52 +1417,52 @@ public class aql
         }
         a(☃, ☃, 3, ☃, 7, 4, ☃, 8, ☃, ☃, false);
       }
-      if (c[cq.d.a()] != 0) {
+      if (☃.c[cq.d.a()] != 0) {
         a(☃, ☃, 3, 1, 0, 4, 2, 0, false);
       }
-      if (c[cq.f.a()] != 0) {
+      if (☃.c[cq.f.a()] != 0) {
         a(☃, ☃, 7, 1, 3, 7, 2, 4, false);
       }
-      if (c[cq.e.a()] != 0) {
+      if (☃.c[cq.e.a()] != 0) {
         a(☃, ☃, 0, 1, 3, 0, 2, 4, false);
       }
-      if (c[cq.c.a()] != 0) {
+      if (☃.c[cq.c.a()] != 0) {
         a(☃, ☃, 3, 1, 15, 4, 2, 15, false);
       }
-      if (c[cq.e.a()] != 0) {
+      if (☃.c[cq.e.a()] != 0) {
         a(☃, ☃, 0, 1, 11, 0, 2, 12, false);
       }
-      if (c[cq.f.a()] != 0) {
+      if (☃.c[cq.f.a()] != 0) {
         a(☃, ☃, 7, 1, 11, 7, 2, 12, false);
       }
-      if (c[cq.d.a()] != 0) {
+      if (☃.c[cq.d.a()] != 0) {
         a(☃, ☃, 3, 5, 0, 4, 6, 0, false);
       }
-      if (c[cq.f.a()] != 0)
+      if (☃.c[cq.f.a()] != 0)
       {
         a(☃, ☃, 7, 5, 3, 7, 6, 4, false);
         a(☃, ☃, 5, 4, 2, 6, 4, 5, b, b, false);
         a(☃, ☃, 6, 1, 2, 6, 3, 2, b, b, false);
         a(☃, ☃, 6, 1, 5, 6, 3, 5, b, b, false);
       }
-      if (c[cq.e.a()] != 0)
+      if (☃.c[cq.e.a()] != 0)
       {
         a(☃, ☃, 0, 5, 3, 0, 6, 4, false);
         a(☃, ☃, 1, 4, 2, 2, 4, 5, b, b, false);
         a(☃, ☃, 1, 1, 2, 1, 3, 2, b, b, false);
         a(☃, ☃, 1, 1, 5, 1, 3, 5, b, b, false);
       }
-      if (c[cq.c.a()] != 0) {
+      if (☃.c[cq.c.a()] != 0) {
         a(☃, ☃, 3, 5, 15, 4, 6, 15, false);
       }
-      if (c[cq.e.a()] != 0)
+      if (☃.c[cq.e.a()] != 0)
       {
         a(☃, ☃, 0, 5, 11, 0, 6, 12, false);
         a(☃, ☃, 1, 4, 10, 2, 4, 13, b, b, false);
         a(☃, ☃, 1, 1, 10, 1, 3, 10, b, b, false);
         a(☃, ☃, 1, 1, 13, 1, 3, 13, b, b, false);
       }
-      if (c[cq.f.a()] != 0)
+      if (☃.c[cq.f.a()] != 0)
       {
         a(☃, ☃, 7, 5, 11, 7, 6, 12, false);
         a(☃, ☃, 5, 4, 10, 6, 4, 13, b, b, false);
@@ -1567,12 +1567,12 @@ public class aql
     public u(cq ☃, aqe ☃, int ☃)
     {
       super(☃);
-      o = (☃ & 0x1);
+      this.o = (☃ & 0x1);
     }
     
     public boolean a(adm ☃, Random ☃, aqe ☃)
     {
-      if (o == 0)
+      if (this.o == 0)
       {
         for (int ☃ = 0; ☃ < 4; ☃++) {
           a(☃, ☃, 10 - ☃, 3 - ☃, 20 - ☃, 12 + ☃, 3 - ☃, 20, b, b, false);
@@ -1628,7 +1628,7 @@ public class aql
         
         a(☃, ☃, 11, 2, 16);
       }
-      else if (o == 1)
+      else if (this.o == 1)
       {
         a(☃, ☃, 9, 3, 18, 13, 3, 20, b, b, false);
         a(☃, ☃, 9, 0, 18, 9, 2, 18, b, b, false);
@@ -1742,31 +1742,31 @@ public class aql
     
     public v(int ☃)
     {
-      a = ☃;
+      this.a = ☃;
     }
     
     public void a(cq ☃, v ☃)
     {
-      b[☃.a()] = ☃;
-      b[☃.d().a()] = this;
+      this.b[☃.a()] = ☃;
+      ☃.b[☃.d().a()] = this;
     }
     
     public void a()
     {
       for (int ☃ = 0; ☃ < 6; ☃++) {
-        c[☃] = (b[☃] != null ? 1 : false);
+        this.c[☃] = (this.b[☃] != null ? 1 : false);
       }
     }
     
     public boolean a(int ☃)
     {
-      if (e) {
+      if (this.e) {
         return true;
       }
-      f = ☃;
+      this.f = ☃;
       for (int ☃ = 0; ☃ < 6; ☃++) {
-        if ((b[☃] != null) && (c[☃] != 0) && 
-          (b[☃].f != ☃) && (b[☃].a(☃))) {
+        if ((this.b[☃] != null) && (this.c[☃] != 0) && 
+          (this.b[☃].f != ☃) && (this.b[☃].a(☃))) {
           return true;
         }
       }
@@ -1775,14 +1775,14 @@ public class aql
     
     public boolean b()
     {
-      return a >= 75;
+      return this.a >= 75;
     }
     
     public int c()
     {
       int ☃ = 0;
       for (int ☃ = 0; ☃ < 6; ☃++) {
-        if (c[☃] != 0) {
+        if (this.c[☃] != 0) {
           ☃++;
         }
       }
@@ -1807,7 +1807,7 @@ public class aql
     
     public aql.r a(cq ☃, aql.v ☃, Random ☃)
     {
-      d = true;
+      ☃.d = true;
       return new aql.s(☃, ☃, ☃);
     }
   }
@@ -1817,12 +1817,12 @@ public class aql
   {
     public boolean a(aql.v ☃)
     {
-      return (c[cq.e.a()] == 0) && (c[cq.f.a()] == 0) && (c[cq.c.a()] == 0) && (c[cq.d.a()] == 0) && (c[cq.b.a()] == 0);
+      return (☃.c[cq.e.a()] == 0) && (☃.c[cq.f.a()] == 0) && (☃.c[cq.c.a()] == 0) && (☃.c[cq.d.a()] == 0) && (☃.c[cq.b.a()] == 0);
     }
     
     public aql.r a(cq ☃, aql.v ☃, Random ☃)
     {
-      d = true;
+      ☃.d = true;
       return new aql.t(☃, ☃, ☃);
     }
   }
@@ -1832,7 +1832,7 @@ public class aql
   {
     public boolean a(aql.v ☃)
     {
-      if ((c[cq.b.a()] != 0) && (!b[cq.b.a()].d)) {
+      if ((☃.c[cq.b.a()] != 0) && (!☃.b[cq.b.a()].d)) {
         return true;
       }
       return false;
@@ -1841,8 +1841,8 @@ public class aql
     public aql.r a(cq ☃, aql.v ☃, Random ☃)
     {
       aql.v ☃ = ☃;
-      d = true;
-      b[cq.b.a()].d = true;
+      ☃.d = true;
+      ☃.b[cq.b.a()].d = true;
       return new aql.m(☃, ☃, ☃);
     }
   }
@@ -1852,7 +1852,7 @@ public class aql
   {
     public boolean a(aql.v ☃)
     {
-      if ((c[cq.f.a()] != 0) && (!b[cq.f.a()].d)) {
+      if ((☃.c[cq.f.a()] != 0) && (!☃.b[cq.f.a()].d)) {
         return true;
       }
       return false;
@@ -1861,8 +1861,8 @@ public class aql
     public aql.r a(cq ☃, aql.v ☃, Random ☃)
     {
       aql.v ☃ = ☃;
-      d = true;
-      b[cq.f.a()].d = true;
+      ☃.d = true;
+      ☃.b[cq.f.a()].d = true;
       return new aql.k(☃, ☃, ☃);
     }
   }
@@ -1872,7 +1872,7 @@ public class aql
   {
     public boolean a(aql.v ☃)
     {
-      if ((c[cq.c.a()] != 0) && (!b[cq.c.a()].d)) {
+      if ((☃.c[cq.c.a()] != 0) && (!☃.b[cq.c.a()].d)) {
         return true;
       }
       return false;
@@ -1881,11 +1881,11 @@ public class aql
     public aql.r a(cq ☃, aql.v ☃, Random ☃)
     {
       aql.v ☃ = ☃;
-      if ((c[cq.c.a()] == 0) || (b[cq.c.a()].d)) {
-        ☃ = b[cq.d.a()];
+      if ((☃.c[cq.c.a()] == 0) || (☃.b[cq.c.a()].d)) {
+        ☃ = ☃.b[cq.d.a()];
       }
-      d = true;
-      b[cq.c.a()].d = true;
+      ☃.d = true;
+      ☃.b[cq.c.a()].d = true;
       return new aql.o(☃, ☃, ☃);
     }
   }
@@ -1895,22 +1895,22 @@ public class aql
   {
     public boolean a(aql.v ☃)
     {
-      if ((c[cq.f.a()] != 0) && (!b[cq.f.a()].d) && 
-        (c[cq.b.a()] != 0) && (!b[cq.b.a()].d))
+      if ((☃.c[cq.f.a()] != 0) && (!☃.b[cq.f.a()].d) && 
+        (☃.c[cq.b.a()] != 0) && (!☃.b[cq.b.a()].d))
       {
-        aql.v ☃ = b[cq.f.a()];
+        aql.v ☃ = ☃.b[cq.f.a()];
         
-        return (c[cq.b.a()] != 0) && (!b[cq.b.a()].d);
+        return (☃.c[cq.b.a()] != 0) && (!☃.b[cq.b.a()].d);
       }
       return false;
     }
     
     public aql.r a(cq ☃, aql.v ☃, Random ☃)
     {
-      d = true;
-      b[cq.f.a()].d = true;
-      b[cq.b.a()].d = true;
-      b[cq.f.a()].b[cq.b.a()].d = true;
+      ☃.d = true;
+      ☃.b[cq.f.a()].d = true;
+      ☃.b[cq.b.a()].d = true;
+      ☃.b[cq.f.a()].b[cq.b.a()].d = true;
       return new aql.l(☃, ☃, ☃);
     }
   }
@@ -1920,22 +1920,22 @@ public class aql
   {
     public boolean a(aql.v ☃)
     {
-      if ((c[cq.c.a()] != 0) && (!b[cq.c.a()].d) && 
-        (c[cq.b.a()] != 0) && (!b[cq.b.a()].d))
+      if ((☃.c[cq.c.a()] != 0) && (!☃.b[cq.c.a()].d) && 
+        (☃.c[cq.b.a()] != 0) && (!☃.b[cq.b.a()].d))
       {
-        aql.v ☃ = b[cq.c.a()];
+        aql.v ☃ = ☃.b[cq.c.a()];
         
-        return (c[cq.b.a()] != 0) && (!b[cq.b.a()].d);
+        return (☃.c[cq.b.a()] != 0) && (!☃.b[cq.b.a()].d);
       }
       return false;
     }
     
     public aql.r a(cq ☃, aql.v ☃, Random ☃)
     {
-      d = true;
-      b[cq.c.a()].d = true;
-      b[cq.b.a()].d = true;
-      b[cq.c.a()].b[cq.b.a()].d = true;
+      ☃.d = true;
+      ☃.b[cq.c.a()].d = true;
+      ☃.b[cq.b.a()].d = true;
+      ☃.b[cq.c.a()].b[cq.b.a()].d = true;
       return new aql.n(☃, ☃, ☃);
     }
   }

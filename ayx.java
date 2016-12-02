@@ -13,20 +13,20 @@ public class ayx
   
   public String b()
   {
-    int ☃ = b.nextInt(2) + 3;
+    int ☃ = this.b.nextInt(2) + 3;
     String ☃ = "";
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
       if (☃ > 0) {
         ☃ = ☃ + " ";
       }
-      ☃ = ☃ + c[b.nextInt(c.length)];
+      ☃ = ☃ + this.c[this.b.nextInt(this.c.length)];
     }
     return ☃;
   }
   
   public void a(long ☃)
   {
-    b.setSeed(☃);
+    this.b.setSeed(☃);
   }
 }

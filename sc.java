@@ -5,21 +5,21 @@ public class sc
   
   public sc(py ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public boolean a()
   {
-    return a.o.w();
+    return this.a.o.w();
   }
   
   public void c()
   {
-    ((sv)a.s()).e(true);
+    ((sv)this.a.s()).e(true);
   }
   
   public void d()
   {
-    ((sv)a.s()).e(false);
+    ((sv)this.a.s()).e(false);
   }
 }

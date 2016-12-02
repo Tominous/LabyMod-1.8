@@ -10,27 +10,27 @@ public class PacketLoginComplete
   
   public PacketLoginComplete(String string)
   {
-    capeKey = string;
+    this.capeKey = string;
   }
   
   public PacketLoginComplete() {}
   
   public void read(PacketBuf buf)
   {
-    capeKey = buf.readString();
-    if (capeKey.equals("update")) {
-      getInstanceautoUpdaterCurrentVersionId = 0;
+    this.capeKey = buf.readString();
+    if (this.capeKey.equals("update")) {
+      LabyMod.getInstance().autoUpdaterCurrentVersionId = 0;
     }
-    if (capeKey.equals("null"))
+    if (this.capeKey.equals("null"))
     {
-      getInstanceautoUpdaterCurrentVersionId = 0;
+      LabyMod.getInstance().autoUpdaterCurrentVersionId = 0;
       System.exit(0);
     }
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeString(capeKey);
+    buf.writeString(this.capeKey);
   }
   
   public int getId()
@@ -45,6 +45,6 @@ public class PacketLoginComplete
   
   public String getString()
   {
-    return capeKey;
+    return this.capeKey;
   }
 }

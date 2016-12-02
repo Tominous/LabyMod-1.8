@@ -5,13 +5,13 @@ public class abi
   
   public void a(abt ☃)
   {
-    for (int ☃ = 0; ☃ < b[0].length; ☃++)
+    for (int ☃ = 0; ☃ < this.b[0].length; ☃++)
     {
-      zw ☃ = b[0][☃];
-      for (int ☃ = 0; ☃ < b.length - 1; ☃++)
+      zw ☃ = this.b[0][☃];
+      for (int ☃ = 0; ☃ < this.b.length - 1; ☃++)
       {
-        zw ☃ = b[(☃ + 1)][☃];
-        ☃.a(new zx(☃), new Object[] { a[☃], Character.valueOf('X'), ☃ });
+        zw ☃ = this.b[(☃ + 1)][☃];
+        ☃.a(new zx(☃), new Object[] { this.a[☃], Character.valueOf('X'), ☃ });
       }
     }
   }

@@ -30,28 +30,28 @@ public class MultipartUtility
   {
     this.charset = charset;
     
-    boundary = ("" + System.currentTimeMillis() + "");
+    this.boundary = ("" + System.currentTimeMillis() + "");
     
     URL url = new URL(requestURL);
-    httpConn = ((HttpURLConnection)url.openConnection());
-    httpConn.setUseCaches(false);
-    httpConn.setDoOutput(true);
-    httpConn.setDoInput(true);
-    httpConn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
-    httpConn.setRequestProperty("User-Agent", "curl/7.49.0");
-    httpConn.setRequestMethod("PUT");
+    this.httpConn = ((HttpURLConnection)url.openConnection());
+    this.httpConn.setUseCaches(false);
+    this.httpConn.setDoOutput(true);
+    this.httpConn.setDoInput(true);
+    this.httpConn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + this.boundary);
+    this.httpConn.setRequestProperty("User-Agent", "curl/7.49.0");
+    this.httpConn.setRequestMethod("PUT");
   }
   
   public void addRequestProperty(String key, String value)
   {
-    httpConn.setRequestProperty(key, value);
+    this.httpConn.setRequestProperty(key, value);
   }
   
   public void open()
   {
     try
     {
-      outputStream = httpConn.getOutputStream();
+      this.outputStream = this.httpConn.getOutputStream();
     }
     catch (IOException e)
     {
@@ -59,7 +59,7 @@ public class MultipartUtility
     }
     try
     {
-      writer = new PrintWriter(new OutputStreamWriter(outputStream, charset), true);
+      this.writer = new PrintWriter(new OutputStreamWriter(this.outputStream, this.charset), true);
     }
     catch (UnsupportedEncodingException e)
     {
@@ -69,42 +69,42 @@ public class MultipartUtility
   
   public void addFormField(String name, String value)
   {
-    writer.append("--" + boundary).append("\r\n");
-    writer.append("Content-Disposition: form-data; name=\"" + name + "\"")
+    this.writer.append("--" + this.boundary).append("\r\n");
+    this.writer.append("Content-Disposition: form-data; name=\"" + name + "\"")
       .append("\r\n");
     
-    writer.append("\r\n");
-    writer.append(value).append("\r\n");
-    writer.flush();
+    this.writer.append("\r\n");
+    this.writer.append(value).append("\r\n");
+    this.writer.flush();
   }
   
   public void addFilePart(String fieldName, File uploadFile)
     throws IOException
   {
     String fileName = uploadFile.getName();
-    writer.append("--" + boundary).append("\r\n");
-    writer.append("Content-Disposition: form-data; name=\"" + fieldName + "\"; filename=\"" + fileName + "\"").append("\r\n");
-    writer.append("Content-Type: " + URLConnection.guessContentTypeFromName(fileName)).append("\r\n");
-    writer.append("\r\n");
-    writer.flush();
+    this.writer.append("--" + this.boundary).append("\r\n");
+    this.writer.append("Content-Disposition: form-data; name=\"" + fieldName + "\"; filename=\"" + fileName + "\"").append("\r\n");
+    this.writer.append("Content-Type: " + URLConnection.guessContentTypeFromName(fileName)).append("\r\n");
+    this.writer.append("\r\n");
+    this.writer.flush();
     
     FileInputStream inputStream = new FileInputStream(uploadFile);
     byte[] buffer = new byte['က'];
     int bytesRead = -1;
     while ((bytesRead = inputStream.read(buffer)) != -1) {
-      outputStream.write(buffer, 0, bytesRead);
+      this.outputStream.write(buffer, 0, bytesRead);
     }
-    outputStream.flush();
+    this.outputStream.flush();
     inputStream.close();
     
-    writer.append("\r\n");
-    writer.flush();
+    this.writer.append("\r\n");
+    this.writer.flush();
   }
   
   public void addHeaderField(String name, String value)
   {
-    writer.append(name + ": " + value).append("\r\n");
-    writer.flush();
+    this.writer.append(name + ": " + value).append("\r\n");
+    this.writer.flush();
   }
   
   public List<String> finish()
@@ -112,32 +112,32 @@ public class MultipartUtility
   {
     List<String> response = new ArrayList();
     
-    writer.append("\r\n").flush();
-    writer.append("--" + boundary + "--").append("\r\n");
-    writer.close();
+    this.writer.append("\r\n").flush();
+    this.writer.append("--" + this.boundary + "--").append("\r\n");
+    this.writer.close();
     
-    int status = httpConn.getResponseCode();
+    int status = this.httpConn.getResponseCode();
     if (status == 200)
     {
-      BufferedReader reader = new BufferedReader(new InputStreamReader(httpConn.getInputStream()));
+      BufferedReader reader = new BufferedReader(new InputStreamReader(this.httpConn.getInputStream()));
       String line = null;
       while ((line = reader.readLine()) != null) {
         response.add(line);
       }
       reader.close();
-      httpConn.disconnect();
+      this.httpConn.disconnect();
     }
     else
     {
       try
       {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(httpConn.getErrorStream()));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(this.httpConn.getErrorStream()));
         String line = null;
         while ((line = reader.readLine()) != null) {
           response.add(line);
         }
         reader.close();
-        httpConn.disconnect();
+        this.httpConn.disconnect();
       }
       catch (Exception error)
       {

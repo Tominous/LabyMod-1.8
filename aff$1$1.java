@@ -5,11 +5,11 @@ class aff$1$1
   
   public void run()
   {
-    akw ☃ = b.a.s(a);
+    akw ☃ = this.b.a.s(this.a);
     if ((☃ instanceof akv))
     {
       ((akv)☃).m();
-      b.a.c(a, afi.bY, 1, 0);
+      this.b.a.c(this.a, afi.bY, 1, 0);
     }
   }
 }

@@ -7,16 +7,16 @@ class sn$1
   
   public boolean a(pr ☃)
   {
-    double ☃ = a.f();
+    double ☃ = this.a.f();
     if (☃.av()) {
       ☃ *= 0.800000011920929D;
     }
     if (☃.ax()) {
       return false;
     }
-    if (☃.g(sn.a(a)) > ☃) {
+    if (☃.g(sn.a(this.a)) > ☃) {
       return false;
     }
-    return st.a(sn.a(a), ☃, false, true);
+    return st.a(sn.a(this.a), ☃, false, true);
   }
 }

@@ -27,10 +27,10 @@ public class bnc
   private ZipFile d()
     throws IOException
   {
-    if (c == null) {
-      c = new ZipFile(a);
+    if (this.c == null) {
+      this.c = new ZipFile(this.a);
     }
-    return c;
+    return this.c;
   }
   
   protected InputStream a(String ☃)
@@ -39,7 +39,7 @@ public class bnc
     ZipFile ☃ = d();
     ZipEntry ☃ = ☃.getEntry(☃);
     if (☃ == null) {
-      throw new bnl(a, ☃);
+      throw new bnl(this.a, ☃);
     }
     return ☃.getInputStream(☃);
   }
@@ -100,10 +100,10 @@ public class bnc
   public void close()
     throws IOException
   {
-    if (c != null)
+    if (this.c != null)
     {
-      c.close();
-      c = null;
+      this.c.close();
+      this.c = null;
     }
   }
 }

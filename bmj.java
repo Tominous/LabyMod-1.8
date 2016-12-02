@@ -16,7 +16,7 @@ public class bmj
   implements bmm, bnj
 {
   private static final Logger a = ;
-  private final Map<jy, bmk> b = Maps.newHashMap();
+  public final Map<jy, bmk> b = Maps.newHashMap();
   private final List<bmm> c = Lists.newArrayList();
   private final Map<String, Integer> d = Maps.newHashMap();
   private bni e;
@@ -24,18 +24,18 @@ public class bmj
   
   public bmj(bni resourceManager)
   {
-    e = resourceManager;
+    this.e = resourceManager;
   }
   
   public void a(jy resource)
   {
-    bmk itextureobject = (bmk)b.get(resource);
-    if ((itextureobject != null) && (itextureobject != bml.a) && (!storedTextures.containsKey(resource.a()))) {
-      storedTextures.put(resource.a(), itextureobject);
+    bmk itextureobject = (bmk)this.b.get(resource);
+    if ((itextureobject != null) && (itextureobject != bml.a) && (!this.storedTextures.containsKey(resource.a()))) {
+      this.storedTextures.put(resource.a(), itextureobject);
     } else if ((itextureobject == null) || (itextureobject == bml.a)) {
-      if (storedTextures.containsKey(resource.a()))
+      if (this.storedTextures.containsKey(resource.a()))
       {
-        bmk texure = (bmk)storedTextures.get(resource.a());
+        bmk texure = (bmk)this.storedTextures.get(resource.a());
         if ((texure != null) && (texure != bml.a))
         {
           ave.A().P().a(resource, texure);
@@ -55,7 +55,7 @@ public class bmj
   {
     if (a(textureLocation, textureObj))
     {
-      c.add(textureObj);
+      this.c.add(textureObj);
       return true;
     }
     return false;
@@ -66,13 +66,13 @@ public class bmj
     boolean flag = true;
     try
     {
-      textureObj.a(e);
+      textureObj.a(this.e);
     }
     catch (IOException ioexception)
     {
       a.warn("Failed to load texture: " + textureLocation, ioexception);
       textureObj = bml.a;
-      b.put(textureLocation, textureObj);
+      this.b.put(textureLocation, textureObj);
       flag = false;
     }
     catch (Throwable throwable)
@@ -91,24 +91,24 @@ public class bmj
       });
       throw new e(crashreport);
     }
-    b.put(textureLocation, textureObj);
+    this.b.put(textureLocation, textureObj);
     return flag;
   }
   
   public bmk b(jy textureLocation)
   {
-    return (bmk)b.get(textureLocation);
+    return (bmk)this.b.get(textureLocation);
   }
   
   public jy a(String name, blz texture)
   {
-    Integer integer = (Integer)d.get(name);
+    Integer integer = (Integer)this.d.get(name);
     if (integer == null) {
       integer = Integer.valueOf(1);
     } else {
       integer = Integer.valueOf(integer.intValue() + 1);
     }
-    d.put(name, integer);
+    this.d.put(name, integer);
     
     jy resourcelocation = new jy(String.format("dynamic/%s_%d", new Object[] { name, integer }));
     a(resourcelocation, texture);
@@ -117,7 +117,7 @@ public class bmj
   
   public void e()
   {
-    for (bmm itickable : c) {
+    for (bmm itickable : this.c) {
       itickable.e();
     }
   }
@@ -132,7 +132,7 @@ public class bmj
   
   public void a(bni resourceManager)
   {
-    Iterator<Map.Entry<jy, bmk>> iterator = b.entrySet().iterator();
+    Iterator<Map.Entry<jy, bmk>> iterator = this.b.entrySet().iterator();
     while (iterator.hasNext())
     {
       Map.Entry<jy, bmk> next = (Map.Entry)iterator.next();

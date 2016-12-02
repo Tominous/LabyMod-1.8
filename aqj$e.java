@@ -10,14 +10,14 @@ public class aqj$e
   {
     super(☃);
     
-    m = ☃;
-    l = ☃;
+    this.m = ☃;
+    this.l = ☃;
   }
   
   public void a(aqt ☃, List<aqt> ☃, Random ☃)
   {
     int ☃ = 1;
-    if ((m == cq.e) || (m == cq.c)) {
+    if ((this.m == cq.e) || (this.m == cq.c)) {
       ☃ = 5;
     }
     b((aqj.q)☃, ☃, ☃, 0, ☃, ☃.nextInt(8) > 0);

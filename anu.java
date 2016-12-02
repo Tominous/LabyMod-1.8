@@ -19,7 +19,7 @@ public class anu
   
   public anu(adm ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
   
   public amy d(int ☃, int ☃)
@@ -39,13 +39,13 @@ public class anu
         }
       }
     }
-    amy ☃ = new amy(d, ☃, ☃, ☃);
+    amy ☃ = new amy(this.d, ☃, ☃, ☃);
     ☃.b();
     
-    ady[] ☃ = d.v().b(null, ☃ * 16, ☃ * 16, 16, 16);
+    ady[] ☃ = this.d.v().b(null, ☃ * 16, ☃ * 16, 16, 16);
     byte[] ☃ = ☃.k();
     for (int ☃ = 0; ☃ < ☃.length; ☃++) {
-      ☃[☃] = ((byte)az);
+      ☃[☃] = ((byte)☃[☃].az);
     }
     ☃.b();
     
@@ -102,7 +102,7 @@ public class anu
   
   public List<ady.c> a(pt ☃, cj ☃)
   {
-    ady ☃ = d.b(☃);
+    ady ☃ = this.d.b(☃);
     return ☃.a(☃);
   }
   

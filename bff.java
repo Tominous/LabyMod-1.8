@@ -11,30 +11,30 @@ public class bff
   public bff(adm ☃, cj ☃, cj ☃, int ☃)
   {
     super(☃, ☃, ☃, ☃);
-    g = ☃.b(new df(☃, ☃, ☃));
+    this.g = ☃.b(new df(☃, ☃, ☃));
     
     int ☃ = 8000;
-    h = new int['ὀ'];
-    Arrays.fill(h, -1);
-    i = new alz['ὀ'];
+    this.h = new int['ὀ'];
+    Arrays.fill(this.h, -1);
+    this.i = new alz['ὀ'];
   }
   
   public akw s(cj ☃)
   {
-    int ☃ = (☃.n() >> 4) - a;
-    int ☃ = (☃.p() >> 4) - b;
+    int ☃ = (☃.n() >> 4) - this.a;
+    int ☃ = (☃.p() >> 4) - this.b;
     
-    return c[☃][☃].a(☃, amy.a.b);
+    return this.c[☃][☃].a(☃, amy.a.b);
   }
   
   public int b(cj ☃, int ☃)
   {
     int ☃ = e(☃);
-    int ☃ = h[☃];
+    int ☃ = this.h[☃];
     if (☃ == -1)
     {
       ☃ = super.b(☃, ☃);
-      h[☃] = ☃;
+      this.h[☃] = ☃;
     }
     return ☃;
   }
@@ -42,11 +42,11 @@ public class bff
   public alz p(cj ☃)
   {
     int ☃ = e(☃);
-    alz ☃ = i[☃];
+    alz ☃ = this.i[☃];
     if (☃ == null)
     {
       ☃ = c(☃);
-      i[☃] = ☃;
+      this.i[☃] = ☃;
     }
     return ☃;
   }
@@ -55,19 +55,19 @@ public class bff
   {
     if ((☃.o() >= 0) && (☃.o() < 256))
     {
-      int ☃ = (☃.n() >> 4) - a;
-      int ☃ = (☃.p() >> 4) - b;
+      int ☃ = (☃.n() >> 4) - this.a;
+      int ☃ = (☃.p() >> 4) - this.b;
       
-      return c[☃][☃].g(☃);
+      return this.c[☃][☃].g(☃);
     }
     return f;
   }
   
   private int e(cj ☃)
   {
-    int ☃ = ☃.n() - g.n();
-    int ☃ = ☃.o() - g.o();
-    int ☃ = ☃.p() - g.p();
+    int ☃ = ☃.n() - this.g.n();
+    int ☃ = ☃.o() - this.g.o();
+    int ☃ = ☃.p() - this.g.p();
     return ☃ * 400 + ☃ * 20 + ☃;
   }
 }

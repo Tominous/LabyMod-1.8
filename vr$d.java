@@ -7,20 +7,20 @@ class vr$d
   
   public vr$d(vr ☃)
   {
-    a = ☃;
+    this.a = ☃;
     
     a(1);
   }
   
   public boolean a()
   {
-    qq ☃ = a.q();
+    qq ☃ = this.a.q();
     if (!☃.a()) {
       return true;
     }
-    double ☃ = ☃.d() - a.s;
-    double ☃ = ☃.e() - a.t;
-    double ☃ = ☃.f() - a.u;
+    double ☃ = ☃.d() - this.a.s;
+    double ☃ = ☃.e() - this.a.t;
+    double ☃ = ☃.f() - this.a.u;
     
     double ☃ = ☃ * ☃ + ☃ * ☃ + ☃ * ☃;
     if ((☃ < 1.0D) || (☃ > 3600.0D)) {
@@ -36,10 +36,10 @@ class vr$d
   
   public void c()
   {
-    Random ☃ = a.bc();
-    double ☃ = a.s + (☃.nextFloat() * 2.0F - 1.0F) * 16.0F;
-    double ☃ = a.t + (☃.nextFloat() * 2.0F - 1.0F) * 16.0F;
-    double ☃ = a.u + (☃.nextFloat() * 2.0F - 1.0F) * 16.0F;
-    a.q().a(☃, ☃, ☃, 1.0D);
+    Random ☃ = this.a.bc();
+    double ☃ = this.a.s + (☃.nextFloat() * 2.0F - 1.0F) * 16.0F;
+    double ☃ = this.a.t + (☃.nextFloat() * 2.0F - 1.0F) * 16.0F;
+    double ☃ = this.a.u + (☃.nextFloat() * 2.0F - 1.0F) * 16.0F;
+    this.a.q().a(☃, ☃, ☃, 1.0D);
   }
 }

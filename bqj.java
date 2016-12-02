@@ -69,26 +69,26 @@ public class bqj
     {
       if (ErrorCode.succeeded(☃))
       {
-        u = ☃;
-        a(bqj.a.d);
+        bqj.this.u = ☃;
+        bqj.this.a(bqj.a.d);
       }
       else
       {
-        u.data = "";
-        a(bqj.a.b);
+        bqj.this.u.data = "";
+        bqj.this.a(bqj.a.b);
         
         String ☃ = ErrorCode.getString(☃);
-        d(String.format("RequestAuthTokenDoneCallback got failure: %s", new Object[] { ☃ }));
+        bqj.this.d(String.format("RequestAuthTokenDoneCallback got failure: %s", new Object[] { ☃ }));
       }
       try
       {
-        if (c != null) {
-          c.a(☃, ☃);
+        if (bqj.this.c != null) {
+          bqj.this.c.a(☃, ☃);
         }
       }
       catch (Exception ☃)
       {
-        d(☃.toString());
+        bqj.this.d(☃.toString());
       }
     }
     
@@ -96,27 +96,27 @@ public class bqj
     {
       if (ErrorCode.succeeded(☃))
       {
-        v = ☃;
-        a(bqj.a.f);
-        m = true;
+        bqj.this.v = ☃;
+        bqj.this.a(bqj.a.f);
+        bqj.this.m = true;
       }
       else
       {
-        a(bqj.a.b);
-        m = false;
+        bqj.this.a(bqj.a.b);
+        bqj.this.m = false;
         
         String ☃ = ErrorCode.getString(☃);
-        d(String.format("LoginCallback got failure: %s", new Object[] { ☃ }));
+        bqj.this.d(String.format("LoginCallback got failure: %s", new Object[] { ☃ }));
       }
       try
       {
-        if (c != null) {
-          c.a(☃);
+        if (bqj.this.c != null) {
+          bqj.this.c.a(☃);
         }
       }
       catch (Exception ☃)
       {
-        d(☃.toString());
+        bqj.this.d(☃.toString());
       }
     }
     
@@ -124,38 +124,38 @@ public class bqj
     {
       if (ErrorCode.succeeded(☃))
       {
-        s = ☃;
+        bqj.this.s = ☃;
         
-        t = s.getDefaultServer();
+        bqj.this.t = bqj.this.s.getDefaultServer();
         
-        a(bqj.a.h);
+        bqj.this.a(bqj.a.h);
         try
         {
-          if (c != null) {
-            c.a(☃);
+          if (bqj.this.c != null) {
+            bqj.this.c.a(☃);
           }
         }
         catch (Exception ☃)
         {
-          d(☃.toString());
+          bqj.this.d(☃.toString());
         }
       }
       else
       {
         String ☃ = ErrorCode.getString(☃);
-        d(String.format("IngestListCallback got failure: %s", new Object[] { ☃ }));
+        bqj.this.d(String.format("IngestListCallback got failure: %s", new Object[] { ☃ }));
         
-        a(bqj.a.e);
+        bqj.this.a(bqj.a.e);
       }
     }
     
     public void getUserInfoCallback(ErrorCode ☃, UserInfo ☃)
     {
-      w = ☃;
+      bqj.this.w = ☃;
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
-        d(String.format("UserInfoDoneCallback got failure: %s", new Object[] { ☃ }));
+        bqj.this.d(String.format("UserInfoDoneCallback got failure: %s", new Object[] { ☃ }));
       }
     }
     
@@ -163,28 +163,28 @@ public class bqj
     {
       if (ErrorCode.succeeded(☃))
       {
-        x = ☃;
+        bqj.this.x = ☃;
         try
         {
-          if (c != null) {
-            c.a(☃);
+          if (bqj.this.c != null) {
+            bqj.this.c.a(☃);
           }
         }
         catch (Exception ☃)
         {
-          d(☃.toString());
+          bqj.this.d(☃.toString());
         }
       }
       else
       {
         String ☃ = ErrorCode.getString(☃);
-        e(String.format("StreamInfoDoneCallback got failure: %s", new Object[] { ☃ }));
+        bqj.this.e(String.format("StreamInfoDoneCallback got failure: %s", new Object[] { ☃ }));
       }
     }
     
     public void getArchivingStateCallback(ErrorCode ☃, ArchivingState ☃)
     {
-      y = ☃;
+      bqj.this.y = ☃;
       if (ErrorCode.failed(☃)) {}
     }
     
@@ -193,7 +193,7 @@ public class bqj
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
-        e(String.format("RunCommercialCallback got failure: %s", new Object[] { ☃ }));
+        bqj.this.e(String.format("RunCommercialCallback got failure: %s", new Object[] { ☃ }));
       }
     }
     
@@ -202,7 +202,7 @@ public class bqj
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
-        e(String.format("SetStreamInfoCallback got failure: %s", new Object[] { ☃ }));
+        bqj.this.e(String.format("SetStreamInfoCallback got failure: %s", new Object[] { ☃ }));
       }
     }
     
@@ -211,17 +211,17 @@ public class bqj
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
-        d(String.format("GameNameListCallback got failure: %s", new Object[] { ☃ }));
+        bqj.this.d(String.format("GameNameListCallback got failure: %s", new Object[] { ☃ }));
       }
       try
       {
-        if (c != null) {
-          c.a(☃, ☃ == null ? new GameInfo[0] : list);
+        if (bqj.this.c != null) {
+          bqj.this.c.a(☃, ☃ == null ? new GameInfo[0] : ☃.list);
         }
       }
       catch (Exception ☃)
       {
-        d(☃.toString());
+        bqj.this.d(☃.toString());
       }
     }
     
@@ -229,7 +229,7 @@ public class bqj
     {
       FrameBuffer ☃ = FrameBuffer.lookupBuffer(☃);
       
-      k.add(☃);
+      bqj.this.k.add(☃);
     }
     
     public void startCallback(ErrorCode ☃)
@@ -238,34 +238,34 @@ public class bqj
       {
         try
         {
-          if (c != null) {
-            c.b();
+          if (bqj.this.c != null) {
+            bqj.this.c.b();
           }
         }
         catch (Exception ☃)
         {
-          d(☃.toString());
+          bqj.this.d(☃.toString());
         }
-        a(bqj.a.k);
+        bqj.this.a(bqj.a.k);
       }
       else
       {
-        q = null;
-        r = null;
+        bqj.this.q = null;
+        bqj.this.r = null;
         
-        a(bqj.a.i);
+        bqj.this.a(bqj.a.i);
         try
         {
-          if (c != null) {
-            c.c(☃);
+          if (bqj.this.c != null) {
+            bqj.this.c.c(☃);
           }
         }
         catch (Exception ☃)
         {
-          d(☃.toString());
+          bqj.this.d(☃.toString());
         }
         String ☃ = ErrorCode.getString(☃);
-        d(String.format("startCallback got failure: %s", new Object[] { ☃ }));
+        bqj.this.d(String.format("startCallback got failure: %s", new Object[] { ☃ }));
       }
     }
     
@@ -273,32 +273,32 @@ public class bqj
     {
       if (ErrorCode.succeeded(☃))
       {
-        q = null;
-        r = null;
+        bqj.this.q = null;
+        bqj.this.r = null;
         
-        P();
+        bqj.this.P();
         try
         {
-          if (c != null) {
-            c.c();
+          if (bqj.this.c != null) {
+            bqj.this.c.c();
           }
         }
         catch (Exception ☃)
         {
-          d(☃.toString());
+          bqj.this.d(☃.toString());
         }
-        if (m) {
-          a(bqj.a.i);
+        if (bqj.this.m) {
+          bqj.this.a(bqj.a.i);
         } else {
-          a(bqj.a.b);
+          bqj.this.a(bqj.a.b);
         }
       }
       else
       {
-        a(bqj.a.i);
+        bqj.this.a(bqj.a.i);
         
         String ☃ = ErrorCode.getString(☃);
-        d(String.format("stopCallback got failure: %s", new Object[] { ☃ }));
+        bqj.this.d(String.format("stopCallback got failure: %s", new Object[] { ☃ }));
       }
     }
     
@@ -307,7 +307,7 @@ public class bqj
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
-        d(String.format("sendActionMetaDataCallback got failure: %s", new Object[] { ☃ }));
+        bqj.this.d(String.format("sendActionMetaDataCallback got failure: %s", new Object[] { ☃ }));
       }
     }
     
@@ -316,7 +316,7 @@ public class bqj
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
-        d(String.format("sendStartSpanMetaDataCallback got failure: %s", new Object[] { ☃ }));
+        bqj.this.d(String.format("sendStartSpanMetaDataCallback got failure: %s", new Object[] { ☃ }));
       }
     }
     
@@ -325,7 +325,7 @@ public class bqj
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
-        d(String.format("sendEndSpanMetaDataCallback got failure: %s", new Object[] { ☃ }));
+        bqj.this.d(String.format("sendEndSpanMetaDataCallback got failure: %s", new Object[] { ☃ }));
       }
     }
   };
@@ -336,87 +336,87 @@ public class bqj
   
   public void a(bqj.b ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public boolean b()
   {
-    return l;
+    return this.l;
   }
   
   public void a(String ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
   
   public StreamInfo j()
   {
-    return x;
+    return this.x;
   }
   
   public ChannelInfo l()
   {
-    return v;
+    return this.v;
   }
   
   public boolean m()
   {
-    return (o == bqj.a.k) || (o == bqj.a.m);
+    return (this.o == bqj.a.k) || (this.o == bqj.a.m);
   }
   
   public boolean n()
   {
-    return o == bqj.a.i;
+    return this.o == bqj.a.i;
   }
   
   public boolean o()
   {
-    return o == bqj.a.n;
+    return this.o == bqj.a.n;
   }
   
   public boolean p()
   {
-    return o == bqj.a.m;
+    return this.o == bqj.a.m;
   }
   
   public boolean q()
   {
-    return m;
+    return this.m;
   }
   
   public IngestServer s()
   {
-    return t;
+    return this.t;
   }
   
   public void a(IngestServer ☃)
   {
-    t = ☃;
+    this.t = ☃;
   }
   
   public IngestList t()
   {
-    return s;
+    return this.s;
   }
   
   public void a(float ☃)
   {
-    i.setVolume(AudioDeviceType.TTV_RECORDER_DEVICE, ☃);
+    this.i.setVolume(AudioDeviceType.TTV_RECORDER_DEVICE, ☃);
   }
   
   public void b(float ☃)
   {
-    i.setVolume(AudioDeviceType.TTV_PLAYBACK_DEVICE, ☃);
+    this.i.setVolume(AudioDeviceType.TTV_PLAYBACK_DEVICE, ☃);
   }
   
   public bql w()
   {
-    return A;
+    return this.A;
   }
   
   public long x()
   {
-    return i.getStreamTime();
+    return this.i.getStreamTime();
   }
   
   protected boolean y()
@@ -426,16 +426,16 @@ public class bqj
   
   public ErrorCode A()
   {
-    return G;
+    return this.G;
   }
   
   public bqj()
   {
-    h = Core.getInstance();
+    this.h = Core.getInstance();
     if (Core.getInstance() == null) {
-      h = new Core(new StandardCoreAPI());
+      this.h = new Core(new StandardCoreAPI());
     }
-    i = new Stream(new DesktopStreamAPI());
+    this.i = new Stream(new DesktopStreamAPI());
   }
   
   protected PixelFormat B()
@@ -445,57 +445,57 @@ public class bqj
   
   public boolean C()
   {
-    if (l) {
+    if (this.l) {
       return false;
     }
-    i.setStreamCallbacks(B);
+    this.i.setStreamCallbacks(this.B);
     
-    ErrorCode ☃ = h.initialize(d, System.getProperty("java.library.path"));
+    ErrorCode ☃ = this.h.initialize(this.d, System.getProperty("java.library.path"));
     if (!a(☃))
     {
-      i.setStreamCallbacks(null);
-      G = ☃;
+      this.i.setStreamCallbacks(null);
+      this.G = ☃;
       return false;
     }
-    ☃ = h.setTraceLevel(MessageLevel.TTV_ML_ERROR);
+    ☃ = this.h.setTraceLevel(MessageLevel.TTV_ML_ERROR);
     if (!a(☃))
     {
-      i.setStreamCallbacks(null);
-      h.shutdown();
-      G = ☃;
+      this.i.setStreamCallbacks(null);
+      this.h.shutdown();
+      this.G = ☃;
       return false;
     }
     if (ErrorCode.succeeded(☃))
     {
-      l = true;
+      this.l = true;
       a(bqj.a.b);
       return true;
     }
-    G = ☃;
-    h.shutdown();
+    this.G = ☃;
+    this.h.shutdown();
     return false;
   }
   
   public boolean D()
   {
-    if (!l) {
+    if (!this.l) {
       return true;
     }
     if (o()) {
       return false;
     }
-    n = true;
+    this.n = true;
     
     F();
     
-    i.setStreamCallbacks(null);
-    i.setStatCallbacks(null);
+    this.i.setStreamCallbacks(null);
+    this.i.setStatCallbacks(null);
     
-    ErrorCode ☃ = h.shutdown();
+    ErrorCode ☃ = this.h.shutdown();
     a(☃);
     
-    l = false;
-    n = false;
+    this.l = false;
+    this.n = false;
     a(bqj.a.a);
     
     return true;
@@ -503,12 +503,12 @@ public class bqj
   
   public void E()
   {
-    if (o != bqj.a.a)
+    if (this.o != bqj.a.a)
     {
-      if (A != null) {
-        A.m();
+      if (this.A != null) {
+        this.A.m();
       }
-      while (A != null)
+      while (this.A != null)
       {
         try
         {
@@ -535,13 +535,13 @@ public class bqj
       d("Username must be valid");
       return false;
     }
-    if ((☃ == null) || (data == null) || (data.isEmpty()))
+    if ((☃ == null) || (☃.data == null) || (☃.data.isEmpty()))
     {
       d("Auth token must be valid");
       return false;
     }
-    p = ☃;
-    u = ☃;
+    this.p = ☃;
+    this.u = ☃;
     if (b()) {
       a(bqj.a.d);
     }
@@ -554,19 +554,19 @@ public class bqj
       return false;
     }
     if (m()) {
-      i.stop(false);
+      this.i.stop(false);
     }
-    p = "";
-    u = new AuthToken();
-    if (!m) {
+    this.p = "";
+    this.u = new AuthToken();
+    if (!this.m) {
       return false;
     }
-    m = false;
-    if (!n) {
+    this.m = false;
+    if (!this.n) {
       try
       {
-        if (c != null) {
-          c.a();
+        if (this.c != null) {
+          this.c.a();
         }
       }
       catch (Exception ☃)
@@ -581,11 +581,11 @@ public class bqj
   
   public boolean a(String ☃, String ☃, String ☃)
   {
-    if (!m) {
+    if (!this.m) {
       return false;
     }
     if ((☃ == null) || (☃.equals(""))) {
-      ☃ = p;
+      ☃ = this.p;
     }
     if (☃ == null) {
       ☃ = "";
@@ -594,10 +594,10 @@ public class bqj
       ☃ = "";
     }
     StreamInfoForSetting ☃ = new StreamInfoForSetting();
-    streamTitle = ☃;
-    gameName = ☃;
+    ☃.streamTitle = ☃;
+    ☃.gameName = ☃;
     
-    ErrorCode ☃ = i.setStreamInfo(u, ☃, ☃);
+    ErrorCode ☃ = this.i.setStreamInfo(this.u, ☃, ☃);
     a(☃);
     
     return ErrorCode.succeeded(☃);
@@ -608,7 +608,7 @@ public class bqj
     if (!m()) {
       return false;
     }
-    ErrorCode ☃ = i.runCommercial(u);
+    ErrorCode ☃ = this.i.runCommercial(this.u);
     a(☃);
     
     return ErrorCode.succeeded(☃);
@@ -616,17 +616,17 @@ public class bqj
   
   public VideoParams a(int ☃, int ☃, float ☃, float ☃)
   {
-    int[] ☃ = i.getMaxResolution(☃, ☃, ☃, ☃);
+    int[] ☃ = this.i.getMaxResolution(☃, ☃, ☃, ☃);
     
     VideoParams ☃ = new VideoParams();
-    maxKbps = ☃;
-    encodingCpuUsage = EncodingCpuUsage.TTV_ECU_HIGH;
-    pixelFormat = B();
-    targetFps = ☃;
-    outputWidth = ☃[0];
-    outputHeight = ☃[1];
-    disableAdaptiveBitrate = false;
-    verticalFlip = false;
+    ☃.maxKbps = ☃;
+    ☃.encodingCpuUsage = EncodingCpuUsage.TTV_ECU_HIGH;
+    ☃.pixelFormat = B();
+    ☃.targetFps = ☃;
+    ☃.outputWidth = ☃[0];
+    ☃.outputHeight = ☃[1];
+    ☃.disableAdaptiveBitrate = false;
+    ☃.verticalFlip = false;
     
     return ☃;
   }
@@ -636,20 +636,20 @@ public class bqj
     if ((☃ == null) || (!n())) {
       return false;
     }
-    q = ☃.clone();
+    this.q = ☃.clone();
     
-    r = new AudioParams();
-    r.audioEnabled = ((g) && (y()));
-    r.enableMicCapture = r.audioEnabled;
-    r.enablePlaybackCapture = r.audioEnabled;
-    r.enablePassthroughAudio = false;
+    this.r = new AudioParams();
+    this.r.audioEnabled = ((this.g) && (y()));
+    this.r.enableMicCapture = this.r.audioEnabled;
+    this.r.enablePlaybackCapture = this.r.audioEnabled;
+    this.r.enablePassthroughAudio = false;
     if (!O())
     {
-      q = null;
-      r = null;
+      this.q = null;
+      this.r = null;
       return false;
     }
-    ErrorCode ☃ = i.start(☃, r, t, StartFlags.None, true);
+    ErrorCode ☃ = this.i.start(☃, this.r, this.t, StartFlags.None, true);
     if (ErrorCode.failed(☃))
     {
       P();
@@ -657,8 +657,8 @@ public class bqj
       String ☃ = ErrorCode.getString(☃);
       d(String.format("Error while starting to broadcast: %s", new Object[] { ☃ }));
       
-      q = null;
-      r = null;
+      this.q = null;
+      this.r = null;
       
       return false;
     }
@@ -672,7 +672,7 @@ public class bqj
     if (!m()) {
       return false;
     }
-    ErrorCode ☃ = i.stop(true);
+    ErrorCode ☃ = this.i.stop(true);
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
@@ -689,7 +689,7 @@ public class bqj
     if (!m()) {
       return false;
     }
-    ErrorCode ☃ = i.pauseVideo();
+    ErrorCode ☃ = this.i.pauseVideo();
     if (ErrorCode.failed(☃))
     {
       H();
@@ -716,7 +716,7 @@ public class bqj
   
   public boolean a(String ☃, long ☃, String ☃, String ☃)
   {
-    ErrorCode ☃ = i.sendActionMetaData(u, ☃, ☃, ☃, ☃);
+    ErrorCode ☃ = this.i.sendActionMetaData(this.u, ☃, ☃, ☃, ☃);
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
@@ -729,7 +729,7 @@ public class bqj
   
   public long b(String ☃, long ☃, String ☃, String ☃)
   {
-    long ☃ = i.sendStartSpanMetaData(u, ☃, ☃, ☃, ☃);
+    long ☃ = this.i.sendStartSpanMetaData(this.u, ☃, ☃, ☃, ☃);
     if (☃ == -1L) {
       d(String.format("Error in SendStartSpanMetaData\n", new Object[0]));
     }
@@ -743,7 +743,7 @@ public class bqj
       d(String.format("Invalid sequence id: %d\n", new Object[] { Long.valueOf(☃) }));
       return false;
     }
-    ErrorCode ☃ = i.sendEndSpanMetaData(u, ☃, ☃, ☃, ☃, ☃);
+    ErrorCode ☃ = this.i.sendEndSpanMetaData(this.u, ☃, ☃, ☃, ☃, ☃);
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
@@ -756,14 +756,14 @@ public class bqj
   
   protected void a(bqj.a ☃)
   {
-    if (☃ == o) {
+    if (☃ == this.o) {
       return;
     }
-    o = ☃;
+    this.o = ☃;
     try
     {
-      if (c != null) {
-        c.a(☃);
+      if (this.c != null) {
+        this.c.a(☃);
       }
     }
     catch (Exception ☃)
@@ -774,26 +774,26 @@ public class bqj
   
   public void K()
   {
-    if ((i == null) || (!l)) {
+    if ((this.i == null) || (!this.l)) {
       return;
     }
-    ErrorCode ☃ = i.pollTasks();
+    ErrorCode ☃ = this.i.pollTasks();
     a(☃);
     if (o())
     {
-      A.k();
-      if (A.f())
+      this.A.k();
+      if (this.A.f())
       {
-        A = null;
+        this.A = null;
         a(bqj.a.i);
       }
     }
-    switch (bqj.3.a[o.ordinal()])
+    switch (bqj.3.a[this.o.ordinal()])
     {
     case 1: 
       a(bqj.a.e);
       
-      ☃ = i.login(u);
+      ☃ = this.i.login(this.u);
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
@@ -803,7 +803,7 @@ public class bqj
     case 2: 
       a(bqj.a.g);
       
-      ☃ = i.getIngestServers(u);
+      ☃ = this.i.getIngestServers(this.u);
       if (ErrorCode.failed(☃))
       {
         a(bqj.a.f);
@@ -815,7 +815,7 @@ public class bqj
     case 3: 
       a(bqj.a.i);
       
-      ☃ = i.getUserInfo(u);
+      ☃ = this.i.getUserInfo(this.u);
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
@@ -823,7 +823,7 @@ public class bqj
       }
       L();
       
-      ☃ = i.getArchivingState(u);
+      ☃ = this.i.getArchivingState(this.u);
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
@@ -849,13 +849,13 @@ public class bqj
   protected void L()
   {
     long ☃ = System.nanoTime();
-    long ☃ = (☃ - z) / 1000000000L;
+    long ☃ = (☃ - this.z) / 1000000000L;
     if (☃ < 30L) {
       return;
     }
-    z = ☃;
+    this.z = ☃;
     
-    ErrorCode ☃ = i.getStreamInfo(u, p);
+    ErrorCode ☃ = this.i.getStreamInfo(this.u, this.p);
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
@@ -865,56 +865,56 @@ public class bqj
   
   public bql M()
   {
-    if ((!n()) || (s == null)) {
+    if ((!n()) || (this.s == null)) {
       return null;
     }
     if (o()) {
       return null;
     }
-    A = new bql(i, s);
-    A.j();
+    this.A = new bql(this.i, this.s);
+    this.A.j();
     
     a(bqj.a.n);
     
-    return A;
+    return this.A;
   }
   
   protected boolean O()
   {
     for (int ☃ = 0; ☃ < 3; ☃++)
     {
-      FrameBuffer ☃ = i.allocateFrameBuffer(q.outputWidth * q.outputHeight * 4);
+      FrameBuffer ☃ = this.i.allocateFrameBuffer(this.q.outputWidth * this.q.outputHeight * 4);
       if (!☃.getIsValid())
       {
         d(String.format("Error while allocating frame buffer", new Object[0]));
         return false;
       }
-      j.add(☃);
-      k.add(☃);
+      this.j.add(☃);
+      this.k.add(☃);
     }
     return true;
   }
   
   protected void P()
   {
-    for (int ☃ = 0; ☃ < j.size(); ☃++)
+    for (int ☃ = 0; ☃ < this.j.size(); ☃++)
     {
-      FrameBuffer ☃ = (FrameBuffer)j.get(☃);
+      FrameBuffer ☃ = (FrameBuffer)this.j.get(☃);
       ☃.free();
     }
-    k.clear();
-    j.clear();
+    this.k.clear();
+    this.j.clear();
   }
   
   public FrameBuffer Q()
   {
-    if (k.size() == 0)
+    if (this.k.size() == 0)
     {
       d(String.format("Out of free buffers, this should never happen", new Object[0]));
       return null;
     }
-    FrameBuffer ☃ = (FrameBuffer)k.get(k.size() - 1);
-    k.remove(k.size() - 1);
+    FrameBuffer ☃ = (FrameBuffer)this.k.get(this.k.size() - 1);
+    this.k.remove(this.k.size() - 1);
     
     return ☃;
   }
@@ -923,7 +923,7 @@ public class bqj
   {
     try
     {
-      i.captureFrameBuffer_ReadPixels(☃);
+      this.i.captureFrameBuffer_ReadPixels(☃);
     }
     catch (Throwable ☃)
     {
@@ -931,8 +931,8 @@ public class bqj
       c ☃ = ☃.a("Broadcast State");
       ☃.a("Last reported errors", Arrays.toString(E.c()));
       ☃.a("Buffer", ☃);
-      ☃.a("Free buffer count", Integer.valueOf(k.size()));
-      ☃.a("Capture buffer count", Integer.valueOf(j.size()));
+      ☃.a("Free buffer count", Integer.valueOf(this.k.size()));
+      ☃.a("Capture buffer count", Integer.valueOf(this.j.size()));
       throw new e(☃);
     }
   }
@@ -944,7 +944,7 @@ public class bqj
     } else if (!m()) {
       return ErrorCode.TTV_EC_STREAM_NOT_STARTED;
     }
-    ErrorCode ☃ = i.submitVideoFrame(☃);
+    ErrorCode ☃ = this.i.submitVideoFrame(☃);
     if (☃ != ErrorCode.TTV_EC_SUCCESS)
     {
       String ☃ = ErrorCode.getString(☃);
@@ -958,8 +958,8 @@ public class bqj
         
         H();
       }
-      if (c != null) {
-        c.b(☃);
+      if (this.c != null) {
+        this.c.b(☃);
       }
     }
     return ☃;
@@ -977,7 +977,7 @@ public class bqj
   
   protected void d(String ☃)
   {
-    F = ☃;
+    this.F = ☃;
     E.a("<Error> " + ☃);
     D.error(bqn.a, "[Broadcast controller] {}", new Object[] { ☃ });
   }

@@ -60,13 +60,13 @@ public class abo
   
   public void a(zx ☃, zx ☃, float ☃)
   {
-    b.put(☃, ☃);
-    c.put(☃, Float.valueOf(☃));
+    this.b.put(☃, ☃);
+    this.c.put(☃, Float.valueOf(☃));
   }
   
   public zx a(zx ☃)
   {
-    for (Map.Entry<zx, zx> ☃ : b.entrySet()) {
+    for (Map.Entry<zx, zx> ☃ : this.b.entrySet()) {
       if (a(☃, (zx)☃.getKey())) {
         return (zx)☃.getValue();
       }
@@ -81,12 +81,12 @@ public class abo
   
   public Map<zx, zx> b()
   {
-    return b;
+    return this.b;
   }
   
   public float b(zx ☃)
   {
-    for (Map.Entry<zx, Float> ☃ : c.entrySet()) {
+    for (Map.Entry<zx, Float> ☃ : this.c.entrySet()) {
       if (a(☃, (zx)☃.getKey())) {
         return ((Float)☃.getValue()).floatValue();
       }

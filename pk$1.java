@@ -8,6 +8,6 @@ class pk$1
   public String a()
     throws Exception
   {
-    return pm.b(a) + " (" + a.getClass().getCanonicalName() + ")";
+    return pm.b(this.a) + " (" + this.a.getClass().getCanonicalName() + ")";
   }
 }

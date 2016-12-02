@@ -11,37 +11,37 @@ public class nk<V>
   
   public int size()
   {
-    return a.size();
+    return this.a.size();
   }
   
   public boolean isEmpty()
   {
-    return a.isEmpty();
+    return this.a.isEmpty();
   }
   
   public boolean containsKey(Object ☃)
   {
-    return a.containsKey(☃.toString().toLowerCase());
+    return this.a.containsKey(☃.toString().toLowerCase());
   }
   
   public boolean containsValue(Object ☃)
   {
-    return a.containsKey(☃);
+    return this.a.containsKey(☃);
   }
   
   public V get(Object ☃)
   {
-    return (V)a.get(☃.toString().toLowerCase());
+    return (V)this.a.get(☃.toString().toLowerCase());
   }
   
   public V a(String ☃, V ☃)
   {
-    return (V)a.put(☃.toLowerCase(), ☃);
+    return (V)this.a.put(☃.toLowerCase(), ☃);
   }
   
   public V remove(Object ☃)
   {
-    return (V)a.remove(☃.toString().toLowerCase());
+    return (V)this.a.remove(☃.toString().toLowerCase());
   }
   
   public void putAll(Map<? extends String, ? extends V> ☃)
@@ -53,21 +53,21 @@ public class nk<V>
   
   public void clear()
   {
-    a.clear();
+    this.a.clear();
   }
   
   public Set<String> keySet()
   {
-    return a.keySet();
+    return this.a.keySet();
   }
   
   public Collection<V> values()
   {
-    return a.values();
+    return this.a.values();
   }
   
   public Set<Map.Entry<String, V>> entrySet()
   {
-    return a.entrySet();
+    return this.a.entrySet();
   }
 }

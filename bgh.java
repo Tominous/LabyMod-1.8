@@ -20,21 +20,21 @@ public class bgh
   
   public bgh(Vector3f ☃, Vector3f ☃, Map<cq, bgi> ☃, bgj ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
-    e = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.e = ☃;
     
     a();
   }
   
   private void a()
   {
-    for (Map.Entry<cq, bgi> ☃ : c.entrySet())
+    for (Map.Entry<cq, bgi> ☃ : this.c.entrySet())
     {
       float[] ☃ = a((cq)☃.getKey());
-      getValuee.a(☃);
+      ((bgi)☃.getValue()).e.a(☃);
     }
   }
   
@@ -45,15 +45,15 @@ public class bgh
     {
     case 1: 
     case 2: 
-      ☃ = new float[] { a.x, a.z, b.x, b.z };
+      ☃ = new float[] { this.a.x, this.a.z, this.b.x, this.b.z };
       break;
     case 3: 
     case 4: 
-      ☃ = new float[] { a.x, 16.0F - b.y, b.x, 16.0F - a.y };
+      ☃ = new float[] { this.a.x, 16.0F - this.b.y, this.b.x, 16.0F - this.a.y };
       break;
     case 5: 
     case 6: 
-      ☃ = new float[] { a.z, 16.0F - b.y, b.z, 16.0F - a.y };
+      ☃ = new float[] { this.a.z, 16.0F - this.b.y, this.b.z, 16.0F - this.a.y };
       break;
     default: 
       throw new NullPointerException();
@@ -149,7 +149,7 @@ public class bgh
     private Vector3f d(JsonObject ☃)
     {
       Vector3f ☃ = a(☃, "to");
-      if ((x < -16.0F) || (y < -16.0F) || (z < -16.0F) || (x > 32.0F) || (y > 32.0F) || (z > 32.0F)) {
+      if ((☃.x < -16.0F) || (☃.y < -16.0F) || (☃.z < -16.0F) || (☃.x > 32.0F) || (☃.y > 32.0F) || (☃.z > 32.0F)) {
         throw new JsonParseException("'to' specifier exceeds the allowed boundaries: " + ☃);
       }
       return ☃;
@@ -158,7 +158,7 @@ public class bgh
     private Vector3f e(JsonObject ☃)
     {
       Vector3f ☃ = a(☃, "from");
-      if ((x < -16.0F) || (y < -16.0F) || (z < -16.0F) || (x > 32.0F) || (y > 32.0F) || (z > 32.0F)) {
+      if ((☃.x < -16.0F) || (☃.y < -16.0F) || (☃.z < -16.0F) || (☃.x > 32.0F) || (☃.y > 32.0F) || (☃.z > 32.0F)) {
         throw new JsonParseException("'from' specifier exceeds the allowed boundaries: " + ☃);
       }
       return ☃;

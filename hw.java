@@ -11,27 +11,27 @@ public class hw
   
   public hw(adm ☃, cj ☃, eu[] ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = new eu[] { ☃[0], ☃[1], ☃[2], ☃[3] };
+    this.a = ☃;
+    this.b = ☃;
+    this.c = new eu[] { ☃[0], ☃[1], ☃[2], ☃[3] };
   }
   
   public void a(em ☃)
     throws IOException
   {
-    b = ☃.c();
-    c = new eu[4];
+    this.b = ☃.c();
+    this.c = new eu[4];
     for (int ☃ = 0; ☃ < 4; ☃++) {
-      c[☃] = ☃.d();
+      this.c[☃] = ☃.d();
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(b);
+    ☃.a(this.b);
     for (int ☃ = 0; ☃ < 4; ☃++) {
-      ☃.a(c[☃]);
+      ☃.a(this.c[☃]);
     }
   }
   
@@ -42,11 +42,11 @@ public class hw
   
   public cj a()
   {
-    return b;
+    return this.b;
   }
   
   public eu[] b()
   {
-    return c;
+    return this.c;
   }
 }

@@ -34,9 +34,9 @@ class bpx$1
         }
       }
     });
-    bpx.a(a, new bpx.a(a, null));
-    bpx.a(a, true);
-    bpx.b(a).setMasterVolume(bpx.a(a).a(bpg.a));
+    bpx.a(this.a, new bpx.a(this.a, null));
+    bpx.a(this.a, true);
+    bpx.b(this.a).setMasterVolume(bpx.a(this.a).a(bpg.a));
     bpx.g().info(bpx.h(), "Sound engine started");
   }
 }

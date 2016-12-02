@@ -8,6 +8,6 @@ class vw$a
   
   public boolean a()
   {
-    return (((vw)e).cm()) && (super.a());
+    return (((vw)this.e).cm()) && (super.a());
   }
 }

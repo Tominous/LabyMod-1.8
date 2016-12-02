@@ -13,24 +13,24 @@ public class PacketMessages
   
   public PacketMessages(String a, long b)
   {
-    message = a;
-    time = b;
+    this.message = a;
+    this.time = b;
   }
   
   public PacketMessages() {}
   
   public void read(PacketBuf buf)
   {
-    message = buf.readString();
-    time = buf.readLong();
+    this.message = buf.readString();
+    this.time = buf.readLong();
     
-    gg.sendChannel(message, time);
+    gg.sendChannel(this.message, this.time);
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeString(message);
-    buf.writeLong(time);
+    buf.writeString(this.message);
+    buf.writeLong(this.time);
   }
   
   public void handle(PacketHandler packetHandler)

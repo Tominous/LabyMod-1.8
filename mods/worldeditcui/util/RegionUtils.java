@@ -107,8 +107,8 @@ public class RegionUtils
   
   public static void setLastYawAndPitch()
   {
-    rotationPitch = Ah.z;
-    rotationYaw = Ah.y;
+    rotationPitch = ave.A().h.z;
+    rotationYaw = ave.A().h.y;
   }
   
   private static PlayerDirection getDirection(double rot)
@@ -156,12 +156,12 @@ public class RegionUtils
     
     public Vector getVector1()
     {
-      return vector1;
+      return this.vector1;
     }
     
     public Vector getVector2()
     {
-      return vector2;
+      return this.vector2;
     }
   }
   

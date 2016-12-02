@@ -13,7 +13,7 @@ public final class po
   {
     public boolean a(pk ☃)
     {
-      return (☃.ai()) && (l == null) && (m == null);
+      return (☃.ai()) && (☃.l == null) && (☃.m == null);
     }
   };
   public static final Predicate<pk> c = new Predicate()
@@ -38,7 +38,7 @@ public final class po
     
     public a(zx ☃)
     {
-      a = ☃;
+      this.a = ☃;
     }
     
     public boolean a(pk ☃)
@@ -50,7 +50,7 @@ public final class po
         return false;
       }
       pr ☃ = (pr)☃;
-      if (☃.p(ps.c(a)) != null) {
+      if (☃.p(ps.c(this.a)) != null) {
         return false;
       }
       if ((☃ instanceof ps)) {

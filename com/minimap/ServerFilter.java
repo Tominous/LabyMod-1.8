@@ -21,10 +21,10 @@ public class ServerFilter
   public static FilterType getCurrentFilterType()
   {
     if ((ave.A().D() == null) || 
-      (ADb == null)) {
+      (ave.A().D().b == null)) {
       return FilterType.ALLOWED;
     }
-    String ip = ADb;
+    String ip = ave.A().D().b;
     return getFilterTypeForServer(ip);
   }
   

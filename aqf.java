@@ -18,18 +18,18 @@ public class aqf
   {
     for (Map.Entry<String, String> ☃ : ☃.entrySet()) {
       if (((String)☃.getKey()).equals("chance")) {
-        d = ns.a((String)☃.getValue(), d);
+        this.d = ns.a((String)☃.getValue(), this.d);
       }
     }
   }
   
   protected boolean a(int ☃, int ☃)
   {
-    return (b.nextDouble() < d) && (b.nextInt(80) < Math.max(Math.abs(☃), Math.abs(☃)));
+    return (this.b.nextDouble() < this.d) && (this.b.nextInt(80) < Math.max(Math.abs(☃), Math.abs(☃)));
   }
   
   protected aqu b(int ☃, int ☃)
   {
-    return new aqh(c, b, ☃, ☃);
+    return new aqh(this.c, this.b, ☃, ☃);
   }
 }

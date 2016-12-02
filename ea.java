@@ -9,12 +9,12 @@ public class ea
   
   public ea()
   {
-    b = "";
+    this.b = "";
   }
   
   public ea(String ☃)
   {
-    b = ☃;
+    this.b = ☃;
     if (☃ == null) {
       throw new IllegalArgumentException("Empty string not allowed");
     }
@@ -23,7 +23,7 @@ public class ea
   void a(DataOutput ☃)
     throws IOException
   {
-    ☃.writeUTF(b);
+    ☃.writeUTF(this.b);
   }
   
   void a(DataInput ☃, int ☃, dw ☃)
@@ -31,8 +31,8 @@ public class ea
   {
     ☃.a(288L);
     
-    b = ☃.readUTF();
-    ☃.a(16 * b.length());
+    this.b = ☃.readUTF();
+    ☃.a(16 * this.b.length());
   }
   
   public byte a()
@@ -42,17 +42,17 @@ public class ea
   
   public String toString()
   {
-    return "\"" + b.replace("\"", "\\\"") + "\"";
+    return "\"" + this.b.replace("\"", "\\\"") + "\"";
   }
   
   public eb b()
   {
-    return new ea(b);
+    return new ea(this.b);
   }
   
   public boolean c_()
   {
-    return b.isEmpty();
+    return this.b.isEmpty();
   }
   
   public boolean equals(Object ☃)
@@ -60,18 +60,18 @@ public class ea
     if (super.equals(☃))
     {
       ea ☃ = (ea)☃;
-      return ((b == null) && (b == null)) || ((b != null) && (b.equals(b)));
+      return ((this.b == null) && (☃.b == null)) || ((this.b != null) && (this.b.equals(☃.b)));
     }
     return false;
   }
   
   public int hashCode()
   {
-    return super.hashCode() ^ b.hashCode();
+    return super.hashCode() ^ this.b.hashCode();
   }
   
   public String a_()
   {
-    return b;
+    return this.b;
   }
 }

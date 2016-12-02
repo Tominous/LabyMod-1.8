@@ -1,10 +1,8 @@
 import java.util.concurrent.Callable;
 
 class b$2
-  implements Callable
+  implements Callable<String>
 {
-  private static final String __OBFID = "CL_00001222";
-  
   b$2(b paramb) {}
   
   public String a()

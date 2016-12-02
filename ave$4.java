@@ -8,6 +8,6 @@ class ave$4
   public String a()
     throws Exception
   {
-    return this$0.m.getClass().getCanonicalName();
+    return this.this$0.m.getClass().getCanonicalName();
   }
 }

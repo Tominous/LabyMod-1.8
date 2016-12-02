@@ -11,8 +11,8 @@ public class aqh
     super(☃, ☃);
     
     aqg.c ☃ = new aqg.c(0, ☃, (☃ << 4) + 2, (☃ << 4) + 2);
-    a.add(☃);
-    ☃.a(☃, a, ☃);
+    this.a.add(☃);
+    ☃.a(☃, this.a, ☃);
     
     c();
     a(☃, ☃, 10);

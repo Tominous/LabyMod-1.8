@@ -6,8 +6,8 @@ class ave$17
   public void a(boolean result, int id)
   {
     if (result) {
-      this$0.Y().q();
+      this.this$0.Y().q();
     }
-    this$0.a((axu)null);
+    this.this$0.a((axu)null);
   }
 }

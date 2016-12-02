@@ -17,12 +17,12 @@ public class PacketPlayFriendRemove
   
   public void read(PacketBuf buf)
   {
-    toRemove = buf.readPlayer();
+    this.toRemove = buf.readPlayer();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writePlayer(toRemove);
+    buf.writePlayer(this.toRemove);
   }
   
   public void handle(PacketHandler packetHandler)
@@ -32,6 +32,6 @@ public class PacketPlayFriendRemove
   
   public LabyModPlayer getToRemove()
   {
-    return toRemove;
+    return this.toRemove;
   }
 }

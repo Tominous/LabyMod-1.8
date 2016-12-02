@@ -16,15 +16,15 @@ public class du
   void a(DataOutput ☃)
     throws IOException
   {
-    if (!c.isEmpty()) {
-      d = ((eb)c.get(0)).a();
+    if (!this.c.isEmpty()) {
+      this.d = ((eb)this.c.get(0)).a();
     } else {
-      d = 0;
+      this.d = 0;
     }
-    ☃.writeByte(d);
-    ☃.writeInt(c.size());
-    for (int ☃ = 0; ☃ < c.size(); ☃++) {
-      ((eb)c.get(☃)).a(☃);
+    ☃.writeByte(this.d);
+    ☃.writeInt(this.c.size());
+    for (int ☃ = 0; ☃ < this.c.size(); ☃++) {
+      ((eb)this.c.get(☃)).a(☃);
     }
   }
   
@@ -35,19 +35,19 @@ public class du
     if (☃ > 512) {
       throw new RuntimeException("Tried to read NBT tag with too high complexity, depth > 512");
     }
-    d = ☃.readByte();
+    this.d = ☃.readByte();
     int ☃ = ☃.readInt();
-    if ((d == 0) && (☃ > 0)) {
+    if ((this.d == 0) && (☃ > 0)) {
       throw new RuntimeException("Missing type on ListTag");
     }
     ☃.a(32L * ☃);
     
-    c = Lists.newArrayListWithCapacity(☃);
+    this.c = Lists.newArrayListWithCapacity(☃);
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
-      eb ☃ = eb.a(d);
+      eb ☃ = eb.a(this.d);
       ☃.a(☃, ☃ + 1, ☃);
-      c.add(☃);
+      this.c.add(☃);
     }
   }
   
@@ -59,12 +59,12 @@ public class du
   public String toString()
   {
     StringBuilder ☃ = new StringBuilder("[");
-    for (int ☃ = 0; ☃ < c.size(); ☃++)
+    for (int ☃ = 0; ☃ < this.c.size(); ☃++)
     {
       if (☃ != 0) {
         ☃.append(',');
       }
-      ☃.append(☃).append(':').append(c.get(☃));
+      ☃.append(☃).append(':').append(this.c.get(☃));
     }
     return ']';
   }
@@ -76,16 +76,16 @@ public class du
       b.warn("Invalid TagEnd added to ListTag");
       return;
     }
-    if (d == 0)
+    if (this.d == 0)
     {
-      d = ☃.a();
+      this.d = ☃.a();
     }
-    else if (d != ☃.a())
+    else if (this.d != ☃.a())
     {
       b.warn("Adding mismatching tag types to tag list");
       return;
     }
-    c.add(☃);
+    this.c.add(☃);
   }
   
   public void a(int ☃, eb ☃)
@@ -95,39 +95,39 @@ public class du
       b.warn("Invalid TagEnd added to ListTag");
       return;
     }
-    if ((☃ < 0) || (☃ >= c.size()))
+    if ((☃ < 0) || (☃ >= this.c.size()))
     {
       b.warn("index out of bounds to set tag in tag list");
       return;
     }
-    if (d == 0)
+    if (this.d == 0)
     {
-      d = ☃.a();
+      this.d = ☃.a();
     }
-    else if (d != ☃.a())
+    else if (this.d != ☃.a())
     {
       b.warn("Adding mismatching tag types to tag list");
       return;
     }
-    c.set(☃, ☃);
+    this.c.set(☃, ☃);
   }
   
   public eb a(int ☃)
   {
-    return (eb)c.remove(☃);
+    return (eb)this.c.remove(☃);
   }
   
   public boolean c_()
   {
-    return c.isEmpty();
+    return this.c.isEmpty();
   }
   
   public dn b(int ☃)
   {
-    if ((☃ < 0) || (☃ >= c.size())) {
+    if ((☃ < 0) || (☃ >= this.c.size())) {
       return new dn();
     }
-    eb ☃ = (eb)c.get(☃);
+    eb ☃ = (eb)this.c.get(☃);
     if (☃.a() == 10) {
       return (dn)☃;
     }
@@ -136,10 +136,10 @@ public class du
   
   public int[] c(int ☃)
   {
-    if ((☃ < 0) || (☃ >= c.size())) {
+    if ((☃ < 0) || (☃ >= this.c.size())) {
       return new int[0];
     }
-    eb ☃ = (eb)c.get(☃);
+    eb ☃ = (eb)this.c.get(☃);
     if (☃.a() == 11) {
       return ((ds)☃).c();
     }
@@ -148,10 +148,10 @@ public class du
   
   public double d(int ☃)
   {
-    if ((☃ < 0) || (☃ >= c.size())) {
+    if ((☃ < 0) || (☃ >= this.c.size())) {
       return 0.0D;
     }
-    eb ☃ = (eb)c.get(☃);
+    eb ☃ = (eb)this.c.get(☃);
     if (☃.a() == 6) {
       return ((dp)☃).g();
     }
@@ -160,10 +160,10 @@ public class du
   
   public float e(int ☃)
   {
-    if ((☃ < 0) || (☃ >= c.size())) {
+    if ((☃ < 0) || (☃ >= this.c.size())) {
       return 0.0F;
     }
-    eb ☃ = (eb)c.get(☃);
+    eb ☃ = (eb)this.c.get(☃);
     if (☃.a() == 5) {
       return ((dr)☃).h();
     }
@@ -172,10 +172,10 @@ public class du
   
   public String f(int ☃)
   {
-    if ((☃ < 0) || (☃ >= c.size())) {
+    if ((☃ < 0) || (☃ >= this.c.size())) {
       return "";
     }
-    eb ☃ = (eb)c.get(☃);
+    eb ☃ = (eb)this.c.get(☃);
     if (☃.a() == 8) {
       return ☃.a_();
     }
@@ -184,25 +184,25 @@ public class du
   
   public eb g(int ☃)
   {
-    if ((☃ < 0) || (☃ >= c.size())) {
+    if ((☃ < 0) || (☃ >= this.c.size())) {
       return new dq();
     }
-    return (eb)c.get(☃);
+    return (eb)this.c.get(☃);
   }
   
   public int c()
   {
-    return c.size();
+    return this.c.size();
   }
   
   public eb b()
   {
     du ☃ = new du();
-    d = d;
-    for (eb ☃ : c)
+    ☃.d = this.d;
+    for (eb ☃ : this.c)
     {
       eb ☃ = ☃.b();
-      c.add(☃);
+      ☃.c.add(☃);
     }
     return ☃;
   }
@@ -212,8 +212,8 @@ public class du
     if (super.equals(☃))
     {
       du ☃ = (du)☃;
-      if (d == d) {
-        return c.equals(c);
+      if (this.d == ☃.d) {
+        return this.c.equals(☃.c);
       }
     }
     return false;
@@ -221,11 +221,11 @@ public class du
   
   public int hashCode()
   {
-    return super.hashCode() ^ c.hashCode();
+    return super.hashCode() ^ this.c.hashCode();
   }
   
   public int f()
   {
-    return d;
+    return this.d;
   }
 }

@@ -12,26 +12,26 @@ class bqk$1
   {
     if (ErrorCode.succeeded(☃))
     {
-      a.f.setMessageFlushInterval(a.n);
-      a.f.setUserChangeEventInterval(a.o);
+      this.a.f.setMessageFlushInterval(this.a.n);
+      this.a.f.setUserChangeEventInterval(this.a.o);
       
-      a.r();
+      this.a.r();
       
-      a.a(bqk.c.c);
+      this.a.a(bqk.c.c);
     }
     else
     {
-      a.a(bqk.c.a);
+      this.a.a(bqk.c.a);
     }
     try
     {
-      if (a.a != null) {
-        a.a.d(☃);
+      if (this.a.a != null) {
+        this.a.a.d(☃);
       }
     }
     catch (Exception ☃)
     {
-      a.n(☃.toString());
+      this.a.n(☃.toString());
     }
   }
   
@@ -39,36 +39,36 @@ class bqk$1
   {
     if (ErrorCode.succeeded(☃))
     {
-      ErrorCode ☃ = a.e.shutdown();
+      ErrorCode ☃ = this.a.e.shutdown();
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
-        a.n(String.format("Error shutting down the Twitch sdk: %s", new Object[] { ☃ }));
+        this.a.n(String.format("Error shutting down the Twitch sdk: %s", new Object[] { ☃ }));
       }
-      a.a(bqk.c.a);
+      this.a.a(bqk.c.a);
     }
     else
     {
-      a.a(bqk.c.c);
+      this.a.a(bqk.c.c);
       
-      a.n(String.format("Error shutting down Twith chat: %s", new Object[] { ☃ }));
+      this.a.n(String.format("Error shutting down Twith chat: %s", new Object[] { ☃ }));
     }
     try
     {
-      if (a.a != null) {
-        a.a.e(☃);
+      if (this.a.a != null) {
+        this.a.a.e(☃);
       }
     }
     catch (Exception ☃)
     {
-      a.n(☃.toString());
+      this.a.n(☃.toString());
     }
   }
   
   public void chatEmoticonDataDownloadCallback(ErrorCode ☃)
   {
     if (ErrorCode.succeeded(☃)) {
-      a.s();
+      this.a.s();
     }
   }
 }

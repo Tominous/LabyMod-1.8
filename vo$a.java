@@ -7,18 +7,18 @@ class vo$a
   
   public vo$a(vo ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public boolean a()
   {
-    if (!a.o.Q().b("mobGriefing")) {
+    if (!this.a.o.Q().b("mobGriefing")) {
       return false;
     }
-    if (a.cm().c().t() == arm.a) {
+    if (this.a.cm().c().t() == arm.a) {
       return false;
     }
-    if (a.bc().nextInt(2000) != 0) {
+    if (this.a.bc().nextInt(2000) != 0) {
       return false;
     }
     return true;
@@ -26,19 +26,19 @@ class vo$a
   
   public void e()
   {
-    Random ☃ = a.bc();
-    adm ☃ = a.o;
+    Random ☃ = this.a.bc();
+    adm ☃ = this.a.o;
     
-    int ☃ = ns.c(a.s - 1.0D + ☃.nextDouble() * 2.0D);
-    int ☃ = ns.c(a.t + ☃.nextDouble() * 2.0D);
-    int ☃ = ns.c(a.u - 1.0D + ☃.nextDouble() * 2.0D);
+    int ☃ = ns.c(this.a.s - 1.0D + ☃.nextDouble() * 2.0D);
+    int ☃ = ns.c(this.a.t + ☃.nextDouble() * 2.0D);
+    int ☃ = ns.c(this.a.u - 1.0D + ☃.nextDouble() * 2.0D);
     cj ☃ = new cj(☃, ☃, ☃);
     afh ☃ = ☃.p(☃).c();
     afh ☃ = ☃.p(☃.b()).c();
-    if (a(☃, ☃, a.cm().c(), ☃, ☃))
+    if (a(☃, ☃, this.a.cm().c(), ☃, ☃))
     {
-      ☃.a(☃, a.cm(), 3);
-      a.a(afi.a.Q());
+      ☃.a(☃, this.a.cm(), 3);
+      this.a.a(afi.a.Q());
     }
   }
   

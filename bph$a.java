@@ -9,71 +9,71 @@ public class bph$a
   
   public bph$a()
   {
-    b = 1.0F;
-    c = 1.0F;
-    d = 1;
-    e = bph.a.a.a;
-    f = false;
+    this.b = 1.0F;
+    this.c = 1.0F;
+    this.d = 1;
+    this.e = bph.a.a.a;
+    this.f = false;
   }
   
   public String a()
   {
-    return a;
+    return this.a;
   }
   
   public void a(String ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public float b()
   {
-    return b;
+    return this.b;
   }
   
   public void a(float ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public float c()
   {
-    return c;
+    return this.c;
   }
   
   public void b(float ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public int d()
   {
-    return d;
+    return this.d;
   }
   
   public void a(int ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
   
   public bph.a.a e()
   {
-    return e;
+    return this.e;
   }
   
   public void a(bph.a.a ☃)
   {
-    e = ☃;
+    this.e = ☃;
   }
   
   public boolean f()
   {
-    return f;
+    return this.f;
   }
   
   public void a(boolean ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
   
   public static enum a
@@ -82,13 +82,13 @@ public class bph$a
     
     private a(String ☃)
     {
-      c = ☃;
+      this.c = ☃;
     }
     
     public static a a(String ☃)
     {
       for (a ☃ : ) {
-        if (c.equals(☃)) {
+        if (☃.c.equals(☃)) {
           return ☃;
         }
       }

@@ -23,11 +23,11 @@ public class RealmsSliderButton
   public RealmsSliderButton(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, float ☃, float ☃)
   {
     super(☃, ☃, ☃, ☃, 20, "");
-    minValue = ☃;
-    maxValue = ☃;
+    this.minValue = ☃;
+    this.maxValue = ☃;
     
-    value = toPct(☃);
-    getProxyj = getMessage();
+    this.value = toPct(☃);
+    getProxy().j = getMessage();
   }
   
   public String getMessage()
@@ -37,24 +37,24 @@ public class RealmsSliderButton
   
   public float toPct(float ☃)
   {
-    return ns.a((clamp(☃) - minValue) / (maxValue - minValue), 0.0F, 1.0F);
+    return ns.a((clamp(☃) - this.minValue) / (this.maxValue - this.minValue), 0.0F, 1.0F);
   }
   
   public float toValue(float ☃)
   {
-    return clamp(minValue + (maxValue - minValue) * ns.a(☃, 0.0F, 1.0F));
+    return clamp(this.minValue + (this.maxValue - this.minValue) * ns.a(☃, 0.0F, 1.0F));
   }
   
   public float clamp(float ☃)
   {
     ☃ = clampSteps(☃);
-    return ns.a(☃, minValue, maxValue);
+    return ns.a(☃, this.minValue, this.maxValue);
   }
   
   protected float clampSteps(float ☃)
   {
-    if (steps > 0) {
-      ☃ = steps * Math.round(☃ / steps);
+    if (this.steps > 0) {
+      ☃ = this.steps * Math.round(☃ / this.steps);
     }
     return ☃;
   }
@@ -66,37 +66,37 @@ public class RealmsSliderButton
   
   public void renderBg(int ☃, int ☃)
   {
-    if (!getProxym) {
+    if (!getProxy().m) {
       return;
     }
-    if (sliding)
+    if (this.sliding)
     {
-      value = ((☃ - (getProxyh + 4)) / (getProxy().b() - 8));
-      value = ns.a(value, 0.0F, 1.0F);
-      float ☃ = toValue(value);
+      this.value = ((☃ - (getProxy().h + 4)) / (getProxy().b() - 8));
+      this.value = ns.a(this.value, 0.0F, 1.0F);
+      float ☃ = toValue(this.value);
       clicked(☃);
-      value = toPct(☃);
-      getProxyj = getMessage();
+      this.value = toPct(☃);
+      getProxy().j = getMessage();
     }
     ave.A().P().a(WIDGETS_LOCATION);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    blit(getProxyh + (int)(value * (getProxy().b() - 8)), getProxyi, 0, 66, 4, 20);
-    blit(getProxyh + (int)(value * (getProxy().b() - 8)) + 4, getProxyi, 196, 66, 4, 20);
+    blit(getProxy().h + (int)(this.value * (getProxy().b() - 8)), getProxy().i, 0, 66, 4, 20);
+    blit(getProxy().h + (int)(this.value * (getProxy().b() - 8)) + 4, getProxy().i, 196, 66, 4, 20);
   }
   
   public void clicked(int ☃, int ☃)
   {
-    value = ((☃ - (getProxyh + 4)) / (getProxy().b() - 8));
-    value = ns.a(value, 0.0F, 1.0F);
-    clicked(toValue(value));
-    getProxyj = getMessage();
-    sliding = true;
+    this.value = ((☃ - (getProxy().h + 4)) / (getProxy().b() - 8));
+    this.value = ns.a(this.value, 0.0F, 1.0F);
+    clicked(toValue(this.value));
+    getProxy().j = getMessage();
+    this.sliding = true;
   }
   
   public void clicked(float ☃) {}
   
   public void released(int ☃, int ☃)
   {
-    sliding = false;
+    this.sliding = false;
   }
 }

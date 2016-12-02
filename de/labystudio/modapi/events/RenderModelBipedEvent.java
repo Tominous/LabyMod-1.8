@@ -56,162 +56,162 @@ public class RenderModelBipedEvent
     this.var3 = var3;
     this.var4 = var4;
     this.var5 = var5;
-    entity = entityIn;
+    this.entity = entityIn;
   }
   
   public pk getEntity()
   {
-    return entity;
+    return this.entity;
   }
   
   public void setCancelled(boolean cancel)
   {
-    cancelled = cancel;
+    this.cancelled = cancel;
   }
   
   public boolean isCancelled()
   {
-    return cancelled;
+    return this.cancelled;
   }
   
   public bct getBipedHead()
   {
-    return bipedHead;
+    return this.bipedHead;
   }
   
   public bct getBipedHeadwear()
   {
-    return bipedHeadwear;
+    return this.bipedHeadwear;
   }
   
   public bct getBipedBody()
   {
-    return bipedBody;
+    return this.bipedBody;
   }
   
   public bct getBipedRightArm()
   {
-    return bipedRightArm;
+    return this.bipedRightArm;
   }
   
   public bct getBipedLeftArm()
   {
-    return bipedLeftArm;
+    return this.bipedLeftArm;
   }
   
   public bct getBipedRightLeg()
   {
-    return bipedRightLeg;
+    return this.bipedRightLeg;
   }
   
   public bct getBipedLeftLeg()
   {
-    return bipedLeftLeg;
+    return this.bipedLeftLeg;
   }
   
   public void setBipedHead(bct bipedHead)
   {
-    modifiedBipedHead = bipedHead;
+    this.modifiedBipedHead = bipedHead;
   }
   
   public void setBipedHeadwear(bct bipedHeadwear)
   {
-    modifiedBipedHeadwear = bipedHeadwear;
+    this.modifiedBipedHeadwear = bipedHeadwear;
   }
   
   public void setBipedBody(bct bipedBody)
   {
-    modifiedBipedBody = bipedBody;
+    this.modifiedBipedBody = bipedBody;
   }
   
   public void setBipedRightArm(bct bipedRightArm)
   {
-    modifiedBipedRightArm = bipedRightArm;
+    this.modifiedBipedRightArm = bipedRightArm;
   }
   
   public void setBipedLeftArm(bct bipedLeftArm)
   {
-    modifiedBipedLeftArm = bipedLeftArm;
+    this.modifiedBipedLeftArm = bipedLeftArm;
   }
   
   public void setBipedRightLeg(bct bipedRightLeg)
   {
-    modifiedBipedRightLeg = bipedRightLeg;
+    this.modifiedBipedRightLeg = bipedRightLeg;
   }
   
   public void setBipedLeftLeg(bct bipedLeftLeg)
   {
-    modifiedBipedLeftLeg = bipedLeftLeg;
+    this.modifiedBipedLeftLeg = bipedLeftLeg;
   }
   
   public bct getModifiedBipedBody()
   {
-    return modifiedBipedBody;
+    return this.modifiedBipedBody;
   }
   
   public bct getModifiedBipedHead()
   {
-    return modifiedBipedHead;
+    return this.modifiedBipedHead;
   }
   
   public bct getModifiedBipedHeadwear()
   {
-    return modifiedBipedHeadwear;
+    return this.modifiedBipedHeadwear;
   }
   
   public bct getModifiedBipedLeftArm()
   {
-    return modifiedBipedLeftArm;
+    return this.modifiedBipedLeftArm;
   }
   
   public bct getModifiedBipedLeftLeg()
   {
-    return modifiedBipedLeftLeg;
+    return this.modifiedBipedLeftLeg;
   }
   
   public bct getModifiedBipedRightArm()
   {
-    return modifiedBipedRightArm;
+    return this.modifiedBipedRightArm;
   }
   
   public bct getModifiedBipedRightLeg()
   {
-    return modifiedBipedRightLeg;
+    return this.modifiedBipedRightLeg;
   }
   
   public void removeBipedHead()
   {
-    modifiedBipedHead = bipedHead;
+    this.modifiedBipedHead = this.bipedHead;
   }
   
   public void removeBipedHeadwear()
   {
-    modifiedBipedHeadwear = bipedHeadwear;
+    this.modifiedBipedHeadwear = this.bipedHeadwear;
   }
   
   public void removeBipedBody()
   {
-    modifiedBipedBody = bipedBody;
+    this.modifiedBipedBody = this.bipedBody;
   }
   
   public void removeBipedRightArm()
   {
-    modifiedBipedRightArm = bipedRightArm;
+    this.modifiedBipedRightArm = this.bipedRightArm;
   }
   
   public void removeBipedLeftArm()
   {
-    modifiedBipedLeftArm = bipedLeftArm;
+    this.modifiedBipedLeftArm = this.bipedLeftArm;
   }
   
   public void removeBipedRightLeg()
   {
-    modifiedBipedRightLeg = bipedRightLeg;
+    this.modifiedBipedRightLeg = this.bipedRightLeg;
   }
   
   public void removeBipedLeftLeg()
   {
-    modifiedBipedLeftLeg = bipedLeftLeg;
+    this.modifiedBipedLeftLeg = this.bipedLeftLeg;
   }
   
   public void setModelBiped(bbj modelBiped)
@@ -221,37 +221,37 @@ public class RenderModelBipedEvent
   
   public float getScale()
   {
-    return scale;
+    return this.scale;
   }
   
   public bbj getModelBiped()
   {
-    return modelBiped;
+    return this.modelBiped;
   }
   
   public float getVar1()
   {
-    return var1;
+    return this.var1;
   }
   
   public float getVar2()
   {
-    return var2;
+    return this.var2;
   }
   
   public float getVar3()
   {
-    return var3;
+    return this.var3;
   }
   
   public float getVar4()
   {
-    return var4;
+    return this.var4;
   }
   
   public float getVar5()
   {
-    return var5;
+    return this.var5;
   }
   
   public Map<Listener, List<Method>> getListenerMethods()

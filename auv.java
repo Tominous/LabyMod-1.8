@@ -5,7 +5,7 @@ public class auv
   
   public auv(mw ☃)
   {
-    super(e);
-    j = ☃;
+    super(☃.e);
+    this.j = ☃;
   }
 }

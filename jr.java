@@ -12,19 +12,19 @@ public class jr
   
   public jr(js ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    b = ((js)a.fromJson(☃.c(32767), js.class));
+    this.b = ((js)a.fromJson(☃.c(32767), js.class));
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a.toJson(b));
+    ☃.a(a.toJson(this.b));
   }
   
   public void a(jp ☃)
@@ -34,6 +34,6 @@ public class jr
   
   public js a()
   {
-    return b;
+    return this.b;
   }
 }

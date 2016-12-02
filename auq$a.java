@@ -12,7 +12,7 @@ public enum auq$a
   {
     g = Maps.newHashMap();
     for (a ☃ : values()) {
-      g.put(e, ☃);
+      g.put(☃.e, ☃);
     }
   }
   
@@ -28,7 +28,7 @@ public enum auq$a
   
   private auq$a(String ☃, int ☃)
   {
-    e = ☃;
-    f = ☃;
+    this.e = ☃;
+    this.f = ☃;
   }
 }

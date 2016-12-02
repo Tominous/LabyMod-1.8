@@ -28,32 +28,28 @@ public class CapeManager
   
   public int countUserCapes()
   {
-    return userCapes.size();
+    return this.userCapes.size();
   }
   
-  public void downloadCape(final bet player, boolean refresh, final boolean invert)
+  public void downloadCape(final bet player, boolean refresh, final boolean optifine)
   {
-    if ((player == null) || (!settingscapes)) {
+    if ((player == null) || (!ConfigManager.settings.capes)) {
       return;
     }
     String username = player.getNameClear();
     if ((username != null) && (!username.isEmpty()) && (player.aK() != null))
     {
-      final EnumCapePriority pr = getCapePriority();
-      
       String url = null;
-      if ((pr == EnumCapePriority.OPTIFINE) || ((invert) && (pr == EnumCapePriority.LABYMOD))) {
+      if (optifine)
+      {
         url = "http://s.optifine.net/capes/" + username + ".png";
       }
-      if (((pr == EnumCapePriority.LABYMOD) || ((invert) && (pr == EnumCapePriority.OPTIFINE))) && 
-        (isWhitelisted(player.aK()))) {
+      else if (isWhitelisted(player.aK()))
+      {
         url = "http://capes.labymod.net/capes/" + player.aK();
       }
-      if (url == null)
+      else
       {
-        if (invert) {
-          return;
-        }
         downloadCape(player, false, true);
         return;
       }
@@ -66,10 +62,10 @@ public class CapeManager
         ((tex instanceof ThreadDownloadCapeData)))
       {
         ThreadDownloadCapeData tdid = (ThreadDownloadCapeData)tex;
-        if (imageFound != null)
+        if (tdid.imageFound != null)
         {
-          if (imageFound.booleanValue()) {
-            player.setLocationOfCape(rl, pr);
+          if (tdid.imageFound.booleanValue()) {
+            player.setLocationOfCape(rl, optifine);
           }
           return;
         }
@@ -86,22 +82,21 @@ public class CapeManager
         
         public void a()
         {
-          thePlayer.setLocationOfCape(rl, pr);
+          thePlayer.setLocationOfCape(rl, optifine);
         }
       };
       CapeCallback callBack = new CapeCallback()
       {
         public void failed(String error)
         {
-          if (invert) {
-            return;
+          if (!optifine) {
+            CapeManager.this.downloadCape(player, false, true);
           }
-          downloadCape(player, false, true);
         }
         
         public void done() {}
       };
-      ThreadDownloadCapeData textureCape = new ThreadDownloadCapeData(null, url, null, iib, callBack);
+      ThreadDownloadCapeData textureCape = new ThreadDownloadCapeData(null, url, rl, iib, callBack);
       textureManager.a(rl, textureCape);
     }
   }
@@ -133,7 +128,7 @@ public class CapeManager
   
   public boolean isWhitelisted(UUID uuid)
   {
-    boolean whitelisted = userCapes.contains(uuid.toString().split("-")[0]);
+    boolean whitelisted = this.userCapes.contains(uuid.toString().split("-")[0]);
     Debug.debug("skipping cape of " + uuid.toString());
     return whitelisted;
   }
@@ -145,7 +140,7 @@ public class CapeManager
     }
     int amount = 0;
     ArrayList<wn> list = new ArrayList();
-    list.addAll(Af.j);
+    list.addAll(ave.A().f.j);
     for (wn player : list) {
       if ((player != null) && ((player instanceof bet)))
       {
@@ -154,16 +149,5 @@ public class CapeManager
       }
     }
     System.out.println("[LabyMod] Refreshed " + amount + " mod capes");
-  }
-  
-  public EnumCapePriority getCapePriority()
-  {
-    if (settingscapePriority.equals("of")) {
-      return EnumCapePriority.OPTIFINE;
-    }
-    if (settingscapePriority.equals("original")) {
-      return EnumCapePriority.ORIGINAL;
-    }
-    return EnumCapePriority.LABYMOD;
   }
 }

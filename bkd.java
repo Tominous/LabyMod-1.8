@@ -8,6 +8,6 @@ public class bkd
   
   public zx a(xc ☃)
   {
-    return new zx(a, 1, ☃.o());
+    return new zx(this.a, 1, ☃.o());
   }
 }

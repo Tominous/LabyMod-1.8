@@ -53,27 +53,27 @@ public class bql
   
   public void a(bql.a ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public IngestServer c()
   {
-    return p;
+    return this.p;
   }
   
   public int d()
   {
-    return s;
+    return this.s;
   }
   
   public boolean f()
   {
-    return (d == bql.b.f) || (d == bql.b.h) || (d == bql.b.i);
+    return (this.d == bql.b.f) || (this.d == bql.b.h) || (this.d == bql.b.i);
   }
   
   public float i()
   {
-    return w;
+    return this.w;
   }
   
   protected IStreamCallbacks A = new IStreamCallbacks()
@@ -100,34 +100,34 @@ public class bql
     
     public void startCallback(ErrorCode ☃)
     {
-      y = false;
+      bql.this.y = false;
       if (ErrorCode.succeeded(☃))
       {
-        x = true;
-        k = System.currentTimeMillis();
+        bql.this.x = true;
+        bql.this.k = System.currentTimeMillis();
         
-        a(bql.b.c);
+        bql.this.a(bql.b.c);
       }
       else
       {
-        m = false;
-        a(bql.b.e);
+        bql.this.m = false;
+        bql.this.a(bql.b.e);
       }
     }
     
     public void stopCallback(ErrorCode ☃)
     {
       if (ErrorCode.failed(☃)) {
-        System.out.println("IngestTester.stopCallback failed to stop - " + p.serverName + ": " + ☃.toString());
+        System.out.println("IngestTester.stopCallback failed to stop - " + bql.this.p.serverName + ": " + ☃.toString());
       }
-      z = false;
-      x = false;
+      bql.this.z = false;
+      bql.this.x = false;
       
-      a(bql.b.e);
+      bql.this.a(bql.b.e);
       
-      p = null;
-      if (q) {
-        a(bql.b.g);
+      bql.this.p = null;
+      if (bql.this.q) {
+        bql.this.a(bql.b.g);
       }
     }
     
@@ -144,108 +144,108 @@ public class bql
       switch (bql.3.a[☃.ordinal()])
       {
       case 1: 
-        h = RTMPState.lookupValue((int)☃);
+        bql.this.h = RTMPState.lookupValue((int)☃);
         break;
       case 2: 
-        g = ☃;
+        bql.this.g = ☃;
       }
     }
   };
   
   public bql(Stream ☃, IngestList ☃)
   {
-    b = ☃;
-    c = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public void j()
   {
-    if (d != bql.b.a) {
+    if (this.d != bql.b.a) {
       return;
     }
-    s = 0;
-    q = false;
-    r = false;
-    x = false;
-    y = false;
-    z = false;
+    this.s = 0;
+    this.q = false;
+    this.r = false;
+    this.x = false;
+    this.y = false;
+    this.z = false;
     
-    o = b.getStatCallbacks();
-    b.setStatCallbacks(B);
+    this.o = this.b.getStatCallbacks();
+    this.b.setStatCallbacks(this.B);
     
-    n = b.getStreamCallbacks();
-    b.setStreamCallbacks(A);
+    this.n = this.b.getStreamCallbacks();
+    this.b.setStreamCallbacks(this.A);
     
-    i = new VideoParams();
-    i.targetFps = 60;
-    i.maxKbps = 3500;
-    i.outputWidth = 1280;
-    i.outputHeight = 720;
-    i.pixelFormat = PixelFormat.TTV_PF_BGRA;
-    i.encodingCpuUsage = EncodingCpuUsage.TTV_ECU_HIGH;
-    i.disableAdaptiveBitrate = true;
-    i.verticalFlip = false;
+    this.i = new VideoParams();
+    this.i.targetFps = 60;
+    this.i.maxKbps = 3500;
+    this.i.outputWidth = 1280;
+    this.i.outputHeight = 720;
+    this.i.pixelFormat = PixelFormat.TTV_PF_BGRA;
+    this.i.encodingCpuUsage = EncodingCpuUsage.TTV_ECU_HIGH;
+    this.i.disableAdaptiveBitrate = true;
+    this.i.verticalFlip = false;
     
-    b.getDefaultParams(i);
+    this.b.getDefaultParams(this.i);
     
-    j = new AudioParams();
-    j.audioEnabled = false;
-    j.enableMicCapture = false;
-    j.enablePlaybackCapture = false;
-    j.enablePassthroughAudio = false;
+    this.j = new AudioParams();
+    this.j.audioEnabled = false;
+    this.j.enableMicCapture = false;
+    this.j.enablePlaybackCapture = false;
+    this.j.enablePassthroughAudio = false;
     
-    l = Lists.newArrayList();
+    this.l = Lists.newArrayList();
     
     int ☃ = 3;
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
-      FrameBuffer ☃ = b.allocateFrameBuffer(i.outputWidth * i.outputHeight * 4);
+      FrameBuffer ☃ = this.b.allocateFrameBuffer(this.i.outputWidth * this.i.outputHeight * 4);
       if (!☃.getIsValid())
       {
         p();
         a(bql.b.i);
         return;
       }
-      l.add(☃);
+      this.l.add(☃);
       
-      b.randomizeFrameBuffer(☃);
+      this.b.randomizeFrameBuffer(☃);
     }
     a(bql.b.b);
     
-    k = System.currentTimeMillis();
+    this.k = System.currentTimeMillis();
   }
   
   public void k()
   {
-    if ((f()) || (d == bql.b.a)) {
+    if ((f()) || (this.d == bql.b.a)) {
       return;
     }
-    if ((y) || (z)) {
+    if ((this.y) || (this.z)) {
       return;
     }
-    switch (bql.3.b[d.ordinal()])
+    switch (bql.3.b[this.d.ordinal()])
     {
     case 1: 
     case 2: 
-      if (p != null)
+      if (this.p != null)
       {
-        if ((r) || (!m)) {
-          p.bitrateKbps = 0.0F;
+        if ((this.r) || (!this.m)) {
+          this.p.bitrateKbps = 0.0F;
         }
-        b(p);
+        b(this.p);
       }
       else
       {
-        k = 0L;
-        r = false;
-        m = true;
-        if (d != bql.b.b) {
-          s += 1;
+        this.k = 0L;
+        this.r = false;
+        this.m = true;
+        if (this.d != bql.b.b) {
+          this.s += 1;
         }
-        if (s < c.getServers().length)
+        if (this.s < this.c.getServers().length)
         {
-          p = c.getServers()[s];
-          a(p);
+          this.p = this.c.getServers()[this.s];
+          a(this.p);
         }
         else
         {
@@ -255,89 +255,89 @@ public class bql
       break;
     case 3: 
     case 4: 
-      c(p);
+      c(this.p);
       break;
     case 5: 
       a(bql.b.h);
       break;
     }
     o();
-    if ((d == bql.b.h) || (d == bql.b.f)) {
+    if ((this.d == bql.b.h) || (this.d == bql.b.f)) {
       p();
     }
   }
   
   public void m()
   {
-    if ((f()) || (q)) {
+    if ((f()) || (this.q)) {
       return;
     }
-    q = true;
-    if (p != null) {
-      p.bitrateKbps = 0.0F;
+    this.q = true;
+    if (this.p != null) {
+      this.p.bitrateKbps = 0.0F;
     }
   }
   
   protected boolean a(IngestServer ☃)
   {
-    m = true;
-    g = 0L;
-    h = RTMPState.Idle;
-    p = ☃;
+    this.m = true;
+    this.g = 0L;
+    this.h = RTMPState.Idle;
+    this.p = ☃;
     
-    y = true;
+    this.y = true;
     a(bql.b.c);
     
-    ErrorCode ☃ = b.start(i, j, ☃, StartFlags.TTV_Start_BandwidthTest, true);
+    ErrorCode ☃ = this.b.start(this.i, this.j, ☃, StartFlags.TTV_Start_BandwidthTest, true);
     if (ErrorCode.failed(☃))
     {
-      y = false;
-      m = false;
+      this.y = false;
+      this.m = false;
       a(bql.b.e);
       return false;
     }
-    u = g;
+    this.u = this.g;
     
-    bitrateKbps = 0.0F;
-    t = 0;
+    ☃.bitrateKbps = 0.0F;
+    this.t = 0;
     
     return true;
   }
   
   protected void b(IngestServer ☃)
   {
-    if (y)
+    if (this.y)
     {
-      r = true;
+      this.r = true;
     }
-    else if (x)
+    else if (this.x)
     {
-      z = true;
+      this.z = true;
       
-      ErrorCode ☃ = b.stop(true);
+      ErrorCode ☃ = this.b.stop(true);
       if (ErrorCode.failed(☃))
       {
-        A.stopCallback(ErrorCode.TTV_EC_SUCCESS);
+        this.A.stopCallback(ErrorCode.TTV_EC_SUCCESS);
         
         System.out.println("Stop failed: " + ☃.toString());
       }
-      b.pollStats();
+      this.b.pollStats();
     }
     else
     {
-      A.stopCallback(ErrorCode.TTV_EC_SUCCESS);
+      this.A.stopCallback(ErrorCode.TTV_EC_SUCCESS);
     }
   }
   
   protected long n()
   {
-    return System.currentTimeMillis() - k;
+    return System.currentTimeMillis() - this.k;
   }
   
   protected void o()
   {
     float ☃ = (float)n();
-    switch (bql.3.b[d.ordinal()])
+    switch (bql.3.b[this.d.ordinal()])
     {
     case 1: 
     case 3: 
@@ -345,58 +345,58 @@ public class bql
     case 7: 
     case 8: 
     case 9: 
-      w = 0.0F;
+      this.w = 0.0F;
       break;
     case 2: 
-      w = 1.0F;
+      this.w = 1.0F;
       break;
     case 4: 
     case 5: 
     default: 
-      w = (☃ / (float)e);
+      this.w = (☃ / (float)this.e);
     }
-    switch (bql.3.b[d.ordinal()])
+    switch (bql.3.b[this.d.ordinal()])
     {
     case 7: 
     case 8: 
     case 9: 
-      v = 1.0F;
+      this.v = 1.0F;
       break;
     default: 
-      v = (s / c.getServers().length);
-      v += w / c.getServers().length;
+      this.v = (this.s / this.c.getServers().length);
+      this.v += this.w / this.c.getServers().length;
     }
   }
   
   protected boolean c(IngestServer ☃)
   {
-    if ((r) || (q) || (n() >= e))
+    if ((this.r) || (this.q) || (n() >= this.e))
     {
       a(bql.b.e);
       return true;
     }
-    if ((y) || (z)) {
+    if ((this.y) || (this.z)) {
       return true;
     }
-    ErrorCode ☃ = b.submitVideoFrame((FrameBuffer)l.get(t));
+    ErrorCode ☃ = this.b.submitVideoFrame((FrameBuffer)this.l.get(this.t));
     if (ErrorCode.failed(☃))
     {
-      m = false;
+      this.m = false;
       a(bql.b.e);
       return false;
     }
-    t = ((t + 1) % l.size());
+    this.t = ((this.t + 1) % this.l.size());
     
-    b.pollStats();
-    if (h == RTMPState.SendVideo)
+    this.b.pollStats();
+    if (this.h == RTMPState.SendVideo)
     {
       a(bql.b.d);
       
       long ☃ = n();
-      if ((☃ > 0L) && (g > u))
+      if ((☃ > 0L) && (this.g > this.u))
       {
-        bitrateKbps = ((float)(g * 8L) / (float)n());
-        u = g;
+        ☃.bitrateKbps = ((float)(this.g * 8L) / (float)n());
+        this.u = this.g;
       }
     }
     return true;
@@ -404,34 +404,34 @@ public class bql
   
   protected void p()
   {
-    p = null;
-    if (l != null)
+    this.p = null;
+    if (this.l != null)
     {
-      for (int ☃ = 0; ☃ < l.size(); ☃++) {
-        ((FrameBuffer)l.get(☃)).free();
+      for (int ☃ = 0; ☃ < this.l.size(); ☃++) {
+        ((FrameBuffer)this.l.get(☃)).free();
       }
-      l = null;
+      this.l = null;
     }
-    if (b.getStatCallbacks() == B)
+    if (this.b.getStatCallbacks() == this.B)
     {
-      b.setStatCallbacks(o);
-      o = null;
+      this.b.setStatCallbacks(this.o);
+      this.o = null;
     }
-    if (b.getStreamCallbacks() == A)
+    if (this.b.getStreamCallbacks() == this.A)
     {
-      b.setStreamCallbacks(n);
-      n = null;
+      this.b.setStreamCallbacks(this.n);
+      this.n = null;
     }
   }
   
   protected void a(bql.b ☃)
   {
-    if (☃ == d) {
+    if (☃ == this.d) {
       return;
     }
-    d = ☃;
-    if (a != null) {
-      a.a(this, ☃);
+    this.d = ☃;
+    if (this.a != null) {
+      this.a.a(this, ☃);
     }
   }
   

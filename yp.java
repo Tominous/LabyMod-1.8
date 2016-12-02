@@ -5,7 +5,7 @@ public class yp
   
   public yp(afh ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public boolean a(zx ☃, wn ☃, adm ☃, cj ☃, cq ☃, float ☃, float ☃, float ☃)
@@ -20,22 +20,22 @@ public class yp
     if (!☃.a(☃, ☃, ☃)) {
       return false;
     }
-    if (b == 0) {
+    if (☃.b == 0) {
       return false;
     }
-    if (☃.a(a, ☃, false, ☃, null, ☃))
+    if (☃.a(this.a, ☃, false, ☃, null, ☃))
     {
-      alz ☃ = a.a(☃, ☃, ☃, ☃, ☃, ☃, 0, ☃);
+      alz ☃ = this.a.a(☃, ☃, ☃, ☃, ☃, ☃, 0, ☃);
       if (☃.a(☃, ☃, 3))
       {
         ☃ = ☃.p(☃);
-        if (☃.c() == a)
+        if (☃.c() == this.a)
         {
           yo.a(☃, ☃, ☃, ☃);
           ☃.c().a(☃, ☃, ☃, ☃, ☃);
         }
-        ☃.a(☃.n() + 0.5F, ☃.o() + 0.5F, ☃.p() + 0.5F, a.H.b(), (a.H.d() + 1.0F) / 2.0F, a.H.e() * 0.8F);
-        b -= 1;
+        ☃.a(☃.n() + 0.5F, ☃.o() + 0.5F, ☃.p() + 0.5F, this.a.H.b(), (this.a.H.d() + 1.0F) / 2.0F, this.a.H.e() * 0.8F);
+        ☃.b -= 1;
         return true;
       }
     }

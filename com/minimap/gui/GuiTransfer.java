@@ -29,46 +29,46 @@ public class GuiTransfer
   
   public GuiTransfer(axu par1)
   {
-    dropDowns = new ArrayList();
-    dropped = false;
-    parentScreen = par1;
-    worlds1 = new GuiWaypointWorlds(Minimap.getCurrentWorldID(), Minimap.getAutoWorldID());
-    worlds2 = new GuiWaypointWorlds(Minimap.getAutoWorldID(), Minimap.getAutoWorldID());
+    this.dropDowns = new ArrayList();
+    this.dropped = false;
+    this.parentScreen = par1;
+    this.worlds1 = new GuiWaypointWorlds(Minimap.getCurrentWorldID(), Minimap.getAutoWorldID());
+    this.worlds2 = new GuiWaypointWorlds(Minimap.getAutoWorldID(), Minimap.getAutoWorldID());
   }
   
   public void b()
   {
-    n.clear();
-    n.add(transferButton = new MySmallButton(5, l / 2 - 155, m / 7 + 120, bnq.a("gui.xaero_transfer", new Object[0])));
-    transferButton.l = false;
-    n.add(new MySmallButton(6, l / 2 + 5, m / 7 + 120, bnq.a("gui.xaero_cancel", new Object[0])));
-    dropDowns.clear();
-    dropDowns.add(new GuiDropDown(worlds1.options, l / 2 - 100, m / 7 + 20, 200, Integer.valueOf(worlds1.currentWorld)));
-    dropDowns.add(new GuiDropDown(worlds2.options, l / 2 - 100, m / 7 + 50, 200, Integer.valueOf(worlds2.currentWorld)));
+    this.n.clear();
+    this.n.add(this.transferButton = new MySmallButton(5, this.l / 2 - 155, this.m / 7 + 120, bnq.a("gui.xaero_transfer", new Object[0])));
+    this.transferButton.l = false;
+    this.n.add(new MySmallButton(6, this.l / 2 + 5, this.m / 7 + 120, bnq.a("gui.xaero_cancel", new Object[0])));
+    this.dropDowns.clear();
+    this.dropDowns.add(new GuiDropDown(this.worlds1.options, this.l / 2 - 100, this.m / 7 + 20, 200, Integer.valueOf(this.worlds1.currentWorld)));
+    this.dropDowns.add(new GuiDropDown(this.worlds2.options, this.l / 2 - 100, this.m / 7 + 50, 200, Integer.valueOf(this.worlds2.currentWorld)));
   }
   
   protected void a(int par1, int par2, int par3)
     throws IOException
   {
-    for (GuiDropDown d : dropDowns)
+    for (GuiDropDown d : this.dropDowns)
     {
-      if ((!closed) && (d.onDropDown(par1, par2)))
+      if ((!d.closed) && (d.onDropDown(par1, par2)))
       {
         d.mouseClicked(par1, par2, par3);
         return;
       }
-      closed = true;
+      d.closed = true;
     }
-    for (GuiDropDown d : dropDowns)
+    for (GuiDropDown d : this.dropDowns)
     {
       if (d.onDropDown(par1, par2))
       {
         d.mouseClicked(par1, par2, par3);
         return;
       }
-      closed = true;
+      d.closed = true;
     }
-    if (dropped) {
+    if (this.dropped) {
       return;
     }
     super.a(par1, par2, par3);
@@ -76,14 +76,14 @@ public class GuiTransfer
   
   protected void a(avs p_146284_1_)
   {
-    if (l) {
-      switch (k)
+    if (p_146284_1_.l) {
+      switch (p_146284_1_.k)
       {
       case 5: 
         transfer();
         break;
       case 6: 
-        j.a(parentScreen);
+        this.j.a(this.parentScreen);
       }
     }
   }
@@ -93,27 +93,27 @@ public class GuiTransfer
     try
     {
       WaypointWorld currentWorld = Minimap.getCurrentWorld();
-      WaypointWorld from = (WaypointWorld)Minimap.waypointMap.get(worlds1.keys[worlds1.currentWorld]);
-      WaypointWorld to = (WaypointWorld)Minimap.waypointMap.get(worlds2.keys[worlds2.currentWorld]);
-      Object[] keys = sets.keySet().toArray();
-      Object[] values = sets.values().toArray();
+      WaypointWorld from = (WaypointWorld)Minimap.waypointMap.get(this.worlds1.keys[this.worlds1.currentWorld]);
+      WaypointWorld to = (WaypointWorld)Minimap.waypointMap.get(this.worlds2.keys[this.worlds2.currentWorld]);
+      Object[] keys = from.sets.keySet().toArray();
+      Object[] values = from.sets.values().toArray();
       for (int i = 0; i < keys.length; i++)
       {
         String setName = (String)keys[i];
         WaypointSet fromSet = (WaypointSet)values[i];
-        WaypointSet toSet = (WaypointSet)sets.get(setName);
+        WaypointSet toSet = (WaypointSet)to.sets.get(setName);
         if (toSet == null) {
           toSet = new WaypointSet(currentWorld);
         }
-        for (Waypoint w : list) {
-          list.add(new Waypoint(x, y, z, name, symbol, color, type));
+        for (Waypoint w : fromSet.list) {
+          toSet.list.add(new Waypoint(w.x, w.y, w.z, w.name, w.symbol, w.color, w.type));
         }
-        sets.put(setName, toSet);
+        to.sets.put(setName, toSet);
       }
-      Minimap.customWorldID = (String)worlds2.keys[worlds2.currentWorld];
+      Minimap.customWorldID = (String)this.worlds2.keys[this.worlds2.currentWorld];
       Minimap.updateWaypoints();
-      if ((parentScreen instanceof GuiWaypoints)) {
-        j.a(new GuiWaypoints(parentScreen).parentScreen));
+      if ((this.parentScreen instanceof GuiWaypoints)) {
+        this.j.a(new GuiWaypoints(((GuiWaypoints)this.parentScreen).parentScreen));
       }
       XaeroMinimap.getSettings().saveWaypoints();
     }
@@ -127,33 +127,33 @@ public class GuiTransfer
   {
     super.c();
     updateSelections();
-    a(q, bnq.a("gui.xaero_transfer_all", new Object[0]), l / 2, 5, 16777215);
-    a(q, bnq.a("gui.xaero_from", new Object[0]) + ":", l / 2, m / 7 + 10, 16777215);
-    a(q, bnq.a("gui.xaero_to", new Object[0]) + ":", l / 2, m / 7 + 40, 16777215);
-    if (dropped) {
+    a(this.q, bnq.a("gui.xaero_transfer_all", new Object[0]), this.l / 2, 5, 16777215);
+    a(this.q, bnq.a("gui.xaero_from", new Object[0]) + ":", this.l / 2, this.m / 7 + 10, 16777215);
+    a(this.q, bnq.a("gui.xaero_to", new Object[0]) + ":", this.l / 2, this.m / 7 + 40, 16777215);
+    if (this.dropped) {
       super.a(0, 0, par3);
     } else {
       super.a(par1, par2, par3);
     }
-    dropped = false;
-    for (int k = 0; k < dropDowns.size(); k++) {
-      if (dropDowns.get(k)).closed) {
-        ((GuiDropDown)dropDowns.get(k)).drawButton(par1, par2);
+    this.dropped = false;
+    for (int k = 0; k < this.dropDowns.size(); k++) {
+      if (((GuiDropDown)this.dropDowns.get(k)).closed) {
+        ((GuiDropDown)this.dropDowns.get(k)).drawButton(par1, par2);
       } else {
-        dropped = true;
+        this.dropped = true;
       }
     }
-    for (int k = 0; k < dropDowns.size(); k++) {
-      if (!dropDowns.get(k)).closed) {
-        ((GuiDropDown)dropDowns.get(k)).drawButton(par1, par2);
+    for (int k = 0; k < this.dropDowns.size(); k++) {
+      if (!((GuiDropDown)this.dropDowns.get(k)).closed) {
+        ((GuiDropDown)this.dropDowns.get(k)).drawButton(par1, par2);
       }
     }
   }
   
   private void updateSelections()
   {
-    worlds1.currentWorld = dropDowns.get(0)).selected;
-    worlds2.currentWorld = dropDowns.get(1)).selected;
-    transferButton.l = (worlds1.currentWorld != worlds2.currentWorld);
+    this.worlds1.currentWorld = ((GuiDropDown)this.dropDowns.get(0)).selected;
+    this.worlds2.currentWorld = ((GuiDropDown)this.dropDowns.get(1)).selected;
+    this.transferButton.l = (this.worlds1.currentWorld != this.worlds2.currentWorld);
   }
 }

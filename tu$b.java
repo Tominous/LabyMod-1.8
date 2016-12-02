@@ -7,29 +7,29 @@
   
   private tu$b(float ☃, float ☃, int ☃, int ☃)
   {
-    f = ☃;
-    g = ☃;
-    h = ☃;
-    i = ☃;
+    this.f = ☃;
+    this.g = ☃;
+    this.h = ☃;
+    this.i = ☃;
   }
   
   public float a()
   {
-    return f;
+    return this.f;
   }
   
   public float b()
   {
-    return g;
+    return this.g;
   }
   
   public int c()
   {
-    return h;
+    return this.h;
   }
   
   public int d()
   {
-    return i;
+    return this.i;
   }
 }

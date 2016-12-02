@@ -8,7 +8,7 @@ public class aiw
   public aiw()
   {
     super(arm.e);
-    j(M.b().a(a, aiw.a.a));
+    j(this.M.b().a(a, aiw.a.a));
     a(yz.b);
   }
   
@@ -94,19 +94,19 @@ public class aiw
     
     private a(int ☃, String ☃, String ☃)
     {
-      g = ☃;
-      h = ☃;
-      i = ☃;
+      this.g = ☃;
+      this.h = ☃;
+      this.i = ☃;
     }
     
     public int a()
     {
-      return g;
+      return this.g;
     }
     
     public String toString()
     {
-      return i;
+      return this.i;
     }
     
     public static a a(int ☃)
@@ -119,7 +119,7 @@ public class aiw
     
     public String l()
     {
-      return h;
+      return this.h;
     }
   }
 }

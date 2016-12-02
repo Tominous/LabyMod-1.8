@@ -16,12 +16,12 @@ public class PacketPlayRequestRemove
   
   public void read(PacketBuf buf)
   {
-    playerName = buf.readString();
+    this.playerName = buf.readString();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeString(playerName);
+    buf.writeString(this.playerName);
   }
   
   public void handle(PacketHandler packetHandler)
@@ -31,6 +31,6 @@ public class PacketPlayRequestRemove
   
   public String getPlayerName()
   {
-    return playerName;
+    return this.playerName;
   }
 }

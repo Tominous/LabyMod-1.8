@@ -14,48 +14,48 @@ public class ayd
   
   public ayd(ave ☃)
   {
-    f = ☃;
-    m = ☃.ag();
+    this.f = ☃;
+    this.m = ☃.ag();
   }
   
   public void a(mq ☃)
   {
-    i = bnq.a("achievement.get", new Object[0]);
-    j = ☃.e().c();
-    l = ave.J();
-    k = ☃;
-    n = false;
+    this.i = bnq.a("achievement.get", new Object[0]);
+    this.j = ☃.e().c();
+    this.l = ave.J();
+    this.k = ☃;
+    this.n = false;
   }
   
   public void b(mq ☃)
   {
-    i = ☃.e().c();
-    j = ☃.f();
+    this.i = ☃.e().c();
+    this.j = ☃.f();
     
-    l = (ave.J() + 2500L);
-    k = ☃;
-    n = true;
+    this.l = (ave.J() + 2500L);
+    this.k = ☃;
+    this.n = true;
   }
   
   private void c()
   {
-    bfl.b(0, 0, f.d, f.e);
+    bfl.b(0, 0, this.f.d, this.f.e);
     bfl.n(5889);
     bfl.D();
     bfl.n(5888);
     bfl.D();
     
-    g = f.d;
-    h = f.e;
+    this.g = this.f.d;
+    this.h = this.f.e;
     
-    avr ☃ = new avr(f);
-    g = ☃.a();
-    h = ☃.b();
+    avr ☃ = new avr(this.f);
+    this.g = ☃.a();
+    this.h = ☃.b();
     
     bfl.m(256);
     bfl.n(5889);
     bfl.D();
-    bfl.a(0.0D, g, h, 0.0D, 1000.0D, 3000.0D);
+    bfl.a(0.0D, this.g, this.h, 0.0D, 1000.0D, 3000.0D);
     bfl.n(5888);
     bfl.D();
     bfl.b(0.0F, 0.0F, -2000.0F);
@@ -63,14 +63,14 @@ public class ayd
   
   public void a()
   {
-    if ((k == null) || (l == 0L) || (Ah == null)) {
+    if ((this.k == null) || (this.l == 0L) || (ave.A().h == null)) {
       return;
     }
-    double ☃ = (ave.J() - l) / 3000.0D;
-    if (!n)
+    double ☃ = (ave.J() - this.l) / 3000.0D;
+    if (!this.n)
     {
       if ((☃ < 0.0D) || (☃ > 1.0D)) {
-        l = 0L;
+        this.l = 0L;
       }
     }
     else if (☃ > 0.5D) {
@@ -92,22 +92,22 @@ public class ayd
     ☃ *= ☃;
     ☃ *= ☃;
     
-    int ☃ = g - 160;
+    int ☃ = this.g - 160;
     int ☃ = 0 - (int)(☃ * 36.0D);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     bfl.w();
-    f.P().a(a);
+    this.f.P().a(a);
     bfl.f();
     
     b(☃, ☃, 96, 202, 160, 32);
-    if (n)
+    if (this.n)
     {
-      f.k.a(j, ☃ + 30, ☃ + 7, 120, -1);
+      this.f.k.a(this.j, ☃ + 30, ☃ + 7, 120, -1);
     }
     else
     {
-      f.k.a(i, ☃ + 30, ☃ + 7, 65280);
-      f.k.a(j, ☃ + 30, ☃ + 18, -1);
+      this.f.k.a(this.i, ☃ + 30, ☃ + 7, 65280);
+      this.f.k.a(this.j, ☃ + 30, ☃ + 18, -1);
     }
     avc.c();
     bfl.f();
@@ -115,7 +115,7 @@ public class ayd
     bfl.g();
     
     bfl.e();
-    m.b(k.d, ☃ + 8, ☃ + 8);
+    this.m.b(this.k.d, ☃ + 8, ☃ + 8);
     bfl.f();
     
     bfl.a(true);
@@ -124,7 +124,7 @@ public class ayd
   
   public void b()
   {
-    k = null;
-    l = 0L;
+    this.k = null;
+    this.l = 0L;
   }
 }

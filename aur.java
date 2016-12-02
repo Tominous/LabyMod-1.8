@@ -8,13 +8,13 @@ public class aur
   
   public aur(String ☃, a ☃)
   {
-    j = (☃ + ☃.e());
-    auu.a.put(j, this);
+    this.j = (☃ + ☃.e());
+    auu.a.put(this.j, this);
   }
   
   public String a()
   {
-    return j;
+    return this.j;
   }
   
   public int a(List<wn> ☃)

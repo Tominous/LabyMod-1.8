@@ -7,39 +7,39 @@ public class pz$a
   
   public pz$a(int ☃, int ☃, Object ☃)
   {
-    b = ☃;
-    c = ☃;
-    a = ☃;
-    d = true;
+    this.b = ☃;
+    this.c = ☃;
+    this.a = ☃;
+    this.d = true;
   }
   
   public int a()
   {
-    return b;
+    return this.b;
   }
   
   public void a(Object ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public Object b()
   {
-    return c;
+    return this.c;
   }
   
   public int c()
   {
-    return a;
+    return this.a;
   }
   
   public boolean d()
   {
-    return d;
+    return this.d;
   }
   
   public void a(boolean ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
 }

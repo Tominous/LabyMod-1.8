@@ -10,14 +10,14 @@ public class asg
   public asg(long ☃, ase ☃, ase ☃)
   {
     super(☃);
-    a = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.d = ☃;
   }
   
   public int[] a(int ☃, int ☃, int ☃, int ☃)
   {
-    int[] ☃ = a.a(☃ - 1, ☃ - 1, ☃ + 2, ☃ + 2);
-    int[] ☃ = d.a(☃ - 1, ☃ - 1, ☃ + 2, ☃ + 2);
+    int[] ☃ = this.a.a(☃ - 1, ☃ - 1, ☃ + 2, ☃ + 2);
+    int[] ☃ = this.d.a(☃ - 1, ☃ - 1, ☃ + 2, ☃ + 2);
     
     int[] ☃ = asc.a(☃ * ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
@@ -41,74 +41,74 @@ public class asg
         else if ((a(3) == 0) || (☃))
         {
           int ☃ = ☃;
-          if (☃ == raz)
+          if (☃ == ady.r.az)
           {
-            ☃ = Gaz;
+            ☃ = ady.G.az;
           }
-          else if (☃ == taz)
+          else if (☃ == ady.t.az)
           {
-            ☃ = Haz;
+            ☃ = ady.H.az;
           }
-          else if (☃ == Qaz)
+          else if (☃ == ady.Q.az)
           {
-            ☃ = Raz;
+            ☃ = ady.R.az;
           }
-          else if (☃ == Saz)
+          else if (☃ == ady.S.az)
           {
-            ☃ = qaz;
+            ☃ = ady.q.az;
           }
-          else if (☃ == uaz)
+          else if (☃ == ady.u.az)
           {
-            ☃ = Iaz;
+            ☃ = ady.I.az;
           }
-          else if (☃ == Vaz)
+          else if (☃ == ady.V.az)
           {
-            ☃ = Waz;
+            ☃ = ady.W.az;
           }
-          else if (☃ == Taz)
+          else if (☃ == ady.T.az)
           {
-            ☃ = Uaz;
+            ☃ = ady.U.az;
           }
-          else if (☃ == qaz)
+          else if (☃ == ady.q.az)
           {
             if (a(3) == 0) {
-              ☃ = Haz;
+              ☃ = ady.H.az;
             } else {
-              ☃ = taz;
+              ☃ = ady.t.az;
             }
           }
-          else if (☃ == Baz)
+          else if (☃ == ady.B.az)
           {
-            ☃ = Caz;
+            ☃ = ady.C.az;
           }
-          else if (☃ == Kaz)
+          else if (☃ == ady.K.az)
           {
-            ☃ = Laz;
+            ☃ = ady.L.az;
           }
-          else if (☃ == paz)
+          else if (☃ == ady.p.az)
           {
-            ☃ = Naz;
+            ☃ = ady.N.az;
           }
-          else if (☃ == saz)
+          else if (☃ == ady.s.az)
           {
-            ☃ = Xaz;
+            ☃ = ady.X.az;
           }
-          else if (☃ == Yaz)
+          else if (☃ == ady.Y.az)
           {
-            ☃ = Zaz;
+            ☃ = ady.Z.az;
           }
-          else if (a(☃, abaz))
+          else if (a(☃, ady.ab.az))
           {
-            ☃ = aaaz;
+            ☃ = ady.aa.az;
           }
-          else if ((☃ == Naz) && 
+          else if ((☃ == ady.N.az) && 
             (a(3) == 0))
           {
             int ☃ = a(2);
             if (☃ == 0) {
-              ☃ = qaz;
+              ☃ = ady.q.az;
             } else {
-              ☃ = taz;
+              ☃ = ady.t.az;
             }
           }
           if ((☃) && (☃ != ☃)) {

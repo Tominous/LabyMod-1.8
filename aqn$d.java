@@ -15,13 +15,13 @@ public class aqn$d
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("Witch", e);
+    ☃.a("Witch", this.e);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    e = ☃.n("Witch");
+    this.e = ☃.n("Witch");
   }
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
@@ -70,14 +70,14 @@ public class aqn$d
         b(☃, afi.r.Q(), ☃, -1, ☃, ☃);
       }
     }
-    if (!e)
+    if (!this.e)
     {
       int ☃ = a(2, 5);
       int ☃ = d(2);
       int ☃ = b(2, 5);
       if (☃.b(new cj(☃, ☃, ☃)))
       {
-        e = true;
+        this.e = true;
         
         wd ☃ = new wd(☃);
         ☃.b(☃ + 0.5D, ☃, ☃ + 0.5D, 0.0F, 0.0F);

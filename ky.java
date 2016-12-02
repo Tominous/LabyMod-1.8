@@ -14,53 +14,53 @@ public class ky
   public void a()
   {
     super.a();
-    f += 1;
+    this.f += 1;
     
-    long ☃ = a.K();
+    long ☃ = this.a.K();
     long ☃ = ☃ / 24000L + 1L;
-    if ((!c) && (f > 20))
+    if ((!this.c) && (this.f > 20))
     {
-      c = true;
-      b.a.a(new gm(5, 0.0F));
+      this.c = true;
+      this.b.a.a(new gm(5, 0.0F));
     }
-    d = (☃ > 120500L);
-    if (d) {
-      e += 1;
+    this.d = (☃ > 120500L);
+    if (this.d) {
+      this.e += 1;
     }
     if (☃ % 24000L == 500L)
     {
       if (☃ <= 6L) {
-        b.a(new fb("demo.day." + ☃, new Object[0]));
+        this.b.a(new fb("demo.day." + ☃, new Object[0]));
       }
     }
     else if (☃ == 1L)
     {
       if (☃ == 100L) {
-        b.a.a(new gm(5, 101.0F));
+        this.b.a.a(new gm(5, 101.0F));
       } else if (☃ == 175L) {
-        b.a.a(new gm(5, 102.0F));
+        this.b.a.a(new gm(5, 102.0F));
       } else if (☃ == 250L) {
-        b.a.a(new gm(5, 103.0F));
+        this.b.a.a(new gm(5, 103.0F));
       }
     }
     else if ((☃ == 5L) && 
       (☃ % 24000L == 22000L)) {
-      b.a(new fb("demo.day.warning", new Object[0]));
+      this.b.a(new fb("demo.day.warning", new Object[0]));
     }
   }
   
   private void f()
   {
-    if (e > 100)
+    if (this.e > 100)
     {
-      b.a(new fb("demo.reminder", new Object[0]));
-      e = 0;
+      this.b.a(new fb("demo.reminder", new Object[0]));
+      this.e = 0;
     }
   }
   
   public void a(cj ☃, cq ☃)
   {
-    if (d)
+    if (this.d)
     {
       f();
       return;
@@ -70,7 +70,7 @@ public class ky
   
   public void a(cj ☃)
   {
-    if (d) {
+    if (this.d) {
       return;
     }
     super.a(☃);
@@ -78,7 +78,7 @@ public class ky
   
   public boolean b(cj ☃)
   {
-    if (d) {
+    if (this.d) {
       return false;
     }
     return super.b(☃);
@@ -86,7 +86,7 @@ public class ky
   
   public boolean a(wn ☃, adm ☃, zx ☃)
   {
-    if (d)
+    if (this.d)
     {
       f();
       return false;
@@ -96,7 +96,7 @@ public class ky
   
   public boolean a(wn ☃, adm ☃, zx ☃, cj ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (d)
+    if (this.d)
     {
       f();
       return false;

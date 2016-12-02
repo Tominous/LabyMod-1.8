@@ -31,12 +31,12 @@ public class ChatHandler
   public ChatHandler()
   {
     instance = this;
-    chats = new ArrayList();
+    this.chats = new ArrayList();
   }
   
   public SingleChat getChat(String player)
   {
-    for (SingleChat chat : chats) {
+    for (SingleChat chat : this.chats) {
       if (chat.getFriend().getName().equalsIgnoreCase(player)) {
         return chat;
       }
@@ -46,7 +46,7 @@ public class ChatHandler
   
   public SingleChat getChat(LabyModPlayer player)
   {
-    for (SingleChat chat : chats)
+    for (SingleChat chat : this.chats)
     {
       if (chat.getFriend().getId().equals(player.getId())) {
         return chat;
@@ -60,7 +60,7 @@ public class ChatHandler
   
   public SingleChat getOnlyChat(LabyModPlayer player)
   {
-    for (SingleChat chat : chats)
+    for (SingleChat chat : this.chats)
     {
       if (chat.getFriend().getId().equals(player.getId())) {
         return chat;
@@ -76,10 +76,10 @@ public class ChatHandler
   {
     if (name.equalsIgnoreCase(LabyMod.getInstance().getPlayerName()))
     {
-      LabyMod.getInstance().getClient();return new LabyModPlayer(LabyMod.getInstance().getPlayerName(), LabyMod.getInstance().getPlayerUUID(), settingsmotd, Client.getOnlineStatus());
+      LabyMod.getInstance().getClient();return new LabyModPlayer(LabyMod.getInstance().getPlayerName(), LabyMod.getInstance().getPlayerUUID(), ConfigManager.settings.motd, Client.getOnlineStatus());
     }
     List<LabyModPlayer> a = new ArrayList();
-    a.addAll(getInstanceclient.friends);
+    a.addAll(LabyMod.getInstance().client.friends);
     for (LabyModPlayer p : a) {
       if (p.getName().equalsIgnoreCase(name)) {
         return p;
@@ -91,11 +91,11 @@ public class ChatHandler
   public static List<LabyModPlayer> getMyFriends()
   {
     List<LabyModPlayer> list = new ArrayList();
-    list.addAll(getInstanceclient.requests);
+    list.addAll(LabyMod.getInstance().client.requests);
     
     List<LabyModPlayer> f = new ArrayList();
-    f.addAll(getInstanceclient.friends);
-    if (settingsshowSettingsFriend == 3)
+    f.addAll(LabyMod.getInstance().client.friends);
+    if (ConfigManager.settings.showSettingsFriend == 3)
     {
       list.addAll(f);
       Collections.sort(list, new Comparator()
@@ -137,9 +137,9 @@ public class ChatHandler
   
   public void updateChats(LabyModPlayer player)
   {
-    for (int i = 0; i < chats.size(); i++)
+    for (int i = 0; i < this.chats.size(); i++)
     {
-      SingleChat chat = (SingleChat)chats.get(i);
+      SingleChat chat = (SingleChat)this.chats.get(i);
       if (chat.getFriend().getName().equalsIgnoreCase(player.getName())) {
         chat.updateFriend(player);
       }
@@ -151,18 +151,18 @@ public class ChatHandler
     if (getOnlyChat(friend) != null) {
       return getOnlyChat(friend);
     }
-    SingleChat chat = new SingleChat(chats.size(), friend, new ArrayList());
-    chats.add(chat);
+    SingleChat chat = new SingleChat(this.chats.size(), friend, new ArrayList());
+    this.chats.add(chat);
     return chat;
   }
   
   static void addNewMessageInfo(String sender)
   {
     int newMessages = 0;
-    for (LabyModPlayer p : getInstanceclient.getFriends()) {
+    for (LabyModPlayer p : LabyMod.getInstance().client.getFriends()) {
       if (p.getName().equals(sender))
       {
-        messages += 1;
+        p.messages += 1;
         p.setLastMessage(System.currentTimeMillis());
       }
     }
@@ -206,27 +206,27 @@ public class ChatHandler
     if (lobby.isEmpty()) {
       lobby = null;
     }
-    if (!getInstancegameMode.equals(lobby)) {
-      if ((lobby == null) && (!getInstancegameMode.isEmpty()))
+    if (!LabyMod.getInstance().gameMode.equals(lobby)) {
+      if ((lobby == null) && (!LabyMod.getInstance().gameMode.isEmpty()))
       {
-        getInstancegameMode = "";
-        getInstanceclient.getClientConnection().sendPacket(new PacketPlayServerStatus("", 0, null));
+        LabyMod.getInstance().gameMode = "";
+        LabyMod.getInstance().client.getClientConnection().sendPacket(new PacketPlayServerStatus("", 0, null));
       }
       else
       {
-        getInstancegameMode = lobby;
-        getInstanceclient.getClientConnection().sendPacket(new PacketPlayServerStatus(getInstanceip, getInstanceport, getInstancegameMode));
+        LabyMod.getInstance().gameMode = lobby;
+        LabyMod.getInstance().client.getClientConnection().sendPacket(new PacketPlayServerStatus(LabyMod.getInstance().ip, LabyMod.getInstance().port, LabyMod.getInstance().gameMode));
         de.labystudio.gommehd.GommeHDSign.autoJoin = false;
       }
     }
-    if (getInstancegameMode == null) {
-      getInstancegameMode = "";
+    if (LabyMod.getInstance().gameMode == null) {
+      LabyMod.getInstance().gameMode = "";
     }
   }
   
   public void newAccount()
   {
-    chats.clear();
+    this.chats.clear();
   }
   
   public static boolean isTyping = false;
@@ -238,7 +238,7 @@ public class ChatHandler
     {
       isTyping = false;
       for (LabyModPlayer partner : typingPartner) {
-        LabyMod.getInstance().getClient().getClientConnection().sendPacket(new PacketPlayTyping(getInstanceclient.build(), partner, true));
+        LabyMod.getInstance().getClient().getClientConnection().sendPacket(new PacketPlayTyping(LabyMod.getInstance().client.build(), partner, true));
       }
     }
   }
@@ -249,9 +249,9 @@ public class ChatHandler
     {
       isTyping = true;
       typingPartner.add(selectedPlayer);
-      LabyMod.getInstance().getClient().getClientConnection().sendPacket(new PacketPlayTyping(getInstanceclient.build(), selectedPlayer, false));
+      LabyMod.getInstance().getClient().getClientConnection().sendPacket(new PacketPlayTyping(LabyMod.getInstance().client.build(), selectedPlayer, false));
     }
-    if (((isTyping) && (textField.replace(" ", "").isEmpty())) || (selectedPlayer == null) || (getInstancemc.m == null))
+    if (((isTyping) && (textField.replace(" ", "").isEmpty())) || (selectedPlayer == null) || (LabyMod.getInstance().mc.m == null))
     {
       isTyping = false;
       resetTyping();

@@ -4,11 +4,10 @@ class bfl$c
 {
   private final int a;
   private boolean b = false;
-  private static final String __OBFID = "CL_00002554";
   
-  public bfl$c(int p_i46267_1_)
+  public bfl$c(int ☃)
   {
-    a = p_i46267_1_;
+    this.a = ☃;
   }
   
   public void a()
@@ -21,15 +20,15 @@ class bfl$c
     a(true);
   }
   
-  public void a(boolean p_179199_1_)
+  public void a(boolean ☃)
   {
-    if (p_179199_1_ != b)
+    if (☃ != this.b)
     {
-      b = p_179199_1_;
-      if (p_179199_1_) {
-        GL11.glEnable(a);
+      this.b = ☃;
+      if (☃) {
+        GL11.glEnable(this.a);
       } else {
-        GL11.glDisable(a);
+        GL11.glDisable(this.a);
       }
     }
   }

@@ -13,13 +13,13 @@ public class BattyConfig
   
   public static void retrieveOptions()
   {
-    if (uioptionsFile.exists()) {
+    if (ui.optionsFile.exists()) {
       try
       {
-        FileInputStream fis = new FileInputStream(uioptionsFile);
+        FileInputStream fis = new FileInputStream(ui.optionsFile);
         try
         {
-          uipropts.load(fis);
+          ui.propts.load(fis);
         }
         catch (IOException ex)
         {
@@ -31,147 +31,147 @@ public class BattyConfig
         var5.printStackTrace();
       }
     }
-    String myShade = uipropts.getProperty("Coords.shade");
-    String myTxtChr1 = uipropts.getProperty("Coords.chars.Increase");
-    String myTxtChr2 = uipropts.getProperty("Coords.chars.Decrease");
-    String myTxtCol1 = uipropts.getProperty("Coords.colours.TitleText");
-    String myTxtCol6 = uipropts.getProperty("Coords.colours.CoordText");
-    String myTxtCol2 = uipropts.getProperty("Coords.colours.PosCoordText");
-    String myTxtCol7 = uipropts.getProperty("Coords.colours.NegCoordText");
-    String myTxtCol3 = uipropts.getProperty("Coords.colours.CompassText");
-    String myTxtCol4 = uipropts.getProperty("Coords.colours.ChevronText");
-    String myTxtCol5 = uipropts.getProperty("Coords.colours.BiomeText");
-    String myTxtCol8 = uipropts.getProperty("Coords.colours.PosChunkText");
-    String myTxtCol9 = uipropts.getProperty("Coords.colours.NegChunkText");
-    String myTxtFmt1 = uipropts.getProperty("Coords.copy.tpFormat");
+    String myShade = ui.propts.getProperty("Coords.shade");
+    String myTxtChr1 = ui.propts.getProperty("Coords.chars.Increase");
+    String myTxtChr2 = ui.propts.getProperty("Coords.chars.Decrease");
+    String myTxtCol1 = ui.propts.getProperty("Coords.colours.TitleText");
+    String myTxtCol6 = ui.propts.getProperty("Coords.colours.CoordText");
+    String myTxtCol2 = ui.propts.getProperty("Coords.colours.PosCoordText");
+    String myTxtCol7 = ui.propts.getProperty("Coords.colours.NegCoordText");
+    String myTxtCol3 = ui.propts.getProperty("Coords.colours.CompassText");
+    String myTxtCol4 = ui.propts.getProperty("Coords.colours.ChevronText");
+    String myTxtCol5 = ui.propts.getProperty("Coords.colours.BiomeText");
+    String myTxtCol8 = ui.propts.getProperty("Coords.colours.PosChunkText");
+    String myTxtCol9 = ui.propts.getProperty("Coords.colours.NegChunkText");
+    String myTxtFmt1 = ui.propts.getProperty("Coords.copy.tpFormat");
     if (myShade != null) {
-      uishadedCoords = myShade.equals("true");
+      ui.shadedCoords = myShade.equals("true");
     }
     if (myTxtChr1 != null) {
       if (myTxtChr1.length() > 1) {
-        uimyChevronUp = myTxtChr1.substring(0, 1);
+        ui.myChevronUp = myTxtChr1.substring(0, 1);
       } else {
-        uimyChevronUp = myTxtChr1;
+        ui.myChevronUp = myTxtChr1;
       }
     }
     if (myTxtChr2 != null) {
       if (myTxtChr2.length() > 1) {
-        uimyChevronDown = myTxtChr2.substring(0, 1);
+        ui.myChevronDown = myTxtChr2.substring(0, 1);
       } else {
-        uimyChevronDown = myTxtChr2;
+        ui.myChevronDown = myTxtChr2;
       }
     }
     if (myTxtCol1 != null)
     {
-      uimyFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol1);
-      if (uimyFind != -1) {
-        uimyTitleText = BattyUI.myColourCodes[uimyFind];
+      ui.myFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol1);
+      if (ui.myFind != -1) {
+        ui.myTitleText = BattyUI.myColourCodes[ui.myFind];
       }
     }
     if (myTxtCol2 != null)
     {
-      uimyFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol2);
-      if (uimyFind != -1) {
-        uimyPosCoordText = BattyUI.myColourCodes[uimyFind];
+      ui.myFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol2);
+      if (ui.myFind != -1) {
+        ui.myPosCoordText = BattyUI.myColourCodes[ui.myFind];
       }
     }
     if (myTxtCol7 != null)
     {
-      uimyFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol7);
-      if (uimyFind != -1) {
-        uimyNegCoordText = BattyUI.myColourCodes[uimyFind];
+      ui.myFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol7);
+      if (ui.myFind != -1) {
+        ui.myNegCoordText = BattyUI.myColourCodes[ui.myFind];
       }
     }
     if (myTxtCol3 != null)
     {
-      uimyFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol3);
-      if (uimyFind != -1) {
-        uimyCompassText = BattyUI.myColourCodes[uimyFind];
+      ui.myFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol3);
+      if (ui.myFind != -1) {
+        ui.myCompassText = BattyUI.myColourCodes[ui.myFind];
       }
     }
     if (myTxtCol4 != null)
     {
-      uimyFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol4);
-      if (uimyFind != -1) {
-        uimyChevronText = BattyUI.myColourCodes[uimyFind];
+      ui.myFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol4);
+      if (ui.myFind != -1) {
+        ui.myChevronText = BattyUI.myColourCodes[ui.myFind];
       }
     }
     if (myTxtCol5 != null)
     {
-      uimyFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol5);
-      if (uimyFind != -1) {
-        uimyBiomeText = BattyUI.myColourCodes[uimyFind];
+      ui.myFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol5);
+      if (ui.myFind != -1) {
+        ui.myBiomeText = BattyUI.myColourCodes[ui.myFind];
       }
     }
     if (myTxtCol6 != null)
     {
-      uimyFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol6);
-      if (uimyFind != -1)
+      ui.myFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol6);
+      if (ui.myFind != -1)
       {
-        uimyPosCoordText = BattyUI.myColourCodes[uimyFind];
-        uimyNegCoordText = BattyUI.myColourCodes[uimyFind];
+        ui.myPosCoordText = BattyUI.myColourCodes[ui.myFind];
+        ui.myNegCoordText = BattyUI.myColourCodes[ui.myFind];
       }
     }
     if (myTxtCol8 != null)
     {
-      uimyFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol8);
-      if (uimyFind != -1) {
-        uimyPosChunkText = BattyUI.myColourCodes[uimyFind];
+      ui.myFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol8);
+      if (ui.myFind != -1) {
+        ui.myPosChunkText = BattyUI.myColourCodes[ui.myFind];
       }
     }
     if (myTxtCol9 != null)
     {
-      uimyFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol9);
-      if (uimyFind != -1) {
-        uimyNegChunkText = BattyUI.myColourCodes[uimyFind];
+      ui.myFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol9);
+      if (ui.myFind != -1) {
+        ui.myNegChunkText = BattyUI.myColourCodes[ui.myFind];
       }
     }
     if (myTxtFmt1 != null) {
-      uicoordsCopyTPFormat = myTxtFmt1.equals("true");
+      ui.coordsCopyTPFormat = myTxtFmt1.equals("true");
     }
-    myShade = uipropts.getProperty("Timer.shade");
-    myTxtCol1 = uipropts.getProperty("Timer.colours.Stopped");
-    myTxtCol2 = uipropts.getProperty("Timer.colours.Running");
+    myShade = ui.propts.getProperty("Timer.shade");
+    myTxtCol1 = ui.propts.getProperty("Timer.colours.Stopped");
+    myTxtCol2 = ui.propts.getProperty("Timer.colours.Running");
     if (myShade != null) {
-      uishadedTimer = myShade.equals("true");
+      ui.shadedTimer = myShade.equals("true");
     }
     if (myTxtCol1 != null)
     {
-      uimyFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol1);
-      if (uimyFind != -1) {
-        uimyTimerStopText = BattyUI.myColourCodes[uimyFind];
+      ui.myFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol1);
+      if (ui.myFind != -1) {
+        ui.myTimerStopText = BattyUI.myColourCodes[ui.myFind];
       }
     }
     if (myTxtCol2 != null)
     {
-      uimyFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol2);
-      if (uimyFind != -1) {
-        uimyTimerRunText = BattyUI.myColourCodes[uimyFind];
+      ui.myFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol2);
+      if (ui.myFind != -1) {
+        ui.myTimerRunText = BattyUI.myColourCodes[ui.myFind];
       }
     }
-    myShade = uipropts.getProperty("FPS.shade");
-    myTxtCol1 = uipropts.getProperty("FPS.colours.Text");
+    myShade = ui.propts.getProperty("FPS.shade");
+    myTxtCol1 = ui.propts.getProperty("FPS.colours.Text");
     if (myShade != null) {
-      uishadedFPS = myShade.equals("true");
+      ui.shadedFPS = myShade.equals("true");
     }
     if (myTxtCol1 != null)
     {
-      uimyFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol1);
-      if (uimyFind != -1) {
-        uimyFPSText = BattyUI.myColourCodes[uimyFind];
+      ui.myFind = BattyUtils.nameSearch(BattyUI.myColourList, myTxtCol1);
+      if (ui.myFind != -1) {
+        ui.myFPSText = BattyUI.myColourCodes[ui.myFind];
       }
     }
   }
   
   public static void retrieveRuntimeOptions()
   {
-    if (uiruntimeFile.exists()) {
+    if (ui.runtimeFile.exists()) {
       try
       {
-        FileInputStream fis = new FileInputStream(uiruntimeFile);
+        FileInputStream fis = new FileInputStream(ui.runtimeFile);
         try
         {
-          uiproprt.load(fis);
+          ui.proprt.load(fis);
         }
         catch (IOException ex)
         {
@@ -183,54 +183,54 @@ public class BattyConfig
         var5.printStackTrace();
       }
     }
-    String myTimeString = uiproprt.getProperty("Timer.saved");
+    String myTimeString = ui.proprt.getProperty("Timer.saved");
     if (myTimeString != null) {
       BattyUtils.parseTimeString(myTimeString);
     }
-    String myCoordsVis = uiproprt.getProperty("Coords.visible");
+    String myCoordsVis = ui.proprt.getProperty("Coords.visible");
     if (myCoordsVis != null) {
-      uishowCoords = Integer.parseInt(myCoordsVis);
+      ui.showCoords = Integer.parseInt(myCoordsVis);
     }
-    String myTimerVis = uiproprt.getProperty("Timer.visible");
+    String myTimerVis = ui.proprt.getProperty("Timer.visible");
     if (myTimerVis != null) {
-      uihideTimer = (!myTimerVis.equals("true"));
+      ui.hideTimer = (!myTimerVis.equals("true"));
     }
-    String myCoordsLoc = uiproprt.getProperty("Coords.location");
+    String myCoordsLoc = ui.proprt.getProperty("Coords.location");
     if (myCoordsLoc != null) {
-      uicoordLocation = Integer.parseInt(myCoordsLoc);
+      ui.coordLocation = Integer.parseInt(myCoordsLoc);
     }
-    String myTimerLoc = uiproprt.getProperty("Timer.location");
+    String myTimerLoc = ui.proprt.getProperty("Timer.location");
     if (myTimerLoc != null) {
-      uitimerLocation = Integer.parseInt(myTimerLoc);
+      ui.timerLocation = Integer.parseInt(myTimerLoc);
     }
-    String myTimerRuns = uiproprt.getProperty("Timer.running");
+    String myTimerRuns = ui.proprt.getProperty("Timer.running");
     if (myTimerRuns != null) {
-      uitimerRunning = myTimerRuns.equals("true");
+      ui.timerRunning = myTimerRuns.equals("true");
     }
-    String myFPSVis = uiproprt.getProperty("FPS.visible");
+    String myFPSVis = ui.proprt.getProperty("FPS.visible");
     if (myFPSVis != null) {
-      uihideFPS = (!myFPSVis.equals("true"));
+      ui.hideFPS = (!myFPSVis.equals("true"));
     }
-    String myFPSLoc = uiproprt.getProperty("FPS.location");
+    String myFPSLoc = ui.proprt.getProperty("FPS.location");
     if (myFPSLoc != null) {
-      uifpsLocation = Integer.parseInt(myFPSLoc);
+      ui.fpsLocation = Integer.parseInt(myFPSLoc);
     }
   }
   
   public static void storeRuntimeOptions()
   {
-    uiproprt.setProperty("Timer.saved", BattyUtils.getSaveString());
-    uiproprt.setProperty("Coords.visible", BattyUtils.constructCoordVisString());
-    uiproprt.setProperty("Timer.visible", BattyUtils.constructTimerVisString());
-    uiproprt.setProperty("Coords.location", BattyUtils.constructCoordLocString());
-    uiproprt.setProperty("Timer.location", BattyUtils.constructTimerLocString());
-    uiproprt.setProperty("Timer.running", BattyUtils.constructTimerRunString());
-    uiproprt.setProperty("FPS.visible", BattyUtils.constructFPSVisString());
-    uiproprt.setProperty("FPS.location", BattyUtils.constructFPSLocString());
+    ui.proprt.setProperty("Timer.saved", BattyUtils.getSaveString());
+    ui.proprt.setProperty("Coords.visible", BattyUtils.constructCoordVisString());
+    ui.proprt.setProperty("Timer.visible", BattyUtils.constructTimerVisString());
+    ui.proprt.setProperty("Coords.location", BattyUtils.constructCoordLocString());
+    ui.proprt.setProperty("Timer.location", BattyUtils.constructTimerLocString());
+    ui.proprt.setProperty("Timer.running", BattyUtils.constructTimerRunString());
+    ui.proprt.setProperty("FPS.visible", BattyUtils.constructFPSVisString());
+    ui.proprt.setProperty("FPS.location", BattyUtils.constructFPSLocString());
     try
     {
-      FileOutputStream fos = new FileOutputStream(uiruntimeFile);
-      uiproprt.store(fos, null);
+      FileOutputStream fos = new FileOutputStream(ui.runtimeFile);
+      ui.proprt.store(fos, null);
       fos.flush();
     }
     catch (IOException e)

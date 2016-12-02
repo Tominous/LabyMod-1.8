@@ -7,7 +7,7 @@ public class vu
   public vu(adm ☃)
   {
     super(☃);
-    ab = true;
+    this.ab = true;
   }
   
   protected void aX()
@@ -19,12 +19,12 @@ public class vu
   
   public boolean bR()
   {
-    return o.aa() != oj.a;
+    return this.o.aa() != oj.a;
   }
   
   public boolean bS()
   {
-    return (o.a(aR(), this)) && (o.a(this, aR()).isEmpty()) && (!o.d(aR()));
+    return (this.o.a(aR(), this)) && (this.o.a(this, aR()).isEmpty()) && (!this.o.d(aR()));
   }
   
   public int br()
@@ -49,7 +49,7 @@ public class vu
   
   protected wb cf()
   {
-    return new vu(o);
+    return new vu(this.o);
   }
   
   protected zw A()
@@ -62,9 +62,9 @@ public class vu
     zw ☃ = A();
     if ((☃ != null) && (cm() > 1))
     {
-      int ☃ = V.nextInt(4) - 2;
+      int ☃ = this.V.nextInt(4) - 2;
       if (☃ > 0) {
-        ☃ += V.nextInt(☃ + 1);
+        ☃ += this.V.nextInt(☃ + 1);
       }
       for (int ☃ = 0; ☃ < ☃; ☃++) {
         a(☃, 1);
@@ -84,19 +84,19 @@ public class vu
   
   protected void ch()
   {
-    a *= 0.9F;
+    this.a *= 0.9F;
   }
   
   protected void bF()
   {
-    w = (0.42F + cm() * 0.1F);
-    ai = true;
+    this.w = (0.42F + cm() * 0.1F);
+    this.ai = true;
   }
   
   protected void bH()
   {
-    w = (0.22F + cm() * 0.05F);
-    ai = true;
+    this.w = (0.22F + cm() * 0.05F);
+    this.ai = true;
   }
   
   public void e(float ☃, float ☃) {}

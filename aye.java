@@ -29,38 +29,38 @@ public class aye
   
   public aye(axu ☃, nb ☃)
   {
-    a = ☃;
-    E = ☃;
+    this.a = ☃;
+    this.E = ☃;
     int ☃ = 141;
     int ☃ = 141;
     
-    s = (u = w = fa * 24 - ☃ / 2 - 12);
-    t = (v = x = fb * 24 - ☃ / 2);
+    this.s = (this.u = this.w = mr.f.a * 24 - ☃ / 2 - 12);
+    this.t = (this.v = this.x = mr.f.b * 24 - ☃ / 2);
   }
   
   public void b()
   {
-    j.u().a(new ig(ig.a.b));
-    n.clear();
-    n.add(new awe(1, l / 2 + 24, m / 2 + 74, 80, 20, bnq.a("gui.done", new Object[0])));
+    this.j.u().a(new ig(ig.a.b));
+    this.n.clear();
+    this.n.add(new awe(1, this.l / 2 + 24, this.m / 2 + 74, 80, 20, bnq.a("gui.done", new Object[0])));
   }
   
   protected void a(avs ☃)
   {
-    if (F) {
+    if (this.F) {
       return;
     }
-    if (k == 1) {
-      j.a(a);
+    if (☃.k == 1) {
+      this.j.a(this.a);
     }
   }
   
   protected void a(char ☃, int ☃)
   {
-    if (☃ == j.t.ae.i())
+    if (☃ == this.j.t.ae.i())
     {
-      j.a(null);
-      j.n();
+      this.j.a(null);
+      this.j.n();
     }
     else
     {
@@ -70,74 +70,74 @@ public class aye
   
   public void a(int ☃, int ☃, float ☃)
   {
-    if (F)
+    if (this.F)
     {
       c();
-      a(q, bnq.a("multiplayer.downloadingStats", new Object[0]), l / 2, m / 2, 16777215);
-      a(q, c_[((int)(ave.J() / 150L % c_.length))], l / 2, m / 2 + q.a * 2, 16777215);
+      a(this.q, bnq.a("multiplayer.downloadingStats", new Object[0]), this.l / 2, this.m / 2, 16777215);
+      a(this.q, c_[((int)(ave.J() / 150L % c_.length))], this.l / 2, this.m / 2 + this.q.a * 2, 16777215);
     }
     else
     {
       if (Mouse.isButtonDown(0))
       {
-        int ☃ = (l - f) / 2;
-        int ☃ = (m - g) / 2;
+        int ☃ = (this.l - this.f) / 2;
+        int ☃ = (this.m - this.g) / 2;
         
         int ☃ = ☃ + 8;
         int ☃ = ☃ + 17;
-        if (((D == 0) || (D == 1)) && 
+        if (((this.D == 0) || (this.D == 1)) && 
           (☃ >= ☃) && (☃ < ☃ + 224) && (☃ >= ☃) && (☃ < ☃ + 155))
         {
-          if (D == 0)
+          if (this.D == 0)
           {
-            D = 1;
+            this.D = 1;
           }
           else
           {
-            u -= (☃ - h) * r;
-            v -= (☃ - i) * r;
-            w = (s = u);
-            x = (t = v);
+            this.u -= (☃ - this.h) * this.r;
+            this.v -= (☃ - this.i) * this.r;
+            this.w = (this.s = this.u);
+            this.x = (this.t = this.v);
           }
-          h = ☃;
-          i = ☃;
+          this.h = ☃;
+          this.i = ☃;
         }
       }
       else
       {
-        D = 0;
+        this.D = 0;
       }
       int ☃ = Mouse.getDWheel();
-      float ☃ = r;
+      float ☃ = this.r;
       if (☃ < 0) {
-        r += 0.25F;
+        this.r += 0.25F;
       } else if (☃ > 0) {
-        r -= 0.25F;
+        this.r -= 0.25F;
       }
-      r = ns.a(r, 1.0F, 2.0F);
-      if (r != ☃)
+      this.r = ns.a(this.r, 1.0F, 2.0F);
+      if (this.r != ☃)
       {
-        float ☃ = ☃ - r;
-        float ☃ = ☃ * f;
-        float ☃ = ☃ * g;
-        float ☃ = r * f;
-        float ☃ = r * g;
-        u -= (☃ - ☃) * 0.5F;
-        v -= (☃ - ☃) * 0.5F;
-        w = (s = u);
-        x = (t = v);
+        float ☃ = ☃ - this.r;
+        float ☃ = ☃ * this.f;
+        float ☃ = ☃ * this.g;
+        float ☃ = this.r * this.f;
+        float ☃ = this.r * this.g;
+        this.u -= (☃ - ☃) * 0.5F;
+        this.v -= (☃ - ☃) * 0.5F;
+        this.w = (this.s = this.u);
+        this.x = (this.t = this.v);
       }
-      if (w < y) {
-        w = y;
+      if (this.w < y) {
+        this.w = y;
       }
-      if (x < z) {
-        x = z;
+      if (this.x < z) {
+        this.x = z;
       }
-      if (w >= A) {
-        w = (A - 1);
+      if (this.w >= A) {
+        this.w = (A - 1);
       }
-      if (x >= B) {
-        x = (B - 1);
+      if (this.x >= B) {
+        this.x = (B - 1);
       }
       c();
       b(☃, ☃, ☃);
@@ -154,44 +154,44 @@ public class aye
   
   public void a()
   {
-    if (F) {
-      F = false;
+    if (this.F) {
+      this.F = false;
     }
   }
   
   public void e()
   {
-    if (F) {
+    if (this.F) {
       return;
     }
-    s = u;
-    t = v;
+    this.s = this.u;
+    this.t = this.v;
     
-    double ☃ = w - u;
-    double ☃ = x - v;
+    double ☃ = this.w - this.u;
+    double ☃ = this.x - this.v;
     if (☃ * ☃ + ☃ * ☃ < 4.0D)
     {
-      u += ☃;
-      v += ☃;
+      this.u += ☃;
+      this.v += ☃;
     }
     else
     {
-      u += ☃ * 0.85D;
-      v += ☃ * 0.85D;
+      this.u += ☃ * 0.85D;
+      this.v += ☃ * 0.85D;
     }
   }
   
   protected void f()
   {
-    int ☃ = (l - f) / 2;
-    int ☃ = (m - g) / 2;
-    q.a(bnq.a("gui.achievements", new Object[0]), ☃ + 15, ☃ + 5, 4210752);
+    int ☃ = (this.l - this.f) / 2;
+    int ☃ = (this.m - this.g) / 2;
+    this.q.a(bnq.a("gui.achievements", new Object[0]), ☃ + 15, ☃ + 5, 4210752);
   }
   
   protected void b(int ☃, int ☃, float ☃)
   {
-    int ☃ = ns.c(s + (u - s) * ☃);
-    int ☃ = ns.c(t + (v - t) * ☃);
+    int ☃ = ns.c(this.s + (this.u - this.s) * ☃);
+    int ☃ = ns.c(this.t + (this.v - this.t) * ☃);
     if (☃ < y) {
       ☃ = y;
     }
@@ -204,17 +204,17 @@ public class aye
     if (☃ >= B) {
       ☃ = B - 1;
     }
-    int ☃ = (l - f) / 2;
-    int ☃ = (m - g) / 2;
+    int ☃ = (this.l - this.f) / 2;
+    int ☃ = (this.m - this.g) / 2;
     
     int ☃ = ☃ + 16;
     int ☃ = ☃ + 17;
     
-    e = 0.0F;
+    this.e = 0.0F;
     bfl.c(518);
     bfl.E();
     bfl.b(☃, ☃, -200.0F);
-    bfl.a(1.0F / r, 1.0F / r, 0.0F);
+    bfl.a(1.0F / this.r, 1.0F / this.r, 0.0F);
     
     bfl.w();
     bfl.f();
@@ -233,15 +233,15 @@ public class aye
     int ☃ = 37;
     
     Random ☃ = new Random();
-    float ☃ = 16.0F / r;
-    float ☃ = 16.0F / r;
+    float ☃ = 16.0F / this.r;
+    float ☃ = 16.0F / this.r;
     for (int ☃ = 0; ☃ * ☃ - ☃ < 155.0F; ☃++)
     {
       float ☃ = 0.6F - (☃ + ☃) / 25.0F * 0.3F;
       bfl.c(☃, ☃, ☃, 1.0F);
       for (int ☃ = 0; ☃ * ☃ - ☃ < 224.0F; ☃++)
       {
-        ☃.setSeed(j.L().b().hashCode() + (☃ + ☃) + (☃ + ☃) * 16);
+        ☃.setSeed(this.j.L().b().hashCode() + (☃ + ☃) + (☃ + ☃) * 16);
         int ☃ = ☃.nextInt(1 + ☃ + ☃) + (☃ + ☃) / 2;
         bmi ☃ = a(afi.m);
         if ((☃ > 37) || (☃ + ☃ == 35))
@@ -273,28 +273,28 @@ public class aye
         {
           ☃ = a(afi.d);
         }
-        j.P().a(bmh.g);
+        this.j.P().a(bmh.g);
         
         a(☃ * 16 - ☃, ☃ * 16 - ☃, ☃, 16, 16);
       }
     }
     bfl.j();
     bfl.c(515);
-    j.P().a(C);
+    this.j.P().a(C);
     for (int ☃ = 0; ☃ < mr.e.size(); ☃++)
     {
       mq ☃ = (mq)mr.e.get(☃);
-      if (c != null)
+      if (☃.c != null)
       {
-        int ☃ = a * 24 - ☃ + 11;
-        int ☃ = b * 24 - ☃ + 11;
+        int ☃ = ☃.a * 24 - ☃ + 11;
+        int ☃ = ☃.b * 24 - ☃ + 11;
         
-        int ☃ = c.a * 24 - ☃ + 11;
-        int ☃ = c.b * 24 - ☃ + 11;
+        int ☃ = ☃.c.a * 24 - ☃ + 11;
+        int ☃ = ☃.c.b * 24 - ☃ + 11;
         
-        boolean ☃ = E.a(☃);
-        boolean ☃ = E.b(☃);
-        int ☃ = E.c(☃);
+        boolean ☃ = this.E.a(☃);
+        boolean ☃ = this.E.b(☃);
+        int ☃ = this.E.c(☃);
         if (☃ <= 4)
         {
           int ☃ = -16777216;
@@ -318,8 +318,8 @@ public class aye
       }
     }
     mq ☃ = null;
-    float ☃ = (☃ - ☃) * r;
-    float ☃ = (☃ - ☃) * r;
+    float ☃ = (☃ - ☃) * this.r;
+    float ☃ = (☃ - ☃) * this.r;
     
     avc.c();
     bfl.f();
@@ -329,17 +329,17 @@ public class aye
     {
       mq ☃ = (mq)mr.e.get(☃);
       
-      int ☃ = a * 24 - ☃;
-      int ☃ = b * 24 - ☃;
-      if ((☃ >= -24) && (☃ >= -24) && (☃ <= 224.0F * r) && (☃ <= 155.0F * r))
+      int ☃ = ☃.a * 24 - ☃;
+      int ☃ = ☃.b * 24 - ☃;
+      if ((☃ >= -24) && (☃ >= -24) && (☃ <= 224.0F * this.r) && (☃ <= 155.0F * this.r))
       {
-        int ☃ = E.c(☃);
-        if (E.a(☃))
+        int ☃ = this.E.c(☃);
+        if (this.E.a(☃))
         {
           float ☃ = 0.75F;
           bfl.c(☃, ☃, ☃, 1.0F);
         }
-        else if (E.b(☃))
+        else if (this.E.b(☃))
         {
           float ☃ = 1.0F;
           bfl.c(☃, ☃, ☃, 1.0F);
@@ -362,25 +362,25 @@ public class aye
           float ☃ = 0.1F;
           bfl.c(☃, ☃, ☃, 1.0F);
         }
-        j.P().a(C);
+        this.j.P().a(C);
         if (☃.g()) {
           b(☃ - 2, ☃ - 2, 26, 202, 26, 26);
         } else {
           b(☃ - 2, ☃ - 2, 0, 202, 26, 26);
         }
-        if (!E.b(☃))
+        if (!this.E.b(☃))
         {
           float ☃ = 0.1F;
           bfl.c(☃, ☃, ☃, 1.0F);
-          k.a(false);
+          this.k.a(false);
         }
         bfl.e();
         bfl.o();
-        k.b(d, ☃ + 3, ☃ + 3);
+        this.k.b(☃.d, ☃ + 3, ☃ + 3);
         bfl.b(770, 771);
         bfl.f();
-        if (!E.b(☃)) {
-          k.a(true);
+        if (!this.E.b(☃)) {
+          this.k.a(true);
         }
         bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
         if ((☃ >= ☃) && (☃ <= ☃ + 22) && (☃ >= ☃) && (☃ <= ☃ + 22)) {
@@ -393,10 +393,10 @@ public class aye
     
     bfl.F();
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    j.P().a(C);
-    b(☃, ☃, 0, 0, f, g);
+    this.j.P().a(C);
+    b(☃, ☃, 0, 0, this.f, this.g);
     
-    e = 0.0F;
+    this.e = 0.0F;
     bfl.c(515);
     
     bfl.i();
@@ -409,44 +409,44 @@ public class aye
       
       int ☃ = ☃ + 12;
       int ☃ = ☃ - 4;
-      int ☃ = E.c(☃);
-      if (E.b(☃))
+      int ☃ = this.E.c(☃);
+      if (this.E.b(☃))
       {
-        int ☃ = Math.max(q.a(☃), 120);
-        int ☃ = q.b(☃, ☃);
-        if (E.a(☃)) {
+        int ☃ = Math.max(this.q.a(☃), 120);
+        int ☃ = this.q.b(☃, ☃);
+        if (this.E.a(☃)) {
           ☃ += 12;
         }
         a(☃ - 3, ☃ - 3, ☃ + ☃ + 3, ☃ + ☃ + 3 + 12, -1073741824, -1073741824);
         
-        q.a(☃, ☃, ☃ + 12, ☃, -6250336);
-        if (E.a(☃)) {
-          q.a(bnq.a("achievement.taken", new Object[0]), ☃, ☃ + ☃ + 4, -7302913);
+        this.q.a(☃, ☃, ☃ + 12, ☃, -6250336);
+        if (this.E.a(☃)) {
+          this.q.a(bnq.a("achievement.taken", new Object[0]), ☃, ☃ + ☃ + 4, -7302913);
         }
       }
       else if (☃ == 3)
       {
         ☃ = bnq.a("achievement.unknown", new Object[0]);
-        int ☃ = Math.max(q.a(☃), 120);
-        String ☃ = new fb("achievement.requires", new Object[] { c.e() }).c();
-        int ☃ = q.b(☃, ☃);
+        int ☃ = Math.max(this.q.a(☃), 120);
+        String ☃ = new fb("achievement.requires", new Object[] { ☃.c.e() }).c();
+        int ☃ = this.q.b(☃, ☃);
         a(☃ - 3, ☃ - 3, ☃ + ☃ + 3, ☃ + ☃ + 12 + 3, -1073741824, -1073741824);
-        q.a(☃, ☃, ☃ + 12, ☃, -9416624);
+        this.q.a(☃, ☃, ☃ + 12, ☃, -9416624);
       }
       else if (☃ < 3)
       {
-        int ☃ = Math.max(q.a(☃), 120);
-        String ☃ = new fb("achievement.requires", new Object[] { c.e() }).c();
-        int ☃ = q.b(☃, ☃);
+        int ☃ = Math.max(this.q.a(☃), 120);
+        String ☃ = new fb("achievement.requires", new Object[] { ☃.c.e() }).c();
+        int ☃ = this.q.b(☃, ☃);
         a(☃ - 3, ☃ - 3, ☃ + ☃ + 3, ☃ + ☃ + 12 + 3, -1073741824, -1073741824);
-        q.a(☃, ☃, ☃ + 12, ☃, -9416624);
+        this.q.a(☃, ☃, ☃ + 12, ☃, -9416624);
       }
       else
       {
         ☃ = null;
       }
       if (☃ != null) {
-        q.a(☃, ☃, ☃, ☃.g() ? -8355776 : E.b(☃) ? -1 : ☃.g() ? -128 : -8355712);
+        this.q.a(☃, ☃, ☃, ☃.g() ? -8355776 : this.E.b(☃) ? -1 : ☃.g() ? -128 : -8355712);
       }
     }
     bfl.j();
@@ -461,6 +461,6 @@ public class aye
   
   public boolean d()
   {
-    return !F;
+    return !this.F;
   }
 }

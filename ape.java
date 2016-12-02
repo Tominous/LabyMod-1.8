@@ -26,7 +26,7 @@ public class ape
       {
         ☃ = ☃.n() + (int)(1.5F + ns.b(☃) * ☃);
         ☃ = ☃.p() + (int)(1.5F + ns.a(☃) * ☃);
-        a(☃, new cj(☃, ☃ - 3 + ☃ / 2, ☃), b);
+        a(☃, new cj(☃, ☃ - 3 + ☃ / 2, ☃), this.b);
       }
       int ☃ = 1 + ☃.nextInt(2);
       int ☃ = ☃;
@@ -42,7 +42,7 @@ public class ape
       cj ☃ = ☃.b(☃);
       if (a(☃.p(☃).c()))
       {
-        a(☃, ☃, b);
+        a(☃, ☃, this.b);
         if (☃ > 0)
         {
           a(☃, ☃, ☃.e(), akk.N);
@@ -54,7 +54,7 @@ public class ape
         cj ☃ = ☃.f();
         if (a(☃.p(☃).c()))
         {
-          a(☃, ☃, b);
+          a(☃, ☃, this.b);
           if (☃ > 0)
           {
             a(☃, ☃, ☃.f(), akk.P);
@@ -64,7 +64,7 @@ public class ape
         cj ☃ = ☃.d().f();
         if (a(☃.p(☃).c()))
         {
-          a(☃, ☃, b);
+          a(☃, ☃, this.b);
           if (☃ > 0)
           {
             a(☃, ☃, ☃.f(), akk.P);
@@ -74,7 +74,7 @@ public class ape
         cj ☃ = ☃.d();
         if (a(☃.p(☃).c()))
         {
-          a(☃, ☃, b);
+          a(☃, ☃, this.b);
           if (☃ > 0)
           {
             a(☃, ☃, ☃.e(), akk.N);

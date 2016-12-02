@@ -12,19 +12,19 @@ public class aql$l
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
   {
-    aql.v ☃ = k.b[cq.f.a()];
-    aql.v ☃ = k;
-    aql.v ☃ = b[cq.b.a()];
-    aql.v ☃ = b[cq.b.a()];
-    if (k.a / 25 > 0)
+    aql.v ☃ = this.k.b[cq.f.a()];
+    aql.v ☃ = this.k;
+    aql.v ☃ = ☃.b[cq.b.a()];
+    aql.v ☃ = ☃.b[cq.b.a()];
+    if (this.k.a / 25 > 0)
     {
-      a(☃, ☃, 8, 0, c[cq.a.a()]);
-      a(☃, ☃, 0, 0, c[cq.a.a()]);
+      a(☃, ☃, 8, 0, ☃.c[cq.a.a()]);
+      a(☃, ☃, 0, 0, ☃.c[cq.a.a()]);
     }
-    if (b[cq.b.a()] == null) {
+    if (☃.b[cq.b.a()] == null) {
       a(☃, ☃, 1, 8, 1, 7, 8, 6, a);
     }
-    if (b[cq.b.a()] == null) {
+    if (☃.b[cq.b.a()] == null) {
       a(☃, ☃, 8, 8, 1, 14, 8, 6, a);
     }
     for (int ☃ = 1; ☃ <= 7; ☃++)
@@ -64,40 +64,40 @@ public class aql$l
     a(☃, e, 5, 4, 5, ☃);
     a(☃, e, 10, 4, 2, ☃);
     a(☃, e, 10, 4, 5, ☃);
-    if (c[cq.d.a()] != 0) {
+    if (☃.c[cq.d.a()] != 0) {
       a(☃, ☃, 3, 1, 0, 4, 2, 0, false);
     }
-    if (c[cq.c.a()] != 0) {
+    if (☃.c[cq.c.a()] != 0) {
       a(☃, ☃, 3, 1, 7, 4, 2, 7, false);
     }
-    if (c[cq.e.a()] != 0) {
+    if (☃.c[cq.e.a()] != 0) {
       a(☃, ☃, 0, 1, 3, 0, 2, 4, false);
     }
-    if (c[cq.d.a()] != 0) {
+    if (☃.c[cq.d.a()] != 0) {
       a(☃, ☃, 11, 1, 0, 12, 2, 0, false);
     }
-    if (c[cq.c.a()] != 0) {
+    if (☃.c[cq.c.a()] != 0) {
       a(☃, ☃, 11, 1, 7, 12, 2, 7, false);
     }
-    if (c[cq.f.a()] != 0) {
+    if (☃.c[cq.f.a()] != 0) {
       a(☃, ☃, 15, 1, 3, 15, 2, 4, false);
     }
-    if (c[cq.d.a()] != 0) {
+    if (☃.c[cq.d.a()] != 0) {
       a(☃, ☃, 3, 5, 0, 4, 6, 0, false);
     }
-    if (c[cq.c.a()] != 0) {
+    if (☃.c[cq.c.a()] != 0) {
       a(☃, ☃, 3, 5, 7, 4, 6, 7, false);
     }
-    if (c[cq.e.a()] != 0) {
+    if (☃.c[cq.e.a()] != 0) {
       a(☃, ☃, 0, 5, 3, 0, 6, 4, false);
     }
-    if (c[cq.d.a()] != 0) {
+    if (☃.c[cq.d.a()] != 0) {
       a(☃, ☃, 11, 5, 0, 12, 6, 0, false);
     }
-    if (c[cq.c.a()] != 0) {
+    if (☃.c[cq.c.a()] != 0) {
       a(☃, ☃, 11, 5, 7, 12, 6, 7, false);
     }
-    if (c[cq.f.a()] != 0) {
+    if (☃.c[cq.f.a()] != 0) {
       a(☃, ☃, 15, 5, 3, 15, 6, 4, false);
     }
     return true;

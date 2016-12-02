@@ -5,7 +5,7 @@ class re$a
   
   public re$a(re paramre, int ☃, rd ☃)
   {
-    b = ☃;
-    a = ☃;
+    this.b = ☃;
+    this.a = ☃;
   }
 }

@@ -6,17 +6,17 @@ public class ma<T>
   
   public ma(T ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   protected ma(T ☃, JsonObject ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   T f()
   {
-    return (T)a;
+    return (T)this.a;
   }
   
   boolean e()

@@ -43,25 +43,25 @@ public class x
       a(☃, this, "commands.debug.start", new Object[0]);
       
       MinecraftServer.N().au();
-      b = MinecraftServer.az();
-      c = MinecraftServer.N().at();
+      this.b = MinecraftServer.az();
+      this.c = MinecraftServer.N().at();
     }
     else if (☃[0].equals("stop"))
     {
       if (☃.length != 1) {
         throw new cf("commands.debug.usage", new Object[0]);
       }
-      if (!Nc.a) {
+      if (!MinecraftServer.N().c.a) {
         throw new bz("commands.debug.notStarted", new Object[0]);
       }
       long ☃ = MinecraftServer.az();
       int ☃ = MinecraftServer.N().at();
       
-      long ☃ = ☃ - b;
-      int ☃ = ☃ - c;
+      long ☃ = ☃ - this.b;
+      int ☃ = ☃ - this.c;
       a(☃, ☃);
       
-      Nc.a = false;
+      MinecraftServer.N().c.a = false;
       a(☃, this, "commands.debug.stop", new Object[] { Float.valueOf((float)☃ / 1000.0F), Integer.valueOf(☃) });
     }
     else
@@ -111,7 +111,7 @@ public class x
   
   private void a(int ☃, String ☃, StringBuilder ☃)
   {
-    List<nt.a> ☃ = Nc.b(☃);
+    List<nt.a> ☃ = MinecraftServer.N().c.b(☃);
     if ((☃ == null) || (☃.size() < 3)) {
       return;
     }
@@ -123,11 +123,11 @@ public class x
       for (int ☃ = 0; ☃ < ☃; ☃++) {
         ☃.append(" ");
       }
-      ☃.append(c).append(" - ").append(String.format("%.2f", new Object[] { Double.valueOf(a) })).append("%/").append(String.format("%.2f", new Object[] { Double.valueOf(b) })).append("%\n");
-      if (!c.equals("unspecified")) {
+      ☃.append(☃.c).append(" - ").append(String.format("%.2f", new Object[] { Double.valueOf(☃.a) })).append("%/").append(String.format("%.2f", new Object[] { Double.valueOf(☃.b) })).append("%\n");
+      if (!☃.c.equals("unspecified")) {
         try
         {
-          a(☃ + 1, ☃ + "." + c, ☃);
+          a(☃ + 1, ☃ + "." + ☃.c, ☃);
         }
         catch (Exception ☃)
         {

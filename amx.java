@@ -12,7 +12,7 @@ public class amx
   
   public boolean a(int ☃, int ☃)
   {
-    return (☃ == a) && (☃ == b);
+    return (☃ == this.a) && (☃ == this.b);
   }
   
   public int b(int ☃, int ☃)
@@ -41,7 +41,7 @@ public class amx
   
   public int a(ads ☃, cj ☃)
   {
-    return c;
+    return ☃.c;
   }
   
   public void a(ads ☃, cj ☃, int ☃) {}
@@ -90,7 +90,7 @@ public class amx
   
   public Random a(long ☃)
   {
-    return new Random(p().J() + a * a * 4987142 + a * 5947611 + b * b * 4392871L + b * 389711 ^ ☃);
+    return new Random(p().J() + this.a * this.a * 4987142 + this.a * 5947611 + this.b * this.b * 4392871L + this.b * 389711 ^ ☃);
   }
   
   public boolean f()

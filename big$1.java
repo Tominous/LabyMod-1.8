@@ -8,7 +8,7 @@ class big$1
   
   protected void a()
   {
-    c = new bas(0.5F);
-    d = new bas(1.0F);
+    this.c = new bas(0.5F);
+    this.d = new bas(1.0F);
   }
 }

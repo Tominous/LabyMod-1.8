@@ -19,7 +19,7 @@ public class ProfileManager
   
   public ArrayList<File> getProfiles()
   {
-    return profiles;
+    return this.profiles;
   }
   
   public static ProfileManager getProfileManager()
@@ -38,7 +38,7 @@ public class ProfileManager
   
   public void loadProfiles()
   {
-    profiles.clear();
+    this.profiles.clear();
     if (!PROFILES_FOLDER.exists())
     {
       PROFILES_FOLDER.mkdir();
@@ -55,7 +55,7 @@ public class ProfileManager
     }
     for (File file : list) {
       if ((file != null) && (file.getName().endsWith(".txt")) && (file.getName().length() >= 5)) {
-        profiles.add(file);
+        this.profiles.add(file);
       }
     }
   }
@@ -84,8 +84,8 @@ public class ProfileManager
         }
         FileUtils.copyFile(CURRENT_OF_OPTIONS, ofDestFile);
       }
-      if (!profiles.contains(file)) {
-        profiles.add(file);
+      if (!this.profiles.contains(file)) {
+        this.profiles.add(file);
       }
       System.out.println("[SPM] Saved profile " + file.getName());
       return true;
@@ -108,7 +108,7 @@ public class ProfileManager
       if (ofDestFile.exists()) {
         ofDestFile.delete();
       }
-      profiles.remove(file);
+      this.profiles.remove(file);
       System.out.println("[SPM] Deleted profile " + file.getName());
       return true;
     }
@@ -128,7 +128,7 @@ public class ProfileManager
           FileUtils.copyFile(ofDestFile, CURRENT_OF_OPTIONS);
         }
         FileUtils.copyFile(file, CURRENT_OPTIONS);
-        At.a();
+        ave.A().t.a();
         System.out.println("[SPM] Loaded profile " + file.getName());
         return true;
       }

@@ -6,6 +6,6 @@ final class ack$d
   
   public void a(aci ☃, int ☃)
   {
-    a += ☃.a(☃, b);
+    this.a += ☃.a(☃, this.b);
   }
 }

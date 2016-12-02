@@ -9,15 +9,15 @@ public class abv
   
   public abv(int ☃, int ☃, zx[] ☃, zx ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
   }
   
   public zx b()
   {
-    return d;
+    return this.d;
   }
   
   public zx[] b(xp ☃)
@@ -35,8 +35,8 @@ public class abv
   
   public boolean a(xp ☃, adm ☃)
   {
-    for (int ☃ = 0; ☃ <= 3 - a; ☃++) {
-      for (int ☃ = 0; ☃ <= 3 - b; ☃++)
+    for (int ☃ = 0; ☃ <= 3 - this.a; ☃++) {
+      for (int ☃ = 0; ☃ <= 3 - this.b; ☃++)
       {
         if (a(☃, ☃, ☃, true)) {
           return true;
@@ -57,11 +57,11 @@ public class abv
         int ☃ = ☃ - ☃;
         int ☃ = ☃ - ☃;
         zx ☃ = null;
-        if ((☃ >= 0) && (☃ >= 0) && (☃ < a) && (☃ < b)) {
+        if ((☃ >= 0) && (☃ >= 0) && (☃ < this.a) && (☃ < this.b)) {
           if (☃) {
-            ☃ = c[(a - ☃ - 1 + ☃ * a)];
+            ☃ = this.c[(this.a - ☃ - 1 + ☃ * this.a)];
           } else {
-            ☃ = c[(☃ + ☃ * a)];
+            ☃ = this.c[(☃ + ☃ * this.a)];
           }
         }
         zx ☃ = ☃.c(☃, ☃);
@@ -85,7 +85,7 @@ public class abv
   public zx a(xp ☃)
   {
     zx ☃ = b().k();
-    if (e) {
+    if (this.e) {
       for (int ☃ = 0; ☃ < ☃.o_(); ☃++)
       {
         zx ☃ = ☃.a(☃);
@@ -99,6 +99,6 @@ public class abv
   
   public int a()
   {
-    return a * b;
+    return this.a * this.b;
   }
 }

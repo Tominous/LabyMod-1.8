@@ -6,7 +6,7 @@ public class biy
   public biy(biu ☃, float ☃)
   {
     super(☃);
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(ws ☃, double ☃, double ☃, double ☃, float ☃, float ☃)
@@ -17,7 +17,7 @@ public class biy
     
     bfl.b((float)☃, (float)☃, (float)☃);
     bfl.B();
-    bfl.a(a, a, a);
+    bfl.a(this.a, this.a, this.a);
     
     bmi ☃ = ave.A().ag().a().a(zy.bL);
     bfx ☃ = bfx.a();
@@ -32,8 +32,8 @@ public class biy
     float ☃ = 0.5F;
     float ☃ = 0.25F;
     
-    bfl.b(180.0F - b.e, 0.0F, 1.0F, 0.0F);
-    bfl.b(-b.f, 1.0F, 0.0F, 0.0F);
+    bfl.b(180.0F - this.b.e, 0.0F, 1.0F, 0.0F);
+    bfl.b(-this.b.f, 1.0F, 0.0F, 0.0F);
     
     ☃.a(7, bms.j);
     ☃.b(-0.5D, -0.25D, 0.0D).a(☃, ☃).c(0.0F, 1.0F, 0.0F).d();

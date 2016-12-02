@@ -27,12 +27,12 @@ public class sp<T extends pr>
   public sp(py ☃, Class<T> ☃, int ☃, boolean ☃, boolean ☃, final Predicate<? super T> ☃)
   {
     super(☃, ☃, ☃);
-    a = ☃;
-    g = ☃;
-    b = new sp.a(☃);
+    this.a = ☃;
+    this.g = ☃;
+    this.b = new sp.a(☃);
     a(1);
     
-    c = new Predicate()
+    this.c = new Predicate()
     {
       public boolean a(T ☃)
       {
@@ -41,7 +41,7 @@ public class sp<T extends pr>
         }
         if ((☃ instanceof wn))
         {
-          double ☃ = f();
+          double ☃ = sp.this.f();
           if (☃.av()) {
             ☃ *= 0.800000011920929D;
           }
@@ -53,33 +53,33 @@ public class sp<T extends pr>
             }
             ☃ *= 0.7F * ☃;
           }
-          if (☃.g(e) > ☃) {
+          if (☃.g(sp.this.e) > ☃) {
             return false;
           }
         }
-        return a(☃, false);
+        return sp.this.a(☃, false);
       }
     };
   }
   
   public boolean a()
   {
-    if ((g > 0) && (e.bc().nextInt(g) != 0)) {
+    if ((this.g > 0) && (this.e.bc().nextInt(this.g) != 0)) {
       return false;
     }
     double ☃ = f();
-    List<T> ☃ = e.o.a(a, e.aR().b(☃, 4.0D, ☃), Predicates.and(c, po.d));
-    Collections.sort(☃, b);
+    List<T> ☃ = this.e.o.a(this.a, this.e.aR().b(☃, 4.0D, ☃), Predicates.and(this.c, po.d));
+    Collections.sort(☃, this.b);
     if (☃.isEmpty()) {
       return false;
     }
-    d = ((pr)☃.get(0));
+    this.d = ((pr)☃.get(0));
     return true;
   }
   
   public void c()
   {
-    e.d(d);
+    this.e.d(this.d);
     super.c();
   }
   
@@ -90,13 +90,13 @@ public class sp<T extends pr>
     
     public a(pk ☃)
     {
-      a = ☃;
+      this.a = ☃;
     }
     
     public int a(pk ☃, pk ☃)
     {
-      double ☃ = a.h(☃);
-      double ☃ = a.h(☃);
+      double ☃ = this.a.h(☃);
+      double ☃ = this.a.h(☃);
       if (☃ < ☃) {
         return -1;
       }

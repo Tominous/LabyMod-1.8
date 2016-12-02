@@ -37,7 +37,7 @@ public class ConfigManager
       }
       catch (FileNotFoundException localFileNotFoundException) {}
     } else {
-      getInstancelogger.info("Settings could not be saved.");
+      LabyMod.getInstance().logger.info("Settings could not be saved.");
     }
   }
   
@@ -93,7 +93,7 @@ public class ConfigManager
   
   private static void delete()
   {
-    getInstancelogger.info("Settings could not be loaded.");
+    LabyMod.getInstance().logger.info("Settings could not be loaded.");
     if (configFile.exists())
     {
       System.out.println("Delete broken config file..");

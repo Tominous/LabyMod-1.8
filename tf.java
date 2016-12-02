@@ -28,8 +28,8 @@ public class tf
     
     a(pr ☃, int ☃)
     {
-      a = ☃;
-      b = ☃;
+      this.a = ☃;
+      this.b = ☃;
     }
   }
   
@@ -38,17 +38,17 @@ public class tf
   
   public tf(adm ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(adm ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(int ☃)
   {
-    g = ☃;
+    this.g = ☃;
     m();
     l();
     if (☃ % 20 == 0) {
@@ -57,16 +57,16 @@ public class tf
     if (☃ % 30 == 0) {
       j();
     }
-    int ☃ = h / 10;
-    if ((l < ☃) && (b.size() > 20) && (a.s.nextInt(7000) == 0))
+    int ☃ = this.h / 10;
+    if ((this.l < ☃) && (this.b.size() > 20) && (this.a.s.nextInt(7000) == 0))
     {
-      aui ☃ = a(d, 2, 4, 2);
+      aui ☃ = a(this.d, 2, 4, 2);
       if (☃ != null)
       {
-        ty ☃ = new ty(a);
-        ☃.b(a, b, c);
-        a.d(☃);
-        l += 1;
+        ty ☃ = new ty(this.a);
+        ☃.b(☃.a, ☃.b, ☃.c);
+        this.a.d(☃);
+        this.l += 1;
       }
     }
   }
@@ -75,7 +75,7 @@ public class tf
   {
     for (int ☃ = 0; ☃ < 10; ☃++)
     {
-      cj ☃ = ☃.a(a.s.nextInt(16) - 8, a.s.nextInt(6) - 3, a.s.nextInt(16) - 8);
+      cj ☃ = ☃.a(this.a.s.nextInt(16) - 8, this.a.s.nextInt(6) - 3, this.a.s.nextInt(16) - 8);
       if (a(☃)) {
         if (a(new cj(☃, ☃, ☃), ☃)) {
           return new aui(☃.n(), ☃.o(), ☃.p());
@@ -87,7 +87,7 @@ public class tf
   
   private boolean a(cj ☃, cj ☃)
   {
-    if (!adm.a(a, ☃.b())) {
+    if (!adm.a(this.a, ☃.b())) {
       return false;
     }
     int ☃ = ☃.n() - ☃.n() / 2;
@@ -95,7 +95,7 @@ public class tf
     for (int ☃ = ☃; ☃ < ☃ + ☃.n(); ☃++) {
       for (int ☃ = ☃.o(); ☃ < ☃.o() + ☃.o(); ☃++) {
         for (int ☃ = ☃; ☃ < ☃ + ☃.p(); ☃++) {
-          if (a.p(new cj(☃, ☃, ☃)).c().v()) {
+          if (this.a.p(new cj(☃, ☃, ☃)).c().v()) {
             return false;
           }
         }
@@ -106,59 +106,59 @@ public class tf
   
   private void j()
   {
-    List<ty> ☃ = a.a(ty.class, new aug(d.n() - e, d.o() - 4, d.p() - e, d.n() + e, d.o() + 4, d.p() + e));
-    l = ☃.size();
+    List<ty> ☃ = this.a.a(ty.class, new aug(this.d.n() - this.e, this.d.o() - 4, this.d.p() - this.e, this.d.n() + this.e, this.d.o() + 4, this.d.p() + this.e));
+    this.l = ☃.size();
   }
   
   private void k()
   {
-    List<wi> ☃ = a.a(wi.class, new aug(d.n() - e, d.o() - 4, d.p() - e, d.n() + e, d.o() + 4, d.p() + e));
-    h = ☃.size();
-    if (h == 0) {
-      j.clear();
+    List<wi> ☃ = this.a.a(wi.class, new aug(this.d.n() - this.e, this.d.o() - 4, this.d.p() - this.e, this.d.n() + this.e, this.d.o() + 4, this.d.p() + this.e));
+    this.h = ☃.size();
+    if (this.h == 0) {
+      this.j.clear();
     }
   }
   
   public cj a()
   {
-    return d;
+    return this.d;
   }
   
   public int b()
   {
-    return e;
+    return this.e;
   }
   
   public int c()
   {
-    return b.size();
+    return this.b.size();
   }
   
   public int d()
   {
-    return g - f;
+    return this.g - this.f;
   }
   
   public int e()
   {
-    return h;
+    return this.h;
   }
   
   public boolean a(cj ☃)
   {
-    return d.i(☃) < e * e;
+    return this.d.i(☃) < this.e * this.e;
   }
   
   public List<te> f()
   {
-    return b;
+    return this.b;
   }
   
   public te b(cj ☃)
   {
     te ☃ = null;
     int ☃ = Integer.MAX_VALUE;
-    for (te ☃ : b)
+    for (te ☃ : this.b)
     {
       int ☃ = ☃.a(☃);
       if (☃ < ☃)
@@ -174,7 +174,7 @@ public class tf
   {
     te ☃ = null;
     int ☃ = Integer.MAX_VALUE;
-    for (te ☃ : b)
+    for (te ☃ : this.b)
     {
       int ☃ = ☃.a(☃);
       if (☃ > 256) {
@@ -193,10 +193,10 @@ public class tf
   
   public te e(cj ☃)
   {
-    if (d.i(☃) > e * e) {
+    if (this.d.i(☃) > this.e * this.e) {
       return null;
     }
-    for (te ☃ : b) {
+    for (te ☃ : this.b) {
       if ((☃.d().n() == ☃.n()) && (☃.d().p() == ☃.p()) && (Math.abs(☃.d().o() - ☃.o()) <= 1)) {
         return ☃;
       }
@@ -206,54 +206,54 @@ public class tf
   
   public void a(te ☃)
   {
-    b.add(☃);
-    c = c.a(☃.d());
+    this.b.add(☃);
+    this.c = this.c.a(☃.d());
     n();
-    f = ☃.h();
+    this.f = ☃.h();
   }
   
   public boolean g()
   {
-    return b.isEmpty();
+    return this.b.isEmpty();
   }
   
   public void a(pr ☃)
   {
-    for (tf.a ☃ : k) {
-      if (a == ☃)
+    for (tf.a ☃ : this.k) {
+      if (☃.a == ☃)
       {
-        b = g;
+        ☃.b = this.g;
         return;
       }
     }
-    k.add(new tf.a(☃, g));
+    this.k.add(new tf.a(☃, this.g));
   }
   
   public pr b(pr ☃)
   {
     double ☃ = Double.MAX_VALUE;
     tf.a ☃ = null;
-    for (int ☃ = 0; ☃ < k.size(); ☃++)
+    for (int ☃ = 0; ☃ < this.k.size(); ☃++)
     {
-      tf.a ☃ = (tf.a)k.get(☃);
-      double ☃ = a.h(☃);
+      tf.a ☃ = (tf.a)this.k.get(☃);
+      double ☃ = ☃.a.h(☃);
       if (☃ <= ☃)
       {
         ☃ = ☃;
         ☃ = ☃;
       }
     }
-    return ☃ != null ? a : null;
+    return ☃ != null ? ☃.a : null;
   }
   
   public wn c(pr ☃)
   {
     double ☃ = Double.MAX_VALUE;
     wn ☃ = null;
-    for (String ☃ : j.keySet()) {
+    for (String ☃ : this.j.keySet()) {
       if (d(☃))
       {
-        wn ☃ = a.a(☃);
+        wn ☃ = this.a.a(☃);
         if (☃ != null)
         {
           double ☃ = ☃.h(☃);
@@ -270,10 +270,10 @@ public class tf
   
   private void l()
   {
-    for (Iterator<tf.a> ☃ = k.iterator(); ☃.hasNext();)
+    for (Iterator<tf.a> ☃ = this.k.iterator(); ☃.hasNext();)
     {
       tf.a ☃ = (tf.a)☃.next();
-      if ((!a.ai()) || (Math.abs(g - b) > 300)) {
+      if ((!☃.a.ai()) || (Math.abs(this.g - ☃.b) > 300)) {
         ☃.remove();
       }
     }
@@ -282,16 +282,16 @@ public class tf
   private void m()
   {
     boolean ☃ = false;
-    boolean ☃ = a.s.nextInt(50) == 0;
-    for (Iterator<te> ☃ = b.iterator(); ☃.hasNext();)
+    boolean ☃ = this.a.s.nextInt(50) == 0;
+    for (Iterator<te> ☃ = this.b.iterator(); ☃.hasNext();)
     {
       te ☃ = (te)☃.next();
       if (☃) {
         ☃.a();
       }
-      if ((!f(☃.d())) || (Math.abs(g - ☃.h()) > 1200))
+      if ((!f(☃.d())) || (Math.abs(this.g - ☃.h()) > 1200))
       {
-        c = c.b(☃.d());
+        this.c = this.c.b(☃.d());
         ☃ = true;
         ☃.a(true);
         ☃.remove();
@@ -304,7 +304,7 @@ public class tf
   
   private boolean f(cj ☃)
   {
-    afh ☃ = a.p(☃).c();
+    afh ☃ = this.a.p(☃).c();
     if ((☃ instanceof agh)) {
       return ☃.t() == arm.d;
     }
@@ -313,24 +313,24 @@ public class tf
   
   private void n()
   {
-    int ☃ = b.size();
+    int ☃ = this.b.size();
     if (☃ == 0)
     {
-      d = new cj(0, 0, 0);
-      e = 0;
+      this.d = new cj(0, 0, 0);
+      this.e = 0;
       return;
     }
-    d = new cj(c.n() / ☃, c.o() / ☃, c.p() / ☃);
+    this.d = new cj(this.c.n() / ☃, this.c.o() / ☃, this.c.p() / ☃);
     int ☃ = 0;
-    for (te ☃ : b) {
-      ☃ = Math.max(☃.a(d), ☃);
+    for (te ☃ : this.b) {
+      ☃ = Math.max(☃.a(this.d), ☃);
     }
-    e = Math.max(32, (int)Math.sqrt(☃) + 1);
+    this.e = Math.max(32, (int)Math.sqrt(☃) + 1);
   }
   
   public int a(String ☃)
   {
-    Integer ☃ = (Integer)j.get(☃);
+    Integer ☃ = (Integer)this.j.get(☃);
     if (☃ != null) {
       return ☃.intValue();
     }
@@ -341,7 +341,7 @@ public class tf
   {
     int ☃ = a(☃);
     int ☃ = ns.a(☃ + ☃, -30, 10);
-    j.put(☃, Integer.valueOf(☃));
+    this.j.put(☃, Integer.valueOf(☃));
     return ☃;
   }
   
@@ -352,14 +352,14 @@ public class tf
   
   public void a(dn ☃)
   {
-    h = ☃.f("PopSize");
-    e = ☃.f("Radius");
-    l = ☃.f("Golems");
-    f = ☃.f("Stable");
-    g = ☃.f("Tick");
-    i = ☃.f("MTick");
-    d = new cj(☃.f("CX"), ☃.f("CY"), ☃.f("CZ"));
-    c = new cj(☃.f("ACX"), ☃.f("ACY"), ☃.f("ACZ"));
+    this.h = ☃.f("PopSize");
+    this.e = ☃.f("Radius");
+    this.l = ☃.f("Golems");
+    this.f = ☃.f("Stable");
+    this.g = ☃.f("Tick");
+    this.i = ☃.f("MTick");
+    this.d = new cj(☃.f("CX"), ☃.f("CY"), ☃.f("CZ"));
+    this.c = new cj(☃.f("ACX"), ☃.f("ACY"), ☃.f("ACZ"));
     
     du ☃ = ☃.c("Doors", 10);
     for (int ☃ = 0; ☃ < ☃.c(); ☃++)
@@ -367,7 +367,7 @@ public class tf
       dn ☃ = ☃.b(☃);
       
       te ☃ = new te(new cj(☃.f("X"), ☃.f("Y"), ☃.f("Z")), ☃.f("IDX"), ☃.f("IDZ"), ☃.f("TS"));
-      b.add(☃);
+      this.b.add(☃);
     }
     du ☃ = ☃.c("Players", 10);
     for (int ☃ = 0; ☃ < ☃.c(); ☃++)
@@ -378,33 +378,33 @@ public class tf
         lt ☃ = MinecraftServer.N().aF();
         GameProfile ☃ = ☃.a(UUID.fromString(☃.j("UUID")));
         if (☃ != null) {
-          j.put(☃.getName(), Integer.valueOf(☃.f("S")));
+          this.j.put(☃.getName(), Integer.valueOf(☃.f("S")));
         }
       }
       else
       {
-        j.put(☃.j("Name"), Integer.valueOf(☃.f("S")));
+        this.j.put(☃.j("Name"), Integer.valueOf(☃.f("S")));
       }
     }
   }
   
   public void b(dn ☃)
   {
-    ☃.a("PopSize", h);
-    ☃.a("Radius", e);
-    ☃.a("Golems", l);
-    ☃.a("Stable", f);
-    ☃.a("Tick", g);
-    ☃.a("MTick", i);
-    ☃.a("CX", d.n());
-    ☃.a("CY", d.o());
-    ☃.a("CZ", d.p());
-    ☃.a("ACX", c.n());
-    ☃.a("ACY", c.o());
-    ☃.a("ACZ", c.p());
+    ☃.a("PopSize", this.h);
+    ☃.a("Radius", this.e);
+    ☃.a("Golems", this.l);
+    ☃.a("Stable", this.f);
+    ☃.a("Tick", this.g);
+    ☃.a("MTick", this.i);
+    ☃.a("CX", this.d.n());
+    ☃.a("CY", this.d.o());
+    ☃.a("CZ", this.d.p());
+    ☃.a("ACX", this.c.n());
+    ☃.a("ACY", this.c.o());
+    ☃.a("ACZ", this.c.p());
     
     du ☃ = new du();
-    for (te ☃ : b)
+    for (te ☃ : this.b)
     {
       dn ☃ = new dn();
       ☃.a("X", ☃.d().n());
@@ -418,7 +418,7 @@ public class tf
     ☃.a("Doors", ☃);
     
     du ☃ = new du();
-    for (String ☃ : j.keySet())
+    for (String ☃ : this.j.keySet())
     {
       dn ☃ = new dn();
       
@@ -427,7 +427,7 @@ public class tf
       if (☃ != null)
       {
         ☃.a("UUID", ☃.getId().toString());
-        ☃.a("S", ((Integer)j.get(☃)).intValue());
+        ☃.a("S", ((Integer)this.j.get(☃)).intValue());
         ☃.a(☃);
       }
     }
@@ -436,17 +436,17 @@ public class tf
   
   public void h()
   {
-    i = g;
+    this.i = this.g;
   }
   
   public boolean i()
   {
-    return (i == 0) || (g - i >= 3600);
+    return (this.i == 0) || (this.g - this.i >= 3600);
   }
   
   public void b(int ☃)
   {
-    for (String ☃ : j.keySet()) {
+    for (String ☃ : this.j.keySet()) {
       a(☃, ☃);
     }
   }

@@ -8,30 +8,30 @@ public abstract class alk
   {
     super.a(☃);
     
-    a = on.b(☃);
+    this.a = on.b(☃);
   }
   
   public void b(dn ☃)
   {
     super.b(☃);
-    if (a != null) {
-      a.a(☃);
+    if (this.a != null) {
+      this.a.a(☃);
     }
   }
   
   public boolean r_()
   {
-    return (a != null) && (!a.a());
+    return (this.a != null) && (!this.a.a());
   }
   
   public on i()
   {
-    return a;
+    return this.a;
   }
   
   public void a(on ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public eu f_()

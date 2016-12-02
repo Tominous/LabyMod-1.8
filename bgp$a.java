@@ -7,38 +7,38 @@ class bgp$a
   
   public bgp$a(bgp.b ☃, int ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
   }
   
   public void a(int ☃)
   {
-    if (☃ < b) {
-      b = ☃;
-    } else if (☃ > c) {
-      c = ☃;
+    if (☃ < this.b) {
+      this.b = ☃;
+    } else if (☃ > this.c) {
+      this.c = ☃;
     }
   }
   
   public bgp.b a()
   {
-    return a;
+    return this.a;
   }
   
   public int b()
   {
-    return b;
+    return this.b;
   }
   
   public int c()
   {
-    return c;
+    return this.c;
   }
   
   public int d()
   {
-    return d;
+    return this.d;
   }
 }

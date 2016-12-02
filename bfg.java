@@ -4,19 +4,19 @@ public class bfg
   
   public bfg()
   {
-    a[adf.a.ordinal()] = new bfd(2097152);
-    a[adf.c.ordinal()] = new bfd(131072);
-    a[adf.b.ordinal()] = new bfd(131072);
-    a[adf.d.ordinal()] = new bfd(262144);
+    this.a[adf.a.ordinal()] = new bfd(2097152);
+    this.a[adf.c.ordinal()] = new bfd(131072);
+    this.a[adf.b.ordinal()] = new bfd(131072);
+    this.a[adf.d.ordinal()] = new bfd(262144);
   }
   
   public bfd a(adf ☃)
   {
-    return a[☃.ordinal()];
+    return this.a[☃.ordinal()];
   }
   
   public bfd a(int ☃)
   {
-    return a[☃];
+    return this.a[☃];
   }
 }

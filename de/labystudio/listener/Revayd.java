@@ -12,7 +12,7 @@ public class Revayd
   
   public static void updateRevayd()
   {
-    isRevayd = (getInstanceip.toLowerCase().contains("revayd.net")) || (getInstanceip.toLowerCase().contains("revayd.living-bots.net")) || (getInstanceip.toLowerCase().contains("212.224.88.206"));
+    isRevayd = (LabyMod.getInstance().ip.toLowerCase().contains("revayd.net")) || (LabyMod.getInstance().ip.toLowerCase().contains("revayd.living-bots.net")) || (LabyMod.getInstance().ip.toLowerCase().contains("212.224.88.206"));
   }
   
   public static boolean isRevayd()

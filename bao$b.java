@@ -9,9 +9,9 @@ public class bao$b
   
   public bao$b(File ☃, File ☃, File ☃, String ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
   }
 }

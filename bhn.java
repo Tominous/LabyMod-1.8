@@ -15,102 +15,102 @@ public class bhn
   
   public bhn(bht ☃, bhn.b ☃)
   {
-    a = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.d = ☃;
   }
   
   public bhn.a a()
   {
-    return g;
+    return this.g;
   }
   
   public bht b()
   {
-    return a;
+    return this.a;
   }
   
   public bhq c()
   {
-    return f;
+    return this.f;
   }
   
   public void a(bhq ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
   
   public bfg d()
   {
-    return e;
+    return this.e;
   }
   
   public void a(bfg ☃)
   {
-    e = ☃;
+    this.e = ☃;
   }
   
   public void a(bhn.a ☃)
   {
-    b.lock();
+    this.b.lock();
     try
     {
-      g = ☃;
+      this.g = ☃;
     }
     finally
     {
-      b.unlock();
+      this.b.unlock();
     }
   }
   
   public void e()
   {
-    b.lock();
+    this.b.lock();
     try
     {
-      if ((d == bhn.b.a) && (g != bhn.a.d)) {
-        a.a(true);
+      if ((this.d == bhn.b.a) && (this.g != bhn.a.d)) {
+        this.a.a(true);
       }
-      h = true;
-      g = bhn.a.d;
-      for (Runnable ☃ : c) {
+      this.h = true;
+      this.g = bhn.a.d;
+      for (Runnable ☃ : this.c) {
         ☃.run();
       }
     }
     finally
     {
-      b.unlock();
+      this.b.unlock();
     }
   }
   
   public void a(Runnable ☃)
   {
-    b.lock();
+    this.b.lock();
     try
     {
-      c.add(☃);
-      if (h) {
+      this.c.add(☃);
+      if (this.h) {
         ☃.run();
       }
     }
     finally
     {
-      b.unlock();
+      this.b.unlock();
     }
   }
   
   public ReentrantLock f()
   {
-    return b;
+    return this.b;
   }
   
   public bhn.b g()
   {
-    return d;
+    return this.d;
   }
   
   public boolean h()
   {
-    return h;
+    return this.h;
   }
   
   public static enum a

@@ -9,8 +9,8 @@ public class aok
   public aok(afh ☃, int ☃)
   {
     super(false);
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
@@ -29,7 +29,7 @@ public class aok
     if (☃.o() <= 3) {
       return false;
     }
-    int ☃ = b;
+    int ☃ = this.b;
     int ☃ = 0;
     while ((☃ >= 0) && (☃ < 3))
     {
@@ -39,7 +39,7 @@ public class aok
       float ☃ = (☃ + ☃ + ☃) * 0.333F + 0.5F;
       for (cj ☃ : cj.a(☃.a(-☃, -☃, -☃), ☃.a(☃, ☃, ☃))) {
         if (☃.i(☃) <= ☃ * ☃) {
-          ☃.a(☃, a.Q(), 4);
+          ☃.a(☃, this.a.Q(), 4);
         }
       }
       ☃ = ☃.a(-(☃ + 1) + ☃.nextInt(2 + ☃ * 2), 0 - ☃.nextInt(2), -(☃ + 1) + ☃.nextInt(2 + ☃ * 2));

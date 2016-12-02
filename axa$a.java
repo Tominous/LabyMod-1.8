@@ -7,7 +7,7 @@ class axa$a
   
   public axa$a(axa paramaxa)
   {
-    super(j, l, m, 43, m - 60, 24);
+    super(paramaxa.j, paramaxa.l, paramaxa.m, 43, paramaxa.m - 60, 24);
   }
   
   private void a(int ☃, int ☃, zx ☃)
@@ -18,7 +18,7 @@ class axa$a
     if ((☃ != null) && (☃.b() != null))
     {
       avc.c();
-      v.k.a(☃, ☃ + 2, ☃ + 2);
+      this.v.k.a(☃, ☃ + 2, ☃ + 2);
       avc.a();
     }
     bfl.C();
@@ -32,7 +32,7 @@ class axa$a
   private void d(int ☃, int ☃, int ☃, int ☃)
   {
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    a.P().a(avp.c);
+    this.a.P().a(avp.c);
     
     float ☃ = 0.0078125F;
     float ☃ = 0.0078125F;
@@ -41,34 +41,34 @@ class axa$a
     bfx ☃ = bfx.a();
     bfd ☃ = ☃.c();
     ☃.a(7, bms.g);
-    ☃.b(☃ + 0, ☃ + 18, axa.a(v)).a((☃ + 0) * 0.0078125F, (☃ + 18) * 0.0078125F).d();
-    ☃.b(☃ + 18, ☃ + 18, axa.b(v)).a((☃ + 18) * 0.0078125F, (☃ + 18) * 0.0078125F).d();
-    ☃.b(☃ + 18, ☃ + 0, axa.c(v)).a((☃ + 18) * 0.0078125F, (☃ + 0) * 0.0078125F).d();
-    ☃.b(☃ + 0, ☃ + 0, axa.d(v)).a((☃ + 0) * 0.0078125F, (☃ + 0) * 0.0078125F).d();
+    ☃.b(☃ + 0, ☃ + 18, axa.a(this.v)).a((☃ + 0) * 0.0078125F, (☃ + 18) * 0.0078125F).d();
+    ☃.b(☃ + 18, ☃ + 18, axa.b(this.v)).a((☃ + 18) * 0.0078125F, (☃ + 18) * 0.0078125F).d();
+    ☃.b(☃ + 18, ☃ + 0, axa.c(this.v)).a((☃ + 18) * 0.0078125F, (☃ + 0) * 0.0078125F).d();
+    ☃.b(☃ + 0, ☃ + 0, axa.d(this.v)).a((☃ + 0) * 0.0078125F, (☃ + 0) * 0.0078125F).d();
     ☃.b();
   }
   
   protected int b()
   {
-    return axa.e(v).c().size();
+    return axa.e(this.v).c().size();
   }
   
   protected void a(int ☃, boolean ☃, int ☃, int ☃)
   {
-    u = ☃;
-    v.f();
+    this.u = ☃;
+    this.v.f();
   }
   
   protected boolean a(int ☃)
   {
-    return ☃ == u;
+    return ☃ == this.u;
   }
   
   protected void a() {}
   
   protected void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    aqa ☃ = (aqa)axa.e(v).c().get(axa.e(v).c().size() - ☃ - 1);
+    aqa ☃ = (aqa)axa.e(this.v).c().get(axa.e(this.v).c().size() - ☃ - 1);
     
     alz ☃ = ☃.c();
     afh ☃ = ☃.c();
@@ -89,7 +89,7 @@ class axa$a
       }
     }
     a(☃, ☃, ☃);
-    v.q.a(☃, ☃ + 18 + 5, ☃ + 3, 16777215);
+    this.v.q.a(☃, ☃ + 18 + 5, ☃ + 3, 16777215);
     String ☃;
     String ☃;
     if (☃ == 0)
@@ -99,17 +99,17 @@ class axa$a
     else
     {
       String ☃;
-      if (☃ == axa.e(v).c().size() - 1) {
+      if (☃ == axa.e(this.v).c().size() - 1) {
         ☃ = bnq.a("createWorld.customize.flat.layer.bottom", new Object[] { Integer.valueOf(☃.b()) });
       } else {
         ☃ = bnq.a("createWorld.customize.flat.layer", new Object[] { Integer.valueOf(☃.b()) });
       }
     }
-    v.q.a(☃, ☃ + 2 + 213 - v.q.a(☃), ☃ + 3, 16777215);
+    this.v.q.a(☃, ☃ + 2 + 213 - this.v.q.a(☃), ☃ + 3, 16777215);
   }
   
   protected int d()
   {
-    return b - 70;
+    return this.b - 70;
   }
 }

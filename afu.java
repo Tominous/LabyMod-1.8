@@ -9,7 +9,7 @@ public class afu
   public afu()
   {
     super(arm.k);
-    j(M.b().a(O, cq.c).a(a, Integer.valueOf(0)));
+    j(this.M.b().a(O, cq.c).a(a, Integer.valueOf(0)));
     a(true);
   }
   
@@ -19,7 +19,7 @@ public class afu
     {
       f(☃, ☃, ☃);
     }
-    else if (s.nextInt(5) == 0)
+    else if (☃.s.nextInt(5) == 0)
     {
       int ☃ = ((Integer)☃.b(a)).intValue();
       if (☃ < 2) {
@@ -86,7 +86,7 @@ public class afu
   
   public void a(adm ☃, cj ☃, alz ☃, pr ☃, zx ☃)
   {
-    cq ☃ = cq.a(y);
+    cq ☃ = cq.a(☃.y);
     ☃.a(☃, ☃.a(O, ☃), 2);
   }
   

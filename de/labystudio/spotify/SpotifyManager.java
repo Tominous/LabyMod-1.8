@@ -20,41 +20,41 @@ public class SpotifyManager
   {
     try
     {
-      spotifyUser32 = ((SpotifyUser32)Native.loadLibrary("User32", SpotifyUser32.class));
-      spotify = null;
-      title = "?";
-      set = false;
+      this.spotifyUser32 = ((SpotifyUser32)Native.loadLibrary("User32", SpotifyUser32.class));
+      this.spotify = null;
+      this.title = "?";
+      this.set = false;
       
-      wndeNumProc = new WinUser.WNDENUMPROC()
+      this.wndeNumProc = new WinUser.WNDENUMPROC()
       {
         public boolean callback(WinDef.HWND hWnd, Pointer arg1)
         {
           byte[] windowText = new byte['Ȁ'];
-          spotifyUser32.GetWindowTextA(hWnd, windowText, 512);
+          SpotifyManager.this.spotifyUser32.GetWindowTextA(hWnd, windowText, 512);
           String wText = Native.toString(windowText);
           if (wText.isEmpty()) {
             return true;
           }
           boolean notPlaying = wText.equals("Spotify");
-          if (((spotify == null) && (notPlaying)) || (notPlaying) || ((title.equals(wText)) && (!hWnd.toString().equals(spotify)))) {
-            spotify = hWnd.toString();
+          if (((SpotifyManager.this.spotify == null) && (notPlaying)) || (notPlaying) || ((SpotifyManager.this.title.equals(wText)) && (!hWnd.toString().equals(SpotifyManager.this.spotify)))) {
+            SpotifyManager.this.spotify = hWnd.toString();
           }
-          if ((spotify != null) && (spotify.equals(hWnd.toString())))
+          if ((SpotifyManager.this.spotify != null) && (SpotifyManager.this.spotify.equals(hWnd.toString())))
           {
-            boolean refresh = !title.equals(wText);
+            boolean refresh = !SpotifyManager.this.title.equals(wText);
             if (notPlaying)
             {
-              title = "No song playing";
+              SpotifyManager.this.title = "No song playing";
             }
             else
             {
-              title = wText;
-              setDisplayTime(System.currentTimeMillis());
+              SpotifyManager.this.title = wText;
+              SpotifyManager.this.setDisplayTime(System.currentTimeMillis());
             }
             if (refresh) {
               SpotifyManager.this.newTitleIsPlaying();
             }
-            set = true;
+            SpotifyManager.this.set = true;
           }
           return true;
         }
@@ -72,12 +72,12 @@ public class SpotifyManager
   
   public String getArtistName()
   {
-    return artistName;
+    return this.artistName;
   }
   
   public String getTrackName()
   {
-    return trackName;
+    return this.trackName;
   }
   
   private void newTitleIsPlaying()
@@ -85,29 +85,29 @@ public class SpotifyManager
     if ((getSpotifyTitle() != null) && (getSpotifyTitle().contains(" - ")))
     {
       String[] split = getSpotifyTitle().replaceFirst(" - ", "@@@").split("@@@");
-      artistName = split[0];
-      trackName = split[1];
+      this.artistName = split[0];
+      this.trackName = split[1];
     }
     else
     {
-      artistName = null;
-      trackName = null;
+      this.artistName = null;
+      this.trackName = null;
     }
   }
   
   public SpotifyUser32 getSpotifyUser32()
   {
-    return spotifyUser32;
+    return this.spotifyUser32;
   }
   
   public String getSpotifyTitle()
   {
-    return title;
+    return this.title;
   }
   
   public long getDisplayTime()
   {
-    return displayTime;
+    return this.displayTime;
   }
   
   public void setDisplayTime(long displayTime)
@@ -117,7 +117,7 @@ public class SpotifyManager
   
   public WinUser.WNDENUMPROC getWndeNumProc()
   {
-    return wndeNumProc;
+    return this.wndeNumProc;
   }
   
   public void updateTitle()
@@ -128,13 +128,13 @@ public class SpotifyManager
     if (getWndeNumProc() == null) {
       return;
     }
-    set = false;
+    this.set = false;
     new SpotifyThread(getSpotifyUser32(), getWndeNumProc(), new SpotifyCallback()
     {
       public void done()
       {
-        if ((spotify != null) && (!set)) {
-          spotify = null;
+        if ((SpotifyManager.this.spotify != null) && (!SpotifyManager.this.set)) {
+          SpotifyManager.this.spotify = null;
         }
       }
     })

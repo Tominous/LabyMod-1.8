@@ -15,10 +15,10 @@ public class bgi
   
   public bgi(cq ☃, int ☃, String ☃, bgk ☃)
   {
-    b = ☃;
-    c = ☃;
-    d = ☃;
-    e = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.e = ☃;
   }
   
   static class a

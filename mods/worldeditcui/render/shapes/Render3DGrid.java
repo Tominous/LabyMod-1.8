@@ -31,14 +31,14 @@ public class Render3DGrid
   {
     bfx tessellator = bfx.a();
     bfd worldRenderer = tessellator.c();
-    double x1 = first.getX() - cameraPos.getX();
-    double y1 = first.getY() - cameraPos.getY();
-    double z1 = first.getZ() - cameraPos.getZ();
-    double x2 = second.getX() - cameraPos.getX();
-    double y2 = second.getY() - cameraPos.getY();
-    double z2 = second.getZ() - cameraPos.getZ();
+    double x1 = this.first.getX() - cameraPos.getX();
+    double y1 = this.first.getY() - cameraPos.getY();
+    double z1 = this.first.getZ() - cameraPos.getZ();
+    double x2 = this.second.getX() - cameraPos.getX();
+    double y2 = this.second.getY() - cameraPos.getY();
+    double z2 = this.second.getZ() - cameraPos.getZ();
     double cullAt = 128.0D;
-    for (LineInfo tempColour : colour.getColours())
+    for (LineInfo tempColour : this.colour.getColours())
     {
       tempColour.prepareRender();
       worldRenderer.a(1, bms.e);

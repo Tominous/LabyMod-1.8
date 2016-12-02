@@ -35,13 +35,13 @@ public class PackFileDownloader
     try
     {
       countDownload();
-      downloadFile(ResourcePacks24.creator_home + pack.getCreator() + "/rp_d/" + pack.getHashName() + ".zip", new File(s, pack.getBestPossibleName() + ".zip"));
+      downloadFile(ResourcePacks24.creator_home + this.pack.getCreator() + "/rp_d/" + this.pack.getHashName() + ".zip", new File(s, this.pack.getBestPossibleName() + ".zip"));
     }
     catch (IOException e)
     {
       e.printStackTrace();
     }
-    callBack.progress(100);
+    this.callBack.progress(100);
     ResourcePacks24.getInstance().getDeletedPacks().remove(file.getName());
   }
   
@@ -49,7 +49,7 @@ public class PackFileDownloader
   {
     try
     {
-      HttpURLConnection connection = (HttpURLConnection)new URL(ResourcePacks24.download_count + pack.getId() + "&username=" + ave.A().L().c()).openConnection();
+      HttpURLConnection connection = (HttpURLConnection)new URL(ResourcePacks24.download_count + this.pack.getId() + "&username=" + ave.A().L().c()).openConnection();
       connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
       connection.setRequestProperty("Cookie", "foo=bar");
       connection.connect();
@@ -84,7 +84,7 @@ public class PackFileDownloader
       if (currentProgress < 0) {
         currentProgress = 2;
       }
-      callBack.progress(currentProgress);
+      this.callBack.progress(currentProgress);
       bout.write(data, 0, x);
     }
     bout.close();

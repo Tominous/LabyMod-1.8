@@ -20,8 +20,8 @@ public class axg
   
   public axg(axu p_i1031_1_, bde p_i1031_2_)
   {
-    a = p_i1031_1_;
-    f = p_i1031_2_;
+    this.a = p_i1031_1_;
+    this.f = p_i1031_2_;
   }
   
   int online = 0;
@@ -30,38 +30,38 @@ public class axg
   
   public void e()
   {
-    g.a();
-    if ((settingsdirectConnectInfo) && (!g.b().replace(" ", "").isEmpty()) && 
-      (update + 5000L < System.currentTimeMillis()))
+    this.g.a();
+    if ((ConfigManager.settings.directConnectInfo) && (!this.g.b().replace(" ", "").isEmpty()) && 
+      (this.update + 5000L < System.currentTimeMillis()))
     {
-      update = System.currentTimeMillis();
+      this.update = System.currentTimeMillis();
       try
       {
         boolean setNull = false;
-        bdd serveraddress = bdd.a(g.b());
-        if ((pinger != null) && 
-          (pinger.getCurrentData() != null) && 
-          (pinger.getCurrentData().maxPlayers == 0) && 
-          (pinger.getCurrentData().players == 0) && 
-          (pinger.getCurrentData().serverName.equals(serveraddress.a()))) {
+        bdd serveraddress = bdd.a(this.g.b());
+        if ((this.pinger != null) && 
+          (this.pinger.getCurrentData() != null) && 
+          (this.pinger.getCurrentData().maxPlayers == 0) && 
+          (this.pinger.getCurrentData().players == 0) && 
+          (this.pinger.getCurrentData().serverName.equals(serveraddress.a()))) {
           setNull = true;
         }
         ServerPinger server = new ServerPinger(serveraddress.a(), serveraddress.b());
         server.start();
         if (setNull)
         {
-          pinger = null;
-          max = 0;
-          online = 0;
+          this.pinger = null;
+          this.max = 0;
+          this.online = 0;
         }
         else
         {
-          pinger = server;
+          this.pinger = server;
         }
       }
       catch (Exception error)
       {
-        pinger = null;
+        this.pinger = null;
         error.printStackTrace();
       }
     }
@@ -70,35 +70,35 @@ public class axg
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    n.clear();
-    n.add(new avs(0, l / 2 - 100, m / 4 + 96 + 12, bnq.a("selectServer.select", new Object[0])));
-    n.add(new avs(1, l / 2 - 100, m / 4 + 120 + 12, bnq.a("gui.cancel", new Object[0])));
-    g = new avw(2, q, l / 2 - 100, 116, 200, 20);
-    g.f(128);
-    g.b(true);
-    g.a(j.t.aE);
-    n.get(0)).l = ((g.b().length() > 0) && (g.b().split(":").length > 0));
+    this.n.clear();
+    this.n.add(new avs(0, this.l / 2 - 100, this.m / 4 + 96 + 12, bnq.a("selectServer.select", new Object[0])));
+    this.n.add(new avs(1, this.l / 2 - 100, this.m / 4 + 120 + 12, bnq.a("gui.cancel", new Object[0])));
+    this.g = new avw(2, this.q, this.l / 2 - 100, 116, 200, 20);
+    this.g.f(128);
+    this.g.b(true);
+    this.g.a(this.j.t.aE);
+    ((avs)this.n.get(0)).l = ((this.g.b().length() > 0) && (this.g.b().split(":").length > 0));
   }
   
   public void m()
   {
     Keyboard.enableRepeatEvents(false);
-    j.t.aE = g.b();
-    j.t.b();
+    this.j.t.aE = this.g.b();
+    this.j.t.b();
   }
   
   protected void a(avs button)
     throws IOException
   {
-    if (l) {
-      if (k == 1)
+    if (button.l) {
+      if (button.k == 1)
       {
-        a.a(false, 0);
+        this.a.a(false, 0);
       }
-      else if (k == 0)
+      else if (button.k == 0)
       {
-        f.b = g.b();
-        a.a(true, 0);
+        this.f.b = this.g.b();
+        this.a.a(true, 0);
       }
     }
   }
@@ -106,14 +106,14 @@ public class axg
   protected void a(char typedChar, int keyCode)
     throws IOException
   {
-    if (g.a(typedChar, keyCode))
+    if (this.g.a(typedChar, keyCode))
     {
-      n.get(0)).l = ((g.b().length() > 0) && (g.b().split(":").length > 0));
-      j.t.aE = g.b();
+      ((avs)this.n.get(0)).l = ((this.g.b().length() > 0) && (this.g.b().split(":").length > 0));
+      this.j.t.aE = this.g.b();
     }
     else if ((keyCode == 28) || (keyCode == 156))
     {
-      a((avs)n.get(0));
+      a((avs)this.n.get(0));
     }
   }
   
@@ -121,50 +121,50 @@ public class axg
     throws IOException
   {
     super.a(mouseX, mouseY, mouseButton);
-    g.a(mouseX, mouseY, mouseButton);
+    this.g.a(mouseX, mouseY, mouseButton);
   }
   
   public void a(int mouseX, int mouseY, float partialTicks)
   {
     c();
-    a(q, bnq.a("selectServer.direct", new Object[0]), l / 2, 20, 16777215);
-    c(q, bnq.a("addServer.enterIp", new Object[0]), l / 2 - 100, 100, 10526880);
-    g.g();
-    if (settingsdirectConnectInfo) {
-      if ((pinger != null) && (pinger.getCurrentData() != null))
+    a(this.q, bnq.a("selectServer.direct", new Object[0]), this.l / 2, 20, 16777215);
+    c(this.q, bnq.a("addServer.enterIp", new Object[0]), this.l / 2 - 100, 100, 10526880);
+    this.g.g();
+    if (ConfigManager.settings.directConnectInfo) {
+      if ((this.pinger != null) && (this.pinger.getCurrentData() != null))
       {
-        int s = pinger.getCurrentData().players;
-        if (s > online)
+        int s = this.pinger.getCurrentData().players;
+        if (s > this.online)
         {
-          if ((s - online > 500) && (s != 0)) {
-            online = s;
+          if ((s - this.online > 500) && (s != 0)) {
+            this.online = s;
           }
-          online += 1;
+          this.online += 1;
         }
-        if (s < online)
+        if (s < this.online)
         {
-          if ((s - online < 500) && (s != 0)) {
-            online = s;
+          if ((s - this.online < 500) && (s != 0)) {
+            this.online = s;
           }
-          online -= 1;
+          this.online -= 1;
         }
-        if ((pinger.getCurrentData().maxPlayers != 0) && (s == 0)) {
-          online = s;
+        if ((this.pinger.getCurrentData().maxPlayers != 0) && (s == 0)) {
+          this.online = s;
         }
-        s = pinger.getCurrentData().maxPlayers;
+        s = this.pinger.getCurrentData().maxPlayers;
         if (s != 0) {
-          max = s;
+          this.max = s;
         }
-        boolean refresh = (pinger.getCurrentData().maxPlayers == 0) && (pinger.getCurrentData().players == 0);
+        boolean refresh = (this.pinger.getCurrentData().maxPlayers == 0) && (this.pinger.getCurrentData().players == 0);
         if (refresh) {
-          getInstancedraw.drawString(Color.c(1) + "Players: " + Color.cl("c") + online + "/" + max, l / 2 - 100, 140.0D);
+          LabyMod.getInstance().draw.drawString(Color.c(1) + "Players: " + Color.cl("c") + this.online + "/" + this.max, this.l / 2 - 100, 140.0D);
         } else {
-          getInstancedraw.drawString(Color.c(1) + "Players: " + Color.cl("7") + online + "/" + max, l / 2 - 100, 140.0D);
+          LabyMod.getInstance().draw.drawString(Color.c(1) + "Players: " + Color.cl("7") + this.online + "/" + this.max, this.l / 2 - 100, 140.0D);
         }
       }
       else
       {
-        getInstancedraw.drawString(Color.cl("c") + "Pinging..", l / 2 - 100, 140.0D);
+        LabyMod.getInstance().draw.drawString(Color.cl("c") + "Pinging..", this.l / 2 - 100, 140.0D);
       }
     }
     super.a(mouseX, mouseY, partialTicks);

@@ -28,12 +28,12 @@ public class ahq
     
     public zx a()
     {
-      return a;
+      return this.a;
     }
     
     public void a(zx ☃)
     {
-      a = ☃;
+      this.a = ☃;
       p_();
     }
   }
@@ -43,7 +43,7 @@ public class ahq
   protected ahq()
   {
     super(arm.d, arn.l);
-    j(M.b().a(a, Boolean.valueOf(false)));
+    j(this.M.b().a(a, Boolean.valueOf(false)));
     a(yz.c);
   }
   
@@ -62,7 +62,7 @@ public class ahq
   
   public void a(adm ☃, cj ☃, alz ☃, zx ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
     akw ☃ = ☃.s(☃);
@@ -75,7 +75,7 @@ public class ahq
   
   private void e(adm ☃, cj ☃, alz ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
     akw ☃ = ☃.s(☃);
@@ -92,9 +92,9 @@ public class ahq
     ☃.a(null);
     
     float ☃ = 0.7F;
-    double ☃ = s.nextFloat() * ☃ + (1.0F - ☃) * 0.5D;
-    double ☃ = s.nextFloat() * ☃ + (1.0F - ☃) * 0.2D + 0.6D;
-    double ☃ = s.nextFloat() * ☃ + (1.0F - ☃) * 0.5D;
+    double ☃ = ☃.s.nextFloat() * ☃ + (1.0F - ☃) * 0.5D;
+    double ☃ = ☃.s.nextFloat() * ☃ + (1.0F - ☃) * 0.2D + 0.6D;
+    double ☃ = ☃.s.nextFloat() * ☃ + (1.0F - ☃) * 0.5D;
     
     zx ☃ = ☃.k();
     
@@ -111,7 +111,7 @@ public class ahq
   
   public void a(adm ☃, cj ☃, alz ☃, float ☃, int ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
     super.a(☃, ☃, ☃, ☃, 0);

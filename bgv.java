@@ -12,20 +12,20 @@ public class bgv
   
   public void a(afh ☃, bgy ☃)
   {
-    a.put(☃, ☃);
+    this.a.put(☃, ☃);
   }
   
   public void a(afh... ☃)
   {
-    Collections.addAll(b, ☃);
+    Collections.addAll(this.b, ☃);
   }
   
   public Map<alz, bov> a()
   {
     Map<alz, bov> ☃ = Maps.newIdentityHashMap();
     for (afh ☃ : afh.c) {
-      if (!b.contains(☃)) {
-        ☃.putAll(((bgy)Objects.firstNonNull(a.get(☃), new bgw())).a(☃));
+      if (!this.b.contains(☃)) {
+        ☃.putAll(((bgy)Objects.firstNonNull(this.a.get(☃), new bgw())).a(☃));
       }
     }
     return ☃;

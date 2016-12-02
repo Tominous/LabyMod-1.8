@@ -17,21 +17,21 @@ public class aql$h
   {
     super(0);
     
-    m = ☃;
-    switch (aql.1.a[m.ordinal()])
+    this.m = ☃;
+    switch (aql.1.a[this.m.ordinal()])
     {
     case 1: 
     case 2: 
-      l = new aqe(☃, 39, ☃, ☃ + 58 - 1, 61, ☃ + 58 - 1);
+      this.l = new aqe(☃, 39, ☃, ☃ + 58 - 1, 61, ☃ + 58 - 1);
       break;
     default: 
-      l = new aqe(☃, 39, ☃, ☃ + 58 - 1, 61, ☃ + 58 - 1);
+      this.l = new aqe(☃, 39, ☃, ☃ + 58 - 1, 61, ☃ + 58 - 1);
     }
     List<aql.v> ☃ = a(☃);
     
-    o.d = true;
-    q.add(new aql.p(m, o));
-    q.add(new aql.j(m, p, ☃));
+    this.o.d = true;
+    this.q.add(new aql.p(this.m, this.o));
+    this.q.add(new aql.j(this.m, this.p, ☃));
     
     List<aql.i> ☃ = Lists.newArrayList();
     ☃.add(new aql.b(null));
@@ -44,21 +44,21 @@ public class aql$h
     for (Iterator ☃ = ☃.iterator(); ☃.hasNext();)
     {
       ☃ = (aql.v)☃.next();
-      if ((!d) && (!☃.b())) {
+      if ((!☃.d) && (!☃.b())) {
         for (aql.i ☃ : ☃) {
           if (☃.a(☃))
           {
-            q.add(☃.a(m, ☃, ☃));
+            this.q.add(☃.a(this.m, ☃, ☃));
             break;
           }
         }
       }
     }
     aql.v ☃;
-    int ☃ = l.b;
+    int ☃ = this.l.b;
     int ☃ = a(9, 22);
     int ☃ = b(9, 22);
-    for (aql.r ☃ : q) {
+    for (aql.r ☃ : this.q) {
       ☃.c().a(☃, ☃, ☃);
     }
     aqe ☃ = aqe.a(a(1, 1), d(1), b(1, 1), a(23, 21), d(8), b(23, 21));
@@ -66,10 +66,10 @@ public class aql$h
     aqe ☃ = aqe.a(a(22, 22), d(13), b(22, 22), a(35, 35), d(17), b(35, 35));
     
     int ☃ = ☃.nextInt();
-    q.add(new aql.u(m, ☃, ☃++));
-    q.add(new aql.u(m, ☃, ☃++));
+    this.q.add(new aql.u(this.m, ☃, ☃++));
+    this.q.add(new aql.u(this.m, ☃, ☃++));
     
-    q.add(new aql.q(m, ☃));
+    this.q.add(new aql.q(this.m, ☃));
   }
   
   private List<aql.v> a(Random ☃)
@@ -99,7 +99,7 @@ public class aql$h
         ☃[☃] = new aql.v(☃);
       }
     }
-    o = ☃[g];
+    this.o = ☃[g];
     for (int ☃ = 0; ☃ < 5; ☃++) {
       for (int ☃ = 0; ☃ < 5; ☃++) {
         for (int ☃ = 0; ☃ < 3; ☃++)
@@ -133,20 +133,20 @@ public class aql$h
     ☃[i].a(cq.d, ☃ = new aql.v(1001));
     aql.v ☃;
     ☃[j].a(cq.d, ☃ = new aql.v(1002));
-    d = true;
-    d = true;
-    d = true;
-    o.e = true;
+    ☃.d = true;
+    ☃.d = true;
+    ☃.d = true;
+    this.o.e = true;
     
-    p = ☃[b(☃.nextInt(4), 0, 2)];
-    p.d = true;
-    p.b[cq.f.a()].d = true;
-    p.b[cq.c.a()].d = true;
-    p.b[cq.f.a()].b[cq.c.a()].d = true;
-    p.b[cq.b.a()].d = true;
-    p.b[cq.f.a()].b[cq.b.a()].d = true;
-    p.b[cq.c.a()].b[cq.b.a()].d = true;
-    p.b[cq.f.a()].b[cq.c.a()].b[cq.b.a()].d = true;
+    this.p = ☃[b(☃.nextInt(4), 0, 2)];
+    this.p.d = true;
+    this.p.b[cq.f.a()].d = true;
+    this.p.b[cq.c.a()].d = true;
+    this.p.b[cq.f.a()].b[cq.c.a()].d = true;
+    this.p.b[cq.b.a()].d = true;
+    this.p.b[cq.f.a()].b[cq.b.a()].d = true;
+    this.p.b[cq.c.a()].b[cq.b.a()].d = true;
+    this.p.b[cq.f.a()].b[cq.c.a()].b[cq.b.a()].d = true;
     
     List<aql.v> ☃ = Lists.newArrayList();
     for (aql.v ☃ : ☃) {
@@ -169,20 +169,20 @@ public class aql$h
         ☃++;
         
         int ☃ = ☃.nextInt(6);
-        if (c[☃] != 0)
+        if (☃.c[☃] != 0)
         {
           int ☃ = cq.a(☃).d().a();
           
-          c[☃] = false;
-          b[☃].c[☃] = false;
-          if ((☃.a(☃++)) && (b[☃].a(☃++)))
+          ☃.c[☃] = false;
+          ☃.b[☃].c[☃] = false;
+          if ((☃.a(☃++)) && (☃.b[☃].a(☃++)))
           {
             ☃++;
           }
           else
           {
-            c[☃] = true;
-            b[☃].c[☃] = true;
+            ☃.c[☃] = true;
+            ☃.b[☃].c[☃] = true;
           }
         }
       }
@@ -196,7 +196,7 @@ public class aql$h
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
   {
-    int ☃ = Math.max(☃.F(), 64) - l.b;
+    int ☃ = Math.max(☃.F(), 64) - this.l.b;
     
     a(☃, ☃, 0, 0, 0, 58, ☃, 58, false);
     
@@ -242,7 +242,7 @@ public class aql$h
       a(☃, ☃, 0 - ☃, 0 + ☃ * 2, -1 - ☃, 57 + ☃, 23, -1 - ☃, false);
       a(☃, ☃, 0 - ☃, 0 + ☃ * 2, 58 + ☃, 57 + ☃, 23, 58 + ☃, false);
     }
-    for (aql.r ☃ : q) {
+    for (aql.r ☃ : this.q) {
       if (☃.c().a(☃)) {
         ☃.a(☃, ☃, ☃);
       }

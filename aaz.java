@@ -7,7 +7,7 @@ public class aaz
   public aaz(afh ☃, boolean ☃)
   {
     super(☃);
-    b = ☃;
+    this.b = ☃;
     if (☃)
     {
       d(0);
@@ -17,7 +17,7 @@ public class aaz
   
   public int a(zx ☃, int ☃)
   {
-    return b.h(b.a(☃.i()));
+    return this.b.h(this.b.a(☃.i()));
   }
   
   public int a(int ☃)
@@ -27,18 +27,18 @@ public class aaz
   
   public aaz a(String[] ☃)
   {
-    c = ☃;
+    this.c = ☃;
     return this;
   }
   
   public String e_(zx ☃)
   {
-    if (c == null) {
+    if (this.c == null) {
       return super.e_(☃);
     }
     int ☃ = ☃.i();
-    if ((☃ >= 0) && (☃ < c.length)) {
-      return super.e_(☃) + "." + c[☃];
+    if ((☃ >= 0) && (☃ < this.c.length)) {
+      return super.e_(☃) + "." + this.c[☃];
     }
     return super.e_(☃);
   }

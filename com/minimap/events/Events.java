@@ -52,7 +52,7 @@ public class Events
   
   public Events()
   {
-    deathCounter = 0;
+    this.deathCounter = 0;
   }
   
   public void createDeathpoint(wn p)
@@ -61,25 +61,25 @@ public class Events
     if (Minimap.waypoints == null) {
       return;
     }
-    for (Waypoint w : waypointslist) {
-      if (type == 1)
+    for (Waypoint w : Minimap.waypoints.list) {
+      if (w.type == 1)
       {
         if ((!XaeroMinimap.getSettings().getDeathpoints()) || (!XaeroMinimap.getSettings().getOldDeathpoints()))
         {
-          waypointslist.remove(w);
+          Minimap.waypoints.list.remove(w);
           break;
         }
-        disabled = disabled;
-        type = 0;
-        name = "gui.xaero_deathpoint_old";
+        disabled = w.disabled;
+        w.type = 0;
+        w.name = "gui.xaero_deathpoint_old";
         break;
       }
     }
     if (XaeroMinimap.getSettings().getDeathpoints())
     {
-      Waypoint deathpoint = new Waypoint(Minimap.myFloor(s), Minimap.myFloor(t), Minimap.myFloor(u), "gui.xaero_deathpoint", "D", 0, 1);
-      disabled = disabled;
-      waypointslist.add(deathpoint);
+      Waypoint deathpoint = new Waypoint(Minimap.myFloor(p.s), Minimap.myFloor(p.t), Minimap.myFloor(p.u), "gui.xaero_deathpoint", "D", 0, 1);
+      deathpoint.disabled = disabled;
+      Minimap.waypoints.list.add(deathpoint);
     }
     try
     {
@@ -96,16 +96,16 @@ public class Events
     if ((XaeroMinimap.settings.getShowIngameWaypoints()) && (Minimap.waypoints != null))
     {
       pk entity = XaeroMinimap.mc.ac();
-      double d3 = P + (s - P) * partialTicks;
-      double d4 = Q + (t - Q) * partialTicks;
-      double d5 = R + (u - R) * partialTicks;
+      double d3 = entity.P + (entity.s - entity.P) * partialTicks;
+      double d4 = entity.Q + (entity.t - entity.Q) * partialTicks;
+      double d5 = entity.R + (entity.u - entity.R) * partialTicks;
       bfx tessellator = bfx.a();
       bfd worldrenderer = tessellator.c();
-      Iterator iterator = waypointslist.iterator();
+      Iterator iterator = Minimap.waypoints.list.iterator();
       while (iterator.hasNext())
       {
         Waypoint w = (Waypoint)iterator.next();
-        if ((!disabled) && ((type != 1) || (XaeroMinimap.getSettings().getDeathpoints()))) {
+        if ((!w.disabled) && ((w.type != 1) || (XaeroMinimap.getSettings().getDeathpoints()))) {
           renderIngameWaypoint(w, 12.0D, d3, d4, d5, entity, worldrenderer, tessellator);
         }
       }
@@ -125,9 +125,9 @@ public class Events
     float f = 1.6F;
     float f1 = 0.01666667F * f;
     bfl.E();
-    float offX = x - (float)d3 + 0.5F;
-    float offY = y - (float)d4 + 1.0F;
-    float offZ = z - (float)d5 + 0.5F;
+    float offX = w.x - (float)d3 + 0.5F;
+    float offY = w.y - (float)d4 + 1.0F;
+    float offZ = w.z - (float)d5 + 0.5F;
     double distance = Math.sqrt(offX * offX + offY * offY + offZ * offZ);
     float textSize = 1.0F;
     boolean background = false;
@@ -143,7 +143,7 @@ public class Events
       if (distance > 20.0D)
       {
         textSize = 1.6F;
-        if (getSettingsdistance == 1)
+        if (XaeroMinimap.getSettings().distance == 1)
         {
           float Z = (float)(offZ != 0.0F ? offZ : 0.001D);
           float angle = (float)Math.toDegrees(Math.atan(-offX / Z));
@@ -154,10 +154,10 @@ public class Events
               angle -= 180.0F;
             }
           }
-          float cameraAngle = ns.g(y);
+          float cameraAngle = ns.g(entity.y);
           showDistance = (angle - cameraAngle > -20.0F) && (angle - cameraAngle < 20.0F);
         }
-        else if (getSettingsdistance == 2)
+        else if (XaeroMinimap.getSettings().distance == 2)
         {
           showDistance = true;
         }
@@ -174,8 +174,8 @@ public class Events
     }
     bfl.b(offX, offY, offZ);
     GL11.glNormal3f(0.0F, 1.0F, 0.0F);
-    bfl.b(-e, 0.0F, 1.0F, 0.0F);
-    bfl.b(f, 1.0F, 0.0F, 0.0F);
+    bfl.b(-renderManager.e, 0.0F, 1.0F, 0.0F);
+    bfl.b(renderManager.f, 1.0F, 0.0F, 0.0F);
     bfl.a(-f1, -f1, f1);
     bfl.f();
     bfl.a(false);
@@ -198,7 +198,7 @@ public class Events
     }
     if ((ServerFilter.getCurrentFilterType() != ServerFilter.FilterType.DISALLOWED) && (XaeroMinimap.allowMiniMap))
     {
-      Ao.j();
+      ave.A().o.j();
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       InterfaceHandler.drawInterfaces(e.getPartialTicks());
       Animation.tick();
@@ -208,17 +208,17 @@ public class Events
   @EventHandler
   public void onTick(GameTickEvent e)
   {
-    if (lastScreen != mcm)
+    if (this.lastScreen != mc.m)
     {
-      lastScreen = mcm;
-      if (((lastScreen instanceof aya)) || ((lastScreen instanceof azh))) {
+      this.lastScreen = mc.m;
+      if (((this.lastScreen instanceof aya)) || ((this.lastScreen instanceof azh))) {
         XaeroMinimap.getSettings().resetServerSettings();
       }
-      if ((lastScreen instanceof axe))
+      if ((this.lastScreen instanceof axe))
       {
-        deathCounter += 1;
-        if ((deathCounter & 0x1) == 0) {
-          createDeathpoint(mch);
+        this.deathCounter += 1;
+        if ((this.deathCounter & 0x1) == 0) {
+          createDeathpoint(XaeroMinimap.mc.h);
         }
       }
     }
@@ -237,7 +237,7 @@ public class Events
     }
     ServerFilter.FilterType filter = ServerFilter.getFilterTypeForServer(e.getIp());
     if (filter != ServerFilter.FilterType.ALLOWED) {
-      mch.b(new fa("[Minimap] This server has a filter for the minimap: " + filter.name()));
+      mc.h.b(new fa("[Minimap] This server has a filter for the minimap: " + filter.name()));
     }
   }
   

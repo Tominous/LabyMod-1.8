@@ -10,21 +10,21 @@ final class kb$8
     aiv ☃ = (aiv)afi.aU;
     if ((☃.d(☃)) && (☃.e(☃, ☃)))
     {
-      if (!D) {
+      if (!☃.D) {
         ☃.a(☃, ☃.Q(), 3);
       }
-      b -= 1;
+      ☃.b -= 1;
     }
     else
     {
-      b = false;
+      this.b = false;
     }
     return ☃;
   }
   
   protected void a(ck ☃)
   {
-    if (b) {
+    if (this.b) {
       ☃.i().b(1000, ☃.d(), 0);
     } else {
       ☃.i().b(1001, ☃.d(), 0);

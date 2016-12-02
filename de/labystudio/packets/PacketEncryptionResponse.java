@@ -12,32 +12,32 @@ public class PacketEncryptionResponse
   
   public PacketEncryptionResponse(SecretKey key, PublicKey publicKey, byte[] hash)
   {
-    sharedSecret = CryptManager.encryptData(publicKey, key.getEncoded());
-    verifyToken = CryptManager.encryptData(publicKey, hash);
+    this.sharedSecret = CryptManager.encryptData(publicKey, key.getEncoded());
+    this.verifyToken = CryptManager.encryptData(publicKey, hash);
   }
   
   public PacketEncryptionResponse() {}
   
   public byte[] getSharedSecret()
   {
-    return sharedSecret;
+    return this.sharedSecret;
   }
   
   public byte[] getVerifyToken()
   {
-    return verifyToken;
+    return this.verifyToken;
   }
   
   public void read(PacketBuf buf)
   {
-    sharedSecret = buf.readByteArray();
-    verifyToken = buf.readByteArray();
+    this.sharedSecret = buf.readByteArray();
+    this.verifyToken = buf.readByteArray();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeByteArray(sharedSecret);
-    buf.writeByteArray(verifyToken);
+    buf.writeByteArray(this.sharedSecret);
+    buf.writeByteArray(this.verifyToken);
   }
   
   public void handle(PacketHandler packetHandler)

@@ -16,7 +16,7 @@ public class aaf
       ps ☃ = (ps)☃;
       ☃.a(☃.q());
       ☃.bX();
-      b -= 1;
+      ☃.b -= 1;
       return true;
     }
     return super.a(☃, ☃, ☃);

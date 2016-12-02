@@ -7,6 +7,6 @@ final class amc$1
   
   public boolean a(amc ☃)
   {
-    return (☃ != null) && (a.apply(☃.a()));
+    return (☃ != null) && (this.a.apply(☃.a()));
   }
 }

@@ -12,10 +12,10 @@ public class he
   
   public he(int ☃, oj ☃, adr ☃, adp.a ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
   }
   
   public void a(fj ☃)
@@ -26,41 +26,41 @@ public class he
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readInt();
-    b = oj.a(☃.readUnsignedByte());
-    c = adp.a.a(☃.readUnsignedByte());
-    d = adr.a(☃.c(16));
-    if (d == null) {
-      d = adr.b;
+    this.a = ☃.readInt();
+    this.b = oj.a(☃.readUnsignedByte());
+    this.c = adp.a.a(☃.readUnsignedByte());
+    this.d = adr.a(☃.c(16));
+    if (this.d == null) {
+      this.d = adr.b;
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeInt(a);
-    ☃.writeByte(b.a());
-    ☃.writeByte(c.a());
-    ☃.a(d.a());
+    ☃.writeInt(this.a);
+    ☃.writeByte(this.b.a());
+    ☃.writeByte(this.c.a());
+    ☃.a(this.d.a());
   }
   
   public int a()
   {
-    return a;
+    return this.a;
   }
   
   public oj b()
   {
-    return b;
+    return this.b;
   }
   
   public adp.a c()
   {
-    return c;
+    return this.c;
   }
   
   public adr d()
   {
-    return d;
+    return this.d;
   }
 }

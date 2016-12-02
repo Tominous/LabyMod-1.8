@@ -33,8 +33,8 @@ public abstract class FancyGuiListExtended
       int l = getSlotIndexFromScreenCoords(mouseX, mouseY);
       if (l >= 0)
       {
-        int i1 = left + width / 2 - getListWidth() / 2 + 2;
-        int j1 = top + 4 - getAmountScrolled() + l * slotHeight + headerPadding;
+        int i1 = this.left + this.width / 2 - getListWidth() / 2 + 2;
+        int j1 = this.top + 4 - getAmountScrolled() + l * this.slotHeight + this.headerPadding;
         int k1 = mouseX - i1;
         int l1 = mouseY - j1;
         if (getListEntry(l).mousePressed(l, mouseX, mouseY, mouseEvent, k1, l1))
@@ -51,8 +51,8 @@ public abstract class FancyGuiListExtended
   {
     for (int l = 0; l < getSize(); l++)
     {
-      int i1 = left + width / 2 - getListWidth() / 2 + 2;
-      int j1 = top + 4 - getAmountScrolled() + l * slotHeight + headerPadding;
+      int i1 = this.left + this.width / 2 - getListWidth() / 2 + 2;
+      int j1 = this.top + 4 - getAmountScrolled() + l * this.slotHeight + this.headerPadding;
       int k1 = p_148181_1_ - i1;
       int l1 = p_148181_2_ - j1;
       getListEntry(l).mouseReleased(l, p_148181_1_, p_148181_2_, p_148181_3_, k1, l1);

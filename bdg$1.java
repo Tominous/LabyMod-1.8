@@ -13,31 +13,31 @@ class bdg$1
   
   public void a(jr ☃)
   {
-    if (e)
+    if (this.e)
     {
-      a.a(new fa("Received unrequested status"));
+      this.a.a(new fa("Received unrequested status"));
       return;
     }
-    e = true;
+    this.e = true;
     js ☃ = ☃.a();
     if (☃.a() != null) {
-      b.d = ☃.a().d();
+      this.b.d = ☃.a().d();
     } else {
-      b.d = "";
+      this.b.d = "";
     }
     if (☃.c() != null)
     {
-      b.g = ☃.c().a();
-      b.f = ☃.c().b();
+      this.b.g = ☃.c().a();
+      this.b.f = ☃.c().b();
     }
     else
     {
-      b.g = "Old";
-      b.f = 0;
+      this.b.g = "Old";
+      this.b.f = 0;
     }
     if (☃.b() != null)
     {
-      b.c = (a.h + "" + ☃.b().b() + "" + a.i + "/" + a.h + ☃.b().a());
+      this.b.c = (a.h + "" + ☃.b().b() + "" + a.i + "/" + a.h + ☃.b().a());
       if (ArrayUtils.isNotEmpty(☃.b().c()))
       {
         StringBuilder ☃ = new StringBuilder();
@@ -55,49 +55,49 @@ class bdg$1
           }
           ☃.append("... and ").append(☃.b().b() - ☃.b().c().length).append(" more ...");
         }
-        b.i = ☃.toString();
+        this.b.i = ☃.toString();
       }
     }
     else
     {
-      b.c = (a.i + "???");
+      this.b.c = (a.i + "???");
     }
     if (☃.d() != null)
     {
       String ☃ = ☃.d();
       if (☃.startsWith("data:image/png;base64,")) {
-        b.a(☃.substring("data:image/png;base64,".length()));
+        this.b.a(☃.substring("data:image/png;base64,".length()));
       } else {
         bdg.c().error("Invalid server icon (unknown format)");
       }
     }
     else
     {
-      b.a(null);
+      this.b.a(null);
     }
-    f = ave.J();
-    a.a(new ju(f));
-    d = true;
+    this.f = ave.J();
+    this.a.a(new ju(this.f));
+    this.d = true;
   }
   
   public void a(jq ☃)
   {
-    long ☃ = f;
+    long ☃ = this.f;
     long ☃ = ave.J();
-    b.e = (☃ - ☃);
+    this.b.e = (☃ - ☃);
     
-    a.a(new fa("Finished"));
+    this.a.a(new fa("Finished"));
   }
   
   public void a(eu ☃)
   {
-    if (!d)
+    if (!this.d)
     {
-      bdg.c().error("Can't ping " + b.b + ": " + ☃.c());
-      b.d = (a.e + "Can't connect to server.");
-      b.c = "";
+      bdg.c().error("Can't ping " + this.b.b + ": " + ☃.c());
+      this.b.d = (a.e + "Can't connect to server.");
+      this.b.c = "";
       
-      bdg.a(c, b);
+      bdg.a(this.c, this.b);
     }
   }
 }

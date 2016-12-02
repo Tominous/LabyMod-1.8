@@ -9,28 +9,28 @@ public class adv
   
   public adv(adm ☃, cj ☃, cj ☃, int ☃)
   {
-    e = ☃;
+    this.e = ☃;
     
-    a = (☃.n() - ☃ >> 4);
-    b = (☃.p() - ☃ >> 4);
+    this.a = (☃.n() - ☃ >> 4);
+    this.b = (☃.p() - ☃ >> 4);
     int ☃ = ☃.n() + ☃ >> 4;
     int ☃ = ☃.p() + ☃ >> 4;
     
-    c = new amy[☃ - a + 1][☃ - b + 1];
+    this.c = new amy[☃ - this.a + 1][☃ - this.b + 1];
     
-    d = true;
-    for (int ☃ = a; ☃ <= ☃; ☃++) {
-      for (int ☃ = b; ☃ <= ☃; ☃++) {
-        c[(☃ - a)][(☃ - b)] = ☃.a(☃, ☃);
+    this.d = true;
+    for (int ☃ = this.a; ☃ <= ☃; ☃++) {
+      for (int ☃ = this.b; ☃ <= ☃; ☃++) {
+        this.c[(☃ - this.a)][(☃ - this.b)] = ☃.a(☃, ☃);
       }
     }
     for (int ☃ = ☃.n() >> 4; ☃ <= ☃.n() >> 4; ☃++) {
       for (int ☃ = ☃.p() >> 4; ☃ <= ☃.p() >> 4; ☃++)
       {
-        amy ☃ = c[(☃ - a)][(☃ - b)];
+        amy ☃ = this.c[(☃ - this.a)][(☃ - this.b)];
         if ((☃ != null) && 
           (!☃.c(☃.o(), ☃.o()))) {
-          d = false;
+          this.d = false;
         }
       }
     }
@@ -38,15 +38,15 @@ public class adv
   
   public boolean W()
   {
-    return d;
+    return this.d;
   }
   
   public akw s(cj ☃)
   {
-    int ☃ = (☃.n() >> 4) - a;
-    int ☃ = (☃.p() >> 4) - b;
+    int ☃ = (☃.n() >> 4) - this.a;
+    int ☃ = (☃.p() >> 4) - this.b;
     
-    return c[☃][☃].a(☃, amy.a.a);
+    return this.c[☃][☃].a(☃, amy.a.a);
   }
   
   public int b(cj ☃, int ☃)
@@ -64,11 +64,11 @@ public class adv
     if ((☃.o() >= 0) && 
       (☃.o() < 256))
     {
-      int ☃ = (☃.n() >> 4) - a;
-      int ☃ = (☃.p() >> 4) - b;
-      if ((☃ >= 0) && (☃ < c.length) && (☃ >= 0) && (☃ < c[☃].length))
+      int ☃ = (☃.n() >> 4) - this.a;
+      int ☃ = (☃.p() >> 4) - this.b;
+      if ((☃ >= 0) && (☃ < this.c.length) && (☃ >= 0) && (☃ < this.c[☃].length))
       {
-        amy ☃ = c[☃][☃];
+        amy ☃ = this.c[☃][☃];
         if (☃ != null) {
           return ☃.g(☃);
         }
@@ -79,16 +79,16 @@ public class adv
   
   public ady b(cj ☃)
   {
-    return e.b(☃);
+    return this.e.b(☃);
   }
   
   private int a(ads ☃, cj ☃)
   {
-    if ((☃ == ads.a) && (e.t.o())) {
+    if ((☃ == ads.a) && (this.e.t.o())) {
       return 0;
     }
     if ((☃.o() < 0) || (☃.o() >= 256)) {
-      return c;
+      return ☃.c;
     }
     if (p(☃).c().s())
     {
@@ -105,10 +105,10 @@ public class adv
       }
       return ☃;
     }
-    int ☃ = (☃.n() >> 4) - a;
-    int ☃ = (☃.p() >> 4) - b;
+    int ☃ = (☃.n() >> 4) - this.a;
+    int ☃ = (☃.p() >> 4) - this.b;
     
-    return c[☃][☃].a(☃, ☃);
+    return this.c[☃][☃].a(☃, ☃);
   }
   
   public boolean d(cj ☃)
@@ -119,12 +119,12 @@ public class adv
   public int b(ads ☃, cj ☃)
   {
     if ((☃.o() < 0) || (☃.o() >= 256)) {
-      return c;
+      return ☃.c;
     }
-    int ☃ = (☃.n() >> 4) - a;
-    int ☃ = (☃.p() >> 4) - b;
+    int ☃ = (☃.n() >> 4) - this.a;
+    int ☃ = (☃.p() >> 4) - this.b;
     
-    return c[☃][☃].a(☃, ☃);
+    return this.c[☃][☃].a(☃, ☃);
   }
   
   public int a(cj ☃, cq ☃)
@@ -135,6 +135,6 @@ public class adv
   
   public adr G()
   {
-    return e.G();
+    return this.e.G();
   }
 }

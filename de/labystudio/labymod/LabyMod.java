@@ -25,6 +25,7 @@ import de.labystudio.chat.ClientConnection;
 import de.labystudio.chat.EnumAlertType;
 import de.labystudio.chat.LabyModPlayer;
 import de.labystudio.cosmetic.CosmeticManager;
+import de.labystudio.cosmetic.CosmeticTick;
 import de.labystudio.downloader.ModInfoDownloader;
 import de.labystudio.downloader.UserCapesDownloader;
 import de.labystudio.downloader.UserCosmeticsDownloader;
@@ -71,7 +72,6 @@ import eu;
 import fa;
 import im;
 import io.netty.buffer.Unpooled;
-import java.awt.Desktop;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -176,11 +176,11 @@ public class LabyMod
     if (!overwrite)
     {
       overwrite = true;
-      Aq = new GuiIngameMod(ave.A());
+      ave.A().q = new GuiIngameMod(ave.A());
     }
     try
     {
-      Display.setTitle("Minecraft 1.8.8 | LabyMod 2.7.97");
+      Display.setTitle("Minecraft 1.8.8 | LabyMod 2.7.98");
     }
     catch (Exception e)
     {
@@ -194,27 +194,27 @@ public class LabyMod
     SupportLog.overwrite();
     System.out.println("[LabyMod] Loading labymod..");
     L.load();
-    mc = ave.A();
-    textureManager = new TextureManager();
-    draw = new DrawUtils();
+    this.mc = ave.A();
+    this.textureManager = new TextureManager();
+    this.draw = new DrawUtils();
     ConfigManager.loadProperties(true);
-    achievementGui = new GuiAchievementMod(mc);
-    client = new Client();
-    handler = new ChatHandler();
+    this.achievementGui = new GuiAchievementMod(this.mc);
+    this.client = new Client();
+    this.handler = new ChatHandler();
     
-    client.init();
+    this.client.init();
     FriendsLoader.loadFriends();
     FilterLoader.loadFilters();
     AutoTextLoader.load();
-    capeManager = new CapeManager();
-    cosmeticManager = new CosmeticManager();
+    this.capeManager = new CapeManager();
+    this.cosmeticManager = new CosmeticManager();
     if (SystemUtils.IS_OS_WINDOWS) {
-      spotifyManager = new SpotifyManager();
+      this.spotifyManager = new SpotifyManager();
     }
     if (ConfigManager.settings == null) {
       return;
     }
-    if (settingsteamSpeak) {
+    if (ConfigManager.settings.teamSpeak) {
       TeamSpeak.enable();
     }
     Debug.debug("[LabyMod] Download all cape and cosmetic infos..");
@@ -225,14 +225,14 @@ public class LabyMod
     Debug.debug("[LabyMod] Loaded " + getCapeManager().countUserCapes() + " capes!");
     ModManager.loadMods();
     if (!LOGO.isLogo(getPlayerName())) {
-      settingslogomode = false;
+      ConfigManager.settings.logomode = false;
     }
     updaterHook();
     StatsLoader.loadstats();
-    if (settingscontroller) {
+    if (ConfigManager.settings.controller) {
       ControllerInput.init();
     }
-    System.out.println("[LabyMod] LabyMod Version 2.7.97 for Minecraft 1.8.8 loaded!");
+    System.out.println("[LabyMod] LabyMod Version 2.7.98 for Minecraft 1.8.8 loaded!");
   }
   
   private void updaterHook()
@@ -245,15 +245,15 @@ public class LabyMod
         {
           CrashFix.fixOptifineCrash();
           System.out.println("[LabyMod] Checking if you are using an outdated LabyMod version..");
-          if (getInstanceautoUpdaterLatestVersionId > getInstanceautoUpdaterCurrentVersionId)
+          if (LabyMod.getInstance().autoUpdaterLatestVersionId > LabyMod.getInstance().autoUpdaterCurrentVersionId)
           {
-            System.out.println("[LabyMod] You are outdated! You are still on Version v2.7.97, the latest version v" + latestVersionName + " will now be installed..");
+            System.out.println("[LabyMod] You are outdated! You are still on Version v2.7.98, the latest version v" + LabyMod.this.latestVersionName + " will now be installed..");
             
             Runtime.getRuntime().exec("java -jar LabyMod/Updater-1.8.8.jar");
           }
           else
           {
-            System.out.println("[LabyMod] You are using the latest LabyMod version v2.7.97");
+            System.out.println("[LabyMod] You are using the latest LabyMod version v2.7.98");
           }
         }
         catch (Exception e)
@@ -266,27 +266,27 @@ public class LabyMod
   
   public SpotifyManager getSpotifyManager()
   {
-    return spotifyManager;
+    return this.spotifyManager;
   }
   
   public CapeManager getCapeManager()
   {
-    return capeManager;
+    return this.capeManager;
   }
   
   public CosmeticManager getCosmeticManager()
   {
-    return cosmeticManager;
+    return this.cosmeticManager;
   }
   
   public Client getClient()
   {
-    return client;
+    return this.client;
   }
   
   public float getPartialTicks()
   {
-    return partialTicks;
+    return this.partialTicks;
   }
   
   public void setPartialTicks(float partialTicks)
@@ -296,7 +296,7 @@ public class LabyMod
   
   public ServerBroadcast getServerBroadcast()
   {
-    return serverBroadcast;
+    return this.serverBroadcast;
   }
   
   public void setServerBroadcast(ServerBroadcast serverBroadcast)
@@ -306,43 +306,43 @@ public class LabyMod
   
   public boolean isUpdateAvailable()
   {
-    if (getInstanceautoUpdaterLatestVersionId == 0) {
+    if (getInstance().autoUpdaterLatestVersionId == 0) {
       return false;
     }
-    return getInstanceautoUpdaterLatestVersionId > getInstanceautoUpdaterCurrentVersionId;
+    return getInstance().autoUpdaterLatestVersionId > getInstance().autoUpdaterCurrentVersionId;
   }
   
   public void resetIP()
   {
-    if (((ip == null) || (!ip.replace(" ", "").isEmpty())) && 
-      (client.getClientConnection().getState() == EnumConnectionState.PLAY)) {
-      client.getClientConnection().sendPacket(new PacketPlayServerStatus(" ", 0));
+    if (((this.ip == null) || (!this.ip.replace(" ", "").isEmpty())) && 
+      (this.client.getClientConnection().getState() == EnumConnectionState.PLAY)) {
+      this.client.getClientConnection().sendPacket(new PacketPlayServerStatus(" ", 0));
     }
-    ip = "";
-    gameMode = "";
-    joined = false;
+    this.ip = "";
+    this.gameMode = "";
+    this.joined = false;
   }
   
   public void resetMod()
   {
-    scroll = 0;
-    lavaTime = 0;
-    playerPing = 0;
-    lavaTime = 0;
-    nickname = "";
+    this.scroll = 0;
+    this.lavaTime = 0;
+    this.playerPing = 0;
+    this.lavaTime = 0;
+    this.nickname = "";
     Manager.holograms.clear();
     
     ChatHandler.resetTyping();
-    if (gameMode == null) {
-      gameMode = "";
+    if (this.gameMode == null) {
+      this.gameMode = "";
     }
-    if (!gameMode.isEmpty())
+    if (!this.gameMode.isEmpty())
     {
-      gameMode = "";
+      this.gameMode = "";
       ChatHandler.updateGameMode("");
     }
-    header = null;
-    footer = null;
+    this.header = null;
+    this.footer = null;
     JumpLeague.resetJumpLeague();
     GommeHD.resetGommeHD();
     Timolia.resetTimolia();
@@ -354,38 +354,38 @@ public class LabyMod
   
   public String getHeader()
   {
-    if ((header == null) || (header.c() == null)) {
+    if ((this.header == null) || (this.header.c() == null)) {
       return "";
     }
-    return header.c();
+    return this.header.c();
   }
   
   public String getFooter()
   {
-    if ((footer == null) || (footer.c() == null)) {
+    if ((this.footer == null) || (this.footer.c() == null)) {
       return "";
     }
-    return footer.c();
+    return this.footer.c();
   }
   
   public void sendCommand(String send)
   {
     if (isInGame()) {
-      mc.h.e("/" + send);
+      this.mc.h.e("/" + send);
     }
   }
   
   public void sendChatMessage(String message)
   {
     if (isInGame()) {
-      mc.h.e(message);
+      this.mc.h.e(message);
     }
   }
   
   public void displayMessageInChat(String message)
   {
-    if (Aq != null) {
-      Aq.d().a(new fa(message));
+    if (ave.A().q != null) {
+      ave.A().q.d().a(new fa(message));
     }
   }
   
@@ -395,29 +395,28 @@ public class LabyMod
     if (Client.isBusy()) {
       return;
     }
-    if (!client.hasNotifications(player)) {
+    if (!this.client.hasNotifications(player)) {
       return;
     }
-    if (settingschatAlertType)
+    if (ConfigManager.settings.chatAlertType)
     {
-      if (settingsalertsChat) {
-        getInstance().displayMessageInChat(ClientConnection.chatPrefix + Color.cl("e") + prefix + player
-          .getName() + Color.cl("7") + " " + message);
+      if (ConfigManager.settings.alertsChat) {
+        getInstance().displayMessageInChat(ClientConnection.chatPrefix + Color.cl("e") + prefix + player.getName() + Color.cl("7") + " " + message);
       }
     }
     else {
-      achievementGui.displayMessage(prefix + player.getName(), message, EnumAlertType.CHAT);
+      this.achievementGui.displayMessage(prefix + player.getName(), message, EnumAlertType.CHAT);
     }
   }
   
   public String getPlayerName()
   {
-    return mc.L().c();
+    return this.mc.L().c();
   }
   
   public UUID getPlayerUUID()
   {
-    UUID uuid = mc.L().e().getId();
+    UUID uuid = this.mc.L().e().getId();
     if (uuid == null) {
       return UUID.randomUUID();
     }
@@ -428,7 +427,7 @@ public class LabyMod
   {
     try
     {
-      return (mc != null) && (mc.h != null) && (mc.h != null);
+      return (this.mc != null) && (this.mc.h != null) && (this.mc.h != null);
     }
     catch (Exception error) {}
     return false;
@@ -436,8 +435,8 @@ public class LabyMod
   
   public boolean isChatGUI()
   {
-    if (mc.m != null) {
-      return mc.m.toString().contains("GuiChat");
+    if (this.mc.m != null) {
+      return this.mc.m.toString().contains("GuiChat");
     }
     return false;
   }
@@ -449,58 +448,60 @@ public class LabyMod
     }
     ClickCounter.tick();
     SupportLog.listenKey();
-    if (settingscontroller) {
+    CosmeticTick.tickAllCosmetics();
+    if (ConfigManager.settings.controller) {
       ControllerInput.tick();
     }
-    secondLoop += 1L;
-    if (secondLoop >= 20L)
+    this.secondLoop += 1L;
+    if (this.secondLoop >= 20L)
     {
-      secondLoop = 0L;
+      this.secondLoop = 0L;
       secondLoop();
     }
   }
   
   public void secondLoop()
   {
-    min += 1;
-    if ((getSpotifyManager() != null) && (settingsspotfiyTrack)) {
+    this.min += 1;
+    if ((getSpotifyManager() != null) && (ConfigManager.settings.spotfiyTrack)) {
       getSpotifyManager().updateTitle();
     }
     if (isInGame())
     {
-      onlinePlayers.clear();
-      onlinePlayers.addAll(mc.h.a.d());
-      if (settingslavaTime) {
-        if ((mc.f.a(mc.h.aR().b(0.0D, -0.4000000059604645D, 0.0D).d(0.001D, 0.001D, 0.001D), arm.i, mc.h)) && (mc.h.at()))
+      this.onlinePlayers.clear();
+      this.onlinePlayers.addAll(this.mc.h.a.d());
+      if (ConfigManager.settings.lavaTime) {
+        if ((this.mc.f.a(this.mc.h.aR().b(0.0D, -0.4000000059604645D, 0.0D).d(0.001D, 0.001D, 0.001D), arm.i, this.mc.h)) && 
+          (this.mc.h.at()))
         {
-          lavaTime += 1;
-          removeChallenge = 0;
+          this.lavaTime += 1;
+          this.removeChallenge = 0;
         }
         else
         {
-          removeChallenge += 1;
-          if (removeChallenge > 2)
+          this.removeChallenge += 1;
+          if (this.removeChallenge > 2)
           {
-            lavaTime = 0;
-            removeChallenge = 0;
+            this.lavaTime = 0;
+            this.removeChallenge = 0;
           }
         }
       }
     }
     else
     {
-      isAFK = false;
+      this.isAFK = false;
     }
-    if (mc.m == null) {
+    if (this.mc.m == null) {
       ChatHandler.updateIsWriting(null, "");
     }
-    if (min >= 60)
+    if (this.min >= 60)
     {
-      min = 0;
+      this.min = 0;
       minutesLoop();
     }
     GommeHD.loop();
-    if ((settingsteamSpeak) && (TeamSpeakController.getInstance() != null)) {
+    if ((ConfigManager.settings.teamSpeak) && (TeamSpeakController.getInstance() != null)) {
       TeamSpeakController.getInstance().tick();
     }
   }
@@ -512,7 +513,7 @@ public class LabyMod
     }
   }
   
-  public boolean openWebpage(String urlString)
+  public boolean openWebpage(String urlString, boolean request)
   {
     try
     {
@@ -520,7 +521,7 @@ public class LabyMod
         (!urlString.toLowerCase().startsWith("http://"))) {
         urlString = "http://" + urlString;
       }
-      Desktop.getDesktop().browse(new URL(urlString).toURI());
+      Utils.openWebpage(new URL(urlString).toURI(), request);
       return true;
     }
     catch (Exception e)
@@ -532,18 +533,18 @@ public class LabyMod
   
   public void connectToServer(String address)
   {
-    if (Af != null)
+    if (ave.A().f != null)
     {
-      Af.H();
+      ave.A().f.H();
       ave.A().a((bdb)null);
     }
-    ave.A().a(new awz(new aya(), mc, new bde("Server", address, false)));
+    ave.A().a(new awz(new aya(), this.mc, new bde("Server", address, false)));
   }
   
   public Boolean hasFocus()
   {
     if (isInGame()) {
-      return Boolean.valueOf(mc.w);
+      return Boolean.valueOf(this.mc.w);
     }
     return Boolean.valueOf(false);
   }
@@ -560,9 +561,9 @@ public class LabyMod
   public void back()
   {
     if (isInGame()) {
-      mc.a(new axp());
+      this.mc.a(new axp());
     } else {
-      mc.a(new azh(null));
+      this.mc.a(new azh(null));
     }
   }
   
@@ -570,15 +571,15 @@ public class LabyMod
   {
     resetMod();
     if (address == null) {
-      ip = "";
+      this.ip = "";
     } else {
-      ip = address;
+      this.ip = address;
     }
     this.port = port;
-    settingslast_Server = address;
+    ConfigManager.settings.last_Server = address;
     Allowed.update(address);
-    if (client.getClientConnection().getState() != EnumConnectionState.OFFLINE) {
-      client.getClientConnection().sendPacket(new PacketPlayServerStatus(address, port));
+    if (this.client.getClientConnection().getState() != EnumConnectionState.OFFLINE) {
+      this.client.getClientConnection().sendPacket(new PacketPlayServerStatus(address, port));
     }
   }
   
@@ -602,9 +603,9 @@ public class LabyMod
   
   public void overlay(int mouseX, int mouseY)
   {
-    if ((achievementGui != null) && (
-      (!settingschatAlertType) || (!settingsteamSpeakAlertTypeChat) || (!settingsmojangStatusChat))) {
-      achievementGui.updateAchievementWindow();
+    if ((this.achievementGui != null) && (
+      (!ConfigManager.settings.chatAlertType) || (!ConfigManager.settings.teamSpeakAlertTypeChat) || (!ConfigManager.settings.mojangStatusChat))) {
+      this.achievementGui.updateAchievementWindow();
     }
     DrawUtils.updateMouse(mouseX, mouseY);
     KeyListener.handle();
@@ -616,13 +617,13 @@ public class LabyMod
     {
       JumpLeague.isFallingDown();
       ModGui.smoothFPS();
-      if (!joined)
+      if (!this.joined)
       {
-        joined = true;
+        this.joined = true;
         onJoin();
       }
     }
-    if (settingscontroller) {
+    if (ConfigManager.settings.controller) {
       ControllerInput.mouseTick();
     }
   }
@@ -630,21 +631,20 @@ public class LabyMod
   public void onJoin()
   {
     if (ModAPI.enabled()) {
-      ModAPI.callEvent(new JoinedServerEvent(ip, port));
+      ModAPI.callEvent(new JoinedServerEvent(this.ip, this.port));
     }
-    if ((!mc.F()) && 
-      (!getInstancecommandQueue.isEmpty())) {
-      getInstance().sendCommand((String)getInstancecommandQueue.get(0));
+    if ((!this.mc.F()) && 
+      (!getInstance().commandQueue.isEmpty())) {
+      getInstance().sendCommand((String)getInstance().commandQueue.get(0));
     }
     em packetBuffer = new em(Unpooled.buffer());
-    packetBuffer.a("LabyMod v2.7.97");
-    mc.u().a(new im("LABYMOD", packetBuffer));
-    if (chatPacketUpdate) {
-      displayMessageInChat(Color.cl("c") + "LabyMod is outdated!" + Color.cl("7") + " Download the latest version " + 
-        Color.cl("e") + "v" + latestVersionName + Color.cl("7") + " at " + 
-        Color.cl("9") + "https://LabyMod.net" + "");
+    packetBuffer.a("LabyMod v2.7.98");
+    this.mc.u().a(new im("LABYMOD", packetBuffer));
+    if (this.chatPacketUpdate) {
+      displayMessageInChat(Color.cl("c") + "LabyMod is outdated!" + Color.cl("7") + " Download the latest version " + Color.cl("e") + "v" + this.latestVersionName + Color.cl("7") + " at " + 
+        Color.cl("9") + "https://www.LabyMod.net" + "");
     }
-    if (ip.toLowerCase().contains("bessererange.tk"))
+    if (this.ip.toLowerCase().contains("bessererange.tk"))
     {
       displayMessageInChat(Color.cl("4") + Color.cl("l") + "Du glaubst doch nicht wirklich,");
       displayMessageInChat(Color.cl("4") + Color.cl("l") + "dass dir diese IP einen Vorteil bringt, oder?");
@@ -666,12 +666,9 @@ public class LabyMod
         for (String key : list.keySet())
         {
           Allowed.set(key, ((Boolean)list.get(key)).booleanValue());
-          Aq.d()
-            .a(new fa(
-            Color.cl("c") + "The " + Color.cl("e") + key + Color.cl("c") + " function was " + 
-            ((Boolean)list.get(key)).toString().replace("true", new StringBuilder().append(Color.cl("a")).append("enabled").toString())
-            .replace("false", new StringBuilder().append(Color.cl("4")).append("disabled").toString()) + 
-            Color.cl("c") + " by the server."));
+          ave.A().q.d()
+            .a(new fa(Color.cl("c") + "The " + Color.cl("e") + key + Color.cl("c") + " function was " + 
+            ((Boolean)list.get(key)).toString().replace("true", new StringBuilder().append(Color.cl("a")).append("enabled").toString()).replace("false", new StringBuilder().append(Color.cl("4")).append("disabled").toString()) + Color.cl("c") + " by the server."));
         }
       }
     }
@@ -689,7 +686,7 @@ public class LabyMod
     {
       if (msg.contains(" "))
       {
-        if (lastReport < System.currentTimeMillis())
+        if (this.lastReport < System.currentTimeMillis())
         {
           final String user = msg.split(" ")[1];
           new Thread(new Runnable()
@@ -698,8 +695,8 @@ public class LabyMod
             {
               try
               {
-                lastReport = (System.currentTimeMillis() + 20000L);
-                displayMessageInChat(Utils.jsonPost("http://api.labymod.net/php/capeReport.php", "reporter=" + getPlayerName() + "&capeowner=" + user));
+                LabyMod.this.lastReport = (System.currentTimeMillis() + 20000L);
+                LabyMod.this.displayMessageInChat(Utils.jsonPost("http://api.labymod.net/php/capeReport.php", "reporter=" + LabyMod.this.getPlayerName() + "&capeowner=" + user));
               }
               catch (Exception e)
               {

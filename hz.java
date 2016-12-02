@@ -15,48 +15,48 @@ public class hz
   
   public hz(pk ☃)
   {
-    a = ☃.F();
-    b = ns.c(s * 32.0D);
-    c = ns.c(t * 32.0D);
-    d = ns.c(u * 32.0D);
-    e = ((byte)(int)(y * 256.0F / 360.0F));
-    f = ((byte)(int)(z * 256.0F / 360.0F));
-    g = C;
+    this.a = ☃.F();
+    this.b = ns.c(☃.s * 32.0D);
+    this.c = ns.c(☃.t * 32.0D);
+    this.d = ns.c(☃.u * 32.0D);
+    this.e = ((byte)(int)(☃.y * 256.0F / 360.0F));
+    this.f = ((byte)(int)(☃.z * 256.0F / 360.0F));
+    this.g = ☃.C;
   }
   
   public hz(int ☃, int ☃, int ☃, int ☃, byte ☃, byte ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
-    e = ☃;
-    f = ☃;
-    g = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.e = ☃;
+    this.f = ☃;
+    this.g = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.e();
-    b = ☃.readInt();
-    c = ☃.readInt();
-    d = ☃.readInt();
-    e = ☃.readByte();
-    f = ☃.readByte();
-    g = ☃.readBoolean();
+    this.a = ☃.e();
+    this.b = ☃.readInt();
+    this.c = ☃.readInt();
+    this.d = ☃.readInt();
+    this.e = ☃.readByte();
+    this.f = ☃.readByte();
+    this.g = ☃.readBoolean();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a);
-    ☃.writeInt(b);
-    ☃.writeInt(c);
-    ☃.writeInt(d);
-    ☃.writeByte(e);
-    ☃.writeByte(f);
-    ☃.writeBoolean(g);
+    ☃.b(this.a);
+    ☃.writeInt(this.b);
+    ☃.writeInt(this.c);
+    ☃.writeInt(this.d);
+    ☃.writeByte(this.e);
+    ☃.writeByte(this.f);
+    ☃.writeBoolean(this.g);
   }
   
   public void a(fj ☃)
@@ -66,36 +66,36 @@ public class hz
   
   public int a()
   {
-    return a;
+    return this.a;
   }
   
   public int b()
   {
-    return b;
+    return this.b;
   }
   
   public int c()
   {
-    return c;
+    return this.c;
   }
   
   public int d()
   {
-    return d;
+    return this.d;
   }
   
   public byte e()
   {
-    return e;
+    return this.e;
   }
   
   public byte f()
   {
-    return f;
+    return this.f;
   }
   
   public boolean g()
   {
-    return g;
+    return this.g;
   }
 }

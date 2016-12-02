@@ -4,11 +4,11 @@ public class alb
 {
   public void c()
   {
-    if ((b != null) && (!b.D) && (b.K() % 20L == 0L))
+    if ((this.b != null) && (!this.b.D) && (this.b.K() % 20L == 0L))
     {
-      e = w();
-      if ((e instanceof aga)) {
-        ((aga)e).f(b, c);
+      this.e = w();
+      if ((this.e instanceof aga)) {
+        ((aga)this.e).f(this.b, this.c);
       }
     }
   }

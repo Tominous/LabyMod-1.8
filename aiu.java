@@ -11,7 +11,7 @@ public class aiu
   public aiu()
   {
     super(arm.e);
-    j(M.b().a(a, aiu.a.a));
+    j(this.M.b().a(a, aiu.a.a));
     a(yz.b);
   }
   
@@ -73,19 +73,19 @@ public class aiu
     
     private a(int ☃, String ☃, String ☃)
     {
-      e = ☃;
-      f = ☃;
-      g = ☃;
+      this.e = ☃;
+      this.f = ☃;
+      this.g = ☃;
     }
     
     public int a()
     {
-      return e;
+      return this.e;
     }
     
     public String toString()
     {
-      return f;
+      return this.f;
     }
     
     public static a a(int ☃)
@@ -98,12 +98,12 @@ public class aiu
     
     public String l()
     {
-      return f;
+      return this.f;
     }
     
     public String c()
     {
-      return g;
+      return this.g;
     }
   }
 }

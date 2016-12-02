@@ -61,7 +61,7 @@ public class abd
   
   public zx a(zx ☃, adm ☃, wn ☃)
   {
-    if (!D) {
+    if (!☃.D) {
       a(☃, ☃);
     }
     ☃.a(☃);
@@ -101,8 +101,8 @@ public class abd
     ☃.a("pages", ☃);
     if (((☃ instanceof lf)) && (☃.bZ() == ☃))
     {
-      yg ☃ = bk.a(bi, bi.c);
-      a.a(new gf(0, e, ☃));
+      yg ☃ = ☃.bk.a(☃.bi, ☃.bi.c);
+      ((lf)☃).a.a(new gf(0, ☃.e, ☃));
     }
   }
   

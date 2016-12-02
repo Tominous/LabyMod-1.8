@@ -11,14 +11,14 @@ public class ans
   
   public alz a(int ☃)
   {
-    if ((☃ < 0) || (☃ >= a.length)) {
+    if ((☃ < 0) || (☃ >= this.a.length)) {
       throw new IndexOutOfBoundsException("The coordinate is out of range");
     }
-    alz ☃ = (alz)afh.d.a(a[☃]);
+    alz ☃ = (alz)afh.d.a(this.a[☃]);
     if (☃ != null) {
       return ☃;
     }
-    return b;
+    return this.b;
   }
   
   public void a(int ☃, int ☃, int ☃, alz ☃)
@@ -30,9 +30,9 @@ public class ans
   
   public void a(int ☃, alz ☃)
   {
-    if ((☃ < 0) || (☃ >= a.length)) {
+    if ((☃ < 0) || (☃ >= this.a.length)) {
       throw new IndexOutOfBoundsException("The coordinate is out of range");
     }
-    a[☃] = ((short)afh.d.b(☃));
+    this.a[☃] = ((short)afh.d.b(☃));
   }
 }

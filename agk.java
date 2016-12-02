@@ -5,7 +5,7 @@ public class agk
   
   protected cr a(zx ☃)
   {
-    return P;
+    return this.P;
   }
   
   public akw a(adm ☃, int ☃)
@@ -36,8 +36,8 @@ public class agk
     zx ☃;
     if (☃ == null)
     {
-      zx ☃ = P.a(☃, ☃);
-      if ((☃ != null) && (b <= 0)) {
+      zx ☃ = this.P.a(☃, ☃);
+      if ((☃ != null) && (☃.b <= 0)) {
         ☃ = null;
       }
     }
@@ -47,7 +47,7 @@ public class agk
       if (☃ == null)
       {
         ☃ = ☃.k();
-        if (--b <= 0) {
+        if (--☃.b <= 0) {
           ☃ = null;
         }
       }

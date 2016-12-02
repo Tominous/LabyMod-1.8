@@ -6,7 +6,7 @@ public class bil
   public bil(biu ☃)
   {
     super(☃);
-    c *= 0.7F;
+    this.c *= 0.7F;
   }
   
   protected void a(vm ☃, float ☃)

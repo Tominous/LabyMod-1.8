@@ -13,24 +13,24 @@ public class aqw$h
   {
     super(☃, ☃);
     
-    m = ☃;
-    l = ☃;
-    a = ☃.nextBoolean();
-    b = ☃.nextInt(3);
+    this.m = ☃;
+    this.l = ☃;
+    this.a = ☃.nextBoolean();
+    this.b = ☃.nextInt(3);
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("T", b);
-    ☃.a("C", a);
+    ☃.a("T", this.b);
+    ☃.a("C", this.a);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    b = ☃.f("T");
-    a = ☃.n("C");
+    this.b = ☃.f("T");
+    this.a = ☃.n("C");
   }
   
   public static h a(aqw.k ☃, List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃, int ☃)
@@ -44,19 +44,19 @@ public class aqw$h
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
   {
-    if (h < 0)
+    if (this.h < 0)
     {
-      h = b(☃, ☃);
-      if (h < 0) {
+      this.h = b(☃, ☃);
+      if (this.h < 0) {
         return true;
       }
-      l.a(0, h - l.e + 6 - 1, 0);
+      this.l.a(0, this.h - this.l.e + 6 - 1, 0);
     }
     a(☃, ☃, 1, 1, 1, 3, 5, 4, afi.a.Q(), afi.a.Q(), false);
     
     a(☃, ☃, 0, 0, 0, 3, 0, 4, afi.e.Q(), afi.e.Q(), false);
     a(☃, ☃, 1, 0, 1, 2, 0, 3, afi.d.Q(), afi.d.Q(), false);
-    if (a) {
+    if (this.a) {
       a(☃, ☃, 1, 4, 1, 2, 4, 3, afi.r.Q(), afi.r.Q(), false);
     } else {
       a(☃, ☃, 1, 5, 1, 2, 5, 3, afi.r.Q(), afi.r.Q(), false);
@@ -84,10 +84,10 @@ public class aqw$h
     
     a(☃, afi.bj.Q(), 0, 2, 2, ☃);
     a(☃, afi.bj.Q(), 3, 2, 2, ☃);
-    if (b > 0)
+    if (this.b > 0)
     {
-      a(☃, afi.aO.Q(), b, 1, 3, ☃);
-      a(☃, afi.aB.Q(), b, 2, 3, ☃);
+      a(☃, afi.aO.Q(), this.b, 1, 3, ☃);
+      a(☃, afi.aB.Q(), this.b, 2, 3, ☃);
     }
     a(☃, afi.a.Q(), 1, 1, 0, ☃);
     a(☃, afi.a.Q(), 1, 2, 0, ☃);

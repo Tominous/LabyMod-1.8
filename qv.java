@@ -12,38 +12,38 @@ public class qv
   
   public qv(tm ☃, double ☃)
   {
-    d = ☃;
-    a = o;
-    c = ☃;
+    this.d = ☃;
+    this.a = ☃.o;
+    this.c = ☃;
     a(3);
   }
   
   public boolean a()
   {
-    if (!d.cr()) {
+    if (!this.d.cr()) {
       return false;
     }
-    e = f();
-    return e != null;
+    this.e = f();
+    return this.e != null;
   }
   
   public boolean b()
   {
-    return (e.ai()) && (e.cr()) && (b < 60);
+    return (this.e.ai()) && (this.e.cr()) && (this.b < 60);
   }
   
   public void d()
   {
-    e = null;
-    b = 0;
+    this.e = null;
+    this.b = 0;
   }
   
   public void e()
   {
-    d.p().a(e, 10.0F, d.bQ());
-    d.s().a(e, c);
-    b += 1;
-    if ((b >= 60) && (d.h(e) < 9.0D)) {
+    this.d.p().a(this.e, 10.0F, this.d.bQ());
+    this.d.s().a(this.e, this.c);
+    this.b += 1;
+    if ((this.b >= 60) && (this.d.h(this.e) < 9.0D)) {
       g();
     }
   }
@@ -51,14 +51,14 @@ public class qv
   private tm f()
   {
     float ☃ = 8.0F;
-    List<tm> ☃ = a.a(d.getClass(), d.aR().b(☃, ☃, ☃));
+    List<tm> ☃ = this.a.a(this.d.getClass(), this.d.aR().b(☃, ☃, ☃));
     double ☃ = Double.MAX_VALUE;
     tm ☃ = null;
     for (tm ☃ : ☃) {
-      if ((d.a(☃)) && (d.h(☃) < ☃))
+      if ((this.d.a(☃)) && (this.d.h(☃) < ☃))
       {
         ☃ = ☃;
-        ☃ = d.h(☃);
+        ☃ = this.d.h(☃);
       }
     }
     return ☃;
@@ -66,44 +66,44 @@ public class qv
   
   private void g()
   {
-    ph ☃ = d.a(e);
+    ph ☃ = this.d.a(this.e);
     if (☃ == null) {
       return;
     }
-    wn ☃ = d.cq();
-    if ((☃ == null) && (e.cq() != null)) {
-      ☃ = e.cq();
+    wn ☃ = this.d.cq();
+    if ((☃ == null) && (this.e.cq() != null)) {
+      ☃ = this.e.cq();
     }
     if (☃ != null)
     {
       ☃.b(na.A);
-      if ((d instanceof to)) {
+      if ((this.d instanceof to)) {
         ☃.b(mr.H);
       }
     }
-    d.b(6000);
-    e.b(6000);
-    d.cs();
-    e.cs();
+    this.d.b(6000);
+    this.e.b(6000);
+    this.d.cs();
+    this.e.cs();
     ☃.b(41536);
-    ☃.b(d.s, d.t, d.u, 0.0F, 0.0F);
-    a.d(☃);
+    ☃.b(this.d.s, this.d.t, this.d.u, 0.0F, 0.0F);
+    this.a.d(☃);
     
-    Random ☃ = d.bc();
+    Random ☃ = this.d.bc();
     for (int ☃ = 0; ☃ < 7; ☃++)
     {
       double ☃ = ☃.nextGaussian() * 0.02D;
       double ☃ = ☃.nextGaussian() * 0.02D;
       double ☃ = ☃.nextGaussian() * 0.02D;
       
-      double ☃ = ☃.nextDouble() * d.J * 2.0D - d.J;
-      double ☃ = 0.5D + ☃.nextDouble() * d.K;
-      double ☃ = ☃.nextDouble() * d.J * 2.0D - d.J;
+      double ☃ = ☃.nextDouble() * this.d.J * 2.0D - this.d.J;
+      double ☃ = 0.5D + ☃.nextDouble() * this.d.K;
+      double ☃ = ☃.nextDouble() * this.d.J * 2.0D - this.d.J;
       
-      a.a(cy.I, d.s + ☃, d.t + ☃, d.u + ☃, ☃, ☃, ☃, new int[0]);
+      this.a.a(cy.I, this.d.s + ☃, this.d.t + ☃, this.d.u + ☃, ☃, ☃, ☃, new int[0]);
     }
-    if (a.Q().b("doMobLoot")) {
-      a.d(new pp(a, d.s, d.t, d.u, ☃.nextInt(7) + 1));
+    if (this.a.Q().b("doMobLoot")) {
+      this.a.d(new pp(this.a, this.d.s, this.d.t, this.d.u, ☃.nextInt(7) + 1));
     }
   }
 }

@@ -12,18 +12,18 @@ public class bdd
   
   private bdd(String ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public String a()
   {
-    return IDN.toASCII(a);
+    return IDN.toASCII(this.a);
   }
   
   public int b()
   {
-    return b;
+    return this.b;
   }
   
   public static bdd a(String ☃)

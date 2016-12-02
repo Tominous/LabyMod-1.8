@@ -5,62 +5,62 @@ class ayu$b
   
   public ayu$b(ayu paramayu, yg ☃, int ☃)
   {
-    super(d, ☃, 0, 0);
-    b = ☃;
+    super(☃.d, ☃, 0, 0);
+    this.b = ☃;
   }
   
   public void a(wn ☃, zx ☃)
   {
-    b.a(☃, ☃);
+    this.b.a(☃, ☃);
   }
   
   public boolean a(zx ☃)
   {
-    return b.a(☃);
+    return this.b.a(☃);
   }
   
   public zx d()
   {
-    return b.d();
+    return this.b.d();
   }
   
   public boolean e()
   {
-    return b.e();
+    return this.b.e();
   }
   
   public void d(zx ☃)
   {
-    b.d(☃);
+    this.b.d(☃);
   }
   
   public void f()
   {
-    b.f();
+    this.b.f();
   }
   
   public int a()
   {
-    return b.a();
+    return this.b.a();
   }
   
   public int b(zx ☃)
   {
-    return b.b(☃);
+    return this.b.b(☃);
   }
   
   public String c()
   {
-    return b.c();
+    return this.b.c();
   }
   
   public zx a(int ☃)
   {
-    return b.a(☃);
+    return this.b.a(☃);
   }
   
   public boolean a(og ☃, int ☃)
   {
-    return b.a(☃, ☃);
+    return this.b.a(☃, ☃);
   }
 }

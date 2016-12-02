@@ -5,21 +5,21 @@ public class my
   
   public int a()
   {
-    return a;
+    return this.a;
   }
   
   public void a(int ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public <T extends mz> T b()
   {
-    return b;
+    return this.b;
   }
   
   public void a(mz ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
 }

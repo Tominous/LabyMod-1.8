@@ -32,10 +32,10 @@ public class GuiStopWatch
   public GuiStopWatch()
   {
     super(null);
-    childScreen = this;
-    draw = getInstancedraw;
-    id = "Stopwatch";
-    scrollbar = new Scrollbar(10);
+    this.childScreen = this;
+    this.draw = LabyMod.getInstance().draw;
+    this.id = "Stopwatch";
+    this.scrollbar = new Scrollbar(10);
   }
   
   public static class Round
@@ -51,64 +51,64 @@ public class GuiStopWatch
     
     public int getMs()
     {
-      return ms;
+      return this.ms;
     }
     
     public String getParsed()
     {
-      return parsed;
+      return this.parsed;
     }
   }
   
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    n.clear();
+    this.n.clear();
     
     super.b();
     
-    n.add(startStop = new avs(0, l / 2 - 50 - 30, 125, 103, 20, ""));
-    n.add(reset = new avs(1, l / 2 - 50 + 75, 125, 50, 20, Color.cl("4") + "Reset"));
+    this.n.add(this.startStop = new avs(0, this.l / 2 - 50 - 30, 125, 103, 20, ""));
+    this.n.add(this.reset = new avs(1, this.l / 2 - 50 + 75, 125, 50, 20, Color.cl("4") + "Reset"));
     
-    n.add(round = new avs(2, l - 60, 125, 50, 20, Color.cl("b") + "Round"));
+    this.n.add(this.round = new avs(2, this.l - 60, 125, 50, 20, Color.cl("b") + "Round"));
     refreshButtons();
     
-    scrollbar.setPosition(l - 11, 150, l - 5, m - 30);
+    this.scrollbar.setPosition(this.l - 11, 150, this.l - 5, this.m - 30);
   }
   
   public void refreshButtons()
   {
     if (running)
     {
-      startStop.j = (Color.cl("c") + "Stop");
-      round.l = true;
+      this.startStop.j = (Color.cl("c") + "Stop");
+      this.round.l = true;
     }
     else
     {
-      startStop.j = (Color.cl("a") + "Start");
-      round.l = true;
+      this.startStop.j = (Color.cl("a") + "Start");
+      this.round.l = true;
     }
     if (getTimer() == 0) {
-      reset.l = false;
+      this.reset.l = false;
     } else {
-      reset.l = true;
+      this.reset.l = true;
     }
-    scrollbar.update(rounds.size());
+    this.scrollbar.update(rounds.size());
   }
   
   protected void a(int mouseX, int mouseY, int mouseButton)
     throws IOException
   {
-    scrollbar.mouseAction(mouseX, mouseY, false);
+    this.scrollbar.mouseAction(mouseX, mouseY, false);
     
     int i = 0;
-    int top = rounds.size() * 10 + scrollbar.getScrollY();
+    int top = rounds.size() * 10 + this.scrollbar.getScrollY();
     for (Round round : rounds)
     {
       if ((top + 145 - i > 130) && 
-        (mouseX > 15) && (mouseX < l - 20) && (mouseY > top + 145 - i - 3) && (mouseY < top + 145 - i + 9))
+        (mouseX > 15) && (mouseX < this.l - 20) && (mouseY > top + 145 - i - 3) && (mouseY < top + 145 - i + 9))
       {
-        selectedRound = round.getMs();
+        this.selectedRound = round.getMs();
         break;
       }
       i += 10;
@@ -118,7 +118,7 @@ public class GuiStopWatch
   
   public static void handleKeys(int key)
   {
-    if (!settingsstopWatch) {
+    if (!ConfigManager.settings.stopWatch) {
       return;
     }
     if (key == -1)
@@ -126,7 +126,7 @@ public class GuiStopWatch
       repeat = false;
       return;
     }
-    if ((getInstancemc.m == null) && (!repeat))
+    if ((LabyMod.getInstance().mc.m == null) && (!repeat))
     {
       if ((Keyboard.isKeyDown(29)) && (Keyboard.isKeyDown(208)))
       {
@@ -164,7 +164,7 @@ public class GuiStopWatch
     throws IOException
   {
     super.actionPermformed(button);
-    if (k == 0) {
+    if (button.k == 0) {
       if (running)
       {
         timer = getTimer();
@@ -176,32 +176,32 @@ public class GuiStopWatch
         running = true;
       }
     }
-    if (k == 1)
+    if (button.k == 1)
     {
       running = false;
       timer = 0;
       rounds.clear();
     }
-    if (k == 2)
+    if (button.k == 2)
     {
       int t = getTimer();
       rounds.add(new Round(t, parseTime(t)));
-      scrollbar.setScrollY(0);
-      selectedRound = t;
+      this.scrollbar.setScrollY(0);
+      this.selectedRound = t;
     }
     refreshButtons();
   }
   
   protected void a(int mouseX, int mouseY, int clickedMouseButton, long timeSinceLastClick)
   {
-    scrollbar.mouseAction(mouseX, mouseY, true);
+    this.scrollbar.mouseAction(mouseX, mouseY, true);
     super.a(mouseX, mouseY, clickedMouseButton, timeSinceLastClick);
   }
   
   public void k()
     throws IOException
   {
-    scrollbar.mouseInput();
+    this.scrollbar.mouseInput();
     super.k();
   }
   
@@ -209,7 +209,7 @@ public class GuiStopWatch
     throws IOException
   {
     if (keyCode == 0) {
-      j.a(childScreen);
+      this.j.a(this.childScreen);
     }
     super.a(typedChar, keyCode);
   }
@@ -253,33 +253,33 @@ public class GuiStopWatch
     if (LabyMod.getInstance().isInGame())
     {
       bfl.l();
-      draw.drawTransparentBackground(0, 52, l, 120);
-      draw.drawTransparentBackground(10, 150, l - 10, m - 30);
+      this.draw.drawTransparentBackground(0, 52, this.l, 120);
+      this.draw.drawTransparentBackground(10, 150, this.l - 10, this.m - 30);
       bfl.k();
     }
     else
     {
       c();
-      draw.drawChatBackground(0, 52, l, 120);
-      draw.drawChatBackground(10, 150, l - 10, m - 30);
+      this.draw.drawChatBackground(0, 52, this.l, 120);
+      this.draw.drawChatBackground(10, 150, this.l - 10, this.m - 30);
     }
     String currentParsedTime = parseTime(getTimer());
-    draw.drawCenteredStringWithoutShadow(currentParsedTime, l / 2, 65.0D, 5.0D);
+    this.draw.drawCenteredStringWithoutShadow(currentParsedTime, this.l / 2, 65.0D, 5.0D);
     
     int i = 0;
     int roundId = 1;
-    int top = rounds.size() * 10 + scrollbar.getScrollY();
+    int top = rounds.size() * 10 + this.scrollbar.getScrollY();
     for (Round round : rounds)
     {
       if (top + 145 - i > 130) {
-        if (selectedRound == round.getMs())
+        if (this.selectedRound == round.getMs())
         {
-          DrawUtils.a(10, top + 145 - i - 1, l - 10, top + 145 - i + 9, Integer.MIN_VALUE);
-          draw.drawString(Color.cl("a") + "" + roundId + ".  " + Color.cl("b") + round.getParsed() + " " + Color.cl("7") + " (" + parseTime(getTimer() - round.getMs()) + " ago)", 15.0D, top + 145 - i, 1.0D);
+          DrawUtils.a(10, top + 145 - i - 1, this.l - 10, top + 145 - i + 9, Integer.MIN_VALUE);
+          this.draw.drawString(Color.cl("a") + "" + roundId + ".  " + Color.cl("b") + round.getParsed() + " " + Color.cl("7") + " (" + parseTime(getTimer() - round.getMs()) + " ago)", 15.0D, top + 145 - i, 1.0D);
         }
         else
         {
-          draw.drawString(Color.cl("e") + "" + roundId + ".  " + Color.cl("f") + round.getParsed(), 15.0D, top + 145 - i, 1.0D);
+          this.draw.drawString(Color.cl("e") + "" + roundId + ".  " + Color.cl("f") + round.getParsed(), 15.0D, top + 145 - i, 1.0D);
         }
       }
       roundId++;
@@ -289,19 +289,19 @@ public class GuiStopWatch
     if (rounds.size() != 0) {
       last = ((Round)rounds.get(rounds.size() - 1)).getMs();
     }
-    roundl = ((getTimer() != last) && (getTimer() != 0));
+    this.round.l = ((getTimer() != last) && (getTimer() != 0));
     
-    draw.overlayBackground(0, 52);
-    draw.overlayBackground(120, 150);
-    draw.overlayBackground(m - 30, m);
+    this.draw.overlayBackground(0, 52);
+    this.draw.overlayBackground(120, 150);
+    this.draw.overlayBackground(this.m - 30, this.m);
     
-    draw.overlayBackground(0, 150, 10, m - 30);
-    draw.overlayBackground(l - 10, 150, l, m - 30);
+    this.draw.overlayBackground(0, 150, 10, this.m - 30);
+    this.draw.overlayBackground(this.l - 10, 150, this.l, this.m - 30);
     
-    draw.drawRightString("Ctrl + Arrow Down = Start/Stop", l - 5, 5.0D, 0.5D);
-    draw.drawRightString("Ctrl + Arrow Right = Round", l - 5, 10.0D, 0.5D);
+    this.draw.drawRightString("Ctrl + Arrow Down = Start/Stop", this.l - 5, 5.0D, 0.5D);
+    this.draw.drawRightString("Ctrl + Arrow Right = Round", this.l - 5, 10.0D, 0.5D);
     
-    scrollbar.draw();
+    this.scrollbar.draw();
     
     super.a(mouseX, mouseY, partialTicks);
   }

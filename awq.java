@@ -10,70 +10,70 @@ public class awq
   public awq(RealmsClickableScrolledSelectionList ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
     super(ave.A(), ☃, ☃, ☃, ☃, ☃);
-    u = ☃;
+    this.u = ☃;
   }
   
   protected int b()
   {
-    return u.getItemCount();
+    return this.u.getItemCount();
   }
   
   protected void a(int ☃, boolean ☃, int ☃, int ☃)
   {
-    u.selectItem(☃, ☃, ☃, ☃);
+    this.u.selectItem(☃, ☃, ☃, ☃);
   }
   
   protected boolean a(int ☃)
   {
-    return u.isSelectedItem(☃);
+    return this.u.isSelectedItem(☃);
   }
   
   protected void a()
   {
-    u.renderBackground();
+    this.u.renderBackground();
   }
   
   protected void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    u.renderItem(☃, ☃, ☃, ☃, ☃, ☃);
+    this.u.renderItem(☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   public int e()
   {
-    return b;
+    return this.b;
   }
   
   public int f()
   {
-    return j;
+    return this.j;
   }
   
   public int g()
   {
-    return i;
+    return this.i;
   }
   
   protected int k()
   {
-    return u.getMaxPosition();
+    return this.u.getMaxPosition();
   }
   
   protected int d()
   {
-    return u.getScrollbarPosition();
+    return this.u.getScrollbarPosition();
   }
   
   public void p()
   {
     super.p();
-    if ((m > 0.0F) && (Mouse.getEventButtonState())) {
-      u.customMouseEvent(d, e, t, n, h);
+    if ((this.m > 0.0F) && (Mouse.getEventButtonState())) {
+      this.u.customMouseEvent(this.d, this.e, this.t, this.n, this.h);
     }
   }
   
   public void a(int ☃, int ☃, int ☃, Tezzelator ☃)
   {
-    u.renderSelected(☃, ☃, ☃, ☃);
+    this.u.renderSelected(☃, ☃, ☃, ☃);
   }
   
   protected void b(int ☃, int ☃, int ☃, int ☃)
@@ -81,13 +81,13 @@ public class awq
     int ☃ = b();
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
-      int ☃ = ☃ + ☃ * h + t;
-      int ☃ = h - 4;
-      if ((☃ > e) || (☃ + ☃ < d)) {
+      int ☃ = ☃ + ☃ * this.h + this.t;
+      int ☃ = this.h - 4;
+      if ((☃ > this.e) || (☃ + ☃ < this.d)) {
         a(☃, ☃, ☃);
       }
-      if ((r) && (a(☃))) {
-        a(b, ☃, ☃, Tezzelator.instance);
+      if ((this.r) && (a(☃))) {
+        a(this.b, ☃, ☃, Tezzelator.instance);
       }
       a(☃, ☃, ☃, ☃, ☃, ☃);
     }

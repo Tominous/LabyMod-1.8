@@ -7,6 +7,6 @@ final class o$10
   
   public boolean a(pk ☃)
   {
-    return ☃.e_().equals(a) != b;
+    return ☃.e_().equals(this.a) != this.b;
   }
 }

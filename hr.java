@@ -9,7 +9,7 @@ public class hr
   private String b = "";
   private String c = "";
   private String d = "";
-  private String e = ae;
+  private String e = auq.a.a.e;
   private int f = -1;
   private Collection<String> g = Lists.newArrayList();
   private int h;
@@ -19,19 +19,19 @@ public class hr
   
   public hr(aul ☃, int ☃)
   {
-    a = ☃.b();
-    h = ☃;
+    this.a = ☃.b();
+    this.h = ☃;
     if ((☃ == 0) || (☃ == 2))
     {
-      b = ☃.c();
-      c = ☃.e();
-      d = ☃.f();
-      i = ☃.k();
-      e = ie;
-      f = ☃.l().b();
+      this.b = ☃.c();
+      this.c = ☃.e();
+      this.d = ☃.f();
+      this.i = ☃.k();
+      this.e = ☃.i().e;
+      this.f = ☃.l().b();
     }
     if (☃ == 0) {
-      g.addAll(☃.d());
+      this.g.addAll(☃.d());
     }
   }
   
@@ -43,30 +43,30 @@ public class hr
     if ((☃ == null) || (☃.isEmpty())) {
       throw new IllegalArgumentException("Players cannot be null/empty");
     }
-    h = ☃;
-    a = ☃.b();
-    g.addAll(☃);
+    this.h = ☃;
+    this.a = ☃.b();
+    this.g.addAll(☃);
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.c(16);
-    h = ☃.readByte();
-    if ((h == 0) || (h == 2))
+    this.a = ☃.c(16);
+    this.h = ☃.readByte();
+    if ((this.h == 0) || (this.h == 2))
     {
-      b = ☃.c(32);
-      c = ☃.c(16);
-      d = ☃.c(16);
-      i = ☃.readByte();
-      e = ☃.c(32);
-      f = ☃.readByte();
+      this.b = ☃.c(32);
+      this.c = ☃.c(16);
+      this.d = ☃.c(16);
+      this.i = ☃.readByte();
+      this.e = ☃.c(32);
+      this.f = ☃.readByte();
     }
-    if ((h == 0) || (h == 3) || (h == 4))
+    if ((this.h == 0) || (this.h == 3) || (this.h == 4))
     {
       int ☃ = ☃.e();
       for (int ☃ = 0; ☃ < ☃; ☃++) {
-        g.add(☃.c(40));
+        this.g.add(☃.c(40));
       }
     }
   }
@@ -74,21 +74,21 @@ public class hr
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a);
-    ☃.writeByte(h);
-    if ((h == 0) || (h == 2))
+    ☃.a(this.a);
+    ☃.writeByte(this.h);
+    if ((this.h == 0) || (this.h == 2))
     {
-      ☃.a(b);
-      ☃.a(c);
-      ☃.a(d);
-      ☃.writeByte(i);
-      ☃.a(e);
-      ☃.writeByte(f);
+      ☃.a(this.b);
+      ☃.a(this.c);
+      ☃.a(this.d);
+      ☃.writeByte(this.i);
+      ☃.a(this.e);
+      ☃.writeByte(this.f);
     }
-    if ((h == 0) || (h == 3) || (h == 4))
+    if ((this.h == 0) || (this.h == 3) || (this.h == 4))
     {
-      ☃.b(g.size());
-      for (String ☃ : g) {
+      ☃.b(this.g.size());
+      for (String ☃ : this.g) {
         ☃.a(☃);
       }
     }
@@ -101,46 +101,46 @@ public class hr
   
   public String a()
   {
-    return a;
+    return this.a;
   }
   
   public String b()
   {
-    return b;
+    return this.b;
   }
   
   public String c()
   {
-    return c;
+    return this.c;
   }
   
   public String d()
   {
-    return d;
+    return this.d;
   }
   
   public Collection<String> e()
   {
-    return g;
+    return this.g;
   }
   
   public int f()
   {
-    return h;
+    return this.h;
   }
   
   public int g()
   {
-    return i;
+    return this.i;
   }
   
   public int h()
   {
-    return f;
+    return this.f;
   }
   
   public String i()
   {
-    return e;
+    return this.e;
   }
 }

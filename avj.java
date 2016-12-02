@@ -30,8 +30,8 @@ public class avj
       ☃.mkdir();
       if (bqs.i())
       {
-        ☃ = a;
-        ☃ = b;
+        ☃ = ☃.a;
+        ☃ = ☃.b;
       }
       int ☃ = ☃ * ☃;
       if ((c == null) || (c.capacity() < ☃))
@@ -45,7 +45,7 @@ public class avj
       c.clear();
       if (bqs.i())
       {
-        bfl.i(g);
+        bfl.i(☃.g);
         GL11.glGetTexImage(3553, 0, 32993, 33639, c);
       }
       else
@@ -59,11 +59,11 @@ public class avj
       BufferedImage ☃ = null;
       if (bqs.i())
       {
-        ☃ = new BufferedImage(c, d, 1);
-        int ☃ = b - d;
-        for (int ☃ = ☃; ☃ < b; ☃++) {
-          for (int ☃ = 0; ☃ < c; ☃++) {
-            ☃.setRGB(☃, ☃ - ☃, d[(☃ * a + ☃)]);
+        ☃ = new BufferedImage(☃.c, ☃.d, 1);
+        int ☃ = ☃.b - ☃.d;
+        for (int ☃ = ☃; ☃ < ☃.b; ☃++) {
+          for (int ☃ = 0; ☃ < ☃.c; ☃++) {
+            ☃.setRGB(☃, ☃ - ☃, d[(☃ * ☃.a + ☃)]);
           }
         }
       }

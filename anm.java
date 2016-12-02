@@ -13,9 +13,9 @@ public abstract class anm
   
   public final void a(adm ☃)
   {
-    b = ☃;
-    h = ☃.P().u();
-    i = ☃.P().B();
+    this.b = ☃;
+    this.h = ☃.P().u();
+    this.i = ☃.P().B();
     b();
     a();
   }
@@ -26,45 +26,45 @@ public abstract class anm
     for (int ☃ = 0; ☃ <= 15; ☃++)
     {
       float ☃ = 1.0F - ☃ / 15.0F;
-      f[☃] = ((1.0F - ☃) / (☃ * 3.0F + 1.0F) * (1.0F - ☃) + ☃);
+      this.f[☃] = ((1.0F - ☃) / (☃ * 3.0F + 1.0F) * (1.0F - ☃) + ☃);
     }
   }
   
   protected void b()
   {
-    adr ☃ = b.P().u();
+    adr ☃ = this.b.P().u();
     if (☃ == adr.c)
     {
-      apz ☃ = apz.a(b.P().B());
-      c = new aef(ady.a(☃.a(), ady.ad), 0.5F);
+      apz ☃ = apz.a(this.b.P().B());
+      this.c = new aef(ady.a(☃.a(), ady.ad), 0.5F);
     }
     else if (☃ == adr.g)
     {
-      c = new aef(ady.q, 0.0F);
+      this.c = new aef(ady.q, 0.0F);
     }
     else
     {
-      c = new aec(b);
+      this.c = new aec(this.b);
     }
   }
   
   public amv c()
   {
-    if (h == adr.c) {
-      return new anv(b, b.J(), b.P().s(), i);
+    if (this.h == adr.c) {
+      return new anv(this.b, this.b.J(), this.b.P().s(), this.i);
     }
-    if (h == adr.g) {
-      return new anu(b);
+    if (this.h == adr.g) {
+      return new anu(this.b);
     }
-    if (h == adr.f) {
-      return new aoa(b, b.J(), b.P().s(), i);
+    if (this.h == adr.f) {
+      return new aoa(this.b, this.b.J(), this.b.P().s(), this.i);
     }
-    return new aoa(b, b.J(), b.P().s(), i);
+    return new aoa(this.b, this.b.J(), this.b.P().s(), this.i);
   }
   
   public boolean a(int ☃, int ☃)
   {
-    return b.c(new cj(☃, 0, ☃)) == afi.c;
+    return this.b.c(new cj(☃, 0, ☃)) == afi.c;
   }
   
   public float a(long ☃, float ☃)
@@ -103,11 +103,11 @@ public abstract class anm
       float ☃ = (☃ - ☃) / ☃ * 0.5F + 0.5F;
       float ☃ = 1.0F - (1.0F - ns.a(☃ * 3.1415927F)) * 0.99F;
       ☃ *= ☃;
-      j[0] = (☃ * 0.3F + 0.7F);
-      j[1] = (☃ * ☃ * 0.7F + 0.2F);
-      j[2] = (☃ * ☃ * 0.0F + 0.2F);
-      j[3] = ☃;
-      return j;
+      this.j[0] = (☃ * 0.3F + 0.7F);
+      this.j[1] = (☃ * ☃ * 0.7F + 0.2F);
+      this.j[2] = (☃ * ☃ * 0.0F + 0.2F);
+      this.j[3] = ☃;
+      return this.j;
     }
     return null;
   }
@@ -163,15 +163,15 @@ public abstract class anm
   
   public int i()
   {
-    if (h == adr.c) {
+    if (this.h == adr.c) {
       return 4;
     }
-    return b.F() + 1;
+    return this.b.F() + 1;
   }
   
   public double j()
   {
-    if (h == adr.c) {
+    if (this.h == adr.c) {
       return 1.0D;
     }
     return 0.03125D;
@@ -188,27 +188,27 @@ public abstract class anm
   
   public aec m()
   {
-    return c;
+    return this.c;
   }
   
   public boolean n()
   {
-    return d;
+    return this.d;
   }
   
   public boolean o()
   {
-    return e;
+    return this.e;
   }
   
   public float[] p()
   {
-    return f;
+    return this.f;
   }
   
   public int q()
   {
-    return g;
+    return this.g;
   }
   
   public ams r()

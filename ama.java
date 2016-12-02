@@ -35,7 +35,7 @@ public class ama
   
   public ama(afh ☃, amo... ☃)
   {
-    c = ☃;
+    this.c = ☃;
     
     Arrays.sort(☃, new Comparator()
     {
@@ -44,7 +44,7 @@ public class ama
         return ☃.a().compareTo(☃.a());
       }
     });
-    d = ImmutableList.copyOf(☃);
+    this.d = ImmutableList.copyOf(☃);
     
     Map<Map<amo, Comparable>, ama.a> ☃ = Maps.newLinkedHashMap();
     List<ama.a> ☃ = Lists.newArrayList();
@@ -52,7 +52,7 @@ public class ama
     Iterable<List<Comparable>> ☃ = cm.a(e());
     for (List<Comparable> ☃ : ☃)
     {
-      Map<amo, Comparable> ☃ = cw.b(d, ☃);
+      Map<amo, Comparable> ☃ = cw.b(this.d, ☃);
       ama.a ☃ = new ama.a(☃, ImmutableMap.copyOf(☃), null);
       
       ☃.put(☃, ☃);
@@ -61,41 +61,41 @@ public class ama
     for (ama.a ☃ : ☃) {
       ☃.a(☃);
     }
-    e = ImmutableList.copyOf(☃);
+    this.e = ImmutableList.copyOf(☃);
   }
   
   public ImmutableList<alz> a()
   {
-    return e;
+    return this.e;
   }
   
   private List<Iterable<Comparable>> e()
   {
     List<Iterable<Comparable>> ☃ = Lists.newArrayList();
-    for (int ☃ = 0; ☃ < d.size(); ☃++) {
-      ☃.add(((amo)d.get(☃)).c());
+    for (int ☃ = 0; ☃ < this.d.size(); ☃++) {
+      ☃.add(((amo)this.d.get(☃)).c());
     }
     return ☃;
   }
   
   public alz b()
   {
-    return (alz)e.get(0);
+    return (alz)this.e.get(0);
   }
   
   public afh c()
   {
-    return c;
+    return this.c;
   }
   
   public Collection<amo> d()
   {
-    return d;
+    return this.d;
   }
   
   public String toString()
   {
-    return Objects.toStringHelper(this).add("block", afh.c.c(c)).add("properties", Iterables.transform(d, b)).toString();
+    return Objects.toStringHelper(this).add("block", afh.c.c(this.c)).add("properties", Iterables.transform(this.d, b)).toString();
   }
   
   static class a
@@ -107,45 +107,45 @@ public class ama
     
     private a(afh ☃, ImmutableMap<amo, Comparable> ☃)
     {
-      a = ☃;
-      b = ☃;
+      this.a = ☃;
+      this.b = ☃;
     }
     
     public Collection<amo> a()
     {
-      return Collections.unmodifiableCollection(b.keySet());
+      return Collections.unmodifiableCollection(this.b.keySet());
     }
     
     public <T extends Comparable<T>> T b(amo<T> ☃)
     {
-      if (!b.containsKey(☃)) {
-        throw new IllegalArgumentException("Cannot get property " + ☃ + " as it does not exist in " + a.P());
+      if (!this.b.containsKey(☃)) {
+        throw new IllegalArgumentException("Cannot get property " + ☃ + " as it does not exist in " + this.a.P());
       }
-      return (Comparable)☃.b().cast(b.get(☃));
+      return (Comparable)☃.b().cast(this.b.get(☃));
     }
     
     public <T extends Comparable<T>, V extends T> alz a(amo<T> ☃, V ☃)
     {
-      if (!b.containsKey(☃)) {
-        throw new IllegalArgumentException("Cannot set property " + ☃ + " as it does not exist in " + a.P());
+      if (!this.b.containsKey(☃)) {
+        throw new IllegalArgumentException("Cannot set property " + ☃ + " as it does not exist in " + this.a.P());
       }
       if (!☃.c().contains(☃)) {
-        throw new IllegalArgumentException("Cannot set property " + ☃ + " to " + ☃ + " on block " + afh.c.c(a) + ", it is not an allowed value");
+        throw new IllegalArgumentException("Cannot set property " + ☃ + " to " + ☃ + " on block " + afh.c.c(this.a) + ", it is not an allowed value");
       }
-      if (b.get(☃) == ☃) {
+      if (this.b.get(☃) == ☃) {
         return this;
       }
-      return (alz)c.get(☃, ☃);
+      return (alz)this.c.get(☃, ☃);
     }
     
     public ImmutableMap<amo, Comparable> b()
     {
-      return b;
+      return this.b;
     }
     
     public afh c()
     {
-      return a;
+      return this.a;
     }
     
     public boolean equals(Object ☃)
@@ -155,31 +155,31 @@ public class ama
     
     public int hashCode()
     {
-      return b.hashCode();
+      return this.b.hashCode();
     }
     
     public void a(Map<Map<amo, Comparable>, a> ☃)
     {
-      if (c != null) {
+      if (this.c != null) {
         throw new IllegalStateException();
       }
       Table<amo, Comparable, alz> ☃ = HashBasedTable.create();
-      for (Iterator ☃ = b.keySet().iterator(); ☃.hasNext();)
+      for (Iterator ☃ = this.b.keySet().iterator(); ☃.hasNext();)
       {
         ☃ = (amo)☃.next();
         for (Comparable ☃ : ☃.c()) {
-          if (☃ != b.get(☃)) {
+          if (☃ != this.b.get(☃)) {
             ☃.put(☃, ☃, ☃.get(b(☃, ☃)));
           }
         }
       }
       amo<? extends Comparable> ☃;
-      c = ImmutableTable.copyOf(☃);
+      this.c = ImmutableTable.copyOf(☃);
     }
     
     private Map<amo, Comparable> b(amo ☃, Comparable ☃)
     {
-      Map<amo, Comparable> ☃ = Maps.newHashMap(b);
+      Map<amo, Comparable> ☃ = Maps.newHashMap(this.b);
       ☃.put(☃, ☃);
       return ☃;
     }

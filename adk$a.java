@@ -5,61 +5,47 @@ class adk$a
   private int c;
   private double d;
   private final adk.b e;
-  private static final String __OBFID = "CL_00000137";
   
-  public adk$a(String value, adk.b type)
+  public adk$a(String ☃, adk.b ☃)
   {
-    e = type;
-    a(value);
+    this.e = ☃;
+    a(☃);
   }
   
-  public void a(String value)
+  public void a(String ☃)
   {
-    a = value;
-    if (value != null)
-    {
-      if (value.equals("false"))
-      {
-        b = false;
-        return;
-      }
-      if (value.equals("true"))
-      {
-        b = true;
-        return;
-      }
-    }
-    b = Boolean.parseBoolean(value);
-    c = (b ? 1 : 0);
+    this.a = ☃;
+    this.b = Boolean.parseBoolean(☃);
+    this.c = (this.b ? 1 : 0);
     try
     {
-      c = Integer.parseInt(value);
+      this.c = Integer.parseInt(☃);
     }
-    catch (NumberFormatException var4) {}
+    catch (NumberFormatException localNumberFormatException) {}
     try
     {
-      d = Double.parseDouble(value);
+      this.d = Double.parseDouble(☃);
     }
-    catch (NumberFormatException var3) {}
+    catch (NumberFormatException localNumberFormatException1) {}
   }
   
   public String a()
   {
-    return a;
+    return this.a;
   }
   
   public boolean b()
   {
-    return b;
+    return this.b;
   }
   
   public int c()
   {
-    return c;
+    return this.c;
   }
   
   public adk.b e()
   {
-    return e;
+    return this.e;
   }
 }

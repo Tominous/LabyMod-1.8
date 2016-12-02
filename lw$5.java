@@ -11,8 +11,8 @@ final class lw$5
   
   public void onProfileLookupSucceeded(GameProfile ☃)
   {
-    a.aF().a(☃);
-    b.add(☃);
+    this.a.aF().a(☃);
+    this.b.add(☃);
   }
   
   public void onProfileLookupFailed(GameProfile ☃, Exception ☃)

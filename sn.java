@@ -16,16 +16,16 @@ public class sn
   
   public sn(ps ☃, Class<? extends pr> ☃)
   {
-    b = ☃;
-    f = ☃;
+    this.b = ☃;
+    this.f = ☃;
     if ((☃ instanceof py)) {
       a.warn("Use NearestAttackableTargetGoal.class for PathfinerMob mobs!");
     }
-    c = new Predicate()
+    this.c = new Predicate()
     {
       public boolean a(pr ☃)
       {
-        double ☃ = f();
+        double ☃ = sn.this.f();
         if (☃.av()) {
           ☃ *= 0.800000011920929D;
         }
@@ -38,24 +38,24 @@ public class sn
         return st.a(sn.a(sn.this), ☃, false, true);
       }
     };
-    d = new sp.a(☃);
+    this.d = new sp.a(☃);
   }
   
   public boolean a()
   {
     double ☃ = f();
-    List<pr> ☃ = b.o.a(f, b.aR().b(☃, 4.0D, ☃), c);
-    Collections.sort(☃, d);
+    List<pr> ☃ = this.b.o.a(this.f, this.b.aR().b(☃, 4.0D, ☃), this.c);
+    Collections.sort(☃, this.d);
     if (☃.isEmpty()) {
       return false;
     }
-    e = ((pr)☃.get(0));
+    this.e = ((pr)☃.get(0));
     return true;
   }
   
   public boolean b()
   {
-    pr ☃ = b.u();
+    pr ☃ = this.b.u();
     if (☃ == null) {
       return false;
     }
@@ -63,11 +63,11 @@ public class sn
       return false;
     }
     double ☃ = f();
-    if (b.h(☃) > ☃ * ☃) {
+    if (this.b.h(☃) > ☃ * ☃) {
       return false;
     }
     if (((☃ instanceof lf)) && 
-      (c.d())) {
+      (((lf)☃).c.d())) {
       return false;
     }
     return true;
@@ -75,19 +75,19 @@ public class sn
   
   public void c()
   {
-    b.d(e);
+    this.b.d(this.e);
     super.c();
   }
   
   public void d()
   {
-    b.d(null);
+    this.b.d(null);
     super.c();
   }
   
   protected double f()
   {
-    qc ☃ = b.a(vy.b);
+    qc ☃ = this.b.a(vy.b);
     return ☃ == null ? 16.0D : ☃.e();
   }
 }

@@ -14,7 +14,7 @@ public class RealmsBridge
   
   public void switchToRealms(axu ☃)
   {
-    previousScreen = ☃;
+    this.previousScreen = ☃;
     try
     {
       Class<?> ☃ = Class.forName("com.mojang.realmsclient.RealmsMainScreen");
@@ -31,6 +31,6 @@ public class RealmsBridge
   
   public void init()
   {
-    ave.A().a(previousScreen);
+    ave.A().a(this.previousScreen);
   }
 }

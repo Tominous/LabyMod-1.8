@@ -35,7 +35,7 @@ public class ClientPhysic
   public static void doRender(pk par1Entity, double x, double y, double z, float par8, float par9)
   {
     rotation = (System.nanoTime() - tick) / 3000000.0D * ItemPhysic.rotationSpeed;
-    if (!mcw) {
+    if (!mc.w) {
       rotation = 0.0D;
     }
     uz item = (uz)par1Entity;
@@ -46,8 +46,8 @@ public class ClientPhysic
       boolean flag = false;
       if (bmh.g != null)
       {
-        mcafa.a(bmh.g);
-        mcafa.b(bmh.g)
+        mc.af().a.a(bmh.g);
+        mc.af().a.b(bmh.g)
           .b(false, false);
         
         flag = true;
@@ -62,65 +62,65 @@ public class ClientPhysic
       int i = func_177077_a(item, x, y, z, par9, ibakedmodel);
       
       cj pos = new cj(item);
-      if (z > 360.0F) {
-        z = 0.0F;
+      if (item.z > 360.0F) {
+        item.z = 0.0F;
       }
-      if ((item != null) && (!Double.isNaN(s)) && 
-        (!Double.isNaN(t)) && (!Double.isNaN(u)) && (o != null)) {
-        if (C)
+      if ((item != null) && (!Double.isNaN(item.s)) && 
+        (!Double.isNaN(item.t)) && (!Double.isNaN(item.u)) && (item.o != null)) {
+        if (item.C)
         {
-          if ((z != 0.0F) && (z != 90.0F) && (z != 180.0F) && (z != 270.0F))
+          if ((item.z != 0.0F) && (item.z != 90.0F) && (item.z != 180.0F) && (item.z != 270.0F))
           {
-            double Abstand0 = formPositiv(z);
-            double Abstand90 = formPositiv(z - 90.0F);
-            double Abstand180 = formPositiv(z - 180.0F);
-            double Abstand270 = formPositiv(z - 270.0F);
+            double Abstand0 = formPositiv(item.z);
+            double Abstand90 = formPositiv(item.z - 90.0F);
+            double Abstand180 = formPositiv(item.z - 180.0F);
+            double Abstand270 = formPositiv(item.z - 270.0F);
             if ((Abstand0 <= Abstand90) && (Abstand0 <= Abstand180) && (Abstand0 <= Abstand270)) {
-              if (z < 0.0F)
+              if (item.z < 0.0F)
               {
                 uz tmp389_387 = item;
-                z = ((float)(z + rotation));
+                tmp389_387.z = ((float)(tmp389_387.z + rotation));
               }
               else
               {
                 uz tmp407_405 = item;
-                z = ((float)(z - rotation));
+                tmp407_405.z = ((float)(tmp407_405.z - rotation));
               }
             }
             if ((Abstand90 < Abstand0) && (Abstand90 <= Abstand180) && (Abstand90 <= Abstand270)) {
-              if (z - 90.0F < 0.0F)
+              if (item.z - 90.0F < 0.0F)
               {
                 uz tmp459_457 = item;
-                z = ((float)(z + rotation));
+                tmp459_457.z = ((float)(tmp459_457.z + rotation));
               }
               else
               {
                 uz tmp477_475 = item;
-                z = ((float)(z - rotation));
+                tmp477_475.z = ((float)(tmp477_475.z - rotation));
               }
             }
             if ((Abstand180 < Abstand90) && (Abstand180 < Abstand0) && (Abstand180 <= Abstand270)) {
-              if (z - 180.0F < 0.0F)
+              if (item.z - 180.0F < 0.0F)
               {
                 uz tmp529_527 = item;
-                z = ((float)(z + rotation));
+                tmp529_527.z = ((float)(tmp529_527.z + rotation));
               }
               else
               {
                 uz tmp547_545 = item;
-                z = ((float)(z - rotation));
+                tmp547_545.z = ((float)(tmp547_545.z - rotation));
               }
             }
             if ((Abstand270 < Abstand90) && (Abstand270 < Abstand180) && (Abstand270 < Abstand0)) {
-              if (z - 270.0F < 0.0F)
+              if (item.z - 270.0F < 0.0F)
               {
                 uz tmp599_597 = item;
-                z = ((float)(z + rotation));
+                tmp599_597.z = ((float)(tmp599_597.z + rotation));
               }
               else
               {
                 uz tmp617_615 = item;
-                z = ((float)(z - rotation));
+                tmp617_615.z = ((float)(tmp617_615.z - rotation));
               }
             }
           }
@@ -130,26 +130,26 @@ public class ClientPhysic
           cj posUp = new cj(item);
           posUp.a(0, 1, 0);
           
-          arm m1 = o.p(posUp).c().t();
+          arm m1 = item.o.p(posUp).c().t();
           
-          arm m2 = o.p(pos).c().t();
+          arm m2 = item.o.p(pos).c().t();
           
           boolean m3 = item.a(arm.h);
           boolean m4 = item.V();
           if ((m3 | m1 == arm.h | m2 == arm.h | m4))
           {
             uz tmp748_746 = item;
-            z = ((float)(z + rotation / 4.0D));
+            tmp748_746.z = ((float)(tmp748_746.z + rotation / 4.0D));
           }
           else
           {
             uz tmp770_768 = item;
-            z = ((float)(z + rotation * 2.0D));
+            tmp770_768.z = ((float)(tmp770_768.z + rotation * 2.0D));
           }
         }
       }
-      GL11.glRotatef(y, 0.0F, 1.0F, 0.0F);
-      GL11.glRotatef(z + 90.0F, 1.0F, 0.0F, 0.0F);
+      GL11.glRotatef(item.y, 0.0F, 1.0F, 0.0F);
+      GL11.glRotatef(item.z + 90.0F, 1.0F, 0.0F, 0.0F);
       for (int j = 0; j < i; j++) {
         if (ibakedmodel.b())
         {
@@ -175,10 +175,10 @@ public class ClientPhysic
       bfl.F();
       bfl.C();
       bfl.k();
-      mcafa
+      mc.af().a
         .a(bmh.g);
       if (flag) {
-        mcafa.b(bmh.g).a();
+        mc.af().a.b(bmh.g).a();
       }
     }
   }
@@ -197,8 +197,8 @@ public class ClientPhysic
     bfl.b((float)x, (float)y + f2 + 0.25F, (float)z);
     float f3 = 0.0F;
     if ((flag) || (
-      (mcafg != null) && 
-      (mcafg.i))) {
+      (mc.af().g != null) && 
+      (mc.af().g.i))) {
       bfl.b(f3, 0.0F, 1.0F, 0.0F);
     }
     if (!flag)
@@ -228,13 +228,13 @@ public class ClientPhysic
   public static int func_177078_a(zx stack)
   {
     byte b0 = 1;
-    if (b > 48) {
+    if (stack.b > 48) {
       b0 = 5;
-    } else if (b > 32) {
+    } else if (stack.b > 32) {
       b0 = 4;
-    } else if (b > 16) {
+    } else if (stack.b > 16) {
       b0 = 3;
-    } else if (b > 1) {
+    } else if (stack.b > 1) {
       b0 = 2;
     }
     return b0;

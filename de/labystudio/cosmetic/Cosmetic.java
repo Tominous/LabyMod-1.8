@@ -25,13 +25,13 @@ public class Cosmetic
   
   public Cosmetic(int id)
   {
-    type = getById(id);
+    this.type = getById(id);
     parseData();
   }
   
   public Cosmetic(int id, String data)
   {
-    type = getById(id);
+    this.type = getById(id);
     this.data = data;
     parseData();
   }
@@ -51,30 +51,30 @@ public class Cosmetic
   
   public EnumCosmetic getType()
   {
-    return type;
+    return this.type;
   }
   
   public String getData()
   {
-    return data;
+    return this.data;
   }
   
   private void parseData()
   {
-    if (type == null) {
+    if (this.type == null) {
       return;
     }
-    if ((type == EnumCosmetic.WINGS) && 
-      (data != null) && 
-      (data.contains(","))) {
+    if ((this.type == EnumCosmetic.WINGS) && 
+      (this.data != null) && 
+      (this.data.contains(","))) {
       try
       {
-        String[] d = data.replace(" ", "").split(",");
+        String[] d = this.data.replace(" ", "").split(",");
         if (d.length >= 3)
         {
-          a = Double.parseDouble(d[0]);
-          b = Double.parseDouble(d[1]);
-          c = Double.parseDouble(d[2]);
+          this.a = Double.parseDouble(d[0]);
+          this.b = Double.parseDouble(d[1]);
+          this.c = Double.parseDouble(d[2]);
         }
       }
       catch (Exception error)
@@ -82,57 +82,60 @@ public class Cosmetic
         error.printStackTrace();
       }
     }
-    if (type == EnumCosmetic.HAT)
+    if (this.type == EnumCosmetic.HAT)
     {
-      height = 0.5D;
-      if ((data != null) && (!data.contains(" "))) {
-        this.d = data;
+      this.height = 0.5D;
+      if ((this.data != null) && (!this.data.contains(" "))) {
+        this.d = this.data;
       }
     }
-    if (type == EnumCosmetic.DEADMAU5) {
-      height = 0.25D;
+    if (this.type == EnumCosmetic.DEADMAU5) {
+      this.height = 0.25D;
     }
-    if (type == EnumCosmetic.PIXELBIESTER) {
-      height = 0.25D;
+    if (this.type == EnumCosmetic.PIXELBIESTER) {
+      this.height = 0.25D;
     }
-    if (type == EnumCosmetic.RABBIT) {
-      height = 0.25D;
+    if (this.type == EnumCosmetic.RABBIT) {
+      this.height = 0.25D;
     }
-    if ((type == EnumCosmetic.TOOL) && 
-      (data != null) && (data.contains(":"))) {
+    if ((this.type == EnumCosmetic.TOOL) && 
+      (this.data != null) && (this.data.contains(":"))) {
       try
       {
-        String[] d = data.replace(" ", "").split(":");
-        a = Integer.parseInt(d[0]);
-        b = Integer.parseInt(d[1]);
+        String[] d = this.data.replace(" ", "").split(":");
+        this.a = Integer.parseInt(d[0]);
+        this.b = Integer.parseInt(d[1]);
       }
       catch (Exception error)
       {
         error.printStackTrace();
       }
     }
-    if (type == EnumCosmetic.HALO) {
-      height = 0.25D;
+    if (this.type == EnumCosmetic.HALO) {
+      this.height = 0.25D;
     }
-    if (type == EnumCosmetic.TAG) {
-      this.d = data;
+    if (this.type == EnumCosmetic.TAG) {
+      this.d = this.data;
     }
-    if (type == EnumCosmetic.CENSORED) {
-      this.d = data;
+    if (this.type == EnumCosmetic.CENSORED) {
+      this.d = this.data;
     }
-    if (type == EnumCosmetic.RANK) {
-      this.d = data;
+    if (this.type == EnumCosmetic.RANK) {
+      this.d = this.data;
     }
-    if ((type == EnumCosmetic.HALLOWEEN) && 
-      (data != null)) {
+    if ((this.type == EnumCosmetic.HALLOWEEN) && 
+      (this.data != null)) {
       try
       {
-        a = Integer.parseInt(data);
+        this.a = Integer.parseInt(this.data);
       }
       catch (Exception error)
       {
         error.printStackTrace();
       }
+    }
+    if (this.type == EnumCosmetic.XMAS) {
+      this.height = 0.4D;
     }
   }
 }

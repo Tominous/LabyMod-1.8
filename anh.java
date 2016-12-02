@@ -26,56 +26,56 @@ public class anh
   
   public anh(File ☃)
   {
-    d = new int['Ѐ'];
-    e = new int['Ѐ'];
+    this.d = new int['Ѐ'];
+    this.e = new int['Ѐ'];
     
-    b = ☃;
+    this.b = ☃;
     
-    g = 0;
+    this.g = 0;
     try
     {
       if (☃.exists()) {
-        h = ☃.lastModified();
+        this.h = ☃.lastModified();
       }
-      c = new RandomAccessFile(☃, "rw");
-      if (c.length() < 4096L)
+      this.c = new RandomAccessFile(☃, "rw");
+      if (this.c.length() < 4096L)
       {
         for (int ☃ = 0; ☃ < 1024; ☃++) {
-          c.writeInt(0);
+          this.c.writeInt(0);
         }
         for (int ☃ = 0; ☃ < 1024; ☃++) {
-          c.writeInt(0);
+          this.c.writeInt(0);
         }
-        g += 8192;
+        this.g += 8192;
       }
-      if ((c.length() & 0xFFF) != 0L) {
-        for (int ☃ = 0; ☃ < (c.length() & 0xFFF); ☃++) {
-          c.write(0);
+      if ((this.c.length() & 0xFFF) != 0L) {
+        for (int ☃ = 0; ☃ < (this.c.length() & 0xFFF); ☃++) {
+          this.c.write(0);
         }
       }
-      int ☃ = (int)c.length() / 4096;
-      f = Lists.newArrayListWithCapacity(☃);
+      int ☃ = (int)this.c.length() / 4096;
+      this.f = Lists.newArrayListWithCapacity(☃);
       for (int ☃ = 0; ☃ < ☃; ☃++) {
-        f.add(Boolean.valueOf(true));
+        this.f.add(Boolean.valueOf(true));
       }
-      f.set(0, Boolean.valueOf(false));
-      f.set(1, Boolean.valueOf(false));
+      this.f.set(0, Boolean.valueOf(false));
+      this.f.set(1, Boolean.valueOf(false));
       
-      c.seek(0L);
+      this.c.seek(0L);
       for (int ☃ = 0; ☃ < 1024; ☃++)
       {
-        int ☃ = c.readInt();
-        d[☃] = ☃;
-        if ((☃ != 0) && ((☃ >> 8) + (☃ & 0xFF) <= f.size())) {
+        int ☃ = this.c.readInt();
+        this.d[☃] = ☃;
+        if ((☃ != 0) && ((☃ >> 8) + (☃ & 0xFF) <= this.f.size())) {
           for (int ☃ = 0; ☃ < (☃ & 0xFF); ☃++) {
-            f.set((☃ >> 8) + ☃, Boolean.valueOf(false));
+            this.f.set((☃ >> 8) + ☃, Boolean.valueOf(false));
           }
         }
       }
       for (int ☃ = 0; ☃ < 1024; ☃++)
       {
-        int ☃ = c.readInt();
-        e[☃] = ☃;
+        int ☃ = this.c.readInt();
+        this.e[☃] = ☃;
       }
     }
     catch (IOException ☃)
@@ -97,28 +97,28 @@ public class anh
       }
       int ☃ = ☃ >> 8;
       int ☃ = ☃ & 0xFF;
-      if (☃ + ☃ > f.size()) {
+      if (☃ + ☃ > this.f.size()) {
         return null;
       }
-      c.seek(☃ * 4096);
-      int ☃ = c.readInt();
+      this.c.seek(☃ * 4096);
+      int ☃ = this.c.readInt();
       if (☃ > 4096 * ☃) {
         return null;
       }
       if (☃ <= 0) {
         return null;
       }
-      byte ☃ = c.readByte();
+      byte ☃ = this.c.readByte();
       if (☃ == 1)
       {
         byte[] ☃ = new byte[☃ - 1];
-        c.read(☃);
+        this.c.read(☃);
         return new DataInputStream(new BufferedInputStream(new GZIPInputStream(new ByteArrayInputStream(☃))));
       }
       if (☃ == 2)
       {
         byte[] ☃ = new byte[☃ - 1];
-        c.read(☃);
+        this.c.read(☃);
         return new DataInputStream(new BufferedInputStream(new InflaterInputStream(new ByteArrayInputStream(☃))));
       }
       return null;
@@ -144,13 +144,13 @@ public class anh
     public a(int ☃, int ☃)
     {
       super();
-      b = ☃;
-      c = ☃;
+      this.b = ☃;
+      this.c = ☃;
     }
     
     public void close()
     {
-      a(b, c, buf, count);
+      anh.this.a(this.b, this.c, this.buf, this.count);
     }
   }
   
@@ -172,22 +172,22 @@ public class anh
       else
       {
         for (int ☃ = 0; ☃ < ☃; ☃++) {
-          f.set(☃ + ☃, Boolean.valueOf(true));
+          this.f.set(☃ + ☃, Boolean.valueOf(true));
         }
-        int ☃ = f.indexOf(Boolean.valueOf(true));
+        int ☃ = this.f.indexOf(Boolean.valueOf(true));
         int ☃ = 0;
         if (☃ != -1) {
-          for (int ☃ = ☃; ☃ < f.size(); ☃++)
+          for (int ☃ = ☃; ☃ < this.f.size(); ☃++)
           {
             if (☃ != 0)
             {
-              if (((Boolean)f.get(☃)).booleanValue()) {
+              if (((Boolean)this.f.get(☃)).booleanValue()) {
                 ☃++;
               } else {
                 ☃ = 0;
               }
             }
-            else if (((Boolean)f.get(☃)).booleanValue())
+            else if (((Boolean)this.f.get(☃)).booleanValue())
             {
               ☃ = ☃;
               ☃ = 1;
@@ -202,20 +202,20 @@ public class anh
           ☃ = ☃;
           a(☃, ☃, ☃ << 8 | ☃);
           for (int ☃ = 0; ☃ < ☃; ☃++) {
-            f.set(☃ + ☃, Boolean.valueOf(false));
+            this.f.set(☃ + ☃, Boolean.valueOf(false));
           }
           a(☃, ☃, ☃);
         }
         else
         {
-          c.seek(c.length());
-          ☃ = f.size();
+          this.c.seek(this.c.length());
+          ☃ = this.f.size();
           for (int ☃ = 0; ☃ < ☃; ☃++)
           {
-            c.write(a);
-            f.add(Boolean.valueOf(false));
+            this.c.write(a);
+            this.f.add(Boolean.valueOf(false));
           }
-          g += 4096 * ☃;
+          this.g += 4096 * ☃;
           
           a(☃, ☃, ☃);
           a(☃, ☃, ☃ << 8 | ☃);
@@ -232,10 +232,10 @@ public class anh
   private void a(int ☃, byte[] ☃, int ☃)
     throws IOException
   {
-    c.seek(☃ * 4096);
-    c.writeInt(☃ + 1);
-    c.writeByte(2);
-    c.write(☃, 0, ☃);
+    this.c.seek(☃ * 4096);
+    this.c.writeInt(☃ + 1);
+    this.c.writeByte(2);
+    this.c.write(☃, 0, ☃);
   }
   
   private boolean d(int ☃, int ☃)
@@ -245,7 +245,7 @@ public class anh
   
   private int e(int ☃, int ☃)
   {
-    return d[(☃ + ☃ * 32)];
+    return this.d[(☃ + ☃ * 32)];
   }
   
   public boolean c(int ☃, int ☃)
@@ -256,24 +256,24 @@ public class anh
   private void a(int ☃, int ☃, int ☃)
     throws IOException
   {
-    d[(☃ + ☃ * 32)] = ☃;
-    c.seek((☃ + ☃ * 32) * 4);
-    c.writeInt(☃);
+    this.d[(☃ + ☃ * 32)] = ☃;
+    this.c.seek((☃ + ☃ * 32) * 4);
+    this.c.writeInt(☃);
   }
   
   private void b(int ☃, int ☃, int ☃)
     throws IOException
   {
-    e[(☃ + ☃ * 32)] = ☃;
-    c.seek(4096 + (☃ + ☃ * 32) * 4);
-    c.writeInt(☃);
+    this.e[(☃ + ☃ * 32)] = ☃;
+    this.c.seek(4096 + (☃ + ☃ * 32) * 4);
+    this.c.writeInt(☃);
   }
   
   public void c()
     throws IOException
   {
-    if (c != null) {
-      c.close();
+    if (this.c != null) {
+      this.c.close();
     }
   }
 }

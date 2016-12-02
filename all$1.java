@@ -5,24 +5,24 @@ class all$1
   
   public void a(int ☃)
   {
-    a.b.c(a.c, afi.ac, ☃, 0);
+    this.a.b.c(this.a.c, afi.ac, ☃, 0);
   }
   
   public adm a()
   {
-    return a.b;
+    return this.a.b;
   }
   
   public cj b()
   {
-    return a.c;
+    return this.a.c;
   }
   
   public void a(add.a ☃)
   {
     super.a(☃);
     if (a() != null) {
-      a().h(a.c);
+      a().h(this.a.c);
     }
   }
 }

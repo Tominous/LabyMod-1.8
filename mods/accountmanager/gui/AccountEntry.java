@@ -30,7 +30,7 @@ public class AccountEntry
   
   protected AccountEntry(AccountManagerGUI parent, String name, FancyGuiSlot parentList)
   {
-    mc = ave.A();
+    this.mc = ave.A();
     this.name = name;
     this.parent = parent;
     this.parentList = parentList;
@@ -39,15 +39,15 @@ public class AccountEntry
   public void drawEntry(int slotIndex, int x, int y, int listWidth, int slotHeight, int mouseX, int mouseY, boolean isSelected)
   {
     int yPos = y + 3;
-    if ((yPos - 3 >= parentList.top) && (yPos + 13 <= parentList.bottom))
+    if ((yPos - 3 >= this.parentList.top) && (yPos + 13 <= this.parentList.bottom))
     {
-      drawPlayerHead(nx.a(name), x + 1, yPos + 1, 0.5D);
+      drawPlayerHead(nx.a(this.name), x + 1, yPos + 1, 0.5D);
       
-      String tempName = name;
+      String tempName = this.name;
       if (ave.A().L().c().equals(tempName)) {
         tempName = "§a" + tempName;
       }
-      mc.k.a(tempName, x + 30, yPos + 2, 16777215);
+      this.mc.k.a(tempName, x + 30, yPos + 2, 16777215);
     }
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
   }
@@ -60,7 +60,7 @@ public class AccountEntry
     GL11.glPushMatrix();
     GL11.glScaled(size, size, size);
     bfl.c(1.0F, 1.0F, 1.0F);
-    mc.P().a(
+    this.mc.P().a(
       (jy)AccountManager.playerHeads.get(player));
     AccountManager.drawTexturedModalRect(x / size, (y - 3.0D) / size, 32.0D, 32.0D, 32.0D, 32.0D);
     
@@ -76,39 +76,39 @@ public class AccountEntry
   
   public boolean mousePressed(int p_148278_1_, int p_148278_2_, int p_148278_3_, int p_148278_4_, int p_148278_5_, int p_148278_6_)
   {
-    parent.getList().setSelected(p_148278_1_);
-    for (Iterator localIterator = parent.getButtonList().iterator(); localIterator.hasNext();)
+    this.parent.getList().setSelected(p_148278_1_);
+    for (Iterator localIterator = this.parent.getButtonList().iterator(); localIterator.hasNext();)
     {
       button = (avs)localIterator.next();
-      if ((k == 3) || (k == 4)) {
-        l = true;
+      if ((button.k == 3) || (button.k == 4)) {
+        button.l = true;
       }
     }
     avs button;
-    if (ave.J() - field_148298_f <= 1000L)
+    if (ave.J() - this.field_148298_f <= 1000L)
     {
       avs button = null;
-      for (avs buttons : parent.getButtonList()) {
-        if (k == 3) {
+      for (avs buttons : this.parent.getButtonList()) {
+        if (buttons.k == 3) {
           button = buttons;
         }
       }
       try
       {
-        parent.a(button);
+        this.parent.a(button);
       }
       catch (IOException e)
       {
         e.printStackTrace();
       }
     }
-    field_148298_f = ave.J();
+    this.field_148298_f = ave.J();
     return false;
   }
   
   public String getName()
   {
-    return name;
+    return this.name;
   }
   
   public void setSelected(int p_178011_1_, int p_178011_2_, int p_178011_3_) {}

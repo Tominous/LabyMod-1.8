@@ -8,6 +8,6 @@ class pk$4
   public String a()
     throws Exception
   {
-    return a.m.toString();
+    return this.a.m.toString();
   }
 }

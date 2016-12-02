@@ -13,53 +13,53 @@ public class gy
   
   public gy(ov ☃, gy.a ☃)
   {
-    a = ☃;
+    this.a = ☃;
     
     pr ☃ = ☃.c();
     switch (gy.1.a[☃.ordinal()])
     {
     case 1: 
-      d = ☃.f();
-      c = (☃ == null ? -1 : ☃.F());
+      this.d = ☃.f();
+      this.c = (☃ == null ? -1 : ☃.F());
       break;
     case 2: 
-      b = ☃.h().F();
-      c = (☃ == null ? -1 : ☃.F());
-      e = ☃.b().c();
+      this.b = ☃.h().F();
+      this.c = (☃ == null ? -1 : ☃.F());
+      this.e = ☃.b().c();
     }
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ((gy.a)☃.a(gy.a.class));
-    if (a == gy.a.b)
+    this.a = ((gy.a)☃.a(gy.a.class));
+    if (this.a == gy.a.b)
     {
-      d = ☃.e();
-      c = ☃.readInt();
+      this.d = ☃.e();
+      this.c = ☃.readInt();
     }
-    else if (a == gy.a.c)
+    else if (this.a == gy.a.c)
     {
-      b = ☃.e();
-      c = ☃.readInt();
-      e = ☃.c(32767);
+      this.b = ☃.e();
+      this.c = ☃.readInt();
+      this.e = ☃.c(32767);
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a);
-    if (a == gy.a.b)
+    ☃.a(this.a);
+    if (this.a == gy.a.b)
     {
-      ☃.b(d);
-      ☃.writeInt(c);
+      ☃.b(this.d);
+      ☃.writeInt(this.c);
     }
-    else if (a == gy.a.c)
+    else if (this.a == gy.a.c)
     {
-      ☃.b(b);
-      ☃.writeInt(c);
-      ☃.a(e);
+      ☃.b(this.b);
+      ☃.writeInt(this.c);
+      ☃.a(this.e);
     }
   }
   

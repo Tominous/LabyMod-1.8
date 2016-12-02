@@ -11,25 +11,25 @@ public class fs
   
   public fs(int ☃, cj ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.e();
-    b = ☃.c();
-    c = ☃.readUnsignedByte();
+    this.a = ☃.e();
+    this.b = ☃.c();
+    this.c = ☃.readUnsignedByte();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a);
-    ☃.a(b);
-    ☃.writeByte(c);
+    ☃.b(this.a);
+    ☃.a(this.b);
+    ☃.writeByte(this.c);
   }
   
   public void a(fj ☃)
@@ -39,16 +39,16 @@ public class fs
   
   public int a()
   {
-    return a;
+    return this.a;
   }
   
   public cj b()
   {
-    return b;
+    return this.b;
   }
   
   public int c()
   {
-    return c;
+    return this.c;
   }
 }

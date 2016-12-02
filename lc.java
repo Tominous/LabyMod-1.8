@@ -20,99 +20,99 @@ public class lc
     
     public a(int ☃, int ☃)
     {
-      c = new adg(☃, ☃);
-      a().b.c(☃, ☃);
+      this.c = new adg(☃, ☃);
+      lc.this.a().b.c(☃, ☃);
     }
     
     public void a(lf ☃)
     {
-      if (b.contains(☃))
+      if (this.b.contains(☃))
       {
-        lc.c().debug("Failed to add player. {} already is in chunk {}, {}", new Object[] { ☃, Integer.valueOf(c.a), Integer.valueOf(c.b) });
+        lc.c().debug("Failed to add player. {} already is in chunk {}, {}", new Object[] { ☃, Integer.valueOf(this.c.a), Integer.valueOf(this.c.b) });
         return;
       }
-      if (b.isEmpty()) {
-        g = lc.a(lc.this).K();
+      if (this.b.isEmpty()) {
+        this.g = lc.a(lc.this).K();
       }
-      b.add(☃);
-      f.add(c);
+      this.b.add(☃);
+      ☃.f.add(this.c);
     }
     
     public void b(lf ☃)
     {
-      if (!b.contains(☃)) {
+      if (!this.b.contains(☃)) {
         return;
       }
-      amy ☃ = lc.a(lc.this).a(c.a, c.b);
+      amy ☃ = lc.a(lc.this).a(this.c.a, this.c.b);
       if (☃.i()) {
-        a.a(new go(☃, true, 0));
+        ☃.a.a(new go(☃, true, 0));
       }
-      b.remove(☃);
-      f.remove(c);
-      if (b.isEmpty())
+      this.b.remove(☃);
+      ☃.f.remove(this.c);
+      if (this.b.isEmpty())
       {
-        long ☃ = c.a + 2147483647L | c.b + 2147483647L << 32;
+        long ☃ = this.c.a + 2147483647L | this.c.b + 2147483647L << 32;
         a(☃);
         lc.b(lc.this).d(☃);
         lc.c(lc.this).remove(this);
-        if (e > 0) {
+        if (this.e > 0) {
           lc.d(lc.this).remove(this);
         }
-        a().b.b(c.a, c.b);
+        lc.this.a().b.b(this.c.a, this.c.b);
       }
     }
     
     public void a()
     {
-      a(lc.a(lc.this).a(c.a, c.b));
+      a(lc.a(lc.this).a(this.c.a, this.c.b));
     }
     
     private void a(amy ☃)
     {
-      ☃.c(☃.w() + lc.a(lc.this).K() - g);
+      ☃.c(☃.w() + lc.a(lc.this).K() - this.g);
       
-      g = lc.a(lc.this).K();
+      this.g = lc.a(lc.this).K();
     }
     
     public void a(int ☃, int ☃, int ☃)
     {
-      if (e == 0) {
+      if (this.e == 0) {
         lc.d(lc.this).add(this);
       }
-      f |= 1 << (☃ >> 4);
-      if (e < 64)
+      this.f |= 1 << (☃ >> 4);
+      if (this.e < 64)
       {
         short ☃ = (short)(☃ << 12 | ☃ << 8 | ☃);
-        for (int ☃ = 0; ☃ < e; ☃++) {
-          if (d[☃] == ☃) {
+        for (int ☃ = 0; ☃ < this.e; ☃++) {
+          if (this.d[☃] == ☃) {
             return;
           }
         }
-        d[(e++)] = ☃;
+        this.d[(this.e++)] = ☃;
       }
     }
     
     public void a(ff ☃)
     {
-      for (int ☃ = 0; ☃ < b.size(); ☃++)
+      for (int ☃ = 0; ☃ < this.b.size(); ☃++)
       {
-        lf ☃ = (lf)b.get(☃);
-        if (!f.contains(c)) {
-          a.a(☃);
+        lf ☃ = (lf)this.b.get(☃);
+        if (!☃.f.contains(this.c)) {
+          ☃.a.a(☃);
         }
       }
     }
     
     public void b()
     {
-      if (e == 0) {
+      if (this.e == 0) {
         return;
       }
-      if (e == 1)
+      if (this.e == 1)
       {
-        int ☃ = (d[0] >> 12 & 0xF) + c.a * 16;
-        int ☃ = d[0] & 0xFF;
-        int ☃ = (d[0] >> 8 & 0xF) + c.b * 16;
+        int ☃ = (this.d[0] >> 12 & 0xF) + this.c.a * 16;
+        int ☃ = this.d[0] & 0xFF;
+        int ☃ = (this.d[0] >> 8 & 0xF) + this.c.b * 16;
         
         cj ☃ = new cj(☃, ☃, ☃);
         a(new fv(lc.a(lc.this), ☃));
@@ -120,14 +120,14 @@ public class lc
           a(lc.a(lc.this).s(☃));
         }
       }
-      else if (e == 64)
+      else if (this.e == 64)
       {
-        int ☃ = c.a * 16;
-        int ☃ = c.b * 16;
+        int ☃ = this.c.a * 16;
+        int ☃ = this.c.b * 16;
         
-        a(new go(lc.a(lc.this).a(c.a, c.b), false, f));
+        a(new go(lc.a(lc.this).a(this.c.a, this.c.b), false, this.f));
         for (int ☃ = 0; ☃ < 16; ☃++) {
-          if ((f & 1 << ☃) != 0)
+          if ((this.f & 1 << ☃) != 0)
           {
             int ☃ = ☃ << 4;
             List<akw> ☃ = lc.a(lc.this).a(☃, ☃, ☃, ☃ + 16, ☃ + 16, ☃ + 16);
@@ -139,12 +139,12 @@ public class lc
       }
       else
       {
-        a(new fz(e, d, lc.a(lc.this).a(c.a, c.b)));
-        for (int ☃ = 0; ☃ < e; ☃++)
+        a(new fz(this.e, this.d, lc.a(lc.this).a(this.c.a, this.c.b)));
+        for (int ☃ = 0; ☃ < this.e; ☃++)
         {
-          int ☃ = (d[☃] >> 12 & 0xF) + c.a * 16;
-          int ☃ = d[☃] & 0xFF;
-          int ☃ = (d[☃] >> 8 & 0xF) + c.b * 16;
+          int ☃ = (this.d[☃] >> 12 & 0xF) + this.c.a * 16;
+          int ☃ = this.d[☃] & 0xFF;
+          int ☃ = (this.d[☃] >> 8 & 0xF) + this.c.b * 16;
           
           cj ☃ = new cj(☃, ☃, ☃);
           if (lc.a(lc.this).p(☃).c().z()) {
@@ -152,8 +152,8 @@ public class lc
           }
         }
       }
-      e = 0;
-      f = 0;
+      this.e = 0;
+      this.f = 0;
     }
     
     private void a(akw ☃)
@@ -177,43 +177,43 @@ public class lc
   
   public lc(le ☃)
   {
-    b = ☃;
+    this.b = ☃;
     
     a(☃.r().ap().s());
   }
   
   public le a()
   {
-    return b;
+    return this.b;
   }
   
   public void b()
   {
-    long ☃ = b.K();
-    if (☃ - h > 8000L)
+    long ☃ = this.b.K();
+    if (☃ - this.h > 8000L)
     {
-      h = ☃;
-      for (int ☃ = 0; ☃ < f.size(); ☃++)
+      this.h = ☃;
+      for (int ☃ = 0; ☃ < this.f.size(); ☃++)
       {
-        lc.a ☃ = (lc.a)f.get(☃);
+        lc.a ☃ = (lc.a)this.f.get(☃);
         ☃.b();
         ☃.a();
       }
     }
     else
     {
-      for (int ☃ = 0; ☃ < e.size(); ☃++)
+      for (int ☃ = 0; ☃ < this.e.size(); ☃++)
       {
-        lc.a ☃ = (lc.a)e.get(☃);
+        lc.a ☃ = (lc.a)this.e.get(☃);
         ☃.b();
       }
     }
-    e.clear();
-    if (c.isEmpty())
+    this.e.clear();
+    if (this.c.isEmpty())
     {
-      anm ☃ = b.t;
+      anm ☃ = this.b.t;
       if (!☃.e()) {
-        b.b.b();
+        this.b.b.b();
       }
     }
   }
@@ -221,18 +221,18 @@ public class lc
   public boolean a(int ☃, int ☃)
   {
     long ☃ = ☃ + 2147483647L | ☃ + 2147483647L << 32;
-    return d.a(☃) != null;
+    return this.d.a(☃) != null;
   }
   
   private lc.a a(int ☃, int ☃, boolean ☃)
   {
     long ☃ = ☃ + 2147483647L | ☃ + 2147483647L << 32;
-    lc.a ☃ = (lc.a)d.a(☃);
+    lc.a ☃ = (lc.a)this.d.a(☃);
     if ((☃ == null) && (☃))
     {
       ☃ = new lc.a(☃, ☃);
-      d.a(☃, ☃);
-      f.add(☃);
+      this.d.a(☃, ☃);
+      this.f.add(☃);
     }
     return ☃;
   }
@@ -251,39 +251,39 @@ public class lc
   
   public void a(lf ☃)
   {
-    int ☃ = (int)s >> 4;
-    int ☃ = (int)u >> 4;
+    int ☃ = (int)☃.s >> 4;
+    int ☃ = (int)☃.u >> 4;
     
-    d = s;
-    e = u;
-    for (int ☃ = ☃ - g; ☃ <= ☃ + g; ☃++) {
-      for (int ☃ = ☃ - g; ☃ <= ☃ + g; ☃++) {
+    ☃.d = ☃.s;
+    ☃.e = ☃.u;
+    for (int ☃ = ☃ - this.g; ☃ <= ☃ + this.g; ☃++) {
+      for (int ☃ = ☃ - this.g; ☃ <= ☃ + this.g; ☃++) {
         a(☃, ☃, true).a(☃);
       }
     }
-    c.add(☃);
+    this.c.add(☃);
     b(☃);
   }
   
   public void b(lf ☃)
   {
-    List<adg> ☃ = Lists.newArrayList(f);
+    List<adg> ☃ = Lists.newArrayList(☃.f);
     int ☃ = 0;
-    int ☃ = g;
-    int ☃ = (int)s >> 4;
-    int ☃ = (int)u >> 4;
+    int ☃ = this.g;
+    int ☃ = (int)☃.s >> 4;
+    int ☃ = (int)☃.u >> 4;
     int ☃ = 0;
     int ☃ = 0;
     adg ☃ = lc.a.a(a(☃, ☃, true));
     
-    f.clear();
+    ☃.f.clear();
     if (☃.contains(☃)) {
-      f.add(☃);
+      ☃.f.add(☃);
     }
     for (int ☃ = 1; ☃ <= ☃ * 2; ☃++) {
       for (int ☃ = 0; ☃ < 2; ☃++)
       {
-        int[] ☃ = i[(☃++ % 4)];
+        int[] ☃ = this.i[(☃++ % 4)];
         for (int ☃ = 0; ☃ < ☃; ☃++)
         {
           ☃ += ☃[0];
@@ -291,7 +291,7 @@ public class lc
           
           ☃ = lc.a.a(a(☃ + ☃, ☃ + ☃, true));
           if (☃.contains(☃)) {
-            f.add(☃);
+            ☃.f.add(☃);
           }
         }
       }
@@ -299,22 +299,22 @@ public class lc
     ☃ %= 4;
     for (int ☃ = 0; ☃ < ☃ * 2; ☃++)
     {
-      ☃ += i[☃][0];
-      ☃ += i[☃][1];
+      ☃ += this.i[☃][0];
+      ☃ += this.i[☃][1];
       
       ☃ = lc.a.a(a(☃ + ☃, ☃ + ☃, true));
       if (☃.contains(☃)) {
-        f.add(☃);
+        ☃.f.add(☃);
       }
     }
   }
   
   public void c(lf ☃)
   {
-    int ☃ = (int)d >> 4;
-    int ☃ = (int)e >> 4;
-    for (int ☃ = ☃ - g; ☃ <= ☃ + g; ☃++) {
-      for (int ☃ = ☃ - g; ☃ <= ☃ + g; ☃++)
+    int ☃ = (int)☃.d >> 4;
+    int ☃ = (int)☃.e >> 4;
+    for (int ☃ = ☃ - this.g; ☃ <= ☃ + this.g; ☃++) {
+      for (int ☃ = ☃ - this.g; ☃ <= ☃ + this.g; ☃++)
       {
         lc.a ☃ = a(☃, ☃, false);
         if (☃ != null) {
@@ -322,7 +322,7 @@ public class lc
         }
       }
     }
-    c.remove(☃);
+    this.c.remove(☃);
   }
   
   private boolean a(int ☃, int ☃, int ☃, int ☃, int ☃)
@@ -340,18 +340,18 @@ public class lc
   
   public void d(lf ☃)
   {
-    int ☃ = (int)s >> 4;
-    int ☃ = (int)u >> 4;
+    int ☃ = (int)☃.s >> 4;
+    int ☃ = (int)☃.u >> 4;
     
-    double ☃ = d - s;
-    double ☃ = e - u;
+    double ☃ = ☃.d - ☃.s;
+    double ☃ = ☃.e - ☃.u;
     double ☃ = ☃ * ☃ + ☃ * ☃;
     if (☃ < 64.0D) {
       return;
     }
-    int ☃ = (int)d >> 4;
-    int ☃ = (int)e >> 4;
-    int ☃ = g;
+    int ☃ = (int)☃.d >> 4;
+    int ☃ = (int)☃.e >> 4;
+    int ☃ = this.g;
     
     int ☃ = ☃ - ☃;
     int ☃ = ☃ - ☃;
@@ -375,30 +375,30 @@ public class lc
     }
     b(☃);
     
-    d = s;
-    e = u;
+    ☃.d = ☃.s;
+    ☃.e = ☃.u;
   }
   
   public boolean a(lf ☃, int ☃, int ☃)
   {
     lc.a ☃ = a(☃, ☃, false);
     
-    return (☃ != null) && (lc.a.b(☃).contains(☃)) && (!f.contains(lc.a.a(☃)));
+    return (☃ != null) && (lc.a.b(☃).contains(☃)) && (!☃.f.contains(lc.a.a(☃)));
   }
   
   public void a(int ☃)
   {
     ☃ = ns.a(☃, 3, 32);
-    if (☃ == g) {
+    if (☃ == this.g) {
       return;
     }
-    int ☃ = ☃ - g;
+    int ☃ = ☃ - this.g;
     
-    List<lf> ☃ = Lists.newArrayList(c);
+    List<lf> ☃ = Lists.newArrayList(this.c);
     for (lf ☃ : ☃)
     {
-      int ☃ = (int)s >> 4;
-      int ☃ = (int)u >> 4;
+      int ☃ = (int)☃.s >> 4;
+      int ☃ = (int)☃.u >> 4;
       if (☃ > 0) {
         for (int ☃ = ☃ - ☃; ☃ <= ☃ + ☃; ☃++) {
           for (int ☃ = ☃ - ☃; ☃ <= ☃ + ☃; ☃++)
@@ -410,8 +410,8 @@ public class lc
           }
         }
       } else {
-        for (int ☃ = ☃ - g; ☃ <= ☃ + g; ☃++) {
-          for (int ☃ = ☃ - g; ☃ <= ☃ + g; ☃++) {
+        for (int ☃ = ☃ - this.g; ☃ <= ☃ + this.g; ☃++) {
+          for (int ☃ = ☃ - this.g; ☃ <= ☃ + this.g; ☃++) {
             if (!a(☃, ☃, ☃, ☃, ☃)) {
               a(☃, ☃, true).b(☃);
             }
@@ -419,7 +419,7 @@ public class lc
         }
       }
     }
-    g = ☃;
+    this.g = ☃;
   }
   
   public static int b(int ☃)

@@ -18,8 +18,8 @@ public class bih
     bfl.E();
     
     bfl.b((float)☃, (float)☃, (float)☃);
-    bfl.b(A + (y - A) * ☃ - 90.0F, 0.0F, 1.0F, 0.0F);
-    bfl.b(B + (z - B) * ☃, 0.0F, 0.0F, 1.0F);
+    bfl.b(☃.A + (☃.y - ☃.A) * ☃ - 90.0F, 0.0F, 1.0F, 0.0F);
+    bfl.b(☃.B + (☃.z - ☃.B) * ☃, 0.0F, 0.0F, 1.0F);
     
     bfx ☃ = bfx.a();
     bfd ☃ = ☃.c();
@@ -37,7 +37,7 @@ public class bih
     float ☃ = (10 + ☃ * 10) / 32.0F;
     float ☃ = 0.05625F;
     bfl.B();
-    float ☃ = b - ☃;
+    float ☃ = ☃.b - ☃;
     if (☃ > 0.0F)
     {
       float ☃ = -ns.a(☃ * 3.0F) * ☃;

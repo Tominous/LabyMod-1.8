@@ -21,23 +21,23 @@ public class Account
   
   public boolean setToCurrentUser()
   {
-    String session = AccountManager.setSession(new avm(userName, UUIDTypeAdapter.fromUUID(uuid), accessToken, avm.a.b.toString()));
+    String session = AccountManager.setSession(new avm(this.userName, UUIDTypeAdapter.fromUUID(this.uuid), this.accessToken, avm.a.b.toString()));
     
     return session.equals("");
   }
   
   public String getUserName()
   {
-    return userName;
+    return this.userName;
   }
   
   public String getAccessToken()
   {
-    return accessToken;
+    return this.accessToken;
   }
   
   public UUID getUuid()
   {
-    return uuid;
+    return this.uuid;
   }
 }

@@ -1,4 +1,3 @@
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -24,83 +23,74 @@ public abstract class ps
   private boolean bo;
   private pk bp;
   private dn bq;
-  private static final String __OBFID = "CL_00001550";
-  public int randomMobsId = 0;
-  public ady spawnBiome = null;
-  public cj spawnPosition = null;
   
-  public ps(adm worldIn)
+  public ps(adm ☃)
   {
-    super(worldIn);
-    i = new re((worldIn != null) && (B != null) ? B : null);
-    bi = new re((worldIn != null) && (B != null) ? B : null);
-    a = new qp(this);
-    f = new qq(this);
-    g = new qo(this);
-    b = new qm(this);
-    h = b(worldIn);
-    bk = new ta(this);
-    for (int var2 = 0; var2 < bj.length; var2++) {
-      bj[var2] = 0.085F;
+    super(☃);
+    
+    this.i = new re((☃ == null) || (☃.B == null) ? null : ☃.B);
+    this.bi = new re((☃ == null) || (☃.B == null) ? null : ☃.B);
+    this.a = new qp(this);
+    this.f = new qq(this);
+    this.g = new qo(this);
+    this.b = new qm(this);
+    this.h = b(☃);
+    this.bk = new ta(this);
+    for (int ☃ = 0; ☃ < this.bj.length; ☃++) {
+      this.bj[☃] = 0.085F;
     }
-    UUID uuid = aK();
-    
-    long uuidLow = uuid.getLeastSignificantBits();
-    
-    randomMobsId = ((int)(uuidLow & 0x7FFFFFFF));
   }
   
   protected void aX()
   {
     super.aX();
+    
     by().b(vy.b).a(16.0D);
   }
   
-  protected sw b(adm worldIn)
+  protected sw b(adm ☃)
   {
-    return new sv(this, worldIn);
+    return new sv(this, ☃);
   }
   
   public qp p()
   {
-    return a;
+    return this.a;
   }
   
   public qq q()
   {
-    return f;
+    return this.f;
   }
   
   public qo r()
   {
-    return g;
+    return this.g;
   }
   
   public sw s()
   {
-    return h;
+    return this.h;
   }
   
   public ta t()
   {
-    return bk;
+    return this.bk;
   }
   
   public pr u()
   {
-    return c;
+    return this.c;
   }
   
-  public void d(pr p_70624_1_)
+  public void d(pr ☃)
   {
-    c = p_70624_1_;
-    
-    Reflector.callVoid(Reflector.ForgeHooks_onLivingSetAttackTarget, new Object[] { this, p_70624_1_ });
+    this.c = ☃;
   }
   
-  public boolean a(Class p_70686_1_)
+  public boolean a(Class<? extends pr> ☃)
   {
-    return p_70686_1_ != vr.class;
+    return ☃ != vr.class;
   }
   
   public void v() {}
@@ -108,7 +98,7 @@ public abstract class ps
   protected void h()
   {
     super.h();
-    ac.a(15, Byte.valueOf((byte)0));
+    this.ac.a(15, Byte.valueOf((byte)0));
   }
   
   public int w()
@@ -118,84 +108,79 @@ public abstract class ps
   
   public void x()
   {
-    String var1 = z();
-    if (var1 != null) {
-      a(var1, bB(), bC());
+    String ☃ = z();
+    if (☃ != null) {
+      a(☃, bB(), bC());
     }
   }
   
   public void K()
   {
     super.K();
-    o.B.a("mobBaseTick");
-    if ((ai()) && (V.nextInt(1000) < a_++))
+    
+    this.o.B.a("mobBaseTick");
+    if ((ai()) && (this.V.nextInt(1000) < this.a_++))
     {
-      a_ = (-w());
+      this.a_ = (-w());
       x();
     }
-    o.B.b();
+    this.o.B.b();
   }
   
-  protected int b(wn p_70693_1_)
+  protected int b(wn ☃)
   {
-    if (b_ > 0)
+    if (this.b_ > 0)
     {
-      int var2 = b_;
-      zx[] var3 = as();
-      for (int var4 = 0; var4 < var3.length; var4++) {
-        if ((var3[var4] != null) && (bj[var4] <= 1.0F)) {
-          var2 += 1 + V.nextInt(3);
+      int ☃ = this.b_;
+      
+      zx[] ☃ = as();
+      for (int ☃ = 0; ☃ < ☃.length; ☃++) {
+        if ((☃[☃] != null) && (this.bj[☃] <= 1.0F)) {
+          ☃ += 1 + this.V.nextInt(3);
         }
       }
-      return var2;
+      return ☃;
     }
-    return b_;
+    return this.b_;
   }
   
   public void y()
   {
-    if (o.D) {
-      for (int var1 = 0; var1 < 20; var1++)
+    if (this.o.D) {
+      for (int ☃ = 0; ☃ < 20; ☃++)
       {
-        double var2 = V.nextGaussian() * 0.02D;
-        double var4 = V.nextGaussian() * 0.02D;
-        double var6 = V.nextGaussian() * 0.02D;
-        double var8 = 10.0D;
-        o.a(cy.a, s + V.nextFloat() * J * 2.0F - J - var2 * var8, t + V.nextFloat() * K - var4 * var8, u + V.nextFloat() * J * 2.0F - J - var6 * var8, var2, var4, var6, new int[0]);
+        double ☃ = this.V.nextGaussian() * 0.02D;
+        double ☃ = this.V.nextGaussian() * 0.02D;
+        double ☃ = this.V.nextGaussian() * 0.02D;
+        double ☃ = 10.0D;
+        this.o.a(cy.a, this.s + this.V.nextFloat() * this.J * 2.0F - this.J - ☃ * ☃, this.t + this.V.nextFloat() * this.K - ☃ * ☃, this.u + this.V.nextFloat() * this.J * 2.0F - this.J - ☃ * ☃, ☃, ☃, ☃, new int[0]);
       }
     } else {
-      o.a(this, (byte)20);
+      this.o.a(this, (byte)20);
     }
   }
   
-  public void a(byte p_70103_1_)
+  public void a(byte ☃)
   {
-    if (p_70103_1_ == 20) {
+    if (☃ == 20) {
       y();
     } else {
-      super.a(p_70103_1_);
+      super.a(☃);
     }
   }
   
   public void t_()
   {
-    if (Config.isSmoothWorld()) {
-      if (canSkipUpdate())
-      {
-        onUpdateMinimal();
-        return;
-      }
-    }
     super.t_();
-    if (!o.D) {
+    if (!this.o.D) {
       ca();
     }
   }
   
-  protected float h(float p_110146_1_, float p_110146_2_)
+  protected float h(float ☃, float ☃)
   {
-    b.a();
-    return p_110146_2_;
+    this.b.a();
+    return ☃;
   }
   
   protected String z()
@@ -208,197 +193,198 @@ public abstract class ps
     return null;
   }
   
-  protected void b(boolean p_70628_1_, int p_70628_2_)
+  protected void b(boolean ☃, int ☃)
   {
-    zw var3 = A();
-    if (var3 != null)
+    zw ☃ = A();
+    if (☃ != null)
     {
-      int var4 = V.nextInt(3);
-      if (p_70628_2_ > 0) {
-        var4 += V.nextInt(p_70628_2_ + 1);
+      int ☃ = this.V.nextInt(3);
+      if (☃ > 0) {
+        ☃ += this.V.nextInt(☃ + 1);
       }
-      for (int var5 = 0; var5 < var4; var5++) {
-        a(var3, 1);
+      for (int ☃ = 0; ☃ < ☃; ☃++) {
+        a(☃, 1);
       }
     }
   }
   
-  public void b(dn tagCompound)
+  public void b(dn ☃)
   {
-    super.b(tagCompound);
-    tagCompound.a("CanPickUpLoot", bY());
-    tagCompound.a("PersistenceRequired", bn);
-    du var2 = new du();
-    for (int var3 = 0; var3 < bl.length; var3++)
+    super.b(☃);
+    ☃.a("CanPickUpLoot", bY());
+    ☃.a("PersistenceRequired", this.bn);
+    
+    du ☃ = new du();
+    for (int ☃ = 0; ☃ < this.bl.length; ☃++)
     {
-      dn var4 = new dn();
-      if (bl[var3] != null) {
-        bl[var3].b(var4);
+      dn ☃ = new dn();
+      if (this.bl[☃] != null) {
+        this.bl[☃].b(☃);
       }
-      var2.a(var4);
+      ☃.a(☃);
     }
-    tagCompound.a("Equipment", var2);
-    du var6 = new du();
-    for (int var7 = 0; var7 < bj.length; var7++) {
-      var6.a(new dr(bj[var7]));
+    ☃.a("Equipment", ☃);
+    
+    du ☃ = new du();
+    for (int ☃ = 0; ☃ < this.bj.length; ☃++) {
+      ☃.a(new dr(this.bj[☃]));
     }
-    tagCompound.a("DropChances", var6);
-    tagCompound.a("Leashed", bo);
-    if (bp != null)
+    ☃.a("DropChances", ☃);
+    
+    ☃.a("Leashed", this.bo);
+    if (this.bp != null)
     {
-      dn var4 = new dn();
-      if ((bp instanceof pr))
+      dn ☃ = new dn();
+      if ((this.bp instanceof pr))
       {
-        var4.a("UUIDMost", bp.aK().getMostSignificantBits());
-        var4.a("UUIDLeast", bp.aK().getLeastSignificantBits());
+        ☃.a("UUIDMost", this.bp.aK().getMostSignificantBits());
+        ☃.a("UUIDLeast", this.bp.aK().getLeastSignificantBits());
       }
-      else if ((bp instanceof un))
+      else if ((this.bp instanceof un))
       {
-        cj var5 = ((un)bp).n();
-        var4.a("X", var5.n());
-        var4.a("Y", var5.o());
-        var4.a("Z", var5.p());
+        cj ☃ = ((un)this.bp).n();
+        ☃.a("X", ☃.n());
+        ☃.a("Y", ☃.o());
+        ☃.a("Z", ☃.p());
       }
-      tagCompound.a("Leash", var4);
+      ☃.a("Leash", ☃);
     }
     if (ce()) {
-      tagCompound.a("NoAI", ce());
+      ☃.a("NoAI", ce());
     }
   }
   
-  public void a(dn tagCompund)
+  public void a(dn ☃)
   {
-    super.a(tagCompund);
-    if (tagCompund.b("CanPickUpLoot", 1)) {
-      j(tagCompund.n("CanPickUpLoot"));
+    super.a(☃);
+    if (☃.b("CanPickUpLoot", 1)) {
+      j(☃.n("CanPickUpLoot"));
     }
-    bn = tagCompund.n("PersistenceRequired");
-    if (tagCompund.b("Equipment", 9))
+    this.bn = ☃.n("PersistenceRequired");
+    if (☃.b("Equipment", 9))
     {
-      du var2 = tagCompund.c("Equipment", 10);
-      for (int var3 = 0; var3 < bl.length; var3++) {
-        bl[var3] = zx.a(var2.b(var3));
+      du ☃ = ☃.c("Equipment", 10);
+      for (int ☃ = 0; ☃ < this.bl.length; ☃++) {
+        this.bl[☃] = zx.a(☃.b(☃));
       }
     }
-    if (tagCompund.b("DropChances", 9))
+    if (☃.b("DropChances", 9))
     {
-      du var2 = tagCompund.c("DropChances", 5);
-      for (int var3 = 0; var3 < var2.c(); var3++) {
-        bj[var3] = var2.e(var3);
+      du ☃ = ☃.c("DropChances", 5);
+      for (int ☃ = 0; ☃ < ☃.c(); ☃++) {
+        this.bj[☃] = ☃.e(☃);
       }
     }
-    bo = tagCompund.n("Leashed");
-    if ((bo) && (tagCompund.b("Leash", 10))) {
-      bq = tagCompund.m("Leash");
+    this.bo = ☃.n("Leashed");
+    if ((this.bo) && (☃.b("Leash", 10))) {
+      this.bq = ☃.m("Leash");
     }
-    k(tagCompund.n("NoAI"));
+    k(☃.n("NoAI"));
   }
   
-  public void n(float p_70657_1_)
+  public void n(float ☃)
   {
-    ba = p_70657_1_;
+    this.ba = ☃;
   }
   
-  public void k(float p_70659_1_)
+  public void k(float ☃)
   {
-    super.k(p_70659_1_);
-    n(p_70659_1_);
+    super.k(☃);
+    n(☃);
   }
   
   public void m()
   {
     super.m();
-    o.B.a("looting");
-    if ((!o.D) && (bY()) && (!aP) && (o.Q().b("mobGriefing")))
+    
+    this.o.B.a("looting");
+    if ((!this.o.D) && (bY()) && (!this.aP) && (this.o.Q().b("mobGriefing")))
     {
-      List var1 = o.a(uz.class, aR().b(1.0D, 0.0D, 1.0D));
-      Iterator var2 = var1.iterator();
-      while (var2.hasNext())
-      {
-        uz var3 = (uz)var2.next();
-        if ((!I) && (var3.l() != null) && (!var3.s())) {
-          a(var3);
+      List<uz> ☃ = this.o.a(uz.class, aR().b(1.0D, 0.0D, 1.0D));
+      for (uz ☃ : ☃) {
+        if ((!☃.I) && (☃.l() != null) && (!☃.s())) {
+          a(☃);
         }
       }
     }
-    o.B.b();
+    this.o.B.b();
   }
   
-  protected void a(uz p_175445_1_)
+  protected void a(uz ☃)
   {
-    zx var2 = p_175445_1_.l();
-    int var3 = c(var2);
-    if (var3 > -1)
+    zx ☃ = ☃.l();
+    int ☃ = c(☃);
+    if (☃ > -1)
     {
-      boolean var4 = true;
-      zx var5 = p(var3);
-      if (var5 != null) {
-        if (var3 == 0)
+      boolean ☃ = true;
+      zx ☃ = p(☃);
+      if (☃ != null) {
+        if (☃ == 0)
         {
-          if (((var2.b() instanceof aay)) && (!(var5.b() instanceof aay)))
+          if (((☃.b() instanceof aay)) && (!(☃.b() instanceof aay)))
           {
-            var4 = true;
+            ☃ = true;
           }
-          else if (((var2.b() instanceof aay)) && ((var5.b() instanceof aay)))
+          else if (((☃.b() instanceof aay)) && ((☃.b() instanceof aay)))
           {
-            aay var6 = (aay)var2.b();
-            aay var7 = (aay)var5.b();
-            if (var6.g() == var7.g()) {
-              var4 = (var2.i() > var5.i()) || ((var2.n()) && (!var5.n()));
+            aay ☃ = (aay)☃.b();
+            aay ☃ = (aay)☃.b();
+            if (☃.g() == ☃.g()) {
+              ☃ = (☃.i() > ☃.i()) || ((☃.n()) && (!☃.n()));
             } else {
-              var4 = var6.g() > var7.g();
+              ☃ = ☃.g() > ☃.g();
             }
           }
-          else if (((var2.b() instanceof yt)) && ((var5.b() instanceof yt)))
+          else if (((☃.b() instanceof yt)) && ((☃.b() instanceof yt)))
           {
-            var4 = (var2.n()) && (!var5.n());
+            ☃ = (☃.n()) && (!☃.n());
           }
           else
           {
-            var4 = false;
+            ☃ = false;
           }
         }
-        else if (((var2.b() instanceof yj)) && (!(var5.b() instanceof yj)))
+        else if (((☃.b() instanceof yj)) && (!(☃.b() instanceof yj)))
         {
-          var4 = true;
+          ☃ = true;
         }
-        else if (((var2.b() instanceof yj)) && ((var5.b() instanceof yj)))
+        else if (((☃.b() instanceof yj)) && ((☃.b() instanceof yj)))
         {
-          yj var8 = (yj)var2.b();
-          yj var10 = (yj)var5.b();
-          if (c == c) {
-            var4 = (var2.i() > var5.i()) || ((var2.n()) && (!var5.n()));
+          yj ☃ = (yj)☃.b();
+          yj ☃ = (yj)☃.b();
+          if (☃.c == ☃.c) {
+            ☃ = (☃.i() > ☃.i()) || ((☃.n()) && (!☃.n()));
           } else {
-            var4 = c > c;
+            ☃ = ☃.c > ☃.c;
           }
         }
         else
         {
-          var4 = false;
+          ☃ = false;
         }
       }
-      if ((var4) && (a(var2)))
+      if ((☃) && (a(☃)))
       {
-        if ((var5 != null) && (V.nextFloat() - 0.1F < bj[var3])) {
-          a(var5, 0.0F);
+        if ((☃ != null) && (this.V.nextFloat() - 0.1F < this.bj[☃])) {
+          a(☃, 0.0F);
         }
-        if ((var2.b() == zy.i) && (p_175445_1_.n() != null))
+        if ((☃.b() == zy.i) && (☃.n() != null))
         {
-          wn var9 = o.a(p_175445_1_.n());
-          if (var9 != null) {
-            var9.b(mr.x);
+          wn ☃ = this.o.a(☃.n());
+          if (☃ != null) {
+            ☃.b(mr.x);
           }
         }
-        c(var3, var2);
-        bj[var3] = 2.0F;
-        bn = true;
-        a(p_175445_1_, 1);
-        p_175445_1_.J();
+        c(☃, ☃);
+        this.bj[☃] = 2.0F;
+        this.bn = true;
+        a(☃, 1);
+        ☃.J();
       }
     }
   }
   
-  protected boolean a(zx p_175448_1_)
+  protected boolean a(zx ☃)
   {
     return true;
   }
@@ -410,74 +396,65 @@ public abstract class ps
   
   protected void D()
   {
-    Object result = null;
-    Object Result_DEFAULT = Reflector.getFieldValue(Reflector.Event_Result_DEFAULT);
-    Object Result_DENY = Reflector.getFieldValue(Reflector.Event_Result_DENY);
-    if (bn)
+    if (this.bn)
     {
-      aQ = 0;
+      this.aQ = 0;
+      return;
     }
-    else
+    pk ☃ = this.o.a(this, -1.0D);
+    if (☃ != null)
     {
-      if ((aQ & 0x1F) == 31) {
-        if ((result = Reflector.call(Reflector.ForgeEventFactory_canEntityDespawn, new Object[] { this })) != Result_DEFAULT)
-        {
-          if (result == Result_DENY)
-          {
-            aQ = 0; return;
-          }
-          J(); return;
-        }
+      double ☃ = ☃.s - this.s;
+      double ☃ = ☃.t - this.t;
+      double ☃ = ☃.u - this.u;
+      double ☃ = ☃ * ☃ + ☃ * ☃ + ☃ * ☃;
+      if ((C()) && (☃ > 16384.0D)) {
+        J();
       }
-      wn var1 = o.a(this, -1.0D);
-      if (var1 != null)
-      {
-        double var2 = s - s;
-        double var4 = t - t;
-        double var6 = u - u;
-        double var8 = var2 * var2 + var4 * var4 + var6 * var6;
-        if ((C()) && (var8 > 16384.0D)) {
-          J();
-        }
-        if ((aQ > 600) && (V.nextInt(800) == 0) && (var8 > 1024.0D) && (C())) {
-          J();
-        } else if (var8 < 1024.0D) {
-          aQ = 0;
-        }
+      if ((this.aQ > 600) && (this.V.nextInt(800) == 0) && (☃ > 1024.0D) && (C())) {
+        J();
+      } else if (☃ < 1024.0D) {
+        this.aQ = 0;
       }
     }
   }
   
   protected final void bK()
   {
-    aQ += 1;
-    o.B.a("checkDespawn");
+    this.aQ += 1;
+    this.o.B.a("checkDespawn");
     D();
-    o.B.b();
-    o.B.a("sensing");
-    bk.a();
-    o.B.b();
-    o.B.a("targetSelector");
-    bi.a();
-    o.B.b();
-    o.B.a("goalSelector");
-    i.a();
-    o.B.b();
-    o.B.a("navigation");
-    h.k();
-    o.B.b();
-    o.B.a("mob tick");
+    this.o.B.b();
+    
+    this.o.B.a("sensing");
+    this.bk.a();
+    this.o.B.b();
+    
+    this.o.B.a("targetSelector");
+    this.bi.a();
+    this.o.B.b();
+    
+    this.o.B.a("goalSelector");
+    this.i.a();
+    this.o.B.b();
+    
+    this.o.B.a("navigation");
+    this.h.k();
+    this.o.B.b();
+    
+    this.o.B.a("mob tick");
     E();
-    o.B.b();
-    o.B.a("controls");
-    o.B.a("move");
-    f.c();
-    o.B.c("look");
-    a.a();
-    o.B.c("jump");
-    g.b();
-    o.B.b();
-    o.B.b();
+    this.o.B.b();
+    
+    this.o.B.a("controls");
+    this.o.B.a("move");
+    this.f.c();
+    this.o.B.c("look");
+    this.a.a();
+    this.o.B.c("jump");
+    this.g.b();
+    this.o.B.b();
+    this.o.B.b();
   }
   
   protected void E() {}
@@ -487,38 +464,40 @@ public abstract class ps
     return 40;
   }
   
-  public void a(pk p_70625_1_, float p_70625_2_, float p_70625_3_)
+  public void a(pk ☃, float ☃, float ☃)
   {
-    double var4 = s - s;
-    double var8 = u - u;
-    double var6;
-    double var6;
-    if ((p_70625_1_ instanceof pr))
+    double ☃ = ☃.s - this.s;
+    
+    double ☃ = ☃.u - this.u;
+    double ☃;
+    double ☃;
+    if ((☃ instanceof pr))
     {
-      pr var10 = (pr)p_70625_1_;
-      var6 = t + var10.aS() - (t + aS());
+      pr ☃ = (pr)☃;
+      ☃ = ☃.t + ☃.aS() - (this.t + aS());
     }
     else
     {
-      var6 = (aRb + aRe) / 2.0D - (t + aS());
+      ☃ = (☃.aR().b + ☃.aR().e) / 2.0D - (this.t + aS());
     }
-    double var14 = ns.a(var4 * var4 + var8 * var8);
-    float var12 = (float)(ns.b(var8, var4) * 180.0D / 3.141592653589793D) - 90.0F;
-    float var13 = (float)-(ns.b(var6, var14) * 180.0D / 3.141592653589793D);
-    z = b(z, var13, p_70625_3_);
-    y = b(y, var12, p_70625_2_);
+    double ☃ = ns.a(☃ * ☃ + ☃ * ☃);
+    
+    float ☃ = (float)(ns.b(☃, ☃) * 180.0D / 3.1415927410125732D) - 90.0F;
+    float ☃ = (float)-(ns.b(☃, ☃) * 180.0D / 3.1415927410125732D);
+    this.z = b(this.z, ☃, ☃);
+    this.y = b(this.y, ☃, ☃);
   }
   
-  private float b(float p_70663_1_, float p_70663_2_, float p_70663_3_)
+  private float b(float ☃, float ☃, float ☃)
   {
-    float var4 = ns.g(p_70663_2_ - p_70663_1_);
-    if (var4 > p_70663_3_) {
-      var4 = p_70663_3_;
+    float ☃ = ns.g(☃ - ☃);
+    if (☃ > ☃) {
+      ☃ = ☃;
     }
-    if (var4 < -p_70663_3_) {
-      var4 = -p_70663_3_;
+    if (☃ < -☃) {
+      ☃ = -☃;
     }
-    return p_70663_1_ + var4;
+    return ☃ + ☃;
   }
   
   public boolean bR()
@@ -528,7 +507,7 @@ public abstract class ps
   
   public boolean bS()
   {
-    return (o.a(aR(), this)) && (o.a(this, aR()).isEmpty()) && (!o.d(aR()));
+    return (this.o.a(aR(), this)) && (this.o.a(this, aR()).isEmpty()) && (!this.o.d(aR()));
   }
   
   public float bT()
@@ -546,184 +525,183 @@ public abstract class ps
     if (u() == null) {
       return 3;
     }
-    int var1 = (int)(bn() - bu() * 0.33F);
-    var1 -= (3 - o.aa().a()) * 4;
-    if (var1 < 0) {
-      var1 = 0;
+    int ☃ = (int)(bn() - bu() * 0.33F);
+    ☃ -= (3 - this.o.aa().a()) * 4;
+    if (☃ < 0) {
+      ☃ = 0;
     }
-    return var1 + 3;
+    return ☃ + 3;
   }
   
   public zx bA()
   {
-    return bl[0];
+    return this.bl[0];
   }
   
-  public zx p(int slotIn)
+  public zx p(int ☃)
   {
-    return bl[slotIn];
+    return this.bl[☃];
   }
   
-  public zx q(int slotIn)
+  public zx q(int ☃)
   {
-    return bl[(slotIn + 1)];
+    return this.bl[(☃ + 1)];
   }
   
-  public void c(int slotIn, zx stack)
+  public void c(int ☃, zx ☃)
   {
-    bl[slotIn] = stack;
+    this.bl[☃] = ☃;
   }
   
   public zx[] as()
   {
-    return bl;
+    return this.bl;
   }
   
-  protected void a(boolean p_82160_1_, int p_82160_2_)
+  protected void a(boolean ☃, int ☃)
   {
-    for (int var3 = 0; var3 < as().length; var3++)
+    for (int ☃ = 0; ☃ < as().length; ☃++)
     {
-      zx var4 = p(var3);
-      boolean var5 = bj[var3] > 1.0F;
-      if ((var4 != null) && ((p_82160_1_) || (var5)) && (V.nextFloat() - p_82160_2_ * 0.01F < bj[var3]))
+      zx ☃ = p(☃);
+      boolean ☃ = this.bj[☃] > 1.0F;
+      if ((☃ != null) && ((☃) || (☃)) && (this.V.nextFloat() - ☃ * 0.01F < this.bj[☃]))
       {
-        if ((!var5) && (var4.e()))
+        if ((!☃) && (☃.e()))
         {
-          int var6 = Math.max(var4.j() - 25, 1);
-          int var7 = var4.j() - V.nextInt(V.nextInt(var6) + 1);
-          if (var7 > var6) {
-            var7 = var6;
+          int ☃ = Math.max(☃.j() - 25, 1);
+          int ☃ = ☃.j() - this.V.nextInt(this.V.nextInt(☃) + 1);
+          if (☃ > ☃) {
+            ☃ = ☃;
           }
-          if (var7 < 1) {
-            var7 = 1;
+          if (☃ < 1) {
+            ☃ = 1;
           }
-          var4.b(var7);
+          ☃.b(☃);
         }
-        a(var4, 0.0F);
+        a(☃, 0.0F);
       }
     }
   }
   
-  protected void a(ok p_180481_1_)
+  protected void a(ok ☃)
   {
-    if (V.nextFloat() < 0.15F * p_180481_1_.c())
+    if (this.V.nextFloat() < 0.15F * ☃.c())
     {
-      int var2 = V.nextInt(2);
-      float var3 = o.aa() == oj.d ? 0.1F : 0.25F;
-      if (V.nextFloat() < 0.095F) {
-        var2++;
+      int ☃ = this.V.nextInt(2);
+      float ☃ = this.o.aa() == oj.d ? 0.1F : 0.25F;
+      if (this.V.nextFloat() < 0.095F) {
+        ☃++;
       }
-      if (V.nextFloat() < 0.095F) {
-        var2++;
+      if (this.V.nextFloat() < 0.095F) {
+        ☃++;
       }
-      if (V.nextFloat() < 0.095F) {
-        var2++;
+      if (this.V.nextFloat() < 0.095F) {
+        ☃++;
       }
-      for (int var4 = 3; var4 >= 0; var4--)
+      for (int ☃ = 3; ☃ >= 0; ☃--)
       {
-        zx var5 = q(var4);
-        if ((var4 < 3) && (V.nextFloat() < var3)) {
+        zx ☃ = q(☃);
+        if ((☃ < 3) && (this.V.nextFloat() < ☃)) {
           break;
         }
-        if (var5 == null)
+        if (☃ == null)
         {
-          zw var6 = a(var4 + 1, var2);
-          if (var6 != null) {
-            c(var4 + 1, new zx(var6));
+          zw ☃ = a(☃ + 1, ☃);
+          if (☃ != null) {
+            c(☃ + 1, new zx(☃));
           }
         }
       }
     }
   }
   
-  public static int c(zx p_82159_0_)
+  public static int c(zx ☃)
   {
-    if ((p_82159_0_.b() != zw.a(afi.aU)) && (p_82159_0_.b() != zy.bX))
-    {
-      if ((p_82159_0_.b() instanceof yj)) {
-        switch (bb)
-        {
-        case 0: 
-          return 4;
-        case 1: 
-          return 3;
-        case 2: 
-          return 2;
-        case 3: 
-          return 1;
-        }
-      }
-      return 0;
+    if ((☃.b() == zw.a(afi.aU)) || (☃.b() == zy.bX)) {
+      return 4;
     }
-    return 4;
+    if ((☃.b() instanceof yj)) {
+      switch (((yj)☃.b()).b)
+      {
+      case 3: 
+        return 1;
+      case 2: 
+        return 2;
+      case 1: 
+        return 3;
+      case 0: 
+        return 4;
+      }
+    }
+    return 0;
   }
   
-  public static zw a(int armorSlot, int itemTier)
+  public static zw a(int ☃, int ☃)
   {
-    switch (armorSlot)
+    switch (☃)
     {
     case 4: 
-      if (itemTier == 0) {
+      if (☃ == 0) {
         return zy.Q;
       }
-      if (itemTier == 1) {
+      if (☃ == 1) {
         return zy.ag;
       }
-      if (itemTier == 2) {
+      if (☃ == 2) {
         return zy.U;
       }
-      if (itemTier == 3) {
+      if (☃ == 3) {
         return zy.Y;
       }
-      if (itemTier == 4) {
+      if (☃ == 4) {
         return zy.ac;
       }
     case 3: 
-      if (itemTier == 0) {
+      if (☃ == 0) {
         return zy.R;
       }
-      if (itemTier == 1) {
+      if (☃ == 1) {
         return zy.ah;
       }
-      if (itemTier == 2) {
+      if (☃ == 2) {
         return zy.V;
       }
-      if (itemTier == 3) {
+      if (☃ == 3) {
         return zy.Z;
       }
-      if (itemTier == 4) {
+      if (☃ == 4) {
         return zy.ad;
       }
     case 2: 
-      if (itemTier == 0) {
+      if (☃ == 0) {
         return zy.S;
       }
-      if (itemTier == 1) {
+      if (☃ == 1) {
         return zy.ai;
       }
-      if (itemTier == 2) {
+      if (☃ == 2) {
         return zy.W;
       }
-      if (itemTier == 3) {
+      if (☃ == 3) {
         return zy.aa;
       }
-      if (itemTier == 4) {
+      if (☃ == 4) {
         return zy.ae;
       }
     case 1: 
-      if (itemTier == 0) {
+      if (☃ == 0) {
         return zy.T;
       }
-      if (itemTier == 1) {
+      if (☃ == 1) {
         return zy.aj;
       }
-      if (itemTier == 2) {
+      if (☃ == 2) {
         return zy.X;
       }
-      if (itemTier == 3) {
+      if (☃ == 3) {
         return zy.ab;
       }
-      if (itemTier == 4) {
+      if (☃ == 4) {
         return zy.af;
       }
       break;
@@ -731,25 +709,26 @@ public abstract class ps
     return null;
   }
   
-  protected void b(ok p_180483_1_)
+  protected void b(ok ☃)
   {
-    float var2 = p_180483_1_.c();
-    if ((bA() != null) && (V.nextFloat() < 0.25F * var2)) {
-      ack.a(V, bA(), (int)(5.0F + var2 * V.nextInt(18)));
+    float ☃ = ☃.c();
+    if ((bA() != null) && (this.V.nextFloat() < 0.25F * ☃)) {
+      ack.a(this.V, bA(), (int)(5.0F + ☃ * this.V.nextInt(18)));
     }
-    for (int var3 = 0; var3 < 4; var3++)
+    for (int ☃ = 0; ☃ < 4; ☃++)
     {
-      zx var4 = q(var3);
-      if ((var4 != null) && (V.nextFloat() < 0.5F * var2)) {
-        ack.a(V, var4, (int)(5.0F + var2 * V.nextInt(18)));
+      zx ☃ = q(☃);
+      if ((☃ != null) && (this.V.nextFloat() < 0.5F * ☃)) {
+        ack.a(this.V, ☃, (int)(5.0F + ☃ * this.V.nextInt(18)));
       }
     }
   }
   
-  public pu a(ok p_180482_1_, pu p_180482_2_)
+  public pu a(ok ☃, pu ☃)
   {
-    a(vy.b).b(new qd("Random spawn bonus", V.nextGaussian() * 0.05D, 1));
-    return p_180482_2_;
+    a(vy.b).b(new qd("Random spawn bonus", this.V.nextGaussian() * 0.05D, 1));
+    
+    return ☃;
   }
   
   public boolean bW()
@@ -759,87 +738,97 @@ public abstract class ps
   
   public void bX()
   {
-    bn = true;
+    this.bn = true;
   }
   
-  public void a(int p_96120_1_, float p_96120_2_)
+  public void a(int ☃, float ☃)
   {
-    bj[p_96120_1_] = p_96120_2_;
+    this.bj[☃] = ☃;
   }
   
   public boolean bY()
   {
-    return bm;
+    return this.bm;
   }
   
-  public void j(boolean p_98053_1_)
+  public void j(boolean ☃)
   {
-    bm = p_98053_1_;
+    this.bm = ☃;
   }
   
   public boolean bZ()
   {
-    return bn;
+    return this.bn;
   }
   
-  public final boolean e(wn playerIn)
+  public final boolean e(wn ☃)
   {
-    if ((cc()) && (cd() == playerIn))
+    if ((cc()) && (cd() == ☃))
     {
-      a(true, !bA.d);
+      a(true, !☃.bA.d);
       return true;
     }
-    zx var2 = bi.h();
-    if ((var2 != null) && (var2.b() == zy.cn) && (cb()))
-    {
-      if ((!(this instanceof qa)) || (!((qa)this).cl()))
-      {
-        a(playerIn, true);
-        b -= 1;
-        return true;
-      }
-      if (((qa)this).e(playerIn))
-      {
-        a(playerIn, true);
-        b -= 1;
-        return true;
+    zx ☃ = ☃.bi.h();
+    if (☃ != null) {
+      if ((☃.b() == zy.cn) && 
+        (cb())) {
+        if (((this instanceof qa)) && (((qa)this).cl()))
+        {
+          if (((qa)this).e(☃))
+          {
+            a(☃, true);
+            ☃.b -= 1;
+            return true;
+          }
+        }
+        else
+        {
+          a(☃, true);
+          ☃.b -= 1;
+          return true;
+        }
       }
     }
-    return a(playerIn) ? true : super.e(playerIn);
+    if (a(☃)) {
+      return true;
+    }
+    return super.e(☃);
   }
   
-  protected boolean a(wn player)
+  protected boolean a(wn ☃)
   {
     return false;
   }
   
   protected void ca()
   {
-    if (bq != null) {
+    if (this.bq != null) {
       n();
     }
-    if (bo)
+    if (!this.bo) {
+      return;
+    }
+    if (!ai()) {
+      a(true, true);
+    }
+    if ((this.bp == null) || (this.bp.I))
     {
-      if (!ai()) {
-        a(true, true);
-      }
-      if ((bp == null) || (bp.I)) {
-        a(true, true);
-      }
+      a(true, true);
+      return;
     }
   }
   
-  public void a(boolean p_110160_1_, boolean p_110160_2_)
+  public void a(boolean ☃, boolean ☃)
   {
-    if (bo)
+    if (this.bo)
     {
-      bo = false;
-      bp = null;
-      if ((!o.D) && (p_110160_2_)) {
+      this.bo = false;
+      this.bp = null;
+      if ((!this.o.D) && (☃)) {
         a(zy.cn, 1);
       }
-      if ((!o.D) && (p_110160_1_) && ((o instanceof le))) {
-        ((le)o).s().a(this, new hl(1, this, (pk)null));
+      if ((!this.o.D) && (☃) && ((this.o instanceof le))) {
+        ((le)this.o).s().a(this, new hl(1, this, null));
       }
     }
   }
@@ -851,78 +840,79 @@ public abstract class ps
   
   public boolean cc()
   {
-    return bo;
+    return this.bo;
   }
   
   public pk cd()
   {
-    return bp;
+    return this.bp;
   }
   
-  public void a(pk entityIn, boolean sendAttachNotification)
+  public void a(pk ☃, boolean ☃)
   {
-    bo = true;
-    bp = entityIn;
-    if ((!o.D) && (sendAttachNotification) && ((o instanceof le))) {
-      ((le)o).s().a(this, new hl(1, this, bp));
+    this.bo = true;
+    this.bp = ☃;
+    if ((!this.o.D) && (☃) && ((this.o instanceof le))) {
+      ((le)this.o).s().a(this, new hl(1, this, this.bp));
     }
   }
   
   private void n()
   {
-    if ((bo) && (bq != null)) {
-      if ((bq.b("UUIDMost", 4)) && (bq.b("UUIDLeast", 4)))
+    if ((this.bo) && (this.bq != null))
+    {
+      UUID ☃;
+      if ((this.bq.b("UUIDMost", 4)) && (this.bq.b("UUIDLeast", 4)))
       {
-        UUID var5 = new UUID(bq.g("UUIDMost"), bq.g("UUIDLeast"));
-        List var6 = o.a(pr.class, aR().b(10.0D, 10.0D, 10.0D));
-        Iterator var3 = var6.iterator();
-        while (var3.hasNext())
-        {
-          pr var4 = (pr)var3.next();
-          if (var4.aK().equals(var5))
+        ☃ = new UUID(this.bq.g("UUIDMost"), this.bq.g("UUIDLeast"));
+        List<pr> ☃ = this.o.a(pr.class, aR().b(10.0D, 10.0D, 10.0D));
+        for (pr ☃ : ☃) {
+          if (☃.aK().equals(☃))
           {
-            bp = var4;
+            this.bp = ☃;
             break;
           }
         }
       }
-      else if ((bq.b("X", 99)) && (bq.b("Y", 99)) && (bq.b("Z", 99)))
+      else if ((this.bq.b("X", 99)) && (this.bq.b("Y", 99)) && (this.bq.b("Z", 99)))
       {
-        cj var1 = new cj(bq.f("X"), bq.f("Y"), bq.f("Z"));
-        up var2 = up.b(o, var1);
-        if (var2 == null) {
-          var2 = up.a(o, var1);
+        cj ☃ = new cj(this.bq.f("X"), this.bq.f("Y"), this.bq.f("Z"));
+        
+        up ☃ = up.b(this.o, ☃);
+        if (☃ == null) {
+          ☃ = up.a(this.o, ☃);
         }
-        bp = var2;
+        this.bp = ☃;
       }
       else
       {
         a(false, true);
       }
     }
-    bq = null;
+    this.bq = null;
   }
   
-  public boolean d(int p_174820_1_, zx p_174820_2_)
+  public boolean d(int ☃, zx ☃)
   {
-    int var3;
-    int var3;
-    if (p_174820_1_ == 99)
+    int ☃;
+    int ☃;
+    if (☃ == 99)
     {
-      var3 = 0;
+      ☃ = 0;
     }
     else
     {
-      var3 = p_174820_1_ - 100 + 1;
-      if ((var3 < 0) || (var3 >= bl.length)) {
+      ☃ = ☃ - 100 + 1;
+      if ((☃ < 0) || (☃ >= this.bl.length)) {
         return false;
       }
     }
-    if ((p_174820_2_ != null) && (c(p_174820_2_) != var3) && ((var3 != 4) || (!(p_174820_2_.b() instanceof yo)))) {
-      return false;
+    if ((☃ == null) || (c(☃) == ☃) || ((☃ == 4) && ((☃.b() instanceof yo))))
+    {
+      c(☃, ☃);
+      return true;
     }
-    c(var3, p_174820_2_);
-    return true;
+    return false;
   }
   
   public boolean bM()
@@ -930,81 +920,18 @@ public abstract class ps
     return (super.bM()) && (!ce());
   }
   
-  public void k(boolean p_94061_1_)
+  public void k(boolean ☃)
   {
-    ac.b(15, Byte.valueOf((byte)(p_94061_1_ ? 1 : 0)));
+    this.ac.b(15, Byte.valueOf((byte)(☃ ? 1 : 0)));
   }
   
   public boolean ce()
   {
-    return ac.a(15) != 0;
+    return this.ac.a(15) != 0;
   }
   
   public static enum a
   {
-    private static final a[] d = { a, b, c };
-    private static final String __OBFID = "CL_00002255";
-  }
-  
-  public boolean aj()
-  {
-    if (T) {
-      return false;
-    }
-    BlockPosM posM = new BlockPosM(0, 0, 0);
-    for (int var1 = 0; var1 < 8; var1++)
-    {
-      double var2 = s + ((var1 >> 0) % 2 - 0.5F) * J * 0.8F;
-      double var4 = t + ((var1 >> 1) % 2 - 0.5F) * 0.1F;
-      double var6 = u + ((var1 >> 2) % 2 - 0.5F) * J * 0.8F;
-      
-      posM.setXyz(var2, var4 + aS(), var6);
-      if (o.p(posM).c().w()) {
-        return true;
-      }
-    }
-    return false;
-  }
-  
-  private boolean canSkipUpdate()
-  {
-    if (j_()) {
-      return false;
-    }
-    if (au > 0) {
-      return false;
-    }
-    if (W < 20) {
-      return false;
-    }
-    adm world = e();
-    if (world == null) {
-      return false;
-    }
-    if (j.size() != 1) {
-      return false;
-    }
-    pk player = (pk)j.get(0);
-    
-    double dx = Math.abs(s - s) - 16.0D;
-    double dz = Math.abs(u - u) - 16.0D;
-    double distSq = dx * dx + dz * dz;
-    if (a(distSq)) {
-      return false;
-    }
-    return true;
-  }
-  
-  private void onUpdateMinimal()
-  {
-    aQ += 1;
-    if ((this instanceof vv))
-    {
-      float brightness = c(1.0F);
-      if (brightness > 0.5F) {
-        aQ += 2;
-      }
-    }
-    D();
+    private a() {}
   }
 }

@@ -24,12 +24,12 @@ public abstract interface bpj
     
     private a(int ☃)
     {
-      c = ☃;
+      this.c = ☃;
     }
     
     public int a()
     {
-      return c;
+      return this.c;
     }
   }
 }

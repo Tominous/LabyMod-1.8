@@ -26,12 +26,12 @@ public class cj
   
   public cj(pk ☃)
   {
-    this(s, t, u);
+    this(☃.s, ☃.t, ☃.u);
   }
   
   public cj(aui ☃)
   {
-    this(a, b, c);
+    this(☃.a, ☃.b, ☃.c);
   }
   
   public cj(df ☃)
@@ -178,34 +178,34 @@ public class cj
           
           protected cj a()
           {
-            if (b == null)
+            if (this.b == null)
             {
-              b = a;
-              return b;
+              this.b = cj.1.this.a;
+              return this.b;
             }
-            if (b.equals(b)) {
+            if (this.b.equals(cj.1.this.b)) {
               return (cj)endOfData();
             }
-            int ☃ = b.n();
-            int ☃ = b.o();
-            int ☃ = b.p();
-            if (☃ < b.n())
+            int ☃ = this.b.n();
+            int ☃ = this.b.o();
+            int ☃ = this.b.p();
+            if (☃ < cj.1.this.b.n())
             {
               ☃++;
             }
-            else if (☃ < b.o())
+            else if (☃ < cj.1.this.b.o())
             {
-              ☃ = a.n();
+              ☃ = cj.1.this.a.n();
               ☃++;
             }
-            else if (☃ < b.p())
+            else if (☃ < cj.1.this.b.p())
             {
-              ☃ = a.n();
-              ☃ = a.o();
+              ☃ = cj.1.this.a.n();
+              ☃ = cj.1.this.a.o();
               ☃++;
             }
-            b = new cj(☃, ☃, ☃);
-            return b;
+            this.b = new cj(☃, ☃, ☃);
+            return this.b;
           }
         };
       }
@@ -227,31 +227,31 @@ public class cj
     public a(int ☃, int ☃, int ☃)
     {
       super(0, 0);
-      c = ☃;
-      d = ☃;
-      e = ☃;
+      this.c = ☃;
+      this.d = ☃;
+      this.e = ☃;
     }
     
     public int n()
     {
-      return c;
+      return this.c;
     }
     
     public int o()
     {
-      return d;
+      return this.d;
     }
     
     public int p()
     {
-      return e;
+      return this.e;
     }
     
     public a c(int ☃, int ☃, int ☃)
     {
-      c = ☃;
-      d = ☃;
-      e = ☃;
+      this.c = ☃;
+      this.d = ☃;
+      this.e = ☃;
       return this;
     }
   }
@@ -271,36 +271,36 @@ public class cj
           
           protected cj.a a()
           {
-            if (b == null)
+            if (this.b == null)
             {
-              b = new cj.a(a.n(), a.o(), a.p());
-              return b;
+              this.b = new cj.a(cj.2.this.a.n(), cj.2.this.a.o(), cj.2.this.a.p());
+              return this.b;
             }
-            if (b.equals(b)) {
+            if (this.b.equals(cj.2.this.b)) {
               return (cj.a)endOfData();
             }
-            int ☃ = b.n();
-            int ☃ = b.o();
-            int ☃ = b.p();
-            if (☃ < b.n())
+            int ☃ = this.b.n();
+            int ☃ = this.b.o();
+            int ☃ = this.b.p();
+            if (☃ < cj.2.this.b.n())
             {
               ☃++;
             }
-            else if (☃ < b.o())
+            else if (☃ < cj.2.this.b.o())
             {
-              ☃ = a.n();
+              ☃ = cj.2.this.a.n();
               ☃++;
             }
-            else if (☃ < b.p())
+            else if (☃ < cj.2.this.b.p())
             {
-              ☃ = a.n();
-              ☃ = a.o();
+              ☃ = cj.2.this.a.n();
+              ☃ = cj.2.this.a.o();
               ☃++;
             }
-            cj.a.a(b, ☃);
-            cj.a.b(b, ☃);
-            cj.a.c(b, ☃);
-            return b;
+            cj.a.a(this.b, ☃);
+            cj.a.b(this.b, ☃);
+            cj.a.c(this.b, ☃);
+            return this.b;
           }
         };
       }

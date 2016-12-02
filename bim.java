@@ -15,8 +15,8 @@ public class bim
   
   protected float a(tn ☃, float ☃)
   {
-    float ☃ = bq + (bm - bq) * ☃;
-    float ☃ = bp + (bo - bp) * ☃;
+    float ☃ = ☃.bq + (☃.bm - ☃.bq) * ☃;
+    float ☃ = ☃.bp + (☃.bo - ☃.bp) * ☃;
     
     return (ns.a(☃) + 1.0F) * ☃;
   }

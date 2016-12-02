@@ -15,16 +15,16 @@ public class ays
   
   protected void b(int ☃, int ☃)
   {
-    q.a(bnq.a("container.crafting", new Object[0]), 28, 6, 4210752);
-    q.a(bnq.a("container.inventory", new Object[0]), 8, g - 96 + 2, 4210752);
+    this.q.a(bnq.a("container.crafting", new Object[0]), 28, 6, 4210752);
+    this.q.a(bnq.a("container.inventory", new Object[0]), 8, this.g - 96 + 2, 4210752);
   }
   
   protected void a(float ☃, int ☃, int ☃)
   {
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    j.P().a(u);
-    int ☃ = (l - f) / 2;
-    int ☃ = (m - g) / 2;
-    b(☃, ☃, 0, 0, f, g);
+    this.j.P().a(u);
+    int ☃ = (this.l - this.f) / 2;
+    int ☃ = (this.m - this.g) / 2;
+    b(☃, ☃, 0, 0, this.f, this.g);
   }
 }

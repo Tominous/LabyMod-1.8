@@ -20,40 +20,40 @@ public class AccountList
   
   public FancyGuiListExtended.IGuiListEntry getListEntry(int p_148180_1_)
   {
-    return (FancyGuiListExtended.IGuiListEntry)field_148198_l.get(p_148180_1_);
+    return (FancyGuiListExtended.IGuiListEntry)this.field_148198_l.get(p_148180_1_);
   }
   
   protected int getSize()
   {
-    return field_148198_l.size();
+    return this.field_148198_l.size();
   }
   
   public AccountEntry getAccountEntry()
   {
-    return (AccountEntry)field_148198_l.get(field_148197_o);
+    return (AccountEntry)this.field_148198_l.get(this.field_148197_o);
   }
   
   public void setSelected(int p_148192_1_)
   {
-    field_148197_o = p_148192_1_;
+    this.field_148197_o = p_148192_1_;
   }
   
   protected boolean isSelected(int slotIndex)
   {
-    return slotIndex == field_148197_o;
+    return slotIndex == this.field_148197_o;
   }
   
   public void setAccounts(AccountManagerGUI gui, List accounts)
   {
-    field_148198_l.clear();
+    this.field_148198_l.clear();
     for (Object account : accounts) {
-      field_148198_l.add(new AccountEntry(gui, (String)account, this));
+      this.field_148198_l.add(new AccountEntry(gui, (String)account, this));
     }
   }
   
   public List<AccountEntry> getAccountEntrys()
   {
-    return field_148198_l;
+    return this.field_148198_l;
   }
   
   protected int getScrollBarX()

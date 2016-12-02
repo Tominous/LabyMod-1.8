@@ -19,18 +19,18 @@ public class avs
   
   public avs(int ☃, int ☃, int ☃, int ☃, int ☃, String ☃)
   {
-    k = ☃;
-    h = ☃;
-    i = ☃;
-    f = ☃;
-    g = ☃;
-    j = ☃;
+    this.k = ☃;
+    this.h = ☃;
+    this.i = ☃;
+    this.f = ☃;
+    this.g = ☃;
+    this.j = ☃;
   }
   
   protected int a(boolean ☃)
   {
     int ☃ = 1;
-    if (!l) {
+    if (!this.l) {
       ☃ = 0;
     } else if (☃) {
       ☃ = 2;
@@ -40,32 +40,32 @@ public class avs
   
   public void a(ave ☃, int ☃, int ☃)
   {
-    if (!m) {
+    if (!this.m) {
       return;
     }
-    avn ☃ = k;
+    avn ☃ = ☃.k;
     
     ☃.P().a(a);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     
-    n = ((☃ >= h) && (☃ >= i) && (☃ < h + f) && (☃ < i + g));
-    int ☃ = a(n);
+    this.n = ((☃ >= this.h) && (☃ >= this.i) && (☃ < this.h + this.f) && (☃ < this.i + this.g));
+    int ☃ = a(this.n);
     
     bfl.l();
     bfl.a(770, 771, 1, 0);
     bfl.b(770, 771);
-    b(h, i, 0, 46 + ☃ * 20, f / 2, g);
-    b(h + f / 2, i, 200 - f / 2, 46 + ☃ * 20, f / 2, g);
+    b(this.h, this.i, 0, 46 + ☃ * 20, this.f / 2, this.g);
+    b(this.h + this.f / 2, this.i, 200 - this.f / 2, 46 + ☃ * 20, this.f / 2, this.g);
     
     b(☃, ☃, ☃);
     
     int ☃ = 14737632;
-    if (!l) {
+    if (!this.l) {
       ☃ = 10526880;
-    } else if (n) {
+    } else if (this.n) {
       ☃ = 16777120;
     }
-    a(☃, j, h + f / 2, i + (g - 8) / 2, ☃);
+    a(☃, this.j, this.h + this.f / 2, this.i + (this.g - 8) / 2, ☃);
   }
   
   protected void b(ave ☃, int ☃, int ☃) {}
@@ -74,12 +74,12 @@ public class avs
   
   public boolean c(ave ☃, int ☃, int ☃)
   {
-    return (l) && (m) && (☃ >= h) && (☃ >= i) && (☃ < h + f) && (☃ < i + g);
+    return (this.l) && (this.m) && (☃ >= this.h) && (☃ >= this.i) && (☃ < this.h + this.f) && (☃ < this.i + this.g);
   }
   
   public boolean a()
   {
-    return n;
+    return this.n;
   }
   
   public void b(int ☃, int ☃) {}
@@ -91,11 +91,11 @@ public class avs
   
   public int b()
   {
-    return f;
+    return this.f;
   }
   
   public void a(int ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
 }

@@ -8,61 +8,61 @@ class axv$a
 {
   public axv$a(axv paramaxv, ave ☃)
   {
-    super(☃, l, m, 32, m - 64, 36);
+    super(☃, paramaxv.l, paramaxv.m, 32, paramaxv.m - 64, 36);
   }
   
   protected int b()
   {
-    return axv.a(u).size();
+    return axv.a(this.u).size();
   }
   
   protected void a(int ☃, boolean ☃, int ☃, int ☃)
   {
-    axv.a(u, ☃);
-    boolean ☃ = (axv.b(u) >= 0) && (axv.b(u) < b());
-    cu).l = ☃;
-    du).l = ☃;
-    eu).l = ☃;
-    fu).l = ☃;
+    axv.a(this.u, ☃);
+    boolean ☃ = (axv.b(this.u) >= 0) && (axv.b(this.u) < b());
+    axv.c(this.u).l = ☃;
+    axv.d(this.u).l = ☃;
+    axv.e(this.u).l = ☃;
+    axv.f(this.u).l = ☃;
     if ((☃) && (☃)) {
-      u.i(☃);
+      this.u.i(☃);
     }
   }
   
   protected boolean a(int ☃)
   {
-    return ☃ == axv.b(u);
+    return ☃ == axv.b(this.u);
   }
   
   protected int k()
   {
-    return axv.a(u).size() * 36;
+    return axv.a(this.u).size() * 36;
   }
   
   protected void a()
   {
-    u.c();
+    this.u.c();
   }
   
   protected void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    ats ☃ = (ats)axv.a(u).get(☃);
+    ats ☃ = (ats)axv.a(this.u).get(☃);
     
     String ☃ = ☃.b();
     if (StringUtils.isEmpty(☃)) {
-      ☃ = axv.g(u) + " " + (☃ + 1);
+      ☃ = axv.g(this.u) + " " + (☃ + 1);
     }
     String ☃ = ☃.a();
-    ☃ = ☃ + " (" + axv.h(u).format(new Date(☃.e()));
+    ☃ = ☃ + " (" + axv.h(this.u).format(new Date(☃.e()));
     ☃ = ☃ + ")";
     String ☃ = "";
     if (☃.d())
     {
-      ☃ = axv.i(u) + " " + ☃;
+      ☃ = axv.i(this.u) + " " + ☃;
     }
     else
     {
-      ☃ = axv.j(u)[☃.f().a()];
+      ☃ = axv.j(this.u)[☃.f().a()];
       if (☃.g()) {
         ☃ = a.e + bnq.a("gameMode.hardcore", new Object[0]) + a.v;
       }
@@ -70,8 +70,8 @@ class axv$a
         ☃ = ☃ + ", " + bnq.a("selectWorld.cheats", new Object[0]);
       }
     }
-    u.c(u.q, ☃, ☃ + 2, ☃ + 1, 16777215);
-    u.c(u.q, ☃, ☃ + 2, ☃ + 12, 8421504);
-    u.c(u.q, ☃, ☃ + 2, ☃ + 12 + 10, 8421504);
+    this.u.c(this.u.q, ☃, ☃ + 2, ☃ + 1, 16777215);
+    this.u.c(this.u.q, ☃, ☃ + 2, ☃ + 12, 8421504);
+    this.u.c(this.u.q, ☃, ☃ + 2, ☃ + 12 + 10, 8421504);
   }
 }

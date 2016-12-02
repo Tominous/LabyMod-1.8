@@ -6,13 +6,13 @@ public enum oj
   
   private oj(int ☃, String ☃)
   {
-    f = ☃;
-    g = ☃;
+    this.f = ☃;
+    this.g = ☃;
   }
   
   public int a()
   {
-    return f;
+    return this.f;
   }
   
   public static oj a(int ☃)
@@ -24,12 +24,12 @@ public enum oj
   {
     e = new oj[values().length];
     for (oj ☃ : values()) {
-      e[f] = ☃;
+      e[☃.f] = ☃;
     }
   }
   
   public String b()
   {
-    return g;
+    return this.g;
   }
 }

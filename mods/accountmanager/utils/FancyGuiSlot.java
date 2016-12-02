@@ -40,38 +40,38 @@ public abstract class FancyGuiSlot
   
   public FancyGuiSlot(ave mcIn, int width, int height, int topIn, int bottomIn, int slotHeightIn, int startX)
   {
-    mc = mcIn;
+    this.mc = mcIn;
     this.width = width;
     this.height = height;
-    top = topIn;
-    bottom = bottomIn;
-    slotHeight = slotHeightIn;
-    left = startX;
-    right = (left + width);
+    this.top = topIn;
+    this.bottom = bottomIn;
+    this.slotHeight = slotHeightIn;
+    this.left = startX;
+    this.right = (this.left + width);
     this.startX = startX;
   }
   
   public void setDimensions(int p_148122_1_, int p_148122_2_, int p_148122_3_, int p_148122_4_)
   {
-    width = p_148122_1_;
-    height = p_148122_2_;
-    top = p_148122_3_;
-    bottom = p_148122_4_;
-    left = 0;
-    right = p_148122_1_;
+    this.width = p_148122_1_;
+    this.height = p_148122_2_;
+    this.top = p_148122_3_;
+    this.bottom = p_148122_4_;
+    this.left = 0;
+    this.right = p_148122_1_;
   }
   
   public void setShowSelectionBox(boolean p_148130_1_)
   {
-    showSelectionBox = p_148130_1_;
+    this.showSelectionBox = p_148130_1_;
   }
   
   protected void setHasListHeader(boolean p_148133_1_, int p_148133_2_)
   {
-    hasListHeader = p_148133_1_;
-    headerPadding = p_148133_2_;
+    this.hasListHeader = p_148133_1_;
+    this.headerPadding = p_148133_2_;
     if (!p_148133_1_) {
-      headerPadding = 0;
+      this.headerPadding = 0;
     }
   }
   
@@ -83,7 +83,7 @@ public abstract class FancyGuiSlot
   
   protected int getContentHeight()
   {
-    return getSize() * slotHeight + headerPadding;
+    return getSize() * this.slotHeight + this.headerPadding;
   }
   
   protected abstract void drawBackground();
@@ -100,19 +100,19 @@ public abstract class FancyGuiSlot
   
   public int getSlotIndexFromScreenCoords(int p_148124_1_, int p_148124_2_)
   {
-    int k = left + width / 2 - getListWidth() / 2;
-    int l = left + width / 2 + getListWidth() / 2;
-    int i1 = p_148124_2_ - top - headerPadding + (int)amountScrolled - 4;
+    int k = this.left + this.width / 2 - getListWidth() / 2;
+    int l = this.left + this.width / 2 + getListWidth() / 2;
+    int i1 = p_148124_2_ - this.top - this.headerPadding + (int)this.amountScrolled - 4;
     
-    int j1 = i1 / slotHeight;
+    int j1 = i1 / this.slotHeight;
     if ((p_148124_1_ < getScrollBarX()) && (p_148124_1_ >= k) && (p_148124_1_ <= l) && (j1 >= 0) && (i1 >= 0)) {}
     return j1 < getSize() ? j1 : -1;
   }
   
   public void registerScrollButtons(int p_148134_1_, int p_148134_2_)
   {
-    scrollUpButtonID = p_148134_1_;
-    scrollDownButtonID = p_148134_2_;
+    this.scrollUpButtonID = p_148134_1_;
+    this.scrollDownButtonID = p_148134_2_;
   }
   
   protected void bindAmountScrolled()
@@ -121,47 +121,47 @@ public abstract class FancyGuiSlot
     if (i < 0) {
       i /= 2;
     }
-    if ((!field_148163_i) && (i < 0)) {
+    if ((!this.field_148163_i) && (i < 0)) {
       i = 0;
     }
-    amountScrolled = ns.a(amountScrolled, 0.0F, i);
+    this.amountScrolled = ns.a(this.amountScrolled, 0.0F, i);
   }
   
   public int func_148135_f()
   {
-    return Math.max(0, getContentHeight() - (bottom - top - 4));
+    return Math.max(0, getContentHeight() - (this.bottom - this.top - 4));
   }
   
   public int getAmountScrolled()
   {
-    return (int)amountScrolled;
+    return (int)this.amountScrolled;
   }
   
   public boolean isMouseYWithinSlotBounds(int mouseX, int p_148141_1_)
   {
-    return (p_148141_1_ >= top) && (p_148141_1_ <= bottom) && (mouseX >= left) && (mouseX <= right);
+    return (p_148141_1_ >= this.top) && (p_148141_1_ <= this.bottom) && (mouseX >= this.left) && (mouseX <= this.right);
   }
   
   public void scrollBy(int p_148145_1_)
   {
-    amountScrolled += p_148145_1_;
+    this.amountScrolled += p_148145_1_;
     bindAmountScrolled();
-    initialClickY = -2.0F;
+    this.initialClickY = -2.0F;
   }
   
   public void actionPerformed(avs p_148147_1_)
   {
-    if (l) {
-      if (k == scrollUpButtonID)
+    if (p_148147_1_.l) {
+      if (p_148147_1_.k == this.scrollUpButtonID)
       {
-        amountScrolled -= slotHeight * 2 / 3;
-        initialClickY = -2.0F;
+        this.amountScrolled -= this.slotHeight * 2 / 3;
+        this.initialClickY = -2.0F;
         bindAmountScrolled();
       }
-      else if (k == scrollDownButtonID)
+      else if (p_148147_1_.k == this.scrollDownButtonID)
       {
-        amountScrolled += slotHeight * 2 / 3;
-        initialClickY = -2.0F;
+        this.amountScrolled += this.slotHeight * 2 / 3;
+        this.initialClickY = -2.0F;
         bindAmountScrolled();
       }
     }
@@ -169,22 +169,22 @@ public abstract class FancyGuiSlot
   
   public void drawScreen(int mouseXIn, int mouseYIn, float p_148128_3_)
   {
-    if (field_178041_q)
+    if (this.field_178041_q)
     {
-      mouseX = mouseXIn;
-      mouseY = mouseYIn;
+      this.mouseX = mouseXIn;
+      this.mouseY = mouseYIn;
       drawBackground();
-      int k = right - 6;
+      int k = this.right - 6;
       int l = k + 6;
       bindAmountScrolled();
       bfl.f();
       bfl.n();
       bfx tessellator = bfx.a();
       bfd worldrenderer = tessellator.c();
-      int i1 = left;
+      int i1 = this.left;
       
-      int j1 = top + 4 - (int)amountScrolled;
-      if (hasListHeader) {
+      int j1 = this.top + 4 - (int)this.amountScrolled;
+      if (this.hasListHeader) {
         drawListHeader(i1, j1, tessellator);
       }
       drawSelectionBox(i1, j1, mouseXIn, mouseYIn);
@@ -198,13 +198,13 @@ public abstract class FancyGuiSlot
       int k1 = func_148135_f();
       if (k1 > 0)
       {
-        int l1 = (bottom - top) * (bottom - top) / getContentHeight();
-        l1 = ns.a(l1, 32, bottom - top - 8);
-        int i2 = (int)amountScrolled * (bottom - top - l1) / k1 + top;
-        if (i2 < top) {
-          i2 = top;
+        int l1 = (this.bottom - this.top) * (this.bottom - this.top) / getContentHeight();
+        l1 = ns.a(l1, 32, this.bottom - this.top - 8);
+        int i2 = (int)this.amountScrolled * (this.bottom - this.top - l1) / k1 + this.top;
+        if (i2 < this.top) {
+          i2 = this.top;
         }
-        avp.a(k, top, l, bottom, new Color(255, 255, 255, 20).getRGB());
+        avp.a(k, this.top, l, this.bottom, new Color(255, 255, 255, 20).getRGB());
         avp.a(k, i2, l, i2 + l1, new Color(192, 192, 192, 100).getRGB());
       }
       func_148142_b(mouseXIn, mouseYIn);
@@ -217,74 +217,74 @@ public abstract class FancyGuiSlot
   
   public void handleMouseInput()
   {
-    if (isMouseYWithinSlotBounds(mouseX, mouseY))
+    if (isMouseYWithinSlotBounds(this.mouseX, this.mouseY))
     {
       if ((Mouse.isButtonDown(0)) && (getEnabled()))
       {
-        if (initialClickY == -1.0F)
+        if (this.initialClickY == -1.0F)
         {
           boolean flag = true;
-          if ((mouseY >= top) && (mouseY <= bottom))
+          if ((this.mouseY >= this.top) && (this.mouseY <= this.bottom))
           {
-            int i = width / 2 - getListWidth() / 2;
-            int j = width / 2 + getListWidth() / 2;
-            int k = mouseY - top - headerPadding + (int)amountScrolled - 4;
+            int i = this.width / 2 - getListWidth() / 2;
+            int j = this.width / 2 + getListWidth() / 2;
+            int k = this.mouseY - this.top - this.headerPadding + (int)this.amountScrolled - 4;
             
-            int l = k / slotHeight;
-            if ((mouseX >= i) && (mouseX <= j) && (l >= 0) && (k >= 0) && 
+            int l = k / this.slotHeight;
+            if ((this.mouseX >= i) && (this.mouseX <= j) && (l >= 0) && (k >= 0) && 
               (l < getSize()))
             {
-              boolean flag1 = (l == selectedElement) && (ave.J() - lastClicked < 250L);
+              boolean flag1 = (l == this.selectedElement) && (ave.J() - this.lastClicked < 250L);
               
-              elementClicked(l, flag1, mouseX, mouseY);
+              elementClicked(l, flag1, this.mouseX, this.mouseY);
               
-              selectedElement = l;
-              lastClicked = ave.J();
+              this.selectedElement = l;
+              this.lastClicked = ave.J();
             }
-            else if ((mouseX >= i) && (mouseX <= j) && (k < 0))
+            else if ((this.mouseX >= i) && (this.mouseX <= j) && (k < 0))
             {
-              func_148132_a(mouseX - i, mouseY - top + (int)amountScrolled - 4);
+              func_148132_a(this.mouseX - i, this.mouseY - this.top + (int)this.amountScrolled - 4);
               
               flag = false;
             }
-            int i2 = right - 6;
+            int i2 = this.right - 6;
             int i1 = i2 + 6;
-            if ((mouseX >= i2) && (mouseX <= i1))
+            if ((this.mouseX >= i2) && (this.mouseX <= i1))
             {
-              scrollMultiplier = -1.0F;
+              this.scrollMultiplier = -1.0F;
               int j1 = func_148135_f();
               if (j1 < 1) {
                 j1 = 1;
               }
-              int k1 = (int)((bottom - top) * (bottom - top) / getContentHeight());
-              k1 = ns.a(k1, 32, bottom - top - 8);
+              int k1 = (int)((this.bottom - this.top) * (this.bottom - this.top) / getContentHeight());
+              k1 = ns.a(k1, 32, this.bottom - this.top - 8);
               
-              scrollMultiplier /= (bottom - top - k1) / j1;
+              this.scrollMultiplier /= (this.bottom - this.top - k1) / j1;
             }
             else
             {
-              scrollMultiplier = 1.0F;
+              this.scrollMultiplier = 1.0F;
             }
             if (flag) {
-              initialClickY = mouseY;
+              this.initialClickY = this.mouseY;
             } else {
-              initialClickY = -2.0F;
+              this.initialClickY = -2.0F;
             }
           }
           else
           {
-            initialClickY = -2.0F;
+            this.initialClickY = -2.0F;
           }
         }
-        else if (initialClickY >= 0.0F)
+        else if (this.initialClickY >= 0.0F)
         {
-          amountScrolled -= (mouseY - initialClickY) * scrollMultiplier;
+          this.amountScrolled -= (this.mouseY - this.initialClickY) * this.scrollMultiplier;
           
-          initialClickY = mouseY;
+          this.initialClickY = this.mouseY;
         }
       }
       else {
-        initialClickY = -1.0F;
+        this.initialClickY = -1.0F;
       }
       int l1 = Mouse.getEventDWheel();
       if (l1 != 0)
@@ -294,24 +294,24 @@ public abstract class FancyGuiSlot
         } else if (l1 < 0) {
           l1 = 1;
         }
-        amountScrolled += l1 * slotHeight / 2;
+        this.amountScrolled += l1 * this.slotHeight / 2;
       }
     }
   }
   
   public void setEnabled(boolean p_148143_1_)
   {
-    enabled = p_148143_1_;
+    this.enabled = p_148143_1_;
   }
   
   public boolean getEnabled()
   {
-    return enabled;
+    return this.enabled;
   }
   
   public int getListWidth()
   {
-    return width;
+    return this.width;
   }
   
   protected void drawSelectionBox(int p_148120_1_, int p_148120_2_, int p_148120_3_, int p_148120_4_)
@@ -321,15 +321,15 @@ public abstract class FancyGuiSlot
     bfd worldrenderer = tessellator.c();
     for (int j1 = 0; j1 < i1; j1++)
     {
-      int k1 = p_148120_2_ + j1 * slotHeight + headerPadding;
-      int l1 = slotHeight - 4;
-      if ((k1 > bottom) || (k1 + l1 < top)) {
+      int k1 = p_148120_2_ + j1 * this.slotHeight + this.headerPadding;
+      int l1 = this.slotHeight - 4;
+      if ((k1 > this.bottom) || (k1 + l1 < this.top)) {
         func_178040_a(j1, p_148120_1_, k1);
       }
-      if ((showSelectionBox) && (isSelected(j1)) && (k1 >= top) && (k1 <= bottom - slotHeight + 5))
+      if ((this.showSelectionBox) && (isSelected(j1)) && (k1 >= this.top) && (k1 <= this.bottom - this.slotHeight + 5))
       {
         bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-        avp.a(left, k1, right - 6, k1 + l1 + 2, new Color(255, 255, 255, 40)
+        avp.a(this.left, k1, this.right - 6, k1 + l1 + 2, new Color(255, 255, 255, 40)
           .getRGB());
       }
       drawSlot(j1, p_148120_1_, k1, l1, p_148120_3_, p_148120_4_);
@@ -338,17 +338,17 @@ public abstract class FancyGuiSlot
   
   protected int getScrollBarX()
   {
-    return right - 6;
+    return this.right - 6;
   }
   
   public void setSlotXBoundsFromLeft(int p_148140_1_)
   {
-    left = p_148140_1_;
-    right = (p_148140_1_ + width);
+    this.left = p_148140_1_;
+    this.right = (p_148140_1_ + this.width);
   }
   
   public int getSlotHeight()
   {
-    return slotHeight;
+    return this.slotHeight;
   }
 }

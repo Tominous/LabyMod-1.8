@@ -1,5 +1,9 @@
 package de.labystudio.utils;
 
+import ave;
+import awx;
+import awy;
+import axu;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.awt.Desktop;
@@ -100,17 +104,47 @@ public class Utils
     return new ArrayList();
   }
   
-  public static void openWebpage(URI uri)
+  public static void openWebpage(URI uri, boolean request)
   {
-    Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
-    if ((desktop != null) && (desktop.isSupported(Desktop.Action.BROWSE))) {
-      try
+    if (request)
+    {
+      final axu lastScreen = ave.A().m;
+      ave.A().a(new awy(new awx()
       {
-        desktop.browse(uri);
-      }
-      catch (Exception e)
-      {
-        e.printStackTrace();
+        public void a(boolean result, int id)
+        {
+          if (result)
+          {
+            Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+            if ((desktop != null) && (desktop.isSupported(Desktop.Action.BROWSE))) {
+              try
+              {
+                desktop.browse(this.val$uri);
+              }
+              catch (Exception e)
+              {
+                e.printStackTrace();
+              }
+            }
+          }
+          ave.A().a(lastScreen);
+        }
+      }, "Do you want to open this link in your default browser?", 
+      
+        Color.cl("b") + uri.toString(), 31102009));
+    }
+    else
+    {
+      Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+      if ((desktop != null) && (desktop.isSupported(Desktop.Action.BROWSE))) {
+        try
+        {
+          desktop.browse(uri);
+        }
+        catch (Exception e)
+        {
+          e.printStackTrace();
+        }
       }
     }
   }

@@ -20,7 +20,7 @@ public class xc
   {
     super(☃, ☃);
     
-    c = ☃;
+    this.c = ☃;
   }
   
   public xc(adm ☃, double ☃, double ☃, double ☃, int ☃)
@@ -31,7 +31,7 @@ public class xc
   public xc(adm ☃, double ☃, double ☃, double ☃, zx ☃)
   {
     super(☃, ☃, ☃, ☃);
-    c = ☃;
+    this.c = ☃;
   }
   
   protected float m()
@@ -51,30 +51,30 @@ public class xc
   
   public void a(int ☃)
   {
-    if (c == null) {
-      c = new zx(zy.bz, 1, 0);
+    if (this.c == null) {
+      this.c = new zx(zy.bz, 1, 0);
     }
-    c.b(☃);
+    this.c.b(☃);
   }
   
   public int o()
   {
-    if (c == null) {
-      c = new zx(zy.bz, 1, 0);
+    if (this.c == null) {
+      this.c = new zx(zy.bz, 1, 0);
     }
-    return c.i();
+    return this.c.i();
   }
   
   protected void a(auh ☃)
   {
-    if (!o.D)
+    if (!this.o.D)
     {
-      List<pf> ☃ = zy.bz.h(c);
+      List<pf> ☃ = zy.bz.h(this.c);
       Iterator ☃;
       if ((☃ != null) && (!☃.isEmpty()))
       {
         aug ☃ = aR().b(4.0D, 2.0D, 4.0D);
-        List<pr> ☃ = o.a(pr.class, ☃);
+        List<pr> ☃ = this.o.a(pr.class, ☃);
         if (!☃.isEmpty()) {
           for (☃ = ☃.iterator(); ☃.hasNext();)
           {
@@ -83,7 +83,7 @@ public class xc
             if (☃ < 16.0D)
             {
               ☃ = 1.0D - Math.sqrt(☃) / 4.0D;
-              if (☃ == d) {
+              if (☃ == ☃.d) {
                 ☃ = 1.0D;
               }
               for (pf ☃ : ☃)
@@ -107,7 +107,7 @@ public class xc
       }
       pr ☃;
       double ☃;
-      o.b(2002, new cj(this), o());
+      this.o.b(2002, new cj(this), o());
       
       J();
     }
@@ -117,11 +117,11 @@ public class xc
   {
     super.a(☃);
     if (☃.b("Potion", 10)) {
-      c = zx.a(☃.m("Potion"));
+      this.c = zx.a(☃.m("Potion"));
     } else {
       a(☃.f("potionValue"));
     }
-    if (c == null) {
+    if (this.c == null) {
       J();
     }
   }
@@ -129,8 +129,8 @@ public class xc
   public void b(dn ☃)
   {
     super.b(☃);
-    if (c != null) {
-      ☃.a("Potion", c.b(new dn()));
+    if (this.c != null) {
+      ☃.a("Potion", this.c.b(new dn()));
     }
   }
 }

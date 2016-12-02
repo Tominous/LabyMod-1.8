@@ -14,27 +14,27 @@ public class alh
   
   public int o_()
   {
-    return h.length;
+    return this.h.length;
   }
   
   public zx a(int ☃)
   {
-    return h[☃];
+    return this.h[☃];
   }
   
   public zx a(int ☃, int ☃)
   {
-    if (h[☃] != null)
+    if (this.h[☃] != null)
     {
-      if (h[☃].b <= ☃)
+      if (this.h[☃].b <= ☃)
       {
-        zx ☃ = h[☃];
-        h[☃] = null;
+        zx ☃ = this.h[☃];
+        this.h[☃] = null;
         return ☃;
       }
-      zx ☃ = h[☃].a(☃);
-      if (h[☃].b == 0) {
-        h[☃] = null;
+      zx ☃ = this.h[☃].a(☃);
+      if (this.h[☃].b == 0) {
+        this.h[☃] = null;
       }
       return ☃;
     }
@@ -43,10 +43,10 @@ public class alh
   
   public zx b(int ☃)
   {
-    if (h[☃] != null)
+    if (this.h[☃] != null)
     {
-      zx ☃ = h[☃];
-      h[☃] = null;
+      zx ☃ = this.h[☃];
+      this.h[☃] = null;
       return ☃;
     }
     return null;
@@ -54,75 +54,75 @@ public class alh
   
   public void a(int ☃, zx ☃)
   {
-    boolean ☃ = (☃ != null) && (☃.a(h[☃])) && (zx.a(☃, h[☃]));
-    h[☃] = ☃;
-    if ((☃ != null) && (b > q_())) {
-      b = q_();
+    boolean ☃ = (☃ != null) && (☃.a(this.h[☃])) && (zx.a(☃, this.h[☃]));
+    this.h[☃] = ☃;
+    if ((☃ != null) && (☃.b > q_())) {
+      ☃.b = q_();
     }
     if ((☃ == 0) && (!☃))
     {
-      l = a(☃);
-      k = 0;
+      this.l = a(☃);
+      this.k = 0;
       p_();
     }
   }
   
   public String e_()
   {
-    return l_() ? m : "container.furnace";
+    return l_() ? this.m : "container.furnace";
   }
   
   public boolean l_()
   {
-    return (m != null) && (m.length() > 0);
+    return (this.m != null) && (this.m.length() > 0);
   }
   
   public void a(String ☃)
   {
-    m = ☃;
+    this.m = ☃;
   }
   
   public void a(dn ☃)
   {
     super.a(☃);
     du ☃ = ☃.c("Items", 10);
-    h = new zx[o_()];
+    this.h = new zx[o_()];
     for (int ☃ = 0; ☃ < ☃.c(); ☃++)
     {
       dn ☃ = ☃.b(☃);
       int ☃ = ☃.d("Slot");
-      if ((☃ >= 0) && (☃ < h.length)) {
-        h[☃] = zx.a(☃);
+      if ((☃ >= 0) && (☃ < this.h.length)) {
+        this.h[☃] = zx.a(☃);
       }
     }
-    i = ☃.e("BurnTime");
-    k = ☃.e("CookTime");
-    l = ☃.e("CookTimeTotal");
-    j = b(h[1]);
+    this.i = ☃.e("BurnTime");
+    this.k = ☃.e("CookTime");
+    this.l = ☃.e("CookTimeTotal");
+    this.j = b(this.h[1]);
     if (☃.b("CustomName", 8)) {
-      m = ☃.j("CustomName");
+      this.m = ☃.j("CustomName");
     }
   }
   
   public void b(dn ☃)
   {
     super.b(☃);
-    ☃.a("BurnTime", (short)i);
-    ☃.a("CookTime", (short)k);
-    ☃.a("CookTimeTotal", (short)l);
+    ☃.a("BurnTime", (short)this.i);
+    ☃.a("CookTime", (short)this.k);
+    ☃.a("CookTimeTotal", (short)this.l);
     du ☃ = new du();
-    for (int ☃ = 0; ☃ < h.length; ☃++) {
-      if (h[☃] != null)
+    for (int ☃ = 0; ☃ < this.h.length; ☃++) {
+      if (this.h[☃] != null)
       {
         dn ☃ = new dn();
         ☃.a("Slot", (byte)☃);
-        h[☃].b(☃);
+        this.h[☃].b(☃);
         ☃.a(☃);
       }
     }
     ☃.a("Items", ☃);
     if (l_()) {
-      ☃.a("CustomName", m);
+      ☃.a("CustomName", this.m);
     }
   }
   
@@ -133,7 +133,7 @@ public class alh
   
   public boolean m()
   {
-    return i > 0;
+    return this.i > 0;
   }
   
   public static boolean a(og ☃)
@@ -146,54 +146,54 @@ public class alh
     boolean ☃ = m();
     boolean ☃ = false;
     if (m()) {
-      i -= 1;
+      this.i -= 1;
     }
-    if (!b.D)
+    if (!this.b.D)
     {
-      if ((m()) || ((h[1] != null) && (h[0] != null)))
+      if ((m()) || ((this.h[1] != null) && (this.h[0] != null)))
       {
         if ((!m()) && (o()))
         {
-          j = (i = b(h[1]));
+          this.j = (this.i = b(this.h[1]));
           if (m())
           {
             ☃ = true;
-            if (h[1] != null)
+            if (this.h[1] != null)
             {
-              h[1].b -= 1;
-              if (h[1].b == 0)
+              this.h[1].b -= 1;
+              if (this.h[1].b == 0)
               {
-                zw ☃ = h[1].b().q();
-                h[1] = (☃ != null ? new zx(☃) : null);
+                zw ☃ = this.h[1].b().q();
+                this.h[1] = (☃ != null ? new zx(☃) : null);
               }
             }
           }
         }
         if ((m()) && (o()))
         {
-          k += 1;
-          if (k == l)
+          this.k += 1;
+          if (this.k == this.l)
           {
-            k = 0;
-            l = a(h[0]);
+            this.k = 0;
+            this.l = a(this.h[0]);
             n();
             ☃ = true;
           }
         }
         else
         {
-          k = 0;
+          this.k = 0;
         }
       }
       else if ((!m()) && 
-        (k > 0))
+        (this.k > 0))
       {
-        k = ns.a(k - 2, 0, l);
+        this.k = ns.a(this.k - 2, 0, this.l);
       }
       if (☃ != m())
       {
         ☃ = true;
-        ahb.a(m(), b, c);
+        ahb.a(m(), this.b, this.c);
       }
     }
     if (☃) {
@@ -208,23 +208,23 @@ public class alh
   
   private boolean o()
   {
-    if (h[0] == null) {
+    if (this.h[0] == null) {
       return false;
     }
-    zx ☃ = abo.a().a(h[0]);
+    zx ☃ = abo.a().a(this.h[0]);
     if (☃ == null) {
       return false;
     }
-    if (h[2] == null) {
+    if (this.h[2] == null) {
       return true;
     }
-    if (!h[2].a(☃)) {
+    if (!this.h[2].a(☃)) {
       return false;
     }
-    if ((h[2].b < q_()) && (h[2].b < h[2].c())) {
+    if ((this.h[2].b < q_()) && (this.h[2].b < this.h[2].c())) {
       return true;
     }
-    if (h[2].b < ☃.c()) {
+    if (this.h[2].b < ☃.c()) {
       return true;
     }
     return false;
@@ -235,18 +235,18 @@ public class alh
     if (!o()) {
       return;
     }
-    zx ☃ = abo.a().a(h[0]);
-    if (h[2] == null) {
-      h[2] = ☃.k();
-    } else if (h[2].b() == ☃.b()) {
-      h[2].b += 1;
+    zx ☃ = abo.a().a(this.h[0]);
+    if (this.h[2] == null) {
+      this.h[2] = ☃.k();
+    } else if (this.h[2].b() == ☃.b()) {
+      this.h[2].b += 1;
     }
-    if ((h[0].b() == zw.a(afi.v)) && (h[0].i() == 1) && (h[1] != null) && (h[1].b() == zy.aw)) {
-      h[1] = new zx(zy.ax);
+    if ((this.h[0].b() == zw.a(afi.v)) && (this.h[0].i() == 1) && (this.h[1] != null) && (this.h[1].b() == zy.aw)) {
+      this.h[1] = new zx(zy.ax);
     }
-    h[0].b -= 1;
-    if (h[0].b <= 0) {
-      h[0] = null;
+    this.h[0].b -= 1;
+    if (this.h[0].b <= 0) {
+      this.h[0] = null;
     }
   }
   
@@ -303,10 +303,10 @@ public class alh
   
   public boolean a(wn ☃)
   {
-    if (b.s(c) != this) {
+    if (this.b.s(this.c) != this) {
       return false;
     }
-    if (☃.e(c.n() + 0.5D, c.o() + 0.5D, c.p() + 0.5D) > 64.0D) {
+    if (☃.e(this.c.n() + 0.5D, this.c.o() + 0.5D, this.c.p() + 0.5D) > 64.0D) {
       return false;
     }
     return true;
@@ -370,13 +370,13 @@ public class alh
     switch (☃)
     {
     case 0: 
-      return i;
+      return this.i;
     case 1: 
-      return j;
+      return this.j;
     case 2: 
-      return k;
+      return this.k;
     case 3: 
-      return l;
+      return this.l;
     }
     return 0;
   }
@@ -386,16 +386,16 @@ public class alh
     switch (☃)
     {
     case 0: 
-      i = ☃;
+      this.i = ☃;
       break;
     case 1: 
-      j = ☃;
+      this.j = ☃;
       break;
     case 2: 
-      k = ☃;
+      this.k = ☃;
       break;
     case 3: 
-      l = ☃;
+      this.l = ☃;
     }
   }
   
@@ -406,8 +406,8 @@ public class alh
   
   public void l()
   {
-    for (int ☃ = 0; ☃ < h.length; ☃++) {
-      h[☃] = null;
+    for (int ☃ = 0; ☃ < this.h.length; ☃++) {
+      this.h[☃] = null;
     }
   }
 }

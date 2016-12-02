@@ -22,17 +22,17 @@ public class aup
   
   public void a(auo ☃)
   {
-    c = ☃;
-    if (d != null) {
-      a(d);
+    this.c = ☃;
+    if (this.d != null) {
+      a(this.d);
     }
   }
   
   public void a(dn ☃)
   {
-    if (c == null)
+    if (this.c == null)
     {
-      d = ☃;
+      this.d = ☃;
       return;
     }
     b(☃.c("Objectives", 10));
@@ -55,7 +55,7 @@ public class aup
       if (☃.length() > 16) {
         ☃ = ☃.substring(0, 16);
       }
-      aul ☃ = c.e(☃);
+      aul ☃ = this.c.e(☃);
       String ☃ = ☃.j("DisplayName");
       if (☃.length() > 32) {
         ☃ = ☃.substring(0, 32);
@@ -93,7 +93,7 @@ public class aup
   protected void a(aul ☃, du ☃)
   {
     for (int ☃ = 0; ☃ < ☃.c(); ☃++) {
-      c.a(☃.f(☃), ☃.b());
+      this.c.a(☃.f(☃), ☃.b());
     }
   }
   
@@ -103,8 +103,8 @@ public class aup
       if (☃.b("slot_" + ☃, 8))
       {
         String ☃ = ☃.j("slot_" + ☃);
-        auk ☃ = c.b(☃);
-        c.a(☃, ☃);
+        auk ☃ = this.c.b(☃);
+        this.c.a(☃, ☃);
       }
     }
   }
@@ -122,7 +122,7 @@ public class aup
         if (☃.length() > 16) {
           ☃ = ☃.substring(0, 16);
         }
-        auk ☃ = c.a(☃, ☃);
+        auk ☃ = this.c.a(☃, ☃);
         ☃.a(☃.j("DisplayName"));
         ☃.a(auu.a.a(☃.j("RenderType")));
       }
@@ -135,12 +135,12 @@ public class aup
     {
       dn ☃ = ☃.b(☃);
       
-      auk ☃ = c.b(☃.j("Objective"));
+      auk ☃ = this.c.b(☃.j("Objective"));
       String ☃ = ☃.j("Name");
       if (☃.length() > 40) {
         ☃ = ☃.substring(0, 40);
       }
-      aum ☃ = c.c(☃, ☃);
+      aum ☃ = this.c.c(☃, ☃);
       ☃.c(☃.f("Score"));
       if (☃.c("Locked")) {
         ☃.a(☃.n("Locked"));
@@ -150,7 +150,7 @@ public class aup
   
   public void b(dn ☃)
   {
-    if (c == null)
+    if (this.c == null)
     {
       b.warn("Tried to save scoreboard without having a scoreboard...");
       return;
@@ -165,7 +165,7 @@ public class aup
   protected du a()
   {
     du ☃ = new du();
-    Collection<aul> ☃ = c.g();
+    Collection<aul> ☃ = this.c.g();
     for (aul ☃ : ☃)
     {
       dn ☃ = new dn();
@@ -179,8 +179,8 @@ public class aup
       ☃.a("Suffix", ☃.f());
       ☃.a("AllowFriendlyFire", ☃.g());
       ☃.a("SeeFriendlyInvisibles", ☃.h());
-      ☃.a("NameTagVisibility", ie);
-      ☃.a("DeathMessageVisibility", je);
+      ☃.a("NameTagVisibility", ☃.i().e);
+      ☃.a("DeathMessageVisibility", ☃.j().e);
       
       du ☃ = new du();
       for (String ☃ : ☃.d()) {
@@ -199,7 +199,7 @@ public class aup
     boolean ☃ = false;
     for (int ☃ = 0; ☃ < 19; ☃++)
     {
-      auk ☃ = c.a(☃);
+      auk ☃ = this.c.a(☃);
       if (☃ != null)
       {
         ☃.a("slot_" + ☃, ☃.b());
@@ -214,7 +214,7 @@ public class aup
   protected du b()
   {
     du ☃ = new du();
-    Collection<auk> ☃ = c.c();
+    Collection<auk> ☃ = this.c.c();
     for (auk ☃ : ☃) {
       if (☃.c() != null)
       {
@@ -233,7 +233,7 @@ public class aup
   protected du e()
   {
     du ☃ = new du();
-    Collection<aum> ☃ = c.e();
+    Collection<aum> ☃ = this.c.e();
     for (aum ☃ : ☃) {
       if (☃.d() != null)
       {

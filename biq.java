@@ -7,19 +7,19 @@ public class biq
   public biq(biu ☃)
   {
     super(☃);
-    c = 0.5F;
+    this.c = 0.5F;
   }
   
   public void a(uf ☃, double ☃, double ☃, double ☃, float ☃, float ☃)
   {
-    float ☃ = a + ☃;
+    float ☃ = ☃.a + ☃;
     bfl.E();
     bfl.b((float)☃, (float)☃, (float)☃);
     
     a(a);
     float ☃ = ns.a(☃ * 0.2F) / 2.0F + 0.5F;
     ☃ = ☃ * ☃ + ☃;
-    e.a(☃, 0.0F, ☃ * 3.0F, ☃ * 0.2F, 0.0F, 0.0F, 0.0625F);
+    this.e.a(☃, 0.0F, ☃ * 3.0F, ☃ * 0.2F, 0.0F, 0.0F, 0.0625F);
     bfl.F();
     
     super.a(☃, ☃, ☃, ☃, ☃, ☃);

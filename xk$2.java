@@ -15,53 +15,53 @@ class xk$2
   
   public boolean a(wn ☃)
   {
-    return ((bA.d) || (bB >= c.a)) && (c.a > 0) && (e());
+    return ((☃.bA.d) || (☃.bB >= this.c.a)) && (this.c.a > 0) && (e());
   }
   
   public void a(wn ☃, zx ☃)
   {
-    if (!bA.d) {
-      ☃.a(-c.a);
+    if (!☃.bA.d) {
+      ☃.a(-this.c.a);
     }
-    xk.a(c).a(0, null);
-    if (xk.b(c) > 0)
+    xk.a(this.c).a(0, null);
+    if (xk.b(this.c) > 0)
     {
-      zx ☃ = xk.a(c).a(1);
-      if ((☃ != null) && (b > xk.b(c)))
+      zx ☃ = xk.a(this.c).a(1);
+      if ((☃ != null) && (☃.b > xk.b(this.c)))
       {
-        b -= xk.b(c);
-        xk.a(c).a(1, ☃);
+        ☃.b -= xk.b(this.c);
+        xk.a(this.c).a(1, ☃);
       }
       else
       {
-        xk.a(c).a(1, null);
+        xk.a(this.c).a(1, null);
       }
     }
     else
     {
-      xk.a(c).a(1, null);
+      xk.a(this.c).a(1, null);
     }
-    c.a = 0;
+    this.c.a = 0;
     
-    alz ☃ = a.p(b);
-    if ((!bA.d) && (!a.D) && (☃.c() == afi.cf) && (☃.bc().nextFloat() < 0.12F))
+    alz ☃ = this.a.p(this.b);
+    if ((!☃.bA.d) && (!this.a.D) && (☃.c() == afi.cf) && (☃.bc().nextFloat() < 0.12F))
     {
       int ☃ = ((Integer)☃.b(aez.b)).intValue();
       ☃++;
       if (☃ > 2)
       {
-        a.g(b);
-        a.b(1020, b, 0);
+        this.a.g(this.b);
+        this.a.b(1020, this.b, 0);
       }
       else
       {
-        a.a(b, ☃.a(aez.b, Integer.valueOf(☃)), 2);
-        a.b(1021, b, 0);
+        this.a.a(this.b, ☃.a(aez.b, Integer.valueOf(☃)), 2);
+        this.a.b(1021, this.b, 0);
       }
     }
-    else if (!a.D)
+    else if (!this.a.D)
     {
-      a.b(1021, b, 0);
+      this.a.b(1021, this.b, 0);
     }
   }
 }

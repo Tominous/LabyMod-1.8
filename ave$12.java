@@ -10,13 +10,13 @@ class ave$12
     throws Exception
   {
     StringBuilder stringbuilder = new StringBuilder();
-    for (String s : this$0.t.k)
+    for (String s : this.this$0.t.k)
     {
       if (stringbuilder.length() > 0) {
         stringbuilder.append(", ");
       }
       stringbuilder.append(s);
-      if (this$0.t.l.contains(s)) {
+      if (this.this$0.t.l.contains(s)) {
         stringbuilder.append(" (incompatible)");
       }
     }

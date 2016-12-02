@@ -23,7 +23,7 @@ public class Snake
   
   public Snake()
   {
-    draw = getInstancedraw;
+    this.draw = LabyMod.getInstance().draw;
   }
   
   int lengthX = 0;
@@ -73,30 +73,30 @@ public class Snake
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    n.clear();
+    this.n.clear();
     
-    quit = new avs(0, 5, 5, 30, 20, de.labystudio.utils.Color.cl("c") + "Quit");
-    n.add(quit);
+    this.quit = new avs(0, 5, 5, 30, 20, de.labystudio.utils.Color.cl("c") + "Quit");
+    this.n.add(this.quit);
     
-    lengthX = (l / 10 - 2);
-    lengthY = (m / 10 - 4);
-    if (gameOver)
+    this.lengthX = (this.l / 10 - 2);
+    this.lengthY = (this.m / 10 - 4);
+    if (this.gameOver)
     {
-      restart = new avs(1, l / 2 - 100, m - 25, 200, 20, "Play again");
-      n.add(restart);
+      this.restart = new avs(1, this.l / 2 - 100, this.m - 25, 200, 20, "Play again");
+      this.n.add(this.restart);
       super.b();
       return;
     }
-    if (thread == null)
+    if (this.thread == null)
     {
       create();
     }
     else
     {
-      points.clear();
+      this.points.clear();
       addPoint();
-      if ((getHeadx > lengthX) || (getHeady > lengthY)) {
-        expand(lengthX / 2, lengthY / 2);
+      if ((getHead().x > this.lengthX) || (getHead().y > this.lengthY)) {
+        expand(this.lengthX / 2, this.lengthY / 2);
       }
     }
     super.b();
@@ -104,12 +104,12 @@ public class Snake
   
   private void create()
   {
-    score = 0;
-    snakeDirection = EnumDirection.DOWN;
-    gameOver = false;
-    snake.clear();
+    this.score = 0;
+    this.snakeDirection = EnumDirection.DOWN;
+    this.gameOver = false;
+    this.snake.clear();
     for (int i = 0; i < 3; i++) {
-      expand(lengthX / 2, lengthY / 2 + i);
+      expand(this.lengthX / 2, this.lengthY / 2 + i);
     }
     addPoint();
     start();
@@ -117,21 +117,21 @@ public class Snake
   
   private void start()
   {
-    thread = new Thread(new Runnable()
+    this.thread = new Thread(new Runnable()
     {
       public void run()
       {
         for (;;)
         {
-          if ((gameOver) || (j.m != Snake.this)) {
+          if ((Snake.this.gameOver) || (Snake.this.j.m != Snake.this)) {
             return;
           }
           Snake.this.tick();
           try
           {
-            synchronized (thread)
+            synchronized (Snake.this.thread)
             {
-              thread.wait(speed);
+              Snake.this.thread.wait(Snake.this.speed);
             }
           }
           catch (Exception e)
@@ -141,19 +141,19 @@ public class Snake
         }
       }
     });
-    thread.start();
+    this.thread.start();
   }
   
   private void gameOver()
   {
-    if (!gameOver)
+    if (!this.gameOver)
     {
       ArrayList<String> list = new ArrayList();
       if (StatsLoader.stats.containsKey("snake")) {
         list = (ArrayList)StatsLoader.stats.get("snake");
       }
-      if (StatsLoader.isHighScore(score, list)) {
-        list.add(0, "" + score);
+      if (StatsLoader.isHighScore(this.score, list)) {
+        list.add(0, "" + this.score);
       }
       if (list.size() > 15) {
         list.remove(15);
@@ -161,49 +161,49 @@ public class Snake
       StatsLoader.stats.put("snake", list);
       StatsLoader.savestats();
     }
-    gameOver = true;
+    this.gameOver = true;
     b();
   }
   
   private void tick()
   {
     boolean devalue = true;
-    if (snakeDirection == EnumDirection.UP)
+    if (this.snakeDirection == EnumDirection.UP)
     {
       Location head = getHead();
-      if (y < posY) {
-        y = lengthY;
+      if (head.y < this.posY) {
+        head.y = this.lengthY;
       }
-      devalue = expand(x, y - 1);
+      devalue = expand(head.x, head.y - 1);
     }
-    if (snakeDirection == EnumDirection.DOWN)
+    if (this.snakeDirection == EnumDirection.DOWN)
     {
       Location head = getHead();
-      if (y > lengthY) {
-        y = posY;
+      if (head.y > this.lengthY) {
+        head.y = this.posY;
       }
-      devalue = expand(x, y + 1);
+      devalue = expand(head.x, head.y + 1);
     }
-    if (snakeDirection == EnumDirection.RIGHT)
+    if (this.snakeDirection == EnumDirection.RIGHT)
     {
       Location head = getHead();
-      if (x > lengthX) {
-        x = posX;
+      if (head.x > this.lengthX) {
+        head.x = this.posX;
       }
-      devalue = expand(x + 1, y);
+      devalue = expand(head.x + 1, head.y);
     }
-    if (snakeDirection == EnumDirection.LEFT)
+    if (this.snakeDirection == EnumDirection.LEFT)
     {
       Location head = getHead();
-      if (x < posX) {
-        x = lengthX;
+      if (head.x < this.posX) {
+        head.x = this.lengthX;
       }
-      devalue = expand(x - 1, y);
+      devalue = expand(head.x - 1, head.y);
     }
     if (devalue) {
       devalue();
     }
-    cooldown = false;
+    this.cooldown = false;
   }
   
   private Location getHead()
@@ -217,8 +217,8 @@ public class Snake
   
   private void devalue()
   {
-    if (snake != null) {
-      snake.remove(0);
+    if (this.snake != null) {
+      this.snake.remove(0);
     }
   }
   
@@ -238,53 +238,53 @@ public class Snake
     Location l = new Location(x, y, EnumPixelType.SNEAK);
     for (Location a : getSnake()) {
       if (a != null) {
-        if ((x == x) && (y == y))
+        if ((a.x == x) && (a.y == y))
         {
           gameOver();
           return false;
         }
       }
     }
-    for (Location a : points) {
+    for (Location a : this.points) {
       if (a != null) {
-        if ((x == x) && (y == y))
+        if ((a.x == x) && (a.y == y))
         {
           addScore();
           addPoint();
-          if (type == EnumPixelType.MOREFRUITS)
+          if (a.type == EnumPixelType.MOREFRUITS)
           {
             addScore();
             addPoint();
           }
-          if (type == EnumPixelType.INCREASESPEED)
+          if (a.type == EnumPixelType.INCREASESPEED)
           {
             addScore();
-            setSpeed(speed - LabyMod.random.nextInt(50));
+            setSpeed(this.speed - LabyMod.random.nextInt(50));
           }
-          if (type == EnumPixelType.DECREASESPEED)
+          if (a.type == EnumPixelType.DECREASESPEED)
           {
             addScore();
-            setSpeed(speed + LabyMod.random.nextInt(50));
+            setSpeed(this.speed + LabyMod.random.nextInt(50));
           }
-          snake.add(l);
-          points.remove(a);
+          this.snake.add(l);
+          this.points.remove(a);
           return false;
         }
       }
     }
-    snake.add(l);
+    this.snake.add(l);
     return true;
   }
   
   private void addScore()
   {
-    score += 10;
+    this.score += 10;
   }
   
   public void addPoint()
   {
     EnumPixelType type = EnumPixelType.FRUIT;
-    int i = LabyMod.random.nextInt(powerUpAmount);
+    int i = LabyMod.random.nextInt(this.powerUpAmount);
     if (i == 0) {
       type = EnumPixelType.INCREASESPEED;
     }
@@ -294,17 +294,17 @@ public class Snake
     if (i == 2) {
       type = EnumPixelType.MOREFRUITS;
     }
-    Location l = new Location(LabyMod.random.nextInt(lengthX - posX) + posX, LabyMod.random.nextInt(lengthY - posY) + posY, type);
-    for (Location a : points) {
+    Location l = new Location(LabyMod.random.nextInt(this.lengthX - this.posX) + this.posX, LabyMod.random.nextInt(this.lengthY - this.posY) + this.posY, type);
+    for (Location a : this.points) {
       if (a != null) {
-        if ((x == x) && (y == y))
+        if ((a.x == l.x) && (a.y == l.y))
         {
           addPoint();
           return;
         }
       }
     }
-    points.add(l);
+    this.points.add(l);
   }
   
   protected void a(int mouseX, int mouseY, int mouseButton)
@@ -316,11 +316,11 @@ public class Snake
   public void a(avs button)
     throws IOException
   {
-    if (k == 0) {
-      j.a(new GuiGames());
+    if (button.k == 0) {
+      this.j.a(new GuiGames());
     }
-    if (k == 1) {
-      j.a(new Snake());
+    if (button.k == 1) {
+      this.j.a(new Snake());
     }
     super.a(button);
   }
@@ -330,38 +330,38 @@ public class Snake
   {
     if (keyCode == 1)
     {
-      j.a(new GuiGames());
+      this.j.a(new GuiGames());
       return;
     }
-    if ((!gameOver) && (!cooldown))
+    if ((!this.gameOver) && (!this.cooldown))
     {
       boolean boost = true;
       if (((keyCode == 200) || (keyCode == 17)) && 
-        (snakeDirection != EnumDirection.DOWN) && (snakeDirection != EnumDirection.UP))
+        (this.snakeDirection != EnumDirection.DOWN) && (this.snakeDirection != EnumDirection.UP))
       {
-        snakeDirection = EnumDirection.UP;
-        cooldown = true;
+        this.snakeDirection = EnumDirection.UP;
+        this.cooldown = true;
         boost = false;
       }
       if (((keyCode == 208) || (keyCode == 31)) && 
-        (snakeDirection != EnumDirection.UP) && (snakeDirection != EnumDirection.DOWN))
+        (this.snakeDirection != EnumDirection.UP) && (this.snakeDirection != EnumDirection.DOWN))
       {
-        snakeDirection = EnumDirection.DOWN;
-        cooldown = true;
+        this.snakeDirection = EnumDirection.DOWN;
+        this.cooldown = true;
         boost = false;
       }
       if (((keyCode == 205) || (keyCode == 32)) && 
-        (snakeDirection != EnumDirection.LEFT) && (snakeDirection != EnumDirection.RIGHT))
+        (this.snakeDirection != EnumDirection.LEFT) && (this.snakeDirection != EnumDirection.RIGHT))
       {
-        snakeDirection = EnumDirection.RIGHT;
-        cooldown = true;
+        this.snakeDirection = EnumDirection.RIGHT;
+        this.cooldown = true;
         boost = false;
       }
       if (((keyCode == 203) || (keyCode == 30)) && 
-        (snakeDirection != EnumDirection.RIGHT) && (snakeDirection != EnumDirection.LEFT))
+        (this.snakeDirection != EnumDirection.RIGHT) && (this.snakeDirection != EnumDirection.LEFT))
       {
-        snakeDirection = EnumDirection.LEFT;
-        cooldown = true;
+        this.snakeDirection = EnumDirection.LEFT;
+        this.cooldown = true;
         boost = false;
       }
       if ((boost) && 
@@ -377,41 +377,41 @@ public class Snake
     if (LabyMod.getInstance().isInGame())
     {
       bfl.l();
-      draw.drawTransparentBackground(0, 32, l, m - 33);
+      this.draw.drawTransparentBackground(0, 32, this.l, this.m - 33);
     }
     else
     {
       c();
-      draw.drawChatBackground(0, 32, l, m - 33);
+      this.draw.drawChatBackground(0, 32, this.l, this.m - 33);
     }
     for (Location loc : getSnake()) {
       if (loc != null) {
-        drawPixel(x, y, java.awt.Color.WHITE.getRGB());
+        drawPixel(loc.x, loc.y, java.awt.Color.WHITE.getRGB());
       }
     }
     for (Location loc : getPoints()) {
       if (loc != null)
       {
-        if (type == EnumPixelType.FRUIT) {
-          drawPixel(x, y, java.awt.Color.RED.getRGB());
+        if (loc.type == EnumPixelType.FRUIT) {
+          drawPixel(loc.x, loc.y, java.awt.Color.RED.getRGB());
         }
-        if (type == EnumPixelType.MOREFRUITS) {
-          drawPixel(x, y, java.awt.Color.ORANGE.getRGB());
+        if (loc.type == EnumPixelType.MOREFRUITS) {
+          drawPixel(loc.x, loc.y, java.awt.Color.ORANGE.getRGB());
         }
-        if (type == EnumPixelType.INCREASESPEED) {
-          drawPixel(x, y, java.awt.Color.CYAN.getRGB());
+        if (loc.type == EnumPixelType.INCREASESPEED) {
+          drawPixel(loc.x, loc.y, java.awt.Color.CYAN.getRGB());
         }
-        if (type == EnumPixelType.DECREASESPEED) {
-          drawPixel(x, y, java.awt.Color.BLUE.getRGB());
+        if (loc.type == EnumPixelType.DECREASESPEED) {
+          drawPixel(loc.x, loc.y, java.awt.Color.BLUE.getRGB());
         }
       }
     }
-    if (gameOver)
+    if (this.gameOver)
     {
       GL11.glPushMatrix();
       int k = 3;
       GL11.glScaled(k, k, k);
-      draw.drawCenteredString(de.labystudio.utils.Color.cl("c") + "Game Over", l / 2 / k, (m / 4 - 5) / k);
+      this.draw.drawCenteredString(de.labystudio.utils.Color.cl("c") + "Game Over", this.l / 2 / k, (this.m / 4 - 5) / k);
       GL11.glPopMatrix();
       int i;
       if (StatsLoader.stats.containsKey("snake"))
@@ -420,7 +420,7 @@ public class Snake
         i = 1;
         for (String sc : list)
         {
-          draw.drawString(i + ". Place - " + de.labystudio.utils.Color.cl("b") + sc + " Points", l / 2 - 50, m / 4 - 5 + i * 10 + 20);
+          this.draw.drawString(i + ". Place - " + de.labystudio.utils.Color.cl("b") + sc + " Points", this.l / 2 - 50, this.m / 4 - 5 + i * 10 + 20);
           i++;
           if (i > 10) {
             break;
@@ -429,15 +429,15 @@ public class Snake
       }
       else
       {
-        draw.drawCenteredString(de.labystudio.utils.Color.cl("f") + "No stats found", l / 2, m / 4 - 5 + 30);
+        this.draw.drawCenteredString(de.labystudio.utils.Color.cl("f") + "No stats found", this.l / 2, this.m / 4 - 5 + 30);
       }
     }
     bfl.k();
-    draw.overlayBackground(0, 32);
-    draw.overlayBackground(m - 33, m);
+    this.draw.overlayBackground(0, 32);
+    this.draw.overlayBackground(this.m - 33, this.m);
     
-    draw.drawString("Score: " + score, 5.0D, m - 24);
-    draw.drawString("Speed: " + speed / 1000.0D + " pixel/s", 5.0D, m - 13);
+    this.draw.drawString("Score: " + this.score, 5.0D, this.m - 24);
+    this.draw.drawString("Speed: " + this.speed / 1000.0D + " pixel/s", 5.0D, this.m - 13);
     
     super.a(mouseX, mouseY, partialTicks);
   }
@@ -445,14 +445,14 @@ public class Snake
   private ArrayList<Location> getSnake()
   {
     ArrayList<Location> s = new ArrayList();
-    s.addAll(snake);
+    s.addAll(this.snake);
     return s;
   }
   
   private ArrayList<Location> getPoints()
   {
     ArrayList<Location> s = new ArrayList();
-    s.addAll(points);
+    s.addAll(this.points);
     return s;
   }
   

@@ -8,7 +8,7 @@ public class afo
   protected afo()
   {
     super(arm.A);
-    j(M.b().a(a, Integer.valueOf(0)));
+    j(this.M.b().a(a, Integer.valueOf(0)));
     a(true);
     a(yz.c);
   }

@@ -5,12 +5,12 @@ class axy$a
 {
   public axy$a(axy paramaxy)
   {
-    super(j, l, m, 80, m - 40, q.a + 1);
+    super(paramaxy.j, paramaxy.l, paramaxy.m, 80, paramaxy.m - 40, paramaxy.q.a + 1);
   }
   
   protected int b()
   {
-    return axy.a(u).size();
+    return axy.a(this.u).size();
   }
   
   protected void a(int ☃, boolean ☃, int ☃, int ☃) {}
@@ -24,13 +24,13 @@ class axy$a
   
   protected void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    u.q.a((String)axy.a(u).get(☃), 10, ☃, 16777215);
+    this.u.q.a((String)axy.a(this.u).get(☃), 10, ☃, 16777215);
     
-    u.q.a((String)axy.b(u).get(☃), 230, ☃, 16777215);
+    this.u.q.a((String)axy.b(this.u).get(☃), 230, ☃, 16777215);
   }
   
   protected int d()
   {
-    return b - 10;
+    return this.b - 10;
   }
 }

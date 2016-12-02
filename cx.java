@@ -12,12 +12,12 @@ public class cx<K, V>
   
   public cx()
   {
-    b = ((BiMap)c).inverse();
+    this.b = ((BiMap)this.c).inverse();
   }
   
   public void a(int ☃, K ☃, V ☃)
   {
-    a.a(☃, ☃);
+    this.a.a(☃, ☃);
     a(☃, ☃);
   }
   
@@ -33,7 +33,7 @@ public class cx<K, V>
   
   public K c(V ☃)
   {
-    return (K)b.get(☃);
+    return (K)this.b.get(☃);
   }
   
   public boolean d(K ☃)
@@ -43,16 +43,16 @@ public class cx<K, V>
   
   public int b(V ☃)
   {
-    return a.b(☃);
+    return this.a.b(☃);
   }
   
   public V a(int ☃)
   {
-    return (V)a.a(☃);
+    return (V)this.a.a(☃);
   }
   
   public Iterator<V> iterator()
   {
-    return a.iterator();
+    return this.a.iterator();
   }
 }

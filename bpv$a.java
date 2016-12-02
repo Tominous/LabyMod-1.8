@@ -6,23 +6,23 @@ public enum bpv$a
   
   private bpv$a(jy ☃, int ☃, int ☃)
   {
-    h = ☃;
-    i = ☃;
-    j = ☃;
+    this.h = ☃;
+    this.i = ☃;
+    this.j = ☃;
   }
   
   public jy a()
   {
-    return h;
+    return this.h;
   }
   
   public int b()
   {
-    return i;
+    return this.i;
   }
   
   public int c()
   {
-    return j;
+    return this.j;
   }
 }

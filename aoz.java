@@ -8,7 +8,7 @@ public class aoz
   public aoz(afh ☃)
   {
     super(true);
-    a = ☃;
+    this.a = ☃;
   }
   
   public aoz()
@@ -18,8 +18,8 @@ public class aoz
   
   public boolean b(adm ☃, Random ☃, cj ☃)
   {
-    if (a == null) {
-      a = (☃.nextBoolean() ? afi.bg : afi.bh);
+    if (this.a == null) {
+      this.a = (☃.nextBoolean() ? afi.bg : afi.bh);
     }
     int ☃ = ☃.nextInt(3) + 4;
     
@@ -58,7 +58,7 @@ public class aoz
       return false;
     }
     int ☃ = ☃.o() + ☃;
-    if (a == afi.bh) {
+    if (this.a == afi.bh) {
       ☃ = ☃.o() + ☃ - 3;
     }
     for (int ☃ = ☃; ☃ <= ☃.o() + ☃; ☃++)
@@ -67,7 +67,7 @@ public class aoz
       if (☃ < ☃.o() + ☃) {
         ☃++;
       }
-      if (a == afi.bg) {
+      if (this.a == afi.bg) {
         ☃ = 3;
       }
       int ☃ = ☃.n() - ☃;
@@ -89,7 +89,7 @@ public class aoz
             ☃ += 3;
           }
           aho.a ☃ = aho.a.a(☃);
-          if ((a == afi.bg) || (☃ < ☃.o() + ☃))
+          if ((this.a == afi.bg) || (☃ < ☃.o() + ☃))
           {
             if (((☃ == ☃) || (☃ == ☃)) && ((☃ == ☃) || (☃ == ☃))) {
               continue;
@@ -126,7 +126,7 @@ public class aoz
           {
             cj ☃ = new cj(☃, ☃, ☃);
             if (!☃.p(☃).c().o()) {
-              a(☃, ☃, a.Q().a(aho.a, ☃));
+              a(☃, ☃, this.a.Q().a(aho.a, ☃));
             }
           }
         }
@@ -136,7 +136,7 @@ public class aoz
     {
       afh ☃ = ☃.p(☃.b(☃)).c();
       if (!☃.o()) {
-        a(☃, ☃.b(☃), a.Q().a(aho.a, aho.a.j));
+        a(☃, ☃.b(☃), this.a.Q().a(aho.a, aho.a.j));
       }
     }
     return true;

@@ -8,6 +8,6 @@ class ave$14
   public String a()
     throws Exception
   {
-    return this$0.A.a ? this$0.A.c() : "N/A (disabled)";
+    return this.this$0.A.a ? this.this$0.A.c() : "N/A (disabled)";
   }
 }

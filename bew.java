@@ -33,10 +33,10 @@ public class bew
   public bew(ave mcIn, adm worldIn, bcy netHandler, nb statFile)
   {
     super(worldIn, netHandler.e());
-    a = netHandler;
-    bJ = statFile;
-    c = mcIn;
-    am = 0;
+    this.a = netHandler;
+    this.bJ = statFile;
+    this.c = mcIn;
+    this.am = 0;
   }
   
   public boolean a(ow source, float amount)
@@ -50,19 +50,19 @@ public class bew
   {
     super.a(entityIn);
     if ((entityIn instanceof va)) {
-      c.W().a(new bpe(this, (va)entityIn));
+      this.c.W().a(new bpe(this, (va)entityIn));
     }
   }
   
   public void t_()
   {
-    if (o.e(new cj(s, 0.0D, u)))
+    if (this.o.e(new cj(this.s, 0.0D, this.u)))
     {
       super.t_();
       if (au())
       {
-        a.a(new ip.c(y, z, C));
-        a.a(new it(aZ, ba, b.c, b.d));
+        this.a.a(new ip.c(this.y, this.z, this.C));
+        this.a.a(new it(this.aZ, this.ba, this.b.c, this.b.d));
       }
       else
       {
@@ -74,63 +74,63 @@ public class bew
   public void p()
   {
     boolean flag = aw();
-    if (flag != bQ)
+    if (flag != this.bQ)
     {
       if (flag) {
-        a.a(new is(this, is.a.d));
+        this.a.a(new is(this, is.a.d));
       } else {
-        a.a(new is(this, is.a.e));
+        this.a.a(new is(this, is.a.e));
       }
-      bQ = flag;
+      this.bQ = flag;
     }
     boolean flag1 = av();
-    if (flag1 != bP)
+    if (flag1 != this.bP)
     {
       if (flag1) {
-        a.a(new is(this, is.a.a));
+        this.a.a(new is(this, is.a.a));
       } else {
-        a.a(new is(this, is.a.b));
+        this.a.a(new is(this, is.a.b));
       }
-      bP = flag1;
+      this.bP = flag1;
     }
     if (A())
     {
-      double d0 = s - bK;
-      double d1 = aRb - bL;
-      double d2 = u - bM;
-      double d3 = y - bN;
-      double d4 = z - bO;
-      boolean flag2 = (d0 * d0 + d1 * d1 + d2 * d2 > 9.0E-4D) || (bR >= 20);
+      double d0 = this.s - this.bK;
+      double d1 = aR().b - this.bL;
+      double d2 = this.u - this.bM;
+      double d3 = this.y - this.bN;
+      double d4 = this.z - this.bO;
+      boolean flag2 = (d0 * d0 + d1 * d1 + d2 * d2 > 9.0E-4D) || (this.bR >= 20);
       boolean flag3 = (d3 != 0.0D) || (d4 != 0.0D);
-      if (m == null)
+      if (this.m == null)
       {
         if ((flag2) && (flag3)) {
-          a.a(new ip.b(s, aRb, u, y, z, C));
+          this.a.a(new ip.b(this.s, aR().b, this.u, this.y, this.z, this.C));
         } else if (flag2) {
-          a.a(new ip.a(s, aRb, u, C));
+          this.a.a(new ip.a(this.s, aR().b, this.u, this.C));
         } else if (flag3) {
-          a.a(new ip.c(y, z, C));
+          this.a.a(new ip.c(this.y, this.z, this.C));
         } else {
-          a.a(new ip(C));
+          this.a.a(new ip(this.C));
         }
       }
       else
       {
-        a.a(new ip.b(v, -999.0D, x, y, z, C));
+        this.a.a(new ip.b(this.v, -999.0D, this.x, this.y, this.z, this.C));
         flag2 = false;
       }
-      bR += 1;
+      this.bR += 1;
       if (flag2)
       {
-        bK = s;
-        bL = aRb;
-        bM = u;
-        bR = 0;
+        this.bK = this.s;
+        this.bL = aR().b;
+        this.bM = this.u;
+        this.bR = 0;
       }
       if (flag3)
       {
-        bN = y;
-        bO = z;
+        this.bN = this.y;
+        this.bO = this.z;
       }
     }
   }
@@ -138,7 +138,7 @@ public class bew
   public uz a(boolean dropAll)
   {
     ir.a c07packetplayerdigging$action = dropAll ? ir.a.d : ir.a.e;
-    a.a(new ir(c07packetplayerdigging$action, cj.a, cq.a));
+    this.a.a(new ir(c07packetplayerdigging$action, cj.a, cq.a));
     return null;
   }
   
@@ -146,18 +146,18 @@ public class bew
   
   public void e(String message)
   {
-    a.a(new ie(message));
+    this.a.a(new ie(message));
   }
   
   public void bw()
   {
     super.bw();
-    a.a(new iy());
+    this.a.a(new iy());
   }
   
   public void cb()
   {
-    a.a(new ig(ig.a.a));
+    this.a.a(new ig(ig.a.a));
   }
   
   protected void d(ow damageSrc, float damageAmount)
@@ -169,49 +169,49 @@ public class bew
   
   public void n()
   {
-    a.a(new il(bk.d));
+    this.a.a(new il(this.bk.d));
     q();
   }
   
   public void q()
   {
-    bi.b((zx)null);
+    this.bi.b((zx)null);
     super.n();
-    c.a((axu)null);
+    this.c.a((axu)null);
   }
   
   public void n(float health)
   {
-    if (bS)
+    if (this.bS)
     {
       float f = bn() - health;
       if (f <= 0.0F)
       {
         i(health);
         if (f < 0.0F) {
-          Z = (aD / 2);
+          this.Z = (this.aD / 2);
         }
       }
       else
       {
-        aX = f;
+        this.aX = f;
         i(bn());
-        Z = aD;
+        this.Z = this.aD;
         d(ow.k, f);
-        au = (av = 10);
+        this.au = (this.av = 10);
       }
     }
     else
     {
       i(health);
-      bS = true;
+      this.bS = true;
     }
   }
   
   public void a(mw stat, int amount)
   {
     if (stat != null) {
-      if (f) {
+      if (stat.f) {
         super.a(stat, amount);
       }
     }
@@ -219,7 +219,7 @@ public class bew
   
   public void t()
   {
-    a.a(new iq(bA));
+    this.a.a(new iq(this.bA));
   }
   
   public boolean cc()
@@ -229,37 +229,37 @@ public class bew
   
   protected void r()
   {
-    a.a(new is(this, is.a.f, (int)(z() * 100.0F)));
+    this.a.a(new is(this, is.a.f, (int)(z() * 100.0F)));
   }
   
   public void u()
   {
-    a.a(new is(this, is.a.g));
+    this.a.a(new is(this, is.a.g));
   }
   
   public void f(String brand)
   {
-    bT = brand;
+    this.bT = brand;
   }
   
   public String w()
   {
-    return bT;
+    return this.bT;
   }
   
   public nb x()
   {
-    return bJ;
+    return this.bJ;
   }
   
   public void b(eu chatComponent)
   {
-    c.q.d().a(chatComponent);
+    this.c.q.d().a(chatComponent);
   }
   
   protected boolean j(double x, double y, double z)
   {
-    if (T) {
+    if (this.T) {
       return false;
     }
     cj blockpos = new cj(x, y, z);
@@ -291,10 +291,10 @@ public class bew
       }
       float f = 0.1F;
       if (i == 0) {
-        v = (-f);
+        this.v = (-f);
       }
       if (i == 1) {
-        v = f;
+        this.v = f;
       }
       if (i == 4) {
         this.x = (-f);
@@ -308,25 +308,25 @@ public class bew
   
   private boolean e(cj pos)
   {
-    return (!o.p(pos).c().v()) && (!o.p(pos.a()).c().v());
+    return (!this.o.p(pos).c().v()) && (!this.o.p(pos.a()).c().v());
   }
   
   public void d(boolean sprinting)
   {
     super.d(sprinting);
-    e = (sprinting ? 600 : 0);
+    this.e = (sprinting ? 600 : 0);
   }
   
   public void a(float currentXP, int maxXP, int level)
   {
-    bD = currentXP;
-    bC = maxXP;
-    bB = level;
+    this.bD = currentXP;
+    this.bC = maxXP;
+    this.bB = level;
   }
   
   public void a(eu component)
   {
-    c.q.d().a(component);
+    this.c.q.d().a(component);
   }
   
   public boolean a(int permLevel, String commandName)
@@ -336,12 +336,12 @@ public class bew
   
   public cj c()
   {
-    return new cj(s + 0.5D, t + 0.5D, u + 0.5D);
+    return new cj(this.s + 0.5D, this.t + 0.5D, this.u + 0.5D);
   }
   
   public void a(String name, float volume, float pitch)
   {
-    o.a(s, t, u, name, volume, pitch, false);
+    this.o.a(this.s, this.t, this.u, name, volume, pitch, false);
   }
   
   public boolean bM()
@@ -351,29 +351,29 @@ public class bew
   
   public boolean y()
   {
-    return (m != null) && ((m instanceof tp)) && (((tp)m).cG());
+    return (this.m != null) && ((this.m instanceof tp)) && (((tp)this.m).cG());
   }
   
   public float z()
   {
-    return bV;
+    return this.bV;
   }
   
   public void a(aln signTile)
   {
-    c.a(new aze(signTile));
+    this.c.a(new aze(signTile));
   }
   
   public void a(adc cmdBlockLogic)
   {
-    c.a(new ayq(cmdBlockLogic));
+    this.c.a(new ayq(cmdBlockLogic));
   }
   
   public void a(zx bookStack)
   {
     zw item = bookStack.b();
     if (item == zy.bM) {
-      c.a(new ayo(this, bookStack, true));
+      this.c.a(new ayo(this, bookStack, true));
     }
   }
   
@@ -381,58 +381,58 @@ public class bew
   {
     String s = (chestInventory instanceof ol) ? ((ol)chestInventory).k() : "minecraft:container";
     if ("minecraft:chest".equals(s)) {
-      c.a(new ayr(bi, chestInventory));
+      this.c.a(new ayr(this.bi, chestInventory));
     } else if ("minecraft:hopper".equals(s)) {
-      c.a(new aza(bi, chestInventory));
+      this.c.a(new aza(this.bi, chestInventory));
     } else if ("minecraft:furnace".equals(s)) {
-      c.a(new ayz(bi, chestInventory));
+      this.c.a(new ayz(this.bi, chestInventory));
     } else if ("minecraft:brewing_stand".equals(s)) {
-      c.a(new ayp(bi, chestInventory));
+      this.c.a(new ayp(this.bi, chestInventory));
     } else if ("minecraft:beacon".equals(s)) {
-      c.a(new ayn(bi, chestInventory));
+      this.c.a(new ayn(this.bi, chestInventory));
     } else if ((!"minecraft:dispenser".equals(s)) && (!"minecraft:dropper".equals(s))) {
-      c.a(new ayr(bi, chestInventory));
+      this.c.a(new ayr(this.bi, chestInventory));
     } else {
-      c.a(new ayv(bi, chestInventory));
+      this.c.a(new ayv(this.bi, chestInventory));
     }
   }
   
   public void a(tp horse, og horseInventory)
   {
-    c.a(new azb(bi, horseInventory, horse));
+    this.c.a(new azb(this.bi, horseInventory, horse));
   }
   
   public void a(ol guiOwner)
   {
     String s = guiOwner.k();
     if ("minecraft:crafting_table".equals(s)) {
-      c.a(new ays(bi, o));
+      this.c.a(new ays(this.bi, this.o));
     } else if ("minecraft:enchanting_table".equals(s)) {
-      c.a(new ayy(bi, o, guiOwner));
+      this.c.a(new ayy(this.bi, this.o, guiOwner));
     } else if ("minecraft:anvil".equals(s)) {
-      c.a(new aym(bi, o));
+      this.c.a(new aym(this.bi, this.o));
     }
   }
   
   public void a(acy villager)
   {
-    c.a(new azd(bi, villager, o));
+    this.c.a(new azd(this.bi, villager, this.o));
   }
   
   public void b(pk entityHit)
   {
-    c.j.a(entityHit, cy.j);
+    this.c.j.a(entityHit, cy.j);
   }
   
   public void c(pk entityHit)
   {
-    c.j.a(entityHit, cy.k);
+    this.c.j.a(entityHit, cy.k);
   }
   
   public boolean av()
   {
-    boolean flag = b != null ? b.d : false;
-    return (flag) && (!bw);
+    boolean flag = this.b != null ? this.b.d : false;
+    return (flag) && (!this.bw);
   }
   
   public void bK()
@@ -440,257 +440,257 @@ public class bew
     super.bK();
     if (A())
     {
-      aZ = b.a;
-      ba = b.b;
-      aY = b.c;
-      h = f;
-      i = g;
-      g = ((float)(g + (z - g) * 0.5D));
-      f = ((float)(f + (y - f) * 0.5D));
+      this.aZ = this.b.a;
+      this.ba = this.b.b;
+      this.aY = this.b.c;
+      this.h = this.f;
+      this.i = this.g;
+      this.g = ((float)(this.g + (this.z - this.g) * 0.5D));
+      this.f = ((float)(this.f + (this.y - this.f) * 0.5D));
     }
   }
   
   protected boolean A()
   {
-    return c.ac() == this;
+    return this.c.ac() == this;
   }
   
   private CustomMovementInput customMovementInput = new CustomMovementInput();
   
   public void m()
   {
-    if (e > 0)
+    if (this.e > 0)
     {
-      e -= 1;
-      if (e == 0) {
+      this.e -= 1;
+      if (this.e == 0) {
         d(false);
       }
     }
-    if (d > 0) {
-      d -= 1;
+    if (this.d > 0) {
+      this.d -= 1;
     }
-    bI = bH;
-    if (ak)
+    this.bI = this.bH;
+    if (this.ak)
     {
-      if (c.m != null) {
-        c.a((axu)null);
+      if (this.c.m != null) {
+        this.c.a((axu)null);
       }
-      if (bH == 0.0F) {
-        c.W().a(
+      if (this.bH == 0.0F) {
+        this.c.W().a(
           bpf.a(new jy("portal.trigger"), 
           bc()
           .nextFloat() * 0.4F + 0.8F));
       }
-      bH += 0.0125F;
-      if (bH >= 1.0F) {
-        bH = 1.0F;
+      this.bH += 0.0125F;
+      if (this.bH >= 1.0F) {
+        this.bH = 1.0F;
       }
-      ak = false;
+      this.ak = false;
     }
     else
     {
       if (a(pe.k)) {
         if (b(pe.k).b() > 60)
         {
-          bH += 0.006666667F;
-          if (bH <= 1.0F) {
+          this.bH += 0.006666667F;
+          if (this.bH <= 1.0F) {
             break label252;
           }
-          bH = 1.0F;
+          this.bH = 1.0F;
           break label252;
         }
       }
-      if (bH > 0.0F) {
-        bH -= 0.05F;
+      if (this.bH > 0.0F) {
+        this.bH -= 0.05F;
       }
-      if (bH < 0.0F) {
-        bH = 0.0F;
+      if (this.bH < 0.0F) {
+        this.bH = 0.0F;
       }
     }
     label252:
-    if (aj > 0) {
-      aj -= 1;
+    if (this.aj > 0) {
+      this.aj -= 1;
     }
-    boolean isJumping = b.c;
+    boolean isJumping = this.b.c;
     
     float minSpeed = 0.8F;
-    boolean isMovingForward = b.b >= minSpeed;
-    customMovementInput.update(c, (bev)b, this);
+    boolean isMovingForward = this.b.b >= minSpeed;
+    this.customMovementInput.update(this.c, (bev)this.b, this);
     if ((bS()) && (!au()))
     {
-      b.a *= 0.2F;
-      b.b *= 0.2F;
-      d = 0;
+      this.b.a *= 0.2F;
+      this.b.b *= 0.2F;
+      this.d = 0;
     }
-    j(s - J * 0.35D, 
+    j(this.s - this.J * 0.35D, 
     
-      aRb + 0.5D, u + J * 0.35D);
+      aR().b + 0.5D, this.u + this.J * 0.35D);
     
-    j(s - J * 0.35D, 
+    j(this.s - this.J * 0.35D, 
     
-      aRb + 0.5D, u - J * 0.35D);
+      aR().b + 0.5D, this.u - this.J * 0.35D);
     
-    j(s + J * 0.35D, 
+    j(this.s + this.J * 0.35D, 
     
-      aRb + 0.5D, u - J * 0.35D);
+      aR().b + 0.5D, this.u - this.J * 0.35D);
     
-    j(s + J * 0.35D, 
+    j(this.s + this.J * 0.35D, 
     
-      aRb + 0.5D, u + J * 0.35D);
+      aR().b + 0.5D, this.u + this.J * 0.35D);
     
-    boolean enoughHunger = (cl().a() > 6.0F) || (bA.b);
+    boolean enoughHunger = (cl().a() > 6.0F) || (this.bA.b);
     
     boolean isSprintDisabled = !ToggleSneakMod.optionToggleSprint;
     boolean canDoubleTap = ToggleSneakMod.optionDoubleTap;
     if (ToggleSneakMod.wasSprintDisabled)
     {
       d(false);
-      customMovementInput.UpdateSprint(false, false);
+      this.customMovementInput.UpdateSprint(false, false);
       ToggleSneakMod.wasSprintDisabled = false;
     }
     if (isSprintDisabled)
     {
-      if ((ToggleSneakMod.optionDoubleTap) && (C) && (!isMovingForward) && (b.b >= minSpeed)) {
+      if ((ToggleSneakMod.optionDoubleTap) && (this.C) && (!isMovingForward) && (this.b.b >= minSpeed)) {
         if ((!aw()) && (enoughHunger) && 
           (!bS()) && 
           (!a(pe.q))) {
-          if ((d <= 0) && 
-            (!c.t.ad.d()))
+          if ((this.d <= 0) && 
+            (!this.c.t.ad.d()))
           {
-            d = 7;
+            this.d = 7;
           }
           else
           {
             d(true);
-            customMovementInput.UpdateSprint(true, false);
+            this.customMovementInput.UpdateSprint(true, false);
           }
         }
       }
-      if ((!aw()) && (b.b >= minSpeed) && (enoughHunger)) {
+      if ((!aw()) && (this.b.b >= minSpeed) && (enoughHunger)) {
         if ((!bS()) && 
           (!a(pe.q)) && 
-          (c.t.ad.d()))
+          (this.c.t.ad.d()))
         {
           d(true);
-          customMovementInput.UpdateSprint(true, false);
+          this.customMovementInput.UpdateSprint(true, false);
         }
       }
     }
     else
     {
-      boolean state = customMovementInput.sprint;
+      boolean state = this.customMovementInput.sprint;
       if ((enoughHunger) && (!bS()) && 
-        (!a(pe.q)) && (!customMovementInput.sprintHeldAndReleased)) {
+        (!a(pe.q)) && (!this.customMovementInput.sprintHeldAndReleased)) {
         if (((canDoubleTap) && (!aw())) || (!canDoubleTap)) {
           d(state);
         }
       }
-      if ((canDoubleTap) && (!state) && (C) && (!isMovingForward) && (b.b >= minSpeed)) {
+      if ((canDoubleTap) && (!state) && (this.C) && (!isMovingForward) && (this.b.b >= minSpeed)) {
         if ((!aw()) && (enoughHunger) && 
           (!bS()) && 
           (!a(pe.q))) {
-          if (d == 0)
+          if (this.d == 0)
           {
-            d = 7;
+            this.d = 7;
           }
           else
           {
             d(true);
-            customMovementInput.UpdateSprint(true, true);
-            d = 0;
+            this.customMovementInput.UpdateSprint(true, true);
+            this.d = 0;
           }
         }
       }
     }
-    if ((aw()) && ((b.b < minSpeed) || (D) || (!enoughHunger)))
+    if ((aw()) && ((this.b.b < minSpeed) || (this.D) || (!enoughHunger)))
     {
       d(false);
-      if ((customMovementInput.sprintHeldAndReleased == true) || (isSprintDisabled) || (customMovementInput.sprintDoubleTapped) || (bA.b) || 
+      if ((this.customMovementInput.sprintHeldAndReleased == true) || (isSprintDisabled) || (this.customMovementInput.sprintDoubleTapped) || (this.bA.b) || 
       
         (au())) {
-        customMovementInput.UpdateSprint(false, false);
+        this.customMovementInput.UpdateSprint(false, false);
       }
     }
-    if ((ToggleSneakMod.optionEnableFlyBoost) && (bA.b)) {
-      if ((c.t.ad.d()) && (bA.d))
+    if ((ToggleSneakMod.optionEnableFlyBoost) && (this.bA.b)) {
+      if ((this.c.t.ad.d()) && (this.bA.d))
       {
-        bA.a(0.05F * (float)ToggleSneakMod.optionFlyBoostAmount);
-        if (b.d) {
-          w -= 0.15D * ToggleSneakMod.optionFlyBoostAmount;
+        this.bA.a(0.05F * (float)ToggleSneakMod.optionFlyBoostAmount);
+        if (this.b.d) {
+          this.w -= 0.15D * ToggleSneakMod.optionFlyBoostAmount;
         }
-        if (!b.c) {
+        if (!this.b.c) {
           break label1185;
         }
-        w += 0.15D * ToggleSneakMod.optionFlyBoostAmount;
+        this.w += 0.15D * ToggleSneakMod.optionFlyBoostAmount;
         break label1185;
       }
     }
-    if (bA.a() != 0.05F) {
-      bA.a(0.05F);
+    if (this.bA.a() != 0.05F) {
+      this.bA.a(0.05F);
     }
     label1185:
-    if ((bA.c) && (!isJumping) && (b.c)) {
-      if (bm == 0)
+    if ((this.bA.c) && (!isJumping) && (this.b.c)) {
+      if (this.bm == 0)
       {
-        bm = 7;
+        this.bm = 7;
       }
       else
       {
-        bA.b = (!bA.b);
+        this.bA.b = (!this.bA.b);
         t();
-        bm = 0;
+        this.bm = 0;
       }
     }
-    if (bA.b)
+    if (this.bA.b)
     {
-      if (b.d) {
-        w -= 0.15D;
+      if (this.b.d) {
+        this.w -= 0.15D;
       }
-      if (b.c) {
-        w += 0.15D;
+      if (this.b.c) {
+        this.w += 0.15D;
       }
     }
     if (y())
     {
-      if (bU < 0)
+      if (this.bU < 0)
       {
-        bU += 1;
-        if (bU == 0) {
-          bV = 0.0F;
+        this.bU += 1;
+        if (this.bU == 0) {
+          this.bV = 0.0F;
         }
       }
-      if ((isJumping) && (!b.c))
+      if ((isJumping) && (!this.b.c))
       {
-        bU -= 10;
-        bU = -10;
-        a
+        this.bU -= 10;
+        this.bU = -10;
+        this.a
           .a(new is(this, is.a.f, 
           
           (int)(z() * 100.0F)));
       }
-      else if ((!isJumping) && (b.c))
+      else if ((!isJumping) && (this.b.c))
       {
-        bU = 0;
-        bV = 0.0F;
+        this.bU = 0;
+        this.bV = 0.0F;
       }
       else if (isJumping)
       {
-        bU += 1;
-        if (bU < 10) {
-          bV = (bU * 0.1F);
+        this.bU += 1;
+        if (this.bU < 10) {
+          this.bV = (this.bU * 0.1F);
         } else {
-          bV = (0.8F + 2.0F / (bU - 9) * 0.1F);
+          this.bV = (0.8F + 2.0F / (this.bU - 9) * 0.1F);
         }
       }
     }
     else
     {
-      bV = 0.0F;
+      this.bV = 0.0F;
     }
     super.m();
-    if ((C) && (bA.b))
+    if ((this.C) && (this.bA.b))
     {
-      bA.b = false;
+      this.bA.b = false;
       t();
     }
   }

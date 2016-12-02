@@ -390,24 +390,24 @@ public abstract class i
     
     protected a(double ☃, double ☃, boolean ☃)
     {
-      a = ☃;
-      b = ☃;
-      c = ☃;
+      this.a = ☃;
+      this.b = ☃;
+      this.c = ☃;
     }
     
     public double a()
     {
-      return a;
+      return this.a;
     }
     
     public double b()
     {
-      return b;
+      return this.b;
     }
     
     public boolean c()
     {
-      return c;
+      return this.c;
     }
   }
   

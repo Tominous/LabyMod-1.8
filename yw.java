@@ -20,14 +20,14 @@ public class yw
   
   public zx a(zx ☃, adm ☃, wn ☃)
   {
-    if ((☃.au()) && ((m instanceof tt)))
+    if ((☃.au()) && ((☃.m instanceof tt)))
     {
-      tt ☃ = (tt)m;
+      tt ☃ = (tt)☃.m;
       if ((☃.cm().h()) && (☃.j() - ☃.i() >= 7))
       {
         ☃.cm().g();
         ☃.a(7, ☃);
-        if (b == 0)
+        if (☃.b == 0)
         {
           zx ☃ = new zx(zy.aR);
           ☃.d(☃.o());

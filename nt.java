@@ -22,47 +22,47 @@ public class nt
   
   public void a()
   {
-    f.clear();
-    e = "";
-    c.clear();
+    this.f.clear();
+    this.e = "";
+    this.c.clear();
   }
   
   public void a(String name)
   {
-    if (a)
+    if (this.a)
     {
-      if (e.length() > 0) {
-        e += ".";
+      if (this.e.length() > 0) {
+        this.e += ".";
       }
-      e += name;
-      c.add(e);
-      d.add(Long.valueOf(System.nanoTime()));
+      this.e += name;
+      this.c.add(this.e);
+      this.d.add(Long.valueOf(System.nanoTime()));
     }
   }
   
   public void b()
   {
-    if (a)
+    if (this.a)
     {
       long i = System.nanoTime();
-      long j = ((Long)d.remove(d.size() - 1)).longValue();
-      c.remove(c.size() - 1);
+      long j = ((Long)this.d.remove(this.d.size() - 1)).longValue();
+      this.c.remove(this.c.size() - 1);
       long k = i - j;
-      if (f.containsKey(e)) {
-        f.put(e, Long.valueOf(((Long)f.get(e)).longValue() + k));
+      if (this.f.containsKey(this.e)) {
+        this.f.put(this.e, Long.valueOf(((Long)this.f.get(this.e)).longValue() + k));
       } else {
-        f.put(e, Long.valueOf(k));
+        this.f.put(this.e, Long.valueOf(k));
       }
       if (k > 100000000L) {
-        b.warn("Something's taking too long! '" + e + "' took aprox " + k / 1000000.0D + " ms");
+        b.warn("Something's taking too long! '" + this.e + "' took aprox " + k / 1000000.0D + " ms");
       }
-      e = (!c.isEmpty() ? (String)c.get(c.size() - 1) : "");
+      this.e = (!this.c.isEmpty() ? (String)this.c.get(this.c.size() - 1) : "");
     }
   }
   
   public List<nt.a> b(String p_76321_1_)
   {
-    if (!a) {
+    if (!this.a) {
       return null;
     }
     long i = this.f.containsKey("root") ? ((Long)this.f.get("root")).longValue() : 0L;
@@ -125,7 +125,7 @@ public class nt
   
   public String c()
   {
-    return c.size() == 0 ? "[UNKNOWN]" : (String)c.get(c.size() - 1);
+    return this.c.size() == 0 ? "[UNKNOWN]" : (String)this.c.get(this.c.size() - 1);
   }
   
   public static final class a
@@ -137,19 +137,19 @@ public class nt
     
     public a(String p_i1554_1_, double p_i1554_2_, double p_i1554_4_)
     {
-      c = p_i1554_1_;
-      a = p_i1554_2_;
-      b = p_i1554_4_;
+      this.c = p_i1554_1_;
+      this.a = p_i1554_2_;
+      this.b = p_i1554_4_;
     }
     
     public int a(a p_compareTo_1_)
     {
-      return a > a ? 1 : a < a ? -1 : c.compareTo(c);
+      return p_compareTo_1_.a > this.a ? 1 : p_compareTo_1_.a < this.a ? -1 : p_compareTo_1_.c.compareTo(this.c);
     }
     
     public int a()
     {
-      return (c.hashCode() & 0xAAAAAA) + 4473924;
+      return (this.c.hashCode() & 0xAAAAAA) + 4473924;
     }
   }
 }

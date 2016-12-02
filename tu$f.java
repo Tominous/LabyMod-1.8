@@ -6,13 +6,13 @@ class tu$f
   public tu$f(tu ☃)
   {
     super(☃);
-    g = ☃;
+    this.g = ☃;
   }
   
   public void c()
   {
-    if ((g.C) && (!g.cl())) {
-      g.b(0.0D);
+    if ((this.g.C) && (!this.g.cl())) {
+      this.g.b(0.0D);
     }
     super.c();
   }

@@ -11,9 +11,9 @@ public class gf
   
   public gf(int ☃, int ☃, zx ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = (☃ == null ? null : ☃.k());
+    this.a = ☃;
+    this.b = ☃;
+    this.c = (☃ == null ? null : ☃.k());
   }
   
   public void a(fj ☃)
@@ -24,31 +24,31 @@ public class gf
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readByte();
-    b = ☃.readShort();
-    c = ☃.i();
+    this.a = ☃.readByte();
+    this.b = ☃.readShort();
+    this.c = ☃.i();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(a);
-    ☃.writeShort(b);
-    ☃.a(c);
+    ☃.writeByte(this.a);
+    ☃.writeShort(this.b);
+    ☃.a(this.c);
   }
   
   public int a()
   {
-    return a;
+    return this.a;
   }
   
   public int b()
   {
-    return b;
+    return this.b;
   }
   
   public zx c()
   {
-    return c;
+    return this.c;
   }
 }

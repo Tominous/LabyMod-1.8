@@ -16,12 +16,12 @@ public class PacketHelloPong
   
   public void read(PacketBuf buf)
   {
-    a = buf.readLong();
+    this.a = buf.readLong();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeLong(a);
+    buf.writeLong(this.a);
   }
   
   public int getId()

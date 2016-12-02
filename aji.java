@@ -8,7 +8,7 @@ public class aji
   public aji()
   {
     super(arm.e);
-    j(M.b().a(a, aji.a.a));
+    j(this.M.b().a(a, aji.a.a));
     a(yz.b);
   }
   
@@ -62,19 +62,19 @@ public class aji
     
     private a(int ☃, String ☃, String ☃)
     {
-      e = ☃;
-      f = ☃;
-      g = ☃;
+      this.e = ☃;
+      this.f = ☃;
+      this.g = ☃;
     }
     
     public int a()
     {
-      return e;
+      return this.e;
     }
     
     public String toString()
     {
-      return f;
+      return this.f;
     }
     
     public static a a(int ☃)
@@ -87,12 +87,12 @@ public class aji
     
     public String l()
     {
-      return f;
+      return this.f;
     }
     
     public String c()
     {
-      return g;
+      return this.g;
     }
   }
 }

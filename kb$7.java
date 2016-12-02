@@ -13,7 +13,7 @@ final class kb$7
     ajm ☃ = afi.ce;
     if ((☃.d(☃)) && (☃.b(☃, ☃, ☃)))
     {
-      if (!D)
+      if (!☃.D)
       {
         ☃.a(☃, ☃.Q().a(ajm.a, cq.b), 3);
         akw ☃ = ☃.s(☃);
@@ -46,18 +46,18 @@ final class kb$7
           ((alo)☃).b(☃.d().b() * 4);
           afi.ce.a(☃, ☃, (alo)☃);
         }
-        b -= 1;
+        ☃.b -= 1;
       }
     }
     else {
-      b = false;
+      this.b = false;
     }
     return ☃;
   }
   
   protected void a(ck ☃)
   {
-    if (b) {
+    if (this.b) {
       ☃.i().b(1000, ☃.d(), 0);
     } else {
       ☃.i().b(1001, ☃.d(), 0);

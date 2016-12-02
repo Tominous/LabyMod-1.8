@@ -15,12 +15,12 @@ public class alo
   public void b(dn ☃)
   {
     super.b(☃);
-    ☃.a("SkullType", (byte)(a & 0xFF));
-    ☃.a("Rot", (byte)(f & 0xFF));
-    if (g != null)
+    ☃.a("SkullType", (byte)(this.a & 0xFF));
+    ☃.a("Rot", (byte)(this.f & 0xFF));
+    if (this.g != null)
     {
       dn ☃ = new dn();
-      dy.a(☃, g);
+      dy.a(☃, this.g);
       ☃.a("Owner", ☃);
     }
   }
@@ -28,19 +28,19 @@ public class alo
   public void a(dn ☃)
   {
     super.a(☃);
-    a = ☃.d("SkullType");
-    f = ☃.d("Rot");
-    if (a == 3) {
+    this.a = ☃.d("SkullType");
+    this.f = ☃.d("Rot");
+    if (this.a == 3) {
       if (☃.b("Owner", 10))
       {
-        g = dy.a(☃.m("Owner"));
+        this.g = dy.a(☃.m("Owner"));
       }
       else if (☃.b("ExtraType", 8))
       {
         String ☃ = ☃.j("ExtraType");
         if (!nx.b(☃))
         {
-          g = new GameProfile(null, ☃);
+          this.g = new GameProfile(null, ☃);
           e();
         }
       }
@@ -49,32 +49,32 @@ public class alo
   
   public GameProfile b()
   {
-    return g;
+    return this.g;
   }
   
   public ff y_()
   {
     dn ☃ = new dn();
     b(☃);
-    return new ft(c, 4, ☃);
+    return new ft(this.c, 4, ☃);
   }
   
   public void a(int ☃)
   {
-    a = ☃;
-    g = null;
+    this.a = ☃;
+    this.g = null;
   }
   
   public void a(GameProfile ☃)
   {
-    a = 3;
-    g = ☃;
+    this.a = 3;
+    this.g = ☃;
     e();
   }
   
   private void e()
   {
-    g = b(g);
+    this.g = b(this.g);
     p_();
   }
   
@@ -102,16 +102,16 @@ public class alo
   
   public int c()
   {
-    return a;
+    return this.a;
   }
   
   public int d()
   {
-    return f;
+    return this.f;
   }
   
   public void b(int ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
 }

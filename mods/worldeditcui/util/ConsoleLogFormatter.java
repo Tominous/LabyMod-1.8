@@ -14,13 +14,13 @@ public class ConsoleLogFormatter
   
   public ConsoleLogFormatter()
   {
-    format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    this.format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
   }
   
   public String format(LogRecord logrecord)
   {
     StringBuilder stringbuilder = new StringBuilder();
-    stringbuilder.append(format.format(Long.valueOf(logrecord.getMillis())));
+    stringbuilder.append(this.format.format(Long.valueOf(logrecord.getMillis())));
     Level level = logrecord.getLevel();
     if (level == Level.FINEST) {
       stringbuilder.append(" [FINEST] ");

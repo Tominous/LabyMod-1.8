@@ -8,10 +8,10 @@ class aqj$n
   
   public aqj$n(Class<? extends aqj.m> ☃, int ☃, int ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
-    d = ☃;
-    e = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.d = ☃;
+    this.e = ☃;
   }
   
   public aqj$n(Class<? extends aqj.m> ☃, int ☃, int ☃)
@@ -21,11 +21,11 @@ class aqj$n
   
   public boolean a(int ☃)
   {
-    return (d == 0) || (c < d);
+    return (this.d == 0) || (this.c < this.d);
   }
   
   public boolean a()
   {
-    return (d == 0) || (c < d);
+    return (this.d == 0) || (this.c < this.d);
   }
 }

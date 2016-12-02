@@ -21,7 +21,7 @@ public class JumpLeague
   
   public static void updatePlayMinity()
   {
-    isPlayMinity = (getInstanceip.toLowerCase().contains("playminity.net")) || (getInstanceip.toLowerCase().contains("playminity.com"));
+    isPlayMinity = (LabyMod.getInstance().ip.toLowerCase().contains("playminity.net")) || (LabyMod.getInstance().ip.toLowerCase().contains("playminity.com"));
   }
   
   public static boolean isPlayMinity()
@@ -50,9 +50,9 @@ public class JumpLeague
       return;
     }
     if (lastPos == null) {
-      lastPos = Ah.c();
+      lastPos = ave.A().h.c();
     }
-    if (Ah.c().c(lastPos.n(), Ah.c().o(), lastPos.p()) > 4.0D)
+    if (ave.A().h.c().c(lastPos.n(), ave.A().h.c().o(), lastPos.p()) > 4.0D)
     {
       if (!playminityServer_jl_lock)
       {
@@ -63,7 +63,7 @@ public class JumpLeague
     else {
       playminityServer_jl_lock = false;
     }
-    lastPos = Ah.c();
+    lastPos = ave.A().h.c();
   }
   
   public static void serverPlayMinityChat(String clean, String raw)
@@ -90,17 +90,21 @@ public class JumpLeague
     if ((clean.startsWith(JLPrefix + " Teleporting all players to the arena")) || (clean.startsWith(JLPrefix + "Teleportiere alle Spieler in die Arena..."))) {
       playminityServer_jl_module = -1;
     }
-    if (clean.startsWith(JLPrefix + " +5 Points | +3 Minitys")) {
+    if ((clean.startsWith(JLPrefix + " +5 Points | +3 Minitys")) || (clean.startsWith(JLPrefix + " +5 Punkte | +3 Minitys"))) {
       playminityServer_jl_kills += 1;
     }
-    if (((clean.contains("> Willkommen auf mc.PlayMinity.com")) || (clean.contains("> Welcome to mc.PlayMinity.com"))) && (!clean.contains(":"))) {
+    if (((clean.contains("> Willkommen auf mc.PlayMinity.com")) || (clean.contains("> Welcome to mc.PlayMinity.com")) || (clean.startsWith("[!] Verbinde zum Hub-Server")) || 
+      (clean.contains("Du bist nun ein Zuschauer")) || (clean.startsWith("[!] Connecting to hub server"))) && (!clean.contains(":"))) {
       LabyMod.getInstance().resetMod();
+    }
+    if ((clean.startsWith(" [PM] Dein aktueller Nickname ist: ")) || (clean.startsWith(" [PM] Your current nickname is: "))) {
+      LabyMod.getInstance().nickname = clean.replace(" [PM] Dein aktueller Nickname ist: ", "").replace(" [PM] Your current nickname is: ", "");
     }
   }
   
   public static void drawPlayMinityGui()
   {
-    if (!settingsgamePlayMinity) {
+    if (!ConfigManager.settings.gamePlayMinity) {
       return;
     }
     if (!playminityServer_jl) {

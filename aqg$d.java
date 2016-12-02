@@ -9,8 +9,8 @@ public class aqg$d
   public aqg$d(int ☃, Random ☃, aqe ☃, cq ☃)
   {
     super(☃);
-    m = ☃;
-    l = ☃;
+    this.m = ☃;
+    this.l = ☃;
   }
   
   protected void a(dn ☃) {}
@@ -23,20 +23,20 @@ public class aqg$d
     switch (aqg.1.a[☃.ordinal()])
     {
     case 1: 
-      d = (☃ + 2);
-      c = (☃ - 8);
+      ☃.d = (☃ + 2);
+      ☃.c = (☃ - 8);
       break;
     case 2: 
-      d = (☃ + 2);
-      f = (☃ + 8);
+      ☃.d = (☃ + 2);
+      ☃.f = (☃ + 8);
       break;
     case 3: 
-      a = (☃ - 8);
-      f = (☃ + 2);
+      ☃.a = (☃ - 8);
+      ☃.f = (☃ + 2);
       break;
     case 4: 
-      d = (☃ + 8);
-      f = (☃ + 2);
+      ☃.d = (☃ + 8);
+      ☃.f = (☃ + 2);
     }
     if (aqt.a(☃, ☃) != null) {
       return null;
@@ -47,20 +47,20 @@ public class aqg$d
   public void a(aqt ☃, List<aqt> ☃, Random ☃)
   {
     int ☃ = d();
-    if (m != null) {
-      switch (aqg.1.a[m.ordinal()])
+    if (this.m != null) {
+      switch (aqg.1.a[this.m.ordinal()])
       {
       case 1: 
-        aqg.a(☃, ☃, ☃, l.a, l.b, l.c - 1, cq.c, ☃);
+        aqg.a(☃, ☃, ☃, this.l.a, this.l.b, this.l.c - 1, cq.c, ☃);
         break;
       case 2: 
-        aqg.a(☃, ☃, ☃, l.a, l.b, l.f + 1, cq.d, ☃);
+        aqg.a(☃, ☃, ☃, this.l.a, this.l.b, this.l.f + 1, cq.d, ☃);
         break;
       case 3: 
-        aqg.a(☃, ☃, ☃, l.a - 1, l.b, l.c, cq.e, ☃);
+        aqg.a(☃, ☃, ☃, this.l.a - 1, this.l.b, this.l.c, cq.e, ☃);
         break;
       case 4: 
-        aqg.a(☃, ☃, ☃, l.d + 1, l.b, l.c, cq.f, ☃);
+        aqg.a(☃, ☃, ☃, this.l.d + 1, this.l.b, this.l.c, cq.f, ☃);
       }
     }
   }

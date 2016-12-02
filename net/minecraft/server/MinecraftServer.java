@@ -144,30 +144,30 @@ public abstract class MinecraftServer
   
   public MinecraftServer(Proxy ☃, File ☃)
   {
-    e = ☃;
+    this.e = ☃;
     l = this;
-    o = null;
-    q = null;
-    Z = new lt(this, ☃);
-    b = null;
-    m = null;
-    V = new YggdrasilAuthenticationService(☃, UUID.randomUUID().toString());
-    W = V.createMinecraftSessionService();
-    Y = V.createProfileRepository();
+    this.o = null;
+    this.q = null;
+    this.Z = new lt(this, ☃);
+    this.b = null;
+    this.m = null;
+    this.V = new YggdrasilAuthenticationService(☃, UUID.randomUUID().toString());
+    this.W = this.V.createMinecraftSessionService();
+    this.Y = this.V.createProfileRepository();
   }
   
   public MinecraftServer(File ☃, Proxy ☃, File ☃)
   {
-    e = ☃;
+    this.e = ☃;
     l = this;
-    o = ☃;
-    q = new ll(this);
-    Z = new lt(this, ☃);
-    b = h();
-    m = new atk(☃);
-    V = new YggdrasilAuthenticationService(☃, UUID.randomUUID().toString());
-    W = V.createMinecraftSessionService();
-    Y = V.createProfileRepository();
+    this.o = ☃;
+    this.q = new ll(this);
+    this.Z = new lt(this, ☃);
+    this.b = h();
+    this.m = new atk(☃);
+    this.V = new YggdrasilAuthenticationService(☃, UUID.randomUUID().toString());
+    this.W = this.V.createMinecraftSessionService();
+    this.Y = this.V.createProfileRepository();
   }
   
   protected bd h()
@@ -194,9 +194,9 @@ public abstract class MinecraftServer
         
         public void a(int ☃)
         {
-          if (MinecraftServer.az() - b >= 1000L)
+          if (MinecraftServer.az() - this.b >= 1000L)
           {
-            b = MinecraftServer.az();
+            this.b = MinecraftServer.az();
             MinecraftServer.aN().info("Converting... " + ☃ + "%");
           }
         }
@@ -210,12 +210,12 @@ public abstract class MinecraftServer
   
   protected synchronized void b(String ☃)
   {
-    S = ☃;
+    this.S = ☃;
   }
   
   public synchronized String j()
   {
-    return S;
+    return this.S;
   }
   
   protected void a(String ☃, String ☃, long ☃, adr ☃, String ☃)
@@ -223,10 +223,10 @@ public abstract class MinecraftServer
     a(☃);
     b("menu.loadingLevel");
     
-    d = new le[3];
-    i = new long[d.length][100];
+    this.d = new le[3];
+    this.i = new long[this.d.length][100];
     
-    atp ☃ = m.a(☃, true);
+    atp ☃ = this.m.a(☃, true);
     a(U(), ☃);
     
     ato ☃ = ☃.d();
@@ -243,7 +243,7 @@ public abstract class MinecraftServer
       {
         ☃ = new adp(☃, m(), l(), o(), ☃);
         ☃.a(☃);
-        if (M) {
+        if (this.M) {
           ☃.a();
         }
       }
@@ -254,7 +254,7 @@ public abstract class MinecraftServer
       ☃.a(☃);
       ☃ = new adp(☃);
     }
-    for (int ☃ = 0; ☃ < d.length; ☃++)
+    for (int ☃ = 0; ☃ < this.d.length; ☃++)
     {
       int ☃ = 0;
       if (☃ == 1) {
@@ -266,22 +266,22 @@ public abstract class MinecraftServer
       if (☃ == 0)
       {
         if (X()) {
-          d[☃] = ((le)new kx(this, ☃, ☃, ☃, c).b());
+          this.d[☃] = ((le)new kx(this, ☃, ☃, ☃, this.c).b());
         } else {
-          d[☃] = ((le)new le(this, ☃, ☃, ☃, c).b());
+          this.d[☃] = ((le)new le(this, ☃, ☃, ☃, this.c).b());
         }
-        d[☃].a(☃);
+        this.d[☃].a(☃);
       }
       else
       {
-        d[☃] = ((le)new kz(this, ☃, ☃, d[0], c).b());
+        this.d[☃] = ((le)new kz(this, ☃, ☃, this.d[0], this.c).b());
       }
-      d[☃].a(new lb(this, d[☃]));
+      this.d[☃].a(new lb(this, this.d[☃]));
       if (!T()) {
-        d[☃].P().a(m());
+        this.d[☃].P().a(m());
       }
     }
-    v.a(d);
+    this.v.a(this.d);
     
     a(n());
     
@@ -301,7 +301,7 @@ public abstract class MinecraftServer
     
     int ☃ = 0;
     k.info("Preparing start region for level " + ☃);
-    le ☃ = d[☃];
+    le ☃ = this.d[☃];
     cj ☃ = ☃.M();
     
     long ☃ = az();
@@ -316,7 +316,7 @@ public abstract class MinecraftServer
         }
         ☃++;
         
-        b.c(☃.n() + ☃ >> 4, ☃.p() + ☃ >> 4);
+        ☃.b.c(☃.n() + ☃ >> 4, ☃.p() + ☃ >> 4);
       }
     }
     s();
@@ -346,27 +346,27 @@ public abstract class MinecraftServer
   
   protected void a_(String ☃, int ☃)
   {
-    f = ☃;
-    g = ☃;
+    this.f = ☃;
+    this.g = ☃;
     k.info(☃ + ": " + ☃ + "%");
   }
   
   protected void s()
   {
-    f = null;
-    g = 0;
+    this.f = null;
+    this.g = 0;
   }
   
   protected void a(boolean ☃)
   {
-    if (N) {
+    if (this.N) {
       return;
     }
-    for (le ☃ : d) {
+    for (le ☃ : this.d) {
       if (☃ != null)
       {
         if (!☃) {
-          k.info("Saving chunks for level '" + ☃.P().k() + "'/" + t.k());
+          k.info("Saving chunks for level '" + ☃.P().k() + "'/" + ☃.t.k());
         }
         try
         {
@@ -382,42 +382,42 @@ public abstract class MinecraftServer
   
   public void t()
   {
-    if (N) {
+    if (this.N) {
       return;
     }
     k.info("Stopping server");
     if (aq() != null) {
       aq().b();
     }
-    if (v != null)
+    if (this.v != null)
     {
       k.info("Saving players");
-      v.j();
-      v.u();
+      this.v.j();
+      this.v.u();
     }
-    if (d != null)
+    if (this.d != null)
     {
       k.info("Saving worlds");
       a(false);
-      for (int ☃ = 0; ☃ < d.length; ☃++)
+      for (int ☃ = 0; ☃ < this.d.length; ☃++)
       {
-        le ☃ = d[☃];
+        le ☃ = this.d[☃];
         ☃.o();
       }
     }
-    if (n.d()) {
-      n.e();
+    if (this.n.d()) {
+      this.n.e();
     }
   }
   
   public boolean v()
   {
-    return w;
+    return this.w;
   }
   
   public void w()
   {
-    w = false;
+    this.w = false;
   }
   
   protected void x()
@@ -431,22 +431,22 @@ public abstract class MinecraftServer
     {
       if (i())
       {
-        ab = az();
+        this.ab = az();
         long ☃ = 0L;
         
-        r.a(new fa(E));
-        r.a(new js.c("1.8.8", 47));
+        this.r.a(new fa(this.E));
+        this.r.a(new js.c("1.8.8", 47));
         
-        a(r);
-        while (w)
+        a(this.r);
+        while (this.w)
         {
           long ☃ = az();
-          long ☃ = ☃ - ab;
-          if ((☃ > 2000L) && (ab - R >= 15000L))
+          long ☃ = ☃ - this.ab;
+          if ((☃ > 2000L) && (this.ab - this.R >= 15000L))
           {
             k.warn("Can't keep up! Did the system time change, or is the server overloaded? Running {}ms behind, skipping {} tick(s)", new Object[] { Long.valueOf(☃), Long.valueOf(☃ / 50L) });
             ☃ = 2000L;
-            R = ab;
+            this.R = this.ab;
           }
           if (☃ < 0L)
           {
@@ -454,8 +454,8 @@ public abstract class MinecraftServer
             ☃ = 0L;
           }
           ☃ += ☃;
-          ab = ☃;
-          if (d[0].f())
+          this.ab = ☃;
+          if (this.d[0].f())
           {
             A();
             ☃ = 0L;
@@ -469,7 +469,7 @@ public abstract class MinecraftServer
             }
           }
           Thread.sleep(Math.max(1L, 50L - ☃));
-          Q = true;
+          this.Q = true;
         }
       }
       else
@@ -499,7 +499,7 @@ public abstract class MinecraftServer
     {
       try
       {
-        x = true;
+        this.x = true;
         t();
       }
       catch (Throwable ☃)
@@ -552,76 +552,76 @@ public abstract class MinecraftServer
   {
     long ☃ = System.nanoTime();
     
-    y += 1;
-    if (T)
+    this.y += 1;
+    if (this.T)
     {
-      T = false;
-      c.a = true;
-      c.a();
+      this.T = false;
+      this.c.a = true;
+      this.c.a();
     }
-    c.a("root");
+    this.c.a("root");
     B();
-    if (☃ - X >= 5000000000L)
+    if (☃ - this.X >= 5000000000L)
     {
-      X = ☃;
-      r.a(new js.a(J(), I()));
+      this.X = ☃;
+      this.r.a(new js.a(J(), I()));
       
       GameProfile[] ☃ = new GameProfile[Math.min(I(), 12)];
-      int ☃ = ns.a(s, 0, I() - ☃.length);
+      int ☃ = ns.a(this.s, 0, I() - ☃.length);
       for (int ☃ = 0; ☃ < ☃.length; ☃++) {
-        ☃[☃] = ((lf)v.v().get(☃ + ☃)).cd();
+        ☃[☃] = ((lf)this.v.v().get(☃ + ☃)).cd();
       }
       Collections.shuffle(Arrays.asList(☃));
-      r.b().a(☃);
+      this.r.b().a(☃);
     }
-    if (y % 900 == 0)
+    if (this.y % 900 == 0)
     {
-      c.a("save");
-      v.j();
+      this.c.a("save");
+      this.v.j();
       a(true);
-      c.b();
+      this.c.b();
     }
-    c.a("tallying");
-    h[(y % 100)] = (System.nanoTime() - ☃);
+    this.c.a("tallying");
+    this.h[(this.y % 100)] = (System.nanoTime() - ☃);
     
-    c.b();
+    this.c.b();
     
-    c.a("snooper");
-    if ((!n.d()) && (y > 100)) {
-      n.a();
+    this.c.a("snooper");
+    if ((!this.n.d()) && (this.y > 100)) {
+      this.n.a();
     }
-    if (y % 6000 == 0) {
-      n.b();
+    if (this.y % 6000 == 0) {
+      this.n.b();
     }
-    c.b();
+    this.c.b();
     
-    c.b();
+    this.c.b();
   }
   
   public void B()
   {
-    c.a("jobs");
-    synchronized (j)
+    this.c.a("jobs");
+    synchronized (this.j)
     {
-      while (!j.isEmpty()) {
-        g.a((FutureTask)j.poll(), k);
+      while (!this.j.isEmpty()) {
+        g.a((FutureTask)this.j.poll(), k);
       }
     }
-    c.c("levels");
-    for (int ☃ = 0; ☃ < d.length; ☃++)
+    this.c.c("levels");
+    for (int ☃ = 0; ☃ < this.d.length; ☃++)
     {
       long ☃ = System.nanoTime();
       if ((☃ == 0) || (C()))
       {
-        le ☃ = d[☃];
-        c.a(☃.P().k());
-        if (y % 20 == 0)
+        le ☃ = this.d[☃];
+        this.c.a(☃.P().k());
+        if (this.y % 20 == 0)
         {
-          c.a("timeSync");
-          v.a(new hu(☃.K(), ☃.L(), ☃.Q().b("doDaylightCycle")), t.q());
-          c.b();
+          this.c.a("timeSync");
+          this.v.a(new hu(☃.K(), ☃.L(), ☃.Q().b("doDaylightCycle")), ☃.t.q());
+          this.c.b();
         }
-        c.a("tick");
+        this.c.a("tick");
         try
         {
           ☃.c();
@@ -642,25 +642,25 @@ public abstract class MinecraftServer
           ☃.a(☃);
           throw new e(☃);
         }
-        c.b();
-        c.a("tracker");
+        this.c.b();
+        this.c.a("tracker");
         ☃.s().a();
-        c.b();
+        this.c.b();
         
-        c.b();
+        this.c.b();
       }
-      i[☃][(y % 100)] = (System.nanoTime() - ☃);
+      this.i[☃][(this.y % 100)] = (System.nanoTime() - ☃);
     }
-    c.c("connection");
+    this.c.c("connection");
     aq().c();
-    c.c("players");
-    v.e();
+    this.c.c("players");
+    this.v.e();
     
-    c.c("tickables");
-    for (int ☃ = 0; ☃ < p.size(); ☃++) {
-      ((km)p.get(☃)).c();
+    this.c.c("tickables");
+    for (int ☃ = 0; ☃ < this.p.size(); ☃++) {
+      ((km)this.p.get(☃)).c();
     }
-    c.b();
+    this.c.b();
   }
   
   public boolean C()
@@ -670,8 +670,8 @@ public abstract class MinecraftServer
   
   public void D()
   {
-    aa = new Thread(this, "Server thread");
-    aa.start();
+    this.aa = new Thread(this, "Server thread");
+    this.aa.start();
   }
   
   public File d(String ☃)
@@ -687,12 +687,12 @@ public abstract class MinecraftServer
   public le a(int ☃)
   {
     if (☃ == -1) {
-      return d[1];
+      return this.d[1];
     }
     if (☃ == 1) {
-      return d[2];
+      return this.d[2];
     }
-    return d[0];
+    return this.d[0];
   }
   
   public String H()
@@ -702,22 +702,22 @@ public abstract class MinecraftServer
   
   public int I()
   {
-    return v.o();
+    return this.v.o();
   }
   
   public int J()
   {
-    return v.p();
+    return this.v.p();
   }
   
   public String[] K()
   {
-    return v.f();
+    return this.v.f();
   }
   
   public GameProfile[] L()
   {
-    return v.g();
+    return this.v.g();
   }
   
   public String getServerModName()
@@ -732,10 +732,10 @@ public abstract class MinecraftServer
       public String a()
         throws Exception
       {
-        return c.a ? c.c() : "N/A (disabled)";
+        return MinecraftServer.this.c.a ? MinecraftServer.this.c.c() : "N/A (disabled)";
       }
     });
-    if (v != null) {
+    if (this.v != null) {
       ☃.g().a("Player Count", new Callable()
       {
         public String a()
@@ -755,7 +755,7 @@ public abstract class MinecraftServer
       ☃ = ☃.substring(1);
       boolean ☃ = !☃.contains(" ");
       
-      List<String> ☃ = b.a(☃, ☃, ☃);
+      List<String> ☃ = this.b.a(☃, ☃, ☃);
       if (☃ != null) {
         for (String ☃ : ☃) {
           if (☃) {
@@ -769,7 +769,7 @@ public abstract class MinecraftServer
     }
     String[] ☃ = ☃.split(" ", -1);
     String ☃ = ☃[(☃.length - 1)];
-    for (String ☃ : v.f()) {
+    for (String ☃ : this.v.f()) {
       if (i.a(☃, ☃)) {
         ☃.add(☃);
       }
@@ -784,7 +784,7 @@ public abstract class MinecraftServer
   
   public boolean O()
   {
-    return o != null;
+    return this.o != null;
   }
   
   public String e_()
@@ -804,59 +804,59 @@ public abstract class MinecraftServer
   
   public l P()
   {
-    return b;
+    return this.b;
   }
   
   public KeyPair Q()
   {
-    return H;
+    return this.H;
   }
   
   public String S()
   {
-    return I;
+    return this.I;
   }
   
   public void i(String ☃)
   {
-    I = ☃;
+    this.I = ☃;
   }
   
   public boolean T()
   {
-    return I != null;
+    return this.I != null;
   }
   
   public String U()
   {
-    return J;
+    return this.J;
   }
   
   public void j(String ☃)
   {
-    J = ☃;
+    this.J = ☃;
   }
   
   public void k(String ☃)
   {
-    K = ☃;
+    this.K = ☃;
   }
   
   public String V()
   {
-    return K;
+    return this.K;
   }
   
   public void a(KeyPair ☃)
   {
-    H = ☃;
+    this.H = ☃;
   }
   
   public void a(oj ☃)
   {
-    for (int ☃ = 0; ☃ < d.length; ☃++)
+    for (int ☃ = 0; ☃ < this.d.length; ☃++)
     {
-      adm ☃ = d[☃];
+      adm ☃ = this.d[☃];
       if (☃ != null) {
         if (☃.P().t())
         {
@@ -871,7 +871,7 @@ public abstract class MinecraftServer
         else
         {
           ☃.P().a(☃);
-          ☃.a(W(), A);
+          ☃.a(W(), this.A);
         }
       }
     }
@@ -884,87 +884,87 @@ public abstract class MinecraftServer
   
   public boolean X()
   {
-    return L;
+    return this.L;
   }
   
   public void b(boolean ☃)
   {
-    L = ☃;
+    this.L = ☃;
   }
   
   public void c(boolean ☃)
   {
-    M = ☃;
+    this.M = ☃;
   }
   
   public atr Y()
   {
-    return m;
+    return this.m;
   }
   
   public void aa()
   {
-    N = true;
+    this.N = true;
     
     Y().d();
-    for (int ☃ = 0; ☃ < d.length; ☃++)
+    for (int ☃ = 0; ☃ < this.d.length; ☃++)
     {
-      le ☃ = d[☃];
+      le ☃ = this.d[☃];
       if (☃ != null) {
         ☃.o();
       }
     }
-    Y().e(d[0].O().g());
+    Y().e(this.d[0].O().g());
     w();
   }
   
   public String ab()
   {
-    return O;
+    return this.O;
   }
   
   public String ac()
   {
-    return P;
+    return this.P;
   }
   
   public void a_(String ☃, String ☃)
   {
-    O = ☃;
-    P = ☃;
+    this.O = ☃;
+    this.P = ☃;
   }
   
   public void a(or ☃)
   {
     ☃.a("whitelist_enabled", Boolean.valueOf(false));
     ☃.a("whitelist_count", Integer.valueOf(0));
-    if (v != null)
+    if (this.v != null)
     {
       ☃.a("players_current", Integer.valueOf(I()));
       ☃.a("players_max", Integer.valueOf(J()));
-      ☃.a("players_seen", Integer.valueOf(v.q().length));
+      ☃.a("players_seen", Integer.valueOf(this.v.q().length));
     }
-    ☃.a("uses_auth", Boolean.valueOf(z));
+    ☃.a("uses_auth", Boolean.valueOf(this.z));
     ☃.a("gui_state", as() ? "enabled" : "disabled");
     ☃.a("run_time", Long.valueOf((az() - ☃.g()) / 60L * 1000L));
     
-    ☃.a("avg_tick_ms", Integer.valueOf((int)(ns.a(h) * 1.0E-6D)));
+    ☃.a("avg_tick_ms", Integer.valueOf((int)(ns.a(this.h) * 1.0E-6D)));
     
     int ☃ = 0;
-    if (d != null) {
-      for (int ☃ = 0; ☃ < d.length; ☃++) {
-        if (d[☃] != null)
+    if (this.d != null) {
+      for (int ☃ = 0; ☃ < this.d.length; ☃++) {
+        if (this.d[☃] != null)
         {
-          le ☃ = d[☃];
+          le ☃ = this.d[☃];
           ato ☃ = ☃.P();
           
-          ☃.a("world[" + ☃ + "][dimension]", Integer.valueOf(t.q()));
+          ☃.a("world[" + ☃ + "][dimension]", Integer.valueOf(☃.t.q()));
           ☃.a("world[" + ☃ + "][mode]", ☃.r());
           ☃.a("world[" + ☃ + "][difficulty]", ☃.aa());
           ☃.a("world[" + ☃ + "][hardcore]", Boolean.valueOf(☃.t()));
           ☃.a("world[" + ☃ + "][generator_name]", ☃.u().a());
           ☃.a("world[" + ☃ + "][generator_version]", Integer.valueOf(☃.u().d()));
-          ☃.a("world[" + ☃ + "][height]", Integer.valueOf(F));
+          ☃.a("world[" + ☃ + "][height]", Integer.valueOf(this.F));
           ☃.a("world[" + ☃ + "][chunks_loaded]", Integer.valueOf(☃.N().g()));
           
           ☃++;
@@ -991,108 +991,108 @@ public abstract class MinecraftServer
   
   public boolean af()
   {
-    return z;
+    return this.z;
   }
   
   public void d(boolean ☃)
   {
-    z = ☃;
+    this.z = ☃;
   }
   
   public boolean ag()
   {
-    return A;
+    return this.A;
   }
   
   public void e(boolean ☃)
   {
-    A = ☃;
+    this.A = ☃;
   }
   
   public boolean ah()
   {
-    return B;
+    return this.B;
   }
   
   public abstract boolean ai();
   
   public void f(boolean ☃)
   {
-    B = ☃;
+    this.B = ☃;
   }
   
   public boolean aj()
   {
-    return C;
+    return this.C;
   }
   
   public void g(boolean ☃)
   {
-    C = ☃;
+    this.C = ☃;
   }
   
   public boolean ak()
   {
-    return D;
+    return this.D;
   }
   
   public void h(boolean ☃)
   {
-    D = ☃;
+    this.D = ☃;
   }
   
   public abstract boolean al();
   
   public String am()
   {
-    return E;
+    return this.E;
   }
   
   public void l(String ☃)
   {
-    E = ☃;
+    this.E = ☃;
   }
   
   public int an()
   {
-    return F;
+    return this.F;
   }
   
   public void c(int ☃)
   {
-    F = ☃;
+    this.F = ☃;
   }
   
   public boolean ao()
   {
-    return x;
+    return this.x;
   }
   
   public lx ap()
   {
-    return v;
+    return this.v;
   }
   
   public void a(lx ☃)
   {
-    v = ☃;
+    this.v = ☃;
   }
   
   public void a(adp.a ☃)
   {
-    for (int ☃ = 0; ☃ < d.length; ☃++) {
-      Nd[☃].P().a(☃);
+    for (int ☃ = 0; ☃ < this.d.length; ☃++) {
+      N().d[☃].P().a(☃);
     }
   }
   
   public ll aq()
   {
-    return q;
+    return this.q;
   }
   
   public boolean ar()
   {
-    return Q;
+    return this.Q;
   }
   
   public boolean as()
@@ -1104,17 +1104,17 @@ public abstract class MinecraftServer
   
   public int at()
   {
-    return y;
+    return this.y;
   }
   
   public void au()
   {
-    T = true;
+    this.T = true;
   }
   
   public or av()
   {
-    return n;
+    return this.n;
   }
   
   public cj c()
@@ -1129,7 +1129,7 @@ public abstract class MinecraftServer
   
   public adm e()
   {
-    return d[0];
+    return this.d[0];
   }
   
   public pk f()
@@ -1149,12 +1149,12 @@ public abstract class MinecraftServer
   
   public boolean ax()
   {
-    return U;
+    return this.U;
   }
   
   public Proxy ay()
   {
-    return e;
+    return this.e;
   }
   
   public static long az()
@@ -1164,12 +1164,12 @@ public abstract class MinecraftServer
   
   public int aA()
   {
-    return G;
+    return this.G;
   }
   
   public void d(int ☃)
   {
-    G = ☃;
+    this.G = ☃;
   }
   
   public eu f_()
@@ -1184,32 +1184,32 @@ public abstract class MinecraftServer
   
   public MinecraftSessionService aD()
   {
-    return W;
+    return this.W;
   }
   
   public GameProfileRepository aE()
   {
-    return Y;
+    return this.Y;
   }
   
   public lt aF()
   {
-    return Z;
+    return this.Z;
   }
   
   public js aG()
   {
-    return r;
+    return this.r;
   }
   
   public void aH()
   {
-    X = 0L;
+    this.X = 0L;
   }
   
   public pk a(UUID ☃)
   {
-    for (le ☃ : d) {
+    for (le ☃ : this.d) {
       if (☃ != null)
       {
         pk ☃ = ☃.a(☃);
@@ -1223,7 +1223,7 @@ public abstract class MinecraftServer
   
   public boolean u_()
   {
-    return Nd[0].Q().b("sendCommandFeedback");
+    return N().d[0].Q().b("sendCommandFeedback");
   }
   
   public void a(n.a ☃, int ☃) {}
@@ -1239,9 +1239,9 @@ public abstract class MinecraftServer
     if ((!aJ()) && (!ao()))
     {
       ListenableFutureTask<V> ☃ = ListenableFutureTask.create(☃);
-      synchronized (j)
+      synchronized (this.j)
       {
-        j.add(☃);
+        this.j.add(☃);
       }
       return ☃;
     }
@@ -1264,7 +1264,7 @@ public abstract class MinecraftServer
   
   public boolean aJ()
   {
-    return Thread.currentThread() == aa;
+    return Thread.currentThread() == this.aa;
   }
   
   public int aK()

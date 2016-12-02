@@ -8,10 +8,10 @@ public class pm$a
   
   public pm$a(int ☃, int ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = na.a(this);
-    e = na.b(this);
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = na.a(this);
+    this.e = na.b(this);
   }
 }

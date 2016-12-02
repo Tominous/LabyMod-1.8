@@ -44,7 +44,7 @@ public class aqg
     if (☃ > 8) {
       return null;
     }
-    if ((Math.abs(☃ - ca) > 80) || (Math.abs(☃ - cc) > 80)) {
+    if ((Math.abs(☃ - ☃.c().a) > 80) || (Math.abs(☃ - ☃.c().c) > 80)) {
       return null;
     }
     aqt ☃ = a(☃, ☃, ☃, ☃, ☃, ☃, ☃ + 1);
@@ -67,74 +67,74 @@ public class aqg
     {
       super();
       
-      l = new aqe(☃, 50, ☃, ☃ + 7 + ☃.nextInt(6), 54 + ☃.nextInt(6), ☃ + 7 + ☃.nextInt(6));
+      this.l = new aqe(☃, 50, ☃, ☃ + 7 + ☃.nextInt(6), 54 + ☃.nextInt(6), ☃ + 7 + ☃.nextInt(6));
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
     {
       int ☃ = d();
       
-      int ☃ = l.d() - 3 - 1;
+      int ☃ = this.l.d() - 3 - 1;
       if (☃ <= 0) {
         ☃ = 1;
       }
       int ☃ = 0;
-      while (☃ < l.c())
+      while (☃ < this.l.c())
       {
-        ☃ += ☃.nextInt(l.c());
-        if (☃ + 3 > l.c()) {
+        ☃ += ☃.nextInt(this.l.c());
+        if (☃ + 3 > this.l.c()) {
           break;
         }
-        aqt ☃ = aqg.a(☃, ☃, ☃, l.a + ☃, l.b + ☃.nextInt(☃) + 1, l.c - 1, cq.c, ☃);
+        aqt ☃ = aqg.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃.nextInt(☃) + 1, this.l.c - 1, cq.c, ☃);
         if (☃ != null)
         {
           aqe ☃ = ☃.c();
-          a.add(new aqe(a, b, l.c, d, e, l.c + 1));
+          this.a.add(new aqe(☃.a, ☃.b, this.l.c, ☃.d, ☃.e, this.l.c + 1));
         }
         ☃ += 4;
       }
       ☃ = 0;
-      while (☃ < l.c())
+      while (☃ < this.l.c())
       {
-        ☃ += ☃.nextInt(l.c());
-        if (☃ + 3 > l.c()) {
+        ☃ += ☃.nextInt(this.l.c());
+        if (☃ + 3 > this.l.c()) {
           break;
         }
-        aqt ☃ = aqg.a(☃, ☃, ☃, l.a + ☃, l.b + ☃.nextInt(☃) + 1, l.f + 1, cq.d, ☃);
+        aqt ☃ = aqg.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃.nextInt(☃) + 1, this.l.f + 1, cq.d, ☃);
         if (☃ != null)
         {
           aqe ☃ = ☃.c();
-          a.add(new aqe(a, b, l.f - 1, d, e, l.f));
+          this.a.add(new aqe(☃.a, ☃.b, this.l.f - 1, ☃.d, ☃.e, this.l.f));
         }
         ☃ += 4;
       }
       ☃ = 0;
-      while (☃ < l.e())
+      while (☃ < this.l.e())
       {
-        ☃ += ☃.nextInt(l.e());
-        if (☃ + 3 > l.e()) {
+        ☃ += ☃.nextInt(this.l.e());
+        if (☃ + 3 > this.l.e()) {
           break;
         }
-        aqt ☃ = aqg.a(☃, ☃, ☃, l.a - 1, l.b + ☃.nextInt(☃) + 1, l.c + ☃, cq.e, ☃);
+        aqt ☃ = aqg.a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃.nextInt(☃) + 1, this.l.c + ☃, cq.e, ☃);
         if (☃ != null)
         {
           aqe ☃ = ☃.c();
-          a.add(new aqe(l.a, b, c, l.a + 1, e, f));
+          this.a.add(new aqe(this.l.a, ☃.b, ☃.c, this.l.a + 1, ☃.e, ☃.f));
         }
         ☃ += 4;
       }
       ☃ = 0;
-      while (☃ < l.e())
+      while (☃ < this.l.e())
       {
-        ☃ += ☃.nextInt(l.e());
-        if (☃ + 3 > l.e()) {
+        ☃ += ☃.nextInt(this.l.e());
+        if (☃ + 3 > this.l.e()) {
           break;
         }
-        aqt ☃ = aqg.a(☃, ☃, ☃, l.d + 1, l.b + ☃.nextInt(☃) + 1, l.c + ☃, cq.f, ☃);
+        aqt ☃ = aqg.a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃.nextInt(☃) + 1, this.l.c + ☃, cq.f, ☃);
         if (☃ != null)
         {
           aqe ☃ = ☃.c();
-          a.add(new aqe(l.d - 1, b, c, l.d, e, f));
+          this.a.add(new aqe(this.l.d - 1, ☃.b, ☃.c, this.l.d, ☃.e, ☃.f));
         }
         ☃ += 4;
       }
@@ -145,13 +145,13 @@ public class aqg
       if (a(☃, ☃)) {
         return false;
       }
-      a(☃, ☃, l.a, l.b, l.c, l.d, l.b, l.f, afi.d.Q(), afi.a.Q(), true);
+      a(☃, ☃, this.l.a, this.l.b, this.l.c, this.l.d, this.l.b, this.l.f, afi.d.Q(), afi.a.Q(), true);
       
-      a(☃, ☃, l.a, l.b + 1, l.c, l.d, Math.min(l.b + 3, l.e), l.f, afi.a.Q(), afi.a.Q(), false);
-      for (aqe ☃ : a) {
-        a(☃, ☃, a, e - 2, c, d, e, f, afi.a.Q(), afi.a.Q(), false);
+      a(☃, ☃, this.l.a, this.l.b + 1, this.l.c, this.l.d, Math.min(this.l.b + 3, this.l.e), this.l.f, afi.a.Q(), afi.a.Q(), false);
+      for (aqe ☃ : this.a) {
+        a(☃, ☃, ☃.a, ☃.e - 2, ☃.c, ☃.d, ☃.e, ☃.f, afi.a.Q(), afi.a.Q(), false);
       }
-      a(☃, ☃, l.a, l.b + 4, l.c, l.d, l.e, l.f, afi.a.Q(), false);
+      a(☃, ☃, this.l.a, this.l.b + 4, this.l.c, this.l.d, this.l.e, this.l.f, afi.a.Q(), false);
       
       return true;
     }
@@ -159,7 +159,7 @@ public class aqg
     public void a(int ☃, int ☃, int ☃)
     {
       super.a(☃, ☃, ☃);
-      for (aqe ☃ : a) {
+      for (aqe ☃ : this.a) {
         ☃.a(☃, ☃, ☃);
       }
     }
@@ -167,7 +167,7 @@ public class aqg
     protected void a(dn ☃)
     {
       du ☃ = new du();
-      for (aqe ☃ : a) {
+      for (aqe ☃ : this.a) {
         ☃.a(☃.g());
       }
       ☃.a("Entrances", ☃);
@@ -177,7 +177,7 @@ public class aqg
     {
       du ☃ = ☃.c("Entrances", 11);
       for (int ☃ = 0; ☃ < ☃.c(); ☃++) {
-        a.add(new aqe(☃.c(☃)));
+        this.a.add(new aqe(☃.c(☃)));
       }
     }
   }
@@ -194,31 +194,31 @@ public class aqg
     
     protected void a(dn ☃)
     {
-      ☃.a("hr", a);
-      ☃.a("sc", b);
-      ☃.a("hps", c);
-      ☃.a("Num", d);
+      ☃.a("hr", this.a);
+      ☃.a("sc", this.b);
+      ☃.a("hps", this.c);
+      ☃.a("Num", this.d);
     }
     
     protected void b(dn ☃)
     {
-      a = ☃.n("hr");
-      b = ☃.n("sc");
-      c = ☃.n("hps");
-      d = ☃.f("Num");
+      this.a = ☃.n("hr");
+      this.b = ☃.n("sc");
+      this.c = ☃.n("hps");
+      this.d = ☃.f("Num");
     }
     
     public a(int ☃, Random ☃, aqe ☃, cq ☃)
     {
       super();
-      m = ☃;
-      l = ☃;
-      a = (☃.nextInt(3) == 0);
-      b = ((!a) && (☃.nextInt(23) == 0));
-      if ((m == cq.c) || (m == cq.d)) {
-        d = (☃.e() / 5);
+      this.m = ☃;
+      this.l = ☃;
+      this.a = (☃.nextInt(3) == 0);
+      this.b = ((!this.a) && (☃.nextInt(23) == 0));
+      if ((this.m == cq.c) || (this.m == cq.d)) {
+        this.d = (☃.e() / 5);
       } else {
-        d = (☃.c() / 5);
+        this.d = (☃.c() / 5);
       }
     }
     
@@ -233,20 +233,20 @@ public class aqg
         switch (aqg.1.a[☃.ordinal()])
         {
         case 1: 
-          d = (☃ + 2);
-          c = (☃ - (☃ - 1));
+          ☃.d = (☃ + 2);
+          ☃.c = (☃ - (☃ - 1));
           break;
         case 2: 
-          d = (☃ + 2);
-          f = (☃ + (☃ - 1));
+          ☃.d = (☃ + 2);
+          ☃.f = (☃ + (☃ - 1));
           break;
         case 3: 
-          a = (☃ - (☃ - 1));
-          f = (☃ + 2);
+          ☃.a = (☃ - (☃ - 1));
+          ☃.f = (☃ + 2);
           break;
         case 4: 
-          d = (☃ + (☃ - 1));
-          f = (☃ + 2);
+          ☃.d = (☃ + (☃ - 1));
+          ☃.f = (☃ + 2);
         }
         if (aqt.a(☃, ☃) == null) {
           break;
@@ -263,66 +263,66 @@ public class aqg
     {
       int ☃ = d();
       int ☃ = ☃.nextInt(4);
-      if (m != null) {
-        switch (aqg.1.a[m.ordinal()])
+      if (this.m != null) {
+        switch (aqg.1.a[this.m.ordinal()])
         {
         case 1: 
           if (☃ <= 1) {
-            aqg.a(☃, ☃, ☃, l.a, l.b - 1 + ☃.nextInt(3), l.c - 1, m, ☃);
+            aqg.a(☃, ☃, ☃, this.l.a, this.l.b - 1 + ☃.nextInt(3), this.l.c - 1, this.m, ☃);
           } else if (☃ == 2) {
-            aqg.a(☃, ☃, ☃, l.a - 1, l.b - 1 + ☃.nextInt(3), l.c, cq.e, ☃);
+            aqg.a(☃, ☃, ☃, this.l.a - 1, this.l.b - 1 + ☃.nextInt(3), this.l.c, cq.e, ☃);
           } else {
-            aqg.a(☃, ☃, ☃, l.d + 1, l.b - 1 + ☃.nextInt(3), l.c, cq.f, ☃);
+            aqg.a(☃, ☃, ☃, this.l.d + 1, this.l.b - 1 + ☃.nextInt(3), this.l.c, cq.f, ☃);
           }
           break;
         case 2: 
           if (☃ <= 1) {
-            aqg.a(☃, ☃, ☃, l.a, l.b - 1 + ☃.nextInt(3), l.f + 1, m, ☃);
+            aqg.a(☃, ☃, ☃, this.l.a, this.l.b - 1 + ☃.nextInt(3), this.l.f + 1, this.m, ☃);
           } else if (☃ == 2) {
-            aqg.a(☃, ☃, ☃, l.a - 1, l.b - 1 + ☃.nextInt(3), l.f - 3, cq.e, ☃);
+            aqg.a(☃, ☃, ☃, this.l.a - 1, this.l.b - 1 + ☃.nextInt(3), this.l.f - 3, cq.e, ☃);
           } else {
-            aqg.a(☃, ☃, ☃, l.d + 1, l.b - 1 + ☃.nextInt(3), l.f - 3, cq.f, ☃);
+            aqg.a(☃, ☃, ☃, this.l.d + 1, this.l.b - 1 + ☃.nextInt(3), this.l.f - 3, cq.f, ☃);
           }
           break;
         case 3: 
           if (☃ <= 1) {
-            aqg.a(☃, ☃, ☃, l.a - 1, l.b - 1 + ☃.nextInt(3), l.c, m, ☃);
+            aqg.a(☃, ☃, ☃, this.l.a - 1, this.l.b - 1 + ☃.nextInt(3), this.l.c, this.m, ☃);
           } else if (☃ == 2) {
-            aqg.a(☃, ☃, ☃, l.a, l.b - 1 + ☃.nextInt(3), l.c - 1, cq.c, ☃);
+            aqg.a(☃, ☃, ☃, this.l.a, this.l.b - 1 + ☃.nextInt(3), this.l.c - 1, cq.c, ☃);
           } else {
-            aqg.a(☃, ☃, ☃, l.a, l.b - 1 + ☃.nextInt(3), l.f + 1, cq.d, ☃);
+            aqg.a(☃, ☃, ☃, this.l.a, this.l.b - 1 + ☃.nextInt(3), this.l.f + 1, cq.d, ☃);
           }
           break;
         case 4: 
           if (☃ <= 1) {
-            aqg.a(☃, ☃, ☃, l.d + 1, l.b - 1 + ☃.nextInt(3), l.c, m, ☃);
+            aqg.a(☃, ☃, ☃, this.l.d + 1, this.l.b - 1 + ☃.nextInt(3), this.l.c, this.m, ☃);
           } else if (☃ == 2) {
-            aqg.a(☃, ☃, ☃, l.d - 3, l.b - 1 + ☃.nextInt(3), l.c - 1, cq.c, ☃);
+            aqg.a(☃, ☃, ☃, this.l.d - 3, this.l.b - 1 + ☃.nextInt(3), this.l.c - 1, cq.c, ☃);
           } else {
-            aqg.a(☃, ☃, ☃, l.d - 3, l.b - 1 + ☃.nextInt(3), l.f + 1, cq.d, ☃);
+            aqg.a(☃, ☃, ☃, this.l.d - 3, this.l.b - 1 + ☃.nextInt(3), this.l.f + 1, cq.d, ☃);
           }
           break;
         }
       }
       if (☃ < 8) {
-        if ((m == cq.c) || (m == cq.d)) {
-          for (int ☃ = l.c + 3; ☃ + 3 <= l.f; ☃ += 5)
+        if ((this.m == cq.c) || (this.m == cq.d)) {
+          for (int ☃ = this.l.c + 3; ☃ + 3 <= this.l.f; ☃ += 5)
           {
             int ☃ = ☃.nextInt(5);
             if (☃ == 0) {
-              aqg.a(☃, ☃, ☃, l.a - 1, l.b, ☃, cq.e, ☃ + 1);
+              aqg.a(☃, ☃, ☃, this.l.a - 1, this.l.b, ☃, cq.e, ☃ + 1);
             } else if (☃ == 1) {
-              aqg.a(☃, ☃, ☃, l.d + 1, l.b, ☃, cq.f, ☃ + 1);
+              aqg.a(☃, ☃, ☃, this.l.d + 1, this.l.b, ☃, cq.f, ☃ + 1);
             }
           }
         } else {
-          for (int ☃ = l.a + 3; ☃ + 3 <= l.d; ☃ += 5)
+          for (int ☃ = this.l.a + 3; ☃ + 3 <= this.l.d; ☃ += 5)
           {
             int ☃ = ☃.nextInt(5);
             if (☃ == 0) {
-              aqg.a(☃, ☃, ☃, ☃, l.b, l.c - 1, cq.c, ☃ + 1);
+              aqg.a(☃, ☃, ☃, ☃, this.l.b, this.l.c - 1, cq.c, ☃ + 1);
             } else if (☃ == 1) {
-              aqg.a(☃, ☃, ☃, ☃, l.b, l.f + 1, cq.d, ☃ + 1);
+              aqg.a(☃, ☃, ☃, ☃, this.l.b, this.l.f + 1, cq.d, ☃ + 1);
             }
           }
         }
@@ -354,14 +354,14 @@ public class aqg
       int ☃ = 2;
       int ☃ = 0;
       int ☃ = 2;
-      int ☃ = d * 5 - 1;
+      int ☃ = this.d * 5 - 1;
       
       a(☃, ☃, 0, 0, 0, 2, 1, ☃, afi.a.Q(), afi.a.Q(), false);
       a(☃, ☃, ☃, 0.8F, 0, 2, 0, 2, 2, ☃, afi.a.Q(), afi.a.Q(), false);
-      if (b) {
+      if (this.b) {
         a(☃, ☃, ☃, 0.6F, 0, 0, 0, 2, 1, ☃, afi.G.Q(), afi.a.Q(), false);
       }
-      for (int ☃ = 0; ☃ < d; ☃++)
+      for (int ☃ = 0; ☃ < this.d; ☃++)
       {
         int ☃ = 2 + ☃ * 5;
         
@@ -393,7 +393,7 @@ public class aqg
         if (☃.nextInt(100) == 0) {
           a(☃, ☃, ☃, 0, 0, ☃ + 1, ob.a(aqg.b(), new ob[] { zy.cd.b(☃) }), 3 + ☃.nextInt(4));
         }
-        if ((b) && (!c))
+        if ((this.b) && (!this.c))
         {
           int ☃ = d(0);int ☃ = ☃ - 1 + ☃.nextInt(3);
           int ☃ = a(1, ☃);
@@ -401,7 +401,7 @@ public class aqg
           cj ☃ = new cj(☃, ☃, ☃);
           if (☃.b(☃))
           {
-            c = true;
+            this.c = true;
             ☃.a(☃, afi.ac.Q(), 2);
             
             akw ☃ = ☃.s(☃);
@@ -423,7 +423,7 @@ public class aqg
           }
         }
       }
-      if (a) {
+      if (this.a) {
         for (int ☃ = 0; ☃ <= ☃; ☃++)
         {
           alz ☃ = a(☃, 1, -1, ☃, ☃);
@@ -446,52 +446,52 @@ public class aqg
     
     protected void a(dn ☃)
     {
-      ☃.a("tf", b);
-      ☃.a("D", a.b());
+      ☃.a("tf", this.b);
+      ☃.a("D", this.a.b());
     }
     
     protected void b(dn ☃)
     {
-      b = ☃.n("tf");
-      a = cq.b(☃.f("D"));
+      this.b = ☃.n("tf");
+      this.a = cq.b(☃.f("D"));
     }
     
     public b(int ☃, Random ☃, aqe ☃, cq ☃)
     {
       super();
       
-      a = ☃;
-      l = ☃;
-      b = (☃.d() > 3);
+      this.a = ☃;
+      this.l = ☃;
+      this.b = (☃.d() > 3);
     }
     
     public static aqe a(List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃)
     {
       aqe ☃ = new aqe(☃, ☃, ☃, ☃, ☃ + 2, ☃);
       if (☃.nextInt(4) == 0) {
-        e += 4;
+        ☃.e += 4;
       }
       switch (aqg.1.a[☃.ordinal()])
       {
       case 1: 
-        a = (☃ - 1);
-        d = (☃ + 3);
-        c = (☃ - 4);
+        ☃.a = (☃ - 1);
+        ☃.d = (☃ + 3);
+        ☃.c = (☃ - 4);
         break;
       case 2: 
-        a = (☃ - 1);
-        d = (☃ + 3);
-        f = (☃ + 4);
+        ☃.a = (☃ - 1);
+        ☃.d = (☃ + 3);
+        ☃.f = (☃ + 4);
         break;
       case 3: 
-        a = (☃ - 4);
-        c = (☃ - 1);
-        f = (☃ + 3);
+        ☃.a = (☃ - 4);
+        ☃.c = (☃ - 1);
+        ☃.f = (☃ + 3);
         break;
       case 4: 
-        d = (☃ + 4);
-        c = (☃ - 1);
-        f = (☃ + 3);
+        ☃.d = (☃ + 4);
+        ☃.c = (☃ - 1);
+        ☃.f = (☃ + 3);
       }
       if (aqt.a(☃, ☃) != null) {
         return null;
@@ -502,41 +502,41 @@ public class aqg
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
     {
       int ☃ = d();
-      switch (aqg.1.a[a.ordinal()])
+      switch (aqg.1.a[this.a.ordinal()])
       {
       case 1: 
-        aqg.a(☃, ☃, ☃, l.a + 1, l.b, l.c - 1, cq.c, ☃);
-        aqg.a(☃, ☃, ☃, l.a - 1, l.b, l.c + 1, cq.e, ☃);
-        aqg.a(☃, ☃, ☃, l.d + 1, l.b, l.c + 1, cq.f, ☃);
+        aqg.a(☃, ☃, ☃, this.l.a + 1, this.l.b, this.l.c - 1, cq.c, ☃);
+        aqg.a(☃, ☃, ☃, this.l.a - 1, this.l.b, this.l.c + 1, cq.e, ☃);
+        aqg.a(☃, ☃, ☃, this.l.d + 1, this.l.b, this.l.c + 1, cq.f, ☃);
         break;
       case 2: 
-        aqg.a(☃, ☃, ☃, l.a + 1, l.b, l.f + 1, cq.d, ☃);
-        aqg.a(☃, ☃, ☃, l.a - 1, l.b, l.c + 1, cq.e, ☃);
-        aqg.a(☃, ☃, ☃, l.d + 1, l.b, l.c + 1, cq.f, ☃);
+        aqg.a(☃, ☃, ☃, this.l.a + 1, this.l.b, this.l.f + 1, cq.d, ☃);
+        aqg.a(☃, ☃, ☃, this.l.a - 1, this.l.b, this.l.c + 1, cq.e, ☃);
+        aqg.a(☃, ☃, ☃, this.l.d + 1, this.l.b, this.l.c + 1, cq.f, ☃);
         break;
       case 3: 
-        aqg.a(☃, ☃, ☃, l.a + 1, l.b, l.c - 1, cq.c, ☃);
-        aqg.a(☃, ☃, ☃, l.a + 1, l.b, l.f + 1, cq.d, ☃);
-        aqg.a(☃, ☃, ☃, l.a - 1, l.b, l.c + 1, cq.e, ☃);
+        aqg.a(☃, ☃, ☃, this.l.a + 1, this.l.b, this.l.c - 1, cq.c, ☃);
+        aqg.a(☃, ☃, ☃, this.l.a + 1, this.l.b, this.l.f + 1, cq.d, ☃);
+        aqg.a(☃, ☃, ☃, this.l.a - 1, this.l.b, this.l.c + 1, cq.e, ☃);
         break;
       case 4: 
-        aqg.a(☃, ☃, ☃, l.a + 1, l.b, l.c - 1, cq.c, ☃);
-        aqg.a(☃, ☃, ☃, l.a + 1, l.b, l.f + 1, cq.d, ☃);
-        aqg.a(☃, ☃, ☃, l.d + 1, l.b, l.c + 1, cq.f, ☃);
+        aqg.a(☃, ☃, ☃, this.l.a + 1, this.l.b, this.l.c - 1, cq.c, ☃);
+        aqg.a(☃, ☃, ☃, this.l.a + 1, this.l.b, this.l.f + 1, cq.d, ☃);
+        aqg.a(☃, ☃, ☃, this.l.d + 1, this.l.b, this.l.c + 1, cq.f, ☃);
       }
-      if (b)
+      if (this.b)
       {
         if (☃.nextBoolean()) {
-          aqg.a(☃, ☃, ☃, l.a + 1, l.b + 3 + 1, l.c - 1, cq.c, ☃);
+          aqg.a(☃, ☃, ☃, this.l.a + 1, this.l.b + 3 + 1, this.l.c - 1, cq.c, ☃);
         }
         if (☃.nextBoolean()) {
-          aqg.a(☃, ☃, ☃, l.a - 1, l.b + 3 + 1, l.c + 1, cq.e, ☃);
+          aqg.a(☃, ☃, ☃, this.l.a - 1, this.l.b + 3 + 1, this.l.c + 1, cq.e, ☃);
         }
         if (☃.nextBoolean()) {
-          aqg.a(☃, ☃, ☃, l.d + 1, l.b + 3 + 1, l.c + 1, cq.f, ☃);
+          aqg.a(☃, ☃, ☃, this.l.d + 1, this.l.b + 3 + 1, this.l.c + 1, cq.f, ☃);
         }
         if (☃.nextBoolean()) {
-          aqg.a(☃, ☃, ☃, l.a + 1, l.b + 3 + 1, l.f + 1, cq.d, ☃);
+          aqg.a(☃, ☃, ☃, this.l.a + 1, this.l.b + 3 + 1, this.l.f + 1, cq.d, ☃);
         }
       }
     }
@@ -546,27 +546,27 @@ public class aqg
       if (a(☃, ☃)) {
         return false;
       }
-      if (b)
+      if (this.b)
       {
-        a(☃, ☃, l.a + 1, l.b, l.c, l.d - 1, l.b + 3 - 1, l.f, afi.a.Q(), afi.a.Q(), false);
-        a(☃, ☃, l.a, l.b, l.c + 1, l.d, l.b + 3 - 1, l.f - 1, afi.a.Q(), afi.a.Q(), false);
-        a(☃, ☃, l.a + 1, l.e - 2, l.c, l.d - 1, l.e, l.f, afi.a.Q(), afi.a.Q(), false);
-        a(☃, ☃, l.a, l.e - 2, l.c + 1, l.d, l.e, l.f - 1, afi.a.Q(), afi.a.Q(), false);
-        a(☃, ☃, l.a + 1, l.b + 3, l.c + 1, l.d - 1, l.b + 3, l.f - 1, afi.a.Q(), afi.a.Q(), false);
+        a(☃, ☃, this.l.a + 1, this.l.b, this.l.c, this.l.d - 1, this.l.b + 3 - 1, this.l.f, afi.a.Q(), afi.a.Q(), false);
+        a(☃, ☃, this.l.a, this.l.b, this.l.c + 1, this.l.d, this.l.b + 3 - 1, this.l.f - 1, afi.a.Q(), afi.a.Q(), false);
+        a(☃, ☃, this.l.a + 1, this.l.e - 2, this.l.c, this.l.d - 1, this.l.e, this.l.f, afi.a.Q(), afi.a.Q(), false);
+        a(☃, ☃, this.l.a, this.l.e - 2, this.l.c + 1, this.l.d, this.l.e, this.l.f - 1, afi.a.Q(), afi.a.Q(), false);
+        a(☃, ☃, this.l.a + 1, this.l.b + 3, this.l.c + 1, this.l.d - 1, this.l.b + 3, this.l.f - 1, afi.a.Q(), afi.a.Q(), false);
       }
       else
       {
-        a(☃, ☃, l.a + 1, l.b, l.c, l.d - 1, l.e, l.f, afi.a.Q(), afi.a.Q(), false);
-        a(☃, ☃, l.a, l.b, l.c + 1, l.d, l.e, l.f - 1, afi.a.Q(), afi.a.Q(), false);
+        a(☃, ☃, this.l.a + 1, this.l.b, this.l.c, this.l.d - 1, this.l.e, this.l.f, afi.a.Q(), afi.a.Q(), false);
+        a(☃, ☃, this.l.a, this.l.b, this.l.c + 1, this.l.d, this.l.e, this.l.f - 1, afi.a.Q(), afi.a.Q(), false);
       }
-      a(☃, ☃, l.a + 1, l.b, l.c + 1, l.a + 1, l.e, l.c + 1, afi.f.Q(), afi.a.Q(), false);
-      a(☃, ☃, l.a + 1, l.b, l.f - 1, l.a + 1, l.e, l.f - 1, afi.f.Q(), afi.a.Q(), false);
-      a(☃, ☃, l.d - 1, l.b, l.c + 1, l.d - 1, l.e, l.c + 1, afi.f.Q(), afi.a.Q(), false);
-      a(☃, ☃, l.d - 1, l.b, l.f - 1, l.d - 1, l.e, l.f - 1, afi.f.Q(), afi.a.Q(), false);
-      for (int ☃ = l.a; ☃ <= l.d; ☃++) {
-        for (int ☃ = l.c; ☃ <= l.f; ☃++) {
-          if (a(☃, ☃, l.b - 1, ☃, ☃).c().t() == arm.a) {
-            a(☃, afi.f.Q(), ☃, l.b - 1, ☃, ☃);
+      a(☃, ☃, this.l.a + 1, this.l.b, this.l.c + 1, this.l.a + 1, this.l.e, this.l.c + 1, afi.f.Q(), afi.a.Q(), false);
+      a(☃, ☃, this.l.a + 1, this.l.b, this.l.f - 1, this.l.a + 1, this.l.e, this.l.f - 1, afi.f.Q(), afi.a.Q(), false);
+      a(☃, ☃, this.l.d - 1, this.l.b, this.l.c + 1, this.l.d - 1, this.l.e, this.l.c + 1, afi.f.Q(), afi.a.Q(), false);
+      a(☃, ☃, this.l.d - 1, this.l.b, this.l.f - 1, this.l.d - 1, this.l.e, this.l.f - 1, afi.f.Q(), afi.a.Q(), false);
+      for (int ☃ = this.l.a; ☃ <= this.l.d; ☃++) {
+        for (int ☃ = this.l.c; ☃ <= this.l.f; ☃++) {
+          if (a(☃, ☃, this.l.b - 1, ☃, ☃).c().t() == arm.a) {
+            a(☃, afi.f.Q(), ☃, this.l.b - 1, ☃, ☃);
           }
         }
       }
@@ -582,8 +582,8 @@ public class aqg
     public d(int ☃, Random ☃, aqe ☃, cq ☃)
     {
       super();
-      m = ☃;
-      l = ☃;
+      this.m = ☃;
+      this.l = ☃;
     }
     
     protected void a(dn ☃) {}
@@ -596,20 +596,20 @@ public class aqg
       switch (aqg.1.a[☃.ordinal()])
       {
       case 1: 
-        d = (☃ + 2);
-        c = (☃ - 8);
+        ☃.d = (☃ + 2);
+        ☃.c = (☃ - 8);
         break;
       case 2: 
-        d = (☃ + 2);
-        f = (☃ + 8);
+        ☃.d = (☃ + 2);
+        ☃.f = (☃ + 8);
         break;
       case 3: 
-        a = (☃ - 8);
-        f = (☃ + 2);
+        ☃.a = (☃ - 8);
+        ☃.f = (☃ + 2);
         break;
       case 4: 
-        d = (☃ + 8);
-        f = (☃ + 2);
+        ☃.d = (☃ + 8);
+        ☃.f = (☃ + 2);
       }
       if (aqt.a(☃, ☃) != null) {
         return null;
@@ -620,20 +620,20 @@ public class aqg
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
     {
       int ☃ = d();
-      if (m != null) {
-        switch (aqg.1.a[m.ordinal()])
+      if (this.m != null) {
+        switch (aqg.1.a[this.m.ordinal()])
         {
         case 1: 
-          aqg.a(☃, ☃, ☃, l.a, l.b, l.c - 1, cq.c, ☃);
+          aqg.a(☃, ☃, ☃, this.l.a, this.l.b, this.l.c - 1, cq.c, ☃);
           break;
         case 2: 
-          aqg.a(☃, ☃, ☃, l.a, l.b, l.f + 1, cq.d, ☃);
+          aqg.a(☃, ☃, ☃, this.l.a, this.l.b, this.l.f + 1, cq.d, ☃);
           break;
         case 3: 
-          aqg.a(☃, ☃, ☃, l.a - 1, l.b, l.c, cq.e, ☃);
+          aqg.a(☃, ☃, ☃, this.l.a - 1, this.l.b, this.l.c, cq.e, ☃);
           break;
         case 4: 
-          aqg.a(☃, ☃, ☃, l.d + 1, l.b, l.c, cq.f, ☃);
+          aqg.a(☃, ☃, ☃, this.l.d + 1, this.l.b, this.l.c, cq.f, ☃);
         }
       }
     }

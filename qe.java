@@ -8,9 +8,9 @@ public abstract class qe
   
   protected qe(qb ☃, String ☃, double ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
     if (☃ == null) {
       throw new IllegalArgumentException("Name cannot be null!");
     }
@@ -18,37 +18,37 @@ public abstract class qe
   
   public String a()
   {
-    return b;
+    return this.b;
   }
   
   public double b()
   {
-    return c;
+    return this.c;
   }
   
   public boolean c()
   {
-    return d;
+    return this.d;
   }
   
   public qe a(boolean ☃)
   {
-    d = ☃;
+    this.d = ☃;
     return this;
   }
   
   public qb d()
   {
-    return a;
+    return this.a;
   }
   
   public int hashCode()
   {
-    return b.hashCode();
+    return this.b.hashCode();
   }
   
   public boolean equals(Object ☃)
   {
-    return ((☃ instanceof qb)) && (b.equals(((qb)☃).a()));
+    return ((☃ instanceof qb)) && (this.b.equals(((qb)☃).a()));
   }
 }

@@ -12,17 +12,17 @@ public class acf
   public acf(int ☃, jy ☃, int ☃, int ☃)
   {
     super(☃, ☃, ☃, acj.g);
-    a = ☃;
+    this.a = ☃;
   }
   
   public int a(int ☃)
   {
-    return F[a] + (☃ - 1) * G[a];
+    return F[this.a] + (☃ - 1) * G[this.a];
   }
   
   public int b(int ☃)
   {
-    return a(☃) + H[a];
+    return a(☃) + H[this.a];
   }
   
   public int b()
@@ -32,13 +32,13 @@ public class acf
   
   public float a(int ☃, pw ☃)
   {
-    if (a == 0) {
+    if (this.a == 0) {
       return ☃ * 1.25F;
     }
-    if ((a == 1) && (☃ == pw.b)) {
+    if ((this.a == 1) && (☃ == pw.b)) {
       return ☃ * 2.5F;
     }
-    if ((a == 2) && (☃ == pw.c)) {
+    if ((this.a == 2) && (☃ == pw.c)) {
       return ☃ * 2.5F;
     }
     return 0.0F;
@@ -46,7 +46,7 @@ public class acf
   
   public String a()
   {
-    return "enchantment.damage." + E[a];
+    return "enchantment.damage." + E[this.a];
   }
   
   public boolean a(aci ☃)
@@ -67,10 +67,10 @@ public class acf
     if ((☃ instanceof pr))
     {
       pr ☃ = (pr)☃;
-      if ((a == 2) && (☃.bz() == pw.c))
+      if ((this.a == 2) && (☃.bz() == pw.c))
       {
         int ☃ = 20 + ☃.bc().nextInt(10 * ☃);
-        ☃.c(new pf(dH, ☃, 3));
+        ☃.c(new pf(pe.d.H, ☃, 3));
       }
     }
   }

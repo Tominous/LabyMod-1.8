@@ -12,44 +12,44 @@ class bal$a
   
   public bal$a(bal arg1, aul ☃)
   {
-    b = ☃;
+    this.b = ☃;
     
-    d = Lists.newArrayList();
+    this.d = Lists.newArrayList();
     for (String ☃ : ☃.d())
     {
       bdc ☃ = ave.A().u().a(☃);
       if (☃ != null) {
-        d.add(☃);
+        this.d.add(☃);
       }
     }
-    if (!d.isEmpty())
+    if (!this.d.isEmpty())
     {
-      String ☃ = ((bdc)d.get(new Random().nextInt(d.size()))).a().getName();
-      c = bet.c(☃);
-      bet.a(c, ☃);
+      String ☃ = ((bdc)this.d.get(new Random().nextInt(this.d.size()))).a().getName();
+      this.c = bet.c(☃);
+      bet.a(this.c, ☃);
     }
     else
     {
-      c = bmz.a();
+      this.c = bmz.a();
     }
   }
   
   public void a(baf ☃)
   {
-    ☃.a(new bak(d));
+    ☃.a(new bak(this.d));
   }
   
   public eu A_()
   {
-    return new fa(b.c());
+    return new fa(this.b.c());
   }
   
   public void a(float ☃, int ☃)
   {
     int ☃ = -1;
-    String ☃ = avn.b(b.e());
+    String ☃ = avn.b(this.b.e());
     if (☃.length() >= 2) {
-      ☃ = Ak.b(☃.charAt(1));
+      ☃ = ave.A().k.b(☃.charAt(1));
     }
     if (☃ >= 0)
     {
@@ -58,7 +58,7 @@ class bal$a
       float ☃ = (☃ & 0xFF) / 255.0F;
       avp.a(1, 1, 15, 15, ns.b(☃ * ☃, ☃ * ☃, ☃ * ☃) | ☃ << 24);
     }
-    ave.A().P().a(c);
+    ave.A().P().a(this.c);
     bfl.c(☃, ☃, ☃, ☃ / 255.0F);
     avp.a(2, 2, 8.0F, 8.0F, 8, 8, 12, 12, 64.0F, 64.0F);
     avp.a(2, 2, 40.0F, 8.0F, 8, 8, 12, 12, 64.0F, 64.0F);
@@ -66,6 +66,6 @@ class bal$a
   
   public boolean B_()
   {
-    return !d.isEmpty();
+    return !this.d.isEmpty();
   }
 }

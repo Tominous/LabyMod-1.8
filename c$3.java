@@ -8,6 +8,6 @@ final class c$3
   public String a()
     throws Exception
   {
-    return c.a(a);
+    return c.a(this.a);
   }
 }

@@ -9,8 +9,8 @@ public class aov
   public aov(alz ☃, alz ☃)
   {
     super(false);
-    b = ☃;
-    a = ☃;
+    this.b = ☃;
+    this.a = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
@@ -23,7 +23,7 @@ public class aov
     if ((☃ == afi.d) || (☃ == afi.c))
     {
       ☃ = ☃.a();
-      a(☃, ☃, b);
+      a(☃, ☃, this.b);
       for (int ☃ = ☃.o(); ☃ <= ☃.o() + 2; ☃++)
       {
         int ☃ = ☃ - ☃.o();
@@ -38,7 +38,7 @@ public class aov
             {
               cj ☃ = new cj(☃, ☃, ☃);
               if (!☃.p(☃).c().o()) {
-                a(☃, ☃, a);
+                a(☃, ☃, this.a);
               }
             }
           }

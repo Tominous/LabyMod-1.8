@@ -21,13 +21,13 @@ public class vm
       if ((☃ instanceof pr))
       {
         int ☃ = 0;
-        if (o.aa() == oj.c) {
+        if (this.o.aa() == oj.c) {
           ☃ = 7;
-        } else if (o.aa() == oj.d) {
+        } else if (this.o.aa() == oj.d) {
           ☃ = 15;
         }
         if (☃ > 0) {
-          ((pr)☃).c(new pf(uH, ☃ * 20, 0));
+          ((pr)☃).c(new pf(pe.u.H, ☃ * 20, 0));
         }
       }
       return true;

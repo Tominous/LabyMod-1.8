@@ -10,24 +10,24 @@ public class bgx$a
   
   public a a(amo<?> ☃)
   {
-    a = ☃;
+    this.a = ☃;
     return this;
   }
   
   public a a(String ☃)
   {
-    b = ☃;
+    this.b = ☃;
     return this;
   }
   
   public a a(amo<?>... ☃)
   {
-    Collections.addAll(c, ☃);
+    Collections.addAll(this.c, ☃);
     return this;
   }
   
   public bgx a()
   {
-    return new bgx(a, b, c, null);
+    return new bgx(this.a, this.b, this.c, null);
   }
 }

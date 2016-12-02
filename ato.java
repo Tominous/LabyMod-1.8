@@ -45,168 +45,168 @@ public class ato
   
   public ato(dn ☃)
   {
-    b = ☃.g("RandomSeed");
+    this.b = ☃.g("RandomSeed");
     if (☃.b("generatorName", 8))
     {
       String ☃ = ☃.j("generatorName");
-      c = adr.a(☃);
-      if (c == null)
+      this.c = adr.a(☃);
+      if (this.c == null)
       {
-        c = adr.b;
+        this.c = adr.b;
       }
-      else if (c.f())
+      else if (this.c.f())
       {
         int ☃ = 0;
         if (☃.b("generatorVersion", 99)) {
           ☃ = ☃.f("generatorVersion");
         }
-        c = c.a(☃);
+        this.c = this.c.a(☃);
       }
       if (☃.b("generatorOptions", 8)) {
-        d = ☃.j("generatorOptions");
+        this.d = ☃.j("generatorOptions");
       }
     }
-    u = adp.a.a(☃.f("GameType"));
+    this.u = adp.a.a(☃.f("GameType"));
     if (☃.b("MapFeatures", 99)) {
-      v = ☃.n("MapFeatures");
+      this.v = ☃.n("MapFeatures");
     } else {
-      v = true;
+      this.v = true;
     }
-    e = ☃.f("SpawnX");
-    f = ☃.f("SpawnY");
-    g = ☃.f("SpawnZ");
-    h = ☃.g("Time");
+    this.e = ☃.f("SpawnX");
+    this.f = ☃.f("SpawnY");
+    this.g = ☃.f("SpawnZ");
+    this.h = ☃.g("Time");
     if (☃.b("DayTime", 99)) {
-      i = ☃.g("DayTime");
+      this.i = ☃.g("DayTime");
     } else {
-      i = h;
+      this.i = this.h;
     }
-    j = ☃.g("LastPlayed");
-    k = ☃.g("SizeOnDisk");
-    n = ☃.j("LevelName");
-    o = ☃.f("version");
-    p = ☃.f("clearWeatherTime");
-    r = ☃.f("rainTime");
-    q = ☃.n("raining");
-    t = ☃.f("thunderTime");
-    s = ☃.n("thundering");
-    w = ☃.n("hardcore");
+    this.j = ☃.g("LastPlayed");
+    this.k = ☃.g("SizeOnDisk");
+    this.n = ☃.j("LevelName");
+    this.o = ☃.f("version");
+    this.p = ☃.f("clearWeatherTime");
+    this.r = ☃.f("rainTime");
+    this.q = ☃.n("raining");
+    this.t = ☃.f("thunderTime");
+    this.s = ☃.n("thundering");
+    this.w = ☃.n("hardcore");
     if (☃.b("initialized", 99)) {
-      y = ☃.n("initialized");
+      this.y = ☃.n("initialized");
     } else {
-      y = true;
+      this.y = true;
     }
     if (☃.b("allowCommands", 99)) {
-      x = ☃.n("allowCommands");
+      this.x = ☃.n("allowCommands");
     } else {
-      x = (u == adp.a.c);
+      this.x = (this.u == adp.a.c);
     }
     if (☃.b("Player", 10))
     {
-      l = ☃.m("Player");
-      m = l.f("Dimension");
+      this.l = ☃.m("Player");
+      this.m = this.l.f("Dimension");
     }
     if (☃.b("GameRules", 10)) {
-      K.a(☃.m("GameRules"));
+      this.K.a(☃.m("GameRules"));
     }
     if (☃.b("Difficulty", 99)) {
-      z = oj.a(☃.d("Difficulty"));
+      this.z = oj.a(☃.d("Difficulty"));
     }
     if (☃.b("DifficultyLocked", 1)) {
-      A = ☃.n("DifficultyLocked");
+      this.A = ☃.n("DifficultyLocked");
     }
     if (☃.b("BorderCenterX", 99)) {
-      B = ☃.i("BorderCenterX");
+      this.B = ☃.i("BorderCenterX");
     }
     if (☃.b("BorderCenterZ", 99)) {
-      C = ☃.i("BorderCenterZ");
+      this.C = ☃.i("BorderCenterZ");
     }
     if (☃.b("BorderSize", 99)) {
-      D = ☃.i("BorderSize");
+      this.D = ☃.i("BorderSize");
     }
     if (☃.b("BorderSizeLerpTime", 99)) {
-      E = ☃.g("BorderSizeLerpTime");
+      this.E = ☃.g("BorderSizeLerpTime");
     }
     if (☃.b("BorderSizeLerpTarget", 99)) {
-      F = ☃.i("BorderSizeLerpTarget");
+      this.F = ☃.i("BorderSizeLerpTarget");
     }
     if (☃.b("BorderSafeZone", 99)) {
-      G = ☃.i("BorderSafeZone");
+      this.G = ☃.i("BorderSafeZone");
     }
     if (☃.b("BorderDamagePerBlock", 99)) {
-      H = ☃.i("BorderDamagePerBlock");
+      this.H = ☃.i("BorderDamagePerBlock");
     }
     if (☃.b("BorderWarningBlocks", 99)) {
-      I = ☃.f("BorderWarningBlocks");
+      this.I = ☃.f("BorderWarningBlocks");
     }
     if (☃.b("BorderWarningTime", 99)) {
-      J = ☃.f("BorderWarningTime");
+      this.J = ☃.f("BorderWarningTime");
     }
   }
   
   public ato(adp ☃, String ☃)
   {
     a(☃);
-    n = ☃;
-    z = a;
-    y = false;
+    this.n = ☃;
+    this.z = a;
+    this.y = false;
   }
   
   public void a(adp ☃)
   {
-    b = ☃.d();
-    u = ☃.e();
-    v = ☃.g();
-    w = ☃.f();
-    c = ☃.h();
-    d = ☃.j();
-    x = ☃.i();
+    this.b = ☃.d();
+    this.u = ☃.e();
+    this.v = ☃.g();
+    this.w = ☃.f();
+    this.c = ☃.h();
+    this.d = ☃.j();
+    this.x = ☃.i();
   }
   
   public ato(ato ☃)
   {
-    b = b;
-    c = c;
-    d = d;
-    u = u;
-    v = v;
-    e = e;
-    f = f;
-    g = g;
-    h = h;
-    i = i;
-    j = j;
-    k = k;
-    l = l;
-    m = m;
-    n = n;
-    o = o;
-    r = r;
-    q = q;
-    t = t;
-    s = s;
-    w = w;
-    x = x;
-    y = y;
-    K = K;
-    z = z;
-    A = A;
-    B = B;
-    C = C;
-    D = D;
-    E = E;
-    F = F;
-    G = G;
-    H = H;
-    J = J;
-    I = I;
+    this.b = ☃.b;
+    this.c = ☃.c;
+    this.d = ☃.d;
+    this.u = ☃.u;
+    this.v = ☃.v;
+    this.e = ☃.e;
+    this.f = ☃.f;
+    this.g = ☃.g;
+    this.h = ☃.h;
+    this.i = ☃.i;
+    this.j = ☃.j;
+    this.k = ☃.k;
+    this.l = ☃.l;
+    this.m = ☃.m;
+    this.n = ☃.n;
+    this.o = ☃.o;
+    this.r = ☃.r;
+    this.q = ☃.q;
+    this.t = ☃.t;
+    this.s = ☃.s;
+    this.w = ☃.w;
+    this.x = ☃.x;
+    this.y = ☃.y;
+    this.K = ☃.K;
+    this.z = ☃.z;
+    this.A = ☃.A;
+    this.B = ☃.B;
+    this.C = ☃.C;
+    this.D = ☃.D;
+    this.E = ☃.E;
+    this.F = ☃.F;
+    this.G = ☃.G;
+    this.H = ☃.H;
+    this.J = ☃.J;
+    this.I = ☃.I;
   }
   
   public dn a()
   {
     dn ☃ = new dn();
     
-    a(☃, l);
+    a(☃, this.l);
     
     return ☃;
   }
@@ -221,43 +221,43 @@ public class ato
   
   private void a(dn ☃, dn ☃)
   {
-    ☃.a("RandomSeed", b);
-    ☃.a("generatorName", c.a());
-    ☃.a("generatorVersion", c.d());
-    ☃.a("generatorOptions", d);
-    ☃.a("GameType", u.a());
-    ☃.a("MapFeatures", v);
-    ☃.a("SpawnX", e);
-    ☃.a("SpawnY", f);
-    ☃.a("SpawnZ", g);
-    ☃.a("Time", h);
-    ☃.a("DayTime", i);
-    ☃.a("SizeOnDisk", k);
+    ☃.a("RandomSeed", this.b);
+    ☃.a("generatorName", this.c.a());
+    ☃.a("generatorVersion", this.c.d());
+    ☃.a("generatorOptions", this.d);
+    ☃.a("GameType", this.u.a());
+    ☃.a("MapFeatures", this.v);
+    ☃.a("SpawnX", this.e);
+    ☃.a("SpawnY", this.f);
+    ☃.a("SpawnZ", this.g);
+    ☃.a("Time", this.h);
+    ☃.a("DayTime", this.i);
+    ☃.a("SizeOnDisk", this.k);
     ☃.a("LastPlayed", MinecraftServer.az());
-    ☃.a("LevelName", n);
-    ☃.a("version", o);
-    ☃.a("clearWeatherTime", p);
-    ☃.a("rainTime", r);
-    ☃.a("raining", q);
-    ☃.a("thunderTime", t);
-    ☃.a("thundering", s);
-    ☃.a("hardcore", w);
-    ☃.a("allowCommands", x);
-    ☃.a("initialized", y);
-    ☃.a("BorderCenterX", B);
-    ☃.a("BorderCenterZ", C);
-    ☃.a("BorderSize", D);
-    ☃.a("BorderSizeLerpTime", E);
-    ☃.a("BorderSafeZone", G);
-    ☃.a("BorderDamagePerBlock", H);
-    ☃.a("BorderSizeLerpTarget", F);
-    ☃.a("BorderWarningBlocks", I);
-    ☃.a("BorderWarningTime", J);
-    if (z != null) {
-      ☃.a("Difficulty", (byte)z.a());
+    ☃.a("LevelName", this.n);
+    ☃.a("version", this.o);
+    ☃.a("clearWeatherTime", this.p);
+    ☃.a("rainTime", this.r);
+    ☃.a("raining", this.q);
+    ☃.a("thunderTime", this.t);
+    ☃.a("thundering", this.s);
+    ☃.a("hardcore", this.w);
+    ☃.a("allowCommands", this.x);
+    ☃.a("initialized", this.y);
+    ☃.a("BorderCenterX", this.B);
+    ☃.a("BorderCenterZ", this.C);
+    ☃.a("BorderSize", this.D);
+    ☃.a("BorderSizeLerpTime", this.E);
+    ☃.a("BorderSafeZone", this.G);
+    ☃.a("BorderDamagePerBlock", this.H);
+    ☃.a("BorderSizeLerpTarget", this.F);
+    ☃.a("BorderWarningBlocks", this.I);
+    ☃.a("BorderWarningTime", this.J);
+    if (this.z != null) {
+      ☃.a("Difficulty", (byte)this.z.a());
     }
-    ☃.a("DifficultyLocked", A);
-    ☃.a("GameRules", K.a());
+    ☃.a("DifficultyLocked", this.A);
+    ☃.a("GameRules", this.K.a());
     if (☃ != null) {
       ☃.a("Player", ☃);
     }
@@ -265,329 +265,329 @@ public class ato
   
   public long b()
   {
-    return b;
+    return this.b;
   }
   
   public int c()
   {
-    return e;
+    return this.e;
   }
   
   public int d()
   {
-    return f;
+    return this.f;
   }
   
   public int e()
   {
-    return g;
+    return this.g;
   }
   
   public long f()
   {
-    return h;
+    return this.h;
   }
   
   public long g()
   {
-    return i;
+    return this.i;
   }
   
   public long h()
   {
-    return k;
+    return this.k;
   }
   
   public dn i()
   {
-    return l;
+    return this.l;
   }
   
   public void a(int ☃)
   {
-    e = ☃;
+    this.e = ☃;
   }
   
   public void b(int ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
   
   public void c(int ☃)
   {
-    g = ☃;
+    this.g = ☃;
   }
   
   public void b(long ☃)
   {
-    h = ☃;
+    this.h = ☃;
   }
   
   public void c(long ☃)
   {
-    i = ☃;
+    this.i = ☃;
   }
   
   public void a(cj ☃)
   {
-    e = ☃.n();
-    f = ☃.o();
-    g = ☃.p();
+    this.e = ☃.n();
+    this.f = ☃.o();
+    this.g = ☃.p();
   }
   
   public String k()
   {
-    return n;
+    return this.n;
   }
   
   public void a(String ☃)
   {
-    n = ☃;
+    this.n = ☃;
   }
   
   public int l()
   {
-    return o;
+    return this.o;
   }
   
   public void e(int ☃)
   {
-    o = ☃;
+    this.o = ☃;
   }
   
   public long m()
   {
-    return j;
+    return this.j;
   }
   
   public int A()
   {
-    return p;
+    return this.p;
   }
   
   public void i(int ☃)
   {
-    p = ☃;
+    this.p = ☃;
   }
   
   public boolean n()
   {
-    return s;
+    return this.s;
   }
   
   public void a(boolean ☃)
   {
-    s = ☃;
+    this.s = ☃;
   }
   
   public int o()
   {
-    return t;
+    return this.t;
   }
   
   public void f(int ☃)
   {
-    t = ☃;
+    this.t = ☃;
   }
   
   public boolean p()
   {
-    return q;
+    return this.q;
   }
   
   public void b(boolean ☃)
   {
-    q = ☃;
+    this.q = ☃;
   }
   
   public int q()
   {
-    return r;
+    return this.r;
   }
   
   public void g(int ☃)
   {
-    r = ☃;
+    this.r = ☃;
   }
   
   public adp.a r()
   {
-    return u;
+    return this.u;
   }
   
   public boolean s()
   {
-    return v;
+    return this.v;
   }
   
   public void f(boolean ☃)
   {
-    v = ☃;
+    this.v = ☃;
   }
   
   public void a(adp.a ☃)
   {
-    u = ☃;
+    this.u = ☃;
   }
   
   public boolean t()
   {
-    return w;
+    return this.w;
   }
   
   public void g(boolean ☃)
   {
-    w = ☃;
+    this.w = ☃;
   }
   
   public adr u()
   {
-    return c;
+    return this.c;
   }
   
   public void a(adr ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public String B()
   {
-    return d;
+    return this.d;
   }
   
   public boolean v()
   {
-    return x;
+    return this.x;
   }
   
   public void c(boolean ☃)
   {
-    x = ☃;
+    this.x = ☃;
   }
   
   public boolean w()
   {
-    return y;
+    return this.y;
   }
   
   public void d(boolean ☃)
   {
-    y = ☃;
+    this.y = ☃;
   }
   
   public adk x()
   {
-    return K;
+    return this.K;
   }
   
   public double C()
   {
-    return B;
+    return this.B;
   }
   
   public double D()
   {
-    return C;
+    return this.C;
   }
   
   public double E()
   {
-    return D;
+    return this.D;
   }
   
   public void a(double ☃)
   {
-    D = ☃;
+    this.D = ☃;
   }
   
   public long F()
   {
-    return E;
+    return this.E;
   }
   
   public void e(long ☃)
   {
-    E = ☃;
+    this.E = ☃;
   }
   
   public double G()
   {
-    return F;
+    return this.F;
   }
   
   public void b(double ☃)
   {
-    F = ☃;
+    this.F = ☃;
   }
   
   public void c(double ☃)
   {
-    C = ☃;
+    this.C = ☃;
   }
   
   public void d(double ☃)
   {
-    B = ☃;
+    this.B = ☃;
   }
   
   public double H()
   {
-    return G;
+    return this.G;
   }
   
   public void e(double ☃)
   {
-    G = ☃;
+    this.G = ☃;
   }
   
   public double I()
   {
-    return H;
+    return this.H;
   }
   
   public void f(double ☃)
   {
-    H = ☃;
+    this.H = ☃;
   }
   
   public int J()
   {
-    return I;
+    return this.I;
   }
   
   public int K()
   {
-    return J;
+    return this.J;
   }
   
   public void j(int ☃)
   {
-    I = ☃;
+    this.I = ☃;
   }
   
   public void k(int ☃)
   {
-    J = ☃;
+    this.J = ☃;
   }
   
   public oj y()
   {
-    return z;
+    return this.z;
   }
   
   public void a(oj ☃)
   {
-    z = ☃;
+    this.z = ☃;
   }
   
   public boolean z()
   {
-    return A;
+    return this.A;
   }
   
   public void e(boolean ☃)
   {
-    A = ☃;
+    this.A = ☃;
   }
   
   public void a(c ☃)
@@ -597,7 +597,7 @@ public class ato
       public String a()
         throws Exception
       {
-        return String.valueOf(b());
+        return String.valueOf(ato.this.b());
       }
     });
     ☃.a("Level generator", new Callable()

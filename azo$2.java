@@ -20,6 +20,6 @@ class azo$2
   
   protected String b()
   {
-    return "You are in \"" + val$selectedPath + "\"\nGo back!";
+    return "You are in \"" + this.val$selectedPath + "\"\nGo back!";
   }
 }

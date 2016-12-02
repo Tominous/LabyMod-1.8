@@ -28,14 +28,14 @@ final class kb$3
     }
     zw ☃;
     ☃.g(☃);
-    if (--b == 0)
+    if (--☃.b == 0)
     {
       ☃.a(☃);
-      b = 1;
+      ☃.b = 1;
     }
     else if (((alc)☃.h()).a(new zx(☃)) < 0)
     {
-      b.a(☃, new zx(☃));
+      this.b.a(☃, new zx(☃));
     }
     return ☃;
   }

@@ -11,25 +11,25 @@ public class ft
   
   public ft(cj ☃, int ☃, dn ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.c();
-    b = ☃.readUnsignedByte();
-    c = ☃.h();
+    this.a = ☃.c();
+    this.b = ☃.readUnsignedByte();
+    this.c = ☃.h();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a);
-    ☃.writeByte((byte)b);
-    ☃.a(c);
+    ☃.a(this.a);
+    ☃.writeByte((byte)this.b);
+    ☃.a(this.c);
   }
   
   public void a(fj ☃)
@@ -39,16 +39,16 @@ public class ft
   
   public cj a()
   {
-    return a;
+    return this.a;
   }
   
   public int b()
   {
-    return b;
+    return this.b;
   }
   
   public dn c()
   {
-    return c;
+    return this.c;
   }
 }

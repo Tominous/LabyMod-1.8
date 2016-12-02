@@ -19,7 +19,7 @@ public class ux
   public ux(adm ☃)
   {
     super(☃);
-    k = true;
+    this.k = true;
     a(1.5F, 0.6F);
   }
   
@@ -30,9 +30,9 @@ public class ux
   
   protected void h()
   {
-    ac.a(17, new Integer(0));
-    ac.a(18, new Integer(1));
-    ac.a(19, new Float(0.0F));
+    this.ac.a(17, new Integer(0));
+    this.ac.a(18, new Integer(1));
+    this.ac.a(19, new Float(0.0F));
   }
   
   public aug j(pk ☃)
@@ -55,13 +55,13 @@ public class ux
     this(☃);
     b(☃, ☃, ☃);
     
-    v = 0.0D;
-    w = 0.0D;
-    x = 0.0D;
+    this.v = 0.0D;
+    this.w = 0.0D;
+    this.x = 0.0D;
     
-    p = ☃;
-    q = ☃;
-    r = ☃;
+    this.p = ☃;
+    this.q = ☃;
+    this.r = ☃;
   }
   
   public double an()
@@ -74,23 +74,23 @@ public class ux
     if (b(☃)) {
       return false;
     }
-    if ((o.D) || (I)) {
+    if ((this.o.D) || (this.I)) {
       return true;
     }
-    if ((l != null) && (l == ☃.j()) && ((☃ instanceof oy))) {
+    if ((this.l != null) && (this.l == ☃.j()) && ((☃ instanceof oy))) {
       return false;
     }
     b(-m());
     a(10);
     a(j() + ☃ * 10.0F);
     ac();
-    boolean ☃ = ((☃.j() instanceof wn)) && (jbA.d);
+    boolean ☃ = ((☃.j() instanceof wn)) && (((wn)☃.j()).bA.d);
     if ((☃) || (j() > 40.0F))
     {
-      if (l != null) {
-        l.a(this);
+      if (this.l != null) {
+        this.l.a(this);
       }
-      if ((!☃) && (o.Q().b("doEntityDrops"))) {
+      if ((!☃) && (this.o.Q().b("doEntityDrops"))) {
         a(zy.aE, 1, 0.0F);
       }
       J();
@@ -107,59 +107,59 @@ public class ux
   
   public boolean ad()
   {
-    return !I;
+    return !this.I;
   }
   
   public void a(double ☃, double ☃, double ☃, float ☃, float ☃, int ☃, boolean ☃)
   {
-    if ((☃) && (l != null))
+    if ((☃) && (this.l != null))
     {
-      p = (s = ☃);
-      q = (t = ☃);
-      r = (u = ☃);
-      y = ☃;
-      z = ☃;
-      c = 0;
+      this.p = (this.s = ☃);
+      this.q = (this.t = ☃);
+      this.r = (this.u = ☃);
+      this.y = ☃;
+      this.z = ☃;
+      this.c = 0;
       b(☃, ☃, ☃);
       
-      v = (i = 0.0D);
-      w = (ar = 0.0D);
-      x = (as = 0.0D);
+      this.v = (this.i = 0.0D);
+      this.w = (this.ar = 0.0D);
+      this.x = (this.as = 0.0D);
       
       return;
     }
-    if (a)
+    if (this.a)
     {
-      c = (☃ + 5);
+      this.c = (☃ + 5);
     }
     else
     {
-      double ☃ = ☃ - s;
-      double ☃ = ☃ - t;
-      double ☃ = ☃ - u;
+      double ☃ = ☃ - this.s;
+      double ☃ = ☃ - this.t;
+      double ☃ = ☃ - this.u;
       double ☃ = ☃ * ☃ + ☃ * ☃ + ☃ * ☃;
       if (☃ > 1.0D) {
-        c = 3;
+        this.c = 3;
       } else {
         return;
       }
     }
-    d = ☃;
-    e = ☃;
-    f = ☃;
-    g = ☃;
-    h = ☃;
+    this.d = ☃;
+    this.e = ☃;
+    this.f = ☃;
+    this.g = ☃;
+    this.h = ☃;
     
-    v = i;
-    w = ar;
-    x = as;
+    this.v = this.i;
+    this.w = this.ar;
+    this.x = this.as;
   }
   
   public void i(double ☃, double ☃, double ☃)
   {
-    i = (v = ☃);
-    ar = (w = ☃);
-    as = (x = ☃);
+    this.i = (this.v = ☃);
+    this.ar = (this.w = ☃);
+    this.as = (this.x = ☃);
   }
   
   public void t_()
@@ -171,157 +171,157 @@ public class ux
     if (j() > 0.0F) {
       a(j() - 1.0F);
     }
-    p = s;
-    q = t;
-    r = u;
+    this.p = this.s;
+    this.q = this.t;
+    this.r = this.u;
     
     int ☃ = 5;
     double ☃ = 0.0D;
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
-      double ☃ = aRb + (aRe - aRb) * (☃ + 0) / ☃ - 0.125D;
-      double ☃ = aRb + (aRe - aRb) * (☃ + 1) / ☃ - 0.125D;
-      aug ☃ = new aug(aRa, ☃, aRc, aRd, ☃, aRf);
-      if (o.b(☃, arm.h)) {
+      double ☃ = aR().b + (aR().e - aR().b) * (☃ + 0) / ☃ - 0.125D;
+      double ☃ = aR().b + (aR().e - aR().b) * (☃ + 1) / ☃ - 0.125D;
+      aug ☃ = new aug(aR().a, ☃, aR().c, aR().d, ☃, aR().f);
+      if (this.o.b(☃, arm.h)) {
         ☃ += 1.0D / ☃;
       }
     }
-    double ☃ = Math.sqrt(v * v + x * x);
+    double ☃ = Math.sqrt(this.v * this.v + this.x * this.x);
     if (☃ > 0.2975D)
     {
-      double ☃ = Math.cos(y * 3.141592653589793D / 180.0D);
-      double ☃ = Math.sin(y * 3.141592653589793D / 180.0D);
+      double ☃ = Math.cos(this.y * 3.141592653589793D / 180.0D);
+      double ☃ = Math.sin(this.y * 3.141592653589793D / 180.0D);
       for (int ☃ = 0; ☃ < 1.0D + ☃ * 60.0D; ☃++)
       {
-        double ☃ = V.nextFloat() * 2.0F - 1.0F;
+        double ☃ = this.V.nextFloat() * 2.0F - 1.0F;
         
-        double ☃ = (V.nextInt(2) * 2 - 1) * 0.7D;
-        if (V.nextBoolean())
+        double ☃ = (this.V.nextInt(2) * 2 - 1) * 0.7D;
+        if (this.V.nextBoolean())
         {
-          double ☃ = s - ☃ * ☃ * 0.8D + ☃ * ☃;
-          double ☃ = u - ☃ * ☃ * 0.8D - ☃ * ☃;
-          o.a(cy.f, ☃, t - 0.125D, ☃, v, w, x, new int[0]);
+          double ☃ = this.s - ☃ * ☃ * 0.8D + ☃ * ☃;
+          double ☃ = this.u - ☃ * ☃ * 0.8D - ☃ * ☃;
+          this.o.a(cy.f, ☃, this.t - 0.125D, ☃, this.v, this.w, this.x, new int[0]);
         }
         else
         {
-          double ☃ = s + ☃ + ☃ * ☃ * 0.7D;
-          double ☃ = u + ☃ - ☃ * ☃ * 0.7D;
-          o.a(cy.f, ☃, t - 0.125D, ☃, v, w, x, new int[0]);
+          double ☃ = this.s + ☃ + ☃ * ☃ * 0.7D;
+          double ☃ = this.u + ☃ - ☃ * ☃ * 0.7D;
+          this.o.a(cy.f, ☃, this.t - 0.125D, ☃, this.v, this.w, this.x, new int[0]);
         }
       }
     }
-    if ((o.D) && (a))
+    if ((this.o.D) && (this.a))
     {
-      if (c > 0)
+      if (this.c > 0)
       {
-        double ☃ = s + (d - s) / c;
-        double ☃ = t + (e - t) / c;
-        double ☃ = u + (f - u) / c;
+        double ☃ = this.s + (this.d - this.s) / this.c;
+        double ☃ = this.t + (this.e - this.t) / this.c;
+        double ☃ = this.u + (this.f - this.u) / this.c;
         
-        double ☃ = ns.g(g - y);
+        double ☃ = ns.g(this.g - this.y);
         
-        y = ((float)(y + ☃ / c));
-        z = ((float)(z + (h - z) / c));
+        this.y = ((float)(this.y + ☃ / this.c));
+        this.z = ((float)(this.z + (this.h - this.z) / this.c));
         
-        c -= 1;
+        this.c -= 1;
         b(☃, ☃, ☃);
-        b(y, z);
+        b(this.y, this.z);
       }
       else
       {
-        double ☃ = s + v;
-        double ☃ = t + w;
-        double ☃ = u + x;
+        double ☃ = this.s + this.v;
+        double ☃ = this.t + this.w;
+        double ☃ = this.u + this.x;
         b(☃, ☃, ☃);
-        if (C)
+        if (this.C)
         {
-          v *= 0.5D;
-          w *= 0.5D;
-          x *= 0.5D;
+          this.v *= 0.5D;
+          this.w *= 0.5D;
+          this.x *= 0.5D;
         }
-        v *= 0.9900000095367432D;
-        w *= 0.949999988079071D;
-        x *= 0.9900000095367432D;
+        this.v *= 0.9900000095367432D;
+        this.w *= 0.949999988079071D;
+        this.x *= 0.9900000095367432D;
       }
       return;
     }
     if (☃ < 1.0D)
     {
       double ☃ = ☃ * 2.0D - 1.0D;
-      w += 0.03999999910593033D * ☃;
+      this.w += 0.03999999910593033D * ☃;
     }
     else
     {
-      if (w < 0.0D) {
-        w /= 2.0D;
+      if (this.w < 0.0D) {
+        this.w /= 2.0D;
       }
-      w += 0.007000000216066837D;
+      this.w += 0.007000000216066837D;
     }
-    if ((l instanceof pr))
+    if ((this.l instanceof pr))
     {
-      pr ☃ = (pr)l;
-      float ☃ = l.y + -aZ * 90.0F;
-      v += -Math.sin(☃ * 3.1415927F / 180.0F) * b * ba * 0.05000000074505806D;
-      x += Math.cos(☃ * 3.1415927F / 180.0F) * b * ba * 0.05000000074505806D;
+      pr ☃ = (pr)this.l;
+      float ☃ = this.l.y + -☃.aZ * 90.0F;
+      this.v += -Math.sin(☃ * 3.1415927F / 180.0F) * this.b * ☃.ba * 0.05000000074505806D;
+      this.x += Math.cos(☃ * 3.1415927F / 180.0F) * this.b * ☃.ba * 0.05000000074505806D;
     }
-    double ☃ = Math.sqrt(v * v + x * x);
+    double ☃ = Math.sqrt(this.v * this.v + this.x * this.x);
     if (☃ > 0.35D)
     {
       double ☃ = 0.35D / ☃;
       
-      v *= ☃;
-      x *= ☃;
+      this.v *= ☃;
+      this.x *= ☃;
       ☃ = 0.35D;
     }
-    if ((☃ > ☃) && (b < 0.35D))
+    if ((☃ > ☃) && (this.b < 0.35D))
     {
-      b += (0.35D - b) / 35.0D;
-      if (b > 0.35D) {
-        b = 0.35D;
+      this.b += (0.35D - this.b) / 35.0D;
+      if (this.b > 0.35D) {
+        this.b = 0.35D;
       }
     }
     else
     {
-      b -= (b - 0.07D) / 35.0D;
-      if (b < 0.07D) {
-        b = 0.07D;
+      this.b -= (this.b - 0.07D) / 35.0D;
+      if (this.b < 0.07D) {
+        this.b = 0.07D;
       }
     }
     for (int ☃ = 0; ☃ < 4; ☃++)
     {
-      int ☃ = ns.c(s + (☃ % 2 - 0.5D) * 0.8D);
-      int ☃ = ns.c(u + (☃ / 2 - 0.5D) * 0.8D);
+      int ☃ = ns.c(this.s + (☃ % 2 - 0.5D) * 0.8D);
+      int ☃ = ns.c(this.u + (☃ / 2 - 0.5D) * 0.8D);
       for (int ☃ = 0; ☃ < 2; ☃++)
       {
-        int ☃ = ns.c(t) + ☃;
+        int ☃ = ns.c(this.t) + ☃;
         
         cj ☃ = new cj(☃, ☃, ☃);
-        afh ☃ = o.p(☃).c();
+        afh ☃ = this.o.p(☃).c();
         if (☃ == afi.aH)
         {
-          o.g(☃);
-          D = false;
+          this.o.g(☃);
+          this.D = false;
         }
         else if (☃ == afi.bx)
         {
-          o.b(☃, true);
-          D = false;
+          this.o.b(☃, true);
+          this.D = false;
         }
       }
     }
-    if (C)
+    if (this.C)
     {
-      v *= 0.5D;
-      w *= 0.5D;
-      x *= 0.5D;
+      this.v *= 0.5D;
+      this.w *= 0.5D;
+      this.x *= 0.5D;
     }
-    d(v, w, x);
-    if ((D) && (☃ > 0.2975D))
+    d(this.v, this.w, this.x);
+    if ((this.D) && (☃ > 0.2975D))
     {
-      if ((!o.D) && (!I))
+      if ((!this.o.D) && (!this.I))
       {
         J();
-        if (o.Q().b("doEntityDrops"))
+        if (this.o.Q().b("doEntityDrops"))
         {
           for (int ☃ = 0; ☃ < 3; ☃++) {
             a(zw.a(afi.f), 1, 0.0F);
@@ -334,53 +334,53 @@ public class ux
     }
     else
     {
-      v *= 0.9900000095367432D;
-      w *= 0.949999988079071D;
-      x *= 0.9900000095367432D;
+      this.v *= 0.9900000095367432D;
+      this.w *= 0.949999988079071D;
+      this.x *= 0.9900000095367432D;
     }
-    z = 0.0F;
-    double ☃ = y;
-    double ☃ = p - s;
-    double ☃ = r - u;
+    this.z = 0.0F;
+    double ☃ = this.y;
+    double ☃ = this.p - this.s;
+    double ☃ = this.r - this.u;
     if (☃ * ☃ + ☃ * ☃ > 0.001D) {
       ☃ = (float)(ns.b(☃, ☃) * 180.0D / 3.141592653589793D);
     }
-    double ☃ = ns.g(☃ - y);
+    double ☃ = ns.g(☃ - this.y);
     if (☃ > 20.0D) {
       ☃ = 20.0D;
     }
     if (☃ < -20.0D) {
       ☃ = -20.0D;
     }
-    y = ((float)(y + ☃));
-    b(y, z);
-    if (o.D) {
+    this.y = ((float)(this.y + ☃));
+    b(this.y, this.z);
+    if (this.o.D) {
       return;
     }
-    List<pk> ☃ = o.b(this, aR().b(0.20000000298023224D, 0.0D, 0.20000000298023224D));
+    List<pk> ☃ = this.o.b(this, aR().b(0.20000000298023224D, 0.0D, 0.20000000298023224D));
     if ((☃ != null) && (!☃.isEmpty())) {
       for (int ☃ = 0; ☃ < ☃.size(); ☃++)
       {
         pk ☃ = (pk)☃.get(☃);
-        if ((☃ != l) && (☃.ae()) && ((☃ instanceof ux))) {
+        if ((☃ != this.l) && (☃.ae()) && ((☃ instanceof ux))) {
           ☃.i(this);
         }
       }
     }
-    if ((l != null) && 
-      (l.I)) {
-      l = null;
+    if ((this.l != null) && 
+      (this.l.I)) {
+      this.l = null;
     }
   }
   
   public void al()
   {
-    if (l == null) {
+    if (this.l == null) {
       return;
     }
-    double ☃ = Math.cos(y * 3.141592653589793D / 180.0D) * 0.4D;
-    double ☃ = Math.sin(y * 3.141592653589793D / 180.0D) * 0.4D;
-    l.b(s + ☃, t + an() + l.am(), u + ☃);
+    double ☃ = Math.cos(this.y * 3.141592653589793D / 180.0D) * 0.4D;
+    double ☃ = Math.sin(this.y * 3.141592653589793D / 180.0D) * 0.4D;
+    this.l.b(this.s + ☃, this.t + an() + this.l.am(), this.u + ☃);
   }
   
   protected void b(dn ☃) {}
@@ -389,10 +389,10 @@ public class ux
   
   public boolean e(wn ☃)
   {
-    if ((l != null) && ((l instanceof wn)) && (l != ☃)) {
+    if ((this.l != null) && ((this.l instanceof wn)) && (this.l != ☃)) {
       return true;
     }
-    if (!o.D) {
+    if (!this.o.D) {
       ☃.a(this);
     }
     return true;
@@ -402,13 +402,13 @@ public class ux
   {
     if (☃)
     {
-      if (O > 3.0F)
+      if (this.O > 3.0F)
       {
-        e(O, 1.0F);
-        if ((!o.D) && (!I))
+        e(this.O, 1.0F);
+        if ((!this.o.D) && (!this.I))
         {
           J();
-          if (o.Q().b("doEntityDrops"))
+          if (this.o.Q().b("doEntityDrops"))
           {
             for (int ☃ = 0; ☃ < 3; ☃++) {
               a(zw.a(afi.f), 1, 0.0F);
@@ -418,47 +418,47 @@ public class ux
             }
           }
         }
-        O = 0.0F;
+        this.O = 0.0F;
       }
     }
-    else if ((o.p(new cj(this).b()).c().t() != arm.h) && 
+    else if ((this.o.p(new cj(this).b()).c().t() != arm.h) && 
       (☃ < 0.0D)) {
-      O = ((float)(O - ☃));
+      this.O = ((float)(this.O - ☃));
     }
   }
   
   public void a(float ☃)
   {
-    ac.b(19, Float.valueOf(☃));
+    this.ac.b(19, Float.valueOf(☃));
   }
   
   public float j()
   {
-    return ac.d(19);
+    return this.ac.d(19);
   }
   
   public void a(int ☃)
   {
-    ac.b(17, Integer.valueOf(☃));
+    this.ac.b(17, Integer.valueOf(☃));
   }
   
   public int l()
   {
-    return ac.c(17);
+    return this.ac.c(17);
   }
   
   public void b(int ☃)
   {
-    ac.b(18, Integer.valueOf(☃));
+    this.ac.b(18, Integer.valueOf(☃));
   }
   
   public int m()
   {
-    return ac.c(18);
+    return this.ac.c(18);
   }
   
   public void a(boolean ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
 }

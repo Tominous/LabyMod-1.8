@@ -9,12 +9,12 @@ class avq$a
   
   private avq$a(avq arg1, atg ☃)
   {
-    b = ☃;
-    c = new blz(128, 128);
-    e = c.e();
-    d = avq.a(???).a("map/" + a, c);
-    for (int ☃ = 0; ☃ < e.length; ☃++) {
-      e[☃] = 0;
+    this.b = ☃;
+    this.c = new blz(128, 128);
+    this.e = this.c.e();
+    this.d = avq.a(???).a("map/" + ☃.a, this.c);
+    for (int ☃ = 0; ☃ < this.e.length; ☃++) {
+      this.e[☃] = 0;
     }
   }
   
@@ -22,14 +22,14 @@ class avq$a
   {
     for (int ☃ = 0; ☃ < 16384; ☃++)
     {
-      int ☃ = b.f[☃] & 0xFF;
+      int ☃ = this.b.f[☃] & 0xFF;
       if (☃ / 4 == 0) {
-        e[☃] = ((☃ + ☃ / 128 & 0x1) * 8 + 16 << 24);
+        this.e[☃] = ((☃ + ☃ / 128 & 0x1) * 8 + 16 << 24);
       } else {
-        e[☃] = arn.a[(☃ / 4)].a(☃ & 0x3);
+        this.e[☃] = arn.a[(☃ / 4)].a(☃ & 0x3);
       }
     }
-    c.d();
+    this.c.d();
   }
   
   private void a(boolean ☃)
@@ -41,7 +41,7 @@ class avq$a
     
     float ☃ = 0.0F;
     
-    avq.a(a).a(d);
+    avq.a(this.a).a(this.d);
     bfl.l();
     bfl.a(1, 771, 0, 1);
     bfl.c();
@@ -54,9 +54,9 @@ class avq$a
     bfl.d();
     bfl.k();
     
-    avq.a(a).a(avq.b());
+    avq.a(this.a).a(avq.b());
     int ☃ = 0;
-    for (atf ☃ : b.h.values()) {
+    for (atf ☃ : this.b.h.values()) {
       if ((!☃) || (☃.a() == 1))
       {
         bfl.E();

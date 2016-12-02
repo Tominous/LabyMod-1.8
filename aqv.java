@@ -20,9 +20,9 @@ public class aqv
     this();
     for (Map.Entry<String, String> ☃ : ☃.entrySet()) {
       if (((String)☃.getKey()).equals("size")) {
-        f = ns.a((String)☃.getValue(), f, 0);
+        this.f = ns.a((String)☃.getValue(), this.f, 0);
       } else if (((String)☃.getKey()).equals("distance")) {
-        g = ns.a((String)☃.getValue(), g, h + 1);
+        this.g = ns.a((String)☃.getValue(), this.g, this.h + 1);
       }
     }
   }
@@ -37,23 +37,23 @@ public class aqv
     int ☃ = ☃;
     int ☃ = ☃;
     if (☃ < 0) {
-      ☃ -= g - 1;
+      ☃ -= this.g - 1;
     }
     if (☃ < 0) {
-      ☃ -= g - 1;
+      ☃ -= this.g - 1;
     }
-    int ☃ = ☃ / g;
-    int ☃ = ☃ / g;
-    Random ☃ = c.a(☃, ☃, 10387312);
-    ☃ *= g;
-    ☃ *= g;
-    ☃ += ☃.nextInt(g - h);
-    ☃ += ☃.nextInt(g - h);
+    int ☃ = ☃ / this.g;
+    int ☃ = ☃ / this.g;
+    Random ☃ = this.c.a(☃, ☃, 10387312);
+    ☃ *= this.g;
+    ☃ *= this.g;
+    ☃ += ☃.nextInt(this.g - this.h);
+    ☃ += ☃.nextInt(this.g - this.h);
     ☃ = ☃;
     ☃ = ☃;
     if ((☃ == ☃) && (☃ == ☃))
     {
-      boolean ☃ = c.v().a(☃ * 16 + 8, ☃ * 16 + 8, 0, d);
+      boolean ☃ = this.c.v().a(☃ * 16 + 8, ☃ * 16 + 8, 0, d);
       if (☃) {
         return true;
       }
@@ -63,7 +63,7 @@ public class aqv
   
   protected aqu b(int ☃, int ☃)
   {
-    return new aqv.a(c, b, ☃, ☃, f);
+    return new aqv.a(this.c, this.b, ☃, ☃, this.f);
   }
   
   public static class a
@@ -80,52 +80,52 @@ public class aqv
       List<aqw.e> ☃ = aqw.a(☃, ☃);
       
       aqw.k ☃ = new aqw.k(☃.v(), 0, ☃, (☃ << 4) + 2, (☃ << 4) + 2, ☃, ☃);
-      a.add(☃);
-      ☃.a(☃, a, ☃);
+      this.a.add(☃);
+      ☃.a(☃, this.a, ☃);
       
-      List<aqt> ☃ = g;
-      List<aqt> ☃ = f;
+      List<aqt> ☃ = ☃.g;
+      List<aqt> ☃ = ☃.f;
       while ((!☃.isEmpty()) || (!☃.isEmpty())) {
         if (☃.isEmpty())
         {
           int ☃ = ☃.nextInt(☃.size());
           aqt ☃ = (aqt)☃.remove(☃);
-          ☃.a(☃, a, ☃);
+          ☃.a(☃, this.a, ☃);
         }
         else
         {
           int ☃ = ☃.nextInt(☃.size());
           aqt ☃ = (aqt)☃.remove(☃);
-          ☃.a(☃, a, ☃);
+          ☃.a(☃, this.a, ☃);
         }
       }
       c();
       
       int ☃ = 0;
-      for (aqt ☃ : a) {
+      for (aqt ☃ : this.a) {
         if (!(☃ instanceof aqw.o)) {
           ☃++;
         }
       }
-      c = (☃ > 2);
+      this.c = (☃ > 2);
     }
     
     public boolean d()
     {
-      return c;
+      return this.c;
     }
     
     public void a(dn ☃)
     {
       super.a(☃);
       
-      ☃.a("Valid", c);
+      ☃.a("Valid", this.c);
     }
     
     public void b(dn ☃)
     {
       super.b(☃);
-      c = ☃.n("Valid");
+      this.c = ☃.n("Valid");
     }
   }
 }

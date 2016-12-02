@@ -11,7 +11,7 @@ class ato$7
     String ☃ = "Unknown?";
     try
     {
-      switch (ato.j(a))
+      switch (ato.j(this.a))
       {
       case 19133: 
         ☃ = "Anvil";
@@ -21,6 +21,6 @@ class ato$7
       }
     }
     catch (Throwable localThrowable) {}
-    return String.format("0x%05X - %s", new Object[] { Integer.valueOf(ato.j(a)), ☃ });
+    return String.format("0x%05X - %s", new Object[] { Integer.valueOf(ato.j(this.a)), ☃ });
   }
 }

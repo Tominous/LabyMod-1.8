@@ -8,46 +8,46 @@ public class RealmsVertexFormatElement
   
   public RealmsVertexFormatElement(bmv ☃)
   {
-    v = ☃;
+    this.v = ☃;
   }
   
   public bmv getVertexFormatElement()
   {
-    return v;
+    return this.v;
   }
   
   public boolean isPosition()
   {
-    return v.f();
+    return this.v.f();
   }
   
   public int getIndex()
   {
-    return v.d();
+    return this.v.d();
   }
   
   public int getByteSize()
   {
-    return v.e();
+    return this.v.e();
   }
   
   public int getCount()
   {
-    return v.c();
+    return this.v.c();
   }
   
   public int hashCode()
   {
-    return v.hashCode();
+    return this.v.hashCode();
   }
   
   public boolean equals(Object ☃)
   {
-    return v.equals(☃);
+    return this.v.equals(☃);
   }
   
   public String toString()
   {
-    return v.toString();
+    return this.v.toString();
   }
 }

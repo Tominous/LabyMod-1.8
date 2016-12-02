@@ -27,30 +27,30 @@ public class bqk$b
   
   public bqk$b(bqk parambqk, String ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public bqk.a a()
   {
-    return c;
+    return this.c;
   }
   
   public boolean a(boolean ☃)
   {
-    b = ☃;
+    this.b = ☃;
     
     ErrorCode ☃ = ErrorCode.TTV_EC_SUCCESS;
     if (☃) {
-      ☃ = h.f.connectAnonymous(a, this);
+      ☃ = this.h.f.connectAnonymous(this.a, this);
     } else {
-      ☃ = h.f.connect(a, h.b, h.h.data, this);
+      ☃ = this.h.f.connect(this.a, this.h.b, this.h.h.data, this);
     }
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
-      h.n(String.format("Error connecting: %s", new Object[] { ☃ }));
+      this.h.n(String.format("Error connecting: %s", new Object[] { ☃ }));
       
-      d(a);
+      d(this.a);
       
       return false;
     }
@@ -62,15 +62,15 @@ public class bqk$b
   
   public boolean g()
   {
-    switch (bqk.2.a[c.ordinal()])
+    switch (bqk.2.a[this.c.ordinal()])
     {
     case 1: 
     case 2: 
-      ErrorCode ☃ = h.f.disconnect(a);
+      ErrorCode ☃ = this.h.f.disconnect(this.a);
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
-        h.n(String.format("Error disconnecting: %s", new Object[] { ☃ }));
+        this.h.n(String.format("Error disconnecting: %s", new Object[] { ☃ }));
         
         return false;
       }
@@ -82,39 +82,39 @@ public class bqk$b
   
   protected void a(bqk.a ☃)
   {
-    if (☃ == c) {
+    if (☃ == this.c) {
       return;
     }
-    c = ☃;
+    this.c = ☃;
   }
   
   public void a(String ☃)
   {
-    if (h.l == bqk.d.a)
+    if (this.h.l == bqk.d.a)
     {
-      e.clear();
-      f.clear();
+      this.e.clear();
+      this.f.clear();
     }
     else
     {
-      if (e.size() > 0)
+      if (this.e.size() > 0)
       {
-        ListIterator<ChatRawMessage> ☃ = e.listIterator();
+        ListIterator<ChatRawMessage> ☃ = this.e.listIterator();
         while (☃.hasNext())
         {
           ChatRawMessage ☃ = (ChatRawMessage)☃.next();
-          if (userName.equals(☃)) {
+          if (☃.userName.equals(☃)) {
             ☃.remove();
           }
         }
       }
-      if (f.size() > 0)
+      if (this.f.size() > 0)
       {
-        ListIterator<ChatTokenizedMessage> ☃ = f.listIterator();
+        ListIterator<ChatTokenizedMessage> ☃ = this.f.listIterator();
         while (☃.hasNext())
         {
           ChatTokenizedMessage ☃ = (ChatTokenizedMessage)☃.next();
-          if (displayName.equals(☃)) {
+          if (☃.displayName.equals(☃)) {
             ☃.remove();
           }
         }
@@ -122,26 +122,26 @@ public class bqk$b
     }
     try
     {
-      if (h.a != null) {
-        h.a.a(a, ☃);
+      if (this.h.a != null) {
+        this.h.a.a(this.a, ☃);
       }
     }
     catch (Exception ☃)
     {
-      h.n(☃.toString());
+      this.h.n(☃.toString());
     }
   }
   
   public boolean b(String ☃)
   {
-    if (c != bqk.a.c) {
+    if (this.c != bqk.a.c) {
       return false;
     }
-    ErrorCode ☃ = h.f.sendMessage(a, ☃);
+    ErrorCode ☃ = this.h.f.sendMessage(this.a, ☃);
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
-      h.n(String.format("Error sending chat message: %s", new Object[] { ☃ }));
+      this.h.n(String.format("Error sending chat message: %s", new Object[] { ☃ }));
       
       return false;
     }
@@ -150,66 +150,66 @@ public class bqk$b
   
   protected void h()
   {
-    if (h.l == bqk.d.a) {
+    if (this.h.l == bqk.d.a) {
       return;
     }
-    if (g == null)
+    if (this.g == null)
     {
-      ErrorCode ☃ = h.f.downloadBadgeData(a);
+      ErrorCode ☃ = this.h.f.downloadBadgeData(this.a);
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
-        h.n(String.format("Error trying to download badge data: %s", new Object[] { ☃ }));
+        this.h.n(String.format("Error trying to download badge data: %s", new Object[] { ☃ }));
       }
     }
   }
   
   protected void i()
   {
-    if (g != null) {
+    if (this.g != null) {
       return;
     }
-    g = new ChatBadgeData();
-    ErrorCode ☃ = h.f.getBadgeData(a, g);
+    this.g = new ChatBadgeData();
+    ErrorCode ☃ = this.h.f.getBadgeData(this.a, this.g);
     if (ErrorCode.succeeded(☃)) {
       try
       {
-        if (h.a != null) {
-          h.a.c(a);
+        if (this.h.a != null) {
+          this.h.a.c(this.a);
         }
       }
       catch (Exception ☃)
       {
-        h.n(☃.toString());
+        this.h.n(☃.toString());
       }
     } else {
-      h.n("Error preparing badge data: " + ErrorCode.getString(☃));
+      this.h.n("Error preparing badge data: " + ErrorCode.getString(☃));
     }
   }
   
   protected void j()
   {
-    if (g == null) {
+    if (this.g == null) {
       return;
     }
-    ErrorCode ☃ = h.f.clearBadgeData(a);
+    ErrorCode ☃ = this.h.f.clearBadgeData(this.a);
     if (ErrorCode.succeeded(☃))
     {
-      g = null;
+      this.g = null;
       try
       {
-        if (h.a != null) {
-          h.a.d(a);
+        if (this.h.a != null) {
+          this.h.a.d(this.a);
         }
       }
       catch (Exception ☃)
       {
-        h.n(☃.toString());
+        this.h.n(☃.toString());
       }
     }
     else
     {
-      h.n("Error releasing badge data: " + ErrorCode.getString(☃));
+      this.h.n("Error releasing badge data: " + ErrorCode.getString(☃));
     }
   }
   
@@ -217,13 +217,13 @@ public class bqk$b
   {
     try
     {
-      if (h.a != null) {
-        h.a.a(☃);
+      if (this.h.a != null) {
+        this.h.a.a(☃);
       }
     }
     catch (Exception ☃)
     {
-      h.n(☃.toString());
+      this.h.n(☃.toString());
     }
   }
   
@@ -231,22 +231,22 @@ public class bqk$b
   {
     try
     {
-      if (h.a != null) {
-        h.a.b(☃);
+      if (this.h.a != null) {
+        this.h.a.b(☃);
       }
     }
     catch (Exception ☃)
     {
-      h.n(☃.toString());
+      this.h.n(☃.toString());
     }
   }
   
   private void k()
   {
-    if (c != bqk.a.e)
+    if (this.c != bqk.a.e)
     {
       a(bqk.a.e);
-      d(a);
+      d(this.a);
       j();
     }
   }
@@ -256,7 +256,7 @@ public class bqk$b
     if (ErrorCode.succeeded(☃)) {
       return;
     }
-    h.i.remove(☃);
+    this.h.i.remove(☃);
     
     k();
   }
@@ -279,71 +279,71 @@ public class bqk$b
   {
     for (int ☃ = 0; ☃ < ☃.length; ☃++)
     {
-      int ☃ = d.indexOf(☃[☃]);
+      int ☃ = this.d.indexOf(☃[☃]);
       if (☃ >= 0) {
-        d.remove(☃);
+        this.d.remove(☃);
       }
     }
     for (int ☃ = 0; ☃ < ☃.length; ☃++)
     {
-      int ☃ = d.indexOf(☃[☃]);
+      int ☃ = this.d.indexOf(☃[☃]);
       if (☃ >= 0) {
-        d.remove(☃);
+        this.d.remove(☃);
       }
-      d.add(☃[☃]);
+      this.d.add(☃[☃]);
     }
     for (int ☃ = 0; ☃ < ☃.length; ☃++) {
-      d.add(☃[☃]);
+      this.d.add(☃[☃]);
     }
     try
     {
-      if (h.a != null) {
-        h.a.a(a, ☃, ☃, ☃);
+      if (this.h.a != null) {
+        this.h.a.a(this.a, ☃, ☃, ☃);
       }
     }
     catch (Exception ☃)
     {
-      h.n(☃.toString());
+      this.h.n(☃.toString());
     }
   }
   
   public void chatChannelRawMessageCallback(String ☃, ChatRawMessage[] ☃)
   {
     for (int ☃ = 0; ☃ < ☃.length; ☃++) {
-      e.addLast(☃[☃]);
+      this.e.addLast(☃[☃]);
     }
     try
     {
-      if (h.a != null) {
-        h.a.a(a, ☃);
+      if (this.h.a != null) {
+        this.h.a.a(this.a, ☃);
       }
     }
     catch (Exception ☃)
     {
-      h.n(☃.toString());
+      this.h.n(☃.toString());
     }
-    while (e.size() > h.j) {
-      e.removeFirst();
+    while (this.e.size() > this.h.j) {
+      this.e.removeFirst();
     }
   }
   
   public void chatChannelTokenizedMessageCallback(String ☃, ChatTokenizedMessage[] ☃)
   {
     for (int ☃ = 0; ☃ < ☃.length; ☃++) {
-      f.addLast(☃[☃]);
+      this.f.addLast(☃[☃]);
     }
     try
     {
-      if (h.a != null) {
-        h.a.a(a, ☃);
+      if (this.h.a != null) {
+        this.h.a.a(this.a, ☃);
       }
     }
     catch (Exception ☃)
     {
-      h.n(☃.toString());
+      this.h.n(☃.toString());
     }
-    while (f.size() > h.j) {
-      f.removeFirst();
+    while (this.f.size() > this.h.j) {
+      this.f.removeFirst();
     }
   }
   

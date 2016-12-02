@@ -5,6 +5,6 @@ public class tu$d
   
   public tu$d(int ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
 }

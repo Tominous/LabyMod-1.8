@@ -5,24 +5,24 @@ final class aff$1
   
   public void run()
   {
-    amy ☃ = a.f(b);
-    for (int ☃ = b.o() - 1; ☃ >= 0; ☃--)
+    amy ☃ = this.a.f(this.b);
+    for (int ☃ = this.b.o() - 1; ☃ >= 0; ☃--)
     {
-      final cj ☃ = new cj(b.n(), ☃, b.p());
+      final cj ☃ = new cj(this.b.n(), ☃, this.b.p());
       if (!☃.d(☃)) {
         break;
       }
-      alz ☃ = a.p(☃);
+      alz ☃ = this.a.p(☃);
       if (☃.c() == afi.bY) {
-        ((le)a).a(new Runnable()
+        ((le)this.a).a(new Runnable()
         {
           public void run()
           {
-            akw ☃ = a.s(☃);
+            akw ☃ = aff.1.this.a.s(☃);
             if ((☃ instanceof akv))
             {
               ((akv)☃).m();
-              a.c(☃, afi.bY, 1, 0);
+              aff.1.this.a.c(☃, afi.bY, 1, 0);
             }
           }
         });

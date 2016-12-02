@@ -16,19 +16,19 @@ public enum aiw$a
   
   private aiw$a(int ☃, String ☃, String ☃)
   {
-    g = ☃;
-    h = ☃;
-    i = ☃;
+    this.g = ☃;
+    this.h = ☃;
+    this.i = ☃;
   }
   
   public int a()
   {
-    return g;
+    return this.g;
   }
   
   public String toString()
   {
-    return i;
+    return this.i;
   }
   
   public static a a(int ☃)
@@ -41,6 +41,6 @@ public enum aiw$a
   
   public String l()
   {
-    return h;
+    return this.h;
   }
 }

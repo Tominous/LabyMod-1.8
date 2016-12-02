@@ -1,23 +1,8 @@
 class bfl$n
 {
-  public bfl.m a;
-  public int b;
-  public int c;
-  public int d;
-  public int e;
-  private static final String __OBFID = "CL_00002543";
-  
-  private bfl$n()
-  {
-    a = new bfl.m((bfl.1)null);
-    b = -1;
-    c = 7680;
-    d = 7680;
-    e = 7680;
-  }
-  
-  bfl$n(bfl.1 p_i46256_1_)
-  {
-    this();
-  }
+  public bfl.m a = new bfl.m(null);
+  public int b = -1;
+  public int c = 7680;
+  public int d = 7680;
+  public int e = 7680;
 }

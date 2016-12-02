@@ -9,6 +9,6 @@ public class kx
   public kx(MinecraftServer ☃, atp ☃, ato ☃, int ☃, nt ☃)
   {
     super(☃, ☃, ☃, ☃, ☃);
-    x.a(a);
+    this.x.a(a);
   }
 }

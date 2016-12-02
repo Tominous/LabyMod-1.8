@@ -2,85 +2,81 @@ public class adg
 {
   public final int a;
   public final int b;
-  private static final String __OBFID = "CL_00000133";
-  private int cachedHashCode = 0;
   
-  public adg(int x, int z)
+  public adg(int ☃, int ☃)
   {
-    a = x;
-    b = z;
+    this.a = ☃;
+    this.b = ☃;
   }
   
-  public static long a(int x, int z)
+  public static long a(int ☃, int ☃)
   {
-    return x & 0xFFFFFFFF | (z & 0xFFFFFFFF) << 32;
+    return ☃ & 0xFFFFFFFF | (☃ & 0xFFFFFFFF) << 32;
   }
   
   public int hashCode()
   {
-    if (cachedHashCode == 0)
-    {
-      int var1 = 1664525 * a + 1013904223;
-      int var2 = 1664525 * (b ^ 0xDEADBEEF) + 1013904223;
-      cachedHashCode = (var1 ^ var2);
-    }
-    return cachedHashCode;
+    int ☃ = 1664525 * this.a + 1013904223;
+    int ☃ = 1664525 * (this.b ^ 0xDEADBEEF) + 1013904223;
+    return ☃ ^ ☃;
   }
   
-  public boolean equals(Object p_equals_1_)
+  public boolean equals(Object ☃)
   {
-    if (this == p_equals_1_) {
+    if (this == ☃) {
       return true;
     }
-    if (!(p_equals_1_ instanceof adg)) {
-      return false;
+    if ((☃ instanceof adg))
+    {
+      adg ☃ = (adg)☃;
+      
+      return (this.a == ☃.a) && (this.b == ☃.b);
     }
-    adg var2 = (adg)p_equals_1_;
-    return (a == a) && (b == b);
+    return false;
   }
   
   public int a()
   {
-    return (a << 4) + 8;
+    return (this.a << 4) + 8;
   }
   
   public int b()
   {
-    return (b << 4) + 8;
+    return (this.b << 4) + 8;
   }
   
   public int c()
   {
-    return a << 4;
+    return this.a << 4;
   }
   
   public int d()
   {
-    return b << 4;
+    return this.b << 4;
   }
   
   public int e()
   {
-    return (a << 4) + 15;
+    return (this.a << 4) + 15;
   }
   
   public int f()
   {
-    return (b << 4) + 15;
+    return (this.b << 4) + 15;
   }
   
-  public cj a(int x, int y, int z)
+  public cj a(int ☃, int ☃, int ☃)
   {
-    return new cj((a << 4) + x, y, (b << 4) + z);
+    return new cj((this.a << 4) + ☃, ☃, (this.b << 4) + ☃);
   }
   
-  public cj a(int y)
+  public cj a(int ☃)
   {
-    return new cj(a(), y, b());
+    return new cj(a(), ☃, b());
   }
   
   public String toString()
   {
-    return "[" + a + ", " + b + "]";
+    return "[" + this.a + ", " + this.b + "]";
   }
 }

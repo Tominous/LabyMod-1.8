@@ -13,9 +13,9 @@ public class bgx
   
   private bgx(amo<?> ☃, String ☃, List<amo<?>> ☃)
   {
-    a = ☃;
-    c = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.c = ☃;
+    this.d = ☃;
   }
   
   protected bov a(alz ☃)
@@ -23,15 +23,15 @@ public class bgx
     Map<amo, Comparable> ☃ = Maps.newLinkedHashMap(☃.b());
     String ☃;
     String ☃;
-    if (a == null) {
+    if (this.a == null) {
       ☃ = ((jy)afh.c.c(☃.c())).toString();
     } else {
-      ☃ = a.a((Comparable)☃.remove(a));
+      ☃ = this.a.a((Comparable)☃.remove(this.a));
     }
-    if (c != null) {
-      ☃ = ☃ + c;
+    if (this.c != null) {
+      ☃ = ☃ + this.c;
     }
-    for (amo<?> ☃ : d) {
+    for (amo<?> ☃ : this.d) {
       ☃.remove(☃);
     }
     return new bov(☃, a(☃));
@@ -45,25 +45,25 @@ public class bgx
     
     public a a(amo<?> ☃)
     {
-      a = ☃;
+      this.a = ☃;
       return this;
     }
     
     public a a(String ☃)
     {
-      b = ☃;
+      this.b = ☃;
       return this;
     }
     
     public a a(amo<?>... ☃)
     {
-      Collections.addAll(c, ☃);
+      Collections.addAll(this.c, ☃);
       return this;
     }
     
     public bgx a()
     {
-      return new bgx(a, b, c, null);
+      return new bgx(this.a, this.b, this.c, null);
     }
   }
 }

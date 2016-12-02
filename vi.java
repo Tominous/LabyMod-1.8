@@ -28,18 +28,18 @@ public class vi
   public void t_()
   {
     super.t_();
-    if (a > 0)
+    if (this.a > 0)
     {
-      a -= 1;
-      o.a(cy.l, s, t + 0.5D, u, 0.0D, 0.0D, 0.0D, new int[0]);
+      this.a -= 1;
+      this.o.a(cy.l, this.s, this.t + 0.5D, this.u, 0.0D, 0.0D, 0.0D, new int[0]);
     }
-    else if (a == 0)
+    else if (this.a == 0)
     {
-      b(v * v + x * x);
+      b(this.v * this.v + this.x * this.x);
     }
-    if (D)
+    if (this.D)
     {
-      double ☃ = v * v + x * x;
+      double ☃ = this.v * this.v + this.x * this.x;
       if (☃ >= 0.009999999776482582D) {
         b(☃);
       }
@@ -53,7 +53,7 @@ public class vi
     {
       wq ☃ = (wq)☃;
       if (☃.at()) {
-        b(v * v + w * w + x * x);
+        b(☃.v * ☃.v + ☃.w * ☃.w + ☃.x * ☃.x);
       }
     }
     return super.a(☃, ☃);
@@ -63,8 +63,8 @@ public class vi
   {
     super.a(☃);
     
-    double ☃ = v * v + x * x;
-    if ((!☃.c()) && (o.Q().b("doEntityDrops"))) {
+    double ☃ = this.v * this.v + this.x * this.x;
+    if ((!☃.c()) && (this.o.Q().b("doEntityDrops"))) {
       a(new zx(afi.W, 1), 0.0F);
     }
     if ((☃.o()) || (☃.c()) || (☃ >= 0.009999999776482582D)) {
@@ -74,13 +74,13 @@ public class vi
   
   protected void b(double ☃)
   {
-    if (!o.D)
+    if (!this.o.D)
     {
       double ☃ = Math.sqrt(☃);
       if (☃ > 5.0D) {
         ☃ = 5.0D;
       }
-      o.a(this, s, t, u, (float)(4.0D + V.nextDouble() * 1.5D * ☃), true);
+      this.o.a(this, this.s, this.t, this.u, (float)(4.0D + this.V.nextDouble() * 1.5D * ☃), true);
       J();
     }
   }
@@ -97,7 +97,7 @@ public class vi
   
   public void a(int ☃, int ☃, int ☃, boolean ☃)
   {
-    if ((☃) && (a < 0)) {
+    if ((☃) && (this.a < 0)) {
       j();
     }
   }
@@ -113,24 +113,24 @@ public class vi
   
   public void j()
   {
-    a = 80;
-    if (!o.D)
+    this.a = 80;
+    if (!this.o.D)
     {
-      o.a(this, (byte)10);
+      this.o.a(this, (byte)10);
       if (!R()) {
-        o.a(this, "game.tnt.primed", 1.0F, 1.0F);
+        this.o.a(this, "game.tnt.primed", 1.0F, 1.0F);
       }
     }
   }
   
   public int l()
   {
-    return a;
+    return this.a;
   }
   
   public boolean y()
   {
-    return a > -1;
+    return this.a > -1;
   }
   
   public float a(adi ☃, adm ☃, cj ☃, alz ☃)
@@ -153,13 +153,13 @@ public class vi
   {
     super.a(☃);
     if (☃.b("TNTFuse", 99)) {
-      a = ☃.f("TNTFuse");
+      this.a = ☃.f("TNTFuse");
     }
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    ☃.a("TNTFuse", a);
+    ☃.a("TNTFuse", this.a);
   }
 }

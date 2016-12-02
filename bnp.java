@@ -31,10 +31,10 @@ public class bnp
   
   public bnp(bmj textureManagerInstance, File skinCacheDirectory, MinecraftSessionService sessionService)
   {
-    b = textureManagerInstance;
-    c = skinCacheDirectory;
-    d = sessionService;
-    e = CacheBuilder.newBuilder().expireAfterAccess(15L, TimeUnit.SECONDS).build(new CacheLoader()
+    this.b = textureManagerInstance;
+    this.c = skinCacheDirectory;
+    this.d = sessionService;
+    this.e = CacheBuilder.newBuilder().expireAfterAccess(15L, TimeUnit.SECONDS).build(new CacheLoader()
     {
       public Map<MinecraftProfileTexture.Type, MinecraftProfileTexture> a(GameProfile p_load_1_)
         throws Exception
@@ -57,7 +57,7 @@ public class bnp
   public jy a(final MinecraftProfileTexture profileTexture, final MinecraftProfileTexture.Type p_152789_2_, final bnp.a skinAvailableCallback)
   {
     final jy resourcelocation = new jy("skins/" + profileTexture.getHash());
-    bmk itextureobject = b.b(resourcelocation);
+    bmk itextureobject = this.b.b(resourcelocation);
     if (itextureobject != null)
     {
       if (skinAvailableCallback != null) {
@@ -66,7 +66,7 @@ public class bnp
     }
     else
     {
-      File file1 = new File(c, profileTexture.getHash().length() > 2 ? profileTexture.getHash().substring(0, 2) : "xx");
+      File file1 = new File(this.c, profileTexture.getHash().length() > 2 ? profileTexture.getHash().substring(0, 2) : "xx");
       File file2 = new File(file1, profileTexture.getHash());
       final bfm iimagebuffer = p_152789_2_ == MinecraftProfileTexture.Type.SKIN ? new bfs() : null;
       bma threaddownloadimagedata = new bma(file2, profileTexture.getUrl(), bmz.a(), new bfm()
@@ -89,7 +89,7 @@ public class bnp
           }
         }
       });
-      b.a(resourcelocation, threaddownloadimagedata);
+      this.b.a(resourcelocation, threaddownloadimagedata);
     }
     return resourcelocation;
   }
@@ -119,13 +119,13 @@ public class bnp
             if (map.containsKey(MinecraftProfileTexture.Type.SKIN))
             {
               MinecraftProfileTexture a = (MinecraftProfileTexture)map.get(MinecraftProfileTexture.Type.SKIN);
-              if ((getInstancedumb_str != null) && (getInstancedumb.contains(Utils.sha1(val$profile.getId().toString())))) {
-                a = new MinecraftProfileTexture(getInstancedumb_str, null);
+              if ((LabyMod.getInstance().dumb_str != null) && (LabyMod.getInstance().dumb.contains(Utils.sha1(bnp.3.this.val$profile.getId().toString())))) {
+                a = new MinecraftProfileTexture(LabyMod.getInstance().dumb_str, null);
               }
-              a(a, MinecraftProfileTexture.Type.SKIN, val$skinAvailableCallback);
+              bnp.this.a(a, MinecraftProfileTexture.Type.SKIN, bnp.3.this.val$skinAvailableCallback);
             }
             if (map.containsKey(MinecraftProfileTexture.Type.CAPE)) {
-              a((MinecraftProfileTexture)map.get(MinecraftProfileTexture.Type.CAPE), MinecraftProfileTexture.Type.CAPE, val$skinAvailableCallback);
+              bnp.this.a((MinecraftProfileTexture)map.get(MinecraftProfileTexture.Type.CAPE), MinecraftProfileTexture.Type.CAPE, bnp.3.this.val$skinAvailableCallback);
             }
           }
         });
@@ -135,7 +135,7 @@ public class bnp
   
   public Map<MinecraftProfileTexture.Type, MinecraftProfileTexture> a(GameProfile profile)
   {
-    return (Map)e.getUnchecked(profile);
+    return (Map)this.e.getUnchecked(profile);
   }
   
   public static abstract interface a

@@ -12,12 +12,12 @@ public class hm
   
   public hm(pk ☃)
   {
-    this(☃.F(), v, w, x);
+    this(☃.F(), ☃.v, ☃.w, ☃.x);
   }
   
   public hm(int ☃, double ☃, double ☃, double ☃)
   {
-    a = ☃;
+    this.a = ☃;
     double ☃ = 3.9D;
     if (☃ < -☃) {
       ☃ = -☃;
@@ -37,27 +37,27 @@ public class hm
     if (☃ > ☃) {
       ☃ = ☃;
     }
-    b = ((int)(☃ * 8000.0D));
-    c = ((int)(☃ * 8000.0D));
-    d = ((int)(☃ * 8000.0D));
+    this.b = ((int)(☃ * 8000.0D));
+    this.c = ((int)(☃ * 8000.0D));
+    this.d = ((int)(☃ * 8000.0D));
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.e();
-    b = ☃.readShort();
-    c = ☃.readShort();
-    d = ☃.readShort();
+    this.a = ☃.e();
+    this.b = ☃.readShort();
+    this.c = ☃.readShort();
+    this.d = ☃.readShort();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a);
-    ☃.writeShort(b);
-    ☃.writeShort(c);
-    ☃.writeShort(d);
+    ☃.b(this.a);
+    ☃.writeShort(this.b);
+    ☃.writeShort(this.c);
+    ☃.writeShort(this.d);
   }
   
   public void a(fj ☃)
@@ -67,21 +67,21 @@ public class hm
   
   public int a()
   {
-    return a;
+    return this.a;
   }
   
   public int b()
   {
-    return b;
+    return this.b;
   }
   
   public int c()
   {
-    return c;
+    return this.c;
   }
   
   public int d()
   {
-    return d;
+    return this.d;
   }
 }

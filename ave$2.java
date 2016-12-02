@@ -8,7 +8,7 @@ class ave$2
   
   public void run()
   {
-    while (this$0.B) {
+    while (this.this$0.B) {
       try
       {
         Thread.sleep(2147483647L);

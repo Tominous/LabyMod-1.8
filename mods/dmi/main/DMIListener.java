@@ -13,7 +13,7 @@ public class DMIListener
   @EventHandler
   public void onInitScreen(InitScreenEvent e)
   {
-    if ((DamageIndicator.blocked) && (Ah == null)) {
+    if ((DamageIndicator.blocked) && (ave.A().h == null)) {
       DamageIndicator.blocked = false;
     }
   }

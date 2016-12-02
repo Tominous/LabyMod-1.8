@@ -14,25 +14,25 @@ public class aag
   public boolean b(afh ☃)
   {
     if (☃ == afi.Z) {
-      return b.d() == 3;
+      return this.b.d() == 3;
     }
     if ((☃ == afi.ah) || (☃ == afi.ag)) {
-      return b.d() >= 2;
+      return this.b.d() >= 2;
     }
     if ((☃ == afi.bP) || (☃ == afi.bT)) {
-      return b.d() >= 2;
+      return this.b.d() >= 2;
     }
     if ((☃ == afi.R) || (☃ == afi.o)) {
-      return b.d() >= 2;
+      return this.b.d() >= 2;
     }
     if ((☃ == afi.S) || (☃ == afi.p)) {
-      return b.d() >= 1;
+      return this.b.d() >= 1;
     }
     if ((☃ == afi.y) || (☃ == afi.x)) {
-      return b.d() >= 1;
+      return this.b.d() >= 1;
     }
     if ((☃ == afi.aC) || (☃ == afi.aD)) {
-      return b.d() >= 2;
+      return this.b.d() >= 2;
     }
     if (☃.t() == arm.e) {
       return true;
@@ -49,7 +49,7 @@ public class aag
   public float a(zx ☃, afh ☃)
   {
     if ((☃.t() == arm.f) || (☃.t() == arm.g) || (☃.t() == arm.e)) {
-      return a;
+      return this.a;
     }
     return super.a(☃, ☃);
   }

@@ -25,8 +25,8 @@ public class GuiCompModSettings
   
   public void b()
   {
-    cancel = new avs(0, l / 2 - 100, m / 6 + 168, "Done");
-    n.add(cancel);
+    this.cancel = new avs(0, this.l / 2 - 100, this.m / 6 + 168, "Done");
+    this.n.add(this.cancel);
     int id = 1;
     boolean left = true;
     int y = 0;
@@ -41,9 +41,9 @@ public class GuiCompModSettings
       }
       if (id <= 12)
       {
-        avs b = new avs(id, l / 2 + x, 70 + y, le, 20, mod);
-        l = settingsapi;
-        n.add(b);
+        avs b = new avs(id, this.l / 2 + x, 70 + y, le, 20, mod);
+        b.l = ConfigManager.settings.api;
+        this.n.add(b);
         if (!left) {
           y += 22;
         }
@@ -59,7 +59,7 @@ public class GuiCompModSettings
   {
     if (keyCode == 1)
     {
-      j.a(lastScreen);
+      this.j.a(this.lastScreen);
       return;
     }
     super.a(typedChar, keyCode);
@@ -71,17 +71,17 @@ public class GuiCompModSettings
     int id = 1;
     for (axu mod : ModManager.getSettings().values())
     {
-      if (k == id)
+      if (button.k == id)
       {
         ModManager.updateLastScreen(this);
-        j.a(mod);
+        this.j.a(mod);
         break;
       }
       id++;
     }
-    if (k == 0)
+    if (button.k == 0)
     {
-      j.a(lastScreen);
+      this.j.a(this.lastScreen);
       return;
     }
     super.a(button);
@@ -94,7 +94,7 @@ public class GuiCompModSettings
     if (ModManager.getSettings().size() == 1) {
       s = "";
     }
-    a(q, Color.cl("c") + "LabyMod API is disabled! (LabyMod Settings -> Extras -> LabyMod API)", l / 2, 15, 16777215);
+    a(this.q, Color.cl("c") + "LabyMod API is disabled! (LabyMod Settings -> Extras -> LabyMod API)", this.l / 2, 15, 16777215);
     super.a(mouseX, mouseY, partialTicks);
   }
 }

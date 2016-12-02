@@ -22,25 +22,25 @@ public enum akb$a
   
   private akb$a(int ☃, arn ☃, String ☃, String ☃)
   {
-    j = ☃;
-    k = ☃;
-    l = ☃;
-    m = ☃;
+    this.j = ☃;
+    this.k = ☃;
+    this.l = ☃;
+    this.m = ☃;
   }
   
   public int a()
   {
-    return j;
+    return this.j;
   }
   
   public arn c()
   {
-    return k;
+    return this.k;
   }
   
   public String toString()
   {
-    return l;
+    return this.l;
   }
   
   public static a a(int ☃)
@@ -53,11 +53,11 @@ public enum akb$a
   
   public String l()
   {
-    return l;
+    return this.l;
   }
   
   public String d()
   {
-    return m;
+    return this.m;
   }
 }

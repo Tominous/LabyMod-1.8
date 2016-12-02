@@ -20,22 +20,22 @@ public class qh
   
   public qh(qf ☃, qb ☃)
   {
-    a = ☃;
-    b = ☃;
-    f = ☃.b();
+    this.a = ☃;
+    this.b = ☃;
+    this.f = ☃.b();
     for (int ☃ = 0; ☃ < 3; ☃++) {
-      c.put(Integer.valueOf(☃), Sets.newHashSet());
+      this.c.put(Integer.valueOf(☃), Sets.newHashSet());
     }
   }
   
   public qb a()
   {
-    return b;
+    return this.b;
   }
   
   public double b()
   {
-    return f;
+    return this.f;
   }
   
   public void a(double ☃)
@@ -43,13 +43,13 @@ public class qh
     if (☃ == b()) {
       return;
     }
-    f = ☃;
+    this.f = ☃;
     f();
   }
   
   public Collection<qd> a(int ☃)
   {
-    return (Collection)c.get(Integer.valueOf(☃));
+    return (Collection)this.c.get(Integer.valueOf(☃));
   }
   
   public Collection<qd> c()
@@ -63,12 +63,12 @@ public class qh
   
   public qd a(UUID ☃)
   {
-    return (qd)e.get(☃);
+    return (qd)this.e.get(☃);
   }
   
   public boolean a(qd ☃)
   {
-    return e.get(☃.a()) != null;
+    return this.e.get(☃.a()) != null;
   }
   
   public void b(qd ☃)
@@ -76,41 +76,41 @@ public class qh
     if (a(☃.a()) != null) {
       throw new IllegalArgumentException("Modifier is already applied on this attribute!");
     }
-    Set<qd> ☃ = (Set)d.get(☃.b());
+    Set<qd> ☃ = (Set)this.d.get(☃.b());
     if (☃ == null)
     {
       ☃ = Sets.newHashSet();
-      d.put(☃.b(), ☃);
+      this.d.put(☃.b(), ☃);
     }
-    ((Set)c.get(Integer.valueOf(☃.c()))).add(☃);
+    ((Set)this.c.get(Integer.valueOf(☃.c()))).add(☃);
     ☃.add(☃);
-    e.put(☃.a(), ☃);
+    this.e.put(☃.a(), ☃);
     
     f();
   }
   
   protected void f()
   {
-    g = true;
-    a.a(this);
+    this.g = true;
+    this.a.a(this);
   }
   
   public void c(qd ☃)
   {
     for (int ☃ = 0; ☃ < 3; ☃++)
     {
-      Set<qd> ☃ = (Set)c.get(Integer.valueOf(☃));
+      Set<qd> ☃ = (Set)this.c.get(Integer.valueOf(☃));
       ☃.remove(☃);
     }
-    Set<qd> ☃ = (Set)d.get(☃.b());
+    Set<qd> ☃ = (Set)this.d.get(☃.b());
     if (☃ != null)
     {
       ☃.remove(☃);
       if (☃.isEmpty()) {
-        d.remove(☃.b());
+        this.d.remove(☃.b());
       }
     }
-    e.remove(☃.a());
+    this.e.remove(☃.a());
     f();
   }
   
@@ -128,12 +128,12 @@ public class qh
   
   public double e()
   {
-    if (g)
+    if (this.g)
     {
-      h = g();
-      g = false;
+      this.h = g();
+      this.g = false;
     }
-    return h;
+    return this.h;
   }
   
   private double g()
@@ -149,17 +149,17 @@ public class qh
     for (qd ☃ : b(2)) {
       ☃ *= (1.0D + ☃.d());
     }
-    return b.a(☃);
+    return this.b.a(☃);
   }
   
   private Collection<qd> b(int ☃)
   {
     Set<qd> ☃ = Sets.newHashSet(a(☃));
     
-    qb ☃ = b.d();
+    qb ☃ = this.b.d();
     while (☃ != null)
     {
-      qc ☃ = a.a(☃);
+      qc ☃ = this.a.a(☃);
       if (☃ != null) {
         ☃.addAll(☃.a(☃));
       }

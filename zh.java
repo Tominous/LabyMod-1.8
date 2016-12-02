@@ -14,17 +14,17 @@ public class zh
     atg ☃ = new atg(☃);
     ☃.a(☃, ☃);
     
-    e = 0;
-    ☃.a(s, u, e);
-    d = ((byte)t.q());
+    ☃.e = 0;
+    ☃.a(☃.s, ☃.u, ☃.e);
+    ☃.d = ((byte)☃.t.q());
     
     ☃.c();
     
-    b -= 1;
-    if (b <= 0) {
+    ☃.b -= 1;
+    if (☃.b <= 0) {
       return ☃;
     }
-    if (!bi.a(☃.k())) {
+    if (!☃.bi.a(☃.k())) {
       ☃.a(☃, false);
     }
     ☃.b(na.ad[zw.b(this)]);

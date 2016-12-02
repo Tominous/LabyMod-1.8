@@ -6,24 +6,24 @@ public class oy
   public oy(String ☃, pk ☃, pk ☃)
   {
     super(☃, ☃);
-    r = ☃;
+    this.r = ☃;
   }
   
   public pk i()
   {
-    return q;
+    return this.q;
   }
   
   public pk j()
   {
-    return r;
+    return this.r;
   }
   
   public eu b(pr ☃)
   {
-    eu ☃ = r == null ? q.f_() : r.f_();
-    zx ☃ = (r instanceof pr) ? ((pr)r).bA() : null;
-    String ☃ = "death.attack." + p;
+    eu ☃ = this.r == null ? this.q.f_() : this.r.f_();
+    zx ☃ = (this.r instanceof pr) ? ((pr)this.r).bA() : null;
+    String ☃ = "death.attack." + this.p;
     String ☃ = ☃ + ".item";
     if ((☃ != null) && (☃.s()) && (di.c(☃))) {
       return new fb(☃, new Object[] { ☃.f_(), ☃, ☃.C() });

@@ -12,47 +12,47 @@ public class hs
   
   public hs(aum ☃)
   {
-    a = ☃.e();
-    b = ☃.d().b();
-    c = ☃.c();
-    d = hs.a.a;
+    this.a = ☃.e();
+    this.b = ☃.d().b();
+    this.c = ☃.c();
+    this.d = hs.a.a;
   }
   
   public hs(String ☃)
   {
-    a = ☃;
-    b = "";
-    c = 0;
-    d = hs.a.b;
+    this.a = ☃;
+    this.b = "";
+    this.c = 0;
+    this.d = hs.a.b;
   }
   
   public hs(String ☃, auk ☃)
   {
-    a = ☃;
-    b = ☃.b();
-    c = 0;
-    d = hs.a.b;
+    this.a = ☃;
+    this.b = ☃.b();
+    this.c = 0;
+    this.d = hs.a.b;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.c(40);
-    d = ((hs.a)☃.a(hs.a.class));
-    b = ☃.c(16);
-    if (d != hs.a.b) {
-      c = ☃.e();
+    this.a = ☃.c(40);
+    this.d = ((hs.a)☃.a(hs.a.class));
+    this.b = ☃.c(16);
+    if (this.d != hs.a.b) {
+      this.c = ☃.e();
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a);
-    ☃.a(d);
-    ☃.a(b);
-    if (d != hs.a.b) {
-      ☃.b(c);
+    ☃.a(this.a);
+    ☃.a(this.d);
+    ☃.a(this.b);
+    if (this.d != hs.a.b) {
+      ☃.b(this.c);
     }
   }
   
@@ -63,22 +63,22 @@ public class hs
   
   public String a()
   {
-    return a;
+    return this.a;
   }
   
   public String b()
   {
-    return b;
+    return this.b;
   }
   
   public int c()
   {
-    return c;
+    return this.c;
   }
   
   public hs.a d()
   {
-    return d;
+    return this.d;
   }
   
   public static enum a

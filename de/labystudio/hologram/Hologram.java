@@ -20,26 +20,26 @@ public class Hologram
   
   public String getText()
   {
-    return text;
+    return this.text;
   }
   
   public SetColor getColor()
   {
-    return color;
+    return this.color;
   }
   
   public int getX()
   {
-    return x;
+    return this.x;
   }
   
   public int getY()
   {
-    return y;
+    return this.y;
   }
   
   public int getZ()
   {
-    return z;
+    return this.z;
   }
 }

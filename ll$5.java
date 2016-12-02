@@ -12,8 +12,8 @@ class ll$5
     throws Exception
   {
     ek ☃ = new ek(fg.a);
-    ☃.a(new lk(ll.b(a), ☃));
-    ll.a(a).add(☃);
+    ☃.a(new lk(ll.b(this.a), ☃));
+    ll.a(this.a).add(☃);
     ☃.pipeline().addLast("packet_handler", ☃);
   }
 }

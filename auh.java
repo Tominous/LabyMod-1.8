@@ -18,32 +18,32 @@ public class auh
   
   public auh(pk ☃)
   {
-    this(☃, new aui(s, t, u));
+    this(☃, new aui(☃.s, ☃.t, ☃.u));
   }
   
   public auh(auh.a ☃, aui ☃, cq ☃, cj ☃)
   {
-    a = ☃;
-    e = ☃;
-    b = ☃;
-    c = new aui(a, b, c);
+    this.a = ☃;
+    this.e = ☃;
+    this.b = ☃;
+    this.c = new aui(☃.a, ☃.b, ☃.c);
   }
   
   public auh(pk ☃, aui ☃)
   {
-    a = auh.a.c;
-    d = ☃;
-    c = ☃;
+    this.a = auh.a.c;
+    this.d = ☃;
+    this.c = ☃;
   }
   
   public cj a()
   {
-    return e;
+    return this.e;
   }
   
   public String toString()
   {
-    return "HitResult{type=" + a + ", blockpos=" + e + ", f=" + b + ", pos=" + c + ", entity=" + d + '}';
+    return "HitResult{type=" + this.a + ", blockpos=" + this.e + ", f=" + this.b + ", pos=" + this.c + ", entity=" + this.d + '}';
   }
   
   public static enum a

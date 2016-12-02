@@ -11,30 +11,30 @@ class bhp$2
   
   public void a(List<Object> ☃)
   {
-    bhp.a(c, a);
+    bhp.a(this.c, this.a);
     
-    a.f().lock();
+    this.a.f().lock();
     try
     {
-      if (a.a() != bhn.a.c)
+      if (this.a.a() != bhn.a.c)
       {
-        if (!a.h()) {
-          bhp.a().warn("Chunk render task was " + a.a() + " when I expected it to be uploading; aborting task");
+        if (!this.a.h()) {
+          bhp.a().warn("Chunk render task was " + this.a.a() + " when I expected it to be uploading; aborting task");
         }
         return;
       }
-      a.a(bhn.a.d);
+      this.a.a(bhn.a.d);
     }
     finally
     {
-      a.f().unlock();
+      this.a.f().unlock();
     }
-    a.b().a(b);
+    this.a.b().a(this.b);
   }
   
   public void onFailure(Throwable ☃)
   {
-    bhp.a(c, a);
+    bhp.a(this.c, this.a);
     if ((!(☃ instanceof CancellationException)) && (!(☃ instanceof InterruptedException))) {
       ave.A().a(b.a(☃, "Rendering chunk"));
     }

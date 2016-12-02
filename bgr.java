@@ -32,22 +32,22 @@ public class bgr
   
   public bgr(bgr ☃)
   {
-    k = k;
-    l = l;
-    m = m;
-    n = n;
-    o = o;
-    p = p;
+    this.k = ☃.k;
+    this.l = ☃.l;
+    this.m = ☃.m;
+    this.n = ☃.n;
+    this.o = ☃.o;
+    this.p = ☃.p;
   }
   
   public bgr(bgq ☃, bgq ☃, bgq ☃, bgq ☃, bgq ☃, bgq ☃)
   {
-    k = ☃;
-    l = ☃;
-    m = ☃;
-    n = ☃;
-    o = ☃;
-    p = ☃;
+    this.k = ☃;
+    this.l = ☃;
+    this.m = ☃;
+    this.n = ☃;
+    this.o = ☃;
+    this.p = ☃;
   }
   
   public void a(bgr.b ☃)
@@ -55,11 +55,11 @@ public class bgr
     bgq ☃ = b(☃);
     if (☃ != bgq.a)
     {
-      bfl.b(c.x + b, c.y + c, c.z + d);
-      bfl.b(b.y + f, 0.0F, 1.0F, 0.0F);
-      bfl.b(b.x + e, 1.0F, 0.0F, 0.0F);
-      bfl.b(b.z + g, 0.0F, 0.0F, 1.0F);
-      bfl.a(d.x + h, d.y + i, d.z + j);
+      bfl.b(☃.c.x + b, ☃.c.y + c, ☃.c.z + d);
+      bfl.b(☃.b.y + f, 0.0F, 1.0F, 0.0F);
+      bfl.b(☃.b.x + e, 1.0F, 0.0F, 0.0F);
+      bfl.b(☃.b.z + g, 0.0F, 0.0F, 1.0F);
+      bfl.a(☃.d.x + h, ☃.d.y + i, ☃.d.z + j);
     }
   }
   
@@ -68,17 +68,17 @@ public class bgr
     switch (bgr.1.a[☃.ordinal()])
     {
     case 1: 
-      return k;
+      return this.k;
     case 2: 
-      return l;
+      return this.l;
     case 3: 
-      return m;
+      return this.m;
     case 4: 
-      return n;
+      return this.n;
     case 5: 
-      return o;
+      return this.o;
     case 6: 
-      return p;
+      return this.p;
     }
     return bgq.a;
   }

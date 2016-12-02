@@ -8,44 +8,44 @@ public class rr
   
   public rr(ps ☃)
   {
-    b = ☃;
-    a = o;
+    this.b = ☃;
+    this.a = ☃.o;
     a(3);
   }
   
   public boolean a()
   {
-    pr ☃ = b.u();
+    pr ☃ = this.b.u();
     if (☃ == null) {
       return false;
     }
-    c = ☃;
+    this.c = ☃;
     return true;
   }
   
   public boolean b()
   {
-    if (!c.ai()) {
+    if (!this.c.ai()) {
       return false;
     }
-    if (b.h(c) > 225.0D) {
+    if (this.b.h(this.c) > 225.0D) {
       return false;
     }
-    return (!b.s().m()) || (a());
+    return (!this.b.s().m()) || (a());
   }
   
   public void d()
   {
-    c = null;
-    b.s().n();
+    this.c = null;
+    this.b.s().n();
   }
   
   public void e()
   {
-    b.p().a(c, 30.0F, 30.0F);
+    this.b.p().a(this.c, 30.0F, 30.0F);
     
-    double ☃ = b.J * 2.0F * (b.J * 2.0F);
-    double ☃ = b.e(c.s, c.aR().b, c.u);
+    double ☃ = this.b.J * 2.0F * (this.b.J * 2.0F);
+    double ☃ = this.b.e(this.c.s, this.c.aR().b, this.c.u);
     
     double ☃ = 0.8D;
     if ((☃ > ☃) && (☃ < 16.0D)) {
@@ -53,16 +53,16 @@ public class rr
     } else if (☃ < 225.0D) {
       ☃ = 0.6D;
     }
-    b.s().a(c, ☃);
+    this.b.s().a(this.c, ☃);
     
-    d = Math.max(d - 1, 0);
+    this.d = Math.max(this.d - 1, 0);
     if (☃ > ☃) {
       return;
     }
-    if (d > 0) {
+    if (this.d > 0) {
       return;
     }
-    d = 20;
-    b.r(c);
+    this.d = 20;
+    this.b.r(this.c);
   }
 }

@@ -15,10 +15,10 @@ public class bje<T extends ps>
   public bje(biu ☃, bbj ☃, float ☃, float ☃)
   {
     super(☃, ☃, ☃);
-    a = ☃;
-    e = ☃;
+    this.a = ☃;
+    this.e = ☃;
     
-    a(new bks(e));
+    a(new bks(☃.e));
   }
   
   protected jy a(T ☃)

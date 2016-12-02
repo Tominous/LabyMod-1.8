@@ -19,7 +19,7 @@ public class PacketMessage
     this.to = to;
     this.message = message;
     this.fileSize = fileSize;
-    audioTime = time;
+    this.audioTime = time;
     this.sentTime = sentTime;
   }
   
@@ -27,22 +27,22 @@ public class PacketMessage
   
   public void read(PacketBuf buf)
   {
-    sender = buf.readPlayer();
-    to = buf.readPlayer();
-    message = buf.readString();
-    fileSize = buf.readLong();
-    audioTime = buf.readDouble();
-    sentTime = buf.readLong();
+    this.sender = buf.readPlayer();
+    this.to = buf.readPlayer();
+    this.message = buf.readString();
+    this.fileSize = buf.readLong();
+    this.audioTime = buf.readDouble();
+    this.sentTime = buf.readLong();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writePlayer(sender);
-    buf.writePlayer(to);
-    buf.writeString(message);
-    buf.writeLong(fileSize);
-    buf.writeDouble(audioTime);
-    buf.writeLong(sentTime);
+    buf.writePlayer(this.sender);
+    buf.writePlayer(this.to);
+    buf.writeString(this.message);
+    buf.writeLong(this.fileSize);
+    buf.writeDouble(this.audioTime);
+    buf.writeLong(this.sentTime);
   }
   
   public void handle(PacketHandler packetHandler)
@@ -52,31 +52,31 @@ public class PacketMessage
   
   public double getAudioTime()
   {
-    return audioTime;
+    return this.audioTime;
   }
   
   public long getFileSize()
   {
-    return fileSize;
+    return this.fileSize;
   }
   
   public String getMessage()
   {
-    return message;
+    return this.message;
   }
   
   public LabyModPlayer getSender()
   {
-    return sender;
+    return this.sender;
   }
   
   public LabyModPlayer getTo()
   {
-    return to;
+    return this.to;
   }
   
   public long getSentTime()
   {
-    return sentTime;
+    return this.sentTime;
   }
 }

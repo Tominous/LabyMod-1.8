@@ -18,25 +18,25 @@ public class sy
   
   protected aui c()
   {
-    return new aui(b.s, b.t + b.K * 0.5D, b.u);
+    return new aui(this.b.s, this.b.t + this.b.K * 0.5D, this.b.u);
   }
   
   protected void l()
   {
     aui ☃ = c();
     
-    float ☃ = b.J * b.J;
+    float ☃ = this.b.J * this.b.J;
     int ☃ = 6;
-    if (☃.g(d.a(b, d.e())) < ☃) {
-      d.a();
+    if (☃.g(this.d.a(this.b, this.d.e())) < ☃) {
+      this.d.a();
     }
-    for (int ☃ = Math.min(d.e() + ☃, d.d() - 1); ☃ > d.e(); ☃--)
+    for (int ☃ = Math.min(this.d.e() + ☃, this.d.d() - 1); ☃ > this.d.e(); ☃--)
     {
-      aui ☃ = d.a(b, ☃);
+      aui ☃ = this.d.a(this.b, ☃);
       if (☃.g(☃) <= 36.0D) {
         if (a(☃, ☃, 0, 0, 0))
         {
-          d.c(☃);
+          this.d.c(☃);
           break;
         }
       }
@@ -51,7 +51,7 @@ public class sy
   
   protected boolean a(aui ☃, aui ☃, int ☃, int ☃, int ☃)
   {
-    auh ☃ = c.a(☃, new aui(a, b + b.K * 0.5D, c), false, true, false);
-    return (☃ == null) || (a == auh.a.a);
+    auh ☃ = this.c.a(☃, new aui(☃.a, ☃.b + this.b.K * 0.5D, ☃.c), false, true, false);
+    return (☃ == null) || (☃.a == auh.a.a);
   }
 }

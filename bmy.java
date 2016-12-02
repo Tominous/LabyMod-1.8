@@ -45,7 +45,7 @@ public class bmy
           String ☃ = ni.h(☃, "hash");
           File ☃ = new File(☃, ☃.substring(0, 2) + "/" + ☃);
           
-          b.put(☃, ☃);
+          this.b.put(☃, ☃);
         }
       }
     }
@@ -65,6 +65,6 @@ public class bmy
   
   public Map<String, File> a()
   {
-    return b;
+    return this.b;
   }
 }

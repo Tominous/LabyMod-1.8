@@ -5,40 +5,37 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.List;
 
-public class ct
-  implements cs
+public class ct<T>
+  implements cs<T>
 {
-  private final IdentityHashMap a = new IdentityHashMap(512);
-  private final List b = Lists.newArrayList();
-  private static final String __OBFID = "CL_00001203";
+  private final IdentityHashMap<T, Integer> a = new IdentityHashMap(512);
+  private final List<T> b = Lists.newArrayList();
   
-  public void a(Object key, int value)
+  public void a(T ☃, int ☃)
   {
-    a.put(key, Integer.valueOf(value));
-    while (b.size() <= value) {
-      b.add((Object)null);
+    this.a.put(☃, Integer.valueOf(☃));
+    while (this.b.size() <= ☃) {
+      this.b.add(null);
     }
-    b.set(value, key);
+    this.b.set(☃, ☃);
   }
   
-  public int b(Object key)
+  public int b(T ☃)
   {
-    Integer var2 = (Integer)a.get(key);
-    return var2 == null ? -1 : var2.intValue();
+    Integer ☃ = (Integer)this.a.get(☃);
+    return ☃ == null ? -1 : ☃.intValue();
   }
   
-  public final Object a(int value)
+  public final T a(int ☃)
   {
-    return (value >= 0) && (value < b.size()) ? b.get(value) : null;
+    if ((☃ >= 0) && (☃ < this.b.size())) {
+      return (T)this.b.get(☃);
+    }
+    return null;
   }
   
-  public Iterator iterator()
+  public Iterator<T> iterator()
   {
-    return Iterators.filter(b.iterator(), Predicates.notNull());
-  }
-  
-  public List getObjectList()
-  {
-    return b;
+    return Iterators.filter(this.b.iterator(), Predicates.notNull());
   }
 }

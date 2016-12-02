@@ -12,21 +12,21 @@ public class qy
   
   public qy(ps ☃)
   {
-    c = ☃;
-    d = o;
+    this.c = ☃;
+    this.d = ☃.o;
     a(7);
   }
   
   public boolean a()
   {
-    if (c.bc().nextInt(c.j_() ? 50 : 1000) != 0) {
+    if (this.c.bc().nextInt(this.c.j_() ? 50 : 1000) != 0) {
       return false;
     }
-    cj ☃ = new cj(c.s, c.t, c.u);
-    if (b.apply(d.p(☃))) {
+    cj ☃ = new cj(this.c.s, this.c.t, this.c.u);
+    if (b.apply(this.d.p(☃))) {
       return true;
     }
-    if (d.p(☃.b()).c() == afi.c) {
+    if (this.d.p(☃.b()).c() == afi.c) {
       return true;
     }
     return false;
@@ -34,51 +34,51 @@ public class qy
   
   public void c()
   {
-    a = 40;
-    d.a(c, (byte)10);
-    c.s().n();
+    this.a = 40;
+    this.d.a(this.c, (byte)10);
+    this.c.s().n();
   }
   
   public void d()
   {
-    a = 0;
+    this.a = 0;
   }
   
   public boolean b()
   {
-    return a > 0;
+    return this.a > 0;
   }
   
   public int f()
   {
-    return a;
+    return this.a;
   }
   
   public void e()
   {
-    a = Math.max(0, a - 1);
-    if (a != 4) {
+    this.a = Math.max(0, this.a - 1);
+    if (this.a != 4) {
       return;
     }
-    cj ☃ = new cj(c.s, c.t, c.u);
-    if (b.apply(d.p(☃)))
+    cj ☃ = new cj(this.c.s, this.c.t, this.c.u);
+    if (b.apply(this.d.p(☃)))
     {
-      if (d.Q().b("mobGriefing")) {
-        d.b(☃, false);
+      if (this.d.Q().b("mobGriefing")) {
+        this.d.b(☃, false);
       }
-      c.v();
+      this.c.v();
     }
     else
     {
       cj ☃ = ☃.b();
-      if (d.p(☃).c() == afi.c)
+      if (this.d.p(☃).c() == afi.c)
       {
-        if (d.Q().b("mobGriefing"))
+        if (this.d.Q().b("mobGriefing"))
         {
-          d.b(2001, ☃, afh.a(afi.c));
-          d.a(☃, afi.d.Q(), 2);
+          this.d.b(2001, ☃, afh.a(afi.c));
+          this.d.a(☃, afi.d.Q(), 2);
         }
-        c.v();
+        this.c.v();
       }
     }
   }

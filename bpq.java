@@ -22,17 +22,17 @@ public class bpq
     
     public synchronized boolean a()
     {
-      return a;
+      return this.a;
     }
     
     public synchronized void b()
     {
-      a = false;
+      this.a = false;
     }
     
     public synchronized List<bpq.a> c()
     {
-      return Collections.unmodifiableList(b);
+      return Collections.unmodifiableList(this.b);
     }
     
     public synchronized void a(String ☃, InetAddress ☃)
@@ -45,7 +45,7 @@ public class bpq
       ☃ = ☃.getHostAddress() + ":" + ☃;
       
       boolean ☃ = false;
-      for (bpq.a ☃ : b) {
+      for (bpq.a ☃ : this.b) {
         if (☃.b().equals(☃))
         {
           ☃.c();
@@ -55,8 +55,8 @@ public class bpq
       }
       if (!☃)
       {
-        b.add(new bpq.a(☃, ☃));
-        a = true;
+        this.b.add(new bpq.a(☃, ☃));
+        this.a = true;
       }
     }
   }
@@ -69,24 +69,24 @@ public class bpq
     
     public a(String ☃, String ☃)
     {
-      a = ☃;
-      b = ☃;
-      c = ave.J();
+      this.a = ☃;
+      this.b = ☃;
+      this.c = ave.J();
     }
     
     public String a()
     {
-      return a;
+      return this.a;
     }
     
     public String b()
     {
-      return b;
+      return this.b;
     }
     
     public void c()
     {
-      c = ave.J();
+      this.c = ave.J();
     }
   }
   
@@ -101,13 +101,13 @@ public class bpq
       throws IOException
     {
       super();
-      a = ☃;
+      this.a = ☃;
       setDaemon(true);
       
-      c = new MulticastSocket(4445);
-      b = InetAddress.getByName("224.0.2.60");
-      c.setSoTimeout(5000);
-      c.joinGroup(b);
+      this.c = new MulticastSocket(4445);
+      this.b = InetAddress.getByName("224.0.2.60");
+      this.c.setSoTimeout(5000);
+      this.c.joinGroup(this.b);
     }
     
     public void run()
@@ -118,7 +118,7 @@ public class bpq
         DatagramPacket ☃ = new DatagramPacket(☃, ☃.length);
         try
         {
-          c.receive(☃);
+          this.c.receive(☃);
         }
         catch (SocketTimeoutException ☃)
         {
@@ -131,14 +131,14 @@ public class bpq
         }
         String ☃ = new String(☃.getData(), ☃.getOffset(), ☃.getLength());
         bpq.b().debug(☃.getAddress() + ": " + ☃);
-        a.a(☃, ☃.getAddress());
+        this.a.a(☃, ☃.getAddress());
       }
       try
       {
-        c.leaveGroup(b);
+        this.c.leaveGroup(this.b);
       }
       catch (IOException localIOException1) {}
-      c.close();
+      this.c.close();
     }
   }
 }

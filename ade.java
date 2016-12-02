@@ -7,30 +7,30 @@ public class ade
   
   public ade(cj ☃, afh ☃, int ☃, int ☃)
   {
-    a = ☃;
-    c = ☃;
-    d = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.b = ☃;
   }
   
   public cj a()
   {
-    return a;
+    return this.a;
   }
   
   public int b()
   {
-    return c;
+    return this.c;
   }
   
   public int c()
   {
-    return d;
+    return this.d;
   }
   
   public afh d()
   {
-    return b;
+    return this.b;
   }
   
   public boolean equals(Object ☃)
@@ -38,13 +38,13 @@ public class ade
     if ((☃ instanceof ade))
     {
       ade ☃ = (ade)☃;
-      return (a.equals(a)) && (c == c) && (d == d) && (b == b);
+      return (this.a.equals(☃.a)) && (this.c == ☃.c) && (this.d == ☃.d) && (this.b == ☃.b);
     }
     return false;
   }
   
   public String toString()
   {
-    return "TE(" + a + ")," + c + "," + d + "," + b;
+    return "TE(" + this.a + ")," + this.c + "," + this.d + "," + this.b;
   }
 }

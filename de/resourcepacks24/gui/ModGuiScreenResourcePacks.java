@@ -51,35 +51,35 @@ public class ModGuiScreenResourcePacks
   public ModGuiScreenResourcePacks(ave mc, azo guiScreenResourcePacks)
   {
     this.mc = mc;
-    lastScreen = guiScreenResourcePacks;
-    selectedButton = 1;
-    title = "Search";
+    this.lastScreen = guiScreenResourcePacks;
+    this.selectedButton = 1;
+    this.title = "Search";
   }
   
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
     
-    n.add(buttonDone = new avs(0, 90, m - 25, l / 4, 20, "Done"));
+    this.n.add(this.buttonDone = new avs(0, 90, this.m - 25, this.l / 4, 20, "Done"));
     
     int buttonPositionlist = 0;
-    n.add(buttonSearch = new avs(1, 5, 40, 80, 20, "Search"));
+    this.n.add(this.buttonSearch = new avs(1, 5, 40, 80, 20, "Search"));
     buttonPositionlist += 22;
-    n.add(buttonTop = new avs(2, 5, 40 + buttonPositionlist, 80, 20, "Top 20"));
+    this.n.add(this.buttonTop = new avs(2, 5, 40 + buttonPositionlist, 80, 20, "Top 20"));
     buttonPositionlist += 22;
-    n.add(buttonLatest = new avs(3, 5, 40 + buttonPositionlist, 80, 20, "Latest"));
+    this.n.add(this.buttonLatest = new avs(3, 5, 40 + buttonPositionlist, 80, 20, "Latest"));
     buttonPositionlist += 22;
-    n.add(buttonRandomPack = new avs(4, 5, 40 + buttonPositionlist, 80, 20, "Random pack"));
+    this.n.add(this.buttonRandomPack = new avs(4, 5, 40 + buttonPositionlist, 80, 20, "Random pack"));
     
-    n.add(buttonMode = new avs(100, l - 100, 5, 80, 20, ""));
-    searchArea = new avw(50, mc.k, 91, 35, l - 112, 20);
-    searchArea.a(ResourcePacks24.getInstance().getSearchText());
+    this.n.add(this.buttonMode = new avs(100, this.l - 100, 5, 80, 20, ""));
+    this.searchArea = new avw(50, this.mc.k, 91, 35, this.l - 112, 20);
+    this.searchArea.a(ResourcePacks24.getInstance().getSearchText());
     
-    n.add(buttonDownload = new avs(101, (l + 70) / 2 - l / 4 / 2, m - 25, l / 4, 20, "Download"));
-    n.add(buttonOpenPage = new avs(102, l - l / 4 - 20, m - 25, l / 4, 20, "Open in website"));
+    this.n.add(this.buttonDownload = new avs(101, (this.l + 70) / 2 - this.l / 4 / 2, this.m - 25, this.l / 4, 20, "Download"));
+    this.n.add(this.buttonOpenPage = new avs(102, this.l - this.l / 4 - 20, this.m - 25, this.l / 4, 20, "Open in website"));
     
     List<azp> list = new ArrayList();
-    packList = new ModGuiResourcePacks(mc, l - 90 - 20, m + 20, list);
+    this.packList = new ModGuiResourcePacks(this.mc, this.l - 90 - 20, this.m + 20, list);
     
     refreshButtons();
     
@@ -88,42 +88,42 @@ public class ModGuiScreenResourcePacks
   
   public void refreshButtons()
   {
-    buttonSearch.l = (selectedButton != buttonSearch.k);
-    buttonTop.l = (selectedButton != buttonTop.k);
-    buttonLatest.l = (selectedButton != buttonLatest.k);
-    buttonRandomPack.l = (selectedButton != buttonRandomPack.k);
+    this.buttonSearch.l = (this.selectedButton != this.buttonSearch.k);
+    this.buttonTop.l = (this.selectedButton != this.buttonTop.k);
+    this.buttonLatest.l = (this.selectedButton != this.buttonLatest.k);
+    this.buttonRandomPack.l = (this.selectedButton != this.buttonRandomPack.k);
     
-    buttonMode.m = ((!buttonTop.l) || (!buttonRandomPack.l));
-    searchArea.e(!buttonSearch.l);
+    this.buttonMode.m = ((!this.buttonTop.l) || (!this.buttonRandomPack.l));
+    this.searchArea.e(!this.buttonSearch.l);
     if (isRandomPack()) {
-      buttonMode.j = "Next pack";
+      this.buttonMode.j = "Next pack";
     } else if (ResourcePacks24.getInstance().isSortModeVotes()) {
-      buttonMode.j = "Votes";
+      this.buttonMode.j = "Votes";
     } else {
-      buttonMode.j = "Downloads";
+      this.buttonMode.j = "Downloads";
     }
     refreshPacks();
-    if (buttonSearch.l)
+    if (this.buttonSearch.l)
     {
-      packList.a(packList.c(), m + 20, 30, m - 30);
-      packList.i(90);
-      packList.d(7, 8);
+      this.packList.a(this.packList.c(), this.m + 20, 30, this.m - 30);
+      this.packList.i(90);
+      this.packList.d(7, 8);
     }
     else
     {
-      packList.a(packList.c(), m + 20, 60, m - 30);
-      packList.i(90);
-      packList.d(7, 8);
+      this.packList.a(this.packList.c(), this.m + 20, 60, this.m - 30);
+      this.packList.i(90);
+      this.packList.d(7, 8);
     }
   }
   
   public void refreshPacks()
   {
-    packList.setTitle(title);
-    packList.f().clear();
+    this.packList.setTitle(this.title);
+    this.packList.f().clear();
     for (final Pack pack : ResourcePacks24.getInstance().getPacks())
     {
-      azp a = new azp((azo)lastScreen)
+      azp a = new azp((azo)this.lastScreen)
       {
         protected int a()
         {
@@ -157,27 +157,27 @@ public class ModGuiScreenResourcePacks
           return de.resourcepacks24.utils.Color.cl("9") + ModGuiScreenResourcePacks.this.markSearchWord(pack.getDesc(), "9").replace("\r", "");
         }
       };
-      packList.f().add(a);
+      this.packList.f().add(a);
       a.setPackInfo(pack);
     }
   }
   
   public boolean isRandomPack()
   {
-    return title.equals("Random pack");
+    return this.title.equals("Random pack");
   }
   
   private String markSearchWord(String word, String resetColor)
   {
-    return searchArea.b().isEmpty() ? word : word.replace(searchArea.b(), de.resourcepacks24.utils.Color.cl("n") + searchArea.b() + de.resourcepacks24.utils.Color.cl(resetColor));
+    return this.searchArea.b().isEmpty() ? word : word.replace(this.searchArea.b(), de.resourcepacks24.utils.Color.cl("n") + this.searchArea.b() + de.resourcepacks24.utils.Color.cl(resetColor));
   }
   
   protected void a(char typedChar, int keyCode)
     throws IOException
   {
-    if (searchArea.a(typedChar, keyCode))
+    if (this.searchArea.a(typedChar, keyCode))
     {
-      ResourcePacks24.getInstance().setSearchText(searchArea.b());
+      ResourcePacks24.getInstance().setSearchText(this.searchArea.b());
       refreshButtons();
     }
     super.a(typedChar, keyCode);
@@ -187,7 +187,7 @@ public class ModGuiScreenResourcePacks
     throws IOException
   {
     if (!isRandomPack()) {
-      packList.p();
+      this.packList.p();
     }
     super.k();
   }
@@ -196,9 +196,9 @@ public class ModGuiScreenResourcePacks
     throws IOException
   {
     if (!isRandomPack()) {
-      packList.b(mouseX, mouseY, mouseButton);
+      this.packList.b(mouseX, mouseY, mouseButton);
     }
-    searchArea.a(mouseX, mouseY, mouseButton);
+    this.searchArea.a(mouseX, mouseY, mouseButton);
     
     int tagPositionY = 135;
     for (RPTag tag : ResourcePacks24.getInstance().getRpTags())
@@ -216,34 +216,34 @@ public class ModGuiScreenResourcePacks
   protected void a(avs button)
     throws IOException
   {
-    if (k == 0) {
-      mc.a(lastScreen);
+    if (button.k == 0) {
+      this.mc.a(this.lastScreen);
     }
-    if ((k == 1) || (k == 2) || (k == 3) || (k == 4))
+    if ((button.k == 1) || (button.k == 2) || (button.k == 3) || (button.k == 4))
     {
       ResourcePacks24.getInstance().setSelectedPack(null);
-      if (k == 1) {
+      if (button.k == 1) {
         ResourcePacks24.getInstance().sort(EnumPackSorting.NONE);
       }
-      if (k == 2) {
+      if (button.k == 2) {
         ResourcePacks24.getInstance().sort(EnumPackSorting.TOP);
       }
-      if (k == 3) {
+      if (button.k == 3) {
         ResourcePacks24.getInstance().sort(EnumPackSorting.LATEST);
       }
-      if (k == 4)
+      if (button.k == 4)
       {
         ResourcePacks24.getInstance().sort(EnumPackSorting.RANDOM);
         getRandomPack();
       }
-      selectedButton = k;
-      title = j;
+      this.selectedButton = button.k;
+      this.title = button.j;
       refreshButtons();
     }
-    if (k == 100) {
+    if (button.k == 100) {
       if (isRandomPack())
       {
-        cooldown = (System.currentTimeMillis() + 500L);
+        this.cooldown = (System.currentTimeMillis() + 500L);
         getRandomPack();
       }
       else
@@ -253,7 +253,7 @@ public class ModGuiScreenResourcePacks
         refreshButtons();
       }
     }
-    if ((k == 101) && 
+    if ((button.k == 101) && 
       (ResourcePacks24.getInstance().getSelectedPack() != null) && (ResourcePacks24.getInstance().getProgress() == 0))
     {
       ResourcePacks24.getInstance().setProgress(1);
@@ -265,13 +265,13 @@ public class ModGuiScreenResourcePacks
         public void progress(int i)
         {
           ResourcePacks24.getInstance().setProgress(i);
-          if ((i >= 100) && (lastScreen != null) && ((lastScreen instanceof azo))) {
-            lastScreen = new azo(((azo)lastScreen).getParentScreen());
+          if ((i >= 100) && (ModGuiScreenResourcePacks.this.lastScreen != null) && ((ModGuiScreenResourcePacks.this.lastScreen instanceof azo))) {
+            ModGuiScreenResourcePacks.this.lastScreen = new azo(((azo)ModGuiScreenResourcePacks.this.lastScreen).getParentScreen());
           }
         }
       });
     }
-    if ((k == 102) && 
+    if ((button.k == 102) && 
       (ResourcePacks24.getInstance().getSelectedPack() != null)) {
       try
       {
@@ -296,22 +296,22 @@ public class ModGuiScreenResourcePacks
   {
     c(0);
     
-    buttonDownload.l = ((ResourcePacks24.getInstance().getSelectedPack() != null) && (ResourcePacks24.getInstance().getProgress() == 0));
-    buttonOpenPage.l = (ResourcePacks24.getInstance().getSelectedPack() != null);
+    this.buttonDownload.l = ((ResourcePacks24.getInstance().getSelectedPack() != null) && (ResourcePacks24.getInstance().getProgress() == 0));
+    this.buttonOpenPage.l = (ResourcePacks24.getInstance().getSelectedPack() != null);
     if (!isRandomPack())
     {
-      packList.a(mouseX, mouseY, partialTicks);
+      this.packList.a(mouseX, mouseY, partialTicks);
     }
     else if (ResourcePacks24.getInstance().getSelectedPack() != null)
     {
-      ResourcePacks24.getInstance().getDraw().drawChatBackground(90, 30, l - 20, m - 30, 0);
+      ResourcePacks24.getInstance().getDraw().drawChatBackground(90, 30, this.l - 20, this.m - 30, 0);
       a(100, 40, 253, 193, Integer.MIN_VALUE);
       ResourcePacks24.getInstance().getDraw().drawString("?", 150.0D, 78.0D, 10.0D);
       bfl.c(1.0F, 1.0F, 1.0F);
       ResourcePacks24.getInstance().getSelectedPack().drawImage(100, 40, 153, 153, 0.6D);
       
       int linePositionY = -10;
-      if (260 + ResourcePacks24.getInstance().getDraw().getStringWidth(ResourcePacks24.getInstance().getSelectedPack().getName()) * 2 > l - 20)
+      if (260 + ResourcePacks24.getInstance().getDraw().getStringWidth(ResourcePacks24.getInstance().getSelectedPack().getName()) * 2 > this.l - 20)
       {
         ResourcePacks24.getInstance().getDraw().drawString(ResourcePacks24.getInstance().getSelectedPack().getName(), 260.0D, 40.0D, 1.0D);
       }
@@ -330,35 +330,35 @@ public class ModGuiScreenResourcePacks
       ResourcePacks24.getInstance().getDraw().drawString(de.resourcepacks24.utils.Color.cl("c") + ResourcePacks24.getInstance().getSelectedPack().getSize() + "", 260.0D, 60 + linePositionY, 1.0D);
       linePositionY += 10;
       linePositionY += 10;
-      List<String> list = ResourcePacks24.getInstance().getDraw().listFormattedStringToWidth(ResourcePacks24.getInstance().getSelectedPack().getDesc().replace("\r", ""), l - 90 - 170 - 30);
+      List<String> list = ResourcePacks24.getInstance().getDraw().listFormattedStringToWidth(ResourcePacks24.getInstance().getSelectedPack().getDesc().replace("\r", ""), this.l - 90 - 170 - 30);
       for (String line : list)
       {
         ResourcePacks24.getInstance().getDraw().drawString(de.resourcepacks24.utils.Color.cl("9") + line, 260.0D, 57 + linePositionY, 1.0D);
         linePositionY += 10;
       }
-      ResourcePacks24.getInstance().getDraw().overlayBackground(m - 30, m);
+      ResourcePacks24.getInstance().getDraw().overlayBackground(this.m - 30, this.m);
     }
     else
     {
       getRandomPack();
     }
-    searchArea.g();
+    this.searchArea.g();
     
     String url = "https://resourcepacks24.de/";
-    if ((title.equals("Search")) && 
-      (!searchArea.b().isEmpty())) {
-      url = url + "search?q=" + searchArea.b();
+    if ((this.title.equals("Search")) && 
+      (!this.searchArea.b().isEmpty())) {
+      url = url + "search?q=" + this.searchArea.b();
     }
-    if (title.equals("Top 20")) {
+    if (this.title.equals("Top 20")) {
       url = url + "resourcepacks?sortby=rating";
     }
-    if (title.equals("Latest")) {
+    if (this.title.equals("Latest")) {
       url = url + "newest";
     }
-    if (title.equals("Random pack")) {
+    if (this.title.equals("Random pack")) {
       url = url + "resourcepack/224552&random";
     }
-    ResourcePacks24.getInstance().getDraw().drawCenteredString(url, l / 2, 15);
+    ResourcePacks24.getInstance().getDraw().drawCenteredString(url, this.l / 2, 15);
     float screenPercent;
     if (ResourcePacks24.getInstance().getProgress() != 0)
     {
@@ -367,25 +367,25 @@ public class ModGuiScreenResourcePacks
       {
         ResourcePacks24.getInstance().resetProgress();
         refreshButtons();
-        loadingBarAnimation -= 1;
+        this.loadingBarAnimation -= 1;
       }
       else
       {
-        if (loadingBarAnimation < 11) {
-          loadingBarAnimation += 1;
+        if (this.loadingBarAnimation < 11) {
+          this.loadingBarAnimation += 1;
         }
-        int barPositionY = loadingBarAnimation - 10;
-        screenPercent = ResourcePacks24.getInstance().getAnimatedProgress() * l / 100;
+        int barPositionY = this.loadingBarAnimation - 10;
+        screenPercent = ResourcePacks24.getInstance().getAnimatedProgress() * this.l / 100;
         int percent = (int)(ResourcePacks24.getInstance().getAnimatedProgress() * 100.0F / 100.0F);
         drawLoadingBar(screenPercent, percent, barPositionY);
       }
     }
-    else if (loadingBarAnimation > 0)
+    else if (this.loadingBarAnimation > 0)
     {
-      loadingBarAnimation -= 1;
+      this.loadingBarAnimation -= 1;
     }
-    if ((loadingBarAnimation > 0) && (ResourcePacks24.getInstance().getProgress() == 0)) {
-      drawLoadingBar(l, 100, loadingBarAnimation - 10);
+    if ((this.loadingBarAnimation > 0) && (ResourcePacks24.getInstance().getProgress() == 0)) {
+      drawLoadingBar(this.l, 100, this.loadingBarAnimation - 10);
     }
     int tagPositionY = 135;
     for (Iterator localIterator2 = ResourcePacks24.getInstance().getRpTags().iterator(); localIterator2.hasNext();)
@@ -408,23 +408,23 @@ public class ModGuiScreenResourcePacks
       tagPositionY += 12;
     }
     RPTag tag;
-    buttonMode.l = ((cooldown < System.currentTimeMillis()) || (!isRandomPack()));
+    this.buttonMode.l = ((this.cooldown < System.currentTimeMillis()) || (!isRandomPack()));
     
     super.a(mouseX, mouseY, partialTicks);
-    if ((searchArea.b().equalsIgnoreCase("bread")) && (ResourcePacks24.random.nextInt(10) == 0)) {
-      breadVec.add(new BreadVector());
+    if ((this.searchArea.b().equalsIgnoreCase("bread")) && (ResourcePacks24.random.nextInt(10) == 0)) {
+      this.breadVec.add(new BreadVector());
     }
     Object rem = new ArrayList();
-    for (BreadVector vec : breadVec)
+    for (BreadVector vec : this.breadVec)
     {
-      ResourcePacks24.getInstance().getDraw().drawItem(breadItem, x, y);
+      ResourcePacks24.getInstance().getDraw().drawItem(this.breadItem, vec.x, vec.y);
       vec.fall();
-      if (y > m) {
+      if (vec.y > this.m) {
         ((ArrayList)rem).add(vec);
       }
     }
     for (BreadVector vec : (ArrayList)rem) {
-      breadVec.remove(vec);
+      this.breadVec.remove(vec);
     }
   }
   
@@ -435,21 +435,21 @@ public class ModGuiScreenResourcePacks
     
     public BreadVector()
     {
-      x = (new Random().nextInt(l) - 5);
+      this.x = (new Random().nextInt(ModGuiScreenResourcePacks.this.l) - 5);
     }
     
     public void fall()
     {
-      y += 1;
+      this.y += 1;
     }
   }
   
   private void drawLoadingBar(float screenPercent, int percent, int barPositionY)
   {
-    ResourcePacks24.getInstance().getDraw();DrawUtils.a(0, barPositionY + 10, l, barPositionY + 11, Integer.MIN_VALUE);
-    ResourcePacks24.getInstance().getDraw();DrawUtils.a(0, barPositionY + 0, l, barPositionY + 1, Integer.MIN_VALUE);
+    ResourcePacks24.getInstance().getDraw();DrawUtils.a(0, barPositionY + 10, this.l, barPositionY + 11, Integer.MIN_VALUE);
+    ResourcePacks24.getInstance().getDraw();DrawUtils.a(0, barPositionY + 0, this.l, barPositionY + 1, Integer.MIN_VALUE);
     ResourcePacks24.getInstance().getDraw().drawRect(0.0D, barPositionY, screenPercent, barPositionY + 10, java.awt.Color.GREEN.getRGB());
-    ResourcePacks24.getInstance().getDraw();DrawUtils.a(0, barPositionY, l, barPositionY + 10, Integer.MIN_VALUE);
-    ResourcePacks24.getInstance().getDraw().drawCenteredString(de.resourcepacks24.utils.Color.cl("f") + percent + "%", l / 2, barPositionY + 1);
+    ResourcePacks24.getInstance().getDraw();DrawUtils.a(0, barPositionY, this.l, barPositionY + 10, Integer.MIN_VALUE);
+    ResourcePacks24.getInstance().getDraw().drawCenteredString(de.resourcepacks24.utils.Color.cl("f") + percent + "%", this.l / 2, barPositionY + 1);
   }
 }

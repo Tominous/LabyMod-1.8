@@ -8,13 +8,13 @@ public class gl
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.e();
+    this.a = ☃.e();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a);
+    ☃.b(this.a);
   }
   
   public void a(fj ☃)
@@ -24,6 +24,6 @@ public class gl
   
   public int a()
   {
-    return a;
+    return this.a;
   }
 }

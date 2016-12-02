@@ -172,7 +172,7 @@ public class Installer
     
     setValue(100);
     Utils.showMessage("LabyMod is successfully installed.");
-    frame.dispose();
+    this.frame.dispose();
     System.exit(0);
   }
   
@@ -242,7 +242,7 @@ public class Installer
   
   private void status(String string)
   {
-    frame.getInstallTitle().setText(string);
+    this.frame.getInstallTitle().setText(string);
   }
   
   private static File getLabyModVersion()
@@ -262,7 +262,7 @@ public class Installer
     chooser.setCurrentDirectory(new File(Utils.getDesktop()));
     chooser.setDialogTitle(title);
     status("FileChooser: Selecting " + fileType);
-    int returnVal = chooser.showOpenDialog(frame.getParent());
+    int returnVal = chooser.showOpenDialog(this.frame.getParent());
     if (returnVal != 0)
     {
       close(errorNotFound);
@@ -355,10 +355,10 @@ public class Installer
   {
     if (message != null)
     {
-      frame.hide();
+      this.frame.hide();
       Utils.showErrorMessage(message);
       Utils.showMessage("If you have any problems you can contact us via TeamSpeak: ts.labymod.net");
-      frame.dispose();
+      this.frame.dispose();
       System.exit(0);
     }
   }

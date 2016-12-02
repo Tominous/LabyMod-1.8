@@ -19,7 +19,7 @@ public class Timolia
   
   public static void updateTimolia()
   {
-    isTimolia = getInstanceip.toLowerCase().contains("timolia.de");
+    isTimolia = LabyMod.getInstance().ip.toLowerCase().contains("timolia.de");
   }
   
   public static boolean isTimolia()
@@ -71,6 +71,13 @@ public class Timolia
     if (!isTimolia()) {
       return;
     }
+    String timoliaPrefix = Color.cl("r") + Color.cl("1") + "│" + Color.cl("r") + Color.cl("9");
+    if ((raw.startsWith(timoliaPrefix + " Nick")) && (clean.contains("Du wirst jetzt als "))) {
+      LabyMod.getInstance().nickname = clean.split("Du wirst jetzt als ")[1].replace(" angezeigt.", "");
+    }
+    if ((raw.startsWith(timoliaPrefix + " Nick")) && (clean.contains("Du wirst jetzt wieder als "))) {
+      LabyMod.getInstance().nickname = "";
+    }
     if ((raw.startsWith(Color.cl("r") + Color.cl("7") + Color.cl("1"))) && (clean.contains(" hat dich mit dem Kit ")) && (clean.contains("herausgefordert."))) {
       try
       {
@@ -99,7 +106,8 @@ public class Timolia
     if ((raw.startsWith(Color.cl("r") + Color.cl("1"))) && (clean.contains(" Der Kampf gegen ")) && (clean.contains(" beginnt."))) {
       timoliaRequestPlayer = clean.split(" Der Kampf gegen ")[1].split(" beginnt.")[0];
     }
-    if ((raw.startsWith(Color.cl("r") + Color.cl("1"))) && (raw.contains(Color.cl("7") + "Kit: " + Color.cl("6"))) && (raw.contains(" " + Color.cl("8") + "- " + Color.cl("7") + "Einstellungen:"))) {
+    if ((raw.startsWith(Color.cl("r") + Color.cl("1"))) && (raw.contains(Color.cl("7") + "Kit: " + Color.cl("6"))) && 
+      (raw.contains(" " + Color.cl("8") + "- " + Color.cl("7") + "Einstellungen:"))) {
       timoliaRequestKit = raw.split(Color.cl("7") + "Kit: " + Color.cl("6"))[1].split(" " + Color.cl("8") + "- " + Color.cl("7") + "Einstellungen:")[0];
     }
     if ((raw.startsWith(Color.cl("r") + Color.cl("1"))) && (clean.contains(" Du wurdest zur Warteschlange hinzugefügt.")))
@@ -136,7 +144,7 @@ public class Timolia
   
   public static void drawTimoliaGui()
   {
-    if (!settingsgameTimolia) {
+    if (!ConfigManager.settings.gameTimolia) {
       return;
     }
     if (!isTimolia()) {

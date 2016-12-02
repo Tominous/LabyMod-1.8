@@ -16,18 +16,18 @@ public class PointRectangle
   
   public PointRectangle(Vector2 point)
   {
-    colour = LineColour.POLYPOINT;
+    this.colour = LineColour.POLYPOINT;
     setPoint(point);
   }
   
   public void render(Vector3 cameraPos)
   {
-    box.render(cameraPos);
+    this.box.render(cameraPos);
   }
   
   public Vector2 getPoint()
   {
-    return point;
+    return this.point;
   }
   
   public void setPoint(Vector2 point)
@@ -37,7 +37,7 @@ public class PointRectangle
   
   public LineColour getColour()
   {
-    return colour;
+    return this.colour;
   }
   
   public void setColour(LineColour colour)
@@ -54,17 +54,17 @@ public class PointRectangle
   
   public int getMin()
   {
-    return min;
+    return this.min;
   }
   
   public int getMax()
   {
-    return max;
+    return this.max;
   }
   
   private void update()
   {
-    box = new Render3DBox(colour, point.subtract(MIN_VEC).toVector3(min - 0.03F), point.add(MAX_VEC).toVector3(max + 1 + 0.03F));
+    this.box = new Render3DBox(this.colour, this.point.subtract(MIN_VEC).toVector3(this.min - 0.03F), this.point.add(MAX_VEC).toVector3(this.max + 1 + 0.03F));
   }
   
   private static final Vector2 MIN_VEC = new Vector2(0.03D, 0.03D);

@@ -22,69 +22,69 @@ public class sa
     if (!(☃ instanceof pr)) {
       throw new IllegalArgumentException("ArrowAttackGoal requires Mob implements RangedAttackMob");
     }
-    b = ☃;
-    a = ((ps)☃);
-    e = ☃;
-    g = ☃;
-    h = ☃;
-    i = ☃;
-    j = (☃ * ☃);
+    this.b = ☃;
+    this.a = ((ps)☃);
+    this.e = ☃;
+    this.g = ☃;
+    this.h = ☃;
+    this.i = ☃;
+    this.j = (☃ * ☃);
     a(3);
   }
   
   public boolean a()
   {
-    pr ☃ = a.u();
+    pr ☃ = this.a.u();
     if (☃ == null) {
       return false;
     }
-    c = ☃;
+    this.c = ☃;
     return true;
   }
   
   public boolean b()
   {
-    return (a()) || (!a.s().m());
+    return (a()) || (!this.a.s().m());
   }
   
   public void d()
   {
-    c = null;
-    f = 0;
-    d = -1;
+    this.c = null;
+    this.f = 0;
+    this.d = -1;
   }
   
   public void e()
   {
-    double ☃ = a.e(c.s, c.aR().b, c.u);
-    boolean ☃ = a.t().a(c);
+    double ☃ = this.a.e(this.c.s, this.c.aR().b, this.c.u);
+    boolean ☃ = this.a.t().a(this.c);
     if (☃) {
-      f += 1;
+      this.f += 1;
     } else {
-      f = 0;
+      this.f = 0;
     }
-    if ((☃ > j) || (f < 20)) {
-      a.s().a(c, e);
+    if ((☃ > this.j) || (this.f < 20)) {
+      this.a.s().a(this.c, this.e);
     } else {
-      a.s().n();
+      this.a.s().n();
     }
-    a.p().a(c, 30.0F, 30.0F);
-    if (--d == 0)
+    this.a.p().a(this.c, 30.0F, 30.0F);
+    if (--this.d == 0)
     {
-      if ((☃ > j) || (!☃)) {
+      if ((☃ > this.j) || (!☃)) {
         return;
       }
-      float ☃ = ns.a(☃) / i;
+      float ☃ = ns.a(☃) / this.i;
       float ☃ = ☃;
       ☃ = ns.a(☃, 0.1F, 1.0F);
       
-      b.a(c, ☃);
-      d = ns.d(☃ * (h - g) + g);
+      this.b.a(this.c, ☃);
+      this.d = ns.d(☃ * (this.h - this.g) + this.g);
     }
-    else if (d < 0)
+    else if (this.d < 0)
     {
-      float ☃ = ns.a(☃) / i;
-      d = ns.d(☃ * (h - g) + g);
+      float ☃ = ns.a(☃) / this.i;
+      this.d = ns.d(☃ * (this.h - this.g) + this.g);
     }
   }
 }

@@ -9,7 +9,7 @@ public class bov
   {
     super(0, new String[] { ☃[0], ☃[1] });
     
-    c = (StringUtils.isEmpty(☃[2]) ? "normal" : ☃[2].toLowerCase());
+    this.c = (StringUtils.isEmpty(☃[2]) ? "normal" : ☃[2].toLowerCase());
   }
   
   public bov(String ☃)
@@ -47,7 +47,7 @@ public class bov
   
   public String c()
   {
-    return c;
+    return this.c;
   }
   
   public boolean equals(Object ☃)
@@ -60,18 +60,18 @@ public class bov
     {
       bov ☃ = (bov)☃;
       
-      return c.equals(c);
+      return this.c.equals(☃.c);
     }
     return false;
   }
   
   public int hashCode()
   {
-    return 31 * super.hashCode() + c.hashCode();
+    return 31 * super.hashCode() + this.c.hashCode();
   }
   
   public String toString()
   {
-    return super.toString() + '#' + c;
+    return super.toString() + '#' + this.c;
   }
 }

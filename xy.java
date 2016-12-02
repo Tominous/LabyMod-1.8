@@ -10,12 +10,12 @@ public class xy
   
   public xy(wm ☃, boolean ☃, wn ☃)
   {
-    g = ☃;
-    h = ☃;
-    a(new yf(d, a, f, 0, 144, 36));
+    this.g = ☃;
+    this.h = ☃;
+    a(new yf(☃.d, this.a, this.f, 0, 144, 36));
     for (int ☃ = 0; ☃ < 2; ☃++) {
       for (int ☃ = 0; ☃ < 2; ☃++) {
-        a(new yg(a, ☃ + ☃ * 2, 88 + ☃ * 18, 26 + ☃ * 18));
+        a(new yg(this.a, ☃ + ☃ * 2, 88 + ☃ * 18, 26 + ☃ * 18));
       }
     }
     for (int ☃ = 0; ☃ < 4; ☃++)
@@ -34,7 +34,7 @@ public class xy
             return false;
           }
           if ((☃.b() instanceof yj)) {
-            return bb == ☃;
+            return ((yj)☃.b()).b == ☃;
           }
           if ((☃.b() == zw.a(afi.aU)) || (☃.b() == zy.bX)) {
             return ☃ == 0;
@@ -56,12 +56,12 @@ public class xy
     for (int ☃ = 0; ☃ < 9; ☃++) {
       a(new yg(☃, ☃, 8 + ☃ * 18, 142));
     }
-    a(a);
+    a(this.a);
   }
   
   public void a(og ☃)
   {
-    f.a(0, abt.a().a(a, h.o));
+    this.f.a(0, abt.a().a(this.a, this.h.o));
   }
   
   public void b(wn ☃)
@@ -69,12 +69,12 @@ public class xy
     super.b(☃);
     for (int ☃ = 0; ☃ < 4; ☃++)
     {
-      zx ☃ = a.b(☃);
+      zx ☃ = this.a.b(☃);
       if (☃ != null) {
         ☃.a(☃, false);
       }
     }
-    f.a(0, null);
+    this.f.a(0, null);
   }
   
   public boolean a(wn ☃)
@@ -85,7 +85,7 @@ public class xy
   public zx b(wn ☃, int ☃)
   {
     zx ☃ = null;
-    yg ☃ = (yg)c.get(☃);
+    yg ☃ = (yg)this.c.get(☃);
     if ((☃ != null) && (☃.e()))
     {
       zx ☃ = ☃.d();
@@ -109,9 +109,9 @@ public class xy
           return null;
         }
       }
-      else if (((☃.b() instanceof yj)) && (!((yg)c.get(5 + bb)).e()))
+      else if (((☃.b() instanceof yj)) && (!((yg)this.c.get(5 + ((yj)☃.b()).b)).e()))
       {
-        int ☃ = 5 + bb;
+        int ☃ = 5 + ((yj)☃.b()).b;
         if (!a(☃, ☃, ☃ + 1, false)) {
           return null;
         }
@@ -132,12 +132,12 @@ public class xy
       {
         return null;
       }
-      if (b == 0) {
+      if (☃.b == 0) {
         ☃.d(null);
       } else {
         ☃.f();
       }
-      if (b == b) {
+      if (☃.b == ☃.b) {
         return null;
       }
       ☃.a(☃, ☃);
@@ -147,6 +147,6 @@ public class xy
   
   public boolean a(zx ☃, yg ☃)
   {
-    return (d != f) && (super.a(☃, ☃));
+    return (☃.d != this.f) && (super.a(☃, ☃));
   }
 }

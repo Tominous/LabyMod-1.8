@@ -8,7 +8,7 @@ public class aen
   {
     super(☃);
     
-    au.clear();
+    this.au.clear();
   }
   
   public ady.b m()

@@ -19,7 +19,7 @@ public class en
   
   public en(fg ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   protected void decode(ChannelHandlerContext ☃, ByteBuf ☃, List<Object> ☃)
@@ -30,7 +30,7 @@ public class en
     }
     em ☃ = new em(☃);
     int ☃ = ☃.e();
-    ff ☃ = ((el)☃.channel().attr(ek.c).get()).a(c, ☃);
+    ff ☃ = ((el)☃.channel().attr(ek.c).get()).a(this.c, ☃);
     if (☃ == null) {
       throw new IOException("Bad packet id " + ☃);
     }

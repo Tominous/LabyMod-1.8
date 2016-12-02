@@ -37,14 +37,14 @@ public class bdg
   public void a(final bde ☃)
     throws UnknownHostException
   {
-    bdd ☃ = bdd.a(b);
+    bdd ☃ = bdd.a(☃.b);
     final ek ☃ = ek.a(InetAddress.getByName(☃.a()), ☃.b(), false);
     
-    c.add(☃);
+    this.c.add(☃);
     
-    d = "Pinging...";
-    e = -1L;
-    i = null;
+    ☃.d = "Pinging...";
+    ☃.e = -1L;
+    ☃.i = null;
     
     ☃.a(new jp()
     {
@@ -54,31 +54,31 @@ public class bdg
       
       public void a(jr ☃)
       {
-        if (e)
+        if (this.e)
         {
           ☃.a(new fa("Received unrequested status"));
           return;
         }
-        e = true;
+        this.e = true;
         js ☃ = ☃.a();
         if (☃.a() != null) {
-          ☃d = ☃.a().d();
+          ☃.d = ☃.a().d();
         } else {
-          ☃d = "";
+          ☃.d = "";
         }
         if (☃.c() != null)
         {
-          ☃g = ☃.c().a();
-          ☃f = ☃.c().b();
+          ☃.g = ☃.c().a();
+          ☃.f = ☃.c().b();
         }
         else
         {
-          ☃g = "Old";
-          ☃f = 0;
+          ☃.g = "Old";
+          ☃.f = 0;
         }
         if (☃.b() != null)
         {
-          ☃c = (a.h + "" + ☃.b().b() + "" + a.i + "/" + a.h + ☃.b().a());
+          ☃.c = (a.h + "" + ☃.b().b() + "" + a.i + "/" + a.h + ☃.b().a());
           if (ArrayUtils.isNotEmpty(☃.b().c()))
           {
             StringBuilder ☃ = new StringBuilder();
@@ -96,12 +96,12 @@ public class bdg
               }
               ☃.append("... and ").append(☃.b().b() - ☃.b().c().length).append(" more ...");
             }
-            ☃i = ☃.toString();
+            ☃.i = ☃.toString();
           }
         }
         else
         {
-          ☃c = (a.i + "???");
+          ☃.c = (a.i + "???");
         }
         if (☃.d() != null)
         {
@@ -116,27 +116,27 @@ public class bdg
         {
           ☃.a(null);
         }
-        f = ave.J();
-        ☃.a(new ju(f));
-        d = true;
+        this.f = ave.J();
+        ☃.a(new ju(this.f));
+        this.d = true;
       }
       
       public void a(jq ☃)
       {
-        long ☃ = f;
+        long ☃ = this.f;
         long ☃ = ave.J();
-        ☃e = (☃ - ☃);
+        ☃.e = (☃ - ☃);
         
         ☃.a(new fa("Finished"));
       }
       
       public void a(eu ☃)
       {
-        if (!d)
+        if (!this.d)
         {
-          bdg.c().error("Can't ping " + ☃b + ": " + ☃.c());
-          ☃d = (a.e + "Can't connect to server.");
-          ☃c = "";
+          bdg.c().error("Can't ping " + ☃.b + ": " + ☃.c());
+          ☃.d = (a.e + "Can't connect to server.");
+          ☃.c = "";
           
           bdg.a(bdg.this, ☃);
         }
@@ -155,7 +155,7 @@ public class bdg
   
   private void b(final bde ☃)
   {
-    final bdd ☃ = bdd.a(b);
+    final bdd ☃ = bdd.a(☃.b);
     
     ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup)ek.d.c())).handler(new ChannelInitializer()
     {
@@ -185,14 +185,14 @@ public class bdg
               for (char ☃ : ☃) {
                 ☃.writeChar(☃);
               }
-              ☃.writeShort(7 + 2 * a.a().length());
+              ☃.writeShort(7 + 2 * bdg.2.this.a.a().length());
               ☃.writeByte(127);
-              ☃ = a.a().toCharArray();
+              ☃ = bdg.2.this.a.a().toCharArray();
               ☃.writeShort(☃.length);
               for (char ☃ : ☃) {
                 ☃.writeChar(☃);
               }
-              ☃.writeInt(a.b());
+              ☃.writeInt(bdg.2.this.a.b());
               
               ☃.channel().writeAndFlush(☃).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
             }
@@ -218,10 +218,10 @@ public class bdg
                 int ☃ = ns.a(☃[4], -1);
                 int ☃ = ns.a(☃[5], -1);
                 
-                b.f = -1;
-                b.g = ☃;
-                b.d = ☃;
-                b.c = (a.h + "" + ☃ + "" + a.i + "/" + a.h + ☃);
+                bdg.2.this.b.f = -1;
+                bdg.2.this.b.g = ☃;
+                bdg.2.this.b.d = ☃;
+                bdg.2.this.b.c = (a.h + "" + ☃ + "" + a.i + "/" + a.h + ☃);
               }
             }
             ☃.close();
@@ -239,9 +239,9 @@ public class bdg
   
   public void a()
   {
-    synchronized (c)
+    synchronized (this.c)
     {
-      Iterator<ek> ☃ = c.iterator();
+      Iterator<ek> ☃ = this.c.iterator();
       while (☃.hasNext())
       {
         ek ☃ = (ek)☃.next();
@@ -260,9 +260,9 @@ public class bdg
   
   public void b()
   {
-    synchronized (c)
+    synchronized (this.c)
     {
-      Iterator<ek> ☃ = c.iterator();
+      Iterator<ek> ☃ = this.c.iterator();
       while (☃.hasNext())
       {
         ek ☃ = (ek)☃.next();

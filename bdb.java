@@ -10,28 +10,25 @@ public class bdb
 {
   private bcy a;
   private bcz b;
-  private final Set c = Sets.newHashSet();
-  private final Set d = Sets.newHashSet();
+  private final Set<pk> c = Sets.newHashSet();
+  private final Set<pk> d = Sets.newHashSet();
   private final ave I = ave.A();
-  private final Set J = Sets.newHashSet();
-  private static final String __OBFID = "CL_00000882";
-  private BlockPosM randomTickPosM = new BlockPosM(0, 0, 0, 3);
+  private final Set<adg> J = Sets.newHashSet();
   
-  public bdb(bcy p_i45063_1_, adp p_i45063_2_, int p_i45063_3_, oj p_i45063_4_, nt p_i45063_5_)
+  public bdb(bcy ☃, adp ☃, int ☃, oj ☃, nt ☃)
   {
-    super(new atx(), new ato(p_i45063_2_, "MpServer"), anm.a(p_i45063_3_), p_i45063_5_, true);
-    a = p_i45063_1_;
-    P().a(p_i45063_4_);
+    super(new atx(), new ato(☃, "MpServer"), anm.a(☃), ☃, true);
     
-    t.a(this);
+    this.a = ☃;
+    P().a(☃);
     B(new cj(8, 64, 8));
     
-    v = k();
-    z = new atz();
+    this.t.a(this);
+    this.v = k();
+    
+    this.z = new atz();
     B();
     C();
-    
-    Reflector.postForgeBusEvent(Reflector.WorldEvent_Load_Constructor, new Object[] { this });
   }
   
   public void c()
@@ -41,312 +38,315 @@ public class bdb
     if (Q().b("doDaylightCycle")) {
       b(L() + 1L);
     }
-    B.a("reEntryProcessing");
-    for (int var1 = 0; (var1 < 10) && (!d.isEmpty()); var1++)
+    this.B.a("reEntryProcessing");
+    for (int ☃ = 0; (☃ < 10) && (!this.d.isEmpty()); ☃++)
     {
-      pk var2 = (pk)d.iterator().next();
-      d.remove(var2);
-      if (!f.contains(var2)) {
-        d(var2);
+      pk ☃ = (pk)this.d.iterator().next();
+      this.d.remove(☃);
+      if (!this.f.contains(☃)) {
+        d(☃);
       }
     }
-    B.c("chunkCache");
-    b.d();
-    B.c("blocks");
+    this.B.c("chunkCache");
+    this.b.d();
+    
+    this.B.c("blocks");
     h();
-    B.b();
+    
+    this.B.b();
   }
   
-  public void a(int p_73031_1_, int p_73031_2_, int p_73031_3_, int p_73031_4_, int p_73031_5_, int p_73031_6_) {}
+  public void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃) {}
   
   protected amv k()
   {
-    b = new bcz(this);
-    return b;
+    this.b = new bcz(this);
+    return this.b;
   }
   
   protected void h()
   {
     super.h();
-    J.retainAll(E);
-    if (J.size() == E.size()) {
-      J.clear();
+    
+    this.J.retainAll(this.E);
+    if (this.J.size() == this.E.size()) {
+      this.J.clear();
     }
-    int var1 = 0;
-    Iterator var2 = E.iterator();
-    while (var2.hasNext())
-    {
-      adg var3 = (adg)var2.next();
-      if (!J.contains(var3))
+    int ☃ = 0;
+    for (adg ☃ : this.E) {
+      if (!this.J.contains(☃))
       {
-        int var4 = a * 16;
-        int var5 = b * 16;
-        B.a("getChunk");
-        amy var6 = a(a, b);
-        a(var4, var5, var6);
-        B.b();
-        J.add(var3);
-        var1++;
-        if (var1 >= 10) {
+        int ☃ = ☃.a * 16;
+        int ☃ = ☃.b * 16;
+        
+        this.B.a("getChunk");
+        amy ☃ = a(☃.a, ☃.b);
+        
+        a(☃, ☃, ☃);
+        
+        this.B.b();
+        
+        this.J.add(☃);
+        ☃++;
+        if (☃ >= 10) {
           return;
         }
       }
     }
   }
   
-  public void b(int p_73025_1_, int p_73025_2_, boolean p_73025_3_)
+  public void b(int ☃, int ☃, boolean ☃)
   {
-    if (p_73025_3_) {
-      b.c(p_73025_1_, p_73025_2_);
+    if (☃) {
+      this.b.c(☃, ☃);
     } else {
-      b.b(p_73025_1_, p_73025_2_);
+      this.b.b(☃, ☃);
     }
-    if (!p_73025_3_) {
-      b(p_73025_1_ * 16, 0, p_73025_2_ * 16, p_73025_1_ * 16 + 15, 256, p_73025_2_ * 16 + 15);
-    }
-  }
-  
-  public boolean d(pk p_72838_1_)
-  {
-    boolean var2 = super.d(p_72838_1_);
-    c.add(p_72838_1_);
-    if (!var2) {
-      d.add(p_72838_1_);
-    } else if ((p_72838_1_ instanceof va)) {
-      I.W().a(new bpd((va)p_72838_1_));
-    }
-    return var2;
-  }
-  
-  public void e(pk p_72900_1_)
-  {
-    super.e(p_72900_1_);
-    c.remove(p_72900_1_);
-  }
-  
-  protected void a(pk p_72923_1_)
-  {
-    super.a(p_72923_1_);
-    if (d.contains(p_72923_1_)) {
-      d.remove(p_72923_1_);
+    if (!☃) {
+      b(☃ * 16, 0, ☃ * 16, ☃ * 16 + 15, 256, ☃ * 16 + 15);
     }
   }
   
-  protected void b(pk p_72847_1_)
+  public boolean d(pk ☃)
   {
-    super.b(p_72847_1_);
-    boolean var2 = false;
-    if (c.contains(p_72847_1_)) {
-      if (p_72847_1_.ai())
+    boolean ☃ = super.d(☃);
+    this.c.add(☃);
+    if (!☃) {
+      this.d.add(☃);
+    } else if ((☃ instanceof va)) {
+      this.I.W().a(new bpd((va)☃));
+    }
+    return ☃;
+  }
+  
+  public void e(pk ☃)
+  {
+    super.e(☃);
+    this.c.remove(☃);
+  }
+  
+  protected void a(pk ☃)
+  {
+    super.a(☃);
+    if (this.d.contains(☃)) {
+      this.d.remove(☃);
+    }
+  }
+  
+  protected void b(pk ☃)
+  {
+    super.b(☃);
+    boolean ☃ = false;
+    if (this.c.contains(☃)) {
+      if (☃.ai())
       {
-        d.add(p_72847_1_);
-        var2 = true;
+        this.d.add(☃);
+        ☃ = true;
       }
       else
       {
-        c.remove(p_72847_1_);
+        this.c.remove(☃);
       }
     }
   }
   
-  public void a(int p_73027_1_, pk p_73027_2_)
+  public void a(int ☃, pk ☃)
   {
-    pk var3 = a(p_73027_1_);
-    if (var3 != null) {
-      e(var3);
+    pk ☃ = a(☃);
+    if (☃ != null) {
+      e(☃);
     }
-    c.add(p_73027_2_);
-    p_73027_2_.d(p_73027_1_);
-    if (!d(p_73027_2_)) {
-      d.add(p_73027_2_);
+    this.c.add(☃);
+    ☃.d(☃);
+    if (!d(☃)) {
+      this.d.add(☃);
     }
-    l.a(p_73027_1_, p_73027_2_);
+    this.l.a(☃, ☃);
   }
   
-  public pk a(int p_73045_1_)
+  public pk a(int ☃)
   {
-    return p_73045_1_ == I.h.F() ? I.h : super.a(p_73045_1_);
+    if (☃ == this.I.h.F()) {
+      return this.I.h;
+    }
+    return super.a(☃);
   }
   
-  public pk e(int p_73028_1_)
+  public pk e(int ☃)
   {
-    pk var2 = (pk)l.d(p_73028_1_);
-    if (var2 != null)
+    pk ☃ = (pk)this.l.d(☃);
+    if (☃ != null)
     {
-      c.remove(var2);
-      e(var2);
+      this.c.remove(☃);
+      e(☃);
     }
-    return var2;
+    return ☃;
   }
   
-  public boolean b(cj p_180503_1_, alz p_180503_2_)
+  public boolean b(cj ☃, alz ☃)
   {
-    int var3 = p_180503_1_.n();
-    int var4 = p_180503_1_.o();
-    int var5 = p_180503_1_.p();
-    a(var3, var4, var5, var3, var4, var5);
-    return super.a(p_180503_1_, p_180503_2_, 3);
+    int ☃ = ☃.n();
+    int ☃ = ☃.o();
+    int ☃ = ☃.p();
+    a(☃, ☃, ☃, ☃, ☃, ☃);
+    
+    return super.a(☃, ☃, 3);
   }
   
   public void H()
   {
-    a.a().a(new fa("Quitting"));
+    this.a.a().a(new fa("Quitting"));
   }
   
   protected void p() {}
   
   protected int q()
   {
-    return I.t.c;
+    return this.I.t.c;
   }
   
-  public void b(int p_73029_1_, int p_73029_2_, int p_73029_3_)
+  public void b(int ☃, int ☃, int ☃)
   {
-    byte var4 = 16;
-    Random var5 = new Random();
-    zx var6 = I.h.bA();
-    boolean var7 = (I.c.l() == adp.a.c) && (var6 != null) && (afh.a(var6.b()) == afi.cv);
+    int ☃ = 16;
+    Random ☃ = new Random();
     
-    BlockPosM var8 = randomTickPosM;
-    for (int var9 = 0; var9 < 1000; var9++)
+    zx ☃ = this.I.h.bA();
+    boolean ☃ = (this.I.c.l() == adp.a.c) && (☃ != null) && (afh.a(☃.b()) == afi.cv);
+    
+    cj.a ☃ = new cj.a();
+    for (int ☃ = 0; ☃ < 1000; ☃++)
     {
-      int var10 = p_73029_1_ + s.nextInt(var4) - s.nextInt(var4);
-      int var11 = p_73029_2_ + s.nextInt(var4) - s.nextInt(var4);
-      int var12 = p_73029_3_ + s.nextInt(var4) - s.nextInt(var4);
-      var8.setXyz(var10, var11, var12);
-      alz var13 = p(var8);
-      var13.c().c(this, var8, var13, var5);
-      if ((var7) && (var13.c() == afi.cv)) {
-        a(cy.J, var10 + 0.5F, var11 + 0.5F, var12 + 0.5F, 0.0D, 0.0D, 0.0D, new int[0]);
+      int ☃ = ☃ + this.s.nextInt(☃) - this.s.nextInt(☃);
+      int ☃ = ☃ + this.s.nextInt(☃) - this.s.nextInt(☃);
+      int ☃ = ☃ + this.s.nextInt(☃) - this.s.nextInt(☃);
+      
+      ☃.c(☃, ☃, ☃);
+      alz ☃ = p(☃);
+      ☃.c().c(this, ☃, ☃, ☃);
+      if ((☃) && (☃.c() == afi.cv)) {
+        a(cy.J, ☃ + 0.5F, ☃ + 0.5F, ☃ + 0.5F, 0.0D, 0.0D, 0.0D, new int[0]);
       }
     }
   }
   
   public void a()
   {
-    f.removeAll(g);
-    for (int var1 = 0; var1 < g.size(); var1++)
+    this.f.removeAll(this.g);
+    for (int ☃ = 0; ☃ < this.g.size(); ☃++)
     {
-      pk var2 = (pk)g.get(var1);
-      int var3 = ae;
-      int var4 = ag;
-      if ((ad) && (a(var3, var4, true))) {
-        a(var3, var4).b(var2);
+      pk ☃ = (pk)this.g.get(☃);
+      int ☃ = ☃.ae;
+      int ☃ = ☃.ag;
+      if ((☃.ad) && (a(☃, ☃, true))) {
+        a(☃, ☃).b(☃);
       }
     }
-    for (var1 = 0; var1 < g.size(); var1++) {
-      b((pk)g.get(var1));
+    for (int ☃ = 0; ☃ < this.g.size(); ☃++) {
+      b((pk)this.g.get(☃));
     }
-    g.clear();
-    for (var1 = 0; var1 < f.size(); var1++)
+    this.g.clear();
+    for (int ☃ = 0; ☃ < this.f.size(); ☃++)
     {
-      pk var2 = (pk)f.get(var1);
-      if (m != null)
+      pk ☃ = (pk)this.f.get(☃);
+      if (☃.m != null)
       {
-        if ((m.I) || (m.l != var2))
+        if ((☃.m.I) || (☃.m.l != ☃))
         {
-          m.l = null;
-          m = null;
+          ☃.m.l = null;
+          ☃.m = null;
         }
       }
-      else if (I)
+      else if (☃.I)
       {
-        int var3 = ae;
-        int var4 = ag;
-        if ((ad) && (a(var3, var4, true))) {
-          a(var3, var4).b(var2);
+        int ☃ = ☃.ae;
+        int ☃ = ☃.ag;
+        if ((☃.ad) && (a(☃, ☃, true))) {
+          a(☃, ☃).b(☃);
         }
-        f.remove(var1--);
-        b(var2);
+        this.f.remove(☃--);
+        b(☃);
       }
     }
   }
   
-  public c a(b report)
+  public c a(b ☃)
   {
-    c var2 = super.a(report);
-    var2.a("Forced entities", new Callable()
+    c ☃ = super.a(☃);
+    
+    ☃.a("Forced entities", new Callable()
     {
-      private static final String __OBFID = "CL_00000883";
-      
       public String a()
       {
         return bdb.a(bdb.this).size() + " total; " + bdb.a(bdb.this).toString();
       }
     });
-    var2.a("Retry entities", new Callable()
+    ☃.a("Retry entities", new Callable()
     {
-      private static final String __OBFID = "CL_00000884";
-      
       public String a()
       {
         return bdb.b(bdb.this).size() + " total; " + bdb.b(bdb.this).toString();
       }
     });
-    var2.a("Server brand", new Callable()
+    ☃.a("Server brand", new Callable()
     {
-      private static final String __OBFID = "CL_00000885";
-      
       public String a()
         throws Exception
       {
-        return ch.w();
+        return bdb.c(bdb.this).h.w();
       }
     });
-    var2.a("Server type", new Callable()
+    ☃.a("Server type", new Callable()
     {
-      private static final String __OBFID = "CL_00000886";
-      
       public String a()
         throws Exception
       {
         return bdb.c(bdb.this).G() == null ? "Non-integrated multiplayer server" : "Integrated singleplayer server";
       }
     });
-    return var2;
+    return ☃;
   }
   
-  public void a(cj p_175731_1_, String p_175731_2_, float p_175731_3_, float p_175731_4_, boolean p_175731_5_)
+  public void a(cj ☃, String ☃, float ☃, float ☃, boolean ☃)
   {
-    a(p_175731_1_.n() + 0.5D, p_175731_1_.o() + 0.5D, p_175731_1_.p() + 0.5D, p_175731_2_, p_175731_3_, p_175731_4_, p_175731_5_);
+    a(☃.n() + 0.5D, ☃.o() + 0.5D, ☃.p() + 0.5D, ☃, ☃, ☃, ☃);
   }
   
-  public void a(double x, double y, double z, String soundName, float volume, float pitch, boolean distanceDelay)
+  public void a(double ☃, double ☃, double ☃, String ☃, float ☃, float ☃, boolean ☃)
   {
-    double var11 = I.ac().e(x, y, z);
-    bpf var13 = new bpf(new jy(soundName), volume, pitch, (float)x, (float)y, (float)z);
-    if ((distanceDelay) && (var11 > 100.0D))
+    double ☃ = this.I.ac().e(☃, ☃, ☃);
+    bpf ☃ = new bpf(new jy(☃), ☃, ☃, (float)☃, (float)☃, (float)☃);
+    if ((☃) && (☃ > 100.0D))
     {
-      double var14 = Math.sqrt(var11) / 40.0D;
-      I.W().a(var13, (int)(var14 * 20.0D));
+      double ☃ = Math.sqrt(☃) / 40.0D;
+      this.I.W().a(☃, (int)(☃ * 20.0D));
     }
     else
     {
-      I.W().a(var13);
+      this.I.W().a(☃);
     }
   }
   
-  public void a(double x, double y, double z, double motionX, double motionY, double motionZ, dn compund)
+  public void a(double ☃, double ☃, double ☃, double ☃, double ☃, double ☃, dn ☃)
   {
-    I.j.a(new bdq.c(this, x, y, z, motionX, motionY, motionZ, I.j, compund));
+    this.I.j.a(new bdq.c(this, ☃, ☃, ☃, ☃, ☃, ☃, this.I.j, ☃));
   }
   
-  public void a(auo p_96443_1_)
+  public void a(auo ☃)
   {
-    C = p_96443_1_;
+    this.C = ☃;
   }
   
-  public void b(long time)
+  public void b(long ☃)
   {
-    if (time < 0L)
+    if (☃ < 0L)
     {
-      time = -time;
+      ☃ = -☃;
       Q().a("doDaylightCycle", "false");
     }
     else
     {
       Q().a("doDaylightCycle", "true");
     }
-    super.b(time);
+    super.b(☃);
   }
 }

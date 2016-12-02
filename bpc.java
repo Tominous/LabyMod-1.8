@@ -7,26 +7,26 @@ public class bpc
   {
     super(new jy("minecraft:mob.guardian.attack"));
     
-    k = ☃;
+    this.k = ☃;
     
-    i = bpj.a.a;
-    g = true;
-    h = 0;
+    this.i = bpj.a.a;
+    this.g = true;
+    this.h = 0;
   }
   
   public void c()
   {
-    if ((k.I) || (!k.cp()))
+    if ((this.k.I) || (!this.k.cp()))
     {
-      j = true;
+      this.j = true;
       return;
     }
-    d = ((float)k.s);
-    e = ((float)k.t);
-    f = ((float)k.u);
+    this.d = ((float)this.k.s);
+    this.e = ((float)this.k.t);
+    this.f = ((float)this.k.u);
     
-    float ☃ = k.q(0.0F);
-    b = (0.0F + 1.0F * ☃ * ☃);
-    c = (0.7F + 0.5F * ☃);
+    float ☃ = this.k.q(0.0F);
+    this.b = (0.0F + 1.0F * ☃ * ☃);
+    this.c = (0.7F + 0.5F * ☃);
   }
 }

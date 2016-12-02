@@ -8,17 +8,17 @@ class lt$a
   
   private lt$a(lt paramlt, GameProfile ☃, Date ☃)
   {
-    b = ☃;
-    c = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public GameProfile a()
   {
-    return b;
+    return this.b;
   }
   
   public Date b()
   {
-    return c;
+    return this.c;
   }
 }

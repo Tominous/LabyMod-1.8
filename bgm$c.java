@@ -14,30 +14,30 @@ public class bgm$c
   
   public bgm$c(jy ☃, bor ☃, boolean ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
   }
   
   public jy a()
   {
-    return a;
+    return this.a;
   }
   
   public bor b()
   {
-    return b;
+    return this.b;
   }
   
   public boolean c()
   {
-    return c;
+    return this.c;
   }
   
   public int d()
   {
-    return d;
+    return this.d;
   }
   
   public boolean equals(Object ☃)
@@ -48,16 +48,16 @@ public class bgm$c
     if ((☃ instanceof c))
     {
       c ☃ = (c)☃;
-      return (a.equals(a)) && (b == b) && (c == c);
+      return (this.a.equals(☃.a)) && (this.b == ☃.b) && (this.c == ☃.c);
     }
     return false;
   }
   
   public int hashCode()
   {
-    int ☃ = a.hashCode();
-    ☃ = 31 * ☃ + (b != null ? b.hashCode() : 0);
-    ☃ = 31 * ☃ + (c ? 1 : 0);
+    int ☃ = this.a.hashCode();
+    ☃ = 31 * ☃ + (this.b != null ? this.b.hashCode() : 0);
+    ☃ = 31 * ☃ + (this.c ? 1 : 0);
     return ☃;
   }
   

@@ -9,30 +9,30 @@ public class ta
   
   public ta(ps ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a()
   {
-    b.clear();
-    c.clear();
+    this.b.clear();
+    this.c.clear();
   }
   
   public boolean a(pk ☃)
   {
-    if (b.contains(☃)) {
+    if (this.b.contains(☃)) {
       return true;
     }
-    if (c.contains(☃)) {
+    if (this.c.contains(☃)) {
       return false;
     }
-    a.o.B.a("canSee");
-    boolean ☃ = a.t(☃);
-    a.o.B.b();
+    this.a.o.B.a("canSee");
+    boolean ☃ = this.a.t(☃);
+    this.a.o.B.b();
     if (☃) {
-      b.add(☃);
+      this.b.add(☃);
     } else {
-      c.add(☃);
+      this.c.add(☃);
     }
     return ☃;
   }

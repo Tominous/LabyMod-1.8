@@ -22,26 +22,26 @@ public class bno
   
   public bno(String ☃, jy ☃, InputStream ☃, InputStream ☃, bny ☃)
   {
-    b = ☃;
-    c = ☃;
-    d = ☃;
-    e = ☃;
-    f = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.e = ☃;
+    this.f = ☃;
   }
   
   public jy a()
   {
-    return c;
+    return this.c;
   }
   
   public InputStream b()
   {
-    return d;
+    return this.d;
   }
   
   public boolean c()
   {
-    return e != null;
+    return this.e != null;
   }
   
   public <T extends bnw> T a(String ☃)
@@ -49,31 +49,31 @@ public class bno
     if (!c()) {
       return null;
     }
-    if ((h == null) && (!g))
+    if ((this.h == null) && (!this.g))
     {
-      g = true;
+      this.g = true;
       
       BufferedReader ☃ = null;
       try
       {
-        ☃ = new BufferedReader(new InputStreamReader(e));
-        h = new JsonParser().parse(☃).getAsJsonObject();
+        ☃ = new BufferedReader(new InputStreamReader(this.e));
+        this.h = new JsonParser().parse(☃).getAsJsonObject();
       }
       finally
       {
         IOUtils.closeQuietly(☃);
       }
     }
-    T ☃ = (bnw)a.get(☃);
+    T ☃ = (bnw)this.a.get(☃);
     if (☃ == null) {
-      ☃ = f.a(☃, h);
+      ☃ = this.f.a(☃, this.h);
     }
     return ☃;
   }
   
   public String d()
   {
-    return b;
+    return this.b;
   }
   
   public boolean equals(Object ☃)
@@ -85,10 +85,10 @@ public class bno
       return false;
     }
     bno ☃ = (bno)☃;
-    if (c != null ? !c.equals(c) : c != null) {
+    if (this.c != null ? !this.c.equals(☃.c) : ☃.c != null) {
       return false;
     }
-    if (b != null ? !b.equals(b) : b != null) {
+    if (this.b != null ? !this.b.equals(☃.b) : ☃.b != null) {
       return false;
     }
     return true;
@@ -96,8 +96,8 @@ public class bno
   
   public int hashCode()
   {
-    int ☃ = b != null ? b.hashCode() : 0;
-    ☃ = 31 * ☃ + (c != null ? c.hashCode() : 0);
+    int ☃ = this.b != null ? this.b.hashCode() : 0;
+    ☃ = 31 * ☃ + (this.c != null ? this.c.hashCode() : 0);
     return ☃;
   }
 }

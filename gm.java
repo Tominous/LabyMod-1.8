@@ -11,22 +11,22 @@ public class gm
   
   public gm(int ☃, float ☃)
   {
-    b = ☃;
-    c = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    b = ☃.readUnsignedByte();
-    c = ☃.readFloat();
+    this.b = ☃.readUnsignedByte();
+    this.c = ☃.readFloat();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(b);
-    ☃.writeFloat(c);
+    ☃.writeByte(this.b);
+    ☃.writeFloat(this.c);
   }
   
   public void a(fj ☃)
@@ -36,11 +36,11 @@ public class gm
   
   public int a()
   {
-    return b;
+    return this.b;
   }
   
   public float b()
   {
-    return c;
+    return this.c;
   }
 }

@@ -7,7 +7,7 @@ public class bks
   
   public bks(bct ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(pr ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
@@ -31,7 +31,7 @@ public class bks
       bfl.a(☃ / ☃, ☃ / ☃, ☃ / ☃);
       bfl.b(0.0F, 16.0F * ☃, 0.0F);
     }
-    a.c(0.0625F);
+    this.a.c(0.0625F);
     
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     if ((☃ instanceof yo))

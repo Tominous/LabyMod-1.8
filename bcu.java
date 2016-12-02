@@ -5,7 +5,7 @@ public class bcu
   
   public bcu(int ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
 }

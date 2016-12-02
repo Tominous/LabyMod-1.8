@@ -6,7 +6,7 @@ class we$a
   
   private we$a(we paramwe, boolean ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
 }

@@ -22,8 +22,8 @@ public class bhp
   
   public bhp(bho ☃, bfg ☃)
   {
-    b = ☃;
-    c = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public void run()
@@ -32,7 +32,7 @@ public class bhp
     {
       for (;;)
       {
-        a(b.d());
+        a(this.b.d());
       }
       b ☃;
       return;
@@ -76,9 +76,9 @@ public class bhp
     }
     ☃.a(b());
     
-    float ☃ = (float)s;
-    float ☃ = (float)t + ☃.aS();
-    float ☃ = (float)u;
+    float ☃ = (float)☃.s;
+    float ☃ = (float)☃.t + ☃.aS();
+    float ☃ = (float)☃.u;
     
     bhn.b ☃ = ☃.g();
     if (☃ == bhn.b.a) {
@@ -107,11 +107,11 @@ public class bhp
     if (☃ == bhn.b.a) {
       for (adf ☃ : adf.values()) {
         if (☃.d(☃)) {
-          ☃.add(b.a(☃, ☃.d().a(☃), ☃.b(), ☃));
+          ☃.add(this.b.a(☃, ☃.d().a(☃), ☃.b(), ☃));
         }
       }
     } else if (☃ == bhn.b.b) {
-      ☃.add(b.a(adf.d, ☃.d().a(adf.d), ☃.b(), ☃));
+      ☃.add(this.b.a(adf.d, ☃.d().a(adf.d), ☃.b(), ☃));
     }
     final ListenableFuture<List<Object>> ☃ = Futures.allAsList(☃);
     ☃.a(new Runnable()
@@ -159,13 +159,13 @@ public class bhp
   private bfg b()
     throws InterruptedException
   {
-    return c != null ? c : b.c();
+    return this.c != null ? this.c : this.b.c();
   }
   
   private void b(bhn ☃)
   {
-    if (c == null) {
-      b.a(☃.d());
+    if (this.c == null) {
+      this.b.a(☃.d());
     }
   }
 }

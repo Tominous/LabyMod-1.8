@@ -12,12 +12,12 @@ public class ayi
   
   public ayi(ayj ☃, ave ☃)
   {
-    super(☃, l, m, 63, m - 32, 20);
-    u = ☃;
-    v = ☃;
+    super(☃, ☃.l, ☃.m, 63, ☃.m - 32, 20);
+    this.u = ☃;
+    this.v = ☃;
     
-    avb[] ☃ = (avb[])ArrayUtils.clone(t.aw);
-    w = new awd.a[☃.length + avb.c().size()];
+    avb[] ☃ = (avb[])ArrayUtils.clone(☃.t.aw);
+    this.w = new awd.a[☃.length + avb.c().size()];
     
     Arrays.sort(☃);
     
@@ -29,24 +29,24 @@ public class ayi
       if (!☃.equals(☃))
       {
         ☃ = ☃;
-        w[(☃++)] = new ayi.a(☃);
+        this.w[(☃++)] = new ayi.a(☃);
       }
-      int ☃ = k.a(bnq.a(☃.g(), new Object[0]));
-      if (☃ > x) {
-        x = ☃;
+      int ☃ = ☃.k.a(bnq.a(☃.g(), new Object[0]));
+      if (☃ > this.x) {
+        this.x = ☃;
       }
-      w[(☃++)] = new ayi.b(☃, null);
+      this.w[(☃++)] = new ayi.b(☃, null);
     }
   }
   
   protected int b()
   {
-    return w.length;
+    return this.w.length;
   }
   
   public awd.a b(int ☃)
   {
-    return w[☃];
+    return this.w[☃];
   }
   
   public class a
@@ -57,13 +57,13 @@ public class ayi
     
     public a(String ☃)
     {
-      b = bnq.a(☃, new Object[0]);
-      c = ak.a(b);
+      this.b = bnq.a(☃, new Object[0]);
+      this.c = ayi.a(ayi.this).k.a(this.b);
     }
     
     public void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, boolean ☃)
     {
-      ak.a(b, am.l / 2 - c / 2, ☃ + ☃ - ak.a - 1, 16777215);
+      ayi.a(ayi.this).k.a(this.b, ayi.a(ayi.this).m.l / 2 - this.c / 2, ☃ + ☃ - ayi.a(ayi.this).k.a - 1, 16777215);
     }
     
     public boolean a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
@@ -86,30 +86,30 @@ public class ayi
     
     private b(avb ☃)
     {
-      b = ☃;
-      c = bnq.a(☃.g(), new Object[0]);
-      d = new avs(0, 0, 0, 75, 20, bnq.a(☃.g(), new Object[0]));
-      e = new avs(0, 0, 0, 50, 20, bnq.a("controls.reset", new Object[0]));
+      this.b = ☃;
+      this.c = bnq.a(☃.g(), new Object[0]);
+      this.d = new avs(0, 0, 0, 75, 20, bnq.a(☃.g(), new Object[0]));
+      this.e = new avs(0, 0, 0, 50, 20, bnq.a("controls.reset", new Object[0]));
     }
     
     public void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, boolean ☃)
     {
-      boolean ☃ = bf == b;
-      ak.a(c, ☃ + 90 - ayi.c(ayi.this), ☃ + ☃ / 2 - ak.a / 2, 16777215);
+      boolean ☃ = ayi.b(ayi.this).f == this.b;
+      ayi.a(ayi.this).k.a(this.c, ☃ + 90 - ayi.c(ayi.this), ☃ + ☃ / 2 - ayi.a(ayi.this).k.a / 2, 16777215);
       
-      e.h = (☃ + 190);
-      e.i = ☃;
-      e.l = (b.i() != b.h());
-      e.a(ayi.a(ayi.this), ☃, ☃);
+      this.e.h = (☃ + 190);
+      this.e.i = ☃;
+      this.e.l = (this.b.i() != this.b.h());
+      this.e.a(ayi.a(ayi.this), ☃, ☃);
       
-      d.h = (☃ + 105);
-      d.i = ☃;
-      d.j = avh.c(b.i());
+      this.d.h = (☃ + 105);
+      this.d.i = ☃;
+      this.d.j = avh.c(this.b.i());
       
       boolean ☃ = false;
-      if (b.i() != 0) {
-        for (avb ☃ : at.aw) {
-          if ((☃ != b) && (☃.i() == b.i()))
+      if (this.b.i() != 0) {
+        for (avb ☃ : ayi.a(ayi.this).t.aw) {
+          if ((☃ != this.b) && (☃.i() == this.b.i()))
           {
             ☃ = true;
             break;
@@ -117,23 +117,23 @@ public class ayi
         }
       }
       if (☃) {
-        d.j = (a.p + "> " + a.o + d.j + a.p + " <");
+        this.d.j = (a.p + "> " + a.o + this.d.j + a.p + " <");
       } else if (☃) {
-        d.j = (a.m + d.j);
+        this.d.j = (a.m + this.d.j);
       }
-      d.a(ayi.a(ayi.this), ☃, ☃);
+      this.d.a(ayi.a(ayi.this), ☃, ☃);
     }
     
     public boolean a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
     {
-      if (d.c(ayi.a(ayi.this), ☃, ☃))
+      if (this.d.c(ayi.a(ayi.this), ☃, ☃))
       {
-        bf = b;
+        ayi.b(ayi.this).f = this.b;
         return true;
       }
-      if (e.c(ayi.a(ayi.this), ☃, ☃))
+      if (this.e.c(ayi.a(ayi.this), ☃, ☃))
       {
-        at.a(b, b.h());
+        ayi.a(ayi.this).t.a(this.b, this.b.h());
         avb.b();
         return true;
       }
@@ -142,8 +142,8 @@ public class ayi
     
     public void b(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
     {
-      d.a(☃, ☃);
-      e.a(☃, ☃);
+      this.d.a(☃, ☃);
+      this.e.a(☃, ☃);
     }
     
     public void a(int ☃, int ☃, int ☃) {}

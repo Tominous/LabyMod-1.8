@@ -38,14 +38,14 @@ public class ModelRendererUV
   public ModelRendererUV(bbo model, String boxNameIn)
   {
     super(model, boxNameIn);
-    a = 64.0F;
-    b = 32.0F;
-    j = true;
-    l = Lists.newArrayList();
-    baseModel = model;
-    s.add(this);
-    n = boxNameIn;
-    b(t, u);
+    this.a = 64.0F;
+    this.b = 32.0F;
+    this.j = true;
+    this.l = Lists.newArrayList();
+    this.baseModel = model;
+    model.s.add(this);
+    this.n = boxNameIn;
+    b(model.t, model.u);
   }
   
   public ModelRendererUV(bbo model)
@@ -61,72 +61,72 @@ public class ModelRendererUV
   
   public void a(bct renderer)
   {
-    if (m == null) {
-      m = Lists.newArrayList();
+    if (this.m == null) {
+      this.m = Lists.newArrayList();
     }
-    m.add(renderer);
+    this.m.add(renderer);
   }
   
   public bct a(int x, int y)
   {
-    textureOffsetX = x;
-    textureOffsetY = y;
+    this.textureOffsetX = x;
+    this.textureOffsetY = y;
     return this;
   }
   
   public bct a(String partName, float offX, float offY, float offZ, int width, int height, int depth)
   {
-    partName = n + "." + partName;
-    bcu textureoffset = baseModel.a(partName);
-    a(a, b);
-    l.add(new bcr(this, textureOffsetX, textureOffsetY, offX, offY, offZ, width, height, depth, 0.0F).a(partName));
+    partName = this.n + "." + partName;
+    bcu textureoffset = this.baseModel.a(partName);
+    a(textureoffset.a, textureoffset.b);
+    this.l.add(new bcr(this, this.textureOffsetX, this.textureOffsetY, offX, offY, offZ, width, height, depth, 0.0F).a(partName));
     return this;
   }
   
   public bct a(float offX, float offY, float offZ, int width, int height, int depth)
   {
-    l.add(new bcr(this, textureOffsetX, textureOffsetY, offX, offY, offZ, width, height, depth, 0.0F));
+    this.l.add(new bcr(this, this.textureOffsetX, this.textureOffsetY, offX, offY, offZ, width, height, depth, 0.0F));
     return this;
   }
   
   public bct a(float p_178769_1_, float p_178769_2_, float p_178769_3_, int p_178769_4_, int p_178769_5_, int p_178769_6_, boolean p_178769_7_)
   {
-    l.add(new bcr(this, textureOffsetX, textureOffsetY, p_178769_1_, p_178769_2_, p_178769_3_, p_178769_4_, p_178769_5_, p_178769_6_, 0.0F, p_178769_7_));
+    this.l.add(new bcr(this, this.textureOffsetX, this.textureOffsetY, p_178769_1_, p_178769_2_, p_178769_3_, p_178769_4_, p_178769_5_, p_178769_6_, 0.0F, p_178769_7_));
     return this;
   }
   
   public void a(float p_78790_1_, float p_78790_2_, float p_78790_3_, int width, int height, int depth, float scaleFactor)
   {
-    l.add(new bcr(this, textureOffsetX, textureOffsetY, p_78790_1_, p_78790_2_, p_78790_3_, width, height, depth, scaleFactor));
+    this.l.add(new bcr(this, this.textureOffsetX, this.textureOffsetY, p_78790_1_, p_78790_2_, p_78790_3_, width, height, depth, scaleFactor));
   }
   
   public void a(float rotationPointXIn, float rotationPointYIn, float rotationPointZIn)
   {
-    c = rotationPointXIn;
-    d = rotationPointYIn;
-    e = rotationPointZIn;
+    this.c = rotationPointXIn;
+    this.d = rotationPointYIn;
+    this.e = rotationPointZIn;
   }
   
   public void renderBetterHat(float p_78791_1_)
   {
-    if (!k) {
-      if (j)
+    if (!this.k) {
+      if (this.j)
       {
-        if (!compiled) {
+        if (!this.compiled) {
           compileDisplayList(p_78791_1_);
         }
         bfl.E();
-        bfl.b(c * p_78791_1_, d * p_78791_1_, e * p_78791_1_);
-        if (g != 0.0F) {
-          bfl.b(g * 57.295776F, 0.0F, 1.0F, 0.0F);
+        bfl.b(this.c * p_78791_1_, this.d * p_78791_1_, this.e * p_78791_1_);
+        if (this.g != 0.0F) {
+          bfl.b(this.g * 57.295776F, 0.0F, 1.0F, 0.0F);
         }
-        if (f != 0.0F) {
-          bfl.b(f * 57.295776F, 1.0F, 0.0F, 0.0F);
+        if (this.f != 0.0F) {
+          bfl.b(this.f * 57.295776F, 1.0F, 0.0F, 0.0F);
         }
-        if (h != 0.0F) {
-          bfl.b(h * 57.295776F, 0.0F, 0.0F, 1.0F);
+        if (this.h != 0.0F) {
+          bfl.b(this.h * 57.295776F, 0.0F, 0.0F, 1.0F);
         }
-        bfl.o(displayList);
+        bfl.o(this.displayList);
         bfl.F();
       }
     }
@@ -134,29 +134,29 @@ public class ModelRendererUV
   
   private void compileDisplayList(float scale)
   {
-    displayList = avd.a(1);
-    GL11.glNewList(displayList, 4864);
-    for (int i = 0; i < l.size(); i++) {
-      ((ModelBoxUV)l.get(i)).render(bfx.a(), scale);
+    this.displayList = avd.a(1);
+    GL11.glNewList(this.displayList, 4864);
+    for (int i = 0; i < this.l.size(); i++) {
+      ((ModelBoxUV)this.l.get(i)).render(bfx.a(), scale);
     }
     GL11.glEndList();
-    compiled = true;
+    this.compiled = true;
   }
   
   public void applyRotation(bct source)
   {
-    f = f;
-    g = g;
-    h = h;
-    c = c;
-    d = d;
-    e = e;
+    this.f = source.f;
+    this.g = source.g;
+    this.h = source.h;
+    this.c = source.c;
+    this.d = source.d;
+    this.e = source.e;
   }
   
   public bct b(int textureWidthIn, int textureHeightIn)
   {
-    a = textureWidthIn;
-    b = textureHeightIn;
+    this.a = textureWidthIn;
+    this.b = textureHeightIn;
     return this;
   }
 }

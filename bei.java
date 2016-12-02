@@ -11,51 +11,51 @@ public class bei
   protected bei(adm ☃, double ☃, double ☃, double ☃, double ☃, double ☃, double ☃, float ☃)
   {
     super(☃, ☃, ☃, ☃, ☃, ☃, ☃);
-    v *= 0.10000000149011612D;
-    w *= 0.10000000149011612D;
-    x *= 0.10000000149011612D;
-    v += ☃;
-    w += ☃;
-    x += ☃;
+    this.v *= 0.10000000149011612D;
+    this.w *= 0.10000000149011612D;
+    this.x *= 0.10000000149011612D;
+    this.v += ☃;
+    this.w += ☃;
+    this.x += ☃;
     
-    ar = (as = at = 1.0F - (float)(Math.random() * 0.30000001192092896D));
-    h *= 0.75F;
-    h *= ☃;
-    a = h;
+    this.ar = (this.as = this.at = 1.0F - (float)(Math.random() * 0.30000001192092896D));
+    this.h *= 0.75F;
+    this.h *= ☃;
+    this.a = this.h;
     
-    g = ((int)(8.0D / (Math.random() * 0.8D + 0.2D)));
-    g = ((int)(g * ☃));
-    T = false;
+    this.g = ((int)(8.0D / (Math.random() * 0.8D + 0.2D)));
+    this.g = ((int)(this.g * ☃));
+    this.T = false;
   }
   
   public void a(bfd ☃, pk ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
-    float ☃ = (f + ☃) / g * 32.0F;
+    float ☃ = (this.f + ☃) / this.g * 32.0F;
     ☃ = ns.a(☃, 0.0F, 1.0F);
     
-    h = (a * ☃);
+    this.h = (this.a * ☃);
     super.a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   public void t_()
   {
-    p = s;
-    q = t;
-    r = u;
-    if (f++ >= g) {
+    this.p = this.s;
+    this.q = this.t;
+    this.r = this.u;
+    if (this.f++ >= this.g) {
       J();
     }
-    k(7 - f * 8 / g);
+    k(7 - this.f * 8 / this.g);
     
-    w -= 0.03D;
-    d(v, w, x);
-    v *= 0.9900000095367432D;
-    w *= 0.9900000095367432D;
-    x *= 0.9900000095367432D;
-    if (C)
+    this.w -= 0.03D;
+    d(this.v, this.w, this.x);
+    this.v *= 0.9900000095367432D;
+    this.w *= 0.9900000095367432D;
+    this.x *= 0.9900000095367432D;
+    if (this.C)
     {
-      v *= 0.699999988079071D;
-      x *= 0.699999988079071D;
+      this.v *= 0.699999988079071D;
+      this.x *= 0.699999988079071D;
     }
   }
   

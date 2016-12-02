@@ -16,39 +16,39 @@ class lo$2
   
   public void run()
   {
-    GameProfile ☃ = lo.b(a);
+    GameProfile ☃ = lo.b(this.a);
     try
     {
-      String ☃ = new BigInteger(ng.a(lo.c(a), lo.a(a).Q().getPublic(), lo.d(a))).toString(16);
-      lo.a(a, lo.a(a).aD().hasJoinedServer(new GameProfile(null, ☃.getName()), ☃));
-      if (lo.b(a) != null)
+      String ☃ = new BigInteger(ng.a(lo.c(this.a), lo.a(this.a).Q().getPublic(), lo.d(this.a))).toString(16);
+      lo.a(this.a, lo.a(this.a).aD().hasJoinedServer(new GameProfile(null, ☃.getName()), ☃));
+      if (lo.b(this.a) != null)
       {
-        lo.e().info("UUID of player " + lo.b(a).getName() + " is " + lo.b(a).getId());
-        lo.a(a, lo.a.d);
+        lo.e().info("UUID of player " + lo.b(this.a).getName() + " is " + lo.b(this.a).getId());
+        lo.a(this.a, lo.a.d);
       }
-      else if (lo.a(a).T())
+      else if (lo.a(this.a).T())
       {
         lo.e().warn("Failed to verify username but will let them in anyway!");
-        lo.a(a, a.a(☃));
-        lo.a(a, lo.a.d);
+        lo.a(this.a, this.a.a(☃));
+        lo.a(this.a, lo.a.d);
       }
       else
       {
-        a.a("Failed to verify username!");
-        lo.e().error("Username '" + lo.b(a).getName() + "' tried to join with an invalid session");
+        this.a.a("Failed to verify username!");
+        lo.e().error("Username '" + lo.b(this.a).getName() + "' tried to join with an invalid session");
       }
     }
     catch (AuthenticationUnavailableException ☃)
     {
-      if (lo.a(a).T())
+      if (lo.a(this.a).T())
       {
         lo.e().warn("Authentication servers are down but will let them in anyway!");
-        lo.a(a, a.a(☃));
-        lo.a(a, lo.a.d);
+        lo.a(this.a, this.a.a(☃));
+        lo.a(this.a, lo.a.d);
       }
       else
       {
-        a.a("Authentication servers are down. Please try again later, sorry!");
+        this.a.a("Authentication servers are down. Please try again later, sorry!");
         lo.e().error("Couldn't verify username because servers are unavailable");
       }
     }

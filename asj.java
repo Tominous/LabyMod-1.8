@@ -4,7 +4,7 @@ public class asj
   public asj(long ☃, ase ☃)
   {
     super(☃);
-    a = ☃;
+    this.a = ☃;
   }
   
   public int[] a(int ☃, int ☃, int ☃, int ☃)
@@ -13,7 +13,7 @@ public class asj
     int ☃ = ☃ - 1;
     int ☃ = ☃ + 2;
     int ☃ = ☃ + 2;
-    int[] ☃ = a.a(☃, ☃, ☃, ☃);
+    int[] ☃ = this.a.a(☃, ☃, ☃, ☃);
     
     int[] ☃ = asc.a(☃ * ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
@@ -25,7 +25,7 @@ public class asj
         int ☃ = c(☃[(☃ + 1 + (☃ + 2) * ☃)]);
         int ☃ = c(☃[(☃ + 1 + (☃ + 1) * ☃)]);
         if ((☃ != ☃) || (☃ != ☃) || (☃ != ☃) || (☃ != ☃)) {
-          ☃[(☃ + ☃ * ☃)] = waz;
+          ☃[(☃ + ☃ * ☃)] = ady.w.az;
         } else {
           ☃[(☃ + ☃ * ☃)] = -1;
         }

@@ -9,19 +9,19 @@ public class hh
   
   public hh(pk ☃)
   {
-    a = ☃.F();
+    this.a = ☃.F();
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.e();
+    this.a = ☃.e();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a);
+    ☃.b(this.a);
   }
   
   public void a(fj ☃)
@@ -31,6 +31,6 @@ public class hh
   
   public pk a(adm ☃)
   {
-    return ☃.a(a);
+    return ☃.a(this.a);
   }
 }

@@ -8,13 +8,13 @@ public class bae
   
   public bae()
   {
-    a.add(new bak());
-    a.add(new bal());
+    this.a.add(new bak());
+    this.a.add(new bal());
   }
   
   public List<bah> a()
   {
-    return a;
+    return this.a;
   }
   
   public eu b()

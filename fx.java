@@ -9,23 +9,23 @@ public class fx
   
   public fx(String[] ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = new String[☃.e()];
-    for (int ☃ = 0; ☃ < a.length; ☃++) {
-      a[☃] = ☃.c(32767);
+    this.a = new String[☃.e()];
+    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
+      this.a[☃] = ☃.c(32767);
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a.length);
-    for (String ☃ : a) {
+    ☃.b(this.a.length);
+    for (String ☃ : this.a) {
       ☃.a(☃);
     }
   }
@@ -37,6 +37,6 @@ public class fx
   
   public String[] a()
   {
-    return a;
+    return this.a;
   }
 }

@@ -10,6 +10,6 @@ class aeg$2
   
   public void a(adm ☃, Random ☃, cj ☃)
   {
-    aE.a(☃, ☃, ☃);
+    this.aE.a(☃, ☃, ☃);
   }
 }

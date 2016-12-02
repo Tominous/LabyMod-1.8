@@ -21,7 +21,7 @@ public abstract class tz
   
   public boolean bS()
   {
-    return o.a(aR(), this);
+    return this.o.a(aR(), this);
   }
   
   public int w()
@@ -36,7 +36,7 @@ public abstract class tz
   
   protected int b(wn ☃)
   {
-    return 1 + o.s.nextInt(3);
+    return 1 + this.o.s.nextInt(3);
   }
   
   public void K()

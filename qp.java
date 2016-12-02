@@ -10,62 +10,62 @@ public class qp
   
   public qp(ps ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(pk ☃, float ☃, float ☃)
   {
-    e = s;
+    this.e = ☃.s;
     if ((☃ instanceof pr)) {
-      f = (t + ☃.aS());
+      this.f = (☃.t + ☃.aS());
     } else {
-      f = ((aRb + aRe) / 2.0D);
+      this.f = ((☃.aR().b + ☃.aR().e) / 2.0D);
     }
-    g = u;
-    b = ☃;
-    c = ☃;
-    d = true;
+    this.g = ☃.u;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = true;
   }
   
   public void a(double ☃, double ☃, double ☃, float ☃, float ☃)
   {
-    e = ☃;
-    f = ☃;
-    g = ☃;
-    b = ☃;
-    c = ☃;
-    d = true;
+    this.e = ☃;
+    this.f = ☃;
+    this.g = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = true;
   }
   
   public void a()
   {
-    a.z = 0.0F;
-    if (d)
+    this.a.z = 0.0F;
+    if (this.d)
     {
-      d = false;
+      this.d = false;
       
-      double ☃ = e - a.s;
-      double ☃ = f - (a.t + a.aS());
-      double ☃ = g - a.u;
+      double ☃ = this.e - this.a.s;
+      double ☃ = this.f - (this.a.t + this.a.aS());
+      double ☃ = this.g - this.a.u;
       double ☃ = ns.a(☃ * ☃ + ☃ * ☃);
       
       float ☃ = (float)(ns.b(☃, ☃) * 180.0D / 3.1415927410125732D) - 90.0F;
       float ☃ = (float)-(ns.b(☃, ☃) * 180.0D / 3.1415927410125732D);
-      a.z = a(a.z, ☃, c);
-      a.aK = a(a.aK, ☃, b);
+      this.a.z = a(this.a.z, ☃, this.c);
+      this.a.aK = a(this.a.aK, ☃, this.b);
     }
     else
     {
-      a.aK = a(a.aK, a.aI, 10.0F);
+      this.a.aK = a(this.a.aK, this.a.aI, 10.0F);
     }
-    float ☃ = ns.g(a.aK - a.aI);
-    if (!a.s().m())
+    float ☃ = ns.g(this.a.aK - this.a.aI);
+    if (!this.a.s().m())
     {
       if (☃ < -75.0F) {
-        a.aK = (a.aI - 75.0F);
+        this.a.aK = (this.a.aI - 75.0F);
       }
       if (☃ > 75.0F) {
-        a.aK = (a.aI + 75.0F);
+        this.a.aK = (this.a.aI + 75.0F);
       }
     }
   }
@@ -84,21 +84,21 @@ public class qp
   
   public boolean b()
   {
-    return d;
+    return this.d;
   }
   
   public double e()
   {
-    return e;
+    return this.e;
   }
   
   public double f()
   {
-    return f;
+    return this.f;
   }
   
   public double g()
   {
-    return g;
+    return this.g;
   }
 }

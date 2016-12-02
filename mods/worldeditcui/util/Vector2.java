@@ -6,7 +6,7 @@ public class Vector2
   public Vector2(double x, double y)
   {
     this.x = x;
-    z = y;
+    this.z = y;
   }
   
   public Vector2(Double x, Double y)
@@ -21,17 +21,17 @@ public class Vector2
   
   public Vector2(Vector2 original)
   {
-    this(x, z);
+    this(original.x, original.z);
   }
   
   public double getX()
   {
-    return x;
+    return this.x;
   }
   
   public double getY()
   {
-    return z;
+    return this.z;
   }
   
   public Vector2 add(Vector2 that)
@@ -66,27 +66,27 @@ public class Vector2
   
   public Vector2 cross()
   {
-    return new Vector2(z, -x);
+    return new Vector2(this.z, -this.x);
   }
   
   public Vector2 ceil()
   {
-    return new Vector2(Math.ceil(x), Math.ceil(z));
+    return new Vector2(Math.ceil(this.x), Math.ceil(this.z));
   }
   
   public Vector2 floor()
   {
-    return new Vector2(Math.floor(x), Math.floor(z));
+    return new Vector2(Math.floor(this.x), Math.floor(this.z));
   }
   
   public Vector2 round()
   {
-    return new Vector2(Math.round(x), Math.round(z));
+    return new Vector2(Math.round(this.x), Math.round(this.z));
   }
   
   public Vector2 abs()
   {
-    return new Vector2(Math.abs(x), Math.abs(z));
+    return new Vector2(Math.abs(this.x), Math.abs(this.z));
   }
   
   public double distance(Vector2 a)
@@ -166,42 +166,42 @@ public class Vector2
   
   public static Vector3 toVector3(Vector2 o)
   {
-    return new Vector3(x, 0.0D, z);
+    return new Vector3(o.x, 0.0D, o.z);
   }
   
   public static Vector3 toVector3(Vector2 o, double y)
   {
-    return new Vector3(x, y, z);
+    return new Vector3(o.x, y, o.z);
   }
   
   public static Vector2 ceil(Vector2 o)
   {
-    return new Vector2(Math.ceil(x), Math.ceil(z));
+    return new Vector2(Math.ceil(o.x), Math.ceil(o.z));
   }
   
   public static Vector2 floor(Vector2 o)
   {
-    return new Vector2(Math.floor(x), Math.floor(z));
+    return new Vector2(Math.floor(o.x), Math.floor(o.z));
   }
   
   public static Vector2 round(Vector2 o)
   {
-    return new Vector2(Math.round(x), Math.round(z));
+    return new Vector2(Math.round(o.x), Math.round(o.z));
   }
   
   public static Vector2 abs(Vector2 o)
   {
-    return new Vector2(Math.abs(x), Math.abs(z));
+    return new Vector2(Math.abs(o.x), Math.abs(o.z));
   }
   
   public static Vector2 min(Vector2 o1, Vector2 o2)
   {
-    return new Vector2(Math.min(x, x), Math.min(z, z));
+    return new Vector2(Math.min(o1.x, o2.x), Math.min(o1.z, o2.z));
   }
   
   public static Vector2 max(Vector2 o1, Vector2 o2)
   {
-    return new Vector2(Math.max(x, x), Math.max(z, z));
+    return new Vector2(Math.max(o1.x, o2.x), Math.max(o1.z, o2.z));
   }
   
   public static Vector2 rand()
@@ -222,12 +222,12 @@ public class Vector2
   public static double distance(Vector2 a, Vector2 b)
   {
     Vector2 tempVector = pow(subtract(a, b), 2.0D);
-    return Math.sqrt(x + z);
+    return Math.sqrt(tempVector.x + tempVector.z);
   }
   
   public static Vector2 pow(Vector2 o, double power)
   {
-    return new Vector2(Math.pow(x, power), Math.pow(z, power));
+    return new Vector2(Math.pow(o.x, power), Math.pow(o.z, power));
   }
   
   public static boolean equals(Object a, Object b)
@@ -237,12 +237,12 @@ public class Vector2
   
   public String toString()
   {
-    return "(" + x + ", " + z + ")";
+    return "(" + this.x + ", " + this.z + ")";
   }
   
   public int hashCode()
   {
-    return (int)(x % z);
+    return (int)(this.x % this.z);
   }
   
   public static final Vector2 ZERO = new Vector2(0.0D, 0.0D);

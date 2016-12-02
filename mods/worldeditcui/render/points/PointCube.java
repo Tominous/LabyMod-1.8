@@ -15,18 +15,18 @@ public class PointCube
   
   public PointCube(Vector3 point)
   {
-    colour = LineColour.CUBOIDPOINT1;
+    this.colour = LineColour.CUBOIDPOINT1;
     setPoint(point);
   }
   
   public void render(Vector3 cameraPos)
   {
-    box.render(cameraPos);
+    this.box.render(cameraPos);
   }
   
   public Vector3 getPoint()
   {
-    return point;
+    return this.point;
   }
   
   public void setPoint(Vector3 point)
@@ -37,7 +37,7 @@ public class PointCube
   
   public LineColour getColour()
   {
-    return colour;
+    return this.colour;
   }
   
   public void setColour(LineColour colour)
@@ -48,7 +48,7 @@ public class PointCube
   
   private void update()
   {
-    box = new Render3DBox(colour, point.subtract(MIN_VEC), point.add(MAX_VEC));
+    this.box = new Render3DBox(this.colour, this.point.subtract(MIN_VEC), this.point.add(MAX_VEC));
   }
   
   private static final Vector3 MIN_VEC = new Vector3(0.029999999329447746D, 0.029999999329447746D, 0.029999999329447746D);

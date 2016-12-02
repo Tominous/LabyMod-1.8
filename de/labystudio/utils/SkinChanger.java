@@ -18,7 +18,7 @@ public class SkinChanger
   
   public SkinChanger(avm session, boolean steveModel, MessageCallBack callback)
   {
-    callBack = callback;
+    this.callBack = callback;
     this.session = session;
     this.steveModel = steveModel;
   }
@@ -28,7 +28,7 @@ public class SkinChanger
     File file = selectTexture();
     if ((file == null) || (!file.exists()))
     {
-      callBack.ok("File not found");
+      this.callBack.ok("File not found");
       return;
     }
     upload(file);
@@ -54,26 +54,26 @@ public class SkinChanger
   {
     try
     {
-      String url = "https://api.mojang.com/user/profile/" + session.e().getId().toString().replace("-", "") + "/skin";
+      String url = "https://api.mojang.com/user/profile/" + this.session.e().getId().toString().replace("-", "") + "/skin";
       MultipartUtility request = new MultipartUtility(url, "UTF-8");
-      request.addRequestProperty("Authorization", "Bearer " + session.d());
+      request.addRequestProperty("Authorization", "Bearer " + this.session.d());
       
       request.open();
-      request.addFormField("model", steveModel ? "classic" : "slim");
+      request.addFormField("model", this.steveModel ? "classic" : "slim");
       request.addFilePart("file", file);
       List<String> all = request.finish();
       String content = "";
       for (String line : all) {
         content = content + line;
       }
-      callBack.ok(content);
+      this.callBack.ok(content);
       return true;
     }
     catch (Exception error)
     {
       error.printStackTrace();
       
-      callBack.ok("Error");
+      this.callBack.ok("Error");
     }
     return false;
   }

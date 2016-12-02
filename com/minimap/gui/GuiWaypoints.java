@@ -33,41 +33,41 @@ public class GuiWaypoints
   
   public GuiWaypoints(axu par1GuiScreen)
   {
-    dropDowns = new ArrayList();
-    draggingFromX = -1;
-    draggingFromY = -1;
-    draggingFromSlot = -1;
-    draggingWaypoint = null;
-    dropped = false;
-    parentScreen = par1GuiScreen;
+    this.dropDowns = new ArrayList();
+    this.draggingFromX = -1;
+    this.draggingFromY = -1;
+    this.draggingFromSlot = -1;
+    this.draggingWaypoint = null;
+    this.dropped = false;
+    this.parentScreen = par1GuiScreen;
   }
   
   public void b()
   {
-    worlds = new GuiWaypointWorlds(Minimap.getCurrentWorldID(), Minimap.getAutoWorldID());
-    sets = new GuiWaypointSets(getCurrentWorldcurrent, Minimap.getCurrentWorldID(), true);
-    n.clear();
-    n.add(new MyTinyButton(5, l / 2 + 83, m - 53, bnq.a("gui.xaero_delete", new Object[0])));
-    n.add(new avs(6, l / 2 - 100, m - 29, bnq.a("gui.done", new Object[0])));
-    n.add(new MyTinyButton(7, l / 2 - 154, m - 53, bnq.a("gui.xaero_add_edit", new Object[0])));
-    n.add(new MyTinyButton(8, l / 2 - 75, m - 53, bnq.a("gui.xaero_waypoint_teleport", new Object[0])));
-    n.add(new MyTinyButton(9, l / 2 + 4, m - 53, bnq.a("gui.xaero_disable_enable", new Object[0])));
-    n.add(new MyTinyButton(10, l / 2 + 130, 32, bnq.a("gui.xaero_clear", new Object[0])));
-    n.add(new MyTinyButton(11, l / 2 - 203, 32, bnq.a("gui.xaero_transfer", new Object[0])));
-    (list = new List()).d(7, 8);
-    dropDowns.clear();
-    dropDowns.add(new GuiDropDown(worlds.options, l / 2 - 202, 17, 200, Integer.valueOf(worlds.currentWorld)));
-    dropDowns.add(new GuiDropDown(sets.options, l / 2 + 2, 17, 200, Integer.valueOf(sets.currentSet)));
+    this.worlds = new GuiWaypointWorlds(Minimap.getCurrentWorldID(), Minimap.getAutoWorldID());
+    this.sets = new GuiWaypointSets(Minimap.getCurrentWorld().current, Minimap.getCurrentWorldID(), true);
+    this.n.clear();
+    this.n.add(new MyTinyButton(5, this.l / 2 + 83, this.m - 53, bnq.a("gui.xaero_delete", new Object[0])));
+    this.n.add(new avs(6, this.l / 2 - 100, this.m - 29, bnq.a("gui.done", new Object[0])));
+    this.n.add(new MyTinyButton(7, this.l / 2 - 154, this.m - 53, bnq.a("gui.xaero_add_edit", new Object[0])));
+    this.n.add(new MyTinyButton(8, this.l / 2 - 75, this.m - 53, bnq.a("gui.xaero_waypoint_teleport", new Object[0])));
+    this.n.add(new MyTinyButton(9, this.l / 2 + 4, this.m - 53, bnq.a("gui.xaero_disable_enable", new Object[0])));
+    this.n.add(new MyTinyButton(10, this.l / 2 + 130, 32, bnq.a("gui.xaero_clear", new Object[0])));
+    this.n.add(new MyTinyButton(11, this.l / 2 - 203, 32, bnq.a("gui.xaero_transfer", new Object[0])));
+    (this.list = new List()).d(7, 8);
+    this.dropDowns.clear();
+    this.dropDowns.add(new GuiDropDown(this.worlds.options, this.l / 2 - 202, 17, 200, Integer.valueOf(this.worlds.currentWorld)));
+    this.dropDowns.add(new GuiDropDown(this.sets.options, this.l / 2 + 2, 17, 200, Integer.valueOf(this.sets.currentSet)));
   }
   
   protected void a(avs p_146284_1_)
   {
-    if (l) {
-      switch (k)
+    if (p_146284_1_.l) {
+      switch (p_146284_1_.k)
       {
       case 5: 
-        waypointslist.remove(selected);
-        selected = null;
+        Minimap.waypoints.list.remove(this.selected);
+        this.selected = null;
         try
         {
           XaeroMinimap.settings.saveWaypoints();
@@ -77,21 +77,21 @@ public class GuiWaypoints
           e.printStackTrace();
         }
       case 6: 
-        j.a(parentScreen);
+        this.j.a(this.parentScreen);
         break;
       case 7: 
-        j.a(new GuiAddWaypoint(this, XaeroMinimap.getSettings(), selected));
+        this.j.a(new GuiAddWaypoint(this, XaeroMinimap.getSettings(), this.selected));
         break;
       case 8: 
-        if (!selected.rotation) {
-          b("/tp " + selected.x + " " + selected.y + " " + selected.z, false);
+        if (!this.selected.rotation) {
+          b("/tp " + this.selected.x + " " + this.selected.y + " " + this.selected.z, false);
         } else {
-          b("/tp " + selected.x + " " + selected.y + " " + selected.z + " " + selected.yaw + " ~", false);
+          b("/tp " + this.selected.x + " " + this.selected.y + " " + this.selected.z + " " + this.selected.yaw + " ~", false);
         }
-        j.a((axu)null);
+        this.j.a((axu)null);
         break;
       case 9: 
-        selected.disabled = (!selected.disabled);
+        this.selected.disabled = (!this.selected.disabled);
         try
         {
           XaeroMinimap.settings.saveWaypoints();
@@ -102,56 +102,56 @@ public class GuiWaypoints
         }
       case 10: 
         if (shouldDeleteSet()) {
-          j.a(new GuiDeleteSet(bnq.a(sets.options[sets.currentSet], new Object[0]), (String)worlds.keys[worlds.currentWorld], sets.options[sets.currentSet], this));
+          this.j.a(new GuiDeleteSet(bnq.a(this.sets.options[this.sets.currentSet], new Object[0]), (String)this.worlds.keys[this.worlds.currentWorld], this.sets.options[this.sets.currentSet], this));
         } else {
-          j.a(new GuiClearSet(bnq.a(sets.options[sets.currentSet], new Object[0]), (String)worlds.keys[worlds.currentWorld], sets.options[sets.currentSet], this));
+          this.j.a(new GuiClearSet(bnq.a(this.sets.options[this.sets.currentSet], new Object[0]), (String)this.worlds.keys[this.worlds.currentWorld], this.sets.options[this.sets.currentSet], this));
         }
         break;
       case 11: 
-        j.a(new GuiTransfer(this));
+        this.j.a(new GuiTransfer(this));
       }
     }
   }
   
   public boolean shouldDeleteSet()
   {
-    return (!sets.options[sets.currentSet].equals("gui.xaero_default")) && (waypointslist.isEmpty());
+    return (!this.sets.options[this.sets.currentSet].equals("gui.xaero_default")) && (Minimap.waypoints.list.isEmpty());
   }
   
   public void k()
     throws IOException
   {
     super.k();
-    list.p();
+    this.list.p();
   }
   
   protected void a(int par1, int par2, int par3)
     throws IOException
   {
-    for (GuiDropDown d : dropDowns)
+    for (GuiDropDown d : this.dropDowns)
     {
-      if ((!closed) && (d.onDropDown(par1, par2)))
+      if ((!d.closed) && (d.onDropDown(par1, par2)))
       {
         d.mouseClicked(par1, par2, par3);
         return;
       }
-      closed = true;
+      d.closed = true;
     }
-    for (GuiDropDown d : dropDowns)
+    for (GuiDropDown d : this.dropDowns)
     {
       if (d.onDropDown(par1, par2))
       {
         d.mouseClicked(par1, par2, par3);
         return;
       }
-      closed = true;
+      d.closed = true;
     }
-    if (dropped) {
+    if (this.dropped) {
       return;
     }
-    draggingFromX = par1;
-    draggingFromY = par2;
-    draggingFromSlot = list.c(par1, par2);
+    this.draggingFromX = par1;
+    this.draggingFromY = par2;
+    this.draggingFromSlot = this.list.c(par1, par2);
     super.a(par1, par2, par3);
   }
   
@@ -159,7 +159,7 @@ public class GuiWaypoints
   {
     try
     {
-      if (draggingWaypoint != null) {
+      if (this.draggingWaypoint != null) {
         XaeroMinimap.getSettings().saveWaypoints();
       }
     }
@@ -167,10 +167,10 @@ public class GuiWaypoints
     {
       e.printStackTrace();
     }
-    draggingFromX = -1;
-    draggingFromY = -1;
-    draggingFromSlot = -1;
-    draggingWaypoint = null;
+    this.draggingFromX = -1;
+    this.draggingFromY = -1;
+    this.draggingFromSlot = -1;
+    this.draggingWaypoint = null;
     super.b(par1, par2, par3);
   }
   
@@ -181,108 +181,108 @@ public class GuiWaypoints
     switch (par2)
     {
     case 211: 
-      a((avs)n.get(0));
+      a((avs)this.n.get(0));
       break;
     case 20: 
-      a((avs)n.get(3));
+      a((avs)this.n.get(3));
     }
   }
   
   public void a(int par1, int par2, float par3)
   {
-    if (j.h == null)
+    if (this.j.h == null)
     {
-      j.a((axu)null);
+      this.j.a((axu)null);
       return;
     }
     updateButtons();
-    list.a(par1, par2, par3);
-    a(q, bnq.a("gui.xaero_world", new Object[0]), l / 2 - 102, 5, 16777215);
-    a(q, bnq.a("gui.xaero_waypoint_set", new Object[0]), l / 2 + 102, 5, 16777215);
-    a(q, bnq.a("gui.xaero_waypoints", new Object[0]), l / 2, 44, 16777215);
-    if (draggingFromSlot != -1)
+    this.list.a(par1, par2, par3);
+    a(this.q, bnq.a("gui.xaero_world", new Object[0]), this.l / 2 - 102, 5, 16777215);
+    a(this.q, bnq.a("gui.xaero_waypoint_set", new Object[0]), this.l / 2 + 102, 5, 16777215);
+    a(this.q, bnq.a("gui.xaero_waypoints", new Object[0]), this.l / 2, 44, 16777215);
+    if (this.draggingFromSlot != -1)
     {
-      int distance = (int)Math.sqrt(Math.pow(par1 - draggingFromX, 2.0D) + Math.pow(par2 - draggingFromY, 2.0D));
-      int toSlot = list.c(par1, par2);
-      if ((distance > 4) && (draggingWaypoint == null))
+      int distance = (int)Math.sqrt(Math.pow(par1 - this.draggingFromX, 2.0D) + Math.pow(par2 - this.draggingFromY, 2.0D));
+      int toSlot = this.list.c(par1, par2);
+      if ((distance > 4) && (this.draggingWaypoint == null))
       {
-        draggingWaypoint = ((Waypoint)waypointslist.get(draggingFromSlot));
-        selected = null;
+        this.draggingWaypoint = ((Waypoint)Minimap.waypoints.list.get(this.draggingFromSlot));
+        this.selected = null;
       }
-      if ((draggingWaypoint != null) && (draggingFromSlot != toSlot) && (toSlot != -1))
+      if ((this.draggingWaypoint != null) && (this.draggingFromSlot != toSlot) && (toSlot != -1))
       {
-        int direction = toSlot > draggingFromSlot ? 1 : -1;
-        for (int i = draggingFromSlot; i != toSlot; i += direction) {
-          waypointslist.set(i, waypointslist.get(i + direction));
+        int direction = toSlot > this.draggingFromSlot ? 1 : -1;
+        for (int i = this.draggingFromSlot; i != toSlot; i += direction) {
+          Minimap.waypoints.list.set(i, Minimap.waypoints.list.get(i + direction));
         }
-        waypointslist.set(toSlot, draggingWaypoint);
-        draggingFromSlot = toSlot;
+        Minimap.waypoints.list.set(toSlot, this.draggingWaypoint);
+        this.draggingFromSlot = toSlot;
       }
-      int fromCenter = draggingFromX - list.getWidth() / 2;
-      list.drawWaypointSlot(draggingWaypoint, par1 - 108 - fromCenter, par2 - list.r() / 4);
+      int fromCenter = this.draggingFromX - this.list.getWidth() / 2;
+      this.list.drawWaypointSlot(this.draggingWaypoint, par1 - 108 - fromCenter, par2 - this.list.r() / 4);
     }
-    if (dropped) {
+    if (this.dropped) {
       super.a(0, 0, par3);
     } else {
       super.a(par1, par2, par3);
     }
-    dropped = false;
-    for (int k = 0; k < dropDowns.size(); k++) {
-      if (dropDowns.get(k)).closed) {
-        ((GuiDropDown)dropDowns.get(k)).drawButton(par1, par2);
+    this.dropped = false;
+    for (int k = 0; k < this.dropDowns.size(); k++) {
+      if (((GuiDropDown)this.dropDowns.get(k)).closed) {
+        ((GuiDropDown)this.dropDowns.get(k)).drawButton(par1, par2);
       } else {
-        dropped = true;
+        this.dropped = true;
       }
     }
-    for (int k = 0; k < dropDowns.size(); k++) {
-      if (!dropDowns.get(k)).closed) {
-        ((GuiDropDown)dropDowns.get(k)).drawButton(par1, par2);
+    for (int k = 0; k < this.dropDowns.size(); k++) {
+      if (!((GuiDropDown)this.dropDowns.get(k)).closed) {
+        ((GuiDropDown)this.dropDowns.get(k)).drawButton(par1, par2);
       }
     }
   }
   
   private void updateButtons()
   {
-    avs guiButton = (avs)n.get(0);
-    avs guiButton2 = (avs)n.get(3);
-    avs guiButton3 = (avs)n.get(4);
+    avs guiButton = (avs)this.n.get(0);
+    avs guiButton2 = (avs)this.n.get(3);
+    avs guiButton3 = (avs)this.n.get(4);
     boolean enabled;
-    boolean b = enabled = (selected != null ? 1 : 0) != 0 ? 1 : 0;
-    l = b;
-    l = b;
-    l = enabled;
-    n.get(2)).l = ((j.h != null) || (selected != null));
-    n.get(3)).j = (bnq.a("gui.xaero_waypoint_teleport", new Object[0]) + " (T)");
-    n.get(5)).j = bnq.a(shouldDeleteSet() ? "gui.xaero_delete_set" : "gui.xaero_clear", new Object[0]);
+    boolean b = enabled = (this.selected != null ? 1 : 0) != 0 ? 1 : 0;
+    guiButton3.l = b;
+    guiButton2.l = b;
+    guiButton.l = enabled;
+    ((avs)this.n.get(2)).l = ((this.j.h != null) || (this.selected != null));
+    ((avs)this.n.get(3)).j = (bnq.a("gui.xaero_waypoint_teleport", new Object[0]) + " (T)");
+    ((avs)this.n.get(5)).j = bnq.a(shouldDeleteSet() ? "gui.xaero_delete_set" : "gui.xaero_clear", new Object[0]);
     String[] enabledisable = bnq.a("gui.xaero_disable_enable", new Object[0]).split("/");
-    n.get(4)).j = enabledisable[0];
-    if (worlds.currentWorld != dropDowns.get(0)).selected)
+    ((avs)this.n.get(4)).j = enabledisable[0];
+    if (this.worlds.currentWorld != ((GuiDropDown)this.dropDowns.get(0)).selected)
     {
-      worlds.currentWorld = dropDowns.get(0)).selected;
-      if (worlds.currentWorld != worlds.autoWorld) {
-        Minimap.customWorldID = (String)worlds.keys[worlds.currentWorld];
+      this.worlds.currentWorld = ((GuiDropDown)this.dropDowns.get(0)).selected;
+      if (this.worlds.currentWorld != this.worlds.autoWorld) {
+        Minimap.customWorldID = (String)this.worlds.keys[this.worlds.currentWorld];
       } else if (Minimap.customWorldID != null) {
         Minimap.customWorldID = null;
       }
       WaypointWorld w = Minimap.getCurrentWorld();
       Minimap.updateWaypoints();
-      selected = null;
-      sets = new GuiWaypointSets(current, Minimap.getCurrentWorldID(), true);
-      dropDowns.set(1, new GuiDropDown(sets.options, l / 2 + 2, 17, 200, Integer.valueOf(sets.currentSet)));
+      this.selected = null;
+      this.sets = new GuiWaypointSets(w.current, Minimap.getCurrentWorldID(), true);
+      this.dropDowns.set(1, new GuiDropDown(this.sets.options, this.l / 2 + 2, 17, 200, Integer.valueOf(this.sets.currentSet)));
     }
-    else if (sets.currentSet != dropDowns.get(1)).selected)
+    else if (this.sets.currentSet != ((GuiDropDown)this.dropDowns.get(1)).selected)
     {
-      if (dropDowns.get(1)).selected == ((GuiDropDown)dropDowns.get(1)).size() - 1)
+      if (((GuiDropDown)this.dropDowns.get(1)).selected == ((GuiDropDown)this.dropDowns.get(1)).size() - 1)
       {
         System.out.println("New waypoint set gui");
-        ((GuiDropDown)dropDowns.get(1)).selectValue(sets.currentSet);
-        j.a(new GuiNewSet(this));
+        ((GuiDropDown)this.dropDowns.get(1)).selectValue(this.sets.currentSet);
+        this.j.a(new GuiNewSet(this));
         return;
       }
-      sets.currentSet = dropDowns.get(1)).selected;
-      getCurrentWorldcurrent = ((GuiDropDown)dropDowns.get(1)).getSelectedOption();
+      this.sets.currentSet = ((GuiDropDown)this.dropDowns.get(1)).selected;
+      Minimap.getCurrentWorld().current = ((GuiDropDown)this.dropDowns.get(1)).getSelectedOption();
       Minimap.updateWaypoints();
-      selected = null;
+      this.selected = null;
       try
       {
         XaeroMinimap.getSettings().saveWaypoints();
@@ -299,31 +299,31 @@ public class GuiWaypoints
   {
     public List()
     {
-      super(l, m, 58, m - 61, 18);
+      super(GuiWaypoints.this.l, GuiWaypoints.this.m, 58, GuiWaypoints.this.m - 61, 18);
     }
     
     protected int b()
     {
-      return waypointslist.size();
+      return Minimap.waypoints.list.size();
     }
     
     protected void a(int slotIndex, boolean isDoubleClick, int mouseX, int mouseY)
     {
-      Waypoint waypoint = (Waypoint)waypointslist.get(slotIndex);
-      System.out.println("Element clicked: " + name);
-      if (selected != waypoint) {
-        selected = waypoint;
+      Waypoint waypoint = (Waypoint)Minimap.waypoints.list.get(slotIndex);
+      System.out.println("Element clicked: " + waypoint.name);
+      if (GuiWaypoints.this.selected != waypoint) {
+        GuiWaypoints.this.selected = waypoint;
       }
     }
     
     protected boolean a(int p_148131_1_)
     {
-      return (selected != null) && (selected == waypointslist.get(p_148131_1_));
+      return (GuiWaypoints.this.selected != null) && (GuiWaypoints.this.selected == Minimap.waypoints.list.get(p_148131_1_));
     }
     
     public int getWidth()
     {
-      return b;
+      return this.b;
     }
     
     protected int k()
@@ -333,13 +333,13 @@ public class GuiWaypoints
     
     protected void a()
     {
-      c();
+      GuiWaypoints.this.c();
     }
     
     public void a(int p_180791_1_, int p_180791_2_, int p_180791_3_, int p_180791_4_, int p_180791_5_, int p_180791_6_)
     {
-      Waypoint w = (Waypoint)waypointslist.get(p_180791_1_);
-      if (w == draggingWaypoint) {
+      Waypoint w = (Waypoint)Minimap.waypoints.list.get(p_180791_1_);
+      if (w == GuiWaypoints.this.draggingWaypoint) {
         return;
       }
       drawWaypointSlot(w, p_180791_2_, p_180791_3_);
@@ -350,14 +350,14 @@ public class GuiWaypoints
       if (w == null) {
         return;
       }
-      a(q, w.getName() + (disabled ? " §4" + bnq.a("gui.xaero_disabled", new Object[0]) : ""), p_180791_2_ + 110, p_180791_3_ + 1, 16777215);
+      GuiWaypoints.this.a(GuiWaypoints.this.q, w.getName() + (w.disabled ? " §4" + bnq.a("gui.xaero_disabled", new Object[0]) : ""), p_180791_2_ + 110, p_180791_3_ + 1, 16777215);
       int rectX = p_180791_2_ + 8;
       w.drawIconOnGUI(rectX, p_180791_3_);
     }
     
     public boolean q()
     {
-      return (!dropped) && (draggingWaypoint == null) && (super.q());
+      return (!GuiWaypoints.this.dropped) && (GuiWaypoints.this.draggingWaypoint == null) && (super.q());
     }
   }
 }

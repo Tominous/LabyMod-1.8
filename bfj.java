@@ -32,12 +32,12 @@ public enum bfj
   
   private bfj(bfj.b... ☃)
   {
-    h = ☃;
+    this.h = ☃;
   }
   
   public bfj.b a(int ☃)
   {
-    return h[☃];
+    return this.h[☃];
   }
   
   public static class b
@@ -48,9 +48,9 @@ public enum bfj
     
     private b(int ☃, int ☃, int ☃)
     {
-      a = ☃;
-      b = ☃;
-      c = ☃;
+      this.a = ☃;
+      this.b = ☃;
+      this.c = ☃;
     }
   }
 }

@@ -17,8 +17,8 @@ public class bpn
   {
     if (☃.e_().equals(b().S()))
     {
-      f = new dn();
-      ☃.e(f);
+      this.f = new dn();
+      ☃.e(this.f);
     }
     super.b(☃);
   }
@@ -38,6 +38,6 @@ public class bpn
   
   public dn t()
   {
-    return f;
+    return this.f;
   }
 }

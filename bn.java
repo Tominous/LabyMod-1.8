@@ -41,14 +41,14 @@ public class bn
     if ((☃.length == 1) || (☃.length == 2))
     {
       pk ☃ = b(☃, ☃[(☃.length - 1)]);
-      if (o != o) {
+      if (☃.o != ☃.o) {
         throw new bz("commands.tp.notSameDimension", new Object[0]);
       }
       ☃.a(null);
       if ((☃ instanceof lf)) {
-        a.a(s, t, u, y, z);
+        ((lf)☃).a.a(☃.s, ☃.t, ☃.u, ☃.y, ☃.z);
       } else {
-        ☃.b(s, t, u, y, z);
+        ☃.b(☃.s, ☃.t, ☃.u, ☃.y, ☃.z);
       }
       a(☃, this, "commands.tp.success", new Object[] { ☃.e_(), ☃.e_() });
       return;
@@ -56,15 +56,15 @@ public class bn
     if (☃.length < ☃ + 3) {
       throw new cf("commands.tp.usage", new Object[0]);
     }
-    if (o == null) {
+    if (☃.o == null) {
       return;
     }
     int ☃ = ☃;
-    i.a ☃ = a(s, ☃[(☃++)], true);
-    i.a ☃ = a(t, ☃[(☃++)], 0, 0, false);
-    i.a ☃ = a(u, ☃[(☃++)], true);
-    i.a ☃ = a(y, ☃.length > ☃ ? ☃[(☃++)] : "~", false);
-    i.a ☃ = a(z, ☃.length > ☃ ? ☃[☃] : "~", false);
+    i.a ☃ = a(☃.s, ☃[(☃++)], true);
+    i.a ☃ = a(☃.t, ☃[(☃++)], 0, 0, false);
+    i.a ☃ = a(☃.u, ☃[(☃++)], true);
+    i.a ☃ = a(☃.y, ☃.length > ☃ ? ☃[(☃++)] : "~", false);
+    i.a ☃ = a(☃.z, ☃.length > ☃ ? ☃[☃] : "~", false);
     if ((☃ instanceof lf))
     {
       Set<fi.a> ☃ = EnumSet.noneOf(fi.a.class);
@@ -97,7 +97,7 @@ public class bn
         ☃ = ns.g(☃ + 180.0F);
       }
       ☃.a(null);
-      a.a(☃.b(), ☃.b(), ☃.b(), ☃, ☃, ☃);
+      ((lf)☃).a.a(☃.b(), ☃.b(), ☃.b(), ☃, ☃, ☃);
       ☃.f(☃);
     }
     else

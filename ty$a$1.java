@@ -7,7 +7,7 @@ class ty$a$1
   
   public boolean a(T ☃)
   {
-    if ((a != null) && (!a.apply(☃))) {
+    if ((this.a != null) && (!this.a.apply(☃))) {
       return false;
     }
     if ((☃ instanceof vn)) {
@@ -15,7 +15,7 @@ class ty$a$1
     }
     if ((☃ instanceof wn))
     {
-      double ☃ = ty.a.a(c);
+      double ☃ = ty.a.a(this.c);
       if (☃.av()) {
         ☃ *= 0.800000011920929D;
       }
@@ -27,10 +27,10 @@ class ty$a$1
         }
         ☃ *= 0.7F * ☃;
       }
-      if (☃.g(b) > ☃) {
+      if (☃.g(this.b) > ☃) {
         return false;
       }
     }
-    return ty.a.a(c, ☃, false);
+    return ty.a.a(this.c, ☃, false);
   }
 }

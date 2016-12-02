@@ -30,7 +30,7 @@ public class wr
   public wr(adm ☃, double ☃, double ☃, double ☃)
   {
     super(☃);
-    d = 0;
+    this.d = 0;
     
     a(0.25F, 0.25F);
     
@@ -43,104 +43,104 @@ public class wr
     int ☃ = ☃.o();
     double ☃ = ☃.p();
     
-    double ☃ = ☃ - s;double ☃ = ☃ - u;
+    double ☃ = ☃ - this.s;double ☃ = ☃ - this.u;
     float ☃ = ns.a(☃ * ☃ + ☃ * ☃);
     if (☃ > 12.0F)
     {
-      a = (s + ☃ / ☃ * 12.0D);
-      c = (u + ☃ / ☃ * 12.0D);
-      b = (t + 8.0D);
+      this.a = (this.s + ☃ / ☃ * 12.0D);
+      this.c = (this.u + ☃ / ☃ * 12.0D);
+      this.b = (this.t + 8.0D);
     }
     else
     {
-      a = ☃;
-      b = ☃;
-      c = ☃;
+      this.a = ☃;
+      this.b = ☃;
+      this.c = ☃;
     }
-    d = 0;
-    e = (V.nextInt(5) > 0);
+    this.d = 0;
+    this.e = (this.V.nextInt(5) > 0);
   }
   
   public void i(double ☃, double ☃, double ☃)
   {
-    v = ☃;
-    w = ☃;
-    x = ☃;
-    if ((B == 0.0F) && (A == 0.0F))
+    this.v = ☃;
+    this.w = ☃;
+    this.x = ☃;
+    if ((this.B == 0.0F) && (this.A == 0.0F))
     {
       float ☃ = ns.a(☃ * ☃ + ☃ * ☃);
-      A = (y = (float)(ns.b(☃, ☃) * 180.0D / 3.1415927410125732D));
-      B = (z = (float)(ns.b(☃, ☃) * 180.0D / 3.1415927410125732D));
+      this.A = (this.y = (float)(ns.b(☃, ☃) * 180.0D / 3.1415927410125732D));
+      this.B = (this.z = (float)(ns.b(☃, ☃) * 180.0D / 3.1415927410125732D));
     }
   }
   
   public void t_()
   {
-    P = s;
-    Q = t;
-    R = u;
+    this.P = this.s;
+    this.Q = this.t;
+    this.R = this.u;
     super.t_();
     
-    s += v;
-    t += w;
-    u += x;
+    this.s += this.v;
+    this.t += this.w;
+    this.u += this.x;
     
-    float ☃ = ns.a(v * v + x * x);
-    y = ((float)(ns.b(v, x) * 180.0D / 3.1415927410125732D));
-    z = ((float)(ns.b(w, ☃) * 180.0D / 3.1415927410125732D));
-    while (z - B < -180.0F) {
-      B -= 360.0F;
+    float ☃ = ns.a(this.v * this.v + this.x * this.x);
+    this.y = ((float)(ns.b(this.v, this.x) * 180.0D / 3.1415927410125732D));
+    this.z = ((float)(ns.b(this.w, ☃) * 180.0D / 3.1415927410125732D));
+    while (this.z - this.B < -180.0F) {
+      this.B -= 360.0F;
     }
-    while (z - B >= 180.0F) {
-      B += 360.0F;
+    while (this.z - this.B >= 180.0F) {
+      this.B += 360.0F;
     }
-    while (y - A < -180.0F) {
-      A -= 360.0F;
+    while (this.y - this.A < -180.0F) {
+      this.A -= 360.0F;
     }
-    while (y - A >= 180.0F) {
-      A += 360.0F;
+    while (this.y - this.A >= 180.0F) {
+      this.A += 360.0F;
     }
-    z = (B + (z - B) * 0.2F);
-    y = (A + (y - A) * 0.2F);
-    if (!o.D)
+    this.z = (this.B + (this.z - this.B) * 0.2F);
+    this.y = (this.A + (this.y - this.A) * 0.2F);
+    if (!this.o.D)
     {
-      double ☃ = a - s;double ☃ = c - u;
+      double ☃ = this.a - this.s;double ☃ = this.c - this.u;
       float ☃ = (float)Math.sqrt(☃ * ☃ + ☃ * ☃);
       float ☃ = (float)ns.b(☃, ☃);
       double ☃ = ☃ + (☃ - ☃) * 0.0025D;
       if (☃ < 1.0F)
       {
         ☃ *= 0.8D;
-        w *= 0.8D;
+        this.w *= 0.8D;
       }
-      v = (Math.cos(☃) * ☃);
-      x = (Math.sin(☃) * ☃);
-      if (t < b) {
-        w += (1.0D - w) * 0.014999999664723873D;
+      this.v = (Math.cos(☃) * ☃);
+      this.x = (Math.sin(☃) * ☃);
+      if (this.t < this.b) {
+        this.w += (1.0D - this.w) * 0.014999999664723873D;
       } else {
-        w += (-1.0D - w) * 0.014999999664723873D;
+        this.w += (-1.0D - this.w) * 0.014999999664723873D;
       }
     }
     float ☃ = 0.25F;
     if (V()) {
       for (int ☃ = 0; ☃ < 4; ☃++) {
-        o.a(cy.e, s - v * ☃, t - w * ☃, u - x * ☃, v, w, x, new int[0]);
+        this.o.a(cy.e, this.s - this.v * ☃, this.t - this.w * ☃, this.u - this.x * ☃, this.v, this.w, this.x, new int[0]);
       }
     } else {
-      o.a(cy.y, s - v * ☃ + V.nextDouble() * 0.6D - 0.3D, t - w * ☃ - 0.5D, u - x * ☃ + V.nextDouble() * 0.6D - 0.3D, v, w, x, new int[0]);
+      this.o.a(cy.y, this.s - this.v * ☃ + this.V.nextDouble() * 0.6D - 0.3D, this.t - this.w * ☃ - 0.5D, this.u - this.x * ☃ + this.V.nextDouble() * 0.6D - 0.3D, this.v, this.w, this.x, new int[0]);
     }
-    if (!o.D)
+    if (!this.o.D)
     {
-      b(s, t, u);
+      b(this.s, this.t, this.u);
       
-      d += 1;
-      if ((d > 80) && (!o.D))
+      this.d += 1;
+      if ((this.d > 80) && (!this.o.D))
       {
         J();
-        if (e) {
-          o.d(new uz(o, s, t, u, new zx(zy.bH)));
+        if (this.e) {
+          this.o.d(new uz(this.o, this.s, this.t, this.u, new zx(zy.bH)));
         } else {
-          o.b(2003, new cj(this), 0);
+          this.o.b(2003, new cj(this), 0);
         }
       }
     }

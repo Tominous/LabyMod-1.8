@@ -60,19 +60,19 @@ public class aim
   public void a(adm ☃, cj ☃, alz ☃, float ☃, int ☃)
   {
     super.a(☃, ☃, ☃, ☃, ☃);
-    if (a(☃, s, ☃) != zw.a(this))
+    if (a(☃, ☃.s, ☃) != zw.a(this))
     {
       int ☃ = 0;
       if (this == afi.q) {
-        ☃ = ns.a(s, 0, 2);
+        ☃ = ns.a(☃.s, 0, 2);
       } else if (this == afi.ag) {
-        ☃ = ns.a(s, 3, 7);
+        ☃ = ns.a(☃.s, 3, 7);
       } else if (this == afi.bP) {
-        ☃ = ns.a(s, 3, 7);
+        ☃ = ns.a(☃.s, 3, 7);
       } else if (this == afi.x) {
-        ☃ = ns.a(s, 2, 5);
+        ☃ = ns.a(☃.s, 2, 5);
       } else if (this == afi.co) {
-        ☃ = ns.a(s, 2, 5);
+        ☃ = ns.a(☃.s, 2, 5);
       }
       b(☃, ☃, ☃);
     }

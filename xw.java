@@ -7,7 +7,7 @@ public class xw
   
   public xw(wm ☃, og ☃, wn ☃)
   {
-    a = ☃;
+    this.a = ☃;
     ☃.b(☃);
     int ☃ = 51;
     for (int ☃ = 0; ☃ < ☃.o_(); ☃++) {
@@ -25,27 +25,27 @@ public class xw
   
   public boolean a(wn ☃)
   {
-    return a.a(☃);
+    return this.a.a(☃);
   }
   
   public zx b(wn ☃, int ☃)
   {
     zx ☃ = null;
-    yg ☃ = (yg)c.get(☃);
+    yg ☃ = (yg)this.c.get(☃);
     if ((☃ != null) && (☃.e()))
     {
       zx ☃ = ☃.d();
       ☃ = ☃.k();
-      if (☃ < a.o_())
+      if (☃ < this.a.o_())
       {
-        if (!a(☃, a.o_(), c.size(), true)) {
+        if (!a(☃, this.a.o_(), this.c.size(), true)) {
           return null;
         }
       }
-      else if (!a(☃, 0, a.o_(), false)) {
+      else if (!a(☃, 0, this.a.o_(), false)) {
         return null;
       }
-      if (b == 0) {
+      if (☃.b == 0) {
         ☃.d(null);
       } else {
         ☃.f();
@@ -57,6 +57,6 @@ public class xw
   public void b(wn ☃)
   {
     super.b(☃);
-    a.c(☃);
+    this.a.c(☃);
   }
 }

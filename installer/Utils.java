@@ -792,16 +792,16 @@ public class Utils
     else
     {
       Dimension scrDim = Toolkit.getDefaultToolkit().getScreenSize();
-      parRect = new Rectangle(0, 0, width, height);
+      parRect = new Rectangle(0, 0, scrDim.width, scrDim.height);
     }
-    int newX = x + (width - width) / 2;
-    int newY = y + (height - height) / 2;
+    int newX = parRect.x + (parRect.width - rect.width) / 2;
+    int newY = parRect.y + (parRect.height - rect.height) / 2;
     if (newX < 0) {
       newX = 0;
     }
     if (newY < 0) {
       newY = 0;
     }
-    c.setBounds(newX, newY, width, height);
+    c.setBounds(newX, newY, rect.width, rect.height);
   }
 }

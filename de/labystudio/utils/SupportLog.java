@@ -55,14 +55,13 @@ public class SupportLog
     System.out.println("Date: " + new Date().toString());
     System.out.println("Minecraft Name: " + LabyMod.getInstance().getPlayerName());
     System.out.println("UUID: " + LabyMod.getInstance().getPlayerUUID());
-    System.out.println("LabyMod Version: 2.7.97");
+    System.out.println("LabyMod Version: 2.7.98");
     System.out.println("Minecraft Version: 1.8.8");
     System.out.println("Cosmetics loaded: " + (!LabyMod.getInstance().getCosmeticManager().getOnlineCosmetics().isEmpty()));
     System.out.println("Capes loaded: " + LabyMod.getInstance().getCapeManager().countUserCapes());
     System.out.println("Has LabyMod Cape: " + LabyMod.getInstance().getCapeManager().isWhitelisted(LabyMod.getInstance().getPlayerUUID()));
-    System.out.println("Capes enabled: " + settingscapes);
-    System.out.println("Cape Priority: " + settingscapePriority);
-    System.out.println("Server: " + getInstanceip);
+    System.out.println("Capes enabled: " + ConfigManager.settings.capes);
+    System.out.println("Server: " + LabyMod.getInstance().ip);
     System.out.println("-------------------------------");
     ArrayList<String> copy = new ArrayList(log);
     try
@@ -96,13 +95,13 @@ public class SupportLog
       {
         String hastebin = "http://hastebin.com/" + out.replace("{\"key\":\"", "").replace("\"}", "");
         System.out.println(hastebin);
-        LabyMod.getInstance().openWebpage(hastebin);
+        LabyMod.getInstance().openWebpage(hastebin, true);
       }
       else
       {
         String hastebin = out;
         System.out.println(hastebin);
-        LabyMod.getInstance().openWebpage(hastebin);
+        LabyMod.getInstance().openWebpage(hastebin, true);
       }
     }
     catch (Exception error)

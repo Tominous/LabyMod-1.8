@@ -3,10 +3,10 @@ public class ann
 {
   public void b()
   {
-    c = new aef(ady.x, 0.0F);
-    d = true;
-    e = true;
-    g = -1;
+    this.c = new aef(ady.x, 0.0F);
+    this.d = true;
+    this.e = true;
+    this.g = -1;
   }
   
   public aui b(float ☃, float ☃)
@@ -20,13 +20,13 @@ public class ann
     for (int ☃ = 0; ☃ <= 15; ☃++)
     {
       float ☃ = 1.0F - ☃ / 15.0F;
-      f[☃] = ((1.0F - ☃) / (☃ * 3.0F + 1.0F) * (1.0F - ☃) + ☃);
+      this.f[☃] = ((1.0F - ☃) / (☃ * 3.0F + 1.0F) * (1.0F - ☃) + ☃);
     }
   }
   
   public amv c()
   {
-    return new anw(b, b.P().s(), b.J());
+    return new anw(this.b, this.b.P().s(), this.b.J());
   }
   
   public boolean d()

@@ -11,18 +11,18 @@ public abstract class apg
   public apg(boolean ☃, int ☃, int ☃, alz ☃, alz ☃)
   {
     super(☃);
-    a = ☃;
-    d = ☃;
+    this.a = ☃;
+    this.d = ☃;
     
-    b = ☃;
-    c = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   protected int a(Random ☃)
   {
-    int ☃ = ☃.nextInt(3) + a;
-    if (d > 1) {
-      ☃ += ☃.nextInt(d);
+    int ☃ = ☃.nextInt(3) + this.a;
+    if (this.d > 1) {
+      ☃ += ☃.nextInt(this.d);
     }
     return ☃;
   }
@@ -86,7 +86,7 @@ public abstract class apg
           cj ☃ = ☃.a(☃, 0, ☃);
           arm ☃ = ☃.p(☃).c().t();
           if ((☃ == arm.a) || (☃ == arm.j)) {
-            a(☃, ☃, c);
+            a(☃, ☃, this.c);
           }
         }
       }
@@ -103,7 +103,7 @@ public abstract class apg
           cj ☃ = ☃.a(☃, 0, ☃);
           arm ☃ = ☃.p(☃).c().t();
           if ((☃ == arm.a) || (☃ == arm.j)) {
-            a(☃, ☃, c);
+            a(☃, ☃, this.c);
           }
         }
       }

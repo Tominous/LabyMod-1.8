@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import de.labystudio.cosmetic.Cosmetic;
 import de.labystudio.cosmetic.CosmeticManager;
+import de.labystudio.cosmetic.CosmeticUser;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.utils.Debug;
 import java.io.BufferedReader;
@@ -15,7 +16,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 
 public class UserCosmeticsDownloader
@@ -57,7 +57,9 @@ public class UserCosmeticsDownloader
       JsonElement element = parser.parse(json);
       try
       {
-        LabyMod.getInstance().getCosmeticManager().getOnlineCosmetics().clear();
+        HashMap<String, CosmeticUser> onlineList = LabyMod.getInstance().getCosmeticManager().getOnlineCosmetics();
+        HashMap<String, CosmeticUser> offlineList = LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics();
+        onlineList.clear();
         for (JsonElement a : element.getAsJsonArray()) {
           try
           {
@@ -66,20 +68,20 @@ public class UserCosmeticsDownloader
             {
               int type = a.getAsJsonObject().get("cosmetic_id").getAsInt();
               JsonElement dataElement = a.getAsJsonObject().get("data");
-              ArrayList<Cosmetic> list = new ArrayList();
-              if (LabyMod.getInstance().getCosmeticManager().getOnlineCosmetics().containsKey(uuid)) {
-                list.addAll((Collection)LabyMod.getInstance().getCosmeticManager().getOnlineCosmetics().get(uuid));
-              }
+              CosmeticUser userInList = (CosmeticUser)onlineList.get(uuid);
+              CosmeticUser user = userInList == null ? new CosmeticUser() : userInList;
               if ((dataElement instanceof JsonNull))
               {
-                list.add(new Cosmetic(type));
-                LabyMod.getInstance().getCosmeticManager().getOnlineCosmetics().put(uuid, list);
+                user.addToCosmeticList(new Cosmetic(type));
               }
               else
               {
                 String data = dataElement.getAsString();
-                list.add(new Cosmetic(type, data));
-                LabyMod.getInstance().getCosmeticManager().getOnlineCosmetics().put(uuid, list);
+                user.addToCosmeticList(new Cosmetic(type, data));
+              }
+              user.updateData();
+              if (userInList == null) {
+                onlineList.put(uuid, user);
               }
             }
           }
@@ -89,16 +91,19 @@ public class UserCosmeticsDownloader
             error.printStackTrace();
           }
         }
-        LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics().putAll(LabyMod.getInstance().getCosmeticManager().getOnlineCosmetics());
-        Debug.debug("[Cosmetics] Loaded " + LabyMod.getInstance().getCosmeticManager().getOnlineCosmetics().size() + " cosmetics");
+        for (String hash : onlineList.keySet()) {
+          offlineList.put(hash, new CosmeticUser(new ArrayList(((CosmeticUser)onlineList.get(hash)).getCosmeticsData())));
+        }
+        Debug.debug("[Cosmetics] Loaded " + onlineList.size() + " cosmetics");
         LabyMod.getInstance().getCosmeticManager().load();
+        return true;
       }
       catch (Exception error)
       {
         error.printStackTrace();
         Debug.debug("[Cosmetics] Failed to load cosmetics: " + error.getMessage());
       }
-      return true;
+      LabyMod.getInstance().getCosmeticManager().load();
     }
     catch (Exception error)
     {

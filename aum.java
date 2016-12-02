@@ -25,15 +25,15 @@ public class aum
   
   public aum(auo ☃, auk ☃, String ☃)
   {
-    b = ☃;
-    c = ☃;
-    d = ☃;
-    g = true;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.g = true;
   }
   
   public void a(int ☃)
   {
-    if (c.c().b()) {
+    if (this.c.c().b()) {
       throw new IllegalStateException("Cannot modify read-only score");
     }
     c(c() + ☃);
@@ -41,7 +41,7 @@ public class aum
   
   public void b(int ☃)
   {
-    if (c.c().b()) {
+    if (this.c.c().b()) {
       throw new IllegalStateException("Cannot modify read-only score");
     }
     c(c() - ☃);
@@ -49,7 +49,7 @@ public class aum
   
   public void a()
   {
-    if (c.c().b()) {
+    if (this.c.c().b()) {
       throw new IllegalStateException("Cannot modify read-only score");
     }
     a(1);
@@ -57,47 +57,47 @@ public class aum
   
   public int c()
   {
-    return e;
+    return this.e;
   }
   
   public void c(int ☃)
   {
-    int ☃ = e;
-    e = ☃;
-    if ((☃ != ☃) || (g))
+    int ☃ = this.e;
+    this.e = ☃;
+    if ((☃ != ☃) || (this.g))
     {
-      g = false;
+      this.g = false;
       f().a(this);
     }
   }
   
   public auk d()
   {
-    return c;
+    return this.c;
   }
   
   public String e()
   {
-    return d;
+    return this.d;
   }
   
   public auo f()
   {
-    return b;
+    return this.b;
   }
   
   public boolean g()
   {
-    return f;
+    return this.f;
   }
   
   public void a(boolean ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
   
   public void a(List<wn> ☃)
   {
-    c(c.c().a(☃));
+    c(this.c.c().a(☃));
   }
 }

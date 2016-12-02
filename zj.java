@@ -13,12 +13,12 @@ public class zj
     alz ☃ = ☃.p(☃);
     if ((☃.a(☃.a(☃), ☃, ☃)) && (☃.c() == afi.bG) && (!((Boolean)☃.b(ago.b)).booleanValue()))
     {
-      if (D) {
+      if (☃.D) {
         return true;
       }
       ☃.a(☃, ☃.a(ago.b, Boolean.valueOf(true)), 2);
       ☃.e(☃, afi.bG);
-      b -= 1;
+      ☃.b -= 1;
       for (int ☃ = 0; ☃ < 16; ☃++)
       {
         double ☃ = ☃.n() + (5.0F + g.nextFloat() * 6.0F) / 16.0F;
@@ -104,23 +104,23 @@ public class zj
   public zx a(zx ☃, adm ☃, wn ☃)
   {
     auh ☃ = a(☃, ☃, false);
-    if ((☃ != null) && (a == auh.a.b) && 
+    if ((☃ != null) && (☃.a == auh.a.b) && 
       (☃.p(☃.a()).c() == afi.bG)) {
       return ☃;
     }
-    if (!D)
+    if (!☃.D)
     {
       cj ☃ = ☃.a("Stronghold", new cj(☃));
       if (☃ != null)
       {
-        wr ☃ = new wr(☃, s, t, u);
+        wr ☃ = new wr(☃, ☃.s, ☃.t, ☃.u);
         ☃.a(☃);
         ☃.d(☃);
         
         ☃.a(☃, "random.bow", 0.5F, 0.4F / (g.nextFloat() * 0.4F + 0.8F));
         ☃.a(null, 1002, new cj(☃), 0);
-        if (!bA.d) {
-          b -= 1;
+        if (!☃.bA.d) {
+          ☃.b -= 1;
         }
         ☃.b(na.ad[zw.b(this)]);
       }

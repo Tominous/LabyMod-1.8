@@ -11,7 +11,7 @@ public abstract class agw
   
   protected agw()
   {
-    j(M.b().a(n(), l() == agw.b.b ? agw.a.b : agw.a.a));
+    j(this.M.b().a(n(), l() == agw.b.b ? agw.a.b : agw.a.a));
   }
   
   public int a(alz ☃)
@@ -35,16 +35,16 @@ public abstract class agw
   
   public amo<agw.a> n()
   {
-    if (a == null) {
-      a = amm.a("type", agw.a.class, new Predicate()
+    if (this.a == null) {
+      this.a = amm.a("type", agw.a.class, new Predicate()
       {
         public boolean a(agw.a ☃)
         {
-          return ☃.a() == l();
+          return ☃.a() == agw.this.l();
         }
       });
     }
-    return a;
+    return this.a;
   }
   
   public int c(alz ☃)
@@ -88,7 +88,7 @@ public abstract class agw
         {
           public boolean a(agw.a ☃)
           {
-            return ☃.a() == a;
+            return ☃.a() == this.a;
           }
         });
         k[☃.ordinal()] = ((a[])☃.toArray(new a[☃.size()]));
@@ -102,20 +102,20 @@ public abstract class agw
     
     private a(agw.b ☃, int ☃, String ☃, String ☃)
     {
-      l = ☃;
-      m = ☃;
-      n = ☃;
-      o = ☃;
+      this.l = ☃;
+      this.m = ☃;
+      this.n = ☃;
+      this.o = ☃;
     }
     
     public agw.b a()
     {
-      return l;
+      return this.l;
     }
     
     public int b()
     {
-      return m;
+      return this.m;
     }
     
     public static a a(agw.b ☃, int ☃)
@@ -134,17 +134,17 @@ public abstract class agw
     
     public String toString()
     {
-      return n;
+      return this.n;
     }
     
     public String l()
     {
-      return n;
+      return this.n;
     }
     
     public String d()
     {
-      return o;
+      return this.o;
     }
   }
   

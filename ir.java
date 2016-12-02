@@ -11,25 +11,25 @@ public class ir
   
   public ir(ir.a ☃, cj ☃, cq ☃)
   {
-    c = ☃;
-    a = ☃;
-    b = ☃;
+    this.c = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    c = ((ir.a)☃.a(ir.a.class));
-    a = ☃.c();
-    b = cq.a(☃.readUnsignedByte());
+    this.c = ((ir.a)☃.a(ir.a.class));
+    this.a = ☃.c();
+    this.b = cq.a(☃.readUnsignedByte());
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(c);
-    ☃.a(a);
-    ☃.writeByte(b.a());
+    ☃.a(this.c);
+    ☃.a(this.a);
+    ☃.writeByte(this.b.a());
   }
   
   public void a(ic ☃)
@@ -39,17 +39,17 @@ public class ir
   
   public cj a()
   {
-    return a;
+    return this.a;
   }
   
   public cq b()
   {
-    return b;
+    return this.b;
   }
   
   public ir.a c()
   {
-    return c;
+    return this.c;
   }
   
   public static enum a

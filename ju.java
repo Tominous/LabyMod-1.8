@@ -9,19 +9,19 @@ public class ju
   
   public ju(long ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.readLong();
+    this.a = ☃.readLong();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeLong(a);
+    ☃.writeLong(this.a);
   }
   
   public void a(jt ☃)
@@ -31,6 +31,6 @@ public class ju
   
   public long a()
   {
-    return a;
+    return this.a;
   }
 }

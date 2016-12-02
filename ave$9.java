@@ -7,6 +7,6 @@ class ave$9
   
   public String call()
   {
-    return this$0.t.u ? "Yes" : "No";
+    return this.this$0.t.u ? "Yes" : "No";
   }
 }

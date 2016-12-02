@@ -24,12 +24,12 @@ public class abt
     new abx().a(this);
     new abi().a(this);
     new abl().a(this);
-    b.add(new abh());
-    b.add(new abk());
-    b.add(new abp());
-    b.add(new abq());
-    b.add(new abm());
-    b.add(new abu());
+    this.b.add(new abh());
+    this.b.add(new abk());
+    this.b.add(new abp());
+    this.b.add(new abq());
+    this.b.add(new abm());
+    this.b.add(new abu());
     new abj().a(this);
     
     a(new zx(zy.aK, 3), new Object[] { "###", Character.valueOf('#'), zy.aJ });
@@ -300,7 +300,7 @@ public class abt
     
     a(new zx(zy.cj, 1), new Object[] { "///", " / ", "/_/", Character.valueOf('/'), zy.y, Character.valueOf('_'), new zx(afi.U, 1, akb.a.a.a()) });
     
-    Collections.sort(b, new Comparator()
+    Collections.sort(this.b, new Comparator()
     {
       public int a(abs ☃, abs ☃)
       {
@@ -373,7 +373,7 @@ public class abt
       }
     }
     abv ☃ = new abv(☃, ☃, ☃, ☃);
-    b.add(☃);
+    this.b.add(☃);
     return ☃;
   }
   
@@ -391,17 +391,17 @@ public class abt
         throw new IllegalArgumentException("Invalid shapeless recipe: unknown type " + ☃.getClass().getName() + "!");
       }
     }
-    b.add(new abw(☃, ☃));
+    this.b.add(new abw(☃, ☃));
   }
   
   public void a(abs ☃)
   {
-    b.add(☃);
+    this.b.add(☃);
   }
   
   public zx a(xp ☃, adm ☃)
   {
-    for (abs ☃ : b) {
+    for (abs ☃ : this.b) {
       if (☃.a(☃, ☃)) {
         return ☃.a(☃);
       }
@@ -411,7 +411,7 @@ public class abt
   
   public zx[] b(xp ☃, adm ☃)
   {
-    for (abs ☃ : b) {
+    for (abs ☃ : this.b) {
       if (☃.a(☃, ☃)) {
         return ☃.b(☃);
       }
@@ -425,6 +425,6 @@ public class abt
   
   public List<abs> b()
   {
-    return b;
+    return this.b;
   }
 }

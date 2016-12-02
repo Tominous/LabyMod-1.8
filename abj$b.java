@@ -60,7 +60,7 @@ class abj$b
         if (aku.c(☃) > 0)
         {
           zx ☃ = ☃.k();
-          b = 1;
+          ☃.b = 1;
           return ☃;
         }
       }
@@ -93,7 +93,7 @@ class abj$b
           (aku.c(☃) > 0))
         {
           ☃[☃] = ☃.k();
-          b = 1;
+          ☃[☃].b = 1;
         }
       }
     }

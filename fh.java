@@ -9,7 +9,7 @@ public class fh
       {
         public void run()
         {
-          a.a(☃);
+          this.a.a(☃);
         }
       });
       throw ki.a;

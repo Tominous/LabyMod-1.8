@@ -9,34 +9,34 @@ public class rp
   
   public rp(py ☃, double ☃)
   {
-    a = ☃;
-    e = ☃;
+    this.a = ☃;
+    this.e = ☃;
     a(1);
   }
   
   public boolean a()
   {
-    if (a.cg()) {
+    if (this.a.cg()) {
       return false;
     }
-    cj ☃ = a.ch();
-    aui ☃ = tc.a(a, 16, 7, new aui(☃.n(), ☃.o(), ☃.p()));
+    cj ☃ = this.a.ch();
+    aui ☃ = tc.a(this.a, 16, 7, new aui(☃.n(), ☃.o(), ☃.p()));
     if (☃ == null) {
       return false;
     }
-    b = a;
-    c = b;
-    d = c;
+    this.b = ☃.a;
+    this.c = ☃.b;
+    this.d = ☃.c;
     return true;
   }
   
   public boolean b()
   {
-    return !a.s().m();
+    return !this.a.s().m();
   }
   
   public void c()
   {
-    a.s().a(b, c, d, e);
+    this.a.s().a(this.b, this.c, this.d, this.e);
   }
 }

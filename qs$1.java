@@ -7,6 +7,6 @@ class qs$1
   
   public boolean a(pk ☃)
   {
-    return (☃.ai()) && (a.a.t().a(☃));
+    return (☃.ai()) && (this.a.a.t().a(☃));
   }
 }

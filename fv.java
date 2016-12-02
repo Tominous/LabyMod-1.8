@@ -10,22 +10,22 @@ public class fv
   
   public fv(adm ☃, cj ☃)
   {
-    a = ☃;
-    b = ☃.p(☃);
+    this.a = ☃;
+    this.b = ☃.p(☃);
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.c();
-    b = ((alz)afh.d.a(☃.e()));
+    this.a = ☃.c();
+    this.b = ((alz)afh.d.a(☃.e()));
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a);
-    ☃.b(afh.d.b(b));
+    ☃.a(this.a);
+    ☃.b(afh.d.b(this.b));
   }
   
   public void a(fj ☃)
@@ -35,11 +35,11 @@ public class fv
   
   public alz a()
   {
-    return b;
+    return this.b;
   }
   
   public cj b()
   {
-    return a;
+    return this.a;
   }
 }

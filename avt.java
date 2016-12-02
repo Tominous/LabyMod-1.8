@@ -7,7 +7,6 @@ import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
 import de.labystudio.listener.ChatListener;
-import de.labystudio.listener.GommeHD;
 import de.labystudio.utils.Color;
 import de.labystudio.utils.DrawUtils;
 import de.labystudio.utils.FilterLoader;
@@ -31,28 +30,28 @@ public class avt
   
   public avt(ave mcIn)
   {
-    f = mcIn;
-    draw = getInstancedraw;
+    this.f = mcIn;
+    this.draw = LabyMod.getInstance().draw;
   }
   
   int detectChange = 0;
   
   public void a(int p_146230_1_)
   {
-    draw = getInstancedraw;
-    if (detectChange != draw.getWidth()) {
+    this.draw = LabyMod.getInstance().draw;
+    if (this.detectChange != this.draw.getWidth()) {
       b();
     }
-    detectChange = draw.getWidth();
+    this.detectChange = this.draw.getWidth();
     
     GuiNewModChat.drawChat(p_146230_1_);
-    if (f.t.m != wn.b.c)
+    if (this.f.t.m != wn.b.c)
     {
       int var2 = i();
       boolean var3 = false;
       int var4 = 0;
-      int var5 = i.size();
-      float var6 = f.t.q * 0.9F + 0.1F;
+      int var5 = this.i.size();
+      float var6 = this.f.t.q * 0.9F + 0.1F;
       if (var5 > 0)
       {
         if (e()) {
@@ -65,9 +64,9 @@ public class avt
         bfl.a(var7, var7, 1.0F);
         
         int sort = 0;
-        for (int var9 = 0; (var9 + j < i.size()) && (var9 < var2); var9++)
+        for (int var9 = 0; (var9 + this.j < this.i.size()) && (var9 < var2); var9++)
         {
-          ava var10 = (ava)i.get(var9 + j);
+          ava var10 = (ava)this.i.get(var9 + this.j);
           if (var10 != null)
           {
             int var11 = p_146230_1_ - var10.b();
@@ -104,7 +103,7 @@ public class avt
                 bfl.l();
                 try
                 {
-                  f.k.a(var17, var15, var16 - 8, 16777215 + (var14 << 24));
+                  this.f.k.a(var17, var15, var16 - 8, 16777215 + (var14 << 24));
                 }
                 catch (Exception error)
                 {
@@ -118,16 +117,16 @@ public class avt
         }
         if (var3)
         {
-          var9 = f.k.a;
+          var9 = this.f.k.a;
           bfl.b(-3.0F, 0.0F, 0.0F);
           int var18 = var5 * var9 + var5;
           int var11 = var4 * var9 + var4;
-          int var19 = j * var11 / var5;
+          int var19 = this.j * var11 / var5;
           int var13 = var11 * var11 / var18;
           if (var18 != var11)
           {
             int var14 = var19 > 0 ? 170 : 96;
-            int var20 = k ? 13382451 : 3355562;
+            int var20 = this.k ? 13382451 : 3355562;
             a(0, -var19, 2, -var19 - var13, var20 + (var14 << 24));
             a(2, -var19, 1, -var19 - var13, 13421772 + (var14 << 24));
           }
@@ -139,9 +138,9 @@ public class avt
   
   public void a()
   {
-    i.clear();
-    h.clear();
-    g.clear();
+    this.i.clear();
+    this.h.clear();
+    this.g.clear();
     GuiNewModChat.clearChatMessages();
   }
   
@@ -154,26 +153,15 @@ public class avt
   {
     if (ChatListener.allowedToPrint(p_146234_1_))
     {
-      a(p_146234_1_, p_146234_2_, f.q.e(), false);
+      a(p_146234_1_, p_146234_2_, this.f.q.e(), false);
       a.info("[CHAT] " + p_146234_1_.c());
     }
   }
   
   private void a(eu p_146237_1_, int p_146237_2_, int p_146237_3_, boolean p_146237_4_)
   {
-    if ((GommeHD.isGommeHD()) && (settingsgommeOldUserColor) && 
-      (p_146237_1_ != null))
-    {
-      String chat = p_146237_1_.d();
-      if ((chat != null) && (chat.startsWith(Color.cl("r") + Color.cl("8"))))
-      {
-        fa chatComponent = new fa(chat.replaceFirst(Color.cl("r") + Color.cl("8"), Color.cl("a")));
-        chatComponent.a(p_146237_1_.b());
-        p_146237_1_ = chatComponent;
-      }
-    }
     boolean leftChat = ChatListener.isServerMSG(Color.removeColor(p_146237_1_.c()));
-    if (!settingschatPositionRight) {
+    if (!ConfigManager.settings.chatPositionRight) {
       leftChat = !leftChat;
     }
     if (leftChat)
@@ -185,26 +173,26 @@ public class avt
       c(p_146237_2_);
     }
     int var5 = ns.d(f() / h());
-    List var6 = avu.a(p_146237_1_, var5, f.k, false, false);
+    List var6 = avu.a(p_146237_1_, var5, this.f.k, false, false);
     boolean var7 = e();
     eu var9;
-    for (Iterator var8 = var6.iterator(); var8.hasNext(); i.add(0, new ava(p_146237_3_, var9, p_146237_2_)))
+    for (Iterator var8 = var6.iterator(); var8.hasNext(); this.i.add(0, new ava(p_146237_3_, var9, p_146237_2_)))
     {
       var9 = (eu)var8.next();
-      if ((var7) && (j > 0))
+      if ((var7) && (this.j > 0))
       {
-        k = true;
+        this.k = true;
         b(1);
       }
     }
-    while (i.size() > 100) {
-      i.remove(i.size() - 1);
+    while (this.i.size() > 100) {
+      this.i.remove(this.i.size() - 1);
     }
     if (!p_146237_4_)
     {
-      h.add(0, new ava(p_146237_3_, p_146237_1_, p_146237_2_));
-      while (h.size() > 100) {
-        h.remove(h.size() - 1);
+      this.h.add(0, new ava(p_146237_3_, p_146237_1_, p_146237_2_));
+      while (this.h.size() > 100) {
+        this.h.remove(this.h.size() - 1);
       }
     }
   }
@@ -212,11 +200,11 @@ public class avt
   public void b()
   {
     ChatListener.init = ave.J();
-    i.clear();
+    this.i.clear();
     d();
-    for (int var1 = h.size() - 1; var1 >= 0; var1--)
+    for (int var1 = this.h.size() - 1; var1 >= 0; var1--)
     {
-      ava var2 = (ava)h.get(var1);
+      ava var2 = (ava)this.h.get(var1);
       a(var2.a(), var2.c(), var2.b(), true);
     }
     GuiNewModChat.refreshChat();
@@ -224,37 +212,37 @@ public class avt
   
   public List c()
   {
-    return g;
+    return this.g;
   }
   
   public void a(String p_146239_1_)
   {
-    if ((g.isEmpty()) || (!((String)g.get(g.size() - 1)).equals(p_146239_1_))) {
-      g.add(p_146239_1_);
+    if ((this.g.isEmpty()) || (!((String)this.g.get(this.g.size() - 1)).equals(p_146239_1_))) {
+      this.g.add(p_146239_1_);
     }
   }
   
   public void d()
   {
-    j = 0;
-    k = false;
+    this.j = 0;
+    this.k = false;
   }
   
   public void b(int p_146229_1_)
   {
     GuiNewModChat.scroll(p_146229_1_);
-    if ((DrawUtils.getMouseX() > f()) && ((settingsextraChat) || (settingschatFilter))) {
+    if ((DrawUtils.getMouseX() > f()) && ((ConfigManager.settings.extraChat) || (ConfigManager.settings.chatFilter))) {
       return;
     }
-    j += p_146229_1_;
-    int var2 = i.size();
-    if (j > var2 - i()) {
-      j = (var2 - i());
+    this.j += p_146229_1_;
+    int var2 = this.i.size();
+    if (this.j > var2 - i()) {
+      this.j = (var2 - i());
     }
-    if (j <= 0)
+    if (this.j <= 0)
     {
-      j = 0;
-      k = false;
+      this.j = 0;
+      this.k = false;
     }
   }
   
@@ -263,7 +251,7 @@ public class avt
     if (!e()) {
       return null;
     }
-    avr var3 = new avr(f);
+    avr var3 = new avr(this.f);
     int var4 = var3.e();
     float var5 = h();
     int var6 = p_146236_1_ / var4 - 3;
@@ -272,13 +260,13 @@ public class avt
     var7 = ns.d(var7 / var5);
     if ((var6 >= 0) && (var7 >= 0))
     {
-      int var8 = Math.min(i(), i.size());
-      if ((var6 <= ns.d(f() / h())) && (var7 < f.k.a * var8 + var8))
+      int var8 = Math.min(i(), this.i.size());
+      if ((var6 <= ns.d(f() / h())) && (var7 < this.f.k.a * var8 + var8))
       {
-        int var9 = var7 / f.k.a + j;
-        if ((var9 >= 0) && (var9 < i.size()))
+        int var9 = var7 / this.f.k.a + this.j;
+        if ((var9 >= 0) && (var9 < this.i.size()))
         {
-          ava var10 = (ava)i.get(var9);
+          ava var10 = (ava)this.i.get(var9);
           int var11 = 0;
           Iterator var12 = var10.a().iterator();
           while (var12.hasNext())
@@ -286,7 +274,7 @@ public class avt
             eu var13 = (eu)var12.next();
             if ((var13 instanceof fa))
             {
-              var11 += f.k.a(avu.a(((fa)var13).g(), false));
+              var11 += this.f.k.a(avu.a(((fa)var13).g(), false));
               if (var11 > var6) {
                 return var13;
               }
@@ -302,12 +290,12 @@ public class avt
   
   public boolean e()
   {
-    return ((Am instanceof awv)) || ((Am instanceof GuiNameHistory)) || ((Am instanceof GuiFilter)) || ((Am instanceof GuiAutoText));
+    return ((ave.A().m instanceof awv)) || ((ave.A().m instanceof GuiNameHistory)) || ((ave.A().m instanceof GuiFilter)) || ((ave.A().m instanceof GuiAutoText));
   }
   
   public void c(int p_146242_1_)
   {
-    Iterator var2 = i.iterator();
+    Iterator var2 = this.i.iterator();
     while (var2.hasNext())
     {
       ava var3 = (ava)var2.next();
@@ -315,7 +303,7 @@ public class avt
         var2.remove();
       }
     }
-    var2 = h.iterator();
+    var2 = this.h.iterator();
     while (var2.hasNext())
     {
       ava var3 = (ava)var2.next();
@@ -327,17 +315,17 @@ public class avt
   
   public int f()
   {
-    return a(f.t.F);
+    return a(this.f.t.F);
   }
   
   public int g()
   {
-    return b(e() ? f.t.H : f.t.G);
+    return b(e() ? this.f.t.H : this.f.t.G);
   }
   
   public float h()
   {
-    return f.t.E;
+    return this.f.t.E;
   }
   
   public static int a(float p_146233_0_)

@@ -16,10 +16,10 @@ public abstract class ls<T>
   public ls(T ☃, Date ☃, String ☃, Date ☃, String ☃)
   {
     super(☃);
-    b = (☃ == null ? new Date() : ☃);
-    c = (☃ == null ? "(Unknown)" : ☃);
-    d = ☃;
-    e = (☃ == null ? "Banned by an operator." : ☃);
+    this.b = (☃ == null ? new Date() : ☃);
+    this.c = (☃ == null ? "(Unknown)" : ☃);
+    this.d = ☃;
+    this.e = (☃ == null ? "Banned by an operator." : ☃);
   }
   
   protected ls(T ☃, JsonObject ☃)
@@ -34,8 +34,8 @@ public abstract class ls<T>
     {
       ☃ = new Date();
     }
-    b = ☃;
-    c = (☃.has("source") ? ☃.get("source").getAsString() : "(Unknown)");
+    this.b = ☃;
+    this.c = (☃.has("source") ? ☃.get("source").getAsString() : "(Unknown)");
     Date ☃;
     try
     {
@@ -45,33 +45,33 @@ public abstract class ls<T>
     {
       ☃ = null;
     }
-    d = ☃;
-    e = (☃.has("reason") ? ☃.get("reason").getAsString() : "Banned by an operator.");
+    this.d = ☃;
+    this.e = (☃.has("reason") ? ☃.get("reason").getAsString() : "Banned by an operator.");
   }
   
   public Date c()
   {
-    return d;
+    return this.d;
   }
   
   public String d()
   {
-    return e;
+    return this.e;
   }
   
   boolean e()
   {
-    if (d == null) {
+    if (this.d == null) {
       return false;
     }
-    return d.before(new Date());
+    return this.d.before(new Date());
   }
   
   protected void a(JsonObject ☃)
   {
-    ☃.addProperty("created", a.format(b));
-    ☃.addProperty("source", c);
-    ☃.addProperty("expires", d == null ? "forever" : a.format(d));
-    ☃.addProperty("reason", e);
+    ☃.addProperty("created", a.format(this.b));
+    ☃.addProperty("source", this.c);
+    ☃.addProperty("expires", this.d == null ? "forever" : a.format(this.d));
+    ☃.addProperty("reason", this.e);
   }
 }

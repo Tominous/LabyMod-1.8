@@ -2,21 +2,14 @@ import com.google.common.base.Function;
 import java.util.Map.Entry;
 
 final class aly$1
-  implements Function
+  implements Function<Map.Entry<amo, Comparable>, String>
 {
-  private static final String __OBFID = "CL_00002031";
-  
-  public String a(Map.Entry p_177225_1_)
+  public String a(Map.Entry<amo, Comparable> ☃)
   {
-    if (p_177225_1_ == null) {
+    if (☃ == null) {
       return "<NULL>";
     }
-    amo var2 = (amo)p_177225_1_.getKey();
-    return var2.a() + "=" + var2.a((Comparable)p_177225_1_.getValue());
-  }
-  
-  public Object apply(Object p_apply_1_)
-  {
-    return a((Map.Entry)p_apply_1_);
+    amo ☃ = (amo)☃.getKey();
+    return ☃.a() + "=" + ☃.a((Comparable)☃.getValue());
   }
 }

@@ -19,31 +19,31 @@ public class ModTemplate
   
   public boolean isEnabled()
   {
-    return recommended;
+    return this.recommended;
   }
   
   public String getModName()
   {
-    return modName;
+    return this.modName;
   }
   
   public String getAuthor()
   {
-    return author;
+    return this.author;
   }
   
   public void setEnabled(boolean enabled)
   {
-    recommended = enabled;
+    this.recommended = enabled;
   }
   
   public String getDownload()
   {
-    return download;
+    return this.download;
   }
   
   public boolean isProhibited()
   {
-    return prohibited;
+    return this.prohibited;
   }
 }

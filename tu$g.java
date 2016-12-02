@@ -6,13 +6,13 @@ class tu$g
   public tu$g(tu ☃, double ☃)
   {
     super(☃, ☃);
-    b = ☃;
+    this.b = ☃;
   }
   
   public void e()
   {
     super.e();
     
-    b.b(a);
+    this.b.b(this.a);
   }
 }

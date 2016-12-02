@@ -5,36 +5,36 @@ class kz$1
   
   public void a(ams ☃, double ☃)
   {
-    a.af().a(☃);
+    this.a.af().a(☃);
   }
   
   public void a(ams ☃, double ☃, double ☃, long ☃)
   {
-    a.af().a(☃, ☃, ☃);
+    this.a.af().a(☃, ☃, ☃);
   }
   
   public void a(ams ☃, double ☃, double ☃)
   {
-    a.af().c(☃, ☃);
+    this.a.af().c(☃, ☃);
   }
   
   public void a(ams ☃, int ☃)
   {
-    a.af().b(☃);
+    this.a.af().b(☃);
   }
   
   public void b(ams ☃, int ☃)
   {
-    a.af().c(☃);
+    this.a.af().c(☃);
   }
   
   public void b(ams ☃, double ☃)
   {
-    a.af().c(☃);
+    this.a.af().c(☃);
   }
   
   public void c(ams ☃, double ☃)
   {
-    a.af().b(☃);
+    this.a.af().b(☃);
   }
 }

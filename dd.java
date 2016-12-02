@@ -21,31 +21,31 @@ public class dd<K, V>
   
   public V a(K ☃)
   {
-    return (V)c.get(☃);
+    return (V)this.c.get(☃);
   }
   
   public void a(K ☃, V ☃)
   {
     Validate.notNull(☃);
     Validate.notNull(☃);
-    if (c.containsKey(☃)) {
+    if (this.c.containsKey(☃)) {
       a.debug("Adding duplicate key '" + ☃ + "' to registry");
     }
-    c.put(☃, ☃);
+    this.c.put(☃, ☃);
   }
   
   public Set<K> c()
   {
-    return Collections.unmodifiableSet(c.keySet());
+    return Collections.unmodifiableSet(this.c.keySet());
   }
   
   public boolean d(K ☃)
   {
-    return c.containsKey(☃);
+    return this.c.containsKey(☃);
   }
   
   public Iterator<V> iterator()
   {
-    return c.values().iterator();
+    return this.c.values().iterator();
   }
 }

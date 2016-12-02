@@ -8,29 +8,29 @@ public class gv$a
   public gv$a(int ☃, byte ☃, byte ☃, byte ☃, boolean ☃)
   {
     super(☃);
-    b = ☃;
-    c = ☃;
-    d = ☃;
-    g = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.g = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
     super.a(☃);
-    b = ☃.readByte();
-    c = ☃.readByte();
-    d = ☃.readByte();
-    g = ☃.readBoolean();
+    this.b = ☃.readByte();
+    this.c = ☃.readByte();
+    this.d = ☃.readByte();
+    this.g = ☃.readBoolean();
   }
   
   public void b(em ☃)
     throws IOException
   {
     super.b(☃);
-    ☃.writeByte(b);
-    ☃.writeByte(c);
-    ☃.writeByte(d);
-    ☃.writeBoolean(g);
+    ☃.writeByte(this.b);
+    ☃.writeByte(this.c);
+    ☃.writeByte(this.d);
+    ☃.writeBoolean(this.g);
   }
 }

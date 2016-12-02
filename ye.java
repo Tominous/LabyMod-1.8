@@ -10,7 +10,7 @@ public class ye
   
   public zx a(int ☃)
   {
-    return a[0];
+    return this.a[0];
   }
   
   public String e_()
@@ -33,10 +33,10 @@ public class ye
   
   public zx a(int ☃, int ☃)
   {
-    if (a[0] != null)
+    if (this.a[0] != null)
     {
-      zx ☃ = a[0];
-      a[0] = null;
+      zx ☃ = this.a[0];
+      this.a[0] = null;
       return ☃;
     }
     return null;
@@ -44,10 +44,10 @@ public class ye
   
   public zx b(int ☃)
   {
-    if (a[0] != null)
+    if (this.a[0] != null)
     {
-      zx ☃ = a[0];
-      a[0] = null;
+      zx ☃ = this.a[0];
+      this.a[0] = null;
       return ☃;
     }
     return null;
@@ -55,7 +55,7 @@ public class ye
   
   public void a(int ☃, zx ☃)
   {
-    a[0] = ☃;
+    this.a[0] = ☃;
   }
   
   public int q_()
@@ -93,8 +93,8 @@ public class ye
   
   public void l()
   {
-    for (int ☃ = 0; ☃ < a.length; ☃++) {
-      a[☃] = null;
+    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
+      this.a[☃] = null;
     }
   }
 }

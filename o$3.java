@@ -7,10 +7,10 @@ final class o$3
   
   public boolean a(pk ☃)
   {
-    if ((s < a.a) || (t < a.b) || (u < a.c)) {
+    if ((☃.s < this.a.a) || (☃.t < this.a.b) || (☃.u < this.a.c)) {
       return false;
     }
-    if ((s >= a.d) || (t >= a.e) || (u >= a.f)) {
+    if ((☃.s >= this.a.d) || (☃.t >= this.a.e) || (☃.u >= this.a.f)) {
       return false;
     }
     return true;

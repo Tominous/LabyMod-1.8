@@ -11,7 +11,7 @@ public class bfo
   
   public bfo(bou ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
   
   public bmi a(zw ☃)
@@ -31,13 +31,13 @@ public class bfo
     boq ☃ = b(☃, b(☃));
     if (☃ == null)
     {
-      bfp ☃ = (bfp)c.get(☃);
+      bfp ☃ = (bfp)this.c.get(☃);
       if (☃ != null) {
-        ☃ = d.a(☃.a(☃));
+        ☃ = this.d.a(☃.a(☃));
       }
     }
     if (☃ == null) {
-      ☃ = d.a();
+      ☃ = this.d.a();
     }
     return ☃;
   }
@@ -49,7 +49,7 @@ public class bfo
   
   protected boq b(zw ☃, int ☃)
   {
-    return (boq)b.get(Integer.valueOf(c(☃, ☃)));
+    return (boq)this.b.get(Integer.valueOf(c(☃, ☃)));
   }
   
   private int c(zw ☃, int ☃)
@@ -59,25 +59,25 @@ public class bfo
   
   public void a(zw ☃, int ☃, bov ☃)
   {
-    a.put(Integer.valueOf(c(☃, ☃)), ☃);
-    b.put(Integer.valueOf(c(☃, ☃)), d.a(☃));
+    this.a.put(Integer.valueOf(c(☃, ☃)), ☃);
+    this.b.put(Integer.valueOf(c(☃, ☃)), this.d.a(☃));
   }
   
   public void a(zw ☃, bfp ☃)
   {
-    c.put(☃, ☃);
+    this.c.put(☃, ☃);
   }
   
   public bou a()
   {
-    return d;
+    return this.d;
   }
   
   public void b()
   {
-    b.clear();
-    for (Map.Entry<Integer, bov> ☃ : a.entrySet()) {
-      b.put(☃.getKey(), d.a((bov)☃.getValue()));
+    this.b.clear();
+    for (Map.Entry<Integer, bov> ☃ : this.a.entrySet()) {
+      this.b.put(☃.getKey(), this.d.a((bov)☃.getValue()));
     }
   }
 }

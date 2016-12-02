@@ -12,13 +12,13 @@ public class PacketPlayRequestAddFriendResponse
   public PacketPlayRequestAddFriendResponse(String searched, boolean sent)
   {
     this.searched = searched;
-    requestSent = sent;
+    this.requestSent = sent;
   }
   
   public PacketPlayRequestAddFriendResponse(String searched, boolean sent, String reason)
   {
     this.searched = searched;
-    requestSent = sent;
+    this.requestSent = sent;
     this.reason = reason;
   }
   
@@ -26,19 +26,19 @@ public class PacketPlayRequestAddFriendResponse
   
   public void read(PacketBuf buf)
   {
-    searched = buf.readString();
-    requestSent = buf.readBoolean();
-    if (!requestSent) {
-      reason = buf.readString();
+    this.searched = buf.readString();
+    this.requestSent = buf.readBoolean();
+    if (!this.requestSent) {
+      this.reason = buf.readString();
     }
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeString(searched);
-    buf.writeBoolean(requestSent);
+    buf.writeString(this.searched);
+    buf.writeBoolean(this.requestSent);
     if (!isRequestSent()) {
-      buf.writeString(reason);
+      buf.writeString(this.reason);
     }
   }
   
@@ -49,16 +49,16 @@ public class PacketPlayRequestAddFriendResponse
   
   public boolean isRequestSent()
   {
-    return requestSent;
+    return this.requestSent;
   }
   
   public String getReason()
   {
-    return reason;
+    return this.reason;
   }
   
   public String getSearched()
   {
-    return searched;
+    return this.searched;
   }
 }

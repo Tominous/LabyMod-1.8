@@ -3,7 +3,7 @@ public class bdq$d
 {
   public beb a(int ☃, adm ☃, double ☃, double ☃, double ☃, double ☃, double ☃, double ☃, int... ☃)
   {
-    bdq.b ☃ = new bdq.b(☃, ☃, ☃, ☃, ☃, ☃, ☃, Aj);
+    bdq.b ☃ = new bdq.b(☃, ☃, ☃, ☃, ☃, ☃, ☃, ave.A().j);
     ☃.i(0.99F);
     return ☃;
   }

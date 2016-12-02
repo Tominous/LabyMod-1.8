@@ -16,12 +16,12 @@ public class gs
   public gs(String ☃, double ☃, double ☃, double ☃, float ☃, float ☃)
   {
     Validate.notNull(☃, "name", new Object[0]);
-    a = ☃;
-    b = ((int)(☃ * 8.0D));
-    c = ((int)(☃ * 8.0D));
-    d = ((int)(☃ * 8.0D));
-    e = ☃;
-    f = ((int)(☃ * 63.0F));
+    this.a = ☃;
+    this.b = ((int)(☃ * 8.0D));
+    this.c = ((int)(☃ * 8.0D));
+    this.d = ((int)(☃ * 8.0D));
+    this.e = ☃;
+    this.f = ((int)(☃ * 63.0F));
     
     ☃ = ns.a(☃, 0.0F, 255.0F);
   }
@@ -29,53 +29,53 @@ public class gs
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.c(256);
-    b = ☃.readInt();
-    c = ☃.readInt();
-    d = ☃.readInt();
-    e = ☃.readFloat();
-    f = ☃.readUnsignedByte();
+    this.a = ☃.c(256);
+    this.b = ☃.readInt();
+    this.c = ☃.readInt();
+    this.d = ☃.readInt();
+    this.e = ☃.readFloat();
+    this.f = ☃.readUnsignedByte();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a);
-    ☃.writeInt(b);
-    ☃.writeInt(c);
-    ☃.writeInt(d);
-    ☃.writeFloat(e);
-    ☃.writeByte(f);
+    ☃.a(this.a);
+    ☃.writeInt(this.b);
+    ☃.writeInt(this.c);
+    ☃.writeInt(this.d);
+    ☃.writeFloat(this.e);
+    ☃.writeByte(this.f);
   }
   
   public String a()
   {
-    return a;
+    return this.a;
   }
   
   public double b()
   {
-    return b / 8.0F;
+    return this.b / 8.0F;
   }
   
   public double c()
   {
-    return c / 8.0F;
+    return this.c / 8.0F;
   }
   
   public double d()
   {
-    return d / 8.0F;
+    return this.d / 8.0F;
   }
   
   public float e()
   {
-    return e;
+    return this.e;
   }
   
   public float f()
   {
-    return f / 63.0F;
+    return this.f / 63.0F;
   }
   
   public void a(fj ☃)

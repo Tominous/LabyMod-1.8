@@ -33,7 +33,7 @@ public class LoginGui
   
   public LoginGui()
   {
-    draw = getInstancedraw;
+    this.draw = LabyMod.getInstance().draw;
   }
   
   public static String openNewAccountManagerGui = null;
@@ -47,24 +47,24 @@ public class LoginGui
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    n.clear();
+    this.n.clear();
     
-    username = new FancyTextField(-1, Ak, l / 2 - 100, m / 2 - 50, 200, 20);
+    this.username = new FancyTextField(-1, ave.A().k, this.l / 2 - 100, this.m / 2 - 50, 200, 20);
     
-    username.setMaxStringLength(32);
+    this.username.setMaxStringLength(32);
     
-    password = new FancyTextField(-1, Ak, l / 2 - 100, m / 2, 200, 20);
+    this.password = new FancyTextField(-1, ave.A().k, this.l / 2 - 100, this.m / 2, 200, 20);
     
-    password.setPassword(true);
-    password.setMaxStringLength(32);
+    this.password.setPassword(true);
+    this.password.setMaxStringLength(32);
     
-    done = new avs(0, l / 2 - 100, m / 2 + 28, "Login");
+    this.done = new avs(0, this.l / 2 - 100, this.m / 2 + 28, "Login");
     
-    n.add(done);
+    this.n.add(this.done);
     
-    cancel = new avs(1, l / 2 - 100, m / 2 + 53, "Back");
+    this.cancel = new avs(1, this.l / 2 - 100, this.m / 2 + 53, "Back");
     
-    n.add(cancel);
+    this.n.add(this.cancel);
     
     super.b();
   }
@@ -72,28 +72,28 @@ public class LoginGui
   protected void a(char typedChar, int keyCode)
     throws IOException
   {
-    if ((done.l) && ((keyCode == 28) || (keyCode == 156))) {
-      a(done);
+    if ((this.done.l) && ((keyCode == 28) || (keyCode == 156))) {
+      a(this.done);
     }
     if (keyCode == 15) {
-      if (!password.isFocused())
+      if (!this.password.isFocused())
       {
-        username.setFocused(false);
-        password.setFocused(true);
+        this.username.setFocused(false);
+        this.password.setFocused(true);
       }
       else
       {
-        username.setFocused(true);
-        password.setFocused(false);
+        this.username.setFocused(true);
+        this.password.setFocused(false);
       }
     }
-    if ((keyCode == 1) && (login))
+    if ((keyCode == 1) && (this.login))
     {
-      j.a(new AccountManagerGUI());
+      this.j.a(new AccountManagerGUI());
       return;
     }
-    username.textboxKeyTyped(typedChar, keyCode);
-    password.textboxKeyTyped(typedChar, keyCode);
+    this.username.textboxKeyTyped(typedChar, keyCode);
+    this.password.textboxKeyTyped(typedChar, keyCode);
     
     super.a(typedChar, keyCode);
   }
@@ -101,8 +101,8 @@ public class LoginGui
   protected void a(int mouseX, int mouseY, int mouseButton)
     throws IOException
   {
-    username.mouseClicked(mouseX, mouseY, mouseButton);
-    password.mouseClicked(mouseX, mouseY, mouseButton);
+    this.username.mouseClicked(mouseX, mouseY, mouseButton);
+    this.password.mouseClicked(mouseX, mouseY, mouseButton);
     super.a(mouseX, mouseY, mouseButton);
   }
   
@@ -115,13 +115,13 @@ public class LoginGui
     throws IOException
   {
     super.a(button);
-    if (k == 0)
+    if (button.k == 0)
     {
-      login = true;
+      this.login = true;
       new Login().start();
     }
-    if (k == 1) {
-      j.a(new AccountManagerGUI());
+    if (button.k == 1) {
+      this.j.a(new AccountManagerGUI());
     }
   }
   
@@ -133,8 +133,8 @@ public class LoginGui
     public void run()
     {
       String result = de.labystudio.account.AccountManager.login(
-        username.getText(), 
-        password.getText());
+        LoginGui.this.username.getText(), 
+        LoginGui.this.password.getText());
       if (result.isEmpty())
       {
         avm session = LoginGui.this.getCurrentSession();
@@ -168,7 +168,7 @@ public class LoginGui
               .d());
             newAccount.addProperty("uuid", session.b());
             newAccount.addProperty("username", 
-              username.getText());
+              LoginGui.this.username.getText());
             
             authenticationDatabase.add(session.b()
               .replace("-", ""), newAccount);
@@ -193,15 +193,15 @@ public class LoginGui
             .c(), session.d(), 
             UUID.fromString(session.b())));
         }
-        badLogin = "";
+        LoginGui.this.badLogin = "";
         LoginGui.openNewAccountManagerGui = session.c();
       }
       else
       {
-        badLogin = result;
-        time = System.currentTimeMillis();
+        LoginGui.this.badLogin = result;
+        LoginGui.this.time = System.currentTimeMillis();
       }
-      login = false;
+      LoginGui.this.login = false;
     }
   }
   
@@ -209,10 +209,10 @@ public class LoginGui
   {
     try
     {
-      Field f = j.getClass().getDeclaredField("ae");
+      Field f = this.j.getClass().getDeclaredField("ae");
       f.setAccessible(true);
       
-      return (avm)f.get(j);
+      return (avm)f.get(this.j);
     }
     catch (Exception ex)
     {
@@ -225,36 +225,36 @@ public class LoginGui
   {
     c();
     
-    done.l = (!login);
-    cancel.l = (!login);
+    this.done.l = (!this.login);
+    this.cancel.l = (!this.login);
     
-    avn fontRenderer = Ak;
-    fontRenderer.a("Username/Email:", l / 2 - 100, m / 2 - 63, 16777215);
+    avn fontRenderer = ave.A().k;
+    fontRenderer.a("Username/Email:", this.l / 2 - 100, this.m / 2 - 63, 16777215);
     
-    fontRenderer.a("Password:", l / 2 - 100, m / 2 - 13, 16777215);
-    if (!badLogin.isEmpty())
+    fontRenderer.a("Password:", this.l / 2 - 100, this.m / 2 - 13, 16777215);
+    if (!this.badLogin.isEmpty())
     {
       String c = "§f§l";
-      a(0, 10, l, 30, Color.RED.getRGB());
-      if ((time + 1000L > System.currentTimeMillis()) && (flash)) {
-        fontRenderer.a(c + "Error: " + badLogin, l / 2 - 1 - fontRenderer
+      a(0, 10, this.l, 30, Color.RED.getRGB());
+      if ((this.time + 1000L > System.currentTimeMillis()) && (this.flash)) {
+        fontRenderer.a(c + "Error: " + this.badLogin, this.l / 2 - 1 - fontRenderer
         
-          .a("Error: " + badLogin) / 2, 16, 16777215);
+          .a("Error: " + this.badLogin) / 2, 16, 16777215);
       } else {
-        fontRenderer.a(c + "Error: " + badLogin, l / 2 - fontRenderer
+        fontRenderer.a(c + "Error: " + this.badLogin, this.l / 2 - fontRenderer
         
-          .a("Error: " + badLogin) / 2, 16, 16777215);
+          .a("Error: " + this.badLogin) / 2, 16, 16777215);
       }
-      flash = (!flash);
+      this.flash = (!this.flash);
     }
-    if (login)
+    if (this.login)
     {
-      a(0, 10, l, 30, Color.BLUE.getRGB());
-      fontRenderer.a("Logging in..", l / 2 - 1 - fontRenderer
+      a(0, 10, this.l, 30, Color.BLUE.getRGB());
+      fontRenderer.a("Logging in..", this.l / 2 - 1 - fontRenderer
         .a("Logging in..") / 2, 16, 16777215);
     }
-    username.drawTextBox();
-    password.drawTextBox();
+    this.username.drawTextBox();
+    this.password.drawTextBox();
     
     super.a(mouseX, mouseY, partialTicks);
   }

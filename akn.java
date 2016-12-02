@@ -20,7 +20,7 @@ public class akn
   
   public aug a(adm ☃, cj ☃, alz ☃)
   {
-    return new aug(☃.n() + B, ☃.o() + C, ☃.p() + D, ☃.n() + E, ☃.o() + F, ☃.p() + G);
+    return new aug(☃.n() + this.B, ☃.o() + this.C, ☃.p() + this.D, ☃.n() + this.E, ☃.o() + this.F, ☃.p() + this.G);
   }
   
   public int H()

@@ -9,7 +9,7 @@ public class agu
   {
     super(arm.d, ☃.c());
     
-    j(M.b().a(a, Boolean.valueOf(false)).a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)));
+    j(this.M.b().a(a, Boolean.valueOf(false)).a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)));
     a(yz.d);
   }
   
@@ -81,7 +81,7 @@ public class agu
     }
     else
     {
-      cq ☃ = cq.a(y);
+      cq ☃ = cq.a(☃.y);
       if (☃.b(O) == ☃.d()) {
         ☃ = ☃.a(O, ☃);
       }
@@ -94,7 +94,7 @@ public class agu
   
   public void a(adm ☃, cj ☃, alz ☃, afh ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
     boolean ☃ = ☃.z(☃);

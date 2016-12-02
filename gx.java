@@ -14,10 +14,10 @@ public class gx
   
   public gx(wl ☃)
   {
-    a(a);
-    b(b);
-    c(c);
-    d(d);
+    a(☃.a);
+    b(☃.b);
+    c(☃.c);
+    d(☃.d);
     a(☃.a());
     b(☃.b());
   }
@@ -52,8 +52,8 @@ public class gx
       ☃ = (byte)(☃ | 0x8);
     }
     ☃.writeByte(☃);
-    ☃.writeFloat(e);
-    ☃.writeFloat(f);
+    ☃.writeFloat(this.e);
+    ☃.writeFloat(this.f);
   }
   
   public void a(fj ☃)
@@ -63,61 +63,61 @@ public class gx
   
   public boolean a()
   {
-    return a;
+    return this.a;
   }
   
   public void a(boolean ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public boolean b()
   {
-    return b;
+    return this.b;
   }
   
   public void b(boolean ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public boolean c()
   {
-    return c;
+    return this.c;
   }
   
   public void c(boolean ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public boolean d()
   {
-    return d;
+    return this.d;
   }
   
   public void d(boolean ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
   
   public float e()
   {
-    return e;
+    return this.e;
   }
   
   public void a(float ☃)
   {
-    e = ☃;
+    this.e = ☃;
   }
   
   public float f()
   {
-    return f;
+    return this.f;
   }
   
   public void b(float ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
 }

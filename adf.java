@@ -4,11 +4,11 @@ public enum adf
   
   private adf(String ☃)
   {
-    e = ☃;
+    this.e = ☃;
   }
   
   public String toString()
   {
-    return e;
+    return this.e;
   }
 }

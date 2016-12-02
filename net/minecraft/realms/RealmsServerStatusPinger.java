@@ -37,7 +37,7 @@ public class RealmsServerStatusPinger
     RealmsServerAddress ☃ = RealmsServerAddress.parseString(☃);
     final ek ☃ = ek.a(InetAddress.getByName(☃.getHost()), ☃.getPort(), false);
     
-    connections.add(☃);
+    this.connections.add(☃);
     
     ☃.a(new jp()
     {
@@ -48,7 +48,7 @@ public class RealmsServerStatusPinger
         js ☃ = ☃.a();
         if (☃.b() != null)
         {
-          ☃nrOfPlayers = String.valueOf(☃.b().b());
+          ☃.nrOfPlayers = String.valueOf(☃.b().b());
           if (ArrayUtils.isNotEmpty(☃.b().c()))
           {
             StringBuilder ☃ = new StringBuilder();
@@ -66,15 +66,15 @@ public class RealmsServerStatusPinger
               }
               ☃.append("... and ").append(☃.b().b() - ☃.b().c().length).append(" more ...");
             }
-            ☃playerList = ☃.toString();
+            ☃.playerList = ☃.toString();
           }
         }
         else
         {
-          ☃playerList = "";
+          ☃.playerList = "";
         }
         ☃.a(new ju(Realms.currentTimeMillis()));
-        e = true;
+        this.e = true;
       }
       
       public void a(jq ☃)
@@ -84,7 +84,7 @@ public class RealmsServerStatusPinger
       
       public void a(eu ☃)
       {
-        if (!e) {
+        if (!this.e) {
           RealmsServerStatusPinger.LOGGER.error("Can't ping " + ☃ + ": " + ☃.c());
         }
       }
@@ -102,9 +102,9 @@ public class RealmsServerStatusPinger
   
   public void tick()
   {
-    synchronized (connections)
+    synchronized (this.connections)
     {
-      Iterator<ek> ☃ = connections.iterator();
+      Iterator<ek> ☃ = this.connections.iterator();
       while (☃.hasNext())
       {
         ek ☃ = (ek)☃.next();
@@ -123,9 +123,9 @@ public class RealmsServerStatusPinger
   
   public void removeAll()
   {
-    synchronized (connections)
+    synchronized (this.connections)
     {
-      Iterator<ek> ☃ = connections.iterator();
+      Iterator<ek> ☃ = this.connections.iterator();
       while (☃.hasNext())
       {
         ek ☃ = (ek)☃.next();

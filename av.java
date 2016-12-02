@@ -31,15 +31,15 @@ public class av
     
     aui ☃ = ☃.d();
     
-    double ☃ = a;
+    double ☃ = ☃.a;
     if (☃.length > ☃) {
       ☃ = b(☃, ☃[(☃++)], true);
     }
-    double ☃ = b;
+    double ☃ = ☃.b;
     if (☃.length > ☃) {
       ☃ = b(☃, ☃[(☃++)], 0, 0, false);
     }
-    double ☃ = c;
+    double ☃ = ☃.c;
     if (☃.length > ☃) {
       ☃ = b(☃, ☃[(☃++)], true);
     }
@@ -62,19 +62,19 @@ public class av
       if (☃ <= 0.0D) {
         throw new bz("commands.playsound.playerTooFar", new Object[] { ☃.e_() });
       }
-      double ☃ = ☃ - s;
-      double ☃ = ☃ - t;
-      double ☃ = ☃ - u;
+      double ☃ = ☃ - ☃.s;
+      double ☃ = ☃ - ☃.t;
+      double ☃ = ☃ - ☃.u;
       double ☃ = Math.sqrt(☃ * ☃ + ☃ * ☃ + ☃ * ☃);
       if (☃ > 0.0D)
       {
-        ☃ = s + ☃ / ☃ * 2.0D;
-        ☃ = t + ☃ / ☃ * 2.0D;
-        ☃ = u + ☃ / ☃ * 2.0D;
+        ☃ = ☃.s + ☃ / ☃ * 2.0D;
+        ☃ = ☃.t + ☃ / ☃ * 2.0D;
+        ☃ = ☃.u + ☃ / ☃ * 2.0D;
       }
       ☃ = ☃;
     }
-    a.a(new gs(☃, ☃, ☃, ☃, (float)☃, (float)☃));
+    ☃.a.a(new gs(☃, ☃, ☃, ☃, (float)☃, (float)☃));
     a(☃, this, "commands.playsound.success", new Object[] { ☃, ☃.e_() });
   }
   

@@ -12,40 +12,40 @@ public class avx
   public avx(awg.b ☃, int ☃, int ☃, int ☃, String ☃, float ☃, float ☃, float ☃, avx.a ☃)
   {
     super(☃, ☃, ☃, 150, 20, "");
-    q = ☃;
-    r = ☃;
-    s = ☃;
-    p = ((☃ - ☃) / (☃ - ☃));
-    u = ☃;
-    t = ☃;
-    j = e();
+    this.q = ☃;
+    this.r = ☃;
+    this.s = ☃;
+    this.p = ((☃ - ☃) / (☃ - ☃));
+    this.u = ☃;
+    this.t = ☃;
+    this.j = e();
   }
   
   public float c()
   {
-    return r + (s - r) * p;
+    return this.r + (this.s - this.r) * this.p;
   }
   
   public void a(float ☃, boolean ☃)
   {
-    p = ((☃ - r) / (s - r));
-    j = e();
+    this.p = ((☃ - this.r) / (this.s - this.r));
+    this.j = e();
     if (☃) {
-      t.a(k, c());
+      this.t.a(this.k, c());
     }
   }
   
   public float d()
   {
-    return p;
+    return this.p;
   }
   
   private String e()
   {
-    if (u == null) {
-      return bnq.a(q, new Object[0]) + ": " + c();
+    if (this.u == null) {
+      return bnq.a(this.q, new Object[0]) + ": " + c();
     }
-    return u.a(k, bnq.a(q, new Object[0]), c());
+    return this.u.a(this.k, bnq.a(this.q, new Object[0]), c());
   }
   
   protected int a(boolean ☃)
@@ -55,47 +55,47 @@ public class avx
   
   protected void b(ave ☃, int ☃, int ☃)
   {
-    if (!m) {
+    if (!this.m) {
       return;
     }
-    if (o)
+    if (this.o)
     {
-      p = ((☃ - (h + 4)) / (f - 8));
-      if (p < 0.0F) {
-        p = 0.0F;
+      this.p = ((☃ - (this.h + 4)) / (this.f - 8));
+      if (this.p < 0.0F) {
+        this.p = 0.0F;
       }
-      if (p > 1.0F) {
-        p = 1.0F;
+      if (this.p > 1.0F) {
+        this.p = 1.0F;
       }
-      j = e();
-      t.a(k, c());
+      this.j = e();
+      this.t.a(this.k, c());
     }
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    b(h + (int)(p * (f - 8)), i, 0, 66, 4, 20);
-    b(h + (int)(p * (f - 8)) + 4, i, 196, 66, 4, 20);
+    b(this.h + (int)(this.p * (this.f - 8)), this.i, 0, 66, 4, 20);
+    b(this.h + (int)(this.p * (this.f - 8)) + 4, this.i, 196, 66, 4, 20);
   }
   
   public void a(float ☃)
   {
-    p = ☃;
-    j = e();
-    t.a(k, c());
+    this.p = ☃;
+    this.j = e();
+    this.t.a(this.k, c());
   }
   
   public boolean c(ave ☃, int ☃, int ☃)
   {
     if (super.c(☃, ☃, ☃))
     {
-      p = ((☃ - (h + 4)) / (f - 8));
-      if (p < 0.0F) {
-        p = 0.0F;
+      this.p = ((☃ - (this.h + 4)) / (this.f - 8));
+      if (this.p < 0.0F) {
+        this.p = 0.0F;
       }
-      if (p > 1.0F) {
-        p = 1.0F;
+      if (this.p > 1.0F) {
+        this.p = 1.0F;
       }
-      j = e();
-      t.a(k, c());
-      o = true;
+      this.j = e();
+      this.t.a(this.k, c());
+      this.o = true;
       return true;
     }
     return false;
@@ -103,7 +103,7 @@ public class avx
   
   public void a(int ☃, int ☃)
   {
-    o = false;
+    this.o = false;
   }
   
   public static abstract interface a

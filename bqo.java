@@ -9,7 +9,7 @@ public class bqo
   
   public bqo(Throwable ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void f() {}
@@ -122,6 +122,6 @@ public class bqo
   
   public Throwable a()
   {
-    return a;
+    return this.a;
   }
 }

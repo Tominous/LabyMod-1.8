@@ -4,7 +4,7 @@ public class ahm
   public ahm()
   {
     super(arm.b, arn.t);
-    j(M.b().a(N, cq.a.b));
+    j(this.M.b().a(N, cq.a.b));
     a(yz.b);
   }
   

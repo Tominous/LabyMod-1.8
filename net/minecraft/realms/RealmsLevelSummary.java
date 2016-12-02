@@ -10,62 +10,62 @@ public class RealmsLevelSummary
   
   public RealmsLevelSummary(ats ☃)
   {
-    levelSummary = ☃;
+    this.levelSummary = ☃;
   }
   
   public int getGameMode()
   {
-    return levelSummary.f().a();
+    return this.levelSummary.f().a();
   }
   
   public String getLevelId()
   {
-    return levelSummary.a();
+    return this.levelSummary.a();
   }
   
   public boolean hasCheats()
   {
-    return levelSummary.h();
+    return this.levelSummary.h();
   }
   
   public boolean isHardcore()
   {
-    return levelSummary.g();
+    return this.levelSummary.g();
   }
   
   public boolean isRequiresConversion()
   {
-    return levelSummary.d();
+    return this.levelSummary.d();
   }
   
   public String getLevelName()
   {
-    return levelSummary.b();
+    return this.levelSummary.b();
   }
   
   public long getLastPlayed()
   {
-    return levelSummary.e();
+    return this.levelSummary.e();
   }
   
   public int compareTo(ats ☃)
   {
-    return levelSummary.a(☃);
+    return this.levelSummary.a(☃);
   }
   
   public long getSizeOnDisk()
   {
-    return levelSummary.c();
+    return this.levelSummary.c();
   }
   
   public int compareTo(RealmsLevelSummary ☃)
   {
-    if (levelSummary.e() < ☃.getLastPlayed()) {
+    if (this.levelSummary.e() < ☃.getLastPlayed()) {
       return 1;
     }
-    if (levelSummary.e() > ☃.getLastPlayed()) {
+    if (this.levelSummary.e() > ☃.getLastPlayed()) {
       return -1;
     }
-    return levelSummary.a().compareTo(☃.getLevelId());
+    return this.levelSummary.a().compareTo(☃.getLevelId());
   }
 }

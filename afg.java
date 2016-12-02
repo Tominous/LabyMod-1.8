@@ -9,13 +9,13 @@ public class afg
   public afg()
   {
     super(arm.n);
-    j(M.b().a(a, afg.a.b).a(b, Boolean.valueOf(false)));
+    j(this.M.b().a(a, afg.a.b).a(b, Boolean.valueOf(false)));
     l();
   }
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (D) {
+    if (☃.D) {
       return true;
     }
     if (☃.b(a) != afg.a.a)
@@ -26,7 +26,7 @@ public class afg
         return true;
       }
     }
-    if ((!t.e()) || (☃.b(☃) == ady.x))
+    if ((!☃.t.e()) || (☃.b(☃) == ady.x))
     {
       ☃.g(☃);
       
@@ -68,8 +68,8 @@ public class afg
   
   private wn f(adm ☃, cj ☃)
   {
-    for (wn ☃ : j) {
-      if ((☃.bJ()) && (bx.equals(☃))) {
+    for (wn ☃ : ☃.j) {
+      if ((☃.bJ()) && (☃.bx.equals(☃))) {
         return ☃;
       }
     }
@@ -103,7 +103,7 @@ public class afg
     else if (☃.p(☃.a(☃)).c() != this)
     {
       ☃.g(☃);
-      if (!D) {
+      if (!☃.D) {
         b(☃, ☃, ☃, 0);
       }
     }
@@ -181,7 +181,7 @@ public class afg
   
   public void a(adm ☃, cj ☃, alz ☃, wn ☃)
   {
-    if ((bA.d) && 
+    if ((☃.bA.d) && 
       (☃.b(a) == afg.a.a))
     {
       cj ☃ = ☃.a(((cq)☃.b(O)).d());
@@ -239,17 +239,17 @@ public class afg
     
     private a(String ☃)
     {
-      c = ☃;
+      this.c = ☃;
     }
     
     public String toString()
     {
-      return c;
+      return this.c;
     }
     
     public String l()
     {
-      return c;
+      return this.c;
     }
   }
 }

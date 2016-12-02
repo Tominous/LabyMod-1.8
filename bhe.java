@@ -17,7 +17,7 @@ public class bhe
   {
     Calendar ☃ = Calendar.getInstance();
     if ((☃.get(2) + 1 == 12) && (☃.get(5) >= 24) && (☃.get(5) <= 26)) {
-      k = true;
+      this.k = true;
     }
   }
   
@@ -43,13 +43,13 @@ public class bhe
       }
       ☃.m();
     }
-    if ((f != null) || (h != null)) {
+    if ((☃.f != null) || (☃.h != null)) {
       return;
     }
     baz ☃;
-    if ((g != null) || (i != null))
+    if ((☃.g != null) || (☃.i != null))
     {
-      baz ☃ = j;
+      baz ☃ = this.j;
       if (☃ >= 0)
       {
         a(a[☃]);
@@ -63,7 +63,7 @@ public class bhe
       {
         a(c);
       }
-      else if (k)
+      else if (this.k)
       {
         a(d);
       }
@@ -74,7 +74,7 @@ public class bhe
     }
     else
     {
-      ☃ = i;
+      ☃ = this.i;
       if (☃ >= 0)
       {
         a(a[☃]);
@@ -88,7 +88,7 @@ public class bhe
       {
         a(f);
       }
-      else if (k)
+      else if (this.k)
       {
         a(g);
       }
@@ -119,26 +119,26 @@ public class bhe
     if (☃ == 5) {
       ☃ = -90;
     }
-    if ((☃ == 2) && (g != null)) {
+    if ((☃ == 2) && (☃.g != null)) {
       bfl.b(1.0F, 0.0F, 0.0F);
     }
-    if ((☃ == 5) && (i != null)) {
+    if ((☃ == 5) && (☃.i != null)) {
       bfl.b(0.0F, 0.0F, -1.0F);
     }
     bfl.b(☃, 0.0F, 1.0F, 0.0F);
     bfl.b(-0.5F, -0.5F, -0.5F);
     
-    float ☃ = k + (j - k) * ☃;
-    if (f != null)
+    float ☃ = ☃.k + (☃.j - ☃.k) * ☃;
+    if (☃.f != null)
     {
-      float ☃ = f.k + (f.j - f.k) * ☃;
+      float ☃ = ☃.f.k + (☃.f.j - ☃.f.k) * ☃;
       if (☃ > ☃) {
         ☃ = ☃;
       }
     }
-    if (h != null)
+    if (☃.h != null)
     {
-      float ☃ = h.k + (h.j - h.k) * ☃;
+      float ☃ = ☃.h.k + (☃.h.j - ☃.h.k) * ☃;
       if (☃ > ☃) {
         ☃ = ☃;
       }
@@ -146,7 +146,7 @@ public class bhe
     ☃ = 1.0F - ☃;
     ☃ = 1.0F - ☃ * ☃ * ☃;
     
-    a.f = (-(☃ * 3.1415927F / 2.0F));
+    ☃.a.f = (-(☃ * 3.1415927F / 2.0F));
     ☃.a();
     bfl.C();
     bfl.F();

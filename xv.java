@@ -8,7 +8,7 @@ public class xv
   {
     super(☃, ☃, ☃, ☃);
     
-    a = ☃;
+    this.a = ☃;
   }
   
   public boolean a(zx ☃)
@@ -19,7 +19,7 @@ public class xv
   public zx a(int ☃)
   {
     if (e()) {
-      b += Math.min(☃, db);
+      this.b += Math.min(☃, d().b);
     }
     return super.a(☃);
   }
@@ -32,16 +32,16 @@ public class xv
   
   protected void a(zx ☃, int ☃)
   {
-    b += ☃;
+    this.b += ☃;
     c(☃);
   }
   
   protected void c(zx ☃)
   {
-    ☃.a(a.o, a, b);
-    if (!a.o.D)
+    ☃.a(this.a.o, this.a, this.b);
+    if (!this.a.o.D)
     {
-      int ☃ = b;
+      int ☃ = this.b;
       float ☃ = abo.a().b(☃);
       if (☃ == 0.0F)
       {
@@ -59,15 +59,15 @@ public class xv
       {
         int ☃ = pp.a(☃);
         ☃ -= ☃;
-        a.o.d(new pp(a.o, a.s, a.t + 0.5D, a.u + 0.5D, ☃));
+        this.a.o.d(new pp(this.a.o, this.a.s, this.a.t + 0.5D, this.a.u + 0.5D, ☃));
       }
     }
-    b = 0;
+    this.b = 0;
     if (☃.b() == zy.j) {
-      a.b(mr.k);
+      this.a.b(mr.k);
     }
     if (☃.b() == zy.aV) {
-      a.b(mr.p);
+      this.a.b(mr.p);
     }
   }
 }

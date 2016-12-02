@@ -7,6 +7,6 @@ final class agw$a$1
   
   public boolean a(agw.a ☃)
   {
-    return ☃.a() == a;
+    return ☃.a() == this.a;
   }
 }

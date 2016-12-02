@@ -8,15 +8,15 @@ class ed$b
   
   public ed$b(String ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public eb a()
     throws ec
   {
     dn ☃ = new dn();
-    for (ed.a ☃ : b) {
-      ☃.a(a, ☃.a());
+    for (ed.a ☃ : this.b) {
+      ☃.a(☃.a, ☃.a());
     }
     return ☃;
   }

@@ -53,49 +53,49 @@ public class bgl
   
   private bgl(jy ☃, List<bgh> ☃, Map<String, String> ☃, boolean ☃, boolean ☃, bgr ☃)
   {
-    g = ☃;
-    i = ☃;
-    h = ☃;
-    c = ☃;
-    e = ☃;
-    j = ☃;
+    this.g = ☃;
+    this.i = ☃;
+    this.h = ☃;
+    this.c = ☃;
+    this.e = ☃;
+    this.j = ☃;
   }
   
   public List<bgh> a()
   {
     if (h()) {
-      return d.a();
+      return this.d.a();
     }
-    return g;
+    return this.g;
   }
   
   private boolean h()
   {
-    return d != null;
+    return this.d != null;
   }
   
   public boolean b()
   {
     if (h()) {
-      return d.b();
+      return this.d.b();
     }
-    return i;
+    return this.i;
   }
   
   public boolean c()
   {
-    return h;
+    return this.h;
   }
   
   public boolean d()
   {
-    return (e == null) || ((d != null) && (d.d()));
+    return (this.e == null) || ((this.d != null) && (this.d.d()));
   }
   
   public void a(Map<jy, bgl> ☃)
   {
-    if (e != null) {
-      d = ((bgl)☃.get(e));
+    if (this.e != null) {
+      this.d = ((bgl)☃.get(this.e));
     }
   }
   
@@ -106,7 +106,7 @@ public class bgl
     
     private a(bgl ☃)
     {
-      a = ☃;
+      this.a = ☃;
     }
   }
   
@@ -127,18 +127,18 @@ public class bgl
   {
     if (d(☃))
     {
-      if (this == b)
+      if (this == ☃.b)
       {
-        f.warn("Unable to resolve texture due to upward reference: " + ☃ + " in " + b);
+        f.warn("Unable to resolve texture due to upward reference: " + ☃ + " in " + this.b);
         return "missingno";
       }
-      String ☃ = (String)c.get(☃.substring(1));
+      String ☃ = (String)this.c.get(☃.substring(1));
       if ((☃ == null) && (h())) {
-        ☃ = d.a(☃, ☃);
+        ☃ = this.d.a(☃, ☃);
       }
-      b = this;
+      ☃.b = this;
       if ((☃ != null) && (d(☃))) {
-        ☃ = a.a(☃, ☃);
+        ☃ = ☃.a.a(☃, ☃);
       }
       if ((☃ == null) || (d(☃))) {
         return "missingno";
@@ -155,12 +155,12 @@ public class bgl
   
   public jy e()
   {
-    return e;
+    return this.e;
   }
   
   public bgl f()
   {
-    return h() ? d.f() : this;
+    return h() ? this.d.f() : this;
   }
   
   public bgr g()
@@ -176,10 +176,10 @@ public class bgl
   
   private bgq a(bgr.b ☃)
   {
-    if ((d != null) && (!j.c(☃))) {
-      return d.a(☃);
+    if ((this.d != null) && (!this.j.c(☃))) {
+      return this.d.a(☃);
     }
-    return j.b(☃);
+    return this.j.b(☃);
   }
   
   public static class b
@@ -256,12 +256,12 @@ public class bgl
     for (bgl ☃ : ☃.values()) {
       try
       {
-        bgl ☃ = d;
-        bgl ☃ = d;
+        bgl ☃ = ☃.d;
+        bgl ☃ = ☃.d;
         while (☃ != ☃)
         {
-          ☃ = d;
-          ☃ = d.d;
+          ☃ = ☃.d;
+          ☃ = ☃.d.d;
         }
         throw new bgl.c();
       }

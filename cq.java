@@ -15,64 +15,77 @@ public enum cq
   private final cq.a k;
   private final cq.b l;
   private final df m;
-  public static final cq[] n;
+  private static final cq[] n;
   private static final cq[] o;
-  private static final Map p;
-  private static final cq[] q;
-  private static final String __OBFID = "CL_00001201";
+  private static final Map<String, cq> p;
   
-  private cq(String p_i46016_1_, int p_i46016_2_, int indexIn, int oppositeIn, int horizontalIndexIn, String nameIn, cq.b axisDirectionIn, cq.a axisIn, df directionVecIn)
+  static
   {
-    g = indexIn;
-    i = horizontalIndexIn;
-    h = oppositeIn;
-    j = nameIn;
-    k = axisIn;
-    l = axisDirectionIn;
-    m = directionVecIn;
+    n = new cq[6];
+    o = new cq[4];
+    p = Maps.newHashMap();
+    for (cq ☃ : values())
+    {
+      n[☃.g] = ☃;
+      if (☃.k().c()) {
+        o[☃.i] = ☃;
+      }
+      p.put(☃.j().toLowerCase(), ☃);
+    }
+  }
+  
+  private cq(int ☃, int ☃, int ☃, String ☃, cq.b ☃, cq.a ☃, df ☃)
+  {
+    this.g = ☃;
+    this.i = ☃;
+    this.h = ☃;
+    this.j = ☃;
+    this.k = ☃;
+    this.l = ☃;
+    this.m = ☃;
   }
   
   public int a()
   {
-    return g;
+    return this.g;
   }
   
   public int b()
   {
-    return i;
+    return this.i;
   }
   
   public cq.b c()
   {
-    return l;
+    return this.l;
   }
   
   public cq d()
   {
-    return n[h];
+    return a(this.h);
   }
   
-  public cq a(cq.a axis)
+  public cq a(cq.a ☃)
   {
-    switch (cq.1.a[axis.ordinal()])
+    switch (cq.1.a[☃.ordinal()])
     {
     case 1: 
-      if ((this != e) && (this != f)) {
-        return n();
+      if ((this == e) || (this == f)) {
+        return this;
       }
-      return this;
+      return n();
     case 2: 
-      if ((this != b) && (this != a)) {
-        return e();
+      if ((this == b) || (this == a)) {
+        return this;
       }
-      return this;
+      return e();
     case 3: 
-      if ((this != c) && (this != d)) {
-        return p();
+      if ((this == c) || (this == d)) {
+        return this;
       }
-      return this;
+      return p();
     }
-    throw new IllegalStateException("Unable to get CW facing for axis " + axis);
+    throw new IllegalStateException("Unable to get CW facing for axis " + ☃);
   }
   
   public cq e()
@@ -95,35 +108,32 @@ public enum cq
   {
     switch (cq.1.b[ordinal()])
     {
-    case 1: 
-      return a;
-    case 2: 
-    case 4: 
-    default: 
-      throw new IllegalStateException("Unable to get X-rotated facing of " + this);
-    case 3: 
-      return b;
     case 5: 
       return c;
+    case 1: 
+      return a;
+    case 6: 
+      return d;
+    case 3: 
+      return b;
     }
-    return d;
+    throw new IllegalStateException("Unable to get X-rotated facing of " + this);
   }
   
   private cq p()
   {
     switch (cq.1.b[ordinal()])
     {
-    case 2: 
-      return a;
-    case 3: 
-    default: 
-      throw new IllegalStateException("Unable to get Z-rotated facing of " + this);
-    case 4: 
-      return b;
     case 5: 
       return f;
+    case 2: 
+      return a;
+    case 6: 
+      return e;
+    case 4: 
+      return b;
     }
-    return e;
+    throw new IllegalStateException("Unable to get Z-rotated facing of " + this);
   }
   
   public cq f()
@@ -144,197 +154,164 @@ public enum cq
   
   public int g()
   {
-    return k == cq.a.a ? l.a() : 0;
+    if (this.k == cq.a.a) {
+      return this.l.a();
+    }
+    return 0;
   }
   
   public int h()
   {
-    return k == cq.a.b ? l.a() : 0;
+    if (this.k == cq.a.b) {
+      return this.l.a();
+    }
+    return 0;
   }
   
   public int i()
   {
-    return k == cq.a.c ? l.a() : 0;
+    if (this.k == cq.a.c) {
+      return this.l.a();
+    }
+    return 0;
   }
   
   public String j()
   {
-    return j;
+    return this.j;
   }
   
   public cq.a k()
   {
-    return k;
+    return this.k;
   }
   
-  public static cq a(String name)
+  public static cq a(String ☃)
   {
-    return name == null ? null : (cq)p.get(name.toLowerCase());
+    if (☃ == null) {
+      return null;
+    }
+    return (cq)p.get(☃.toLowerCase());
   }
   
-  public static cq a(int index)
+  public static cq a(int ☃)
   {
-    return n[ns.a(index % n.length)];
+    return n[ns.a(☃ % n.length)];
   }
   
-  public static cq b(int p_176731_0_)
+  public static cq b(int ☃)
   {
-    return o[ns.a(p_176731_0_ % o.length)];
+    return o[ns.a(☃ % o.length)];
   }
   
-  public static cq a(double angle)
+  public static cq a(double ☃)
   {
-    return b(ns.c(angle / 90.0D + 0.5D) & 0x3);
+    return b(ns.c(☃ / 90.0D + 0.5D) & 0x3);
   }
   
-  public static cq a(Random rand)
+  public static cq a(Random ☃)
   {
-    return values()[rand.nextInt(values().length)];
+    return values()[☃.nextInt(values().length)];
   }
   
-  public static cq a(float p_176737_0_, float p_176737_1_, float p_176737_2_)
+  public static cq a(float ☃, float ☃, float ☃)
   {
-    cq var3 = c;
-    float var4 = Float.MIN_VALUE;
-    cq[] var5 = values();
-    int var6 = var5.length;
-    for (int var7 = 0; var7 < var6; var7++)
+    cq ☃ = c;
+    float ☃ = Float.MIN_VALUE;
+    for (cq ☃ : values())
     {
-      cq var8 = var5[var7];
-      float var9 = p_176737_0_ * m.n() + p_176737_1_ * m.o() + p_176737_2_ * m.p();
-      if (var9 > var4)
+      float ☃ = ☃ * ☃.m.n() + ☃ * ☃.m.o() + ☃ * ☃.m.p();
+      if (☃ > ☃)
       {
-        var4 = var9;
-        var3 = var8;
+        ☃ = ☃;
+        ☃ = ☃;
       }
     }
-    return var3;
+    return ☃;
   }
   
   public String toString()
   {
-    return j;
+    return this.j;
   }
   
   public String l()
   {
-    return j;
+    return this.j;
   }
   
-  public static cq a(cq.b p_500005_0_, cq.a p_500005_1_)
+  public static cq a(cq.b ☃, cq.a ☃)
   {
-    cq[] var2 = values();
-    int var3 = var2.length;
-    for (int var4 = 0; var4 < var3; var4++)
-    {
-      cq var5 = var2[var4];
-      if ((var5.c() == p_500005_0_) && (var5.k() == p_500005_1_)) {
-        return var5;
+    for (cq ☃ : ) {
+      if ((☃.c() == ☃) && (☃.k() == ☃)) {
+        return ☃;
       }
     }
-    throw new IllegalArgumentException("No such direction: " + p_500005_0_ + " " + p_500005_1_);
-  }
-  
-  public df m()
-  {
-    return m;
-  }
-  
-  static
-  {
-    n = new cq[6];
-    
-    o = new cq[4];
-    p = Maps.newHashMap();
-    
-    q = new cq[] { a, b, c, d, e, f };
-    
-    cq[] var0 = values();
-    int var1 = var0.length;
-    for (int var2 = 0; var2 < var1; var2++)
-    {
-      cq var3 = var0[var2];
-      n[g] = var3;
-      if (var3.k().c()) {
-        o[i] = var3;
-      }
-      p.put(var3.j().toLowerCase(), var3);
-    }
+    throw new IllegalArgumentException("No such direction: " + ☃ + " " + ☃);
   }
   
   public static enum a
-    implements Predicate, nw
+    implements Predicate<cq>, nw
   {
-    private static final Map d;
+    private static final Map<String, a> d;
     private final String e;
     private final cq.c f;
-    private static final a[] g;
-    private static final String __OBFID = "CL_00002321";
-    
-    private a(String p_i46015_1_, int p_i46015_2_, String name, cq.c plane)
-    {
-      e = name;
-      f = plane;
-    }
-    
-    public static a a(String name)
-    {
-      return name == null ? null : (a)d.get(name.toLowerCase());
-    }
-    
-    public String a()
-    {
-      return e;
-    }
-    
-    public boolean b()
-    {
-      return f == cq.c.b;
-    }
-    
-    public boolean c()
-    {
-      return f == cq.c.a;
-    }
-    
-    public String toString()
-    {
-      return e;
-    }
-    
-    public boolean a(cq facing)
-    {
-      return (facing != null) && (facing.k() == this);
-    }
-    
-    public cq.c d()
-    {
-      return f;
-    }
-    
-    public String l()
-    {
-      return e;
-    }
-    
-    public boolean apply(Object p_apply_1_)
-    {
-      return a((cq)p_apply_1_);
-    }
     
     static
     {
       d = Maps.newHashMap();
-      
-      g = new a[] { a, b, c };
-      
-      a[] var0 = values();
-      int var1 = var0.length;
-      for (int var2 = 0; var2 < var1; var2++)
-      {
-        a var3 = var0[var2];
-        d.put(var3.a().toLowerCase(), var3);
+      for (a ☃ : values()) {
+        d.put(☃.a().toLowerCase(), ☃);
       }
+    }
+    
+    private a(String ☃, cq.c ☃)
+    {
+      this.e = ☃;
+      this.f = ☃;
+    }
+    
+    public static a a(String ☃)
+    {
+      if (☃ == null) {
+        return null;
+      }
+      return (a)d.get(☃.toLowerCase());
+    }
+    
+    public String a()
+    {
+      return this.e;
+    }
+    
+    public boolean b()
+    {
+      return this.f == cq.c.b;
+    }
+    
+    public boolean c()
+    {
+      return this.f == cq.c.a;
+    }
+    
+    public String toString()
+    {
+      return this.e;
+    }
+    
+    public boolean a(cq ☃)
+    {
+      return (☃ != null) && (☃.k() == this);
+    }
+    
+    public cq.c d()
+    {
+      return this.f;
+    }
+    
+    public String l()
+    {
+      return this.e;
     }
   }
   
@@ -342,31 +319,33 @@ public enum cq
   {
     private final int c;
     private final String d;
-    private static final b[] e = { a, b };
-    private static final String __OBFID = "CL_00002320";
     
-    private b(String p_i46014_1_, int p_i46014_2_, int offset, String description)
+    private b(int ☃, String ☃)
     {
-      c = offset;
-      d = description;
+      this.c = ☃;
+      this.d = ☃;
     }
     
     public int a()
     {
-      return c;
+      return this.c;
     }
     
     public String toString()
     {
-      return d;
+      return this.d;
     }
   }
   
-  public static enum c
-    implements Predicate, Iterable
+  public df m()
   {
-    private static final c[] c = { a, b };
-    private static final String __OBFID = "CL_00002319";
+    return this.m;
+  }
+  
+  public static enum c
+    implements Predicate<cq>, Iterable<cq>
+  {
+    private c() {}
     
     public cq[] a()
     {
@@ -380,25 +359,20 @@ public enum cq
       throw new Error("Someone's been tampering with the universe!");
     }
     
-    public cq a(Random rand)
+    public cq a(Random ☃)
     {
-      cq[] var2 = a();
-      return var2[rand.nextInt(var2.length)];
+      cq[] ☃ = a();
+      return ☃[☃.nextInt(☃.length)];
     }
     
-    public boolean a(cq facing)
+    public boolean a(cq ☃)
     {
-      return (facing != null) && (facing.k().d() == this);
+      return (☃ != null) && (☃.k().d() == this);
     }
     
-    public Iterator iterator()
+    public Iterator<cq> iterator()
     {
       return Iterators.forArray(a());
-    }
-    
-    public boolean apply(Object p_apply_1_)
-    {
-      return a((cq)p_apply_1_);
     }
   }
 }

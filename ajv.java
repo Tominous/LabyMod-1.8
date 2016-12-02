@@ -5,7 +5,7 @@ public class ajv
   
   public ajv()
   {
-    j(M.b().a(a, Integer.valueOf(0)));
+    j(this.M.b().a(a, Integer.valueOf(0)));
   }
   
   public void a(adm ☃, cj ☃, alz ☃, afh ☃)

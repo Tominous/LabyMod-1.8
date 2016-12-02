@@ -6,7 +6,7 @@ public class akg
   protected akg(arm ☃, boolean ☃)
   {
     super(☃);
-    R = ☃;
+    this.R = ☃;
   }
   
   public boolean c()
@@ -16,7 +16,7 @@ public class akg
   
   public boolean a(adq ☃, cj ☃, cq ☃)
   {
-    if ((!R) && (☃.p(☃).c() == this)) {
+    if ((!this.R) && (☃.p(☃).c() == this)) {
       return false;
     }
     return super.a(☃, ☃, ☃);

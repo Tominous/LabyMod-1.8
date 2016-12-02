@@ -61,11 +61,11 @@ public class FrameList
     {
       public void actionPerformed(ActionEvent e)
       {
-        File pathFile = new File(pathField.getText());
+        File pathFile = new File(FrameList.this.pathField.getText());
         if ((pathFile.exists()) && (pathFile.isDirectory()))
         {
           Main.path = pathFile;
-          dispose();
+          FrameList.this.dispose();
           new FrameInstall();
         }
         else
@@ -147,7 +147,7 @@ public class FrameList
     {
       public void actionPerformed(ActionEvent e)
       {
-        dispose();
+        FrameList.this.dispose();
         new FrameCompatibleMods();
       }
     });
@@ -159,11 +159,11 @@ public class FrameList
     label.setBounds(10, 11, 297, 358);
     mainPanel.add(label);
     
-    pathField = new JTextField();
-    pathField.setBounds(317, 297, 259, 22);
-    pathField.setText(Main.path.getAbsolutePath());
-    mainPanel.add(pathField);
-    pathField.setColumns(10);
+    this.pathField = new JTextField();
+    this.pathField.setBounds(317, 297, 259, 22);
+    this.pathField.setText(Main.path.getAbsolutePath());
+    mainPanel.add(this.pathField);
+    this.pathField.setColumns(10);
     
     JButton browseButton = new JButton("Browse");
     browseButton.setBounds(579, 296, 76, 23);
@@ -176,11 +176,11 @@ public class FrameList
         chooser.setCurrentDirectory(Main.path);
         chooser.setDialogTitle("Minecraft Directory");
         chooser.setFileSelectionMode(1);
-        int returnVal = chooser.showOpenDialog(getParent());
+        int returnVal = chooser.showOpenDialog(FrameList.this.getParent());
         if (returnVal == 0)
         {
           Main.path = chooser.getSelectedFile();
-          pathField.setText(Main.path.getAbsolutePath());
+          FrameList.this.pathField.setText(Main.path.getAbsolutePath());
         }
         else if (chooser.getSelectedFile() != null)
         {

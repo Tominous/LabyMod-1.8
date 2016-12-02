@@ -9,9 +9,9 @@ public class yc
   public yc(wn ☃, acy ☃, ya ☃, int ☃, int ☃, int ☃)
   {
     super(☃, ☃, ☃, ☃);
-    b = ☃;
-    h = ☃;
-    a = ☃;
+    this.b = ☃;
+    this.h = ☃;
+    this.a = ☃;
   }
   
   public boolean a(zx ☃)
@@ -22,44 +22,44 @@ public class yc
   public zx a(int ☃)
   {
     if (e()) {
-      c += Math.min(☃, db);
+      this.c += Math.min(☃, d().b);
     }
     return super.a(☃);
   }
   
   protected void a(zx ☃, int ☃)
   {
-    c += ☃;
+    this.c += ☃;
     c(☃);
   }
   
   protected void c(zx ☃)
   {
-    ☃.a(b.o, b, c);
-    c = 0;
+    ☃.a(this.b.o, this.b, this.c);
+    this.c = 0;
   }
   
   public void a(wn ☃, zx ☃)
   {
     c(☃);
     
-    acz ☃ = a.i();
+    acz ☃ = this.a.i();
     if (☃ != null)
     {
-      zx ☃ = a.a(0);
-      zx ☃ = a.a(1);
+      zx ☃ = this.a.a(0);
+      zx ☃ = this.a.a(1);
       if ((a(☃, ☃, ☃)) || (a(☃, ☃, ☃)))
       {
-        h.a(☃);
+        this.h.a(☃);
         ☃.b(na.G);
-        if ((☃ != null) && (b <= 0)) {
+        if ((☃ != null) && (☃.b <= 0)) {
           ☃ = null;
         }
-        if ((☃ != null) && (b <= 0)) {
+        if ((☃ != null) && (☃.b <= 0)) {
           ☃ = null;
         }
-        a.a(0, ☃);
-        a.a(1, ☃);
+        this.a.a(0, ☃);
+        this.a.a(1, ☃);
       }
     }
   }
@@ -72,13 +72,13 @@ public class yc
     {
       if ((☃ != null) && (☃ != null) && (☃.b() == ☃.b()))
       {
-        b -= b;
-        b -= b;
+        ☃.b -= ☃.b;
+        ☃.b -= ☃.b;
         return true;
       }
       if ((☃ == null) && (☃ == null))
       {
-        b -= b;
+        ☃.b -= ☃.b;
         return true;
       }
     }

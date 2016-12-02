@@ -14,53 +14,53 @@ abstract class aqn$c
   {
     super(0);
     
-    a = ☃;
-    b = ☃;
-    c = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
     
-    m = cq.c.a.a(☃);
-    switch (aqn.1.a[m.ordinal()])
+    this.m = cq.c.a.a(☃);
+    switch (aqn.1.a[this.m.ordinal()])
     {
     case 1: 
     case 2: 
-      l = new aqe(☃, ☃, ☃, ☃ + ☃ - 1, ☃ + ☃ - 1, ☃ + ☃ - 1);
+      this.l = new aqe(☃, ☃, ☃, ☃ + ☃ - 1, ☃ + ☃ - 1, ☃ + ☃ - 1);
       break;
     default: 
-      l = new aqe(☃, ☃, ☃, ☃ + ☃ - 1, ☃ + ☃ - 1, ☃ + ☃ - 1);
+      this.l = new aqe(☃, ☃, ☃, ☃ + ☃ - 1, ☃ + ☃ - 1, ☃ + ☃ - 1);
     }
   }
   
   protected void a(dn ☃)
   {
-    ☃.a("Width", a);
-    ☃.a("Height", b);
-    ☃.a("Depth", c);
-    ☃.a("HPos", d);
+    ☃.a("Width", this.a);
+    ☃.a("Height", this.b);
+    ☃.a("Depth", this.c);
+    ☃.a("HPos", this.d);
   }
   
   protected void b(dn ☃)
   {
-    a = ☃.f("Width");
-    b = ☃.f("Height");
-    c = ☃.f("Depth");
-    d = ☃.f("HPos");
+    this.a = ☃.f("Width");
+    this.b = ☃.f("Height");
+    this.c = ☃.f("Depth");
+    this.d = ☃.f("HPos");
   }
   
   protected boolean a(adm ☃, aqe ☃, int ☃)
   {
-    if (d >= 0) {
+    if (this.d >= 0) {
       return true;
     }
     int ☃ = 0;
     int ☃ = 0;
     cj.a ☃ = new cj.a();
-    for (int ☃ = l.c; ☃ <= l.f; ☃++) {
-      for (int ☃ = l.a; ☃ <= l.d; ☃++)
+    for (int ☃ = this.l.c; ☃ <= this.l.f; ☃++) {
+      for (int ☃ = this.l.a; ☃ <= this.l.d; ☃++)
       {
         ☃.c(☃, 64, ☃);
         if (☃.b(☃))
         {
-          ☃ += Math.max(☃.r(☃).o(), t.i());
+          ☃ += Math.max(☃.r(☃).o(), ☃.t.i());
           ☃++;
         }
       }
@@ -68,8 +68,8 @@ abstract class aqn$c
     if (☃ == 0) {
       return false;
     }
-    d = (☃ / ☃);
-    l.a(0, d - l.b + ☃, 0);
+    this.d = (☃ / ☃);
+    this.l.a(0, this.d - this.l.b + ☃, 0);
     return true;
   }
 }

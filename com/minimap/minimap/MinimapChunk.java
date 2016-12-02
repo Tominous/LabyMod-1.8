@@ -12,9 +12,9 @@ public class MinimapChunk
 {
   public MinimapChunk(int X, int Z)
   {
-    colors = new int[16][16];
-    chunkGrid = ((X & 0x1) == (Z & 0x1));
-    slimeChunk = isSlimeChunk(X, Z);
+    this.colors = new int[16][16];
+    this.chunkGrid = ((X & 0x1) == (Z & 0x1));
+    this.slimeChunk = isSlimeChunk(X, Z);
   }
   
   public static boolean isSlimeChunk(int xPosition, int zPosition)
@@ -26,12 +26,12 @@ public class MinimapChunk
       long seed;
       if (sp == null)
       {
-        seed = getSettingsserverSlimeSeed;
+        seed = XaeroMinimap.getSettings().serverSlimeSeed;
       }
       else
       {
         seed = sp.e().J();
-        if (et.q() != 0) {
+        if (sp.e().t.q() != 0) {
           return false;
         }
       }

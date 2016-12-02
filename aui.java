@@ -15,9 +15,9 @@ public class aui
     if (☃ == -0.0D) {
       ☃ = 0.0D;
     }
-    a = ☃;
-    b = ☃;
-    c = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public aui(df ☃)
@@ -27,31 +27,31 @@ public class aui
   
   public aui a(aui ☃)
   {
-    return new aui(a - a, b - b, c - c);
+    return new aui(☃.a - this.a, ☃.b - this.b, ☃.c - this.c);
   }
   
   public aui a()
   {
-    double ☃ = ns.a(a * a + b * b + c * c);
+    double ☃ = ns.a(this.a * this.a + this.b * this.b + this.c * this.c);
     if (☃ < 1.0E-4D) {
       return new aui(0.0D, 0.0D, 0.0D);
     }
-    return new aui(a / ☃, b / ☃, c / ☃);
+    return new aui(this.a / ☃, this.b / ☃, this.c / ☃);
   }
   
   public double b(aui ☃)
   {
-    return a * a + b * b + c * c;
+    return this.a * ☃.a + this.b * ☃.b + this.c * ☃.c;
   }
   
   public aui c(aui ☃)
   {
-    return new aui(b * c - c * b, c * a - a * c, a * b - b * a);
+    return new aui(this.b * ☃.c - this.c * ☃.b, this.c * ☃.a - this.a * ☃.c, this.a * ☃.b - this.b * ☃.a);
   }
   
   public aui d(aui ☃)
   {
-    return a(a, b, c);
+    return a(☃.a, ☃.b, ☃.c);
   }
   
   public aui a(double ☃, double ☃, double ☃)
@@ -61,83 +61,83 @@ public class aui
   
   public aui e(aui ☃)
   {
-    return b(a, b, c);
+    return b(☃.a, ☃.b, ☃.c);
   }
   
   public aui b(double ☃, double ☃, double ☃)
   {
-    return new aui(a + ☃, b + ☃, c + ☃);
+    return new aui(this.a + ☃, this.b + ☃, this.c + ☃);
   }
   
   public double f(aui ☃)
   {
-    double ☃ = a - a;
-    double ☃ = b - b;
-    double ☃ = c - c;
+    double ☃ = ☃.a - this.a;
+    double ☃ = ☃.b - this.b;
+    double ☃ = ☃.c - this.c;
     return ns.a(☃ * ☃ + ☃ * ☃ + ☃ * ☃);
   }
   
   public double g(aui ☃)
   {
-    double ☃ = a - a;
-    double ☃ = b - b;
-    double ☃ = c - c;
+    double ☃ = ☃.a - this.a;
+    double ☃ = ☃.b - this.b;
+    double ☃ = ☃.c - this.c;
     return ☃ * ☃ + ☃ * ☃ + ☃ * ☃;
   }
   
   public double b()
   {
-    return ns.a(a * a + b * b + c * c);
+    return ns.a(this.a * this.a + this.b * this.b + this.c * this.c);
   }
   
   public aui a(aui ☃, double ☃)
   {
-    double ☃ = a - a;
-    double ☃ = b - b;
-    double ☃ = c - c;
+    double ☃ = ☃.a - this.a;
+    double ☃ = ☃.b - this.b;
+    double ☃ = ☃.c - this.c;
     if (☃ * ☃ < 1.0000000116860974E-7D) {
       return null;
     }
-    double ☃ = (☃ - a) / ☃;
+    double ☃ = (☃ - this.a) / ☃;
     if ((☃ < 0.0D) || (☃ > 1.0D)) {
       return null;
     }
-    return new aui(a + ☃ * ☃, b + ☃ * ☃, c + ☃ * ☃);
+    return new aui(this.a + ☃ * ☃, this.b + ☃ * ☃, this.c + ☃ * ☃);
   }
   
   public aui b(aui ☃, double ☃)
   {
-    double ☃ = a - a;
-    double ☃ = b - b;
-    double ☃ = c - c;
+    double ☃ = ☃.a - this.a;
+    double ☃ = ☃.b - this.b;
+    double ☃ = ☃.c - this.c;
     if (☃ * ☃ < 1.0000000116860974E-7D) {
       return null;
     }
-    double ☃ = (☃ - b) / ☃;
+    double ☃ = (☃ - this.b) / ☃;
     if ((☃ < 0.0D) || (☃ > 1.0D)) {
       return null;
     }
-    return new aui(a + ☃ * ☃, b + ☃ * ☃, c + ☃ * ☃);
+    return new aui(this.a + ☃ * ☃, this.b + ☃ * ☃, this.c + ☃ * ☃);
   }
   
   public aui c(aui ☃, double ☃)
   {
-    double ☃ = a - a;
-    double ☃ = b - b;
-    double ☃ = c - c;
+    double ☃ = ☃.a - this.a;
+    double ☃ = ☃.b - this.b;
+    double ☃ = ☃.c - this.c;
     if (☃ * ☃ < 1.0000000116860974E-7D) {
       return null;
     }
-    double ☃ = (☃ - c) / ☃;
+    double ☃ = (☃ - this.c) / ☃;
     if ((☃ < 0.0D) || (☃ > 1.0D)) {
       return null;
     }
-    return new aui(a + ☃ * ☃, b + ☃ * ☃, c + ☃ * ☃);
+    return new aui(this.a + ☃ * ☃, this.b + ☃ * ☃, this.c + ☃ * ☃);
   }
   
   public String toString()
   {
-    return "(" + a + ", " + b + ", " + c + ")";
+    return "(" + this.a + ", " + this.b + ", " + this.c + ")";
   }
   
   public aui a(float ☃)
@@ -145,9 +145,9 @@ public class aui
     float ☃ = ns.b(☃);
     float ☃ = ns.a(☃);
     
-    double ☃ = a;
-    double ☃ = b * ☃ + c * ☃;
-    double ☃ = c * ☃ - b * ☃;
+    double ☃ = this.a;
+    double ☃ = this.b * ☃ + this.c * ☃;
+    double ☃ = this.c * ☃ - this.b * ☃;
     
     return new aui(☃, ☃, ☃);
   }
@@ -157,9 +157,9 @@ public class aui
     float ☃ = ns.b(☃);
     float ☃ = ns.a(☃);
     
-    double ☃ = a * ☃ + c * ☃;
-    double ☃ = b;
-    double ☃ = c * ☃ - a * ☃;
+    double ☃ = this.a * ☃ + this.c * ☃;
+    double ☃ = this.b;
+    double ☃ = this.c * ☃ - this.a * ☃;
     
     return new aui(☃, ☃, ☃);
   }

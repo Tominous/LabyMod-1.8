@@ -16,7 +16,7 @@ public abstract class tm
   protected void E()
   {
     if (l() != 0) {
-      bm = 0;
+      this.bm = 0;
     }
     super.E();
   }
@@ -25,17 +25,17 @@ public abstract class tm
   {
     super.m();
     if (l() != 0) {
-      bm = 0;
+      this.bm = 0;
     }
-    if (bm > 0)
+    if (this.bm > 0)
     {
-      bm -= 1;
-      if (bm % 10 == 0)
+      this.bm -= 1;
+      if (this.bm % 10 == 0)
       {
-        double ☃ = V.nextGaussian() * 0.02D;
-        double ☃ = V.nextGaussian() * 0.02D;
-        double ☃ = V.nextGaussian() * 0.02D;
-        o.a(cy.I, s + V.nextFloat() * J * 2.0F - J, t + 0.5D + V.nextFloat() * K, u + V.nextFloat() * J * 2.0F - J, ☃, ☃, ☃, new int[0]);
+        double ☃ = this.V.nextGaussian() * 0.02D;
+        double ☃ = this.V.nextGaussian() * 0.02D;
+        double ☃ = this.V.nextGaussian() * 0.02D;
+        this.o.a(cy.I, this.s + this.V.nextFloat() * this.J * 2.0F - this.J, this.t + 0.5D + this.V.nextFloat() * this.K, this.u + this.V.nextFloat() * this.J * 2.0F - this.J, ☃, ☃, ☃, new int[0]);
       }
     }
   }
@@ -45,37 +45,37 @@ public abstract class tm
     if (b(☃)) {
       return false;
     }
-    bm = 0;
+    this.bm = 0;
     return super.a(☃, ☃);
   }
   
   public float a(cj ☃)
   {
-    if (o.p(☃.b()).c() == afi.c) {
+    if (this.o.p(☃.b()).c() == afi.c) {
       return 10.0F;
     }
-    return o.o(☃) - 0.5F;
+    return this.o.o(☃) - 0.5F;
   }
   
   public void b(dn ☃)
   {
     super.b(☃);
-    ☃.a("InLove", bm);
+    ☃.a("InLove", this.bm);
   }
   
   public void a(dn ☃)
   {
     super.a(☃);
-    bm = ☃.f("InLove");
+    this.bm = ☃.f("InLove");
   }
   
   public boolean bR()
   {
-    int ☃ = ns.c(s);
-    int ☃ = ns.c(aRb);
-    int ☃ = ns.c(u);
+    int ☃ = ns.c(this.s);
+    int ☃ = ns.c(aR().b);
+    int ☃ = ns.c(this.u);
     cj ☃ = new cj(☃, ☃, ☃);
-    return (o.p(☃.b()).c() == bn) && (o.k(☃) > 8) && (super.bR());
+    return (this.o.p(☃.b()).c() == this.bn) && (this.o.k(☃) > 8) && (super.bR());
   }
   
   public int w()
@@ -90,7 +90,7 @@ public abstract class tm
   
   protected int b(wn ☃)
   {
-    return 1 + o.s.nextInt(3);
+    return 1 + this.o.s.nextInt(3);
   }
   
   public boolean d(zx ☃)
@@ -103,10 +103,10 @@ public abstract class tm
   
   public boolean a(wn ☃)
   {
-    zx ☃ = bi.h();
+    zx ☃ = ☃.bi.h();
     if (☃ != null)
     {
-      if ((d(☃)) && (l() == 0) && (bm <= 0))
+      if ((d(☃)) && (l() == 0) && (this.bm <= 0))
       {
         a(☃, ☃);
         c(☃);
@@ -124,36 +124,36 @@ public abstract class tm
   
   protected void a(wn ☃, zx ☃)
   {
-    if (!bA.d)
+    if (!☃.bA.d)
     {
-      b -= 1;
-      if (b <= 0) {
-        bi.a(bi.c, null);
+      ☃.b -= 1;
+      if (☃.b <= 0) {
+        ☃.bi.a(☃.bi.c, null);
       }
     }
   }
   
   public void c(wn ☃)
   {
-    bm = 600;
-    bo = ☃;
+    this.bm = 600;
+    this.bo = ☃;
     
-    o.a(this, (byte)18);
+    this.o.a(this, (byte)18);
   }
   
   public wn cq()
   {
-    return bo;
+    return this.bo;
   }
   
   public boolean cr()
   {
-    return bm > 0;
+    return this.bm > 0;
   }
   
   public void cs()
   {
-    bm = 0;
+    this.bm = 0;
   }
   
   public boolean a(tm ☃)
@@ -172,10 +172,10 @@ public abstract class tm
     if (☃ == 18) {
       for (int ☃ = 0; ☃ < 7; ☃++)
       {
-        double ☃ = V.nextGaussian() * 0.02D;
-        double ☃ = V.nextGaussian() * 0.02D;
-        double ☃ = V.nextGaussian() * 0.02D;
-        o.a(cy.I, s + V.nextFloat() * J * 2.0F - J, t + 0.5D + V.nextFloat() * K, u + V.nextFloat() * J * 2.0F - J, ☃, ☃, ☃, new int[0]);
+        double ☃ = this.V.nextGaussian() * 0.02D;
+        double ☃ = this.V.nextGaussian() * 0.02D;
+        double ☃ = this.V.nextGaussian() * 0.02D;
+        this.o.a(cy.I, this.s + this.V.nextFloat() * this.J * 2.0F - this.J, this.t + 0.5D + this.V.nextFloat() * this.K, this.u + this.V.nextFloat() * this.J * 2.0F - this.J, ☃, ☃, ☃, new int[0]);
       }
     } else {
       super.a(☃);

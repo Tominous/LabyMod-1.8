@@ -63,7 +63,7 @@ public class bu
       throw new bz("commands.trigger.invalidMode", new Object[] { ☃[1] });
     }
     ☃.a(true);
-    if (c.d()) {
+    if (☃.c.d()) {
       a(☃, this, "commands.trigger.success", new Object[] { ☃[0], ☃[1], ☃[2] });
     }
   }

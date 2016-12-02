@@ -25,30 +25,30 @@ public class GuiDotColors
   
   public GuiDotColors(axu par1GuiScreen, ModSettings par2ModSettings)
   {
-    dropDowns = new ArrayList();
-    dropped = false;
-    parentGuiScreen = par1GuiScreen;
-    guiModSettings = par2ModSettings;
+    this.dropDowns = new ArrayList();
+    this.dropped = false;
+    this.parentGuiScreen = par1GuiScreen;
+    this.guiModSettings = par2ModSettings;
   }
   
   public void b()
   {
-    screenTitle = bnq.a("gui.xaero_entity_colours", new Object[0]);
-    n.clear();
-    n.add(new MySmallButton(200, l / 2 - 155, m / 6 + 168, bnq.a("gui.xaero_confirm", new Object[0])));
-    n.add(new MySmallButton(201, l / 2 + 5, m / 6 + 168, bnq.a("gui.xaero_cancel", new Object[0])));
-    dropDowns.clear();
-    colorOptions = createColorOptions();
-    String[] playerOptions = new String[colorOptions.length + 1];
-    for (int i = 0; i < colorOptions.length; i++) {
-      playerOptions[i] = colorOptions[i];
+    this.screenTitle = bnq.a("gui.xaero_entity_colours", new Object[0]);
+    this.n.clear();
+    this.n.add(new MySmallButton(200, this.l / 2 - 155, this.m / 6 + 168, bnq.a("gui.xaero_confirm", new Object[0])));
+    this.n.add(new MySmallButton(201, this.l / 2 + 5, this.m / 6 + 168, bnq.a("gui.xaero_cancel", new Object[0])));
+    this.dropDowns.clear();
+    this.colorOptions = createColorOptions();
+    String[] playerOptions = new String[this.colorOptions.length + 1];
+    for (int i = 0; i < this.colorOptions.length; i++) {
+      playerOptions[i] = this.colorOptions[i];
     }
-    playerOptions[colorOptions.length] = "gui.xaero_team_colours";
-    dropDowns.add(new GuiDropDown(colorOptions, l / 2 - 60, m / 7 + 50, 120, Integer.valueOf(getSettingsmobsColor)));
-    dropDowns.add(new GuiDropDown(colorOptions, l / 2 - 60, m / 7 + 80, 120, Integer.valueOf(getSettingshostileColor)));
-    dropDowns.add(new GuiDropDown(colorOptions, l / 2 - 60, m / 7 + 110, 120, Integer.valueOf(getSettingsitemsColor)));
-    dropDowns.add(new GuiDropDown(colorOptions, l / 2 - 60, m / 7 + 140, 120, Integer.valueOf(getSettingsotherColor)));
-    dropDowns.add(new GuiDropDown(playerOptions, l / 2 - 60, m / 7 + 20, 120, Integer.valueOf(getSettingsplayersColor != -1 ? getSettingsplayersColor : colorOptions.length)));
+    playerOptions[this.colorOptions.length] = "gui.xaero_team_colours";
+    this.dropDowns.add(new GuiDropDown(this.colorOptions, this.l / 2 - 60, this.m / 7 + 50, 120, Integer.valueOf(XaeroMinimap.getSettings().mobsColor)));
+    this.dropDowns.add(new GuiDropDown(this.colorOptions, this.l / 2 - 60, this.m / 7 + 80, 120, Integer.valueOf(XaeroMinimap.getSettings().hostileColor)));
+    this.dropDowns.add(new GuiDropDown(this.colorOptions, this.l / 2 - 60, this.m / 7 + 110, 120, Integer.valueOf(XaeroMinimap.getSettings().itemsColor)));
+    this.dropDowns.add(new GuiDropDown(this.colorOptions, this.l / 2 - 60, this.m / 7 + 140, 120, Integer.valueOf(XaeroMinimap.getSettings().otherColor)));
+    this.dropDowns.add(new GuiDropDown(playerOptions, this.l / 2 - 60, this.m / 7 + 20, 120, Integer.valueOf(XaeroMinimap.getSettings().playersColor != -1 ? XaeroMinimap.getSettings().playersColor : this.colorOptions.length)));
   }
   
   public String[] createColorOptions()
@@ -66,48 +66,48 @@ public class GuiDotColors
   
   protected void a(avs par1GuiButton)
   {
-    if (l)
+    if (par1GuiButton.l)
     {
-      int var2 = j.t.aK;
-      if ((k < 100) && ((par1GuiButton instanceof MySmallButton)))
+      int var2 = this.j.t.aK;
+      if ((par1GuiButton.k < 100) && ((par1GuiButton instanceof MySmallButton)))
       {
         try
         {
-          guiModSettings.setOptionValue(((MySmallButton)par1GuiButton).returnModOptions(), 1);
+          this.guiModSettings.setOptionValue(((MySmallButton)par1GuiButton).returnModOptions(), 1);
         }
         catch (IOException e)
         {
           e.printStackTrace();
         }
-        j = guiModSettings.getKeyBinding(ModOptions.getModOptions(k));
+        par1GuiButton.j = this.guiModSettings.getKeyBinding(ModOptions.getModOptions(par1GuiButton.k));
       }
-      if (k == 200)
+      if (par1GuiButton.k == 200)
       {
-        getSettingsmobsColor = dropDowns.get(0)).selected;
-        getSettingshostileColor = dropDowns.get(1)).selected;
-        getSettingsitemsColor = dropDowns.get(2)).selected;
-        getSettingsotherColor = dropDowns.get(3)).selected;
-        int playerOption = dropDowns.get(4)).selected;
-        getSettingsplayersColor = (playerOption < colorOptions.length ? playerOption : -1);
+        XaeroMinimap.getSettings().mobsColor = ((GuiDropDown)this.dropDowns.get(0)).selected;
+        XaeroMinimap.getSettings().hostileColor = ((GuiDropDown)this.dropDowns.get(1)).selected;
+        XaeroMinimap.getSettings().itemsColor = ((GuiDropDown)this.dropDowns.get(2)).selected;
+        XaeroMinimap.getSettings().otherColor = ((GuiDropDown)this.dropDowns.get(3)).selected;
+        int playerOption = ((GuiDropDown)this.dropDowns.get(4)).selected;
+        XaeroMinimap.getSettings().playersColor = (playerOption < this.colorOptions.length ? playerOption : -1);
         try
         {
-          guiModSettings.saveSettings();
+          this.guiModSettings.saveSettings();
         }
         catch (IOException e2)
         {
           e2.printStackTrace();
         }
-        j.a(parentGuiScreen);
+        this.j.a(this.parentGuiScreen);
       }
-      if (k == 201) {
-        j.a(parentGuiScreen);
+      if (par1GuiButton.k == 201) {
+        this.j.a(this.parentGuiScreen);
       }
-      if (j.t.aK != var2)
+      if (this.j.t.aK != var2)
       {
-        avr res = new avr(j);
+        avr res = new avr(this.j);
         int var3 = res.a();
         int var4 = res.b();
-        a(j, var3, var4);
+        a(this.j, var3, var4);
       }
     }
   }
@@ -115,23 +115,23 @@ public class GuiDotColors
   protected void a(int par1, int par2, int par3)
     throws IOException
   {
-    for (GuiDropDown d : dropDowns)
+    for (GuiDropDown d : this.dropDowns)
     {
-      if ((!closed) && (d.onDropDown(par1, par2)))
+      if ((!d.closed) && (d.onDropDown(par1, par2)))
       {
         d.mouseClicked(par1, par2, par3);
         return;
       }
-      closed = true;
+      d.closed = true;
     }
-    for (GuiDropDown d : dropDowns)
+    for (GuiDropDown d : this.dropDowns)
     {
       if (d.onDropDown(par1, par2))
       {
         d.mouseClicked(par1, par2, par3);
         return;
       }
-      closed = true;
+      d.closed = true;
     }
     super.a(par1, par2, par3);
   }
@@ -139,28 +139,28 @@ public class GuiDotColors
   public void a(int par1, int par2, float par3)
   {
     c();
-    a(q, screenTitle, l / 2, 20, 16777215);
-    a(q, bnq.a("gui.xaero_players", new Object[0]) + ":", l / 2, m / 7 + 10, 16777215);
-    a(q, bnq.a("gui.xaero_mobs", new Object[0]) + ":", l / 2, m / 7 + 40, 16777215);
-    a(q, bnq.a("gui.xaero_hostile", new Object[0]) + ":", l / 2, m / 7 + 70, 16777215);
-    a(q, bnq.a("gui.xaero_items", new Object[0]) + ":", l / 2, m / 7 + 100, 16777215);
-    a(q, bnq.a("gui.xaero_other", new Object[0]) + ":", l / 2, m / 7 + 130, 16777215);
-    if (dropped) {
+    a(this.q, this.screenTitle, this.l / 2, 20, 16777215);
+    a(this.q, bnq.a("gui.xaero_players", new Object[0]) + ":", this.l / 2, this.m / 7 + 10, 16777215);
+    a(this.q, bnq.a("gui.xaero_mobs", new Object[0]) + ":", this.l / 2, this.m / 7 + 40, 16777215);
+    a(this.q, bnq.a("gui.xaero_hostile", new Object[0]) + ":", this.l / 2, this.m / 7 + 70, 16777215);
+    a(this.q, bnq.a("gui.xaero_items", new Object[0]) + ":", this.l / 2, this.m / 7 + 100, 16777215);
+    a(this.q, bnq.a("gui.xaero_other", new Object[0]) + ":", this.l / 2, this.m / 7 + 130, 16777215);
+    if (this.dropped) {
       super.a(0, 0, par3);
     } else {
       super.a(par1, par2, par3);
     }
-    dropped = false;
-    for (int k = 0; k < dropDowns.size(); k++) {
-      if (dropDowns.get(k)).closed) {
-        ((GuiDropDown)dropDowns.get(k)).drawButton(par1, par2);
+    this.dropped = false;
+    for (int k = 0; k < this.dropDowns.size(); k++) {
+      if (((GuiDropDown)this.dropDowns.get(k)).closed) {
+        ((GuiDropDown)this.dropDowns.get(k)).drawButton(par1, par2);
       } else {
-        dropped = true;
+        this.dropped = true;
       }
     }
-    for (int k = 0; k < dropDowns.size(); k++) {
-      if (!dropDowns.get(k)).closed) {
-        ((GuiDropDown)dropDowns.get(k)).drawButton(par1, par2);
+    for (int k = 0; k < this.dropDowns.size(); k++) {
+      if (!((GuiDropDown)this.dropDowns.get(k)).closed) {
+        ((GuiDropDown)this.dropDowns.get(k)).drawButton(par1, par2);
       }
     }
   }

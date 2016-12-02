@@ -10,9 +10,9 @@ public class aqp$o
   {
     super(☃);
     
-    m = ☃;
-    d = a(☃);
-    l = ☃;
+    this.m = ☃;
+    this.d = a(☃);
+    this.l = ☃;
   }
   
   public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -36,7 +36,7 @@ public class aqp$o
     }
     a(☃, ☃, 0, 0, 0, 4, 10, 7, true, ☃, aqp.c());
     
-    a(☃, ☃, ☃, d, 1, 7, 0);
+    a(☃, ☃, ☃, this.d, 1, 7, 0);
     
     a(☃, ☃, ☃, aqp.p.a.a, 1, 1, 7);
     

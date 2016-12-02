@@ -10,23 +10,23 @@ public class aqj$a
   {
     super(☃);
     
-    m = ☃;
-    l = ☃;
+    this.m = ☃;
+    this.l = ☃;
   }
   
   protected aqj$a(Random ☃, int ☃, int ☃)
   {
     super(0);
     
-    m = cq.c.a.a(☃);
-    switch (aqj.1.a[m.ordinal()])
+    this.m = cq.c.a.a(☃);
+    switch (aqj.1.a[this.m.ordinal()])
     {
     case 1: 
     case 2: 
-      l = new aqe(☃, 64, ☃, ☃ + 19 - 1, 73, ☃ + 19 - 1);
+      this.l = new aqe(☃, 64, ☃, ☃ + 19 - 1, 73, ☃ + 19 - 1);
       break;
     default: 
-      l = new aqe(☃, 64, ☃, ☃ + 19 - 1, 73, ☃ + 19 - 1);
+      this.l = new aqe(☃, 64, ☃, ☃ + 19 - 1, 73, ☃ + 19 - 1);
     }
   }
   

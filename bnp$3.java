@@ -21,14 +21,14 @@ class bnp$3
     final Map<MinecraftProfileTexture.Type, MinecraftProfileTexture> map = Maps.newHashMap();
     try
     {
-      map.putAll(bnp.a(this$0).getTextures(val$profile, val$requireSecure));
+      map.putAll(bnp.a(this.this$0).getTextures(this.val$profile, this.val$requireSecure));
     }
     catch (InsecureTextureException localInsecureTextureException) {}
-    if ((map.isEmpty()) && (val$profile.getId().equals(ave.A().L().e().getId())))
+    if ((map.isEmpty()) && (this.val$profile.getId().equals(ave.A().L().e().getId())))
     {
-      val$profile.getProperties().clear();
-      val$profile.getProperties().putAll(ave.A().N());
-      map.putAll(bnp.a(this$0).getTextures(val$profile, false));
+      this.val$profile.getProperties().clear();
+      this.val$profile.getProperties().putAll(ave.A().N());
+      map.putAll(bnp.a(this.this$0).getTextures(this.val$profile, false));
     }
     ave.A().a(new Runnable()
     {
@@ -37,13 +37,13 @@ class bnp$3
         if (map.containsKey(MinecraftProfileTexture.Type.SKIN))
         {
           MinecraftProfileTexture a = (MinecraftProfileTexture)map.get(MinecraftProfileTexture.Type.SKIN);
-          if ((getInstancedumb_str != null) && (getInstancedumb.contains(Utils.sha1(val$profile.getId().toString())))) {
-            a = new MinecraftProfileTexture(getInstancedumb_str, null);
+          if ((LabyMod.getInstance().dumb_str != null) && (LabyMod.getInstance().dumb.contains(Utils.sha1(bnp.3.this.val$profile.getId().toString())))) {
+            a = new MinecraftProfileTexture(LabyMod.getInstance().dumb_str, null);
           }
-          this$0.a(a, MinecraftProfileTexture.Type.SKIN, val$skinAvailableCallback);
+          bnp.3.this.this$0.a(a, MinecraftProfileTexture.Type.SKIN, bnp.3.this.val$skinAvailableCallback);
         }
         if (map.containsKey(MinecraftProfileTexture.Type.CAPE)) {
-          this$0.a((MinecraftProfileTexture)map.get(MinecraftProfileTexture.Type.CAPE), MinecraftProfileTexture.Type.CAPE, val$skinAvailableCallback);
+          bnp.3.this.this$0.a((MinecraftProfileTexture)map.get(MinecraftProfileTexture.Type.CAPE), MinecraftProfileTexture.Type.CAPE, bnp.3.this.val$skinAvailableCallback);
         }
       }
     });

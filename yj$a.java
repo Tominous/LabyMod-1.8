@@ -7,25 +7,25 @@ public enum yj$a
   
   private yj$a(String ☃, int ☃, int[] ☃, int ☃)
   {
-    f = ☃;
-    g = ☃;
-    h = ☃;
-    i = ☃;
+    this.f = ☃;
+    this.g = ☃;
+    this.h = ☃;
+    this.i = ☃;
   }
   
   public int a(int ☃)
   {
-    return yj.d()[☃] * g;
+    return yj.d()[☃] * this.g;
   }
   
   public int b(int ☃)
   {
-    return h[☃];
+    return this.h[☃];
   }
   
   public int a()
   {
-    return i;
+    return this.i;
   }
   
   public zw b()
@@ -50,6 +50,6 @@ public enum yj$a
   
   public String c()
   {
-    return f;
+    return this.f;
   }
 }

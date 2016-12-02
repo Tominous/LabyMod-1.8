@@ -38,9 +38,9 @@ public class GuiTeamSpeak
   public GuiTeamSpeak()
   {
     super(null);
-    childScreen = this;
-    draw = getInstancedraw;
-    id = "TeamSpeak";
+    this.childScreen = this;
+    this.draw = LabyMod.getInstance().draw;
+    this.id = "TeamSpeak";
   }
   
   boolean boxEnabled = false;
@@ -74,38 +74,38 @@ public class GuiTeamSpeak
   public void b()
   {
     TeamSpeak.setDefaultScreen();
-    changeNickName = false;
-    drag = false;
+    this.changeNickName = false;
+    this.drag = false;
     closeBox();
-    connect = 0;
+    this.connect = 0;
     Keyboard.enableRepeatEvents(true);
-    n.clear();
+    this.n.clear();
     
-    chatInputField = new ModGuiTextField(0, getInstancemc.k, 5, draw.getHeight() - 17, draw.getWidth() - 10, 12);
-    chatInputField.a(TeamSpeak.inputString);
-    chatInputField.f(200);
+    this.chatInputField = new ModGuiTextField(0, LabyMod.getInstance().mc.k, 5, this.draw.getHeight() - 17, this.draw.getWidth() - 10, 12);
+    this.chatInputField.a(TeamSpeak.inputString);
+    this.chatInputField.f(200);
     
-    nickNameField = new ModGuiTextField(0, getInstancemc.k, 0, 0, TeamSpeak.xSplit - 26, 9);
-    nickNameField.f(20);
+    this.nickNameField = new ModGuiTextField(0, LabyMod.getInstance().mc.k, 0, 0, TeamSpeak.xSplit - 26, 9);
+    this.nickNameField.f(20);
     
-    connectButton = new avs(1, l / 2 - 100, m / 2, L.f("gui_ts_connect", new Object[0]));
+    this.connectButton = new avs(1, this.l / 2 - 100, this.m / 2, L.f("gui_ts_connect", new Object[0]));
     if (TeamSpeakController.getInstance() != null) {
-      connectButton.m = (!TeamSpeakController.getInstance().isConnectionEstablished());
+      this.connectButton.m = (!TeamSpeakController.getInstance().isConnectionEstablished());
     }
-    n.add(connectButton);
-    while (TeamSpeak.xSplit > getInstancedraw.getWidth() / 4 * 3) {
+    this.n.add(this.connectButton);
+    while (TeamSpeak.xSplit > LabyMod.getInstance().draw.getWidth() / 4 * 3) {
       TeamSpeak.xSplit -= 1;
     }
     while (TeamSpeak.xSplit < 200) {
       TeamSpeak.xSplit += 1;
     }
-    while (TeamSpeak.ySplit > getInstancedraw.getHeight() - 50) {
+    while (TeamSpeak.ySplit > LabyMod.getInstance().draw.getHeight() - 50) {
       TeamSpeak.ySplit -= 1;
     }
     while (TeamSpeak.ySplit < 50) {
       TeamSpeak.ySplit += 1;
     }
-    boxEnabled = false;
+    this.boxEnabled = false;
     
     super.b();
   }
@@ -113,12 +113,12 @@ public class GuiTeamSpeak
   public void a(avs button)
     throws IOException
   {
-    switch (k)
+    switch (button.k)
     {
     case 0: 
       break;
     case 1: 
-      connect = 1;
+      this.connect = 1;
     }
     super.actionPermformed(button);
   }
@@ -137,22 +137,22 @@ public class GuiTeamSpeak
       }
     }
     if (keyCode == 28) {
-      if ((changeNickName) && (nickNameField != null) && (nickNameField.m()))
+      if ((this.changeNickName) && (this.nickNameField != null) && (this.nickNameField.m()))
       {
         changeNickname();
       }
-      else if ((!TeamSpeak.inputString.isEmpty()) && (chatInputField != null) && (chatInputField.m()))
+      else if ((!TeamSpeak.inputString.isEmpty()) && (this.chatInputField != null) && (this.chatInputField.m()))
       {
         TeamSpeakBridge.sendTextMessage(TeamSpeak.selectedChat, TeamSpeak.inputString);
         TeamSpeak.inputString = "";
-        chatInputField.a("");
+        this.chatInputField.a("");
       }
     }
-    if (chatInputField.a(typedChar, keyCode)) {
-      TeamSpeak.inputString = chatInputField.b();
+    if (this.chatInputField.a(typedChar, keyCode)) {
+      TeamSpeak.inputString = this.chatInputField.b();
     }
-    if (changeNickName) {
-      nickNameField.a(typedChar, keyCode);
+    if (this.changeNickName) {
+      this.nickNameField.a(typedChar, keyCode);
     }
     super.a(typedChar, keyCode);
   }
@@ -175,22 +175,22 @@ public class GuiTeamSpeak
         return;
       }
     }
-    if (changeNickName) {
+    if (this.changeNickName) {
       changeNickname();
     }
-    chatInputField.a(mouseX, mouseY, mouseButton);
-    if (changeNickName) {
-      nickNameField.a(mouseX, mouseY, mouseButton);
+    this.chatInputField.a(mouseX, mouseY, mouseButton);
+    if (this.changeNickName) {
+      this.nickNameField.a(mouseX, mouseY, mouseButton);
     }
-    clickX = (mouseX - TeamSpeak.xSplit);
-    clickY = (mouseY - TeamSpeak.ySplit);
+    this.clickX = (mouseX - TeamSpeak.xSplit);
+    this.clickY = (mouseY - TeamSpeak.ySplit);
     if ((mouseX > TeamSpeak.xSplit - 5) && (mouseX < TeamSpeak.xSplit + 5)) {
-      moveX = true;
+      this.moveX = true;
     }
     if ((mouseY > TeamSpeak.ySplit - 5) && (mouseY < TeamSpeak.ySplit + 5)) {
-      moveY = true;
+      this.moveY = true;
     }
-    if ((moveX) || (moveY)) {
+    if ((this.moveX) || (this.moveY)) {
       return;
     }
     switchChat(mouseX, mouseY, mouseButton);
@@ -213,17 +213,17 @@ public class GuiTeamSpeak
       if (var1 < -1) {
         var1 = -1;
       }
-      if (boxEnabled) {
+      if (this.boxEnabled) {
         return;
       }
-      if (changeNickName) {
+      if (this.changeNickName) {
         return;
       }
-      if (yMouse > TeamSpeak.ySplit)
+      if (this.yMouse > TeamSpeak.ySplit)
       {
         if (var1 > 0)
         {
-          if (allowChatScroll) {
+          if (this.allowChatScroll) {
             TeamSpeak.scrollChat -= 10;
           }
         }
@@ -237,7 +237,7 @@ public class GuiTeamSpeak
           TeamSpeak.scrollChannel += 20;
         }
       }
-      else if (allowChannelScroll) {
+      else if (this.allowChannelScroll) {
         TeamSpeak.scrollChannel -= 20;
       }
     }
@@ -255,71 +255,71 @@ public class GuiTeamSpeak
     
     callBackListener(mouseX, mouseY);
     
-    connectButton.m = (!TeamSpeakController.getInstance().isConnectionEstablished());
-    if (connectButton != null)
+    this.connectButton.m = (!TeamSpeakController.getInstance().isConnectionEstablished());
+    if (this.connectButton != null)
     {
-      if (connect == 2)
+      if (this.connect == 2)
       {
-        connect = 0;
+        this.connect = 0;
         TeamSpeakController.getInstance().connect();
       }
-      if (connect == 1) {
-        connect += 1;
+      if (this.connect == 1) {
+        this.connect += 1;
       }
     }
     if (!TeamSpeakController.getInstance().isConnectionEstablished())
     {
-      String s = getInstanceserverIP + ":" + getInstanceserverPort;
-      if ((getInstanceserverIP.isEmpty()) || (getInstanceserverPort == 0))
+      String s = TeamSpeakController.getInstance().serverIP + ":" + TeamSpeakController.getInstance().serverPort;
+      if ((TeamSpeakController.getInstance().serverIP.isEmpty()) || (TeamSpeakController.getInstance().serverPort == 0))
       {
-        draw.drawCenteredString(Color.cl("c") + L.f("gui_ts_error_connect", new Object[0]), l / 2, m / 2 - 15);
-        if (connectButton != null)
+        this.draw.drawCenteredString(Color.cl("c") + L.f("gui_ts_error_connect", new Object[0]), this.l / 2, this.m / 2 - 15);
+        if (this.connectButton != null)
         {
-          connectButton.m = true;
-          if (!connectButton.l) {
-            connectButton.j = L.f("gui_ts_connecting", new Object[0]);
+          this.connectButton.m = true;
+          if (!this.connectButton.l) {
+            this.connectButton.j = L.f("gui_ts_connecting", new Object[0]);
           } else {
-            connectButton.j = L.f("gui_ts_connect", new Object[0]);
+            this.connectButton.j = L.f("gui_ts_connect", new Object[0]);
           }
         }
       }
       else
       {
-        draw.drawCenteredString(Color.cl("a") + L.f("gui_ts_connectto", new Object[] { s }), l / 2, m / 2 - 15);
+        this.draw.drawCenteredString(Color.cl("a") + L.f("gui_ts_connectto", new Object[] { s }), this.l / 2, this.m / 2 - 15);
       }
-      if (init)
+      if (this.init)
       {
-        init = false;
+        this.init = false;
         b();
       }
       super.a(mouseX, mouseY, partialTicks);
       return;
     }
-    if ((getInstanceserverIP.isEmpty()) || (getInstanceserverPort == 0) || (TeamSpeakUser.amount() == 0) || (TeamSpeakChannel.amount() == 0))
+    if ((TeamSpeakController.getInstance().serverIP.isEmpty()) || (TeamSpeakController.getInstance().serverPort == 0) || (TeamSpeakUser.amount() == 0) || (TeamSpeakChannel.amount() == 0))
     {
-      if (connectButton != null) {
-        connectButton.m = false;
+      if (this.connectButton != null) {
+        this.connectButton.m = false;
       }
-      draw.drawCenteredString(Color.cl("c") + L.f("gui_ts_noserverfound", new Object[0]), l / 2, m / 2 - 15);
-      draw.drawCenteredString(Color.cl("7") + L.f("gui_ts_tryrestart", new Object[0]), l / 2, m / 2 - 5);
+      this.draw.drawCenteredString(Color.cl("c") + L.f("gui_ts_noserverfound", new Object[0]), this.l / 2, this.m / 2 - 15);
+      this.draw.drawCenteredString(Color.cl("7") + L.f("gui_ts_tryrestart", new Object[0]), this.l / 2, this.m / 2 - 5);
       super.a(mouseX, mouseY, partialTicks);
       return;
     }
-    if (!init)
+    if (!this.init)
     {
-      init = true;
+      this.init = true;
       b();
     }
-    chatInputField.g();
+    this.chatInputField.g();
     
     drawChat();
     drawChannel(mouseX, mouseY);
     drawClientInfo();
     drawMenu(mouseX, mouseY);
-    if (changeNickName) {
-      nickNameField.g();
+    if (this.changeNickName) {
+      this.nickNameField.g();
     }
-    yMouse = mouseY;
+    this.yMouse = mouseY;
     if ((TeamSpeak.selectedUser != -1) && 
       (TeamSpeakController.getInstance().getUser(TeamSpeak.selectedUser) == null)) {
       TeamSpeak.selectedUser = -1;
@@ -345,20 +345,20 @@ public class GuiTeamSpeak
     drawBox(mouseX, mouseY);
     if ((mouseX > TeamSpeak.xSplit - 5) && (mouseX < TeamSpeak.xSplit + 5) && (mouseY > TeamSpeak.ySplit - 5) && (mouseY < TeamSpeak.ySplit + 5))
     {
-      getInstancedraw.drawCenteredString(Color.cl("7") + "+", mouseX + 1, mouseY - 2);
+      LabyMod.getInstance().draw.drawCenteredString(Color.cl("7") + "+", mouseX + 1, mouseY - 2);
     }
     else
     {
       if ((mouseX > TeamSpeak.xSplit - 5) && (mouseX < TeamSpeak.xSplit + 5) && (mouseY < TeamSpeak.ySplit))
       {
-        getInstancedraw.drawCenteredString(Color.cl("7") + "...", mouseX + 1, mouseY - 6);
-        getInstancedraw.drawCenteredString(Color.cl("7") + "...", mouseX + 1, mouseY - 3);
+        LabyMod.getInstance().draw.drawCenteredString(Color.cl("7") + "...", mouseX + 1, mouseY - 6);
+        LabyMod.getInstance().draw.drawCenteredString(Color.cl("7") + "...", mouseX + 1, mouseY - 3);
       }
       if ((mouseY > TeamSpeak.ySplit - 5) && (mouseY < TeamSpeak.ySplit + 5)) {
-        getInstancedraw.drawCenteredString(Color.cl("7") + "||", mouseX + 1, mouseY - 3);
+        LabyMod.getInstance().draw.drawCenteredString(Color.cl("7") + "||", mouseX + 1, mouseY - 3);
       }
     }
-    if (drag) {
+    if (this.drag) {
       drawDrag(mouseX, mouseY);
     }
     super.a(mouseX, mouseY, partialTicks);
@@ -375,16 +375,16 @@ public class GuiTeamSpeak
         return;
       }
     }
-    if ((moveX) && 
-      (mouseX - clickX < getInstancedraw.getWidth() / 4 * 3) && (mouseX - clickX > 200)) {
-      TeamSpeak.xSplit = mouseX - clickX;
+    if ((this.moveX) && 
+      (mouseX - this.clickX < LabyMod.getInstance().draw.getWidth() / 4 * 3) && (mouseX - this.clickX > 200)) {
+      TeamSpeak.xSplit = mouseX - this.clickX;
     }
-    if ((moveY) && 
-      (mouseY - clickY < getInstancedraw.getHeight() - 50) && (mouseY - clickY > 50)) {
-      TeamSpeak.ySplit = mouseY - clickY;
+    if ((this.moveY) && 
+      (mouseY - this.clickY < LabyMod.getInstance().draw.getHeight() - 50) && (mouseY - this.clickY > 50)) {
+      TeamSpeak.ySplit = mouseY - this.clickY;
     }
-    if (drag) {
-      dragVisible += 1;
+    if (this.drag) {
+      this.dragVisible += 1;
     }
     super.a(mouseX, mouseY, clickedMouseButton, timeSinceLastClick);
   }
@@ -400,12 +400,12 @@ public class GuiTeamSpeak
         return;
       }
     }
-    if ((moveX) || (moveY)) {
+    if ((this.moveX) || (this.moveY)) {
       b();
     }
-    moveX = false;
-    moveY = false;
-    if (drag) {
+    this.moveX = false;
+    this.moveY = false;
+    if (this.drag) {
       setDrop(mouseX, mouseY);
     }
     super.b(mouseX, mouseY, state);
@@ -413,16 +413,16 @@ public class GuiTeamSpeak
   
   private void drawChat()
   {
-    DrawUtils.a(5, TeamSpeak.ySplit, draw.getWidth() - 5, draw.getHeight() - 20, Integer.MIN_VALUE);
+    DrawUtils.a(5, TeamSpeak.ySplit, this.draw.getWidth() - 5, this.draw.getHeight() - 20, Integer.MIN_VALUE);
     Chat selected = null;
     int slot = 0;
     for (Chat chat : TeamSpeak.chats)
     {
-      DrawUtils.a(5 + slot, draw.getHeight() - 33, 50 + slot, draw.getHeight() - 20, 835640000);
+      DrawUtils.a(5 + slot, this.draw.getHeight() - 33, 50 + slot, this.draw.getHeight() - 20, 835640000);
       c = "";
       if (TeamSpeak.selectedChat == chat.getSlotId())
       {
-        DrawUtils.a(5 + slot + 1, draw.getHeight() - 33 + 1, 50 + slot - 1, draw.getHeight() - 20 - 1, Integer.MAX_VALUE);
+        DrawUtils.a(5 + slot + 1, this.draw.getHeight() - 33 + 1, 50 + slot - 1, this.draw.getHeight() - 20 - 1, Integer.MAX_VALUE);
         selected = chat;
       }
       String name = Utils.normalizeString(chat.getTargetMode().name());
@@ -433,7 +433,7 @@ public class GuiTeamSpeak
           name = name.substring(0, 7);
         }
       }
-      draw.drawCenteredString(c + name, 27 + slot, draw.getHeight() - 30);
+      this.draw.drawCenteredString(c + name, 27 + slot, this.draw.getHeight() - 30);
       slot += 46;
     }
     String c;
@@ -445,16 +445,16 @@ public class GuiTeamSpeak
       Collections.reverse(list);
       for (Message msg : list)
       {
-        if ((getInstancedraw.getHeight() - 45 - y - TeamSpeak.scrollChat >= TeamSpeak.ySplit) && (getInstancedraw.getHeight() - 45 - y - TeamSpeak.scrollChat <= getInstancedraw.getHeight() - 45)) {
+        if ((LabyMod.getInstance().draw.getHeight() - 45 - y - TeamSpeak.scrollChat >= TeamSpeak.ySplit) && (LabyMod.getInstance().draw.getHeight() - 45 - y - TeamSpeak.scrollChat <= LabyMod.getInstance().draw.getHeight() - 45)) {
           if (msg.getUser() == null) {
-            getInstancedraw.drawString(msg.getMessage(), 8.0D, getInstancedraw.getHeight() - 45 - y - TeamSpeak.scrollChat);
+            LabyMod.getInstance().draw.drawString(msg.getMessage(), 8.0D, LabyMod.getInstance().draw.getHeight() - 45 - y - TeamSpeak.scrollChat);
           } else {
-            getInstancedraw.drawString(Color.cl("9") + msg.getUser().getNickName() + Color.cl("7") + ": " + msg.getMessage(), 8.0D, getInstancedraw.getHeight() - 45 - y - TeamSpeak.scrollChat);
+            LabyMod.getInstance().draw.drawString(Color.cl("9") + msg.getUser().getNickName() + Color.cl("7") + ": " + msg.getMessage(), 8.0D, LabyMod.getInstance().draw.getHeight() - 45 - y - TeamSpeak.scrollChat);
           }
         }
         y += 10;
       }
-      allowChatScroll = (getInstancedraw.getHeight() - 45 - y - TeamSpeak.scrollChat < TeamSpeak.ySplit - 10);
+      this.allowChatScroll = (LabyMod.getInstance().draw.getHeight() - 45 - y - TeamSpeak.scrollChat < TeamSpeak.ySplit - 10);
     }
   }
   
@@ -465,7 +465,7 @@ public class GuiTeamSpeak
     for (Iterator localIterator1 = TeamSpeak.chats.iterator(); localIterator1.hasNext();)
     {
       chat = (Chat)localIterator1.next();
-      if ((mouseX > 5 + slot) && (mouseX < 50 + slot) && (mouseY > draw.getHeight() - 33) && (mouseY < draw.getHeight() - 20))
+      if ((mouseX > 5 + slot) && (mouseX < 50 + slot) && (mouseY > this.draw.getHeight() - 33) && (mouseY < this.draw.getHeight() - 20))
       {
         TeamSpeak.scrollChat = 0;
         if (mouseButton == 0) {
@@ -499,17 +499,17 @@ public class GuiTeamSpeak
       Collections.reverse(list);
       for (Message msg : list)
       {
-        if ((getInstancedraw.getHeight() - 45 - y - TeamSpeak.scrollChat >= TeamSpeak.ySplit) && (getInstancedraw.getHeight() - 45 - y - TeamSpeak.scrollChat <= getInstancedraw.getHeight() - 45) && 
+        if ((LabyMod.getInstance().draw.getHeight() - 45 - y - TeamSpeak.scrollChat >= TeamSpeak.ySplit) && (LabyMod.getInstance().draw.getHeight() - 45 - y - TeamSpeak.scrollChat <= LabyMod.getInstance().draw.getHeight() - 45) && 
           (msg.getUser() != null))
         {
-          if ((mouseX > 8) && (mouseX < getInstancedraw.getStringWidth(msg.getUser().getNickName()) + 8) && (mouseY > getInstancedraw.getHeight() - 45 - y - TeamSpeak.scrollChat) && (mouseY < getInstancedraw.getHeight() - 45 - y - TeamSpeak.scrollChat + 10)) {
+          if ((mouseX > 8) && (mouseX < LabyMod.getInstance().draw.getStringWidth(msg.getUser().getNickName()) + 8) && (mouseY > LabyMod.getInstance().draw.getHeight() - 45 - y - TeamSpeak.scrollChat) && (mouseY < LabyMod.getInstance().draw.getHeight() - 45 - y - TeamSpeak.scrollChat + 10)) {
             openBox(true, msg.getUser().getClientId(), mouseX, mouseY);
           }
-          if ((mouseX > 8) && (mouseX > getInstancedraw.getStringWidth(msg.getUser().getNickName()) + 8) && (mouseY > getInstancedraw.getHeight() - 45 - y - TeamSpeak.scrollChat) && (mouseY < getInstancedraw.getHeight() - 45 - y - TeamSpeak.scrollChat + 10))
+          if ((mouseX > 8) && (mouseX > LabyMod.getInstance().draw.getStringWidth(msg.getUser().getNickName()) + 8) && (mouseY > LabyMod.getInstance().draw.getHeight() - 45 - y - TeamSpeak.scrollChat) && (mouseY < LabyMod.getInstance().draw.getHeight() - 45 - y - TeamSpeak.scrollChat + 10))
           {
             ArrayList<String> urls = Utils.extractDomains(msg.getMessage());
             if (!urls.isEmpty()) {
-              LabyMod.getInstance().openWebpage((String)urls.get(0));
+              LabyMod.getInstance().openWebpage((String)urls.get(0), true);
             }
           }
         }
@@ -549,7 +549,7 @@ public class GuiTeamSpeak
       {
         isInRegion = true;
         regionChannelId = channel.getChannelId();
-        if (drag) {
+        if (this.drag) {
           a(5, 30 + slot + TeamSpeak.scrollChannel - 1, TeamSpeak.xSplit, 30 + slot + TeamSpeak.scrollChannel + 10, 1230000000);
         }
       }
@@ -565,15 +565,15 @@ public class GuiTeamSpeak
         }
         if (TeamSpeak.isSpacer(channel.getChannelName()))
         {
-          getInstancedraw.drawCenteredString(c + TeamSpeak.toStarSpacer(channel.getChannelName(), TeamSpeak.xSplit), TeamSpeak.xSplit / 2, 30 + slot + TeamSpeak.scrollChannel);
+          LabyMod.getInstance().draw.drawCenteredString(c + TeamSpeak.toStarSpacer(channel.getChannelName(), TeamSpeak.xSplit), TeamSpeak.xSplit / 2, 30 + slot + TeamSpeak.scrollChannel);
         }
         else if (TeamSpeak.isStarSpacer(channel.getChannelName()))
         {
-          getInstancedraw.drawCenteredString(c + TeamSpeak.toStarSpacer(channel.getChannelName(), TeamSpeak.xSplit), TeamSpeak.xSplit / 2, 30 + slot + TeamSpeak.scrollChannel);
+          LabyMod.getInstance().draw.drawCenteredString(c + TeamSpeak.toStarSpacer(channel.getChannelName(), TeamSpeak.xSplit), TeamSpeak.xSplit / 2, 30 + slot + TeamSpeak.scrollChannel);
         }
         else if (TeamSpeak.isCenterSpacer(channel.getChannelName()))
         {
-          getInstancedraw.drawCenteredString(c + TeamSpeak.toCenterSpacer(channel.getChannelName()), TeamSpeak.xSplit / 2, 30 + slot + TeamSpeak.scrollChannel);
+          LabyMod.getInstance().draw.drawCenteredString(c + TeamSpeak.toCenterSpacer(channel.getChannelName()), TeamSpeak.xSplit / 2, 30 + slot + TeamSpeak.scrollChannel);
         }
         else
         {
@@ -587,7 +587,7 @@ public class GuiTeamSpeak
           if ((channel.getTotalClients() >= channel.getMaxClients()) && (channel.getMaxClients() != -1)) {
             c2 = Color.cl("4");
           }
-          getInstancedraw.drawString(c2 + "⬛" + c + channel.getChannelName(), 5.0D, 30 + slot + TeamSpeak.scrollChannel);
+          LabyMod.getInstance().draw.drawString(c2 + "⬛" + c + channel.getChannelName(), 5.0D, 30 + slot + TeamSpeak.scrollChannel);
         }
       }
       ArrayList<TeamSpeakUser> users = new ArrayList();
@@ -625,8 +625,8 @@ public class GuiTeamSpeak
               {
                 c = c + Color.cl("l");
                 
-                nickNameField.a = 25;
-                nickNameField.f = (30 + slot + TeamSpeak.scrollChannel);
+                this.nickNameField.a = 25;
+                this.nickNameField.f = (30 + slot + TeamSpeak.scrollChannel);
               }
               String groups = "";
               if (TeamSpeak.teamSpeakGroupPrefix)
@@ -641,14 +641,14 @@ public class GuiTeamSpeak
                   }
                 }
               }
-              getInstancedraw.drawString(TeamSpeak.getTalkColor(user) + "  ⬤ " + Color.cl("f") + groups + Color.cl("f") + c + user.getNickName() + TeamSpeak.getAway(user), 5.0D, 30 + slot + TeamSpeak.scrollChannel);
+              LabyMod.getInstance().draw.drawString(TeamSpeak.getTalkColor(user) + "  ⬤ " + Color.cl("f") + groups + Color.cl("f") + c + user.getNickName() + TeamSpeak.getAway(user), 5.0D, 30 + slot + TeamSpeak.scrollChannel);
             }
           }
         }
       }
       slot += 10;
     }
-    allowChannelScroll = (30 + slot + TeamSpeak.scrollChannel > TeamSpeak.ySplit - 10);
+    this.allowChannelScroll = (30 + slot + TeamSpeak.scrollChannel > TeamSpeak.ySplit - 10);
     if (30 + slot + TeamSpeak.scrollChannel < TeamSpeak.ySplit - 30) {
       TeamSpeak.scrollChannel += 10;
     }
@@ -693,7 +693,7 @@ public class GuiTeamSpeak
           openBox(false, channel.getChannelId(), mouseX, mouseY);
           return;
         }
-        if ((lastClick + doubleClickDelay > System.currentTimeMillis()) && (doubleClickTarget == channel.getChannelId()) && (!doubleClickIsUser) && 
+        if ((this.lastClick + this.doubleClickDelay > System.currentTimeMillis()) && (this.doubleClickTarget == channel.getChannelId()) && (!this.doubleClickIsUser) && 
           (TeamSpeakController.getInstance().me() != null) && (TeamSpeakController.getInstance().me().getChannelId() != channel.getChannelId()))
         {
           if (channel.getIsPassword()) {
@@ -719,9 +719,9 @@ public class GuiTeamSpeak
           }
           TeamSpeakBridge.moveClient(TeamSpeakController.getInstance().me().getClientId(), channel.getChannelId());
         }
-        doubleClickTarget = channel.getChannelId();
-        doubleClickIsUser = false;
-        lastClick = System.currentTimeMillis();
+        this.doubleClickTarget = channel.getChannelId();
+        this.doubleClickIsUser = false;
+        this.lastClick = System.currentTimeMillis();
       }
       ArrayList<TeamSpeakUser> users = new ArrayList();
       users.addAll(TeamSpeakBridge.getUsers());
@@ -756,7 +756,7 @@ public class GuiTeamSpeak
               return;
             }
             drag(true, user.getClientId());
-            if ((lastClick + doubleClickDelay > System.currentTimeMillis()) && (doubleClickTarget == user.getClientId()) && (doubleClickIsUser)) {
+            if ((this.lastClick + this.doubleClickDelay > System.currentTimeMillis()) && (this.doubleClickTarget == user.getClientId()) && (this.doubleClickIsUser)) {
               if ((TeamSpeakController.getInstance().me() != null) && (user.getClientId() != TeamSpeakController.getInstance().me().getClientId()))
               {
                 TeamSpeak.addChat(user, TeamSpeakController.getInstance().me(), null, EnumTargetMode.USER);
@@ -767,9 +767,9 @@ public class GuiTeamSpeak
                 openNickNameBox();
               }
             }
-            doubleClickTarget = user.getClientId();
-            doubleClickIsUser = true;
-            lastClick = System.currentTimeMillis();
+            this.doubleClickTarget = user.getClientId();
+            this.doubleClickIsUser = true;
+            this.lastClick = System.currentTimeMillis();
           }
         }
       }
@@ -880,57 +880,57 @@ public class GuiTeamSpeak
   public void drawInfo(String text, int x, int y)
   {
     if (y < TeamSpeak.ySplit - 10) {
-      getInstancedraw.drawString(text, x, y);
+      LabyMod.getInstance().draw.drawString(text, x, y);
     }
   }
   
   public void drawBox(int mouseX, int mouseY)
   {
-    if (!boxEnabled) {
+    if (!this.boxEnabled) {
       return;
     }
-    int x = boxPosX;
-    int y = boxPosY;
+    int x = this.boxPosX;
+    int y = this.boxPosY;
     
-    int lengthX = boxPosX + boxLengthX;
-    int lengthY = boxPosY + boxLengthY;
+    int lengthX = this.boxPosX + this.boxLengthX;
+    int lengthY = this.boxPosY + this.boxLengthY;
     
-    boolean cover = boxLengthY == 0;
-    if (boxIsUser)
+    boolean cover = this.boxLengthY == 0;
+    if (this.boxIsUser)
     {
-      if (boxId == TeamSpeakController.getInstance().me().getClientId())
+      if (this.boxId == TeamSpeakController.getInstance().me().getClientId())
       {
         int slot = 0;
-        getInstancedraw.drawBox(x, y, lengthX, lengthY);
+        LabyMod.getInstance().draw.drawBox(x, y, lengthX, lengthY);
         boxSlot(L.f("gui_ts_action_changenickname", new Object[0]), x, y, lengthX, lengthY, slot, mouseX, mouseY);slot += 15;
         boxSlot(L.f("gui_ts_action_channelcommander", new Object[0]), x, y, lengthX, lengthY, slot, mouseX, mouseY);slot += 15;
         
-        boxLengthX = 110;
-        boxLengthY = slot;
+        this.boxLengthX = 110;
+        this.boxLengthY = slot;
       }
       else
       {
         int slot = 0;
-        getInstancedraw.drawBox(x, y, lengthX, lengthY);
+        LabyMod.getInstance().draw.drawBox(x, y, lengthX, lengthY);
         boxSlot(L.f("gui_ts_action_opentextchat", new Object[0]), x, y, lengthX, lengthY, slot, mouseX, mouseY);slot += 15;
         boxSlot(L.f("gui_ts_action_poke", new Object[0]), x, y, lengthX, lengthY, slot, mouseX, mouseY);slot += 15;
         boxSlot(L.f("gui_ts_action_movetoown", new Object[0]), x, y, lengthX, lengthY, slot, mouseX, mouseY);slot += 15;
         
-        boxLengthX = 145;
-        boxLengthY = slot;
+        this.boxLengthX = 145;
+        this.boxLengthY = slot;
       }
     }
     else
     {
       int slot = 0;
-      getInstancedraw.drawBox(x, y, lengthX, lengthY);
+      LabyMod.getInstance().draw.drawBox(x, y, lengthX, lengthY);
       boxSlot(L.f("gui_ts_action_switchchannel", new Object[0]), x, y, lengthX, lengthY, slot, mouseX, mouseY);slot += 15;
       
-      boxLengthX = 100;
-      boxLengthY = slot;
+      this.boxLengthX = 100;
+      this.boxLengthY = slot;
     }
     if (cover) {
-      getInstancedraw.drawBox(x, y, x + boxLengthX, y + boxLengthY);
+      LabyMod.getInstance().draw.drawBox(x, y, x + this.boxLengthX, y + this.boxLengthY);
     }
   }
   
@@ -940,7 +940,7 @@ public class GuiTeamSpeak
     if ((mouseX > x) && (mouseX < x + lengthX) && (mouseY > y + slot) && (mouseY < y + slot + 15)) {
       c = Color.cl("f");
     }
-    getInstancedraw.drawString(c + text, x + 5, y + 4 + slot);
+    LabyMod.getInstance().draw.drawString(c + text, x + 5, y + 4 + slot);
   }
   
   public void boxSplit(int x, int y, int lengthX, int lengthY, int slot, int mouseX, int mouseY)
@@ -958,23 +958,23 @@ public class GuiTeamSpeak
   
   private boolean boxAction(int mouseX, int mouseY, int mouseButton)
   {
-    if (!boxEnabled) {
+    if (!this.boxEnabled) {
       return false;
     }
-    if ((mouseX <= boxPosX) || (mouseX >= boxPosX + boxLengthX) || (mouseY <= boxPosY) || (mouseY >= boxPosY + boxLengthY)) {
+    if ((mouseX <= this.boxPosX) || (mouseX >= this.boxPosX + this.boxLengthX) || (mouseY <= this.boxPosY) || (mouseY >= this.boxPosY + this.boxLengthY)) {
       return false;
     }
     if (mouseButton != 0) {
       return true;
     }
-    int x = boxPosX;
-    int y = boxPosY;
+    int x = this.boxPosX;
+    int y = this.boxPosY;
     
-    int lengthX = boxPosX + boxLengthX;
-    int lengthY = boxPosY + boxLengthY;
-    if (boxIsUser)
+    int lengthX = this.boxPosX + this.boxLengthX;
+    int lengthY = this.boxPosY + this.boxLengthY;
+    if (this.boxIsUser)
     {
-      if (boxId == TeamSpeakController.getInstance().me().getClientId())
+      if (this.boxId == TeamSpeakController.getInstance().me().getClientId())
       {
         int slot = 0;
         if (boxClick(x, y, lengthX, lengthY, slot, mouseX, mouseY)) {
@@ -991,8 +991,8 @@ public class GuiTeamSpeak
         int slot = 0;
         if (boxClick(x, y, lengthX, lengthY, slot, mouseX, mouseY))
         {
-          TeamSpeak.addChat(TeamSpeakController.getInstance().getUser(boxId), TeamSpeakController.getInstance().me(), null, EnumTargetMode.USER);
-          TeamSpeak.selectedChat = boxId;
+          TeamSpeak.addChat(TeamSpeakController.getInstance().getUser(this.boxId), TeamSpeakController.getInstance().me(), null, EnumTargetMode.USER);
+          TeamSpeak.selectedChat = this.boxId;
         }
         slot += 15;
         if (boxClick(x, y, lengthX, lengthY, slot, mouseX, mouseY)) {
@@ -1021,7 +1021,7 @@ public class GuiTeamSpeak
         }
         slot += 15;
         if (boxClick(x, y, lengthX, lengthY, slot, mouseX, mouseY)) {
-          TeamSpeakBridge.moveClient(boxId, TeamSpeakController.getInstance().me().getChannelId());
+          TeamSpeakBridge.moveClient(this.boxId, TeamSpeakController.getInstance().me().getChannelId());
         }
         slot += 15;
       }
@@ -1032,7 +1032,7 @@ public class GuiTeamSpeak
       if (boxClick(x, y, lengthX, lengthY, slot, mouseX, mouseY))
       {
         if (TeamSpeakController.getInstance().me() != null) {
-          TeamSpeakBridge.moveClient(TeamSpeakController.getInstance().me().getClientId(), boxId);
+          TeamSpeakBridge.moveClient(TeamSpeakController.getInstance().me().getClientId(), this.boxId);
         }
         closeBox();
       }
@@ -1044,11 +1044,11 @@ public class GuiTeamSpeak
   
   private void openBox(boolean isUser, int id, int x, int y)
   {
-    boxEnabled = true;
-    boxIsUser = isUser;
-    boxId = id;
-    boxPosX = x;
-    boxPosY = y;
+    this.boxEnabled = true;
+    this.boxIsUser = isUser;
+    this.boxId = id;
+    this.boxPosX = x;
+    this.boxPosY = y;
     if (isUser)
     {
       TeamSpeak.selectedChannel = -1;
@@ -1063,85 +1063,85 @@ public class GuiTeamSpeak
   
   private void closeBox()
   {
-    boxEnabled = false;
-    boxIsUser = true;
-    boxId = 0;
-    boxPosX = 0;
-    boxPosY = 0;
-    boxLengthX = 0;
-    boxLengthY = 0;
+    this.boxEnabled = false;
+    this.boxIsUser = true;
+    this.boxId = 0;
+    this.boxPosX = 0;
+    this.boxPosY = 0;
+    this.boxLengthX = 0;
+    this.boxLengthY = 0;
   }
   
   private void changeNickname()
   {
-    changeNickName = false;
-    if (!nickNameField.b().equals(TeamSpeakController.getInstance().me().getNickName())) {
-      TeamSpeakBridge.setNickname(nickNameField.b());
+    this.changeNickName = false;
+    if (!this.nickNameField.b().equals(TeamSpeakController.getInstance().me().getNickName())) {
+      TeamSpeakBridge.setNickname(this.nickNameField.b());
     }
   }
   
   private void openNickNameBox()
   {
-    changeNickName = true;
-    nickNameField.b(true);
-    nickNameField.a(TeamSpeakController.getInstance().me().getNickName());
+    this.changeNickName = true;
+    this.nickNameField.b(true);
+    this.nickNameField.a(TeamSpeakController.getInstance().me().getNickName());
   }
   
   private void drag(boolean isUser, int Id)
   {
     resetDrag();
-    drag = true;
-    dragIsUser = isUser;
-    dragId = Id;
+    this.drag = true;
+    this.dragIsUser = isUser;
+    this.dragId = Id;
   }
   
   private void drop(int channelId, boolean isInRegion)
   {
-    if (!drag) {
+    if (!this.drag) {
       return;
     }
-    dropFocus = isInRegion;
-    if (!drop) {
+    this.dropFocus = isInRegion;
+    if (!this.drop) {
       return;
     }
-    if ((dragIsUser) && (dropFocus)) {
-      TeamSpeakBridge.moveClient(dragId, channelId);
+    if ((this.dragIsUser) && (this.dropFocus)) {
+      TeamSpeakBridge.moveClient(this.dragId, channelId);
     }
     resetDrag();
   }
   
   private void resetDrag()
   {
-    drag = false;
-    drop = false;
-    dragIsUser = false;
-    dragId = 0;
-    dropX = 0;
-    dropY = 0;
-    dragVisible = 0;
-    dropFocus = false;
+    this.drag = false;
+    this.drop = false;
+    this.dragIsUser = false;
+    this.dragId = 0;
+    this.dropX = 0;
+    this.dropY = 0;
+    this.dragVisible = 0;
+    this.dropFocus = false;
   }
   
   public void setDrop(int x, int y)
   {
-    dropX = x;
-    dropY = y;
-    drop = true;
+    this.dropX = x;
+    this.dropY = y;
+    this.drop = true;
   }
   
   public void drawDrag(int mouseX, int mouseY)
   {
-    if (!drag) {
+    if (!this.drag) {
       return;
     }
-    if (dragVisible < 5) {
+    if (this.dragVisible < 5) {
       return;
     }
     String color = "";
     String name = "";
-    if (dragIsUser)
+    if (this.dragIsUser)
     {
-      TeamSpeakUser user = TeamSpeakController.getInstance().getUser(dragId);
+      TeamSpeakUser user = TeamSpeakController.getInstance().getUser(this.dragId);
       if (user == null) {
         return;
       }
@@ -1149,16 +1149,16 @@ public class GuiTeamSpeak
     }
     else
     {
-      TeamSpeakChannel channel = TeamSpeakController.getInstance().getChannel(dragId);
+      TeamSpeakChannel channel = TeamSpeakController.getInstance().getChannel(this.dragId);
       if (channel == null) {
         return;
       }
       name = channel.getChannelName();
     }
-    if (!dropFocus) {
+    if (!this.dropFocus) {
       color = Color.cl("c");
     }
-    getInstancedraw.drawString(color + name, mouseX, mouseY);
+    LabyMod.getInstance().draw.drawString(color + name, mouseX, mouseY);
   }
   
   public void drawMenu(int mouseX, int mouseY)
@@ -1167,10 +1167,10 @@ public class GuiTeamSpeak
       return;
     }
     int slot = 0;
-    String s = getInstanceserverIP + ":" + getInstanceserverPort;
-    slot += getInstancedraw.getWidth() - 30 - getInstancedraw.getStringWidth(s);
-    DrawUtils.a(slot, 5, getInstancedraw.getWidth() - 5, 20, Integer.MIN_VALUE);
-    getInstancedraw.drawRightString(Color.cl("a") + s, getInstancedraw.getWidth() - 20, 9.0D);
+    String s = TeamSpeakController.getInstance().serverIP + ":" + TeamSpeakController.getInstance().serverPort;
+    slot += LabyMod.getInstance().draw.getWidth() - 30 - LabyMod.getInstance().draw.getStringWidth(s);
+    DrawUtils.a(slot, 5, LabyMod.getInstance().draw.getWidth() - 5, 20, Integer.MIN_VALUE);
+    LabyMod.getInstance().draw.drawRightString(Color.cl("a") + s, LabyMod.getInstance().draw.getWidth() - 20, 9.0D);
     
     slot -= 4;
     
@@ -1179,9 +1179,9 @@ public class GuiTeamSpeak
       c = 2122022291;
     }
     DrawUtils.a(slot, 5, slot - 16, 20, c);
-    getInstancedraw.drawString(Color.cl("f") + "", 0.0D, 0.0D);
-    j.P().a(getInstancetexture_teamSpeak);
-    getInstancedraw.b(slot - 16 + 3, 7, 12, 0, 12, 12);
+    LabyMod.getInstance().draw.drawString(Color.cl("f") + "", 0.0D, 0.0D);
+    this.j.P().a(LabyMod.getInstance().texture_teamSpeak);
+    LabyMod.getInstance().draw.b(slot - 16 + 3, 7, 12, 0, 12, 12);
     
     slot -= 20;
     
@@ -1190,9 +1190,9 @@ public class GuiTeamSpeak
       c = 2122022291;
     }
     DrawUtils.a(slot, 5, slot - 16, 20, c);
-    getInstancedraw.drawString(Color.cl("f") + "", 0.0D, 0.0D);
-    j.P().a(getInstancetexture_teamSpeak);
-    getInstancedraw.b(slot - 16 + 3, 7, 0, 0, 12, 12);
+    LabyMod.getInstance().draw.drawString(Color.cl("f") + "", 0.0D, 0.0D);
+    this.j.P().a(LabyMod.getInstance().texture_teamSpeak);
+    LabyMod.getInstance().draw.b(slot - 16 + 3, 7, 0, 0, 12, 12);
     
     slot -= 20;
     
@@ -1201,14 +1201,14 @@ public class GuiTeamSpeak
       c = 2122022291;
     }
     DrawUtils.a(slot, 5, slot - 16, 20, c);
-    getInstancedraw.drawCenteredString(Color.cl("b") + "[]", slot - 8, 9);
+    LabyMod.getInstance().draw.drawCenteredString(Color.cl("b") + "[]", slot - 8, 9);
   }
   
   public void menuAction(int mouseX, int mouseY, int mouseButton)
   {
     int slot = 0;
-    String s = getInstanceserverIP + ":" + getInstanceserverPort;
-    slot += getInstancedraw.getWidth() - 30 - getInstancedraw.getStringWidth(s);
+    String s = TeamSpeakController.getInstance().serverIP + ":" + TeamSpeakController.getInstance().serverPort;
+    slot += LabyMod.getInstance().draw.getWidth() - 30 - LabyMod.getInstance().draw.getStringWidth(s);
     slot -= 4;
     if ((mouseX > slot - 16) && (mouseX < slot) && (mouseY > 5) && (mouseY < 20)) {
       TeamSpeakBridge.setOutputMuted(!TeamSpeakController.getInstance().me().hasClientOutputMuted());

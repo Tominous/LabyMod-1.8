@@ -16,7 +16,7 @@ public class Realms
 {
   public static boolean isTouchScreen()
   {
-    return At.A;
+    return ave.A().t.A;
   }
   
   public static Proxy getProxy()
@@ -74,7 +74,7 @@ public class Realms
   
   public static String getGameDirectoryPath()
   {
-    return Av.getAbsolutePath();
+    return ave.A().v.getAbsolutePath();
   }
   
   public static int survivalId()

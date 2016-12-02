@@ -16,7 +16,7 @@ public class bna
   
   public bna(Map<String, File> ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public InputStream a(jy ☃)
@@ -36,7 +36,7 @@ public class bna
   public InputStream c(jy ☃)
     throws FileNotFoundException
   {
-    File ☃ = (File)b.get(☃.toString());
+    File ☃ = (File)this.b.get(☃.toString());
     
     return (☃ == null) || (!☃.isFile()) ? null : new FileInputStream(☃);
   }
@@ -48,7 +48,7 @@ public class bna
   
   public boolean b(jy ☃)
   {
-    return (d(☃) != null) || (b.containsKey(☃.toString()));
+    return (d(☃) != null) || (this.b.containsKey(☃.toString()));
   }
   
   public Set<String> c()
@@ -61,7 +61,7 @@ public class bna
   {
     try
     {
-      InputStream ☃ = new FileInputStream((File)b.get("pack.mcmeta"));
+      InputStream ☃ = new FileInputStream((File)this.b.get("pack.mcmeta"));
       return bmx.a(☃, ☃, ☃);
     }
     catch (RuntimeException ☃)

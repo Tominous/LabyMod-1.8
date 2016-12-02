@@ -5,7 +5,7 @@ public class zr
 {
   public zr()
   {
-    h = 1;
+    this.h = 1;
     d(64);
     a(yz.i);
   }

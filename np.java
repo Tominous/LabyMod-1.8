@@ -13,45 +13,45 @@ public class np<T>
   
   public np(Class<? extends T> ☃, int ☃)
   {
-    b = ☃;
-    a = ((Object[])Array.newInstance(☃, ☃));
+    this.b = ☃;
+    this.a = ((Object[])Array.newInstance(☃, ☃));
   }
   
   public T a(T ☃)
   {
-    c.writeLock().lock();
+    this.c.writeLock().lock();
     
-    a[e] = ☃;
-    e = ((e + 1) % b());
-    if (d < b()) {
-      d += 1;
+    this.a[this.e] = ☃;
+    this.e = ((this.e + 1) % b());
+    if (this.d < b()) {
+      this.d += 1;
     }
-    c.writeLock().unlock();
+    this.c.writeLock().unlock();
     return ☃;
   }
   
   public int b()
   {
-    c.readLock().lock();
-    int ☃ = a.length;
-    c.readLock().unlock();
+    this.c.readLock().lock();
+    int ☃ = this.a.length;
+    this.c.readLock().unlock();
     return ☃;
   }
   
   public T[] c()
   {
-    T[] ☃ = (Object[])Array.newInstance(b, d);
+    T[] ☃ = (Object[])Array.newInstance(this.b, this.d);
     
-    c.readLock().lock();
-    for (int ☃ = 0; ☃ < d; ☃++)
+    this.c.readLock().lock();
+    for (int ☃ = 0; ☃ < this.d; ☃++)
     {
-      int ☃ = (e - d + ☃) % b();
+      int ☃ = (this.e - this.d + ☃) % b();
       if (☃ < 0) {
         ☃ += b();
       }
-      ☃[☃] = a[☃];
+      ☃[☃] = this.a[☃];
     }
-    c.readLock().unlock();
+    this.c.readLock().unlock();
     
     return ☃;
   }

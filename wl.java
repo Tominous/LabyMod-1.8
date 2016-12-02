@@ -12,13 +12,13 @@ public class wl
   {
     dn ☃ = new dn();
     
-    ☃.a("invulnerable", a);
-    ☃.a("flying", b);
-    ☃.a("mayfly", c);
-    ☃.a("instabuild", d);
-    ☃.a("mayBuild", e);
-    ☃.a("flySpeed", f);
-    ☃.a("walkSpeed", g);
+    ☃.a("invulnerable", this.a);
+    ☃.a("flying", this.b);
+    ☃.a("mayfly", this.c);
+    ☃.a("instabuild", this.d);
+    ☃.a("mayBuild", this.e);
+    ☃.a("flySpeed", this.f);
+    ☃.a("walkSpeed", this.g);
     ☃.a("abilities", ☃);
   }
   
@@ -28,38 +28,38 @@ public class wl
     {
       dn ☃ = ☃.m("abilities");
       
-      a = ☃.n("invulnerable");
-      b = ☃.n("flying");
-      c = ☃.n("mayfly");
-      d = ☃.n("instabuild");
+      this.a = ☃.n("invulnerable");
+      this.b = ☃.n("flying");
+      this.c = ☃.n("mayfly");
+      this.d = ☃.n("instabuild");
       if (☃.b("flySpeed", 99))
       {
-        f = ☃.h("flySpeed");
-        g = ☃.h("walkSpeed");
+        this.f = ☃.h("flySpeed");
+        this.g = ☃.h("walkSpeed");
       }
       if (☃.b("mayBuild", 1)) {
-        e = ☃.n("mayBuild");
+        this.e = ☃.n("mayBuild");
       }
     }
   }
   
   public float a()
   {
-    return f;
+    return this.f;
   }
   
   public void a(float ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
   
   public float b()
   {
-    return g;
+    return this.g;
   }
   
   public void b(float ☃)
   {
-    g = ☃;
+    this.g = ☃;
   }
 }

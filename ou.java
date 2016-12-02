@@ -9,32 +9,32 @@ public class ou
   
   public ou(ow ☃, int ☃, float ☃, float ☃, String ☃, float ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
-    e = ☃;
-    f = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.e = ☃;
+    this.f = ☃;
   }
   
   public ow a()
   {
-    return a;
+    return this.a;
   }
   
   public float c()
   {
-    return c;
+    return this.c;
   }
   
   public boolean f()
   {
-    return a.j() instanceof pr;
+    return this.a.j() instanceof pr;
   }
   
   public String g()
   {
-    return e;
+    return this.e;
   }
   
   public eu h()
@@ -44,9 +44,9 @@ public class ou
   
   public float i()
   {
-    if (a == ow.j) {
+    if (this.a == ow.j) {
       return Float.MAX_VALUE;
     }
-    return f;
+    return this.f;
   }
 }

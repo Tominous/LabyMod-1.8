@@ -7,12 +7,12 @@ public class apq
   
   public apq(afh ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
   {
-    if ((!☃.d(☃)) || (☃.p(☃.b()).c() != a)) {
+    if ((!☃.d(☃)) || (☃.p(☃.b()).c() != this.a)) {
       return false;
     }
     int ☃ = ☃.nextInt(32) + 6;
@@ -24,7 +24,7 @@ public class apq
         int ☃ = ☃ - ☃.n();
         int ☃ = ☃ - ☃.p();
         if ((☃ * ☃ + ☃ * ☃ <= ☃ * ☃ + 1) && 
-          (☃.p(☃.c(☃, ☃.o() - 1, ☃)).c() != a)) {
+          (☃.p(☃.c(☃, ☃.o() - 1, ☃)).c() != this.a)) {
           return false;
         }
       }

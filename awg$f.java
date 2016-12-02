@@ -6,23 +6,23 @@ public class awg$f
   
   public awg$f(int ☃, String ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public int b()
   {
-    return a;
+    return this.a;
   }
   
   public String c()
   {
-    return b;
+    return this.b;
   }
   
   public boolean d()
   {
-    return c;
+    return this.c;
   }
 }

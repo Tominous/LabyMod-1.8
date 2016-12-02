@@ -21,84 +21,84 @@ public class bdc
   
   public bdc(GameProfile ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public bdc(gz.b ☃)
   {
-    a = ☃.a();
-    b = ☃.c();
-    c = ☃.b();
-    h = ☃.d();
+    this.a = ☃.a();
+    this.b = ☃.c();
+    this.c = ☃.b();
+    this.h = ☃.d();
   }
   
   public GameProfile a()
   {
-    return a;
+    return this.a;
   }
   
   public adp.a b()
   {
-    return b;
+    return this.b;
   }
   
   public int c()
   {
-    return c;
+    return this.c;
   }
   
   protected void a(adp.a ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   protected void a(int ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   public boolean e()
   {
-    return e != null;
+    return this.e != null;
   }
   
   public String f()
   {
-    if (g == null) {
-      return bmz.b(a.getId());
+    if (this.g == null) {
+      return bmz.b(this.a.getId());
     }
-    return g;
+    return this.g;
   }
   
   public jy g()
   {
-    if (e == null) {
+    if (this.e == null) {
       j();
     }
-    return (jy)Objects.firstNonNull(e, bmz.a(a.getId()));
+    return (jy)Objects.firstNonNull(this.e, bmz.a(this.a.getId()));
   }
   
   public jy h()
   {
-    if (f == null) {
+    if (this.f == null) {
       j();
     }
-    return f;
+    return this.f;
   }
   
   public aul i()
   {
-    return Af.Z().h(a().getName());
+    return ave.A().f.Z().h(a().getName());
   }
   
   protected void j()
   {
     synchronized (this)
     {
-      if (!d)
+      if (!this.d)
       {
-        d = true;
-        ave.A().ab().a(a, new bnp.a()
+        this.d = true;
+        ave.A().ab().a(this.a, new bnp.a()
         {
           public void a(MinecraftProfileTexture.Type ☃, jy ☃, MinecraftProfileTexture ☃)
           {
@@ -122,61 +122,61 @@ public class bdc
   
   public void a(eu ☃)
   {
-    h = ☃;
+    this.h = ☃;
   }
   
   public eu k()
   {
-    return h;
+    return this.h;
   }
   
   public int l()
   {
-    return i;
+    return this.i;
   }
   
   public void b(int ☃)
   {
-    i = ☃;
+    this.i = ☃;
   }
   
   public int m()
   {
-    return j;
+    return this.j;
   }
   
   public void c(int ☃)
   {
-    j = ☃;
+    this.j = ☃;
   }
   
   public long n()
   {
-    return k;
+    return this.k;
   }
   
   public void a(long ☃)
   {
-    k = ☃;
+    this.k = ☃;
   }
   
   public long o()
   {
-    return l;
+    return this.l;
   }
   
   public void b(long ☃)
   {
-    l = ☃;
+    this.l = ☃;
   }
   
   public long p()
   {
-    return m;
+    return this.m;
   }
   
   public void c(long ☃)
   {
-    m = ☃;
+    this.m = ☃;
   }
 }

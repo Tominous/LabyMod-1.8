@@ -19,29 +19,29 @@ public class blv
   
   public blv(String ☃, int ☃, int ☃, blq ☃)
   {
-    g = ☃;
-    c = ☃;
-    d = ☃;
-    i = ☃;
+    this.g = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.i = ☃;
     if (☃ <= 3)
     {
-      e = BufferUtils.createIntBuffer(☃);
-      f = null;
+      this.e = BufferUtils.createIntBuffer(☃);
+      this.f = null;
     }
     else
     {
-      e = null;
-      f = BufferUtils.createFloatBuffer(☃);
+      this.e = null;
+      this.f = BufferUtils.createFloatBuffer(☃);
     }
-    b = -1;
+    this.b = -1;
     h();
   }
   
   private void h()
   {
-    h = true;
-    if (i != null) {
-      i.d();
+    this.h = true;
+    if (this.i != null) {
+      this.i.d();
     }
   }
   
@@ -66,202 +66,202 @@ public class blv
   
   public void b(int ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public String a()
   {
-    return g;
+    return this.g;
   }
   
   public void a(float ☃)
   {
-    f.position(0);
-    f.put(0, ☃);
+    this.f.position(0);
+    this.f.put(0, ☃);
     h();
   }
   
   public void a(float ☃, float ☃)
   {
-    f.position(0);
-    f.put(0, ☃);
-    f.put(1, ☃);
+    this.f.position(0);
+    this.f.put(0, ☃);
+    this.f.put(1, ☃);
     h();
   }
   
   public void a(float ☃, float ☃, float ☃)
   {
-    f.position(0);
-    f.put(0, ☃);
-    f.put(1, ☃);
-    f.put(2, ☃);
+    this.f.position(0);
+    this.f.put(0, ☃);
+    this.f.put(1, ☃);
+    this.f.put(2, ☃);
     h();
   }
   
   public void a(float ☃, float ☃, float ☃, float ☃)
   {
-    f.position(0);
-    f.put(☃);
-    f.put(☃);
-    f.put(☃);
-    f.put(☃);
-    f.flip();
+    this.f.position(0);
+    this.f.put(☃);
+    this.f.put(☃);
+    this.f.put(☃);
+    this.f.put(☃);
+    this.f.flip();
     h();
   }
   
   public void b(float ☃, float ☃, float ☃, float ☃)
   {
-    f.position(0);
-    if (d >= 4) {
-      f.put(0, ☃);
+    this.f.position(0);
+    if (this.d >= 4) {
+      this.f.put(0, ☃);
     }
-    if (d >= 5) {
-      f.put(1, ☃);
+    if (this.d >= 5) {
+      this.f.put(1, ☃);
     }
-    if (d >= 6) {
-      f.put(2, ☃);
+    if (this.d >= 6) {
+      this.f.put(2, ☃);
     }
-    if (d >= 7) {
-      f.put(3, ☃);
+    if (this.d >= 7) {
+      this.f.put(3, ☃);
     }
     h();
   }
   
   public void a(int ☃, int ☃, int ☃, int ☃)
   {
-    e.position(0);
-    if (d >= 0) {
-      e.put(0, ☃);
+    this.e.position(0);
+    if (this.d >= 0) {
+      this.e.put(0, ☃);
     }
-    if (d >= 1) {
-      e.put(1, ☃);
+    if (this.d >= 1) {
+      this.e.put(1, ☃);
     }
-    if (d >= 2) {
-      e.put(2, ☃);
+    if (this.d >= 2) {
+      this.e.put(2, ☃);
     }
-    if (d >= 3) {
-      e.put(3, ☃);
+    if (this.d >= 3) {
+      this.e.put(3, ☃);
     }
     h();
   }
   
   public void a(float[] ☃)
   {
-    if (☃.length < c)
+    if (☃.length < this.c)
     {
-      a.warn("Uniform.set called with a too-small value array (expected " + c + ", got " + ☃.length + "). Ignoring.");
+      a.warn("Uniform.set called with a too-small value array (expected " + this.c + ", got " + ☃.length + "). Ignoring.");
       return;
     }
-    f.position(0);
-    f.put(☃);
-    f.position(0);
+    this.f.position(0);
+    this.f.put(☃);
+    this.f.position(0);
     h();
   }
   
   public void a(float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
-    f.position(0);
-    f.put(0, ☃);
-    f.put(1, ☃);
-    f.put(2, ☃);
-    f.put(3, ☃);
-    f.put(4, ☃);
-    f.put(5, ☃);
-    f.put(6, ☃);
-    f.put(7, ☃);
-    f.put(8, ☃);
-    f.put(9, ☃);
-    f.put(10, ☃);
-    f.put(11, ☃);
-    f.put(12, ☃);
-    f.put(13, ☃);
-    f.put(14, ☃);
-    f.put(15, ☃);
+    this.f.position(0);
+    this.f.put(0, ☃);
+    this.f.put(1, ☃);
+    this.f.put(2, ☃);
+    this.f.put(3, ☃);
+    this.f.put(4, ☃);
+    this.f.put(5, ☃);
+    this.f.put(6, ☃);
+    this.f.put(7, ☃);
+    this.f.put(8, ☃);
+    this.f.put(9, ☃);
+    this.f.put(10, ☃);
+    this.f.put(11, ☃);
+    this.f.put(12, ☃);
+    this.f.put(13, ☃);
+    this.f.put(14, ☃);
+    this.f.put(15, ☃);
     h();
   }
   
   public void a(Matrix4f ☃)
   {
-    a(m00, m01, m02, m03, m10, m11, m12, m13, m20, m21, m22, m23, m30, m31, m32, m33);
+    a(☃.m00, ☃.m01, ☃.m02, ☃.m03, ☃.m10, ☃.m11, ☃.m12, ☃.m13, ☃.m20, ☃.m21, ☃.m22, ☃.m23, ☃.m30, ☃.m31, ☃.m32, ☃.m33);
   }
   
   public void b()
   {
-    if (!h) {}
-    h = false;
-    if (d <= 3)
+    if (!this.h) {}
+    this.h = false;
+    if (this.d <= 3)
     {
       i();
     }
-    else if (d <= 7)
+    else if (this.d <= 7)
     {
       j();
     }
-    else if (d <= 10)
+    else if (this.d <= 10)
     {
       k();
     }
     else
     {
-      a.warn("Uniform.upload called, but type value (" + d + ") is not " + "a valid type. Ignoring.");
+      a.warn("Uniform.upload called, but type value (" + this.d + ") is not " + "a valid type. Ignoring.");
       return;
     }
   }
   
   private void i()
   {
-    switch (d)
+    switch (this.d)
     {
     case 0: 
-      bqs.a(b, e);
+      bqs.a(this.b, this.e);
       break;
     case 1: 
-      bqs.b(b, e);
+      bqs.b(this.b, this.e);
       break;
     case 2: 
-      bqs.c(b, e);
+      bqs.c(this.b, this.e);
       break;
     case 3: 
-      bqs.d(b, e);
+      bqs.d(this.b, this.e);
       break;
     default: 
-      a.warn("Uniform.upload called, but count value (" + c + ") is " + " not in the range of 1 to 4. Ignoring.");
+      a.warn("Uniform.upload called, but count value (" + this.c + ") is " + " not in the range of 1 to 4. Ignoring.");
     }
   }
   
   private void j()
   {
-    switch (d)
+    switch (this.d)
     {
     case 4: 
-      bqs.a(b, f);
+      bqs.a(this.b, this.f);
       break;
     case 5: 
-      bqs.b(b, f);
+      bqs.b(this.b, this.f);
       break;
     case 6: 
-      bqs.c(b, f);
+      bqs.c(this.b, this.f);
       break;
     case 7: 
-      bqs.d(b, f);
+      bqs.d(this.b, this.f);
       break;
     default: 
-      a.warn("Uniform.upload called, but count value (" + c + ") is " + "not in the range of 1 to 4. Ignoring.");
+      a.warn("Uniform.upload called, but count value (" + this.c + ") is " + "not in the range of 1 to 4. Ignoring.");
     }
   }
   
   private void k()
   {
-    switch (d)
+    switch (this.d)
     {
     case 8: 
-      bqs.a(b, true, f);
+      bqs.a(this.b, true, this.f);
       break;
     case 9: 
-      bqs.b(b, true, f);
+      bqs.b(this.b, true, this.f);
       break;
     case 10: 
-      bqs.c(b, true, f);
+      bqs.c(this.b, true, this.f);
     }
   }
 }

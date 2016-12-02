@@ -184,12 +184,12 @@ class Yylex
   
   int getPosition()
   {
-    return yychar;
+    return this.yychar;
   }
   
   Yylex(Reader in)
   {
-    zzReader = in;
+    this.zzReader = in;
   }
   
   Yylex(InputStream in)
@@ -215,37 +215,37 @@ class Yylex
   private boolean zzRefill()
     throws IOException
   {
-    if (zzStartRead > 0)
+    if (this.zzStartRead > 0)
     {
-      System.arraycopy(zzBuffer, zzStartRead, 
-        zzBuffer, 0, 
-        zzEndRead - zzStartRead);
+      System.arraycopy(this.zzBuffer, this.zzStartRead, 
+        this.zzBuffer, 0, 
+        this.zzEndRead - this.zzStartRead);
       
-      zzEndRead -= zzStartRead;
-      zzCurrentPos -= zzStartRead;
-      zzMarkedPos -= zzStartRead;
-      zzStartRead = 0;
+      this.zzEndRead -= this.zzStartRead;
+      this.zzCurrentPos -= this.zzStartRead;
+      this.zzMarkedPos -= this.zzStartRead;
+      this.zzStartRead = 0;
     }
-    if (zzCurrentPos >= zzBuffer.length)
+    if (this.zzCurrentPos >= this.zzBuffer.length)
     {
-      char[] newBuffer = new char[zzCurrentPos * 2];
-      System.arraycopy(zzBuffer, 0, newBuffer, 0, zzBuffer.length);
-      zzBuffer = newBuffer;
+      char[] newBuffer = new char[this.zzCurrentPos * 2];
+      System.arraycopy(this.zzBuffer, 0, newBuffer, 0, this.zzBuffer.length);
+      this.zzBuffer = newBuffer;
     }
-    int numRead = zzReader.read(zzBuffer, zzEndRead, 
-      zzBuffer.length - zzEndRead);
+    int numRead = this.zzReader.read(this.zzBuffer, this.zzEndRead, 
+      this.zzBuffer.length - this.zzEndRead);
     if (numRead > 0)
     {
-      zzEndRead += numRead;
+      this.zzEndRead += numRead;
       return false;
     }
     if (numRead == 0)
     {
-      int c = zzReader.read();
+      int c = this.zzReader.read();
       if (c == -1) {
         return true;
       }
-      zzBuffer[(zzEndRead++)] = ((char)c);
+      this.zzBuffer[(this.zzEndRead++)] = ((char)c);
       return false;
     }
     return true;
@@ -254,47 +254,47 @@ class Yylex
   public final void yyclose()
     throws IOException
   {
-    zzAtEOF = true;
-    zzEndRead = zzStartRead;
-    if (zzReader != null) {
-      zzReader.close();
+    this.zzAtEOF = true;
+    this.zzEndRead = this.zzStartRead;
+    if (this.zzReader != null) {
+      this.zzReader.close();
     }
   }
   
   public final void yyreset(Reader reader)
   {
-    zzReader = reader;
-    zzAtBOL = true;
-    zzAtEOF = false;
-    zzEndRead = (zzStartRead = 0);
-    zzCurrentPos = (zzMarkedPos = 0);
-    yyline = (yychar = yycolumn = 0);
-    zzLexicalState = 0;
+    this.zzReader = reader;
+    this.zzAtBOL = true;
+    this.zzAtEOF = false;
+    this.zzEndRead = (this.zzStartRead = 0);
+    this.zzCurrentPos = (this.zzMarkedPos = 0);
+    this.yyline = (this.yychar = this.yycolumn = 0);
+    this.zzLexicalState = 0;
   }
   
   public final int yystate()
   {
-    return zzLexicalState;
+    return this.zzLexicalState;
   }
   
   public final void yybegin(int newState)
   {
-    zzLexicalState = newState;
+    this.zzLexicalState = newState;
   }
   
   public final String yytext()
   {
-    return new String(zzBuffer, zzStartRead, zzMarkedPos - zzStartRead);
+    return new String(this.zzBuffer, this.zzStartRead, this.zzMarkedPos - this.zzStartRead);
   }
   
   public final char yycharat(int pos)
   {
-    return zzBuffer[(zzStartRead + pos)];
+    return this.zzBuffer[(this.zzStartRead + pos)];
   }
   
   public final int yylength()
   {
-    return zzMarkedPos - zzStartRead;
+    return this.zzMarkedPos - this.zzStartRead;
   }
   
   private void zzScanError(int errorCode)
@@ -317,14 +317,14 @@ class Yylex
     if (number > yylength()) {
       zzScanError(2);
     }
-    zzMarkedPos -= number;
+    this.zzMarkedPos -= number;
   }
   
   public Yytoken yylex()
     throws IOException, ParseException
   {
-    int zzEndReadL = zzEndRead;
-    char[] zzBufferL = zzBuffer;
+    int zzEndReadL = this.zzEndRead;
+    char[] zzBufferL = this.zzBuffer;
     char[] zzCMapL = ZZ_CMAP;
     
     int[] zzTransL = ZZ_TRANS;
@@ -332,15 +332,15 @@ class Yylex
     int[] zzAttrL = ZZ_ATTRIBUTE;
     for (;;)
     {
-      int zzMarkedPosL = zzMarkedPos;
+      int zzMarkedPosL = this.zzMarkedPos;
       
-      yychar += zzMarkedPosL - zzStartRead;
+      this.yychar += zzMarkedPosL - this.zzStartRead;
       
       int zzAction = -1;
       
-      int zzCurrentPosL = zzCurrentPos = zzStartRead = zzMarkedPosL;
+      int zzCurrentPosL = this.zzCurrentPos = this.zzStartRead = zzMarkedPosL;
       
-      zzState = ZZ_LEXSTATE[zzLexicalState];
+      this.zzState = ZZ_LEXSTATE[this.zzLexicalState];
       int zzInput;
       int zzAttributes;
       do
@@ -354,19 +354,19 @@ class Yylex
           }
           else
           {
-            if (zzAtEOF)
+            if (this.zzAtEOF)
             {
               int zzInput = -1;
               break;
             }
-            zzCurrentPos = zzCurrentPosL;
-            zzMarkedPos = zzMarkedPosL;
+            this.zzCurrentPos = zzCurrentPosL;
+            this.zzMarkedPos = zzMarkedPosL;
             boolean eof = zzRefill();
             
-            zzCurrentPosL = zzCurrentPos;
-            zzMarkedPosL = zzMarkedPos;
-            zzBufferL = zzBuffer;
-            zzEndReadL = zzEndRead;
+            zzCurrentPosL = this.zzCurrentPos;
+            zzMarkedPosL = this.zzMarkedPos;
+            zzBufferL = this.zzBuffer;
+            zzEndReadL = this.zzEndRead;
             if (eof)
             {
               int zzInput = -1;
@@ -374,30 +374,30 @@ class Yylex
             }
             zzInput = zzBufferL[(zzCurrentPosL++)];
           }
-          int zzNext = zzTransL[(zzRowMapL[zzState] + zzCMapL[zzInput])];
+          int zzNext = zzTransL[(zzRowMapL[this.zzState] + zzCMapL[zzInput])];
           if (zzNext == -1) {
             break;
           }
-          zzState = zzNext;
+          this.zzState = zzNext;
           
-          zzAttributes = zzAttrL[zzState];
+          zzAttributes = zzAttrL[this.zzState];
         } while ((zzAttributes & 0x1) != 1);
-        zzAction = zzState;
+        zzAction = this.zzState;
         zzMarkedPosL = zzCurrentPosL;
       } while ((zzAttributes & 0x8) != 8);
-      zzMarkedPos = zzMarkedPosL;
+      this.zzMarkedPos = zzMarkedPosL;
       switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction])
       {
       case 11: 
-        sb.append(yytext());
+        this.sb.append(yytext());
       case 25: 
         break;
       case 4: 
-        sb.delete(0, sb.length());yybegin(2);
+        this.sb.delete(0, this.sb.length());yybegin(2);
       case 26: 
         break;
       case 16: 
-        sb.append('\b');
+        this.sb.append('\b');
       case 27: 
         break;
       case 6: 
@@ -413,11 +413,11 @@ class Yylex
       case 30: 
         break;
       case 13: 
-        yybegin(0);return new Yytoken(0, sb.toString());
+        yybegin(0);return new Yytoken(0, this.sb.toString());
       case 31: 
         break;
       case 12: 
-        sb.append('\\');
+        this.sb.append('\\');
       case 32: 
         break;
       case 21: 
@@ -425,7 +425,7 @@ class Yylex
       case 33: 
         break;
       case 1: 
-        throw new ParseException(yychar, 0, new Character(yycharat(0)));
+        throw new ParseException(this.yychar, 0, new Character(yycharat(0)));
       case 34: 
         break;
       case 8: 
@@ -433,11 +433,11 @@ class Yylex
       case 35: 
         break;
       case 19: 
-        sb.append('\r');
+        this.sb.append('\r');
       case 36: 
         break;
       case 15: 
-        sb.append('/');
+        this.sb.append('/');
       case 37: 
         break;
       case 10: 
@@ -445,7 +445,7 @@ class Yylex
       case 38: 
         break;
       case 14: 
-        sb.append('"');
+        this.sb.append('"');
       case 39: 
         break;
       case 5: 
@@ -453,23 +453,23 @@ class Yylex
       case 40: 
         break;
       case 17: 
-        sb.append('\f');
+        this.sb.append('\f');
       case 41: 
         break;
       case 24: 
         try
         {
           int ch = Integer.parseInt(yytext().substring(2), 16);
-          sb.append((char)ch);
+          this.sb.append((char)ch);
         }
         catch (Exception e)
         {
-          throw new ParseException(yychar, 2, e);
+          throw new ParseException(this.yychar, 2, e);
         }
       case 42: 
         break;
       case 20: 
-        sb.append('\t');
+        this.sb.append('\t');
       case 43: 
         break;
       case 7: 
@@ -481,7 +481,7 @@ class Yylex
       case 45: 
         break;
       case 18: 
-        sb.append('\n');
+        this.sb.append('\n');
       case 46: 
         break;
       case 9: 
@@ -492,9 +492,9 @@ class Yylex
       case 48: 
         break;
       default: 
-        if ((zzInput == -1) && (zzStartRead == zzCurrentPos))
+        if ((zzInput == -1) && (this.zzStartRead == this.zzCurrentPos))
         {
-          zzAtEOF = true;
+          this.zzAtEOF = true;
           return null;
         }
         zzScanError(1);

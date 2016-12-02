@@ -4,7 +4,7 @@ final class kb$1
   protected wv a(adm ☃, cz ☃)
   {
     wq ☃ = new wq(☃, ☃.a(), ☃.b(), ☃.c());
-    a = 1;
+    ☃.a = 1;
     
     return ☃;
   }

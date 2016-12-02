@@ -20,12 +20,12 @@ public class aky
   
   public aky()
   {
-    o = -1;
+    this.o = -1;
   }
   
   public aky(int ☃)
   {
-    o = ☃;
+    this.o = ☃;
   }
   
   public int o_()
@@ -35,23 +35,23 @@ public class aky
   
   public zx a(int ☃)
   {
-    return m[☃];
+    return this.m[☃];
   }
   
   public zx a(int ☃, int ☃)
   {
-    if (m[☃] != null)
+    if (this.m[☃] != null)
     {
-      if (m[☃].b <= ☃)
+      if (this.m[☃].b <= ☃)
       {
-        zx ☃ = m[☃];
-        m[☃] = null;
+        zx ☃ = this.m[☃];
+        this.m[☃] = null;
         p_();
         return ☃;
       }
-      zx ☃ = m[☃].a(☃);
-      if (m[☃].b == 0) {
-        m[☃] = null;
+      zx ☃ = this.m[☃].a(☃);
+      if (this.m[☃].b == 0) {
+        this.m[☃] = null;
       }
       p_();
       return ☃;
@@ -61,10 +61,10 @@ public class aky
   
   public zx b(int ☃)
   {
-    if (m[☃] != null)
+    if (this.m[☃] != null)
     {
-      zx ☃ = m[☃];
-      m[☃] = null;
+      zx ☃ = this.m[☃];
+      this.m[☃] = null;
       return ☃;
     }
     return null;
@@ -72,42 +72,42 @@ public class aky
   
   public void a(int ☃, zx ☃)
   {
-    m[☃] = ☃;
-    if ((☃ != null) && (b > q_())) {
-      b = q_();
+    this.m[☃] = ☃;
+    if ((☃ != null) && (☃.b > q_())) {
+      ☃.b = q_();
     }
     p_();
   }
   
   public String e_()
   {
-    return l_() ? p : "container.chest";
+    return l_() ? this.p : "container.chest";
   }
   
   public boolean l_()
   {
-    return (p != null) && (p.length() > 0);
+    return (this.p != null) && (this.p.length() > 0);
   }
   
   public void a(String ☃)
   {
-    p = ☃;
+    this.p = ☃;
   }
   
   public void a(dn ☃)
   {
     super.a(☃);
     du ☃ = ☃.c("Items", 10);
-    m = new zx[o_()];
+    this.m = new zx[o_()];
     if (☃.b("CustomName", 8)) {
-      p = ☃.j("CustomName");
+      this.p = ☃.j("CustomName");
     }
     for (int ☃ = 0; ☃ < ☃.c(); ☃++)
     {
       dn ☃ = ☃.b(☃);
       int ☃ = ☃.d("Slot") & 0xFF;
-      if ((☃ >= 0) && (☃ < m.length)) {
-        m[☃] = zx.a(☃);
+      if ((☃ >= 0) && (☃ < this.m.length)) {
+        this.m[☃] = zx.a(☃);
       }
     }
   }
@@ -116,18 +116,18 @@ public class aky
   {
     super.b(☃);
     du ☃ = new du();
-    for (int ☃ = 0; ☃ < m.length; ☃++) {
-      if (m[☃] != null)
+    for (int ☃ = 0; ☃ < this.m.length; ☃++) {
+      if (this.m[☃] != null)
       {
         dn ☃ = new dn();
         ☃.a("Slot", (byte)☃);
-        m[☃].b(☃);
+        this.m[☃].b(☃);
         ☃.a(☃);
       }
     }
     ☃.a("Items", ☃);
     if (l_()) {
-      ☃.a("CustomName", p);
+      ☃.a("CustomName", this.p);
     }
   }
   
@@ -138,10 +138,10 @@ public class aky
   
   public boolean a(wn ☃)
   {
-    if (b.s(c) != this) {
+    if (this.b.s(this.c) != this) {
       return false;
     }
-    if (☃.e(c.n() + 0.5D, c.o() + 0.5D, c.p() + 0.5D) > 64.0D) {
+    if (☃.e(this.c.n() + 0.5D, this.c.o() + 0.5D, this.c.p() + 0.5D) > 64.0D) {
       return false;
     }
     return true;
@@ -150,34 +150,34 @@ public class aky
   public void E()
   {
     super.E();
-    a = false;
+    this.a = false;
   }
   
   private void a(aky ☃, cq ☃)
   {
     if (☃.x()) {
-      a = false;
-    } else if (a) {
+      this.a = false;
+    } else if (this.a) {
       switch (aky.1.a[☃.ordinal()])
       {
       case 1: 
-        if (f != ☃) {
-          a = false;
+        if (this.f != ☃) {
+          this.a = false;
         }
         break;
       case 2: 
-        if (i != ☃) {
-          a = false;
+        if (this.i != ☃) {
+          this.a = false;
         }
         break;
       case 3: 
-        if (g != ☃) {
-          a = false;
+        if (this.g != ☃) {
+          this.a = false;
         }
         break;
       case 4: 
-        if (h != ☃) {
-          a = false;
+        if (this.h != ☃) {
+          this.a = false;
         }
         break;
       }
@@ -186,22 +186,22 @@ public class aky
   
   public void m()
   {
-    if (a) {
+    if (this.a) {
       return;
     }
-    a = true;
-    h = a(cq.e);
-    g = a(cq.f);
-    f = a(cq.c);
-    i = a(cq.d);
+    this.a = true;
+    this.h = a(cq.e);
+    this.g = a(cq.f);
+    this.f = a(cq.c);
+    this.i = a(cq.d);
   }
   
   protected aky a(cq ☃)
   {
-    cj ☃ = c.a(☃);
+    cj ☃ = this.c.a(☃);
     if (b(☃))
     {
-      akw ☃ = b.s(☃);
+      akw ☃ = this.b.s(☃);
       if ((☃ instanceof aky))
       {
         aky ☃ = (aky)☃;
@@ -215,82 +215,82 @@ public class aky
   
   private boolean b(cj ☃)
   {
-    if (b == null) {
+    if (this.b == null) {
       return false;
     }
-    afh ☃ = b.p(☃).c();
+    afh ☃ = this.b.p(☃).c();
     
-    return ((☃ instanceof afs)) && (b == n());
+    return ((☃ instanceof afs)) && (((afs)☃).b == n());
   }
   
   public void c()
   {
     m();
     
-    int ☃ = c.n();
-    int ☃ = c.o();
-    int ☃ = c.p();
+    int ☃ = this.c.n();
+    int ☃ = this.c.o();
+    int ☃ = this.c.p();
     
-    n += 1;
-    if ((!b.D) && (l != 0) && ((n + ☃ + ☃ + ☃) % 200 == 0))
+    this.n += 1;
+    if ((!this.b.D) && (this.l != 0) && ((this.n + ☃ + ☃ + ☃) % 200 == 0))
     {
-      l = 0;
+      this.l = 0;
       
       float ☃ = 5.0F;
-      List<wn> ☃ = b.a(wn.class, new aug(☃ - ☃, ☃ - ☃, ☃ - ☃, ☃ + 1 + ☃, ☃ + 1 + ☃, ☃ + 1 + ☃));
+      List<wn> ☃ = this.b.a(wn.class, new aug(☃ - ☃, ☃ - ☃, ☃ - ☃, ☃ + 1 + ☃, ☃ + 1 + ☃, ☃ + 1 + ☃));
       for (wn ☃ : ☃) {
-        if ((bk instanceof xo))
+        if ((☃.bk instanceof xo))
         {
-          og ☃ = ((xo)bk).e();
+          og ☃ = ((xo)☃.bk).e();
           if ((☃ == this) || (((☃ instanceof of)) && (((of)☃).a(this)))) {
-            l += 1;
+            this.l += 1;
           }
         }
       }
     }
-    k = j;
+    this.k = this.j;
     
     float ☃ = 0.1F;
-    if ((l > 0) && (j == 0.0F) && 
-      (f == null) && (h == null))
+    if ((this.l > 0) && (this.j == 0.0F) && 
+      (this.f == null) && (this.h == null))
     {
       double ☃ = ☃ + 0.5D;
       double ☃ = ☃ + 0.5D;
-      if (i != null) {
+      if (this.i != null) {
         ☃ += 0.5D;
       }
-      if (g != null) {
+      if (this.g != null) {
         ☃ += 0.5D;
       }
-      b.a(☃, ☃ + 0.5D, ☃, "random.chestopen", 0.5F, b.s.nextFloat() * 0.1F + 0.9F);
+      this.b.a(☃, ☃ + 0.5D, ☃, "random.chestopen", 0.5F, this.b.s.nextFloat() * 0.1F + 0.9F);
     }
-    if (((l == 0) && (j > 0.0F)) || ((l > 0) && (j < 1.0F)))
+    if (((this.l == 0) && (this.j > 0.0F)) || ((this.l > 0) && (this.j < 1.0F)))
     {
-      float ☃ = j;
-      if (l > 0) {
-        j += ☃;
+      float ☃ = this.j;
+      if (this.l > 0) {
+        this.j += ☃;
       } else {
-        j -= ☃;
+        this.j -= ☃;
       }
-      if (j > 1.0F) {
-        j = 1.0F;
+      if (this.j > 1.0F) {
+        this.j = 1.0F;
       }
       float ☃ = 0.5F;
-      if ((j < ☃) && (☃ >= ☃) && 
-        (f == null) && (h == null))
+      if ((this.j < ☃) && (☃ >= ☃) && 
+        (this.f == null) && (this.h == null))
       {
         double ☃ = ☃ + 0.5D;
         double ☃ = ☃ + 0.5D;
-        if (i != null) {
+        if (this.i != null) {
           ☃ += 0.5D;
         }
-        if (g != null) {
+        if (this.g != null) {
           ☃ += 0.5D;
         }
-        b.a(☃, ☃ + 0.5D, ☃, "random.chestclosed", 0.5F, b.s.nextFloat() * 0.1F + 0.9F);
+        this.b.a(☃, ☃ + 0.5D, ☃, "random.chestclosed", 0.5F, this.b.s.nextFloat() * 0.1F + 0.9F);
       }
-      if (j < 0.0F) {
-        j = 0.0F;
+      if (this.j < 0.0F) {
+        this.j = 0.0F;
       }
     }
   }
@@ -299,7 +299,7 @@ public class aky
   {
     if (☃ == 1)
     {
-      l = ☃;
+      this.l = ☃;
       return true;
     }
     return super.c(☃, ☃);
@@ -309,13 +309,13 @@ public class aky
   {
     if (!☃.v())
     {
-      if (l < 0) {
-        l = 0;
+      if (this.l < 0) {
+        this.l = 0;
       }
-      l += 1;
-      b.c(c, w(), 1, l);
-      b.c(c, w());
-      b.c(c.b(), w());
+      this.l += 1;
+      this.b.c(this.c, w(), 1, this.l);
+      this.b.c(this.c, w());
+      this.b.c(this.c.b(), w());
     }
   }
   
@@ -324,10 +324,10 @@ public class aky
     if ((!☃.v()) && 
       ((w() instanceof afs)))
     {
-      l -= 1;
-      b.c(c, w(), 1, l);
-      b.c(c, w());
-      b.c(c.b(), w());
+      this.l -= 1;
+      this.b.c(this.c, w(), 1, this.l);
+      this.b.c(this.c, w());
+      this.b.c(this.c.b(), w());
     }
   }
   
@@ -345,14 +345,14 @@ public class aky
   
   public int n()
   {
-    if (o == -1) {
-      if ((b != null) && ((w() instanceof afs))) {
-        o = wb;
+    if (this.o == -1) {
+      if ((this.b != null) && ((w() instanceof afs))) {
+        this.o = ((afs)w()).b;
       } else {
         return 0;
       }
     }
-    return o;
+    return this.o;
   }
   
   public String k()
@@ -379,8 +379,8 @@ public class aky
   
   public void l()
   {
-    for (int ☃ = 0; ☃ < m.length; ☃++) {
-      m[☃] = null;
+    for (int ☃ = 0; ☃ < this.m.length; ☃++) {
+      this.m[☃] = null;
     }
   }
 }

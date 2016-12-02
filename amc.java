@@ -11,32 +11,32 @@ public class amc
   
   public amc(adm ☃, cj ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public alz a()
   {
-    if ((d == null) && ((c) || (a.e(b)))) {
-      d = a.p(b);
+    if ((this.d == null) && ((this.c) || (this.a.e(this.b)))) {
+      this.d = this.a.p(this.b);
     }
-    return d;
+    return this.d;
   }
   
   public akw b()
   {
-    if ((e == null) && (!f))
+    if ((this.e == null) && (!this.f))
     {
-      e = a.s(b);
-      f = true;
+      this.e = this.a.s(this.b);
+      this.f = true;
     }
-    return e;
+    return this.e;
   }
   
   public cj d()
   {
-    return b;
+    return this.b;
   }
   
   public static Predicate<amc> a(Predicate<alz> ☃)
@@ -45,7 +45,7 @@ public class amc
     {
       public boolean a(amc ☃)
       {
-        return (☃ != null) && (a.apply(☃.a()));
+        return (☃ != null) && (this.a.apply(☃.a()));
       }
     };
   }

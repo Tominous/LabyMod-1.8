@@ -13,30 +13,30 @@ public class avm
   
   public avm(String ☃, String ☃, String ☃, String ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = avm.a.a(☃);
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = avm.a.a(☃);
   }
   
   public String a()
   {
-    return "token:" + c + ":" + b;
+    return "token:" + this.c + ":" + this.b;
   }
   
   public String b()
   {
-    return b;
+    return this.b;
   }
   
   public String c()
   {
-    return a;
+    return this.a;
   }
   
   public String d()
   {
-    return c;
+    return this.c;
   }
   
   public GameProfile e()
@@ -52,7 +52,7 @@ public class avm
   
   public avm.a f()
   {
-    return d;
+    return this.d;
   }
   
   public static enum a
@@ -62,7 +62,7 @@ public class avm
     
     private a(String ☃)
     {
-      d = ☃;
+      this.d = ☃;
     }
     
     public static a a(String ☃)
@@ -74,7 +74,7 @@ public class avm
     {
       c = Maps.newHashMap();
       for (a ☃ : values()) {
-        c.put(d, ☃);
+        c.put(☃.d, ☃);
       }
     }
   }

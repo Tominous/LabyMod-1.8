@@ -9,8 +9,8 @@ public class avf
   public void a()
   {
     Mouse.setGrabbed(true);
-    a = 0;
-    b = 0;
+    this.a = 0;
+    this.b = 0;
   }
   
   public void b()
@@ -21,7 +21,7 @@ public class avf
   
   public void c()
   {
-    a = Mouse.getDX();
-    b = Mouse.getDY();
+    this.a = Mouse.getDX();
+    this.b = Mouse.getDY();
   }
 }

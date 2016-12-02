@@ -1,61 +1,56 @@
-import shadersmod.client.SVertexFormat;
-
 public class bbs
 {
   public bcg[] a;
   public int b;
   private boolean c;
-  private static final String __OBFID = "CL_00000850";
   
-  public bbs(bcg[] vertices)
+  public bbs(bcg[] ☃)
   {
-    a = vertices;
-    b = vertices.length;
+    this.a = ☃;
+    this.b = ☃.length;
   }
   
-  public bbs(bcg[] vertices, int texcoordU1, int texcoordV1, int texcoordU2, int texcoordV2, float textureWidth, float textureHeight)
+  public bbs(bcg[] ☃, int ☃, int ☃, int ☃, int ☃, float ☃, float ☃)
   {
-    this(vertices);
-    float var8 = 0.0F / textureWidth;
-    float var9 = 0.0F / textureHeight;
-    vertices[0] = vertices[0].a(texcoordU2 / textureWidth - var8, texcoordV1 / textureHeight + var9);
-    vertices[1] = vertices[1].a(texcoordU1 / textureWidth + var8, texcoordV1 / textureHeight + var9);
-    vertices[2] = vertices[2].a(texcoordU1 / textureWidth + var8, texcoordV2 / textureHeight - var9);
-    vertices[3] = vertices[3].a(texcoordU2 / textureWidth - var8, texcoordV2 / textureHeight - var9);
+    this(☃);
+    
+    float ☃ = 0.0F / ☃;
+    float ☃ = 0.0F / ☃;
+    ☃[0] = ☃[0].a(☃ / ☃ - ☃, ☃ / ☃ + ☃);
+    ☃[1] = ☃[1].a(☃ / ☃ + ☃, ☃ / ☃ + ☃);
+    ☃[2] = ☃[2].a(☃ / ☃ + ☃, ☃ / ☃ - ☃);
+    ☃[3] = ☃[3].a(☃ / ☃ - ☃, ☃ / ☃ - ☃);
   }
   
   public void a()
   {
-    bcg[] var1 = new bcg[a.length];
-    for (int var2 = 0; var2 < a.length; var2++) {
-      var1[var2] = a[(a.length - var2 - 1)];
+    bcg[] ☃ = new bcg[this.a.length];
+    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
+      ☃[☃] = this.a[(this.a.length - ☃ - 1)];
     }
-    a = var1;
+    this.a = ☃;
   }
   
-  public void a(bfd renderer, float scale)
+  public void a(bfd ☃, float ☃)
   {
-    aui var3 = a[1].a.a(a[0].a);
-    aui var4 = a[1].a.a(a[2].a);
-    aui var5 = var4.c(var3).a();
-    float var6 = (float)a;
-    float var7 = (float)b;
-    float var8 = (float)c;
-    if (c)
+    aui ☃ = this.a[1].a.a(this.a[0].a);
+    aui ☃ = this.a[1].a.a(this.a[2].a);
+    aui ☃ = ☃.c(☃).a();
+    
+    float ☃ = (float)☃.a;
+    float ☃ = (float)☃.b;
+    float ☃ = (float)☃.c;
+    if (this.c)
     {
-      var6 = -var6;
-      var7 = -var7;
-      var8 = -var8;
+      ☃ = -☃;
+      ☃ = -☃;
+      ☃ = -☃;
     }
-    if (Config.isShaders()) {
-      renderer.a(7, SVertexFormat.defVertexFormatTextured);
-    } else {
-      renderer.a(7, bms.c);
-    }
-    for (int var9 = 0; var9 < 4; var9++)
+    ☃.a(7, bms.c);
+    for (int ☃ = 0; ☃ < 4; ☃++)
     {
-      bcg var10 = a[var9];
-      renderer.b(a.a * scale, a.b * scale, a.c * scale).a(b, c).c(var6, var7, var8).d();
+      bcg ☃ = this.a[☃];
+      ☃.b(☃.a.a * ☃, ☃.a.b * ☃, ☃.a.c * ☃).a(☃.b, ☃.c).c(☃, ☃, ☃).d();
     }
     bfx.a().b();
   }

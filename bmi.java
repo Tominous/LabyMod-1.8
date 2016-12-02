@@ -1,17 +1,15 @@
 import com.google.common.collect.Lists;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Callable;
-import shadersmod.client.ShadersTex;
 
 public class bmi
 {
   private final String j;
-  protected List a = Lists.newArrayList();
+  protected List<int[][]> a = Lists.newArrayList();
   protected int[][] b;
   private boa k;
   protected boolean c;
@@ -27,161 +25,138 @@ public class bmi
   protected int i;
   private static String p = "builtin/clock";
   private static String q = "builtin/compass";
-  private static final String __OBFID = "CL_00001062";
-  private int indexInMap = -1;
-  public float baseU;
-  public float baseV;
-  public int sheetWidth;
-  public int sheetHeight;
-  public int glSpriteTextureId = -1;
-  public bmi spriteSingle = null;
-  public boolean isSpriteSingle = false;
-  public int mipmapLevels = 0;
   
-  private bmi(bmi parent)
+  protected bmi(String ☃)
   {
-    j = j;
-    isSpriteSingle = true;
+    this.j = ☃;
   }
   
-  protected bmi(String p_i1282_1_)
+  protected static bmi a(jy ☃)
   {
-    j = p_i1282_1_;
-    if (Config.isMultiTexture()) {
-      spriteSingle = new bmi(this);
+    String ☃ = ☃.toString();
+    if (p.equals(☃)) {
+      return new bmo(☃);
     }
+    if (q.equals(☃)) {
+      return new bmp(☃);
+    }
+    return new bmi(☃);
   }
   
-  protected static bmi a(jy p_176604_0_)
+  public static void a(String ☃)
   {
-    String var1 = p_176604_0_.toString();
-    return q.equals(var1) ? new bmp(var1) : p.equals(var1) ? new bmo(var1) : new bmi(var1);
+    p = ☃;
   }
   
-  public static void a(String p_176602_0_)
+  public static void b(String ☃)
   {
-    p = p_176602_0_;
+    q = ☃;
   }
   
-  public static void b(String p_176603_0_)
+  public void a(int ☃, int ☃, int ☃, int ☃, boolean ☃)
   {
-    q = p_176603_0_;
-  }
-  
-  public void a(int p_110971_1_, int p_110971_2_, int p_110971_3_, int p_110971_4_, boolean p_110971_5_)
-  {
-    d = p_110971_3_;
-    e = p_110971_4_;
-    c = p_110971_5_;
-    float var6 = (float)(0.009999999776482582D / p_110971_1_);
-    float var7 = (float)(0.009999999776482582D / p_110971_2_);
-    l = (p_110971_3_ / (float)p_110971_1_ + var6);
-    m = ((p_110971_3_ + f) / (float)p_110971_1_ - var6);
-    n = (p_110971_4_ / p_110971_2_ + var7);
-    o = ((p_110971_4_ + g) / p_110971_2_ - var7);
+    this.d = ☃;
+    this.e = ☃;
+    this.c = ☃;
     
-    baseU = Math.min(l, m);
-    baseV = Math.min(n, o);
-    if (spriteSingle != null) {
-      spriteSingle.a(f, g, 0, 0, false);
-    }
+    float ☃ = (float)(0.009999999776482582D / ☃);
+    float ☃ = (float)(0.009999999776482582D / ☃);
+    
+    this.l = (☃ / (float)☃ + ☃);
+    this.m = ((☃ + this.f) / (float)☃ - ☃);
+    this.n = (☃ / ☃ + ☃);
+    this.o = ((☃ + this.g) / ☃ - ☃);
   }
   
-  public void a(bmi p_94217_1_)
+  public void a(bmi ☃)
   {
-    d = d;
-    e = e;
-    f = f;
-    g = g;
-    c = c;
-    l = l;
-    m = m;
-    n = n;
-    o = o;
-    if (spriteSingle != null) {
-      spriteSingle.a(f, g, 0, 0, false);
-    }
+    this.d = ☃.d;
+    this.e = ☃.e;
+    
+    this.f = ☃.f;
+    this.g = ☃.g;
+    
+    this.c = ☃.c;
+    
+    this.l = ☃.l;
+    this.m = ☃.m;
+    this.n = ☃.n;
+    this.o = ☃.o;
   }
   
   public int a()
   {
-    return d;
+    return this.d;
   }
   
   public int b()
   {
-    return e;
+    return this.e;
   }
   
   public int c()
   {
-    return f;
+    return this.f;
   }
   
   public int d()
   {
-    return g;
+    return this.g;
   }
   
   public float e()
   {
-    return l;
+    return this.l;
   }
   
   public float f()
   {
-    return m;
+    return this.m;
   }
   
-  public float a(double p_94214_1_)
+  public float a(double ☃)
   {
-    float var3 = m - l;
-    return l + var3 * (float)p_94214_1_ / 16.0F;
+    float ☃ = this.m - this.l;
+    return this.l + ☃ * (float)☃ / 16.0F;
   }
   
   public float g()
   {
-    return n;
+    return this.n;
   }
   
   public float h()
   {
-    return o;
+    return this.o;
   }
   
-  public float b(double p_94207_1_)
+  public float b(double ☃)
   {
-    float var3 = o - n;
-    return n + var3 * ((float)p_94207_1_ / 16.0F);
+    float ☃ = this.o - this.n;
+    return this.n + ☃ * ((float)☃ / 16.0F);
   }
   
   public String i()
   {
-    return j;
+    return this.j;
   }
   
   public void j()
   {
-    i += 1;
-    if (i >= k.a(h))
+    this.i += 1;
+    if (this.i >= this.k.a(this.h))
     {
-      int var1 = k.c(h);
-      int var2 = k.c() == 0 ? a.size() : k.c();
-      h = ((h + 1) % var2);
-      i = 0;
-      int var3 = k.c(h);
+      int ☃ = this.k.c(this.h);
+      int ☃ = this.k.c() == 0 ? this.a.size() : this.k.c();
+      this.h = ((this.h + 1) % ☃);
+      this.i = 0;
       
-      boolean texBlur = false;
-      boolean texClamp = isSpriteSingle;
-      if ((var1 != var3) && (var3 >= 0) && (var3 < a.size())) {
-        if (Config.isShaders()) {
-          ShadersTex.uploadTexSub((int[][])a.get(var3), f, g, d, e, texBlur, texClamp);
-        } else {
-          bml.a((int[][])a.get(var3), f, g, d, e, texBlur, texClamp);
-        }
+      int ☃ = this.k.c(this.h);
+      if ((☃ != ☃) && (☃ >= 0) && (☃ < this.a.size())) {
+        bml.a((int[][])this.a.get(☃), this.f, this.g, this.d, this.e, false, false);
       }
     }
-    else if (k.e())
+    else if (this.k.e())
     {
       n();
     }
@@ -189,369 +164,214 @@ public class bmi
   
   private void n()
   {
-    double var1 = 1.0D - i / k.a(h);
-    int var3 = k.c(h);
-    int var4 = k.c() == 0 ? a.size() : k.c();
-    int var5 = k.c((h + 1) % var4);
-    if ((var3 != var5) && (var5 >= 0) && (var5 < a.size()))
+    double ☃ = 1.0D - this.i / this.k.a(this.h);
+    
+    int ☃ = this.k.c(this.h);
+    int ☃ = this.k.c() == 0 ? this.a.size() : this.k.c();
+    int ☃ = this.k.c((this.h + 1) % ☃);
+    if ((☃ != ☃) && (☃ >= 0) && (☃ < this.a.size()))
     {
-      int[][] var6 = (int[][])a.get(var3);
-      int[][] var7 = (int[][])a.get(var5);
-      if ((b == null) || (b.length != var6.length)) {
-        b = new int[var6.length][];
+      int[][] ☃ = (int[][])this.a.get(☃);
+      int[][] ☃ = (int[][])this.a.get(☃);
+      if ((this.b == null) || (this.b.length != ☃.length)) {
+        this.b = new int[☃.length][];
       }
-      for (int var8 = 0; var8 < var6.length; var8++)
+      for (int ☃ = 0; ☃ < ☃.length; ☃++)
       {
-        if (b[var8] == null) {
-          b[var8] = new int[var6[var8].length];
+        if (this.b[☃] == null) {
+          this.b[☃] = new int[☃[☃].length];
         }
-        if ((var8 < var7.length) && (var7[var8].length == var6[var8].length)) {
-          for (int var9 = 0; var9 < var6[var8].length; var9++)
+        if ((☃ < ☃.length) && (☃[☃].length == ☃[☃].length)) {
+          for (int ☃ = 0; ☃ < ☃[☃].length; ☃++)
           {
-            int var10 = var6[var8][var9];
-            int var11 = var7[var8][var9];
-            int var12 = (int)(((var10 & 0xFF0000) >> 16) * var1 + ((var11 & 0xFF0000) >> 16) * (1.0D - var1));
-            int var13 = (int)(((var10 & 0xFF00) >> 8) * var1 + ((var11 & 0xFF00) >> 8) * (1.0D - var1));
-            int var14 = (int)((var10 & 0xFF) * var1 + (var11 & 0xFF) * (1.0D - var1));
-            b[var8][var9] = (var10 & 0xFF000000 | var12 << 16 | var13 << 8 | var14);
+            int ☃ = ☃[☃][☃];
+            int ☃ = ☃[☃][☃];
+            int ☃ = (int)(((☃ & 0xFF0000) >> 16) * ☃ + ((☃ & 0xFF0000) >> 16) * (1.0D - ☃));
+            int ☃ = (int)(((☃ & 0xFF00) >> 8) * ☃ + ((☃ & 0xFF00) >> 8) * (1.0D - ☃));
+            int ☃ = (int)((☃ & 0xFF) * ☃ + (☃ & 0xFF) * (1.0D - ☃));
+            
+            this.b[☃][☃] = (☃ & 0xFF000000 | ☃ << 16 | ☃ << 8 | ☃);
           }
         }
       }
-      bml.a(b, f, g, d, e, false, false);
+      bml.a(this.b, this.f, this.g, this.d, this.e, false, false);
     }
   }
   
-  public int[][] a(int p_147965_1_)
+  public int[][] a(int ☃)
   {
-    return (int[][])a.get(p_147965_1_);
+    return (int[][])this.a.get(☃);
   }
   
   public int k()
   {
-    return a.size();
+    return this.a.size();
   }
   
-  public void b(int p_110966_1_)
+  public void b(int ☃)
   {
-    f = p_110966_1_;
-    if (spriteSingle != null) {
-      spriteSingle.b(f);
-    }
+    this.f = ☃;
   }
   
-  public void c(int p_110969_1_)
+  public void c(int ☃)
   {
-    g = p_110969_1_;
-    if (spriteSingle != null) {
-      spriteSingle.c(g);
-    }
+    this.g = ☃;
   }
   
-  public void a(BufferedImage[] p_180598_1_, boa p_180598_2_)
+  public void a(BufferedImage[] ☃, boa ☃)
     throws IOException
   {
     o();
-    int var3 = p_180598_1_[0].getWidth();
-    int var4 = p_180598_1_[0].getHeight();
-    f = var3;
-    g = var4;
-    int[][] var5 = new int[p_180598_1_.length][];
-    for (int var6 = 0; var6 < p_180598_1_.length; var6++)
+    
+    int ☃ = ☃[0].getWidth();
+    int ☃ = ☃[0].getHeight();
+    
+    this.f = ☃;
+    this.g = ☃;
+    
+    int[][] ☃ = new int[☃.length][];
+    for (int ☃ = 0; ☃ < ☃.length; ☃++)
     {
-      BufferedImage var7 = p_180598_1_[var6];
-      if (var7 != null)
+      BufferedImage ☃ = ☃[☃];
+      if (☃ != null)
       {
-        if ((var6 > 0) && ((var7.getWidth() != var3 >> var6) || (var7.getHeight() != var4 >> var6))) {
-          throw new RuntimeException(String.format("Unable to load miplevel: %d, image is size: %dx%d, expected %dx%d", new Object[] { Integer.valueOf(var6), Integer.valueOf(var7.getWidth()), Integer.valueOf(var7.getHeight()), Integer.valueOf(var3 >> var6), Integer.valueOf(var4 >> var6) }));
+        if ((☃ > 0) && ((☃.getWidth() != ☃ >> ☃) || (☃.getHeight() != ☃ >> ☃))) {
+          throw new RuntimeException(String.format("Unable to load miplevel: %d, image is size: %dx%d, expected %dx%d", new Object[] { Integer.valueOf(☃), Integer.valueOf(☃.getWidth()), Integer.valueOf(☃.getHeight()), Integer.valueOf(☃ >> ☃), Integer.valueOf(☃ >> ☃) }));
         }
-        var5[var6] = new int[var7.getWidth() * var7.getHeight()];
-        var7.getRGB(0, 0, var7.getWidth(), var7.getHeight(), var5[var6], 0, var7.getWidth());
+        ☃[☃] = new int[☃.getWidth() * ☃.getHeight()];
+        ☃.getRGB(0, 0, ☃.getWidth(), ☃.getHeight(), ☃[☃], 0, ☃.getWidth());
       }
     }
-    if (p_180598_2_ == null)
+    if (☃ == null)
     {
-      if (var4 != var3) {
+      if (☃ != ☃) {
         throw new RuntimeException("broken aspect ratio and not an animation");
       }
-      a.add(var5);
+      this.a.add(☃);
     }
     else
     {
-      var6 = var4 / var3;
-      int var11 = var3;
-      int var8 = var3;
-      g = f;
-      if (p_180598_2_.c() > 0)
+      int ☃ = ☃ / ☃;
+      int ☃ = ☃;
+      int ☃ = ☃;
+      this.g = this.f;
+      if (☃.c() > 0)
       {
-        Iterator var9 = p_180598_2_.f().iterator();
-        while (var9.hasNext())
+        for (Iterator ☃ = ☃.f().iterator(); ☃.hasNext();)
         {
-          int var10 = ((Integer)var9.next()).intValue();
-          if (var10 >= var6) {
-            throw new RuntimeException("invalid frameindex " + var10);
+          int ☃ = ((Integer)☃.next()).intValue();
+          if (☃ >= ☃) {
+            throw new RuntimeException("invalid frameindex " + ☃);
           }
-          e(var10);
-          a.set(var10, a(var5, var11, var8, var10));
+          e(☃);
+          this.a.set(☃, a(☃, ☃, ☃, ☃));
         }
-        k = p_180598_2_;
+        this.k = ☃;
       }
       else
       {
-        ArrayList var12 = Lists.newArrayList();
-        for (int var10 = 0; var10 < var6; var10++)
+        List<bnz> ☃ = Lists.newArrayList();
+        for (int ☃ = 0; ☃ < ☃; ☃++)
         {
-          a.add(a(var5, var11, var8, var10));
-          var12.add(new bnz(var10, -1));
+          this.a.add(a(☃, ☃, ☃, ☃));
+          
+          ☃.add(new bnz(☃, -1));
         }
-        k = new boa(var12, f, g, p_180598_2_.d(), p_180598_2_.e());
+        this.k = new boa(☃, this.f, this.g, ☃.d(), ☃.e());
       }
-    }
-    for (int i = 0; i < a.size(); i++)
-    {
-      int[][] datas = (int[][])a.get(i);
-      if (datas != null) {
-        if (!j.startsWith("minecraft:blocks/leaves_")) {
-          for (int di = 0; di < datas.length; di++)
-          {
-            int[] data = datas[di];
-            fixTransparentColor(data);
-          }
-        }
-      }
-    }
-    if (spriteSingle != null) {
-      spriteSingle.a(p_180598_1_, p_180598_2_);
     }
   }
   
-  public void d(int p_147963_1_)
+  public void d(int ☃)
   {
-    ArrayList var2 = Lists.newArrayList();
-    for (int var3 = 0; var3 < a.size(); var3++)
+    List<int[][]> ☃ = Lists.newArrayList();
+    for (int ☃ = 0; ☃ < this.a.size(); ☃++)
     {
-      final int[][] var4 = (int[][])a.get(var3);
-      if (var4 != null) {
+      final int[][] ☃ = (int[][])this.a.get(☃);
+      if (☃ != null) {
         try
         {
-          var2.add(bml.a(p_147963_1_, f, var4));
+          ☃.add(bml.a(☃, this.f, ☃));
         }
-        catch (Throwable var8)
+        catch (Throwable ☃)
         {
-          b var6 = b.a(var8, "Generating mipmaps for frame");
-          c var7 = var6.a("Frame being iterated");
-          var7.a("Frame index", Integer.valueOf(var3));
-          var7.a("Frame sizes", new Callable()
+          b ☃ = b.a(☃, "Generating mipmaps for frame");
+          c ☃ = ☃.a("Frame being iterated");
+          
+          ☃.a("Frame index", Integer.valueOf(☃));
+          ☃.a("Frame sizes", new Callable()
           {
-            private static final String __OBFID = "CL_00001063";
-            
             public String a()
               throws Exception
             {
-              StringBuilder var1 = new StringBuilder();
-              int[][] var2 = var4;
-              int var3 = var2.length;
-              for (int var4x = 0; var4x < var3; var4x++)
+              StringBuilder ☃ = new StringBuilder();
+              for (int[] ☃ : ☃)
               {
-                int[] var5 = var2[var4x];
-                if (var1.length() > 0) {
-                  var1.append(", ");
+                if (☃.length() > 0) {
+                  ☃.append(", ");
                 }
-                var1.append(var5 == null ? "null" : Integer.valueOf(var5.length));
+                ☃.append(☃ == null ? "null" : Integer.valueOf(☃.length));
               }
-              return var1.toString();
+              return ☃.toString();
             }
           });
-          throw new e(var6);
+          throw new e(☃);
         }
       }
     }
-    a(var2);
-    if (spriteSingle != null) {
-      spriteSingle.d(p_147963_1_);
+    a(☃);
+  }
+  
+  private void e(int ☃)
+  {
+    if (this.a.size() > ☃) {
+      return;
+    }
+    for (int ☃ = this.a.size(); ☃ <= ☃; ☃++) {
+      this.a.add(null);
     }
   }
   
-  private void e(int p_130099_1_)
+  private static int[][] a(int[][] ☃, int ☃, int ☃, int ☃)
   {
-    if (a.size() <= p_130099_1_) {
-      for (int var2 = a.size(); var2 <= p_130099_1_; var2++) {
-        a.add((Object)null);
-      }
-    }
-    if (spriteSingle != null) {
-      spriteSingle.e(p_130099_1_);
-    }
-  }
-  
-  private static int[][] a(int[][] p_147962_0_, int p_147962_1_, int p_147962_2_, int p_147962_3_)
-  {
-    int[][] var4 = new int[p_147962_0_.length][];
-    for (int var5 = 0; var5 < p_147962_0_.length; var5++)
+    int[][] ☃ = new int[☃.length][];
+    for (int ☃ = 0; ☃ < ☃.length; ☃++)
     {
-      int[] var6 = p_147962_0_[var5];
-      if (var6 != null)
+      int[] ☃ = ☃[☃];
+      if (☃ != null)
       {
-        var4[var5] = new int[(p_147962_1_ >> var5) * (p_147962_2_ >> var5)];
-        System.arraycopy(var6, p_147962_3_ * var4[var5].length, var4[var5], 0, var4[var5].length);
+        ☃[☃] = new int[(☃ >> ☃) * (☃ >> ☃)];
+        System.arraycopy(☃, ☃ * ☃[☃].length, ☃[☃], 0, ☃[☃].length);
       }
     }
-    return var4;
+    return ☃;
   }
   
   public void l()
   {
-    a.clear();
-    if (spriteSingle != null) {
-      spriteSingle.l();
-    }
+    this.a.clear();
   }
   
   public boolean m()
   {
-    return k != null;
+    return this.k != null;
   }
   
-  public void a(List p_110968_1_)
+  public void a(List<int[][]> ☃)
   {
-    a = p_110968_1_;
-    if (spriteSingle != null) {
-      spriteSingle.a(p_110968_1_);
-    }
+    this.a = ☃;
   }
   
   private void o()
   {
-    k = null;
+    this.k = null;
     a(Lists.newArrayList());
-    h = 0;
-    i = 0;
-    if (spriteSingle != null) {
-      spriteSingle.o();
-    }
+    this.h = 0;
+    this.i = 0;
   }
   
   public String toString()
   {
-    return "TextureAtlasSprite{name='" + j + '\'' + ", frameCount=" + a.size() + ", rotated=" + c + ", x=" + d + ", y=" + e + ", height=" + g + ", width=" + f + ", u0=" + l + ", u1=" + m + ", v0=" + n + ", v1=" + o + '}';
-  }
-  
-  public boolean hasCustomLoader(bni manager, jy location)
-  {
-    return false;
-  }
-  
-  public boolean load(bni manager, jy location)
-  {
-    return true;
-  }
-  
-  public int getIndexInMap()
-  {
-    return indexInMap;
-  }
-  
-  public void setIndexInMap(int indexInMap)
-  {
-    this.indexInMap = indexInMap;
-  }
-  
-  private void fixTransparentColor(int[] data)
-  {
-    if (data == null) {
-      return;
-    }
-    long redSum = 0L;
-    long greenSum = 0L;
-    long blueSum = 0L;
-    long count = 0L;
-    for (int i = 0; i < data.length; i++)
-    {
-      int col = data[i];
-      int alpha = col >> 24 & 0xFF;
-      if (alpha >= 16)
-      {
-        int red = col >> 16 & 0xFF;
-        int green = col >> 8 & 0xFF;
-        int blue = col & 0xFF;
-        
-        redSum += red;
-        greenSum += green;
-        blueSum += blue;
-        
-        count += 1L;
-      }
-    }
-    if (count <= 0L) {
-      return;
-    }
-    int redAvg = (int)(redSum / count);
-    int greenAvg = (int)(greenSum / count);
-    int blueAvg = (int)(blueSum / count);
-    int colAvg = redAvg << 16 | greenAvg << 8 | blueAvg;
-    for (int i = 0; i < data.length; i++)
-    {
-      int col = data[i];
-      int alpha = col >> 24 & 0xFF;
-      if (alpha <= 16) {
-        data[i] = colAvg;
-      }
-    }
-  }
-  
-  public double getSpriteU16(float atlasU)
-  {
-    float dU = m - l;
-    return (atlasU - l) / dU * 16.0F;
-  }
-  
-  public double getSpriteV16(float atlasV)
-  {
-    float dV = o - n;
-    return (atlasV - n) / dV * 16.0F;
-  }
-  
-  public void bindSpriteTexture()
-  {
-    if (glSpriteTextureId < 0)
-    {
-      glSpriteTextureId = bml.a();
-      
-      bml.a(glSpriteTextureId, mipmapLevels, f, g);
-      
-      TextureUtils.applyAnisotropicLevel();
-    }
-    TextureUtils.bindTexture(glSpriteTextureId);
-  }
-  
-  public void deleteSpriteTexture()
-  {
-    if (glSpriteTextureId < 0) {
-      return;
-    }
-    bml.a(glSpriteTextureId);
-    
-    glSpriteTextureId = -1;
-  }
-  
-  public float toSingleU(float u)
-  {
-    u -= baseU;
-    
-    float ku = sheetWidth / f;
-    
-    u *= ku;
-    
-    return u;
-  }
-  
-  public float toSingleV(float v)
-  {
-    v -= baseV;
-    
-    float kv = sheetHeight / g;
-    
-    v *= kv;
-    
-    return v;
+    return "TextureAtlasSprite{name='" + this.j + '\'' + ", frameCount=" + this.a.size() + ", rotated=" + this.c + ", x=" + this.d + ", y=" + this.e + ", height=" + this.g + ", width=" + this.f + ", u0=" + this.l + ", u1=" + this.m + ", v0=" + this.n + ", v1=" + this.o + '}';
   }
 }

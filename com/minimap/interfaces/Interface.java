@@ -40,46 +40,46 @@ public abstract class Interface
   
   public Interface(String name, int w, int h, int wc, int hc, ModOptions option)
   {
-    iname = name;
+    this.iname = name;
     this.w = w;
-    w0 = w;
+    this.w0 = w;
     this.h = h;
-    h0 = h;
+    this.h0 = h;
     this.wc = wc;
     this.hc = hc;
-    multi = ((wc != w) || (hc != h));
+    this.multi = ((wc != w) || (hc != h));
     boolean b = false;
-    flipped = false;
-    cflipped = false;
-    bflipped = false;
+    this.flipped = false;
+    this.cflipped = false;
+    this.bflipped = false;
     InterfaceHandler.list.add(this);
-    id = InterfaceHandler.list.indexOf(this);
+    this.id = InterfaceHandler.list.indexOf(this);
     Preset preset = (Preset)InterfaceHandler.presets.get(0);
-    int bx = coords[id][0];
-    x = bx;
-    actualx = bx;
+    int bx = preset.coords[this.id][0];
+    this.x = bx;
+    this.actualx = bx;
     this.bx = bx;
-    int by = coords[id][1];
-    y = by;
-    actualy = by;
+    int by = preset.coords[this.id][1];
+    this.y = by;
+    this.actualy = by;
     this.by = by;
-    boolean b2 = types[id][0];
-    centered = b2;
-    bcentered = b2;
-    boolean b3 = types[id][1];
-    fromRight = b3;
-    bfromRight = b3;
+    boolean b2 = preset.types[this.id][0];
+    this.centered = b2;
+    this.bcentered = b2;
+    boolean b3 = preset.types[this.id][1];
+    this.fromRight = b3;
+    this.bfromRight = b3;
     this.option = option;
-    cBox = new CursorBox(2)
+    this.cBox = new CursorBox(2)
     {
       public String getString(int line)
       {
         switch (line)
         {
         case 0: 
-          return bnq.a(iname, new Object[0]);
+          return bnq.a(Interface.this.iname, new Object[0]);
         case 1: 
-          return bnq.a("gui.xaero_centered", new Object[0]) + " " + centered + " " + bnq.a("gui.xaero_press_c", new Object[0]);
+          return bnq.a("gui.xaero_centered", new Object[0]) + " " + Interface.this.centered + " " + bnq.a("gui.xaero_press_c", new Object[0]);
         }
         return "";
       }
@@ -88,43 +88,43 @@ public abstract class Interface
   
   public int getW(int scale)
   {
-    return w;
+    return this.w;
   }
   
   public int getH(int scale)
   {
-    return h;
+    return this.h;
   }
   
   public int getWC(int scale)
   {
-    return wc;
+    return this.wc;
   }
   
   public int getHC(int scale)
   {
-    return hc;
+    return this.hc;
   }
   
   public int getW0(int scale)
   {
-    return w0;
+    return this.w0;
   }
   
   public int getH0(int scale)
   {
-    return h0;
+    return this.h0;
   }
   
   public int getSize()
   {
-    return w * h;
+    return this.w * this.h;
   }
   
   public void drawInterface(int width, int height, int scale, float partial)
   {
-    if (fromRight) {
-      x = (width - x);
+    if (this.fromRight) {
+      this.x = (width - this.x);
     }
     GL11.glEnable(3008);
     bfl.l();

@@ -5,10 +5,10 @@ public class bdj
   {
     super(☃, ☃, ☃, ☃, 0.0D, 0.0D, 0.0D);
     a(ave.A().ag().a().a(☃));
-    ar = (as = at = 1.0F);
-    v = (w = x = 0.0D);
-    i = 0.0F;
-    g = 80;
+    this.ar = (this.as = this.at = 1.0F);
+    this.v = (this.w = this.x = 0.0D);
+    this.i = 0.0F;
+    this.g = 80;
   }
   
   public int a()
@@ -18,24 +18,24 @@ public class bdj
   
   public void a(bfd ☃, pk ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
-    float ☃ = av.e();
-    float ☃ = av.f();
-    float ☃ = av.g();
-    float ☃ = av.h();
+    float ☃ = this.av.e();
+    float ☃ = this.av.f();
+    float ☃ = this.av.g();
+    float ☃ = this.av.h();
     float ☃ = 0.5F;
     
-    float ☃ = (float)(p + (s - p) * ☃ - aw);
-    float ☃ = (float)(q + (t - q) * ☃ - ax);
-    float ☃ = (float)(r + (u - r) * ☃ - ay);
+    float ☃ = (float)(this.p + (this.s - this.p) * ☃ - aw);
+    float ☃ = (float)(this.q + (this.t - this.q) * ☃ - ax);
+    float ☃ = (float)(this.r + (this.u - this.r) * ☃ - ay);
     
     int ☃ = b(☃);
     int ☃ = ☃ >> 16 & 0xFFFF;
     int ☃ = ☃ & 0xFFFF;
     
-    ☃.b(☃ - ☃ * 0.5F - ☃ * 0.5F, ☃ - ☃ * 0.5F, ☃ - ☃ * 0.5F - ☃ * 0.5F).a(☃, ☃).a(ar, as, at, 1.0F).a(☃, ☃).d();
-    ☃.b(☃ - ☃ * 0.5F + ☃ * 0.5F, ☃ + ☃ * 0.5F, ☃ - ☃ * 0.5F + ☃ * 0.5F).a(☃, ☃).a(ar, as, at, 1.0F).a(☃, ☃).d();
-    ☃.b(☃ + ☃ * 0.5F + ☃ * 0.5F, ☃ + ☃ * 0.5F, ☃ + ☃ * 0.5F + ☃ * 0.5F).a(☃, ☃).a(ar, as, at, 1.0F).a(☃, ☃).d();
-    ☃.b(☃ + ☃ * 0.5F - ☃ * 0.5F, ☃ - ☃ * 0.5F, ☃ + ☃ * 0.5F - ☃ * 0.5F).a(☃, ☃).a(ar, as, at, 1.0F).a(☃, ☃).d();
+    ☃.b(☃ - ☃ * 0.5F - ☃ * 0.5F, ☃ - ☃ * 0.5F, ☃ - ☃ * 0.5F - ☃ * 0.5F).a(☃, ☃).a(this.ar, this.as, this.at, 1.0F).a(☃, ☃).d();
+    ☃.b(☃ - ☃ * 0.5F + ☃ * 0.5F, ☃ + ☃ * 0.5F, ☃ - ☃ * 0.5F + ☃ * 0.5F).a(☃, ☃).a(this.ar, this.as, this.at, 1.0F).a(☃, ☃).d();
+    ☃.b(☃ + ☃ * 0.5F + ☃ * 0.5F, ☃ + ☃ * 0.5F, ☃ + ☃ * 0.5F + ☃ * 0.5F).a(☃, ☃).a(this.ar, this.as, this.at, 1.0F).a(☃, ☃).d();
+    ☃.b(☃ + ☃ * 0.5F - ☃ * 0.5F, ☃ - ☃ * 0.5F, ☃ + ☃ * 0.5F - ☃ * 0.5F).a(☃, ☃).a(this.ar, this.as, this.at, 1.0F).a(☃, ☃).d();
   }
   
   public static class a

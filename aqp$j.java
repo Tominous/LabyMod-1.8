@@ -14,22 +14,22 @@ public class aqp$j
   {
     super(☃);
     
-    m = ☃;
-    d = a(☃);
-    l = ☃;
-    a = ☃.nextInt(5);
+    this.m = ☃;
+    this.d = a(☃);
+    this.l = ☃;
+    this.a = ☃.nextInt(5);
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("Type", a);
+    ☃.a("Type", this.a);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    a = ☃.f("Type");
+    this.a = ☃.f("Type");
   }
   
   public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -55,12 +55,12 @@ public class aqp$j
     }
     a(☃, ☃, 0, 0, 0, 10, 6, 10, true, ☃, aqp.c());
     
-    a(☃, ☃, ☃, d, 4, 1, 0);
+    a(☃, ☃, ☃, this.d, 4, 1, 0);
     
     a(☃, ☃, 4, 1, 10, 6, 3, 10, afi.a.Q(), afi.a.Q(), false);
     a(☃, ☃, 0, 1, 4, 0, 3, 6, afi.a.Q(), afi.a.Q(), false);
     a(☃, ☃, 10, 1, 4, 10, 3, 6, afi.a.Q(), afi.a.Q(), false);
-    switch (a)
+    switch (this.a)
     {
     default: 
       break;

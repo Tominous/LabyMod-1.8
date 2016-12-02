@@ -109,87 +109,87 @@ public class ant$a
   
   public void a()
   {
-    b = 684.412F;
-    c = 684.412F;
-    d = 512.0F;
-    e = 512.0F;
-    f = 200.0F;
-    g = 200.0F;
-    h = 0.5F;
-    i = 80.0F;
-    j = 160.0F;
-    k = 80.0F;
-    l = 8.5F;
-    m = 12.0F;
-    n = 1.0F;
-    o = 0.0F;
-    p = 1.0F;
-    q = 0.0F;
-    r = 63;
+    this.b = 684.412F;
+    this.c = 684.412F;
+    this.d = 512.0F;
+    this.e = 512.0F;
+    this.f = 200.0F;
+    this.g = 200.0F;
+    this.h = 0.5F;
+    this.i = 80.0F;
+    this.j = 160.0F;
+    this.k = 80.0F;
+    this.l = 8.5F;
+    this.m = 12.0F;
+    this.n = 1.0F;
+    this.o = 0.0F;
+    this.p = 1.0F;
+    this.q = 0.0F;
+    this.r = 63;
     
-    s = true;
-    t = true;
-    u = 8;
-    v = true;
-    w = true;
-    x = true;
-    y = true;
-    z = true;
-    A = true;
-    B = true;
-    C = 4;
-    D = true;
-    E = 80;
-    F = false;
+    this.s = true;
+    this.t = true;
+    this.u = 8;
+    this.v = true;
+    this.w = true;
+    this.x = true;
+    this.y = true;
+    this.z = true;
+    this.A = true;
+    this.B = true;
+    this.C = 4;
+    this.D = true;
+    this.E = 80;
+    this.F = false;
     
-    G = -1;
-    H = 4;
-    I = 4;
+    this.G = -1;
+    this.H = 4;
+    this.I = 4;
     
-    J = 33;
-    K = 10;
-    L = 0;
-    M = 256;
-    N = 33;
-    O = 8;
-    P = 0;
-    Q = 256;
-    R = 33;
-    S = 10;
-    T = 0;
-    U = 80;
-    V = 33;
-    W = 10;
-    X = 0;
-    Y = 80;
-    Z = 33;
-    aa = 10;
-    ab = 0;
-    ac = 80;
-    ad = 17;
-    ae = 20;
-    af = 0;
-    ag = 128;
-    ah = 9;
-    ai = 20;
-    aj = 0;
-    ak = 64;
-    al = 9;
-    am = 2;
-    an = 0;
-    ao = 32;
-    ap = 8;
-    aq = 8;
-    ar = 0;
-    as = 16;
-    at = 8;
-    au = 1;
-    av = 0;
-    aw = 16;
-    ax = 7;
-    ay = 1;
-    az = 16;
-    aA = 16;
+    this.J = 33;
+    this.K = 10;
+    this.L = 0;
+    this.M = 256;
+    this.N = 33;
+    this.O = 8;
+    this.P = 0;
+    this.Q = 256;
+    this.R = 33;
+    this.S = 10;
+    this.T = 0;
+    this.U = 80;
+    this.V = 33;
+    this.W = 10;
+    this.X = 0;
+    this.Y = 80;
+    this.Z = 33;
+    this.aa = 10;
+    this.ab = 0;
+    this.ac = 80;
+    this.ad = 17;
+    this.ae = 20;
+    this.af = 0;
+    this.ag = 128;
+    this.ah = 9;
+    this.ai = 20;
+    this.aj = 0;
+    this.ak = 64;
+    this.al = 9;
+    this.am = 2;
+    this.an = 0;
+    this.ao = 32;
+    this.ap = 8;
+    this.aq = 8;
+    this.ar = 0;
+    this.as = 16;
+    this.at = 8;
+    this.au = 1;
+    this.av = 0;
+    this.aw = 16;
+    this.ax = 7;
+    this.ay = 1;
+    this.az = 16;
+    this.aA = 16;
   }
   
   public boolean equals(Object ☃)
@@ -201,238 +201,238 @@ public class ant$a
       return false;
     }
     a ☃ = (a)☃;
-    if (aa != aa) {
+    if (this.aa != ☃.aa) {
       return false;
     }
-    if (ac != ac) {
+    if (this.ac != ☃.ac) {
       return false;
     }
-    if (ab != ab) {
+    if (this.ab != ☃.ab) {
       return false;
     }
-    if (Z != Z) {
+    if (this.Z != ☃.Z) {
       return false;
     }
-    if (Float.compare(l, l) != 0) {
+    if (Float.compare(☃.l, this.l) != 0) {
       return false;
     }
-    if (Float.compare(o, o) != 0) {
+    if (Float.compare(☃.o, this.o) != 0) {
       return false;
     }
-    if (Float.compare(n, n) != 0) {
+    if (Float.compare(☃.n, this.n) != 0) {
       return false;
     }
-    if (Float.compare(q, q) != 0) {
+    if (Float.compare(☃.q, this.q) != 0) {
       return false;
     }
-    if (Float.compare(p, p) != 0) {
+    if (Float.compare(☃.p, this.p) != 0) {
       return false;
     }
-    if (H != H) {
+    if (this.H != ☃.H) {
       return false;
     }
-    if (ae != ae) {
+    if (this.ae != ☃.ae) {
       return false;
     }
-    if (ag != ag) {
+    if (this.ag != ☃.ag) {
       return false;
     }
-    if (af != af) {
+    if (this.af != ☃.af) {
       return false;
     }
-    if (ad != ad) {
+    if (this.ad != ☃.ad) {
       return false;
     }
-    if (Float.compare(b, b) != 0) {
+    if (Float.compare(☃.b, this.b) != 0) {
       return false;
     }
-    if (Float.compare(h, h) != 0) {
+    if (Float.compare(☃.h, this.h) != 0) {
       return false;
     }
-    if (Float.compare(f, f) != 0) {
+    if (Float.compare(☃.f, this.f) != 0) {
       return false;
     }
-    if (Float.compare(g, g) != 0) {
+    if (Float.compare(☃.g, this.g) != 0) {
       return false;
     }
-    if (au != au) {
+    if (this.au != ☃.au) {
       return false;
     }
-    if (aw != aw) {
+    if (this.aw != ☃.aw) {
       return false;
     }
-    if (av != av) {
+    if (this.av != ☃.av) {
       return false;
     }
-    if (at != at) {
+    if (this.at != ☃.at) {
       return false;
     }
-    if (W != W) {
+    if (this.W != ☃.W) {
       return false;
     }
-    if (Y != Y) {
+    if (this.Y != ☃.Y) {
       return false;
     }
-    if (X != X) {
+    if (this.X != ☃.X) {
       return false;
     }
-    if (V != V) {
+    if (this.V != ☃.V) {
       return false;
     }
-    if (K != K) {
+    if (this.K != ☃.K) {
       return false;
     }
-    if (M != M) {
+    if (this.M != ☃.M) {
       return false;
     }
-    if (L != L) {
+    if (this.L != ☃.L) {
       return false;
     }
-    if (J != J) {
+    if (this.J != ☃.J) {
       return false;
     }
-    if (u != u) {
+    if (this.u != ☃.u) {
       return false;
     }
-    if (G != G) {
+    if (this.G != ☃.G) {
       return false;
     }
-    if (am != am) {
+    if (this.am != ☃.am) {
       return false;
     }
-    if (ao != ao) {
+    if (this.ao != ☃.ao) {
       return false;
     }
-    if (an != an) {
+    if (this.an != ☃.an) {
       return false;
     }
-    if (al != al) {
+    if (this.al != ☃.al) {
       return false;
     }
-    if (S != S) {
+    if (this.S != ☃.S) {
       return false;
     }
-    if (U != U) {
+    if (this.U != ☃.U) {
       return false;
     }
-    if (T != T) {
+    if (this.T != ☃.T) {
       return false;
     }
-    if (R != R) {
+    if (this.R != ☃.R) {
       return false;
     }
-    if (O != O) {
+    if (this.O != ☃.O) {
       return false;
     }
-    if (Q != Q) {
+    if (this.Q != ☃.Q) {
       return false;
     }
-    if (P != P) {
+    if (this.P != ☃.P) {
       return false;
     }
-    if (N != N) {
+    if (this.N != ☃.N) {
       return false;
     }
-    if (Float.compare(c, c) != 0) {
+    if (Float.compare(☃.c, this.c) != 0) {
       return false;
     }
-    if (ai != ai) {
+    if (this.ai != ☃.ai) {
       return false;
     }
-    if (ak != ak) {
+    if (this.ak != ☃.ak) {
       return false;
     }
-    if (aj != aj) {
+    if (this.aj != ☃.aj) {
       return false;
     }
-    if (ah != ah) {
+    if (this.ah != ☃.ah) {
       return false;
     }
-    if (az != az) {
+    if (this.az != ☃.az) {
       return false;
     }
-    if (ay != ay) {
+    if (this.ay != ☃.ay) {
       return false;
     }
-    if (ax != ax) {
+    if (this.ax != ☃.ax) {
       return false;
     }
-    if (aA != aA) {
+    if (this.aA != ☃.aA) {
       return false;
     }
-    if (E != E) {
+    if (this.E != ☃.E) {
       return false;
     }
-    if (Float.compare(e, e) != 0) {
+    if (Float.compare(☃.e, this.e) != 0) {
       return false;
     }
-    if (Float.compare(i, i) != 0) {
+    if (Float.compare(☃.i, this.i) != 0) {
       return false;
     }
-    if (Float.compare(j, j) != 0) {
+    if (Float.compare(☃.j, this.j) != 0) {
       return false;
     }
-    if (Float.compare(k, k) != 0) {
+    if (Float.compare(☃.k, this.k) != 0) {
       return false;
     }
-    if (aq != aq) {
+    if (this.aq != ☃.aq) {
       return false;
     }
-    if (as != as) {
+    if (this.as != ☃.as) {
       return false;
     }
-    if (ar != ar) {
+    if (this.ar != ☃.ar) {
       return false;
     }
-    if (ap != ap) {
+    if (this.ap != ☃.ap) {
       return false;
     }
-    if (I != I) {
+    if (this.I != ☃.I) {
       return false;
     }
-    if (r != r) {
+    if (this.r != ☃.r) {
       return false;
     }
-    if (Float.compare(m, m) != 0) {
+    if (Float.compare(☃.m, this.m) != 0) {
       return false;
     }
-    if (Float.compare(d, d) != 0) {
+    if (Float.compare(☃.d, this.d) != 0) {
       return false;
     }
-    if (s != s) {
+    if (this.s != ☃.s) {
       return false;
     }
-    if (t != t) {
+    if (this.t != ☃.t) {
       return false;
     }
-    if (D != D) {
+    if (this.D != ☃.D) {
       return false;
     }
-    if (F != F) {
+    if (this.F != ☃.F) {
       return false;
     }
-    if (x != x) {
+    if (this.x != ☃.x) {
       return false;
     }
-    if (A != A) {
+    if (this.A != ☃.A) {
       return false;
     }
-    if (v != v) {
+    if (this.v != ☃.v) {
       return false;
     }
-    if (y != y) {
+    if (this.y != ☃.y) {
       return false;
     }
-    if (z != z) {
+    if (this.z != ☃.z) {
       return false;
     }
-    if (w != w) {
+    if (this.w != ☃.w) {
       return false;
     }
-    if (B != B) {
+    if (this.B != ☃.B) {
       return false;
     }
-    if (C != C) {
+    if (this.C != ☃.C) {
       return false;
     }
     return true;
@@ -440,84 +440,84 @@ public class ant$a
   
   public int hashCode()
   {
-    int ☃ = b != 0.0F ? Float.floatToIntBits(b) : 0;
-    ☃ = 31 * ☃ + (c != 0.0F ? Float.floatToIntBits(c) : 0);
-    ☃ = 31 * ☃ + (d != 0.0F ? Float.floatToIntBits(d) : 0);
-    ☃ = 31 * ☃ + (e != 0.0F ? Float.floatToIntBits(e) : 0);
-    ☃ = 31 * ☃ + (f != 0.0F ? Float.floatToIntBits(f) : 0);
-    ☃ = 31 * ☃ + (g != 0.0F ? Float.floatToIntBits(g) : 0);
-    ☃ = 31 * ☃ + (h != 0.0F ? Float.floatToIntBits(h) : 0);
-    ☃ = 31 * ☃ + (i != 0.0F ? Float.floatToIntBits(i) : 0);
-    ☃ = 31 * ☃ + (j != 0.0F ? Float.floatToIntBits(j) : 0);
-    ☃ = 31 * ☃ + (k != 0.0F ? Float.floatToIntBits(k) : 0);
-    ☃ = 31 * ☃ + (l != 0.0F ? Float.floatToIntBits(l) : 0);
-    ☃ = 31 * ☃ + (m != 0.0F ? Float.floatToIntBits(m) : 0);
-    ☃ = 31 * ☃ + (n != 0.0F ? Float.floatToIntBits(n) : 0);
-    ☃ = 31 * ☃ + (o != 0.0F ? Float.floatToIntBits(o) : 0);
-    ☃ = 31 * ☃ + (p != 0.0F ? Float.floatToIntBits(p) : 0);
-    ☃ = 31 * ☃ + (q != 0.0F ? Float.floatToIntBits(q) : 0);
-    ☃ = 31 * ☃ + r;
-    ☃ = 31 * ☃ + (s ? 1 : 0);
-    ☃ = 31 * ☃ + (t ? 1 : 0);
-    ☃ = 31 * ☃ + u;
-    ☃ = 31 * ☃ + (v ? 1 : 0);
-    ☃ = 31 * ☃ + (w ? 1 : 0);
-    ☃ = 31 * ☃ + (x ? 1 : 0);
-    ☃ = 31 * ☃ + (y ? 1 : 0);
-    ☃ = 31 * ☃ + (z ? 1 : 0);
-    ☃ = 31 * ☃ + (A ? 1 : 0);
-    ☃ = 31 * ☃ + (B ? 1 : 0);
-    ☃ = 31 * ☃ + C;
-    ☃ = 31 * ☃ + (D ? 1 : 0);
-    ☃ = 31 * ☃ + E;
-    ☃ = 31 * ☃ + (F ? 1 : 0);
-    ☃ = 31 * ☃ + G;
-    ☃ = 31 * ☃ + H;
-    ☃ = 31 * ☃ + I;
-    ☃ = 31 * ☃ + J;
-    ☃ = 31 * ☃ + K;
-    ☃ = 31 * ☃ + L;
-    ☃ = 31 * ☃ + M;
-    ☃ = 31 * ☃ + N;
-    ☃ = 31 * ☃ + O;
-    ☃ = 31 * ☃ + P;
-    ☃ = 31 * ☃ + Q;
-    ☃ = 31 * ☃ + R;
-    ☃ = 31 * ☃ + S;
-    ☃ = 31 * ☃ + T;
-    ☃ = 31 * ☃ + U;
-    ☃ = 31 * ☃ + V;
-    ☃ = 31 * ☃ + W;
-    ☃ = 31 * ☃ + X;
-    ☃ = 31 * ☃ + Y;
-    ☃ = 31 * ☃ + Z;
-    ☃ = 31 * ☃ + aa;
-    ☃ = 31 * ☃ + ab;
-    ☃ = 31 * ☃ + ac;
-    ☃ = 31 * ☃ + ad;
-    ☃ = 31 * ☃ + ae;
-    ☃ = 31 * ☃ + af;
-    ☃ = 31 * ☃ + ag;
-    ☃ = 31 * ☃ + ah;
-    ☃ = 31 * ☃ + ai;
-    ☃ = 31 * ☃ + aj;
-    ☃ = 31 * ☃ + ak;
-    ☃ = 31 * ☃ + al;
-    ☃ = 31 * ☃ + am;
-    ☃ = 31 * ☃ + an;
-    ☃ = 31 * ☃ + ao;
-    ☃ = 31 * ☃ + ap;
-    ☃ = 31 * ☃ + aq;
-    ☃ = 31 * ☃ + ar;
-    ☃ = 31 * ☃ + as;
-    ☃ = 31 * ☃ + at;
-    ☃ = 31 * ☃ + au;
-    ☃ = 31 * ☃ + av;
-    ☃ = 31 * ☃ + aw;
-    ☃ = 31 * ☃ + ax;
-    ☃ = 31 * ☃ + ay;
-    ☃ = 31 * ☃ + az;
-    ☃ = 31 * ☃ + aA;
+    int ☃ = this.b != 0.0F ? Float.floatToIntBits(this.b) : 0;
+    ☃ = 31 * ☃ + (this.c != 0.0F ? Float.floatToIntBits(this.c) : 0);
+    ☃ = 31 * ☃ + (this.d != 0.0F ? Float.floatToIntBits(this.d) : 0);
+    ☃ = 31 * ☃ + (this.e != 0.0F ? Float.floatToIntBits(this.e) : 0);
+    ☃ = 31 * ☃ + (this.f != 0.0F ? Float.floatToIntBits(this.f) : 0);
+    ☃ = 31 * ☃ + (this.g != 0.0F ? Float.floatToIntBits(this.g) : 0);
+    ☃ = 31 * ☃ + (this.h != 0.0F ? Float.floatToIntBits(this.h) : 0);
+    ☃ = 31 * ☃ + (this.i != 0.0F ? Float.floatToIntBits(this.i) : 0);
+    ☃ = 31 * ☃ + (this.j != 0.0F ? Float.floatToIntBits(this.j) : 0);
+    ☃ = 31 * ☃ + (this.k != 0.0F ? Float.floatToIntBits(this.k) : 0);
+    ☃ = 31 * ☃ + (this.l != 0.0F ? Float.floatToIntBits(this.l) : 0);
+    ☃ = 31 * ☃ + (this.m != 0.0F ? Float.floatToIntBits(this.m) : 0);
+    ☃ = 31 * ☃ + (this.n != 0.0F ? Float.floatToIntBits(this.n) : 0);
+    ☃ = 31 * ☃ + (this.o != 0.0F ? Float.floatToIntBits(this.o) : 0);
+    ☃ = 31 * ☃ + (this.p != 0.0F ? Float.floatToIntBits(this.p) : 0);
+    ☃ = 31 * ☃ + (this.q != 0.0F ? Float.floatToIntBits(this.q) : 0);
+    ☃ = 31 * ☃ + this.r;
+    ☃ = 31 * ☃ + (this.s ? 1 : 0);
+    ☃ = 31 * ☃ + (this.t ? 1 : 0);
+    ☃ = 31 * ☃ + this.u;
+    ☃ = 31 * ☃ + (this.v ? 1 : 0);
+    ☃ = 31 * ☃ + (this.w ? 1 : 0);
+    ☃ = 31 * ☃ + (this.x ? 1 : 0);
+    ☃ = 31 * ☃ + (this.y ? 1 : 0);
+    ☃ = 31 * ☃ + (this.z ? 1 : 0);
+    ☃ = 31 * ☃ + (this.A ? 1 : 0);
+    ☃ = 31 * ☃ + (this.B ? 1 : 0);
+    ☃ = 31 * ☃ + this.C;
+    ☃ = 31 * ☃ + (this.D ? 1 : 0);
+    ☃ = 31 * ☃ + this.E;
+    ☃ = 31 * ☃ + (this.F ? 1 : 0);
+    ☃ = 31 * ☃ + this.G;
+    ☃ = 31 * ☃ + this.H;
+    ☃ = 31 * ☃ + this.I;
+    ☃ = 31 * ☃ + this.J;
+    ☃ = 31 * ☃ + this.K;
+    ☃ = 31 * ☃ + this.L;
+    ☃ = 31 * ☃ + this.M;
+    ☃ = 31 * ☃ + this.N;
+    ☃ = 31 * ☃ + this.O;
+    ☃ = 31 * ☃ + this.P;
+    ☃ = 31 * ☃ + this.Q;
+    ☃ = 31 * ☃ + this.R;
+    ☃ = 31 * ☃ + this.S;
+    ☃ = 31 * ☃ + this.T;
+    ☃ = 31 * ☃ + this.U;
+    ☃ = 31 * ☃ + this.V;
+    ☃ = 31 * ☃ + this.W;
+    ☃ = 31 * ☃ + this.X;
+    ☃ = 31 * ☃ + this.Y;
+    ☃ = 31 * ☃ + this.Z;
+    ☃ = 31 * ☃ + this.aa;
+    ☃ = 31 * ☃ + this.ab;
+    ☃ = 31 * ☃ + this.ac;
+    ☃ = 31 * ☃ + this.ad;
+    ☃ = 31 * ☃ + this.ae;
+    ☃ = 31 * ☃ + this.af;
+    ☃ = 31 * ☃ + this.ag;
+    ☃ = 31 * ☃ + this.ah;
+    ☃ = 31 * ☃ + this.ai;
+    ☃ = 31 * ☃ + this.aj;
+    ☃ = 31 * ☃ + this.ak;
+    ☃ = 31 * ☃ + this.al;
+    ☃ = 31 * ☃ + this.am;
+    ☃ = 31 * ☃ + this.an;
+    ☃ = 31 * ☃ + this.ao;
+    ☃ = 31 * ☃ + this.ap;
+    ☃ = 31 * ☃ + this.aq;
+    ☃ = 31 * ☃ + this.ar;
+    ☃ = 31 * ☃ + this.as;
+    ☃ = 31 * ☃ + this.at;
+    ☃ = 31 * ☃ + this.au;
+    ☃ = 31 * ☃ + this.av;
+    ☃ = 31 * ☃ + this.aw;
+    ☃ = 31 * ☃ + this.ax;
+    ☃ = 31 * ☃ + this.ay;
+    ☃ = 31 * ☃ + this.az;
+    ☃ = 31 * ☃ + this.aA;
     return ☃;
   }
   

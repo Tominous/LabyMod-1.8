@@ -13,35 +13,35 @@ public class aqp$n
   {
     super(☃);
     
-    m = ☃;
-    d = a(☃);
-    l = ☃;
+    this.m = ☃;
+    this.d = a(☃);
+    this.l = ☃;
     
-    a = (☃.nextInt(2) == 0);
-    b = (☃.nextInt(2) == 0);
+    this.a = (☃.nextInt(2) == 0);
+    this.b = (☃.nextInt(2) == 0);
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("Left", a);
-    ☃.a("Right", b);
+    ☃.a("Left", this.a);
+    ☃.a("Right", this.b);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    a = ☃.n("Left");
-    b = ☃.n("Right");
+    this.a = ☃.n("Left");
+    this.b = ☃.n("Right");
   }
   
   public void a(aqt ☃, List<aqt> ☃, Random ☃)
   {
     a((aqp.m)☃, ☃, ☃, 1, 1);
-    if (a) {
+    if (this.a) {
       b((aqp.m)☃, ☃, ☃, 1, 2);
     }
-    if (b) {
+    if (this.b) {
       c((aqp.m)☃, ☃, ☃, 1, 2);
     }
   }
@@ -62,7 +62,7 @@ public class aqp$n
     }
     a(☃, ☃, 0, 0, 0, 4, 4, 6, true, ☃, aqp.c());
     
-    a(☃, ☃, ☃, d, 1, 1, 0);
+    a(☃, ☃, ☃, this.d, 1, 1, 0);
     
     a(☃, ☃, ☃, aqp.p.a.a, 1, 1, 6);
     
@@ -70,10 +70,10 @@ public class aqp$n
     a(☃, ☃, ☃, 0.1F, 3, 2, 1, afi.aa.Q());
     a(☃, ☃, ☃, 0.1F, 1, 2, 5, afi.aa.Q());
     a(☃, ☃, ☃, 0.1F, 3, 2, 5, afi.aa.Q());
-    if (a) {
+    if (this.a) {
       a(☃, ☃, 0, 1, 2, 0, 3, 4, afi.a.Q(), afi.a.Q(), false);
     }
-    if (b) {
+    if (this.b) {
       a(☃, ☃, 4, 1, 2, 4, 3, 4, afi.a.Q(), afi.a.Q(), false);
     }
     return true;

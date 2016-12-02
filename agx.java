@@ -9,7 +9,7 @@ public class agx
   public agx()
   {
     super(arm.q);
-    j(M.b().a(b, agx.a.a).a(a, Integer.valueOf(0)));
+    j(this.M.b().a(b, agx.a.a).a(a, Integer.valueOf(0)));
     j();
   }
   
@@ -55,7 +55,7 @@ public class agx
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    zx ☃ = bi.h();
+    zx ☃ = ☃.bi.h();
     if ((☃ == null) || (!(☃.b() instanceof yo))) {
       return false;
     }
@@ -74,9 +74,9 @@ public class agx
     ☃.p_();
     ☃.h(☃);
     ☃.b(na.T);
-    if (!bA.d) {
-      if (--b <= 0) {
-        bi.a(bi.c, null);
+    if (!☃.bA.d) {
+      if (--☃.b <= 0) {
+        ☃.bi.a(☃.bi.c, null);
       }
     }
     return true;
@@ -143,7 +143,7 @@ public class agx
   public void a(adm ☃, cj ☃, alz ☃, wn ☃)
   {
     super.a(☃, ☃, ☃, ☃);
-    if (bA.d)
+    if (☃.bA.d)
     {
       alg ☃ = f(☃, ☃);
       if (☃ != null) {
@@ -339,17 +339,17 @@ public class agx
     
     private a(String ☃)
     {
-      w = ☃;
+      this.w = ☃;
     }
     
     public String toString()
     {
-      return w;
+      return this.w;
     }
     
     public String l()
     {
-      return w;
+      return this.w;
     }
   }
   

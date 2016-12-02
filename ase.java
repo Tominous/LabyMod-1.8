@@ -35,8 +35,8 @@ public abstract class ase
     if ((☃ == adr.f) && (☃.length() > 0))
     {
       ☃ = ant.a.a(☃).b();
-      ☃ = G;
-      ☃ = H;
+      ☃ = ☃.G;
+      ☃ = ☃.H;
     }
     if (☃ == adr.d) {
       ☃ = 6;
@@ -84,50 +84,50 @@ public abstract class ase
   
   public ase(long ☃)
   {
-    b = ☃;
-    b *= (b * 6364136223846793005L + 1442695040888963407L);
-    b += ☃;
-    b *= (b * 6364136223846793005L + 1442695040888963407L);
-    b += ☃;
-    b *= (b * 6364136223846793005L + 1442695040888963407L);
-    b += ☃;
+    this.b = ☃;
+    this.b *= (this.b * 6364136223846793005L + 1442695040888963407L);
+    this.b += ☃;
+    this.b *= (this.b * 6364136223846793005L + 1442695040888963407L);
+    this.b += ☃;
+    this.b *= (this.b * 6364136223846793005L + 1442695040888963407L);
+    this.b += ☃;
   }
   
   public void a(long ☃)
   {
-    c = ☃;
-    if (a != null) {
-      a.a(☃);
+    this.c = ☃;
+    if (this.a != null) {
+      this.a.a(☃);
     }
-    c *= (c * 6364136223846793005L + 1442695040888963407L);
-    c += b;
-    c *= (c * 6364136223846793005L + 1442695040888963407L);
-    c += b;
-    c *= (c * 6364136223846793005L + 1442695040888963407L);
-    c += b;
+    this.c *= (this.c * 6364136223846793005L + 1442695040888963407L);
+    this.c += this.b;
+    this.c *= (this.c * 6364136223846793005L + 1442695040888963407L);
+    this.c += this.b;
+    this.c *= (this.c * 6364136223846793005L + 1442695040888963407L);
+    this.c += this.b;
   }
   
   public void a(long ☃, long ☃)
   {
-    d = c;
-    d *= (d * 6364136223846793005L + 1442695040888963407L);
-    d += ☃;
-    d *= (d * 6364136223846793005L + 1442695040888963407L);
-    d += ☃;
-    d *= (d * 6364136223846793005L + 1442695040888963407L);
-    d += ☃;
-    d *= (d * 6364136223846793005L + 1442695040888963407L);
-    d += ☃;
+    this.d = this.c;
+    this.d *= (this.d * 6364136223846793005L + 1442695040888963407L);
+    this.d += ☃;
+    this.d *= (this.d * 6364136223846793005L + 1442695040888963407L);
+    this.d += ☃;
+    this.d *= (this.d * 6364136223846793005L + 1442695040888963407L);
+    this.d += ☃;
+    this.d *= (this.d * 6364136223846793005L + 1442695040888963407L);
+    this.d += ☃;
   }
   
   protected int a(int ☃)
   {
-    int ☃ = (int)((d >> 24) % ☃);
+    int ☃ = (int)((this.d >> 24) % ☃);
     if (☃ < 0) {
       ☃ += ☃;
     }
-    d *= (d * 6364136223846793005L + 1442695040888963407L);
-    d += c;
+    this.d *= (this.d * 6364136223846793005L + 1442695040888963407L);
+    this.d += this.c;
     return ☃;
   }
   
@@ -138,8 +138,8 @@ public abstract class ase
     if (☃ == ☃) {
       return true;
     }
-    if ((☃ == abaz) || (☃ == acaz)) {
-      return (☃ == abaz) || (☃ == acaz);
+    if ((☃ == ady.ab.az) || (☃ == ady.ac.az)) {
+      return (☃ == ady.ab.az) || (☃ == ady.ac.az);
     }
     ady ☃ = ady.e(☃);
     ady ☃ = ady.e(☃);
@@ -162,7 +162,7 @@ public abstract class ase
         public String a()
           throws Exception
         {
-          return String.valueOf(a);
+          return String.valueOf(this.a);
         }
       });
       ☃.a("Biome B", new Callable()
@@ -170,7 +170,7 @@ public abstract class ase
         public String a()
           throws Exception
         {
-          return String.valueOf(a);
+          return String.valueOf(this.a);
         }
       });
       throw new e(☃);
@@ -180,7 +180,7 @@ public abstract class ase
   
   protected static boolean b(int ☃)
   {
-    return (☃ == paz) || (☃ == Naz) || (☃ == zaz);
+    return (☃ == ady.p.az) || (☃ == ady.N.az) || (☃ == ady.z.az);
   }
   
   protected int a(int... ☃)

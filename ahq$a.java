@@ -23,12 +23,12 @@ public class ahq$a
   
   public zx a()
   {
-    return a;
+    return this.a;
   }
   
   public void a(zx ☃)
   {
-    a = ☃;
+    this.a = ☃;
     p_();
   }
 }

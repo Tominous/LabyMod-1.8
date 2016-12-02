@@ -11,59 +11,59 @@ public class qt
   
   public qt(ua ☃, float ☃)
   {
-    a = ☃;
-    c = o;
-    d = ☃;
+    this.a = ☃;
+    this.c = ☃.o;
+    this.d = ☃;
     a(2);
   }
   
   public boolean a()
   {
-    b = c.a(a, d);
-    if (b == null) {
+    this.b = this.c.a(this.a, this.d);
+    if (this.b == null) {
       return false;
     }
-    return a(b);
+    return a(this.b);
   }
   
   public boolean b()
   {
-    if (!b.ai()) {
+    if (!this.b.ai()) {
       return false;
     }
-    if (a.h(b) > d * d) {
+    if (this.a.h(this.b) > this.d * this.d) {
       return false;
     }
-    return (e > 0) && (a(b));
+    return (this.e > 0) && (a(this.b));
   }
   
   public void c()
   {
-    a.p(true);
-    e = (40 + a.bc().nextInt(40));
+    this.a.p(true);
+    this.e = (40 + this.a.bc().nextInt(40));
   }
   
   public void d()
   {
-    a.p(false);
-    b = null;
+    this.a.p(false);
+    this.b = null;
   }
   
   public void e()
   {
-    a.p().a(b.s, b.t + b.aS(), b.u, 10.0F, a.bQ());
-    e -= 1;
+    this.a.p().a(this.b.s, this.b.t + this.b.aS(), this.b.u, 10.0F, this.a.bQ());
+    this.e -= 1;
   }
   
   private boolean a(wn ☃)
   {
-    zx ☃ = bi.h();
+    zx ☃ = ☃.bi.h();
     if (☃ == null) {
       return false;
     }
-    if ((!a.cl()) && (☃.b() == zy.aX)) {
+    if ((!this.a.cl()) && (☃.b() == zy.aX)) {
       return true;
     }
-    return a.d(☃);
+    return this.a.d(☃);
   }
 }

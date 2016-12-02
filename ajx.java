@@ -17,8 +17,8 @@ public class ajx
   
   protected ajx(afh ☃)
   {
-    j(M.b().a(a, Integer.valueOf(0)).a(b, cq.b));
-    N = ☃;
+    j(this.M.b().a(a, Integer.valueOf(0)).a(b, cq.b));
+    this.N = ☃;
     a(true);
     float ☃ = 0.125F;
     a(0.5F - ☃, 0.0F, 0.5F - ☃, 0.5F + ☃, 0.25F, 0.5F + ☃);
@@ -29,7 +29,7 @@ public class ajx
   {
     ☃ = ☃.a(b, cq.b);
     for (cq ☃ : cq.c.a) {
-      if (☃.p(☃.a(☃)).c() == N)
+      if (☃.p(☃.a(☃)).c() == this.N)
       {
         ☃ = ☃.a(b, ☃);
         break;
@@ -61,15 +61,15 @@ public class ajx
       else
       {
         for (cq ☃ : cq.c.a) {
-          if (☃.p(☃.a(☃)).c() == N) {
+          if (☃.p(☃.a(☃)).c() == this.N) {
             return;
           }
         }
         ☃ = ☃.a(cq.c.a.a(☃));
         
         afh ☃ = ☃.p(☃.b()).c();
-        if ((pcJ == arm.a) && ((☃ == afi.ak) || (☃ == afi.d) || (☃ == afi.c))) {
-          ☃.a(☃, N.Q());
+        if ((☃.p(☃).c().J == arm.a) && ((☃ == afi.ak) || (☃ == afi.d) || (☃ == afi.c))) {
+          ☃.a(☃, this.N.Q());
         }
       }
     }
@@ -77,7 +77,7 @@ public class ajx
   
   public void g(adm ☃, cj ☃, alz ☃)
   {
-    int ☃ = ((Integer)☃.b(a)).intValue() + ns.a(s, 2, 5);
+    int ☃ = ((Integer)☃.b(a)).intValue() + ns.a(☃.s, 2, 5);
     ☃.a(☃, ☃.a(a, Integer.valueOf(Math.min(7, ☃))), 2);
   }
   
@@ -106,15 +106,15 @@ public class ajx
   
   public void a(adq ☃, cj ☃)
   {
-    F = ((((Integer)☃.p(☃).b(a)).intValue() * 2 + 2) / 16.0F);
+    this.F = ((((Integer)☃.p(☃).b(a)).intValue() * 2 + 2) / 16.0F);
     float ☃ = 0.125F;
-    a(0.5F - ☃, 0.0F, 0.5F - ☃, 0.5F + ☃, (float)F, 0.5F + ☃);
+    a(0.5F - ☃, 0.0F, 0.5F - ☃, 0.5F + ☃, (float)this.F, 0.5F + ☃);
   }
   
   public void a(adm ☃, cj ☃, alz ☃, float ☃, int ☃)
   {
     super.a(☃, ☃, ☃, ☃, ☃);
-    if (D) {
+    if (☃.D) {
       return;
     }
     zw ☃ = l();
@@ -123,7 +123,7 @@ public class ajx
     }
     int ☃ = ((Integer)☃.b(a)).intValue();
     for (int ☃ = 0; ☃ < 3; ☃++) {
-      if (s.nextInt(15) <= ☃) {
+      if (☃.s.nextInt(15) <= ☃) {
         a(☃, ☃, new zx(☃));
       }
     }
@@ -131,10 +131,10 @@ public class ajx
   
   protected zw l()
   {
-    if (N == afi.aU) {
+    if (this.N == afi.aU) {
       return zy.bg;
     }
-    if (N == afi.bk) {
+    if (this.N == afi.bk) {
       return zy.bh;
     }
     return null;

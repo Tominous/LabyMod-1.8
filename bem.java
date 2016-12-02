@@ -7,34 +7,34 @@ public class bem
   {
     super(☃, ☃, ☃, ☃, ☃, ☃, ☃);
     
-    float ☃ = V.nextFloat() * 0.1F + 0.2F;
-    ar = ☃;
-    as = ☃;
-    at = ☃;
+    float ☃ = this.V.nextFloat() * 0.1F + 0.2F;
+    this.ar = ☃;
+    this.as = ☃;
+    this.at = ☃;
     k(0);
     a(0.02F, 0.02F);
     
-    h *= (V.nextFloat() * 0.6F + 0.5F);
+    this.h *= (this.V.nextFloat() * 0.6F + 0.5F);
     
-    v *= 0.019999999552965164D;
-    w *= 0.019999999552965164D;
-    x *= 0.019999999552965164D;
+    this.v *= 0.019999999552965164D;
+    this.w *= 0.019999999552965164D;
+    this.x *= 0.019999999552965164D;
     
-    g = ((int)(20.0D / (Math.random() * 0.8D + 0.2D)));
-    T = true;
+    this.g = ((int)(20.0D / (Math.random() * 0.8D + 0.2D)));
+    this.T = true;
   }
   
   public void t_()
   {
-    p = s;
-    q = t;
-    r = u;
+    this.p = this.s;
+    this.q = this.t;
+    this.r = this.u;
     
-    d(v, w, x);
-    v *= 0.99D;
-    w *= 0.99D;
-    x *= 0.99D;
-    if (g-- <= 0) {
+    d(this.v, this.w, this.x);
+    this.v *= 0.99D;
+    this.w *= 0.99D;
+    this.x *= 0.99D;
+    if (this.g-- <= 0) {
       J();
     }
   }

@@ -5,7 +5,7 @@ class ajd$a
   
   public ajd$a(cj ☃, long ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
 }

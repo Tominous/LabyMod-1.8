@@ -7,7 +7,7 @@ public class po$a
   
   public po$a(zx ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public boolean a(pk ☃)
@@ -19,7 +19,7 @@ public class po$a
       return false;
     }
     pr ☃ = (pr)☃;
-    if (☃.p(ps.c(a)) != null) {
+    if (☃.p(ps.c(this.a)) != null) {
       return false;
     }
     if ((☃ instanceof ps)) {

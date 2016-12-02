@@ -18,8 +18,8 @@ public class Protocol
   
   public Protocol()
   {
-    protocol = new HashMap();
-    packets = new HashMap();
+    this.protocol = new HashMap();
+    this.packets = new HashMap();
     
     register(0, PacketHelloPing.class, EnumConnectionState.HELLO);
     register(1, PacketHelloPong.class, EnumConnectionState.HELLO);
@@ -60,7 +60,7 @@ public class Protocol
   
   public Map<Integer, Class<? extends Packet>> getPackets()
   {
-    return packets;
+    return this.packets;
   }
   
   private final void register(int id, Class<? extends Packet> clazz, EnumConnectionState state)
@@ -68,8 +68,8 @@ public class Protocol
     try
     {
       clazz.newInstance();
-      packets.put(Integer.valueOf(id), clazz);
-      protocol.put(clazz, state);
+      this.packets.put(Integer.valueOf(id), clazz);
+      this.protocol.put(clazz, state);
     }
     catch (Exception e)
     {
@@ -80,15 +80,15 @@ public class Protocol
   public Packet getPacket(int id)
     throws IllegalAccessException, InstantiationException
   {
-    if (!packets.containsKey(Integer.valueOf(id))) {
+    if (!this.packets.containsKey(Integer.valueOf(id))) {
       throw new RuntimeException("Packet with id " + id + " is not registered.");
     }
-    return (Packet)((Class)packets.get(Integer.valueOf(id))).newInstance();
+    return (Packet)((Class)this.packets.get(Integer.valueOf(id))).newInstance();
   }
   
   public int getPacketId(Packet packet)
   {
-    for (Map.Entry<Integer, Class<? extends Packet>> entry : packets.entrySet())
+    for (Map.Entry<Integer, Class<? extends Packet>> entry : this.packets.entrySet())
     {
       Class<? extends Packet> clazz = (Class)entry.getValue();
       if (clazz.isInstance(packet)) {

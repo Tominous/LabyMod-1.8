@@ -26,12 +26,12 @@ public class avc
     float ☃ = 0.6F;
     float ☃ = 0.0F;
     
-    GL11.glLight(16384, 4611, a(ba, bb, bc, 0.0D));
+    GL11.glLight(16384, 4611, a(b.a, b.b, b.c, 0.0D));
     GL11.glLight(16384, 4609, a(☃, ☃, ☃, 1.0F));
     GL11.glLight(16384, 4608, a(0.0F, 0.0F, 0.0F, 1.0F));
     GL11.glLight(16384, 4610, a(☃, ☃, ☃, 1.0F));
     
-    GL11.glLight(16385, 4611, a(ca, cb, cc, 0.0D));
+    GL11.glLight(16385, 4611, a(c.a, c.b, c.c, 0.0D));
     GL11.glLight(16385, 4609, a(☃, ☃, ☃, 1.0F));
     GL11.glLight(16385, 4608, a(0.0F, 0.0F, 0.0F, 1.0F));
     GL11.glLight(16385, 4610, a(☃, ☃, ☃, 1.0F));

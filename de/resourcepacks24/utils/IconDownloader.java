@@ -26,21 +26,21 @@ public class IconDownloader
     try
     {
       checkTextures();
-      if (images.containsKey(url))
+      if (this.images.containsKey(url))
       {
-        loading.remove(url);
-        if ((images.get(url) != null) && (((TheImage)images.get(url)).getLocation() != null) && (!loadList.containsKey(((TheImage)images.get(url)).getLocation())))
+        this.loading.remove(url);
+        if ((this.images.get(url) != null) && (((TheImage)this.images.get(url)).getLocation() != null) && (!this.loadList.containsKey(((TheImage)this.images.get(url)).getLocation())))
         {
           GL11.glPushMatrix();
           GL11.glScaled(size, size, size);
-          ave.A().P().a(((TheImage)images.get(url)).getLocation());
+          ave.A().P().a(((TheImage)this.images.get(url)).getLocation());
           ResourcePacks24.getInstance().getDraw().drawTexturedModalRect(x / size, y / size, (x + width) / size, (y + height) / size);
           GL11.glPopMatrix();
         }
       }
-      else if (!loading.contains(url))
+      else if (!this.loading.contains(url))
       {
-        loading.add(url);
+        this.loading.add(url);
         new ImageDownloadThread(location, url);
       }
     }
@@ -53,23 +53,23 @@ public class IconDownloader
   private void checkTextures()
   {
     ArrayList<jy> listLoad = new ArrayList();
-    listLoad.addAll(loadList.keySet());
+    listLoad.addAll(this.loadList.keySet());
     for (jy rl : listLoad)
     {
-      texture = new blz((BufferedImage)loadList.get(rl));
+      texture = new blz((BufferedImage)this.loadList.get(rl));
       ave.A().P().a(rl, texture);
-      loadList.remove(rl);
+      this.loadList.remove(rl);
     }
     blz texture;
-    if (lastCheck + 5000L < System.currentTimeMillis())
+    if (this.lastCheck + 5000L < System.currentTimeMillis())
     {
-      lastCheck = System.currentTimeMillis();
+      this.lastCheck = System.currentTimeMillis();
       Object rem = new ArrayList();
       ArrayList<String> all = new ArrayList();
-      all.addAll(images.keySet());
+      all.addAll(this.images.keySet());
       for (String list : all)
       {
-        TheImage image = (TheImage)images.get(list);
+        TheImage image = (TheImage)this.images.get(list);
         if (image.getLastUse() + 5000L < System.currentTimeMillis())
         {
           ((ArrayList)rem).add(list);
@@ -77,7 +77,7 @@ public class IconDownloader
         }
       }
       for (String list : (ArrayList)rem) {
-        images.remove(list);
+        this.images.remove(list);
       }
     }
   }
@@ -89,19 +89,19 @@ public class IconDownloader
     
     public TheImage(jy loc)
     {
-      location = loc;
-      lastUse = System.currentTimeMillis();
+      this.location = loc;
+      this.lastUse = System.currentTimeMillis();
     }
     
     public long getLastUse()
     {
-      return lastUse;
+      return this.lastUse;
     }
     
     public jy getLocation()
     {
-      lastUse = System.currentTimeMillis();
-      return location;
+      this.lastUse = System.currentTimeMillis();
+      return this.location;
     }
   }
   
@@ -122,10 +122,10 @@ public class IconDownloader
     {
       try
       {
-        jy rl = new jy("images/" + location);
-        if ((url != null) && (!url.isEmpty()))
+        jy rl = new jy("images/" + this.location);
+        if ((this.url != null) && (!this.url.isEmpty()))
         {
-          HttpURLConnection connection = (HttpURLConnection)new URL(url).openConnection();
+          HttpURLConnection connection = (HttpURLConnection)new URL(this.url).openConnection();
           connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
           connection.setRequestProperty("Cookie", "foo=bar");
           connection.connect();
@@ -134,9 +134,9 @@ public class IconDownloader
             BufferedImage read = ImageIO.read(connection.getInputStream());
             if (read != null)
             {
-              loadList.put(rl, read);
-              images.put(url, new IconDownloader.TheImage(IconDownloader.this, rl));
-              loading.remove(url);
+              IconDownloader.this.loadList.put(rl, read);
+              IconDownloader.this.images.put(this.url, new IconDownloader.TheImage(IconDownloader.this, rl));
+              IconDownloader.this.loading.remove(this.url);
             }
           }
         }

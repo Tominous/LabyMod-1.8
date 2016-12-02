@@ -8,8 +8,8 @@ public class aoy
   
   public aoy(afh ☃, boolean ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
@@ -52,10 +52,10 @@ public class aoy
     if (☃.d(☃.b())) {
       ☃++;
     }
-    if (((!b) && (☃ == 4) && (☃ == 1)) || (☃ == 5))
+    if (((!this.b) && (☃ == 4) && (☃ == 1)) || (☃ == 5))
     {
-      ☃.a(☃, a.Q(), 2);
-      ☃.a(a, ☃, ☃);
+      ☃.a(☃, this.a.Q(), 2);
+      ☃.a(this.a, ☃, ☃);
     }
     return true;
   }

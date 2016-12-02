@@ -15,101 +15,101 @@ public class axa
   
   public axa(axb ☃, String ☃)
   {
-    a = ☃;
+    this.a = ☃;
     
     a(☃);
   }
   
   public String a()
   {
-    return f.toString();
+    return this.f.toString();
   }
   
   public void a(String ☃)
   {
-    f = apz.a(☃);
+    this.f = apz.a(☃);
   }
   
   public void b()
   {
-    n.clear();
+    this.n.clear();
     
-    g = bnq.a("createWorld.customize.flat.title", new Object[0]);
-    h = bnq.a("createWorld.customize.flat.tile", new Object[0]);
-    i = bnq.a("createWorld.customize.flat.height", new Object[0]);
+    this.g = bnq.a("createWorld.customize.flat.title", new Object[0]);
+    this.h = bnq.a("createWorld.customize.flat.tile", new Object[0]);
+    this.i = bnq.a("createWorld.customize.flat.height", new Object[0]);
     
-    r = new axa.a();
+    this.r = new axa.a();
     
-    n.add(s = new avs(2, l / 2 - 154, m - 52, 100, 20, bnq.a("createWorld.customize.flat.addLayer", new Object[0]) + " (NYI)"));
-    n.add(t = new avs(3, l / 2 - 50, m - 52, 100, 20, bnq.a("createWorld.customize.flat.editLayer", new Object[0]) + " (NYI)"));
-    n.add(u = new avs(4, l / 2 - 155, m - 52, 150, 20, bnq.a("createWorld.customize.flat.removeLayer", new Object[0])));
+    this.n.add(this.s = new avs(2, this.l / 2 - 154, this.m - 52, 100, 20, bnq.a("createWorld.customize.flat.addLayer", new Object[0]) + " (NYI)"));
+    this.n.add(this.t = new avs(3, this.l / 2 - 50, this.m - 52, 100, 20, bnq.a("createWorld.customize.flat.editLayer", new Object[0]) + " (NYI)"));
+    this.n.add(this.u = new avs(4, this.l / 2 - 155, this.m - 52, 150, 20, bnq.a("createWorld.customize.flat.removeLayer", new Object[0])));
     
-    n.add(new avs(0, l / 2 - 155, m - 28, 150, 20, bnq.a("gui.done", new Object[0])));
-    n.add(new avs(5, l / 2 + 5, m - 52, 150, 20, bnq.a("createWorld.customize.presets", new Object[0])));
-    n.add(new avs(1, l / 2 + 5, m - 28, 150, 20, bnq.a("gui.cancel", new Object[0])));
+    this.n.add(new avs(0, this.l / 2 - 155, this.m - 28, 150, 20, bnq.a("gui.done", new Object[0])));
+    this.n.add(new avs(5, this.l / 2 + 5, this.m - 52, 150, 20, bnq.a("createWorld.customize.presets", new Object[0])));
+    this.n.add(new avs(1, this.l / 2 + 5, this.m - 28, 150, 20, bnq.a("gui.cancel", new Object[0])));
     
-    s.m = (t.m = 0);
+    this.s.m = (this.t.m = 0);
     
-    f.d();
+    this.f.d();
     f();
   }
   
   public void k()
   {
     super.k();
-    r.p();
+    this.r.p();
   }
   
   protected void a(avs ☃)
   {
-    int ☃ = f.c().size() - r.u - 1;
-    if (k == 1)
+    int ☃ = this.f.c().size() - this.r.u - 1;
+    if (☃.k == 1)
     {
-      j.a(a);
+      this.j.a(this.a);
     }
-    else if (k == 0)
+    else if (☃.k == 0)
     {
-      a.a = a();
-      j.a(a);
+      this.a.a = a();
+      this.j.a(this.a);
     }
-    else if (k == 5)
+    else if (☃.k == 5)
     {
-      j.a(new axq(this));
+      this.j.a(new axq(this));
     }
-    else if ((k == 4) && (g()))
+    else if ((☃.k == 4) && (g()))
     {
-      f.c().remove(☃);
-      r.u = Math.min(r.u, f.c().size() - 1);
+      this.f.c().remove(☃);
+      this.r.u = Math.min(this.r.u, this.f.c().size() - 1);
     }
-    f.d();
+    this.f.d();
     f();
   }
   
   public void f()
   {
     boolean ☃ = g();
-    u.l = ☃;
-    t.l = ☃;
+    this.u.l = ☃;
+    this.t.l = ☃;
     
-    t.l = false;
-    s.l = false;
+    this.t.l = false;
+    this.s.l = false;
   }
   
   private boolean g()
   {
-    return (r.u > -1) && (r.u < f.c().size());
+    return (this.r.u > -1) && (this.r.u < this.f.c().size());
   }
   
   public void a(int ☃, int ☃, float ☃)
   {
     c();
     
-    r.a(☃, ☃, ☃);
-    a(q, g, l / 2, 8, 16777215);
+    this.r.a(☃, ☃, ☃);
+    a(this.q, this.g, this.l / 2, 8, 16777215);
     
-    int ☃ = l / 2 - 92 - 16;
-    c(q, h, ☃, 32, 16777215);
-    c(q, i, ☃ + 2 + 213 - q.a(i), 32, 16777215);
+    int ☃ = this.l / 2 - 92 - 16;
+    c(this.q, this.h, ☃, 32, 16777215);
+    c(this.q, this.i, ☃ + 2 + 213 - this.q.a(this.i), 32, 16777215);
     
     super.a(☃, ☃, ☃);
   }
@@ -121,7 +121,7 @@ public class axa
     
     public a()
     {
-      super(l, m, 43, m - 60, 24);
+      super(axa.this.l, axa.this.m, 43, axa.this.m - 60, 24);
     }
     
     private void a(int ☃, int ☃, zx ☃)
@@ -132,7 +132,7 @@ public class axa
       if ((☃ != null) && (☃.b() != null))
       {
         avc.c();
-        k.a(☃, ☃ + 2, ☃ + 2);
+        axa.this.k.a(☃, ☃ + 2, ☃ + 2);
         avc.a();
       }
       bfl.C();
@@ -146,7 +146,7 @@ public class axa
     private void d(int ☃, int ☃, int ☃, int ☃)
     {
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-      a.P().a(avp.c);
+      this.a.P().a(avp.c);
       
       float ☃ = 0.0078125F;
       float ☃ = 0.0078125F;
@@ -169,13 +169,13 @@ public class axa
     
     protected void a(int ☃, boolean ☃, int ☃, int ☃)
     {
-      u = ☃;
-      f();
+      this.u = ☃;
+      axa.this.f();
     }
     
     protected boolean a(int ☃)
     {
-      return ☃ == u;
+      return ☃ == this.u;
     }
     
     protected void a() {}
@@ -203,7 +203,7 @@ public class axa
         }
       }
       a(☃, ☃, ☃);
-      q.a(☃, ☃ + 18 + 5, ☃ + 3, 16777215);
+      axa.this.q.a(☃, ☃ + 18 + 5, ☃ + 3, 16777215);
       String ☃;
       String ☃;
       if (☃ == 0)
@@ -219,12 +219,12 @@ public class axa
           ☃ = bnq.a("createWorld.customize.flat.layer", new Object[] { Integer.valueOf(☃.b()) });
         }
       }
-      q.a(☃, ☃ + 2 + 213 - q.a(☃), ☃ + 3, 16777215);
+      axa.this.q.a(☃, ☃ + 2 + 213 - axa.this.q.a(☃), ☃ + 3, 16777215);
     }
     
     protected int d()
     {
-      return b - 70;
+      return this.b - 70;
     }
   }
 }

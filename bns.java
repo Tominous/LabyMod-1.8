@@ -19,24 +19,24 @@ public class bns
   
   public bns(bny ☃, String ☃)
   {
-    c = ☃;
+    this.c = ☃;
     
-    d = ☃;
+    this.d = ☃;
     
     bnq.a(a);
   }
   
   public void a(List<bnk> ☃)
   {
-    e.clear();
+    this.e.clear();
     for (bnk ☃ : ☃) {
       try
       {
-        bog ☃ = (bog)☃.a(c, "language");
+        bog ☃ = (bog)☃.a(this.c, "language");
         if (☃ != null) {
           for (bnr ☃ : ☃.a()) {
-            if (!e.containsKey(☃.a())) {
-              e.put(☃.a(), ☃);
+            if (!this.e.containsKey(☃.a())) {
+              this.e.put(☃.a(), ☃);
             }
           }
         }
@@ -55,12 +55,12 @@ public class bns
   public void a(bni ☃)
   {
     List<String> ☃ = Lists.newArrayList(new String[] { "en_US" });
-    if (!"en_US".equals(d)) {
-      ☃.add(d);
+    if (!"en_US".equals(this.d)) {
+      ☃.add(this.d);
     }
     a.a(☃, ☃);
     
-    dj.a(aa);
+    dj.a(a.a);
   }
   
   public boolean a()
@@ -75,16 +75,16 @@ public class bns
   
   public void a(bnr ☃)
   {
-    d = ☃.a();
+    this.d = ☃.a();
   }
   
   public bnr c()
   {
-    return e.containsKey(d) ? (bnr)e.get(d) : (bnr)e.get("en_US");
+    return this.e.containsKey(this.d) ? (bnr)this.e.get(this.d) : (bnr)this.e.get("en_US");
   }
   
   public SortedSet<bnr> d()
   {
-    return Sets.newTreeSet(e.values());
+    return Sets.newTreeSet(this.e.values());
   }
 }

@@ -12,10 +12,10 @@ public class aql$t
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
   {
-    if (k.a / 25 > 0) {
-      a(☃, ☃, 0, 0, k.c[cq.a.a()]);
+    if (this.k.a / 25 > 0) {
+      a(☃, ☃, 0, 0, this.k.c[cq.a.a()]);
     }
-    if (k.b[cq.b.a()] == null) {
+    if (this.k.b[cq.b.a()] == null) {
       a(☃, ☃, 1, 4, 1, 6, 4, 6, a);
     }
     for (int ☃ = 1; ☃ <= 6; ☃++) {
@@ -46,7 +46,7 @@ public class aql$t
     a(☃, ☃, 7, 1, 3, 7, 2, 4, c, c, false);
     a(☃, ☃, 3, 1, 0, 4, 2, 0, c, c, false);
     a(☃, ☃, 3, 1, 7, 4, 2, 7, c, c, false);
-    if (k.c[cq.d.a()] != 0) {
+    if (this.k.c[cq.d.a()] != 0) {
       a(☃, ☃, 3, 1, 0, 4, 2, 0, false);
     }
     return true;

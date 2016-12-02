@@ -23,16 +23,16 @@ public class LabyModWorldEditCUI
   
   public LabyModWorldEditCUI()
   {
-    visible = true;
-    alwaysOnTop = false;
-    delayedHelo = 0;
+    this.visible = true;
+    this.alwaysOnTop = false;
+    this.delayedHelo = 0;
   }
   
   public void onEnable()
   {
-    (controller = new WorldEditCUI()).initialise();
+    (this.controller = new WorldEditCUI()).initialise();
     
-    worldRenderListener = new CUIListenerWorldRender(controller, ave.A());
+    this.worldRenderListener = new CUIListenerWorldRender(this.controller, ave.A());
     
     ModAPI.addSettingsButton("WorldEditCUI", new LabyModWorldEditCUISettings(this));
     ModAPI.registerListener(new LabyModWorldEditCUIEvents(this));
@@ -40,16 +40,16 @@ public class LabyModWorldEditCUI
   
   public void onPostRenderEntities(double partialTicks)
   {
-    if ((visible) && (!alwaysOnTop))
+    if ((this.visible) && (!this.alwaysOnTop))
     {
       avc.a();
-      worldRenderListener.onRender(partialTicks);
+      this.worldRenderListener.onRender(partialTicks);
       avc.b();
     }
   }
   
   public WorldEditCUI getController()
   {
-    return controller;
+    return this.controller;
   }
 }

@@ -5,17 +5,17 @@ public class qo
   
   public qo(ps ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public void a()
   {
-    a = true;
+    this.a = true;
   }
   
   public void b()
   {
-    b.i(a);
-    a = false;
+    this.b.i(this.a);
+    this.a = false;
   }
 }

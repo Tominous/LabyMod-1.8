@@ -33,25 +33,25 @@ public class auc
   
   private void c()
   {
-    for (int ☃ = 0; ☃ < b.size(); ☃++)
+    for (int ☃ = 0; ☃ < this.b.size(); ☃++)
     {
-      aud ☃ = (aud)b.get(☃);
+      aud ☃ = (aud)this.b.get(☃);
       boolean ☃ = ☃.c();
       if (!☃)
       {
-        b.remove(☃--);
-        d += 1L;
+        this.b.remove(☃--);
+        this.d += 1L;
       }
       try
       {
-        Thread.sleep(e ? 0L : 10L);
+        Thread.sleep(this.e ? 0L : 10L);
       }
       catch (InterruptedException ☃)
       {
         ☃.printStackTrace();
       }
     }
-    if (b.isEmpty()) {
+    if (this.b.isEmpty()) {
       try
       {
         Thread.sleep(25L);
@@ -65,20 +65,20 @@ public class auc
   
   public void a(aud ☃)
   {
-    if (b.contains(☃)) {
+    if (this.b.contains(☃)) {
       return;
     }
-    c += 1L;
-    b.add(☃);
+    this.c += 1L;
+    this.b.add(☃);
   }
   
   public void b()
     throws InterruptedException
   {
-    e = true;
-    while (c != d) {
+    this.e = true;
+    while (this.c != this.d) {
       Thread.sleep(10L);
     }
-    e = false;
+    this.e = false;
   }
 }

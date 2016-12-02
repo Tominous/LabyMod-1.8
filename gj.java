@@ -10,22 +10,22 @@ public class gj
   
   public gj(int ☃, dn ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.e();
-    b = ☃.h();
+    this.a = ☃.e();
+    this.b = ☃.h();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a);
-    ☃.a(b);
+    ☃.b(this.a);
+    ☃.a(this.b);
   }
   
   public void a(fj ☃)
@@ -35,11 +35,11 @@ public class gj
   
   public dn a()
   {
-    return b;
+    return this.b;
   }
   
   public pk a(adm ☃)
   {
-    return ☃.a(a);
+    return ☃.a(this.a);
   }
 }

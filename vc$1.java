@@ -7,8 +7,8 @@ class vc$1
   
   public void h()
   {
-    a.H().b(23, l());
-    a.H().b(24, eu.a.a(k()));
+    this.a.H().b(23, l());
+    this.a.H().b(24, eu.a.a(k()));
   }
   
   public int i()
@@ -18,26 +18,26 @@ class vc$1
   
   public void a(ByteBuf ☃)
   {
-    ☃.writeInt(a.F());
+    ☃.writeInt(this.a.F());
   }
   
   public cj c()
   {
-    return new cj(a.s, a.t + 0.5D, a.u);
+    return new cj(this.a.s, this.a.t + 0.5D, this.a.u);
   }
   
   public aui d()
   {
-    return new aui(a.s, a.t, a.u);
+    return new aui(this.a.s, this.a.t, this.a.u);
   }
   
   public adm e()
   {
-    return a.o;
+    return this.a.o;
   }
   
   public pk f()
   {
-    return a;
+    return this.a;
   }
 }

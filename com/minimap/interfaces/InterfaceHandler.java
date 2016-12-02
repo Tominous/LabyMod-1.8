@@ -131,14 +131,14 @@ public class InterfaceHandler
           Minimap.rotationFrameBuffer.a();
           Minimap.resetImage();
         }
-        if ((!Minimap.loadedFBO) && (!getSettingsmapSafeMode) && (System.currentTimeMillis() - lastFBOTry > 1000L))
+        if ((!Minimap.loadedFBO) && (!XaeroMinimap.getSettings().mapSafeMode) && (System.currentTimeMillis() - this.lastFBOTry > 1000L))
         {
-          lastFBOTry = System.currentTimeMillis();
+          this.lastFBOTry = System.currentTimeMillis();
           Minimap.loadFrameBuffer();
         }
-        if (XaeroMinimap.getSettings().getMinimapSize() != lastMinimapSize)
+        if (XaeroMinimap.getSettings().getMinimapSize() != this.lastMinimapSize)
         {
-          lastMinimapSize = XaeroMinimap.getSettings().getMinimapSize();
+          this.lastMinimapSize = XaeroMinimap.getSettings().getMinimapSize();
           Minimap.resetImage();
           Minimap.frameUpdateNeeded = Minimap.usingFBO();
         }
@@ -153,11 +153,11 @@ public class InterfaceHandler
         float mapScale = scale / 2.0F;
         Minimap minimap = InterfaceHandler.minimap;
         int minimapWidth = InterfaceHandler.minimap.getMinimapWidth();
-        minimapWidth = minimapWidth;
+        minimap.minimapWidth = minimapWidth;
         int mapW = minimapWidth;
         Minimap minimap2 = InterfaceHandler.minimap;
         int minimapHeight = mapW;
-        minimapHeight = minimapHeight;
+        minimap2.minimapHeight = minimapHeight;
         int mapH = minimapHeight;
         Minimap.frameUpdatePartialTicks = partial;
         InterfaceHandler.minimap.updateZoom();
@@ -177,16 +177,16 @@ public class InterfaceHandler
           InterfaceHandler.minimap.updateMapFrame(bufferSize, partial);
           GL11.glScalef(sizeFix, sizeFix, 1.0F);
           Minimap.bindTextureBuffer(Minimap.mapTexture.getBuffer(bufferSize), bufferSize, bufferSize, Minimap.mapTexture.b());
-          GL11.glColor4f(1.0F, 1.0F, 1.0F, getSettingsminimapOpacity / 100.0F);
+          GL11.glColor4f(1.0F, 1.0F, 1.0F, XaeroMinimap.getSettings().minimapOpacity / 100.0F);
         }
         GL11.glEnable(3008);
         bfl.d();
         bfl.l();
         bfl.b(770, 771);
         GL11.glScalef(1.0F / mapScale, 1.0F / mapScale, 1.0F);
-        int scaledX = (int)(x * mapScale);
-        int scaledY = (int)(y * mapScale);
-        mcq.b((int)((scaledX + 9) / sizeFix), (int)((scaledY + 9) / sizeFix), 0, 0, (int)((mapW / 2 + 1) / sizeFix), (int)((mapH / 2 + 1) / sizeFix));
+        int scaledX = (int)(this.x * mapScale);
+        int scaledY = (int)(this.y * mapScale);
+        InterfaceHandler.mc.q.b((int)((scaledX + 9) / sizeFix), (int)((scaledY + 9) / sizeFix), 0, 0, (int)((mapW / 2 + 1) / sizeFix), (int)((mapH / 2 + 1) / sizeFix));
         if (!Minimap.usingFBO())
         {
           GL11.glScalef(1.0F / sizeFix, 1.0F / sizeFix, 1.0F);
@@ -206,29 +206,29 @@ public class InterfaceHandler
           if (arrowRotation < 0) {
             arrowRotation += 24;
           }
-          mcq.b(2 * scaledX + 18 + (mapW + 1) / 2 - 15, 2 * scaledY + 18 + (mapH + 1) / 2 - 15, 49 + 31 * (arrowRotation % 4), 31 * (arrowRotation / 4), 31, 31);
+          InterfaceHandler.mc.q.b(2 * scaledX + 18 + (mapW + 1) / 2 - 15, 2 * scaledY + 18 + (mapH + 1) / 2 - 15, 49 + 31 * (arrowRotation % 4), 31 * (arrowRotation / 4), 31, 31);
           GL11.glPopMatrix();
         }
-        mcq.b(scaledX + 9 - 4, scaledY + 9 - 4, 0, 0, 17, 15);
-        mcq.b(scaledX + 9 - 4 + mapW / 2 - 8, scaledY + 9 - 4, 0, 15, 17, 15);
-        mcq.b(scaledX + 9 - 4, scaledY + 9 - 4 + mapH / 2 - 6, 0, 30, 17, 15);
-        mcq.b(scaledX + 9 - 4 + mapW / 2 - 8, scaledY + 9 - 4 + mapH / 2 - 6, 0, 45, 17, 15);
+        InterfaceHandler.mc.q.b(scaledX + 9 - 4, scaledY + 9 - 4, 0, 0, 17, 15);
+        InterfaceHandler.mc.q.b(scaledX + 9 - 4 + mapW / 2 - 8, scaledY + 9 - 4, 0, 15, 17, 15);
+        InterfaceHandler.mc.q.b(scaledX + 9 - 4, scaledY + 9 - 4 + mapH / 2 - 6, 0, 30, 17, 15);
+        InterfaceHandler.mc.q.b(scaledX + 9 - 4 + mapW / 2 - 8, scaledY + 9 - 4 + mapH / 2 - 6, 0, 45, 17, 15);
         int horLineLength = (mapW / 2 - 16) / 16;
         for (int i = 0; i < horLineLength; i++)
         {
-          mcq.b(scaledX + 9 - 4 + 17 + i * 16, scaledY + 9 - 4, 0, 60, 16, 4);
-          mcq.b(scaledX + 9 - 4 + 17 + i * 16, scaledY + 9 - 4 + mapH / 2 + 9 - 4, 0, 64, 16, 4);
+          InterfaceHandler.mc.q.b(scaledX + 9 - 4 + 17 + i * 16, scaledY + 9 - 4, 0, 60, 16, 4);
+          InterfaceHandler.mc.q.b(scaledX + 9 - 4 + 17 + i * 16, scaledY + 9 - 4 + mapH / 2 + 9 - 4, 0, 64, 16, 4);
         }
         int vertLineLength = (mapH / 2 - 14) / 5;
         for (int j = 0; j < vertLineLength; j++)
         {
-          mcq.b(scaledX + 9 - 4, scaledY + 9 - 4 + 15 + j * 5, 0, 68, 4, 5);
-          mcq.b(scaledX + 9 - 4 + mapW / 2 + 9 - 4, scaledY + 9 - 4 + 15 + j * 5, 0, 73, 4, 5);
+          InterfaceHandler.mc.q.b(scaledX + 9 - 4, scaledY + 9 - 4 + 15 + j * 5, 0, 68, 4, 5);
+          InterfaceHandler.mc.q.b(scaledX + 9 - 4 + mapW / 2 + 9 - 4, scaledY + 9 - 4 + 15 + j * 5, 0, 73, 4, 5);
         }
         GL11.glPushMatrix();
         bfl.a(0.5F, 0.5F, 1.0F);
         bfl.b(2 * scaledX + specW - 6 + 18, 2 * scaledY + specH - 6 + 18, 0.0F);
-        if (getSettingscompassOverWaypoints)
+        if (XaeroMinimap.getSettings().compassOverWaypoints)
         {
           drawWaypoints(specW, specH, ps, pc, partial);
           drawCompass(specW, specH, ps, pc);
@@ -242,23 +242,23 @@ public class InterfaceHandler
         if (XaeroMinimap.getSettings().getShowCoords())
         {
           int interfaceSize = getSize() / 2;
-          String coords = Minimap.myFloor(mch.s) + ", " + Minimap.myFloor(mch.t) + ", " + Minimap.myFloor(mch.u);
-          if (mck.a(coords) >= interfaceSize)
+          String coords = Minimap.myFloor(InterfaceHandler.mc.h.s) + ", " + Minimap.myFloor(InterfaceHandler.mc.h.t) + ", " + Minimap.myFloor(InterfaceHandler.mc.h.u);
+          if (InterfaceHandler.mc.k.a(coords) >= interfaceSize)
           {
-            String stringLevel = "" + Minimap.myFloor(mch.t);
-            coords = Minimap.myFloor(mch.s) + ", " + Minimap.myFloor(mch.u);
-            underText.add(coords);
-            underText.add(stringLevel);
+            String stringLevel = "" + Minimap.myFloor(InterfaceHandler.mc.h.t);
+            coords = Minimap.myFloor(InterfaceHandler.mc.h.s) + ", " + Minimap.myFloor(InterfaceHandler.mc.h.u);
+            this.underText.add(coords);
+            this.underText.add(stringLevel);
           }
           else
           {
-            underText.add(coords);
+            this.underText.add(coords);
           }
         }
-        if (getSettingsshowBiome)
+        if (XaeroMinimap.getSettings().showBiome)
         {
-          cj pos = new cj(mcacs, mcacaRb, mcacu);
-          underText.add(mcf.f(pos).a(pos, mcf.v()).ah);
+          cj pos = new cj(InterfaceHandler.mc.ac().s, InterfaceHandler.mc.ac().aR().b, InterfaceHandler.mc.ac().u);
+          this.underText.add(InterfaceHandler.mc.f.f(pos).a(pos, InterfaceHandler.mc.f.v()).ah);
         }
         drawTextUnderMinimap(scaledX, scaledY, height, mapScale);
         GL11.glScalef(mapScale, mapScale, 1.0F);
@@ -269,35 +269,35 @@ public class InterfaceHandler
       {
         int interfaceSize = getSize() / 2;
         int scaledHeight = (int)(height * mapScale);
-        for (int i = 0; i < underText.size(); i++)
+        for (int i = 0; i < this.underText.size(); i++)
         {
-          String s = (String)underText.get(i);
-          int stringWidth = mck.a(s);
+          String s = (String)this.underText.get(i);
+          int stringWidth = InterfaceHandler.mc.k.a(s);
           boolean under = scaledY + interfaceSize / 2 < scaledHeight / 2;
           int stringY = scaledY + (under ? interfaceSize : -9) + i * 9 * (under ? 1 : -1);
-          Ak.a(s, scaledX + interfaceSize / 2 - stringWidth / 2, stringY, Minimap.radarPlayers.hashCode());
+          ave.A().k.a(s, scaledX + interfaceSize / 2 - stringWidth / 2, stringY, Minimap.radarPlayers.hashCode());
         }
-        underText.clear();
+        this.underText.clear();
       }
       
       private void drawWaypoints(int specW, int specH, double ps, double pc, float partial)
       {
         if ((XaeroMinimap.settings.getShowWaypoints()) && (Minimap.waypoints != null))
         {
-          double playerX = Minimap.getEntityX(mch, partial);
-          double playerZ = Minimap.getEntityZ(mch, partial);
-          renderWaypointsList(waypointslist, playerX, playerZ, specW, specH, ps, pc);
+          double playerX = Minimap.getEntityX(InterfaceHandler.mc.h, partial);
+          double playerZ = Minimap.getEntityZ(InterfaceHandler.mc.h, partial);
+          renderWaypointsList(Minimap.waypoints.list, playerX, playerZ, specW, specH, ps, pc);
         }
       }
       
       private void renderWaypointsList(ArrayList<Waypoint> waypoints, double playerX, double playerZ, int specW, int specH, double ps, double pc)
       {
         for (Waypoint w : waypoints) {
-          if ((w != null) && (!disabled)) {
-            if ((type != 1) || (XaeroMinimap.getSettings().getDeathpoints()))
+          if ((w != null) && (!w.disabled)) {
+            if ((w.type != 1) || (XaeroMinimap.getSettings().getDeathpoints()))
             {
-              double offx = x - playerX;
-              double offy = z - playerZ;
+              double offx = w.x - playerX;
+              double offy = w.z - playerZ;
               translatePosition(specW, specH, ps, pc, offx, offy);
               bfl.a(2.0F, 2.0F, 1.0F);
               w.drawIconOnGUI(-4, -4);
@@ -316,7 +316,7 @@ public class InterfaceHandler
           double offy = (i == 1) || (i == 3) ? 0.0D : i == 2 ? '✐' : '?';
           translatePosition(specW, specH, ps, pc, offx, offy);
           bfl.a(2.0F, 2.0F, 1.0F);
-          Ak.a(nesw[i], 1 - mck.a(nesw[i]) / 2, -3.0F, Minimap.radarPlayers.hashCode());
+          ave.A().k.a(nesw[i], 1 - InterfaceHandler.mc.k.a(nesw[i]) / 2, -3.0F, Minimap.radarPlayers.hashCode());
           GL11.glPopMatrix();
         }
       }
@@ -329,11 +329,11 @@ public class InterfaceHandler
     int width = scaledresolution.a();
     int height = scaledresolution.b();
     int scale = scaledresolution.e();
-    int mouseX = Mouse.getX() * width / mcd;
-    int mouseY = height - Mouse.getY() * height / mce - 1;
+    int mouseX = Mouse.getX() * width / XaeroMinimap.mc.d;
+    int mouseY = height - Mouse.getY() * height / XaeroMinimap.mc.e - 1;
     updateInterfaces(mouseX, mouseY, width, height, scale);
     for (Interface l : list) {
-      if (XaeroMinimap.settings.getBooleanValue(option)) {
+      if (XaeroMinimap.settings.getBooleanValue(l.option)) {
         l.drawInterface(width, height, scale, partial);
       }
     }
@@ -341,11 +341,11 @@ public class InterfaceHandler
   
   public static boolean overAButton(int mouseX, int mouseY)
   {
-    if ((mcm instanceof GuiEditMode)) {
-      for (int k = 0; k < ((GuiEditMode)mcm).getButtons().size(); k++)
+    if ((mc.m instanceof GuiEditMode)) {
+      for (int k = 0; k < ((GuiEditMode)mc.m).getButtons().size(); k++)
       {
-        avs b = (avs)((GuiEditMode)mcm).getButtons().get(k);
-        if ((mouseX >= h) && (mouseY >= i) && (mouseX < h + 150) && (mouseY < i + 20)) {
+        avs b = (avs)((GuiEditMode)mc.m).getButtons().get(k);
+        if ((mouseX >= b.h) && (mouseY >= b.i) && (mouseX < b.h + 150) && (mouseY < b.i + 20)) {
           return true;
         }
       }
@@ -357,11 +357,11 @@ public class InterfaceHandler
   {
     for (Interface l : list)
     {
-      bx = actualx;
-      by = actualy;
-      bcentered = centered;
-      bflipped = flipped;
-      bfromRight = fromRight;
+      l.bx = l.actualx;
+      l.by = l.actualy;
+      l.bcentered = l.centered;
+      l.bflipped = l.flipped;
+      l.bfromRight = l.fromRight;
     }
   }
   
@@ -369,11 +369,11 @@ public class InterfaceHandler
   {
     for (Interface l : list)
     {
-      actualx = bx;
-      actualy = by;
-      centered = bcentered;
-      flipped = bflipped;
-      fromRight = bfromRight;
+      l.actualx = l.bx;
+      l.actualy = l.by;
+      l.centered = l.bcentered;
+      l.flipped = l.bflipped;
+      l.fromRight = l.bfromRight;
     }
   }
   
@@ -382,11 +382,11 @@ public class InterfaceHandler
     for (Interface l : list)
     {
       actionTimer = 10;
-      actualx = presetsgetcoords[id][0];
-      actualy = presetsgetcoords[id][1];
-      centered = presetsgettypes[id][0];
-      flipped = cflipped;
-      fromRight = presetsgettypes[id][1];
+      l.actualx = ((Preset)presets.get(id)).coords[l.id][0];
+      l.actualy = ((Preset)presets.get(id)).coords[l.id][1];
+      l.centered = ((Preset)presets.get(id)).types[l.id][0];
+      l.flipped = l.cflipped;
+      l.fromRight = ((Preset)presets.get(id)).types[l.id][1];
     }
   }
   
@@ -395,7 +395,7 @@ public class InterfaceHandler
     int i;
     if (actionTimer <= 0)
     {
-      if ((eventslastGuiOpen instanceof GuiEditMode))
+      if ((XaeroMinimap.events.lastGuiOpen instanceof GuiEditMode))
       {
         if (Mouse.isButtonDown(1)) {
           selectedId = -1;
@@ -410,13 +410,13 @@ public class InterfaceHandler
           {
             draggingId = i;
             selectedId = i;
-            if (listgetfromRight) {
-              listgetx = (width - listgetx);
+            if (((Interface)list.get(i)).fromRight) {
+              ((Interface)list.get(i)).x = (width - ((Interface)list.get(i)).x);
             }
-            draggingOffX = listgetx - mouseX;
-            draggingOffY = listgety - mouseY;
-            if (listgetfromRight) {
-              listgetx = (width - listgetx);
+            draggingOffX = ((Interface)list.get(i)).x - mouseX;
+            draggingOffY = ((Interface)list.get(i)).y - mouseY;
+            if (((Interface)list.get(i)).fromRight) {
+              ((Interface)list.get(i)).x = (width - ((Interface)list.get(i)).x);
             }
           }
           else if ((!Mouse.isButtonDown(0)) && (draggingId != -1))
@@ -431,12 +431,12 @@ public class InterfaceHandler
           if ((Keyboard.isKeyDown(33)) && (System.currentTimeMillis() - lastFlip > 300L))
           {
             lastFlip = System.currentTimeMillis();
-            listgetflipped = (!listgetflipped);
+            ((Interface)list.get(i)).flipped = (!((Interface)list.get(i)).flipped);
           }
           if ((Keyboard.isKeyDown(46)) && (System.currentTimeMillis() - lastFlip > 300L))
           {
             lastFlip = System.currentTimeMillis();
-            listgetcentered = (!listgetcentered);
+            ((Interface)list.get(i)).centered = (!((Interface)list.get(i)).centered);
           }
           if (Keyboard.isKeyDown(31))
           {
@@ -451,19 +451,19 @@ public class InterfaceHandler
         }
         if (draggingId != -1)
         {
-          if (!listgetdraggingIdcentered)
+          if (!((Interface)list.get(draggingId)).centered)
           {
-            listgetdraggingIdactualx = (mouseX + draggingOffX);
-            if (listgetdraggingIdfromRight) {
-              listgetdraggingIdactualx = (width - listgetdraggingIdactualx);
+            ((Interface)list.get(draggingId)).actualx = (mouseX + draggingOffX);
+            if (((Interface)list.get(draggingId)).fromRight) {
+              ((Interface)list.get(draggingId)).actualx = (width - ((Interface)list.get(draggingId)).actualx);
             }
           }
-          if (listgetdraggingIdactualx > width / 2)
+          if (((Interface)list.get(draggingId)).actualx > width / 2)
           {
-            listgetdraggingIdfromRight = (!listgetdraggingIdfromRight);
-            listgetdraggingIdactualx = (width - listgetdraggingIdactualx);
+            ((Interface)list.get(draggingId)).fromRight = (!((Interface)list.get(draggingId)).fromRight);
+            ((Interface)list.get(draggingId)).actualx = (width - ((Interface)list.get(draggingId)).actualx);
           }
-          listgetdraggingIdactualy = (mouseY + draggingOffY);
+          ((Interface)list.get(draggingId)).actualy = (mouseY + draggingOffY);
         }
       }
     }
@@ -472,53 +472,53 @@ public class InterfaceHandler
     }
     for (Interface j : list)
     {
-      x = actualx;
-      y = actualy;
-      if (fromRight) {
-        x = (width - x);
+      j.x = j.actualx;
+      j.y = j.actualy;
+      if (j.fromRight) {
+        j.x = (width - j.x);
       }
-      if (centered)
+      if (j.centered)
       {
-        if (multi)
+        if (j.multi)
         {
-          w = j.getWC(scale);
-          h = j.getHC(scale);
+          j.w = j.getWC(scale);
+          j.h = j.getHC(scale);
         }
-        x = (width / 2 - j.getW(scale) / 2);
+        j.x = (width / 2 - j.getW(scale) / 2);
       }
-      else if (multi)
+      else if (j.multi)
       {
-        w = j.getW0(scale);
-        h = j.getH0(scale);
+        j.w = j.getW0(scale);
+        j.h = j.getH0(scale);
       }
-      if (x < 5) {
-        x = 0;
+      if (j.x < 5) {
+        j.x = 0;
       }
-      if (y < 5) {
-        y = 0;
+      if (j.y < 5) {
+        j.y = 0;
       }
-      if (x + j.getW(scale) > width - 5) {
-        x = (width - j.getW(scale));
+      if (j.x + j.getW(scale) > width - 5) {
+        j.x = (width - j.getW(scale));
       }
-      if (y + j.getH(scale) > height - 5) {
-        y = (height - j.getH(scale));
+      if (j.y + j.getH(scale) > height - 5) {
+        j.y = (height - j.getH(scale));
       }
     }
   }
   
   public static void drawBoxes(int mouseX, int mouseY, int width, int height, int scale)
   {
-    if ((eventslastGuiOpen instanceof GuiEditMode))
+    if ((XaeroMinimap.events.lastGuiOpen instanceof GuiEditMode))
     {
       int mouseOverId = getInterfaceId(mouseX, mouseY, width, height, scale);
       for (int i = 0; i < list.size(); i++) {
-        if (XaeroMinimap.settings.getBooleanValue(listgetoption))
+        if (XaeroMinimap.settings.getBooleanValue(((Interface)list.get(i)).option))
         {
-          int x = listgetx;
-          if (listgetfromRight) {
+          int x = ((Interface)list.get(i)).x;
+          if (((Interface)list.get(i)).fromRight) {
             x = width - x;
           }
-          int y = listgety;
+          int y = ((Interface)list.get(i)).y;
           int w = ((Interface)list.get(i)).getW(scale);
           int h = ((Interface)list.get(i)).getH(scale);
           int x2 = x + w;
@@ -527,7 +527,7 @@ public class InterfaceHandler
           {
             avp.a(x, y, x2, y2, selectedId == i ? selected.hashCode() : enabled.hashCode());
             if ((draggingId == -1) && (i == mouseOverId)) {
-              listgetcBox.drawBox(mouseX, mouseY, width, height);
+              ((Interface)list.get(i)).cBox.drawBox(mouseX, mouseY, width, height);
             }
           }
           else
@@ -545,11 +545,11 @@ public class InterfaceHandler
     int size = 0;
     for (int i = 0; i < list.size(); i++)
     {
-      int x = listgetx;
-      if (listgetfromRight) {
+      int x = ((Interface)list.get(i)).x;
+      if (((Interface)list.get(i)).fromRight) {
         x = width - x;
       }
-      int y = listgety;
+      int y = ((Interface)list.get(i)).y;
       int x2 = x + ((Interface)list.get(i)).getW(scale);
       int y2 = y + ((Interface)list.get(i)).getH(scale);
       int isize = ((Interface)list.get(i)).getSize();

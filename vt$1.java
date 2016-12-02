@@ -7,6 +7,6 @@ class vt$1
   
   public boolean a(lf ☃)
   {
-    return (a.h(☃) < 2500.0D) && (c.c());
+    return (this.a.h(☃) < 2500.0D) && (☃.c.c());
   }
 }

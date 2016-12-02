@@ -12,8 +12,8 @@ public class bjt
     {
       protected void a()
       {
-        c = new bcn(0.5F, true);
-        d = new bcn(1.0F, true);
+        this.c = new bcn(0.5F, true);
+        this.d = new bcn(1.0F, true);
       }
     });
   }

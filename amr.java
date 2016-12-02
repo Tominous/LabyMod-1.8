@@ -4,11 +4,11 @@ public enum amr
   
   private amr(int ☃)
   {
-    d = ☃;
+    this.d = ☃;
   }
   
   public int a()
   {
-    return d;
+    return this.d;
   }
 }

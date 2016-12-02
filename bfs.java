@@ -1,7 +1,6 @@
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
-import java.awt.image.ImageObserver;
 import java.awt.image.WritableRaster;
 
 public class bfs
@@ -10,89 +9,83 @@ public class bfs
   private int[] a;
   private int b;
   private int c;
-  private static final String __OBFID = "CL_00000956";
   
-  public BufferedImage a(BufferedImage p_78432_1_)
+  public BufferedImage a(BufferedImage ☃)
   {
-    if (p_78432_1_ == null) {
+    if (☃ == null) {
       return null;
     }
-    b = 64;
-    c = 64;
+    this.b = 64;
+    this.c = 64;
     
-    BufferedImage srcImg = p_78432_1_;
-    int srcWidth = srcImg.getWidth();
-    int srcHeight = srcImg.getHeight();
-    
-    int k = 1;
-    while ((b < srcWidth) || (c < srcHeight))
+    BufferedImage ☃ = new BufferedImage(this.b, this.c, 2);
+    Graphics ☃ = ☃.getGraphics();
+    ☃.drawImage(☃, 0, 0, null);
+    if (☃.getHeight() == 32)
     {
-      b *= 2;
-      c *= 2;
-      k *= 2;
+      ☃.drawImage(☃, 24, 48, 20, 52, 4, 16, 8, 20, null);
+      ☃.drawImage(☃, 28, 48, 24, 52, 8, 16, 12, 20, null);
+      ☃.drawImage(☃, 20, 52, 16, 64, 8, 20, 12, 32, null);
+      ☃.drawImage(☃, 24, 52, 20, 64, 4, 20, 8, 32, null);
+      ☃.drawImage(☃, 28, 52, 24, 64, 0, 20, 4, 32, null);
+      ☃.drawImage(☃, 32, 52, 28, 64, 12, 20, 16, 32, null);
+      
+      ☃.drawImage(☃, 40, 48, 36, 52, 44, 16, 48, 20, null);
+      ☃.drawImage(☃, 44, 48, 40, 52, 48, 16, 52, 20, null);
+      ☃.drawImage(☃, 36, 52, 32, 64, 48, 20, 52, 32, null);
+      ☃.drawImage(☃, 40, 52, 36, 64, 44, 20, 48, 32, null);
+      ☃.drawImage(☃, 44, 52, 40, 64, 40, 20, 44, 32, null);
+      ☃.drawImage(☃, 48, 52, 44, 64, 52, 20, 56, 32, null);
     }
-    BufferedImage var2 = new BufferedImage(b, c, 2);
-    Graphics var3 = var2.getGraphics();
-    var3.drawImage(p_78432_1_, 0, 0, (ImageObserver)null);
-    if (p_78432_1_.getHeight() == 32 * k)
-    {
-      var3.drawImage(var2, 24 * k, 48 * k, 20 * k, 52 * k, 4 * k, 16 * k, 8 * k, 20 * k, (ImageObserver)null);
-      var3.drawImage(var2, 28 * k, 48 * k, 24 * k, 52 * k, 8 * k, 16 * k, 12 * k, 20 * k, (ImageObserver)null);
-      var3.drawImage(var2, 20 * k, 52 * k, 16 * k, 64 * k, 8 * k, 20 * k, 12 * k, 32 * k, (ImageObserver)null);
-      var3.drawImage(var2, 24 * k, 52 * k, 20 * k, 64 * k, 4 * k, 20 * k, 8 * k, 32 * k, (ImageObserver)null);
-      var3.drawImage(var2, 28 * k, 52 * k, 24 * k, 64 * k, 0 * k, 20 * k, 4 * k, 32 * k, (ImageObserver)null);
-      var3.drawImage(var2, 32 * k, 52 * k, 28 * k, 64 * k, 12 * k, 20 * k, 16 * k, 32 * k, (ImageObserver)null);
-      var3.drawImage(var2, 40 * k, 48 * k, 36 * k, 52 * k, 44 * k, 16 * k, 48 * k, 20 * k, (ImageObserver)null);
-      var3.drawImage(var2, 44 * k, 48 * k, 40 * k, 52 * k, 48 * k, 16 * k, 52 * k, 20 * k, (ImageObserver)null);
-      var3.drawImage(var2, 36 * k, 52 * k, 32 * k, 64 * k, 48 * k, 20 * k, 52 * k, 32 * k, (ImageObserver)null);
-      var3.drawImage(var2, 40 * k, 52 * k, 36 * k, 64 * k, 44 * k, 20 * k, 48 * k, 32 * k, (ImageObserver)null);
-      var3.drawImage(var2, 44 * k, 52 * k, 40 * k, 64 * k, 40 * k, 20 * k, 44 * k, 32 * k, (ImageObserver)null);
-      var3.drawImage(var2, 48 * k, 52 * k, 44 * k, 64 * k, 52 * k, 20 * k, 56 * k, 32 * k, (ImageObserver)null);
-    }
-    var3.dispose();
-    a = ((DataBufferInt)var2.getRaster().getDataBuffer()).getData();
+    ☃.dispose();
     
-    b(0, 0, 32 * k, 16 * k);
-    a(32 * k, 0, 64 * k, 32 * k);
-    b(0, 16 * k, 64 * k, 32 * k);
-    a(0, 32 * k, 16 * k, 48 * k);
-    a(16 * k, 32 * k, 40 * k, 48 * k);
-    a(40 * k, 32 * k, 56 * k, 48 * k);
-    a(0, 48 * k, 16 * k, 64 * k);
-    b(16 * k, 48 * k, 48 * k, 64 * k);
-    a(48 * k, 48 * k, 64 * k, 64 * k);
-    return var2;
+    this.a = ((DataBufferInt)☃.getRaster().getDataBuffer()).getData();
+    
+    b(0, 0, 32, 16);
+    a(32, 0, 64, 32);
+    b(0, 16, 64, 32);
+    
+    a(0, 32, 16, 48);
+    a(16, 32, 40, 48);
+    a(40, 32, 56, 48);
+    
+    a(0, 48, 16, 64);
+    b(16, 48, 48, 64);
+    a(48, 48, 64, 64);
+    
+    return ☃;
   }
   
   public void a() {}
   
-  private void a(int p_78434_1_, int p_78434_2_, int p_78434_3_, int p_78434_4_)
+  private void a(int ☃, int ☃, int ☃, int ☃)
   {
-    if (!c(p_78434_1_, p_78434_2_, p_78434_3_, p_78434_4_)) {
-      for (int var5 = p_78434_1_; var5 < p_78434_3_; var5++) {
-        for (int var6 = p_78434_2_; var6 < p_78434_4_; var6++) {
-          a[(var5 + var6 * b)] &= 0xFFFFFF;
-        }
+    if (c(☃, ☃, ☃, ☃)) {
+      return;
+    }
+    for (int ☃ = ☃; ☃ < ☃; ☃++) {
+      for (int ☃ = ☃; ☃ < ☃; ☃++) {
+        this.a[(☃ + ☃ * this.b)] &= 0xFFFFFF;
       }
     }
   }
   
-  private void b(int p_78433_1_, int p_78433_2_, int p_78433_3_, int p_78433_4_)
+  private void b(int ☃, int ☃, int ☃, int ☃)
   {
-    for (int var5 = p_78433_1_; var5 < p_78433_3_; var5++) {
-      for (int var6 = p_78433_2_; var6 < p_78433_4_; var6++) {
-        a[(var5 + var6 * b)] |= 0xFF000000;
+    for (int ☃ = ☃; ☃ < ☃; ☃++) {
+      for (int ☃ = ☃; ☃ < ☃; ☃++) {
+        this.a[(☃ + ☃ * this.b)] |= 0xFF000000;
       }
     }
   }
   
-  private boolean c(int p_78435_1_, int p_78435_2_, int p_78435_3_, int p_78435_4_)
+  private boolean c(int ☃, int ☃, int ☃, int ☃)
   {
-    for (int var5 = p_78435_1_; var5 < p_78435_3_; var5++) {
-      for (int var6 = p_78435_2_; var6 < p_78435_4_; var6++)
+    for (int ☃ = ☃; ☃ < ☃; ☃++) {
+      for (int ☃ = ☃; ☃ < ☃; ☃++)
       {
-        int var7 = a[(var5 + var6 * b)];
-        if ((var7 >> 24 & 0xFF) < 128) {
+        int ☃ = this.a[(☃ + ☃ * this.b)];
+        if ((☃ >> 24 & 0xFF) < 128) {
           return true;
         }
       }

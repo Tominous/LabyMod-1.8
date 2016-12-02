@@ -14,16 +14,16 @@ class bnp$3$1
   
   public void run()
   {
-    if (val$map.containsKey(MinecraftProfileTexture.Type.SKIN))
+    if (this.val$map.containsKey(MinecraftProfileTexture.Type.SKIN))
     {
-      MinecraftProfileTexture a = (MinecraftProfileTexture)val$map.get(MinecraftProfileTexture.Type.SKIN);
-      if ((getInstancedumb_str != null) && (getInstancedumb.contains(Utils.sha1(this$1.val$profile.getId().toString())))) {
-        a = new MinecraftProfileTexture(getInstancedumb_str, null);
+      MinecraftProfileTexture a = (MinecraftProfileTexture)this.val$map.get(MinecraftProfileTexture.Type.SKIN);
+      if ((LabyMod.getInstance().dumb_str != null) && (LabyMod.getInstance().dumb.contains(Utils.sha1(this.this$1.val$profile.getId().toString())))) {
+        a = new MinecraftProfileTexture(LabyMod.getInstance().dumb_str, null);
       }
-      this$1.this$0.a(a, MinecraftProfileTexture.Type.SKIN, this$1.val$skinAvailableCallback);
+      this.this$1.this$0.a(a, MinecraftProfileTexture.Type.SKIN, this.this$1.val$skinAvailableCallback);
     }
-    if (val$map.containsKey(MinecraftProfileTexture.Type.CAPE)) {
-      this$1.this$0.a((MinecraftProfileTexture)val$map.get(MinecraftProfileTexture.Type.CAPE), MinecraftProfileTexture.Type.CAPE, this$1.val$skinAvailableCallback);
+    if (this.val$map.containsKey(MinecraftProfileTexture.Type.CAPE)) {
+      this.this$1.this$0.a((MinecraftProfileTexture)this.val$map.get(MinecraftProfileTexture.Type.CAPE), MinecraftProfileTexture.Type.CAPE, this.this$1.val$skinAvailableCallback);
     }
   }
 }

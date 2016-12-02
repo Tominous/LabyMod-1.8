@@ -20,24 +20,24 @@ public abstract class ayw
   
   protected void a()
   {
-    if (!j.h.bl().isEmpty())
+    if (!this.j.h.bl().isEmpty())
     {
-      if (!settingsoldInventory) {
-        i = (160 + (l - f - 200) / 2);
+      if (!ConfigManager.settings.oldInventory) {
+        this.i = (160 + (this.l - this.f - 200) / 2);
       }
-      u = true;
+      this.u = true;
     }
     else
     {
-      i = ((l - f) / 2);
-      u = false;
+      this.i = ((this.l - this.f) / 2);
+      this.u = false;
     }
   }
   
   public void a(int mouseX, int mouseY, float partialTicks)
   {
     super.a(mouseX, mouseY, partialTicks);
-    if (u) {
+    if (this.u) {
       f();
     }
   }
@@ -45,9 +45,9 @@ public abstract class ayw
   private void f()
   {
     int i = this.i - 124;
-    int j = r;
+    int j = this.r;
     int k = 166;
-    Collection<pf> collection = jh.bl();
+    Collection<pf> collection = this.j.h.bl();
     int l;
     if (!collection.isEmpty())
     {
@@ -57,7 +57,7 @@ public abstract class ayw
       if (collection.size() > 5) {
         l = 132 / (collection.size() - 1);
       }
-      for (pf potioneffect : jh.bl())
+      for (pf potioneffect : this.j.h.bl())
       {
         pe potion = pe.a[potioneffect.a()];
         bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
@@ -76,9 +76,9 @@ public abstract class ayw
         } else if (potioneffect.c() == 3) {
           s1 = s1 + " " + bnq.a("enchantment.level.4", new Object[0]);
         }
-        q.a(s1, i + 10 + 18, j + 6, 16777215);
+        this.q.a(s1, i + 10 + 18, j + 6, 16777215);
         String s = pe.a(potioneffect);
-        q.a(s, i + 10 + 18, j + 6 + 10, 8355711);
+        this.q.a(s, i + 10 + 18, j + 6 + 10, 8355711);
         j += l;
       }
     }

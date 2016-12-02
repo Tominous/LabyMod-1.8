@@ -5,6 +5,6 @@ class bho$3
   
   public void run()
   {
-    e.a(a, b, c, d);
+    this.e.a(this.a, this.b, this.c, this.d);
   }
 }

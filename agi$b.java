@@ -21,19 +21,19 @@ public enum agi$b
   
   private agi$b(int ☃, String ☃, String ☃)
   {
-    h = ☃;
-    i = ☃;
-    j = ☃;
+    this.h = ☃;
+    this.i = ☃;
+    this.j = ☃;
   }
   
   public int a()
   {
-    return h;
+    return this.h;
   }
   
   public String toString()
   {
-    return i;
+    return this.i;
   }
   
   public static b a(int ☃)
@@ -46,11 +46,11 @@ public enum agi$b
   
   public String l()
   {
-    return i;
+    return this.i;
   }
   
   public String c()
   {
-    return j;
+    return this.j;
   }
 }

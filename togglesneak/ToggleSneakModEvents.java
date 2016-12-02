@@ -27,18 +27,18 @@ public class ToggleSneakModEvents
       switch (PositionMode.getByName(ToggleSneakMod.optionPositionMode))
       {
       case CUSTOM: 
-        Ak.a(hudText, ToggleSneakMod.optionHUDTextPosX, ToggleSneakMod.optionHUDTextPosY, 16777215);
+        ave.A().k.a(hudText, ToggleSneakMod.optionHUDTextPosX, ToggleSneakMod.optionHUDTextPosY, 16777215);
         break;
       case BOTTOMRIGHT: 
-        Ak.a(hudText, resolution.a() - Ak.a(hudText) - 2, resolution.b() - 10, 16777215);
+        ave.A().k.a(hudText, resolution.a() - ave.A().k.a(hudText) - 2, resolution.b() - 10, 16777215);
         break;
       case UNDERCHAT: 
-        if (!(Am instanceof awv)) {
-          Ak.a(hudText, 2, resolution.b() - 10, 16777215);
+        if (!(ave.A().m instanceof awv)) {
+          ave.A().k.a(hudText, 2, resolution.b() - 10, 16777215);
         }
         break;
       case TOPCENTER: 
-        Ak.a(hudText, resolution.a() / 2 - Ak.a(hudText) / 2, 2, 16777215);
+        ave.A().k.a(hudText, resolution.a() / 2 - ave.A().k.a(hudText) / 2, 2, 16777215);
       }
     }
   }

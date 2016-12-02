@@ -20,28 +20,28 @@ public class bhc
   
   private bhc()
   {
-    m.put(aln.class, new bhj());
-    m.put(all.class, new bhh());
-    m.put(alu.class, new bhi());
-    m.put(aky.class, new bhe());
-    m.put(alf.class, new bhg());
-    m.put(ale.class, new bhf());
-    m.put(alp.class, new bhl());
-    m.put(akv.class, new bhb());
-    m.put(alo.class, new bhk());
-    m.put(aku.class, new bha());
-    for (bhd<?> ☃ : m.values()) {
+    this.m.put(aln.class, new bhj());
+    this.m.put(all.class, new bhh());
+    this.m.put(alu.class, new bhi());
+    this.m.put(aky.class, new bhe());
+    this.m.put(alf.class, new bhg());
+    this.m.put(ale.class, new bhf());
+    this.m.put(alp.class, new bhl());
+    this.m.put(akv.class, new bhb());
+    this.m.put(alo.class, new bhk());
+    this.m.put(aku.class, new bha());
+    for (bhd<?> ☃ : this.m.values()) {
       ☃.a(this);
     }
   }
   
   public <T extends akw> bhd<T> a(Class<? extends akw> ☃)
   {
-    bhd<? extends akw> ☃ = (bhd)m.get(☃);
+    bhd<? extends akw> ☃ = (bhd)this.m.get(☃);
     if ((☃ == null) && (☃ != akw.class))
     {
       ☃ = a(☃.getSuperclass());
-      m.put(☃, ☃);
+      this.m.put(☃, ☃);
     }
     return ☃;
   }
@@ -56,26 +56,26 @@ public class bhc
   
   public void a(adm ☃, bmj ☃, avn ☃, pk ☃, float ☃)
   {
-    if (f != ☃) {
+    if (this.f != ☃) {
       a(☃);
     }
-    e = ☃;
-    g = ☃;
-    n = ☃;
+    this.e = ☃;
+    this.g = ☃;
+    this.n = ☃;
     
-    h = (A + (y - A) * ☃);
-    i = (B + (z - B) * ☃);
+    this.h = (☃.A + (☃.y - ☃.A) * ☃);
+    this.i = (☃.B + (☃.z - ☃.B) * ☃);
     
-    j = (P + (s - P) * ☃);
-    k = (Q + (t - Q) * ☃);
-    l = (R + (u - R) * ☃);
+    this.j = (☃.P + (☃.s - ☃.P) * ☃);
+    this.k = (☃.Q + (☃.t - ☃.Q) * ☃);
+    this.l = (☃.R + (☃.u - ☃.R) * ☃);
   }
   
   public void a(akw ☃, float ☃, int ☃)
   {
-    if (☃.a(j, k, l) < ☃.s())
+    if (☃.a(this.j, this.k, this.l) < ☃.s())
     {
-      int ☃ = f.b(☃.v(), 0);
+      int ☃ = this.f.b(☃.v(), 0);
       int ☃ = ☃ % 65536;
       int ☃ = ☃ / 65536;
       bqs.a(bqs.r, ☃ / 1.0F, ☃ / 1.0F);
@@ -112,11 +112,11 @@ public class bhc
   
   public void a(adm ☃)
   {
-    f = ☃;
+    this.f = ☃;
   }
   
   public avn a()
   {
-    return n;
+    return this.n;
   }
 }

@@ -49,11 +49,11 @@ public class ResourcePacks24
   public ArrayList<Pack> getPacks()
   {
     int i;
-    if ((sorting == EnumPackSorting.TOP) || (sorting == EnumPackSorting.LATEST))
+    if ((this.sorting == EnumPackSorting.TOP) || (this.sorting == EnumPackSorting.LATEST))
     {
       ArrayList<Pack> all = new ArrayList();
       i = 0;
-      for (Pack p : packs)
+      for (Pack p : this.packs)
       {
         if (i >= 20) {
           break;
@@ -65,40 +65,40 @@ public class ResourcePacks24
       }
       return all;
     }
-    if (sorting == EnumPackSorting.RANDOM)
+    if (this.sorting == EnumPackSorting.RANDOM)
     {
       ArrayList<Pack> all = new ArrayList();
-      for (Pack p : packs) {
+      for (Pack p : this.packs) {
         if (!isHiddenPack(p)) {
           all.add(p);
         }
       }
       return all;
     }
-    if (sorting == EnumPackSorting.NONE)
+    if (this.sorting == EnumPackSorting.NONE)
     {
-      if (searchText.replace(" ", "").isEmpty()) {
+      if (this.searchText.replace(" ", "").isEmpty()) {
         return new ArrayList();
       }
       ArrayList<Pack> all = new ArrayList();
-      for (Pack p : packs)
+      for (Pack p : this.packs)
       {
-        if ((p.getCreator().toLowerCase().contains(searchText.toLowerCase())) && (!all.contains(p)) && 
+        if ((p.getCreator().toLowerCase().contains(this.searchText.toLowerCase())) && (!all.contains(p)) && 
           (!isHiddenPack(p))) {
           all.add(p);
         }
-        if ((p.getName().toLowerCase().contains(searchText.toLowerCase())) && (!all.contains(p)) && 
+        if ((p.getName().toLowerCase().contains(this.searchText.toLowerCase())) && (!all.contains(p)) && 
           (!isHiddenPack(p))) {
           all.add(p);
         }
-        if ((p.getDesc().toLowerCase().contains(searchText.toLowerCase())) && (!all.contains(p)) && 
+        if ((p.getDesc().toLowerCase().contains(this.searchText.toLowerCase())) && (!all.contains(p)) && 
           (!isHiddenPack(p))) {
           all.add(p);
         }
       }
       return all;
     }
-    return packs;
+    return this.packs;
   }
   
   public boolean isHiddenPack(Pack pack)
@@ -144,43 +144,43 @@ public class ResourcePacks24
   
   public String getPath()
   {
-    return path;
+    return this.path;
   }
   
   public ArrayList<String> getDeletedPacks()
   {
-    return deletedPacks;
+    return this.deletedPacks;
   }
   
   public int getAnimatedProgress()
   {
-    return animatedProgress;
+    return this.animatedProgress;
   }
   
   public IconDownloader getIconDownloader()
   {
-    return iconDownloader;
+    return this.iconDownloader;
   }
   
   public void resetProgress()
   {
-    progress = 0;
-    animatedProgress = 0;
+    this.progress = 0;
+    this.animatedProgress = 0;
   }
   
   public int getProgress()
   {
-    return progress;
+    return this.progress;
   }
   
   public DrawUtils getDraw()
   {
-    return draw;
+    return this.draw;
   }
   
   public boolean isSortModeVotes()
   {
-    return sortModeVotes;
+    return this.sortModeVotes;
   }
   
   public void setSortModeVotes(boolean sortModeVotes)
@@ -190,12 +190,12 @@ public class ResourcePacks24
   
   public void setSelectedPack(Pack pack)
   {
-    selectedPack = pack;
+    this.selectedPack = pack;
   }
   
   public Pack getSelectedPack()
   {
-    return selectedPack;
+    return this.selectedPack;
   }
   
   public void setSearchText(String searchText)
@@ -205,17 +205,17 @@ public class ResourcePacks24
   
   public String getSearchText()
   {
-    return searchText;
+    return this.searchText;
   }
   
   public ArrayList<RPTag> getRpTags()
   {
-    return rpTags;
+    return this.rpTags;
   }
   
   public EnumPackSorting getSorting()
   {
-    return sorting;
+    return this.sorting;
   }
   
   public void setPath(String path)
@@ -225,18 +225,18 @@ public class ResourcePacks24
   
   public void updateAnimatedProgress()
   {
-    if (progress > animatedProgress) {
-      if (progress - 6 > animatedProgress) {
-        animatedProgress += 5;
+    if (this.progress > this.animatedProgress) {
+      if (this.progress - 6 > this.animatedProgress) {
+        this.animatedProgress += 5;
       } else {
-        animatedProgress += 1;
+        this.animatedProgress += 1;
       }
     }
-    if (progress < animatedProgress) {
-      if (progress + 6 < animatedProgress) {
-        animatedProgress -= 5;
+    if (this.progress < this.animatedProgress) {
+      if (this.progress + 6 < this.animatedProgress) {
+        this.animatedProgress -= 5;
       } else {
-        animatedProgress -= 1;
+        this.animatedProgress -= 1;
       }
     }
   }
@@ -244,7 +244,7 @@ public class ResourcePacks24
   public void setProgress(int progress)
   {
     if (progress == 0) {
-      animatedProgress = progress;
+      this.animatedProgress = progress;
     }
     this.progress = progress;
   }
@@ -262,31 +262,31 @@ public class ResourcePacks24
   
   public void onLoad()
   {
-    draw = new DrawUtils();
-    iconDownloader = new IconDownloader();
+    this.draw = new DrawUtils();
+    this.iconDownloader = new IconDownloader();
     new PackInfoDownloader(new PackInfoCallback()
     {
       public void result(ArrayList<Pack> list)
       {
-        packs = list;
+        ResourcePacks24.this.packs = list;
       }
       
       public void progress(int i)
       {
-        progress = i;
+        ResourcePacks24.this.progress = i;
       }
     });
-    rpTags.clear();
-    rpTags.add(new RPTag("PvP", true));
-    rpTags.add(new RPTag("Hardcore Games", true));
-    rpTags.add(new RPTag("Survival Games", true));
-    rpTags.add(new RPTag("UHC", true));
-    rpTags.add(new RPTag("Potion PvP", true));
-    rpTags.add(new RPTag("Bedwars", true));
-    rpTags.add(new RPTag("Skywars", true));
-    rpTags.add(new RPTag("SMYP", true));
-    rpTags.add(new RPTag("YouTube", true));
-    rpTags.add(new RPTag("Premium", true));
+    this.rpTags.clear();
+    this.rpTags.add(new RPTag("PvP", true));
+    this.rpTags.add(new RPTag("Hardcore Games", true));
+    this.rpTags.add(new RPTag("Survival Games", true));
+    this.rpTags.add(new RPTag("UHC", true));
+    this.rpTags.add(new RPTag("Potion PvP", true));
+    this.rpTags.add(new RPTag("Bedwars", true));
+    this.rpTags.add(new RPTag("Skywars", true));
+    this.rpTags.add(new RPTag("SMYP", true));
+    this.rpTags.add(new RPTag("YouTube", true));
+    this.rpTags.add(new RPTag("Premium", true));
     
     rpConfig();
     System.out.println("[Resourcepack24] Loaded modification!");
@@ -296,7 +296,7 @@ public class ResourcePacks24
   {
     this.sorting = sorting;
     if (sorting == EnumPackSorting.LATEST) {
-      Collections.sort(packs, new Comparator()
+      Collections.sort(this.packs, new Comparator()
       {
         public int compare(Pack pack1, Pack pack2)
         {
@@ -304,18 +304,18 @@ public class ResourcePacks24
         }
       });
     } else if (sorting == EnumPackSorting.TOP) {
-      Collections.sort(packs, new Comparator()
+      Collections.sort(this.packs, new Comparator()
       {
         public int compare(Pack pack1, Pack pack2)
         {
-          if (sortModeVotes) {
+          if (ResourcePacks24.this.sortModeVotes) {
             return pack2.getVotes() - pack1.getVotes();
           }
           return pack2.getDownloads() - pack1.getDownloads();
         }
       });
     } else {
-      Collections.sort(packs, new Comparator()
+      Collections.sort(this.packs, new Comparator()
       {
         public int compare(Pack pack1, Pack pack2)
         {
@@ -327,7 +327,7 @@ public class ResourcePacks24
   
   private void rpConfig()
   {
-    final File rpFile = new File(Av, "rp24.txt");
+    final File rpFile = new File(ave.A().v, "rp24.txt");
     final Gson gson = new Gson();
     if (rpFile.exists())
     {
@@ -341,7 +341,7 @@ public class ResourcePacks24
         }
         in.close();
         ArrayList<String> configList = (ArrayList)gson.fromJson(json, ArrayList.class);
-        deletedPacks.addAll(configList);
+        this.deletedPacks.addAll(configList);
         System.out.println("[Resourcepack24] Loaded config file!");
         for (String packName : configList)
         {
@@ -368,13 +368,13 @@ public class ResourcePacks24
     {
       public void run()
       {
-        if (!getDeletedPacks().isEmpty()) {
+        if (!ResourcePacks24.this.getDeletedPacks().isEmpty()) {
           try
           {
             if (!rpFile.exists()) {
               rpFile.createNewFile();
             }
-            String json = gson.toJson(getDeletedPacks());
+            String json = gson.toJson(ResourcePacks24.this.getDeletedPacks());
             FileWriter writer = new FileWriter(rpFile);
             writer.write(json);
             writer.flush();

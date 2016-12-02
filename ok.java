@@ -5,24 +5,24 @@ public class ok
   
   public ok(oj ☃, long ☃, long ☃, float ☃)
   {
-    a = ☃;
-    b = a(☃, ☃, ☃, ☃);
+    this.a = ☃;
+    this.b = a(☃, ☃, ☃, ☃);
   }
   
   public float b()
   {
-    return b;
+    return this.b;
   }
   
   public float c()
   {
-    if (b < 2.0F) {
+    if (this.b < 2.0F) {
       return 0.0F;
     }
-    if (b > 4.0F) {
+    if (this.b > 4.0F) {
       return 1.0F;
     }
-    return (b - 2.0F) / 2.0F;
+    return (this.b - 2.0F) / 2.0F;
   }
   
   private float a(oj ☃, long ☃, long ☃, float ☃)

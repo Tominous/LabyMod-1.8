@@ -34,7 +34,7 @@ class abj$a
         if (☃.b() == zy.cE)
         {
           ☃ = ☃.k();
-          b = 1;
+          ☃.b = 1;
           break;
         }
       }

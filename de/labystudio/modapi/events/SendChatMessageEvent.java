@@ -23,17 +23,17 @@ public class SendChatMessageEvent
   
   public void setCancelled(boolean cancel)
   {
-    cancelled = cancel;
+    this.cancelled = cancel;
   }
   
   public boolean isCancelled()
   {
-    return cancelled;
+    return this.cancelled;
   }
   
   public String getMessage()
   {
-    return message;
+    return this.message;
   }
   
   public Map<Listener, List<Method>> getListenerMethods()

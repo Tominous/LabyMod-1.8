@@ -19,7 +19,7 @@ public class GuiAccountManager
   
   public GuiAccountManager(axu lastScreen)
   {
-    draw = getInstancedraw;
+    this.draw = LabyMod.getInstance().draw;
     this.lastScreen = lastScreen;
   }
   
@@ -33,23 +33,23 @@ public class GuiAccountManager
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    n.clear();
+    this.n.clear();
     
-    username = new ModGuiTextField(-1, draw.fontRenderer, l / 2 - 100, m / 2 - 50, 200, 20);
-    username.setBlacklistWord(" ");
-    username.a(AccountManager.accountManagerUsername);
-    username.f(64);
-    password = new ModGuiTextField(-1, draw.fontRenderer, l / 2 - 100, m / 2, 200, 20);
-    password.setBlacklistWord(" ");
-    password.a(AccountManager.accountManagerPassword);
-    password.setPasswordBox(true);
-    password.f(64);
+    this.username = new ModGuiTextField(-1, this.draw.fontRenderer, this.l / 2 - 100, this.m / 2 - 50, 200, 20);
+    this.username.setBlacklistWord(" ");
+    this.username.a(AccountManager.accountManagerUsername);
+    this.username.f(64);
+    this.password = new ModGuiTextField(-1, this.draw.fontRenderer, this.l / 2 - 100, this.m / 2, 200, 20);
+    this.password.setBlacklistWord(" ");
+    this.password.a(AccountManager.accountManagerPassword);
+    this.password.setPasswordBox(true);
+    this.password.f(64);
     
-    done = new avs(0, l / 2 - 100, m / 2 + 28, "Login");
-    n.add(done);
+    this.done = new avs(0, this.l / 2 - 100, this.m / 2 + 28, "Login");
+    this.n.add(this.done);
     
-    cancel = new avs(1, l / 2 - 100, m / 2 + 53, "Cancel");
-    n.add(cancel);
+    this.cancel = new avs(1, this.l / 2 - 100, this.m / 2 + 53, "Cancel");
+    this.n.add(this.cancel);
     
     super.b();
   }
@@ -57,35 +57,35 @@ public class GuiAccountManager
   protected void a(char typedChar, int keyCode)
     throws IOException
   {
-    if (!login)
+    if (!this.login)
     {
-      if (username.a(typedChar, keyCode)) {
-        AccountManager.accountManagerUsername = username.b();
+      if (this.username.a(typedChar, keyCode)) {
+        AccountManager.accountManagerUsername = this.username.b();
       }
-      if (password.a(typedChar, keyCode)) {
-        AccountManager.accountManagerPassword = password.b();
+      if (this.password.a(typedChar, keyCode)) {
+        AccountManager.accountManagerPassword = this.password.b();
       }
     }
-    if ((done.l) && (
+    if ((this.done.l) && (
       (keyCode == 28) || (keyCode == 156))) {
-      a(done);
+      a(this.done);
     }
     if (keyCode == 15) {
-      if (!password.m())
+      if (!this.password.m())
       {
-        username.b(false);
-        password.b(true);
+        this.username.b(false);
+        this.password.b(true);
       }
       else
       {
-        username.b(true);
-        password.b(false);
+        this.username.b(true);
+        this.password.b(false);
       }
     }
     if (keyCode == 1)
     {
-      if (login) {
-        j.a(lastScreen);
+      if (this.login) {
+        this.j.a(this.lastScreen);
       }
       return;
     }
@@ -95,8 +95,8 @@ public class GuiAccountManager
   protected void a(int mouseX, int mouseY, int mouseButton)
     throws IOException
   {
-    username.a(mouseX, mouseY, mouseButton);
-    password.a(mouseX, mouseY, mouseButton);
+    this.username.a(mouseX, mouseY, mouseButton);
+    this.password.a(mouseX, mouseY, mouseButton);
     super.a(mouseX, mouseY, mouseButton);
   }
   
@@ -109,13 +109,13 @@ public class GuiAccountManager
     throws IOException
   {
     super.a(button);
-    if (k == 0)
+    if (button.k == 0)
     {
-      login = true;
+      this.login = true;
       new Login().start();
     }
-    if (k == 1) {
-      j.a(lastScreen);
+    if (button.k == 1) {
+      this.j.a(this.lastScreen);
     }
   }
   
@@ -126,18 +126,18 @@ public class GuiAccountManager
     
     public void run()
     {
-      String result = AccountManager.login(username.b(), password.b());
+      String result = AccountManager.login(GuiAccountManager.this.username.b(), GuiAccountManager.this.password.b());
       if (result.isEmpty())
       {
-        badLogin = "";
-        j.a(lastScreen);
+        GuiAccountManager.this.badLogin = "";
+        GuiAccountManager.this.j.a(GuiAccountManager.this.lastScreen);
       }
       else
       {
-        badLogin = result;
-        time = System.currentTimeMillis();
+        GuiAccountManager.this.badLogin = result;
+        GuiAccountManager.this.time = System.currentTimeMillis();
       }
-      login = false;
+      GuiAccountManager.this.login = false;
     }
   }
   
@@ -145,29 +145,29 @@ public class GuiAccountManager
   {
     c();
     
-    done.l = (!login);
-    cancel.l = (!login);
+    this.done.l = (!this.login);
+    this.cancel.l = (!this.login);
     
-    draw.drawString("Username/Email:", l / 2 - 100, m / 2 - 63);
-    draw.drawString("Password:", l / 2 - 100, m / 2 - 13);
-    if (!badLogin.isEmpty())
+    this.draw.drawString("Username/Email:", this.l / 2 - 100, this.m / 2 - 63);
+    this.draw.drawString("Password:", this.l / 2 - 100, this.m / 2 - 13);
+    if (!this.badLogin.isEmpty())
     {
       String c = de.labystudio.utils.Color.cl("f");
-      a(0, 10, l, 30, java.awt.Color.RED.getRGB());
-      if ((time + 1000L > System.currentTimeMillis()) && (flash)) {
-        draw.drawCenteredString(c + "Error: " + badLogin, l / 2 - 1, 16);
+      a(0, 10, this.l, 30, java.awt.Color.RED.getRGB());
+      if ((this.time + 1000L > System.currentTimeMillis()) && (this.flash)) {
+        this.draw.drawCenteredString(c + "Error: " + this.badLogin, this.l / 2 - 1, 16);
       } else {
-        draw.drawCenteredString(c + "Error: " + badLogin, l / 2, 16);
+        this.draw.drawCenteredString(c + "Error: " + this.badLogin, this.l / 2, 16);
       }
-      flash = (!flash);
+      this.flash = (!this.flash);
     }
-    if (login)
+    if (this.login)
     {
-      a(0, 10, l, 30, java.awt.Color.BLUE.getRGB());
-      draw.drawCenteredString("Logging in..", l / 2 - 1, 16);
+      a(0, 10, this.l, 30, java.awt.Color.BLUE.getRGB());
+      this.draw.drawCenteredString("Logging in..", this.l / 2 - 1, 16);
     }
-    username.g();
-    password.g();
+    this.username.g();
+    this.password.g();
     
     super.a(mouseX, mouseY, partialTicks);
   }

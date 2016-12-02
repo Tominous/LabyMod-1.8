@@ -37,10 +37,10 @@ public class GuiModSettings
   
   public GuiModSettings(axu p_i1046_1_, avh p_i1046_2_)
   {
-    draw = getInstancedraw;
-    field_146441_g = p_i1046_1_;
-    game_settings_1 = p_i1046_2_;
-    currentTab = "Ingame";
+    this.draw = LabyMod.getInstance().draw;
+    this.field_146441_g = p_i1046_1_;
+    this.game_settings_1 = p_i1046_2_;
+    this.currentTab = "Ingame";
   }
   
   public boolean slider = false;
@@ -49,19 +49,19 @@ public class GuiModSettings
   
   public void b()
   {
-    n.clear();
+    this.n.clear();
     
-    tabY = 28;
+    this.tabY = 28;
     
-    sy = (m / 7);
-    if (sy > 60) {
-      sy = 60;
+    this.sy = (this.m / 7);
+    if (this.sy > 60) {
+      this.sy = 60;
     }
-    ey = (m / 14);
-    if (ey > 21) {
-      ey = 21;
+    this.ey = (this.m / 14);
+    if (this.ey > 21) {
+      this.ey = 21;
     }
-    n.add(new avs(1, 2, m - 21, 99, 20, "Done"));
+    this.n.add(new avs(1, 2, this.m - 21, 99, 20, "Done"));
     
     addTab("Ingame");
     addTab("Formatting");
@@ -78,39 +78,39 @@ public class GuiModSettings
   
   public void initSettings(boolean r)
   {
-    y = 46;
-    x = 120;
-    if (currentTab.equals("Ingame"))
+    this.y = 46;
+    this.x = 120;
+    if (this.currentTab.equals("Ingame"))
     {
-      addToggle(r, Boolean.valueOf(settingspotionEffects), 6, "Potion Effects", "Shows your current potion effects");
-      addToggle(r, Boolean.valueOf(settingsshowOnlinePlayers), 5, "Online Players", "Shows how many players are online");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.potionEffects), 6, "Potion Effects", "Shows your current potion effects");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showOnlinePlayers), 5, "Online Players", "Shows how many players are online");
       
-      addToggle(r, Boolean.valueOf(settingsshowCoords), 22, "Show coords", "Shows the coordinates");
-      addToggle(r, Boolean.valueOf(settingsshowServerIP), 34, "Show Server IP", "Displays the IP adress of the server you're currently playing on.");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showCoords), 22, "Show coords", "Shows the coordinates");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showServerIP), 34, "Show Server IP", "Displays the IP adress of the server you're currently playing on.");
       
-      addToggle(r, Boolean.valueOf(settingsshowFPS), 37, "Show FPS", "Shows the FPS");
-      addToggle(r, Boolean.valueOf(settingsshowKills), 51, "Kills", "Shows the amount of killed players (In Hardcore Games and Survival Games)");
-      addToggle(r, Boolean.valueOf(settingsshowPing), 33, "Show ping", "Shows your current ping");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showFPS), 37, "Show FPS", "Shows the FPS");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showKills), 51, "Kills", "Shows the amount of killed players (In Hardcore Games and Survival Games)");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showPing), 33, "Show ping", "Shows your current ping");
       
-      addToggle(r, Boolean.valueOf(settingsshowBossBar), 63, "Bossbar", "This option allows you to remove the boss health bar, but the text above it will still be displayed.");
-      addToggle(r, Boolean.valueOf(settingsshowClock), 83, "Clock", "Displays your current real life time.");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showBossBar), 63, "Bossbar", "This option allows you to remove the boss health bar, but the text above it will still be displayed.");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showClock), 83, "Clock", "Displays your current real life time.");
       
-      addToggle(r, Boolean.valueOf(settingsshowArrow), 93, "Arrow amount", "Displays the current amount of arrows in your inventory");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showArrow), 93, "Arrow amount", "Displays the current amount of arrows in your inventory");
       
-      addToggle(r, Boolean.valueOf(settingsshowBiome), 97, "Show biome", "Shows the world biome of your position");
-      addToggle(r, Boolean.valueOf(settingsshowDate), 106, "Show Date", "Shows the date ingame");
-      addToggle(r, Boolean.valueOf(settingsshowLiveTicker), 107, "EM LIVETICKER", "Shows the EM LIVE-STATS");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showBiome), 97, "Show biome", "Shows the world biome of your position");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showDate), 106, "Show Date", "Shows the date ingame");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showLiveTicker), 107, "EM LIVETICKER", "Shows the EM LIVE-STATS");
     }
-    if (currentTab.equals("Formatting"))
+    if (this.currentTab.equals("Formatting"))
     {
-      addSwitchNoOff(r, settingslayout, 8, 9, "Colon", 10, "Brackets", 11, "Angle brackets", "Gui layout");
+      addSwitchNoOff(r, ConfigManager.settings.layout, 8, 9, "Colon", 10, "Brackets", 11, "Angle brackets", "Gui layout");
       
-      addToggle(r, Boolean.valueOf(settingsbold), 29, "Bold", "");
-      addToggle(r, Boolean.valueOf(settingsunderline), 30, "Underline", "");
-      addToggle(r, Boolean.valueOf(settingsitalic), 31, "Italic", "");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.bold), 29, "Bold", "");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.underline), 30, "Underline", "");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.italic), 31, "Italic", "");
       
       addSliderCoords(r, "Number precision");
-      addToggle(r, Boolean.valueOf(settingstwelveHourClock), 104, "12-hour clock", "It displays the 12-hour clock (0-12 hours)");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.twelveHourClock), 104, "12-hour clock", "It displays the 12-hour clock (0-12 hours)");
       
       addSliderColor(r, "Prefix", 1);
       addSliderColor(r, "Brackets", 2);
@@ -119,110 +119,110 @@ public class GuiModSettings
       addSliderColor(r, "Title", 4);
       addSliderColor(r, "Info", 5);
       
-      draw.drawString(Color.c(4) + "Preview:", 108.0D, 5.0D);
-      draw.drawString(ModGui.createLabel("X", ModGui.getX()), 108.0D, 15.0D);
+      this.draw.drawString(Color.c(4) + "Preview:", 108.0D, 5.0D);
+      this.draw.drawString(ModGui.createLabel("X", ModGui.getX()), 108.0D, 15.0D);
     }
-    if (currentTab.equals("Animations"))
+    if (this.currentTab.equals("Animations"))
     {
-      addToggleA(r, Boolean.valueOf(settingsoldDMG), 32, "Damage", "In the 1.8. a damaged player will flash up red for a short time. In the 1.7 the armor will flash up aswell.");
-      addToggleA(r, Boolean.valueOf(settingsoldHearts), 40, "Heart", "In the 1.8 your hearts that you lost will light up in white shortly. This does not happen in 1.7");
-      addToggleA(r, Boolean.valueOf(settingsoldBow), 41, "Bow", "In the 1.8 the bow is scaled different, in the 1.7 we scaled it as u are used to it");
-      addToggleCustom(r, Boolean.valueOf(settingsoldTablist), 58, "Tablist", "1.8 Design", "1.7 Design", "The 1.8 Tablist is showing you more information such as playerheads and is sorted alphabetically");
-      addToggleA(r, Boolean.valueOf(settingsoldBlockBuild), 81, "BlockBuild", "In 1.7 it was possible to build a block and destory it the same time. We integrated this feature into 1.8 - This feature is only available on GommeHD.net");
-      addToggleA(r, Boolean.valueOf(settingsoldSword), 42, "Sword", "In the 1.7 setting you will see the typical Swordblockanimation in third Personview");
-      addToggleA(r, Boolean.valueOf(settingsoldBlockhit), 43, "Blockhit", "the 1.8 does not support the blockhit animation. By choosing 1.7 you will see the wellknown animation again");
-      addToggleA(r, Boolean.valueOf(settingsoldFishing), 46, "Fishing", "In the 1.8 the rod is scaled different and shown in another angle, in the 1.7 we scaled it as u are used to it");
-      addToggleA(r, Boolean.valueOf(settingsoldSneak), 79, "Sneaking", "In the 1.7 sneaking is made smoother similar to the sneaking animation in 1.7 - This feature is only available on GommeHD.net");
-      addToggleCustom(r, Boolean.valueOf(settingsoldInventory), 102, "Inventory", Color.cl("c") + "1.8 Shift", "1.7 Shift", "In 1.7, the inventory will stay in the middle of the screen, regardless of whether you've got an active effect or not. In 1.8, the inventory is shifted to the right, if you've got an active effect.");
+      addToggleA(r, Boolean.valueOf(ConfigManager.settings.oldDMG), 32, "Damage", "In the 1.8. a damaged player will flash up red for a short time. In the 1.7 the armor will flash up aswell.");
+      addToggleA(r, Boolean.valueOf(ConfigManager.settings.oldHearts), 40, "Heart", "In the 1.8 your hearts that you lost will light up in white shortly. This does not happen in 1.7");
+      addToggleA(r, Boolean.valueOf(ConfigManager.settings.oldBow), 41, "Bow", "In the 1.8 the bow is scaled different, in the 1.7 we scaled it as u are used to it");
+      addToggleCustom(r, Boolean.valueOf(ConfigManager.settings.oldTablist), 58, "Tablist", "1.8 Design", "1.7 Design", "The 1.8 Tablist is showing you more information such as playerheads and is sorted alphabetically");
+      addToggleA(r, Boolean.valueOf(ConfigManager.settings.oldBlockBuild), 81, "BlockBuild", "In 1.7 it was possible to build a block and destory it the same time. We integrated this feature into 1.8 - This feature is only available on GommeHD.net");
+      addToggleA(r, Boolean.valueOf(ConfigManager.settings.oldSword), 42, "Sword", "In the 1.7 setting you will see the typical Swordblockanimation in third Personview");
+      addToggleA(r, Boolean.valueOf(ConfigManager.settings.oldBlockhit), 43, "Blockhit", "the 1.8 does not support the blockhit animation. By choosing 1.7 you will see the wellknown animation again");
+      addToggleA(r, Boolean.valueOf(ConfigManager.settings.oldFishing), 46, "Fishing", "In the 1.8 the rod is scaled different and shown in another angle, in the 1.7 we scaled it as u are used to it");
+      addToggleA(r, Boolean.valueOf(ConfigManager.settings.oldSneak), 79, "Sneaking", "In the 1.7 sneaking is made smoother similar to the sneaking animation in 1.7 - This feature is only available on GommeHD.net");
+      addToggleCustom(r, Boolean.valueOf(ConfigManager.settings.oldInventory), 102, "Inventory", Color.cl("c") + "1.8 Shift", "1.7 Shift", "In 1.7, the inventory will stay in the middle of the screen, regardless of whether you've got an active effect or not. In 1.8, the inventory is shifted to the right, if you've got an active effect.");
     }
-    if (currentTab.equals("Gui Settings"))
+    if (this.currentTab.equals("Gui Settings"))
     {
-      addSwitch(r, settingshud, 12, 13, "Durability only", 14, "Durability/Max", 15, "Item only", 44, "Percent", "Armor HUD");
-      addMToggle(r, "Direction F Layout", new SettingsButton[] { new SettingsButton(19, "Number", settingsfLayoutNumber), new SettingsButton(20, "Cardinal Direction", settingsfLayoutDirection), new SettingsButton(21, "X and Z", settingsfLayoutXAndZ) }, "Shows the F Direction");
+      addSwitch(r, ConfigManager.settings.hud, 12, 13, "Durability only", 14, "Durability/Max", 15, "Item only", 44, "Percent", "Armor HUD");
+      addMToggle(r, "Direction F Layout", new SettingsButton[] { new SettingsButton(19, "Number", ConfigManager.settings.fLayoutNumber), new SettingsButton(20, "Cardinal Direction", ConfigManager.settings.fLayoutDirection), new SettingsButton(21, "X and Z", ConfigManager.settings.fLayoutXAndZ) }, "Shows the F Direction");
       
-      addMToggle(r, "Direction HUD", new SettingsButton[] { new SettingsButton(2, "F Coordinate", settingsradarCoordinate), new SettingsButton(3, "Cardinal Direction", settingsradarDirection) }, "Shows the current direction you are facing at (F Coordinate) in the top of the screen");
+      addMToggle(r, "Direction HUD", new SettingsButton[] { new SettingsButton(2, "F Coordinate", ConfigManager.settings.radarCoordinate), new SettingsButton(3, "Cardinal Direction", ConfigManager.settings.radarDirection) }, "Shows the current direction you are facing at (F Coordinate) in the top of the screen");
       
       addSliderSize(r, "Mod Scale");
       
-      addToggleS(r, settingspotionsize, 50, "Potion size");
-      addToggleCustomNC(r, Boolean.valueOf(settingsguiPositionRight), 59, "Gui position", "Left", "Right", "Change the position of all important informations");
-      addToggleCustomNC(r, Boolean.valueOf(settingsonlineFriendsPositionOnTop), 60, "Online Friends position", "Bottom", "Top", "Change the position of the ingame friendlist");
-      addToggleCustomNC(r, Boolean.valueOf(settingsarmorHudPositionOnTop), 86, "Armor HUD position", "Hotbar", "Top", "Change the position of the armor hud");
+      addToggleS(r, ConfigManager.settings.potionsize, 50, "Potion size");
+      addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.guiPositionRight), 59, "Gui position", "Left", "Right", "Change the position of all important informations");
+      addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.onlineFriendsPositionOnTop), 60, "Online Friends position", "Bottom", "Top", "Change the position of the ingame friendlist");
+      addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.armorHudPositionOnTop), 86, "Armor HUD position", "Hotbar", "Top", "Change the position of the armor hud");
       
-      draw.drawString(Color.c(4) + "Preview:", 108.0D, 5.0D);
-      draw.drawString(ModGui.createLabel("X", ModGui.getX()), 108.0D, 15.0D);
+      this.draw.drawString(Color.c(4) + "Preview:", 108.0D, 5.0D);
+      this.draw.drawString(ModGui.createLabel("X", ModGui.getX()), 108.0D, 15.0D);
     }
-    if (currentTab.equals("Extras"))
+    if (this.currentTab.equals("Extras"))
     {
-      addToggle(r, Boolean.valueOf(settingsbox), 7, "HG Box", "All game information from Brawl Hardcore Games in an information box");
-      addToggle(r, Boolean.valueOf(settingsclickTest), 90, "Clicktest", "Test your clickspeed");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.box), 7, "HG Box", "All game information from Brawl Hardcore Games in an information box");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.clickTest), 90, "Clicktest", "Test your clickspeed");
       
-      addToggle(r, Boolean.valueOf(settingslavaTime), 35, "Lavachallenge Timer", "It starts a Timer as you touch lava");
-      addToggle(r, Boolean.valueOf(settingsshowMyName), 55, "Show my Name", "It will displays your own ingame name above your Head");
-      addToggle(r, Boolean.valueOf(settingscapes), 62, "Capes", "Enable/Disable all Capes");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.lavaTime), 35, "Lavachallenge Timer", "It starts a Timer as you touch lava");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showMyName), 55, "Show my Name", "It will displays your own ingame name above your Head");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.capes), 62, "Capes", "Enable/Disable all Capes");
       
-      addToggle(r, Boolean.valueOf(settingsfoodSaturation), 52, "Food saturation", "It displays how long you are saturated");
-      addToggle(r, Boolean.valueOf(settingssmoothFPS), 48, "Smooth FPS", "The FPS display will be updated more often");
-      addToggle(r, Boolean.valueOf(settingsafkTimer), 56, "AFK Timer", "Its starts a timer once you are AFK");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.foodSaturation), 52, "Food saturation", "It displays how long you are saturated");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.smoothFPS), 48, "Smooth FPS", "The FPS display will be updated more often");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.afkTimer), 56, "AFK Timer", "Its starts a timer once you are AFK");
       
-      addToggle(r, Boolean.valueOf(settingstabPing), 45, "Ping on Tab", "You can see the ping of every player on the tablist");
-      addToggle(r, Boolean.valueOf(settingsshowOnlineFriends), 57, "Show Online Friends", "Shows the player head of all online friends in the top or bottom of the screen");
-      addToggle(r, Boolean.valueOf(settingsspeedFOV), 71, "SpeedFOV", "If this option is set to OFF, the speed potion effect will no longer increase your FOV.");
-      addToggleCustomNC(r, Boolean.valueOf(settingsleftHand), 87, "Main hand", "Right", "Left", "Swap the position of your main hand");
-      addToggle(r, Boolean.valueOf(settingsleftBow), 92, "Swap bow", "Swap the position of your hand if you holding a bow");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.tabPing), 45, "Ping on Tab", "You can see the ping of every player on the tablist");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showOnlineFriends), 57, "Show Online Friends", "Shows the player head of all online friends in the top or bottom of the screen");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.speedFOV), 71, "SpeedFOV", "If this option is set to OFF, the speed potion effect will no longer increase your FOV.");
+      addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.leftHand), 87, "Main hand", "Right", "Left", "Swap the position of your main hand");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.leftBow), 92, "Swap bow", "Swap the position of your hand if you holding a bow");
       
-      addToggle(r, Boolean.valueOf(settingsspotfiyTrack), 96, "Spotify Track", "Shows you your current playing spotify track");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.spotfiyTrack), 96, "Spotify Track", "Shows you your current playing spotify track");
       
-      addToggle(r, Boolean.valueOf(settingscosmetics), 98, "Cosmetics", "Shows cosmetics like wings, hats..");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.cosmetics), 98, "Cosmetics", "Shows cosmetics like wings, hats..");
       
-      addToggle(r, Boolean.valueOf(settingshiveAutoScramble), 101, "Hive autoscramble", "Automaticly run the command '/scramble' if you join a SG Server");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.hiveAutoScramble), 101, "Hive autoscramble", "Automaticly run the command '/scramble' if you join a SG Server");
       
-      addToggle(r, Boolean.valueOf(settingsapi), 105, "LabyMod API", "This option enable/disable all addons (ToggleSprint, DamageIndicator, ItemPhysics..)");
-      addToggle(r, Boolean.valueOf(settingscontroller), 108, "Controller BETA", "Play minecraft with your controller (Restart Minecraft and install a driver for your controller - Tested on XBOX 360 CONTROLLER + Windows 10)");
-      addToggle(r, Boolean.valueOf(settingsmineconParticle), 114, "Minecon Particle", "All original Minecon capes have some sparkling particles (Restart required)");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.api), 105, "LabyMod API", "This option enable/disable all addons (ToggleSprint, DamageIndicator, ItemPhysics..)");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.controller), 108, "Controller BETA", "Play minecraft with your controller (Restart Minecraft and install a driver for your controller - Tested on XBOX 360 CONTROLLER + Windows 10)");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.mineconParticle), 114, "Minecon Particle", "All original Minecon capes have some sparkling particles (Restart required)");
     }
-    if (currentTab.equals("Server Support"))
+    if (this.currentTab.equals("Server Support"))
     {
-      addToggle(r, Boolean.valueOf(settingsgameBrawl), 39, "Brawl", "Shows the game information about Brawl");
-      addToggle(r, Boolean.valueOf(settingsgameTimolia), 16, "Timolia", "Shows the game information about Timolia");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.gameBrawl), 39, "Brawl", "Shows the game information about Brawl");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.gameTimolia), 16, "Timolia", "Shows the game information about Timolia");
       
-      addToggle(r, Boolean.valueOf(settingsgamePlayMinity), 17, "PlayMinity", "Shows the game information about PlayMinity");
-      addToggle(r, Boolean.valueOf(settingsgameGommeHD), 18, "GommeHD", "Shows the game information about GommeHD");
-      addToggle(r, Boolean.valueOf(settingsgameHiveMC), 74, "HiveMC", "Shows the game information about HiveMC");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.gamePlayMinity), 17, "PlayMinity", "Shows the game information about PlayMinity");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.gameGommeHD), 18, "GommeHD", "Shows the game information about GommeHD");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.gameHiveMC), 74, "HiveMC", "Shows the game information about HiveMC");
     }
-    if (currentTab.equals("GommeHD.net"))
+    if (this.currentTab.equals("GommeHD.net"))
     {
-      addToggleCustomNC(r, Boolean.valueOf(settingsgommePosLeft), 73, "BedWars Timer", "Right", "Left", "Change the position of the GommeHD Gold cooldown");
+      addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.gommePosLeft), 73, "BedWars Timer", "Right", "Left", "Change the position of the GommeHD Gold cooldown");
       
-      addToggle(r, Boolean.valueOf(settingsautoLeave), 80, "Auto Leave", "If your party doesn't find a team in bedwars you will automatically connect to the hub.");
-      addToggle(r, Boolean.valueOf(settingsshowBWTimer), 75, "BedWars Timer", "Indicates the time until the next gold/iron will spawn at BedWars");
-      addToggle(r, Boolean.valueOf(settingsshowNickname), 23, "Show Nickname", "Displays your nickname of the youtuber-nick plugin (on GommeHD.net).");
-      addToggle(r, Boolean.valueOf(settingsskyblock), 109, "Show Skyblock Owner", "Displays the island owner in Skyblock (on GommeHD for example).");
-      addToggle(r, Boolean.valueOf(settingsgommeBedTimer), 112, "Bed Percentage", "Displays the block break percentage of the bed in bedwars (GommeHD)");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.autoLeave), 80, "Auto Leave", "If your party doesn't find a team in bedwars you will automatically connect to the hub.");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showBWTimer), 75, "BedWars Timer", "Indicates the time until the next gold/iron will spawn at BedWars");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.showNickname), 23, "Show Nickname", "Displays your nickname of the youtuber-nick plugin (on GommeHD.net).");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.skyblock), 109, "Show Skyblock Owner", "Displays the island owner in Skyblock (on GommeHD for example).");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.gommeBedTimer), 112, "Bed Percentage", "Displays the block break percentage of the bed in bedwars (GommeHD)");
     }
-    if (currentTab.equals("Menu"))
+    if (this.currentTab.equals("Menu"))
     {
-      addToggle(r, Boolean.valueOf(settingssmoothScroll), 64, "Smooth scrolling", "Reduces the scroll-speed for the Serverlist");
-      addToggle(r, Boolean.valueOf(settingsbackground), 82, "Gui background", "This option allows you to enable and disable the background of the GUI");
-      addToggle(r, Boolean.valueOf(settingsbetterRefresh), 49, "Better Refresh", "Adds an auto refresh button in the multiplayer gui");
-      addToggle(r, Boolean.valueOf(settingsconfirmDisconnect), 61, "Confirm Disconnect", "You have to confirm with pressing the button again if you want to disconnect the server");
-      addToggle(r, Boolean.valueOf(settingsinfoInMenu), 47, "Serverstatus in Menu", "Shows you all server information in the ESCAPE menu (Server icon, motd, slots, online players, ping)");
-      addToggle(r, Boolean.valueOf(settingsdirectConnectInfo), 54, "Directconnect Serverstatus", "Shows you all important server information in the direct connent gui (online players, slots, ping)");
-      addToggle(r, Boolean.valueOf(settingstags), 68, "Tags", "This option allows you to change the names of your friends and costumize them using colorcodes. The nicknames can be seen in the tablist, over their heads and in chat.");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.smoothScroll), 64, "Smooth scrolling", "Reduces the scroll-speed for the Serverlist");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.background), 82, "Gui background", "This option allows you to enable and disable the background of the GUI");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.betterRefresh), 49, "Better Refresh", "Adds an auto refresh button in the multiplayer gui");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.confirmDisconnect), 61, "Confirm Disconnect", "You have to confirm with pressing the button again if you want to disconnect the server");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.infoInMenu), 47, "Serverstatus in Menu", "Shows you all server information in the ESCAPE menu (Server icon, motd, slots, online players, ping)");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.directConnectInfo), 54, "Directconnect Serverstatus", "Shows you all important server information in the direct connent gui (online players, slots, ping)");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.tags), 68, "Tags", "This option allows you to change the names of your friends and costumize them using colorcodes. The nicknames can be seen in the tablist, over their heads and in chat.");
       
-      addToggle(r, Boolean.valueOf(settingsminiGames), 36, "Minigames", "Minigames in Minecraft");
-      addToggle(r, Boolean.valueOf(settingsquickPlay), 84, "QuickPlay", "Shows in the main menu the latest server and your directconnect server");
-      addToggle(r, Boolean.valueOf(settingsstopWatch), 85, "Stopwatch", "A simple stopwatch in Minecraft. It lets you measure the time, which will also be displayed in the GUI.");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.miniGames), 36, "Minigames", "Minigames in Minecraft");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.quickPlay), 84, "QuickPlay", "Shows in the main menu the latest server and your directconnect server");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.stopWatch), 85, "Stopwatch", "A simple stopwatch in Minecraft. It lets you measure the time, which will also be displayed in the GUI.");
       
-      addToggle(r, Boolean.valueOf(settingsmojangStatus), 94, "Mojang Status", "Displays the current offline servers of Mojang in your server list");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.mojangStatus), 94, "Mojang Status", "Displays the current offline servers of Mojang in your server list");
     }
-    if (currentTab.equals("TeamSpeak"))
+    if (this.currentTab.equals("TeamSpeak"))
     {
-      addToggle(r, Boolean.valueOf(settingsteamSpeak), 65, "TeamSpeak", "If you run TeamSpeak you're able to accses it using Minecraft, you'll be able to see channels, join them, etc.");
-      addToggle(r, Boolean.valueOf(settingsalertsTeamSpeak), 4, "TS Alerts", "Shows a message from TeamSpeak as an achievement or chat message");
-      addToggleSub(r, Boolean.valueOf(settingsteamSpakIngameClients), Boolean.valueOf(settingsteamSpeak), 70, "TS Clients", "Showing you who is in the channel and who is currently talking.");
-      addToggleSub(r, Boolean.valueOf(settingsteamSpakIngame), Boolean.valueOf(settingsteamSpeak), 69, "TS Channel", "If this option is on, the channel you're currently in will be displayed below your coordinates.");
-      addToggleCustomNC(r, Boolean.valueOf(settingsteamSpeakAlertTypeChat), 88, "Alert type", "Achievement", "Chat", "With this function you can choose the type of the Teamspeak message. Either as Achievement or in the normal chat.");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.teamSpeak), 65, "TeamSpeak", "If you run TeamSpeak you're able to accses it using Minecraft, you'll be able to see channels, join them, etc.");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.alertsTeamSpeak), 4, "TS Alerts", "Shows a message from TeamSpeak as an achievement or chat message");
+      addToggleSub(r, Boolean.valueOf(ConfigManager.settings.teamSpakIngameClients), Boolean.valueOf(ConfigManager.settings.teamSpeak), 70, "TS Clients", "Showing you who is in the channel and who is currently talking.");
+      addToggleSub(r, Boolean.valueOf(ConfigManager.settings.teamSpakIngame), Boolean.valueOf(ConfigManager.settings.teamSpeak), 69, "TS Channel", "If this option is on, the channel you're currently in will be displayed below your coordinates.");
+      addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.teamSpeakAlertTypeChat), 88, "Alert type", "Achievement", "Chat", "With this function you can choose the type of the Teamspeak message. Either as Achievement or in the normal chat.");
       
       addSliderColor(r, "TS Silent", 6);
       addSliderColor(r, "TS Talking", 7);
@@ -231,249 +231,249 @@ public class GuiModSettings
       addSliderColor(r, "TS Micro muted", 8);
       addSliderColor(r, "TS Sound muted", 9);
     }
-    if (currentTab.equals("Minecraft Chat"))
+    if (this.currentTab.equals("Minecraft Chat"))
     {
-      addToggle(r, Boolean.valueOf(settingschatFilter), 78, "Chat Filter", "You can filter your chat by certain keywords, or commands definded at \"filters\"");
-      addToggle(r, Boolean.valueOf(settingsautoText), 77, "AutoText", "Your previously defined chat messages will be sended by pressing a single key");
-      addToggle(r, Boolean.valueOf(settingsextraChat), 38, "Extra Chat", "You can see all private messages in an extra chat on the right side of the screen");
-      addToggleCustomNC(r, Boolean.valueOf(settingschatAlertType), 89, "LabyMod Chat Notify Type", "Achievement", "Chat", "With this function you can choose the type of the LabyMod Chat message. Either as Achievement or in the normal chat.");
-      addToggleCustomNC(r, Boolean.valueOf(settingschatPositionRight), 91, "Chat Position", "Right", "Left", "The Position of the Minecraft Chat");
-      addToggleCustomNC(r, Boolean.valueOf(settingsmojangStatusChat), 95, "Mojang Status type", "Achievement", "Chat", "With this function you can choose the type of the Mojang Status message. Either as Achievement or in the normal chat.");
-      addToggle(r, Boolean.valueOf(settingsnameHistory), 111, "Minecraft Name History", "Get the full name history of a player in an ingame GUI!");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.chatFilter), 78, "Chat Filter", "You can filter your chat by certain keywords, or commands definded at \"filters\"");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.autoText), 77, "AutoText", "Your previously defined chat messages will be sended by pressing a single key");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.extraChat), 38, "Extra Chat", "You can see all private messages in an extra chat on the right side of the screen");
+      addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.chatAlertType), 89, "LabyMod Chat Notify Type", "Achievement", "Chat", "With this function you can choose the type of the LabyMod Chat message. Either as Achievement or in the normal chat.");
+      addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.chatPositionRight), 91, "Chat Position", "Right", "Left", "The Position of the Minecraft Chat");
+      addToggleCustomNC(r, Boolean.valueOf(ConfigManager.settings.mojangStatusChat), 95, "Mojang Status type", "Achievement", "Chat", "With this function you can choose the type of the Mojang Status message. Either as Achievement or in the normal chat.");
+      addToggle(r, Boolean.valueOf(ConfigManager.settings.nameHistory), 111, "Minecraft Name History", "Get the full name history of a player in an ingame GUI!");
     }
   }
   
   protected void a(avs button)
   {
-    if (k == -1)
+    if (button.k == -1)
     {
-      currentTab = j;
-      if (k != -3) {
+      this.currentTab = button.j;
+      if (button.k != -3) {
         b();
       }
       return;
     }
-    switch (k)
+    switch (button.k)
     {
     case 0: 
-      settingsalertsChat = (!settingsalertsChat);
+      ConfigManager.settings.alertsChat = (!ConfigManager.settings.alertsChat);
       break;
     case 1: 
-      j.a(field_146441_g);
+      this.j.a(this.field_146441_g);
       break;
     case 2: 
-      settingsradarCoordinate = (!settingsradarCoordinate);
+      ConfigManager.settings.radarCoordinate = (!ConfigManager.settings.radarCoordinate);
       break;
     case 3: 
-      settingsradarDirection = (!settingsradarDirection);
+      ConfigManager.settings.radarDirection = (!ConfigManager.settings.radarDirection);
       break;
     case 4: 
-      settingsalertsTeamSpeak = (!settingsalertsTeamSpeak);
+      ConfigManager.settings.alertsTeamSpeak = (!ConfigManager.settings.alertsTeamSpeak);
       break;
     case 5: 
-      settingsshowOnlinePlayers = (!settingsshowOnlinePlayers);
+      ConfigManager.settings.showOnlinePlayers = (!ConfigManager.settings.showOnlinePlayers);
       break;
     case 6: 
-      settingspotionEffects = (!settingspotionEffects);
+      ConfigManager.settings.potionEffects = (!ConfigManager.settings.potionEffects);
       break;
     case 7: 
-      settingsbox = (!settingsbox);
+      ConfigManager.settings.box = (!ConfigManager.settings.box);
       break;
     case 8: 
-      settingslayout = 0;
+      ConfigManager.settings.layout = 0;
       break;
     case 9: 
-      settingslayout = 1;
+      ConfigManager.settings.layout = 1;
       break;
     case 10: 
-      settingslayout = 2;
+      ConfigManager.settings.layout = 2;
       break;
     case 11: 
-      settingslayout = 3;
+      ConfigManager.settings.layout = 3;
       break;
     case 12: 
-      settingshud = 0;
+      ConfigManager.settings.hud = 0;
       break;
     case 13: 
-      settingshud = 1;
+      ConfigManager.settings.hud = 1;
       break;
     case 14: 
-      settingshud = 2;
+      ConfigManager.settings.hud = 2;
       break;
     case 15: 
-      settingshud = 3;
+      ConfigManager.settings.hud = 3;
       break;
     case 16: 
-      settingsgameTimolia = (!settingsgameTimolia);
+      ConfigManager.settings.gameTimolia = (!ConfigManager.settings.gameTimolia);
       break;
     case 17: 
-      settingsgamePlayMinity = (!settingsgamePlayMinity);
+      ConfigManager.settings.gamePlayMinity = (!ConfigManager.settings.gamePlayMinity);
       break;
     case 18: 
-      settingsgameGommeHD = (!settingsgameGommeHD);
+      ConfigManager.settings.gameGommeHD = (!ConfigManager.settings.gameGommeHD);
       break;
     case 19: 
-      settingsfLayoutNumber = (!settingsfLayoutNumber);
+      ConfigManager.settings.fLayoutNumber = (!ConfigManager.settings.fLayoutNumber);
       break;
     case 20: 
-      settingsfLayoutDirection = (!settingsfLayoutDirection);
+      ConfigManager.settings.fLayoutDirection = (!ConfigManager.settings.fLayoutDirection);
       break;
     case 21: 
-      settingsfLayoutXAndZ = (!settingsfLayoutXAndZ);
+      ConfigManager.settings.fLayoutXAndZ = (!ConfigManager.settings.fLayoutXAndZ);
       break;
     case 22: 
-      settingsshowCoords = (!settingsshowCoords);
+      ConfigManager.settings.showCoords = (!ConfigManager.settings.showCoords);
       break;
     case 23: 
-      settingsshowNickname = (!settingsshowNickname);
+      ConfigManager.settings.showNickname = (!ConfigManager.settings.showNickname);
       break;
     case 24: 
-      int i = Color.colorToID(settingscolor1);
+      int i = Color.colorToID(ConfigManager.settings.color1);
       i = manageInt(i);
-      settingscolor1 = Color.IDToColor(i);
+      ConfigManager.settings.color1 = Color.IDToColor(i);
       b();
       break;
     case 25: 
-      int i = Color.colorToID(settingscolor2);
+      int i = Color.colorToID(ConfigManager.settings.color2);
       i = manageInt(i);
-      settingscolor2 = Color.IDToColor(i);
+      ConfigManager.settings.color2 = Color.IDToColor(i);
       b();
       break;
     case 26: 
-      int i = Color.colorToID(settingscolor3);
+      int i = Color.colorToID(ConfigManager.settings.color3);
       i = manageInt(i);
-      settingscolor3 = Color.IDToColor(i);
+      ConfigManager.settings.color3 = Color.IDToColor(i);
       b();
       break;
     case 27: 
-      int i = Color.colorToID(settingscolor4);
+      int i = Color.colorToID(ConfigManager.settings.color4);
       i = manageInt(i);
-      settingscolor4 = Color.IDToColor(i);
+      ConfigManager.settings.color4 = Color.IDToColor(i);
       b();
       break;
     case 28: 
-      int i = Color.colorToID(settingscolor5);
+      int i = Color.colorToID(ConfigManager.settings.color5);
       i = manageInt(i);
-      settingscolor5 = Color.IDToColor(i);
+      ConfigManager.settings.color5 = Color.IDToColor(i);
       b();
       break;
     case 29: 
-      settingsbold = (!settingsbold);
+      ConfigManager.settings.bold = (!ConfigManager.settings.bold);
       break;
     case 30: 
-      settingsunderline = (!settingsunderline);
+      ConfigManager.settings.underline = (!ConfigManager.settings.underline);
       break;
     case 31: 
-      settingsitalic = (!settingsitalic);
+      ConfigManager.settings.italic = (!ConfigManager.settings.italic);
       break;
     case 32: 
-      settingsoldDMG = (!settingsoldDMG);
+      ConfigManager.settings.oldDMG = (!ConfigManager.settings.oldDMG);
       break;
     case 33: 
-      settingsshowPing = (!settingsshowPing);
+      ConfigManager.settings.showPing = (!ConfigManager.settings.showPing);
       break;
     case 34: 
-      settingsshowServerIP = (!settingsshowServerIP);
+      ConfigManager.settings.showServerIP = (!ConfigManager.settings.showServerIP);
       break;
     case 35: 
-      settingslavaTime = (!settingslavaTime);
+      ConfigManager.settings.lavaTime = (!ConfigManager.settings.lavaTime);
       break;
     case 36: 
-      settingsminiGames = (!settingsminiGames);
+      ConfigManager.settings.miniGames = (!ConfigManager.settings.miniGames);
       break;
     case 37: 
-      settingsshowFPS = (!settingsshowFPS);
+      ConfigManager.settings.showFPS = (!ConfigManager.settings.showFPS);
       break;
     case 38: 
-      settingsextraChat = (!settingsextraChat);
+      ConfigManager.settings.extraChat = (!ConfigManager.settings.extraChat);
       break;
     case 39: 
-      settingsgameBrawl = (!settingsgameBrawl);
+      ConfigManager.settings.gameBrawl = (!ConfigManager.settings.gameBrawl);
       break;
     case 40: 
-      settingsoldHearts = (!settingsoldHearts);
+      ConfigManager.settings.oldHearts = (!ConfigManager.settings.oldHearts);
       break;
     case 41: 
-      settingsoldBow = (!settingsoldBow);
+      ConfigManager.settings.oldBow = (!ConfigManager.settings.oldBow);
       break;
     case 42: 
-      settingsoldSword = (!settingsoldSword);
+      ConfigManager.settings.oldSword = (!ConfigManager.settings.oldSword);
       break;
     case 43: 
-      settingsoldBlockhit = (!settingsoldBlockhit);
+      ConfigManager.settings.oldBlockhit = (!ConfigManager.settings.oldBlockhit);
       break;
     case 44: 
-      settingshud = 4;
+      ConfigManager.settings.hud = 4;
       break;
     case 45: 
-      settingstabPing = (!settingstabPing);
+      ConfigManager.settings.tabPing = (!ConfigManager.settings.tabPing);
       break;
     case 46: 
-      settingsoldFishing = (!settingsoldFishing);
+      ConfigManager.settings.oldFishing = (!ConfigManager.settings.oldFishing);
       break;
     case 47: 
-      settingsinfoInMenu = (!settingsinfoInMenu);
+      ConfigManager.settings.infoInMenu = (!ConfigManager.settings.infoInMenu);
       break;
     case 48: 
-      settingssmoothFPS = (!settingssmoothFPS);
+      ConfigManager.settings.smoothFPS = (!ConfigManager.settings.smoothFPS);
       break;
     case 49: 
-      settingsbetterRefresh = (!settingsbetterRefresh);
+      ConfigManager.settings.betterRefresh = (!ConfigManager.settings.betterRefresh);
       break;
     case 50: 
-      int i = settingspotionsize;
+      int i = ConfigManager.settings.potionsize;
       i = manageInt2(i);
-      settingspotionsize = i;
+      ConfigManager.settings.potionsize = i;
       break;
     case 51: 
-      settingsshowKills = (!settingsshowKills);
+      ConfigManager.settings.showKills = (!ConfigManager.settings.showKills);
       break;
     case 52: 
-      settingsfoodSaturation = (!settingsfoodSaturation);
+      ConfigManager.settings.foodSaturation = (!ConfigManager.settings.foodSaturation);
       break;
     case 53: 
-      settingsarmorRating = (!settingsarmorRating);
+      ConfigManager.settings.armorRating = (!ConfigManager.settings.armorRating);
       break;
     case 54: 
-      settingsdirectConnectInfo = (!settingsdirectConnectInfo);
+      ConfigManager.settings.directConnectInfo = (!ConfigManager.settings.directConnectInfo);
       break;
     case 55: 
-      settingsshowMyName = (!settingsshowMyName);
+      ConfigManager.settings.showMyName = (!ConfigManager.settings.showMyName);
       break;
     case 56: 
-      settingsafkTimer = (!settingsafkTimer);
+      ConfigManager.settings.afkTimer = (!ConfigManager.settings.afkTimer);
       break;
     case 57: 
-      settingsshowOnlineFriends = (!settingsshowOnlineFriends);
+      ConfigManager.settings.showOnlineFriends = (!ConfigManager.settings.showOnlineFriends);
       break;
     case 58: 
-      settingsoldTablist = (!settingsoldTablist);
+      ConfigManager.settings.oldTablist = (!ConfigManager.settings.oldTablist);
       break;
     case 59: 
-      settingsguiPositionRight = (!settingsguiPositionRight);
+      ConfigManager.settings.guiPositionRight = (!ConfigManager.settings.guiPositionRight);
       break;
     case 60: 
-      settingsonlineFriendsPositionOnTop = (!settingsonlineFriendsPositionOnTop);
+      ConfigManager.settings.onlineFriendsPositionOnTop = (!ConfigManager.settings.onlineFriendsPositionOnTop);
       break;
     case 61: 
-      settingsconfirmDisconnect = (!settingsconfirmDisconnect);
+      ConfigManager.settings.confirmDisconnect = (!ConfigManager.settings.confirmDisconnect);
       break;
     case 62: 
-      settingscapes = (!settingscapes);
+      ConfigManager.settings.capes = (!ConfigManager.settings.capes);
       LabyMod.getInstance().getCapeManager().refresh();
       break;
     case 63: 
-      settingsshowBossBar = (!settingsshowBossBar);
+      ConfigManager.settings.showBossBar = (!ConfigManager.settings.showBossBar);
       break;
     case 64: 
-      settingssmoothScroll = (!settingssmoothScroll);
+      ConfigManager.settings.smoothScroll = (!ConfigManager.settings.smoothScroll);
       break;
     case 65: 
-      settingsteamSpeak = (!settingsteamSpeak);
-      if (!settingsteamSpeak)
+      ConfigManager.settings.teamSpeak = (!ConfigManager.settings.teamSpeak);
+      if (!ConfigManager.settings.teamSpeak)
       {
-        settingsteamSpakIngame = false;
-        settingsteamSpakIngameClients = false;
+        ConfigManager.settings.teamSpakIngame = false;
+        ConfigManager.settings.teamSpakIngameClients = false;
         TeamSpeakController.getInstance().quit();
       }
       else
@@ -484,145 +484,143 @@ public class GuiModSettings
     case 66: 
       break;
     case 67: 
-      settingsbrawl = (!settingsbrawl);
+      ConfigManager.settings.brawl = (!ConfigManager.settings.brawl);
       break;
     case 68: 
-      settingstags = (!settingstags);
+      ConfigManager.settings.tags = (!ConfigManager.settings.tags);
       break;
     case 69: 
-      settingsteamSpakIngame = (!settingsteamSpakIngame);
+      ConfigManager.settings.teamSpakIngame = (!ConfigManager.settings.teamSpakIngame);
       break;
     case 70: 
-      settingsteamSpakIngameClients = (!settingsteamSpakIngameClients);
+      ConfigManager.settings.teamSpakIngameClients = (!ConfigManager.settings.teamSpakIngameClients);
       break;
     case 71: 
-      settingsspeedFOV = (!settingsspeedFOV);
+      ConfigManager.settings.speedFOV = (!ConfigManager.settings.speedFOV);
       break;
     case 72: 
       break;
     case 73: 
-      settingsgommePosLeft = (!settingsgommePosLeft);
+      ConfigManager.settings.gommePosLeft = (!ConfigManager.settings.gommePosLeft);
       break;
     case 74: 
-      settingsgameHiveMC = (!settingsgameHiveMC);
+      ConfigManager.settings.gameHiveMC = (!ConfigManager.settings.gameHiveMC);
       break;
     case 75: 
-      settingsshowBWTimer = (!settingsshowBWTimer);
+      ConfigManager.settings.showBWTimer = (!ConfigManager.settings.showBWTimer);
       break;
     case 76: 
-      settingsshowBWTeams = (!settingsshowBWTeams);
+      ConfigManager.settings.showBWTeams = (!ConfigManager.settings.showBWTeams);
       break;
     case 77: 
-      settingsautoText = (!settingsautoText);
+      ConfigManager.settings.autoText = (!ConfigManager.settings.autoText);
       break;
     case 78: 
-      settingschatFilter = (!settingschatFilter);
+      ConfigManager.settings.chatFilter = (!ConfigManager.settings.chatFilter);
       break;
     case 79: 
-      settingsoldSneak = (!settingsoldSneak);
+      ConfigManager.settings.oldSneak = (!ConfigManager.settings.oldSneak);
       break;
     case 80: 
-      settingsautoLeave = (!settingsautoLeave);
+      ConfigManager.settings.autoLeave = (!ConfigManager.settings.autoLeave);
       break;
     case 81: 
-      settingsoldBlockBuild = (!settingsoldBlockBuild);
+      ConfigManager.settings.oldBlockBuild = (!ConfigManager.settings.oldBlockBuild);
       break;
     case 82: 
-      settingsbackground = (!settingsbackground);
+      ConfigManager.settings.background = (!ConfigManager.settings.background);
       break;
     case 83: 
-      settingsshowClock = (!settingsshowClock);
+      ConfigManager.settings.showClock = (!ConfigManager.settings.showClock);
       break;
     case 84: 
-      settingsquickPlay = (!settingsquickPlay);
+      ConfigManager.settings.quickPlay = (!ConfigManager.settings.quickPlay);
       break;
     case 85: 
-      settingsstopWatch = (!settingsstopWatch);
+      ConfigManager.settings.stopWatch = (!ConfigManager.settings.stopWatch);
       break;
     case 86: 
-      settingsarmorHudPositionOnTop = (!settingsarmorHudPositionOnTop);
+      ConfigManager.settings.armorHudPositionOnTop = (!ConfigManager.settings.armorHudPositionOnTop);
       break;
     case 87: 
-      settingsleftHand = (!settingsleftHand);
+      ConfigManager.settings.leftHand = (!ConfigManager.settings.leftHand);
       break;
     case 88: 
-      settingsteamSpeakAlertTypeChat = (!settingsteamSpeakAlertTypeChat);
+      ConfigManager.settings.teamSpeakAlertTypeChat = (!ConfigManager.settings.teamSpeakAlertTypeChat);
       break;
     case 89: 
-      settingschatAlertType = (!settingschatAlertType);
+      ConfigManager.settings.chatAlertType = (!ConfigManager.settings.chatAlertType);
       break;
     case 90: 
-      settingsclickTest = (!settingsclickTest);
+      ConfigManager.settings.clickTest = (!ConfigManager.settings.clickTest);
       break;
     case 91: 
-      settingschatPositionRight = (!settingschatPositionRight);
+      ConfigManager.settings.chatPositionRight = (!ConfigManager.settings.chatPositionRight);
       break;
     case 92: 
-      settingsleftBow = (!settingsleftBow);
+      ConfigManager.settings.leftBow = (!ConfigManager.settings.leftBow);
       break;
     case 93: 
-      settingsshowArrow = (!settingsshowArrow);
+      ConfigManager.settings.showArrow = (!ConfigManager.settings.showArrow);
       break;
     case 94: 
-      settingsmojangStatus = (!settingsmojangStatus);
+      ConfigManager.settings.mojangStatus = (!ConfigManager.settings.mojangStatus);
       break;
     case 95: 
-      settingsmojangStatusChat = (!settingsmojangStatusChat);
+      ConfigManager.settings.mojangStatusChat = (!ConfigManager.settings.mojangStatusChat);
       break;
     case 96: 
-      settingsspotfiyTrack = (!settingsspotfiyTrack);
+      ConfigManager.settings.spotfiyTrack = (!ConfigManager.settings.spotfiyTrack);
       break;
     case 97: 
-      settingsshowBiome = (!settingsshowBiome);
+      ConfigManager.settings.showBiome = (!ConfigManager.settings.showBiome);
       break;
     case 98: 
-      settingscosmetics = (!settingscosmetics);
+      ConfigManager.settings.cosmetics = (!ConfigManager.settings.cosmetics);
       break;
     case 101: 
-      settingshiveAutoScramble = (!settingshiveAutoScramble);
+      ConfigManager.settings.hiveAutoScramble = (!ConfigManager.settings.hiveAutoScramble);
       break;
     case 102: 
-      settingsoldInventory = (!settingsoldInventory);
+      ConfigManager.settings.oldInventory = (!ConfigManager.settings.oldInventory);
       break;
     case 104: 
-      settingstwelveHourClock = (!settingstwelveHourClock);
+      ConfigManager.settings.twelveHourClock = (!ConfigManager.settings.twelveHourClock);
       break;
     case 105: 
-      settingsapi = (!settingsapi);
+      ConfigManager.settings.api = (!ConfigManager.settings.api);
       break;
     case 106: 
-      settingsshowDate = (!settingsshowDate);
+      ConfigManager.settings.showDate = (!ConfigManager.settings.showDate);
       break;
     case 107: 
-      settingsshowLiveTicker = (!settingsshowLiveTicker);
+      ConfigManager.settings.showLiveTicker = (!ConfigManager.settings.showLiveTicker);
       break;
     case 108: 
-      settingscontroller = (!settingscontroller);
-      if (settingscontroller) {
+      ConfigManager.settings.controller = (!ConfigManager.settings.controller);
+      if (ConfigManager.settings.controller) {
         ControllerInput.init();
       } else {
         ControllerInput.exit();
       }
       break;
     case 109: 
-      settingsskyblock = (!settingsskyblock);
+      ConfigManager.settings.skyblock = (!ConfigManager.settings.skyblock);
       break;
     case 110: 
-      settingsgommeOldUserColor = (!settingsgommeOldUserColor);
       break;
     case 111: 
-      settingsnameHistory = (!settingsnameHistory);
+      ConfigManager.settings.nameHistory = (!ConfigManager.settings.nameHistory);
       break;
     case 112: 
-      settingsgommeBedTimer = (!settingsgommeBedTimer);
+      ConfigManager.settings.gommeBedTimer = (!ConfigManager.settings.gommeBedTimer);
       break;
     case 113: 
-      settingsnotePad = (!settingsnotePad);
       break;
     case 114: 
-      settingsmineconParticle = (!settingsmineconParticle);
+      ConfigManager.settings.mineconParticle = (!ConfigManager.settings.mineconParticle);
     }
-    if (k != -3) {
+    if (button.k != -3) {
       b();
     }
     ConfigManager.save();
@@ -630,45 +628,45 @@ public class GuiModSettings
   
   public void drawPreview()
   {
-    int ex = m - 10;
-    if (settingslayout != 0)
+    int ex = this.m - 10;
+    if (ConfigManager.settings.layout != 0)
     {
       String f = "";
-      if (settingsfLayoutNumber) {
+      if (ConfigManager.settings.fLayoutNumber) {
         f = f + ModGui.getF();
       }
-      if (settingsfLayoutDirection) {
+      if (ConfigManager.settings.fLayoutDirection) {
         f = f + ModGui.getD();
       }
-      if (settingsfLayoutXAndZ) {
+      if (ConfigManager.settings.fLayoutXAndZ) {
         f = f + ModGui.getXZD();
       }
       if (!f.isEmpty())
       {
-        draw.addNoScaleLabel("F", f, ex);
+        this.draw.addNoScaleLabel("F", f, ex);
         ex -= 11;
       }
-      if (settingsshowCoords)
+      if (ConfigManager.settings.showCoords)
       {
-        draw.addNoScaleLabel("Z", ModGui.getZ(), ex);
+        this.draw.addNoScaleLabel("Z", ModGui.getZ(), ex);
         ex -= 11;
-        draw.addNoScaleLabel("Y", ModGui.getY(), ex);
+        this.draw.addNoScaleLabel("Y", ModGui.getY(), ex);
         ex -= 11;
-        draw.addNoScaleLabel("Z", ModGui.getZ(), ex);
+        this.draw.addNoScaleLabel("Z", ModGui.getZ(), ex);
         ex -= 11;
       }
-      if (settingsshowFPS)
+      if (ConfigManager.settings.showFPS)
       {
-        draw.addNoScaleLabel("FPS", ModGui.getFPS() + "", ex);
+        this.draw.addNoScaleLabel("FPS", ModGui.getFPS() + "", ex);
         ex -= 11;
       }
     }
-    if (ex == m - 10)
+    if (ex == this.m - 10)
     {
-      draw.addNoScaleString(Color.cl("c") + Color.cl("o") + "Gui disabled!", ex);
+      this.draw.addNoScaleString(Color.cl("c") + Color.cl("o") + "Gui disabled!", ex);
       ex -= 11;
     }
-    draw.addNoScaleString(Color.c(4) + "Preview:", ex);
+    this.draw.addNoScaleString(Color.c(4) + "Preview:", ex);
   }
   
   public boolean toggle(boolean c)
@@ -701,22 +699,22 @@ public class GuiModSettings
   {
     if (refresh)
     {
-      draw.drawString(title + ":", x + 1, y - 12);
-      x += 100;
-      if (x > l - 110)
+      this.draw.drawString(title + ":", this.x + 1, this.y - 12);
+      this.x += 100;
+      if (this.x > this.l - 110)
       {
-        x = 120;
-        y += sy;
+        this.x = 120;
+        this.y += this.sy;
       }
       return;
     }
-    SliderSize b = new SliderSize(-3, x, y, 77);
-    n.add(b);
-    x += 100;
-    if (x > l - 110)
+    SliderSize b = new SliderSize(-3, this.x, this.y, 77);
+    this.n.add(b);
+    this.x += 100;
+    if (this.x > this.l - 110)
     {
-      x = 120;
-      y += sy;
+      this.x = 120;
+      this.y += this.sy;
     }
   }
   
@@ -724,22 +722,22 @@ public class GuiModSettings
   {
     if (refresh)
     {
-      draw.drawString(title + ":", x + 1, y - 12);
-      x += 100;
-      if (x > l - 110)
+      this.draw.drawString(title + ":", this.x + 1, this.y - 12);
+      this.x += 100;
+      if (this.x > this.l - 110)
       {
-        x = 120;
-        y += sy;
+        this.x = 120;
+        this.y += this.sy;
       }
       return;
     }
-    SliderCoords b = new SliderCoords(x, y, 75);
-    n.add(b);
-    x += 100;
-    if (x > l - 110)
+    SliderCoords b = new SliderCoords(this.x, this.y, 75);
+    this.n.add(b);
+    this.x += 100;
+    if (this.x > this.l - 110)
     {
-      x = 120;
-      y += sy;
+      this.x = 120;
+      this.y += this.sy;
     }
   }
   
@@ -747,22 +745,22 @@ public class GuiModSettings
   {
     if (refresh)
     {
-      draw.drawString(title + ":", x + 1, y - 12);
-      x += 100;
-      if (x > l - 110)
+      this.draw.drawString(title + ":", this.x + 1, this.y - 12);
+      this.x += 100;
+      if (this.x > this.l - 110)
       {
-        x = 120;
-        y += sy;
+        this.x = 120;
+        this.y += this.sy;
       }
       return;
     }
-    SliderColor b = new SliderColor(-3, x, y, 80, color);
-    n.add(b);
-    x += 100;
-    if (x > l - 110)
+    SliderColor b = new SliderColor(-3, this.x, this.y, 80, color);
+    this.n.add(b);
+    this.x += 100;
+    if (this.x > this.l - 110)
     {
-      x = 120;
-      y += sy;
+      this.x = 120;
+      this.y += this.sy;
     }
   }
   
@@ -786,23 +784,23 @@ public class GuiModSettings
     if (refresh)
     {
       if (title.length() > 25) {
-        draw.drawString(title + ":", x + 1, y - 8, 0.55D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 8, 0.55D);
       } else if (title.length() > 22) {
-        draw.drawString(title + ":", x + 1, y - 8, 0.65D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 8, 0.65D);
       } else if (title.length() > 20) {
-        draw.drawString(title + ":", x + 1, y - 9, 0.6D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 9, 0.6D);
       } else if (title.length() > 16) {
-        draw.drawString(title + ":", x + 1, y - 10, 0.7D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 10, 0.7D);
       } else if (title.length() > 15) {
-        draw.drawString(title + ":", x + 1, y - 10, 0.8D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 10, 0.8D);
       } else {
-        draw.drawString(title + ":", x + 1, y - 12);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 12);
       }
-      x += 100;
-      if (x > l - 110)
+      this.x += 100;
+      if (this.x > this.l - 110)
       {
-        x = 120;
-        y += sy;
+        this.x = 120;
+        this.y += this.sy;
       }
       return;
     }
@@ -810,14 +808,14 @@ public class GuiModSettings
     if (t.booleanValue()) {
       s = Color.cl("a") + enabled;
     }
-    GuiCustomButton b = new GuiCustomButton(id, x, y, 80, 20, s);
-    info = info;
-    n.add(b);
-    x += 100;
-    if (x > l - 110)
+    GuiCustomButton b = new GuiCustomButton(id, this.x, this.y, 80, 20, s);
+    b.info = info;
+    this.n.add(b);
+    this.x += 100;
+    if (this.x > this.l - 110)
     {
-      x = 120;
-      y += sy;
+      this.x = 120;
+      this.y += this.sy;
     }
   }
   
@@ -826,23 +824,23 @@ public class GuiModSettings
     if (refresh)
     {
       if (title.length() > 25) {
-        draw.drawString(title + ":", x + 1, y - 8, 0.55D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 8, 0.55D);
       } else if (title.length() > 22) {
-        draw.drawString(title + ":", x + 1, y - 8, 0.65D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 8, 0.65D);
       } else if (title.length() > 20) {
-        draw.drawString(title + ":", x + 1, y - 9, 0.6D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 9, 0.6D);
       } else if (title.length() > 16) {
-        draw.drawString(title + ":", x + 1, y - 10, 0.7D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 10, 0.7D);
       } else if (title.length() > 15) {
-        draw.drawString(title + ":", x + 1, y - 10, 0.8D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 10, 0.8D);
       } else {
-        draw.drawString(title + ":", x + 1, y - 12);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 12);
       }
-      x += 100;
-      if (x > l - 110)
+      this.x += 100;
+      if (this.x > this.l - 110)
       {
-        x = 120;
-        y += sy;
+        this.x = 120;
+        this.y += this.sy;
       }
       return;
     }
@@ -850,14 +848,14 @@ public class GuiModSettings
     if (t.booleanValue()) {
       s = enabled;
     }
-    GuiCustomButton b = new GuiCustomButton(id, x, y, 80, 20, s);
-    info = info;
-    n.add(b);
-    x += 100;
-    if (x > l - 110)
+    GuiCustomButton b = new GuiCustomButton(id, this.x, this.y, 80, 20, s);
+    b.info = info;
+    this.n.add(b);
+    this.x += 100;
+    if (this.x > this.l - 110)
     {
-      x = 120;
-      y += sy;
+      this.x = 120;
+      this.y += this.sy;
     }
   }
   
@@ -866,23 +864,23 @@ public class GuiModSettings
     if (refresh)
     {
       if (title.length() > 25) {
-        draw.drawString(title + ":", x + 1, y - 8, 0.55D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 8, 0.55D);
       } else if (title.length() > 22) {
-        draw.drawString(title + ":", x + 1, y - 8, 0.65D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 8, 0.65D);
       } else if (title.length() > 20) {
-        draw.drawString(title + ":", x + 1, y - 9, 0.6D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 9, 0.6D);
       } else if (title.length() > 16) {
-        draw.drawString(title + ":", x + 1, y - 10, 0.7D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 10, 0.7D);
       } else if (title.length() > 15) {
-        draw.drawString(title + ":", x + 1, y - 10, 0.8D);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 10, 0.8D);
       } else {
-        draw.drawString(title + ":", x + 1, y - 12);
+        this.draw.drawString(title + ":", this.x + 1, this.y - 12);
       }
-      x += 100;
-      if (x > l - 110)
+      this.x += 100;
+      if (this.x > this.l - 110)
       {
-        x = 120;
-        y += sy;
+        this.x = 120;
+        this.y += this.sy;
       }
       return;
     }
@@ -890,15 +888,15 @@ public class GuiModSettings
     if (t.booleanValue()) {
       s = Color.cl("a") + enabled;
     }
-    GuiCustomButton b = new GuiCustomButton(id, x, y, 80, 20, s);
-    info = info;
-    l = sub.booleanValue();
-    n.add(b);
-    x += 100;
-    if (x > l - 110)
+    GuiCustomButton b = new GuiCustomButton(id, this.x, this.y, 80, 20, s);
+    b.info = info;
+    b.l = sub.booleanValue();
+    this.n.add(b);
+    this.x += 100;
+    if (this.x > this.l - 110)
     {
-      x = 120;
-      y += sy;
+      this.x = 120;
+      this.y += this.sy;
     }
   }
   
@@ -906,12 +904,12 @@ public class GuiModSettings
   {
     if (refresh)
     {
-      draw.drawString(title + ":", x + 1, y - 12);
-      x += 100;
-      if (x > l - 110)
+      this.draw.drawString(title + ":", this.x + 1, this.y - 12);
+      this.x += 100;
+      if (this.x > this.l - 110)
       {
-        x = 120;
-        y += sy;
+        this.x = 120;
+        this.y += this.sy;
       }
       return;
     }
@@ -921,13 +919,13 @@ public class GuiModSettings
     } else if (t == 2) {
       s = "Large";
     }
-    avs b = new avs(id, x, y, 80, 20, s);
-    n.add(b);
-    x += 100;
-    if (x > l - 110)
+    avs b = new avs(id, this.x, this.y, 80, 20, s);
+    this.n.add(b);
+    this.x += 100;
+    if (this.x > this.l - 110)
     {
-      x = 120;
-      y += sy;
+      this.x = 120;
+      this.y += this.sy;
     }
   }
   
@@ -935,9 +933,9 @@ public class GuiModSettings
   {
     if (refresh)
     {
-      draw.drawString(title + ":", x + 1, y - 12);
-      x = 120;
-      y += sy;
+      this.draw.drawString(title + ":", this.x + 1, this.y - 12);
+      this.x = 120;
+      this.y += this.sy;
       return;
     }
     int max = 0;
@@ -986,24 +984,24 @@ public class GuiModSettings
         k = 30;
         t = 0;
       }
-      avs b = new avs(setId, x + yy, y, draw.getStringWidth(l) + 13, 20, l);
+      avs b = new avs(setId, this.x + yy, this.y, this.draw.getStringWidth(l) + 13, 20, l);
       if (s == layout) {
-        l = false;
+        b.l = false;
       }
-      n.add(b);
-      yy += draw.getStringWidth(l) + 14;
+      this.n.add(b);
+      yy += this.draw.getStringWidth(l) + 14;
     }
-    x = 120;
-    y += sy;
+    this.x = 120;
+    this.y += this.sy;
   }
   
   public void addSwitchNoOff(boolean refresh, int s, int id, int id2, String Title1, int id3, String Title2, int id4, String Title3, String title)
   {
     if (refresh)
     {
-      draw.drawString(title + ":", x + 1, y - 12);
-      x = 120;
-      y += sy;
+      this.draw.drawString(title + ":", this.x + 1, this.y - 12);
+      this.x = 120;
+      this.y += this.sy;
       return;
     }
     int max = 0;
@@ -1031,15 +1029,15 @@ public class GuiModSettings
       }
       int k = 50;
       int t = -20;
-      avs b = new avs(id + layout, x + yy, y, draw.getStringWidth(l) + 13, 20, l);
+      avs b = new avs(id + layout, this.x + yy, this.y, this.draw.getStringWidth(l) + 13, 20, l);
       if (s == layout) {
-        l = false;
+        b.l = false;
       }
-      n.add(b);
-      yy += draw.getStringWidth(l) + 14;
+      this.n.add(b);
+      yy += this.draw.getStringWidth(l) + 14;
     }
-    x = 120;
-    y += sy;
+    this.x = 120;
+    this.y += this.sy;
   }
   
   class SettingsButton
@@ -1060,9 +1058,9 @@ public class GuiModSettings
   {
     if (refresh)
     {
-      draw.drawString(title + ":", x + 1, y - 12);
-      x = 120;
-      y += sy;
+      this.draw.drawString(title + ":", this.x + 1, this.y - 12);
+      this.x = 120;
+      this.y += this.sy;
       return;
     }
     int k = 0;
@@ -1070,34 +1068,34 @@ public class GuiModSettings
     {
       SettingsButton b = button[i];
       String c = Color.cl("c");
-      if (enabled) {
+      if (b.enabled) {
         c = Color.cl("a");
       }
-      GuiCustomButton bt = new GuiCustomButton(id, x + k, y, draw.getStringWidth(text) + 8, 20, c + text);
-      info = info;
-      n.add(bt);
-      k += draw.getStringWidth(text) + 10;
+      GuiCustomButton bt = new GuiCustomButton(b.id, this.x + k, this.y, this.draw.getStringWidth(b.text) + 8, 20, c + b.text);
+      bt.info = info;
+      this.n.add(bt);
+      k += this.draw.getStringWidth(b.text) + 10;
     }
-    x = 120;
-    y += sy;
+    this.x = 120;
+    this.y += this.sy;
   }
   
   public void addTitle(String title)
   {
-    y += 42;
-    draw.drawString(title + ":", x + 1, y - 12);
+    this.y += 42;
+    this.draw.drawString(title + ":", this.x + 1, this.y - 12);
   }
   
   public void addColorSwitcher(String color, int id, String title, int plus)
   {
-    avs b = new avs(id, x + plus, y, draw.getStringWidth(title) + 10, 20, color + title);
-    n.add(b);
+    avs b = new avs(id, this.x + plus, this.y, this.draw.getStringWidth(title) + 10, 20, color + title);
+    this.n.add(b);
   }
   
   protected void a(char typedChar, int keyCode)
   {
     if (keyCode == 1) {
-      j.a(field_146441_g);
+      this.j.a(this.field_146441_g);
     }
   }
   
@@ -1106,25 +1104,25 @@ public class GuiModSettings
     if (LabyMod.getInstance().isInGame())
     {
       bfl.l();
-      draw.drawTransparentBackground(105, 28, l - 10, m - 10);
+      this.draw.drawTransparentBackground(105, 28, this.l - 10, this.m - 10);
     }
     else
     {
       c();
-      draw.drawChatBackground(105, 28, l - 10, m - 10);
+      this.draw.drawChatBackground(105, 28, this.l - 10, this.m - 10);
     }
-    draw.overlayBackground(0, 0, 105, m);
-    draw.overlayBackground(0, 0, l, 28);
-    draw.overlayBackground(l - 10, 0, l, m);
-    DrawUtils.a(103, 0, 104, m, Integer.MAX_VALUE);
+    this.draw.overlayBackground(0, 0, 105, this.m);
+    this.draw.overlayBackground(0, 0, this.l, 28);
+    this.draw.overlayBackground(this.l - 10, 0, this.l, this.m);
+    DrawUtils.a(103, 0, 104, this.m, Integer.MAX_VALUE);
     
     drawModInfo();
     
     initSettings(true);
     
     super.a(mouseX, mouseY, partialTicks);
-    draw.overlayBackground(105, m - 10, l, m);
-    for (avs button : n) {
+    this.draw.overlayBackground(105, this.m - 10, this.l, this.m);
+    for (avs button : this.n) {
       if ((button instanceof GuiCustomButton)) {
         ((GuiCustomButton)button).drawInfoBox();
       }
@@ -1133,16 +1131,16 @@ public class GuiModSettings
   
   public void drawModInfo()
   {
-    draw.drawCenteredString(currentTab, (l + 105) / 2, 10);
-    draw.drawCenteredString("LabyMod Settings", 51, 10);
-    draw.drawRightString(Color.cc(4) + "LabyMod" + " v" + "2.7.97", l - 10, 10.0D);
+    this.draw.drawCenteredString(this.currentTab, (this.l + 105) / 2, 10);
+    this.draw.drawCenteredString("LabyMod Settings", 51, 10);
+    this.draw.drawRightString(Color.cc(4) + "LabyMod" + " v" + "2.7.98", this.l - 10, 10.0D);
   }
   
   public void addTab(String title)
   {
-    avs button = new avs(-1, 2, tabY, 99, 20, title);
-    l = (!title.equals(currentTab));
-    n.add(button);
-    tabY += ey;
+    avs button = new avs(-1, 2, this.tabY, 99, 20, title);
+    button.l = (!title.equals(this.currentTab));
+    this.n.add(button);
+    this.tabY += this.ey;
   }
 }

@@ -5,21 +5,21 @@ public class e
   
   public e(b ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public b a()
   {
-    return a;
+    return this.a;
   }
   
   public Throwable getCause()
   {
-    return a.b();
+    return this.a.b();
   }
   
   public String getMessage()
   {
-    return a.a();
+    return this.a.a();
   }
 }

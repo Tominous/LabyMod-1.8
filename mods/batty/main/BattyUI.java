@@ -131,10 +131,10 @@ public class BattyUI
   public BattyUI(ave par1Minecraft)
   {
     BattyMod.getInstance().setBatheartgui(this);
-    mc = par1Minecraft;
+    this.mc = par1Minecraft;
     
-    optionsFile = new File(mc.v, "BatMod.properties");
-    runtimeFile = new File(mc.v, "BatMod.runtime");
+    this.optionsFile = new File(this.mc.v, "BatMod.properties");
+    this.runtimeFile = new File(this.mc.v, "BatMod.runtime");
     
     BattyConfig.retrieveOptions();
     BattyConfig.retrieveRuntimeOptions();
@@ -142,7 +142,7 @@ public class BattyUI
     List<avb> keybindings = Arrays.asList(new avb[] { hideunhideCoordskey, moveCoordScreenPos, copyCoordsClipboard, hideunhideTimerkey, resetTimerkey, moveTimerScreenPos, startstopTimerkey, hideunhideFPSkey, moveFPSScreenPos });
     try
     {
-      BufferedReader bufferedreader = new BufferedReader(new FileReader(new File(mc.v, "options.txt")));
+      BufferedReader bufferedreader = new BufferedReader(new FileReader(new File(this.mc.v, "options.txt")));
       
       String s = "";
       while ((s = bufferedreader.readLine()) != null) {
@@ -160,7 +160,7 @@ public class BattyUI
       e.printStackTrace();
     }
     for (avb keybinding : keybindings) {
-      mc.t.aw = ((avb[])ArrayUtils.add(mc.t.aw, keybinding));
+      this.mc.t.aw = ((avb[])ArrayUtils.add(this.mc.t.aw, keybinding));
     }
   }
   
@@ -173,7 +173,7 @@ public class BattyUI
     GL11.glDisable(2896);
     GL11.glScalef(scaler, scaler, scaler);
     
-    mc.P().a(resourceLocation);
+    this.mc.P().a(resourceLocation);
     b(x, y, u, v, width, height);
     
     GL11.glPopMatrix();
@@ -193,318 +193,318 @@ public class BattyUI
   public void renderPlayerCoords()
   {
     GL11.glEnable(3008);
-    avn var8 = mc.k;
+    avn var8 = this.mc.k;
     
-    avr myRes = new avr(mc);
+    avr myRes = new avr(this.mc);
     
-    cj var1 = new cj(mc.ac().s, mc.ac().aR().b, mc.ac().u);
-    myPosX = ns.c(mc.h.s);
-    myXminus = (mc.h.s < 0.0D);
-    myPosY = ns.c(mc.h.aR().b);
-    myPosZ = ns.c(mc.h.u);
-    myZminus = (mc.h.u < 0.0D);
-    myAngle = BattyUtils.getCardinalPoint(mc.h.y);
+    cj var1 = new cj(this.mc.ac().s, this.mc.ac().aR().b, this.mc.ac().u);
+    this.myPosX = ns.c(this.mc.h.s);
+    this.myXminus = (this.mc.h.s < 0.0D);
+    this.myPosY = ns.c(this.mc.h.aR().b);
+    this.myPosZ = ns.c(this.mc.h.u);
+    this.myZminus = (this.mc.h.u < 0.0D);
+    this.myAngle = BattyUtils.getCardinalPoint(this.mc.h.y);
     
-    myDir = (ns.c(mc.h.y * 4.0F / 360.0F + 0.5D) & 0x3);
+    this.myDir = (ns.c(this.mc.h.y * 4.0F / 360.0F + 0.5D) & 0x3);
     
-    int compassW = mc.k.a(myCardinalPoint[7]);
-    if (showCoords > 2)
+    int compassW = this.mc.k.a(myCardinalPoint[7]);
+    if (this.showCoords > 2)
     {
-      coordBoxW = 104;
-      coordBoxH = 40;
+      this.coordBoxW = 104;
+      this.coordBoxH = 40;
     }
     else
     {
-      coordBoxW = 80;
-      coordBoxH = 30;
+      this.coordBoxW = 80;
+      this.coordBoxH = 30;
     }
-    switch (coordLocation)
+    switch (this.coordLocation)
     {
     case 0: 
-      coordBoxR = (coordBoxW + 1);
-      coordBoxBase = (coordBoxH + 1);
+      this.coordBoxR = (this.coordBoxW + 1);
+      this.coordBoxBase = (this.coordBoxH + 1);
       break;
     case 1: 
-      coordBoxR = (myRes.a() - 1);
-      coordBoxBase = (coordBoxH + 1);
+      this.coordBoxR = (myRes.a() - 1);
+      this.coordBoxBase = (this.coordBoxH + 1);
       break;
     case 2: 
-      coordBoxR = (myRes.a() - 1);
-      coordBoxBase = (myRes.b() - 1);
+      this.coordBoxR = (myRes.a() - 1);
+      this.coordBoxBase = (myRes.b() - 1);
       break;
     case 3: 
-      coordBoxR = (coordBoxW + 1);
-      coordBoxBase = (myRes.b() - 1);
+      this.coordBoxR = (this.coordBoxW + 1);
+      this.coordBoxBase = (myRes.b() - 1);
     }
-    coordBoxL = (coordBoxR - coordBoxW);
-    coordBoxTop = (coordBoxBase - coordBoxH);
-    myXLine = (coordBoxTop + 1);
-    myYLine = (myXLine + 10);
-    myZLine = (myYLine + 10);
-    myBiomeLine = (myZLine + 10);
-    myBaseOffset = (coordBoxL + 1);
-    myCoord0Offset = (myBaseOffset + 10);
-    myCoord1Offset = (myBaseOffset + 16);
-    myCoord2Offset = (myBaseOffset + 39);
-    if (showCoords == 3) {
-      myRHSlocation = (coordBoxR - compassW - 14);
-    } else if (showCoords > 2) {
-      myRHSlocation = (coordBoxR - compassW - 1);
+    this.coordBoxL = (this.coordBoxR - this.coordBoxW);
+    this.coordBoxTop = (this.coordBoxBase - this.coordBoxH);
+    this.myXLine = (this.coordBoxTop + 1);
+    this.myYLine = (this.myXLine + 10);
+    this.myZLine = (this.myYLine + 10);
+    this.myBiomeLine = (this.myZLine + 10);
+    this.myBaseOffset = (this.coordBoxL + 1);
+    this.myCoord0Offset = (this.myBaseOffset + 10);
+    this.myCoord1Offset = (this.myBaseOffset + 16);
+    this.myCoord2Offset = (this.myBaseOffset + 39);
+    if (this.showCoords == 3) {
+      this.myRHSlocation = (this.coordBoxR - compassW - 14);
+    } else if (this.showCoords > 2) {
+      this.myRHSlocation = (this.coordBoxR - compassW - 1);
     } else {
-      myRHSlocation = (myBaseOffset + 64);
+      this.myRHSlocation = (this.myBaseOffset + 64);
     }
-    if (shadedCoords) {
-      a(coordBoxL, coordBoxTop, coordBoxR, coordBoxBase, myRectColour);
+    if (this.shadedCoords) {
+      a(this.coordBoxL, this.coordBoxTop, this.coordBoxR, this.coordBoxBase, this.myRectColour);
     }
-    var8.a(String.format("x: ", new Object[0]), myBaseOffset, myXLine, myTitleText);
+    var8.a(String.format("x: ", new Object[0]), this.myBaseOffset, this.myXLine, this.myTitleText);
     
-    var8.a(String.format("y: ", new Object[0]), myBaseOffset, myYLine, myTitleText);
+    var8.a(String.format("y: ", new Object[0]), this.myBaseOffset, this.myYLine, this.myTitleText);
     
-    var8.a(String.format("z: ", new Object[0]), myBaseOffset, myZLine, myTitleText);
-    if (showCoords < 4)
+    var8.a(String.format("z: ", new Object[0]), this.myBaseOffset, this.myZLine, this.myTitleText);
+    if (this.showCoords < 4)
     {
-      if (!myXminus)
+      if (!this.myXminus)
       {
-        var8.a(String.format("%d", new Object[] { Integer.valueOf(myPosX) }), myCoord1Offset, myXLine, myPosCoordText);
+        var8.a(String.format("%d", new Object[] { Integer.valueOf(this.myPosX) }), this.myCoord1Offset, this.myXLine, this.myPosCoordText);
       }
       else
       {
-        var8.a("-", myCoord0Offset, myXLine, myNegCoordText);
-        var8.a(String.format("%d", new Object[] { Integer.valueOf(Math.abs(myPosX)) }), myCoord1Offset, myXLine, myNegCoordText);
+        var8.a("-", this.myCoord0Offset, this.myXLine, this.myNegCoordText);
+        var8.a(String.format("%d", new Object[] { Integer.valueOf(Math.abs(this.myPosX)) }), this.myCoord1Offset, this.myXLine, this.myNegCoordText);
       }
-      var8.a(String.format("%d", new Object[] { Integer.valueOf(myPosY) }), myCoord1Offset, myYLine, myPosCoordText);
-      if (!myZminus)
+      var8.a(String.format("%d", new Object[] { Integer.valueOf(this.myPosY) }), this.myCoord1Offset, this.myYLine, this.myPosCoordText);
+      if (!this.myZminus)
       {
-        var8.a(String.format("%d", new Object[] { Integer.valueOf(myPosZ) }), myCoord1Offset, myZLine, myPosCoordText);
+        var8.a(String.format("%d", new Object[] { Integer.valueOf(this.myPosZ) }), this.myCoord1Offset, this.myZLine, this.myPosCoordText);
       }
       else
       {
-        var8.a("-", myCoord0Offset, myZLine, myNegCoordText);
-        var8.a(String.format("%d", new Object[] { Integer.valueOf(Math.abs(myPosZ)) }), myCoord1Offset, myZLine, myNegCoordText);
+        var8.a("-", this.myCoord0Offset, this.myZLine, this.myNegCoordText);
+        var8.a(String.format("%d", new Object[] { Integer.valueOf(Math.abs(this.myPosZ)) }), this.myCoord1Offset, this.myZLine, this.myNegCoordText);
       }
     }
     else
     {
-      if (myPosX >= 0)
+      if (this.myPosX >= 0)
       {
-        var8.a(String.format("c%d ", new Object[] { Integer.valueOf(myPosX >> 4) }), myCoord2Offset, myXLine, myPosChunkText);
+        var8.a(String.format("c%d ", new Object[] { Integer.valueOf(this.myPosX >> 4) }), this.myCoord2Offset, this.myXLine, this.myPosChunkText);
         
-        var8.a(String.format("b%d", new Object[] { Integer.valueOf(myPosX & 0xF) }), myCoord1Offset, myXLine, myPosChunkText);
+        var8.a(String.format("b%d", new Object[] { Integer.valueOf(this.myPosX & 0xF) }), this.myCoord1Offset, this.myXLine, this.myPosChunkText);
       }
       else
       {
-        var8.a(String.format("c%d ", new Object[] { Integer.valueOf(myPosX >> 4) }), myCoord2Offset, myXLine, myNegChunkText);
+        var8.a(String.format("c%d ", new Object[] { Integer.valueOf(this.myPosX >> 4) }), this.myCoord2Offset, this.myXLine, this.myNegChunkText);
         
-        var8.a(String.format("b%d", new Object[] { Integer.valueOf(myPosX & 0xF) }), myCoord1Offset, myXLine, myPosChunkText);
+        var8.a(String.format("b%d", new Object[] { Integer.valueOf(this.myPosX & 0xF) }), this.myCoord1Offset, this.myXLine, this.myPosChunkText);
       }
-      var8.a(String.format("%d", new Object[] { Integer.valueOf(myPosY) }), myCoord1Offset, myYLine, myPosCoordText);
-      if (myPosZ >= 0)
+      var8.a(String.format("%d", new Object[] { Integer.valueOf(this.myPosY) }), this.myCoord1Offset, this.myYLine, this.myPosCoordText);
+      if (this.myPosZ >= 0)
       {
-        var8.a(String.format("c%d ", new Object[] { Integer.valueOf(myPosZ >> 4) }), myCoord2Offset, myZLine, myPosChunkText);
+        var8.a(String.format("c%d ", new Object[] { Integer.valueOf(this.myPosZ >> 4) }), this.myCoord2Offset, this.myZLine, this.myPosChunkText);
         
-        var8.a(String.format("b%d", new Object[] { Integer.valueOf(myPosZ & 0xF) }), myCoord1Offset, myZLine, myPosChunkText);
+        var8.a(String.format("b%d", new Object[] { Integer.valueOf(this.myPosZ & 0xF) }), this.myCoord1Offset, this.myZLine, this.myPosChunkText);
       }
       else
       {
-        var8.a(String.format("c%d ", new Object[] { Integer.valueOf(myPosZ >> 4) }), myCoord2Offset, myZLine, myNegChunkText);
+        var8.a(String.format("c%d ", new Object[] { Integer.valueOf(this.myPosZ >> 4) }), this.myCoord2Offset, this.myZLine, this.myNegChunkText);
         
-        var8.a(String.format("b%d", new Object[] { Integer.valueOf(myPosZ & 0xF) }), myCoord1Offset, myZLine, myPosChunkText);
+        var8.a(String.format("b%d", new Object[] { Integer.valueOf(this.myPosZ & 0xF) }), this.myCoord1Offset, this.myZLine, this.myPosChunkText);
       }
     }
-    drawLogoTexture(myRHSlocation - 12, myYLine - 1);
+    drawLogoTexture(this.myRHSlocation - 12, this.myYLine - 1);
     
-    var8.a(myCardinalPoint[myAngle], myRHSlocation, myYLine, myCompassText);
-    if (showCoords > 1) {
-      switch (myAngle)
+    var8.a(myCardinalPoint[this.myAngle], this.myRHSlocation, this.myYLine, this.myCompassText);
+    if (this.showCoords > 1) {
+      switch (this.myAngle)
       {
       case 0: 
-        var8.a(myChevronDown + myChevronDown, myRHSlocation, myZLine, myNegCoordText);
+        var8.a(this.myChevronDown + this.myChevronDown, this.myRHSlocation, this.myZLine, this.myNegCoordText);
         
         break;
       case 1: 
-        var8.a(myChevronDown, myRHSlocation, myZLine, myNegCoordText);
+        var8.a(this.myChevronDown, this.myRHSlocation, this.myZLine, this.myNegCoordText);
         
-        var8.a(myChevronUp, myRHSlocation, myXLine, myPosCoordText);
+        var8.a(this.myChevronUp, this.myRHSlocation, this.myXLine, this.myPosCoordText);
         
         break;
       case 2: 
-        var8.a(myChevronUp + myChevronUp, myRHSlocation, myXLine, myPosCoordText);
+        var8.a(this.myChevronUp + this.myChevronUp, this.myRHSlocation, this.myXLine, this.myPosCoordText);
         
         break;
       case 3: 
-        var8.a(myChevronUp, myRHSlocation, myXLine, myPosCoordText);
+        var8.a(this.myChevronUp, this.myRHSlocation, this.myXLine, this.myPosCoordText);
         
-        var8.a(myChevronUp, myRHSlocation, myZLine, myPosCoordText);
+        var8.a(this.myChevronUp, this.myRHSlocation, this.myZLine, this.myPosCoordText);
         
         break;
       case 4: 
-        var8.a(myChevronUp + myChevronUp, myRHSlocation, myZLine, myPosCoordText);
+        var8.a(this.myChevronUp + this.myChevronUp, this.myRHSlocation, this.myZLine, this.myPosCoordText);
         
         break;
       case 5: 
-        var8.a(myChevronUp, myRHSlocation, myZLine, myPosCoordText);
+        var8.a(this.myChevronUp, this.myRHSlocation, this.myZLine, this.myPosCoordText);
         
-        var8.a(myChevronDown, myRHSlocation, myXLine, myNegCoordText);
+        var8.a(this.myChevronDown, this.myRHSlocation, this.myXLine, this.myNegCoordText);
         
         break;
       case 6: 
-        var8.a(myChevronDown + myChevronDown, myRHSlocation, myXLine, myNegCoordText);
+        var8.a(this.myChevronDown + this.myChevronDown, this.myRHSlocation, this.myXLine, this.myNegCoordText);
         
         break;
       case 7: 
-        var8.a(myChevronDown, myRHSlocation, myXLine, myNegCoordText);
+        var8.a(this.myChevronDown, this.myRHSlocation, this.myXLine, this.myNegCoordText);
         
-        var8.a(myChevronDown, myRHSlocation, myZLine, myNegCoordText);
+        var8.a(this.myChevronDown, this.myRHSlocation, this.myZLine, this.myNegCoordText);
       }
     }
-    if ((showCoords > 2) && (mc.f != null) && (mc.f.e(var1)))
+    if ((this.showCoords > 2) && (this.mc.f != null) && (this.mc.f.e(var1)))
     {
-      amy var26 = mc.f.f(var1);
-      var8.a(amc.f.v()).ah, myBaseOffset, myBiomeLine, myBiomeText);
+      amy var26 = this.mc.f.f(var1);
+      var8.a(var26.a(var1, this.mc.f.v()).ah, this.myBaseOffset, this.myBiomeLine, this.myBiomeText);
     }
   }
   
   public void renderPlayerTimer()
   {
     GL11.glEnable(3008);
-    avr myRes = new avr(mc);
+    avr myRes = new avr(this.mc);
     String myTime = BattyUtils.constructTimeString();
-    int timeStringWid = mc.k.a(myTime);
-    clockBoxW = (12 + timeStringWid);
-    clockBoxH = 10;
-    switch (timerLocation)
+    int timeStringWid = this.mc.k.a(myTime);
+    this.clockBoxW = (12 + timeStringWid);
+    this.clockBoxH = 10;
+    switch (this.timerLocation)
     {
     case 0: 
-      clockBoxR = (clockBoxW + 1);
-      clockBoxBase = (clockBoxH + 1);
-      if (coordLocation == 0) {
-        clockBoxBase += coordBoxH + 1;
+      this.clockBoxR = (this.clockBoxW + 1);
+      this.clockBoxBase = (this.clockBoxH + 1);
+      if (this.coordLocation == 0) {
+        this.clockBoxBase += this.coordBoxH + 1;
       }
       break;
     case 1: 
-      clockBoxR = (myRes.a() / 2 + clockBoxW / 2);
-      clockBoxBase = (clockBoxH + 1);
+      this.clockBoxR = (myRes.a() / 2 + this.clockBoxW / 2);
+      this.clockBoxBase = (this.clockBoxH + 1);
       break;
     case 2: 
-      clockBoxR = (myRes.a() - 1);
-      clockBoxBase = (clockBoxH + 1);
-      if (coordLocation == 1) {
-        clockBoxBase += coordBoxH + 1;
+      this.clockBoxR = (myRes.a() - 1);
+      this.clockBoxBase = (this.clockBoxH + 1);
+      if (this.coordLocation == 1) {
+        this.clockBoxBase += this.coordBoxH + 1;
       }
       break;
     case 3: 
-      clockBoxR = (myRes.a() - 1);
-      clockBoxBase = (myRes.b() - 1);
-      if (coordLocation == 2) {
-        clockBoxBase -= coordBoxH + 1;
+      this.clockBoxR = (myRes.a() - 1);
+      this.clockBoxBase = (myRes.b() - 1);
+      if (this.coordLocation == 2) {
+        this.clockBoxBase -= this.coordBoxH + 1;
       }
       break;
     case 4: 
-      clockBoxR = (clockBoxW + 1);
-      clockBoxBase = (myRes.b() - 15);
-      if (coordLocation == 3) {
-        clockBoxBase -= coordBoxH + 1;
+      this.clockBoxR = (this.clockBoxW + 1);
+      this.clockBoxBase = (myRes.b() - 15);
+      if (this.coordLocation == 3) {
+        this.clockBoxBase -= this.coordBoxH + 1;
       }
       break;
     }
-    clockBoxL = (clockBoxR - clockBoxW);
-    clockBoxTop = (clockBoxBase - clockBoxH);
+    this.clockBoxL = (this.clockBoxR - this.clockBoxW);
+    this.clockBoxTop = (this.clockBoxBase - this.clockBoxH);
     
-    myTimerLine = (clockBoxTop + 1);
-    myTimerOffset = (clockBoxL + 6);
-    if (shadedTimer) {
-      a(clockBoxL, clockBoxTop, clockBoxR, clockBoxBase, myRectColour);
+    this.myTimerLine = (this.clockBoxTop + 1);
+    this.myTimerOffset = (this.clockBoxL + 6);
+    if (this.shadedTimer) {
+      a(this.clockBoxL, this.clockBoxTop, this.clockBoxR, this.clockBoxBase, this.myRectColour);
     }
-    if (timerRunning) {
-      mc.k.a(myTime, myTimerOffset, myTimerLine, myTimerRunText);
+    if (this.timerRunning) {
+      this.mc.k.a(myTime, this.myTimerOffset, this.myTimerLine, this.myTimerRunText);
     } else {
-      mc.k.a(myTime, myTimerOffset, myTimerLine, myTimerStopText);
+      this.mc.k.a(myTime, this.myTimerOffset, this.myTimerLine, this.myTimerStopText);
     }
   }
   
   public void renderPlayerFPS()
   {
     GL11.glEnable(3008);
-    avr myRes = new avr(mc);
-    String myFPS = mc.C.split(" ")[0] + " FPS";
-    int fpsStringWid = mc.k.a(myFPS);
-    fpsBoxW = (12 + fpsStringWid);
-    fpsBoxH = 10;
-    switch (fpsLocation)
+    avr myRes = new avr(this.mc);
+    String myFPS = this.mc.C.split(" ")[0] + " FPS";
+    int fpsStringWid = this.mc.k.a(myFPS);
+    this.fpsBoxW = (12 + fpsStringWid);
+    this.fpsBoxH = 10;
+    switch (this.fpsLocation)
     {
     case 0: 
-      fpsBoxR = (fpsBoxW + 1);
-      fpsBoxBase = (fpsBoxH + 1);
-      if (timerLocation == 0) {
-        fpsBoxBase += clockBoxH + 1;
+      this.fpsBoxR = (this.fpsBoxW + 1);
+      this.fpsBoxBase = (this.fpsBoxH + 1);
+      if (this.timerLocation == 0) {
+        this.fpsBoxBase += this.clockBoxH + 1;
       }
-      if (coordLocation == 0) {
-        fpsBoxBase += coordBoxH + 1;
+      if (this.coordLocation == 0) {
+        this.fpsBoxBase += this.coordBoxH + 1;
       }
       break;
     case 1: 
-      fpsBoxR = (myRes.a() / 2 + fpsBoxW / 2);
-      fpsBoxBase = (fpsBoxH + 1);
-      if (timerLocation == 1) {
-        fpsBoxBase += clockBoxH + 1;
+      this.fpsBoxR = (myRes.a() / 2 + this.fpsBoxW / 2);
+      this.fpsBoxBase = (this.fpsBoxH + 1);
+      if (this.timerLocation == 1) {
+        this.fpsBoxBase += this.clockBoxH + 1;
       }
       break;
     case 2: 
-      fpsBoxR = (myRes.a() - 1);
-      fpsBoxBase = (fpsBoxH + 1);
-      if (timerLocation == 2) {
-        fpsBoxBase += clockBoxH + 1;
+      this.fpsBoxR = (myRes.a() - 1);
+      this.fpsBoxBase = (this.fpsBoxH + 1);
+      if (this.timerLocation == 2) {
+        this.fpsBoxBase += this.clockBoxH + 1;
       }
-      if (coordLocation == 1) {
-        fpsBoxBase += coordBoxH + 1;
+      if (this.coordLocation == 1) {
+        this.fpsBoxBase += this.coordBoxH + 1;
       }
       break;
     case 3: 
-      fpsBoxR = (myRes.a() - 1);
-      fpsBoxBase = (myRes.b() - 1);
-      if (timerLocation == 3) {
-        fpsBoxBase -= clockBoxH + 1;
+      this.fpsBoxR = (myRes.a() - 1);
+      this.fpsBoxBase = (myRes.b() - 1);
+      if (this.timerLocation == 3) {
+        this.fpsBoxBase -= this.clockBoxH + 1;
       }
-      if (coordLocation == 2) {
-        fpsBoxBase -= coordBoxH + 1;
+      if (this.coordLocation == 2) {
+        this.fpsBoxBase -= this.coordBoxH + 1;
       }
       break;
     case 4: 
-      fpsBoxR = (fpsBoxW + 1);
-      fpsBoxBase = (myRes.b() - 15);
-      if (timerLocation == 4) {
-        fpsBoxBase -= clockBoxH + 1;
+      this.fpsBoxR = (this.fpsBoxW + 1);
+      this.fpsBoxBase = (myRes.b() - 15);
+      if (this.timerLocation == 4) {
+        this.fpsBoxBase -= this.clockBoxH + 1;
       }
-      if (coordLocation == 3) {
-        fpsBoxBase -= coordBoxH + 1;
+      if (this.coordLocation == 3) {
+        this.fpsBoxBase -= this.coordBoxH + 1;
       }
       break;
     }
-    fpsBoxL = (fpsBoxR - fpsBoxW);
-    fpsBoxTop = (fpsBoxBase - fpsBoxH);
+    this.fpsBoxL = (this.fpsBoxR - this.fpsBoxW);
+    this.fpsBoxTop = (this.fpsBoxBase - this.fpsBoxH);
     
-    myFPSLine = (fpsBoxTop + 1);
-    myFPSOffset = (fpsBoxL + 6);
-    if (shadedFPS) {
-      a(fpsBoxL, fpsBoxTop, fpsBoxR, fpsBoxBase, myRectColour);
+    this.myFPSLine = (this.fpsBoxTop + 1);
+    this.myFPSOffset = (this.fpsBoxL + 6);
+    if (this.shadedFPS) {
+      a(this.fpsBoxL, this.fpsBoxTop, this.fpsBoxR, this.fpsBoxBase, this.myRectColour);
     }
-    mc.k.a(myFPS, myFPSOffset, myFPSLine, myFPSText);
+    this.mc.k.a(myFPS, this.myFPSOffset, this.myFPSLine, this.myFPSText);
   }
   
   public void hideUnhideCoords()
   {
-    showCoords += 1;
-    if (showCoords > 4) {
-      showCoords = 0;
+    this.showCoords += 1;
+    if (this.showCoords > 4) {
+      this.showCoords = 0;
     }
     BattyConfig.storeRuntimeOptions();
   }
   
   public void rotateScreenCoords()
   {
-    coordLocation += 1;
-    if (coordLocation > 2) {
-      coordLocation = 0;
+    this.coordLocation += 1;
+    if (this.coordLocation > 2) {
+      this.coordLocation = 0;
     }
     BattyConfig.storeRuntimeOptions();
   }
@@ -513,59 +513,59 @@ public class BattyUI
   {
     StringSelection myCoordString;
     StringSelection myCoordString;
-    if (coordsCopyTPFormat) {
-      myCoordString = new StringSelection(myPosX + " " + myPosY + " " + myPosZ);
+    if (this.coordsCopyTPFormat) {
+      myCoordString = new StringSelection(this.myPosX + " " + this.myPosY + " " + this.myPosZ);
     } else {
-      myCoordString = new StringSelection("x:" + myPosX + " y:" + myPosY + " z:" + myPosZ);
+      myCoordString = new StringSelection("x:" + this.myPosX + " y:" + this.myPosY + " z:" + this.myPosZ);
     }
     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(myCoordString, null);
   }
   
   public void hideUnhideStopWatch()
   {
-    hideTimer = (!hideTimer);
+    this.hideTimer = (!this.hideTimer);
     BattyConfig.storeRuntimeOptions();
   }
   
   public void rotateScreenTimer()
   {
-    timerLocation += 1;
-    if (timerLocation > 4) {
-      timerLocation = 0;
+    this.timerLocation += 1;
+    if (this.timerLocation > 4) {
+      this.timerLocation = 0;
     }
     BattyConfig.storeRuntimeOptions();
   }
   
   public void hideUnhideFPS()
   {
-    hideFPS = (!hideFPS);
+    this.hideFPS = (!this.hideFPS);
     BattyConfig.storeRuntimeOptions();
   }
   
   public void rotateScreenFPS()
   {
-    fpsLocation += 1;
-    if (fpsLocation > 3) {
-      fpsLocation = 0;
+    this.fpsLocation += 1;
+    if (this.fpsLocation > 3) {
+      this.fpsLocation = 0;
     }
     BattyConfig.storeRuntimeOptions();
   }
   
   public void renderPlayerInfo()
   {
-    if (!mc.t.aB)
+    if (!this.mc.t.aB)
     {
-      if (showCoords > 0) {
+      if (this.showCoords > 0) {
         renderPlayerCoords();
       } else {
-        coordBoxH = 0;
+        this.coordBoxH = 0;
       }
-      if (hideTimer) {
-        clockBoxH = 0;
+      if (this.hideTimer) {
+        this.clockBoxH = 0;
       } else {
         renderPlayerTimer();
       }
-      if (!hideFPS) {
+      if (!this.hideFPS) {
         renderPlayerFPS();
       }
     }

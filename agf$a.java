@@ -22,30 +22,30 @@ public enum agf$a
   
   private agf$a(int ☃, String ☃, String ☃, arn ☃)
   {
-    e = ☃;
-    f = ☃;
-    g = ☃;
-    h = ☃;
+    this.e = ☃;
+    this.f = ☃;
+    this.g = ☃;
+    this.h = ☃;
   }
   
   public int a()
   {
-    return e;
+    return this.e;
   }
   
   public String c()
   {
-    return g;
+    return this.g;
   }
   
   public arn d()
   {
-    return h;
+    return this.h;
   }
   
   public String toString()
   {
-    return f;
+    return this.f;
   }
   
   public static a a(int ☃)
@@ -58,6 +58,6 @@ public enum agf$a
   
   public String l()
   {
-    return f;
+    return this.f;
   }
 }

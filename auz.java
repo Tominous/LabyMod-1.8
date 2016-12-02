@@ -30,8 +30,8 @@ public class auz
     
     int ☃ = ☃ ? 1 : 0;
     
-    float ☃ = z;
-    float ☃ = y;
+    float ☃ = ☃.z;
+    float ☃ = ☃.y;
     
     f = ns.b(☃ * 3.1415927F / 180.0F) * (1 - ☃ * 2);
     h = ns.a(☃ * 3.1415927F / 180.0F) * (1 - ☃ * 2);
@@ -43,13 +43,13 @@ public class auz
   
   public static aui a(pk ☃, double ☃)
   {
-    double ☃ = p + (s - p) * ☃;
-    double ☃ = q + (t - q) * ☃;
-    double ☃ = r + (u - r) * ☃;
+    double ☃ = ☃.p + (☃.s - ☃.p) * ☃;
+    double ☃ = ☃.q + (☃.t - ☃.q) * ☃;
+    double ☃ = ☃.r + (☃.u - ☃.r) * ☃;
     
-    double ☃ = ☃ + ea;
-    double ☃ = ☃ + eb;
-    double ☃ = ☃ + ec;
+    double ☃ = ☃ + e.a;
+    double ☃ = ☃ + e.b;
+    double ☃ = ☃ + e.c;
     
     return new aui(☃, ☃, ☃);
   }
@@ -67,7 +67,7 @@ public class auz
         ☃ = ahv.b(((Integer)☃.b(ahv.b)).intValue()) - 0.11111111F;
       }
       float ☃ = ☃.o() + 1 - ☃;
-      if (b >= ☃) {
+      if (☃.b >= ☃) {
         ☃ = ☃.p(☃.a()).c();
       }
     }

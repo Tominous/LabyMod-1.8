@@ -10,7 +10,7 @@ final class kb$6
     ☃.d(☃);
     ☃.a(☃, "game.tnt.primed", 1.0F, 1.0F);
     
-    b -= 1;
+    ☃.b -= 1;
     return ☃;
   }
 }

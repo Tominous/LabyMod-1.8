@@ -16,7 +16,7 @@ public class ahn
   public ahn()
   {
     super(arm.f, arn.m);
-    j(M.b().a(a, cq.a).a(b, Boolean.valueOf(true)));
+    j(this.M.b().a(a, cq.a).a(b, Boolean.valueOf(true)));
     a(yz.d);
     a(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
   }
@@ -76,7 +76,7 @@ public class ahn
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (D) {
+    if (☃.D) {
       return true;
     }
     akw ☃ = ☃.s(☃);

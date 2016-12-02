@@ -8,24 +8,24 @@ public class wc
     super(☃);
     a(1.4F, 0.9F);
     
-    i.a(1, new ra(this));
+    this.i.a(1, new ra(this));
     
-    i.a(3, new rh(this, 0.4F));
-    i.a(4, new wc.a(this, wn.class));
-    i.a(4, new wc.a(this, ty.class));
+    this.i.a(3, new rh(this, 0.4F));
+    this.i.a(4, new wc.a(this, wn.class));
+    this.i.a(4, new wc.a(this, ty.class));
     
-    i.a(5, new rz(this, 0.8D));
-    i.a(6, new ri(this, wn.class, 8.0F));
-    i.a(6, new ry(this));
+    this.i.a(5, new rz(this, 0.8D));
+    this.i.a(6, new ri(this, wn.class, 8.0F));
+    this.i.a(6, new ry(this));
     
-    bi.a(1, new sm(this, false, new Class[0]));
-    bi.a(2, new wc.c(this, wn.class));
-    bi.a(3, new wc.c(this, ty.class));
+    this.bi.a(1, new sm(this, false, new Class[0]));
+    this.bi.a(2, new wc.c(this, wn.class));
+    this.bi.a(3, new wc.c(this, ty.class));
   }
   
   public double an()
   {
-    return K * 0.5F;
+    return this.K * 0.5F;
   }
   
   protected sw b(adm ☃)
@@ -37,14 +37,14 @@ public class wc
   {
     super.h();
     
-    ac.a(16, new Byte((byte)0));
+    this.ac.a(16, new Byte((byte)0));
   }
   
   public void t_()
   {
     super.t_();
-    if (!o.D) {
-      a(D);
+    if (!this.o.D) {
+      a(this.D);
     }
   }
   
@@ -84,7 +84,7 @@ public class wc
   protected void b(boolean ☃, int ☃)
   {
     super.b(☃, ☃);
-    if ((☃) && ((V.nextInt(3) == 0) || (V.nextInt(1 + ☃) > 0))) {
+    if ((☃) && ((this.V.nextInt(3) == 0) || (this.V.nextInt(1 + ☃) > 0))) {
       a(zy.bB, 1);
     }
   }
@@ -103,7 +103,7 @@ public class wc
   
   public boolean d(pf ☃)
   {
-    if (☃.a() == uH) {
+    if (☃.a() == pe.u.H) {
       return false;
     }
     return super.d(☃);
@@ -111,41 +111,41 @@ public class wc
   
   public boolean n()
   {
-    return (ac.a(16) & 0x1) != 0;
+    return (this.ac.a(16) & 0x1) != 0;
   }
   
   public void a(boolean ☃)
   {
-    byte ☃ = ac.a(16);
+    byte ☃ = this.ac.a(16);
     if (☃) {
       ☃ = (byte)(☃ | 0x1);
     } else {
       ☃ = (byte)(☃ & 0xFFFFFFFE);
     }
-    ac.b(16, Byte.valueOf(☃));
+    this.ac.b(16, Byte.valueOf(☃));
   }
   
   public pu a(ok ☃, pu ☃)
   {
     ☃ = super.a(☃, ☃);
-    if (o.s.nextInt(100) == 0)
+    if (this.o.s.nextInt(100) == 0)
     {
-      wa ☃ = new wa(o);
-      ☃.b(s, t, u, y, 0.0F);
+      wa ☃ = new wa(this.o);
+      ☃.b(this.s, this.t, this.u, this.y, 0.0F);
       ☃.a(☃, null);
-      o.d(☃);
+      this.o.d(☃);
       ☃.a(this);
     }
     if (☃ == null)
     {
       ☃ = new wc.b();
-      if ((o.aa() == oj.d) && (o.s.nextFloat() < 0.1F * ☃.c())) {
-        ((wc.b)☃).a(o.s);
+      if ((this.o.aa() == oj.d) && (this.o.s.nextFloat() < 0.1F * ☃.c())) {
+        ((wc.b)☃).a(this.o.s);
       }
     }
     if ((☃ instanceof wc.b))
     {
-      int ☃ = a;
+      int ☃ = ((wc.b)☃).a;
       if ((☃ > 0) && (pe.a[☃] != null)) {
         c(new pf(☃, Integer.MAX_VALUE));
       }
@@ -167,13 +167,13 @@ public class wc
     {
       int ☃ = ☃.nextInt(5);
       if (☃ <= 1) {
-        a = cH;
+        this.a = pe.c.H;
       } else if (☃ <= 2) {
-        a = gH;
+        this.a = pe.g.H;
       } else if (☃ <= 3) {
-        a = lH;
+        this.a = pe.l.H;
       } else if (☃ <= 4) {
-        a = pH;
+        this.a = pe.p.H;
       }
     }
   }
@@ -188,10 +188,10 @@ public class wc
     
     public boolean b()
     {
-      float ☃ = b.c(1.0F);
-      if ((☃ >= 0.5F) && (b.bc().nextInt(100) == 0))
+      float ☃ = this.b.c(1.0F);
+      if ((☃ >= 0.5F) && (this.b.bc().nextInt(100) == 0))
       {
-        b.d(null);
+        this.b.d(null);
         return false;
       }
       return super.b();
@@ -199,7 +199,7 @@ public class wc
     
     protected double a(pr ☃)
     {
-      return 4.0F + J;
+      return 4.0F + ☃.J;
     }
   }
   
@@ -213,7 +213,7 @@ public class wc
     
     public boolean a()
     {
-      float ☃ = e.c(1.0F);
+      float ☃ = this.e.c(1.0F);
       if (☃ >= 0.5F) {
         return false;
       }

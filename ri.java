@@ -12,62 +12,62 @@ public class ri
   
   public ri(ps ☃, Class<? extends pk> ☃, float ☃)
   {
-    a = ☃;
-    d = ☃;
-    c = ☃;
-    f = 0.02F;
+    this.a = ☃;
+    this.d = ☃;
+    this.c = ☃;
+    this.f = 0.02F;
     a(2);
   }
   
   public ri(ps ☃, Class<? extends pk> ☃, float ☃, float ☃)
   {
-    a = ☃;
-    d = ☃;
-    c = ☃;
-    f = ☃;
+    this.a = ☃;
+    this.d = ☃;
+    this.c = ☃;
+    this.f = ☃;
     a(2);
   }
   
   public boolean a()
   {
-    if (a.bc().nextFloat() >= f) {
+    if (this.a.bc().nextFloat() >= this.f) {
       return false;
     }
-    if (a.u() != null) {
-      b = a.u();
+    if (this.a.u() != null) {
+      this.b = this.a.u();
     }
-    if (d == wn.class) {
-      b = a.o.a(a, c);
+    if (this.d == wn.class) {
+      this.b = this.a.o.a(this.a, this.c);
     } else {
-      b = a.o.a(d, a.aR().b(c, 3.0D, c), a);
+      this.b = this.a.o.a(this.d, this.a.aR().b(this.c, 3.0D, this.c), this.a);
     }
-    return b != null;
+    return this.b != null;
   }
   
   public boolean b()
   {
-    if (!b.ai()) {
+    if (!this.b.ai()) {
       return false;
     }
-    if (a.h(b) > c * c) {
+    if (this.a.h(this.b) > this.c * this.c) {
       return false;
     }
-    return e > 0;
+    return this.e > 0;
   }
   
   public void c()
   {
-    e = (40 + a.bc().nextInt(40));
+    this.e = (40 + this.a.bc().nextInt(40));
   }
   
   public void d()
   {
-    b = null;
+    this.b = null;
   }
   
   public void e()
   {
-    a.p().a(b.s, b.t + b.aS(), b.u, 10.0F, a.bQ());
-    e -= 1;
+    this.a.p().a(this.b.s, this.b.t + this.b.aS(), this.b.u, 10.0F, this.a.bQ());
+    this.e -= 1;
   }
 }

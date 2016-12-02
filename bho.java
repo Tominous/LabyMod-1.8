@@ -32,17 +32,17 @@ public class bho
       bhp ☃ = new bhp(this);
       Thread ☃ = b.newThread(☃);
       ☃.start();
-      c.add(☃);
+      this.c.add(☃);
     }
     for (int ☃ = 0; ☃ < 5; ☃++) {
-      e.add(new bfg());
+      this.e.add(new bfg());
     }
-    i = new bhp(this, new bfg());
+    this.i = new bhp(this, new bfg());
   }
   
   public String a()
   {
-    return String.format("pC: %03d, pU: %1d, aB: %1d", new Object[] { Integer.valueOf(d.size()), Integer.valueOf(h.size()), Integer.valueOf(e.size()) });
+    return String.format("pC: %03d, pU: %1d, aB: %1d", new Object[] { Integer.valueOf(this.d.size()), Integer.valueOf(this.h.size()), Integer.valueOf(this.e.size()) });
   }
   
   public boolean a(long ☃)
@@ -51,11 +51,11 @@ public class bho
     for (;;)
     {
       boolean ☃ = false;
-      synchronized (h)
+      synchronized (this.h)
       {
-        if (!h.isEmpty())
+        if (!this.h.isEmpty())
         {
-          ((ListenableFutureTask)h.poll()).run();
+          ((ListenableFutureTask)this.h.poll()).run();
           ☃ = true;
           ☃ = true;
         }
@@ -84,7 +84,7 @@ public class bho
           bho.a(bho.this).remove(☃);
         }
       });
-      boolean ☃ = d.offer(☃);
+      boolean ☃ = this.d.offer(☃);
       if (!☃) {
         ☃.e();
       }
@@ -104,7 +104,7 @@ public class bho
       bhn ☃ = ☃.d();
       try
       {
-        i.a(☃);
+        this.i.a(☃);
       }
       catch (InterruptedException localInterruptedException) {}
       return 1;
@@ -127,24 +127,24 @@ public class bho
       }
       catch (InterruptedException localInterruptedException) {}
     }
-    e.addAll(☃);
+    this.e.addAll(☃);
   }
   
   public void a(bfg ☃)
   {
-    e.add(☃);
+    this.e.add(☃);
   }
   
   public bfg c()
     throws InterruptedException
   {
-    return (bfg)e.take();
+    return (bfg)this.e.take();
   }
   
   public bhn d()
     throws InterruptedException
   {
-    return (bhn)d.take();
+    return (bhn)this.d.take();
   }
   
   public boolean c(bht ☃)
@@ -163,7 +163,7 @@ public class bho
             bho.a(bho.this).remove(☃);
           }
         });
-        return d.offer(☃);
+        return this.d.offer(☃);
       }
       return true;
     }
@@ -189,12 +189,12 @@ public class bho
     {
       public void run()
       {
-        a(☃, ☃, ☃, ☃);
+        bho.this.a(☃, ☃, ☃, ☃);
       }
     }, null);
-    synchronized (h)
+    synchronized (this.h)
     {
-      h.add(☃);
+      this.h.add(☃);
     }
     return ☃;
   }
@@ -205,7 +205,7 @@ public class bho
     
     bfl.E();
     ☃.f();
-    f.a(☃);
+    this.f.a(☃);
     bfl.F();
     
     GL11.glEndList();
@@ -213,15 +213,15 @@ public class bho
   
   private void a(bfd ☃, bmt ☃)
   {
-    g.a(☃);
-    g.a(☃);
+    this.g.a(☃);
+    this.g.a(☃);
   }
   
   public void e()
   {
-    while (!d.isEmpty())
+    while (!this.d.isEmpty())
     {
-      bhn ☃ = (bhn)d.poll();
+      bhn ☃ = (bhn)this.d.poll();
       if (☃ != null) {
         ☃.e();
       }

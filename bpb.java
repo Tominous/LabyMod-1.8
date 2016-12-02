@@ -11,6 +11,6 @@ public abstract class bpb
   
   public boolean k()
   {
-    return j;
+    return this.j;
   }
 }

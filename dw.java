@@ -9,14 +9,14 @@ public class dw
   
   public dw(long ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public void a(long ☃)
   {
-    c += ☃ / 8L;
-    if (c > b) {
-      throw new RuntimeException("Tried to read NBT tag that was too big; tried to allocate: " + c + "bytes where max allowed: " + b);
+    this.c += ☃ / 8L;
+    if (this.c > this.b) {
+      throw new RuntimeException("Tried to read NBT tag that was too big; tried to allocate: " + this.c + "bytes where max allowed: " + this.b);
     }
   }
 }

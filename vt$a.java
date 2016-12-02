@@ -6,14 +6,14 @@ class vt$a
   
   public vt$a(vt ☃)
   {
-    a = ☃;
+    this.a = ☃;
     
     a(3);
   }
   
   public boolean a()
   {
-    pr ☃ = a.u();
+    pr ☃ = this.a.u();
     if ((☃ == null) || (!☃.ai())) {
       return false;
     }
@@ -22,57 +22,57 @@ class vt$a
   
   public boolean b()
   {
-    return (super.b()) && ((a.cn()) || (a.h(a.u()) > 9.0D));
+    return (super.b()) && ((this.a.cn()) || (this.a.h(this.a.u()) > 9.0D));
   }
   
   public void c()
   {
-    b = -10;
-    a.s().n();
-    a.p().a(a.u(), 90.0F, 90.0F);
+    this.b = -10;
+    this.a.s().n();
+    this.a.p().a(this.a.u(), 90.0F, 90.0F);
     
-    a.ai = true;
+    this.a.ai = true;
   }
   
   public void d()
   {
-    vt.a(a, 0);
-    a.d(null);
+    vt.a(this.a, 0);
+    this.a.d(null);
     
-    vt.a(a).f();
+    vt.a(this.a).f();
   }
   
   public void e()
   {
-    pr ☃ = a.u();
+    pr ☃ = this.a.u();
     
-    a.s().n();
-    a.p().a(☃, 90.0F, 90.0F);
-    if (!a.t(☃))
+    this.a.s().n();
+    this.a.p().a(☃, 90.0F, 90.0F);
+    if (!this.a.t(☃))
     {
-      a.d(null);
+      this.a.d(null);
       return;
     }
-    b += 1;
-    if (b == 0)
+    this.b += 1;
+    if (this.b == 0)
     {
-      vt.a(a, a.u().F());
-      a.o.a(a, (byte)21);
+      vt.a(this.a, this.a.u().F());
+      this.a.o.a(this.a, (byte)21);
     }
-    else if (b >= a.cm())
+    else if (this.b >= this.a.cm())
     {
       float ☃ = 1.0F;
-      if (a.o.aa() == oj.d) {
+      if (this.a.o.aa() == oj.d) {
         ☃ += 2.0F;
       }
-      if (a.cn()) {
+      if (this.a.cn()) {
         ☃ += 2.0F;
       }
-      ☃.a(ow.b(a, a), ☃);
-      ☃.a(ow.a(a), (float)a.a(vy.e).e());
-      a.d(null);
+      ☃.a(ow.b(this.a, this.a), ☃);
+      ☃.a(ow.a(this.a), (float)this.a.a(vy.e).e());
+      this.a.d(null);
     }
-    else if ((b < 60) || (b % 20 != 0)) {}
+    else if ((this.b < 60) || (this.b % 20 != 0)) {}
     super.e();
   }
 }

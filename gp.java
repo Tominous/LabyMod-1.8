@@ -15,56 +15,56 @@ public class gp
   {
     int ☃ = ☃.size();
     
-    a = new int[☃];
-    b = new int[☃];
-    c = new go.a[☃];
-    d = (!get0pt.o());
+    this.a = new int[☃];
+    this.b = new int[☃];
+    this.c = new go.a[☃];
+    this.d = (!((amy)☃.get(0)).p().t.o());
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
       amy ☃ = (amy)☃.get(☃);
-      go.a ☃ = go.a(☃, true, d, 65535);
+      go.a ☃ = go.a(☃, true, this.d, 65535);
       
-      a[☃] = a;
-      b[☃] = b;
-      c[☃] = ☃;
+      this.a[☃] = ☃.a;
+      this.b[☃] = ☃.b;
+      this.c[☃] = ☃;
     }
   }
   
   public void a(em ☃)
     throws IOException
   {
-    d = ☃.readBoolean();
+    this.d = ☃.readBoolean();
     
     int ☃ = ☃.e();
-    a = new int[☃];
-    b = new int[☃];
-    c = new go.a[☃];
+    this.a = new int[☃];
+    this.b = new int[☃];
+    this.c = new go.a[☃];
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
-      a[☃] = ☃.readInt();
-      b[☃] = ☃.readInt();
-      c[☃] = new go.a();
-      c[☃].b = (☃.readShort() & 0xFFFF);
-      c[☃].a = new byte[go.a(Integer.bitCount(c[☃].b), d, true)];
+      this.a[☃] = ☃.readInt();
+      this.b[☃] = ☃.readInt();
+      this.c[☃] = new go.a();
+      this.c[☃].b = (☃.readShort() & 0xFFFF);
+      this.c[☃].a = new byte[go.a(Integer.bitCount(this.c[☃].b), this.d, true)];
     }
     for (int ☃ = 0; ☃ < ☃; ☃++) {
-      ☃.readBytes(c[☃].a);
+      ☃.readBytes(this.c[☃].a);
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeBoolean(d);
-    ☃.b(c.length);
-    for (int ☃ = 0; ☃ < a.length; ☃++)
+    ☃.writeBoolean(this.d);
+    ☃.b(this.c.length);
+    for (int ☃ = 0; ☃ < this.a.length; ☃++)
     {
-      ☃.writeInt(a[☃]);
-      ☃.writeInt(b[☃]);
-      ☃.writeShort((short)(c[☃].b & 0xFFFF));
+      ☃.writeInt(this.a[☃]);
+      ☃.writeInt(this.b[☃]);
+      ☃.writeShort((short)(this.c[☃].b & 0xFFFF));
     }
-    for (int ☃ = 0; ☃ < a.length; ☃++) {
-      ☃.writeBytes(c[☃].a);
+    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
+      ☃.writeBytes(this.c[☃].a);
     }
   }
   
@@ -75,26 +75,26 @@ public class gp
   
   public int a(int ☃)
   {
-    return a[☃];
+    return this.a[☃];
   }
   
   public int b(int ☃)
   {
-    return b[☃];
+    return this.b[☃];
   }
   
   public int a()
   {
-    return a.length;
+    return this.a.length;
   }
   
   public byte[] c(int ☃)
   {
-    return c[☃].a;
+    return this.c[☃].a;
   }
   
   public int d(int ☃)
   {
-    return c[☃].b;
+    return this.c[☃].b;
   }
 }

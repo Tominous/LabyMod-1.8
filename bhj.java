@@ -19,7 +19,7 @@ public class bhj
       bfl.b((float)x + 0.5F, (float)y + 0.75F * f, (float)z + 0.5F);
       float f1 = te.u() * 360 / 16.0F;
       bfl.b(-f1, 0.0F, 1.0F, 0.0F);
-      d.b.j = true;
+      this.d.b.j = true;
     }
     else
     {
@@ -37,7 +37,7 @@ public class bhj
       bfl.b((float)x + 0.5F, (float)y + 0.75F * f, (float)z + 0.5F);
       bfl.b(-f2, 0.0F, 1.0F, 0.0F);
       bfl.b(0.0F, -0.3125F, -0.4375F);
-      d.b.j = false;
+      this.d.b.j = false;
     }
     if (destroyStage >= 0)
     {
@@ -55,7 +55,7 @@ public class bhj
     bfl.B();
     bfl.E();
     bfl.a(f, -f, -f);
-    d.a();
+    this.d.a();
     bfl.F();
     avn fontrenderer = c();
     float f3 = 0.015625F * f;
@@ -65,20 +65,20 @@ public class bhj
     bfl.a(false);
     int i = 0;
     if (destroyStage < 0) {
-      for (int j = 0; j < a.length; j++) {
-        if (a[j] != null)
+      for (int j = 0; j < te.a.length; j++) {
+        if (te.a[j] != null)
         {
-          eu ichatcomponent = a[j];
+          eu ichatcomponent = te.a[j];
           List<eu> list = avu.a(ichatcomponent, 90, fontrenderer, false, true);
           String s = (list != null) && (list.size() > 0) ? ((eu)list.get(0)).d() : "";
-          if (j == f)
+          if (j == te.f)
           {
             s = "> " + s + " <";
-            fontrenderer.a(s, -fontrenderer.a(s) / 2, j * 10 - a.length * 5, i);
+            fontrenderer.a(s, -fontrenderer.a(s) / 2, j * 10 - te.a.length * 5, i);
           }
           else
           {
-            fontrenderer.a(s, -fontrenderer.a(s) / 2, j * 10 - a.length * 5, i);
+            fontrenderer.a(s, -fontrenderer.a(s) / 2, j * 10 - te.a.length * 5, i);
           }
         }
       }

@@ -8,7 +8,7 @@ public class aib
   protected aib()
   {
     super(arm.b, arn.z);
-    j(M.b().a(a, Boolean.valueOf(false)));
+    j(this.M.b().a(a, Boolean.valueOf(false)));
     a(true);
     a(yz.b);
   }
@@ -21,7 +21,7 @@ public class aib
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (D) {
+    if (☃.D) {
       return;
     }
     if ((☃.l(☃.a()) < 4) && (☃.p(☃.a()).c().p() > 2))

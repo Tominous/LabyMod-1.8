@@ -29,36 +29,36 @@ public class PackInfoDownloader
   
   public void run()
   {
-    out = downloadInfo();
-    if (out == null) {
-      out = new ArrayList();
+    this.out = downloadInfo();
+    if (this.out == null) {
+      this.out = new ArrayList();
     } else {
       addDesc();
     }
-    callBack.progress(100);
-    callBack.result(out);
+    this.callBack.progress(100);
+    this.callBack.result(this.out);
   }
   
   public ArrayList<Pack> downloadInfo()
   {
     try
     {
-      callBack.progress(0);
+      this.callBack.progress(0);
       HttpURLConnection connection = (HttpURLConnection)new URL(ResourcePacks24.api_packs + "&v=2").openConnection();
       connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
       connection.setRequestProperty("Cookie", "foo=bar");
-      callBack.progress(10);
+      this.callBack.progress(10);
       connection.connect();
-      callBack.progress(20);
+      this.callBack.progress(20);
       BufferedReader r = new BufferedReader(new InputStreamReader(connection.getInputStream(), Charset.forName("UTF-8")));
-      callBack.progress(30);
+      this.callBack.progress(30);
       
       String json = "";
       String line;
       while ((line = r.readLine()) != null) {
         json = json + line;
       }
-      callBack.progress(40);
+      this.callBack.progress(40);
       
       JsonParser parser = new JsonParser();
       JsonElement element = parser.parse(json);
@@ -132,22 +132,22 @@ public class PackInfoDownloader
   {
     try
     {
-      callBack.progress(50);
+      this.callBack.progress(50);
       HttpURLConnection connection = (HttpURLConnection)new URL(ResourcePacks24.api_packs + "&v=3").openConnection();
       connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
       connection.setRequestProperty("Cookie", "foo=bar");
-      callBack.progress(60);
+      this.callBack.progress(60);
       connection.connect();
-      callBack.progress(70);
+      this.callBack.progress(70);
       BufferedReader r = new BufferedReader(new InputStreamReader(connection.getInputStream(), Charset.forName("UTF-8")));
-      callBack.progress(80);
+      this.callBack.progress(80);
       
       String json = "";
       String line;
       while ((line = r.readLine()) != null) {
         json = json + line;
       }
-      callBack.progress(90);
+      this.callBack.progress(90);
       
       JsonParser parser = new JsonParser();
       JsonElement element = parser.parse(json);
@@ -157,7 +157,7 @@ public class PackInfoDownloader
         {
           id = pack.getAsJsonObject().get("rp_id").getAsInt();
           desc = pack.getAsJsonObject().get("rp_desc").getAsString();
-          for (Pack all : out) {
+          for (Pack all : this.out) {
             if (all.getId() == id) {
               all.setDesc(desc);
             }

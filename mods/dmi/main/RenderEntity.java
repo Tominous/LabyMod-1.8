@@ -21,10 +21,10 @@ public class RenderEntity
 {
   public static void renderNameTag(pr entity, double x, double y, double z)
   {
-    if ((!settingsenabled) || (!DamageIndicator.allowed(getInstanceip))) {
+    if ((!Settings.settings.enabled) || (!DamageIndicator.allowed(LabyMod.getInstance().ip))) {
       return;
     }
-    int scale = settingsscale;
+    int scale = Settings.settings.scale;
     if ((entity instanceof bet))
     {
       bet c = (bet)entity;
@@ -38,10 +38,10 @@ public class RenderEntity
     biu renderManager = ave.A().af();
     avn var13 = renderManager.c();
     bfl.E();
-    bfl.b((float)x, (float)y + K + 0.5F - (entity.j_() ? K / 2.0F : 0.0F), (float)z);
+    bfl.b((float)x, (float)y + entity.K + 0.5F - (entity.j_() ? entity.K / 2.0F : 0.0F), (float)z);
     GL11.glNormal3f(0.0F, 1.0F, 0.0F);
-    bfl.b(-e, 0.0F, 1.0F, 0.0F);
-    bfl.b(f, 1.0F, 0.0F, 0.0F);
+    bfl.b(-renderManager.e, 0.0F, 1.0F, 0.0F);
+    bfl.b(renderManager.f, 1.0F, 0.0F, 0.0F);
     bfl.a(-0.02666667F, -0.02666667F, 0.02666667F);
     bfl.f();
     bfl.a(false);
@@ -49,12 +49,12 @@ public class RenderEntity
     bfl.l();
     bfl.a(770, 771, 1, 0);
     int hj = -10;
-    if ((K < 100.0D) && ((entity instanceof bet)))
+    if ((entity.K < 100.0D) && ((entity instanceof bet)))
     {
       auo var128 = ((bet)entity).cp();
       auk var138 = var128.a(2);
       if (var138 != null) {
-        hj = (int)(hj - (25.0D - getInstancedraw.getScale(scale) * 10.0D));
+        hj = (int)(hj - (25.0D - LabyMod.getInstance().draw.getScale(scale) * 10.0D));
       }
     }
     bfl.x();
@@ -64,7 +64,7 @@ public class RenderEntity
     String var144 = "";
     int g = 0;
     double health = entity.bn();
-    if (!settingsDMILayout)
+    if (!Settings.settings.DMILayout)
     {
       var144 = Math.ceil(health) / 2.0D + Color.cl("c") + " ❤";
       g = 16;
@@ -97,9 +97,9 @@ public class RenderEntity
         g = 40;
       }
     }
-    double k = getInstancedraw.getScale(scale);
+    double k = LabyMod.getInstance().draw.getScale(scale);
     GL11.glScaled(k, k, k);
-    int i = getInstancedraw.getStringWidth(var144) / 2;
+    int i = LabyMod.getInstance().draw.getStringWidth(var144) / 2;
     worldrenderer.b(-i - 1, hj, 0.0D).a(0.0F, 0.0F, 0.0F, 0.25F).d();
     worldrenderer.b(-i - 1, hj + 8, 0.0D).a(0.0F, 0.0F, 0.0F, 0.25F).d();
     worldrenderer.b(i + 1, hj + 8, 0.0D).a(0.0F, 0.0F, 0.0F, 0.25F).d();
@@ -108,7 +108,7 @@ public class RenderEntity
     bfl.w();
     bfl.a(true);
     bfl.j();
-    var13.a(var144, -getInstancedraw.getStringWidth(var144) / 2 + 2, hj, -1);
+    var13.a(var144, -LabyMod.getInstance().draw.getStringWidth(var144) / 2 + 2, hj, -1);
     bfl.e();
     bfl.k();
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);

@@ -11,20 +11,20 @@ public class dt
   
   public dt(int ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   void a(DataOutput ☃)
     throws IOException
   {
-    ☃.writeInt(b);
+    ☃.writeInt(this.b);
   }
   
   void a(DataInput ☃, int ☃, dw ☃)
     throws IOException
   {
     ☃.a(96L);
-    b = ☃.readInt();
+    this.b = ☃.readInt();
   }
   
   public byte a()
@@ -34,12 +34,12 @@ public class dt
   
   public String toString()
   {
-    return "" + b;
+    return "" + this.b;
   }
   
   public eb b()
   {
-    return new dt(b);
+    return new dt(this.b);
   }
   
   public boolean equals(Object ☃)
@@ -47,43 +47,43 @@ public class dt
     if (super.equals(☃))
     {
       dt ☃ = (dt)☃;
-      return b == b;
+      return this.b == ☃.b;
     }
     return false;
   }
   
   public int hashCode()
   {
-    return super.hashCode() ^ b;
+    return super.hashCode() ^ this.b;
   }
   
   public long c()
   {
-    return b;
+    return this.b;
   }
   
   public int d()
   {
-    return b;
+    return this.b;
   }
   
   public short e()
   {
-    return (short)(b & 0xFFFF);
+    return (short)(this.b & 0xFFFF);
   }
   
   public byte f()
   {
-    return (byte)(b & 0xFF);
+    return (byte)(this.b & 0xFF);
   }
   
   public double g()
   {
-    return b;
+    return this.b;
   }
   
   public float h()
   {
-    return b;
+    return this.b;
   }
 }

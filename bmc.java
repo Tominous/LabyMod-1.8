@@ -16,9 +16,9 @@ public class bmc
   
   public bmc(jy ☃, List<String> ☃, List<zd> ☃)
   {
-    g = ☃;
-    h = ☃;
-    i = ☃;
+    this.g = ☃;
+    this.h = ☃;
+    this.i = ☃;
   }
   
   public void a(bni ☃)
@@ -28,7 +28,7 @@ public class bmc
     BufferedImage ☃;
     try
     {
-      BufferedImage ☃ = bml.a(☃.a(g).b());
+      BufferedImage ☃ = bml.a(☃.a(this.g).b());
       
       int ☃ = ☃.getType();
       if (☃ == 0) {
@@ -37,10 +37,10 @@ public class bmc
       ☃ = new BufferedImage(☃.getWidth(), ☃.getHeight(), ☃);
       Graphics ☃ = ☃.getGraphics();
       ☃.drawImage(☃, 0, 0, null);
-      for (int ☃ = 0; (☃ < 17) && (☃ < h.size()) && (☃ < i.size()); ☃++)
+      for (int ☃ = 0; (☃ < 17) && (☃ < this.h.size()) && (☃ < this.i.size()); ☃++)
       {
-        String ☃ = (String)h.get(☃);
-        arn ☃ = ((zd)i.get(☃)).e();
+        String ☃ = (String)this.h.get(☃);
+        arn ☃ = ((zd)this.i.get(☃)).e();
         if (☃ != null)
         {
           InputStream ☃ = ☃.a(new jy(☃)).b();
@@ -57,7 +57,7 @@ public class bmc
                   
                   int ☃ = ☃.getRGB(☃, ☃);
                   
-                  int ☃ = ns.d(☃, L) & 0xFFFFFF;
+                  int ☃ = ns.d(☃, ☃.L) & 0xFFFFFF;
                   ☃.setRGB(☃, ☃, ☃ | ☃);
                 }
               }

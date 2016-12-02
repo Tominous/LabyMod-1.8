@@ -7,7 +7,7 @@ public class bos
   
   public bos(bgr ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public List<bgg> a(cq ☃)
@@ -42,6 +42,6 @@ public class bos
   
   public bgr f()
   {
-    return a;
+    return this.a;
   }
 }

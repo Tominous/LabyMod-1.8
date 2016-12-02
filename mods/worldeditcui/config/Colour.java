@@ -7,7 +7,7 @@ public class Colour
   
   public Colour(String defaultColour)
   {
-    hex = defaultColour;
+    this.hex = defaultColour;
     this.defaultColour = defaultColour;
   }
   
@@ -18,14 +18,14 @@ public class Colour
     if (colour == null) {
       return new Colour(defaultColour);
     }
-    if (hex == null)
+    if (colour.hex == null)
     {
-      hex = defaultColour;
+      colour.hex = defaultColour;
       colour.defaultColour = defaultColour;
     }
     else
     {
-      hex = parseColour(hex, defaultColour);
+      colour.hex = parseColour(colour.hex, defaultColour);
     }
     return colour;
   }
@@ -54,13 +54,13 @@ public class Colour
   
   public String getHex()
   {
-    if (hex == null) {
-      hex = defaultColour;
+    if (this.hex == null) {
+      this.hex = this.defaultColour;
     }
-    if (hex.length() == 7) {
-      hex += "CC";
+    if (this.hex.length() == 7) {
+      this.hex += "CC";
     }
-    return hex;
+    return this.hex;
   }
   
   public int getIntARGB()
@@ -95,7 +95,7 @@ public class Colour
   
   public Colour copyFrom(Colour other)
   {
-    hex = other.getHex();
+    this.hex = other.getHex();
     return this;
   }
 }

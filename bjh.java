@@ -10,343 +10,304 @@ public class bjh
   public float a;
   private final bfo d;
   private final bmj e;
-  private static final String __OBFID = "CL_00001003";
-  private bov modelLocation = null;
   
-  public bjh(bmj p_i46165_1_, bou p_i46165_2_)
+  public bjh(bmj ☃, bou ☃)
   {
-    e = p_i46165_1_;
-    if (Reflector.ItemModelMesherForge_Constructor.exists()) {
-      d = ((bfo)Reflector.newInstance(Reflector.ItemModelMesherForge_Constructor, new Object[] { p_i46165_2_ }));
-    } else {
-      d = new bfo(p_i46165_2_);
-    }
+    this.e = ☃;
+    this.d = new bfo(☃);
+    
     b();
   }
   
-  public void a(boolean p_175039_1_)
+  public void a(boolean ☃)
   {
-    c = p_175039_1_;
+    this.c = ☃;
   }
   
   public bfo a()
   {
-    return d;
+    return this.d;
   }
   
-  protected void a(zw p_175048_1_, int p_175048_2_, String p_175048_3_)
+  protected void a(zw ☃, int ☃, String ☃)
   {
-    d.a(p_175048_1_, p_175048_2_, new bov(p_175048_3_, "inventory"));
+    this.d.a(☃, ☃, new bov(☃, "inventory"));
   }
   
-  protected void a(afh p_175029_1_, int p_175029_2_, String p_175029_3_)
+  protected void a(afh ☃, int ☃, String ☃)
   {
-    a(zw.a(p_175029_1_), p_175029_2_, p_175029_3_);
+    a(zw.a(☃), ☃, ☃);
   }
   
-  private void a(afh p_175031_1_, String p_175031_2_)
+  private void a(afh ☃, String ☃)
   {
-    a(p_175031_1_, 0, p_175031_2_);
+    a(☃, 0, ☃);
   }
   
-  private void a(zw p_175047_1_, String p_175047_2_)
+  private void a(zw ☃, String ☃)
   {
-    a(p_175047_1_, 0, p_175047_2_);
+    a(☃, 0, ☃);
   }
   
-  private void a(boq p_175036_1_, zx p_175036_2_)
+  private void a(boq ☃, zx ☃)
   {
-    a(p_175036_1_, -1, p_175036_2_);
+    a(☃, -1, ☃);
   }
   
-  public void a(boq p_175035_1_, int p_175035_2_)
+  private void a(boq ☃, int ☃)
   {
-    a(p_175035_1_, p_175035_2_, (zx)null);
+    a(☃, ☃, null);
   }
   
-  private void a(boq p_175045_1_, int p_175045_2_, zx p_175045_3_)
+  private void a(boq ☃, int ☃, zx ☃)
   {
-    bfx var4 = bfx.a();
-    bfd var5 = var4.c();
-    
-    boolean renderTextureMap = ave.A().T().isTextureBound();
-    
-    boolean multiTexture = (Config.isMultiTexture()) && (renderTextureMap);
-    if (multiTexture) {
-      var5.setBlockLayer(adf.a);
+    bfx ☃ = bfx.a();
+    bfd ☃ = ☃.c();
+    ☃.a(7, bms.b);
+    for (cq ☃ : cq.values()) {
+      a(☃, ☃.a(☃), ☃, ☃);
     }
-    var5.a(7, bms.b);
+    a(☃, ☃.a(), ☃, ☃);
     
-    cq[] var6 = cq.n;
-    int var7 = var6.length;
-    for (int var8 = 0; var8 < var7; var8++)
-    {
-      cq var9 = var6[var8];
-      a(var5, p_175045_1_.a(var9), p_175045_2_, p_175045_3_);
+    ☃.b();
+  }
+  
+  public void a(zx ☃, boq ☃)
+  {
+    if (☃ == null) {
+      return;
     }
-    a(var5, p_175045_1_.a(), p_175045_2_, p_175045_3_);
-    var4.b();
-    if (multiTexture)
+    bfl.E();
+    bfl.a(0.5F, 0.5F, 0.5F);
+    if (☃.d())
     {
-      var5.setBlockLayer(null);
+      bfl.b(180.0F, 0.0F, 1.0F, 0.0F);
+      bfl.b(-0.5F, -0.5F, -0.5F);
+      bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
+      bfl.B();
       
-      bfl.bindCurrentTexture();
+      bfi.a.a(☃);
     }
-  }
-  
-  public void a(zx p_180454_1_, boq p_180454_2_)
-  {
-    if (p_180454_1_ != null)
+    else
     {
-      bfl.E();
-      bfl.a(0.5F, 0.5F, 0.5F);
-      if (p_180454_2_.d())
-      {
-        bfl.b(180.0F, 0.0F, 1.0F, 0.0F);
-        bfl.b(-0.5F, -0.5F, -0.5F);
-        bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-        bfl.B();
-        bfi.a.a(p_180454_1_);
+      bfl.b(-0.5F, -0.5F, -0.5F);
+      
+      a(☃, ☃);
+      if (☃.t()) {
+        a(☃);
       }
-      else
-      {
-        if (Config.isCustomItems()) {
-          p_180454_2_ = CustomItems.getCustomItemModel(p_180454_1_, p_180454_2_, modelLocation);
-        }
-        bfl.b(-0.5F, -0.5F, -0.5F);
-        a(p_180454_2_, p_180454_1_);
-        if (p_180454_1_.t()) {
-          if ((!Config.isCustomItems()) || (!CustomItems.renderCustomEffect(this, p_180454_1_, p_180454_2_))) {
-            a(p_180454_2_);
-          }
-        }
-      }
-      bfl.F();
     }
+    bfl.F();
   }
   
-  private void a(boq p_180451_1_)
+  private void a(boq ☃)
   {
     bfl.a(false);
     bfl.c(514);
     bfl.f();
     bfl.b(768, 1);
-    e.a(b);
+    
+    this.e.a(b);
+    
     bfl.n(5890);
+    
     bfl.E();
     bfl.a(8.0F, 8.0F, 8.0F);
-    float var2 = (float)(ave.J() % 3000L) / 3000.0F / 8.0F;
-    bfl.b(var2, 0.0F, 0.0F);
+    
+    float ☃ = (float)(ave.J() % 3000L) / 3000.0F / 8.0F;
+    bfl.b(☃, 0.0F, 0.0F);
     bfl.b(-50.0F, 0.0F, 0.0F, 1.0F);
-    a(p_180451_1_, -8372020);
+    a(☃, -8372020);
     bfl.F();
+    
     bfl.E();
     bfl.a(8.0F, 8.0F, 8.0F);
-    float var3 = (float)(ave.J() % 4873L) / 4873.0F / 8.0F;
-    bfl.b(-var3, 0.0F, 0.0F);
+    float ☃ = (float)(ave.J() % 4873L) / 4873.0F / 8.0F;
+    bfl.b(-☃, 0.0F, 0.0F);
     bfl.b(10.0F, 0.0F, 0.0F, 1.0F);
-    a(p_180451_1_, -8372020);
+    a(☃, -8372020);
     bfl.F();
+    
     bfl.n(5888);
+    
     bfl.b(770, 771);
     bfl.e();
     bfl.c(515);
     bfl.a(true);
-    e.a(bmh.g);
+    
+    this.e.a(bmh.g);
   }
   
-  private void a(bfd p_175038_1_, bgg p_175038_2_)
+  private void a(bfd ☃, bgg ☃)
   {
-    df var3 = p_175038_2_.d().m();
-    p_175038_1_.b(var3.n(), var3.o(), var3.p());
+    df ☃ = ☃.d().m();
+    ☃.b(☃.n(), ☃.o(), ☃.p());
   }
   
-  private void a(bfd p_175033_1_, bgg p_175033_2_, int p_175033_3_)
+  private void a(bfd ☃, bgg ☃, int ☃)
   {
-    if (p_175033_1_.isMultiTexture())
+    ☃.a(☃.a());
+    ☃.a(☃);
+    a(☃, ☃);
+  }
+  
+  private void a(bfd ☃, List<bgg> ☃, int ☃, zx ☃)
+  {
+    boolean ☃ = (☃ == -1) && (☃ != null);
+    
+    int ☃ = 0;
+    for (int ☃ = ☃.size(); ☃ < ☃; ☃++)
     {
-      p_175033_1_.a(p_175033_2_.getVertexDataSingle());
-      p_175033_1_.putSprite(p_175033_2_.getSprite());
-    }
-    else
-    {
-      p_175033_1_.a(p_175033_2_.a());
-    }
-    if (Reflector.ForgeHooksClient_putQuadColor.exists())
-    {
-      if (Reflector.IColoredBakedQuad.isInstance(p_175033_2_)) {
-        Reflector.call(Reflector.ForgeHooksClient_putQuadColor, new Object[] { p_175033_1_, p_175033_2_, Integer.valueOf(p_175033_3_) });
-      } else {
-        p_175033_1_.a(p_175033_3_);
+      bgg ☃ = (bgg)☃.get(☃);
+      int ☃ = ☃;
+      if ((☃) && (☃.b()))
+      {
+        ☃ = ☃.b().a(☃, ☃.c());
+        if (bfk.a) {
+          ☃ = bml.c(☃);
+        }
+        ☃ |= 0xFF000000;
       }
+      a(☃, ☃, ☃);
+    }
+  }
+  
+  public boolean a(zx ☃)
+  {
+    boq ☃ = this.d.a(☃);
+    if (☃ == null) {
+      return false;
+    }
+    return ☃.c();
+  }
+  
+  private void b(zx ☃)
+  {
+    boq ☃ = this.d.a(☃);
+    zw ☃ = ☃.b();
+    if (☃ == null) {
       return;
     }
-    p_175033_1_.a(p_175033_3_);
-    a(p_175033_1_, p_175033_2_);
-  }
-  
-  private void a(bfd p_175032_1_, List p_175032_2_, int p_175032_3_, zx p_175032_4_)
-  {
-    boolean var5 = (p_175032_3_ == -1) && (p_175032_4_ != null);
-    int var6 = 0;
-    for (int var7 = p_175032_2_.size(); var6 < var7; var6++)
-    {
-      bgg var8 = (bgg)p_175032_2_.get(var6);
-      int var9 = p_175032_3_;
-      if ((var5) && (var8.b()))
-      {
-        var9 = p_175032_4_.b().a(p_175032_4_, var8.c());
-        if (Config.isCustomColors()) {
-          var9 = CustomColorizer.getColorFromItemStack(p_175032_4_, var8.c(), var9);
-        }
-        if (bfk.a) {
-          var9 = bml.c(var9);
-        }
-        var9 |= 0xFF000000;
-      }
-      a(p_175032_1_, var8, var9);
+    boolean ☃ = ☃.c();
+    if (!☃) {
+      bfl.a(2.0F, 2.0F, 2.0F);
     }
+    bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
   }
   
-  public boolean a(zx p_175050_1_)
+  public void a(zx ☃, bgr.b ☃)
   {
-    boq var2 = d.a(p_175050_1_);
-    return var2 == null ? false : var2.c();
-  }
-  
-  private void b(zx p_175046_1_)
-  {
-    boq var2 = d.a(p_175046_1_);
-    zw var3 = p_175046_1_.b();
-    if (var3 != null)
-    {
-      boolean var4 = var2.c();
-      if (!var4) {
-        bfl.a(2.0F, 2.0F, 2.0F);
-      }
-      bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
+    if (☃ == null) {
+      return;
     }
+    boq ☃ = this.d.a(☃);
+    
+    a(☃, ☃, ☃);
   }
   
-  public void a(zx p_500168_1_, bgr.b p_500168_2_)
+  public void a(zx ☃, pr ☃, bgr.b ☃)
   {
-    if (p_500168_1_ != null)
-    {
-      boq var3 = d.a(p_500168_1_);
-      a(p_500168_1_, var3, p_500168_2_);
+    if ((☃ == null) || (☃ == null)) {
+      return;
     }
-  }
-  
-  public void a(zx p_175049_1_, pr p_175049_2_, bgr.b p_175049_3_)
-  {
-    if ((p_175049_1_ != null) && (p_175049_2_ != null))
+    boq ☃ = this.d.a(☃);
+    if ((☃ instanceof wn))
     {
-      boq var4 = d.a(p_175049_1_);
-      if ((p_175049_2_ instanceof wn))
-      {
-        wn var5 = (wn)p_175049_2_;
-        zw var6 = p_175049_1_.b();
-        bov var7 = null;
-        if ((var6 == zy.aR) && (bG != null))
-        {
-          var7 = new bov("fishing_rod_cast", "inventory");
-        }
-        else if ((var6 == zy.f) && (var5.bQ() != null))
-        {
-          int var8 = p_175049_1_.l() - var5.bR();
-          if (var8 >= 18) {
-            var7 = new bov("bow_pulling_2", "inventory");
-          } else if (var8 > 13) {
-            var7 = new bov("bow_pulling_1", "inventory");
-          } else if (var8 > 0) {
-            var7 = new bov("bow_pulling_0", "inventory");
-          }
-        }
-        else if (Reflector.ForgeItem_getModel.exists())
-        {
-          var7 = (bov)Reflector.call(var6, Reflector.ForgeItem_getModel, new Object[] { p_175049_1_, var5, Integer.valueOf(var5.bR()) });
-        }
-        modelLocation = var7;
-        if (var7 != null) {
-          var4 = d.a().a(var7);
-        }
-      }
-      a(p_175049_1_, var4, p_175049_3_);
+      wn ☃ = (wn)☃;
       
-      modelLocation = null;
+      zw ☃ = ☃.b();
+      bov ☃ = null;
+      if ((☃ == zy.aR) && (☃.bG != null))
+      {
+        ☃ = new bov("fishing_rod_cast", "inventory");
+      }
+      else if ((☃ == zy.f) && (☃.bQ() != null))
+      {
+        int ☃ = ☃.l() - ☃.bR();
+        if (☃ >= 18) {
+          ☃ = new bov("bow_pulling_2", "inventory");
+        } else if (☃ > 13) {
+          ☃ = new bov("bow_pulling_1", "inventory");
+        } else if (☃ > 0) {
+          ☃ = new bov("bow_pulling_0", "inventory");
+        }
+      }
+      if (☃ != null) {
+        ☃ = this.d.a().a(☃);
+      }
     }
+    a(☃, ☃, ☃);
   }
   
-  protected void a(zx p_175040_1_, boq p_175040_2_, bgr.b p_175040_3_)
+  protected void a(zx ☃, boq ☃, bgr.b ☃)
   {
-    e.a(bmh.g);
-    e.b(bmh.g).b(false, false);
-    b(p_175040_1_);
+    this.e.a(bmh.g);
+    this.e.b(bmh.g).b(false, false);
+    
+    b(☃);
+    
     bfl.B();
     bfl.a(516, 0.1F);
     bfl.l();
     bfl.a(770, 771, 1, 0);
+    
     bfl.E();
-    if (Reflector.ForgeHooksClient_handleCameraTransforms.exists())
-    {
-      p_175040_2_ = (boq)Reflector.call(Reflector.ForgeHooksClient_handleCameraTransforms, new Object[] { p_175040_2_, p_175040_3_ });
+    bgr ☃ = ☃.f();
+    ☃.a(☃);
+    if (a(☃.b(☃))) {
+      bfl.e(1028);
     }
-    else
-    {
-      bgr var4 = p_175040_2_.f();
-      var4.a(p_175040_3_);
-      if (a(var4.b(p_175040_3_))) {
-        bfl.e(1028);
-      }
-    }
-    a(p_175040_1_, p_175040_2_);
+    a(☃, ☃);
     bfl.e(1029);
     bfl.F();
+    
     bfl.C();
     bfl.k();
-    e.a(bmh.g);
-    e.b(bmh.g).a();
+    this.e.a(bmh.g);
+    this.e.b(bmh.g).a();
   }
   
-  private boolean a(bgq p_500169_1_)
+  private boolean a(bgq ☃)
   {
-    return (d.x < 0.0F ? 1 : 0) ^ (d.y < 0.0F ? 1 : 0) ^ (d.z < 0.0F ? 1 : 0);
+    return (☃.d.x < 0.0F ? 1 : 0) ^ (☃.d.y < 0.0F ? 1 : 0) ^ (☃.d.z < 0.0F ? 1 : 0);
   }
   
-  public void a(zx p_175042_1_, int p_175042_2_, int p_175042_3_)
+  public void a(zx ☃, int ☃, int ☃)
   {
-    boq var4 = d.a(p_175042_1_);
+    boq ☃ = this.d.a(☃);
+    
     bfl.E();
-    e.a(bmh.g);
-    e.b(bmh.g).b(false, false);
+    this.e.a(bmh.g);
+    this.e.b(bmh.g).b(false, false);
+    
     bfl.B();
     bfl.d();
     bfl.a(516, 0.1F);
     bfl.l();
     bfl.b(770, 771);
+    
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    a(p_175042_2_, p_175042_3_, var4.c());
-    if (Reflector.ForgeHooksClient_handleCameraTransforms.exists()) {
-      var4 = (boq)Reflector.call(Reflector.ForgeHooksClient_handleCameraTransforms, new Object[] { var4, bgr.b.e });
-    } else {
-      var4.f().a(bgr.b.e);
-    }
-    a(p_175042_1_, var4);
+    
+    a(☃, ☃, ☃.c());
+    ☃.f().a(bgr.b.e);
+    a(☃, ☃);
+    
     bfl.c();
     bfl.C();
     bfl.f();
     bfl.F();
-    e.a(bmh.g);
-    e.b(bmh.g).a();
+    this.e.a(bmh.g);
+    this.e.b(bmh.g).a();
   }
   
-  private void a(int p_180452_1_, int p_180452_2_, boolean p_180452_3_)
+  private void a(int ☃, int ☃, boolean ☃)
   {
-    bfl.b(p_180452_1_, p_180452_2_, 100.0F + a);
+    bfl.b(☃, ☃, 100.0F + this.a);
     bfl.b(8.0F, 8.0F, 0.0F);
+    
     bfl.a(1.0F, 1.0F, -1.0F);
     bfl.a(0.5F, 0.5F, 0.5F);
-    if (p_180452_3_)
+    if (☃)
     {
       bfl.a(40.0F, 40.0F, 40.0F);
       bfl.b(210.0F, 1.0F, 0.0F, 0.0F);
@@ -361,129 +322,113 @@ public class bjh
     }
   }
   
-  public void b(final zx p_180450_1_, int p_180450_2_, int p_180450_3_)
+  public void b(final zx ☃, int ☃, int ☃)
   {
-    if ((p_180450_1_ != null) && (p_180450_1_.b() != null))
+    if ((☃ == null) || (☃.b() == null)) {
+      return;
+    }
+    this.a += 50.0F;
+    try
     {
-      a += 50.0F;
-      try
+      a(☃, ☃, ☃);
+    }
+    catch (Throwable ☃)
+    {
+      b ☃ = b.a(☃, "Rendering item");
+      c ☃ = ☃.a("Item being rendered");
+      
+      ☃.a("Item Type", new Callable()
       {
-        a(p_180450_1_, p_180450_2_, p_180450_3_);
-      }
-      catch (Throwable var7)
+        public String a()
+          throws Exception
+        {
+          return String.valueOf(☃.b());
+        }
+      });
+      ☃.a("Item Aux", new Callable()
       {
-        b var5 = b.a(var7, "Rendering item");
-        c var6 = var5.a("Item being rendered");
-        var6.a("Item Type", new Callable()
+        public String a()
+          throws Exception
         {
-          private static final String __OBFID = "CL_00001004";
-          
-          public String a()
-            throws Exception
-          {
-            return String.valueOf(p_180450_1_.b());
-          }
-        });
-        var6.a("Item Aux", new Callable()
+          return String.valueOf(☃.i());
+        }
+      });
+      ☃.a("Item NBT", new Callable()
+      {
+        public String a()
+          throws Exception
         {
-          private static final String __OBFID = "CL_00001005";
-          
-          public String a()
-            throws Exception
-          {
-            return String.valueOf(p_180450_1_.i());
-          }
-        });
-        var6.a("Item NBT", new Callable()
+          return String.valueOf(☃.o());
+        }
+      });
+      ☃.a("Item Foil", new Callable()
+      {
+        public String a()
+          throws Exception
         {
-          private static final String __OBFID = "CL_00001006";
-          
-          public String a()
-            throws Exception
-          {
-            return String.valueOf(p_180450_1_.o());
-          }
-        });
-        var6.a("Item Foil", new Callable()
-        {
-          private static final String __OBFID = "CL_00001007";
-          
-          public String a()
-            throws Exception
-          {
-            return String.valueOf(p_180450_1_.t());
-          }
-        });
-        throw new e(var5);
+          return String.valueOf(☃.t());
+        }
+      });
+      throw new e(☃);
+    }
+    this.a -= 50.0F;
+  }
+  
+  public void a(avn ☃, zx ☃, int ☃, int ☃)
+  {
+    a(☃, ☃, ☃, ☃, null);
+  }
+  
+  public void a(avn ☃, zx ☃, int ☃, int ☃, String ☃)
+  {
+    if (☃ == null) {
+      return;
+    }
+    if ((☃.b != 1) || (☃ != null))
+    {
+      String ☃ = ☃ == null ? String.valueOf(☃.b) : ☃;
+      if ((☃ == null) && (☃.b < 1)) {
+        ☃ = a.m + String.valueOf(☃.b);
       }
-      a -= 50.0F;
+      bfl.f();
+      bfl.i();
+      bfl.k();
+      ☃.a(☃, ☃ + 19 - 2 - ☃.a(☃), ☃ + 6 + 3, 16777215);
+      bfl.e();
+      bfl.j();
+    }
+    if (☃.g())
+    {
+      int ☃ = (int)Math.round(13.0D - ☃.h() * 13.0D / ☃.j());
+      int ☃ = (int)Math.round(255.0D - ☃.h() * 255.0D / ☃.j());
+      bfl.f();
+      bfl.i();
+      bfl.x();
+      bfl.c();
+      bfl.k();
+      
+      bfx ☃ = bfx.a();
+      bfd ☃ = ☃.c();
+      
+      a(☃, ☃ + 2, ☃ + 13, 13, 2, 0, 0, 0, 255);
+      a(☃, ☃ + 2, ☃ + 13, 12, 1, (255 - ☃) / 4, 64, 0, 255);
+      a(☃, ☃ + 2, ☃ + 13, ☃, 1, 255 - ☃, ☃, 0, 255);
+      
+      bfl.l();
+      bfl.d();
+      bfl.w();
+      bfl.e();
+      bfl.j();
     }
   }
   
-  public void a(avn p_175030_1_, zx p_175030_2_, int p_175030_3_, int p_175030_4_)
+  private void a(bfd ☃, int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    a(p_175030_1_, p_175030_2_, p_175030_3_, p_175030_4_, (String)null);
-  }
-  
-  public void a(avn p_180453_1_, zx p_180453_2_, int p_180453_3_, int p_180453_4_, String p_180453_5_)
-  {
-    if (p_180453_2_ != null)
-    {
-      if ((b != 1) || (p_180453_5_ != null))
-      {
-        String var6 = p_180453_5_ == null ? String.valueOf(b) : p_180453_5_;
-        if ((p_180453_5_ == null) && (b < 1)) {
-          var6 = a.m + String.valueOf(b);
-        }
-        bfl.f();
-        bfl.i();
-        bfl.k();
-        p_180453_1_.a(var6, p_180453_3_ + 19 - 2 - p_180453_1_.a(var6), p_180453_4_ + 6 + 3, 16777215);
-        bfl.e();
-        bfl.j();
-      }
-      boolean itemDamaged = p_180453_2_.g();
-      if (Reflector.ForgeItem_showDurabilityBar.exists()) {
-        itemDamaged = Reflector.callBoolean(p_180453_2_.b(), Reflector.ForgeItem_showDurabilityBar, new Object[] { p_180453_2_ });
-      }
-      if (itemDamaged)
-      {
-        int var10 = (int)Math.round(13.0D - p_180453_2_.h() * 13.0D / p_180453_2_.j());
-        int var7 = (int)Math.round(255.0D - p_180453_2_.h() * 255.0D / p_180453_2_.j());
-        if (Reflector.ForgeItem_getDurabilityForDisplay.exists())
-        {
-          double health = Reflector.callDouble(p_180453_2_.b(), Reflector.ForgeItem_getDurabilityForDisplay, new Object[] { p_180453_2_ });
-          var10 = (int)Math.round(13.0D - health * 13.0D);
-          var7 = (int)Math.round(255.0D - health * 255.0D);
-        }
-        bfl.f();
-        bfl.i();
-        bfl.x();
-        bfl.c();
-        bfl.k();
-        bfx var8 = bfx.a();
-        bfd var9 = var8.c();
-        a(var9, p_180453_3_ + 2, p_180453_4_ + 13, 13, 2, 0, 0, 0, 255);
-        a(var9, p_180453_3_ + 2, p_180453_4_ + 13, 12, 1, (255 - var7) / 4, 64, 0, 255);
-        a(var9, p_180453_3_ + 2, p_180453_4_ + 13, var10, 1, 255 - var7, var7, 0, 255);
-        if (!Reflector.ForgeHooksClient.exists()) {
-          bfl.l();
-        }
-        bfl.d();
-        bfl.w();
-        bfl.e();
-        bfl.j();
-      }
-    }
-  }
-  
-  private void a(bfd p_500170_1_, int p_500170_2_, int p_500170_3_, int p_500170_4_, int p_500170_5_, int p_500170_6_, int p_500170_7_, int p_500170_8_, int p_500170_9_)
-  {
-    p_500170_1_.a(7, bms.f);
-    p_500170_1_.b(p_500170_2_ + 0, p_500170_3_ + 0, 0.0D).b(p_500170_6_, p_500170_7_, p_500170_8_, p_500170_9_).d();
-    p_500170_1_.b(p_500170_2_ + 0, p_500170_3_ + p_500170_5_, 0.0D).b(p_500170_6_, p_500170_7_, p_500170_8_, p_500170_9_).d();
-    p_500170_1_.b(p_500170_2_ + p_500170_4_, p_500170_3_ + p_500170_5_, 0.0D).b(p_500170_6_, p_500170_7_, p_500170_8_, p_500170_9_).d();
-    p_500170_1_.b(p_500170_2_ + p_500170_4_, p_500170_3_ + 0, 0.0D).b(p_500170_6_, p_500170_7_, p_500170_8_, p_500170_9_).d();
+    ☃.a(7, bms.f);
+    ☃.b(☃ + 0, ☃ + 0, 0.0D).b(☃, ☃, ☃, ☃).d();
+    ☃.b(☃ + 0, ☃ + ☃, 0.0D).b(☃, ☃, ☃, ☃).d();
+    ☃.b(☃ + ☃, ☃ + ☃, 0.0D).b(☃, ☃, ☃, ☃).d();
+    ☃.b(☃ + ☃, ☃ + 0, 0.0D).b(☃, ☃, ☃, ☃).d();
     bfx.a().b();
   }
   
@@ -667,6 +612,7 @@ public class bjh
     a(afi.L, zd.i.a(), "silver_wool");
     a(afi.L, zd.a.a(), "white_wool");
     a(afi.L, zd.e.a(), "yellow_wool");
+    
     a(afi.cC, "acacia_stairs");
     a(afi.cs, "activator_rail");
     a(afi.bY, "beacon");
@@ -778,11 +724,14 @@ public class bjh
     a(afi.cd, "wooden_button");
     a(afi.aB, "wooden_pressure_plate");
     a(afi.N, agw.a.a.b(), "dandelion");
+    
     a(afi.ae, "chest");
     a(afi.cg, "trapped_chest");
     a(afi.bQ, "ender_chest");
+    
     a(zy.a, "iron_shovel");
     a(zy.b, "iron_pickaxe");
+    
     a(zy.c, "iron_axe");
     a(zy.d, "flint_and_steel");
     a(zy.e, "apple");
@@ -795,6 +744,7 @@ public class bjh
     a(zy.h, 1, "charcoal");
     a(zy.i, "diamond");
     a(zy.j, "iron_ingot");
+    
     a(zy.k, "gold_ingot");
     a(zy.l, "iron_sword");
     a(zy.m, "wooden_sword");
@@ -804,6 +754,7 @@ public class bjh
     a(zy.q, "stone_sword");
     a(zy.r, "stone_shovel");
     a(zy.s, "stone_pickaxe");
+    
     a(zy.t, "stone_axe");
     a(zy.u, "diamond_sword");
     a(zy.v, "diamond_shovel");
@@ -827,26 +778,32 @@ public class bjh
     a(zy.N, "wheat_seeds");
     a(zy.O, "wheat");
     a(zy.P, "bread");
+    
     a(zy.Q, "leather_helmet");
     a(zy.R, "leather_chestplate");
     a(zy.S, "leather_leggings");
     a(zy.T, "leather_boots");
+    
     a(zy.U, "chainmail_helmet");
     a(zy.V, "chainmail_chestplate");
     a(zy.W, "chainmail_leggings");
     a(zy.X, "chainmail_boots");
+    
     a(zy.Y, "iron_helmet");
     a(zy.Z, "iron_chestplate");
     a(zy.aa, "iron_leggings");
     a(zy.ab, "iron_boots");
+    
     a(zy.ac, "diamond_helmet");
     a(zy.ad, "diamond_chestplate");
     a(zy.ae, "diamond_leggings");
     a(zy.af, "diamond_boots");
+    
     a(zy.ag, "golden_helmet");
     a(zy.ah, "golden_chestplate");
     a(zy.ai, "golden_leggings");
     a(zy.aj, "golden_boots");
+    
     a(zy.ak, "flint");
     a(zy.al, "porkchop");
     a(zy.am, "cooked_porkchop");
@@ -863,6 +820,7 @@ public class bjh
     a(zy.aw, "bucket");
     a(zy.ax, "water_bucket");
     a(zy.ay, "lava_bucket");
+    
     a(zy.az, "minecart");
     a(zy.aA, "saddle");
     a(zy.aB, "iron_door");
@@ -872,6 +830,7 @@ public class bjh
     a(zy.aF, "leather");
     a(zy.aG, "milk_bucket");
     a(zy.aH, "brick");
+    
     a(zy.aI, "clay_ball");
     a(zy.aJ, "reeds");
     a(zy.aK, "paper");
@@ -881,6 +840,7 @@ public class bjh
     a(zy.aO, "furnace_minecart");
     a(zy.aP, "egg");
     a(zy.aQ, "compass");
+    
     a(zy.aR, "fishing_rod");
     a(zy.aR, 1, "fishing_rod_cast");
     a(zy.aS, "clock");
@@ -891,6 +851,7 @@ public class bjh
     a(zy.aU, zp.a.d.a(), "pufferfish");
     a(zy.aV, zp.a.a.a(), "cooked_cod");
     a(zy.aV, zp.a.b.a(), "cooked_salmon");
+    
     a(zy.aW, zd.p.b(), "dye_black");
     a(zy.aW, zd.o.b(), "dye_red");
     a(zy.aW, zd.n.b(), "dye_green");
@@ -907,8 +868,10 @@ public class bjh
     a(zy.aW, zd.c.b(), "dye_magenta");
     a(zy.aW, zd.b.b(), "dye_orange");
     a(zy.aW, zd.a.b(), "dye_white");
+    
     a(zy.aX, "bone");
     a(zy.aY, "sugar");
+    
     a(zy.aZ, "cake");
     a(zy.ba, "bed");
     a(zy.bb, "repeater");
@@ -917,6 +880,7 @@ public class bjh
     a(zy.bf, "melon");
     a(zy.bg, "pumpkin_seeds");
     a(zy.bh, "melon_seeds");
+    
     a(zy.bi, "beef");
     a(zy.bj, "cooked_beef");
     a(zy.bk, "chicken");
@@ -928,19 +892,22 @@ public class bjh
     a(zy.br, "rabbit_foot");
     a(zy.bs, "rabbit_hide");
     a(zy.bq, "rabbit_stew");
+    
     a(zy.bt, "rotten_flesh");
     a(zy.bu, "ender_pearl");
     a(zy.bv, "blaze_rod");
     a(zy.bw, "ghast_tear");
     a(zy.bx, "gold_nugget");
     a(zy.by, "nether_wart");
-    d.a(zy.bz, new bfp()
+    
+    this.d.a(zy.bz, new bfp()
     {
-      private static final String __OBFID = "CL_00002440";
-      
-      public bov a(zx p_178113_1_)
+      public bov a(zx ☃)
       {
-        return aai.f(p_178113_1_.i()) ? new bov("bottle_splash", "inventory") : new bov("bottle_drinkable", "inventory");
+        if (aai.f(☃.i())) {
+          return new bov("bottle_splash", "inventory");
+        }
+        return new bov("bottle_drinkable", "inventory");
       }
     });
     a(zy.bA, "glass_bottle");
@@ -952,11 +919,10 @@ public class bjh
     a(zy.bG, "cauldron");
     a(zy.bH, "ender_eye");
     a(zy.bI, "speckled_melon");
-    d.a(zy.bJ, new bfp()
+    
+    this.d.a(zy.bJ, new bfp()
     {
-      private static final String __OBFID = "CL_00002439";
-      
-      public bov a(zx p_178113_1_)
+      public bov a(zx ☃)
       {
         return new bov("spawn_egg", "inventory");
       }
@@ -969,6 +935,7 @@ public class bjh
     a(zy.bQ, "flower_pot");
     a(zy.bR, "carrot");
     a(zy.bS, "potato");
+    
     a(zy.bT, "baked_potato");
     a(zy.bU, "poisonous_potato");
     a(zy.bV, "map");
@@ -978,6 +945,7 @@ public class bjh
     a(zy.bX, 2, "skull_zombie");
     a(zy.bX, 3, "skull_char");
     a(zy.bX, 4, "skull_creeper");
+    
     a(zy.bY, "carrot_on_a_stick");
     a(zy.bZ, "nether_star");
     a(zy.ca, "pumpkin_pie");
@@ -987,17 +955,17 @@ public class bjh
     a(zy.cg, "quartz");
     a(zy.ch, "tnt_minecart");
     a(zy.ci, "hopper_minecart");
+    
     a(zy.cj, "armor_stand");
     a(zy.ck, "iron_horse_armor");
     a(zy.cl, "golden_horse_armor");
     a(zy.cm, "diamond_horse_armor");
     a(zy.cn, "lead");
     a(zy.co, "name_tag");
-    d.a(zy.cE, new bfp()
+    
+    this.d.a(zy.cE, new bfp()
     {
-      private static final String __OBFID = "CL_00002438";
-      
-      public bov a(zx p_178113_1_)
+      public bov a(zx ☃)
       {
         return new bov("banner", "inventory");
       }
@@ -1014,22 +982,20 @@ public class bjh
     a(zy.cz, "record_ward");
     a(zy.cA, "record_11");
     a(zy.cB, "record_wait");
+    
     a(zy.cC, "prismarine_shard");
     a(zy.cD, "prismarine_crystals");
-    d.a(zy.cd, new bfp()
+    
+    this.d.a(zy.cd, new bfp()
     {
-      private static final String __OBFID = "CL_00002437";
-      
-      public bov a(zx p_178113_1_)
+      public bov a(zx ☃)
       {
         return new bov("enchanted_book", "inventory");
       }
     });
-    d.a(zy.bd, new bfp()
+    this.d.a(zy.bd, new bfp()
     {
-      private static final String __OBFID = "CL_00002436";
-      
-      public bov a(zx p_178113_1_)
+      public bov a(zx ☃)
       {
         return new bov("filled_map", "inventory");
       }
@@ -1040,16 +1006,15 @@ public class bjh
     a(afi.cv, "barrier");
     a(afi.ac, "mob_spawner");
     a(zy.bN, "written_book");
+    
     a(afi.bg, aho.a.k.a(), "brown_mushroom_block");
     a(afi.bh, aho.a.k.a(), "red_mushroom_block");
+    
     a(afi.bI, "dragon_egg");
-    if (Reflector.ModelLoader_onRegisterItems.exists()) {
-      Reflector.call(Reflector.ModelLoader_onRegisterItems, new Object[] { d });
-    }
   }
   
-  public void a(bni resourceManager)
+  public void a(bni ☃)
   {
-    d.b();
+    this.d.b();
   }
 }

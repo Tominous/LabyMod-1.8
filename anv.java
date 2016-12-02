@@ -18,45 +18,45 @@ public class anv
   
   public anv(adm ☃, long ☃, boolean ☃, String ☃)
   {
-    a = ☃;
-    b = new Random(☃);
-    d = apz.a(☃);
+    this.a = ☃;
+    this.b = new Random(☃);
+    this.d = apz.a(☃);
     if (☃)
     {
-      Map<String, Map<String, String>> ☃ = d.b();
+      Map<String, Map<String, String>> ☃ = this.d.b();
       if (☃.containsKey("village"))
       {
         Map<String, String> ☃ = (Map)☃.get("village");
         if (!☃.containsKey("size")) {
           ☃.put("size", "1");
         }
-        e.add(new aqv(☃));
+        this.e.add(new aqv(☃));
       }
       if (☃.containsKey("biome_1")) {
-        e.add(new aqm((Map)☃.get("biome_1")));
+        this.e.add(new aqm((Map)☃.get("biome_1")));
       }
       if (☃.containsKey("mineshaft")) {
-        e.add(new aqf((Map)☃.get("mineshaft")));
+        this.e.add(new aqf((Map)☃.get("mineshaft")));
       }
       if (☃.containsKey("stronghold")) {
-        e.add(new aqo((Map)☃.get("stronghold")));
+        this.e.add(new aqo((Map)☃.get("stronghold")));
       }
       if (☃.containsKey("oceanmonument")) {
-        e.add(new aqk((Map)☃.get("oceanmonument")));
+        this.e.add(new aqk((Map)☃.get("oceanmonument")));
       }
     }
-    if (d.b().containsKey("lake")) {
-      h = new apc(afi.j);
+    if (this.d.b().containsKey("lake")) {
+      this.h = new apc(afi.j);
     }
-    if (d.b().containsKey("lava_lake")) {
-      i = new apc(afi.l);
+    if (this.d.b().containsKey("lava_lake")) {
+      this.i = new apc(afi.l);
     }
-    g = d.b().containsKey("dungeon");
+    this.g = this.d.b().containsKey("dungeon");
     
     int ☃ = 0;
     int ☃ = 0;
     boolean ☃ = true;
-    for (aqa ☃ : d.c())
+    for (aqa ☃ : this.d.c())
     {
       for (int ☃ = ☃.d(); ☃ < ☃.d() + ☃.b(); ☃++)
       {
@@ -64,7 +64,7 @@ public class anv
         if (☃.c() != afi.a)
         {
           ☃ = false;
-          c[☃] = ☃;
+          this.c[☃] = ☃;
         }
       }
       if (☃.c().c() == afi.a)
@@ -79,15 +79,15 @@ public class anv
     }
     ☃.b(☃);
     
-    f = (☃ ? false : d.b().containsKey("decoration"));
+    this.f = (☃ ? false : this.d.b().containsKey("decoration"));
   }
   
   public amy d(int ☃, int ☃)
   {
     ans ☃ = new ans();
-    for (int ☃ = 0; ☃ < c.length; ☃++)
+    for (int ☃ = 0; ☃ < this.c.length; ☃++)
     {
-      alz ☃ = c[☃];
+      alz ☃ = this.c[☃];
       if (☃ != null) {
         for (int ☃ = 0; ☃ < 16; ☃++) {
           for (int ☃ = 0; ☃ < 16; ☃++) {
@@ -96,14 +96,14 @@ public class anv
         }
       }
     }
-    for (any ☃ : e) {
-      ☃.a(this, a, ☃, ☃, ☃);
+    for (any ☃ : this.e) {
+      ☃.a(this, this.a, ☃, ☃, ☃);
     }
-    amy ☃ = new amy(a, ☃, ☃, ☃);
-    ady[] ☃ = a.v().b(null, ☃ * 16, ☃ * 16, 16, 16);
+    amy ☃ = new amy(this.a, ☃, ☃, ☃);
+    ady[] ☃ = this.a.v().b(null, ☃ * 16, ☃ * 16, 16, 16);
     byte[] ☃ = ☃.k();
     for (int ☃ = 0; ☃ < ☃.length; ☃++) {
-      ☃[☃] = ((byte)az);
+      ☃[☃] = ((byte)☃[☃].az);
     }
     ☃.b();
     
@@ -120,39 +120,39 @@ public class anv
     int ☃ = ☃ * 16;
     int ☃ = ☃ * 16;
     cj ☃ = new cj(☃, 0, ☃);
-    ady ☃ = a.b(new cj(☃ + 16, 0, ☃ + 16));
+    ady ☃ = this.a.b(new cj(☃ + 16, 0, ☃ + 16));
     boolean ☃ = false;
     
-    b.setSeed(a.J());
-    long ☃ = b.nextLong() / 2L * 2L + 1L;
-    long ☃ = b.nextLong() / 2L * 2L + 1L;
-    b.setSeed(☃ * ☃ + ☃ * ☃ ^ a.J());
+    this.b.setSeed(this.a.J());
+    long ☃ = this.b.nextLong() / 2L * 2L + 1L;
+    long ☃ = this.b.nextLong() / 2L * 2L + 1L;
+    this.b.setSeed(☃ * ☃ + ☃ * ☃ ^ this.a.J());
     
     adg ☃ = new adg(☃, ☃);
-    for (aqq ☃ : e)
+    for (aqq ☃ : this.e)
     {
-      boolean ☃ = ☃.a(a, b, ☃);
+      boolean ☃ = ☃.a(this.a, this.b, ☃);
       if ((☃ instanceof aqv)) {
         ☃ |= ☃;
       }
     }
-    if ((h != null) && (!☃) && (b.nextInt(4) == 0)) {
-      h.b(a, b, ☃.a(b.nextInt(16) + 8, b.nextInt(256), b.nextInt(16) + 8));
+    if ((this.h != null) && (!☃) && (this.b.nextInt(4) == 0)) {
+      this.h.b(this.a, this.b, ☃.a(this.b.nextInt(16) + 8, this.b.nextInt(256), this.b.nextInt(16) + 8));
     }
-    if ((i != null) && (!☃) && (b.nextInt(8) == 0))
+    if ((this.i != null) && (!☃) && (this.b.nextInt(8) == 0))
     {
-      cj ☃ = ☃.a(b.nextInt(16) + 8, b.nextInt(b.nextInt(248) + 8), b.nextInt(16) + 8);
-      if ((☃.o() < a.F()) || (b.nextInt(10) == 0)) {
-        i.b(a, b, ☃);
+      cj ☃ = ☃.a(this.b.nextInt(16) + 8, this.b.nextInt(this.b.nextInt(248) + 8), this.b.nextInt(16) + 8);
+      if ((☃.o() < this.a.F()) || (this.b.nextInt(10) == 0)) {
+        this.i.b(this.a, this.b, ☃);
       }
     }
-    if (g) {
+    if (this.g) {
       for (int ☃ = 0; ☃ < 8; ☃++) {
-        new api().b(a, b, ☃.a(b.nextInt(16) + 8, b.nextInt(256), b.nextInt(16) + 8));
+        new api().b(this.a, this.b, ☃.a(this.b.nextInt(16) + 8, this.b.nextInt(256), this.b.nextInt(16) + 8));
       }
     }
-    if (f) {
-      ☃.a(a, b, ☃);
+    if (this.f) {
+      ☃.a(this.a, this.b, ☃);
     }
   }
   
@@ -185,14 +185,14 @@ public class anv
   
   public List<ady.c> a(pt ☃, cj ☃)
   {
-    ady ☃ = a.b(☃);
+    ady ☃ = this.a.b(☃);
     return ☃.a(☃);
   }
   
   public cj a(adm ☃, String ☃, cj ☃)
   {
     if ("Stronghold".equals(☃)) {
-      for (aqq ☃ : e) {
+      for (aqq ☃ : this.e) {
         if ((☃ instanceof aqo)) {
           return ☃.b(☃, ☃);
         }
@@ -208,8 +208,8 @@ public class anv
   
   public void a(amy ☃, int ☃, int ☃)
   {
-    for (aqq ☃ : e) {
-      ☃.a(this, a, ☃, ☃, null);
+    for (aqq ☃ : this.e) {
+      ☃.a(this, this.a, ☃, ☃, null);
     }
   }
   

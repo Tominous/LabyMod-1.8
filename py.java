@@ -10,7 +10,7 @@ public abstract class py
   {
     super(☃);
     
-    c = new rp(this, 1.0D);
+    this.c = new rp(this, 1.0D);
   }
   
   private cj a = cj.a;
@@ -25,12 +25,12 @@ public abstract class py
   
   public boolean bR()
   {
-    return (super.bR()) && (a(new cj(s, aRb, u)) >= 0.0F);
+    return (super.bR()) && (a(new cj(this.s, aR().b, this.u)) >= 0.0F);
   }
   
   public boolean cf()
   {
-    return !h.m();
+    return !this.h.m();
   }
   
   public boolean cg()
@@ -40,45 +40,45 @@ public abstract class py
   
   public boolean e(cj ☃)
   {
-    if (b == -1.0F) {
+    if (this.b == -1.0F) {
       return true;
     }
-    return a.i(☃) < b * b;
+    return this.a.i(☃) < this.b * this.b;
   }
   
   public void a(cj ☃, int ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public cj ch()
   {
-    return a;
+    return this.a;
   }
   
   public float ci()
   {
-    return b;
+    return this.b;
   }
   
   public void cj()
   {
-    b = -1.0F;
+    this.b = -1.0F;
   }
   
   public boolean ck()
   {
-    return b != -1.0F;
+    return this.b != -1.0F;
   }
   
   protected void ca()
   {
     super.ca();
-    if ((cc()) && (cd() != null) && (cdo == o))
+    if ((cc()) && (cd() != null) && (cd().o == this.o))
     {
       pk ☃ = cd();
-      a(new cj((int)s, (int)t, (int)u), 5);
+      a(new cj((int)☃.s, (int)☃.t, (int)☃.u), 5);
       
       float ☃ = g(☃);
       if (((this instanceof qa)) && (((qa)this).cn()))
@@ -88,13 +88,13 @@ public abstract class py
         }
         return;
       }
-      if (!bm)
+      if (!this.bm)
       {
-        i.a(2, c);
+        this.i.a(2, this.c);
         if ((s() instanceof sv)) {
           ((sv)s()).a(false);
         }
-        bm = true;
+        this.bm = true;
       }
       o(☃);
       if (☃ > 4.0F) {
@@ -102,22 +102,22 @@ public abstract class py
       }
       if (☃ > 6.0F)
       {
-        double ☃ = (s - s) / ☃;
-        double ☃ = (t - t) / ☃;
-        double ☃ = (u - u) / ☃;
+        double ☃ = (☃.s - this.s) / ☃;
+        double ☃ = (☃.t - this.t) / ☃;
+        double ☃ = (☃.u - this.u) / ☃;
         
-        v += ☃ * Math.abs(☃) * 0.4D;
-        w += ☃ * Math.abs(☃) * 0.4D;
-        x += ☃ * Math.abs(☃) * 0.4D;
+        this.v += ☃ * Math.abs(☃) * 0.4D;
+        this.w += ☃ * Math.abs(☃) * 0.4D;
+        this.x += ☃ * Math.abs(☃) * 0.4D;
       }
       if (☃ > 10.0F) {
         a(true, true);
       }
     }
-    else if ((!cc()) && (bm))
+    else if ((!cc()) && (this.bm))
     {
-      bm = false;
-      i.a(c);
+      this.bm = false;
+      this.i.a(this.c);
       if ((s() instanceof sv)) {
         ((sv)s()).a(true);
       }

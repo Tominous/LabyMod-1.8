@@ -13,7 +13,7 @@ public class zz
     afh ☃ = ☃.p(☃).c();
     if ((☃ instanceof agt))
     {
-      if (D) {
+      if (☃.D) {
         return true;
       }
       a(☃, ☃, ☃);

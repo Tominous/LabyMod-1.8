@@ -17,32 +17,32 @@ public enum LineColour
   {
     this.displayName = displayName;
     this.colour = colour;
-    defaultColour = new Colour().copyFrom(colour);
+    this.defaultColour = new Colour().copyFrom(colour);
   }
   
   public String getDisplayName()
   {
-    return bnq.a(displayName, new Object[0]);
+    return bnq.a(this.displayName, new Object[0]);
   }
   
   public Colour getColour()
   {
-    return colour;
+    return this.colour;
   }
   
   public LineInfo getHidden()
   {
-    return hidden;
+    return this.hidden;
   }
   
   public LineInfo getNormal()
   {
-    return normal;
+    return this.normal;
   }
   
   public LineInfo[] getColours()
   {
-    return new LineInfo[] { hidden, normal };
+    return new LineInfo[] { this.hidden, this.normal };
   }
   
   public void setColour(Colour colour)
@@ -53,25 +53,25 @@ public enum LineColour
   
   public void updateColour()
   {
-    normal = new LineInfo(3.0F, colour.red(), colour.green(), colour.blue(), colour.alpha(), 513);
-    hidden = new LineInfo(3.0F, colour.red() * 0.75F, colour.green() * 0.75F, colour.blue() * 0.75F, colour.alpha() * 0.25F, 518);
+    this.normal = new LineInfo(3.0F, this.colour.red(), this.colour.green(), this.colour.blue(), this.colour.alpha(), 513);
+    this.hidden = new LineInfo(3.0F, this.colour.red() * 0.75F, this.colour.green() * 0.75F, this.colour.blue() * 0.75F, this.colour.alpha() * 0.25F, 518);
   }
   
   public void setDefaultColour()
   {
-    colour.copyFrom(defaultColour);
+    this.colour.copyFrom(this.defaultColour);
     updateColour();
   }
   
   public void setColourIntRGBA(int argb)
   {
     int rgba = argb << 8 & 0xFF00 | (argb & 0xFF000000) >> 24 & 0xFF;
-    colour.setHex(Integer.toHexString(rgba));
+    this.colour.setHex(Integer.toHexString(rgba));
     updateColour();
   }
   
   public int getColourIntARGB()
   {
-    return colour.getIntARGB();
+    return this.colour.getIntARGB();
   }
 }

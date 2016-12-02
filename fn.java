@@ -22,20 +22,20 @@ public class fn
   
   public fn(pr ☃)
   {
-    a = ☃.F();
+    this.a = ☃.F();
     
-    b = ((byte)pm.a(☃));
-    c = ns.c(s * 32.0D);
-    d = ns.c(t * 32.0D);
-    e = ns.c(u * 32.0D);
-    i = ((byte)(int)(y * 256.0F / 360.0F));
-    j = ((byte)(int)(z * 256.0F / 360.0F));
-    k = ((byte)(int)(aK * 256.0F / 360.0F));
+    this.b = ((byte)pm.a(☃));
+    this.c = ns.c(☃.s * 32.0D);
+    this.d = ns.c(☃.t * 32.0D);
+    this.e = ns.c(☃.u * 32.0D);
+    this.i = ((byte)(int)(☃.y * 256.0F / 360.0F));
+    this.j = ((byte)(int)(☃.z * 256.0F / 360.0F));
+    this.k = ((byte)(int)(☃.aK * 256.0F / 360.0F));
     
     double ☃ = 3.9D;
-    double ☃ = v;
-    double ☃ = w;
-    double ☃ = x;
+    double ☃ = ☃.v;
+    double ☃ = ☃.w;
+    double ☃ = ☃.x;
     if (☃ < -☃) {
       ☃ = -☃;
     }
@@ -54,45 +54,45 @@ public class fn
     if (☃ > ☃) {
       ☃ = ☃;
     }
-    f = ((int)(☃ * 8000.0D));
-    g = ((int)(☃ * 8000.0D));
-    h = ((int)(☃ * 8000.0D));
+    this.f = ((int)(☃ * 8000.0D));
+    this.g = ((int)(☃ * 8000.0D));
+    this.h = ((int)(☃ * 8000.0D));
     
-    l = ☃.H();
+    this.l = ☃.H();
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.e();
-    b = (☃.readByte() & 0xFF);
-    c = ☃.readInt();
-    d = ☃.readInt();
-    e = ☃.readInt();
-    i = ☃.readByte();
-    j = ☃.readByte();
-    k = ☃.readByte();
-    f = ☃.readShort();
-    g = ☃.readShort();
-    h = ☃.readShort();
-    m = pz.b(☃);
+    this.a = ☃.e();
+    this.b = (☃.readByte() & 0xFF);
+    this.c = ☃.readInt();
+    this.d = ☃.readInt();
+    this.e = ☃.readInt();
+    this.i = ☃.readByte();
+    this.j = ☃.readByte();
+    this.k = ☃.readByte();
+    this.f = ☃.readShort();
+    this.g = ☃.readShort();
+    this.h = ☃.readShort();
+    this.m = pz.b(☃);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a);
-    ☃.writeByte(b & 0xFF);
-    ☃.writeInt(c);
-    ☃.writeInt(d);
-    ☃.writeInt(e);
-    ☃.writeByte(i);
-    ☃.writeByte(j);
-    ☃.writeByte(k);
-    ☃.writeShort(f);
-    ☃.writeShort(g);
-    ☃.writeShort(h);
-    l.a(☃);
+    ☃.b(this.a);
+    ☃.writeByte(this.b & 0xFF);
+    ☃.writeInt(this.c);
+    ☃.writeInt(this.d);
+    ☃.writeInt(this.e);
+    ☃.writeByte(this.i);
+    ☃.writeByte(this.j);
+    ☃.writeByte(this.k);
+    ☃.writeShort(this.f);
+    ☃.writeShort(this.g);
+    ☃.writeShort(this.h);
+    this.l.a(☃);
   }
   
   public void a(fj ☃)
@@ -102,64 +102,64 @@ public class fn
   
   public List<pz.a> a()
   {
-    if (m == null) {
-      m = l.c();
+    if (this.m == null) {
+      this.m = this.l.c();
     }
-    return m;
+    return this.m;
   }
   
   public int b()
   {
-    return a;
+    return this.a;
   }
   
   public int c()
   {
-    return b;
+    return this.b;
   }
   
   public int d()
   {
-    return c;
+    return this.c;
   }
   
   public int e()
   {
-    return d;
+    return this.d;
   }
   
   public int f()
   {
-    return e;
+    return this.e;
   }
   
   public int g()
   {
-    return f;
+    return this.f;
   }
   
   public int h()
   {
-    return g;
+    return this.g;
   }
   
   public int i()
   {
-    return h;
+    return this.h;
   }
   
   public byte j()
   {
-    return i;
+    return this.i;
   }
   
   public byte k()
   {
-    return j;
+    return this.j;
   }
   
   public byte l()
   {
-    return k;
+    return this.k;
   }
 }

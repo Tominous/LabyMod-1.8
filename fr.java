@@ -12,7 +12,7 @@ public class fr
   
   public fr(Map<mw, Integer> ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(fj ☃)
@@ -24,13 +24,13 @@ public class fr
     throws IOException
   {
     int ☃ = ☃.e();
-    a = Maps.newHashMap();
+    this.a = Maps.newHashMap();
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
       mw ☃ = na.a(☃.c(32767));
       int ☃ = ☃.e();
       if (☃ != null) {
-        a.put(☃, Integer.valueOf(☃));
+        this.a.put(☃, Integer.valueOf(☃));
       }
     }
   }
@@ -38,16 +38,16 @@ public class fr
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(a.size());
-    for (Map.Entry<mw, Integer> ☃ : a.entrySet())
+    ☃.b(this.a.size());
+    for (Map.Entry<mw, Integer> ☃ : this.a.entrySet())
     {
-      ☃.a(getKeye);
+      ☃.a(((mw)☃.getKey()).e);
       ☃.b(((Integer)☃.getValue()).intValue());
     }
   }
   
   public Map<mw, Integer> a()
   {
-    return a;
+    return this.a;
   }
 }

@@ -26,7 +26,7 @@ public class TeamSpeakChannel
   
   public TeamSpeakChannel(int channel_id)
   {
-    channelId = channel_id;
+    this.channelId = channel_id;
     channels.add(this);
   }
   
@@ -47,27 +47,27 @@ public class TeamSpeakChannel
   
   public String getChannelName()
   {
-    return channel_name;
+    return this.channel_name;
   }
   
   public int getChannelOrder()
   {
-    return channel_order;
+    return this.channel_order;
   }
   
   public int getChannelId()
   {
-    return channelId;
+    return this.channelId;
   }
   
   public int getPid()
   {
-    return pid;
+    return this.pid;
   }
   
   public int getTotalClients()
   {
-    return total_clients;
+    return this.total_clients;
   }
   
   public static void reset()
@@ -84,42 +84,42 @@ public class TeamSpeakChannel
   
   public int getChannelCodec()
   {
-    return channel_codec;
+    return this.channel_codec;
   }
   
   public String getChannelCodecName()
   {
-    return (channel_codec + "").replace("0", "Speex Narrowband").replace("1", "Speex Wideband").replace("2", "Speex Ultra-Wideband").replace("3", "CELT Mono").replace("4", "Opus Voice").replace("5", "Opus Music");
+    return (this.channel_codec + "").replace("0", "Speex Narrowband").replace("1", "Speex Wideband").replace("2", "Speex Ultra-Wideband").replace("3", "CELT Mono").replace("4", "Opus Voice").replace("5", "Opus Music");
   }
   
   public int getChannelCodecQuality()
   {
-    return channel_codec_quality;
+    return this.channel_codec_quality;
   }
   
   public int getMaxClients()
   {
-    return max_clients;
+    return this.max_clients;
   }
   
   public int getTalkPower()
   {
-    return talk_power;
+    return this.talk_power;
   }
   
   public void updateChannelName(String name)
   {
-    channel_name = name;
+    this.channel_name = name;
   }
   
   public int getMaxFamilyClients()
   {
-    return max_family_clients;
+    return this.max_family_clients;
   }
   
   public boolean getSubscription()
   {
-    return flag_are_subscribed;
+    return this.flag_are_subscribed;
   }
   
   public void updateChannelCodec(int channel_codec)
@@ -154,32 +154,32 @@ public class TeamSpeakChannel
   
   public int getIconID()
   {
-    return iconID;
+    return this.iconID;
   }
   
   public String getTopic()
   {
-    return topic;
+    return this.topic;
   }
   
   public boolean getFlagDefault()
   {
-    return flagDefault;
+    return this.flagDefault;
   }
   
   public boolean getIsPassword()
   {
-    return password;
+    return this.password;
   }
   
   public boolean getIsPermanent()
   {
-    return permanent;
+    return this.permanent;
   }
   
   public boolean getIsSemiPermanent()
   {
-    return semiPermanent;
+    return this.semiPermanent;
   }
   
   public void updateIsPassword(boolean password)

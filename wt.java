@@ -14,7 +14,7 @@ public class wt
   
   protected void h()
   {
-    ac.a(8, 5);
+    this.ac.a(8, 5);
   }
   
   public boolean a(double ☃)
@@ -25,7 +25,7 @@ public class wt
   public wt(adm ☃, double ☃, double ☃, double ☃, zx ☃)
   {
     super(☃);
-    a = 0;
+    this.a = 0;
     
     a(0.25F, 0.25F);
     
@@ -34,7 +34,7 @@ public class wt
     int ☃ = 1;
     if ((☃ != null) && (☃.n()))
     {
-      ac.b(8, ☃);
+      this.ac.b(8, ☃);
       
       dn ☃ = ☃.o();
       dn ☃ = ☃.m("Fireworks");
@@ -42,88 +42,88 @@ public class wt
         ☃ += ☃.d("Flight");
       }
     }
-    v = (V.nextGaussian() * 0.001D);
-    x = (V.nextGaussian() * 0.001D);
-    w = 0.05D;
+    this.v = (this.V.nextGaussian() * 0.001D);
+    this.x = (this.V.nextGaussian() * 0.001D);
+    this.w = 0.05D;
     
-    b = (10 * ☃ + V.nextInt(6) + V.nextInt(7));
+    this.b = (10 * ☃ + this.V.nextInt(6) + this.V.nextInt(7));
   }
   
   public void i(double ☃, double ☃, double ☃)
   {
-    v = ☃;
-    w = ☃;
-    x = ☃;
-    if ((B == 0.0F) && (A == 0.0F))
+    this.v = ☃;
+    this.w = ☃;
+    this.x = ☃;
+    if ((this.B == 0.0F) && (this.A == 0.0F))
     {
       float ☃ = ns.a(☃ * ☃ + ☃ * ☃);
-      A = (y = (float)(ns.b(☃, ☃) * 180.0D / 3.1415927410125732D));
-      B = (z = (float)(ns.b(☃, ☃) * 180.0D / 3.1415927410125732D));
+      this.A = (this.y = (float)(ns.b(☃, ☃) * 180.0D / 3.1415927410125732D));
+      this.B = (this.z = (float)(ns.b(☃, ☃) * 180.0D / 3.1415927410125732D));
     }
   }
   
   public void t_()
   {
-    P = s;
-    Q = t;
-    R = u;
+    this.P = this.s;
+    this.Q = this.t;
+    this.R = this.u;
     super.t_();
     
-    v *= 1.15D;
-    x *= 1.15D;
-    w += 0.04D;
-    d(v, w, x);
+    this.v *= 1.15D;
+    this.x *= 1.15D;
+    this.w += 0.04D;
+    d(this.v, this.w, this.x);
     
-    float ☃ = ns.a(v * v + x * x);
-    y = ((float)(ns.b(v, x) * 180.0D / 3.1415927410125732D));
-    z = ((float)(ns.b(w, ☃) * 180.0D / 3.1415927410125732D));
-    while (z - B < -180.0F) {
-      B -= 360.0F;
+    float ☃ = ns.a(this.v * this.v + this.x * this.x);
+    this.y = ((float)(ns.b(this.v, this.x) * 180.0D / 3.1415927410125732D));
+    this.z = ((float)(ns.b(this.w, ☃) * 180.0D / 3.1415927410125732D));
+    while (this.z - this.B < -180.0F) {
+      this.B -= 360.0F;
     }
-    while (z - B >= 180.0F) {
-      B += 360.0F;
+    while (this.z - this.B >= 180.0F) {
+      this.B += 360.0F;
     }
-    while (y - A < -180.0F) {
-      A -= 360.0F;
+    while (this.y - this.A < -180.0F) {
+      this.A -= 360.0F;
     }
-    while (y - A >= 180.0F) {
-      A += 360.0F;
+    while (this.y - this.A >= 180.0F) {
+      this.A += 360.0F;
     }
-    z = (B + (z - B) * 0.2F);
-    y = (A + (y - A) * 0.2F);
-    if ((a == 0) && (!R())) {
-      o.a(this, "fireworks.launch", 3.0F, 1.0F);
+    this.z = (this.B + (this.z - this.B) * 0.2F);
+    this.y = (this.A + (this.y - this.A) * 0.2F);
+    if ((this.a == 0) && (!R())) {
+      this.o.a(this, "fireworks.launch", 3.0F, 1.0F);
     }
-    a += 1;
-    if ((o.D) && (a % 2 < 2)) {
-      o.a(cy.d, s, t - 0.3D, u, V.nextGaussian() * 0.05D, -w * 0.5D, V.nextGaussian() * 0.05D, new int[0]);
+    this.a += 1;
+    if ((this.o.D) && (this.a % 2 < 2)) {
+      this.o.a(cy.d, this.s, this.t - 0.3D, this.u, this.V.nextGaussian() * 0.05D, -this.w * 0.5D, this.V.nextGaussian() * 0.05D, new int[0]);
     }
-    if ((!o.D) && (a > b))
+    if ((!this.o.D) && (this.a > this.b))
     {
-      o.a(this, (byte)17);
+      this.o.a(this, (byte)17);
       J();
     }
   }
   
   public void a(byte ☃)
   {
-    if ((☃ == 17) && (o.D))
+    if ((☃ == 17) && (this.o.D))
     {
-      zx ☃ = ac.f(8);
+      zx ☃ = this.ac.f(8);
       dn ☃ = null;
       if ((☃ != null) && (☃.n())) {
         ☃ = ☃.o().m("Fireworks");
       }
-      o.a(s, t, u, v, w, x, ☃);
+      this.o.a(this.s, this.t, this.u, this.v, this.w, this.x, ☃);
     }
     super.a(☃);
   }
   
   public void b(dn ☃)
   {
-    ☃.a("Life", a);
-    ☃.a("LifeTime", b);
-    zx ☃ = ac.f(8);
+    ☃.a("Life", this.a);
+    ☃.a("LifeTime", this.b);
+    zx ☃ = this.ac.f(8);
     if (☃ != null)
     {
       dn ☃ = new dn();
@@ -134,15 +134,15 @@ public class wt
   
   public void a(dn ☃)
   {
-    a = ☃.f("Life");
-    b = ☃.f("LifeTime");
+    this.a = ☃.f("Life");
+    this.b = ☃.f("LifeTime");
     
     dn ☃ = ☃.m("FireworksItem");
     if (☃ != null)
     {
       zx ☃ = zx.a(☃);
       if (☃ != null) {
-        ac.b(8, ☃);
+        this.ac.b(8, ☃);
       }
     }
   }

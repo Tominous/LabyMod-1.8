@@ -24,12 +24,12 @@ public class ClientChannelInitializer
   protected void initChannel(NioSocketChannel channel)
     throws Exception
   {
-    getClientConnectionch = channel;
+    getClientConnection().ch = channel;
     channel.pipeline().addLast("timeout", new ReadTimeoutHandler(120L, TimeUnit.SECONDS)).addLast("splitter", new PacketPrepender()).addLast("decoder", new PacketDecoder()).addLast("prepender", new PacketSplitter()).addLast("encoder", new PacketEncoder()).addLast(new ChannelHandler[] { getClientConnection() });
   }
   
   public ClientConnection getClientConnection()
   {
-    return clientConnection;
+    return this.clientConnection;
   }
 }

@@ -10,20 +10,20 @@ public class acr
   public acr(int ☃, jy ☃, int ☃, int ☃)
   {
     super(☃, ☃, ☃, acj.b);
-    a = ☃;
+    this.a = ☃;
     if (☃ == 2) {
-      C = acj.c;
+      this.C = acj.c;
     }
   }
   
   public int a(int ☃)
   {
-    return F[a] + (☃ - 1) * G[a];
+    return F[this.a] + (☃ - 1) * G[this.a];
   }
   
   public int b(int ☃)
   {
-    return a(☃) + H[a];
+    return a(☃) + H[this.a];
   }
   
   public int b()
@@ -37,19 +37,19 @@ public class acr
       return 0;
     }
     float ☃ = (6 + ☃ * ☃) / 3.0F;
-    if (a == 0) {
+    if (this.a == 0) {
       return ns.d(☃ * 0.75F);
     }
-    if ((a == 1) && (☃.o())) {
+    if ((this.a == 1) && (☃.o())) {
       return ns.d(☃ * 1.25F);
     }
-    if ((a == 2) && (☃ == ow.i)) {
+    if ((this.a == 2) && (☃ == ow.i)) {
       return ns.d(☃ * 2.5F);
     }
-    if ((a == 3) && (☃.c())) {
+    if ((this.a == 3) && (☃.c())) {
       return ns.d(☃ * 1.5F);
     }
-    if ((a == 4) && (☃.a())) {
+    if ((this.a == 4) && (☃.a())) {
       return ns.d(☃ * 1.5F);
     }
     return 0;
@@ -57,7 +57,7 @@ public class acr
   
   public String a()
   {
-    return "enchantment.protect." + E[a];
+    return "enchantment.protect." + E[this.a];
   }
   
   public boolean a(aci ☃)
@@ -65,10 +65,10 @@ public class acr
     if ((☃ instanceof acr))
     {
       acr ☃ = (acr)☃;
-      if (a == a) {
+      if (☃.a == this.a) {
         return false;
       }
-      if ((a == 2) || (a == 2)) {
+      if ((this.a == 2) || (☃.a == 2)) {
         return true;
       }
       return false;
@@ -78,7 +78,7 @@ public class acr
   
   public static int a(pk ☃, int ☃)
   {
-    int ☃ = ack.a(dB, ☃.as());
+    int ☃ = ack.a(aci.d.B, ☃.as());
     if (☃ > 0) {
       ☃ -= ns.d(☃ * (☃ * 0.15F));
     }
@@ -87,7 +87,7 @@ public class acr
   
   public static double a(pk ☃, double ☃)
   {
-    int ☃ = ack.a(fB, ☃.as());
+    int ☃ = ack.a(aci.f.B, ☃.as());
     if (☃ > 0) {
       ☃ -= ns.c(☃ * (☃ * 0.15F));
     }

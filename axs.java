@@ -8,21 +8,21 @@ public class axs
   
   public axs(bcy ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   protected void a(char ☃, int ☃) {}
   
   public void b()
   {
-    n.clear();
+    this.n.clear();
   }
   
   public void e()
   {
-    f += 1;
-    if (f % 20 == 0) {
-      a.a(new io());
+    this.f += 1;
+    if (this.f % 20 == 0) {
+      this.a.a(new io());
     }
   }
   
@@ -30,7 +30,7 @@ public class axs
   {
     c(0);
     
-    a(q, bnq.a("multiplayer.downloadingTerrain", new Object[0]), l / 2, m / 2 - 50, 16777215);
+    a(this.q, bnq.a("multiplayer.downloadingTerrain", new Object[0]), this.l / 2, this.m / 2 - 50, 16777215);
     
     super.a(☃, ☃, ☃);
   }

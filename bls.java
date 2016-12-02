@@ -17,22 +17,22 @@ public class bls
   public bls(bni ☃, String ☃, bfw ☃, bfw ☃)
     throws IOException
   {
-    c = new blq(☃, ☃);
-    a = ☃;
-    b = ☃;
+    this.c = new blq(☃, ☃);
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public void b()
   {
-    c.a();
+    this.c.a();
   }
   
   public void a(String ☃, Object ☃, int ☃, int ☃)
   {
-    e.add(e.size(), ☃);
-    d.add(d.size(), ☃);
-    f.add(f.size(), Integer.valueOf(☃));
-    g.add(g.size(), Integer.valueOf(☃));
+    this.e.add(this.e.size(), ☃);
+    this.d.add(this.d.size(), ☃);
+    this.f.add(this.f.size(), Integer.valueOf(☃));
+    this.g.add(this.g.size(), Integer.valueOf(☃));
   }
   
   private void d()
@@ -50,34 +50,34 @@ public class bls
   
   public void a(Matrix4f ☃)
   {
-    h = ☃;
+    this.h = ☃;
   }
   
   public void a(float ☃)
   {
     d();
-    a.e();
+    this.a.e();
     
-    float ☃ = b.a;
-    float ☃ = b.b;
+    float ☃ = this.b.a;
+    float ☃ = this.b.b;
     bfl.b(0, 0, (int)☃, (int)☃);
     
-    c.a("DiffuseSampler", a);
-    for (int ☃ = 0; ☃ < d.size(); ☃++)
+    this.c.a("DiffuseSampler", this.a);
+    for (int ☃ = 0; ☃ < this.d.size(); ☃++)
     {
-      c.a((String)e.get(☃), d.get(☃));
-      c.b("AuxSize" + ☃).a(((Integer)f.get(☃)).intValue(), ((Integer)g.get(☃)).intValue());
+      this.c.a((String)this.e.get(☃), this.d.get(☃));
+      this.c.b("AuxSize" + ☃).a(((Integer)this.f.get(☃)).intValue(), ((Integer)this.g.get(☃)).intValue());
     }
-    c.b("ProjMat").a(h);
-    c.b("InSize").a(a.a, a.b);
-    c.b("OutSize").a(☃, ☃);
-    c.b("Time").a(☃);
+    this.c.b("ProjMat").a(this.h);
+    this.c.b("InSize").a(this.a.a, this.a.b);
+    this.c.b("OutSize").a(☃, ☃);
+    this.c.b("Time").a(☃);
     
     ave ☃ = ave.A();
-    c.b("ScreenSize").a(d, e);
-    c.c();
-    b.f();
-    b.a(false);
+    this.c.b("ScreenSize").a(☃.d, ☃.e);
+    this.c.c();
+    this.b.f();
+    this.b.a(false);
     
     bfl.a(false);
     bfl.a(true, true, true, true);
@@ -94,10 +94,10 @@ public class bls
     bfl.a(true);
     bfl.a(true, true, true, true);
     
-    c.b();
-    b.e();
-    a.d();
-    for (Object ☃ : d) {
+    this.c.b();
+    this.b.e();
+    this.a.d();
+    for (Object ☃ : this.d) {
       if ((☃ instanceof bfw)) {
         ((bfw)☃).d();
       }
@@ -106,6 +106,6 @@ public class bls
   
   public blq c()
   {
-    return c;
+    return this.c;
   }
 }

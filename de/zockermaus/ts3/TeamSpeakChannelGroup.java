@@ -68,47 +68,47 @@ public class TeamSpeakChannelGroup
   
   public int getSgid()
   {
-    return sgid;
+    return this.sgid;
   }
   
   public String getGroupName()
   {
-    return groupName;
+    return this.groupName;
   }
   
   public int getType()
   {
-    return type;
+    return this.type;
   }
   
   public int getIconId()
   {
-    return iconId;
+    return this.iconId;
   }
   
   public int getSavebd()
   {
-    return savebd;
+    return this.savebd;
   }
   
   public int getNamemode()
   {
-    return namemode;
+    return this.namemode;
   }
   
   public int getNameModifyPower()
   {
-    return nameModifyPower;
+    return this.nameModifyPower;
   }
   
   public int getNameMemberAddPower()
   {
-    return nameMemberAddPower;
+    return this.nameMemberAddPower;
   }
   
   public int getNameMemberRemovePower()
   {
-    return nameMemberRemovePower;
+    return this.nameMemberRemovePower;
   }
   
   public static void addGroup(TeamSpeakChannelGroup group)

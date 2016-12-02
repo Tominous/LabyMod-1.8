@@ -18,13 +18,13 @@ public class eo
   
   public eo(fg ☃)
   {
-    c = ☃;
+    this.c = ☃;
   }
   
   protected void a(ChannelHandlerContext ☃, ff ☃, ByteBuf ☃)
     throws Exception
   {
-    Integer ☃ = ((el)☃.channel().attr(ek.c).get()).a(c, ☃);
+    Integer ☃ = ((el)☃.channel().attr(ek.c).get()).a(this.c, ☃);
     if (a.isDebugEnabled()) {
       a.debug(b, "OUT: [{}:{}] {}", new Object[] { ☃.channel().attr(ek.c).get(), ☃, ☃.getClass().getName() });
     }

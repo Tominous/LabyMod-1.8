@@ -4,12 +4,12 @@ public class asl
   public asl(long ☃, ase ☃)
   {
     super(☃);
-    a = ☃;
+    this.a = ☃;
   }
   
   public int[] a(int ☃, int ☃, int ☃, int ☃)
   {
-    int[] ☃ = a.a(☃ - 1, ☃ - 1, ☃ + 2, ☃ + 2);
+    int[] ☃ = this.a.a(☃ - 1, ☃ - 1, ☃ + 2, ☃ + 2);
     
     int[] ☃ = asc.a(☃ * ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
@@ -18,14 +18,14 @@ public class asl
         a(☃ + ☃, ☃ + ☃);
         int ☃ = ☃[(☃ + 1 + (☃ + 1) * (☃ + 2))];
         ady ☃ = ady.e(☃);
-        if (☃ == Daz)
+        if (☃ == ady.D.az)
         {
           int ☃ = ☃[(☃ + 1 + (☃ + 1 - 1) * (☃ + 2))];
           int ☃ = ☃[(☃ + 1 + 1 + (☃ + 1) * (☃ + 2))];
           int ☃ = ☃[(☃ + 1 - 1 + (☃ + 1) * (☃ + 2))];
           int ☃ = ☃[(☃ + 1 + (☃ + 1 + 1) * (☃ + 2))];
-          if ((☃ == paz) || (☃ == paz) || (☃ == paz) || (☃ == paz)) {
-            ☃[(☃ + ☃ * ☃)] = Eaz;
+          if ((☃ == ady.p.az) || (☃ == ady.p.az) || (☃ == ady.p.az) || (☃ == ady.p.az)) {
+            ☃[(☃ + ☃ * ☃)] = ady.E.az;
           } else {
             ☃[(☃ + ☃ * ☃)] = ☃;
           }
@@ -37,22 +37,22 @@ public class asl
           int ☃ = ☃[(☃ + 1 - 1 + (☃ + 1) * (☃ + 2))];
           int ☃ = ☃[(☃ + 1 + (☃ + 1 + 1) * (☃ + 2))];
           if ((!c(☃)) || (!c(☃)) || (!c(☃)) || (!c(☃))) {
-            ☃[(☃ + ☃ * ☃)] = Maz;
+            ☃[(☃ + ☃ * ☃)] = ady.M.az;
           } else if ((b(☃)) || (b(☃)) || (b(☃)) || (b(☃))) {
-            ☃[(☃ + ☃ * ☃)] = Faz;
+            ☃[(☃ + ☃ * ☃)] = ady.F.az;
           } else {
             ☃[(☃ + ☃ * ☃)] = ☃;
           }
         }
-        else if ((☃ == saz) || (☃ == Xaz) || (☃ == Jaz))
+        else if ((☃ == ady.s.az) || (☃ == ady.X.az) || (☃ == ady.J.az))
         {
-          a(☃, ☃, ☃, ☃, ☃, ☃, Oaz);
+          a(☃, ☃, ☃, ☃, ☃, ☃, ady.O.az);
         }
         else if ((☃ != null) && (☃.j()))
         {
-          a(☃, ☃, ☃, ☃, ☃, ☃, Paz);
+          a(☃, ☃, ☃, ☃, ☃, ☃, ady.P.az);
         }
-        else if ((☃ == aaaz) || (☃ == abaz))
+        else if ((☃ == ady.aa.az) || (☃ == ady.ab.az))
         {
           int ☃ = ☃[(☃ + 1 + (☃ + 1 - 1) * (☃ + 2))];
           int ☃ = ☃[(☃ + 1 + 1 + (☃ + 1) * (☃ + 2))];
@@ -61,19 +61,19 @@ public class asl
           if ((b(☃)) || (b(☃)) || (b(☃)) || (b(☃))) {
             ☃[(☃ + ☃ * ☃)] = ☃;
           } else if ((!d(☃)) || (!d(☃)) || (!d(☃)) || (!d(☃))) {
-            ☃[(☃ + ☃ * ☃)] = raz;
+            ☃[(☃ + ☃ * ☃)] = ady.r.az;
           } else {
             ☃[(☃ + ☃ * ☃)] = ☃;
           }
         }
-        else if ((☃ != paz) && (☃ != Naz) && (☃ != waz) && (☃ != vaz))
+        else if ((☃ != ady.p.az) && (☃ != ady.N.az) && (☃ != ady.w.az) && (☃ != ady.v.az))
         {
           int ☃ = ☃[(☃ + 1 + (☃ + 1 - 1) * (☃ + 2))];
           int ☃ = ☃[(☃ + 1 + 1 + (☃ + 1) * (☃ + 2))];
           int ☃ = ☃[(☃ + 1 - 1 + (☃ + 1) * (☃ + 2))];
           int ☃ = ☃[(☃ + 1 + (☃ + 1 + 1) * (☃ + 2))];
           if ((b(☃)) || (b(☃)) || (b(☃)) || (b(☃))) {
-            ☃[(☃ + ☃ * ☃)] = Faz;
+            ☃[(☃ + ☃ * ☃)] = ady.F.az;
           } else {
             ☃[(☃ + ☃ * ☃)] = ☃;
           }
@@ -110,7 +110,7 @@ public class asl
     if ((ady.e(☃) != null) && (ady.e(☃).l() == aej.class)) {
       return true;
     }
-    return (☃ == Maz) || (☃ == Kaz) || (☃ == Laz) || (☃ == taz) || (☃ == uaz) || (b(☃));
+    return (☃ == ady.M.az) || (☃ == ady.K.az) || (☃ == ady.L.az) || (☃ == ady.t.az) || (☃ == ady.u.az) || (b(☃));
   }
   
   private boolean d(int ☃)

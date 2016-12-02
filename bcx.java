@@ -22,9 +22,9 @@ public class bcx
   
   public bcx(ek ☃, ave ☃, axu ☃)
   {
-    d = ☃;
-    b = ☃;
-    c = ☃;
+    this.d = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public void a(jh ☃)
@@ -33,10 +33,10 @@ public class bcx
     String ☃ = ☃.a();
     PublicKey ☃ = ☃.b();
     String ☃ = new BigInteger(ng.a(☃, ☃, ☃)).toString(16);
-    if ((b.D() != null) && (b.D().d())) {
+    if ((this.b.D() != null) && (this.b.D().d())) {
       try
       {
-        b().joinServer(b.L().e(), b.L().d(), ☃);
+        b().joinServer(this.b.L().e(), this.b.L().d(), ☃);
       }
       catch (AuthenticationException ☃)
       {
@@ -45,25 +45,25 @@ public class bcx
     } else {
       try
       {
-        b().joinServer(b.L().e(), b.L().d(), ☃);
+        b().joinServer(this.b.L().e(), this.b.L().d(), ☃);
       }
       catch (AuthenticationUnavailableException ☃)
       {
-        d.a(new fb("disconnect.loginFailedInfo", new Object[] { new fb("disconnect.loginFailedInfo.serversUnavailable", new Object[0]) }));
+        this.d.a(new fb("disconnect.loginFailedInfo", new Object[] { new fb("disconnect.loginFailedInfo.serversUnavailable", new Object[0]) }));
         return;
       }
       catch (InvalidCredentialsException ☃)
       {
-        d.a(new fb("disconnect.loginFailedInfo", new Object[] { new fb("disconnect.loginFailedInfo.invalidSession", new Object[0]) }));
+        this.d.a(new fb("disconnect.loginFailedInfo", new Object[] { new fb("disconnect.loginFailedInfo.invalidSession", new Object[0]) }));
         return;
       }
       catch (AuthenticationException ☃)
       {
-        d.a(new fb("disconnect.loginFailedInfo", new Object[] { ☃.getMessage() }));
+        this.d.a(new fb("disconnect.loginFailedInfo", new Object[] { ☃.getMessage() }));
         return;
       }
     }
-    d.a(new jm(☃, ☃, ☃.c()), new GenericFutureListener()
+    this.d.a(new jm(☃, ☃, ☃.c()), new GenericFutureListener()
     {
       public void operationComplete(Future<? super Void> ☃)
         throws Exception
@@ -75,30 +75,30 @@ public class bcx
   
   private MinecraftSessionService b()
   {
-    return b.aa();
+    return this.b.aa();
   }
   
   public void a(jg ☃)
   {
-    e = ☃.a();
-    d.a(el.b);
-    d.a(new bcy(b, c, d, e));
+    this.e = ☃.a();
+    this.d.a(el.b);
+    this.d.a(new bcy(this.b, this.c, this.d, this.e));
   }
   
   public void a(eu ☃)
   {
-    b.a(new axh(c, "connect.failed", ☃));
+    this.b.a(new axh(this.c, "connect.failed", ☃));
   }
   
   public void a(jj ☃)
   {
-    d.a(☃.a());
+    this.d.a(☃.a());
   }
   
   public void a(ji ☃)
   {
-    if (!d.c()) {
-      d.a(☃.a());
+    if (!this.d.c()) {
+      this.d.a(☃.a());
     }
   }
 }

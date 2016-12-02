@@ -11,6 +11,6 @@ final class o$7
       return false;
     }
     lf ☃ = (lf)☃;
-    return c.b().a() == a;
+    return ☃.c.b().a() == this.a;
   }
 }

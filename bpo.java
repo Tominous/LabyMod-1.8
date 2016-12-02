@@ -2,9 +2,7 @@ import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.Futures;
 import java.io.File;
 import java.io.IOException;
-import java.net.InetAddress;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
@@ -22,27 +20,28 @@ public class bpo
   private boolean n;
   private boolean o;
   private bpr p;
-  private static final String __OBFID = "CL_00001129";
   
-  public bpo(ave mcIn)
+  public bpo(ave ☃)
   {
-    super(mcIn.O(), new File(v, a.getName()));
-    l = mcIn;
-    m = null;
+    super(☃.O(), new File(☃.v, a.getName()));
+    this.l = ☃;
+    this.m = null;
   }
   
-  public bpo(ave mcIn, String folderName, String worldName, adp settings)
+  public bpo(ave ☃, String ☃, String ☃, adp ☃)
   {
-    super(new File(v, "saves"), mcIn.O(), new File(v, a.getName()));
-    i(mcIn.L().c());
-    j(folderName);
-    k(worldName);
-    b(mcIn.t());
-    c(settings.c());
+    super(new File(☃.v, "saves"), ☃.O(), new File(☃.v, a.getName()));
+    
+    i(☃.L().c());
+    j(☃);
+    k(☃);
+    b(☃.t());
+    c(☃.c());
     c(256);
     a(new bpn(this));
-    l = mcIn;
-    m = (X() ? kx.a : settings);
+    
+    this.l = ☃;
+    this.m = (X() ? kx.a : ☃);
   }
   
   protected bd h()
@@ -50,78 +49,49 @@ public class bpo
     return new bpp();
   }
   
-  protected void a(String p_71247_1_, String p_71247_2_, long seed, adr type, String p_71247_6_)
+  protected void a(String ☃, String ☃, long ☃, adr ☃, String ☃)
   {
-    a(p_71247_1_);
+    a(☃);
     
-    atp var7 = Y().a(p_71247_1_, true);
-    ato var8 = var7.d();
-    if (Reflector.DimensionManager.exists())
-    {
-      le overWorld = X() ? (le)new kx(this, var7, var8, 0, c).b() : (le)new WorldServerOF(this, var7, var8, 0, c).b();
-      
-      overWorld.a(m);
-      
-      Integer[] dimIds = (Integer[])Reflector.call(Reflector.DimensionManager_getStaticDimensionIDs, new Object[0]);
-      Integer[] arr$ = dimIds;int len$ = arr$.length;
-      for (int i$ = 0; i$ < len$; i$++)
-      {
-        int dim = arr$[i$].intValue();
-        
-        le world = dim == 0 ? overWorld : (le)new kz(this, var7, dim, overWorld, c).b();
-        
-        world.a(new lb(this, world));
-        if (!T()) {
-          world.P().a(m());
-        }
-        if (Reflector.EventBus.exists()) {
-          Reflector.postForgeBusEvent(Reflector.WorldEvent_Load_Constructor, new Object[] { world });
-        }
-      }
-      ap().a(new le[] { overWorld });
-      if (overWorld.P().y() == null) {
-        a(l.t.ay);
-      }
+    this.d = new le[3];
+    this.i = new long[this.d.length][100];
+    
+    atp ☃ = Y().a(☃, true);
+    a(U(), ☃);
+    
+    ato ☃ = ☃.d();
+    if (☃ == null) {
+      ☃ = new ato(this.m, ☃);
+    } else {
+      ☃.a(☃);
     }
-    else
+    for (int ☃ = 0; ☃ < this.d.length; ☃++)
     {
-      d = new le[3];
-      i = new long[d.length][100];
-      
-      a(U(), var7);
-      if (var8 == null) {
-        var8 = new ato(m, p_71247_2_);
-      } else {
-        var8.a(p_71247_2_);
+      int ☃ = 0;
+      if (☃ == 1) {
+        ☃ = -1;
       }
-      for (int var9 = 0; var9 < d.length; var9++)
+      if (☃ == 2) {
+        ☃ = 1;
+      }
+      if (☃ == 0)
       {
-        byte var10 = 0;
-        if (var9 == 1) {
-          var10 = -1;
+        if (X()) {
+          this.d[☃] = ((le)new kx(this, ☃, ☃, ☃, this.c).b());
+        } else {
+          this.d[☃] = ((le)new le(this, ☃, ☃, ☃, this.c).b());
         }
-        if (var9 == 2) {
-          var10 = 1;
-        }
-        if (var9 == 0)
-        {
-          if (X()) {
-            d[var9] = ((le)new kx(this, var7, var8, var10, c).b());
-          } else {
-            d[var9] = ((le)new WorldServerOF(this, var7, var8, var10, c).b());
-          }
-          d[var9].a(m);
-        }
-        else
-        {
-          d[var9] = ((le)new kz(this, var7, var10, d[0], c).b());
-        }
-        d[var9].a(new lb(this, d[var9]));
+        this.d[☃].a(this.m);
       }
-      ap().a(d);
-      if (d[0].P().y() == null) {
-        a(l.t.ay);
+      else
+      {
+        this.d[☃] = ((le)new kz(this, ☃, ☃, this.d[0], this.c).b());
       }
+      this.d[☃].a(new lb(this, this.d[☃]));
+    }
+    ap().a(this.d);
+    if (this.d[0].P().y() == null) {
+      a(this.l.t.ay);
     }
     k();
   }
@@ -130,80 +100,64 @@ public class bpo
     throws IOException
   {
     k.info("Starting integrated minecraft server version 1.8.8");
+    
     d(true);
     e(true);
     f(true);
     g(true);
     h(true);
+    
     k.info("Generating keypair");
     a(ng.b());
-    if (Reflector.FMLCommonHandler_handleServerAboutToStart.exists())
-    {
-      Object inst = Reflector.call(Reflector.FMLCommonHandler_instance, new Object[0]);
-      if (!Reflector.callBoolean(inst, Reflector.FMLCommonHandler_handleServerAboutToStart, new Object[] { this })) {
-        return false;
-      }
-    }
-    a(U(), V(), m.d(), m.h(), m.j());
-    l(S() + " - " + d[0].P().k());
-    if (Reflector.FMLCommonHandler_handleServerStarting.exists())
-    {
-      Object inst = Reflector.call(Reflector.FMLCommonHandler_instance, new Object[0]);
-      if (Reflector.FMLCommonHandler_handleServerStarting.getReturnType() == Boolean.TYPE) {
-        return Reflector.callBoolean(inst, Reflector.FMLCommonHandler_handleServerStarting, new Object[] { this });
-      }
-      Reflector.callVoid(inst, Reflector.FMLCommonHandler_handleServerStarting, new Object[] { this });
-    }
+    
+    a(U(), V(), this.m.d(), this.m.h(), this.m.j());
+    l(S() + " - " + this.d[0].P().k());
+    
     return true;
   }
   
-  public void A()
+  protected void A()
   {
-    boolean var1 = n;
-    n = ((ave.A().u() != null) && (ave.A().V()));
-    if ((!var1) && (n))
+    boolean ☃ = this.n;
+    this.n = ((ave.A().u() != null) && (ave.A().V()));
+    if ((!☃) && (this.n))
     {
       k.info("Saving and pausing game...");
       ap().j();
       a(false);
     }
-    if (n)
+    if (this.n)
     {
-      Queue var2 = j;
-      synchronized (j)
+      synchronized (this.j)
       {
-        while (!j.isEmpty()) {
-          g.a((FutureTask)j.poll(), k);
+        while (!this.j.isEmpty()) {
+          g.a((FutureTask)this.j.poll(), k);
         }
       }
     }
     else
     {
       super.A();
-      if (l.t.c != ap().s())
+      if (this.l.t.c != ap().s())
       {
-        k.info("Changing view distance to {}, from {}", new Object[] { Integer.valueOf(l.t.c), Integer.valueOf(ap().s()) });
-        ap().a(l.t.c);
+        k.info("Changing view distance to {}, from {}", new Object[] { Integer.valueOf(this.l.t.c), Integer.valueOf(ap().s()) });
+        ap().a(this.l.t.c);
       }
-      if (l.f != null)
+      if (this.l.f != null)
       {
-        ato var9 = d[0].P();
-        ato var3 = l.f.P();
-        if ((!var9.z()) && (var3.y() != var9.y()))
+        ato ☃ = this.d[0].P();
+        ato ☃ = this.l.f.P();
+        if ((!☃.z()) && (☃.y() != ☃.y()))
         {
-          k.info("Changing difficulty to {}, from {}", new Object[] { var3.y(), var9.y() });
-          a(var3.y());
+          k.info("Changing difficulty to {}, from {}", new Object[] { ☃.y(), ☃.y() });
+          a(☃.y());
         }
-        else if ((var3.z()) && (!var9.z()))
+        else if ((☃.z()) && (!☃.z()))
         {
-          k.info("Locking difficulty to {}", new Object[] { var3.y() });
-          le[] var4 = d;
-          int var5 = var4.length;
-          for (int var6 = 0; var6 < var5; var6++)
-          {
-            le var7 = var4[var6];
-            if (var7 != null) {
-              var7.P().e(true);
+          k.info("Locking difficulty to {}", new Object[] { ☃.y() });
+          for (le ☃ : this.d) {
+            if (☃ != null) {
+              ☃.P().e(true);
             }
           }
         }
@@ -218,20 +172,17 @@ public class bpo
   
   public adp.a m()
   {
-    return m.e();
+    return this.m.e();
   }
   
   public oj n()
   {
-    if (l.f == null) {
-      return l.t.ay;
-    }
-    return l.f.P().y();
+    return this.l.f.P().y();
   }
   
   public boolean o()
   {
-    return m.f();
+    return this.m.f();
   }
   
   public boolean q()
@@ -246,12 +197,7 @@ public class bpo
   
   public File y()
   {
-    return l.v;
-  }
-  
-  public boolean ai()
-  {
-    return false;
+    return this.l.v;
   }
   
   public boolean ae()
@@ -259,54 +205,63 @@ public class bpo
     return false;
   }
   
-  protected void a(b report)
+  public boolean ai()
   {
-    l.a(report);
+    return false;
   }
   
-  public b b(b report)
+  protected void a(b ☃)
   {
-    report = super.b(report);
-    report.g().a("Type", new Callable()
+    this.l.a(☃);
+  }
+  
+  public b b(b ☃)
+  {
+    ☃ = super.b(☃);
+    
+    ☃.g().a("Type", new Callable()
     {
-      private static final String __OBFID = "CL_00001130";
-      
       public String a()
         throws Exception
       {
         return "Integrated Server (map_client.txt)";
       }
     });
-    report.g().a("Is Modded", new Callable()
+    ☃.g().a("Is Modded", new Callable()
     {
-      private static final String __OBFID = "CL_00001131";
-      
       public String a()
         throws Exception
       {
-        String var1 = ClientBrandRetriever.getClientModName();
-        if (!var1.equals("vanilla")) {
-          return "Definitely; Client brand changed to '" + var1 + "'";
+        String ☃ = ClientBrandRetriever.getClientModName();
+        if (!☃.equals("vanilla")) {
+          return "Definitely; Client brand changed to '" + ☃ + "'";
         }
-        var1 = getServerModName();
-        return ave.class.getSigners() == null ? "Very likely; Jar signature invalidated" : !var1.equals("vanilla") ? "Definitely; Server brand changed to '" + var1 + "'" : "Probably not. Jar signature remains and both client + server brands are untouched.";
+        ☃ = bpo.this.getServerModName();
+        if (!☃.equals("vanilla")) {
+          return "Definitely; Server brand changed to '" + ☃ + "'";
+        }
+        if (ave.class.getSigners() == null) {
+          return "Very likely; Jar signature invalidated";
+        }
+        return "Probably not. Jar signature remains and both client + server brands are untouched.";
       }
     });
-    return report;
+    return ☃;
   }
   
-  public void a(oj difficulty)
+  public void a(oj ☃)
   {
-    super.a(difficulty);
-    if (l.f != null) {
-      l.f.P().a(difficulty);
+    super.a(☃);
+    if (this.l.f != null) {
+      this.l.f.P().a(☃);
     }
   }
   
-  public void a(or playerSnooper)
+  public void a(or ☃)
   {
-    super.a(playerSnooper);
-    playerSnooper.a("snooper_partner", l.I().f());
+    super.a(☃);
+    
+    ☃.a("snooper_partner", this.l.I().f());
   }
   
   public boolean ad()
@@ -314,39 +269,42 @@ public class bpo
     return ave.A().ad();
   }
   
-  public String a(adp.a type, boolean allowCheats)
+  public String a(adp.a ☃, boolean ☃)
   {
     try
     {
-      int var3 = -1;
+      int ☃ = -1;
       try
       {
-        var3 = nj.a();
+        ☃ = nj.a();
       }
-      catch (IOException var5) {}
-      if (var3 <= 0) {
-        var3 = 25564;
+      catch (IOException localIOException) {}
+      if (☃ <= 0) {
+        ☃ = 25564;
       }
-      aq().a((InetAddress)null, var3);
-      k.info("Started on " + var3);
-      o = true;
-      p = new bpr(am(), var3 + "");
-      p.start();
-      ap().a(type);
-      ap().c(allowCheats);
-      return var3 + "";
+      aq().a(null, ☃);
+      k.info("Started on " + ☃);
+      this.o = true;
+      
+      this.p = new bpr(am(), ☃ + "");
+      this.p.start();
+      
+      ap().a(☃);
+      ap().c(☃);
+      
+      return ☃ + "";
     }
-    catch (IOException var6) {}
+    catch (IOException localIOException1) {}
     return null;
   }
   
   public void t()
   {
     super.t();
-    if (p != null)
+    if (this.p != null)
     {
-      p.interrupt();
-      p = null;
+      this.p.interrupt();
+      this.p = null;
     }
   }
   
@@ -354,24 +312,19 @@ public class bpo
   {
     Futures.getUnchecked(a(new Runnable()
     {
-      private static final String __OBFID = "CL_00002380";
-      
       public void run()
       {
-        ArrayList var1 = Lists.newArrayList(ap().v());
-        Iterator var2 = var1.iterator();
-        while (var2.hasNext())
-        {
-          lf var3 = (lf)var2.next();
-          ap().e(var3);
+        List<lf> ☃ = Lists.newArrayList(bpo.this.ap().v());
+        for (lf ☃ : ☃) {
+          bpo.this.ap().e(☃);
         }
       }
     }));
     super.w();
-    if (p != null)
+    if (this.p != null)
     {
-      p.interrupt();
-      p = null;
+      this.p.interrupt();
+      this.p = null;
     }
   }
   
@@ -382,12 +335,12 @@ public class bpo
   
   public boolean b()
   {
-    return o;
+    return this.o;
   }
   
-  public void a(adp.a gameMode)
+  public void a(adp.a ☃)
   {
-    ap().a(gameMode);
+    ap().a(☃);
   }
   
   public boolean al()

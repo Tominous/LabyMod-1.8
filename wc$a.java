@@ -10,10 +10,10 @@ class wc$a
   
   public boolean b()
   {
-    float ☃ = b.c(1.0F);
-    if ((☃ >= 0.5F) && (b.bc().nextInt(100) == 0))
+    float ☃ = this.b.c(1.0F);
+    if ((☃ >= 0.5F) && (this.b.bc().nextInt(100) == 0))
     {
-      b.d(null);
+      this.b.d(null);
       return false;
     }
     return super.b();
@@ -21,6 +21,6 @@ class wc$a
   
   protected double a(pr ☃)
   {
-    return 4.0F + J;
+    return 4.0F + ☃.J;
   }
 }

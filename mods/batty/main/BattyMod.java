@@ -15,8 +15,8 @@ public class BattyMod
   public void onEnable()
   {
     instance = this;
-    ModAPI.registerListener(listener);
-    batheartgui = new BattyUI(ave.A());
+    ModAPI.registerListener(this.listener);
+    this.batheartgui = new BattyUI(ave.A());
   }
   
   public static BattyMod getInstance()
@@ -26,22 +26,22 @@ public class BattyMod
   
   public BattyUI getBatheartgui()
   {
-    return batheartgui;
+    return this.batheartgui;
   }
   
   public BattyListener getListener()
   {
-    return listener;
+    return this.listener;
   }
   
   public int getUpdateCounter()
   {
-    return updateCounter;
+    return this.updateCounter;
   }
   
   public void upUpdateCounter()
   {
-    updateCounter += 1;
+    this.updateCounter += 1;
   }
   
   public void setBatheartgui(BattyUI batheartgui)

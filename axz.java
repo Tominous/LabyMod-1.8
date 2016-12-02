@@ -10,53 +10,53 @@ public class axz
   
   public axz(axu ☃, avh ☃)
   {
-    f = ☃;
-    g = ☃;
+    this.f = ☃;
+    this.g = ☃;
   }
   
   public void b()
   {
     int ☃ = 0;
-    a = bnq.a("options.sounds.title", new Object[0]);
-    h = bnq.a("options.off", new Object[0]);
+    this.a = bnq.a("options.sounds.title", new Object[0]);
+    this.h = bnq.a("options.off", new Object[0]);
     
-    n.add(new axz.a(bpg.a.b(), l / 2 - 155 + ☃ % 2 * 160, m / 6 - 12 + 24 * (☃ >> 1), bpg.a, true));
+    this.n.add(new axz.a(bpg.a.b(), this.l / 2 - 155 + ☃ % 2 * 160, this.m / 6 - 12 + 24 * (☃ >> 1), bpg.a, true));
     ☃ += 2;
     for (bpg ☃ : bpg.values()) {
       if (☃ != bpg.a)
       {
-        n.add(new axz.a(☃.b(), l / 2 - 155 + ☃ % 2 * 160, m / 6 - 12 + 24 * (☃ >> 1), ☃, false));
+        this.n.add(new axz.a(☃.b(), this.l / 2 - 155 + ☃ % 2 * 160, this.m / 6 - 12 + 24 * (☃ >> 1), ☃, false));
         
         ☃++;
       }
     }
-    n.add(new avs(200, l / 2 - 100, m / 6 + 168, bnq.a("gui.done", new Object[0])));
+    this.n.add(new avs(200, this.l / 2 - 100, this.m / 6 + 168, bnq.a("gui.done", new Object[0])));
   }
   
   protected void a(avs ☃)
   {
-    if (!l) {
+    if (!☃.l) {
       return;
     }
-    if (k == 200)
+    if (☃.k == 200)
     {
-      j.t.b();
-      j.a(f);
+      this.j.t.b();
+      this.j.a(this.f);
     }
   }
   
   public void a(int ☃, int ☃, float ☃)
   {
     c();
-    a(q, a, l / 2, 15, 16777215);
+    a(this.q, this.a, this.l / 2, 15, 16777215);
     super.a(☃, ☃, ☃);
   }
   
   protected String a(bpg ☃)
   {
-    float ☃ = g.a(☃);
+    float ☃ = this.g.a(☃);
     if (☃ == 0.0F) {
-      return h;
+      return this.h;
     }
     return (int)(☃ * 100.0F) + "%";
   }
@@ -72,10 +72,10 @@ public class axz
     public a(int ☃, int ☃, int ☃, bpg ☃, boolean ☃)
     {
       super(☃, ☃, ☃ ? 310 : 150, 20, "");
-      r = ☃;
-      s = bnq.a("soundCategory." + ☃.a(), new Object[0]);
-      j = (s + ": " + a(☃));
-      o = axz.a(axz.this).a(☃);
+      this.r = ☃;
+      this.s = bnq.a("soundCategory." + ☃.a(), new Object[0]);
+      this.j = (this.s + ": " + axz.this.a(☃));
+      this.o = axz.a(axz.this).a(☃);
     }
     
     protected int a(boolean ☃)
@@ -85,32 +85,32 @@ public class axz
     
     protected void b(ave ☃, int ☃, int ☃)
     {
-      if (!m) {
+      if (!this.m) {
         return;
       }
-      if (p)
+      if (this.p)
       {
-        o = ((☃ - (h + 4)) / (f - 8));
-        o = ns.a(o, 0.0F, 1.0F);
-        t.a(r, o);
-        t.b();
-        j = (s + ": " + a(r));
+        this.o = ((☃ - (this.h + 4)) / (this.f - 8));
+        this.o = ns.a(this.o, 0.0F, 1.0F);
+        ☃.t.a(this.r, this.o);
+        ☃.t.b();
+        this.j = (this.s + ": " + axz.this.a(this.r));
       }
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-      b(h + (int)(o * (f - 8)), i, 0, 66, 4, 20);
-      b(h + (int)(o * (f - 8)) + 4, i, 196, 66, 4, 20);
+      b(this.h + (int)(this.o * (this.f - 8)), this.i, 0, 66, 4, 20);
+      b(this.h + (int)(this.o * (this.f - 8)) + 4, this.i, 196, 66, 4, 20);
     }
     
     public boolean c(ave ☃, int ☃, int ☃)
     {
       if (super.c(☃, ☃, ☃))
       {
-        o = ((☃ - (h + 4)) / (f - 8));
-        o = ns.a(o, 0.0F, 1.0F);
-        t.a(r, o);
-        t.b();
-        j = (s + ": " + a(r));
-        p = true;
+        this.o = ((☃ - (this.h + 4)) / (this.f - 8));
+        this.o = ns.a(this.o, 0.0F, 1.0F);
+        ☃.t.a(this.r, this.o);
+        ☃.t.b();
+        this.j = (this.s + ": " + axz.this.a(this.r));
+        this.p = true;
         return true;
       }
       return false;
@@ -120,12 +120,12 @@ public class axz
     
     public void a(int ☃, int ☃)
     {
-      if (p)
+      if (this.p)
       {
-        float ☃ = r == bpg.a ? 1.0F : axz.a(axz.this).a(r);
-        j.W().a(bpf.a(new jy("gui.button.press"), 1.0F));
+        float ☃ = this.r == bpg.a ? 1.0F : axz.a(axz.this).a(this.r);
+        axz.this.j.W().a(bpf.a(new jy("gui.button.press"), 1.0F));
       }
-      p = false;
+      this.p = false;
     }
   }
 }

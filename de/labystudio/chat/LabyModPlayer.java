@@ -26,15 +26,15 @@ public class LabyModPlayer
   
   public LabyModPlayer(String name, UUID uuid, String motd, OnlineStatus status)
   {
-    id = uuid;
+    this.id = uuid;
     this.name = name;
     this.motd = motd;
     this.status = status;
-    timeZone = "";
-    lastOnline = 0L;
-    contactsAmount = 0;
-    joinedFirst = 0L;
-    serverInfo = new ServerInfo();
+    this.timeZone = "";
+    this.lastOnline = 0L;
+    this.contactsAmount = 0;
+    this.joinedFirst = 0L;
+    this.serverInfo = new ServerInfo();
   }
   
   public LabyModPlayer(String name, UUID uuid, String motd, OnlineStatus status, String timeZone, long lastOnline, long joinedFirst, int contactsAmount)
@@ -48,7 +48,7 @@ public class LabyModPlayer
   
   public boolean isNotify()
   {
-    return notify;
+    return this.notify;
   }
   
   public void setNotify(boolean notify)
@@ -58,22 +58,22 @@ public class LabyModPlayer
   
   public OnlineStatus getStatus()
   {
-    return status;
+    return this.status;
   }
   
   public String getMotd()
   {
-    return motd;
+    return this.motd;
   }
   
   public UUID getId()
   {
-    return id;
+    return this.id;
   }
   
   public String getName()
   {
-    return name;
+    return this.name;
   }
   
   public void updateMotd(String motd)
@@ -93,27 +93,27 @@ public class LabyModPlayer
   
   public int getContactsAmount()
   {
-    return contactsAmount;
+    return this.contactsAmount;
   }
   
   public long getJoinedFirst()
   {
-    return joinedFirst;
+    return this.joinedFirst;
   }
   
   public boolean isOnline()
   {
-    return status != OnlineStatus.OFFLINE;
+    return this.status != OnlineStatus.OFFLINE;
   }
   
   public long getLastOnline()
   {
     if (isOnline())
     {
-      lastOnline = System.currentTimeMillis();
+      this.lastOnline = System.currentTimeMillis();
       return System.currentTimeMillis();
     }
-    return lastOnline;
+    return this.lastOnline;
   }
   
   public void setLastOnline(long lastOnline)
@@ -123,12 +123,12 @@ public class LabyModPlayer
   
   public String getTimeZone()
   {
-    return timeZone;
+    return this.timeZone;
   }
   
   public ServerInfo getServerInfo()
   {
-    return serverInfo;
+    return this.serverInfo;
   }
   
   public boolean equals(Object obj)
@@ -148,16 +148,16 @@ public class LabyModPlayer
   
   public void updateServer(ServerInfo info)
   {
-    serverInfo = info;
+    this.serverInfo = info;
   }
   
   public void set(LabyModPlayer player)
   {
     updateServer(player.getServerInfo());
     updateMotd(player.getMotd());
-    status = player.getStatus();
-    contactsAmount = player.getContactsAmount();
-    timeZone = player.getTimeZone();
+    this.status = player.getStatus();
+    this.contactsAmount = player.getContactsAmount();
+    this.timeZone = player.getTimeZone();
   }
   
   public static enum OnlineStatus
@@ -173,13 +173,13 @@ public class LabyModPlayer
     
     public byte getPacketId()
     {
-      return packetId;
+      return this.packetId;
     }
     
     public static OnlineStatus fromPacketId(int packetId)
     {
       for (OnlineStatus status : ) {
-        if (packetId == packetId) {
+        if (status.packetId == packetId) {
           return status;
         }
       }
@@ -194,7 +194,7 @@ public class LabyModPlayer
   
   public boolean isTyping()
   {
-    return typing;
+    return this.typing;
   }
   
   public void setLastMessage(long lastMessage)
@@ -204,6 +204,6 @@ public class LabyModPlayer
   
   public long getLastMessage()
   {
-    return lastMessage;
+    return this.lastMessage;
   }
 }

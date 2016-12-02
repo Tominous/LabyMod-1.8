@@ -35,10 +35,10 @@ public class CUIListenerWorldRender
       bfl.n();
       try
       {
-        Vector3 cameraPos = new Vector3(minecraft.ac(), partialTicks);
+        Vector3 cameraPos = new Vector3(this.minecraft.ac(), partialTicks);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.5F);
-        if (controller.getSelection() != null) {
-          controller.getSelection().render(cameraPos);
+        if (this.controller.getSelection() != null) {
+          this.controller.getSelection().render(cameraPos);
         }
       }
       catch (Exception localException) {}

@@ -8,43 +8,43 @@ public class kz
   public kz(MinecraftServer ☃, atp ☃, int ☃, le ☃, nt ☃)
   {
     super(☃, ☃, new atl(☃.P()), ☃, ☃);
-    a = ☃;
+    this.a = ☃;
     
     ☃.af().a(new amq()
     {
       public void a(ams ☃, double ☃)
       {
-        af().a(☃);
+        kz.this.af().a(☃);
       }
       
       public void a(ams ☃, double ☃, double ☃, long ☃)
       {
-        af().a(☃, ☃, ☃);
+        kz.this.af().a(☃, ☃, ☃);
       }
       
       public void a(ams ☃, double ☃, double ☃)
       {
-        af().c(☃, ☃);
+        kz.this.af().c(☃, ☃);
       }
       
       public void a(ams ☃, int ☃)
       {
-        af().b(☃);
+        kz.this.af().b(☃);
       }
       
       public void b(ams ☃, int ☃)
       {
-        af().c(☃);
+        kz.this.af().c(☃);
       }
       
       public void b(ams ☃, double ☃)
       {
-        af().c(☃);
+        kz.this.af().c(☃);
       }
       
       public void c(ams ☃, double ☃)
       {
-        af().b(☃);
+        kz.this.af().b(☃);
       }
     });
   }
@@ -53,20 +53,20 @@ public class kz
   
   public adm b()
   {
-    z = a.T();
-    C = a.Z();
+    this.z = this.a.T();
+    this.C = this.a.Z();
     
-    String ☃ = th.a(t);
-    th ☃ = (th)z.a(th.class, ☃);
+    String ☃ = th.a(this.t);
+    th ☃ = (th)this.z.a(th.class, ☃);
     if (☃ == null)
     {
-      A = new th(this);
-      z.a(☃, A);
+      this.A = new th(this);
+      this.z.a(☃, this.A);
     }
     else
     {
-      A = ☃;
-      A.a(this);
+      this.A = ☃;
+      this.A.a(this);
     }
     return this;
   }

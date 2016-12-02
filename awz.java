@@ -19,22 +19,22 @@ public class awz
   
   public awz(axu p_i1181_1_, ave mcIn, bde p_i1181_3_)
   {
-    j = mcIn;
-    i = p_i1181_1_;
-    bdd serveraddress = bdd.a(b);
+    this.j = mcIn;
+    this.i = p_i1181_1_;
+    bdd serveraddress = bdd.a(p_i1181_3_.b);
     mcIn.a((bdb)null);
     mcIn.a(p_i1181_3_);
-    getInstancecommandQueue.clear();
-    if (!serverCommand.isEmpty()) {
-      getInstancecommandQueue.add(serverCommand);
+    LabyMod.getInstance().commandQueue.clear();
+    if (!p_i1181_3_.serverCommand.isEmpty()) {
+      LabyMod.getInstance().commandQueue.add(p_i1181_3_.serverCommand);
     }
     a(serveraddress.a(), serveraddress.b());
   }
   
   public awz(axu p_i1182_1_, ave mcIn, String hostName, int port)
   {
-    j = mcIn;
-    i = p_i1182_1_;
+    this.j = mcIn;
+    this.i = p_i1182_1_;
     mcIn.a((bdb)null);
     a(hostName, port);
   }
@@ -54,10 +54,10 @@ public class awz
             return;
           }
           inetaddress = InetAddress.getByName(ip);
-          awz.a(awz.this, ek.a(inetaddress, port, j.t.f()));
-          awz.b(awz.this).a(new bcx(awz.b(awz.this), j, awz.c(awz.this)));
+          awz.a(awz.this, ek.a(inetaddress, port, awz.this.j.t.f()));
+          awz.b(awz.this).a(new bcx(awz.b(awz.this), awz.this.j, awz.c(awz.this)));
           awz.b(awz.this).a(new jc(47, ip, port, el.d));
-          awz.b(awz.this).a(new jl(j.L().e()));
+          awz.b(awz.this).a(new jl(awz.this.j.L().e()));
         }
         catch (UnknownHostException unknownhostexception)
         {
@@ -65,7 +65,7 @@ public class awz
             return;
           }
           awz.a().error("Couldn't connect to server", unknownhostexception);
-          j.a(new axh(awz.c(awz.this), "connect.failed", new fb("disconnect.genericReason", new Object[] { "Unknown host" })));
+          awz.this.j.a(new axh(awz.c(awz.this), "connect.failed", new fb("disconnect.genericReason", new Object[] { "Unknown host" })));
         }
         catch (Exception exception)
         {
@@ -79,7 +79,7 @@ public class awz
             String s1 = inetaddress.toString() + ":" + port;
             s = s.replaceAll(s1, "");
           }
-          j.a(new axh(awz.c(awz.this), "connect.failed", new fb("disconnect.genericReason", new Object[] { s })));
+          awz.this.j.a(new axh(awz.c(awz.this), "connect.failed", new fb("disconnect.genericReason", new Object[] { s })));
         }
       }
     }.start();
@@ -87,11 +87,11 @@ public class awz
   
   public void e()
   {
-    if (g != null) {
-      if (g.g()) {
-        g.a();
+    if (this.g != null) {
+      if (this.g.g()) {
+        this.g.a();
       } else {
-        g.l();
+        this.g.l();
       }
     }
   }
@@ -102,30 +102,30 @@ public class awz
   
   public void b()
   {
-    n.clear();
-    n.add(new avs(0, l / 2 - 100, m / 4 + 120 + 12, bnq.a("gui.cancel", new Object[0])));
+    this.n.clear();
+    this.n.add(new avs(0, this.l / 2 - 100, this.m / 4 + 120 + 12, bnq.a("gui.cancel", new Object[0])));
   }
   
   protected void a(avs button)
     throws IOException
   {
-    if (k == 0)
+    if (button.k == 0)
     {
-      h = true;
-      if (g != null) {
-        g.a(new fa("Aborted"));
+      this.h = true;
+      if (this.g != null) {
+        this.g.a(new fa("Aborted"));
       }
-      j.a(i);
+      this.j.a(this.i);
     }
   }
   
   public void a(int mouseX, int mouseY, float partialTicks)
   {
     c();
-    if (g == null) {
-      a(q, bnq.a("connect.connecting", new Object[0]), l / 2, m / 2 - 50, 16777215);
+    if (this.g == null) {
+      a(this.q, bnq.a("connect.connecting", new Object[0]), this.l / 2, this.m / 2 - 50, 16777215);
     } else {
-      a(q, bnq.a("connect.authorizing", new Object[0]), l / 2, m / 2 - 50, 16777215);
+      a(this.q, bnq.a("connect.authorizing", new Object[0]), this.l / 2, this.m / 2 - 50, 16777215);
     }
     super.a(mouseX, mouseY, partialTicks);
   }

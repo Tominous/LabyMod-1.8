@@ -25,25 +25,25 @@ public class SliderCoords
   public SliderCoords(int x, int y, int size)
   {
     super(-3, x, y, size + 5, 20, "");
-    sliderValue = 1.0F;
-    field_146132_r = 0.0F;
-    field_146131_s = 1.0F;
+    this.sliderValue = 1.0F;
+    this.field_146132_r = 0.0F;
+    this.field_146131_s = 1.0F;
     this.size = (size - 5);
     ave var7 = ave.A();
     updateText();
-    valueMin = 0;
-    valueMax = 4.0F;
-    valueStep = 1.0F;
+    this.valueMin = 0;
+    this.valueMax = 4.0F;
+    this.valueStep = 1.0F;
   }
   
   public int getX()
   {
-    return h;
+    return this.h;
   }
   
   public int getY()
   {
-    return i;
+    return this.i;
   }
   
   protected int a(boolean mouseOver)
@@ -53,50 +53,50 @@ public class SliderCoords
   
   public float denormalizeValue(float p_148262_1_)
   {
-    return snapToStepClamp(valueMin + (valueMax - valueMin) * ns.a(p_148262_1_, 0.0F, 1.0F));
+    return snapToStepClamp(this.valueMin + (this.valueMax - this.valueMin) * ns.a(p_148262_1_, 0.0F, 1.0F));
   }
   
   public float snapToStepClamp(float p_148268_1_)
   {
     p_148268_1_ = snapToStep(p_148268_1_);
-    return ns.a(p_148268_1_, valueMin, valueMax);
+    return ns.a(p_148268_1_, this.valueMin, this.valueMax);
   }
   
   protected float snapToStep(float p_148264_1_)
   {
-    if (valueStep > 0.0F) {
-      p_148264_1_ = valueStep * Math.round(p_148264_1_ / valueStep);
+    if (this.valueStep > 0.0F) {
+      p_148264_1_ = this.valueStep * Math.round(p_148264_1_ / this.valueStep);
     }
     return p_148264_1_;
   }
   
   public void updateText()
   {
-    if (settingstruncateCoords == 0) {
-      j = (Color.cl("c") + settingstruncateCoords + " digits");
+    if (ConfigManager.settings.truncateCoords == 0) {
+      this.j = (Color.cl("c") + ConfigManager.settings.truncateCoords + " digits");
     } else {
-      j = (settingstruncateCoords + " digits");
+      this.j = (ConfigManager.settings.truncateCoords + " digits");
     }
   }
   
   protected void b(ave mc, int mouseX, int mouseY)
   {
-    if (m)
+    if (this.m)
     {
-      if (dragging)
+      if (this.dragging)
       {
-        sliderValue = ((mouseX - (getX() + 4)) / (f - 8));
-        sliderValue = ns.a(sliderValue, 0.0F, 1.0F);
-        sliderValue = ((mouseX - (h + 4)) / (f - 8));
-        sliderValue = ns.a(sliderValue, 0.0F, 1.0F);
-        sliderValue = denormalizeValue(sliderValue);
-        settingstruncateCoords = ((int)sliderValue);
+        this.sliderValue = ((mouseX - (getX() + 4)) / (this.f - 8));
+        this.sliderValue = ns.a(this.sliderValue, 0.0F, 1.0F);
+        this.sliderValue = ((mouseX - (this.h + 4)) / (this.f - 8));
+        this.sliderValue = ns.a(this.sliderValue, 0.0F, 1.0F);
+        this.sliderValue = denormalizeValue(this.sliderValue);
+        ConfigManager.settings.truncateCoords = ((int)this.sliderValue);
         updateText();
       }
       mc.P().a(a);
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-      b(getX() + (int)(settingstruncateCoords * 100 / valueMax * 0.72D), getY(), 0, 66, 4, 20);
-      b(getX() + (int)(settingstruncateCoords * 100 / valueMax * 0.72D) + 4, getY(), 196, 66, 4, 20);
+      b(getX() + (int)(ConfigManager.settings.truncateCoords * 100 / this.valueMax * 0.72D), getY(), 0, 66, 4, 20);
+      b(getX() + (int)(ConfigManager.settings.truncateCoords * 100 / this.valueMax * 0.72D) + 4, getY(), 196, 66, 4, 20);
     }
   }
   
@@ -104,11 +104,11 @@ public class SliderCoords
   {
     if (super.c(mc, mouseX, mouseY))
     {
-      sliderValue = ((mouseX - (getX() + 4)) / (f - 8));
-      sliderValue = ns.a(sliderValue, 0.0F, 1.0F);
-      settingstruncateCoords = ((int)(sliderValue * valueMax));
+      this.sliderValue = ((mouseX - (getX() + 4)) / (this.f - 8));
+      this.sliderValue = ns.a(this.sliderValue, 0.0F, 1.0F);
+      ConfigManager.settings.truncateCoords = ((int)(this.sliderValue * this.valueMax));
       updateText();
-      dragging = true;
+      this.dragging = true;
       return true;
     }
     return false;
@@ -116,7 +116,7 @@ public class SliderCoords
   
   public void a(int mouseX, int mouseY)
   {
-    dragging = false;
+    this.dragging = false;
     ConfigManager.save();
   }
 }

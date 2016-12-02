@@ -31,39 +31,39 @@ public class SingleChat
   
   public int getId()
   {
-    return id;
+    return this.id;
   }
   
   public LabyModPlayer getFriend()
   {
-    return friend;
+    return this.friend;
   }
   
   public List<MessageChatComponent> getMessages()
   {
-    return messages;
+    return this.messages;
   }
   
   public void addMessage(MessageChatComponent message)
   {
-    Collections.reverse(messages);
-    messages.add(message);
-    Collections.reverse(messages);
+    Collections.reverse(this.messages);
+    this.messages.add(message);
+    Collections.reverse(this.messages);
     
     message.setChat(this);
     if (message.getSender().equalsIgnoreCase(LabyMod.getInstance().getPlayerName()))
     {
-      if (settingsplaySounds) {
+      if (ConfigManager.settings.playSounds) {
         synchronized (ave.A())
         {
           ave.A().W().a(bpf.a(new jy("random.pop"), 1.5F));
         }
       }
       if (!(message instanceof TitleChatComponent)) {
-        getInstanceclient.getClientConnection().sendPacket(new PacketMessage(getInstanceclient.build(), getFriend(), message.getMessage(), 0L, 0.0D, System.currentTimeMillis()));
+        LabyMod.getInstance().client.getClientConnection().sendPacket(new PacketMessage(LabyMod.getInstance().client.build(), getFriend(), message.getMessage(), 0L, 0.0D, System.currentTimeMillis()));
       }
     }
-    else if (settingsplaySounds)
+    else if (ConfigManager.settings.playSounds)
     {
       LabyMod.getInstance().getClient();
       if ((!Client.isBusy()) && 
@@ -71,12 +71,12 @@ public class SingleChat
         ave.A().W().a(bpf.a(new jy("random.pop"), 2.5F));
       }
     }
-    getInstancenewMessage = true;
+    LabyMod.getInstance().newMessage = true;
   }
   
   public void updateFriend(LabyModPlayer player)
   {
-    friend = player;
+    this.friend = player;
   }
   
   public void draw(int xStart, int yStart) {}

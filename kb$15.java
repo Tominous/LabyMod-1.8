@@ -13,7 +13,7 @@ final class kb$15
     double ☃ = ☃.c() + ☃.i() * 0.3F;
     
     adm ☃ = ☃.i();
-    Random ☃ = s;
+    Random ☃ = ☃.s;
     
     double ☃ = ☃.nextGaussian() * 0.05D + ☃.g();
     double ☃ = ☃.nextGaussian() * 0.05D + ☃.h();

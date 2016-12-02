@@ -24,38 +24,38 @@ public class atg
     
     public a(wn ☃)
     {
-      a = ☃;
+      this.a = ☃;
     }
     
     public ff a(zx ☃)
     {
-      if (d)
+      if (this.d)
       {
-        d = false;
-        return new gu(☃.i(), e, h.values(), f, e, f, g + 1 - e, h + 1 - f);
+        this.d = false;
+        return new gu(☃.i(), atg.this.e, atg.this.h.values(), atg.this.f, this.e, this.f, this.g + 1 - this.e, this.h + 1 - this.f);
       }
-      if (i++ % 5 == 0) {
-        return new gu(☃.i(), e, h.values(), f, 0, 0, 0, 0);
+      if (this.i++ % 5 == 0) {
+        return new gu(☃.i(), atg.this.e, atg.this.h.values(), atg.this.f, 0, 0, 0, 0);
       }
       return null;
     }
     
     public void a(int ☃, int ☃)
     {
-      if (d)
+      if (this.d)
       {
-        e = Math.min(e, ☃);
-        f = Math.min(f, ☃);
-        g = Math.max(g, ☃);
-        h = Math.max(h, ☃);
+        this.e = Math.min(this.e, ☃);
+        this.f = Math.min(this.f, ☃);
+        this.g = Math.max(this.g, ☃);
+        this.h = Math.max(this.h, ☃);
       }
       else
       {
-        d = true;
-        e = ☃;
-        f = ☃;
-        g = ☃;
-        h = ☃;
+        this.d = true;
+        this.e = ☃;
+        this.f = ☃;
+        this.g = ☃;
+        this.h = ☃;
       }
     }
   }
@@ -77,28 +77,28 @@ public class atg
     int ☃ = ns.c((☃ + 64.0D) / ☃);
     int ☃ = ns.c((☃ + 64.0D) / ☃);
     
-    b = (☃ * ☃ + ☃ / 2 - 64);
-    c = (☃ * ☃ + ☃ / 2 - 64);
+    this.b = (☃ * ☃ + ☃ / 2 - 64);
+    this.c = (☃ * ☃ + ☃ / 2 - 64);
   }
   
   public void a(dn ☃)
   {
-    d = ☃.d("dimension");
-    b = ☃.f("xCenter");
-    c = ☃.f("zCenter");
-    e = ☃.d("scale");
-    e = ((byte)ns.a(e, 0, 4));
+    this.d = ☃.d("dimension");
+    this.b = ☃.f("xCenter");
+    this.c = ☃.f("zCenter");
+    this.e = ☃.d("scale");
+    this.e = ((byte)ns.a(this.e, 0, 4));
     
     int ☃ = ☃.e("width");
     int ☃ = ☃.e("height");
     if ((☃ == 128) && (☃ == 128))
     {
-      f = ☃.k("colors");
+      this.f = ☃.k("colors");
     }
     else
     {
       byte[] ☃ = ☃.k("colors");
-      f = new byte['䀀'];
+      this.f = new byte['䀀'];
       int ☃ = (128 - ☃) / 2;
       int ☃ = (128 - ☃) / 2;
       for (int ☃ = 0; ☃ < ☃; ☃++)
@@ -109,7 +109,7 @@ public class atg
           {
             int ☃ = ☃ + ☃;
             if ((☃ >= 0) || (☃ < 128)) {
-              f[(☃ + ☃ * 128)] = ☃[(☃ + ☃ * ☃)];
+              this.f[(☃ + ☃ * 128)] = ☃[(☃ + ☃ * ☃)];
             }
           }
         }
@@ -119,44 +119,44 @@ public class atg
   
   public void b(dn ☃)
   {
-    ☃.a("dimension", d);
-    ☃.a("xCenter", b);
-    ☃.a("zCenter", c);
-    ☃.a("scale", e);
+    ☃.a("dimension", this.d);
+    ☃.a("xCenter", this.b);
+    ☃.a("zCenter", this.c);
+    ☃.a("scale", this.e);
     ☃.a("width", (short)128);
     ☃.a("height", (short)128);
-    ☃.a("colors", f);
+    ☃.a("colors", this.f);
   }
   
   public void a(wn ☃, zx ☃)
   {
-    if (!i.containsKey(☃))
+    if (!this.i.containsKey(☃))
     {
       atg.a ☃ = new atg.a(☃);
-      i.put(☃, ☃);
-      g.add(☃);
+      this.i.put(☃, ☃);
+      this.g.add(☃);
     }
-    if (!bi.c(☃)) {
-      h.remove(☃.e_());
+    if (!☃.bi.c(☃)) {
+      this.h.remove(☃.e_());
     }
-    for (int ☃ = 0; ☃ < g.size(); ☃++)
+    for (int ☃ = 0; ☃ < this.g.size(); ☃++)
     {
-      atg.a ☃ = (atg.a)g.get(☃);
-      if ((a.I) || ((!a.bi.c(☃)) && (!☃.y())))
+      atg.a ☃ = (atg.a)this.g.get(☃);
+      if ((☃.a.I) || ((!☃.a.bi.c(☃)) && (!☃.y())))
       {
-        i.remove(a);
-        g.remove(☃);
+        this.i.remove(☃.a);
+        this.g.remove(☃);
       }
-      else if ((!☃.y()) && (a.am == d))
+      else if ((!☃.y()) && (☃.a.am == this.d))
       {
-        a(0, a.o, a.e_(), a.s, a.u, a.y);
+        a(0, ☃.a.o, ☃.a.e_(), ☃.a.s, ☃.a.u, ☃.a.y);
       }
     }
     if (☃.y())
     {
       uo ☃ = ☃.z();
       cj ☃ = ☃.n();
-      a(1, o, "frame-" + ☃.F(), ☃.n(), ☃.p(), b.b() * 90);
+      a(1, ☃.o, "frame-" + ☃.F(), ☃.n(), ☃.p(), ☃.b.b() * 90);
     }
     if ((☃.n()) && (☃.o().b("Decorations", 9)))
     {
@@ -164,8 +164,8 @@ public class atg
       for (int ☃ = 0; ☃ < ☃.c(); ☃++)
       {
         dn ☃ = ☃.b(☃);
-        if (!h.containsKey(☃.j("id"))) {
-          a(☃.d("type"), o, ☃.j("id"), ☃.i("x"), ☃.i("z"), ☃.i("rot"));
+        if (!this.h.containsKey(☃.j("id"))) {
+          a(☃.d("type"), ☃.o, ☃.j("id"), ☃.i("x"), ☃.i("z"), ☃.i("rot"));
         }
       }
     }
@@ -173,9 +173,9 @@ public class atg
   
   private void a(int ☃, adm ☃, String ☃, double ☃, double ☃, double ☃)
   {
-    int ☃ = 1 << e;
-    float ☃ = (float)(☃ - b) / ☃;
-    float ☃ = (float)(☃ - c) / ☃;
+    int ☃ = 1 << this.e;
+    float ☃ = (float)(☃ - this.b) / ☃;
+    float ☃ = (float)(☃ - this.c) / ☃;
     byte ☃ = (byte)(int)(☃ * 2.0F + 0.5D);
     byte ☃ = (byte)(int)(☃ * 2.0F + 0.5D);
     
@@ -184,7 +184,7 @@ public class atg
     {
       ☃ += (☃ < 0.0D ? -8.0D : 8.0D);
       byte ☃ = (byte)(int)(☃ * 16.0D / 360.0D);
-      if (d < 0)
+      if (this.d < 0)
       {
         int ☃ = (int)(☃.P().g() / 10L);
         ☃ = (byte)(☃ * ☃ * 34187121 + ☃ * 121 >> 15 & 0xF);
@@ -209,15 +209,15 @@ public class atg
     }
     else
     {
-      h.remove(☃); return;
+      this.h.remove(☃); return;
     }
     byte ☃;
-    h.put(☃, new atf((byte)☃, ☃, ☃, ☃));
+    this.h.put(☃, new atf((byte)☃, ☃, ☃, ☃));
   }
   
   public ff a(zx ☃, adm ☃, wn ☃)
   {
-    atg.a ☃ = (atg.a)i.get(☃);
+    atg.a ☃ = (atg.a)this.i.get(☃);
     if (☃ == null) {
       return null;
     }
@@ -227,19 +227,19 @@ public class atg
   public void a(int ☃, int ☃)
   {
     super.c();
-    for (atg.a ☃ : g) {
+    for (atg.a ☃ : this.g) {
       ☃.a(☃, ☃);
     }
   }
   
   public atg.a a(wn ☃)
   {
-    atg.a ☃ = (atg.a)i.get(☃);
+    atg.a ☃ = (atg.a)this.i.get(☃);
     if (☃ == null)
     {
       ☃ = new atg.a(☃);
-      i.put(☃, ☃);
-      g.add(☃);
+      this.i.put(☃, ☃);
+      this.g.add(☃);
     }
     return ☃;
   }

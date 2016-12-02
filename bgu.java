@@ -30,9 +30,9 @@ public abstract class bgu
   public Map<alz, bov> a(afh ☃)
   {
     for (alz ☃ : ☃.P().a()) {
-      b.put(☃, a(☃));
+      this.b.put(☃, a(☃));
     }
-    return b;
+    return this.b;
   }
   
   protected abstract bov a(alz paramalz);

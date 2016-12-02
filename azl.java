@@ -13,56 +13,56 @@ public class azl
   public azl(azh ☃, ave ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
     super(☃, ☃, ☃, ☃, ☃, ☃);
-    u = ☃;
+    this.u = ☃;
   }
   
   public awd.a b(int ☃)
   {
-    if (☃ < v.size()) {
-      return (awd.a)v.get(☃);
+    if (☃ < this.v.size()) {
+      return (awd.a)this.v.get(☃);
     }
-    ☃ -= v.size();
+    ☃ -= this.v.size();
     if (☃ == 0) {
-      return x;
+      return this.x;
     }
     ☃--;
     
-    return (awd.a)w.get(☃);
+    return (awd.a)this.w.get(☃);
   }
   
   protected int b()
   {
-    return v.size() + 1 + w.size();
+    return this.v.size() + 1 + this.w.size();
   }
   
   public void c(int ☃)
   {
-    y = ☃;
+    this.y = ☃;
   }
   
   protected boolean a(int ☃)
   {
-    return ☃ == y;
+    return ☃ == this.y;
   }
   
   public int e()
   {
-    return y;
+    return this.y;
   }
   
   public void a(bdf ☃)
   {
-    v.clear();
+    this.v.clear();
     for (int ☃ = 0; ☃ < ☃.c(); ☃++) {
-      v.add(new azk(u, ☃.a(☃)));
+      this.v.add(new azk(this.u, ☃.a(☃)));
     }
   }
   
   public void a(List<bpq.a> ☃)
   {
-    w.clear();
+    this.w.clear();
     for (bpq.a ☃ : ☃) {
-      w.add(new azj(u, ☃));
+      this.w.add(new azj(this.u, ☃));
     }
   }
   

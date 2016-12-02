@@ -1,23 +1,12 @@
 import java.util.concurrent.Callable;
 
 class b$3
-  implements Callable
+  implements Callable<String>
 {
-  final b a;
-  
-  b$3(b p_i46392_1_)
-  {
-    a = p_i46392_1_;
-  }
+  b$3(b paramb) {}
   
   public String a()
   {
-    return bqs.j();
-  }
-  
-  public Object call()
-    throws Exception
-  {
-    return a();
+    return System.getProperty("java.version") + ", " + System.getProperty("java.vendor");
   }
 }

@@ -7,14 +7,14 @@ public class ayt
   
   public ayt(ave ☃)
   {
-    a = ☃;
+    this.a = ☃;
   }
   
   public void a(xi ☃, List<zx> ☃) {}
   
   public void a(xi ☃, int ☃, zx ☃)
   {
-    a.c.a(☃, ☃);
+    this.a.c.a(☃, ☃);
   }
   
   public void a(xi ☃, int ☃, int ☃) {}

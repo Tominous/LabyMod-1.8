@@ -10,14 +10,14 @@ public class aqp$d
   {
     super(☃);
     
-    m = ☃;
-    d = a(☃);
-    l = ☃;
+    this.m = ☃;
+    this.d = a(☃);
+    this.l = ☃;
   }
   
   public void a(aqt ☃, List<aqt> ☃, Random ☃)
   {
-    if ((m == cq.c) || (m == cq.f)) {
+    if ((this.m == cq.c) || (this.m == cq.f)) {
       b((aqp.m)☃, ☃, ☃, 1, 1);
     } else {
       c((aqp.m)☃, ☃, ☃, 1, 1);
@@ -40,8 +40,8 @@ public class aqp$d
     }
     a(☃, ☃, 0, 0, 0, 4, 4, 4, true, ☃, aqp.c());
     
-    a(☃, ☃, ☃, d, 1, 1, 0);
-    if ((m == cq.c) || (m == cq.f)) {
+    a(☃, ☃, ☃, this.d, 1, 1, 0);
+    if ((this.m == cq.c) || (this.m == cq.f)) {
       a(☃, ☃, 0, 1, 1, 0, 3, 3, afi.a.Q(), afi.a.Q(), false);
     } else {
       a(☃, ☃, 4, 1, 1, 4, 3, 3, afi.a.Q(), afi.a.Q(), false);

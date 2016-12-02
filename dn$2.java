@@ -8,6 +8,6 @@ class dn$2
   public String a()
     throws Exception
   {
-    return eb.a[a];
+    return eb.a[this.a];
   }
 }

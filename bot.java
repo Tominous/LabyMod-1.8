@@ -55,10 +55,10 @@ public class bot
     q = bgl.a("{\"elements\":[{  \"from\": [0, 0, 0],   \"to\": [16, 16, 16],   \"faces\": {       \"down\": {\"uv\": [0, 0, 16, 16], \"texture\":\"\"}   }}]}");
     r = bgl.a("{\"elements\":[{  \"from\": [0, 0, 0],   \"to\": [16, 16, 16],   \"faces\": {       \"down\": {\"uv\": [0, 0, 16, 16], \"texture\":\"\"}   }}]}");
     
-    ob = "generation marker";
-    pb = "compass generation marker";
-    qb = "class generation marker";
-    rb = "block entity marker";
+    o.b = "generation marker";
+    p.b = "compass generation marker";
+    q.b = "class generation marker";
+    r.b = "block entity marker";
   }
   
   private Map<String, jy> s = Maps.newLinkedHashMap();
@@ -67,9 +67,9 @@ public class bot
   
   public bot(bni ☃, bmh ☃, bgc ☃)
   {
-    f = ☃;
-    j = ☃;
-    k = ☃;
+    this.f = ☃;
+    this.j = ☃;
+    this.k = ☃;
   }
   
   public db<bov, boq> a()
@@ -84,14 +84,14 @@ public class bot
     
     f();
     
-    return n;
+    return this.n;
   }
   
   private void b()
   {
-    a(k.a().a().values());
+    a(this.k.a().a().values());
     
-    i.put(a, new bgm.d(a.c(), Lists.newArrayList(new bgm.c[] { new bgm.c(new jy(a.a()), bor.a, false, 1) })));
+    this.i.put(a, new bgm.d(a.c(), Lists.newArrayList(new bgm.c[] { new bgm.c(new jy(a.a()), bor.a, false, 1) })));
     
     jy ☃ = new jy("item_frame");
     bgm ☃ = a(☃);
@@ -126,20 +126,20 @@ public class bot
   
   private void a(bgm ☃, bov ☃)
   {
-    i.put(☃, ☃.b(☃.c()));
+    this.i.put(☃, ☃.b(☃.c()));
   }
   
   private bgm a(jy ☃)
   {
     jy ☃ = b(☃);
     
-    bgm ☃ = (bgm)t.get(☃);
+    bgm ☃ = (bgm)this.t.get(☃);
     if (☃ == null)
     {
       List<bgm> ☃ = Lists.newArrayList();
       try
       {
-        for (bnh ☃ : f.b(☃))
+        for (bnh ☃ : this.f.b(☃))
         {
           InputStream ☃ = null;
           try
@@ -163,7 +163,7 @@ public class bot
         throw new RuntimeException("Encountered an exception when loading model definition of model " + ☃.toString(), ☃);
       }
       ☃ = new bgm(☃);
-      t.put(☃, ☃);
+      this.t.put(☃, ☃);
     }
     return ☃;
   }
@@ -175,17 +175,17 @@ public class bot
   
   private void c()
   {
-    for (Iterator ☃ = i.keySet().iterator(); ☃.hasNext();)
+    for (Iterator ☃ = this.i.keySet().iterator(); ☃.hasNext();)
     {
       ☃ = (bov)☃.next();
-      for (bgm.c ☃ : ((bgm.d)i.get(☃)).b())
+      for (bgm.c ☃ : ((bgm.d)this.i.get(☃)).b())
       {
         jy ☃ = ☃.a();
-        if (h.get(☃) == null) {
+        if (this.h.get(☃) == null) {
           try
           {
             bgl ☃ = c(☃);
-            h.put(☃, ☃);
+            this.h.put(☃, ☃);
           }
           catch (Exception ☃)
           {
@@ -227,13 +227,13 @@ public class bot
     }
     else
     {
-      bnh ☃ = f.a(d(☃));
+      bnh ☃ = this.f.a(d(☃));
       ☃ = new InputStreamReader(☃.b(), Charsets.UTF_8);
     }
     try
     {
       bgl ☃ = bgl.a(☃);
-      b = ☃.toString();
+      ☃.b = ☃.toString();
       return ☃;
     }
     finally
@@ -257,12 +257,12 @@ public class bot
       for (String ☃ : ☃)
       {
         jy ☃ = a(☃);
-        s.put(☃, ☃);
-        if (h.get(☃) == null) {
+        this.s.put(☃, ☃);
+        if (this.h.get(☃) == null) {
           try
           {
             bgl ☃ = c(☃);
-            h.put(☃, ☃);
+            this.h.put(☃, ☃);
           }
           catch (Exception ☃)
           {
@@ -276,54 +276,54 @@ public class bot
   
   private void e()
   {
-    u.put(zw.a(afi.b), Lists.newArrayList(new String[] { "stone", "granite", "granite_smooth", "diorite", "diorite_smooth", "andesite", "andesite_smooth" }));
-    u.put(zw.a(afi.d), Lists.newArrayList(new String[] { "dirt", "coarse_dirt", "podzol" }));
-    u.put(zw.a(afi.f), Lists.newArrayList(new String[] { "oak_planks", "spruce_planks", "birch_planks", "jungle_planks", "acacia_planks", "dark_oak_planks" }));
-    u.put(zw.a(afi.g), Lists.newArrayList(new String[] { "oak_sapling", "spruce_sapling", "birch_sapling", "jungle_sapling", "acacia_sapling", "dark_oak_sapling" }));
-    u.put(zw.a(afi.m), Lists.newArrayList(new String[] { "sand", "red_sand" }));
-    u.put(zw.a(afi.r), Lists.newArrayList(new String[] { "oak_log", "spruce_log", "birch_log", "jungle_log" }));
-    u.put(zw.a(afi.t), Lists.newArrayList(new String[] { "oak_leaves", "spruce_leaves", "birch_leaves", "jungle_leaves" }));
-    u.put(zw.a(afi.v), Lists.newArrayList(new String[] { "sponge", "sponge_wet" }));
-    u.put(zw.a(afi.A), Lists.newArrayList(new String[] { "sandstone", "chiseled_sandstone", "smooth_sandstone" }));
-    u.put(zw.a(afi.cM), Lists.newArrayList(new String[] { "red_sandstone", "chiseled_red_sandstone", "smooth_red_sandstone" }));
-    u.put(zw.a(afi.H), Lists.newArrayList(new String[] { "dead_bush", "tall_grass", "fern" }));
-    u.put(zw.a(afi.I), Lists.newArrayList(new String[] { "dead_bush" }));
-    u.put(zw.a(afi.L), Lists.newArrayList(new String[] { "black_wool", "red_wool", "green_wool", "brown_wool", "blue_wool", "purple_wool", "cyan_wool", "silver_wool", "gray_wool", "pink_wool", "lime_wool", "yellow_wool", "light_blue_wool", "magenta_wool", "orange_wool", "white_wool" }));
-    u.put(zw.a(afi.N), Lists.newArrayList(new String[] { "dandelion" }));
-    u.put(zw.a(afi.O), Lists.newArrayList(new String[] { "poppy", "blue_orchid", "allium", "houstonia", "red_tulip", "orange_tulip", "white_tulip", "pink_tulip", "oxeye_daisy" }));
-    u.put(zw.a(afi.U), Lists.newArrayList(new String[] { "stone_slab", "sandstone_slab", "cobblestone_slab", "brick_slab", "stone_brick_slab", "nether_brick_slab", "quartz_slab" }));
-    u.put(zw.a(afi.cP), Lists.newArrayList(new String[] { "red_sandstone_slab" }));
-    u.put(zw.a(afi.cG), Lists.newArrayList(new String[] { "black_stained_glass", "red_stained_glass", "green_stained_glass", "brown_stained_glass", "blue_stained_glass", "purple_stained_glass", "cyan_stained_glass", "silver_stained_glass", "gray_stained_glass", "pink_stained_glass", "lime_stained_glass", "yellow_stained_glass", "light_blue_stained_glass", "magenta_stained_glass", "orange_stained_glass", "white_stained_glass" }));
-    u.put(zw.a(afi.be), Lists.newArrayList(new String[] { "stone_monster_egg", "cobblestone_monster_egg", "stone_brick_monster_egg", "mossy_brick_monster_egg", "cracked_brick_monster_egg", "chiseled_brick_monster_egg" }));
-    u.put(zw.a(afi.bf), Lists.newArrayList(new String[] { "stonebrick", "mossy_stonebrick", "cracked_stonebrick", "chiseled_stonebrick" }));
-    u.put(zw.a(afi.bM), Lists.newArrayList(new String[] { "oak_slab", "spruce_slab", "birch_slab", "jungle_slab", "acacia_slab", "dark_oak_slab" }));
-    u.put(zw.a(afi.bZ), Lists.newArrayList(new String[] { "cobblestone_wall", "mossy_cobblestone_wall" }));
-    u.put(zw.a(afi.cf), Lists.newArrayList(new String[] { "anvil_intact", "anvil_slightly_damaged", "anvil_very_damaged" }));
-    u.put(zw.a(afi.cq), Lists.newArrayList(new String[] { "quartz_block", "chiseled_quartz_block", "quartz_column" }));
-    u.put(zw.a(afi.cu), Lists.newArrayList(new String[] { "black_stained_hardened_clay", "red_stained_hardened_clay", "green_stained_hardened_clay", "brown_stained_hardened_clay", "blue_stained_hardened_clay", "purple_stained_hardened_clay", "cyan_stained_hardened_clay", "silver_stained_hardened_clay", "gray_stained_hardened_clay", "pink_stained_hardened_clay", "lime_stained_hardened_clay", "yellow_stained_hardened_clay", "light_blue_stained_hardened_clay", "magenta_stained_hardened_clay", "orange_stained_hardened_clay", "white_stained_hardened_clay" }));
-    u.put(zw.a(afi.cH), Lists.newArrayList(new String[] { "black_stained_glass_pane", "red_stained_glass_pane", "green_stained_glass_pane", "brown_stained_glass_pane", "blue_stained_glass_pane", "purple_stained_glass_pane", "cyan_stained_glass_pane", "silver_stained_glass_pane", "gray_stained_glass_pane", "pink_stained_glass_pane", "lime_stained_glass_pane", "yellow_stained_glass_pane", "light_blue_stained_glass_pane", "magenta_stained_glass_pane", "orange_stained_glass_pane", "white_stained_glass_pane" }));
-    u.put(zw.a(afi.u), Lists.newArrayList(new String[] { "acacia_leaves", "dark_oak_leaves" }));
-    u.put(zw.a(afi.s), Lists.newArrayList(new String[] { "acacia_log", "dark_oak_log" }));
-    u.put(zw.a(afi.cI), Lists.newArrayList(new String[] { "prismarine", "prismarine_bricks", "dark_prismarine" }));
-    u.put(zw.a(afi.cy), Lists.newArrayList(new String[] { "black_carpet", "red_carpet", "green_carpet", "brown_carpet", "blue_carpet", "purple_carpet", "cyan_carpet", "silver_carpet", "gray_carpet", "pink_carpet", "lime_carpet", "yellow_carpet", "light_blue_carpet", "magenta_carpet", "orange_carpet", "white_carpet" }));
-    u.put(zw.a(afi.cF), Lists.newArrayList(new String[] { "sunflower", "syringa", "double_grass", "double_fern", "double_rose", "paeonia" }));
-    u.put(zy.f, Lists.newArrayList(new String[] { "bow", "bow_pulling_0", "bow_pulling_1", "bow_pulling_2" }));
-    u.put(zy.h, Lists.newArrayList(new String[] { "coal", "charcoal" }));
-    u.put(zy.aR, Lists.newArrayList(new String[] { "fishing_rod", "fishing_rod_cast" }));
-    u.put(zy.aU, Lists.newArrayList(new String[] { "cod", "salmon", "clownfish", "pufferfish" }));
-    u.put(zy.aV, Lists.newArrayList(new String[] { "cooked_cod", "cooked_salmon" }));
-    u.put(zy.aW, Lists.newArrayList(new String[] { "dye_black", "dye_red", "dye_green", "dye_brown", "dye_blue", "dye_purple", "dye_cyan", "dye_silver", "dye_gray", "dye_pink", "dye_lime", "dye_yellow", "dye_light_blue", "dye_magenta", "dye_orange", "dye_white" }));
-    u.put(zy.bz, Lists.newArrayList(new String[] { "bottle_drinkable", "bottle_splash" }));
-    u.put(zy.bX, Lists.newArrayList(new String[] { "skull_skeleton", "skull_wither", "skull_zombie", "skull_char", "skull_creeper" }));
+    this.u.put(zw.a(afi.b), Lists.newArrayList(new String[] { "stone", "granite", "granite_smooth", "diorite", "diorite_smooth", "andesite", "andesite_smooth" }));
+    this.u.put(zw.a(afi.d), Lists.newArrayList(new String[] { "dirt", "coarse_dirt", "podzol" }));
+    this.u.put(zw.a(afi.f), Lists.newArrayList(new String[] { "oak_planks", "spruce_planks", "birch_planks", "jungle_planks", "acacia_planks", "dark_oak_planks" }));
+    this.u.put(zw.a(afi.g), Lists.newArrayList(new String[] { "oak_sapling", "spruce_sapling", "birch_sapling", "jungle_sapling", "acacia_sapling", "dark_oak_sapling" }));
+    this.u.put(zw.a(afi.m), Lists.newArrayList(new String[] { "sand", "red_sand" }));
+    this.u.put(zw.a(afi.r), Lists.newArrayList(new String[] { "oak_log", "spruce_log", "birch_log", "jungle_log" }));
+    this.u.put(zw.a(afi.t), Lists.newArrayList(new String[] { "oak_leaves", "spruce_leaves", "birch_leaves", "jungle_leaves" }));
+    this.u.put(zw.a(afi.v), Lists.newArrayList(new String[] { "sponge", "sponge_wet" }));
+    this.u.put(zw.a(afi.A), Lists.newArrayList(new String[] { "sandstone", "chiseled_sandstone", "smooth_sandstone" }));
+    this.u.put(zw.a(afi.cM), Lists.newArrayList(new String[] { "red_sandstone", "chiseled_red_sandstone", "smooth_red_sandstone" }));
+    this.u.put(zw.a(afi.H), Lists.newArrayList(new String[] { "dead_bush", "tall_grass", "fern" }));
+    this.u.put(zw.a(afi.I), Lists.newArrayList(new String[] { "dead_bush" }));
+    this.u.put(zw.a(afi.L), Lists.newArrayList(new String[] { "black_wool", "red_wool", "green_wool", "brown_wool", "blue_wool", "purple_wool", "cyan_wool", "silver_wool", "gray_wool", "pink_wool", "lime_wool", "yellow_wool", "light_blue_wool", "magenta_wool", "orange_wool", "white_wool" }));
+    this.u.put(zw.a(afi.N), Lists.newArrayList(new String[] { "dandelion" }));
+    this.u.put(zw.a(afi.O), Lists.newArrayList(new String[] { "poppy", "blue_orchid", "allium", "houstonia", "red_tulip", "orange_tulip", "white_tulip", "pink_tulip", "oxeye_daisy" }));
+    this.u.put(zw.a(afi.U), Lists.newArrayList(new String[] { "stone_slab", "sandstone_slab", "cobblestone_slab", "brick_slab", "stone_brick_slab", "nether_brick_slab", "quartz_slab" }));
+    this.u.put(zw.a(afi.cP), Lists.newArrayList(new String[] { "red_sandstone_slab" }));
+    this.u.put(zw.a(afi.cG), Lists.newArrayList(new String[] { "black_stained_glass", "red_stained_glass", "green_stained_glass", "brown_stained_glass", "blue_stained_glass", "purple_stained_glass", "cyan_stained_glass", "silver_stained_glass", "gray_stained_glass", "pink_stained_glass", "lime_stained_glass", "yellow_stained_glass", "light_blue_stained_glass", "magenta_stained_glass", "orange_stained_glass", "white_stained_glass" }));
+    this.u.put(zw.a(afi.be), Lists.newArrayList(new String[] { "stone_monster_egg", "cobblestone_monster_egg", "stone_brick_monster_egg", "mossy_brick_monster_egg", "cracked_brick_monster_egg", "chiseled_brick_monster_egg" }));
+    this.u.put(zw.a(afi.bf), Lists.newArrayList(new String[] { "stonebrick", "mossy_stonebrick", "cracked_stonebrick", "chiseled_stonebrick" }));
+    this.u.put(zw.a(afi.bM), Lists.newArrayList(new String[] { "oak_slab", "spruce_slab", "birch_slab", "jungle_slab", "acacia_slab", "dark_oak_slab" }));
+    this.u.put(zw.a(afi.bZ), Lists.newArrayList(new String[] { "cobblestone_wall", "mossy_cobblestone_wall" }));
+    this.u.put(zw.a(afi.cf), Lists.newArrayList(new String[] { "anvil_intact", "anvil_slightly_damaged", "anvil_very_damaged" }));
+    this.u.put(zw.a(afi.cq), Lists.newArrayList(new String[] { "quartz_block", "chiseled_quartz_block", "quartz_column" }));
+    this.u.put(zw.a(afi.cu), Lists.newArrayList(new String[] { "black_stained_hardened_clay", "red_stained_hardened_clay", "green_stained_hardened_clay", "brown_stained_hardened_clay", "blue_stained_hardened_clay", "purple_stained_hardened_clay", "cyan_stained_hardened_clay", "silver_stained_hardened_clay", "gray_stained_hardened_clay", "pink_stained_hardened_clay", "lime_stained_hardened_clay", "yellow_stained_hardened_clay", "light_blue_stained_hardened_clay", "magenta_stained_hardened_clay", "orange_stained_hardened_clay", "white_stained_hardened_clay" }));
+    this.u.put(zw.a(afi.cH), Lists.newArrayList(new String[] { "black_stained_glass_pane", "red_stained_glass_pane", "green_stained_glass_pane", "brown_stained_glass_pane", "blue_stained_glass_pane", "purple_stained_glass_pane", "cyan_stained_glass_pane", "silver_stained_glass_pane", "gray_stained_glass_pane", "pink_stained_glass_pane", "lime_stained_glass_pane", "yellow_stained_glass_pane", "light_blue_stained_glass_pane", "magenta_stained_glass_pane", "orange_stained_glass_pane", "white_stained_glass_pane" }));
+    this.u.put(zw.a(afi.u), Lists.newArrayList(new String[] { "acacia_leaves", "dark_oak_leaves" }));
+    this.u.put(zw.a(afi.s), Lists.newArrayList(new String[] { "acacia_log", "dark_oak_log" }));
+    this.u.put(zw.a(afi.cI), Lists.newArrayList(new String[] { "prismarine", "prismarine_bricks", "dark_prismarine" }));
+    this.u.put(zw.a(afi.cy), Lists.newArrayList(new String[] { "black_carpet", "red_carpet", "green_carpet", "brown_carpet", "blue_carpet", "purple_carpet", "cyan_carpet", "silver_carpet", "gray_carpet", "pink_carpet", "lime_carpet", "yellow_carpet", "light_blue_carpet", "magenta_carpet", "orange_carpet", "white_carpet" }));
+    this.u.put(zw.a(afi.cF), Lists.newArrayList(new String[] { "sunflower", "syringa", "double_grass", "double_fern", "double_rose", "paeonia" }));
+    this.u.put(zy.f, Lists.newArrayList(new String[] { "bow", "bow_pulling_0", "bow_pulling_1", "bow_pulling_2" }));
+    this.u.put(zy.h, Lists.newArrayList(new String[] { "coal", "charcoal" }));
+    this.u.put(zy.aR, Lists.newArrayList(new String[] { "fishing_rod", "fishing_rod_cast" }));
+    this.u.put(zy.aU, Lists.newArrayList(new String[] { "cod", "salmon", "clownfish", "pufferfish" }));
+    this.u.put(zy.aV, Lists.newArrayList(new String[] { "cooked_cod", "cooked_salmon" }));
+    this.u.put(zy.aW, Lists.newArrayList(new String[] { "dye_black", "dye_red", "dye_green", "dye_brown", "dye_blue", "dye_purple", "dye_cyan", "dye_silver", "dye_gray", "dye_pink", "dye_lime", "dye_yellow", "dye_light_blue", "dye_magenta", "dye_orange", "dye_white" }));
+    this.u.put(zy.bz, Lists.newArrayList(new String[] { "bottle_drinkable", "bottle_splash" }));
+    this.u.put(zy.bX, Lists.newArrayList(new String[] { "skull_skeleton", "skull_wither", "skull_zombie", "skull_char", "skull_creeper" }));
     
-    u.put(zw.a(afi.bo), Lists.newArrayList(new String[] { "oak_fence_gate" }));
-    u.put(zw.a(afi.aO), Lists.newArrayList(new String[] { "oak_fence" }));
-    u.put(zy.aq, Lists.newArrayList(new String[] { "oak_door" }));
+    this.u.put(zw.a(afi.bo), Lists.newArrayList(new String[] { "oak_fence_gate" }));
+    this.u.put(zw.a(afi.aO), Lists.newArrayList(new String[] { "oak_fence" }));
+    this.u.put(zy.aq, Lists.newArrayList(new String[] { "oak_door" }));
   }
   
   private List<String> a(zw ☃)
   {
-    List<String> ☃ = (List)u.get(☃);
+    List<String> ☃ = (List)this.u.get(☃);
     if (☃ == null) {
       ☃ = Collections.singletonList(((jy)zw.e.c(☃)).toString());
     }
@@ -338,14 +338,14 @@ public class bot
   
   private void f()
   {
-    for (bov ☃ : i.keySet())
+    for (bov ☃ : this.i.keySet())
     {
       box.a ☃ = new box.a();
       
       int ☃ = 0;
-      for (bgm.c ☃ : ((bgm.d)i.get(☃)).b())
+      for (bgm.c ☃ : ((bgm.d)this.i.get(☃)).b())
       {
-        bgl ☃ = (bgl)h.get(☃.a());
+        bgl ☃ = (bgl)this.h.get(☃.a());
         if ((☃ == null) || (!☃.d()))
         {
           c.warn("Missing model for: " + ☃);
@@ -359,22 +359,22 @@ public class bot
       if (☃ == 0) {
         c.warn("No weighted models for: " + ☃);
       } else if (☃ == 1) {
-        n.a(☃, ☃.b());
+        this.n.a(☃, ☃.b());
       } else {
-        n.a(☃, ☃.a());
+        this.n.a(☃, ☃.a());
       }
     }
-    for (Map.Entry<String, jy> ☃ : s.entrySet())
+    for (Map.Entry<String, jy> ☃ : this.s.entrySet())
     {
       jy ☃ = (jy)☃.getValue();
       bov ☃ = new bov((String)☃.getKey(), "inventory");
-      bgl ☃ = (bgl)h.get(☃);
+      bgl ☃ = (bgl)this.h.get(☃);
       if ((☃ == null) || (!☃.d())) {
         c.warn("Missing model for: " + ☃);
       } else if (c(☃)) {
-        n.a(☃, new bos(☃.g()));
+        this.n.a(☃, new bos(☃.g()));
       } else {
-        n.a(☃, a(☃, bor.a, false));
+        this.n.a(☃, a(☃, bor.a, false));
       }
     }
   }
@@ -383,7 +383,7 @@ public class bot
   {
     Set<jy> ☃ = Sets.newHashSet();
     
-    List<bov> ☃ = Lists.newArrayList(i.keySet());
+    List<bov> ☃ = Lists.newArrayList(this.i.keySet());
     Collections.sort(☃, new Comparator()
     {
       public int a(bov ☃, bov ☃)
@@ -394,10 +394,10 @@ public class bot
     for (Iterator ☃ = ☃.iterator(); ☃.hasNext();)
     {
       ☃ = (bov)☃.next();
-      bgm.d ☃ = (bgm.d)i.get(☃);
+      bgm.d ☃ = (bgm.d)this.i.get(☃);
       for (bgm.c ☃ : ☃.b())
       {
-        bgl ☃ = (bgl)h.get(☃.a());
+        bgl ☃ = (bgl)this.h.get(☃.a());
         if (☃ == null) {
           c.warn("Missing model for: " + ☃);
         } else {
@@ -413,20 +413,20 @@ public class bot
   
   private boq a(bgl ☃, bor ☃, boolean ☃)
   {
-    bmi ☃ = (bmi)g.get(new jy(☃.c("particle")));
+    bmi ☃ = (bmi)this.g.get(new jy(☃.c("particle")));
     
     bow.a ☃ = new bow.a(☃).a(☃);
     for (Iterator ☃ = ☃.a().iterator(); ☃.hasNext();)
     {
       ☃ = (bgh)☃.next();
-      for (cq ☃ : c.keySet())
+      for (cq ☃ : ☃.c.keySet())
       {
-        bgi ☃ = (bgi)c.get(☃);
-        bmi ☃ = (bmi)g.get(new jy(☃.c(d)));
-        if (b == null) {
+        bgi ☃ = (bgi)☃.c.get(☃);
+        bmi ☃ = (bmi)this.g.get(new jy(☃.c(☃.d)));
+        if (☃.b == null) {
           ☃.a(a(☃, ☃, ☃, ☃, ☃, ☃));
         } else {
-          ☃.a(☃.a(b), a(☃, ☃, ☃, ☃, ☃, ☃));
+          ☃.a(☃.a(☃.b), a(☃, ☃, ☃, ☃, ☃, ☃));
         }
       }
     }
@@ -436,27 +436,27 @@ public class bot
   
   private bgg a(bgh ☃, bgi ☃, bmi ☃, cq ☃, bor ☃, boolean ☃)
   {
-    return l.a(a, b, ☃, ☃, ☃, ☃, d, ☃, e);
+    return this.l.a(☃.a, ☃.b, ☃, ☃, ☃, ☃, ☃.d, ☃, ☃.e);
   }
   
   private void h()
   {
     i();
-    for (bgl ☃ : h.values()) {
-      ☃.a(h);
+    for (bgl ☃ : this.h.values()) {
+      ☃.a(this.h);
     }
-    bgl.b(h);
+    bgl.b(this.h);
   }
   
   private void i()
   {
     Deque<jy> ☃ = Queues.newArrayDeque();
     Set<jy> ☃ = Sets.newHashSet();
-    for (jy ☃ : h.keySet())
+    for (jy ☃ : this.h.keySet())
     {
       ☃.add(☃);
       
-      jy ☃ = ((bgl)h.get(☃)).e();
+      jy ☃ = ((bgl)this.h.get(☃)).e();
       if (☃ != null) {
         ☃.add(☃);
       }
@@ -466,11 +466,11 @@ public class bot
       jy ☃ = (jy)☃.pop();
       try
       {
-        if (h.get(☃) != null) {
+        if (this.h.get(☃) != null) {
           continue;
         }
         bgl ☃ = c(☃);
-        h.put(☃, ☃);
+        this.h.put(☃, ☃);
         
         jy ☃ = ☃.e();
         if ((☃ != null) && (!☃.contains(☃))) {
@@ -497,7 +497,7 @@ public class bot
   
   private jy f(jy ☃)
   {
-    for (Map.Entry<jy, bgl> ☃ : h.entrySet())
+    for (Map.Entry<jy, bgl> ☃ : this.h.entrySet())
     {
       bgl ☃ = (bgl)☃.getValue();
       if ((☃ != null) && (☃.equals(☃.e()))) {
@@ -511,9 +511,9 @@ public class bot
   {
     Set<jy> ☃ = Sets.newHashSet();
     for (bgh ☃ : ☃.a()) {
-      for (bgi ☃ : c.values())
+      for (bgi ☃ : ☃.c.values())
       {
-        jy ☃ = new jy(☃.c(d));
+        jy ☃ = new jy(☃.c(☃.d));
         ☃.add(☃);
       }
     }
@@ -540,17 +540,17 @@ public class bot
         }
       }
     };
-    j.a(f, ☃);
+    this.j.a(this.f, ☃);
     
-    g.put(new jy("missingno"), j.f());
+    this.g.put(new jy("missingno"), this.j.f());
   }
   
   private Set<jy> k()
   {
     Set<jy> ☃ = Sets.newHashSet();
-    for (jy ☃ : s.values())
+    for (jy ☃ : this.s.values())
     {
-      ☃ = (bgl)h.get(☃);
+      ☃ = (bgl)this.h.get(☃);
       if (☃ != null)
       {
         ☃.add(new jy(☃.c("particle")));
@@ -567,9 +567,9 @@ public class bot
           }
         } else if (!c(☃)) {
           for (bgh ☃ : ☃.a()) {
-            for (bgi ☃ : c.values())
+            for (bgi ☃ : ☃.c.values())
             {
-              jy ☃ = new jy(☃.c(d));
+              jy ☃ = new jy(☃.c(☃.d));
               ☃.add(☃);
             }
           }
@@ -600,23 +600,23 @@ public class bot
   
   private void l()
   {
-    for (jy ☃ : s.values())
+    for (jy ☃ : this.s.values())
     {
-      bgl ☃ = (bgl)h.get(☃);
+      bgl ☃ = (bgl)this.h.get(☃);
       if (b(☃))
       {
         bgl ☃ = d(☃);
         if (☃ != null) {
-          b = ☃.toString();
+          ☃.b = ☃.toString();
         }
-        h.put(☃, ☃);
+        this.h.put(☃, ☃);
       }
       else if (c(☃))
       {
-        h.put(☃, ☃);
+        this.h.put(☃, ☃);
       }
     }
-    for (bmi ☃ : g.values()) {
+    for (bmi ☃ : this.g.values()) {
       if (!☃.m()) {
         ☃.l();
       }
@@ -625,6 +625,6 @@ public class bot
   
   private bgl d(bgl ☃)
   {
-    return m.a(j, ☃);
+    return this.m.a(this.j, ☃);
   }
 }

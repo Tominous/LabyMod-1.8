@@ -11,64 +11,64 @@ public class RealmsVertexFormat
   
   public RealmsVertexFormat(bmu ☃)
   {
-    v = ☃;
+    this.v = ☃;
   }
   
   public RealmsVertexFormat from(bmu ☃)
   {
-    v = ☃;
+    this.v = ☃;
     return this;
   }
   
   public bmu getVertexFormat()
   {
-    return v;
+    return this.v;
   }
   
   public void clear()
   {
-    v.a();
+    this.v.a();
   }
   
   public int getUvOffset(int ☃)
   {
-    return v.b(☃);
+    return this.v.b(☃);
   }
   
   public int getElementCount()
   {
-    return v.i();
+    return this.v.i();
   }
   
   public boolean hasColor()
   {
-    return v.d();
+    return this.v.d();
   }
   
   public boolean hasUv(int ☃)
   {
-    return v.a(☃);
+    return this.v.a(☃);
   }
   
   public RealmsVertexFormatElement getElement(int ☃)
   {
-    return new RealmsVertexFormatElement(v.c(☃));
+    return new RealmsVertexFormatElement(this.v.c(☃));
   }
   
   public RealmsVertexFormat addElement(RealmsVertexFormatElement ☃)
   {
-    return from(v.a(☃.getVertexFormatElement()));
+    return from(this.v.a(☃.getVertexFormatElement()));
   }
   
   public int getColorOffset()
   {
-    return v.e();
+    return this.v.e();
   }
   
   public List<RealmsVertexFormatElement> getElements()
   {
     List<RealmsVertexFormatElement> ☃ = new ArrayList();
-    for (bmv ☃ : v.h()) {
+    for (bmv ☃ : this.v.h()) {
       ☃.add(new RealmsVertexFormatElement(☃));
     }
     return ☃;
@@ -76,41 +76,41 @@ public class RealmsVertexFormat
   
   public boolean hasNormal()
   {
-    return v.b();
+    return this.v.b();
   }
   
   public int getVertexSize()
   {
-    return v.g();
+    return this.v.g();
   }
   
   public int getOffset(int ☃)
   {
-    return v.d(☃);
+    return this.v.d(☃);
   }
   
   public int getNormalOffset()
   {
-    return v.c();
+    return this.v.c();
   }
   
   public int getIntegerSize()
   {
-    return v.f();
+    return this.v.f();
   }
   
   public boolean equals(Object ☃)
   {
-    return v.equals(☃);
+    return this.v.equals(☃);
   }
   
   public int hashCode()
   {
-    return v.hashCode();
+    return this.v.hashCode();
   }
   
   public String toString()
   {
-    return v.toString();
+    return this.v.toString();
   }
 }

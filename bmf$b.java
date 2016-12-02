@@ -1,5 +1,4 @@
 import com.google.common.collect.Lists;
-import java.util.Iterator;
 import java.util.List;
 
 public class bmf$b
@@ -8,110 +7,100 @@ public class bmf$b
   private final int b;
   private final int c;
   private final int d;
-  private List e;
+  private List<b> e;
   private bmf.a f;
-  private static final String __OBFID = "CL_00001056";
   
-  public bmf$b(int p_i1277_1_, int p_i1277_2_, int p_i1277_3_, int p_i1277_4_)
+  public bmf$b(int ☃, int ☃, int ☃, int ☃)
   {
-    a = p_i1277_1_;
-    b = p_i1277_2_;
-    c = p_i1277_3_;
-    d = p_i1277_4_;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
   }
   
   public bmf.a a()
   {
-    return f;
+    return this.f;
   }
   
   public int b()
   {
-    return a;
+    return this.a;
   }
   
   public int c()
   {
-    return b;
+    return this.b;
   }
   
-  public boolean a(bmf.a p_94182_1_)
+  public boolean a(bmf.a ☃)
   {
-    if (f != null) {
+    if (this.f != null) {
       return false;
     }
-    int var2 = p_94182_1_.b();
-    int var3 = p_94182_1_.c();
-    if ((var2 <= c) && (var3 <= d))
+    int ☃ = ☃.b();
+    int ☃ = ☃.c();
+    if ((☃ > this.c) || (☃ > this.d)) {
+      return false;
+    }
+    if ((☃ == this.c) && (☃ == this.d))
     {
-      if ((var2 == c) && (var3 == d))
+      this.f = ☃;
+      return true;
+    }
+    if (this.e == null)
+    {
+      this.e = Lists.newArrayListWithCapacity(1);
+      
+      this.e.add(new b(this.a, this.b, ☃, ☃));
+      
+      int ☃ = this.c - ☃;
+      int ☃ = this.d - ☃;
+      if ((☃ > 0) && (☃ > 0))
       {
-        f = p_94182_1_;
+        int ☃ = Math.max(this.d, ☃);
+        int ☃ = Math.max(this.c, ☃);
+        if (☃ >= ☃)
+        {
+          this.e.add(new b(this.a, this.b + ☃, ☃, ☃));
+          this.e.add(new b(this.a + ☃, this.b, ☃, this.d));
+        }
+        else
+        {
+          this.e.add(new b(this.a + ☃, this.b, ☃, ☃));
+          this.e.add(new b(this.a, this.b + ☃, this.c, ☃));
+        }
+      }
+      else if (☃ == 0)
+      {
+        this.e.add(new b(this.a, this.b + ☃, ☃, ☃));
+      }
+      else if (☃ == 0)
+      {
+        this.e.add(new b(this.a + ☃, this.b, ☃, ☃));
+      }
+    }
+    for (b ☃ : this.e) {
+      if (☃.a(☃)) {
         return true;
       }
-      if (e == null)
-      {
-        e = Lists.newArrayListWithCapacity(1);
-        e.add(new b(a, b, var2, var3));
-        int var4 = c - var2;
-        int var5 = d - var3;
-        if ((var5 > 0) && (var4 > 0))
-        {
-          int var6 = Math.max(d, var4);
-          int var7 = Math.max(c, var5);
-          if (var6 >= var7)
-          {
-            e.add(new b(a, b + var3, var2, var5));
-            e.add(new b(a + var2, b, var4, d));
-          }
-          else
-          {
-            e.add(new b(a + var2, b, var4, var3));
-            e.add(new b(a, b + var3, c, var5));
-          }
-        }
-        else if (var4 == 0)
-        {
-          e.add(new b(a, b + var3, var2, var5));
-        }
-        else if (var5 == 0)
-        {
-          e.add(new b(a + var2, b, var4, var3));
-        }
-      }
-      Iterator var8 = e.iterator();
-      b var9;
-      do
-      {
-        if (!var8.hasNext()) {
-          return false;
-        }
-        var9 = (b)var8.next();
-      } while (!var9.a(p_94182_1_));
-      return true;
     }
     return false;
   }
   
-  public void a(List p_94184_1_)
+  public void a(List<b> ☃)
   {
-    if (f != null)
-    {
-      p_94184_1_.add(this);
-    }
-    else if (e != null)
-    {
-      Iterator var2 = e.iterator();
-      while (var2.hasNext())
-      {
-        b var3 = (b)var2.next();
-        var3.a(p_94184_1_);
+    if (this.f != null) {
+      ☃.add(this);
+    } else if (this.e != null) {
+      for (b ☃ : this.e) {
+        ☃.a(☃);
       }
     }
   }
   
   public String toString()
   {
-    return "Slot{originX=" + a + ", originY=" + b + ", width=" + c + ", height=" + d + ", texture=" + f + ", subSlots=" + e + '}';
+    return "Slot{originX=" + this.a + ", originY=" + this.b + ", width=" + this.c + ", height=" + this.d + ", texture=" + this.f + ", subSlots=" + this.e + '}';
   }
 }

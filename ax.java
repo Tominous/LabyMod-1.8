@@ -144,13 +144,13 @@ public class ax
       pk ☃ = b(☃, ☃[1]);
       ☃.a(n.a.d, 0);
       if ((☃ instanceof wn)) {
-        bj.b();
+        ((wn)☃).bj.b();
       }
       if (!☃.d(☃, ☃)) {
         throw new bz("commands.replaceitem.failed", new Object[] { Integer.valueOf(☃), Integer.valueOf(☃), ☃ == null ? "Air" : ☃.C() });
       }
       if ((☃ instanceof wn)) {
-        bj.b();
+        ((wn)☃).bj.b();
       }
     }
     ☃.a(n.a.d, ☃);

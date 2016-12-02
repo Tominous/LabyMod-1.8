@@ -15,22 +15,22 @@ public class fy
   
   public fy(eu ☃, byte ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.d();
-    b = ☃.readByte();
+    this.a = ☃.d();
+    this.b = ☃.readByte();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a);
-    ☃.writeByte(b);
+    ☃.a(this.a);
+    ☃.writeByte(this.b);
   }
   
   public void a(fj ☃)
@@ -40,16 +40,16 @@ public class fy
   
   public eu a()
   {
-    return a;
+    return this.a;
   }
   
   public boolean b()
   {
-    return (b == 1) || (b == 2);
+    return (this.b == 1) || (this.b == 2);
   }
   
   public byte c()
   {
-    return b;
+    return this.b;
   }
 }

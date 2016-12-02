@@ -10,8 +10,8 @@ public class im
   
   public im(String ☃, em ☃)
   {
-    a = ☃;
-    b = ☃;
+    this.a = ☃;
+    this.b = ☃;
     if (☃.writerIndex() > 32767) {
       throw new IllegalArgumentException("Payload may not be larger than 32767 bytes");
     }
@@ -20,19 +20,19 @@ public class im
   public void a(em ☃)
     throws IOException
   {
-    a = ☃.c(20);
+    this.a = ☃.c(20);
     int ☃ = ☃.readableBytes();
     if ((☃ < 0) || (☃ > 32767)) {
       throw new IOException("Payload may not be larger than 32767 bytes");
     }
-    b = new em(☃.readBytes(☃));
+    this.b = new em(☃.readBytes(☃));
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(a);
-    ☃.writeBytes(b);
+    ☃.a(this.a);
+    ☃.writeBytes(this.b);
   }
   
   public void a(ic ☃)
@@ -42,11 +42,11 @@ public class im
   
   public String a()
   {
-    return a;
+    return this.a;
   }
   
   public em b()
   {
-    return b;
+    return this.b;
   }
 }

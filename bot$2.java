@@ -8,10 +8,10 @@ class bot$2
   
   public void a(bmh ☃)
   {
-    for (jy ☃ : a)
+    for (jy ☃ : this.a)
     {
       bmi ☃ = ☃.a(☃);
-      bot.a(b).put(☃, ☃);
+      bot.a(this.b).put(☃, ☃);
     }
   }
 }

@@ -8,6 +8,6 @@ class wm$1
   public String a()
     throws Exception
   {
-    return a.q();
+    return this.a.q();
   }
 }

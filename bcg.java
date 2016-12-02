@@ -16,15 +16,15 @@ public class bcg
   
   public bcg(bcg ☃, float ☃, float ☃)
   {
-    a = a;
-    b = ☃;
-    c = ☃;
+    this.a = ☃.a;
+    this.b = ☃;
+    this.c = ☃;
   }
   
   public bcg(aui ☃, float ☃, float ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
   }
 }

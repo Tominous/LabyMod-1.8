@@ -11,28 +11,28 @@ public class bdq$c
   public bdq$c(adm ☃, double ☃, double ☃, double ☃, double ☃, double ☃, double ☃, bec ☃, dn ☃)
   {
     super(☃, ☃, ☃, ☃, 0.0D, 0.0D, 0.0D);
-    v = ☃;
-    w = ☃;
-    x = ☃;
-    aA = ☃;
-    g = 8;
+    this.v = ☃;
+    this.w = ☃;
+    this.x = ☃;
+    this.aA = ☃;
+    this.g = 8;
     if (☃ != null)
     {
-      aB = ☃.c("Explosions", 10);
-      if (aB.c() == 0)
+      this.aB = ☃.c("Explosions", 10);
+      if (this.aB.c() == 0)
       {
-        aB = null;
+        this.aB = null;
       }
       else
       {
-        g = (aB.c() * 2 - 1);
-        for (int ☃ = 0; ☃ < aB.c(); ☃++)
+        this.g = (this.aB.c() * 2 - 1);
+        for (int ☃ = 0; ☃ < this.aB.c(); ☃++)
         {
-          dn ☃ = aB.b(☃);
+          dn ☃ = this.aB.b(☃);
           if (☃.n("Flicker"))
           {
-            a = true;
-            g += 15;
+            this.a = true;
+            this.g += 15;
             break;
           }
         }
@@ -44,17 +44,17 @@ public class bdq$c
   
   public void t_()
   {
-    if ((az == 0) && (aB != null))
+    if ((this.az == 0) && (this.aB != null))
     {
       boolean ☃ = l();
       
       boolean ☃ = false;
-      if (aB.c() >= 3) {
+      if (this.aB.c() >= 3) {
         ☃ = true;
       } else {
-        for (int ☃ = 0; ☃ < aB.c(); ☃++)
+        for (int ☃ = 0; ☃ < this.aB.c(); ☃++)
         {
-          dn ☃ = aB.b(☃);
+          dn ☃ = this.aB.b(☃);
           if (☃.d("Type") == 1)
           {
             ☃ = true;
@@ -63,12 +63,12 @@ public class bdq$c
         }
       }
       String ☃ = "fireworks." + (☃ ? "largeBlast" : "blast") + (☃ ? "_far" : "");
-      o.a(s, t, u, ☃, 20.0F, 0.95F + V.nextFloat() * 0.1F, true);
+      this.o.a(this.s, this.t, this.u, ☃, 20.0F, 0.95F + this.V.nextFloat() * 0.1F, true);
     }
-    if ((az % 2 == 0) && (aB != null) && (az / 2 < aB.c()))
+    if ((this.az % 2 == 0) && (this.aB != null) && (this.az / 2 < this.aB.c()))
     {
-      int ☃ = az / 2;
-      dn ☃ = aB.b(☃);
+      int ☃ = this.az / 2;
+      dn ☃ = this.aB.b(☃);
       
       int ☃ = ☃.d("Type");
       boolean ☃ = ☃.n("Trail");
@@ -93,18 +93,18 @@ public class bdq$c
       float ☃ = ((☃ & 0xFF0000) >> 16) / 255.0F;
       float ☃ = ((☃ & 0xFF00) >> 8) / 255.0F;
       float ☃ = ((☃ & 0xFF) >> 0) / 255.0F;
-      bdq.a ☃ = new bdq.a(o, s, t, u);
+      bdq.a ☃ = new bdq.a(this.o, this.s, this.t, this.u);
       ☃.b(☃, ☃, ☃);
-      aA.a(☃);
+      this.aA.a(☃);
     }
-    az += 1;
-    if (az > g)
+    this.az += 1;
+    if (this.az > this.g)
     {
-      if (a)
+      if (this.a)
       {
         boolean ☃ = l();
         String ☃ = "fireworks." + (☃ ? "twinkle_far" : "twinkle");
-        o.a(s, t, u, ☃, 20.0F, 0.9F + V.nextFloat() * 0.15F, true);
+        this.o.a(this.s, this.t, this.u, ☃, 20.0F, 0.9F + this.V.nextFloat() * 0.15F, true);
       }
       J();
     }
@@ -114,7 +114,7 @@ public class bdq$c
   {
     ave ☃ = ave.A();
     if ((☃ != null) && (☃.ac() != null) && 
-      (☃.ac().e(s, t, u) < 256.0D)) {
+      (☃.ac().e(this.s, this.t, this.u) < 256.0D)) {
       return false;
     }
     return true;
@@ -122,32 +122,32 @@ public class bdq$c
   
   private void a(double ☃, double ☃, double ☃, double ☃, double ☃, double ☃, int[] ☃, int[] ☃, boolean ☃, boolean ☃)
   {
-    bdq.b ☃ = new bdq.b(o, ☃, ☃, ☃, ☃, ☃, ☃, aA);
+    bdq.b ☃ = new bdq.b(this.o, ☃, ☃, ☃, ☃, ☃, ☃, this.aA);
     ☃.i(0.99F);
     ☃.a(☃);
     ☃.i(☃);
     
-    int ☃ = V.nextInt(☃.length);
+    int ☃ = this.V.nextInt(☃.length);
     ☃.a(☃[☃]);
     if ((☃ != null) && (☃.length > 0)) {
-      ☃.b(☃[V.nextInt(☃.length)]);
+      ☃.b(☃[this.V.nextInt(☃.length)]);
     }
-    aA.a(☃);
+    this.aA.a(☃);
   }
   
   private void a(double ☃, int ☃, int[] ☃, int[] ☃, boolean ☃, boolean ☃)
   {
-    double ☃ = s;
-    double ☃ = t;
-    double ☃ = u;
+    double ☃ = this.s;
+    double ☃ = this.t;
+    double ☃ = this.u;
     for (int ☃ = -☃; ☃ <= ☃; ☃++) {
       for (int ☃ = -☃; ☃ <= ☃; ☃++) {
         for (int ☃ = -☃; ☃ <= ☃; ☃++)
         {
-          double ☃ = ☃ + (V.nextDouble() - V.nextDouble()) * 0.5D;
-          double ☃ = ☃ + (V.nextDouble() - V.nextDouble()) * 0.5D;
-          double ☃ = ☃ + (V.nextDouble() - V.nextDouble()) * 0.5D;
-          double ☃ = ns.a(☃ * ☃ + ☃ * ☃ + ☃ * ☃) / ☃ + V.nextGaussian() * 0.05D;
+          double ☃ = ☃ + (this.V.nextDouble() - this.V.nextDouble()) * 0.5D;
+          double ☃ = ☃ + (this.V.nextDouble() - this.V.nextDouble()) * 0.5D;
+          double ☃ = ☃ + (this.V.nextDouble() - this.V.nextDouble()) * 0.5D;
+          double ☃ = ns.a(☃ * ☃ + ☃ * ☃ + ☃ * ☃) / ☃ + this.V.nextGaussian() * 0.05D;
           
           a(☃, ☃, ☃, ☃ / ☃, ☃ / ☃, ☃ / ☃, ☃, ☃, ☃, ☃);
           if ((☃ != -☃) && (☃ != ☃) && (☃ != -☃) && (☃ != ☃)) {
@@ -163,9 +163,9 @@ public class bdq$c
     double ☃ = ☃[0][0];
     double ☃ = ☃[0][1];
     
-    a(s, t, u, ☃ * ☃, ☃ * ☃, 0.0D, ☃, ☃, ☃, ☃);
+    a(this.s, this.t, this.u, ☃ * ☃, ☃ * ☃, 0.0D, ☃, ☃, ☃, ☃);
     
-    float ☃ = V.nextFloat() * 3.1415927F;
+    float ☃ = this.V.nextFloat() * 3.1415927F;
     double ☃ = ☃ ? 0.034D : 0.34D;
     for (int ☃ = 0; ☃ < 3; ☃++)
     {
@@ -185,7 +185,7 @@ public class bdq$c
           double ☃ = ☃ * Math.sin(☃);
           ☃ *= Math.cos(☃);
           for (double ☃ = -1.0D; ☃ <= 1.0D; ☃ += 2.0D) {
-            a(s, t, u, ☃ * ☃, ☃, ☃ * ☃, ☃, ☃, ☃, ☃);
+            a(this.s, this.t, this.u, ☃ * ☃, ☃, ☃ * ☃, ☃, ☃, ☃, ☃);
           }
         }
         ☃ = ☃;
@@ -196,15 +196,15 @@ public class bdq$c
   
   private void a(int[] ☃, int[] ☃, boolean ☃, boolean ☃)
   {
-    double ☃ = V.nextGaussian() * 0.05D;
-    double ☃ = V.nextGaussian() * 0.05D;
+    double ☃ = this.V.nextGaussian() * 0.05D;
+    double ☃ = this.V.nextGaussian() * 0.05D;
     for (int ☃ = 0; ☃ < 70; ☃++)
     {
-      double ☃ = v * 0.5D + V.nextGaussian() * 0.15D + ☃;
-      double ☃ = x * 0.5D + V.nextGaussian() * 0.15D + ☃;
-      double ☃ = w * 0.5D + V.nextDouble() * 0.5D;
+      double ☃ = this.v * 0.5D + this.V.nextGaussian() * 0.15D + ☃;
+      double ☃ = this.x * 0.5D + this.V.nextGaussian() * 0.15D + ☃;
+      double ☃ = this.w * 0.5D + this.V.nextDouble() * 0.5D;
       
-      a(s, t, u, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
+      a(this.s, this.t, this.u, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
     }
   }
   

@@ -15,43 +15,43 @@ public final class adp
     
     private a(int ☃, String ☃)
     {
-      f = ☃;
-      g = ☃;
+      this.f = ☃;
+      this.g = ☃;
     }
     
     public int a()
     {
-      return f;
+      return this.f;
     }
     
     public String b()
     {
-      return g;
+      return this.g;
     }
     
     public void a(wl ☃)
     {
       if (this == c)
       {
-        c = true;
-        d = true;
-        a = true;
+        ☃.c = true;
+        ☃.d = true;
+        ☃.a = true;
       }
       else if (this == e)
       {
-        c = true;
-        d = false;
-        a = true;
-        b = true;
+        ☃.c = true;
+        ☃.d = false;
+        ☃.a = true;
+        ☃.b = true;
       }
       else
       {
-        c = false;
-        d = false;
-        a = false;
-        b = false;
+        ☃.c = false;
+        ☃.d = false;
+        ☃.a = false;
+        ☃.b = false;
       }
-      e = (!c());
+      ☃.e = (!c());
     }
     
     public boolean c()
@@ -72,7 +72,7 @@ public final class adp
     public static a a(int ☃)
     {
       for (a ☃ : ) {
-        if (f == ☃) {
+        if (☃.f == ☃) {
           return ☃;
         }
       }
@@ -82,7 +82,7 @@ public final class adp
     public static a a(String ☃)
     {
       for (a ☃ : ) {
-        if (g.equals(☃)) {
+        if (☃.g.equals(☃)) {
           return ☃;
         }
       }
@@ -94,11 +94,11 @@ public final class adp
   
   public adp(long ☃, adp.a ☃, boolean ☃, boolean ☃, adr ☃)
   {
-    a = ☃;
-    b = ☃;
-    c = ☃;
-    d = ☃;
-    e = ☃;
+    this.a = ☃;
+    this.b = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.e = ☃;
   }
   
   public adp(ato ☃)
@@ -108,55 +108,55 @@ public final class adp
   
   public adp a()
   {
-    g = true;
+    this.g = true;
     return this;
   }
   
   public adp b()
   {
-    f = true;
+    this.f = true;
     return this;
   }
   
   public adp a(String ☃)
   {
-    h = ☃;
+    this.h = ☃;
     return this;
   }
   
   public boolean c()
   {
-    return g;
+    return this.g;
   }
   
   public long d()
   {
-    return a;
+    return this.a;
   }
   
   public adp.a e()
   {
-    return b;
+    return this.b;
   }
   
   public boolean f()
   {
-    return d;
+    return this.d;
   }
   
   public boolean g()
   {
-    return c;
+    return this.c;
   }
   
   public adr h()
   {
-    return e;
+    return this.e;
   }
   
   public boolean i()
   {
-    return f;
+    return this.f;
   }
   
   public static adp.a a(int ☃)
@@ -166,6 +166,6 @@ public final class adp
   
   public String j()
   {
-    return h;
+    return this.h;
   }
 }

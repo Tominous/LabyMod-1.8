@@ -18,31 +18,31 @@ public class bde
   
   public bde(String p_i46420_1_, String p_i46420_2_, boolean p_i46420_3_, String command)
   {
-    a = p_i46420_1_;
-    b = p_i46420_2_;
-    l = p_i46420_3_;
-    serverCommand = command;
+    this.a = p_i46420_1_;
+    this.b = p_i46420_2_;
+    this.l = p_i46420_3_;
+    this.serverCommand = command;
   }
   
   public bde(String p_i46420_1_, String p_i46420_2_, boolean p_i46420_3_)
   {
-    a = p_i46420_1_;
-    b = p_i46420_2_;
-    l = p_i46420_3_;
+    this.a = p_i46420_1_;
+    this.b = p_i46420_2_;
+    this.l = p_i46420_3_;
   }
   
   public dn a()
   {
     dn nbttagcompound = new dn();
-    nbttagcompound.a("name", a);
-    nbttagcompound.a("ip", b);
-    nbttagcompound.a("command", serverCommand);
-    if (k != null) {
-      nbttagcompound.a("icon", k);
+    nbttagcompound.a("name", this.a);
+    nbttagcompound.a("ip", this.b);
+    nbttagcompound.a("command", this.serverCommand);
+    if (this.k != null) {
+      nbttagcompound.a("icon", this.k);
     }
-    if (j == bde.a.a) {
+    if (this.j == bde.a.a) {
       nbttagcompound.a("acceptTextures", true);
-    } else if (j == bde.a.b) {
+    } else if (this.j == bde.a.b) {
       nbttagcompound.a("acceptTextures", false);
     }
     return nbttagcompound;
@@ -50,12 +50,12 @@ public class bde
   
   public bde.a b()
   {
-    return j;
+    return this.j;
   }
   
   public void a(bde.a mode)
   {
-    j = mode;
+    this.j = mode;
   }
   
   public static bde a(dn nbtCompound)
@@ -80,27 +80,27 @@ public class bde
   
   public String c()
   {
-    return k;
+    return this.k;
   }
   
   public void a(String icon)
   {
-    k = icon;
+    this.k = icon;
   }
   
   public boolean d()
   {
-    return l;
+    return this.l;
   }
   
   public void a(bde serverDataIn)
   {
-    b = b;
-    a = a;
+    this.b = serverDataIn.b;
+    this.a = serverDataIn.a;
     a(serverDataIn.b());
-    k = k;
-    serverCommand = serverCommand;
-    l = l;
+    this.k = serverDataIn.k;
+    this.serverCommand = serverDataIn.serverCommand;
+    this.l = serverDataIn.l;
   }
   
   public static enum a
@@ -109,12 +109,12 @@ public class bde
     
     private a(String p_i1053_3_)
     {
-      d = new fb("addServer.resourcePack." + p_i1053_3_, new Object[0]);
+      this.d = new fb("addServer.resourcePack." + p_i1053_3_, new Object[0]);
     }
     
     public eu a()
     {
-      return d;
+      return this.d;
     }
   }
 }

@@ -14,73 +14,73 @@ public abstract class ro
   
   public ro(py ☃, double ☃, int ☃)
   {
-    c = ☃;
-    d = ☃;
-    h = ☃;
+    this.c = ☃;
+    this.d = ☃;
+    this.h = ☃;
     a(5);
   }
   
   public boolean a()
   {
-    if (a > 0)
+    if (this.a > 0)
     {
-      a -= 1;
+      this.a -= 1;
       return false;
     }
-    a = (200 + c.bc().nextInt(200));
+    this.a = (200 + this.c.bc().nextInt(200));
     return g();
   }
   
   public boolean b()
   {
-    return (e >= -f) && (e <= 1200) && (a(c.o, b));
+    return (this.e >= -this.f) && (this.e <= 1200) && (a(this.c.o, this.b));
   }
   
   public void c()
   {
-    c.s().a(b.n() + 0.5D, b.o() + 1, b.p() + 0.5D, d);
-    e = 0;
-    f = (c.bc().nextInt(c.bc().nextInt(1200) + 1200) + 1200);
+    this.c.s().a(this.b.n() + 0.5D, this.b.o() + 1, this.b.p() + 0.5D, this.d);
+    this.e = 0;
+    this.f = (this.c.bc().nextInt(this.c.bc().nextInt(1200) + 1200) + 1200);
   }
   
   public void d() {}
   
   public void e()
   {
-    if (c.c(b.a()) > 1.0D)
+    if (this.c.c(this.b.a()) > 1.0D)
     {
-      g = false;
-      e += 1;
-      if (e % 40 == 0) {
-        c.s().a(b.n() + 0.5D, b.o() + 1, b.p() + 0.5D, d);
+      this.g = false;
+      this.e += 1;
+      if (this.e % 40 == 0) {
+        this.c.s().a(this.b.n() + 0.5D, this.b.o() + 1, this.b.p() + 0.5D, this.d);
       }
     }
     else
     {
-      g = true;
-      e -= 1;
+      this.g = true;
+      this.e -= 1;
     }
   }
   
   protected boolean f()
   {
-    return g;
+    return this.g;
   }
   
   private boolean g()
   {
-    int ☃ = h;
+    int ☃ = this.h;
     int ☃ = 1;
-    cj ☃ = new cj(c);
+    cj ☃ = new cj(this.c);
     for (int ☃ = 0; ☃ <= 1; ☃ = ☃ > 0 ? -☃ : 1 - ☃) {
       for (int ☃ = 0; ☃ < ☃; ☃++) {
         for (int ☃ = 0; ☃ <= ☃; ☃ = ☃ > 0 ? -☃ : 1 - ☃) {
           for (int ☃ = (☃ < ☃) && (☃ > -☃) ? ☃ : 0; ☃ <= ☃; ☃ = ☃ > 0 ? -☃ : 1 - ☃)
           {
             cj ☃ = ☃.a(☃, ☃ - 1, ☃);
-            if ((c.e(☃)) && (a(c.o, ☃)))
+            if ((this.c.e(☃)) && (a(this.c.o, ☃)))
             {
-              b = ☃;
+              this.b = ☃;
               return true;
             }
           }

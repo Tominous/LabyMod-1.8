@@ -10,6 +10,6 @@ class bcx$1
   public void operationComplete(Future<? super Void> ☃)
     throws Exception
   {
-    bcx.a(b).a(a);
+    bcx.a(this.b).a(this.a);
   }
 }

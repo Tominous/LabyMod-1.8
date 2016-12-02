@@ -8,7 +8,7 @@ public class Hypixel
   
   public static void updateHypixel()
   {
-    isHypixel = getInstanceip.toLowerCase().contains("hypixel");
+    isHypixel = LabyMod.getInstance().ip.toLowerCase().contains("hypixel");
   }
   
   public static boolean isHypixel()

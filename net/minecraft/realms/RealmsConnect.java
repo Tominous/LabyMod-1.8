@@ -24,7 +24,7 @@ public class RealmsConnect
   
   public RealmsConnect(RealmsScreen ☃)
   {
-    onlineScreen = ☃;
+    this.onlineScreen = ☃;
   }
   
   public void connect(final String ☃, final int ☃)
@@ -39,37 +39,37 @@ public class RealmsConnect
         try
         {
           ☃ = InetAddress.getByName(☃);
-          if (aborted) {
+          if (RealmsConnect.this.aborted) {
             return;
           }
-          connection = ek.a(☃, ☃, At.f());
-          if (aborted) {
+          RealmsConnect.this.connection = ek.a(☃, ☃, ave.A().t.f());
+          if (RealmsConnect.this.aborted) {
             return;
           }
-          connection.a(new bcx(connection, ave.A(), onlineScreen.getProxy()));
-          if (aborted) {
+          RealmsConnect.this.connection.a(new bcx(RealmsConnect.this.connection, ave.A(), RealmsConnect.this.onlineScreen.getProxy()));
+          if (RealmsConnect.this.aborted) {
             return;
           }
-          connection.a(new jc(47, ☃, ☃, el.d));
-          if (aborted) {
+          RealmsConnect.this.connection.a(new jc(47, ☃, ☃, el.d));
+          if (RealmsConnect.this.aborted) {
             return;
           }
-          connection.a(new jl(ave.A().L().e()));
+          RealmsConnect.this.connection.a(new jl(ave.A().L().e()));
         }
         catch (UnknownHostException ☃)
         {
           Realms.clearResourcePack();
-          if (aborted) {
+          if (RealmsConnect.this.aborted) {
             return;
           }
           RealmsConnect.LOGGER.error("Couldn't connect to world", ☃);
           ave.A().R().f();
-          Realms.setScreen(new DisconnectedRealmsScreen(onlineScreen, "connect.failed", new fb("disconnect.genericReason", new Object[] { "Unknown host '" + ☃ + "'" })));
+          Realms.setScreen(new DisconnectedRealmsScreen(RealmsConnect.this.onlineScreen, "connect.failed", new fb("disconnect.genericReason", new Object[] { "Unknown host '" + ☃ + "'" })));
         }
         catch (Exception ☃)
         {
           Realms.clearResourcePack();
-          if (aborted) {
+          if (RealmsConnect.this.aborted) {
             return;
           }
           RealmsConnect.LOGGER.error("Couldn't connect to world", ☃);
@@ -79,7 +79,7 @@ public class RealmsConnect
             String ☃ = ☃.toString() + ":" + ☃;
             ☃ = ☃.replaceAll(☃, "");
           }
-          Realms.setScreen(new DisconnectedRealmsScreen(onlineScreen, "connect.failed", new fb("disconnect.genericReason", new Object[] { ☃ })));
+          Realms.setScreen(new DisconnectedRealmsScreen(RealmsConnect.this.onlineScreen, "connect.failed", new fb("disconnect.genericReason", new Object[] { ☃ })));
         }
       }
     }.start();
@@ -87,16 +87,16 @@ public class RealmsConnect
   
   public void abort()
   {
-    aborted = true;
+    this.aborted = true;
   }
   
   public void tick()
   {
-    if (connection != null) {
-      if (connection.g()) {
-        connection.a();
+    if (this.connection != null) {
+      if (this.connection.g()) {
+        this.connection.a();
       } else {
-        connection.l();
+        this.connection.l();
       }
     }
   }

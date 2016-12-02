@@ -9,18 +9,18 @@ public class vp
   public vp(adm ☃)
   {
     super(☃);
-    b_ = 3;
+    this.b_ = 3;
     
     a(0.4F, 0.3F);
     
-    i.a(1, new ra(this));
-    i.a(2, new rl(this, wn.class, 1.0D, false));
-    i.a(3, new rz(this, 1.0D));
-    i.a(7, new ri(this, wn.class, 8.0F));
-    i.a(8, new ry(this));
+    this.i.a(1, new ra(this));
+    this.i.a(2, new rl(this, wn.class, 1.0D, false));
+    this.i.a(3, new rz(this, 1.0D));
+    this.i.a(7, new ri(this, wn.class, 8.0F));
+    this.i.a(8, new ry(this));
     
-    bi.a(1, new sm(this, true, new Class[0]));
-    bi.a(2, new sp(this, wn.class, true));
+    this.bi.a(1, new sm(this, true, new Class[0]));
+    this.bi.a(2, new sp(this, wn.class, true));
   }
   
   public float aS()
@@ -70,49 +70,49 @@ public class vp
   public void a(dn ☃)
   {
     super.a(☃);
-    a = ☃.f("Lifetime");
-    b = ☃.n("PlayerSpawned");
+    this.a = ☃.f("Lifetime");
+    this.b = ☃.n("PlayerSpawned");
   }
   
   public void b(dn ☃)
   {
     super.b(☃);
-    ☃.a("Lifetime", a);
-    ☃.a("PlayerSpawned", b);
+    ☃.a("Lifetime", this.a);
+    ☃.a("PlayerSpawned", this.b);
   }
   
   public void t_()
   {
-    aI = y;
+    this.aI = this.y;
     
     super.t_();
   }
   
   public boolean n()
   {
-    return b;
+    return this.b;
   }
   
   public void a(boolean ☃)
   {
-    b = ☃;
+    this.b = ☃;
   }
   
   public void m()
   {
     super.m();
-    if (o.D)
+    if (this.o.D)
     {
       for (int ☃ = 0; ☃ < 2; ☃++) {
-        o.a(cy.y, s + (V.nextDouble() - 0.5D) * J, t + V.nextDouble() * K, u + (V.nextDouble() - 0.5D) * J, (V.nextDouble() - 0.5D) * 2.0D, -V.nextDouble(), (V.nextDouble() - 0.5D) * 2.0D, new int[0]);
+        this.o.a(cy.y, this.s + (this.V.nextDouble() - 0.5D) * this.J, this.t + this.V.nextDouble() * this.K, this.u + (this.V.nextDouble() - 0.5D) * this.J, (this.V.nextDouble() - 0.5D) * 2.0D, -this.V.nextDouble(), (this.V.nextDouble() - 0.5D) * 2.0D, new int[0]);
       }
     }
     else
     {
       if (!bZ()) {
-        a += 1;
+        this.a += 1;
       }
-      if (a >= 2400) {
+      if (this.a >= 2400) {
         J();
       }
     }
@@ -127,7 +127,7 @@ public class vp
   {
     if (super.bR())
     {
-      wn ☃ = o.a(this, 5.0D);
+      wn ☃ = this.o.a(this, 5.0D);
       return ☃ == null;
     }
     return false;

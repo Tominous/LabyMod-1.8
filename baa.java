@@ -28,32 +28,32 @@ public class baa
   
   public baa(axu ☃, baa.a ☃, List<fb> ☃)
   {
-    g = ☃;
-    h = ☃;
-    i = ☃;
+    this.g = ☃;
+    this.h = ☃;
+    this.i = ☃;
   }
   
   public void b()
   {
-    if (r.isEmpty())
+    if (this.r.isEmpty())
     {
-      r.addAll(q.c(h.a().d(), (int)(l * 0.75F)));
-      if (i != null)
+      this.r.addAll(this.q.c(this.h.a().d(), (int)(this.l * 0.75F)));
+      if (this.i != null)
       {
-        r.add("");
-        for (fb ☃ : i) {
-          r.add(☃.e());
+        this.r.add("");
+        for (fb ☃ : this.i) {
+          this.r.add(☃.e());
         }
       }
     }
-    if (h.b() != null)
+    if (this.h.b() != null)
     {
-      n.add(new avs(0, l / 2 - 155, m - 50, 150, 20, bnq.a("gui.cancel", new Object[0])));
-      n.add(new avs(1, l / 2 - 155 + 160, m - 50, 150, 20, bnq.a(h.b().d(), new Object[0])));
+      this.n.add(new avs(0, this.l / 2 - 155, this.m - 50, 150, 20, bnq.a("gui.cancel", new Object[0])));
+      this.n.add(new avs(1, this.l / 2 - 155 + 160, this.m - 50, 150, 20, bnq.a(this.h.b().d(), new Object[0])));
     }
     else
     {
-      n.add(new avs(0, l / 2 - 75, m - 50, 150, 20, bnq.a("gui.cancel", new Object[0])));
+      this.n.add(new avs(0, this.l / 2 - 75, this.m - 50, 150, 20, bnq.a("gui.cancel", new Object[0])));
     }
   }
   
@@ -63,23 +63,23 @@ public class baa
   {
     c();
     
-    int ☃ = Math.max((int)(m * 0.85D / 2.0D - r.size() * q.a / 2.0F), 50);
-    a(q, f.d(), l / 2, ☃ - q.a * 2, 16777215);
-    for (String ☃ : r)
+    int ☃ = Math.max((int)(this.m * 0.85D / 2.0D - this.r.size() * this.q.a / 2.0F), 50);
+    a(this.q, this.f.d(), this.l / 2, ☃ - this.q.a * 2, 16777215);
+    for (String ☃ : this.r)
     {
-      a(q, ☃, l / 2, ☃, 10526880);
-      ☃ += q.a;
+      a(this.q, ☃, this.l / 2, ☃, 10526880);
+      ☃ += this.q.a;
     }
     super.a(☃, ☃, ☃);
   }
   
   protected void a(avs ☃)
   {
-    if (!l) {
+    if (!☃.l) {
       return;
     }
-    if (k == 1) {
-      switch (baa.1.a[h.ordinal()])
+    if (☃.k == 1) {
+      switch (baa.1.a[this.h.ordinal()])
       {
       case 1: 
       case 2: 
@@ -97,7 +97,7 @@ public class baa
         a("http://bugs.mojang.com/browse/MC");
       }
     }
-    j.a(g);
+    this.j.a(this.g);
   }
   
   private void a(String ☃)
@@ -122,9 +122,9 @@ public class baa
     {
       List<fb> ☃ = Lists.newArrayList();
       ☃.add(new fb("stream.unavailable.no_fbo.version", new Object[] { GL11.glGetString(7938) }));
-      ☃.add(new fb("stream.unavailable.no_fbo.blend", new Object[] { Boolean.valueOf(getCapabilitiesGL_EXT_blend_func_separate) }));
-      ☃.add(new fb("stream.unavailable.no_fbo.arb", new Object[] { Boolean.valueOf(getCapabilitiesGL_ARB_framebuffer_object) }));
-      ☃.add(new fb("stream.unavailable.no_fbo.ext", new Object[] { Boolean.valueOf(getCapabilitiesGL_EXT_framebuffer_object) }));
+      ☃.add(new fb("stream.unavailable.no_fbo.blend", new Object[] { Boolean.valueOf(GLContext.getCapabilities().GL_EXT_blend_func_separate) }));
+      ☃.add(new fb("stream.unavailable.no_fbo.arb", new Object[] { Boolean.valueOf(GLContext.getCapabilities().GL_ARB_framebuffer_object) }));
+      ☃.add(new fb("stream.unavailable.no_fbo.ext", new Object[] { Boolean.valueOf(GLContext.getCapabilities().GL_EXT_framebuffer_object) }));
       
       ☃.a(new baa(☃, baa.a.a, ☃));
     }
@@ -195,18 +195,18 @@ public class baa
     
     private a(eu ☃, eu ☃)
     {
-      m = ☃;
-      n = ☃;
+      this.m = ☃;
+      this.n = ☃;
     }
     
     public eu a()
     {
-      return m;
+      return this.m;
     }
     
     public eu b()
     {
-      return n;
+      return this.n;
     }
   }
 }

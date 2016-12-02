@@ -8,6 +8,6 @@ class dn$1
   public String a()
     throws Exception
   {
-    return eb.a[((eb)dn.b(b).get(a)).a()];
+    return eb.a[((eb)dn.b(this.b).get(this.a)).a()];
   }
 }

@@ -10,10 +10,10 @@ final class kb$2
     if (☃.a(☃.i(), ☃))
     {
       ☃.a(zy.aw);
-      b = 1;
+      ☃.b = 1;
       
       return ☃;
     }
-    return b.a(☃, ☃);
+    return this.b.a(☃, ☃);
   }
 }

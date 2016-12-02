@@ -29,56 +29,56 @@ public class GuiTSConfig
   
   public void b()
   {
-    n.clear();
+    this.n.clear();
     
-    headerPos = (m / 4 - 52);
-    footerPos = (m - 29);
+    this.headerPos = (this.m / 4 - 52);
+    this.footerPos = (this.m - 29);
     
-    btnToggleSneak = new avs(1, l / 2 - 98, getRowPos(1), 60, 20, String.valueOf(ToggleSneakMod.optionToggleSneak));
-    btnToggleSprint = new avs(2, l / 2 + 102, getRowPos(1), 60, 20, String.valueOf(ToggleSneakMod.optionToggleSprint));
-    btnShowHUDText = new avs(3, l / 2 + 2, getRowPos(2), 60, 20, String.valueOf(ToggleSneakMod.optionShowHUDText));
-    btnPositionMode = new avs(133, l / 2 + 2, getRowPos(3), 60, 20, ToggleSneakMod.optionPositionMode);
+    this.btnToggleSneak = new avs(1, this.l / 2 - 98, getRowPos(1), 60, 20, String.valueOf(ToggleSneakMod.optionToggleSneak));
+    this.btnToggleSprint = new avs(2, this.l / 2 + 102, getRowPos(1), 60, 20, String.valueOf(ToggleSneakMod.optionToggleSprint));
+    this.btnShowHUDText = new avs(3, this.l / 2 + 2, getRowPos(2), 60, 20, String.valueOf(ToggleSneakMod.optionShowHUDText));
+    this.btnPositionMode = new avs(133, this.l / 2 + 2, getRowPos(3), 60, 20, ToggleSneakMod.optionPositionMode);
     
-    sliderHUDTextPosX = new GuiSlideControl(50, l / 2 + 2, getRowPos(4), 150, 20, "X Pos: ", 1.0F, l - 25, ToggleSneakMod.optionHUDTextPosX, true);
-    sliderHUDTextPosY = new GuiSlideControl(60, l / 2 + 2, getRowPos(5), 150, 20, "Y Pos: ", 1.0F, m - 8, ToggleSneakMod.optionHUDTextPosY, true);
+    this.sliderHUDTextPosX = new GuiSlideControl(50, this.l / 2 + 2, getRowPos(4), 150, 20, "X Pos: ", 1.0F, this.l - 25, ToggleSneakMod.optionHUDTextPosX, true);
+    this.sliderHUDTextPosY = new GuiSlideControl(60, this.l / 2 + 2, getRowPos(5), 150, 20, "Y Pos: ", 1.0F, this.m - 8, ToggleSneakMod.optionHUDTextPosY, true);
     
-    btnDoubleTap = new avs(4, l / 2 + 2, getRowPos(6), 60, 20, String.valueOf(ToggleSneakMod.optionDoubleTap));
-    btnFlyBoost = new avs(5, l / 2 - 113, getRowPos(7), 60, 20, String.valueOf(ToggleSneakMod.optionEnableFlyBoost));
+    this.btnDoubleTap = new avs(4, this.l / 2 + 2, getRowPos(6), 60, 20, String.valueOf(ToggleSneakMod.optionDoubleTap));
+    this.btnFlyBoost = new avs(5, this.l / 2 - 113, getRowPos(7), 60, 20, String.valueOf(ToggleSneakMod.optionEnableFlyBoost));
     
-    sliderFlyBoostAmount = new GuiSlideControl(70, l / 2 + 57, getRowPos(7), 150, 20, "x", 0.0F, 10.0F, (float)ToggleSneakMod.optionFlyBoostAmount, false);
+    this.sliderFlyBoostAmount = new GuiSlideControl(70, this.l / 2 + 57, getRowPos(7), 150, 20, "x", 0.0F, 10.0F, (float)ToggleSneakMod.optionFlyBoostAmount, false);
     
-    btnSaveSettings = new avs(100, l / 2 - 30, footerPos, 60, 20, "Done");
+    this.btnSaveSettings = new avs(100, this.l / 2 - 30, this.footerPos, 60, 20, "Done");
     
-    n.add(btnToggleSneak);
-    n.add(btnToggleSprint);
-    n.add(btnShowHUDText);
-    n.add(btnPositionMode);
+    this.n.add(this.btnToggleSneak);
+    this.n.add(this.btnToggleSprint);
+    this.n.add(this.btnShowHUDText);
+    this.n.add(this.btnPositionMode);
     if (ToggleSneakMod.optionPositionMode.equals("CUSTOM"))
     {
-      n.add(sliderHUDTextPosX);
-      n.add(sliderHUDTextPosY);
+      this.n.add(this.sliderHUDTextPosX);
+      this.n.add(this.sliderHUDTextPosY);
     }
-    n.add(btnDoubleTap);
-    n.add(btnFlyBoost);
-    n.add(sliderFlyBoostAmount);
+    this.n.add(this.btnDoubleTap);
+    this.n.add(this.btnFlyBoost);
+    this.n.add(this.sliderFlyBoostAmount);
     
-    n.add(btnSaveSettings);
+    this.n.add(this.btnSaveSettings);
   }
   
   public int getRowPos(int rowNumber)
   {
-    return rowNumber > 3 ? m / 4 + 0 + (24 * (rowNumber - (ToggleSneakMod.optionPositionMode.equals("CUSTOM") ? 0 : 2)) - 24) + byte0 : m / 4 + 0 + (24 * rowNumber - 24) + byte0;
+    return rowNumber > 3 ? this.m / 4 + 0 + (24 * (rowNumber - (ToggleSneakMod.optionPositionMode.equals("CUSTOM") ? 0 : 2)) - 24) + this.byte0 : this.m / 4 + 0 + (24 * rowNumber - 24) + this.byte0;
   }
   
   protected void a(int mouseX, int mouseY, int mouseButton)
   {
     if (mouseButton == 0) {
-      for (int l = 0; l < n.size(); l++)
+      for (int l = 0; l < this.n.size(); l++)
       {
-        avs guibutton = (avs)n.get(l);
-        if (guibutton.c(j, mouseX, mouseY))
+        avs guibutton = (avs)this.n.get(l);
+        if (guibutton.c(this.j, mouseX, mouseY))
         {
-          lastPressed = guibutton;
+          this.lastPressed = guibutton;
           a(guibutton);
         }
       }
@@ -87,13 +87,13 @@ public class GuiTSConfig
   
   protected void b(int mouseX, int mouseY, int which)
   {
-    if ((lastPressed != null) && (which == 0))
+    if ((this.lastPressed != null) && (which == 0))
     {
-      lastPressed.a(mouseX, mouseY);
+      this.lastPressed.a(mouseX, mouseY);
       
-      actionPerformed_MouseUp(lastPressed);
+      actionPerformed_MouseUp(this.lastPressed);
       
-      lastPressed = null;
+      this.lastPressed = null;
     }
   }
   
@@ -106,63 +106,63 @@ public class GuiTSConfig
   
   protected void a(avs button)
   {
-    switch (k)
+    switch (button.k)
     {
     case 1: 
       ToggleSneakMod.optionToggleSneak = !ToggleSneakMod.optionToggleSneak;
-      btnToggleSneak.j = String.valueOf(ToggleSneakMod.optionToggleSneak);
+      this.btnToggleSneak.j = String.valueOf(ToggleSneakMod.optionToggleSneak);
       break;
     case 2: 
       ToggleSneakMod.optionToggleSprint = !ToggleSneakMod.optionToggleSprint;
-      btnToggleSprint.j = String.valueOf(ToggleSneakMod.optionToggleSprint);
-      changedToggleSprint = true;
+      this.btnToggleSprint.j = String.valueOf(ToggleSneakMod.optionToggleSprint);
+      this.changedToggleSprint = true;
       break;
     case 3: 
       ToggleSneakMod.optionShowHUDText = !ToggleSneakMod.optionShowHUDText;
-      btnShowHUDText.j = String.valueOf(ToggleSneakMod.optionShowHUDText);
-      changedShowHUD = true;
+      this.btnShowHUDText.j = String.valueOf(ToggleSneakMod.optionShowHUDText);
+      this.changedShowHUD = true;
       break;
     case 133: 
       String nextMode = PositionMode.getNext(ToggleSneakMod.optionPositionMode).name();
       ToggleSneakMod.optionPositionMode = nextMode;
-      btnPositionMode.j = nextMode;
+      this.btnPositionMode.j = nextMode;
       b();
       break;
     case 4: 
       ToggleSneakMod.optionDoubleTap = !ToggleSneakMod.optionDoubleTap;
-      btnDoubleTap.j = String.valueOf(ToggleSneakMod.optionDoubleTap);
+      this.btnDoubleTap.j = String.valueOf(ToggleSneakMod.optionDoubleTap);
       break;
     case 5: 
       ToggleSneakMod.optionEnableFlyBoost = !ToggleSneakMod.optionEnableFlyBoost;
-      btnFlyBoost.j = String.valueOf(ToggleSneakMod.optionEnableFlyBoost);
+      this.btnFlyBoost.j = String.valueOf(ToggleSneakMod.optionEnableFlyBoost);
       break;
     case 50: 
-      ToggleSneakMod.optionHUDTextPosX = sliderHUDTextPosX.GetValueAsInt();
+      ToggleSneakMod.optionHUDTextPosX = this.sliderHUDTextPosX.GetValueAsInt();
       break;
     case 60: 
-      ToggleSneakMod.optionHUDTextPosY = sliderHUDTextPosY.GetValueAsInt();
+      ToggleSneakMod.optionHUDTextPosY = this.sliderHUDTextPosY.GetValueAsInt();
       break;
     case 70: 
-      ToggleSneakMod.optionFlyBoostAmount = sliderFlyBoostAmount.GetValueAsFloat();
+      ToggleSneakMod.optionFlyBoostAmount = this.sliderFlyBoostAmount.GetValueAsFloat();
       break;
     case 100: 
-      j.a(ModAPI.getLastScreen());
+      this.j.a(ModAPI.getLastScreen());
     }
     saveAll();
   }
   
   private void saveAll()
   {
-    if (changedShowHUD) {
+    if (this.changedShowHUD) {
       ToggleSneakModEvents.SetHUDText("");
     }
-    if ((changedToggleSprint) && (j.f != null)) {
+    if ((this.changedToggleSprint) && (this.j.f != null)) {
       ToggleSneakMod.wasSprintDisabled = true;
     }
     ToggleSneakMod.saveConfig();
     
-    changedShowHUD = false;
-    changedToggleSprint = false;
+    this.changedShowHUD = false;
+    this.changedToggleSprint = false;
   }
   
   public void a(int mouseX, int mouseY, float partialTicks)
@@ -179,20 +179,20 @@ public class GuiTSConfig
     
     c();
     
-    a(q, "ToggleSneak Settings", l / 2, headerPos, 16777215);
+    a(this.q, "ToggleSneak Settings", this.l / 2, this.headerPos, 16777215);
     
-    c(q, lblToggleSneak, l / 2 - 100 - q.a(lblToggleSneak), getRowPos(1) + 6, 16777215);
-    c(q, lblToggleSprint, l / 2 + 100 - q.a(lblToggleSprint), getRowPos(1) + 6, 16777215);
-    c(q, lblShowHUDText, l / 2 - 3 - q.a(lblShowHUDText), getRowPos(2) + 6, 16777215);
-    c(q, lblPositionMode, l / 2 - 3 - q.a(lblPositionMode), getRowPos(3) + 6, 16777215);
+    c(this.q, lblToggleSneak, this.l / 2 - 100 - this.q.a(lblToggleSneak), getRowPos(1) + 6, 16777215);
+    c(this.q, lblToggleSprint, this.l / 2 + 100 - this.q.a(lblToggleSprint), getRowPos(1) + 6, 16777215);
+    c(this.q, lblShowHUDText, this.l / 2 - 3 - this.q.a(lblShowHUDText), getRowPos(2) + 6, 16777215);
+    c(this.q, lblPositionMode, this.l / 2 - 3 - this.q.a(lblPositionMode), getRowPos(3) + 6, 16777215);
     if (ToggleSneakMod.optionPositionMode.equals("CUSTOM"))
     {
-      c(q, lblHUDTextPosX, l / 2 - 3 - q.a(lblHUDTextPosX), getRowPos(4) + 6, 16777215);
-      c(q, lblHUDTextPosY, l / 2 - 3 - q.a(lblHUDTextPosY), getRowPos(5) + 6, 16777215);
+      c(this.q, lblHUDTextPosX, this.l / 2 - 3 - this.q.a(lblHUDTextPosX), getRowPos(4) + 6, 16777215);
+      c(this.q, lblHUDTextPosY, this.l / 2 - 3 - this.q.a(lblHUDTextPosY), getRowPos(5) + 6, 16777215);
     }
-    c(q, lblDoubleTap, l / 2 - 3 - q.a(lblDoubleTap), getRowPos(6) + 6, 16777215);
-    c(q, lblFlyBoost, l / 2 - 115 - q.a(lblFlyBoost), getRowPos(7) + 6, 16777215);
-    c(q, lblFlyBoostAmount, l / 2 + 50 - q.a(lblFlyBoostAmount), getRowPos(7) + 6, 16777215);
+    c(this.q, lblDoubleTap, this.l / 2 - 3 - this.q.a(lblDoubleTap), getRowPos(6) + 6, 16777215);
+    c(this.q, lblFlyBoost, this.l / 2 - 115 - this.q.a(lblFlyBoost), getRowPos(7) + 6, 16777215);
+    c(this.q, lblFlyBoostAmount, this.l / 2 + 50 - this.q.a(lblFlyBoostAmount), getRowPos(7) + 6, 16777215);
     
     super.a(mouseX, mouseY, partialTicks);
   }

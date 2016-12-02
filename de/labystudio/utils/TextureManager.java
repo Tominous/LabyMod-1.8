@@ -32,14 +32,14 @@ public class TextureManager
   
   public void drawFileImage(File file, double x, double y, double width, double height, double size)
   {
-    if (images.containsKey(file.getName()))
+    if (this.images.containsKey(file.getName()))
     {
-      if (images.get(file.getName()) != null)
+      if (this.images.get(file.getName()) != null)
       {
         GL11.glPushMatrix();
         GL11.glScaled(size, size, size);
-        getInstancemc.P().a((jy)images.get(file.getName()));
-        getInstancedraw.drawTexturedModalRect(x / size, y / size, x + width, y + height);
+        LabyMod.getInstance().mc.P().a((jy)this.images.get(file.getName()));
+        LabyMod.getInstance().draw.drawTexturedModalRect(x / size, y / size, x + width, y + height);
         GL11.glPopMatrix();
       }
     }
@@ -50,12 +50,12 @@ public class TextureManager
   
   public void drawFileImage(File file, double left, double top, double right, double bottom)
   {
-    if (images.containsKey(file.getName()))
+    if (this.images.containsKey(file.getName()))
     {
-      if (images.get(file.getName()) != null)
+      if (this.images.get(file.getName()) != null)
       {
-        getInstancemc.P().a((jy)images.get(file.getName()));
-        getInstancedraw.drawTexturedModalRect(left, top, right, bottom);
+        LabyMod.getInstance().mc.P().a((jy)this.images.get(file.getName()));
+        LabyMod.getInstance().draw.drawTexturedModalRect(left, top, right, bottom);
       }
     }
     else {
@@ -65,39 +65,39 @@ public class TextureManager
   
   public void drawUrlImage(String location, String url, double x, double y, double width, double height, double size)
   {
-    if (images.containsKey(url))
+    if (this.images.containsKey(url))
     {
-      loading.remove(url);
-      if (images.get(url) != null)
+      this.loading.remove(url);
+      if (this.images.get(url) != null)
       {
         GL11.glPushMatrix();
         GL11.glScaled(size, size, size);
-        getInstancemc.P().a((jy)images.get(url));
-        getInstancedraw.drawTexturedModalRect(x / size, y / size, x + width, y + height);
+        LabyMod.getInstance().mc.P().a((jy)this.images.get(url));
+        LabyMod.getInstance().draw.drawTexturedModalRect(x / size, y / size, x + width, y + height);
         GL11.glPopMatrix();
       }
     }
-    else if (!loading.contains(url))
+    else if (!this.loading.contains(url))
     {
-      loading.add(url);
+      this.loading.add(url);
       downloadImageFromUrl(location, url);
     }
   }
   
   public void drawUrlImage(String location, String url, double left, double top, double right, double bottom)
   {
-    if (images.containsKey(url))
+    if (this.images.containsKey(url))
     {
-      loading.remove(url);
-      if (images.get(url) != null)
+      this.loading.remove(url);
+      if (this.images.get(url) != null)
       {
-        getInstancemc.P().a((jy)images.get(url));
-        getInstancedraw.drawTexturedModalRect(left, top, right, bottom);
+        LabyMod.getInstance().mc.P().a((jy)this.images.get(url));
+        LabyMod.getInstance().draw.drawTexturedModalRect(left, top, right, bottom);
       }
     }
-    else if (!loading.contains(url))
+    else if (!this.loading.contains(url))
     {
-      loading.add(url);
+      this.loading.add(url);
       downloadImageFromUrl(location, url);
     }
   }
@@ -105,23 +105,23 @@ public class TextureManager
   public void drawServerIcon(String ip, double x, double y, double size)
   {
     String url = "http://craftapi.com/api/server/favicon/" + ip;
-    if (images.containsKey(url))
+    if (this.images.containsKey(url))
     {
-      loading.remove(ip);
-      if (images.get(url) != null)
+      this.loading.remove(ip);
+      if (this.images.get(url) != null)
       {
         GL11.glPushMatrix();
         GL11.glScaled(size, size, size);
-        getInstancemc.P().a((jy)images.get(url));
+        LabyMod.getInstance().mc.P().a((jy)this.images.get(url));
         double height = 31.0D;
         double width = 31.0D;
-        getInstancedraw.drawTexturedModalRect(x / size, y / size, (x + width) / size, (y + height) / size);
+        LabyMod.getInstance().draw.drawTexturedModalRect(x / size, y / size, (x + width) / size, (y + height) / size);
         GL11.glPopMatrix();
       }
     }
-    else if (!loading.contains(ip))
+    else if (!this.loading.contains(ip))
     {
-      loading.add(ip);
+      this.loading.add(ip);
       try
       {
         LogManager.getLogger().info("Loading Server Image of " + ip + " (" + url + ")");
@@ -136,26 +136,26 @@ public class TextureManager
   
   public void drawPlayerHead(String playerName, double x, double y, double size)
   {
-    if (images.containsKey(playerName))
+    if (this.images.containsKey(playerName))
     {
-      loading.remove(playerName);
-      if (images.get(playerName) != null)
+      this.loading.remove(playerName);
+      if (this.images.get(playerName) != null)
       {
         GL11.glPushMatrix();
         GL11.glScaled(size, size, size);
-        getInstancemc.P().a((jy)images.get(playerName));
-        getInstancedraw.drawTexturedModalRect(x / size, (y - 3.0D) / size, 32.0D, 32.0D, 32.0D, 32.0D);
-        getInstancedraw.drawTexturedModalRect(x / size, (y - 3.0D) / size, 160.0D, 32.0D, 32.0D, 32.0D);
+        LabyMod.getInstance().mc.P().a((jy)this.images.get(playerName));
+        LabyMod.getInstance().draw.drawTexturedModalRect(x / size, (y - 3.0D) / size, 32.0D, 32.0D, 32.0D, 32.0D);
+        LabyMod.getInstance().draw.drawTexturedModalRect(x / size, (y - 3.0D) / size, 160.0D, 32.0D, 32.0D, 32.0D);
         GL11.glPopMatrix();
       }
     }
-    else if (!loading.contains(playerName))
+    else if (!this.loading.contains(playerName))
     {
-      loading.add(playerName);
+      this.loading.add(playerName);
       jy rl = new jy("images/" + playerName);
       bma var3 = new bma((File)null, String.format("https://minotar.net/skin/%s.png", new Object[] { nx.a(playerName) }), bmz.a(func_175147_b(playerName)), new bfs());
       ave.A().P().a(rl, var3);
-      images.put(playerName, rl);
+      this.images.put(playerName, rl);
     }
   }
   
@@ -181,7 +181,7 @@ public class TextureManager
       public void a() {}
     });
     ave.A().P().a(rl, var3);
-    images.put(file.getName(), rl);
+    this.images.put(file.getName(), rl);
   }
   
   private void downloadImageFromUrl(String location, String url)
@@ -198,7 +198,7 @@ public class TextureManager
           ave.A().P().c(rl);
           ave.A().P().a(rl, texture);
         }
-        images.put(url, rl);
+        this.images.put(url, rl);
       }
     }
     catch (IOException e)
@@ -217,7 +217,7 @@ public class TextureManager
         blz texture = new blz(read);
         ave.A().P().c(rl);
         ave.A().P().a(rl, texture);
-        getInstancemc.P().a(rl);
+        LabyMod.getInstance().mc.P().a(rl);
       }
     }
     catch (Exception e)

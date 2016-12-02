@@ -18,77 +18,77 @@ public class CursorBox
   
   public CursorBox(String code)
   {
-    fullCode = "";
-    boxWidth = 150;
-    fullCode = code;
+    this.fullCode = "";
+    this.boxWidth = 150;
+    this.fullCode = code;
     String text = bnq.a(code, new Object[0]);
     createLines(text);
   }
   
   public void createLines(String text)
   {
-    language = ave.A().S().c().a();
-    strings = new ArrayList();
+    this.language = ave.A().S().c().a();
+    this.strings = new ArrayList();
     String[] words = text.split(" ");
-    int spaceWidth = Ak.a(" ");
+    int spaceWidth = ave.A().k.a(" ");
     String line = "";
     int width = 0;
     for (int i = 0; i < words.length; i++)
     {
-      int wordWidth = Ak.a(words[i]);
-      if ((width == 0) && (wordWidth > boxWidth - 15)) {
-        boxWidth = (wordWidth + 15);
+      int wordWidth = ave.A().k.a(words[i]);
+      if ((width == 0) && (wordWidth > this.boxWidth - 15)) {
+        this.boxWidth = (wordWidth + 15);
       }
-      if (width + wordWidth <= boxWidth - 15)
+      if (width + wordWidth <= this.boxWidth - 15)
       {
         width += spaceWidth + wordWidth;
         line = line + words[i] + " ";
       }
       else
       {
-        strings.add(line);
+        this.strings.add(line);
         line = new String("");
         width = 0;
         i--;
       }
       if (i == words.length - 1) {
-        strings.add(line);
+        this.strings.add(line);
       }
     }
   }
   
   public CursorBox(int size)
   {
-    fullCode = "";
-    boxWidth = 150;
-    strings = new ArrayList();
+    this.fullCode = "";
+    this.boxWidth = 150;
+    this.strings = new ArrayList();
     for (int i = 0; i < size; i++) {
-      strings.add("");
+      this.strings.add("");
     }
   }
   
   public String getString(int line)
   {
-    return (String)strings.get(line);
+    return (String)this.strings.get(line);
   }
   
   public void drawBox(int x, int y, int width, int height)
   {
     try
     {
-      if (!language.equals(ave.A().S().c().a())) {
-        createLines(bnq.a(fullCode, new Object[0]));
+      if (!this.language.equals(ave.A().S().c().a())) {
+        createLines(bnq.a(this.fullCode, new Object[0]));
       }
     }
     catch (Exception localException) {}
-    int fix = x + boxWidth > width ? x + boxWidth - width : 0;
-    int h = 5 + strings.size() * 10 + 5;
+    int fix = x + this.boxWidth > width ? x + this.boxWidth - width : 0;
+    int h = 5 + this.strings.size() * 10 + 5;
     int fiy = y + h > height ? y + h - height : 0;
-    avp.a(x - fix, y - fiy, x + boxWidth - fix, y + h - fiy, -2147483640);
-    for (int i = 0; i < strings.size(); i++)
+    avp.a(x - fix, y - fiy, x + this.boxWidth - fix, y + h - fiy, -2147483640);
+    for (int i = 0; i < this.strings.size(); i++)
     {
       String s = getString(i);
-      Ak.a("§f" + s, x + 10 - fix, y + 5 + 10 * i - fiy, 16777215);
+      ave.A().k.a("§f" + s, x + 10 - fix, y + 5 + 10 * i - fiy, 16777215);
     }
   }
 }

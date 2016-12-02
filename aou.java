@@ -13,8 +13,8 @@ public class aou
   
   public void a(agw ☃, agw.a ☃)
   {
-    a = ☃;
-    b = ☃.Q().a(☃.n(), ☃);
+    this.a = ☃;
+    this.b = ☃.Q().a(☃.n(), ☃);
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
@@ -22,9 +22,9 @@ public class aou
     for (int ☃ = 0; ☃ < 64; ☃++)
     {
       cj ☃ = ☃.a(☃.nextInt(8) - ☃.nextInt(8), ☃.nextInt(4) - ☃.nextInt(4), ☃.nextInt(8) - ☃.nextInt(8));
-      if ((☃.d(☃)) && ((!t.o()) || (☃.o() < 255)) && 
-        (a.f(☃, ☃, b))) {
-        ☃.a(☃, b, 2);
+      if ((☃.d(☃)) && ((!☃.t.o()) || (☃.o() < 255)) && 
+        (this.a.f(☃, ☃, this.b))) {
+        ☃.a(☃, this.b, 2);
       }
     }
     return true;

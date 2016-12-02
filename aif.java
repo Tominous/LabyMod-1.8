@@ -15,12 +15,12 @@ public class aif
   
   public aif()
   {
-    j(M.b().a(Q, aio.a.e).a(b, Boolean.valueOf(true)).a(a, Boolean.valueOf(true)));
+    j(this.M.b().a(Q, aio.a.e).a(b, Boolean.valueOf(true)).a(a, Boolean.valueOf(true)));
   }
   
   protected void a(adm ☃, cj ☃, alz ☃, int ☃)
   {
-    if ((☃.b(Q) == aio.a.f) && (s.nextInt(☃) == 0)) {
+    if ((☃.b(Q) == aio.a.f) && (☃.s.nextInt(☃) == 0)) {
       a(☃, ☃, new zx(zy.e, 1, 0));
     }
   }
@@ -78,7 +78,7 @@ public class aif
   
   public void a(adm ☃, wn ☃, cj ☃, alz ☃, akw ☃)
   {
-    if ((!D) && (☃.bZ() != null) && (☃.bZ().b() == zy.be))
+    if ((!☃.D) && (☃.bZ() != null) && (☃.bZ().b() == zy.be))
     {
       ☃.b(na.ab[afh.a(this)]);
       
