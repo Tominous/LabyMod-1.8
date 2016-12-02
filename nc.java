@@ -31,6 +31,6 @@ public class nc
   
   protected Set<String> delegate()
   {
-    return this.a;
+    return a;
   }
 }

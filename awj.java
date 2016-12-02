@@ -15,13 +15,13 @@ public class awj
   public awj(int ☃, int ☃, int ☃, avh.a ☃, float ☃, float ☃)
   {
     super(☃, ☃, ☃, 150, 20, "");
-    this.q = ☃;
-    this.r = ☃;
-    this.s = ☃;
+    q = ☃;
+    r = ☃;
+    s = ☃;
     
     ave ☃ = ave.A();
-    this.p = ☃.c(☃.t.a(☃));
-    this.j = ☃.t.c(☃);
+    p = ☃.c(t.a(☃));
+    j = t.c(☃);
   }
   
   protected int a(boolean ☃)
@@ -31,33 +31,33 @@ public class awj
   
   protected void b(ave ☃, int ☃, int ☃)
   {
-    if (!this.m) {
+    if (!m) {
       return;
     }
-    if (this.o)
+    if (o)
     {
-      this.p = ((☃ - (this.h + 4)) / (this.f - 8));
-      this.p = ns.a(this.p, 0.0F, 1.0F);
-      float ☃ = this.q.d(this.p);
-      ☃.t.a(this.q, ☃);
-      this.p = this.q.c(☃);
-      this.j = ☃.t.c(this.q);
+      p = ((☃ - (h + 4)) / (f - 8));
+      p = ns.a(p, 0.0F, 1.0F);
+      float ☃ = q.d(p);
+      t.a(q, ☃);
+      p = q.c(☃);
+      j = t.c(q);
     }
     ☃.P().a(a);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    b(this.h + (int)(this.p * (this.f - 8)), this.i, 0, 66, 4, 20);
-    b(this.h + (int)(this.p * (this.f - 8)) + 4, this.i, 196, 66, 4, 20);
+    b(h + (int)(p * (f - 8)), i, 0, 66, 4, 20);
+    b(h + (int)(p * (f - 8)) + 4, i, 196, 66, 4, 20);
   }
   
   public boolean c(ave ☃, int ☃, int ☃)
   {
     if (super.c(☃, ☃, ☃))
     {
-      this.p = ((☃ - (this.h + 4)) / (this.f - 8));
-      this.p = ns.a(this.p, 0.0F, 1.0F);
-      ☃.t.a(this.q, this.q.d(this.p));
-      this.j = ☃.t.c(this.q);
-      this.o = true;
+      p = ((☃ - (h + 4)) / (f - 8));
+      p = ns.a(p, 0.0F, 1.0F);
+      t.a(q, q.d(p));
+      j = t.c(q);
+      o = true;
       return true;
     }
     return false;
@@ -65,6 +65,6 @@ public class awj
   
   public void a(int ☃, int ☃)
   {
-    this.o = false;
+    o = false;
   }
 }

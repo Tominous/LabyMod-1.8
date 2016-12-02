@@ -34,221 +34,225 @@ public class bdg
   private static final Logger b = LogManager.getLogger();
   private final List<ek> c = Collections.synchronizedList(Lists.newArrayList());
   
-  public void a(final bde server)
+  public void a(final bde ☃)
     throws UnknownHostException
   {
-    bdd serveraddress = bdd.a(server.b);
-    final ek networkmanager = ek.a(InetAddress.getByName(serveraddress.a()), serveraddress.b(), false);
-    this.c.add(networkmanager);
-    server.d = "Pinging...";
-    server.e = -1L;
-    server.i = null;
-    networkmanager.a(new jp()
+    bdd ☃ = bdd.a(b);
+    final ek ☃ = ek.a(InetAddress.getByName(☃.a()), ☃.b(), false);
+    
+    c.add(☃);
+    
+    d = "Pinging...";
+    e = -1L;
+    i = null;
+    
+    ☃.a(new jp()
     {
       private boolean d = false;
       private boolean e = false;
       private long f = 0L;
       
-      public void a(jr packetIn)
+      public void a(jr ☃)
       {
-        if (this.e)
+        if (e)
         {
-          networkmanager.a(new fa("Received unrequested status"));
+          ☃.a(new fa("Received unrequested status"));
+          return;
+        }
+        e = true;
+        js ☃ = ☃.a();
+        if (☃.a() != null) {
+          ☃d = ☃.a().d();
+        } else {
+          ☃d = "";
+        }
+        if (☃.c() != null)
+        {
+          ☃g = ☃.c().a();
+          ☃f = ☃.c().b();
         }
         else
         {
-          this.e = true;
-          js serverstatusresponse = packetIn.a();
-          if (serverstatusresponse.a() != null) {
-            server.d = serverstatusresponse.a().d();
-          } else {
-            server.d = "";
-          }
-          if (serverstatusresponse.c() != null)
-          {
-            server.g = serverstatusresponse.c().a();
-            server.f = serverstatusresponse.c().b();
-          }
-          else
-          {
-            server.g = "Old";
-            server.f = 0;
-          }
-          if (serverstatusresponse.b() != null)
-          {
-            server.c = (a.h + "" + serverstatusresponse.b().b() + "" + a.i + "/" + a.h + serverstatusresponse.b().a());
-            if (ArrayUtils.isNotEmpty(serverstatusresponse.b().c()))
-            {
-              StringBuilder stringbuilder = new StringBuilder();
-              for (GameProfile gameprofile : serverstatusresponse.b().c())
-              {
-                if (stringbuilder.length() > 0) {
-                  stringbuilder.append("\n");
-                }
-                stringbuilder.append(gameprofile.getName());
-              }
-              if (serverstatusresponse.b().c().length < serverstatusresponse.b().b())
-              {
-                if (stringbuilder.length() > 0) {
-                  stringbuilder.append("\n");
-                }
-                stringbuilder.append("... and ").append(serverstatusresponse.b().b() - serverstatusresponse.b().c().length).append(" more ...");
-              }
-              server.i = stringbuilder.toString();
-            }
-          }
-          else
-          {
-            server.c = (a.i + "???");
-          }
-          if (serverstatusresponse.d() != null)
-          {
-            String s = serverstatusresponse.d();
-            if (s.startsWith("data:image/png;base64,")) {
-              server.a(s.substring("data:image/png;base64,".length()));
-            } else {
-              bdg.c().error("Invalid server icon (unknown format)");
-            }
-          }
-          else
-          {
-            server.a((String)null);
-          }
-          this.f = ave.J();
-          networkmanager.a(new ju(this.f));
-          this.d = true;
+          ☃g = "Old";
+          ☃f = 0;
         }
-      }
-      
-      public void a(jq packetIn)
-      {
-        long i = this.f;
-        long j = ave.J();
-        server.e = (j - i);
-        networkmanager.a(new fa("Finished"));
-      }
-      
-      public void a(eu reason)
-      {
-        if (!this.d)
+        if (☃.b() != null)
         {
-          bdg.c().error("Can't ping " + server.b + ": " + reason.c());
-          server.d = (a.e + "Can't connect to server.");
-          server.c = "";
-          bdg.a(bdg.this, server);
+          ☃c = (a.h + "" + ☃.b().b() + "" + a.i + "/" + a.h + ☃.b().a());
+          if (ArrayUtils.isNotEmpty(☃.b().c()))
+          {
+            StringBuilder ☃ = new StringBuilder();
+            for (GameProfile ☃ : ☃.b().c())
+            {
+              if (☃.length() > 0) {
+                ☃.append("\n");
+              }
+              ☃.append(☃.getName());
+            }
+            if (☃.b().c().length < ☃.b().b())
+            {
+              if (☃.length() > 0) {
+                ☃.append("\n");
+              }
+              ☃.append("... and ").append(☃.b().b() - ☃.b().c().length).append(" more ...");
+            }
+            ☃i = ☃.toString();
+          }
+        }
+        else
+        {
+          ☃c = (a.i + "???");
+        }
+        if (☃.d() != null)
+        {
+          String ☃ = ☃.d();
+          if (☃.startsWith("data:image/png;base64,")) {
+            ☃.a(☃.substring("data:image/png;base64,".length()));
+          } else {
+            bdg.c().error("Invalid server icon (unknown format)");
+          }
+        }
+        else
+        {
+          ☃.a(null);
+        }
+        f = ave.J();
+        ☃.a(new ju(f));
+        d = true;
+      }
+      
+      public void a(jq ☃)
+      {
+        long ☃ = f;
+        long ☃ = ave.J();
+        ☃e = (☃ - ☃);
+        
+        ☃.a(new fa("Finished"));
+      }
+      
+      public void a(eu ☃)
+      {
+        if (!d)
+        {
+          bdg.c().error("Can't ping " + ☃b + ": " + ☃.c());
+          ☃d = (a.e + "Can't connect to server.");
+          ☃c = "";
+          
+          bdg.a(bdg.this, ☃);
         }
       }
     });
     try
     {
-      networkmanager.a(new jc(47, serveraddress.a(), serveraddress.b(), el.c));
-      networkmanager.a(new jv());
+      ☃.a(new jc(47, ☃.a(), ☃.b(), el.c));
+      ☃.a(new jv());
     }
-    catch (Throwable throwable)
+    catch (Throwable ☃)
     {
-      b.error(throwable);
+      b.error(☃);
     }
   }
   
-  private void b(final bde server)
+  private void b(final bde ☃)
   {
-    final bdd serveraddress = bdd.a(server.b);
+    final bdd ☃ = bdd.a(b);
     
     ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup)ek.d.c())).handler(new ChannelInitializer()
     {
-      protected void initChannel(Channel p_initChannel_1_)
+      protected void initChannel(Channel ☃)
         throws Exception
       {
         try
         {
-          p_initChannel_1_.config().setOption(ChannelOption.TCP_NODELAY, Boolean.valueOf(true));
+          ☃.config().setOption(ChannelOption.TCP_NODELAY, Boolean.valueOf(true));
         }
         catch (ChannelException localChannelException) {}
-        p_initChannel_1_.pipeline().addLast(new ChannelHandler[] { new SimpleChannelInboundHandler()
+        ☃.pipeline().addLast(new ChannelHandler[] { new SimpleChannelInboundHandler()
         {
-          public void channelActive(ChannelHandlerContext p_channelActive_1_)
+          public void channelActive(ChannelHandlerContext ☃)
             throws Exception
           {
-            super.channelActive(p_channelActive_1_);
-            ByteBuf bytebuf = Unpooled.buffer();
+            super.channelActive(☃);
+            ByteBuf ☃ = Unpooled.buffer();
             try
             {
-              bytebuf.writeByte(254);
-              bytebuf.writeByte(1);
-              bytebuf.writeByte(250);
-              char[] achar = "MC|PingHost".toCharArray();
-              bytebuf.writeShort(achar.length);
-              for (char c0 : achar) {
-                bytebuf.writeChar(c0);
+              ☃.writeByte(254);
+              ☃.writeByte(1);
+              ☃.writeByte(250);
+              
+              char[] ☃ = "MC|PingHost".toCharArray();
+              ☃.writeShort(☃.length);
+              for (char ☃ : ☃) {
+                ☃.writeChar(☃);
               }
-              bytebuf.writeShort(7 + 2 * bdg.2.this.val$serveraddress.a().length());
-              bytebuf.writeByte(127);
-              achar = bdg.2.this.val$serveraddress.a().toCharArray();
-              bytebuf.writeShort(achar.length);
-              for (char c1 : achar) {
-                bytebuf.writeChar(c1);
+              ☃.writeShort(7 + 2 * a.a().length());
+              ☃.writeByte(127);
+              ☃ = a.a().toCharArray();
+              ☃.writeShort(☃.length);
+              for (char ☃ : ☃) {
+                ☃.writeChar(☃);
               }
-              bytebuf.writeInt(bdg.2.this.val$serveraddress.b());
-              p_channelActive_1_.channel().writeAndFlush(bytebuf).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
+              ☃.writeInt(a.b());
+              
+              ☃.channel().writeAndFlush(☃).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
             }
             finally
             {
-              bytebuf.release();
+              ☃.release();
             }
           }
           
-          protected void a(ChannelHandlerContext p_channelRead0_1_, ByteBuf p_channelRead0_2_)
+          protected void a(ChannelHandlerContext ☃, ByteBuf ☃)
             throws Exception
           {
-            short short1 = p_channelRead0_2_.readUnsignedByte();
-            if (short1 == 255)
+            short ☃ = ☃.readUnsignedByte();
+            if (☃ == 255)
             {
-              String s = new String(p_channelRead0_2_.readBytes(p_channelRead0_2_.readShort() * 2).array(), Charsets.UTF_16BE);
-              String[] astring = (String[])Iterables.toArray(bdg.d().split(s), String.class);
-              if ("§1".equals(astring[0]))
+              String ☃ = new String(☃.readBytes(☃.readShort() * 2).array(), Charsets.UTF_16BE);
+              String[] ☃ = (String[])Iterables.toArray(bdg.d().split(☃), String.class);
+              if ("§1".equals(☃[0]))
               {
-                int i = ns.a(astring[1], 0);
-                String s1 = astring[2];
-                String s2 = astring[3];
-                int j = ns.a(astring[4], -1);
-                int k = ns.a(astring[5], -1);
-                bdg.2.this.val$server.f = -1;
-                bdg.2.this.val$server.g = s1;
-                bdg.2.this.val$server.d = s2;
-                bdg.2.this.val$server.c = (a.h + "" + j + "" + a.i + "/" + a.h + k);
+                int ☃ = ns.a(☃[1], 0);
+                String ☃ = ☃[2];
+                String ☃ = ☃[3];
+                int ☃ = ns.a(☃[4], -1);
+                int ☃ = ns.a(☃[5], -1);
+                
+                b.f = -1;
+                b.g = ☃;
+                b.d = ☃;
+                b.c = (a.h + "" + ☃ + "" + a.i + "/" + a.h + ☃);
               }
             }
-            p_channelRead0_1_.close();
+            ☃.close();
           }
           
-          public void exceptionCaught(ChannelHandlerContext p_exceptionCaught_1_, Throwable p_exceptionCaught_2_)
+          public void exceptionCaught(ChannelHandlerContext ☃, Throwable ☃)
             throws Exception
           {
-            p_exceptionCaught_1_.close();
+            ☃.close();
           }
         } });
       }
-    }))
-    
-      .channel(NioSocketChannel.class)).connect(serveraddress.a(), serveraddress.b());
+    })).channel(NioSocketChannel.class)).connect(☃.a(), ☃.b());
   }
   
   public void a()
   {
-    synchronized (this.c)
+    synchronized (c)
     {
-      Iterator<ek> iterator = this.c.iterator();
-      while (iterator.hasNext())
+      Iterator<ek> ☃ = c.iterator();
+      while (☃.hasNext())
       {
-        ek networkmanager = (ek)iterator.next();
-        if (networkmanager.g())
+        ek ☃ = (ek)☃.next();
+        if (☃.g())
         {
-          networkmanager.a();
+          ☃.a();
         }
         else
         {
-          iterator.remove();
-          networkmanager.l();
+          ☃.remove();
+          ☃.l();
         }
       }
     }
@@ -256,16 +260,16 @@ public class bdg
   
   public void b()
   {
-    synchronized (this.c)
+    synchronized (c)
     {
-      Iterator<ek> iterator = this.c.iterator();
-      while (iterator.hasNext())
+      Iterator<ek> ☃ = c.iterator();
+      while (☃.hasNext())
       {
-        ek networkmanager = (ek)iterator.next();
-        if (networkmanager.g())
+        ek ☃ = (ek)☃.next();
+        if (☃.g())
         {
-          iterator.remove();
-          networkmanager.a(new fa("Cancelled"));
+          ☃.remove();
+          ☃.a(new fa("Cancelled"));
         }
       }
     }

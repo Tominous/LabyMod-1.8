@@ -4,19 +4,19 @@ class ayn$c
   private final int p;
   private final int q;
   
-  public ayn$c(ayn paramayn, int ☃, int ☃, int ☃, int ☃, int ☃)
+  public ayn$c(ayn this$0, int p_i1076_2_, int p_i1076_3_, int p_i1076_4_, int p_i1076_5_, int p_i1076_6_)
   {
-    super(☃, ☃, ☃, ayl.a, 0 + pe.a[☃].f() % 8 * 18, 198 + pe.a[☃].f() / 8 * 18);
-    this.p = ☃;
-    this.q = ☃;
+    super(p_i1076_2_, p_i1076_3_, p_i1076_4_, ayl.a, 0 + pe.a[p_i1076_5_].f() % 8 * 18, 198 + pe.a[p_i1076_5_].f() / 8 * 18);
+    p = p_i1076_5_;
+    q = p_i1076_6_;
   }
   
-  public void b(int ☃, int ☃)
+  public void b(int mouseX, int mouseY)
   {
-    String ☃ = bnq.a(pe.a[this.p].a(), new Object[0]);
-    if ((this.q >= 3) && (this.p != pe.l.H)) {
-      ☃ = ☃ + " II";
+    String s = bnq.a(pe.a[p].a(), new Object[0]);
+    if ((q >= 3) && (p != lH)) {
+      s = s + " II";
     }
-    ayn.a(this.o, ☃, ☃, ☃);
+    this$0.a(s, mouseX, mouseY);
   }
 }

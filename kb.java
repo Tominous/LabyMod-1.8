@@ -22,7 +22,7 @@ public class kb
       protected wv a(adm ☃, cz ☃)
       {
         wq ☃ = new wq(☃, ☃.a(), ☃.b(), ☃.c());
-        ☃.a = 1;
+        a = 1;
         
         return ☃;
       }
@@ -83,7 +83,7 @@ public class kb
             }
           }.a(☃, ☃);
         }
-        return this.b.a(☃, ☃);
+        return b.a(☃, ☃);
       }
     });
     agg.N.a(zy.bJ, new cn()
@@ -138,7 +138,7 @@ public class kb
         double ☃ = ☃.c() + ☃.i() * 0.3F;
         
         adm ☃ = ☃.i();
-        Random ☃ = ☃.s;
+        Random ☃ = s;
         
         double ☃ = ☃.nextGaussian() * 0.05D + ☃.g();
         double ☃ = ☃.nextGaussian() * 0.05D + ☃.h();
@@ -181,7 +181,7 @@ public class kb
           if ((arm.a.equals(☃)) && (arm.h.equals(☃.p(☃.b()).c().t()))) {
             ☃ = 0.0D;
           } else {
-            return this.b.a(☃, ☃);
+            return b.a(☃, ☃);
           }
         }
         double ☃;
@@ -208,11 +208,11 @@ public class kb
         if (☃.a(☃.i(), ☃))
         {
           ☃.a(zy.aw);
-          ☃.b = 1;
+          b = 1;
           
           return ☃;
         }
-        return this.b.a(☃, ☃);
+        return b.a(☃, ☃);
       }
     };
     agg.N.a(zy.ay, ☃);
@@ -247,14 +247,14 @@ public class kb
         }
         zw ☃;
         ☃.g(☃);
-        if (--☃.b == 0)
+        if (--b == 0)
         {
           ☃.a(☃);
-          ☃.b = 1;
+          b = 1;
         }
         else if (((alc)☃.h()).a(new zx(☃)) < 0)
         {
-          this.b.a(☃, new zx(☃));
+          b.a(☃, new zx(☃));
         }
         return ☃;
       }
@@ -271,8 +271,8 @@ public class kb
         if (☃.d(☃))
         {
           ☃.a(☃, afi.ab.Q());
-          if (☃.a(1, ☃.s)) {
-            ☃.b = 0;
+          if (☃.a(1, s)) {
+            b = 0;
           }
         }
         else if (☃.p(☃).c() == afi.W)
@@ -282,14 +282,14 @@ public class kb
         }
         else
         {
-          this.b = false;
+          b = false;
         }
         return ☃;
       }
       
       protected void a(ck ☃)
       {
-        if (this.b) {
+        if (b) {
           ☃.i().b(1000, ☃.d(), 0);
         } else {
           ☃.i().b(1001, ☃.d(), 0);
@@ -309,12 +309,12 @@ public class kb
           cj ☃ = ☃.d().a(agg.b(☃.f()));
           if (ze.a(☃, ☃, ☃))
           {
-            if (!☃.D) {
+            if (!D) {
               ☃.b(2005, ☃, 0);
             }
           }
           else {
-            this.b = false;
+            b = false;
           }
           return ☃;
         }
@@ -323,7 +323,7 @@ public class kb
       
       protected void a(ck ☃)
       {
-        if (this.b) {
+        if (b) {
           ☃.i().b(1000, ☃.d(), 0);
         } else {
           ☃.i().b(1001, ☃.d(), 0);
@@ -341,7 +341,7 @@ public class kb
         ☃.d(☃);
         ☃.a(☃, "game.tnt.primed", 1.0F, 1.0F);
         
-        ☃.b -= 1;
+        b -= 1;
         return ☃;
       }
     });
@@ -357,7 +357,7 @@ public class kb
         ajm ☃ = afi.ce;
         if ((☃.d(☃)) && (☃.b(☃, ☃, ☃)))
         {
-          if (!☃.D)
+          if (!D)
           {
             ☃.a(☃, ☃.Q().a(ajm.a, cq.b), 3);
             akw ☃ = ☃.s(☃);
@@ -390,18 +390,18 @@ public class kb
               ((alo)☃).b(☃.d().b() * 4);
               afi.ce.a(☃, ☃, (alo)☃);
             }
-            ☃.b -= 1;
+            b -= 1;
           }
         }
         else {
-          this.b = false;
+          b = false;
         }
         return ☃;
       }
       
       protected void a(ck ☃)
       {
-        if (this.b) {
+        if (b) {
           ☃.i().b(1000, ☃.d(), 0);
         } else {
           ☃.i().b(1001, ☃.d(), 0);
@@ -419,21 +419,21 @@ public class kb
         aiv ☃ = (aiv)afi.aU;
         if ((☃.d(☃)) && (☃.e(☃, ☃)))
         {
-          if (!☃.D) {
+          if (!D) {
             ☃.a(☃, ☃.Q(), 3);
           }
-          ☃.b -= 1;
+          b -= 1;
         }
         else
         {
-          this.b = false;
+          b = false;
         }
         return ☃;
       }
       
       protected void a(ck ☃)
       {
-        if (this.b) {
+        if (b) {
           ☃.i().b(1000, ☃.d(), 0);
         } else {
           ☃.i().b(1001, ☃.d(), 0);

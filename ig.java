@@ -9,19 +9,19 @@ public class ig
   
   public ig(ig.a ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ((ig.a)☃.a(ig.a.class));
+    a = ((ig.a)☃.a(ig.a.class));
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(this.a);
+    ☃.a(a);
   }
   
   public void a(ic ☃)
@@ -31,7 +31,7 @@ public class ig
   
   public ig.a a()
   {
-    return this.a;
+    return a;
   }
   
   public static enum a

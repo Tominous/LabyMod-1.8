@@ -7,7 +7,7 @@ public class bej$e
   {
     beb ☃ = new bej(☃, ☃, ☃, ☃, ☃, ☃, ☃);
     ((bej)☃).a(144);
-    float ☃ = ☃.s.nextFloat() * 0.5F + 0.35F;
+    float ☃ = s.nextFloat() * 0.5F + 0.35F;
     ☃.b(1.0F * ☃, 0.0F * ☃, 1.0F * ☃);
     return ☃;
   }

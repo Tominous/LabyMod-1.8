@@ -8,12 +8,12 @@ class bfk$2
   
   bfk$2(bfk p_i1243_1_)
   {
-    this.a = p_i1243_1_;
+    a = p_i1243_1_;
   }
   
   public String a()
     throws Exception
   {
-    return ave.A().m.getClass().getCanonicalName();
+    return Am.getClass().getCanonicalName();
   }
 }

@@ -11,14 +11,14 @@ public class bln
   public bln(biu ☃, boolean ☃)
   {
     super(☃, new bbr(0.0F, ☃), 0.5F);
-    this.a = ☃;
+    a = ☃;
     
     a(new bkx(this));
     a(new bky(this));
     a(new bko(this));
     a(new bkt(this));
     a(new bkp(this));
-    a(new bks(g().e));
+    a(new bks(ge));
   }
   
   public bbr g()
@@ -28,7 +28,7 @@ public class bln
   
   public void a(bet ☃, double ☃, double ☃, double ☃, float ☃, float ☃)
   {
-    if ((☃.cc()) && (this.b.c != ☃)) {
+    if ((☃.cc()) && (b.c != ☃)) {
       return;
     }
     double ☃ = ☃;
@@ -46,39 +46,39 @@ public class bln
     if (☃.v())
     {
       ☃.a(false);
-      ☃.e.j = true;
-      ☃.f.j = true;
+      e.j = true;
+      f.j = true;
     }
     else
     {
-      zx ☃ = ☃.bi.h();
+      zx ☃ = bi.h();
       
       ☃.a(true);
       
-      ☃.f.j = ☃.a(wo.g);
-      ☃.v.j = ☃.a(wo.b);
-      ☃.c.j = ☃.a(wo.e);
-      ☃.d.j = ☃.a(wo.f);
-      ☃.a.j = ☃.a(wo.c);
-      ☃.b.j = ☃.a(wo.d);
+      f.j = ☃.a(wo.g);
+      v.j = ☃.a(wo.b);
+      c.j = ☃.a(wo.e);
+      d.j = ☃.a(wo.f);
+      a.j = ☃.a(wo.c);
+      b.j = ☃.a(wo.d);
       
-      ☃.l = 0;
-      ☃.o = false;
-      ☃.n = ☃.av();
+      l = 0;
+      o = false;
+      n = ☃.av();
       if (☃ == null)
       {
-        ☃.m = 0;
+        m = 0;
       }
       else
       {
-        ☃.m = 1;
+        m = 1;
         if (☃.bR() > 0)
         {
           aba ☃ = ☃.m();
           if (☃ == aba.d) {
-            ☃.m = 3;
+            m = 3;
           } else if (☃ == aba.e) {
-            ☃.o = true;
+            o = true;
           }
         }
       }
@@ -113,7 +113,7 @@ public class bln
         
         a(☃, ☃.c() + " " + ☃.d(), ☃, ☃, ☃, 64);
         
-        ☃ += c().a * 1.15F * ☃;
+        ☃ += ca * 1.15F * ☃;
       }
     }
     super.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
@@ -126,8 +126,8 @@ public class bln
     
     bbr ☃ = g();
     d(☃);
-    ☃.p = 0.0F;
-    ☃.n = false;
+    p = 0.0F;
+    n = false;
     ☃.a(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F, ☃);
     ☃.a();
   }
@@ -139,8 +139,8 @@ public class bln
     
     bbr ☃ = g();
     d(☃);
-    ☃.n = false;
-    ☃.p = 0.0F;
+    n = false;
+    p = 0.0F;
     ☃.a(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F, ☃);
     ☃.b();
   }
@@ -148,7 +148,7 @@ public class bln
   protected void a(bet ☃, double ☃, double ☃, double ☃)
   {
     if ((☃.ai()) && (☃.bJ())) {
-      super.a(☃, ☃ + ☃.by, ☃ + ☃.bZ, ☃ + ☃.bz);
+      super.a(☃, ☃ + by, ☃ + bZ, ☃ + bz);
     } else {
       super.a(☃, ☃, ☃, ☃);
     }

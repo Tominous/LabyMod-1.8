@@ -11,7 +11,7 @@ class bmi$1
     throws Exception
   {
     StringBuilder var1 = new StringBuilder();
-    int[][] var2 = this.val$var4;
+    int[][] var2 = val$var4;
     int var3 = var2.length;
     for (int var4x = 0; var4x < var3; var4x++)
     {

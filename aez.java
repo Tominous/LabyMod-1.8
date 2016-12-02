@@ -9,7 +9,7 @@ public class aez
   protected aez()
   {
     super(arm.g);
-    j(this.M.b().a(a, cq.c).a(b, Integer.valueOf(0)));
+    j(M.b().a(a, cq.c).a(b, Integer.valueOf(0)));
     e(0);
     a(yz.c);
   }
@@ -32,7 +32,7 @@ public class aez
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (!☃.D) {
+    if (!D) {
       ☃.a(new aez.a(☃, ☃));
     }
     return true;
@@ -83,8 +83,8 @@ public class aez
     
     public a(adm ☃, cj ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
+      a = ☃;
+      b = ☃;
     }
     
     public String e_()
@@ -104,7 +104,7 @@ public class aez
     
     public xi a(wm ☃, wn ☃)
     {
-      return new xk(☃, this.a, this.b, ☃);
+      return new xk(☃, a, b, ☃);
     }
     
     public String k()

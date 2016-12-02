@@ -6,8 +6,8 @@ public class afy$a
   
   public afy$a(adm ☃, cj ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public String e_()
@@ -27,7 +27,7 @@ public class afy$a
   
   public xi a(wm ☃, wn ☃)
   {
-    return new xq(☃, this.a, this.b);
+    return new xq(☃, a, b);
   }
   
   public String k()

@@ -13,32 +13,32 @@ public class bow
   
   public bow(List<bgg> ☃, List<List<bgg>> ☃, boolean ☃, boolean ☃, bmi ☃, bgr ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
-    this.e = ☃;
-    this.f = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
+    e = ☃;
+    f = ☃;
   }
   
   public List<bgg> a(cq ☃)
   {
-    return (List)this.b.get(☃.ordinal());
+    return (List)b.get(☃.ordinal());
   }
   
   public List<bgg> a()
   {
-    return this.a;
+    return a;
   }
   
   public boolean b()
   {
-    return this.c;
+    return c;
   }
   
   public boolean c()
   {
-    return this.d;
+    return d;
   }
   
   public boolean d()
@@ -48,12 +48,12 @@ public class bow
   
   public bmi e()
   {
-    return this.e;
+    return e;
   }
   
   public bgr f()
   {
-    return this.f;
+    return f;
   }
   
   public static class a
@@ -73,7 +73,7 @@ public class bow
     public a(boq ☃, bmi ☃)
     {
       this(☃.b(), ☃.c(), ☃.f());
-      this.d = ☃.e();
+      d = ☃.e();
       for (cq ☃ : cq.values()) {
         a(☃, ☃, ☃);
       }
@@ -97,38 +97,38 @@ public class bow
     private a(boolean ☃, boolean ☃, bgr ☃)
     {
       for (cq ☃ : cq.values()) {
-        this.b.add(Lists.newArrayList());
+        b.add(Lists.newArrayList());
       }
-      this.c = ☃;
-      this.e = ☃;
-      this.f = ☃;
+      c = ☃;
+      e = ☃;
+      f = ☃;
     }
     
     public a a(cq ☃, bgg ☃)
     {
-      ((List)this.b.get(☃.ordinal())).add(☃);
+      ((List)b.get(☃.ordinal())).add(☃);
       return this;
     }
     
     public a a(bgg ☃)
     {
-      this.a.add(☃);
+      a.add(☃);
       return this;
     }
     
     public a a(bmi ☃)
     {
-      this.d = ☃;
+      d = ☃;
       
       return this;
     }
     
     public boq b()
     {
-      if (this.d == null) {
+      if (d == null) {
         throw new RuntimeException("Missing particle!");
       }
-      return new bow(this.a, this.b, this.c, this.e, this.d, this.f);
+      return new bow(a, b, c, e, d, f);
     }
   }
 }

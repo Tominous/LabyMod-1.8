@@ -51,17 +51,17 @@ public class pe
   
   protected pe(int ☃, jy ☃, boolean ☃, int ☃)
   {
-    this.H = ☃;
+    H = ☃;
     
     a[☃] = this;
     I.put(☃, this);
-    this.K = ☃;
+    K = ☃;
     if (☃) {
-      this.O = 0.5D;
+      O = 0.5D;
     } else {
-      this.O = 1.0D;
+      O = 1.0D;
     }
-    this.L = ☃;
+    L = ☃;
   }
   
   public static pe b(String ☃)
@@ -76,54 +76,54 @@ public class pe
   
   protected pe b(int ☃, int ☃)
   {
-    this.N = (☃ + ☃ * 8);
+    N = (☃ + ☃ * 8);
     return this;
   }
   
   public int d()
   {
-    return this.H;
+    return H;
   }
   
   public void a(pr ☃, int ☃)
   {
-    if (this.H == l.H)
+    if (H == lH)
     {
       if (☃.bn() < ☃.bu()) {
         ☃.h(1.0F);
       }
     }
-    else if (this.H == u.H)
+    else if (H == uH)
     {
       if (☃.bn() > 1.0F) {
         ☃.a(ow.l, 1.0F);
       }
     }
-    else if (this.H == v.H) {
+    else if (H == vH) {
       ☃.a(ow.m, 1.0F);
-    } else if ((this.H == s.H) && ((☃ instanceof wn))) {
+    } else if ((H == sH) && ((☃ instanceof wn))) {
       ((wn)☃).a(0.025F * (☃ + 1));
-    } else if ((this.H == y.H) && ((☃ instanceof wn)))
+    } else if ((H == yH) && ((☃ instanceof wn)))
     {
-      if (!☃.o.D) {
+      if (!o.D) {
         ((wn)☃).cl().a(☃ + 1, 1.0F);
       }
     }
-    else if (((this.H == h.H) && (!☃.bm())) || ((this.H == i.H) && (☃.bm()))) {
+    else if (((H == hH) && (!☃.bm())) || ((H == iH) && (☃.bm()))) {
       ☃.h(Math.max(4 << ☃, 0));
-    } else if (((this.H == i.H) && (!☃.bm())) || ((this.H == h.H) && (☃.bm()))) {
+    } else if (((H == iH) && (!☃.bm())) || ((H == hH) && (☃.bm()))) {
       ☃.a(ow.l, 6 << ☃);
     }
   }
   
   public void a(pk ☃, pk ☃, pr ☃, int ☃, double ☃)
   {
-    if (((this.H == h.H) && (!☃.bm())) || ((this.H == i.H) && (☃.bm())))
+    if (((H == hH) && (!☃.bm())) || ((H == iH) && (☃.bm())))
     {
       int ☃ = (int)(☃ * (4 << ☃) + 0.5D);
       ☃.h(☃);
     }
-    else if (((this.H == i.H) && (!☃.bm())) || ((this.H == h.H) && (☃.bm())))
+    else if (((H == iH) && (!☃.bm())) || ((H == hH) && (☃.bm())))
     {
       int ☃ = (int)(☃ * (6 << ☃) + 0.5D);
       if (☃ == null) {
@@ -141,7 +141,7 @@ public class pe
   
   public boolean a(int ☃, int ☃)
   {
-    if (this.H == l.H)
+    if (H == lH)
     {
       int ☃ = 50 >> ☃;
       if (☃ > 0) {
@@ -149,7 +149,7 @@ public class pe
       }
       return true;
     }
-    if (this.H == u.H)
+    if (H == uH)
     {
       int ☃ = 25 >> ☃;
       if (☃ > 0) {
@@ -157,7 +157,7 @@ public class pe
       }
       return true;
     }
-    if (this.H == v.H)
+    if (H == vH)
     {
       int ☃ = 40 >> ☃;
       if (☃ > 0) {
@@ -165,7 +165,7 @@ public class pe
       }
       return true;
     }
-    if (this.H == s.H) {
+    if (H == sH) {
       return true;
     }
     return false;
@@ -173,28 +173,28 @@ public class pe
   
   public pe c(String ☃)
   {
-    this.M = ☃;
+    M = ☃;
     return this;
   }
   
   public String a()
   {
-    return this.M;
+    return M;
   }
   
   public boolean e()
   {
-    return this.N >= 0;
+    return N >= 0;
   }
   
   public int f()
   {
-    return this.N;
+    return N;
   }
   
   public boolean g()
   {
-    return this.K;
+    return K;
   }
   
   public static String a(pf ☃)
@@ -208,40 +208,40 @@ public class pe
   
   protected pe a(double ☃)
   {
-    this.O = ☃;
+    O = ☃;
     return this;
   }
   
   public double h()
   {
-    return this.O;
+    return O;
   }
   
   public boolean j()
   {
-    return this.P;
+    return P;
   }
   
   public int k()
   {
-    return this.L;
+    return L;
   }
   
   public pe a(qb ☃, String ☃, double ☃, int ☃)
   {
     qd ☃ = new qd(UUID.fromString(☃), a(), ☃, ☃);
-    this.J.put(☃, ☃);
+    J.put(☃, ☃);
     return this;
   }
   
   public Map<qb, qd> l()
   {
-    return this.J;
+    return J;
   }
   
   public void a(pr ☃, qf ☃, int ☃)
   {
-    for (Map.Entry<qb, qd> ☃ : this.J.entrySet())
+    for (Map.Entry<qb, qd> ☃ : J.entrySet())
     {
       qc ☃ = ☃.a((qb)☃.getKey());
       if (☃ != null) {
@@ -252,7 +252,7 @@ public class pe
   
   public void b(pr ☃, qf ☃, int ☃)
   {
-    for (Map.Entry<qb, qd> ☃ : this.J.entrySet())
+    for (Map.Entry<qb, qd> ☃ : J.entrySet())
     {
       qc ☃ = ☃.a((qb)☃.getKey());
       if (☃ != null)

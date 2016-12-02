@@ -9,34 +9,34 @@ class BlockPosM$1$1
   
   protected BlockPosM computeNext0()
   {
-    if (this.theBlockPosM == null)
+    if (theBlockPosM == null)
     {
-      this.theBlockPosM = new BlockPosM(this.this$0.val$posFrom.n(), this.this$0.val$posFrom.o(), this.this$0.val$posFrom.p(), 3);
-      return this.theBlockPosM;
+      theBlockPosM = new BlockPosM(this$0.val$posFrom.n(), this$0.val$posFrom.o(), this$0.val$posFrom.p(), 3);
+      return theBlockPosM;
     }
-    if (this.theBlockPosM.equals(this.this$0.val$posTo)) {
+    if (theBlockPosM.equals(this$0.val$posTo)) {
       return (BlockPosM)endOfData();
     }
-    int bx = this.theBlockPosM.n();
-    int by = this.theBlockPosM.o();
-    int bz = this.theBlockPosM.p();
-    if (bx < this.this$0.val$posTo.n())
+    int bx = theBlockPosM.n();
+    int by = theBlockPosM.o();
+    int bz = theBlockPosM.p();
+    if (bx < this$0.val$posTo.n())
     {
       bx++;
     }
-    else if (by < this.this$0.val$posTo.o())
+    else if (by < this$0.val$posTo.o())
     {
-      bx = this.this$0.val$posFrom.n();
+      bx = this$0.val$posFrom.n();
       by++;
     }
-    else if (bz < this.this$0.val$posTo.p())
+    else if (bz < this$0.val$posTo.p())
     {
-      bx = this.this$0.val$posFrom.n();
-      by = this.this$0.val$posFrom.o();
+      bx = this$0.val$posFrom.n();
+      by = this$0.val$posFrom.o();
       bz++;
     }
-    this.theBlockPosM.setXyz(bx, by, bz);
-    return this.theBlockPosM;
+    theBlockPosM.setXyz(bx, by, bz);
+    return theBlockPosM;
   }
   
   protected Object computeNext()

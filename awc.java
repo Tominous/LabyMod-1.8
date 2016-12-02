@@ -10,29 +10,29 @@ public class awc
   
   public boolean c()
   {
-    return this.o;
+    return o;
   }
   
   public void b(boolean ☃)
   {
-    this.o = ☃;
+    o = ☃;
   }
   
   public void a(ave ☃, int ☃, int ☃)
   {
-    if (!this.m) {
+    if (!m) {
       return;
     }
     ☃.P().a(avs.a);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     
-    boolean ☃ = (☃ >= this.h) && (☃ >= this.i) && (☃ < this.h + this.f) && (☃ < this.i + this.g);
+    boolean ☃ = (☃ >= h) && (☃ >= i) && (☃ < h + f) && (☃ < i + g);
     awc.a ☃;
     awc.a ☃;
-    if (this.o)
+    if (o)
     {
       awc.a ☃;
-      if (!this.l)
+      if (!l)
       {
         ☃ = awc.a.c;
       }
@@ -49,7 +49,7 @@ public class awc
     else
     {
       awc.a ☃;
-      if (!this.l)
+      if (!l)
       {
         ☃ = awc.a.f;
       }
@@ -63,7 +63,7 @@ public class awc
         }
       }
     }
-    b(this.h, this.i, ☃.a(), ☃.b(), this.f, this.g);
+    b(h, i, ☃.a(), ☃.b(), f, g);
   }
   
   static enum a
@@ -73,18 +73,18 @@ public class awc
     
     private a(int ☃, int ☃)
     {
-      this.g = ☃;
-      this.h = ☃;
+      g = ☃;
+      h = ☃;
     }
     
     public int a()
     {
-      return this.g;
+      return g;
     }
     
     public int b()
     {
-      return this.h;
+      return h;
     }
   }
 }

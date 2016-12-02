@@ -24,8 +24,8 @@ public class PacketLoginFriend
     for (int i = 0; i < a; i++) {
       players.add(buf.readPlayer());
     }
-    this.friends = new ArrayList();
-    this.friends.addAll(players);
+    friends = new ArrayList();
+    friends.addAll(players);
   }
   
   public void write(PacketBuf buf)
@@ -45,6 +45,6 @@ public class PacketLoginFriend
   
   public List<LabyModPlayer> getFriends()
   {
-    return this.friends;
+    return friends;
   }
 }

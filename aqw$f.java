@@ -10,8 +10,8 @@ public class aqw$f
   {
     super(☃, ☃);
     
-    this.m = ☃;
-    this.l = ☃;
+    m = ☃;
+    l = ☃;
   }
   
   public static f a(aqw.k ☃, List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃, int ☃)
@@ -25,13 +25,13 @@ public class aqw$f
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
   {
-    if (this.h < 0)
+    if (h < 0)
     {
-      this.h = b(☃, ☃);
-      if (this.h < 0) {
+      h = b(☃, ☃);
+      if (h < 0) {
         return true;
       }
-      this.l.a(0, this.h - this.l.e + 7 - 1, 0);
+      l.a(0, h - l.e + 7 - 1, 0);
     }
     a(☃, ☃, 1, 1, 1, 7, 4, 4, afi.a.Q(), afi.a.Q(), false);
     a(☃, ☃, 2, 1, 6, 8, 4, 10, afi.a.Q(), afi.a.Q(), false);
@@ -93,14 +93,14 @@ public class aqw$f
     
     a(☃, afi.a.Q(), 2, 1, 0, ☃);
     a(☃, afi.a.Q(), 2, 2, 0, ☃);
-    a(☃, afi.aa.Q().a(akf.a, this.m), 2, 3, 1, ☃);
+    a(☃, afi.aa.Q().a(akf.a, m), 2, 3, 1, ☃);
     a(☃, ☃, ☃, 2, 1, 0, cq.b(a(afi.ao, 1)));
     if ((a(☃, 2, 0, -1, ☃).c().t() == arm.a) && (a(☃, 2, -1, -1, ☃).c().t() != arm.a)) {
       a(☃, afi.aw.a(a(afi.aw, 3)), 2, 0, -1, ☃);
     }
     a(☃, afi.a.Q(), 6, 1, 5, ☃);
     a(☃, afi.a.Q(), 6, 2, 5, ☃);
-    a(☃, afi.aa.Q().a(akf.a, this.m.d()), 6, 3, 4, ☃);
+    a(☃, afi.aa.Q().a(akf.a, m.d()), 6, 3, 4, ☃);
     a(☃, ☃, ☃, 6, 1, 5, cq.b(a(afi.ao, 1)));
     for (int ☃ = 0; ☃ < 5; ☃++) {
       for (int ☃ = 0; ☃ < 9; ☃++)

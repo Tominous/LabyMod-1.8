@@ -10,12 +10,12 @@ public class eh
   
   public eh(Cipher ☃)
   {
-    this.a = new ef(☃);
+    a = new ef(☃);
   }
   
   protected void a(ChannelHandlerContext ☃, ByteBuf ☃, ByteBuf ☃)
     throws Exception
   {
-    this.a.a(☃, ☃);
+    a.a(☃, ☃);
   }
 }

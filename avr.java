@@ -8,49 +8,49 @@ public class avr
   
   public avr(ave ☃)
   {
-    this.c = ☃.d;
-    this.d = ☃.e;
-    this.e = 1;
+    c = d;
+    d = e;
+    e = 1;
     
     boolean ☃ = ☃.d();
-    int ☃ = ☃.t.aK;
+    int ☃ = t.aK;
     if (☃ == 0) {
       ☃ = 1000;
     }
-    while ((this.e < ☃) && (this.c / (this.e + 1) >= 320) && (this.d / (this.e + 1) >= 240)) {
-      this.e += 1;
+    while ((e < ☃) && (c / (e + 1) >= 320) && (d / (e + 1) >= 240)) {
+      e += 1;
     }
-    if ((☃) && (this.e % 2 != 0) && (this.e != 1)) {
-      this.e -= 1;
+    if ((☃) && (e % 2 != 0) && (e != 1)) {
+      e -= 1;
     }
-    this.a = (this.c / this.e);
-    this.b = (this.d / this.e);
-    this.c = ns.f(this.a);
-    this.d = ns.f(this.b);
+    a = (c / e);
+    b = (d / e);
+    c = ns.f(a);
+    d = ns.f(b);
   }
   
   public int a()
   {
-    return this.c;
+    return c;
   }
   
   public int b()
   {
-    return this.d;
+    return d;
   }
   
   public double c()
   {
-    return this.a;
+    return a;
   }
   
   public double d()
   {
-    return this.b;
+    return b;
   }
   
   public int e()
   {
-    return this.e;
+    return e;
   }
 }

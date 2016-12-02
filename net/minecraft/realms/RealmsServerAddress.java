@@ -9,18 +9,18 @@ public class RealmsServerAddress
   
   protected RealmsServerAddress(String ☃, int ☃)
   {
-    this.host = ☃;
-    this.port = ☃;
+    host = ☃;
+    port = ☃;
   }
   
   public String getHost()
   {
-    return this.host;
+    return host;
   }
   
   public int getPort()
   {
-    return this.port;
+    return port;
   }
   
   public static RealmsServerAddress parseString(String ☃)

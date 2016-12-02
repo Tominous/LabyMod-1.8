@@ -9,8 +9,8 @@ public class aho
   public aho(arm ☃, arn ☃, afh ☃)
   {
     super(☃, ☃);
-    j(this.M.b().a(a, aho.a.l));
-    this.b = ☃;
+    j(M.b().a(a, aho.a.l));
+    b = ☃;
   }
   
   public int a(Random ☃)
@@ -34,12 +34,12 @@ public class aho
   
   public zw a(alz ☃, Random ☃, int ☃)
   {
-    return zw.a(this.b);
+    return zw.a(b);
   }
   
   public zw c(adm ☃, cj ☃)
   {
-    return zw.a(this.b);
+    return zw.a(b);
   }
   
   public alz a(adm ☃, cj ☃, cq ☃, float ☃, float ☃, float ☃, int ☃, pr ☃)
@@ -79,18 +79,18 @@ public class aho
     
     private a(int ☃, String ☃)
     {
-      this.o = ☃;
-      this.p = ☃;
+      o = ☃;
+      p = ☃;
     }
     
     public int a()
     {
-      return this.o;
+      return o;
     }
     
     public String toString()
     {
-      return this.p;
+      return p;
     }
     
     public static a a(int ☃)
@@ -104,7 +104,7 @@ public class aho
     
     public String l()
     {
-      return this.p;
+      return p;
     }
   }
 }

@@ -47,26 +47,26 @@ public class bqk
     {
       if (ErrorCode.succeeded(☃))
       {
-        bqk.this.f.setMessageFlushInterval(bqk.this.n);
-        bqk.this.f.setUserChangeEventInterval(bqk.this.o);
+        f.setMessageFlushInterval(n);
+        f.setUserChangeEventInterval(o);
         
-        bqk.this.r();
+        r();
         
-        bqk.this.a(bqk.c.c);
+        a(bqk.c.c);
       }
       else
       {
-        bqk.this.a(bqk.c.a);
+        a(bqk.c.a);
       }
       try
       {
-        if (bqk.this.a != null) {
-          bqk.this.a.d(☃);
+        if (a != null) {
+          a.d(☃);
         }
       }
       catch (Exception ☃)
       {
-        bqk.this.n(☃.toString());
+        n(☃.toString());
       }
     }
     
@@ -74,36 +74,36 @@ public class bqk
     {
       if (ErrorCode.succeeded(☃))
       {
-        ErrorCode ☃ = bqk.this.e.shutdown();
+        ErrorCode ☃ = e.shutdown();
         if (ErrorCode.failed(☃))
         {
           String ☃ = ErrorCode.getString(☃);
-          bqk.this.n(String.format("Error shutting down the Twitch sdk: %s", new Object[] { ☃ }));
+          n(String.format("Error shutting down the Twitch sdk: %s", new Object[] { ☃ }));
         }
-        bqk.this.a(bqk.c.a);
+        a(bqk.c.a);
       }
       else
       {
-        bqk.this.a(bqk.c.c);
+        a(bqk.c.c);
         
-        bqk.this.n(String.format("Error shutting down Twith chat: %s", new Object[] { ☃ }));
+        n(String.format("Error shutting down Twith chat: %s", new Object[] { ☃ }));
       }
       try
       {
-        if (bqk.this.a != null) {
-          bqk.this.a.e(☃);
+        if (a != null) {
+          a.e(☃);
         }
       }
       catch (Exception ☃)
       {
-        bqk.this.n(☃.toString());
+        n(☃.toString());
       }
     }
     
     public void chatEmoticonDataDownloadCallback(ErrorCode ☃)
     {
       if (ErrorCode.succeeded(☃)) {
-        bqk.this.s();
+        s();
       }
     }
   };
@@ -121,30 +121,30 @@ public class bqk
     
     public b(String ☃)
     {
-      this.a = ☃;
+      a = ☃;
     }
     
     public bqk.a a()
     {
-      return this.c;
+      return c;
     }
     
     public boolean a(boolean ☃)
     {
-      this.b = ☃;
+      b = ☃;
       
       ErrorCode ☃ = ErrorCode.TTV_EC_SUCCESS;
       if (☃) {
-        ☃ = bqk.this.f.connectAnonymous(this.a, this);
+        ☃ = f.connectAnonymous(a, this);
       } else {
-        ☃ = bqk.this.f.connect(this.a, bqk.this.b, bqk.this.h.data, this);
+        ☃ = f.connect(a, b, h.data, this);
       }
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
-        bqk.this.n(String.format("Error connecting: %s", new Object[] { ☃ }));
+        n(String.format("Error connecting: %s", new Object[] { ☃ }));
         
-        d(this.a);
+        d(a);
         
         return false;
       }
@@ -156,15 +156,15 @@ public class bqk
     
     public boolean g()
     {
-      switch (bqk.2.a[this.c.ordinal()])
+      switch (bqk.2.a[c.ordinal()])
       {
       case 1: 
       case 2: 
-        ErrorCode ☃ = bqk.this.f.disconnect(this.a);
+        ErrorCode ☃ = f.disconnect(a);
         if (ErrorCode.failed(☃))
         {
           String ☃ = ErrorCode.getString(☃);
-          bqk.this.n(String.format("Error disconnecting: %s", new Object[] { ☃ }));
+          n(String.format("Error disconnecting: %s", new Object[] { ☃ }));
           
           return false;
         }
@@ -176,39 +176,39 @@ public class bqk
     
     protected void a(bqk.a ☃)
     {
-      if (☃ == this.c) {
+      if (☃ == c) {
         return;
       }
-      this.c = ☃;
+      c = ☃;
     }
     
     public void a(String ☃)
     {
-      if (bqk.this.l == bqk.d.a)
+      if (l == bqk.d.a)
       {
-        this.e.clear();
-        this.f.clear();
+        e.clear();
+        f.clear();
       }
       else
       {
-        if (this.e.size() > 0)
+        if (e.size() > 0)
         {
-          ListIterator<ChatRawMessage> ☃ = this.e.listIterator();
+          ListIterator<ChatRawMessage> ☃ = e.listIterator();
           while (☃.hasNext())
           {
             ChatRawMessage ☃ = (ChatRawMessage)☃.next();
-            if (☃.userName.equals(☃)) {
+            if (userName.equals(☃)) {
               ☃.remove();
             }
           }
         }
-        if (this.f.size() > 0)
+        if (f.size() > 0)
         {
-          ListIterator<ChatTokenizedMessage> ☃ = this.f.listIterator();
+          ListIterator<ChatTokenizedMessage> ☃ = f.listIterator();
           while (☃.hasNext())
           {
             ChatTokenizedMessage ☃ = (ChatTokenizedMessage)☃.next();
-            if (☃.displayName.equals(☃)) {
+            if (displayName.equals(☃)) {
               ☃.remove();
             }
           }
@@ -216,26 +216,26 @@ public class bqk
       }
       try
       {
-        if (bqk.this.a != null) {
-          bqk.this.a.a(this.a, ☃);
+        if (a != null) {
+          a.a(a, ☃);
         }
       }
       catch (Exception ☃)
       {
-        bqk.this.n(☃.toString());
+        n(☃.toString());
       }
     }
     
     public boolean b(String ☃)
     {
-      if (this.c != bqk.a.c) {
+      if (c != bqk.a.c) {
         return false;
       }
-      ErrorCode ☃ = bqk.this.f.sendMessage(this.a, ☃);
+      ErrorCode ☃ = f.sendMessage(a, ☃);
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
-        bqk.this.n(String.format("Error sending chat message: %s", new Object[] { ☃ }));
+        n(String.format("Error sending chat message: %s", new Object[] { ☃ }));
         
         return false;
       }
@@ -244,66 +244,66 @@ public class bqk
     
     protected void h()
     {
-      if (bqk.this.l == bqk.d.a) {
+      if (l == bqk.d.a) {
         return;
       }
-      if (this.g == null)
+      if (g == null)
       {
-        ErrorCode ☃ = bqk.this.f.downloadBadgeData(this.a);
+        ErrorCode ☃ = f.downloadBadgeData(a);
         if (ErrorCode.failed(☃))
         {
           String ☃ = ErrorCode.getString(☃);
-          bqk.this.n(String.format("Error trying to download badge data: %s", new Object[] { ☃ }));
+          n(String.format("Error trying to download badge data: %s", new Object[] { ☃ }));
         }
       }
     }
     
     protected void i()
     {
-      if (this.g != null) {
+      if (g != null) {
         return;
       }
-      this.g = new ChatBadgeData();
-      ErrorCode ☃ = bqk.this.f.getBadgeData(this.a, this.g);
+      g = new ChatBadgeData();
+      ErrorCode ☃ = f.getBadgeData(a, g);
       if (ErrorCode.succeeded(☃)) {
         try
         {
-          if (bqk.this.a != null) {
-            bqk.this.a.c(this.a);
+          if (a != null) {
+            a.c(a);
           }
         }
         catch (Exception ☃)
         {
-          bqk.this.n(☃.toString());
+          n(☃.toString());
         }
       } else {
-        bqk.this.n("Error preparing badge data: " + ErrorCode.getString(☃));
+        n("Error preparing badge data: " + ErrorCode.getString(☃));
       }
     }
     
     protected void j()
     {
-      if (this.g == null) {
+      if (g == null) {
         return;
       }
-      ErrorCode ☃ = bqk.this.f.clearBadgeData(this.a);
+      ErrorCode ☃ = f.clearBadgeData(a);
       if (ErrorCode.succeeded(☃))
       {
-        this.g = null;
+        g = null;
         try
         {
-          if (bqk.this.a != null) {
-            bqk.this.a.d(this.a);
+          if (a != null) {
+            a.d(a);
           }
         }
         catch (Exception ☃)
         {
-          bqk.this.n(☃.toString());
+          n(☃.toString());
         }
       }
       else
       {
-        bqk.this.n("Error releasing badge data: " + ErrorCode.getString(☃));
+        n("Error releasing badge data: " + ErrorCode.getString(☃));
       }
     }
     
@@ -311,13 +311,13 @@ public class bqk
     {
       try
       {
-        if (bqk.this.a != null) {
-          bqk.this.a.a(☃);
+        if (a != null) {
+          a.a(☃);
         }
       }
       catch (Exception ☃)
       {
-        bqk.this.n(☃.toString());
+        n(☃.toString());
       }
     }
     
@@ -325,22 +325,22 @@ public class bqk
     {
       try
       {
-        if (bqk.this.a != null) {
-          bqk.this.a.b(☃);
+        if (a != null) {
+          a.b(☃);
         }
       }
       catch (Exception ☃)
       {
-        bqk.this.n(☃.toString());
+        n(☃.toString());
       }
     }
     
     private void k()
     {
-      if (this.c != bqk.a.e)
+      if (c != bqk.a.e)
       {
         a(bqk.a.e);
-        d(this.a);
+        d(a);
         j();
       }
     }
@@ -350,7 +350,7 @@ public class bqk
       if (ErrorCode.succeeded(☃)) {
         return;
       }
-      bqk.this.i.remove(☃);
+      i.remove(☃);
       
       k();
     }
@@ -373,71 +373,71 @@ public class bqk
     {
       for (int ☃ = 0; ☃ < ☃.length; ☃++)
       {
-        int ☃ = this.d.indexOf(☃[☃]);
+        int ☃ = d.indexOf(☃[☃]);
         if (☃ >= 0) {
-          this.d.remove(☃);
+          d.remove(☃);
         }
       }
       for (int ☃ = 0; ☃ < ☃.length; ☃++)
       {
-        int ☃ = this.d.indexOf(☃[☃]);
+        int ☃ = d.indexOf(☃[☃]);
         if (☃ >= 0) {
-          this.d.remove(☃);
+          d.remove(☃);
         }
-        this.d.add(☃[☃]);
+        d.add(☃[☃]);
       }
       for (int ☃ = 0; ☃ < ☃.length; ☃++) {
-        this.d.add(☃[☃]);
+        d.add(☃[☃]);
       }
       try
       {
-        if (bqk.this.a != null) {
-          bqk.this.a.a(this.a, ☃, ☃, ☃);
+        if (a != null) {
+          a.a(a, ☃, ☃, ☃);
         }
       }
       catch (Exception ☃)
       {
-        bqk.this.n(☃.toString());
+        n(☃.toString());
       }
     }
     
     public void chatChannelRawMessageCallback(String ☃, ChatRawMessage[] ☃)
     {
       for (int ☃ = 0; ☃ < ☃.length; ☃++) {
-        this.e.addLast(☃[☃]);
+        e.addLast(☃[☃]);
       }
       try
       {
-        if (bqk.this.a != null) {
-          bqk.this.a.a(this.a, ☃);
+        if (a != null) {
+          a.a(a, ☃);
         }
       }
       catch (Exception ☃)
       {
-        bqk.this.n(☃.toString());
+        n(☃.toString());
       }
-      while (this.e.size() > bqk.this.j) {
-        this.e.removeFirst();
+      while (e.size() > j) {
+        e.removeFirst();
       }
     }
     
     public void chatChannelTokenizedMessageCallback(String ☃, ChatTokenizedMessage[] ☃)
     {
       for (int ☃ = 0; ☃ < ☃.length; ☃++) {
-        this.f.addLast(☃[☃]);
+        f.addLast(☃[☃]);
       }
       try
       {
-        if (bqk.this.a != null) {
-          bqk.this.a.a(this.a, ☃);
+        if (a != null) {
+          a.a(a, ☃);
         }
       }
       catch (Exception ☃)
       {
-        bqk.this.n(☃.toString());
+        n(☃.toString());
       }
-      while (this.f.size() > bqk.this.j) {
-        this.f.removeFirst();
+      while (f.size() > j) {
+        f.removeFirst();
       }
     }
     
@@ -456,64 +456,64 @@ public class bqk
   
   public void a(bqk.e ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(AuthToken ☃)
   {
-    this.h = ☃;
+    h = ☃;
   }
   
   public void a(String ☃)
   {
-    this.c = ☃;
+    c = ☃;
   }
   
   public void c(String ☃)
   {
-    this.b = ☃;
+    b = ☃;
   }
   
   public bqk.c h()
   {
-    return this.g;
+    return g;
   }
   
   public boolean d(String ☃)
   {
-    if (!this.i.containsKey(☃)) {
+    if (!i.containsKey(☃)) {
       return false;
     }
-    bqk.b ☃ = (bqk.b)this.i.get(☃);
+    bqk.b ☃ = (bqk.b)i.get(☃);
     return ☃.a() == bqk.a.c;
   }
   
   public bqk.a e(String ☃)
   {
-    if (!this.i.containsKey(☃)) {
+    if (!i.containsKey(☃)) {
       return bqk.a.e;
     }
-    bqk.b ☃ = (bqk.b)this.i.get(☃);
+    bqk.b ☃ = (bqk.b)i.get(☃);
     return ☃.a();
   }
   
   public bqk()
   {
-    this.e = Core.getInstance();
-    if (this.e == null) {
-      this.e = new Core(new StandardCoreAPI());
+    e = Core.getInstance();
+    if (e == null) {
+      e = new Core(new StandardCoreAPI());
     }
-    this.f = new Chat(new StandardChatAPI());
+    f = new Chat(new StandardChatAPI());
   }
   
   public boolean n()
   {
-    if (this.g != bqk.c.a) {
+    if (g != bqk.c.a) {
       return false;
     }
     a(bqk.c.b);
     
-    ErrorCode ☃ = this.e.initialize(this.c, null);
+    ErrorCode ☃ = e.initialize(c, null);
     if (ErrorCode.failed(☃))
     {
       a(bqk.c.a);
@@ -523,10 +523,10 @@ public class bqk
       
       return false;
     }
-    this.l = this.k;
+    l = k;
     
     HashSet<ChatTokenizationOption> ☃ = new HashSet();
-    switch (bqk.2.c[this.k.ordinal()])
+    switch (bqk.2.c[k.ordinal()])
     {
     case 1: 
       ☃.add(ChatTokenizationOption.TTV_CHAT_TOKENIZATION_OPTION_NONE);
@@ -537,10 +537,10 @@ public class bqk
     case 3: 
       ☃.add(ChatTokenizationOption.TTV_CHAT_TOKENIZATION_OPTION_EMOTICON_TEXTURES);
     }
-    ☃ = this.f.initialize(☃, this.p);
+    ☃ = f.initialize(☃, p);
     if (ErrorCode.failed(☃))
     {
-      this.e.shutdown();
+      e.shutdown();
       a(bqk.c.a);
       
       String ☃ = ErrorCode.getString(☃);
@@ -559,10 +559,10 @@ public class bqk
   
   protected boolean a(String ☃, boolean ☃)
   {
-    if (this.g != bqk.c.c) {
+    if (g != bqk.c.c) {
       return false;
     }
-    if (this.i.containsKey(☃))
+    if (i.containsKey(☃))
     {
       n("Already in channel: " + ☃);
       return false;
@@ -571,35 +571,35 @@ public class bqk
       return false;
     }
     bqk.b ☃ = new bqk.b(☃);
-    this.i.put(☃, ☃);
+    i.put(☃, ☃);
     
     boolean ☃ = ☃.a(☃);
     if (!☃) {
-      this.i.remove(☃);
+      i.remove(☃);
     }
     return ☃;
   }
   
   public boolean l(String ☃)
   {
-    if (this.g != bqk.c.c) {
+    if (g != bqk.c.c) {
       return false;
     }
-    if (!this.i.containsKey(☃))
+    if (!i.containsKey(☃))
     {
       n("Not in channel: " + ☃);
       return false;
     }
-    bqk.b ☃ = (bqk.b)this.i.get(☃);
+    bqk.b ☃ = (bqk.b)i.get(☃);
     return ☃.g();
   }
   
   public boolean o()
   {
-    if (this.g != bqk.c.c) {
+    if (g != bqk.c.c) {
       return false;
     }
-    ErrorCode ☃ = this.f.shutdown();
+    ErrorCode ☃ = f.shutdown();
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
@@ -634,10 +634,10 @@ public class bqk
   
   public void q()
   {
-    if (this.g == bqk.c.a) {
+    if (g == bqk.c.a) {
       return;
     }
-    ErrorCode ☃ = this.f.flushEvents();
+    ErrorCode ☃ = f.flushEvents();
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
@@ -647,28 +647,28 @@ public class bqk
   
   public boolean a(String ☃, String ☃)
   {
-    if (this.g != bqk.c.c) {
+    if (g != bqk.c.c) {
       return false;
     }
-    if (!this.i.containsKey(☃))
+    if (!i.containsKey(☃))
     {
       n("Not in channel: " + ☃);
       return false;
     }
-    bqk.b ☃ = (bqk.b)this.i.get(☃);
+    bqk.b ☃ = (bqk.b)i.get(☃);
     return ☃.b(☃);
   }
   
   protected void a(bqk.c ☃)
   {
-    if (☃ == this.g) {
+    if (☃ == g) {
       return;
     }
-    this.g = ☃;
+    g = ☃;
     try
     {
-      if (this.a != null) {
-        this.a.a(☃);
+      if (a != null) {
+        a.a(☃);
       }
     }
     catch (Exception ☃)
@@ -679,12 +679,12 @@ public class bqk
   
   protected void r()
   {
-    if (this.l == bqk.d.a) {
+    if (l == bqk.d.a) {
       return;
     }
-    if (this.m == null)
+    if (m == null)
     {
-      ErrorCode ☃ = this.f.downloadEmoticonData();
+      ErrorCode ☃ = f.downloadEmoticonData();
       if (ErrorCode.failed(☃))
       {
         String ☃ = ErrorCode.getString(☃);
@@ -695,16 +695,16 @@ public class bqk
   
   protected void s()
   {
-    if (this.m != null) {
+    if (m != null) {
       return;
     }
-    this.m = new ChatEmoticonData();
-    ErrorCode ☃ = this.f.getEmoticonData(this.m);
+    m = new ChatEmoticonData();
+    ErrorCode ☃ = f.getEmoticonData(m);
     if (ErrorCode.succeeded(☃)) {
       try
       {
-        if (this.a != null) {
-          this.a.d();
+        if (a != null) {
+          a.d();
         }
       }
       catch (Exception ☃)
@@ -718,17 +718,17 @@ public class bqk
   
   protected void t()
   {
-    if (this.m == null) {
+    if (m == null) {
       return;
     }
-    ErrorCode ☃ = this.f.clearEmoticonData();
+    ErrorCode ☃ = f.clearEmoticonData();
     if (ErrorCode.succeeded(☃))
     {
-      this.m = null;
+      m = null;
       try
       {
-        if (this.a != null) {
-          this.a.e();
+        if (a != null) {
+          a.e();
         }
       }
       catch (Exception ☃)

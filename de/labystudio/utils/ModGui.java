@@ -11,11 +11,13 @@ import bew;
 import bfl;
 import biu;
 import bqs;
+import cj;
 import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
-import de.labystudio.labymod.Timings;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import ns;
 import pk;
@@ -30,13 +32,12 @@ public class ModGui
   public static int frames = 0;
   public static int fps = 0;
   public static long frameTimer = 0L;
+  private static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
   
   public static String translateTimer(int time)
   {
-    Timings.start("Translate Timer");
     String formata = time / 60 < 10 ? "0" + time / 60 : Integer.toString(time / 60);
     String formatb = time % 60 < 10 ? "0" + time % 60 : Integer.toString(time % 60);
-    Timings.stop("Translate Timer");
     return formata + ":" + formatb;
   }
   
@@ -52,8 +53,7 @@ public class ModGui
   
   public static void smoothFPS()
   {
-    Timings.start("Smooth FPS");
-    if (!ConfigManager.settings.smoothFPS) {
+    if (!settingssmoothFPS) {
       return;
     }
     try
@@ -73,12 +73,11 @@ public class ModGui
     {
       smoothFPS = 0;
     }
-    Timings.stop("Smooth FPS");
   }
   
   public static int getFPS()
   {
-    if (ConfigManager.settings.smoothFPS) {
+    if (settingssmoothFPS) {
       return smoothFPS;
     }
     return getRealFPS();
@@ -86,11 +85,10 @@ public class ModGui
   
   public static String getF()
   {
-    Timings.start("Calculate F Direction");
     if (!LabyMod.getInstance().isInGame()) {
       return "0.0 ";
     }
-    double f = ns.g(ave.A().h.y);
+    double f = ns.g(Ah.y);
     if (f <= 0.0D) {
       f += 360.0D;
     }
@@ -100,13 +98,11 @@ public class ModGui
     if ((output.equals("4.0")) || (output.startsWith("9"))) {
       output = "0.0";
     }
-    Timings.stop("Calculate F Direction");
     return output + " ";
   }
   
   public static String getD()
   {
-    Timings.start("Calculate F Direction String");
     String XZD = getXZD();
     if (XZD.contains("Z-")) {
       return "North ";
@@ -120,7 +116,36 @@ public class ModGui
     if (XZD.contains("X-")) {
       return "West ";
     }
-    Timings.stop("Calculate F Direction String");
+    return "";
+  }
+  
+  public static String getDesignD()
+  {
+    String XZD = getXZD();
+    if ((XZD.contains("X-")) && (XZD.contains("Z-"))) {
+      return "WN";
+    }
+    if ((XZD.contains("Z-")) && (XZD.contains("X+"))) {
+      return "NE";
+    }
+    if ((XZD.contains("X+")) && (XZD.contains("Z+"))) {
+      return "ES";
+    }
+    if ((XZD.contains("Z+")) && (XZD.contains("X-"))) {
+      return "SW";
+    }
+    if (XZD.contains("Z-")) {
+      return "North ";
+    }
+    if (XZD.contains("X+")) {
+      return "East";
+    }
+    if (XZD.contains("Z+")) {
+      return "South";
+    }
+    if (XZD.contains("X-")) {
+      return "West";
+    }
     return "";
   }
   
@@ -134,25 +159,25 @@ public class ModGui
     String xN = "X-";
     String zP = "Z+";
     String zN = "Z-";
-    if (ConfigManager.settings.layout == 1)
+    if (settingslayout == 1)
     {
       a = "";
       b = " ";
       c = "";
     }
-    if (ConfigManager.settings.layout == 2)
+    if (settingslayout == 2)
     {
       a = "[";
       b = ", ";
       c = "]";
     }
-    if (ConfigManager.settings.layout == 3)
+    if (settingslayout == 3)
     {
       a = "<";
       b = ", ";
       c = ">";
     }
-    if (ConfigManager.settings.layout == 4)
+    if (settingslayout == 4)
     {
       a = "(";
       b = ", ";
@@ -191,6 +216,77 @@ public class ModGui
     return "";
   }
   
+  public static String getDesignXZD(boolean x)
+  {
+    double f = Double.parseDouble(getF());
+    String p = "+";
+    String n = "-";
+    if ((f >= 0.0D) && (f < 0.3D))
+    {
+      if (x) {
+        return "";
+      }
+      return p;
+    }
+    if ((f > 0.2D) && (f < 0.8D))
+    {
+      if (x) {
+        return n;
+      }
+      return p;
+    }
+    if ((f > 0.7D) && (f < 1.4D))
+    {
+      if (x) {
+        return n;
+      }
+      return "";
+    }
+    if ((f > 1.3D) && (f < 1.8D))
+    {
+      if (x) {
+        return n;
+      }
+      return n;
+    }
+    if ((f > 1.7D) && (f < 2.4D))
+    {
+      if (x) {
+        return "";
+      }
+      return n;
+    }
+    if ((f > 2.3D) && (f < 2.8D))
+    {
+      if (x) {
+        return p;
+      }
+      return n;
+    }
+    if ((f > 2.7D) && (f < 3.4D))
+    {
+      if (x) {
+        return p;
+      }
+      return "";
+    }
+    if ((f > 3.3D) && (f < 3.8D))
+    {
+      if (x) {
+        return p;
+      }
+      return p;
+    }
+    if ((f > 3.7D) && (f <= 4.0D))
+    {
+      if (x) {
+        return "";
+      }
+      return p;
+    }
+    return "";
+  }
+  
   public static int getRealFPS()
   {
     return fps;
@@ -198,20 +294,20 @@ public class ModGui
   
   public static String getBiom()
   {
-    if (ave.A().f == null) {
+    if (Af == null) {
       return "?";
     }
-    if (ave.A().h == null) {
+    if (Ah == null) {
       return "?";
     }
-    if (ave.A().h.c() == null) {
+    if (Ah.c() == null) {
       return "?";
     }
-    ady gen = ave.A().f.b(ave.A().h.c());
+    ady gen = Af.b(Ah.c());
     if (gen == null) {
       return "?";
     }
-    return gen.ah;
+    return ah;
   }
   
   public static String getX()
@@ -219,7 +315,10 @@ public class ModGui
     if (!LabyMod.getInstance().isInGame()) {
       return "?";
     }
-    return truncateCoords(ave.A().h.s);
+    if (settingstruncateCoords == 0) {
+      return "" + Ah.c().n();
+    }
+    return truncateCoords(Ah.s);
   }
   
   public static String getY()
@@ -227,7 +326,10 @@ public class ModGui
     if (!LabyMod.getInstance().isInGame()) {
       return "?";
     }
-    return truncateCoords(ave.A().h.t);
+    if (settingstruncateCoords == 0) {
+      return "" + Ah.c().o();
+    }
+    return truncateCoords(Ah.t);
   }
   
   public static String getZ()
@@ -235,18 +337,18 @@ public class ModGui
     if (!LabyMod.getInstance().isInGame()) {
       return "?";
     }
-    return truncateCoords(ave.A().h.u);
+    if (settingstruncateCoords == 0) {
+      return "" + Ah.c().p();
+    }
+    return truncateCoords(Ah.u);
   }
   
   public static String truncateCoords(double i)
   {
-    Timings.start("Truncate Coords");
-    String a = "" + (int)i;
-    if (ConfigManager.settings.truncateCoords != 0) {
-      a = "" + truncateDecimal(i, ConfigManager.settings.truncateCoords);
+    if (settingstruncateCoords != 0) {
+      return truncateDecimal(i, settingstruncateCoords) + "";
     }
-    Timings.stop("Truncate Coords");
-    return a;
+    return (int)i + "";
   }
   
   private static BigDecimal truncateDecimal(double x, int numberofDecimals)
@@ -271,19 +373,19 @@ public class ModGui
   
   public static String createLabel(String get, String set)
   {
-    if (ConfigManager.settings.layout == 0) {
+    if (settingslayout == 0) {
       return "";
     }
-    if (ConfigManager.settings.layout == 1) {
+    if (settingslayout == 1) {
       return Color.c(1) + get + Color.c(2) + ": " + Color.c(3) + set;
     }
-    if (ConfigManager.settings.layout == 2) {
+    if (settingslayout == 2) {
       return Color.c(2) + "[" + Color.c(1) + get + Color.c(2) + "] " + Color.c(3) + set;
     }
-    if (ConfigManager.settings.layout == 3) {
+    if (settingslayout == 3) {
       return Color.c(1) + get + Color.c(2) + "> " + Color.c(3) + set;
     }
-    if (ConfigManager.settings.layout == 4) {
+    if (settingslayout == 4) {
       return Color.c(2) + "(" + Color.c(1) + get + Color.c(2) + ") " + Color.c(3) + set;
     }
     return "Error";
@@ -292,9 +394,9 @@ public class ModGui
   public static void addMainLabel(String prefix, String text, int y)
   {
     if (isSwitch()) {
-      LabyMod.getInstance().draw.addRightLabel(prefix, text, y);
+      getInstancedraw.addRightLabel(prefix, text, y);
     } else {
-      LabyMod.getInstance().draw.addLabel(prefix, text, y);
+      getInstancedraw.addLabel(prefix, text, y);
     }
     mainListNext();
   }
@@ -302,9 +404,9 @@ public class ModGui
   public static void addOffLabel(String prefix, String text, int y)
   {
     if (isSwitch()) {
-      LabyMod.getInstance().draw.addLabel(prefix, text, y);
+      getInstancedraw.addLabel(prefix, text, y);
     } else {
-      LabyMod.getInstance().draw.addRightLabel(prefix, text, y);
+      getInstancedraw.addRightLabel(prefix, text, y);
     }
     offListNext();
   }
@@ -312,9 +414,9 @@ public class ModGui
   public static void addBoxLabel(String prefix, String text, int y)
   {
     if (isSwitch()) {
-      LabyMod.getInstance().draw.drawCenteredString(prefix + text, LabyMod.getInstance().draw.getWidth() - 60, y);
+      getInstancedraw.drawCenteredString(prefix + text, getInstancedraw.getWidth() - 60, y);
     } else {
-      LabyMod.getInstance().draw.drawCenteredString(prefix + text, 60, y);
+      getInstancedraw.drawCenteredString(prefix + text, 60, y);
     }
     mainListNext();
   }
@@ -323,16 +425,16 @@ public class ModGui
   {
     if (isSwitch())
     {
-      LabyMod.getInstance().draw.drawCenteredString(prefix, LabyMod.getInstance().draw.getWidth() - 60 - 4, y);
+      getInstancedraw.drawCenteredString(prefix, getInstancedraw.getWidth() - 60 - 4, y);
       mainListNext();
-      LabyMod.getInstance().draw.drawCenteredString(text, LabyMod.getInstance().draw.getWidth() - 60 - 4, y + 10);
+      getInstancedraw.drawCenteredString(text, getInstancedraw.getWidth() - 60 - 4, y + 10);
       mainListNext();
     }
     else
     {
-      LabyMod.getInstance().draw.drawCenteredString(prefix, 64, y);
+      getInstancedraw.drawCenteredString(prefix, 64, y);
       mainListNext();
-      LabyMod.getInstance().draw.drawCenteredString(text, 64, y + 10);
+      getInstancedraw.drawCenteredString(text, 64, y + 10);
       mainListNext();
     }
   }
@@ -365,7 +467,7 @@ public class ModGui
   
   public static boolean isSwitch()
   {
-    return ConfigManager.settings.guiPositionRight.booleanValue();
+    return settingsguiPositionRight;
   }
   
   public static void drawEntityOnScreen(double x, double y, double size, pr entity)
@@ -378,11 +480,11 @@ public class ModGui
     bfl.b((float)x, (float)y, 50.0F);
     bfl.a((float)-size - 25.0F, (float)size + 25.0F, (float)size);
     bfl.b(180.0F, 0.0F, 0.0F, 1.0F);
-    float var6 = entity.aI;
-    float var7 = entity.y;
-    float var8 = entity.z;
-    float var9 = entity.aL;
-    float var10 = entity.aK;
+    float var6 = aI;
+    float var7 = y;
+    float var8 = z;
+    float var9 = aL;
+    float var10 = aK;
     bfl.b(135.0F, 0.0F, 1.0F, 0.0F);
     
     bfl.b(-135.0F, 0.0F, 1.0F, 0.0F);
@@ -392,11 +494,11 @@ public class ModGui
     var11.a(false);
     var11.a(entity, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F);
     var11.a(true);
-    entity.aI = var6;
-    entity.y = var7;
-    entity.z = var8;
-    entity.aL = var9;
-    entity.aK = var10;
+    aI = var6;
+    y = var7;
+    z = var8;
+    aL = var9;
+    aK = var10;
     bfl.F();
     avc.a();
     bfl.C();
@@ -407,24 +509,24 @@ public class ModGui
   
   public static void getMouseOver(float p_78473_1_)
   {
-    pk var2 = LabyMod.getInstance().mc.ac();
+    pk var2 = getInstancemc.ac();
     if (var2 != null) {
-      if (LabyMod.getInstance().mc.f != null)
+      if (getInstancemc.f != null)
       {
-        LabyMod.getInstance().mc.i = null;
+        getInstancemc.i = null;
         double var3 = 30.0D;
-        LabyMod.getInstance().mc.s = var2.a(var3, p_78473_1_);
+        getInstancemc.s = var2.a(var3, p_78473_1_);
         double var5 = var3;
         aui var7 = var2.d(p_78473_1_);
-        if (LabyMod.getInstance().mc.s != null) {
-          var5 = LabyMod.getInstance().mc.s.c.f(var7);
+        if (getInstancemc.s != null) {
+          var5 = getInstancemc.s.c.f(var7);
         }
         aui var8 = var2.d(p_78473_1_);
-        aui var9 = var7.b(var8.a * var3, var8.b * var3, var8.c * var3);
+        aui var9 = var7.b(a * var3, b * var3, c * var3);
         pointedEntity = null;
         aui var10 = null;
         float var11 = 1.0F;
-        List var12 = LabyMod.getInstance().mc.f.b(var2, var2.aR().a(var8.a * var3, var8.b * var3, var8.c * var3).b(var11, var11, var11));
+        List var12 = getInstancemc.f.b(var2, var2.aR().a(a * var3, b * var3, c * var3).b(var11, var11, var11));
         double var13 = var5;
         for (int var15 = 0; var15 < var12.size(); var15++)
         {
@@ -439,40 +541,45 @@ public class ModGui
               if ((0.0D < var13) || (var13 == 0.0D))
               {
                 pointedEntity = var16;
-                var10 = var19 == null ? var7 : var19.c;
+                var10 = var19 == null ? var7 : c;
                 var13 = 0.0D;
               }
             }
             else if (var19 != null)
             {
-              double var20 = var7.f(var19.c);
+              double var20 = var7.f(c);
               if ((var20 < var13) || (var13 == 0.0D)) {
-                if (var16 == var2.m)
+                if (var16 == m)
                 {
                   if (var13 == 0.0D)
                   {
                     pointedEntity = var16;
-                    var10 = var19.c;
+                    var10 = c;
                   }
                 }
                 else
                 {
                   pointedEntity = var16;
-                  var10 = var19.c;
+                  var10 = c;
                   var13 = var20;
                 }
               }
             }
           }
         }
-        if ((pointedEntity != null) && ((var13 < var5) || (LabyMod.getInstance().mc.s == null)))
+        if ((pointedEntity != null) && ((var13 < var5) || (getInstancemc.s == null)))
         {
-          LabyMod.getInstance().mc.s = new auh(pointedEntity, var10);
+          getInstancemc.s = new auh(pointedEntity, var10);
           if (((pointedEntity instanceof pr)) || ((pointedEntity instanceof uo))) {
-            LabyMod.getInstance().mc.i = pointedEntity;
+            getInstancemc.i = pointedEntity;
           }
         }
       }
     }
+  }
+  
+  public static String getDate()
+  {
+    return dateFormat.format(new Date());
   }
 }

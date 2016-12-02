@@ -8,11 +8,11 @@ class xx$2
   
   public boolean a(zx ☃)
   {
-    return (super.a(☃)) && (this.a.cO()) && (tp.a(☃.b()));
+    return (super.a(☃)) && (a.cO()) && (tp.a(☃.b()));
   }
   
   public boolean b()
   {
-    return this.a.cO();
+    return a.cO();
   }
 }

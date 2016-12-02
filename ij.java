@@ -10,8 +10,8 @@ public class ij
   
   public ij(int ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public void a(ic ☃)
@@ -22,24 +22,24 @@ public class ij
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.readByte();
-    this.b = ☃.readByte();
+    a = ☃.readByte();
+    b = ☃.readByte();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(this.a);
-    ☃.writeByte(this.b);
+    ☃.writeByte(a);
+    ☃.writeByte(b);
   }
   
   public int a()
   {
-    return this.a;
+    return a;
   }
   
   public int b()
   {
-    return this.b;
+    return b;
   }
 }

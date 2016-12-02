@@ -7,25 +7,25 @@ public class aet
   protected aet(int ☃)
   {
     super(☃);
-    this.as.A = 2;
-    this.as.B = 1;
-    this.as.D = 1;
-    this.as.E = 8;
-    this.as.F = 10;
-    this.as.J = 1;
-    this.as.z = 4;
-    this.as.I = 0;
-    this.as.H = 0;
-    this.as.C = 5;
+    as.A = 2;
+    as.B = 1;
+    as.D = 1;
+    as.E = 8;
+    as.F = 10;
+    as.J = 1;
+    as.z = 4;
+    as.I = 0;
+    as.H = 0;
+    as.C = 5;
     
-    this.ar = 14745518;
+    ar = 14745518;
     
-    this.at.add(new ady.c(wb.class, 1, 1, 1));
+    at.add(new ady.c(wb.class, 1, 1, 1));
   }
   
   public aoh a(Random ☃)
   {
-    return this.aC;
+    return aC;
   }
   
   public int b(cj ☃)

@@ -14,20 +14,20 @@ public class blz
   public blz(BufferedImage p_i1270_1_)
   {
     this(p_i1270_1_.getWidth(), p_i1270_1_.getHeight());
-    p_i1270_1_.getRGB(0, 0, p_i1270_1_.getWidth(), p_i1270_1_.getHeight(), this.f, 0, p_i1270_1_.getWidth());
+    p_i1270_1_.getRGB(0, 0, p_i1270_1_.getWidth(), p_i1270_1_.getHeight(), f, 0, p_i1270_1_.getWidth());
     d();
   }
   
   public blz(int p_i1271_1_, int p_i1271_2_)
   {
-    this.g = p_i1271_1_;
-    this.h = p_i1271_2_;
+    g = p_i1271_1_;
+    h = p_i1271_2_;
     
-    this.f = new int[p_i1271_1_ * p_i1271_2_ * 3];
+    f = new int[p_i1271_1_ * p_i1271_2_ * 3];
     if (Config.isShaders())
     {
       ShadersTex.initDynamicTexture(b(), p_i1271_1_, p_i1271_2_, this);
-      this.shadersInitialized = true;
+      shadersInitialized = true;
     }
     else
     {
@@ -43,21 +43,21 @@ public class blz
   {
     if (Config.isShaders())
     {
-      if (!this.shadersInitialized)
+      if (!shadersInitialized)
       {
-        ShadersTex.initDynamicTexture(b(), this.g, this.h, this);
-        this.shadersInitialized = true;
+        ShadersTex.initDynamicTexture(b(), g, h, this);
+        shadersInitialized = true;
       }
-      ShadersTex.updateDynamicTexture(b(), this.f, this.g, this.h, this);
+      ShadersTex.updateDynamicTexture(b(), f, g, h, this);
     }
     else
     {
-      bml.a(b(), this.f, this.g, this.h);
+      bml.a(b(), f, g, h);
     }
   }
   
   public int[] e()
   {
-    return this.f;
+    return f;
   }
 }

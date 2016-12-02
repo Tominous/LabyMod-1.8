@@ -18,12 +18,12 @@ public class bnb
   
   public bnb(bny ☃)
   {
-    this.c = ☃;
+    c = ☃;
   }
   
   public void a(bnk ☃)
   {
-    this.a.add(☃);
+    a.add(☃);
   }
   
   public Set<String> a()
@@ -36,9 +36,9 @@ public class bnb
   {
     bnk ☃ = null;
     jy ☃ = c(☃);
-    for (int ☃ = this.a.size() - 1; ☃ >= 0; ☃--)
+    for (int ☃ = a.size() - 1; ☃ >= 0; ☃--)
     {
-      bnk ☃ = (bnk)this.a.get(☃);
+      bnk ☃ = (bnk)a.get(☃);
       if ((☃ == null) && (☃.b(☃))) {
         ☃ = ☃;
       }
@@ -48,7 +48,7 @@ public class bnb
         if (☃ != null) {
           ☃ = a(☃, ☃);
         }
-        return new bno(☃.b(), ☃, a(☃, ☃), ☃, this.c);
+        return new bno(☃.b(), ☃, a(☃, ☃), ☃, c);
       }
     }
     throw new FileNotFoundException(☃.toString());
@@ -70,25 +70,25 @@ public class bnb
     
     public a(InputStream ☃, jy ☃, String ☃)
     {
-      this.a = ☃;
+      a = ☃;
       ByteArrayOutputStream ☃ = new ByteArrayOutputStream();
       new Exception().printStackTrace(new PrintStream(☃));
-      this.b = ("Leaked resource: '" + ☃ + "' loaded from pack: '" + ☃ + "'\n" + ☃.toString());
+      b = ("Leaked resource: '" + ☃ + "' loaded from pack: '" + ☃ + "'\n" + ☃.toString());
     }
     
     public void close()
       throws IOException
     {
-      this.a.close();
+      a.close();
       
-      this.c = true;
+      c = true;
     }
     
     protected void finalize()
       throws Throwable
     {
-      if (!this.c) {
-        bnb.b().warn(this.b);
+      if (!c) {
+        bnb.b().warn(b);
       }
       super.finalize();
     }
@@ -96,7 +96,7 @@ public class bnb
     public int read()
       throws IOException
     {
-      return this.a.read();
+      return a.read();
     }
   }
   
@@ -105,11 +105,11 @@ public class bnb
   {
     List<bnh> ☃ = Lists.newArrayList();
     jy ☃ = c(☃);
-    for (bnk ☃ : this.a) {
+    for (bnk ☃ : a) {
       if (☃.b(☃))
       {
         InputStream ☃ = ☃.b(☃) ? a(☃, ☃) : null;
-        ☃.add(new bno(☃.b(), ☃, a(☃, ☃), ☃, this.c));
+        ☃.add(new bno(☃.b(), ☃, a(☃, ☃), ☃, c));
       }
     }
     if (☃.isEmpty()) {

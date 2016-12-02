@@ -28,65 +28,65 @@ public class avw
   
   public avw(int ☃, avn ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    this.g = ☃;
-    this.h = ☃;
-    this.a = ☃;
-    this.f = ☃;
-    this.i = ☃;
-    this.j = ☃;
+    g = ☃;
+    h = ☃;
+    a = ☃;
+    f = ☃;
+    i = ☃;
+    j = ☃;
   }
   
   public void a(awg.b ☃)
   {
-    this.x = ☃;
+    x = ☃;
   }
   
   public void a()
   {
-    this.m += 1;
+    m += 1;
   }
   
   public void a(String ☃)
   {
-    if (!this.y.apply(☃)) {
+    if (!y.apply(☃)) {
       return;
     }
-    if (☃.length() > this.l) {
-      this.k = ☃.substring(0, this.l);
+    if (☃.length() > l) {
+      k = ☃.substring(0, l);
     } else {
-      this.k = ☃;
+      k = ☃;
     }
     f();
   }
   
   public String b()
   {
-    return this.k;
+    return k;
   }
   
   public String c()
   {
-    int ☃ = this.s < this.t ? this.s : this.t;
-    int ☃ = this.s < this.t ? this.t : this.s;
+    int ☃ = s < t ? s : t;
+    int ☃ = s < t ? t : s;
     
-    return this.k.substring(☃, ☃);
+    return k.substring(☃, ☃);
   }
   
   public void a(Predicate<String> ☃)
   {
-    this.y = ☃;
+    y = ☃;
   }
   
   public void b(String ☃)
   {
     String ☃ = "";
     String ☃ = f.a(☃);
-    int ☃ = this.s < this.t ? this.s : this.t;
-    int ☃ = this.s < this.t ? this.t : this.s;
-    int ☃ = this.l - this.k.length() - (☃ - ☃);
+    int ☃ = s < t ? s : t;
+    int ☃ = s < t ? t : s;
+    int ☃ = l - k.length() - (☃ - ☃);
     int ☃ = 0;
-    if (this.k.length() > 0) {
-      ☃ = ☃ + this.k.substring(0, ☃);
+    if (k.length() > 0) {
+      ☃ = ☃ + k.substring(0, ☃);
     }
     if (☃ < ☃.length())
     {
@@ -98,67 +98,67 @@ public class avw
       ☃ = ☃ + ☃;
       ☃ = ☃.length();
     }
-    if ((this.k.length() > 0) && (☃ < this.k.length())) {
-      ☃ = ☃ + this.k.substring(☃);
+    if ((k.length() > 0) && (☃ < k.length())) {
+      ☃ = ☃ + k.substring(☃);
     }
-    if (!this.y.apply(☃)) {
+    if (!y.apply(☃)) {
       return;
     }
-    this.k = ☃;
-    d(☃ - this.t + ☃);
-    if (this.x != null) {
-      this.x.a(this.g, this.k);
+    k = ☃;
+    d(☃ - t + ☃);
+    if (x != null) {
+      x.a(g, k);
     }
   }
   
   public void a(int ☃)
   {
-    if (this.k.length() == 0) {
+    if (k.length() == 0) {
       return;
     }
-    if (this.t != this.s)
+    if (t != s)
     {
       b("");
       return;
     }
-    b(c(☃) - this.s);
+    b(c(☃) - s);
   }
   
   public void b(int ☃)
   {
-    if (this.k.length() == 0) {
+    if (k.length() == 0) {
       return;
     }
-    if (this.t != this.s)
+    if (t != s)
     {
       b("");
       return;
     }
     boolean ☃ = ☃ < 0;
-    int ☃ = ☃ ? this.s + ☃ : this.s;
-    int ☃ = ☃ ? this.s : this.s + ☃;
+    int ☃ = ☃ ? s + ☃ : s;
+    int ☃ = ☃ ? s : s + ☃;
     String ☃ = "";
     if (☃ >= 0) {
-      ☃ = this.k.substring(0, ☃);
+      ☃ = k.substring(0, ☃);
     }
-    if (☃ < this.k.length()) {
-      ☃ = ☃ + this.k.substring(☃);
+    if (☃ < k.length()) {
+      ☃ = ☃ + k.substring(☃);
     }
-    if (!this.y.apply(☃)) {
+    if (!y.apply(☃)) {
       return;
     }
-    this.k = ☃;
+    k = ☃;
     if (☃) {
       d(☃);
     }
-    if (this.x != null) {
-      this.x.a(this.g, this.k);
+    if (x != null) {
+      x.a(g, k);
     }
   }
   
   public int d()
   {
-    return this.g;
+    return g;
   }
   
   public int c(int ☃)
@@ -180,20 +180,20 @@ public class avw
     {
       if (☃)
       {
-        while ((☃) && (☃ > 0) && (this.k.charAt(☃ - 1) == ' ')) {
+        while ((☃) && (☃ > 0) && (k.charAt(☃ - 1) == ' ')) {
           ☃--;
         }
-        while ((☃ > 0) && (this.k.charAt(☃ - 1) != ' ')) {
+        while ((☃ > 0) && (k.charAt(☃ - 1) != ' ')) {
           ☃--;
         }
       }
-      int ☃ = this.k.length();
+      int ☃ = k.length();
       
-      ☃ = this.k.indexOf(' ', ☃);
+      ☃ = k.indexOf(' ', ☃);
       if (☃ == -1) {
         ☃ = ☃;
       } else {
-        while ((☃) && (☃ < ☃) && (this.k.charAt(☃) == ' ')) {
+        while ((☃) && (☃ < ☃) && (k.charAt(☃) == ' ')) {
           ☃++;
         }
       }
@@ -203,17 +203,17 @@ public class avw
   
   public void d(int ☃)
   {
-    e(this.t + ☃);
+    e(t + ☃);
   }
   
   public void e(int ☃)
   {
-    this.s = ☃;
+    s = ☃;
     
-    int ☃ = this.k.length();
-    this.s = ns.a(this.s, 0, ☃);
+    int ☃ = k.length();
+    s = ns.a(s, 0, ☃);
     
-    i(this.s);
+    i(s);
   }
   
   public void e()
@@ -223,12 +223,12 @@ public class avw
   
   public void f()
   {
-    e(this.k.length());
+    e(k.length());
   }
   
   public boolean a(char ☃, int ☃)
   {
-    if (!this.p) {
+    if (!p) {
       return false;
     }
     if (axu.g(☃))
@@ -244,7 +244,7 @@ public class avw
     }
     if (axu.e(☃))
     {
-      if (this.q) {
+      if (q) {
         b(axu.o());
       }
       return true;
@@ -252,7 +252,7 @@ public class avw
     if (axu.d(☃))
     {
       axu.e(c());
-      if (this.q) {
+      if (q) {
         b("");
       }
       return true;
@@ -292,22 +292,22 @@ public class avw
     case 14: 
       if (axu.q())
       {
-        if (this.q) {
+        if (q) {
           a(-1);
         }
       }
-      else if (this.q) {
+      else if (q) {
         b(-1);
       }
       return true;
     case 211: 
       if (axu.q())
       {
-        if (this.q) {
+        if (q) {
           a(1);
         }
       }
-      else if (this.q) {
+      else if (q) {
         b(1);
       }
       return true;
@@ -320,7 +320,7 @@ public class avw
       return true;
     case 207: 
       if (axu.r()) {
-        i(this.k.length());
+        i(k.length());
       } else {
         f();
       }
@@ -328,7 +328,7 @@ public class avw
     }
     if (f.a(☃))
     {
-      if (this.q) {
+      if (q) {
         b(Character.toString(☃));
       }
       return true;
@@ -338,18 +338,18 @@ public class avw
   
   public void a(int ☃, int ☃, int ☃)
   {
-    boolean ☃ = (☃ >= this.a) && (☃ < this.a + this.i) && (☃ >= this.f) && (☃ < this.f + this.j);
-    if (this.o) {
+    boolean ☃ = (☃ >= a) && (☃ < a + i) && (☃ >= f) && (☃ < f + j);
+    if (o) {
       b(☃);
     }
-    if ((this.p) && (☃) && (☃ == 0))
+    if ((p) && (☃) && (☃ == 0))
     {
-      int ☃ = ☃ - this.a;
-      if (this.n) {
+      int ☃ = ☃ - a;
+      if (n) {
         ☃ -= 4;
       }
-      String ☃ = this.h.a(this.k.substring(this.r), p());
-      e(this.h.a(☃, ☃).length() + this.r);
+      String ☃ = h.a(k.substring(r), p());
+      e(h.a(☃, ☃).length() + r);
     }
   }
   
@@ -360,17 +360,17 @@ public class avw
     }
     if (j())
     {
-      a(this.a - 1, this.f - 1, this.a + this.i + 1, this.f + this.j + 1, -6250336);
-      a(this.a, this.f, this.a + this.i, this.f + this.j, -16777216);
+      a(a - 1, f - 1, a + i + 1, f + j + 1, -6250336);
+      a(a, f, a + i, f + j, -16777216);
     }
-    int ☃ = this.q ? this.u : this.v;
-    int ☃ = this.s - this.r;
-    int ☃ = this.t - this.r;
-    String ☃ = this.h.a(this.k.substring(this.r), p());
+    int ☃ = q ? u : v;
+    int ☃ = s - r;
+    int ☃ = t - r;
+    String ☃ = h.a(k.substring(r), p());
     boolean ☃ = (☃ >= 0) && (☃ <= ☃.length());
-    boolean ☃ = (this.p) && (this.m / 6 % 2 == 0) && (☃);
-    int ☃ = this.n ? this.a + 4 : this.a;
-    int ☃ = this.n ? this.f + (this.j - 8) / 2 : this.f;
+    boolean ☃ = (p) && (m / 6 % 2 == 0) && (☃);
+    int ☃ = n ? a + 4 : a;
+    int ☃ = n ? f + (j - 8) / 2 : f;
     int ☃ = ☃;
     if (☃ > ☃.length()) {
       ☃ = ☃.length();
@@ -378,13 +378,13 @@ public class avw
     if (☃.length() > 0)
     {
       String ☃ = ☃ ? ☃.substring(0, ☃) : ☃;
-      ☃ = this.h.a(☃, ☃, ☃, ☃);
+      ☃ = h.a(☃, ☃, ☃, ☃);
     }
-    boolean ☃ = (this.s < this.k.length()) || (this.k.length() >= h());
+    boolean ☃ = (s < k.length()) || (k.length() >= h());
     int ☃ = ☃;
     if (!☃)
     {
-      ☃ = ☃ > 0 ? ☃ + this.i : ☃;
+      ☃ = ☃ > 0 ? ☃ + i : ☃;
     }
     else if (☃)
     {
@@ -392,19 +392,19 @@ public class avw
       ☃--;
     }
     if ((☃.length() > 0) && (☃) && (☃ < ☃.length())) {
-      ☃ = this.h.a(☃.substring(☃), ☃, ☃, ☃);
+      ☃ = h.a(☃.substring(☃), ☃, ☃, ☃);
     }
     if (☃) {
       if (☃) {
-        avp.a(☃, ☃ - 1, ☃ + 1, ☃ + 1 + this.h.a, -3092272);
+        avp.a(☃, ☃ - 1, ☃ + 1, ☃ + 1 + h.a, -3092272);
       } else {
-        this.h.a("_", ☃, ☃, ☃);
+        h.a("_", ☃, ☃, ☃);
       }
     }
     if (☃ != ☃)
     {
-      int ☃ = ☃ + this.h.a(☃.substring(0, ☃));
-      c(☃, ☃ - 1, ☃ - 1, ☃ + 1 + this.h.a);
+      int ☃ = ☃ + h.a(☃.substring(0, ☃));
+      c(☃, ☃ - 1, ☃ - 1, ☃ + 1 + h.a);
     }
   }
   
@@ -422,11 +422,11 @@ public class avw
       ☃ = ☃;
       ☃ = ☃;
     }
-    if (☃ > this.a + this.i) {
-      ☃ = this.a + this.i;
+    if (☃ > a + i) {
+      ☃ = a + i;
     }
-    if (☃ > this.a + this.i) {
-      ☃ = this.a + this.i;
+    if (☃ > a + i) {
+      ☃ = a + i;
     }
     bfx ☃ = bfx.a();
     bfd ☃ = ☃.c();
@@ -449,112 +449,112 @@ public class avw
   
   public void f(int ☃)
   {
-    this.l = ☃;
-    if (this.k.length() > ☃) {
-      this.k = this.k.substring(0, ☃);
+    l = ☃;
+    if (k.length() > ☃) {
+      k = k.substring(0, ☃);
     }
   }
   
   public int h()
   {
-    return this.l;
+    return l;
   }
   
   public int i()
   {
-    return this.s;
+    return s;
   }
   
   public boolean j()
   {
-    return this.n;
+    return n;
   }
   
   public void a(boolean ☃)
   {
-    this.n = ☃;
+    n = ☃;
   }
   
   public void g(int ☃)
   {
-    this.u = ☃;
+    u = ☃;
   }
   
   public void h(int ☃)
   {
-    this.v = ☃;
+    v = ☃;
   }
   
   public void b(boolean ☃)
   {
-    if ((☃) && (!this.p)) {
-      this.m = 0;
+    if ((☃) && (!p)) {
+      m = 0;
     }
-    this.p = ☃;
+    p = ☃;
   }
   
   public boolean m()
   {
-    return this.p;
+    return p;
   }
   
   public void c(boolean ☃)
   {
-    this.q = ☃;
+    q = ☃;
   }
   
   public int o()
   {
-    return this.t;
+    return t;
   }
   
   public int p()
   {
-    return j() ? this.i - 8 : this.i;
+    return j() ? i - 8 : i;
   }
   
   public void i(int ☃)
   {
-    int ☃ = this.k.length();
+    int ☃ = k.length();
     if (☃ > ☃) {
       ☃ = ☃;
     }
     if (☃ < 0) {
       ☃ = 0;
     }
-    this.t = ☃;
-    if (this.h != null)
+    t = ☃;
+    if (h != null)
     {
-      if (this.r > ☃) {
-        this.r = ☃;
+      if (r > ☃) {
+        r = ☃;
       }
       int ☃ = p();
-      String ☃ = this.h.a(this.k.substring(this.r), ☃);
-      int ☃ = ☃.length() + this.r;
-      if (☃ == this.r) {
-        this.r -= this.h.a(this.k, ☃, true).length();
+      String ☃ = h.a(k.substring(r), ☃);
+      int ☃ = ☃.length() + r;
+      if (☃ == r) {
+        r -= h.a(k, ☃, true).length();
       }
       if (☃ > ☃) {
-        this.r += ☃ - ☃;
-      } else if (☃ <= this.r) {
-        this.r -= this.r - ☃;
+        r += ☃ - ☃;
+      } else if (☃ <= r) {
+        r -= r - ☃;
       }
-      this.r = ns.a(this.r, 0, ☃);
+      r = ns.a(r, 0, ☃);
     }
   }
   
   public void d(boolean ☃)
   {
-    this.o = ☃;
+    o = ☃;
   }
   
   public boolean r()
   {
-    return this.w;
+    return w;
   }
   
   public void e(boolean ☃)
   {
-    this.w = ☃;
+    w = ☃;
   }
 }

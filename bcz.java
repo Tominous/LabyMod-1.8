@@ -14,9 +14,9 @@ public class bcz
   
   public bcz(adm ☃)
   {
-    this.b = new amx(☃, 0, 0);
+    b = new amx(☃, 0, 0);
     
-    this.e = ☃;
+    e = ☃;
   }
   
   public boolean a(int ☃, int ☃)
@@ -30,15 +30,15 @@ public class bcz
     if (!☃.f()) {
       ☃.d();
     }
-    this.c.d(adg.a(☃, ☃));
-    this.d.remove(☃);
+    c.d(adg.a(☃, ☃));
+    d.remove(☃);
   }
   
   public amy c(int ☃, int ☃)
   {
-    amy ☃ = new amy(this.e, ☃, ☃);
-    this.c.a(adg.a(☃, ☃), ☃);
-    this.d.add(☃);
+    amy ☃ = new amy(e, ☃, ☃);
+    c.a(adg.a(☃, ☃), ☃);
+    d.add(☃);
     ☃.c(true);
     
     return ☃;
@@ -46,9 +46,9 @@ public class bcz
   
   public amy d(int ☃, int ☃)
   {
-    amy ☃ = (amy)this.c.a(adg.a(☃, ☃));
+    amy ☃ = (amy)c.a(adg.a(☃, ☃));
     if (☃ == null) {
-      return this.b;
+      return b;
     }
     return ☃;
   }
@@ -63,7 +63,7 @@ public class bcz
   public boolean d()
   {
     long ☃ = System.currentTimeMillis();
-    for (amy ☃ : this.d) {
+    for (amy ☃ : d) {
       ☃.b(System.currentTimeMillis() - ☃ > 5L);
     }
     if (System.currentTimeMillis() - ☃ > 100L) {
@@ -86,7 +86,7 @@ public class bcz
   
   public String f()
   {
-    return "MultiplayerChunkCache: " + this.c.a() + ", " + this.d.size();
+    return "MultiplayerChunkCache: " + c.a() + ", " + d.size();
   }
   
   public List<ady.c> a(pt ☃, cj ☃)
@@ -101,7 +101,7 @@ public class bcz
   
   public int g()
   {
-    return this.d.size();
+    return d.size();
   }
   
   public void a(amy ☃, int ☃, int ☃) {}

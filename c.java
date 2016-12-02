@@ -11,8 +11,8 @@ public class c
   
   public c(b ☃, String ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public static String a(double ☃, double ☃, double ☃)
@@ -88,7 +88,7 @@ public class c
   
   public void a(String ☃, Object ☃)
   {
-    this.c.add(new c.a(☃, ☃));
+    c.add(new c.a(☃, ☃));
   }
   
   public void a(String ☃, Throwable ☃)
@@ -102,53 +102,53 @@ public class c
     if (☃.length <= 0) {
       return 0;
     }
-    this.d = new StackTraceElement[☃.length - 3 - ☃];
-    System.arraycopy(☃, 3 + ☃, this.d, 0, this.d.length);
-    return this.d.length;
+    d = new StackTraceElement[☃.length - 3 - ☃];
+    System.arraycopy(☃, 3 + ☃, d, 0, d.length);
+    return d.length;
   }
   
   public boolean a(StackTraceElement ☃, StackTraceElement ☃)
   {
-    if ((this.d.length == 0) || (☃ == null)) {
+    if ((d.length == 0) || (☃ == null)) {
       return false;
     }
-    StackTraceElement ☃ = this.d[0];
+    StackTraceElement ☃ = d[0];
     if ((☃.isNativeMethod() != ☃.isNativeMethod()) || (!☃.getClassName().equals(☃.getClassName())) || (!☃.getFileName().equals(☃.getFileName())) || (!☃.getMethodName().equals(☃.getMethodName()))) {
       return false;
     }
-    if ((☃ != null ? 1 : 0) != (this.d.length > 1 ? 1 : 0)) {
+    if ((☃ != null ? 1 : 0) != (d.length > 1 ? 1 : 0)) {
       return false;
     }
-    if ((☃ != null) && (!this.d[1].equals(☃))) {
+    if ((☃ != null) && (!d[1].equals(☃))) {
       return false;
     }
-    this.d[0] = ☃;
+    d[0] = ☃;
     
     return true;
   }
   
   public void b(int ☃)
   {
-    StackTraceElement[] ☃ = new StackTraceElement[this.d.length - ☃];
-    System.arraycopy(this.d, 0, ☃, 0, ☃.length);
-    this.d = ☃;
+    StackTraceElement[] ☃ = new StackTraceElement[d.length - ☃];
+    System.arraycopy(d, 0, ☃, 0, ☃.length);
+    d = ☃;
   }
   
   public void a(StringBuilder ☃)
   {
-    ☃.append("-- ").append(this.b).append(" --\n");
+    ☃.append("-- ").append(b).append(" --\n");
     ☃.append("Details:");
-    for (c.a ☃ : this.c)
+    for (c.a ☃ : c)
     {
       ☃.append("\n\t");
       ☃.append(☃.a());
       ☃.append(": ");
       ☃.append(☃.b());
     }
-    if ((this.d != null) && (this.d.length > 0))
+    if ((d != null) && (d.length > 0))
     {
       ☃.append("\nStacktrace:");
-      for (StackTraceElement ☃ : this.d)
+      for (StackTraceElement ☃ : d)
       {
         ☃.append("\n\tat ");
         ☃.append(☃.toString());
@@ -158,7 +158,7 @@ public class c
   
   public StackTraceElement[] a()
   {
-    return this.d;
+    return d;
   }
   
   public static void a(c ☃, cj ☃, final afh ☃, int ☃)
@@ -171,10 +171,10 @@ public class c
       {
         try
         {
-          return String.format("ID #%d (%s // %s)", new Object[] { Integer.valueOf(this.a), ☃.a(), ☃.getClass().getCanonicalName() });
+          return String.format("ID #%d (%s // %s)", new Object[] { Integer.valueOf(a), ☃.a(), ☃.getClass().getCanonicalName() });
         }
         catch (Throwable ☃) {}
-        return "ID #" + this.a;
+        return "ID #" + a;
       }
     });
     ☃.a("Block data value", new Callable()
@@ -182,12 +182,12 @@ public class c
       public String a()
         throws Exception
       {
-        if (this.a < 0) {
-          return "Unknown? (Got " + this.a + ")";
+        if (a < 0) {
+          return "Unknown? (Got " + a + ")";
         }
-        String ☃ = String.format("%4s", new Object[] { Integer.toBinaryString(this.a) }).replace(" ", "0");
+        String ☃ = String.format("%4s", new Object[] { Integer.toBinaryString(a) }).replace(" ", "0");
         
-        return String.format("%1$d / 0x%1$X / 0b%2$s", new Object[] { Integer.valueOf(this.a), ☃ });
+        return String.format("%1$d / 0x%1$X / 0b%2$s", new Object[] { Integer.valueOf(a), ☃ });
       }
     });
     ☃.a("Block location", new Callable()
@@ -195,7 +195,7 @@ public class c
       public String a()
         throws Exception
       {
-        return c.a(this.a);
+        return c.a(a);
       }
     });
   }
@@ -207,7 +207,7 @@ public class c
       public String a()
         throws Exception
       {
-        return this.a.toString();
+        return a.toString();
       }
     });
     ☃.a("Block location", new Callable()
@@ -215,7 +215,7 @@ public class c
       public String a()
         throws Exception
       {
-        return c.a(this.a);
+        return c.a(a);
       }
     });
   }
@@ -227,30 +227,30 @@ public class c
     
     public a(String ☃, Object ☃)
     {
-      this.a = ☃;
+      a = ☃;
       if (☃ == null)
       {
-        this.b = "~~NULL~~";
+        b = "~~NULL~~";
       }
       else if ((☃ instanceof Throwable))
       {
         Throwable ☃ = (Throwable)☃;
-        this.b = ("~~ERROR~~ " + ☃.getClass().getSimpleName() + ": " + ☃.getMessage());
+        b = ("~~ERROR~~ " + ☃.getClass().getSimpleName() + ": " + ☃.getMessage());
       }
       else
       {
-        this.b = ☃.toString();
+        b = ☃.toString();
       }
     }
     
     public String a()
     {
-      return this.a;
+      return a;
     }
     
     public String b()
     {
-      return this.b;
+      return b;
     }
   }
 }

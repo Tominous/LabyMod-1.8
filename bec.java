@@ -20,13 +20,13 @@ public class bec
   
   public bec(adm worldIn, bmj p_i1220_2_)
   {
-    this.a = worldIn;
-    this.e = p_i1220_2_;
+    a = worldIn;
+    e = p_i1220_2_;
     for (int var3 = 0; var3 < 4; var3++)
     {
-      this.c[var3] = new List[2];
+      c[var3] = new List[2];
       for (int var4 = 0; var4 < 2; var4++) {
-        this.c[var3][var4] = Lists.newArrayList();
+        c[var3][var4] = Lists.newArrayList();
       }
     }
     c();
@@ -79,20 +79,20 @@ public class bec
   
   public void a(int p_178929_1_, bed p_178929_2_)
   {
-    this.g.put(Integer.valueOf(p_178929_1_), p_178929_2_);
+    g.put(Integer.valueOf(p_178929_1_), p_178929_2_);
   }
   
   public void a(pk p_178926_1_, cy p_178926_2_)
   {
-    this.d.add(new bep(this.a, p_178926_1_, p_178926_2_));
+    d.add(new bep(a, p_178926_1_, p_178926_2_));
   }
   
   public beb a(int p_178927_1_, double p_178927_2_, double p_178927_4_, double p_178927_6_, double p_178927_8_, double p_178927_10_, double p_178927_12_, int... p_178927_14_)
   {
-    bed var15 = (bed)this.g.get(Integer.valueOf(p_178927_1_));
+    bed var15 = (bed)g.get(Integer.valueOf(p_178927_1_));
     if (var15 != null)
     {
-      beb var16 = var15.a(p_178927_1_, this.a, p_178927_2_, p_178927_4_, p_178927_6_, p_178927_8_, p_178927_10_, p_178927_12_, p_178927_14_);
+      beb var16 = var15.a(p_178927_1_, a, p_178927_2_, p_178927_4_, p_178927_6_, p_178927_8_, p_178927_10_, p_178927_12_, p_178927_14_);
       if (var16 != null)
       {
         a(var16);
@@ -112,10 +112,10 @@ public class bec
     }
     int var2 = p_78873_1_.a();
     int var3 = p_78873_1_.j() != 1.0F ? 0 : 1;
-    if (this.c[var2][var3].size() >= 4000) {
-      this.c[var2][var3].remove(0);
+    if (c[var2][var3].size() >= 4000) {
+      c[var2][var3].remove(0);
     }
-    this.c[var2][var3].add(p_78873_1_);
+    c[var2][var3].add(p_78873_1_);
   }
   
   public void a()
@@ -124,22 +124,22 @@ public class bec
       a(var1);
     }
     ArrayList var4 = Lists.newArrayList();
-    Iterator var2 = this.d.iterator();
+    Iterator var2 = d.iterator();
     while (var2.hasNext())
     {
       bep var3 = (bep)var2.next();
       var3.t_();
-      if (var3.I) {
+      if (I) {
         var4.add(var3);
       }
     }
-    this.d.removeAll(var4);
+    d.removeAll(var4);
   }
   
   private void a(int p_178922_1_)
   {
     for (int var2 = 0; var2 < 2; var2++) {
-      a(this.c[p_178922_1_][var2]);
+      a(c[p_178922_1_][var2]);
     }
   }
   
@@ -150,7 +150,7 @@ public class bec
     {
       beb var4 = (beb)p_178925_1_.get(var3);
       d(var4);
-      if (var4.I) {
+      if (I) {
         var2.add(var4);
       }
     }
@@ -199,9 +199,9 @@ public class bec
     float var5 = auz.e();
     float var6 = auz.f();
     float var7 = auz.c();
-    beb.aw = p_78874_1_.P + (p_78874_1_.s - p_78874_1_.P) * partialTicks;
-    beb.ax = p_78874_1_.Q + (p_78874_1_.t - p_78874_1_.Q) * partialTicks;
-    beb.ay = p_78874_1_.R + (p_78874_1_.u - p_78874_1_.R) * partialTicks;
+    beb.aw = P + (s - P) * partialTicks;
+    beb.ax = Q + (t - Q) * partialTicks;
+    beb.ay = R + (u - R) * partialTicks;
     bfl.l();
     bfl.b(770, 771);
     bfl.a(516, 0.003921569F);
@@ -209,7 +209,7 @@ public class bec
     {
       final int var8 = var8_nf;
       for (int var9 = 0; var9 < 2; var9++) {
-        if (!this.c[var8][var9].isEmpty())
+        if (!c[var8][var9].isEmpty())
         {
           switch (var9)
           {
@@ -223,18 +223,18 @@ public class bec
           {
           case 0: 
           default: 
-            this.e.a(b);
+            e.a(b);
             break;
           case 1: 
-            this.e.a(bmh.g);
+            e.a(bmh.g);
           }
           bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
           bfx var10 = bfx.a();
           bfd var11 = var10.c();
           var11.a(7, bms.d);
-          for (int var12 = 0; var12 < this.c[var8][var9].size(); var12++)
+          for (int var12 = 0; var12 < c[var8][var9].size(); var12++)
           {
-            final beb var13 = (beb)this.c[var8][var9].get(var12);
+            final beb var13 = (beb)c[var8][var9].get(var12);
             try
             {
               var13.a(var11, p_78874_1_, partialTicks, var3, var7, var4, var5, var6);
@@ -278,14 +278,14 @@ public class bec
   public void b(pk p_78872_1_, float p_78872_2_)
   {
     float var3 = 0.017453292F;
-    float var4 = ns.b(p_78872_1_.y * 0.017453292F);
-    float var5 = ns.a(p_78872_1_.y * 0.017453292F);
-    float var6 = -var5 * ns.a(p_78872_1_.z * 0.017453292F);
-    float var7 = var4 * ns.a(p_78872_1_.z * 0.017453292F);
-    float var8 = ns.b(p_78872_1_.z * 0.017453292F);
+    float var4 = ns.b(y * 0.017453292F);
+    float var5 = ns.a(y * 0.017453292F);
+    float var6 = -var5 * ns.a(z * 0.017453292F);
+    float var7 = var4 * ns.a(z * 0.017453292F);
+    float var8 = ns.b(z * 0.017453292F);
     for (int var9 = 0; var9 < 2; var9++)
     {
-      List var10 = this.c[3][var9];
+      List var10 = c[3][var9];
       if (!var10.isEmpty())
       {
         bfx var11 = bfx.a();
@@ -301,13 +301,13 @@ public class bec
   
   public void a(adm worldIn)
   {
-    this.a = worldIn;
+    a = worldIn;
     for (int var2 = 0; var2 < 4; var2++) {
       for (int var3 = 0; var3 < 2; var3++) {
-        this.c[var2][var3].clear();
+        c[var2][var3].clear();
       }
     }
-    this.d.clear();
+    d.clear();
   }
   
   public void a(cj p_180533_1_, alz p_180533_2_)
@@ -317,9 +317,9 @@ public class bec
     if ((Reflector.ForgeBlock_addDestroyEffects.exists()) && (Reflector.ForgeBlock_isAir.exists()))
     {
       afh block = p_180533_2_.c();
-      boolean forgeIsAir = Reflector.callBoolean(block, Reflector.ForgeBlock_isAir, new Object[] { this.a, p_180533_1_ });
-      if (!Reflector.callBoolean(block, Reflector.ForgeBlock_isAir, new Object[] { this.a, p_180533_1_ })) {}
-      notAir = !Reflector.callBoolean(block, Reflector.ForgeBlock_addDestroyEffects, new Object[] { this.a, p_180533_1_, this });
+      boolean forgeIsAir = Reflector.callBoolean(block, Reflector.ForgeBlock_isAir, new Object[] { a, p_180533_1_ });
+      if (!Reflector.callBoolean(block, Reflector.ForgeBlock_isAir, new Object[] { a, p_180533_1_ })) {}
+      notAir = !Reflector.callBoolean(block, Reflector.ForgeBlock_addDestroyEffects, new Object[] { a, p_180533_1_, this });
     }
     else
     {
@@ -327,7 +327,7 @@ public class bec
     }
     if (notAir)
     {
-      p_180533_2_ = p_180533_2_.c().a(p_180533_2_, this.a, p_180533_1_);
+      p_180533_2_ = p_180533_2_.c().a(p_180533_2_, a, p_180533_1_);
       byte var3 = 4;
       for (int var4 = 0; var4 < var3; var4++) {
         for (int var5 = 0; var5 < var3; var5++) {
@@ -336,7 +336,7 @@ public class bec
             double var7 = p_180533_1_.n() + (var4 + 0.5D) / var3;
             double var9 = p_180533_1_.o() + (var5 + 0.5D) / var3;
             double var11 = p_180533_1_.p() + (var6 + 0.5D) / var3;
-            a(new beo(this.a, var7, var9, var11, var7 - p_180533_1_.n() - 0.5D, var9 - p_180533_1_.o() - 0.5D, var11 - p_180533_1_.p() - 0.5D, p_180533_2_).a(p_180533_1_));
+            a(new beo(a, var7, var9, var11, var7 - p_180533_1_.n() - 0.5D, var9 - p_180533_1_.o() - 0.5D, var11 - p_180533_1_.p() - 0.5D, p_180533_2_).a(p_180533_1_));
           }
         }
       }
@@ -345,7 +345,7 @@ public class bec
   
   public void a(cj p_180532_1_, cq p_180532_2_)
   {
-    alz var3 = this.a.p(p_180532_1_);
+    alz var3 = a.p(p_180532_1_);
     afh var4 = var3.c();
     if (var4.b() != -1)
     {
@@ -353,9 +353,9 @@ public class bec
       int var6 = p_180532_1_.o();
       int var7 = p_180532_1_.p();
       float var8 = 0.1F;
-      double var9 = var5 + this.f.nextDouble() * (var4.C() - var4.B() - var8 * 2.0F) + var8 + var4.B();
-      double var11 = var6 + this.f.nextDouble() * (var4.E() - var4.D() - var8 * 2.0F) + var8 + var4.D();
-      double var13 = var7 + this.f.nextDouble() * (var4.G() - var4.F() - var8 * 2.0F) + var8 + var4.F();
+      double var9 = var5 + f.nextDouble() * (var4.C() - var4.B() - var8 * 2.0F) + var8 + var4.B();
+      double var11 = var6 + f.nextDouble() * (var4.E() - var4.D() - var8 * 2.0F) + var8 + var4.D();
+      double var13 = var7 + f.nextDouble() * (var4.G() - var4.F() - var8 * 2.0F) + var8 + var4.F();
       if (p_180532_2_ == cq.a) {
         var11 = var6 + var4.D() - var8;
       }
@@ -374,7 +374,7 @@ public class bec
       if (p_180532_2_ == cq.f) {
         var9 = var5 + var4.C() + var8;
       }
-      a(new beo(this.a, var9, var11, var13, 0.0D, 0.0D, 0.0D, var3).a(p_180532_1_).a(0.2F).h(0.6F));
+      a(new beo(a, var9, var11, var13, 0.0D, 0.0D, 0.0D, var3).a(p_180532_1_).a(0.2F).h(0.6F));
     }
   }
   
@@ -391,10 +391,10 @@ public class bec
   private void a(beb p_178924_1_, int p_178924_2_, int p_178924_3_)
   {
     for (int var4 = 0; var4 < 4; var4++) {
-      if (this.c[var4][p_178924_2_].contains(p_178924_1_))
+      if (c[var4][p_178924_2_].contains(p_178924_1_))
       {
-        this.c[var4][p_178924_2_].remove(p_178924_1_);
-        this.c[var4][p_178924_3_].add(p_178924_1_);
+        c[var4][p_178924_2_].remove(p_178924_1_);
+        c[var4][p_178924_3_].add(p_178924_1_);
       }
     }
   }
@@ -404,7 +404,7 @@ public class bec
     int var1 = 0;
     for (int var2 = 0; var2 < 4; var2++) {
       for (int var3 = 0; var3 < 2; var3++) {
-        var1 += this.c[var2][var3].size();
+        var1 += c[var2][var3].size();
       }
     }
     return "" + var1;
@@ -412,11 +412,11 @@ public class bec
   
   public void addBlockHitEffects(cj pos, auh target)
   {
-    afh block = this.a.p(pos).c();
+    afh block = a.p(pos).c();
     
-    boolean blockAddHitEffects = Reflector.callBoolean(block, Reflector.ForgeBlock_addHitEffects, new Object[] { this.a, target, this });
+    boolean blockAddHitEffects = Reflector.callBoolean(block, Reflector.ForgeBlock_addHitEffects, new Object[] { a, target, this });
     if ((block != null) && (!blockAddHitEffects)) {
-      a(pos, target.b);
+      a(pos, b);
     }
   }
 }

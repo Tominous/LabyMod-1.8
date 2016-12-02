@@ -15,28 +15,28 @@ public class bjh
   
   public bjh(bmj p_i46165_1_, bou p_i46165_2_)
   {
-    this.e = p_i46165_1_;
+    e = p_i46165_1_;
     if (Reflector.ItemModelMesherForge_Constructor.exists()) {
-      this.d = ((bfo)Reflector.newInstance(Reflector.ItemModelMesherForge_Constructor, new Object[] { p_i46165_2_ }));
+      d = ((bfo)Reflector.newInstance(Reflector.ItemModelMesherForge_Constructor, new Object[] { p_i46165_2_ }));
     } else {
-      this.d = new bfo(p_i46165_2_);
+      d = new bfo(p_i46165_2_);
     }
     b();
   }
   
   public void a(boolean p_175039_1_)
   {
-    this.c = p_175039_1_;
+    c = p_175039_1_;
   }
   
   public bfo a()
   {
-    return this.d;
+    return d;
   }
   
   protected void a(zw p_175048_1_, int p_175048_2_, String p_175048_3_)
   {
-    this.d.a(p_175048_1_, p_175048_2_, new bov(p_175048_3_, "inventory"));
+    d.a(p_175048_1_, p_175048_2_, new bov(p_175048_3_, "inventory"));
   }
   
   protected void a(afh p_175029_1_, int p_175029_2_, String p_175029_3_)
@@ -111,7 +111,7 @@ public class bjh
       else
       {
         if (Config.isCustomItems()) {
-          p_180454_2_ = CustomItems.getCustomItemModel(p_180454_1_, p_180454_2_, this.modelLocation);
+          p_180454_2_ = CustomItems.getCustomItemModel(p_180454_1_, p_180454_2_, modelLocation);
         }
         bfl.b(-0.5F, -0.5F, -0.5F);
         a(p_180454_2_, p_180454_1_);
@@ -131,7 +131,7 @@ public class bjh
     bfl.c(514);
     bfl.f();
     bfl.b(768, 1);
-    this.e.a(b);
+    e.a(b);
     bfl.n(5890);
     bfl.E();
     bfl.a(8.0F, 8.0F, 8.0F);
@@ -152,7 +152,7 @@ public class bjh
     bfl.e();
     bfl.c(515);
     bfl.a(true);
-    this.e.a(bmh.g);
+    e.a(bmh.g);
   }
   
   private void a(bfd p_175038_1_, bgg p_175038_2_)
@@ -210,13 +210,13 @@ public class bjh
   
   public boolean a(zx p_175050_1_)
   {
-    boq var2 = this.d.a(p_175050_1_);
+    boq var2 = d.a(p_175050_1_);
     return var2 == null ? false : var2.c();
   }
   
   private void b(zx p_175046_1_)
   {
-    boq var2 = this.d.a(p_175046_1_);
+    boq var2 = d.a(p_175046_1_);
     zw var3 = p_175046_1_.b();
     if (var3 != null)
     {
@@ -232,7 +232,7 @@ public class bjh
   {
     if (p_500168_1_ != null)
     {
-      boq var3 = this.d.a(p_500168_1_);
+      boq var3 = d.a(p_500168_1_);
       a(p_500168_1_, var3, p_500168_2_);
     }
   }
@@ -241,13 +241,13 @@ public class bjh
   {
     if ((p_175049_1_ != null) && (p_175049_2_ != null))
     {
-      boq var4 = this.d.a(p_175049_1_);
+      boq var4 = d.a(p_175049_1_);
       if ((p_175049_2_ instanceof wn))
       {
         wn var5 = (wn)p_175049_2_;
         zw var6 = p_175049_1_.b();
         bov var7 = null;
-        if ((var6 == zy.aR) && (var5.bG != null))
+        if ((var6 == zy.aR) && (bG != null))
         {
           var7 = new bov("fishing_rod_cast", "inventory");
         }
@@ -266,21 +266,21 @@ public class bjh
         {
           var7 = (bov)Reflector.call(var6, Reflector.ForgeItem_getModel, new Object[] { p_175049_1_, var5, Integer.valueOf(var5.bR()) });
         }
-        this.modelLocation = var7;
+        modelLocation = var7;
         if (var7 != null) {
-          var4 = this.d.a().a(var7);
+          var4 = d.a().a(var7);
         }
       }
       a(p_175049_1_, var4, p_175049_3_);
       
-      this.modelLocation = null;
+      modelLocation = null;
     }
   }
   
   protected void a(zx p_175040_1_, boq p_175040_2_, bgr.b p_175040_3_)
   {
-    this.e.a(bmh.g);
-    this.e.b(bmh.g).b(false, false);
+    e.a(bmh.g);
+    e.b(bmh.g).b(false, false);
     b(p_175040_1_);
     bfl.B();
     bfl.a(516, 0.1F);
@@ -304,21 +304,21 @@ public class bjh
     bfl.F();
     bfl.C();
     bfl.k();
-    this.e.a(bmh.g);
-    this.e.b(bmh.g).a();
+    e.a(bmh.g);
+    e.b(bmh.g).a();
   }
   
   private boolean a(bgq p_500169_1_)
   {
-    return (p_500169_1_.d.x < 0.0F ? 1 : 0) ^ (p_500169_1_.d.y < 0.0F ? 1 : 0) ^ (p_500169_1_.d.z < 0.0F ? 1 : 0);
+    return (d.x < 0.0F ? 1 : 0) ^ (d.y < 0.0F ? 1 : 0) ^ (d.z < 0.0F ? 1 : 0);
   }
   
   public void a(zx p_175042_1_, int p_175042_2_, int p_175042_3_)
   {
-    boq var4 = this.d.a(p_175042_1_);
+    boq var4 = d.a(p_175042_1_);
     bfl.E();
-    this.e.a(bmh.g);
-    this.e.b(bmh.g).b(false, false);
+    e.a(bmh.g);
+    e.b(bmh.g).b(false, false);
     bfl.B();
     bfl.d();
     bfl.a(516, 0.1F);
@@ -336,13 +336,13 @@ public class bjh
     bfl.C();
     bfl.f();
     bfl.F();
-    this.e.a(bmh.g);
-    this.e.b(bmh.g).a();
+    e.a(bmh.g);
+    e.b(bmh.g).a();
   }
   
   private void a(int p_180452_1_, int p_180452_2_, boolean p_180452_3_)
   {
-    bfl.b(p_180452_1_, p_180452_2_, 100.0F + this.a);
+    bfl.b(p_180452_1_, p_180452_2_, 100.0F + a);
     bfl.b(8.0F, 8.0F, 0.0F);
     bfl.a(1.0F, 1.0F, -1.0F);
     bfl.a(0.5F, 0.5F, 0.5F);
@@ -365,7 +365,7 @@ public class bjh
   {
     if ((p_180450_1_ != null) && (p_180450_1_.b() != null))
     {
-      this.a += 50.0F;
+      a += 50.0F;
       try
       {
         a(p_180450_1_, p_180450_2_, p_180450_3_);
@@ -416,7 +416,7 @@ public class bjh
         });
         throw new e(var5);
       }
-      this.a -= 50.0F;
+      a -= 50.0F;
     }
   }
   
@@ -429,11 +429,11 @@ public class bjh
   {
     if (p_180453_2_ != null)
     {
-      if ((p_180453_2_.b != 1) || (p_180453_5_ != null))
+      if ((b != 1) || (p_180453_5_ != null))
       {
-        String var6 = p_180453_5_ == null ? String.valueOf(p_180453_2_.b) : p_180453_5_;
-        if ((p_180453_5_ == null) && (p_180453_2_.b < 1)) {
-          var6 = a.m + String.valueOf(p_180453_2_.b);
+        String var6 = p_180453_5_ == null ? String.valueOf(b) : p_180453_5_;
+        if ((p_180453_5_ == null) && (b < 1)) {
+          var6 = a.m + String.valueOf(b);
         }
         bfl.f();
         bfl.i();
@@ -934,7 +934,7 @@ public class bjh
     a(zy.bw, "ghast_tear");
     a(zy.bx, "gold_nugget");
     a(zy.by, "nether_wart");
-    this.d.a(zy.bz, new bfp()
+    d.a(zy.bz, new bfp()
     {
       private static final String __OBFID = "CL_00002440";
       
@@ -952,7 +952,7 @@ public class bjh
     a(zy.bG, "cauldron");
     a(zy.bH, "ender_eye");
     a(zy.bI, "speckled_melon");
-    this.d.a(zy.bJ, new bfp()
+    d.a(zy.bJ, new bfp()
     {
       private static final String __OBFID = "CL_00002439";
       
@@ -993,7 +993,7 @@ public class bjh
     a(zy.cm, "diamond_horse_armor");
     a(zy.cn, "lead");
     a(zy.co, "name_tag");
-    this.d.a(zy.cE, new bfp()
+    d.a(zy.cE, new bfp()
     {
       private static final String __OBFID = "CL_00002438";
       
@@ -1016,7 +1016,7 @@ public class bjh
     a(zy.cB, "record_wait");
     a(zy.cC, "prismarine_shard");
     a(zy.cD, "prismarine_crystals");
-    this.d.a(zy.cd, new bfp()
+    d.a(zy.cd, new bfp()
     {
       private static final String __OBFID = "CL_00002437";
       
@@ -1025,7 +1025,7 @@ public class bjh
         return new bov("enchanted_book", "inventory");
       }
     });
-    this.d.a(zy.bd, new bfp()
+    d.a(zy.bd, new bfp()
     {
       private static final String __OBFID = "CL_00002436";
       
@@ -1044,12 +1044,12 @@ public class bjh
     a(afi.bh, aho.a.k.a(), "red_mushroom_block");
     a(afi.bI, "dragon_egg");
     if (Reflector.ModelLoader_onRegisterItems.exists()) {
-      Reflector.call(Reflector.ModelLoader_onRegisterItems, new Object[] { this.d });
+      Reflector.call(Reflector.ModelLoader_onRegisterItems, new Object[] { d });
     }
   }
   
   public void a(bni resourceManager)
   {
-    this.d.b();
+    d.b();
   }
 }

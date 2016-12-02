@@ -45,8 +45,8 @@ public class arn
   {
     if ((index >= 0) && (index <= 63))
     {
-      this.M = index;
-      this.L = color;
+      M = index;
+      L = color;
       a[index] = this;
     }
     else
@@ -70,9 +70,9 @@ public class arn
     if (p_151643_1_ == 0) {
       var2 = 180;
     }
-    int var3 = (this.L >> 16 & 0xFF) * var2 / 255;
-    int var4 = (this.L >> 8 & 0xFF) * var2 / 255;
-    int var5 = (this.L & 0xFF) * var2 / 255;
+    int var3 = (L >> 16 & 0xFF) * var2 / 255;
+    int var4 = (L >> 8 & 0xFF) * var2 / 255;
+    int var5 = (L & 0xFF) * var2 / 255;
     return 0xFF000000 | var3 << 16 | var4 << 8 | var5;
   }
 }

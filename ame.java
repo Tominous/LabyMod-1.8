@@ -20,7 +20,7 @@ public class ame
   
   private ame()
   {
-    this.c.put(Character.valueOf(' '), Predicates.alwaysTrue());
+    c.put(Character.valueOf(' '), Predicates.alwaysTrue());
   }
   
   public ame a(String... ☃)
@@ -28,26 +28,26 @@ public class ame
     if ((ArrayUtils.isEmpty(☃)) || (StringUtils.isEmpty(☃[0]))) {
       throw new IllegalArgumentException("Empty pattern for aisle");
     }
-    if (this.b.isEmpty())
+    if (b.isEmpty())
     {
-      this.d = ☃.length;
-      this.e = ☃[0].length();
+      d = ☃.length;
+      e = ☃[0].length();
     }
-    if (☃.length != this.d) {
-      throw new IllegalArgumentException("Expected aisle with height of " + this.d + ", but was given one with a height of " + ☃.length + ")");
+    if (☃.length != d) {
+      throw new IllegalArgumentException("Expected aisle with height of " + d + ", but was given one with a height of " + ☃.length + ")");
     }
     for (String ☃ : ☃)
     {
-      if (☃.length() != this.e) {
-        throw new IllegalArgumentException("Not all rows in the given aisle are the correct width (expected " + this.e + ", found one with " + ☃.length() + ")");
+      if (☃.length() != e) {
+        throw new IllegalArgumentException("Not all rows in the given aisle are the correct width (expected " + e + ", found one with " + ☃.length() + ")");
       }
       for (char ☃ : ☃.toCharArray()) {
-        if (!this.c.containsKey(Character.valueOf(☃))) {
-          this.c.put(Character.valueOf(☃), null);
+        if (!c.containsKey(Character.valueOf(☃))) {
+          c.put(Character.valueOf(☃), null);
         }
       }
     }
-    this.b.add(☃);
+    b.add(☃);
     
     return this;
   }
@@ -59,7 +59,7 @@ public class ame
   
   public ame a(char ☃, Predicate<amc> ☃)
   {
-    this.c.put(Character.valueOf(☃), ☃);
+    c.put(Character.valueOf(☃), ☃);
     
     return this;
   }
@@ -73,11 +73,11 @@ public class ame
   {
     d();
     
-    Predicate<amc>[][][] ☃ = (Predicate[][][])Array.newInstance(Predicate.class, new int[] { this.b.size(), this.d, this.e });
-    for (int ☃ = 0; ☃ < this.b.size(); ☃++) {
-      for (int ☃ = 0; ☃ < this.d; ☃++) {
-        for (int ☃ = 0; ☃ < this.e; ☃++) {
-          ☃[☃][☃][☃] = ((Predicate)this.c.get(Character.valueOf(((String[])this.b.get(☃))[☃].charAt(☃))));
+    Predicate<amc>[][][] ☃ = (Predicate[][][])Array.newInstance(Predicate.class, new int[] { b.size(), d, e });
+    for (int ☃ = 0; ☃ < b.size(); ☃++) {
+      for (int ☃ = 0; ☃ < d; ☃++) {
+        for (int ☃ = 0; ☃ < e; ☃++) {
+          ☃[☃][☃][☃] = ((Predicate)c.get(Character.valueOf(((String[])b.get(☃))[☃].charAt(☃))));
         }
       }
     }
@@ -87,7 +87,7 @@ public class ame
   private void d()
   {
     List<Character> ☃ = Lists.newArrayList();
-    for (Map.Entry<Character, Predicate<amc>> ☃ : this.c.entrySet()) {
+    for (Map.Entry<Character, Predicate<amc>> ☃ : c.entrySet()) {
       if (☃.getValue() == null) {
         ☃.add(☃.getKey());
       }

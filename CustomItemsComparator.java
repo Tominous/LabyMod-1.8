@@ -7,12 +7,12 @@ public class CustomItemsComparator
   {
     CustomItemProperties p1 = (CustomItemProperties)o1;
     CustomItemProperties p2 = (CustomItemProperties)o2;
-    if (p1.weight != p2.weight) {
-      return p2.weight - p1.weight;
+    if (weight != weight) {
+      return weight - weight;
     }
-    if (!Config.equals(p1.basePath, p2.basePath)) {
-      return p1.basePath.compareTo(p2.basePath);
+    if (!Config.equals(basePath, basePath)) {
+      return basePath.compareTo(basePath);
     }
-    return p1.name.compareTo(p2.name);
+    return name.compareTo(name);
   }
 }

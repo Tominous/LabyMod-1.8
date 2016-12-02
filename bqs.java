@@ -85,8 +85,8 @@ public class bqs
     Config.initDisplay();
     
     ContextCapabilities var0 = GLContext.getCapabilities();
-    W = (var0.GL_ARB_multitexture) && (!var0.OpenGL13);
-    X = (var0.GL_ARB_texture_env_combine) && (!var0.OpenGL13);
+    W = (GL_ARB_multitexture) && (!OpenGL13);
+    X = (GL_ARB_texture_env_combine) && (!OpenGL13);
     if (W)
     {
       Z += "Using ARB_multitexture.\n";
@@ -147,13 +147,13 @@ public class bqs
       K = 34201;
       L = 34202;
     }
-    M = (var0.GL_EXT_blend_func_separate) && (!var0.OpenGL14);
-    Y = (var0.OpenGL14) || (var0.GL_EXT_blend_func_separate);
-    l = (Y) && ((var0.GL_ARB_framebuffer_object) || (var0.GL_EXT_framebuffer_object) || (var0.OpenGL30));
+    M = (GL_EXT_blend_func_separate) && (!OpenGL14);
+    Y = (OpenGL14) || (GL_EXT_blend_func_separate);
+    l = (Y) && ((GL_ARB_framebuffer_object) || (GL_EXT_framebuffer_object) || (OpenGL30));
     if (l)
     {
       Z += "Using framebuffer objects because ";
-      if (var0.OpenGL30)
+      if (OpenGL30)
       {
         Z += "OpenGL 3.0 is supported and separate blending is supported.\n";
         T = 0;
@@ -167,7 +167,7 @@ public class bqs
         j = 36059;
         k = 36060;
       }
-      else if (var0.GL_ARB_framebuffer_object)
+      else if (GL_ARB_framebuffer_object)
       {
         Z += "ARB_framebuffer_object is supported and separate blending is supported.\n";
         T = 1;
@@ -181,7 +181,7 @@ public class bqs
         j = 36059;
         k = 36060;
       }
-      else if (var0.GL_EXT_framebuffer_object)
+      else if (GL_EXT_framebuffer_object)
       {
         Z += "EXT_framebuffer_object is supported.\n";
         T = 2;
@@ -199,18 +199,18 @@ public class bqs
     else
     {
       Z += "Not using framebuffer objects because ";
-      Z = Z + "OpenGL 1.4 is " + (var0.OpenGL14 ? "" : "not ") + "supported, ";
-      Z = Z + "EXT_blend_func_separate is " + (var0.GL_EXT_blend_func_separate ? "" : "not ") + "supported, ";
-      Z = Z + "OpenGL 3.0 is " + (var0.OpenGL30 ? "" : "not ") + "supported, ";
-      Z = Z + "ARB_framebuffer_object is " + (var0.GL_ARB_framebuffer_object ? "" : "not ") + "supported, and ";
-      Z = Z + "EXT_framebuffer_object is " + (var0.GL_EXT_framebuffer_object ? "" : "not ") + "supported.\n";
+      Z = Z + "OpenGL 1.4 is " + (OpenGL14 ? "" : "not ") + "supported, ";
+      Z = Z + "EXT_blend_func_separate is " + (GL_EXT_blend_func_separate ? "" : "not ") + "supported, ";
+      Z = Z + "OpenGL 3.0 is " + (OpenGL30 ? "" : "not ") + "supported, ";
+      Z = Z + "ARB_framebuffer_object is " + (GL_ARB_framebuffer_object ? "" : "not ") + "supported, and ";
+      Z = Z + "EXT_framebuffer_object is " + (GL_EXT_framebuffer_object ? "" : "not ") + "supported.\n";
     }
-    N = var0.OpenGL21;
-    U = (N) || ((var0.GL_ARB_vertex_shader) && (var0.GL_ARB_fragment_shader) && (var0.GL_ARB_shader_objects));
+    N = OpenGL21;
+    U = (N) || ((GL_ARB_vertex_shader) && (GL_ARB_fragment_shader) && (GL_ARB_shader_objects));
     Z = Z + "Shaders are " + (U ? "" : "not ") + "available because ";
     if (U)
     {
-      if (var0.OpenGL21)
+      if (OpenGL21)
       {
         Z += "OpenGL 2.1 is supported.\n";
         V = false;
@@ -231,16 +231,16 @@ public class bqs
     }
     else
     {
-      Z = Z + "OpenGL 2.1 is " + (var0.OpenGL21 ? "" : "not ") + "supported, ";
-      Z = Z + "ARB_shader_objects is " + (var0.GL_ARB_shader_objects ? "" : "not ") + "supported, ";
-      Z = Z + "ARB_vertex_shader is " + (var0.GL_ARB_vertex_shader ? "" : "not ") + "supported, and ";
-      Z = Z + "ARB_fragment_shader is " + (var0.GL_ARB_fragment_shader ? "" : "not ") + "supported.\n";
+      Z = Z + "OpenGL 2.1 is " + (OpenGL21 ? "" : "not ") + "supported, ";
+      Z = Z + "ARB_shader_objects is " + (GL_ARB_shader_objects ? "" : "not ") + "supported, ";
+      Z = Z + "ARB_vertex_shader is " + (GL_ARB_vertex_shader ? "" : "not ") + "supported, and ";
+      Z = Z + "ARB_fragment_shader is " + (GL_ARB_fragment_shader ? "" : "not ") + "supported.\n";
     }
     O = (l) && (U);
     String var1 = GL11.glGetString(7936).toLowerCase();
     a = var1.contains("nvidia");
-    ab = (!var0.OpenGL15) && (var0.GL_ARB_vertex_buffer_object);
-    P = (var0.OpenGL15) || (ab);
+    ab = (!OpenGL15) && (GL_ARB_vertex_buffer_object);
+    P = (OpenGL15) || (ab);
     Z = Z + "VBOs are " + (P ? "" : "not ") + "available because ";
     if (P) {
       if (ab)
@@ -530,7 +530,7 @@ public class bqs
     if (Config.isMultiTexture()) {
       return false;
     }
-    return (P) && (ave.A().t.u);
+    return (P) && (At.u);
   }
   
   public static void h(int p_153171_0_, int p_153171_1_)
@@ -758,7 +758,7 @@ public class bqs
     if (Config.isAntialiasing()) {
       return false;
     }
-    return (l) && (ave.A().t.f);
+    return (l) && (At.f);
   }
   
   public static String j()

@@ -22,7 +22,7 @@ public class RenderEnv
     this.blockAccess = blockAccess;
     this.blockState = blockState;
     this.blockPos = blockPos;
-    this.gameSettings = Config.getGameSettings();
+    gameSettings = Config.getGameSettings();
   }
   
   public static RenderEnv getInstance(adq blockAccessIn, alz blockStateIn, cj blockPosIn)
@@ -40,96 +40,96 @@ public class RenderEnv
   
   private void reset(adq blockAccessIn, alz blockStateIn, cj blockPosIn)
   {
-    this.blockAccess = blockAccessIn;
-    this.blockState = blockStateIn;
-    this.blockPos = blockPosIn;
+    blockAccess = blockAccessIn;
+    blockState = blockStateIn;
+    blockPos = blockPosIn;
     
-    this.blockId = -1;
-    this.metadata = -1;
-    this.breakingAnimation = -1;
-    this.boundsFlags.clear();
+    blockId = -1;
+    metadata = -1;
+    breakingAnimation = -1;
+    boundsFlags.clear();
   }
   
   public int getBlockId()
   {
-    if (this.blockId < 0) {
-      this.blockId = afh.a(this.blockState.c());
+    if (blockId < 0) {
+      blockId = afh.a(blockState.c());
     }
-    return this.blockId;
+    return blockId;
   }
   
   public int getMetadata()
   {
-    if (this.metadata < 0) {
-      this.metadata = this.blockState.c().c(this.blockState);
+    if (metadata < 0) {
+      metadata = blockState.c().c(blockState);
     }
-    return this.metadata;
+    return metadata;
   }
   
   public float[] getQuadBounds()
   {
-    return this.quadBounds;
+    return quadBounds;
   }
   
   public BitSet getBoundsFlags()
   {
-    return this.boundsFlags;
+    return boundsFlags;
   }
   
   public bgf.b getAoFace()
   {
-    return this.aoFace;
+    return aoFace;
   }
   
   public boolean isBreakingAnimation(List listQuads)
   {
-    if (this.breakingAnimation < 0) {
+    if (breakingAnimation < 0) {
       if (listQuads.size() > 0) {
         if ((listQuads.get(0) instanceof bgn)) {
-          this.breakingAnimation = 1;
+          breakingAnimation = 1;
         } else {
-          this.breakingAnimation = 0;
+          breakingAnimation = 0;
         }
       }
     }
-    return this.breakingAnimation == 1;
+    return breakingAnimation == 1;
   }
   
   public boolean isBreakingAnimation(bgg quad)
   {
-    if (this.breakingAnimation < 0) {
+    if (breakingAnimation < 0) {
       if ((quad instanceof bgn)) {
-        this.breakingAnimation = 1;
+        breakingAnimation = 1;
       } else {
-        this.breakingAnimation = 0;
+        breakingAnimation = 0;
       }
     }
-    return this.breakingAnimation == 1;
+    return breakingAnimation == 1;
   }
   
   public boolean isBreakingAnimation()
   {
-    return this.breakingAnimation == 1;
+    return breakingAnimation == 1;
   }
   
   public alz getBlockState()
   {
-    return this.blockState;
+    return blockState;
   }
   
   public BlockPosM getColorizerBlockPos()
   {
-    if (this.colorizerBlockPos == null) {
-      this.colorizerBlockPos = new BlockPosM(0, 0, 0);
+    if (colorizerBlockPos == null) {
+      colorizerBlockPos = new BlockPosM(0, 0, 0);
     }
-    return this.colorizerBlockPos;
+    return colorizerBlockPos;
   }
   
   public boolean[] getBorderFlags()
   {
-    if (this.borderFlags == null) {
-      this.borderFlags = new boolean[4];
+    if (borderFlags == null) {
+      borderFlags = new boolean[4];
     }
-    return this.borderFlags;
+    return borderFlags;
   }
 }

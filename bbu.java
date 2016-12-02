@@ -21,126 +21,126 @@ public class bbu
     a("head.ear1", 0, 10);
     a("head.ear2", 6, 10);
     
-    this.a = new bct(this, 26, 24);
-    this.a.a(-1.0F, 5.5F, -3.7F, 2, 1, 7);
-    this.a.a(3.0F, 17.5F, 3.7F);
-    this.a.i = true;
-    a(this.a, 0.0F, 0.0F, 0.0F);
+    a = new bct(this, 26, 24);
+    a.a(-1.0F, 5.5F, -3.7F, 2, 1, 7);
+    a.a(3.0F, 17.5F, 3.7F);
+    a.i = true;
+    a(a, 0.0F, 0.0F, 0.0F);
     
-    this.b = new bct(this, 8, 24);
-    this.b.a(-1.0F, 5.5F, -3.7F, 2, 1, 7);
-    this.b.a(-3.0F, 17.5F, 3.7F);
-    this.b.i = true;
-    a(this.b, 0.0F, 0.0F, 0.0F);
+    b = new bct(this, 8, 24);
+    b.a(-1.0F, 5.5F, -3.7F, 2, 1, 7);
+    b.a(-3.0F, 17.5F, 3.7F);
+    b.i = true;
+    a(b, 0.0F, 0.0F, 0.0F);
     
-    this.c = new bct(this, 30, 15);
-    this.c.a(-1.0F, 0.0F, 0.0F, 2, 4, 5);
-    this.c.a(3.0F, 17.5F, 3.7F);
-    this.c.i = true;
-    a(this.c, -0.34906584F, 0.0F, 0.0F);
+    c = new bct(this, 30, 15);
+    c.a(-1.0F, 0.0F, 0.0F, 2, 4, 5);
+    c.a(3.0F, 17.5F, 3.7F);
+    c.i = true;
+    a(c, -0.34906584F, 0.0F, 0.0F);
     
-    this.d = new bct(this, 16, 15);
-    this.d.a(-1.0F, 0.0F, 0.0F, 2, 4, 5);
-    this.d.a(-3.0F, 17.5F, 3.7F);
-    this.d.i = true;
-    a(this.d, -0.34906584F, 0.0F, 0.0F);
+    d = new bct(this, 16, 15);
+    d.a(-1.0F, 0.0F, 0.0F, 2, 4, 5);
+    d.a(-3.0F, 17.5F, 3.7F);
+    d.i = true;
+    a(d, -0.34906584F, 0.0F, 0.0F);
     
-    this.e = new bct(this, 0, 0);
-    this.e.a(-3.0F, -2.0F, -10.0F, 6, 5, 10);
-    this.e.a(0.0F, 19.0F, 8.0F);
-    this.e.i = true;
-    a(this.e, -0.34906584F, 0.0F, 0.0F);
+    e = new bct(this, 0, 0);
+    e.a(-3.0F, -2.0F, -10.0F, 6, 5, 10);
+    e.a(0.0F, 19.0F, 8.0F);
+    e.i = true;
+    a(e, -0.34906584F, 0.0F, 0.0F);
     
-    this.f = new bct(this, 8, 15);
-    this.f.a(-1.0F, 0.0F, -1.0F, 2, 7, 2);
-    this.f.a(3.0F, 17.0F, -1.0F);
-    this.f.i = true;
-    a(this.f, -0.17453292F, 0.0F, 0.0F);
+    f = new bct(this, 8, 15);
+    f.a(-1.0F, 0.0F, -1.0F, 2, 7, 2);
+    f.a(3.0F, 17.0F, -1.0F);
+    f.i = true;
+    a(f, -0.17453292F, 0.0F, 0.0F);
     
-    this.g = new bct(this, 0, 15);
-    this.g.a(-1.0F, 0.0F, -1.0F, 2, 7, 2);
-    this.g.a(-3.0F, 17.0F, -1.0F);
-    this.g.i = true;
-    a(this.g, -0.17453292F, 0.0F, 0.0F);
+    g = new bct(this, 0, 15);
+    g.a(-1.0F, 0.0F, -1.0F, 2, 7, 2);
+    g.a(-3.0F, 17.0F, -1.0F);
+    g.i = true;
+    a(g, -0.17453292F, 0.0F, 0.0F);
     
-    this.h = new bct(this, 32, 0);
-    this.h.a(-2.5F, -4.0F, -5.0F, 5, 4, 5);
-    this.h.a(0.0F, 16.0F, -1.0F);
-    this.h.i = true;
-    a(this.h, 0.0F, 0.0F, 0.0F);
+    h = new bct(this, 32, 0);
+    h.a(-2.5F, -4.0F, -5.0F, 5, 4, 5);
+    h.a(0.0F, 16.0F, -1.0F);
+    h.i = true;
+    a(h, 0.0F, 0.0F, 0.0F);
     
-    this.i = new bct(this, 52, 0);
-    this.i.a(-2.5F, -9.0F, -1.0F, 2, 5, 1);
-    this.i.a(0.0F, 16.0F, -1.0F);
-    this.i.i = true;
-    a(this.i, 0.0F, -0.2617994F, 0.0F);
+    i = new bct(this, 52, 0);
+    i.a(-2.5F, -9.0F, -1.0F, 2, 5, 1);
+    i.a(0.0F, 16.0F, -1.0F);
+    i.i = true;
+    a(i, 0.0F, -0.2617994F, 0.0F);
     
-    this.j = new bct(this, 58, 0);
-    this.j.a(0.5F, -9.0F, -1.0F, 2, 5, 1);
-    this.j.a(0.0F, 16.0F, -1.0F);
-    this.j.i = true;
-    a(this.j, 0.0F, 0.2617994F, 0.0F);
+    j = new bct(this, 58, 0);
+    j.a(0.5F, -9.0F, -1.0F, 2, 5, 1);
+    j.a(0.0F, 16.0F, -1.0F);
+    j.i = true;
+    a(j, 0.0F, 0.2617994F, 0.0F);
     
-    this.k = new bct(this, 52, 6);
-    this.k.a(-1.5F, -1.5F, 0.0F, 3, 3, 2);
-    this.k.a(0.0F, 20.0F, 7.0F);
-    this.k.i = true;
-    a(this.k, -0.3490659F, 0.0F, 0.0F);
+    k = new bct(this, 52, 6);
+    k.a(-1.5F, -1.5F, 0.0F, 3, 3, 2);
+    k.a(0.0F, 20.0F, 7.0F);
+    k.i = true;
+    a(k, -0.3490659F, 0.0F, 0.0F);
     
-    this.l = new bct(this, 32, 9);
-    this.l.a(-0.5F, -2.5F, -5.5F, 1, 1, 1);
-    this.l.a(0.0F, 16.0F, -1.0F);
-    this.l.i = true;
-    a(this.l, 0.0F, 0.0F, 0.0F);
+    l = new bct(this, 32, 9);
+    l.a(-0.5F, -2.5F, -5.5F, 1, 1, 1);
+    l.a(0.0F, 16.0F, -1.0F);
+    l.i = true;
+    a(l, 0.0F, 0.0F, 0.0F);
   }
   
   private void a(bct ☃, float ☃, float ☃, float ☃)
   {
-    ☃.f = ☃;
-    ☃.g = ☃;
-    ☃.h = ☃;
+    f = ☃;
+    g = ☃;
+    h = ☃;
   }
   
   public void a(pk ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
     a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
-    if (this.r)
+    if (r)
     {
       float ☃ = 2.0F;
       bfl.E();
       bfl.b(0.0F, 5.0F * ☃, 2.0F * ☃);
-      this.h.a(☃);
-      this.j.a(☃);
-      this.i.a(☃);
-      this.l.a(☃);
+      h.a(☃);
+      j.a(☃);
+      i.a(☃);
+      l.a(☃);
       bfl.F();
       bfl.E();
       bfl.a(1.0F / ☃, 1.0F / ☃, 1.0F / ☃);
       bfl.b(0.0F, 24.0F * ☃, 0.0F);
-      this.a.a(☃);
-      this.b.a(☃);
-      this.c.a(☃);
-      this.d.a(☃);
-      this.e.a(☃);
-      this.f.a(☃);
-      this.g.a(☃);
-      this.k.a(☃);
+      a.a(☃);
+      b.a(☃);
+      c.a(☃);
+      d.a(☃);
+      e.a(☃);
+      f.a(☃);
+      g.a(☃);
+      k.a(☃);
       bfl.F();
     }
     else
     {
-      this.a.a(☃);
-      this.b.a(☃);
-      this.c.a(☃);
-      this.d.a(☃);
-      this.e.a(☃);
-      this.f.a(☃);
-      this.g.a(☃);
-      this.h.a(☃);
-      this.i.a(☃);
-      this.j.a(☃);
-      this.k.a(☃);
-      this.l.a(☃);
+      a.a(☃);
+      b.a(☃);
+      c.a(☃);
+      d.a(☃);
+      e.a(☃);
+      f.a(☃);
+      g.a(☃);
+      h.a(☃);
+      i.a(☃);
+      j.a(☃);
+      k.a(☃);
+      l.a(☃);
     }
   }
   
@@ -149,17 +149,17 @@ public class bbu
   
   public void a(float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, pk ☃)
   {
-    float ☃ = ☃ - ☃.W;
+    float ☃ = ☃ - W;
     
     tu ☃ = (tu)☃;
-    this.l.f = (this.h.f = this.i.f = this.j.f = ☃ * 0.017453292F);
-    this.l.g = (this.h.g = ☃ * 0.017453292F);
-    this.i.g = (this.l.g - 0.2617994F);
-    this.j.g = (this.l.g + 0.2617994F);
-    this.m = ns.a(☃.p(☃) * 3.1415927F);
-    this.c.f = (this.d.f = (this.m * 50.0F - 21.0F) * 0.017453292F);
-    this.a.f = (this.b.f = this.m * 50.0F * 0.017453292F);
-    this.f.f = (this.g.f = (this.m * -40.0F - 11.0F) * 0.017453292F);
+    l.f = (h.f = i.f = j.f = ☃ * 0.017453292F);
+    l.g = (h.g = ☃ * 0.017453292F);
+    i.g = (l.g - 0.2617994F);
+    j.g = (l.g + 0.2617994F);
+    m = ns.a(☃.p(☃) * 3.1415927F);
+    c.f = (d.f = (m * 50.0F - 21.0F) * 0.017453292F);
+    a.f = (b.f = m * 50.0F * 0.017453292F);
+    f.f = (g.f = (m * -40.0F - 11.0F) * 0.017453292F);
   }
   
   public void a(pr ☃, float ☃, float ☃, float ☃) {}

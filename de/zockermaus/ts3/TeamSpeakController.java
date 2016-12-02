@@ -1,6 +1,5 @@
 package de.zockermaus.ts3;
 
-import de.labystudio.utils.Debug;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
@@ -39,7 +38,7 @@ public class TeamSpeakController
   public TeamSpeakController(ControlListener listener)
   {
     this();
-    this.listeners.add(listener);
+    listeners.add(listener);
   }
   
   public static TeamSpeakController getInstance()
@@ -49,7 +48,7 @@ public class TeamSpeakController
   
   public void addControlListener(ControlListener listener)
   {
-    this.listeners.add(listener);
+    listeners.add(listener);
   }
   
   public void run()
@@ -57,10 +56,10 @@ public class TeamSpeakController
     try
     {
       TeamSpeak.print("Connect to TeamSpeak..");
-      this.socket = new Socket("localhost", 25639);
-      OutputStream socketOutputStream = this.socket.getOutputStream();
-      InputStream socketInputStream = this.socket.getInputStream();
-      this.writer = new BufferedWriter(new OutputStreamWriter(new BufferedOutputStream(socketOutputStream), Charset.forName("utf-8")));
+      socket = new Socket("localhost", 25639);
+      OutputStream socketOutputStream = socket.getOutputStream();
+      InputStream socketInputStream = socket.getInputStream();
+      writer = new BufferedWriter(new OutputStreamWriter(new BufferedOutputStream(socketOutputStream), Charset.forName("utf-8")));
       new InputStreamReaderThread(socketInputStream);
       new OutputStreamWriterThread(socketOutputStream);
       onEnable();
@@ -68,22 +67,18 @@ public class TeamSpeakController
     catch (UnknownHostException e)
     {
       TeamSpeak.print("TeamSpeak Connection Error: " + e.getMessage());
-      if (Debug.teamspeak()) {
-        e.printStackTrace();
-      }
+      e.printStackTrace();
     }
     catch (IOException e)
     {
       TeamSpeak.print("Can't connect to TeamSpeak");
-      if (Debug.teamspeak()) {
-        e.printStackTrace();
-      }
+      e.printStackTrace();
     }
   }
   
   public Socket getSocket()
   {
-    return this.socket;
+    return socket;
   }
   
   protected class OutputStreamWriterThread
@@ -100,11 +95,11 @@ public class TeamSpeakController
     
     public void run()
     {
-      TeamSpeakController.this.testForConnectionEstablished();
+      testForConnectionEstablished();
       BufferedReader reader = new BufferedReader(new InputStreamReader(System.in, Charset.forName("utf-8")));
       for (;;)
       {
-        if (!TeamSpeakController.this.isConnectionEstablished()) {
+        if (!isConnectionEstablished()) {
           return;
         }
         try
@@ -119,7 +114,7 @@ public class TeamSpeakController
               TeamSpeak.print("Total: " + Runtime.getRuntime().totalMemory() / 1024L / 1024L);
               continue;
             }
-            TeamSpeakController.this.sendMessage(line);
+            sendMessage(line);
           }
         }
         catch (IOException e)
@@ -131,7 +126,7 @@ public class TeamSpeakController
     
     public OutputStream getOutput()
     {
-      return this.output;
+      return output;
     }
   }
   
@@ -149,19 +144,19 @@ public class TeamSpeakController
     
     public void run()
     {
-      TeamSpeakController.this.testForConnectionEstablished();
+      testForConnectionEstablished();
       InputStreamReader in = new InputStreamReader(new BufferedInputStream(getInput()), Charset.forName("utf-8"));
       BufferedReader reader = new BufferedReader(in);
       for (;;)
       {
-        if (!TeamSpeakController.this.isConnectionEstablished()) {
+        if (!isConnectionEstablished()) {
           return;
         }
         try
         {
           String line = reader.readLine();
           if (line != null) {
-            TeamSpeakController.this.onMessageRecieved(line);
+            onMessageRecieved(line);
           }
         }
         catch (IOException e)
@@ -173,7 +168,7 @@ public class TeamSpeakController
     
     public InputStream getInput()
     {
-      return this.input;
+      return input;
     }
   }
   
@@ -186,8 +181,8 @@ public class TeamSpeakController
     }
     try
     {
-      this.writer.write(message + "\n");
-      this.writer.flush();
+      writer.write(message + "\n");
+      writer.flush();
     }
     catch (IOException e)
     {
@@ -203,19 +198,9 @@ public class TeamSpeakController
   
   protected void onMessageRecieved(String message)
   {
-    if ((!message.isEmpty()) && 
-      (Debug.teamspeak())) {
-      if (TeamSpeak.inputString.contains("-nonotify"))
-      {
-        if (!message.startsWith("notify")) {
-          TeamSpeak.print("TeamSpeak: " + message);
-        }
-      }
-      else {
-        TeamSpeak.print("TeamSpeak: " + message);
-      }
-    }
-    if (message.startsWith("notify"))
+    if ((message.isEmpty()) || 
+    
+      (message.startsWith("notify")))
     {
       handleNotifyMessage(message);
     }
@@ -341,7 +326,7 @@ public class TeamSpeakController
           if (user != null)
           {
             user.updateChannelId(args[1].getAsInt());
-            this.me = user;
+            me = user;
           }
         }
       }
@@ -357,11 +342,11 @@ public class TeamSpeakController
           }
           if (args.length >= 2)
           {
-            this.serverIP = args[0].getValue();
-            this.serverPort = args[1].getAsInt();
-            TeamSpeak.print("Connected to " + this.serverIP + ":" + this.serverPort);
+            serverIP = args[0].getValue();
+            serverPort = args[1].getAsInt();
+            TeamSpeak.print("Connected to " + serverIP + ":" + serverPort);
             TeamSpeak.setupChat();
-            for (ControlListener listener : this.listeners) {
+            for (ControlListener listener : listeners) {
               listener.onConnect();
             }
           }
@@ -399,7 +384,7 @@ public class TeamSpeakController
       if ((errorId != 0) && (errorId != 1794))
       {
         errorMessage = args[1].getValue();
-        for (ControlListener listener : this.listeners) {
+        for (ControlListener listener : listeners) {
           listener.onError(errorId, errorMessage);
         }
       }
@@ -434,7 +419,7 @@ public class TeamSpeakController
       user.updateNickname(args[6].getValue().replace("\\s", " "));
       user.updateClientInput(args[7].getAsBoolean());
       user.updateClientOutput(args[8].getAsBoolean());
-      for (ControlListener listener : this.listeners) {
+      for (ControlListener listener : listeners) {
         listener.onClientConnect(user);
       }
       updateInformation(EnumUpdateType.CLIENTS);
@@ -451,13 +436,13 @@ public class TeamSpeakController
         {
           user = getUser(args[5].getAsInt());
           if (args[3].getAsInt() == 3) {
-            for (ControlListener listener : this.listeners)
+            for (ControlListener listener : listeners)
             {
               listener.onClientTimout(user);
               TeamSpeakUser.unregisterUser(user);
             }
           } else {
-            for (ControlListener listener : this.listeners)
+            for (ControlListener listener : listeners)
             {
               listener.onClientDisconnected(user, args[4].getValue());
               TeamSpeakUser.unregisterUser(user);
@@ -468,13 +453,13 @@ public class TeamSpeakController
         {
           user = getUser(args[3].getAsInt());
           if (args[2].getAsInt() == 3) {
-            for (ControlListener listener : this.listeners)
+            for (ControlListener listener : listeners)
             {
               listener.onClientTimout(user);
               TeamSpeakUser.unregisterUser(user);
             }
           } else {
-            for (??? = this.listeners.iterator(); ???.hasNext();)
+            for (??? = listeners.iterator(); ???.hasNext();)
             {
               listener = (ControlListener)???.next();
               
@@ -522,7 +507,7 @@ public class TeamSpeakController
         else if (cmd.equalsIgnoreCase("connectstatuschange"))
         {
           if (args[1].getValue().equalsIgnoreCase("disconnected")) {
-            for (ControlListener listener : this.listeners)
+            for (ControlListener listener : listeners)
             {
               reset();
               listener.onDisconnect();
@@ -540,7 +525,7 @@ public class TeamSpeakController
           {
             user = getUser(args[1].getAsInt());
             msg = TeamSpeak.fix(args[4].getValue());
-            for (listener = this.listeners.iterator(); listener.hasNext();)
+            for (listener = listeners.iterator(); listener.hasNext();)
             {
               listener = (ControlListener)listener.next();
               
@@ -563,7 +548,7 @@ public class TeamSpeakController
                 if (user == null) {
                   return;
                 }
-                for (ControlListener listener : this.listeners)
+                for (ControlListener listener : listeners)
                 {
                   if (user.isTyping()) {
                     user.updateTyping(false);
@@ -578,7 +563,7 @@ public class TeamSpeakController
                 if (user == null) {
                   return;
                 }
-                for (ControlListener listener : this.listeners)
+                for (ControlListener listener : listeners)
                 {
                   if (user.isTyping()) {
                     user.updateTyping(false);
@@ -592,7 +577,7 @@ public class TeamSpeakController
                 if (user == null) {
                   return;
                 }
-                for (user = this.listeners.iterator(); user.hasNext();)
+                for (user = listeners.iterator(); user.hasNext();)
                 {
                   listener = (ControlListener)user.next();
                   if (((TeamSpeakUser)user).isTyping()) {
@@ -612,7 +597,7 @@ public class TeamSpeakController
                 if (user == null) {
                   return;
                 }
-                for (user = this.listeners.iterator(); ((Iterator)user).hasNext();)
+                for (user = listeners.iterator(); ((Iterator)user).hasNext();)
                 {
                   listener = (ControlListener)((Iterator)user).next();
                   
@@ -719,7 +704,7 @@ public class TeamSpeakController
       sendMessage("servergrouplist");
       sendMessage("channelgrouplist");
     }
-    if ((this.serverIP.isEmpty()) || (this.serverPort == 0) || (!isConnectionEstablished())) {
+    if ((serverIP.isEmpty()) || (serverPort == 0) || (!isConnectionEstablished())) {
       sendMessage("serverconnectinfo");
     }
     int k = 0;
@@ -736,7 +721,7 @@ public class TeamSpeakController
   public void tick()
   {
     testForConnectionEstablished();
-    if ((isConnectionEstablished()) && (this.serverIP.isEmpty()) && (this.serverPort == 0)) {
+    if ((isConnectionEstablished()) && (serverIP.isEmpty()) && (serverPort == 0)) {
       updateInformation(EnumUpdateType.ALL);
     }
   }
@@ -751,31 +736,31 @@ public class TeamSpeakController
       if ((input.contains("=")) && (input.split("=").length >= 1))
       {
         String[] splitted = input.split("=", 2);
-        this.key = splitted[0];
-        this.value = splitted[1];
+        key = splitted[0];
+        value = splitted[1];
       }
       else
       {
-        this.key = input;
-        this.value = "";
+        key = input;
+        value = "";
       }
     }
     
     public String getKey()
     {
-      return this.key;
+      return key;
     }
     
     public String getValue()
     {
-      return this.value;
+      return value;
     }
     
     public boolean isInt()
     {
       try
       {
-        Integer.parseInt(this.value);
+        Integer.parseInt(value);
         return true;
       }
       catch (Exception e) {}
@@ -784,12 +769,12 @@ public class TeamSpeakController
     
     public int getAsInt()
     {
-      return Integer.parseInt(this.value);
+      return Integer.parseInt(value);
     }
     
     public boolean getAsBoolean()
     {
-      int i = Integer.parseInt(this.value);
+      int i = Integer.parseInt(value);
       if (i == 1) {
         return true;
       }
@@ -799,16 +784,16 @@ public class TeamSpeakController
     public ArrayList<Integer> getAsIntArray()
     {
       ArrayList<Integer> array = new ArrayList();
-      if (this.value.contains(","))
+      if (value.contains(","))
       {
-        String[] split = this.value.split(",");
+        String[] split = value.split(",");
         for (String a : split) {
           array.add(Integer.valueOf(Integer.parseInt(a)));
         }
       }
       else
       {
-        array.add(Integer.valueOf(Integer.parseInt(this.value)));
+        array.add(Integer.valueOf(Integer.parseInt(value)));
       }
       return array;
     }
@@ -881,7 +866,7 @@ public class TeamSpeakController
   
   public TeamSpeakUser me()
   {
-    return this.me;
+    return me;
   }
   
   private void reset()
@@ -889,13 +874,13 @@ public class TeamSpeakController
     TeamSpeak.chats.clear();
     TeamSpeakUser.reset();
     TeamSpeakChannel.reset();
-    this.serverIP = "";
-    this.serverPort = 0;
+    serverIP = "";
+    serverPort = 0;
   }
   
   public void connect()
   {
-    this.listeners.clear();
+    listeners.clear();
     reset();
     TeamSpeak.enable();
   }
@@ -904,25 +889,25 @@ public class TeamSpeakController
   
   public boolean isConnectionEstablished()
   {
-    if (!this.tested)
+    if (!tested)
     {
-      this.tested = true;
+      tested = true;
       testForConnectionEstablished();
     }
-    return this.connectionEstablished;
+    return connectionEstablished;
   }
   
   public void testForConnectionEstablished()
   {
     try
     {
-      this.writer.write("whoami\n");
-      this.writer.flush();
-      this.connectionEstablished = true;
+      writer.write("whoami\n");
+      writer.flush();
+      connectionEstablished = true;
     }
     catch (Exception e)
     {
-      this.connectionEstablished = false;
+      connectionEstablished = false;
     }
   }
   

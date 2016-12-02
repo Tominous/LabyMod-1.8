@@ -26,17 +26,17 @@ public class FrameInstall
   
   public JProgressBar getProgressBar()
   {
-    return this.progressBar;
+    return progressBar;
   }
   
   public JTextArea getInstallTitle()
   {
-    return this.installTitle;
+    return installTitle;
   }
   
   public JTextArea getInstallSubTitle()
   {
-    return this.installSubTitle;
+    return installSubTitle;
   }
   
   public FrameInstall()
@@ -66,22 +66,22 @@ public class FrameInstall
     setContentPane(mainPanel);
     mainPanel.setLayout(null);
     
-    this.progressBar = new JProgressBar();
-    this.progressBar.setForeground(new Color(255, 204, 102));
-    this.progressBar.setValue(0);
-    this.progressBar.setStringPainted(true);
-    this.progressBar.setBounds(10, 36, 423, 39);
-    mainPanel.add(this.progressBar);
+    progressBar = new JProgressBar();
+    progressBar.setForeground(new Color(255, 204, 102));
+    progressBar.setValue(0);
+    progressBar.setStringPainted(true);
+    progressBar.setBounds(10, 36, 423, 39);
+    mainPanel.add(progressBar);
     
-    this.installTitle = new JTextArea();
-    this.installTitle.setText("Installing LabyMod..");
-    this.installTitle.setPreferredSize(new Dimension(290, 144));
-    this.installTitle.setOpaque(false);
-    this.installTitle.setFont(new Font("Dialog", 0, 12));
-    this.installTitle.setEnabled(true);
-    this.installTitle.setEditable(false);
-    this.installTitle.setBounds(10, 11, 384, 19);
-    mainPanel.add(this.installTitle);
+    installTitle = new JTextArea();
+    installTitle.setText("Installing LabyMod..");
+    installTitle.setPreferredSize(new Dimension(290, 144));
+    installTitle.setOpaque(false);
+    installTitle.setFont(new Font("Dialog", 0, 12));
+    installTitle.setEnabled(true);
+    installTitle.setEditable(false);
+    installTitle.setBounds(10, 11, 384, 19);
+    mainPanel.add(installTitle);
     
     JButton btnCancel = new JButton("Cancel");
     btnCancel.setBounds(344, 79, 89, 23);
@@ -94,14 +94,14 @@ public class FrameInstall
     });
     mainPanel.add(btnCancel);
     
-    this.installSubTitle = new JTextArea();
-    this.installSubTitle.setText("Setup installer..");
-    this.installSubTitle.setPreferredSize(new Dimension(290, 144));
-    this.installSubTitle.setOpaque(false);
-    this.installSubTitle.setFont(new Font("Dialog", 0, 12));
-    this.installSubTitle.setEditable(false);
-    this.installSubTitle.setBounds(10, 79, 321, 23);
-    mainPanel.add(this.installSubTitle);
+    installSubTitle = new JTextArea();
+    installSubTitle.setText("Setup installer..");
+    installSubTitle.setPreferredSize(new Dimension(290, 144));
+    installSubTitle.setOpaque(false);
+    installSubTitle.setFont(new Font("Dialog", 0, 12));
+    installSubTitle.setEditable(false);
+    installSubTitle.setBounds(10, 79, 321, 23);
+    mainPanel.add(installSubTitle);
     
     JTextArea textArea = new JTextArea();
     show();

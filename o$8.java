@@ -13,6 +13,6 @@ final class o$8
     pr ☃ = (pr)☃;
     auq ☃ = ☃.bO();
     String ☃ = ☃ == null ? "" : ☃.b();
-    return ☃.equals(this.a) != this.b;
+    return ☃.equals(a) != b;
   }
 }

@@ -17,26 +17,26 @@ public class ServerInfo
   {
     this.serverIp = serverIp;
     this.serverPort = serverPort;
-    this.specifiedServerName = null;
+    specifiedServerName = null;
   }
   
   public ServerInfo()
   {
-    this.serverIp = "";
+    serverIp = "";
   }
   
   public String getServerIp()
   {
-    return this.serverIp;
+    return serverIp;
   }
   
   public int getServerPort()
   {
-    return this.serverPort;
+    return serverPort;
   }
   
   public String getSpecifiedServerName()
   {
-    return this.specifiedServerName;
+    return specifiedServerName;
   }
 }

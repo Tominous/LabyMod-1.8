@@ -10,7 +10,7 @@ public class ago
   public ago()
   {
     super(arm.e, arn.C);
-    j(this.M.b().a(a, cq.c).a(b, Boolean.valueOf(false)));
+    j(M.b().a(a, cq.c).a(b, Boolean.valueOf(false)));
   }
   
   public boolean c()

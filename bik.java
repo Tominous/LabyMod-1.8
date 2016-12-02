@@ -7,7 +7,7 @@ public class bik
   public bik(biu ☃)
   {
     super(☃);
-    this.c = 0.5F;
+    c = 0.5F;
   }
   
   public void a(ux ☃, double ☃, double ☃, double ☃, float ☃, float ☃)
@@ -31,7 +31,7 @@ public class bik
     
     c(☃);
     bfl.a(-1.0F, -1.0F, 1.0F);
-    this.a.a(☃, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
+    a.a(☃, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
     bfl.F();
     
     super.a(☃, ☃, ☃, ☃, ☃, ☃);

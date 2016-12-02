@@ -6,21 +6,21 @@ public enum avm$a
   private static final Map<String, a> c;
   private final String d;
   
-  private avm$a(String sessionTypeIn)
+  private avm$a(String ☃)
   {
-    this.d = sessionTypeIn;
+    d = ☃;
   }
   
-  public static a a(String sessionTypeIn)
+  public static a a(String ☃)
   {
-    return (a)c.get(sessionTypeIn.toLowerCase());
+    return (a)c.get(☃.toLowerCase());
   }
   
   static
   {
     c = Maps.newHashMap();
-    for (a session$type : values()) {
-      c.put(session$type.d, session$type);
+    for (a ☃ : values()) {
+      c.put(d, ☃);
     }
   }
 }

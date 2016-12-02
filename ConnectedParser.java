@@ -347,7 +347,7 @@ public class ConnectedParser
       ady biome = biomeList[i];
       if (biome != null)
       {
-        String name = biome.ah.replace(" ", "").toLowerCase();
+        String name = ah.replace(" ", "").toLowerCase();
         if (name.equals(biomeName)) {
           return biome;
         }
@@ -493,12 +493,12 @@ public class ConnectedParser
   
   public void dbg(String str)
   {
-    Config.dbg("" + this.context + ": " + str);
+    Config.dbg("" + context + ": " + str);
   }
   
   public void warn(String str)
   {
-    Config.warn("" + this.context + ": " + str);
+    Config.warn("" + context + ": " + str);
   }
   
   public RangeListInt parseRangeListInt(String str)

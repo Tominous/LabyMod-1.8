@@ -11,7 +11,7 @@ public class agg
   protected agg()
   {
     super(arm.e);
-    j(this.M.b().a(a, cq.c).a(b, Boolean.valueOf(false)));
+    j(M.b().a(a, cq.c).a(b, Boolean.valueOf(false)));
     a(yz.d);
   }
   
@@ -28,7 +28,7 @@ public class agg
   
   private void e(adm ☃, cj ☃, alz ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     cq ☃ = (cq)☃.b(a);
@@ -57,7 +57,7 @@ public class agg
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (☃.D) {
+    if (D) {
       return true;
     }
     akw ☃ = ☃.s(☃);
@@ -92,7 +92,7 @@ public class agg
     {
       zx ☃ = ☃.a(☃, ☃);
       
-      ☃.a(☃, ☃.b <= 0 ? null : ☃);
+      ☃.a(☃, b <= 0 ? null : ☃);
     }
   }
   
@@ -118,7 +118,7 @@ public class agg
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (!☃.D) {
+    if (!D) {
       f(☃, ☃);
     }
   }

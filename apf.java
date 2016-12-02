@@ -11,7 +11,7 @@ public class apf
   public apf(boolean ☃, boolean ☃)
   {
     super(☃, 13, 15, e, f);
-    this.h = ☃;
+    h = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
@@ -25,21 +25,21 @@ public class apf
     {
       afh ☃ = ☃.p(☃.b(☃)).c();
       if ((☃.t() == arm.a) || (☃.t() == arm.j)) {
-        a(☃, ☃.b(☃), this.b);
+        a(☃, ☃.b(☃), b);
       }
       if (☃ < ☃ - 1)
       {
         ☃ = ☃.p(☃.a(1, ☃, 0)).c();
         if ((☃.t() == arm.a) || (☃.t() == arm.j)) {
-          a(☃, ☃.a(1, ☃, 0), this.b);
+          a(☃, ☃.a(1, ☃, 0), b);
         }
         ☃ = ☃.p(☃.a(1, ☃, 1)).c();
         if ((☃.t() == arm.a) || (☃.t() == arm.j)) {
-          a(☃, ☃.a(1, ☃, 1), this.b);
+          a(☃, ☃.a(1, ☃, 1), b);
         }
         ☃ = ☃.p(☃.a(0, ☃, 1)).c();
         if ((☃.t() == arm.a) || (☃.t() == arm.j)) {
-          a(☃, ☃.a(0, ☃, 1), this.b);
+          a(☃, ☃.a(0, ☃, 1), b);
         }
       }
     }
@@ -48,7 +48,7 @@ public class apf
   
   private void a(adm ☃, int ☃, int ☃, int ☃, int ☃, Random ☃)
   {
-    int ☃ = ☃.nextInt(5) + (this.h ? this.a : 3);
+    int ☃ = ☃.nextInt(5) + (h ? a : 3);
     
     int ☃ = 0;
     for (int ☃ = ☃ - ☃; ☃ <= ☃; ☃++)

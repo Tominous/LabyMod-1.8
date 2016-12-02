@@ -1,15 +1,12 @@
 package de.labystudio.utils;
 
 import ave;
-import de.labystudio.listener.Brawl;
 import de.labystudio.listener.GommeHD;
 import de.labystudio.listener.HiveMC;
 import de.labystudio.listener.Hypixel;
 import de.labystudio.listener.JumpLeague;
-import de.labystudio.listener.KitPvPServers;
 import de.labystudio.listener.Revayd;
 import de.labystudio.listener.Rewinside;
-import de.labystudio.listener.Servers;
 import de.labystudio.listener.Timolia;
 import de.labystudio.modapi.ModManager;
 import java.io.PrintStream;
@@ -23,21 +20,18 @@ public class Allowed
   static boolean chat = true;
   static boolean extras = true;
   static boolean animations = true;
+  static boolean sneakingAnimation = false;
   static boolean potions = true;
   static boolean armor = true;
   
   public static void update(String address)
   {
-    Brawl.updateHG();
     GommeHD.updateGommeHD();
     Hypixel.updateHypixel();
     JumpLeague.updatePlayMinity();
-    KitPvPServers.updateKitPvP();
     Revayd.updateRevayd();
     Rewinside.updateRewinside();
-    Servers.updateDeinProjektHost();
     Timolia.updateTimolia();
-    Servers.updateMineVerse();
     HiveMC.updateHiveMC();
     
     food = true;
@@ -49,11 +43,12 @@ public class Allowed
     animations = true;
     potions = true;
     armor = true;
+    sneakingAnimation = false;
   }
   
   public static boolean foodSaturation()
   {
-    return (!Timolia.isTimolia()) && (!Servers.isDeinProjektHost()) && (food);
+    return (!Timolia.isTimolia()) && (food);
   }
   
   public static boolean gui()
@@ -63,37 +58,42 @@ public class Allowed
   
   public static boolean nick()
   {
-    return (!Revayd.isRevayd()) && (!Hypixel.isHypixel()) && (!Servers.isDeinProjektHost()) && (nick);
+    return (!Revayd.isRevayd()) && (!Hypixel.isHypixel()) && (nick);
   }
   
   public static boolean blockBuild()
   {
-    return (GommeHD.isGommeHD()) || (KitPvPServers.isKitPvP()) || (ave.A().F()) || (Revayd.isRevayd()) || (blockBuild);
+    return (GommeHD.isGommeHD()) || (ave.A().F()) || (Revayd.isRevayd()) || (blockBuild);
   }
   
   public static boolean chat()
   {
-    return (!Servers.isDeinProjektHost()) && (!Servers.isMineVerse()) && (chat);
+    return chat;
   }
   
   public static boolean unfairExtra()
   {
-    return (!Servers.isDeinProjektHost()) && (extras);
+    return extras;
   }
   
   public static boolean animations()
   {
-    return (!Servers.isDeinProjektHost()) && (animations);
+    return animations;
+  }
+  
+  public static boolean sneakingAnimation()
+  {
+    return (GommeHD.isGommeHD()) || (ave.A().F()) || (sneakingAnimation);
   }
   
   public static boolean potions()
   {
-    return (!Servers.isDeinProjektHost()) && (potions);
+    return potions;
   }
   
   public static boolean armorHud()
   {
-    return (!Servers.isDeinProjektHost()) && (armor);
+    return armor;
   }
   
   public static void set(String key, boolean value)
@@ -119,6 +119,9 @@ public class Allowed
     }
     if (key.equalsIgnoreCase("animations")) {
       animations = value;
+    }
+    if (key.equalsIgnoreCase("sneakinganimations")) {
+      sneakingAnimation = value;
     }
     if (key.equalsIgnoreCase("potions")) {
       potions = value;

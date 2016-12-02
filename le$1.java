@@ -7,6 +7,6 @@ class le$1
   
   public boolean a(pr ☃)
   {
-    return (☃ != null) && (☃.ai()) && (this.a.i(☃.c()));
+    return (☃ != null) && (☃.ai()) && (a.i(☃.c()));
   }
 }

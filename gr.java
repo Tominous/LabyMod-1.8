@@ -19,114 +19,114 @@ public class gr
   
   public gr(cy ☃, boolean ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, int ☃, int... ☃)
   {
-    this.a = ☃;
-    this.j = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
-    this.e = ☃;
-    this.f = ☃;
-    this.g = ☃;
-    this.h = ☃;
-    this.i = ☃;
-    this.k = ☃;
+    a = ☃;
+    j = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
+    e = ☃;
+    f = ☃;
+    g = ☃;
+    h = ☃;
+    i = ☃;
+    k = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = cy.a(☃.readInt());
-    if (this.a == null) {
-      this.a = cy.J;
+    a = cy.a(☃.readInt());
+    if (a == null) {
+      a = cy.J;
     }
-    this.j = ☃.readBoolean();
-    this.b = ☃.readFloat();
-    this.c = ☃.readFloat();
-    this.d = ☃.readFloat();
-    this.e = ☃.readFloat();
-    this.f = ☃.readFloat();
-    this.g = ☃.readFloat();
-    this.h = ☃.readFloat();
-    this.i = ☃.readInt();
-    int ☃ = this.a.d();
-    this.k = new int[☃];
+    j = ☃.readBoolean();
+    b = ☃.readFloat();
+    c = ☃.readFloat();
+    d = ☃.readFloat();
+    e = ☃.readFloat();
+    f = ☃.readFloat();
+    g = ☃.readFloat();
+    h = ☃.readFloat();
+    i = ☃.readInt();
+    int ☃ = a.d();
+    k = new int[☃];
     for (int ☃ = 0; ☃ < ☃; ☃++) {
-      this.k[☃] = ☃.e();
+      k[☃] = ☃.e();
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeInt(this.a.c());
-    ☃.writeBoolean(this.j);
-    ☃.writeFloat(this.b);
-    ☃.writeFloat(this.c);
-    ☃.writeFloat(this.d);
-    ☃.writeFloat(this.e);
-    ☃.writeFloat(this.f);
-    ☃.writeFloat(this.g);
-    ☃.writeFloat(this.h);
-    ☃.writeInt(this.i);
-    int ☃ = this.a.d();
+    ☃.writeInt(a.c());
+    ☃.writeBoolean(j);
+    ☃.writeFloat(b);
+    ☃.writeFloat(c);
+    ☃.writeFloat(d);
+    ☃.writeFloat(e);
+    ☃.writeFloat(f);
+    ☃.writeFloat(g);
+    ☃.writeFloat(h);
+    ☃.writeInt(i);
+    int ☃ = a.d();
     for (int ☃ = 0; ☃ < ☃; ☃++) {
-      ☃.b(this.k[☃]);
+      ☃.b(k[☃]);
     }
   }
   
   public cy a()
   {
-    return this.a;
+    return a;
   }
   
   public boolean b()
   {
-    return this.j;
+    return j;
   }
   
   public double c()
   {
-    return this.b;
+    return b;
   }
   
   public double d()
   {
-    return this.c;
+    return c;
   }
   
   public double e()
   {
-    return this.d;
+    return d;
   }
   
   public float f()
   {
-    return this.e;
+    return e;
   }
   
   public float g()
   {
-    return this.f;
+    return f;
   }
   
   public float h()
   {
-    return this.g;
+    return g;
   }
   
   public float i()
   {
-    return this.h;
+    return h;
   }
   
   public int j()
   {
-    return this.i;
+    return i;
   }
   
   public int[] k()
   {
-    return this.k;
+    return k;
   }
   
   public void a(fj ☃)

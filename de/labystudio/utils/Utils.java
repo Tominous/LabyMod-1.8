@@ -10,19 +10,22 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Formatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.Inflater;
 import java.util.zip.InflaterInputStream;
-import javax.net.ssl.HttpsURLConnection;
 import org.apache.commons.io.IOUtils;
 
 public class Utils
@@ -206,25 +209,30 @@ public class Utils
     throws Exception
   {
     URL url = new URL(urlStr);
-    HttpsURLConnection httpConnection = (HttpsURLConnection)url.openConnection();
+    HttpURLConnection httpConnection = (HttpURLConnection)url.openConnection();
     httpConnection.setDoOutput(true);
     httpConnection.setDoInput(true);
-    httpConnection.setRequestProperty("Content-Type", "application/json");
+    httpConnection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
     httpConnection.setRequestMethod("POST");
     OutputStreamWriter out = new OutputStreamWriter(httpConnection.getOutputStream());
-    
     out.write(json);
     out.close();
-    BufferedReader br = new BufferedReader(new InputStreamReader(httpConnection.getInputStream()));
-    StringBuffer sb = new StringBuffer();
-    String str = br.readLine();
-    while (str != null)
+    int code = httpConnection.getResponseCode();
+    if (code / 100 == 2)
     {
-      sb.append(str);
-      str = br.readLine();
+      BufferedReader br = new BufferedReader(new InputStreamReader(httpConnection.getInputStream()));
+      StringBuffer sb = new StringBuffer();
+      String str = br.readLine();
+      while (str != null)
+      {
+        sb.append(str);
+        str = br.readLine();
+      }
+      br.close();
+      
+      return sb.toString();
     }
-    br.close();
-    return sb.toString();
+    return "Response: " + code;
   }
   
   public static String normalizeString(String input)
@@ -266,5 +274,37 @@ public class Utils
     {
       return gson.toJson(clazz);
     }
+  }
+  
+  public static String sha1(String string)
+  {
+    String sha1 = "";
+    try
+    {
+      MessageDigest crypt = MessageDigest.getInstance("SHA-1");
+      crypt.reset();
+      crypt.update(string.getBytes("UTF-8"));
+      sha1 = byteToHex(crypt.digest());
+    }
+    catch (NoSuchAlgorithmException e)
+    {
+      e.printStackTrace();
+    }
+    catch (UnsupportedEncodingException e)
+    {
+      e.printStackTrace();
+    }
+    return sha1;
+  }
+  
+  private static String byteToHex(byte[] hash)
+  {
+    Formatter formatter = new Formatter();
+    for (byte b : hash) {
+      formatter.format("%02x", new Object[] { Byte.valueOf(b) });
+    }
+    String result = formatter.toString();
+    formatter.close();
+    return result;
   }
 }

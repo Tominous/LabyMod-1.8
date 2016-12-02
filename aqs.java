@@ -6,22 +6,22 @@ public class aqs
   public aqs(String ☃)
   {
     super(☃);
-    this.b = new dn();
+    b = new dn();
   }
   
   public void a(dn ☃)
   {
-    this.b = ☃.m("Features");
+    b = ☃.m("Features");
   }
   
   public void b(dn ☃)
   {
-    ☃.a("Features", this.b);
+    ☃.a("Features", b);
   }
   
   public void a(dn ☃, int ☃, int ☃)
   {
-    this.b.a(b(☃, ☃), ☃);
+    b.a(b(☃, ☃), ☃);
   }
   
   public static String b(int ☃, int ☃)
@@ -31,6 +31,6 @@ public class aqs
   
   public dn a()
   {
-    return this.b;
+    return b;
   }
 }

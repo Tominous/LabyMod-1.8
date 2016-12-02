@@ -7,13 +7,13 @@ public class aes
   {
     super(☃);
     
-    this.au.clear();
-    this.ak = afi.b.Q();
-    this.al = afi.b.Q();
+    au.clear();
+    ak = afi.b.Q();
+    al = afi.b.Q();
     
-    this.as.A = 64537;
-    this.as.D = 0;
-    this.as.F = 0;
-    this.as.G = 0;
+    as.A = 64537;
+    as.D = 0;
+    as.F = 0;
+    as.G = 0;
   }
 }

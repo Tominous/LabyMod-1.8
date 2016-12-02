@@ -10,12 +10,12 @@ public class atz
   
   public ate a(Class<? extends ate> ☃, String ☃)
   {
-    return (ate)this.a.get(☃);
+    return (ate)a.get(☃);
   }
   
   public void a(String ☃, ate ☃)
   {
-    this.a.put(☃, ☃);
+    a.put(☃, ☃);
   }
   
   public void a() {}

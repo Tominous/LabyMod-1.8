@@ -12,51 +12,51 @@ public class qz
   
   public qz(py ☃, double ☃)
   {
-    this.a = ☃;
-    this.e = ☃;
-    this.f = ☃.o;
+    a = ☃;
+    e = ☃;
+    f = o;
     a(1);
   }
   
   public boolean a()
   {
-    if (!this.f.w()) {
+    if (!f.w()) {
       return false;
     }
-    if (!this.a.at()) {
+    if (!a.at()) {
       return false;
     }
-    if (!this.f.i(new cj(this.a.s, this.a.aR().b, this.a.u))) {
+    if (!f.i(new cj(a.s, a.aR().b, a.u))) {
       return false;
     }
     aui ☃ = f();
     if (☃ == null) {
       return false;
     }
-    this.b = ☃.a;
-    this.c = ☃.b;
-    this.d = ☃.c;
+    b = a;
+    c = b;
+    d = c;
     return true;
   }
   
   public boolean b()
   {
-    return !this.a.s().m();
+    return !a.s().m();
   }
   
   public void c()
   {
-    this.a.s().a(this.b, this.c, this.d, this.e);
+    a.s().a(b, c, d, e);
   }
   
   private aui f()
   {
-    Random ☃ = this.a.bc();
-    cj ☃ = new cj(this.a.s, this.a.aR().b, this.a.u);
+    Random ☃ = a.bc();
+    cj ☃ = new cj(a.s, a.aR().b, a.u);
     for (int ☃ = 0; ☃ < 10; ☃++)
     {
       cj ☃ = ☃.a(☃.nextInt(20) - 10, ☃.nextInt(6) - 3, ☃.nextInt(20) - 10);
-      if ((!this.f.i(☃)) && (this.a.a(☃) < 0.0F)) {
+      if ((!f.i(☃)) && (a.a(☃) < 0.0F)) {
         return new aui(☃.n(), ☃.o(), ☃.p());
       }
     }

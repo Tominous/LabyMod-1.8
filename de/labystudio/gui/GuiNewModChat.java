@@ -14,6 +14,8 @@ import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
 import de.labystudio.listener.ChatListener;
+import de.labystudio.listener.GommeHD;
+import de.labystudio.utils.Color;
 import de.labystudio.utils.DrawUtils;
 import eu;
 import fa;
@@ -37,18 +39,18 @@ public class GuiNewModChat
   
   public static void drawChat(int p_146230_1_)
   {
-    if (ave.A().t.m != wn.b.c)
+    if (At.m != wn.b.c)
     {
       if (!getChatOpen()) {
         resetScroll();
       }
-      if ((ConfigManager.settings.extraChat.booleanValue()) || (ConfigManager.settings.chatFilter.booleanValue()) || (ConfigManager.settings.chatPositionRight))
+      if ((settingsextraChat) || (settingschatFilter) || (settingschatPositionRight))
       {
         int var2 = getLineCount();
         boolean var3 = false;
         int var4 = 0;
         int var5 = field_146253_i.size();
-        float var6 = ave.A().t.q * 0.9F + 0.1F;
+        float var6 = At.q * 0.9F + 0.1F;
         if (var5 > 0)
         {
           if (getChatOpen()) {
@@ -86,11 +88,15 @@ public class GuiNewModChat
                   int var16 = -sort * 9 - 30;
                   sort++;
                   String var17 = var10.a().d();
+                  if ((GommeHD.isGommeHD()) && (settingsgommeOldUserColor) && 
+                    (var17 != null) && (var17.startsWith(Color.cl("8")))) {
+                    var17 = var17.replaceFirst(Color.cl("8"), Color.cl("a"));
+                  }
                   var17 = ChatListener.replaceMessage(var10.a().d(), var10.a().c());
                   var8 = ns.f(getChatWidth() / var7 + 2.0F);
                   DrawUtils.a(var8 + 5, var16 - 9, 3000, var16, var14 / 2 << 24);
                   bfl.l();
-                  ave.A().k.a(var17, var8 + 8, var16 - 8, 16777215 + (var14 << 24));
+                  Ak.a(var17, var8 + 8, var16 - 8, 16777215 + (var14 << 24));
                   bfl.c();
                   bfl.k();
                 }
@@ -99,7 +105,7 @@ public class GuiNewModChat
           }
           if (var3)
           {
-            var9 = ave.A().k.a;
+            var9 = Ak.a;
             bfl.b(-3.0F, 0.0F, 0.0F);
             int var18 = var5 * var9 + var5;
             int var11 = var4 * var9 + var4;
@@ -133,9 +139,9 @@ public class GuiNewModChat
   
   public static void printChatMessageWithOptionalDeletion(eu p_146234_1_, int p_146234_2_)
   {
-    if (ChatListener.allowedToPrint(p_146234_1_.d(), p_146234_1_.c()))
+    if (ChatListener.allowedToPrint(p_146234_1_))
     {
-      setChatLine(p_146234_1_, p_146234_2_, ave.A().q.e(), false);
+      setChatLine(p_146234_1_, p_146234_2_, Aq.e(), false);
       logger.info("[CHAT] " + p_146234_1_.c());
     }
   }
@@ -146,7 +152,7 @@ public class GuiNewModChat
       deleteChatLine(p_146237_2_);
     }
     int var5 = ns.d(getModChatWidth() / getChatScale());
-    List var6 = avu.a(p_146237_1_, var5, ave.A().k, false, false);
+    List var6 = avu.a(p_146237_1_, var5, Ak, false, false);
     boolean var7 = getChatOpen();
     eu var9;
     for (Iterator var8 = var6.iterator(); var8.hasNext(); field_146253_i.add(0, new ava(p_146237_3_, var9, p_146237_2_)))
@@ -235,9 +241,9 @@ public class GuiNewModChat
     if ((var6 >= 0) && (var7 >= 0))
     {
       int var8 = Math.min(getLineCount(), field_146253_i.size());
-      if ((var6 <= ns.d(getChatWidth() / getChatScale())) && (var7 < ave.A().k.a * var8 + var8))
+      if ((var6 <= ns.d(getChatWidth() / getChatScale())) && (var7 < Ak.a * var8 + var8))
       {
-        int var9 = var7 / ave.A().k.a + scrollPos;
+        int var9 = var7 / Ak.a + scrollPos;
         if ((var9 >= 0) && (var9 < field_146253_i.size()))
         {
           ava var10 = (ava)field_146253_i.get(var9);
@@ -248,7 +254,7 @@ public class GuiNewModChat
             eu var13 = (eu)var12.next();
             if ((var13 instanceof fa))
             {
-              var11 += ave.A().k.a(avu.a(((fa)var13).g(), false));
+              var11 += Ak.a(avu.a(((fa)var13).g(), false));
               if (var11 > var6) {
                 return var13;
               }
@@ -264,7 +270,7 @@ public class GuiNewModChat
   
   public static boolean getChatOpen()
   {
-    return ((ave.A().m instanceof awv)) || ((ave.A().m instanceof GuiSymbolSelector));
+    return ((Am instanceof awv)) || ((Am instanceof GuiNameHistory)) || ((Am instanceof GuiFilter)) || ((Am instanceof GuiAutoText));
   }
   
   public static void deleteChatLine(int p_146242_1_)
@@ -289,22 +295,22 @@ public class GuiNewModChat
   
   public static int getChatWidth()
   {
-    return calculateChatboxWidth(ave.A().t.F);
+    return calculateChatboxWidth(At.F);
   }
   
   public static int getModChatWidth()
   {
-    return LabyMod.getInstance().draw.getWidth() - calculateChatboxWidth(ave.A().t.F) - 10;
+    return getInstancedraw.getWidth() - calculateChatboxWidth(At.F) - 10;
   }
   
   public static int getChatHeight()
   {
-    return calculateChatboxHeight(getChatOpen() ? ave.A().t.H : ave.A().t.G);
+    return calculateChatboxHeight(getChatOpen() ? At.H : At.G);
   }
   
   public static float getChatScale()
   {
-    return ave.A().t.E;
+    return At.E;
   }
   
   public static int calculateChatboxWidth(float p_146233_0_)

@@ -15,18 +15,18 @@ public enum akc$a
   
   private akc$a(int ☃, String ☃)
   {
-    this.e = ☃;
-    this.f = ☃;
+    e = ☃;
+    f = ☃;
   }
   
   public int a()
   {
-    return this.e;
+    return e;
   }
   
   public String toString()
   {
-    return this.f;
+    return f;
   }
   
   public static a a(int ☃)
@@ -39,6 +39,6 @@ public enum akc$a
   
   public String l()
   {
-    return this.f;
+    return f;
   }
 }

@@ -10,7 +10,6 @@ import de.labystudio.utils.Debug;
 import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.PrintStream;
 import java.lang.reflect.Constructor;
 import java.net.URI;
 import java.net.URL;
@@ -94,9 +93,7 @@ public class ModManager
       {
         for (String name : list)
         {
-          if (Debug.api()) {
-            System.out.println("[DEBUG] Loading Mod " + name);
-          }
+          Debug.debug("[DEBUG] Loading Mod " + name);
           JarEntry entry = jar.getJarEntry(name);
           InputStream input = jar.getInputStream(entry);
           JsonElement json = new JsonParser().parse(new InputStreamReader(input));

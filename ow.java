@@ -75,49 +75,49 @@ public class ow
   
   public boolean a()
   {
-    return this.v;
+    return v;
   }
   
   public ow b()
   {
-    this.v = true;
+    v = true;
     return this;
   }
   
   public boolean c()
   {
-    return this.y;
+    return y;
   }
   
   public ow d()
   {
-    this.y = true;
+    y = true;
     return this;
   }
   
   public boolean e()
   {
-    return this.q;
+    return q;
   }
   
   public float f()
   {
-    return this.t;
+    return t;
   }
   
   public boolean g()
   {
-    return this.r;
+    return r;
   }
   
   public boolean h()
   {
-    return this.s;
+    return s;
   }
   
   protected ow(String ☃)
   {
-    this.p = ☃;
+    p = ☃;
   }
   
   public pk i()
@@ -132,36 +132,36 @@ public class ow
   
   protected ow k()
   {
-    this.q = true;
+    q = true;
     
-    this.t = 0.0F;
+    t = 0.0F;
     return this;
   }
   
   protected ow l()
   {
-    this.r = true;
+    r = true;
     return this;
   }
   
   protected ow m()
   {
-    this.s = true;
+    s = true;
     
-    this.t = 0.0F;
+    t = 0.0F;
     return this;
   }
   
   protected ow n()
   {
-    this.u = true;
+    u = true;
     return this;
   }
   
   public eu b(pr ☃)
   {
     pr ☃ = ☃.bt();
-    String ☃ = "death.attack." + this.p;
+    String ☃ = "death.attack." + p;
     String ☃ = ☃ + ".player";
     if ((☃ != null) && (di.c(☃))) {
       return new fb(☃, new Object[] { ☃.f_(), ☃.f_() });
@@ -171,40 +171,40 @@ public class ow
   
   public boolean o()
   {
-    return this.u;
+    return u;
   }
   
   public String p()
   {
-    return this.p;
+    return p;
   }
   
   public ow q()
   {
-    this.w = true;
+    w = true;
     return this;
   }
   
   public boolean r()
   {
-    return this.w;
+    return w;
   }
   
   public boolean s()
   {
-    return this.x;
+    return x;
   }
   
   public ow t()
   {
-    this.x = true;
+    x = true;
     return this;
   }
   
   public boolean u()
   {
     pk ☃ = j();
-    if (((☃ instanceof wn)) && (((wn)☃).bA.d)) {
+    if (((☃ instanceof wn)) && (bA.d)) {
       return true;
     }
     return false;

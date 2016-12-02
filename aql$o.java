@@ -12,17 +12,17 @@ public class aql$o
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
   {
-    aql.v ☃ = this.k.b[cq.c.a()];
-    aql.v ☃ = this.k;
-    if (this.k.a / 25 > 0)
+    aql.v ☃ = k.b[cq.c.a()];
+    aql.v ☃ = k;
+    if (k.a / 25 > 0)
     {
-      a(☃, ☃, 0, 8, ☃.c[cq.a.a()]);
-      a(☃, ☃, 0, 0, ☃.c[cq.a.a()]);
+      a(☃, ☃, 0, 8, c[cq.a.a()]);
+      a(☃, ☃, 0, 0, c[cq.a.a()]);
     }
-    if (☃.b[cq.b.a()] == null) {
+    if (b[cq.b.a()] == null) {
       a(☃, ☃, 1, 4, 1, 6, 4, 7, a);
     }
-    if (☃.b[cq.b.a()] == null) {
+    if (b[cq.b.a()] == null) {
       a(☃, ☃, 1, 4, 8, 6, 4, 14, a);
     }
     a(☃, ☃, 0, 3, 0, 0, 3, 15, b, b, false);
@@ -65,22 +65,22 @@ public class aql$o
     a(☃, b, 5, 3, 5, ☃);
     a(☃, b, 2, 3, 10, ☃);
     a(☃, b, 5, 3, 10, ☃);
-    if (☃.c[cq.d.a()] != 0) {
+    if (c[cq.d.a()] != 0) {
       a(☃, ☃, 3, 1, 0, 4, 2, 0, false);
     }
-    if (☃.c[cq.f.a()] != 0) {
+    if (c[cq.f.a()] != 0) {
       a(☃, ☃, 7, 1, 3, 7, 2, 4, false);
     }
-    if (☃.c[cq.e.a()] != 0) {
+    if (c[cq.e.a()] != 0) {
       a(☃, ☃, 0, 1, 3, 0, 2, 4, false);
     }
-    if (☃.c[cq.c.a()] != 0) {
+    if (c[cq.c.a()] != 0) {
       a(☃, ☃, 3, 1, 15, 4, 2, 15, false);
     }
-    if (☃.c[cq.e.a()] != 0) {
+    if (c[cq.e.a()] != 0) {
       a(☃, ☃, 0, 1, 11, 0, 2, 12, false);
     }
-    if (☃.c[cq.f.a()] != 0) {
+    if (c[cq.f.a()] != 0) {
       a(☃, ☃, 7, 1, 11, 7, 2, 12, false);
     }
     return true;

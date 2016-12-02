@@ -12,28 +12,28 @@ public class apz
   
   public int a()
   {
-    return this.c;
+    return c;
   }
   
   public void a(int ☃)
   {
-    this.c = ☃;
+    c = ☃;
   }
   
   public Map<String, Map<String, String>> b()
   {
-    return this.b;
+    return b;
   }
   
   public List<aqa> c()
   {
-    return this.a;
+    return a;
   }
   
   public void d()
   {
     int ☃ = 0;
-    for (aqa ☃ : this.a)
+    for (aqa ☃ : a)
     {
       ☃.b(☃);
       ☃ += ☃.b();
@@ -46,21 +46,21 @@ public class apz
     
     ☃.append(3);
     ☃.append(";");
-    for (int ☃ = 0; ☃ < this.a.size(); ☃++)
+    for (int ☃ = 0; ☃ < a.size(); ☃++)
     {
       if (☃ > 0) {
         ☃.append(",");
       }
-      ☃.append(((aqa)this.a.get(☃)).toString());
+      ☃.append(((aqa)a.get(☃)).toString());
     }
     ☃.append(";");
-    ☃.append(this.c);
+    ☃.append(c);
     int ☃;
-    if (!this.b.isEmpty())
+    if (!b.isEmpty())
     {
       ☃.append(";");
       ☃ = 0;
-      for (Map.Entry<String, Map<String, String>> ☃ : this.b.entrySet())
+      for (Map.Entry<String, Map<String, String>> ☃ : b.entrySet())
       {
         if (☃++ > 0) {
           ☃.append(",");
@@ -199,7 +199,7 @@ public class apz
     ☃.c().addAll(☃);
     ☃.d();
     
-    int ☃ = ady.q.az;
+    int ☃ = qaz;
     if ((☃ > 0) && (☃.length > ☃)) {
       ☃ = ns.a(☃[(☃++)], ☃);
     }
@@ -239,7 +239,7 @@ public class apz
   {
     apz ☃ = new apz();
     
-    ☃.a(ady.q.az);
+    ☃.a(qaz);
     ☃.c().add(new aqa(1, afi.h));
     ☃.c().add(new aqa(2, afi.d));
     ☃.c().add(new aqa(1, afi.c));

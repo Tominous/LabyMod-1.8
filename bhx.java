@@ -21,18 +21,18 @@ public class bhx
   
   public void a(cq ☃, cq ☃, boolean ☃)
   {
-    this.b.set(☃.ordinal() + ☃.ordinal() * a, ☃);
-    this.b.set(☃.ordinal() + ☃.ordinal() * a, ☃);
+    b.set(☃.ordinal() + ☃.ordinal() * a, ☃);
+    b.set(☃.ordinal() + ☃.ordinal() * a, ☃);
   }
   
   public void a(boolean ☃)
   {
-    this.b.set(0, this.b.size(), ☃);
+    b.set(0, b.size(), ☃);
   }
   
   public boolean a(cq ☃, cq ☃)
   {
-    return this.b.get(☃.ordinal() + ☃.ordinal() * a);
+    return b.get(☃.ordinal() + ☃.ordinal() * a);
   }
   
   public String toString()

@@ -1,4 +1,6 @@
+import java.io.IOException;
 import java.util.List;
+import net.labymod.spm.GuiSPM;
 
 public class ayj
   extends axu
@@ -12,116 +14,121 @@ public class ayj
   private ayi s;
   private avs t;
   
-  public ayj(axu ☃, avh ☃)
+  public ayj(axu screen, avh settings)
   {
-    this.i = ☃;
-    this.r = ☃;
+    i = screen;
+    r = settings;
   }
   
   public void b()
   {
-    this.s = new ayi(this, this.j);
-    this.n.add(new avs(200, this.l / 2 - 155, this.m - 29, 150, 20, bnq.a("gui.done", new Object[0])));
-    this.n.add(this.t = new avs(201, this.l / 2 - 155 + 160, this.m - 29, 150, 20, bnq.a("controls.resetAll", new Object[0])));
-    this.a = bnq.a("controls.title", new Object[0]);
-    
-    int ☃ = 0;
-    for (avh.a ☃ : h)
+    s = new ayi(this, j);
+    n.add(new avs(200, l / 2 - 155, m - 29, 150, 20, bnq.a("gui.done", new Object[0])));
+    n.add(t = new avs(201, l / 2 - 155 + 160, m - 29, 150, 20, bnq.a("controls.resetAll", new Object[0])));
+    n.add(new avs(202, l / 2 - 155 + 160, 42, 150, 20, "SettingsProfiles"));
+    a = bnq.a("controls.title", new Object[0]);
+    int i = 0;
+    for (avh.a gamesettings$options : h)
     {
-      if (☃.a()) {
-        this.n.add(new awj(☃.c(), this.l / 2 - 155 + ☃ % 2 * 160, 18 + 24 * (☃ >> 1), ☃));
+      if (gamesettings$options.a()) {
+        n.add(new awj(gamesettings$options.c(), l / 2 - 155 + i % 2 * 160, 18 + 24 * (i >> 1), gamesettings$options));
       } else {
-        this.n.add(new awe(☃.c(), this.l / 2 - 155 + ☃ % 2 * 160, 18 + 24 * (☃ >> 1), ☃, this.r.c(☃)));
+        n.add(new awe(gamesettings$options.c(), l / 2 - 155 + i % 2 * 160, 18 + 24 * (i >> 1), gamesettings$options, r.c(gamesettings$options)));
       }
-      ☃++;
+      i++;
     }
   }
   
   public void k()
+    throws IOException
   {
     super.k();
-    this.s.p();
+    s.p();
   }
   
-  protected void a(avs ☃)
+  protected void a(avs button)
+    throws IOException
   {
-    if (☃.k == 200)
+    if (k == 200)
     {
-      this.j.a(this.i);
+      j.a(i);
     }
-    else if (☃.k == 201)
+    else if (k == 201)
     {
-      for (avb ☃ : this.j.t.aw) {
-        ☃.b(☃.h());
+      for (avb keybinding : j.t.aw) {
+        keybinding.b(keybinding.h());
       }
       avb.b();
     }
-    else if ((☃.k < 100) && ((☃ instanceof awe)))
+    else if ((k < 100) && ((button instanceof awe)))
     {
-      this.r.a(((awe)☃).c(), 1);
-      ☃.j = this.r.c(avh.a.a(☃.k));
+      r.a(((awe)button).c(), 1);
+      j = r.c(avh.a.a(k));
+    }
+    else if (k == 202)
+    {
+      j.a(new GuiSPM(this));
     }
   }
   
-  protected void a(int ☃, int ☃, int ☃)
+  protected void a(int mouseX, int mouseY, int mouseButton)
+    throws IOException
   {
-    if (this.f != null)
+    if (f != null)
     {
-      this.r.a(this.f, -100 + ☃);
-      this.f = null;
+      r.a(f, -100 + mouseButton);
+      f = null;
       avb.b();
     }
-    else if ((☃ != 0) || (!this.s.b(☃, ☃, ☃)))
+    else if ((mouseButton != 0) || (!s.b(mouseX, mouseY, mouseButton)))
     {
-      super.a(☃, ☃, ☃);
+      super.a(mouseX, mouseY, mouseButton);
     }
   }
   
-  protected void b(int ☃, int ☃, int ☃)
+  protected void b(int mouseX, int mouseY, int state)
   {
-    if ((☃ != 0) || (!this.s.c(☃, ☃, ☃))) {
-      super.b(☃, ☃, ☃);
+    if ((state != 0) || (!s.c(mouseX, mouseY, state))) {
+      super.b(mouseX, mouseY, state);
     }
   }
   
-  protected void a(char ☃, int ☃)
+  protected void a(char typedChar, int keyCode)
+    throws IOException
   {
-    if (this.f != null)
+    if (f != null)
     {
-      if (☃ == 1) {
-        this.r.a(this.f, 0);
-      } else if (☃ != 0) {
-        this.r.a(this.f, ☃);
-      } else if (☃ > 0) {
-        this.r.a(this.f, ☃ + 'Ā');
+      if (keyCode == 1) {
+        r.a(f, 0);
+      } else if (keyCode != 0) {
+        r.a(f, keyCode);
+      } else if (typedChar > 0) {
+        r.a(f, typedChar + 'Ā');
       }
-      this.f = null;
-      this.g = ave.J();
+      f = null;
+      g = ave.J();
       avb.b();
     }
     else
     {
-      super.a(☃, ☃);
+      super.a(typedChar, keyCode);
     }
   }
   
-  public void a(int ☃, int ☃, float ☃)
+  public void a(int mouseX, int mouseY, float partialTicks)
   {
     c();
-    
-    this.s.a(☃, ☃, ☃);
-    a(this.q, this.a, this.l / 2, 8, 16777215);
-    
-    boolean ☃ = true;
-    for (avb ☃ : this.r.aw) {
-      if (☃.i() != ☃.h())
+    s.a(mouseX, mouseY, partialTicks);
+    a(q, a, l / 2, 8, 16777215);
+    boolean flag = true;
+    for (avb keybinding : r.aw) {
+      if (keybinding.i() != keybinding.h())
       {
-        ☃ = false;
+        flag = false;
         break;
       }
     }
-    this.t.l = (!☃);
-    
-    super.a(☃, ☃, ☃);
+    t.l = (!flag);
+    super.a(mouseX, mouseY, partialTicks);
   }
 }

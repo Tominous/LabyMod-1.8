@@ -12,10 +12,10 @@ public class oq
   
   public oq(String ☃, boolean ☃, int ☃)
   {
-    this.a = ☃;
-    this.e = ☃;
-    this.b = ☃;
-    this.c = new zx[☃];
+    a = ☃;
+    e = ☃;
+    b = ☃;
+    c = new zx[☃];
   }
   
   public oq(eu ☃, int ☃)
@@ -25,39 +25,39 @@ public class oq
   
   public void a(oh ☃)
   {
-    if (this.d == null) {
-      this.d = Lists.newArrayList();
+    if (d == null) {
+      d = Lists.newArrayList();
     }
-    this.d.add(☃);
+    d.add(☃);
   }
   
   public void b(oh ☃)
   {
-    this.d.remove(☃);
+    d.remove(☃);
   }
   
   public zx a(int ☃)
   {
-    if ((☃ < 0) || (☃ >= this.c.length)) {
+    if ((☃ < 0) || (☃ >= c.length)) {
       return null;
     }
-    return this.c[☃];
+    return c[☃];
   }
   
   public zx a(int ☃, int ☃)
   {
-    if (this.c[☃] != null)
+    if (c[☃] != null)
     {
-      if (this.c[☃].b <= ☃)
+      if (c[☃].b <= ☃)
       {
-        zx ☃ = this.c[☃];
-        this.c[☃] = null;
+        zx ☃ = c[☃];
+        c[☃] = null;
         p_();
         return ☃;
       }
-      zx ☃ = this.c[☃].a(☃);
-      if (this.c[☃].b == 0) {
-        this.c[☃] = null;
+      zx ☃ = c[☃].a(☃);
+      if (c[☃].b == 0) {
+        c[☃] = null;
       }
       p_();
       return ☃;
@@ -68,7 +68,7 @@ public class oq
   public zx a(zx ☃)
   {
     zx ☃ = ☃.k();
-    for (int ☃ = 0; ☃ < this.b; ☃++)
+    for (int ☃ = 0; ☃ < b; ☃++)
     {
       zx ☃ = a(☃);
       if (☃ == null)
@@ -80,12 +80,12 @@ public class oq
       if (zx.c(☃, ☃))
       {
         int ☃ = Math.min(q_(), ☃.c());
-        int ☃ = Math.min(☃.b, ☃ - ☃.b);
+        int ☃ = Math.min(b, ☃ - b);
         if (☃ > 0)
         {
-          ☃.b += ☃;
-          ☃.b -= ☃;
-          if (☃.b <= 0)
+          b += ☃;
+          b -= ☃;
+          if (b <= 0)
           {
             p_();
             return null;
@@ -93,7 +93,7 @@ public class oq
         }
       }
     }
-    if (☃.b != ☃.b) {
+    if (b != b) {
       p_();
     }
     return ☃;
@@ -101,10 +101,10 @@ public class oq
   
   public zx b(int ☃)
   {
-    if (this.c[☃] != null)
+    if (c[☃] != null)
     {
-      zx ☃ = this.c[☃];
-      this.c[☃] = null;
+      zx ☃ = c[☃];
+      c[☃] = null;
       return ☃;
     }
     return null;
@@ -112,32 +112,32 @@ public class oq
   
   public void a(int ☃, zx ☃)
   {
-    this.c[☃] = ☃;
-    if ((☃ != null) && (☃.b > q_())) {
-      ☃.b = q_();
+    c[☃] = ☃;
+    if ((☃ != null) && (b > q_())) {
+      b = q_();
     }
     p_();
   }
   
   public int o_()
   {
-    return this.b;
+    return b;
   }
   
   public String e_()
   {
-    return this.a;
+    return a;
   }
   
   public boolean l_()
   {
-    return this.e;
+    return e;
   }
   
   public void a(String ☃)
   {
-    this.e = true;
-    this.a = ☃;
+    e = true;
+    a = ☃;
   }
   
   public eu f_()
@@ -155,9 +155,9 @@ public class oq
   
   public void p_()
   {
-    if (this.d != null) {
-      for (int ☃ = 0; ☃ < this.d.size(); ☃++) {
-        ((oh)this.d.get(☃)).a(this);
+    if (d != null) {
+      for (int ☃ = 0; ☃ < d.size(); ☃++) {
+        ((oh)d.get(☃)).a(this);
       }
     }
   }
@@ -190,8 +190,8 @@ public class oq
   
   public void l()
   {
-    for (int ☃ = 0; ☃ < this.c.length; ☃++) {
-      this.c[☃] = null;
+    for (int ☃ = 0; ☃ < c.length; ☃++) {
+      c[☃] = null;
     }
   }
 }

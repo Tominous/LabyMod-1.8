@@ -1,13 +1,13 @@
 class ayn$a
   extends ayn.d
 {
-  public ayn$a(ayn paramayn, int ☃, int ☃, int ☃)
+  public ayn$a(ayn this$0, int p_i1074_2_, int p_i1074_3_, int p_i1074_4_)
   {
-    super(☃, ☃, ☃, ayn.a(), 112, 220);
+    super(p_i1074_2_, p_i1074_3_, p_i1074_4_, ayn.a(), 112, 220);
   }
   
-  public void b(int ☃, int ☃)
+  public void b(int mouseX, int mouseY)
   {
-    ayn.c(this.o, bnq.a("gui.cancel", new Object[0]), ☃, ☃);
+    this$0.a(bnq.a("gui.cancel", new Object[0]), mouseX, mouseY);
   }
 }

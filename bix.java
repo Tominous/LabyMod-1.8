@@ -4,7 +4,7 @@ public class bix
   public bix(biu ☃)
   {
     super(☃);
-    this.c = 0.5F;
+    c = 0.5F;
   }
   
   public void a(uy ☃, double ☃, double ☃, double ☃, float ☃, float ☃)

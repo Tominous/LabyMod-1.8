@@ -9,7 +9,7 @@ public class afl
   public afl()
   {
     super(arm.f);
-    j(this.M.b().a(a[0], Boolean.valueOf(false)).a(a[1], Boolean.valueOf(false)).a(a[2], Boolean.valueOf(false)));
+    j(M.b().a(a[0], Boolean.valueOf(false)).a(a[1], Boolean.valueOf(false)).a(a[2], Boolean.valueOf(false)));
   }
   
   public String f()
@@ -52,7 +52,7 @@ public class afl
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (☃.D) {
+    if (D) {
       return true;
     }
     akw ☃ = ☃.s(☃);

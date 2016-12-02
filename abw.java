@@ -9,13 +9,13 @@ public class abw
   
   public abw(zx ☃, List<zx> ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public zx b()
   {
-    return this.a;
+    return a;
   }
   
   public zx[] b(xp ☃)
@@ -33,7 +33,7 @@ public class abw
   
   public boolean a(xp ☃, adm ☃)
   {
-    List<zx> ☃ = Lists.newArrayList(this.b);
+    List<zx> ☃ = Lists.newArrayList(b);
     for (int ☃ = 0; ☃ < ☃.h(); ☃++) {
       for (int ☃ = 0; ☃ < ☃.i(); ☃++)
       {
@@ -60,11 +60,11 @@ public class abw
   
   public zx a(xp ☃)
   {
-    return this.a.k();
+    return a.k();
   }
   
   public int a()
   {
-    return this.b.size();
+    return b.size();
   }
 }

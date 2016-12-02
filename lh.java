@@ -35,126 +35,126 @@ public class lh
   
   public lh(pk ☃, int ☃, int ☃, boolean ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.u = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    u = ☃;
     
-    this.d = ns.c(☃.s * 32.0D);
-    this.e = ns.c(☃.t * 32.0D);
-    this.f = ns.c(☃.u * 32.0D);
-    this.g = ns.d(☃.y * 256.0F / 360.0F);
-    this.h = ns.d(☃.z * 256.0F / 360.0F);
+    d = ns.c(s * 32.0D);
+    e = ns.c(t * 32.0D);
+    f = ns.c(u * 32.0D);
+    g = ns.d(y * 256.0F / 360.0F);
+    h = ns.d(z * 256.0F / 360.0F);
     
-    this.i = ns.d(☃.aC() * 256.0F / 360.0F);
-    this.y = ☃.C;
+    i = ns.d(☃.aC() * 256.0F / 360.0F);
+    y = C;
   }
   
   public boolean equals(Object ☃)
   {
     if ((☃ instanceof lh)) {
-      return ((lh)☃).a.F() == this.a.F();
+      return a.F() == a.F();
     }
     return false;
   }
   
   public int hashCode()
   {
-    return this.a.F();
+    return a.F();
   }
   
   public void a(List<wn> ☃)
   {
-    this.n = false;
-    if ((!this.t) || (this.a.e(this.q, this.r, this.s) > 16.0D))
+    n = false;
+    if ((!t) || (a.e(q, r, s) > 16.0D))
     {
-      this.q = this.a.s;
-      this.r = this.a.t;
-      this.s = this.a.u;
-      this.t = true;
-      this.n = true;
+      q = a.s;
+      r = a.t;
+      s = a.u;
+      t = true;
+      n = true;
       b(☃);
     }
-    if ((this.w != this.a.m) || ((this.a.m != null) && (this.m % 60 == 0)))
+    if ((w != a.m) || ((a.m != null) && (m % 60 == 0)))
     {
-      this.w = this.a.m;
-      a(new hl(0, this.a, this.a.m));
+      w = a.m;
+      a(new hl(0, a, a.m));
     }
-    if (((this.a instanceof uo)) && (this.m % 10 == 0))
+    if (((a instanceof uo)) && (m % 10 == 0))
     {
-      uo ☃ = (uo)this.a;
+      uo ☃ = (uo)a;
       zx ☃ = ☃.o();
       atg ☃;
       if ((☃ != null) && ((☃.b() instanceof aab)))
       {
-        ☃ = zy.bd.a(☃, this.a.o);
+        ☃ = zy.bd.a(☃, a.o);
         for (wn ☃ : ☃)
         {
           lf ☃ = (lf)☃;
           ☃.a(☃, ☃);
           
-          ff ☃ = zy.bd.c(☃, this.a.o, ☃);
+          ff ☃ = zy.bd.c(☃, a.o, ☃);
           if (☃ != null) {
-            ☃.a.a(☃);
+            a.a(☃);
           }
         }
       }
       b();
     }
-    if ((this.m % this.c == 0) || (this.a.ai) || (this.a.H().a()))
+    if ((m % c == 0) || (a.ai) || (a.H().a()))
     {
-      if (this.a.m == null)
+      if (a.m == null)
       {
-        this.v += 1;
-        int ☃ = ns.c(this.a.s * 32.0D);
-        int ☃ = ns.c(this.a.t * 32.0D);
-        int ☃ = ns.c(this.a.u * 32.0D);
-        int ☃ = ns.d(this.a.y * 256.0F / 360.0F);
-        int ☃ = ns.d(this.a.z * 256.0F / 360.0F);
+        v += 1;
+        int ☃ = ns.c(a.s * 32.0D);
+        int ☃ = ns.c(a.t * 32.0D);
+        int ☃ = ns.c(a.u * 32.0D);
+        int ☃ = ns.d(a.y * 256.0F / 360.0F);
+        int ☃ = ns.d(a.z * 256.0F / 360.0F);
         
-        int ☃ = ☃ - this.d;
-        int ☃ = ☃ - this.e;
-        int ☃ = ☃ - this.f;
+        int ☃ = ☃ - d;
+        int ☃ = ☃ - e;
+        int ☃ = ☃ - f;
         
         ff ☃ = null;
         
-        boolean ☃ = (Math.abs(☃) >= 4) || (Math.abs(☃) >= 4) || (Math.abs(☃) >= 4) || (this.m % 60 == 0);
-        boolean ☃ = (Math.abs(☃ - this.g) >= 4) || (Math.abs(☃ - this.h) >= 4);
-        if ((this.m > 0) || ((this.a instanceof wq))) {
-          if ((☃ < -128) || (☃ >= 128) || (☃ < -128) || (☃ >= 128) || (☃ < -128) || (☃ >= 128) || (this.v > 400) || (this.x) || (this.y != this.a.C))
+        boolean ☃ = (Math.abs(☃) >= 4) || (Math.abs(☃) >= 4) || (Math.abs(☃) >= 4) || (m % 60 == 0);
+        boolean ☃ = (Math.abs(☃ - g) >= 4) || (Math.abs(☃ - h) >= 4);
+        if ((m > 0) || ((a instanceof wq))) {
+          if ((☃ < -128) || (☃ >= 128) || (☃ < -128) || (☃ >= 128) || (☃ < -128) || (☃ >= 128) || (v > 400) || (x) || (y != a.C))
           {
-            this.y = this.a.C;
-            this.v = 0;
-            ☃ = new hz(this.a.F(), ☃, ☃, ☃, (byte)☃, (byte)☃, this.a.C);
+            y = a.C;
+            v = 0;
+            ☃ = new hz(a.F(), ☃, ☃, ☃, (byte)☃, (byte)☃, a.C);
           }
-          else if (((☃) && (☃)) || ((this.a instanceof wq)))
+          else if (((☃) && (☃)) || ((a instanceof wq)))
           {
-            ☃ = new gv.b(this.a.F(), (byte)☃, (byte)☃, (byte)☃, (byte)☃, (byte)☃, this.a.C);
-          }
-          else if (☃)
-          {
-            ☃ = new gv.a(this.a.F(), (byte)☃, (byte)☃, (byte)☃, this.a.C);
+            ☃ = new gv.b(a.F(), (byte)☃, (byte)☃, (byte)☃, (byte)☃, (byte)☃, a.C);
           }
           else if (☃)
           {
-            ☃ = new gv.c(this.a.F(), (byte)☃, (byte)☃, this.a.C);
+            ☃ = new gv.a(a.F(), (byte)☃, (byte)☃, (byte)☃, a.C);
+          }
+          else if (☃)
+          {
+            ☃ = new gv.c(a.F(), (byte)☃, (byte)☃, a.C);
           }
         }
-        if (this.u)
+        if (u)
         {
-          double ☃ = this.a.v - this.j;
-          double ☃ = this.a.w - this.k;
-          double ☃ = this.a.x - this.l;
+          double ☃ = a.v - j;
+          double ☃ = a.w - k;
+          double ☃ = a.x - l;
           
           double ☃ = 0.02D;
           
           double ☃ = ☃ * ☃ + ☃ * ☃ + ☃ * ☃;
-          if ((☃ > ☃ * ☃) || ((☃ > 0.0D) && (this.a.v == 0.0D) && (this.a.w == 0.0D) && (this.a.x == 0.0D)))
+          if ((☃ > ☃ * ☃) || ((☃ > 0.0D) && (a.v == 0.0D) && (a.w == 0.0D) && (a.x == 0.0D)))
           {
-            this.j = this.a.v;
-            this.k = this.a.w;
-            this.l = this.a.x;
-            a(new hm(this.a.F(), this.j, this.k, this.l));
+            j = a.v;
+            k = a.w;
+            l = a.x;
+            a(new hm(a.F(), j, k, l));
           }
         }
         if (☃ != null) {
@@ -163,64 +163,64 @@ public class lh
         b();
         if (☃)
         {
-          this.d = ☃;
-          this.e = ☃;
-          this.f = ☃;
+          d = ☃;
+          e = ☃;
+          f = ☃;
         }
         if (☃)
         {
-          this.g = ☃;
-          this.h = ☃;
+          g = ☃;
+          h = ☃;
         }
-        this.x = false;
+        x = false;
       }
       else
       {
-        int ☃ = ns.d(this.a.y * 256.0F / 360.0F);
-        int ☃ = ns.d(this.a.z * 256.0F / 360.0F);
-        boolean ☃ = (Math.abs(☃ - this.g) >= 4) || (Math.abs(☃ - this.h) >= 4);
+        int ☃ = ns.d(a.y * 256.0F / 360.0F);
+        int ☃ = ns.d(a.z * 256.0F / 360.0F);
+        boolean ☃ = (Math.abs(☃ - g) >= 4) || (Math.abs(☃ - h) >= 4);
         if (☃)
         {
-          a(new gv.c(this.a.F(), (byte)☃, (byte)☃, this.a.C));
-          this.g = ☃;
-          this.h = ☃;
+          a(new gv.c(a.F(), (byte)☃, (byte)☃, a.C));
+          g = ☃;
+          h = ☃;
         }
-        this.d = ns.c(this.a.s * 32.0D);
-        this.e = ns.c(this.a.t * 32.0D);
-        this.f = ns.c(this.a.u * 32.0D);
+        d = ns.c(a.s * 32.0D);
+        e = ns.c(a.t * 32.0D);
+        f = ns.c(a.u * 32.0D);
         
         b();
         
-        this.x = true;
+        x = true;
       }
-      int ☃ = ns.d(this.a.aC() * 256.0F / 360.0F);
-      if (Math.abs(☃ - this.i) >= 4)
+      int ☃ = ns.d(a.aC() * 256.0F / 360.0F);
+      if (Math.abs(☃ - i) >= 4)
       {
-        a(new hf(this.a, (byte)☃));
-        this.i = ☃;
+        a(new hf(a, (byte)☃));
+        i = ☃;
       }
-      this.a.ai = false;
+      a.ai = false;
     }
-    this.m += 1;
-    if (this.a.G)
+    m += 1;
+    if (a.G)
     {
-      b(new hm(this.a));
-      this.a.G = false;
+      b(new hm(a));
+      a.G = false;
     }
   }
   
   private void b()
   {
-    pz ☃ = this.a.H();
+    pz ☃ = a.H();
     if (☃.a()) {
-      b(new hk(this.a.F(), ☃, false));
+      b(new hk(a.F(), ☃, false));
     }
-    if ((this.a instanceof pr))
+    if ((a instanceof pr))
     {
-      qi ☃ = (qi)((pr)this.a).by();
+      qi ☃ = (qi)((pr)a).by();
       Set<qc> ☃ = ☃.b();
       if (!☃.isEmpty()) {
-        b(new ia(this.a.F(), ☃));
+        b(new ia(a.F(), ☃));
       }
       ☃.clear();
     }
@@ -228,116 +228,116 @@ public class lh
   
   public void a(ff ☃)
   {
-    for (lf ☃ : this.o) {
-      ☃.a.a(☃);
+    for (lf ☃ : o) {
+      a.a(☃);
     }
   }
   
   public void b(ff ☃)
   {
     a(☃);
-    if ((this.a instanceof lf)) {
-      ((lf)this.a).a.a(☃);
+    if ((a instanceof lf)) {
+      a).a.a(☃);
     }
   }
   
   public void a()
   {
-    for (lf ☃ : this.o) {
-      ☃.d(this.a);
+    for (lf ☃ : o) {
+      ☃.d(a);
     }
   }
   
   public void a(lf ☃)
   {
-    if (this.o.contains(☃))
+    if (o.contains(☃))
     {
-      ☃.d(this.a);
-      this.o.remove(☃);
+      ☃.d(a);
+      o.remove(☃);
     }
   }
   
   public void b(lf ☃)
   {
-    if (☃ == this.a) {
+    if (☃ == a) {
       return;
     }
     if (c(☃))
     {
-      if ((!this.o.contains(☃)) && ((e(☃)) || (this.a.n)))
+      if ((!o.contains(☃)) && ((e(☃)) || (a.n)))
       {
-        this.o.add(☃);
+        o.add(☃);
         ff ☃ = c();
-        ☃.a.a(☃);
-        if (!this.a.H().d()) {
-          ☃.a.a(new hk(this.a.F(), this.a.H(), true));
+        a.a(☃);
+        if (!a.H().d()) {
+          a.a(new hk(a.F(), a.H(), true));
         }
-        dn ☃ = this.a.aV();
+        dn ☃ = a.aV();
         if (☃ != null) {
-          ☃.a.a(new gj(this.a.F(), ☃));
+          a.a(new gj(a.F(), ☃));
         }
-        if ((this.a instanceof pr))
+        if ((a instanceof pr))
         {
-          qi ☃ = (qi)((pr)this.a).by();
+          qi ☃ = (qi)((pr)a).by();
           Collection<qc> ☃ = ☃.c();
           if (!☃.isEmpty()) {
-            ☃.a.a(new ia(this.a.F(), ☃));
+            a.a(new ia(a.F(), ☃));
           }
         }
-        this.j = this.a.v;
-        this.k = this.a.w;
-        this.l = this.a.x;
-        if ((this.u) && (!(☃ instanceof fn))) {
-          ☃.a.a(new hm(this.a.F(), this.a.v, this.a.w, this.a.x));
+        j = a.v;
+        k = a.w;
+        l = a.x;
+        if ((u) && (!(☃ instanceof fn))) {
+          a.a(new hm(a.F(), a.v, a.w, a.x));
         }
-        if (this.a.m != null) {
-          ☃.a.a(new hl(0, this.a, this.a.m));
+        if (a.m != null) {
+          a.a(new hl(0, a, a.m));
         }
-        if (((this.a instanceof ps)) && (((ps)this.a).cd() != null)) {
-          ☃.a.a(new hl(1, this.a, ((ps)this.a).cd()));
+        if (((a instanceof ps)) && (((ps)a).cd() != null)) {
+          a.a(new hl(1, a, ((ps)a).cd()));
         }
-        if ((this.a instanceof pr)) {
+        if ((a instanceof pr)) {
           for (int ☃ = 0; ☃ < 5; ☃++)
           {
-            zx ☃ = ((pr)this.a).p(☃);
+            zx ☃ = ((pr)a).p(☃);
             if (☃ != null) {
-              ☃.a.a(new hn(this.a.F(), ☃, ☃));
+              a.a(new hn(a.F(), ☃, ☃));
             }
           }
         }
-        if ((this.a instanceof wn))
+        if ((a instanceof wn))
         {
-          wn ☃ = (wn)this.a;
+          wn ☃ = (wn)a;
           if (☃.bJ()) {
-            ☃.a.a(new ha(☃, new cj(this.a)));
+            a.a(new ha(☃, new cj(a)));
           }
         }
-        if ((this.a instanceof pr))
+        if ((a instanceof pr))
         {
-          pr ☃ = (pr)this.a;
+          pr ☃ = (pr)a;
           for (pf ☃ : ☃.bl()) {
-            ☃.a.a(new ib(this.a.F(), ☃));
+            a.a(new ib(a.F(), ☃));
           }
         }
       }
     }
-    else if (this.o.contains(☃))
+    else if (o.contains(☃))
     {
-      this.o.remove(☃);
-      ☃.d(this.a);
+      o.remove(☃);
+      ☃.d(a);
     }
   }
   
   public boolean c(lf ☃)
   {
-    double ☃ = ☃.s - this.d / 32;
-    double ☃ = ☃.u - this.f / 32;
-    return (☃ >= -this.b) && (☃ <= this.b) && (☃ >= -this.b) && (☃ <= this.b) && (this.a.a(☃));
+    double ☃ = s - d / 32;
+    double ☃ = u - f / 32;
+    return (☃ >= -b) && (☃ <= b) && (☃ >= -b) && (☃ <= b) && (a.a(☃));
   }
   
   private boolean e(lf ☃)
   {
-    return ☃.u().t().a(☃, this.a.ae, this.a.ag);
+    return ☃.u().t().a(☃, a.ae, a.ag);
   }
   
   public void b(List<wn> ☃)
@@ -349,128 +349,128 @@ public class lh
   
   private ff c()
   {
-    if (this.a.I) {
+    if (a.I) {
       p.warn("Fetching addPacket for removed entity");
     }
-    if ((this.a instanceof uz)) {
-      return new fk(this.a, 2, 1);
+    if ((a instanceof uz)) {
+      return new fk(a, 2, 1);
     }
-    if ((this.a instanceof lf)) {
-      return new fp((wn)this.a);
+    if ((a instanceof lf)) {
+      return new fp((wn)a);
     }
-    if ((this.a instanceof va))
+    if ((a instanceof va))
     {
-      va ☃ = (va)this.a;
-      return new fk(this.a, 10, ☃.s().a());
+      va ☃ = (va)a;
+      return new fk(a, 10, ☃.s().a());
     }
-    if ((this.a instanceof ux)) {
-      return new fk(this.a, 1);
+    if ((a instanceof ux)) {
+      return new fk(a, 1);
     }
-    if ((this.a instanceof pi))
+    if ((a instanceof pi))
     {
-      this.i = ns.d(this.a.aC() * 256.0F / 360.0F);
-      return new fn((pr)this.a);
+      i = ns.d(a.aC() * 256.0F / 360.0F);
+      return new fn((pr)a);
     }
-    if ((this.a instanceof ur))
+    if ((a instanceof ur))
     {
-      pk ☃ = ((ur)this.a).b;
-      return new fk(this.a, 90, ☃ != null ? ☃.F() : this.a.F());
+      pk ☃ = a).b;
+      return new fk(a, 90, ☃ != null ? ☃.F() : a.F());
     }
-    if ((this.a instanceof wq))
+    if ((a instanceof wq))
     {
-      pk ☃ = ((wq)this.a).c;
-      return new fk(this.a, 60, ☃ != null ? ☃.F() : this.a.F());
+      pk ☃ = a).c;
+      return new fk(a, 60, ☃ != null ? ☃.F() : a.F());
     }
-    if ((this.a instanceof wx)) {
-      return new fk(this.a, 61);
+    if ((a instanceof wx)) {
+      return new fk(a, 61);
     }
-    if ((this.a instanceof xc)) {
-      return new fk(this.a, 73, ((xc)this.a).o());
+    if ((a instanceof xc)) {
+      return new fk(a, 73, ((xc)a).o());
     }
-    if ((this.a instanceof xb)) {
-      return new fk(this.a, 75);
+    if ((a instanceof xb)) {
+      return new fk(a, 75);
     }
-    if ((this.a instanceof xa)) {
-      return new fk(this.a, 65);
+    if ((a instanceof xa)) {
+      return new fk(a, 65);
     }
-    if ((this.a instanceof wr)) {
-      return new fk(this.a, 72);
+    if ((a instanceof wr)) {
+      return new fk(a, 72);
     }
-    if ((this.a instanceof wt)) {
-      return new fk(this.a, 76);
+    if ((a instanceof wt)) {
+      return new fk(a, 76);
     }
-    if ((this.a instanceof ws))
+    if ((a instanceof ws))
     {
-      ws ☃ = (ws)this.a;
+      ws ☃ = (ws)a;
       fk ☃ = null;
       int ☃ = 63;
-      if ((this.a instanceof ww)) {
+      if ((a instanceof ww)) {
         ☃ = 64;
-      } else if ((this.a instanceof xd)) {
+      } else if ((a instanceof xd)) {
         ☃ = 66;
       }
-      if (☃.a != null) {
-        ☃ = new fk(this.a, ☃, ((ws)this.a).a.F());
+      if (a != null) {
+        ☃ = new fk(a, ☃, a).a.F());
       } else {
-        ☃ = new fk(this.a, ☃, 0);
+        ☃ = new fk(a, ☃, 0);
       }
-      ☃.d((int)(☃.b * 8000.0D));
-      ☃.e((int)(☃.c * 8000.0D));
-      ☃.f((int)(☃.d * 8000.0D));
+      ☃.d((int)(b * 8000.0D));
+      ☃.e((int)(c * 8000.0D));
+      ☃.f((int)(d * 8000.0D));
       return ☃;
     }
-    if ((this.a instanceof wz)) {
-      return new fk(this.a, 62);
+    if ((a instanceof wz)) {
+      return new fk(a, 62);
     }
-    if ((this.a instanceof vj)) {
-      return new fk(this.a, 50);
+    if ((a instanceof vj)) {
+      return new fk(a, 50);
     }
-    if ((this.a instanceof uf)) {
-      return new fk(this.a, 51);
+    if ((a instanceof uf)) {
+      return new fk(a, 51);
     }
-    if ((this.a instanceof uy))
+    if ((a instanceof uy))
     {
-      uy ☃ = (uy)this.a;
-      return new fk(this.a, 70, afh.f(☃.l()));
+      uy ☃ = (uy)a;
+      return new fk(a, 70, afh.f(☃.l()));
     }
-    if ((this.a instanceof um)) {
-      return new fk(this.a, 78);
+    if ((a instanceof um)) {
+      return new fk(a, 78);
     }
-    if ((this.a instanceof uq)) {
-      return new fo((uq)this.a);
+    if ((a instanceof uq)) {
+      return new fo((uq)a);
     }
-    if ((this.a instanceof uo))
+    if ((a instanceof uo))
     {
-      uo ☃ = (uo)this.a;
-      fk ☃ = new fk(this.a, 71, ☃.b.b());
+      uo ☃ = (uo)a;
+      fk ☃ = new fk(a, 71, b.b());
       cj ☃ = ☃.n();
       ☃.a(ns.d(☃.n() * 32));
       ☃.b(ns.d(☃.o() * 32));
       ☃.c(ns.d(☃.p() * 32));
       return ☃;
     }
-    if ((this.a instanceof up))
+    if ((a instanceof up))
     {
-      up ☃ = (up)this.a;
-      fk ☃ = new fk(this.a, 77);
+      up ☃ = (up)a;
+      fk ☃ = new fk(a, 77);
       cj ☃ = ☃.n();
       ☃.a(ns.d(☃.n() * 32));
       ☃.b(ns.d(☃.o() * 32));
       ☃.c(ns.d(☃.p() * 32));
       return ☃;
     }
-    if ((this.a instanceof pp)) {
-      return new fl((pp)this.a);
+    if ((a instanceof pp)) {
+      return new fl((pp)a);
     }
-    throw new IllegalArgumentException("Don't know how to add " + this.a.getClass() + "!");
+    throw new IllegalArgumentException("Don't know how to add " + a.getClass() + "!");
   }
   
   public void d(lf ☃)
   {
-    if (this.o.contains(☃))
+    if (o.contains(☃))
     {
-      this.o.remove(☃);
-      ☃.d(this.a);
+      o.remove(☃);
+      ☃.d(a);
     }
   }
 }

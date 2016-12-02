@@ -10,8 +10,8 @@ public class hd
   
   public hd(String ☃, String ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
     if (☃.length() > 40) {
       throw new IllegalArgumentException("Hash is too long (max 40, was " + ☃.length() + ")");
     }
@@ -20,15 +20,15 @@ public class hd
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.c(32767);
-    this.b = ☃.c(40);
+    a = ☃.c(32767);
+    b = ☃.c(40);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(this.a);
-    ☃.a(this.b);
+    ☃.a(a);
+    ☃.a(b);
   }
   
   public void a(fj ☃)
@@ -38,11 +38,11 @@ public class hd
   
   public String a()
   {
-    return this.a;
+    return a;
   }
   
   public String b()
   {
-    return this.b;
+    return b;
   }
 }

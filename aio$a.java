@@ -22,25 +22,25 @@ public enum aio$a
   
   private aio$a(int ☃, String ☃, String ☃, arn ☃)
   {
-    this.h = ☃;
-    this.i = ☃;
-    this.j = ☃;
-    this.k = ☃;
+    h = ☃;
+    i = ☃;
+    j = ☃;
+    k = ☃;
   }
   
   public int a()
   {
-    return this.h;
+    return h;
   }
   
   public arn c()
   {
-    return this.k;
+    return k;
   }
   
   public String toString()
   {
-    return this.i;
+    return i;
   }
   
   public static a a(int ☃)
@@ -53,11 +53,11 @@ public enum aio$a
   
   public String l()
   {
-    return this.i;
+    return i;
   }
   
   public String d()
   {
-    return this.j;
+    return j;
   }
 }

@@ -1,12 +1,13 @@
-import java.util.concurrent.Callable;
-
 class ave$17
-  implements Callable<String>
+  implements awx
 {
-  ave$17(ave paramave) {}
+  ave$17(ave this$0) {}
   
-  public String a()
+  public void a(boolean result, int id)
   {
-    return bqs.c();
+    if (result) {
+      this$0.Y().q();
+    }
+    this$0.a((axu)null);
   }
 }

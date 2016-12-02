@@ -8,7 +8,7 @@ public class afw
   public afw()
   {
     super(arm.f, arn.q);
-    j(this.M.b().a(a, Boolean.valueOf(false)));
+    j(M.b().a(a, Boolean.valueOf(false)));
   }
   
   public akw a(adm ☃, int ☃)
@@ -18,7 +18,7 @@ public class afw
   
   public void a(adm ☃, cj ☃, alz ☃, afh ☃)
   {
-    if (!☃.D)
+    if (!D)
     {
       boolean ☃ = ☃.z(☃);
       boolean ☃ = ((Boolean)☃.b(a)).booleanValue();
@@ -83,7 +83,7 @@ public class afw
     if (☃.s()) {
       ☃.b(☃.q());
     }
-    if (!☃.D) {
+    if (!D) {
       ☃.a(☃.Q().b("sendCommandFeedback"));
     }
   }

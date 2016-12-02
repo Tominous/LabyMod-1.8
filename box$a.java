@@ -8,19 +8,19 @@ public class box$a
   
   public a a(boq ☃, int ☃)
   {
-    this.a.add(new box.b(☃, ☃));
+    a.add(new box.b(☃, ☃));
     
     return this;
   }
   
   public box a()
   {
-    Collections.sort(this.a);
-    return new box(this.a);
+    Collections.sort(a);
+    return new box(a);
   }
   
   public boq b()
   {
-    return ((box.b)this.a.get(0)).b;
+    return a.get(0)).b;
   }
 }

@@ -23,111 +23,111 @@ public class ez
   
   public a a()
   {
-    return this.b == null ? o().a() : this.b;
+    return b == null ? o().a() : b;
   }
   
   public boolean b()
   {
-    return this.c == null ? o().b() : this.c.booleanValue();
+    return c == null ? o().b() : c.booleanValue();
   }
   
   public boolean c()
   {
-    return this.d == null ? o().c() : this.d.booleanValue();
+    return d == null ? o().c() : d.booleanValue();
   }
   
   public boolean d()
   {
-    return this.f == null ? o().d() : this.f.booleanValue();
+    return f == null ? o().d() : f.booleanValue();
   }
   
   public boolean e()
   {
-    return this.e == null ? o().e() : this.e.booleanValue();
+    return e == null ? o().e() : e.booleanValue();
   }
   
   public boolean f()
   {
-    return this.g == null ? o().f() : this.g.booleanValue();
+    return g == null ? o().f() : g.booleanValue();
   }
   
   public boolean g()
   {
-    return (this.c == null) && (this.d == null) && (this.f == null) && (this.e == null) && (this.g == null) && (this.b == null) && (this.h == null) && (this.i == null);
+    return (c == null) && (d == null) && (f == null) && (e == null) && (g == null) && (b == null) && (h == null) && (i == null);
   }
   
   public et h()
   {
-    return this.h == null ? o().h() : this.h;
+    return h == null ? o().h() : h;
   }
   
   public ew i()
   {
-    return this.i == null ? o().i() : this.i;
+    return i == null ? o().i() : i;
   }
   
   public String j()
   {
-    return this.j == null ? o().j() : this.j;
+    return j == null ? o().j() : j;
   }
   
   public ez a(a ☃)
   {
-    this.b = ☃;
+    b = ☃;
     return this;
   }
   
   public ez a(Boolean ☃)
   {
-    this.c = ☃;
+    c = ☃;
     return this;
   }
   
   public ez b(Boolean ☃)
   {
-    this.d = ☃;
+    d = ☃;
     return this;
   }
   
   public ez c(Boolean ☃)
   {
-    this.f = ☃;
+    f = ☃;
     return this;
   }
   
   public ez d(Boolean ☃)
   {
-    this.e = ☃;
+    e = ☃;
     return this;
   }
   
   public ez e(Boolean ☃)
   {
-    this.g = ☃;
+    g = ☃;
     return this;
   }
   
   public ez a(et ☃)
   {
-    this.h = ☃;
+    h = ☃;
     return this;
   }
   
   public ez a(ew ☃)
   {
-    this.i = ☃;
+    i = ☃;
     return this;
   }
   
   public ez a(String ☃)
   {
-    this.j = ☃;
+    j = ☃;
     return this;
   }
   
   public ez a(ez ☃)
   {
-    this.a = ☃;
+    a = ☃;
     return this;
   }
   
@@ -135,8 +135,8 @@ public class ez
   {
     if (g())
     {
-      if (this.a != null) {
-        return this.a.k();
+      if (a != null) {
+        return a.k();
       }
       return "";
     }
@@ -164,12 +164,12 @@ public class ez
   
   private ez o()
   {
-    return this.a == null ? k : this.a;
+    return a == null ? k : a;
   }
   
   public String toString()
   {
-    return "Style{hasParent=" + (this.a != null) + ", color=" + this.b + ", bold=" + this.c + ", italic=" + this.d + ", underlined=" + this.e + ", obfuscated=" + this.g + ", clickEvent=" + h() + ", hoverEvent=" + i() + ", insertion=" + j() + '}';
+    return "Style{hasParent=" + (a != null) + ", color=" + b + ", bold=" + c + ", italic=" + d + ", underlined=" + e + ", obfuscated=" + g + ", clickEvent=" + h() + ", hoverEvent=" + i() + ", insertion=" + j() + '}';
   }
   
   public boolean equals(Object ☃)
@@ -188,15 +188,15 @@ public class ez
   
   public int hashCode()
   {
-    int ☃ = this.b.hashCode();
-    ☃ = 31 * ☃ + this.c.hashCode();
-    ☃ = 31 * ☃ + this.d.hashCode();
-    ☃ = 31 * ☃ + this.e.hashCode();
-    ☃ = 31 * ☃ + this.f.hashCode();
-    ☃ = 31 * ☃ + this.g.hashCode();
-    ☃ = 31 * ☃ + this.h.hashCode();
-    ☃ = 31 * ☃ + this.i.hashCode();
-    ☃ = 31 * ☃ + this.j.hashCode();
+    int ☃ = b.hashCode();
+    ☃ = 31 * ☃ + c.hashCode();
+    ☃ = 31 * ☃ + d.hashCode();
+    ☃ = 31 * ☃ + e.hashCode();
+    ☃ = 31 * ☃ + f.hashCode();
+    ☃ = 31 * ☃ + g.hashCode();
+    ☃ = 31 * ☃ + h.hashCode();
+    ☃ = 31 * ☃ + i.hashCode();
+    ☃ = 31 * ☃ + j.hashCode();
     return ☃;
   }
   
@@ -316,16 +316,16 @@ public class ez
   public ez m()
   {
     ez ☃ = new ez();
-    ☃.c = this.c;
-    ☃.d = this.d;
-    ☃.f = this.f;
-    ☃.e = this.e;
-    ☃.g = this.g;
-    ☃.b = this.b;
-    ☃.h = this.h;
-    ☃.i = this.i;
-    ☃.a = this.a;
-    ☃.j = this.j;
+    c = c;
+    d = d;
+    f = f;
+    e = e;
+    g = g;
+    b = b;
+    h = h;
+    i = i;
+    a = a;
+    j = j;
     return ☃;
   }
   

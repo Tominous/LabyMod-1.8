@@ -7,7 +7,7 @@ class bfk$1
   
   bfk$1(bfk p_i46382_1_)
   {
-    this.a = p_i46382_1_;
+    a = p_i46382_1_;
   }
   
   public boolean a(pk p_a_1_)

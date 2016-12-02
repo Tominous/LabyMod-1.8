@@ -1,13 +1,12 @@
+import java.util.concurrent.Callable;
+
 class ave$9
-  implements awx
+  implements Callable<String>
 {
-  ave$9(ave paramave) {}
+  ave$9(ave this$0) {}
   
-  public void a(boolean ☃, int ☃)
+  public String call()
   {
-    if (☃) {
-      this.a.Y().q();
-    }
-    this.a.a(null);
+    return this$0.t.u ? "Yes" : "No";
   }
 }

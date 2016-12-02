@@ -24,6 +24,6 @@ final class kb$12
         }
       }.a(☃, ☃);
     }
-    return this.b.a(☃, ☃);
+    return b.a(☃, ☃);
   }
 }

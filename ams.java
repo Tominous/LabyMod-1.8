@@ -7,7 +7,7 @@ public class ams
   private double b = 0.0D;
   private double c = 0.0D;
   private double d = 6.0E7D;
-  private double e = this.d;
+  private double e = d;
   private long f;
   private long g;
   private int h = 29999984;
@@ -28,12 +28,12 @@ public class ams
   
   public boolean a(aug ☃)
   {
-    return (☃.d > b()) && (☃.a < d()) && (☃.f > c()) && (☃.c < e());
+    return (d > b()) && (a < d()) && (f > c()) && (c < e());
   }
   
   public double a(pk ☃)
   {
-    return b(☃.s, ☃.u);
+    return b(s, u);
   }
   
   public double b(double ☃, double ☃)
@@ -49,10 +49,10 @@ public class ams
   
   public amr a()
   {
-    if (this.e < this.d) {
+    if (e < d) {
       return amr.b;
     }
-    if (this.e > this.d) {
+    if (e > d) {
       return amr.a;
     }
     return amr.c;
@@ -61,8 +61,8 @@ public class ams
   public double b()
   {
     double ☃ = f() - h() / 2.0D;
-    if (☃ < -this.h) {
-      ☃ = -this.h;
+    if (☃ < -h) {
+      ☃ = -h;
     }
     return ☃;
   }
@@ -70,8 +70,8 @@ public class ams
   public double c()
   {
     double ☃ = g() - h() / 2.0D;
-    if (☃ < -this.h) {
-      ☃ = -this.h;
+    if (☃ < -h) {
+      ☃ = -h;
     }
     return ☃;
   }
@@ -79,8 +79,8 @@ public class ams
   public double d()
   {
     double ☃ = f() + h() / 2.0D;
-    if (☃ > this.h) {
-      ☃ = this.h;
+    if (☃ > h) {
+      ☃ = h;
     }
     return ☃;
   }
@@ -88,26 +88,26 @@ public class ams
   public double e()
   {
     double ☃ = g() + h() / 2.0D;
-    if (☃ > this.h) {
-      ☃ = this.h;
+    if (☃ > h) {
+      ☃ = h;
     }
     return ☃;
   }
   
   public double f()
   {
-    return this.b;
+    return b;
   }
   
   public double g()
   {
-    return this.c;
+    return c;
   }
   
   public void c(double ☃, double ☃)
   {
-    this.b = ☃;
-    this.c = ☃;
+    b = ☃;
+    c = ☃;
     for (amq ☃ : k()) {
       ☃.a(this, ☃, ☃);
     }
@@ -117,35 +117,35 @@ public class ams
   {
     if (a() != amr.c)
     {
-      double ☃ = (float)(System.currentTimeMillis() - this.g) / (float)(this.f - this.g);
+      double ☃ = (float)(System.currentTimeMillis() - g) / (float)(f - g);
       if (☃ >= 1.0D) {
-        a(this.e);
+        a(e);
       } else {
-        return this.d + (this.e - this.d) * ☃;
+        return d + (e - d) * ☃;
       }
     }
-    return this.d;
+    return d;
   }
   
   public long i()
   {
     if (a() != amr.c) {
-      return this.f - System.currentTimeMillis();
+      return f - System.currentTimeMillis();
     }
     return 0L;
   }
   
   public double j()
   {
-    return this.e;
+    return e;
   }
   
   public void a(double ☃)
   {
-    this.d = ☃;
-    this.e = ☃;
-    this.f = System.currentTimeMillis();
-    this.g = this.f;
+    d = ☃;
+    e = ☃;
+    f = System.currentTimeMillis();
+    g = f;
     for (amq ☃ : k()) {
       ☃.a(this, ☃);
     }
@@ -153,10 +153,10 @@ public class ams
   
   public void a(double ☃, double ☃, long ☃)
   {
-    this.d = ☃;
-    this.e = ☃;
-    this.g = System.currentTimeMillis();
-    this.f = (this.g + ☃);
+    d = ☃;
+    e = ☃;
+    g = System.currentTimeMillis();
+    f = (g + ☃);
     for (amq ☃ : k()) {
       ☃.a(this, ☃, ☃, ☃);
     }
@@ -164,32 +164,32 @@ public class ams
   
   protected List<amq> k()
   {
-    return Lists.newArrayList(this.a);
+    return Lists.newArrayList(a);
   }
   
   public void a(amq ☃)
   {
-    this.a.add(☃);
+    a.add(☃);
   }
   
   public void a(int ☃)
   {
-    this.h = ☃;
+    h = ☃;
   }
   
   public int l()
   {
-    return this.h;
+    return h;
   }
   
   public double m()
   {
-    return this.j;
+    return j;
   }
   
   public void b(double ☃)
   {
-    this.j = ☃;
+    j = ☃;
     for (amq ☃ : k()) {
       ☃.c(this, ☃);
     }
@@ -197,12 +197,12 @@ public class ams
   
   public double n()
   {
-    return this.i;
+    return i;
   }
   
   public void c(double ☃)
   {
-    this.i = ☃;
+    i = ☃;
     for (amq ☃ : k()) {
       ☃.b(this, ☃);
     }
@@ -210,20 +210,20 @@ public class ams
   
   public double o()
   {
-    if (this.f == this.g) {
+    if (f == g) {
       return 0.0D;
     }
-    return Math.abs(this.d - this.e) / (this.f - this.g);
+    return Math.abs(d - e) / (f - g);
   }
   
   public int p()
   {
-    return this.k;
+    return k;
   }
   
   public void b(int ☃)
   {
-    this.k = ☃;
+    k = ☃;
     for (amq ☃ : k()) {
       ☃.a(this, ☃);
     }
@@ -231,12 +231,12 @@ public class ams
   
   public int q()
   {
-    return this.l;
+    return l;
   }
   
   public void c(int ☃)
   {
-    this.l = ☃;
+    l = ☃;
     for (amq ☃ : k()) {
       ☃.b(this, ☃);
     }

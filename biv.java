@@ -12,16 +12,16 @@ public abstract class biv
   
   protected biv(biu p_i46179_1_)
   {
-    this.b = p_i46179_1_;
+    b = p_i46179_1_;
   }
   
   public boolean a(pk p_177071_1_, bia p_177071_2_, double p_177071_3_, double p_177071_5_, double p_177071_7_)
   {
     aug var9 = p_177071_1_.aR();
     if ((var9.b()) || (var9.a() == 0.0D)) {
-      var9 = new aug(p_177071_1_.s - 2.0D, p_177071_1_.t - 2.0D, p_177071_1_.u - 2.0D, p_177071_1_.s + 2.0D, p_177071_1_.t + 2.0D, p_177071_1_.u + 2.0D);
+      var9 = new aug(s - 2.0D, t - 2.0D, u - 2.0D, s + 2.0D, t + 2.0D, u + 2.0D);
     }
-    return (p_177071_1_.h(p_177071_3_, p_177071_5_, p_177071_7_)) && ((p_177071_1_.ah) || (p_177071_2_.a(var9)));
+    return (p_177071_1_.h(p_177071_3_, p_177071_5_, p_177071_7_)) && ((ah) || (p_177071_2_.a(var9)));
   }
   
   public void a(pk p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
@@ -60,7 +60,7 @@ public abstract class biv
   
   public void a(jy p_110776_1_)
   {
-    this.b.a.a(p_110776_1_);
+    b.a.a(p_110776_1_);
   }
   
   private void a(pk p_76977_1_, double p_76977_2_, double p_76977_4_, double p_76977_6_, float p_76977_8_)
@@ -71,15 +71,15 @@ public abstract class biv
     bmi var11 = var9.a("minecraft:blocks/fire_layer_1");
     bfl.E();
     bfl.b((float)p_76977_2_, (float)p_76977_4_, (float)p_76977_6_);
-    float var12 = p_76977_1_.J * 1.4F;
+    float var12 = J * 1.4F;
     bfl.a(var12, var12, var12);
     bfx var13 = bfx.a();
     bfd var14 = var13.c();
     float var15 = 0.5F;
     float var16 = 0.0F;
-    float var17 = p_76977_1_.K / var12;
-    float var18 = (float)(p_76977_1_.t - p_76977_1_.aR().b);
-    bfl.b(-this.b.e, 0.0F, 1.0F, 0.0F);
+    float var17 = K / var12;
+    float var18 = (float)(t - aRb);
+    bfl.b(-b.e, 0.0F, 1.0F, 0.0F);
     bfl.b(0.0F, 0.0F, -0.3F + (int)var17 * 0.02F);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     float var19 = 0.0F;
@@ -121,10 +121,10 @@ public abstract class biv
     }
     bfl.l();
     bfl.b(770, 771);
-    this.b.a.a(a);
+    b.a.a(a);
     adm var10 = a();
     bfl.a(false);
-    float var11 = this.c;
+    float var11 = c;
     if ((p_76975_1_ instanceof ps))
     {
       ps var12 = (ps)p_76975_1_;
@@ -133,9 +133,9 @@ public abstract class biv
         var11 *= 0.5F;
       }
     }
-    double var35 = p_76975_1_.P + (p_76975_1_.s - p_76975_1_.P) * p_76975_9_;
-    double var14 = p_76975_1_.Q + (p_76975_1_.t - p_76975_1_.Q) * p_76975_9_;
-    double var16 = p_76975_1_.R + (p_76975_1_.u - p_76975_1_.R) * p_76975_9_;
+    double var35 = P + (s - P) * p_76975_9_;
+    double var14 = Q + (t - Q) * p_76975_9_;
+    double var16 = R + (u - R) * p_76975_9_;
     int var18 = ns.c(var35 - var11);
     int var19 = ns.c(var35 + var11);
     int var20 = ns.c(var14 - var11);
@@ -165,7 +165,7 @@ public abstract class biv
   
   private adm a()
   {
-    return this.b.b;
+    return b.b;
   }
   
   private void a(afh p_180549_1_, double p_180549_2_, double p_180549_4_, double p_180549_6_, cj p_180549_8_, float p_180549_9_, float p_180549_10_, double p_180549_11_, double p_180549_13_, double p_180549_15_)
@@ -205,30 +205,30 @@ public abstract class biv
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     var8.c(p_76978_1_, p_76978_3_, p_76978_5_);
     var8.a(7, bms.h);
-    var8.b(p_76978_0_.a, p_76978_0_.e, p_76978_0_.c).c(0.0F, 0.0F, -1.0F).d();
-    var8.b(p_76978_0_.d, p_76978_0_.e, p_76978_0_.c).c(0.0F, 0.0F, -1.0F).d();
-    var8.b(p_76978_0_.d, p_76978_0_.b, p_76978_0_.c).c(0.0F, 0.0F, -1.0F).d();
-    var8.b(p_76978_0_.a, p_76978_0_.b, p_76978_0_.c).c(0.0F, 0.0F, -1.0F).d();
-    var8.b(p_76978_0_.a, p_76978_0_.b, p_76978_0_.f).c(0.0F, 0.0F, 1.0F).d();
-    var8.b(p_76978_0_.d, p_76978_0_.b, p_76978_0_.f).c(0.0F, 0.0F, 1.0F).d();
-    var8.b(p_76978_0_.d, p_76978_0_.e, p_76978_0_.f).c(0.0F, 0.0F, 1.0F).d();
-    var8.b(p_76978_0_.a, p_76978_0_.e, p_76978_0_.f).c(0.0F, 0.0F, 1.0F).d();
-    var8.b(p_76978_0_.a, p_76978_0_.b, p_76978_0_.c).c(0.0F, -1.0F, 0.0F).d();
-    var8.b(p_76978_0_.d, p_76978_0_.b, p_76978_0_.c).c(0.0F, -1.0F, 0.0F).d();
-    var8.b(p_76978_0_.d, p_76978_0_.b, p_76978_0_.f).c(0.0F, -1.0F, 0.0F).d();
-    var8.b(p_76978_0_.a, p_76978_0_.b, p_76978_0_.f).c(0.0F, -1.0F, 0.0F).d();
-    var8.b(p_76978_0_.a, p_76978_0_.e, p_76978_0_.f).c(0.0F, 1.0F, 0.0F).d();
-    var8.b(p_76978_0_.d, p_76978_0_.e, p_76978_0_.f).c(0.0F, 1.0F, 0.0F).d();
-    var8.b(p_76978_0_.d, p_76978_0_.e, p_76978_0_.c).c(0.0F, 1.0F, 0.0F).d();
-    var8.b(p_76978_0_.a, p_76978_0_.e, p_76978_0_.c).c(0.0F, 1.0F, 0.0F).d();
-    var8.b(p_76978_0_.a, p_76978_0_.b, p_76978_0_.f).c(-1.0F, 0.0F, 0.0F).d();
-    var8.b(p_76978_0_.a, p_76978_0_.e, p_76978_0_.f).c(-1.0F, 0.0F, 0.0F).d();
-    var8.b(p_76978_0_.a, p_76978_0_.e, p_76978_0_.c).c(-1.0F, 0.0F, 0.0F).d();
-    var8.b(p_76978_0_.a, p_76978_0_.b, p_76978_0_.c).c(-1.0F, 0.0F, 0.0F).d();
-    var8.b(p_76978_0_.d, p_76978_0_.b, p_76978_0_.c).c(1.0F, 0.0F, 0.0F).d();
-    var8.b(p_76978_0_.d, p_76978_0_.e, p_76978_0_.c).c(1.0F, 0.0F, 0.0F).d();
-    var8.b(p_76978_0_.d, p_76978_0_.e, p_76978_0_.f).c(1.0F, 0.0F, 0.0F).d();
-    var8.b(p_76978_0_.d, p_76978_0_.b, p_76978_0_.f).c(1.0F, 0.0F, 0.0F).d();
+    var8.b(a, e, c).c(0.0F, 0.0F, -1.0F).d();
+    var8.b(d, e, c).c(0.0F, 0.0F, -1.0F).d();
+    var8.b(d, b, c).c(0.0F, 0.0F, -1.0F).d();
+    var8.b(a, b, c).c(0.0F, 0.0F, -1.0F).d();
+    var8.b(a, b, f).c(0.0F, 0.0F, 1.0F).d();
+    var8.b(d, b, f).c(0.0F, 0.0F, 1.0F).d();
+    var8.b(d, e, f).c(0.0F, 0.0F, 1.0F).d();
+    var8.b(a, e, f).c(0.0F, 0.0F, 1.0F).d();
+    var8.b(a, b, c).c(0.0F, -1.0F, 0.0F).d();
+    var8.b(d, b, c).c(0.0F, -1.0F, 0.0F).d();
+    var8.b(d, b, f).c(0.0F, -1.0F, 0.0F).d();
+    var8.b(a, b, f).c(0.0F, -1.0F, 0.0F).d();
+    var8.b(a, e, f).c(0.0F, 1.0F, 0.0F).d();
+    var8.b(d, e, f).c(0.0F, 1.0F, 0.0F).d();
+    var8.b(d, e, c).c(0.0F, 1.0F, 0.0F).d();
+    var8.b(a, e, c).c(0.0F, 1.0F, 0.0F).d();
+    var8.b(a, b, f).c(-1.0F, 0.0F, 0.0F).d();
+    var8.b(a, e, f).c(-1.0F, 0.0F, 0.0F).d();
+    var8.b(a, e, c).c(-1.0F, 0.0F, 0.0F).d();
+    var8.b(a, b, c).c(-1.0F, 0.0F, 0.0F).d();
+    var8.b(d, b, c).c(1.0F, 0.0F, 0.0F).d();
+    var8.b(d, e, c).c(1.0F, 0.0F, 0.0F).d();
+    var8.b(d, e, f).c(1.0F, 0.0F, 0.0F).d();
+    var8.b(d, b, f).c(1.0F, 0.0F, 0.0F).d();
     var7.b();
     var8.c(0.0D, 0.0D, 0.0D);
     bfl.w();
@@ -236,12 +236,12 @@ public abstract class biv
   
   public void b(pk p_76979_1_, double p_76979_2_, double p_76979_4_, double p_76979_6_, float p_76979_8_, float p_76979_9_)
   {
-    if (this.b.g != null)
+    if (b.g != null)
     {
-      if ((this.b.g.W) && (this.c > 0.0F) && (!p_76979_1_.ax()) && (this.b.a()))
+      if ((b.g.W) && (c > 0.0F) && (!p_76979_1_.ax()) && (b.a()))
       {
-        double var10 = this.b.b(p_76979_1_.s, p_76979_1_.t, p_76979_1_.u);
-        float var12 = (float)((1.0D - var10 / 256.0D) * this.d);
+        double var10 = b.b(s, t, u);
+        float var12 = (float)((1.0D - var10 / 256.0D) * d);
         if (var12 > 0.0F) {
           c(p_76979_1_, p_76979_2_, p_76979_4_, p_76979_6_, var12, p_76979_9_);
         }
@@ -254,22 +254,22 @@ public abstract class biv
   
   public avn c()
   {
-    return this.b.c();
+    return b.c();
   }
   
   protected void a(pk p_147906_1_, String p_147906_2_, double p_147906_3_, double p_147906_5_, double p_147906_7_, int p_147906_9_)
   {
-    double var10 = p_147906_1_.h(this.b.c);
+    double var10 = p_147906_1_.h(b.c);
     if (var10 <= p_147906_9_ * p_147906_9_)
     {
       avn var12 = c();
       float var13 = 1.6F;
       float var14 = 0.016666668F * var13;
       bfl.E();
-      bfl.b((float)p_147906_3_ + 0.0F, (float)p_147906_5_ + p_147906_1_.K + 0.5F, (float)p_147906_7_);
+      bfl.b((float)p_147906_3_ + 0.0F, (float)p_147906_5_ + K + 0.5F, (float)p_147906_7_);
       GL11.glNormal3f(0.0F, 1.0F, 0.0F);
-      bfl.b(-this.b.e, 0.0F, 1.0F, 0.0F);
-      bfl.b(this.b.f, 1.0F, 0.0F, 0.0F);
+      bfl.b(-b.e, 0.0F, 1.0F, 0.0F);
+      bfl.b(b.f, 1.0F, 0.0F, 0.0F);
       bfl.a(-var14, -var14, var14);
       bfl.f();
       bfl.a(false);
@@ -304,6 +304,6 @@ public abstract class biv
   
   public biu d()
   {
-    return this.b;
+    return b;
   }
 }

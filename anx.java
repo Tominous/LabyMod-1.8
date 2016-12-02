@@ -6,7 +6,7 @@ public class anx
 {
   protected void a(long ☃, int ☃, int ☃, ans ☃, double ☃, double ☃, double ☃)
   {
-    a(☃, ☃, ☃, ☃, ☃, ☃, ☃, 1.0F + this.b.nextFloat() * 6.0F, 0.0F, 0.0F, -1, -1, 0.5D);
+    a(☃, ☃, ☃, ☃, ☃, ☃, ☃, 1.0F + b.nextFloat() * 6.0F, 0.0F, 0.0F, -1, -1, 0.5D);
   }
   
   protected void a(long ☃, int ☃, int ☃, ans ☃, double ☃, double ☃, double ☃, float ☃, float ☃, float ☃, int ☃, int ☃, double ☃)
@@ -19,7 +19,7 @@ public class anx
     Random ☃ = new Random(☃);
     if (☃ <= 0)
     {
-      int ☃ = this.a * 16 - 16;
+      int ☃ = a * 16 - 16;
       ☃ = ☃ - ☃.nextInt(☃ / 4);
     }
     boolean ☃ = false;
@@ -147,7 +147,7 @@ public class anx
                           if ((☃) && (☃.a(☃, ☃ - 1, ☃).c() == afi.d))
                           {
                             ☃.c(☃ + ☃ * 16, 0, ☃ + ☃ * 16);
-                            ☃.a(☃, ☃ - 1, ☃, this.c.b(☃).ak.c().Q());
+                            ☃.a(☃, ☃ - 1, ☃, c.b(☃).ak.c().Q());
                           }
                         }
                       }
@@ -202,31 +202,31 @@ public class anx
   
   protected void a(adm ☃, int ☃, int ☃, int ☃, int ☃, ans ☃)
   {
-    int ☃ = this.b.nextInt(this.b.nextInt(this.b.nextInt(15) + 1) + 1);
-    if (this.b.nextInt(7) != 0) {
+    int ☃ = b.nextInt(b.nextInt(b.nextInt(15) + 1) + 1);
+    if (b.nextInt(7) != 0) {
       ☃ = 0;
     }
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
-      double ☃ = ☃ * 16 + this.b.nextInt(16);
-      double ☃ = this.b.nextInt(this.b.nextInt(120) + 8);
-      double ☃ = ☃ * 16 + this.b.nextInt(16);
+      double ☃ = ☃ * 16 + b.nextInt(16);
+      double ☃ = b.nextInt(b.nextInt(120) + 8);
+      double ☃ = ☃ * 16 + b.nextInt(16);
       
       int ☃ = 1;
-      if (this.b.nextInt(4) == 0)
+      if (b.nextInt(4) == 0)
       {
-        a(this.b.nextLong(), ☃, ☃, ☃, ☃, ☃, ☃);
-        ☃ += this.b.nextInt(4);
+        a(b.nextLong(), ☃, ☃, ☃, ☃, ☃, ☃);
+        ☃ += b.nextInt(4);
       }
       for (int ☃ = 0; ☃ < ☃; ☃++)
       {
-        float ☃ = this.b.nextFloat() * 3.1415927F * 2.0F;
-        float ☃ = (this.b.nextFloat() - 0.5F) * 2.0F / 8.0F;
-        float ☃ = this.b.nextFloat() * 2.0F + this.b.nextFloat();
-        if (this.b.nextInt(10) == 0) {
-          ☃ *= (this.b.nextFloat() * this.b.nextFloat() * 3.0F + 1.0F);
+        float ☃ = b.nextFloat() * 3.1415927F * 2.0F;
+        float ☃ = (b.nextFloat() - 0.5F) * 2.0F / 8.0F;
+        float ☃ = b.nextFloat() * 2.0F + b.nextFloat();
+        if (b.nextInt(10) == 0) {
+          ☃ *= (b.nextFloat() * b.nextFloat() * 3.0F + 1.0F);
         }
-        a(this.b.nextLong(), ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, 0, 0, 1.0D);
+        a(b.nextLong(), ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, 0, 0, 1.0D);
       }
     }
   }

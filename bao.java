@@ -12,11 +12,11 @@ public class bao
   
   public bao(bao.e ☃, bao.a ☃, bao.b ☃, bao.c ☃, bao.d ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
-    this.e = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
+    e = ☃;
   }
   
   public static class c
@@ -26,8 +26,8 @@ public class bao
     
     public c(boolean ☃, String ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
+      a = ☃;
+      b = ☃;
     }
   }
   
@@ -40,10 +40,10 @@ public class bao
     
     public e(avm ☃, PropertyMap ☃, PropertyMap ☃, Proxy ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
-      this.c = ☃;
-      this.d = ☃;
+      a = ☃;
+      b = ☃;
+      c = ☃;
+      d = ☃;
     }
   }
   
@@ -56,10 +56,10 @@ public class bao
     
     public a(int ☃, int ☃, boolean ☃, boolean ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
-      this.c = ☃;
-      this.d = ☃;
+      a = ☃;
+      b = ☃;
+      c = ☃;
+      d = ☃;
     }
   }
   
@@ -72,10 +72,10 @@ public class bao
     
     public b(File ☃, File ☃, File ☃, String ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
-      this.c = ☃;
-      this.d = ☃;
+      a = ☃;
+      b = ☃;
+      c = ☃;
+      d = ☃;
     }
   }
   
@@ -86,8 +86,8 @@ public class bao
     
     public d(String ☃, int ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
+      a = ☃;
+      b = ☃;
     }
   }
 }

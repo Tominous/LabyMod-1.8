@@ -9,14 +9,14 @@ public class bds
   protected bds(bmj ☃, adm ☃, double ☃, double ☃, double ☃)
   {
     super(☃, ☃, ☃, ☃, 0.0D, 0.0D, 0.0D);
-    this.aB = ☃;
-    this.v = (this.w = this.x = 0.0D);
-    this.aA = 200;
+    aB = ☃;
+    v = (w = x = 0.0D);
+    aA = 200;
   }
   
   public void a(bfd ☃, pk ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
-    float ☃ = (this.az + ☃) / this.aA;
+    float ☃ = (az + ☃) / aA;
     ☃ *= ☃;
     
     float ☃ = 2.0F - ☃ * 2.0F;
@@ -28,13 +28,13 @@ public class bds
     bfl.f();
     float ☃ = 0.125F;
     
-    float ☃ = (float)(this.s - aw);
-    float ☃ = (float)(this.t - ax);
-    float ☃ = (float)(this.u - ay);
+    float ☃ = (float)(s - aw);
+    float ☃ = (float)(t - ax);
+    float ☃ = (float)(u - ay);
     
-    float ☃ = this.o.o(new cj(this));
+    float ☃ = o.o(new cj(this));
     
-    this.aB.a(a);
+    aB.a(a);
     bfl.l();
     bfl.b(770, 771);
     
@@ -51,8 +51,8 @@ public class bds
   
   public void t_()
   {
-    this.az += 1;
-    if (this.az == this.aA) {
+    az += 1;
+    if (az == aA) {
       J();
     }
   }

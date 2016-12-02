@@ -13,22 +13,22 @@ public class jm
   
   public jm(SecretKey ☃, PublicKey ☃, byte[] ☃)
   {
-    this.a = ng.a(☃, ☃.getEncoded());
-    this.b = ng.a(☃, ☃);
+    a = ng.a(☃, ☃.getEncoded());
+    b = ng.a(☃, ☃);
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.a();
-    this.b = ☃.a();
+    a = ☃.a();
+    b = ☃.a();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(this.a);
-    ☃.a(this.b);
+    ☃.a(a);
+    ☃.a(b);
   }
   
   public void a(jk ☃)
@@ -38,14 +38,14 @@ public class jm
   
   public SecretKey a(PrivateKey ☃)
   {
-    return ng.a(☃, this.a);
+    return ng.a(☃, a);
   }
   
   public byte[] b(PrivateKey ☃)
   {
     if (☃ == null) {
-      return this.b;
+      return b;
     }
-    return ng.b(☃, this.b);
+    return ng.b(☃, b);
   }
 }

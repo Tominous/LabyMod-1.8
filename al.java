@@ -36,7 +36,7 @@ public class al
       ☃ = a(☃, ☃, 1).c();
       ☃ = true;
     }
-    ☃.a.c(☃);
+    a.c(☃);
     if (☃) {
       a(☃, this, "commands.kick.success.reason", new Object[] { ☃.e_(), ☃ });
     } else {

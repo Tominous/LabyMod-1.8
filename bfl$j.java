@@ -7,9 +7,9 @@ class bfl$j
   
   private bfl$j()
   {
-    this.a = new bfl.c(2929);
-    this.b = true;
-    this.c = 513;
+    a = new bfl.c(2929);
+    b = true;
+    c = 513;
   }
   
   bfl$j(bfl.1 p_i46260_1_)

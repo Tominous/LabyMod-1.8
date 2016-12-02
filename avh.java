@@ -228,83 +228,83 @@ public class avh
   
   public avh(ave mcIn, File p_i46326_2_)
   {
-    this.m = wn.b.a;
-    this.n = true;
-    this.o = true;
-    this.p = true;
-    this.q = 1.0F;
-    this.r = true;
-    this.t = true;
-    this.u = false;
-    this.v = true;
-    this.w = false;
-    this.z = true;
-    this.aZ = Sets.newHashSet(wo.values());
-    this.D = true;
-    this.E = 1.0F;
-    this.F = 1.0F;
-    this.G = 0.44366196F;
-    this.H = 1.0F;
-    this.I = true;
-    this.J = 4;
-    this.ba = Maps.newEnumMap(bpg.class);
-    this.K = 0.5F;
-    this.L = 1.0F;
-    this.M = 1.0F;
-    this.N = 0.5412844F;
-    this.O = 0.31690142F;
-    this.P = 1;
-    this.Q = true;
-    this.R = "";
-    this.S = 0;
-    this.T = 0;
-    this.U = 0;
-    this.V = true;
-    this.W = true;
-    this.X = new avb("key.forward", 17, "key.categories.movement");
-    this.Y = new avb("key.left", 30, "key.categories.movement");
-    this.Z = new avb("key.back", 31, "key.categories.movement");
-    this.aa = new avb("key.right", 32, "key.categories.movement");
-    this.ab = new avb("key.jump", 57, "key.categories.movement");
-    this.ac = new avb("key.sneak", 42, "key.categories.movement");
-    this.ad = new avb("key.sprint", 29, "key.categories.movement");
-    this.ae = new avb("key.inventory", 18, "key.categories.inventory");
-    this.af = new avb("key.use", -99, "key.categories.gameplay");
-    this.ag = new avb("key.drop", 16, "key.categories.gameplay");
-    this.ah = new avb("key.attack", -100, "key.categories.gameplay");
-    this.ai = new avb("key.pickItem", -98, "key.categories.gameplay");
-    this.aj = new avb("key.chat", 20, "key.categories.multiplayer");
-    this.ak = new avb("key.playerlist", 15, "key.categories.multiplayer");
-    this.al = new avb("key.command", 53, "key.categories.multiplayer");
-    this.am = new avb("key.screenshot", 60, "key.categories.misc");
-    this.an = new avb("key.togglePerspective", 63, "key.categories.misc");
-    this.ao = new avb("key.smoothCamera", 0, "key.categories.misc");
-    this.ap = new avb("key.fullscreen", 87, "key.categories.misc");
-    this.aq = new avb("key.spectatorOutlines", 0, "key.categories.misc");
-    this.ar = new avb("key.streamStartStop", 64, "key.categories.stream");
-    this.as = new avb("key.streamPauseUnpause", 65, "key.categories.stream");
-    this.at = new avb("key.streamCommercial", 0, "key.categories.stream");
-    this.au = new avb("key.streamToggleMic", 0, "key.categories.stream");
-    this.av = new avb[] { new avb("key.hotbar.1", 2, "key.categories.inventory"), new avb("key.hotbar.2", 3, "key.categories.inventory"), new avb("key.hotbar.3", 4, "key.categories.inventory"), new avb("key.hotbar.4", 5, "key.categories.inventory"), new avb("key.hotbar.5", 6, "key.categories.inventory"), new avb("key.hotbar.6", 7, "key.categories.inventory"), new avb("key.hotbar.7", 8, "key.categories.inventory"), new avb("key.hotbar.8", 9, "key.categories.inventory"), new avb("key.hotbar.9", 10, "key.categories.inventory") };
-    this.aw = ((avb[])ArrayUtils.addAll(new avb[] { this.ah, this.af, this.X, this.Y, this.Z, this.aa, this.ab, this.ac, this.ad, this.ag, this.ae, this.aj, this.ak, this.ai, this.al, this.am, this.an, this.ao, this.ar, this.as, this.at, this.au, this.ap, this.aq }, this.av));
-    this.ay = oj.c;
-    this.aE = "";
-    this.aH = 70.0F;
-    this.aM = "en_US";
-    this.aN = false;
-    this.ax = mcIn;
-    this.bb = new File(p_i46326_2_, "options.txt");
+    m = wn.b.a;
+    n = true;
+    o = true;
+    p = true;
+    q = 1.0F;
+    r = true;
+    t = true;
+    u = false;
+    v = true;
+    w = false;
+    z = true;
+    aZ = Sets.newHashSet(wo.values());
+    D = true;
+    E = 1.0F;
+    F = 1.0F;
+    G = 0.44366196F;
+    H = 1.0F;
+    I = true;
+    J = 4;
+    ba = Maps.newEnumMap(bpg.class);
+    K = 0.5F;
+    L = 1.0F;
+    M = 1.0F;
+    N = 0.5412844F;
+    O = 0.31690142F;
+    P = 1;
+    Q = true;
+    R = "";
+    S = 0;
+    T = 0;
+    U = 0;
+    V = true;
+    W = true;
+    X = new avb("key.forward", 17, "key.categories.movement");
+    Y = new avb("key.left", 30, "key.categories.movement");
+    Z = new avb("key.back", 31, "key.categories.movement");
+    aa = new avb("key.right", 32, "key.categories.movement");
+    ab = new avb("key.jump", 57, "key.categories.movement");
+    ac = new avb("key.sneak", 42, "key.categories.movement");
+    ad = new avb("key.sprint", 29, "key.categories.movement");
+    ae = new avb("key.inventory", 18, "key.categories.inventory");
+    af = new avb("key.use", -99, "key.categories.gameplay");
+    ag = new avb("key.drop", 16, "key.categories.gameplay");
+    ah = new avb("key.attack", -100, "key.categories.gameplay");
+    ai = new avb("key.pickItem", -98, "key.categories.gameplay");
+    aj = new avb("key.chat", 20, "key.categories.multiplayer");
+    ak = new avb("key.playerlist", 15, "key.categories.multiplayer");
+    al = new avb("key.command", 53, "key.categories.multiplayer");
+    am = new avb("key.screenshot", 60, "key.categories.misc");
+    an = new avb("key.togglePerspective", 63, "key.categories.misc");
+    ao = new avb("key.smoothCamera", 0, "key.categories.misc");
+    ap = new avb("key.fullscreen", 87, "key.categories.misc");
+    aq = new avb("key.spectatorOutlines", 0, "key.categories.misc");
+    ar = new avb("key.streamStartStop", 64, "key.categories.stream");
+    as = new avb("key.streamPauseUnpause", 65, "key.categories.stream");
+    at = new avb("key.streamCommercial", 0, "key.categories.stream");
+    au = new avb("key.streamToggleMic", 0, "key.categories.stream");
+    av = new avb[] { new avb("key.hotbar.1", 2, "key.categories.inventory"), new avb("key.hotbar.2", 3, "key.categories.inventory"), new avb("key.hotbar.3", 4, "key.categories.inventory"), new avb("key.hotbar.4", 5, "key.categories.inventory"), new avb("key.hotbar.5", 6, "key.categories.inventory"), new avb("key.hotbar.6", 7, "key.categories.inventory"), new avb("key.hotbar.7", 8, "key.categories.inventory"), new avb("key.hotbar.8", 9, "key.categories.inventory"), new avb("key.hotbar.9", 10, "key.categories.inventory") };
+    aw = ((avb[])ArrayUtils.addAll(new avb[] { ah, af, X, Y, Z, aa, ab, ac, ad, ag, ae, aj, ak, ai, al, am, an, ao, ar, as, at, au, ap, aq }, av));
+    ay = oj.c;
+    aE = "";
+    aH = 70.0F;
+    aM = "en_US";
+    aN = false;
+    ax = mcIn;
+    bb = new File(p_i46326_2_, "options.txt");
     
-    this.optionsFileOF = new File(p_i46326_2_, "optionsof.txt");
+    optionsFileOF = new File(p_i46326_2_, "optionsof.txt");
     
-    this.g = ((int)avh.a.i.f());
+    g = ((int)avh.a.i.f());
     
-    this.ofKeyBindZoom = new avb("Zoom", 46, "key.categories.misc");
-    this.aw = ((avb[])ArrayUtils.add(this.aw, this.ofKeyBindZoom));
+    ofKeyBindZoom = new avb("Zoom", 46, "key.categories.misc");
+    aw = ((avb[])ArrayUtils.add(aw, ofKeyBindZoom));
     
     avh.a.f.a(32.0F);
     
-    this.c = 8;
+    c = 8;
     a();
     
     Config.initGameSettings(this);
@@ -312,70 +312,70 @@ public class avh
   
   public avh()
   {
-    this.m = wn.b.a;
-    this.n = true;
-    this.o = true;
-    this.p = true;
-    this.q = 1.0F;
-    this.r = true;
-    this.t = true;
-    this.u = false;
-    this.v = true;
-    this.w = false;
-    this.z = true;
-    this.aZ = Sets.newHashSet(wo.values());
-    this.D = true;
-    this.E = 1.0F;
-    this.F = 1.0F;
-    this.G = 0.44366196F;
-    this.H = 1.0F;
-    this.I = true;
-    this.J = 4;
-    this.ba = Maps.newEnumMap(bpg.class);
-    this.K = 0.5F;
-    this.L = 1.0F;
-    this.M = 1.0F;
-    this.N = 0.5412844F;
-    this.O = 0.31690142F;
-    this.P = 1;
-    this.Q = true;
-    this.R = "";
-    this.S = 0;
-    this.T = 0;
-    this.U = 0;
-    this.V = true;
-    this.W = true;
-    this.X = new avb("key.forward", 17, "key.categories.movement");
-    this.Y = new avb("key.left", 30, "key.categories.movement");
-    this.Z = new avb("key.back", 31, "key.categories.movement");
-    this.aa = new avb("key.right", 32, "key.categories.movement");
-    this.ab = new avb("key.jump", 57, "key.categories.movement");
-    this.ac = new avb("key.sneak", 42, "key.categories.movement");
-    this.ad = new avb("key.sprint", 29, "key.categories.movement");
-    this.ae = new avb("key.inventory", 18, "key.categories.inventory");
-    this.af = new avb("key.use", -99, "key.categories.gameplay");
-    this.ag = new avb("key.drop", 16, "key.categories.gameplay");
-    this.ah = new avb("key.attack", -100, "key.categories.gameplay");
-    this.ai = new avb("key.pickItem", -98, "key.categories.gameplay");
-    this.aj = new avb("key.chat", 20, "key.categories.multiplayer");
-    this.ak = new avb("key.playerlist", 15, "key.categories.multiplayer");
-    this.al = new avb("key.command", 53, "key.categories.multiplayer");
-    this.am = new avb("key.screenshot", 60, "key.categories.misc");
-    this.an = new avb("key.togglePerspective", 63, "key.categories.misc");
-    this.ao = new avb("key.smoothCamera", 0, "key.categories.misc");
-    this.ap = new avb("key.fullscreen", 87, "key.categories.misc");
-    this.aq = new avb("key.spectatorOutlines", 0, "key.categories.misc");
-    this.ar = new avb("key.streamStartStop", 64, "key.categories.stream");
-    this.as = new avb("key.streamPauseUnpause", 65, "key.categories.stream");
-    this.at = new avb("key.streamCommercial", 0, "key.categories.stream");
-    this.au = new avb("key.streamToggleMic", 0, "key.categories.stream");
-    this.av = new avb[] { new avb("key.hotbar.1", 2, "key.categories.inventory"), new avb("key.hotbar.2", 3, "key.categories.inventory"), new avb("key.hotbar.3", 4, "key.categories.inventory"), new avb("key.hotbar.4", 5, "key.categories.inventory"), new avb("key.hotbar.5", 6, "key.categories.inventory"), new avb("key.hotbar.6", 7, "key.categories.inventory"), new avb("key.hotbar.7", 8, "key.categories.inventory"), new avb("key.hotbar.8", 9, "key.categories.inventory"), new avb("key.hotbar.9", 10, "key.categories.inventory") };
-    this.aw = ((avb[])ArrayUtils.addAll(new avb[] { this.ah, this.af, this.X, this.Y, this.Z, this.aa, this.ab, this.ac, this.ad, this.ag, this.ae, this.aj, this.ak, this.ai, this.al, this.am, this.an, this.ao, this.ar, this.as, this.at, this.au, this.ap, this.aq }, this.av));
-    this.ay = oj.c;
-    this.aE = "";
-    this.aH = 70.0F;
-    this.aM = "en_US";
-    this.aN = false;
+    m = wn.b.a;
+    n = true;
+    o = true;
+    p = true;
+    q = 1.0F;
+    r = true;
+    t = true;
+    u = false;
+    v = true;
+    w = false;
+    z = true;
+    aZ = Sets.newHashSet(wo.values());
+    D = true;
+    E = 1.0F;
+    F = 1.0F;
+    G = 0.44366196F;
+    H = 1.0F;
+    I = true;
+    J = 4;
+    ba = Maps.newEnumMap(bpg.class);
+    K = 0.5F;
+    L = 1.0F;
+    M = 1.0F;
+    N = 0.5412844F;
+    O = 0.31690142F;
+    P = 1;
+    Q = true;
+    R = "";
+    S = 0;
+    T = 0;
+    U = 0;
+    V = true;
+    W = true;
+    X = new avb("key.forward", 17, "key.categories.movement");
+    Y = new avb("key.left", 30, "key.categories.movement");
+    Z = new avb("key.back", 31, "key.categories.movement");
+    aa = new avb("key.right", 32, "key.categories.movement");
+    ab = new avb("key.jump", 57, "key.categories.movement");
+    ac = new avb("key.sneak", 42, "key.categories.movement");
+    ad = new avb("key.sprint", 29, "key.categories.movement");
+    ae = new avb("key.inventory", 18, "key.categories.inventory");
+    af = new avb("key.use", -99, "key.categories.gameplay");
+    ag = new avb("key.drop", 16, "key.categories.gameplay");
+    ah = new avb("key.attack", -100, "key.categories.gameplay");
+    ai = new avb("key.pickItem", -98, "key.categories.gameplay");
+    aj = new avb("key.chat", 20, "key.categories.multiplayer");
+    ak = new avb("key.playerlist", 15, "key.categories.multiplayer");
+    al = new avb("key.command", 53, "key.categories.multiplayer");
+    am = new avb("key.screenshot", 60, "key.categories.misc");
+    an = new avb("key.togglePerspective", 63, "key.categories.misc");
+    ao = new avb("key.smoothCamera", 0, "key.categories.misc");
+    ap = new avb("key.fullscreen", 87, "key.categories.misc");
+    aq = new avb("key.spectatorOutlines", 0, "key.categories.misc");
+    ar = new avb("key.streamStartStop", 64, "key.categories.stream");
+    as = new avb("key.streamPauseUnpause", 65, "key.categories.stream");
+    at = new avb("key.streamCommercial", 0, "key.categories.stream");
+    au = new avb("key.streamToggleMic", 0, "key.categories.stream");
+    av = new avb[] { new avb("key.hotbar.1", 2, "key.categories.inventory"), new avb("key.hotbar.2", 3, "key.categories.inventory"), new avb("key.hotbar.3", 4, "key.categories.inventory"), new avb("key.hotbar.4", 5, "key.categories.inventory"), new avb("key.hotbar.5", 6, "key.categories.inventory"), new avb("key.hotbar.6", 7, "key.categories.inventory"), new avb("key.hotbar.7", 8, "key.categories.inventory"), new avb("key.hotbar.8", 9, "key.categories.inventory"), new avb("key.hotbar.9", 10, "key.categories.inventory") };
+    aw = ((avb[])ArrayUtils.addAll(new avb[] { ah, af, X, Y, Z, aa, ab, ac, ad, ag, ae, aj, ak, ai, al, am, an, ao, ar, as, at, au, ap, aq }, av));
+    ay = oj.c;
+    aE = "";
+    aH = 70.0F;
+    aM = "en_US";
+    aN = false;
   }
   
   public static String c(int p_74298_0_)
@@ -402,91 +402,91 @@ public class avh
   {
     setOptionFloatValueOF(p_74304_1_, p_74304_2_);
     if (p_74304_1_ == avh.a.b) {
-      this.a = p_74304_2_;
+      a = p_74304_2_;
     }
     if (p_74304_1_ == avh.a.c) {
-      this.aH = p_74304_2_;
+      aH = p_74304_2_;
     }
     if (p_74304_1_ == avh.a.d) {
-      this.aI = p_74304_2_;
+      aI = p_74304_2_;
     }
     if (p_74304_1_ == avh.a.i)
     {
-      this.g = ((int)p_74304_2_);
+      g = ((int)p_74304_2_);
       
-      this.t = false;
-      if (this.g <= 0)
+      t = false;
+      if (g <= 0)
       {
-        this.g = ((int)avh.a.i.f());
-        this.t = true;
+        g = ((int)avh.a.i.f());
+        t = true;
       }
       updateVSync();
     }
     if (p_74304_1_ == avh.a.s)
     {
-      this.q = p_74304_2_;
-      this.ax.q.d().b();
+      q = p_74304_2_;
+      ax.q.d().b();
     }
     if (p_74304_1_ == avh.a.B)
     {
-      this.H = p_74304_2_;
-      this.ax.q.d().b();
+      H = p_74304_2_;
+      ax.q.d().b();
     }
     if (p_74304_1_ == avh.a.C)
     {
-      this.G = p_74304_2_;
-      this.ax.q.d().b();
+      G = p_74304_2_;
+      ax.q.d().b();
     }
     if (p_74304_1_ == avh.a.A)
     {
-      this.F = p_74304_2_;
-      this.ax.q.d().b();
+      F = p_74304_2_;
+      ax.q.d().b();
     }
     if (p_74304_1_ == avh.a.z)
     {
-      this.E = p_74304_2_;
-      this.ax.q.d().b();
+      E = p_74304_2_;
+      ax.q.d().b();
     }
     if (p_74304_1_ == avh.a.D)
     {
-      int var3 = this.J;
-      this.J = ((int)p_74304_2_);
+      int var3 = J;
+      J = ((int)p_74304_2_);
       if (var3 != p_74304_2_)
       {
-        this.ax.T().a(this.J);
-        this.ax.P().a(bmh.g);
-        this.ax.T().a(false, this.J > 0);
-        this.ax.B();
+        ax.T().a(J);
+        ax.P().a(bmh.g);
+        ax.T().a(false, J > 0);
+        ax.B();
       }
     }
     if (p_74304_1_ == avh.a.P)
     {
-      this.v = (!this.v);
-      this.ax.g.a();
+      v = (!v);
+      ax.g.a();
     }
     if (p_74304_1_ == avh.a.f)
     {
-      this.c = ((int)p_74304_2_);
-      this.ax.g.m();
+      c = ((int)p_74304_2_);
+      ax.g.m();
     }
     if (p_74304_1_ == avh.a.F) {
-      this.K = p_74304_2_;
+      K = p_74304_2_;
     }
     if (p_74304_1_ == avh.a.G)
     {
-      this.L = p_74304_2_;
-      this.ax.Y().p();
+      L = p_74304_2_;
+      ax.Y().p();
     }
     if (p_74304_1_ == avh.a.H)
     {
-      this.M = p_74304_2_;
-      this.ax.Y().p();
+      M = p_74304_2_;
+      ax.Y().p();
     }
     if (p_74304_1_ == avh.a.I) {
-      this.N = p_74304_2_;
+      N = p_74304_2_;
     }
     if (p_74304_1_ == avh.a.J) {
-      this.O = p_74304_2_;
+      O = p_74304_2_;
     }
   }
   
@@ -494,106 +494,106 @@ public class avh
   {
     setOptionValueOF(p_74306_1_, p_74306_2_);
     if (p_74306_1_ == avh.a.a) {
-      this.b = (!this.b);
+      b = (!b);
     }
     if (p_74306_1_ == avh.a.n) {
-      this.aK = (this.aK + p_74306_2_ & 0x3);
+      aK = (aK + p_74306_2_ & 0x3);
     }
     if (p_74306_1_ == avh.a.o) {
-      this.aL = ((this.aL + p_74306_2_) % 3);
+      aL = ((aL + p_74306_2_) % 3);
     }
     if (p_74306_1_ == avh.a.g) {
-      this.d = (!this.d);
+      d = (!d);
     }
     if (p_74306_1_ == avh.a.k) {
-      this.h = ((this.h + p_74306_2_) % 3);
+      h = ((h + p_74306_2_) % 3);
     }
     if (p_74306_1_ == avh.a.E)
     {
-      this.aN = (!this.aN);
-      this.ax.k.a((this.ax.S().a()) || (this.aN));
+      aN = (!aN);
+      ax.k.a((ax.S().a()) || (aN));
     }
     if (p_74306_1_ == avh.a.j) {
-      this.f = (!this.f);
+      f = (!f);
     }
     if (p_74306_1_ == avh.a.h)
     {
-      this.e = (!this.e);
-      this.ax.e();
+      e = (!e);
+      ax.e();
     }
     if (p_74306_1_ == avh.a.l)
     {
-      this.i = (!this.i);
+      i = (!i);
       
       updateRenderClouds();
       
-      this.ax.g.a();
+      ax.g.a();
     }
     if (p_74306_1_ == avh.a.m)
     {
-      this.j = ((this.j + p_74306_2_) % 3);
-      this.ax.g.a();
+      j = ((j + p_74306_2_) % 3);
+      ax.g.a();
     }
     if (p_74306_1_ == avh.a.p) {
-      this.m = wn.b.a((this.m.a() + p_74306_2_) % 3);
+      m = wn.b.a((m.a() + p_74306_2_) % 3);
     }
     if (p_74306_1_ == avh.a.K) {
-      this.P = ((this.P + p_74306_2_) % 3);
+      P = ((P + p_74306_2_) % 3);
     }
     if (p_74306_1_ == avh.a.L) {
-      this.Q = (!this.Q);
+      Q = (!Q);
     }
     if (p_74306_1_ == avh.a.M) {
-      this.S = ((this.S + p_74306_2_) % 3);
+      S = ((S + p_74306_2_) % 3);
     }
     if (p_74306_1_ == avh.a.N) {
-      this.T = ((this.T + p_74306_2_) % 3);
+      T = ((T + p_74306_2_) % 3);
     }
     if (p_74306_1_ == avh.a.O) {
-      this.U = ((this.U + p_74306_2_) % 2);
+      U = ((U + p_74306_2_) % 2);
     }
     if (p_74306_1_ == avh.a.q) {
-      this.n = (!this.n);
+      n = (!n);
     }
     if (p_74306_1_ == avh.a.r) {
-      this.o = (!this.o);
+      o = (!o);
     }
     if (p_74306_1_ == avh.a.t) {
-      this.p = (!this.p);
+      p = (!p);
     }
     if (p_74306_1_ == avh.a.u) {
-      this.r = (!this.r);
+      r = (!r);
     }
     if (p_74306_1_ == avh.a.y) {
-      this.A = (!this.A);
+      A = (!A);
     }
     if (p_74306_1_ == avh.a.v)
     {
-      this.s = (!this.s);
-      if (this.ax.K() != this.s) {
-        this.ax.q();
+      s = (!s);
+      if (ax.K() != s) {
+        ax.q();
       }
     }
     if (p_74306_1_ == avh.a.w)
     {
-      this.t = (!this.t);
-      Display.setVSyncEnabled(this.t);
+      t = (!t);
+      Display.setVSyncEnabled(t);
     }
     if (p_74306_1_ == avh.a.x)
     {
-      this.u = (!this.u);
-      this.ax.g.a();
+      u = (!u);
+      ax.g.a();
     }
     if (p_74306_1_ == avh.a.P)
     {
-      this.v = (!this.v);
-      this.ax.g.a();
+      v = (!v);
+      ax.g.a();
     }
     if (p_74306_1_ == avh.a.Q) {
-      this.w = (!this.w);
+      w = (!w);
     }
     if (p_74306_1_ == avh.a.R) {
-      this.W = (!this.W);
+      W = (!W);
     }
     b();
   }
@@ -601,28 +601,28 @@ public class avh
   public float a(avh.a p_74296_1_)
   {
     if (p_74296_1_ == avh.a.CLOUD_HEIGHT) {
-      return this.ofCloudsHeight;
+      return ofCloudsHeight;
     }
     if (p_74296_1_ == avh.a.AO_LEVEL) {
-      return this.ofAoLevel;
+      return ofAoLevel;
     }
     if (p_74296_1_ == avh.a.AA_LEVEL) {
-      return this.ofAaLevel;
+      return ofAaLevel;
     }
     if (p_74296_1_ == avh.a.AF_LEVEL) {
-      return this.ofAfLevel;
+      return ofAfLevel;
     }
     if (p_74296_1_ == avh.a.MIPMAP_TYPE) {
-      return this.ofMipmapType;
+      return ofMipmapType;
     }
     if (p_74296_1_ == avh.a.i)
     {
-      if ((this.g == avh.a.i.f()) && (this.t)) {
+      if ((g == avh.a.i.f()) && (t)) {
         return 0.0F;
       }
-      return this.g;
+      return g;
     }
-    return p_74296_1_ == avh.a.J ? this.O : p_74296_1_ == avh.a.I ? this.N : p_74296_1_ == avh.a.H ? this.M : p_74296_1_ == avh.a.G ? this.L : p_74296_1_ == avh.a.F ? this.K : p_74296_1_ == avh.a.f ? this.c : p_74296_1_ == avh.a.D ? this.J : p_74296_1_ == avh.a.i ? this.g : p_74296_1_ == avh.a.A ? this.F : p_74296_1_ == avh.a.z ? this.E : p_74296_1_ == avh.a.C ? this.G : p_74296_1_ == avh.a.B ? this.H : p_74296_1_ == avh.a.s ? this.q : p_74296_1_ == avh.a.b ? this.a : p_74296_1_ == avh.a.e ? this.aJ : p_74296_1_ == avh.a.d ? this.aI : p_74296_1_ == avh.a.c ? this.aH : 0.0F;
+    return p_74296_1_ == avh.a.J ? O : p_74296_1_ == avh.a.I ? N : p_74296_1_ == avh.a.H ? M : p_74296_1_ == avh.a.G ? L : p_74296_1_ == avh.a.F ? K : p_74296_1_ == avh.a.f ? c : p_74296_1_ == avh.a.D ? J : p_74296_1_ == avh.a.i ? g : p_74296_1_ == avh.a.A ? F : p_74296_1_ == avh.a.z ? E : p_74296_1_ == avh.a.C ? G : p_74296_1_ == avh.a.B ? H : p_74296_1_ == avh.a.s ? q : p_74296_1_ == avh.a.b ? a : p_74296_1_ == avh.a.e ? aJ : p_74296_1_ == avh.a.d ? aI : p_74296_1_ == avh.a.c ? aH : 0.0F;
   }
   
   public boolean b(avh.a p_74308_1_)
@@ -630,39 +630,39 @@ public class avh
     switch (avh.2.a[p_74308_1_.ordinal()])
     {
     case 1: 
-      return this.b;
+      return b;
     case 2: 
-      return this.d;
+      return d;
     case 3: 
-      return this.e;
+      return e;
     case 4: 
-      return this.f;
+      return f;
     case 5: 
-      return this.n;
+      return n;
     case 6: 
-      return this.o;
+      return o;
     case 7: 
-      return this.p;
+      return p;
     case 8: 
-      return this.r;
+      return r;
     case 9: 
-      return this.s;
+      return s;
     case 10: 
-      return this.t;
+      return t;
     case 11: 
-      return this.u;
+      return u;
     case 12: 
-      return this.A;
+      return A;
     case 13: 
-      return this.Q;
+      return Q;
     case 14: 
-      return this.aN;
+      return aN;
     case 15: 
-      return this.v;
+      return v;
     case 16: 
-      return this.w;
+      return w;
     case 17: 
-      return this.W;
+      return W;
     }
     return false;
   }
@@ -694,35 +694,35 @@ public class avh
       return var2 + bnq.a("options.off", new Object[0]);
     }
     if (p_74297_1_ == avh.a.n) {
-      return var2 + a(aR, this.aK);
+      return var2 + a(aR, aK);
     }
     if (p_74297_1_ == avh.a.p) {
-      return var2 + bnq.a(this.m.b(), new Object[0]);
+      return var2 + bnq.a(m.b(), new Object[0]);
     }
     if (p_74297_1_ == avh.a.o) {
-      return var2 + a(aS, this.aL);
+      return var2 + a(aS, aL);
     }
     if (p_74297_1_ == avh.a.m) {
-      return var2 + a(aT, this.j);
+      return var2 + a(aT, j);
     }
     if (p_74297_1_ == avh.a.K) {
-      return var2 + a(aU, this.P);
+      return var2 + a(aU, P);
     }
     if (p_74297_1_ == avh.a.M) {
-      return var2 + a(aV, this.S);
+      return var2 + a(aV, S);
     }
     if (p_74297_1_ == avh.a.N) {
-      return var2 + a(aW, this.T);
+      return var2 + a(aW, T);
     }
     if (p_74297_1_ == avh.a.O) {
-      return var2 + a(aX, this.U);
+      return var2 + a(aX, U);
     }
     if (p_74297_1_ == avh.a.k) {
-      return var2 + a(aY, this.h);
+      return var2 + a(aY, h);
     }
     if (p_74297_1_ == avh.a.l)
     {
-      if (this.i) {
+      if (i) {
         return var2 + bnq.a("options.graphics.fancy", new Object[0]);
       }
       String var3 = "options.graphics.fast";
@@ -735,226 +735,226 @@ public class avh
   {
     try
     {
-      if (!this.bb.exists()) {
+      if (!bb.exists()) {
         return;
       }
-      BufferedReader var1 = new BufferedReader(new FileReader(this.bb));
+      BufferedReader var1 = new BufferedReader(new FileReader(bb));
       String var2 = "";
-      this.ba.clear();
+      ba.clear();
       while ((var2 = var1.readLine()) != null) {
         try
         {
           String[] var3 = var2.split(":");
           if (var3[0].equals("mouseSensitivity")) {
-            this.a = a(var3[1]);
+            a = a(var3[1]);
           }
           if (var3[0].equals("fov")) {
-            this.aH = (a(var3[1]) * 40.0F + 70.0F);
+            aH = (a(var3[1]) * 40.0F + 70.0F);
           }
           if (var3[0].equals("gamma")) {
-            this.aI = a(var3[1]);
+            aI = a(var3[1]);
           }
           if (var3[0].equals("saturation")) {
-            this.aJ = a(var3[1]);
+            aJ = a(var3[1]);
           }
           if (var3[0].equals("invertYMouse")) {
-            this.b = var3[1].equals("true");
+            b = var3[1].equals("true");
           }
           if (var3[0].equals("renderDistance")) {
-            this.c = Integer.parseInt(var3[1]);
+            c = Integer.parseInt(var3[1]);
           }
           if (var3[0].equals("guiScale")) {
-            this.aK = Integer.parseInt(var3[1]);
+            aK = Integer.parseInt(var3[1]);
           }
           if (var3[0].equals("particles")) {
-            this.aL = Integer.parseInt(var3[1]);
+            aL = Integer.parseInt(var3[1]);
           }
           if (var3[0].equals("bobView")) {
-            this.d = var3[1].equals("true");
+            d = var3[1].equals("true");
           }
           if (var3[0].equals("anaglyph3d")) {
-            this.e = var3[1].equals("true");
+            e = var3[1].equals("true");
           }
           if (var3[0].equals("maxFps"))
           {
-            this.g = Integer.parseInt(var3[1]);
+            g = Integer.parseInt(var3[1]);
             
-            this.t = false;
-            if (this.g <= 0)
+            t = false;
+            if (g <= 0)
             {
-              this.g = ((int)avh.a.i.f());
-              this.t = true;
+              g = ((int)avh.a.i.f());
+              t = true;
             }
             updateVSync();
           }
           if (var3[0].equals("fboEnable")) {
-            this.f = var3[1].equals("true");
+            f = var3[1].equals("true");
           }
           if (var3[0].equals("difficulty")) {
-            this.ay = oj.a(Integer.parseInt(var3[1]));
+            ay = oj.a(Integer.parseInt(var3[1]));
           }
           if (var3[0].equals("fancyGraphics"))
           {
-            this.i = var3[1].equals("true");
+            i = var3[1].equals("true");
             
             updateRenderClouds();
           }
           if (var3[0].equals("ao")) {
             if (var3[1].equals("true")) {
-              this.j = 2;
+              j = 2;
             } else if (var3[1].equals("false")) {
-              this.j = 0;
+              j = 0;
             } else {
-              this.j = Integer.parseInt(var3[1]);
+              j = Integer.parseInt(var3[1]);
             }
           }
           if (var3[0].equals("renderClouds")) {
             if (var3[1].equals("true")) {
-              this.h = 2;
+              h = 2;
             } else if (var3[1].equals("false")) {
-              this.h = 0;
+              h = 0;
             } else if (var3[1].equals("fast")) {
-              this.h = 1;
+              h = 1;
             }
           }
           if (var3[0].equals("resourcePacks"))
           {
-            this.k = ((List)aP.fromJson(var2.substring(var2.indexOf(':') + 1), aQ));
-            if (this.k == null) {
-              this.k = Lists.newArrayList();
+            k = ((List)aP.fromJson(var2.substring(var2.indexOf(':') + 1), aQ));
+            if (k == null) {
+              k = Lists.newArrayList();
             }
           }
           if (var3[0].equals("incompatibleResourcePacks"))
           {
-            this.l = ((List)aP.fromJson(var2.substring(var2.indexOf(':') + 1), aQ));
-            if (this.l == null) {
-              this.l = Lists.newArrayList();
+            l = ((List)aP.fromJson(var2.substring(var2.indexOf(':') + 1), aQ));
+            if (l == null) {
+              l = Lists.newArrayList();
             }
           }
           if ((var3[0].equals("lastServer")) && (var3.length >= 2)) {
-            this.aE = var2.substring(var2.indexOf(':') + 1);
+            aE = var2.substring(var2.indexOf(':') + 1);
           }
           if ((var3[0].equals("lang")) && (var3.length >= 2)) {
-            this.aM = var3[1];
+            aM = var3[1];
           }
           if (var3[0].equals("chatVisibility")) {
-            this.m = wn.b.a(Integer.parseInt(var3[1]));
+            m = wn.b.a(Integer.parseInt(var3[1]));
           }
           if (var3[0].equals("chatColors")) {
-            this.n = var3[1].equals("true");
+            n = var3[1].equals("true");
           }
           if (var3[0].equals("chatLinks")) {
-            this.o = var3[1].equals("true");
+            o = var3[1].equals("true");
           }
           if (var3[0].equals("chatLinksPrompt")) {
-            this.p = var3[1].equals("true");
+            p = var3[1].equals("true");
           }
           if (var3[0].equals("chatOpacity")) {
-            this.q = a(var3[1]);
+            q = a(var3[1]);
           }
           if (var3[0].equals("snooperEnabled")) {
-            this.r = var3[1].equals("true");
+            r = var3[1].equals("true");
           }
           if (var3[0].equals("fullscreen")) {
-            this.s = var3[1].equals("true");
+            s = var3[1].equals("true");
           }
           if (var3[0].equals("enableVsync"))
           {
-            this.t = var3[1].equals("true");
+            t = var3[1].equals("true");
             
             updateVSync();
           }
           if (var3[0].equals("useVbo")) {
-            this.u = var3[1].equals("true");
+            u = var3[1].equals("true");
           }
           if (var3[0].equals("hideServerAddress")) {
-            this.x = var3[1].equals("true");
+            x = var3[1].equals("true");
           }
           if (var3[0].equals("advancedItemTooltips")) {
-            this.y = var3[1].equals("true");
+            y = var3[1].equals("true");
           }
           if (var3[0].equals("pauseOnLostFocus")) {
-            this.z = var3[1].equals("true");
+            z = var3[1].equals("true");
           }
           if (var3[0].equals("touchscreen")) {
-            this.A = var3[1].equals("true");
+            A = var3[1].equals("true");
           }
           if (var3[0].equals("overrideHeight")) {
-            this.C = Integer.parseInt(var3[1]);
+            C = Integer.parseInt(var3[1]);
           }
           if (var3[0].equals("overrideWidth")) {
-            this.B = Integer.parseInt(var3[1]);
+            B = Integer.parseInt(var3[1]);
           }
           if (var3[0].equals("heldItemTooltips")) {
-            this.D = var3[1].equals("true");
+            D = var3[1].equals("true");
           }
           if (var3[0].equals("chatHeightFocused")) {
-            this.H = a(var3[1]);
+            H = a(var3[1]);
           }
           if (var3[0].equals("chatHeightUnfocused")) {
-            this.G = a(var3[1]);
+            G = a(var3[1]);
           }
           if (var3[0].equals("chatScale")) {
-            this.E = a(var3[1]);
+            E = a(var3[1]);
           }
           if (var3[0].equals("chatWidth")) {
-            this.F = a(var3[1]);
+            F = a(var3[1]);
           }
           if (var3[0].equals("showInventoryAchievementHint")) {
-            this.I = var3[1].equals("true");
+            I = var3[1].equals("true");
           }
           if (var3[0].equals("mipmapLevels")) {
-            this.J = Integer.parseInt(var3[1]);
+            J = Integer.parseInt(var3[1]);
           }
           if (var3[0].equals("streamBytesPerPixel")) {
-            this.K = a(var3[1]);
+            K = a(var3[1]);
           }
           if (var3[0].equals("streamMicVolume")) {
-            this.L = a(var3[1]);
+            L = a(var3[1]);
           }
           if (var3[0].equals("streamSystemVolume")) {
-            this.M = a(var3[1]);
+            M = a(var3[1]);
           }
           if (var3[0].equals("streamKbps")) {
-            this.N = a(var3[1]);
+            N = a(var3[1]);
           }
           if (var3[0].equals("streamFps")) {
-            this.O = a(var3[1]);
+            O = a(var3[1]);
           }
           if (var3[0].equals("streamCompression")) {
-            this.P = Integer.parseInt(var3[1]);
+            P = Integer.parseInt(var3[1]);
           }
           if (var3[0].equals("streamSendMetadata")) {
-            this.Q = var3[1].equals("true");
+            Q = var3[1].equals("true");
           }
           if ((var3[0].equals("streamPreferredServer")) && (var3.length >= 2)) {
-            this.R = var2.substring(var2.indexOf(':') + 1);
+            R = var2.substring(var2.indexOf(':') + 1);
           }
           if (var3[0].equals("streamChatEnabled")) {
-            this.S = Integer.parseInt(var3[1]);
+            S = Integer.parseInt(var3[1]);
           }
           if (var3[0].equals("streamChatUserFilter")) {
-            this.T = Integer.parseInt(var3[1]);
+            T = Integer.parseInt(var3[1]);
           }
           if (var3[0].equals("streamMicToggleBehavior")) {
-            this.U = Integer.parseInt(var3[1]);
+            U = Integer.parseInt(var3[1]);
           }
           if (var3[0].equals("forceUnicodeFont")) {
-            this.aN = var3[1].equals("true");
+            aN = var3[1].equals("true");
           }
           if (var3[0].equals("allowBlockAlternatives")) {
-            this.v = var3[1].equals("true");
+            v = var3[1].equals("true");
           }
           if (var3[0].equals("reducedDebugInfo")) {
-            this.w = var3[1].equals("true");
+            w = var3[1].equals("true");
           }
           if (var3[0].equals("useNativeTransport")) {
-            this.V = var3[1].equals("true");
+            V = var3[1].equals("true");
           }
           if (var3[0].equals("entityShadows")) {
-            this.W = var3[1].equals("true");
+            W = var3[1].equals("true");
           }
-          avb[] var4 = this.aw;
+          avb[] var4 = aw;
           int var5 = var4.length;
           for (int var6 = 0; var6 < var5; var6++)
           {
@@ -969,7 +969,7 @@ public class avh
           {
             bpg var12 = var10[var6];
             if (var3[0].equals("soundCategory_" + var12.a())) {
-              this.ba.put(var12, Float.valueOf(a(var3[1])));
+              ba.put(var12, Float.valueOf(a(var3[1])));
             }
           }
           wo[] var11 = wo.values();
@@ -1015,23 +1015,23 @@ public class avh
     }
     try
     {
-      PrintWriter var1 = new PrintWriter(new FileWriter(this.bb));
-      var1.println("invertYMouse:" + this.b);
-      var1.println("mouseSensitivity:" + this.a);
-      var1.println("fov:" + (this.aH - 70.0F) / 40.0F);
-      var1.println("gamma:" + this.aI);
-      var1.println("saturation:" + this.aJ);
-      var1.println("renderDistance:" + this.c);
-      var1.println("guiScale:" + this.aK);
-      var1.println("particles:" + this.aL);
-      var1.println("bobView:" + this.d);
-      var1.println("anaglyph3d:" + this.e);
-      var1.println("maxFps:" + this.g);
-      var1.println("fboEnable:" + this.f);
-      var1.println("difficulty:" + this.ay.a());
-      var1.println("fancyGraphics:" + this.i);
-      var1.println("ao:" + this.j);
-      switch (this.h)
+      PrintWriter var1 = new PrintWriter(new FileWriter(bb));
+      var1.println("invertYMouse:" + b);
+      var1.println("mouseSensitivity:" + a);
+      var1.println("fov:" + (aH - 70.0F) / 40.0F);
+      var1.println("gamma:" + aI);
+      var1.println("saturation:" + aJ);
+      var1.println("renderDistance:" + c);
+      var1.println("guiScale:" + aK);
+      var1.println("particles:" + aL);
+      var1.println("bobView:" + d);
+      var1.println("anaglyph3d:" + e);
+      var1.println("maxFps:" + g);
+      var1.println("fboEnable:" + f);
+      var1.println("difficulty:" + ay.a());
+      var1.println("fancyGraphics:" + i);
+      var1.println("ao:" + j);
+      switch (h)
       {
       case 0: 
         var1.println("renderClouds:false");
@@ -1042,49 +1042,49 @@ public class avh
       case 2: 
         var1.println("renderClouds:true");
       }
-      var1.println("resourcePacks:" + aP.toJson(this.k));
-      var1.println("incompatibleResourcePacks:" + aP.toJson(this.l));
-      var1.println("lastServer:" + this.aE);
-      var1.println("lang:" + this.aM);
-      var1.println("chatVisibility:" + this.m.a());
-      var1.println("chatColors:" + this.n);
-      var1.println("chatLinks:" + this.o);
-      var1.println("chatLinksPrompt:" + this.p);
-      var1.println("chatOpacity:" + this.q);
-      var1.println("snooperEnabled:" + this.r);
-      var1.println("fullscreen:" + this.s);
-      var1.println("enableVsync:" + this.t);
-      var1.println("useVbo:" + this.u);
-      var1.println("hideServerAddress:" + this.x);
-      var1.println("advancedItemTooltips:" + this.y);
-      var1.println("pauseOnLostFocus:" + this.z);
-      var1.println("touchscreen:" + this.A);
-      var1.println("overrideWidth:" + this.B);
-      var1.println("overrideHeight:" + this.C);
-      var1.println("heldItemTooltips:" + this.D);
-      var1.println("chatHeightFocused:" + this.H);
-      var1.println("chatHeightUnfocused:" + this.G);
-      var1.println("chatScale:" + this.E);
-      var1.println("chatWidth:" + this.F);
-      var1.println("showInventoryAchievementHint:" + this.I);
-      var1.println("mipmapLevels:" + this.J);
-      var1.println("streamBytesPerPixel:" + this.K);
-      var1.println("streamMicVolume:" + this.L);
-      var1.println("streamSystemVolume:" + this.M);
-      var1.println("streamKbps:" + this.N);
-      var1.println("streamFps:" + this.O);
-      var1.println("streamCompression:" + this.P);
-      var1.println("streamSendMetadata:" + this.Q);
-      var1.println("streamPreferredServer:" + this.R);
-      var1.println("streamChatEnabled:" + this.S);
-      var1.println("streamChatUserFilter:" + this.T);
-      var1.println("streamMicToggleBehavior:" + this.U);
-      var1.println("forceUnicodeFont:" + this.aN);
-      var1.println("allowBlockAlternatives:" + this.v);
-      var1.println("reducedDebugInfo:" + this.w);
-      var1.println("useNativeTransport:" + this.V);
-      var1.println("entityShadows:" + this.W);
-      avb[] var2 = this.aw;
+      var1.println("resourcePacks:" + aP.toJson(k));
+      var1.println("incompatibleResourcePacks:" + aP.toJson(l));
+      var1.println("lastServer:" + aE);
+      var1.println("lang:" + aM);
+      var1.println("chatVisibility:" + m.a());
+      var1.println("chatColors:" + n);
+      var1.println("chatLinks:" + o);
+      var1.println("chatLinksPrompt:" + p);
+      var1.println("chatOpacity:" + q);
+      var1.println("snooperEnabled:" + r);
+      var1.println("fullscreen:" + s);
+      var1.println("enableVsync:" + t);
+      var1.println("useVbo:" + u);
+      var1.println("hideServerAddress:" + x);
+      var1.println("advancedItemTooltips:" + y);
+      var1.println("pauseOnLostFocus:" + z);
+      var1.println("touchscreen:" + A);
+      var1.println("overrideWidth:" + B);
+      var1.println("overrideHeight:" + C);
+      var1.println("heldItemTooltips:" + D);
+      var1.println("chatHeightFocused:" + H);
+      var1.println("chatHeightUnfocused:" + G);
+      var1.println("chatScale:" + E);
+      var1.println("chatWidth:" + F);
+      var1.println("showInventoryAchievementHint:" + I);
+      var1.println("mipmapLevels:" + J);
+      var1.println("streamBytesPerPixel:" + K);
+      var1.println("streamMicVolume:" + L);
+      var1.println("streamSystemVolume:" + M);
+      var1.println("streamKbps:" + N);
+      var1.println("streamFps:" + O);
+      var1.println("streamCompression:" + P);
+      var1.println("streamSendMetadata:" + Q);
+      var1.println("streamPreferredServer:" + R);
+      var1.println("streamChatEnabled:" + S);
+      var1.println("streamChatUserFilter:" + T);
+      var1.println("streamMicToggleBehavior:" + U);
+      var1.println("forceUnicodeFont:" + aN);
+      var1.println("allowBlockAlternatives:" + v);
+      var1.println("reducedDebugInfo:" + w);
+      var1.println("useNativeTransport:" + V);
+      var1.println("entityShadows:" + W);
+      avb[] var2 = aw;
       int var3 = var2.length;
       for (int var4 = 0; var4 < var3; var4++)
       {
@@ -1103,7 +1103,7 @@ public class avh
       for (var4 = 0; var4 < var3; var4++)
       {
         wo var10 = var8[var4];
-        var1.println("modelPart_" + var10.c() + ":" + this.aZ.contains(var10));
+        var1.println("modelPart_" + var10.c() + ":" + aZ.contains(var10));
       }
       var1.close();
     }
@@ -1118,39 +1118,39 @@ public class avh
   
   public float a(bpg p_151438_1_)
   {
-    return this.ba.containsKey(p_151438_1_) ? ((Float)this.ba.get(p_151438_1_)).floatValue() : 1.0F;
+    return ba.containsKey(p_151438_1_) ? ((Float)ba.get(p_151438_1_)).floatValue() : 1.0F;
   }
   
   public void a(bpg p_151439_1_, float p_151439_2_)
   {
-    this.ax.W().a(p_151439_1_, p_151439_2_);
-    this.ba.put(p_151439_1_, Float.valueOf(p_151439_2_));
+    ax.W().a(p_151439_1_, p_151439_2_);
+    ba.put(p_151439_1_, Float.valueOf(p_151439_2_));
   }
   
   public void c()
   {
-    if (this.ax.h != null)
+    if (ax.h != null)
     {
       int var1 = 0;
       wo var3;
-      for (Iterator var2 = this.aZ.iterator(); var2.hasNext(); var1 |= var3.a()) {
+      for (Iterator var2 = aZ.iterator(); var2.hasNext(); var1 |= var3.a()) {
         var3 = (wo)var2.next();
       }
-      this.ax.h.a.a(new ih(this.aM, this.c, this.m, this.n, var1));
+      ax.h.a.a(new ih(aM, c, m, n, var1));
     }
   }
   
   public Set d()
   {
-    return ImmutableSet.copyOf(this.aZ);
+    return ImmutableSet.copyOf(aZ);
   }
   
   public void a(wo p_178878_1_, boolean p_178878_2_)
   {
     if (p_178878_2_) {
-      this.aZ.add(p_178878_1_);
+      aZ.add(p_178878_1_);
     } else {
-      this.aZ.remove(p_178878_1_);
+      aZ.remove(p_178878_1_);
     }
     c();
   }
@@ -1158,35 +1158,35 @@ public class avh
   public void a(wo p_178877_1_)
   {
     if (!d().contains(p_178877_1_)) {
-      this.aZ.add(p_178877_1_);
+      aZ.add(p_178877_1_);
     } else {
-      this.aZ.remove(p_178877_1_);
+      aZ.remove(p_178877_1_);
     }
     c();
   }
   
   public int e()
   {
-    return this.c >= 4 ? this.h : 0;
+    return c >= 4 ? h : 0;
   }
   
   public boolean f()
   {
-    return this.V;
+    return V;
   }
   
   private void setOptionFloatValueOF(avh.a option, float val)
   {
     if (option == avh.a.CLOUD_HEIGHT)
     {
-      this.ofCloudsHeight = val;
+      ofCloudsHeight = val;
       
-      this.ax.g.resetClouds();
+      ax.g.resetClouds();
     }
     if (option == avh.a.AO_LEVEL)
     {
-      this.ofAoLevel = val;
-      this.ax.g.a();
+      ofAoLevel = val;
+      ax.g.a();
     }
     if (option == avh.a.AA_LEVEL)
     {
@@ -1197,13 +1197,13 @@ public class avh
         return;
       }
       int[] aaLevels = { 0, 2, 4, 6, 8, 12, 16 };
-      this.ofAaLevel = 0;
+      ofAaLevel = 0;
       for (int l = 0; l < aaLevels.length; l++) {
         if (valInt >= aaLevels[l]) {
-          this.ofAaLevel = aaLevels[l];
+          ofAaLevel = aaLevels[l];
         }
       }
-      this.ofAaLevel = Config.limit(this.ofAaLevel, 0, 16);
+      ofAaLevel = Config.limit(ofAaLevel, 0, 16);
     }
     if (option == avh.a.AF_LEVEL)
     {
@@ -1213,363 +1213,363 @@ public class avh
         Config.showGuiMessage("Anisotropic Filtering is not compatible with Shaders.", "Please disable Shaders to enable this option.");
         return;
       }
-      this.ofAfLevel = 1;
-      while (this.ofAfLevel * 2 <= valInt) {
-        this.ofAfLevel *= 2;
+      ofAfLevel = 1;
+      while (ofAfLevel * 2 <= valInt) {
+        ofAfLevel *= 2;
       }
-      this.ofAfLevel = Config.limit(this.ofAfLevel, 1, 16);
+      ofAfLevel = Config.limit(ofAfLevel, 1, 16);
       
-      this.ax.e();
+      ax.e();
     }
     if (option == avh.a.MIPMAP_TYPE)
     {
       int valInt = (int)val;
-      this.ofMipmapType = Config.limit(valInt, 0, 3);
+      ofMipmapType = Config.limit(valInt, 0, 3);
       
-      this.ax.e();
+      ax.e();
     }
   }
   
   private void setOptionValueOF(avh.a par1EnumOptions, int par2)
   {
     if (par1EnumOptions == avh.a.FOG_FANCY) {
-      switch (this.ofFogType)
+      switch (ofFogType)
       {
       case 1: 
-        this.ofFogType = 2;
+        ofFogType = 2;
         if (!Config.isFancyFogAvailable()) {
-          this.ofFogType = 3;
+          ofFogType = 3;
         }
         break;
       case 2: 
-        this.ofFogType = 3;
+        ofFogType = 3;
         break;
       case 3: 
-        this.ofFogType = 1;
+        ofFogType = 1;
         break;
       default: 
-        this.ofFogType = 1;
+        ofFogType = 1;
       }
     }
     if (par1EnumOptions == avh.a.FOG_START)
     {
-      this.ofFogStart += 0.2F;
-      if (this.ofFogStart > 0.81F) {
-        this.ofFogStart = 0.2F;
+      ofFogStart += 0.2F;
+      if (ofFogStart > 0.81F) {
+        ofFogStart = 0.2F;
       }
     }
     if (par1EnumOptions == avh.a.SMOOTH_FPS) {
-      this.ofSmoothFps = (!this.ofSmoothFps);
+      ofSmoothFps = (!ofSmoothFps);
     }
     if (par1EnumOptions == avh.a.SMOOTH_WORLD)
     {
-      this.ofSmoothWorld = (!this.ofSmoothWorld);
+      ofSmoothWorld = (!ofSmoothWorld);
       
       Config.updateThreadPriorities();
     }
     if (par1EnumOptions == avh.a.CLOUDS)
     {
-      this.ofClouds += 1;
-      if (this.ofClouds > 3) {
-        this.ofClouds = 0;
+      ofClouds += 1;
+      if (ofClouds > 3) {
+        ofClouds = 0;
       }
       updateRenderClouds();
       
-      this.ax.g.resetClouds();
+      ax.g.resetClouds();
     }
     if (par1EnumOptions == avh.a.TREES)
     {
-      this.ofTrees += 1;
-      if (this.ofTrees > 2) {
-        this.ofTrees = 0;
+      ofTrees += 1;
+      if (ofTrees > 2) {
+        ofTrees = 0;
       }
-      this.ax.g.a();
+      ax.g.a();
     }
     if (par1EnumOptions == avh.a.DROPPED_ITEMS)
     {
-      this.ofDroppedItems += 1;
-      if (this.ofDroppedItems > 2) {
-        this.ofDroppedItems = 0;
+      ofDroppedItems += 1;
+      if (ofDroppedItems > 2) {
+        ofDroppedItems = 0;
       }
     }
     if (par1EnumOptions == avh.a.RAIN)
     {
-      this.ofRain += 1;
-      if (this.ofRain > 3) {
-        this.ofRain = 0;
+      ofRain += 1;
+      if (ofRain > 3) {
+        ofRain = 0;
       }
     }
     if (par1EnumOptions == avh.a.ANIMATED_WATER)
     {
-      this.ofAnimatedWater += 1;
-      if (this.ofAnimatedWater > 2) {
-        this.ofAnimatedWater = 0;
+      ofAnimatedWater += 1;
+      if (ofAnimatedWater > 2) {
+        ofAnimatedWater = 0;
       }
     }
     if (par1EnumOptions == avh.a.ANIMATED_LAVA)
     {
-      this.ofAnimatedLava += 1;
-      if (this.ofAnimatedLava > 2) {
-        this.ofAnimatedLava = 0;
+      ofAnimatedLava += 1;
+      if (ofAnimatedLava > 2) {
+        ofAnimatedLava = 0;
       }
     }
     if (par1EnumOptions == avh.a.ANIMATED_FIRE) {
-      this.ofAnimatedFire = (!this.ofAnimatedFire);
+      ofAnimatedFire = (!ofAnimatedFire);
     }
     if (par1EnumOptions == avh.a.ANIMATED_PORTAL) {
-      this.ofAnimatedPortal = (!this.ofAnimatedPortal);
+      ofAnimatedPortal = (!ofAnimatedPortal);
     }
     if (par1EnumOptions == avh.a.ANIMATED_REDSTONE) {
-      this.ofAnimatedRedstone = (!this.ofAnimatedRedstone);
+      ofAnimatedRedstone = (!ofAnimatedRedstone);
     }
     if (par1EnumOptions == avh.a.ANIMATED_EXPLOSION) {
-      this.ofAnimatedExplosion = (!this.ofAnimatedExplosion);
+      ofAnimatedExplosion = (!ofAnimatedExplosion);
     }
     if (par1EnumOptions == avh.a.ANIMATED_FLAME) {
-      this.ofAnimatedFlame = (!this.ofAnimatedFlame);
+      ofAnimatedFlame = (!ofAnimatedFlame);
     }
     if (par1EnumOptions == avh.a.ANIMATED_SMOKE) {
-      this.ofAnimatedSmoke = (!this.ofAnimatedSmoke);
+      ofAnimatedSmoke = (!ofAnimatedSmoke);
     }
     if (par1EnumOptions == avh.a.VOID_PARTICLES) {
-      this.ofVoidParticles = (!this.ofVoidParticles);
+      ofVoidParticles = (!ofVoidParticles);
     }
     if (par1EnumOptions == avh.a.WATER_PARTICLES) {
-      this.ofWaterParticles = (!this.ofWaterParticles);
+      ofWaterParticles = (!ofWaterParticles);
     }
     if (par1EnumOptions == avh.a.PORTAL_PARTICLES) {
-      this.ofPortalParticles = (!this.ofPortalParticles);
+      ofPortalParticles = (!ofPortalParticles);
     }
     if (par1EnumOptions == avh.a.POTION_PARTICLES) {
-      this.ofPotionParticles = (!this.ofPotionParticles);
+      ofPotionParticles = (!ofPotionParticles);
     }
     if (par1EnumOptions == avh.a.FIREWORK_PARTICLES) {
-      this.ofFireworkParticles = (!this.ofFireworkParticles);
+      ofFireworkParticles = (!ofFireworkParticles);
     }
     if (par1EnumOptions == avh.a.DRIPPING_WATER_LAVA) {
-      this.ofDrippingWaterLava = (!this.ofDrippingWaterLava);
+      ofDrippingWaterLava = (!ofDrippingWaterLava);
     }
     if (par1EnumOptions == avh.a.ANIMATED_TERRAIN) {
-      this.ofAnimatedTerrain = (!this.ofAnimatedTerrain);
+      ofAnimatedTerrain = (!ofAnimatedTerrain);
     }
     if (par1EnumOptions == avh.a.ANIMATED_TEXTURES) {
-      this.ofAnimatedTextures = (!this.ofAnimatedTextures);
+      ofAnimatedTextures = (!ofAnimatedTextures);
     }
     if (par1EnumOptions == avh.a.RAIN_SPLASH) {
-      this.ofRainSplash = (!this.ofRainSplash);
+      ofRainSplash = (!ofRainSplash);
     }
     if (par1EnumOptions == avh.a.LAGOMETER) {
-      this.ofLagometer = (!this.ofLagometer);
+      ofLagometer = (!ofLagometer);
     }
     if (par1EnumOptions == avh.a.SHOW_FPS) {
-      this.ofShowFps = (!this.ofShowFps);
+      ofShowFps = (!ofShowFps);
     }
     if (par1EnumOptions == avh.a.AUTOSAVE_TICKS)
     {
-      this.ofAutoSaveTicks *= 10;
-      if (this.ofAutoSaveTicks > 40000) {
-        this.ofAutoSaveTicks = 40;
+      ofAutoSaveTicks *= 10;
+      if (ofAutoSaveTicks > 40000) {
+        ofAutoSaveTicks = 40;
       }
     }
     if (par1EnumOptions == avh.a.BETTER_GRASS)
     {
-      this.ofBetterGrass += 1;
-      if (this.ofBetterGrass > 3) {
-        this.ofBetterGrass = 1;
+      ofBetterGrass += 1;
+      if (ofBetterGrass > 3) {
+        ofBetterGrass = 1;
       }
-      this.ax.g.a();
+      ax.g.a();
     }
     if (par1EnumOptions == avh.a.CONNECTED_TEXTURES)
     {
-      this.ofConnectedTextures += 1;
-      if (this.ofConnectedTextures > 3) {
-        this.ofConnectedTextures = 1;
+      ofConnectedTextures += 1;
+      if (ofConnectedTextures > 3) {
+        ofConnectedTextures = 1;
       }
-      if (this.ofConnectedTextures != 2) {
-        this.ax.e();
+      if (ofConnectedTextures != 2) {
+        ax.e();
       }
     }
     if (par1EnumOptions == avh.a.WEATHER) {
-      this.ofWeather = (!this.ofWeather);
+      ofWeather = (!ofWeather);
     }
     if (par1EnumOptions == avh.a.SKY) {
-      this.ofSky = (!this.ofSky);
+      ofSky = (!ofSky);
     }
     if (par1EnumOptions == avh.a.STARS) {
-      this.ofStars = (!this.ofStars);
+      ofStars = (!ofStars);
     }
     if (par1EnumOptions == avh.a.SUN_MOON) {
-      this.ofSunMoon = (!this.ofSunMoon);
+      ofSunMoon = (!ofSunMoon);
     }
     if (par1EnumOptions == avh.a.VIGNETTE)
     {
-      this.ofVignette += 1;
-      if (this.ofVignette > 2) {
-        this.ofVignette = 0;
+      ofVignette += 1;
+      if (ofVignette > 2) {
+        ofVignette = 0;
       }
     }
     if (par1EnumOptions == avh.a.CHUNK_UPDATES)
     {
-      this.ofChunkUpdates += 1;
-      if (this.ofChunkUpdates > 5) {
-        this.ofChunkUpdates = 1;
+      ofChunkUpdates += 1;
+      if (ofChunkUpdates > 5) {
+        ofChunkUpdates = 1;
       }
     }
     if (par1EnumOptions == avh.a.CHUNK_LOADING)
     {
-      this.ofChunkLoading += 1;
-      if (this.ofChunkLoading > 2) {
-        this.ofChunkLoading = 0;
+      ofChunkLoading += 1;
+      if (ofChunkLoading > 2) {
+        ofChunkLoading = 0;
       }
       updateChunkLoading();
     }
     if (par1EnumOptions == avh.a.CHUNK_UPDATES_DYNAMIC) {
-      this.ofChunkUpdatesDynamic = (!this.ofChunkUpdatesDynamic);
+      ofChunkUpdatesDynamic = (!ofChunkUpdatesDynamic);
     }
     if (par1EnumOptions == avh.a.TIME)
     {
-      this.ofTime += 1;
-      if (this.ofTime > 3) {
-        this.ofTime = 0;
+      ofTime += 1;
+      if (ofTime > 3) {
+        ofTime = 0;
       }
     }
     if (par1EnumOptions == avh.a.CLEAR_WATER)
     {
-      this.ofClearWater = (!this.ofClearWater);
+      ofClearWater = (!ofClearWater);
       updateWaterOpacity();
     }
     if (par1EnumOptions == avh.a.PROFILER) {
-      this.ofProfiler = (!this.ofProfiler);
+      ofProfiler = (!ofProfiler);
     }
     if (par1EnumOptions == avh.a.BETTER_SNOW)
     {
-      this.ofBetterSnow = (!this.ofBetterSnow);
-      this.ax.g.a();
+      ofBetterSnow = (!ofBetterSnow);
+      ax.g.a();
     }
     if (par1EnumOptions == avh.a.SWAMP_COLORS)
     {
-      this.ofSwampColors = (!this.ofSwampColors);
+      ofSwampColors = (!ofSwampColors);
       CustomColorizer.updateUseDefaultColorMultiplier();
-      this.ax.g.a();
+      ax.g.a();
     }
     if (par1EnumOptions == avh.a.RANDOM_MOBS)
     {
-      this.ofRandomMobs = (!this.ofRandomMobs);
+      ofRandomMobs = (!ofRandomMobs);
       RandomMobs.resetTextures();
     }
     if (par1EnumOptions == avh.a.SMOOTH_BIOMES)
     {
-      this.ofSmoothBiomes = (!this.ofSmoothBiomes);
+      ofSmoothBiomes = (!ofSmoothBiomes);
       CustomColorizer.updateUseDefaultColorMultiplier();
-      this.ax.g.a();
+      ax.g.a();
     }
     if (par1EnumOptions == avh.a.CUSTOM_FONTS)
     {
-      this.ofCustomFonts = (!this.ofCustomFonts);
+      ofCustomFonts = (!ofCustomFonts);
       
-      this.ax.k.a(Config.getResourceManager());
-      this.ax.l.a(Config.getResourceManager());
+      ax.k.a(Config.getResourceManager());
+      ax.l.a(Config.getResourceManager());
     }
     if (par1EnumOptions == avh.a.CUSTOM_COLORS)
     {
-      this.ofCustomColors = (!this.ofCustomColors);
+      ofCustomColors = (!ofCustomColors);
       
       CustomColorizer.update();
       
-      this.ax.g.a();
+      ax.g.a();
     }
     if (par1EnumOptions == avh.a.CUSTOM_ITEMS)
     {
-      this.ofCustomItems = (!this.ofCustomItems);
+      ofCustomItems = (!ofCustomItems);
       
-      this.ax.e();
+      ax.e();
     }
     if (par1EnumOptions == avh.a.CUSTOM_SKY)
     {
-      this.ofCustomSky = (!this.ofCustomSky);
+      ofCustomSky = (!ofCustomSky);
       
       CustomSky.update();
     }
     if (par1EnumOptions == avh.a.SHOW_CAPES) {
-      this.ofShowCapes = (!this.ofShowCapes);
+      ofShowCapes = (!ofShowCapes);
     }
     if (par1EnumOptions == avh.a.NATURAL_TEXTURES)
     {
-      this.ofNaturalTextures = (!this.ofNaturalTextures);
+      ofNaturalTextures = (!ofNaturalTextures);
       
       NaturalTextures.update();
       
-      this.ax.g.a();
+      ax.g.a();
     }
     if (par1EnumOptions == avh.a.FAST_MATH)
     {
-      this.ofFastMath = (!this.ofFastMath);
+      ofFastMath = (!ofFastMath);
       
-      ns.fastMath = this.ofFastMath;
+      ns.fastMath = ofFastMath;
     }
     if (par1EnumOptions == avh.a.FAST_RENDER)
     {
-      if ((!this.ofFastRender) && (Config.isShaders()))
+      if ((!ofFastRender) && (Config.isShaders()))
       {
         Config.showGuiMessage("Fast Render is not compatible with Shaders.", "Please disable Shaders to enable this option.");
         return;
       }
-      this.ofFastRender = (!this.ofFastRender);
-      if (this.ofFastRender) {
-        this.ax.o.b();
+      ofFastRender = (!ofFastRender);
+      if (ofFastRender) {
+        ax.o.b();
       }
       Config.updateFramebufferSize();
     }
     if (par1EnumOptions == avh.a.TRANSLUCENT_BLOCKS)
     {
-      if (this.ofTranslucentBlocks == 0) {
-        this.ofTranslucentBlocks = 1;
-      } else if (this.ofTranslucentBlocks == 1) {
-        this.ofTranslucentBlocks = 2;
-      } else if (this.ofTranslucentBlocks == 2) {
-        this.ofTranslucentBlocks = 0;
+      if (ofTranslucentBlocks == 0) {
+        ofTranslucentBlocks = 1;
+      } else if (ofTranslucentBlocks == 1) {
+        ofTranslucentBlocks = 2;
+      } else if (ofTranslucentBlocks == 2) {
+        ofTranslucentBlocks = 0;
       } else {
-        this.ofTranslucentBlocks = 0;
+        ofTranslucentBlocks = 0;
       }
-      this.ax.g.a();
+      ax.g.a();
     }
     if (par1EnumOptions == avh.a.LAZY_CHUNK_LOADING)
     {
-      this.ofLazyChunkLoading = (!this.ofLazyChunkLoading);
+      ofLazyChunkLoading = (!ofLazyChunkLoading);
       
       Config.updateAvailableProcessors();
       if (!Config.isSingleProcessor()) {
-        this.ofLazyChunkLoading = false;
+        ofLazyChunkLoading = false;
       }
-      this.ax.g.a();
+      ax.g.a();
     }
     if (par1EnumOptions == avh.a.FULLSCREEN_MODE)
     {
       List modeList = Arrays.asList(Config.getFullscreenModes());
-      if (this.ofFullscreenMode.equals("Default"))
+      if (ofFullscreenMode.equals("Default"))
       {
-        this.ofFullscreenMode = ((String)modeList.get(0));
+        ofFullscreenMode = ((String)modeList.get(0));
       }
       else
       {
-        int index = modeList.indexOf(this.ofFullscreenMode);
+        int index = modeList.indexOf(ofFullscreenMode);
         if (index < 0)
         {
-          this.ofFullscreenMode = "Default";
+          ofFullscreenMode = "Default";
         }
         else
         {
           index++;
           if (index >= modeList.size()) {
-            this.ofFullscreenMode = "Default";
+            ofFullscreenMode = "Default";
           } else {
-            this.ofFullscreenMode = ((String)modeList.get(index));
+            ofFullscreenMode = ((String)modeList.get(index));
           }
         }
       }
     }
     if (par1EnumOptions == avh.a.HELD_ITEM_TOOLTIPS) {
-      this.D = (!this.D);
+      D = (!D);
     }
   }
   
@@ -1605,7 +1605,7 @@ public class avh
         str = "Extreme";
         baseDist = 32;
       }
-      int diff = this.c - baseDist;
+      int diff = c - baseDist;
       String descr = str;
       if (diff > 0) {
         descr = descr + "+";
@@ -1614,7 +1614,7 @@ public class avh
     }
     if (par1EnumOptions == avh.a.FOG_FANCY)
     {
-      switch (this.ofFogType)
+      switch (ofFogType)
       {
       case 1: 
         return s + "Fast";
@@ -1626,11 +1626,11 @@ public class avh
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.FOG_START) {
-      return s + this.ofFogStart;
+      return s + ofFogStart;
     }
     if (par1EnumOptions == avh.a.MIPMAP_TYPE)
     {
-      switch (this.ofMipmapType)
+      switch (ofMipmapType)
       {
       case 0: 
         return s + "Nearest";
@@ -1645,21 +1645,21 @@ public class avh
     }
     if (par1EnumOptions == avh.a.SMOOTH_FPS)
     {
-      if (this.ofSmoothFps) {
+      if (ofSmoothFps) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.SMOOTH_WORLD)
     {
-      if (this.ofSmoothWorld) {
+      if (ofSmoothWorld) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.CLOUDS)
     {
-      switch (this.ofClouds)
+      switch (ofClouds)
       {
       case 1: 
         return s + "Fast";
@@ -1672,7 +1672,7 @@ public class avh
     }
     if (par1EnumOptions == avh.a.TREES)
     {
-      switch (this.ofTrees)
+      switch (ofTrees)
       {
       case 1: 
         return s + "Fast";
@@ -1683,7 +1683,7 @@ public class avh
     }
     if (par1EnumOptions == avh.a.DROPPED_ITEMS)
     {
-      switch (this.ofDroppedItems)
+      switch (ofDroppedItems)
       {
       case 1: 
         return s + "Fast";
@@ -1694,7 +1694,7 @@ public class avh
     }
     if (par1EnumOptions == avh.a.RAIN)
     {
-      switch (this.ofRain)
+      switch (ofRain)
       {
       case 1: 
         return s + "Fast";
@@ -1707,7 +1707,7 @@ public class avh
     }
     if (par1EnumOptions == avh.a.ANIMATED_WATER)
     {
-      switch (this.ofAnimatedWater)
+      switch (ofAnimatedWater)
       {
       case 1: 
         return s + "Dynamic";
@@ -1718,7 +1718,7 @@ public class avh
     }
     if (par1EnumOptions == avh.a.ANIMATED_LAVA)
     {
-      switch (this.ofAnimatedLava)
+      switch (ofAnimatedLava)
       {
       case 1: 
         return s + "Dynamic";
@@ -1729,139 +1729,139 @@ public class avh
     }
     if (par1EnumOptions == avh.a.ANIMATED_FIRE)
     {
-      if (this.ofAnimatedFire) {
+      if (ofAnimatedFire) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.ANIMATED_PORTAL)
     {
-      if (this.ofAnimatedPortal) {
+      if (ofAnimatedPortal) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.ANIMATED_REDSTONE)
     {
-      if (this.ofAnimatedRedstone) {
+      if (ofAnimatedRedstone) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.ANIMATED_EXPLOSION)
     {
-      if (this.ofAnimatedExplosion) {
+      if (ofAnimatedExplosion) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.ANIMATED_FLAME)
     {
-      if (this.ofAnimatedFlame) {
+      if (ofAnimatedFlame) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.ANIMATED_SMOKE)
     {
-      if (this.ofAnimatedSmoke) {
+      if (ofAnimatedSmoke) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.VOID_PARTICLES)
     {
-      if (this.ofVoidParticles) {
+      if (ofVoidParticles) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.WATER_PARTICLES)
     {
-      if (this.ofWaterParticles) {
+      if (ofWaterParticles) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.PORTAL_PARTICLES)
     {
-      if (this.ofPortalParticles) {
+      if (ofPortalParticles) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.POTION_PARTICLES)
     {
-      if (this.ofPotionParticles) {
+      if (ofPotionParticles) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.FIREWORK_PARTICLES)
     {
-      if (this.ofFireworkParticles) {
+      if (ofFireworkParticles) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.DRIPPING_WATER_LAVA)
     {
-      if (this.ofDrippingWaterLava) {
+      if (ofDrippingWaterLava) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.ANIMATED_TERRAIN)
     {
-      if (this.ofAnimatedTerrain) {
+      if (ofAnimatedTerrain) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.ANIMATED_TEXTURES)
     {
-      if (this.ofAnimatedTextures) {
+      if (ofAnimatedTextures) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.RAIN_SPLASH)
     {
-      if (this.ofRainSplash) {
+      if (ofRainSplash) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.LAGOMETER)
     {
-      if (this.ofLagometer) {
+      if (ofLagometer) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.SHOW_FPS)
     {
-      if (this.ofShowFps) {
+      if (ofShowFps) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.AUTOSAVE_TICKS)
     {
-      if (this.ofAutoSaveTicks <= 40) {
+      if (ofAutoSaveTicks <= 40) {
         return s + "Default (2s)";
       }
-      if (this.ofAutoSaveTicks <= 400) {
+      if (ofAutoSaveTicks <= 400) {
         return s + "20s";
       }
-      if (this.ofAutoSaveTicks <= 4000) {
+      if (ofAutoSaveTicks <= 4000) {
         return s + "3min";
       }
       return s + "30min";
     }
     if (par1EnumOptions == avh.a.BETTER_GRASS)
     {
-      switch (this.ofBetterGrass)
+      switch (ofBetterGrass)
       {
       case 1: 
         return s + "Fast";
@@ -1872,7 +1872,7 @@ public class avh
     }
     if (par1EnumOptions == avh.a.CONNECTED_TEXTURES)
     {
-      switch (this.ofConnectedTextures)
+      switch (ofConnectedTextures)
       {
       case 1: 
         return s + "Fast";
@@ -1883,35 +1883,35 @@ public class avh
     }
     if (par1EnumOptions == avh.a.WEATHER)
     {
-      if (this.ofWeather) {
+      if (ofWeather) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.SKY)
     {
-      if (this.ofSky) {
+      if (ofSky) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.STARS)
     {
-      if (this.ofStars) {
+      if (ofStars) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.SUN_MOON)
     {
-      if (this.ofSunMoon) {
+      if (ofSunMoon) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.VIGNETTE)
     {
-      switch (this.ofVignette)
+      switch (ofVignette)
       {
       case 1: 
         return s + "Fast";
@@ -1921,38 +1921,38 @@ public class avh
       return s + "Default";
     }
     if (par1EnumOptions == avh.a.CHUNK_UPDATES) {
-      return s + this.ofChunkUpdates;
+      return s + ofChunkUpdates;
     }
     if (par1EnumOptions == avh.a.CHUNK_LOADING)
     {
-      if (this.ofChunkLoading == 1) {
+      if (ofChunkLoading == 1) {
         return s + "Smooth";
       }
-      if (this.ofChunkLoading == 2) {
+      if (ofChunkLoading == 2) {
         return s + "Multi-Core";
       }
       return s + "Default";
     }
     if (par1EnumOptions == avh.a.CHUNK_UPDATES_DYNAMIC)
     {
-      if (this.ofChunkUpdatesDynamic) {
+      if (ofChunkUpdatesDynamic) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.TIME)
     {
-      if (this.ofTime == 1) {
+      if (ofTime == 1) {
         return s + "Day Only";
       }
-      if (this.ofTime == 3) {
+      if (ofTime == 3) {
         return s + "Night Only";
       }
       return s + "Default";
     }
     if (par1EnumOptions == avh.a.CLEAR_WATER)
     {
-      if (this.ofClearWater) {
+      if (ofClearWater) {
         return s + "ON";
       }
       return s + "OFF";
@@ -1960,135 +1960,135 @@ public class avh
     if (par1EnumOptions == avh.a.AA_LEVEL)
     {
       String suffix = "";
-      if (this.ofAaLevel != Config.getAntialiasingLevel()) {
+      if (ofAaLevel != Config.getAntialiasingLevel()) {
         suffix = " (restart)";
       }
-      if (this.ofAaLevel == 0) {
+      if (ofAaLevel == 0) {
         return s + "OFF" + suffix;
       }
-      return s + this.ofAaLevel + suffix;
+      return s + ofAaLevel + suffix;
     }
     if (par1EnumOptions == avh.a.AF_LEVEL)
     {
-      if (this.ofAfLevel == 1) {
+      if (ofAfLevel == 1) {
         return s + "OFF";
       }
-      return s + this.ofAfLevel;
+      return s + ofAfLevel;
     }
     if (par1EnumOptions == avh.a.PROFILER)
     {
-      if (this.ofProfiler) {
+      if (ofProfiler) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.BETTER_SNOW)
     {
-      if (this.ofBetterSnow) {
+      if (ofBetterSnow) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.SWAMP_COLORS)
     {
-      if (this.ofSwampColors) {
+      if (ofSwampColors) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.RANDOM_MOBS)
     {
-      if (this.ofRandomMobs) {
+      if (ofRandomMobs) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.SMOOTH_BIOMES)
     {
-      if (this.ofSmoothBiomes) {
+      if (ofSmoothBiomes) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.CUSTOM_FONTS)
     {
-      if (this.ofCustomFonts) {
+      if (ofCustomFonts) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.CUSTOM_COLORS)
     {
-      if (this.ofCustomColors) {
+      if (ofCustomColors) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.CUSTOM_SKY)
     {
-      if (this.ofCustomSky) {
+      if (ofCustomSky) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.SHOW_CAPES)
     {
-      if (this.ofShowCapes) {
+      if (ofShowCapes) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.CUSTOM_ITEMS)
     {
-      if (this.ofCustomItems) {
+      if (ofCustomItems) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.NATURAL_TEXTURES)
     {
-      if (this.ofNaturalTextures) {
+      if (ofNaturalTextures) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.FAST_MATH)
     {
-      if (this.ofFastMath) {
+      if (ofFastMath) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.FAST_RENDER)
     {
-      if (this.ofFastRender) {
+      if (ofFastRender) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.TRANSLUCENT_BLOCKS)
     {
-      if (this.ofTranslucentBlocks == 1) {
+      if (ofTranslucentBlocks == 1) {
         return s + "Fast";
       }
-      if (this.ofTranslucentBlocks == 2) {
+      if (ofTranslucentBlocks == 2) {
         return s + "Fancy";
       }
       return s + "Default";
     }
     if (par1EnumOptions == avh.a.LAZY_CHUNK_LOADING)
     {
-      if (this.ofLazyChunkLoading) {
+      if (ofLazyChunkLoading) {
         return s + "ON";
       }
       return s + "OFF";
     }
     if (par1EnumOptions == avh.a.FULLSCREEN_MODE) {
-      return s + this.ofFullscreenMode;
+      return s + ofFullscreenMode;
     }
     if (par1EnumOptions == avh.a.HELD_ITEM_TOOLTIPS)
     {
-      if (this.D) {
+      if (D) {
         return s + "ON";
       }
       return s + "OFF";
@@ -2111,9 +2111,9 @@ public class avh
   {
     try
     {
-      File ofReadFile = this.optionsFileOF;
+      File ofReadFile = optionsFileOF;
       if (!ofReadFile.exists()) {
-        ofReadFile = this.bb;
+        ofReadFile = bb;
       }
       if (!ofReadFile.exists()) {
         return;
@@ -2125,253 +2125,253 @@ public class avh
           String[] as = s.split(":");
           if ((as[0].equals("ofRenderDistanceChunks")) && (as.length >= 2))
           {
-            this.c = Integer.valueOf(as[1]).intValue();
-            this.c = Config.limit(this.c, 2, 32);
+            c = Integer.valueOf(as[1]).intValue();
+            c = Config.limit(c, 2, 32);
           }
           if ((as[0].equals("ofFogType")) && (as.length >= 2))
           {
-            this.ofFogType = Integer.valueOf(as[1]).intValue();
-            this.ofFogType = Config.limit(this.ofFogType, 1, 3);
+            ofFogType = Integer.valueOf(as[1]).intValue();
+            ofFogType = Config.limit(ofFogType, 1, 3);
           }
           if ((as[0].equals("ofFogStart")) && (as.length >= 2))
           {
-            this.ofFogStart = Float.valueOf(as[1]).floatValue();
-            if (this.ofFogStart < 0.2F) {
-              this.ofFogStart = 0.2F;
+            ofFogStart = Float.valueOf(as[1]).floatValue();
+            if (ofFogStart < 0.2F) {
+              ofFogStart = 0.2F;
             }
-            if (this.ofFogStart > 0.81F) {
-              this.ofFogStart = 0.8F;
+            if (ofFogStart > 0.81F) {
+              ofFogStart = 0.8F;
             }
           }
           if ((as[0].equals("ofMipmapType")) && (as.length >= 2))
           {
-            this.ofMipmapType = Integer.valueOf(as[1]).intValue();
-            this.ofMipmapType = Config.limit(this.ofMipmapType, 0, 3);
+            ofMipmapType = Integer.valueOf(as[1]).intValue();
+            ofMipmapType = Config.limit(ofMipmapType, 0, 3);
           }
           if ((as[0].equals("ofOcclusionFancy")) && (as.length >= 2)) {
-            this.ofOcclusionFancy = Boolean.valueOf(as[1]).booleanValue();
+            ofOcclusionFancy = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofSmoothFps")) && (as.length >= 2)) {
-            this.ofSmoothFps = Boolean.valueOf(as[1]).booleanValue();
+            ofSmoothFps = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofSmoothWorld")) && (as.length >= 2)) {
-            this.ofSmoothWorld = Boolean.valueOf(as[1]).booleanValue();
+            ofSmoothWorld = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofAoLevel")) && (as.length >= 2))
           {
-            this.ofAoLevel = Float.valueOf(as[1]).floatValue();
-            this.ofAoLevel = Config.limit(this.ofAoLevel, 0.0F, 1.0F);
+            ofAoLevel = Float.valueOf(as[1]).floatValue();
+            ofAoLevel = Config.limit(ofAoLevel, 0.0F, 1.0F);
           }
           if ((as[0].equals("ofClouds")) && (as.length >= 2))
           {
-            this.ofClouds = Integer.valueOf(as[1]).intValue();
-            this.ofClouds = Config.limit(this.ofClouds, 0, 3);
+            ofClouds = Integer.valueOf(as[1]).intValue();
+            ofClouds = Config.limit(ofClouds, 0, 3);
             
             updateRenderClouds();
           }
           if ((as[0].equals("ofCloudsHeight")) && (as.length >= 2))
           {
-            this.ofCloudsHeight = Float.valueOf(as[1]).floatValue();
-            this.ofCloudsHeight = Config.limit(this.ofCloudsHeight, 0.0F, 1.0F);
+            ofCloudsHeight = Float.valueOf(as[1]).floatValue();
+            ofCloudsHeight = Config.limit(ofCloudsHeight, 0.0F, 1.0F);
           }
           if ((as[0].equals("ofTrees")) && (as.length >= 2))
           {
-            this.ofTrees = Integer.valueOf(as[1]).intValue();
-            this.ofTrees = Config.limit(this.ofTrees, 0, 2);
+            ofTrees = Integer.valueOf(as[1]).intValue();
+            ofTrees = Config.limit(ofTrees, 0, 2);
           }
           if ((as[0].equals("ofDroppedItems")) && (as.length >= 2))
           {
-            this.ofDroppedItems = Integer.valueOf(as[1]).intValue();
-            this.ofDroppedItems = Config.limit(this.ofDroppedItems, 0, 2);
+            ofDroppedItems = Integer.valueOf(as[1]).intValue();
+            ofDroppedItems = Config.limit(ofDroppedItems, 0, 2);
           }
           if ((as[0].equals("ofRain")) && (as.length >= 2))
           {
-            this.ofRain = Integer.valueOf(as[1]).intValue();
-            this.ofRain = Config.limit(this.ofRain, 0, 3);
+            ofRain = Integer.valueOf(as[1]).intValue();
+            ofRain = Config.limit(ofRain, 0, 3);
           }
           if ((as[0].equals("ofAnimatedWater")) && (as.length >= 2))
           {
-            this.ofAnimatedWater = Integer.valueOf(as[1]).intValue();
-            this.ofAnimatedWater = Config.limit(this.ofAnimatedWater, 0, 2);
+            ofAnimatedWater = Integer.valueOf(as[1]).intValue();
+            ofAnimatedWater = Config.limit(ofAnimatedWater, 0, 2);
           }
           if ((as[0].equals("ofAnimatedLava")) && (as.length >= 2))
           {
-            this.ofAnimatedLava = Integer.valueOf(as[1]).intValue();
-            this.ofAnimatedLava = Config.limit(this.ofAnimatedLava, 0, 2);
+            ofAnimatedLava = Integer.valueOf(as[1]).intValue();
+            ofAnimatedLava = Config.limit(ofAnimatedLava, 0, 2);
           }
           if ((as[0].equals("ofAnimatedFire")) && (as.length >= 2)) {
-            this.ofAnimatedFire = Boolean.valueOf(as[1]).booleanValue();
+            ofAnimatedFire = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofAnimatedPortal")) && (as.length >= 2)) {
-            this.ofAnimatedPortal = Boolean.valueOf(as[1]).booleanValue();
+            ofAnimatedPortal = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofAnimatedRedstone")) && (as.length >= 2)) {
-            this.ofAnimatedRedstone = Boolean.valueOf(as[1]).booleanValue();
+            ofAnimatedRedstone = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofAnimatedExplosion")) && (as.length >= 2)) {
-            this.ofAnimatedExplosion = Boolean.valueOf(as[1]).booleanValue();
+            ofAnimatedExplosion = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofAnimatedFlame")) && (as.length >= 2)) {
-            this.ofAnimatedFlame = Boolean.valueOf(as[1]).booleanValue();
+            ofAnimatedFlame = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofAnimatedSmoke")) && (as.length >= 2)) {
-            this.ofAnimatedSmoke = Boolean.valueOf(as[1]).booleanValue();
+            ofAnimatedSmoke = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofVoidParticles")) && (as.length >= 2)) {
-            this.ofVoidParticles = Boolean.valueOf(as[1]).booleanValue();
+            ofVoidParticles = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofWaterParticles")) && (as.length >= 2)) {
-            this.ofWaterParticles = Boolean.valueOf(as[1]).booleanValue();
+            ofWaterParticles = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofPortalParticles")) && (as.length >= 2)) {
-            this.ofPortalParticles = Boolean.valueOf(as[1]).booleanValue();
+            ofPortalParticles = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofPotionParticles")) && (as.length >= 2)) {
-            this.ofPotionParticles = Boolean.valueOf(as[1]).booleanValue();
+            ofPotionParticles = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofFireworkParticles")) && (as.length >= 2)) {
-            this.ofFireworkParticles = Boolean.valueOf(as[1]).booleanValue();
+            ofFireworkParticles = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofDrippingWaterLava")) && (as.length >= 2)) {
-            this.ofDrippingWaterLava = Boolean.valueOf(as[1]).booleanValue();
+            ofDrippingWaterLava = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofAnimatedTerrain")) && (as.length >= 2)) {
-            this.ofAnimatedTerrain = Boolean.valueOf(as[1]).booleanValue();
+            ofAnimatedTerrain = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofAnimatedTextures")) && (as.length >= 2)) {
-            this.ofAnimatedTextures = Boolean.valueOf(as[1]).booleanValue();
+            ofAnimatedTextures = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofRainSplash")) && (as.length >= 2)) {
-            this.ofRainSplash = Boolean.valueOf(as[1]).booleanValue();
+            ofRainSplash = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofLagometer")) && (as.length >= 2)) {
-            this.ofLagometer = Boolean.valueOf(as[1]).booleanValue();
+            ofLagometer = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofShowFps")) && (as.length >= 2)) {
-            this.ofShowFps = Boolean.valueOf(as[1]).booleanValue();
+            ofShowFps = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofAutoSaveTicks")) && (as.length >= 2))
           {
-            this.ofAutoSaveTicks = Integer.valueOf(as[1]).intValue();
-            this.ofAutoSaveTicks = Config.limit(this.ofAutoSaveTicks, 40, 40000);
+            ofAutoSaveTicks = Integer.valueOf(as[1]).intValue();
+            ofAutoSaveTicks = Config.limit(ofAutoSaveTicks, 40, 40000);
           }
           if ((as[0].equals("ofBetterGrass")) && (as.length >= 2))
           {
-            this.ofBetterGrass = Integer.valueOf(as[1]).intValue();
-            this.ofBetterGrass = Config.limit(this.ofBetterGrass, 1, 3);
+            ofBetterGrass = Integer.valueOf(as[1]).intValue();
+            ofBetterGrass = Config.limit(ofBetterGrass, 1, 3);
           }
           if ((as[0].equals("ofConnectedTextures")) && (as.length >= 2))
           {
-            this.ofConnectedTextures = Integer.valueOf(as[1]).intValue();
-            this.ofConnectedTextures = Config.limit(this.ofConnectedTextures, 1, 3);
+            ofConnectedTextures = Integer.valueOf(as[1]).intValue();
+            ofConnectedTextures = Config.limit(ofConnectedTextures, 1, 3);
           }
           if ((as[0].equals("ofWeather")) && (as.length >= 2)) {
-            this.ofWeather = Boolean.valueOf(as[1]).booleanValue();
+            ofWeather = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofSky")) && (as.length >= 2)) {
-            this.ofSky = Boolean.valueOf(as[1]).booleanValue();
+            ofSky = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofStars")) && (as.length >= 2)) {
-            this.ofStars = Boolean.valueOf(as[1]).booleanValue();
+            ofStars = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofSunMoon")) && (as.length >= 2)) {
-            this.ofSunMoon = Boolean.valueOf(as[1]).booleanValue();
+            ofSunMoon = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofVignette")) && (as.length >= 2))
           {
-            this.ofVignette = Integer.valueOf(as[1]).intValue();
-            this.ofVignette = Config.limit(this.ofVignette, 0, 2);
+            ofVignette = Integer.valueOf(as[1]).intValue();
+            ofVignette = Config.limit(ofVignette, 0, 2);
           }
           if ((as[0].equals("ofChunkUpdates")) && (as.length >= 2))
           {
-            this.ofChunkUpdates = Integer.valueOf(as[1]).intValue();
-            this.ofChunkUpdates = Config.limit(this.ofChunkUpdates, 1, 5);
+            ofChunkUpdates = Integer.valueOf(as[1]).intValue();
+            ofChunkUpdates = Config.limit(ofChunkUpdates, 1, 5);
           }
           if ((as[0].equals("ofChunkLoading")) && (as.length >= 2))
           {
-            this.ofChunkLoading = Integer.valueOf(as[1]).intValue();
-            this.ofChunkLoading = Config.limit(this.ofChunkLoading, 0, 2);
+            ofChunkLoading = Integer.valueOf(as[1]).intValue();
+            ofChunkLoading = Config.limit(ofChunkLoading, 0, 2);
             
             updateChunkLoading();
           }
           if ((as[0].equals("ofChunkUpdatesDynamic")) && (as.length >= 2)) {
-            this.ofChunkUpdatesDynamic = Boolean.valueOf(as[1]).booleanValue();
+            ofChunkUpdatesDynamic = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofTime")) && (as.length >= 2))
           {
-            this.ofTime = Integer.valueOf(as[1]).intValue();
-            this.ofTime = Config.limit(this.ofTime, 0, 3);
+            ofTime = Integer.valueOf(as[1]).intValue();
+            ofTime = Config.limit(ofTime, 0, 3);
           }
           if ((as[0].equals("ofClearWater")) && (as.length >= 2))
           {
-            this.ofClearWater = Boolean.valueOf(as[1]).booleanValue();
+            ofClearWater = Boolean.valueOf(as[1]).booleanValue();
             updateWaterOpacity();
           }
           if ((as[0].equals("ofAaLevel")) && (as.length >= 2))
           {
-            this.ofAaLevel = Integer.valueOf(as[1]).intValue();
-            this.ofAaLevel = Config.limit(this.ofAaLevel, 0, 16);
+            ofAaLevel = Integer.valueOf(as[1]).intValue();
+            ofAaLevel = Config.limit(ofAaLevel, 0, 16);
           }
           if ((as[0].equals("ofAfLevel")) && (as.length >= 2))
           {
-            this.ofAfLevel = Integer.valueOf(as[1]).intValue();
-            this.ofAfLevel = Config.limit(this.ofAfLevel, 1, 16);
+            ofAfLevel = Integer.valueOf(as[1]).intValue();
+            ofAfLevel = Config.limit(ofAfLevel, 1, 16);
           }
           if ((as[0].equals("ofProfiler")) && (as.length >= 2)) {
-            this.ofProfiler = Boolean.valueOf(as[1]).booleanValue();
+            ofProfiler = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofBetterSnow")) && (as.length >= 2)) {
-            this.ofBetterSnow = Boolean.valueOf(as[1]).booleanValue();
+            ofBetterSnow = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofSwampColors")) && (as.length >= 2)) {
-            this.ofSwampColors = Boolean.valueOf(as[1]).booleanValue();
+            ofSwampColors = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofRandomMobs")) && (as.length >= 2)) {
-            this.ofRandomMobs = Boolean.valueOf(as[1]).booleanValue();
+            ofRandomMobs = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofSmoothBiomes")) && (as.length >= 2)) {
-            this.ofSmoothBiomes = Boolean.valueOf(as[1]).booleanValue();
+            ofSmoothBiomes = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofCustomFonts")) && (as.length >= 2)) {
-            this.ofCustomFonts = Boolean.valueOf(as[1]).booleanValue();
+            ofCustomFonts = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofCustomColors")) && (as.length >= 2)) {
-            this.ofCustomColors = Boolean.valueOf(as[1]).booleanValue();
+            ofCustomColors = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofCustomItems")) && (as.length >= 2)) {
-            this.ofCustomItems = Boolean.valueOf(as[1]).booleanValue();
+            ofCustomItems = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofCustomSky")) && (as.length >= 2)) {
-            this.ofCustomSky = Boolean.valueOf(as[1]).booleanValue();
+            ofCustomSky = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofShowCapes")) && (as.length >= 2)) {
-            this.ofShowCapes = Boolean.valueOf(as[1]).booleanValue();
+            ofShowCapes = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofNaturalTextures")) && (as.length >= 2)) {
-            this.ofNaturalTextures = Boolean.valueOf(as[1]).booleanValue();
+            ofNaturalTextures = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofLazyChunkLoading")) && (as.length >= 2)) {
-            this.ofLazyChunkLoading = Boolean.valueOf(as[1]).booleanValue();
+            ofLazyChunkLoading = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofFullscreenMode")) && (as.length >= 2)) {
-            this.ofFullscreenMode = as[1];
+            ofFullscreenMode = as[1];
           }
           if ((as[0].equals("ofFastMath")) && (as.length >= 2))
           {
-            this.ofFastMath = Boolean.valueOf(as[1]).booleanValue();
+            ofFastMath = Boolean.valueOf(as[1]).booleanValue();
             
-            ns.fastMath = this.ofFastMath;
+            ns.fastMath = ofFastMath;
           }
           if ((as[0].equals("ofFastRender")) && (as.length >= 2)) {
-            this.ofFastRender = Boolean.valueOf(as[1]).booleanValue();
+            ofFastRender = Boolean.valueOf(as[1]).booleanValue();
           }
           if ((as[0].equals("ofTranslucentBlocks")) && (as.length >= 2))
           {
-            this.ofTranslucentBlocks = Integer.valueOf(as[1]).intValue();
-            this.ofTranslucentBlocks = Config.limit(this.ofTranslucentBlocks, 0, 2);
+            ofTranslucentBlocks = Integer.valueOf(as[1]).intValue();
+            ofTranslucentBlocks = Config.limit(ofTranslucentBlocks, 0, 2);
           }
-          if (as[0].equals("key_" + this.ofKeyBindZoom.g())) {
-            this.ofKeyBindZoom.b(Integer.parseInt(as[1]));
+          if (as[0].equals("key_" + ofKeyBindZoom.g())) {
+            ofKeyBindZoom.b(Integer.parseInt(as[1]));
           }
         }
         catch (Exception exception1)
@@ -2394,80 +2394,80 @@ public class avh
   {
     try
     {
-      PrintWriter printwriter = new PrintWriter(new FileWriter(this.optionsFileOF));
+      PrintWriter printwriter = new PrintWriter(new FileWriter(optionsFileOF));
       
-      printwriter.println("ofRenderDistanceChunks:" + this.c);
+      printwriter.println("ofRenderDistanceChunks:" + c);
       
-      printwriter.println("ofFogType:" + this.ofFogType);
-      printwriter.println("ofFogStart:" + this.ofFogStart);
+      printwriter.println("ofFogType:" + ofFogType);
+      printwriter.println("ofFogStart:" + ofFogStart);
       
-      printwriter.println("ofMipmapType:" + this.ofMipmapType);
+      printwriter.println("ofMipmapType:" + ofMipmapType);
       
-      printwriter.println("ofOcclusionFancy:" + this.ofOcclusionFancy);
-      printwriter.println("ofSmoothFps:" + this.ofSmoothFps);
-      printwriter.println("ofSmoothWorld:" + this.ofSmoothWorld);
-      printwriter.println("ofAoLevel:" + this.ofAoLevel);
-      printwriter.println("ofClouds:" + this.ofClouds);
-      printwriter.println("ofCloudsHeight:" + this.ofCloudsHeight);
-      printwriter.println("ofTrees:" + this.ofTrees);
+      printwriter.println("ofOcclusionFancy:" + ofOcclusionFancy);
+      printwriter.println("ofSmoothFps:" + ofSmoothFps);
+      printwriter.println("ofSmoothWorld:" + ofSmoothWorld);
+      printwriter.println("ofAoLevel:" + ofAoLevel);
+      printwriter.println("ofClouds:" + ofClouds);
+      printwriter.println("ofCloudsHeight:" + ofCloudsHeight);
+      printwriter.println("ofTrees:" + ofTrees);
       
-      printwriter.println("ofDroppedItems:" + this.ofDroppedItems);
-      printwriter.println("ofRain:" + this.ofRain);
+      printwriter.println("ofDroppedItems:" + ofDroppedItems);
+      printwriter.println("ofRain:" + ofRain);
       
-      printwriter.println("ofAnimatedWater:" + this.ofAnimatedWater);
-      printwriter.println("ofAnimatedLava:" + this.ofAnimatedLava);
-      printwriter.println("ofAnimatedFire:" + this.ofAnimatedFire);
-      printwriter.println("ofAnimatedPortal:" + this.ofAnimatedPortal);
-      printwriter.println("ofAnimatedRedstone:" + this.ofAnimatedRedstone);
-      printwriter.println("ofAnimatedExplosion:" + this.ofAnimatedExplosion);
-      printwriter.println("ofAnimatedFlame:" + this.ofAnimatedFlame);
-      printwriter.println("ofAnimatedSmoke:" + this.ofAnimatedSmoke);
-      printwriter.println("ofVoidParticles:" + this.ofVoidParticles);
-      printwriter.println("ofWaterParticles:" + this.ofWaterParticles);
-      printwriter.println("ofPortalParticles:" + this.ofPortalParticles);
-      printwriter.println("ofPotionParticles:" + this.ofPotionParticles);
-      printwriter.println("ofFireworkParticles:" + this.ofFireworkParticles);
-      printwriter.println("ofDrippingWaterLava:" + this.ofDrippingWaterLava);
-      printwriter.println("ofAnimatedTerrain:" + this.ofAnimatedTerrain);
-      printwriter.println("ofAnimatedTextures:" + this.ofAnimatedTextures);
+      printwriter.println("ofAnimatedWater:" + ofAnimatedWater);
+      printwriter.println("ofAnimatedLava:" + ofAnimatedLava);
+      printwriter.println("ofAnimatedFire:" + ofAnimatedFire);
+      printwriter.println("ofAnimatedPortal:" + ofAnimatedPortal);
+      printwriter.println("ofAnimatedRedstone:" + ofAnimatedRedstone);
+      printwriter.println("ofAnimatedExplosion:" + ofAnimatedExplosion);
+      printwriter.println("ofAnimatedFlame:" + ofAnimatedFlame);
+      printwriter.println("ofAnimatedSmoke:" + ofAnimatedSmoke);
+      printwriter.println("ofVoidParticles:" + ofVoidParticles);
+      printwriter.println("ofWaterParticles:" + ofWaterParticles);
+      printwriter.println("ofPortalParticles:" + ofPortalParticles);
+      printwriter.println("ofPotionParticles:" + ofPotionParticles);
+      printwriter.println("ofFireworkParticles:" + ofFireworkParticles);
+      printwriter.println("ofDrippingWaterLava:" + ofDrippingWaterLava);
+      printwriter.println("ofAnimatedTerrain:" + ofAnimatedTerrain);
+      printwriter.println("ofAnimatedTextures:" + ofAnimatedTextures);
       
-      printwriter.println("ofRainSplash:" + this.ofRainSplash);
-      printwriter.println("ofLagometer:" + this.ofLagometer);
-      printwriter.println("ofShowFps:" + this.ofShowFps);
-      printwriter.println("ofAutoSaveTicks:" + this.ofAutoSaveTicks);
-      printwriter.println("ofBetterGrass:" + this.ofBetterGrass);
-      printwriter.println("ofConnectedTextures:" + this.ofConnectedTextures);
-      printwriter.println("ofWeather:" + this.ofWeather);
-      printwriter.println("ofSky:" + this.ofSky);
-      printwriter.println("ofStars:" + this.ofStars);
-      printwriter.println("ofSunMoon:" + this.ofSunMoon);
-      printwriter.println("ofVignette:" + this.ofVignette);
-      printwriter.println("ofChunkUpdates:" + this.ofChunkUpdates);
-      printwriter.println("ofChunkLoading:" + this.ofChunkLoading);
-      printwriter.println("ofChunkUpdatesDynamic:" + this.ofChunkUpdatesDynamic);
-      printwriter.println("ofTime:" + this.ofTime);
-      printwriter.println("ofClearWater:" + this.ofClearWater);
+      printwriter.println("ofRainSplash:" + ofRainSplash);
+      printwriter.println("ofLagometer:" + ofLagometer);
+      printwriter.println("ofShowFps:" + ofShowFps);
+      printwriter.println("ofAutoSaveTicks:" + ofAutoSaveTicks);
+      printwriter.println("ofBetterGrass:" + ofBetterGrass);
+      printwriter.println("ofConnectedTextures:" + ofConnectedTextures);
+      printwriter.println("ofWeather:" + ofWeather);
+      printwriter.println("ofSky:" + ofSky);
+      printwriter.println("ofStars:" + ofStars);
+      printwriter.println("ofSunMoon:" + ofSunMoon);
+      printwriter.println("ofVignette:" + ofVignette);
+      printwriter.println("ofChunkUpdates:" + ofChunkUpdates);
+      printwriter.println("ofChunkLoading:" + ofChunkLoading);
+      printwriter.println("ofChunkUpdatesDynamic:" + ofChunkUpdatesDynamic);
+      printwriter.println("ofTime:" + ofTime);
+      printwriter.println("ofClearWater:" + ofClearWater);
       
-      printwriter.println("ofAaLevel:" + this.ofAaLevel);
-      printwriter.println("ofAfLevel:" + this.ofAfLevel);
-      printwriter.println("ofProfiler:" + this.ofProfiler);
-      printwriter.println("ofBetterSnow:" + this.ofBetterSnow);
-      printwriter.println("ofSwampColors:" + this.ofSwampColors);
-      printwriter.println("ofRandomMobs:" + this.ofRandomMobs);
-      printwriter.println("ofSmoothBiomes:" + this.ofSmoothBiomes);
-      printwriter.println("ofCustomFonts:" + this.ofCustomFonts);
-      printwriter.println("ofCustomColors:" + this.ofCustomColors);
-      printwriter.println("ofCustomItems:" + this.ofCustomItems);
-      printwriter.println("ofCustomSky:" + this.ofCustomSky);
-      printwriter.println("ofShowCapes:" + this.ofShowCapes);
-      printwriter.println("ofNaturalTextures:" + this.ofNaturalTextures);
-      printwriter.println("ofLazyChunkLoading:" + this.ofLazyChunkLoading);
-      printwriter.println("ofFullscreenMode:" + this.ofFullscreenMode);
-      printwriter.println("ofFastMath:" + this.ofFastMath);
-      printwriter.println("ofFastRender:" + this.ofFastRender);
-      printwriter.println("ofTranslucentBlocks:" + this.ofTranslucentBlocks);
+      printwriter.println("ofAaLevel:" + ofAaLevel);
+      printwriter.println("ofAfLevel:" + ofAfLevel);
+      printwriter.println("ofProfiler:" + ofProfiler);
+      printwriter.println("ofBetterSnow:" + ofBetterSnow);
+      printwriter.println("ofSwampColors:" + ofSwampColors);
+      printwriter.println("ofRandomMobs:" + ofRandomMobs);
+      printwriter.println("ofSmoothBiomes:" + ofSmoothBiomes);
+      printwriter.println("ofCustomFonts:" + ofCustomFonts);
+      printwriter.println("ofCustomColors:" + ofCustomColors);
+      printwriter.println("ofCustomItems:" + ofCustomItems);
+      printwriter.println("ofCustomSky:" + ofCustomSky);
+      printwriter.println("ofShowCapes:" + ofShowCapes);
+      printwriter.println("ofNaturalTextures:" + ofNaturalTextures);
+      printwriter.println("ofLazyChunkLoading:" + ofLazyChunkLoading);
+      printwriter.println("ofFullscreenMode:" + ofFullscreenMode);
+      printwriter.println("ofFastMath:" + ofFastMath);
+      printwriter.println("ofFastRender:" + ofFastRender);
+      printwriter.println("ofTranslucentBlocks:" + ofTranslucentBlocks);
       
-      printwriter.println("key_" + this.ofKeyBindZoom.g() + ":" + this.ofKeyBindZoom.i());
+      printwriter.println("key_" + ofKeyBindZoom.g() + ":" + ofKeyBindZoom.i());
       
       printwriter.close();
     }
@@ -2480,22 +2480,22 @@ public class avh
   
   private void updateRenderClouds()
   {
-    switch (this.ofClouds)
+    switch (ofClouds)
     {
     case 3: 
-      this.h = 0;
+      h = 0;
       break;
     case 1: 
-      this.h = 1;
+      h = 1;
       break;
     case 2: 
-      this.h = 2;
+      h = 2;
       break;
     default: 
-      if (this.i) {
-        this.h = 2;
+      if (i) {
+        h = 2;
       } else {
-        this.h = 1;
+        h = 1;
       }
       break;
     }
@@ -2503,103 +2503,103 @@ public class avh
   
   public void resetSettings()
   {
-    this.c = 8;
-    this.d = true;
-    this.e = false;
-    this.g = ((int)avh.a.i.f());
+    c = 8;
+    d = true;
+    e = false;
+    g = ((int)avh.a.i.f());
     
-    this.t = false;
+    t = false;
     updateVSync();
     
-    this.J = 4;
+    J = 4;
     
-    this.i = true;
-    this.j = 2;
-    this.h = 2;
-    this.aH = 70.0F;
-    this.aI = 0.0F;
-    this.aK = 0;
-    this.aL = 0;
-    this.D = true;
-    this.u = false;
-    this.v = true;
-    this.aN = false;
+    i = true;
+    j = 2;
+    h = 2;
+    aH = 70.0F;
+    aI = 0.0F;
+    aK = 0;
+    aL = 0;
+    D = true;
+    u = false;
+    v = true;
+    aN = false;
     
-    this.ofFogType = 1;
-    this.ofFogStart = 0.8F;
+    ofFogType = 1;
+    ofFogStart = 0.8F;
     
-    this.ofMipmapType = 0;
+    ofMipmapType = 0;
     
-    this.ofOcclusionFancy = false;
-    this.ofSmoothFps = false;
+    ofOcclusionFancy = false;
+    ofSmoothFps = false;
     
     Config.updateAvailableProcessors();
-    this.ofSmoothWorld = Config.isSingleProcessor();
-    this.ofLazyChunkLoading = Config.isSingleProcessor();
+    ofSmoothWorld = Config.isSingleProcessor();
+    ofLazyChunkLoading = Config.isSingleProcessor();
     
-    this.ofFastMath = false;
-    this.ofFastRender = false;
+    ofFastMath = false;
+    ofFastRender = false;
     
-    this.ofTranslucentBlocks = 0;
+    ofTranslucentBlocks = 0;
     
-    this.ofAoLevel = 1.0F;
+    ofAoLevel = 1.0F;
     
-    this.ofAaLevel = 0;
-    this.ofAfLevel = 1;
+    ofAaLevel = 0;
+    ofAfLevel = 1;
     
-    this.ofClouds = 0;
-    this.ofCloudsHeight = 0.0F;
-    this.ofTrees = 0;
+    ofClouds = 0;
+    ofCloudsHeight = 0.0F;
+    ofTrees = 0;
     
-    this.ofRain = 0;
+    ofRain = 0;
     
-    this.ofBetterGrass = 3;
-    this.ofAutoSaveTicks = 4000;
-    this.ofLagometer = false;
-    this.ofShowFps = false;
-    this.ofProfiler = false;
-    this.ofWeather = true;
-    this.ofSky = true;
-    this.ofStars = true;
-    this.ofSunMoon = true;
-    this.ofVignette = 0;
-    this.ofChunkUpdates = 1;
-    this.ofChunkLoading = 0;
-    this.ofChunkUpdatesDynamic = false;
-    this.ofTime = 0;
-    this.ofClearWater = false;
+    ofBetterGrass = 3;
+    ofAutoSaveTicks = 4000;
+    ofLagometer = false;
+    ofShowFps = false;
+    ofProfiler = false;
+    ofWeather = true;
+    ofSky = true;
+    ofStars = true;
+    ofSunMoon = true;
+    ofVignette = 0;
+    ofChunkUpdates = 1;
+    ofChunkLoading = 0;
+    ofChunkUpdatesDynamic = false;
+    ofTime = 0;
+    ofClearWater = false;
     
-    this.ofBetterSnow = false;
-    this.ofFullscreenMode = "Default";
-    this.ofSwampColors = true;
-    this.ofRandomMobs = true;
-    this.ofSmoothBiomes = true;
-    this.ofCustomFonts = true;
-    this.ofCustomColors = true;
-    this.ofCustomItems = true;
-    this.ofCustomSky = true;
-    this.ofShowCapes = true;
-    this.ofConnectedTextures = 2;
-    this.ofNaturalTextures = false;
+    ofBetterSnow = false;
+    ofFullscreenMode = "Default";
+    ofSwampColors = true;
+    ofRandomMobs = true;
+    ofSmoothBiomes = true;
+    ofCustomFonts = true;
+    ofCustomColors = true;
+    ofCustomItems = true;
+    ofCustomSky = true;
+    ofShowCapes = true;
+    ofConnectedTextures = 2;
+    ofNaturalTextures = false;
     
-    this.ofAnimatedWater = 0;
-    this.ofAnimatedLava = 0;
-    this.ofAnimatedFire = true;
-    this.ofAnimatedPortal = true;
-    this.ofAnimatedRedstone = true;
-    this.ofAnimatedExplosion = true;
-    this.ofAnimatedFlame = true;
-    this.ofAnimatedSmoke = true;
-    this.ofVoidParticles = true;
-    this.ofWaterParticles = true;
-    this.ofRainSplash = true;
-    this.ofPortalParticles = true;
-    this.ofPotionParticles = true;
-    this.ofFireworkParticles = true;
-    this.ofDrippingWaterLava = true;
-    this.ofAnimatedTerrain = true;
+    ofAnimatedWater = 0;
+    ofAnimatedLava = 0;
+    ofAnimatedFire = true;
+    ofAnimatedPortal = true;
+    ofAnimatedRedstone = true;
+    ofAnimatedExplosion = true;
+    ofAnimatedFlame = true;
+    ofAnimatedSmoke = true;
+    ofVoidParticles = true;
+    ofWaterParticles = true;
+    ofRainSplash = true;
+    ofPortalParticles = true;
+    ofPotionParticles = true;
+    ofFireworkParticles = true;
+    ofDrippingWaterLava = true;
+    ofAnimatedTerrain = true;
     
-    this.ofAnimatedTextures = true;
+    ofAnimatedTextures = true;
     
     Shaders.setShaderPack(Shaders.packNameNone);
     Shaders.configAntialiasingLevel = 0;
@@ -2608,28 +2608,28 @@ public class avh
     
     updateWaterOpacity();
     
-    this.ax.e();
+    ax.e();
     
     b();
   }
   
   public void updateVSync()
   {
-    Display.setVSyncEnabled(this.t);
+    Display.setVSyncEnabled(t);
   }
   
   private void updateWaterOpacity()
   {
-    if ((this.ax.E()) && (this.ax.G() != null)) {
+    if ((ax.E()) && (ax.G() != null)) {
       Config.waterOpacityChanged = true;
     }
-    ClearWater.updateWaterOpacity(this, this.ax.f);
+    ClearWater.updateWaterOpacity(this, ax.f);
   }
   
   public void updateChunkLoading()
   {
-    if (this.ax.g != null) {
-      this.ax.g.a();
+    if (ax.g != null) {
+      ax.g.a();
     }
   }
   
@@ -2637,25 +2637,25 @@ public class avh
   {
     int animVal = flag ? 0 : 2;
     
-    this.ofAnimatedWater = animVal;
-    this.ofAnimatedLava = animVal;
-    this.ofAnimatedFire = flag;
-    this.ofAnimatedPortal = flag;
-    this.ofAnimatedRedstone = flag;
-    this.ofAnimatedExplosion = flag;
-    this.ofAnimatedFlame = flag;
-    this.ofAnimatedSmoke = flag;
-    this.ofVoidParticles = flag;
-    this.ofWaterParticles = flag;
-    this.ofRainSplash = flag;
-    this.ofPortalParticles = flag;
-    this.ofPotionParticles = flag;
-    this.ofFireworkParticles = flag;
-    this.aL = (flag ? 0 : 2);
-    this.ofDrippingWaterLava = flag;
-    this.ofAnimatedTerrain = flag;
+    ofAnimatedWater = animVal;
+    ofAnimatedLava = animVal;
+    ofAnimatedFire = flag;
+    ofAnimatedPortal = flag;
+    ofAnimatedRedstone = flag;
+    ofAnimatedExplosion = flag;
+    ofAnimatedFlame = flag;
+    ofAnimatedSmoke = flag;
+    ofVoidParticles = flag;
+    ofWaterParticles = flag;
+    ofRainSplash = flag;
+    ofPortalParticles = flag;
+    ofPotionParticles = flag;
+    ofFireworkParticles = flag;
+    aL = (flag ? 0 : 2);
+    ofDrippingWaterLava = flag;
+    ofAnimatedTerrain = flag;
     
-    this.ofAnimatedTextures = flag;
+    ofAnimatedTextures = flag;
   }
   
   public static enum a
@@ -2690,22 +2690,22 @@ public class avh
     
     private a(String p_i45004_1_, int p_i45004_2_, String p_i45004_3_, boolean p_i45004_4_, boolean p_i45004_5_, float p_i45004_6_, float p_i45004_7_, float p_i45004_8_)
     {
-      this.U = p_i45004_3_;
-      this.S = p_i45004_4_;
-      this.T = p_i45004_5_;
-      this.W = p_i45004_6_;
-      this.X = p_i45004_7_;
-      this.V = p_i45004_8_;
+      U = p_i45004_3_;
+      S = p_i45004_4_;
+      T = p_i45004_5_;
+      W = p_i45004_6_;
+      X = p_i45004_7_;
+      V = p_i45004_8_;
     }
     
     public boolean a()
     {
-      return this.S;
+      return S;
     }
     
     public boolean b()
     {
-      return this.T;
+      return T;
     }
     
     public int c()
@@ -2715,39 +2715,39 @@ public class avh
     
     public String d()
     {
-      return this.U;
+      return U;
     }
     
     public float f()
     {
-      return this.X;
+      return X;
     }
     
     public void a(float p_148263_1_)
     {
-      this.X = p_148263_1_;
+      X = p_148263_1_;
     }
     
     public float c(float p_148266_1_)
     {
-      return ns.a((e(p_148266_1_) - this.W) / (this.X - this.W), 0.0F, 1.0F);
+      return ns.a((e(p_148266_1_) - W) / (X - W), 0.0F, 1.0F);
     }
     
     public float d(float p_148262_1_)
     {
-      return e(this.W + (this.X - this.W) * ns.a(p_148262_1_, 0.0F, 1.0F));
+      return e(W + (X - W) * ns.a(p_148262_1_, 0.0F, 1.0F));
     }
     
     public float e(float p_148268_1_)
     {
       p_148268_1_ = f(p_148268_1_);
-      return ns.a(p_148268_1_, this.W, this.X);
+      return ns.a(p_148268_1_, W, X);
     }
     
     protected float f(float p_148264_1_)
     {
-      if (this.V > 0.0F) {
-        p_148264_1_ = this.V * Math.round(p_148264_1_ / this.V);
+      if (V > 0.0F) {
+        p_148264_1_ = V * Math.round(p_148264_1_ / V);
       }
       return p_148264_1_;
     }

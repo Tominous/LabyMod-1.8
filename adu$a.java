@@ -6,6 +6,6 @@ public class adu$a
   public adu$a(adu paramadu, cj ☃, long ☃)
   {
     super(☃.n(), ☃.o(), ☃.p());
-    this.c = ☃;
+    c = ☃;
   }
 }

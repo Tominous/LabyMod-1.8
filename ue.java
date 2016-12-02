@@ -8,8 +8,8 @@ public class ue
   {
     super(☃.a());
     a(☃, ☃);
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   protected void h() {}
@@ -28,11 +28,11 @@ public class ue
     if (b(☃)) {
       return false;
     }
-    return this.a.a(this, ☃, ☃);
+    return a.a(this, ☃, ☃);
   }
   
   public boolean k(pk ☃)
   {
-    return (this == ☃) || (this.a == ☃);
+    return (this == ☃) || (a == ☃);
   }
 }

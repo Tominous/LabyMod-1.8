@@ -10,6 +10,6 @@ class aqq$2
   public String a()
     throws Exception
   {
-    return String.valueOf(adg.a(this.val$p_180701_2_, this.val$p_180701_3_));
+    return String.valueOf(adg.a(val$p_180701_2_, val$p_180701_3_));
   }
 }

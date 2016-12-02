@@ -66,23 +66,23 @@ public class bj
     }
     ☃.a(new fb("commands.spreadplayers.spreading." + (☃ ? "teams" : "players"), new Object[] { Integer.valueOf(☃.size()), Double.valueOf(☃), Double.valueOf(☃), Double.valueOf(☃), Double.valueOf(☃) }));
     
-    a(☃, ☃, new bj.a(☃, ☃), ☃, ☃, ((pk)☃.get(0)).o, ☃);
+    a(☃, ☃, new bj.a(☃, ☃), ☃, ☃, get0o, ☃);
   }
   
   private void a(m ☃, List<pk> ☃, bj.a ☃, double ☃, double ☃, adm ☃, boolean ☃)
     throws bz
   {
     Random ☃ = new Random();
-    double ☃ = ☃.a - ☃;
-    double ☃ = ☃.b - ☃;
-    double ☃ = ☃.a + ☃;
-    double ☃ = ☃.b + ☃;
+    double ☃ = a - ☃;
+    double ☃ = b - ☃;
+    double ☃ = a + ☃;
+    double ☃ = b + ☃;
     
     bj.a[] ☃ = a(☃, ☃ ? b(☃) : ☃.size(), ☃, ☃, ☃, ☃);
     int ☃ = a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
     double ☃ = a(☃, ☃, ☃, ☃);
     
-    a(☃, this, "commands.spreadplayers.success." + (☃ ? "teams" : "players"), new Object[] { Integer.valueOf(☃.length), Double.valueOf(☃.a), Double.valueOf(☃.b) });
+    a(☃, this, "commands.spreadplayers.success." + (☃ ? "teams" : "players"), new Object[] { Integer.valueOf(☃.length), Double.valueOf(a), Double.valueOf(b) });
     if (☃.length > 1) {
       ☃.a(new fb("commands.spreadplayers.info." + (☃ ? "teams" : "players"), new Object[] { String.format("%.2f", new Object[] { Double.valueOf(☃) }), Integer.valueOf(☃) }));
     }
@@ -126,15 +126,15 @@ public class bj
             if (☃ < ☃)
             {
               ☃++;
-              ☃.a += ☃.a - ☃.a;
-              ☃.b += ☃.b - ☃.b;
+              a += a - a;
+              b += b - b;
             }
           }
         }
         if (☃ > 0)
         {
-          ☃.a /= ☃;
-          ☃.b /= ☃;
+          a /= ☃;
+          b /= ☃;
           double ☃ = ☃.b();
           if (☃ > 0.0D)
           {
@@ -163,7 +163,7 @@ public class bj
       }
     }
     if (☃ >= 10000) {
-      throw new bz("commands.spreadplayers.failure." + (☃ ? "teams" : "players"), new Object[] { Integer.valueOf(☃.length), Double.valueOf(☃.a), Double.valueOf(☃.b), String.format("%.2f", new Object[] { Double.valueOf(☃) }) });
+      throw new bz("commands.spreadplayers.failure." + (☃ ? "teams" : "players"), new Object[] { Integer.valueOf(☃.length), Double.valueOf(a), Double.valueOf(b), String.format("%.2f", new Object[] { Double.valueOf(☃) }) });
     }
     return ☃;
   }
@@ -190,7 +190,7 @@ public class bj
       {
         ☃ = ☃[(☃++)];
       }
-      ☃.a(ns.c(☃.a) + 0.5F, ☃.a(☃), ns.c(☃.b) + 0.5D);
+      ☃.a(ns.c(a) + 0.5F, ☃.a(☃), ns.c(b) + 0.5D);
       
       double ☃ = Double.MAX_VALUE;
       for (int ☃ = 0; ☃ < ☃.length; ☃++) {
@@ -235,14 +235,14 @@ public class bj
     
     a(double ☃, double ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
+      a = ☃;
+      b = ☃;
     }
     
     double a(a ☃)
     {
-      double ☃ = this.a - ☃.a;
-      double ☃ = this.b - ☃.b;
+      double ☃ = a - a;
+      double ☃ = b - b;
       
       return Math.sqrt(☃ * ☃ + ☃ * ☃);
     }
@@ -250,42 +250,42 @@ public class bj
     void a()
     {
       double ☃ = b();
-      this.a /= ☃;
-      this.b /= ☃;
+      a /= ☃;
+      b /= ☃;
     }
     
     float b()
     {
-      return ns.a(this.a * this.a + this.b * this.b);
+      return ns.a(a * a + b * b);
     }
     
     public void b(a ☃)
     {
-      this.a -= ☃.a;
-      this.b -= ☃.b;
+      a -= a;
+      b -= b;
     }
     
     public boolean a(double ☃, double ☃, double ☃, double ☃)
     {
       boolean ☃ = false;
-      if (this.a < ☃)
+      if (a < ☃)
       {
-        this.a = ☃;
+        a = ☃;
         ☃ = true;
       }
-      else if (this.a > ☃)
+      else if (a > ☃)
       {
-        this.a = ☃;
+        a = ☃;
         ☃ = true;
       }
-      if (this.b < ☃)
+      if (b < ☃)
       {
-        this.b = ☃;
+        b = ☃;
         ☃ = true;
       }
-      else if (this.b > ☃)
+      else if (b > ☃)
       {
-        this.b = ☃;
+        b = ☃;
         ☃ = true;
       }
       return ☃;
@@ -293,7 +293,7 @@ public class bj
     
     public int a(adm ☃)
     {
-      cj ☃ = new cj(this.a, 256.0D, this.b);
+      cj ☃ = new cj(a, 256.0D, b);
       while (☃.o() > 0)
       {
         ☃ = ☃.b();
@@ -306,7 +306,7 @@ public class bj
     
     public boolean b(adm ☃)
     {
-      cj ☃ = new cj(this.a, 256.0D, this.b);
+      cj ☃ = new cj(a, 256.0D, b);
       while (☃.o() > 0)
       {
         ☃ = ☃.b();
@@ -321,8 +321,8 @@ public class bj
     
     public void a(Random ☃, double ☃, double ☃, double ☃, double ☃)
     {
-      this.a = ns.a(☃, ☃, ☃);
-      this.b = ns.a(☃, ☃, ☃);
+      a = ns.a(☃, ☃, ☃);
+      b = ns.a(☃, ☃, ☃);
     }
   }
 }

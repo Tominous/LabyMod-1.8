@@ -9,6 +9,6 @@ class lm$1
   public void operationComplete(Future<? super Void> ☃)
     throws Exception
   {
-    this.b.a.a(this.a);
+    b.a.a(a);
   }
 }

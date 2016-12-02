@@ -18,51 +18,51 @@ public class rz
   
   public rz(py ☃, double ☃, int ☃)
   {
-    this.a = ☃;
-    this.e = ☃;
-    this.f = ☃;
+    a = ☃;
+    e = ☃;
+    f = ☃;
     a(1);
   }
   
   public boolean a()
   {
-    if (!this.g)
+    if (!g)
     {
-      if (this.a.bh() >= 100) {
+      if (a.bh() >= 100) {
         return false;
       }
-      if (this.a.bc().nextInt(this.f) != 0) {
+      if (a.bc().nextInt(f) != 0) {
         return false;
       }
     }
-    aui ☃ = tc.a(this.a, 10, 7);
+    aui ☃ = tc.a(a, 10, 7);
     if (☃ == null) {
       return false;
     }
-    this.b = ☃.a;
-    this.c = ☃.b;
-    this.d = ☃.c;
-    this.g = false;
+    b = a;
+    c = b;
+    d = c;
+    g = false;
     return true;
   }
   
   public boolean b()
   {
-    return !this.a.s().m();
+    return !a.s().m();
   }
   
   public void c()
   {
-    this.a.s().a(this.b, this.c, this.d, this.e);
+    a.s().a(b, c, d, e);
   }
   
   public void f()
   {
-    this.g = true;
+    g = true;
   }
   
   public void b(int ☃)
   {
-    this.f = ☃;
+    f = ☃;
   }
 }

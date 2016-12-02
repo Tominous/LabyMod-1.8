@@ -10,22 +10,22 @@ public class hy
   
   public hy(int ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.e();
-    this.b = ☃.e();
+    a = ☃.e();
+    b = ☃.e();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(this.a);
-    ☃.b(this.b);
+    ☃.b(a);
+    ☃.b(b);
   }
   
   public void a(fj ☃)
@@ -35,11 +35,11 @@ public class hy
   
   public int a()
   {
-    return this.a;
+    return a;
   }
   
   public int b()
   {
-    return this.b;
+    return b;
   }
 }

@@ -17,17 +17,17 @@ public enum MojangService
   
   public int getId()
   {
-    return this.id;
+    return id;
   }
   
   public String getName()
   {
-    return this.name;
+    return name;
   }
   
   public String getUrl()
   {
-    return this.url;
+    return url;
   }
   
   public static MojangService fromId(int id)

@@ -10,6 +10,6 @@ final class ek$6
   protected void initChannel(Channel ☃)
     throws Exception
   {
-    ☃.pipeline().addLast("packet_handler", this.a);
+    ☃.pipeline().addLast("packet_handler", a);
   }
 }

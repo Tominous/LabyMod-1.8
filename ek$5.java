@@ -19,6 +19,6 @@ final class ek$5
       ☃.config().setOption(ChannelOption.TCP_NODELAY, Boolean.valueOf(true));
     }
     catch (ChannelException localChannelException) {}
-    ☃.pipeline().addLast("timeout", new ReadTimeoutHandler(30)).addLast("splitter", new eq()).addLast("decoder", new en(fg.b)).addLast("prepender", new er()).addLast("encoder", new eo(fg.a)).addLast("packet_handler", this.a);
+    ☃.pipeline().addLast("timeout", new ReadTimeoutHandler(30)).addLast("splitter", new eq()).addLast("decoder", new en(fg.b)).addLast("prepender", new er()).addLast("encoder", new eo(fg.a)).addLast("packet_handler", a);
   }
 }

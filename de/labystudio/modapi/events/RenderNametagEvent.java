@@ -32,21 +32,21 @@ public class RenderNametagEvent
   
   public pr getEntity()
   {
-    return this.entity;
+    return entity;
   }
   
   public double getX()
   {
-    return this.x;
+    return x;
   }
   
   public double getY()
   {
-    return this.y;
+    return y;
   }
   
   public double getZ()
   {
-    return this.z;
+    return z;
   }
 }

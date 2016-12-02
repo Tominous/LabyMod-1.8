@@ -7,7 +7,7 @@ public class oa
   {
     int ☃ = 0;
     for (oa.a ☃ : ☃) {
-      ☃ += ☃.a;
+      ☃ += a;
     }
     return ☃;
   }
@@ -25,7 +25,7 @@ public class oa
   {
     for (T ☃ : ☃)
     {
-      ☃ -= ☃.a;
+      ☃ -= a;
       if (☃ < 0) {
         return ☃;
       }
@@ -44,7 +44,7 @@ public class oa
     
     public a(int ☃)
     {
-      this.a = ☃;
+      a = ☃;
     }
   }
 }

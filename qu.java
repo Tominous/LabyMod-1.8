@@ -16,50 +16,50 @@ public class qu
     if (!super.a()) {
       return false;
     }
-    if (!this.a.o.Q().b("mobGriefing")) {
+    if (!a.o.Q().b("mobGriefing")) {
       return false;
     }
-    return !agh.f(this.a.o, this.b);
+    return !agh.f(a.o, b);
   }
   
   public void c()
   {
     super.c();
-    this.g = 0;
+    g = 0;
   }
   
   public boolean b()
   {
-    double ☃ = this.a.b(this.b);
-    return (this.g <= 240) && (!agh.f(this.a.o, this.b)) && (☃ < 4.0D);
+    double ☃ = a.b(b);
+    return (g <= 240) && (!agh.f(a.o, b)) && (☃ < 4.0D);
   }
   
   public void d()
   {
     super.d();
-    this.a.o.c(this.a.F(), this.b, -1);
+    a.o.c(a.F(), b, -1);
   }
   
   public void e()
   {
     super.e();
-    if (this.a.bc().nextInt(20) == 0) {
-      this.a.o.b(1010, this.b, 0);
+    if (a.bc().nextInt(20) == 0) {
+      a.o.b(1010, b, 0);
     }
-    this.g += 1;
+    g += 1;
     
-    int ☃ = (int)(this.g / 240.0F * 10.0F);
-    if (☃ != this.h)
+    int ☃ = (int)(g / 240.0F * 10.0F);
+    if (☃ != h)
     {
-      this.a.o.c(this.a.F(), this.b, ☃);
-      this.h = ☃;
+      a.o.c(a.F(), b, ☃);
+      h = ☃;
     }
-    if ((this.g == 240) && 
-      (this.a.o.aa() == oj.d))
+    if ((g == 240) && 
+      (a.o.aa() == oj.d))
     {
-      this.a.o.g(this.b);
-      this.a.o.b(1012, this.b, 0);
-      this.a.o.b(2001, this.b, afh.a(this.c));
+      a.o.g(b);
+      a.o.b(1012, b, 0);
+      a.o.b(2001, b, afh.a(c));
     }
   }
 }

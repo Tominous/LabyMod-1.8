@@ -36,18 +36,18 @@ public class anw
   
   public anw(adm ☃, boolean ☃, long ☃)
   {
-    this.h = ☃;
-    this.i = ☃;
+    h = ☃;
+    i = ☃;
     
-    this.j = new Random(☃);
-    this.o = new arc(this.j, 16);
-    this.p = new arc(this.j, 16);
-    this.q = new arc(this.j, 8);
-    this.r = new arc(this.j, 4);
-    this.s = new arc(this.j, 4);
+    j = new Random(☃);
+    o = new arc(j, 16);
+    p = new arc(j, 16);
+    q = new arc(j, 8);
+    r = new arc(j, 4);
+    s = new arc(j, 4);
     
-    this.a = new arc(this.j, 10);
-    this.b = new arc(this.j, 16);
+    a = new arc(j, 10);
+    b = new arc(j, 16);
     
     ☃.b(63);
   }
@@ -55,26 +55,26 @@ public class anw
   public void a(int ☃, int ☃, ans ☃)
   {
     int ☃ = 4;
-    int ☃ = this.h.F() / 2 + 1;
+    int ☃ = h.F() / 2 + 1;
     
     int ☃ = ☃ + 1;
     int ☃ = 17;
     int ☃ = ☃ + 1;
-    this.n = a(this.n, ☃ * ☃, 0, ☃ * ☃, ☃, ☃, ☃);
+    n = a(n, ☃ * ☃, 0, ☃ * ☃, ☃, ☃, ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
       for (int ☃ = 0; ☃ < ☃; ☃++) {
         for (int ☃ = 0; ☃ < 16; ☃++)
         {
           double ☃ = 0.125D;
-          double ☃ = this.n[(((☃ + 0) * ☃ + (☃ + 0)) * ☃ + (☃ + 0))];
-          double ☃ = this.n[(((☃ + 0) * ☃ + (☃ + 1)) * ☃ + (☃ + 0))];
-          double ☃ = this.n[(((☃ + 1) * ☃ + (☃ + 0)) * ☃ + (☃ + 0))];
-          double ☃ = this.n[(((☃ + 1) * ☃ + (☃ + 1)) * ☃ + (☃ + 0))];
+          double ☃ = n[(((☃ + 0) * ☃ + (☃ + 0)) * ☃ + (☃ + 0))];
+          double ☃ = n[(((☃ + 0) * ☃ + (☃ + 1)) * ☃ + (☃ + 0))];
+          double ☃ = n[(((☃ + 1) * ☃ + (☃ + 0)) * ☃ + (☃ + 0))];
+          double ☃ = n[(((☃ + 1) * ☃ + (☃ + 1)) * ☃ + (☃ + 0))];
           
-          double ☃ = (this.n[(((☃ + 0) * ☃ + (☃ + 0)) * ☃ + (☃ + 1))] - ☃) * ☃;
-          double ☃ = (this.n[(((☃ + 0) * ☃ + (☃ + 1)) * ☃ + (☃ + 1))] - ☃) * ☃;
-          double ☃ = (this.n[(((☃ + 1) * ☃ + (☃ + 0)) * ☃ + (☃ + 1))] - ☃) * ☃;
-          double ☃ = (this.n[(((☃ + 1) * ☃ + (☃ + 1)) * ☃ + (☃ + 1))] - ☃) * ☃;
+          double ☃ = (n[(((☃ + 0) * ☃ + (☃ + 0)) * ☃ + (☃ + 1))] - ☃) * ☃;
+          double ☃ = (n[(((☃ + 0) * ☃ + (☃ + 1)) * ☃ + (☃ + 1))] - ☃) * ☃;
+          double ☃ = (n[(((☃ + 1) * ☃ + (☃ + 0)) * ☃ + (☃ + 1))] - ☃) * ☃;
+          double ☃ = (n[(((☃ + 1) * ☃ + (☃ + 1)) * ☃ + (☃ + 1))] - ☃) * ☃;
           for (int ☃ = 0; ☃ < 8; ☃++)
           {
             double ☃ = 0.25D;
@@ -119,25 +119,25 @@ public class anw
   
   public void b(int ☃, int ☃, ans ☃)
   {
-    int ☃ = this.h.F() + 1;
+    int ☃ = h.F() + 1;
     
     double ☃ = 0.03125D;
-    this.k = this.r.a(this.k, ☃ * 16, ☃ * 16, 0, 16, 16, 1, ☃, ☃, 1.0D);
-    this.l = this.r.a(this.l, ☃ * 16, 109, ☃ * 16, 16, 1, 16, ☃, 1.0D, ☃);
-    this.m = this.s.a(this.m, ☃ * 16, ☃ * 16, 0, 16, 16, 1, ☃ * 2.0D, ☃ * 2.0D, ☃ * 2.0D);
+    k = r.a(k, ☃ * 16, ☃ * 16, 0, 16, 16, 1, ☃, ☃, 1.0D);
+    l = r.a(l, ☃ * 16, 109, ☃ * 16, 16, 1, 16, ☃, 1.0D, ☃);
+    m = s.a(m, ☃ * 16, ☃ * 16, 0, 16, 16, 1, ☃ * 2.0D, ☃ * 2.0D, ☃ * 2.0D);
     for (int ☃ = 0; ☃ < 16; ☃++) {
       for (int ☃ = 0; ☃ < 16; ☃++)
       {
-        boolean ☃ = this.k[(☃ + ☃ * 16)] + this.j.nextDouble() * 0.2D > 0.0D;
-        boolean ☃ = this.l[(☃ + ☃ * 16)] + this.j.nextDouble() * 0.2D > 0.0D;
-        int ☃ = (int)(this.m[(☃ + ☃ * 16)] / 3.0D + 3.0D + this.j.nextDouble() * 0.25D);
+        boolean ☃ = k[(☃ + ☃ * 16)] + j.nextDouble() * 0.2D > 0.0D;
+        boolean ☃ = l[(☃ + ☃ * 16)] + j.nextDouble() * 0.2D > 0.0D;
+        int ☃ = (int)(m[(☃ + ☃ * 16)] / 3.0D + 3.0D + j.nextDouble() * 0.25D);
         
         int ☃ = -1;
         
         alz ☃ = afi.aV.Q();
         alz ☃ = afi.aV.Q();
         for (int ☃ = 127; ☃ >= 0; ☃--) {
-          if ((☃ >= 127 - this.j.nextInt(5)) || (☃ <= this.j.nextInt(5)))
+          if ((☃ >= 127 - j.nextInt(5)) || (☃ <= j.nextInt(5)))
           {
             ☃.a(☃, ☃, ☃, afi.h.Q());
           }
@@ -193,22 +193,22 @@ public class anw
   
   public amy d(int ☃, int ☃)
   {
-    this.j.setSeed(☃ * 341873128712L + ☃ * 132897987541L);
+    j.setSeed(☃ * 341873128712L + ☃ * 132897987541L);
     
     ans ☃ = new ans();
     
     a(☃, ☃, ☃);
     b(☃, ☃, ☃);
     
-    this.C.a(this, this.h, ☃, ☃, ☃);
-    if (this.i) {
-      this.B.a(this, this.h, ☃, ☃, ☃);
+    C.a(this, h, ☃, ☃, ☃);
+    if (i) {
+      B.a(this, h, ☃, ☃, ☃);
     }
-    amy ☃ = new amy(this.h, ☃, ☃, ☃);
-    ady[] ☃ = this.h.v().b(null, ☃ * 16, ☃ * 16, 16, 16);
+    amy ☃ = new amy(h, ☃, ☃, ☃);
+    ady[] ☃ = h.v().b(null, ☃ * 16, ☃ * 16, 16, 16);
     byte[] ☃ = ☃.k();
     for (int ☃ = 0; ☃ < ☃.length; ☃++) {
-      ☃[☃] = ((byte)☃[☃].az);
+      ☃[☃] = ((byte)az);
     }
     ☃.l();
     
@@ -223,12 +223,12 @@ public class anw
     double ☃ = 684.412D;
     double ☃ = 2053.236D;
     
-    this.f = this.a.a(this.f, ☃, ☃, ☃, ☃, 1, ☃, 1.0D, 0.0D, 1.0D);
-    this.g = this.b.a(this.g, ☃, ☃, ☃, ☃, 1, ☃, 100.0D, 0.0D, 100.0D);
+    f = a.a(f, ☃, ☃, ☃, ☃, 1, ☃, 1.0D, 0.0D, 1.0D);
+    g = b.a(g, ☃, ☃, ☃, ☃, 1, ☃, 100.0D, 0.0D, 100.0D);
     
-    this.c = this.q.a(this.c, ☃, ☃, ☃, ☃, ☃, ☃, ☃ / 80.0D, ☃ / 60.0D, ☃ / 80.0D);
-    this.d = this.o.a(this.d, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
-    this.e = this.p.a(this.e, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
+    c = q.a(c, ☃, ☃, ☃, ☃, ☃, ☃, ☃ / 80.0D, ☃ / 60.0D, ☃ / 80.0D);
+    d = o.a(d, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
+    e = p.a(e, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
     
     int ☃ = 0;
     double[] ☃ = new double[☃];
@@ -254,9 +254,9 @@ public class anw
         {
           double ☃ = 0.0D;
           double ☃ = ☃[☃];
-          double ☃ = this.d[☃] / 512.0D;
-          double ☃ = this.e[☃] / 512.0D;
-          double ☃ = (this.c[☃] / 10.0D + 1.0D) / 2.0D;
+          double ☃ = d[☃] / 512.0D;
+          double ☃ = e[☃] / 512.0D;
+          double ☃ = (c[☃] / 10.0D + 1.0D) / 2.0D;
           if (☃ < 0.0D) {
             ☃ = ☃;
           } else if (☃ > 1.0D) {
@@ -296,30 +296,30 @@ public class anw
     
     adg ☃ = new adg(☃, ☃);
     
-    this.B.a(this.h, this.j, ☃);
+    B.a(h, j, ☃);
     for (int ☃ = 0; ☃ < 8; ☃++) {
-      this.y.b(this.h, this.j, ☃.a(this.j.nextInt(16) + 8, this.j.nextInt(120) + 4, this.j.nextInt(16) + 8));
+      y.b(h, j, ☃.a(j.nextInt(16) + 8, j.nextInt(120) + 4, j.nextInt(16) + 8));
     }
-    for (int ☃ = 0; ☃ < this.j.nextInt(this.j.nextInt(10) + 1) + 1; ☃++) {
-      this.t.b(this.h, this.j, ☃.a(this.j.nextInt(16) + 8, this.j.nextInt(120) + 4, this.j.nextInt(16) + 8));
+    for (int ☃ = 0; ☃ < j.nextInt(j.nextInt(10) + 1) + 1; ☃++) {
+      t.b(h, j, ☃.a(j.nextInt(16) + 8, j.nextInt(120) + 4, j.nextInt(16) + 8));
     }
-    for (int ☃ = 0; ☃ < this.j.nextInt(this.j.nextInt(10) + 1); ☃++) {
-      this.u.b(this.h, this.j, ☃.a(this.j.nextInt(16) + 8, this.j.nextInt(120) + 4, this.j.nextInt(16) + 8));
+    for (int ☃ = 0; ☃ < j.nextInt(j.nextInt(10) + 1); ☃++) {
+      u.b(h, j, ☃.a(j.nextInt(16) + 8, j.nextInt(120) + 4, j.nextInt(16) + 8));
     }
     for (int ☃ = 0; ☃ < 10; ☃++) {
-      this.v.b(this.h, this.j, ☃.a(this.j.nextInt(16) + 8, this.j.nextInt(128), this.j.nextInt(16) + 8));
+      v.b(h, j, ☃.a(j.nextInt(16) + 8, j.nextInt(128), j.nextInt(16) + 8));
     }
-    if (this.j.nextBoolean()) {
-      this.z.b(this.h, this.j, ☃.a(this.j.nextInt(16) + 8, this.j.nextInt(128), this.j.nextInt(16) + 8));
+    if (j.nextBoolean()) {
+      z.b(h, j, ☃.a(j.nextInt(16) + 8, j.nextInt(128), j.nextInt(16) + 8));
     }
-    if (this.j.nextBoolean()) {
-      this.A.b(this.h, this.j, ☃.a(this.j.nextInt(16) + 8, this.j.nextInt(128), this.j.nextInt(16) + 8));
-    }
-    for (int ☃ = 0; ☃ < 16; ☃++) {
-      this.w.b(this.h, this.j, ☃.a(this.j.nextInt(16), this.j.nextInt(108) + 10, this.j.nextInt(16)));
+    if (j.nextBoolean()) {
+      A.b(h, j, ☃.a(j.nextInt(16) + 8, j.nextInt(128), j.nextInt(16) + 8));
     }
     for (int ☃ = 0; ☃ < 16; ☃++) {
-      this.x.b(this.h, this.j, ☃.a(this.j.nextInt(16), this.j.nextInt(108) + 10, this.j.nextInt(16)));
+      w.b(h, j, ☃.a(j.nextInt(16), j.nextInt(108) + 10, j.nextInt(16)));
+    }
+    for (int ☃ = 0; ☃ < 16; ☃++) {
+      x.b(h, j, ☃.a(j.nextInt(16), j.nextInt(108) + 10, j.nextInt(16)));
     }
     agr.N = false;
   }
@@ -355,14 +355,14 @@ public class anw
   {
     if (☃ == pt.a)
     {
-      if (this.B.b(☃)) {
-        return this.B.b();
+      if (B.b(☃)) {
+        return B.b();
       }
-      if ((this.B.a(this.h, ☃)) && (this.h.p(☃.b()).c() == afi.by)) {
-        return this.B.b();
+      if ((B.a(h, ☃)) && (h.p(☃.b()).c() == afi.by)) {
+        return B.b();
       }
     }
-    ady ☃ = this.h.b(☃);
+    ady ☃ = h.b(☃);
     return ☃.a(☃);
   }
   
@@ -378,7 +378,7 @@ public class anw
   
   public void a(amy ☃, int ☃, int ☃)
   {
-    this.B.a(this, this.h, ☃, ☃, null);
+    B.a(this, h, ☃, ☃, null);
   }
   
   public amy a(cj ☃)

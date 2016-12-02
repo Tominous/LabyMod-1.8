@@ -26,8 +26,8 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
@@ -40,8 +40,10 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.jar.JarEntry;
+import java.util.jar.JarException;
 import java.util.jar.JarFile;
 import java.util.jar.JarOutputStream;
+import java.util.zip.ZipException;
 import javax.swing.JOptionPane;
 
 public class Utils
@@ -83,40 +85,32 @@ public class Utils
       workingDirectory = new File(userHome, '.' + applicationName + '/');
       break;
     case UNKNOWN: 
-      workingDirectory = new File(userHome, 
-        "Library/Application Support/" + applicationName);
+      workingDirectory = new File(userHome, "Library/Application Support/" + applicationName);
       break;
     case MACOS: 
       String applicationData = System.getenv("APPDATA");
       if (applicationData != null) {
-        workingDirectory = new File(applicationData, "." + 
-          applicationName + '/');
+        workingDirectory = new File(applicationData, "." + applicationName + '/');
       } else {
-        workingDirectory = new File(userHome, 
-          '.' + applicationName + '/');
+        workingDirectory = new File(userHome, '.' + applicationName + '/');
       }
       break;
     case WINDOWS: 
-      workingDirectory = new File(userHome, 
-        "Library/Application Support/" + applicationName);
+      workingDirectory = new File(userHome, "Library/Application Support/" + applicationName);
       break;
     case SOLARIS: 
       String applicationDataW = System.getenv("APPDATA");
       if (applicationDataW != null) {
-        workingDirectory = new File(applicationDataW, "." + 
-          applicationName + '/');
+        workingDirectory = new File(applicationDataW, "." + applicationName + '/');
       } else {
-        workingDirectory = new File(userHome, 
-          '.' + applicationName + '/');
+        workingDirectory = new File(userHome, '.' + applicationName + '/');
       }
       break;
     default: 
       workingDirectory = new File(userHome, applicationName + '/');
     }
     if ((!workingDirectory.exists()) && (!workingDirectory.mkdirs())) {
-      throw new RuntimeException(
-        "The working directory could not be created: " + 
-        workingDirectory);
+      throw new RuntimeException("The working directory could not be created: " + workingDirectory);
     }
     return workingDirectory;
   }
@@ -133,7 +127,7 @@ public class Utils
     }
     try
     {
-      System.out.println(Main.debug + "copy " + from.getName());
+      System.out.println("[DEBUG] copy " + from.getName());
       Files.copy(from.toPath(), to.toPath(), new CopyOption[0]);
       return true;
     }
@@ -187,42 +181,40 @@ public class Utils
     throws IOException
   {
     URL website = new URL(s);
-    URLConnection web = website.openConnection();
-    web.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
+    HttpURLConnection web = (HttpURLConnection)website.openConnection();
+    
+    web.setRequestProperty("User-Agent", 
+      "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
     ReadableByteChannel rbc = Channels.newChannel(web.getInputStream());
     FileOutputStream fos = new FileOutputStream(dest);
     fos.getChannel().transferFrom(rbc, 0L, Long.MAX_VALUE);
     fos.close();
   }
   
-  public static boolean copyJars(ArrayList<File> mods, File destinationJar)
+  public static boolean copyJars(ArrayList<File> mods, File destinationJar, boolean reinstalling)
   {
     ProgressBarUpdater.title = "Install LabyMod in " + destinationJar.getName();
     try
     {
       ArrayList<String> entryList = new ArrayList();
-      JarOutputStream tempJar = new JarOutputStream(new FileOutputStream(
-        destinationJar));
+      JarOutputStream tempJar = new JarOutputStream(new FileOutputStream(destinationJar));
       byte[] buffer = new byte['Є'];
       for (File jarFile : mods)
       {
         ProgressBarUpdater.title = "Install " + jarFile.getName();
-        System.out.println(Main.debug + "Install " + jarFile.getName());
+        System.out.println("[DEBUG] Install " + jarFile.getName());
         try
         {
           JarFile jar = new JarFile(jarFile);
-          Enumeration<JarEntry> entries = jar.entries();
-          while (entries.hasMoreElements())
+          for (Enumeration<JarEntry> entries = jar.entries(); entries.hasMoreElements();)
           {
-            JarEntry entry = new JarEntry(
-              ((JarEntry)entries.nextElement()).getName());
+            JarEntry entry = new JarEntry(((JarEntry)entries.nextElement()).getName());
             if ((!entry.getName().startsWith("META-INF/")) && (!entry.getName().startsWith("Updater.jar")) && 
               (!entryList.contains(entry.getName())))
             {
               ProgressBarUpdater.subTitle = "Copy " + entry.getName();
               entryList.add(entry.getName());
-              InputStream entryStream = jar
-                .getInputStream(entry);
+              InputStream entryStream = jar.getInputStream(entry);
               tempJar.putNextEntry(entry);
               int bytesRead;
               while ((bytesRead = entryStream.read(buffer)) != -1)
@@ -236,26 +228,54 @@ public class Utils
               ProgressBarUpdater.next();
             }
           }
+          ProgressBarUpdater.subTitle = "[1/2] Complete installation..";
           jar.close();
         }
         catch (Exception error)
         {
           error.printStackTrace();
-          error("Error while installing " + jarFile.getName() + " (" + 
-            error.getMessage() + ")");
+          if ((((error instanceof ZipException)) || ((error instanceof JarException))) && (jarFile.getName().equals("1.8.8.jar")) && (reinstallVersion())) {
+            return copyJars(mods, destinationJar, true);
+          }
+          error("Error while installing " + jarFile.getName() + " (" + error.getMessage() + ")");
+          if (jarFile.getName().equals("1.8.8.jar")) {
+            showMessage("Failed to read vanilla 1.8.8 jar file! You need to run Minecraft 1.8.8 vanilla manually once.");
+          }
           return false;
         }
       }
+      ProgressBarUpdater.subTitle = "[2/2] Complete installation..";
       tempJar.close();
     }
     catch (Exception error)
     {
       error.printStackTrace();
-      error("Error while installing " + mods.size() + " Mods (" + 
-        error.getMessage() + ")");
+      error("Error while installing " + mods.size() + " Mods (" + error.getMessage() + ")");
       return false;
     }
     ProgressBarUpdater.subTitle = "";
+    return true;
+  }
+  
+  public static boolean reinstallVersion()
+  {
+    File directory = new File(getWorkingDirectory(), "versions/1.8.8");
+    File jarFile = new File(directory, "1.8.8.jar");
+    if ((jarFile.exists()) && (!jarFile.delete()))
+    {
+      error("[REINSTALLING] Error while trying to delete version 1.8.8");
+      return false;
+    }
+    try
+    {
+      downloadFile("https://launcher.mojang.com/mc/game/1.8.8/client/0983f08be6a4e624f5d85689d1aca869ed99c738/client.jar", jarFile);
+    }
+    catch (IOException e)
+    {
+      error(
+        "[REINSTALLING] Error while trying to download version 1.8.8 (" + e.getMessage() + ")");
+      return false;
+    }
     return true;
   }
   
@@ -271,6 +291,7 @@ public class Utils
         try
         {
           JarFile jar = new JarFile(jarFile);
+          ProgressBarUpdater.subTitle = "Read " + jar.getName();
           amount += jar.size();
           jar.close();
         }
@@ -294,8 +315,7 @@ public class Utils
     String name = "ShadersModCore";
     String version = "2.4.12mc1.8";
     
-    File outDir = new File(mcDir, "libraries/" + subDir + "/" + name + "/" + 
-      version);
+    File outDir = new File(mcDir, "libraries/" + subDir + "/" + name + "/" + version);
     File outJar = new File(outDir, name + "-" + version + ".jar");
     
     InputStream stream = null;
@@ -460,7 +480,7 @@ public class Utils
       }
       else
       {
-        System.out.println(Main.debug + "copy " + from.getName());
+        System.out.println("[DEBUG] copy " + from.getName());
         Files.copy(from.toPath(), to.toPath(), new CopyOption[0]);
       }
       return true;
@@ -488,7 +508,7 @@ public class Utils
           }
         }
       }
-      System.out.println(Main.debug + "delete " + dir.getName());
+      System.out.println("[DEBUG] delete " + dir.getName());
       if (!dir.delete())
       {
         error("Delete " + dir.getName() + " failed");
@@ -513,7 +533,8 @@ public class Utils
           }
         }
       }
-      System.out.println(Main.debug + "delete " + dir.getName());
+      ProgressBarUpdater.subTitle = "Delete " + dir.getName();
+      System.out.println("[DEBUG] delete " + dir.getName());
       if (!dir.delete()) {
         return false;
       }
@@ -544,7 +565,7 @@ public class Utils
       String line = null;
       FileReader fr = new FileReader(file);
       BufferedReader br = new BufferedReader(fr);
-      System.out.println(Main.debug + "edit " + file.getName());
+      System.out.println("[DEBUG] edit " + file.getName());
       while ((line = br.readLine()) != null)
       {
         if (line.contains(replaceFrom)) {
@@ -578,7 +599,7 @@ public class Utils
       boolean found = false;
       FileReader fr = new FileReader(file);
       BufferedReader br = new BufferedReader(fr);
-      System.out.println(Main.debug + "edit " + file.getName());
+      System.out.println("[DEBUG] edit " + file.getName());
       while ((line = br.readLine()) != null)
       {
         if ((line.contains(replaceFrom)) && (!found))
@@ -608,8 +629,7 @@ public class Utils
   public static BufferedImage resize(BufferedImage img, int newW, int newH)
   {
     Image tmp = img.getScaledInstance(newW, newH, 4);
-    BufferedImage dimg = new BufferedImage(newW, newH, 
-      2);
+    BufferedImage dimg = new BufferedImage(newW, newH, 2);
     Graphics2D g2d = dimg.createGraphics();
     g2d.drawImage(tmp, 0, 0, null);
     g2d.dispose();
@@ -772,16 +792,16 @@ public class Utils
     else
     {
       Dimension scrDim = Toolkit.getDefaultToolkit().getScreenSize();
-      parRect = new Rectangle(0, 0, scrDim.width, scrDim.height);
+      parRect = new Rectangle(0, 0, width, height);
     }
-    int newX = parRect.x + (parRect.width - rect.width) / 2;
-    int newY = parRect.y + (parRect.height - rect.height) / 2;
+    int newX = x + (width - width) / 2;
+    int newY = y + (height - height) / 2;
     if (newX < 0) {
       newX = 0;
     }
     if (newY < 0) {
       newY = 0;
     }
-    c.setBounds(newX, newY, rect.width, rect.height);
+    c.setBounds(newX, newY, width, height);
   }
 }

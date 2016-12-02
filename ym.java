@@ -6,7 +6,7 @@ public class ym
   public ym()
   {
     super(afi.cK);
-    this.h = 16;
+    h = 16;
     a(yz.c);
     a(true);
     d(0);
@@ -27,19 +27,19 @@ public class ym
     if (!afi.cK.d(☃, ☃)) {
       return false;
     }
-    if (☃.D) {
+    if (D) {
       return true;
     }
     if (☃ == cq.b)
     {
-      int ☃ = ns.c((☃.y + 180.0F) * 16.0F / 360.0F + 0.5D) & 0xF;
+      int ☃ = ns.c((y + 180.0F) * 16.0F / 360.0F + 0.5D) & 0xF;
       ☃.a(☃, afi.cK.Q().a(ajv.a, Integer.valueOf(☃)), 3);
     }
     else
     {
       ☃.a(☃, afi.cL.Q().a(akm.a, ☃), 3);
     }
-    ☃.b -= 1;
+    b -= 1;
     akw ☃ = ☃.s(☃);
     if ((☃ instanceof aku)) {
       ((aku)☃).a(☃);
@@ -80,7 +80,7 @@ public class ym
       return 16777215;
     }
     zd ☃ = h(☃);
-    return ☃.e().L;
+    return eL;
   }
   
   public void a(zw ☃, yz ☃, List<zx> ☃)

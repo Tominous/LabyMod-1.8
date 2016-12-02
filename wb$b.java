@@ -7,21 +7,21 @@ class wb$b
   
   public wb$b(wb ☃)
   {
-    this.a = ☃;
+    a = ☃;
     a(5);
     ((sv)☃.s()).d(true);
   }
   
   public boolean a()
   {
-    return (this.a.V()) || (this.a.ab());
+    return (a.V()) || (a.ab());
   }
   
   public void e()
   {
-    if (this.a.bc().nextFloat() < 0.8F) {
-      this.a.r().a();
+    if (a.bc().nextFloat() < 0.8F) {
+      a.r().a();
     }
-    ((wb.d)this.a.q()).a(1.2D);
+    ((wb.d)a.q()).a(1.2D);
   }
 }

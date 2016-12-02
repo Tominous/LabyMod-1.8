@@ -11,14 +11,14 @@ public class ReconnectHandler
   public ReconnectHandler(ClientConnection clientConnection)
   {
     this.clientConnection = clientConnection;
-    this.lastTry = System.currentTimeMillis();
+    lastTry = System.currentTimeMillis();
   }
   
   public void run()
   {
     for (;;)
     {
-      if (this.clientConnection.ch.isOpen())
+      if (clientConnection.ch.isOpen())
       {
         try
         {
@@ -29,11 +29,11 @@ public class ReconnectHandler
           e.printStackTrace();
         }
       }
-      else if (this.lastTry + 5000L < System.currentTimeMillis())
+      else if (lastTry + 5000L < System.currentTimeMillis())
       {
-        this.lastTry = System.currentTimeMillis();
-        this.clientConnection.init();
-        this.clientConnection.connect();
+        lastTry = System.currentTimeMillis();
+        clientConnection.init();
+        clientConnection.connect();
       }
     }
   }

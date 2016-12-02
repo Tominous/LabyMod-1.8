@@ -22,17 +22,17 @@ class aln$1
   
   public cj c()
   {
-    return this.this$0.c;
+    return this$0.c;
   }
   
   public aui d()
   {
-    return new aui(this.this$0.c.n() + 0.5D, this.this$0.c.o() + 0.5D, this.this$0.c.p() + 0.5D);
+    return new aui(this$0.c.n() + 0.5D, this$0.c.o() + 0.5D, this$0.c.p() + 0.5D);
   }
   
   public adm e()
   {
-    return this.this$0.b;
+    return this$0.b;
   }
   
   public pk f()

@@ -9,19 +9,19 @@ public class jj
   
   public jj(eu ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.d();
+    a = ☃.d();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(this.a);
+    ☃.a(a);
   }
   
   public void a(jf ☃)
@@ -31,6 +31,6 @@ public class jj
   
   public eu a()
   {
-    return this.a;
+    return a;
   }
 }

@@ -10,7 +10,7 @@ public class yd
   
   public void a(alf ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(du ☃)
@@ -47,7 +47,7 @@ public class yd
   
   public boolean a(wn ☃)
   {
-    if ((this.a != null) && (!this.a.a(☃))) {
+    if ((a != null) && (!a.a(☃))) {
       return false;
     }
     return super.a(☃);
@@ -55,18 +55,18 @@ public class yd
   
   public void b(wn ☃)
   {
-    if (this.a != null) {
-      this.a.b();
+    if (a != null) {
+      a.b();
     }
     super.b(☃);
   }
   
   public void c(wn ☃)
   {
-    if (this.a != null) {
-      this.a.d();
+    if (a != null) {
+      a.d();
     }
     super.c(☃);
-    this.a = null;
+    a = null;
   }
 }

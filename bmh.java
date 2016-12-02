@@ -60,12 +60,12 @@ public class bmh
   
   public bmh(String p_i46100_1_, bmb p_i46100_2_, boolean skipFirst)
   {
-    this.i = Lists.newArrayList();
-    this.j = Maps.newHashMap();
-    this.k = Maps.newHashMap();
-    this.o = new bmi("missingno");
-    this.l = p_i46100_1_;
-    this.m = p_i46100_2_;
+    i = Lists.newArrayList();
+    j = Maps.newHashMap();
+    k = Maps.newHashMap();
+    o = new bmi("missingno");
+    l = p_i46100_1_;
+    m = p_i46100_2_;
     
     this.skipFirst = ((skipFirst) && (ENABLE_SKIP));
   }
@@ -76,33 +76,33 @@ public class bmh
     
     int[] var1 = getMissingImageData(size);
     
-    this.o.b(size);
-    this.o.c(size);
+    o.b(size);
+    o.c(size);
     
-    int[][] var2 = new int[this.n + 1][];
+    int[][] var2 = new int[n + 1][];
     var2[0] = var1;
-    this.o.a(Lists.newArrayList(new int[][][] { var2 }));
+    o.a(Lists.newArrayList(new int[][][] { var2 }));
     
-    this.o.setIndexInMap(0);
+    o.setIndexInMap(0);
   }
   
   public void a(bni p_110551_1_)
     throws IOException
   {
     ShadersTex.resManager = p_110551_1_;
-    if (this.m != null) {
-      a(p_110551_1_, this.m);
+    if (m != null) {
+      a(p_110551_1_, m);
     }
   }
   
   public void a(bni p_174943_1_, bmb p_174943_2_)
   {
-    this.j.clear();
+    j.clear();
     p_174943_2_.a(this);
-    if (this.n >= 4)
+    if (n >= 4)
     {
-      this.n = detectMaxMipmapLevel(this.j, p_174943_1_);
-      Config.log("Mipmap levels: " + this.n);
+      n = detectMaxMipmapLevel(j, p_174943_1_);
+      Config.log("Mipmap levels: " + n);
     }
     g();
     c();
@@ -116,7 +116,7 @@ public class bmh
     Config.dbg("Multitexture: " + Config.isMultiTexture());
     Iterator it;
     if (Config.isMultiTexture()) {
-      for (it = this.k.values().iterator(); it.hasNext();)
+      for (it = k.values().iterator(); it.hasNext();)
       {
         bmi ts = (bmi)it.next();
         
@@ -128,20 +128,20 @@ public class bmh
     CustomItems.updateIcons(this);
     
     int var2 = ave.C();
-    bmf var3 = new bmf(var2, var2, true, 0, this.n);
-    this.k.clear();
-    this.i.clear();
+    bmf var3 = new bmf(var2, var2, true, 0, n);
+    k.clear();
+    i.clear();
     int var4 = Integer.MAX_VALUE;
     
     Reflector.callVoid(Reflector.ForgeHooksClient_onTextureStitchedPre, new Object[] { this });
     
     int minSpriteSize = getMinSpriteSize();
     
-    this.iconGridSize = minSpriteSize;
+    iconGridSize = minSpriteSize;
     
-    int var5 = 1 << this.n;
-    Iterator var6 = this.j.entrySet().iterator();
-    while ((var6.hasNext()) && (!this.skipFirst))
+    int var5 = 1 << n;
+    Iterator var6 = j.entrySet().iterator();
+    while ((var6.hasNext()) && (!skipFirst))
     {
       Map.Entry var7 = (Map.Entry)var6.next();
       bmi var8 = (bmi)var7.getValue();
@@ -161,14 +161,14 @@ public class bmh
         {
           bnh var11 = ShadersTex.loadResource(p_110571_1_, var10);
           
-          BufferedImage[] var12 = new BufferedImage[1 + this.n];
+          BufferedImage[] var12 = new BufferedImage[1 + n];
           var12[0] = bml.a(var11.b());
           
           BufferedImage[] imgs = var12;
           if (imgs != null)
           {
             int ws = imgs[0].getWidth();
-            if ((ws < minSpriteSize) || (this.n > 0))
+            if ((ws < minSpriteSize) || (n > 0))
             {
               imgs[0] = TextureUtils.scaleToPowerOfTwo(imgs[0], minSpriteSize);
               int ws2 = imgs[0].getWidth();
@@ -244,18 +244,18 @@ public class bmh
     if (var26 < 0) {
       var26 = 0;
     }
-    if (var26 < this.n)
+    if (var26 < n)
     {
-      h.info("{}: dropping miplevel from {} to {}, because of minimum power of two: {}", new Object[] { this.l, Integer.valueOf(this.n), Integer.valueOf(var26), Integer.valueOf(var25) });
-      this.n = var26;
+      h.info("{}: dropping miplevel from {} to {}, because of minimum power of two: {}", new Object[] { l, Integer.valueOf(n), Integer.valueOf(var26), Integer.valueOf(var25) });
+      n = var26;
     }
-    Iterator var27 = this.j.values().iterator();
-    while ((var27.hasNext()) && (!this.skipFirst))
+    Iterator var27 = j.values().iterator();
+    while ((var27.hasNext()) && (!skipFirst))
     {
       final bmi var29 = (bmi)var27.next();
       try
       {
-        var29.d(this.n);
+        var29.d(n);
       }
       catch (Throwable var21)
       {
@@ -291,14 +291,14 @@ public class bmh
             return var29.k() + " frames";
           }
         });
-        var35.a("Mipmap levels", Integer.valueOf(this.n));
+        var35.a("Mipmap levels", Integer.valueOf(n));
         throw new e(var33);
       }
     }
-    this.o.d(this.n);
-    var3.a(this.o);
+    o.d(n);
+    var3.a(o);
     
-    this.skipFirst = false;
+    skipFirst = false;
     try
     {
       var3.c();
@@ -307,13 +307,13 @@ public class bmh
     {
       throw var20;
     }
-    h.info("Created: {}x{} {}-atlas", new Object[] { Integer.valueOf(var3.a()), Integer.valueOf(var3.b()), this.l });
+    h.info("Created: {}x{} {}-atlas", new Object[] { Integer.valueOf(var3.a()), Integer.valueOf(var3.b()), l });
     if (Config.isShaders()) {
-      ShadersTex.allocateTextureMap(b(), this.n, var3.a(), var3.b(), var3, this);
+      ShadersTex.allocateTextureMap(b(), n, var3.a(), var3.b(), var3, this);
     } else {
-      bml.a(b(), this.n, var3.a(), var3.b());
+      bml.a(b(), n, var3.a(), var3.b());
     }
-    HashMap var28 = Maps.newHashMap(this.j);
+    HashMap var28 = Maps.newHashMap(j);
     Iterator var30 = var3.d().iterator();
     while (var30.hasNext())
     {
@@ -323,7 +323,7 @@ public class bmh
       }
       String var34 = var31.i();
       var28.remove(var34);
-      this.k.put(var34, var31);
+      k.put(var34, var31);
       try
       {
         if (Config.isShaders()) {
@@ -336,19 +336,19 @@ public class bmh
       {
         b var36 = b.a(var19, "Stitching texture atlas");
         c var38 = var36.a("Texture being stitched together");
-        var38.a("Atlas path", this.l);
+        var38.a("Atlas path", l);
         var38.a("Sprite", var31);
         throw new e(var36);
       }
       if (var31.m()) {
-        this.i.add(var31);
+        i.add(var31);
       }
     }
     var30 = var28.values().iterator();
     while (var30.hasNext())
     {
       bmi var31 = (bmi)var30.next();
-      var31.a(this.o);
+      var31.a(o);
     }
     if (Config.isMultiTexture())
     {
@@ -360,16 +360,16 @@ public class bmh
       {
         bmi tas = (bmi)it.next();
         
-        tas.sheetWidth = sheetWidth;
-        tas.sheetHeight = sheetHeight;
-        tas.mipmapLevels = this.n;
+        sheetWidth = sheetWidth;
+        sheetHeight = sheetHeight;
+        mipmapLevels = n;
         
-        bmi ss = tas.spriteSingle;
+        bmi ss = spriteSingle;
         if (ss != null)
         {
-          ss.sheetWidth = sheetWidth;
-          ss.sheetHeight = sheetHeight;
-          ss.mipmapLevels = this.n;
+          sheetWidth = sheetWidth;
+          sheetHeight = sheetHeight;
+          mipmapLevels = n;
           
           tas.bindSpriteTexture();
           
@@ -385,8 +385,8 @@ public class bmh
     updateIconGrid(var3.a(), var3.b());
     if (Config.equals(System.getProperty("saveTextureMap"), "true"))
     {
-      Config.dbg("Exporting texture map to: " + this.l + "_x.png");
-      bml.saveGlTexture(this.l.replaceAll("/", "_"), b(), this.n, var3.a(), var3.b());
+      Config.dbg("Exporting texture map to: " + l + "_x.png");
+      bml.saveGlTexture(l.replaceAll("/", "_"), b(), n, var3.a(), var3.b());
     }
   }
   
@@ -399,14 +399,14 @@ public class bmh
       }
       return new jy(p_147634_1_.b(), p_147634_1_.a() + "mipmap" + p_147634_2_ + ".png");
     }
-    return p_147634_2_ == 0 ? new jy(p_147634_1_.b(), String.format("%s/%s%s", new Object[] { this.l, p_147634_1_.a(), ".png" })) : new jy(p_147634_1_.b(), String.format("%s/mipmaps/%s.%d%s", new Object[] { this.l, p_147634_1_.a(), Integer.valueOf(p_147634_2_), ".png" }));
+    return p_147634_2_ == 0 ? new jy(p_147634_1_.b(), String.format("%s/%s%s", new Object[] { l, p_147634_1_.a(), ".png" })) : new jy(p_147634_1_.b(), String.format("%s/mipmaps/%s.%d%s", new Object[] { l, p_147634_1_.a(), Integer.valueOf(p_147634_2_), ".png" }));
   }
   
   public bmi a(String p_110572_1_)
   {
-    bmi var2 = (bmi)this.k.get(p_110572_1_);
+    bmi var2 = (bmi)k.get(p_110572_1_);
     if (var2 == null) {
-      var2 = this.o;
+      var2 = o;
     }
     return var2;
   }
@@ -417,7 +417,7 @@ public class bmh
       ShadersTex.updatingTex = getMultiTexID();
     }
     bml.b(b());
-    Iterator var1 = this.i.iterator();
+    Iterator var1 = i.iterator();
     while (var1.hasNext())
     {
       bmi var2 = (bmi)var1.next();
@@ -427,15 +427,15 @@ public class bmh
     }
     if (Config.isMultiTexture())
     {
-      for (Iterator it = this.i.iterator(); it.hasNext();)
+      for (Iterator it = i.iterator(); it.hasNext();)
       {
         bmi ts = (bmi)it.next();
         if (isTerrainAnimationActive(ts))
         {
-          bmi spriteSingle = ts.spriteSingle;
+          bmi spriteSingle = spriteSingle;
           if (spriteSingle != null)
           {
-            spriteSingle.h = ts.h;
+            h = h;
             ts.bindSpriteTexture();
             spriteSingle.j();
           }
@@ -453,16 +453,16 @@ public class bmh
     if (p_174942_1_ == null) {
       throw new IllegalArgumentException("Location cannot be null!");
     }
-    bmi var2 = (bmi)this.j.get(p_174942_1_.toString());
+    bmi var2 = (bmi)j.get(p_174942_1_.toString());
     if (var2 == null)
     {
       var2 = bmi.a(p_174942_1_);
-      this.j.put(p_174942_1_.toString(), var2);
+      j.put(p_174942_1_.toString(), var2);
       if ((var2 instanceof bmi))
       {
         bmi tas = var2;
         if (tas.getIndexInMap() < 0) {
-          tas.setIndexInMap(this.j.size());
+          tas.setIndexInMap(j.size());
         }
       }
     }
@@ -476,27 +476,27 @@ public class bmh
   
   public void a(int p_147633_1_)
   {
-    this.n = p_147633_1_;
+    n = p_147633_1_;
   }
   
   public bmi f()
   {
-    return this.o;
+    return o;
   }
   
   public bmi getTextureExtry(String name)
   {
     jy loc = new jy(name);
-    return (bmi)this.j.get(loc.toString());
+    return (bmi)j.get(loc.toString());
   }
   
   public boolean setTextureEntry(String name, bmi entry)
   {
-    if (!this.j.containsKey(name))
+    if (!j.containsKey(name))
     {
-      this.j.put(name, entry);
+      j.put(name, entry);
       if (entry.getIndexInMap() < 0) {
-        entry.setIndexInMap(this.j.size());
+        entry.setIndexInMap(j.size());
       }
       return true;
     }
@@ -521,7 +521,7 @@ public class bmh
   public bmi getSpriteSafe(String name)
   {
     jy loc = new jy(name);
-    return (bmi)this.j.get(loc.toString());
+    return (bmi)j.get(loc.toString());
   }
   
   private boolean isTerrainAnimationActive(bmi ts)
@@ -543,7 +543,7 @@ public class bmh
   
   public int getCountRegisteredSprites()
   {
-    return this.j.size();
+    return j.size();
   }
   
   private int detectMaxMipmapLevel(Map mapSprites, bni rm)
@@ -588,7 +588,7 @@ public class bmh
           if (dim == null) {
             continue;
           }
-          int width = dim.width;
+          int width = width;
           int width2 = ns.b(width);
           if (!mapSizeCounts.containsKey(Integer.valueOf(width2)))
           {
@@ -631,7 +631,7 @@ public class bmh
   
   private int getMinSpriteSize()
   {
-    int minSize = 1 << this.n;
+    int minSize = 1 << n;
     if (minSize < 16) {
       minSize = 16;
     }
@@ -662,42 +662,42 @@ public class bmh
   
   private void updateIconGrid(int sheetWidth, int sheetHeight)
   {
-    this.iconGridCountX = -1;
-    this.iconGridCountY = -1;
-    this.iconGrid = null;
-    if (this.iconGridSize <= 0) {
+    iconGridCountX = -1;
+    iconGridCountY = -1;
+    iconGrid = null;
+    if (iconGridSize <= 0) {
       return;
     }
-    this.iconGridCountX = (sheetWidth / this.iconGridSize);
-    this.iconGridCountY = (sheetHeight / this.iconGridSize);
+    iconGridCountX = (sheetWidth / iconGridSize);
+    iconGridCountY = (sheetHeight / iconGridSize);
     
-    this.iconGrid = new bmi[this.iconGridCountX * this.iconGridCountY];
-    this.iconGridSizeU = (1.0D / this.iconGridCountX);
-    this.iconGridSizeV = (1.0D / this.iconGridCountY);
-    for (Iterator it = this.k.values().iterator(); it.hasNext();)
+    iconGrid = new bmi[iconGridCountX * iconGridCountY];
+    iconGridSizeU = (1.0D / iconGridCountX);
+    iconGridSizeV = (1.0D / iconGridCountY);
+    for (Iterator it = k.values().iterator(); it.hasNext();)
     {
       bmi ts = (bmi)it.next();
       double uMin = Math.min(ts.e(), ts.f());
       double vMin = Math.min(ts.g(), ts.h());
       double uMax = Math.max(ts.e(), ts.f());
       double vMax = Math.max(ts.g(), ts.h());
-      int iuMin = (int)(uMin / this.iconGridSizeU);
-      int ivMin = (int)(vMin / this.iconGridSizeV);
-      int iuMax = (int)(uMax / this.iconGridSizeU);
-      int ivMax = (int)(vMax / this.iconGridSizeV);
+      int iuMin = (int)(uMin / iconGridSizeU);
+      int ivMin = (int)(vMin / iconGridSizeV);
+      int iuMax = (int)(uMax / iconGridSizeU);
+      int ivMax = (int)(vMax / iconGridSizeV);
       for (int iu = iuMin; iu <= iuMax; iu++) {
-        if ((iu < 0) || (iu >= this.iconGridCountX)) {
+        if ((iu < 0) || (iu >= iconGridCountX)) {
           Config.warn("Invalid grid U: " + iu + ", icon: " + ts.i());
         } else {
           for (int iv = ivMin; iv <= ivMax; iv++) {
-            if ((iv < 0) || (iv >= this.iconGridCountX))
+            if ((iv < 0) || (iv >= iconGridCountX))
             {
               Config.warn("Invalid grid V: " + iv + ", icon: " + ts.i());
             }
             else
             {
-              int index = iv * this.iconGridCountX + iu;
-              this.iconGrid[index] = ts;
+              int index = iv * iconGridCountX + iu;
+              iconGrid[index] = ts;
             }
           }
         }
@@ -707,15 +707,15 @@ public class bmh
   
   public bmi getIconByUV(double u, double v)
   {
-    if (this.iconGrid == null) {
+    if (iconGrid == null) {
       return null;
     }
-    int iu = (int)(u / this.iconGridSizeU);
-    int iv = (int)(v / this.iconGridSizeV);
-    int index = iv * this.iconGridCountX + iu;
-    if ((index < 0) || (index > this.iconGrid.length)) {
+    int iu = (int)(u / iconGridSizeU);
+    int iv = (int)(v / iconGridSizeV);
+    int index = iv * iconGridCountX + iu;
+    if ((index < 0) || (index > iconGrid.length)) {
       return null;
     }
-    return this.iconGrid[index];
+    return iconGrid[index];
   }
 }

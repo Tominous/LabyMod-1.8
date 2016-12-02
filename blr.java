@@ -32,13 +32,13 @@ public class blr
   public blr(bmj ☃, bni ☃, bfw ☃, jy ☃)
     throws IOException, JsonSyntaxException
   {
-    this.b = ☃;
-    this.a = ☃;
-    this.j = 0.0F;
-    this.k = 0.0F;
-    this.h = ☃.c;
-    this.i = ☃.d;
-    this.c = ☃.toString();
+    b = ☃;
+    a = ☃;
+    j = 0.0F;
+    k = 0.0F;
+    h = c;
+    i = d;
+    c = ☃.toString();
     c();
     
     a(☃, ☃);
@@ -51,7 +51,7 @@ public class blr
     InputStream ☃ = null;
     try
     {
-      bnh ☃ = this.b.a(☃);
+      bnh ☃ = b.a(☃);
       ☃ = ☃.b();
       JsonObject ☃ = ☃.parse(IOUtils.toString(☃, Charsets.UTF_8)).getAsJsonObject();
       int ☃;
@@ -112,16 +112,16 @@ public class blr
   {
     if (ni.a(☃))
     {
-      a(☃.getAsString(), this.h, this.i);
+      a(☃.getAsString(), h, i);
     }
     else
     {
       JsonObject ☃ = ni.l(☃, "target");
       
       String ☃ = ni.h(☃, "name");
-      int ☃ = ni.a(☃, "width", this.h);
-      int ☃ = ni.a(☃, "height", this.i);
-      if (this.e.containsKey(☃)) {
+      int ☃ = ni.a(☃, "width", h);
+      int ☃ = ni.a(☃, "height", i);
+      if (e.containsKey(☃)) {
         throw new kc(☃ + " is already defined");
       }
       a(☃, ☃, ☃);
@@ -164,7 +164,7 @@ public class blr
             jy ☃ = new jy("textures/effect/" + ☃ + ".png");
             try
             {
-              this.b.a(☃);
+              b.a(☃);
             }
             catch (FileNotFoundException ☃)
             {
@@ -189,7 +189,7 @@ public class blr
           }
           else
           {
-            ☃.a(☃, ☃, ☃.a, ☃.b);
+            ☃.a(☃, ☃, a, b);
           }
         }
         catch (Exception ☃)
@@ -228,7 +228,7 @@ public class blr
   {
     JsonObject ☃ = ni.l(☃, "uniform");
     String ☃ = ni.h(☃, "name");
-    blv ☃ = ((bls)this.d.get(this.d.size() - 1)).c().a(☃);
+    blv ☃ = ((bls)d.get(d.size() - 1)).c().a(☃);
     if (☃ == null) {
       throw new kc("Uniform '" + ☃ + "' does not exist");
     }
@@ -269,87 +269,87 @@ public class blr
   
   public bfw a(String ☃)
   {
-    return (bfw)this.e.get(☃);
+    return (bfw)e.get(☃);
   }
   
   public void a(String ☃, int ☃, int ☃)
   {
     bfw ☃ = new bfw(☃, ☃, true);
     ☃.a(0.0F, 0.0F, 0.0F, 0.0F);
-    this.e.put(☃, ☃);
-    if ((☃ == this.h) && (☃ == this.i)) {
-      this.f.add(☃);
+    e.put(☃, ☃);
+    if ((☃ == h) && (☃ == i)) {
+      f.add(☃);
     }
   }
   
   public void a()
   {
-    for (bfw ☃ : this.e.values()) {
+    for (bfw ☃ : e.values()) {
       ☃.a();
     }
-    for (bls ☃ : this.d) {
+    for (bls ☃ : d) {
       ☃.b();
     }
-    this.d.clear();
+    d.clear();
   }
   
   public bls a(String ☃, bfw ☃, bfw ☃)
     throws IOException
   {
-    bls ☃ = new bls(this.b, ☃, ☃, ☃);
-    this.d.add(this.d.size(), ☃);
+    bls ☃ = new bls(b, ☃, ☃, ☃);
+    d.add(d.size(), ☃);
     return ☃;
   }
   
   private void c()
   {
-    this.g = new Matrix4f();
-    this.g.setIdentity();
-    this.g.m00 = (2.0F / this.a.a);
-    this.g.m11 = (2.0F / -this.a.b);
-    this.g.m22 = -0.0020001999F;
-    this.g.m33 = 1.0F;
-    this.g.m03 = -1.0F;
-    this.g.m13 = 1.0F;
-    this.g.m23 = -1.0001999F;
+    g = new Matrix4f();
+    g.setIdentity();
+    g.m00 = (2.0F / a.a);
+    g.m11 = (2.0F / -a.b);
+    g.m22 = -0.0020001999F;
+    g.m33 = 1.0F;
+    g.m03 = -1.0F;
+    g.m13 = 1.0F;
+    g.m23 = -1.0001999F;
   }
   
   public void a(int ☃, int ☃)
   {
-    this.h = this.a.a;
-    this.i = this.a.b;
+    h = a.a;
+    i = a.b;
     c();
-    for (bls ☃ : this.d) {
-      ☃.a(this.g);
+    for (bls ☃ : d) {
+      ☃.a(g);
     }
-    for (bfw ☃ : this.f) {
+    for (bfw ☃ : f) {
       ☃.a(☃, ☃);
     }
   }
   
   public void a(float ☃)
   {
-    if (☃ < this.k)
+    if (☃ < k)
     {
-      this.j += 1.0F - this.k;
-      this.j += ☃;
+      j += 1.0F - k;
+      j += ☃;
     }
     else
     {
-      this.j += ☃ - this.k;
+      j += ☃ - k;
     }
-    this.k = ☃;
-    while (this.j > 20.0F) {
-      this.j -= 20.0F;
+    k = ☃;
+    while (j > 20.0F) {
+      j -= 20.0F;
     }
-    for (bls ☃ : this.d) {
-      ☃.a(this.j / 20.0F);
+    for (bls ☃ : d) {
+      ☃.a(j / 20.0F);
     }
   }
   
   public final String b()
   {
-    return this.c;
+    return c;
   }
   
   private bfw b(String ☃)
@@ -358,8 +358,8 @@ public class blr
       return null;
     }
     if (☃.equals("minecraft:main")) {
-      return this.a;
+      return a;
     }
-    return (bfw)this.e.get(☃);
+    return (bfw)e.get(☃);
   }
 }

@@ -10,7 +10,7 @@ public abstract class qx
   
   public qx(ps ☃)
   {
-    this.a = ☃;
+    a = ☃;
     if (!(☃.s() instanceof sv)) {
       throw new IllegalArgumentException("Unsupported mob type for DoorInteractGoal");
     }
@@ -18,10 +18,10 @@ public abstract class qx
   
   public boolean a()
   {
-    if (!this.a.D) {
+    if (!a.D) {
       return false;
     }
-    sv ☃ = (sv)this.a.s();
+    sv ☃ = (sv)a.s();
     asx ☃ = ☃.j();
     if ((☃ == null) || (☃.b()) || (!☃.g())) {
       return false;
@@ -29,45 +29,45 @@ public abstract class qx
     for (int ☃ = 0; ☃ < Math.min(☃.e() + 2, ☃.d()); ☃++)
     {
       asv ☃ = ☃.a(☃);
-      this.b = new cj(☃.a, ☃.b + 1, ☃.c);
-      if (this.a.e(this.b.n(), this.a.t, this.b.p()) <= 2.25D)
+      b = new cj(a, b + 1, c);
+      if (a.e(b.n(), a.t, b.p()) <= 2.25D)
       {
-        this.c = a(this.b);
-        if (this.c != null) {
+        c = a(b);
+        if (c != null) {
           return true;
         }
       }
     }
-    this.b = new cj(this.a).a();
-    this.c = a(this.b);
-    return this.c != null;
+    b = new cj(a).a();
+    c = a(b);
+    return c != null;
   }
   
   public boolean b()
   {
-    return !this.d;
+    return !d;
   }
   
   public void c()
   {
-    this.d = false;
-    this.e = ((float)(this.b.n() + 0.5F - this.a.s));
-    this.f = ((float)(this.b.p() + 0.5F - this.a.u));
+    d = false;
+    e = ((float)(b.n() + 0.5F - a.s));
+    f = ((float)(b.p() + 0.5F - a.u));
   }
   
   public void e()
   {
-    float ☃ = (float)(this.b.n() + 0.5F - this.a.s);
-    float ☃ = (float)(this.b.p() + 0.5F - this.a.u);
-    float ☃ = this.e * ☃ + this.f * ☃;
+    float ☃ = (float)(b.n() + 0.5F - a.s);
+    float ☃ = (float)(b.p() + 0.5F - a.u);
+    float ☃ = e * ☃ + f * ☃;
     if (☃ < 0.0F) {
-      this.d = true;
+      d = true;
     }
   }
   
   private agh a(cj ☃)
   {
-    afh ☃ = this.a.o.p(☃).c();
+    afh ☃ = a.o.p(☃).c();
     if (((☃ instanceof agh)) && (☃.t() == arm.d)) {
       return (agh)☃;
     }

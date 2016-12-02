@@ -9,14 +9,14 @@ class bj$a
   
   bj$a(double ☃, double ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   double a(a ☃)
   {
-    double ☃ = this.a - ☃.a;
-    double ☃ = this.b - ☃.b;
+    double ☃ = a - a;
+    double ☃ = b - b;
     
     return Math.sqrt(☃ * ☃ + ☃ * ☃);
   }
@@ -24,42 +24,42 @@ class bj$a
   void a()
   {
     double ☃ = b();
-    this.a /= ☃;
-    this.b /= ☃;
+    a /= ☃;
+    b /= ☃;
   }
   
   float b()
   {
-    return ns.a(this.a * this.a + this.b * this.b);
+    return ns.a(a * a + b * b);
   }
   
   public void b(a ☃)
   {
-    this.a -= ☃.a;
-    this.b -= ☃.b;
+    a -= a;
+    b -= b;
   }
   
   public boolean a(double ☃, double ☃, double ☃, double ☃)
   {
     boolean ☃ = false;
-    if (this.a < ☃)
+    if (a < ☃)
     {
-      this.a = ☃;
+      a = ☃;
       ☃ = true;
     }
-    else if (this.a > ☃)
+    else if (a > ☃)
     {
-      this.a = ☃;
+      a = ☃;
       ☃ = true;
     }
-    if (this.b < ☃)
+    if (b < ☃)
     {
-      this.b = ☃;
+      b = ☃;
       ☃ = true;
     }
-    else if (this.b > ☃)
+    else if (b > ☃)
     {
-      this.b = ☃;
+      b = ☃;
       ☃ = true;
     }
     return ☃;
@@ -67,7 +67,7 @@ class bj$a
   
   public int a(adm ☃)
   {
-    cj ☃ = new cj(this.a, 256.0D, this.b);
+    cj ☃ = new cj(a, 256.0D, b);
     while (☃.o() > 0)
     {
       ☃ = ☃.b();
@@ -80,7 +80,7 @@ class bj$a
   
   public boolean b(adm ☃)
   {
-    cj ☃ = new cj(this.a, 256.0D, this.b);
+    cj ☃ = new cj(a, 256.0D, b);
     while (☃.o() > 0)
     {
       ☃ = ☃.b();
@@ -95,7 +95,7 @@ class bj$a
   
   public void a(Random ☃, double ☃, double ☃, double ☃, double ☃)
   {
-    this.a = ns.a(☃, ☃, ☃);
-    this.b = ns.a(☃, ☃, ☃);
+    a = ns.a(☃, ☃, ☃);
+    b = ns.a(☃, ☃, ☃);
   }
 }

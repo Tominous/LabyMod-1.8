@@ -11,25 +11,25 @@ public class hp
   
   public hp(float ☃, int ☃, float ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.readFloat();
-    this.b = ☃.e();
-    this.c = ☃.readFloat();
+    a = ☃.readFloat();
+    b = ☃.e();
+    c = ☃.readFloat();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeFloat(this.a);
-    ☃.b(this.b);
-    ☃.writeFloat(this.c);
+    ☃.writeFloat(a);
+    ☃.b(b);
+    ☃.writeFloat(c);
   }
   
   public void a(fj ☃)
@@ -39,16 +39,16 @@ public class hp
   
   public float a()
   {
-    return this.a;
+    return a;
   }
   
   public int b()
   {
-    return this.b;
+    return b;
   }
   
   public float c()
   {
-    return this.c;
+    return c;
   }
 }

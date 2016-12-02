@@ -10,13 +10,13 @@ public class sx
   
   public asx a(cj ☃)
   {
-    this.f = ☃;
+    f = ☃;
     return super.a(☃);
   }
   
   public asx a(pk ☃)
   {
-    this.f = new cj(☃);
+    f = new cj(☃);
     return super.a(☃);
   }
   
@@ -26,8 +26,8 @@ public class sx
     if (☃ != null) {
       return a(☃, ☃);
     }
-    this.f = new cj(☃);
-    this.e = ☃;
+    f = new cj(☃);
+    e = ☃;
     return true;
   }
   
@@ -35,13 +35,13 @@ public class sx
   {
     if (m())
     {
-      if (this.f != null)
+      if (f != null)
       {
-        double ☃ = this.b.J * this.b.J;
-        if ((this.b.c(this.f) < ☃) || ((this.b.t > this.f.o()) && (this.b.c(new cj(this.f.n(), ns.c(this.b.t), this.f.p())) < ☃))) {
-          this.f = null;
+        double ☃ = b.J * b.J;
+        if ((b.c(f) < ☃) || ((b.t > f.o()) && (b.c(new cj(f.n(), ns.c(b.t), f.p())) < ☃))) {
+          f = null;
         } else {
-          this.b.q().a(this.f.n(), this.f.o(), this.f.p(), this.e);
+          b.q().a(f.n(), f.o(), f.p(), e);
         }
       }
       return;

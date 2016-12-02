@@ -15,7 +15,7 @@ public class VersionCheckThread
       URL url = new URL("http://optifine.net/version/1.8.8/HD_U.txt");
       
       conn = (HttpURLConnection)url.openConnection();
-      if (Config.getGameSettings().r)
+      if (getGameSettingsr)
       {
         conn.setRequestProperty("OF-MC-Version", "1.8.8");
         conn.setRequestProperty("OF-MC-Brand", "" + ClientBrandRetriever.getClientModName());

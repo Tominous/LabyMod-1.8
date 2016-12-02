@@ -46,12 +46,12 @@ public class bhg
     bfl.b(☃, 0.0F, 1.0F, 0.0F);
     bfl.b(-0.5F, -0.5F, -0.5F);
     
-    float ☃ = ☃.f + (☃.a - ☃.f) * ☃;
+    float ☃ = f + (a - f) * ☃;
     ☃ = 1.0F - ☃;
     ☃ = 1.0F - ☃ * ☃ * ☃;
     
-    this.d.a.f = (-(☃ * 3.1415927F / 2.0F));
-    this.d.a();
+    d.a.f = (-(☃ * 3.1415927F / 2.0F));
+    d.a();
     bfl.C();
     bfl.F();
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);

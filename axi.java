@@ -37,36 +37,36 @@ public class axi
   
   public axi(axu p_i1033_1_, bde p_i1033_2_)
   {
-    this.a = p_i1033_1_;
-    this.f = p_i1033_2_;
+    a = p_i1033_1_;
+    f = p_i1033_2_;
   }
   
   public void e()
   {
-    this.h.a();
-    this.g.a();
-    this.serverAutocommand.a();
+    h.a();
+    g.a();
+    serverAutocommand.a();
   }
   
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    this.n.clear();
-    this.n.add(new avs(0, this.l / 2 - 100, this.m / 4 + 96 + 18 + 22, bnq.a("addServer.add", new Object[0])));
-    this.n.add(new avs(1, this.l / 2 - 100, this.m / 4 + 120 + 18 + 22, bnq.a("gui.cancel", new Object[0])));
-    this.n.add(this.i = new avs(2, this.l / 2 - 100, this.m / 4 + 92 + 20, bnq.a("addServer.resourcePack", new Object[0]) + ": " + this.f.b().a().d()));
-    this.h = new avw(0, this.q, this.l / 2 - 100, 66, 200, 20);
-    this.h.b(true);
-    this.h.a(this.f.a);
-    this.g = new avw(1, this.q, this.l / 2 - 100, 106, 200, 20);
-    this.g.f(128);
-    this.g.a(this.f.b);
-    this.g.a(this.r);
-    ((avs)this.n.get(0)).l = ((this.g.b().length() > 0) && (this.g.b().split(":").length > 0) && (this.h.b().length() > 0));
-    this.serverAutocommand = new avw(1, this.q, this.l / 2 - 100, 146, 200, 20);
-    this.serverAutocommand.f(128);
-    this.serverAutocommand.a("/" + this.f.serverCommand);
-    ((avs)this.n.get(0)).l = ((this.serverAutocommand.b().length() > 0) && (this.serverAutocommand.b().split(":").length > 0) && (this.serverAutocommand.b().length() > 0));
+    n.clear();
+    n.add(new avs(0, l / 2 - 100, m / 4 + 96 + 18 + 22, bnq.a("addServer.add", new Object[0])));
+    n.add(new avs(1, l / 2 - 100, m / 4 + 120 + 18 + 22, bnq.a("gui.cancel", new Object[0])));
+    n.add(i = new avs(2, l / 2 - 100, m / 4 + 92 + 20, bnq.a("addServer.resourcePack", new Object[0]) + ": " + f.b().a().d()));
+    h = new avw(0, q, l / 2 - 100, 66, 200, 20);
+    h.b(true);
+    h.a(f.a);
+    g = new avw(1, q, l / 2 - 100, 106, 200, 20);
+    g.f(128);
+    g.a(f.b);
+    g.a(r);
+    n.get(0)).l = ((g.b().length() > 0) && (g.b().split(":").length > 0) && (h.b().length() > 0));
+    serverAutocommand = new avw(1, q, l / 2 - 100, 146, 200, 20);
+    serverAutocommand.f(128);
+    serverAutocommand.a("/" + f.serverCommand);
+    n.get(0)).l = ((serverAutocommand.b().length() > 0) && (serverAutocommand.b().split(":").length > 0) && (serverAutocommand.b().length() > 0));
   }
   
   public void m()
@@ -77,22 +77,22 @@ public class axi
   protected void a(avs button)
     throws IOException
   {
-    if (button.l) {
-      if (button.k == 2)
+    if (l) {
+      if (k == 2)
       {
-        this.f.a(bde.a.values()[((this.f.b().ordinal() + 1) % bde.a.values().length)]);
-        this.i.j = (bnq.a("addServer.resourcePack", new Object[0]) + ": " + this.f.b().a().d());
+        f.a(bde.a.values()[((f.b().ordinal() + 1) % bde.a.values().length)]);
+        i.j = (bnq.a("addServer.resourcePack", new Object[0]) + ": " + f.b().a().d());
       }
-      else if (button.k == 1)
+      else if (k == 1)
       {
-        this.a.a(false, 0);
+        a.a(false, 0);
       }
-      else if (button.k == 0)
+      else if (k == 0)
       {
-        this.f.a = this.h.b();
-        this.f.b = this.g.b();
-        this.f.serverCommand = this.serverAutocommand.b().replace("/", "");
-        this.a.a(true, 0);
+        f.a = h.b();
+        f.b = g.b();
+        f.serverCommand = serverAutocommand.b().replace("/", "");
+        a.a(true, 0);
       }
     }
   }
@@ -100,56 +100,56 @@ public class axi
   protected void a(char typedChar, int keyCode)
     throws IOException
   {
-    this.h.a(typedChar, keyCode);
-    this.g.a(typedChar, keyCode);
-    if ((this.serverAutocommand.a(typedChar, keyCode)) && 
-      (!this.serverAutocommand.b().startsWith("/"))) {
-      this.serverAutocommand.a("/" + this.serverAutocommand.b());
+    h.a(typedChar, keyCode);
+    g.a(typedChar, keyCode);
+    if ((serverAutocommand.a(typedChar, keyCode)) && 
+      (!serverAutocommand.b().startsWith("/"))) {
+      serverAutocommand.a("/" + serverAutocommand.b());
     }
     if (keyCode == 15) {
-      if (this.h.m())
+      if (h.m())
       {
-        this.h.b(false);
-        this.g.b(true);
+        h.b(false);
+        g.b(true);
       }
-      else if (this.g.m())
+      else if (g.m())
       {
-        this.g.b(false);
-        this.serverAutocommand.b(true);
+        g.b(false);
+        serverAutocommand.b(true);
       }
-      else if (this.serverAutocommand.m())
+      else if (serverAutocommand.m())
       {
-        this.serverAutocommand.b(false);
-        this.h.b(true);
+        serverAutocommand.b(false);
+        h.b(true);
       }
     }
     if ((keyCode == 28) || (keyCode == 156)) {
-      a((avs)this.n.get(0));
+      a((avs)n.get(0));
     }
-    ((avs)this.n.get(0)).l = ((this.g.b().length() > 0) && (this.g.b().split(":").length > 0) && (this.h.b().length() > 0));
+    n.get(0)).l = ((g.b().length() > 0) && (g.b().split(":").length > 0) && (h.b().length() > 0));
   }
   
   protected void a(int mouseX, int mouseY, int mouseButton)
     throws IOException
   {
     super.a(mouseX, mouseY, mouseButton);
-    this.g.a(mouseX, mouseY, mouseButton);
-    this.h.a(mouseX, mouseY, mouseButton);
-    this.serverAutocommand.a(mouseX, mouseY, mouseButton);
+    g.a(mouseX, mouseY, mouseButton);
+    h.a(mouseX, mouseY, mouseButton);
+    serverAutocommand.a(mouseX, mouseY, mouseButton);
   }
   
   public void a(int mouseX, int mouseY, float partialTicks)
   {
     c();
-    a(this.q, bnq.a("addServer.title", new Object[0]), this.l / 2, 17, 16777215);
-    c(this.q, bnq.a("addServer.enterName", new Object[0]), this.l / 2 - 100, 53, 10526880);
-    c(this.q, bnq.a("addServer.enterIp", new Object[0]), this.l / 2 - 100, 94, 10526880);
-    c(this.q, "Autocommand:", this.l / 2 - 100, 134, 10526880);
-    this.h.g();
-    this.g.g();
-    this.serverAutocommand.g();
-    if (this.serverAutocommand.b().replace("/", "").isEmpty()) {
-      c(this.q, Color.cl("c") + "No command defined", this.l / 2 - 50, 152, 10526880);
+    a(q, bnq.a("addServer.title", new Object[0]), l / 2, 17, 16777215);
+    c(q, bnq.a("addServer.enterName", new Object[0]), l / 2 - 100, 53, 10526880);
+    c(q, bnq.a("addServer.enterIp", new Object[0]), l / 2 - 100, 94, 10526880);
+    c(q, "Autocommand:", l / 2 - 100, 134, 10526880);
+    h.g();
+    g.g();
+    serverAutocommand.g();
+    if (serverAutocommand.b().replace("/", "").isEmpty()) {
+      c(q, Color.cl("c") + "No command defined", l / 2 - 50, 152, 10526880);
     }
     super.a(mouseX, mouseY, partialTicks);
   }

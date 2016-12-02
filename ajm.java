@@ -19,7 +19,7 @@ public class ajm
   protected ajm()
   {
     super(arm.q);
-    j(this.M.b().a(a, cq.c).a(b, Boolean.valueOf(false)));
+    j(M.b().a(a, cq.c).a(b, Boolean.valueOf(false)));
     a(0.25F, 0.0F, 0.25F, 0.75F, 0.5F, 0.75F);
   }
   
@@ -94,7 +94,7 @@ public class ajm
   
   public void a(adm ☃, cj ☃, alz ☃, wn ☃)
   {
-    if (☃.bA.d)
+    if (bA.d)
     {
       ☃ = ☃.a(b, Boolean.valueOf(true));
       ☃.a(☃, ☃, 4);
@@ -104,7 +104,7 @@ public class ajm
   
   public void b(adm ☃, cj ☃, alz ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     if (!((Boolean)☃.b(b)).booleanValue())
@@ -136,7 +136,7 @@ public class ajm
   
   public boolean b(adm ☃, cj ☃, zx ☃)
   {
-    if ((☃.i() == 1) && (☃.o() >= 2) && (☃.aa() != oj.a) && (!☃.D)) {
+    if ((☃.i() == 1) && (☃.o() >= 2) && (☃.aa() != oj.a) && (!D)) {
       return l().a(☃, ☃) != null;
     }
     return false;
@@ -144,7 +144,7 @@ public class ajm
   
   public void a(adm ☃, cj ☃, alo ☃)
   {
-    if ((☃.c() != 1) || (☃.o() < 2) || (☃.aa() == oj.a) || (☃.D)) {
+    if ((☃.c() != 1) || (☃.o() < 2) || (☃.aa() == oj.a) || (D)) {
       return;
     }
     amd ☃ = n();
@@ -169,14 +169,14 @@ public class ajm
     uk ☃ = new uk(☃);
     cj ☃ = ☃.a(1, 2, 0).d();
     ☃.b(☃.n() + 0.5D, ☃.o() + 0.55D, ☃.p() + 0.5D, ☃.b().k() == cq.a.a ? 0.0F : 90.0F, 0.0F);
-    ☃.aI = (☃.b().k() == cq.a.a ? 0.0F : 90.0F);
+    aI = (☃.b().k() == cq.a.a ? 0.0F : 90.0F);
     ☃.n();
     for (wn ☃ : ☃.a(wn.class, ☃.aR().b(50.0D, 50.0D, 50.0D))) {
       ☃.b(mr.I);
     }
     ☃.d(☃);
     for (int ☃ = 0; ☃ < 120; ☃++) {
-      ☃.a(cy.F, ☃.n() + ☃.s.nextDouble(), ☃.o() - 2 + ☃.s.nextDouble() * 3.9D, ☃.p() + ☃.s.nextDouble(), 0.0D, 0.0D, 0.0D, new int[0]);
+      ☃.a(cy.F, ☃.n() + s.nextDouble(), ☃.o() - 2 + s.nextDouble() * 3.9D, ☃.p() + s.nextDouble(), 0.0D, 0.0D, 0.0D, new int[0]);
     }
     for (int ☃ = 0; ☃ < ☃.c(); ☃++) {
       for (int ☃ = 0; ☃ < ☃.b(); ☃++)
@@ -210,17 +210,17 @@ public class ajm
   
   protected amd l()
   {
-    if (this.O == null) {
-      this.O = ame.a().a(new String[] { "   ", "###", "~#~" }).a('#', amc.a(amh.a(afi.aW))).a('~', amc.a(amh.a(afi.a))).b();
+    if (O == null) {
+      O = ame.a().a(new String[] { "   ", "###", "~#~" }).a('#', amc.a(amh.a(afi.aW))).a('~', amc.a(amh.a(afi.a))).b();
     }
-    return this.O;
+    return O;
   }
   
   protected amd n()
   {
-    if (this.P == null) {
-      this.P = ame.a().a(new String[] { "^^^", "###", "~#~" }).a('#', amc.a(amh.a(afi.aW))).a('^', N).a('~', amc.a(amh.a(afi.a))).b();
+    if (P == null) {
+      P = ame.a().a(new String[] { "^^^", "###", "~#~" }).a('#', amc.a(amh.a(afi.aW))).a('^', N).a('~', amc.a(amh.a(afi.a))).b();
     }
-    return this.P;
+    return P;
   }
 }

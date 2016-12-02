@@ -5,31 +5,31 @@ public class bev
   
   public bev(avh ☃)
   {
-    this.e = ☃;
+    e = ☃;
   }
   
   public void a()
   {
-    this.a = 0.0F;
-    this.b = 0.0F;
-    if (this.e.X.d()) {
-      this.b += 1.0F;
+    a = 0.0F;
+    b = 0.0F;
+    if (e.X.d()) {
+      b += 1.0F;
     }
-    if (this.e.Z.d()) {
-      this.b -= 1.0F;
+    if (e.Z.d()) {
+      b -= 1.0F;
     }
-    if (this.e.Y.d()) {
-      this.a += 1.0F;
+    if (e.Y.d()) {
+      a += 1.0F;
     }
-    if (this.e.aa.d()) {
-      this.a -= 1.0F;
+    if (e.aa.d()) {
+      a -= 1.0F;
     }
-    this.c = this.e.ab.d();
-    this.d = this.e.ac.d();
-    if (this.d)
+    c = e.ab.d();
+    d = e.ac.d();
+    if (d)
     {
-      this.a = ((float)(this.a * 0.3D));
-      this.b = ((float)(this.b * 0.3D));
+      a = ((float)(a * 0.3D));
+      b = ((float)(b * 0.3D));
     }
   }
 }

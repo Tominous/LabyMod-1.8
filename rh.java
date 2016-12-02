@@ -9,25 +9,25 @@ public class rh
   
   public rh(ps ☃, float ☃)
   {
-    this.a = ☃;
-    this.c = ☃;
+    a = ☃;
+    c = ☃;
     a(5);
   }
   
   public boolean a()
   {
-    this.b = this.a.u();
-    if (this.b == null) {
+    b = a.u();
+    if (b == null) {
       return false;
     }
-    double ☃ = this.a.h(this.b);
+    double ☃ = a.h(b);
     if ((☃ < 4.0D) || (☃ > 16.0D)) {
       return false;
     }
-    if (!this.a.C) {
+    if (!a.C) {
       return false;
     }
-    if (this.a.bc().nextInt(5) != 0) {
+    if (a.bc().nextInt(5) != 0) {
       return false;
     }
     return true;
@@ -35,16 +35,16 @@ public class rh
   
   public boolean b()
   {
-    return !this.a.C;
+    return !a.C;
   }
   
   public void c()
   {
-    double ☃ = this.b.s - this.a.s;
-    double ☃ = this.b.u - this.a.u;
+    double ☃ = b.s - a.s;
+    double ☃ = b.u - a.u;
     float ☃ = ns.a(☃ * ☃ + ☃ * ☃);
-    this.a.v += ☃ / ☃ * 0.5D * 0.800000011920929D + this.a.v * 0.20000000298023224D;
-    this.a.x += ☃ / ☃ * 0.5D * 0.800000011920929D + this.a.x * 0.20000000298023224D;
-    this.a.w = this.c;
+    a.v += ☃ / ☃ * 0.5D * 0.800000011920929D + a.v * 0.20000000298023224D;
+    a.x += ☃ / ☃ * 0.5D * 0.800000011920929D + a.x * 0.20000000298023224D;
+    a.w = c;
   }
 }

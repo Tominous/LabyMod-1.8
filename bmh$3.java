@@ -10,6 +10,6 @@ class bmh$3
   public String a()
     throws Exception
   {
-    return this.val$var29.k() + " frames";
+    return val$var29.k() + " frames";
   }
 }

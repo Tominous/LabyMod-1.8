@@ -47,16 +47,16 @@ public class avn
   
   public avn(avh p_i1035_1_, jy p_i1035_2_, bmj p_i1035_3_, boolean p_i1035_4_)
   {
-    this.gameSettings = p_i1035_1_;
-    this.locationFontTextureBase = p_i1035_2_;
+    gameSettings = p_i1035_1_;
+    locationFontTextureBase = p_i1035_2_;
     
-    this.g = p_i1035_2_;
-    this.h = p_i1035_3_;
-    this.k = p_i1035_4_;
+    g = p_i1035_2_;
+    h = p_i1035_3_;
+    k = p_i1035_4_;
     
-    this.g = getHdFontLocation(this.locationFontTextureBase);
+    g = getHdFontLocation(locationFontTextureBase);
     
-    bindTexture(this.g);
+    bindTexture(g);
     for (int var5 = 0; var5 < 32; var5++)
     {
       int var6 = (var5 >> 3 & 0x1) * 85;
@@ -66,7 +66,7 @@ public class avn
       if (var5 == 6) {
         var7 += 85;
       }
-      if (p_i1035_1_.e)
+      if (e)
       {
         int var10 = (var7 * 30 + var8 * 59 + var9 * 11) / 100;
         int var11 = (var7 * 30 + var8 * 70) / 100;
@@ -81,14 +81,14 @@ public class avn
         var8 /= 4;
         var9 /= 4;
       }
-      this.f[var5] = ((var7 & 0xFF) << 16 | (var8 & 0xFF) << 8 | var9 & 0xFF);
+      f[var5] = ((var7 & 0xFF) << 16 | (var8 & 0xFF) << 8 | var9 & 0xFF);
     }
     d();
   }
   
   public void a(bni resourceManager)
   {
-    this.g = getHdFontLocation(this.locationFontTextureBase);
+    g = getHdFontLocation(locationFontTextureBase);
     for (int i = 0; i < c.length; i++) {
       c[i] = null;
     }
@@ -102,7 +102,7 @@ public class avn
     BufferedImage bufferedimage;
     try
     {
-      bufferedimage = bml.a(getResourceInputStream(this.g));
+      bufferedimage = bml.a(getResourceInputStream(g));
     }
     catch (IOException var17)
     {
@@ -115,7 +115,7 @@ public class avn
     int charH = imgHeight / 16;
     
     float kx = imgWidth / 128.0F;
-    this.scaleFactor = kx;
+    scaleFactor = kx;
     
     int[] ai = new int[imgWidth * imgHeight];
     bufferedimage.getRGB(0, 0, imgWidth, imgHeight, ai, 0, imgWidth);
@@ -151,7 +151,7 @@ public class avn
           px = (int)(1.5F * kx);
         }
       }
-      this.d[k] = ((px + 1) / kx + 1.0F);
+      d[k] = ((px + 1) / kx + 1.0F);
     }
     readCustomCharWidths();
   }
@@ -163,7 +163,7 @@ public class avn
     {
       var1 = getResourceInputStream(new jy("font/glyph_sizes.bin"));
       
-      var1.read(this.e);
+      var1.read(e);
     }
     catch (IOException var6)
     {
@@ -178,10 +178,10 @@ public class avn
   private float a(char p_78278_2_, boolean p_78278_3_)
   {
     if (p_78278_2_ == ' ') {
-      return this.d[p_78278_2_];
+      return d[p_78278_2_];
     }
     int var3 = "ÀÁÂÈÊËÍÓÔÕÚßãõğİıŒœŞşŴŵžȇ\000\000\000\000\000\000\000 !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\000ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αβΓπΣσμτΦΘΩδ∞∅∈∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■\000".indexOf(p_78278_2_);
-    return (var3 != -1) && (!this.k) ? a(var3, p_78278_3_) : b(p_78278_2_, p_78278_3_);
+    return (var3 != -1) && (!k) ? a(var3, p_78278_3_) : b(p_78278_2_, p_78278_3_);
   }
   
   private float a(int p_78266_1_, boolean p_78266_2_)
@@ -190,19 +190,19 @@ public class avn
     int var4 = p_78266_1_ / 16 * 8;
     int var5 = p_78266_2_ ? 1 : 0;
     
-    bindTexture(this.g);
-    float var6 = this.d[p_78266_1_];
+    bindTexture(g);
+    float var6 = d[p_78266_1_];
     
     float var7 = 7.99F;
     GL11.glBegin(5);
     GL11.glTexCoord2f(var3 / 128.0F, var4 / 128.0F);
-    GL11.glVertex3f(this.i + var5, this.j, 0.0F);
+    GL11.glVertex3f(i + var5, j, 0.0F);
     GL11.glTexCoord2f(var3 / 128.0F, (var4 + 7.99F) / 128.0F);
-    GL11.glVertex3f(this.i - var5, this.j + 7.99F, 0.0F);
+    GL11.glVertex3f(i - var5, j + 7.99F, 0.0F);
     GL11.glTexCoord2f((var3 + var7 - 1.0F) / 128.0F, var4 / 128.0F);
-    GL11.glVertex3f(this.i + var7 - 1.0F + var5, this.j, 0.0F);
+    GL11.glVertex3f(i + var7 - 1.0F + var5, j, 0.0F);
     GL11.glTexCoord2f((var3 + var7 - 1.0F) / 128.0F, (var4 + 7.99F) / 128.0F);
-    GL11.glVertex3f(this.i + var7 - 1.0F - var5, this.j + 7.99F, 0.0F);
+    GL11.glVertex3f(i + var7 - 1.0F - var5, j + 7.99F, 0.0F);
     GL11.glEnd();
     return var6;
   }
@@ -225,13 +225,13 @@ public class avn
   
   private float b(char p_78277_1_, boolean p_78277_2_)
   {
-    if (this.e[p_78277_1_] == 0) {
+    if (e[p_78277_1_] == 0) {
       return 0.0F;
     }
     int var3 = p_78277_1_ / 'Ā';
     b(var3);
-    int var4 = this.e[p_78277_1_] >>> 4;
-    int var5 = this.e[p_78277_1_] & 0xF;
+    int var4 = e[p_78277_1_] >>> 4;
+    int var5 = e[p_78277_1_] & 0xF;
     
     var4 &= 0xF;
     
@@ -243,13 +243,13 @@ public class avn
     float var11 = p_78277_2_ ? 1.0F : 0.0F;
     GL11.glBegin(5);
     GL11.glTexCoord2f(var8 / 256.0F, var9 / 256.0F);
-    GL11.glVertex3f(this.i + var11, this.j, 0.0F);
+    GL11.glVertex3f(i + var11, j, 0.0F);
     GL11.glTexCoord2f(var8 / 256.0F, (var9 + 15.98F) / 256.0F);
-    GL11.glVertex3f(this.i - var11, this.j + 7.99F, 0.0F);
+    GL11.glVertex3f(i - var11, j + 7.99F, 0.0F);
     GL11.glTexCoord2f((var8 + var10) / 256.0F, var9 / 256.0F);
-    GL11.glVertex3f(this.i + var10 / 2.0F + var11, this.j, 0.0F);
+    GL11.glVertex3f(i + var10 / 2.0F + var11, j, 0.0F);
     GL11.glTexCoord2f((var8 + var10) / 256.0F, (var9 + 15.98F) / 256.0F);
-    GL11.glVertex3f(this.i + var10 / 2.0F - var11, this.j + 7.99F, 0.0F);
+    GL11.glVertex3f(i + var10 / 2.0F - var11, j + 7.99F, 0.0F);
     GL11.glEnd();
     return (var7 - var6) / 2.0F + 1.0F;
   }
@@ -261,7 +261,7 @@ public class avn
   
   public int a(String text, int x, int y, int color)
   {
-    if (!this.enabled) {
+    if (!enabled) {
       return 0;
     }
     return a(text, x, y, color, false);
@@ -299,11 +299,11 @@ public class avn
   
   private void e()
   {
-    this.r = false;
-    this.s = false;
-    this.t = false;
-    this.u = false;
-    this.v = false;
+    r = false;
+    s = false;
+    t = false;
+    u = false;
+    v = false;
   }
   
   private void a(String p_78255_1_, boolean p_78255_2_)
@@ -316,136 +316,136 @@ public class avn
         int var5 = "0123456789abcdefklmnor".indexOf(p_78255_1_.toLowerCase().charAt(var3 + 1));
         if (var5 < 16)
         {
-          this.r = false;
-          this.s = false;
-          this.v = false;
-          this.u = false;
-          this.t = false;
+          r = false;
+          s = false;
+          v = false;
+          u = false;
+          t = false;
           if ((var5 < 0) || (var5 > 15)) {
             var5 = 15;
           }
           if (p_78255_2_) {
             var5 += 16;
           }
-          int var6 = this.f[var5];
+          int var6 = f[var5];
           if (Config.isCustomColors()) {
             var6 = CustomColorizer.getTextColor(var5, var6);
           }
-          this.q = var6;
+          q = var6;
           
-          setColor((var6 >> 16) / 255.0F, (var6 >> 8 & 0xFF) / 255.0F, (var6 & 0xFF) / 255.0F, this.p);
+          setColor((var6 >> 16) / 255.0F, (var6 >> 8 & 0xFF) / 255.0F, (var6 & 0xFF) / 255.0F, p);
         }
         else if (var5 == 16)
         {
-          this.r = true;
+          r = true;
         }
         else if (var5 == 17)
         {
-          this.s = true;
+          s = true;
         }
         else if (var5 == 18)
         {
-          this.v = true;
+          v = true;
         }
         else if (var5 == 19)
         {
-          this.u = true;
+          u = true;
         }
         else if (var5 == 20)
         {
-          this.t = true;
+          t = true;
         }
         else if (var5 == 21)
         {
-          this.r = false;
-          this.s = false;
-          this.v = false;
-          this.u = false;
-          this.t = false;
+          r = false;
+          s = false;
+          v = false;
+          u = false;
+          t = false;
           
-          setColor(this.m, this.n, this.o, this.p);
+          setColor(m, n, o, p);
         }
         var3++;
       }
       else
       {
         int var5 = "ÀÁÂÈÊËÍÓÔÕÚßãõğİıŒœŞşŴŵžȇ\000\000\000\000\000\000\000 !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\000ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αβΓπΣσμτΦΘΩδ∞∅∈∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■\000".indexOf(var4);
-        if ((this.r) && (var5 != -1))
+        if ((r) && (var5 != -1))
         {
           int var6 = a(var4);
           char var7;
           do
           {
-            var5 = this.b.nextInt("ÀÁÂÈÊËÍÓÔÕÚßãõğİıŒœŞşŴŵžȇ\000\000\000\000\000\000\000 !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\000ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αβΓπΣσμτΦΘΩδ∞∅∈∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■\000".length());
+            var5 = b.nextInt("ÀÁÂÈÊËÍÓÔÕÚßãõğİıŒœŞşŴŵžȇ\000\000\000\000\000\000\000 !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\000ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αβΓπΣσμτΦΘΩδ∞∅∈∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■\000".length());
             var7 = "ÀÁÂÈÊËÍÓÔÕÚßãõğİıŒœŞşŴŵžȇ\000\000\000\000\000\000\000 !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\000ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αβΓπΣσμτΦΘΩδ∞∅∈∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■\000".charAt(var5);
           } while (var6 != a(var7));
           var4 = var7;
         }
-        float var12 = this.k ? 0.5F : 1.0F / this.scaleFactor;
-        boolean var13 = ((var4 == 0) || (var5 == -1) || (this.k)) && (p_78255_2_);
+        float var12 = k ? 0.5F : 1.0F / scaleFactor;
+        boolean var13 = ((var4 == 0) || (var5 == -1) || (k)) && (p_78255_2_);
         if (var13)
         {
-          this.i -= var12;
-          this.j -= var12;
+          i -= var12;
+          j -= var12;
         }
-        float var8 = a(var4, this.t);
+        float var8 = a(var4, t);
         if (var13)
         {
-          this.i += var12;
-          this.j += var12;
+          i += var12;
+          j += var12;
         }
-        if (this.s)
+        if (s)
         {
-          this.i += var12;
+          i += var12;
           if (var13)
           {
-            this.i -= var12;
-            this.j -= var12;
+            i -= var12;
+            j -= var12;
           }
-          a(var4, this.t);
-          this.i -= var12;
+          a(var4, t);
+          i -= var12;
           if (var13)
           {
-            this.i += var12;
-            this.j += var12;
+            i += var12;
+            j += var12;
           }
           var8 += var12;
         }
-        if (this.v)
+        if (v)
         {
           bfx var9 = bfx.a();
           bfd var10 = var9.c();
           bfl.x();
           var10.a(7, bms.e);
-          var10.b(this.i, this.j + this.a / 2, 0.0D).d();
-          var10.b(this.i + var8, this.j + this.a / 2, 0.0D).d();
-          var10.b(this.i + var8, this.j + this.a / 2 - 1.0F, 0.0D).d();
-          var10.b(this.i, this.j + this.a / 2 - 1.0F, 0.0D).d();
+          var10.b(i, j + a / 2, 0.0D).d();
+          var10.b(i + var8, j + a / 2, 0.0D).d();
+          var10.b(i + var8, j + a / 2 - 1.0F, 0.0D).d();
+          var10.b(i, j + a / 2 - 1.0F, 0.0D).d();
           var9.b();
           bfl.w();
         }
-        if (this.u)
+        if (u)
         {
           bfx var9 = bfx.a();
           bfd var10 = var9.c();
           bfl.x();
           var10.a(7, bms.e);
-          int var11 = this.u ? -1 : 0;
-          var10.b(this.i + var11, this.j + this.a, 0.0D).d();
-          var10.b(this.i + var8, this.j + this.a, 0.0D).d();
-          var10.b(this.i + var8, this.j + this.a - 1.0F, 0.0D).d();
-          var10.b(this.i + var11, this.j + this.a - 1.0F, 0.0D).d();
+          int var11 = u ? -1 : 0;
+          var10.b(i + var11, j + a, 0.0D).d();
+          var10.b(i + var8, j + a, 0.0D).d();
+          var10.b(i + var8, j + a - 1.0F, 0.0D).d();
+          var10.b(i + var11, j + a - 1.0F, 0.0D).d();
           var9.b();
           bfl.w();
         }
-        this.i += var8;
+        i += var8;
       }
     }
   }
   
   private int a(String p_78274_1_, int p_78274_2_, int p_78274_3_, int p_78274_4_, int p_78274_5_, boolean p_78274_6_)
   {
-    if (this.l)
+    if (l)
     {
       int var7 = a(c(p_78274_1_));
       p_78274_2_ = p_78274_2_ + p_78274_4_ - var7;
@@ -458,7 +458,7 @@ public class avn
     if (p_180455_1_ == null) {
       return 0;
     }
-    if (this.l) {
+    if (l) {
       p_180455_1_ = c(p_180455_1_);
     }
     if ((p_180455_4_ & 0xFC000000) == 0) {
@@ -467,16 +467,16 @@ public class avn
     if (p_180455_5_) {
       p_180455_4_ = (p_180455_4_ & 0xFCFCFC) >> 2 | p_180455_4_ & 0xFF000000;
     }
-    this.m = ((p_180455_4_ >> 16 & 0xFF) / 255.0F);
-    this.n = ((p_180455_4_ >> 8 & 0xFF) / 255.0F);
-    this.o = ((p_180455_4_ & 0xFF) / 255.0F);
-    this.p = ((p_180455_4_ >> 24 & 0xFF) / 255.0F);
+    m = ((p_180455_4_ >> 16 & 0xFF) / 255.0F);
+    n = ((p_180455_4_ >> 8 & 0xFF) / 255.0F);
+    o = ((p_180455_4_ & 0xFF) / 255.0F);
+    p = ((p_180455_4_ >> 24 & 0xFF) / 255.0F);
     
-    setColor(this.m, this.n, this.o, this.p);
-    this.i = p_180455_2_;
-    this.j = p_180455_3_;
+    setColor(m, n, o, p);
+    i = p_180455_2_;
+    j = p_180455_3_;
     a(p_180455_1_, p_180455_5_);
-    return (int)this.i;
+    return (int)i;
   }
   
   public int a(String p_78256_1_)
@@ -525,16 +525,16 @@ public class avn
       return -1.0F;
     }
     if (p_78263_1_ == ' ') {
-      return this.d[32];
+      return d[32];
     }
     int var2 = "ÀÁÂÈÊËÍÓÔÕÚßãõğİıŒœŞşŴŵžȇ\000\000\000\000\000\000\000 !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\000ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αβΓπΣσμτΦΘΩδ∞∅∈∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■\000".indexOf(p_78263_1_);
-    if ((p_78263_1_ > 0) && (var2 != -1) && (!this.k)) {
-      return this.d[var2];
+    if ((p_78263_1_ > 0) && (var2 != -1) && (!k)) {
+      return d[var2];
     }
-    if (this.e[p_78263_1_] != 0)
+    if (e[p_78263_1_] != 0)
     {
-      int var3 = this.e[p_78263_1_] >>> 4;
-      int var4 = this.e[p_78263_1_] & 0xF;
+      int var3 = e[p_78263_1_] >>> 4;
+      int var4 = e[p_78263_1_] & 0xF;
       
       var3 &= 0xF;
       
@@ -610,7 +610,7 @@ public class avn
   public void a(String str, int x, int y, int wrapWidth, int textColor)
   {
     e();
-    this.q = textColor;
+    q = textColor;
     str = d(str);
     a(str, x, y, wrapWidth, false);
   }
@@ -618,31 +618,31 @@ public class avn
   private void a(String str, int x, int y, int wrapWidth, boolean addShadow)
   {
     List var6 = c(str, wrapWidth);
-    for (Iterator var7 = var6.iterator(); var7.hasNext(); y += this.a)
+    for (Iterator var7 = var6.iterator(); var7.hasNext(); y += a)
     {
       String var8 = (String)var7.next();
-      a(var8, x, y, wrapWidth, this.q, addShadow);
+      a(var8, x, y, wrapWidth, q, addShadow);
     }
   }
   
   public int b(String p_78267_1_, int p_78267_2_)
   {
-    return this.a * c(p_78267_1_, p_78267_2_).size();
+    return a * c(p_78267_1_, p_78267_2_).size();
   }
   
   public void a(boolean p_78264_1_)
   {
-    this.k = p_78264_1_;
+    k = p_78264_1_;
   }
   
   public boolean a()
   {
-    return this.k;
+    return k;
   }
   
   public void b(boolean p_78275_1_)
   {
-    this.l = p_78275_1_;
+    l = p_78275_1_;
   }
   
   public List c(String str, int wrapWidth)
@@ -749,16 +749,16 @@ public class avn
   
   public boolean b()
   {
-    return this.l;
+    return l;
   }
   
   public int b(char p_175064_1_)
   {
     int index = "0123456789abcdef".indexOf(p_175064_1_);
-    if ((index < 0) || (index >= this.f.length)) {
+    if ((index < 0) || (index >= f.length)) {
       return 16777215;
     }
-    int color = this.f[index];
+    int color = f[index];
     if (Config.isCustomColors()) {
       color = CustomColorizer.getTextColor(index, color);
     }
@@ -774,7 +774,7 @@ public class avn
   
   protected void bindTexture(jy location)
   {
-    this.h.a(location);
+    h.a(location);
   }
   
   protected InputStream getResourceInputStream(jy location)
@@ -785,7 +785,7 @@ public class avn
   
   private void readCustomCharWidths()
   {
-    String fontFileName = this.g.a();
+    String fontFileName = g.a();
     
     String suffix = ".png";
     if (!fontFileName.endsWith(suffix)) {
@@ -794,7 +794,7 @@ public class avn
     String fileName = fontFileName.substring(0, fontFileName.length() - suffix.length()) + ".properties";
     try
     {
-      jy locProp = new jy(this.g.b(), fileName);
+      jy locProp = new jy(g.b(), fileName);
       InputStream in = Config.getResourceStream(Config.getResourceManager(), locProp);
       if (in == null) {
         return;
@@ -812,12 +812,12 @@ public class avn
         {
           String numStr = key.substring(prefix.length());
           int num = Config.parseInt(numStr, -1);
-          if ((num >= 0) && (num < this.d.length))
+          if ((num >= 0) && (num < d.length))
           {
             String value = props.getProperty(key);
             float width = Config.parseFloat(value, -1.0F);
             if (width >= 0.0F) {
-              this.d[num] = width;
+              d[num] = width;
             }
           }
         }

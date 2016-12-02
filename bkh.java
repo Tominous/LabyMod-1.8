@@ -12,7 +12,7 @@ public class bkh
   {
     super(☃, new bci(0.0F), 0.5F);
     
-    a(new bks(g().a));
+    a(new bks(ga));
   }
   
   public bci g()
@@ -44,11 +44,11 @@ public class bkh
     if (☃.l() < 0)
     {
       ☃ = (float)(☃ * 0.5D);
-      this.c = 0.25F;
+      c = 0.25F;
     }
     else
     {
-      this.c = 0.5F;
+      c = 0.5F;
     }
     bfl.a(☃, ☃, ☃);
   }

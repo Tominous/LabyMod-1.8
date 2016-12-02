@@ -7,13 +7,13 @@ public class adx
   {
     super(☃);
     
-    this.au.clear();
-    this.ak = afi.m.Q();
-    this.al = afi.m.Q();
+    au.clear();
+    ak = afi.m.Q();
+    al = afi.m.Q();
     
-    this.as.A = 64537;
-    this.as.D = 0;
-    this.as.F = 0;
-    this.as.G = 0;
+    as.A = 64537;
+    as.D = 0;
+    as.F = 0;
+    as.G = 0;
   }
 }

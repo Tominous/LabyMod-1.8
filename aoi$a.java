@@ -6,11 +6,11 @@ class aoi$a
   public aoi$a(cj ☃, int ☃)
   {
     super(☃.n(), ☃.o(), ☃.p());
-    this.c = ☃;
+    c = ☃;
   }
   
   public int q()
   {
-    return this.c;
+    return c;
   }
 }

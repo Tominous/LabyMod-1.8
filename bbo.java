@@ -22,33 +22,33 @@ public abstract class bbo
   
   public bct a(Random ☃)
   {
-    return (bct)this.s.get(☃.nextInt(this.s.size()));
+    return (bct)s.get(☃.nextInt(s.size()));
   }
   
   protected void a(String ☃, int ☃, int ☃)
   {
-    this.a.put(☃, new bcu(☃, ☃));
+    a.put(☃, new bcu(☃, ☃));
   }
   
   public bcu a(String ☃)
   {
-    return (bcu)this.a.get(☃);
+    return (bcu)a.get(☃);
   }
   
   public static void a(bct ☃, bct ☃)
   {
-    ☃.f = ☃.f;
-    ☃.g = ☃.g;
-    ☃.h = ☃.h;
-    ☃.c = ☃.c;
-    ☃.d = ☃.d;
-    ☃.e = ☃.e;
+    f = f;
+    g = g;
+    h = h;
+    c = c;
+    d = d;
+    e = e;
   }
   
   public void a(bbo ☃)
   {
-    this.p = ☃.p;
-    this.q = ☃.q;
-    this.r = ☃.r;
+    p = p;
+    q = q;
+    r = r;
   }
 }

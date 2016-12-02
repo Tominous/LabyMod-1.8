@@ -8,9 +8,9 @@ public class xl
   
   public xl(og ☃, og ☃)
   {
-    this.a = ☃;
+    a = ☃;
     
-    a(this.f = new xl.a(☃, 0, 136, 110));
+    a(f = new xl.a(☃, 0, 136, 110));
     
     int ☃ = 36;
     int ☃ = 137;
@@ -27,26 +27,26 @@ public class xl
   public void a(xn ☃)
   {
     super.a(☃);
-    ☃.a(this, this.a);
+    ☃.a(this, a);
   }
   
   public void b(int ☃, int ☃)
   {
-    this.a.b(☃, ☃);
+    a.b(☃, ☃);
   }
   
   public og e()
   {
-    return this.a;
+    return a;
   }
   
   public void b(wn ☃)
   {
     super.b(☃);
-    if ((☃ == null) || (☃.o.D)) {
+    if ((☃ == null) || (o.D)) {
       return;
     }
-    zx ☃ = this.f.a(this.f.a());
+    zx ☃ = f.a(f.a());
     if (☃ != null) {
       ☃.a(☃, false);
     }
@@ -54,13 +54,13 @@ public class xl
   
   public boolean a(wn ☃)
   {
-    return this.a.a(☃);
+    return a.a(☃);
   }
   
   public zx b(wn ☃, int ☃)
   {
     zx ☃ = null;
-    yg ☃ = (yg)this.c.get(☃);
+    yg ☃ = (yg)c.get(☃);
     if ((☃ != null) && (☃.e()))
     {
       zx ☃ = ☃.d();
@@ -72,7 +72,7 @@ public class xl
         }
         ☃.a(☃, ☃);
       }
-      else if ((!this.f.e()) && (this.f.a(☃)) && (☃.b == 1))
+      else if ((!f.e()) && (f.a(☃)) && (b == 1))
       {
         if (!a(☃, 0, 1, false)) {
           return null;
@@ -94,12 +94,12 @@ public class xl
       {
         return null;
       }
-      if (☃.b == 0) {
+      if (b == 0) {
         ☃.d(null);
       } else {
         ☃.f();
       }
-      if (☃.b == ☃.b) {
+      if (b == b) {
         return null;
       }
       ☃.a(☃, ☃);

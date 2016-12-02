@@ -9,19 +9,19 @@ public class hi
   
   public hi(int ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.readByte();
+    a = ☃.readByte();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(this.a);
+    ☃.writeByte(a);
   }
   
   public void a(fj ☃)
@@ -31,6 +31,6 @@ public class hi
   
   public int a()
   {
-    return this.a;
+    return a;
   }
 }

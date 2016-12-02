@@ -1,202 +1,101 @@
-import de.labystudio.labymod.LabyMod;
-import de.labystudio.utils.Color;
-import de.labystudio.utils.DrawUtils;
-import org.lwjgl.opengl.GL11;
-
 public class avs
   extends avp
 {
   protected static final jy a = new jy("textures/gui/widgets.png");
-  public int f;
-  public int g;
+  protected int f = 200;
+  protected int g = 20;
   public int h;
   public int i;
   public String j;
   public int k;
-  public boolean l;
-  public boolean m;
+  public boolean l = true;
+  public boolean m = true;
   protected boolean n;
   
-  public avs(int buttonId, int x, int y, String buttonText)
+  public avs(int ☃, int ☃, int ☃, String ☃)
   {
-    this(buttonId, x, y, 200, 20, buttonText);
+    this(☃, ☃, ☃, 200, 20, ☃);
   }
   
-  public avs(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
+  public avs(int ☃, int ☃, int ☃, int ☃, int ☃, String ☃)
   {
-    this.f = 200;
-    this.g = 20;
-    this.l = true;
-    this.m = true;
-    this.k = buttonId;
-    this.h = x;
-    this.i = y;
-    this.f = widthIn;
-    this.g = heightIn;
-    this.j = buttonText;
+    k = ☃;
+    h = ☃;
+    i = ☃;
+    f = ☃;
+    g = ☃;
+    j = ☃;
   }
   
-  protected int a(boolean mouseOver)
+  protected int a(boolean ☃)
   {
-    int i = 1;
-    if (!this.l) {
-      i = 0;
-    } else if (mouseOver) {
-      i = 2;
+    int ☃ = 1;
+    if (!l) {
+      ☃ = 0;
+    } else if (☃) {
+      ☃ = 2;
     }
-    return i;
+    return ☃;
   }
   
-  public void drawInfoBox()
+  public void a(ave ☃, int ☃, int ☃)
   {
-    if (!this.n) {
-      this.showInfo = System.currentTimeMillis();
-    }
-    if (this.info.isEmpty()) {
+    if (!m) {
       return;
     }
-    if (this.showInfo + 300L > System.currentTimeMillis()) {
-      return;
+    avn ☃ = k;
+    
+    ☃.P().a(a);
+    bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
+    
+    n = ((☃ >= h) && (☃ >= i) && (☃ < h + f) && (☃ < i + g));
+    int ☃ = a(n);
+    
+    bfl.l();
+    bfl.a(770, 771, 1, 0);
+    bfl.b(770, 771);
+    b(h, i, 0, 46 + ☃ * 20, f / 2, g);
+    b(h + f / 2, i, 200 - f / 2, 46 + ☃ * 20, f / 2, g);
+    
+    b(☃, ☃, ☃);
+    
+    int ☃ = 14737632;
+    if (!l) {
+      ☃ = 10526880;
+    } else if (n) {
+      ☃ = 16777120;
     }
-    int l = Integer.MIN_VALUE;
-    GL11.glPushMatrix();
-    double k = 0.7D;
-    GL11.glScaled(k, k, k);
-    for (int i = 0; i < 3; i++) {
-      DrawUtils.a((int)((LabyMod.getInstance().draw.getWidth() / 2 - 140) / k), 
-        (int)((LabyMod.getInstance().draw.getHeight() - 30 - 10 * getRange(this.info, 300)) / k), 
-        (int)((LabyMod.getInstance().draw.getWidth() / 2 + 140) / k), (int)((LabyMod.getInstance().draw.getHeight() - 15) / k), l);
-    }
-    drawContent(this.info, (int)(LabyMod.getInstance().draw.getWidth() / 2 / k), (int)((LabyMod.getInstance().draw.getHeight() - 25 - 10 * getRange(this.info, 300)) / k), 300);
-    GL11.glPopMatrix();
+    a(☃, j, h + f / 2, i + (g - 8) / 2, ☃);
   }
   
-  private void drawContent(String msg, int x, int y, int max)
+  protected void b(ave ☃, int ☃, int ☃) {}
+  
+  public void a(int ☃, int ☃) {}
+  
+  public boolean c(ave ☃, int ☃, int ☃)
   {
-    int range = getRange(msg, max);
-    String next = getFirstStrings(max, msg);
-    String done = "";
-    for (int i = 0; i <= range; i++)
-    {
-      LabyMod.getInstance().draw.drawCenteredString(next, x, y + i * 12);
-      done = done + next;
-      next = getFirstStrings(max, msg.replace(done, ""));
-    }
-  }
-  
-  private String getFirstStrings(int pixels, String string)
-  {
-    int k = 0;
-    String result = "";
-    for (int i = 0; i < string.length(); i++)
-    {
-      char c = string.charAt(i);
-      k += LabyMod.getInstance().draw.getStringWidth(new String(new char[] { c }));
-      if (pixels > k)
-      {
-        result = result + new String(new char[] { c });
-      }
-      else
-      {
-        if (pixels != k) {
-          break;
-        }
-        result = result + c;
-        break;
-      }
-    }
-    return result;
-  }
-  
-  private int getRange(String msg, int max)
-  {
-    int k = 0;
-    int range = 0;
-    String line = msg;
-    for (int i = 0; i <= line.length() - 1; i++)
-    {
-      char a = line.charAt(i);
-      if (k > max)
-      {
-        range++;
-        k = 0;
-      }
-      k += LabyMod.getInstance().draw.getStringWidth("" + a);
-    }
-    return range;
-  }
-  
-  public boolean centered = true;
-  public String subTitle = "";
-  long showInfo = 0L;
-  public String info = "";
-  public String run = "";
-  public boolean noGui = false;
-  
-  public void a(ave mc, int mouseX, int mouseY)
-  {
-    if (this.m)
-    {
-      avn var4 = mc.k;
-      mc.P().a(a);
-      bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-      this.n = ((mouseX >= this.h) && (mouseY >= this.i) && (mouseX < this.h + this.f) && (mouseY < this.i + this.g));
-      int var5 = a(this.n);
-      bfl.l();
-      bfl.a(770, 771, 1, 0);
-      bfl.b(770, 771);
-      if (!this.noGui)
-      {
-        b(this.h, this.i, 0, 46 + var5 * 20, this.f / 2, this.g);
-        b(this.h + this.f / 2, this.i, 200 - this.f / 2, 46 + var5 * 20, this.f / 2, this.g);
-      }
-      b(mc, mouseX, mouseY);
-      int var6 = 14737632;
-      if (!this.l) {
-        var6 = 10526880;
-      } else if (this.n) {
-        var6 = 16777120;
-      }
-      if (this.centered)
-      {
-        a(var4, this.j, this.h + this.f / 2, this.i + (this.g - 8) / 2, var6);
-      }
-      else
-      {
-        c(mc.k, Color.cl("f") + this.j, this.h + 6, this.i + (this.g - 8) / 2, 0);
-        a(var4, this.subTitle, this.h + 40 + (this.h + this.f / 2 - (this.h + 30)) * 2 - this.subTitle.length(), this.i + (this.g - 8) / 2, var6);
-      }
-    }
-  }
-  
-  protected void b(ave mc, int mouseX, int mouseY) {}
-  
-  public void a(int mouseX, int mouseY) {}
-  
-  public boolean c(ave mc, int mouseX, int mouseY)
-  {
-    return (this.l) && (this.m) && (mouseX >= this.h) && (mouseY >= this.i) && (mouseX < this.h + this.f) && (mouseY < this.i + this.g);
+    return (l) && (m) && (☃ >= h) && (☃ >= i) && (☃ < h + f) && (☃ < i + g);
   }
   
   public boolean a()
   {
-    return this.n;
+    return n;
   }
   
-  public void b(int mouseX, int mouseY) {}
+  public void b(int ☃, int ☃) {}
   
-  public void a(bpz soundHandlerIn)
+  public void a(bpz ☃)
   {
-    soundHandlerIn.a(bpf.a(new jy("gui.button.press"), 1.0F));
+    ☃.a(bpf.a(new jy("gui.button.press"), 1.0F));
   }
   
   public int b()
   {
-    return this.f;
+    return f;
   }
   
-  public void a(int width)
+  public void a(int ☃)
   {
-    this.f = width;
+    f = ☃;
   }
 }

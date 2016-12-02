@@ -9,7 +9,7 @@ public class alv
   public alv()
   {
     super(arm.H);
-    j(this.M.b().a(a, cq.c).a(b, alt.a.a));
+    j(M.b().a(a, cq.c).a(b, alt.a.a));
     c(-1.0F);
   }
   
@@ -64,7 +64,7 @@ public class alv
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if ((!☃.D) && (☃.s(☃) == null))
+    if ((!D) && (☃.s(☃) == null))
     {
       ☃.g(☃);
       return true;
@@ -79,7 +79,7 @@ public class alv
   
   public void a(adm ☃, cj ☃, alz ☃, float ☃, int ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     alu ☃ = e(☃, ☃);
@@ -97,7 +97,7 @@ public class alv
   
   public void a(adm ☃, cj ☃, alz ☃, afh ☃)
   {
-    if (!☃.D) {
+    if (!D) {
       ☃.s(☃);
     }
   }
@@ -134,12 +134,12 @@ public class alv
         ☃ = 0.0F;
       }
       cq ☃ = ☃.e();
-      this.B = (☃.B() - ☃.g() * ☃);
-      this.C = (☃.D() - ☃.h() * ☃);
-      this.D = (☃.F() - ☃.i() * ☃);
-      this.E = (☃.C() - ☃.g() * ☃);
-      this.F = (☃.E() - ☃.h() * ☃);
-      this.G = (☃.G() - ☃.i() * ☃);
+      B = (☃.B() - ☃.g() * ☃);
+      C = (☃.D() - ☃.h() * ☃);
+      D = (☃.F() - ☃.i() * ☃);
+      E = (☃.C() - ☃.g() * ☃);
+      F = (☃.E() - ☃.h() * ☃);
+      G = (☃.G() - ☃.i() * ☃);
     }
   }
   
@@ -152,12 +152,12 @@ public class alv
     if (☃ == null) {
       return null;
     }
-    double ☃ = ☃.a;
-    double ☃ = ☃.b;
-    double ☃ = ☃.c;
-    double ☃ = ☃.d;
-    double ☃ = ☃.e;
-    double ☃ = ☃.f;
+    double ☃ = a;
+    double ☃ = b;
+    double ☃ = c;
+    double ☃ = d;
+    double ☃ = e;
+    double ☃ = f;
     if (☃.g() < 0) {
       ☃ -= ☃.g() * ☃;
     } else {

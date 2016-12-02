@@ -9,54 +9,54 @@ public class qq
   
   public qq(ps ☃)
   {
-    this.a = ☃;
-    this.b = ☃.s;
-    this.c = ☃.t;
-    this.d = ☃.u;
+    a = ☃;
+    b = s;
+    c = t;
+    d = u;
   }
   
   public boolean a()
   {
-    return this.f;
+    return f;
   }
   
   public double b()
   {
-    return this.e;
+    return e;
   }
   
   public void a(double ☃, double ☃, double ☃, double ☃)
   {
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
-    this.e = ☃;
-    this.f = true;
+    b = ☃;
+    c = ☃;
+    d = ☃;
+    e = ☃;
+    f = true;
   }
   
   public void c()
   {
-    this.a.n(0.0F);
-    if (!this.f) {
+    a.n(0.0F);
+    if (!f) {
       return;
     }
-    this.f = false;
+    f = false;
     
-    int ☃ = ns.c(this.a.aR().b + 0.5D);
+    int ☃ = ns.c(a.aR().b + 0.5D);
     
-    double ☃ = this.b - this.a.s;
-    double ☃ = this.d - this.a.u;
-    double ☃ = this.c - ☃;
+    double ☃ = b - a.s;
+    double ☃ = d - a.u;
+    double ☃ = c - ☃;
     double ☃ = ☃ * ☃ + ☃ * ☃ + ☃ * ☃;
     if (☃ < 2.500000277905201E-7D) {
       return;
     }
     float ☃ = (float)(ns.b(☃, ☃) * 180.0D / 3.1415927410125732D) - 90.0F;
     
-    this.a.y = a(this.a.y, ☃, 30.0F);
-    this.a.k((float)(this.e * this.a.a(vy.d).e()));
+    a.y = a(a.y, ☃, 30.0F);
+    a.k((float)(e * a.a(vy.d).e()));
     if ((☃ > 0.0D) && (☃ * ☃ + ☃ * ☃ < 1.0D)) {
-      this.a.r().a();
+      a.r().a();
     }
   }
   
@@ -80,16 +80,16 @@ public class qq
   
   public double d()
   {
-    return this.b;
+    return b;
   }
   
   public double e()
   {
-    return this.c;
+    return c;
   }
   
   public double f()
   {
-    return this.d;
+    return d;
   }
 }

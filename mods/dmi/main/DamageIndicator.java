@@ -69,12 +69,15 @@ public class DamageIndicator
     if (ip.contains("dph-games")) {
       return false;
     }
+    if (ip.contains("bergwerklabs")) {
+      return false;
+    }
     return true;
   }
   
   public static void disableMessage(String ip)
   {
-    ave.A().q.d().a(new fa(Color.cl("c") + "Damage Indicator is not allowed on " + ip + "!"));
-    ave.A().q.d().a(new fa(Color.cl("c") + "Your Damage Indicator is now " + Color.cl("n") + "disabled" + Color.cl("c") + "."));
+    Aq.d().a(new fa(Color.cl("c") + "Damage Indicator is not allowed on " + ip + "!"));
+    Aq.d().a(new fa(Color.cl("c") + "Your Damage Indicator is now " + Color.cl("n") + "disabled" + Color.cl("c") + "."));
   }
 }

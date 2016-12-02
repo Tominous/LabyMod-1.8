@@ -5,7 +5,7 @@ class vr$a
   
   public vr$a(vr ☃)
   {
-    this.a = ☃;
+    a = ☃;
     
     a(2);
   }
@@ -17,20 +17,20 @@ class vr$a
   
   public void e()
   {
-    if (this.a.u() == null)
+    if (a.u() == null)
     {
-      this.a.aI = (this.a.y = -(float)ns.b(this.a.v, this.a.x) * 180.0F / 3.1415927F);
+      a.aI = (a.y = -(float)ns.b(a.v, a.x) * 180.0F / 3.1415927F);
     }
     else
     {
-      pr ☃ = this.a.u();
+      pr ☃ = a.u();
       
       double ☃ = 64.0D;
-      if (☃.h(this.a) < ☃ * ☃)
+      if (☃.h(a) < ☃ * ☃)
       {
-        double ☃ = ☃.s - this.a.s;
-        double ☃ = ☃.u - this.a.u;
-        this.a.aI = (this.a.y = -(float)ns.b(☃, ☃) * 180.0F / 3.1415927F);
+        double ☃ = s - a.s;
+        double ☃ = u - a.u;
+        a.aI = (a.y = -(float)ns.b(☃, ☃) * 180.0F / 3.1415927F);
       }
     }
   }

@@ -15,19 +15,19 @@ public class CacheLocal
     this.maxX = maxX;
     this.maxY = maxY;
     this.maxZ = maxZ;
-    this.cache = new int[maxX][maxY][maxZ];
+    cache = new int[maxX][maxY][maxZ];
     resetCache();
   }
   
   public void resetCache()
   {
-    for (int x = 0; x < this.maxX; x++)
+    for (int x = 0; x < maxX; x++)
     {
-      int[][] ys = this.cache[x];
-      for (int y = 0; y < this.maxY; y++)
+      int[][] ys = cache[x];
+      for (int y = 0; y < maxY; y++)
       {
         int[] zs = ys[y];
-        for (int z = 0; z < this.maxZ; z++) {
+        for (int z = 0; z < maxZ; z++) {
           zs[z] = -1;
         }
       }
@@ -36,9 +36,9 @@ public class CacheLocal
   
   public void setOffset(int x, int y, int z)
   {
-    this.offsetX = x;
-    this.offsetY = y;
-    this.offsetZ = z;
+    offsetX = x;
+    offsetY = y;
+    offsetZ = z;
     resetCache();
   }
   
@@ -46,9 +46,9 @@ public class CacheLocal
   {
     try
     {
-      this.lastZs = this.cache[(x - this.offsetX)][(y - this.offsetY)];
-      this.lastDz = (z - this.offsetZ);
-      return this.lastZs[this.lastDz];
+      lastZs = cache[(x - offsetX)][(y - offsetY)];
+      lastDz = (z - offsetZ);
+      return lastZs[lastDz];
     }
     catch (ArrayIndexOutOfBoundsException e)
     {
@@ -61,7 +61,7 @@ public class CacheLocal
   {
     try
     {
-      this.lastZs[this.lastDz] = val;
+      lastZs[lastDz] = val;
     }
     catch (Exception e)
     {

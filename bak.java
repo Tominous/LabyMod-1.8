@@ -27,14 +27,14 @@ public class bak
   {
     for (bdc ☃ : a.sortedCopy(☃)) {
       if (☃.b() != adp.a.e) {
-        this.b.add(new bad(☃.a()));
+        b.add(new bad(☃.a()));
       }
     }
   }
   
   public List<bah> a()
   {
-    return this.b;
+    return b;
   }
   
   public eu b()
@@ -60,6 +60,6 @@ public class bak
   
   public boolean B_()
   {
-    return !this.b.isEmpty();
+    return !b.isEmpty();
   }
 }

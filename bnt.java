@@ -20,7 +20,7 @@ public class bnt
   
   public synchronized void a(bni ☃, List<String> ☃)
   {
-    this.a.clear();
+    a.clear();
     for (String ☃ : ☃)
     {
       ☃ = String.format("lang/%s.lang", new Object[] { ☃ });
@@ -38,16 +38,16 @@ public class bnt
   
   public boolean a()
   {
-    return this.d;
+    return d;
   }
   
   private void b()
   {
-    this.d = false;
+    d = false;
     
     int ☃ = 0;
     int ☃ = 0;
-    for (String ☃ : this.a.values())
+    for (String ☃ : a.values())
     {
       int ☃ = ☃.length();
       ☃ += ☃;
@@ -58,7 +58,7 @@ public class bnt
       }
     }
     float ☃ = ☃ / ☃;
-    this.d = (☃ > 0.1D);
+    d = (☃ > 0.1D);
   }
   
   private void a(List<bnh> ☃)
@@ -90,7 +90,7 @@ public class bnt
           String ☃ = ☃[0];
           String ☃ = c.matcher(☃[1]).replaceAll("%$1s");
           
-          this.a.put(☃, ☃);
+          a.put(☃, ☃);
         }
       }
     }
@@ -98,7 +98,7 @@ public class bnt
   
   private String b(String ☃)
   {
-    String ☃ = (String)this.a.get(☃);
+    String ☃ = (String)a.get(☃);
     return ☃ == null ? ☃ : ☃;
   }
   

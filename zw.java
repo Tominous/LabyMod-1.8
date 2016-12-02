@@ -57,36 +57,36 @@ public class zw
     
     private a(int ☃, int ☃, float ☃, float ☃, int ☃)
     {
-      this.f = ☃;
-      this.g = ☃;
-      this.h = ☃;
-      this.i = ☃;
-      this.j = ☃;
+      f = ☃;
+      g = ☃;
+      h = ☃;
+      i = ☃;
+      j = ☃;
     }
     
     public int a()
     {
-      return this.g;
+      return g;
     }
     
     public float b()
     {
-      return this.h;
+      return h;
     }
     
     public float c()
     {
-      return this.i;
+      return i;
     }
     
     public int d()
     {
-      return this.f;
+      return f;
     }
     
     public int e()
     {
-      return this.j;
+      return j;
     }
     
     public zw f()
@@ -121,7 +121,7 @@ public class zw
   
   public zw c(int ☃)
   {
-    this.h = ☃;
+    h = ☃;
     return this;
   }
   
@@ -147,7 +147,7 @@ public class zw
   
   public int j()
   {
-    return this.h;
+    return h;
   }
   
   public int a(int ☃)
@@ -157,29 +157,29 @@ public class zw
   
   public boolean k()
   {
-    return this.j;
+    return j;
   }
   
   protected zw a(boolean ☃)
   {
-    this.j = ☃;
+    j = ☃;
     return this;
   }
   
   public int l()
   {
-    return this.c;
+    return c;
   }
   
   protected zw d(int ☃)
   {
-    this.c = ☃;
+    c = ☃;
     return this;
   }
   
   public boolean m()
   {
-    return (this.c > 0) && (!this.j);
+    return (c > 0) && (!j);
   }
   
   public boolean a(zx ☃, pr ☃, pr ☃)
@@ -204,13 +204,13 @@ public class zw
   
   public zw n()
   {
-    this.i = true;
+    i = true;
     return this;
   }
   
   public boolean w_()
   {
-    return this.i;
+    return i;
   }
   
   public boolean e()
@@ -220,7 +220,7 @@ public class zw
   
   public zw c(String ☃)
   {
-    this.l = ☃;
+    l = ☃;
     return this;
   }
   
@@ -235,17 +235,17 @@ public class zw
   
   public String a()
   {
-    return "item." + this.l;
+    return "item." + l;
   }
   
   public String e_(zx ☃)
   {
-    return "item." + this.l;
+    return "item." + l;
   }
   
   public zw c(zw ☃)
   {
-    this.d = ☃;
+    d = ☃;
     return this;
   }
   
@@ -256,12 +256,12 @@ public class zw
   
   public zw q()
   {
-    return this.d;
+    return d;
   }
   
   public boolean r()
   {
-    return this.d != null;
+    return d != null;
   }
   
   public int a(zx ☃, int ☃)
@@ -292,13 +292,13 @@ public class zw
   
   protected zw e(String ☃)
   {
-    this.k = ☃;
+    k = ☃;
     return this;
   }
   
   public String j(zx ☃)
   {
-    return this.k;
+    return k;
   }
   
   public boolean l(zx ☃)
@@ -336,12 +336,12 @@ public class zw
   
   protected auh a(adm ☃, wn ☃, boolean ☃)
   {
-    float ☃ = ☃.z;
-    float ☃ = ☃.y;
+    float ☃ = z;
+    float ☃ = y;
     
-    double ☃ = ☃.s;
-    double ☃ = ☃.t + ☃.aS();
-    double ☃ = ☃.u;
+    double ☃ = s;
+    double ☃ = t + ☃.aS();
+    double ☃ = u;
     
     aui ☃ = new aui(☃, ☃, ☃);
     
@@ -372,12 +372,12 @@ public class zw
   
   public yz c()
   {
-    return this.b;
+    return b;
   }
   
   public zw a(yz ☃)
   {
-    this.b = ☃;
+    b = ☃;
     return this;
   }
   
@@ -734,7 +734,7 @@ public class zw
     a(319, "porkchop", new zs(3, 0.3F, true).c("porkchopRaw"));
     a(320, "cooked_porkchop", new zs(8, 0.8F, true).c("porkchopCooked"));
     a(321, "painting", new zu(uq.class).c("painting"));
-    a(322, "golden_apple", new zt(4, 1.2F, false).h().a(pe.l.H, 5, 1, 1.0F).c("appleGold"));
+    a(322, "golden_apple", new zt(4, 1.2F, false).h().a(lH, 5, 1, 1.0F).c("appleGold"));
     a(323, "sign", new aar().c("sign"));
     a(324, "wooden_door", new zb(afi.ao).c("doorOak"));
     zw ☃ = new yv(afi.a).c("bucket").c(16);
@@ -778,9 +778,9 @@ public class zw
     a(362, "melon_seeds", new aao(afi.bm, afi.ak).c("seeds_melon"));
     a(363, "beef", new zs(3, 0.3F, true).c("beefRaw"));
     a(364, "cooked_beef", new zs(8, 0.8F, true).c("beefCooked"));
-    a(365, "chicken", new zs(2, 0.3F, true).a(pe.s.H, 30, 0, 0.3F).c("chickenRaw"));
+    a(365, "chicken", new zs(2, 0.3F, true).a(sH, 30, 0, 0.3F).c("chickenRaw"));
     a(366, "cooked_chicken", new zs(6, 0.6F, true).c("chickenCooked"));
-    a(367, "rotten_flesh", new zs(4, 0.1F, true).a(pe.s.H, 30, 0, 0.8F).c("rottenFlesh"));
+    a(367, "rotten_flesh", new zs(4, 0.1F, true).a(sH, 30, 0, 0.8F).c("rottenFlesh"));
     a(368, "ender_pearl", new zk().c("enderPearl"));
     a(369, "blaze_rod", new zw().c("blazeRod").a(yz.l).n());
     a(370, "ghast_tear", new zw().c("ghastTear").e(abe.c).a(yz.k));
@@ -788,7 +788,7 @@ public class zw
     a(372, "nether_wart", new aao(afi.bB, afi.aW).c("netherStalkSeeds").e("+4"));
     a(373, "potion", new aai().c("potion"));
     a(374, "glass_bottle", new ys().c("glassBottle"));
-    a(375, "spider_eye", new zs(2, 0.8F, false).a(pe.u.H, 5, 0, 1.0F).c("spiderEye").e(abe.d));
+    a(375, "spider_eye", new zs(2, 0.8F, false).a(uH, 5, 0, 1.0F).c("spiderEye").e(abe.d));
     a(376, "fermented_spider_eye", new zw().c("fermentedSpiderEye").e(abe.e).a(yz.k));
     a(377, "blaze_powder", new zw().c("blazePowder").e(abe.g).a(yz.k));
     a(378, "magma_cream", new zw().c("magmaCream").e(abe.h).a(yz.k));
@@ -807,7 +807,7 @@ public class zw
     a(391, "carrot", new aan(3, 0.6F, afi.cb, afi.ak).c("carrots"));
     a(392, "potato", new aan(1, 0.3F, afi.cc, afi.ak).c("potato"));
     a(393, "baked_potato", new zs(5, 0.6F, false).c("potatoBaked"));
-    a(394, "poisonous_potato", new zs(2, 0.3F, false).a(pe.u.H, 5, 0, 0.6F).c("potatoPoisonous"));
+    a(394, "poisonous_potato", new zs(2, 0.3F, false).a(uH, 5, 0, 0.6F).c("potatoPoisonous"));
     a(395, "map", new zh().c("emptyMap"));
     a(396, "golden_carrot", new zs(6, 1.2F, false).c("carrotGolden").e(abe.l).a(yz.k));
     a(397, "skull", new aat().c("skull"));

@@ -16,15 +16,15 @@ public class CustomSkyLayer
   
   public CustomSkyLayer(Properties props, String defSource)
   {
-    this.source = props.getProperty("source", defSource);
-    this.startFadeIn = parseTime(props.getProperty("startFadeIn"));
-    this.endFadeIn = parseTime(props.getProperty("endFadeIn"));
-    this.startFadeOut = parseTime(props.getProperty("startFadeOut"));
-    this.endFadeOut = parseTime(props.getProperty("endFadeOut"));
-    this.blend = Blender.parseBlend(props.getProperty("blend"));
-    this.rotate = parseBoolean(props.getProperty("rotate"), true);
-    this.speed = parseFloat(props.getProperty("speed"), 1.0F);
-    this.axis = parseAxis(props.getProperty("axis"), DEFAULT_AXIS);
+    source = props.getProperty("source", defSource);
+    startFadeIn = parseTime(props.getProperty("startFadeIn"));
+    endFadeIn = parseTime(props.getProperty("endFadeIn"));
+    startFadeOut = parseTime(props.getProperty("startFadeOut"));
+    endFadeOut = parseTime(props.getProperty("endFadeOut"));
+    blend = Blender.parseBlend(props.getProperty("blend"));
+    rotate = parseBoolean(props.getProperty("rotate"), true);
+    speed = parseFloat(props.getProperty("speed"), 1.0F);
+    axis = parseAxis(props.getProperty("axis"), DEFAULT_AXIS);
   }
   
   private int parseTime(String str)
@@ -128,30 +128,30 @@ public class CustomSkyLayer
   
   public boolean isValid(String path)
   {
-    if (this.source == null)
+    if (source == null)
     {
       Config.warn("No source texture: " + path);
       return false;
     }
-    this.source = TextureUtils.fixResourcePath(this.source, TextureUtils.getBasePath(path));
-    if ((this.startFadeIn < 0) || (this.endFadeIn < 0) || (this.endFadeOut < 0))
+    source = TextureUtils.fixResourcePath(source, TextureUtils.getBasePath(path));
+    if ((startFadeIn < 0) || (endFadeIn < 0) || (endFadeOut < 0))
     {
       Config.warn("Invalid times, required are: startFadeIn, endFadeIn and endFadeOut.");
       return false;
     }
-    int timeFadeIn = normalizeTime(this.endFadeIn - this.startFadeIn);
-    if (this.startFadeOut < 0)
+    int timeFadeIn = normalizeTime(endFadeIn - startFadeIn);
+    if (startFadeOut < 0)
     {
-      this.startFadeOut = normalizeTime(this.endFadeOut - timeFadeIn);
-      if (timeBetween(this.startFadeOut, this.startFadeIn, this.endFadeIn)) {
-        this.startFadeOut = this.endFadeIn;
+      startFadeOut = normalizeTime(endFadeOut - timeFadeIn);
+      if (timeBetween(startFadeOut, startFadeIn, endFadeIn)) {
+        startFadeOut = endFadeIn;
       }
     }
-    int timeOn = normalizeTime(this.startFadeOut - this.endFadeIn);
+    int timeOn = normalizeTime(startFadeOut - endFadeIn);
     
-    int timeFadeOut = normalizeTime(this.endFadeOut - this.startFadeOut);
+    int timeFadeOut = normalizeTime(endFadeOut - startFadeOut);
     
-    int timeOff = normalizeTime(this.startFadeIn - this.endFadeOut);
+    int timeOff = normalizeTime(startFadeIn - endFadeOut);
     
     int timeSum = timeFadeIn + timeOn + timeFadeOut + timeOff;
     if (timeSum != 24000)
@@ -159,9 +159,9 @@ public class CustomSkyLayer
       Config.warn("Invalid fadeIn/fadeOut times, sum is not 24h: " + timeSum);
       return false;
     }
-    if (this.speed < 0.0F)
+    if (speed < 0.0F)
     {
-      Config.warn("Invalid speed: " + this.speed);
+      Config.warn("Invalid speed: " + speed);
       return false;
     }
     return true;
@@ -185,13 +185,13 @@ public class CustomSkyLayer
     if (brightness < 1.0E-4F) {
       return;
     }
-    bfl.i(this.textureId);
+    bfl.i(textureId);
     
-    Blender.setupBlend(this.blend, brightness);
+    Blender.setupBlend(blend, brightness);
     
     bfl.E();
-    if (this.rotate) {
-      bfl.b(celestialAngle * 360.0F * this.speed, this.axis[0], this.axis[1], this.axis[2]);
+    if (rotate) {
+      bfl.b(celestialAngle * 360.0F * speed, axis[0], axis[1], axis[2]);
     }
     bfx tess = bfx.a();
     
@@ -223,19 +223,19 @@ public class CustomSkyLayer
   
   private float getFadeBrightness(int timeOfDay)
   {
-    if (timeBetween(timeOfDay, this.startFadeIn, this.endFadeIn))
+    if (timeBetween(timeOfDay, startFadeIn, endFadeIn))
     {
-      int timeFadeIn = normalizeTime(this.endFadeIn - this.startFadeIn);
-      int timeDiff = normalizeTime(timeOfDay - this.startFadeIn);
+      int timeFadeIn = normalizeTime(endFadeIn - startFadeIn);
+      int timeDiff = normalizeTime(timeOfDay - startFadeIn);
       return timeDiff / timeFadeIn;
     }
-    if (timeBetween(timeOfDay, this.endFadeIn, this.startFadeOut)) {
+    if (timeBetween(timeOfDay, endFadeIn, startFadeOut)) {
       return 1.0F;
     }
-    if (timeBetween(timeOfDay, this.startFadeOut, this.endFadeOut))
+    if (timeBetween(timeOfDay, startFadeOut, endFadeOut))
     {
-      int timeFadeOut = normalizeTime(this.endFadeOut - this.startFadeOut);
-      int timeDiff = normalizeTime(timeOfDay - this.startFadeOut);
+      int timeFadeOut = normalizeTime(endFadeOut - startFadeOut);
+      int timeDiff = normalizeTime(timeOfDay - startFadeOut);
       return 1.0F - timeDiff / timeFadeOut;
     }
     return 0.0F;
@@ -256,7 +256,7 @@ public class CustomSkyLayer
   
   public boolean isActive(int timeOfDay)
   {
-    if (timeBetween(timeOfDay, this.endFadeOut, this.startFadeIn)) {
+    if (timeBetween(timeOfDay, endFadeOut, startFadeIn)) {
       return false;
     }
     return true;

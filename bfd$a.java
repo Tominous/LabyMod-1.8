@@ -7,29 +7,29 @@ public class bfd$a
   
   public bfd$a(bfd parambfd, int[] buf, bmu vertFormat, bmi[] quadSprites)
   {
-    this.b = buf;
-    this.c = vertFormat;
-    this.stateQuadSprites = quadSprites;
+    b = buf;
+    c = vertFormat;
+    stateQuadSprites = quadSprites;
   }
   
   public bfd$a(bfd parambfd, int[] p_i46380_2_, bmu p_i46380_3_)
   {
-    this.b = p_i46380_2_;
-    this.c = p_i46380_3_;
+    b = p_i46380_2_;
+    c = p_i46380_3_;
   }
   
   public int[] a()
   {
-    return this.b;
+    return b;
   }
   
   public int b()
   {
-    return this.b.length / this.c.f();
+    return b.length / c.f();
   }
   
   public bmu c()
   {
-    return this.c;
+    return c;
   }
 }

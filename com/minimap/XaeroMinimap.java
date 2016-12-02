@@ -34,6 +34,10 @@ public class XaeroMinimap
   }
   
   public static Map<String, Map<String, String>> languages = new HashMap();
+  public static String previousServer = "";
+  public static boolean allowRadar = true;
+  public static boolean allowPlayerRadar = true;
+  public static boolean allowMiniMap = true;
   
   public void onEnable()
   {
@@ -105,6 +109,19 @@ public class XaeroMinimap
     {
       JarFile jar;
       ex.printStackTrace();
+    }
+  }
+  
+  public void pluginMessage(String key, boolean value)
+  {
+    if ((key.equals("MINIMAP_RADAR")) && (!value)) {
+      allowRadar = false;
+    }
+    if ((key.equals("MINIMAP_PLAYER_RADAR")) && (!value)) {
+      allowPlayerRadar = false;
+    }
+    if ((key.equals("MINIMAP")) && (!value)) {
+      allowMiniMap = false;
     }
   }
   

@@ -10,12 +10,12 @@ public class aql$u
   public aql$u(cq ☃, aqe ☃, int ☃)
   {
     super(☃, ☃);
-    this.o = (☃ & 0x1);
+    o = (☃ & 0x1);
   }
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
   {
-    if (this.o == 0)
+    if (o == 0)
     {
       for (int ☃ = 0; ☃ < 4; ☃++) {
         a(☃, ☃, 10 - ☃, 3 - ☃, 20 - ☃, 12 + ☃, 3 - ☃, 20, b, b, false);
@@ -71,7 +71,7 @@ public class aql$u
       
       a(☃, ☃, 11, 2, 16);
     }
-    else if (this.o == 1)
+    else if (o == 1)
     {
       a(☃, ☃, 9, 3, 18, 13, 3, 20, b, b, false);
       a(☃, ☃, 9, 0, 18, 9, 2, 18, b, b, false);

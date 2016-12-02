@@ -12,8 +12,8 @@ public class ej
   
   public ej(int ☃)
   {
-    this.c = ☃;
-    this.b = new Deflater();
+    c = ☃;
+    b = new Deflater();
   }
   
   protected void a(ChannelHandlerContext ☃, ByteBuf ☃, ByteBuf ☃)
@@ -21,7 +21,7 @@ public class ej
   {
     int ☃ = ☃.readableBytes();
     em ☃ = new em(☃);
-    if (☃ < this.c)
+    if (☃ < c)
     {
       ☃.b(0);
       ☃.writeBytes(☃);
@@ -33,19 +33,19 @@ public class ej
       
       ☃.b(☃.length);
       
-      this.b.setInput(☃, 0, ☃);
-      this.b.finish();
-      while (!this.b.finished())
+      b.setInput(☃, 0, ☃);
+      b.finish();
+      while (!b.finished())
       {
-        int ☃ = this.b.deflate(this.a);
-        ☃.writeBytes(this.a, 0, ☃);
+        int ☃ = b.deflate(a);
+        ☃.writeBytes(a, 0, ☃);
       }
-      this.b.reset();
+      b.reset();
     }
   }
   
   public void a(int ☃)
   {
-    this.c = ☃;
+    c = ☃;
   }
 }

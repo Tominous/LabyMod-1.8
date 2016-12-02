@@ -8,6 +8,6 @@ class bqn$1$1
   
   public void run()
   {
-    this.a.b.f();
+    a.b.f();
   }
 }

@@ -8,18 +8,18 @@ public class ew
   
   public ew(ew.a ☃, eu ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public ew.a a()
   {
-    return this.a;
+    return a;
   }
   
   public eu b()
   {
-    return this.b;
+    return b;
   }
   
   public boolean equals(Object ☃)
@@ -31,10 +31,10 @@ public class ew
       return false;
     }
     ew ☃ = (ew)☃;
-    if (this.a != ☃.a) {
+    if (a != a) {
       return false;
     }
-    if (this.b != null ? !this.b.equals(☃.b) : ☃.b != null) {
+    if (b != null ? !b.equals(b) : b != null) {
       return false;
     }
     return true;
@@ -42,13 +42,13 @@ public class ew
   
   public String toString()
   {
-    return "HoverEvent{action=" + this.a + ", value='" + this.b + '\'' + '}';
+    return "HoverEvent{action=" + a + ", value='" + b + '\'' + '}';
   }
   
   public int hashCode()
   {
-    int ☃ = this.a.hashCode();
-    ☃ = 31 * ☃ + (this.b != null ? this.b.hashCode() : 0);
+    int ☃ = a.hashCode();
+    ☃ = 31 * ☃ + (b != null ? b.hashCode() : 0);
     return ☃;
   }
   
@@ -60,18 +60,18 @@ public class ew
     
     private a(String ☃, boolean ☃)
     {
-      this.g = ☃;
-      this.f = ☃;
+      g = ☃;
+      f = ☃;
     }
     
     public boolean a()
     {
-      return this.f;
+      return f;
     }
     
     public String b()
     {
-      return this.g;
+      return g;
     }
     
     static

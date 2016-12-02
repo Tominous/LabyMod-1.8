@@ -5,33 +5,33 @@ public class ip$a
 {
   public ip$a()
   {
-    this.g = true;
+    g = true;
   }
   
   public ip$a(double ☃, double ☃, double ☃, boolean ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.f = ☃;
-    this.g = true;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    f = ☃;
+    g = true;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.readDouble();
-    this.b = ☃.readDouble();
-    this.c = ☃.readDouble();
+    a = ☃.readDouble();
+    b = ☃.readDouble();
+    c = ☃.readDouble();
     super.a(☃);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeDouble(this.a);
-    ☃.writeDouble(this.b);
-    ☃.writeDouble(this.c);
+    ☃.writeDouble(a);
+    ☃.writeDouble(b);
+    ☃.writeDouble(c);
     super.b(☃);
   }
 }

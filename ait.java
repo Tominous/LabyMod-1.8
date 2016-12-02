@@ -9,8 +9,8 @@ public class ait
   protected ait(arm ☃, ait.a ☃)
   {
     super(☃);
-    j(this.M.b().a(a, Boolean.valueOf(false)));
-    this.b = ☃;
+    j(M.b().a(a, Boolean.valueOf(false)));
+    b = ☃;
   }
   
   protected int e(alz ☃)
@@ -27,7 +27,7 @@ public class ait
   {
     aug ☃ = a(☃);
     List<? extends pk> ☃;
-    switch (ait.1.a[this.b.ordinal()])
+    switch (ait.1.a[b.ordinal()])
     {
     case 1: 
       ☃ = ☃.b(null, ☃);

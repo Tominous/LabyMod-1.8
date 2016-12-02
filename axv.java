@@ -30,12 +30,12 @@ public class axv
   
   public axv(axu ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void b()
   {
-    this.f = bnq.a("selectWorld.title", new Object[0]);
+    f = bnq.a("selectWorld.title", new Object[0]);
     try
     {
       f();
@@ -43,18 +43,18 @@ public class axv
     catch (atq ☃)
     {
       g.error("Couldn't load level list", ☃);
-      this.j.a(new axj("Unable to load worlds", ☃.getMessage()));
+      j.a(new axj("Unable to load worlds", ☃.getMessage()));
       return;
     }
-    this.u = bnq.a("selectWorld.world", new Object[0]);
-    this.v = bnq.a("selectWorld.conversion", new Object[0]);
-    this.w[adp.a.b.a()] = bnq.a("gameMode.survival", new Object[0]);
-    this.w[adp.a.c.a()] = bnq.a("gameMode.creative", new Object[0]);
-    this.w[adp.a.d.a()] = bnq.a("gameMode.adventure", new Object[0]);
-    this.w[adp.a.e.a()] = bnq.a("gameMode.spectator", new Object[0]);
+    u = bnq.a("selectWorld.world", new Object[0]);
+    v = bnq.a("selectWorld.conversion", new Object[0]);
+    w[adp.a.b.a()] = bnq.a("gameMode.survival", new Object[0]);
+    w[adp.a.c.a()] = bnq.a("gameMode.creative", new Object[0]);
+    w[adp.a.d.a()] = bnq.a("gameMode.adventure", new Object[0]);
+    w[adp.a.e.a()] = bnq.a("gameMode.spectator", new Object[0]);
     
-    this.t = new axv.a(this.j);
-    this.t.d(4, 5);
+    t = new axv.a(j);
+    t.d(4, 5);
     
     a();
   }
@@ -62,26 +62,26 @@ public class axv
   public void k()
   {
     super.k();
-    this.t.p();
+    t.p();
   }
   
   private void f()
     throws atq
   {
-    atr ☃ = this.j.f();
-    this.s = ☃.b();
-    Collections.sort(this.s);
-    this.r = -1;
+    atr ☃ = j.f();
+    s = ☃.b();
+    Collections.sort(s);
+    r = -1;
   }
   
   protected String b(int ☃)
   {
-    return ((ats)this.s.get(☃)).a();
+    return ((ats)s.get(☃)).a();
   }
   
   protected String h(int ☃)
   {
-    String ☃ = ((ats)this.s.get(☃)).b();
+    String ☃ = ((ats)s.get(☃)).b();
     if (StringUtils.isEmpty(☃)) {
       ☃ = bnq.a("selectWorld.world", new Object[0]) + " " + (☃ + 1);
     }
@@ -90,75 +90,75 @@ public class axv
   
   public void a()
   {
-    this.n.add(this.z = new avs(1, this.l / 2 - 154, this.m - 52, 150, 20, bnq.a("selectWorld.select", new Object[0])));
-    this.n.add(new avs(3, this.l / 2 + 4, this.m - 52, 150, 20, bnq.a("selectWorld.create", new Object[0])));
+    n.add(z = new avs(1, l / 2 - 154, m - 52, 150, 20, bnq.a("selectWorld.select", new Object[0])));
+    n.add(new avs(3, l / 2 + 4, m - 52, 150, 20, bnq.a("selectWorld.create", new Object[0])));
     
-    this.n.add(this.A = new avs(6, this.l / 2 - 154, this.m - 28, 72, 20, bnq.a("selectWorld.rename", new Object[0])));
-    this.n.add(this.y = new avs(2, this.l / 2 - 76, this.m - 28, 72, 20, bnq.a("selectWorld.delete", new Object[0])));
-    this.n.add(this.B = new avs(7, this.l / 2 + 4, this.m - 28, 72, 20, bnq.a("selectWorld.recreate", new Object[0])));
-    this.n.add(new avs(0, this.l / 2 + 82, this.m - 28, 72, 20, bnq.a("gui.cancel", new Object[0])));
+    n.add(A = new avs(6, l / 2 - 154, m - 28, 72, 20, bnq.a("selectWorld.rename", new Object[0])));
+    n.add(y = new avs(2, l / 2 - 76, m - 28, 72, 20, bnq.a("selectWorld.delete", new Object[0])));
+    n.add(B = new avs(7, l / 2 + 4, m - 28, 72, 20, bnq.a("selectWorld.recreate", new Object[0])));
+    n.add(new avs(0, l / 2 + 82, m - 28, 72, 20, bnq.a("gui.cancel", new Object[0])));
     
-    this.z.l = false;
-    this.y.l = false;
-    this.A.l = false;
-    this.B.l = false;
+    z.l = false;
+    y.l = false;
+    A.l = false;
+    B.l = false;
   }
   
   protected void a(avs ☃)
   {
-    if (!☃.l) {
+    if (!l) {
       return;
     }
-    if (☃.k == 2)
+    if (k == 2)
     {
-      String ☃ = h(this.r);
+      String ☃ = h(r);
       if (☃ != null)
       {
-        this.x = true;
+        x = true;
         
-        awy ☃ = a(this, ☃, this.r);
-        this.j.a(☃);
+        awy ☃ = a(this, ☃, r);
+        j.a(☃);
       }
     }
-    else if (☃.k == 1)
+    else if (k == 1)
     {
-      i(this.r);
+      i(r);
     }
-    else if (☃.k == 3)
+    else if (k == 3)
     {
-      this.j.a(new axb(this));
+      j.a(new axb(this));
     }
-    else if (☃.k == 6)
+    else if (k == 6)
     {
-      this.j.a(new axt(this, b(this.r)));
+      j.a(new axt(this, b(r)));
     }
-    else if (☃.k == 0)
+    else if (k == 0)
     {
-      this.j.a(this.a);
+      j.a(a);
     }
-    else if (☃.k == 7)
+    else if (k == 7)
     {
       axb ☃ = new axb(this);
-      atp ☃ = this.j.f().a(b(this.r), false);
+      atp ☃ = j.f().a(b(r), false);
       ato ☃ = ☃.d();
       ☃.a();
       
       ☃.a(☃);
-      this.j.a(☃);
+      j.a(☃);
     }
     else
     {
-      this.t.a(☃);
+      t.a(☃);
     }
   }
   
   public void i(int ☃)
   {
-    this.j.a(null);
-    if (this.i) {
+    j.a(null);
+    if (i) {
       return;
     }
-    this.i = true;
+    i = true;
     
     String ☃ = b(☃);
     if (☃ == null) {
@@ -168,19 +168,19 @@ public class axv
     if (☃ == null) {
       ☃ = "World" + ☃;
     }
-    if (this.j.f().f(☃)) {
-      this.j.a(☃, ☃, null);
+    if (j.f().f(☃)) {
+      j.a(☃, ☃, null);
     }
   }
   
   public void a(boolean ☃, int ☃)
   {
-    if (this.x)
+    if (x)
     {
-      this.x = false;
+      x = false;
       if (☃)
       {
-        atr ☃ = this.j.f();
+        atr ☃ = j.f();
         ☃.d();
         ☃.e(b(☃));
         try
@@ -192,15 +192,15 @@ public class axv
           g.error("Couldn't load level list", ☃);
         }
       }
-      this.j.a(this);
+      j.a(this);
     }
   }
   
   public void a(int ☃, int ☃, float ☃)
   {
-    this.t.a(☃, ☃, ☃);
+    t.a(☃, ☃, ☃);
     
-    a(this.q, this.f, this.l / 2, 20, 16777215);
+    a(q, f, l / 2, 20, 16777215);
     
     super.a(☃, ☃, ☃);
   }
@@ -210,7 +210,7 @@ public class axv
   {
     public a(ave ☃)
     {
-      super(axv.this.l, axv.this.m, 32, axv.this.m - 64, 36);
+      super(l, m, 32, m - 64, 36);
     }
     
     protected int b()
@@ -222,12 +222,12 @@ public class axv
     {
       axv.a(axv.this, ☃);
       boolean ☃ = (axv.b(axv.this) >= 0) && (axv.b(axv.this) < b());
-      axv.c(axv.this).l = ☃;
-      axv.d(axv.this).l = ☃;
-      axv.e(axv.this).l = ☃;
-      axv.f(axv.this).l = ☃;
+      cl = ☃;
+      dl = ☃;
+      el = ☃;
+      fl = ☃;
       if ((☃) && (☃)) {
-        axv.this.i(☃);
+        i(☃);
       }
     }
     
@@ -243,7 +243,7 @@ public class axv
     
     protected void a()
     {
-      axv.this.c();
+      c();
     }
     
     protected void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
@@ -272,9 +272,9 @@ public class axv
           ☃ = ☃ + ", " + bnq.a("selectWorld.cheats", new Object[0]);
         }
       }
-      axv.this.c(axv.this.q, ☃, ☃ + 2, ☃ + 1, 16777215);
-      axv.this.c(axv.this.q, ☃, ☃ + 2, ☃ + 12, 8421504);
-      axv.this.c(axv.this.q, ☃, ☃ + 2, ☃ + 12 + 10, 8421504);
+      c(q, ☃, ☃ + 2, ☃ + 1, 16777215);
+      c(q, ☃, ☃ + 2, ☃ + 12, 8421504);
+      c(q, ☃, ☃ + 2, ☃ + 12 + 10, 8421504);
     }
   }
   

@@ -24,93 +24,93 @@ public class CustomMovementInput
   
   public void update(ave mc, bev options, bew thisPlayer)
   {
-    options.a = 0.0F;
-    options.b = 0.0F;
+    a = 0.0F;
+    b = 0.0F;
     
-    avh settings = mc.t;
-    if (settings.X.d()) {
-      options.b += 1.0F;
+    avh settings = t;
+    if (X.d()) {
+      b += 1.0F;
     }
-    if (settings.Z.d()) {
-      options.b -= 1.0F;
+    if (Z.d()) {
+      b -= 1.0F;
     }
-    if (settings.Y.d()) {
-      options.a += 1.0F;
+    if (Y.d()) {
+      a += 1.0F;
     }
-    if (settings.aa.d()) {
-      options.a -= 1.0F;
+    if (aa.d()) {
+      a -= 1.0F;
     }
-    options.c = settings.ab.d();
+    c = ab.d();
     if (ToggleSneakMod.optionToggleSneak)
     {
-      if ((settings.ac.d()) && (!this.handledSneakPress))
+      if ((ac.d()) && (!handledSneakPress))
       {
-        if ((thisPlayer.au()) || (thisPlayer.bA.b))
+        if ((thisPlayer.au()) || (bA.b))
         {
-          options.d = true;
-          this.wasRiding = thisPlayer.au();
+          d = true;
+          wasRiding = thisPlayer.au();
         }
         else
         {
-          options.d = (!options.d);
+          d = (!d);
         }
-        this.lastPressed = System.currentTimeMillis();
-        this.handledSneakPress = true;
+        lastPressed = System.currentTimeMillis();
+        handledSneakPress = true;
       }
-      if ((!settings.ac.d()) && (this.handledSneakPress))
+      if ((!ac.d()) && (handledSneakPress))
       {
-        if ((thisPlayer.bA.b) || (this.wasRiding))
+        if ((bA.b) || (wasRiding))
         {
-          options.d = false;
-          this.wasRiding = false;
+          d = false;
+          wasRiding = false;
         }
-        else if (System.currentTimeMillis() - this.lastPressed > 300L)
+        else if (System.currentTimeMillis() - lastPressed > 300L)
         {
-          options.d = false;
+          d = false;
         }
-        this.handledSneakPress = false;
+        handledSneakPress = false;
       }
     }
     else
     {
-      options.d = settings.ac.d();
+      d = ac.d();
     }
-    if ((options.d) && (mc.m != null)) {
-      options.d = false;
+    if ((d) && (m != null)) {
+      d = false;
     }
-    if (options.d)
+    if (d)
     {
-      options.a = ((float)(options.a * 0.3D));
-      options.b = ((float)(options.b * 0.3D));
+      a = ((float)(a * 0.3D));
+      b = ((float)(b * 0.3D));
     }
-    boolean enoughHunger = (thisPlayer.cl().a() > 6.0F) || (thisPlayer.bA.b);
-    boolean canSprint = (!options.d) && (!thisPlayer.au()) && (!thisPlayer.bA.b) && (enoughHunger);
+    boolean enoughHunger = (thisPlayer.cl().a() > 6.0F) || (bA.b);
+    boolean canSprint = (!d) && (!thisPlayer.au()) && (!bA.b) && (enoughHunger);
     
-    this.isDisabled = (!ToggleSneakMod.optionToggleSprint);
-    this.canDoubleTap = ToggleSneakMod.optionDoubleTap;
-    if (((canSprint) || (this.isDisabled)) && (settings.ad.d()) && (!this.handledSprintPress)) {
-      if (!this.isDisabled)
+    isDisabled = (!ToggleSneakMod.optionToggleSprint);
+    canDoubleTap = ToggleSneakMod.optionDoubleTap;
+    if (((canSprint) || (isDisabled)) && (ad.d()) && (!handledSprintPress)) {
+      if (!isDisabled)
       {
-        this.sprint = (!this.sprint);
-        this.lastSprintPressed = System.currentTimeMillis();
-        this.handledSprintPress = true;
-        this.sprintHeldAndReleased = false;
+        sprint = (!sprint);
+        lastSprintPressed = System.currentTimeMillis();
+        handledSprintPress = true;
+        sprintHeldAndReleased = false;
       }
     }
-    if (((canSprint) || (this.isDisabled)) && (!settings.ad.d()) && (this.handledSprintPress))
+    if (((canSprint) || (isDisabled)) && (!ad.d()) && (handledSprintPress))
     {
-      if (System.currentTimeMillis() - this.lastSprintPressed > 300L) {
-        this.sprintHeldAndReleased = true;
+      if (System.currentTimeMillis() - lastSprintPressed > 300L) {
+        sprintHeldAndReleased = true;
       }
-      this.handledSprintPress = false;
+      handledSprintPress = false;
     }
     UpdateStatus(options, thisPlayer, settings);
   }
   
   public void UpdateSprint(boolean newValue, boolean doubleTapped)
   {
-    this.sprint = newValue;
-    this.sprintDoubleTapped = doubleTapped;
+    sprint = newValue;
+    sprintDoubleTapped = doubleTapped;
   }
   
   private void UpdateStatus(bev options, bew thisPlayer, avh settings)
@@ -119,10 +119,10 @@ public class CustomMovementInput
     {
       String output = "";
       
-      boolean isFlying = thisPlayer.bA.b;
+      boolean isFlying = bA.b;
       boolean isRiding = thisPlayer.au();
-      boolean isHoldingSneak = settings.ac.d();
-      boolean isHoldingSprint = settings.ad.d();
+      boolean isHoldingSneak = ac.d();
+      boolean isHoldingSprint = ad.d();
       if (isFlying)
       {
         DecimalFormat numFormat = new DecimalFormat("#.00");
@@ -135,7 +135,7 @@ public class CustomMovementInput
       if (isRiding) {
         output = output + "[Riding]  ";
       }
-      if (options.d)
+      if (d)
       {
         if (isFlying) {
           output = output + "[Descending]  ";
@@ -147,10 +147,10 @@ public class CustomMovementInput
           output = output + "[Sneaking (Toggled)]  ";
         }
       }
-      else if (this.sprint) {
+      else if (sprint) {
         if ((!isFlying) && (!isRiding))
         {
-          boolean isVanilla = (this.sprintHeldAndReleased) || (this.isDisabled) || (this.sprintDoubleTapped);
+          boolean isVanilla = (sprintHeldAndReleased) || (isDisabled) || (sprintDoubleTapped);
           if (isHoldingSprint) {
             output = output + "[Sprinting (Key Held)]";
           } else if (isVanilla) {

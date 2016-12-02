@@ -21,16 +21,16 @@ public class PacketPlayTyping
   
   public void read(PacketBuf buf)
   {
-    this.player = buf.readPlayer();
-    this.inChatWith = buf.readPlayer();
-    this.typing = buf.readBoolean();
+    player = buf.readPlayer();
+    inChatWith = buf.readPlayer();
+    typing = buf.readBoolean();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writePlayer(this.player);
-    buf.writePlayer(this.inChatWith);
-    buf.writeBoolean(this.typing);
+    buf.writePlayer(player);
+    buf.writePlayer(inChatWith);
+    buf.writeBoolean(typing);
   }
   
   public void handle(PacketHandler packetHandler)
@@ -40,16 +40,16 @@ public class PacketPlayTyping
   
   public LabyModPlayer getInChatWith()
   {
-    return this.inChatWith;
+    return inChatWith;
   }
   
   public LabyModPlayer getPlayer()
   {
-    return this.player;
+    return player;
   }
   
   public boolean isTyping()
   {
-    return this.typing;
+    return typing;
   }
 }

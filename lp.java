@@ -10,26 +10,26 @@ public class lp
   
   public lp(MinecraftServer ☃, ek ☃)
   {
-    this.b = ☃;
-    this.c = ☃;
+    b = ☃;
+    c = ☃;
   }
   
   public void a(eu ☃) {}
   
   public void a(jv ☃)
   {
-    if (this.d)
+    if (d)
     {
-      this.c.a(a);
+      c.a(a);
       return;
     }
-    this.d = true;
-    this.c.a(new jr(this.b.aG()));
+    d = true;
+    c.a(new jr(b.aG()));
   }
   
   public void a(ju ☃)
   {
-    this.c.a(new jq(☃.a()));
-    this.c.a(a);
+    c.a(new jq(☃.a()));
+    c.a(a);
   }
 }

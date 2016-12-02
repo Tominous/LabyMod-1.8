@@ -18,28 +18,28 @@ public class js$a
   
   public js$a(int ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public int a()
   {
-    return this.a;
+    return a;
   }
   
   public int b()
   {
-    return this.b;
+    return b;
   }
   
   public GameProfile[] c()
   {
-    return this.c;
+    return c;
   }
   
   public void a(GameProfile[] ☃)
   {
-    this.c = ☃;
+    c = ☃;
   }
   
   public static class a

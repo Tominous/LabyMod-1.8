@@ -12,7 +12,7 @@ public class bdf
   
   public bdf(ave ☃)
   {
-    this.b = ☃;
+    b = ☃;
     a();
   }
   
@@ -20,15 +20,15 @@ public class bdf
   {
     try
     {
-      this.c.clear();
+      c.clear();
       
-      dn ☃ = dx.a(new File(this.b.v, "servers.dat"));
+      dn ☃ = dx.a(new File(b.v, "servers.dat"));
       if (☃ == null) {
         return;
       }
       du ☃ = ☃.c("servers", 10);
       for (int ☃ = 0; ☃ < ☃.c(); ☃++) {
-        this.c.add(bde.a(☃.b(☃)));
+        c.add(bde.a(☃.b(☃)));
       }
     }
     catch (Exception ☃)
@@ -42,12 +42,12 @@ public class bdf
     try
     {
       du ☃ = new du();
-      for (bde ☃ : this.c) {
+      for (bde ☃ : c) {
         ☃.a(☃.a());
       }
       dn ☃ = new dn();
       ☃.a("servers", ☃);
-      dx.a(☃, new File(this.b.v, "servers.dat"));
+      dx.a(☃, new File(b.v, "servers.dat"));
     }
     catch (Exception ☃)
     {
@@ -57,35 +57,35 @@ public class bdf
   
   public bde a(int ☃)
   {
-    return (bde)this.c.get(☃);
+    return (bde)c.get(☃);
   }
   
   public void b(int ☃)
   {
-    this.c.remove(☃);
+    c.remove(☃);
   }
   
   public void a(bde ☃)
   {
-    this.c.add(☃);
+    c.add(☃);
   }
   
   public int c()
   {
-    return this.c.size();
+    return c.size();
   }
   
   public void a(int ☃, int ☃)
   {
     bde ☃ = a(☃);
-    this.c.set(☃, a(☃));
-    this.c.set(☃, ☃);
+    c.set(☃, a(☃));
+    c.set(☃, ☃);
     b();
   }
   
   public void a(int ☃, bde ☃)
   {
-    this.c.set(☃, ☃);
+    c.set(☃, ☃);
   }
   
   public static void b(bde ☃)
@@ -95,7 +95,7 @@ public class bdf
     for (int ☃ = 0; ☃ < ☃.c(); ☃++)
     {
       bde ☃ = ☃.a(☃);
-      if ((☃.a.equals(☃.a)) && (☃.b.equals(☃.b)))
+      if ((a.equals(a)) && (b.equals(b)))
       {
         ☃.a(☃, ☃);
         break;

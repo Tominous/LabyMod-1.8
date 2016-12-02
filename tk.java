@@ -18,7 +18,7 @@ public class tk
   {
     super.h();
     
-    this.ac.a(16, new Byte((byte)0));
+    ac.a(16, new Byte((byte)0));
   }
   
   protected float bB()
@@ -33,7 +33,7 @@ public class tk
   
   protected String z()
   {
-    if ((n()) && (this.V.nextInt(4) != 0)) {
+    if ((n()) && (V.nextInt(4) != 0)) {
       return null;
     }
     return "mob.bat.idle";
@@ -67,16 +67,16 @@ public class tk
   
   public boolean n()
   {
-    return (this.ac.a(16) & 0x1) != 0;
+    return (ac.a(16) & 0x1) != 0;
   }
   
   public void a(boolean ☃)
   {
-    byte ☃ = this.ac.a(16);
+    byte ☃ = ac.a(16);
     if (☃) {
-      this.ac.b(16, Byte.valueOf((byte)(☃ | 0x1)));
+      ac.b(16, Byte.valueOf((byte)(☃ | 0x1)));
     } else {
-      this.ac.b(16, Byte.valueOf((byte)(☃ & 0xFFFFFFFE)));
+      ac.b(16, Byte.valueOf((byte)(☃ & 0xFFFFFFFE)));
     }
   }
   
@@ -85,12 +85,12 @@ public class tk
     super.t_();
     if (n())
     {
-      this.v = (this.w = this.x = 0.0D);
-      this.t = (ns.c(this.t) + 1.0D - this.K);
+      v = (w = x = 0.0D);
+      t = (ns.c(t) + 1.0D - K);
     }
     else
     {
-      this.w *= 0.6000000238418579D;
+      w *= 0.6000000238418579D;
     }
   }
   
@@ -102,44 +102,44 @@ public class tk
     cj ☃ = ☃.a();
     if (n())
     {
-      if (!this.o.p(☃).c().v())
+      if (!o.p(☃).c().v())
       {
         a(false);
-        this.o.a(null, 1015, ☃, 0);
+        o.a(null, 1015, ☃, 0);
       }
       else
       {
-        if (this.V.nextInt(200) == 0) {
-          this.aK = this.V.nextInt(360);
+        if (V.nextInt(200) == 0) {
+          aK = V.nextInt(360);
         }
-        if (this.o.a(this, 4.0D) != null)
+        if (o.a(this, 4.0D) != null)
         {
           a(false);
-          this.o.a(null, 1015, ☃, 0);
+          o.a(null, 1015, ☃, 0);
         }
       }
     }
     else
     {
-      if ((this.a != null) && ((!this.o.d(this.a)) || (this.a.o() < 1))) {
-        this.a = null;
+      if ((a != null) && ((!o.d(a)) || (a.o() < 1))) {
+        a = null;
       }
-      if ((this.a == null) || (this.V.nextInt(30) == 0) || (this.a.c((int)this.s, (int)this.t, (int)this.u) < 4.0D)) {
-        this.a = new cj((int)this.s + this.V.nextInt(7) - this.V.nextInt(7), (int)this.t + this.V.nextInt(6) - 2, (int)this.u + this.V.nextInt(7) - this.V.nextInt(7));
+      if ((a == null) || (V.nextInt(30) == 0) || (a.c((int)s, (int)t, (int)u) < 4.0D)) {
+        a = new cj((int)s + V.nextInt(7) - V.nextInt(7), (int)t + V.nextInt(6) - 2, (int)u + V.nextInt(7) - V.nextInt(7));
       }
-      double ☃ = this.a.n() + 0.5D - this.s;
-      double ☃ = this.a.o() + 0.1D - this.t;
-      double ☃ = this.a.p() + 0.5D - this.u;
+      double ☃ = a.n() + 0.5D - s;
+      double ☃ = a.o() + 0.1D - t;
+      double ☃ = a.p() + 0.5D - u;
       
-      this.v += (Math.signum(☃) * 0.5D - this.v) * 0.10000000149011612D;
-      this.w += (Math.signum(☃) * 0.699999988079071D - this.w) * 0.10000000149011612D;
-      this.x += (Math.signum(☃) * 0.5D - this.x) * 0.10000000149011612D;
+      v += (Math.signum(☃) * 0.5D - v) * 0.10000000149011612D;
+      w += (Math.signum(☃) * 0.699999988079071D - w) * 0.10000000149011612D;
+      x += (Math.signum(☃) * 0.5D - x) * 0.10000000149011612D;
       
-      float ☃ = (float)(ns.b(this.x, this.v) * 180.0D / 3.1415927410125732D) - 90.0F;
-      float ☃ = ns.g(☃ - this.y);
-      this.ba = 0.5F;
-      this.y += ☃;
-      if ((this.V.nextInt(100) == 0) && (this.o.p(☃).c().v())) {
+      float ☃ = (float)(ns.b(x, v) * 180.0D / 3.1415927410125732D) - 90.0F;
+      float ☃ = ns.g(☃ - y);
+      ba = 0.5F;
+      y += ☃;
+      if ((V.nextInt(100) == 0) && (o.p(☃).c().v())) {
         a(true);
       }
     }
@@ -164,7 +164,7 @@ public class tk
     if (b(☃)) {
       return false;
     }
-    if ((!this.o.D) && 
+    if ((!o.D) && 
       (n())) {
       a(false);
     }
@@ -175,30 +175,30 @@ public class tk
   {
     super.a(☃);
     
-    this.ac.b(16, Byte.valueOf(☃.d("BatFlags")));
+    ac.b(16, Byte.valueOf(☃.d("BatFlags")));
   }
   
   public void b(dn ☃)
   {
     super.b(☃);
     
-    ☃.a("BatFlags", this.ac.a(16));
+    ☃.a("BatFlags", ac.a(16));
   }
   
   public boolean bR()
   {
-    cj ☃ = new cj(this.s, aR().b, this.u);
-    if (☃.o() >= this.o.F()) {
+    cj ☃ = new cj(s, aRb, u);
+    if (☃.o() >= o.F()) {
       return false;
     }
-    int ☃ = this.o.l(☃);
+    int ☃ = o.l(☃);
     int ☃ = 4;
-    if (a(this.o.Y())) {
+    if (a(o.Y())) {
       ☃ = 7;
-    } else if (this.V.nextBoolean()) {
+    } else if (V.nextBoolean()) {
       return false;
     }
-    if (☃ > this.V.nextInt(☃)) {
+    if (☃ > V.nextInt(☃)) {
       return false;
     }
     return super.bR();
@@ -211,6 +211,6 @@ public class tk
   
   public float aS()
   {
-    return this.K / 2.0F;
+    return K / 2.0F;
   }
 }

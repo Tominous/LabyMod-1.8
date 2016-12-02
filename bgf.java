@@ -437,10 +437,10 @@ public class bgf
     {
       cj var7 = boundsFlags.get(0) ? blockPosIn.a(facingIn) : blockPosIn;
       bgf.a var8 = bgf.a.a(facingIn);
-      cj var9 = var7.a(var8.g[0]);
-      cj var10 = var7.a(var8.g[1]);
-      cj var11 = var7.a(var8.g[2]);
-      cj var12 = var7.a(var8.g[3]);
+      cj var9 = var7.a(g[0]);
+      cj var10 = var7.a(g[1]);
+      cj var11 = var7.a(g[2]);
+      cj var12 = var7.a(g[3]);
       int var13 = blockIn.c(blockAccessIn, var9);
       int var14 = blockIn.c(blockAccessIn, var10);
       int var15 = blockIn.c(blockAccessIn, var11);
@@ -465,7 +465,7 @@ public class bgf
       }
       else
       {
-        cj var33 = var9.a(var8.g[2]);
+        cj var33 = var9.a(g[2]);
         
         var25 = bgf.fixAoLightValue(blockAccessIn.p(var33).c().h());
         var29 = blockIn.c(blockAccessIn, var33);
@@ -480,7 +480,7 @@ public class bgf
       }
       else
       {
-        cj var33 = var9.a(var8.g[3]);
+        cj var33 = var9.a(g[3]);
         
         var26 = bgf.fixAoLightValue(blockAccessIn.p(var33).c().h());
         var30 = blockIn.c(blockAccessIn, var33);
@@ -495,7 +495,7 @@ public class bgf
       }
       else
       {
-        cj var33 = var10.a(var8.g[2]);
+        cj var33 = var10.a(g[2]);
         
         var27 = bgf.fixAoLightValue(blockAccessIn.p(var33).c().h());
         var31 = blockIn.c(blockAccessIn, var33);
@@ -510,7 +510,7 @@ public class bgf
       }
       else
       {
-        cj var33 = var10.a(var8.g[3]);
+        cj var33 = var10.a(g[3]);
         
         var28 = bgf.fixAoLightValue(blockAccessIn.p(var33).c().h());
         var32 = blockIn.c(blockAccessIn, var33);
@@ -524,40 +524,40 @@ public class bgf
       var34 = bgf.fixAoLightValue(var34);
       
       bgf.c var35 = bgf.c.a(facingIn);
-      if ((boundsFlags.get(1)) && (var8.i))
+      if ((boundsFlags.get(1)) && (i))
       {
         float var36 = (var20 + var17 + var26 + var34) * 0.25F;
         float var37 = (var19 + var17 + var25 + var34) * 0.25F;
         float var38 = (var19 + var18 + var27 + var34) * 0.25F;
         float var39 = (var20 + var18 + var28 + var34) * 0.25F;
-        float var40 = quadBounds[var8.j[0].m] * quadBounds[var8.j[1].m];
-        float var41 = quadBounds[var8.j[2].m] * quadBounds[var8.j[3].m];
-        float var42 = quadBounds[var8.j[4].m] * quadBounds[var8.j[5].m];
-        float var43 = quadBounds[var8.j[6].m] * quadBounds[var8.j[7].m];
-        float var44 = quadBounds[var8.k[0].m] * quadBounds[var8.k[1].m];
-        float var45 = quadBounds[var8.k[2].m] * quadBounds[var8.k[3].m];
-        float var46 = quadBounds[var8.k[4].m] * quadBounds[var8.k[5].m];
-        float var47 = quadBounds[var8.k[6].m] * quadBounds[var8.k[7].m];
-        float var48 = quadBounds[var8.l[0].m] * quadBounds[var8.l[1].m];
-        float var49 = quadBounds[var8.l[2].m] * quadBounds[var8.l[3].m];
-        float var50 = quadBounds[var8.l[4].m] * quadBounds[var8.l[5].m];
-        float var51 = quadBounds[var8.l[6].m] * quadBounds[var8.l[7].m];
-        float var52 = quadBounds[var8.m[0].m] * quadBounds[var8.m[1].m];
-        float var53 = quadBounds[var8.m[2].m] * quadBounds[var8.m[3].m];
-        float var54 = quadBounds[var8.m[4].m] * quadBounds[var8.m[5].m];
-        float var55 = quadBounds[var8.m[6].m] * quadBounds[var8.m[7].m];
-        this.b[bgf.c.a(var35)] = (var36 * var40 + var37 * var41 + var38 * var42 + var39 * var43);
-        this.b[bgf.c.b(var35)] = (var36 * var44 + var37 * var45 + var38 * var46 + var39 * var47);
-        this.b[bgf.c.c(var35)] = (var36 * var48 + var37 * var49 + var38 * var50 + var39 * var51);
-        this.b[bgf.c.d(var35)] = (var36 * var52 + var37 * var53 + var38 * var54 + var39 * var55);
+        float var40 = quadBounds[j[0].m] * quadBounds[j[1].m];
+        float var41 = quadBounds[j[2].m] * quadBounds[j[3].m];
+        float var42 = quadBounds[j[4].m] * quadBounds[j[5].m];
+        float var43 = quadBounds[j[6].m] * quadBounds[j[7].m];
+        float var44 = quadBounds[k[0].m] * quadBounds[k[1].m];
+        float var45 = quadBounds[k[2].m] * quadBounds[k[3].m];
+        float var46 = quadBounds[k[4].m] * quadBounds[k[5].m];
+        float var47 = quadBounds[k[6].m] * quadBounds[k[7].m];
+        float var48 = quadBounds[l[0].m] * quadBounds[l[1].m];
+        float var49 = quadBounds[l[2].m] * quadBounds[l[3].m];
+        float var50 = quadBounds[l[4].m] * quadBounds[l[5].m];
+        float var51 = quadBounds[l[6].m] * quadBounds[l[7].m];
+        float var52 = quadBounds[m[0].m] * quadBounds[m[1].m];
+        float var53 = quadBounds[m[2].m] * quadBounds[m[3].m];
+        float var54 = quadBounds[m[4].m] * quadBounds[m[5].m];
+        float var55 = quadBounds[m[6].m] * quadBounds[m[7].m];
+        b[bgf.c.a(var35)] = (var36 * var40 + var37 * var41 + var38 * var42 + var39 * var43);
+        b[bgf.c.b(var35)] = (var36 * var44 + var37 * var45 + var38 * var46 + var39 * var47);
+        b[bgf.c.c(var35)] = (var36 * var48 + var37 * var49 + var38 * var50 + var39 * var51);
+        b[bgf.c.d(var35)] = (var36 * var52 + var37 * var53 + var38 * var54 + var39 * var55);
         int var56 = a(var16, var13, var30, var60);
         int var57 = a(var15, var13, var29, var60);
         int var58 = a(var15, var14, var31, var60);
         int var59 = a(var16, var14, var32, var60);
-        this.c[bgf.c.a(var35)] = a(var56, var57, var58, var59, var40, var41, var42, var43);
-        this.c[bgf.c.b(var35)] = a(var56, var57, var58, var59, var44, var45, var46, var47);
-        this.c[bgf.c.c(var35)] = a(var56, var57, var58, var59, var48, var49, var50, var51);
-        this.c[bgf.c.d(var35)] = a(var56, var57, var58, var59, var52, var53, var54, var55);
+        c[bgf.c.a(var35)] = a(var56, var57, var58, var59, var40, var41, var42, var43);
+        c[bgf.c.b(var35)] = a(var56, var57, var58, var59, var44, var45, var46, var47);
+        c[bgf.c.c(var35)] = a(var56, var57, var58, var59, var48, var49, var50, var51);
+        c[bgf.c.d(var35)] = a(var56, var57, var58, var59, var52, var53, var54, var55);
       }
       else
       {
@@ -565,14 +565,14 @@ public class bgf
         float var37 = (var19 + var17 + var25 + var34) * 0.25F;
         float var38 = (var19 + var18 + var27 + var34) * 0.25F;
         float var39 = (var20 + var18 + var28 + var34) * 0.25F;
-        this.c[bgf.c.a(var35)] = a(var16, var13, var30, var60);
-        this.c[bgf.c.b(var35)] = a(var15, var13, var29, var60);
-        this.c[bgf.c.c(var35)] = a(var15, var14, var31, var60);
-        this.c[bgf.c.d(var35)] = a(var16, var14, var32, var60);
-        this.b[bgf.c.a(var35)] = var36;
-        this.b[bgf.c.b(var35)] = var37;
-        this.b[bgf.c.c(var35)] = var38;
-        this.b[bgf.c.d(var35)] = var39;
+        c[bgf.c.a(var35)] = a(var16, var13, var30, var60);
+        c[bgf.c.b(var35)] = a(var15, var13, var29, var60);
+        c[bgf.c.c(var35)] = a(var15, var14, var31, var60);
+        c[bgf.c.d(var35)] = a(var16, var14, var32, var60);
+        b[bgf.c.a(var35)] = var36;
+        b[bgf.c.b(var35)] = var37;
+        b[bgf.c.c(var35)] = var38;
+        b[bgf.c.d(var35)] = var39;
       }
     }
     
@@ -613,13 +613,13 @@ public class bgf
     
     private a(String p_i46236_1_, int p_i46236_2_, cq[] p_i46236_3_, float p_i46236_4_, boolean p_i46236_5_, bgf.d[] p_i46236_6_, bgf.d[] p_i46236_7_, bgf.d[] p_i46236_8_, bgf.d[] p_i46236_9_)
     {
-      this.g = p_i46236_3_;
-      this.h = p_i46236_4_;
-      this.i = p_i46236_5_;
-      this.j = p_i46236_6_;
-      this.k = p_i46236_7_;
-      this.l = p_i46236_8_;
-      this.m = p_i46236_9_;
+      g = p_i46236_3_;
+      h = p_i46236_4_;
+      i = p_i46236_5_;
+      j = p_i46236_6_;
+      k = p_i46236_7_;
+      l = p_i46236_8_;
+      m = p_i46236_9_;
     }
     
     public static a a(cq p_178273_0_)
@@ -650,7 +650,7 @@ public class bgf
     
     private d(String p_i46233_1_, int p_i46233_2_, cq p_i46233_3_, boolean p_i46233_4_)
     {
-      this.m = (p_i46233_3_.a() + (p_i46233_4_ ? cq.values().length : 0));
+      m = (p_i46233_3_.a() + (p_i46233_4_ ? cq.values().length : 0));
     }
   }
   
@@ -666,10 +666,10 @@ public class bgf
     
     private c(String p_i46234_1_, int p_i46234_2_, int p_i46234_3_, int p_i46234_4_, int p_i46234_5_, int p_i46234_6_)
     {
-      this.g = p_i46234_3_;
-      this.h = p_i46234_4_;
-      this.i = p_i46234_5_;
-      this.j = p_i46234_6_;
+      g = p_i46234_3_;
+      h = p_i46234_4_;
+      i = p_i46234_5_;
+      j = p_i46234_6_;
     }
     
     public static c a(cq p_178184_0_)

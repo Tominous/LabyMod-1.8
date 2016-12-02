@@ -36,28 +36,28 @@ public class lo
   
   public lo(MinecraftServer ☃, ek ☃)
   {
-    this.f = ☃;
-    this.a = ☃;
-    d.nextBytes(this.e);
+    f = ☃;
+    a = ☃;
+    d.nextBytes(e);
   }
   
   public void c()
   {
-    if (this.g == lo.a.d)
+    if (g == lo.a.d)
     {
       b();
     }
-    else if (this.g == lo.a.e)
+    else if (g == lo.a.e)
     {
-      lf ☃ = this.f.ap().a(this.i.getId());
+      lf ☃ = f.ap().a(i.getId());
       if (☃ == null)
       {
-        this.g = lo.a.d;
-        this.f.ap().a(this.a, this.l);
-        this.l = null;
+        g = lo.a.d;
+        f.ap().a(a, l);
+        l = null;
       }
     }
-    if (this.h++ == 600) {
+    if (h++ == 600) {
       a("Took too long to log in");
     }
   }
@@ -68,8 +68,8 @@ public class lo
     {
       c.info("Disconnecting " + d() + ": " + ☃);
       fa ☃ = new fa(☃);
-      this.a.a(new jj(☃));
-      this.a.a(☃);
+      a.a(new jj(☃));
+      a.a(☃);
     }
     catch (Exception ☃)
     {
@@ -79,37 +79,37 @@ public class lo
   
   public void b()
   {
-    if (!this.i.isComplete()) {
-      this.i = a(this.i);
+    if (!i.isComplete()) {
+      i = a(i);
     }
-    String ☃ = this.f.ap().a(this.a.b(), this.i);
+    String ☃ = f.ap().a(a.b(), i);
     if (☃ != null)
     {
       a(☃);
     }
     else
     {
-      this.g = lo.a.f;
-      if ((this.f.aK() >= 0) && (!this.a.c())) {
-        this.a.a(new ji(this.f.aK()), new ChannelFutureListener()
+      g = lo.a.f;
+      if ((f.aK() >= 0) && (!a.c())) {
+        a.a(new ji(f.aK()), new ChannelFutureListener()
         {
           public void a(ChannelFuture ☃)
             throws Exception
           {
-            lo.this.a.a(lo.a(lo.this).aK());
+            a.a(lo.a(lo.this).aK());
           }
         }, new GenericFutureListener[0]);
       }
-      this.a.a(new jg(this.i));
-      lf ☃ = this.f.ap().a(this.i.getId());
+      a.a(new jg(i));
+      lf ☃ = f.ap().a(i.getId());
       if (☃ != null)
       {
-        this.g = lo.a.e;
-        this.l = this.f.ap().g(this.i);
+        g = lo.a.e;
+        l = f.ap().g(i);
       }
       else
       {
-        this.f.ap().a(this.a, this.f.ap().g(this.i));
+        f.ap().a(a, f.ap().g(i));
       }
     }
   }
@@ -121,38 +121,38 @@ public class lo
   
   public String d()
   {
-    if (this.i != null) {
-      return this.i.toString() + " (" + this.a.b().toString() + ")";
+    if (i != null) {
+      return i.toString() + " (" + a.b().toString() + ")";
     }
-    return String.valueOf(this.a.b());
+    return String.valueOf(a.b());
   }
   
   public void a(jl ☃)
   {
-    Validate.validState(this.g == lo.a.a, "Unexpected hello packet", new Object[0]);
-    this.i = ☃.a();
-    if ((this.f.af()) && (!this.a.c()))
+    Validate.validState(g == lo.a.a, "Unexpected hello packet", new Object[0]);
+    i = ☃.a();
+    if ((f.af()) && (!a.c()))
     {
-      this.g = lo.a.b;
-      this.a.a(new jh(this.j, this.f.Q().getPublic(), this.e));
+      g = lo.a.b;
+      a.a(new jh(j, f.Q().getPublic(), e));
     }
     else
     {
-      this.g = lo.a.d;
+      g = lo.a.d;
     }
   }
   
   public void a(jm ☃)
   {
-    Validate.validState(this.g == lo.a.b, "Unexpected key packet", new Object[0]);
-    PrivateKey ☃ = this.f.Q().getPrivate();
-    if (!Arrays.equals(this.e, ☃.b(☃))) {
+    Validate.validState(g == lo.a.b, "Unexpected key packet", new Object[0]);
+    PrivateKey ☃ = f.Q().getPrivate();
+    if (!Arrays.equals(e, ☃.b(☃))) {
       throw new IllegalStateException("Invalid nonce!");
     }
-    this.k = ☃.a(☃);
-    this.g = lo.a.c;
+    k = ☃.a(☃);
+    g = lo.a.c;
     
-    this.a.a(this.k);
+    a.a(k);
     
     new Thread("User Authenticator #" + b.incrementAndGet())
     {
@@ -171,12 +171,12 @@ public class lo
           else if (lo.a(lo.this).T())
           {
             lo.e().warn("Failed to verify username but will let them in anyway!");
-            lo.a(lo.this, lo.this.a(☃));
+            lo.a(lo.this, a(☃));
             lo.a(lo.this, lo.a.d);
           }
           else
           {
-            lo.this.a("Failed to verify username!");
+            a("Failed to verify username!");
             lo.e().error("Username '" + lo.b(lo.this).getName() + "' tried to join with an invalid session");
           }
         }
@@ -185,12 +185,12 @@ public class lo
           if (lo.a(lo.this).T())
           {
             lo.e().warn("Authentication servers are down but will let them in anyway!");
-            lo.a(lo.this, lo.this.a(☃));
+            lo.a(lo.this, a(☃));
             lo.a(lo.this, lo.a.d);
           }
           else
           {
-            lo.this.a("Authentication servers are down. Please try again later, sorry!");
+            a("Authentication servers are down. Please try again later, sorry!");
             lo.e().error("Couldn't verify username because servers are unavailable");
           }
         }

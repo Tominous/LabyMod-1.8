@@ -18,11 +18,11 @@ public class uq
     
     private a(String ☃, int ☃, int ☃, int ☃, int ☃)
     {
-      this.B = ☃;
-      this.C = ☃;
-      this.D = ☃;
-      this.E = ☃;
-      this.F = ☃;
+      B = ☃;
+      C = ☃;
+      D = ☃;
+      E = ☃;
+      F = ☃;
     }
   }
   
@@ -38,14 +38,14 @@ public class uq
     List<uq.a> ☃ = Lists.newArrayList();
     for (uq.a ☃ : uq.a.values())
     {
-      this.c = ☃;
+      c = ☃;
       a(☃);
       if (j()) {
         ☃.add(☃);
       }
     }
     if (!☃.isEmpty()) {
-      this.c = ((uq.a)☃.get(this.V.nextInt(☃.size())));
+      c = ((uq.a)☃.get(V.nextInt(☃.size())));
     }
     a(☃);
   }
@@ -54,9 +54,9 @@ public class uq
   {
     this(☃, ☃, ☃);
     for (uq.a ☃ : uq.a.values()) {
-      if (☃.B.equals(☃))
+      if (B.equals(☃))
       {
-        this.c = ☃;
+        c = ☃;
         break;
       }
     }
@@ -65,7 +65,7 @@ public class uq
   
   public void b(dn ☃)
   {
-    ☃.a("Motive", this.c.B);
+    ☃.a("Motive", c.B);
     super.b(☃);
   }
   
@@ -73,35 +73,35 @@ public class uq
   {
     String ☃ = ☃.j("Motive");
     for (uq.a ☃ : uq.a.values()) {
-      if (☃.B.equals(☃)) {
-        this.c = ☃;
+      if (B.equals(☃)) {
+        c = ☃;
       }
     }
-    if (this.c == null) {
-      this.c = uq.a.a;
+    if (c == null) {
+      c = uq.a.a;
     }
     super.a(☃);
   }
   
   public int l()
   {
-    return this.c.C;
+    return c.C;
   }
   
   public int m()
   {
-    return this.c.D;
+    return c.D;
   }
   
   public void b(pk ☃)
   {
-    if (!this.o.Q().b("doEntityDrops")) {
+    if (!o.Q().b("doEntityDrops")) {
       return;
     }
     if ((☃ instanceof wn))
     {
       wn ☃ = (wn)☃;
-      if (☃.bA.d) {
+      if (bA.d) {
         return;
       }
     }
@@ -110,13 +110,13 @@ public class uq
   
   public void b(double ☃, double ☃, double ☃, float ☃, float ☃)
   {
-    cj ☃ = this.a.a(☃ - this.s, ☃ - this.t, ☃ - this.u);
+    cj ☃ = a.a(☃ - s, ☃ - t, ☃ - u);
     b(☃.n(), ☃.o(), ☃.p());
   }
   
   public void a(double ☃, double ☃, double ☃, float ☃, float ☃, int ☃, boolean ☃)
   {
-    cj ☃ = this.a.a(☃ - this.s, ☃ - this.t, ☃ - this.u);
+    cj ☃ = a.a(☃ - s, ☃ - t, ☃ - u);
     b(☃.n(), ☃.o(), ☃.p());
   }
 }

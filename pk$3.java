@@ -3,11 +3,11 @@ import java.util.concurrent.Callable;
 class pk$3
   implements Callable<String>
 {
-  pk$3(pk this$0) {}
+  pk$3(pk parampk) {}
   
   public String a()
     throws Exception
   {
-    return this.this$0.l.toString();
+    return a.l.toString();
   }
 }

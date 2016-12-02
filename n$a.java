@@ -5,18 +5,18 @@ public enum n$a
   
   private n$a(int ☃, String ☃)
   {
-    this.f = ☃;
-    this.g = ☃;
+    f = ☃;
+    g = ☃;
   }
   
   public int a()
   {
-    return this.f;
+    return f;
   }
   
   public String b()
   {
-    return this.g;
+    return g;
   }
   
   public static String[] c()

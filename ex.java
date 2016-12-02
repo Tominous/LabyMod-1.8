@@ -9,49 +9,49 @@ public class ex
   
   public ex(String ☃, String ☃)
   {
-    this.b = ☃;
-    this.c = ☃;
+    b = ☃;
+    c = ☃;
   }
   
   public String g()
   {
-    return this.b;
+    return b;
   }
   
   public String h()
   {
-    return this.c;
+    return c;
   }
   
   public void b(String ☃)
   {
-    this.d = ☃;
+    d = ☃;
   }
   
   public String e()
   {
     MinecraftServer ☃ = MinecraftServer.N();
-    if ((☃ != null) && (☃.O()) && (nx.b(this.d)))
+    if ((☃ != null) && (☃.O()) && (nx.b(d)))
     {
       auo ☃ = ☃.a(0).Z();
-      auk ☃ = ☃.b(this.c);
-      if (☃.b(this.b, ☃))
+      auk ☃ = ☃.b(c);
+      if (☃.b(b, ☃))
       {
-        aum ☃ = ☃.c(this.b, ☃);
+        aum ☃ = ☃.c(b, ☃);
         b(String.format("%d", new Object[] { Integer.valueOf(☃.c()) }));
       }
       else
       {
-        this.d = "";
+        d = "";
       }
     }
-    return this.d;
+    return d;
   }
   
   public ex i()
   {
-    ex ☃ = new ex(this.b, this.c);
-    ☃.b(this.d);
+    ex ☃ = new ex(b, c);
+    ☃.b(d);
     ☃.a(b().m());
     for (eu ☃ : a()) {
       ☃.a(☃.f());
@@ -67,13 +67,13 @@ public class ex
     if ((☃ instanceof ex))
     {
       ex ☃ = (ex)☃;
-      return (this.b.equals(☃.b)) && (this.c.equals(☃.c)) && (super.equals(☃));
+      return (b.equals(b)) && (c.equals(c)) && (super.equals(☃));
     }
     return false;
   }
   
   public String toString()
   {
-    return "ScoreComponent{name='" + this.b + '\'' + "objective='" + this.c + '\'' + ", siblings=" + this.a + ", style=" + b() + '}';
+    return "ScoreComponent{name='" + b + '\'' + "objective='" + c + '\'' + ", siblings=" + a + ", style=" + b() + '}';
   }
 }

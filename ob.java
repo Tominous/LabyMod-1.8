@@ -13,17 +13,17 @@ public class ob
   public ob(zw ☃, int ☃, int ☃, int ☃, int ☃)
   {
     super(☃);
-    this.b = new zx(☃, 1, ☃);
-    this.c = ☃;
-    this.d = ☃;
+    b = new zx(☃, 1, ☃);
+    c = ☃;
+    d = ☃;
   }
   
   public ob(zx ☃, int ☃, int ☃, int ☃)
   {
     super(☃);
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
   }
   
   public static void a(Random ☃, List<ob> ☃, og ☃, int ☃)
@@ -31,19 +31,19 @@ public class ob
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
       ob ☃ = (ob)oa.a(☃, ☃);
-      int ☃ = ☃.c + ☃.nextInt(☃.d - ☃.c + 1);
-      if (☃.b.c() >= ☃)
+      int ☃ = c + ☃.nextInt(d - c + 1);
+      if (b.c() >= ☃)
       {
-        zx ☃ = ☃.b.k();
-        ☃.b = ☃;
+        zx ☃ = b.k();
+        b = ☃;
         ☃.a(☃.nextInt(☃.o_()), ☃);
       }
       else
       {
         for (int ☃ = 0; ☃ < ☃; ☃++)
         {
-          zx ☃ = ☃.b.k();
-          ☃.b = 1;
+          zx ☃ = b.k();
+          b = 1;
           ☃.a(☃.nextInt(☃.o_()), ☃);
         }
       }
@@ -55,19 +55,19 @@ public class ob
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
       ob ☃ = (ob)oa.a(☃, ☃);
-      int ☃ = ☃.c + ☃.nextInt(☃.d - ☃.c + 1);
-      if (☃.b.c() >= ☃)
+      int ☃ = c + ☃.nextInt(d - c + 1);
+      if (b.c() >= ☃)
       {
-        zx ☃ = ☃.b.k();
-        ☃.b = ☃;
+        zx ☃ = b.k();
+        b = ☃;
         ☃.a(☃.nextInt(☃.o_()), ☃);
       }
       else
       {
         for (int ☃ = 0; ☃ < ☃; ☃++)
         {
-          zx ☃ = ☃.b.k();
-          ☃.b = 1;
+          zx ☃ = b.k();
+          b = 1;
           ☃.a(☃.nextInt(☃.o_()), ☃);
         }
       }

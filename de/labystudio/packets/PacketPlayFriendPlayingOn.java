@@ -19,14 +19,14 @@ public class PacketPlayFriendPlayingOn
   
   public void read(PacketBuf buf)
   {
-    this.player = buf.readPlayer();
-    this.gameModeName = buf.readString();
+    player = buf.readPlayer();
+    gameModeName = buf.readString();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writePlayer(this.player);
-    buf.writeString(this.gameModeName);
+    buf.writePlayer(player);
+    buf.writeString(gameModeName);
   }
   
   public void handle(PacketHandler packetHandler)
@@ -36,11 +36,11 @@ public class PacketPlayFriendPlayingOn
   
   public String getGameModeName()
   {
-    return this.gameModeName;
+    return gameModeName;
   }
   
   public LabyModPlayer getPlayer()
   {
-    return this.player;
+    return player;
   }
 }

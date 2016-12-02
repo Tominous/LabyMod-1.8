@@ -11,10 +11,10 @@ public abstract class afn
   protected afn(boolean ☃)
   {
     super(arm.q);
-    j(this.M.b().a(a, cq.c).a(b, Boolean.valueOf(false)));
+    j(M.b().a(a, cq.c).a(b, Boolean.valueOf(false)));
     a(true);
     a(yz.d);
-    this.N = ☃;
+    N = ☃;
   }
   
   public aug a(adm ☃, cj ☃, alz ☃)
@@ -24,7 +24,7 @@ public abstract class afn
   
   public int a(adm ☃)
   {
-    return this.N ? 30 : 20;
+    return N ? 30 : 20;
   }
   
   public boolean c()
@@ -176,13 +176,13 @@ public abstract class afn
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     if (!((Boolean)☃.b(b)).booleanValue()) {
       return;
     }
-    if (this.N)
+    if (N)
     {
       f(☃, ☃, ☃);
     }
@@ -207,10 +207,10 @@ public abstract class afn
   
   public void a(adm ☃, cj ☃, alz ☃, pk ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
-    if (!this.N) {
+    if (!N) {
       return;
     }
     if (((Boolean)☃.b(b)).booleanValue()) {
@@ -222,7 +222,7 @@ public abstract class afn
   private void f(adm ☃, cj ☃, alz ☃)
   {
     d(☃);
-    List<? extends pk> ☃ = ☃.a(wq.class, new aug(☃.n() + this.B, ☃.o() + this.C, ☃.p() + this.D, ☃.n() + this.E, ☃.o() + this.F, ☃.p() + this.G));
+    List<? extends pk> ☃ = ☃.a(wq.class, new aug(☃.n() + B, ☃.o() + C, ☃.p() + D, ☃.n() + E, ☃.o() + F, ☃.p() + G));
     boolean ☃ = !☃.isEmpty();
     boolean ☃ = ((Boolean)☃.b(b)).booleanValue();
     if ((☃) && (!☃))

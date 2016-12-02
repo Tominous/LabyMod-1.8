@@ -20,15 +20,15 @@ public class wu
   
   protected void a(auh ☃)
   {
-    if (!this.o.D)
+    if (!o.D)
     {
-      if (☃.d != null)
+      if (d != null)
       {
-        ☃.d.a(ow.a(this, this.a), 6.0F);
-        a(this.a, ☃.d);
+        d.a(ow.a(this, a), 6.0F);
+        a(a, d);
       }
-      boolean ☃ = this.o.Q().b("mobGriefing");
-      this.o.a(null, this.s, this.t, this.u, this.e, ☃, ☃);
+      boolean ☃ = o.Q().b("mobGriefing");
+      o.a(null, s, t, u, e, ☃, ☃);
       J();
     }
   }
@@ -36,14 +36,14 @@ public class wu
   public void b(dn ☃)
   {
     super.b(☃);
-    ☃.a("ExplosionPower", this.e);
+    ☃.a("ExplosionPower", e);
   }
   
   public void a(dn ☃)
   {
     super.a(☃);
     if (☃.b("ExplosionPower", 99)) {
-      this.e = ☃.f("ExplosionPower");
+      e = ☃.f("ExplosionPower");
     }
   }
 }

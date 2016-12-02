@@ -10,6 +10,6 @@ class aqq$3
   public String a()
     throws Exception
   {
-    return this.this$0.getClass().getCanonicalName();
+    return this$0.getClass().getCanonicalName();
   }
 }

@@ -42,7 +42,7 @@ public class blq
     JsonParser ☃ = new JsonParser();
     
     jy ☃ = new jy("shaders/program/" + ☃ + ".json");
-    this.m = ☃;
+    m = ☃;
     
     InputStream ☃ = null;
     try
@@ -78,13 +78,13 @@ public class blq
       if (☃ != null)
       {
         ☃ = 0;
-        this.q = Lists.newArrayListWithCapacity(☃.size());
-        this.r = Lists.newArrayListWithCapacity(☃.size());
+        q = Lists.newArrayListWithCapacity(☃.size());
+        r = Lists.newArrayListWithCapacity(☃.size());
         for (JsonElement ☃ : ☃)
         {
           try
           {
-            this.r.add(ni.a(☃, "attribute"));
+            r.add(ni.a(☃, "attribute"));
           }
           catch (Exception ☃)
           {
@@ -97,8 +97,8 @@ public class blq
       }
       else
       {
-        this.q = null;
-        this.r = null;
+        q = null;
+        r = null;
       }
       JsonArray ☃ = ni.a(☃, "uniforms", null);
       int ☃;
@@ -120,21 +120,21 @@ public class blq
           ☃++;
         }
       }
-      this.p = blo.a(ni.a(☃, "blend", null));
-      this.n = ni.a(☃, "cull", true);
+      p = blo.a(ni.a(☃, "blend", null));
+      n = ni.a(☃, "cull", true);
       
-      this.s = blt.a(☃, blt.a.a, ☃);
-      this.t = blt.a(☃, blt.a.b, ☃);
+      s = blt.a(☃, blt.a.a, ☃);
+      t = blt.a(☃, blt.a.b, ☃);
       
-      this.l = blu.b().c();
+      l = blu.b().c();
       blu.b().b(this);
       
       i();
-      if (this.r != null) {
-        for (String ☃ : this.r)
+      if (r != null) {
+        for (String ☃ : r)
         {
-          int ☃ = bqs.b(this.l, ☃);
-          this.q.add(Integer.valueOf(☃));
+          int ☃ = bqs.b(l, ☃);
+          q.add(Integer.valueOf(☃));
         }
       }
     }
@@ -162,8 +162,8 @@ public class blq
     d = -1;
     c = null;
     e = true;
-    for (int ☃ = 0; ☃ < this.h.size(); ☃++) {
-      if (this.f.get(this.g.get(☃)) != null)
+    for (int ☃ = 0; ☃ < h.size(); ☃++) {
+      if (f.get(g.get(☃)) != null)
       {
         bfl.g(bqs.q + ☃);
         bfl.i(0);
@@ -173,30 +173,30 @@ public class blq
   
   public void c()
   {
-    this.o = false;
+    o = false;
     
     c = this;
     
-    this.p.a();
-    if (this.l != d)
+    p.a();
+    if (l != d)
     {
-      bqs.d(this.l);
-      d = this.l;
+      bqs.d(l);
+      d = l;
     }
-    if (this.n) {
+    if (n) {
       bfl.o();
     } else {
       bfl.p();
     }
-    for (int ☃ = 0; ☃ < this.h.size(); ☃++) {
-      if (this.f.get(this.g.get(☃)) != null)
+    for (int ☃ = 0; ☃ < h.size(); ☃++) {
+      if (f.get(g.get(☃)) != null)
       {
         bfl.g(bqs.q + ☃);
         bfl.w();
-        Object ☃ = this.f.get(this.g.get(☃));
+        Object ☃ = f.get(g.get(☃));
         int ☃ = -1;
         if ((☃ instanceof bfw)) {
-          ☃ = ((bfw)☃).g;
+          ☃ = g;
         } else if ((☃ instanceof bmk)) {
           ☃ = ((bmk)☃).b();
         } else if ((☃ instanceof Integer)) {
@@ -206,32 +206,32 @@ public class blq
         {
           bfl.i(☃);
           
-          bqs.f(bqs.a(this.l, (CharSequence)this.g.get(☃)), ☃);
+          bqs.f(bqs.a(l, (CharSequence)g.get(☃)), ☃);
         }
       }
     }
-    for (blv ☃ : this.i) {
+    for (blv ☃ : i) {
       ☃.b();
     }
   }
   
   public void d()
   {
-    this.o = true;
+    o = true;
   }
   
   public blv a(String ☃)
   {
-    if (this.k.containsKey(☃)) {
-      return (blv)this.k.get(☃);
+    if (k.containsKey(☃)) {
+      return (blv)k.get(☃);
     }
     return null;
   }
   
   public blv b(String ☃)
   {
-    if (this.k.containsKey(☃)) {
-      return (blv)this.k.get(☃);
+    if (k.containsKey(☃)) {
+      return (blv)k.get(☃);
     }
     return b;
   }
@@ -239,37 +239,37 @@ public class blq
   private void i()
   {
     int ☃ = 0;
-    for (int ☃ = 0; ☃ < this.g.size(); ☃++)
+    for (int ☃ = 0; ☃ < g.size(); ☃++)
     {
-      String ☃ = (String)this.g.get(☃);
-      int ☃ = bqs.a(this.l, ☃);
+      String ☃ = (String)g.get(☃);
+      int ☃ = bqs.a(l, ☃);
       if (☃ == -1)
       {
-        a.warn("Shader " + this.m + "could not find sampler named " + ☃ + " in the specified shader program.");
+        a.warn("Shader " + m + "could not find sampler named " + ☃ + " in the specified shader program.");
         
-        this.f.remove(☃);
-        this.g.remove(☃);
+        f.remove(☃);
+        g.remove(☃);
         ☃--;
       }
       else
       {
-        this.h.add(Integer.valueOf(☃));
+        h.add(Integer.valueOf(☃));
       }
       ☃++;
     }
-    for (blv ☃ : this.i)
+    for (blv ☃ : i)
     {
       String ☃ = ☃.a();
-      int ☃ = bqs.a(this.l, ☃);
+      int ☃ = bqs.a(l, ☃);
       if (☃ == -1)
       {
         a.warn("Could not find uniform named " + ☃ + " in the specified" + " shader program.");
       }
       else
       {
-        this.j.add(Integer.valueOf(☃));
+        j.add(Integer.valueOf(☃));
         ☃.b(☃);
-        this.k.put(☃, ☃);
+        k.put(☃, ☃);
       }
     }
   }
@@ -281,19 +281,19 @@ public class blq
     String ☃ = ni.h(☃, "name");
     if (!ni.a(☃, "file"))
     {
-      this.f.put(☃, null);
-      this.g.add(☃);
+      f.put(☃, null);
+      g.add(☃);
       return;
     }
-    this.g.add(☃);
+    g.add(☃);
   }
   
   public void a(String ☃, Object ☃)
   {
-    if (this.f.containsKey(☃)) {
-      this.f.remove(☃);
+    if (f.containsKey(☃)) {
+      f.remove(☃);
     }
-    this.f.put(☃, ☃);
+    f.put(☃, ☃);
     d();
   }
   
@@ -339,21 +339,21 @@ public class blq
     } else {
       ☃.a(☃);
     }
-    this.i.add(☃);
+    i.add(☃);
   }
   
   public blt e()
   {
-    return this.s;
+    return s;
   }
   
   public blt f()
   {
-    return this.t;
+    return t;
   }
   
   public int h()
   {
-    return this.l;
+    return l;
   }
 }

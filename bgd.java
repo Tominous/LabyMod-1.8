@@ -12,13 +12,13 @@ public class bgd
   
   public bgd(bgc p_i46237_1_, avh p_i46237_2_)
   {
-    this.a = p_i46237_1_;
-    this.b = p_i46237_2_;
+    a = p_i46237_1_;
+    b = p_i46237_2_;
   }
   
   public bgc a()
   {
-    return this.a;
+    return a;
   }
   
   public void a(alz p_175020_1_, cj p_175020_2_, bmi p_175020_3_, adq p_175020_4_)
@@ -28,7 +28,7 @@ public class bgd
     if (var6 == 3)
     {
       p_175020_1_ = var5.a(p_175020_1_, p_175020_4_, p_175020_2_);
-      boq var7 = this.a.b(p_175020_1_);
+      boq var7 = a.b(p_175020_1_);
       if (Reflector.ISmartBlockModel.isInstance(var7))
       {
         alz extendedState = (alz)Reflector.call(var5, Reflector.ForgeBlock_getExtendedState, new Object[] { p_175020_1_, p_175020_4_, p_175020_2_ });
@@ -38,13 +38,13 @@ public class bgd
             Reflector.callVoid(Reflector.ForgeHooksClient_setRenderLayer, new Object[] { layer });
             boq targetLayer = (boq)Reflector.call(var7, Reflector.ISmartBlockModel_handleBlockState, new Object[] { extendedState });
             boq damageModel = new bow.a(targetLayer, p_175020_3_).b();
-            this.c.a(p_175020_4_, damageModel, p_175020_1_, p_175020_2_, bfx.a().c());
+            c.a(p_175020_4_, damageModel, p_175020_1_, p_175020_2_, bfx.a().c());
           }
         }
         return;
       }
       boq var8 = new bow.a(var7, p_175020_3_).b();
-      this.c.a(p_175020_4_, var8, p_175020_1_, p_175020_2_, bfx.a().c());
+      c.a(p_175020_4_, var8, p_175020_1_, p_175020_2_, bfx.a().c());
     }
   }
   
@@ -62,7 +62,7 @@ public class bgd
         if (Config.isShaders()) {
           SVertexBuilder.pushEntity(p_175018_1_, p_175018_2_, p_175018_3_, p_175018_4_);
         }
-        boolean flag1 = this.e.a(p_175018_3_, p_175018_1_, p_175018_2_, p_175018_4_);
+        boolean flag1 = e.a(p_175018_3_, p_175018_1_, p_175018_2_, p_175018_4_);
         if (Config.isShaders()) {
           SVertexBuilder.popEntity(p_175018_4_);
         }
@@ -74,7 +74,7 @@ public class bgd
         if (Config.isShaders()) {
           SVertexBuilder.pushEntity(p_175018_1_, p_175018_2_, p_175018_3_, p_175018_4_);
         }
-        boolean flag3 = this.c.a(p_175018_3_, var9, p_175018_1_, p_175018_2_, p_175018_4_);
+        boolean flag3 = c.a(p_175018_3_, var9, p_175018_1_, p_175018_2_, p_175018_4_);
         if (Config.isShaders()) {
           SVertexBuilder.popEntity(p_175018_4_);
         }
@@ -93,13 +93,13 @@ public class bgd
   
   public bgf b()
   {
-    return this.c;
+    return c;
   }
   
   private boq a(alz p_175017_1_, cj p_175017_2_)
   {
-    boq var3 = this.a.b(p_175017_1_);
-    if ((p_175017_2_ != null) && (this.b.v) && ((var3 instanceof box))) {
+    boq var3 = a.b(p_175017_1_);
+    if ((p_175017_2_ != null) && (b.v) && ((var3 instanceof box))) {
       var3 = ((box)var3).a(ns.a(p_175017_2_));
     }
     return var3;
@@ -115,8 +115,8 @@ public class bgd
       }
       catch (Exception var6) {}
     }
-    boq var5 = this.a.b(p_175022_1_);
-    if ((p_175022_3_ != null) && (this.b.v) && ((var5 instanceof box))) {
+    boq var5 = a.b(p_175022_1_);
+    if ((p_175022_3_ != null) && (b.v) && ((var5 instanceof box))) {
       var5 = ((box)var5).a(ns.a(p_175022_3_));
     }
     if (Reflector.ISmartBlockModel.isInstance(var5))
@@ -137,11 +137,11 @@ public class bgd
       default: 
         break;
       case 2: 
-        this.d.a(p_175016_1_.c(), p_175016_2_);
+        d.a(p_175016_1_.c(), p_175016_2_);
         break;
       case 3: 
         boq var4 = a(p_175016_1_, (cj)null);
-        this.c.a(var4, p_175016_1_, p_175016_2_, true);
+        c.a(var4, p_175016_1_, p_175016_2_, true);
       }
     }
   }
@@ -157,6 +157,6 @@ public class bgd
   
   public void a(bni resourceManager)
   {
-    this.e.a();
+    e.a();
   }
 }

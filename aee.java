@@ -13,18 +13,18 @@ public class aee
   protected aee(int ☃, boolean ☃)
   {
     super(☃);
-    this.aI = this.aF;
+    aI = aF;
     if (☃)
     {
-      this.as.A = 3;
-      this.aI = this.aG;
+      as.A = 3;
+      aI = aG;
     }
   }
   
   public aoh a(Random ☃)
   {
     if (☃.nextInt(3) > 0) {
-      return this.aE;
+      return aE;
     }
     return super.a(☃);
   }
@@ -50,35 +50,35 @@ public class aee
       int ☃ = ☃.nextInt(16);
       int ☃ = ☃.nextInt(64);
       int ☃ = ☃.nextInt(16);
-      this.aD.b(☃, ☃, ☃.a(☃, ☃, ☃));
+      aD.b(☃, ☃, ☃.a(☃, ☃, ☃));
     }
   }
   
   public void a(adm ☃, Random ☃, ans ☃, int ☃, int ☃, double ☃)
   {
-    this.ak = afi.c.Q();
-    this.al = afi.d.Q();
-    if (((☃ < -1.0D) || (☃ > 2.0D)) && (this.aI == this.aH))
+    ak = afi.c.Q();
+    al = afi.d.Q();
+    if (((☃ < -1.0D) || (☃ > 2.0D)) && (aI == aH))
     {
-      this.ak = afi.n.Q();
-      this.al = afi.n.Q();
+      ak = afi.n.Q();
+      al = afi.n.Q();
     }
-    else if ((☃ > 1.0D) && (this.aI != this.aG))
+    else if ((☃ > 1.0D) && (aI != aG))
     {
-      this.ak = afi.b.Q();
-      this.al = afi.b.Q();
+      ak = afi.b.Q();
+      al = afi.b.Q();
     }
     b(☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   private aee b(ady ☃)
   {
-    this.aI = this.aH;
+    aI = aH;
     
-    a(☃.ai, true);
-    a(☃.ah + " M");
-    a(new ady.a(☃.an, ☃.ao));
-    a(☃.ap, ☃.aq);
+    a(ai, true);
+    a(ah + " M");
+    a(new ady.a(an, ao));
+    a(ap, aq);
     return this;
   }
   

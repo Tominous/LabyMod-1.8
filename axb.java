@@ -35,47 +35,47 @@ public class axb
   
   public axb(axu ☃)
   {
-    this.f = ☃;
+    f = ☃;
     
-    this.J = "";
-    this.K = bnq.a("selectWorld.newWorld", new Object[0]);
+    J = "";
+    K = bnq.a("selectWorld.newWorld", new Object[0]);
   }
   
   public void e()
   {
-    this.g.a();
-    this.h.a();
+    g.a();
+    h.a();
   }
   
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    this.n.clear();
-    this.n.add(new avs(0, this.l / 2 - 155, this.m - 28, 150, 20, bnq.a("selectWorld.create", new Object[0])));
-    this.n.add(new avs(1, this.l / 2 + 5, this.m - 28, 150, 20, bnq.a("gui.cancel", new Object[0])));
+    n.clear();
+    n.add(new avs(0, l / 2 - 155, m - 28, 150, 20, bnq.a("selectWorld.create", new Object[0])));
+    n.add(new avs(1, l / 2 + 5, m - 28, 150, 20, bnq.a("gui.cancel", new Object[0])));
     
-    this.n.add(this.A = new avs(2, this.l / 2 - 75, 115, 150, 20, bnq.a("selectWorld.gameMode", new Object[0])));
-    this.n.add(this.B = new avs(3, this.l / 2 - 75, 187, 150, 20, bnq.a("selectWorld.moreWorldOptions", new Object[0])));
+    n.add(A = new avs(2, l / 2 - 75, 115, 150, 20, bnq.a("selectWorld.gameMode", new Object[0])));
+    n.add(B = new avs(3, l / 2 - 75, 187, 150, 20, bnq.a("selectWorld.moreWorldOptions", new Object[0])));
     
-    this.n.add(this.C = new avs(4, this.l / 2 - 155, 100, 150, 20, bnq.a("selectWorld.mapFeatures", new Object[0])));
-    this.C.m = false;
-    this.n.add(this.D = new avs(7, this.l / 2 + 5, 151, 150, 20, bnq.a("selectWorld.bonusItems", new Object[0])));
-    this.D.m = false;
-    this.n.add(this.E = new avs(5, this.l / 2 + 5, 100, 150, 20, bnq.a("selectWorld.mapType", new Object[0])));
-    this.E.m = false;
-    this.n.add(this.F = new avs(6, this.l / 2 - 155, 151, 150, 20, bnq.a("selectWorld.allowCommands", new Object[0])));
-    this.F.m = false;
-    this.n.add(this.G = new avs(8, this.l / 2 + 5, 120, 150, 20, bnq.a("selectWorld.customizeType", new Object[0])));
-    this.G.m = false;
+    n.add(C = new avs(4, l / 2 - 155, 100, 150, 20, bnq.a("selectWorld.mapFeatures", new Object[0])));
+    C.m = false;
+    n.add(D = new avs(7, l / 2 + 5, 151, 150, 20, bnq.a("selectWorld.bonusItems", new Object[0])));
+    D.m = false;
+    n.add(E = new avs(5, l / 2 + 5, 100, 150, 20, bnq.a("selectWorld.mapType", new Object[0])));
+    E.m = false;
+    n.add(F = new avs(6, l / 2 - 155, 151, 150, 20, bnq.a("selectWorld.allowCommands", new Object[0])));
+    F.m = false;
+    n.add(G = new avs(8, l / 2 + 5, 120, 150, 20, bnq.a("selectWorld.customizeType", new Object[0])));
+    G.m = false;
     
-    this.g = new avw(9, this.q, this.l / 2 - 100, 60, 200, 20);
-    this.g.b(true);
-    this.g.a(this.K);
+    g = new avw(9, q, l / 2 - 100, 60, 200, 20);
+    g.b(true);
+    g.a(K);
     
-    this.h = new avw(10, this.q, this.l / 2 - 100, 60, 200, 20);
-    this.h.a(this.J);
+    h = new avw(10, q, l / 2 - 100, 60, 200, 20);
+    h.a(J);
     
-    a(this.z);
+    a(z);
     
     a();
     f();
@@ -83,41 +83,41 @@ public class axb
   
   private void a()
   {
-    this.i = this.g.b().trim();
+    i = g.b().trim();
     for (char ☃ : f.a) {
-      this.i = this.i.replace(☃, '_');
+      i = i.replace(☃, '_');
     }
-    if (StringUtils.isEmpty(this.i)) {
-      this.i = "World";
+    if (StringUtils.isEmpty(i)) {
+      i = "World";
     }
-    this.i = a(this.j.f(), this.i);
+    i = a(j.f(), i);
   }
   
   private void f()
   {
-    this.A.j = (bnq.a("selectWorld.gameMode", new Object[0]) + ": " + bnq.a(new StringBuilder().append("selectWorld.gameMode.").append(this.r).toString(), new Object[0]));
-    this.H = bnq.a("selectWorld.gameMode." + this.r + ".line1", new Object[0]);
-    this.I = bnq.a("selectWorld.gameMode." + this.r + ".line2", new Object[0]);
+    A.j = (bnq.a("selectWorld.gameMode", new Object[0]) + ": " + bnq.a(new StringBuilder().append("selectWorld.gameMode.").append(r).toString(), new Object[0]));
+    H = bnq.a("selectWorld.gameMode." + r + ".line1", new Object[0]);
+    I = bnq.a("selectWorld.gameMode." + r + ".line2", new Object[0]);
     
-    this.C.j = (bnq.a("selectWorld.mapFeatures", new Object[0]) + " ");
-    if (this.t) {
-      this.C.j += bnq.a("options.on", new Object[0]);
+    C.j = (bnq.a("selectWorld.mapFeatures", new Object[0]) + " ");
+    if (t) {
+      C.j += bnq.a("options.on", new Object[0]);
     } else {
-      this.C.j += bnq.a("options.off", new Object[0]);
+      C.j += bnq.a("options.off", new Object[0]);
     }
-    this.D.j = (bnq.a("selectWorld.bonusItems", new Object[0]) + " ");
-    if ((this.w) && (!this.x)) {
-      this.D.j += bnq.a("options.on", new Object[0]);
+    D.j = (bnq.a("selectWorld.bonusItems", new Object[0]) + " ");
+    if ((w) && (!x)) {
+      D.j += bnq.a("options.on", new Object[0]);
     } else {
-      this.D.j += bnq.a("options.off", new Object[0]);
+      D.j += bnq.a("options.off", new Object[0]);
     }
-    this.E.j = (bnq.a("selectWorld.mapType", new Object[0]) + " " + bnq.a(adr.a[this.L].b(), new Object[0]));
+    E.j = (bnq.a("selectWorld.mapType", new Object[0]) + " " + bnq.a(adr.a[L].b(), new Object[0]));
     
-    this.F.j = (bnq.a("selectWorld.allowCommands", new Object[0]) + " ");
-    if ((this.u) && (!this.x)) {
-      this.F.j += bnq.a("options.on", new Object[0]);
+    F.j = (bnq.a("selectWorld.allowCommands", new Object[0]) + " ");
+    if ((u) && (!x)) {
+      F.j += bnq.a("options.on", new Object[0]);
     } else {
-      this.F.j += bnq.a("options.off", new Object[0]);
+      F.j += bnq.a("options.off", new Object[0]);
     }
   }
   
@@ -144,23 +144,23 @@ public class axb
   
   protected void a(avs ☃)
   {
-    if (!☃.l) {
+    if (!l) {
       return;
     }
-    if (☃.k == 1)
+    if (k == 1)
     {
-      this.j.a(this.f);
+      j.a(f);
     }
-    else if (☃.k == 0)
+    else if (k == 0)
     {
-      this.j.a(null);
-      if (this.y) {
+      j.a(null);
+      if (y) {
         return;
       }
-      this.y = true;
+      y = true;
       
       long ☃ = new Random().nextLong();
-      String ☃ = this.h.b();
+      String ☃ = h.b();
       if (!StringUtils.isEmpty(☃)) {
         try
         {
@@ -174,106 +174,106 @@ public class axb
           ☃ = ☃.hashCode();
         }
       }
-      adp.a ☃ = adp.a.a(this.r);
-      adp ☃ = new adp(☃, ☃, this.t, this.x, adr.a[this.L]);
-      ☃.a(this.a);
-      if ((this.w) && (!this.x)) {
+      adp.a ☃ = adp.a.a(r);
+      adp ☃ = new adp(☃, ☃, t, x, adr.a[L]);
+      ☃.a(a);
+      if ((w) && (!x)) {
         ☃.a();
       }
-      if ((this.u) && (!this.x)) {
+      if ((u) && (!x)) {
         ☃.b();
       }
-      this.j.a(this.i, this.g.b().trim(), ☃);
+      j.a(i, g.b().trim(), ☃);
     }
-    else if (☃.k == 3)
+    else if (k == 3)
     {
       h();
     }
-    else if (☃.k == 2)
+    else if (k == 2)
     {
-      if (this.r.equals("survival"))
+      if (r.equals("survival"))
       {
-        if (!this.v) {
-          this.u = false;
+        if (!v) {
+          u = false;
         }
-        this.x = false;
-        this.r = "hardcore";
-        this.x = true;
-        this.F.l = false;
-        this.D.l = false;
+        x = false;
+        r = "hardcore";
+        x = true;
+        F.l = false;
+        D.l = false;
         f();
       }
-      else if (this.r.equals("hardcore"))
+      else if (r.equals("hardcore"))
       {
-        if (!this.v) {
-          this.u = true;
+        if (!v) {
+          u = true;
         }
-        this.x = false;
-        this.r = "creative";
+        x = false;
+        r = "creative";
         f();
-        this.x = false;
-        this.F.l = true;
-        this.D.l = true;
+        x = false;
+        F.l = true;
+        D.l = true;
       }
       else
       {
-        if (!this.v) {
-          this.u = false;
+        if (!v) {
+          u = false;
         }
-        this.r = "survival";
+        r = "survival";
         f();
-        this.F.l = true;
-        this.D.l = true;
-        this.x = false;
+        F.l = true;
+        D.l = true;
+        x = false;
       }
       f();
     }
-    else if (☃.k == 4)
+    else if (k == 4)
     {
-      this.t = (!this.t);
+      t = (!t);
       f();
     }
-    else if (☃.k == 7)
+    else if (k == 7)
     {
-      this.w = (!this.w);
+      w = (!w);
       f();
     }
-    else if (☃.k == 5)
+    else if (k == 5)
     {
-      this.L += 1;
-      if (this.L >= adr.a.length) {
-        this.L = 0;
+      L += 1;
+      if (L >= adr.a.length) {
+        L = 0;
       }
       while (!g())
       {
-        this.L += 1;
-        if (this.L >= adr.a.length) {
-          this.L = 0;
+        L += 1;
+        if (L >= adr.a.length) {
+          L = 0;
         }
       }
-      this.a = "";
+      a = "";
       f();
-      a(this.z);
+      a(z);
     }
-    else if (☃.k == 6)
+    else if (k == 6)
     {
-      this.v = true;
-      this.u = (!this.u);
+      v = true;
+      u = (!u);
       f();
     }
-    else if (☃.k == 8)
+    else if (k == 8)
     {
-      if (adr.a[this.L] == adr.c) {
-        this.j.a(new axa(this, this.a));
+      if (adr.a[L] == adr.c) {
+        j.a(new axa(this, a));
       } else {
-        this.j.a(new axd(this, this.a));
+        j.a(new axd(this, a));
       }
     }
   }
   
   private boolean g()
   {
-    adr ☃ = adr.a[this.L];
+    adr ☃ = adr.a[L];
     if ((☃ == null) || (!☃.e())) {
       return false;
     }
@@ -285,65 +285,65 @@ public class axb
   
   private void h()
   {
-    a(!this.z);
+    a(!z);
   }
   
   private void a(boolean ☃)
   {
-    this.z = ☃;
-    if (adr.a[this.L] == adr.g)
+    z = ☃;
+    if (adr.a[L] == adr.g)
     {
-      this.A.m = (!this.z);
-      this.A.l = false;
-      if (this.s == null) {
-        this.s = this.r;
+      A.m = (!z);
+      A.l = false;
+      if (s == null) {
+        s = r;
       }
-      this.r = "spectator";
-      this.C.m = false;
-      this.D.m = false;
-      this.E.m = this.z;
-      this.F.m = false;
-      this.G.m = false;
+      r = "spectator";
+      C.m = false;
+      D.m = false;
+      E.m = z;
+      F.m = false;
+      G.m = false;
     }
     else
     {
-      this.A.m = (!this.z);
-      this.A.l = true;
-      if (this.s != null)
+      A.m = (!z);
+      A.l = true;
+      if (s != null)
       {
-        this.r = this.s;
-        this.s = null;
+        r = s;
+        s = null;
       }
-      this.C.m = ((this.z) && (adr.a[this.L] != adr.f));
-      this.D.m = this.z;
-      this.E.m = this.z;
-      this.F.m = this.z;
-      this.G.m = ((this.z) && ((adr.a[this.L] == adr.c) || (adr.a[this.L] == adr.f)));
+      C.m = ((z) && (adr.a[L] != adr.f));
+      D.m = z;
+      E.m = z;
+      F.m = z;
+      G.m = ((z) && ((adr.a[L] == adr.c) || (adr.a[L] == adr.f)));
     }
     f();
-    if (this.z) {
-      this.B.j = bnq.a("gui.done", new Object[0]);
+    if (z) {
+      B.j = bnq.a("gui.done", new Object[0]);
     } else {
-      this.B.j = bnq.a("selectWorld.moreWorldOptions", new Object[0]);
+      B.j = bnq.a("selectWorld.moreWorldOptions", new Object[0]);
     }
   }
   
   protected void a(char ☃, int ☃)
   {
-    if ((this.g.m()) && (!this.z))
+    if ((g.m()) && (!z))
     {
-      this.g.a(☃, ☃);
-      this.K = this.g.b();
+      g.a(☃, ☃);
+      K = g.b();
     }
-    else if ((this.h.m()) && (this.z))
+    else if ((h.m()) && (z))
     {
-      this.h.a(☃, ☃);
-      this.J = this.h.b();
+      h.a(☃, ☃);
+      J = h.b();
     }
     if ((☃ == 28) || (☃ == 156)) {
-      a((avs)this.n.get(0));
+      a((avs)n.get(0));
     }
-    ((avs)this.n.get(0)).l = (this.g.b().length() > 0);
+    n.get(0)).l = (g.b().length() > 0);
     
     a();
   }
@@ -351,10 +351,10 @@ public class axb
   protected void a(int ☃, int ☃, int ☃)
   {
     super.a(☃, ☃, ☃);
-    if (this.z) {
-      this.h.a(☃, ☃, ☃);
+    if (z) {
+      h.a(☃, ☃, ☃);
     } else {
-      this.g.a(☃, ☃, ☃);
+      g.a(☃, ☃, ☃);
     }
   }
   
@@ -362,48 +362,48 @@ public class axb
   {
     c();
     
-    a(this.q, bnq.a("selectWorld.create", new Object[0]), this.l / 2, 20, -1);
-    if (this.z)
+    a(q, bnq.a("selectWorld.create", new Object[0]), l / 2, 20, -1);
+    if (z)
     {
-      c(this.q, bnq.a("selectWorld.enterSeed", new Object[0]), this.l / 2 - 100, 47, -6250336);
-      c(this.q, bnq.a("selectWorld.seedInfo", new Object[0]), this.l / 2 - 100, 85, -6250336);
-      if (this.C.m) {
-        c(this.q, bnq.a("selectWorld.mapFeatures.info", new Object[0]), this.l / 2 - 150, 122, -6250336);
+      c(q, bnq.a("selectWorld.enterSeed", new Object[0]), l / 2 - 100, 47, -6250336);
+      c(q, bnq.a("selectWorld.seedInfo", new Object[0]), l / 2 - 100, 85, -6250336);
+      if (C.m) {
+        c(q, bnq.a("selectWorld.mapFeatures.info", new Object[0]), l / 2 - 150, 122, -6250336);
       }
-      if (this.F.m) {
-        c(this.q, bnq.a("selectWorld.allowCommands.info", new Object[0]), this.l / 2 - 150, 172, -6250336);
+      if (F.m) {
+        c(q, bnq.a("selectWorld.allowCommands.info", new Object[0]), l / 2 - 150, 172, -6250336);
       }
-      this.h.g();
-      if (adr.a[this.L].h()) {
-        this.q.a(bnq.a(adr.a[this.L].c(), new Object[0]), this.E.h + 2, this.E.i + 22, this.E.b(), 10526880);
+      h.g();
+      if (adr.a[L].h()) {
+        q.a(bnq.a(adr.a[L].c(), new Object[0]), E.h + 2, E.i + 22, E.b(), 10526880);
       }
     }
     else
     {
-      c(this.q, bnq.a("selectWorld.enterName", new Object[0]), this.l / 2 - 100, 47, -6250336);
-      c(this.q, bnq.a("selectWorld.resultFolder", new Object[0]) + " " + this.i, this.l / 2 - 100, 85, -6250336);
-      this.g.g();
+      c(q, bnq.a("selectWorld.enterName", new Object[0]), l / 2 - 100, 47, -6250336);
+      c(q, bnq.a("selectWorld.resultFolder", new Object[0]) + " " + i, l / 2 - 100, 85, -6250336);
+      g.g();
       
-      c(this.q, this.H, this.l / 2 - 100, 137, -6250336);
-      c(this.q, this.I, this.l / 2 - 100, 149, -6250336);
+      c(q, H, l / 2 - 100, 137, -6250336);
+      c(q, I, l / 2 - 100, 149, -6250336);
     }
     super.a(☃, ☃, ☃);
   }
   
   public void a(ato ☃)
   {
-    this.K = bnq.a("selectWorld.newWorld.copyOf", new Object[] { ☃.k() });
-    this.J = (☃.b() + "");
-    this.L = ☃.u().g();
-    this.a = ☃.B();
-    this.t = ☃.s();
-    this.u = ☃.v();
+    K = bnq.a("selectWorld.newWorld.copyOf", new Object[] { ☃.k() });
+    J = (☃.b() + "");
+    L = ☃.u().g();
+    a = ☃.B();
+    t = ☃.s();
+    u = ☃.v();
     if (☃.t()) {
-      this.r = "hardcore";
+      r = "hardcore";
     } else if (☃.r().e()) {
-      this.r = "survival";
+      r = "survival";
     } else if (☃.r().d()) {
-      this.r = "creative";
+      r = "creative";
     }
   }
 }

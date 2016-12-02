@@ -4,7 +4,7 @@ public class ash
   public ash(long ☃, ase ☃)
   {
     super(☃);
-    this.a = ☃;
+    a = ☃;
   }
   
   public int[] a(int ☃, int ☃, int ☃, int ☃)
@@ -13,7 +13,7 @@ public class ash
     int ☃ = ☃ - 1;
     int ☃ = ☃ + 2;
     int ☃ = ☃ + 2;
-    int[] ☃ = this.a.a(☃, ☃, ☃, ☃);
+    int[] ☃ = a.a(☃, ☃, ☃, ☃);
     
     int[] ☃ = asc.a(☃ * ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {

@@ -9,57 +9,57 @@ class adk$a
   
   public adk$a(String value, adk.b type)
   {
-    this.e = type;
+    e = type;
     a(value);
   }
   
   public void a(String value)
   {
-    this.a = value;
+    a = value;
     if (value != null)
     {
       if (value.equals("false"))
       {
-        this.b = false;
+        b = false;
         return;
       }
       if (value.equals("true"))
       {
-        this.b = true;
+        b = true;
         return;
       }
     }
-    this.b = Boolean.parseBoolean(value);
-    this.c = (this.b ? 1 : 0);
+    b = Boolean.parseBoolean(value);
+    c = (b ? 1 : 0);
     try
     {
-      this.c = Integer.parseInt(value);
+      c = Integer.parseInt(value);
     }
     catch (NumberFormatException var4) {}
     try
     {
-      this.d = Double.parseDouble(value);
+      d = Double.parseDouble(value);
     }
     catch (NumberFormatException var3) {}
   }
   
   public String a()
   {
-    return this.a;
+    return a;
   }
   
   public boolean b()
   {
-    return this.b;
+    return b;
   }
   
   public int c()
   {
-    return this.c;
+    return c;
   }
   
   public adk.b e()
   {
-    return this.e;
+    return e;
   }
 }

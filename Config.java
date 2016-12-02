@@ -111,7 +111,7 @@ public class Config
   {
     checkInitialized();
     
-    antialiasingLevel = gameSettings.ofAaLevel;
+    antialiasingLevel = gameSettingsofAaLevel;
     
     checkDisplaySettings();
     
@@ -154,14 +154,14 @@ public class Config
     openGlVendor = GL11.glGetString(7936);
     log("OpenGL: " + openGlRenderer + ", version " + openGlVersion + ", " + openGlVendor);
     log("OpenGL Version: " + getOpenGlVersionString());
-    if (!GLContext.getCapabilities().OpenGL12) {
+    if (!getCapabilitiesOpenGL12) {
       log("OpenGL Mipmap levels: Not available (GL12.GL_TEXTURE_MAX_LEVEL)");
     }
-    fancyFogAvailable = GLContext.getCapabilities().GL_NV_fog_distance;
+    fancyFogAvailable = getCapabilitiesGL_NV_fog_distance;
     if (!fancyFogAvailable) {
       log("OpenGL Fancy fog: Not available (GL_NV_fog_distance)");
     }
-    occlusionAvailable = GLContext.getCapabilities().GL_ARB_occlusion_query;
+    occlusionAvailable = getCapabilitiesGL_ARB_occlusion_query;
     if (!occlusionAvailable) {
       log("OpenGL Occlussion culling: Not available (GL_ARB_occlusion_query)");
     }
@@ -188,40 +188,40 @@ public class Config
   
   private static int getOpenGlVersion()
   {
-    if (!GLContext.getCapabilities().OpenGL11) {
+    if (!getCapabilitiesOpenGL11) {
       return 10;
     }
-    if (!GLContext.getCapabilities().OpenGL12) {
+    if (!getCapabilitiesOpenGL12) {
       return 11;
     }
-    if (!GLContext.getCapabilities().OpenGL13) {
+    if (!getCapabilitiesOpenGL13) {
       return 12;
     }
-    if (!GLContext.getCapabilities().OpenGL14) {
+    if (!getCapabilitiesOpenGL14) {
       return 13;
     }
-    if (!GLContext.getCapabilities().OpenGL15) {
+    if (!getCapabilitiesOpenGL15) {
       return 14;
     }
-    if (!GLContext.getCapabilities().OpenGL20) {
+    if (!getCapabilitiesOpenGL20) {
       return 15;
     }
-    if (!GLContext.getCapabilities().OpenGL21) {
+    if (!getCapabilitiesOpenGL21) {
       return 20;
     }
-    if (!GLContext.getCapabilities().OpenGL30) {
+    if (!getCapabilitiesOpenGL30) {
       return 21;
     }
-    if (!GLContext.getCapabilities().OpenGL31) {
+    if (!getCapabilitiesOpenGL31) {
       return 30;
     }
-    if (!GLContext.getCapabilities().OpenGL32) {
+    if (!getCapabilitiesOpenGL32) {
       return 31;
     }
-    if (!GLContext.getCapabilities().OpenGL33) {
+    if (!getCapabilitiesOpenGL33) {
       return 32;
     }
-    if (!GLContext.getCapabilities().OpenGL40) {
+    if (!getCapabilitiesOpenGL40) {
       return 33;
     }
     return 40;
@@ -292,12 +292,12 @@ public class Config
   
   public static boolean isMipmaps()
   {
-    return gameSettings.J > 0;
+    return gameSettingsJ > 0;
   }
   
   public static int getMipmapLevels()
   {
-    return gameSettings.J;
+    return gameSettingsJ;
   }
   
   public static int getMipmapType()
@@ -305,7 +305,7 @@ public class Config
     if (gameSettings == null) {
       return DEF_MIPMAP_TYPE.intValue();
     }
-    switch (gameSettings.ofMipmapType)
+    switch (gameSettingsofMipmapType)
     {
     case 0: 
       return 9986;
@@ -342,22 +342,22 @@ public class Config
     if (!isFancyFogAvailable()) {
       return false;
     }
-    return gameSettings.ofFogType == 2;
+    return gameSettingsofFogType == 2;
   }
   
   public static boolean isFogFast()
   {
-    return gameSettings.ofFogType == 1;
+    return gameSettingsofFogType == 1;
   }
   
   public static boolean isFogOff()
   {
-    return gameSettings.ofFogType == 3;
+    return gameSettingsofFogType == 3;
   }
   
   public static float getFogStart()
   {
-    return gameSettings.ofFogStart;
+    return gameSettingsofFogStart;
   }
   
   public static void dbg(String s)
@@ -385,41 +385,41 @@ public class Config
   
   public static int getUpdatesPerFrame()
   {
-    return gameSettings.ofChunkUpdates;
+    return gameSettingsofChunkUpdates;
   }
   
   public static boolean isDynamicUpdates()
   {
-    return gameSettings.ofChunkUpdatesDynamic;
+    return gameSettingsofChunkUpdatesDynamic;
   }
   
   public static boolean isRainFancy()
   {
-    if (gameSettings.ofRain == 0) {
-      return gameSettings.i;
+    if (gameSettingsofRain == 0) {
+      return gameSettingsi;
     }
-    return gameSettings.ofRain == 2;
+    return gameSettingsofRain == 2;
   }
   
   public static boolean isRainOff()
   {
-    return gameSettings.ofRain == 3;
+    return gameSettingsofRain == 3;
   }
   
   public static boolean isCloudsFancy()
   {
-    if (gameSettings.ofClouds != 0) {
-      return gameSettings.ofClouds == 2;
+    if (gameSettingsofClouds != 0) {
+      return gameSettingsofClouds == 2;
     }
     if (texturePackClouds != 0) {
       return texturePackClouds == 2;
     }
-    return gameSettings.i;
+    return gameSettingsi;
   }
   
   public static boolean isCloudsOff()
   {
-    return gameSettings.ofClouds == 3;
+    return gameSettingsofClouds == 3;
   }
   
   public static void updateTexturePackClouds()
@@ -459,18 +459,18 @@ public class Config
   
   public static boolean isTreesFancy()
   {
-    if (gameSettings.ofTrees == 0) {
-      return gameSettings.i;
+    if (gameSettingsofTrees == 0) {
+      return gameSettingsi;
     }
-    return gameSettings.ofTrees == 2;
+    return gameSettingsofTrees == 2;
   }
   
   public static boolean isDroppedItemsFancy()
   {
-    if (gameSettings.ofDroppedItems == 0) {
-      return gameSettings.i;
+    if (gameSettingsofDroppedItems == 0) {
+      return gameSettingsi;
     }
-    return gameSettings.ofDroppedItems == 2;
+    return gameSettingsofDroppedItems == 2;
   }
   
   public static int limit(int val, int min, int max)
@@ -508,87 +508,87 @@ public class Config
   
   public static boolean isAnimatedWater()
   {
-    return gameSettings.ofAnimatedWater != 2;
+    return gameSettingsofAnimatedWater != 2;
   }
   
   public static boolean isGeneratedWater()
   {
-    return gameSettings.ofAnimatedWater == 1;
+    return gameSettingsofAnimatedWater == 1;
   }
   
   public static boolean isAnimatedPortal()
   {
-    return gameSettings.ofAnimatedPortal;
+    return gameSettingsofAnimatedPortal;
   }
   
   public static boolean isAnimatedLava()
   {
-    return gameSettings.ofAnimatedLava != 2;
+    return gameSettingsofAnimatedLava != 2;
   }
   
   public static boolean isGeneratedLava()
   {
-    return gameSettings.ofAnimatedLava == 1;
+    return gameSettingsofAnimatedLava == 1;
   }
   
   public static boolean isAnimatedFire()
   {
-    return gameSettings.ofAnimatedFire;
+    return gameSettingsofAnimatedFire;
   }
   
   public static boolean isAnimatedRedstone()
   {
-    return gameSettings.ofAnimatedRedstone;
+    return gameSettingsofAnimatedRedstone;
   }
   
   public static boolean isAnimatedExplosion()
   {
-    return gameSettings.ofAnimatedExplosion;
+    return gameSettingsofAnimatedExplosion;
   }
   
   public static boolean isAnimatedFlame()
   {
-    return gameSettings.ofAnimatedFlame;
+    return gameSettingsofAnimatedFlame;
   }
   
   public static boolean isAnimatedSmoke()
   {
-    return gameSettings.ofAnimatedSmoke;
+    return gameSettingsofAnimatedSmoke;
   }
   
   public static boolean isVoidParticles()
   {
-    return gameSettings.ofVoidParticles;
+    return gameSettingsofVoidParticles;
   }
   
   public static boolean isWaterParticles()
   {
-    return gameSettings.ofWaterParticles;
+    return gameSettingsofWaterParticles;
   }
   
   public static boolean isRainSplash()
   {
-    return gameSettings.ofRainSplash;
+    return gameSettingsofRainSplash;
   }
   
   public static boolean isPortalParticles()
   {
-    return gameSettings.ofPortalParticles;
+    return gameSettingsofPortalParticles;
   }
   
   public static boolean isPotionParticles()
   {
-    return gameSettings.ofPotionParticles;
+    return gameSettingsofPotionParticles;
   }
   
   public static boolean isFireworkParticles()
   {
-    return gameSettings.ofFireworkParticles;
+    return gameSettingsofFireworkParticles;
   }
   
   public static float getAmbientOcclusionLevel()
   {
-    return gameSettings.ofAoLevel;
+    return gameSettingsofAoLevel;
   }
   
   private static Method getMethod(Class cls, String methodName, Object[] params)
@@ -766,7 +766,7 @@ public class Config
       {
         bnm repository = mc.R();
         if (repository != null) {
-          defaultResourcePack = (bna)repository.a;
+          defaultResourcePack = (bna)a;
         }
       }
     }
@@ -800,45 +800,45 @@ public class Config
     if (minecraft == null) {
       return null;
     }
-    return minecraft.g;
+    return minecraftg;
   }
   
   public static boolean isBetterGrass()
   {
-    return gameSettings.ofBetterGrass != 3;
+    return gameSettingsofBetterGrass != 3;
   }
   
   public static boolean isBetterGrassFancy()
   {
-    return gameSettings.ofBetterGrass == 2;
+    return gameSettingsofBetterGrass == 2;
   }
   
   public static boolean isWeatherEnabled()
   {
-    return gameSettings.ofWeather;
+    return gameSettingsofWeather;
   }
   
   public static boolean isSkyEnabled()
   {
-    return gameSettings.ofSky;
+    return gameSettingsofSky;
   }
   
   public static boolean isSunMoonEnabled()
   {
-    return gameSettings.ofSunMoon;
+    return gameSettingsofSunMoon;
   }
   
   public static boolean isVignetteEnabled()
   {
-    if (gameSettings.ofVignette == 0) {
-      return gameSettings.i;
+    if (gameSettingsofVignette == 0) {
+      return gameSettingsi;
     }
-    return gameSettings.ofVignette == 2;
+    return gameSettingsofVignette == 2;
   }
   
   public static boolean isStarsEnabled()
   {
-    return gameSettings.ofStars;
+    return gameSettingsofStars;
   }
   
   public static void sleep(long ms)
@@ -855,27 +855,27 @@ public class Config
   
   public static boolean isTimeDayOnly()
   {
-    return gameSettings.ofTime == 1;
+    return gameSettingsofTime == 1;
   }
   
   public static boolean isTimeDefault()
   {
-    return (gameSettings.ofTime == 0) || (gameSettings.ofTime == 2);
+    return (gameSettingsofTime == 0) || (gameSettingsofTime == 2);
   }
   
   public static boolean isTimeNightOnly()
   {
-    return gameSettings.ofTime == 3;
+    return gameSettingsofTime == 3;
   }
   
   public static boolean isClearWater()
   {
-    return gameSettings.ofClearWater;
+    return gameSettingsofClearWater;
   }
   
   public static int getAnisotropicFilterLevel()
   {
-    return gameSettings.ofAfLevel;
+    return gameSettingsofAfLevel;
   }
   
   public static boolean isAnisotropicFiltering()
@@ -895,7 +895,7 @@ public class Config
   
   public static boolean isAntialiasingConfigured()
   {
-    return getGameSettings().ofAaLevel > 0;
+    return getGameSettingsofAaLevel > 0;
   }
   
   public static boolean isMultiTexture()
@@ -916,12 +916,12 @@ public class Config
   
   public static boolean isDrippingWaterLava()
   {
-    return gameSettings.ofDrippingWaterLava;
+    return gameSettingsofDrippingWaterLava;
   }
   
   public static boolean isBetterSnow()
   {
-    return gameSettings.ofBetterSnow;
+    return gameSettingsofBetterSnow;
   }
   
   public static Dimension getFullscreenDimension()
@@ -932,7 +932,7 @@ public class Config
     if (gameSettings == null) {
       return new Dimension(desktopDisplayMode.getWidth(), desktopDisplayMode.getHeight());
     }
-    String dimStr = gameSettings.ofFullscreenMode;
+    String dimStr = gameSettingsofFullscreenMode;
     if (dimStr.equals("Default")) {
       return new Dimension(desktopDisplayMode.getWidth(), desktopDisplayMode.getHeight());
     }
@@ -1054,8 +1054,8 @@ public class Config
     for (int i = 0; i < modes.length; i++)
     {
       DisplayMode dm = modes[i];
-      if (dm.getWidth() == dim.width) {
-        if (dm.getHeight() == dim.height) {
+      if (dm.getWidth() == width) {
+        if (dm.getHeight() == height) {
           if (desktopDisplayMode != null)
           {
             if (dm.getBitsPerPixel() == desktopDisplayMode.getBitsPerPixel()) {
@@ -1073,22 +1073,22 @@ public class Config
   
   public static boolean isAnimatedTerrain()
   {
-    return gameSettings.ofAnimatedTerrain;
+    return gameSettingsofAnimatedTerrain;
   }
   
   public static boolean isAnimatedTextures()
   {
-    return gameSettings.ofAnimatedTextures;
+    return gameSettingsofAnimatedTextures;
   }
   
   public static boolean isSwampColors()
   {
-    return gameSettings.ofSwampColors;
+    return gameSettingsofSwampColors;
   }
   
   public static boolean isRandomMobs()
   {
-    return gameSettings.ofRandomMobs;
+    return gameSettingsofRandomMobs;
   }
   
   public static void checkGlError(String loc)
@@ -1103,55 +1103,55 @@ public class Config
   
   public static boolean isSmoothBiomes()
   {
-    return gameSettings.ofSmoothBiomes;
+    return gameSettingsofSmoothBiomes;
   }
   
   public static boolean isCustomColors()
   {
-    return gameSettings.ofCustomColors;
+    return gameSettingsofCustomColors;
   }
   
   public static boolean isCustomSky()
   {
-    return gameSettings.ofCustomSky;
+    return gameSettingsofCustomSky;
   }
   
   public static boolean isCustomFonts()
   {
-    return gameSettings.ofCustomFonts;
+    return gameSettingsofCustomFonts;
   }
   
   public static boolean isShowCapes()
   {
-    return gameSettings.ofShowCapes;
+    return gameSettingsofShowCapes;
   }
   
   public static boolean isConnectedTextures()
   {
-    return gameSettings.ofConnectedTextures != 3;
+    return gameSettingsofConnectedTextures != 3;
   }
   
   public static boolean isNaturalTextures()
   {
-    return gameSettings.ofNaturalTextures;
+    return gameSettingsofNaturalTextures;
   }
   
   public static boolean isConnectedTexturesFancy()
   {
-    return gameSettings.ofConnectedTextures == 2;
+    return gameSettingsofConnectedTextures == 2;
   }
   
   public static boolean isFastRender()
   {
-    return gameSettings.ofFastRender;
+    return gameSettingsofFastRender;
   }
   
   public static boolean isTranslucentBlocksFancy()
   {
-    if (gameSettings.ofTranslucentBlocks == 0) {
-      return gameSettings.i;
+    if (gameSettingsofTranslucentBlocks == 0) {
+      return gameSettingsi;
     }
-    return gameSettings.ofTranslucentBlocks == 2;
+    return gameSettingsofTranslucentBlocks == 2;
   }
   
   public static boolean isShaders()
@@ -1312,7 +1312,7 @@ public class Config
     if (minecraft == null) {
       return null;
     }
-    adm world = minecraft.f;
+    adm world = minecraftf;
     if (world == null) {
       return null;
     }
@@ -1323,7 +1323,7 @@ public class Config
     if (is == null) {
       return null;
     }
-    anm wp = world.t;
+    anm wp = t;
     if (wp == null) {
       return null;
     }
@@ -1353,7 +1353,7 @@ public class Config
   
   public static boolean isSmoothWorld()
   {
-    return gameSettings.ofSmoothWorld;
+    return gameSettingsofSmoothWorld;
   }
   
   public static boolean isLazyChunkLoading()
@@ -1361,7 +1361,7 @@ public class Config
     if (!isSingleProcessor()) {
       return false;
     }
-    return gameSettings.ofLazyChunkLoading;
+    return gameSettingsofLazyChunkLoading;
   }
   
   public static int getChunkViewDistance()
@@ -1369,7 +1369,7 @@ public class Config
     if (gameSettings == null) {
       return 10;
     }
-    int chunkDistance = gameSettings.c;
+    int chunkDistance = gameSettingsc;
     
     return chunkDistance;
   }
@@ -1494,7 +1494,7 @@ public class Config
         if (dim == null) {
           return;
         }
-        if ((mode.getWidth() == dim.width) && (mode.getHeight() == dim.height)) {
+        if ((mode.getWidth() == width) && (mode.getHeight() == height)) {
           return;
         }
         DisplayMode newMode = getDisplayMode(dim);
@@ -1503,28 +1503,28 @@ public class Config
         }
         Display.setDisplayMode(newMode);
         
-        minecraft.d = Display.getDisplayMode().getWidth();
-        minecraft.e = Display.getDisplayMode().getHeight();
-        if (minecraft.d <= 0) {
-          minecraft.d = 1;
+        minecraftd = Display.getDisplayMode().getWidth();
+        minecrafte = Display.getDisplayMode().getHeight();
+        if (minecraftd <= 0) {
+          minecraftd = 1;
         }
-        if (minecraft.e <= 0) {
-          minecraft.e = 1;
+        if (minecrafte <= 0) {
+          minecrafte = 1;
         }
-        if (minecraft.m != null)
+        if (minecraftm != null)
         {
           avr sr = new avr(minecraft);
           int sw = sr.a();
           int sh = sr.b();
-          minecraft.m.a(minecraft, sw, sh);
+          minecraftm.a(minecraft, sw, sh);
         }
-        minecraft.n = new avi(minecraft);
+        minecraftn = new avi(minecraft);
         
         updateFramebufferSize();
         
         Display.setFullscreen(true);
         
-        minecraft.t.updateVSync();
+        minecraftt.updateVSync();
         
         bfl.w();
       }
@@ -1536,7 +1536,7 @@ public class Config
         desktopModeChecked = true;
         fullscreenModeChecked = false;
         
-        minecraft.t.updateVSync();
+        minecraftt.updateVSync();
         Display.update();
         bfl.w();
         
@@ -1552,9 +1552,9 @@ public class Config
   
   public static void updateFramebufferSize()
   {
-    minecraft.b().a(minecraft.d, minecraft.e);
-    if (minecraft.o != null) {
-      minecraft.o.a(minecraft.d, minecraft.e);
+    minecraft.b().a(minecraftd, minecrafte);
+    if (minecrafto != null) {
+      minecrafto.a(minecraftd, minecrafte);
     }
   }
   
@@ -1597,7 +1597,7 @@ public class Config
   
   public static boolean isCustomItems()
   {
-    return gameSettings.ofCustomItems;
+    return gameSettingsofCustomItems;
   }
   
   private static long lastActionTime = System.currentTimeMillis();
@@ -1628,14 +1628,14 @@ public class Config
   public static void drawFps()
   {
     int fps = ave.ai();
-    String updates = getUpdates(minecraft.C);
-    int renderersActive = minecraft.g.getCountActiveRenderers();
-    int entities = minecraft.g.getCountEntitiesRendered();
-    int tileEntities = minecraft.g.getCountTileEntitiesRendered();
+    String updates = getUpdates(minecraftC);
+    int renderersActive = minecraftg.getCountActiveRenderers();
+    int entities = minecraftg.getCountEntitiesRendered();
+    int tileEntities = minecraftg.getCountTileEntitiesRendered();
     
     String fpsStr = "" + fps + " fps, C: " + renderersActive + ", E: " + entities + "+" + tileEntities + ", U: " + updates;
     
-    minecraft.k.a(fpsStr, 2, 2, -2039584);
+    minecraftk.a(fpsStr, 2, 2, -2039584);
   }
   
   private static String getUpdates(String str)
@@ -1723,7 +1723,7 @@ public class Config
   
   public static void showGuiMessage(String line1, String line2)
   {
-    GuiMessage gui = new GuiMessage(minecraft.m, line1, line2);
+    GuiMessage gui = new GuiMessage(minecraftm, line1, line2);
     minecraft.a(gui);
   }
 }

@@ -12,15 +12,15 @@ public class aqi$a
     super(☃, ☃);
     
     aqj.q ☃ = new aqj.q(☃, (☃ << 4) + 2, (☃ << 4) + 2);
-    this.a.add(☃);
-    ☃.a(☃, this.a, ☃);
+    a.add(☃);
+    ☃.a(☃, a, ☃);
     
-    List<aqt> ☃ = ☃.e;
+    List<aqt> ☃ = e;
     while (!☃.isEmpty())
     {
       int ☃ = ☃.nextInt(☃.size());
       aqt ☃ = (aqt)☃.remove(☃);
-      ☃.a(☃, this.a, ☃);
+      ☃.a(☃, a, ☃);
     }
     c();
     a(☃, ☃, 48, 70);

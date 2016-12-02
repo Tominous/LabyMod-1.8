@@ -34,13 +34,13 @@ public class aat
     if (!afi.ce.d(☃, ☃)) {
       return false;
     }
-    if (!☃.D)
+    if (!D)
     {
       ☃.a(☃, afi.ce.Q().a(ajm.a, ☃), 3);
       
       int ☃ = 0;
       if (☃ == cq.b) {
-        ☃ = ns.c(☃.y * 16.0F / 360.0F + 0.5D) & 0xF;
+        ☃ = ns.c(y * 16.0F / 360.0F + 0.5D) & 0xF;
       }
       akw ☃ = ☃.s(☃);
       if ((☃ instanceof alo))
@@ -67,7 +67,7 @@ public class aat
         ☃.b(☃);
         afi.ce.a(☃, ☃, ☃);
       }
-      ☃.b -= 1;
+      b -= 1;
     }
     return true;
   }

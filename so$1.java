@@ -10,10 +10,10 @@ class so$1
     if (!(☃ instanceof wn)) {
       return false;
     }
-    if (((wn)☃).bA.a) {
+    if (bA.a) {
       return false;
     }
-    double ☃ = this.a.f();
+    double ☃ = a.f();
     if (☃.av()) {
       ☃ *= 0.800000011920929D;
     }
@@ -25,9 +25,9 @@ class so$1
       }
       ☃ *= 0.7F * ☃;
     }
-    if (☃.g(so.a(this.a)) > ☃) {
+    if (☃.g(so.a(a)) > ☃) {
       return false;
     }
-    return st.a(so.a(this.a), (pr)☃, false, true);
+    return st.a(so.a(a), (pr)☃, false, true);
   }
 }

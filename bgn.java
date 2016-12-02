@@ -8,8 +8,8 @@ public class bgn
   
   public bgn(bgg p_i46217_1_, bmi p_i46217_2_)
   {
-    super(Arrays.copyOf(p_i46217_1_.a(), p_i46217_1_.a().length), p_i46217_1_.b, bgo.a(p_i46217_1_.a()));
-    this.d = p_i46217_2_;
+    super(Arrays.copyOf(p_i46217_1_.a(), p_i46217_1_.a().length), b, bgo.a(p_i46217_1_.a()));
+    d = p_i46217_2_;
     e();
   }
   
@@ -22,15 +22,15 @@ public class bgn
   
   private void a(int p_178216_1_)
   {
-    int step = this.a.length / 4;
+    int step = a.length / 4;
     
     int var2 = step * p_178216_1_;
-    float var3 = Float.intBitsToFloat(this.a[var2]);
-    float var4 = Float.intBitsToFloat(this.a[(var2 + 1)]);
-    float var5 = Float.intBitsToFloat(this.a[(var2 + 2)]);
+    float var3 = Float.intBitsToFloat(a[var2]);
+    float var4 = Float.intBitsToFloat(a[(var2 + 1)]);
+    float var5 = Float.intBitsToFloat(a[(var2 + 2)]);
     float var6 = 0.0F;
     float var7 = 0.0F;
-    switch (bgn.1.a[this.c.ordinal()])
+    switch (bgn.1.a[c.ordinal()])
     {
     case 1: 
       var6 = var3 * 16.0F;
@@ -56,7 +56,7 @@ public class bgn
       var6 = (1.0F - var5) * 16.0F;
       var7 = (1.0F - var4) * 16.0F;
     }
-    this.a[(var2 + 4)] = Float.floatToRawIntBits(this.d.a(var6));
-    this.a[(var2 + 4 + 1)] = Float.floatToRawIntBits(this.d.b(var7));
+    a[(var2 + 4)] = Float.floatToRawIntBits(d.a(var6));
+    a[(var2 + 4 + 1)] = Float.floatToRawIntBits(d.b(var7));
   }
 }

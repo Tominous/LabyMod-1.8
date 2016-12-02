@@ -7,29 +7,29 @@ public class aer$a
   {
     super(☃, ☃);
     
-    this.as.A = 2;
-    this.as.B = 2;
-    this.as.C = 5;
+    as.A = 2;
+    as.B = 2;
+    as.C = 5;
   }
   
   public void a(adm ☃, Random ☃, ans ☃, int ☃, int ☃, double ☃)
   {
-    this.ak = afi.c.Q();
-    this.al = afi.d.Q();
+    ak = afi.c.Q();
+    al = afi.d.Q();
     if (☃ > 1.75D)
     {
-      this.ak = afi.b.Q();
-      this.al = afi.b.Q();
+      ak = afi.b.Q();
+      al = afi.b.Q();
     }
     else if (☃ > -0.5D)
     {
-      this.ak = afi.d.Q().a(agf.a, agf.a.b);
+      ak = afi.d.Q().a(agf.a, agf.a.b);
     }
     b(☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   public void a(adm ☃, Random ☃, cj ☃)
   {
-    this.as.a(☃, ☃, this, ☃);
+    as.a(☃, ☃, this, ☃);
   }
 }

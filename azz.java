@@ -14,87 +14,87 @@ public class azz
   
   public azz(axu ☃, avh ☃)
   {
-    this.g = ☃;
-    this.h = ☃;
+    g = ☃;
+    h = ☃;
   }
   
   public void b()
   {
     int ☃ = 0;
-    this.i = bnq.a("options.stream.title", new Object[0]);
-    this.r = bnq.a("options.stream.chat.title", new Object[0]);
+    i = bnq.a("options.stream.title", new Object[0]);
+    r = bnq.a("options.stream.chat.title", new Object[0]);
     for (avh.a ☃ : a)
     {
       if (☃.a()) {
-        this.n.add(new awj(☃.c(), this.l / 2 - 155 + ☃ % 2 * 160, this.m / 6 + 24 * (☃ >> 1), ☃));
+        n.add(new awj(☃.c(), l / 2 - 155 + ☃ % 2 * 160, m / 6 + 24 * (☃ >> 1), ☃));
       } else {
-        this.n.add(new awe(☃.c(), this.l / 2 - 155 + ☃ % 2 * 160, this.m / 6 + 24 * (☃ >> 1), ☃, this.h.c(☃)));
+        n.add(new awe(☃.c(), l / 2 - 155 + ☃ % 2 * 160, m / 6 + 24 * (☃ >> 1), ☃, h.c(☃)));
       }
       ☃++;
     }
     if (☃ % 2 == 1) {
       ☃++;
     }
-    this.s = (this.m / 6 + 24 * (☃ >> 1) + 6);
+    s = (m / 6 + 24 * (☃ >> 1) + 6);
     ☃ += 2;
     for (avh.a ☃ : f)
     {
       if (☃.a()) {
-        this.n.add(new awj(☃.c(), this.l / 2 - 155 + ☃ % 2 * 160, this.m / 6 + 24 * (☃ >> 1), ☃));
+        n.add(new awj(☃.c(), l / 2 - 155 + ☃ % 2 * 160, m / 6 + 24 * (☃ >> 1), ☃));
       } else {
-        this.n.add(new awe(☃.c(), this.l / 2 - 155 + ☃ % 2 * 160, this.m / 6 + 24 * (☃ >> 1), ☃, this.h.c(☃)));
+        n.add(new awe(☃.c(), l / 2 - 155 + ☃ % 2 * 160, m / 6 + 24 * (☃ >> 1), ☃, h.c(☃)));
       }
       ☃++;
     }
-    this.n.add(new avs(200, this.l / 2 - 155, this.m / 6 + 168, 150, 20, bnq.a("gui.done", new Object[0])));
-    avs ☃ = new avs(201, this.l / 2 + 5, this.m / 6 + 168, 150, 20, bnq.a("options.stream.ingestSelection", new Object[0]));
-    ☃.l = (((this.j.Y().j()) && (this.j.Y().s().length > 0)) || (this.j.Y().w()));
-    this.n.add(☃);
+    n.add(new avs(200, l / 2 - 155, m / 6 + 168, 150, 20, bnq.a("gui.done", new Object[0])));
+    avs ☃ = new avs(201, l / 2 + 5, m / 6 + 168, 150, 20, bnq.a("options.stream.ingestSelection", new Object[0]));
+    l = (((j.Y().j()) && (j.Y().s().length > 0)) || (j.Y().w()));
+    n.add(☃);
   }
   
   protected void a(avs ☃)
   {
-    if (!☃.l) {
+    if (!l) {
       return;
     }
-    if ((☃.k < 100) && ((☃ instanceof awe)))
+    if ((k < 100) && ((☃ instanceof awe)))
     {
       avh.a ☃ = ((awe)☃).c();
-      this.h.a(☃, 1);
-      ☃.j = this.h.c(avh.a.a(☃.k));
-      if ((this.j.Y().k()) && (☃ != avh.a.M) && (☃ != avh.a.N)) {
-        this.t = true;
+      h.a(☃, 1);
+      j = h.c(avh.a.a(k));
+      if ((j.Y().k()) && (☃ != avh.a.M) && (☃ != avh.a.N)) {
+        t = true;
       }
     }
     else if ((☃ instanceof awj))
     {
-      if (☃.k == avh.a.G.c()) {
-        this.j.Y().p();
-      } else if (☃.k == avh.a.H.c()) {
-        this.j.Y().p();
-      } else if (this.j.Y().k()) {
-        this.t = true;
+      if (k == avh.a.G.c()) {
+        j.Y().p();
+      } else if (k == avh.a.H.c()) {
+        j.Y().p();
+      } else if (j.Y().k()) {
+        t = true;
       }
     }
-    if (☃.k == 200)
+    if (k == 200)
     {
-      this.j.t.b();
-      this.j.a(this.g);
+      j.t.b();
+      j.a(g);
     }
-    else if (☃.k == 201)
+    else if (k == 201)
     {
-      this.j.t.b();
-      this.j.a(new azy(this));
+      j.t.b();
+      j.a(new azy(this));
     }
   }
   
   public void a(int ☃, int ☃, float ☃)
   {
     c();
-    a(this.q, this.i, this.l / 2, 20, 16777215);
-    a(this.q, this.r, this.l / 2, this.s, 16777215);
-    if (this.t) {
-      a(this.q, a.m + bnq.a("options.stream.changes", new Object[0]), this.l / 2, 20 + this.q.a, 16777215);
+    a(q, i, l / 2, 20, 16777215);
+    a(q, r, l / 2, s, 16777215);
+    if (t) {
+      a(q, a.m + bnq.a("options.stream.changes", new Object[0]), l / 2, 20 + q.a, 16777215);
     }
     super.a(☃, ☃, ☃);
   }

@@ -16,18 +16,18 @@ public abstract class xi
   
   protected yg a(yg ☃)
   {
-    ☃.e = this.c.size();
-    this.c.add(☃);
-    this.b.add(null);
+    e = c.size();
+    c.add(☃);
+    b.add(null);
     return ☃;
   }
   
   public void a(xn ☃)
   {
-    if (this.e.contains(☃)) {
+    if (e.contains(☃)) {
       throw new IllegalArgumentException("Listener already listening");
     }
-    this.e.add(☃);
+    e.add(☃);
     
     ☃.a(this, a());
     b();
@@ -35,30 +35,30 @@ public abstract class xi
   
   public void b(xn ☃)
   {
-    this.e.remove(☃);
+    e.remove(☃);
   }
   
   public List<zx> a()
   {
     List<zx> ☃ = Lists.newArrayList();
-    for (int ☃ = 0; ☃ < this.c.size(); ☃++) {
-      ☃.add(((yg)this.c.get(☃)).d());
+    for (int ☃ = 0; ☃ < c.size(); ☃++) {
+      ☃.add(((yg)c.get(☃)).d());
     }
     return ☃;
   }
   
   public void b()
   {
-    for (int ☃ = 0; ☃ < this.c.size(); ☃++)
+    for (int ☃ = 0; ☃ < c.size(); ☃++)
     {
-      zx ☃ = ((yg)this.c.get(☃)).d();
-      zx ☃ = (zx)this.b.get(☃);
+      zx ☃ = ((yg)c.get(☃)).d();
+      zx ☃ = (zx)b.get(☃);
       if (!zx.b(☃, ☃))
       {
         ☃ = ☃ == null ? null : ☃.k();
-        this.b.set(☃, ☃);
-        for (int ☃ = 0; ☃ < this.e.size(); ☃++) {
-          ((xn)this.e.get(☃)).a(this, ☃, ☃);
+        b.set(☃, ☃);
+        for (int ☃ = 0; ☃ < e.size(); ☃++) {
+          ((xn)e.get(☃)).a(this, ☃, ☃);
         }
       }
     }
@@ -71,9 +71,9 @@ public abstract class xi
   
   public yg a(og ☃, int ☃)
   {
-    for (int ☃ = 0; ☃ < this.c.size(); ☃++)
+    for (int ☃ = 0; ☃ < c.size(); ☃++)
     {
-      yg ☃ = (yg)this.c.get(☃);
+      yg ☃ = (yg)c.get(☃);
       if (☃.a(☃, ☃)) {
         return ☃;
       }
@@ -83,12 +83,12 @@ public abstract class xi
   
   public yg a(int ☃)
   {
-    return (yg)this.c.get(☃);
+    return (yg)c.get(☃);
   }
   
   public zx b(wn ☃, int ☃)
   {
-    yg ☃ = (yg)this.c.get(☃);
+    yg ☃ = (yg)c.get(☃);
     if (☃ != null) {
       return ☃.d();
     }
@@ -98,12 +98,12 @@ public abstract class xi
   public zx a(int ☃, int ☃, int ☃, wn ☃)
   {
     zx ☃ = null;
-    wm ☃ = ☃.bi;
+    wm ☃ = bi;
     if (☃ == 5)
     {
-      int ☃ = this.g;
-      this.g = c(☃);
-      if (((☃ != 1) || (this.g != 2)) && (☃ != this.g))
+      int ☃ = g;
+      g = c(☃);
+      if (((☃ != 1) || (g != 2)) && (☃ != g))
       {
         d();
       }
@@ -111,50 +111,50 @@ public abstract class xi
       {
         d();
       }
-      else if (this.g == 0)
+      else if (g == 0)
       {
-        this.f = b(☃);
-        if (a(this.f, ☃))
+        f = b(☃);
+        if (a(f, ☃))
         {
-          this.g = 1;
-          this.h.clear();
+          g = 1;
+          h.clear();
         }
         else
         {
           d();
         }
       }
-      else if (this.g == 1)
+      else if (g == 1)
       {
-        yg ☃ = (yg)this.c.get(☃);
-        if ((☃ != null) && (a(☃, ☃.p(), true)) && (☃.a(☃.p())) && (☃.p().b > this.h.size()) && (b(☃))) {
-          this.h.add(☃);
+        yg ☃ = (yg)c.get(☃);
+        if ((☃ != null) && (a(☃, ☃.p(), true)) && (☃.a(☃.p())) && (pb > h.size()) && (b(☃))) {
+          h.add(☃);
         }
       }
-      else if (this.g == 2)
+      else if (g == 2)
       {
-        if (!this.h.isEmpty())
+        if (!h.isEmpty())
         {
           zx ☃ = ☃.p().k();
-          int ☃ = ☃.p().b;
-          for (yg ☃ : this.h) {
-            if ((☃ != null) && (a(☃, ☃.p(), true)) && (☃.a(☃.p())) && (☃.p().b >= this.h.size()) && (b(☃)))
+          int ☃ = pb;
+          for (yg ☃ : h) {
+            if ((☃ != null) && (a(☃, ☃.p(), true)) && (☃.a(☃.p())) && (pb >= h.size()) && (b(☃)))
             {
               zx ☃ = ☃.k();
-              int ☃ = ☃.e() ? ☃.d().b : 0;
-              a(this.h, this.f, ☃, ☃);
-              if (☃.b > ☃.c()) {
-                ☃.b = ☃.c();
+              int ☃ = ☃.e() ? db : 0;
+              a(h, f, ☃, ☃);
+              if (b > ☃.c()) {
+                b = ☃.c();
               }
-              if (☃.b > ☃.b(☃)) {
-                ☃.b = ☃.b(☃);
+              if (b > ☃.b(☃)) {
+                b = ☃.b(☃);
               }
-              ☃ -= ☃.b - ☃;
+              ☃ -= b - ☃;
               ☃.d(☃);
             }
           }
-          ☃.b = ☃;
-          if (☃.b <= 0) {
+          b = ☃;
+          if (b <= 0) {
             ☃ = null;
           }
           ☃.b(☃);
@@ -166,7 +166,7 @@ public abstract class xi
         d();
       }
     }
-    else if (this.g != 0)
+    else if (g != 0)
     {
       d();
     }
@@ -184,7 +184,7 @@ public abstract class xi
           if (☃ == 1)
           {
             ☃.a(☃.p().a(1), true);
-            if (☃.p().b == 0) {
+            if (pb == 0) {
               ☃.b(null);
             }
           }
@@ -195,7 +195,7 @@ public abstract class xi
         if (☃ < 0) {
           return null;
         }
-        yg ☃ = (yg)this.c.get(☃);
+        yg ☃ = (yg)c.get(☃);
         if ((☃ != null) && (☃.a(☃)))
         {
           zx ☃ = b(☃, ☃);
@@ -214,7 +214,7 @@ public abstract class xi
         if (☃ < 0) {
           return null;
         }
-        yg ☃ = (yg)this.c.get(☃);
+        yg ☃ = (yg)c.get(☃);
         if (☃ != null)
         {
           zx ☃ = ☃.d();
@@ -226,14 +226,14 @@ public abstract class xi
           {
             if ((☃ != null) && (☃.a(☃)))
             {
-              int ☃ = ☃ == 0 ? ☃.b : 1;
+              int ☃ = ☃ == 0 ? b : 1;
               if (☃ > ☃.b(☃)) {
                 ☃ = ☃.b(☃);
               }
-              if (☃.b >= ☃) {
+              if (b >= ☃) {
                 ☃.d(☃.a(☃));
               }
-              if (☃.b == 0) {
+              if (b == 0) {
                 ☃.b(null);
               }
             }
@@ -241,11 +241,11 @@ public abstract class xi
           else if (☃.a(☃)) {
             if (☃ == null)
             {
-              int ☃ = ☃ == 0 ? ☃.b : (☃.b + 1) / 2;
+              int ☃ = ☃ == 0 ? b : (b + 1) / 2;
               zx ☃ = ☃.a(☃);
               
               ☃.b(☃);
-              if (☃.b == 0) {
+              if (b == 0) {
                 ☃.d(null);
               }
               ☃.a(☃, ☃.p());
@@ -254,7 +254,7 @@ public abstract class xi
             {
               if ((☃.b() != ☃.b()) || (☃.i() != ☃.i()) || (!zx.a(☃, ☃)))
               {
-                if (☃.b <= ☃.b(☃))
+                if (b <= ☃.b(☃))
                 {
                   ☃.d(☃);
                   ☃.b(☃);
@@ -262,28 +262,28 @@ public abstract class xi
               }
               else
               {
-                int ☃ = ☃ == 0 ? ☃.b : 1;
-                if (☃ > ☃.b(☃) - ☃.b) {
-                  ☃ = ☃.b(☃) - ☃.b;
+                int ☃ = ☃ == 0 ? b : 1;
+                if (☃ > ☃.b(☃) - b) {
+                  ☃ = ☃.b(☃) - b;
                 }
-                if (☃ > ☃.c() - ☃.b) {
-                  ☃ = ☃.c() - ☃.b;
+                if (☃ > ☃.c() - b) {
+                  ☃ = ☃.c() - b;
                 }
                 ☃.a(☃);
-                if (☃.b == 0) {
+                if (b == 0) {
                   ☃.b(null);
                 }
-                ☃.b += ☃;
+                b += ☃;
               }
             }
             else if ((☃.b() == ☃.b()) && (☃.c() > 1) && ((!☃.f()) || (☃.i() == ☃.i())) && (zx.a(☃, ☃)))
             {
-              int ☃ = ☃.b;
-              if ((☃ > 0) && (☃ + ☃.b <= ☃.c()))
+              int ☃ = b;
+              if ((☃ > 0) && (☃ + b <= ☃.c()))
               {
-                ☃.b += ☃;
+                b += ☃;
                 ☃ = ☃.a(☃);
-                if (☃.b == 0) {
+                if (b == 0) {
                   ☃.d(null);
                 }
                 ☃.a(☃, ☃.p());
@@ -296,11 +296,11 @@ public abstract class xi
     }
     else if ((☃ == 2) && (☃ >= 0) && (☃ < 9))
     {
-      yg ☃ = (yg)this.c.get(☃);
+      yg ☃ = (yg)c.get(☃);
       if (☃.a(☃))
       {
         zx ☃ = ☃.a(☃);
-        boolean ☃ = (☃ == null) || ((☃.d == ☃) && (☃.a(☃)));
+        boolean ☃ = (☃ == null) || ((d == ☃) && (☃.a(☃)));
         int ☃ = -1;
         if (!☃)
         {
@@ -312,16 +312,16 @@ public abstract class xi
           zx ☃ = ☃.d();
           
           ☃.a(☃, ☃.k());
-          if (((☃.d == ☃) && (☃.a(☃))) || (☃ == null))
+          if (((d == ☃) && (☃.a(☃))) || (☃ == null))
           {
-            ☃.a(☃.b);
+            ☃.a(b);
             ☃.d(☃);
             ☃.a(☃, ☃);
           }
           else if (☃ > -1)
           {
             ☃.a(☃);
-            ☃.a(☃.b);
+            ☃.a(b);
             ☃.d(null);
             ☃.a(☃, ☃);
           }
@@ -333,45 +333,45 @@ public abstract class xi
         }
       }
     }
-    else if ((☃ == 3) && (☃.bA.d) && (☃.p() == null) && (☃ >= 0))
+    else if ((☃ == 3) && (bA.d) && (☃.p() == null) && (☃ >= 0))
     {
-      yg ☃ = (yg)this.c.get(☃);
+      yg ☃ = (yg)c.get(☃);
       if ((☃ != null) && (☃.e()))
       {
         zx ☃ = ☃.d().k();
-        ☃.b = ☃.c();
+        b = ☃.c();
         ☃.b(☃);
       }
     }
     else if ((☃ == 4) && (☃.p() == null) && (☃ >= 0))
     {
-      yg ☃ = (yg)this.c.get(☃);
+      yg ☃ = (yg)c.get(☃);
       if ((☃ != null) && (☃.e()) && (☃.a(☃)))
       {
-        zx ☃ = ☃.a(☃ == 0 ? 1 : ☃.d().b);
+        zx ☃ = ☃.a(☃ == 0 ? 1 : db);
         ☃.a(☃, ☃);
         ☃.a(☃, true);
       }
     }
     else if ((☃ == 6) && (☃ >= 0))
     {
-      yg ☃ = (yg)this.c.get(☃);
+      yg ☃ = (yg)c.get(☃);
       zx ☃ = ☃.p();
       if ((☃ != null) && ((☃ == null) || (!☃.e()) || (!☃.a(☃))))
       {
-        int ☃ = ☃ == 0 ? 0 : this.c.size() - 1;
+        int ☃ = ☃ == 0 ? 0 : c.size() - 1;
         int ☃ = ☃ == 0 ? 1 : -1;
         for (int ☃ = 0; ☃ < 2; ☃++) {
-          for (int ☃ = ☃; (☃ >= 0) && (☃ < this.c.size()) && (☃.b < ☃.c()); ☃ += ☃)
+          for (int ☃ = ☃; (☃ >= 0) && (☃ < c.size()) && (b < ☃.c()); ☃ += ☃)
           {
-            yg ☃ = (yg)this.c.get(☃);
+            yg ☃ = (yg)c.get(☃);
             if ((☃.e()) && (a(☃, ☃, true)) && (☃.a(☃)) && (a(☃, ☃)) && (
-              (☃ != 0) || (☃.d().b != ☃.d().c())))
+              (☃ != 0) || (db != ☃.d().c())))
             {
-              int ☃ = Math.min(☃.c() - ☃.b, ☃.d().b);
+              int ☃ = Math.min(☃.c() - b, db);
               zx ☃ = ☃.a(☃);
-              ☃.b += ☃;
-              if (☃.b <= 0) {
+              b += ☃;
+              if (b <= 0) {
                 ☃.d(null);
               }
               ☃.a(☃, ☃);
@@ -396,7 +396,7 @@ public abstract class xi
   
   public void b(wn ☃)
   {
-    wm ☃ = ☃.bi;
+    wm ☃ = bi;
     if (☃.p() != null)
     {
       ☃.a(☃.p(), false);
@@ -425,23 +425,23 @@ public abstract class xi
   
   public short a(wm ☃)
   {
-    this.a = ((short)(this.a + 1));
-    return this.a;
+    a = ((short)(a + 1));
+    return a;
   }
   
   private Set<wn> i = Sets.newHashSet();
   
   public boolean c(wn ☃)
   {
-    return !this.i.contains(☃);
+    return !i.contains(☃);
   }
   
   public void a(wn ☃, boolean ☃)
   {
     if (☃) {
-      this.i.remove(☃);
+      i.remove(☃);
     } else {
-      this.i.add(☃);
+      i.add(☃);
     }
   }
   
@@ -456,24 +456,24 @@ public abstract class xi
       ☃ = ☃ - 1;
     }
     if (☃.d()) {
-      while ((☃.b > 0) && (((!☃) && (☃ < ☃)) || ((☃) && (☃ >= ☃))))
+      while ((b > 0) && (((!☃) && (☃ < ☃)) || ((☃) && (☃ >= ☃))))
       {
-        yg ☃ = (yg)this.c.get(☃);
+        yg ☃ = (yg)c.get(☃);
         zx ☃ = ☃.d();
         if ((☃ != null) && (☃.b() == ☃.b()) && ((!☃.f()) || (☃.i() == ☃.i())) && (zx.a(☃, ☃)))
         {
-          int ☃ = ☃.b + ☃.b;
+          int ☃ = b + b;
           if (☃ <= ☃.c())
           {
-            ☃.b = 0;
-            ☃.b = ☃;
+            b = 0;
+            b = ☃;
             ☃.f();
             ☃ = true;
           }
-          else if (☃.b < ☃.c())
+          else if (b < ☃.c())
           {
-            ☃.b -= ☃.c() - ☃.b;
-            ☃.b = ☃.c();
+            b -= ☃.c() - b;
+            b = ☃.c();
             ☃.f();
             ☃ = true;
           }
@@ -485,7 +485,7 @@ public abstract class xi
         }
       }
     }
-    if (☃.b > 0)
+    if (b > 0)
     {
       if (☃) {
         ☃ = ☃ - 1;
@@ -494,13 +494,13 @@ public abstract class xi
       }
       while (((!☃) && (☃ < ☃)) || ((☃) && (☃ >= ☃)))
       {
-        yg ☃ = (yg)this.c.get(☃);
+        yg ☃ = (yg)c.get(☃);
         zx ☃ = ☃.d();
         if (☃ == null)
         {
           ☃.d(☃.k());
           ☃.f();
-          ☃.b = 0;
+          b = 0;
           ☃ = true;
           break;
         }
@@ -537,7 +537,7 @@ public abstract class xi
     if (☃ == 1) {
       return true;
     }
-    if ((☃ == 2) && (☃.bA.d)) {
+    if ((☃ == 2) && (bA.d)) {
       return true;
     }
     return false;
@@ -545,15 +545,15 @@ public abstract class xi
   
   protected void d()
   {
-    this.g = 0;
-    this.h.clear();
+    g = 0;
+    h.clear();
   }
   
   public static boolean a(yg ☃, zx ☃, boolean ☃)
   {
     boolean ☃ = (☃ == null) || (!☃.e());
     if ((☃ != null) && (☃.e()) && (☃ != null) && (☃.a(☃.d())) && (zx.a(☃.d(), ☃))) {
-      ☃ |= ☃.d().b + (☃ ? 0 : ☃.b) <= ☃.c();
+      ☃ |= db + (☃ ? 0 : b) <= ☃.c();
     }
     return ☃;
   }
@@ -563,15 +563,15 @@ public abstract class xi
     switch (☃)
     {
     case 0: 
-      ☃.b = ns.d(☃.b / ☃.size());
+      b = ns.d(b / ☃.size());
       break;
     case 1: 
-      ☃.b = 1;
+      b = 1;
       break;
     case 2: 
-      ☃.b = ☃.b().j();
+      b = ☃.b().j();
     }
-    ☃.b += ☃;
+    b += ☃;
   }
   
   public boolean b(yg ☃)
@@ -599,7 +599,7 @@ public abstract class xi
       zx ☃ = ☃.a(☃);
       if (☃ != null)
       {
-        ☃ += ☃.b / Math.min(☃.q_(), ☃.c());
+        ☃ += b / Math.min(☃.q_(), ☃.c());
         ☃++;
       }
     }

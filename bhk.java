@@ -15,25 +15,24 @@ public class bhk
   private final bbz h = new bbz(0, 0, 64, 32);
   private final bbz i = new bbi();
   
-  public void a(alo ☃, double ☃, double ☃, double ☃, float ☃, int ☃)
+  public void a(alo te, double x, double y, double z, float partialTicks, int destroyStage)
   {
-    cq ☃ = cq.a(☃.u() & 0x7);
-    
-    a((float)☃, (float)☃, (float)☃, ☃, ☃.d() * 360 / 16.0F, ☃.c(), ☃.b(), ☃);
+    cq enumfacing = cq.a(te.u() & 0x7);
+    a((float)x, (float)y, (float)z, enumfacing, te.d() * 360 / 16.0F, te.c(), te.b(), destroyStage);
   }
   
-  public void a(bhc ☃)
+  public void a(bhc rendererDispatcherIn)
   {
-    super.a(☃);
+    super.a(rendererDispatcherIn);
     c = this;
   }
   
-  public void a(float ☃, float ☃, float ☃, cq ☃, float ☃, int ☃, GameProfile ☃, int ☃)
+  public void a(float p_180543_1_, float p_180543_2_, float p_180543_3_, cq p_180543_4_, float p_180543_5_, int p_180543_6_, GameProfile p_180543_7_, int p_180543_8_)
   {
-    bbo ☃ = this.h;
-    if (☃ >= 0)
+    bbo modelbase = h;
+    if (p_180543_8_ >= 0)
     {
-      a(a[☃]);
+      a(a[p_180543_8_]);
       bfl.n(5890);
       bfl.E();
       bfl.a(4.0F, 2.0F, 1.0F);
@@ -42,7 +41,7 @@ public class bhk
     }
     else
     {
-      switch (☃)
+      switch (p_180543_6_)
       {
       case 0: 
       default: 
@@ -53,26 +52,26 @@ public class bhk
         break;
       case 2: 
         a(f);
-        ☃ = this.i;
+        modelbase = i;
         break;
       case 3: 
-        ☃ = this.i;
-        jy ☃ = bmz.a();
-        if (☃ != null)
+        modelbase = i;
+        jy resourcelocation = bmz.a();
+        if (p_180543_7_ != null)
         {
-          ave ☃ = ave.A();
-          Map<MinecraftProfileTexture.Type, MinecraftProfileTexture> ☃ = ☃.ab().a(☃);
-          if (☃.containsKey(MinecraftProfileTexture.Type.SKIN))
+          ave minecraft = ave.A();
+          Map<MinecraftProfileTexture.Type, MinecraftProfileTexture> map = minecraft.ab().a(p_180543_7_);
+          if (map.containsKey(MinecraftProfileTexture.Type.SKIN))
           {
-            ☃ = ☃.ab().a((MinecraftProfileTexture)☃.get(MinecraftProfileTexture.Type.SKIN), MinecraftProfileTexture.Type.SKIN);
+            resourcelocation = minecraft.ab().a((MinecraftProfileTexture)map.get(MinecraftProfileTexture.Type.SKIN), MinecraftProfileTexture.Type.SKIN);
           }
           else
           {
-            UUID ☃ = wn.a(☃);
-            ☃ = bmz.a(☃);
+            UUID uuid = wn.a(p_180543_7_);
+            resourcelocation = bmz.a(uuid);
           }
         }
-        a(☃);
+        a(resourcelocation);
         break;
       case 4: 
         a(g);
@@ -80,39 +79,35 @@ public class bhk
     }
     bfl.E();
     bfl.p();
-    if (☃ != cq.b) {
-      switch (bhk.1.a[☃.ordinal()])
+    if (p_180543_4_ != cq.b) {
+      switch (p_180543_4_)
       {
-      case 1: 
-        bfl.b(☃ + 0.5F, ☃ + 0.25F, ☃ + 0.74F);
+      case c: 
+        bfl.b(p_180543_1_ + 0.5F, p_180543_2_ + 0.25F, p_180543_3_ + 0.74F);
         break;
-      case 2: 
-        bfl.b(☃ + 0.5F, ☃ + 0.25F, ☃ + 0.26F);
-        ☃ = 180.0F;
+      case d: 
+        bfl.b(p_180543_1_ + 0.5F, p_180543_2_ + 0.25F, p_180543_3_ + 0.26F);
+        p_180543_5_ = 180.0F;
         break;
-      case 3: 
-        bfl.b(☃ + 0.74F, ☃ + 0.25F, ☃ + 0.5F);
-        ☃ = 270.0F;
+      case e: 
+        bfl.b(p_180543_1_ + 0.74F, p_180543_2_ + 0.25F, p_180543_3_ + 0.5F);
+        p_180543_5_ = 270.0F;
         break;
-      case 4: 
+      case f: 
       default: 
-        bfl.b(☃ + 0.26F, ☃ + 0.25F, ☃ + 0.5F);
-        ☃ = 90.0F;
-        break;
+        bfl.b(p_180543_1_ + 0.26F, p_180543_2_ + 0.25F, p_180543_3_ + 0.5F);
+        p_180543_5_ = 90.0F;break;
       }
     } else {
-      bfl.b(☃ + 0.5F, ☃, ☃ + 0.5F);
+      bfl.b(p_180543_1_ + 0.5F, p_180543_2_, p_180543_3_ + 0.5F);
     }
-    float ☃ = 0.0625F;
+    float f = 0.0625F;
     bfl.B();
     bfl.a(-1.0F, -1.0F, 1.0F);
-    
     bfl.d();
-    
-    ☃.a(null, 0.0F, 0.0F, 0.0F, ☃, 0.0F, ☃);
-    
+    modelbase.a((pk)null, 0.0F, 0.0F, 0.0F, p_180543_5_, 0.0F, f);
     bfl.F();
-    if (☃ >= 0)
+    if (p_180543_8_ >= 0)
     {
       bfl.n(5890);
       bfl.F();

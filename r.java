@@ -45,7 +45,7 @@ public class r
     
     lf ☃ = ☃.ap().a(☃[0]);
     if (☃ != null) {
-      ☃.a.c("You are banned from this server.");
+      a.c("You are banned from this server.");
     }
     a(☃, this, "commands.ban.success", new Object[] { ☃[0] });
   }

@@ -22,59 +22,59 @@ public enum zp$a
   
   private zp$a(int ☃, String ☃, int ☃, float ☃, int ☃, float ☃)
   {
-    this.f = ☃;
-    this.g = ☃;
-    this.h = ☃;
-    this.i = ☃;
-    this.j = ☃;
-    this.k = ☃;
-    this.l = true;
+    f = ☃;
+    g = ☃;
+    h = ☃;
+    i = ☃;
+    j = ☃;
+    k = ☃;
+    l = true;
   }
   
   private zp$a(int ☃, String ☃, int ☃, float ☃)
   {
-    this.f = ☃;
-    this.g = ☃;
-    this.h = ☃;
-    this.i = ☃;
-    this.j = 0;
-    this.k = 0.0F;
-    this.l = false;
+    f = ☃;
+    g = ☃;
+    h = ☃;
+    i = ☃;
+    j = 0;
+    k = 0.0F;
+    l = false;
   }
   
   public int a()
   {
-    return this.f;
+    return f;
   }
   
   public String b()
   {
-    return this.g;
+    return g;
   }
   
   public int c()
   {
-    return this.h;
+    return h;
   }
   
   public float d()
   {
-    return this.i;
+    return i;
   }
   
   public int e()
   {
-    return this.j;
+    return j;
   }
   
   public float f()
   {
-    return this.k;
+    return k;
   }
   
   public boolean g()
   {
-    return this.l;
+    return l;
   }
   
   public static a a(int ☃)

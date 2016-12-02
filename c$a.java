@@ -5,29 +5,29 @@ class c$a
   
   public c$a(String ☃, Object ☃)
   {
-    this.a = ☃;
+    a = ☃;
     if (☃ == null)
     {
-      this.b = "~~NULL~~";
+      b = "~~NULL~~";
     }
     else if ((☃ instanceof Throwable))
     {
       Throwable ☃ = (Throwable)☃;
-      this.b = ("~~ERROR~~ " + ☃.getClass().getSimpleName() + ": " + ☃.getMessage());
+      b = ("~~ERROR~~ " + ☃.getClass().getSimpleName() + ": " + ☃.getMessage());
     }
     else
     {
-      this.b = ☃.toString();
+      b = ☃.toString();
     }
   }
   
   public String a()
   {
-    return this.a;
+    return a;
   }
   
   public String b()
   {
-    return this.b;
+    return b;
   }
 }

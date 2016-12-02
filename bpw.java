@@ -7,47 +7,47 @@ public class bpw
   
   public bpw(jy ☃, double ☃, double ☃, boolean ☃)
   {
-    this.a = ☃;
-    this.c = ☃;
-    this.d = ☃;
-    this.b = ☃;
+    a = ☃;
+    c = ☃;
+    d = ☃;
+    b = ☃;
   }
   
   public bpw(bpw ☃)
   {
-    this.a = ☃.a;
-    this.c = ☃.c;
-    this.d = ☃.d;
-    this.b = ☃.b;
+    a = a;
+    c = c;
+    d = d;
+    b = b;
   }
   
   public jy a()
   {
-    return this.a;
+    return a;
   }
   
   public double b()
   {
-    return this.c;
+    return c;
   }
   
   public void a(double ☃)
   {
-    this.c = ☃;
+    c = ☃;
   }
   
   public double c()
   {
-    return this.d;
+    return d;
   }
   
   public void b(double ☃)
   {
-    this.d = ☃;
+    d = ☃;
   }
   
   public boolean d()
   {
-    return this.b;
+    return b;
   }
 }

@@ -7,6 +7,6 @@ class bho$2
   
   public void run()
   {
-    bho.a(this.b).remove(this.a);
+    bho.a(b).remove(a);
   }
 }

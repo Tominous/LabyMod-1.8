@@ -30,21 +30,21 @@ public class bma
   public bma(File p_i1049_1_, String p_i1049_2_, jy p_i1049_3_, bfm p_i1049_4_)
   {
     super(p_i1049_3_);
-    this.i = p_i1049_1_;
-    this.j = p_i1049_2_;
-    this.k = p_i1049_4_;
+    i = p_i1049_1_;
+    j = p_i1049_2_;
+    k = p_i1049_4_;
   }
   
   private void g()
   {
-    if (!this.n) {
-      if (this.l != null)
+    if (!n) {
+      if (l != null)
       {
-        this.n = true;
-        if (this.f != null) {
+        n = true;
+        if (f != null) {
           c();
         }
-        bml.a(super.b(), this.l);
+        bml.a(super.b(), l);
       }
     }
   }
@@ -57,34 +57,34 @@ public class bma
   
   public void a(BufferedImage p_147641_1_)
   {
-    this.l = p_147641_1_;
-    if (this.k != null) {
-      this.k.a();
+    l = p_147641_1_;
+    if (k != null) {
+      k.a();
     }
-    this.imageFound = Boolean.valueOf(this.l != null);
+    imageFound = Boolean.valueOf(l != null);
   }
   
   public void a(bni p_110551_1_)
     throws IOException
   {
-    if ((this.l == null) && (this.f != null)) {
+    if ((l == null) && (f != null)) {
       super.a(p_110551_1_);
     }
-    if (this.m == null) {
-      if ((this.i != null) && (this.i.isFile()))
+    if (m == null) {
+      if ((i != null) && (i.isFile()))
       {
-        g.debug("Loading http texture from local cache ({})", new Object[] { this.i });
+        g.debug("Loading http texture from local cache ({})", new Object[] { i });
         try
         {
-          this.l = ImageIO.read(this.i);
-          if (this.k != null) {
-            a(this.k.a(this.l));
+          l = ImageIO.read(i);
+          if (k != null) {
+            a(k.a(l));
           }
-          this.imageFound = Boolean.valueOf(this.l != null);
+          imageFound = Boolean.valueOf(l != null);
         }
         catch (IOException var3)
         {
-          g.error("Couldn't load skin " + this.i, var3);
+          g.error("Couldn't load skin " + i, var3);
           d();
         }
       }
@@ -97,7 +97,7 @@ public class bma
   
   protected void d()
   {
-    this.m = new Thread("Texture Downloader #" + h.incrementAndGet())
+    m = new Thread("Texture Downloader #" + h.incrementAndGet())
     {
       private static final String __OBFID = "CL_00001050";
       
@@ -132,7 +132,7 @@ public class bma
             if (bma.c(bma.this) != null) {
               var2 = bma.c(bma.this).a(var2);
             }
-            bma.this.a(var2);
+            a(var2);
           }
           else if (var1.getErrorStream() != null)
           {
@@ -148,24 +148,24 @@ public class bma
           if (var1 != null) {
             var1.disconnect();
           }
-          bma.this.imageFound = Boolean.valueOf(bma.this.l != null);
+          imageFound = Boolean.valueOf(l != null);
         }
       }
     };
-    this.m.setDaemon(true);
-    this.m.start();
+    m.setDaemon(true);
+    m.start();
   }
   
   private boolean shouldPipeline()
   {
-    if (!this.pipeline) {
+    if (!pipeline) {
       return false;
     }
     Proxy proxy = ave.A().O();
     if ((proxy.type() != Proxy.Type.DIRECT) && (proxy.type() != Proxy.Type.SOCKS)) {
       return false;
     }
-    if (!this.j.startsWith("http://")) {
+    if (!j.startsWith("http://")) {
       return false;
     }
     return true;
@@ -175,7 +175,7 @@ public class bma
   {
     try
     {
-      HttpRequest req = HttpPipeline.makeRequest(this.j, ave.A().O());
+      HttpRequest req = HttpPipeline.makeRequest(j, ave.A().O());
       HttpResponse resp = HttpPipeline.executeRequest(req);
       if (resp.getStatus() / 100 == 2)
       {
@@ -183,17 +183,17 @@ public class bma
         ByteArrayInputStream bais = new ByteArrayInputStream(body);
         BufferedImage var2;
         BufferedImage var2;
-        if (this.i != null)
+        if (i != null)
         {
-          FileUtils.copyInputStreamToFile(bais, this.i);
-          var2 = ImageIO.read(this.i);
+          FileUtils.copyInputStreamToFile(bais, i);
+          var2 = ImageIO.read(i);
         }
         else
         {
           var2 = bml.a(bais);
         }
-        if (this.k != null) {
-          var2 = this.k.a(var2);
+        if (k != null) {
+          var2 = k.a(var2);
         }
         a(var2);
       }
@@ -204,7 +204,7 @@ public class bma
     }
     finally
     {
-      this.imageFound = Boolean.valueOf(this.l != null);
+      imageFound = Boolean.valueOf(l != null);
     }
   }
 }

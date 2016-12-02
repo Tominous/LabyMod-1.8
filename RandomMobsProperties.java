@@ -13,40 +13,40 @@ public class RandomMobsProperties
   {
     ConnectedParser cp = new ConnectedParser("RandomMobs");
     
-    this.name = cp.parseName(path);
-    this.basePath = cp.parseBasePath(path);
+    name = cp.parseName(path);
+    basePath = cp.parseBasePath(path);
     
-    this.resourceLocations = variants;
+    resourceLocations = variants;
   }
   
   public RandomMobsProperties(Properties props, String path, jy baseResLoc)
   {
     ConnectedParser cp = new ConnectedParser("RandomMobs");
     
-    this.name = cp.parseName(path);
-    this.basePath = cp.parseBasePath(path);
+    name = cp.parseName(path);
+    basePath = cp.parseBasePath(path);
     
-    this.rules = parseRules(props, baseResLoc, cp);
+    rules = parseRules(props, baseResLoc, cp);
   }
   
   public jy getTextureLocation(jy loc, ps el)
   {
-    if (this.rules != null) {
-      for (int i = 0; i < this.rules.length; i++)
+    if (rules != null) {
+      for (int i = 0; i < rules.length; i++)
       {
-        RandomMobsRule rule = this.rules[i];
+        RandomMobsRule rule = rules[i];
         if (rule.matches(el)) {
-          return rule.getTextureLocation(loc, el.randomMobsId);
+          return rule.getTextureLocation(loc, randomMobsId);
         }
       }
     }
-    if (this.resourceLocations != null)
+    if (resourceLocations != null)
     {
-      int randomId = el.randomMobsId;
+      int randomId = randomMobsId;
       
-      int index = randomId % this.resourceLocations.length;
+      int index = randomId % resourceLocations.length;
       
-      return this.resourceLocations[index];
+      return resourceLocations[index];
     }
     return loc;
   }
@@ -117,24 +117,24 @@ public class RandomMobsProperties
   
   public boolean isValid(String path)
   {
-    if ((this.resourceLocations == null) && (this.rules == null))
+    if ((resourceLocations == null) && (rules == null))
     {
       Config.warn("No skins specified: " + path);
       return false;
     }
-    if (this.rules != null) {
-      for (int i = 0; i < this.rules.length; i++)
+    if (rules != null) {
+      for (int i = 0; i < rules.length; i++)
       {
-        RandomMobsRule rule = this.rules[i];
+        RandomMobsRule rule = rules[i];
         if (!rule.isValid(path)) {
           return false;
         }
       }
     }
-    if (this.resourceLocations != null) {
-      for (int i = 0; i < this.resourceLocations.length; i++)
+    if (resourceLocations != null) {
+      for (int i = 0; i < resourceLocations.length; i++)
       {
-        jy loc = this.resourceLocations[i];
+        jy loc = resourceLocations[i];
         if (!Config.hasResource(loc))
         {
           Config.warn("Texture not found: " + loc.a());

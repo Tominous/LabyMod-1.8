@@ -7,11 +7,11 @@ public class bz
   {
     super(☃);
     
-    this.a = ☃;
+    a = ☃;
   }
   
   public Object[] a()
   {
-    return this.a;
+    return a;
   }
 }

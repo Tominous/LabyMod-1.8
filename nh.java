@@ -7,20 +7,20 @@ public class nh
   
   public void a(long ☃)
   {
-    this.a[this.d] = ☃;
+    a[d] = ☃;
     
-    this.d += 1;
-    if (this.d == 240) {
-      this.d = 0;
+    d += 1;
+    if (d == 240) {
+      d = 0;
     }
-    if (this.c < 240)
+    if (c < 240)
     {
-      this.b = 0;
-      this.c += 1;
+      b = 0;
+      c += 1;
     }
     else
     {
-      this.b = b(this.d + 1);
+      b = b(d + 1);
     }
   }
   
@@ -32,12 +32,12 @@ public class nh
   
   public int a()
   {
-    return this.b;
+    return b;
   }
   
   public int b()
   {
-    return this.d;
+    return d;
   }
   
   public int b(int ☃)
@@ -47,6 +47,6 @@ public class nh
   
   public long[] c()
   {
-    return this.a;
+    return a;
   }
 }

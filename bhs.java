@@ -11,7 +11,7 @@ public class bhs
   public int a(adf ☃, bhq ☃)
   {
     if (!☃.b(☃)) {
-      return this.d + ☃.ordinal();
+      return d + ☃.ordinal();
     }
     return -1;
   }
@@ -19,6 +19,6 @@ public class bhs
   public void a()
   {
     super.a();
-    avd.a(this.d, adf.values().length);
+    avd.a(d, adf.values().length);
   }
 }

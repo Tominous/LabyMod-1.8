@@ -21,12 +21,12 @@ public class PlayerConfigurationReceiver
       String str = new String(bytes, "ASCII");
       JsonParser jp = new JsonParser();
       JsonElement je = jp.parse(str);
-      PlayerConfigurationParser pcp = new PlayerConfigurationParser(this.player);
+      PlayerConfigurationParser pcp = new PlayerConfigurationParser(player);
       PlayerConfiguration pc = pcp.parsePlayerConfiguration(je);
       if (pc != null)
       {
         pc.setInitialized(true);
-        PlayerConfigurations.setPlayerConfiguration(this.player, pc);
+        PlayerConfigurations.setPlayerConfiguration(player, pc);
       }
     }
     catch (Exception e)

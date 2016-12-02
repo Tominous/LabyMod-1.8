@@ -5,7 +5,7 @@
   
   private ajb$a(String ☃)
   {
-    this.d = ☃;
+    d = ☃;
   }
   
   public String toString()
@@ -15,6 +15,6 @@
   
   public String l()
   {
-    return this.d;
+    return d;
   }
 }

@@ -31,12 +31,12 @@ public class ReflectorMethod
   
   public Method getTargetMethod()
   {
-    if (this.checked) {
-      return this.targetMethod;
+    if (checked) {
+      return targetMethod;
     }
-    this.checked = true;
+    checked = true;
     
-    Class cls = this.reflectorClass.getTargetClass();
+    Class cls = reflectorClass.getTargetClass();
     if (cls == null) {
       return null;
     }
@@ -46,23 +46,23 @@ public class ReflectorMethod
       for (int i = 0; i < ms.length; i++)
       {
         Method m = ms[i];
-        if (m.getName().equals(this.targetMethodName)) {
-          if (this.targetMethodParameterTypes != null)
+        if (m.getName().equals(targetMethodName)) {
+          if (targetMethodParameterTypes != null)
           {
             Class[] types = m.getParameterTypes();
-            if (!Reflector.matchesTypes(this.targetMethodParameterTypes, types)) {}
+            if (!Reflector.matchesTypes(targetMethodParameterTypes, types)) {}
           }
           else
           {
-            this.targetMethod = m;
-            if (!this.targetMethod.isAccessible()) {
-              this.targetMethod.setAccessible(true);
+            targetMethod = m;
+            if (!targetMethod.isAccessible()) {
+              targetMethod.setAccessible(true);
             }
-            return this.targetMethod;
+            return targetMethod;
           }
         }
       }
-      Config.log("(Reflector) Method not present: " + cls.getName() + "." + this.targetMethodName);
+      Config.log("(Reflector) Method not present: " + cls.getName() + "." + targetMethodName);
       return null;
     }
     catch (Throwable e)
@@ -74,8 +74,8 @@ public class ReflectorMethod
   
   public boolean exists()
   {
-    if (this.checked) {
-      return this.targetMethod != null;
+    if (checked) {
+      return targetMethod != null;
     }
     return getTargetMethod() != null;
   }
@@ -91,7 +91,7 @@ public class ReflectorMethod
   
   public void deactivate()
   {
-    this.checked = true;
-    this.targetMethod = null;
+    checked = true;
+    targetMethod = null;
   }
 }

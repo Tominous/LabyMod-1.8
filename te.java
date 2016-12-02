@@ -28,15 +28,15 @@ public class te
   
   public te(cj ☃, cq ☃, int ☃)
   {
-    this.a = ☃;
-    this.c = ☃;
-    this.b = ☃.a(☃, 2);
-    this.d = ☃;
+    a = ☃;
+    c = ☃;
+    b = ☃.a(☃, 2);
+    d = ☃;
   }
   
   public int b(int ☃, int ☃, int ☃)
   {
-    return (int)this.a.c(☃, ☃, ☃);
+    return (int)a.c(☃, ☃, ☃);
   }
   
   public int a(cj ☃)
@@ -46,68 +46,68 @@ public class te
   
   public int b(cj ☃)
   {
-    return (int)this.b.i(☃);
+    return (int)b.i(☃);
   }
   
   public boolean c(cj ☃)
   {
-    int ☃ = ☃.n() - this.a.n();
-    int ☃ = ☃.p() - this.a.o();
-    return ☃ * this.c.g() + ☃ * this.c.i() >= 0;
+    int ☃ = ☃.n() - a.n();
+    int ☃ = ☃.p() - a.o();
+    return ☃ * c.g() + ☃ * c.i() >= 0;
   }
   
   public void a()
   {
-    this.f = 0;
+    f = 0;
   }
   
   public void b()
   {
-    this.f += 1;
+    f += 1;
   }
   
   public int c()
   {
-    return this.f;
+    return f;
   }
   
   public cj d()
   {
-    return this.a;
+    return a;
   }
   
   public cj e()
   {
-    return this.b;
+    return b;
   }
   
   public int f()
   {
-    return this.c.g() * 2;
+    return c.g() * 2;
   }
   
   public int g()
   {
-    return this.c.i() * 2;
+    return c.i() * 2;
   }
   
   public int h()
   {
-    return this.d;
+    return d;
   }
   
   public void a(int ☃)
   {
-    this.d = ☃;
+    d = ☃;
   }
   
   public boolean i()
   {
-    return this.e;
+    return e;
   }
   
   public void a(boolean ☃)
   {
-    this.e = ☃;
+    e = ☃;
   }
 }

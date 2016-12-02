@@ -6,6 +6,6 @@ public class bqr
   
   public bqr()
   {
-    this.a = (this.b = this.c = 0.0D);
+    a = (b = c = 0.0D);
   }
 }

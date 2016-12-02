@@ -11,39 +11,39 @@ public class rw
   
   public rw(wi ☃, double ☃)
   {
-    this.a = ☃;
-    this.c = ☃;
+    a = ☃;
+    c = ☃;
     a(1);
   }
   
   public boolean a()
   {
-    if (this.a.l() >= 0) {
+    if (a.l() >= 0) {
       return false;
     }
-    if (this.a.bc().nextInt(400) != 0) {
+    if (a.bc().nextInt(400) != 0) {
       return false;
     }
-    List<wi> ☃ = this.a.o.a(wi.class, this.a.aR().b(6.0D, 3.0D, 6.0D));
+    List<wi> ☃ = a.o.a(wi.class, a.aR().b(6.0D, 3.0D, 6.0D));
     double ☃ = Double.MAX_VALUE;
     for (wi ☃ : ☃) {
-      if ((☃ != this.a) && 
+      if ((☃ != a) && 
       
         (!☃.cn()) && 
         
         (☃.l() < 0))
       {
-        double ☃ = ☃.h(this.a);
+        double ☃ = ☃.h(a);
         if (☃ <= ☃)
         {
           ☃ = ☃;
-          this.b = ☃;
+          b = ☃;
         }
       }
     }
-    if (this.b == null)
+    if (b == null)
     {
-      aui ☃ = tc.a(this.a, 16, 3);
+      aui ☃ = tc.a(a, 16, 3);
       if (☃ == null) {
         return false;
       }
@@ -53,39 +53,39 @@ public class rw
   
   public boolean b()
   {
-    return this.d > 0;
+    return d > 0;
   }
   
   public void c()
   {
-    if (this.b != null) {
-      this.a.m(true);
+    if (b != null) {
+      a.m(true);
     }
-    this.d = 1000;
+    d = 1000;
   }
   
   public void d()
   {
-    this.a.m(false);
-    this.b = null;
+    a.m(false);
+    b = null;
   }
   
   public void e()
   {
-    this.d -= 1;
-    if (this.b != null)
+    d -= 1;
+    if (b != null)
     {
-      if (this.a.h(this.b) > 4.0D) {
-        this.a.s().a(this.b, this.c);
+      if (a.h(b) > 4.0D) {
+        a.s().a(b, c);
       }
     }
-    else if (this.a.s().m())
+    else if (a.s().m())
     {
-      aui ☃ = tc.a(this.a, 16, 3);
+      aui ☃ = tc.a(a, 16, 3);
       if (☃ == null) {
         return;
       }
-      this.a.s().a(☃.a, ☃.b, ☃.c, this.c);
+      a.s().a(a, b, c, c);
     }
   }
 }

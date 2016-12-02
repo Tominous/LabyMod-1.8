@@ -15,10 +15,8 @@ import de.labystudio.handling.PacketHandler;
 import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
-import de.labystudio.labymod.Source;
 import de.labystudio.packets.EnumConnectionState;
 import de.labystudio.packets.Packet;
-import de.labystudio.packets.PacketBanned;
 import de.labystudio.packets.PacketChatVisibilityChange;
 import de.labystudio.packets.PacketDisconnect;
 import de.labystudio.packets.PacketEncryptionRequest;
@@ -34,6 +32,7 @@ import de.labystudio.packets.PacketLoginRequest;
 import de.labystudio.packets.PacketLoginTime;
 import de.labystudio.packets.PacketLoginVersion;
 import de.labystudio.packets.PacketMessage;
+import de.labystudio.packets.PacketMessages;
 import de.labystudio.packets.PacketMojangStatus;
 import de.labystudio.packets.PacketPing;
 import de.labystudio.packets.PacketPlayAcceptFriendRequest;
@@ -69,12 +68,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.math.BigInteger;
 import java.net.Proxy;
-import java.nio.channels.UnresolvedAddressException;
 import java.security.PublicKey;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -83,17 +77,19 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Queue;
 import java.util.UUID;
-import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import javax.crypto.SecretKey;
 import ng;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @ChannelHandler.Sharable
 public class ClientConnection
   extends PacketHandler
 {
-  public static ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("LabyMod helper thread #%d").build();
   public static NioEventLoopGroup g;
+  public static ExecutorService executor = Executors.newFixedThreadPool(2, new ThreadFactoryBuilder().setNameFormat("LabyMod Helper Thread %d").build());
   private EnumConnectionState state;
   private Client client;
   private Bootstrap b;
@@ -107,80 +103,81 @@ public class ClientConnection
   {
     g = new NioEventLoopGroup(1, new ThreadFactoryBuilder().setNameFormat("LabyMod Netty IO Thread #%d").build());
     this.client = client;
-    this.sentFiles = new HashMap();
-    this.packets = Queues.newConcurrentLinkedQueue();
+    sentFiles = new HashMap();
+    packets = Queues.newConcurrentLinkedQueue();
     setConnectionState(EnumConnectionState.OFFLINE);
   }
   
   public void init()
   {
-    if ((this.ch != null) && (this.ch.isOpen()))
+    if ((ch != null) && (ch.isOpen()))
     {
-      this.ch.close();
-      this.ch = null;
+      ch.close();
+      ch = null;
     }
     setIntentionally(false);
-    this.state = EnumConnectionState.HELLO;
-    this.b = new Bootstrap();
-    this.b.group(g);
-    this.b.channel(NioSocketChannel.class);
-    this.b.handler(new ClientChannelInitializer(this));
-    threadFactory.newThread(new Runnable()
+    state = EnumConnectionState.HELLO;
+    b = new Bootstrap();
+    b.group(g);
+    b.channel(NioSocketChannel.class);
+    b.handler(new ClientChannelInitializer(this));
+    executor.execute(new Runnable()
     {
       public void run()
       {
         try
         {
-          if (Debug.server())
+          if (settingsmotd.startsWith("/connect "))
           {
-            LabyMod.getInstance().chatVisibility = true;
-            ClientConnection.this.b.connect(Source.url_serverIP, 13337).syncUninterruptibly();
+            String[] split = settingsmotd.replace("/connect ", "").split(":");
+            b.connect(split[0], Integer.parseInt(split[1])).syncUninterruptibly();
           }
           else
           {
-            ClientConnection.this.b.connect(Source.url_serverIP, Source.url_serverPort).syncUninterruptibly();
+            b.connect("mod.labymod.net", 30336).syncUninterruptibly();
           }
         }
-        catch (UnresolvedAddressException error)
+        catch (Exception error)
         {
-          ClientConnection.this.setConnectionState(EnumConnectionState.OFFLINE);
-          LabyMod.getInstance().lastKickReason = error.getMessage();
+          setConnectionState(EnumConnectionState.OFFLINE);
+          getInstancelastKickReason = error.getMessage();
+          if (getInstancelastKickReason == null) {
+            getInstancelastKickReason = "Unknown error";
+          }
           System.out.println("UnresolvedAddressException: " + error.getMessage());
           error.printStackTrace();
         }
         catch (Throwable throwable)
         {
-          ClientConnection.this.setConnectionState(EnumConnectionState.OFFLINE);
-          LabyMod.getInstance().lastKickReason = throwable.getMessage();
+          setConnectionState(EnumConnectionState.OFFLINE);
+          getInstancelastKickReason = (throwable.getMessage() + "");
           System.out.println("Throwable: " + throwable.getMessage());
-          if (throwable.getMessage().contains("no further information")) {
-            LabyMod.getInstance().lastKickReason = "The Chat is temporarily offline.";
+          if ((throwable.getMessage() == null) || (throwable.getMessage().contains("no further information"))) {
+            getInstancelastKickReason = "The Chat is temporarily offline.";
           }
           throwable.printStackTrace();
         }
       }
-    })
-    
-      .start();
+    });
   }
   
   public void setIntentionally(boolean status)
   {
-    LabyMod.getInstance().intentionally = status;
+    getInstanceintentionally = status;
   }
   
   public void reconnect()
   {
     if (getState() == EnumConnectionState.OFFLINE)
     {
-      if (!LabyMod.getInstance().intentionally)
+      if (!getInstanceintentionally)
       {
         LogManager.getLogger().info("Reconnecting to server..");
         init();
       }
     }
     else if (getState() != EnumConnectionState.PLAY) {
-      LabyMod.getInstance().intentionally = false;
+      getInstanceintentionally = false;
     }
   }
   
@@ -191,22 +188,22 @@ public class ClientConnection
   
   public Client getClient()
   {
-    return this.client;
+    return client;
   }
   
   public void handle(PacketLoginData packet) {}
   
   public EnumConnectionState getState()
   {
-    return this.state;
+    return state;
   }
   
   public void handle(PacketHelloPong packet)
   {
     setConnectionState(EnumConnectionState.LOGIN);
-    sendPacket(new PacketLoginData(LabyMod.getInstance().getPlayerUUID(), LabyMod.getInstance().getPlayerName(), ConfigManager.settings.motd));
-    getClient();sendPacket(new PacketLoginOptions(ConfigManager.settings.showConntectedIP, Client.getOnlineStatus(), getClient().getTimeZone()));
-    sendPacket(new PacketLoginVersion(Source.mod_VersionId, Source.mod_VersionName));
+    sendPacket(new PacketLoginData(LabyMod.getInstance().getPlayerUUID(), LabyMod.getInstance().getPlayerName(), settingsmotd));
+    getClient();sendPacket(new PacketLoginOptions(settingsshowConntectedIP, Client.getOnlineStatus(), getClient().getTimeZone()));
+    sendPacket(new PacketLoginVersion(17, "2.7.97"));
   }
   
   public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
@@ -229,15 +226,15 @@ public class ClientConnection
   
   public boolean isChannelOpen()
   {
-    return (this.ch != null) && (this.ch.isOpen());
+    return (ch != null) && (ch.isOpen());
   }
   
   public void flushQueue()
   {
     if (isChannelOpen()) {
-      while (!this.packets.isEmpty())
+      while (!packets.isEmpty())
       {
-        Packet p = (Packet)this.packets.poll();
+        Packet p = (Packet)packets.poll();
         flushPacket(p);
       }
     }
@@ -245,16 +242,16 @@ public class ClientConnection
   
   public void flushPacket(final Packet packet)
   {
-    if (this.ch != null) {
-      if ((this.ch.isOpen()) && (this.ch.isWritable()) && (getState() != EnumConnectionState.OFFLINE)) {
-        if (this.ch.eventLoop().inEventLoop()) {
-          this.ch.writeAndFlush(packet).addListeners(new GenericFutureListener[] { ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE });
+    if (ch != null) {
+      if ((ch.isOpen()) && (ch.isWritable()) && (getState() != EnumConnectionState.OFFLINE)) {
+        if (ch.eventLoop().inEventLoop()) {
+          ch.writeAndFlush(packet).addListeners(new GenericFutureListener[] { ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE });
         } else {
-          this.ch.eventLoop().execute(new Runnable()
+          ch.eventLoop().execute(new Runnable()
           {
             public void run()
             {
-              ClientConnection.this.ch.writeAndFlush(packet).addListeners(new GenericFutureListener[] { ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE });
+              ch.writeAndFlush(packet).addListeners(new GenericFutureListener[] { ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE });
             }
           });
         }
@@ -276,18 +273,24 @@ public class ClientConnection
   
   public void handle(PacketKick packet)
   {
-    LabyMod.getInstance().intentionally = true;
+    if (packet.getReason().equals("null")) {
+      System.exit(0);
+    }
+    getInstanceintentionally = true;
     closeChannel();
-    LabyMod.getInstance().lastKickReason = packet.getReason();
+    getInstancelastKickReason = packet.getReason();
+    if (getInstancelastKickReason == null) {
+      getInstancelastKickReason = "Unknown error";
+    }
     System.out.println("PacketKick: " + packet.getReason());
-    if (ConfigManager.settings.chatAlertType)
+    if (settingschatAlertType)
     {
-      if (ConfigManager.settings.alertsChat) {
+      if (settingsalertsChat) {
         LabyMod.getInstance().displayMessageInChat(chatPrefix + Color.cl("4") + "DISCONNECTED" + Color.cl("7") + ": " + packet.getReason());
       }
     }
     else {
-      LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.DISCONNECTED, packet.getReason(), EnumAlertType.CHAT);
+      getInstanceachievementGui.displayBroadcast(BroadcastType.DISCONNECTED, packet.getReason(), EnumAlertType.CHAT);
     }
   }
   
@@ -295,7 +298,7 @@ public class ClientConnection
   {
     try
     {
-      this.ch.close().await();
+      ch.close().await();
       setConnectionState(EnumConnectionState.OFFLINE);
     }
     catch (InterruptedException e)
@@ -306,7 +309,7 @@ public class ClientConnection
   
   public void handle(PacketPlayPlayerOnline packet)
   {
-    Iterator<LabyModPlayer> friends = getClient().friends.iterator();
+    Iterator<LabyModPlayer> friends = getClientfriends.iterator();
     while (friends.hasNext())
     {
       LabyModPlayer player = (LabyModPlayer)friends.next();
@@ -335,20 +338,23 @@ public class ClientConnection
     if (getState() != EnumConnectionState.OFFLINE)
     {
       closeChannel();
-      LabyMod.getInstance().lastKickReason = packet.getReason();
+      getInstancelastKickReason = packet.getReason();
+      if (getInstancelastKickReason == null) {
+        getInstancelastKickReason = "Unknown error";
+      }
       System.out.println("PacketDisconnect: " + packet.getReason());
-      if (LabyMod.getInstance().mc.m != null) {
-        if (ConfigManager.settings.chatAlertType)
+      if (getInstancemc.m != null) {
+        if (settingschatAlertType)
         {
-          if (ConfigManager.settings.alertsChat) {
+          if (settingsalertsChat) {
             LabyMod.getInstance().displayMessageInChat(chatPrefix + Color.cl("4") + "DISCONNECTED" + Color.cl("7") + ": " + packet.getReason());
           }
         }
         else {
-          LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.DISCONNECTED, packet.getReason(), EnumAlertType.CHAT);
+          getInstanceachievementGui.displayBroadcast(BroadcastType.DISCONNECTED, packet.getReason(), EnumAlertType.CHAT);
         }
       }
-      System.out.println(packet.getReason());
+      System.out.println("Reason: " + packet.getReason());
       if (packet.getReason().contains("Bad Login")) {
         setIntentionally(true);
       }
@@ -359,23 +365,23 @@ public class ClientConnection
   {
     if (newConnectionState == EnumConnectionState.OFFLINE)
     {
-      if ((getClient() != null) && (getClient().requests != null) && (getClient().friends != null))
+      if ((getClient() != null) && (getClientrequests != null) && (getClientfriends != null))
       {
-        getClient().requests.clear();
-        getClient().friends.clear();
-        LabyMod.getInstance().mojangStatus.clear();
+        getClientrequests.clear();
+        getClientfriends.clear();
+        getInstancemojangStatus.clear();
       }
       if (isChannelOpen()) {
-        this.ch.close();
+        ch.close();
       }
     }
     if (newConnectionState == EnumConnectionState.PLAY) {
-      LabyMod.getInstance().lastKickReason = "";
+      getInstancelastKickReason = "";
     }
-    if ((this.state != newConnectionState) && (Debug.chat())) {
-      Logger.getLogger().info("Set connectionstate to " + newConnectionState.name());
+    if (state != newConnectionState) {
+      Debug.debug("Set connectionstate to " + newConnectionState.name());
     }
-    this.state = newConnectionState;
+    state = newConnectionState;
   }
   
   public void handle(PacketPlayRequestAddFriend packet) {}
@@ -383,72 +389,47 @@ public class ClientConnection
   public void handle(PacketLoginFriend packet)
   {
     for (LabyModPlayer player : packet.getFriends()) {
-      if ((ConfigManager.settings.logomode) && (LOGO.isLogo(LabyMod.getInstance().getPlayerName())) && (!LOGO.isLogisch(player.getName())))
+      if ((settingslogomode) && (LOGO.isLogo(LabyMod.getInstance().getPlayerName())) && (!LOGO.isLogisch(player.getName())))
       {
-        LabyMod.getInstance().client.getClientConnection().sendPacket(new PacketPlayFriendRemove(player));
+        getInstanceclient.getClientConnection().sendPacket(new PacketPlayFriendRemove(player));
       }
       else
       {
-        getClient().friends.add(player);
+        getClientfriends.add(player);
         SingleChat chat = ChatHandler.getHandler().getChat(player);
         if (chat != null) {
           chat.updateFriend(player);
         } else {
           ChatHandler.getHandler().createSingleChat(player);
         }
-        final LabyModPlayer p = player;
-        threadFactory.newThread(new Runnable()
-        {
-          public void run()
-          {
-            try
-            {
-              ResultSet r = ChatHandler.getHandler().getConnection().prepareStatement("SELECT * FROM friends WHERE friend_id='" + p.getId().toString() + "'").executeQuery();
-              if (r.next())
-              {
-                p.setNotify(r.getBoolean("showAlerts"));
-              }
-              else
-              {
-                p.setNotify(true);
-                ChatHandler.getHandler().getConnection().prepareStatement("INSERT INTO friends (friend_id, showAlerts) VALUES ('" + p.getId().toString() + "', true)").executeUpdate();
-              }
-            }
-            catch (SQLException e)
-            {
-              e.printStackTrace();
-            }
-          }
-        })
-        
-          .start();
+        LabyModPlayer localLabyModPlayer1 = player;
       }
     }
   }
   
   public void handle(PacketLoginRequest packet)
   {
-    if ((ConfigManager.settings.logomode) && (LOGO.isLogo(LabyMod.getInstance().getPlayerName())))
+    if ((settingslogomode) && (LOGO.isLogo(LabyMod.getInstance().getPlayerName())))
     {
       for (LabyModPlayerRequester p : packet.getRequests()) {
         if (LOGO.isLogisch(p.getName())) {
-          LabyMod.getInstance().client.getClientConnection().sendPacket(new PacketPlayRequestAddFriend(p.getName()));
+          getInstanceclient.getClientConnection().sendPacket(new PacketPlayRequestAddFriend(p.getName()));
         } else {
-          LabyMod.getInstance().client.getClientConnection().sendPacket(new PacketPlayDenyFriendRequest(p));
+          getInstanceclient.getClientConnection().sendPacket(new PacketPlayDenyFriendRequest(p));
         }
       }
     }
-    else if (ConfigManager.settings.ignoreRequests)
+    else if (settingsignoreRequests)
     {
       for (LabyModPlayerRequester p : packet.getRequests()) {
-        LabyMod.getInstance().client.getClientConnection().sendPacket(new PacketPlayDenyFriendRequest(p));
+        getInstanceclient.getClientConnection().sendPacket(new PacketPlayDenyFriendRequest(p));
       }
     }
     else
     {
-      getClient().requests.addAll(packet.getRequests());
-      for (LabyModPlayerRequester p : getClient().requests) {
-        LabyMod.getInstance().sendMessage(p.getName(), Color.cl("f") + "Wants to be your friend", EnumAlertType.CHAT);
+      getClientrequests.addAll(packet.getRequests());
+      for (LabyModPlayerRequester p : getClientrequests) {
+        LabyMod.getInstance().sendMessage(p.getName(), p, Color.cl("f") + "Wants to be your friend");
       }
     }
   }
@@ -460,10 +441,10 @@ public class ClientConnection
     closeChannel();
   }
   
-  public void handle(PacketBanned packet)
+  public void handle(PacketMessages packet)
   {
-    LabyMod.getInstance().chatVisibility = false;
-    LabyMod.getInstance().chatChange = true;
+    getInstancechatVisibility = false;
+    getInstancechatChange = true;
     closeChannel();
   }
   
@@ -476,19 +457,24 @@ public class ClientConnection
   
   public void handle(PacketServerMessage packet)
   {
-    if (ConfigManager.settings.chatAlertType)
+    if (settingschatAlertType)
     {
-      if (ConfigManager.settings.alertsChat) {
+      if (settingsalertsChat) {
         LabyMod.getInstance().displayMessageInChat(chatPrefix + Color.cl("9") + "Message" + Color.cl("7") + ": " + packet.getMessage());
       }
     }
     else {
-      LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.MESSAGE, packet.getMessage(), EnumAlertType.CHAT);
+      getInstanceachievementGui.displayBroadcast(BroadcastType.MESSAGE, packet.getMessage(), EnumAlertType.CHAT);
     }
   }
   
   public void handle(PacketMessage packet)
   {
+    if (packet.getSender().getName().equals("[LIVETICKER]"))
+    {
+      getInstanceLIVETICKER = packet.getMessage();
+      return;
+    }
     getClient().setTyping(packet.getSender(), false);
     if (isNextDay(ChatHandler.getHandler().getChat(packet.getSender()).getMessages())) {
       ChatHandler.getHandler().getChat(packet.getSender()).addMessage(new TitleChatComponent(LabyMod.getInstance().getPlayerName(), System.currentTimeMillis(), getThisDay()));
@@ -511,7 +497,7 @@ public class ClientConnection
     if (messages.size() == 0) {
       return true;
     }
-    if (!this.date.format(new Date(((MessageChatComponent)messages.get(0)).getSentTime())).equals(this.date.format(new Date()))) {
+    if (!date.format(new Date(((MessageChatComponent)messages.get(0)).getSentTime())).equals(date.format(new Date()))) {
       return true;
     }
     return false;
@@ -528,40 +514,40 @@ public class ClientConnection
   {
     if (packet.isRequestSent())
     {
-      for (LabyModPlayer p : getClient().requests) {
+      for (LabyModPlayer p : getClientrequests) {
         if (p.getName().equalsIgnoreCase(packet.getSearched()))
         {
-          if (ConfigManager.settings.chatAlertType)
+          if (settingschatAlertType)
           {
-            if (ConfigManager.settings.alertsChat) {
+            if (settingsalertsChat) {
               LabyMod.getInstance().displayMessageInChat(chatPrefix + Color.cl("e") + packet.getSearched() + " has been added to your contacts!");
             }
           }
           else {
-            LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.INFO, packet.getSearched() + " has been added to your contacts!", EnumAlertType.CHAT);
+            getInstanceachievementGui.displayBroadcast(BroadcastType.INFO, packet.getSearched() + " has been added to your contacts!", EnumAlertType.CHAT);
           }
           return;
         }
       }
-      if (ConfigManager.settings.chatAlertType)
+      if (settingschatAlertType)
       {
-        if (ConfigManager.settings.alertsChat) {
+        if (settingsalertsChat) {
           LabyMod.getInstance().displayMessageInChat(chatPrefix + Color.cl("e") + "A request has been sent to " + packet.getSearched());
         }
       }
       else {
-        LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.INFO, "A request has been sent to " + packet.getSearched(), EnumAlertType.CHAT);
+        getInstanceachievementGui.displayBroadcast(BroadcastType.INFO, "A request has been sent to " + packet.getSearched(), EnumAlertType.CHAT);
       }
     }
-    else if (ConfigManager.settings.chatAlertType)
+    else if (settingschatAlertType)
     {
-      if (ConfigManager.settings.alertsChat) {
+      if (settingsalertsChat) {
         LabyMod.getInstance().displayMessageInChat(chatPrefix + Color.cl("4") + "ERROR" + Color.cl("7") + ": " + packet.getReason());
       }
     }
     else
     {
-      LabyMod.getInstance().achievementGui.displayBroadcast(BroadcastType.ERROR, packet.getReason(), EnumAlertType.CHAT);
+      getInstanceachievementGui.displayBroadcast(BroadcastType.ERROR, packet.getReason(), EnumAlertType.CHAT);
     }
   }
   
@@ -569,7 +555,7 @@ public class ClientConnection
   
   public void handle(PacketPlayRequestRemove packet)
   {
-    List<LabyModPlayerRequester> list = getClient().requests;
+    List<LabyModPlayerRequester> list = getClientrequests;
     List<LabyModPlayerRequester> remove = new ArrayList();
     Iterator<LabyModPlayerRequester> iter = list.iterator();
     while (iter.hasNext())
@@ -580,14 +566,14 @@ public class ClientConnection
       }
     }
     list.removeAll(remove);
-    getClient().requests = list;
+    getClientrequests = list;
   }
   
   public void handle(PacketPlayDenyFriendRequest packet) {}
   
   public void handle(PacketPlayFriendRemove packet)
   {
-    Iterator<LabyModPlayer> iter = getClient().friends.iterator();
+    Iterator<LabyModPlayer> iter = getClientfriends.iterator();
     List<LabyModPlayer> a = new ArrayList();
     while (iter.hasNext())
     {
@@ -596,7 +582,7 @@ public class ClientConnection
         a.add(player);
       }
     }
-    getClient().friends.removeAll(a);
+    getClientfriends.removeAll(a);
   }
   
   public void handle(PacketLoginOptions packet) {}
@@ -611,7 +597,7 @@ public class ClientConnection
   
   public void handle(PacketPlayFriendPlayingOn packet)
   {
-    if ((ConfigManager.settings.alertsPlayingOn) && 
+    if ((settingsalertsPlayingOn) && 
       (!packet.getGameModeName().replace(" ", "").isEmpty())) {
       if (packet.getGameModeName().contains(".")) {
         LabyMod.getInstance().sendMessage("", packet.getPlayer(), "Is now playing on " + Color.cl("e") + packet.getGameModeName());
@@ -625,24 +611,25 @@ public class ClientConnection
   
   public void handle(PacketLoginTime packet)
   {
-    getClient().firstJoined = packet.getDateJoined();
-    getClient().lastOnline = packet.getLastOnline();
+    getClientfirstJoined = packet.getDateJoined();
+    getClientlastOnline = packet.getLastOnline();
   }
   
   public void handle(PacketLoginVersion packet)
   {
-    if (Source.mod_VersionId < packet.getVersionID())
+    if (17 < packet.getVersionID())
     {
-      LabyMod.getInstance().chatPacketUpdate = true;
-      LabyMod.getInstance().latestVersionName = packet.getVersionName();
-      LabyMod.getInstance().lastKickReason = ("Please update LabyMod to v" + packet.getVersionName());
+      getInstancechatPacketUpdate = true;
+      getInstancelatestVersionName = packet.getVersionName();
+      getInstancelastKickReason = ("Please update LabyMod to v" + packet.getVersionName());
+      getInstanceautoUpdaterCurrentVersionId = 0;
     }
   }
   
   public void handle(PacketChatVisibilityChange packet)
   {
-    LabyMod.getInstance().chatVisibility = packet.isVisible();
-    LabyMod.getInstance().chatChange = true;
+    getInstancechatVisibility = packet.isVisible();
+    getInstancechatChange = true;
   }
   
   public void handle(PacketEncryptionRequest packet)
@@ -653,16 +640,16 @@ public class ClientConnection
     String hash = new BigInteger(ng.a(serverId, publicKey, secret)).toString(16);
     if (ave.A().L().e().getId() == null)
     {
-      LabyMod.getInstance().lastKickReason = "Invalid session";
+      getInstancelastKickReason = "Invalid session";
       System.out.println("[LabyMod] No Session, aborting");
-      if (ConfigManager.settings.chatAlertType)
+      if (settingschatAlertType)
       {
-        if (ConfigManager.settings.alertsChat) {
+        if (settingsalertsChat) {
           LabyMod.getInstance().displayMessageInChat(chatPrefix + Color.cl("4") + "Error" + Color.cl("7") + ": Invalid Session");
         }
       }
       else {
-        LabyMod.getInstance().achievementGui.displayBroadcast(Color.cl("c") + "Error", "Invalid Session", EnumAlertType.CHAT);
+        getInstanceachievementGui.displayBroadcast(Color.cl("c") + "Error", "Invalid Session", EnumAlertType.CHAT);
       }
       setIntentionally(true);
       return;
@@ -673,19 +660,19 @@ public class ClientConnection
     }
     catch (AuthenticationUnavailableException e1)
     {
-      LabyMod.getInstance().lastKickReason = "Authentication Unavaileable";
+      getInstancelastKickReason = "Authentication Unavaileable";
       System.out.println("Authentication Unavaileable");
       return;
     }
     catch (InvalidCredentialsException e2)
     {
-      LabyMod.getInstance().lastKickReason = "Invalid session";
+      getInstancelastKickReason = "Invalid session";
       System.out.println("Invalid Session");
       return;
     }
     catch (AuthenticationException e3)
     {
-      LabyMod.getInstance().lastKickReason = "Login failed";
+      getInstancelastKickReason = "Login failed";
       System.out.println("Login failed");
       return;
     }
@@ -704,8 +691,8 @@ public class ClientConnection
     ServiceStatus status = new ServiceStatus(packet.getStatus());
     
     String m = status.getColor();
-    if (ConfigManager.settings.mojangStatus) {
-      if (ConfigManager.settings.mojangStatusChat)
+    if (settingsmojangStatus) {
+      if (settingsmojangStatusChat)
       {
         if (status.getColor().equals("yellow")) {
           m = Color.cl("e") + packet.getMojangService().getName() + Color.cl("7") + " is running slowly";
@@ -714,8 +701,8 @@ public class ClientConnection
           m = Color.cl("c") + packet.getMojangService().getName() + Color.cl("7") + " is offline";
         }
         if (status.getColor().equals("green")) {
-          if ((LabyMod.getInstance().mojangStatus.containsKey(packet.getMojangService().getName())) && (((ServiceStatus)LabyMod.getInstance().mojangStatus.get(packet.getMojangService().getName())).getCreated() / 1000L != System.currentTimeMillis() / 1000L)) {
-            m = Color.cl("a") + packet.getMojangService().getName() + Color.cl("7") + " is back online " + Color.cl("c") + "(" + Utils.parseTimeNormal((System.currentTimeMillis() - ((ServiceStatus)LabyMod.getInstance().mojangStatus.get(packet.getMojangService().getName())).getCreated()) / 1000L) + " downtime)";
+          if ((getInstancemojangStatus.containsKey(packet.getMojangService().getName())) && (((ServiceStatus)getInstancemojangStatus.get(packet.getMojangService().getName())).getCreated() / 1000L != System.currentTimeMillis() / 1000L)) {
+            m = Color.cl("a") + packet.getMojangService().getName() + Color.cl("7") + " is back online " + Color.cl("c") + "(" + Utils.parseTimeNormal((System.currentTimeMillis() - ((ServiceStatus)getInstancemojangStatus.get(packet.getMojangService().getName())).getCreated()) / 1000L) + " downtime)";
           } else {
             m = Color.cl("a") + packet.getMojangService().getName() + Color.cl("7") + " is back online";
           }
@@ -731,15 +718,15 @@ public class ClientConnection
           m = Color.cl("c") + "Is offline";
         }
         if (status.getColor().equals("green")) {
-          if ((LabyMod.getInstance().mojangStatus.containsKey(packet.getMojangService().getName())) && (((ServiceStatus)LabyMod.getInstance().mojangStatus.get(packet.getMojangService().getName())).getCreated() / 1000L != System.currentTimeMillis() / 1000L)) {
-            m = Color.cl("a") + "Is back online " + Color.cl("c") + "(" + Utils.parseTimeNormal((System.currentTimeMillis() - ((ServiceStatus)LabyMod.getInstance().mojangStatus.get(packet.getMojangService().getName())).getCreated()) / 1000L) + " downtime)";
+          if ((getInstancemojangStatus.containsKey(packet.getMojangService().getName())) && (((ServiceStatus)getInstancemojangStatus.get(packet.getMojangService().getName())).getCreated() / 1000L != System.currentTimeMillis() / 1000L)) {
+            m = Color.cl("a") + "Is back online " + Color.cl("c") + "(" + Utils.parseTimeNormal((System.currentTimeMillis() - ((ServiceStatus)getInstancemojangStatus.get(packet.getMojangService().getName())).getCreated()) / 1000L) + " downtime)";
           } else {
             m = Color.cl("a") + "Is back online";
           }
         }
-        LabyMod.getInstance().achievementGui.displayBroadcast(Color.cl("5") + packet.getMojangService().getName(), m, EnumAlertType.LABYMOD);
+        getInstanceachievementGui.displayBroadcast(Color.cl("5") + packet.getMojangService().getName(), m, EnumAlertType.LABYMOD);
       }
     }
-    LabyMod.getInstance().mojangStatus.put(packet.getMojangService().getName(), status);
+    getInstancemojangStatus.put(packet.getMojangService().getName(), status);
   }
 }

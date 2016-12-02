@@ -14,18 +14,18 @@ public class js$c
   
   public js$c(String ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public String a()
   {
-    return this.a;
+    return a;
   }
   
   public int b()
   {
-    return this.b;
+    return b;
   }
   
   public static class a

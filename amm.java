@@ -16,20 +16,20 @@ public class amm<T extends Enum<T>,  extends nw>
   protected amm(String ☃, Class<T> ☃, Collection<T> ☃)
   {
     super(☃, ☃);
-    this.a = ImmutableSet.copyOf(☃);
+    a = ImmutableSet.copyOf(☃);
     for (T ☃ : ☃)
     {
       String ☃ = ((nw)☃).l();
-      if (this.b.containsKey(☃)) {
+      if (b.containsKey(☃)) {
         throw new IllegalArgumentException("Multiple values have the same name '" + ☃ + "'");
       }
-      this.b.put(☃, ☃);
+      b.put(☃, ☃);
     }
   }
   
   public Collection<T> c()
   {
-    return this.a;
+    return a;
   }
   
   public String a(T ☃)

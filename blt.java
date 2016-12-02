@@ -16,30 +16,30 @@ public class blt
   
   private blt(blt.a ☃, int ☃, String ☃)
   {
-    this.a = ☃;
-    this.c = ☃;
-    this.b = ☃;
+    a = ☃;
+    c = ☃;
+    b = ☃;
   }
   
   public void a(blq ☃)
   {
-    this.d += 1;
-    bqs.b(☃.h(), this.c);
+    d += 1;
+    bqs.b(☃.h(), c);
   }
   
   public void b(blq ☃)
   {
-    this.d -= 1;
-    if (this.d <= 0)
+    d -= 1;
+    if (d <= 0)
     {
-      bqs.a(this.c);
-      this.a.d().remove(this.b);
+      bqs.a(c);
+      a.d().remove(b);
     }
   }
   
   public String a()
   {
-    return this.b;
+    return b;
   }
   
   public static blt a(bni ☃, blt.a ☃, String ☃)
@@ -93,29 +93,29 @@ public class blt
     
     private a(String ☃, String ☃, int ☃)
     {
-      this.c = ☃;
-      this.d = ☃;
-      this.e = ☃;
+      c = ☃;
+      d = ☃;
+      e = ☃;
     }
     
     public String a()
     {
-      return this.c;
+      return c;
     }
     
     protected String b()
     {
-      return this.d;
+      return d;
     }
     
     protected int c()
     {
-      return this.e;
+      return e;
     }
     
     protected Map<String, blt> d()
     {
-      return this.f;
+      return f;
     }
   }
 }

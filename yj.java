@@ -23,12 +23,12 @@ public class yj
         int ☃ = (☃ instanceof wn) ? 1 : 0;
         int ☃ = ps.c(☃);
         zx ☃ = ☃.k();
-        ☃.b = 1;
+        b = 1;
         ☃.c(☃ - ☃, ☃);
         if ((☃ instanceof ps)) {
           ((ps)☃).a(☃, 2.0F);
         }
-        ☃.b -= 1;
+        b -= 1;
         return ☃;
       }
       return super.b(☃, ☃);
@@ -48,25 +48,25 @@ public class yj
     
     private a(String ☃, int ☃, int[] ☃, int ☃)
     {
-      this.f = ☃;
-      this.g = ☃;
-      this.h = ☃;
-      this.i = ☃;
+      f = ☃;
+      g = ☃;
+      h = ☃;
+      i = ☃;
     }
     
     public int a(int ☃)
     {
-      return yj.d()[☃] * this.g;
+      return yj.d()[☃] * g;
     }
     
     public int b(int ☃)
     {
-      return this.h[☃];
+      return h[☃];
     }
     
     public int a()
     {
-      return this.i;
+      return i;
     }
     
     public zw b()
@@ -91,18 +91,18 @@ public class yj
     
     public String c()
     {
-      return this.f;
+      return f;
     }
   }
   
   public yj(yj.a ☃, int ☃, int ☃)
   {
-    this.m = ☃;
-    this.b = ☃;
-    this.d = ☃;
-    this.c = ☃.b(☃);
+    m = ☃;
+    b = ☃;
+    d = ☃;
+    c = ☃.b(☃);
     d(☃.a(☃));
-    this.h = 1;
+    h = 1;
     a(yz.j);
     agg.N.a(this, l);
   }
@@ -121,17 +121,17 @@ public class yj
   
   public int b()
   {
-    return this.m.a();
+    return m.a();
   }
   
   public yj.a x_()
   {
-    return this.m;
+    return m;
   }
   
   public boolean d_(zx ☃)
   {
-    if (this.m != yj.a.a) {
+    if (m != yj.a.a) {
       return false;
     }
     if (!☃.n()) {
@@ -148,7 +148,7 @@ public class yj
   
   public int b(zx ☃)
   {
-    if (this.m != yj.a.a) {
+    if (m != yj.a.a) {
       return -1;
     }
     dn ☃ = ☃.o();
@@ -165,7 +165,7 @@ public class yj
   
   public void c(zx ☃)
   {
-    if (this.m != yj.a.a) {
+    if (m != yj.a.a) {
       return;
     }
     dn ☃ = ☃.o();
@@ -180,7 +180,7 @@ public class yj
   
   public void b(zx ☃, int ☃)
   {
-    if (this.m != yj.a.a) {
+    if (m != yj.a.a) {
       throw new UnsupportedOperationException("Can't dye non-leather!");
     }
     dn ☃ = ☃.o();
@@ -198,7 +198,7 @@ public class yj
   
   public boolean a(zx ☃, zx ☃)
   {
-    if (this.m.b() == ☃.b()) {
+    if (m.b() == ☃.b()) {
       return true;
     }
     return super.a(☃, ☃);
@@ -211,7 +211,7 @@ public class yj
     if (☃ == null)
     {
       ☃.c(☃, ☃.k());
-      ☃.b = 0;
+      b = 0;
     }
     return ☃;
   }

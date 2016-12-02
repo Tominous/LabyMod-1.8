@@ -7,7 +7,7 @@ public class apc
   
   public apc(afh ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
@@ -59,7 +59,7 @@ public class apc
             if ((☃ >= 4) && (☃.d())) {
               return false;
             }
-            if ((☃ < 4) && (!☃.a()) && (☃.p(☃.a(☃, ☃, ☃)).c() != this.a)) {
+            if ((☃ < 4) && (!☃.a()) && (☃.p(☃.a(☃, ☃, ☃)).c() != a)) {
               return false;
             }
           }
@@ -70,7 +70,7 @@ public class apc
       for (int ☃ = 0; ☃ < 16; ☃++) {
         for (int ☃ = 0; ☃ < 8; ☃++) {
           if (☃[((☃ * 16 + ☃) * 8 + ☃)] != 0) {
-            ☃.a(☃.a(☃, ☃, ☃), ☃ >= 4 ? afi.a.Q() : this.a.Q(), 2);
+            ☃.a(☃.a(☃, ☃, ☃), ☃ >= 4 ? afi.a.Q() : a.Q(), 2);
           }
         }
       }
@@ -84,7 +84,7 @@ public class apc
             if ((☃.p(☃).c() == afi.d) && (☃.b(ads.a, ☃.a(☃, ☃, ☃)) > 0))
             {
               ady ☃ = ☃.b(☃);
-              if (☃.ak.c() == afi.bw) {
+              if (ak.c() == afi.bw) {
                 ☃.a(☃, afi.bw.Q(), 2);
               } else {
                 ☃.a(☃, afi.c.Q(), 2);
@@ -94,7 +94,7 @@ public class apc
         }
       }
     }
-    if (this.a.t() == arm.i) {
+    if (a.t() == arm.i) {
       for (int ☃ = 0; ☃ < 16; ☃++) {
         for (int ☃ = 0; ☃ < 16; ☃++) {
           for (int ☃ = 0; ☃ < 8; ☃++)
@@ -108,7 +108,7 @@ public class apc
         }
       }
     }
-    if (this.a.t() == arm.h) {
+    if (a.t() == arm.h) {
       for (int ☃ = 0; ☃ < 16; ☃++) {
         for (int ☃ = 0; ☃ < 16; ☃++)
         {

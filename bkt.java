@@ -5,7 +5,7 @@ public class bkt
   
   public bkt(bln ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(bet ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
@@ -13,11 +13,11 @@ public class bkt
     if ((!☃.e_().equals("deadmau5")) || (!☃.g()) || (☃.ax())) {
       return;
     }
-    this.a.a(☃.i());
+    a.a(☃.i());
     for (int ☃ = 0; ☃ < 2; ☃++)
     {
-      float ☃ = ☃.A + (☃.y - ☃.A) * ☃ - (☃.aJ + (☃.aI - ☃.aJ) * ☃);
-      float ☃ = ☃.B + (☃.z - ☃.B) * ☃;
+      float ☃ = A + (y - A) * ☃ - (aJ + (aI - aJ) * ☃);
+      float ☃ = B + (z - B) * ☃;
       bfl.E();
       bfl.b(☃, 0.0F, 1.0F, 0.0F);
       bfl.b(☃, 1.0F, 0.0F, 0.0F);
@@ -28,7 +28,7 @@ public class bkt
       
       float ☃ = 1.3333334F;
       bfl.a(☃, ☃, ☃);
-      this.a.g().b(0.0625F);
+      a.g().b(0.0625F);
       bfl.F();
     }
   }

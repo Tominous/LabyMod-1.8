@@ -5,7 +5,6 @@ import de.labystudio.chat.ClientConnection;
 import de.labystudio.chat.EnumAlertType;
 import de.labystudio.gui.GuiAchievementMod;
 import de.labystudio.labymod.LabyMod;
-import de.labystudio.labymod.Source;
 import de.labystudio.utils.Color;
 import de.labystudio.utils.Utils;
 
@@ -13,10 +12,10 @@ public class CapeMover
   extends Thread
 {
   String move;
-  MoveCallback callback;
+  CapeCallback callback;
   public static boolean moving = false;
   
-  public CapeMover(String move, MoveCallback callback)
+  public CapeMover(String move, CapeCallback callback)
   {
     moving = true;
     this.move = move;
@@ -25,17 +24,17 @@ public class CapeMover
   
   public void run()
   {
-    LabyMod.getInstance().getClient().getClientConnection();String output = Utils.getContentString(Source.url_moveCape + "?username=" + LabyMod.getInstance().getPlayerName() + "&capeKey=" + ClientConnection.getCapeKey() + "&move=" + this.move);
+    LabyMod.getInstance().getClient().getClientConnection();String output = Utils.getContentString("http://info.labymod.net/php/moveCape.php?username=" + LabyMod.getInstance().getPlayerName() + "&capeKey=" + ClientConnection.getCapeKey() + "&move=" + move);
     if (output.equalsIgnoreCase("OK"))
     {
-      LabyMod.getInstance().achievementGui.displayBroadcast("CapeManager", Color.cl("a") + "Cape moved to " + this.move + "!", EnumAlertType.LABYMOD);
+      getInstanceachievementGui.displayBroadcast("CapeManager", Color.cl("a") + "Cape moved to " + move + "!", EnumAlertType.LABYMOD);
       LabyMod.getInstance().getCapeManager().refresh();
-      this.callback.done();
+      callback.done();
     }
     else
     {
-      LabyMod.getInstance().achievementGui.displayBroadcast("CapeManager", Color.cl("c") + "Error: " + output, EnumAlertType.LABYMOD);
-      this.callback.failed();
+      getInstanceachievementGui.displayBroadcast("CapeManager", Color.cl("c") + "Error: " + output, EnumAlertType.LABYMOD);
+      callback.failed(output);
     }
     moving = false;
   }

@@ -5,30 +5,30 @@ public class ip$c
 {
   public ip$c()
   {
-    this.h = true;
+    h = true;
   }
   
   public ip$c(float ☃, float ☃, boolean ☃)
   {
-    this.d = ☃;
-    this.e = ☃;
-    this.f = ☃;
-    this.h = true;
+    d = ☃;
+    e = ☃;
+    f = ☃;
+    h = true;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.d = ☃.readFloat();
-    this.e = ☃.readFloat();
+    d = ☃.readFloat();
+    e = ☃.readFloat();
     super.a(☃);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeFloat(this.d);
-    ☃.writeFloat(this.e);
+    ☃.writeFloat(d);
+    ☃.writeFloat(e);
     super.b(☃);
   }
 }

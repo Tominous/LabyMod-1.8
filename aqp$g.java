@@ -12,26 +12,26 @@ public class aqp$g
   {
     super(☃);
     
-    this.m = ☃;
-    this.l = ☃;
+    m = ☃;
+    l = ☃;
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("Mob", this.a);
+    ☃.a("Mob", a);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    this.a = ☃.n("Mob");
+    a = ☃.n("Mob");
   }
   
   public void a(aqt ☃, List<aqt> ☃, Random ☃)
   {
     if (☃ != null) {
-      ((aqp.m)☃).b = this;
+      b = this;
     }
   }
   
@@ -85,8 +85,8 @@ public class aqp$g
     int ☃ = cq.d.b();
     int ☃ = cq.f.b();
     int ☃ = cq.e.b();
-    if (this.m != null) {
-      switch (aqp.3.b[this.m.ordinal()])
+    if (m != null) {
+      switch (aqp.3.b[m.ordinal()])
       {
       case 2: 
         ☃ = cq.d.b();
@@ -117,13 +117,13 @@ public class aqp$g
     a(☃, afi.bG.a(☃).a(ago.b, Boolean.valueOf(☃.nextFloat() > 0.9F)), 7, 3, 9, ☃);
     a(☃, afi.bG.a(☃).a(ago.b, Boolean.valueOf(☃.nextFloat() > 0.9F)), 7, 3, 10, ☃);
     a(☃, afi.bG.a(☃).a(ago.b, Boolean.valueOf(☃.nextFloat() > 0.9F)), 7, 3, 11, ☃);
-    if (!this.a)
+    if (!a)
     {
       ☃ = d(3);
       cj ☃ = new cj(a(5, 6), ☃, b(5, 6));
       if (☃.b(☃))
       {
-        this.a = true;
+        a = true;
         ☃.a(☃, afi.ac.Q(), 2);
         
         akw ☃ = ☃.s(☃);

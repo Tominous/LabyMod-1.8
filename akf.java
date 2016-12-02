@@ -15,7 +15,7 @@ public class akf
   protected akf()
   {
     super(arm.q);
-    j(this.M.b().a(a, cq.b));
+    j(M.b().a(a, cq.b));
     a(true);
     a(yz.c);
   }

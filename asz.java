@@ -13,12 +13,12 @@ public class asz
   
   public asv a(pk ☃)
   {
-    return a(ns.c(☃.aR().a), ns.c(☃.aR().b + 0.5D), ns.c(☃.aR().c));
+    return a(ns.c(aRa), ns.c(aRb + 0.5D), ns.c(aRc));
   }
   
   public asv a(pk ☃, double ☃, double ☃, double ☃)
   {
-    return a(ns.c(☃ - ☃.J / 2.0F), ns.c(☃ + 0.5D), ns.c(☃ - ☃.J / 2.0F));
+    return a(ns.c(☃ - J / 2.0F), ns.c(☃ + 0.5D), ns.c(☃ - J / 2.0F));
   }
   
   public int a(asv[] ☃, pk ☃, asv ☃, asv ☃, float ☃)
@@ -26,8 +26,8 @@ public class asz
     int ☃ = 0;
     for (cq ☃ : cq.values())
     {
-      asv ☃ = a(☃, ☃.a + ☃.g(), ☃.b + ☃.h(), ☃.c + ☃.i());
-      if ((☃ != null) && (!☃.i) && (☃.a(☃) < ☃)) {
+      asv ☃ = a(☃, a + ☃.g(), b + ☃.h(), c + ☃.i());
+      if ((☃ != null) && (!i) && (☃.a(☃) < ☃)) {
         ☃[(☃++)] = ☃;
       }
     }
@@ -46,11 +46,11 @@ public class asz
   private int b(pk ☃, int ☃, int ☃, int ☃)
   {
     cj.a ☃ = new cj.a();
-    for (int ☃ = ☃; ☃ < ☃ + this.c; ☃++) {
-      for (int ☃ = ☃; ☃ < ☃ + this.d; ☃++) {
-        for (int ☃ = ☃; ☃ < ☃ + this.e; ☃++)
+    for (int ☃ = ☃; ☃ < ☃ + c; ☃++) {
+      for (int ☃ = ☃; ☃ < ☃ + d; ☃++) {
+        for (int ☃ = ☃; ☃ < ☃ + e; ☃++)
         {
-          afh ☃ = this.a.p(☃.c(☃, ☃, ☃)).c();
+          afh ☃ = a.p(☃.c(☃, ☃, ☃)).c();
           if (☃.t() != arm.h) {
             return 0;
           }

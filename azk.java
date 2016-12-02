@@ -26,21 +26,21 @@ public class azk
   
   protected azk(azh p_i45048_1_, bde p_i45048_2_)
   {
-    this.e = p_i45048_1_;
-    this.g = p_i45048_2_;
-    this.f = ave.A();
-    this.h = new jy("servers/" + p_i45048_2_.b + "/icon");
-    this.j = ((blz)this.f.P().b(this.h));
+    e = p_i45048_1_;
+    g = p_i45048_2_;
+    f = ave.A();
+    h = new jy("servers/" + b + "/icon");
+    j = ((blz)f.P().b(h));
   }
   
   public void a(int slotIndex, int x, int y, int listWidth, int slotHeight, int mouseX, int mouseY, boolean isSelected)
   {
-    if (!this.g.h)
+    if (!g.h)
     {
-      this.g.h = true;
-      this.g.e = -2L;
-      this.g.d = "";
-      this.g.c = "";
+      g.h = true;
+      g.e = -2L;
+      g.d = "";
+      g.c = "";
       b.submit(new Runnable()
       {
         public void run()
@@ -51,34 +51,34 @@ public class azk
           }
           catch (UnknownHostException var2)
           {
-            azk.a(azk.this).e = -1L;
-            azk.a(azk.this).d = (a.e + "Can't resolve hostname");
+            ae = -1L;
+            ad = (a.e + "Can't resolve hostname");
           }
           catch (Exception var3)
           {
-            azk.a(azk.this).e = -1L;
-            azk.a(azk.this).d = (a.e + "Can't connect to server.");
+            ae = -1L;
+            ad = (a.e + "Can't connect to server.");
           }
         }
       });
     }
-    boolean flag = this.g.f > 47;
-    boolean flag1 = this.g.f < 47;
+    boolean flag = g.f > 47;
+    boolean flag1 = g.f < 47;
     boolean flag2 = (flag) || (flag1);
-    this.f.k.a(this.g.a, x + 32 + 3, y + 1, 16777215);
-    List<String> list = this.f.k.c(this.g.d, listWidth - 32 - 2);
+    f.k.a(g.a, x + 32 + 3, y + 1, 16777215);
+    List<String> list = f.k.c(g.d, listWidth - 32 - 2);
     for (int i = 0; i < Math.min(list.size(), 2); i++) {
-      this.f.k.a((String)list.get(i), x + 32 + 3, y + 12 + this.f.k.a * i, 8421504);
+      f.k.a((String)list.get(i), x + 32 + 3, y + 12 + f.k.a * i, 8421504);
     }
-    String s2 = flag2 ? a.e + this.g.g : this.g.c;
-    int j = this.f.k.a(s2);
-    this.f.k.a(s2, x + listWidth - j - 15 - 2, y + 1, 8421504);
+    String s2 = flag2 ? a.e + g.g : g.c;
+    int j = f.k.a(s2);
+    f.k.a(s2, x + listWidth - j - 15 - 2, y + 1, 8421504);
     int k = 0;
     String s = null;
-    if (!this.g.serverCommand.isEmpty())
+    if (!g.serverCommand.isEmpty())
     {
-      String tk = Color.c(5) + "/" + this.g.serverCommand + " ";
-      LabyMod.getInstance().draw.drawString(tk, 315 + x, y + 1);
+      String tk = Color.c(5) + "/" + g.serverCommand + " ";
+      getInstancedraw.drawString(tk, 315 + x, y + 1);
     }
     int l;
     String s1;
@@ -86,41 +86,41 @@ public class azk
     {
       int l = 5;
       String s1 = flag ? "Client out of date!" : "Server out of date!";
-      s = this.g.i;
+      s = g.i;
     }
-    else if ((this.g.h) && (this.g.e != -2L))
+    else if ((g.h) && (g.e != -2L))
     {
       int l;
       int l;
-      if (this.g.e < 0L)
+      if (g.e < 0L)
       {
         l = 5;
       }
       else
       {
         int l;
-        if (this.g.e < 150L)
+        if (g.e < 150L)
         {
           l = 0;
         }
         else
         {
           int l;
-          if (this.g.e < 300L)
+          if (g.e < 300L)
           {
             l = 1;
           }
           else
           {
             int l;
-            if (this.g.e < 600L)
+            if (g.e < 600L)
             {
               l = 2;
             }
             else
             {
               int l;
-              if (this.g.e < 1000L) {
+              if (g.e < 1000L) {
                 l = 3;
               } else {
                 l = 4;
@@ -130,14 +130,14 @@ public class azk
         }
       }
       String s1;
-      if (this.g.e < 0L)
+      if (g.e < 0L)
       {
         s1 = "(no connection)";
       }
       else
       {
-        String s1 = this.g.e + "ms";
-        s = this.g.i;
+        String s1 = g.e + "ms";
+        s = g.i;
       }
     }
     else
@@ -150,29 +150,29 @@ public class azk
       s1 = "Pinging...";
     }
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    this.f.P().a(avp.d);
+    f.P().a(avp.d);
     avp.a(x + listWidth - 15, y, k * 10, 176 + l * 8, 10, 8, 256.0F, 256.0F);
-    if ((this.g.c() != null) && (!this.g.c().equals(this.i)))
+    if ((g.c() != null) && (!g.c().equals(this.i)))
     {
-      this.i = this.g.c();
+      this.i = g.c();
       c();
-      this.e.h().b();
+      e.h().b();
     }
     if (this.j != null) {
-      a(x, y, this.h);
+      a(x, y, h);
     } else {
       a(x, y, c);
     }
     int i1 = mouseX - x;
     int j1 = mouseY - y;
     if ((i1 >= listWidth - 15) && (i1 <= listWidth - 5) && (j1 >= 0) && (j1 <= 8)) {
-      this.e.a(s1);
+      e.a(s1);
     } else if ((i1 >= listWidth - j - 15 - 2) && (i1 <= listWidth - 15 - 2) && (j1 >= 0) && (j1 <= 8)) {
-      this.e.a(s);
+      e.a(s);
     }
-    if ((this.f.t.A) || (isSelected))
+    if ((f.t.A) || (isSelected))
     {
-      this.f.P().a(d);
+      f.P().a(d);
       avp.a(x, y, x + 32, y + 32, -1601138544);
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
       int k1 = mouseX - x;
@@ -184,14 +184,14 @@ public class azk
           avp.a(x, y, 0.0F, 0.0F, 32, 32, 256.0F, 256.0F);
         }
       }
-      if (this.e.a(this, slotIndex)) {
+      if (e.a(this, slotIndex)) {
         if ((k1 < 16) && (l1 < 16)) {
           avp.a(x, y, 96.0F, 32.0F, 32, 32, 256.0F, 256.0F);
         } else {
           avp.a(x, y, 96.0F, 0.0F, 32, 32, 256.0F, 256.0F);
         }
       }
-      if (this.e.b(this, slotIndex)) {
+      if (e.b(this, slotIndex)) {
         if ((k1 < 16) && (l1 > 16)) {
           avp.a(x, y, 64.0F, 32.0F, 32, 32, 256.0F, 256.0F);
         } else {
@@ -203,7 +203,7 @@ public class azk
   
   protected void a(int p_178012_1_, int p_178012_2_, jy p_178012_3_)
   {
-    this.f.P().a(p_178012_3_);
+    f.P().a(p_178012_3_);
     bfl.l();
     avp.a(p_178012_1_, p_178012_2_, 0.0F, 0.0F, 32, 32, 32.0F, 32.0F);
     bfl.k();
@@ -409,26 +409,26 @@ public class azk
     {
       if ((p_148278_5_ < 32) && (p_148278_5_ > 16) && (b()))
       {
-        this.e.b(slotIndex);
-        this.e.f();
+        e.b(slotIndex);
+        e.f();
         return true;
       }
-      if ((p_148278_5_ < 16) && (p_148278_6_ < 16) && (this.e.a(this, slotIndex)))
+      if ((p_148278_5_ < 16) && (p_148278_6_ < 16) && (e.a(this, slotIndex)))
       {
-        this.e.a(this, slotIndex, axu.r());
+        e.a(this, slotIndex, axu.r());
         return true;
       }
-      if ((p_148278_5_ < 16) && (p_148278_6_ > 16) && (this.e.b(this, slotIndex)))
+      if ((p_148278_5_ < 16) && (p_148278_6_ > 16) && (e.b(this, slotIndex)))
       {
-        this.e.b(this, slotIndex, axu.r());
+        e.b(this, slotIndex, axu.r());
         return true;
       }
     }
-    this.e.b(slotIndex);
-    if (ave.J() - this.k < 250L) {
-      this.e.f();
+    e.b(slotIndex);
+    if (ave.J() - k < 250L) {
+      e.f();
     }
-    this.k = ave.J();
+    k = ave.J();
     return false;
   }
   
@@ -438,6 +438,6 @@ public class azk
   
   public bde a()
   {
-    return this.g;
+    return g;
   }
 }

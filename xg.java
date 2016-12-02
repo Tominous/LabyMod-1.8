@@ -8,15 +8,15 @@ public class xg
   
   public xg()
   {
-    this.a = 20;
-    this.e = 20;
-    this.b = 5.0F;
+    a = 20;
+    e = 20;
+    b = 5.0F;
   }
   
   public void a(int ☃, float ☃)
   {
-    this.a = Math.min(☃ + this.a, 20);
-    this.b = Math.min(this.b + ☃ * ☃ * 2.0F, this.a);
+    a = Math.min(☃ + a, 20);
+    b = Math.min(b + ☃ * ☃ * 2.0F, a);
   }
   
   public void a(zs ☃, zx ☃)
@@ -26,42 +26,42 @@ public class xg
   
   public void a(wn ☃)
   {
-    oj ☃ = ☃.o.aa();
+    oj ☃ = o.aa();
     
-    this.e = this.a;
-    if (this.c > 4.0F)
+    e = a;
+    if (c > 4.0F)
     {
-      this.c -= 4.0F;
-      if (this.b > 0.0F) {
-        this.b = Math.max(this.b - 1.0F, 0.0F);
+      c -= 4.0F;
+      if (b > 0.0F) {
+        b = Math.max(b - 1.0F, 0.0F);
       } else if (☃ != oj.a) {
-        this.a = Math.max(this.a - 1, 0);
+        a = Math.max(a - 1, 0);
       }
     }
-    if ((☃.o.Q().b("naturalRegeneration")) && (this.a >= 18) && (☃.cm()))
+    if ((o.Q().b("naturalRegeneration")) && (a >= 18) && (☃.cm()))
     {
-      this.d += 1;
-      if (this.d >= 80)
+      d += 1;
+      if (d >= 80)
       {
         ☃.h(1.0F);
         a(3.0F);
-        this.d = 0;
+        d = 0;
       }
     }
-    else if (this.a <= 0)
+    else if (a <= 0)
     {
-      this.d += 1;
-      if (this.d >= 80)
+      d += 1;
+      if (d >= 80)
       {
         if ((☃.bn() > 10.0F) || (☃ == oj.d) || ((☃.bn() > 1.0F) && (☃ == oj.c))) {
           ☃.a(ow.g, 1.0F);
         }
-        this.d = 0;
+        d = 0;
       }
     }
     else
     {
-      this.d = 0;
+      d = 0;
     }
   }
   
@@ -69,53 +69,53 @@ public class xg
   {
     if (☃.b("foodLevel", 99))
     {
-      this.a = ☃.f("foodLevel");
-      this.d = ☃.f("foodTickTimer");
-      this.b = ☃.h("foodSaturationLevel");
-      this.c = ☃.h("foodExhaustionLevel");
+      a = ☃.f("foodLevel");
+      d = ☃.f("foodTickTimer");
+      b = ☃.h("foodSaturationLevel");
+      c = ☃.h("foodExhaustionLevel");
     }
   }
   
   public void b(dn ☃)
   {
-    ☃.a("foodLevel", this.a);
-    ☃.a("foodTickTimer", this.d);
-    ☃.a("foodSaturationLevel", this.b);
-    ☃.a("foodExhaustionLevel", this.c);
+    ☃.a("foodLevel", a);
+    ☃.a("foodTickTimer", d);
+    ☃.a("foodSaturationLevel", b);
+    ☃.a("foodExhaustionLevel", c);
   }
   
   public int a()
   {
-    return this.a;
+    return a;
   }
   
   public int b()
   {
-    return this.e;
+    return e;
   }
   
   public boolean c()
   {
-    return this.a < 20;
+    return a < 20;
   }
   
   public void a(float ☃)
   {
-    this.c = Math.min(this.c + ☃, 40.0F);
+    c = Math.min(c + ☃, 40.0F);
   }
   
   public float e()
   {
-    return this.b;
+    return b;
   }
   
   public void a(int ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void b(float ☃)
   {
-    this.b = ☃;
+    b = ☃;
   }
 }

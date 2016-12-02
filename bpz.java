@@ -45,15 +45,15 @@ public class bpz
   
   public bpz(bni ☃, avh ☃)
   {
-    this.g = ☃;
-    this.f = new bpx(this, ☃);
+    g = ☃;
+    f = new bpx(this, ☃);
   }
   
   public void a(bni ☃)
   {
-    this.f.a();
+    f.a();
     
-    this.e.a();
+    e.a();
     for (String ☃ : ☃.a()) {
       try
       {
@@ -90,7 +90,7 @@ public class bpz
   
   private void a(jy ☃, bph ☃)
   {
-    boolean ☃ = !this.e.d(☃);
+    boolean ☃ = !e.d(☃);
     bpy ☃;
     if ((☃) || (☃.b()))
     {
@@ -98,11 +98,11 @@ public class bpz
         b.debug("Replaced sound event location {}", new Object[] { ☃ });
       }
       bpy ☃ = new bpy(☃, 1.0D, 1.0D, ☃.c());
-      this.e.a(☃);
+      e.a(☃);
     }
     else
     {
-      ☃ = (bpy)this.e.a(☃);
+      ☃ = (bpy)e.a(☃);
     }
     for (final bph.a ☃ : ☃.a())
     {
@@ -119,7 +119,7 @@ public class bpz
         InputStream ☃ = null;
         try
         {
-          ☃ = this.g.a(☃).b();
+          ☃ = g.a(☃).b();
         }
         catch (FileNotFoundException ☃)
         {
@@ -146,13 +146,13 @@ public class bpz
           
           public int a()
           {
-            bpy ☃ = (bpy)bpz.a(bpz.this).a(this.a);
+            bpy ☃ = (bpy)bpz.a(bpz.this).a(a);
             return ☃ == null ? 0 : ☃.a();
           }
           
           public bpw b()
           {
-            bpy ☃ = (bpy)bpz.a(bpz.this).a(this.a);
+            bpy ☃ = (bpy)bpz.a(bpz.this).a(a);
             return ☃ == null ? bpz.a : ☃.b();
           }
         };
@@ -167,47 +167,47 @@ public class bpz
   
   public bpy a(jy ☃)
   {
-    return (bpy)this.e.a(☃);
+    return (bpy)e.a(☃);
   }
   
   public void a(bpj ☃)
   {
-    this.f.c(☃);
+    f.c(☃);
   }
   
   public void a(bpj ☃, int ☃)
   {
-    this.f.a(☃, ☃);
+    f.a(☃, ☃);
   }
   
   public void a(wn ☃, float ☃)
   {
-    this.f.a(☃, ☃);
+    f.a(☃, ☃);
   }
   
   public void a()
   {
-    this.f.e();
+    f.e();
   }
   
   public void b()
   {
-    this.f.c();
+    f.c();
   }
   
   public void d()
   {
-    this.f.b();
+    f.b();
   }
   
   public void c()
   {
-    this.f.d();
+    f.d();
   }
   
   public void e()
   {
-    this.f.f();
+    f.f();
   }
   
   public void a(bpg ☃, float ☃)
@@ -215,20 +215,20 @@ public class bpz
     if ((☃ == bpg.a) && (☃ <= 0.0F)) {
       b();
     }
-    this.f.a(☃, ☃);
+    f.a(☃, ☃);
   }
   
   public void b(bpj ☃)
   {
-    this.f.b(☃);
+    f.b(☃);
   }
   
   public bpy a(bpg... ☃)
   {
     List<bpy> ☃ = Lists.newArrayList();
-    for (jy ☃ : this.e.c())
+    for (jy ☃ : e.c())
     {
-      bpy ☃ = (bpy)this.e.a(☃);
+      bpy ☃ = (bpy)e.a(☃);
       if (ArrayUtils.contains(☃, ☃.d())) {
         ☃.add(☃);
       }
@@ -241,6 +241,6 @@ public class bpz
   
   public boolean c(bpj ☃)
   {
-    return this.f.a(☃);
+    return f.a(☃);
   }
 }

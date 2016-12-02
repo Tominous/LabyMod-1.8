@@ -8,7 +8,7 @@ public class abm
   
   public boolean a(xp ☃, adm ☃)
   {
-    this.a = null;
+    a = null;
     
     int ☃ = 0;
     int ☃ = 0;
@@ -51,7 +51,7 @@ public class abm
     }
     if ((☃ >= 1) && (☃ == 1) && (☃ == 0))
     {
-      this.a = new zx(zy.cb);
+      a = new zx(zy.cb);
       if (☃ > 0)
       {
         dn ☃ = new dn();
@@ -69,13 +69,13 @@ public class abm
         ☃.a("Explosions", ☃);
         ☃.a("Flight", (byte)☃);
         ☃.a("Fireworks", ☃);
-        this.a.d(☃);
+        a.d(☃);
       }
       return true;
     }
     if ((☃ == 1) && (☃ == 0) && (☃ == 0) && (☃ > 0) && (☃ <= 1))
     {
-      this.a = new zx(zy.cc);
+      a = new zx(zy.cc);
       dn ☃ = new dn();
       dn ☃ = new dn();
       
@@ -110,7 +110,7 @@ public class abm
       ☃.a("Colors", ☃);
       ☃.a("Type", ☃);
       ☃.a("Explosion", ☃);
-      this.a.d(☃);
+      a.d(☃);
       return true;
     }
     if ((☃ == 0) && (☃ == 0) && (☃ == 1) && (☃ > 0) && (☃ == ☃))
@@ -126,8 +126,8 @@ public class abm
           }
           else if (☃.b() == zy.cc)
           {
-            this.a = ☃.k();
-            this.a.b = 1;
+            a = ☃.k();
+            a.b = 1;
           }
         }
       }
@@ -135,9 +135,9 @@ public class abm
       for (int ☃ = 0; ☃ < ☃.length; ☃++) {
         ☃[☃] = ((Integer)☃.get(☃)).intValue();
       }
-      if ((this.a != null) && (this.a.n()))
+      if ((a != null) && (a.n()))
       {
-        dn ☃ = this.a.o().m("Explosion");
+        dn ☃ = a.o().m("Explosion");
         if (☃ == null) {
           return false;
         }
@@ -154,7 +154,7 @@ public class abm
   
   public zx a(xp ☃)
   {
-    return this.a.k();
+    return a.k();
   }
   
   public int a()
@@ -164,7 +164,7 @@ public class abm
   
   public zx b()
   {
-    return this.a;
+    return a;
   }
   
   public zx[] b(xp ☃)

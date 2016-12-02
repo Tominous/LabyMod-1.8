@@ -13,16 +13,16 @@ class cm$b<T>
   
   private cm$b(Class<T> ☃, Iterable<? extends T>[] ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public Iterator<T[]> iterator()
   {
-    if (this.b.length <= 0) {
-      return Collections.singletonList((Object[])cm.a(this.a, 0)).iterator();
+    if (b.length <= 0) {
+      return Collections.singletonList((Object[])cm.a(a, 0)).iterator();
     }
-    return new cm.b.a(this.a, this.b, null);
+    return new cm.b.a(a, b, null);
   }
   
   static class a<T>
@@ -35,28 +35,28 @@ class cm$b<T>
     
     private a(Class<T> ☃, Iterable<? extends T>[] ☃)
     {
-      this.b = ☃;
-      this.c = ((Iterator[])cm.a(Iterator.class, this.b.length));
-      for (int ☃ = 0; ☃ < this.b.length; ☃++) {
-        this.c[☃] = ☃[☃].iterator();
+      b = ☃;
+      c = ((Iterator[])cm.a(Iterator.class, b.length));
+      for (int ☃ = 0; ☃ < b.length; ☃++) {
+        c[☃] = ☃[☃].iterator();
       }
-      this.d = cm.a(☃, this.c.length);
+      d = cm.a(☃, c.length);
     }
     
     private void b()
     {
-      this.a = -1;
+      a = -1;
       
-      Arrays.fill(this.c, null);
-      Arrays.fill(this.d, null);
+      Arrays.fill(c, null);
+      Arrays.fill(d, null);
     }
     
     public boolean hasNext()
     {
-      if (this.a == -2)
+      if (a == -2)
       {
-        this.a = 0;
-        for (Iterator<? extends T> ☃ : this.c) {
+        a = 0;
+        for (Iterator<? extends T> ☃ : c) {
           if (!☃.hasNext())
           {
             b();
@@ -65,20 +65,20 @@ class cm$b<T>
         }
         return true;
       }
-      if (this.a >= this.c.length) {
-        for (this.a = (this.c.length - 1); this.a >= 0; this.a -= 1)
+      if (a >= c.length) {
+        for (a = (c.length - 1); a >= 0; a -= 1)
         {
-          Iterator<? extends T> ☃ = this.c[this.a];
+          Iterator<? extends T> ☃ = c[a];
           if (☃.hasNext()) {
             break;
           }
-          if (this.a == 0)
+          if (a == 0)
           {
             b();
             break;
           }
-          ☃ = this.b[this.a].iterator();
-          this.c[this.a] = ☃;
+          ☃ = b[a].iterator();
+          c[a] = ☃;
           if (!☃.hasNext())
           {
             b();
@@ -86,7 +86,7 @@ class cm$b<T>
           }
         }
       }
-      return this.a >= 0;
+      return a >= 0;
     }
     
     public T[] a()
@@ -94,10 +94,10 @@ class cm$b<T>
       if (!hasNext()) {
         throw new NoSuchElementException();
       }
-      for (; this.a < this.c.length; this.a += 1) {
-        this.d[this.a] = this.c[this.a].next();
+      for (; a < c.length; a += 1) {
+        d[a] = c[a].next();
       }
-      return (Object[])this.d.clone();
+      return (Object[])d.clone();
     }
   }
 }

@@ -51,7 +51,7 @@ public class abh
           if ((☃.x_() == yj.a.a) && (☃ == null))
           {
             ☃ = ☃.k();
-            ☃.b = 1;
+            b = 1;
             if (☃.d_(☃))
             {
               int ☃ = ☃.b(☃);

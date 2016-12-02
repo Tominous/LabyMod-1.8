@@ -8,7 +8,7 @@ public class agp
   protected agp()
   {
     super(arm.e);
-    j(this.M.b().a(a, cq.c));
+    j(M.b().a(a, cq.c));
     a(yz.c);
     a(0.0625F, 0.0F, 0.0625F, 0.9375F, 0.875F, 0.9375F);
   }
@@ -63,7 +63,7 @@ public class agp
     if (☃.p(☃.a()).c().v()) {
       return true;
     }
-    if (☃.D) {
+    if (D) {
       return true;
     }
     ☃.a((alf)☃);

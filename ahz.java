@@ -9,7 +9,7 @@ public class ahz
   public ahz()
   {
     super(arm.B);
-    j(this.M.b().a(a, ahz.a.a));
+    j(M.b().a(a, ahz.a.a));
     c(0.0F);
     a(yz.c);
   }
@@ -46,7 +46,7 @@ public class ahz
   
   public void a(adm ☃, cj ☃, alz ☃, float ☃, int ☃)
   {
-    if ((!☃.D) && (☃.Q().b("doTileDrops")))
+    if ((!D) && (☃.Q().b("doTileDrops")))
     {
       vz ☃ = new vz(☃);
       ☃.b(☃.n() + 0.5D, ☃.o(), ☃.p() + 0.5D, 0.0F, 0.0F);
@@ -107,19 +107,19 @@ public class ahz
     
     private a(int ☃, String ☃, String ☃)
     {
-      this.h = ☃;
-      this.i = ☃;
-      this.j = ☃;
+      h = ☃;
+      i = ☃;
+      j = ☃;
     }
     
     public int a()
     {
-      return this.h;
+      return h;
     }
     
     public String toString()
     {
-      return this.i;
+      return i;
     }
     
     public static a a(int ☃)
@@ -132,12 +132,12 @@ public class ahz
     
     public String l()
     {
-      return this.i;
+      return i;
     }
     
     public String c()
     {
-      return this.j;
+      return j;
     }
     
     public static a a(alz ☃)

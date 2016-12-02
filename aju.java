@@ -16,21 +16,21 @@ public class aju
   
   protected aju(alz ☃)
   {
-    super(☃.c().J);
-    j(this.M.b().a(a, cq.c).a(b, aju.a.b).a(N, aju.b.a));
-    this.P = ☃.c();
-    this.Q = ☃;
-    c(this.P.w);
-    b(this.P.x / 3.0F);
-    a(this.P.H);
+    super(cJ);
+    j(M.b().a(a, cq.c).a(b, aju.a.b).a(N, aju.b.a));
+    P = ☃.c();
+    Q = ☃;
+    c(P.w);
+    b(P.x / 3.0F);
+    a(P.H);
     e(255);
     a(yz.b);
   }
   
   public void a(adq ☃, cj ☃)
   {
-    if (this.R) {
-      a(0.5F * (this.S % 2), 0.5F * (this.S / 4 % 2), 0.5F * (this.S / 2 % 2), 0.5F + 0.5F * (this.S % 2), 0.5F + 0.5F * (this.S / 4 % 2), 0.5F + 0.5F * (this.S / 2 % 2));
+    if (R) {
+      a(0.5F * (S % 2), 0.5F * (S / 4 % 2), 0.5F * (S / 2 % 2), 0.5F + 0.5F * (S % 2), 0.5F + 0.5F * (S / 4 % 2), 0.5F + 0.5F * (S / 2 % 2));
     } else {
       a(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
     }
@@ -444,98 +444,98 @@ public class aju
   
   public void c(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    this.P.c(☃, ☃, ☃, ☃);
+    P.c(☃, ☃, ☃, ☃);
   }
   
   public void a(adm ☃, cj ☃, wn ☃)
   {
-    this.P.a(☃, ☃, ☃);
+    P.a(☃, ☃, ☃);
   }
   
   public void d(adm ☃, cj ☃, alz ☃)
   {
-    this.P.d(☃, ☃, ☃);
+    P.d(☃, ☃, ☃);
   }
   
   public int c(adq ☃, cj ☃)
   {
-    return this.P.c(☃, ☃);
+    return P.c(☃, ☃);
   }
   
   public float a(pk ☃)
   {
-    return this.P.a(☃);
+    return P.a(☃);
   }
   
   public adf m()
   {
-    return this.P.m();
+    return P.m();
   }
   
   public int a(adm ☃)
   {
-    return this.P.a(☃);
+    return P.a(☃);
   }
   
   public aug b(adm ☃, cj ☃)
   {
-    return this.P.b(☃, ☃);
+    return P.b(☃, ☃);
   }
   
   public aui a(adm ☃, cj ☃, pk ☃, aui ☃)
   {
-    return this.P.a(☃, ☃, ☃, ☃);
+    return P.a(☃, ☃, ☃, ☃);
   }
   
   public boolean A()
   {
-    return this.P.A();
+    return P.A();
   }
   
   public boolean a(alz ☃, boolean ☃)
   {
-    return this.P.a(☃, ☃);
+    return P.a(☃, ☃);
   }
   
   public boolean d(adm ☃, cj ☃)
   {
-    return this.P.d(☃, ☃);
+    return P.d(☃, ☃);
   }
   
   public void c(adm ☃, cj ☃, alz ☃)
   {
-    a(☃, ☃, this.Q, afi.a);
-    this.P.c(☃, ☃, this.Q);
+    a(☃, ☃, Q, afi.a);
+    P.c(☃, ☃, Q);
   }
   
   public void b(adm ☃, cj ☃, alz ☃)
   {
-    this.P.b(☃, ☃, this.Q);
+    P.b(☃, ☃, Q);
   }
   
   public void a(adm ☃, cj ☃, pk ☃)
   {
-    this.P.a(☃, ☃, ☃);
+    P.a(☃, ☃, ☃);
   }
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    this.P.b(☃, ☃, ☃, ☃);
+    P.b(☃, ☃, ☃, ☃);
   }
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    return this.P.a(☃, ☃, this.Q, ☃, cq.a, 0.0F, 0.0F, 0.0F);
+    return P.a(☃, ☃, Q, ☃, cq.a, 0.0F, 0.0F, 0.0F);
   }
   
   public void a(adm ☃, cj ☃, adi ☃)
   {
-    this.P.a(☃, ☃, ☃);
+    P.a(☃, ☃, ☃);
   }
   
   public arn g(alz ☃)
   {
-    return this.P.g(this.Q);
+    return P.g(Q);
   }
   
   public alz a(adm ☃, cj ☃, cq ☃, float ☃, float ☃, float ☃, int ☃, pr ☃)
@@ -557,10 +557,10 @@ public class aju
     boolean ☃ = ☃.b(b) == aju.a.a;
     int[] ☃ = O[(☃ + 0)];
     
-    this.R = true;
+    R = true;
     for (int ☃ = 0; ☃ < 8; ☃++)
     {
-      this.S = ☃;
+      S = ☃;
       if (Arrays.binarySearch(☃, ☃) < 0) {
         ☃[☃] = super.a(☃, ☃, ☃, ☃);
       }
@@ -573,7 +573,7 @@ public class aju
     for (auh ☃ : ☃) {
       if (☃ != null)
       {
-        double ☃ = ☃.c.g(☃);
+        double ☃ = c.g(☃);
         if (☃ > ☃)
         {
           ☃ = ☃;
@@ -646,17 +646,17 @@ public class aju
     
     private a(String ☃)
     {
-      this.c = ☃;
+      c = ☃;
     }
     
     public String toString()
     {
-      return this.c;
+      return c;
     }
     
     public String l()
     {
-      return this.c;
+      return c;
     }
   }
   
@@ -667,17 +667,17 @@ public class aju
     
     private b(String ☃)
     {
-      this.f = ☃;
+      f = ☃;
     }
     
     public String toString()
     {
-      return this.f;
+      return f;
     }
     
     public String l()
     {
-      return this.f;
+      return f;
     }
   }
 }

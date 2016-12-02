@@ -13,59 +13,59 @@ public class RealmsAnvilLevelStorageSource
   
   public RealmsAnvilLevelStorageSource(atr ☃)
   {
-    this.levelStorageSource = ☃;
+    levelStorageSource = ☃;
   }
   
   public String getName()
   {
-    return this.levelStorageSource.a();
+    return levelStorageSource.a();
   }
   
   public boolean levelExists(String ☃)
   {
-    return this.levelStorageSource.f(☃);
+    return levelStorageSource.f(☃);
   }
   
   public boolean convertLevel(String ☃, nu ☃)
   {
-    return this.levelStorageSource.a(☃, ☃);
+    return levelStorageSource.a(☃, ☃);
   }
   
   public boolean requiresConversion(String ☃)
   {
-    return this.levelStorageSource.b(☃);
+    return levelStorageSource.b(☃);
   }
   
   public boolean isNewLevelIdAcceptable(String ☃)
   {
-    return this.levelStorageSource.d(☃);
+    return levelStorageSource.d(☃);
   }
   
   public boolean deleteLevel(String ☃)
   {
-    return this.levelStorageSource.e(☃);
+    return levelStorageSource.e(☃);
   }
   
   public boolean isConvertible(String ☃)
   {
-    return this.levelStorageSource.a(☃);
+    return levelStorageSource.a(☃);
   }
   
   public void renameLevel(String ☃, String ☃)
   {
-    this.levelStorageSource.a(☃, ☃);
+    levelStorageSource.a(☃, ☃);
   }
   
   public void clearAll()
   {
-    this.levelStorageSource.d();
+    levelStorageSource.d();
   }
   
   public List<RealmsLevelSummary> getLevelList()
     throws atq
   {
     List<RealmsLevelSummary> ☃ = Lists.newArrayList();
-    for (ats ☃ : this.levelStorageSource.b()) {
+    for (ats ☃ : levelStorageSource.b()) {
       ☃.add(new RealmsLevelSummary(☃));
     }
     return ☃;

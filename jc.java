@@ -12,28 +12,28 @@ public class jc
   
   public jc(int ☃, String ☃, int ☃, el ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.e();
-    this.b = ☃.c(255);
-    this.c = ☃.readUnsignedShort();
-    this.d = el.a(☃.e());
+    a = ☃.e();
+    b = ☃.c(255);
+    c = ☃.readUnsignedShort();
+    d = el.a(☃.e());
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(this.a);
-    ☃.a(this.b);
-    ☃.writeShort(this.c);
-    ☃.b(this.d.a());
+    ☃.b(a);
+    ☃.a(b);
+    ☃.writeShort(c);
+    ☃.b(d.a());
   }
   
   public void a(jd ☃)
@@ -43,11 +43,11 @@ public class jc
   
   public el a()
   {
-    return this.d;
+    return d;
   }
   
   public int b()
   {
-    return this.a;
+    return a;
   }
 }

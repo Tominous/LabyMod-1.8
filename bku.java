@@ -5,14 +5,14 @@ public class bku
 {
   public void a(ug ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
-    if (☃.by <= 0) {
+    if (by <= 0) {
       return;
     }
     bfx ☃ = bfx.a();
     bfd ☃ = ☃.c();
     
     avc.a();
-    float ☃ = (☃.by + ☃) / 200.0F;
+    float ☃ = (by + ☃) / 200.0F;
     float ☃ = 0.0F;
     if (☃ > 0.8F) {
       ☃ = (☃ - 0.8F) / 0.2F;

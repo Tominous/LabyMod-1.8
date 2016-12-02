@@ -24,11 +24,11 @@ public class mq
   public mq(String ☃, String ☃, int ☃, int ☃, zx ☃, mq ☃)
   {
     super(☃, new fb("achievement." + ☃, new Object[0]));
-    this.d = ☃;
+    d = ☃;
     
-    this.k = ("achievement." + ☃ + ".desc");
-    this.a = ☃;
-    this.b = ☃;
+    k = ("achievement." + ☃ + ".desc");
+    a = ☃;
+    b = ☃;
     if (☃ < mr.a) {
       mr.a = ☃;
     }
@@ -41,18 +41,18 @@ public class mq
     if (☃ > mr.d) {
       mr.d = ☃;
     }
-    this.c = ☃;
+    c = ☃;
   }
   
   public mq a()
   {
-    this.f = true;
+    f = true;
     return this;
   }
   
   public mq b()
   {
-    this.m = true;
+    m = true;
     return this;
   }
   
@@ -84,20 +84,20 @@ public class mq
   
   public String f()
   {
-    if (this.l != null) {
-      return this.l.a(di.a(this.k));
+    if (l != null) {
+      return l.a(di.a(k));
     }
-    return di.a(this.k);
+    return di.a(k);
   }
   
   public mq a(ms ☃)
   {
-    this.l = ☃;
+    l = ☃;
     return this;
   }
   
   public boolean g()
   {
-    return this.m;
+    return m;
   }
 }

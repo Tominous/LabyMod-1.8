@@ -22,16 +22,16 @@ public class zq
   
   public zx a(zx ☃, adm ☃, wn ☃)
   {
-    if (☃.bG != null)
+    if (bG != null)
     {
-      int ☃ = ☃.bG.l();
+      int ☃ = bG.l();
       ☃.a(☃, ☃);
       ☃.bw();
     }
     else
     {
       ☃.a(☃, "random.bow", 0.5F, 0.4F / (g.nextFloat() * 0.4F + 0.8F));
-      if (!☃.D) {
+      if (!D) {
         ☃.d(new ur(☃, ☃));
       }
       ☃.bw();

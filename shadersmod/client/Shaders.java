@@ -284,9 +284,9 @@ public class Shaders
   static String packNameDefault = "(internal)";
   static String shaderpacksdirname = "shaderpacks";
   static String optionsfilename = "optionsshaders.txt";
-  static File shadersdir = new File(ave.A().v, "shaders");
-  static File shaderpacksdir = new File(ave.A().v, shaderpacksdirname);
-  static File configFile = new File(ave.A().v, optionsfilename);
+  static File shadersdir = new File(Av, "shaders");
+  static File shaderpacksdir = new File(Av, shaderpacksdirname);
+  static File configFile = new File(Av, optionsfilename);
   public static final boolean enableShadersOption = true;
   private static final boolean enableShadersDebug = true;
   public static float blockLightLevel05 = 0.5F;
@@ -631,13 +631,13 @@ public class Shaders
   
   private static void printChat(String str)
   {
-    mc.q.d().a(new fa(str));
+    mcq.d().a(new fa(str));
   }
   
   private static void printChatAndLogError(String str)
   {
     SMCLog.severe(str);
-    mc.q.d().a(new fa(str));
+    mcq.d().a(new fa(str));
   }
   
   public static void printIntBuffer(String title, IntBuffer buf)
@@ -665,12 +665,12 @@ public class Shaders
     SMCLog.info("OpenGL Version: " + glVersionString);
     SMCLog.info("Vendor:  " + glVendorString);
     SMCLog.info("Renderer: " + glRendererString);
-    SMCLog.info("Capabilities: " + (capabilities.OpenGL20 ? " 2.0 " : " - ") + (capabilities.OpenGL21 ? " 2.1 " : " - ") + (capabilities.OpenGL30 ? " 3.0 " : " - ") + (capabilities.OpenGL32 ? " 3.2 " : " - ") + (capabilities.OpenGL40 ? " 4.0 " : " - "));
+    SMCLog.info("Capabilities: " + (capabilitiesOpenGL20 ? " 2.0 " : " - ") + (capabilitiesOpenGL21 ? " 2.1 " : " - ") + (capabilitiesOpenGL30 ? " 3.0 " : " - ") + (capabilitiesOpenGL32 ? " 3.2 " : " - ") + (capabilitiesOpenGL40 ? " 4.0 " : " - "));
     
     SMCLog.info("GL_MAX_DRAW_BUFFERS: " + GL11.glGetInteger(34852));
     SMCLog.info("GL_MAX_COLOR_ATTACHMENTS_EXT: " + GL11.glGetInteger(36063));
     SMCLog.info("GL_MAX_TEXTURE_IMAGE_UNITS: " + GL11.glGetInteger(34930));
-    hasGlGenMipmap = capabilities.OpenGL30;
+    hasGlGenMipmap = capabilitiesOpenGL30;
     loadConfig();
   }
   
@@ -714,10 +714,10 @@ public class Shaders
       if (getShaderPackName() != null) {
         printChat("Loading shaders: " + getShaderPackName());
       }
-      if (!capabilities.OpenGL20) {
+      if (!capabilitiesOpenGL20) {
         printChatAndLogError("No OpenGL 2.0");
       }
-      if (!capabilities.GL_EXT_framebuffer_object) {
+      if (!capabilitiesGL_EXT_framebuffer_object) {
         printChatAndLogError("No EXT_framebuffer_object");
       }
       dfbDrawBuffers.position(0).limit(8);
@@ -903,7 +903,7 @@ public class Shaders
     
     needResetModels = true;
     SMCLog.info("Reset world renderers");
-    mc.g.a();
+    mcg.a();
   }
   
   public static void resetDisplayListModels()
@@ -930,7 +930,7 @@ public class Shaders
   {
     if (model != null)
     {
-      Iterator it = model.s.iterator();
+      Iterator it = s.iterator();
       while (it.hasNext())
       {
         Object obj = it.next();
@@ -944,11 +944,11 @@ public class Shaders
   public static void resetDisplayListModelRenderer(bct mrr)
   {
     mrr.resetDisplayList();
-    if (mrr.m != null)
+    if (m != null)
     {
       int i = 0;
-      for (int n = mrr.m.size(); i < n; i++) {
-        resetDisplayListModelRenderer((bct)mrr.m.get(i));
+      for (int n = m.size(); i < n; i++) {
+        resetDisplayListModelRenderer((bct)m.get(i));
       }
     }
   }
@@ -1690,7 +1690,7 @@ public class Shaders
     default: 
       normalMapEnabled = false;
     }
-    zx stack = mc.h.bZ();
+    zx stack = mch.bZ();
     zw item = stack != null ? stack.b() : null;
     afh block;
     int itemID;
@@ -1720,7 +1720,7 @@ public class Shaders
     setProgramUniform1f("viewWidth", renderWidth);
     setProgramUniform1f("viewHeight", renderHeight);
     setProgramUniform1f("near", 0.05F);
-    setProgramUniform1f("far", mc.t.c * 16);
+    setProgramUniform1f("far", mct.c * 16);
     setProgramUniform3f("sunPosition", sunPosition[0], sunPosition[1], sunPosition[2]);
     setProgramUniform3f("moonPosition", moonPosition[0], moonPosition[1], moonPosition[2]);
     setProgramUniform3f("shadowLightPosition", shadowLightPosition[0], shadowLightPosition[1], shadowLightPosition[2]);
@@ -1748,7 +1748,7 @@ public class Shaders
     setProgramUniform2i("terrainTextureSize", terrainTextureSize[0], terrainTextureSize[1]);
     setProgramUniform1i("terrainIconSize", terrainIconSize);
     setProgramUniform1i("isEyeInWater", isEyeInWater);
-    setProgramUniform1i("hideGUI", mc.t.az ? 1 : 0);
+    setProgramUniform1i("hideGUI", mct.az ? 1 : 0);
     setProgramUniform1f("centerDepthSmooth", centerDepthSmooth);
     setProgramUniform2i("atlasSize", atlasSizeX, atlasSizeY);
     checkGLError("useProgram ", programNames[program]);
@@ -2045,8 +2045,8 @@ public class Shaders
   
   private static void resize()
   {
-    renderDisplayWidth = mc.d;
-    renderDisplayHeight = mc.e;
+    renderDisplayWidth = mcd;
+    renderDisplayHeight = mce;
     
     renderWidth = Math.round(renderDisplayWidth * configRenderResMul);
     renderHeight = Math.round(renderDisplayHeight * configRenderResMul);
@@ -2206,24 +2206,24 @@ public class Shaders
     checkGLError("pre beginRender");
     
     mc = minecraft;
-    mc.A.a("init");
-    entityRenderer = mc.o;
+    mcA.a("init");
+    entityRenderer = mco;
     if (!isShaderPackInitialized) {
       init();
     }
-    if ((mc.d != renderDisplayWidth) || (mc.e != renderDisplayHeight)) {
+    if ((mcd != renderDisplayWidth) || (mce != renderDisplayHeight)) {
       resize();
     }
     if (needResizeShadow) {
       resizeShadow();
     }
-    worldTime = mc.f.L();
+    worldTime = mcf.L();
     diffWorldTime = (worldTime - lastWorldTime) % 24000L;
     if (diffWorldTime < 0L) {
       diffWorldTime += 24000L;
     }
     lastWorldTime = worldTime;
-    moonPhase = mc.f.x();
+    moonPhase = mcf.x();
     
     systemTime = System.currentTimeMillis();
     if (lastSystemTime == 0L) {
@@ -2235,7 +2235,7 @@ public class Shaders
     frameTimeCounter += (float)diffSystemTime * 0.001F;
     frameTimeCounter %= 100000.0F;
     
-    rainStrength = minecraft.f.j(partialTicks);
+    rainStrength = f.j(partialTicks);
     
     float fadeScalar = (float)diffSystemTime * 0.01F;
     
@@ -2245,7 +2245,7 @@ public class Shaders
     pk renderViewEntity = mc.ac();
     isSleeping = ((renderViewEntity instanceof ps)) && (((ps)renderViewEntity).bJ());
     
-    eyePosY = (float)renderViewEntity.t * partialTicks + (float)renderViewEntity.Q * (1.0F - partialTicks);
+    eyePosY = (float)t * partialTicks + (float)Q * (1.0F - partialTicks);
     eyeBrightness = renderViewEntity.b(partialTicks);
     
     float fadeScalar = (float)diffSystemTime * 0.01F;
@@ -2253,12 +2253,12 @@ public class Shaders
     eyeBrightnessFadeX = eyeBrightnessFadeX * temp2 + (eyeBrightness & 0xFFFF) * (1.0F - temp2);
     eyeBrightnessFadeY = eyeBrightnessFadeY * temp2 + (eyeBrightness >> 16) * (1.0F - temp2);
     
-    isEyeInWater = (mc.t.aA == 0) && (!((pr)mc.ac()).bJ()) && (mc.h.a(arm.h)) ? 1 : 0;
+    isEyeInWater = (mct.aA == 0) && (!((pr)mc.ac()).bJ()) && (mch.a(arm.h)) ? 1 : 0;
     
-    aui skyColorV = mc.f.a(mc.ac(), partialTicks);
-    skyColorR = (float)skyColorV.a;
-    skyColorG = (float)skyColorV.b;
-    skyColorB = (float)skyColorV.c;
+    aui skyColorV = mcf.a(mc.ac(), partialTicks);
+    skyColorR = (float)a;
+    skyColorG = (float)b;
+    skyColorB = (float)c;
     
     isRenderingWorld = true;
     isCompositeRendered = false;
@@ -2308,7 +2308,7 @@ public class Shaders
     }
     if (noiseTextureEnabled)
     {
-      bfl.g(33984 + noiseTexture.textureUnit);
+      bfl.g(33984 + noiseTexturetextureUnit);
       bfl.i(noiseTexture.getID());
       GL11.glTexParameteri(3553, 10242, 10497);
       GL11.glTexParameteri(3553, 10243, 10497);
@@ -2336,7 +2336,7 @@ public class Shaders
     
     ShadersRender.renderShadowMap(entityRenderer, 0, partialTicks, finishTimeNano);
     
-    mc.A.b();
+    mcA.b();
     
     EXTFramebufferObject.glBindFramebufferEXT(36160, dfb);
     for (int i = 0; i < usedColorBuffers; i++)
@@ -2438,9 +2438,9 @@ public class Shaders
   {
     pk viewEntity = mc.ac();
     
-    double x = viewEntity.P + (viewEntity.s - viewEntity.P) * partialTicks;
-    double y = viewEntity.Q + (viewEntity.t - viewEntity.Q) * partialTicks;
-    double z = viewEntity.R + (viewEntity.u - viewEntity.R) * partialTicks;
+    double x = P + (s - P) * partialTicks;
+    double y = Q + (t - Q) * partialTicks;
+    double z = R + (u - R) * partialTicks;
     
     cameraPositionX = x;
     cameraPositionY = y;
@@ -2462,9 +2462,9 @@ public class Shaders
   public static void setCameraShadow(float partialTicks)
   {
     pk viewEntity = mc.ac();
-    double x = viewEntity.P + (viewEntity.s - viewEntity.P) * partialTicks;
-    double y = viewEntity.Q + (viewEntity.t - viewEntity.Q) * partialTicks;
-    double z = viewEntity.R + (viewEntity.u - viewEntity.R) * partialTicks;
+    double x = P + (s - P) * partialTicks;
+    double y = Q + (t - Q) * partialTicks;
+    double z = R + (u - R) * partialTicks;
     
     cameraPositionX = x;
     cameraPositionY = y;
@@ -2493,7 +2493,7 @@ public class Shaders
     GL11.glLoadIdentity();
     GL11.glTranslatef(0.0F, 0.0F, -100.0F);
     GL11.glRotatef(90.0F, 1.0F, 0.0F, 0.0F);
-    celestialAngle = mc.f.c(partialTicks);
+    celestialAngle = mcf.c(partialTicks);
     sunAngle = celestialAngle < 0.75F ? celestialAngle + 0.25F : celestialAngle - 0.75F;
     float angle = celestialAngle * -360.0F;
     float angleInterval = shadowAngleInterval > 0.0F ? angle % shadowAngleInterval - shadowAngleInterval * 0.5F : 0.0F;
@@ -2554,7 +2554,7 @@ public class Shaders
     setProgramUniformMatrix4ARB("shadowModelView", false, shadowModelView);
     setProgramUniformMatrix4ARB("shadowModelViewInverse", false, shadowModelViewInverse);
     
-    mc.t.aA = 1;
+    mct.aA = 1;
     checkGLError("setCamera");
   }
   
@@ -2673,7 +2673,7 @@ public class Shaders
     }
     if (noiseTextureEnabled)
     {
-      bfl.g(33984 + noiseTexture.textureUnit);
+      bfl.g(33984 + noiseTexturetextureUnit);
       bfl.i(noiseTexture.getID());
       GL11.glTexParameteri(3553, 10242, 10497);
       GL11.glTexParameteri(3553, 10243, 10497);
@@ -2716,8 +2716,8 @@ public class Shaders
     
     isRenderingDfb = false;
     mc.b().a(true);
-    bqs.a(bqs.c, bqs.e, 3553, mc.b().g, 0);
-    GL11.glViewport(0, 0, mc.d, mc.e);
+    bqs.a(bqs.c, bqs.e, 3553, mcbg, 0);
+    GL11.glViewport(0, 0, mcd, mce);
     if (bfk.a)
     {
       boolean maskR = bfk.b != 0;
@@ -2788,16 +2788,16 @@ public class Shaders
   
   public static void setSkyColor(aui v3color)
   {
-    skyColorR = (float)v3color.a;
-    skyColorG = (float)v3color.b;
-    skyColorB = (float)v3color.c;
+    skyColorR = (float)a;
+    skyColorG = (float)b;
+    skyColorB = (float)c;
     setProgramUniform3f("skyColor", skyColorR, skyColorG, skyColorB);
   }
   
   public static void drawHorizon()
   {
     bfd tess = bfx.a().c();
-    float farDistance = mc.t.c * 16;
+    float farDistance = mct.c * 16;
     double xzq = farDistance * 0.9238D;
     double xzp = farDistance * 0.3826D;
     double xzn = -xzp;
@@ -2895,7 +2895,7 @@ public class Shaders
       return true;
     }
     checkGLError("shouldRenderClouds");
-    return gs.h > 0 ? true : isShadowPass ? configCloudShadow : false;
+    return h > 0 ? true : isShadowPass ? configCloudShadow : false;
   }
   
   public static void beginClouds()
@@ -3328,7 +3328,7 @@ public class Shaders
   
   public static void mcProfilerEndSection()
   {
-    mc.A.b();
+    mcA.b();
   }
   
   public static String getShaderPackName()

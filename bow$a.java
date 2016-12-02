@@ -18,7 +18,7 @@ public class bow$a
   public bow$a(boq ☃, bmi ☃)
   {
     this(☃.b(), ☃.c(), ☃.f());
-    this.d = ☃.e();
+    d = ☃.e();
     for (cq ☃ : cq.values()) {
       a(☃, ☃, ☃);
     }
@@ -42,37 +42,37 @@ public class bow$a
   private bow$a(boolean ☃, boolean ☃, bgr ☃)
   {
     for (cq ☃ : cq.values()) {
-      this.b.add(Lists.newArrayList());
+      b.add(Lists.newArrayList());
     }
-    this.c = ☃;
-    this.e = ☃;
-    this.f = ☃;
+    c = ☃;
+    e = ☃;
+    f = ☃;
   }
   
   public a a(cq ☃, bgg ☃)
   {
-    ((List)this.b.get(☃.ordinal())).add(☃);
+    ((List)b.get(☃.ordinal())).add(☃);
     return this;
   }
   
   public a a(bgg ☃)
   {
-    this.a.add(☃);
+    a.add(☃);
     return this;
   }
   
   public a a(bmi ☃)
   {
-    this.d = ☃;
+    d = ☃;
     
     return this;
   }
   
   public boq b()
   {
-    if (this.d == null) {
+    if (d == null) {
       throw new RuntimeException("Missing particle!");
     }
-    return new bow(this.a, this.b, this.c, this.e, this.d, this.f);
+    return new bow(a, b, c, e, d, f);
   }
 }

@@ -13,17 +13,17 @@ public class aqm$a
     if ((☃ == ady.K) || (☃ == ady.L))
     {
       aqn.b ☃ = new aqn.b(☃, ☃ * 16, ☃ * 16);
-      this.a.add(☃);
+      a.add(☃);
     }
     else if (☃ == ady.v)
     {
       aqn.d ☃ = new aqn.d(☃, ☃ * 16, ☃ * 16);
-      this.a.add(☃);
+      a.add(☃);
     }
     else if ((☃ == ady.r) || (☃ == ady.G))
     {
       aqn.a ☃ = new aqn.a(☃, ☃ * 16, ☃ * 16);
-      this.a.add(☃);
+      a.add(☃);
     }
     c();
   }

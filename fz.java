@@ -10,31 +10,31 @@ public class fz
   
   public fz(int ☃, short[] ☃, amy ☃)
   {
-    this.a = new adg(☃.a, ☃.b);
+    a = new adg(a, b);
     
-    this.b = new fz.a[☃];
-    for (int ☃ = 0; ☃ < this.b.length; ☃++) {
-      this.b[☃] = new fz.a(☃[☃], ☃);
+    b = new fz.a[☃];
+    for (int ☃ = 0; ☃ < b.length; ☃++) {
+      b[☃] = new fz.a(☃[☃], ☃);
     }
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = new adg(☃.readInt(), ☃.readInt());
-    this.b = new fz.a[☃.e()];
-    for (int ☃ = 0; ☃ < this.b.length; ☃++) {
-      this.b[☃] = new fz.a(☃.readShort(), (alz)afh.d.a(☃.e()));
+    a = new adg(☃.readInt(), ☃.readInt());
+    b = new fz.a[☃.e()];
+    for (int ☃ = 0; ☃ < b.length; ☃++) {
+      b[☃] = new fz.a(☃.readShort(), (alz)afh.d.a(☃.e()));
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeInt(this.a.a);
-    ☃.writeInt(this.a.b);
-    ☃.b(this.b.length);
-    for (fz.a ☃ : this.b)
+    ☃.writeInt(a.a);
+    ☃.writeInt(a.b);
+    ☃.b(b.length);
+    for (fz.a ☃ : b)
     {
       ☃.writeShort(☃.b());
       ☃.b(afh.d.b(☃.c()));
@@ -48,7 +48,7 @@ public class fz
   
   public fz.a[] a()
   {
-    return this.b;
+    return b;
   }
   
   public class a
@@ -58,29 +58,29 @@ public class fz
     
     public a(short ☃, alz ☃)
     {
-      this.b = ☃;
-      this.c = ☃;
+      b = ☃;
+      c = ☃;
     }
     
     public a(short ☃, amy ☃)
     {
-      this.b = ☃;
-      this.c = ☃.g(a());
+      b = ☃;
+      c = ☃.g(a());
     }
     
     public cj a()
     {
-      return new cj(fz.a(fz.this).a(this.b >> 12 & 0xF, this.b & 0xFF, this.b >> 8 & 0xF));
+      return new cj(fz.a(fz.this).a(b >> 12 & 0xF, b & 0xFF, b >> 8 & 0xF));
     }
     
     public short b()
     {
-      return this.b;
+      return b;
     }
     
     public alz c()
     {
-      return this.c;
+      return c;
     }
   }
 }

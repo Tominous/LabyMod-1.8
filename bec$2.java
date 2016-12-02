@@ -10,6 +10,6 @@ class bec$2
   public String a()
     throws Exception
   {
-    return "Unknown - " + this.val$var5;
+    return "Unknown - " + val$var5;
   }
 }

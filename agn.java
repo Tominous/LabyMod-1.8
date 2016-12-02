@@ -48,8 +48,8 @@ public class agn
   
   public void a(adm ☃, cj ☃, alz ☃, pk ☃)
   {
-    if ((☃.m == null) && (☃.l == null) && 
-      (!☃.D)) {
+    if ((m == null) && (l == null) && 
+      (!D)) {
       ☃.c(1);
     }
   }

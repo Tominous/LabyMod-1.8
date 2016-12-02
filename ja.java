@@ -20,34 +20,34 @@ public class ja
   
   public ja(cj ☃, int ☃, zx ☃, float ☃, float ☃, float ☃)
   {
-    this.b = ☃;
-    this.c = ☃;
-    this.d = (☃ != null ? ☃.k() : null);
-    this.e = ☃;
-    this.f = ☃;
-    this.g = ☃;
+    b = ☃;
+    c = ☃;
+    d = (☃ != null ? ☃.k() : null);
+    e = ☃;
+    f = ☃;
+    g = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.b = ☃.c();
-    this.c = ☃.readUnsignedByte();
-    this.d = ☃.i();
-    this.e = (☃.readUnsignedByte() / 16.0F);
-    this.f = (☃.readUnsignedByte() / 16.0F);
-    this.g = (☃.readUnsignedByte() / 16.0F);
+    b = ☃.c();
+    c = ☃.readUnsignedByte();
+    d = ☃.i();
+    e = (☃.readUnsignedByte() / 16.0F);
+    f = (☃.readUnsignedByte() / 16.0F);
+    g = (☃.readUnsignedByte() / 16.0F);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(this.b);
-    ☃.writeByte(this.c);
-    ☃.a(this.d);
-    ☃.writeByte((int)(this.e * 16.0F));
-    ☃.writeByte((int)(this.f * 16.0F));
-    ☃.writeByte((int)(this.g * 16.0F));
+    ☃.a(b);
+    ☃.writeByte(c);
+    ☃.a(d);
+    ☃.writeByte((int)(e * 16.0F));
+    ☃.writeByte((int)(f * 16.0F));
+    ☃.writeByte((int)(g * 16.0F));
   }
   
   public void a(ic ☃)
@@ -57,31 +57,31 @@ public class ja
   
   public cj a()
   {
-    return this.b;
+    return b;
   }
   
   public int b()
   {
-    return this.c;
+    return c;
   }
   
   public zx c()
   {
-    return this.d;
+    return d;
   }
   
   public float d()
   {
-    return this.e;
+    return e;
   }
   
   public float e()
   {
-    return this.f;
+    return f;
   }
   
   public float f()
   {
-    return this.g;
+    return g;
   }
 }

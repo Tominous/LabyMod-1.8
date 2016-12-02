@@ -17,7 +17,7 @@ public class aff
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (☃.D) {
+    if (D) {
       return true;
     }
     akw ☃ = ☃.s(☃);
@@ -77,24 +77,24 @@ public class aff
     {
       public void run()
       {
-        amy ☃ = this.a.f(☃);
+        amy ☃ = a.f(☃);
         for (int ☃ = ☃.o() - 1; ☃ >= 0; ☃--)
         {
           final cj ☃ = new cj(☃.n(), ☃, ☃.p());
           if (!☃.d(☃)) {
             break;
           }
-          alz ☃ = this.a.p(☃);
+          alz ☃ = a.p(☃);
           if (☃.c() == afi.bY) {
-            ((le)this.a).a(new Runnable()
+            ((le)a).a(new Runnable()
             {
               public void run()
               {
-                akw ☃ = aff.1.this.a.s(☃);
+                akw ☃ = a.s(☃);
                 if ((☃ instanceof akv))
                 {
                   ((akv)☃).m();
-                  aff.1.this.a.c(☃, afi.bY, 1, 0);
+                  a.c(☃, afi.bY, 1, 0);
                 }
               }
             });

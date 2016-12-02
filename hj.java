@@ -10,26 +10,26 @@ public class hj
   
   public hj(int ☃, auk ☃)
   {
-    this.a = ☃;
+    a = ☃;
     if (☃ == null) {
-      this.b = "";
+      b = "";
     } else {
-      this.b = ☃.b();
+      b = ☃.b();
     }
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.readByte();
-    this.b = ☃.c(16);
+    a = ☃.readByte();
+    b = ☃.c(16);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(this.a);
-    ☃.a(this.b);
+    ☃.writeByte(a);
+    ☃.a(b);
   }
   
   public void a(fj ☃)
@@ -39,11 +39,11 @@ public class hj
   
   public int a()
   {
-    return this.a;
+    return a;
   }
   
   public String b()
   {
-    return this.b;
+    return b;
   }
 }

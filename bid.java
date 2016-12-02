@@ -21,7 +21,7 @@ public class bid
     float maxZf = (float)p_78553_11_;
     for (int var13 = 0; var13 < 6; var13++)
     {
-      float[] var14 = this.a[var13];
+      float[] var14 = a[var13];
       if ((dot(var14, minXf, minYf, minZf) <= 0.0F) && (dot(var14, maxXf, minYf, minZf) <= 0.0F) && (dot(var14, minXf, maxYf, minZf) <= 0.0F) && (dot(var14, maxXf, maxYf, minZf) <= 0.0F) && (dot(var14, minXf, minYf, maxZf) <= 0.0F) && (dot(var14, maxXf, minYf, maxZf) <= 0.0F) && (dot(var14, minXf, maxYf, maxZf) <= 0.0F) && (dot(var14, maxXf, maxYf, maxZf) <= 0.0F)) {
         return false;
       }

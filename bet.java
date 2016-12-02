@@ -1,7 +1,12 @@
 import com.mojang.authlib.GameProfile;
+import de.labystudio.capes.CapeManager;
+import de.labystudio.capes.EnumCapePriority;
+import de.labystudio.capes.MineconRenderer;
 import de.labystudio.labymod.ConfigManager;
+import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
 import de.labystudio.utils.Allowed;
+import de.labystudio.utils.Debug;
 import java.io.File;
 
 public abstract class bet
@@ -9,16 +14,23 @@ public abstract class bet
 {
   private bdc a;
   private String nameClear = null;
+  private jy locationCape;
+  public EnumCapePriority capeType = null;
+  private MineconRenderer mineconParticleRender;
   
   public bet(adm worldIn, GameProfile playerProfile)
   {
     super(worldIn, playerProfile);
-    this.nameClear = playerProfile.getName();
-  }
-  
-  public String getNameClear()
-  {
-    return this.nameClear;
+    
+    locationCape = null;
+    nameClear = playerProfile.getName();
+    if ((nameClear != null) && (!nameClear.isEmpty())) {
+      nameClear = nx.a(nameClear);
+    }
+    LabyMod.getInstance().getCapeManager().downloadCape(this, false, false);
+    if (settingsmineconParticle) {
+      mineconParticleRender = new MineconRenderer();
+    }
   }
   
   public boolean v()
@@ -34,10 +46,10 @@ public abstract class bet
   
   protected bdc b()
   {
-    if (this.a == null) {
-      this.a = ave.A().u().a(aK());
+    if (a == null) {
+      a = ave.A().u().a(aK());
     }
-    return this.a;
+    return a;
   }
   
   public boolean g()
@@ -49,13 +61,22 @@ public abstract class bet
   public jy i()
   {
     bdc networkplayerinfo = b();
+    
     return networkplayerinfo == null ? bmz.a(aK()) : networkplayerinfo.g();
   }
   
   public jy k()
   {
     bdc networkplayerinfo = b();
-    return networkplayerinfo == null ? null : networkplayerinfo.h();
+    jy original = networkplayerinfo == null ? null : networkplayerinfo.h();
+    boolean originalAvailable = (LabyMod.getInstance().getCapeManager().getCapePriority() == EnumCapePriority.ORIGINAL) && (original != null);
+    if ((!originalAvailable) && (settingscapes) && (locationCape != null)) {
+      return locationCape;
+    }
+    if ((original != null) && (mineconParticleRender != null) && (settingsmineconParticle)) {
+      mineconParticleRender.render(this);
+    }
+    return original;
   }
   
   public static bma a(jy resourceLocationIn, String username)
@@ -64,7 +85,7 @@ public abstract class bet
     bmk itextureobject = texturemanager.b(resourceLocationIn);
     if (itextureobject == null)
     {
-      itextureobject = new bma((File)null, String.format("http://skins.minecraft.net/MinecraftSkins/%s.png", new Object[] { nx.a(username) }), bmz.a(b(username)), new bfs());
+      itextureobject = new bma((File)null, String.format("http://skins.minecraft.net/MinecraftSkins/%s.png", new Object[] {nx.a(username) }), bmz.a(b(username)), new bfs());
       texturemanager.a(resourceLocationIn, itextureobject);
     }
     return (bma)itextureobject;
@@ -78,19 +99,20 @@ public abstract class bet
   public String l()
   {
     bdc networkplayerinfo = b();
+    
     return networkplayerinfo == null ? bmz.b(aK()) : networkplayerinfo.f();
   }
   
   public float o()
   {
     float f = 1.0F;
-    if (this.bA.b) {
+    if (bA.b) {
       f *= 1.1F;
     }
     qc iattributeinstance = a(vy.d);
-    if ((ConfigManager.settings.speedFOV) && (Allowed.unfairExtra()))
+    if ((settingsspeedFOV) && (Allowed.unfairExtra()))
     {
-      f = (float)(f * ((iattributeinstance.e() / this.bA.b() + 1.0D) / 2.0D));
+      f = (float)(f * ((iattributeinstance.e() / bA.b() + 1.0D) / 2.0D));
     }
     else
     {
@@ -98,9 +120,9 @@ public abstract class bet
       if (aw()) {
         speed = 0.13000000312924387D;
       }
-      f = (float)(f * ((speed / this.bA.b() + 1.0D) / 2.0D));
+      f = (float)(f * ((speed / bA.b() + 1.0D) / 2.0D));
     }
-    if ((this.bA.b() == 0.0F) || (Float.isNaN(f)) || (Float.isInfinite(f))) {
+    if ((bA.b() == 0.0F) || (Float.isNaN(f)) || (Float.isInfinite(f))) {
       f = 1.0F;
     }
     if ((bS()) && (bQ().b() == zy.f))
@@ -115,5 +137,17 @@ public abstract class bet
       f *= (1.0F - f1 * 0.15F);
     }
     return f;
+  }
+  
+  public String getNameClear()
+  {
+    return nameClear;
+  }
+  
+  public void setLocationOfCape(jy locationOfCape, EnumCapePriority capeType)
+  {
+    locationCape = locationOfCape;
+    this.capeType = capeType;
+    Debug.debug("[LabyMod] Loaded " + capeType.name() + " cape of " + getNameClear());
   }
 }

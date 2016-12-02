@@ -25,7 +25,7 @@ class mb$a
     if (☃.isJsonObject())
     {
       JsonObject ☃ = ☃.getAsJsonObject();
-      ma<K> ☃ = this.a.a(☃);
+      ma<K> ☃ = a.a(☃);
       return ☃;
     }
     return null;

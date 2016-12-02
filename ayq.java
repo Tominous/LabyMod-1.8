@@ -18,36 +18,36 @@ public class ayq
   
   public ayq(adc ☃)
   {
-    this.h = ☃;
+    h = ☃;
   }
   
   public void e()
   {
-    this.f.a();
+    f.a();
   }
   
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    this.n.clear();
-    this.n.add(this.i = new avs(0, this.l / 2 - 4 - 150, this.m / 4 + 120 + 12, 150, 20, bnq.a("gui.done", new Object[0])));
-    this.n.add(this.r = new avs(1, this.l / 2 + 4, this.m / 4 + 120 + 12, 150, 20, bnq.a("gui.cancel", new Object[0])));
-    this.n.add(this.s = new avs(4, this.l / 2 + 150 - 20, 150, 20, 20, "O"));
+    n.clear();
+    n.add(i = new avs(0, l / 2 - 4 - 150, m / 4 + 120 + 12, 150, 20, bnq.a("gui.done", new Object[0])));
+    n.add(r = new avs(1, l / 2 + 4, m / 4 + 120 + 12, 150, 20, bnq.a("gui.cancel", new Object[0])));
+    n.add(s = new avs(4, l / 2 + 150 - 20, 150, 20, 20, "O"));
     
-    this.f = new avw(2, this.q, this.l / 2 - 150, 50, 300, 20);
-    this.f.f(32767);
-    this.f.b(true);
-    this.f.a(this.h.l());
+    f = new avw(2, q, l / 2 - 150, 50, 300, 20);
+    f.f(32767);
+    f.b(true);
+    f.a(h.l());
     
-    this.g = new avw(3, this.q, this.l / 2 - 150, 150, 276, 20);
-    this.g.f(32767);
-    this.g.c(false);
-    this.g.a("-");
+    g = new avw(3, q, l / 2 - 150, 150, 276, 20);
+    g.f(32767);
+    g.c(false);
+    g.a("-");
     
-    this.t = this.h.m();
+    t = h.m();
     a();
     
-    this.i.l = (this.f.b().trim().length() > 0);
+    i.l = (f.b().trim().length() > 0);
   }
   
   public void m()
@@ -57,44 +57,44 @@ public class ayq
   
   protected void a(avs ☃)
   {
-    if (!☃.l) {
+    if (!l) {
       return;
     }
-    if (☃.k == 1)
+    if (k == 1)
     {
-      this.h.a(this.t);
-      this.j.a(null);
+      h.a(t);
+      j.a(null);
     }
-    else if (☃.k == 0)
+    else if (k == 0)
     {
       em ☃ = new em(Unpooled.buffer());
       
-      ☃.writeByte(this.h.i());
-      this.h.a(☃);
-      ☃.a(this.f.b());
-      ☃.writeBoolean(this.h.m());
-      this.j.u().a(new im("MC|AdvCdm", ☃));
-      if (!this.h.m()) {
-        this.h.b(null);
+      ☃.writeByte(h.i());
+      h.a(☃);
+      ☃.a(f.b());
+      ☃.writeBoolean(h.m());
+      j.u().a(new im("MC|AdvCdm", ☃));
+      if (!h.m()) {
+        h.b(null);
       }
-      this.j.a(null);
+      j.a(null);
     }
-    else if (☃.k == 4)
+    else if (k == 4)
     {
-      this.h.a(!this.h.m());
+      h.a(!h.m());
       a();
     }
   }
   
   protected void a(char ☃, int ☃)
   {
-    this.f.a(☃, ☃);
-    this.g.a(☃, ☃);
-    this.i.l = (this.f.b().trim().length() > 0);
+    f.a(☃, ☃);
+    g.a(☃, ☃);
+    i.l = (f.b().trim().length() > 0);
     if ((☃ == 28) || (☃ == 156)) {
-      a(this.i);
+      a(i);
     } else if (☃ == 1) {
-      a(this.r);
+      a(r);
     }
   }
   
@@ -102,48 +102,48 @@ public class ayq
   {
     super.a(☃, ☃, ☃);
     
-    this.f.a(☃, ☃, ☃);
-    this.g.a(☃, ☃, ☃);
+    f.a(☃, ☃, ☃);
+    g.a(☃, ☃, ☃);
   }
   
   public void a(int ☃, int ☃, float ☃)
   {
     c();
     
-    a(this.q, bnq.a("advMode.setCommand", new Object[0]), this.l / 2, 20, 16777215);
-    c(this.q, bnq.a("advMode.command", new Object[0]), this.l / 2 - 150, 37, 10526880);
-    this.f.g();
+    a(q, bnq.a("advMode.setCommand", new Object[0]), l / 2, 20, 16777215);
+    c(q, bnq.a("advMode.command", new Object[0]), l / 2 - 150, 37, 10526880);
+    f.g();
     
     int ☃ = 75;
     int ☃ = 0;
     
-    c(this.q, bnq.a("advMode.nearestPlayer", new Object[0]), this.l / 2 - 150, ☃ + ☃++ * this.q.a, 10526880);
-    c(this.q, bnq.a("advMode.randomPlayer", new Object[0]), this.l / 2 - 150, ☃ + ☃++ * this.q.a, 10526880);
-    c(this.q, bnq.a("advMode.allPlayers", new Object[0]), this.l / 2 - 150, ☃ + ☃++ * this.q.a, 10526880);
-    c(this.q, bnq.a("advMode.allEntities", new Object[0]), this.l / 2 - 150, ☃ + ☃++ * this.q.a, 10526880);
-    c(this.q, "", this.l / 2 - 150, ☃ + ☃++ * this.q.a, 10526880);
-    if (this.g.b().length() > 0)
+    c(q, bnq.a("advMode.nearestPlayer", new Object[0]), l / 2 - 150, ☃ + ☃++ * q.a, 10526880);
+    c(q, bnq.a("advMode.randomPlayer", new Object[0]), l / 2 - 150, ☃ + ☃++ * q.a, 10526880);
+    c(q, bnq.a("advMode.allPlayers", new Object[0]), l / 2 - 150, ☃ + ☃++ * q.a, 10526880);
+    c(q, bnq.a("advMode.allEntities", new Object[0]), l / 2 - 150, ☃ + ☃++ * q.a, 10526880);
+    c(q, "", l / 2 - 150, ☃ + ☃++ * q.a, 10526880);
+    if (g.b().length() > 0)
     {
-      ☃ += ☃ * this.q.a + 16;
-      c(this.q, bnq.a("advMode.previousOutput", new Object[0]), this.l / 2 - 150, ☃, 10526880);
-      this.g.g();
+      ☃ += ☃ * q.a + 16;
+      c(q, bnq.a("advMode.previousOutput", new Object[0]), l / 2 - 150, ☃, 10526880);
+      g.g();
     }
     super.a(☃, ☃, ☃);
   }
   
   private void a()
   {
-    if (this.h.m())
+    if (h.m())
     {
-      this.s.j = "O";
-      if (this.h.k() != null) {
-        this.g.a(this.h.k().c());
+      s.j = "O";
+      if (h.k() != null) {
+        g.a(h.k().c());
       }
     }
     else
     {
-      this.s.j = "X";
-      this.g.a("-");
+      s.j = "X";
+      g.a("-");
     }
   }
 }

@@ -8,25 +8,25 @@ public class bnr
   
   public bnr(String ☃, String ☃, String ☃, boolean ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
   }
   
   public String a()
   {
-    return this.a;
+    return a;
   }
   
   public boolean b()
   {
-    return this.d;
+    return d;
   }
   
   public String toString()
   {
-    return String.format("%s (%s)", new Object[] { this.c, this.b });
+    return String.format("%s (%s)", new Object[] { c, b });
   }
   
   public boolean equals(Object ☃)
@@ -37,16 +37,16 @@ public class bnr
     if (!(☃ instanceof bnr)) {
       return false;
     }
-    return this.a.equals(((bnr)☃).a);
+    return a.equals(a);
   }
   
   public int hashCode()
   {
-    return this.a.hashCode();
+    return a.hashCode();
   }
   
   public int a(bnr ☃)
   {
-    return this.a.compareTo(☃.a);
+    return a.compareTo(a);
   }
 }

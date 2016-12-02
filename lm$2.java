@@ -5,6 +5,6 @@ class lm$2
   
   public void run()
   {
-    this.a.a.l();
+    a.a.l();
   }
 }

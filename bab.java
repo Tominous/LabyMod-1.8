@@ -19,12 +19,12 @@ public class bab
   
   public bab(bqm ☃, ChatUserInfo ☃)
   {
-    this.s = ☃;
-    this.h = ☃;
+    s = ☃;
+    h = ☃;
     
-    this.i = new fa(☃.displayName);
+    i = new fa(displayName);
     
-    this.r.addAll(a(☃.modes, ☃.subscriptions, ☃));
+    r.addAll(a(modes, subscriptions, ☃));
   }
   
   public static List<eu> a(Set<ChatUserMode> ☃, Set<ChatUserSubscription> ☃, bqm ☃)
@@ -128,53 +128,53 @@ public class bab
   
   public void b()
   {
-    int ☃ = this.l / 3;
+    int ☃ = l / 3;
     int ☃ = ☃ - 130;
-    this.n.add(new avs(1, ☃ * 0 + ☃ / 2, this.m - 70, 130, 20, bnq.a("stream.userinfo.timeout", new Object[0])));
-    this.n.add(new avs(0, ☃ * 1 + ☃ / 2, this.m - 70, 130, 20, bnq.a("stream.userinfo.ban", new Object[0])));
-    this.n.add(new avs(2, ☃ * 2 + ☃ / 2, this.m - 70, 130, 20, bnq.a("stream.userinfo.mod", new Object[0])));
+    n.add(new avs(1, ☃ * 0 + ☃ / 2, m - 70, 130, 20, bnq.a("stream.userinfo.timeout", new Object[0])));
+    n.add(new avs(0, ☃ * 1 + ☃ / 2, m - 70, 130, 20, bnq.a("stream.userinfo.ban", new Object[0])));
+    n.add(new avs(2, ☃ * 2 + ☃ / 2, m - 70, 130, 20, bnq.a("stream.userinfo.mod", new Object[0])));
     
-    this.n.add(new avs(5, ☃ * 0 + ☃ / 2, this.m - 45, 130, 20, bnq.a("gui.cancel", new Object[0])));
-    this.n.add(new avs(3, ☃ * 1 + ☃ / 2, this.m - 45, 130, 20, bnq.a("stream.userinfo.unban", new Object[0])));
-    this.n.add(new avs(4, ☃ * 2 + ☃ / 2, this.m - 45, 130, 20, bnq.a("stream.userinfo.unmod", new Object[0])));
+    n.add(new avs(5, ☃ * 0 + ☃ / 2, m - 45, 130, 20, bnq.a("gui.cancel", new Object[0])));
+    n.add(new avs(3, ☃ * 1 + ☃ / 2, m - 45, 130, 20, bnq.a("stream.userinfo.unban", new Object[0])));
+    n.add(new avs(4, ☃ * 2 + ☃ / 2, m - 45, 130, 20, bnq.a("stream.userinfo.unmod", new Object[0])));
     
     int ☃ = 0;
-    for (eu ☃ : this.r) {
-      ☃ = Math.max(☃, this.q.a(☃.d()));
+    for (eu ☃ : r) {
+      ☃ = Math.max(☃, q.a(☃.d()));
     }
-    this.t = (this.l / 2 - ☃ / 2);
+    t = (l / 2 - ☃ / 2);
   }
   
   protected void a(avs ☃)
   {
-    if (!☃.l) {
+    if (!l) {
       return;
     }
-    if (☃.k == 0) {
-      this.s.f("/ban " + this.h.displayName);
-    } else if (☃.k == 3) {
-      this.s.f("/unban " + this.h.displayName);
-    } else if (☃.k == 2) {
-      this.s.f("/mod " + this.h.displayName);
-    } else if (☃.k == 4) {
-      this.s.f("/unmod " + this.h.displayName);
-    } else if (☃.k == 1) {
-      this.s.f("/timeout " + this.h.displayName);
+    if (k == 0) {
+      s.f("/ban " + h.displayName);
+    } else if (k == 3) {
+      s.f("/unban " + h.displayName);
+    } else if (k == 2) {
+      s.f("/mod " + h.displayName);
+    } else if (k == 4) {
+      s.f("/unmod " + h.displayName);
+    } else if (k == 1) {
+      s.f("/timeout " + h.displayName);
     }
-    this.j.a(null);
+    j.a(null);
   }
   
   public void a(int ☃, int ☃, float ☃)
   {
     c();
     
-    a(this.q, this.i.c(), this.l / 2, 70, 16777215);
+    a(q, i.c(), l / 2, 70, 16777215);
     
     int ☃ = 80;
-    for (eu ☃ : this.r)
+    for (eu ☃ : r)
     {
-      c(this.q, ☃.d(), this.t, ☃, 16777215);
-      ☃ += this.q.a;
+      c(q, ☃.d(), t, ☃, 16777215);
+      ☃ += q.a;
     }
     super.a(☃, ☃, ☃);
   }

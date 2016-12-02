@@ -32,7 +32,7 @@ public class agb
   
   public void a(adm ☃, wn ☃, cj ☃, alz ☃, akw ☃)
   {
-    if ((☃.D) || (☃.bZ() == null) || (☃.bZ().b() != zy.be))
+    if ((D) || (☃.bZ() == null) || (☃.bZ().b() != zy.be))
     {
       super.a(☃, ☃, ☃, ☃, ☃);
     }

@@ -13,33 +13,33 @@ public class ih
   
   public ih(String ☃, int ☃, wn.b ☃, boolean ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
-    this.e = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
+    e = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.c(7);
-    this.b = ☃.readByte();
+    a = ☃.c(7);
+    b = ☃.readByte();
     
-    this.c = wn.b.a(☃.readByte());
-    this.d = ☃.readBoolean();
+    c = wn.b.a(☃.readByte());
+    d = ☃.readBoolean();
     
-    this.e = ☃.readUnsignedByte();
+    e = ☃.readUnsignedByte();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(this.a);
-    ☃.writeByte(this.b);
-    ☃.writeByte(this.c.a());
-    ☃.writeBoolean(this.d);
-    ☃.writeByte(this.e);
+    ☃.a(a);
+    ☃.writeByte(b);
+    ☃.writeByte(c.a());
+    ☃.writeBoolean(d);
+    ☃.writeByte(e);
   }
   
   public void a(ic ☃)
@@ -49,21 +49,21 @@ public class ih
   
   public String a()
   {
-    return this.a;
+    return a;
   }
   
   public wn.b c()
   {
-    return this.c;
+    return c;
   }
   
   public boolean d()
   {
-    return this.d;
+    return d;
   }
   
   public int e()
   {
-    return this.e;
+    return e;
   }
 }

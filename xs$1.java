@@ -14,6 +14,6 @@ class xs$1
   public void p_()
   {
     super.p_();
-    this.a.a(this);
+    a.a(this);
   }
 }

@@ -82,15 +82,15 @@ public class ek
   
   public ek(fg ☃)
   {
-    this.h = ☃;
+    h = ☃;
   }
   
   public void channelActive(ChannelHandlerContext ☃)
     throws Exception
   {
     super.channelActive(☃);
-    this.k = ☃.channel();
-    this.l = this.k.remoteAddress();
+    k = ☃.channel();
+    l = k.remoteAddress();
     try
     {
       a(el.a);
@@ -103,8 +103,8 @@ public class ek
   
   public void a(el ☃)
   {
-    this.k.attr(c).set(☃);
-    this.k.config().setAutoRead(true);
+    k.attr(c).set(☃);
+    k.config().setAutoRead(true);
     g.debug("Enabled auto read");
   }
   
@@ -130,10 +130,10 @@ public class ek
   protected void a(ChannelHandlerContext ☃, ff ☃)
     throws Exception
   {
-    if (this.k.isOpen()) {
+    if (k.isOpen()) {
       try
       {
-        ☃.a(this.m);
+        ☃.a(m);
       }
       catch (ki localki) {}
     }
@@ -143,7 +143,7 @@ public class ek
   {
     Validate.notNull(☃, "packetListener", new Object[0]);
     g.debug("Set listener of {} to {}", new Object[] { this, ☃ });
-    this.m = ☃;
+    m = ☃;
   }
   
   public void a(ff ☃)
@@ -155,14 +155,14 @@ public class ek
     }
     else
     {
-      this.j.writeLock().lock();
+      j.writeLock().lock();
       try
       {
-        this.i.add(new ek.a(☃, null));
+        i.add(new ek.a(☃, null));
       }
       finally
       {
-        this.j.writeLock().unlock();
+        j.writeLock().unlock();
       }
     }
   }
@@ -176,14 +176,14 @@ public class ek
     }
     else
     {
-      this.j.writeLock().lock();
+      j.writeLock().lock();
       try
       {
-        this.i.add(new ek.a(☃, (GenericFutureListener[])ArrayUtils.add(☃, 0, ☃)));
+        i.add(new ek.a(☃, (GenericFutureListener[])ArrayUtils.add(☃, 0, ☃)));
       }
       finally
       {
-        this.j.writeLock().unlock();
+        j.writeLock().unlock();
       }
     }
   }
@@ -191,18 +191,18 @@ public class ek
   private void a(final ff ☃, final GenericFutureListener<? extends Future<? super Void>>[] ☃)
   {
     final el ☃ = el.a(☃);
-    final el ☃ = (el)this.k.attr(c).get();
+    final el ☃ = (el)k.attr(c).get();
     if (☃ != ☃)
     {
       g.debug("Disabled auto read");
-      this.k.config().setAutoRead(false);
+      k.config().setAutoRead(false);
     }
-    if (this.k.eventLoop().inEventLoop())
+    if (k.eventLoop().inEventLoop())
     {
       if (☃ != ☃) {
         a(☃);
       }
-      ChannelFuture ☃ = this.k.writeAndFlush(☃);
+      ChannelFuture ☃ = k.writeAndFlush(☃);
       if (☃ != null) {
         ☃.addListeners(☃);
       }
@@ -210,12 +210,12 @@ public class ek
     }
     else
     {
-      this.k.eventLoop().execute(new Runnable()
+      k.eventLoop().execute(new Runnable()
       {
         public void run()
         {
           if (☃ != ☃) {
-            ek.this.a(☃);
+            a(☃);
           }
           ChannelFuture ☃ = ek.a(ek.this).writeAndFlush(☃);
           if (☃ != null) {
@@ -229,51 +229,51 @@ public class ek
   
   private void m()
   {
-    if ((this.k == null) || (!this.k.isOpen())) {
+    if ((k == null) || (!k.isOpen())) {
       return;
     }
-    this.j.readLock().lock();
+    j.readLock().lock();
     try
     {
-      while (!this.i.isEmpty())
+      while (!i.isEmpty())
       {
-        ek.a ☃ = (ek.a)this.i.poll();
+        ek.a ☃ = (ek.a)i.poll();
         a(ek.a.a(☃), ek.a.b(☃));
       }
     }
     finally
     {
-      this.j.readLock().unlock();
+      j.readLock().unlock();
     }
   }
   
   public void a()
   {
     m();
-    if ((this.m instanceof km)) {
-      ((km)this.m).c();
+    if ((m instanceof km)) {
+      ((km)m).c();
     }
-    this.k.flush();
+    k.flush();
   }
   
   public SocketAddress b()
   {
-    return this.l;
+    return l;
   }
   
   public void a(eu ☃)
   {
-    if (this.k.isOpen())
+    if (k.isOpen())
     {
-      this.k.close().awaitUninterruptibly();
+      k.close().awaitUninterruptibly();
       
-      this.n = ☃;
+      n = ☃;
     }
   }
   
   public boolean c()
   {
-    return ((this.k instanceof LocalChannel)) || ((this.k instanceof LocalServerChannel));
+    return ((k instanceof LocalChannel)) || ((k instanceof LocalServerChannel));
   }
   
   public static ek a(InetAddress ☃, int ☃, boolean ☃)
@@ -302,7 +302,7 @@ public class ek
           ☃.config().setOption(ChannelOption.TCP_NODELAY, Boolean.valueOf(true));
         }
         catch (ChannelException localChannelException) {}
-        ☃.pipeline().addLast("timeout", new ReadTimeoutHandler(30)).addLast("splitter", new eq()).addLast("decoder", new en(fg.b)).addLast("prepender", new er()).addLast("encoder", new eo(fg.a)).addLast("packet_handler", this.a);
+        ☃.pipeline().addLast("timeout", new ReadTimeoutHandler(30)).addLast("splitter", new eq()).addLast("decoder", new en(fg.b)).addLast("prepender", new er()).addLast("encoder", new eo(fg.a)).addLast("packet_handler", a);
       }
     })).channel(☃)).connect(☃, ☃).syncUninterruptibly();
     
@@ -318,7 +318,7 @@ public class ek
       protected void initChannel(Channel ☃)
         throws Exception
       {
-        ☃.pipeline().addLast("packet_handler", this.a);
+        ☃.pipeline().addLast("packet_handler", a);
       }
     })).channel(LocalChannel.class)).connect(☃).syncUninterruptibly();
     
@@ -327,75 +327,75 @@ public class ek
   
   public void a(SecretKey ☃)
   {
-    this.o = true;
-    this.k.pipeline().addBefore("splitter", "decrypt", new eg(ng.a(2, ☃)));
-    this.k.pipeline().addBefore("prepender", "encrypt", new eh(ng.a(1, ☃)));
+    o = true;
+    k.pipeline().addBefore("splitter", "decrypt", new eg(ng.a(2, ☃)));
+    k.pipeline().addBefore("prepender", "encrypt", new eh(ng.a(1, ☃)));
   }
   
   public boolean f()
   {
-    return this.o;
+    return o;
   }
   
   public boolean g()
   {
-    return (this.k != null) && (this.k.isOpen());
+    return (k != null) && (k.isOpen());
   }
   
   public boolean h()
   {
-    return this.k == null;
+    return k == null;
   }
   
   public ep i()
   {
-    return this.m;
+    return m;
   }
   
   public eu j()
   {
-    return this.n;
+    return n;
   }
   
   public void k()
   {
-    this.k.config().setAutoRead(false);
+    k.config().setAutoRead(false);
   }
   
   public void a(int ☃)
   {
     if (☃ >= 0)
     {
-      if ((this.k.pipeline().get("decompress") instanceof ei)) {
-        ((ei)this.k.pipeline().get("decompress")).a(☃);
+      if ((k.pipeline().get("decompress") instanceof ei)) {
+        ((ei)k.pipeline().get("decompress")).a(☃);
       } else {
-        this.k.pipeline().addBefore("decoder", "decompress", new ei(☃));
+        k.pipeline().addBefore("decoder", "decompress", new ei(☃));
       }
-      if ((this.k.pipeline().get("compress") instanceof ej)) {
-        ((ej)this.k.pipeline().get("decompress")).a(☃);
+      if ((k.pipeline().get("compress") instanceof ej)) {
+        ((ej)k.pipeline().get("decompress")).a(☃);
       } else {
-        this.k.pipeline().addBefore("encoder", "compress", new ej(☃));
+        k.pipeline().addBefore("encoder", "compress", new ej(☃));
       }
     }
     else
     {
-      if ((this.k.pipeline().get("decompress") instanceof ei)) {
-        this.k.pipeline().remove("decompress");
+      if ((k.pipeline().get("decompress") instanceof ei)) {
+        k.pipeline().remove("decompress");
       }
-      if ((this.k.pipeline().get("compress") instanceof ej)) {
-        this.k.pipeline().remove("compress");
+      if ((k.pipeline().get("compress") instanceof ej)) {
+        k.pipeline().remove("compress");
       }
     }
   }
   
   public void l()
   {
-    if ((this.k == null) || (this.k.isOpen())) {
+    if ((k == null) || (k.isOpen())) {
       return;
     }
-    if (!this.p)
+    if (!p)
     {
-      this.p = true;
+      p = true;
       if (j() != null) {
         i().a(j());
       } else if (i() != null) {
@@ -415,8 +415,8 @@ public class ek
     
     public a(ff ☃, GenericFutureListener<? extends Future<? super Void>>... ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
+      a = ☃;
+      b = ☃;
     }
   }
 }

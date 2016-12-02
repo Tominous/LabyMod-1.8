@@ -12,31 +12,31 @@ public class bef
   {
     super(☃, ☃, ☃, ☃, ☃, ☃, ☃);
     
-    this.v = ☃;
-    this.w = ☃;
-    this.x = ☃;
-    this.az = (this.s = ☃);
-    this.aA = (this.t = ☃);
-    this.aB = (this.u = ☃);
+    v = ☃;
+    w = ☃;
+    x = ☃;
+    az = (s = ☃);
+    aA = (t = ☃);
+    aB = (u = ☃);
     
-    float ☃ = this.V.nextFloat() * 0.6F + 0.4F;
-    this.a = (this.h = this.V.nextFloat() * 0.2F + 0.5F);
-    this.ar = (this.as = this.at = 1.0F * ☃);
-    this.as *= 0.3F;
-    this.ar *= 0.9F;
+    float ☃ = V.nextFloat() * 0.6F + 0.4F;
+    a = (h = V.nextFloat() * 0.2F + 0.5F);
+    ar = (as = at = 1.0F * ☃);
+    as *= 0.3F;
+    ar *= 0.9F;
     
-    this.g = ((int)(Math.random() * 10.0D) + 40);
-    this.T = true;
+    g = ((int)(Math.random() * 10.0D) + 40);
+    T = true;
     k((int)(Math.random() * 8.0D));
   }
   
   public void a(bfd ☃, pk ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
-    float ☃ = (this.f + ☃) / this.g;
+    float ☃ = (f + ☃) / g;
     ☃ = 1.0F - ☃;
     ☃ *= ☃;
     ☃ = 1.0F - ☃;
-    this.h = (this.a * ☃);
+    h = (a * ☃);
     super.a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
   }
   
@@ -44,7 +44,7 @@ public class bef
   {
     int ☃ = super.b(☃);
     
-    float ☃ = this.f / this.g;
+    float ☃ = f / g;
     ☃ *= ☃;
     ☃ *= ☃;
     
@@ -60,26 +60,26 @@ public class bef
   public float c(float ☃)
   {
     float ☃ = super.c(☃);
-    float ☃ = this.f / this.g;
+    float ☃ = f / g;
     ☃ = ☃ * ☃ * ☃ * ☃;
     return ☃ * (1.0F - ☃) + ☃;
   }
   
   public void t_()
   {
-    this.p = this.s;
-    this.q = this.t;
-    this.r = this.u;
+    p = s;
+    q = t;
+    r = u;
     
-    float ☃ = this.f / this.g;
+    float ☃ = f / g;
     float ☃ = ☃;
     ☃ = -☃ + ☃ * ☃ * 2.0F;
     ☃ = 1.0F - ☃;
     
-    this.s = (this.az + this.v * ☃);
-    this.t = (this.aA + this.w * ☃ + (1.0F - ☃));
-    this.u = (this.aB + this.x * ☃);
-    if (this.f++ >= this.g) {
+    s = (az + v * ☃);
+    t = (aA + w * ☃ + (1.0F - ☃));
+    u = (aB + x * ☃);
+    if (f++ >= g) {
       J();
     }
   }

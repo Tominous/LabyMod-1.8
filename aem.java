@@ -9,76 +9,76 @@ public class aem
   public aem(int ☃, ady ☃)
   {
     super(☃);
-    this.aE = ☃;
-    a(☃.ai, true);
+    aE = ☃;
+    a(ai, true);
     
-    this.ah = (☃.ah + " M");
+    ah = (ah + " M");
     
-    this.ak = ☃.ak;
-    this.al = ☃.al;
-    this.am = ☃.am;
-    this.an = ☃.an;
-    this.ao = ☃.ao;
-    this.ap = ☃.ap;
-    this.aq = ☃.aq;
-    this.ar = ☃.ar;
-    this.ax = ☃.ax;
-    this.ay = ☃.ay;
+    ak = ak;
+    al = al;
+    am = am;
+    an = an;
+    ao = ao;
+    ap = ap;
+    aq = aq;
+    ar = ar;
+    ax = ax;
+    ay = ay;
     
-    this.au = Lists.newArrayList(☃.au);
-    this.at = Lists.newArrayList(☃.at);
-    this.aw = Lists.newArrayList(☃.aw);
-    this.av = Lists.newArrayList(☃.av);
+    au = Lists.newArrayList(au);
+    at = Lists.newArrayList(at);
+    aw = Lists.newArrayList(aw);
+    av = Lists.newArrayList(av);
     
-    this.ap = ☃.ap;
-    this.aq = ☃.aq;
+    ap = ap;
+    aq = aq;
     
-    this.an = (☃.an + 0.1F);
-    this.ao = (☃.ao + 0.2F);
+    an = (an + 0.1F);
+    ao = (ao + 0.2F);
   }
   
   public void a(adm ☃, Random ☃, cj ☃)
   {
-    this.aE.as.a(☃, ☃, this, ☃);
+    aE.as.a(☃, ☃, this, ☃);
   }
   
   public void a(adm ☃, Random ☃, ans ☃, int ☃, int ☃, double ☃)
   {
-    this.aE.a(☃, ☃, ☃, ☃, ☃, ☃);
+    aE.a(☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   public float g()
   {
-    return this.aE.g();
+    return aE.g();
   }
   
   public aoh a(Random ☃)
   {
-    return this.aE.a(☃);
+    return aE.a(☃);
   }
   
   public int c(cj ☃)
   {
-    return this.aE.c(☃);
+    return aE.c(☃);
   }
   
   public int b(cj ☃)
   {
-    return this.aE.b(☃);
+    return aE.b(☃);
   }
   
   public Class<? extends ady> l()
   {
-    return this.aE.l();
+    return aE.l();
   }
   
   public boolean a(ady ☃)
   {
-    return this.aE.a(☃);
+    return aE.a(☃);
   }
   
   public ady.b m()
   {
-    return this.aE.m();
+    return aE.m();
   }
 }

@@ -5,7 +5,7 @@ public enum aaj
   
   private aaj(a ☃, String ☃)
   {
-    this.e = ☃;
-    this.f = ☃;
+    e = ☃;
+    f = ☃;
   }
 }

@@ -10,7 +10,7 @@ public abstract class akb
   public akb()
   {
     super(arm.e);
-    alz ☃ = this.M.b();
+    alz ☃ = M.b();
     if (l()) {
       ☃ = ☃.a(b, Boolean.valueOf(false));
     } else {
@@ -127,25 +127,25 @@ public abstract class akb
     
     private a(int ☃, arn ☃, String ☃, String ☃)
     {
-      this.j = ☃;
-      this.k = ☃;
-      this.l = ☃;
-      this.m = ☃;
+      j = ☃;
+      k = ☃;
+      l = ☃;
+      m = ☃;
     }
     
     public int a()
     {
-      return this.j;
+      return j;
     }
     
     public arn c()
     {
-      return this.k;
+      return k;
     }
     
     public String toString()
     {
-      return this.l;
+      return l;
     }
     
     public static a a(int ☃)
@@ -158,12 +158,12 @@ public abstract class akb
     
     public String l()
     {
-      return this.l;
+      return l;
     }
     
     public String d()
     {
-      return this.m;
+      return m;
     }
   }
 }

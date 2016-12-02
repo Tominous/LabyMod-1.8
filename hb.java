@@ -9,24 +9,24 @@ public class hb
   
   public hb(int... ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = new int[☃.e()];
-    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
-      this.a[☃] = ☃.e();
+    a = new int[☃.e()];
+    for (int ☃ = 0; ☃ < a.length; ☃++) {
+      a[☃] = ☃.e();
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(this.a.length);
-    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
-      ☃.b(this.a[☃]);
+    ☃.b(a.length);
+    for (int ☃ = 0; ☃ < a.length; ☃++) {
+      ☃.b(a[☃]);
     }
   }
   
@@ -37,6 +37,6 @@ public class hb
   
   public int[] a()
   {
-    return this.a;
+    return a;
   }
 }

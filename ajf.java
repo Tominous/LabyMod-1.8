@@ -9,7 +9,7 @@ public class ajf
   protected ajf(boolean ☃)
   {
     super(☃);
-    j(this.M.b().a(O, cq.c).a(b, Integer.valueOf(1)).a(a, Boolean.valueOf(false)));
+    j(M.b().a(O, cq.c).a(b, Integer.valueOf(1)).a(a, Boolean.valueOf(false)));
   }
   
   public String f()
@@ -24,7 +24,7 @@ public class ajf
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (!☃.bA.e) {
+    if (!bA.e) {
       return false;
     }
     ☃.a(☃, ☃.a(b), 3);
@@ -74,7 +74,7 @@ public class ajf
   
   public void c(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (!this.N) {
+    if (!N) {
       return;
     }
     cq ☃ = (cq)☃.b(O);

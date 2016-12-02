@@ -11,7 +11,7 @@ public abstract class aot
   
   public aot(boolean ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public abstract boolean b(adm paramadm, Random paramRandom, cj paramcj);
@@ -20,7 +20,7 @@ public abstract class aot
   
   protected void a(adm ☃, cj ☃, alz ☃)
   {
-    if (this.a) {
+    if (a) {
       ☃.a(☃, ☃, 3);
     } else {
       ☃.a(☃, ☃, 2);

@@ -8,6 +8,6 @@ class adc$1
   public String a()
     throws Exception
   {
-    return this.a.l();
+    return a.l();
   }
 }

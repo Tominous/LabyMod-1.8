@@ -24,10 +24,10 @@ abstract class aqj$m
     int ☃ = 0;
     for (aqj.n ☃ : ☃)
     {
-      if ((☃.d > 0) && (☃.c < ☃.d)) {
+      if ((d > 0) && (c < d)) {
         ☃ = true;
       }
-      ☃ += ☃.b;
+      ☃ += b;
     }
     return ☃ ? ☃ : -1;
   }
@@ -46,17 +46,17 @@ abstract class aqj$m
       ☃ = ☃.nextInt(☃);
       for (aqj.n ☃ : ☃)
       {
-        ☃ -= ☃.b;
+        ☃ -= b;
         if (☃ < 0)
         {
-          if ((!☃.a(☃)) || ((☃ == ☃.b) && (!☃.e))) {
+          if ((!☃.a(☃)) || ((☃ == b) && (!e))) {
             break;
           }
           m ☃ = aqj.a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
           if (☃ != null)
           {
-            ☃.c += 1;
-            ☃.b = ☃;
+            c += 1;
+            b = ☃;
             if (!☃.a()) {
               ☃.remove(☃);
             }
@@ -70,35 +70,35 @@ abstract class aqj$m
   
   private aqt a(aqj.q ☃, List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃, int ☃, boolean ☃)
   {
-    if ((Math.abs(☃ - ☃.c().a) > 112) || (Math.abs(☃ - ☃.c().c) > 112)) {
+    if ((Math.abs(☃ - ca) > 112) || (Math.abs(☃ - cc) > 112)) {
       return aqj.b.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
     }
-    List<aqj.n> ☃ = ☃.c;
+    List<aqj.n> ☃ = c;
     if (☃) {
-      ☃ = ☃.d;
+      ☃ = d;
     }
     aqt ☃ = a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃ + 1);
     if (☃ != null)
     {
       ☃.add(☃);
-      ☃.e.add(☃);
+      e.add(☃);
     }
     return ☃;
   }
   
   protected aqt a(aqj.q ☃, List<aqt> ☃, Random ☃, int ☃, int ☃, boolean ☃)
   {
-    if (this.m != null) {
-      switch (aqj.1.a[this.m.ordinal()])
+    if (m != null) {
+      switch (aqj.1.a[m.ordinal()])
       {
       case 1: 
-        return a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.c - 1, this.m, d(), ☃);
+        return a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.c - 1, m, d(), ☃);
       case 2: 
-        return a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.f + 1, this.m, d(), ☃);
+        return a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.f + 1, m, d(), ☃);
       case 3: 
-        return a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃, this.l.c + ☃, this.m, d(), ☃);
+        return a(☃, ☃, ☃, l.a - 1, l.b + ☃, l.c + ☃, m, d(), ☃);
       case 4: 
-        return a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃, this.l.c + ☃, this.m, d(), ☃);
+        return a(☃, ☃, ☃, l.d + 1, l.b + ☃, l.c + ☃, m, d(), ☃);
       }
     }
     return null;
@@ -106,17 +106,17 @@ abstract class aqj$m
   
   protected aqt b(aqj.q ☃, List<aqt> ☃, Random ☃, int ☃, int ☃, boolean ☃)
   {
-    if (this.m != null) {
-      switch (aqj.1.a[this.m.ordinal()])
+    if (m != null) {
+      switch (aqj.1.a[m.ordinal()])
       {
       case 1: 
-        return a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃, this.l.c + ☃, cq.e, d(), ☃);
+        return a(☃, ☃, ☃, l.a - 1, l.b + ☃, l.c + ☃, cq.e, d(), ☃);
       case 2: 
-        return a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃, this.l.c + ☃, cq.e, d(), ☃);
+        return a(☃, ☃, ☃, l.a - 1, l.b + ☃, l.c + ☃, cq.e, d(), ☃);
       case 3: 
-        return a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.c - 1, cq.c, d(), ☃);
+        return a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.c - 1, cq.c, d(), ☃);
       case 4: 
-        return a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.c - 1, cq.c, d(), ☃);
+        return a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.c - 1, cq.c, d(), ☃);
       }
     }
     return null;
@@ -124,17 +124,17 @@ abstract class aqj$m
   
   protected aqt c(aqj.q ☃, List<aqt> ☃, Random ☃, int ☃, int ☃, boolean ☃)
   {
-    if (this.m != null) {
-      switch (aqj.1.a[this.m.ordinal()])
+    if (m != null) {
+      switch (aqj.1.a[m.ordinal()])
       {
       case 1: 
-        return a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃, this.l.c + ☃, cq.f, d(), ☃);
+        return a(☃, ☃, ☃, l.d + 1, l.b + ☃, l.c + ☃, cq.f, d(), ☃);
       case 2: 
-        return a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃, this.l.c + ☃, cq.f, d(), ☃);
+        return a(☃, ☃, ☃, l.d + 1, l.b + ☃, l.c + ☃, cq.f, d(), ☃);
       case 3: 
-        return a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.f + 1, cq.d, d(), ☃);
+        return a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.f + 1, cq.d, d(), ☃);
       case 4: 
-        return a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.f + 1, cq.d, d(), ☃);
+        return a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.f + 1, cq.d, d(), ☃);
       }
     }
     return null;
@@ -142,6 +142,6 @@ abstract class aqj$m
   
   protected static boolean a(aqe ☃)
   {
-    return (☃ != null) && (☃.b > 10);
+    return (☃ != null) && (b > 10);
   }
 }

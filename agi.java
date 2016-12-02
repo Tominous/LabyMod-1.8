@@ -12,7 +12,7 @@ public class agi
   public agi()
   {
     super(arm.l);
-    j(this.M.b().a(a, agi.b.a).a(b, agi.a.b).a(N, cq.c));
+    j(M.b().a(a, agi.b.a).a(b, agi.a.b).a(N, cq.c));
     c(0.0F);
     a(h);
     c("doublePlant");
@@ -132,7 +132,7 @@ public class agi
   
   public void a(adm ☃, wn ☃, cj ☃, alz ☃, akw ☃)
   {
-    if ((!☃.D) && (☃.bZ() != null) && (☃.bZ().b() == zy.be)) {
+    if ((!D) && (☃.bZ() != null) && (☃.bZ().b() == zy.be)) {
       if ((☃.b(b) == agi.a.b) && 
         (b(☃, ☃, ☃, ☃))) {
         return;
@@ -146,13 +146,13 @@ public class agi
     if (☃.b(b) == agi.a.a)
     {
       if (☃.p(☃.b()).c() == this) {
-        if (!☃.bA.d)
+        if (!bA.d)
         {
           alz ☃ = ☃.p(☃.b());
           agi.b ☃ = (agi.b)☃.b(a);
           if ((☃ == agi.b.d) || (☃ == agi.b.c))
           {
-            if (!☃.D)
+            if (!D)
             {
               if ((☃.bZ() != null) && (☃.bZ().b() == zy.be))
               {
@@ -178,7 +178,7 @@ public class agi
         }
       }
     }
-    else if ((☃.bA.d) && (☃.p(☃.a()).c() == this)) {
+    else if ((bA.d) && (☃.p(☃.a()).c() == this)) {
       ☃.a(☃.a(), afi.a.Q(), 2);
     }
     super.a(☃, ☃, ☃, ☃);
@@ -283,19 +283,19 @@ public class agi
     
     private b(int ☃, String ☃, String ☃)
     {
-      this.h = ☃;
-      this.i = ☃;
-      this.j = ☃;
+      h = ☃;
+      i = ☃;
+      j = ☃;
     }
     
     public int a()
     {
-      return this.h;
+      return h;
     }
     
     public String toString()
     {
-      return this.i;
+      return i;
     }
     
     public static b a(int ☃)
@@ -308,12 +308,12 @@ public class agi
     
     public String l()
     {
-      return this.i;
+      return i;
     }
     
     public String c()
     {
-      return this.j;
+      return j;
     }
   }
   

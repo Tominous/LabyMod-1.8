@@ -13,40 +13,40 @@ public class ib
   
   public ib(int ☃, pf ☃)
   {
-    this.a = ☃;
-    this.b = ((byte)(☃.a() & 0xFF));
-    this.c = ((byte)(☃.c() & 0xFF));
+    a = ☃;
+    b = ((byte)(☃.a() & 0xFF));
+    c = ((byte)(☃.c() & 0xFF));
     if (☃.b() > 32767) {
-      this.d = 32767;
+      d = 32767;
     } else {
-      this.d = ☃.b();
+      d = ☃.b();
     }
-    this.e = ((byte)(☃.f() ? 1 : 0));
+    e = ((byte)(☃.f() ? 1 : 0));
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.e();
-    this.b = ☃.readByte();
-    this.c = ☃.readByte();
-    this.d = ☃.e();
-    this.e = ☃.readByte();
+    a = ☃.e();
+    b = ☃.readByte();
+    c = ☃.readByte();
+    d = ☃.e();
+    e = ☃.readByte();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(this.a);
-    ☃.writeByte(this.b);
-    ☃.writeByte(this.c);
-    ☃.b(this.d);
-    ☃.writeByte(this.e);
+    ☃.b(a);
+    ☃.writeByte(b);
+    ☃.writeByte(c);
+    ☃.b(d);
+    ☃.writeByte(e);
   }
   
   public boolean a()
   {
-    return this.d == 32767;
+    return d == 32767;
   }
   
   public void a(fj ☃)
@@ -56,26 +56,26 @@ public class ib
   
   public int b()
   {
-    return this.a;
+    return a;
   }
   
   public byte c()
   {
-    return this.b;
+    return b;
   }
   
   public byte d()
   {
-    return this.c;
+    return c;
   }
   
   public int e()
   {
-    return this.d;
+    return d;
   }
   
   public boolean f()
   {
-    return this.e != 0;
+    return e != 0;
   }
 }

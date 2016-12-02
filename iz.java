@@ -10,19 +10,19 @@ public class iz
   
   public iz(UUID ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.g();
+    a = ☃.g();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(this.a);
+    ☃.a(a);
   }
   
   public void a(ic ☃)
@@ -32,6 +32,6 @@ public class iz
   
   public pk a(le ☃)
   {
-    return ☃.a(this.a);
+    return ☃.a(a);
   }
 }

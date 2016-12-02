@@ -65,10 +65,10 @@ public class p
           throw new bz("commands.achievement.alreadyHave", new Object[] { ☃.e_(), ☃.j() });
         }
         List<mq> ☃ = Lists.newArrayList();
-        while ((☃.c != null) && (!☃.A().a(☃.c)))
+        while ((c != null) && (!☃.A().a(c)))
         {
-          ☃.add(☃.c);
-          ☃ = ☃.c;
+          ☃.add(c);
+          ☃ = c;
         }
         for (mq ☃ : Lists.reverse(☃)) {
           ☃.b(☃);
@@ -96,7 +96,7 @@ public class p
             if (☃ == ☃) {
               ☃ = true;
             }
-            ☃ = ☃.c;
+            ☃ = c;
           }
           if (!☃)
           {
@@ -104,7 +104,7 @@ public class p
             while (☃ != null)
             {
               ☃.remove(☃);
-              ☃ = ☃.c;
+              ☃ = c;
             }
           }
         }
@@ -134,7 +134,7 @@ public class p
     {
       List<String> ☃ = Lists.newArrayList();
       for (mw ☃ : na.b) {
-        ☃.add(☃.e);
+        ☃.add(e);
       }
       return a(☃, ☃);
     }

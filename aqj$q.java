@@ -16,17 +16,17 @@ public class aqj$q
   {
     super(☃, ☃, ☃);
     
-    this.c = Lists.newArrayList();
+    c = Lists.newArrayList();
     for (aqj.n ☃ : aqj.b())
     {
-      ☃.c = 0;
-      this.c.add(☃);
+      c = 0;
+      c.add(☃);
     }
-    this.d = Lists.newArrayList();
+    d = Lists.newArrayList();
     for (aqj.n ☃ : aqj.c())
     {
-      ☃.c = 0;
-      this.d.add(☃);
+      c = 0;
+      d.add(☃);
     }
   }
   

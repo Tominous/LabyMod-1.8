@@ -23,26 +23,26 @@ public class DynamicTexture
     switch (size)
     {
     case 128: 
-      return this.buffer128;
+      return buffer128;
     case 256: 
-      return this.buffer256;
+      return buffer256;
     }
-    return this.buffer512;
+    return buffer512;
   }
   
   public DynamicTexture(jy location)
   {
     super(location);
-    this.buffer512 = BufferUtils.createByteBuffer(786432);
-    this.buffer256 = BufferUtils.createByteBuffer(196608);
-    this.buffer128 = BufferUtils.createByteBuffer(49152);
-    this.buffers = new ByteBuffer[] { this.buffer128, this.buffer256, this.buffer256, this.buffer512 };
+    buffer512 = BufferUtils.createByteBuffer(786432);
+    buffer256 = BufferUtils.createByteBuffer(196608);
+    buffer128 = BufferUtils.createByteBuffer(49152);
+    buffers = new ByteBuffer[] { buffer128, buffer256, buffer256, buffer512 };
     a(ave.A().Q());
   }
   
   public void a(bni par1ResourceManager)
   {
-    this.bufferedimage = new BufferedImage(512, 512, 5);
-    bml.a(b(), this.bufferedimage, false, false);
+    bufferedimage = new BufferedImage(512, 512, 5);
+    bml.a(b(), bufferedimage, false, false);
   }
 }

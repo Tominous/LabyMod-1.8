@@ -29,12 +29,12 @@ public class HttpPipelineReceiver
       HttpPipelineRequest currentRequest = null;
       try
       {
-        currentRequest = this.httpPipelineConnection.getNextRequestReceive();
+        currentRequest = httpPipelineConnection.getNextRequestReceive();
         
-        InputStream in = this.httpPipelineConnection.getInputStream();
+        InputStream in = httpPipelineConnection.getInputStream();
         HttpResponse resp = readResponse(in);
         
-        this.httpPipelineConnection.onResponseReceived(currentRequest, resp);
+        httpPipelineConnection.onResponseReceived(currentRequest, resp);
       }
       catch (InterruptedException e)
       {
@@ -42,7 +42,7 @@ public class HttpPipelineReceiver
       }
       catch (Exception e)
       {
-        this.httpPipelineConnection.onExceptionReceive(currentRequest, e);
+        httpPipelineConnection.onExceptionReceive(currentRequest, e);
       }
     }
   }

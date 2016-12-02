@@ -8,7 +8,7 @@ public class mu
   public mu(String ☃, String ☃, eu ☃, zw ☃)
   {
     super(☃ + ☃, ☃);
-    this.a = ☃;
+    a = ☃;
     
     int ☃ = zw.b(☃);
     if (☃ != 0) {
@@ -18,6 +18,6 @@ public class mu
   
   public zw a()
   {
-    return this.a;
+    return a;
   }
 }

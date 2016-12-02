@@ -15,33 +15,33 @@ public class bmo
   
   public void j()
   {
-    if (!this.a.isEmpty())
+    if (!a.isEmpty())
     {
       ave var1 = ave.A();
       double var2 = 0.0D;
-      if ((var1.f != null) && (var1.h != null))
+      if ((f != null) && (h != null))
       {
-        var2 = var1.f.c(1.0F);
-        if (!var1.f.t.d()) {
+        var2 = f.c(1.0F);
+        if (!f.t.d()) {
           var2 = Math.random();
         }
       }
-      for (double var4 = var2 - this.j; var4 < -0.5D; var4 += 1.0D) {}
+      for (double var4 = var2 - j; var4 < -0.5D; var4 += 1.0D) {}
       while (var4 >= 0.5D) {
         var4 -= 1.0D;
       }
       var4 = ns.a(var4, -1.0D, 1.0D);
-      this.k += var4 * 0.1D;
-      this.k *= 0.8D;
-      this.j += this.k;
-      for (int var6 = (int)((this.j + 1.0D) * this.a.size()) % this.a.size(); var6 < 0; var6 = (var6 + this.a.size()) % this.a.size()) {}
-      if (var6 != this.h)
+      k += var4 * 0.1D;
+      k *= 0.8D;
+      j += k;
+      for (int var6 = (int)((j + 1.0D) * a.size()) % a.size(); var6 < 0; var6 = (var6 + a.size()) % a.size()) {}
+      if (var6 != h)
       {
-        this.h = var6;
+        h = var6;
         if (Config.isShaders()) {
-          ShadersTex.uploadTexSub((int[][])this.a.get(this.h), this.f, this.g, this.d, this.e, false, false);
+          ShadersTex.uploadTexSub((int[][])a.get(h), f, g, d, e, false, false);
         } else {
-          bml.a((int[][])this.a.get(this.h), this.f, this.g, this.d, this.e, false, false);
+          bml.a((int[][])a.get(h), f, g, d, e, false, false);
         }
       }
     }

@@ -17,21 +17,21 @@ public class bfs
     if (p_78432_1_ == null) {
       return null;
     }
-    this.b = 64;
-    this.c = 64;
+    b = 64;
+    c = 64;
     
     BufferedImage srcImg = p_78432_1_;
     int srcWidth = srcImg.getWidth();
     int srcHeight = srcImg.getHeight();
     
     int k = 1;
-    while ((this.b < srcWidth) || (this.c < srcHeight))
+    while ((b < srcWidth) || (c < srcHeight))
     {
-      this.b *= 2;
-      this.c *= 2;
+      b *= 2;
+      c *= 2;
       k *= 2;
     }
-    BufferedImage var2 = new BufferedImage(this.b, this.c, 2);
+    BufferedImage var2 = new BufferedImage(b, c, 2);
     Graphics var3 = var2.getGraphics();
     var3.drawImage(p_78432_1_, 0, 0, (ImageObserver)null);
     if (p_78432_1_.getHeight() == 32 * k)
@@ -50,7 +50,7 @@ public class bfs
       var3.drawImage(var2, 48 * k, 52 * k, 44 * k, 64 * k, 52 * k, 20 * k, 56 * k, 32 * k, (ImageObserver)null);
     }
     var3.dispose();
-    this.a = ((DataBufferInt)var2.getRaster().getDataBuffer()).getData();
+    a = ((DataBufferInt)var2.getRaster().getDataBuffer()).getData();
     
     b(0, 0, 32 * k, 16 * k);
     a(32 * k, 0, 64 * k, 32 * k);
@@ -71,7 +71,7 @@ public class bfs
     if (!c(p_78434_1_, p_78434_2_, p_78434_3_, p_78434_4_)) {
       for (int var5 = p_78434_1_; var5 < p_78434_3_; var5++) {
         for (int var6 = p_78434_2_; var6 < p_78434_4_; var6++) {
-          this.a[(var5 + var6 * this.b)] &= 0xFFFFFF;
+          a[(var5 + var6 * b)] &= 0xFFFFFF;
         }
       }
     }
@@ -81,7 +81,7 @@ public class bfs
   {
     for (int var5 = p_78433_1_; var5 < p_78433_3_; var5++) {
       for (int var6 = p_78433_2_; var6 < p_78433_4_; var6++) {
-        this.a[(var5 + var6 * this.b)] |= 0xFF000000;
+        a[(var5 + var6 * b)] |= 0xFF000000;
       }
     }
   }
@@ -91,7 +91,7 @@ public class bfs
     for (int var5 = p_78435_1_; var5 < p_78435_3_; var5++) {
       for (int var6 = p_78435_2_; var6 < p_78435_4_; var6++)
       {
-        int var7 = this.a[(var5 + var6 * this.b)];
+        int var7 = a[(var5 + var6 * b)];
         if ((var7 >> 24 & 0xFF) < 128) {
           return true;
         }

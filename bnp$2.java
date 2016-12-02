@@ -5,23 +5,23 @@ import java.awt.image.BufferedImage;
 class bnp$2
   implements bfm
 {
-  bnp$2(bnp parambnp, bfm parambfm, bnp.a parama, MinecraftProfileTexture.Type paramType, jy paramjy, MinecraftProfileTexture paramMinecraftProfileTexture) {}
+  bnp$2(bnp this$0, bfm parambfm, bnp.a parama, MinecraftProfileTexture.Type paramType, jy paramjy, MinecraftProfileTexture paramMinecraftProfileTexture) {}
   
-  public BufferedImage a(BufferedImage ☃)
+  public BufferedImage a(BufferedImage image)
   {
-    if (this.a != null) {
-      ☃ = this.a.a(☃);
+    if (val$iimagebuffer != null) {
+      image = val$iimagebuffer.a(image);
     }
-    return ☃;
+    return image;
   }
   
   public void a()
   {
-    if (this.a != null) {
-      this.a.a();
+    if (val$iimagebuffer != null) {
+      val$iimagebuffer.a();
     }
-    if (this.b != null) {
-      this.b.a(this.c, this.d, this.e);
+    if (val$skinAvailableCallback != null) {
+      val$skinAvailableCallback.a(val$p_152789_2_, val$resourcelocation, val$profileTexture);
     }
   }
 }

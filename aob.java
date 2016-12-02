@@ -21,15 +21,15 @@ public class aob
   
   public aob(adm ☃, long ☃)
   {
-    this.l = ☃;
+    l = ☃;
     
-    this.h = new Random(☃);
-    this.i = new arc(this.h, 16);
-    this.j = new arc(this.h, 16);
-    this.k = new arc(this.h, 8);
+    h = new Random(☃);
+    i = new arc(h, 16);
+    j = new arc(h, 16);
+    k = new arc(h, 8);
     
-    this.a = new arc(this.h, 10);
-    this.b = new arc(this.h, 16);
+    a = new arc(h, 10);
+    b = new arc(h, 16);
   }
   
   public void a(int ☃, int ☃, ans ☃)
@@ -39,21 +39,21 @@ public class aob
     int ☃ = ☃ + 1;
     int ☃ = 33;
     int ☃ = ☃ + 1;
-    this.m = a(this.m, ☃ * ☃, 0, ☃ * ☃, ☃, ☃, ☃);
+    m = a(m, ☃ * ☃, 0, ☃ * ☃, ☃, ☃, ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
       for (int ☃ = 0; ☃ < ☃; ☃++) {
         for (int ☃ = 0; ☃ < 32; ☃++)
         {
           double ☃ = 0.25D;
-          double ☃ = this.m[(((☃ + 0) * ☃ + ☃ + 0) * ☃ + ☃ + 0)];
-          double ☃ = this.m[(((☃ + 0) * ☃ + ☃ + 1) * ☃ + ☃ + 0)];
-          double ☃ = this.m[(((☃ + 1) * ☃ + ☃ + 0) * ☃ + ☃ + 0)];
-          double ☃ = this.m[(((☃ + 1) * ☃ + ☃ + 1) * ☃ + ☃ + 0)];
+          double ☃ = m[(((☃ + 0) * ☃ + ☃ + 0) * ☃ + ☃ + 0)];
+          double ☃ = m[(((☃ + 0) * ☃ + ☃ + 1) * ☃ + ☃ + 0)];
+          double ☃ = m[(((☃ + 1) * ☃ + ☃ + 0) * ☃ + ☃ + 0)];
+          double ☃ = m[(((☃ + 1) * ☃ + ☃ + 1) * ☃ + ☃ + 0)];
           
-          double ☃ = (this.m[(((☃ + 0) * ☃ + ☃ + 0) * ☃ + ☃ + 1)] - ☃) * ☃;
-          double ☃ = (this.m[(((☃ + 0) * ☃ + ☃ + 1) * ☃ + ☃ + 1)] - ☃) * ☃;
-          double ☃ = (this.m[(((☃ + 1) * ☃ + ☃ + 0) * ☃ + ☃ + 1)] - ☃) * ☃;
-          double ☃ = (this.m[(((☃ + 1) * ☃ + ☃ + 1) * ☃ + ☃ + 1)] - ☃) * ☃;
+          double ☃ = (m[(((☃ + 0) * ☃ + ☃ + 0) * ☃ + ☃ + 1)] - ☃) * ☃;
+          double ☃ = (m[(((☃ + 0) * ☃ + ☃ + 1) * ☃ + ☃ + 1)] - ☃) * ☃;
+          double ☃ = (m[(((☃ + 1) * ☃ + ☃ + 0) * ☃ + ☃ + 1)] - ☃) * ☃;
+          double ☃ = (m[(((☃ + 1) * ☃ + ☃ + 1) * ☃ + ☃ + 1)] - ☃) * ☃;
           for (int ☃ = 0; ☃ < 4; ☃++)
           {
             double ☃ = 0.125D;
@@ -136,18 +136,18 @@ public class aob
   
   public amy d(int ☃, int ☃)
   {
-    this.h.setSeed(☃ * 341873128712L + ☃ * 132897987541L);
+    h.setSeed(☃ * 341873128712L + ☃ * 132897987541L);
     
     ans ☃ = new ans();
-    this.n = this.l.v().b(this.n, ☃ * 16, ☃ * 16, 16, 16);
+    n = l.v().b(n, ☃ * 16, ☃ * 16, 16, 16);
     
     a(☃, ☃, ☃);
     a(☃);
     
-    amy ☃ = new amy(this.l, ☃, ☃, ☃);
+    amy ☃ = new amy(l, ☃, ☃, ☃);
     byte[] ☃ = ☃.k();
     for (int ☃ = 0; ☃ < ☃.length; ☃++) {
-      ☃[☃] = ((byte)this.n[☃].az);
+      ☃[☃] = ((byte)n[☃].az);
     }
     ☃.b();
     
@@ -162,14 +162,14 @@ public class aob
     double ☃ = 684.412D;
     double ☃ = 684.412D;
     
-    this.f = this.a.a(this.f, ☃, ☃, ☃, ☃, 1.121D, 1.121D, 0.5D);
-    this.g = this.b.a(this.g, ☃, ☃, ☃, ☃, 200.0D, 200.0D, 0.5D);
+    f = a.a(f, ☃, ☃, ☃, ☃, 1.121D, 1.121D, 0.5D);
+    g = b.a(g, ☃, ☃, ☃, ☃, 200.0D, 200.0D, 0.5D);
     
     ☃ *= 2.0D;
     
-    this.c = this.k.a(this.c, ☃, ☃, ☃, ☃, ☃, ☃, ☃ / 80.0D, ☃ / 160.0D, ☃ / 80.0D);
-    this.d = this.i.a(this.d, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
-    this.e = this.j.a(this.e, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
+    c = k.a(c, ☃, ☃, ☃, ☃, ☃, ☃, ☃ / 80.0D, ☃ / 160.0D, ☃ / 80.0D);
+    d = i.a(d, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
+    e = j.a(e, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
     
     int ☃ = 0;
     for (int ☃ = 0; ☃ < ☃; ☃++) {
@@ -187,10 +187,10 @@ public class aob
         for (int ☃ = 0; ☃ < ☃; ☃++)
         {
           double ☃ = 0.0D;
-          double ☃ = this.d[☃] / 512.0D;
-          double ☃ = this.e[☃] / 512.0D;
+          double ☃ = d[☃] / 512.0D;
+          double ☃ = e[☃] / 512.0D;
           
-          double ☃ = (this.c[☃] / 10.0D + 1.0D) / 2.0D;
+          double ☃ = (c[☃] / 10.0D + 1.0D) / 2.0D;
           if (☃ < 0.0D) {
             ☃ = ☃;
           } else if (☃ > 1.0D) {
@@ -233,7 +233,7 @@ public class aob
     agr.N = true;
     
     cj ☃ = new cj(☃ * 16, 0, ☃ * 16);
-    this.l.b(☃.a(16, 0, 16)).a(this.l, this.l.s, ☃);
+    l.b(☃.a(16, 0, 16)).a(l, l.s, ☃);
     
     agr.N = false;
   }
@@ -267,7 +267,7 @@ public class aob
   
   public List<ady.c> a(pt ☃, cj ☃)
   {
-    return this.l.b(☃).a(☃);
+    return l.b(☃).a(☃);
   }
   
   public cj a(adm ☃, String ☃, cj ☃)

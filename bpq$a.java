@@ -6,23 +6,23 @@ public class bpq$a
   
   public bpq$a(String ☃, String ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ave.J();
+    a = ☃;
+    b = ☃;
+    c = ave.J();
   }
   
   public String a()
   {
-    return this.a;
+    return a;
   }
   
   public String b()
   {
-    return this.b;
+    return b;
   }
   
   public void c()
   {
-    this.c = ave.J();
+    c = ave.J();
   }
 }

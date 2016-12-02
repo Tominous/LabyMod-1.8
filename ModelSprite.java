@@ -30,33 +30,33 @@ public class ModelSprite
     this.sizeZ = sizeZ;
     this.sizeAdd = sizeAdd;
     
-    this.minU = (textureOffsetX / modelRenderer.a);
-    this.minV = (textureOffsetY / modelRenderer.b);
-    this.maxU = ((textureOffsetX + sizeX) / modelRenderer.a);
-    this.maxV = ((textureOffsetY + sizeY) / modelRenderer.b);
+    minU = (textureOffsetX / a);
+    minV = (textureOffsetY / b);
+    maxU = ((textureOffsetX + sizeX) / a);
+    maxV = ((textureOffsetY + sizeY) / b);
   }
   
   public void render(bfx tessellator, float scale)
   {
-    bfl.b(this.posX * scale, this.posY * scale, this.posZ * scale);
+    bfl.b(posX * scale, posY * scale, posZ * scale);
     
-    float rMinU = this.minU;
-    float rMaxU = this.maxU;
-    float rMinV = this.minV;
-    float rMaxV = this.maxV;
-    if (this.modelRenderer.i)
+    float rMinU = minU;
+    float rMaxU = maxU;
+    float rMinV = minV;
+    float rMaxV = maxV;
+    if (modelRenderer.i)
     {
-      rMinU = this.maxU;
-      rMaxU = this.minU;
+      rMinU = maxU;
+      rMaxU = minU;
     }
-    if (this.modelRenderer.mirrorV)
+    if (modelRenderer.mirrorV)
     {
-      rMinV = this.maxV;
-      rMaxV = this.minV;
+      rMinV = maxV;
+      rMaxV = minV;
     }
-    renderItemIn2D(tessellator, rMinU, rMinV, rMaxU, rMaxV, this.sizeX, this.sizeY, scale * this.sizeZ, this.modelRenderer.a, this.modelRenderer.b);
+    renderItemIn2D(tessellator, rMinU, rMinV, rMaxU, rMaxV, sizeX, sizeY, scale * sizeZ, modelRenderer.a, modelRenderer.b);
     
-    bfl.b(-this.posX * scale, -this.posY * scale, -this.posZ * scale);
+    bfl.b(-posX * scale, -posY * scale, -posZ * scale);
   }
   
   public static void renderItemIn2D(bfx tess, float minU, float minV, float maxU, float maxV, int sizeX, int sizeY, float width, float texWidth, float texHeight)

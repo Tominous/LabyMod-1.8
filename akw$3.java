@@ -8,7 +8,7 @@ class akw$3
   public String a()
     throws Exception
   {
-    alz ☃ = this.a.b.p(this.a.c);
+    alz ☃ = a.b.p(a.c);
     int ☃ = ☃.c().c(☃);
     if (☃ < 0) {
       return "Unknown? (Got " + ☃ + ")";

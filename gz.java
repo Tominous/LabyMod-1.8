@@ -17,24 +17,24 @@ public class gz
   
   public gz(gz.a ☃, lf... ☃)
   {
-    this.a = ☃;
+    a = ☃;
     for (lf ☃ : ☃) {
-      this.b.add(new gz.b(☃.cd(), ☃.h, ☃.c.b(), ☃.E()));
+      b.add(new gz.b(☃.cd(), h, c.b(), ☃.E()));
     }
   }
   
   public gz(gz.a ☃, Iterable<lf> ☃)
   {
-    this.a = ☃;
+    a = ☃;
     for (lf ☃ : ☃) {
-      this.b.add(new gz.b(☃.cd(), ☃.h, ☃.c.b(), ☃.E()));
+      b.add(new gz.b(☃.cd(), h, c.b(), ☃.E()));
     }
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ((gz.a)☃.a(gz.a.class));
+    a = ((gz.a)☃.a(gz.a.class));
     
     int ☃ = ☃.e();
     for (int ☃ = 0; ☃ < ☃; ☃++)
@@ -43,7 +43,7 @@ public class gz
       int ☃ = 0;
       adp.a ☃ = null;
       eu ☃ = null;
-      switch (gz.1.a[this.a.ordinal()])
+      switch (gz.1.a[a.ordinal()])
       {
       case 1: 
         ☃ = new GameProfile(☃.g(), ☃.c(16));
@@ -81,18 +81,18 @@ public class gz
       case 5: 
         ☃ = new GameProfile(☃.g(), null);
       }
-      this.b.add(new gz.b(☃, ☃, ☃, ☃));
+      b.add(new gz.b(☃, ☃, ☃, ☃));
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(this.a);
+    ☃.a(a);
     
-    ☃.b(this.b.size());
-    for (gz.b ☃ : this.b) {
-      switch (gz.1.a[this.a.ordinal()])
+    ☃.b(b.size());
+    for (gz.b ☃ : b) {
+      switch (gz.1.a[a.ordinal()])
       {
       case 1: 
         ☃.a(☃.a().getId());
@@ -157,17 +157,17 @@ public class gz
   
   public List<gz.b> a()
   {
-    return this.b;
+    return b;
   }
   
   public gz.a b()
   {
-    return this.a;
+    return a;
   }
   
   public String toString()
   {
-    return Objects.toStringHelper(this).add("action", this.a).add("entries", this.b).toString();
+    return Objects.toStringHelper(this).add("action", a).add("entries", b).toString();
   }
   
   public class b
@@ -179,35 +179,35 @@ public class gz
     
     public b(GameProfile ☃, int ☃, adp.a ☃, eu ☃)
     {
-      this.d = ☃;
-      this.b = ☃;
-      this.c = ☃;
-      this.e = ☃;
+      d = ☃;
+      b = ☃;
+      c = ☃;
+      e = ☃;
     }
     
     public GameProfile a()
     {
-      return this.d;
+      return d;
     }
     
     public int b()
     {
-      return this.b;
+      return b;
     }
     
     public adp.a c()
     {
-      return this.c;
+      return c;
     }
     
     public eu d()
     {
-      return this.e;
+      return e;
     }
     
     public String toString()
     {
-      return Objects.toStringHelper(this).add("latency", this.b).add("gameMode", this.c).add("profile", this.d).add("displayName", this.e == null ? null : eu.a.a(this.e)).toString();
+      return Objects.toStringHelper(this).add("latency", b).add("gameMode", c).add("profile", d).add("displayName", e == null ? null : eu.a.a(e)).toString();
     }
   }
   

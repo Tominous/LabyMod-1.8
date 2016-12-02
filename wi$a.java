@@ -8,16 +8,16 @@ class wi$a
   
   public wi$a(zw ☃, wi.g ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public void a(ada ☃, Random ☃)
   {
     int ☃ = 1;
-    if (this.b != null) {
-      ☃ = this.b.a(☃);
+    if (b != null) {
+      ☃ = b.a(☃);
     }
-    ☃.add(new acz(new zx(this.a, ☃, 0), zy.bO));
+    ☃.add(new acz(new zx(a, ☃, 0), zy.bO));
   }
 }

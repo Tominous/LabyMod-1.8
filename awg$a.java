@@ -6,11 +6,11 @@ public class awg$a
   public awg$a(int ☃, String ☃, boolean ☃, boolean ☃)
   {
     super(☃, ☃, ☃);
-    this.a = ☃;
+    a = ☃;
   }
   
   public boolean a()
   {
-    return this.a;
+    return a;
   }
 }

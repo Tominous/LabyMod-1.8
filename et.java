@@ -8,18 +8,18 @@ public class et
   
   public et(et.a ☃, String ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public et.a a()
   {
-    return this.a;
+    return a;
   }
   
   public String b()
   {
-    return this.b;
+    return b;
   }
   
   public boolean equals(Object ☃)
@@ -31,10 +31,10 @@ public class et
       return false;
     }
     et ☃ = (et)☃;
-    if (this.a != ☃.a) {
+    if (a != a) {
       return false;
     }
-    if (this.b != null ? !this.b.equals(☃.b) : ☃.b != null) {
+    if (b != null ? !b.equals(b) : b != null) {
       return false;
     }
     return true;
@@ -42,13 +42,13 @@ public class et
   
   public String toString()
   {
-    return "ClickEvent{action=" + this.a + ", value='" + this.b + '\'' + '}';
+    return "ClickEvent{action=" + a + ", value='" + b + '\'' + '}';
   }
   
   public int hashCode()
   {
-    int ☃ = this.a.hashCode();
-    ☃ = 31 * ☃ + (this.b != null ? this.b.hashCode() : 0);
+    int ☃ = a.hashCode();
+    ☃ = 31 * ☃ + (b != null ? b.hashCode() : 0);
     return ☃;
   }
   
@@ -60,18 +60,18 @@ public class et
     
     private a(String ☃, boolean ☃)
     {
-      this.i = ☃;
-      this.h = ☃;
+      i = ☃;
+      h = ☃;
     }
     
     public boolean a()
     {
-      return this.h;
+      return h;
     }
     
     public String b()
     {
-      return this.i;
+      return i;
     }
     
     static

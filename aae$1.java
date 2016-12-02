@@ -8,9 +8,9 @@ class aae$1
   public String a(zx ☃)
   {
     int ☃ = ☃.i();
-    if ((☃ < 0) || (☃ >= this.a.length)) {
+    if ((☃ < 0) || (☃ >= a.length)) {
       ☃ = 0;
     }
-    return this.a[☃];
+    return a[☃];
   }
 }

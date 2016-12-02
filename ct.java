@@ -14,31 +14,31 @@ public class ct
   
   public void a(Object key, int value)
   {
-    this.a.put(key, Integer.valueOf(value));
-    while (this.b.size() <= value) {
-      this.b.add((Object)null);
+    a.put(key, Integer.valueOf(value));
+    while (b.size() <= value) {
+      b.add((Object)null);
     }
-    this.b.set(value, key);
+    b.set(value, key);
   }
   
   public int b(Object key)
   {
-    Integer var2 = (Integer)this.a.get(key);
+    Integer var2 = (Integer)a.get(key);
     return var2 == null ? -1 : var2.intValue();
   }
   
   public final Object a(int value)
   {
-    return (value >= 0) && (value < this.b.size()) ? this.b.get(value) : null;
+    return (value >= 0) && (value < b.size()) ? b.get(value) : null;
   }
   
   public Iterator iterator()
   {
-    return Iterators.filter(this.b.iterator(), Predicates.notNull());
+    return Iterators.filter(b.iterator(), Predicates.notNull());
   }
   
   public List getObjectList()
   {
-    return this.b;
+    return b;
   }
 }

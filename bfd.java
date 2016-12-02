@@ -38,10 +38,10 @@ public class bfd
     if (Config.isShaders()) {
       p_i46275_1_ *= 2;
     }
-    this.a = avd.c(p_i46275_1_ * 4);
-    this.b = this.a.asIntBuffer();
-    this.c = this.a.asShortBuffer();
-    this.d = this.a.asFloatBuffer();
+    a = avd.c(p_i46275_1_ * 4);
+    b = a.asIntBuffer();
+    c = a.asShortBuffer();
+    d = a.asFloatBuffer();
     
     SVertexBuilder.initVertexBuilder(this);
   }
@@ -51,40 +51,40 @@ public class bfd
     if (Config.isShaders()) {
       p_178983_1_ *= 2;
     }
-    if (p_178983_1_ > this.b.remaining())
+    if (p_178983_1_ > b.remaining())
     {
-      int var2 = this.a.capacity();
+      int var2 = a.capacity();
       int var3 = var2 % 2097152;
-      int var4 = var3 + (((this.b.position() + p_178983_1_) * 4 - var3) / 2097152 + 1) * 2097152;
+      int var4 = var3 + (((b.position() + p_178983_1_) * 4 - var3) / 2097152 + 1) * 2097152;
       LogManager.getLogger().warn("Needed to grow BufferBuilder buffer: Old size " + var2 + " bytes, new size " + var4 + " bytes.");
-      int var5 = this.b.position();
+      int var5 = b.position();
       ByteBuffer var6 = avd.c(var4);
-      this.a.position(0);
-      var6.put(this.a);
+      a.position(0);
+      var6.put(a);
       var6.rewind();
-      this.a = var6;
+      a = var6;
       
-      this.d = this.a.asFloatBuffer();
-      this.b = this.a.asIntBuffer();
-      this.b.position(var5);
-      this.c = this.a.asShortBuffer();
-      this.c.position(var5 << 1);
-      if (this.quadSprites != null)
+      d = a.asFloatBuffer();
+      b = a.asIntBuffer();
+      b.position(var5);
+      c = a.asShortBuffer();
+      c.position(var5 << 1);
+      if (quadSprites != null)
       {
-        bmi[] sprites = this.quadSprites;
+        bmi[] sprites = quadSprites;
         int quadSize = getBufferQuadSize();
-        this.quadSprites = new bmi[quadSize];
-        System.arraycopy(sprites, 0, this.quadSprites, 0, Math.min(sprites.length, this.quadSprites.length));
+        quadSprites = new bmi[quadSize];
+        System.arraycopy(sprites, 0, quadSprites, 0, Math.min(sprites.length, quadSprites.length));
       }
     }
   }
   
   public void a(float p_500120_1_, float p_500120_2_, float p_500120_3_)
   {
-    int var4 = this.e / 4;
+    int var4 = e / 4;
     float[] var5 = new float[var4];
     for (int var6 = 0; var6 < var4; var6++) {
-      var5[var6] = a(this.d, (float)(p_500120_1_ + this.j), (float)(p_500120_2_ + this.k), (float)(p_500120_3_ + this.l), this.m.f(), var6 * this.m.g());
+      var5[var6] = a(d, (float)(p_500120_1_ + j), (float)(p_500120_2_ + k), (float)(p_500120_3_ + l), m.f(), var6 * m.g());
     }
     Integer[] var15 = new Integer[var4];
     for (int var7 = 0; var7 < var15.length; var7++) {
@@ -92,71 +92,71 @@ public class bfd
     }
     Arrays.sort(var15, new bfd.1(this, var5));
     BitSet var16 = new BitSet();
-    int var8 = this.m.g();
+    int var8 = m.g();
     int[] var9 = new int[var8];
     for (int var10 = 0; (var10 = var16.nextClearBit(var10)) < var15.length; var10++)
     {
       int var11 = var15[var10].intValue();
       if (var11 != var10)
       {
-        this.b.limit(var11 * var8 + var8);
-        this.b.position(var11 * var8);
-        this.b.get(var9);
+        b.limit(var11 * var8 + var8);
+        b.position(var11 * var8);
+        b.get(var9);
         int var12 = var11;
         for (int var13 = var15[var11].intValue(); var12 != var10; var13 = var15[var13].intValue())
         {
-          this.b.limit(var13 * var8 + var8);
-          this.b.position(var13 * var8);
-          IntBuffer var14 = this.b.slice();
-          this.b.limit(var12 * var8 + var8);
-          this.b.position(var12 * var8);
-          this.b.put(var14);
+          b.limit(var13 * var8 + var8);
+          b.position(var13 * var8);
+          IntBuffer var14 = b.slice();
+          b.limit(var12 * var8 + var8);
+          b.position(var12 * var8);
+          b.put(var14);
           var16.set(var12);
           var12 = var13;
         }
-        this.b.limit(var10 * var8 + var8);
-        this.b.position(var10 * var8);
-        this.b.put(var9);
+        b.limit(var10 * var8 + var8);
+        b.position(var10 * var8);
+        b.put(var9);
       }
       var16.set(var10);
     }
-    if (this.quadSprites != null)
+    if (quadSprites != null)
     {
-      bmi[] quadSpritesSorted = new bmi[this.e / 4];
-      int quadStep = this.m.f() / 4 * 4;
+      bmi[] quadSpritesSorted = new bmi[e / 4];
+      int quadStep = m.f() / 4 * 4;
       for (int i = 0; i < var15.length; i++)
       {
         int indexQuad = var15[i].intValue();
         int indexQuadSorted = i;
-        quadSpritesSorted[indexQuadSorted] = this.quadSprites[indexQuad];
+        quadSpritesSorted[indexQuadSorted] = quadSprites[indexQuad];
       }
-      System.arraycopy(quadSpritesSorted, 0, this.quadSprites, 0, quadSpritesSorted.length);
+      System.arraycopy(quadSpritesSorted, 0, quadSprites, 0, quadSpritesSorted.length);
     }
   }
   
   public bfd.a a()
   {
-    this.b.rewind();
+    b.rewind();
     int var1 = j();
-    this.b.limit(var1);
+    b.limit(var1);
     int[] var2 = new int[var1];
-    this.b.get(var2);
-    this.b.limit(this.b.capacity());
-    this.b.position(var1);
+    b.get(var2);
+    b.limit(b.capacity());
+    b.position(var1);
     
     bmi[] quadSpritesCopy = null;
-    if (this.quadSprites != null)
+    if (quadSprites != null)
     {
-      int countQuads = this.e / 4;
+      int countQuads = e / 4;
       quadSpritesCopy = new bmi[countQuads];
-      System.arraycopy(this.quadSprites, 0, quadSpritesCopy, 0, countQuads);
+      System.arraycopy(quadSprites, 0, quadSpritesCopy, 0, countQuads);
     }
-    return new bfd.a(var2, new bmu(this.m), quadSpritesCopy);
+    return new bfd.a(var2, new bmu(m), quadSpritesCopy);
   }
   
   public int j()
   {
-    return this.e * this.m.f();
+    return e * m.f();
   }
   
   private static float a(FloatBuffer p_500127_0_, float p_500127_1_, float p_500127_2_, float p_500127_3_, int p_500127_4_, int p_500127_5_)
@@ -181,92 +181,92 @@ public class bfd
   
   public void a(bfd.a p_500124_1_)
   {
-    this.b.clear();
+    b.clear();
     b(p_500124_1_.a().length);
-    this.b.put(p_500124_1_.a());
-    this.e = p_500124_1_.b();
-    this.m = new bmu(p_500124_1_.c());
-    if (p_500124_1_.stateQuadSprites != null)
+    b.put(p_500124_1_.a());
+    e = p_500124_1_.b();
+    m = new bmu(p_500124_1_.c());
+    if (stateQuadSprites != null)
     {
-      if (this.quadSprites == null) {
-        this.quadSprites = new bmi[getBufferQuadSize()];
+      if (quadSprites == null) {
+        quadSprites = new bmi[getBufferQuadSize()];
       }
-      bmi[] src = p_500124_1_.stateQuadSprites;
-      System.arraycopy(src, 0, this.quadSprites, 0, src.length);
+      bmi[] src = stateQuadSprites;
+      System.arraycopy(src, 0, quadSprites, 0, src.length);
     }
     else
     {
-      this.quadSprites = null;
+      quadSprites = null;
     }
   }
   
   public void b()
   {
-    this.e = 0;
-    this.f = null;
-    this.g = 0;
+    e = 0;
+    f = null;
+    g = 0;
     
-    this.quadSprite = null;
+    quadSprite = null;
   }
   
   public void a(int p_500126_1_, bmu p_500126_2_)
   {
-    if (this.n) {
+    if (n) {
       throw new IllegalStateException("Already building!");
     }
-    this.n = true;
+    n = true;
     b();
-    this.i = p_500126_1_;
-    this.m = p_500126_2_;
-    this.f = p_500126_2_.c(this.g);
-    this.h = false;
-    this.a.limit(this.a.capacity());
+    i = p_500126_1_;
+    m = p_500126_2_;
+    f = p_500126_2_.c(g);
+    h = false;
+    a.limit(a.capacity());
     if (Config.isShaders()) {
       SVertexBuilder.endSetVertexFormat(this);
     }
     if (Config.isMultiTexture())
     {
-      if (this.blockLayer != null) {
-        if (this.quadSprites == null) {
-          this.quadSprites = new bmi[getBufferQuadSize()];
+      if (blockLayer != null) {
+        if (quadSprites == null) {
+          quadSprites = new bmi[getBufferQuadSize()];
         }
       }
     }
     else {
-      this.quadSprites = null;
+      quadSprites = null;
     }
   }
   
   public bfd a(double p_500127_1_, double p_500127_3_)
   {
-    if ((this.quadSprite != null) && (this.quadSprites != null))
+    if ((quadSprite != null) && (quadSprites != null))
     {
-      p_500127_1_ = this.quadSprite.toSingleU((float)p_500127_1_);
-      p_500127_3_ = this.quadSprite.toSingleV((float)p_500127_3_);
+      p_500127_1_ = quadSprite.toSingleU((float)p_500127_1_);
+      p_500127_3_ = quadSprite.toSingleV((float)p_500127_3_);
       
-      this.quadSprites[(this.e / 4)] = this.quadSprite;
+      quadSprites[(e / 4)] = quadSprite;
     }
-    int var5 = this.e * this.m.g() + this.m.d(this.g);
-    switch (bfd.2.a[this.f.a().ordinal()])
+    int var5 = e * m.g() + m.d(g);
+    switch (bfd.2.a[f.a().ordinal()])
     {
     case 1: 
-      this.a.putFloat(var5, (float)p_500127_1_);
-      this.a.putFloat(var5 + 4, (float)p_500127_3_);
+      a.putFloat(var5, (float)p_500127_1_);
+      a.putFloat(var5 + 4, (float)p_500127_3_);
       break;
     case 2: 
     case 3: 
-      this.a.putInt(var5, (int)p_500127_1_);
-      this.a.putInt(var5 + 4, (int)p_500127_3_);
+      a.putInt(var5, (int)p_500127_1_);
+      a.putInt(var5 + 4, (int)p_500127_3_);
       break;
     case 4: 
     case 5: 
-      this.a.putShort(var5, (short)(int)p_500127_3_);
-      this.a.putShort(var5 + 2, (short)(int)p_500127_1_);
+      a.putShort(var5, (short)(int)p_500127_3_);
+      a.putShort(var5 + 2, (short)(int)p_500127_1_);
       break;
     case 6: 
     case 7: 
-      this.a.put(var5, (byte)(int)p_500127_3_);
-      this.a.put(var5 + 1, (byte)(int)p_500127_1_);
+      a.put(var5, (byte)(int)p_500127_3_);
+      a.put(var5 + 1, (byte)(int)p_500127_1_);
     }
     k();
     return this;
@@ -274,27 +274,27 @@ public class bfd
   
   public bfd a(int p_500128_1_, int p_500128_2_)
   {
-    int var3 = this.e * this.m.g() + this.m.d(this.g);
-    switch (bfd.2.a[this.f.a().ordinal()])
+    int var3 = e * m.g() + m.d(g);
+    switch (bfd.2.a[f.a().ordinal()])
     {
     case 1: 
-      this.a.putFloat(var3, p_500128_1_);
-      this.a.putFloat(var3 + 4, p_500128_2_);
+      a.putFloat(var3, p_500128_1_);
+      a.putFloat(var3 + 4, p_500128_2_);
       break;
     case 2: 
     case 3: 
-      this.a.putInt(var3, p_500128_1_);
-      this.a.putInt(var3 + 4, p_500128_2_);
+      a.putInt(var3, p_500128_1_);
+      a.putInt(var3 + 4, p_500128_2_);
       break;
     case 4: 
     case 5: 
-      this.a.putShort(var3, (short)p_500128_2_);
-      this.a.putShort(var3 + 2, (short)p_500128_1_);
+      a.putShort(var3, (short)p_500128_2_);
+      a.putShort(var3 + 2, (short)p_500128_1_);
       break;
     case 6: 
     case 7: 
-      this.a.put(var3, (byte)p_500128_2_);
-      this.a.put(var3 + 1, (byte)p_500128_1_);
+      a.put(var3, (byte)p_500128_2_);
+      a.put(var3 + 1, (byte)p_500128_1_);
     }
     k();
     return this;
@@ -302,41 +302,41 @@ public class bfd
   
   public void a(int p_178962_1_, int p_178962_2_, int p_178962_3_, int p_178962_4_)
   {
-    int var5 = (this.e - 4) * this.m.f() + this.m.b(1) / 4;
-    int var6 = this.m.g() >> 2;
-    this.b.put(var5, p_178962_1_);
-    this.b.put(var5 + var6, p_178962_2_);
-    this.b.put(var5 + var6 * 2, p_178962_3_);
-    this.b.put(var5 + var6 * 3, p_178962_4_);
+    int var5 = (e - 4) * m.f() + m.b(1) / 4;
+    int var6 = m.g() >> 2;
+    b.put(var5, p_178962_1_);
+    b.put(var5 + var6, p_178962_2_);
+    b.put(var5 + var6 * 2, p_178962_3_);
+    b.put(var5 + var6 * 3, p_178962_4_);
   }
   
   public void a(double p_178987_1_, double p_178987_3_, double p_178987_5_)
   {
-    int var7 = this.m.f();
-    int var8 = (this.e - 4) * var7;
+    int var7 = m.f();
+    int var8 = (e - 4) * var7;
     for (int var9 = 0; var9 < 4; var9++)
     {
       int var10 = var8 + var9 * var7;
       int var11 = var10 + 1;
       int var12 = var11 + 1;
-      this.b.put(var10, Float.floatToRawIntBits((float)(p_178987_1_ + this.j) + Float.intBitsToFloat(this.b.get(var10))));
-      this.b.put(var11, Float.floatToRawIntBits((float)(p_178987_3_ + this.k) + Float.intBitsToFloat(this.b.get(var11))));
-      this.b.put(var12, Float.floatToRawIntBits((float)(p_178987_5_ + this.l) + Float.intBitsToFloat(this.b.get(var12))));
+      b.put(var10, Float.floatToRawIntBits((float)(p_178987_1_ + j) + Float.intBitsToFloat(b.get(var10))));
+      b.put(var11, Float.floatToRawIntBits((float)(p_178987_3_ + k) + Float.intBitsToFloat(b.get(var11))));
+      b.put(var12, Float.floatToRawIntBits((float)(p_178987_5_ + l) + Float.intBitsToFloat(b.get(var12))));
     }
   }
   
   private int c(int p_78909_1_)
   {
-    return ((this.e - p_78909_1_) * this.m.g() + this.m.e()) / 4;
+    return ((e - p_78909_1_) * m.g() + m.e()) / 4;
   }
   
   public void a(float p_178978_1_, float p_178978_2_, float p_178978_3_, int p_178978_4_)
   {
     int var5 = c(p_178978_4_);
     int var6 = -1;
-    if (!this.h)
+    if (!h)
     {
-      var6 = this.b.get(var5);
+      var6 = b.get(var5);
       if (ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN)
       {
         int var7 = (int)((var6 & 0xFF) * p_178978_1_);
@@ -354,7 +354,7 @@ public class bfd
         var6 |= var7 << 24 | var8 << 16 | var9 << 8;
       }
     }
-    this.b.put(var5, var6);
+    b.put(var5, var6);
   }
   
   private void b(int p_178988_1_, int p_178988_2_)
@@ -379,15 +379,15 @@ public class bfd
   private void a(int p_178972_1_, int p_178972_2_, int p_178972_3_, int p_178972_4_, int p_178972_5_)
   {
     if (ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN) {
-      this.b.put(p_178972_1_, p_178972_5_ << 24 | p_178972_4_ << 16 | p_178972_3_ << 8 | p_178972_2_);
+      b.put(p_178972_1_, p_178972_5_ << 24 | p_178972_4_ << 16 | p_178972_3_ << 8 | p_178972_2_);
     } else {
-      this.b.put(p_178972_1_, p_178972_2_ << 24 | p_178972_3_ << 16 | p_178972_4_ << 8 | p_178972_5_);
+      b.put(p_178972_1_, p_178972_2_ << 24 | p_178972_3_ << 16 | p_178972_4_ << 8 | p_178972_5_);
     }
   }
   
   public void c()
   {
-    this.h = true;
+    h = true;
   }
   
   public bfd a(float p_500130_1_, float p_500130_2_, float p_500130_3_, float p_500130_4_)
@@ -397,47 +397,47 @@ public class bfd
   
   public bfd b(int p_500131_1_, int p_500131_2_, int p_500131_3_, int p_500131_4_)
   {
-    if (this.h) {
+    if (h) {
       return this;
     }
-    int var5 = this.e * this.m.g() + this.m.d(this.g);
-    switch (bfd.2.a[this.f.a().ordinal()])
+    int var5 = e * m.g() + m.d(g);
+    switch (bfd.2.a[f.a().ordinal()])
     {
     case 1: 
-      this.a.putFloat(var5, p_500131_1_ / 255.0F);
-      this.a.putFloat(var5 + 4, p_500131_2_ / 255.0F);
-      this.a.putFloat(var5 + 8, p_500131_3_ / 255.0F);
-      this.a.putFloat(var5 + 12, p_500131_4_ / 255.0F);
+      a.putFloat(var5, p_500131_1_ / 255.0F);
+      a.putFloat(var5 + 4, p_500131_2_ / 255.0F);
+      a.putFloat(var5 + 8, p_500131_3_ / 255.0F);
+      a.putFloat(var5 + 12, p_500131_4_ / 255.0F);
       break;
     case 2: 
     case 3: 
-      this.a.putFloat(var5, p_500131_1_);
-      this.a.putFloat(var5 + 4, p_500131_2_);
-      this.a.putFloat(var5 + 8, p_500131_3_);
-      this.a.putFloat(var5 + 12, p_500131_4_);
+      a.putFloat(var5, p_500131_1_);
+      a.putFloat(var5 + 4, p_500131_2_);
+      a.putFloat(var5 + 8, p_500131_3_);
+      a.putFloat(var5 + 12, p_500131_4_);
       break;
     case 4: 
     case 5: 
-      this.a.putShort(var5, (short)p_500131_1_);
-      this.a.putShort(var5 + 2, (short)p_500131_2_);
-      this.a.putShort(var5 + 4, (short)p_500131_3_);
-      this.a.putShort(var5 + 6, (short)p_500131_4_);
+      a.putShort(var5, (short)p_500131_1_);
+      a.putShort(var5 + 2, (short)p_500131_2_);
+      a.putShort(var5 + 4, (short)p_500131_3_);
+      a.putShort(var5 + 6, (short)p_500131_4_);
       break;
     case 6: 
     case 7: 
       if (ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN)
       {
-        this.a.put(var5, (byte)p_500131_1_);
-        this.a.put(var5 + 1, (byte)p_500131_2_);
-        this.a.put(var5 + 2, (byte)p_500131_3_);
-        this.a.put(var5 + 3, (byte)p_500131_4_);
+        a.put(var5, (byte)p_500131_1_);
+        a.put(var5 + 1, (byte)p_500131_2_);
+        a.put(var5 + 2, (byte)p_500131_3_);
+        a.put(var5 + 3, (byte)p_500131_4_);
       }
       else
       {
-        this.a.put(var5, (byte)p_500131_4_);
-        this.a.put(var5 + 1, (byte)p_500131_3_);
-        this.a.put(var5 + 2, (byte)p_500131_2_);
-        this.a.put(var5 + 3, (byte)p_500131_1_);
+        a.put(var5, (byte)p_500131_4_);
+        a.put(var5 + 1, (byte)p_500131_3_);
+        a.put(var5 + 2, (byte)p_500131_2_);
+        a.put(var5 + 3, (byte)p_500131_1_);
       }
       break;
     }
@@ -451,9 +451,9 @@ public class bfd
       SVertexBuilder.beginAddVertexData(this, p_178981_1_);
     }
     b(p_178981_1_.length);
-    this.b.position(j());
-    this.b.put(p_178981_1_);
-    this.e += p_178981_1_.length / this.m.f();
+    b.position(j());
+    b.put(p_178981_1_);
+    e += p_178981_1_.length / m.f();
     if (Config.isShaders()) {
       SVertexBuilder.endAddVertexData(this);
     }
@@ -461,11 +461,11 @@ public class bfd
   
   public void d()
   {
-    this.e += 1;
-    b(this.m.f());
+    e += 1;
+    b(m.f());
     
-    this.g = 0;
-    this.f = this.m.c(this.g);
+    g = 0;
+    f = m.c(g);
     if (Config.isShaders()) {
       SVertexBuilder.endAddVertex(this);
     }
@@ -476,31 +476,31 @@ public class bfd
     if (Config.isShaders()) {
       SVertexBuilder.beginAddVertex(this);
     }
-    int var7 = this.e * this.m.g() + this.m.d(this.g);
-    switch (bfd.2.a[this.f.a().ordinal()])
+    int var7 = e * m.g() + m.d(g);
+    switch (bfd.2.a[f.a().ordinal()])
     {
     case 1: 
-      this.a.putFloat(var7, (float)(p_500133_1_ + this.j));
-      this.a.putFloat(var7 + 4, (float)(p_500133_3_ + this.k));
-      this.a.putFloat(var7 + 8, (float)(p_500133_5_ + this.l));
+      a.putFloat(var7, (float)(p_500133_1_ + j));
+      a.putFloat(var7 + 4, (float)(p_500133_3_ + k));
+      a.putFloat(var7 + 8, (float)(p_500133_5_ + l));
       break;
     case 2: 
     case 3: 
-      this.a.putInt(var7, Float.floatToRawIntBits((float)(p_500133_1_ + this.j)));
-      this.a.putInt(var7 + 4, Float.floatToRawIntBits((float)(p_500133_3_ + this.k)));
-      this.a.putInt(var7 + 8, Float.floatToRawIntBits((float)(p_500133_5_ + this.l)));
+      a.putInt(var7, Float.floatToRawIntBits((float)(p_500133_1_ + j)));
+      a.putInt(var7 + 4, Float.floatToRawIntBits((float)(p_500133_3_ + k)));
+      a.putInt(var7 + 8, Float.floatToRawIntBits((float)(p_500133_5_ + l)));
       break;
     case 4: 
     case 5: 
-      this.a.putShort(var7, (short)(int)(p_500133_1_ + this.j));
-      this.a.putShort(var7 + 2, (short)(int)(p_500133_3_ + this.k));
-      this.a.putShort(var7 + 4, (short)(int)(p_500133_5_ + this.l));
+      a.putShort(var7, (short)(int)(p_500133_1_ + j));
+      a.putShort(var7 + 2, (short)(int)(p_500133_3_ + k));
+      a.putShort(var7 + 4, (short)(int)(p_500133_5_ + l));
       break;
     case 6: 
     case 7: 
-      this.a.put(var7, (byte)(int)(p_500133_1_ + this.j));
-      this.a.put(var7 + 1, (byte)(int)(p_500133_3_ + this.k));
-      this.a.put(var7 + 2, (byte)(int)(p_500133_5_ + this.l));
+      a.put(var7, (byte)(int)(p_500133_1_ + j));
+      a.put(var7 + 1, (byte)(int)(p_500133_3_ + k));
+      a.put(var7 + 2, (byte)(int)(p_500133_5_ + l));
     }
     k();
     return this;
@@ -512,51 +512,51 @@ public class bfd
     int var5 = (byte)(int)(p_500134_2_ * 127.0F) & 0xFF;
     int var6 = (byte)(int)(p_500134_3_ * 127.0F) & 0xFF;
     int var7 = var4 | var5 << 8 | var6 << 16;
-    int var8 = this.m.g() >> 2;
-    int var9 = (this.e - 4) * var8 + this.m.c() / 4;
-    this.b.put(var9, var7);
-    this.b.put(var9 + var8, var7);
-    this.b.put(var9 + var8 * 2, var7);
-    this.b.put(var9 + var8 * 3, var7);
+    int var8 = m.g() >> 2;
+    int var9 = (e - 4) * var8 + m.c() / 4;
+    b.put(var9, var7);
+    b.put(var9 + var8, var7);
+    b.put(var9 + var8 * 2, var7);
+    b.put(var9 + var8 * 3, var7);
   }
   
   private void k()
   {
-    this.g += 1;
-    this.g %= this.m.i();
-    this.f = this.m.c(this.g);
-    if (this.f.b() == bmv.b.g) {
+    g += 1;
+    g %= m.i();
+    f = m.c(g);
+    if (f.b() == bmv.b.g) {
       k();
     }
   }
   
   public bfd c(float p_500135_1_, float p_500135_2_, float p_500135_3_)
   {
-    int var4 = this.e * this.m.g() + this.m.d(this.g);
-    switch (bfd.2.a[this.f.a().ordinal()])
+    int var4 = e * m.g() + m.d(g);
+    switch (bfd.2.a[f.a().ordinal()])
     {
     case 1: 
-      this.a.putFloat(var4, p_500135_1_);
-      this.a.putFloat(var4 + 4, p_500135_2_);
-      this.a.putFloat(var4 + 8, p_500135_3_);
+      a.putFloat(var4, p_500135_1_);
+      a.putFloat(var4 + 4, p_500135_2_);
+      a.putFloat(var4 + 8, p_500135_3_);
       break;
     case 2: 
     case 3: 
-      this.a.putInt(var4, (int)p_500135_1_);
-      this.a.putInt(var4 + 4, (int)p_500135_2_);
-      this.a.putInt(var4 + 8, (int)p_500135_3_);
+      a.putInt(var4, (int)p_500135_1_);
+      a.putInt(var4 + 4, (int)p_500135_2_);
+      a.putInt(var4 + 8, (int)p_500135_3_);
       break;
     case 4: 
     case 5: 
-      this.a.putShort(var4, (short)((int)p_500135_1_ * 32767 & 0xFFFF));
-      this.a.putShort(var4 + 2, (short)((int)p_500135_2_ * 32767 & 0xFFFF));
-      this.a.putShort(var4 + 4, (short)((int)p_500135_3_ * 32767 & 0xFFFF));
+      a.putShort(var4, (short)((int)p_500135_1_ * 32767 & 0xFFFF));
+      a.putShort(var4 + 2, (short)((int)p_500135_2_ * 32767 & 0xFFFF));
+      a.putShort(var4 + 4, (short)((int)p_500135_3_ * 32767 & 0xFFFF));
       break;
     case 6: 
     case 7: 
-      this.a.put(var4, (byte)((int)p_500135_1_ * 127 & 0xFF));
-      this.a.put(var4 + 1, (byte)((int)p_500135_2_ * 127 & 0xFF));
-      this.a.put(var4 + 2, (byte)((int)p_500135_3_ * 127 & 0xFF));
+      a.put(var4, (byte)((int)p_500135_1_ * 127 & 0xFF));
+      a.put(var4 + 1, (byte)((int)p_500135_2_ * 127 & 0xFF));
+      a.put(var4 + 2, (byte)((int)p_500135_3_ * 127 & 0xFF));
     }
     k();
     return this;
@@ -564,39 +564,39 @@ public class bfd
   
   public void c(double p_178969_1_, double p_178969_3_, double p_178969_5_)
   {
-    this.j = p_178969_1_;
-    this.k = p_178969_3_;
-    this.l = p_178969_5_;
+    j = p_178969_1_;
+    k = p_178969_3_;
+    l = p_178969_5_;
   }
   
   public void e()
   {
-    if (!this.n) {
+    if (!n) {
       throw new IllegalStateException("Not building!");
     }
-    this.n = false;
-    this.a.position(0);
-    this.a.limit(j() * 4);
+    n = false;
+    a.position(0);
+    a.limit(j() * 4);
   }
   
   public ByteBuffer f()
   {
-    return this.a;
+    return a;
   }
   
   public bmu g()
   {
-    return this.m;
+    return m;
   }
   
   public int h()
   {
-    return this.e;
+    return e;
   }
   
   public int i()
   {
-    return this.i;
+    return i;
   }
   
   public void a(int p_178968_1_)
@@ -615,48 +615,48 @@ public class bfd
   
   public void putSprite(bmi sprite)
   {
-    if (this.quadSprites == null) {
+    if (quadSprites == null) {
       return;
     }
-    int countQuads = this.e / 4;
+    int countQuads = e / 4;
     
-    this.quadSprites[(countQuads - 1)] = sprite;
+    quadSprites[(countQuads - 1)] = sprite;
   }
   
   public void setSprite(bmi sprite)
   {
-    if (this.quadSprites == null) {
+    if (quadSprites == null) {
       return;
     }
-    this.quadSprite = sprite;
+    quadSprite = sprite;
   }
   
   public boolean isMultiTexture()
   {
-    return this.quadSprites != null;
+    return quadSprites != null;
   }
   
   public void drawMultiTexture()
   {
-    if (this.quadSprites == null) {
+    if (quadSprites == null) {
       return;
     }
     int maxTextureIndex = Config.getMinecraft().T().getCountRegisteredSprites();
-    if (this.drawnIcons.length <= maxTextureIndex) {
-      this.drawnIcons = new boolean[maxTextureIndex + 1];
+    if (drawnIcons.length <= maxTextureIndex) {
+      drawnIcons = new boolean[maxTextureIndex + 1];
     }
-    Arrays.fill(this.drawnIcons, false);
+    Arrays.fill(drawnIcons, false);
     
     int texSwitch = 0;
     int grassOverlayIndex = -1;
-    int countQuads = this.e / 4;
+    int countQuads = e / 4;
     for (int i = 0; i < countQuads; i++)
     {
-      bmi icon = this.quadSprites[i];
+      bmi icon = quadSprites[i];
       if (icon != null)
       {
         int iconIndex = icon.getIndexInMap();
-        if (this.drawnIcons[iconIndex] == 0) {
+        if (drawnIcons[iconIndex] == 0) {
           if (icon == TextureUtils.iconGrassSideOverlay)
           {
             if (grassOverlayIndex < 0) {
@@ -667,8 +667,8 @@ public class bfd
           {
             i = drawForIcon(icon, i) - 1;
             texSwitch++;
-            if (this.blockLayer != adf.d) {
-              this.drawnIcons[iconIndex] = true;
+            if (blockLayer != adf.d) {
+              drawnIcons[iconIndex] = true;
             }
           }
         }
@@ -684,14 +684,14 @@ public class bfd
   
   private int drawForIcon(bmi sprite, int startQuadPos)
   {
-    GL11.glBindTexture(3553, sprite.glSpriteTextureId);
+    GL11.glBindTexture(3553, glSpriteTextureId);
     
     int firstRegionEnd = -1;
     int lastPos = -1;
-    int countQuads = this.e / 4;
+    int countQuads = e / 4;
     for (int i = startQuadPos; i < countQuads; i++)
     {
-      bmi ts = this.quadSprites[i];
+      bmi ts = quadSprites[i];
       if (ts == sprite)
       {
         if (lastPos < 0) {
@@ -701,7 +701,7 @@ public class bfd
       else if (lastPos >= 0)
       {
         draw(lastPos, i);
-        if (this.blockLayer == adf.d) {
+        if (blockLayer == adf.d) {
           return i;
         }
         lastPos = -1;
@@ -728,7 +728,7 @@ public class bfd
     int startVertex = startQuadVertex * 4;
     int vxCount = vxQuadCount * 4;
     
-    GL11.glDrawArrays(this.i, startVertex, vxCount);
+    GL11.glDrawArrays(i, startVertex, vxCount);
   }
   
   public void setBlockLayer(adf blockLayer)
@@ -736,20 +736,20 @@ public class bfd
     this.blockLayer = blockLayer;
     if (blockLayer == null)
     {
-      this.quadSprites = null;
-      this.quadSprite = null;
+      quadSprites = null;
+      quadSprite = null;
     }
   }
   
   private int getBufferQuadSize()
   {
-    int quadSize = this.b.capacity() * 4 / (this.m.f() * 4);
+    int quadSize = b.capacity() * 4 / (m.f() * 4);
     return quadSize;
   }
   
   public void checkAndGrow()
   {
-    b(this.m.f());
+    b(m.f());
   }
   
   public class a
@@ -761,30 +761,30 @@ public class bfd
     
     public a(int[] buf, bmu vertFormat, bmi[] quadSprites)
     {
-      this.b = buf;
-      this.c = vertFormat;
-      this.stateQuadSprites = quadSprites;
+      b = buf;
+      c = vertFormat;
+      stateQuadSprites = quadSprites;
     }
     
     public a(int[] p_i46380_2_, bmu p_i46380_3_)
     {
-      this.b = p_i46380_2_;
-      this.c = p_i46380_3_;
+      b = p_i46380_2_;
+      c = p_i46380_3_;
     }
     
     public int[] a()
     {
-      return this.b;
+      return b;
     }
     
     public int b()
     {
-      return this.b.length / this.c.f();
+      return b.length / c.f();
     }
     
     public bmu c()
     {
-      return this.c;
+      return c;
     }
   }
 }

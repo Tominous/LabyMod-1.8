@@ -15,27 +15,34 @@ public class MouseClickedScreenEvent
   private axu screen;
   private int mouseX;
   private int mouseY;
+  private int button;
   
-  public MouseClickedScreenEvent(axu screen, int mouseX, int mouseY)
+  public MouseClickedScreenEvent(axu screen, int mouseX, int mouseY, int button)
   {
     this.screen = screen;
     this.mouseX = mouseX;
     this.mouseY = mouseY;
+    this.button = button;
   }
   
   public axu getScreen()
   {
-    return this.screen;
+    return screen;
   }
   
   public int getMouseX()
   {
-    return this.mouseX;
+    return mouseX;
   }
   
   public int getMouseY()
   {
-    return this.mouseY;
+    return mouseY;
+  }
+  
+  public int getButton()
+  {
+    return button;
   }
   
   public Map<Listener, List<Method>> getListenerMethods()

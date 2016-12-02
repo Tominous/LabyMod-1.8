@@ -8,36 +8,36 @@ public enum zw$a
   
   private zw$a(int ☃, int ☃, float ☃, float ☃, int ☃)
   {
-    this.f = ☃;
-    this.g = ☃;
-    this.h = ☃;
-    this.i = ☃;
-    this.j = ☃;
+    f = ☃;
+    g = ☃;
+    h = ☃;
+    i = ☃;
+    j = ☃;
   }
   
   public int a()
   {
-    return this.g;
+    return g;
   }
   
   public float b()
   {
-    return this.h;
+    return h;
   }
   
   public float c()
   {
-    return this.i;
+    return i;
   }
   
   public int d()
   {
-    return this.f;
+    return f;
   }
   
   public int e()
   {
-    return this.j;
+    return j;
   }
   
   public zw f()

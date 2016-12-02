@@ -15,8 +15,8 @@ public abstract class bly
   
   public void a(boolean p_174937_1_, boolean p_174937_2_)
   {
-    this.b = p_174937_1_;
-    this.c = p_174937_2_;
+    b = p_174937_1_;
+    c = p_174937_2_;
     boolean var3 = true;
     boolean var4 = true;
     short var6;
@@ -40,31 +40,31 @@ public abstract class bly
   
   public void b(boolean p_174936_1_, boolean p_174936_2_)
   {
-    this.d = this.b;
-    this.e = this.c;
+    d = b;
+    e = c;
     a(p_174936_1_, p_174936_2_);
   }
   
   public void a()
   {
-    a(this.d, this.e);
+    a(d, e);
   }
   
   public int b()
   {
-    if (this.a == -1) {
-      this.a = bml.a();
+    if (a == -1) {
+      a = bml.a();
     }
-    return this.a;
+    return a;
   }
   
   public void c()
   {
-    ShadersTex.deleteTextures(this, this.a);
-    if (this.a != -1)
+    ShadersTex.deleteTextures(this, a);
+    if (a != -1)
     {
-      bml.a(this.a);
-      this.a = -1;
+      bml.a(a);
+      a = -1;
     }
   }
   

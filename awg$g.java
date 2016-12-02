@@ -9,29 +9,29 @@ public class awg$g
   public awg$g(int ☃, String ☃, boolean ☃, avx.a ☃, float ☃, float ☃, float ☃)
   {
     super(☃, ☃, ☃);
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
   }
   
   public avx.a a()
   {
-    return this.a;
+    return a;
   }
   
   public float e()
   {
-    return this.b;
+    return b;
   }
   
   public float f()
   {
-    return this.c;
+    return c;
   }
   
   public float g()
   {
-    return this.d;
+    return d;
   }
 }

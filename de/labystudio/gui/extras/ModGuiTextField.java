@@ -42,32 +42,32 @@ public class ModGuiTextField
   public ModGuiTextField(int componentId, avn fontrendererObj, int x, int y, int par5Width, int par6Height)
   {
     super(componentId, fontrendererObj, x, y, par5Width, par6Height);
-    this.id = componentId;
-    this.fontRendererInstance = fontrendererObj;
-    this.a = x;
-    this.f = y;
-    this.width = par5Width;
-    this.height = par6Height;
+    id = componentId;
+    fontRendererInstance = fontrendererObj;
+    a = x;
+    f = y;
+    width = par5Width;
+    height = par6Height;
   }
   
   public void a(awg.b p_175207_1_)
   {
-    this.field_175210_x = p_175207_1_;
+    field_175210_x = p_175207_1_;
   }
   
   public void a()
   {
-    this.cursorCounter += 1;
+    cursorCounter += 1;
   }
   
   public void a(String p_146180_1_)
   {
-    if (this.field_175209_y.apply(p_146180_1_))
+    if (field_175209_y.apply(p_146180_1_))
     {
-      if (p_146180_1_.length() > this.maxStringLength) {
-        this.text = p_146180_1_.substring(0, this.maxStringLength);
+      if (p_146180_1_.length() > maxStringLength) {
+        text = p_146180_1_.substring(0, maxStringLength);
       } else {
-        this.text = p_146180_1_;
+        text = p_146180_1_;
       }
       f();
     }
@@ -75,31 +75,31 @@ public class ModGuiTextField
   
   public String b()
   {
-    return this.text;
+    return text;
   }
   
   public String c()
   {
-    int i = this.cursorPosition < this.selectionEnd ? this.cursorPosition : this.selectionEnd;
-    int j = this.cursorPosition < this.selectionEnd ? this.selectionEnd : this.cursorPosition;
-    return this.text.substring(i, j);
+    int i = cursorPosition < selectionEnd ? cursorPosition : selectionEnd;
+    int j = cursorPosition < selectionEnd ? selectionEnd : cursorPosition;
+    return text.substring(i, j);
   }
   
   public void a(Predicate<String> p_175205_1_)
   {
-    this.field_175209_y = p_175205_1_;
+    field_175209_y = p_175205_1_;
   }
   
   public void b(String p_146191_1_)
   {
     String s = "";
     String s1 = f.a(p_146191_1_);
-    int i = this.cursorPosition < this.selectionEnd ? this.cursorPosition : this.selectionEnd;
-    int j = this.cursorPosition < this.selectionEnd ? this.selectionEnd : this.cursorPosition;
-    int k = this.maxStringLength - this.text.length() - (i - j);
+    int i = cursorPosition < selectionEnd ? cursorPosition : selectionEnd;
+    int j = cursorPosition < selectionEnd ? selectionEnd : cursorPosition;
+    int k = maxStringLength - text.length() - (i - j);
     int l = 0;
-    if (this.text.length() > 0) {
-      s = s + this.text.substring(0, i);
+    if (text.length() > 0) {
+      s = s + text.substring(0, i);
     }
     if (k < s1.length())
     {
@@ -111,57 +111,57 @@ public class ModGuiTextField
       s = s + s1;
       l = s1.length();
     }
-    if ((this.text.length() > 0) && (j < this.text.length())) {
-      s = s + this.text.substring(j);
+    if ((text.length() > 0) && (j < text.length())) {
+      s = s + text.substring(j);
     }
-    if (this.field_175209_y.apply(s))
+    if (field_175209_y.apply(s))
     {
-      this.text = s;
-      d(i - this.selectionEnd + l);
-      if (this.field_175210_x != null) {
-        this.field_175210_x.a(this.id, this.text);
+      text = s;
+      d(i - selectionEnd + l);
+      if (field_175210_x != null) {
+        field_175210_x.a(id, text);
       }
     }
   }
   
   public void a(int p_146177_1_)
   {
-    if (this.text.length() != 0) {
-      if (this.selectionEnd != this.cursorPosition) {
+    if (text.length() != 0) {
+      if (selectionEnd != cursorPosition) {
         b("");
       } else {
-        b(c(p_146177_1_) - this.cursorPosition);
+        b(c(p_146177_1_) - cursorPosition);
       }
     }
   }
   
   public void b(int p_146175_1_)
   {
-    if (this.text.length() != 0) {
-      if (this.selectionEnd != this.cursorPosition)
+    if (text.length() != 0) {
+      if (selectionEnd != cursorPosition)
       {
         b("");
       }
       else
       {
         boolean flag = p_146175_1_ < 0;
-        int i = flag ? this.cursorPosition + p_146175_1_ : this.cursorPosition;
-        int j = flag ? this.cursorPosition : this.cursorPosition + p_146175_1_;
+        int i = flag ? cursorPosition + p_146175_1_ : cursorPosition;
+        int j = flag ? cursorPosition : cursorPosition + p_146175_1_;
         String s = "";
         if (i >= 0) {
-          s = this.text.substring(0, i);
+          s = text.substring(0, i);
         }
-        if (j < this.text.length()) {
-          s = s + this.text.substring(j);
+        if (j < text.length()) {
+          s = s + text.substring(j);
         }
-        if (this.field_175209_y.apply(s))
+        if (field_175209_y.apply(s))
         {
-          this.text = s;
+          text = s;
           if (flag) {
             d(p_146175_1_);
           }
-          if (this.field_175210_x != null) {
-            this.field_175210_x.a(this.id, this.text);
+          if (field_175210_x != null) {
+            field_175210_x.a(id, text);
           }
         }
       }
@@ -170,7 +170,7 @@ public class ModGuiTextField
   
   public int d()
   {
-    return this.id;
+    return id;
   }
   
   public int c(int p_146187_1_)
@@ -191,22 +191,22 @@ public class ModGuiTextField
     for (int k = 0; k < j; k++) {
       if (!flag)
       {
-        int l = this.text.length();
-        i = this.text.indexOf(' ', i);
+        int l = text.length();
+        i = text.indexOf(' ', i);
         if (i == -1) {
           i = l;
         } else {
-          while ((p_146197_3_) && (i < l) && (this.text.charAt(i) == ' ')) {
+          while ((p_146197_3_) && (i < l) && (text.charAt(i) == ' ')) {
             i++;
           }
         }
       }
       else
       {
-        while ((p_146197_3_) && (i > 0) && (this.text.charAt(i - 1) == ' ')) {
+        while ((p_146197_3_) && (i > 0) && (text.charAt(i - 1) == ' ')) {
           i--;
         }
-        while ((i > 0) && (this.text.charAt(i - 1) != ' ')) {
+        while ((i > 0) && (text.charAt(i - 1) != ' ')) {
           i--;
         }
       }
@@ -216,15 +216,15 @@ public class ModGuiTextField
   
   public void d(int p_146182_1_)
   {
-    e(this.selectionEnd + p_146182_1_);
+    e(selectionEnd + p_146182_1_);
   }
   
   public void e(int p_146190_1_)
   {
-    this.cursorPosition = p_146190_1_;
-    int i = this.text.length();
-    this.cursorPosition = ns.a(this.cursorPosition, 0, i);
-    i(this.cursorPosition);
+    cursorPosition = p_146190_1_;
+    int i = text.length();
+    cursorPosition = ns.a(cursorPosition, 0, i);
+    i(cursorPosition);
   }
   
   public void e()
@@ -234,23 +234,23 @@ public class ModGuiTextField
   
   public void f()
   {
-    e(this.text.length());
+    e(text.length());
   }
   
   public void a(int p_146192_1_, int p_146192_2_, int p_146192_3_)
   {
-    boolean flag = (p_146192_1_ >= this.a) && (p_146192_1_ < this.a + this.width) && (p_146192_2_ >= this.f) && (p_146192_2_ < this.f + this.height);
-    if (this.canLoseFocus) {
+    boolean flag = (p_146192_1_ >= a) && (p_146192_1_ < a + width) && (p_146192_2_ >= f) && (p_146192_2_ < f + height);
+    if (canLoseFocus) {
       b(flag);
     }
-    if ((this.isFocused) && (flag) && (p_146192_3_ == 0))
+    if ((isFocused) && (flag) && (p_146192_3_ == 0))
     {
-      int i = p_146192_1_ - this.a;
-      if (this.enableBackgroundDrawing) {
+      int i = p_146192_1_ - a;
+      if (enableBackgroundDrawing) {
         i -= 4;
       }
-      String s = this.fontRendererInstance.a(this.text.substring(this.lineScrollOffset), p());
-      e(this.fontRendererInstance.a(s, i).length() + this.lineScrollOffset);
+      String s = fontRendererInstance.a(text.substring(lineScrollOffset), p());
+      e(fontRendererInstance.a(s, i).length() + lineScrollOffset);
     }
   }
   
@@ -259,12 +259,12 @@ public class ModGuiTextField
   
   public void setBlacklistWord(String modBlacklistWords)
   {
-    this.modBlacklistWord = modBlacklistWords;
+    modBlacklistWord = modBlacklistWords;
   }
   
   public String getBlacklistWord()
   {
-    return this.modBlacklistWord;
+    return modBlacklistWord;
   }
   
   public void setPasswordBox(boolean modPasswordBox)
@@ -274,7 +274,7 @@ public class ModGuiTextField
   
   public boolean isPasswordBox()
   {
-    return this.modPasswordBox;
+    return modPasswordBox;
   }
   
   public void g()
@@ -286,21 +286,21 @@ public class ModGuiTextField
       }
       if (j())
       {
-        a(this.a - 1, this.f - 1, this.a + this.width + 1, this.f + this.height + 1, -6250336);
-        a(this.a, this.f, this.a + this.width, this.f + this.height, -16777216);
+        a(a - 1, f - 1, a + width + 1, f + height + 1, -6250336);
+        a(a, f, a + width, f + height, -16777216);
       }
-      int var1 = this.isEnabled ? this.enabledColor : this.disabledColor;
-      int var2 = i() - this.lineScrollOffset;
-      int var3 = o() - this.lineScrollOffset;
-      String theText = b().substring(this.lineScrollOffset);
+      int var1 = isEnabled ? enabledColor : disabledColor;
+      int var2 = i() - lineScrollOffset;
+      int var3 = o() - lineScrollOffset;
+      String theText = b().substring(lineScrollOffset);
       if (isPasswordBox()) {
         theText = theText.replaceAll(".", "*");
       }
-      String var4 = this.fontRendererInstance.a(theText, p());
+      String var4 = fontRendererInstance.a(theText, p());
       boolean var5 = (var2 >= 0) && (var2 <= var4.length());
-      boolean var6 = (m()) && (this.cursorCounter / 6 % 2 == 0) && (var5);
-      int var7 = j() ? this.a + 4 : this.a;
-      int var8 = j() ? this.f + (this.height - 8) / 2 : this.f;
+      boolean var6 = (m()) && (cursorCounter / 6 % 2 == 0) && (var5);
+      int var7 = j() ? a + 4 : a;
+      int var8 = j() ? f + (height - 8) / 2 : f;
       int var9 = var7;
       if (var3 > var4.length()) {
         var3 = var4.length();
@@ -308,13 +308,13 @@ public class ModGuiTextField
       if (var4.length() > 0)
       {
         String var10 = var5 ? var4.substring(0, var2) : var4;
-        var9 = this.fontRendererInstance.a(var10, var7, var8, var1);
+        var9 = fontRendererInstance.a(var10, var7, var8, var1);
       }
-      boolean var13 = (i() < this.text.length()) || (this.text.length() >= h());
+      boolean var13 = (i() < text.length()) || (text.length() >= h());
       int var11 = var9;
       if (!var5)
       {
-        var11 = var2 > 0 ? var7 + this.width : var7;
+        var11 = var2 > 0 ? var7 + width : var7;
       }
       else if (var13)
       {
@@ -322,19 +322,19 @@ public class ModGuiTextField
         var9--;
       }
       if ((var4.length() > 0) && (var5) && (var2 < var4.length())) {
-        var9 = this.fontRendererInstance.a(var4.substring(var2), var9, var8, var1);
+        var9 = fontRendererInstance.a(var4.substring(var2), var9, var8, var1);
       }
       if (var6) {
         if (var13) {
-          avp.a(var11, var8 - 1, var11 + 1, var8 + 1 + this.fontRendererInstance.a, -3092272);
+          avp.a(var11, var8 - 1, var11 + 1, var8 + 1 + fontRendererInstance.a, -3092272);
         } else {
-          this.fontRendererInstance.a("_", var11, var8, var1);
+          fontRendererInstance.a("_", var11, var8, var1);
         }
       }
       if (var3 != var2)
       {
-        int var12 = var7 + this.fontRendererInstance.a(var4.substring(0, var3));
-        drawCursorVertical(var11, var8 - 1, var12 - 1, var8 + 1 + this.fontRendererInstance.a);
+        int var12 = var7 + fontRendererInstance.a(var4.substring(0, var3));
+        drawCursorVertical(var11, var8 - 1, var12 - 1, var8 + 1 + fontRendererInstance.a);
       }
     }
   }
@@ -353,11 +353,11 @@ public class ModGuiTextField
       p_146188_2_ = p_146188_4_;
       p_146188_4_ = j;
     }
-    if (p_146188_3_ > this.a + this.width) {
-      p_146188_3_ = this.a + this.width;
+    if (p_146188_3_ > a + width) {
+      p_146188_3_ = a + width;
     }
-    if (p_146188_1_ > this.a + this.width) {
-      p_146188_1_ = this.a + this.width;
+    if (p_146188_1_ > a + width) {
+      p_146188_1_ = a + width;
     }
     bfx tessellator = bfx.a();
     bfd worldrenderer = tessellator.c();
@@ -378,7 +378,7 @@ public class ModGuiTextField
   public boolean a(char p_146201_1_, int p_146201_2_)
   {
     super.a(p_146201_1_, p_146201_2_);
-    if (!this.isFocused) {
+    if (!isFocused) {
       return false;
     }
     if (axu.g(p_146201_2_))
@@ -396,7 +396,7 @@ public class ModGuiTextField
     }
     if (axu.e(p_146201_2_))
     {
-      if (this.isEnabled) {
+      if (isEnabled) {
         b(axu.o());
       }
       return true;
@@ -406,7 +406,7 @@ public class ModGuiTextField
       if (!isPasswordBox()) {
         axu.e(c());
       }
-      if (this.isEnabled) {
+      if (isEnabled) {
         b("");
       }
       return true;
@@ -416,11 +416,11 @@ public class ModGuiTextField
     case 14: 
       if (axu.q())
       {
-        if (this.isEnabled) {
+        if (isEnabled) {
           a(-1);
         }
       }
-      else if (this.isEnabled) {
+      else if (isEnabled) {
         b(-1);
       }
       return true;
@@ -463,7 +463,7 @@ public class ModGuiTextField
       return true;
     case 207: 
       if (axu.r()) {
-        i(this.text.length());
+        i(text.length());
       } else {
         f();
       }
@@ -471,18 +471,18 @@ public class ModGuiTextField
     case 211: 
       if (axu.q())
       {
-        if (this.isEnabled) {
+        if (isEnabled) {
           a(1);
         }
       }
-      else if (this.isEnabled) {
+      else if (isEnabled) {
         b(1);
       }
       return true;
     }
     if (f.a(p_146201_1_))
     {
-      if (this.isEnabled) {
+      if (isEnabled) {
         b(Character.toString(p_146201_1_));
       }
       return true;
@@ -492,112 +492,112 @@ public class ModGuiTextField
   
   public void f(int p_146203_1_)
   {
-    this.maxStringLength = p_146203_1_;
-    if (this.text.length() > p_146203_1_) {
-      this.text = this.text.substring(0, p_146203_1_);
+    maxStringLength = p_146203_1_;
+    if (text.length() > p_146203_1_) {
+      text = text.substring(0, p_146203_1_);
     }
   }
   
   public int h()
   {
-    return this.maxStringLength;
+    return maxStringLength;
   }
   
   public int i()
   {
-    return this.cursorPosition;
+    return cursorPosition;
   }
   
   public boolean j()
   {
-    return this.enableBackgroundDrawing;
+    return enableBackgroundDrawing;
   }
   
   public void a(boolean p_146185_1_)
   {
-    this.enableBackgroundDrawing = p_146185_1_;
+    enableBackgroundDrawing = p_146185_1_;
   }
   
   public void g(int p_146193_1_)
   {
-    this.enabledColor = p_146193_1_;
+    enabledColor = p_146193_1_;
   }
   
   public void h(int p_146204_1_)
   {
-    this.disabledColor = p_146204_1_;
+    disabledColor = p_146204_1_;
   }
   
   public void b(boolean p_146195_1_)
   {
-    if ((p_146195_1_) && (!this.isFocused)) {
-      this.cursorCounter = 0;
+    if ((p_146195_1_) && (!isFocused)) {
+      cursorCounter = 0;
     }
-    this.isFocused = p_146195_1_;
+    isFocused = p_146195_1_;
   }
   
   public boolean m()
   {
-    return this.isFocused;
+    return isFocused;
   }
   
   public void c(boolean p_146184_1_)
   {
-    this.isEnabled = p_146184_1_;
+    isEnabled = p_146184_1_;
   }
   
   public int o()
   {
-    return this.selectionEnd;
+    return selectionEnd;
   }
   
   public int p()
   {
-    return j() ? this.width - 8 : this.width;
+    return j() ? width - 8 : width;
   }
   
   public void i(int p_146199_1_)
   {
-    int i = this.text.length();
+    int i = text.length();
     if (p_146199_1_ > i) {
       p_146199_1_ = i;
     }
     if (p_146199_1_ < 0) {
       p_146199_1_ = 0;
     }
-    this.selectionEnd = p_146199_1_;
-    if (this.fontRendererInstance != null)
+    selectionEnd = p_146199_1_;
+    if (fontRendererInstance != null)
     {
-      if (this.lineScrollOffset > i) {
-        this.lineScrollOffset = i;
+      if (lineScrollOffset > i) {
+        lineScrollOffset = i;
       }
       int j = p();
-      String s = this.fontRendererInstance.a(this.text.substring(this.lineScrollOffset), j);
-      int k = s.length() + this.lineScrollOffset;
-      if (p_146199_1_ == this.lineScrollOffset) {
-        this.lineScrollOffset -= this.fontRendererInstance.a(this.text, j, true).length();
+      String s = fontRendererInstance.a(text.substring(lineScrollOffset), j);
+      int k = s.length() + lineScrollOffset;
+      if (p_146199_1_ == lineScrollOffset) {
+        lineScrollOffset -= fontRendererInstance.a(text, j, true).length();
       }
       if (p_146199_1_ > k) {
-        this.lineScrollOffset += p_146199_1_ - k;
-      } else if (p_146199_1_ <= this.lineScrollOffset) {
-        this.lineScrollOffset -= this.lineScrollOffset - p_146199_1_;
+        lineScrollOffset += p_146199_1_ - k;
+      } else if (p_146199_1_ <= lineScrollOffset) {
+        lineScrollOffset -= lineScrollOffset - p_146199_1_;
       }
-      this.lineScrollOffset = ns.a(this.lineScrollOffset, 0, i);
+      lineScrollOffset = ns.a(lineScrollOffset, 0, i);
     }
   }
   
   public void d(boolean p_146205_1_)
   {
-    this.canLoseFocus = p_146205_1_;
+    canLoseFocus = p_146205_1_;
   }
   
   public boolean r()
   {
-    return this.visible;
+    return visible;
   }
   
   public void e(boolean p_146189_1_)
   {
-    this.visible = p_146189_1_;
+    visible = p_146189_1_;
   }
 }

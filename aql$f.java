@@ -10,7 +10,7 @@ class aql$f
   
   public aql.r a(cq ☃, aql.v ☃, Random ☃)
   {
-    ☃.d = true;
+    d = true;
     return new aql.s(☃, ☃, ☃);
   }
 }

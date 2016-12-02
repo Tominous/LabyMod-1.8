@@ -12,7 +12,7 @@ public class amh
   
   private amh(ama ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public static amh a(afh ☃)
@@ -22,10 +22,10 @@ public class amh
   
   public boolean a(alz ☃)
   {
-    if ((☃ == null) || (!☃.c().equals(this.a.c()))) {
+    if ((☃ == null) || (!☃.c().equals(a.c()))) {
       return false;
     }
-    for (Map.Entry<amo, Predicate> ☃ : this.b.entrySet())
+    for (Map.Entry<amo, Predicate> ☃ : b.entrySet())
     {
       Object ☃ = ☃.b((amo)☃.getKey());
       if (!((Predicate)☃.getValue()).apply(☃)) {
@@ -37,10 +37,10 @@ public class amh
   
   public <V extends Comparable<V>> amh a(amo<V> ☃, Predicate<? extends V> ☃)
   {
-    if (!this.a.d().contains(☃)) {
-      throw new IllegalArgumentException(this.a + " cannot support property " + ☃);
+    if (!a.d().contains(☃)) {
+      throw new IllegalArgumentException(a + " cannot support property " + ☃);
     }
-    this.b.put(☃, ☃);
+    b.put(☃, ☃);
     return this;
   }
 }

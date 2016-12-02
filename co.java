@@ -8,31 +8,31 @@ public class co<K, V>
   
   public co(K ☃)
   {
-    this.d = ☃;
+    d = ☃;
   }
   
   public void a(int ☃, K ☃, V ☃)
   {
-    if (this.d.equals(☃)) {
-      this.e = ☃;
+    if (d.equals(☃)) {
+      e = ☃;
     }
     super.a(☃, ☃, ☃);
   }
   
   public void a()
   {
-    Validate.notNull(this.d);
+    Validate.notNull(d);
   }
   
   public V a(K ☃)
   {
     V ☃ = super.a(☃);
-    return (V)(☃ == null ? this.e : ☃);
+    return (V)(☃ == null ? e : ☃);
   }
   
   public V a(int ☃)
   {
     V ☃ = super.a(☃);
-    return (V)(☃ == null ? this.e : ☃);
+    return (V)(☃ == null ? e : ☃);
   }
 }

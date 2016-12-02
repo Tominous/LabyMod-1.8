@@ -14,27 +14,27 @@ public class bjg
   public bjg(biu p_i46166_1_, bjh p_i46166_2_)
   {
     super(p_i46166_1_);
-    this.h = p_i46166_2_;
+    h = p_i46166_2_;
   }
   
   public void a(uo p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
   {
     bfl.E();
     cj var10 = p_76986_1_.n();
-    double var11 = var10.n() - p_76986_1_.s + p_76986_2_;
-    double var13 = var10.o() - p_76986_1_.t + p_76986_4_;
-    double var15 = var10.p() - p_76986_1_.u + p_76986_6_;
+    double var11 = var10.n() - s + p_76986_2_;
+    double var13 = var10.o() - t + p_76986_4_;
+    double var15 = var10.p() - u + p_76986_6_;
     bfl.b(var11 + 0.5D, var13 + 0.5D, var15 + 0.5D);
-    bfl.b(180.0F - p_76986_1_.y, 0.0F, 1.0F, 0.0F);
-    this.b.a.a(bmh.g);
-    bgd var17 = this.e.ae();
+    bfl.b(180.0F - y, 0.0F, 1.0F, 0.0F);
+    b.a.a(bmh.g);
+    bgd var17 = e.ae();
     bou var18 = var17.a().b();
     boq var19;
     boq var19;
     if ((p_76986_1_.o() != null) && (p_76986_1_.o().b() == zy.bd)) {
-      var19 = var18.a(this.g);
+      var19 = var18.a(g);
     } else {
-      var19 = var18.a(this.f);
+      var19 = var18.a(f);
     }
     bfl.E();
     bfl.b(-0.5F, -0.5F, -0.5F);
@@ -43,7 +43,7 @@ public class bjg
     bfl.b(0.0F, 0.0F, 0.4375F);
     b(p_76986_1_);
     bfl.F();
-    a(p_76986_1_, p_76986_2_ + p_76986_1_.b.g() * 0.3F, p_76986_4_ - 0.25D, p_76986_6_ + p_76986_1_.b.i() * 0.3F);
+    a(p_76986_1_, p_76986_2_ + b.g() * 0.3F, p_76986_4_ - 0.25D, p_76986_6_ + b.i() * 0.3F);
   }
   
   protected jy a(uo p_110775_1_)
@@ -56,10 +56,10 @@ public class bjg
     zx var2 = p_82402_1_.o();
     if (var2 != null)
     {
-      uz var3 = new uz(p_82402_1_.o, 0.0D, 0.0D, 0.0D, var2);
+      uz var3 = new uz(o, 0.0D, 0.0D, 0.0D, var2);
       zw var4 = var3.l().b();
-      var3.l().b = 1;
-      var3.a = 0.0F;
+      lb = 1;
+      a = 0.0F;
       bfl.E();
       bfl.f();
       int var5 = p_82402_1_.p();
@@ -70,15 +70,15 @@ public class bjg
       if (!Reflector.postForgeBusEvent(Reflector.RenderItemInFrameEvent_Constructor, new Object[] { p_82402_1_, this })) {
         if ((var4 instanceof aab))
         {
-          this.b.a.a(a);
+          b.a.a(a);
           bfl.b(180.0F, 0.0F, 0.0F, 1.0F);
           float var6 = 0.0078125F;
           bfl.a(var6, var6, var6);
           bfl.b(-64.0F, -64.0F, 0.0F);
-          atg var7 = zy.bd.a(var3.l(), p_82402_1_.o);
+          atg var7 = zy.bd.a(var3.l(), o);
           bfl.b(0.0F, 0.0F, -1.0F);
           if (var7 != null) {
-            this.e.o.k().a(var7, true);
+            e.o.k().a(var7, true);
           }
         }
         else
@@ -86,22 +86,22 @@ public class bjg
           bmi var12 = null;
           if (var4 == zy.aQ)
           {
-            var12 = this.e.T().a(bmp.l);
+            var12 = e.T().a(bmp.l);
             if (Config.isShaders()) {
-              ShadersTex.bindTextureMapForUpdateAndRender(this.e.P(), bmh.g);
+              ShadersTex.bindTextureMapForUpdateAndRender(e.P(), bmh.g);
             } else {
-              this.e.P().a(bmh.g);
+              e.P().a(bmh.g);
             }
             if ((var12 instanceof bmp))
             {
               bmp var13 = (bmp)var12;
-              double var8 = var13.j;
-              double var10 = var13.k;
-              var13.j = 0.0D;
-              var13.k = 0.0D;
-              var13.a(p_82402_1_.o, p_82402_1_.s, p_82402_1_.u, ns.g(180 + p_82402_1_.b.b() * 90), false, true);
-              var13.j = var8;
-              var13.k = var10;
+              double var8 = j;
+              double var10 = k;
+              j = 0.0D;
+              k = 0.0D;
+              var13.a(o, s, u, ns.g(180 + b.b() * 90), false, true);
+              j = var8;
+              k = var10;
             }
             else
             {
@@ -109,12 +109,12 @@ public class bjg
             }
           }
           bfl.a(0.5F, 0.5F, 0.5F);
-          if ((!this.h.a(var3.l())) || ((var4 instanceof aat))) {
+          if ((!h.a(var3.l())) || ((var4 instanceof aat))) {
             bfl.b(180.0F, 0.0F, 1.0F, 0.0F);
           }
           bfl.a();
           avc.b();
-          this.h.a(var3.l(), bgr.b.g);
+          h.a(var3.l(), bgr.b.g);
           avc.a();
           bfl.b();
           if ((var12 != null) && (var12.k() > 0)) {
@@ -132,11 +132,11 @@ public class bjg
   
   protected void a(uo p_147914_1_, double p_147914_2_, double p_147914_4_, double p_147914_6_)
   {
-    if ((ave.v()) && (p_147914_1_.o() != null) && (p_147914_1_.o().s()) && (this.b.d == p_147914_1_))
+    if ((ave.v()) && (p_147914_1_.o() != null) && (p_147914_1_.o().s()) && (b.d == p_147914_1_))
     {
       float var8 = 1.6F;
       float var9 = 0.016666668F * var8;
-      double var10 = p_147914_1_.h(this.b.c);
+      double var10 = p_147914_1_.h(b.c);
       float var12 = p_147914_1_.av() ? 32.0F : 64.0F;
       if (var10 < var12 * var12)
       {
@@ -145,10 +145,10 @@ public class bjg
         {
           avn var14 = c();
           bfl.E();
-          bfl.b((float)p_147914_2_ + 0.0F, (float)p_147914_4_ + p_147914_1_.K + 0.5F, (float)p_147914_6_);
+          bfl.b((float)p_147914_2_ + 0.0F, (float)p_147914_4_ + K + 0.5F, (float)p_147914_6_);
           GL11.glNormal3f(0.0F, 1.0F, 0.0F);
-          bfl.b(-this.b.e, 0.0F, 1.0F, 0.0F);
-          bfl.b(this.b.f, 1.0F, 0.0F, 0.0F);
+          bfl.b(-b.e, 0.0F, 1.0F, 0.0F);
+          bfl.b(b.f, 1.0F, 0.0F, 0.0F);
           bfl.a(-var9, -var9, var9);
           bfl.f();
           bfl.b(0.0F, 0.25F / var9, 0.0F);

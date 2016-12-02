@@ -7,9 +7,6 @@ import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
 import de.labystudio.packets.PacketMessage;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -34,49 +31,39 @@ public class SingleChat
   
   public int getId()
   {
-    return this.id;
+    return id;
   }
   
   public LabyModPlayer getFriend()
   {
-    return this.friend;
+    return friend;
   }
   
   public List<MessageChatComponent> getMessages()
   {
-    return this.messages;
+    return messages;
   }
   
-  public void addMessage(final MessageChatComponent message)
+  public void addMessage(MessageChatComponent message)
   {
-    Collections.reverse(this.messages);
-    this.messages.add(message);
-    Collections.reverse(this.messages);
-    new Thread()
-    {
-      public void run()
-      {
-        try
-        {
-          ChatHandler.getHandler().getConnection().prepareStatement("INSERT INTO single_chat_messages (single_chats_id, sender, sender_message, sent_time) VALUES (" + SingleChat.this.getId() + ", '" + message.getSender() + "', '" + message.getMessage() + "', " + System.currentTimeMillis() + ")").executeUpdate();
-        }
-        catch (SQLException e)
-        {
-          e.printStackTrace();
-        }
-      }
-    }.start();
+    Collections.reverse(messages);
+    messages.add(message);
+    Collections.reverse(messages);
+    
     message.setChat(this);
     if (message.getSender().equalsIgnoreCase(LabyMod.getInstance().getPlayerName()))
     {
-      if (ConfigManager.settings.playSounds) {
-        ave.A().W().a(bpf.a(new jy("random.pop"), 1.5F));
+      if (settingsplaySounds) {
+        synchronized (ave.A())
+        {
+          ave.A().W().a(bpf.a(new jy("random.pop"), 1.5F));
+        }
       }
       if (!(message instanceof TitleChatComponent)) {
-        LabyMod.getInstance().client.getClientConnection().sendPacket(new PacketMessage(LabyMod.getInstance().client.build(), getFriend(), message.getMessage(), 0L, 0.0D, System.currentTimeMillis()));
+        getInstanceclient.getClientConnection().sendPacket(new PacketMessage(getInstanceclient.build(), getFriend(), message.getMessage(), 0L, 0.0D, System.currentTimeMillis()));
       }
     }
-    else if (ConfigManager.settings.playSounds)
+    else if (settingsplaySounds)
     {
       LabyMod.getInstance().getClient();
       if ((!Client.isBusy()) && 
@@ -84,12 +71,12 @@ public class SingleChat
         ave.A().W().a(bpf.a(new jy("random.pop"), 2.5F));
       }
     }
-    LabyMod.getInstance().newMessage = true;
+    getInstancenewMessage = true;
   }
   
   public void updateFriend(LabyModPlayer player)
   {
-    this.friend = player;
+    friend = player;
   }
   
   public void draw(int xStart, int yStart) {}

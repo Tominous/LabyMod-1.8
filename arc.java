@@ -8,10 +8,10 @@ public class arc
   
   public arc(Random ☃, int ☃)
   {
-    this.b = ☃;
-    this.a = new arb[☃];
+    b = ☃;
+    a = new arb[☃];
     for (int ☃ = 0; ☃ < ☃; ☃++) {
-      this.a[☃] = new arb(☃);
+      a[☃] = new arb(☃);
     }
   }
   
@@ -25,7 +25,7 @@ public class arc
       }
     }
     double ☃ = 1.0D;
-    for (int ☃ = 0; ☃ < this.b; ☃++)
+    for (int ☃ = 0; ☃ < b; ☃++)
     {
       double ☃ = ☃ * ☃ * ☃;
       double ☃ = ☃ * ☃ * ☃;
@@ -38,7 +38,7 @@ public class arc
       ☃ %= 16777216L;
       ☃ += ☃;
       ☃ += ☃;
-      this.a[☃].a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃ * ☃, ☃ * ☃, ☃ * ☃, ☃);
+      a[☃].a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃ * ☃, ☃ * ☃, ☃ * ☃, ☃);
       ☃ /= 2.0D;
     }
     return ☃;

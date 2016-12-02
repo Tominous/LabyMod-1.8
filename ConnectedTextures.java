@@ -237,16 +237,16 @@ public class ConnectedTextures
   private static bmi getConnectedTexture(ConnectedProperties cp, adq blockAccess, alz blockState, cj blockPos, int side, bmi icon, int metadata, RenderEnv renderEnv)
   {
     int y = blockPos.o();
-    if ((y < cp.minHeight) || (y > cp.maxHeight)) {
+    if ((y < minHeight) || (y > maxHeight)) {
       return null;
     }
-    if (cp.biomes != null)
+    if (biomes != null)
     {
       ady blockBiome = blockAccess.b(blockPos);
       boolean biomeOk = false;
-      for (int i = 0; i < cp.biomes.length; i++)
+      for (int i = 0; i < biomes.length; i++)
       {
-        ady biome = cp.biomes[i];
+        ady biome = biomes[i];
         if (blockBiome == biome)
         {
           biomeOk = true;
@@ -276,18 +276,18 @@ public class ConnectedTextures
       }
     }
     if (side >= 0) {
-      if (cp.faces != 63)
+      if (faces != 63)
       {
         int sideCheck = side;
         if (vertAxis != 0) {
           sideCheck = fixSideByAxis(side, vertAxis);
         }
-        if ((1 << sideCheck & cp.faces) == 0) {
+        if ((1 << sideCheck & faces) == 0) {
           return null;
         }
       }
     }
-    switch (cp.method)
+    switch (method)
     {
     case 1: 
       return getConnectedTextureCtm(cp, blockAccess, blockState, blockPos, side, icon, metadata, renderEnv);
@@ -374,21 +374,21 @@ public class ConnectedTextures
   
   private static bmi getConnectedTextureRandom(ConnectedProperties cp, cj blockPos, int side)
   {
-    if (cp.tileIcons.length == 1) {
-      return cp.tileIcons[0];
+    if (tileIcons.length == 1) {
+      return tileIcons[0];
     }
-    int face = side / cp.symmetry * cp.symmetry;
+    int face = side / symmetry * symmetry;
     
     int rand = Config.getRandom(blockPos, face) & 0x7FFFFFFF;
     
     int index = 0;
-    if (cp.weights == null)
+    if (weights == null)
     {
-      index = rand % cp.tileIcons.length;
+      index = rand % tileIcons.length;
     }
     else
     {
-      int randWeight = rand % cp.sumAllWeights;
+      int randWeight = rand % sumAllWeights;
       
       int[] sumWeights = cp.sumWeights;
       for (int i = 0; i < sumWeights.length; i++) {
@@ -399,18 +399,18 @@ public class ConnectedTextures
         }
       }
     }
-    return cp.tileIcons[index];
+    return tileIcons[index];
   }
   
   private static bmi getConnectedTextureFixed(ConnectedProperties cp)
   {
-    return cp.tileIcons[0];
+    return tileIcons[0];
   }
   
   private static bmi getConnectedTextureRepeat(ConnectedProperties cp, cj blockPos, int side)
   {
-    if (cp.tileIcons.length == 1) {
-      return cp.tileIcons[0];
+    if (tileIcons.length == 1) {
+      return tileIcons[0];
     }
     int x = blockPos.n();
     int y = blockPos.o();
@@ -444,17 +444,17 @@ public class ConnectedTextures
       nx = -z - 1;
       ny = -y;
     }
-    nx %= cp.width;
-    ny %= cp.height;
+    nx %= width;
+    ny %= height;
     if (nx < 0) {
-      nx += cp.width;
+      nx += width;
     }
     if (ny < 0) {
-      ny += cp.height;
+      ny += height;
     }
-    int index = ny * cp.width + nx;
+    int index = ny * width + nx;
     
-    return cp.tileIcons[index];
+    return tileIcons[index];
   }
   
   private static bmi getConnectedTextureCtm(ConnectedProperties cp, adq blockAccess, alz blockState, cj blockPos, int side, bmi icon, int metadata, RenderEnv renderEnv)
@@ -531,10 +531,10 @@ public class ConnectedTextures
       index = 26;
     }
     if (index == 0) {
-      return cp.tileIcons[index];
+      return tileIcons[index];
     }
     if (!Config.isConnectedTexturesFancy()) {
-      return cp.tileIcons[index];
+      return tileIcons[index];
     }
     boolean[] edges = borders;
     switch (side)
@@ -638,7 +638,7 @@ public class ConnectedTextures
     } else if ((index == 26) && (edges[0] == 0) && (edges[1] == 0) && (edges[2] == 0) && (edges[3] != 0)) {
       index = 45;
     }
-    return cp.tileIcons[index];
+    return tileIcons[index];
   }
   
   private static boolean isNeighbour(ConnectedProperties cp, adq iblockaccess, alz blockState, cj blockPos, int side, bmi icon, int metadata)
@@ -647,7 +647,7 @@ public class ConnectedTextures
     if (blockState == neighbourState) {
       return true;
     }
-    if (cp.connect == 2)
+    if (connect == 2)
     {
       if (neighbourState == null) {
         return false;
@@ -658,7 +658,7 @@ public class ConnectedTextures
       bmi neighbourIcon = getNeighbourIcon(iblockaccess, blockPos, neighbourState, side);
       return neighbourIcon == icon;
     }
-    if (cp.connect == 3)
+    if (connect == 3)
     {
       if (neighbourState == null) {
         return false;
@@ -789,7 +789,7 @@ public class ConnectedTextures
     } else {
       index = 3;
     }
-    return cp.tileIcons[index];
+    return tileIcons[index];
   }
   
   private static bmi getConnectedTextureVertical(ConnectedProperties cp, adq blockAccess, alz blockState, cj blockPos, int vertAxis, int side, bmi icon, int metadata)
@@ -833,7 +833,7 @@ public class ConnectedTextures
     } else {
       index = 3;
     }
-    return cp.tileIcons[index];
+    return tileIcons[index];
   }
   
   private static bmi getConnectedTextureHorizontalVertical(ConnectedProperties cp, adq blockAccess, alz blockState, cj blockPos, int vertAxis, int side, bmi icon, int metadata)
@@ -902,7 +902,7 @@ public class ConnectedTextures
       top = isNeighbour(cp, blockAccess, blockState, blockPos.f(), side, icon, metadata);
     }
     if (top) {
-      return cp.tileIcons[0];
+      return tileIcons[0];
     }
     return null;
   }
@@ -1028,11 +1028,11 @@ public class ConnectedTextures
     for (int i = 0; i < props.length; i++)
     {
       ConnectedProperties cp = props[i];
-      if (cp.matchTileIcons != null) {
-        matchIconSet.addAll(Arrays.asList(cp.matchTileIcons));
+      if (matchTileIcons != null) {
+        matchIconSet.addAll(Arrays.asList(matchTileIcons));
       }
-      if (cp.tileIcons != null) {
-        tileIconSet.addAll(Arrays.asList(cp.tileIcons));
+      if (tileIcons != null) {
+        tileIconSet.addAll(Arrays.asList(tileIcons));
       }
     }
     matchIconSet.retainAll(tileIconSet);
@@ -1057,12 +1057,12 @@ public class ConnectedTextures
   
   private static void addToTileList(ConnectedProperties cp, List tileList)
   {
-    if (cp.matchTileIcons == null) {
+    if (matchTileIcons == null) {
       return;
     }
-    for (int i = 0; i < cp.matchTileIcons.length; i++)
+    for (int i = 0; i < matchTileIcons.length; i++)
     {
-      bmi icon = cp.matchTileIcons[i];
+      bmi icon = matchTileIcons[i];
       if (!(icon instanceof bmi))
       {
         Config.warn("TextureAtlasSprite is not TextureAtlasSprite: " + icon + ", name: " + icon.i());
@@ -1082,12 +1082,12 @@ public class ConnectedTextures
   
   private static void addToBlockList(ConnectedProperties cp, List blockList)
   {
-    if (cp.matchBlocks == null) {
+    if (matchBlocks == null) {
       return;
     }
-    for (int i = 0; i < cp.matchBlocks.length; i++)
+    for (int i = 0; i < matchBlocks.length; i++)
     {
-      int blockId = cp.matchBlocks[i].getBlockId();
+      int blockId = matchBlocks[i].getBlockId();
       if (blockId < 0) {
         Config.warn("Invalid block ID: " + blockId);
       } else {
@@ -1212,7 +1212,7 @@ public class ConnectedTextures
   
   public static bmi getCtmTexture(ConnectedProperties cp, int ctmIndex, bmi icon)
   {
-    if (cp.method != 1) {
+    if (method != 1) {
       return icon;
     }
     if ((ctmIndex < 0) || (ctmIndex >= ctmIndexes.length)) {
@@ -1220,7 +1220,7 @@ public class ConnectedTextures
     }
     int index = ctmIndexes[ctmIndex];
     
-    bmi[] ctmIcons = cp.tileIcons;
+    bmi[] ctmIcons = tileIcons;
     if ((index < 0) || (index >= ctmIcons.length)) {
       return icon;
     }

@@ -10,23 +10,23 @@ public class rc
   
   public rc(tm ☃, double ☃)
   {
-    this.a = ☃;
-    this.c = ☃;
+    a = ☃;
+    c = ☃;
   }
   
   public boolean a()
   {
-    if (this.a.l() >= 0) {
+    if (a.l() >= 0) {
       return false;
     }
-    List<tm> ☃ = this.a.o.a(this.a.getClass(), this.a.aR().b(8.0D, 4.0D, 8.0D));
+    List<tm> ☃ = a.o.a(a.getClass(), a.aR().b(8.0D, 4.0D, 8.0D));
     
     tm ☃ = null;
     double ☃ = Double.MAX_VALUE;
     for (tm ☃ : ☃) {
       if (☃.l() >= 0)
       {
-        double ☃ = this.a.h(☃);
+        double ☃ = a.h(☃);
         if (☃ <= ☃)
         {
           ☃ = ☃;
@@ -40,19 +40,19 @@ public class rc
     if (☃ < 9.0D) {
       return false;
     }
-    this.b = ☃;
+    b = ☃;
     return true;
   }
   
   public boolean b()
   {
-    if (this.a.l() >= 0) {
+    if (a.l() >= 0) {
       return false;
     }
-    if (!this.b.ai()) {
+    if (!b.ai()) {
       return false;
     }
-    double ☃ = this.a.h(this.b);
+    double ☃ = a.h(b);
     if ((☃ < 9.0D) || (☃ > 256.0D)) {
       return false;
     }
@@ -61,20 +61,20 @@ public class rc
   
   public void c()
   {
-    this.d = 0;
+    d = 0;
   }
   
   public void d()
   {
-    this.b = null;
+    b = null;
   }
   
   public void e()
   {
-    if (--this.d > 0) {
+    if (--d > 0) {
       return;
     }
-    this.d = 10;
-    this.a.s().a(this.b, this.c);
+    d = 10;
+    a.s().a(b, c);
   }
 }

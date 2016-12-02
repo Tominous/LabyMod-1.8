@@ -9,8 +9,8 @@ public class bga
   
   public bga(adm ☃, int ☃, bfr ☃, bhu ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
     
     a(☃);
     a(☃);
@@ -18,17 +18,17 @@ public class bga
   
   protected void a(bhu ☃)
   {
-    int ☃ = this.d * this.c * this.e;
-    this.f = new bht[☃];
+    int ☃ = d * c * e;
+    f = new bht[☃];
     
     int ☃ = 0;
-    for (int ☃ = 0; ☃ < this.d; ☃++) {
-      for (int ☃ = 0; ☃ < this.c; ☃++) {
-        for (int ☃ = 0; ☃ < this.e; ☃++)
+    for (int ☃ = 0; ☃ < d; ☃++) {
+      for (int ☃ = 0; ☃ < c; ☃++) {
+        for (int ☃ = 0; ☃ < e; ☃++)
         {
-          int ☃ = (☃ * this.c + ☃) * this.d + ☃;
+          int ☃ = (☃ * c + ☃) * d + ☃;
           cj ☃ = new cj(☃ * 16, ☃ * 16, ☃ * 16);
-          this.f[☃] = ☃.a(this.b, this.a, ☃, ☃++);
+          f[☃] = ☃.a(b, a, ☃, ☃++);
         }
       }
     }
@@ -36,7 +36,7 @@ public class bga
   
   public void a()
   {
-    for (bht ☃ : this.f) {
+    for (bht ☃ : f) {
       ☃.a();
     }
   }
@@ -44,9 +44,9 @@ public class bga
   protected void a(int ☃)
   {
     int ☃ = ☃ * 2 + 1;
-    this.d = ☃;
-    this.c = 16;
-    this.e = ☃;
+    d = ☃;
+    c = 16;
+    e = ☃;
   }
   
   public void a(double ☃, double ☃)
@@ -54,18 +54,18 @@ public class bga
     int ☃ = ns.c(☃) - 8;
     int ☃ = ns.c(☃) - 8;
     
-    int ☃ = this.d * 16;
-    for (int ☃ = 0; ☃ < this.d; ☃++)
+    int ☃ = d * 16;
+    for (int ☃ = 0; ☃ < d; ☃++)
     {
       int ☃ = a(☃, ☃, ☃);
-      for (int ☃ = 0; ☃ < this.e; ☃++)
+      for (int ☃ = 0; ☃ < e; ☃++)
       {
         int ☃ = a(☃, ☃, ☃);
-        for (int ☃ = 0; ☃ < this.c; ☃++)
+        for (int ☃ = 0; ☃ < c; ☃++)
         {
           int ☃ = ☃ * 16;
           
-          bht ☃ = this.f[((☃ * this.c + ☃) * this.d + ☃)];
+          bht ☃ = f[((☃ * c + ☃) * d + ☃)];
           cj ☃ = new cj(☃, ☃, ☃);
           if (!☃.equals(☃.j())) {
             ☃.a(☃);
@@ -95,24 +95,24 @@ public class bga
     int ☃ = ns.a(☃, 16);
     for (int ☃ = ☃; ☃ <= ☃; ☃++)
     {
-      int ☃ = ☃ % this.d;
+      int ☃ = ☃ % d;
       if (☃ < 0) {
-        ☃ += this.d;
+        ☃ += d;
       }
       for (int ☃ = ☃; ☃ <= ☃; ☃++)
       {
-        int ☃ = ☃ % this.c;
+        int ☃ = ☃ % c;
         if (☃ < 0) {
-          ☃ += this.c;
+          ☃ += c;
         }
         for (int ☃ = ☃; ☃ <= ☃; ☃++)
         {
-          int ☃ = ☃ % this.e;
+          int ☃ = ☃ % e;
           if (☃ < 0) {
-            ☃ += this.e;
+            ☃ += e;
           }
-          int ☃ = (☃ * this.c + ☃) * this.d + ☃;
-          bht ☃ = this.f[☃];
+          int ☃ = (☃ * c + ☃) * d + ☃;
+          bht ☃ = f[☃];
           ☃.a(true);
         }
       }
@@ -124,18 +124,18 @@ public class bga
     int ☃ = ns.a(☃.n(), 16);
     int ☃ = ns.a(☃.o(), 16);
     int ☃ = ns.a(☃.p(), 16);
-    if ((☃ < 0) || (☃ >= this.c)) {
+    if ((☃ < 0) || (☃ >= c)) {
       return null;
     }
-    ☃ %= this.d;
+    ☃ %= d;
     if (☃ < 0) {
-      ☃ += this.d;
+      ☃ += d;
     }
-    ☃ %= this.e;
+    ☃ %= e;
     if (☃ < 0) {
-      ☃ += this.e;
+      ☃ += e;
     }
-    int ☃ = (☃ * this.c + ☃) * this.d + ☃;
-    return this.f[☃];
+    int ☃ = (☃ * c + ☃) * d + ☃;
+    return f[☃];
   }
 }

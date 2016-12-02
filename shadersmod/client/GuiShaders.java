@@ -41,7 +41,7 @@ public class GuiShaders
   
   public GuiShaders(axu par1GuiScreen, avh par2GameSettings)
   {
-    this.parentGui = par1GuiScreen;
+    parentGui = par1GuiScreen;
   }
   
   private static String toStringOnOff(boolean value)
@@ -98,27 +98,27 @@ public class GuiShaders
     }
     int baseY = 30;
     int stepY = 20;
-    int btnX = this.l - 130;
+    int btnX = l - 130;
     int btnWidth = 120;
     int btnHeight = 20;
     
-    int shaderListWidth = this.l - btnWidth - 20;
-    this.shaderList = new GuiSlotShaders(this, shaderListWidth, this.m, baseY, this.m - 50, 16);
-    this.shaderList.d(7, 8);
+    int shaderListWidth = l - btnWidth - 20;
+    shaderList = new GuiSlotShaders(this, shaderListWidth, m, baseY, m - 50, 16);
+    shaderList.d(7, 8);
     
-    this.n.add(new avs(20, btnX, 0 * stepY + baseY, btnWidth, btnHeight, "Antialiasing: " + toStringAa(Shaders.configAntialiasingLevel)));
-    this.n.add(new avs(17, btnX, 1 * stepY + baseY, btnWidth, btnHeight, "Normap Map: " + toStringOnOff(Shaders.configNormalMap)));
-    this.n.add(new avs(18, btnX, 2 * stepY + baseY, btnWidth, btnHeight, "Specular Map: " + toStringOnOff(Shaders.configSpecularMap)));
-    this.n.add(new avs(15, btnX, 3 * stepY + baseY, btnWidth, btnHeight, "Render Quality: " + toStringQuality(Shaders.configRenderResMul)));
-    this.n.add(new avs(16, btnX, 4 * stepY + baseY, btnWidth, btnHeight, "Shadow Quality: " + toStringQuality(Shaders.configShadowResMul)));
-    this.n.add(new avs(10, btnX, 5 * stepY + baseY, btnWidth, btnHeight, "Hand Depth: " + toStringHandDepth(Shaders.configHandDepthMul)));
-    this.n.add(new avs(9, btnX, 6 * stepY + baseY, btnWidth, btnHeight, "Cloud Shadow: " + toStringOnOff(Shaders.configCloudShadow)));
+    n.add(new avs(20, btnX, 0 * stepY + baseY, btnWidth, btnHeight, "Antialiasing: " + toStringAa(Shaders.configAntialiasingLevel)));
+    n.add(new avs(17, btnX, 1 * stepY + baseY, btnWidth, btnHeight, "Normap Map: " + toStringOnOff(Shaders.configNormalMap)));
+    n.add(new avs(18, btnX, 2 * stepY + baseY, btnWidth, btnHeight, "Specular Map: " + toStringOnOff(Shaders.configSpecularMap)));
+    n.add(new avs(15, btnX, 3 * stepY + baseY, btnWidth, btnHeight, "Render Quality: " + toStringQuality(Shaders.configRenderResMul)));
+    n.add(new avs(16, btnX, 4 * stepY + baseY, btnWidth, btnHeight, "Shadow Quality: " + toStringQuality(Shaders.configShadowResMul)));
+    n.add(new avs(10, btnX, 5 * stepY + baseY, btnWidth, btnHeight, "Hand Depth: " + toStringHandDepth(Shaders.configHandDepthMul)));
+    n.add(new avs(9, btnX, 6 * stepY + baseY, btnWidth, btnHeight, "Cloud Shadow: " + toStringOnOff(Shaders.configCloudShadow)));
     
-    this.n.add(new avs(19, btnX, 7 * stepY + baseY, btnWidth, btnHeight, "Classic Lighting: " + toStringOnOff(Shaders.configOldLighting)));
+    n.add(new avs(19, btnX, 7 * stepY + baseY, btnWidth, btnHeight, "Classic Lighting: " + toStringOnOff(Shaders.configOldLighting)));
     
-    this.n.add(new avs(6, btnX, this.m - 25, btnWidth, btnHeight, "Done"));
+    n.add(new avs(6, btnX, m - 25, btnWidth, btnHeight, "Done"));
     int btnFolderWidth = 160;
-    this.n.add(new avs(5, shaderListWidth / 2 - btnFolderWidth / 2, this.m - 25, btnFolderWidth, btnHeight, "Open shader packs folder"));
+    n.add(new avs(5, shaderListWidth / 2 - btnFolderWidth / 2, m - 25, btnFolderWidth, btnHeight, "Open shader packs folder"));
     
     updateButtons();
   }
@@ -126,13 +126,13 @@ public class GuiShaders
   public void updateButtons()
   {
     boolean shaderActive = Config.isShaders();
-    for (Iterator it = this.n.iterator(); it.hasNext();)
+    for (Iterator it = n.iterator(); it.hasNext();)
     {
       avs button = (avs)it.next();
-      if ((button.k > 8) && 
+      if ((k > 8) && 
       
-        (button.k != 20)) {
-        button.l = shaderActive;
+        (k != 20)) {
+        l = shaderActive;
       }
     }
   }
@@ -141,22 +141,22 @@ public class GuiShaders
     throws IOException
   {
     super.k();
-    this.shaderList.p();
+    shaderList.p();
   }
   
   protected void a(avs button)
   {
-    if (button.l) {
-      switch (button.k)
+    if (l) {
+      switch (k)
       {
       case 4: 
         Shaders.configTweakBlockDamage = !Shaders.configTweakBlockDamage;
         
-        button.j = ("tweakBlockDamage: " + toStringOnOff(Shaders.configTweakBlockDamage));
+        j = ("tweakBlockDamage: " + toStringOnOff(Shaders.configTweakBlockDamage));
         break;
       case 9: 
         Shaders.configCloudShadow = !Shaders.configCloudShadow;
-        button.j = ("Cloud Shadow: " + toStringOnOff(Shaders.configCloudShadow));
+        j = ("Cloud Shadow: " + toStringOnOff(Shaders.configCloudShadow));
         break;
       case 10: 
         float val = Shaders.configHandDepthMul;
@@ -178,7 +178,7 @@ public class GuiShaders
           }
         }
         Shaders.configHandDepthMul = values[index];
-        button.j = ("Hand Depth: " + names[index]);
+        j = ("Hand Depth: " + names[index]);
         break;
       case 15: 
         float val = Shaders.configRenderResMul;
@@ -200,7 +200,7 @@ public class GuiShaders
           }
         }
         Shaders.configRenderResMul = values[index];
-        button.j = ("Render Quality: " + names[index]);
+        j = ("Render Quality: " + names[index]);
         Shaders.scheduleResize();
         break;
       case 16: 
@@ -223,54 +223,54 @@ public class GuiShaders
           }
         }
         Shaders.configShadowResMul = values[index];
-        button.j = ("Shadow Quality: " + names[index]);
+        j = ("Shadow Quality: " + names[index]);
         Shaders.scheduleResizeShadow();
         break;
       case 17: 
         Shaders.configNormalMap = !Shaders.configNormalMap;
         
-        button.j = ("Normap Map: " + toStringOnOff(Shaders.configNormalMap));
-        this.j.B();
+        j = ("Normap Map: " + toStringOnOff(Shaders.configNormalMap));
+        j.B();
         break;
       case 18: 
         Shaders.configSpecularMap = !Shaders.configSpecularMap;
         
-        button.j = ("Specular Map: " + toStringOnOff(Shaders.configSpecularMap));
-        this.j.B();
+        j = ("Specular Map: " + toStringOnOff(Shaders.configSpecularMap));
+        j.B();
         break;
       case 19: 
         Shaders.configOldLighting = !Shaders.configOldLighting;
         
-        button.j = ("Classic Lighting: " + toStringOnOff(Shaders.configOldLighting));
+        j = ("Classic Lighting: " + toStringOnOff(Shaders.configOldLighting));
         Shaders.updateBlockLightLevel();
         
-        this.j.B();
+        j.B();
         break;
       case 20: 
         Shaders.nextAntialiasingLevel();
         
-        button.j = ("Antialiasing: " + toStringAa(Shaders.configAntialiasingLevel));
+        j = ("Antialiasing: " + toStringAa(Shaders.configAntialiasingLevel));
         Shaders.uninit();
         break;
       case 11: 
         Shaders.configTexMinFilB = (Shaders.configTexMinFilB + 1) % 3;
         Shaders.configTexMinFilN = Shaders.configTexMinFilS = Shaders.configTexMinFilB;
-        button.j = ("Tex Min: " + Shaders.texMinFilDesc[Shaders.configTexMinFilB]);
+        j = ("Tex Min: " + Shaders.texMinFilDesc[Shaders.configTexMinFilB]);
         ShadersTex.updateTextureMinMagFilter();
         break;
       case 12: 
         Shaders.configTexMagFilN = (Shaders.configTexMagFilN + 1) % 2;
-        button.j = ("Tex_n Mag: " + Shaders.texMagFilDesc[Shaders.configTexMagFilN]);
+        j = ("Tex_n Mag: " + Shaders.texMagFilDesc[Shaders.configTexMagFilN]);
         ShadersTex.updateTextureMinMagFilter();
         break;
       case 13: 
         Shaders.configTexMagFilS = (Shaders.configTexMagFilS + 1) % 2;
-        button.j = ("Tex_s Mag: " + Shaders.texMagFilDesc[Shaders.configTexMagFilS]);
+        j = ("Tex_s Mag: " + Shaders.texMagFilDesc[Shaders.configTexMagFilS]);
         ShadersTex.updateTextureMinMagFilter();
         break;
       case 14: 
         Shaders.configShadowClipFrustrum = !Shaders.configShadowClipFrustrum;
-        button.j = ("ShadowClipFrustrum: " + toStringOnOff(Shaders.configShadowClipFrustrum));
+        j = ("ShadowClipFrustrum: " + toStringOnOff(Shaders.configShadowClipFrustrum));
         ShadersTex.updateTextureMinMagFilter();
         break;
       case 5: 
@@ -303,7 +303,7 @@ public class GuiShaders
         {
           Class var3 = Class.forName("java.awt.Desktop");
           Object var4 = var3.getMethod("getDesktop", new Class[0]).invoke((Object)null, new Object[0]);
-          var3.getMethod("browse", new Class[] { URI.class }).invoke(var4, new Object[] { new File(this.j.v, Shaders.shaderpacksdirname).toURI() });
+          var3.getMethod("browse", new Class[] { URI.class }).invoke(var4, new Object[] { new File(j.v, Shaders.shaderpacksdirname).toURI() });
         }
         catch (Throwable var5)
         {
@@ -323,12 +323,12 @@ public class GuiShaders
           Shaders.storeConfig();
         }
         catch (Exception ex) {}
-        this.j.a(this.parentGui);
+        j.a(parentGui);
         break;
       case 7: 
       case 8: 
       default: 
-        this.shaderList.a(button);
+        shaderList.a(button);
       }
     }
   }
@@ -336,20 +336,20 @@ public class GuiShaders
   public void a(int mouseX, int mouseY, float partialTicks)
   {
     c();
-    this.shaderList.a(mouseX, mouseY, partialTicks);
-    if (this.updateTimer <= 0)
+    shaderList.a(mouseX, mouseY, partialTicks);
+    if (updateTimer <= 0)
     {
-      this.shaderList.updateList();
-      this.updateTimer += 20;
+      shaderList.updateList();
+      updateTimer += 20;
     }
-    a(this.q, "Shaders ", this.l / 2, 15, 16777215);
+    a(q, "Shaders ", l / 2, 15, 16777215);
     
     String info = "OpenGL: " + Shaders.glVersionString + ", " + Shaders.glVendorString + ", " + Shaders.glRendererString;
-    int infoWidth = this.q.a(info);
-    if (infoWidth < this.l - 5) {
-      a(this.q, info, this.l / 2, this.m - 40, 8421504);
+    int infoWidth = q.a(info);
+    if (infoWidth < l - 5) {
+      a(q, info, l / 2, m - 40, 8421504);
     } else {
-      c(this.q, info, 5, this.m - 40, 8421504);
+      c(q, info, 5, m - 40, 8421504);
     }
     super.a(mouseX, mouseY, partialTicks);
   }
@@ -357,17 +357,17 @@ public class GuiShaders
   public void e()
   {
     super.e();
-    this.updateTimer -= 1;
+    updateTimer -= 1;
   }
   
   public ave getMc()
   {
-    return this.j;
+    return j;
   }
   
   public void drawCenteredString(String text, int x, int y, int color)
   {
-    a(this.q, text, x, y, color);
+    a(q, text, x, y, color);
   }
   
   public static int getOSType()

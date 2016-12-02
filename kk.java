@@ -15,14 +15,14 @@ public class kk
   
   public kk(MinecraftServer ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(aum ☃)
   {
     super.a(☃);
-    if (this.b.contains(☃.d())) {
-      this.a.ap().a(new hs(☃));
+    if (b.contains(☃.d())) {
+      a.ap().a(new hs(☃));
     }
     b();
   }
@@ -30,14 +30,14 @@ public class kk
   public void a(String ☃)
   {
     super.a(☃);
-    this.a.ap().a(new hs(☃));
+    a.ap().a(new hs(☃));
     b();
   }
   
   public void a(String ☃, auk ☃)
   {
     super.a(☃, ☃);
-    this.a.ap().a(new hs(☃, ☃));
+    a.ap().a(new hs(☃, ☃));
     b();
   }
   
@@ -48,14 +48,14 @@ public class kk
     super.a(☃, ☃);
     if ((☃ != ☃) && (☃ != null)) {
       if (h(☃) > 0) {
-        this.a.ap().a(new hj(☃, ☃));
+        a.ap().a(new hj(☃, ☃));
       } else {
         g(☃);
       }
     }
     if (☃ != null) {
-      if (this.b.contains(☃)) {
-        this.a.ap().a(new hj(☃, ☃));
+      if (b.contains(☃)) {
+        a.ap().a(new hj(☃, ☃));
       } else {
         e(☃);
       }
@@ -68,7 +68,7 @@ public class kk
     if (super.a(☃, ☃))
     {
       aul ☃ = d(☃);
-      this.a.ap().a(new hr(☃, Arrays.asList(new String[] { ☃ }), 3));
+      a.ap().a(new hr(☃, Arrays.asList(new String[] { ☃ }), 3));
       b();
       
       return true;
@@ -80,7 +80,7 @@ public class kk
   {
     super.a(☃, ☃);
     
-    this.a.ap().a(new hr(☃, Arrays.asList(new String[] { ☃ }), 4));
+    a.ap().a(new hr(☃, Arrays.asList(new String[] { ☃ }), 4));
     
     b();
   }
@@ -94,8 +94,8 @@ public class kk
   public void b(auk ☃)
   {
     super.b(☃);
-    if (this.b.contains(☃)) {
-      this.a.ap().a(new hq(☃, 2));
+    if (b.contains(☃)) {
+      a.ap().a(new hq(☃, 2));
     }
     b();
   }
@@ -103,7 +103,7 @@ public class kk
   public void c(auk ☃)
   {
     super.c(☃);
-    if (this.b.contains(☃)) {
+    if (b.contains(☃)) {
       g(☃);
     }
     b();
@@ -113,7 +113,7 @@ public class kk
   {
     super.a(☃);
     
-    this.a.ap().a(new hr(☃, 0));
+    a.ap().a(new hr(☃, 0));
     
     b();
   }
@@ -122,7 +122,7 @@ public class kk
   {
     super.b(☃);
     
-    this.a.ap().a(new hr(☃, 2));
+    a.ap().a(new hr(☃, 2));
     
     b();
   }
@@ -131,20 +131,20 @@ public class kk
   {
     super.c(☃);
     
-    this.a.ap().a(new hr(☃, 1));
+    a.ap().a(new hr(☃, 1));
     
     b();
   }
   
   public void a(aup ☃)
   {
-    this.c = ☃;
+    c = ☃;
   }
   
   protected void b()
   {
-    if (this.c != null) {
-      this.c.c();
+    if (c != null) {
+      c.c();
     }
   }
   
@@ -166,15 +166,15 @@ public class kk
   public void e(auk ☃)
   {
     List<ff> ☃ = d(☃);
-    for (Iterator ☃ = this.a.ap().v().iterator(); ☃.hasNext();)
+    for (Iterator ☃ = a.ap().v().iterator(); ☃.hasNext();)
     {
       ☃ = (lf)☃.next();
       for (ff ☃ : ☃) {
-        ☃.a.a(☃);
+        a.a(☃);
       }
     }
     lf ☃;
-    this.b.add(☃);
+    b.add(☃);
   }
   
   public List<ff> f(auk ☃)
@@ -192,15 +192,15 @@ public class kk
   public void g(auk ☃)
   {
     List<ff> ☃ = f(☃);
-    for (Iterator ☃ = this.a.ap().v().iterator(); ☃.hasNext();)
+    for (Iterator ☃ = a.ap().v().iterator(); ☃.hasNext();)
     {
       ☃ = (lf)☃.next();
       for (ff ☃ : ☃) {
-        ☃.a.a(☃);
+        a.a(☃);
       }
     }
     lf ☃;
-    this.b.remove(☃);
+    b.remove(☃);
   }
   
   public int h(auk ☃)

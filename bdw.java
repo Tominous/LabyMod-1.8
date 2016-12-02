@@ -10,25 +10,25 @@ public class bdw
   
   public bdw(adm ☃, pk ☃, pk ☃, float ☃)
   {
-    super(☃, ☃.s, ☃.t, ☃.u, ☃.v, ☃.w, ☃.x);
-    this.a = ☃;
-    this.az = ☃;
-    this.aB = 3;
-    this.aC = ☃;
+    super(☃, s, t, u, v, w, x);
+    a = ☃;
+    az = ☃;
+    aB = 3;
+    aC = ☃;
   }
   
   public void a(bfd ☃, pk ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
-    float ☃ = (this.aA + ☃) / this.aB;
+    float ☃ = (aA + ☃) / aB;
     ☃ *= ☃;
     
-    double ☃ = this.a.s;
-    double ☃ = this.a.t;
-    double ☃ = this.a.u;
+    double ☃ = a.s;
+    double ☃ = a.t;
+    double ☃ = a.u;
     
-    double ☃ = this.az.P + (this.az.s - this.az.P) * ☃;
-    double ☃ = this.az.Q + (this.az.t - this.az.Q) * ☃ + this.aC;
-    double ☃ = this.az.R + (this.az.u - this.az.R) * ☃;
+    double ☃ = az.P + (az.s - az.P) * ☃;
+    double ☃ = az.Q + (az.t - az.Q) * ☃ + aC;
+    double ☃ = az.R + (az.u - az.R) * ☃;
     
     double ☃ = ☃ + (☃ - ☃) * ☃;
     double ☃ = ☃ + (☃ - ☃) * ☃;
@@ -44,13 +44,13 @@ public class bdw
     ☃ -= ax;
     ☃ -= ay;
     
-    this.aD.a(this.a, (float)☃, (float)☃, (float)☃, this.a.y, ☃);
+    aD.a(a, (float)☃, (float)☃, (float)☃, a.y, ☃);
   }
   
   public void t_()
   {
-    this.aA += 1;
-    if (this.aA == this.aB) {
+    aA += 1;
+    if (aA == aB) {
       J();
     }
   }

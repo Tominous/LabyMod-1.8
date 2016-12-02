@@ -8,6 +8,6 @@ class ato$4
   public String a()
     throws Exception
   {
-    return c.a(ato.d(this.a), ato.e(this.a), ato.f(this.a));
+    return c.a(ato.d(a), ato.e(a), ato.f(a));
   }
 }

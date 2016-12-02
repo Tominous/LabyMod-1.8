@@ -8,8 +8,8 @@ public class MultiTexID
   
   public MultiTexID(int baseTex, int normTex, int specTex)
   {
-    this.base = baseTex;
-    this.norm = normTex;
-    this.spec = specTex;
+    base = baseTex;
+    norm = normTex;
+    spec = specTex;
   }
 }

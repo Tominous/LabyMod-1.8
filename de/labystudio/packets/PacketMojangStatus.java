@@ -13,20 +13,20 @@ public class PacketMojangStatus
   
   public PacketMojangStatus(MojangService ms, String status)
   {
-    this.service = ms;
+    service = ms;
     this.status = status;
   }
   
   public void read(PacketBuf buf)
   {
-    this.service = MojangService.fromId(buf.readInt());
-    this.status = buf.readString();
+    service = MojangService.fromId(buf.readInt());
+    status = buf.readString();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeInt(this.service.getId());
-    buf.writeString(this.status);
+    buf.writeInt(service.getId());
+    buf.writeString(status);
   }
   
   public void handle(PacketHandler packetHandler)
@@ -36,11 +36,11 @@ public class PacketMojangStatus
   
   public MojangService getMojangService()
   {
-    return this.service;
+    return service;
   }
   
   public String getStatus()
   {
-    return this.status;
+    return status;
   }
 }

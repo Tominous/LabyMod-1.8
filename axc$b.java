@@ -7,7 +7,7 @@ class axc$b
   
   public axc$b(axc paramaxc)
   {
-    super(paramaxc.j, paramaxc.l, paramaxc.m, 80, paramaxc.m - 32, 38);
+    super(j, l, m, 80, m - 32, 38);
   }
   
   protected int b()
@@ -17,14 +17,14 @@ class axc$b
   
   protected void a(int ☃, boolean ☃, int ☃, int ☃)
   {
-    this.u = ☃;
-    this.v.a();
-    axc.b(this.v).a(((axc.a)axc.f().get(axc.a(this.v).u)).c.toString());
+    u = ☃;
+    v.a();
+    axc.b(v).a(fgetav).u)).c.toString());
   }
   
   protected boolean a(int ☃)
   {
-    return ☃ == this.u;
+    return ☃ == u;
   }
   
   protected void a() {}
@@ -33,13 +33,13 @@ class axc$b
   {
     int ☃ = ☃ + 5;
     int ☃ = ☃;
-    axc.a(this.v, ☃ - 1, ☃ + 32, ☃ - 1, -2039584);
-    axc.b(this.v, ☃ - 1, ☃ + 32, ☃ + 32, -6250336);
-    axc.c(this.v, ☃ - 1, ☃ - 1, ☃ + 32, -2039584);
-    axc.d(this.v, ☃ + 32, ☃ - 1, ☃ + 32, -6250336);
+    axc.a(v, ☃ - 1, ☃ + 32, ☃ - 1, -2039584);
+    axc.b(v, ☃ - 1, ☃ + 32, ☃ + 32, -6250336);
+    axc.c(v, ☃ - 1, ☃ - 1, ☃ + 32, -2039584);
+    axc.d(v, ☃ + 32, ☃ - 1, ☃ + 32, -6250336);
     
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    this.a.P().a(☃);
+    a.P().a(☃);
     
     int ☃ = 32;
     int ☃ = 32;
@@ -56,7 +56,7 @@ class axc$b
   protected void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
     axc.a ☃ = (axc.a)axc.f().get(☃);
-    a(☃, ☃, ☃.b);
-    this.v.q.a(☃.a, ☃ + 32 + 10, ☃ + 14, 16777215);
+    a(☃, ☃, b);
+    v.q.a(a, ☃ + 32 + 10, ☃ + 14, 16777215);
   }
 }

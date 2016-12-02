@@ -17,24 +17,24 @@ public class ReflectorConstructor
   
   public Constructor getTargetConstructor()
   {
-    if (this.checked) {
-      return this.targetConstructor;
+    if (checked) {
+      return targetConstructor;
     }
-    this.checked = true;
+    checked = true;
     
-    Class cls = this.reflectorClass.getTargetClass();
+    Class cls = reflectorClass.getTargetClass();
     if (cls == null) {
       return null;
     }
     try
     {
-      this.targetConstructor = findConstructor(cls, this.parameterTypes);
-      if (this.targetConstructor == null) {
-        Config.dbg("(Reflector) Constructor not present: " + cls.getName() + ", params: " + Config.arrayToString(this.parameterTypes));
+      targetConstructor = findConstructor(cls, parameterTypes);
+      if (targetConstructor == null) {
+        Config.dbg("(Reflector) Constructor not present: " + cls.getName() + ", params: " + Config.arrayToString(parameterTypes));
       }
-      if (this.targetConstructor != null) {
-        if (!this.targetConstructor.isAccessible()) {
-          this.targetConstructor.setAccessible(true);
+      if (targetConstructor != null) {
+        if (!targetConstructor.isAccessible()) {
+          targetConstructor.setAccessible(true);
         }
       }
     }
@@ -42,7 +42,7 @@ public class ReflectorConstructor
     {
       e.printStackTrace();
     }
-    return this.targetConstructor;
+    return targetConstructor;
   }
   
   private static Constructor findConstructor(Class cls, Class[] paramTypes)
@@ -61,15 +61,15 @@ public class ReflectorConstructor
   
   public boolean exists()
   {
-    if (this.checked) {
-      return this.targetConstructor != null;
+    if (checked) {
+      return targetConstructor != null;
     }
     return getTargetConstructor() != null;
   }
   
   public void deactivate()
   {
-    this.checked = true;
-    this.targetConstructor = null;
+    checked = true;
+    targetConstructor = null;
   }
 }

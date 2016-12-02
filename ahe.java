@@ -9,7 +9,7 @@ public class ahe
   protected ahe()
   {
     super(arm.b);
-    j(this.M.b().a(a, Boolean.valueOf(false)));
+    j(M.b().a(a, Boolean.valueOf(false)));
     a(true);
     a(yz.b);
   }
@@ -37,7 +37,7 @@ public class ahe
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     if ((☃.l(☃.a()) < 4) && (☃.p(☃.a()).c().p() > 2))
@@ -87,7 +87,7 @@ public class ahe
           break label260;
         }
       }
-      if (☃.p(☃).c().J == arm.a) {
+      if (pcJ == arm.a) {
         if (☃.nextInt(8) == 0)
         {
           agw.a ☃ = ☃.b(☃).a(☃, ☃);

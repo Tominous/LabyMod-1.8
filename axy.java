@@ -17,63 +17,63 @@ public class axy
   
   public axy(axu ☃, avh ☃)
   {
-    this.a = ☃;
-    this.f = ☃;
+    a = ☃;
+    f = ☃;
   }
   
   public void b()
   {
-    this.i = bnq.a("options.snooper.title", new Object[0]);
+    i = bnq.a("options.snooper.title", new Object[0]);
     String ☃ = bnq.a("options.snooper.desc", new Object[0]);
     List<String> ☃ = Lists.newArrayList();
-    for (String ☃ : this.q.c(☃, this.l - 30)) {
+    for (String ☃ : q.c(☃, l - 30)) {
       ☃.add(☃);
     }
-    this.r = ((String[])☃.toArray(new String[☃.size()]));
+    r = ((String[])☃.toArray(new String[☃.size()]));
     
-    this.g.clear();
-    this.h.clear();
+    g.clear();
+    h.clear();
     
-    this.n.add(this.t = new avs(1, this.l / 2 - 152, this.m - 30, 150, 20, this.f.c(avh.a.u)));
-    this.n.add(new avs(2, this.l / 2 + 2, this.m - 30, 150, 20, bnq.a("gui.done", new Object[0])));
+    n.add(t = new avs(1, l / 2 - 152, m - 30, 150, 20, f.c(avh.a.u)));
+    n.add(new avs(2, l / 2 + 2, m - 30, 150, 20, bnq.a("gui.done", new Object[0])));
     
-    boolean ☃ = (this.j.G() != null) && (this.j.G().av() != null);
-    for (Map.Entry<String, String> ☃ : new TreeMap(this.j.I().c()).entrySet())
+    boolean ☃ = (j.G() != null) && (j.G().av() != null);
+    for (Map.Entry<String, String> ☃ : new TreeMap(j.I().c()).entrySet())
     {
-      this.g.add((☃ ? "C " : "") + (String)☃.getKey());
-      this.h.add(this.q.a((String)☃.getValue(), this.l - 220));
+      g.add((☃ ? "C " : "") + (String)☃.getKey());
+      h.add(q.a((String)☃.getValue(), l - 220));
     }
     if (☃) {
-      for (Map.Entry<String, String> ☃ : new TreeMap(this.j.G().av().c()).entrySet())
+      for (Map.Entry<String, String> ☃ : new TreeMap(j.G().av().c()).entrySet())
       {
-        this.g.add("S " + (String)☃.getKey());
-        this.h.add(this.q.a((String)☃.getValue(), this.l - 220));
+        g.add("S " + (String)☃.getKey());
+        h.add(q.a((String)☃.getValue(), l - 220));
       }
     }
-    this.s = new axy.a();
+    s = new axy.a();
   }
   
   public void k()
   {
     super.k();
-    this.s.p();
+    s.p();
   }
   
   protected void a(avs ☃)
   {
-    if (!☃.l) {
+    if (!l) {
       return;
     }
-    if (☃.k == 2)
+    if (k == 2)
     {
-      this.f.b();
-      this.f.b();
-      this.j.a(this.a);
+      f.b();
+      f.b();
+      j.a(a);
     }
-    if (☃.k == 1)
+    if (k == 1)
     {
-      this.f.a(avh.a.u, 1);
-      this.t.j = this.f.c(avh.a.u);
+      f.a(avh.a.u, 1);
+      t.j = f.c(avh.a.u);
     }
   }
   
@@ -81,14 +81,14 @@ public class axy
   {
     c();
     
-    this.s.a(☃, ☃, ☃);
-    a(this.q, this.i, this.l / 2, 8, 16777215);
+    s.a(☃, ☃, ☃);
+    a(q, i, l / 2, 8, 16777215);
     
     int ☃ = 22;
-    for (String ☃ : this.r)
+    for (String ☃ : r)
     {
-      a(this.q, ☃, this.l / 2, ☃, 8421504);
-      ☃ += this.q.a;
+      a(q, ☃, l / 2, ☃, 8421504);
+      ☃ += q.a;
     }
     super.a(☃, ☃, ☃);
   }
@@ -98,7 +98,7 @@ public class axy
   {
     public a()
     {
-      super(axy.this.l, axy.this.m, 80, axy.this.m - 40, axy.this.q.a + 1);
+      super(l, m, 80, m - 40, q.a + 1);
     }
     
     protected int b()
@@ -117,14 +117,14 @@ public class axy
     
     protected void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
     {
-      axy.this.q.a((String)axy.a(axy.this).get(☃), 10, ☃, 16777215);
+      q.a((String)axy.a(axy.this).get(☃), 10, ☃, 16777215);
       
-      axy.this.q.a((String)axy.b(axy.this).get(☃), 230, ☃, 16777215);
+      q.a((String)axy.b(axy.this).get(☃), 230, ☃, 16777215);
     }
     
     protected int d()
     {
-      return this.b - 10;
+      return b - 10;
     }
   }
 }

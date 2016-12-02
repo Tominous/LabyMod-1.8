@@ -5,16 +5,16 @@ class vh$1
   
   public void a(int ☃)
   {
-    this.a.o.a(this.a, (byte)☃);
+    a.o.a(a, (byte)☃);
   }
   
   public adm a()
   {
-    return this.a.o;
+    return a.o;
   }
   
   public cj b()
   {
-    return new cj(this.a);
+    return new cj(a);
   }
 }

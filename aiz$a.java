@@ -16,19 +16,19 @@ public enum aiz$a
   
   private aiz$a(int ☃, String ☃, String ☃)
   {
-    this.e = ☃;
-    this.f = ☃;
-    this.g = ☃;
+    e = ☃;
+    f = ☃;
+    g = ☃;
   }
   
   public int a()
   {
-    return this.e;
+    return e;
   }
   
   public String toString()
   {
-    return this.f;
+    return f;
   }
   
   public static a a(int ☃)
@@ -41,11 +41,11 @@ public enum aiz$a
   
   public String l()
   {
-    return this.f;
+    return f;
   }
   
   public String c()
   {
-    return this.g;
+    return g;
   }
 }

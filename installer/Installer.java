@@ -23,6 +23,7 @@ import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -40,7 +41,7 @@ public class Installer
   
   public void run()
   {
-    File dirMinecraft = Utils.getWorkingDirectory();
+    File dirMinecraft = Main.path;
     Utils.dbg("Dir minecraft: " + dirMinecraft);
     File dirVersions = new File(dirMinecraft, "versions");
     Utils.dbg("Dir versions: " + dirVersions);
@@ -61,7 +62,7 @@ public class Installer
     }
     Utils.dbg("LabyMod Version: " + jarInstaller.getName());
     
-    String labyModProfileName = "LabyMod-" + Main.mcVersion;
+    String labyModProfileName = "LabyMod-1.8.8";
     File dirVersionLabyMod = new File(dirVersions, labyModProfileName);
     try
     {
@@ -71,17 +72,33 @@ public class Installer
     catch (IOException e)
     {
       e.printStackTrace();
-      close("Please close Minecraft!");
+      
+      Object[] options = { "Cancel", 
+        "Try again" };
+      int n = JOptionPane.showOptionDialog(null, 
+        "Please close Minecraft", 
+        "Warning", 
+        0, 
+        1, 
+        null, 
+        options, 
+        options[1]);
+      if (n == 1)
+      {
+        run();
+        return;
+      }
+      System.exit(0);
       return;
     }
-    copyMinecraftJson(Main.mcVersion, labyModProfileName, dirVersions);
+    copyMinecraftJson("1.8.8", labyModProfileName, dirVersions);
     
     ArrayList<File> mods = new ArrayList();
     mods.add(jarInstaller);
     
     File dirTemp = new File(dirVersions, labyModProfileName + "/temp");
     dirTemp.mkdir();
-    for (Main.ModTemplate mod : Main.modTempates) {
+    for (ModTemplate mod : Main.modTempates) {
       if (mod.isEnabled()) {
         try
         {
@@ -128,8 +145,8 @@ public class Installer
     }
     backupMods(mods, jarInstaller);
     createAutoUpdater(jarInstaller);
-    File mcVanilla = new File(dirVersions, Main.mcVersion);
-    File fileJarMcVanilla = new File(mcVanilla, Main.mcVersion + ".jar");
+    File mcVanilla = new File(dirVersions, "1.8.8");
+    File fileJarMcVanilla = new File(mcVanilla, "1.8.8.jar");
     File fileJarMcLabyMod = new File(dirVersionLabyMod, labyModProfileName + ".jar");
     if (!fileJarMcVanilla.exists())
     {
@@ -140,19 +157,22 @@ public class Installer
     mods.add(fileJarMcVanilla);
     
     ProgressBarUpdater.setMax(Utils.count(mods));
-    if (!Utils.copyJars(mods, fileJarMcLabyMod))
+    if (!Utils.copyJars(mods, fileJarMcLabyMod, false))
     {
-      close("Errow while installing LabyMod!");
+      close("Error while installing LabyMod!");
       return;
     }
     if (dirTemp.exists())
     {
       Utils.deleteDirSilent(dirTemp);
+      ProgressBarUpdater.subTitle = "Delete " + dirTemp.getName();
       dirTemp.delete();
     }
+    ProgressBarUpdater.subTitle = "Done.";
+    
     setValue(100);
     Utils.showMessage("LabyMod is successfully installed.");
-    this.frame.dispose();
+    frame.dispose();
     System.exit(0);
   }
   
@@ -165,8 +185,8 @@ public class Installer
   {
     try
     {
-      File outDir = new File(Utils.getWorkingDirectory().getAbsolutePath() + "/LabyMod/");
-      File oldUpdater = new File(outDir.getAbsolutePath(), "Updater.jar");
+      File outDir = new File(Main.path.getAbsolutePath() + "/LabyMod/");
+      File oldUpdater = new File(outDir.getAbsolutePath(), "Updater-1.8.8.jar");
       if (oldUpdater.exists()) {
         oldUpdater.delete();
       }
@@ -175,7 +195,7 @@ public class Installer
       while (entries.hasMoreElements())
       {
         ZipEntry entry = (ZipEntry)entries.nextElement();
-        if (entry.getName().contains("Updater.jar"))
+        if (entry.getName().contains("Updater-1.8.8.jar"))
         {
           File entryDestination = new File(outDir, entry.getName());
           if (entry.isDirectory())
@@ -205,7 +225,7 @@ public class Installer
   {
     if ((mods != null) && (!mods.isEmpty()))
     {
-      File out = new File(Utils.getWorkingDirectory().getAbsolutePath() + "/LabyMod/mods/");
+      File out = new File(Main.path.getAbsolutePath() + "/LabyMod/mods-" + "1.8.8" + "/");
       if (out.exists()) {
         Utils.deleteDir(out);
       }
@@ -222,7 +242,7 @@ public class Installer
   
   private void status(String string)
   {
-    this.frame.getInstallTitle().setText(string);
+    frame.getInstallTitle().setText(string);
   }
   
   private static File getLabyModVersion()
@@ -242,7 +262,7 @@ public class Installer
     chooser.setCurrentDirectory(new File(Utils.getDesktop()));
     chooser.setDialogTitle(title);
     status("FileChooser: Selecting " + fileType);
-    int returnVal = chooser.showOpenDialog(this.frame.getParent());
+    int returnVal = chooser.showOpenDialog(frame.getParent());
     if (returnVal != 0)
     {
       close(errorNotFound);
@@ -335,10 +355,10 @@ public class Installer
   {
     if (message != null)
     {
-      this.frame.hide();
+      frame.hide();
       Utils.showErrorMessage(message);
       Utils.showMessage("If you have any problems you can contact us via TeamSpeak: ts.labymod.net");
-      this.frame.dispose();
+      frame.dispose();
       System.exit(0);
     }
   }

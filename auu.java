@@ -37,12 +37,12 @@ public abstract interface auu
     
     private a(String ☃)
     {
-      this.d = ☃;
+      d = ☃;
     }
     
     public String a()
     {
-      return this.d;
+      return d;
     }
     
     public static a a(String ☃)

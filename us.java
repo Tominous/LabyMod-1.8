@@ -10,15 +10,15 @@ public class us
   public us(zx ☃, int ☃)
   {
     super(☃);
-    this.b = ☃;
+    b = ☃;
   }
   
   public zx a(Random ☃)
   {
-    zx ☃ = this.b.k();
-    if (this.c > 0.0F)
+    zx ☃ = b.k();
+    if (c > 0.0F)
     {
-      int ☃ = (int)(this.c * this.b.j());
+      int ☃ = (int)(c * b.j());
       int ☃ = ☃.j() - ☃.nextInt(☃.nextInt(☃) + 1);
       if (☃ > ☃) {
         ☃ = ☃;
@@ -28,7 +28,7 @@ public class us
       }
       ☃.b(☃);
     }
-    if (this.d) {
+    if (d) {
       ack.a(☃, ☃, 30);
     }
     return ☃;
@@ -36,13 +36,13 @@ public class us
   
   public us a(float ☃)
   {
-    this.c = ☃;
+    c = ☃;
     return this;
   }
   
   public us a()
   {
-    this.d = true;
+    d = true;
     return this;
   }
 }

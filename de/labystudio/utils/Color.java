@@ -20,13 +20,13 @@ public class Color
   public static String getExtraColor()
   {
     String s = "";
-    if (ConfigManager.settings.bold) {
+    if (settingsbold) {
       s = s + c + "l";
     }
-    if (ConfigManager.settings.underline) {
+    if (settingsunderline) {
       s = s + c + "n";
     }
-    if (ConfigManager.settings.italic) {
+    if (settingsitalic) {
       s = s + c + "o";
     }
     return s;
@@ -40,34 +40,34 @@ public class Color
   public static String c(int i)
   {
     if (i == 1) {
-      return ConfigManager.settings.color1 + getExtraColor();
+      return settingscolor1 + getExtraColor();
     }
     if (i == 2) {
-      return ConfigManager.settings.color2 + getExtraColor();
+      return settingscolor2 + getExtraColor();
     }
     if (i == 3) {
-      return ConfigManager.settings.color3 + getExtraColor();
+      return settingscolor3 + getExtraColor();
     }
     if (i == 4) {
-      return ConfigManager.settings.color4 + getExtraColor();
+      return settingscolor4 + getExtraColor();
     }
     if (i == 5) {
-      return ConfigManager.settings.color5 + getExtraColor();
+      return settingscolor5 + getExtraColor();
     }
     if (i == 6) {
-      return ConfigManager.settings.color6 + getExtraColor();
+      return settingscolor6 + getExtraColor();
     }
     if (i == 7) {
-      return ConfigManager.settings.color7 + getExtraColor();
+      return settingscolor7 + getExtraColor();
     }
     if (i == 8) {
-      return ConfigManager.settings.color8 + getExtraColor();
+      return settingscolor8 + getExtraColor();
     }
     if (i == 9) {
-      return ConfigManager.settings.color9 + getExtraColor();
+      return settingscolor9 + getExtraColor();
     }
     if (i == 10) {
-      return ConfigManager.settings.color10 + getExtraColor();
+      return settingscolor10 + getExtraColor();
     }
     return "";
   }
@@ -75,34 +75,34 @@ public class Color
   public static String cc(int i)
   {
     if (i == 1) {
-      return ConfigManager.settings.color1;
+      return settingscolor1;
     }
     if (i == 2) {
-      return ConfigManager.settings.color2;
+      return settingscolor2;
     }
     if (i == 3) {
-      return ConfigManager.settings.color3;
+      return settingscolor3;
     }
     if (i == 4) {
-      return ConfigManager.settings.color4;
+      return settingscolor4;
     }
     if (i == 5) {
-      return ConfigManager.settings.color5;
+      return settingscolor5;
     }
     if (i == 6) {
-      return ConfigManager.settings.color6;
+      return settingscolor6;
     }
     if (i == 7) {
-      return ConfigManager.settings.color7;
+      return settingscolor7;
     }
     if (i == 7) {
-      return ConfigManager.settings.color8;
+      return settingscolor8;
     }
     if (i == 9) {
-      return ConfigManager.settings.color9;
+      return settingscolor9;
     }
     if (i == 10) {
-      return ConfigManager.settings.color10;
+      return settingscolor10;
     }
     return "";
   }

@@ -6,24 +6,24 @@
   
   private bgp$b(cq ☃, int ☃, int ☃)
   {
-    this.e = ☃;
-    this.f = ☃;
-    this.g = ☃;
+    e = ☃;
+    f = ☃;
+    g = ☃;
   }
   
   public cq a()
   {
-    return this.e;
+    return e;
   }
   
   public int b()
   {
-    return this.f;
+    return f;
   }
   
   public int c()
   {
-    return this.g;
+    return g;
   }
   
   private boolean d()

@@ -11,73 +11,82 @@ public class bnm$a
   private boj d;
   private BufferedImage e;
   private jy f;
+  private String dirPath = "";
   
-  private bnm$a(bnm parambnm, File ☃)
+  private bnm$a(bnm this$0, File resourcePackFileIn)
   {
-    this.b = ☃;
+    b = resourcePackFileIn;
+  }
+  
+  public void setDirPath(String path)
+  {
+    dirPath = path;
+  }
+  
+  public String getDirPath()
+  {
+    return dirPath;
+  }
+  
+  public File getResourcePackFile()
+  {
+    return b;
   }
   
   public void a()
     throws IOException
   {
-    this.c = (this.b.isDirectory() ? new bnd(this.b) : new bnc(this.b));
-    
-    this.d = ((boj)this.c.a(this.a.b, "pack"));
+    c = (b.isDirectory() ? new bnd(b) : new bnc(b));
+    d = ((boj)c.a(this$0.b, "pack"));
     try
     {
-      this.e = this.c.a();
+      e = c.a();
     }
     catch (IOException localIOException) {}
-    if (this.e == null) {
-      this.e = this.a.a.a();
+    if (e == null) {
+      e = this$0.a.a();
     }
     b();
   }
   
-  public void a(bmj ☃)
+  public void a(bmj textureManagerIn)
   {
-    if (this.f == null) {
-      this.f = ☃.a("texturepackicon", new blz(this.e));
+    if (f == null) {
+      f = textureManagerIn.a("texturepackicon", new blz(e));
     }
-    ☃.a(this.f);
+    textureManagerIn.a(f);
   }
   
   public void b()
   {
-    if ((this.c instanceof Closeable)) {
-      IOUtils.closeQuietly((Closeable)this.c);
+    if ((c instanceof Closeable)) {
+      IOUtils.closeQuietly((Closeable)c);
     }
   }
   
   public bnk c()
   {
-    return this.c;
+    return c;
   }
   
   public String d()
   {
-    return this.c.b();
+    return c.b();
   }
   
   public String e()
   {
-    return this.d == null ? a.m + "Invalid pack.mcmeta (or missing 'pack' section)" : this.d.a().d();
+    return d == null ? a.m + "Invalid pack.mcmeta (or missing 'pack' section)" : d.a().d();
   }
   
   public int f()
   {
-    return this.d.b();
+    return d.b();
   }
   
-  public boolean equals(Object ☃)
+  public boolean equals(Object p_equals_1_)
   {
-    if (this == ☃) {
-      return true;
-    }
-    if ((☃ instanceof a)) {
-      return toString().equals(☃.toString());
-    }
-    return false;
+    return this == p_equals_1_;
   }
   
   public int hashCode()
@@ -87,6 +96,6 @@ public class bnm$a
   
   public String toString()
   {
-    return String.format("%s:%s:%d", new Object[] { this.b.getName(), this.b.isDirectory() ? "folder" : "zip", Long.valueOf(this.b.lastModified()) });
+    return String.format("%s:%s:%d", new Object[] { b.getName(), b.isDirectory() ? "folder" : "zip", Long.valueOf(b.lastModified()) });
   }
 }

@@ -8,7 +8,7 @@ public class pb
   
   public double a(int ☃, qd ☃)
   {
-    if (this.H == pe.t.H) {
+    if (H == tH) {
       return -0.5F * (☃ + 1);
     }
     return 1.3D * (☃ + 1);

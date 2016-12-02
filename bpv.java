@@ -10,44 +10,44 @@ public class bpv
   
   public bpv(ave ☃)
   {
-    this.b = ☃;
+    b = ☃;
   }
   
   public void c()
   {
-    bpv.a ☃ = this.b.X();
-    if (this.c != null)
+    bpv.a ☃ = b.X();
+    if (c != null)
     {
-      if (!☃.a().equals(this.c.a()))
+      if (!☃.a().equals(c.a()))
       {
-        this.b.W().b(this.c);
-        this.d = ns.a(this.a, 0, ☃.b() / 2);
+        b.W().b(c);
+        d = ns.a(a, 0, ☃.b() / 2);
       }
-      if (!this.b.W().c(this.c))
+      if (!b.W().c(c))
       {
-        this.c = null;
-        this.d = Math.min(ns.a(this.a, ☃.b(), ☃.c()), this.d);
+        c = null;
+        d = Math.min(ns.a(a, ☃.b(), ☃.c()), d);
       }
     }
-    if ((this.c == null) && (this.d-- <= 0)) {
+    if ((c == null) && (d-- <= 0)) {
       a(☃);
     }
   }
   
   public void a(bpv.a ☃)
   {
-    this.c = bpf.a(☃.a());
-    this.b.W().a(this.c);
-    this.d = Integer.MAX_VALUE;
+    c = bpf.a(☃.a());
+    b.W().a(c);
+    d = Integer.MAX_VALUE;
   }
   
   public void a()
   {
-    if (this.c != null)
+    if (c != null)
     {
-      this.b.W().b(this.c);
-      this.c = null;
-      this.d = 0;
+      b.W().b(c);
+      c = null;
+      d = 0;
     }
   }
   
@@ -59,24 +59,24 @@ public class bpv
     
     private a(jy ☃, int ☃, int ☃)
     {
-      this.h = ☃;
-      this.i = ☃;
-      this.j = ☃;
+      h = ☃;
+      i = ☃;
+      j = ☃;
     }
     
     public jy a()
     {
-      return this.h;
+      return h;
     }
     
     public int b()
     {
-      return this.i;
+      return i;
     }
     
     public int c()
     {
-      return this.j;
+      return j;
     }
   }
 }

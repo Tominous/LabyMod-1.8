@@ -18,7 +18,7 @@ public class SpotifyThread
   
   public void run()
   {
-    this.user32.EnumWindows(this.wndeNumProc, null);
-    this.callBack.done();
+    user32.EnumWindows(wndeNumProc, null);
+    callBack.done();
   }
 }

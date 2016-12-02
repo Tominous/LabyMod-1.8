@@ -16,7 +16,7 @@ public class aqm
   
   public aqm()
   {
-    this.f.add(new ady.c(wd.class, 1, 1, 1));
+    f.add(new ady.c(wd.class, 1, 1, 1));
   }
   
   public aqm(Map<String, String> ☃)
@@ -24,7 +24,7 @@ public class aqm
     this();
     for (Map.Entry<String, String> ☃ : ☃.entrySet()) {
       if (((String)☃.getKey()).equals("distance")) {
-        this.g = ns.a((String)☃.getValue(), this.g, this.h + 1);
+        g = ns.a((String)☃.getValue(), g, h + 1);
       }
     }
   }
@@ -39,24 +39,24 @@ public class aqm
     int ☃ = ☃;
     int ☃ = ☃;
     if (☃ < 0) {
-      ☃ -= this.g - 1;
+      ☃ -= g - 1;
     }
     if (☃ < 0) {
-      ☃ -= this.g - 1;
+      ☃ -= g - 1;
     }
-    int ☃ = ☃ / this.g;
-    int ☃ = ☃ / this.g;
-    Random ☃ = this.c.a(☃, ☃, 14357617);
-    ☃ *= this.g;
-    ☃ *= this.g;
-    ☃ += ☃.nextInt(this.g - this.h);
-    ☃ += ☃.nextInt(this.g - this.h);
+    int ☃ = ☃ / g;
+    int ☃ = ☃ / g;
+    Random ☃ = c.a(☃, ☃, 14357617);
+    ☃ *= g;
+    ☃ *= g;
+    ☃ += ☃.nextInt(g - h);
+    ☃ += ☃.nextInt(g - h);
     ☃ = ☃;
     ☃ = ☃;
     ady ☃;
     if ((☃ == ☃) && (☃ == ☃))
     {
-      ☃ = this.c.v().a(new cj(☃ * 16 + 8, 0, ☃ * 16 + 8));
+      ☃ = c.v().a(new cj(☃ * 16 + 8, 0, ☃ * 16 + 8));
       if (☃ == null) {
         return false;
       }
@@ -71,7 +71,7 @@ public class aqm
   
   protected aqu b(int ☃, int ☃)
   {
-    return new aqm.a(this.c, this.b, ☃, ☃);
+    return new aqm.a(c, b, ☃, ☃);
   }
   
   public static class a
@@ -86,17 +86,17 @@ public class aqm
       if ((☃ == ady.K) || (☃ == ady.L))
       {
         aqn.b ☃ = new aqn.b(☃, ☃ * 16, ☃ * 16);
-        this.a.add(☃);
+        a.add(☃);
       }
       else if (☃ == ady.v)
       {
         aqn.d ☃ = new aqn.d(☃, ☃ * 16, ☃ * 16);
-        this.a.add(☃);
+        a.add(☃);
       }
       else if ((☃ == ady.r) || (☃ == ady.G))
       {
         aqn.a ☃ = new aqn.a(☃, ☃ * 16, ☃ * 16);
-        this.a.add(☃);
+        a.add(☃);
       }
       c();
     }
@@ -105,15 +105,15 @@ public class aqm
   public boolean a(cj ☃)
   {
     aqu ☃ = c(☃);
-    if ((☃ == null) || (!(☃ instanceof aqm.a)) || (☃.a.isEmpty())) {
+    if ((☃ == null) || (!(☃ instanceof aqm.a)) || (a.isEmpty())) {
       return false;
     }
-    aqt ☃ = (aqt)☃.a.getFirst();
+    aqt ☃ = (aqt)a.getFirst();
     return ☃ instanceof aqn.d;
   }
   
   public List<ady.c> b()
   {
-    return this.f;
+    return f;
   }
 }

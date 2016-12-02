@@ -117,7 +117,7 @@ public class afa
   {
     public b()
     {
-      j(this.M.b().a(a, cq.c));
+      j(M.b().a(a, cq.c));
     }
     
     public void a(adq ☃, cj ☃)
@@ -185,7 +185,7 @@ public class afa
   {
     public a()
     {
-      j(this.M.b().a(b, Integer.valueOf(0)));
+      j(M.b().a(b, Integer.valueOf(0)));
     }
     
     public void a(adm ☃, cj ☃, alz ☃, afh ☃)

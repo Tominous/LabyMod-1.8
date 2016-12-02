@@ -9,7 +9,7 @@ public class afy
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (☃.D) {
+    if (D) {
       return true;
     }
     ☃.a(new afy.a(☃, ☃));
@@ -25,8 +25,8 @@ public class afy
     
     public a(adm ☃, cj ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
+      a = ☃;
+      b = ☃;
     }
     
     public String e_()
@@ -46,7 +46,7 @@ public class afy
     
     public xi a(wm ☃, wn ☃)
     {
-      return new xq(☃, this.a, this.b);
+      return new xq(☃, a, b);
     }
     
     public String k()

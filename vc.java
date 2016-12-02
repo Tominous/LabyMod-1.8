@@ -7,8 +7,8 @@ public class vc
   {
     public void h()
     {
-      vc.this.H().b(23, l());
-      vc.this.H().b(24, eu.a.a(k()));
+      H().b(23, l());
+      H().b(24, eu.a.a(k()));
     }
     
     public int i()
@@ -18,22 +18,22 @@ public class vc
     
     public void a(ByteBuf ☃)
     {
-      ☃.writeInt(vc.this.F());
+      ☃.writeInt(F());
     }
     
     public cj c()
     {
-      return new cj(vc.this.s, vc.this.t + 0.5D, vc.this.u);
+      return new cj(s, t + 0.5D, u);
     }
     
     public aui d()
     {
-      return new aui(vc.this.s, vc.this.t, vc.this.u);
+      return new aui(s, t, u);
     }
     
     public adm e()
     {
-      return vc.this.o;
+      return o;
     }
     
     public pk f()
@@ -63,7 +63,7 @@ public class vc
   protected void a(dn ☃)
   {
     super.a(☃);
-    this.a.b(☃);
+    a.b(☃);
     H().b(23, j().l());
     H().b(24, eu.a.a(j().k()));
   }
@@ -71,7 +71,7 @@ public class vc
   protected void b(dn ☃)
   {
     super.b(☃);
-    this.a.a(☃);
+    a.a(☃);
   }
   
   public va.a s()
@@ -86,22 +86,22 @@ public class vc
   
   public adc j()
   {
-    return this.a;
+    return a;
   }
   
   public void a(int ☃, int ☃, int ☃, boolean ☃)
   {
     if ((☃) && 
-      (this.W - this.b >= 4))
+      (W - b >= 4))
     {
-      j().a(this.o);
-      this.b = this.W;
+      j().a(o);
+      b = W;
     }
   }
   
   public boolean e(wn ☃)
   {
-    this.a.a(☃);
+    a.a(☃);
     return false;
   }
   
@@ -111,11 +111,11 @@ public class vc
     if (☃ == 24) {
       try
       {
-        this.a.b(eu.a.a(H().e(24)));
+        a.b(eu.a.a(H().e(24)));
       }
       catch (Throwable localThrowable) {}
     } else if (☃ == 23) {
-      this.a.a(H().e(23));
+      a.a(H().e(23));
     }
   }
 }

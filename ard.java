@@ -8,10 +8,10 @@ public class ard
   
   public ard(Random ☃, int ☃)
   {
-    this.b = ☃;
-    this.a = new arg[☃];
+    b = ☃;
+    a = new arg[☃];
     for (int ☃ = 0; ☃ < ☃; ☃++) {
-      this.a[☃] = new arg(☃);
+      a[☃] = new arg(☃);
     }
   }
   
@@ -19,9 +19,9 @@ public class ard
   {
     double ☃ = 0.0D;
     double ☃ = 1.0D;
-    for (int ☃ = 0; ☃ < this.b; ☃++)
+    for (int ☃ = 0; ☃ < b; ☃++)
     {
-      ☃ += this.a[☃].a(☃ * ☃, ☃ * ☃) / ☃;
+      ☃ += a[☃].a(☃ * ☃, ☃ * ☃) / ☃;
       ☃ /= 2.0D;
     }
     return ☃;
@@ -43,9 +43,9 @@ public class ard
     }
     double ☃ = 1.0D;
     double ☃ = 1.0D;
-    for (int ☃ = 0; ☃ < this.b; ☃++)
+    for (int ☃ = 0; ☃ < b; ☃++)
     {
-      this.a[☃].a(☃, ☃, ☃, ☃, ☃, ☃ * ☃ * ☃, ☃ * ☃ * ☃, 0.55D / ☃);
+      a[☃].a(☃, ☃, ☃, ☃, ☃, ☃ * ☃ * ☃, ☃ * ☃ * ☃, 0.55D / ☃);
       ☃ *= ☃;
       ☃ *= ☃;
     }

@@ -11,56 +11,56 @@ public class sd
   
   public sd(tp ☃, double ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
     a(1);
   }
   
   public boolean a()
   {
-    if ((this.a.co()) || (this.a.l == null)) {
+    if ((a.co()) || (a.l == null)) {
       return false;
     }
-    aui ☃ = tc.a(this.a, 5, 4);
+    aui ☃ = tc.a(a, 5, 4);
     if (☃ == null) {
       return false;
     }
-    this.c = ☃.a;
-    this.d = ☃.b;
-    this.e = ☃.c;
+    c = a;
+    d = b;
+    e = c;
     return true;
   }
   
   public void c()
   {
-    this.a.s().a(this.c, this.d, this.e, this.b);
+    a.s().a(c, d, e, b);
   }
   
   public boolean b()
   {
-    return (!this.a.s().m()) && (this.a.l != null);
+    return (!a.s().m()) && (a.l != null);
   }
   
   public void e()
   {
-    if (this.a.bc().nextInt(50) == 0)
+    if (a.bc().nextInt(50) == 0)
     {
-      if ((this.a.l instanceof wn))
+      if ((a.l instanceof wn))
       {
-        int ☃ = this.a.cC();
-        int ☃ = this.a.cI();
-        if ((☃ > 0) && (this.a.bc().nextInt(☃) < ☃))
+        int ☃ = a.cC();
+        int ☃ = a.cI();
+        if ((☃ > 0) && (a.bc().nextInt(☃) < ☃))
         {
-          this.a.h((wn)this.a.l);
-          this.a.o.a(this.a, (byte)7);
+          a.h((wn)a.l);
+          a.o.a(a, (byte)7);
           return;
         }
-        this.a.u(5);
+        a.u(5);
       }
-      this.a.l.a(null);
-      this.a.l = null;
-      this.a.cW();
-      this.a.o.a(this.a, (byte)6);
+      a.l.a(null);
+      a.l = null;
+      a.cW();
+      a.o.a(a, (byte)6);
     }
   }
 }

@@ -10,6 +10,6 @@ class bmh$1
   public String a()
     throws Exception
   {
-    return this.val$var29.i();
+    return val$var29.i();
   }
 }

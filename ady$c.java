@@ -8,13 +8,13 @@ public class ady$c
   public ady$c(Class<? extends ps> ☃, int ☃, int ☃, int ☃)
   {
     super(☃);
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
   }
   
   public String toString()
   {
-    return this.b.getSimpleName() + "*(" + this.c + "-" + this.d + "):" + this.a;
+    return b.getSimpleName() + "*(" + c + "-" + d + "):" + a;
   }
 }

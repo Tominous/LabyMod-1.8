@@ -30,22 +30,22 @@ public enum avh$a
   
   private avh$a(String p_i45004_1_, int p_i45004_2_, String p_i45004_3_, boolean p_i45004_4_, boolean p_i45004_5_, float p_i45004_6_, float p_i45004_7_, float p_i45004_8_)
   {
-    this.U = p_i45004_3_;
-    this.S = p_i45004_4_;
-    this.T = p_i45004_5_;
-    this.W = p_i45004_6_;
-    this.X = p_i45004_7_;
-    this.V = p_i45004_8_;
+    U = p_i45004_3_;
+    S = p_i45004_4_;
+    T = p_i45004_5_;
+    W = p_i45004_6_;
+    X = p_i45004_7_;
+    V = p_i45004_8_;
   }
   
   public boolean a()
   {
-    return this.S;
+    return S;
   }
   
   public boolean b()
   {
-    return this.T;
+    return T;
   }
   
   public int c()
@@ -55,39 +55,39 @@ public enum avh$a
   
   public String d()
   {
-    return this.U;
+    return U;
   }
   
   public float f()
   {
-    return this.X;
+    return X;
   }
   
   public void a(float p_148263_1_)
   {
-    this.X = p_148263_1_;
+    X = p_148263_1_;
   }
   
   public float c(float p_148266_1_)
   {
-    return ns.a((e(p_148266_1_) - this.W) / (this.X - this.W), 0.0F, 1.0F);
+    return ns.a((e(p_148266_1_) - W) / (X - W), 0.0F, 1.0F);
   }
   
   public float d(float p_148262_1_)
   {
-    return e(this.W + (this.X - this.W) * ns.a(p_148262_1_, 0.0F, 1.0F));
+    return e(W + (X - W) * ns.a(p_148262_1_, 0.0F, 1.0F));
   }
   
   public float e(float p_148268_1_)
   {
     p_148268_1_ = f(p_148268_1_);
-    return ns.a(p_148268_1_, this.W, this.X);
+    return ns.a(p_148268_1_, W, X);
   }
   
   protected float f(float p_148264_1_)
   {
-    if (this.V > 0.0F) {
-      p_148264_1_ = this.V * Math.round(p_148264_1_ / this.V);
+    if (V > 0.0F) {
+      p_148264_1_ = V * Math.round(p_148264_1_ / V);
     }
     return p_148264_1_;
   }

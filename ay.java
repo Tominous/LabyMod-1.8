@@ -23,27 +23,27 @@ public class ay
     }
     try
     {
-      for (int ☃ = 0; ☃ < ☃.d.length; ☃++) {
-        if (☃.d[☃] != null)
+      for (int ☃ = 0; ☃ < d.length; ☃++) {
+        if (d[☃] != null)
         {
-          le ☃ = ☃.d[☃];
-          boolean ☃ = ☃.c;
-          ☃.c = false;
+          le ☃ = d[☃];
+          boolean ☃ = c;
+          c = false;
           ☃.a(true, null);
-          ☃.c = ☃;
+          c = ☃;
         }
       }
       if ((☃.length > 0) && ("flush".equals(☃[0])))
       {
         ☃.a(new fb("commands.save.flushStart", new Object[0]));
-        for (int ☃ = 0; ☃ < ☃.d.length; ☃++) {
-          if (☃.d[☃] != null)
+        for (int ☃ = 0; ☃ < d.length; ☃++) {
+          if (d[☃] != null)
           {
-            le ☃ = ☃.d[☃];
-            boolean ☃ = ☃.c;
-            ☃.c = false;
+            le ☃ = d[☃];
+            boolean ☃ = c;
+            c = false;
             ☃.n();
-            ☃.c = ☃;
+            c = ☃;
           }
         }
         ☃.a(new fb("commands.save.flushEnd", new Object[0]));

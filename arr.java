@@ -6,13 +6,13 @@ public class arr
   public arr(long ☃, ase ☃, arr.a ☃)
   {
     super(☃);
-    this.a = ☃;
-    this.c = ☃;
+    a = ☃;
+    c = ☃;
   }
   
   public int[] a(int ☃, int ☃, int ☃, int ☃)
   {
-    switch (arr.1.a[this.c.ordinal()])
+    switch (arr.1.a[c.ordinal()])
     {
     case 1: 
     default: 
@@ -29,7 +29,7 @@ public class arr
     int ☃ = ☃ - 1;
     int ☃ = 1 + ☃ + 1;
     int ☃ = 1 + ☃ + 1;
-    int[] ☃ = this.a.a(☃, ☃, ☃, ☃);
+    int[] ☃ = a.a(☃, ☃, ☃, ☃);
     
     int[] ☃ = asc.a(☃ * ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
@@ -63,7 +63,7 @@ public class arr
     int ☃ = ☃ - 1;
     int ☃ = 1 + ☃ + 1;
     int ☃ = 1 + ☃ + 1;
-    int[] ☃ = this.a.a(☃, ☃, ☃, ☃);
+    int[] ☃ = a.a(☃, ☃, ☃, ☃);
     
     int[] ☃ = asc.a(☃ * ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
@@ -91,7 +91,7 @@ public class arr
   
   private int[] e(int ☃, int ☃, int ☃, int ☃)
   {
-    int[] ☃ = this.a.a(☃, ☃, ☃, ☃);
+    int[] ☃ = a.a(☃, ☃, ☃, ☃);
     int[] ☃ = asc.a(☃ * ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
       for (int ☃ = 0; ☃ < ☃; ☃++)

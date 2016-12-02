@@ -8,18 +8,18 @@ class wi$c
   
   public wi$c(zw ☃, wi.g ☃)
   {
-    this.a = new zx(☃);
-    this.b = ☃;
+    a = new zx(☃);
+    b = ☃;
   }
   
   public void a(ada ☃, Random ☃)
   {
     int ☃ = 1;
-    if (this.b != null) {
-      ☃ = this.b.a(☃);
+    if (b != null) {
+      ☃ = b.a(☃);
     }
     zx ☃ = new zx(zy.bO, ☃, 0);
-    zx ☃ = new zx(this.a.b(), 1, this.a.i());
+    zx ☃ = new zx(a.b(), 1, a.i());
     ☃ = ack.a(☃, ☃, 5 + ☃.nextInt(15));
     
     ☃.add(new acz(☃, ☃));

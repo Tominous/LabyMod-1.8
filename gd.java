@@ -11,32 +11,32 @@ public class gd
   
   public gd(int ☃, List<zx> ☃)
   {
-    this.a = ☃;
-    this.b = new zx[☃.size()];
-    for (int ☃ = 0; ☃ < this.b.length; ☃++)
+    a = ☃;
+    b = new zx[☃.size()];
+    for (int ☃ = 0; ☃ < b.length; ☃++)
     {
       zx ☃ = (zx)☃.get(☃);
-      this.b[☃] = (☃ == null ? null : ☃.k());
+      b[☃] = (☃ == null ? null : ☃.k());
     }
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.readUnsignedByte();
+    a = ☃.readUnsignedByte();
     int ☃ = ☃.readShort();
-    this.b = new zx[☃];
+    b = new zx[☃];
     for (int ☃ = 0; ☃ < ☃; ☃++) {
-      this.b[☃] = ☃.i();
+      b[☃] = ☃.i();
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(this.a);
-    ☃.writeShort(this.b.length);
-    for (zx ☃ : this.b) {
+    ☃.writeByte(a);
+    ☃.writeShort(b.length);
+    for (zx ☃ : b) {
       ☃.a(☃);
     }
   }
@@ -48,11 +48,11 @@ public class gd
   
   public int a()
   {
-    return this.a;
+    return a;
   }
   
   public zx[] b()
   {
-    return this.b;
+    return b;
   }
 }

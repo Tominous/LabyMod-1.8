@@ -7,7 +7,7 @@ public class apu
   
   public apu(akc.a ☃)
   {
-    this.a = afi.H.Q().a(akc.a, ☃);
+    a = afi.H.Q().a(akc.a, ☃);
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
@@ -20,8 +20,8 @@ public class apu
     {
       cj ☃ = ☃.a(☃.nextInt(8) - ☃.nextInt(8), ☃.nextInt(4) - ☃.nextInt(4), ☃.nextInt(8) - ☃.nextInt(8));
       if ((☃.d(☃)) && 
-        (afi.H.f(☃, ☃, this.a))) {
-        ☃.a(☃, this.a, 2);
+        (afi.H.f(☃, ☃, a))) {
+        ☃.a(☃, a, 2);
       }
     }
     return true;

@@ -7,13 +7,13 @@ public class sp$a
   
   public sp$a(pk ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public int a(pk ☃, pk ☃)
   {
-    double ☃ = this.a.h(☃);
-    double ☃ = this.a.h(☃);
+    double ☃ = a.h(☃);
+    double ☃ = a.h(☃);
     if (☃ < ☃) {
       return -1;
     }

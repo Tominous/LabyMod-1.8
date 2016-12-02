@@ -8,23 +8,23 @@ public class ia$a
   
   public ia$a(String arg1, double ☃, Collection<qd> arg4)
   {
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
   }
   
   public String a()
   {
-    return this.b;
+    return b;
   }
   
   public double b()
   {
-    return this.c;
+    return c;
   }
   
   public Collection<qd> c()
   {
-    return this.d;
+    return d;
   }
 }

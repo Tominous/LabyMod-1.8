@@ -16,7 +16,7 @@ public class bl
   public void a(m ☃, String[] ☃)
     throws bz
   {
-    if (MinecraftServer.N().d != null) {
+    if (Nd != null) {
       a(☃, this, "commands.stop.start", new Object[0]);
     }
     MinecraftServer.N().w();

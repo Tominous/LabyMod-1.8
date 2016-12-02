@@ -9,7 +9,7 @@ public class ajy
   public ajy()
   {
     super(arm.e);
-    j(this.M.b().a(a, ajy.a.a));
+    j(M.b().a(a, ajy.a.a));
     a(yz.b);
   }
   
@@ -82,25 +82,25 @@ public class ajy
     
     private a(int ☃, arn ☃, String ☃, String ☃)
     {
-      this.i = ☃;
-      this.j = ☃;
-      this.k = ☃;
-      this.l = ☃;
+      i = ☃;
+      j = ☃;
+      k = ☃;
+      l = ☃;
     }
     
     public int a()
     {
-      return this.i;
+      return i;
     }
     
     public arn c()
     {
-      return this.l;
+      return l;
     }
     
     public String toString()
     {
-      return this.j;
+      return j;
     }
     
     public static a a(int ☃)
@@ -113,12 +113,12 @@ public class ajy
     
     public String l()
     {
-      return this.j;
+      return j;
     }
     
     public String d()
     {
-      return this.k;
+      return k;
     }
   }
 }

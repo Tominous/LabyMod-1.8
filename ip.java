@@ -18,41 +18,41 @@ public class ip
   {
     public b()
     {
-      this.g = true;
-      this.h = true;
+      g = true;
+      h = true;
     }
     
     public b(double ☃, double ☃, double ☃, float ☃, float ☃, boolean ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
-      this.c = ☃;
-      this.d = ☃;
-      this.e = ☃;
-      this.f = ☃;
-      this.h = true;
-      this.g = true;
+      a = ☃;
+      b = ☃;
+      c = ☃;
+      d = ☃;
+      e = ☃;
+      f = ☃;
+      h = true;
+      g = true;
     }
     
     public void a(em ☃)
       throws IOException
     {
-      this.a = ☃.readDouble();
-      this.b = ☃.readDouble();
-      this.c = ☃.readDouble();
-      this.d = ☃.readFloat();
-      this.e = ☃.readFloat();
+      a = ☃.readDouble();
+      b = ☃.readDouble();
+      c = ☃.readDouble();
+      d = ☃.readFloat();
+      e = ☃.readFloat();
       super.a(☃);
     }
     
     public void b(em ☃)
       throws IOException
     {
-      ☃.writeDouble(this.a);
-      ☃.writeDouble(this.b);
-      ☃.writeDouble(this.c);
-      ☃.writeFloat(this.d);
-      ☃.writeFloat(this.e);
+      ☃.writeDouble(a);
+      ☃.writeDouble(b);
+      ☃.writeDouble(c);
+      ☃.writeFloat(d);
+      ☃.writeFloat(e);
       super.b(☃);
     }
   }
@@ -62,33 +62,33 @@ public class ip
   {
     public a()
     {
-      this.g = true;
+      g = true;
     }
     
     public a(double ☃, double ☃, double ☃, boolean ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
-      this.c = ☃;
-      this.f = ☃;
-      this.g = true;
+      a = ☃;
+      b = ☃;
+      c = ☃;
+      f = ☃;
+      g = true;
     }
     
     public void a(em ☃)
       throws IOException
     {
-      this.a = ☃.readDouble();
-      this.b = ☃.readDouble();
-      this.c = ☃.readDouble();
+      a = ☃.readDouble();
+      b = ☃.readDouble();
+      c = ☃.readDouble();
       super.a(☃);
     }
     
     public void b(em ☃)
       throws IOException
     {
-      ☃.writeDouble(this.a);
-      ☃.writeDouble(this.b);
-      ☃.writeDouble(this.c);
+      ☃.writeDouble(a);
+      ☃.writeDouble(b);
+      ☃.writeDouble(c);
       super.b(☃);
     }
   }
@@ -98,37 +98,37 @@ public class ip
   {
     public c()
     {
-      this.h = true;
+      h = true;
     }
     
     public c(float ☃, float ☃, boolean ☃)
     {
-      this.d = ☃;
-      this.e = ☃;
-      this.f = ☃;
-      this.h = true;
+      d = ☃;
+      e = ☃;
+      f = ☃;
+      h = true;
     }
     
     public void a(em ☃)
       throws IOException
     {
-      this.d = ☃.readFloat();
-      this.e = ☃.readFloat();
+      d = ☃.readFloat();
+      e = ☃.readFloat();
       super.a(☃);
     }
     
     public void b(em ☃)
       throws IOException
     {
-      ☃.writeFloat(this.d);
-      ☃.writeFloat(this.e);
+      ☃.writeFloat(d);
+      ☃.writeFloat(e);
       super.b(☃);
     }
   }
   
   public ip(boolean ☃)
   {
-    this.f = ☃;
+    f = ☃;
   }
   
   public void a(ic ☃)
@@ -139,57 +139,57 @@ public class ip
   public void a(em ☃)
     throws IOException
   {
-    this.f = (☃.readUnsignedByte() != 0);
+    f = (☃.readUnsignedByte() != 0);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(this.f ? 1 : 0);
+    ☃.writeByte(f ? 1 : 0);
   }
   
   public double a()
   {
-    return this.a;
+    return a;
   }
   
   public double b()
   {
-    return this.b;
+    return b;
   }
   
   public double c()
   {
-    return this.c;
+    return c;
   }
   
   public float d()
   {
-    return this.d;
+    return d;
   }
   
   public float e()
   {
-    return this.e;
+    return e;
   }
   
   public boolean f()
   {
-    return this.f;
+    return f;
   }
   
   public boolean g()
   {
-    return this.g;
+    return g;
   }
   
   public boolean h()
   {
-    return this.h;
+    return h;
   }
   
   public void a(boolean ☃)
   {
-    this.g = ☃;
+    g = ☃;
   }
 }

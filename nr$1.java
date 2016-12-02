@@ -16,7 +16,7 @@ class nr$1
     if (☃ == null) {
       ☃.nullValue();
     } else {
-      ☃.value(nr.a(this.b, ☃));
+      ☃.value(nr.a(b, ☃));
     }
   }
   
@@ -28,6 +28,6 @@ class nr$1
       ☃.nextNull();
       return null;
     }
-    return (T)this.a.get(☃.nextString());
+    return (T)a.get(☃.nextString());
   }
 }

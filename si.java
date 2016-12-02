@@ -5,32 +5,32 @@ public class si
   
   public si(wi ☃)
   {
-    this.a = ☃;
+    a = ☃;
     a(5);
   }
   
   public boolean a()
   {
-    if (!this.a.ai()) {
+    if (!a.ai()) {
       return false;
     }
-    if (this.a.V()) {
+    if (a.V()) {
       return false;
     }
-    if (!this.a.C) {
+    if (!a.C) {
       return false;
     }
-    if (this.a.G) {
+    if (a.G) {
       return false;
     }
-    wn ☃ = this.a.v_();
+    wn ☃ = a.v_();
     if (☃ == null) {
       return false;
     }
-    if (this.a.h(☃) > 16.0D) {
+    if (a.h(☃) > 16.0D) {
       return false;
     }
-    if (!(☃.bk instanceof xi)) {
+    if (!(bk instanceof xi)) {
       return false;
     }
     return true;
@@ -38,11 +38,11 @@ public class si
   
   public void c()
   {
-    this.a.s().n();
+    a.s().n();
   }
   
   public void d()
   {
-    this.a.a_(null);
+    a.a_(null);
   }
 }

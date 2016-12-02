@@ -12,11 +12,11 @@ public class akl
   
   public akl(afh ☃)
   {
-    super(☃.J);
-    j(this.M.b().a(a, Boolean.valueOf(false)).a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, Boolean.valueOf(false)).a(Q, akl.a.a));
-    c(☃.w);
-    b(☃.x / 3.0F);
-    a(☃.H);
+    super(J);
+    j(M.b().a(a, Boolean.valueOf(false)).a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, Boolean.valueOf(false)).a(Q, akl.a.a));
+    c(w);
+    b(x / 3.0F);
+    a(H);
     a(yz.b);
   }
   
@@ -82,7 +82,7 @@ public class akl
   public aug a(adm ☃, cj ☃, alz ☃)
   {
     a(☃, ☃);
-    this.F = 1.5D;
+    F = 1.5D;
     return super.a(☃, ☃, ☃);
   }
   
@@ -95,8 +95,8 @@ public class akl
     if ((☃ == this) || ((☃ instanceof agu))) {
       return true;
     }
-    if ((☃.J.k()) && (☃.d())) {
-      return ☃.J != arm.C;
+    if ((J.k()) && (☃.d())) {
+      return J != arm.C;
     }
     return false;
   }
@@ -159,19 +159,19 @@ public class akl
     
     private a(int ☃, String ☃, String ☃)
     {
-      this.d = ☃;
-      this.e = ☃;
-      this.f = ☃;
+      d = ☃;
+      e = ☃;
+      f = ☃;
     }
     
     public int a()
     {
-      return this.d;
+      return d;
     }
     
     public String toString()
     {
-      return this.e;
+      return e;
     }
     
     public static a a(int ☃)
@@ -184,12 +184,12 @@ public class akl
     
     public String l()
     {
-      return this.e;
+      return e;
     }
     
     public String c()
     {
-      return this.f;
+      return f;
     }
   }
 }

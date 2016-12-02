@@ -7,7 +7,7 @@ public class ajh
   
   public ajh()
   {
-    j(this.M.b().a(a, ajh.a.a));
+    j(M.b().a(a, ajh.a.a));
   }
   
   public int a(alz ☃)
@@ -61,25 +61,25 @@ public class ajh
     
     private a(int ☃, String ☃, String ☃, arn ☃)
     {
-      this.d = ☃;
-      this.e = ☃;
-      this.f = ☃;
-      this.g = ☃;
+      d = ☃;
+      e = ☃;
+      f = ☃;
+      g = ☃;
     }
     
     public int a()
     {
-      return this.d;
+      return d;
     }
     
     public String toString()
     {
-      return this.e;
+      return e;
     }
     
     public arn c()
     {
-      return this.f;
+      return f;
     }
     
     public static a a(int ☃)
@@ -92,12 +92,12 @@ public class ajh
     
     public String l()
     {
-      return this.e;
+      return e;
     }
     
     public String d()
     {
-      return this.g;
+      return g;
     }
   }
 }

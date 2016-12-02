@@ -7,7 +7,7 @@ public abstract class vv
   public vv(adm ☃)
   {
     super(☃);
-    this.b_ = 5;
+    b_ = 5;
   }
   
   public void m()
@@ -15,7 +15,7 @@ public abstract class vv
     bx();
     float ☃ = c(1.0F);
     if (☃ > 0.5F) {
-      this.aQ += 2;
+      aQ += 2;
     }
     super.m();
   }
@@ -23,7 +23,7 @@ public abstract class vv
   public void t_()
   {
     super.t_();
-    if ((!this.o.D) && (this.o.aa() == oj.a)) {
+    if ((!o.D) && (o.aa() == oj.a)) {
       J();
     }
   }
@@ -46,7 +46,7 @@ public abstract class vv
     if (super.a(☃, ☃))
     {
       pk ☃ = ☃.j();
-      if ((this.l == ☃) || (this.m == ☃)) {
+      if ((l == ☃) || (m == ☃)) {
         return true;
       }
       return true;
@@ -86,9 +86,9 @@ public abstract class vv
     {
       if (☃ > 0)
       {
-        ☃.g(-ns.a(this.y * 3.1415927F / 180.0F) * ☃ * 0.5F, 0.1D, ns.b(this.y * 3.1415927F / 180.0F) * ☃ * 0.5F);
-        this.v *= 0.6D;
-        this.x *= 0.6D;
+        ☃.g(-ns.a(y * 3.1415927F / 180.0F) * ☃ * 0.5F, 0.1D, ns.b(y * 3.1415927F / 180.0F) * ☃ * 0.5F);
+        v *= 0.6D;
+        x *= 0.6D;
       }
       int ☃ = ack.b(this);
       if (☃ > 0) {
@@ -101,29 +101,29 @@ public abstract class vv
   
   public float a(cj ☃)
   {
-    return 0.5F - this.o.o(☃);
+    return 0.5F - o.o(☃);
   }
   
   protected boolean n_()
   {
-    cj ☃ = new cj(this.s, aR().b, this.u);
-    if (this.o.b(ads.a, ☃) > this.V.nextInt(32)) {
+    cj ☃ = new cj(s, aRb, u);
+    if (o.b(ads.a, ☃) > V.nextInt(32)) {
       return false;
     }
-    int ☃ = this.o.l(☃);
-    if (this.o.R())
+    int ☃ = o.l(☃);
+    if (o.R())
     {
-      int ☃ = this.o.ab();
-      this.o.c(10);
-      ☃ = this.o.l(☃);
-      this.o.c(☃);
+      int ☃ = o.ab();
+      o.c(10);
+      ☃ = o.l(☃);
+      o.c(☃);
     }
-    return ☃ <= this.V.nextInt(8);
+    return ☃ <= V.nextInt(8);
   }
   
   public boolean bR()
   {
-    return (this.o.aa() != oj.a) && (n_()) && (super.bR());
+    return (o.aa() != oj.a) && (n_()) && (super.bR());
   }
   
   protected void aX()

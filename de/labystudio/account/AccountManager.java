@@ -68,7 +68,7 @@ public class AccountManager
         return ex.getMessage();
       }
     }
-    LabyMod.getInstance().client.newAccount();
+    getInstanceclient.newAccount();
     LogManager.getLogger().info("AccountManager: You are now playing with " + tempSession.e().getName() + ".");
     return "";
   }

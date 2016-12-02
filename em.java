@@ -23,7 +23,7 @@ public class em
   
   public em(ByteBuf ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public static int a(int ☃)
@@ -196,7 +196,7 @@ public class em
     else
     {
       writeShort(zw.b(☃.b()));
-      writeByte(☃.b);
+      writeByte(b);
       writeShort(☃.i());
       
       dn ☃ = null;
@@ -252,734 +252,734 @@ public class em
   
   public int capacity()
   {
-    return this.a.capacity();
+    return a.capacity();
   }
   
   public ByteBuf capacity(int ☃)
   {
-    return this.a.capacity(☃);
+    return a.capacity(☃);
   }
   
   public int maxCapacity()
   {
-    return this.a.maxCapacity();
+    return a.maxCapacity();
   }
   
   public ByteBufAllocator alloc()
   {
-    return this.a.alloc();
+    return a.alloc();
   }
   
   public ByteOrder order()
   {
-    return this.a.order();
+    return a.order();
   }
   
   public ByteBuf order(ByteOrder ☃)
   {
-    return this.a.order(☃);
+    return a.order(☃);
   }
   
   public ByteBuf unwrap()
   {
-    return this.a.unwrap();
+    return a.unwrap();
   }
   
   public boolean isDirect()
   {
-    return this.a.isDirect();
+    return a.isDirect();
   }
   
   public int readerIndex()
   {
-    return this.a.readerIndex();
+    return a.readerIndex();
   }
   
   public ByteBuf readerIndex(int ☃)
   {
-    return this.a.readerIndex(☃);
+    return a.readerIndex(☃);
   }
   
   public int writerIndex()
   {
-    return this.a.writerIndex();
+    return a.writerIndex();
   }
   
   public ByteBuf writerIndex(int ☃)
   {
-    return this.a.writerIndex(☃);
+    return a.writerIndex(☃);
   }
   
   public ByteBuf setIndex(int ☃, int ☃)
   {
-    return this.a.setIndex(☃, ☃);
+    return a.setIndex(☃, ☃);
   }
   
   public int readableBytes()
   {
-    return this.a.readableBytes();
+    return a.readableBytes();
   }
   
   public int writableBytes()
   {
-    return this.a.writableBytes();
+    return a.writableBytes();
   }
   
   public int maxWritableBytes()
   {
-    return this.a.maxWritableBytes();
+    return a.maxWritableBytes();
   }
   
   public boolean isReadable()
   {
-    return this.a.isReadable();
+    return a.isReadable();
   }
   
   public boolean isReadable(int ☃)
   {
-    return this.a.isReadable(☃);
+    return a.isReadable(☃);
   }
   
   public boolean isWritable()
   {
-    return this.a.isWritable();
+    return a.isWritable();
   }
   
   public boolean isWritable(int ☃)
   {
-    return this.a.isWritable(☃);
+    return a.isWritable(☃);
   }
   
   public ByteBuf clear()
   {
-    return this.a.clear();
+    return a.clear();
   }
   
   public ByteBuf markReaderIndex()
   {
-    return this.a.markReaderIndex();
+    return a.markReaderIndex();
   }
   
   public ByteBuf resetReaderIndex()
   {
-    return this.a.resetReaderIndex();
+    return a.resetReaderIndex();
   }
   
   public ByteBuf markWriterIndex()
   {
-    return this.a.markWriterIndex();
+    return a.markWriterIndex();
   }
   
   public ByteBuf resetWriterIndex()
   {
-    return this.a.resetWriterIndex();
+    return a.resetWriterIndex();
   }
   
   public ByteBuf discardReadBytes()
   {
-    return this.a.discardReadBytes();
+    return a.discardReadBytes();
   }
   
   public ByteBuf discardSomeReadBytes()
   {
-    return this.a.discardSomeReadBytes();
+    return a.discardSomeReadBytes();
   }
   
   public ByteBuf ensureWritable(int ☃)
   {
-    return this.a.ensureWritable(☃);
+    return a.ensureWritable(☃);
   }
   
   public int ensureWritable(int ☃, boolean ☃)
   {
-    return this.a.ensureWritable(☃, ☃);
+    return a.ensureWritable(☃, ☃);
   }
   
   public boolean getBoolean(int ☃)
   {
-    return this.a.getBoolean(☃);
+    return a.getBoolean(☃);
   }
   
   public byte getByte(int ☃)
   {
-    return this.a.getByte(☃);
+    return a.getByte(☃);
   }
   
   public short getUnsignedByte(int ☃)
   {
-    return this.a.getUnsignedByte(☃);
+    return a.getUnsignedByte(☃);
   }
   
   public short getShort(int ☃)
   {
-    return this.a.getShort(☃);
+    return a.getShort(☃);
   }
   
   public int getUnsignedShort(int ☃)
   {
-    return this.a.getUnsignedShort(☃);
+    return a.getUnsignedShort(☃);
   }
   
   public int getMedium(int ☃)
   {
-    return this.a.getMedium(☃);
+    return a.getMedium(☃);
   }
   
   public int getUnsignedMedium(int ☃)
   {
-    return this.a.getUnsignedMedium(☃);
+    return a.getUnsignedMedium(☃);
   }
   
   public int getInt(int ☃)
   {
-    return this.a.getInt(☃);
+    return a.getInt(☃);
   }
   
   public long getUnsignedInt(int ☃)
   {
-    return this.a.getUnsignedInt(☃);
+    return a.getUnsignedInt(☃);
   }
   
   public long getLong(int ☃)
   {
-    return this.a.getLong(☃);
+    return a.getLong(☃);
   }
   
   public char getChar(int ☃)
   {
-    return this.a.getChar(☃);
+    return a.getChar(☃);
   }
   
   public float getFloat(int ☃)
   {
-    return this.a.getFloat(☃);
+    return a.getFloat(☃);
   }
   
   public double getDouble(int ☃)
   {
-    return this.a.getDouble(☃);
+    return a.getDouble(☃);
   }
   
   public ByteBuf getBytes(int ☃, ByteBuf ☃)
   {
-    return this.a.getBytes(☃, ☃);
+    return a.getBytes(☃, ☃);
   }
   
   public ByteBuf getBytes(int ☃, ByteBuf ☃, int ☃)
   {
-    return this.a.getBytes(☃, ☃, ☃);
+    return a.getBytes(☃, ☃, ☃);
   }
   
   public ByteBuf getBytes(int ☃, ByteBuf ☃, int ☃, int ☃)
   {
-    return this.a.getBytes(☃, ☃, ☃, ☃);
+    return a.getBytes(☃, ☃, ☃, ☃);
   }
   
   public ByteBuf getBytes(int ☃, byte[] ☃)
   {
-    return this.a.getBytes(☃, ☃);
+    return a.getBytes(☃, ☃);
   }
   
   public ByteBuf getBytes(int ☃, byte[] ☃, int ☃, int ☃)
   {
-    return this.a.getBytes(☃, ☃, ☃, ☃);
+    return a.getBytes(☃, ☃, ☃, ☃);
   }
   
   public ByteBuf getBytes(int ☃, ByteBuffer ☃)
   {
-    return this.a.getBytes(☃, ☃);
+    return a.getBytes(☃, ☃);
   }
   
   public ByteBuf getBytes(int ☃, OutputStream ☃, int ☃)
     throws IOException
   {
-    return this.a.getBytes(☃, ☃, ☃);
+    return a.getBytes(☃, ☃, ☃);
   }
   
   public int getBytes(int ☃, GatheringByteChannel ☃, int ☃)
     throws IOException
   {
-    return this.a.getBytes(☃, ☃, ☃);
+    return a.getBytes(☃, ☃, ☃);
   }
   
   public ByteBuf setBoolean(int ☃, boolean ☃)
   {
-    return this.a.setBoolean(☃, ☃);
+    return a.setBoolean(☃, ☃);
   }
   
   public ByteBuf setByte(int ☃, int ☃)
   {
-    return this.a.setByte(☃, ☃);
+    return a.setByte(☃, ☃);
   }
   
   public ByteBuf setShort(int ☃, int ☃)
   {
-    return this.a.setShort(☃, ☃);
+    return a.setShort(☃, ☃);
   }
   
   public ByteBuf setMedium(int ☃, int ☃)
   {
-    return this.a.setMedium(☃, ☃);
+    return a.setMedium(☃, ☃);
   }
   
   public ByteBuf setInt(int ☃, int ☃)
   {
-    return this.a.setInt(☃, ☃);
+    return a.setInt(☃, ☃);
   }
   
   public ByteBuf setLong(int ☃, long ☃)
   {
-    return this.a.setLong(☃, ☃);
+    return a.setLong(☃, ☃);
   }
   
   public ByteBuf setChar(int ☃, int ☃)
   {
-    return this.a.setChar(☃, ☃);
+    return a.setChar(☃, ☃);
   }
   
   public ByteBuf setFloat(int ☃, float ☃)
   {
-    return this.a.setFloat(☃, ☃);
+    return a.setFloat(☃, ☃);
   }
   
   public ByteBuf setDouble(int ☃, double ☃)
   {
-    return this.a.setDouble(☃, ☃);
+    return a.setDouble(☃, ☃);
   }
   
   public ByteBuf setBytes(int ☃, ByteBuf ☃)
   {
-    return this.a.setBytes(☃, ☃);
+    return a.setBytes(☃, ☃);
   }
   
   public ByteBuf setBytes(int ☃, ByteBuf ☃, int ☃)
   {
-    return this.a.setBytes(☃, ☃, ☃);
+    return a.setBytes(☃, ☃, ☃);
   }
   
   public ByteBuf setBytes(int ☃, ByteBuf ☃, int ☃, int ☃)
   {
-    return this.a.setBytes(☃, ☃, ☃, ☃);
+    return a.setBytes(☃, ☃, ☃, ☃);
   }
   
   public ByteBuf setBytes(int ☃, byte[] ☃)
   {
-    return this.a.setBytes(☃, ☃);
+    return a.setBytes(☃, ☃);
   }
   
   public ByteBuf setBytes(int ☃, byte[] ☃, int ☃, int ☃)
   {
-    return this.a.setBytes(☃, ☃, ☃, ☃);
+    return a.setBytes(☃, ☃, ☃, ☃);
   }
   
   public ByteBuf setBytes(int ☃, ByteBuffer ☃)
   {
-    return this.a.setBytes(☃, ☃);
+    return a.setBytes(☃, ☃);
   }
   
   public int setBytes(int ☃, InputStream ☃, int ☃)
     throws IOException
   {
-    return this.a.setBytes(☃, ☃, ☃);
+    return a.setBytes(☃, ☃, ☃);
   }
   
   public int setBytes(int ☃, ScatteringByteChannel ☃, int ☃)
     throws IOException
   {
-    return this.a.setBytes(☃, ☃, ☃);
+    return a.setBytes(☃, ☃, ☃);
   }
   
   public ByteBuf setZero(int ☃, int ☃)
   {
-    return this.a.setZero(☃, ☃);
+    return a.setZero(☃, ☃);
   }
   
   public boolean readBoolean()
   {
-    return this.a.readBoolean();
+    return a.readBoolean();
   }
   
   public byte readByte()
   {
-    return this.a.readByte();
+    return a.readByte();
   }
   
   public short readUnsignedByte()
   {
-    return this.a.readUnsignedByte();
+    return a.readUnsignedByte();
   }
   
   public short readShort()
   {
-    return this.a.readShort();
+    return a.readShort();
   }
   
   public int readUnsignedShort()
   {
-    return this.a.readUnsignedShort();
+    return a.readUnsignedShort();
   }
   
   public int readMedium()
   {
-    return this.a.readMedium();
+    return a.readMedium();
   }
   
   public int readUnsignedMedium()
   {
-    return this.a.readUnsignedMedium();
+    return a.readUnsignedMedium();
   }
   
   public int readInt()
   {
-    return this.a.readInt();
+    return a.readInt();
   }
   
   public long readUnsignedInt()
   {
-    return this.a.readUnsignedInt();
+    return a.readUnsignedInt();
   }
   
   public long readLong()
   {
-    return this.a.readLong();
+    return a.readLong();
   }
   
   public char readChar()
   {
-    return this.a.readChar();
+    return a.readChar();
   }
   
   public float readFloat()
   {
-    return this.a.readFloat();
+    return a.readFloat();
   }
   
   public double readDouble()
   {
-    return this.a.readDouble();
+    return a.readDouble();
   }
   
   public ByteBuf readBytes(int ☃)
   {
-    return this.a.readBytes(☃);
+    return a.readBytes(☃);
   }
   
   public ByteBuf readSlice(int ☃)
   {
-    return this.a.readSlice(☃);
+    return a.readSlice(☃);
   }
   
   public ByteBuf readBytes(ByteBuf ☃)
   {
-    return this.a.readBytes(☃);
+    return a.readBytes(☃);
   }
   
   public ByteBuf readBytes(ByteBuf ☃, int ☃)
   {
-    return this.a.readBytes(☃, ☃);
+    return a.readBytes(☃, ☃);
   }
   
   public ByteBuf readBytes(ByteBuf ☃, int ☃, int ☃)
   {
-    return this.a.readBytes(☃, ☃, ☃);
+    return a.readBytes(☃, ☃, ☃);
   }
   
   public ByteBuf readBytes(byte[] ☃)
   {
-    return this.a.readBytes(☃);
+    return a.readBytes(☃);
   }
   
   public ByteBuf readBytes(byte[] ☃, int ☃, int ☃)
   {
-    return this.a.readBytes(☃, ☃, ☃);
+    return a.readBytes(☃, ☃, ☃);
   }
   
   public ByteBuf readBytes(ByteBuffer ☃)
   {
-    return this.a.readBytes(☃);
+    return a.readBytes(☃);
   }
   
   public ByteBuf readBytes(OutputStream ☃, int ☃)
     throws IOException
   {
-    return this.a.readBytes(☃, ☃);
+    return a.readBytes(☃, ☃);
   }
   
   public int readBytes(GatheringByteChannel ☃, int ☃)
     throws IOException
   {
-    return this.a.readBytes(☃, ☃);
+    return a.readBytes(☃, ☃);
   }
   
   public ByteBuf skipBytes(int ☃)
   {
-    return this.a.skipBytes(☃);
+    return a.skipBytes(☃);
   }
   
   public ByteBuf writeBoolean(boolean ☃)
   {
-    return this.a.writeBoolean(☃);
+    return a.writeBoolean(☃);
   }
   
   public ByteBuf writeByte(int ☃)
   {
-    return this.a.writeByte(☃);
+    return a.writeByte(☃);
   }
   
   public ByteBuf writeShort(int ☃)
   {
-    return this.a.writeShort(☃);
+    return a.writeShort(☃);
   }
   
   public ByteBuf writeMedium(int ☃)
   {
-    return this.a.writeMedium(☃);
+    return a.writeMedium(☃);
   }
   
   public ByteBuf writeInt(int ☃)
   {
-    return this.a.writeInt(☃);
+    return a.writeInt(☃);
   }
   
   public ByteBuf writeLong(long ☃)
   {
-    return this.a.writeLong(☃);
+    return a.writeLong(☃);
   }
   
   public ByteBuf writeChar(int ☃)
   {
-    return this.a.writeChar(☃);
+    return a.writeChar(☃);
   }
   
   public ByteBuf writeFloat(float ☃)
   {
-    return this.a.writeFloat(☃);
+    return a.writeFloat(☃);
   }
   
   public ByteBuf writeDouble(double ☃)
   {
-    return this.a.writeDouble(☃);
+    return a.writeDouble(☃);
   }
   
   public ByteBuf writeBytes(ByteBuf ☃)
   {
-    return this.a.writeBytes(☃);
+    return a.writeBytes(☃);
   }
   
   public ByteBuf writeBytes(ByteBuf ☃, int ☃)
   {
-    return this.a.writeBytes(☃, ☃);
+    return a.writeBytes(☃, ☃);
   }
   
   public ByteBuf writeBytes(ByteBuf ☃, int ☃, int ☃)
   {
-    return this.a.writeBytes(☃, ☃, ☃);
+    return a.writeBytes(☃, ☃, ☃);
   }
   
   public ByteBuf writeBytes(byte[] ☃)
   {
-    return this.a.writeBytes(☃);
+    return a.writeBytes(☃);
   }
   
   public ByteBuf writeBytes(byte[] ☃, int ☃, int ☃)
   {
-    return this.a.writeBytes(☃, ☃, ☃);
+    return a.writeBytes(☃, ☃, ☃);
   }
   
   public ByteBuf writeBytes(ByteBuffer ☃)
   {
-    return this.a.writeBytes(☃);
+    return a.writeBytes(☃);
   }
   
   public int writeBytes(InputStream ☃, int ☃)
     throws IOException
   {
-    return this.a.writeBytes(☃, ☃);
+    return a.writeBytes(☃, ☃);
   }
   
   public int writeBytes(ScatteringByteChannel ☃, int ☃)
     throws IOException
   {
-    return this.a.writeBytes(☃, ☃);
+    return a.writeBytes(☃, ☃);
   }
   
   public ByteBuf writeZero(int ☃)
   {
-    return this.a.writeZero(☃);
+    return a.writeZero(☃);
   }
   
   public int indexOf(int ☃, int ☃, byte ☃)
   {
-    return this.a.indexOf(☃, ☃, ☃);
+    return a.indexOf(☃, ☃, ☃);
   }
   
   public int bytesBefore(byte ☃)
   {
-    return this.a.bytesBefore(☃);
+    return a.bytesBefore(☃);
   }
   
   public int bytesBefore(int ☃, byte ☃)
   {
-    return this.a.bytesBefore(☃, ☃);
+    return a.bytesBefore(☃, ☃);
   }
   
   public int bytesBefore(int ☃, int ☃, byte ☃)
   {
-    return this.a.bytesBefore(☃, ☃, ☃);
+    return a.bytesBefore(☃, ☃, ☃);
   }
   
   public int forEachByte(ByteBufProcessor ☃)
   {
-    return this.a.forEachByte(☃);
+    return a.forEachByte(☃);
   }
   
   public int forEachByte(int ☃, int ☃, ByteBufProcessor ☃)
   {
-    return this.a.forEachByte(☃, ☃, ☃);
+    return a.forEachByte(☃, ☃, ☃);
   }
   
   public int forEachByteDesc(ByteBufProcessor ☃)
   {
-    return this.a.forEachByteDesc(☃);
+    return a.forEachByteDesc(☃);
   }
   
   public int forEachByteDesc(int ☃, int ☃, ByteBufProcessor ☃)
   {
-    return this.a.forEachByteDesc(☃, ☃, ☃);
+    return a.forEachByteDesc(☃, ☃, ☃);
   }
   
   public ByteBuf copy()
   {
-    return this.a.copy();
+    return a.copy();
   }
   
   public ByteBuf copy(int ☃, int ☃)
   {
-    return this.a.copy(☃, ☃);
+    return a.copy(☃, ☃);
   }
   
   public ByteBuf slice()
   {
-    return this.a.slice();
+    return a.slice();
   }
   
   public ByteBuf slice(int ☃, int ☃)
   {
-    return this.a.slice(☃, ☃);
+    return a.slice(☃, ☃);
   }
   
   public ByteBuf duplicate()
   {
-    return this.a.duplicate();
+    return a.duplicate();
   }
   
   public int nioBufferCount()
   {
-    return this.a.nioBufferCount();
+    return a.nioBufferCount();
   }
   
   public ByteBuffer nioBuffer()
   {
-    return this.a.nioBuffer();
+    return a.nioBuffer();
   }
   
   public ByteBuffer nioBuffer(int ☃, int ☃)
   {
-    return this.a.nioBuffer(☃, ☃);
+    return a.nioBuffer(☃, ☃);
   }
   
   public ByteBuffer internalNioBuffer(int ☃, int ☃)
   {
-    return this.a.internalNioBuffer(☃, ☃);
+    return a.internalNioBuffer(☃, ☃);
   }
   
   public ByteBuffer[] nioBuffers()
   {
-    return this.a.nioBuffers();
+    return a.nioBuffers();
   }
   
   public ByteBuffer[] nioBuffers(int ☃, int ☃)
   {
-    return this.a.nioBuffers(☃, ☃);
+    return a.nioBuffers(☃, ☃);
   }
   
   public boolean hasArray()
   {
-    return this.a.hasArray();
+    return a.hasArray();
   }
   
   public byte[] array()
   {
-    return this.a.array();
+    return a.array();
   }
   
   public int arrayOffset()
   {
-    return this.a.arrayOffset();
+    return a.arrayOffset();
   }
   
   public boolean hasMemoryAddress()
   {
-    return this.a.hasMemoryAddress();
+    return a.hasMemoryAddress();
   }
   
   public long memoryAddress()
   {
-    return this.a.memoryAddress();
+    return a.memoryAddress();
   }
   
   public String toString(Charset ☃)
   {
-    return this.a.toString(☃);
+    return a.toString(☃);
   }
   
   public String toString(int ☃, int ☃, Charset ☃)
   {
-    return this.a.toString(☃, ☃, ☃);
+    return a.toString(☃, ☃, ☃);
   }
   
   public int hashCode()
   {
-    return this.a.hashCode();
+    return a.hashCode();
   }
   
   public boolean equals(Object ☃)
   {
-    return this.a.equals(☃);
+    return a.equals(☃);
   }
   
   public int compareTo(ByteBuf ☃)
   {
-    return this.a.compareTo(☃);
+    return a.compareTo(☃);
   }
   
   public String toString()
   {
-    return this.a.toString();
+    return a.toString();
   }
   
   public ByteBuf retain(int ☃)
   {
-    return this.a.retain(☃);
+    return a.retain(☃);
   }
   
   public ByteBuf retain()
   {
-    return this.a.retain();
+    return a.retain();
   }
   
   public int refCnt()
   {
-    return this.a.refCnt();
+    return a.refCnt();
   }
   
   public boolean release()
   {
-    return this.a.release();
+    return a.release();
   }
   
   public boolean release(int ☃)
   {
-    return this.a.release(☃);
+    return a.release(☃);
   }
 }

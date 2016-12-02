@@ -32,19 +32,19 @@ public class baf
   
   public baf(bai ☃)
   {
-    this.h = new bae();
-    this.f = ☃;
+    h = new bae();
+    f = ☃;
   }
   
   public bah a(int ☃)
   {
-    int ☃ = ☃ + this.j * 6;
-    if ((this.j > 0) && (☃ == 0)) {
+    int ☃ = ☃ + j * 6;
+    if ((j > 0) && (☃ == 0)) {
       return c;
     }
     if (☃ == 7)
     {
-      if (☃ < this.h.a().size()) {
+      if (☃ < h.a().size()) {
         return d;
       }
       return e;
@@ -52,10 +52,10 @@ public class baf
     if (☃ == 8) {
       return b;
     }
-    if ((☃ < 0) || (☃ >= this.h.a().size())) {
+    if ((☃ < 0) || (☃ >= h.a().size())) {
       return a;
     }
-    return (bah)Objects.firstNonNull(this.h.a().get(☃), a);
+    return (bah)Objects.firstNonNull(h.a().get(☃), a);
   }
   
   public List<bah> a()
@@ -69,48 +69,48 @@ public class baf
   
   public bah b()
   {
-    return a(this.i);
+    return a(i);
   }
   
   public bag c()
   {
-    return this.h;
+    return h;
   }
   
   public void b(int ☃)
   {
     bah ☃ = a(☃);
     if (☃ != a) {
-      if ((this.i == ☃) && (☃.B_())) {
+      if ((i == ☃) && (☃.B_())) {
         ☃.a(this);
       } else {
-        this.i = ☃;
+        i = ☃;
       }
     }
   }
   
   public void d()
   {
-    this.f.a(this);
+    f.a(this);
   }
   
   public int e()
   {
-    return this.i;
+    return i;
   }
   
   public void a(bag ☃)
   {
-    this.g.add(f());
+    g.add(f());
     
-    this.h = ☃;
-    this.i = -1;
-    this.j = 0;
+    h = ☃;
+    i = -1;
+    j = 0;
   }
   
   public baj f()
   {
-    return new baj(this.h, a(), this.i);
+    return new baj(h, a(), i);
   }
   
   static class a
@@ -146,18 +146,18 @@ public class baf
     
     public b(int ☃, boolean ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
+      a = ☃;
+      b = ☃;
     }
     
     public void a(baf ☃)
     {
-      baf.a(☃, this.a);
+      baf.a(☃, a);
     }
     
     public eu A_()
     {
-      if (this.a < 0) {
+      if (a < 0) {
         return new fa("Previous Page");
       }
       return new fa("Next Page");
@@ -166,7 +166,7 @@ public class baf
     public void a(float ☃, int ☃)
     {
       ave.A().P().a(awm.a);
-      if (this.a < 0) {
+      if (a < 0) {
         avp.a(0, 0, 144.0F, 0.0F, 16, 16, 256.0F, 256.0F);
       } else {
         avp.a(0, 0, 160.0F, 0.0F, 16, 16, 256.0F, 256.0F);
@@ -175,7 +175,7 @@ public class baf
     
     public boolean B_()
     {
-      return this.b;
+      return b;
     }
   }
 }

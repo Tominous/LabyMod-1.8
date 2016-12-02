@@ -15,8 +15,8 @@ public class re
     
     public a(int ☃, rd ☃)
     {
-      this.b = ☃;
-      this.a = ☃;
+      b = ☃;
+      a = ☃;
     }
   }
   
@@ -28,27 +28,27 @@ public class re
   
   public re(nt ☃)
   {
-    this.d = ☃;
+    d = ☃;
   }
   
   public void a(int ☃, rd ☃)
   {
-    this.b.add(new re.a(☃, ☃));
+    b.add(new re.a(☃, ☃));
   }
   
   public void a(rd ☃)
   {
-    Iterator<re.a> ☃ = this.b.iterator();
+    Iterator<re.a> ☃ = b.iterator();
     while (☃.hasNext())
     {
       re.a ☃ = (re.a)☃.next();
-      rd ☃ = ☃.a;
+      rd ☃ = a;
       if (☃ == ☃)
       {
-        if (this.c.contains(☃))
+        if (c.contains(☃))
         {
           ☃.d();
-          this.c.remove(☃);
+          c.remove(☃);
         }
         ☃.remove();
       }
@@ -57,66 +57,66 @@ public class re
   
   public void a()
   {
-    this.d.a("goalSetup");
-    if (this.e++ % this.f == 0)
+    d.a("goalSetup");
+    if (e++ % f == 0)
     {
-      for (re.a ☃ : this.b)
+      for (re.a ☃ : b)
       {
-        boolean ☃ = this.c.contains(☃);
+        boolean ☃ = c.contains(☃);
         if (☃)
         {
           if ((!b(☃)) || (!a(☃)))
           {
-            ☃.a.d();
-            this.c.remove(☃);
+            a.d();
+            c.remove(☃);
           }
         }
-        else if ((b(☃)) && (☃.a.a()))
+        else if ((b(☃)) && (a.a()))
         {
-          ☃.a.c();
-          this.c.add(☃);
+          a.c();
+          c.add(☃);
         }
       }
     }
     else
     {
-      Iterator<re.a> ☃ = this.c.iterator();
+      Iterator<re.a> ☃ = c.iterator();
       while (☃.hasNext())
       {
         re.a ☃ = (re.a)☃.next();
         if (!a(☃))
         {
-          ☃.a.d();
+          a.d();
           ☃.remove();
         }
       }
     }
-    this.d.b();
+    d.b();
     
-    this.d.a("goalTick");
-    for (re.a ☃ : this.c) {
-      ☃.a.e();
+    d.a("goalTick");
+    for (re.a ☃ : c) {
+      a.e();
     }
-    this.d.b();
+    d.b();
   }
   
   private boolean a(re.a ☃)
   {
-    boolean ☃ = ☃.a.b();
+    boolean ☃ = a.b();
     return ☃;
   }
   
   private boolean b(re.a ☃)
   {
-    for (re.a ☃ : this.b) {
+    for (re.a ☃ : b) {
       if (☃ != ☃) {
-        if (☃.b >= ☃.b)
+        if (b >= b)
         {
-          if ((!a(☃, ☃)) && (this.c.contains(☃))) {
+          if ((!a(☃, ☃)) && (c.contains(☃))) {
             return false;
           }
         }
-        else if ((!☃.a.i()) && (this.c.contains(☃))) {
+        else if ((!a.i()) && (c.contains(☃))) {
           return false;
         }
       }
@@ -126,6 +126,6 @@ public class re
   
   private boolean a(re.a ☃, re.a ☃)
   {
-    return (☃.a.j() & ☃.a.j()) == 0;
+    return (a.j() & a.j()) == 0;
   }
 }

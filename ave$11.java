@@ -1,19 +1,13 @@
+import java.util.concurrent.Callable;
+
 class ave$11
-  extends Thread
+  implements Callable<String>
 {
-  ave$11(ave paramave, String ☃)
-  {
-    super(☃);
-  }
+  ave$11(ave this$0) {}
   
-  public void run()
+  public String call()
+    throws Exception
   {
-    while (this.a.B) {
-      try
-      {
-        Thread.sleep(2147483647L);
-      }
-      catch (InterruptedException localInterruptedException) {}
-    }
+    return "Client (map_client.txt)";
   }
 }

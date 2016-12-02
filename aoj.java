@@ -10,13 +10,13 @@ public class aoj
   public aoj(boolean ☃, boolean ☃)
   {
     super(☃);
-    this.c = ☃;
+    c = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
   {
     int ☃ = ☃.nextInt(3) + 5;
-    if (this.c) {
+    if (c) {
       ☃ += ☃.nextInt(7);
     }
     boolean ☃ = true;

@@ -10,22 +10,22 @@ public class hc
   
   public hc(int ☃, pf ☃)
   {
-    this.a = ☃;
-    this.b = ☃.a();
+    a = ☃;
+    b = ☃.a();
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.e();
-    this.b = ☃.readUnsignedByte();
+    a = ☃.e();
+    b = ☃.readUnsignedByte();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(this.a);
-    ☃.writeByte(this.b);
+    ☃.b(a);
+    ☃.writeByte(b);
   }
   
   public void a(fj ☃)
@@ -35,11 +35,11 @@ public class hc
   
   public int a()
   {
-    return this.a;
+    return a;
   }
   
   public int b()
   {
-    return this.b;
+    return b;
   }
 }

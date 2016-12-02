@@ -20,25 +20,25 @@ public class bpr
     throws IOException
   {
     super("LanServerPinger #" + a.incrementAndGet());
-    this.c = ☃;
-    this.f = ☃;
+    c = ☃;
+    f = ☃;
     setDaemon(true);
     
-    this.d = new DatagramSocket();
+    d = new DatagramSocket();
   }
   
   public void run()
   {
-    String ☃ = a(this.c, this.f);
+    String ☃ = a(c, f);
     byte[] ☃ = ☃.getBytes();
-    while ((!isInterrupted()) && (this.e))
+    while ((!isInterrupted()) && (e))
     {
       try
       {
         InetAddress ☃ = InetAddress.getByName("224.0.2.60");
         
         DatagramPacket ☃ = new DatagramPacket(☃, ☃.length, ☃, 4445);
-        this.d.send(☃);
+        d.send(☃);
       }
       catch (IOException ☃)
       {
@@ -57,7 +57,7 @@ public class bpr
   {
     super.interrupt();
     
-    this.e = false;
+    e = false;
   }
   
   public static String a(String ☃, String ☃)

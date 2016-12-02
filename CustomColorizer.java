@@ -802,11 +802,11 @@ public class CustomColorizer
     float greenF = green / 255.0F;
     float blueF = blue / 255.0F;
     
-    float cRed = (float)skyColor3d.a / 0.5F;
+    float cRed = (float)a / 0.5F;
     
-    float cGreen = (float)skyColor3d.b / 0.66275F;
+    float cGreen = (float)b / 0.66275F;
     
-    float cBlue = (float)skyColor3d.c;
+    float cBlue = (float)c;
     
     redF *= cRed;
     greenF *= cGreen;
@@ -830,11 +830,11 @@ public class CustomColorizer
     float greenF = green / 255.0F;
     float blueF = blue / 255.0F;
     
-    float cRed = (float)fogColor3d.a / 0.753F;
+    float cRed = (float)a / 0.753F;
     
-    float cGreen = (float)fogColor3d.b / 0.8471F;
+    float cGreen = (float)b / 0.8471F;
     
-    float cBlue = (float)fogColor3d.c;
+    float cBlue = (float)c;
     
     redF *= cRed;
     greenF *= cGreen;
@@ -906,7 +906,7 @@ public class CustomColorizer
     if (!Config.isCustomColors()) {
       return false;
     }
-    int dimensionId = world.t.q();
+    int dimensionId = t.q();
     
     int lightMapIndex = dimensionId - lightmapMinDimensionId;
     if ((lightMapIndex < 0) || (lightMapIndex >= lightMapsColorsRgb.length)) {
@@ -938,7 +938,7 @@ public class CustomColorizer
     sun = Config.limitTo1(sun);
     float sunX = sun * (width - 1);
     float torchX = Config.limitTo1(torchFlickerX + 0.5F) * (width - 1);
-    float gamma = Config.limitTo1(Config.getGameSettings().aI);
+    float gamma = Config.limitTo1(getGameSettingsaI);
     boolean hasGamma = gamma > 1.0E-4F;
     
     float[][] colorsRgb = lightMapRgb.getColorsRgb();
@@ -1001,7 +1001,7 @@ public class CustomColorizer
   
   public static aui getWorldFogColor(aui fogVec, bdb world, pk renderViewEntity, float partialTicks)
   {
-    int worldType = world.t.q();
+    int worldType = t.q();
     switch (worldType)
     {
     case -1: 
@@ -1009,7 +1009,7 @@ public class CustomColorizer
       break;
     case 0: 
       ave mc = ave.A();
-      fogVec = getFogColor(fogVec, mc.f, renderViewEntity.s, renderViewEntity.t + 1.0D, renderViewEntity.u);
+      fogVec = getFogColor(fogVec, f, s, t + 1.0D, u);
       break;
     case 1: 
       fogVec = getFogColorEnd(fogVec);
@@ -1019,12 +1019,12 @@ public class CustomColorizer
   
   public static aui getWorldSkyColor(aui skyVec, bdb world, pk renderViewEntity, float partialTicks)
   {
-    int worldType = world.t.q();
+    int worldType = t.q();
     switch (worldType)
     {
     case 0: 
       ave mc = ave.A();
-      skyVec = getSkyColor(skyVec, mc.f, renderViewEntity.s, renderViewEntity.t + 1.0D, renderViewEntity.u);
+      skyVec = getSkyColor(skyVec, f, s, t + 1.0D, u);
       break;
     case 1: 
       skyVec = getSkyColorEnd(skyVec);
@@ -1346,115 +1346,115 @@ public class CustomColorizer
       return -1;
     }
     if (name.equals("air")) {
-      return arn.b.M;
+      return bM;
     }
     if (name.equals("grass")) {
-      return arn.c.M;
+      return cM;
     }
     if (name.equals("sand")) {
-      return arn.d.M;
+      return dM;
     }
     if (name.equals("cloth")) {
-      return arn.e.M;
+      return eM;
     }
     if (name.equals("tnt")) {
-      return arn.f.M;
+      return fM;
     }
     if (name.equals("ice")) {
-      return arn.g.M;
+      return gM;
     }
     if (name.equals("iron")) {
-      return arn.h.M;
+      return hM;
     }
     if (name.equals("foliage")) {
-      return arn.i.M;
+      return iM;
     }
     if (name.equals("snow")) {
-      return arn.j.M;
+      return jM;
     }
     if (name.equals("clay")) {
-      return arn.k.M;
+      return kM;
     }
     if (name.equals("dirt")) {
-      return arn.l.M;
+      return lM;
     }
     if (name.equals("stone")) {
-      return arn.m.M;
+      return mM;
     }
     if (name.equals("water")) {
-      return arn.n.M;
+      return nM;
     }
     if (name.equals("wood")) {
-      return arn.o.M;
+      return oM;
     }
     if (name.equals("quartz")) {
-      return arn.p.M;
+      return pM;
     }
     if (name.equals("adobe")) {
-      return arn.q.M;
+      return qM;
     }
     if (name.equals("magenta")) {
-      return arn.r.M;
+      return rM;
     }
     if (name.equals("lightBlue")) {
-      return arn.s.M;
+      return sM;
     }
     if (name.equals("light_blue")) {
-      return arn.s.M;
+      return sM;
     }
     if (name.equals("yellow")) {
-      return arn.t.M;
+      return tM;
     }
     if (name.equals("lime")) {
-      return arn.u.M;
+      return uM;
     }
     if (name.equals("pink")) {
-      return arn.v.M;
+      return vM;
     }
     if (name.equals("gray")) {
-      return arn.w.M;
+      return wM;
     }
     if (name.equals("silver")) {
-      return arn.x.M;
+      return xM;
     }
     if (name.equals("cyan")) {
-      return arn.y.M;
+      return yM;
     }
     if (name.equals("purple")) {
-      return arn.z.M;
+      return zM;
     }
     if (name.equals("blue")) {
-      return arn.A.M;
+      return AM;
     }
     if (name.equals("brown")) {
-      return arn.B.M;
+      return BM;
     }
     if (name.equals("green")) {
-      return arn.C.M;
+      return CM;
     }
     if (name.equals("red")) {
-      return arn.D.M;
+      return DM;
     }
     if (name.equals("black")) {
-      return arn.E.M;
+      return EM;
     }
     if (name.equals("gold")) {
-      return arn.F.M;
+      return FM;
     }
     if (name.equals("diamond")) {
-      return arn.G.M;
+      return GM;
     }
     if (name.equals("lapis")) {
-      return arn.H.M;
+      return HM;
     }
     if (name.equals("emerald")) {
-      return arn.I.M;
+      return IM;
     }
     if (name.equals("obsidian")) {
-      return arn.J.M;
+      return JM;
     }
     if (name.equals("netherrack")) {
-      return arn.K.M;
+      return KM;
     }
     return -1;
   }
@@ -1468,7 +1468,7 @@ public class CustomColorizer
     {
       arn mapColor = mapColors[i];
       if (mapColor != null) {
-        colors[i] = mapColor.L;
+        colors[i] = L;
       }
     }
     return colors;
@@ -1487,7 +1487,7 @@ public class CustomColorizer
       {
         int color = colors[i];
         if (color >= 0) {
-          mapColor.L = color;
+          L = color;
         }
       }
     }

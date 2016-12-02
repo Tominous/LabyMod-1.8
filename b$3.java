@@ -7,7 +7,7 @@ class b$3
   
   b$3(b p_i46392_1_)
   {
-    this.a = p_i46392_1_;
+    a = p_i46392_1_;
   }
   
   public String a()

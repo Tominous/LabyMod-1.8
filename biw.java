@@ -7,8 +7,8 @@ public class biw
   public biw(biu p_i46178_1_)
   {
     super(p_i46178_1_);
-    this.c = 0.15F;
-    this.d = 0.75F;
+    c = 0.15F;
+    d = 0.75F;
   }
   
   public void a(pp p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
@@ -30,12 +30,12 @@ public class biw
     bqs.a(bqs.r, var19 / 1.0F, var20 / 1.0F);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     float var26 = 255.0F;
-    float var27 = (p_76986_1_.a + p_76986_9_) / 2.0F;
+    float var27 = (a + p_76986_9_) / 2.0F;
     var20 = (int)((ns.a(var27 + 0.0F) + 1.0F) * 0.5F * 255.0F);
     boolean var21 = true;
     int var22 = (int)((ns.a(var27 + 4.1887903F) + 1.0F) * 0.1F * 255.0F);
-    bfl.b(180.0F - this.b.e, 0.0F, 1.0F, 0.0F);
-    bfl.b(-this.b.f, 1.0F, 0.0F, 0.0F);
+    bfl.b(180.0F - b.e, 0.0F, 1.0F, 0.0F);
+    bfl.b(-b.f, 1.0F, 0.0F, 0.0F);
     float var23 = 0.3F;
     bfl.a(0.3F, 0.3F, 0.3F);
     bfx var24 = bfx.a();

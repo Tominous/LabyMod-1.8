@@ -5,17 +5,17 @@ class n$1
   
   public String e_()
   {
-    return this.a.e_();
+    return a.e_();
   }
   
   public eu f_()
   {
-    return this.a.f_();
+    return a.f_();
   }
   
   public void a(eu ☃)
   {
-    this.a.a(☃);
+    a.a(☃);
   }
   
   public boolean a(int ☃, String ☃)
@@ -25,31 +25,31 @@ class n$1
   
   public cj c()
   {
-    return this.a.c();
+    return a.c();
   }
   
   public aui d()
   {
-    return this.a.d();
+    return a.d();
   }
   
   public adm e()
   {
-    return this.a.e();
+    return a.e();
   }
   
   public pk f()
   {
-    return this.a.f();
+    return a.f();
   }
   
   public boolean u_()
   {
-    return this.a.u_();
+    return a.u_();
   }
   
   public void a(n.a ☃, int ☃)
   {
-    this.a.a(☃, ☃);
+    a.a(☃, ☃);
   }
 }

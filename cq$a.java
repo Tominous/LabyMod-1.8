@@ -13,8 +13,8 @@ public enum cq$a
   
   private cq$a(String p_i46015_1_, int p_i46015_2_, String name, cq.c plane)
   {
-    this.e = name;
-    this.f = plane;
+    e = name;
+    f = plane;
   }
   
   public static a a(String name)
@@ -24,22 +24,22 @@ public enum cq$a
   
   public String a()
   {
-    return this.e;
+    return e;
   }
   
   public boolean b()
   {
-    return this.f == cq.c.b;
+    return f == cq.c.b;
   }
   
   public boolean c()
   {
-    return this.f == cq.c.a;
+    return f == cq.c.a;
   }
   
   public String toString()
   {
-    return this.e;
+    return e;
   }
   
   public boolean a(cq facing)
@@ -49,12 +49,12 @@ public enum cq$a
   
   public cq.c d()
   {
-    return this.f;
+    return f;
   }
   
   public String l()
   {
-    return this.e;
+    return e;
   }
   
   public boolean apply(Object p_apply_1_)

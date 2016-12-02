@@ -7,9 +7,9 @@ class axq$a
   
   public axq$a(zw ☃, int ☃, String ☃, String ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
   }
 }

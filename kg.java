@@ -12,7 +12,7 @@ public class kg
   public kg(String ☃, OutputStream ☃)
   {
     super(☃);
-    this.b = ☃;
+    b = ☃;
   }
   
   public void println(String ☃)
@@ -29,6 +29,6 @@ public class kg
   {
     StackTraceElement[] ☃ = Thread.currentThread().getStackTrace();
     StackTraceElement ☃ = ☃[Math.min(3, ☃.length)];
-    a.info("[{}]@.({}:{}): {}", new Object[] { this.b, ☃.getFileName(), Integer.valueOf(☃.getLineNumber()), ☃ });
+    a.info("[{}]@.({}:{}): {}", new Object[] { b, ☃.getFileName(), Integer.valueOf(☃.getLineNumber()), ☃ });
   }
 }

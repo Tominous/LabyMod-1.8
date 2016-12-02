@@ -15,15 +15,15 @@ public class bhw
   
   public bhw()
   {
-    this.d = new BitSet(4096);
+    d = new BitSet(4096);
     
-    this.f = 4096;
+    f = 4096;
   }
   
   public void a(cj p_178606_1_)
   {
-    this.d.set(c(p_178606_1_), true);
-    this.f -= 1;
+    d.set(c(p_178606_1_), true);
+    f -= 1;
   }
   
   private static int c(cj p_178608_0_)
@@ -39,11 +39,11 @@ public class bhw
   public bhx a()
   {
     bhx var1 = new bhx();
-    if (4096 - this.f < 256)
+    if (4096 - f < 256)
     {
       var1.a(true);
     }
-    else if (this.f == 0)
+    else if (f == 0)
     {
       var1.a(false);
     }
@@ -54,7 +54,7 @@ public class bhw
       for (int var4 = 0; var4 < var3; var4++)
       {
         int var5 = var2[var4];
-        if (!this.d.get(var5)) {
+        if (!d.get(var5)) {
           var1.a(a(var5));
         }
       }
@@ -74,7 +74,7 @@ public class bhw
     ArrayDeque var3 = new ArrayDeque(384);
     
     var3.add(IntegerCache.valueOf(p_178604_1_));
-    this.d.set(p_178604_1_, true);
+    d.set(p_178604_1_, true);
     while (!var3.isEmpty())
     {
       int var4 = ((Integer)var3.poll()).intValue();
@@ -86,9 +86,9 @@ public class bhw
       {
         cq var8 = var5[var7];
         int var9 = a(var4, var8);
-        if ((var9 >= 0) && (!this.d.get(var9)))
+        if ((var9 >= 0) && (!d.get(var9)))
         {
-          this.d.set(var9, true);
+          d.set(var9, true);
           
           var3.add(IntegerCache.valueOf(var9));
         }

@@ -5,43 +5,43 @@ public enum adp$a
   
   private adp$a(int ☃, String ☃)
   {
-    this.f = ☃;
-    this.g = ☃;
+    f = ☃;
+    g = ☃;
   }
   
   public int a()
   {
-    return this.f;
+    return f;
   }
   
   public String b()
   {
-    return this.g;
+    return g;
   }
   
   public void a(wl ☃)
   {
     if (this == c)
     {
-      ☃.c = true;
-      ☃.d = true;
-      ☃.a = true;
+      c = true;
+      d = true;
+      a = true;
     }
     else if (this == e)
     {
-      ☃.c = true;
-      ☃.d = false;
-      ☃.a = true;
-      ☃.b = true;
+      c = true;
+      d = false;
+      a = true;
+      b = true;
     }
     else
     {
-      ☃.c = false;
-      ☃.d = false;
-      ☃.a = false;
-      ☃.b = false;
+      c = false;
+      d = false;
+      a = false;
+      b = false;
     }
-    ☃.e = (!c());
+    e = (!c());
   }
   
   public boolean c()
@@ -62,7 +62,7 @@ public enum adp$a
   public static a a(int ☃)
   {
     for (a ☃ : ) {
-      if (☃.f == ☃) {
+      if (f == ☃) {
         return ☃;
       }
     }
@@ -72,7 +72,7 @@ public enum adp$a
   public static a a(String ☃)
   {
     for (a ☃ : ) {
-      if (☃.g.equals(☃)) {
+      if (g.equals(☃)) {
         return ☃;
       }
     }

@@ -10,11 +10,11 @@ public class aer
   {
     super(☃);
     
-    this.au.add(new ady.c(tp.class, 1, 2, 6));
+    au.add(new ady.c(tp.class, 1, 2, 6));
     
-    this.as.A = 1;
-    this.as.B = 4;
-    this.as.C = 20;
+    as.A = 1;
+    as.B = 4;
+    as.C = 20;
   }
   
   public aoh a(Random ☃)
@@ -22,16 +22,16 @@ public class aer
     if (☃.nextInt(5) > 0) {
       return aD;
     }
-    return this.aA;
+    return aA;
   }
   
   protected ady d(int ☃)
   {
     ady ☃ = new aer.a(☃, this);
     
-    ☃.ap = ((this.ap + 1.0F) * 0.5F);
-    ☃.an = (this.an * 0.5F + 0.3F);
-    ☃.ao = (this.ao * 0.5F + 1.2F);
+    ap = ((ap + 1.0F) * 0.5F);
+    an = (an * 0.5F + 0.3F);
+    ao = (ao * 0.5F + 1.2F);
     
     return ☃;
   }
@@ -56,30 +56,30 @@ public class aer
     {
       super(☃);
       
-      this.as.A = 2;
-      this.as.B = 2;
-      this.as.C = 5;
+      as.A = 2;
+      as.B = 2;
+      as.C = 5;
     }
     
     public void a(adm ☃, Random ☃, ans ☃, int ☃, int ☃, double ☃)
     {
-      this.ak = afi.c.Q();
-      this.al = afi.d.Q();
+      ak = afi.c.Q();
+      al = afi.d.Q();
       if (☃ > 1.75D)
       {
-        this.ak = afi.b.Q();
-        this.al = afi.b.Q();
+        ak = afi.b.Q();
+        al = afi.b.Q();
       }
       else if (☃ > -0.5D)
       {
-        this.ak = afi.d.Q().a(agf.a, agf.a.b);
+        ak = afi.d.Q().a(agf.a, agf.a.b);
       }
       b(☃, ☃, ☃, ☃, ☃, ☃);
     }
     
     public void a(adm ☃, Random ☃, cj ☃)
     {
-      this.as.a(☃, ☃, this, ☃);
+      as.a(☃, ☃, this, ☃);
     }
   }
 }

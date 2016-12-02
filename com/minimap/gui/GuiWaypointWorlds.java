@@ -13,20 +13,20 @@ public class GuiWaypointWorlds
   
   public GuiWaypointWorlds(String c, String a)
   {
-    this.keys = Minimap.waypointMap.keySet().toArray();
-    this.options = new String[this.keys.length];
-    this.currentWorld = -1;
-    this.autoWorld = -1;
-    for (int i = 0; i < this.options.length; i++) {
+    keys = Minimap.waypointMap.keySet().toArray();
+    options = new String[keys.length];
+    currentWorld = -1;
+    autoWorld = -1;
+    for (int i = 0; i < options.length; i++) {
       try
       {
-        this.options[i] = "Error";
-        String worldID = (String)this.keys[i];
-        if ((this.currentWorld == -1) && (worldID.equals(c))) {
-          this.currentWorld = i;
+        options[i] = "Error";
+        String worldID = (String)keys[i];
+        if ((currentWorld == -1) && (worldID.equals(c))) {
+          currentWorld = i;
         }
-        if ((this.autoWorld == -1) && (worldID.equals(a))) {
-          this.autoWorld = i;
+        if ((autoWorld == -1) && (worldID.equals(a))) {
+          autoWorld = i;
         }
         String[] details = worldID.split("_");
         String dimension = "";
@@ -47,10 +47,10 @@ public class GuiWaypointWorlds
             dimension = " " + dim.substring(1);
           }
         }
-        this.options[i] = (details[(details.length - 2)] + dimension);
-        if (this.autoWorld == i)
+        options[i] = (details[(details.length - 2)] + dimension);
+        if (autoWorld == i)
         {
-          int tmp315_314 = i; String[] tmp315_311 = this.options;tmp315_311[tmp315_314] = (tmp315_311[tmp315_314] + " (auto)");
+          int tmp315_314 = i; String[] tmp315_311 = options;tmp315_311[tmp315_314] = (tmp315_311[tmp315_314] + " (auto)");
         }
       }
       catch (Exception e)

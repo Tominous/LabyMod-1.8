@@ -46,7 +46,7 @@ public class z
       if (☃ == null) {
         throw ☃;
       }
-      ☃ = ☃.H;
+      ☃ = H;
     }
     int ☃ = 600;
     int ☃ = 30;

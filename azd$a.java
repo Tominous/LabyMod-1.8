@@ -6,28 +6,28 @@ class azd$a
   public azd$a(int ☃, int ☃, int ☃, boolean ☃)
   {
     super(☃, ☃, ☃, 12, 19, "");
-    this.o = ☃;
+    o = ☃;
   }
   
   public void a(ave ☃, int ☃, int ☃)
   {
-    if (!this.m) {
+    if (!m) {
       return;
     }
     ☃.P().a(azd.f());
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     
-    boolean ☃ = (☃ >= this.h) && (☃ >= this.i) && (☃ < this.h + this.f) && (☃ < this.i + this.g);
+    boolean ☃ = (☃ >= h) && (☃ >= i) && (☃ < h + f) && (☃ < i + g);
     int ☃ = 0;
     int ☃ = 176;
-    if (!this.l) {
-      ☃ += this.f * 2;
+    if (!l) {
+      ☃ += f * 2;
     } else if (☃) {
-      ☃ += this.f;
+      ☃ += f;
     }
-    if (!this.o) {
-      ☃ += this.g;
+    if (!o) {
+      ☃ += g;
     }
-    b(this.h, this.i, ☃, ☃, this.f, this.g);
+    b(h, i, ☃, ☃, f, g);
   }
 }

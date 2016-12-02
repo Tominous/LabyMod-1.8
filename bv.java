@@ -29,7 +29,7 @@ public class bv
     if (☃.length >= 2) {
       ☃ = a(☃[1], 1, 1000000) * 20;
     }
-    adm ☃ = net.minecraft.server.MinecraftServer.N().d[0];
+    adm ☃ = Nd[0];
     ato ☃ = ☃.P();
     if ("clear".equalsIgnoreCase(☃[0]))
     {

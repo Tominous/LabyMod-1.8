@@ -15,22 +15,22 @@ public abstract class sw
   
   public sw(ps ☃, adm ☃)
   {
-    this.b = ☃;
-    this.c = ☃;
-    this.a = ☃.a(vy.b);
-    this.j = a();
+    b = ☃;
+    c = ☃;
+    a = ☃.a(vy.b);
+    j = a();
   }
   
   protected abstract asy a();
   
   public void a(double ☃)
   {
-    this.e = ☃;
+    e = ☃;
   }
   
   public float i()
   {
-    return (float)this.a.e();
+    return (float)a.e();
   }
   
   public final asx a(double ☃, double ☃, double ☃)
@@ -44,13 +44,13 @@ public abstract class sw
       return null;
     }
     float ☃ = i();
-    this.c.B.a("pathfind");
-    cj ☃ = new cj(this.b);
+    c.B.a("pathfind");
+    cj ☃ = new cj(b);
     int ☃ = (int)(☃ + 8.0F);
     
-    adv ☃ = new adv(this.c, ☃.a(-☃, -☃, -☃), ☃.a(☃, ☃, ☃), 0);
-    asx ☃ = this.j.a(☃, this.b, ☃, ☃);
-    this.c.B.b();
+    adv ☃ = new adv(c, ☃.a(-☃, -☃, -☃), ☃.a(☃, ☃, ☃), 0);
+    asx ☃ = j.a(☃, b, ☃, ☃);
+    c.B.b();
     return ☃;
   }
   
@@ -62,7 +62,7 @@ public abstract class sw
   
   public void a(float ☃)
   {
-    this.i = ☃;
+    i = ☃;
   }
   
   public asx a(pk ☃)
@@ -71,13 +71,13 @@ public abstract class sw
       return null;
     }
     float ☃ = i();
-    this.c.B.a("pathfind");
-    cj ☃ = new cj(this.b).a();
+    c.B.a("pathfind");
+    cj ☃ = new cj(b).a();
     int ☃ = (int)(☃ + 16.0F);
     
-    adv ☃ = new adv(this.c, ☃.a(-☃, -☃, -☃), ☃.a(☃, ☃, ☃), 0);
-    asx ☃ = this.j.a(☃, this.b, ☃, ☃);
-    this.c.B.b();
+    adv ☃ = new adv(c, ☃.a(-☃, -☃, -☃), ☃.a(☃, ☃, ☃), 0);
+    asx ☃ = j.a(☃, b, ☃, ☃);
+    c.B.b();
     return ☃;
   }
   
@@ -94,31 +94,31 @@ public abstract class sw
   {
     if (☃ == null)
     {
-      this.d = null;
+      d = null;
       return false;
     }
-    if (!☃.a(this.d)) {
-      this.d = ☃;
+    if (!☃.a(d)) {
+      d = ☃;
     }
     d();
-    if (this.d.d() == 0) {
+    if (d.d() == 0) {
       return false;
     }
-    this.e = ☃;
+    e = ☃;
     aui ☃ = c();
-    this.g = this.f;
-    this.h = ☃;
+    g = f;
+    h = ☃;
     return true;
   }
   
   public asx j()
   {
-    return this.d;
+    return d;
   }
   
   public void k()
   {
-    this.f += 1;
+    f += 1;
     if (m()) {
       return;
     }
@@ -126,58 +126,58 @@ public abstract class sw
     {
       l();
     }
-    else if ((this.d != null) && (this.d.e() < this.d.d()))
+    else if ((d != null) && (d.e() < d.d()))
     {
       aui ☃ = c();
-      aui ☃ = this.d.a(this.b, this.d.e());
-      if ((☃.b > ☃.b) && (!this.b.C) && (ns.c(☃.a) == ns.c(☃.a)) && (ns.c(☃.c) == ns.c(☃.c))) {
-        this.d.c(this.d.e() + 1);
+      aui ☃ = d.a(b, d.e());
+      if ((b > b) && (!b.C) && (ns.c(a) == ns.c(a)) && (ns.c(c) == ns.c(c))) {
+        d.c(d.e() + 1);
       }
     }
     if (m()) {
       return;
     }
-    aui ☃ = this.d.a(this.b);
+    aui ☃ = d.a(b);
     if (☃ == null) {
       return;
     }
-    aug ☃ = new aug(☃.a, ☃.b, ☃.c, ☃.a, ☃.b, ☃.c).b(0.5D, 0.5D, 0.5D);
-    List<aug> ☃ = this.c.a(this.b, ☃.a(0.0D, -1.0D, 0.0D));
+    aug ☃ = new aug(a, b, c, a, b, c).b(0.5D, 0.5D, 0.5D);
+    List<aug> ☃ = c.a(b, ☃.a(0.0D, -1.0D, 0.0D));
     double ☃ = -1.0D;
     ☃ = ☃.c(0.0D, 1.0D, 0.0D);
     for (aug ☃ : ☃) {
       ☃ = ☃.b(☃, ☃);
     }
-    this.b.q().a(☃.a, ☃.b + ☃, ☃.c, this.e);
+    b.q().a(a, b + ☃, c, e);
   }
   
   protected void l()
   {
     aui ☃ = c();
     
-    int ☃ = this.d.d();
-    for (int ☃ = this.d.e(); ☃ < this.d.d(); ☃++) {
-      if (this.d.a(☃).b != (int)☃.b)
+    int ☃ = d.d();
+    for (int ☃ = d.e(); ☃ < d.d(); ☃++) {
+      if (d.a(☃).b != (int)b)
       {
         ☃ = ☃;
         break;
       }
     }
-    float ☃ = this.b.J * this.b.J * this.i;
-    for (int ☃ = this.d.e(); ☃ < ☃; ☃++)
+    float ☃ = b.J * b.J * i;
+    for (int ☃ = d.e(); ☃ < ☃; ☃++)
     {
-      aui ☃ = this.d.a(this.b, ☃);
+      aui ☃ = d.a(b, ☃);
       if (☃.g(☃) < ☃) {
-        this.d.c(☃ + 1);
+        d.c(☃ + 1);
       }
     }
-    int ☃ = ns.f(this.b.J);
-    int ☃ = (int)this.b.K + 1;
+    int ☃ = ns.f(b.J);
+    int ☃ = (int)b.K + 1;
     int ☃ = ☃;
-    for (int ☃ = ☃ - 1; ☃ >= this.d.e(); ☃--) {
-      if (a(☃, this.d.a(this.b, ☃), ☃, ☃, ☃))
+    for (int ☃ = ☃ - 1; ☃ >= d.e(); ☃--) {
+      if (a(☃, d.a(b, ☃), ☃, ☃, ☃))
       {
-        this.d.c(☃);
+        d.c(☃);
         break;
       }
     }
@@ -186,24 +186,24 @@ public abstract class sw
   
   protected void a(aui ☃)
   {
-    if (this.f - this.g > 100)
+    if (f - g > 100)
     {
-      if (☃.g(this.h) < 2.25D) {
+      if (☃.g(h) < 2.25D) {
         n();
       }
-      this.g = this.f;
-      this.h = ☃;
+      g = f;
+      h = ☃;
     }
   }
   
   public boolean m()
   {
-    return (this.d == null) || (this.d.b());
+    return (d == null) || (d.b());
   }
   
   public void n()
   {
-    this.d = null;
+    d = null;
   }
   
   protected abstract aui c();
@@ -212,7 +212,7 @@ public abstract class sw
   
   protected boolean o()
   {
-    return (this.b.V()) || (this.b.ab());
+    return (b.V()) || (b.ab());
   }
   
   protected void d() {}

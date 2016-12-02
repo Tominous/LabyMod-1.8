@@ -10,6 +10,6 @@ class bdb$2
   
   public String a()
   {
-    return bdb.b(this.this$0).size() + " total; " + bdb.b(this.this$0).toString();
+    return bdb.b(this$0).size() + " total; " + bdb.b(this$0).toString();
   }
 }

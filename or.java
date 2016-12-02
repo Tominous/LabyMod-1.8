@@ -27,26 +27,26 @@ public class or
   {
     try
     {
-      this.d = new URL("http://snoop.minecraft.net/" + ☃ + "?version=" + 2);
+      d = new URL("http://snoop.minecraft.net/" + ☃ + "?version=" + 2);
     }
     catch (MalformedURLException ☃)
     {
       throw new IllegalArgumentException();
     }
-    this.e = ☃;
-    this.h = ☃;
+    e = ☃;
+    h = ☃;
   }
   
   public void a()
   {
-    if (this.i) {
+    if (i) {
       return;
     }
-    this.i = true;
+    i = true;
     
     h();
     
-    this.f.schedule(new TimerTask()
+    f.schedule(new TimerTask()
     {
       public void run()
       {
@@ -72,15 +72,15 @@ public class or
   {
     i();
     
-    a("snooper_token", this.c);
-    b("snooper_token", this.c);
+    a("snooper_token", c);
+    b("snooper_token", c);
     b("os_name", System.getProperty("os.name"));
     b("os_version", System.getProperty("os.version"));
     b("os_architecture", System.getProperty("os.arch"));
     b("java_version", System.getProperty("java.version"));
     a("version", "1.8.8");
     
-    this.e.b(this);
+    e.b(this);
   }
   
   private void i()
@@ -103,35 +103,35 @@ public class or
     b("memory_free", Long.valueOf(Runtime.getRuntime().freeMemory()));
     b("cpu_cores", Integer.valueOf(Runtime.getRuntime().availableProcessors()));
     
-    this.e.a(this);
+    e.a(this);
   }
   
   public void a(String ☃, Object ☃)
   {
-    synchronized (this.g)
+    synchronized (g)
     {
-      this.b.put(☃, ☃);
+      b.put(☃, ☃);
     }
   }
   
   public void b(String ☃, Object ☃)
   {
-    synchronized (this.g)
+    synchronized (g)
     {
-      this.a.put(☃, ☃);
+      a.put(☃, ☃);
     }
   }
   
   public Map<String, String> c()
   {
     Map<String, String> ☃ = Maps.newLinkedHashMap();
-    synchronized (this.g)
+    synchronized (g)
     {
       b();
-      for (Map.Entry<String, Object> ☃ : this.a.entrySet()) {
+      for (Map.Entry<String, Object> ☃ : a.entrySet()) {
         ☃.put(☃.getKey(), ☃.getValue().toString());
       }
-      for (Map.Entry<String, Object> ☃ : this.b.entrySet()) {
+      for (Map.Entry<String, Object> ☃ : b.entrySet()) {
         ☃.put(☃.getKey(), ☃.getValue().toString());
       }
     }
@@ -140,21 +140,21 @@ public class or
   
   public boolean d()
   {
-    return this.i;
+    return i;
   }
   
   public void e()
   {
-    this.f.cancel();
+    f.cancel();
   }
   
   public String f()
   {
-    return this.c;
+    return c;
   }
   
   public long g()
   {
-    return this.h;
+    return h;
   }
 }

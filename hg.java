@@ -17,86 +17,86 @@ public class hg
   
   public hg(ams ☃, hg.a ☃)
   {
-    this.a = ☃;
-    this.c = ☃.f();
-    this.d = ☃.g();
-    this.f = ☃.h();
-    this.e = ☃.j();
-    this.g = ☃.i();
-    this.b = ☃.l();
-    this.i = ☃.q();
-    this.h = ☃.p();
+    a = ☃;
+    c = ☃.f();
+    d = ☃.g();
+    f = ☃.h();
+    e = ☃.j();
+    g = ☃.i();
+    b = ☃.l();
+    i = ☃.q();
+    h = ☃.p();
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ((hg.a)☃.a(hg.a.class));
-    switch (hg.1.a[this.a.ordinal()])
+    a = ((hg.a)☃.a(hg.a.class));
+    switch (hg.1.a[a.ordinal()])
     {
     case 1: 
-      this.e = ☃.readDouble();
+      e = ☃.readDouble();
       break;
     case 2: 
-      this.f = ☃.readDouble();
-      this.e = ☃.readDouble();
-      this.g = ☃.f();
+      f = ☃.readDouble();
+      e = ☃.readDouble();
+      g = ☃.f();
       break;
     case 3: 
-      this.c = ☃.readDouble();
-      this.d = ☃.readDouble();
+      c = ☃.readDouble();
+      d = ☃.readDouble();
       break;
     case 4: 
-      this.i = ☃.e();
+      i = ☃.e();
       break;
     case 5: 
-      this.h = ☃.e();
+      h = ☃.e();
       break;
     case 6: 
-      this.c = ☃.readDouble();
-      this.d = ☃.readDouble();
-      this.f = ☃.readDouble();
-      this.e = ☃.readDouble();
-      this.g = ☃.f();
-      this.b = ☃.e();
-      this.i = ☃.e();
-      this.h = ☃.e();
+      c = ☃.readDouble();
+      d = ☃.readDouble();
+      f = ☃.readDouble();
+      e = ☃.readDouble();
+      g = ☃.f();
+      b = ☃.e();
+      i = ☃.e();
+      h = ☃.e();
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(this.a);
-    switch (hg.1.a[this.a.ordinal()])
+    ☃.a(a);
+    switch (hg.1.a[a.ordinal()])
     {
     case 1: 
-      ☃.writeDouble(this.e);
+      ☃.writeDouble(e);
       break;
     case 2: 
-      ☃.writeDouble(this.f);
-      ☃.writeDouble(this.e);
-      ☃.b(this.g);
+      ☃.writeDouble(f);
+      ☃.writeDouble(e);
+      ☃.b(g);
       break;
     case 3: 
-      ☃.writeDouble(this.c);
-      ☃.writeDouble(this.d);
+      ☃.writeDouble(c);
+      ☃.writeDouble(d);
       break;
     case 5: 
-      ☃.b(this.h);
+      ☃.b(h);
       break;
     case 4: 
-      ☃.b(this.i);
+      ☃.b(i);
       break;
     case 6: 
-      ☃.writeDouble(this.c);
-      ☃.writeDouble(this.d);
-      ☃.writeDouble(this.f);
-      ☃.writeDouble(this.e);
-      ☃.b(this.g);
-      ☃.b(this.b);
-      ☃.b(this.i);
-      ☃.b(this.h);
+      ☃.writeDouble(c);
+      ☃.writeDouble(d);
+      ☃.writeDouble(f);
+      ☃.writeDouble(e);
+      ☃.b(g);
+      ☃.b(b);
+      ☃.b(i);
+      ☃.b(h);
     }
   }
   
@@ -107,33 +107,33 @@ public class hg
   
   public void a(ams ☃)
   {
-    switch (hg.1.a[this.a.ordinal()])
+    switch (hg.1.a[a.ordinal()])
     {
     case 1: 
-      ☃.a(this.e);
+      ☃.a(e);
       break;
     case 2: 
-      ☃.a(this.f, this.e, this.g);
+      ☃.a(f, e, g);
       break;
     case 3: 
-      ☃.c(this.c, this.d);
+      ☃.c(c, d);
       break;
     case 6: 
-      ☃.c(this.c, this.d);
-      if (this.g > 0L) {
-        ☃.a(this.f, this.e, this.g);
+      ☃.c(c, d);
+      if (g > 0L) {
+        ☃.a(f, e, g);
       } else {
-        ☃.a(this.e);
+        ☃.a(e);
       }
-      ☃.a(this.b);
-      ☃.c(this.i);
-      ☃.b(this.h);
+      ☃.a(b);
+      ☃.c(i);
+      ☃.b(h);
       break;
     case 5: 
-      ☃.b(this.h);
+      ☃.b(h);
       break;
     case 4: 
-      ☃.c(this.i);
+      ☃.c(i);
     }
   }
   

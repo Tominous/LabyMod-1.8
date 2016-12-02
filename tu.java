@@ -17,55 +17,55 @@ public class tu
     super(☃);
     a(0.6F, 0.7F);
     
-    this.g = new tu.e(this);
+    g = new tu.e(this);
     
-    this.f = new tu.f(this);
+    f = new tu.f(this);
     
     ((sv)s()).a(true);
-    this.h.a(2.5F);
+    h.a(2.5F);
     
-    this.i.a(1, new ra(this));
-    this.i.a(1, new tu.g(this, 1.33D));
-    this.i.a(2, new sh(this, 1.0D, zy.bR, false));
-    this.i.a(2, new sh(this, 1.0D, zy.bW, false));
-    this.i.a(2, new sh(this, 1.0D, zw.a(afi.N), false));
-    this.i.a(3, new qv(this, 0.8D));
-    this.i.a(5, new tu.h(this));
-    this.i.a(5, new rz(this, 0.6D));
-    this.i.a(11, new ri(this, wn.class, 10.0F));
+    i.a(1, new ra(this));
+    i.a(1, new tu.g(this, 1.33D));
+    i.a(2, new sh(this, 1.0D, zy.bR, false));
+    i.a(2, new sh(this, 1.0D, zy.bW, false));
+    i.a(2, new sh(this, 1.0D, zw.a(afi.N), false));
+    i.a(3, new qv(this, 0.8D));
+    i.a(5, new tu.h(this));
+    i.a(5, new rz(this, 0.6D));
+    i.a(11, new ri(this, wn.class, 10.0F));
     
-    this.bm = new tu.c(this, ua.class, 16.0F, 1.33D, 1.33D);
+    bm = new tu.c(this, ua.class, 16.0F, 1.33D, 1.33D);
     
-    this.i.a(4, this.bm);
+    i.a(4, bm);
     
     b(0.0D);
   }
   
   protected float bE()
   {
-    if ((this.f.a()) && (this.f.e() > this.t + 0.5D)) {
+    if ((f.a()) && (f.e() > t + 0.5D)) {
       return 0.5F;
     }
-    return this.bt.b();
+    return bt.b();
   }
   
   public void a(tu.b ☃)
   {
-    this.bt = ☃;
+    bt = ☃;
   }
   
   public float p(float ☃)
   {
-    if (this.bp == 0) {
+    if (bp == 0) {
       return 0.0F;
     }
-    return (this.bo + ☃) / this.bp;
+    return (bo + ☃) / bp;
   }
   
   public void b(double ☃)
   {
     s().a(☃);
-    this.f.a(this.f.d(), this.f.e(), this.f.f(), ☃);
+    f.a(f.d(), f.e(), f.f(), ☃);
   }
   
   public void a(boolean ☃, tu.b ☃)
@@ -73,115 +73,115 @@ public class tu
     super.i(☃);
     if (!☃)
     {
-      if (this.bt == tu.b.e) {
-        this.bt = tu.b.b;
+      if (bt == tu.b.e) {
+        bt = tu.b.b;
       }
     }
     else
     {
       b(1.5D * ☃.a());
-      a(cm(), bB(), ((this.V.nextFloat() - this.V.nextFloat()) * 0.2F + 1.0F) * 0.8F);
+      a(cm(), bB(), ((V.nextFloat() - V.nextFloat()) * 0.2F + 1.0F) * 0.8F);
     }
-    this.bq = ☃;
+    bq = ☃;
   }
   
   public void b(tu.b ☃)
   {
     a(true, ☃);
-    this.bp = ☃.d();
-    this.bo = 0;
+    bp = ☃.d();
+    bo = 0;
   }
   
   public boolean cl()
   {
-    return this.bq;
+    return bq;
   }
   
   protected void h()
   {
     super.h();
     
-    this.ac.a(18, Byte.valueOf((byte)0));
+    ac.a(18, Byte.valueOf((byte)0));
   }
   
   private wn bv = null;
   
   public void E()
   {
-    if (this.f.b() > 0.8D) {
+    if (f.b() > 0.8D) {
       a(tu.b.d);
-    } else if (this.bt != tu.b.e) {
+    } else if (bt != tu.b.e) {
       a(tu.b.b);
     }
-    if (this.bs > 0) {
-      this.bs -= 1;
+    if (bs > 0) {
+      bs -= 1;
     }
-    if (this.bu > 0)
+    if (bu > 0)
     {
-      this.bu -= this.V.nextInt(3);
-      if (this.bu < 0) {
-        this.bu = 0;
+      bu -= V.nextInt(3);
+      if (bu < 0) {
+        bu = 0;
       }
     }
-    if (this.C)
+    if (C)
     {
-      if (!this.br)
+      if (!br)
       {
         a(false, tu.b.a);
         cw();
       }
-      if ((cn() == 99) && (this.bs == 0))
+      if ((cn() == 99) && (bs == 0))
       {
         pr ☃ = u();
         if ((☃ != null) && (h(☃) < 16.0D))
         {
-          a(☃.s, ☃.u);
-          this.f.a(☃.s, ☃.t, ☃.u, this.f.b());
+          a(s, u);
+          f.a(s, t, u, f.b());
           b(tu.b.e);
-          this.br = true;
+          br = true;
         }
       }
-      tu.e ☃ = (tu.e)this.g;
+      tu.e ☃ = (tu.e)g;
       if (!☃.c())
       {
-        if ((this.f.a()) && (this.bs == 0))
+        if ((f.a()) && (bs == 0))
         {
-          asx ☃ = this.h.j();
-          aui ☃ = new aui(this.f.d(), this.f.e(), this.f.f());
+          asx ☃ = h.j();
+          aui ☃ = new aui(f.d(), f.e(), f.f());
           if ((☃ != null) && (☃.e() < ☃.d())) {
             ☃ = ☃.a(this);
           }
-          a(☃.a, ☃.c);
-          b(this.bt);
+          a(a, c);
+          b(bt);
         }
       }
       else if (!☃.d()) {
         ct();
       }
     }
-    this.br = this.C;
+    br = C;
   }
   
   public void Y() {}
   
   private void a(double ☃, double ☃)
   {
-    this.y = ((float)(ns.b(☃ - this.u, ☃ - this.s) * 180.0D / 3.1415927410125732D) - 90.0F);
+    y = ((float)(ns.b(☃ - u, ☃ - s) * 180.0D / 3.1415927410125732D) - 90.0F);
   }
   
   private void ct()
   {
-    ((tu.e)this.g).a(true);
+    ((tu.e)g).a(true);
   }
   
   private void cu()
   {
-    ((tu.e)this.g).a(false);
+    ((tu.e)g).a(false);
   }
   
   private void cv()
   {
-    this.bs = co();
+    bs = co();
   }
   
   private void cw()
@@ -193,17 +193,17 @@ public class tu
   public void m()
   {
     super.m();
-    if (this.bo != this.bp)
+    if (bo != bp)
     {
-      if ((this.bo == 0) && (!this.o.D)) {
-        this.o.a(this, (byte)1);
+      if ((bo == 0) && (!o.D)) {
+        o.a(this, (byte)1);
       }
-      this.bo += 1;
+      bo += 1;
     }
-    else if (this.bp != 0)
+    else if (bp != 0)
     {
-      this.bo = 0;
-      this.bp = 0;
+      bo = 0;
+      bp = 0;
     }
   }
   
@@ -219,14 +219,14 @@ public class tu
   {
     super.b(☃);
     ☃.a("RabbitType", cn());
-    ☃.a("MoreCarrotTicks", this.bu);
+    ☃.a("MoreCarrotTicks", bu);
   }
   
   public void a(dn ☃)
   {
     super.a(☃);
     r(☃.f("RabbitType"));
-    this.bu = ☃.f("MoreCarrotTicks");
+    bu = ☃.f("MoreCarrotTicks");
   }
   
   protected String cm()
@@ -253,7 +253,7 @@ public class tu
   {
     if (cn() == 99)
     {
-      a("mob.attack", 1.0F, (this.V.nextFloat() - this.V.nextFloat()) * 0.2F + 1.0F);
+      a("mob.attack", 1.0F, (V.nextFloat() - V.nextFloat()) * 0.2F + 1.0F);
       return ☃.a(ow.a(this), 8.0F);
     }
     return ☃.a(ow.a(this), 3.0F);
@@ -282,11 +282,11 @@ public class tu
   
   protected void b(boolean ☃, int ☃)
   {
-    int ☃ = this.V.nextInt(2) + this.V.nextInt(1 + ☃);
+    int ☃ = V.nextInt(2) + V.nextInt(1 + ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
       a(zy.bs, 1);
     }
-    ☃ = this.V.nextInt(2);
+    ☃ = V.nextInt(2);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
       if (at()) {
         a(zy.bp, 1);
@@ -303,9 +303,9 @@ public class tu
   
   public tu b(ph ☃)
   {
-    tu ☃ = new tu(this.o);
+    tu ☃ = new tu(o);
     if ((☃ instanceof tu)) {
-      ☃.r(this.V.nextBoolean() ? cn() : ((tu)☃).cn());
+      ☃.r(V.nextBoolean() ? cn() : ((tu)☃).cn());
     }
     return ☃;
   }
@@ -317,34 +317,34 @@ public class tu
   
   public int cn()
   {
-    return this.ac.a(18);
+    return ac.a(18);
   }
   
   public void r(int ☃)
   {
     if (☃ == 99)
     {
-      this.i.a(this.bm);
-      this.i.a(4, new tu.a(this));
-      this.bi.a(1, new sm(this, false, new Class[0]));
-      this.bi.a(2, new sp(this, wn.class, true));
-      this.bi.a(2, new sp(this, ua.class, true));
+      i.a(bm);
+      i.a(4, new tu.a(this));
+      bi.a(1, new sm(this, false, new Class[0]));
+      bi.a(2, new sp(this, wn.class, true));
+      bi.a(2, new sp(this, ua.class, true));
       if (!l_()) {
         a(di.a("entity.KillerBunny.name"));
       }
     }
-    this.ac.b(18, Byte.valueOf((byte)☃));
+    ac.b(18, Byte.valueOf((byte)☃));
   }
   
   public pu a(ok ☃, pu ☃)
   {
     ☃ = super.a(☃, ☃);
     
-    int ☃ = this.V.nextInt(6);
+    int ☃ = V.nextInt(6);
     boolean ☃ = false;
     if ((☃ instanceof tu.d))
     {
-      ☃ = ((tu.d)☃).a;
+      ☃ = a;
       ☃ = true;
     }
     else
@@ -365,24 +365,24 @@ public class tu
     
     public d(int ☃)
     {
-      this.a = ☃;
+      a = ☃;
     }
   }
   
   private boolean cx()
   {
-    return this.bu == 0;
+    return bu == 0;
   }
   
   protected int co()
   {
-    return this.bt.c();
+    return bt.c();
   }
   
   protected void cp()
   {
-    this.o.a(cy.M, this.s + this.V.nextFloat() * this.J * 2.0F - this.J, this.t + 0.5D + this.V.nextFloat() * this.K, this.u + this.V.nextFloat() * this.J * 2.0F - this.J, 0.0D, 0.0D, 0.0D, new int[] { afh.f(afi.cb.a(7)) });
-    this.bu = 100;
+    o.a(cy.M, s + V.nextFloat() * J * 2.0F - J, t + 0.5D + V.nextFloat() * K, u + V.nextFloat() * J * 2.0F - J, 0.0D, 0.0D, 0.0D, new int[] { afh.f(afi.cb.a(7)) });
+    bu = 100;
   }
   
   public void a(byte ☃)
@@ -390,8 +390,8 @@ public class tu
     if (☃ == 1)
     {
       Z();
-      this.bp = 10;
-      this.bo = 0;
+      bp = 10;
+      bo = 0;
     }
     else
     {
@@ -408,30 +408,30 @@ public class tu
     public e(tu ☃)
     {
       super();
-      this.c = ☃;
+      c = ☃;
     }
     
     public boolean c()
     {
-      return this.a;
+      return a;
     }
     
     public boolean d()
     {
-      return this.d;
+      return d;
     }
     
     public void a(boolean ☃)
     {
-      this.d = ☃;
+      d = ☃;
     }
     
     public void b()
     {
-      if (this.a)
+      if (a)
       {
-        this.c.b(tu.b.c);
-        this.a = false;
+        c.b(tu.b.c);
+        a = false;
       }
     }
   }
@@ -444,13 +444,13 @@ public class tu
     public f(tu ☃)
     {
       super();
-      this.g = ☃;
+      g = ☃;
     }
     
     public void c()
     {
-      if ((this.g.C) && (!this.g.cl())) {
-        this.g.b(0.0D);
+      if ((g.C) && (!g.cl())) {
+        g.b(0.0D);
       }
       super.c();
     }
@@ -464,7 +464,7 @@ public class tu
     public c(tu ☃, Class<T> ☃, float ☃, double ☃, double ☃)
     {
       super(☃, ☃, ☃, ☃);
-      this.c = ☃;
+      c = ☃;
     }
     
     public void e()
@@ -483,25 +483,25 @@ public class tu
     public h(tu ☃)
     {
       super(0.699999988079071D, 16);
-      this.c = ☃;
+      c = ☃;
     }
     
     public boolean a()
     {
-      if (this.a <= 0)
+      if (a <= 0)
       {
-        if (!this.c.o.Q().b("mobGriefing")) {
+        if (!c.o.Q().b("mobGriefing")) {
           return false;
         }
-        this.e = false;
-        this.d = tu.a(this.c);
+        e = false;
+        d = tu.a(c);
       }
       return super.a();
     }
     
     public boolean b()
     {
-      return (this.e) && (super.b());
+      return (e) && (super.b());
     }
     
     public void c()
@@ -518,23 +518,23 @@ public class tu
     {
       super.e();
       
-      this.c.p().a(this.b.n() + 0.5D, this.b.o() + 1, this.b.p() + 0.5D, 10.0F, this.c.bQ());
+      c.p().a(b.n() + 0.5D, b.o() + 1, b.p() + 0.5D, 10.0F, c.bQ());
       if (f())
       {
-        adm ☃ = this.c.o;
-        cj ☃ = this.b.a();
+        adm ☃ = c.o;
+        cj ☃ = b.a();
         
         alz ☃ = ☃.p(☃);
         afh ☃ = ☃.c();
-        if ((this.e) && ((☃ instanceof afq)) && (((Integer)☃.b(afq.a)).intValue() == 7))
+        if ((e) && ((☃ instanceof afq)) && (((Integer)☃.b(afq.a)).intValue() == 7))
         {
           ☃.a(☃, afi.a.Q(), 2);
           ☃.b(☃, true);
-          this.c.cp();
+          c.cp();
         }
-        this.e = false;
+        e = false;
         
-        this.a = 10;
+        a = 10;
       }
     }
     
@@ -546,9 +546,9 @@ public class tu
         ☃ = ☃.a();
         alz ☃ = ☃.p(☃);
         ☃ = ☃.c();
-        if (((☃ instanceof afq)) && (((Integer)☃.b(afq.a)).intValue() == 7) && (this.d) && (!this.e))
+        if (((☃ instanceof afq)) && (((Integer)☃.b(afq.a)).intValue() == 7) && (d) && (!e))
         {
-          this.e = true;
+          e = true;
           return true;
         }
       }
@@ -564,14 +564,14 @@ public class tu
     public g(tu ☃, double ☃)
     {
       super(☃);
-      this.b = ☃;
+      b = ☃;
     }
     
     public void e()
     {
       super.e();
       
-      this.b.b(this.a);
+      b.b(a);
     }
   }
   
@@ -585,7 +585,7 @@ public class tu
     
     protected double a(pr ☃)
     {
-      return 4.0F + ☃.J;
+      return 4.0F + J;
     }
   }
   
@@ -598,30 +598,30 @@ public class tu
     
     private b(float ☃, float ☃, int ☃, int ☃)
     {
-      this.f = ☃;
-      this.g = ☃;
-      this.h = ☃;
-      this.i = ☃;
+      f = ☃;
+      g = ☃;
+      h = ☃;
+      i = ☃;
     }
     
     public float a()
     {
-      return this.f;
+      return f;
     }
     
     public float b()
     {
-      return this.g;
+      return g;
     }
     
     public int c()
     {
-      return this.h;
+      return h;
     }
     
     public int d()
     {
-      return this.i;
+      return i;
     }
   }
 }

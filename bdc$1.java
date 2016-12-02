@@ -4,21 +4,21 @@ import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 class bdc$1
   implements bnp.a
 {
-  bdc$1(bdc this$0) {}
+  bdc$1(bdc parambdc) {}
   
-  public void a(MinecraftProfileTexture.Type p_180521_1_, jy location, MinecraftProfileTexture profileTexture)
+  public void a(MinecraftProfileTexture.Type ☃, jy ☃, MinecraftProfileTexture ☃)
   {
-    switch (bdc.2.$SwitchMap$com$mojang$authlib$minecraft$MinecraftProfileTexture$Type[p_180521_1_.ordinal()])
+    switch (bdc.2.a[☃.ordinal()])
     {
     case 1: 
-      bdc.a(this.this$0, location);
-      bdc.a(this.this$0, profileTexture.getMetadata("model"));
-      if (bdc.a(this.this$0) == null) {
-        bdc.a(this.this$0, "default");
+      bdc.a(a, ☃);
+      bdc.a(a, ☃.getMetadata("model"));
+      if (bdc.a(a) == null) {
+        bdc.a(a, "default");
       }
       break;
     case 2: 
-      bdc.b(this.this$0, location);
+      bdc.b(a, ☃);
     }
   }
 }

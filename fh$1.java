@@ -5,6 +5,6 @@ final class fh$1
   
   public void run()
   {
-    this.a.a(this.b);
+    a.a(b);
   }
 }

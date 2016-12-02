@@ -7,6 +7,6 @@ class adm$4
   
   public String a()
   {
-    return this.a.v.f();
+    return a.v.f();
   }
 }

@@ -10,6 +10,6 @@ class bfk$4
   public String a()
     throws Exception
   {
-    return String.format("Scaled: (%d, %d). Absolute: (%d, %d). Scale factor of %d", new Object[] { Integer.valueOf(this.val$var17.a()), Integer.valueOf(this.val$var17.b()), Integer.valueOf(bfk.a(this.this$0).d), Integer.valueOf(bfk.a(this.this$0).e), Integer.valueOf(this.val$var17.e()) });
+    return String.format("Scaled: (%d, %d). Absolute: (%d, %d). Scale factor of %d", new Object[] { Integer.valueOf(val$var17.a()), Integer.valueOf(val$var17.b()), Integer.valueOf(athis$0).d), Integer.valueOf(athis$0).e), Integer.valueOf(val$var17.e()) });
   }
 }

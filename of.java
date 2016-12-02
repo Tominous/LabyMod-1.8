@@ -7,15 +7,15 @@ public class of
   
   public of(String ☃, oo ☃, oo ☃)
   {
-    this.a = ☃;
+    a = ☃;
     if (☃ == null) {
       ☃ = ☃;
     }
     if (☃ == null) {
       ☃ = ☃;
     }
-    this.b = ☃;
-    this.c = ☃;
+    b = ☃;
+    c = ☃;
     if (☃.r_()) {
       ☃.a(☃.i());
     } else if (☃.r_()) {
@@ -25,28 +25,28 @@ public class of
   
   public int o_()
   {
-    return this.b.o_() + this.c.o_();
+    return b.o_() + c.o_();
   }
   
   public boolean a(og ☃)
   {
-    return (this.b == ☃) || (this.c == ☃);
+    return (b == ☃) || (c == ☃);
   }
   
   public String e_()
   {
-    if (this.b.l_()) {
-      return this.b.e_();
+    if (b.l_()) {
+      return b.e_();
     }
-    if (this.c.l_()) {
-      return this.c.e_();
+    if (c.l_()) {
+      return c.e_();
     }
-    return this.a;
+    return a;
   }
   
   public boolean l_()
   {
-    return (this.b.l_()) || (this.c.l_());
+    return (b.l_()) || (c.l_());
   }
   
   public eu f_()
@@ -59,63 +59,63 @@ public class of
   
   public zx a(int ☃)
   {
-    if (☃ >= this.b.o_()) {
-      return this.c.a(☃ - this.b.o_());
+    if (☃ >= b.o_()) {
+      return c.a(☃ - b.o_());
     }
-    return this.b.a(☃);
+    return b.a(☃);
   }
   
   public zx a(int ☃, int ☃)
   {
-    if (☃ >= this.b.o_()) {
-      return this.c.a(☃ - this.b.o_(), ☃);
+    if (☃ >= b.o_()) {
+      return c.a(☃ - b.o_(), ☃);
     }
-    return this.b.a(☃, ☃);
+    return b.a(☃, ☃);
   }
   
   public zx b(int ☃)
   {
-    if (☃ >= this.b.o_()) {
-      return this.c.b(☃ - this.b.o_());
+    if (☃ >= b.o_()) {
+      return c.b(☃ - b.o_());
     }
-    return this.b.b(☃);
+    return b.b(☃);
   }
   
   public void a(int ☃, zx ☃)
   {
-    if (☃ >= this.b.o_()) {
-      this.c.a(☃ - this.b.o_(), ☃);
+    if (☃ >= b.o_()) {
+      c.a(☃ - b.o_(), ☃);
     } else {
-      this.b.a(☃, ☃);
+      b.a(☃, ☃);
     }
   }
   
   public int q_()
   {
-    return this.b.q_();
+    return b.q_();
   }
   
   public void p_()
   {
-    this.b.p_();
-    this.c.p_();
+    b.p_();
+    c.p_();
   }
   
   public boolean a(wn ☃)
   {
-    return (this.b.a(☃)) && (this.c.a(☃));
+    return (b.a(☃)) && (c.a(☃));
   }
   
   public void b(wn ☃)
   {
-    this.b.b(☃);
-    this.c.b(☃);
+    b.b(☃);
+    c.b(☃);
   }
   
   public void c(wn ☃)
   {
-    this.b.c(☃);
-    this.c.c(☃);
+    b.c(☃);
+    c.c(☃);
   }
   
   public boolean b(int ☃, zx ☃)
@@ -137,23 +137,23 @@ public class of
   
   public boolean r_()
   {
-    return (this.b.r_()) || (this.c.r_());
+    return (b.r_()) || (c.r_());
   }
   
   public void a(on ☃)
   {
-    this.b.a(☃);
-    this.c.a(☃);
+    b.a(☃);
+    c.a(☃);
   }
   
   public on i()
   {
-    return this.b.i();
+    return b.i();
   }
   
   public String k()
   {
-    return this.b.k();
+    return b.k();
   }
   
   public xi a(wm ☃, wn ☃)
@@ -163,7 +163,7 @@ public class of
   
   public void l()
   {
-    this.b.l();
-    this.c.l();
+    b.l();
+    c.l();
   }
 }

@@ -13,66 +13,66 @@ public class boa
   
   public boa(List<bnz> ☃, int ☃, int ☃, int ☃, boolean ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
-    this.e = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
+    e = ☃;
   }
   
   public int a()
   {
-    return this.c;
+    return c;
   }
   
   public int b()
   {
-    return this.b;
+    return b;
   }
   
   public int c()
   {
-    return this.a.size();
+    return a.size();
   }
   
   public int d()
   {
-    return this.d;
+    return d;
   }
   
   public boolean e()
   {
-    return this.e;
+    return e;
   }
   
   private bnz d(int ☃)
   {
-    return (bnz)this.a.get(☃);
+    return (bnz)a.get(☃);
   }
   
   public int a(int ☃)
   {
     bnz ☃ = d(☃);
     if (☃.a()) {
-      return this.d;
+      return d;
     }
     return ☃.b();
   }
   
   public boolean b(int ☃)
   {
-    return !((bnz)this.a.get(☃)).a();
+    return !((bnz)a.get(☃)).a();
   }
   
   public int c(int ☃)
   {
-    return ((bnz)this.a.get(☃)).c();
+    return ((bnz)a.get(☃)).c();
   }
   
   public Set<Integer> f()
   {
     Set<Integer> ☃ = Sets.newHashSet();
-    for (bnz ☃ : this.a) {
+    for (bnz ☃ : a) {
       ☃.add(Integer.valueOf(☃.c()));
     }
     return ☃;

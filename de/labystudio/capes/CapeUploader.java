@@ -5,15 +5,14 @@ import de.labystudio.chat.ClientConnection;
 import de.labystudio.chat.EnumAlertType;
 import de.labystudio.gui.GuiAchievementMod;
 import de.labystudio.labymod.LabyMod;
-import de.labystudio.labymod.Source;
 import de.labystudio.utils.Color;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -23,13 +22,20 @@ public class CapeUploader
 {
   public static boolean upload;
   public static boolean openUpload = false;
+  CapeCallback callBack;
+  
+  public CapeUploader(CapeCallback callBack)
+  {
+    this.callBack = callBack;
+  }
+  
   private final String CrLf = "\r\n";
   
   public void run()
   {
     upload = false;
     openUpload = true;
-    URLConnection conn = null;
+    HttpURLConnection conn = null;
     OutputStream os = null;
     InputStream is = null;
     File file = selectCape();
@@ -43,8 +49,8 @@ public class CapeUploader
       openUpload = false;
       upload = true;
       System.out.println("[LabyMod] Uploading cape " + file.getName());
-      LabyMod.getInstance().getClient().getClientConnection();URL url = new URL(Source.url_changeCape + "?username=" + LabyMod.getInstance().getPlayerName() + "&capeKey=" + ClientConnection.getCapeKey());
-      conn = url.openConnection();
+      LabyMod.getInstance().getClient().getClientConnection();URL url = new URL("http://info.labymod.net/php/changeCape.php?username=" + LabyMod.getInstance().getPlayerName() + "&capeKey=" + ClientConnection.getCapeKey());
+      conn = (HttpURLConnection)url.openConnection();
       conn.setDoOutput(true);
       String postData = "";
       InputStream imgIs = new FileInputStream(file);
@@ -76,28 +82,26 @@ public class CapeUploader
       os.flush();
       is = conn.getInputStream();
       
-      char buff = 'Ȁ';
-      
-      byte[] data = new byte[buff];
-      int len;
-      do
-      {
-        len = is.read(data);
+      byte[] data = new byte['Ѐ'];
+      int len = 0;
+      String output = "";
+      while ((len = is.read(data)) > 0) {
         if (len > 0)
         {
-          String output = new String(data, 0, len);
-          System.out.println("[LabyMod] Cape upload: " + output);
-          if (output.equalsIgnoreCase("OK"))
-          {
-            LabyMod.getInstance().achievementGui.displayBroadcast("CapeManager", Color.cl("a") + "Cape uploaded!", EnumAlertType.LABYMOD);
-            LabyMod.getInstance().getCapeManager().refresh();
-          }
-          else
-          {
-            LabyMod.getInstance().achievementGui.displayBroadcast("CapeManager", Color.cl("c") + "Error: " + output, EnumAlertType.LABYMOD);
-          }
+          output = output + new String(data, 0, len);
+          System.out.println("[LabyMod] Output: " + output);
         }
-      } while (len > 0);
+      }
+      System.out.println(output);
+      if (output.equalsIgnoreCase("OK"))
+      {
+        LabyMod.getInstance().getCapeManager().refresh();
+        callBack.done();
+      }
+      else
+      {
+        callBack.failed(output);
+      }
       try
       {
         os.close();
@@ -113,7 +117,8 @@ public class CapeUploader
     catch (Exception e)
     {
       e.printStackTrace();
-      LabyMod.getInstance().achievementGui.displayBroadcast("CapeManager", Color.cl("c") + "Error: " + e.getMessage(), EnumAlertType.LABYMOD);
+      getInstanceachievementGui.displayBroadcast("CapeManager", Color.cl("c") + "Error: " + e.getMessage(), EnumAlertType.LABYMOD);
+      callBack.failed(e.getMessage());
     }
     finally
     {
@@ -143,6 +148,8 @@ public class CapeUploader
     JFrame frame = new JFrame();
     
     chooser.showOpenDialog(frame.getParent());
+    chooser.requestFocus();
+    chooser.requestFocusInWindow();
     return chooser.getSelectedFile();
   }
 }

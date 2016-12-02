@@ -9,12 +9,12 @@ public class xm
   
   public xm(wm ☃, og ☃)
   {
-    this.a = ☃;
+    a = ☃;
     
-    a(new xm.b(☃.d, ☃, 0, 56, 46));
-    a(new xm.b(☃.d, ☃, 1, 79, 53));
-    a(new xm.b(☃.d, ☃, 2, 102, 46));
-    this.f = a(new xm.a(☃, 3, 79, 17));
+    a(new xm.b(d, ☃, 0, 56, 46));
+    a(new xm.b(d, ☃, 1, 79, 53));
+    a(new xm.b(d, ☃, 2, 102, 46));
+    f = a(new xm.a(☃, 3, 79, 17));
     for (int ☃ = 0; ☃ < 3; ☃++) {
       for (int ☃ = 0; ☃ < 9; ☃++) {
         a(new yg(☃, ☃ + ☃ * 9 + 9, 8 + ☃ * 18, 84 + ☃ * 18));
@@ -28,36 +28,36 @@ public class xm
   public void a(xn ☃)
   {
     super.a(☃);
-    ☃.a(this, this.a);
+    ☃.a(this, a);
   }
   
   public void b()
   {
     super.b();
-    for (int ☃ = 0; ☃ < this.e.size(); ☃++)
+    for (int ☃ = 0; ☃ < e.size(); ☃++)
     {
-      xn ☃ = (xn)this.e.get(☃);
-      if (this.g != this.a.a_(0)) {
-        ☃.a(this, 0, this.a.a_(0));
+      xn ☃ = (xn)e.get(☃);
+      if (g != a.a_(0)) {
+        ☃.a(this, 0, a.a_(0));
       }
     }
-    this.g = this.a.a_(0);
+    g = a.a_(0);
   }
   
   public void b(int ☃, int ☃)
   {
-    this.a.b(☃, ☃);
+    a.b(☃, ☃);
   }
   
   public boolean a(wn ☃)
   {
-    return this.a.a(☃);
+    return a.a(☃);
   }
   
   public zx b(wn ☃, int ☃)
   {
     zx ☃ = null;
-    yg ☃ = (yg)this.c.get(☃);
+    yg ☃ = (yg)c.get(☃);
     if ((☃ != null) && (☃.e()))
     {
       zx ☃ = ☃.d();
@@ -69,7 +69,7 @@ public class xm
         }
         ☃.a(☃, ☃);
       }
-      else if ((!this.f.e()) && (this.f.a(☃)))
+      else if ((!f.e()) && (f.a(☃)))
       {
         if (!a(☃, 3, 4, false)) {
           return null;
@@ -97,12 +97,12 @@ public class xm
       {
         return null;
       }
-      if (☃.b == 0) {
+      if (b == 0) {
         ☃.d(null);
       } else {
         ☃.f();
       }
-      if (☃.b == ☃.b) {
+      if (b == b) {
         return null;
       }
       ☃.a(☃, ☃);
@@ -118,7 +118,7 @@ public class xm
     public b(wn ☃, og ☃, int ☃, int ☃, int ☃)
     {
       super(☃, ☃, ☃);
-      this.a = ☃;
+      a = ☃;
     }
     
     public boolean a(zx ☃)
@@ -134,7 +134,7 @@ public class xm
     public void a(wn ☃, zx ☃)
     {
       if ((☃.b() == zy.bz) && (☃.i() > 0)) {
-        this.a.b(mr.B);
+        a.b(mr.B);
       }
       super.a(☃, ☃);
     }

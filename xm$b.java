@@ -6,7 +6,7 @@ class xm$b
   public xm$b(wn ☃, og ☃, int ☃, int ☃, int ☃)
   {
     super(☃, ☃, ☃, ☃);
-    this.a = ☃;
+    a = ☃;
   }
   
   public boolean a(zx ☃)
@@ -22,7 +22,7 @@ class xm$b
   public void a(wn ☃, zx ☃)
   {
     if ((☃.b() == zy.bz) && (☃.i() > 0)) {
-      this.a.b(mr.B);
+      a.b(mr.B);
     }
     super.a(☃, ☃);
   }

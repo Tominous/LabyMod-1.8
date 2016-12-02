@@ -8,6 +8,6 @@ class lm$3
   public String a()
     throws Exception
   {
-    return this.a.getClass().getCanonicalName();
+    return a.getClass().getCanonicalName();
   }
 }

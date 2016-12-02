@@ -16,7 +16,7 @@ public class aki
   public aki()
   {
     super(arm.q);
-    j(this.M.b().a(a, Boolean.valueOf(false)).a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, Boolean.valueOf(false)).a(Q, Boolean.valueOf(false)).a(R, Boolean.valueOf(false)).a(S, Boolean.valueOf(false)));
+    j(M.b().a(a, Boolean.valueOf(false)).a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, Boolean.valueOf(false)).a(Q, Boolean.valueOf(false)).a(R, Boolean.valueOf(false)).a(S, Boolean.valueOf(false)));
     a(0.0F, 0.0F, 0.0F, 1.0F, 0.15625F, 1.0F);
     a(true);
   }
@@ -95,7 +95,7 @@ public class aki
   
   public void a(adm ☃, cj ☃, alz ☃, wn ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     if ((☃.bZ() != null) && (☃.bZ().b() == zy.be)) {
@@ -127,7 +127,7 @@ public class aki
   
   public void a(adm ☃, cj ☃, alz ☃, pk ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     if (((Boolean)☃.b(a)).booleanValue()) {
@@ -140,7 +140,7 @@ public class aki
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     if (!((Boolean)☃.p(☃).b(a)).booleanValue()) {
@@ -155,7 +155,7 @@ public class aki
     boolean ☃ = ((Boolean)☃.b(a)).booleanValue();
     boolean ☃ = false;
     
-    List<? extends pk> ☃ = ☃.b(null, new aug(☃.n() + this.B, ☃.o() + this.C, ☃.p() + this.D, ☃.n() + this.E, ☃.o() + this.F, ☃.p() + this.G));
+    List<? extends pk> ☃ = ☃.b(null, new aug(☃.n() + B, ☃.o() + C, ☃.p() + D, ☃.n() + E, ☃.o() + F, ☃.p() + G));
     if (!☃.isEmpty()) {
       for (pk ☃ : ☃) {
         if (!☃.aI())

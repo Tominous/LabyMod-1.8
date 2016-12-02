@@ -8,27 +8,27 @@ public class alg
   
   public alg(zw ☃, int ☃)
   {
-    this.a = ☃;
-    this.f = ☃;
+    a = ☃;
+    f = ☃;
   }
   
   public void b(dn ☃)
   {
     super.b(☃);
-    jy ☃ = (jy)zw.e.c(this.a);
+    jy ☃ = (jy)zw.e.c(a);
     ☃.a("Item", ☃ == null ? "" : ☃.toString());
-    ☃.a("Data", this.f);
+    ☃.a("Data", f);
   }
   
   public void a(dn ☃)
   {
     super.a(☃);
     if (☃.b("Item", 8)) {
-      this.a = zw.d(☃.j("Item"));
+      a = zw.d(☃.j("Item"));
     } else {
-      this.a = zw.b(☃.f("Item"));
+      a = zw.b(☃.f("Item"));
     }
-    this.f = ☃.f("Data");
+    f = ☃.f("Data");
   }
   
   public ff y_()
@@ -37,23 +37,23 @@ public class alg
     b(☃);
     
     ☃.o("Item");
-    ☃.a("Item", zw.b(this.a));
-    return new ft(this.c, 5, ☃);
+    ☃.a("Item", zw.b(a));
+    return new ft(c, 5, ☃);
   }
   
   public void a(zw ☃, int ☃)
   {
-    this.a = ☃;
-    this.f = ☃;
+    a = ☃;
+    f = ☃;
   }
   
   public zw b()
   {
-    return this.a;
+    return a;
   }
   
   public int c()
   {
-    return this.f;
+    return f;
   }
 }

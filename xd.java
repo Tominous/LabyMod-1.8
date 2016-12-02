@@ -43,37 +43,37 @@ public class xd
   
   protected void a(auh ☃)
   {
-    if (!this.o.D)
+    if (!o.D)
     {
-      if (☃.d != null)
+      if (d != null)
       {
-        if (this.a != null)
+        if (a != null)
         {
-          if (☃.d.a(ow.a(this.a), 8.0F)) {
-            if (!☃.d.ai()) {
-              this.a.h(5.0F);
+          if (d.a(ow.a(a), 8.0F)) {
+            if (!d.ai()) {
+              a.h(5.0F);
             } else {
-              a(this.a, ☃.d);
+              a(a, d);
             }
           }
         }
         else {
-          ☃.d.a(ow.l, 5.0F);
+          d.a(ow.l, 5.0F);
         }
-        if ((☃.d instanceof pr))
+        if ((d instanceof pr))
         {
           int ☃ = 0;
-          if (this.o.aa() == oj.c) {
+          if (o.aa() == oj.c) {
             ☃ = 10;
-          } else if (this.o.aa() == oj.d) {
+          } else if (o.aa() == oj.d) {
             ☃ = 40;
           }
           if (☃ > 0) {
-            ((pr)☃.d).c(new pf(pe.v.H, 20 * ☃, 1));
+            ((pr)d).c(new pf(vH, 20 * ☃, 1));
           }
         }
       }
-      this.o.a(this, this.s, this.t, this.u, 1.0F, false, this.o.Q().b("mobGriefing"));
+      o.a(this, s, t, u, 1.0F, false, o.Q().b("mobGriefing"));
       J();
     }
   }
@@ -90,16 +90,16 @@ public class xd
   
   protected void h()
   {
-    this.ac.a(10, Byte.valueOf((byte)0));
+    ac.a(10, Byte.valueOf((byte)0));
   }
   
   public boolean l()
   {
-    return this.ac.a(10) == 1;
+    return ac.a(10) == 1;
   }
   
   public void a(boolean ☃)
   {
-    this.ac.b(10, Byte.valueOf((byte)(☃ ? 1 : 0)));
+    ac.b(10, Byte.valueOf((byte)(☃ ? 1 : 0)));
   }
 }

@@ -1,7 +1,7 @@
 package installer.labystudio.frame;
 
 import installer.Main;
-import installer.Main.ModTemplate;
+import installer.ModTemplate;
 import installer.Utils;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -14,16 +14,19 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 public class FrameList
   extends JFrame
 {
   JTextArea textArea;
+  private JTextField pathField;
   
   public FrameList()
   {
@@ -58,8 +61,17 @@ public class FrameList
     {
       public void actionPerformed(ActionEvent e)
       {
-        FrameList.this.dispose();
-        new FrameInstall();
+        File pathFile = new File(pathField.getText());
+        if ((pathFile.exists()) && (pathFile.isDirectory()))
+        {
+          Main.path = pathFile;
+          dispose();
+          new FrameInstall();
+        }
+        else
+        {
+          Utils.error("The selected directory " + pathFile.getName() + " doesn't exist!");
+        }
       }
     });
     btnNext.setBounds(443, 330, 212, 39);
@@ -82,28 +94,24 @@ public class FrameList
     
     JPanel listPanel = new JPanel();
     listPanel.setLayout(null);
-    listPanel.setBounds(317, 69, 338, 250);
+    listPanel.setBounds(317, 69, 338, 216);
     mainPanel.add(listPanel);
     
     this.textArea = new JTextArea();
-    this.textArea.setBounds(10, 11, 318, 203);
+    this.textArea.setBounds(10, 11, 318, 194);
     this.textArea.setEditable(false);
     this.textArea.setEnabled(true);
     this.textArea.setFont(new Font("Arial", 2, 14));
     this.textArea.setLineWrap(true);
     this.textArea.setOpaque(false);
-    String list = "- LabyMod " + Main.modVersion + " for Minecraft " + Main.mcVersion + "\n";
+    String list = "- LabyMod 2.7.9 for Minecraft 1.8.8\n";
     boolean showProhibited = false;
     String p;
-    for (Main.ModTemplate mod : Main.modTempates) {
+    for (ModTemplate mod : Main.modTempates) {
       if (mod.isEnabled())
       {
         p = "";
-        if (mod.isProhibited())
-        {
-          p = "* ";
-          showProhibited = true;
-        }
+        
         list = list + "- " + p + mod.getModName() + "\n";
       }
     }
@@ -139,7 +147,7 @@ public class FrameList
     {
       public void actionPerformed(ActionEvent e)
       {
-        FrameList.this.dispose();
+        dispose();
         new FrameCompatibleMods();
       }
     });
@@ -148,8 +156,39 @@ public class FrameList
     
     JLabel label = new JLabel(new ImageIcon(FrameList.class.getResource("/installer/images/features.jpg")));
     label.setHorizontalAlignment(2);
-    label.setBounds(10, 11, 297, 359);
+    label.setBounds(10, 11, 297, 358);
     mainPanel.add(label);
+    
+    pathField = new JTextField();
+    pathField.setBounds(317, 297, 259, 22);
+    pathField.setText(Main.path.getAbsolutePath());
+    mainPanel.add(pathField);
+    pathField.setColumns(10);
+    
+    JButton browseButton = new JButton("Browse");
+    browseButton.setBounds(579, 296, 76, 23);
+    browseButton.addActionListener(new ActionListener()
+    {
+      public void actionPerformed(ActionEvent e)
+      {
+        JFileChooser chooser = new JFileChooser();
+        chooser.setMultiSelectionEnabled(false);
+        chooser.setCurrentDirectory(Main.path);
+        chooser.setDialogTitle("Minecraft Directory");
+        chooser.setFileSelectionMode(1);
+        int returnVal = chooser.showOpenDialog(getParent());
+        if (returnVal == 0)
+        {
+          Main.path = chooser.getSelectedFile();
+          pathField.setText(Main.path.getAbsolutePath());
+        }
+        else if (chooser.getSelectedFile() != null)
+        {
+          Utils.error("Invalid directory: " + chooser.getSelectedFile().getAbsolutePath());
+        }
+      }
+    });
+    mainPanel.add(browseButton);
     
     JTextArea textArea = new JTextArea();
     show();

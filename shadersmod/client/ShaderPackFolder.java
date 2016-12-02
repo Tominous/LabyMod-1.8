@@ -12,7 +12,7 @@ public class ShaderPackFolder
   
   public ShaderPackFolder(String name, File file)
   {
-    this.packFile = file;
+    packFile = file;
   }
   
   public void close() {}
@@ -21,7 +21,7 @@ public class ShaderPackFolder
   {
     try
     {
-      File resFile = new File(this.packFile, resName.substring(1));
+      File resFile = new File(packFile, resName.substring(1));
       if (resFile != null) {
         return new BufferedInputStream(new FileInputStream(resFile));
       }
@@ -32,6 +32,6 @@ public class ShaderPackFolder
   
   public String getName()
   {
-    return this.packFile.getName();
+    return packFile.getName();
   }
 }

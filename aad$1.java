@@ -41,7 +41,7 @@ final class aad$1
       }
       else
       {
-        return this.b.a(☃, ☃);
+        return b.a(☃, ☃);
       }
     }
     double ☃;

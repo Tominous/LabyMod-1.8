@@ -17,13 +17,13 @@ public class pp
     a(0.5F, 0.5F);
     b(☃, ☃, ☃);
     
-    this.y = ((float)(Math.random() * 360.0D));
+    y = ((float)(Math.random() * 360.0D));
     
-    this.v = ((float)(Math.random() * 0.20000000298023224D - 0.10000000149011612D) * 2.0F);
-    this.w = ((float)(Math.random() * 0.2D) * 2.0F);
-    this.x = ((float)(Math.random() * 0.20000000298023224D - 0.10000000149011612D) * 2.0F);
+    v = ((float)(Math.random() * 0.20000000298023224D - 0.10000000149011612D) * 2.0F);
+    w = ((float)(Math.random() * 0.2D) * 2.0F);
+    x = ((float)(Math.random() * 0.20000000298023224D - 0.10000000149011612D) * 2.0F);
     
-    this.e = ☃;
+    e = ☃;
   }
   
   protected boolean s_()
@@ -57,72 +57,72 @@ public class pp
   public void t_()
   {
     super.t_();
-    if (this.c > 0) {
-      this.c -= 1;
+    if (c > 0) {
+      c -= 1;
     }
-    this.p = this.s;
-    this.q = this.t;
-    this.r = this.u;
+    p = s;
+    q = t;
+    r = u;
     
-    this.w -= 0.029999999329447746D;
-    if (this.o.p(new cj(this)).c().t() == arm.i)
+    w -= 0.029999999329447746D;
+    if (o.p(new cj(this)).c().t() == arm.i)
     {
-      this.w = 0.20000000298023224D;
-      this.v = ((this.V.nextFloat() - this.V.nextFloat()) * 0.2F);
-      this.x = ((this.V.nextFloat() - this.V.nextFloat()) * 0.2F);
-      a("random.fizz", 0.4F, 2.0F + this.V.nextFloat() * 0.4F);
+      w = 0.20000000298023224D;
+      v = ((V.nextFloat() - V.nextFloat()) * 0.2F);
+      x = ((V.nextFloat() - V.nextFloat()) * 0.2F);
+      a("random.fizz", 0.4F, 2.0F + V.nextFloat() * 0.4F);
     }
-    j(this.s, (aR().b + aR().e) / 2.0D, this.u);
+    j(s, (aRb + aRe) / 2.0D, u);
     
     double ☃ = 8.0D;
-    if (this.g < this.a - 20 + F() % 100)
+    if (g < a - 20 + F() % 100)
     {
-      if ((this.f == null) || (this.f.h(this) > ☃ * ☃)) {
-        this.f = this.o.a(this, ☃);
+      if ((f == null) || (f.h(this) > ☃ * ☃)) {
+        f = o.a(this, ☃);
       }
-      this.g = this.a;
+      g = a;
     }
-    if ((this.f != null) && (this.f.v())) {
-      this.f = null;
+    if ((f != null) && (f.v())) {
+      f = null;
     }
-    if (this.f != null)
+    if (f != null)
     {
-      double ☃ = (this.f.s - this.s) / ☃;
-      double ☃ = (this.f.t + this.f.aS() - this.t) / ☃;
-      double ☃ = (this.f.u - this.u) / ☃;
+      double ☃ = (f.s - s) / ☃;
+      double ☃ = (f.t + f.aS() - t) / ☃;
+      double ☃ = (f.u - u) / ☃;
       double ☃ = Math.sqrt(☃ * ☃ + ☃ * ☃ + ☃ * ☃);
       double ☃ = 1.0D - ☃;
       if (☃ > 0.0D)
       {
         ☃ *= ☃;
-        this.v += ☃ / ☃ * ☃ * 0.1D;
-        this.w += ☃ / ☃ * ☃ * 0.1D;
-        this.x += ☃ / ☃ * ☃ * 0.1D;
+        v += ☃ / ☃ * ☃ * 0.1D;
+        w += ☃ / ☃ * ☃ * 0.1D;
+        x += ☃ / ☃ * ☃ * 0.1D;
       }
     }
-    d(this.v, this.w, this.x);
+    d(v, w, x);
     
     float ☃ = 0.98F;
-    if (this.C) {
-      ☃ = this.o.p(new cj(ns.c(this.s), ns.c(aR().b) - 1, ns.c(this.u))).c().L * 0.98F;
+    if (C) {
+      ☃ = o.p(new cj(ns.c(s), ns.c(aRb) - 1, ns.c(u))).c().L * 0.98F;
     }
-    this.v *= ☃;
-    this.w *= 0.9800000190734863D;
-    this.x *= ☃;
-    if (this.C) {
-      this.w *= -0.8999999761581421D;
+    v *= ☃;
+    w *= 0.9800000190734863D;
+    x *= ☃;
+    if (C) {
+      w *= -0.8999999761581421D;
     }
-    this.a += 1;
+    a += 1;
     
-    this.b += 1;
-    if (this.b >= 6000) {
+    b += 1;
+    if (b >= 6000) {
       J();
     }
   }
   
   public boolean W()
   {
-    return this.o.a(aR(), arm.h, this);
+    return o.a(aR(), arm.h, this);
   }
   
   protected void f(int ☃)
@@ -136,8 +136,8 @@ public class pp
       return false;
     }
     ac();
-    this.d = ((int)(this.d - ☃));
-    if (this.d <= 0) {
+    d = ((int)(d - ☃));
+    if (d <= 0) {
       J();
     }
     return false;
@@ -145,68 +145,68 @@ public class pp
   
   public void b(dn ☃)
   {
-    ☃.a("Health", (short)(byte)this.d);
-    ☃.a("Age", (short)this.b);
-    ☃.a("Value", (short)this.e);
+    ☃.a("Health", (short)(byte)d);
+    ☃.a("Age", (short)b);
+    ☃.a("Value", (short)e);
   }
   
   public void a(dn ☃)
   {
-    this.d = (☃.e("Health") & 0xFF);
-    this.b = ☃.e("Age");
-    this.e = ☃.e("Value");
+    d = (☃.e("Health") & 0xFF);
+    b = ☃.e("Age");
+    e = ☃.e("Value");
   }
   
   public void d(wn ☃)
   {
-    if (this.o.D) {
+    if (o.D) {
       return;
     }
-    if ((this.c == 0) && (☃.bp == 0))
+    if ((c == 0) && (bp == 0))
     {
-      ☃.bp = 2;
-      this.o.a(☃, "random.orb", 0.1F, 0.5F * ((this.V.nextFloat() - this.V.nextFloat()) * 0.7F + 1.8F));
+      bp = 2;
+      o.a(☃, "random.orb", 0.1F, 0.5F * ((V.nextFloat() - V.nextFloat()) * 0.7F + 1.8F));
       ☃.a(this, 1);
-      ☃.u(this.e);
+      ☃.u(e);
       J();
     }
   }
   
   public int j()
   {
-    return this.e;
+    return e;
   }
   
   public int l()
   {
-    if (this.e >= 2477) {
+    if (e >= 2477) {
       return 10;
     }
-    if (this.e >= 1237) {
+    if (e >= 1237) {
       return 9;
     }
-    if (this.e >= 617) {
+    if (e >= 617) {
       return 8;
     }
-    if (this.e >= 307) {
+    if (e >= 307) {
       return 7;
     }
-    if (this.e >= 149) {
+    if (e >= 149) {
       return 6;
     }
-    if (this.e >= 73) {
+    if (e >= 73) {
       return 5;
     }
-    if (this.e >= 37) {
+    if (e >= 37) {
       return 4;
     }
-    if (this.e >= 17) {
+    if (e >= 17) {
       return 3;
     }
-    if (this.e >= 7) {
+    if (e >= 7) {
       return 2;
     }
-    if (this.e >= 3) {
+    if (e >= 3) {
       return 1;
     }
     return 0;

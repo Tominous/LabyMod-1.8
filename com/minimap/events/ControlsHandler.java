@@ -20,15 +20,15 @@ public class ControlsHandler
 {
   public ControlsHandler()
   {
-    avh settings = ave.A().t;
-    avb[] binds = settings.aw;
+    avh settings = At;
+    avb[] binds = aw;
     int size = binds.length + toAdd.length;
-    settings.aw = new avb[size];
+    aw = new avb[size];
     for (int i = 0; i < binds.length; i++) {
-      settings.aw[i] = binds[i];
+      aw[i] = binds[i];
     }
     for (int i = binds.length; i < size; i++) {
-      settings.aw[i] = toAdd[(i - binds.length)];
+      aw[i] = toAdd[(i - binds.length)];
     }
   }
   
@@ -110,8 +110,8 @@ public class ControlsHandler
       }
       if (kb == ModSettings.keyInstantWaypoint)
       {
-        Waypoint instant = new Waypoint(Minimap.myFloor(mc.h.s), Minimap.myFloor(mc.h.t), Minimap.myFloor(mc.h.u), "Waypoint", "X", (int)(Math.random() * (ModSettings.ENCHANT_COLORS.length - 1)));
-        Minimap.waypoints.list.add(instant);
+        Waypoint instant = new Waypoint(Minimap.myFloor(h.s), Minimap.myFloor(h.t), Minimap.myFloor(h.u), "Waypoint", "X", (int)(Math.random() * (ModSettings.ENCHANT_COLORS.length - 1)));
+        waypointslist.add(instant);
         try
         {
           XaeroMinimap.settings.saveWaypoints();
@@ -141,9 +141,9 @@ public class ControlsHandler
       if (kb == ModSettings.keyBindZoom1)
       {
         ModSettings settings = XaeroMinimap.getSettings();
-        settings.zoom -= 1;
-        if (XaeroMinimap.getSettings().zoom == -1) {
-          XaeroMinimap.getSettings().zoom = (XaeroMinimap.getSettings().zooms.length - 1);
+        zoom -= 1;
+        if (getSettingszoom == -1) {
+          getSettingszoom = (getSettingszooms.length - 1);
         }
         try
         {

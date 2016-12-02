@@ -11,51 +11,51 @@ public class bdt
   protected bdt(adm ☃, double ☃, double ☃, double ☃, double ☃, double ☃, double ☃, float ☃)
   {
     super(☃, ☃, ☃, ☃, 0.0D, 0.0D, 0.0D);
-    this.v *= 0.009999999776482582D;
-    this.w *= 0.009999999776482582D;
-    this.x *= 0.009999999776482582D;
-    this.w += 0.1D;
+    v *= 0.009999999776482582D;
+    w *= 0.009999999776482582D;
+    x *= 0.009999999776482582D;
+    w += 0.1D;
     
-    this.h *= 0.75F;
-    this.h *= ☃;
-    this.a = this.h;
+    h *= 0.75F;
+    h *= ☃;
+    a = h;
     
-    this.g = 16;
-    this.T = false;
+    g = 16;
+    T = false;
     
     k(80);
   }
   
   public void a(bfd ☃, pk ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
-    float ☃ = (this.f + ☃) / this.g * 32.0F;
+    float ☃ = (f + ☃) / g * 32.0F;
     ☃ = ns.a(☃, 0.0F, 1.0F);
     
-    this.h = (this.a * ☃);
+    h = (a * ☃);
     super.a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   public void t_()
   {
-    this.p = this.s;
-    this.q = this.t;
-    this.r = this.u;
-    if (this.f++ >= this.g) {
+    p = s;
+    q = t;
+    r = u;
+    if (f++ >= g) {
       J();
     }
-    d(this.v, this.w, this.x);
-    if (this.t == this.q)
+    d(v, w, x);
+    if (t == q)
     {
-      this.v *= 1.1D;
-      this.x *= 1.1D;
+      v *= 1.1D;
+      x *= 1.1D;
     }
-    this.v *= 0.8600000143051147D;
-    this.w *= 0.8600000143051147D;
-    this.x *= 0.8600000143051147D;
-    if (this.C)
+    v *= 0.8600000143051147D;
+    w *= 0.8600000143051147D;
+    x *= 0.8600000143051147D;
+    if (C)
     {
-      this.v *= 0.699999988079071D;
-      this.x *= 0.699999988079071D;
+      v *= 0.699999988079071D;
+      x *= 0.699999988079071D;
     }
   }
   

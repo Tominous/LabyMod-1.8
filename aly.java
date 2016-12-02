@@ -37,34 +37,34 @@ public abstract class aly
   
   public int getBlockId()
   {
-    if (this.blockId < 0) {
-      this.blockId = afh.a(c());
+    if (blockId < 0) {
+      blockId = afh.a(c());
     }
-    return this.blockId;
+    return blockId;
   }
   
   public int getBlockStateId()
   {
-    if (this.blockStateId < 0) {
-      this.blockStateId = afh.f(this);
+    if (blockStateId < 0) {
+      blockStateId = afh.f(this);
     }
-    return this.blockStateId;
+    return blockStateId;
   }
   
   public int getMetadata()
   {
-    if (this.metadata < 0) {
-      this.metadata = c().c(this);
+    if (metadata < 0) {
+      metadata = c().c(this);
     }
-    return this.metadata;
+    return metadata;
   }
   
   public jy getBlockLocation()
   {
-    if (this.blockLocation == null) {
-      this.blockLocation = ((jy)afh.c.c(c()));
+    if (blockLocation == null) {
+      blockLocation = ((jy)afh.c.c(c()));
     }
-    return this.blockLocation;
+    return blockLocation;
   }
   
   public alz a(amo property)

@@ -6,12 +6,12 @@ public class rs
   public rs(ts ☃, double ☃)
   {
     super(☃, ☃, 8);
-    this.c = ☃;
+    c = ☃;
   }
   
   public boolean a()
   {
-    return (this.c.cl()) && (!this.c.cn()) && (super.a());
+    return (c.cl()) && (!c.cn()) && (super.a());
   }
   
   public boolean b()
@@ -22,24 +22,24 @@ public class rs
   public void c()
   {
     super.c();
-    this.c.cp().a(false);
+    c.cp().a(false);
   }
   
   public void d()
   {
     super.d();
-    this.c.n(false);
+    c.n(false);
   }
   
   public void e()
   {
     super.e();
     
-    this.c.cp().a(false);
+    c.cp().a(false);
     if (!f()) {
-      this.c.n(false);
-    } else if (!this.c.cn()) {
-      this.c.n(true);
+      c.n(false);
+    } else if (!c.cn()) {
+      c.n(true);
     }
   }
   
@@ -53,7 +53,7 @@ public class rs
     if (☃ == afi.ae)
     {
       akw ☃ = ☃.s(☃);
-      if (((☃ instanceof aky)) && (((aky)☃).l < 1)) {
+      if (((☃ instanceof aky)) && (l < 1)) {
         return true;
       }
     }

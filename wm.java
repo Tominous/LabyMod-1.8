@@ -12,13 +12,13 @@ public class wm
   
   public wm(wn ☃)
   {
-    this.d = ☃;
+    d = ☃;
   }
   
   public zx h()
   {
-    if ((this.c < 9) && (this.c >= 0)) {
-      return this.a[this.c];
+    if ((c < 9) && (c >= 0)) {
+      return a[c];
     }
     return null;
   }
@@ -30,8 +30,8 @@ public class wm
   
   private int c(zw ☃)
   {
-    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
-      if ((this.a[☃] != null) && (this.a[☃].b() == ☃)) {
+    for (int ☃ = 0; ☃ < a.length; ☃++) {
+      if ((a[☃] != null) && (a[☃].b() == ☃)) {
         return ☃;
       }
     }
@@ -40,8 +40,8 @@ public class wm
   
   private int a(zw ☃, int ☃)
   {
-    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
-      if ((this.a[☃] != null) && (this.a[☃].b() == ☃) && (this.a[☃].i() == ☃)) {
+    for (int ☃ = 0; ☃ < a.length; ☃++) {
+      if ((a[☃] != null) && (a[☃].b() == ☃) && (a[☃].i() == ☃)) {
         return ☃;
       }
     }
@@ -50,8 +50,8 @@ public class wm
   
   private int d(zx ☃)
   {
-    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
-      if ((this.a[☃] != null) && (this.a[☃].b() == ☃.b()) && (this.a[☃].d()) && (this.a[☃].b < this.a[☃].c()) && (this.a[☃].b < q_()) && ((!this.a[☃].f()) || (this.a[☃].i() == ☃.i())) && (zx.a(this.a[☃], ☃))) {
+    for (int ☃ = 0; ☃ < a.length; ☃++) {
+      if ((a[☃] != null) && (a[☃].b() == ☃.b()) && (a[☃].d()) && (a[☃].b < a[☃].c()) && (a[☃].b < q_()) && ((!a[☃].f()) || (a[☃].i() == ☃.i())) && (zx.a(a[☃], ☃))) {
         return ☃;
       }
     }
@@ -60,8 +60,8 @@ public class wm
   
   public int j()
   {
-    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
-      if (this.a[☃] == null) {
+    for (int ☃ = 0; ☃ < a.length; ☃++) {
+      if (a[☃] == null) {
         return ☃;
       }
     }
@@ -74,7 +74,7 @@ public class wm
     int ☃ = ☃ ? a(☃, ☃) : c(☃);
     if ((☃ >= 0) && (☃ < 9))
     {
-      this.c = ☃;
+      c = ☃;
       return;
     }
     if ((!☃) || (☃ == null)) {
@@ -82,22 +82,22 @@ public class wm
     }
     int ☃ = j();
     if ((☃ >= 0) && (☃ < 9)) {
-      this.c = ☃;
+      c = ☃;
     }
-    if ((☃ == null) || (!☃.v()) || (a(☃.b(), ☃.h()) != this.c))
+    if ((☃ == null) || (!☃.v()) || (a(☃.b(), ☃.h()) != c))
     {
       int ☃ = a(☃, ☃);
       int ☃;
       if (☃ >= 0)
       {
-        int ☃ = this.a[☃].b;
-        this.a[☃] = this.a[this.c];
+        int ☃ = a[☃].b;
+        a[☃] = a[c];
       }
       else
       {
         ☃ = 1;
       }
-      this.a[this.c] = new zx(☃, ☃, ☃);
+      a[c] = new zx(☃, ☃, ☃);
     }
   }
   
@@ -109,33 +109,33 @@ public class wm
     if (☃ < 0) {
       ☃ = -1;
     }
-    this.c -= ☃;
-    while (this.c < 0) {
-      this.c += 9;
+    c -= ☃;
+    while (c < 0) {
+      c += 9;
     }
-    while (this.c >= 9) {
-      this.c -= 9;
+    while (c >= 9) {
+      c -= 9;
     }
   }
   
   public int a(zw ☃, int ☃, int ☃, dn ☃)
   {
     int ☃ = 0;
-    for (int ☃ = 0; ☃ < this.a.length; ☃++)
+    for (int ☃ = 0; ☃ < a.length; ☃++)
     {
-      zx ☃ = this.a[☃];
+      zx ☃ = a[☃];
       if (☃ != null) {
         if ((☃ == null) || (☃.b() == ☃)) {
           if ((☃ <= -1) || (☃.i() == ☃)) {
             if ((☃ == null) || (dy.a(☃, ☃.o(), true)))
             {
-              int ☃ = ☃ <= 0 ? ☃.b : Math.min(☃ - ☃, ☃.b);
+              int ☃ = ☃ <= 0 ? b : Math.min(☃ - ☃, b);
               ☃ += ☃;
               if (☃ != 0)
               {
-                this.a[☃].b -= ☃;
-                if (this.a[☃].b == 0) {
-                  this.a[☃] = null;
+                a[☃].b -= ☃;
+                if (a[☃].b == 0) {
+                  a[☃] = null;
                 }
                 if ((☃ > 0) && (☃ >= ☃)) {
                   return ☃;
@@ -146,21 +146,21 @@ public class wm
         }
       }
     }
-    for (int ☃ = 0; ☃ < this.b.length; ☃++)
+    for (int ☃ = 0; ☃ < b.length; ☃++)
     {
-      zx ☃ = this.b[☃];
+      zx ☃ = b[☃];
       if (☃ != null) {
         if ((☃ == null) || (☃.b() == ☃)) {
           if ((☃ <= -1) || (☃.i() == ☃)) {
             if ((☃ == null) || (dy.a(☃, ☃.o(), false)))
             {
-              int ☃ = ☃ <= 0 ? ☃.b : Math.min(☃ - ☃, ☃.b);
+              int ☃ = ☃ <= 0 ? b : Math.min(☃ - ☃, b);
               ☃ += ☃;
               if (☃ != 0)
               {
-                this.b[☃].b -= ☃;
-                if (this.b[☃].b == 0) {
-                  this.b[☃] = null;
+                b[☃].b -= ☃;
+                if (b[☃].b == 0) {
+                  b[☃] = null;
                 }
                 if ((☃ > 0) && (☃ >= ☃)) {
                   return ☃;
@@ -171,24 +171,24 @@ public class wm
         }
       }
     }
-    if (this.f != null)
+    if (f != null)
     {
-      if ((☃ != null) && (this.f.b() != ☃)) {
+      if ((☃ != null) && (f.b() != ☃)) {
         return ☃;
       }
-      if ((☃ > -1) && (this.f.i() != ☃)) {
+      if ((☃ > -1) && (f.i() != ☃)) {
         return ☃;
       }
-      if ((☃ != null) && (!dy.a(☃, this.f.o(), false))) {
+      if ((☃ != null) && (!dy.a(☃, f.o(), false))) {
         return ☃;
       }
-      int ☃ = ☃ <= 0 ? this.f.b : Math.min(☃ - ☃, this.f.b);
+      int ☃ = ☃ <= 0 ? f.b : Math.min(☃ - ☃, f.b);
       ☃ += ☃;
       if (☃ != 0)
       {
-        this.f.b -= ☃;
-        if (this.f.b == 0) {
-          this.f = null;
+        f.b -= ☃;
+        if (f.b == 0) {
+          f = null;
         }
         if ((☃ > 0) && (☃ >= ☃)) {
           return ☃;
@@ -201,7 +201,7 @@ public class wm
   private int e(zx ☃)
   {
     zw ☃ = ☃.b();
-    int ☃ = ☃.b;
+    int ☃ = b;
     
     int ☃ = d(☃);
     if (☃ < 0) {
@@ -210,35 +210,35 @@ public class wm
     if (☃ < 0) {
       return ☃;
     }
-    if (this.a[☃] == null)
+    if (a[☃] == null)
     {
-      this.a[☃] = new zx(☃, 0, ☃.i());
+      a[☃] = new zx(☃, 0, ☃.i());
       if (☃.n()) {
-        this.a[☃].d((dn)☃.o().b());
+        a[☃].d((dn)☃.o().b());
       }
     }
     int ☃ = ☃;
-    if (☃ > this.a[☃].c() - this.a[☃].b) {
-      ☃ = this.a[☃].c() - this.a[☃].b;
+    if (☃ > a[☃].c() - a[☃].b) {
+      ☃ = a[☃].c() - a[☃].b;
     }
-    if (☃ > q_() - this.a[☃].b) {
-      ☃ = q_() - this.a[☃].b;
+    if (☃ > q_() - a[☃].b) {
+      ☃ = q_() - a[☃].b;
     }
     if (☃ == 0) {
       return ☃;
     }
     ☃ -= ☃;
-    this.a[☃].b += ☃;
-    this.a[☃].c = 5;
+    a[☃].b += ☃;
+    a[☃].c = 5;
     
     return ☃;
   }
   
   public void k()
   {
-    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
-      if (this.a[☃] != null) {
-        this.a[☃].a(this.d.o, this.d, ☃, this.c == ☃);
+    for (int ☃ = 0; ☃ < a.length; ☃++) {
+      if (a[☃] != null) {
+        a[☃].a(d.o, d, ☃, c == ☃);
       }
     }
   }
@@ -249,8 +249,8 @@ public class wm
     if (☃ < 0) {
       return false;
     }
-    if (--this.a[☃].b <= 0) {
-      this.a[☃] = null;
+    if (--a[☃].b <= 0) {
+      a[☃] = null;
     }
     return true;
   }
@@ -266,7 +266,7 @@ public class wm
   
   public boolean a(final zx ☃)
   {
-    if ((☃ == null) || (☃.b == 0) || (☃.b() == null)) {
+    if ((☃ == null) || (b == 0) || (☃.b() == null)) {
       return false;
     }
     try
@@ -276,27 +276,27 @@ public class wm
         int ☃;
         do
         {
-          ☃ = ☃.b;
-          ☃.b = e(☃);
-        } while ((☃.b > 0) && (☃.b < ☃));
-        if ((☃.b == ☃) && (this.d.bA.d))
+          ☃ = b;
+          b = e(☃);
+        } while ((b > 0) && (b < ☃));
+        if ((b == ☃) && (d.bA.d))
         {
-          ☃.b = 0;
+          b = 0;
           return true;
         }
-        return ☃.b < ☃;
+        return b < ☃;
       }
       int ☃ = j();
       if (☃ >= 0)
       {
-        this.a[☃] = zx.b(☃);
-        this.a[☃].c = 5;
-        ☃.b = 0;
+        a[☃] = zx.b(☃);
+        a[☃].c = 5;
+        b = 0;
         return true;
       }
-      if (this.d.bA.d)
+      if (d.bA.d)
       {
-        ☃.b = 0;
+        b = 0;
         return true;
       }
       return false;
@@ -322,22 +322,22 @@ public class wm
   
   public zx a(int ☃, int ☃)
   {
-    zx[] ☃ = this.a;
-    if (☃ >= this.a.length)
+    zx[] ☃ = a;
+    if (☃ >= a.length)
     {
-      ☃ = this.b;
-      ☃ -= this.a.length;
+      ☃ = b;
+      ☃ -= a.length;
     }
     if (☃[☃] != null)
     {
-      if (☃[☃].b <= ☃)
+      if (b <= ☃)
       {
         zx ☃ = ☃[☃];
         ☃[☃] = null;
         return ☃;
       }
       zx ☃ = ☃[☃].a(☃);
-      if (☃[☃].b == 0) {
+      if (b == 0) {
         ☃[☃] = null;
       }
       return ☃;
@@ -347,11 +347,11 @@ public class wm
   
   public zx b(int ☃)
   {
-    zx[] ☃ = this.a;
-    if (☃ >= this.a.length)
+    zx[] ☃ = a;
+    if (☃ >= a.length)
     {
-      ☃ = this.b;
-      ☃ -= this.a.length;
+      ☃ = b;
+      ☃ -= a.length;
     }
     if (☃[☃] != null)
     {
@@ -364,11 +364,11 @@ public class wm
   
   public void a(int ☃, zx ☃)
   {
-    zx[] ☃ = this.a;
+    zx[] ☃ = a;
     if (☃ >= ☃.length)
     {
       ☃ -= ☃.length;
-      ☃ = this.b;
+      ☃ = b;
     }
     ☃[☃] = ☃;
   }
@@ -376,29 +376,29 @@ public class wm
   public float a(afh ☃)
   {
     float ☃ = 1.0F;
-    if (this.a[this.c] != null) {
-      ☃ *= this.a[this.c].a(☃);
+    if (a[c] != null) {
+      ☃ *= a[c].a(☃);
     }
     return ☃;
   }
   
   public du a(du ☃)
   {
-    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
-      if (this.a[☃] != null)
+    for (int ☃ = 0; ☃ < a.length; ☃++) {
+      if (a[☃] != null)
       {
         dn ☃ = new dn();
         ☃.a("Slot", (byte)☃);
-        this.a[☃].b(☃);
+        a[☃].b(☃);
         ☃.a(☃);
       }
     }
-    for (int ☃ = 0; ☃ < this.b.length; ☃++) {
-      if (this.b[☃] != null)
+    for (int ☃ = 0; ☃ < b.length; ☃++) {
+      if (b[☃] != null)
       {
         dn ☃ = new dn();
         ☃.a("Slot", (byte)(☃ + 100));
-        this.b[☃].b(☃);
+        b[☃].b(☃);
         ☃.a(☃);
       }
     }
@@ -407,8 +407,8 @@ public class wm
   
   public void b(du ☃)
   {
-    this.a = new zx[36];
-    this.b = new zx[4];
+    a = new zx[36];
+    b = new zx[4];
     for (int ☃ = 0; ☃ < ☃.c(); ☃++)
     {
       dn ☃ = ☃.b(☃);
@@ -416,11 +416,11 @@ public class wm
       zx ☃ = zx.a(☃);
       if (☃ != null)
       {
-        if ((☃ >= 0) && (☃ < this.a.length)) {
-          this.a[☃] = ☃;
+        if ((☃ >= 0) && (☃ < a.length)) {
+          a[☃] = ☃;
         }
-        if ((☃ >= 100) && (☃ < this.b.length + 100)) {
-          this.b[(☃ - 100)] = ☃;
+        if ((☃ >= 100) && (☃ < b.length + 100)) {
+          b[(☃ - 100)] = ☃;
         }
       }
     }
@@ -428,16 +428,16 @@ public class wm
   
   public int o_()
   {
-    return this.a.length + 4;
+    return a.length + 4;
   }
   
   public zx a(int ☃)
   {
-    zx[] ☃ = this.a;
+    zx[] ☃ = a;
     if (☃ >= ☃.length)
     {
       ☃ -= ☃.length;
-      ☃ = this.b;
+      ☃ = b;
     }
     return ☃[☃];
   }
@@ -470,7 +470,7 @@ public class wm
     if (☃.t().l()) {
       return true;
     }
-    zx ☃ = a(this.c);
+    zx ☃ = a(c);
     if (☃ != null) {
       return ☃.b(☃);
     }
@@ -479,16 +479,16 @@ public class wm
   
   public zx e(int ☃)
   {
-    return this.b[☃];
+    return b[☃];
   }
   
   public int m()
   {
     int ☃ = 0;
-    for (int ☃ = 0; ☃ < this.b.length; ☃++) {
-      if ((this.b[☃] != null) && ((this.b[☃].b() instanceof yj)))
+    for (int ☃ = 0; ☃ < b.length; ☃++) {
+      if ((b[☃] != null) && ((b[☃].b() instanceof yj)))
       {
-        int ☃ = ((yj)this.b[☃].b()).c;
+        int ☃ = b[☃].b()).c;
         ☃ += ☃;
       }
     }
@@ -501,12 +501,12 @@ public class wm
     if (☃ < 1.0F) {
       ☃ = 1.0F;
     }
-    for (int ☃ = 0; ☃ < this.b.length; ☃++) {
-      if ((this.b[☃] != null) && ((this.b[☃].b() instanceof yj)))
+    for (int ☃ = 0; ☃ < b.length; ☃++) {
+      if ((b[☃] != null) && ((b[☃].b() instanceof yj)))
       {
-        this.b[☃].a((int)☃, this.d);
-        if (this.b[☃].b == 0) {
-          this.b[☃] = null;
+        b[☃].a((int)☃, d);
+        if (b[☃].b == 0) {
+          b[☃] = null;
         }
       }
     }
@@ -514,43 +514,43 @@ public class wm
   
   public void n()
   {
-    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
-      if (this.a[☃] != null)
+    for (int ☃ = 0; ☃ < a.length; ☃++) {
+      if (a[☃] != null)
       {
-        this.d.a(this.a[☃], true, false);
-        this.a[☃] = null;
+        d.a(a[☃], true, false);
+        a[☃] = null;
       }
     }
-    for (int ☃ = 0; ☃ < this.b.length; ☃++) {
-      if (this.b[☃] != null)
+    for (int ☃ = 0; ☃ < b.length; ☃++) {
+      if (b[☃] != null)
       {
-        this.d.a(this.b[☃], true, false);
-        this.b[☃] = null;
+        d.a(b[☃], true, false);
+        b[☃] = null;
       }
     }
   }
   
   public void p_()
   {
-    this.e = true;
+    e = true;
   }
   
   public void b(zx ☃)
   {
-    this.f = ☃;
+    f = ☃;
   }
   
   public zx p()
   {
-    return this.f;
+    return f;
   }
   
   public boolean a(wn ☃)
   {
-    if (this.d.I) {
+    if (d.I) {
       return false;
     }
-    if (☃.h(this.d) > 64.0D) {
+    if (☃.h(d) > 64.0D) {
       return false;
     }
     return true;
@@ -558,13 +558,13 @@ public class wm
   
   public boolean c(zx ☃)
   {
-    for (int ☃ = 0; ☃ < this.b.length; ☃++) {
-      if ((this.b[☃] != null) && (this.b[☃].a(☃))) {
+    for (int ☃ = 0; ☃ < b.length; ☃++) {
+      if ((b[☃] != null) && (b[☃].a(☃))) {
         return true;
       }
     }
-    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
-      if ((this.a[☃] != null) && (this.a[☃].a(☃))) {
+    for (int ☃ = 0; ☃ < a.length; ☃++) {
+      if ((a[☃] != null) && (a[☃].a(☃))) {
         return true;
       }
     }
@@ -582,13 +582,13 @@ public class wm
   
   public void b(wm ☃)
   {
-    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
-      this.a[☃] = zx.b(☃.a[☃]);
+    for (int ☃ = 0; ☃ < a.length; ☃++) {
+      a[☃] = zx.b(a[☃]);
     }
-    for (int ☃ = 0; ☃ < this.b.length; ☃++) {
-      this.b[☃] = zx.b(☃.b[☃]);
+    for (int ☃ = 0; ☃ < b.length; ☃++) {
+      b[☃] = zx.b(b[☃]);
     }
-    this.c = ☃.c;
+    c = c;
   }
   
   public int a_(int ☃)
@@ -605,11 +605,11 @@ public class wm
   
   public void l()
   {
-    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
-      this.a[☃] = null;
+    for (int ☃ = 0; ☃ < a.length; ☃++) {
+      a[☃] = null;
     }
-    for (int ☃ = 0; ☃ < this.b.length; ☃++) {
-      this.b[☃] = null;
+    for (int ☃ = 0; ☃ < b.length; ☃++) {
+      b[☃] = null;
     }
   }
 }

@@ -16,12 +16,12 @@ public class aoi
     public a(cj ☃, int ☃)
     {
       super(☃.o(), ☃.p());
-      this.c = ☃;
+      c = ☃;
     }
     
     public int q()
     {
-      return this.c;
+      return c;
     }
   }
   
@@ -44,43 +44,43 @@ public class aoi
   
   void a()
   {
-    this.b = ((int)(this.a * this.c));
-    if (this.b >= this.a) {
-      this.b = (this.a - 1);
+    b = ((int)(a * c));
+    if (b >= a) {
+      b = (a - 1);
     }
-    int ☃ = (int)(1.382D + Math.pow(this.f * this.a / 13.0D, 2.0D));
+    int ☃ = (int)(1.382D + Math.pow(f * a / 13.0D, 2.0D));
     if (☃ < 1) {
       ☃ = 1;
     }
-    int ☃ = this.m.o() + this.b;
-    int ☃ = this.a - this.i;
+    int ☃ = m.o() + b;
+    int ☃ = a - i;
     
-    this.j = Lists.newArrayList();
-    this.j.add(new aoi.a(this.m.b(☃), ☃));
+    j = Lists.newArrayList();
+    j.add(new aoi.a(m.b(☃), ☃));
     for (; ☃ >= 0; ☃--)
     {
       float ☃ = a(☃);
       if (☃ >= 0.0F) {
         for (int ☃ = 0; ☃ < ☃; ☃++)
         {
-          double ☃ = this.e * ☃ * (this.k.nextFloat() + 0.328D);
-          double ☃ = this.k.nextFloat() * 2.0F * 3.141592653589793D;
+          double ☃ = e * ☃ * (k.nextFloat() + 0.328D);
+          double ☃ = k.nextFloat() * 2.0F * 3.141592653589793D;
           
           double ☃ = ☃ * Math.sin(☃) + 0.5D;
           double ☃ = ☃ * Math.cos(☃) + 0.5D;
           
-          cj ☃ = this.m.a(☃, ☃ - 1, ☃);
-          cj ☃ = ☃.b(this.i);
+          cj ☃ = m.a(☃, ☃ - 1, ☃);
+          cj ☃ = ☃.b(i);
           if (a(☃, ☃) == -1)
           {
-            int ☃ = this.m.n() - ☃.n();
-            int ☃ = this.m.p() - ☃.p();
+            int ☃ = m.n() - ☃.n();
+            int ☃ = m.p() - ☃.p();
             
-            double ☃ = ☃.o() - Math.sqrt(☃ * ☃ + ☃ * ☃) * this.d;
+            double ☃ = ☃.o() - Math.sqrt(☃ * ☃ + ☃ * ☃) * d;
             int ☃ = ☃ > ☃ ? ☃ : (int)☃;
-            cj ☃ = new cj(this.m.n(), ☃, this.m.p());
+            cj ☃ = new cj(m.n(), ☃, m.p());
             if (a(☃, ☃) == -1) {
-              this.j.add(new aoi.a(☃, ☃.o()));
+              j.add(new aoi.a(☃, ☃.o()));
             }
           }
         }
@@ -97,9 +97,9 @@ public class aoi
         {
           cj ☃ = ☃.a(☃, 0, ☃);
           
-          arm ☃ = this.l.p(☃).c().t();
+          arm ☃ = l.p(☃).c().t();
           if ((☃ == arm.a) || (☃ == arm.j)) {
-            a(this.l, ☃, ☃);
+            a(l, ☃, ☃);
           }
         }
       }
@@ -108,10 +108,10 @@ public class aoi
   
   float a(int ☃)
   {
-    if (☃ < this.a * 0.3F) {
+    if (☃ < a * 0.3F) {
       return -1.0F;
     }
-    float ☃ = this.a / 2.0F;
+    float ☃ = a / 2.0F;
     float ☃ = ☃ - ☃;
     
     float ☃ = ns.c(☃ * ☃ - ☃ * ☃);
@@ -125,10 +125,10 @@ public class aoi
   
   float b(int ☃)
   {
-    if ((☃ < 0) || (☃ >= this.i)) {
+    if ((☃ < 0) || (☃ >= i)) {
       return -1.0F;
     }
-    if ((☃ == 0) || (☃ == this.i - 1)) {
+    if ((☃ == 0) || (☃ == i - 1)) {
       return 2.0F;
     }
     return 3.0F;
@@ -136,7 +136,7 @@ public class aoi
   
   void a(cj ☃)
   {
-    for (int ☃ = 0; ☃ < this.i; ☃++) {
+    for (int ☃ = 0; ☃ < i; ☃++) {
       a(☃.b(☃), b(☃), afi.t.Q().a(ahs.b, Boolean.valueOf(false)));
     }
   }
@@ -155,7 +155,7 @@ public class aoi
       cj ☃ = ☃.a(0.5F + ☃ * ☃, 0.5F + ☃ * ☃, 0.5F + ☃ * ☃);
       ahw.a ☃ = b(☃, ☃);
       
-      a(this.l, ☃, ☃.Q().a(ahw.a, ☃));
+      a(l, ☃, ☃.Q().a(ahw.a, ☃));
     }
   }
   
@@ -191,24 +191,24 @@ public class aoi
   
   void b()
   {
-    for (aoi.a ☃ : this.j) {
+    for (aoi.a ☃ : j) {
       a(☃);
     }
   }
   
   boolean c(int ☃)
   {
-    return ☃ >= this.a * 0.2D;
+    return ☃ >= a * 0.2D;
   }
   
   void c()
   {
-    cj ☃ = this.m;
-    cj ☃ = this.m.b(this.b);
+    cj ☃ = m;
+    cj ☃ = m.b(b);
     afh ☃ = afi.r;
     
     a(☃, ☃, ☃);
-    if (this.g == 2)
+    if (g == 2)
     {
       a(☃.f(), ☃.f(), ☃);
       a(☃.f().d(), ☃.f().d(), ☃);
@@ -218,12 +218,12 @@ public class aoi
   
   void d()
   {
-    for (aoi.a ☃ : this.j)
+    for (aoi.a ☃ : j)
     {
       int ☃ = ☃.q();
-      cj ☃ = new cj(this.m.n(), ☃, this.m.p());
+      cj ☃ = new cj(m.n(), ☃, m.p());
       if ((!☃.equals(☃)) && 
-        (c(☃ - this.m.o()))) {
+        (c(☃ - m.o()))) {
         a(☃, ☃, afi.r);
       }
     }
@@ -244,7 +244,7 @@ public class aoi
     for (int ☃ = 0; ☃ <= ☃; ☃++)
     {
       cj ☃ = ☃.a(0.5F + ☃ * ☃, 0.5F + ☃ * ☃, 0.5F + ☃ * ☃);
-      if (!a(this.l.p(☃).c())) {
+      if (!a(l.p(☃).c())) {
         return ☃;
       }
     }
@@ -253,17 +253,17 @@ public class aoi
   
   public void e()
   {
-    this.i = 5;
+    i = 5;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
   {
-    this.l = ☃;
-    this.m = ☃;
+    l = ☃;
+    m = ☃;
     
-    this.k = new Random(☃.nextLong());
-    if (this.a == 0) {
-      this.a = (5 + this.k.nextInt(this.h));
+    k = new Random(☃.nextLong());
+    if (a == 0) {
+      a = (5 + k.nextInt(h));
     }
     if (!f()) {
       return false;
@@ -278,18 +278,18 @@ public class aoi
   
   private boolean f()
   {
-    afh ☃ = this.l.p(this.m.b()).c();
+    afh ☃ = l.p(m.b()).c();
     if ((☃ != afi.d) && (☃ != afi.c) && (☃ != afi.ak)) {
       return false;
     }
-    int ☃ = a(this.m, this.m.b(this.a - 1));
+    int ☃ = a(m, m.b(a - 1));
     if (☃ == -1) {
       return true;
     }
     if (☃ < 6) {
       return false;
     }
-    this.a = ☃;
+    a = ☃;
     return true;
   }
 }

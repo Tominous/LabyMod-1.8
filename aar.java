@@ -3,7 +3,7 @@ public class aar
 {
   public aar()
   {
-    this.h = 16;
+    h = 16;
     a(yz.c);
   }
   
@@ -22,19 +22,19 @@ public class aar
     if (!afi.an.d(☃, ☃)) {
       return false;
     }
-    if (☃.D) {
+    if (D) {
       return true;
     }
     if (☃ == cq.b)
     {
-      int ☃ = ns.c((☃.y + 180.0F) * 16.0F / 360.0F + 0.5D) & 0xF;
+      int ☃ = ns.c((y + 180.0F) * 16.0F / 360.0F + 0.5D) & 0xF;
       ☃.a(☃, afi.an.Q().a(ajv.a, Integer.valueOf(☃)), 3);
     }
     else
     {
       ☃.a(☃, afi.ax.Q().a(akm.a, ☃), 3);
     }
-    ☃.b -= 1;
+    b -= 1;
     akw ☃ = ☃.s(☃);
     if (((☃ instanceof aln)) && 
       (!yo.a(☃, ☃, ☃, ☃))) {

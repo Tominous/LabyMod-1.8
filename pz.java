@@ -32,7 +32,7 @@ public class pz
   
   public pz(pk ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public <T> void a(int ☃, T ☃)
@@ -44,23 +44,23 @@ public class pz
     if (☃ > 31) {
       throw new IllegalArgumentException("Data value id is too big with " + ☃ + "! (Max is " + 31 + ")");
     }
-    if (this.d.containsKey(Integer.valueOf(☃))) {
+    if (d.containsKey(Integer.valueOf(☃))) {
       throw new IllegalArgumentException("Duplicate id value for " + ☃ + "!");
     }
     pz.a ☃ = new pz.a(☃.intValue(), ☃, ☃);
-    this.f.writeLock().lock();
-    this.d.put(Integer.valueOf(☃), ☃);
-    this.f.writeLock().unlock();
-    this.b = false;
+    f.writeLock().lock();
+    d.put(Integer.valueOf(☃), ☃);
+    f.writeLock().unlock();
+    b = false;
   }
   
   public void a(int ☃, int ☃)
   {
     pz.a ☃ = new pz.a(☃, ☃, null);
-    this.f.writeLock().lock();
-    this.d.put(Integer.valueOf(☃), ☃);
-    this.f.writeLock().unlock();
-    this.b = false;
+    f.writeLock().lock();
+    d.put(Integer.valueOf(☃), ☃);
+    f.writeLock().unlock();
+    b = false;
   }
   
   public byte a(int ☃)
@@ -95,11 +95,11 @@ public class pz
   
   private pz.a j(int ☃)
   {
-    this.f.readLock().lock();
+    f.readLock().lock();
     pz.a ☃;
     try
     {
-      ☃ = (pz.a)this.d.get(Integer.valueOf(☃));
+      ☃ = (pz.a)d.get(Integer.valueOf(☃));
     }
     catch (Throwable ☃)
     {
@@ -109,7 +109,7 @@ public class pz
       ☃.a("Data ID", Integer.valueOf(☃));
       throw new e(☃);
     }
-    this.f.readLock().unlock();
+    f.readLock().unlock();
     return ☃;
   }
   
@@ -124,21 +124,21 @@ public class pz
     if (ObjectUtils.notEqual(☃, ☃.b()))
     {
       ☃.a(☃);
-      this.a.i(☃);
+      a.i(☃);
       ☃.a(true);
-      this.e = true;
+      e = true;
     }
   }
   
   public void i(int ☃)
   {
     pz.a.a(j(☃), true);
-    this.e = true;
+    e = true;
   }
   
   public boolean a()
   {
-    return this.e;
+    return e;
   }
   
   public static void a(List<pz.a> ☃, em ☃)
@@ -155,10 +155,10 @@ public class pz
   public List<pz.a> b()
   {
     List<pz.a> ☃ = null;
-    if (this.e)
+    if (e)
     {
-      this.f.readLock().lock();
-      for (pz.a ☃ : this.d.values()) {
+      f.readLock().lock();
+      for (pz.a ☃ : d.values()) {
         if (☃.d())
         {
           ☃.a(false);
@@ -168,9 +168,9 @@ public class pz
           ☃.add(☃);
         }
       }
-      this.f.readLock().unlock();
+      f.readLock().unlock();
     }
-    this.e = false;
+    e = false;
     
     return ☃;
   }
@@ -178,11 +178,11 @@ public class pz
   public void a(em ☃)
     throws IOException
   {
-    this.f.readLock().lock();
-    for (pz.a ☃ : this.d.values()) {
+    f.readLock().lock();
+    for (pz.a ☃ : d.values()) {
       a(☃, ☃);
     }
-    this.f.readLock().unlock();
+    f.readLock().unlock();
     
     ☃.writeByte(127);
   }
@@ -191,15 +191,15 @@ public class pz
   {
     List<pz.a> ☃ = null;
     
-    this.f.readLock().lock();
-    for (pz.a ☃ : this.d.values())
+    f.readLock().lock();
+    for (pz.a ☃ : d.values())
     {
       if (☃ == null) {
         ☃ = Lists.newArrayList();
       }
       ☃.add(☃);
     }
-    this.f.readLock().unlock();
+    f.readLock().unlock();
     
     return ☃;
   }
@@ -300,29 +300,29 @@ public class pz
   
   public void a(List<pz.a> ☃)
   {
-    this.f.writeLock().lock();
+    f.writeLock().lock();
     for (pz.a ☃ : ☃)
     {
-      pz.a ☃ = (pz.a)this.d.get(Integer.valueOf(☃.a()));
+      pz.a ☃ = (pz.a)d.get(Integer.valueOf(☃.a()));
       if (☃ != null)
       {
         ☃.a(☃.b());
-        this.a.i(☃.a());
+        a.i(☃.a());
       }
     }
-    this.f.writeLock().unlock();
+    f.writeLock().unlock();
     
-    this.e = true;
+    e = true;
   }
   
   public boolean d()
   {
-    return this.b;
+    return b;
   }
   
   public void e()
   {
-    this.e = false;
+    e = false;
   }
   
   public static class a
@@ -334,40 +334,40 @@ public class pz
     
     public a(int ☃, int ☃, Object ☃)
     {
-      this.b = ☃;
-      this.c = ☃;
-      this.a = ☃;
-      this.d = true;
+      b = ☃;
+      c = ☃;
+      a = ☃;
+      d = true;
     }
     
     public int a()
     {
-      return this.b;
+      return b;
     }
     
     public void a(Object ☃)
     {
-      this.c = ☃;
+      c = ☃;
     }
     
     public Object b()
     {
-      return this.c;
+      return c;
     }
     
     public int c()
     {
-      return this.a;
+      return a;
     }
     
     public boolean d()
     {
-      return this.d;
+      return d;
     }
     
     public void a(boolean ☃)
     {
-      this.d = ☃;
+      d = ☃;
     }
   }
 }

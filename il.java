@@ -9,7 +9,7 @@ public class il
   
   public il(int ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(ic ☃)
@@ -20,12 +20,12 @@ public class il
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.readByte();
+    a = ☃.readByte();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(this.a);
+    ☃.writeByte(a);
   }
 }

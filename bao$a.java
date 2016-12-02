@@ -7,9 +7,9 @@ public class bao$a
   
   public bao$a(int ☃, int ☃, boolean ☃, boolean ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
   }
 }

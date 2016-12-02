@@ -15,7 +15,7 @@ class bpo$2
     if (!var1.equals("vanilla")) {
       return "Definitely; Client brand changed to '" + var1 + "'";
     }
-    var1 = this.this$0.getServerModName();
+    var1 = this$0.getServerModName();
     return ave.class.getSigners() == null ? "Very likely; Jar signature invalidated" : !var1.equals("vanilla") ? "Definitely; Server brand changed to '" + var1 + "'" : "Probably not. Jar signature remains and both client + server brands are untouched.";
   }
 }

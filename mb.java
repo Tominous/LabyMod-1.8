@@ -34,25 +34,25 @@ public class mb<K, V extends ma<K>>
   
   public mb(File ☃)
   {
-    this.c = ☃;
+    c = ☃;
     GsonBuilder ☃ = new GsonBuilder().setPrettyPrinting();
     ☃.registerTypeHierarchyAdapter(ma.class, new mb.a(null));
-    this.b = ☃.create();
+    b = ☃.create();
   }
   
   public boolean b()
   {
-    return this.e;
+    return e;
   }
   
   public void a(boolean ☃)
   {
-    this.e = ☃;
+    e = ☃;
   }
   
   public void a(V ☃)
   {
-    this.d.put(a(☃.f()), ☃);
+    d.put(a(☃.f()), ☃);
     try
     {
       f();
@@ -66,12 +66,12 @@ public class mb<K, V extends ma<K>>
   public V b(K ☃)
   {
     h();
-    return (ma)this.d.get(a(☃));
+    return (ma)d.get(a(☃));
   }
   
   public void c(K ☃)
   {
-    this.d.remove(a(☃));
+    d.remove(a(☃));
     try
     {
       f();
@@ -84,7 +84,7 @@ public class mb<K, V extends ma<K>>
   
   public String[] a()
   {
-    return (String[])this.d.keySet().toArray(new String[this.d.size()]);
+    return (String[])d.keySet().toArray(new String[d.size()]);
   }
   
   protected String a(K ☃)
@@ -94,19 +94,19 @@ public class mb<K, V extends ma<K>>
   
   protected boolean d(K ☃)
   {
-    return this.d.containsKey(a(☃));
+    return d.containsKey(a(☃));
   }
   
   private void h()
   {
     List<K> ☃ = Lists.newArrayList();
-    for (V ☃ : this.d.values()) {
+    for (V ☃ : d.values()) {
       if (☃.e()) {
         ☃.add(☃.f());
       }
     }
     for (K ☃ : ☃) {
-      this.d.remove(☃);
+      d.remove(☃);
     }
   }
   
@@ -117,18 +117,18 @@ public class mb<K, V extends ma<K>>
   
   protected Map<String, V> e()
   {
-    return this.d;
+    return d;
   }
   
   public void f()
     throws IOException
   {
-    Collection<V> ☃ = this.d.values();
-    String ☃ = this.b.toJson(☃);
+    Collection<V> ☃ = d.values();
+    String ☃ = b.toJson(☃);
     BufferedWriter ☃ = null;
     try
     {
-      ☃ = Files.newWriter(this.c, Charsets.UTF_8);
+      ☃ = Files.newWriter(c, Charsets.UTF_8);
       ☃.write(☃);
     }
     finally
@@ -155,7 +155,7 @@ public class mb<K, V extends ma<K>>
       if (☃.isJsonObject())
       {
         JsonObject ☃ = ☃.getAsJsonObject();
-        ma<K> ☃ = mb.this.a(☃);
+        ma<K> ☃ = a(☃);
         return ☃;
       }
       return null;

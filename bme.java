@@ -14,7 +14,7 @@ public class bme
   
   public bme(jy p_i1275_1_)
   {
-    this.f = p_i1275_1_;
+    f = p_i1275_1_;
   }
   
   public void a(bni p_110551_1_)
@@ -24,7 +24,7 @@ public class bme
     InputStream var2 = null;
     try
     {
-      bnh var3 = p_110551_1_.a(this.f);
+      bnh var3 = p_110551_1_.a(f);
       var2 = var3.b();
       BufferedImage var4 = bml.a(var2);
       boolean var5 = false;
@@ -41,11 +41,11 @@ public class bme
         }
         catch (RuntimeException var11)
         {
-          g.warn("Failed reading metadata of: " + this.f, var11);
+          g.warn("Failed reading metadata of: " + f, var11);
         }
       }
       if (Config.isShaders()) {
-        ShadersTex.loadSimpleTexture(b(), var4, var5, var6, p_110551_1_, this.f, getMultiTexID());
+        ShadersTex.loadSimpleTexture(b(), var4, var5, var6, p_110551_1_, f, getMultiTexID());
       } else {
         bml.a(b(), var4, var5, var6);
       }

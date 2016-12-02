@@ -9,8 +9,8 @@ public class aol
   
   public aol(List<ob> ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
@@ -32,7 +32,7 @@ public class aol
         
         akw ☃ = ☃.s(☃);
         if ((☃ instanceof aky)) {
-          ob.a(☃, this.a, (aky)☃, this.b);
+          ob.a(☃, a, (aky)☃, b);
         }
         cj ☃ = ☃.f();
         cj ☃ = ☃.e();

@@ -10,17 +10,17 @@ public class bpq$c
   
   public synchronized boolean a()
   {
-    return this.a;
+    return a;
   }
   
   public synchronized void b()
   {
-    this.a = false;
+    a = false;
   }
   
   public synchronized List<bpq.a> c()
   {
-    return Collections.unmodifiableList(this.b);
+    return Collections.unmodifiableList(b);
   }
   
   public synchronized void a(String ☃, InetAddress ☃)
@@ -33,7 +33,7 @@ public class bpq$c
     ☃ = ☃.getHostAddress() + ":" + ☃;
     
     boolean ☃ = false;
-    for (bpq.a ☃ : this.b) {
+    for (bpq.a ☃ : b) {
       if (☃.b().equals(☃))
       {
         ☃.c();
@@ -43,8 +43,8 @@ public class bpq$c
     }
     if (!☃)
     {
-      this.b.add(new bpq.a(☃, ☃));
-      this.a = true;
+      b.add(new bpq.a(☃, ☃));
+      a = true;
     }
   }
 }

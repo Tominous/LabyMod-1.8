@@ -7,8 +7,8 @@ public class bod
   
   public bod(float[] ☃, float[] ☃, float[] ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
   }
 }

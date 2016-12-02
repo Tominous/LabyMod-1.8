@@ -21,46 +21,46 @@ public class fp
   
   public fp(wn ☃)
   {
-    this.a = ☃.F();
-    this.b = ☃.cd().getId();
-    this.c = ns.c(☃.s * 32.0D);
-    this.d = ns.c(☃.t * 32.0D);
-    this.e = ns.c(☃.u * 32.0D);
-    this.f = ((byte)(int)(☃.y * 256.0F / 360.0F));
-    this.g = ((byte)(int)(☃.z * 256.0F / 360.0F));
+    a = ☃.F();
+    b = ☃.cd().getId();
+    c = ns.c(s * 32.0D);
+    d = ns.c(t * 32.0D);
+    e = ns.c(u * 32.0D);
+    f = ((byte)(int)(y * 256.0F / 360.0F));
+    g = ((byte)(int)(z * 256.0F / 360.0F));
     
-    zx ☃ = ☃.bi.h();
-    this.h = (☃ == null ? 0 : zw.b(☃.b()));
+    zx ☃ = bi.h();
+    h = (☃ == null ? 0 : zw.b(☃.b()));
     
-    this.i = ☃.H();
+    i = ☃.H();
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.e();
-    this.b = ☃.g();
-    this.c = ☃.readInt();
-    this.d = ☃.readInt();
-    this.e = ☃.readInt();
-    this.f = ☃.readByte();
-    this.g = ☃.readByte();
-    this.h = ☃.readShort();
-    this.j = pz.b(☃);
+    a = ☃.e();
+    b = ☃.g();
+    c = ☃.readInt();
+    d = ☃.readInt();
+    e = ☃.readInt();
+    f = ☃.readByte();
+    g = ☃.readByte();
+    h = ☃.readShort();
+    j = pz.b(☃);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(this.a);
-    ☃.a(this.b);
-    ☃.writeInt(this.c);
-    ☃.writeInt(this.d);
-    ☃.writeInt(this.e);
-    ☃.writeByte(this.f);
-    ☃.writeByte(this.g);
-    ☃.writeShort(this.h);
-    this.i.a(☃);
+    ☃.b(a);
+    ☃.a(b);
+    ☃.writeInt(c);
+    ☃.writeInt(d);
+    ☃.writeInt(e);
+    ☃.writeByte(f);
+    ☃.writeByte(g);
+    ☃.writeShort(h);
+    i.a(☃);
   }
   
   public void a(fj ☃)
@@ -70,49 +70,49 @@ public class fp
   
   public List<pz.a> a()
   {
-    if (this.j == null) {
-      this.j = this.i.c();
+    if (j == null) {
+      j = i.c();
     }
-    return this.j;
+    return j;
   }
   
   public int b()
   {
-    return this.a;
+    return a;
   }
   
   public UUID c()
   {
-    return this.b;
+    return b;
   }
   
   public int d()
   {
-    return this.c;
+    return c;
   }
   
   public int e()
   {
-    return this.d;
+    return d;
   }
   
   public int f()
   {
-    return this.e;
+    return e;
   }
   
   public byte g()
   {
-    return this.f;
+    return f;
   }
   
   public byte h()
   {
-    return this.g;
+    return g;
   }
   
   public int i()
   {
-    return this.h;
+    return h;
   }
 }

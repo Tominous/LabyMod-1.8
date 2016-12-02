@@ -6,29 +6,29 @@ public class afh$b
   
   public afh$b(String ☃, float ☃, float ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
   }
   
   public float d()
   {
-    return this.b;
+    return b;
   }
   
   public float e()
   {
-    return this.c;
+    return c;
   }
   
   public String a()
   {
-    return "dig." + this.a;
+    return "dig." + a;
   }
   
   public String c()
   {
-    return "step." + this.a;
+    return "step." + a;
   }
   
   public String b()

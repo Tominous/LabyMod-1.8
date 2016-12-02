@@ -16,7 +16,7 @@ public class PacketKick
   
   public void read(PacketBuf buf)
   {
-    this.cause = buf.readString();
+    cause = buf.readString();
   }
   
   public void write(PacketBuf buf)
@@ -31,6 +31,6 @@ public class PacketKick
   
   public String getReason()
   {
-    return this.cause;
+    return cause;
   }
 }

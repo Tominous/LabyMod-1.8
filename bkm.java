@@ -14,10 +14,10 @@ public class bkm
   public bkm(biu ☃)
   {
     super(☃, new bcn(), 0.5F, 1.0F);
-    blb ☃ = (blb)this.h.get(0);
+    blb ☃ = (blb)h.get(0);
     
-    this.l = this.a;
-    this.m = new bcj();
+    l = a;
+    m = new bcj();
     
     a(new bky(this));
     
@@ -25,20 +25,20 @@ public class bkm
     {
       protected void a()
       {
-        this.c = new bcn(0.5F, true);
-        this.d = new bcn(1.0F, true);
+        c = new bcn(0.5F, true);
+        d = new bcn(1.0F, true);
       }
     };
     a(☃);
-    this.o = Lists.newArrayList(this.h);
+    o = Lists.newArrayList(h);
     if ((☃ instanceof bks))
     {
       b(☃);
-      a(new bks(this.m.e));
+      a(new bks(m.e));
     }
     b(☃);
     a(new blg(this));
-    this.n = Lists.newArrayList(this.h);
+    n = Lists.newArrayList(h);
   }
   
   public void a(we ☃, double ☃, double ☃, double ☃, float ☃, float ☃)
@@ -59,21 +59,21 @@ public class bkm
   {
     if (☃.co())
     {
-      this.f = this.m;
-      this.h = this.n;
+      f = m;
+      h = n;
     }
     else
     {
-      this.f = this.l;
-      this.h = this.o;
+      f = l;
+      h = o;
     }
-    this.a = ((bbj)this.f);
+    a = ((bbj)f);
   }
   
   protected void a(we ☃, float ☃, float ☃, float ☃)
   {
     if (☃.cp()) {
-      ☃ += (float)(Math.cos(☃.W * 3.25D) * 3.141592653589793D * 0.25D);
+      ☃ += (float)(Math.cos(W * 3.25D) * 3.141592653589793D * 0.25D);
     }
     super.a(☃, ☃, ☃, ☃);
   }

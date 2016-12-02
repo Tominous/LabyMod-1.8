@@ -24,68 +24,68 @@ public class axp
   public axp()
   {
     super(null);
-    this.childScreen = this;
-    this.id = "Menu";
+    childScreen = this;
+    id = "Menu";
   }
   
   public void b()
   {
-    this.confirmDisconnect = 0;
-    this.a = 0;
-    this.n.clear();
+    confirmDisconnect = 0;
+    a = 0;
+    n.clear();
     int i = -16;
     int j = 98;
-    this.n.add(this.returnToMenu = new avs(1, this.l / 2 - 100, this.m / 4 + 120 + i, bnq.a("menu.returnToMenu", new Object[0])));
+    n.add(returnToMenu = new avs(1, l / 2 - 100, m / 4 + 120 + i, bnq.a("menu.returnToMenu", new Object[0])));
     if (!this.j.E()) {
-      ((avs)this.n.get(0)).j = bnq.a("menu.disconnect", new Object[0]);
+      n.get(0)).j = bnq.a("menu.disconnect", new Object[0]);
     }
-    this.n.add(new avs(4, this.l / 2 - 100, this.m / 4 + 24 + i, bnq.a("menu.returnToGame", new Object[0])));
-    this.n.add(new avs(0, this.l / 2 - 100, this.m / 4 + 96 + i, 98, 20, bnq.a("menu.options", new Object[0])));
+    n.add(new avs(4, l / 2 - 100, m / 4 + 24 + i, bnq.a("menu.returnToGame", new Object[0])));
+    n.add(new avs(0, l / 2 - 100, m / 4 + 96 + i, 98, 20, bnq.a("menu.options", new Object[0])));
     avs guibutton;
-    this.n.add(guibutton = new avs(7, this.l / 2 + 2, this.m / 4 + 96 + i, 98, 20, bnq.a("menu.shareToLan", new Object[0])));
-    this.n.add(new avs(5, this.l / 2 - 100, this.m / 4 + 48 + i, 98, 20, bnq.a("gui.achievements", new Object[0])));
-    this.n.add(new avs(6, this.l / 2 + 2, this.m / 4 + 48 + i, 98, 20, bnq.a("gui.stats", new Object[0])));
-    guibutton.l = ((this.j.F()) && (!this.j.G().b()));
+    n.add(guibutton = new avs(7, l / 2 + 2, m / 4 + 96 + i, 98, 20, bnq.a("menu.shareToLan", new Object[0])));
+    n.add(new avs(5, l / 2 - 100, m / 4 + 48 + i, 98, 20, bnq.a("gui.achievements", new Object[0])));
+    n.add(new avs(6, l / 2 + 2, m / 4 + 48 + i, 98, 20, bnq.a("gui.stats", new Object[0])));
+    l = ((this.j.F()) && (!this.j.G().b()));
     if (GommeHD.isGommeHD()) {
-      this.n.add(new avs(8, this.l - 53, this.m - 23, 50, 20, "Search"));
+      n.add(new avs(8, l - 53, m - 23, 50, 20, "Search"));
     }
     String t = Color.cl("a") + "Gui enabled";
-    if (ConfigManager.settings.hideMod) {
+    if (settingshideMod) {
       t = Color.cl("c") + "Gui disabled";
     }
-    this.n.add(new avs(9, this.l - 70, 4, 67, 20, t));
+    n.add(new avs(9, l - 70, 4, 67, 20, t));
     super.b();
     
-    ServerPinger server = new ServerPinger(LabyMod.getInstance().ip, LabyMod.getInstance().port);
+    ServerPinger server = new ServerPinger(getInstanceip, getInstanceport);
     server.start();
-    this.pinger = server;
+    pinger = server;
   }
   
   protected void a(avs button)
     throws IOException
   {
-    switch (button.k)
+    switch (k)
     {
     case 0: 
-      this.j.a(new axn(this, this.j.t));
+      j.a(new axn(this, j.t));
       break;
     case 1: 
-      if ((ConfigManager.settings.confirmDisconnect) && (!ave.A().F()) && 
-        (this.confirmDisconnect < 1))
+      if ((settingsconfirmDisconnect) && (!ave.A().F()) && 
+        (confirmDisconnect < 1))
       {
-        this.confirmDisconnect += 1;
-        this.returnToMenu.j = (Color.cl("c") + "Press again to confirm diconnect");
+        confirmDisconnect += 1;
+        returnToMenu.j = (Color.cl("c") + "Press again to confirm disconnect");
         return;
       }
-      button.l = false;
-      boolean flag = this.j.E();
-      boolean flag1 = this.j.al();
-      button.l = false;
-      this.j.f.H();
-      this.j.a((bdb)null);
+      l = false;
+      boolean flag = j.E();
+      boolean flag1 = j.al();
+      l = false;
+      j.f.H();
+      j.a((bdb)null);
       if (flag)
       {
-        this.j.a(new aya());
+        j.a(new aya());
       }
       else if (flag1)
       {
@@ -94,94 +94,95 @@ public class axp
       }
       else
       {
-        this.j.a(new azh(new aya()));
+        j.a(new azh(new aya()));
       }
     case 2: 
     case 3: 
     default: 
       break;
     case 4: 
-      this.j.a((axu)null);
-      this.j.n();
+      j.a((axu)null);
+      j.n();
       break;
     case 5: 
-      this.j.a(new aye(this, this.j.h.x()));
+      j.a(new aye(this, j.h.x()));
       break;
     case 6: 
-      this.j.a(new ayf(this, this.j.h.x()));
+      j.a(new ayf(this, j.h.x()));
       break;
     case 7: 
-      this.j.a(new axw(this));
+      j.a(new axw(this));
       break;
     case 8: 
-      this.j.a(new GuiGommeHDSearch());
+      j.a(new GuiGommeHDSearch());
       break;
     }
-    ConfigManager.settings.hideMod = (!ConfigManager.settings.hideMod);
+    settingshideMod = (!settingshideMod);
     b();
+    ConfigManager.save();
     
     super.actionPermformed(button);
   }
   
   public void drawServerInfo()
   {
-    if (!ConfigManager.settings.infoInMenu) {
+    if (!settingsinfoInMenu) {
       return;
     }
-    if (LabyMod.getInstance().ip.isEmpty()) {
+    if (getInstanceip.isEmpty()) {
       return;
     }
-    String ip = LabyMod.getInstance().ip;
-    if ((this.pinger != null) && (this.pinger.getCurrentData() != null) && (this.pinger.getCurrentData().motd != null)) {
+    String ip = getInstanceip;
+    if ((pinger != null) && (pinger.getCurrentData() != null) && (pinger.getCurrentData().motd != null)) {
       try
       {
-        int i = LabyMod.getInstance().draw.getHeight() - 32;
-        String st = Color.c + "c" + LabyMod.getInstance().ip.toUpperCase() + " " + Color.c + "5Players: " + Color.c + "f" + this.pinger.getCurrentData().players + "/" + this.pinger.getCurrentData().maxPlayers + " " + Color.c + "5Ping:" + Color.c + "f " + Color.c + "a" + this.pinger.getCurrentData().ms + "ms";
-        DrawUtils.a(1, i - 2, LabyMod.getInstance().draw.getStringWidth(st) + 5, this.m - 1, Integer.MIN_VALUE);
-        LabyMod.getInstance().draw.drawString(st, 3.0D, i);
+        int i = getInstancedraw.getHeight() - 32;
+        String st = Color.c + "c" + getInstanceip.toUpperCase() + " " + Color.c + "5Players: " + Color.c + "f" + pinger.getCurrentData().players + "/" + pinger.getCurrentData().maxPlayers + " " + Color.c + "5Ping:" + Color.c + "f " + Color.c + "a" + pinger.getCurrentData().ms + "ms";
+        DrawUtils.a(1, i - 2, getInstancedraw.getStringWidth(st) + 5, m - 1, Integer.MIN_VALUE);
+        getInstancedraw.drawString(st, 3.0D, i);
         i += 10;
-        if (this.pinger.getCurrentData().motd.contains("\n"))
+        if (pinger.getCurrentData().motd.contains("\n"))
         {
-          String[] s = this.pinger.getCurrentData().motd.split("\n");
-          LabyMod.getInstance().draw.drawString(s[0], 3.0D, i);
+          String[] s = pinger.getCurrentData().motd.split("\n");
+          getInstancedraw.drawString(s[0], 3.0D, i);
           i += 10;
-          LabyMod.getInstance().draw.drawString(s[1], 3.0D, i);
+          getInstancedraw.drawString(s[1], 3.0D, i);
         }
         else
         {
           int l = 45;
-          if (this.pinger.getCurrentData().motd.length() > l)
+          if (pinger.getCurrentData().motd.length() > l)
           {
-            LabyMod.getInstance().draw.drawString(this.pinger.getCurrentData().motd.substring(0, l), 3.0D, i);
+            getInstancedraw.drawString(pinger.getCurrentData().motd.substring(0, l), 3.0D, i);
             i += 10;
-            LabyMod.getInstance().draw.drawString(this.pinger.getCurrentData().motd.substring(l, this.pinger.getCurrentData().motd.length()), 3.0D, i);
+            getInstancedraw.drawString(pinger.getCurrentData().motd.substring(l, pinger.getCurrentData().motd.length()), 3.0D, i);
           }
           else
           {
-            LabyMod.getInstance().draw.drawString(this.pinger.getCurrentData().motd, 3.0D, i);
+            getInstancedraw.drawString(pinger.getCurrentData().motd, 3.0D, i);
           }
         }
-        LabyMod.getInstance().playerPing = this.pinger.getCurrentData().ms;
+        getInstanceplayerPing = pinger.getCurrentData().ms;
       }
       catch (Exception error)
       {
         error.printStackTrace();
       }
-    } else if (!this.j.F()) {
-      LabyMod.getInstance().draw.drawString(Color.cl("c") + "Loading server information..", 2.0D, LabyMod.getInstance().draw.getHeight() - 10);
+    } else if (!j.F()) {
+      getInstancedraw.drawString(Color.cl("c") + "Loading server information..", 2.0D, getInstancedraw.getHeight() - 10);
     }
   }
   
   public void e()
   {
     super.e();
-    this.f += 1;
+    f += 1;
   }
   
   public void a(int mouseX, int mouseY, float partialTicks)
   {
     c();
-    a(this.q, bnq.a("menu.game", new Object[0]), this.l / 2, 40, 16777215);
+    a(q, bnq.a("menu.game", new Object[0]), l / 2, 40, 16777215);
     drawServerInfo();
     super.a(mouseX, mouseY, partialTicks);
   }

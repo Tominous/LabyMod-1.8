@@ -17,16 +17,16 @@ class xy$1
       return false;
     }
     if ((☃.b() instanceof yj)) {
-      return ((yj)☃.b()).b == this.a;
+      return bb == a;
     }
     if ((☃.b() == zw.a(afi.aU)) || (☃.b() == zy.bX)) {
-      return this.a == 0;
+      return a == 0;
     }
     return false;
   }
   
   public String c()
   {
-    return yj.a[this.a];
+    return yj.a[a];
   }
 }

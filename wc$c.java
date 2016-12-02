@@ -8,7 +8,7 @@ class wc$c<T extends pr>
   
   public boolean a()
   {
-    float ☃ = this.e.c(1.0F);
+    float ☃ = e.c(1.0F);
     if (☃ >= 0.5F) {
       return false;
     }

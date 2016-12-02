@@ -12,33 +12,33 @@ class vo$b
   public vo$b(vo ☃)
   {
     super(☃, wn.class, true);
-    this.j = ☃;
+    j = ☃;
   }
   
   public boolean a()
   {
     double ☃ = f();
-    List<wn> ☃ = this.e.o.a(wn.class, this.e.aR().b(☃, 4.0D, ☃), this.c);
-    Collections.sort(☃, this.b);
+    List<wn> ☃ = e.o.a(wn.class, e.aR().b(☃, 4.0D, ☃), c);
+    Collections.sort(☃, b);
     if (☃.isEmpty()) {
       return false;
     }
-    this.g = ((wn)☃.get(0));
+    g = ((wn)☃.get(0));
     return true;
   }
   
   public void c()
   {
-    this.h = 5;
-    this.i = 0;
+    h = 5;
+    i = 0;
   }
   
   public void d()
   {
-    this.g = null;
-    this.j.a(false);
+    g = null;
+    j.a(false);
     
-    qc ☃ = this.j.a(vy.d);
+    qc ☃ = j.a(vy.d);
     ☃.c(vo.cp());
     
     super.d();
@@ -46,13 +46,13 @@ class vo$b
   
   public boolean b()
   {
-    if (this.g != null)
+    if (g != null)
     {
-      if (!vo.a(this.j, this.g)) {
+      if (!vo.a(j, g)) {
         return false;
       }
-      vo.a(this.j, true);
-      this.j.a(this.g, 10.0F, 10.0F);
+      vo.a(j, true);
+      j.a(g, 10.0F, 10.0F);
       return true;
     }
     return super.b();
@@ -60,36 +60,36 @@ class vo$b
   
   public void e()
   {
-    if (this.g != null)
+    if (g != null)
     {
-      if (--this.h <= 0)
+      if (--h <= 0)
       {
-        this.d = this.g;
-        this.g = null;
+        d = g;
+        g = null;
         super.c();
         
-        this.j.a("mob.endermen.stare", 1.0F, 1.0F);
-        this.j.a(true);
+        j.a("mob.endermen.stare", 1.0F, 1.0F);
+        j.a(true);
         
-        qc ☃ = this.j.a(vy.d);
+        qc ☃ = j.a(vy.d);
         ☃.b(vo.cp());
       }
     }
     else
     {
-      if (this.d != null) {
-        if (((this.d instanceof wn)) && (vo.a(this.j, (wn)this.d)))
+      if (d != null) {
+        if (((d instanceof wn)) && (vo.a(j, (wn)d)))
         {
-          if (this.d.h(this.j) < 16.0D) {
-            this.j.n();
+          if (d.h(j) < 16.0D) {
+            j.n();
           }
-          this.i = 0;
+          i = 0;
         }
-        else if ((this.d.h(this.j) > 256.0D) && 
-          (this.i++ >= 30) && 
-          (this.j.b(this.d)))
+        else if ((d.h(j) > 256.0D) && 
+          (i++ >= 30) && 
+          (j.b(d)))
         {
-          this.i = 0;
+          i = 0;
         }
       }
       super.e();

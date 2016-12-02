@@ -32,8 +32,8 @@ public abstract class awd
       int ☃ = c(☃, ☃);
       if (☃ >= 0)
       {
-        int ☃ = this.g + (this.b / 2 - c() / 2 + 2);
-        int ☃ = this.d + 4 - n() + (☃ * this.h + this.t);
+        int ☃ = g + (b / 2 - c() / 2 + 2);
+        int ☃ = d + 4 - n() + (☃ * h + t);
         int ☃ = ☃ - ☃;
         int ☃ = ☃ - ☃;
         if (b(☃).a(☃, ☃, ☃, ☃, ☃, ☃))
@@ -50,8 +50,8 @@ public abstract class awd
   {
     for (int ☃ = 0; ☃ < b(); ☃++)
     {
-      int ☃ = this.g + (this.b / 2 - c() / 2 + 2);
-      int ☃ = this.d + 4 - n() + (☃ * this.h + this.t);
+      int ☃ = g + (b / 2 - c() / 2 + 2);
+      int ☃ = d + 4 - n() + (☃ * h + t);
       int ☃ = ☃ - ☃;
       int ☃ = ☃ - ☃;
       b(☃).b(☃, ☃, ☃, ☃, ☃, ☃);

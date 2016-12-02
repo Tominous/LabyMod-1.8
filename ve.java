@@ -25,21 +25,21 @@ public class ve
   protected void h()
   {
     super.h();
-    this.ac.a(16, new Byte((byte)0));
+    ac.a(16, new Byte((byte)0));
   }
   
   public void t_()
   {
     super.t_();
-    if (this.c > 0) {
-      this.c -= 1;
+    if (c > 0) {
+      c -= 1;
     }
-    if (this.c <= 0) {
-      this.a = (this.b = 0.0D);
+    if (c <= 0) {
+      a = (b = 0.0D);
     }
-    i(this.c > 0);
-    if ((j()) && (this.V.nextInt(4) == 0)) {
-      this.o.a(cy.m, this.s, this.t + 0.8D, this.u, 0.0D, 0.0D, 0.0D, new int[0]);
+    i(c > 0);
+    if ((j()) && (V.nextInt(4) == 0)) {
+      o.a(cy.m, s, t + 0.8D, u, 0.0D, 0.0D, 0.0D, new int[0]);
     }
   }
   
@@ -51,7 +51,7 @@ public class ve
   public void a(ow ☃)
   {
     super.a(☃);
-    if ((!☃.c()) && (this.o.Q().b("doEntityDrops"))) {
+    if ((!☃.c()) && (o.Q().b("doEntityDrops"))) {
       a(new zx(afi.al, 1), 0.0F);
     }
   }
@@ -60,64 +60,64 @@ public class ve
   {
     super.a(☃, ☃);
     
-    double ☃ = this.a * this.a + this.b * this.b;
-    if ((☃ > 1.0E-4D) && (this.v * this.v + this.x * this.x > 0.001D))
+    double ☃ = a * a + b * b;
+    if ((☃ > 1.0E-4D) && (v * v + x * x > 0.001D))
     {
       ☃ = ns.a(☃);
-      this.a /= ☃;
-      this.b /= ☃;
-      if (this.a * this.v + this.b * this.x < 0.0D)
+      a /= ☃;
+      b /= ☃;
+      if (a * v + b * x < 0.0D)
       {
-        this.a = 0.0D;
-        this.b = 0.0D;
+        a = 0.0D;
+        b = 0.0D;
       }
       else
       {
         double ☃ = ☃ / m();
-        this.a *= ☃;
-        this.b *= ☃;
+        a *= ☃;
+        b *= ☃;
       }
     }
   }
   
   protected void o()
   {
-    double ☃ = this.a * this.a + this.b * this.b;
+    double ☃ = a * a + b * b;
     if (☃ > 1.0E-4D)
     {
       ☃ = ns.a(☃);
-      this.a /= ☃;
-      this.b /= ☃;
+      a /= ☃;
+      b /= ☃;
       double ☃ = 1.0D;
-      this.v *= 0.800000011920929D;
-      this.w *= 0.0D;
-      this.x *= 0.800000011920929D;
-      this.v += this.a * ☃;
-      this.x += this.b * ☃;
+      v *= 0.800000011920929D;
+      w *= 0.0D;
+      x *= 0.800000011920929D;
+      v += a * ☃;
+      x += b * ☃;
     }
     else
     {
-      this.v *= 0.9800000190734863D;
-      this.w *= 0.0D;
-      this.x *= 0.9800000190734863D;
+      v *= 0.9800000190734863D;
+      w *= 0.0D;
+      x *= 0.9800000190734863D;
     }
     super.o();
   }
   
   public boolean e(wn ☃)
   {
-    zx ☃ = ☃.bi.h();
+    zx ☃ = bi.h();
     if ((☃ != null) && (☃.b() == zy.h))
     {
-      if (!☃.bA.d) {
-        if (--☃.b == 0) {
-          ☃.bi.a(☃.bi.c, null);
+      if (!bA.d) {
+        if (--b == 0) {
+          bi.a(bi.c, null);
         }
       }
-      this.c += 3600;
+      c += 3600;
     }
-    this.a = (this.s - ☃.s);
-    this.b = (this.u - ☃.u);
+    a = (s - s);
+    b = (u - u);
     
     return true;
   }
@@ -125,30 +125,30 @@ public class ve
   protected void b(dn ☃)
   {
     super.b(☃);
-    ☃.a("PushX", this.a);
-    ☃.a("PushZ", this.b);
-    ☃.a("Fuel", (short)this.c);
+    ☃.a("PushX", a);
+    ☃.a("PushZ", b);
+    ☃.a("Fuel", (short)c);
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
-    this.a = ☃.i("PushX");
-    this.b = ☃.i("PushZ");
-    this.c = ☃.e("Fuel");
+    a = ☃.i("PushX");
+    b = ☃.i("PushZ");
+    c = ☃.e("Fuel");
   }
   
   protected boolean j()
   {
-    return (this.ac.a(16) & 0x1) != 0;
+    return (ac.a(16) & 0x1) != 0;
   }
   
   protected void i(boolean ☃)
   {
     if (☃) {
-      this.ac.b(16, Byte.valueOf((byte)(this.ac.a(16) | 0x1)));
+      ac.b(16, Byte.valueOf((byte)(ac.a(16) | 0x1)));
     } else {
-      this.ac.b(16, Byte.valueOf((byte)(this.ac.a(16) & 0xFFFFFFFE)));
+      ac.b(16, Byte.valueOf((byte)(ac.a(16) & 0xFFFFFFFE)));
     }
   }
   

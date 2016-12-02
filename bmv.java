@@ -14,15 +14,15 @@ public class bmv
     if (!a(☃, ☃))
     {
       a.warn("Multiple vertex elements of the same type other than UVs are not supported. Forcing type to UV.");
-      this.c = bmv.b.d;
+      c = bmv.b.d;
     }
     else
     {
-      this.c = ☃;
+      c = ☃;
     }
-    this.b = ☃;
-    this.d = ☃;
-    this.e = ☃;
+    b = ☃;
+    d = ☃;
+    e = ☃;
   }
   
   private final boolean a(int ☃, bmv.b ☃)
@@ -32,37 +32,37 @@ public class bmv
   
   public final bmv.a a()
   {
-    return this.b;
+    return b;
   }
   
   public final bmv.b b()
   {
-    return this.c;
+    return c;
   }
   
   public final int c()
   {
-    return this.e;
+    return e;
   }
   
   public final int d()
   {
-    return this.d;
+    return d;
   }
   
   public String toString()
   {
-    return this.e + "," + this.c.a() + "," + this.b.b();
+    return e + "," + c.a() + "," + b.b();
   }
   
   public final int e()
   {
-    return this.b.a() * this.e;
+    return b.a() * e;
   }
   
   public final boolean f()
   {
-    return this.c == bmv.b.a;
+    return c == bmv.b.a;
   }
   
   public boolean equals(Object ☃)
@@ -74,16 +74,16 @@ public class bmv
       return false;
     }
     bmv ☃ = (bmv)☃;
-    if (this.e != ☃.e) {
+    if (e != e) {
       return false;
     }
-    if (this.d != ☃.d) {
+    if (d != d) {
       return false;
     }
-    if (this.b != ☃.b) {
+    if (b != b) {
       return false;
     }
-    if (this.c != ☃.c) {
+    if (c != c) {
       return false;
     }
     return true;
@@ -91,10 +91,10 @@ public class bmv
   
   public int hashCode()
   {
-    int ☃ = this.b.hashCode();
-    ☃ = 31 * ☃ + this.c.hashCode();
-    ☃ = 31 * ☃ + this.d;
-    ☃ = 31 * ☃ + this.e;
+    int ☃ = b.hashCode();
+    ☃ = 31 * ☃ + c.hashCode();
+    ☃ = 31 * ☃ + d;
+    ☃ = 31 * ☃ + e;
     return ☃;
   }
   
@@ -104,12 +104,12 @@ public class bmv
     
     private b(String ☃)
     {
-      this.h = ☃;
+      h = ☃;
     }
     
     public String a()
     {
-      return this.h;
+      return h;
     }
   }
   
@@ -121,24 +121,24 @@ public class bmv
     
     private a(int ☃, String ☃, int ☃)
     {
-      this.h = ☃;
-      this.i = ☃;
-      this.j = ☃;
+      h = ☃;
+      i = ☃;
+      j = ☃;
     }
     
     public int a()
     {
-      return this.h;
+      return h;
     }
     
     public String b()
     {
-      return this.i;
+      return i;
     }
     
     public int c()
     {
-      return this.j;
+      return j;
     }
   }
 }

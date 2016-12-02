@@ -6,7 +6,7 @@ class ty$a<T extends pr>
   public ty$a(final py ☃, Class<T> ☃, int ☃, boolean ☃, boolean ☃, final Predicate<? super T> ☃)
   {
     super(☃, ☃, ☃, ☃, ☃, ☃);
-    this.c = new Predicate()
+    c = new Predicate()
     {
       public boolean a(T ☃)
       {

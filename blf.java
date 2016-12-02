@@ -9,12 +9,12 @@ public class blf
   
   public blf(bka p_i46109_1_)
   {
-    this.b = p_i46109_1_;
+    b = p_i46109_1_;
   }
   
   public void a(wc p_177148_1_, float p_177148_2_, float p_177148_3_, float p_177148_4_, float p_177148_5_, float p_177148_6_, float p_177148_7_, float p_177148_8_)
   {
-    this.b.a(a);
+    b.a(a);
     bfl.l();
     bfl.c();
     bfl.b(1, 1);
@@ -31,12 +31,12 @@ public class blf
     if (Config.isShaders()) {
       Shaders.beginSpiderEyes();
     }
-    this.b.b().a(p_177148_1_, p_177148_2_, p_177148_3_, p_177148_5_, p_177148_6_, p_177148_7_, p_177148_8_);
+    b.b().a(p_177148_1_, p_177148_2_, p_177148_3_, p_177148_5_, p_177148_6_, p_177148_7_, p_177148_8_);
     int var12 = p_177148_1_.b(p_177148_4_);
     var10 = var12 % 65536;
     var11 = var12 / 65536;
     bqs.a(bqs.r, var10 / 1.0F, var11 / 1.0F);
-    this.b.a(p_177148_1_, p_177148_4_);
+    b.a(p_177148_1_, p_177148_4_);
     bfl.k();
     bfl.d();
   }

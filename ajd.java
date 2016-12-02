@@ -17,8 +17,8 @@ public class ajd
     
     public a(cj ☃, long ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
+      a = ☃;
+      b = ☃;
     }
   }
   
@@ -35,7 +35,7 @@ public class ajd
     for (int ☃ = 0; ☃ < ☃.size(); ☃++)
     {
       ajd.a ☃ = (ajd.a)☃.get(☃);
-      if (☃.a.equals(☃))
+      if (a.equals(☃))
       {
         ☃++;
         if (☃ >= 8) {
@@ -48,7 +48,7 @@ public class ajd
   
   protected ajd(boolean ☃)
   {
-    this.N = ☃;
+    N = ☃;
     a(true);
     a(null);
   }
@@ -60,7 +60,7 @@ public class ajd
   
   public void c(adm ☃, cj ☃, alz ☃)
   {
-    if (this.N) {
+    if (N) {
       for (cq ☃ : cq.values()) {
         ☃.c(☃.a(☃), this);
       }
@@ -69,7 +69,7 @@ public class ajd
   
   public void b(adm ☃, cj ☃, alz ☃)
   {
-    if (this.N) {
+    if (N) {
       for (cq ☃ : cq.values()) {
         ☃.c(☃.a(☃), this);
       }
@@ -78,7 +78,7 @@ public class ajd
   
   public int a(adq ☃, cj ☃, alz ☃, cq ☃)
   {
-    if ((this.N) && (☃.b(a) != ☃)) {
+    if ((N) && (☃.b(a) != ☃)) {
       return 15;
     }
     return 0;
@@ -98,17 +98,17 @@ public class ajd
     boolean ☃ = g(☃, ☃, ☃);
     
     List<ajd.a> ☃ = (List)b.get(☃);
-    while ((☃ != null) && (!☃.isEmpty()) && (☃.K() - ((ajd.a)☃.get(0)).b > 60L)) {
+    while ((☃ != null) && (!☃.isEmpty()) && (☃.K() - get0b > 60L)) {
       ☃.remove(0);
     }
-    if (this.N)
+    if (N)
     {
       if (☃)
       {
         ☃.a(☃, afi.aE.Q().a(a, ☃.b(a)), 3);
         if (a(☃, ☃, true))
         {
-          ☃.a(☃.n() + 0.5F, ☃.o() + 0.5F, ☃.p() + 0.5F, "random.fizz", 0.5F, 2.6F + (☃.s.nextFloat() - ☃.s.nextFloat()) * 0.8F);
+          ☃.a(☃.n() + 0.5F, ☃.o() + 0.5F, ☃.p() + 0.5F, "random.fizz", 0.5F, 2.6F + (s.nextFloat() - s.nextFloat()) * 0.8F);
           for (int ☃ = 0; ☃ < 5; ☃++)
           {
             double ☃ = ☃.n() + ☃.nextDouble() * 0.6D + 0.2D;
@@ -132,7 +132,7 @@ public class ajd
     if (e(☃, ☃, ☃)) {
       return;
     }
-    if (this.N == g(☃, ☃, ☃)) {
+    if (N == g(☃, ☃, ☃)) {
       ☃.a(☃, this, a(☃));
     }
   }
@@ -157,7 +157,7 @@ public class ajd
   
   public void c(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (!this.N) {
+    if (!N) {
       return;
     }
     double ☃ = ☃.n() + 0.5D + (☃.nextDouble() - 0.5D) * 0.2D;

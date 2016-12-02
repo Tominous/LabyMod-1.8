@@ -11,32 +11,32 @@ public class rk
   
   public rk(wi ☃)
   {
-    this.b = ☃;
-    this.d = ☃.o;
+    b = ☃;
+    d = o;
     a(3);
   }
   
   public boolean a()
   {
-    if (this.b.l() != 0) {
+    if (b.l() != 0) {
       return false;
     }
-    if (this.b.bc().nextInt(500) != 0) {
+    if (b.bc().nextInt(500) != 0) {
       return false;
     }
-    this.a = this.d.ae().a(new cj(this.b), 0);
-    if (this.a == null) {
+    a = d.ae().a(new cj(b), 0);
+    if (a == null) {
       return false;
     }
-    if ((!f()) || (!this.b.n(true))) {
+    if ((!f()) || (!b.n(true))) {
       return false;
     }
-    pk ☃ = this.d.a(wi.class, this.b.aR().b(8.0D, 3.0D, 8.0D), this.b);
+    pk ☃ = d.a(wi.class, b.aR().b(8.0D, 3.0D, 8.0D), b);
     if (☃ == null) {
       return false;
     }
-    this.c = ((wi)☃);
-    if ((this.c.l() != 0) || (!this.c.n(true))) {
+    c = ((wi)☃);
+    if ((c.l() != 0) || (!c.n(true))) {
       return false;
     }
     return true;
@@ -44,55 +44,55 @@ public class rk
   
   public void c()
   {
-    this.e = 300;
-    this.b.l(true);
+    e = 300;
+    b.l(true);
   }
   
   public void d()
   {
-    this.a = null;
-    this.c = null;
-    this.b.l(false);
+    a = null;
+    c = null;
+    b.l(false);
   }
   
   public boolean b()
   {
-    return (this.e >= 0) && (f()) && (this.b.l() == 0) && (this.b.n(false));
+    return (e >= 0) && (f()) && (b.l() == 0) && (b.n(false));
   }
   
   public void e()
   {
-    this.e -= 1;
-    this.b.p().a(this.c, 10.0F, 30.0F);
-    if (this.b.h(this.c) > 2.25D) {
-      this.b.s().a(this.c, 0.25D);
-    } else if ((this.e == 0) && (this.c.cm())) {
+    e -= 1;
+    b.p().a(c, 10.0F, 30.0F);
+    if (b.h(c) > 2.25D) {
+      b.s().a(c, 0.25D);
+    } else if ((e == 0) && (c.cm())) {
       g();
     }
-    if (this.b.bc().nextInt(35) == 0) {
-      this.d.a(this.b, (byte)12);
+    if (b.bc().nextInt(35) == 0) {
+      d.a(b, (byte)12);
     }
   }
   
   private boolean f()
   {
-    if (!this.a.i()) {
+    if (!a.i()) {
       return false;
     }
-    int ☃ = (int)(this.a.c() * 0.35D);
-    return this.a.e() < ☃;
+    int ☃ = (int)(a.c() * 0.35D);
+    return a.e() < ☃;
   }
   
   private void g()
   {
-    wi ☃ = this.b.b(this.c);
-    this.c.b(6000);
-    this.b.b(6000);
-    this.c.o(false);
-    this.b.o(false);
+    wi ☃ = b.b(c);
+    c.b(6000);
+    b.b(6000);
+    c.o(false);
+    b.o(false);
     ☃.b(41536);
-    ☃.b(this.b.s, this.b.t, this.b.u, 0.0F, 0.0F);
-    this.d.d(☃);
-    this.d.a(☃, (byte)12);
+    ☃.b(b.s, b.t, b.u, 0.0F, 0.0F);
+    d.d(☃);
+    d.a(☃, (byte)12);
   }
 }

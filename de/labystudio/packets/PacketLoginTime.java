@@ -21,16 +21,16 @@ public class PacketLoginTime
   
   public void read(PacketBuf buf)
   {
-    this.player = buf.readPlayer();
-    this.dateJoined = buf.readLong();
-    this.lastOnline = buf.readLong();
+    player = buf.readPlayer();
+    dateJoined = buf.readLong();
+    lastOnline = buf.readLong();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writePlayer(this.player);
-    buf.writeLong(this.dateJoined);
-    buf.writeLong(this.lastOnline);
+    buf.writePlayer(player);
+    buf.writeLong(dateJoined);
+    buf.writeLong(lastOnline);
   }
   
   public void handle(PacketHandler packetHandler)
@@ -40,16 +40,16 @@ public class PacketLoginTime
   
   public long getDateJoined()
   {
-    return this.dateJoined;
+    return dateJoined;
   }
   
   public long getLastOnline()
   {
-    return this.lastOnline;
+    return lastOnline;
   }
   
   public LabyModPlayer getPlayer()
   {
-    return this.player;
+    return player;
   }
 }

@@ -14,37 +14,37 @@ abstract class aqw$n
   {
     super(☃);
     if (☃ != null) {
-      this.b = ☃.b;
+      b = b;
     }
   }
   
   protected void a(dn ☃)
   {
-    ☃.a("HPos", this.h);
-    ☃.a("VCount", this.a);
-    ☃.a("Desert", this.b);
+    ☃.a("HPos", h);
+    ☃.a("VCount", a);
+    ☃.a("Desert", b);
   }
   
   protected void b(dn ☃)
   {
-    this.h = ☃.f("HPos");
-    this.a = ☃.f("VCount");
-    this.b = ☃.n("Desert");
+    h = ☃.f("HPos");
+    a = ☃.f("VCount");
+    b = ☃.n("Desert");
   }
   
   protected aqt a(aqw.k ☃, List<aqt> ☃, Random ☃, int ☃, int ☃)
   {
-    if (this.m != null) {
-      switch (aqw.1.a[this.m.ordinal()])
+    if (m != null) {
+      switch (aqw.1.a[m.ordinal()])
       {
       case 1: 
-        return aqw.a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃, this.l.c + ☃, cq.e, d());
+        return aqw.a(☃, ☃, ☃, l.a - 1, l.b + ☃, l.c + ☃, cq.e, d());
       case 2: 
-        return aqw.a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃, this.l.c + ☃, cq.e, d());
+        return aqw.a(☃, ☃, ☃, l.a - 1, l.b + ☃, l.c + ☃, cq.e, d());
       case 3: 
-        return aqw.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.c - 1, cq.c, d());
+        return aqw.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.c - 1, cq.c, d());
       case 4: 
-        return aqw.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.c - 1, cq.c, d());
+        return aqw.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.c - 1, cq.c, d());
       }
     }
     return null;
@@ -52,17 +52,17 @@ abstract class aqw$n
   
   protected aqt b(aqw.k ☃, List<aqt> ☃, Random ☃, int ☃, int ☃)
   {
-    if (this.m != null) {
-      switch (aqw.1.a[this.m.ordinal()])
+    if (m != null) {
+      switch (aqw.1.a[m.ordinal()])
       {
       case 1: 
-        return aqw.a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃, this.l.c + ☃, cq.f, d());
+        return aqw.a(☃, ☃, ☃, l.d + 1, l.b + ☃, l.c + ☃, cq.f, d());
       case 2: 
-        return aqw.a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃, this.l.c + ☃, cq.f, d());
+        return aqw.a(☃, ☃, ☃, l.d + 1, l.b + ☃, l.c + ☃, cq.f, d());
       case 3: 
-        return aqw.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.f + 1, cq.d, d());
+        return aqw.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.f + 1, cq.d, d());
       case 4: 
-        return aqw.a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.f + 1, cq.d, d());
+        return aqw.a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.f + 1, cq.d, d());
       }
     }
     return null;
@@ -73,13 +73,13 @@ abstract class aqw$n
     int ☃ = 0;
     int ☃ = 0;
     cj.a ☃ = new cj.a();
-    for (int ☃ = this.l.c; ☃ <= this.l.f; ☃++) {
-      for (int ☃ = this.l.a; ☃ <= this.l.d; ☃++)
+    for (int ☃ = l.c; ☃ <= l.f; ☃++) {
+      for (int ☃ = l.a; ☃ <= l.d; ☃++)
       {
         ☃.c(☃, 64, ☃);
         if (☃.b(☃))
         {
-          ☃ += Math.max(☃.r(☃).o(), ☃.t.i());
+          ☃ += Math.max(☃.r(☃).o(), t.i());
           ☃++;
         }
       }
@@ -92,15 +92,15 @@ abstract class aqw$n
   
   protected static boolean a(aqe ☃)
   {
-    return (☃ != null) && (☃.b > 10);
+    return (☃ != null) && (b > 10);
   }
   
   protected void a(adm ☃, aqe ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    if (this.a >= ☃) {
+    if (a >= ☃) {
       return;
     }
-    for (int ☃ = this.a; ☃ < ☃; ☃++)
+    for (int ☃ = a; ☃ < ☃; ☃++)
     {
       int ☃ = a(☃ + ☃, ☃);
       int ☃ = d(☃);
@@ -108,7 +108,7 @@ abstract class aqw$n
       if (!☃.b(new cj(☃, ☃, ☃))) {
         break;
       }
-      this.a += 1;
+      a += 1;
       
       wi ☃ = new wi(☃);
       ☃.b(☃ + 0.5D, ☃, ☃ + 0.5D, 0.0F, 0.0F);
@@ -125,7 +125,7 @@ abstract class aqw$n
   
   protected alz a(alz ☃)
   {
-    if (this.b)
+    if (b)
     {
       if ((☃.c() == afi.r) || (☃.c() == afi.s)) {
         return afi.A.Q();
@@ -170,6 +170,6 @@ abstract class aqw$n
   
   protected void a(boolean ☃)
   {
-    this.b = ☃;
+    b = ☃;
   }
 }

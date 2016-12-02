@@ -5,12 +5,12 @@ public class ady$a
   
   public ady$a(float ☃, float ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public a a()
   {
-    return new a(this.a * 0.8F, this.b * 0.6F);
+    return new a(a * 0.8F, b * 0.6F);
   }
 }

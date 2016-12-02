@@ -7,29 +7,29 @@ public enum wo
   
   private wo(int ☃, String ☃)
   {
-    this.h = ☃;
-    this.i = (1 << ☃);
-    this.j = ☃;
-    this.k = new fb("options.modelPart." + ☃, new Object[0]);
+    h = ☃;
+    i = (1 << ☃);
+    j = ☃;
+    k = new fb("options.modelPart." + ☃, new Object[0]);
   }
   
   public int a()
   {
-    return this.i;
+    return i;
   }
   
   public int b()
   {
-    return this.h;
+    return h;
   }
   
   public String c()
   {
-    return this.j;
+    return j;
   }
   
   public eu d()
   {
-    return this.k;
+    return k;
   }
 }

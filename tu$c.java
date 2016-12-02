@@ -6,7 +6,7 @@ class tu$c<T extends pk>
   public tu$c(tu ☃, Class<T> ☃, float ☃, double ☃, double ☃)
   {
     super(☃, ☃, ☃, ☃, ☃);
-    this.c = ☃;
+    c = ☃;
   }
   
   public void e()

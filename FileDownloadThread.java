@@ -14,23 +14,23 @@ public class FileDownloadThread
   {
     try
     {
-      byte[] bytes = HttpPipeline.get(this.urlString, ave.A().O());
+      byte[] bytes = HttpPipeline.get(urlString, ave.A().O());
       
-      this.listener.fileDownloadFinished(this.urlString, bytes, null);
+      listener.fileDownloadFinished(urlString, bytes, null);
     }
     catch (Exception e)
     {
-      this.listener.fileDownloadFinished(this.urlString, null, e);
+      listener.fileDownloadFinished(urlString, null, e);
     }
   }
   
   public String getUrlString()
   {
-    return this.urlString;
+    return urlString;
   }
   
   public IFileDownloadListener getListener()
   {
-    return this.listener;
+    return listener;
   }
 }

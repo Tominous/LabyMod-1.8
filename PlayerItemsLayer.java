@@ -30,7 +30,7 @@ public class PlayerItemsLayer
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     bfl.C();
     
-    bbj modelBipedMain = (bbj)this.renderPlayer.b();
+    bbj modelBipedMain = (bbj)renderPlayer.b();
     PlayerConfigurations.renderPlayerItems(modelBipedMain, player, scale, partialTicks);
   }
   

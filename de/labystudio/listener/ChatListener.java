@@ -7,35 +7,43 @@ import bpz;
 import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
+import de.labystudio.modapi.ModAPI;
+import de.labystudio.modapi.events.ChatReceivedEvent;
 import de.labystudio.utils.Allowed;
+import de.labystudio.utils.Color;
 import de.labystudio.utils.FilterLoader;
 import de.labystudio.utils.FriendsLoader;
+import eu;
 import java.util.Map;
 import jy;
 
 public class ChatListener
 {
   public static long init = 0L;
+  private static jy soundLocation = new jy("note.bassattack");
   
   public static void serverChat(String raw, String clean)
   {
-    Brawl.serverMCPvPChat(clean, raw);
     GommeHD.serverGommeHDChat(clean, raw);
     JumpLeague.serverPlayMinityChat(clean, raw);
-    KitPvPServers.serverMineKitsChat(clean, raw);
     Timolia.serverTimoliaChat(clean, raw);
-    KitPvPServers.serverInfectMCChat(clean, raw);
-    KitPvPServers.serverMineHGChat(clean, raw);
     Revayd.serverRevaydChat(clean, raw);
     HiveMC.serverHiveChat(clean, raw);
   }
   
-  public static boolean allowedToPrint(String raw, String clean)
+  public static boolean allowedToPrint(eu component)
   {
-    if (raw == null) {
+    if ((component == null) || (component.d() == null)) {
       return true;
     }
-    serverChat(raw, clean);
+    serverChat(component.d(), component.c());
+    if ((ModAPI.enabled()) && 
+      (((ChatReceivedEvent)ModAPI.callEvent(new ChatReceivedEvent(component))).isCancelled())) {
+      return false;
+    }
+    if ((settingsskyblock) && ((component.c().startsWith("Du betrittst nun die Insel von: ")) || (component.c().startsWith("Du verlässt nun die Insel von: ")))) {
+      return false;
+    }
     return true;
   }
   
@@ -82,7 +90,7 @@ public class ChatListener
   
   public static boolean isServerMSG(String msg)
   {
-    if ((ConfigManager.settings.chatFilter.booleanValue()) && (FilterLoader.enabled)) {
+    if ((settingschatFilter) && (FilterLoader.enabled)) {
       for (String filter : FilterLoader.filters)
       {
         String m = filter.toLowerCase();
@@ -92,33 +100,33 @@ public class ChatListener
         }
       }
     }
-    if (ConfigManager.settings.extraChat.booleanValue())
+    if (settingsextraChat)
     {
-      if ((LabyMod.getInstance().ip == null) || (LabyMod.getInstance().ip.isEmpty())) {
+      if ((getInstanceip == null) || (getInstanceip.isEmpty())) {
         return false;
       }
-      if (((LabyMod.getInstance().ip.toLowerCase().contains("gommehd.net")) || (LabyMod.getInstance().ip.toLowerCase().contains("minekits"))) && 
-        ((msg.toLowerCase().contains(LabyMod.getInstance().getPlayerName().toLowerCase())) || (msg.contains("Du")) || (msg.contains("Dir"))) && (
-        (msg.contains(" -> ")) || (msg.contains(" <- ")))) {
+      if (((getInstanceip.toLowerCase().contains("gommehd.net")) || (getInstanceip.toLowerCase().contains("minekits"))) && 
+        ((msg.toLowerCase().contains(LabyMod.getInstance().getPlayerName().toLowerCase())) || (msg.contains("Du")) || (msg.contains("Dir"))) && 
+        (msg.startsWith("[F")) && ((msg.contains(" -> ")) || (msg.contains(" <- ")))) {
         return true;
       }
-      if (((LabyMod.getInstance().ip.toLowerCase().contains("infect")) || (LabyMod.getInstance().ip.toLowerCase().contains("kitpvp"))) && 
+      if (((getInstanceip.toLowerCase().contains("infect")) || (getInstanceip.toLowerCase().contains("kitpvp"))) && 
         (msg.contains("me")) && ((msg.contains(" -> ")) || (msg.contains(" <- ")))) {
         return true;
       }
-      if ((LabyMod.getInstance().ip.toLowerCase().contains("timolia")) && 
-        (msg.contains("MSG")) && (msg.contains("Du"))) {
+      if ((getInstanceip.toLowerCase().contains("timolia")) && 
+        (msg.startsWith(Color.c + "1")) && (msg.contains("MSG")) && (msg.contains("Du"))) {
         return true;
       }
-      if (((LabyMod.getInstance().ip.toLowerCase().contains("brawl")) || (LabyMod.getInstance().ip.toLowerCase().contains("mcpvp")) || (LabyMod.getInstance().ip.toLowerCase().contains("mc-hg"))) && (
+      if (((getInstanceip.toLowerCase().contains("brawl")) || (getInstanceip.toLowerCase().contains("mcpvp")) || (getInstanceip.toLowerCase().contains("mc-hg"))) && (
         (msg.startsWith("(To ")) || (msg.startsWith("(From ")))) {
         return true;
       }
-      if ((LabyMod.getInstance().ip.toLowerCase().contains("hivemc")) && 
+      if ((getInstanceip.toLowerCase().contains("hivemc")) && 
         (msg.toLowerCase().contains(LabyMod.getInstance().getPlayerName().toLowerCase())) && (msg.contains("PRIVATE"))) {
         return true;
       }
-      if (((LabyMod.getInstance().ip.toLowerCase().contains("mineplex")) || (LabyMod.getInstance().ip.toLowerCase().contains("playminity"))) && 
+      if (((getInstanceip.toLowerCase().contains("mineplex")) || (getInstanceip.toLowerCase().contains("playminity"))) && 
         (msg.toLowerCase().contains(LabyMod.getInstance().getPlayerName().toLowerCase())) && ((msg.contains(" > ")) || (msg.contains(" < ")))) {
         return true;
       }
@@ -176,7 +184,7 @@ public class ChatListener
   private static void playSound(String m)
   {
     if ((m.contains("%s%")) && (init + 1000L < ave.J()) && (LabyMod.getInstance().isInGame())) {
-      ave.A().W().a(new bpf(new jy("note.bassattack"), 5.0F, 1.0F, (float)ave.A().h.s, (float)ave.A().h.t, (float)ave.A().h.u));
+      ave.A().W().a(new bpf(soundLocation, 5.0F, 1.0F, (float)Ah.s, (float)Ah.t, (float)Ah.u));
     }
   }
   

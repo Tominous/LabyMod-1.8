@@ -9,11 +9,11 @@ class bfl$k
   
   private bfl$k()
   {
-    this.a = new bfl.c(2912);
-    this.b = 2048;
-    this.c = 1.0F;
-    this.d = 0.0F;
-    this.e = 1.0F;
+    a = new bfl.c(2912);
+    b = 2048;
+    c = 1.0F;
+    d = 0.0F;
+    e = 1.0F;
   }
   
   bfl$k(bfl.1 p_i46259_1_)

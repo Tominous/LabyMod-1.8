@@ -8,20 +8,20 @@ class nq$a
   
   nq$a(int p_i1553_1_, long p_i1553_2_, Object p_i1553_4_, a p_i1553_5_)
   {
-    this.b = p_i1553_4_;
-    this.c = p_i1553_5_;
-    this.a = p_i1553_2_;
-    this.d = p_i1553_1_;
+    b = p_i1553_4_;
+    c = p_i1553_5_;
+    a = p_i1553_2_;
+    d = p_i1553_1_;
   }
   
   public final long a()
   {
-    return this.a;
+    return a;
   }
   
   public final Object b()
   {
-    return this.b;
+    return b;
   }
   
   public final boolean equals(Object p_equals_1_)
@@ -45,7 +45,7 @@ class nq$a
   
   public final int hashCode()
   {
-    return nq.f(this.a);
+    return nq.f(a);
   }
   
   public final String toString()

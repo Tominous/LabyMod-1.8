@@ -18,8 +18,8 @@ public class aqp$m
   
   public cj a()
   {
-    if (this.b != null) {
-      return this.b.a();
+    if (b != null) {
+      return b.a();
     }
     return super.a();
   }

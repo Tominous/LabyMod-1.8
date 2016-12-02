@@ -14,41 +14,41 @@ public class axr
   
   public void b(String ☃)
   {
-    this.a = ☃;
+    a = ☃;
     
     c("Working...");
   }
   
   public void c(String ☃)
   {
-    this.f = ☃;
+    f = ☃;
     
     a(0);
   }
   
   public void a(int ☃)
   {
-    this.g = ☃;
+    g = ☃;
   }
   
   public void a()
   {
-    this.h = true;
+    h = true;
   }
   
   public void a(int ☃, int ☃, float ☃)
   {
-    if (this.h)
+    if (h)
     {
-      if (!this.j.al()) {
-        this.j.a(null);
+      if (!j.al()) {
+        j.a(null);
       }
       return;
     }
     c();
     
-    a(this.q, this.a, this.l / 2, 70, 16777215);
-    a(this.q, this.f + " " + this.g + "%", this.l / 2, 90, 16777215);
+    a(q, a, l / 2, 70, 16777215);
+    a(q, f + " " + g + "%", l / 2, 90, 16777215);
     
     super.a(☃, ☃, ☃);
   }

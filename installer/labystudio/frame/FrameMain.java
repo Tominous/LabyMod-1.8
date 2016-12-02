@@ -1,6 +1,5 @@
 package installer.labystudio.frame;
 
-import installer.Main;
 import installer.Utils;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -57,7 +56,7 @@ public class FrameMain
     {
       public void actionPerformed(ActionEvent e)
       {
-        FrameMain.this.dispose();
+        dispose();
         new FrameCompatibleMods();
       }
     });
@@ -75,20 +74,20 @@ public class FrameMain
     
     JTextArea textArea = new JTextArea();
     textPanel.setLayout(null);
-    this.infoArea = new JTextArea();
-    this.infoArea.setBounds(10, 78, 280, 238);
-    this.infoArea.setEditable(false);
-    this.infoArea.setEnabled(true);
-    this.infoArea.setFont(new Font("Dialog", 0, 12));
-    this.infoArea.setLineWrap(true);
-    this.infoArea.setOpaque(false);
-    this.infoArea.setPreferredSize(new Dimension(290, 144));
-    this.infoArea.setText(Main.text);
-    this.infoArea.setWrapStyleWord(true);
-    textPanel.add(this.infoArea);
+    infoArea = new JTextArea();
+    infoArea.setBounds(10, 78, 280, 238);
+    infoArea.setEditable(false);
+    infoArea.setEnabled(true);
+    infoArea.setFont(new Font("Dialog", 0, 12));
+    infoArea.setLineWrap(true);
+    infoArea.setOpaque(false);
+    infoArea.setPreferredSize(new Dimension(290, 144));
+    infoArea.setText("This installer will automatically install LabyMod and if you wish,\nyou can add several mods provided on our website.\n\nIf you've successfully installed LabyMod,\nopen the Minecraft launcher and select the LabyMod profile.\n\nMake sure you've closed Minecraft before the\ninstallation and launch the installer from your desktop.");
+    infoArea.setWrapStyleWord(true);
+    textPanel.add(infoArea);
     
     JLabel titleLabel = new JLabel();
-    titleLabel.setText("LabyMod v" + Main.modVersion);
+    titleLabel.setText("LabyMod v2.7.9");
     titleLabel.setPreferredSize(new Dimension(385, 42));
     titleLabel.setOpaque(false);
     titleLabel.setFont(new Font("Dialog", 1, 31));
@@ -98,7 +97,7 @@ public class FrameMain
     textPanel.add(titleLabel);
     
     JLabel subLabel = new JLabel();
-    subLabel.setText("for Minecraft " + Main.mcVersion);
+    subLabel.setText("for Minecraft 1.8.8");
     subLabel.setPreferredSize(new Dimension(385, 42));
     subLabel.setOpaque(false);
     subLabel.setHorizontalAlignment(0);

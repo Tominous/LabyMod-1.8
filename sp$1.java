@@ -7,12 +7,12 @@ class sp$1
   
   public boolean a(T ☃)
   {
-    if ((this.a != null) && (!this.a.apply(☃))) {
+    if ((a != null) && (!a.apply(☃))) {
       return false;
     }
     if ((☃ instanceof wn))
     {
-      double ☃ = this.b.f();
+      double ☃ = b.f();
       if (☃.av()) {
         ☃ *= 0.800000011920929D;
       }
@@ -24,10 +24,10 @@ class sp$1
         }
         ☃ *= 0.7F * ☃;
       }
-      if (☃.g(this.b.e) > ☃) {
+      if (☃.g(b.e) > ☃) {
         return false;
       }
     }
-    return this.b.a(☃, false);
+    return b.a(☃, false);
   }
 }

@@ -8,17 +8,17 @@ public class avz
   
   public void a(ave ☃, int ☃, int ☃)
   {
-    if (!this.m) {
+    if (!m) {
       return;
     }
     ☃.P().a(avs.a);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     
-    boolean ☃ = (☃ >= this.h) && (☃ >= this.i) && (☃ < this.h + this.f) && (☃ < this.i + this.g);
+    boolean ☃ = (☃ >= h) && (☃ >= i) && (☃ < h + f) && (☃ < i + g);
     int ☃ = 106;
     if (☃) {
-      ☃ += this.g;
+      ☃ += g;
     }
-    b(this.h, this.i, 0, ☃, this.f, this.g);
+    b(h, i, 0, ☃, f, g);
   }
 }

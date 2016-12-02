@@ -6,11 +6,11 @@ public class bfz
   public void a(bfd ☃)
   {
     ☃.b();
-    this.a.a(☃.f());
+    a.a(☃.f());
   }
   
   public void a(bmt ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
 }

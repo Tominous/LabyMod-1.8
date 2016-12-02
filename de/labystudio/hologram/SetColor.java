@@ -17,21 +17,21 @@ public class SetColor
   
   public float getR()
   {
-    return this.r;
+    return r;
   }
   
   public float getB()
   {
-    return this.b;
+    return b;
   }
   
   public float getA()
   {
-    return this.a;
+    return a;
   }
   
   public float getG()
   {
-    return this.g;
+    return g;
   }
 }

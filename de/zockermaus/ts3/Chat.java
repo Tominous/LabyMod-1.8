@@ -13,55 +13,55 @@ public class Chat
   public Chat(TeamSpeakUser chatOwner, TeamSpeakUser sender, EnumTargetMode targetMode, String message)
   {
     this.sender = sender;
-    this.mode = targetMode;
+    mode = targetMode;
     this.chatOwner = chatOwner;
-    this.log.add(new Message(sender, message));
+    log.add(new Message(sender, message));
   }
   
   public Chat(TeamSpeakUser chatOwner, TeamSpeakUser sender, EnumTargetMode targetMode)
   {
     this.sender = sender;
-    this.mode = targetMode;
+    mode = targetMode;
     this.chatOwner = chatOwner;
   }
   
   public Chat(int id, EnumTargetMode targetMode)
   {
-    this.sender = null;
-    this.mode = targetMode;
-    this.global = id;
+    sender = null;
+    mode = targetMode;
+    global = id;
   }
   
   public TeamSpeakUser getSender()
   {
-    return this.sender;
+    return sender;
   }
   
   public TeamSpeakUser getChatOwner()
   {
-    return this.chatOwner;
+    return chatOwner;
   }
   
   public ArrayList<Message> getLog()
   {
-    return this.log;
+    return log;
   }
   
   public void addMessage(TeamSpeakUser sender, String msg)
   {
-    this.log.add(new Message(sender, msg));
+    log.add(new Message(sender, msg));
   }
   
   public EnumTargetMode getTargetMode()
   {
-    return this.mode;
+    return mode;
   }
   
   public int getSlotId()
   {
-    if (this.chatOwner == null) {
-      return this.global;
+    if (chatOwner == null) {
+      return global;
     }
-    return this.chatOwner.getClientId();
+    return chatOwner.getClientId();
   }
 }

@@ -10,9 +10,9 @@ public class bhl
   
   public void a(alp ☃, double ☃, double ☃, double ☃, float ☃, int ☃)
   {
-    float ☃ = (float)this.b.j;
-    float ☃ = (float)this.b.k;
-    float ☃ = (float)this.b.l;
+    float ☃ = (float)b.j;
+    float ☃ = (float)b.k;
+    float ☃ = (float)b.l;
     
     bfl.f();
     
@@ -47,8 +47,8 @@ public class bhl
       }
       float ☃ = (float)-(☃ + ☃);
       
-      float ☃ = ☃ + (float)auz.a().b;
-      float ☃ = ☃ + ☃ + (float)auz.a().b;
+      float ☃ = ☃ + (float)ab;
+      float ☃ = ☃ + ☃ + (float)ab;
       float ☃ = ☃ / ☃;
       ☃ = (float)(☃ + ☃) + ☃;
       
@@ -79,8 +79,8 @@ public class bhl
       bfl.b((☃ * ☃ * 4321 + ☃ * 9) * 2.0F, 0.0F, 0.0F, 1.0F);
       bfl.b(-0.5F, -0.5F, 0.0F);
       bfl.b(-☃, -☃, -☃);
-      float ☃ = ☃ + (float)auz.a().b;
-      bfl.b((float)auz.a().a * ☃ / ☃, (float)auz.a().c * ☃ / ☃, -☃);
+      float ☃ = ☃ + (float)ab;
+      bfl.b((float)aa * ☃ / ☃, (float)ac * ☃ / ☃, -☃);
       
       bfx ☃ = bfx.a();
       bfd ☃ = ☃.c();
@@ -116,9 +116,9 @@ public class bhl
   
   private FloatBuffer a(float ☃, float ☃, float ☃, float ☃)
   {
-    this.c.clear();
-    this.c.put(☃).put(☃).put(☃).put(☃);
-    this.c.flip();
-    return this.c;
+    c.clear();
+    c.put(☃).put(☃).put(☃).put(☃);
+    c.flip();
+    return c;
   }
 }

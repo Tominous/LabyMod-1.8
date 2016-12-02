@@ -19,13 +19,13 @@ public class az
     MinecraftServer ☃ = MinecraftServer.N();
     
     boolean ☃ = false;
-    for (int ☃ = 0; ☃ < ☃.d.length; ☃++) {
-      if (☃.d[☃] != null)
+    for (int ☃ = 0; ☃ < d.length; ☃++) {
+      if (d[☃] != null)
       {
-        le ☃ = ☃.d[☃];
-        if (!☃.c)
+        le ☃ = d[☃];
+        if (!c)
         {
-          ☃.c = true;
+          c = true;
           ☃ = true;
         }
       }

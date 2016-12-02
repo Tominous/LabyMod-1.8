@@ -15,16 +15,16 @@ public class blo
   
   private blo(boolean ☃, boolean ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    this.g = ☃;
+    g = ☃;
     
-    this.b = ☃;
-    this.d = ☃;
+    b = ☃;
+    d = ☃;
     
-    this.c = ☃;
-    this.e = ☃;
+    c = ☃;
+    e = ☃;
     
-    this.h = ☃;
-    this.f = ☃;
+    h = ☃;
+    f = ☃;
   }
   
   public blo()
@@ -47,21 +47,21 @@ public class blo
     if (equals(a)) {
       return;
     }
-    if ((a == null) || (this.h != a.b()))
+    if ((a == null) || (h != a.b()))
     {
       a = this;
-      if (this.h)
+      if (h)
       {
         bfl.k();
         return;
       }
       bfl.l();
     }
-    GL14.glBlendEquation(this.f);
-    if (this.g) {
-      bfl.a(this.b, this.d, this.c, this.e);
+    GL14.glBlendEquation(f);
+    if (g) {
+      bfl.a(b, d, c, e);
     } else {
-      bfl.b(this.b, this.d);
+      bfl.b(b, d);
     }
   }
   
@@ -74,25 +74,25 @@ public class blo
       return false;
     }
     blo ☃ = (blo)☃;
-    if (this.f != ☃.f) {
+    if (f != f) {
       return false;
     }
-    if (this.e != ☃.e) {
+    if (e != e) {
       return false;
     }
-    if (this.d != ☃.d) {
+    if (d != d) {
       return false;
     }
-    if (this.h != ☃.h) {
+    if (h != h) {
       return false;
     }
-    if (this.g != ☃.g) {
+    if (g != g) {
       return false;
     }
-    if (this.c != ☃.c) {
+    if (c != c) {
       return false;
     }
-    if (this.b != ☃.b) {
+    if (b != b) {
       return false;
     }
     return true;
@@ -100,19 +100,19 @@ public class blo
   
   public int hashCode()
   {
-    int ☃ = this.b;
-    ☃ = 31 * ☃ + this.c;
-    ☃ = 31 * ☃ + this.d;
-    ☃ = 31 * ☃ + this.e;
-    ☃ = 31 * ☃ + this.f;
-    ☃ = 31 * ☃ + (this.g ? 1 : 0);
-    ☃ = 31 * ☃ + (this.h ? 1 : 0);
+    int ☃ = b;
+    ☃ = 31 * ☃ + c;
+    ☃ = 31 * ☃ + d;
+    ☃ = 31 * ☃ + e;
+    ☃ = 31 * ☃ + f;
+    ☃ = 31 * ☃ + (g ? 1 : 0);
+    ☃ = 31 * ☃ + (h ? 1 : 0);
     return ☃;
   }
   
   public boolean b()
   {
-    return this.h;
+    return h;
   }
   
   public static blo a(JsonObject ☃)

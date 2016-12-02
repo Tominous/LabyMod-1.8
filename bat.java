@@ -15,48 +15,48 @@ public class bat
   {
     super(☃, 64, 64);
     
-    this.e = new bct(this, 0, 0);
-    this.e.a(-1.0F, -7.0F, -1.0F, 2, 7, 2, ☃);
-    this.e.a(0.0F, 0.0F, 0.0F);
+    e = new bct(this, 0, 0);
+    e.a(-1.0F, -7.0F, -1.0F, 2, 7, 2, ☃);
+    e.a(0.0F, 0.0F, 0.0F);
     
-    this.g = new bct(this, 0, 26);
-    this.g.a(-6.0F, 0.0F, -1.5F, 12, 3, 3, ☃);
-    this.g.a(0.0F, 0.0F, 0.0F);
+    g = new bct(this, 0, 26);
+    g.a(-6.0F, 0.0F, -1.5F, 12, 3, 3, ☃);
+    g.a(0.0F, 0.0F, 0.0F);
     
-    this.h = new bct(this, 24, 0);
-    this.h.a(-2.0F, -2.0F, -1.0F, 2, 12, 2, ☃);
-    this.h.a(-5.0F, 2.0F, 0.0F);
+    h = new bct(this, 24, 0);
+    h.a(-2.0F, -2.0F, -1.0F, 2, 12, 2, ☃);
+    h.a(-5.0F, 2.0F, 0.0F);
     
-    this.i = new bct(this, 32, 16);
-    this.i.i = true;
-    this.i.a(0.0F, -2.0F, -1.0F, 2, 12, 2, ☃);
-    this.i.a(5.0F, 2.0F, 0.0F);
+    i = new bct(this, 32, 16);
+    i.i = true;
+    i.a(0.0F, -2.0F, -1.0F, 2, 12, 2, ☃);
+    i.a(5.0F, 2.0F, 0.0F);
     
-    this.j = new bct(this, 8, 0);
-    this.j.a(-1.0F, 0.0F, -1.0F, 2, 11, 2, ☃);
-    this.j.a(-1.9F, 12.0F, 0.0F);
+    j = new bct(this, 8, 0);
+    j.a(-1.0F, 0.0F, -1.0F, 2, 11, 2, ☃);
+    j.a(-1.9F, 12.0F, 0.0F);
     
-    this.k = new bct(this, 40, 16);
-    this.k.i = true;
-    this.k.a(-1.0F, 0.0F, -1.0F, 2, 11, 2, ☃);
-    this.k.a(1.9F, 12.0F, 0.0F);
+    k = new bct(this, 40, 16);
+    k.i = true;
+    k.a(-1.0F, 0.0F, -1.0F, 2, 11, 2, ☃);
+    k.a(1.9F, 12.0F, 0.0F);
     
-    this.a = new bct(this, 16, 0);
-    this.a.a(-3.0F, 3.0F, -1.0F, 2, 7, 2, ☃);
-    this.a.a(0.0F, 0.0F, 0.0F);
-    this.a.j = true;
+    a = new bct(this, 16, 0);
+    a.a(-3.0F, 3.0F, -1.0F, 2, 7, 2, ☃);
+    a.a(0.0F, 0.0F, 0.0F);
+    a.j = true;
     
-    this.b = new bct(this, 48, 16);
-    this.b.a(1.0F, 3.0F, -1.0F, 2, 7, 2, ☃);
-    this.b.a(0.0F, 0.0F, 0.0F);
+    b = new bct(this, 48, 16);
+    b.a(1.0F, 3.0F, -1.0F, 2, 7, 2, ☃);
+    b.a(0.0F, 0.0F, 0.0F);
     
-    this.c = new bct(this, 0, 48);
-    this.c.a(-4.0F, 10.0F, -1.0F, 8, 2, 2, ☃);
-    this.c.a(0.0F, 0.0F, 0.0F);
+    c = new bct(this, 0, 48);
+    c.a(-4.0F, 10.0F, -1.0F, 8, 2, 2, ☃);
+    c.a(0.0F, 0.0F, 0.0F);
     
-    this.d = new bct(this, 0, 32);
-    this.d.a(-6.0F, 11.0F, -6.0F, 12, 1, 12, ☃);
-    this.d.a(0.0F, 12.0F, 0.0F);
+    d = new bct(this, 0, 32);
+    d.a(-6.0F, 11.0F, -6.0F, 12, 1, 12, ☃);
+    d.a(0.0F, 12.0F, 0.0F);
   }
   
   public void a(float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, pk ☃)
@@ -67,32 +67,32 @@ public class bat
     }
     um ☃ = (um)☃;
     
-    this.i.j = ☃.q();
-    this.h.j = ☃.q();
-    this.d.j = (!☃.r());
+    i.j = ☃.q();
+    h.j = ☃.q();
+    d.j = (!☃.r());
     
-    this.k.a(1.9F, 12.0F, 0.0F);
-    this.j.a(-1.9F, 12.0F, 0.0F);
+    k.a(1.9F, 12.0F, 0.0F);
+    j.a(-1.9F, 12.0F, 0.0F);
     
-    this.a.f = (0.017453292F * ☃.u().b());
-    this.a.g = (0.017453292F * ☃.u().c());
-    this.a.h = (0.017453292F * ☃.u().d());
+    a.f = (0.017453292F * ☃.u().b());
+    a.g = (0.017453292F * ☃.u().c());
+    a.h = (0.017453292F * ☃.u().d());
     
-    this.b.f = (0.017453292F * ☃.u().b());
-    this.b.g = (0.017453292F * ☃.u().c());
-    this.b.h = (0.017453292F * ☃.u().d());
+    b.f = (0.017453292F * ☃.u().b());
+    b.g = (0.017453292F * ☃.u().c());
+    b.h = (0.017453292F * ☃.u().d());
     
-    this.c.f = (0.017453292F * ☃.u().b());
-    this.c.g = (0.017453292F * ☃.u().c());
-    this.c.h = (0.017453292F * ☃.u().d());
+    c.f = (0.017453292F * ☃.u().b());
+    c.g = (0.017453292F * ☃.u().c());
+    c.h = (0.017453292F * ☃.u().d());
     
     float ☃ = (☃.x().b() + ☃.y().b()) / 2.0F;
     float ☃ = (☃.x().c() + ☃.y().c()) / 2.0F;
     float ☃ = (☃.x().d() + ☃.y().d()) / 2.0F;
     
-    this.d.f = 0.0F;
-    this.d.g = (0.017453292F * -☃.y);
-    this.d.h = 0.0F;
+    d.f = 0.0F;
+    d.g = (0.017453292F * -y);
+    d.h = 0.0F;
   }
   
   public void a(pk ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
@@ -100,34 +100,34 @@ public class bat
     super.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
     
     bfl.E();
-    if (this.r)
+    if (r)
     {
       float ☃ = 2.0F;
       bfl.a(1.0F / ☃, 1.0F / ☃, 1.0F / ☃);
       bfl.b(0.0F, 24.0F * ☃, 0.0F);
-      this.a.a(☃);
-      this.b.a(☃);
-      this.c.a(☃);
-      this.d.a(☃);
+      a.a(☃);
+      b.a(☃);
+      c.a(☃);
+      d.a(☃);
     }
     else
     {
       if (☃.av()) {
         bfl.b(0.0F, 0.2F, 0.0F);
       }
-      this.a.a(☃);
-      this.b.a(☃);
-      this.c.a(☃);
-      this.d.a(☃);
+      a.a(☃);
+      b.a(☃);
+      c.a(☃);
+      d.a(☃);
     }
     bfl.F();
   }
   
   public void a(float ☃)
   {
-    boolean ☃ = this.h.j;
-    this.h.j = true;
+    boolean ☃ = h.j;
+    h.j = true;
     super.a(☃);
-    this.h.j = ☃;
+    h.j = ☃;
   }
 }

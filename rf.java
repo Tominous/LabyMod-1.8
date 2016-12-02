@@ -9,26 +9,26 @@ public class rf
   public rf(wi ☃, double ☃)
   {
     super(☃, ☃, 16);
-    this.c = ☃;
+    c = ☃;
   }
   
   public boolean a()
   {
-    if (this.a <= 0)
+    if (a <= 0)
     {
-      if (!this.c.o.Q().b("mobGriefing")) {
+      if (!c.o.Q().b("mobGriefing")) {
         return false;
       }
-      this.f = -1;
-      this.d = this.c.cu();
-      this.e = this.c.ct();
+      f = -1;
+      d = c.cu();
+      e = c.ct();
     }
     return super.a();
   }
   
   public boolean b()
   {
-    return (this.f >= 0) && (super.b());
+    return (f >= 0) && (super.b());
   }
   
   public void c()
@@ -45,21 +45,21 @@ public class rf
   {
     super.e();
     
-    this.c.p().a(this.b.n() + 0.5D, this.b.o() + 1, this.b.p() + 0.5D, 10.0F, this.c.bQ());
+    c.p().a(b.n() + 0.5D, b.o() + 1, b.p() + 0.5D, 10.0F, c.bQ());
     if (f())
     {
-      adm ☃ = this.c.o;
-      cj ☃ = this.b.a();
+      adm ☃ = c.o;
+      cj ☃ = b.a();
       
       alz ☃ = ☃.p(☃);
       afh ☃ = ☃.c();
-      if ((this.f == 0) && ((☃ instanceof afz)) && (((Integer)☃.b(afz.a)).intValue() == 7))
+      if ((f == 0) && ((☃ instanceof afz)) && (((Integer)☃.b(afz.a)).intValue() == 7))
       {
         ☃.b(☃, true);
       }
-      else if ((this.f == 1) && (☃ == afi.a))
+      else if ((f == 1) && (☃ == afi.a))
       {
-        oq ☃ = this.c.cq();
+        oq ☃ = c.cq();
         for (int ☃ = 0; ☃ < ☃.o_(); ☃++)
         {
           zx ☃ = ☃.a(☃);
@@ -83,17 +83,17 @@ public class rf
           }
           if (☃)
           {
-            ☃.b -= 1;
-            if (☃.b > 0) {
+            b -= 1;
+            if (b > 0) {
               break;
             }
             ☃.a(☃, null); break;
           }
         }
       }
-      this.f = -1;
+      f = -1;
       
-      this.a = 10;
+      a = 10;
     }
   }
   
@@ -105,14 +105,14 @@ public class rf
       ☃ = ☃.a();
       alz ☃ = ☃.p(☃);
       ☃ = ☃.c();
-      if (((☃ instanceof afz)) && (((Integer)☃.b(afz.a)).intValue() == 7) && (this.e) && ((this.f == 0) || (this.f < 0)))
+      if (((☃ instanceof afz)) && (((Integer)☃.b(afz.a)).intValue() == 7) && (e) && ((f == 0) || (f < 0)))
       {
-        this.f = 0;
+        f = 0;
         return true;
       }
-      if ((☃ == afi.a) && (this.d) && ((this.f == 1) || (this.f < 0)))
+      if ((☃ == afi.a) && (d) && ((f == 1) || (f < 0)))
       {
-        this.f = 1;
+        f = 1;
         return true;
       }
     }

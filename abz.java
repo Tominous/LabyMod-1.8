@@ -5,13 +5,13 @@ public class abz
   
   public void a(abt ☃)
   {
-    for (int ☃ = 0; ☃ < this.b[0].length; ☃++)
+    for (int ☃ = 0; ☃ < b[0].length; ☃++)
     {
-      Object ☃ = this.b[0][☃];
-      for (int ☃ = 0; ☃ < this.b.length - 1; ☃++)
+      Object ☃ = b[0][☃];
+      for (int ☃ = 0; ☃ < b.length - 1; ☃++)
       {
-        zw ☃ = (zw)this.b[(☃ + 1)][☃];
-        ☃.a(new zx(☃), new Object[] { this.a[☃], Character.valueOf('#'), zy.y, Character.valueOf('X'), ☃ });
+        zw ☃ = (zw)b[(☃ + 1)][☃];
+        ☃.a(new zx(☃), new Object[] { a[☃], Character.valueOf('#'), zy.y, Character.valueOf('X'), ☃ });
       }
     }
     ☃.a(new zx(zy.f, 1), new Object[] { " #X", "# X", " #X", Character.valueOf('X'), zy.F, Character.valueOf('#'), zy.y });

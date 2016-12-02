@@ -10,7 +10,7 @@ public class akc
   protected akc()
   {
     super(arm.l);
-    j(this.M.b().a(a, akc.a.a));
+    j(M.b().a(a, akc.a.a));
     float ☃ = 0.4F;
     a(0.5F - ☃, 0.0F, 0.5F - ☃, 0.5F + ☃, 0.8F, 0.5F + ☃);
   }
@@ -62,7 +62,7 @@ public class akc
   
   public void a(adm ☃, wn ☃, cj ☃, alz ☃, akw ☃)
   {
-    if ((!☃.D) && (☃.bZ() != null) && (☃.bZ().b() == zy.be))
+    if ((!D) && (☃.bZ() != null) && (☃.bZ().b() == zy.be))
     {
       ☃.b(na.ab[afh.a(this)]);
       
@@ -140,18 +140,18 @@ public class akc
     
     private a(int ☃, String ☃)
     {
-      this.e = ☃;
-      this.f = ☃;
+      e = ☃;
+      f = ☃;
     }
     
     public int a()
     {
-      return this.e;
+      return e;
     }
     
     public String toString()
     {
-      return this.f;
+      return f;
     }
     
     public static a a(int ☃)
@@ -164,7 +164,7 @@ public class akc
     
     public String l()
     {
-      return this.f;
+      return f;
     }
   }
   

@@ -16,20 +16,20 @@ public class arg
   
   public arg(Random ☃)
   {
-    this.b = (☃.nextDouble() * 256.0D);
-    this.c = (☃.nextDouble() * 256.0D);
-    this.d = (☃.nextDouble() * 256.0D);
+    b = (☃.nextDouble() * 256.0D);
+    c = (☃.nextDouble() * 256.0D);
+    d = (☃.nextDouble() * 256.0D);
     for (int ☃ = 0; ☃ < 256; ☃++) {
-      this.f[☃] = ☃;
+      f[☃] = ☃;
     }
     for (int ☃ = 0; ☃ < 256; ☃++)
     {
       int ☃ = ☃.nextInt(256 - ☃) + ☃;
-      int ☃ = this.f[☃];
-      this.f[☃] = this.f[☃];
-      this.f[☃] = ☃;
+      int ☃ = f[☃];
+      f[☃] = f[☃];
+      f[☃] = ☃;
       
-      this.f[(☃ + 256)] = this.f[☃];
+      f[(☃ + 256)] = f[☃];
     }
   }
   
@@ -75,9 +75,9 @@ public class arg
     
     int ☃ = ☃ & 0xFF;
     int ☃ = ☃ & 0xFF;
-    int ☃ = this.f[(☃ + this.f[☃])] % 12;
-    int ☃ = this.f[(☃ + ☃ + this.f[(☃ + ☃)])] % 12;
-    int ☃ = this.f[(☃ + 1 + this.f[(☃ + 1)])] % 12;
+    int ☃ = f[(☃ + f[☃])] % 12;
+    int ☃ = f[(☃ + ☃ + f[(☃ + ☃)])] % 12;
+    int ☃ = f[(☃ + 1 + f[(☃ + 1)])] % 12;
     
     double ☃ = 0.5D - ☃ * ☃ - ☃ * ☃;
     double ☃;
@@ -126,10 +126,10 @@ public class arg
     int ☃ = 0;
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
-      double ☃ = (☃ + ☃) * ☃ + this.c;
+      double ☃ = (☃ + ☃) * ☃ + c;
       for (int ☃ = 0; ☃ < ☃; ☃++)
       {
-        double ☃ = (☃ + ☃) * ☃ + this.b;
+        double ☃ = (☃ + ☃) * ☃ + b;
         
         double ☃ = (☃ + ☃) * g;
         int ☃ = a(☃ + ☃);
@@ -159,9 +159,9 @@ public class arg
         
         int ☃ = ☃ & 0xFF;
         int ☃ = ☃ & 0xFF;
-        int ☃ = this.f[(☃ + this.f[☃])] % 12;
-        int ☃ = this.f[(☃ + ☃ + this.f[(☃ + ☃)])] % 12;
-        int ☃ = this.f[(☃ + 1 + this.f[(☃ + 1)])] % 12;
+        int ☃ = f[(☃ + f[☃])] % 12;
+        int ☃ = f[(☃ + ☃ + f[(☃ + ☃)])] % 12;
+        int ☃ = f[(☃ + 1 + f[(☃ + 1)])] % 12;
         
         double ☃ = 0.5D - ☃ * ☃ - ☃ * ☃;
         double ☃;

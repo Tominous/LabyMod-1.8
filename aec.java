@@ -12,24 +12,24 @@ public class aec
   
   protected aec()
   {
-    this.e = Lists.newArrayList();
-    this.e.add(ady.t);
-    this.e.add(ady.q);
-    this.e.add(ady.u);
-    this.e.add(ady.I);
-    this.e.add(ady.H);
-    this.e.add(ady.K);
-    this.e.add(ady.L);
+    e = Lists.newArrayList();
+    e.add(ady.t);
+    e.add(ady.q);
+    e.add(ady.u);
+    e.add(ady.I);
+    e.add(ady.H);
+    e.add(ady.K);
+    e.add(ady.L);
   }
   
   public aec(long ☃, adr ☃, String ☃)
   {
     this();
-    this.f = ☃;
+    f = ☃;
     
     ase[] ☃ = ase.a(☃, ☃, ☃);
-    this.b = ☃[0];
-    this.c = ☃[1];
+    b = ☃[0];
+    c = ☃[1];
   }
   
   public aec(adm ☃)
@@ -39,7 +39,7 @@ public class aec
   
   public List<ady> a()
   {
-    return this.e;
+    return e;
   }
   
   public ady a(cj ☃)
@@ -49,7 +49,7 @@ public class aec
   
   public ady a(cj ☃, ady ☃)
   {
-    return this.d.a(☃.n(), ☃.p(), ☃);
+    return d.a(☃.n(), ☃.p(), ☃);
   }
   
   public float[] a(float[] ☃, int ☃, int ☃, int ☃, int ☃)
@@ -58,7 +58,7 @@ public class aec
     if ((☃ == null) || (☃.length < ☃ * ☃)) {
       ☃ = new float[☃ * ☃];
     }
-    int[] ☃ = this.c.a(☃, ☃, ☃, ☃);
+    int[] ☃ = c.a(☃, ☃, ☃, ☃);
     for (int ☃ = 0; ☃ < ☃ * ☃; ☃++) {
       try
       {
@@ -96,7 +96,7 @@ public class aec
     if ((☃ == null) || (☃.length < ☃ * ☃)) {
       ☃ = new ady[☃ * ☃];
     }
-    int[] ☃ = this.b.a(☃, ☃, ☃, ☃);
+    int[] ☃ = b.a(☃, ☃, ☃, ☃);
     try
     {
       for (int ☃ = 0; ☃ < ☃ * ☃; ☃++) {
@@ -131,11 +131,11 @@ public class aec
     }
     if ((☃) && (☃ == 16) && (☃ == 16) && ((☃ & 0xF) == 0) && ((☃ & 0xF) == 0))
     {
-      ady[] ☃ = this.d.c(☃, ☃);
+      ady[] ☃ = d.c(☃, ☃);
       System.arraycopy(☃, 0, ☃, 0, ☃ * ☃);
       return ☃;
     }
-    int[] ☃ = this.c.a(☃, ☃, ☃, ☃);
+    int[] ☃ = c.a(☃, ☃, ☃, ☃);
     for (int ☃ = 0; ☃ < ☃ * ☃; ☃++) {
       ☃[☃] = ady.a(☃[☃], ady.ad);
     }
@@ -153,7 +153,7 @@ public class aec
     int ☃ = ☃ - ☃ + 1;
     int ☃ = ☃ - ☃ + 1;
     
-    int[] ☃ = this.b.a(☃, ☃, ☃, ☃);
+    int[] ☃ = b.a(☃, ☃, ☃, ☃);
     try
     {
       for (int ☃ = 0; ☃ < ☃ * ☃; ☃++)
@@ -168,7 +168,7 @@ public class aec
     {
       b ☃ = b.a(☃, "Invalid Biome id");
       c ☃ = ☃.a("Layer");
-      ☃.a("Layer", this.b.toString());
+      ☃.a("Layer", b.toString());
       ☃.a("x", Integer.valueOf(☃));
       ☃.a("z", Integer.valueOf(☃));
       ☃.a("radius", Integer.valueOf(☃));
@@ -189,7 +189,7 @@ public class aec
     
     int ☃ = ☃ - ☃ + 1;
     int ☃ = ☃ - ☃ + 1;
-    int[] ☃ = this.b.a(☃, ☃, ☃, ☃);
+    int[] ☃ = b.a(☃, ☃, ☃, ☃);
     cj ☃ = null;
     int ☃ = 0;
     for (int ☃ = 0; ☃ < ☃ * ☃; ☃++)
@@ -209,6 +209,6 @@ public class aec
   
   public void b()
   {
-    this.d.a();
+    d.a();
   }
 }

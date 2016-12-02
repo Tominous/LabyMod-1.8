@@ -5,102 +5,102 @@ public class asu
   
   public asv a(asv ☃)
   {
-    if (☃.d >= 0) {
+    if (d >= 0) {
       throw new IllegalStateException("OW KNOWS!");
     }
-    if (this.b == this.a.length)
+    if (b == a.length)
     {
-      asv[] ☃ = new asv[this.b << 1];
-      System.arraycopy(this.a, 0, ☃, 0, this.b);
-      this.a = ☃;
+      asv[] ☃ = new asv[b << 1];
+      System.arraycopy(a, 0, ☃, 0, b);
+      a = ☃;
     }
-    this.a[this.b] = ☃;
-    ☃.d = this.b;
-    a(this.b++);
+    a[b] = ☃;
+    d = b;
+    a(b++);
     
     return ☃;
   }
   
   public void a()
   {
-    this.b = 0;
+    b = 0;
   }
   
   public asv c()
   {
-    asv ☃ = this.a[0];
-    this.a[0] = this.a[(--this.b)];
-    this.a[this.b] = null;
-    if (this.b > 0) {
+    asv ☃ = a[0];
+    a[0] = a[(--b)];
+    a[b] = null;
+    if (b > 0) {
       b(0);
     }
-    ☃.d = -1;
+    d = -1;
     return ☃;
   }
   
   public void a(asv ☃, float ☃)
   {
-    float ☃ = ☃.g;
-    ☃.g = ☃;
+    float ☃ = g;
+    g = ☃;
     if (☃ < ☃) {
-      a(☃.d);
+      a(d);
     } else {
-      b(☃.d);
+      b(d);
     }
   }
   
   private void a(int ☃)
   {
-    asv ☃ = this.a[☃];
-    float ☃ = ☃.g;
+    asv ☃ = a[☃];
+    float ☃ = g;
     while (☃ > 0)
     {
       int ☃ = ☃ - 1 >> 1;
-      asv ☃ = this.a[☃];
-      if (☃ >= ☃.g) {
+      asv ☃ = a[☃];
+      if (☃ >= g) {
         break;
       }
-      this.a[☃] = ☃;
-      ☃.d = ☃;
+      a[☃] = ☃;
+      d = ☃;
       ☃ = ☃;
     }
-    this.a[☃] = ☃;
-    ☃.d = ☃;
+    a[☃] = ☃;
+    d = ☃;
   }
   
   private void b(int ☃)
   {
-    asv ☃ = this.a[☃];
-    float ☃ = ☃.g;
+    asv ☃ = a[☃];
+    float ☃ = g;
     for (;;)
     {
       int ☃ = 1 + (☃ << 1);
       int ☃ = ☃ + 1;
-      if (☃ >= this.b) {
+      if (☃ >= b) {
         break;
       }
-      asv ☃ = this.a[☃];
-      float ☃ = ☃.g;
+      asv ☃ = a[☃];
+      float ☃ = g;
       float ☃;
       asv ☃;
       float ☃;
-      if (☃ >= this.b)
+      if (☃ >= b)
       {
         asv ☃ = null;
         ☃ = Float.POSITIVE_INFINITY;
       }
       else
       {
-        ☃ = this.a[☃];
-        ☃ = ☃.g;
+        ☃ = a[☃];
+        ☃ = g;
       }
       if (☃ < ☃)
       {
         if (☃ >= ☃) {
           break;
         }
-        this.a[☃] = ☃;
-        ☃.d = ☃;
+        a[☃] = ☃;
+        d = ☃;
         ☃ = ☃;
       }
       else
@@ -108,17 +108,17 @@ public class asu
         if (☃ >= ☃) {
           break;
         }
-        this.a[☃] = ☃;
-        ☃.d = ☃;
+        a[☃] = ☃;
+        d = ☃;
         ☃ = ☃;
       }
     }
-    this.a[☃] = ☃;
-    ☃.d = ☃;
+    a[☃] = ☃;
+    d = ☃;
   }
   
   public boolean e()
   {
-    return this.b == 0;
+    return b == 0;
   }
 }

@@ -8,7 +8,7 @@ public class ajp
   protected ajp()
   {
     super(arm.y);
-    j(this.M.b().a(a, Integer.valueOf(1)));
+    j(M.b().a(a, Integer.valueOf(1)));
     a(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
     a(true);
     a(yz.c);
@@ -24,7 +24,7 @@ public class ajp
   {
     int ☃ = ((Integer)☃.b(a)).intValue() - 1;
     float ☃ = 0.125F;
-    return new aug(☃.n() + this.B, ☃.o() + this.C, ☃.p() + this.D, ☃.n() + this.E, ☃.o() + ☃ * ☃, ☃.p() + this.G);
+    return new aug(☃.n() + B, ☃.o() + C, ☃.p() + D, ☃.n() + E, ☃.o() + ☃ * ☃, ☃.p() + G);
   }
   
   public boolean c()
@@ -66,7 +66,7 @@ public class ajp
     if ((☃ == this) && (((Integer)☃.b(a)).intValue() >= 7)) {
       return true;
     }
-    return (☃.c()) && (☃.J.c());
+    return (☃.c()) && (J.c());
   }
   
   public void a(adm ☃, cj ☃, alz ☃, afh ☃)

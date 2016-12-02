@@ -20,28 +20,28 @@ public class FileUploadThread
   {
     try
     {
-      HttpUtils.post(this.urlString, this.headers, this.content);
+      HttpUtils.post(urlString, headers, content);
       
-      this.listener.fileUploadFinished(this.urlString, this.content, null);
+      listener.fileUploadFinished(urlString, content, null);
     }
     catch (Exception e)
     {
-      this.listener.fileUploadFinished(this.urlString, this.content, e);
+      listener.fileUploadFinished(urlString, content, e);
     }
   }
   
   public String getUrlString()
   {
-    return this.urlString;
+    return urlString;
   }
   
   public byte[] getContent()
   {
-    return this.content;
+    return content;
   }
   
   public IFileUploadListener getListener()
   {
-    return this.listener;
+    return listener;
   }
 }

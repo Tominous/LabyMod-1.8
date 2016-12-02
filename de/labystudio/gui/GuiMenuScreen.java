@@ -26,91 +26,100 @@ public class GuiMenuScreen
   
   public GuiMenuScreen(axu parent)
   {
-    this.parentScreen = parent;
+    parentScreen = parent;
   }
   
   public avp getParent()
   {
-    return this.parentScreen;
+    return parentScreen;
   }
   
   protected void actionPermformed(avs button)
     throws IOException
   {
     super.a(button);
-    if (button.k == 100)
+    if (k == 100)
     {
-      LabyMod.getInstance();LabyMod.getInstance().openMenu = null;
+      LabyMod.getInstance();getInstanceopenMenu = null;
       LabyMod.getInstance();LabyMod.getInstance().back();
     }
-    if (button.k == 102)
+    if (k == 102)
     {
       axu screen = new GuiOnlineChat();
-      LabyMod.getInstance();LabyMod.getInstance().openMenu = screen;
-      this.j.a(screen);
+      LabyMod.getInstance();getInstanceopenMenu = screen;
+      j.a(screen);
     }
-    if (button.k == 103)
+    if (k == 103)
     {
       axu screen = new GuiTags();
-      LabyMod.getInstance();LabyMod.getInstance().openMenu = screen;
-      this.j.a(screen);
+      LabyMod.getInstance();getInstanceopenMenu = screen;
+      j.a(screen);
     }
-    if (button.k == 104)
+    if (k == 104)
     {
       axu screen = new GuiTeamSpeak();
-      LabyMod.getInstance();LabyMod.getInstance().openMenu = screen;
-      this.j.a(screen);
+      LabyMod.getInstance();getInstanceopenMenu = screen;
+      j.a(screen);
     }
-    if (button.k == 105)
+    if (k == 105)
     {
       axu screen = new GuiGames();
-      LabyMod.getInstance();LabyMod.getInstance().openMenu = screen;
-      this.j.a(screen);
+      LabyMod.getInstance();getInstanceopenMenu = screen;
+      j.a(screen);
     }
-    if (button.k == 106)
+    if (k == 106)
     {
       axu screen = new GuiStopWatch();
-      LabyMod.getInstance();LabyMod.getInstance().openMenu = screen;
-      this.j.a(screen);
+      LabyMod.getInstance();getInstanceopenMenu = screen;
+      j.a(screen);
+    }
+    if (k == 107)
+    {
+      axu screen = new GuiNotePad();
+      LabyMod.getInstance();getInstanceopenMenu = screen;
+      j.a(screen);
     }
   }
   
   public void b()
   {
-    LabyMod.getInstance();LabyMod.getInstance().chatChange = false;
+    LabyMod.getInstance();getInstancechatChange = false;
     LabyMod.getInstance();
-    if (LabyMod.getInstance().openMenu != null) {
-      if (this.childScreen == null)
+    if (getInstanceopenMenu != null) {
+      if (childScreen == null)
       {
         System.out.println("Can't find childScreen");
-        LabyMod.getInstance();this.j.a(LabyMod.getInstance().openMenu);
+        LabyMod.getInstance();j.a(getInstanceopenMenu);
       }
       else
       {
         LabyMod.getInstance();
-        if (!this.childScreen.getClass().getSimpleName().equalsIgnoreCase(LabyMod.getInstance().openMenu.getClass().getSimpleName()))
+        if (!childScreen.getClass().getSimpleName().equalsIgnoreCase(getInstanceopenMenu.getClass().getSimpleName()))
         {
-          LabyMod.getInstance();this.j.a(LabyMod.getInstance().openMenu);
+          LabyMod.getInstance();j.a(getInstanceopenMenu);
           return;
         }
       }
     }
     super.b();
-    this.next = 2;
-    LabyMod.getInstance();LabyMod.getInstance();addButton(100, LabyMod.getInstance().isInGame() ? L._("tab_menu", new Object[0]) : L._("tab_multiplayer", new Object[0]), LabyMod.getInstance().isInGame() ? "Menu" : "Multiplayer");
+    next = 2;
+    LabyMod.getInstance();LabyMod.getInstance();addButton(100, LabyMod.getInstance().isInGame() ? L.f("tab_menu", new Object[0]) : L.f("tab_multiplayer", new Object[0]), LabyMod.getInstance().isInGame() ? "Menu" : "Multiplayer");
     
-    addButton(102, L._("tab_chat", new Object[0]), "Chat");
-    if (ConfigManager.settings.tags.booleanValue()) {
-      addButton(103, L._("tab_tags", new Object[0]), "Tags");
+    addButton(102, L.f("tab_chat", new Object[0]), "Chat");
+    if (settingstags) {
+      addButton(103, L.f("tab_tags", new Object[0]), "Tags");
     }
-    if (ConfigManager.settings.teamSpeak.booleanValue()) {
-      addButton(104, L._("tab_teamspeak", new Object[0]), "TeamSpeak");
+    if (settingsteamSpeak) {
+      addButton(104, L.f("tab_teamspeak", new Object[0]), "TeamSpeak");
     }
-    if (ConfigManager.settings.miniGames) {
-      addButton(105, L._("tab_games", new Object[0]), "Games");
+    if (settingsminiGames) {
+      addButton(105, L.f("tab_games", new Object[0]), "Games");
     }
-    if (ConfigManager.settings.stopWatch) {
-      addButton(106, L._("tab_stopwatch", new Object[0]), "Stopwatch");
+    if (settingsstopWatch) {
+      addButton(106, L.f("tab_stopwatch", new Object[0]), "Stopwatch");
+    }
+    if (settingsnotePad) {
+      addButton(107, L.f("tab_notepad", new Object[0]), "Notepad");
     }
   }
   
@@ -119,14 +128,14 @@ public class GuiMenuScreen
   
   public void addButton(int id, String title, String uid)
   {
-    LabyMod.getInstance();avs b = new avs(id, this.next, 4, LabyMod.getInstance().draw.getStringWidth(title) + 10, 20, title);
+    LabyMod.getInstance();avs b = new avs(id, next, 4, getInstancedraw.getStringWidth(title) + 10, 20, title);
     if (this.id.toLowerCase().contains(uid.toLowerCase())) {
-      b.l = false;
+      l = false;
     }
-    this.n.add(b);
-    LabyMod.getInstance();this.next += LabyMod.getInstance().draw.getStringWidth(title) + 11;
-    if (title.toLowerCase().contains(L._("tab_chat", new Object[0]))) {
-      this.chat = this.next;
+    n.add(b);
+    LabyMod.getInstance();next += getInstancedraw.getStringWidth(title) + 11;
+    if (title.toLowerCase().contains(L.f("tab_chat", new Object[0]))) {
+      chat = next;
     }
   }
   
@@ -134,18 +143,18 @@ public class GuiMenuScreen
   {
     super.a(mouseX, mouseY, partialTicks);
     LabyMod.getInstance();LabyMod.getInstance().overlay(mouseX, mouseY);
-    if (this.chat != 0) {
+    if (chat != 0) {
       try
       {
         int amount = 0;
         for (LabyModPlayer p : LabyMod.getInstance().getClient().getFriends()) {
-          amount += p.messages;
+          amount += messages;
         }
         if (amount != 0)
         {
           GL11.glPushMatrix();
           GL11.glScaled(0.5D, 0.5D, 0.5D);
-          LabyMod.getInstance().draw.drawRightString(Color.cl("c") + amount, (this.chat - 5) / 0.5D, 38.0D);
+          getInstancedraw.drawRightString(Color.cl("c") + amount, (chat - 5) / 0.5D, 38.0D);
           GL11.glPopMatrix();
         }
       }

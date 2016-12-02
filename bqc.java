@@ -6,17 +6,17 @@ public class bqc
   
   bqc(bpw ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public int a()
   {
-    return this.b;
+    return b;
   }
   
   public bpw b()
   {
-    return new bpw(this.a);
+    return new bpw(a);
   }
 }

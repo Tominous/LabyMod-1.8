@@ -11,48 +11,48 @@ public class avm
   private final String c;
   private final avm.a d;
   
-  public avm(String usernameIn, String playerIDIn, String tokenIn, String sessionTypeIn)
+  public avm(String ☃, String ☃, String ☃, String ☃)
   {
-    this.a = usernameIn;
-    this.b = playerIDIn;
-    this.c = tokenIn;
-    this.d = avm.a.a(sessionTypeIn);
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = avm.a.a(☃);
   }
   
   public String a()
   {
-    return "token:" + this.c + ":" + this.b;
+    return "token:" + c + ":" + b;
   }
   
   public String b()
   {
-    return this.b;
+    return b;
   }
   
   public String c()
   {
-    return this.a;
+    return a;
   }
   
   public String d()
   {
-    return this.c;
+    return c;
   }
   
   public GameProfile e()
   {
     try
     {
-      UUID uuid = UUIDTypeAdapter.fromString(b());
-      return new GameProfile(uuid, c());
+      UUID ☃ = UUIDTypeAdapter.fromString(b());
+      return new GameProfile(☃, c());
     }
-    catch (IllegalArgumentException var2) {}
-    return new GameProfile((UUID)null, c());
+    catch (IllegalArgumentException ☃) {}
+    return new GameProfile(null, c());
   }
   
   public avm.a f()
   {
-    return this.d;
+    return d;
   }
   
   public static enum a
@@ -60,21 +60,21 @@ public class avm
     private static final Map<String, a> c;
     private final String d;
     
-    private a(String sessionTypeIn)
+    private a(String ☃)
     {
-      this.d = sessionTypeIn;
+      d = ☃;
     }
     
-    public static a a(String sessionTypeIn)
+    public static a a(String ☃)
     {
-      return (a)c.get(sessionTypeIn.toLowerCase());
+      return (a)c.get(☃.toLowerCase());
     }
     
     static
     {
       c = Maps.newHashMap();
-      for (a session$type : values()) {
-        c.put(session$type.d, session$type);
+      for (a ☃ : values()) {
+        c.put(d, ☃);
       }
     }
   }

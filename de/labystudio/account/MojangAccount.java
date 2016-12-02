@@ -15,7 +15,7 @@ public class MojangAccount
   
   public String getEmail()
   {
-    return this.email;
+    return email;
   }
   
   public void setEmail(String email)
@@ -25,7 +25,7 @@ public class MojangAccount
   
   public String getUserName()
   {
-    return this.userName;
+    return userName;
   }
   
   public void setUserName(String userName)
@@ -35,7 +35,7 @@ public class MojangAccount
   
   public String getPassword()
   {
-    return this.password;
+    return password;
   }
   
   public void setPassword(String password)

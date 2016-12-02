@@ -6,6 +6,6 @@ public enum bgf$d
   
   private bgf$d(String p_i46233_1_, int p_i46233_2_, cq p_i46233_3_, boolean p_i46233_4_)
   {
-    this.m = (p_i46233_3_.a() + (p_i46233_4_ ? cq.values().length : 0));
+    m = (p_i46233_3_.a() + (p_i46233_4_ ? cq.values().length : 0));
   }
 }

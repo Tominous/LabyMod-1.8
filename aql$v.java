@@ -9,31 +9,31 @@ class aql$v
   
   public aql$v(int ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(cq ☃, v ☃)
   {
-    this.b[☃.a()] = ☃;
-    ☃.b[☃.d().a()] = this;
+    b[☃.a()] = ☃;
+    b[☃.d().a()] = this;
   }
   
   public void a()
   {
     for (int ☃ = 0; ☃ < 6; ☃++) {
-      this.c[☃] = (this.b[☃] != null ? 1 : false);
+      c[☃] = (b[☃] != null ? 1 : false);
     }
   }
   
   public boolean a(int ☃)
   {
-    if (this.e) {
+    if (e) {
       return true;
     }
-    this.f = ☃;
+    f = ☃;
     for (int ☃ = 0; ☃ < 6; ☃++) {
-      if ((this.b[☃] != null) && (this.c[☃] != 0) && 
-        (this.b[☃].f != ☃) && (this.b[☃].a(☃))) {
+      if ((b[☃] != null) && (c[☃] != 0) && 
+        (b[☃].f != ☃) && (b[☃].a(☃))) {
         return true;
       }
     }
@@ -42,14 +42,14 @@ class aql$v
   
   public boolean b()
   {
-    return this.a >= 75;
+    return a >= 75;
   }
   
   public int c()
   {
     int ☃ = 0;
     for (int ☃ = 0; ☃ < 6; ☃++) {
-      if (this.c[☃] != 0) {
+      if (c[☃] != 0) {
         ☃++;
       }
     }

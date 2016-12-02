@@ -24,17 +24,17 @@ public class add$a
         ☃ = "MinecartRideable";
       }
     }
-    this.c = ☃;
-    this.d = ☃;
+    c = ☃;
+    d = ☃;
   }
   
   public dn a()
   {
     dn ☃ = new dn();
     
-    ☃.a("Properties", this.c);
-    ☃.a("Type", this.d);
-    ☃.a("Weight", this.a);
+    ☃.a("Properties", c);
+    ☃.a("Type", d);
+    ☃.a("Weight", a);
     
     return ☃;
   }

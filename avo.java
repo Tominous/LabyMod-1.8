@@ -2,7 +2,6 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import de.labystudio.labymod.ConfigManager;
-import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
 import de.labystudio.utils.Allowed;
 import java.util.Collection;
@@ -43,21 +42,21 @@ public class avo
   
   public avo(ave mcIn)
   {
-    this.j = mcIn;
-    this.k = mcIn.ag();
-    this.t = new avv(mcIn);
-    this.u = new awm(mcIn);
-    this.l = new avt(mcIn);
-    this.m = new awk(mcIn);
-    this.v = new awh(mcIn, this);
+    j = mcIn;
+    k = mcIn.ag();
+    t = new avv(mcIn);
+    u = new awm(mcIn);
+    l = new avt(mcIn);
+    m = new awk(mcIn);
+    v = new awh(mcIn, this);
     a();
   }
   
   public void a()
   {
-    this.z = 10;
-    this.A = 70;
-    this.B = 20;
+    z = 10;
+    A = 70;
+    B = 20;
   }
   
   public void a(float partialTicks)
@@ -65,26 +64,26 @@ public class avo
     avr scaledresolution = new avr(this.j);
     int i = scaledresolution.a();
     int j = scaledresolution.b();
-    this.j.o.j();
+    jo.j();
     bfl.l();
     if (ave.w()) {
-      a(this.j.h.c(partialTicks), scaledresolution);
+      a(jh.c(partialTicks), scaledresolution);
     } else {
       bfl.a(770, 771, 1, 0);
     }
-    zx itemstack = this.j.h.bi.e(3);
-    if ((this.j.t.aA == 0) && (itemstack != null) && (itemstack.b() == zw.a(afi.aU))) {
+    zx itemstack = jh.bi.e(3);
+    if ((jt.aA == 0) && (itemstack != null) && (itemstack.b() == zw.a(afi.aU))) {
       e(scaledresolution);
     }
-    if (!this.j.h.a(pe.k))
+    if (!jh.a(pe.k))
     {
-      float f = this.j.h.bI + (this.j.h.bH - this.j.h.bI) * partialTicks;
+      float f = jh.bI + (jh.bH - jh.bI) * partialTicks;
       if (f > 0.0F) {
         b(f, scaledresolution);
       }
     }
-    if (this.j.c.a()) {
-      this.u.a(scaledresolution, partialTicks);
+    if (jc.a()) {
+      u.a(scaledresolution, partialTicks);
     } else {
       a(scaledresolution, partialTicks);
     }
@@ -98,19 +97,19 @@ public class avo
       b(i / 2 - 7, j / 2 - 7, 0, 0, 16, 16);
     }
     bfl.a(770, 771, 1, 0);
-    this.j.A.a("bossHealth");
+    jA.a("bossHealth");
     j();
-    this.j.A.b();
-    if (this.j.c.b()) {
+    jA.b();
+    if (jc.b()) {
       d(scaledresolution);
     }
     bfl.k();
-    if (this.j.h.cg() > 0)
+    if (jh.cg() > 0)
     {
-      this.j.A.a("sleep");
+      jA.a("sleep");
       bfl.i();
       bfl.c();
-      int j1 = this.j.h.cg();
+      int j1 = jh.cg();
       float f1 = j1 / 100.0F;
       if (f1 > 1.0F) {
         f1 = 1.0F - (j1 - 100) / 10.0F;
@@ -119,30 +118,30 @@ public class avo
       a(0, 0, i, j, k);
       bfl.d();
       bfl.j();
-      this.j.A.b();
+      jA.b();
     }
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     int k1 = i / 2 - 91;
-    if (this.j.h.y()) {
+    if (jh.y()) {
       a(scaledresolution, k1);
-    } else if (this.j.c.f()) {
+    } else if (jc.f()) {
       b(scaledresolution, k1);
     }
-    if ((this.j.t.D) && (!this.j.c.a())) {
+    if ((jt.D) && (!jc.a())) {
       a(scaledresolution);
-    } else if (this.j.h.v()) {
-      this.u.a(scaledresolution);
+    } else if (jh.v()) {
+      u.a(scaledresolution);
     }
     if (this.j.t()) {
       b(scaledresolution);
     }
-    if (this.j.t.aB) {
-      this.t.a(scaledresolution);
+    if (jt.aB) {
+      t.a(scaledresolution);
     }
-    if (this.p > 0)
+    if (p > 0)
     {
-      this.j.A.a("overlayMessage");
-      float f2 = this.p - partialTicks;
+      jA.a("overlayMessage");
+      float f2 = p - partialTicks;
       int l1 = (int)(f2 * 255.0F / 20.0F);
       if (l1 > 255) {
         l1 = 255;
@@ -154,27 +153,27 @@ public class avo
         bfl.l();
         bfl.a(770, 771, 1, 0);
         int l = 16777215;
-        if (this.q) {
+        if (q) {
           l = ns.c(f2 / 50.0F, 0.7F, 0.6F) & 0xFFFFFF;
         }
-        f().a(this.o, -f().a(this.o) / 2, -4, l + (l1 << 24 & 0xFF000000));
+        f().a(o, -f().a(o) / 2, -4, l + (l1 << 24 & 0xFF000000));
         bfl.k();
         bfl.F();
       }
-      this.j.A.b();
+      jA.b();
     }
-    if (this.w > 0)
+    if (w > 0)
     {
-      this.j.A.a("titleAndSubtitle");
-      float f3 = this.w - partialTicks;
+      jA.a("titleAndSubtitle");
+      float f3 = w - partialTicks;
       int i2 = 255;
-      if (this.w > this.B + this.A)
+      if (w > B + A)
       {
-        float f4 = this.z + this.A + this.B - f3;
-        i2 = (int)(f4 * 255.0F / this.z);
+        float f4 = z + A + B - f3;
+        i2 = (int)(f4 * 255.0F / z);
       }
-      if (this.w <= this.B) {
-        i2 = (int)(f3 * 255.0F / this.B);
+      if (w <= B) {
+        i2 = (int)(f3 * 255.0F / B);
       }
       i2 = ns.a(i2, 0, 255);
       if (i2 > 8)
@@ -186,20 +185,20 @@ public class avo
         bfl.E();
         bfl.a(4.0F, 4.0F, 4.0F);
         int j2 = i2 << 24 & 0xFF000000;
-        f().a(this.x, -f().a(this.x) / 2, -10.0F, 0xFFFFFF | j2, true);
+        f().a(x, -f().a(x) / 2, -10.0F, 0xFFFFFF | j2, true);
         bfl.F();
         bfl.E();
         bfl.a(2.0F, 2.0F, 2.0F);
-        f().a(this.y, -f().a(this.y) / 2, 5.0F, 0xFFFFFF | j2, true);
+        f().a(y, -f().a(y) / 2, 5.0F, 0xFFFFFF | j2, true);
         bfl.F();
         bfl.k();
         bfl.F();
       }
-      this.j.A.b();
+      jA.b();
     }
-    auo scoreboard = this.j.f.Z();
+    auo scoreboard = jf.Z();
     auk scoreobjective = null;
-    aul scoreplayerteam = scoreboard.h(this.j.h.e_());
+    aul scoreplayerteam = scoreboard.h(jh.e_());
     if (scoreplayerteam != null)
     {
       int i1 = scoreplayerteam.l().b();
@@ -216,19 +215,19 @@ public class avo
     bfl.c();
     bfl.E();
     bfl.b(0.0F, j - 48, 0.0F);
-    this.j.A.a("chat");
-    this.l.a(this.n);
-    this.j.A.b();
+    jA.a("chat");
+    this.l.a(n);
+    jA.b();
     bfl.F();
     scoreobjective1 = scoreboard.a(0);
-    if ((!this.j.t.ak.d()) || ((this.j.E()) && (this.j.h.a.d().size() <= 1) && (scoreobjective1 == null)))
+    if ((!jt.ak.d()) || ((this.j.E()) && (jh.a.d().size() <= 1) && (scoreobjective1 == null)))
     {
-      this.v.a(false);
+      v.a(false);
     }
     else
     {
-      this.v.a(true);
-      this.v.a(i, scoreboard, scoreobjective1);
+      v.a(true);
+      v.a(i, scoreboard, scoreobjective1);
     }
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     bfl.f();
@@ -243,11 +242,11 @@ public class avo
       this.j.P().a(g);
       wn entityplayer = (wn)this.j.ac();
       int i = sr.a() / 2;
-      float f = this.e;
-      this.e = -90.0F;
+      float f = e;
+      e = -90.0F;
       b(i - 91, sr.b() - 22, 0, 0, 182, 22);
-      b(i - 91 - 1 + entityplayer.bi.c * 20, sr.b() - 22 - 1, 0, 22, 24, 22);
-      this.e = f;
+      b(i - 91 - 1 + bi.c * 20, sr.b() - 22 - 1, 0, 22, 24, 22);
+      e = f;
       bfl.B();
       bfl.l();
       bfl.a(770, 771, 1, 0);
@@ -266,9 +265,9 @@ public class avo
   
   public void a(avr p_175186_1_, int p_175186_2_)
   {
-    this.j.A.a("jumpBar");
+    jA.a("jumpBar");
     this.j.P().a(avp.d);
-    float f = this.j.h.z();
+    float f = jh.z();
     int i = 182;
     int j = (int)(f * (i + 1));
     int k = p_175186_1_.b() - 32 + 3;
@@ -276,30 +275,30 @@ public class avo
     if (j > 0) {
       b(p_175186_2_, k, 0, 89, j, 5);
     }
-    this.j.A.b();
+    jA.b();
   }
   
   public void b(avr p_175176_1_, int p_175176_2_)
   {
-    this.j.A.a("expBar");
+    jA.a("expBar");
     this.j.P().a(avp.d);
-    int i = this.j.h.ck();
+    int i = jh.ck();
     if (i > 0)
     {
       int j = 182;
-      int k = (int)(this.j.h.bD * (j + 1));
+      int k = (int)(jh.bD * (j + 1));
       int l = p_175176_1_.b() - 32 + 3;
       b(p_175176_2_, l, 0, 64, j, 5);
       if (k > 0) {
         b(p_175176_2_, l, 0, 69, k, 5);
       }
     }
-    this.j.A.b();
-    if (this.j.h.bB > 0)
+    jA.b();
+    if (jh.bB > 0)
     {
-      this.j.A.a("expLevel");
+      jA.a("expLevel");
       int k1 = 8453920;
-      String s = "" + this.j.h.bB;
+      String s = "" + jh.bB;
       int l1 = (p_175176_1_.a() - f().a(s)) / 2;
       int i1 = p_175176_1_.b() - 31 - 4;
       int j1 = 0;
@@ -308,14 +307,14 @@ public class avo
       f().a(s, l1, i1 + 1, 0);
       f().a(s, l1, i1 - 1, 0);
       f().a(s, l1, i1, k1);
-      this.j.A.b();
+      jA.b();
     }
   }
   
   public void a(avr p_181551_1_)
   {
-    this.j.A.a("selectedItemName");
-    if ((this.r > 0) && (this.s != null))
+    jA.a("selectedItemName");
+    if ((r > 0) && (this.s != null))
     {
       String s = this.s.q();
       if (this.s.s()) {
@@ -323,10 +322,10 @@ public class avo
       }
       int i = (p_181551_1_.a() - f().a(s)) / 2;
       int j = p_181551_1_.b() - 59;
-      if (!this.j.c.b()) {
+      if (!jc.b()) {
         j += 14;
       }
-      int k = (int)(this.r * 256.0F / 10.0F);
+      int k = (int)(r * 256.0F / 10.0F);
       if (k > 255) {
         k = 255;
       }
@@ -340,37 +339,37 @@ public class avo
         bfl.F();
       }
     }
-    this.j.A.b();
+    jA.b();
   }
   
   public void b(avr p_175185_1_)
   {
-    this.j.A.a("demo");
+    j.A.a("demo");
     String s = "";
-    if (this.j.f.K() >= 120500L) {
+    if (j.f.K() >= 120500L) {
       s = bnq.a("demo.demoExpired", new Object[0]);
     } else {
-      s = bnq.a("demo.remainingTime", new Object[] { nx.a((int)(120500L - this.j.f.K())) });
+      s = bnq.a("demo.remainingTime", new Object[] { nx.a((int)(120500L - j.f.K())) });
     }
     int i = f().a(s);
     f().a(s, p_175185_1_.a() - i - 10, 5.0F, 16777215);
-    this.j.A.b();
+    j.A.b();
   }
   
   protected boolean b()
   {
-    if ((this.j.t.aB) && (!this.j.h.cq()) && (!this.j.t.w)) {
+    if ((j.t.aB) && (!j.h.cq()) && (!j.t.w)) {
       return false;
     }
-    if (this.j.c.a())
+    if (j.c.a())
     {
-      if (this.j.i != null) {
+      if (j.i != null) {
         return true;
       }
-      if ((this.j.s != null) && (this.j.s.a == auh.a.b))
+      if ((j.s != null) && (j.s.a == auh.a.b))
       {
-        cj blockpos = this.j.s.a();
-        if ((this.j.f.s(blockpos) instanceof og)) {
+        cj blockpos = j.s.a();
+        if ((j.f.s(blockpos) instanceof og)) {
           return true;
         }
       }
@@ -381,7 +380,7 @@ public class avo
   
   public void c(avr p_180478_1_)
   {
-    this.m.a(p_180478_1_.a() - 10, 10);
+    m.a(p_180478_1_.a() - 10, 10);
   }
   
   private void a(auk p_180475_1_, avr p_180475_2_)
@@ -407,7 +406,7 @@ public class avo
       String s = aul.a(scoreplayerteam, score.e()) + ": " + a.m + score.c();
       i = Math.max(i, f().a(s));
     }
-    int i1 = collection.size() * f().a;
+    int i1 = collection.size() * fa;
     int j1 = p_180475_2_.b() / 2 + i1 / 3;
     int k1 = 3;
     int l1 = p_180475_2_.a() - i - k1;
@@ -418,17 +417,17 @@ public class avo
       aul scoreplayerteam1 = scoreboard.h(score1.e());
       String s1 = aul.a(scoreplayerteam1, score1.e());
       String s2 = a.m + "" + score1.c();
-      int k = j1 - j * f().a;
+      int k = j1 - j * fa;
       int l = p_180475_2_.a() - k1 + 2;
-      a(l1 - 2, k, l, k + f().a, 1342177280);
+      a(l1 - 2, k, l, k + fa, 1342177280);
       f().a(s1, l1, k, 553648127);
       f().a(s2, l - f().a(s2), k, 553648127);
       if (j == collection.size())
       {
         String s3 = p_180475_1_.d();
-        a(l1 - 2, k - f().a - 1, l, k - 1, 1610612736);
+        a(l1 - 2, k - fa - 1, l, k - 1, 1610612736);
         a(l1 - 2, k - 1, l, k, 1342177280);
-        f().a(s3, l1 + i / 2 - f().a(s3) / 2, k - f().a, 553648127);
+        f().a(s3, l1 + i / 2 - f().a(s3) / 2, k - fa, 553648127);
       }
     }
   }
@@ -439,26 +438,26 @@ public class avo
     {
       wn entityplayer = (wn)this.j.ac();
       int i = ns.f(entityplayer.bn());
-      boolean flag = (this.F > this.n) && ((this.F - this.n) / 3L % 2L == 1L);
-      if ((i < this.C) && (entityplayer.Z > 0))
+      boolean flag = (F > n) && ((F - n) / 3L % 2L == 1L);
+      if ((i < C) && (Z > 0))
       {
-        this.E = ave.J();
-        this.F = (this.n + 20);
+        E = ave.J();
+        F = (n + 20);
       }
-      else if ((i > this.C) && (entityplayer.Z > 0))
+      else if ((i > C) && (Z > 0))
       {
-        this.E = ave.J();
-        this.F = (this.n + 10);
+        E = ave.J();
+        F = (n + 10);
       }
-      if (ave.J() - this.E > 1000L)
+      if (ave.J() - E > 1000L)
       {
-        this.C = i;
-        this.D = i;
-        this.E = ave.J();
+        C = i;
+        D = i;
+        E = ave.J();
       }
-      this.C = i;
-      int j = this.D;
-      this.i.setSeed(this.n * 312871);
+      C = i;
+      int j = D;
+      this.i.setSeed(n * 312871);
       boolean flag1 = false;
       xg foodstats = entityplayer.cl();
       int k = foodstats.a();
@@ -477,9 +476,9 @@ public class avo
       int k2 = entityplayer.br();
       int l2 = -1;
       if (entityplayer.a(pe.l)) {
-        l2 = this.n % ns.f(f + 5.0F);
+        l2 = n % ns.f(f + 5.0F);
       }
-      this.j.A.a("armor");
+      jA.a("armor");
       for (int i3 = 0; i3 < 10; i3++) {
         if (k2 > 0)
         {
@@ -495,7 +494,7 @@ public class avo
           }
         }
       }
-      this.j.A.c("health");
+      jA.c("health");
       for (int i6 = ns.f((f + f1) / 2.0F) - 1; i6 >= 0; i6--)
       {
         int j6 = 16;
@@ -518,11 +517,11 @@ public class avo
           j4 -= 2;
         }
         int k4 = 0;
-        if (entityplayer.o.P().t()) {
+        if (o.P().t()) {
           k4 = 5;
         }
         b(i4, j4, 16 + k3 * 9, 9 * k4, 9, 9);
-        if (((!ConfigManager.settings.oldHearts.booleanValue()) || (!Allowed.animations())) && 
+        if (((!settingsoldHearts) || (!Allowed.animations())) && 
           (flag))
         {
           if (i6 * 2 + 1 < j) {
@@ -551,10 +550,10 @@ public class avo
           }
         }
       }
-      pk entity = entityplayer.m;
+      pk entity = m;
       if (entity == null)
       {
-        this.j.A.c("food");
+        jA.c("food");
         for (int k6 = 0; k6 < 10; k6++)
         {
           int i7 = k1;
@@ -565,7 +564,7 @@ public class avo
             l7 += 36;
             j8 = 13;
           }
-          if ((entityplayer.cl().e() <= 0.0F) && (this.n % (k * 3 + 1) == 0)) {
+          if ((entityplayer.cl().e() <= 0.0F) && (n % (k * 3 + 1) == 0)) {
             i7 = k1 + (this.i.nextInt(3) - 1);
           }
           if (flag1) {
@@ -589,7 +588,7 @@ public class avo
             b(i9, i7, l7 + 45, 27, 9, 9);
           }
         }
-        if ((ConfigManager.settings.foodSaturation) && (Allowed.foodSaturation()) && (saturation != 0.0F)) {
+        if ((settingsfoodSaturation) && (Allowed.foodSaturation()) && (saturation != 0.0F)) {
           for (int k6 = 0; k6 < saturation / 2.0F; k6++)
           {
             int i7 = k1 - 10;
@@ -600,7 +599,7 @@ public class avo
               l7 += 36;
               j8 = 13;
             }
-            if ((saturation <= 0.0F) && (this.n % (saturation * 3.0F + 1.0F) == 0.0F)) {
+            if ((saturation <= 0.0F) && (n % (saturation * 3.0F + 1.0F) == 0.0F)) {
               i7 = k1 + (this.i.nextInt(3) - 1);
             }
             if (flag1) {
@@ -628,7 +627,7 @@ public class avo
       }
       else if ((entity instanceof pr))
       {
-        this.j.A.c("mountHealth");
+        jA.c("mountHealth");
         pr entitylivingbase = (pr)entity;
         int j7 = (int)Math.ceil(entitylivingbase.bn());
         float f3 = entitylivingbase.bu();
@@ -660,11 +659,11 @@ public class avo
           j9 -= 10;
         }
       }
-      this.j.A.c("air");
+      jA.c("air");
       if (entityplayer.a(arm.h))
       {
-        boolean up = (ConfigManager.settings.foodSaturation) && (Allowed.foodSaturation()) && (saturation != 0.0F);
-        int l6 = this.j.h.az();
+        boolean up = (settingsfoodSaturation) && (Allowed.foodSaturation()) && (saturation != 0.0F);
+        int l6 = jh.az();
         int k7 = ns.f((l6 - 2) * 10.0D / 300.0D);
         int i8 = ns.f(l6 * 10.0D / 300.0D) - k7;
         if (up) {
@@ -678,7 +677,7 @@ public class avo
           }
         }
       }
-      this.j.A.b();
+      jA.b();
     }
   }
   
@@ -687,14 +686,14 @@ public class avo
     if ((bfc.c != null) && (bfc.b > 0))
     {
       bfc.b -= 1;
-      avn fontrenderer = this.j.k;
+      avn fontrenderer = jk;
       avr scaledresolution = new avr(this.j);
       int i = scaledresolution.a();
       int j = 182;
       int k = i / 2 - j / 2;
       int l = (int)(bfc.a * (j + 1));
       int i1 = 12;
-      if (ConfigManager.settings.showBossBar)
+      if (settingsshowBossBar)
       {
         b(k, i1, 0, 74, j, 5);
         b(k, i1, 0, 74, j, 5);
@@ -716,7 +715,7 @@ public class avo
     bfl.a(770, 771, 1, 0);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     bfl.c();
-    this.j.P().a(h);
+    j.P().a(h);
     bfx tessellator = bfx.a();
     bfd worldrenderer = tessellator.c();
     worldrenderer.a(7, bms.g);
@@ -735,8 +734,8 @@ public class avo
   {
     p_180480_1_ = 1.0F - p_180480_1_;
     p_180480_1_ = ns.a(p_180480_1_, 0.0F, 1.0F);
-    ams worldborder = this.j.f.af();
-    float f = (float)worldborder.a(this.j.h);
+    ams worldborder = j.f.af();
+    float f = (float)worldborder.a(j.h);
     double d0 = Math.min(worldborder.o() * worldborder.p() * 1000.0D, Math.abs(worldborder.j() - worldborder.h()));
     double d1 = Math.max(worldborder.q(), d0);
     if (f < d1) {
@@ -744,16 +743,16 @@ public class avo
     } else {
       f = 0.0F;
     }
-    this.a = ((float)(this.a + (p_180480_1_ - this.a) * 0.01D));
+    a = ((float)(a + (p_180480_1_ - a) * 0.01D));
     bfl.i();
     bfl.a(false);
     bfl.a(0, 769, 1, 0);
     if (f > 0.0F) {
       bfl.c(0.0F, f, f, 1.0F);
     } else {
-      bfl.c(this.a, this.a, this.a, 1.0F);
+      bfl.c(a, a, a, 1.0F);
     }
-    this.j.P().a(f);
+    j.P().a(f);
     bfx tessellator = bfx.a();
     bfd worldrenderer = tessellator.c();
     worldrenderer.a(7, bms.g);
@@ -781,8 +780,8 @@ public class avo
     bfl.a(false);
     bfl.a(770, 771, 1, 0);
     bfl.c(1.0F, 1.0F, 1.0F, p_180474_1_);
-    this.j.P().a(bmh.g);
-    bmi textureatlassprite = this.j.ae().a().a(afi.aY.Q());
+    j.P().a(bmh.g);
+    bmi textureatlassprite = j.ae().a().a(afi.aY.Q());
     float f = textureatlassprite.e();
     float f1 = textureatlassprite.g();
     float f2 = textureatlassprite.f();
@@ -803,10 +802,10 @@ public class avo
   
   private void a(int index, int xPos, int yPos, float partialTicks, wn p_175184_5_)
   {
-    zx itemstack = p_175184_5_.bi.a[index];
+    zx itemstack = bi.a[index];
     if (itemstack != null)
     {
-      float f = itemstack.c - partialTicks;
+      float f = c - partialTicks;
       if (f > 0.0F)
       {
         bfl.E();
@@ -815,47 +814,46 @@ public class avo
         bfl.a(1.0F / f1, (f1 + 1.0F) / 2.0F, 1.0F);
         bfl.b(-(xPos + 8), -(yPos + 12), 0.0F);
       }
-      this.k.b(itemstack, xPos, yPos);
+      k.b(itemstack, xPos, yPos);
       if (f > 0.0F) {
         bfl.F();
       }
-      this.k.a(this.j.k, itemstack, xPos, yPos);
+      k.a(j.k, itemstack, xPos, yPos);
     }
   }
   
   public void c()
   {
-    if (this.p > 0) {
-      this.p -= 1;
+    if (p > 0) {
+      p -= 1;
     }
-    if (this.w > 0)
+    if (w > 0)
     {
-      this.w -= 1;
-      if (this.w <= 0)
+      w -= 1;
+      if (w <= 0)
       {
-        this.x = "";
-        this.y = "";
+        x = "";
+        y = "";
       }
     }
-    this.n += 1;
-    this.m.a();
-    if (this.j.h != null)
+    n += 1;
+    m.a();
+    if (j.h != null)
     {
-      zx itemstack = this.j.h.bi.h();
+      zx itemstack = j.h.bi.h();
       if (itemstack == null) {
-        this.r = 0;
-      } else if ((this.s != null) && (itemstack.b() == this.s.b()) && (zx.a(itemstack, this.s)) && ((itemstack.e()) || (itemstack.i() == this.s.i())))
+        r = 0;
+      } else if ((s != null) && (itemstack.b() == s.b()) && (zx.a(itemstack, s)) && ((itemstack.e()) || (itemstack.i() == s.i())))
       {
-        if (this.r > 0) {
-          this.r -= 1;
+        if (r > 0) {
+          r -= 1;
         }
       }
       else {
-        this.r = 40;
+        r = 40;
       }
-      this.s = itemstack;
+      s = itemstack;
     }
-    LabyMod.getInstance().gameTick();
   }
   
   public void a(String p_73833_1_)
@@ -865,41 +863,41 @@ public class avo
   
   public void a(String p_110326_1_, boolean p_110326_2_)
   {
-    this.o = p_110326_1_;
-    this.p = 60;
-    this.q = p_110326_2_;
+    o = p_110326_1_;
+    p = 60;
+    q = p_110326_2_;
   }
   
   public void a(String p_175178_1_, String p_175178_2_, int p_175178_3_, int p_175178_4_, int p_175178_5_)
   {
     if ((p_175178_1_ == null) && (p_175178_2_ == null) && (p_175178_3_ < 0) && (p_175178_4_ < 0) && (p_175178_5_ < 0))
     {
-      this.x = "";
-      this.y = "";
-      this.w = 0;
+      x = "";
+      y = "";
+      w = 0;
     }
     else if (p_175178_1_ != null)
     {
-      this.x = p_175178_1_;
-      this.w = (this.z + this.A + this.B);
+      x = p_175178_1_;
+      w = (z + A + B);
     }
     else if (p_175178_2_ != null)
     {
-      this.y = p_175178_2_;
+      y = p_175178_2_;
     }
     else
     {
       if (p_175178_3_ >= 0) {
-        this.z = p_175178_3_;
+        z = p_175178_3_;
       }
       if (p_175178_4_ >= 0) {
-        this.A = p_175178_4_;
+        A = p_175178_4_;
       }
       if (p_175178_5_ >= 0) {
-        this.B = p_175178_5_;
+        B = p_175178_5_;
       }
-      if (this.w > 0) {
-        this.w = (this.z + this.A + this.B);
+      if (w > 0) {
+        w = (z + A + B);
       }
     }
   }
@@ -911,31 +909,31 @@ public class avo
   
   public avt d()
   {
-    return this.l;
+    return l;
   }
   
   public int e()
   {
-    return this.n;
+    return n;
   }
   
   public avn f()
   {
-    return this.j.k;
+    return j.k;
   }
   
   public awm g()
   {
-    return this.u;
+    return u;
   }
   
   public awh h()
   {
-    return this.v;
+    return v;
   }
   
   public void i()
   {
-    this.v.a();
+    v.a();
   }
 }

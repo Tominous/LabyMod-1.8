@@ -1,8 +1,8 @@
 public class cf
   extends cc
 {
-  public cf(String ☃, Object... ☃)
+  public cf(String message, Object... replacements)
   {
-    super(☃, ☃);
+    super(message, replacements);
   }
 }

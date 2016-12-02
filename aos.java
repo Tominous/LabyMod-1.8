@@ -7,7 +7,7 @@ public class aos
   
   public void a(agi.b ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
@@ -16,10 +16,10 @@ public class aos
     for (int ☃ = 0; ☃ < 64; ☃++)
     {
       cj ☃ = ☃.a(☃.nextInt(8) - ☃.nextInt(8), ☃.nextInt(4) - ☃.nextInt(4), ☃.nextInt(8) - ☃.nextInt(8));
-      if ((☃.d(☃)) && ((!☃.t.o()) || (☃.o() < 254)) && 
+      if ((☃.d(☃)) && ((!t.o()) || (☃.o() < 254)) && 
         (afi.cF.d(☃, ☃)))
       {
-        afi.cF.a(☃, ☃, this.a, 2);
+        afi.cF.a(☃, ☃, a, 2);
         ☃ = true;
       }
     }

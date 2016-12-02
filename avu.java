@@ -5,7 +5,7 @@ public class avu
 {
   public static String a(String ☃, boolean ☃)
   {
-    if ((☃) || (ave.A().t.n)) {
+    if ((☃) || (At.n)) {
       return ☃;
     }
     return a.a(☃);

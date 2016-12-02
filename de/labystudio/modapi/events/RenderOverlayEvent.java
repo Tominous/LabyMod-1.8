@@ -20,7 +20,7 @@ public class RenderOverlayEvent
   
   public float getPartialTicks()
   {
-    return this.partialTicks;
+    return partialTicks;
   }
   
   public Map<Listener, List<Method>> getListenerMethods()

@@ -102,20 +102,20 @@ public abstract class yz
   
   public yz(int ☃, String ☃)
   {
-    this.n = ☃;
-    this.o = ☃;
+    n = ☃;
+    o = ☃;
     
     a[☃] = this;
   }
   
   public int a()
   {
-    return this.n;
+    return n;
   }
   
   public String b()
   {
-    return this.o;
+    return o;
   }
   
   public String c()
@@ -125,10 +125,10 @@ public abstract class yz
   
   public zx d()
   {
-    if (this.t == null) {
-      this.t = new zx(e(), 1, f());
+    if (t == null) {
+      t = new zx(e(), 1, f());
     }
-    return this.t;
+    return t;
   }
   
   public abstract zw e();
@@ -140,64 +140,64 @@ public abstract class yz
   
   public String g()
   {
-    return this.p;
+    return p;
   }
   
   public yz a(String ☃)
   {
-    this.p = ☃;
+    p = ☃;
     return this;
   }
   
   public boolean h()
   {
-    return this.r;
+    return r;
   }
   
   public yz i()
   {
-    this.r = false;
+    r = false;
     return this;
   }
   
   public boolean j()
   {
-    return this.q;
+    return q;
   }
   
   public yz k()
   {
-    this.q = false;
+    q = false;
     return this;
   }
   
   public int l()
   {
-    return this.n % 6;
+    return n % 6;
   }
   
   public boolean m()
   {
-    return this.n < 6;
+    return n < 6;
   }
   
   public acj[] n()
   {
-    return this.s;
+    return s;
   }
   
   public yz a(acj... ☃)
   {
-    this.s = ☃;
+    s = ☃;
     return this;
   }
   
   public boolean a(acj ☃)
   {
-    if (this.s == null) {
+    if (s == null) {
       return false;
     }
-    for (acj ☃ : this.s) {
+    for (acj ☃ : s) {
       if (☃ == ☃) {
         return true;
       }
@@ -221,11 +221,11 @@ public abstract class yz
   public void a(List<zx> ☃, acj... ☃)
   {
     for (aci ☃ : aci.b) {
-      if ((☃ != null) && (☃.C != null))
+      if ((☃ != null) && (C != null))
       {
         boolean ☃ = false;
         for (int ☃ = 0; (☃ < ☃.length) && (!☃); ☃++) {
-          if (☃.C == ☃[☃]) {
+          if (C == ☃[☃]) {
             ☃ = true;
           }
         }

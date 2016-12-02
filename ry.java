@@ -10,31 +10,31 @@ public class ry
   
   public ry(ps ☃)
   {
-    this.a = ☃;
+    a = ☃;
     a(3);
   }
   
   public boolean a()
   {
-    return this.a.bc().nextFloat() < 0.02F;
+    return a.bc().nextFloat() < 0.02F;
   }
   
   public boolean b()
   {
-    return this.d >= 0;
+    return d >= 0;
   }
   
   public void c()
   {
-    double ☃ = 6.283185307179586D * this.a.bc().nextDouble();
-    this.b = Math.cos(☃);
-    this.c = Math.sin(☃);
-    this.d = (20 + this.a.bc().nextInt(20));
+    double ☃ = 6.283185307179586D * a.bc().nextDouble();
+    b = Math.cos(☃);
+    c = Math.sin(☃);
+    d = (20 + a.bc().nextInt(20));
   }
   
   public void e()
   {
-    this.d -= 1;
-    this.a.p().a(this.a.s + this.b, this.a.t + this.a.aS(), this.a.u + this.c, 10.0F, this.a.bQ());
+    d -= 1;
+    a.p().a(a.s + b, a.t + a.aS(), a.u + c, 10.0F, a.bQ());
   }
 }

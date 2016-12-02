@@ -4,11 +4,11 @@ public enum bde$a
   
   private bde$a(String p_i1053_3_)
   {
-    this.d = new fb("addServer.resourcePack." + p_i1053_3_, new Object[0]);
+    d = new fb("addServer.resourcePack." + p_i1053_3_, new Object[0]);
   }
   
   public eu a()
   {
-    return this.d;
+    return d;
   }
 }

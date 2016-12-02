@@ -8,6 +8,6 @@ final class o$4
   
   public int a(pk ☃, pk ☃)
   {
-    return ComparisonChain.start().compare(☃.b(this.a), ☃.b(this.a)).result();
+    return ComparisonChain.start().compare(☃.b(a), ☃.b(a)).result();
   }
 }

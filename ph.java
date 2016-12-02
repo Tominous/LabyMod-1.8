@@ -16,10 +16,10 @@ public abstract class ph
   
   public boolean a(wn ☃)
   {
-    zx ☃ = ☃.bi.h();
+    zx ☃ = bi.h();
     if ((☃ != null) && (☃.b() == zy.bJ))
     {
-      if (!this.o.D)
+      if (!o.D)
       {
         Class<? extends pk> ☃ = pm.a(☃.i());
         if ((☃ != null) && (getClass() == ☃))
@@ -28,17 +28,17 @@ public abstract class ph
           if (☃ != null)
           {
             ☃.b(41536);
-            ☃.b(this.s, this.t, this.u, 0.0F, 0.0F);
+            ☃.b(s, t, u, 0.0F, 0.0F);
             
-            this.o.d(☃);
+            o.d(☃);
             if (☃.s()) {
               ☃.a(☃.q());
             }
-            if (!☃.bA.d)
+            if (!bA.d)
             {
-              ☃.b -= 1;
-              if (☃.b <= 0) {
-                ☃.bi.a(☃.bi.c, null);
+              b -= 1;
+              if (b <= 0) {
+                bi.a(bi.c, null);
               }
             }
           }
@@ -52,15 +52,15 @@ public abstract class ph
   protected void h()
   {
     super.h();
-    this.ac.a(12, Byte.valueOf((byte)0));
+    ac.a(12, Byte.valueOf((byte)0));
   }
   
   public int l()
   {
-    if (this.o.D) {
-      return this.ac.a(12);
+    if (o.D) {
+      return ac.a(12);
     }
-    return this.a;
+    return a;
   }
   
   public void a(int ☃, boolean ☃)
@@ -79,13 +79,13 @@ public abstract class ph
     b(☃);
     if (☃)
     {
-      this.b += ☃;
-      if (this.c == 0) {
-        this.c = 40;
+      b += ☃;
+      if (c == 0) {
+        c = 40;
       }
     }
     if (l() == 0) {
-      b(this.b);
+      b(b);
     }
   }
   
@@ -96,8 +96,8 @@ public abstract class ph
   
   public void b(int ☃)
   {
-    this.ac.b(12, Byte.valueOf((byte)ns.a(☃, -1, 1)));
-    this.a = ☃;
+    ac.b(12, Byte.valueOf((byte)ns.a(☃, -1, 1)));
+    a = ☃;
     a(j_());
   }
   
@@ -105,27 +105,27 @@ public abstract class ph
   {
     super.b(☃);
     ☃.a("Age", l());
-    ☃.a("ForcedAge", this.b);
+    ☃.a("ForcedAge", b);
   }
   
   public void a(dn ☃)
   {
     super.a(☃);
     b(☃.f("Age"));
-    this.b = ☃.f("ForcedAge");
+    b = ☃.f("ForcedAge");
   }
   
   public void m()
   {
     super.m();
-    if (this.o.D)
+    if (o.D)
     {
-      if (this.c > 0)
+      if (c > 0)
       {
-        if (this.c % 4 == 0) {
-          this.o.a(cy.v, this.s + this.V.nextFloat() * this.J * 2.0F - this.J, this.t + 0.5D + this.V.nextFloat() * this.K, this.u + this.V.nextFloat() * this.J * 2.0F - this.J, 0.0D, 0.0D, 0.0D, new int[0]);
+        if (c % 4 == 0) {
+          o.a(cy.v, s + V.nextFloat() * J * 2.0F - J, t + 0.5D + V.nextFloat() * K, u + V.nextFloat() * J * 2.0F - J, 0.0D, 0.0D, 0.0D, new int[0]);
         }
-        this.c -= 1;
+        c -= 1;
       }
       a(j_());
     }
@@ -165,10 +165,10 @@ public abstract class ph
   
   protected final void a(float ☃, float ☃)
   {
-    boolean ☃ = this.bm > 0.0F;
+    boolean ☃ = bm > 0.0F;
     
-    this.bm = ☃;
-    this.bn = ☃;
+    bm = ☃;
+    bn = ☃;
     if (!☃) {
       a(1.0F);
     }
@@ -176,6 +176,6 @@ public abstract class ph
   
   protected final void a(float ☃)
   {
-    super.a(this.bm * ☃, this.bn * ☃);
+    super.a(bm * ☃, bn * ☃);
   }
 }

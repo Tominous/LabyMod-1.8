@@ -15,9 +15,9 @@ public class ClippingHelperShadow
   
   public boolean b(double x1, double y1, double z1, double x2, double y2, double z2)
   {
-    for (int index = 0; index < this.shadowClipPlaneCount; index++)
+    for (int index = 0; index < shadowClipPlaneCount; index++)
     {
-      float[] plane = this.shadowClipPlanes[index];
+      float[] plane = shadowClipPlanes[index];
       if ((dot4(plane, x1, y1, z1) <= 0.0D) && (dot4(plane, x2, y1, z1) <= 0.0D) && (dot4(plane, x1, y2, z1) <= 0.0D) && (dot4(plane, x2, y2, z1) <= 0.0D) && (dot4(plane, x1, y1, z2) <= 0.0D) && (dot4(plane, x2, y1, z2) <= 0.0D) && (dot4(plane, x1, y2, z2) <= 0.0D) && (dot4(plane, x2, y2, z2) <= 0.0D)) {
         return false;
       }
@@ -87,7 +87,7 @@ public class ClippingHelperShadow
   
   private void addShadowClipPlane(float[] plane)
   {
-    copyPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], plane);
+    copyPlane(shadowClipPlanes[(shadowClipPlaneCount++)], plane);
   }
   
   private float length(float x, float y, float z)
@@ -102,8 +102,8 @@ public class ClippingHelperShadow
   
   private void makeShadowPlane(float[] shadowPlane, float[] positivePlane, float[] negativePlane, float[] vecSun)
   {
-    cross3(this.vecIntersection, positivePlane, negativePlane);
-    cross3(shadowPlane, this.vecIntersection, vecSun);
+    cross3(vecIntersection, positivePlane, negativePlane);
+    cross3(shadowPlane, vecIntersection, vecSun);
     normalize3(shadowPlane);
     
     float dotPN = (float)dot3(positivePlane, negativePlane);
@@ -122,146 +122,146 @@ public class ClippingHelperShadow
   
   public void init()
   {
-    float[] matPrj = this.b;
-    float[] matMdv = this.c;
-    float[] matMP = this.d;
+    float[] matPrj = b;
+    float[] matMdv = c;
+    float[] matMP = d;
     System.arraycopy(Shaders.faProjection, 0, matPrj, 0, 16);
     System.arraycopy(Shaders.faModelView, 0, matMdv, 0, 16);
     
     SMath.multiplyMat4xMat4(matMP, matMdv, matPrj);
     
-    assignPlane(this.a[0], matMP[3] - matMP[0], matMP[7] - matMP[4], matMP[11] - matMP[8], matMP[15] - matMP[12]);
+    assignPlane(a[0], matMP[3] - matMP[0], matMP[7] - matMP[4], matMP[11] - matMP[8], matMP[15] - matMP[12]);
     
-    assignPlane(this.a[1], matMP[3] + matMP[0], matMP[7] + matMP[4], matMP[11] + matMP[8], matMP[15] + matMP[12]);
+    assignPlane(a[1], matMP[3] + matMP[0], matMP[7] + matMP[4], matMP[11] + matMP[8], matMP[15] + matMP[12]);
     
-    assignPlane(this.a[2], matMP[3] + matMP[1], matMP[7] + matMP[5], matMP[11] + matMP[9], matMP[15] + matMP[13]);
+    assignPlane(a[2], matMP[3] + matMP[1], matMP[7] + matMP[5], matMP[11] + matMP[9], matMP[15] + matMP[13]);
     
-    assignPlane(this.a[3], matMP[3] - matMP[1], matMP[7] - matMP[5], matMP[11] - matMP[9], matMP[15] - matMP[13]);
+    assignPlane(a[3], matMP[3] - matMP[1], matMP[7] - matMP[5], matMP[11] - matMP[9], matMP[15] - matMP[13]);
     
-    assignPlane(this.a[4], matMP[3] - matMP[2], matMP[7] - matMP[6], matMP[11] - matMP[10], matMP[15] - matMP[14]);
+    assignPlane(a[4], matMP[3] - matMP[2], matMP[7] - matMP[6], matMP[11] - matMP[10], matMP[15] - matMP[14]);
     
-    assignPlane(this.a[5], matMP[3] + matMP[2], matMP[7] + matMP[6], matMP[11] + matMP[10], matMP[15] + matMP[14]);
+    assignPlane(a[5], matMP[3] + matMP[2], matMP[7] + matMP[6], matMP[11] + matMP[10], matMP[15] + matMP[14]);
     
     float[] vecSun = Shaders.shadowLightPositionVector;
-    float test0 = (float)dot3(this.a[0], vecSun);
-    float test1 = (float)dot3(this.a[1], vecSun);
-    float test2 = (float)dot3(this.a[2], vecSun);
-    float test3 = (float)dot3(this.a[3], vecSun);
-    float test4 = (float)dot3(this.a[4], vecSun);
-    float test5 = (float)dot3(this.a[5], vecSun);
+    float test0 = (float)dot3(a[0], vecSun);
+    float test1 = (float)dot3(a[1], vecSun);
+    float test2 = (float)dot3(a[2], vecSun);
+    float test3 = (float)dot3(a[3], vecSun);
+    float test4 = (float)dot3(a[4], vecSun);
+    float test5 = (float)dot3(a[5], vecSun);
     
-    this.shadowClipPlaneCount = 0;
+    shadowClipPlaneCount = 0;
     if (test0 >= 0.0F)
     {
-      copyPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[0]);
+      copyPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[0]);
       if (test0 > 0.0F)
       {
         if (test2 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[0], this.a[2], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[0], a[2], vecSun);
         }
         if (test3 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[0], this.a[3], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[0], a[3], vecSun);
         }
         if (test4 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[0], this.a[4], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[0], a[4], vecSun);
         }
         if (test5 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[0], this.a[5], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[0], a[5], vecSun);
         }
       }
     }
     if (test1 >= 0.0F)
     {
-      copyPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[1]);
+      copyPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[1]);
       if (test1 > 0.0F)
       {
         if (test2 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[1], this.a[2], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[1], a[2], vecSun);
         }
         if (test3 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[1], this.a[3], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[1], a[3], vecSun);
         }
         if (test4 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[1], this.a[4], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[1], a[4], vecSun);
         }
         if (test5 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[1], this.a[5], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[1], a[5], vecSun);
         }
       }
     }
     if (test2 >= 0.0F)
     {
-      copyPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[2]);
+      copyPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[2]);
       if (test2 > 0.0F)
       {
         if (test0 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[2], this.a[0], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[2], a[0], vecSun);
         }
         if (test1 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[2], this.a[1], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[2], a[1], vecSun);
         }
         if (test4 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[2], this.a[4], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[2], a[4], vecSun);
         }
         if (test5 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[2], this.a[5], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[2], a[5], vecSun);
         }
       }
     }
     if (test3 >= 0.0F)
     {
-      copyPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[3]);
+      copyPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[3]);
       if (test3 > 0.0F)
       {
         if (test0 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[3], this.a[0], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[3], a[0], vecSun);
         }
         if (test1 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[3], this.a[1], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[3], a[1], vecSun);
         }
         if (test4 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[3], this.a[4], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[3], a[4], vecSun);
         }
         if (test5 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[3], this.a[5], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[3], a[5], vecSun);
         }
       }
     }
     if (test4 >= 0.0F)
     {
-      copyPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[4]);
+      copyPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[4]);
       if (test4 > 0.0F)
       {
         if (test0 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[4], this.a[0], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[4], a[0], vecSun);
         }
         if (test1 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[4], this.a[1], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[4], a[1], vecSun);
         }
         if (test2 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[4], this.a[2], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[4], a[2], vecSun);
         }
         if (test3 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[4], this.a[3], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[4], a[3], vecSun);
         }
       }
     }
     if (test5 >= 0.0F)
     {
-      copyPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[5]);
+      copyPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[5]);
       if (test5 > 0.0F)
       {
         if (test0 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[5], this.a[0], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[5], a[0], vecSun);
         }
         if (test1 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[5], this.a[1], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[5], a[1], vecSun);
         }
         if (test2 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[5], this.a[2], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[5], a[2], vecSun);
         }
         if (test3 < 0.0F) {
-          makeShadowPlane(this.shadowClipPlanes[(this.shadowClipPlaneCount++)], this.a[5], this.a[3], vecSun);
+          makeShadowPlane(shadowClipPlanes[(shadowClipPlaneCount++)], a[5], a[3], vecSun);
         }
       }
     }

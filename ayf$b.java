@@ -5,7 +5,7 @@ class ayf$b
 {
   public ayf$b(ayf paramayf, ave ☃)
   {
-    super(☃, paramayf.l, paramayf.m, 32, paramayf.m - 64, 10);
+    super(☃, l, m, 32, m - 64, 10);
     
     b(false);
   }
@@ -29,14 +29,14 @@ class ayf$b
   
   protected void a()
   {
-    this.u.c();
+    u.c();
   }
   
   protected void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
     mw ☃ = (mw)na.c.get(☃);
-    this.u.c(ayf.a(this.u), ☃.e().c(), ☃ + 2, ☃ + 1, ☃ % 2 == 0 ? 16777215 : 9474192);
-    String ☃ = ☃.a(ayf.b(this.u).a(☃));
-    this.u.c(ayf.c(this.u), ☃, ☃ + 2 + 213 - ayf.d(this.u).a(☃), ☃ + 1, ☃ % 2 == 0 ? 16777215 : 9474192);
+    u.c(ayf.a(u), ☃.e().c(), ☃ + 2, ☃ + 1, ☃ % 2 == 0 ? 16777215 : 9474192);
+    String ☃ = ☃.a(ayf.b(u).a(☃));
+    u.c(ayf.c(u), ☃, ☃ + 2 + 213 - ayf.d(u).a(☃), ☃ + 1, ☃ % 2 == 0 ? 16777215 : 9474192);
   }
 }

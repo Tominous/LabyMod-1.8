@@ -9,10 +9,10 @@ class axz$a
   public axz$a(axz paramaxz, int ☃, int ☃, int ☃, bpg ☃, boolean ☃)
   {
     super(☃, ☃, ☃, ☃ ? 310 : 150, 20, "");
-    this.r = ☃;
-    this.s = bnq.a("soundCategory." + ☃.a(), new Object[0]);
-    this.j = (this.s + ": " + paramaxz.a(☃));
-    this.o = axz.a(paramaxz).a(☃);
+    r = ☃;
+    s = bnq.a("soundCategory." + ☃.a(), new Object[0]);
+    j = (s + ": " + paramaxz.a(☃));
+    o = axz.a(paramaxz).a(☃);
   }
   
   protected int a(boolean ☃)
@@ -22,32 +22,32 @@ class axz$a
   
   protected void b(ave ☃, int ☃, int ☃)
   {
-    if (!this.m) {
+    if (!m) {
       return;
     }
-    if (this.p)
+    if (p)
     {
-      this.o = ((☃ - (this.h + 4)) / (this.f - 8));
-      this.o = ns.a(this.o, 0.0F, 1.0F);
-      ☃.t.a(this.r, this.o);
-      ☃.t.b();
-      this.j = (this.s + ": " + this.q.a(this.r));
+      o = ((☃ - (h + 4)) / (f - 8));
+      o = ns.a(o, 0.0F, 1.0F);
+      t.a(r, o);
+      t.b();
+      j = (s + ": " + q.a(r));
     }
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    b(this.h + (int)(this.o * (this.f - 8)), this.i, 0, 66, 4, 20);
-    b(this.h + (int)(this.o * (this.f - 8)) + 4, this.i, 196, 66, 4, 20);
+    b(h + (int)(o * (f - 8)), i, 0, 66, 4, 20);
+    b(h + (int)(o * (f - 8)) + 4, i, 196, 66, 4, 20);
   }
   
   public boolean c(ave ☃, int ☃, int ☃)
   {
     if (super.c(☃, ☃, ☃))
     {
-      this.o = ((☃ - (this.h + 4)) / (this.f - 8));
-      this.o = ns.a(this.o, 0.0F, 1.0F);
-      ☃.t.a(this.r, this.o);
-      ☃.t.b();
-      this.j = (this.s + ": " + this.q.a(this.r));
-      this.p = true;
+      o = ((☃ - (h + 4)) / (f - 8));
+      o = ns.a(o, 0.0F, 1.0F);
+      t.a(r, o);
+      t.b();
+      j = (s + ": " + q.a(r));
+      p = true;
       return true;
     }
     return false;
@@ -57,11 +57,11 @@ class axz$a
   
   public void a(int ☃, int ☃)
   {
-    if (this.p)
+    if (p)
     {
-      float ☃ = this.r == bpg.a ? 1.0F : axz.a(this.q).a(this.r);
-      this.q.j.W().a(bpf.a(new jy("gui.button.press"), 1.0F));
+      float ☃ = r == bpg.a ? 1.0F : axz.a(q).a(r);
+      q.j.W().a(bpf.a(new jy("gui.button.press"), 1.0F));
     }
-    this.p = false;
+    p = false;
   }
 }

@@ -11,6 +11,6 @@ final class o$6
       return false;
     }
     lf ☃ = (lf)☃;
-    return ((this.a <= -1) || (☃.bB >= this.a)) && ((this.b <= -1) || (☃.bB <= this.b));
+    return ((a <= -1) || (bB >= a)) && ((b <= -1) || (bB <= b));
   }
 }

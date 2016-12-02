@@ -20,26 +20,26 @@ class bqj$1
   {
     if (ErrorCode.succeeded(☃))
     {
-      this.a.u = ☃;
-      this.a.a(bqj.a.d);
+      a.u = ☃;
+      a.a(bqj.a.d);
     }
     else
     {
-      this.a.u.data = "";
-      this.a.a(bqj.a.b);
+      a.u.data = "";
+      a.a(bqj.a.b);
       
       String ☃ = ErrorCode.getString(☃);
-      this.a.d(String.format("RequestAuthTokenDoneCallback got failure: %s", new Object[] { ☃ }));
+      a.d(String.format("RequestAuthTokenDoneCallback got failure: %s", new Object[] { ☃ }));
     }
     try
     {
-      if (this.a.c != null) {
-        this.a.c.a(☃, ☃);
+      if (a.c != null) {
+        a.c.a(☃, ☃);
       }
     }
     catch (Exception ☃)
     {
-      this.a.d(☃.toString());
+      a.d(☃.toString());
     }
   }
   
@@ -47,27 +47,27 @@ class bqj$1
   {
     if (ErrorCode.succeeded(☃))
     {
-      this.a.v = ☃;
-      this.a.a(bqj.a.f);
-      this.a.m = true;
+      a.v = ☃;
+      a.a(bqj.a.f);
+      a.m = true;
     }
     else
     {
-      this.a.a(bqj.a.b);
-      this.a.m = false;
+      a.a(bqj.a.b);
+      a.m = false;
       
       String ☃ = ErrorCode.getString(☃);
-      this.a.d(String.format("LoginCallback got failure: %s", new Object[] { ☃ }));
+      a.d(String.format("LoginCallback got failure: %s", new Object[] { ☃ }));
     }
     try
     {
-      if (this.a.c != null) {
-        this.a.c.a(☃);
+      if (a.c != null) {
+        a.c.a(☃);
       }
     }
     catch (Exception ☃)
     {
-      this.a.d(☃.toString());
+      a.d(☃.toString());
     }
   }
   
@@ -75,38 +75,38 @@ class bqj$1
   {
     if (ErrorCode.succeeded(☃))
     {
-      this.a.s = ☃;
+      a.s = ☃;
       
-      this.a.t = this.a.s.getDefaultServer();
+      a.t = a.s.getDefaultServer();
       
-      this.a.a(bqj.a.h);
+      a.a(bqj.a.h);
       try
       {
-        if (this.a.c != null) {
-          this.a.c.a(☃);
+        if (a.c != null) {
+          a.c.a(☃);
         }
       }
       catch (Exception ☃)
       {
-        this.a.d(☃.toString());
+        a.d(☃.toString());
       }
     }
     else
     {
       String ☃ = ErrorCode.getString(☃);
-      this.a.d(String.format("IngestListCallback got failure: %s", new Object[] { ☃ }));
+      a.d(String.format("IngestListCallback got failure: %s", new Object[] { ☃ }));
       
-      this.a.a(bqj.a.e);
+      a.a(bqj.a.e);
     }
   }
   
   public void getUserInfoCallback(ErrorCode ☃, UserInfo ☃)
   {
-    this.a.w = ☃;
+    a.w = ☃;
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
-      this.a.d(String.format("UserInfoDoneCallback got failure: %s", new Object[] { ☃ }));
+      a.d(String.format("UserInfoDoneCallback got failure: %s", new Object[] { ☃ }));
     }
   }
   
@@ -114,28 +114,28 @@ class bqj$1
   {
     if (ErrorCode.succeeded(☃))
     {
-      this.a.x = ☃;
+      a.x = ☃;
       try
       {
-        if (this.a.c != null) {
-          this.a.c.a(☃);
+        if (a.c != null) {
+          a.c.a(☃);
         }
       }
       catch (Exception ☃)
       {
-        this.a.d(☃.toString());
+        a.d(☃.toString());
       }
     }
     else
     {
       String ☃ = ErrorCode.getString(☃);
-      this.a.e(String.format("StreamInfoDoneCallback got failure: %s", new Object[] { ☃ }));
+      a.e(String.format("StreamInfoDoneCallback got failure: %s", new Object[] { ☃ }));
     }
   }
   
   public void getArchivingStateCallback(ErrorCode ☃, ArchivingState ☃)
   {
-    this.a.y = ☃;
+    a.y = ☃;
     if (ErrorCode.failed(☃)) {}
   }
   
@@ -144,7 +144,7 @@ class bqj$1
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
-      this.a.e(String.format("RunCommercialCallback got failure: %s", new Object[] { ☃ }));
+      a.e(String.format("RunCommercialCallback got failure: %s", new Object[] { ☃ }));
     }
   }
   
@@ -153,7 +153,7 @@ class bqj$1
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
-      this.a.e(String.format("SetStreamInfoCallback got failure: %s", new Object[] { ☃ }));
+      a.e(String.format("SetStreamInfoCallback got failure: %s", new Object[] { ☃ }));
     }
   }
   
@@ -162,17 +162,17 @@ class bqj$1
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
-      this.a.d(String.format("GameNameListCallback got failure: %s", new Object[] { ☃ }));
+      a.d(String.format("GameNameListCallback got failure: %s", new Object[] { ☃ }));
     }
     try
     {
-      if (this.a.c != null) {
-        this.a.c.a(☃, ☃ == null ? new GameInfo[0] : ☃.list);
+      if (a.c != null) {
+        a.c.a(☃, ☃ == null ? new GameInfo[0] : list);
       }
     }
     catch (Exception ☃)
     {
-      this.a.d(☃.toString());
+      a.d(☃.toString());
     }
   }
   
@@ -180,7 +180,7 @@ class bqj$1
   {
     FrameBuffer ☃ = FrameBuffer.lookupBuffer(☃);
     
-    this.a.k.add(☃);
+    a.k.add(☃);
   }
   
   public void startCallback(ErrorCode ☃)
@@ -189,34 +189,34 @@ class bqj$1
     {
       try
       {
-        if (this.a.c != null) {
-          this.a.c.b();
+        if (a.c != null) {
+          a.c.b();
         }
       }
       catch (Exception ☃)
       {
-        this.a.d(☃.toString());
+        a.d(☃.toString());
       }
-      this.a.a(bqj.a.k);
+      a.a(bqj.a.k);
     }
     else
     {
-      this.a.q = null;
-      this.a.r = null;
+      a.q = null;
+      a.r = null;
       
-      this.a.a(bqj.a.i);
+      a.a(bqj.a.i);
       try
       {
-        if (this.a.c != null) {
-          this.a.c.c(☃);
+        if (a.c != null) {
+          a.c.c(☃);
         }
       }
       catch (Exception ☃)
       {
-        this.a.d(☃.toString());
+        a.d(☃.toString());
       }
       String ☃ = ErrorCode.getString(☃);
-      this.a.d(String.format("startCallback got failure: %s", new Object[] { ☃ }));
+      a.d(String.format("startCallback got failure: %s", new Object[] { ☃ }));
     }
   }
   
@@ -224,32 +224,32 @@ class bqj$1
   {
     if (ErrorCode.succeeded(☃))
     {
-      this.a.q = null;
-      this.a.r = null;
+      a.q = null;
+      a.r = null;
       
-      this.a.P();
+      a.P();
       try
       {
-        if (this.a.c != null) {
-          this.a.c.c();
+        if (a.c != null) {
+          a.c.c();
         }
       }
       catch (Exception ☃)
       {
-        this.a.d(☃.toString());
+        a.d(☃.toString());
       }
-      if (this.a.m) {
-        this.a.a(bqj.a.i);
+      if (a.m) {
+        a.a(bqj.a.i);
       } else {
-        this.a.a(bqj.a.b);
+        a.a(bqj.a.b);
       }
     }
     else
     {
-      this.a.a(bqj.a.i);
+      a.a(bqj.a.i);
       
       String ☃ = ErrorCode.getString(☃);
-      this.a.d(String.format("stopCallback got failure: %s", new Object[] { ☃ }));
+      a.d(String.format("stopCallback got failure: %s", new Object[] { ☃ }));
     }
   }
   
@@ -258,7 +258,7 @@ class bqj$1
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
-      this.a.d(String.format("sendActionMetaDataCallback got failure: %s", new Object[] { ☃ }));
+      a.d(String.format("sendActionMetaDataCallback got failure: %s", new Object[] { ☃ }));
     }
   }
   
@@ -267,7 +267,7 @@ class bqj$1
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
-      this.a.d(String.format("sendStartSpanMetaDataCallback got failure: %s", new Object[] { ☃ }));
+      a.d(String.format("sendStartSpanMetaDataCallback got failure: %s", new Object[] { ☃ }));
     }
   }
   
@@ -276,7 +276,7 @@ class bqj$1
     if (ErrorCode.failed(☃))
     {
       String ☃ = ErrorCode.getString(☃);
-      this.a.d(String.format("sendEndSpanMetaDataCallback got failure: %s", new Object[] { ☃ }));
+      a.d(String.format("sendEndSpanMetaDataCallback got failure: %s", new Object[] { ☃ }));
     }
   }
 }

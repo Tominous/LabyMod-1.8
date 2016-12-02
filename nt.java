@@ -1,6 +1,7 @@
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import de.labystudio.modapi.ModAPI;
+import de.labystudio.modapi.events.RenderMainEvent;
 import de.labystudio.modapi.events.RenderWorldEvent;
 import java.util.Collections;
 import java.util.Iterator;
@@ -19,56 +20,49 @@ public class nt
   private String e = "";
   private final Map<String, Long> f = Maps.newHashMap();
   
-  private void labymod(String name)
-  {
-    if ((name.equals("litParticles")) && (ModAPI.enabled())) {
-      ModAPI.callEvent(new RenderWorldEvent());
-    }
-  }
-  
   public void a()
   {
-    this.f.clear();
-    this.e = "";
-    this.c.clear();
+    f.clear();
+    e = "";
+    c.clear();
   }
   
   public void a(String name)
   {
-    if (this.a)
+    if (a)
     {
-      if (this.e.length() > 0) {
-        this.e += ".";
+      if (e.length() > 0) {
+        e += ".";
       }
-      this.e += name;
-      this.c.add(this.e);
-      this.d.add(Long.valueOf(System.nanoTime()));
+      e += name;
+      c.add(e);
+      d.add(Long.valueOf(System.nanoTime()));
     }
   }
   
   public void b()
   {
-    if (this.a)
+    if (a)
     {
       long i = System.nanoTime();
-      long j = ((Long)this.d.remove(this.d.size() - 1)).longValue();
-      this.c.remove(this.c.size() - 1);
+      long j = ((Long)d.remove(d.size() - 1)).longValue();
+      c.remove(c.size() - 1);
       long k = i - j;
-      if (this.f.containsKey(this.e)) {
-        this.f.put(this.e, Long.valueOf(((Long)this.f.get(this.e)).longValue() + k));
+      if (f.containsKey(e)) {
+        f.put(e, Long.valueOf(((Long)f.get(e)).longValue() + k));
       } else {
-        this.f.put(this.e, Long.valueOf(k));
+        f.put(e, Long.valueOf(k));
       }
       if (k > 100000000L) {
-        b.warn("Something's taking too long! '" + this.e + "' took aprox " + k / 1000000.0D + " ms");
+        b.warn("Something's taking too long! '" + e + "' took aprox " + k / 1000000.0D + " ms");
       }
-      this.e = (!this.c.isEmpty() ? (String)this.c.get(this.c.size() - 1) : "");
+      e = (!c.isEmpty() ? (String)c.get(c.size() - 1) : "");
     }
   }
   
   public List<nt.a> b(String p_76321_1_)
   {
-    if (!this.a) {
+    if (!a) {
       return null;
     }
     long i = this.f.containsKey("root") ? ((Long)this.f.get("root")).longValue() : 0L;
@@ -116,14 +110,22 @@ public class nt
   
   public void c(String name)
   {
-    labymod(name);
+    if (ModAPI.enabled())
+    {
+      if (name.equals("outline")) {
+        ModAPI.callEvent(new RenderWorldEvent());
+      }
+      if (name.equals("weather")) {
+        ModAPI.callEvent(new RenderMainEvent());
+      }
+    }
     b();
     a(name);
   }
   
   public String c()
   {
-    return this.c.size() == 0 ? "[UNKNOWN]" : (String)this.c.get(this.c.size() - 1);
+    return c.size() == 0 ? "[UNKNOWN]" : (String)c.get(c.size() - 1);
   }
   
   public static final class a
@@ -135,19 +137,19 @@ public class nt
     
     public a(String p_i1554_1_, double p_i1554_2_, double p_i1554_4_)
     {
-      this.c = p_i1554_1_;
-      this.a = p_i1554_2_;
-      this.b = p_i1554_4_;
+      c = p_i1554_1_;
+      a = p_i1554_2_;
+      b = p_i1554_4_;
     }
     
     public int a(a p_compareTo_1_)
     {
-      return p_compareTo_1_.a > this.a ? 1 : p_compareTo_1_.a < this.a ? -1 : p_compareTo_1_.c.compareTo(this.c);
+      return a > a ? 1 : a < a ? -1 : c.compareTo(c);
     }
     
     public int a()
     {
-      return (this.c.hashCode() & 0xAAAAAA) + 4473924;
+      return (c.hashCode() & 0xAAAAAA) + 4473924;
     }
   }
 }

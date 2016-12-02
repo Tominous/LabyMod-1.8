@@ -8,7 +8,7 @@ public class aid
   protected aid()
   {
     super(arm.k, arn.D);
-    j(this.M.b().a(a, Integer.valueOf(0)));
+    j(M.b().a(a, Integer.valueOf(0)));
     a(true);
     float ☃ = 0.5F;
     a(0.5F - ☃, 0.0F, 0.5F - ☃, 0.5F + ☃, 0.25F, 0.5F + ☃);
@@ -38,15 +38,15 @@ public class aid
   
   public void a(adm ☃, cj ☃, alz ☃, float ☃, int ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     int ☃ = 1;
     if (((Integer)☃.b(a)).intValue() >= 3)
     {
-      ☃ = 2 + ☃.s.nextInt(3);
+      ☃ = 2 + s.nextInt(3);
       if (☃ > 0) {
-        ☃ += ☃.s.nextInt(☃ + 1);
+        ☃ += s.nextInt(☃ + 1);
       }
     }
     for (int ☃ = 0; ☃ < ☃; ☃++) {

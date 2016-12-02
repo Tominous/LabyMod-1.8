@@ -15,68 +15,68 @@ public class bgg
   {
     p_i46232_1_ = fixVertexData(p_i46232_1_);
     
-    this.a = p_i46232_1_;
-    this.b = p_i46232_2_;
-    this.c = p_i46232_3_;
+    a = p_i46232_1_;
+    b = p_i46232_2_;
+    c = p_i46232_3_;
     this.sprite = sprite;
   }
   
   public bmi getSprite()
   {
-    if (this.sprite == null) {
-      this.sprite = getSpriteByUv(a());
+    if (sprite == null) {
+      sprite = getSpriteByUv(a());
     }
-    return this.sprite;
+    return sprite;
   }
   
   public String toString()
   {
-    return "vertex: " + this.a.length / 7 + ", tint: " + this.b + ", facing: " + this.c + ", sprite: " + this.sprite;
+    return "vertex: " + a.length / 7 + ", tint: " + b + ", facing: " + c + ", sprite: " + sprite;
   }
   
   public bgg(int[] p_i46232_1_, int p_i46232_2_, cq p_i46232_3_)
   {
     p_i46232_1_ = fixVertexData(p_i46232_1_);
     
-    this.a = p_i46232_1_;
-    this.b = p_i46232_2_;
-    this.c = p_i46232_3_;
+    a = p_i46232_1_;
+    b = p_i46232_2_;
+    c = p_i46232_3_;
   }
   
   public int[] a()
   {
-    return this.a;
+    return a;
   }
   
   public boolean b()
   {
-    return this.b != -1;
+    return b != -1;
   }
   
   public int c()
   {
-    return this.b;
+    return b;
   }
   
   public cq d()
   {
-    return this.c;
+    return c;
   }
   
   public int[] getVertexDataSingle()
   {
-    if (this.vertexDataSingle == null) {
-      this.vertexDataSingle = makeVertexDataSingle(a(), getSprite());
+    if (vertexDataSingle == null) {
+      vertexDataSingle = makeVertexDataSingle(a(), getSprite());
     }
-    return this.vertexDataSingle;
+    return vertexDataSingle;
   }
   
   private static int[] makeVertexDataSingle(int[] vd, bmi sprite)
   {
     int[] vdSingle = (int[])vd.clone();
     
-    int ku = sprite.sheetWidth / sprite.c();
-    int kv = sprite.sheetHeight / sprite.d();
+    int ku = sheetWidth / sprite.c();
+    int kv = sheetHeight / sprite.d();
     
     int step = vdSingle.length / 4;
     for (int i = 0; i < 4; i++)

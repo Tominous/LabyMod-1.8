@@ -8,6 +8,6 @@ final class ase$2
   public String a()
     throws Exception
   {
-    return String.valueOf(this.a);
+    return String.valueOf(a);
   }
 }

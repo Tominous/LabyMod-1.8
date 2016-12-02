@@ -1,7 +1,6 @@
 package de.zockermaus.ts3;
 
 import de.labystudio.labymod.LabyMod;
-import de.labystudio.labymod.Timings;
 import de.labystudio.utils.Color;
 import de.labystudio.utils.DrawUtils;
 import de.labystudio.utils.Utils;
@@ -18,11 +17,9 @@ public class TeamSpeak
   
   public static void enable()
   {
-    Timings.start("Enable TeamSpeak");
     setupChat();
     new TeamSpeakController(new TeamSpeakListener());
     overlayWindows = new TeamSpeakOverlayWindow();
-    Timings.stop("Enable TeamSpeak");
   }
   
   public static void setupChat()
@@ -294,8 +291,8 @@ public class TeamSpeak
     if (!defaultScreen)
     {
       defaultScreen = true;
-      xSplit = LabyMod.getInstance().draw.getWidth() / 3 * 2;
-      ySplit = LabyMod.getInstance().draw.getHeight() / 4 * 3;
+      xSplit = getInstancedraw.getWidth() / 3 * 2;
+      ySplit = getInstancedraw.getHeight() / 4 * 3;
     }
   }
   

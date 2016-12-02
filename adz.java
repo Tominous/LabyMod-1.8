@@ -17,15 +17,15 @@ public class adz
     
     public a(int ☃, int ☃)
     {
-      this.c = ☃;
-      this.d = ☃;
-      adz.a(adz.this).a(this.a, ☃ << 4, ☃ << 4, 16, 16);
-      adz.a(adz.this).a(this.b, ☃ << 4, ☃ << 4, 16, 16, false);
+      c = ☃;
+      d = ☃;
+      adz.a(adz.this).a(a, ☃ << 4, ☃ << 4, 16, 16);
+      adz.a(adz.this).a(b, ☃ << 4, ☃ << 4, 16, 16, false);
     }
     
     public ady a(int ☃, int ☃)
     {
-      return this.b[(☃ & 0xF | (☃ & 0xF) << 4)];
+      return b[(☃ & 0xF | (☃ & 0xF) << 4)];
     }
   }
   
@@ -34,7 +34,7 @@ public class adz
   
   public adz(aec ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public adz.a a(int ☃, int ☃)
@@ -42,14 +42,14 @@ public class adz
     ☃ >>= 4;
     ☃ >>= 4;
     long ☃ = ☃ & 0xFFFFFFFF | (☃ & 0xFFFFFFFF) << 32;
-    adz.a ☃ = (adz.a)this.c.a(☃);
+    adz.a ☃ = (adz.a)c.a(☃);
     if (☃ == null)
     {
       ☃ = new adz.a(☃, ☃);
-      this.c.a(☃, ☃);
-      this.d.add(☃);
+      c.a(☃, ☃);
+      d.add(☃);
     }
-    ☃.e = MinecraftServer.az();
+    e = MinecraftServer.az();
     return ☃;
   }
   
@@ -65,19 +65,19 @@ public class adz
   public void a()
   {
     long ☃ = MinecraftServer.az();
-    long ☃ = ☃ - this.b;
+    long ☃ = ☃ - b;
     if ((☃ > 7500L) || (☃ < 0L))
     {
-      this.b = ☃;
-      for (int ☃ = 0; ☃ < this.d.size(); ☃++)
+      b = ☃;
+      for (int ☃ = 0; ☃ < d.size(); ☃++)
       {
-        adz.a ☃ = (adz.a)this.d.get(☃);
-        long ☃ = ☃ - ☃.e;
+        adz.a ☃ = (adz.a)d.get(☃);
+        long ☃ = ☃ - e;
         if ((☃ > 30000L) || (☃ < 0L))
         {
-          this.d.remove(☃--);
-          long ☃ = ☃.c & 0xFFFFFFFF | (☃.d & 0xFFFFFFFF) << 32;
-          this.c.d(☃);
+          d.remove(☃--);
+          long ☃ = c & 0xFFFFFFFF | (d & 0xFFFFFFFF) << 32;
+          c.d(☃);
         }
       }
     }
@@ -85,6 +85,6 @@ public class adz
   
   public ady[] c(int ☃, int ☃)
   {
-    return a(☃, ☃).b;
+    return ab;
   }
 }

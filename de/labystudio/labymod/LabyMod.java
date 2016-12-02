@@ -17,9 +17,6 @@ import bdb;
 import bdc;
 import bde;
 import bew;
-import bmj;
-import bmk;
-import bml;
 import com.mojang.authlib.GameProfile;
 import de.labystudio.capes.CapeManager;
 import de.labystudio.chat.ChatHandler;
@@ -29,11 +26,11 @@ import de.labystudio.chat.EnumAlertType;
 import de.labystudio.chat.LabyModPlayer;
 import de.labystudio.cosmetic.CosmeticManager;
 import de.labystudio.downloader.ModInfoDownloader;
-import de.labystudio.downloader.UserCapeDownloader;
+import de.labystudio.downloader.UserCapesDownloader;
+import de.labystudio.downloader.UserCosmeticsDownloader;
 import de.labystudio.gui.GuiAchievementMod;
 import de.labystudio.hologram.Manager;
 import de.labystudio.language.L;
-import de.labystudio.listener.Brawl;
 import de.labystudio.listener.Games;
 import de.labystudio.listener.GommeHD;
 import de.labystudio.listener.HiveMC;
@@ -53,6 +50,9 @@ import de.labystudio.spotify.SpotifyManager;
 import de.labystudio.utils.Allowed;
 import de.labystudio.utils.AutoTextLoader;
 import de.labystudio.utils.Color;
+import de.labystudio.utils.ControllerInput;
+import de.labystudio.utils.CrashFix;
+import de.labystudio.utils.Debug;
 import de.labystudio.utils.DrawUtils;
 import de.labystudio.utils.FilterLoader;
 import de.labystudio.utils.FriendsLoader;
@@ -61,7 +61,9 @@ import de.labystudio.utils.ModGui;
 import de.labystudio.utils.ServerBroadcast;
 import de.labystudio.utils.ServiceStatus;
 import de.labystudio.utils.StatsLoader;
+import de.labystudio.utils.SupportLog;
 import de.labystudio.utils.TextureManager;
+import de.labystudio.utils.Utils;
 import de.zockermaus.ts3.TeamSpeak;
 import de.zockermaus.ts3.TeamSpeakController;
 import em;
@@ -91,6 +93,7 @@ public class LabyMod
   extends avp
 {
   public Logger logger = LogManager.getLogger();
+  public static Random random = new Random();
   public String ip = "";
   public int port = 25565;
   public String gameMode = "";
@@ -107,16 +110,12 @@ public class LabyMod
   public ArrayList<String> gameTypes = new ArrayList();
   public ArrayList<String> serverMSG = new ArrayList();
   public HashMap<String, String> serverPing = new HashMap();
+  public ArrayList<String> dumb = new ArrayList();
+  public String dumb_str = null;
   public HashMap<String, ServiceStatus> mojangStatus = new HashMap();
   public ArrayList<String> commandQueue = new ArrayList();
   public ArrayList<bdc> onlinePlayers = new ArrayList();
   public boolean chat = true;
-  public String gommeHDSearch = "";
-  public boolean gommeHDSeachAllowed = false;
-  public boolean gommeHDSound = false;
-  public int gommeHDSeachPartySize = 0;
-  public String gommeHDSearchBlacklist = "";
-  public boolean gommeHDAutoJoin = false;
   public GuiAchievementMod achievementGui;
   public String line1 = "";
   public String line2 = "";
@@ -124,6 +123,10 @@ public class LabyMod
   public axu lastScreen;
   public boolean joined = false;
   public boolean intentionally;
+  private int min;
+  private long secondLoop;
+  public int removeChallenge = 0;
+  private long lastReport = 0L;
   public boolean out = false;
   public axu onlineChat;
   public DrawUtils draw;
@@ -137,13 +140,6 @@ public class LabyMod
   public jy texture_mic = new jy("mic.png");
   public jy texture_box = new jy("box.png");
   public jy texture_teamSpeak = new jy("teamspeak.png");
-  public jy texture_minecon2011 = new jy("capes/MINECON2011.png");
-  public jy texture_minecon2012 = new jy("capes/MINECON2012.png");
-  public jy texture_minecon2013 = new jy("capes/MINECON2013.png");
-  public jy texture_minecon2015 = new jy("capes/MINECON2015.png");
-  public jy texture_labycape1 = new jy("capes/LABYCAPE1.png");
-  public jy texture_labycape2 = new jy("capes/LABYCAPE2.png");
-  public jy texture_labycape3 = new jy("capes/LABYCAPE3.png");
   public ChatHandler handler;
   public TextureManager textureManager;
   public boolean chatVisibility = false;
@@ -162,9 +158,10 @@ public class LabyMod
   private CapeManager capeManager;
   private CosmeticManager cosmeticManager;
   private SpotifyManager spotifyManager;
+  public String LIVETICKER = "";
+  public boolean supportApply;
   private static LabyMod instance;
   private static boolean overwrite = false;
-  int min;
   
   public static LabyMod getInstance()
   {
@@ -179,11 +176,11 @@ public class LabyMod
     if (!overwrite)
     {
       overwrite = true;
-      ave.A().q = new GuiIngameMod(ave.A());
+      Aq = new GuiIngameMod(ave.A());
     }
     try
     {
-      Display.setTitle("Minecraft 1.8.8 | LabyMod " + Source.mod_VersionName);
+      Display.setTitle("Minecraft 1.8.8 | LabyMod 2.7.97");
     }
     catch (Exception e)
     {
@@ -194,57 +191,69 @@ public class LabyMod
   public LabyMod()
   {
     instance = this;
+    SupportLog.overwrite();
     System.out.println("[LabyMod] Loading labymod..");
     L.load();
-    Timings.start("Enable LabyMod");
-    this.mc = ave.A();
-    this.textureManager = new TextureManager();
-    this.draw = new DrawUtils();
+    mc = ave.A();
+    textureManager = new TextureManager();
+    draw = new DrawUtils();
     ConfigManager.loadProperties(true);
-    this.achievementGui = new GuiAchievementMod(this.mc);
-    this.client = new Client();
-    this.handler = new ChatHandler();
-    this.handler.initDatabase();
-    this.client.init();
-    runLoop();
+    achievementGui = new GuiAchievementMod(mc);
+    client = new Client();
+    handler = new ChatHandler();
+    
+    client.init();
     FriendsLoader.loadFriends();
     FilterLoader.loadFilters();
     AutoTextLoader.load();
-    StatsLoader.loadstats();
-    this.capeManager = new CapeManager();
-    this.cosmeticManager = new CosmeticManager();
+    capeManager = new CapeManager();
+    cosmeticManager = new CosmeticManager();
     if (SystemUtils.IS_OS_WINDOWS) {
-      this.spotifyManager = new SpotifyManager();
+      spotifyManager = new SpotifyManager();
     }
-    if (ConfigManager.settings == null)
-    {
-      Timings.stop("Enable LabyMod");
+    if (ConfigManager.settings == null) {
       return;
     }
-    if (ConfigManager.settings.teamSpeak.booleanValue()) {
+    if (settingsteamSpeak) {
       TeamSpeak.enable();
     }
-    new UserCapeDownloader();
+    Debug.debug("[LabyMod] Download all cape and cosmetic infos..");
     new ModInfoDownloader();
+    new UserCosmeticsDownloader();
+    new UserCapesDownloader();
+    Debug.debug("[LabyMod] Loaded " + getCosmeticManager().getOnlineCosmetics().size() + " cosmetics!");
+    Debug.debug("[LabyMod] Loaded " + getCapeManager().countUserCapes() + " capes!");
     ModManager.loadMods();
     if (!LOGO.isLogo(getPlayerName())) {
-      ConfigManager.settings.logomode = false;
+      settingslogomode = false;
     }
+    updaterHook();
+    StatsLoader.loadstats();
+    if (settingscontroller) {
+      ControllerInput.init();
+    }
+    System.out.println("[LabyMod] LabyMod Version 2.7.97 for Minecraft 1.8.8 loaded!");
+  }
+  
+  private void updaterHook()
+  {
     Runtime.getRuntime().addShutdownHook(new Thread()
     {
       public void run()
       {
         try
         {
+          CrashFix.fixOptifineCrash();
           System.out.println("[LabyMod] Checking if you are using an outdated LabyMod version..");
-          if (LabyMod.getInstance().autoUpdaterLatestVersionId > LabyMod.getInstance().autoUpdaterCurrentVersionId)
+          if (getInstanceautoUpdaterLatestVersionId > getInstanceautoUpdaterCurrentVersionId)
           {
-            System.out.println("[LabyMod] You are outdated! You are still on Version v" + Source.mod_VersionName + ", the latest version v" + LabyMod.this.latestVersionName + " will now be installed..");
-            Runtime.getRuntime().exec("java -jar LabyMod/Updater.jar");
+            System.out.println("[LabyMod] You are outdated! You are still on Version v2.7.97, the latest version v" + latestVersionName + " will now be installed..");
+            
+            Runtime.getRuntime().exec("java -jar LabyMod/Updater-1.8.8.jar");
           }
           else
           {
-            System.out.println("[LabyMod] You are using the latest LabyMod version v" + Source.mod_VersionName);
+            System.out.println("[LabyMod] You are using the latest LabyMod version v2.7.97");
           }
         }
         catch (Exception e)
@@ -253,33 +262,31 @@ public class LabyMod
         }
       }
     });
-    Timings.stop("Enable LabyMod");
-    System.out.println("[LabyMod] Loaded!");
   }
   
   public SpotifyManager getSpotifyManager()
   {
-    return this.spotifyManager;
+    return spotifyManager;
   }
   
   public CapeManager getCapeManager()
   {
-    return this.capeManager;
+    return capeManager;
   }
   
   public CosmeticManager getCosmeticManager()
   {
-    return this.cosmeticManager;
+    return cosmeticManager;
   }
   
   public Client getClient()
   {
-    return this.client;
+    return client;
   }
   
   public float getPartialTicks()
   {
-    return this.partialTicks;
+    return partialTicks;
   }
   
   public void setPartialTicks(float partialTicks)
@@ -289,7 +296,7 @@ public class LabyMod
   
   public ServerBroadcast getServerBroadcast()
   {
-    return this.serverBroadcast;
+    return serverBroadcast;
   }
   
   public void setServerBroadcast(ServerBroadcast serverBroadcast)
@@ -299,43 +306,43 @@ public class LabyMod
   
   public boolean isUpdateAvailable()
   {
-    if (getInstance().autoUpdaterLatestVersionId == 0) {
+    if (getInstanceautoUpdaterLatestVersionId == 0) {
       return false;
     }
-    return getInstance().autoUpdaterLatestVersionId > getInstance().autoUpdaterCurrentVersionId;
+    return getInstanceautoUpdaterLatestVersionId > getInstanceautoUpdaterCurrentVersionId;
   }
   
   public void resetIP()
   {
-    if (((this.ip == null) || (!this.ip.replace(" ", "").isEmpty())) && 
-      (this.client.getClientConnection().getState() == EnumConnectionState.PLAY)) {
-      this.client.getClientConnection().sendPacket(new PacketPlayServerStatus(" ", 0));
+    if (((ip == null) || (!ip.replace(" ", "").isEmpty())) && 
+      (client.getClientConnection().getState() == EnumConnectionState.PLAY)) {
+      client.getClientConnection().sendPacket(new PacketPlayServerStatus(" ", 0));
     }
-    this.ip = "";
-    this.gameMode = "";
-    this.joined = false;
+    ip = "";
+    gameMode = "";
+    joined = false;
   }
   
   public void resetMod()
   {
-    Timings.start("Reset Mod");
-    this.scroll = 0;
-    this.lavaTime = 0;
-    this.playerPing = 0;
-    this.lavaTime = 0;
-    this.nickname = "";
+    scroll = 0;
+    lavaTime = 0;
+    playerPing = 0;
+    lavaTime = 0;
+    nickname = "";
     Manager.holograms.clear();
     
     ChatHandler.resetTyping();
-    if (this.gameMode == null) {
-      this.gameMode = "";
+    if (gameMode == null) {
+      gameMode = "";
     }
-    if (!this.gameMode.isEmpty())
+    if (!gameMode.isEmpty())
     {
-      this.gameMode = "";
+      gameMode = "";
       ChatHandler.updateGameMode("");
     }
-    Brawl.resetHG();
+    header = null;
+    footer = null;
     JumpLeague.resetJumpLeague();
     GommeHD.resetGommeHD();
     Timolia.resetTimolia();
@@ -343,47 +350,43 @@ public class LabyMod
     Games.reset();
     Revayd.reset();
     HiveMC.reset();
-    Timings.stop("Reset Mod");
   }
   
   public String getHeader()
   {
-    if ((this.header == null) || (this.header.c() == null)) {
+    if ((header == null) || (header.c() == null)) {
       return "";
     }
-    return this.header.c();
+    return header.c();
   }
   
   public String getFooter()
   {
-    if ((this.footer == null) || (this.footer.c() == null)) {
+    if ((footer == null) || (footer.c() == null)) {
       return "";
     }
-    return this.footer.c();
+    return footer.c();
   }
   
   public void sendCommand(String send)
   {
     if (isInGame()) {
-      this.mc.h.e("/" + send);
+      mc.h.e("/" + send);
     }
   }
   
   public void sendChatMessage(String message)
   {
     if (isInGame()) {
-      this.mc.h.e(message);
+      mc.h.e(message);
     }
   }
   
   public void displayMessageInChat(String message)
   {
-    ave.A().q.d().a(new fa(message));
-  }
-  
-  public void sendMessage(String friendName, String message, EnumAlertType type)
-  {
-    this.achievementGui.displayMessage(friendName, message, type);
+    if (Aq != null) {
+      Aq.d().a(new fa(message));
+    }
   }
   
   public void sendMessage(String prefix, LabyModPlayer player, String message)
@@ -392,35 +395,40 @@ public class LabyMod
     if (Client.isBusy()) {
       return;
     }
-    if (!this.client.hasNotifications(player)) {
+    if (!client.hasNotifications(player)) {
       return;
     }
-    if (ConfigManager.settings.chatAlertType)
+    if (settingschatAlertType)
     {
-      if (ConfigManager.settings.alertsChat) {
-        getInstance().displayMessageInChat(ClientConnection.chatPrefix + Color.cl("e") + prefix + player.getName() + Color.cl("7") + " " + message);
+      if (settingsalertsChat) {
+        getInstance().displayMessageInChat(ClientConnection.chatPrefix + Color.cl("e") + prefix + player
+          .getName() + Color.cl("7") + " " + message);
       }
     }
     else {
-      this.achievementGui.displayMessage(prefix + player.getName(), message, EnumAlertType.CHAT);
+      achievementGui.displayMessage(prefix + player.getName(), message, EnumAlertType.CHAT);
     }
   }
   
   public String getPlayerName()
   {
-    return this.mc.L().c();
+    return mc.L().c();
   }
   
   public UUID getPlayerUUID()
   {
-    return this.mc.L().e().getId();
+    UUID uuid = mc.L().e().getId();
+    if (uuid == null) {
+      return UUID.randomUUID();
+    }
+    return uuid;
   }
   
   public boolean isInGame()
   {
     try
     {
-      return (this.mc.h != null) && (this.mc != null);
+      return (mc != null) && (mc.h != null) && (mc.h != null);
     }
     catch (Exception error) {}
     return false;
@@ -428,8 +436,8 @@ public class LabyMod
   
   public boolean isChatGUI()
   {
-    if (this.mc.m != null) {
-      return this.mc.m.toString().contains("GuiChat");
+    if (mc.m != null) {
+      return mc.m.toString().contains("GuiChat");
     }
     return false;
   }
@@ -439,77 +447,72 @@ public class LabyMod
     if (ModAPI.enabled()) {
       ModAPI.callEvent(new GameTickEvent());
     }
+    ClickCounter.tick();
+    SupportLog.listenKey();
+    if (settingscontroller) {
+      ControllerInput.tick();
+    }
+    secondLoop += 1L;
+    if (secondLoop >= 20L)
+    {
+      secondLoop = 0L;
+      secondLoop();
+    }
   }
-  
-  public void runLoop()
-  {
-    new ModThread().start();
-  }
-  
-  public int removeChallenge = 0;
   
   public void secondLoop()
   {
-    Timings.start("LabyMod Tick");
-    this.min += 1;
-    if ((getSpotifyManager() != null) && (ConfigManager.settings.spotfiyTrack)) {
+    min += 1;
+    if ((getSpotifyManager() != null) && (settingsspotfiyTrack)) {
       getSpotifyManager().updateTitle();
     }
     if (isInGame())
     {
-      this.onlinePlayers.clear();
-      this.onlinePlayers.addAll(this.mc.h.a.d());
-      if (ConfigManager.settings.lavaTime) {
-        if ((this.mc.f.a(this.mc.h.aR().b(0.0D, -0.4000000059604645D, 0.0D).d(0.001D, 0.001D, 0.001D), arm.i, this.mc.h)) && (this.mc.h.at()))
+      onlinePlayers.clear();
+      onlinePlayers.addAll(mc.h.a.d());
+      if (settingslavaTime) {
+        if ((mc.f.a(mc.h.aR().b(0.0D, -0.4000000059604645D, 0.0D).d(0.001D, 0.001D, 0.001D), arm.i, mc.h)) && (mc.h.at()))
         {
-          this.lavaTime += 1;
-          this.removeChallenge = 0;
+          lavaTime += 1;
+          removeChallenge = 0;
         }
         else
         {
-          this.removeChallenge += 1;
-          if (this.removeChallenge > 2)
+          removeChallenge += 1;
+          if (removeChallenge > 2)
           {
-            this.lavaTime = 0;
-            this.removeChallenge = 0;
+            lavaTime = 0;
+            removeChallenge = 0;
           }
         }
       }
     }
     else
     {
-      this.isAFK = false;
+      isAFK = false;
     }
-    if (this.mc.m == null) {
+    if (mc.m == null) {
       ChatHandler.updateIsWriting(null, "");
     }
-    if (getCapeManager() != null) {
-      getCapeManager().onTickInGame();
-    }
-    if (this.min >= 60)
+    if (min >= 60)
     {
-      this.min = 0;
+      min = 0;
       minutesLoop();
     }
-    Brawl.loop();
     GommeHD.loop();
-    if ((ConfigManager.settings.teamSpeak.booleanValue()) && (TeamSpeakController.getInstance() != null)) {
+    if ((settingsteamSpeak) && (TeamSpeakController.getInstance() != null)) {
       TeamSpeakController.getInstance().tick();
     }
-    if (Brawl.startingTime > 0) {
-      Brawl.startingTime -= 1;
-    }
-    Timings.stop("LabyMod Tick");
   }
   
   public void minutesLoop()
   {
-    if (new Random().nextInt(6) == 0) {
+    if (random.nextInt(6) == 0) {
       getClient().getClientConnection().reconnect();
     }
   }
   
-  public void openWebpage(String urlString)
+  public boolean openWebpage(String urlString)
   {
     try
     {
@@ -518,27 +521,29 @@ public class LabyMod
         urlString = "http://" + urlString;
       }
       Desktop.getDesktop().browse(new URL(urlString).toURI());
+      return true;
     }
     catch (Exception e)
     {
       e.printStackTrace();
     }
+    return false;
   }
   
   public void connectToServer(String address)
   {
-    if (ave.A().f != null)
+    if (Af != null)
     {
-      ave.A().f.H();
+      Af.H();
       ave.A().a((bdb)null);
     }
-    ave.A().a(new awz(new aya(), this.mc, new bde("Server", address, false)));
+    ave.A().a(new awz(new aya(), mc, new bde("Server", address, false)));
   }
   
   public Boolean hasFocus()
   {
     if (isInGame()) {
-      return Boolean.valueOf(this.mc.w);
+      return Boolean.valueOf(mc.w);
     }
     return Boolean.valueOf(false);
   }
@@ -555,9 +560,9 @@ public class LabyMod
   public void back()
   {
     if (isInGame()) {
-      this.mc.a(new axp());
+      mc.a(new axp());
     } else {
-      this.mc.a(new azh(null));
+      mc.a(new azh(null));
     }
   }
   
@@ -565,15 +570,15 @@ public class LabyMod
   {
     resetMod();
     if (address == null) {
-      this.ip = "";
+      ip = "";
     } else {
-      this.ip = address;
+      ip = address;
     }
     this.port = port;
-    ConfigManager.settings.last_Server = address;
+    settingslast_Server = address;
     Allowed.update(address);
-    if (this.client.getClientConnection().getState() != EnumConnectionState.OFFLINE) {
-      this.client.getClientConnection().sendPacket(new PacketPlayServerStatus(address, port));
+    if (client.getClientConnection().getState() != EnumConnectionState.OFFLINE) {
+      client.getClientConnection().sendPacket(new PacketPlayServerStatus(address, port));
     }
   }
   
@@ -597,30 +602,12 @@ public class LabyMod
   
   public void overlay(int mouseX, int mouseY)
   {
-    Timings.start("Overlay LabyMod");
-    if ((this.achievementGui != null) && (
-      (!ConfigManager.settings.chatAlertType) || (!ConfigManager.settings.teamSpeakAlertTypeChat) || (!ConfigManager.settings.mojangStatusChat))) {
-      this.achievementGui.updateAchievementWindow();
-    }
-    if (getCapeManager().getDelete().size() != 0)
-    {
-      ArrayList<jy> list = new ArrayList();
-      list.addAll(getCapeManager().getDelete());
-      for (jy res : list)
-      {
-        bmk itextureobject = ave.A().P().b(res);
-        if (itextureobject != null)
-        {
-          System.out.println("[LabyMod] Remove cape " + res.a() + "");
-          bml.a(itextureobject.b());
-        }
-      }
-      getCapeManager().getDelete().clear();
+    if ((achievementGui != null) && (
+      (!settingschatAlertType) || (!settingsteamSpeakAlertTypeChat) || (!settingsmojangStatusChat))) {
+      achievementGui.updateAchievementWindow();
     }
     DrawUtils.updateMouse(mouseX, mouseY);
     KeyListener.handle();
-    Timings.draw();
-    Timings.stop("Overlay LabyMod");
   }
   
   public void onRender()
@@ -629,28 +616,38 @@ public class LabyMod
     {
       JumpLeague.isFallingDown();
       ModGui.smoothFPS();
-      if (!this.joined)
+      if (!joined)
       {
-        this.joined = true;
+        joined = true;
         onJoin();
       }
+    }
+    if (settingscontroller) {
+      ControllerInput.mouseTick();
     }
   }
   
   public void onJoin()
   {
     if (ModAPI.enabled()) {
-      ModAPI.callEvent(new JoinedServerEvent(this.ip, this.port));
+      ModAPI.callEvent(new JoinedServerEvent(ip, port));
     }
-    if ((!this.mc.F()) && 
-      (!getInstance().commandQueue.isEmpty())) {
-      getInstance().sendCommand((String)getInstance().commandQueue.get(0));
+    if ((!mc.F()) && 
+      (!getInstancecommandQueue.isEmpty())) {
+      getInstance().sendCommand((String)getInstancecommandQueue.get(0));
     }
     em packetBuffer = new em(Unpooled.buffer());
-    packetBuffer.a("LabyMod v" + Source.mod_VersionName);
-    this.mc.u().a(new im("LABYMOD", packetBuffer));
-    if (this.chatPacketUpdate) {
-      displayMessageInChat(Color.cl("c") + "LabyMod is outdated!" + Color.cl("7") + " Download the latest version " + Color.cl("e") + "v" + this.latestVersionName + Color.cl("7") + " at " + Color.cl("9") + Source.url_Update + "");
+    packetBuffer.a("LabyMod v2.7.97");
+    mc.u().a(new im("LABYMOD", packetBuffer));
+    if (chatPacketUpdate) {
+      displayMessageInChat(Color.cl("c") + "LabyMod is outdated!" + Color.cl("7") + " Download the latest version " + 
+        Color.cl("e") + "v" + latestVersionName + Color.cl("7") + " at " + 
+        Color.cl("9") + "https://LabyMod.net" + "");
+    }
+    if (ip.toLowerCase().contains("bessererange.tk"))
+    {
+      displayMessageInChat(Color.cl("4") + Color.cl("l") + "Du glaubst doch nicht wirklich,");
+      displayMessageInChat(Color.cl("4") + Color.cl("l") + "dass dir diese IP einen Vorteil bringt, oder?");
     }
   }
   
@@ -669,7 +666,12 @@ public class LabyMod
         for (String key : list.keySet())
         {
           Allowed.set(key, ((Boolean)list.get(key)).booleanValue());
-          ave.A().q.d().a(new fa(Color.cl("c") + "The " + Color.cl("e") + key + Color.cl("c") + " function was " + ((Boolean)list.get(key)).toString().replace("true", new StringBuilder().append(Color.cl("a")).append("enabled").toString()).replace("false", new StringBuilder().append(Color.cl("4")).append("disabled").toString()) + Color.cl("c") + " by the server."));
+          Aq.d()
+            .a(new fa(
+            Color.cl("c") + "The " + Color.cl("e") + key + Color.cl("c") + " function was " + 
+            ((Boolean)list.get(key)).toString().replace("true", new StringBuilder().append(Color.cl("a")).append("enabled").toString())
+            .replace("false", new StringBuilder().append(Color.cl("4")).append("disabled").toString()) + 
+            Color.cl("c") + " by the server."));
         }
       }
     }
@@ -678,5 +680,46 @@ public class LabyMod
       Map<String, Boolean> list;
       error.printStackTrace();
     }
+  }
+  
+  public boolean onSendChatMessage(String msg)
+  {
+    String m = msg.toLowerCase();
+    if ((m.startsWith("/capereport")) || (m.startsWith("/reportcape")))
+    {
+      if (msg.contains(" "))
+      {
+        if (lastReport < System.currentTimeMillis())
+        {
+          final String user = msg.split(" ")[1];
+          new Thread(new Runnable()
+          {
+            public void run()
+            {
+              try
+              {
+                lastReport = (System.currentTimeMillis() + 20000L);
+                displayMessageInChat(Utils.jsonPost("http://api.labymod.net/php/capeReport.php", "reporter=" + getPlayerName() + "&capeowner=" + user));
+              }
+              catch (Exception e)
+              {
+                e.printStackTrace();
+              }
+            }
+          })
+          
+            .start();
+        }
+        else
+        {
+          displayMessageInChat(Color.cl("c") + "You've just reported a cape, please wait for a short while..");
+        }
+      }
+      else {
+        displayMessageInChat(Color.cl("c") + msg + " <player>");
+      }
+      return false;
+    }
+    return true;
   }
 }

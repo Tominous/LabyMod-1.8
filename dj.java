@@ -32,11 +32,11 @@ public class dj
             String ☃ = ☃[0];
             String ☃ = a.matcher(☃[1]).replaceAll("%$1s");
             
-            this.d.put(☃, ☃);
+            d.put(☃, ☃);
           }
         }
       }
-      this.e = System.currentTimeMillis();
+      e = System.currentTimeMillis();
     }
     catch (IOException localIOException) {}
   }
@@ -48,9 +48,9 @@ public class dj
   
   public static synchronized void a(Map<String, String> ☃)
   {
-    c.d.clear();
-    c.d.putAll(☃);
-    c.e = System.currentTimeMillis();
+    cd.clear();
+    cd.putAll(☃);
+    ce = System.currentTimeMillis();
   }
   
   public synchronized String a(String ☃)
@@ -71,17 +71,17 @@ public class dj
   
   private String c(String ☃)
   {
-    String ☃ = (String)this.d.get(☃);
+    String ☃ = (String)d.get(☃);
     return ☃ == null ? ☃ : ☃;
   }
   
   public synchronized boolean b(String ☃)
   {
-    return this.d.containsKey(☃);
+    return d.containsKey(☃);
   }
   
   public long c()
   {
-    return this.e;
+    return e;
   }
 }

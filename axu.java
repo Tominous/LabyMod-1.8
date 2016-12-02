@@ -58,25 +58,22 @@ public abstract class axu
     if (ModAPI.enabled()) {
       ModAPI.callEvent(new RenderScreenOverlayEvent(this, mouseX, mouseY));
     }
-    for (int i = 0; i < this.n.size(); i++) {
-      ((avs)this.n.get(i)).a(this.j, mouseX, mouseY);
+    for (int i = 0; i < n.size(); i++) {
+      ((avs)n.get(i)).a(this.j, mouseX, mouseY);
     }
-    for (int j = 0; j < this.o.size(); j++) {
-      ((avy)this.o.get(j)).a(this.j, mouseX, mouseY);
+    for (int j = 0; j < o.size(); j++) {
+      ((avy)o.get(j)).a(this.j, mouseX, mouseY);
     }
   }
   
   protected void a(char typedChar, int keyCode)
     throws IOException
   {
-    if (ModAPI.enabled()) {
-      ModAPI.callEvent(new KeyTypedScreenEvent(this, typedChar, keyCode));
-    }
     if (keyCode == 1)
     {
-      this.j.a((axu)null);
-      if (this.j.m == null) {
-        this.j.n();
+      j.a((axu)null);
+      if (j.m == null) {
+        j.n();
       }
     }
   }
@@ -108,10 +105,10 @@ public abstract class axu
   
   protected void a(zx stack, int x, int y)
   {
-    List<String> list = stack.a(this.j.h, this.j.t.y);
+    List<String> list = stack.a(j.h, j.t.y);
     for (int i = 0; i < list.size(); i++) {
       if (i == 0) {
-        list.set(i, stack.u().e + (String)list.get(i));
+        list.set(i, ue + (String)list.get(i));
       } else {
         list.set(i, a.h + (String)list.get(i));
       }
@@ -119,12 +116,12 @@ public abstract class axu
     a(list, x, y);
   }
   
-  protected void a(String tabName, int mouseX, int mouseY)
+  public void a(String tabName, int mouseX, int mouseY)
   {
     a(Arrays.asList(new String[] { tabName }), mouseX, mouseY);
   }
   
-  protected void a(List<String> textLines, int x, int y)
+  public void a(List<String> textLines, int x, int y)
   {
     if (!textLines.isEmpty())
     {
@@ -135,7 +132,7 @@ public abstract class axu
       int i = 0;
       for (String s : textLines)
       {
-        int j = this.q.a(s);
+        int j = q.a(s);
         if (j > i) {
           i = j;
         }
@@ -149,11 +146,11 @@ public abstract class axu
       if (l1 + i > this.l) {
         l1 -= 28 + i;
       }
-      if (i2 + k + 6 > this.m) {
-        i2 = this.m - k - 6;
+      if (i2 + k + 6 > m) {
+        i2 = m - k - 6;
       }
-      this.e = 300.0F;
-      this.k.a = 300.0F;
+      e = 300.0F;
+      ka = 300.0F;
       int l = -267386864;
       a(l1 - 3, i2 - 4, l1 + i + 3, i2 - 3, l, l);
       a(l1 - 3, i2 + k + 3, l1 + i + 3, i2 + k + 4, l, l);
@@ -169,14 +166,14 @@ public abstract class axu
       for (int k1 = 0; k1 < textLines.size(); k1++)
       {
         String s1 = (String)textLines.get(k1);
-        this.q.a(s1, l1, i2, -1);
+        q.a(s1, l1, i2, -1);
         if (k1 == 0) {
           i2 += 2;
         }
         i2 += 10;
       }
-      this.e = 0.0F;
-      this.k.a = 0.0F;
+      e = 0.0F;
+      ka = 0.0F;
       bfl.e();
       bfl.j();
       avc.b();
@@ -208,7 +205,7 @@ public abstract class axu
       }
       else if (hoverevent.a() == ew.a.d)
       {
-        if (this.j.t.y) {
+        if (j.t.y) {
           try
           {
             eb nbtbase1 = ed.a(hoverevent.b().c());
@@ -251,7 +248,7 @@ public abstract class axu
           String s1 = (statbase instanceof mq) ? ((mq)statbase).f() : null;
           List<String> list = Lists.newArrayList(new String[] { ichatcomponent.d(), ichatcomponent1.d() });
           if (s1 != null) {
-            list.addAll(this.q.c(s1, 150));
+            list.addAll(q.c(s1, 150));
           }
           a(list, p_175272_2_, p_175272_3_);
         }
@@ -282,7 +279,7 @@ public abstract class axu
     {
       if (clickevent.a() == et.a.a)
       {
-        if (!this.j.t.o) {
+        if (!j.t.o) {
           return false;
         }
         try
@@ -295,10 +292,10 @@ public abstract class axu
           if (!f.contains(s.toLowerCase())) {
             throw new URISyntaxException(clickevent.b(), "Unsupported protocol: " + s.toLowerCase());
           }
-          if (this.j.t.p)
+          if (j.t.p)
           {
-            this.t = uri;
-            this.j.a(new aww(this, clickevent.b(), 31102009, false));
+            t = uri;
+            j.a(new aww(this, clickevent.b(), 31102009, false));
           }
           else
           {
@@ -325,9 +322,9 @@ public abstract class axu
       }
       else if (clickevent.a() == et.a.d)
       {
-        ChatUserInfo chatuserinfo = this.j.Y().e(clickevent.b());
+        ChatUserInfo chatuserinfo = j.Y().e(clickevent.b());
         if (chatuserinfo != null) {
-          this.j.a(new bab(this.j.Y(), chatuserinfo));
+          j.a(new bab(j.Y(), chatuserinfo));
         } else {
           a.error("Tried to handle twitch user but couldn't find them!");
         }
@@ -349,16 +346,18 @@ public abstract class axu
   public void b(String msg, boolean addToChat)
   {
     if (addToChat) {
-      this.j.q.d().a(msg);
+      j.q.d().a(msg);
     }
-    if (ModAPI.enabled())
-    {
-      if (!((SendChatMessageEvent)ModAPI.callEvent(new SendChatMessageEvent(msg))).isCancelled()) {
-        this.j.h.e(msg);
+    if (LabyMod.getInstance().onSendChatMessage(msg)) {
+      if (ModAPI.enabled())
+      {
+        if (!((SendChatMessageEvent)ModAPI.callEvent(new SendChatMessageEvent(msg))).isCancelled()) {
+          j.h.e(msg);
+        }
       }
-    }
-    else {
-      this.j.h.e(msg);
+      else {
+        Ah.e(msg);
+      }
     }
   }
   
@@ -366,16 +365,16 @@ public abstract class axu
     throws IOException
   {
     if (ModAPI.enabled()) {
-      ModAPI.callEvent(new MouseClickedScreenEvent(this, mouseX, mouseY));
+      ModAPI.callEvent(new MouseClickedScreenEvent(this, mouseX, mouseY, mouseButton));
     }
     if (mouseButton == 0) {
-      for (int i = 0; i < this.n.size(); i++)
+      for (int i = 0; i < n.size(); i++)
       {
-        avs guibutton = (avs)this.n.get(i);
-        if (guibutton.c(this.j, mouseX, mouseY))
+        avs guibutton = (avs)n.get(i);
+        if (guibutton.c(j, mouseX, mouseY))
         {
-          this.h = guibutton;
-          guibutton.a(this.j.W());
+          h = guibutton;
+          guibutton.a(j.W());
           a(guibutton);
           ModAPI.callEvent(new ActionPerformedEvent(this, guibutton));
         }
@@ -385,10 +384,10 @@ public abstract class axu
   
   protected void b(int mouseX, int mouseY, int state)
   {
-    if ((this.h != null) && (state == 0))
+    if ((h != null) && (state == 0))
     {
-      this.h.a(mouseX, mouseY);
-      this.h = null;
+      h.a(mouseX, mouseY);
+      h = null;
     }
   }
   
@@ -400,15 +399,15 @@ public abstract class axu
   
   public void a(ave mc, int width, int height)
   {
-    this.j = mc;
-    this.k = mc.ag();
-    this.q = mc.k;
-    this.l = width;
-    this.m = height;
-    this.n.clear();
+    j = mc;
+    k = mc.ag();
+    q = k;
+    l = width;
+    m = height;
+    n.clear();
     b();
     if (ModAPI.enabled()) {
-      ModAPI.callEvent(new InitScreenEvent(this, this.n));
+      ModAPI.callEvent(new InitScreenEvent(this, n));
     }
   }
   
@@ -432,29 +431,29 @@ public abstract class axu
   public void k()
     throws IOException
   {
-    int i = Mouse.getEventX() * this.l / this.j.d;
-    int j = this.m - Mouse.getEventY() * this.m / this.j.e - 1;
+    int i = Mouse.getEventX() * this.l / jd;
+    int j = m - Mouse.getEventY() * m / je - 1;
     int k = Mouse.getEventButton();
     if (Mouse.getEventButtonState())
     {
-      if ((this.j.t.A) && (this.s++ > 0)) {
+      if ((jt.A) && (s++ > 0)) {
         return;
       }
       this.i = k;
-      this.r = ave.J();
+      r = ave.J();
       a(i, j, this.i);
     }
     else if (k != -1)
     {
-      if ((this.j.t.A) && (--this.s > 0)) {
+      if ((jt.A) && (--s > 0)) {
         return;
       }
       this.i = -1;
       b(i, j, k);
     }
-    else if ((this.i != -1) && (this.r > 0L))
+    else if ((this.i != -1) && (r > 0L))
     {
-      long l = ave.J() - this.r;
+      long l = ave.J() - r;
       a(i, j, this.i, l);
     }
   }
@@ -462,10 +461,14 @@ public abstract class axu
   public void l()
     throws IOException
   {
-    if (Keyboard.getEventKeyState()) {
+    if (Keyboard.getEventKeyState())
+    {
       a(Keyboard.getEventCharacter(), Keyboard.getEventKey());
+      if (ModAPI.enabled()) {
+        ModAPI.callEvent(new KeyTypedScreenEvent(this, Keyboard.getEventCharacter(), Keyboard.getEventKey()));
+      }
     }
-    this.j.Z();
+    j.Z();
   }
   
   public void e() {}
@@ -474,7 +477,7 @@ public abstract class axu
   
   public void c()
   {
-    if ((!ConfigManager.settings.background) && (LabyMod.getInstance().isInGame())) {
+    if ((!settingsbackground) && (LabyMod.getInstance().isInGame())) {
       return;
     }
     b_(0);
@@ -482,8 +485,8 @@ public abstract class axu
   
   public void b_(int tint)
   {
-    if (this.j.f != null) {
-      a(0, 0, this.l, this.m, -1072689136, -804253680);
+    if (j.f != null) {
+      a(0, 0, l, m, -1072689136, -804253680);
     } else {
       c(tint);
     }
@@ -495,13 +498,13 @@ public abstract class axu
     bfl.n();
     bfx tessellator = bfx.a();
     bfd worldrenderer = tessellator.c();
-    this.j.P().a(b);
+    j.P().a(b);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     float f = 32.0F;
     worldrenderer.a(7, bms.i);
-    worldrenderer.b(0.0D, this.m, 0.0D).a(0.0D, this.m / 32.0F + tint).b(64, 64, 64, 255).d();
-    worldrenderer.b(this.l, this.m, 0.0D).a(this.l / 32.0F, this.m / 32.0F + tint).b(64, 64, 64, 255).d();
-    worldrenderer.b(this.l, 0.0D, 0.0D).a(this.l / 32.0F, tint).b(64, 64, 64, 255).d();
+    worldrenderer.b(0.0D, m, 0.0D).a(0.0D, m / 32.0F + tint).b(64, 64, 64, 255).d();
+    worldrenderer.b(l, m, 0.0D).a(l / 32.0F, m / 32.0F + tint).b(64, 64, 64, 255).d();
+    worldrenderer.b(l, 0.0D, 0.0D).a(l / 32.0F, tint).b(64, 64, 64, 255).d();
     worldrenderer.b(0.0D, 0.0D, 0.0D).a(0.0D, tint).b(64, 64, 64, 255).d();
     tessellator.b();
   }
@@ -516,10 +519,10 @@ public abstract class axu
     if (id == 31102009)
     {
       if (result) {
-        a(this.t);
+        a(t);
       }
-      this.t = null;
-      this.j.a(this);
+      t = null;
+      j.a(this);
     }
   }
   

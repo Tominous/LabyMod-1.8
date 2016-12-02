@@ -14,7 +14,7 @@ public class vb
   public void a(ow ☃)
   {
     super.a(☃);
-    if (this.o.Q().b("doEntityDrops")) {
+    if (o.Q().b("doEntityDrops")) {
       a(zw.a(afi.ae), 1, 0.0F);
     }
   }

@@ -16,7 +16,7 @@ public class PacketDisconnect
   
   public void read(PacketBuf buf)
   {
-    this.reason = buf.readString();
+    reason = buf.readString();
   }
   
   public void write(PacketBuf buf)
@@ -36,6 +36,6 @@ public class PacketDisconnect
   
   public String getReason()
   {
-    return this.reason;
+    return reason;
   }
 }

@@ -9,12 +9,12 @@ public class bkv
   
   public bkv(bir p_i46118_1_)
   {
-    this.b = p_i46118_1_;
+    b = p_i46118_1_;
   }
   
   public void a(ug p_177210_1_, float p_177210_2_, float p_177210_3_, float p_177210_4_, float p_177210_5_, float p_177210_6_, float p_177210_7_, float p_177210_8_)
   {
-    this.b.a(a);
+    b.a(a);
     bfl.l();
     bfl.c();
     bfl.b(1, 1);
@@ -29,8 +29,8 @@ public class bkv
     if (Config.isShaders()) {
       Shaders.beginSpiderEyes();
     }
-    this.b.b().a(p_177210_1_, p_177210_2_, p_177210_3_, p_177210_5_, p_177210_6_, p_177210_7_, p_177210_8_);
-    this.b.a(p_177210_1_, p_177210_4_);
+    b.b().a(p_177210_1_, p_177210_2_, p_177210_3_, p_177210_5_, p_177210_6_, p_177210_7_, p_177210_8_);
+    b.a(p_177210_1_, p_177210_4_);
     bfl.k();
     bfl.d();
     bfl.c(515);

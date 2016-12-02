@@ -59,7 +59,7 @@ public class ai
     {
       ☃ = ☃.b(☃) ? 22 : 23;
       for (lf ☃ : MinecraftServer.N().ap().v()) {
-        ☃.a.a(new gi(☃, ☃));
+        a.a(new gi(☃, ☃));
       }
     }
   }

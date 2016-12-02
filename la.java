@@ -17,8 +17,8 @@ public class la
   
   public la(le ☃)
   {
-    this.b = ☃;
-    this.e = ☃.r().ap().d();
+    b = ☃;
+    e = ☃.r().ap().d();
   }
   
   public void a(pk ☃)
@@ -28,8 +28,8 @@ public class la
     {
       a(☃, 512, 2);
       ☃ = (lf)☃;
-      for (lh ☃ : this.c) {
-        if (☃.a != ☃) {
+      for (lh ☃ : c) {
+        if (a != ☃) {
           ☃.b(☃);
         }
       }
@@ -143,18 +143,18 @@ public class la
   
   public void a(pk ☃, int ☃, final int ☃, boolean ☃)
   {
-    if (☃ > this.e) {
-      ☃ = this.e;
+    if (☃ > e) {
+      ☃ = e;
     }
     try
     {
-      if (this.d.b(☃.F())) {
+      if (d.b(☃.F())) {
         throw new IllegalStateException("Entity is already tracked!");
       }
       lh ☃ = new lh(☃, ☃, ☃, ☃);
-      this.c.add(☃);
-      this.d.a(☃.F(), ☃);
-      ☃.b(this.b.j);
+      c.add(☃);
+      d.a(☃.F(), ☃);
+      ☃.b(b.j);
     }
     catch (Throwable ☃)
     {
@@ -177,7 +177,7 @@ public class la
       ☃.a(☃);
       
       c ☃ = ☃.a("Entity That Is Already Tracked");
-      ((lh)this.d.a(☃.F())).a.a(☃);
+      d.a(☃.F())).a.a(☃);
       try
       {
         throw new e(☃);
@@ -195,14 +195,14 @@ public class la
     if ((☃ instanceof lf))
     {
       ☃ = (lf)☃;
-      for (lh ☃ : this.c) {
+      for (lh ☃ : c) {
         ☃.a(☃);
       }
     }
-    lh ☃ = (lh)this.d.d(☃.F());
+    lh ☃ = (lh)d.d(☃.F());
     if (☃ != null)
     {
-      this.c.remove(☃);
+      c.remove(☃);
       ☃.a();
     }
   }
@@ -210,19 +210,19 @@ public class la
   public void a()
   {
     List<lf> ☃ = Lists.newArrayList();
-    for (lh ☃ : this.c)
+    for (lh ☃ : c)
     {
-      ☃.a(this.b.j);
-      if ((☃.n) && ((☃.a instanceof lf))) {
-        ☃.add((lf)☃.a);
+      ☃.a(b.j);
+      if ((n) && ((a instanceof lf))) {
+        ☃.add((lf)a);
       }
     }
     lf ☃;
     for (int ☃ = 0; ☃ < ☃.size(); ☃++)
     {
       ☃ = (lf)☃.get(☃);
-      for (lh ☃ : this.c) {
-        if (☃.a != ☃) {
+      for (lh ☃ : c) {
+        if (a != ☃) {
           ☃.b(☃);
         }
       }
@@ -231,9 +231,9 @@ public class la
   
   public void a(lf ☃)
   {
-    for (lh ☃ : this.c) {
-      if (☃.a == ☃) {
-        ☃.b(this.b.j);
+    for (lh ☃ : c) {
+      if (a == ☃) {
+        ☃.b(b.j);
       } else {
         ☃.b(☃);
       }
@@ -242,7 +242,7 @@ public class la
   
   public void a(pk ☃, ff ☃)
   {
-    lh ☃ = (lh)this.d.a(☃.F());
+    lh ☃ = (lh)d.a(☃.F());
     if (☃ != null) {
       ☃.a(☃);
     }
@@ -250,7 +250,7 @@ public class la
   
   public void b(pk ☃, ff ☃)
   {
-    lh ☃ = (lh)this.d.a(☃.F());
+    lh ☃ = (lh)d.a(☃.F());
     if (☃ != null) {
       ☃.b(☃);
     }
@@ -258,15 +258,15 @@ public class la
   
   public void b(lf ☃)
   {
-    for (lh ☃ : this.c) {
+    for (lh ☃ : c) {
       ☃.d(☃);
     }
   }
   
   public void a(lf ☃, amy ☃)
   {
-    for (lh ☃ : this.c) {
-      if ((☃.a != ☃) && (☃.a.ae == ☃.a) && (☃.a.ag == ☃.b)) {
+    for (lh ☃ : c) {
+      if ((a != ☃) && (a.ae == a) && (a.ag == b)) {
         ☃.b(☃);
       }
     }

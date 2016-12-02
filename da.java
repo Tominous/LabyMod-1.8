@@ -7,23 +7,23 @@ public class da
   
   public da(double ☃, double ☃, double ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
   }
   
   public double a()
   {
-    return this.a;
+    return a;
   }
   
   public double b()
   {
-    return this.b;
+    return b;
   }
   
   public double c()
   {
-    return this.c;
+    return c;
   }
 }

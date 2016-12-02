@@ -17,12 +17,12 @@ public class PacketPlayPlayerOnline
   
   public void read(PacketBuf buf)
   {
-    this.newOnlinePlayer = buf.readPlayer();
+    newOnlinePlayer = buf.readPlayer();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writePlayer(this.newOnlinePlayer);
+    buf.writePlayer(newOnlinePlayer);
   }
   
   public void handle(PacketHandler packetHandler)
@@ -32,6 +32,6 @@ public class PacketPlayPlayerOnline
   
   public LabyModPlayer getPlayer()
   {
-    return this.newOnlinePlayer;
+    return newOnlinePlayer;
   }
 }

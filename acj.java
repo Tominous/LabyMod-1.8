@@ -16,16 +16,16 @@ public enum acj
         return true;
       }
       yj ☃ = (yj)☃;
-      if (☃.b == 0) {
+      if (b == 0) {
         return this == f;
       }
-      if (☃.b == 2) {
+      if (b == 2) {
         return this == d;
       }
-      if (☃.b == 1) {
+      if (b == 1) {
         return this == e;
       }
-      if (☃.b == 3) {
+      if (b == 3) {
         return this == c;
       }
       return false;

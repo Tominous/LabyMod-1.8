@@ -12,15 +12,15 @@ public class HFNoiseTexture
   
   public HFNoiseTexture(int width, int height)
   {
-    this.texID = GL11.glGenTextures();
-    this.textureUnit = 15;
+    texID = GL11.glGenTextures();
+    textureUnit = 15;
     
     byte[] image = genHFNoiseImage(width, height);
     ByteBuffer data = BufferUtils.createByteBuffer(image.length);
     data.put(image);
     data.flip();
     
-    bfl.i(this.texID);
+    bfl.i(texID);
     GL11.glTexImage2D(3553, 0, 6407, width, height, 0, 6407, 5121, data);
     GL11.glTexParameteri(3553, 10242, 10497);
     GL11.glTexParameteri(3553, 10243, 10497);
@@ -32,13 +32,13 @@ public class HFNoiseTexture
   
   public int getID()
   {
-    return this.texID;
+    return texID;
   }
   
   public void destroy()
   {
-    bfl.h(this.texID);
-    this.texID = 0;
+    bfl.h(texID);
+    texID = 0;
   }
   
   private int random(int seed)

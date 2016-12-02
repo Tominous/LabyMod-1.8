@@ -24,33 +24,33 @@ public class BlockPosM
   public BlockPosM(int x, int y, int z, int level)
   {
     super(0, 0, 0);
-    this.mx = x;
-    this.my = y;
-    this.mz = z;
+    mx = x;
+    my = y;
+    mz = z;
     this.level = level;
   }
   
   public int n()
   {
-    return this.mx;
+    return mx;
   }
   
   public int o()
   {
-    return this.my;
+    return my;
   }
   
   public int p()
   {
-    return this.mz;
+    return mz;
   }
   
   public void setXyz(int x, int y, int z)
   {
-    this.mx = x;
-    this.my = y;
-    this.mz = z;
-    this.needsUpdate = true;
+    mx = x;
+    my = y;
+    mz = z;
+    needsUpdate = true;
   }
   
   public void setXyz(double xIn, double yIn, double zIn)
@@ -60,25 +60,25 @@ public class BlockPosM
   
   public cj a(cq facing)
   {
-    if (this.level <= 0) {
+    if (level <= 0) {
       return super.a(facing, 1);
     }
-    if (this.facings == null) {
-      this.facings = new BlockPosM[cq.n.length];
+    if (facings == null) {
+      facings = new BlockPosM[cq.n.length];
     }
-    if (this.needsUpdate) {
+    if (needsUpdate) {
       update();
     }
     int index = facing.a();
-    BlockPosM bpm = this.facings[index];
+    BlockPosM bpm = facings[index];
     if (bpm == null)
     {
-      int nx = this.mx + facing.g();
-      int ny = this.my + facing.h();
-      int nz = this.mz + facing.i();
+      int nx = mx + facing.g();
+      int ny = my + facing.h();
+      int nz = mz + facing.i();
       
-      bpm = new BlockPosM(nx, ny, nz, this.level - 1);
-      this.facings[index] = bpm;
+      bpm = new BlockPosM(nx, ny, nz, level - 1);
+      facings[index] = bpm;
     }
     return bpm;
   }
@@ -95,17 +95,17 @@ public class BlockPosM
   {
     for (int i = 0; i < 6; i++)
     {
-      BlockPosM bpm = this.facings[i];
+      BlockPosM bpm = facings[i];
       if (bpm != null)
       {
         cq facing = cq.n[i];
-        int nx = this.mx + facing.g();
-        int ny = this.my + facing.h();
-        int nz = this.mz + facing.i();
+        int nx = mx + facing.g();
+        int ny = my + facing.h();
+        int nz = mz + facing.i();
         bpm.setXyz(nx, ny, nz);
       }
     }
-    this.needsUpdate = false;
+    needsUpdate = false;
   }
   
   public static Iterable getAllInBoxMutable(cj from, cj to)
@@ -122,34 +122,34 @@ public class BlockPosM
           
           protected BlockPosM computeNext0()
           {
-            if (this.theBlockPosM == null)
+            if (theBlockPosM == null)
             {
-              this.theBlockPosM = new BlockPosM(BlockPosM.1.this.val$posFrom.n(), BlockPosM.1.this.val$posFrom.o(), BlockPosM.1.this.val$posFrom.p(), 3);
-              return this.theBlockPosM;
+              theBlockPosM = new BlockPosM(val$posFrom.n(), val$posFrom.o(), val$posFrom.p(), 3);
+              return theBlockPosM;
             }
-            if (this.theBlockPosM.equals(BlockPosM.1.this.val$posTo)) {
+            if (theBlockPosM.equals(val$posTo)) {
               return (BlockPosM)endOfData();
             }
-            int bx = this.theBlockPosM.n();
-            int by = this.theBlockPosM.o();
-            int bz = this.theBlockPosM.p();
-            if (bx < BlockPosM.1.this.val$posTo.n())
+            int bx = theBlockPosM.n();
+            int by = theBlockPosM.o();
+            int bz = theBlockPosM.p();
+            if (bx < val$posTo.n())
             {
               bx++;
             }
-            else if (by < BlockPosM.1.this.val$posTo.o())
+            else if (by < val$posTo.o())
             {
-              bx = BlockPosM.1.this.val$posFrom.n();
+              bx = val$posFrom.n();
               by++;
             }
-            else if (bz < BlockPosM.1.this.val$posTo.p())
+            else if (bz < val$posTo.p())
             {
-              bx = BlockPosM.1.this.val$posFrom.n();
-              by = BlockPosM.1.this.val$posFrom.o();
+              bx = val$posFrom.n();
+              by = val$posFrom.o();
               bz++;
             }
-            this.theBlockPosM.setXyz(bx, by, bz);
-            return this.theBlockPosM;
+            theBlockPosM.setXyz(bx, by, bz);
+            return theBlockPosM;
           }
           
           protected Object computeNext()

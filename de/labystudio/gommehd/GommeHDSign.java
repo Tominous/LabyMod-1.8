@@ -10,7 +10,6 @@ import bpf;
 import bpz;
 import cj;
 import cq;
-import de.labystudio.labymod.LabyMod;
 import de.labystudio.listener.GommeHD;
 import de.labystudio.utils.Color;
 import eu;
@@ -22,6 +21,15 @@ import jy;
 
 public class GommeHDSign
 {
+  public static String search = "";
+  public static boolean allowed = false;
+  public static boolean sound = false;
+  public static int partySize = 0;
+  public static String blacklist = "";
+  public static boolean autoJoin = false;
+  public static boolean nightMode = false;
+  private static jy soundLocation = new jy("mob.creeper.death");
+  
   public static boolean isGommeSign(ArrayList<String> text)
   {
     if (!GommeHD.isGommeHD()) {
@@ -42,12 +50,12 @@ public class GommeHDSign
   public static ArrayList<String> getText(aln sign)
   {
     ArrayList<String> text = new ArrayList();
-    avn var20 = ave.A().k;
+    avn var20 = Ak;
     byte var14 = 0;
-    for (int var15 = 0; var15 < sign.a.length; var15++) {
-      if (sign.a[var15] != null)
+    for (int var15 = 0; var15 < a.length; var15++) {
+      if (a[var15] != null)
       {
-        eu var16 = sign.a[var15];
+        eu var16 = a[var15];
         List var17 = avu.a(var16, 90, var20, false, true);
         String var18 = (var17 != null) && (var17.size() > 0) ? ((eu)var17.get(0)).d() : "";
         text.add(var18);
@@ -89,6 +97,18 @@ public class GommeHDSign
     return false;
   }
   
+  public static boolean isEmpty(ArrayList<String> text)
+  {
+    ArrayList<String> t = new ArrayList();
+    t.addAll(text);
+    if ((!t.isEmpty()) && 
+      (t.size() > 2) && (t.get(3) != null) && 
+      (Color.removeColor((String)t.get(3)).startsWith("0"))) {
+      return true;
+    }
+    return false;
+  }
+  
   public static String getMap(ArrayList<String> text)
   {
     ArrayList<String> t = new ArrayList();
@@ -102,7 +122,7 @@ public class GommeHDSign
   
   public static boolean size(ArrayList<String> text)
   {
-    if (LabyMod.getInstance().gommeHDSeachPartySize == 0) {
+    if (partySize == 0) {
       return true;
     }
     ArrayList<String> tt = new ArrayList();
@@ -116,7 +136,7 @@ public class GommeHDSign
         if (d.contains("/"))
         {
           String[] online = d.split("/");
-          if ((Integer.parseInt(online[1]) - Integer.parseInt(online[0]) >= LabyMod.getInstance().gommeHDSeachPartySize) && 
+          if ((Integer.parseInt(online[1]) - Integer.parseInt(online[0]) >= partySize) && 
             (tt.get(2) != null))
           {
             String t = Color.removeColor((String)tt.get(2));
@@ -124,7 +144,7 @@ public class GommeHDSign
             {
               String[] map = t.split(" ");
               String[] maxPlayers = map[1].split("x");
-              if (Integer.parseInt(maxPlayers[1]) >= LabyMod.getInstance().gommeHDSeachPartySize) {
+              if (Integer.parseInt(maxPlayers[1]) >= partySize) {
                 return true;
               }
             }
@@ -136,7 +156,10 @@ public class GommeHDSign
         }
       }
     }
-    catch (Exception localException) {}
+    catch (Exception error)
+    {
+      error.printStackTrace();
+    }
     return false;
   }
   
@@ -148,9 +171,9 @@ public class GommeHDSign
       String[] arrayOfString1;
       int i;
       String str1;
-      if ((!LabyMod.getInstance().gommeHDSearchBlacklist.isEmpty()) && (LabyMod.getInstance().gommeHDSearch.isEmpty()))
+      if ((!blacklist.isEmpty()) && (search.isEmpty()))
       {
-        arrayOfString1 = LabyMod.getInstance().gommeHDSearchBlacklist.toLowerCase().split(",");i = arrayOfString1.length;
+        arrayOfString1 = blacklist.toLowerCase().split(",");i = arrayOfString1.length;
         for (str1 = 0; str1 < i; str1++)
         {
           String l = arrayOfString1[str1];
@@ -160,13 +183,13 @@ public class GommeHDSign
         }
         return true;
       }
-      if (LabyMod.getInstance().gommeHDSearch.isEmpty()) {
+      if (search.isEmpty()) {
         return true;
       }
       String l;
-      if (LabyMod.getInstance().gommeHDSearchBlacklist.isEmpty())
+      if (blacklist.isEmpty())
       {
-        arrayOfString1 = LabyMod.getInstance().gommeHDSearch.toLowerCase().split(",");i = arrayOfString1.length;
+        arrayOfString1 = search.toLowerCase().split(",");i = arrayOfString1.length;
         for (str1 = 0; str1 < i; str1++)
         {
           l = arrayOfString1[str1];
@@ -178,7 +201,7 @@ public class GommeHDSign
       else
       {
         boolean result = false;
-        String[] arrayOfString2 = LabyMod.getInstance().gommeHDSearch.toLowerCase().split(",");str1 = arrayOfString2.length;
+        String[] arrayOfString2 = search.toLowerCase().split(",");str1 = arrayOfString2.length;
         for (l = 0; l < str1; l++)
         {
           String l = arrayOfString2[l];
@@ -186,7 +209,7 @@ public class GommeHDSign
             result = true;
           }
         }
-        arrayOfString2 = LabyMod.getInstance().gommeHDSearchBlacklist.toLowerCase().split(",");String str2 = arrayOfString2.length;
+        arrayOfString2 = blacklist.toLowerCase().split(",");String str2 = arrayOfString2.length;
         for (l = 0; l < str2; l++)
         {
           String l = arrayOfString2[l];
@@ -197,7 +220,10 @@ public class GommeHDSign
         return result;
       }
     }
-    catch (Exception localException) {}
+    catch (Exception error)
+    {
+      error.printStackTrace();
+    }
     return false;
   }
   
@@ -214,6 +240,11 @@ public class GommeHDSign
   public static void orange()
   {
     bfl.c(10.0F, 1.6F, 0.6F, 0.6F);
+  }
+  
+  public static void blue()
+  {
+    bfl.c(0.6F, 0.6F, 0.6F, 0.7F);
   }
   
   static int noSpam = 0;
@@ -234,21 +265,20 @@ public class GommeHDSign
   
   public static void render(aln sign)
   {
-    if (sign.updateSign > 10) {
-      sign.updateSign = 0;
+    if (updateSign > 50) {
+      updateSign = 0;
     }
-    if ((LabyMod.getInstance().gommeHDSeachAllowed) && 
-      (GommeHD.isGommeHD()) && 
-      (sign.updateSign == 0))
+    if ((updateSign == 0) && (allowed) && (GommeHD.isGommeHD()))
     {
       sign.setText(new ArrayList());
       sign.setAvailable(sign.getText());
       sign.setFull(sign.getText());
       sign.setSearch(sign.getText());
       sign.setSize(sign.getText());
+      sign.setEmpty(sign.getText());
     }
-    sign.updateSign += 1;
-    if ((LabyMod.getInstance().gommeHDSeachAllowed) && 
+    updateSign += 1;
+    if ((allowed) && 
       (GommeHD.isGommeHD()) && 
       (!sign.getText().isEmpty()))
     {
@@ -260,13 +290,22 @@ public class GommeHDSign
           {
             if (sign.getSize())
             {
-              green();
-              if (LabyMod.getInstance().gommeHDAutoJoin) {
-                sendJoinPacket(sign.v());
+              if ((sign.isEmpty()) && (nightMode))
+              {
+                blue();
               }
-              if ((LabyMod.getInstance().gommeHDSound) && 
+              else
+              {
+                green();
+                if (autoJoin) {
+                  sendJoinPacket(sign.v());
+                }
+              }
+              if ((sound) && 
                 (ave.J() / 2L % 30L == 0L)) {
-                ave.A().W().a(new bpf(new jy("fireworks.twinkle_far"), 10.0F, 2.0F, sign.v().n(), sign.v().o(), sign.v().p()));
+                ave.A().W().a(new bpf(soundLocation, 12.0F, 2.0F, sign
+                  .v().n(), sign.v().o(), sign
+                  .v().p()));
               }
             }
             else

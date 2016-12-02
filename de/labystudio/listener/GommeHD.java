@@ -1,5 +1,12 @@
 package de.labystudio.listener;
 
+import afh;
+import alz;
+import auh;
+import ave;
+import bda;
+import bdb;
+import cj;
 import de.labystudio.chat.ChatHandler;
 import de.labystudio.gommehd.EnumBWMap;
 import de.labystudio.gommehd.EnumBWTeam;
@@ -10,6 +17,7 @@ import de.labystudio.labymod.ModSettings;
 import de.labystudio.utils.Color;
 import de.labystudio.utils.DrawUtils;
 import de.labystudio.utils.ModGui;
+import eu;
 import java.util.ArrayList;
 import zw;
 import zx;
@@ -19,11 +27,15 @@ public class GommeHD
   public static boolean gommeHDServer_BW = false;
   public static String gommeHDServer_BW_Team = "";
   public static boolean gommeHDServer_BW_Bed = true;
+  public static int elapsedTime;
+  public static String skyBlockOwner = null;
+  private static long stoppedBedLong = 0L;
+  private static int stoppedBedPercent = 0;
   public static boolean isGommeHD = false;
   
   public static void updateGommeHD()
   {
-    isGommeHD = LabyMod.getInstance().ip.toLowerCase().contains("gommehd.net");
+    isGommeHD = getInstanceip.toLowerCase().contains("gommehd.net");
   }
   
   public static boolean isGommeHD()
@@ -36,30 +48,31 @@ public class GommeHD
     gommeHDServer_BW = false;
     gommeHDServer_BW_Team = "";
     gommeHDServer_BW_Bed = true;
+    skyBlockOwner = null;
     GommeHDBed.reset();
   }
   
   public static void loop()
   {
-    if ((gommeHDServer_BW) && (!Brawl.tournament)) {
-      Brawl.elapsedTime += 1;
+    if (gommeHDServer_BW) {
+      elapsedTime += 1;
     }
-    if ((LabyMod.getInstance().header != null) && (LabyMod.getInstance().header.toString().contains("Lobby"))) {
+    if ((getInstanceheader != null) && (getInstanceheader.d().contains("Lobby"))) {
       resetGommeHD();
     }
   }
   
   public static void serverGommeHDChat(String clean, String raw)
   {
-    if (!LabyMod.getInstance().ip.toLowerCase().contains("gommehd.net")) {
+    if (!getInstanceip.toLowerCase().contains("gommehd.net")) {
       return;
     }
     String NickPrefix = "[NICK] ";
-    if (clean.startsWith(NickPrefix + "Du spielst als: ")) {
-      LabyMod.getInstance().nickname = clean.replace(NickPrefix + "Du spielst als: ", "");
+    if ((clean.startsWith(NickPrefix + "Du spielst als: ")) || (clean.startsWith(NickPrefix + "Aktueller Nickname: "))) {
+      getInstancenickname = clean.replace(NickPrefix + "Du spielst als: ", "").replace(NickPrefix + "Aktueller Nickname: ", "");
     }
     if (clean.startsWith(NickPrefix + "Dein Nickname wurde entfernt")) {
-      LabyMod.getInstance().nickname = "";
+      getInstancenickname = "";
     }
     chatBedWars(clean, raw);
     chatSurvivalGames(clean, raw);
@@ -146,7 +159,7 @@ public class GommeHD
     {
       gommeHDServer_BW_Bed = true;
       gommeHDServer_BW = true;
-      Brawl.elapsedTime = 0;
+      elapsedTime = 0;
       ChatHandler.updateGameMode("BedWars");
       GommeHDBed.noBeds.clear();
     }
@@ -184,22 +197,28 @@ public class GommeHD
       }
     }
     if ((clean.startsWith(BWPrefix + "Es konnte kein passendes Team gefunden werden. Die Party ist NICHT im selben Team.")) && 
-      (ConfigManager.settings.autoLeave)) {
+      (settingsautoLeave)) {
       LabyMod.getInstance().sendCommand("hub");
+    }
+    if (clean.startsWith("Du betrittst nun die Insel von: ")) {
+      skyBlockOwner = clean.replace("Du betrittst nun die Insel von: ", "");
     }
   }
   
   public static void drawGommeHDGui()
   {
-    if (!ConfigManager.settings.gameGommeHD.booleanValue()) {
+    if (!settingsgameGommeHD) {
       return;
+    }
+    if ((settingsskyblock) && (skyBlockOwner != null)) {
+      ModGui.addMainLabel("Island", skyBlockOwner, ModGui.mainList);
     }
     if (!gommeHDServer_BW) {
       return;
     }
     if (!gommeHDServer_BW_Team.isEmpty())
     {
-      ModGui.addMainLabel("Elapsed Time", ModGui.translateTimer(Brawl.elapsedTime), ModGui.mainList);
+      ModGui.addMainLabel("Elapsed Time", ModGui.translateTimer(elapsedTime), ModGui.mainList);
       if (gommeHDServer_BW_Team.contains("Spectator"))
       {
         ModGui.addMainLabel("Mode", Color.cl("7") + "Spectator", ModGui.mainList);
@@ -213,16 +232,58 @@ public class GommeHD
         }
         ModGui.addMainLabel("Bed", status + "", ModGui.mainList);
       }
-      if (ConfigManager.settings.showBWTimer.booleanValue()) {
+      if (settingsshowBWTimer) {
         drawTimer();
+      }
+    }
+    if (settingsgommeBedTimer)
+    {
+      boolean bed = false;
+      bdb world = Af;
+      if ((world != null) && (As != null))
+      {
+        cj current = As.a();
+        if (current != null)
+        {
+          alz blockstate = world.p(current);
+          if (blockstate != null)
+          {
+            zw item = blockstate.c().c(world, current);
+            bed = (item != null) && (item == zw.b(355));
+          }
+        }
+      }
+      if ((Ac.e != 0.0F) && (bed))
+      {
+        stoppedBedPercent = (int)(Ac.e * 100.0F);
+        stoppedBedLong = System.currentTimeMillis() + 3000L;
+      }
+      if (stoppedBedLong > System.currentTimeMillis())
+      {
+        if (Ac.g != 0) {
+          stoppedBedPercent = 100;
+        }
+        if ((stoppedBedPercent != 0) && (
+          (Ac.g == 0) || (stoppedBedPercent == 100))) {
+          getInstancedraw.drawCenteredString(Color.cl("a") + stoppedBedPercent + "% ", 
+            getInstancedraw.getWidth() / 2 + 3, getInstancedraw.getHeight() / 2 - 10, 1.0D);
+        }
+      }
+      else
+      {
+        stoppedBedPercent = 0;
+        if ((Ac.g != 0) && (bed)) {
+          getInstancedraw.drawCenteredString(Color.cl("c") + Ac.g, 
+            getInstancedraw.getWidth() / 2 + 1, getInstancedraw.getHeight() / 2 - 10, 1.0D);
+        }
       }
     }
   }
   
   private static void drawTimer()
   {
-    int gold = 30 - Brawl.elapsedTime % 30;
-    int iron = 10 - Brawl.elapsedTime % 10;
+    int gold = 30 - elapsedTime % 30;
+    int iron = 10 - elapsedTime % 10;
     String c = "";
     if (gold <= 5) {
       c = Color.cl("c");
@@ -232,23 +293,23 @@ public class GommeHD
       c2 = Color.cl("c");
     }
     int pos = getPos();
-    double k = LabyMod.getInstance().draw.getScale(ConfigManager.settings.size);
-    if (ConfigManager.settings.gommePosLeft)
+    double k = getInstancedraw.getScale(settingssize);
+    if (settingsgommePosLeft)
     {
-      LabyMod.getInstance().draw.drawItem(new zx(zw.b(266)), 2.0D, pos, "" + c + gold + "");
-      LabyMod.getInstance().draw.drawString(c + " sec", 17.0D, pos + 9);
+      getInstancedraw.drawItem(new zx(zw.b(266)), 2.0D, pos, "" + c + gold + "");
+      getInstancedraw.drawString(c + " sec", 17.0D, pos + 9);
       pos += 16;
-      LabyMod.getInstance().draw.drawItem(new zx(zw.b(265)), 2.0D, pos, "" + c + iron + "");
-      LabyMod.getInstance().draw.drawString(c + " sec", 17.0D, pos + 9);
+      getInstancedraw.drawItem(new zx(zw.b(265)), 2.0D, pos, "" + c + iron + "");
+      getInstancedraw.drawString(c + " sec", 17.0D, pos + 9);
     }
     else
     {
-      int l = LabyMod.getInstance().draw.getWidth() - 39;
-      LabyMod.getInstance().draw.drawItem(new zx(zw.b(266)), l / k, pos, "" + c + gold + "");
-      LabyMod.getInstance().draw.drawString(c + " sec", (l + 15) / k, pos + 9);
+      int l = getInstancedraw.getWidth() - 39;
+      getInstancedraw.drawItem(new zx(zw.b(266)), l / k, pos, "" + c + gold + "");
+      getInstancedraw.drawString(c + " sec", (l + 15) / k, pos + 9);
       pos += 16;
-      LabyMod.getInstance().draw.drawItem(new zx(zw.b(265)), l / k, pos, "" + c + iron + "");
-      LabyMod.getInstance().draw.drawString(c + " sec", (l + 15) / k, pos + 9);
+      getInstancedraw.drawItem(new zx(zw.b(265)), l / k, pos, "" + c + iron + "");
+      getInstancedraw.drawString(c + " sec", (l + 15) / k, pos + 9);
     }
     pos += 20;
     setPos(pos);
@@ -258,13 +319,13 @@ public class GommeHD
   {
     if (ModGui.isSwitch())
     {
-      if (ConfigManager.settings.gommePosLeft) {
+      if (settingsgommePosLeft) {
         ModGui.offList = pos;
       } else {
         ModGui.mainList = pos;
       }
     }
-    else if (ConfigManager.settings.gommePosLeft) {
+    else if (settingsgommePosLeft) {
       ModGui.mainList = pos;
     } else {
       ModGui.offList = pos;
@@ -275,12 +336,12 @@ public class GommeHD
   {
     if (ModGui.isSwitch())
     {
-      if (ConfigManager.settings.gommePosLeft) {
+      if (settingsgommePosLeft) {
         return ModGui.offList;
       }
       return ModGui.mainList;
     }
-    if (ConfigManager.settings.gommePosLeft) {
+    if (settingsgommePosLeft) {
       return ModGui.mainList;
     }
     return ModGui.offList;

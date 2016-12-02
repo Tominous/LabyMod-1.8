@@ -16,34 +16,34 @@ public class fi
   
   public fi(double ☃, double ☃, double ☃, float ☃, float ☃, Set<fi.a> ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
-    this.e = ☃;
-    this.f = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
+    e = ☃;
+    f = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.readDouble();
-    this.b = ☃.readDouble();
-    this.c = ☃.readDouble();
-    this.d = ☃.readFloat();
-    this.e = ☃.readFloat();
-    this.f = fi.a.a(☃.readUnsignedByte());
+    a = ☃.readDouble();
+    b = ☃.readDouble();
+    c = ☃.readDouble();
+    d = ☃.readFloat();
+    e = ☃.readFloat();
+    f = fi.a.a(☃.readUnsignedByte());
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeDouble(this.a);
-    ☃.writeDouble(this.b);
-    ☃.writeDouble(this.c);
-    ☃.writeFloat(this.d);
-    ☃.writeFloat(this.e);
-    ☃.writeByte(fi.a.a(this.f));
+    ☃.writeDouble(a);
+    ☃.writeDouble(b);
+    ☃.writeDouble(c);
+    ☃.writeFloat(d);
+    ☃.writeFloat(e);
+    ☃.writeByte(fi.a.a(f));
   }
   
   public void a(fj ☃)
@@ -53,32 +53,32 @@ public class fi
   
   public double a()
   {
-    return this.a;
+    return a;
   }
   
   public double b()
   {
-    return this.b;
+    return b;
   }
   
   public double c()
   {
-    return this.c;
+    return c;
   }
   
   public float d()
   {
-    return this.d;
+    return d;
   }
   
   public float e()
   {
-    return this.e;
+    return e;
   }
   
   public Set<fi.a> f()
   {
-    return this.f;
+    return f;
   }
   
   public static enum a
@@ -87,12 +87,12 @@ public class fi
     
     private a(int ☃)
     {
-      this.f = ☃;
+      f = ☃;
     }
     
     private int a()
     {
-      return 1 << this.f;
+      return 1 << f;
     }
     
     private boolean b(int ☃)

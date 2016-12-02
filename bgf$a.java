@@ -13,13 +13,13 @@ public enum bgf$a
   
   private bgf$a(String p_i46236_1_, int p_i46236_2_, cq[] p_i46236_3_, float p_i46236_4_, boolean p_i46236_5_, bgf.d[] p_i46236_6_, bgf.d[] p_i46236_7_, bgf.d[] p_i46236_8_, bgf.d[] p_i46236_9_)
   {
-    this.g = p_i46236_3_;
-    this.h = p_i46236_4_;
-    this.i = p_i46236_5_;
-    this.j = p_i46236_6_;
-    this.k = p_i46236_7_;
-    this.l = p_i46236_8_;
-    this.m = p_i46236_9_;
+    g = p_i46236_3_;
+    h = p_i46236_4_;
+    i = p_i46236_5_;
+    j = p_i46236_6_;
+    k = p_i46236_7_;
+    l = p_i46236_8_;
+    m = p_i46236_9_;
   }
   
   public static a a(cq p_178273_0_)

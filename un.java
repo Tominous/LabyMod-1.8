@@ -17,7 +17,7 @@ public abstract class un
   public un(adm ☃, cj ☃)
   {
     this(☃);
-    this.a = ☃;
+    a = ☃;
   }
   
   protected void h() {}
@@ -27,41 +27,41 @@ public abstract class un
     Validate.notNull(☃);
     Validate.isTrue(☃.k().c());
     
-    this.b = ☃;
-    this.A = (this.y = this.b.b() * 90);
+    b = ☃;
+    A = (y = b.b() * 90);
     
     o();
   }
   
   private void o()
   {
-    if (this.b == null) {
+    if (b == null) {
       return;
     }
-    double ☃ = this.a.n() + 0.5D;
-    double ☃ = this.a.o() + 0.5D;
-    double ☃ = this.a.p() + 0.5D;
+    double ☃ = a.n() + 0.5D;
+    double ☃ = a.o() + 0.5D;
+    double ☃ = a.p() + 0.5D;
     
     double ☃ = 0.46875D;
     double ☃ = a(l());
     double ☃ = a(m());
     
-    ☃ -= this.b.g() * 0.46875D;
-    ☃ -= this.b.i() * 0.46875D;
+    ☃ -= b.g() * 0.46875D;
+    ☃ -= b.i() * 0.46875D;
     ☃ += ☃;
     
-    cq ☃ = this.b.f();
+    cq ☃ = b.f();
     ☃ += ☃ * ☃.g();
     ☃ += ☃ * ☃.i();
     
-    this.s = ☃;
-    this.t = ☃;
-    this.u = ☃;
+    s = ☃;
+    t = ☃;
+    u = ☃;
     
     double ☃ = l();
     double ☃ = m();
     double ☃ = l();
-    if (this.b.k() == cq.a.c) {
+    if (b.k() == cq.a.c) {
       ☃ = 1.0D;
     } else {
       ☃ = 1.0D;
@@ -79,13 +79,13 @@ public abstract class un
   
   public void t_()
   {
-    this.p = this.s;
-    this.q = this.t;
-    this.r = this.u;
-    if ((this.c++ == 100) && (!this.o.D))
+    p = s;
+    q = t;
+    r = u;
+    if ((c++ == 100) && (!o.D))
     {
-      this.c = 0;
-      if ((!this.I) && (!j()))
+      c = 0;
+      if ((!I) && (!j()))
       {
         J();
         b(null);
@@ -95,26 +95,26 @@ public abstract class un
   
   public boolean j()
   {
-    if (!this.o.a(this, aR()).isEmpty()) {
+    if (!o.a(this, aR()).isEmpty()) {
       return false;
     }
     int ☃ = Math.max(1, l() / 16);
     int ☃ = Math.max(1, m() / 16);
     
-    cj ☃ = this.a.a(this.b.d());
-    cq ☃ = this.b.f();
+    cj ☃ = a.a(b.d());
+    cq ☃ = b.f();
     for (int ☃ = 0; ☃ < ☃; ☃++) {
       for (int ☃ = 0; ☃ < ☃; ☃++)
       {
         cj ☃ = ☃.a(☃, ☃).b(☃);
         
-        afh ☃ = this.o.p(☃).c();
+        afh ☃ = o.p(☃).c();
         if ((!☃.t().a()) && (!agd.d(☃))) {
           return false;
         }
       }
     }
-    List<pk> ☃ = this.o.b(this, aR());
+    List<pk> ☃ = o.b(this, aR());
     for (pk ☃ : ☃) {
       if ((☃ instanceof un)) {
         return false;
@@ -138,7 +138,7 @@ public abstract class un
   
   public cq aP()
   {
-    return this.b;
+    return b;
   }
   
   public boolean a(ow ☃, float ☃)
@@ -146,7 +146,7 @@ public abstract class un
     if (b(☃)) {
       return false;
     }
-    if ((!this.I) && (!this.o.D))
+    if ((!I) && (!o.D))
     {
       J();
       ac();
@@ -157,7 +157,7 @@ public abstract class un
   
   public void d(double ☃, double ☃, double ☃)
   {
-    if ((!this.o.D) && (!this.I) && (☃ * ☃ + ☃ * ☃ + ☃ * ☃ > 0.0D))
+    if ((!o.D) && (!I) && (☃ * ☃ + ☃ * ☃ + ☃ * ☃ > 0.0D))
     {
       J();
       b(null);
@@ -166,7 +166,7 @@ public abstract class un
   
   public void g(double ☃, double ☃, double ☃)
   {
-    if ((!this.o.D) && (!this.I) && (☃ * ☃ + ☃ * ☃ + ☃ * ☃ > 0.0D))
+    if ((!o.D) && (!I) && (☃ * ☃ + ☃ * ☃ + ☃ * ☃ > 0.0D))
     {
       J();
       b(null);
@@ -175,7 +175,7 @@ public abstract class un
   
   public void b(dn ☃)
   {
-    ☃.a("Facing", (byte)this.b.b());
+    ☃.a("Facing", (byte)b.b());
     ☃.a("TileX", n().n());
     ☃.a("TileY", n().o());
     ☃.a("TileZ", n().p());
@@ -183,12 +183,12 @@ public abstract class un
   
   public void a(dn ☃)
   {
-    this.a = new cj(☃.f("TileX"), ☃.f("TileY"), ☃.f("TileZ"));
+    a = new cj(☃.f("TileX"), ☃.f("TileY"), ☃.f("TileZ"));
     cq ☃;
     if (☃.b("Direction", 99))
     {
       cq ☃ = cq.b(☃.d("Direction"));
-      this.a = this.a.a(☃);
+      a = a.a(☃);
     }
     else
     {
@@ -215,20 +215,20 @@ public abstract class un
   
   public void b(double ☃, double ☃, double ☃)
   {
-    this.s = ☃;
-    this.t = ☃;
-    this.u = ☃;
-    cj ☃ = this.a;
-    this.a = new cj(☃, ☃, ☃);
-    if (!this.a.equals(☃))
+    s = ☃;
+    t = ☃;
+    u = ☃;
+    cj ☃ = a;
+    a = new cj(☃, ☃, ☃);
+    if (!a.equals(☃))
     {
       o();
-      this.ai = true;
+      ai = true;
     }
   }
   
   public cj n()
   {
-    return this.a;
+    return a;
   }
 }

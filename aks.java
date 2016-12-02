@@ -8,7 +8,7 @@ public class aks
   protected aks()
   {
     super(arm.r);
-    j(this.M.b().a(a, zd.a));
+    j(M.b().a(a, zd.a));
     a(0.0F, 0.0F, 0.0F, 1.0F, 0.0625F, 1.0F);
     a(true);
     a(yz.c);

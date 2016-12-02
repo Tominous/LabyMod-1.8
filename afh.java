@@ -57,37 +57,37 @@ public class afh
   
   public boolean o()
   {
-    return this.r;
+    return r;
   }
   
   public int p()
   {
-    return this.s;
+    return s;
   }
   
   public boolean q()
   {
-    return this.t;
+    return t;
   }
   
   public int r()
   {
-    return this.u;
+    return u;
   }
   
   public boolean s()
   {
-    return this.v;
+    return v;
   }
   
   public arm t()
   {
-    return this.J;
+    return J;
   }
   
   public arn g(alz ☃)
   {
-    return this.K;
+    return K;
   }
   
   public alz a(int ☃)
@@ -121,29 +121,29 @@ public class afh
     
     public b(String ☃, float ☃, float ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
-      this.c = ☃;
+      a = ☃;
+      b = ☃;
+      c = ☃;
     }
     
     public float d()
     {
-      return this.b;
+      return b;
     }
     
     public float e()
     {
-      return this.c;
+      return c;
     }
     
     public String a()
     {
-      return "dig." + this.a;
+      return "dig." + a;
     }
     
     public String c()
     {
-      return "step." + this.a;
+      return "step." + a;
     }
     
     public String b()
@@ -236,16 +236,16 @@ public class afh
   
   public afh(arm ☃, arn ☃)
   {
-    this.J = ☃;
-    this.K = ☃;
+    J = ☃;
+    K = ☃;
     
     a(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
-    this.r = c();
-    this.s = (c() ? 255 : 0);
-    this.t = (!☃.b());
+    r = c();
+    s = (c() ? 255 : 0);
+    t = (!☃.b());
     
-    this.M = e();
-    j(this.M.b());
+    M = e();
+    j(M.b());
   }
   
   protected afh(arm ☃)
@@ -255,41 +255,41 @@ public class afh
   
   protected afh a(afh.b ☃)
   {
-    this.H = ☃;
+    H = ☃;
     return this;
   }
   
   protected afh e(int ☃)
   {
-    this.s = ☃;
+    s = ☃;
     return this;
   }
   
   protected afh a(float ☃)
   {
-    this.u = ((int)(15.0F * ☃));
+    u = ((int)(15.0F * ☃));
     return this;
   }
   
   protected afh b(float ☃)
   {
-    this.x = (☃ * 3.0F);
+    x = (☃ * 3.0F);
     return this;
   }
   
   public boolean u()
   {
-    return (this.J.c()) && (d());
+    return (J.c()) && (d());
   }
   
   public boolean v()
   {
-    return (this.J.k()) && (d()) && (!i());
+    return (J.k()) && (d()) && (!i());
   }
   
   public boolean w()
   {
-    return (this.J.c()) && (d());
+    return (J.c()) && (d());
   }
   
   public boolean d()
@@ -299,7 +299,7 @@ public class afh
   
   public boolean b(adq ☃, cj ☃)
   {
-    return !this.J.c();
+    return !J.c();
   }
   
   public int b()
@@ -314,9 +314,9 @@ public class afh
   
   protected afh c(float ☃)
   {
-    this.w = ☃;
-    if (this.x < ☃ * 5.0F) {
-      this.x = (☃ * 5.0F);
+    w = ☃;
+    if (x < ☃ * 5.0F) {
+      x = (☃ * 5.0F);
     }
     return this;
   }
@@ -329,33 +329,33 @@ public class afh
   
   public float g(adm ☃, cj ☃)
   {
-    return this.w;
+    return w;
   }
   
   protected afh a(boolean ☃)
   {
-    this.z = ☃;
+    z = ☃;
     return this;
   }
   
   public boolean y()
   {
-    return this.z;
+    return z;
   }
   
   public boolean z()
   {
-    return this.A;
+    return A;
   }
   
   protected final void a(float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
-    this.B = ☃;
-    this.C = ☃;
-    this.D = ☃;
-    this.E = ☃;
-    this.F = ☃;
-    this.G = ☃;
+    B = ☃;
+    C = ☃;
+    D = ☃;
+    E = ☃;
+    F = ☃;
+    G = ☃;
   }
   
   public int c(adq ☃, cj ☃)
@@ -373,22 +373,22 @@ public class afh
   
   public boolean a(adq ☃, cj ☃, cq ☃)
   {
-    if ((☃ == cq.a) && (this.C > 0.0D)) {
+    if ((☃ == cq.a) && (C > 0.0D)) {
       return true;
     }
-    if ((☃ == cq.b) && (this.F < 1.0D)) {
+    if ((☃ == cq.b) && (F < 1.0D)) {
       return true;
     }
-    if ((☃ == cq.c) && (this.D > 0.0D)) {
+    if ((☃ == cq.c) && (D > 0.0D)) {
       return true;
     }
-    if ((☃ == cq.d) && (this.G < 1.0D)) {
+    if ((☃ == cq.d) && (G < 1.0D)) {
       return true;
     }
-    if ((☃ == cq.e) && (this.B > 0.0D)) {
+    if ((☃ == cq.e) && (B > 0.0D)) {
       return true;
     }
-    if ((☃ == cq.f) && (this.E < 1.0D)) {
+    if ((☃ == cq.f) && (E < 1.0D)) {
       return true;
     }
     return !☃.p(☃).c().c();
@@ -401,7 +401,7 @@ public class afh
   
   public aug b(adm ☃, cj ☃)
   {
-    return new aug(☃.n() + this.B, ☃.o() + this.C, ☃.p() + this.D, ☃.n() + this.E, ☃.o() + this.F, ☃.p() + this.G);
+    return new aug(☃.n() + B, ☃.o() + C, ☃.p() + D, ☃.n() + E, ☃.o() + F, ☃.p() + G);
   }
   
   public void a(adm ☃, cj ☃, alz ☃, aug ☃, List<aug> ☃, pk ☃)
@@ -414,7 +414,7 @@ public class afh
   
   public aug a(adm ☃, cj ☃, alz ☃)
   {
-    return new aug(☃.n() + this.B, ☃.o() + this.C, ☃.p() + this.D, ☃.n() + this.E, ☃.o() + this.F, ☃.p() + this.G);
+    return new aug(☃.n() + B, ☃.o() + C, ☃.p() + D, ☃.n() + E, ☃.o() + F, ☃.p() + G);
   }
   
   public boolean c()
@@ -483,14 +483,14 @@ public class afh
   
   public void a(adm ☃, cj ☃, alz ☃, float ☃, int ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
-    int ☃ = a(☃, ☃.s);
+    int ☃ = a(☃, s);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
-      if (☃.s.nextFloat() <= ☃)
+      if (s.nextFloat() <= ☃)
       {
-        zw ☃ = a(☃, ☃.s, ☃);
+        zw ☃ = a(☃, s, ☃);
         if (☃ != null) {
           a(☃, ☃, new zx(☃, 1, a(☃)));
         }
@@ -500,13 +500,13 @@ public class afh
   
   public static void a(adm ☃, cj ☃, zx ☃)
   {
-    if ((☃.D) || (!☃.Q().b("doTileDrops"))) {
+    if ((D) || (!☃.Q().b("doTileDrops"))) {
       return;
     }
     float ☃ = 0.5F;
-    double ☃ = ☃.s.nextFloat() * ☃ + (1.0F - ☃) * 0.5D;
-    double ☃ = ☃.s.nextFloat() * ☃ + (1.0F - ☃) * 0.5D;
-    double ☃ = ☃.s.nextFloat() * ☃ + (1.0F - ☃) * 0.5D;
+    double ☃ = s.nextFloat() * ☃ + (1.0F - ☃) * 0.5D;
+    double ☃ = s.nextFloat() * ☃ + (1.0F - ☃) * 0.5D;
+    double ☃ = s.nextFloat() * ☃ + (1.0F - ☃) * 0.5D;
     uz ☃ = new uz(☃, ☃.n() + ☃, ☃.o() + ☃, ☃.p() + ☃, ☃);
     ☃.p();
     ☃.d(☃);
@@ -514,7 +514,7 @@ public class afh
   
   protected void b(adm ☃, cj ☃, int ☃)
   {
-    if (!☃.D) {
+    if (!D) {
       while (☃ > 0)
       {
         int ☃ = pp.a(☃);
@@ -531,7 +531,7 @@ public class afh
   
   public float a(pk ☃)
   {
-    return this.x / 5.0F;
+    return x / 5.0F;
   }
   
   public auh a(adm ☃, cj ☃, aui ☃, aui ☃)
@@ -541,14 +541,14 @@ public class afh
     ☃ = ☃.b(-☃.n(), -☃.o(), -☃.p());
     ☃ = ☃.b(-☃.n(), -☃.o(), -☃.p());
     
-    aui ☃ = ☃.a(☃, this.B);
-    aui ☃ = ☃.a(☃, this.E);
+    aui ☃ = ☃.a(☃, B);
+    aui ☃ = ☃.a(☃, E);
     
-    aui ☃ = ☃.b(☃, this.C);
-    aui ☃ = ☃.b(☃, this.F);
+    aui ☃ = ☃.b(☃, C);
+    aui ☃ = ☃.b(☃, F);
     
-    aui ☃ = ☃.c(☃, this.D);
-    aui ☃ = ☃.c(☃, this.G);
+    aui ☃ = ☃.c(☃, D);
+    aui ☃ = ☃.c(☃, G);
     if (!a(☃)) {
       ☃ = null;
     }
@@ -616,7 +616,7 @@ public class afh
     if (☃ == null) {
       return false;
     }
-    return (☃.b >= this.C) && (☃.b <= this.F) && (☃.c >= this.D) && (☃.c <= this.G);
+    return (b >= C) && (b <= F) && (c >= D) && (c <= G);
   }
   
   private boolean b(aui ☃)
@@ -624,7 +624,7 @@ public class afh
     if (☃ == null) {
       return false;
     }
-    return (☃.a >= this.B) && (☃.a <= this.E) && (☃.c >= this.D) && (☃.c <= this.G);
+    return (a >= B) && (a <= E) && (c >= D) && (c <= G);
   }
   
   private boolean c(aui ☃)
@@ -632,7 +632,7 @@ public class afh
     if (☃ == null) {
       return false;
     }
-    return (☃.a >= this.B) && (☃.a <= this.E) && (☃.b >= this.C) && (☃.b <= this.F);
+    return (a >= B) && (a <= E) && (b >= C) && (b <= F);
   }
   
   public void a(adm ☃, cj ☃, adi ☃) {}
@@ -654,7 +654,7 @@ public class afh
   
   public boolean d(adm ☃, cj ☃)
   {
-    return ☃.p(☃).c().J.j();
+    return pcJ.j();
   }
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
@@ -680,32 +680,32 @@ public class afh
   
   public final double B()
   {
-    return this.B;
+    return B;
   }
   
   public final double C()
   {
-    return this.E;
+    return E;
   }
   
   public final double D()
   {
-    return this.C;
+    return C;
   }
   
   public final double E()
   {
-    return this.F;
+    return F;
   }
   
   public final double F()
   {
-    return this.D;
+    return D;
   }
   
   public final double G()
   {
-    return this.G;
+    return G;
   }
   
   public int H()
@@ -767,7 +767,7 @@ public class afh
   
   protected boolean I()
   {
-    return (d()) && (!this.A);
+    return (d()) && (!A);
   }
   
   protected zx i(alz ☃)
@@ -789,12 +789,12 @@ public class afh
   
   public boolean g()
   {
-    return (!this.J.a()) && (!this.J.d());
+    return (!J.a()) && (!J.d());
   }
   
   public afh c(String ☃)
   {
-    this.O = ☃;
+    O = ☃;
     return this;
   }
   
@@ -805,7 +805,7 @@ public class afh
   
   public String a()
   {
-    return "tile." + this.O;
+    return "tile." + O;
   }
   
   public boolean a(adm ☃, cj ☃, alz ☃, int ☃, int ☃)
@@ -815,18 +815,18 @@ public class afh
   
   public boolean J()
   {
-    return this.y;
+    return y;
   }
   
   protected afh K()
   {
-    this.y = false;
+    y = false;
     return this;
   }
   
   public int k()
   {
-    return this.J.m();
+    return J.m();
   }
   
   public float h()
@@ -841,7 +841,7 @@ public class afh
   
   public void a(adm ☃, pk ☃)
   {
-    ☃.w = 0.0D;
+    w = 0.0D;
   }
   
   public zw c(adm ☃, cj ☃)
@@ -861,12 +861,12 @@ public class afh
   
   public yz L()
   {
-    return this.b;
+    return b;
   }
   
   public afh a(yz ☃)
   {
-    this.b = ☃;
+    b = ☃;
     return this;
   }
   
@@ -927,17 +927,17 @@ public class afh
   
   public ama P()
   {
-    return this.M;
+    return M;
   }
   
   protected final void j(alz ☃)
   {
-    this.N = ☃;
+    N = ☃;
   }
   
   public final alz Q()
   {
-    return this.N;
+    return N;
   }
   
   public afh.a R()
@@ -1166,9 +1166,9 @@ public class afh
     
     c.a();
     for (afh ☃ : c) {
-      if (☃.J == arm.a)
+      if (J == arm.a)
       {
-        ☃.v = false;
+        v = false;
       }
       else
       {
@@ -1176,12 +1176,12 @@ public class afh
         boolean ☃ = ☃ instanceof aju;
         boolean ☃ = ☃ instanceof ahh;
         boolean ☃ = ☃ == ☃;
-        boolean ☃ = ☃.t;
-        boolean ☃ = ☃.s == 0;
+        boolean ☃ = t;
+        boolean ☃ = s == 0;
         if ((☃) || (☃) || (☃) || (☃) || (☃)) {
           ☃ = true;
         }
-        ☃.v = ☃;
+        v = ☃;
       }
     }
     for (Iterator ☃ = c.iterator(); ☃.hasNext();)

@@ -8,25 +8,25 @@ class tu$h
   public tu$h(tu ☃)
   {
     super(☃, 0.699999988079071D, 16);
-    this.c = ☃;
+    c = ☃;
   }
   
   public boolean a()
   {
-    if (this.a <= 0)
+    if (a <= 0)
     {
-      if (!this.c.o.Q().b("mobGriefing")) {
+      if (!c.o.Q().b("mobGriefing")) {
         return false;
       }
-      this.e = false;
-      this.d = tu.a(this.c);
+      e = false;
+      d = tu.a(c);
     }
     return super.a();
   }
   
   public boolean b()
   {
-    return (this.e) && (super.b());
+    return (e) && (super.b());
   }
   
   public void c()
@@ -43,23 +43,23 @@ class tu$h
   {
     super.e();
     
-    this.c.p().a(this.b.n() + 0.5D, this.b.o() + 1, this.b.p() + 0.5D, 10.0F, this.c.bQ());
+    c.p().a(b.n() + 0.5D, b.o() + 1, b.p() + 0.5D, 10.0F, c.bQ());
     if (f())
     {
-      adm ☃ = this.c.o;
-      cj ☃ = this.b.a();
+      adm ☃ = c.o;
+      cj ☃ = b.a();
       
       alz ☃ = ☃.p(☃);
       afh ☃ = ☃.c();
-      if ((this.e) && ((☃ instanceof afq)) && (((Integer)☃.b(afq.a)).intValue() == 7))
+      if ((e) && ((☃ instanceof afq)) && (((Integer)☃.b(afq.a)).intValue() == 7))
       {
         ☃.a(☃, afi.a.Q(), 2);
         ☃.b(☃, true);
-        this.c.cp();
+        c.cp();
       }
-      this.e = false;
+      e = false;
       
-      this.a = 10;
+      a = 10;
     }
   }
   
@@ -71,9 +71,9 @@ class tu$h
       ☃ = ☃.a();
       alz ☃ = ☃.p(☃);
       ☃ = ☃.c();
-      if (((☃ instanceof afq)) && (((Integer)☃.b(afq.a)).intValue() == 7) && (this.d) && (!this.e))
+      if (((☃ instanceof afq)) && (((Integer)☃.b(afq.a)).intValue() == 7) && (d) && (!e))
       {
-        this.e = true;
+        e = true;
         return true;
       }
     }

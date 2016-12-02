@@ -6,8 +6,8 @@ public class bfj$b
   
   private bfj$b(int ☃, int ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
   }
 }

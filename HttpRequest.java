@@ -33,42 +33,42 @@ public class HttpRequest
   
   public String getHost()
   {
-    return this.host;
+    return host;
   }
   
   public int getPort()
   {
-    return this.port;
+    return port;
   }
   
   public String getMethod()
   {
-    return this.method;
+    return method;
   }
   
   public String getFile()
   {
-    return this.file;
+    return file;
   }
   
   public String getHttp()
   {
-    return this.http;
+    return http;
   }
   
   public Map<String, String> getHeaders()
   {
-    return this.headers;
+    return headers;
   }
   
   public byte[] getBody()
   {
-    return this.body;
+    return body;
   }
   
   public int getRedirects()
   {
-    return this.redirects;
+    return redirects;
   }
   
   public void setRedirects(int redirects)
@@ -78,6 +78,6 @@ public class HttpRequest
   
   public Proxy getProxy()
   {
-    return this.proxy;
+    return proxy;
   }
 }

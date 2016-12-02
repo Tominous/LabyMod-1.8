@@ -5,7 +5,7 @@ public class bao$c
   
   public bao$c(boolean ☃, String ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
 }

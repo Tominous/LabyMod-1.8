@@ -9,12 +9,12 @@ public class WaypointWorld
   
   public WaypointWorld()
   {
-    this.current = "gui.xaero_default";
-    (this.sets = new HashMap()).put("gui.xaero_default", new WaypointSet(this));
+    current = "gui.xaero_default";
+    (sets = new HashMap()).put("gui.xaero_default", new WaypointSet(this));
   }
   
   public WaypointSet getCurrentSet()
   {
-    return (WaypointSet)this.sets.get(this.current);
+    return (WaypointSet)sets.get(current);
   }
 }

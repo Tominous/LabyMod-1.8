@@ -80,7 +80,7 @@ public class Main
       {
         protected PasswordAuthentication getPasswordAuthentication()
         {
-          return new PasswordAuthentication(this.a, ☃.toCharArray());
+          return new PasswordAuthentication(a, ☃.toCharArray());
         }
       });
     }

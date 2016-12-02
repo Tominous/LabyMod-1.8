@@ -1,17 +1,17 @@
 class ave$1
   implements ms
 {
-  ave$1(ave paramave) {}
+  ave$1(ave this$0) {}
   
-  public String a(String ☃)
+  public String a(String p_74535_1_)
   {
     try
     {
-      return String.format(☃, new Object[] { avh.c(this.a.t.ae.i()) });
+      return String.format(p_74535_1_, new Object[] { avh.c(this$0.t.ae.i()) });
     }
-    catch (Exception ☃)
+    catch (Exception exception)
     {
-      return "Error: " + ☃.getLocalizedMessage();
+      return "Error: " + exception.getLocalizedMessage();
     }
   }
 }

@@ -16,28 +16,28 @@ public class id
   
   public id(String ☃, cj ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.c(32767);
+    a = ☃.c(32767);
     boolean ☃ = ☃.readBoolean();
     if (☃) {
-      this.b = ☃.c();
+      b = ☃.c();
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(StringUtils.substring(this.a, 0, 32767));
-    boolean ☃ = this.b != null;
+    ☃.a(StringUtils.substring(a, 0, 32767));
+    boolean ☃ = b != null;
     ☃.writeBoolean(☃);
     if (☃) {
-      ☃.a(this.b);
+      ☃.a(b);
     }
   }
   
@@ -48,11 +48,11 @@ public class id
   
   public String a()
   {
-    return this.a;
+    return a;
   }
   
   public cj b()
   {
-    return this.b;
+    return b;
   }
 }

@@ -38,7 +38,7 @@ public class TeamSpeakUser
   
   public int getChannelId()
   {
-    return this.channelId;
+    return channelId;
   }
   
   protected void updateChannelId(int channelId)
@@ -48,22 +48,22 @@ public class TeamSpeakUser
   
   public int getClientId()
   {
-    return this.clientId;
+    return clientId;
   }
   
   public String getNickName()
   {
-    return this.nickName;
+    return nickName;
   }
   
   protected void updateNickname(String nickname)
   {
-    this.nickName = nickname;
+    nickName = nickname;
   }
   
   public boolean isTalking()
   {
-    return this.talkStatus;
+    return talkStatus;
   }
   
   public void updateTalkPower(int talkPower)
@@ -83,47 +83,47 @@ public class TeamSpeakUser
   
   public int getDatabaseId()
   {
-    return this.databaseId;
+    return databaseId;
   }
   
   public String getUid()
   {
-    return this.uid;
+    return uid;
   }
   
   public boolean isTyping()
   {
-    return this.typing;
+    return typing;
   }
   
   public boolean hasClientInputHardware()
   {
-    return this.client_input_hardware;
+    return client_input_hardware;
   }
   
   public boolean hasClientOutputHardware()
   {
-    return this.client_output_hardware;
+    return client_output_hardware;
   }
   
   public boolean hasClientInputMuted()
   {
-    return this.client_input_muted;
+    return client_input_muted;
   }
   
   public boolean hasClientOutputMuted()
   {
-    return this.client_output_muted;
+    return client_output_muted;
   }
   
   public void updateClientInput(boolean muted)
   {
-    this.client_input_muted = muted;
+    client_input_muted = muted;
   }
   
   public void updateClientOutput(boolean muted)
   {
-    this.client_output_muted = muted;
+    client_output_muted = muted;
   }
   
   public void updateTyping(boolean typing)
@@ -145,27 +145,27 @@ public class TeamSpeakUser
   public void updateAway(boolean away)
   {
     this.away = away;
-    this.awayMessage = "";
+    awayMessage = "";
   }
   
   public String getAwayMessage()
   {
-    return this.awayMessage;
+    return awayMessage;
   }
   
   public boolean isAway()
   {
-    return this.away;
+    return away;
   }
   
   public void updateClientInputHardware(boolean muted)
   {
-    this.client_input_hardware = muted;
+    client_input_hardware = muted;
   }
   
   public void updateClientOutputHardware(boolean muted)
   {
-    this.client_output_hardware = muted;
+    client_output_hardware = muted;
   }
   
   public static void reset()
@@ -175,27 +175,27 @@ public class TeamSpeakUser
   
   public int getTalkPower()
   {
-    return this.talkPower;
+    return talkPower;
   }
   
   public int getChannelGroupId()
   {
-    return this.channelGroupId;
+    return channelGroupId;
   }
   
   public String getCountry()
   {
-    return this.country;
+    return country;
   }
   
   public ArrayList<Integer> getServerGroups()
   {
-    return this.serverGroups;
+    return serverGroups;
   }
   
   public int getIconId()
   {
-    return this.iconId;
+    return iconId;
   }
   
   public void updateTalker(boolean talker)
@@ -250,7 +250,7 @@ public class TeamSpeakUser
   
   public boolean isChannelCommander()
   {
-    return this.channelCommander;
+    return channelCommander;
   }
   
   public static boolean contains(int id)

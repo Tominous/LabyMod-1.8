@@ -15,7 +15,7 @@ public class ang$a
   
   public ang$a(int ☃, int ☃)
   {
-    this.k = ☃;
-    this.l = ☃;
+    k = ☃;
+    l = ☃;
   }
 }

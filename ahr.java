@@ -6,7 +6,7 @@ public class ahr
   protected ahr()
   {
     super(arm.q);
-    j(this.M.b().a(a, cq.c));
+    j(M.b().a(a, cq.c));
     a(yz.c);
   }
   

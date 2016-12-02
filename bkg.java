@@ -18,11 +18,11 @@ public class bkg
   protected void a(ty ☃, float ☃, float ☃, float ☃)
   {
     super.a(☃, ☃, ☃, ☃);
-    if (☃.aB < 0.01D) {
+    if (aB < 0.01D) {
       return;
     }
     float ☃ = 13.0F;
-    float ☃ = ☃.aC - ☃.aB * (1.0F - ☃) + 6.0F;
+    float ☃ = aC - aB * (1.0F - ☃) + 6.0F;
     float ☃ = (Math.abs(☃ % ☃ - ☃ * 0.5F) - ☃ * 0.25F) / (☃ * 0.25F);
     bfl.b(6.5F * ☃, 0.0F, 0.0F, 1.0F);
   }

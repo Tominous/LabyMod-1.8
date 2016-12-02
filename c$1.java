@@ -10,9 +10,9 @@ final class c$1
   {
     try
     {
-      return String.format("ID #%d (%s // %s)", new Object[] { Integer.valueOf(this.a), this.b.a(), this.b.getClass().getCanonicalName() });
+      return String.format("ID #%d (%s // %s)", new Object[] { Integer.valueOf(a), b.a(), b.getClass().getCanonicalName() });
     }
     catch (Throwable ☃) {}
-    return "ID #" + this.a;
+    return "ID #" + a;
   }
 }

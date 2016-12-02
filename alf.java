@@ -11,44 +11,44 @@ public class alf
   
   public void c()
   {
-    if (++this.h % 20 * 4 == 0) {
-      this.b.c(this.c, afi.bQ, 1, this.g);
+    if (++h % 20 * 4 == 0) {
+      b.c(c, afi.bQ, 1, g);
     }
-    this.f = this.a;
+    f = a;
     
-    int ☃ = this.c.n();
-    int ☃ = this.c.o();
-    int ☃ = this.c.p();
+    int ☃ = c.n();
+    int ☃ = c.o();
+    int ☃ = c.p();
     
     float ☃ = 0.1F;
-    if ((this.g > 0) && (this.a == 0.0F))
+    if ((g > 0) && (a == 0.0F))
     {
       double ☃ = ☃ + 0.5D;
       double ☃ = ☃ + 0.5D;
       
-      this.b.a(☃, ☃ + 0.5D, ☃, "random.chestopen", 0.5F, this.b.s.nextFloat() * 0.1F + 0.9F);
+      b.a(☃, ☃ + 0.5D, ☃, "random.chestopen", 0.5F, b.s.nextFloat() * 0.1F + 0.9F);
     }
-    if (((this.g == 0) && (this.a > 0.0F)) || ((this.g > 0) && (this.a < 1.0F)))
+    if (((g == 0) && (a > 0.0F)) || ((g > 0) && (a < 1.0F)))
     {
-      float ☃ = this.a;
-      if (this.g > 0) {
-        this.a += ☃;
+      float ☃ = a;
+      if (g > 0) {
+        a += ☃;
       } else {
-        this.a -= ☃;
+        a -= ☃;
       }
-      if (this.a > 1.0F) {
-        this.a = 1.0F;
+      if (a > 1.0F) {
+        a = 1.0F;
       }
       float ☃ = 0.5F;
-      if ((this.a < ☃) && (☃ >= ☃))
+      if ((a < ☃) && (☃ >= ☃))
       {
         double ☃ = ☃ + 0.5D;
         double ☃ = ☃ + 0.5D;
         
-        this.b.a(☃, ☃ + 0.5D, ☃, "random.chestclosed", 0.5F, this.b.s.nextFloat() * 0.1F + 0.9F);
+        b.a(☃, ☃ + 0.5D, ☃, "random.chestclosed", 0.5F, b.s.nextFloat() * 0.1F + 0.9F);
       }
-      if (this.a < 0.0F) {
-        this.a = 0.0F;
+      if (a < 0.0F) {
+        a = 0.0F;
       }
     }
   }
@@ -57,7 +57,7 @@ public class alf
   {
     if (☃ == 1)
     {
-      this.g = ☃;
+      g = ☃;
       return true;
     }
     return super.c(☃, ☃);
@@ -71,22 +71,22 @@ public class alf
   
   public void b()
   {
-    this.g += 1;
-    this.b.c(this.c, afi.bQ, 1, this.g);
+    g += 1;
+    b.c(c, afi.bQ, 1, g);
   }
   
   public void d()
   {
-    this.g -= 1;
-    this.b.c(this.c, afi.bQ, 1, this.g);
+    g -= 1;
+    b.c(c, afi.bQ, 1, g);
   }
   
   public boolean a(wn ☃)
   {
-    if (this.b.s(this.c) != this) {
+    if (b.s(c) != this) {
       return false;
     }
-    if (☃.e(this.c.n() + 0.5D, this.c.o() + 0.5D, this.c.p() + 0.5D) > 64.0D) {
+    if (☃.e(c.n() + 0.5D, c.o() + 0.5D, c.p() + 0.5D) > 64.0D) {
       return false;
     }
     return true;

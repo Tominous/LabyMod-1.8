@@ -8,7 +8,7 @@ class ayu$a
   
   public ayu$a(wn ☃)
   {
-    wm ☃ = ☃.bi;
+    wm ☃ = bi;
     for (int ☃ = 0; ☃ < 5; ☃++) {
       for (int ☃ = 0; ☃ < 9; ☃++) {
         a(new yg(ayu.g(), ☃ * 9 + ☃, 9 + ☃ * 18, 18 + ☃ * 18));
@@ -27,7 +27,7 @@ class ayu$a
   
   public void a(float ☃)
   {
-    int ☃ = (this.a.size() + 9 - 1) / 9 - 5;
+    int ☃ = (a.size() + 9 - 1) / 9 - 5;
     
     int ☃ = (int)(☃ * ☃ + 0.5D);
     if (☃ < 0) {
@@ -37,8 +37,8 @@ class ayu$a
       for (int ☃ = 0; ☃ < 9; ☃++)
       {
         int ☃ = ☃ + (☃ + ☃) * 9;
-        if ((☃ >= 0) && (☃ < this.a.size())) {
-          ayu.g().a(☃ + ☃ * 9, (zx)this.a.get(☃));
+        if ((☃ >= 0) && (☃ < a.size())) {
+          ayu.g().a(☃ + ☃ * 9, (zx)a.get(☃));
         } else {
           ayu.g().a(☃ + ☃ * 9, null);
         }
@@ -48,16 +48,16 @@ class ayu$a
   
   public boolean e()
   {
-    return this.a.size() > 45;
+    return a.size() > 45;
   }
   
   protected void a(int ☃, int ☃, boolean ☃, wn ☃) {}
   
   public zx b(wn ☃, int ☃)
   {
-    if ((☃ >= this.c.size() - 9) && (☃ < this.c.size()))
+    if ((☃ >= c.size() - 9) && (☃ < c.size()))
     {
-      yg ☃ = (yg)this.c.get(☃);
+      yg ☃ = (yg)c.get(☃);
       if ((☃ != null) && (☃.e())) {
         ☃.d(null);
       }
@@ -67,11 +67,11 @@ class ayu$a
   
   public boolean a(zx ☃, yg ☃)
   {
-    return ☃.g > 90;
+    return g > 90;
   }
   
   public boolean b(yg ☃)
   {
-    return ((☃.d instanceof wm)) || ((☃.g > 90) && (☃.f <= 162));
+    return ((d instanceof wm)) || ((g > 90) && (f <= 162));
   }
 }

@@ -16,24 +16,24 @@ public enum aih$a
   
   private aih$a(int ☃, String ☃, arn ☃)
   {
-    this.c = ☃;
-    this.d = ☃;
-    this.e = ☃;
+    c = ☃;
+    d = ☃;
+    e = ☃;
   }
   
   public int a()
   {
-    return this.c;
+    return c;
   }
   
   public arn c()
   {
-    return this.e;
+    return e;
   }
   
   public String toString()
   {
-    return this.d;
+    return d;
   }
   
   public static a a(int ☃)
@@ -46,11 +46,11 @@ public enum aih$a
   
   public String l()
   {
-    return this.d;
+    return d;
   }
   
   public String d()
   {
-    return this.d;
+    return d;
   }
 }

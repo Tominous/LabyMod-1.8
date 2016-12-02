@@ -21,29 +21,29 @@ public class ReflectorClass
   public ReflectorClass(Class targetClass)
   {
     this.targetClass = targetClass;
-    this.targetClassName = targetClass.getName();
-    this.checked = true;
+    targetClassName = targetClass.getName();
+    checked = true;
   }
   
   public Class getTargetClass()
   {
-    if (this.checked) {
-      return this.targetClass;
+    if (checked) {
+      return targetClass;
     }
-    this.checked = true;
+    checked = true;
     try
     {
-      this.targetClass = Class.forName(this.targetClassName);
+      targetClass = Class.forName(targetClassName);
     }
     catch (ClassNotFoundException e)
     {
-      Config.log("(Reflector) Class not present: " + this.targetClassName);
+      Config.log("(Reflector) Class not present: " + targetClassName);
     }
     catch (Throwable e)
     {
       e.printStackTrace();
     }
-    return this.targetClass;
+    return targetClass;
   }
   
   public boolean exists()
@@ -53,7 +53,7 @@ public class ReflectorClass
   
   public String getTargetClassName()
   {
-    return this.targetClassName;
+    return targetClassName;
   }
   
   public boolean isInstance(Object obj)

@@ -20,58 +20,58 @@ public class aku
     
     private a(String ☃, String ☃)
     {
-      this.N = ☃;
-      this.O = ☃;
+      N = ☃;
+      O = ☃;
     }
     
     private a(String ☃, String ☃, zx ☃)
     {
       this(☃, ☃);
-      this.Q = ☃;
+      Q = ☃;
     }
     
     private a(String ☃, String ☃, String ☃, String ☃, String ☃)
     {
       this(☃, ☃);
-      this.P[0] = ☃;
-      this.P[1] = ☃;
-      this.P[2] = ☃;
+      P[0] = ☃;
+      P[1] = ☃;
+      P[2] = ☃;
     }
     
     public String a()
     {
-      return this.N;
+      return N;
     }
     
     public String b()
     {
-      return this.O;
+      return O;
     }
     
     public String[] c()
     {
-      return this.P;
+      return P;
     }
     
     public boolean d()
     {
-      return (this.Q != null) || (this.P[0] != null);
+      return (Q != null) || (P[0] != null);
     }
     
     public boolean e()
     {
-      return this.Q != null;
+      return Q != null;
     }
     
     public zx f()
     {
-      return this.Q;
+      return Q;
     }
     
     public static a a(String ☃)
     {
       for (a ☃ : ) {
-        if (☃.O.equals(☃)) {
+        if (O.equals(☃)) {
           return ☃;
         }
       }
@@ -81,34 +81,34 @@ public class aku
   
   public void a(zx ☃)
   {
-    this.f = null;
+    f = null;
     if ((☃.n()) && (☃.o().b("BlockEntityTag", 10)))
     {
       dn ☃ = ☃.o().m("BlockEntityTag");
       if (☃.c("Patterns")) {
-        this.f = ((du)☃.c("Patterns", 10).b());
+        f = ((du)☃.c("Patterns", 10).b());
       }
       if (☃.b("Base", 99)) {
-        this.a = ☃.f("Base");
+        a = ☃.f("Base");
       } else {
-        this.a = (☃.i() & 0xF);
+        a = (☃.i() & 0xF);
       }
     }
     else
     {
-      this.a = (☃.i() & 0xF);
+      a = (☃.i() & 0xF);
     }
-    this.h = null;
-    this.i = null;
-    this.j = "";
-    this.g = true;
+    h = null;
+    i = null;
+    j = "";
+    g = true;
   }
   
   public void b(dn ☃)
   {
     super.b(☃);
     
-    a(☃, this.a, this.f);
+    a(☃, a, f);
   }
   
   public static void a(dn ☃, int ☃, du ☃)
@@ -123,25 +123,25 @@ public class aku
   {
     super.a(☃);
     
-    this.a = ☃.f("Base");
-    this.f = ☃.c("Patterns", 10);
+    a = ☃.f("Base");
+    f = ☃.c("Patterns", 10);
     
-    this.h = null;
-    this.i = null;
-    this.j = null;
-    this.g = true;
+    h = null;
+    i = null;
+    j = null;
+    g = true;
   }
   
   public ff y_()
   {
     dn ☃ = new dn();
     b(☃);
-    return new ft(this.c, 6, ☃);
+    return new ft(c, 6, ☃);
   }
   
   public int b()
   {
-    return this.a;
+    return a;
   }
   
   public static int b(zx ☃)
@@ -165,54 +165,54 @@ public class aku
   public List<aku.a> c()
   {
     h();
-    return this.h;
+    return h;
   }
   
   public du d()
   {
-    return this.f;
+    return f;
   }
   
   public List<zd> e()
   {
     h();
-    return this.i;
+    return i;
   }
   
   public String g()
   {
     h();
-    return this.j;
+    return j;
   }
   
   private void h()
   {
-    if ((this.h != null) && (this.i != null) && (this.j != null)) {
+    if ((h != null) && (i != null) && (j != null)) {
       return;
     }
-    if (!this.g)
+    if (!g)
     {
-      this.j = "";
+      j = "";
       return;
     }
-    this.h = Lists.newArrayList();
-    this.i = Lists.newArrayList();
+    h = Lists.newArrayList();
+    i = Lists.newArrayList();
     
-    this.h.add(aku.a.a);
-    this.i.add(zd.a(this.a));
-    this.j = ("b" + this.a);
-    if (this.f != null) {
-      for (int ☃ = 0; ☃ < this.f.c(); ☃++)
+    h.add(aku.a.a);
+    i.add(zd.a(a));
+    j = ("b" + a);
+    if (f != null) {
+      for (int ☃ = 0; ☃ < f.c(); ☃++)
       {
-        dn ☃ = this.f.b(☃);
+        dn ☃ = f.b(☃);
         aku.a ☃ = aku.a.a(☃.j("Pattern"));
         if (☃ != null)
         {
-          this.h.add(☃);
+          h.add(☃);
           int ☃ = ☃.f("Color");
-          this.i.add(zd.a(☃));
+          i.add(zd.a(☃));
           
-          this.j = (this.j + ☃.b() + ☃);
+          j = (j + ☃.b() + ☃);
         }
       }
     }

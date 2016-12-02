@@ -9,7 +9,7 @@ public class ajs
   public ajs(arm ☃)
   {
     super(☃, false);
-    j(this.M.b().a(a, zd.a));
+    j(M.b().a(a, zd.a));
     a(yz.b);
   }
   
@@ -57,14 +57,14 @@ public class ajs
   
   public void c(adm ☃, cj ☃, alz ☃)
   {
-    if (!☃.D) {
+    if (!D) {
       aff.f(☃, ☃);
     }
   }
   
   public void b(adm ☃, cj ☃, alz ☃)
   {
-    if (!☃.D) {
+    if (!D) {
       aff.f(☃, ☃);
     }
   }

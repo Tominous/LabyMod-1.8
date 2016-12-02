@@ -20,21 +20,21 @@ public class GuiSlideControl
   {
     super(id, x, y, width, height, displayString + numFormat.format(curVal));
     
-    this.label = displayString;
-    this.minValue = minVal;
-    this.maxValue = maxVal;
-    this.curValue = ((curVal - minVal) / (maxVal - minVal));
-    this.useIntegers = useInts;
+    label = displayString;
+    minValue = minVal;
+    maxValue = maxVal;
+    curValue = ((curVal - minVal) / (maxVal - minVal));
+    useIntegers = useInts;
   }
   
   public float GetValueAsFloat()
   {
-    return (this.maxValue - this.minValue) * this.curValue + this.minValue;
+    return (maxValue - minValue) * curValue + minValue;
   }
   
   public int GetValueAsInt()
   {
-    return (int)((this.maxValue - this.minValue) * this.curValue + this.minValue);
+    return (int)((maxValue - minValue) * curValue + minValue);
   }
   
   protected float roundValue(float value)
@@ -45,15 +45,15 @@ public class GuiSlideControl
   
   public String GetLabel()
   {
-    if (this.useIntegers) {
-      return this.label + GetValueAsInt();
+    if (useIntegers) {
+      return label + GetValueAsInt();
     }
-    return this.label + numFormat.format(GetValueAsFloat());
+    return label + numFormat.format(GetValueAsFloat());
   }
   
   protected void SetLabel()
   {
-    this.j = GetLabel();
+    j = GetLabel();
   }
   
   protected int a(boolean isMouseOver)
@@ -63,22 +63,22 @@ public class GuiSlideControl
   
   protected void b(ave mc, int mousePosX, int mousePosY)
   {
-    if (this.m)
+    if (m)
     {
-      if (this.isSliding)
+      if (isSliding)
       {
-        this.curValue = roundValue((mousePosX - (this.h + 4)) / (this.f - 8));
-        if (this.curValue < 0.0F) {
-          this.curValue = 0.0F;
+        curValue = roundValue((mousePosX - (h + 4)) / (f - 8));
+        if (curValue < 0.0F) {
+          curValue = 0.0F;
         }
-        if (this.curValue > 1.0F) {
-          this.curValue = 1.0F;
+        if (curValue > 1.0F) {
+          curValue = 1.0F;
         }
         SetLabel();
       }
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      b(this.h + (int)(this.curValue * (this.f - 8)), this.i, 0, 66, 4, 20);
-      b(this.h + (int)(this.curValue * (this.f - 8)) + 4, this.i, 196, 66, 4, 20);
+      b(h + (int)(curValue * (f - 8)), i, 0, 66, 4, 20);
+      b(h + (int)(curValue * (f - 8)) + 4, i, 196, 66, 4, 20);
     }
   }
   
@@ -86,15 +86,15 @@ public class GuiSlideControl
   {
     if (super.c(mc, mousePosX, mousePosY))
     {
-      this.curValue = roundValue((mousePosX - (this.h + 4)) / (this.f - 8));
-      if (this.curValue < 0.0F) {
-        this.curValue = 0.0F;
+      curValue = roundValue((mousePosX - (h + 4)) / (f - 8));
+      if (curValue < 0.0F) {
+        curValue = 0.0F;
       }
-      if (this.curValue > 1.0F) {
-        this.curValue = 1.0F;
+      if (curValue > 1.0F) {
+        curValue = 1.0F;
       }
       SetLabel();
-      this.isSliding = true;
+      isSliding = true;
       return true;
     }
     return false;
@@ -102,6 +102,6 @@ public class GuiSlideControl
   
   public void a(int mousePosX, int mousePosY)
   {
-    this.isSliding = false;
+    isSliding = false;
   }
 }

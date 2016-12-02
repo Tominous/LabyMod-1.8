@@ -10,10 +10,10 @@
   
   private bgf$c(String p_i46234_1_, int p_i46234_2_, int p_i46234_3_, int p_i46234_4_, int p_i46234_5_, int p_i46234_6_)
   {
-    this.g = p_i46234_3_;
-    this.h = p_i46234_4_;
-    this.i = p_i46234_5_;
-    this.j = p_i46234_6_;
+    g = p_i46234_3_;
+    h = p_i46234_4_;
+    i = p_i46234_5_;
+    j = p_i46234_6_;
   }
   
   public static c a(cq p_178184_0_)

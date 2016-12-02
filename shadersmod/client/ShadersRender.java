@@ -192,13 +192,13 @@ public class ShadersRender
     if ((Shaders.usedShadowDepthBuffers > 0) && (--Shaders.shadowPassCounter <= 0))
     {
       ave mc = ave.A();
-      mc.A.c("shadow pass");
+      A.c("shadow pass");
       
-      bfr renderGlobal = mc.g;
+      bfr renderGlobal = g;
       Shaders.isShadowPass = true;
       Shaders.shadowPassCounter = Shaders.shadowPassInterval;
-      Shaders.preShadowPassThirdPersonView = mc.t.aA;
-      mc.t.aA = 1;
+      Shaders.preShadowPassThirdPersonView = t.aA;
+      t.aA = 1;
       
       Shaders.checkGLError("pre shadow");
       GL11.glMatrixMode(5889);
@@ -206,15 +206,15 @@ public class ShadersRender
       GL11.glMatrixMode(5888);
       GL11.glPushMatrix();
       
-      mc.A.c("shadow clear");
+      A.c("shadow clear");
       EXTFramebufferObject.glBindFramebufferEXT(36160, Shaders.sfb);
       Shaders.checkGLError("shadow bind sfb");
       Shaders.useProgram(30);
       
-      mc.A.c("shadow camera");
+      A.c("shadow camera");
       entityRenderer.a(partialTicks, 2);
       Shaders.setCameraShadow(partialTicks);
-      auz.a(mc.h, mc.t.aA == 2);
+      auz.a(h, t.aA == 2);
       Shaders.checkGLError("shadow camera");
       
       GL20.glDrawBuffers(Shaders.sfbDrawBuffers);
@@ -231,15 +231,15 @@ public class ShadersRender
       GL11.glClear(Shaders.usedShadowColorBuffers != 0 ? 16640 : 256);
       Shaders.checkGLError("shadow clear");
       
-      mc.A.c("shadow frustum");
+      A.c("shadow frustum");
       bid clippingHelper = ClippingHelperShadow.getInstance();
-      mc.A.c("shadow culling");
+      A.c("shadow culling");
       bic frustum = new bic(clippingHelper);
       
       pk viewEntity = mc.ac();
-      double viewPosX = viewEntity.P + (viewEntity.s - viewEntity.P) * partialTicks;
-      double viewPosY = viewEntity.Q + (viewEntity.t - viewEntity.Q) * partialTicks;
-      double viewPosZ = viewEntity.R + (viewEntity.u - viewEntity.R) * partialTicks;
+      double viewPosX = P + (s - P) * partialTicks;
+      double viewPosY = Q + (t - Q) * partialTicks;
+      double viewPosZ = R + (u - R) * partialTicks;
       frustum.a(viewPosX, viewPosY, viewPosZ);
       
       bfl.j(7425);
@@ -250,17 +250,17 @@ public class ShadersRender
       
       bfl.p();
       
-      mc.A.c("shadow prepareterrain");
+      A.c("shadow prepareterrain");
       mc.P().a(bmh.g);
       
-      mc.A.c("shadow setupterrain");
+      A.c("shadow setupterrain");
       int frameCount = 0;
-      frameCount = entityRenderer.ae;
-      entityRenderer.ae = (frameCount + 1);
-      renderGlobal.a(viewEntity, partialTicks, frustum, frameCount, mc.h.v());
-      mc.A.c("shadow updatechunks");
+      frameCount = ae;
+      ae = (frameCount + 1);
+      renderGlobal.a(viewEntity, partialTicks, frustum, frameCount, h.v());
+      A.c("shadow updatechunks");
       
-      mc.A.c("shadow terrain");
+      A.c("shadow terrain");
       
       bfl.n(5888);
       bfl.E();
@@ -281,7 +281,7 @@ public class ShadersRender
       bfl.F();
       bfl.E();
       
-      mc.A.c("shadow entities");
+      A.c("shadow entities");
       if (SMCEnvironment.hasForge) {
         Reflector.call(Reflector.ForgeHooksClient_setRenderPass, new Object[] { Integer.valueOf(0) });
       }
@@ -314,7 +314,7 @@ public class ShadersRender
       Shaders.checkGLError("shadow drawbuffers pre-translucent");
       Shaders.checkFramebufferStatus("shadow pre-translucent");
       
-      mc.A.c("shadow translucent");
+      A.c("shadow translucent");
       renderGlobal.a(adf.d, partialTicks, 2, viewEntity);
       Shaders.checkGLError("shadow translucent");
       if (SMCEnvironment.hasForge)
@@ -335,9 +335,9 @@ public class ShadersRender
       Shaders.checkGLError("shadow flush");
       
       Shaders.isShadowPass = false;
-      mc.t.aA = Shaders.preShadowPassThirdPersonView;
+      t.aA = Shaders.preShadowPassThirdPersonView;
       
-      mc.A.c("shadow postprocess");
+      A.c("shadow postprocess");
       if (Shaders.hasGlGenMipmap)
       {
         if (Shaders.usedShadowDepthBuffers >= 1)

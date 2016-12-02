@@ -9,7 +9,7 @@ public class awf
   public awf(ave ☃, int ☃, int ☃, int ☃, int ☃, int ☃, avh.a... ☃)
   {
     super(☃, ☃, ☃, ☃, ☃, ☃);
-    this.k = false;
+    k = false;
     for (int ☃ = 0; ☃ < ☃.length; ☃ += 2)
     {
       avh.a ☃ = ☃[☃];
@@ -17,7 +17,7 @@ public class awf
       avs ☃ = a(☃, ☃ / 2 - 155, 0, ☃);
       avs ☃ = a(☃, ☃ / 2 - 155 + 160, 0, ☃);
       
-      this.u.add(new awf.a(☃, ☃));
+      u.add(new awf.a(☃, ☃));
     }
   }
   
@@ -27,17 +27,17 @@ public class awf
       return null;
     }
     int ☃ = ☃.c();
-    return ☃.a() ? new awj(☃, ☃, ☃, ☃) : new awe(☃, ☃, ☃, ☃, ☃.t.c(☃));
+    return ☃.a() ? new awj(☃, ☃, ☃, ☃) : new awe(☃, ☃, ☃, ☃, t.c(☃));
   }
   
   public awf.a c(int ☃)
   {
-    return (awf.a)this.u.get(☃);
+    return (awf.a)u.get(☃);
   }
   
   protected int b()
   {
-    return this.u.size();
+    return u.size();
   }
   
   public int c()
@@ -59,42 +59,42 @@ public class awf
     
     public a(avs ☃, avs ☃)
     {
-      this.a = ave.A();
-      this.b = ☃;
-      this.c = ☃;
+      a = ave.A();
+      b = ☃;
+      c = ☃;
     }
     
     public void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, boolean ☃)
     {
-      if (this.b != null)
+      if (b != null)
       {
-        this.b.i = ☃;
-        this.b.a(this.a, ☃, ☃);
+        b.i = ☃;
+        b.a(a, ☃, ☃);
       }
-      if (this.c != null)
+      if (c != null)
       {
-        this.c.i = ☃;
-        this.c.a(this.a, ☃, ☃);
+        c.i = ☃;
+        c.a(a, ☃, ☃);
       }
     }
     
     public boolean a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
     {
-      if (this.b.c(this.a, ☃, ☃))
+      if (b.c(a, ☃, ☃))
       {
-        if ((this.b instanceof awe))
+        if ((b instanceof awe))
         {
-          this.a.t.a(((awe)this.b).c(), 1);
-          this.b.j = this.a.t.c(avh.a.a(this.b.k));
+          a.t.a(((awe)b).c(), 1);
+          b.j = a.t.c(avh.a.a(b.k));
         }
         return true;
       }
-      if ((this.c != null) && (this.c.c(this.a, ☃, ☃)))
+      if ((c != null) && (c.c(a, ☃, ☃)))
       {
-        if ((this.c instanceof awe))
+        if ((c instanceof awe))
         {
-          this.a.t.a(((awe)this.c).c(), 1);
-          this.c.j = this.a.t.c(avh.a.a(this.c.k));
+          a.t.a(((awe)c).c(), 1);
+          c.j = a.t.c(avh.a.a(c.k));
         }
         return true;
       }
@@ -103,11 +103,11 @@ public class awf
     
     public void b(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
     {
-      if (this.b != null) {
-        this.b.a(☃, ☃);
+      if (b != null) {
+        b.a(☃, ☃);
       }
-      if (this.c != null) {
-        this.c.a(☃, ☃);
+      if (c != null) {
+        c.a(☃, ☃);
       }
     }
     

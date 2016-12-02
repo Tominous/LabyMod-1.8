@@ -7,19 +7,19 @@ public class alm
   public void b(dn ☃)
   {
     super.b(☃);
-    ☃.a("note", this.a);
+    ☃.a("note", a);
   }
   
   public void a(dn ☃)
   {
     super.a(☃);
-    this.a = ☃.d("note");
-    this.a = ((byte)ns.a(this.a, 0, 24));
+    a = ☃.d("note");
+    a = ((byte)ns.a(a, 0, 24));
   }
   
   public void b()
   {
-    this.a = ((byte)((this.a + 1) % 25));
+    a = ((byte)((a + 1) % 25));
     p_();
   }
   
@@ -43,6 +43,6 @@ public class alm
     if (☃ == arm.d) {
       ☃ = 4;
     }
-    ☃.c(☃, afi.B, ☃, this.a);
+    ☃.c(☃, afi.B, ☃, a);
   }
 }

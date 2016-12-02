@@ -20,7 +20,7 @@ final class bpx$2
       public InputStream getInputStream()
         throws IOException
       {
-        return ave.A().Q().a(bpx.2.this.a).b();
+        return ave.A().Q().a(a).b();
       }
     };
   }

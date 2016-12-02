@@ -10,9 +10,9 @@ class adm$2
   {
     try
     {
-      return String.format("ID #%d (%s // %s)", new Object[] { Integer.valueOf(afh.a(this.a)), this.a.a(), this.a.getClass().getCanonicalName() });
+      return String.format("ID #%d (%s // %s)", new Object[] { Integer.valueOf(afh.a(a)), a.a(), a.getClass().getCanonicalName() });
     }
     catch (Throwable ☃) {}
-    return "ID #" + afh.a(this.a);
+    return "ID #" + afh.a(a);
   }
 }

@@ -11,36 +11,36 @@ public class aip$a
   
   public aip$a(adm ☃, cj ☃, cq.a ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
     if (☃ == cq.a.a)
     {
-      this.d = cq.f;
-      this.c = cq.e;
+      d = cq.f;
+      c = cq.e;
     }
     else
     {
-      this.d = cq.c;
-      this.c = cq.d;
+      d = cq.c;
+      c = cq.d;
     }
     cj ☃ = ☃;
     while ((☃.o() > ☃.o() - 21) && (☃.o() > 0) && (a(☃.p(☃.b()).c()))) {
       ☃ = ☃.b();
     }
-    int ☃ = a(☃, this.d) - 1;
+    int ☃ = a(☃, d) - 1;
     if (☃ >= 0)
     {
-      this.f = ☃.a(this.d, ☃);
+      f = ☃.a(d, ☃);
       
-      this.h = a(this.f, this.c);
-      if ((this.h < 2) || (this.h > 21))
+      h = a(f, c);
+      if ((h < 2) || (h > 21))
       {
-        this.f = null;
-        this.h = 0;
+        f = null;
+        h = 0;
       }
     }
-    if (this.f != null) {
-      this.g = c();
+    if (f != null) {
+      g = c();
     }
   }
   
@@ -49,14 +49,14 @@ public class aip$a
     for (int ☃ = 0; ☃ < 22; ☃++)
     {
       cj ☃ = ☃.a(☃, ☃);
-      if (!a(this.a.p(☃).c())) {
+      if (!a(a.p(☃).c())) {
         break;
       }
-      if (this.a.p(☃.b()).c() != afi.Z) {
+      if (a.p(☃.b()).c() != afi.Z) {
         break;
       }
     }
-    afh ☃ = this.a.p(☃.a(☃, ☃)).c();
+    afh ☃ = a.p(☃.a(☃, ☃)).c();
     if (☃ == afi.Z) {
       return ☃;
     }
@@ -65,38 +65,38 @@ public class aip$a
   
   public int a()
   {
-    return this.g;
+    return g;
   }
   
   public int b()
   {
-    return this.h;
+    return h;
   }
   
   protected int c()
   {
-    for (this.g = 0; this.g < 21; this.g += 1) {
-      for (int ☃ = 0; ☃ < this.h; ☃++)
+    for (g = 0; g < 21; g += 1) {
+      for (int ☃ = 0; ☃ < h; ☃++)
       {
-        cj ☃ = this.f.a(this.c, ☃).b(this.g);
+        cj ☃ = f.a(c, ☃).b(g);
         
-        afh ☃ = this.a.p(☃).c();
+        afh ☃ = a.p(☃).c();
         if (!a(☃)) {
           break label181;
         }
         if (☃ == afi.aY) {
-          this.e += 1;
+          e += 1;
         }
         if (☃ == 0)
         {
-          ☃ = this.a.p(☃.a(this.d)).c();
+          ☃ = a.p(☃.a(d)).c();
           if (☃ != afi.Z) {
             break label181;
           }
         }
-        else if (☃ == this.h - 1)
+        else if (☃ == h - 1)
         {
-          ☃ = this.a.p(☃.a(this.c)).c();
+          ☃ = a.p(☃.a(c)).c();
           if (☃ != afi.Z) {
             break label181;
           }
@@ -104,40 +104,40 @@ public class aip$a
       }
     }
     label181:
-    for (int ☃ = 0; ☃ < this.h; ☃++) {
-      if (this.a.p(this.f.a(this.c, ☃).b(this.g)).c() != afi.Z)
+    for (int ☃ = 0; ☃ < h; ☃++) {
+      if (a.p(f.a(c, ☃).b(g)).c() != afi.Z)
       {
-        this.g = 0;
+        g = 0;
         break;
       }
     }
-    if ((this.g > 21) || (this.g < 3))
+    if ((g > 21) || (g < 3))
     {
-      this.f = null;
-      this.h = 0;
-      this.g = 0;
+      f = null;
+      h = 0;
+      g = 0;
       return 0;
     }
-    return this.g;
+    return g;
   }
   
   protected boolean a(afh ☃)
   {
-    return (☃.J == arm.a) || (☃ == afi.ab) || (☃ == afi.aY);
+    return (J == arm.a) || (☃ == afi.ab) || (☃ == afi.aY);
   }
   
   public boolean d()
   {
-    return (this.f != null) && (this.h >= 2) && (this.h <= 21) && (this.g >= 3) && (this.g <= 21);
+    return (f != null) && (h >= 2) && (h <= 21) && (g >= 3) && (g <= 21);
   }
   
   public void e()
   {
-    for (int ☃ = 0; ☃ < this.h; ☃++)
+    for (int ☃ = 0; ☃ < h; ☃++)
     {
-      cj ☃ = this.f.a(this.c, ☃);
-      for (int ☃ = 0; ☃ < this.g; ☃++) {
-        this.a.a(☃.b(☃), afi.aY.Q().a(aip.a, this.b), 2);
+      cj ☃ = f.a(c, ☃);
+      for (int ☃ = 0; ☃ < g; ☃++) {
+        a.a(☃.b(☃), afi.aY.Q().a(aip.a, b), 2);
       }
     }
   }

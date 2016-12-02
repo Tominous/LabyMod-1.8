@@ -20,7 +20,7 @@ public class lj
   
   public lj(ll ☃)
   {
-    this.b = ☃;
+    b = ☃;
   }
   
   public void channelRead(ChannelHandlerContext ☃, Object ☃)
@@ -37,7 +37,7 @@ public class lj
         return;
       }
       InetSocketAddress ☃ = (InetSocketAddress)☃.channel().remoteAddress();
-      MinecraftServer ☃ = this.b.d();
+      MinecraftServer ☃ = b.d();
       
       int ☃ = ☃.readableBytes();
       switch (☃)

@@ -7,6 +7,6 @@ class p$1
   
   public boolean a(mq ☃)
   {
-    return (this.a.A().a(☃)) && (☃ != this.b);
+    return (a.A().a(☃)) && (☃ != b);
   }
 }

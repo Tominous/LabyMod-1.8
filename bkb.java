@@ -15,8 +15,8 @@ public class bkb
   
   protected void a(tx ☃, float ☃, float ☃, float ☃)
   {
-    float ☃ = ☃.b + (☃.a - ☃.b) * ☃;
-    float ☃ = ☃.bk + (☃.c - ☃.bk) * ☃;
+    float ☃ = b + (a - b) * ☃;
+    float ☃ = bk + (c - bk) * ☃;
     
     bfl.b(0.0F, 0.5F, 0.0F);
     bfl.b(180.0F - ☃, 0.0F, 1.0F, 0.0F);
@@ -27,6 +27,6 @@ public class bkb
   
   protected float a(tx ☃, float ☃)
   {
-    return ☃.bo + (☃.bn - ☃.bo) * ☃;
+    return bo + (bn - bo) * ☃;
   }
 }

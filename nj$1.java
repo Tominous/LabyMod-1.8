@@ -24,82 +24,82 @@ final class nj$1
     HttpURLConnection ☃ = null;
     InputStream ☃ = null;
     OutputStream ☃ = null;
-    if (this.a != null)
+    if (a != null)
     {
-      this.a.b("Downloading Resource Pack");
-      this.a.c("Making Request...");
+      a.b("Downloading Resource Pack");
+      a.c("Making Request...");
     }
     try
     {
       byte[] ☃ = new byte['က'];
-      URL ☃ = new URL(this.b);
-      ☃ = (HttpURLConnection)☃.openConnection(this.c);
+      URL ☃ = new URL(b);
+      ☃ = (HttpURLConnection)☃.openConnection(c);
       float ☃ = 0.0F;
-      float ☃ = this.d.entrySet().size();
-      for (Map.Entry<String, String> ☃ : this.d.entrySet())
+      float ☃ = d.entrySet().size();
+      for (Map.Entry<String, String> ☃ : d.entrySet())
       {
         ☃.setRequestProperty((String)☃.getKey(), (String)☃.getValue());
-        if (this.a != null) {
-          this.a.a((int)(++☃ / ☃ * 100.0F));
+        if (a != null) {
+          a.a((int)(++☃ / ☃ * 100.0F));
         }
       }
       ☃ = ☃.getInputStream();
       ☃ = ☃.getContentLength();
       int ☃ = ☃.getContentLength();
-      if (this.a != null) {
-        this.a.c(String.format("Downloading file (%.2f MB)...", new Object[] { Float.valueOf(☃ / 1000.0F / 1000.0F) }));
+      if (a != null) {
+        a.c(String.format("Downloading file (%.2f MB)...", new Object[] { Float.valueOf(☃ / 1000.0F / 1000.0F) }));
       }
-      if (this.e.exists())
+      if (e.exists())
       {
-        long ☃ = this.e.length();
+        long ☃ = e.length();
         if (☃ == ☃)
         {
-          if (this.a != null) {
-            this.a.a();
+          if (a != null) {
+            a.a();
           }
           return;
         }
-        nj.b().warn("Deleting " + this.e + " as it does not match what we currently have (" + ☃ + " vs our " + ☃ + ").");
-        FileUtils.deleteQuietly(this.e);
+        nj.b().warn("Deleting " + e + " as it does not match what we currently have (" + ☃ + " vs our " + ☃ + ").");
+        FileUtils.deleteQuietly(e);
       }
-      else if (this.e.getParentFile() != null)
+      else if (e.getParentFile() != null)
       {
-        this.e.getParentFile().mkdirs();
+        e.getParentFile().mkdirs();
       }
-      ☃ = new DataOutputStream(new FileOutputStream(this.e));
-      if ((this.f > 0) && (☃ > this.f))
+      ☃ = new DataOutputStream(new FileOutputStream(e));
+      if ((f > 0) && (☃ > f))
       {
-        if (this.a != null) {
-          this.a.a();
+        if (a != null) {
+          a.a();
         }
-        throw new IOException("Filesize is bigger than maximum allowed (file is " + ☃ + ", limit is " + this.f + ")");
+        throw new IOException("Filesize is bigger than maximum allowed (file is " + ☃ + ", limit is " + f + ")");
       }
       int ☃ = 0;
       while ((☃ = ☃.read(☃)) >= 0)
       {
         ☃ += ☃;
-        if (this.a != null) {
-          this.a.a((int)(☃ / ☃ * 100.0F));
+        if (a != null) {
+          a.a((int)(☃ / ☃ * 100.0F));
         }
-        if ((this.f > 0) && (☃ > this.f))
+        if ((f > 0) && (☃ > f))
         {
-          if (this.a != null) {
-            this.a.a();
+          if (a != null) {
+            a.a();
           }
-          throw new IOException("Filesize was bigger than maximum allowed (got >= " + ☃ + ", limit was " + this.f + ")");
+          throw new IOException("Filesize was bigger than maximum allowed (got >= " + ☃ + ", limit was " + f + ")");
         }
         if (Thread.interrupted())
         {
           nj.b().error("INTERRUPTED");
-          if (this.a != null) {
-            this.a.a();
+          if (a != null) {
+            a.a();
           }
           return;
         }
         ☃.write(☃, 0, ☃);
       }
-      if (this.a != null) {
-        this.a.a();
+      if (a != null) {
+        a.a();
       }
     }
     catch (Throwable ☃)
@@ -117,8 +117,8 @@ final class nj$1
           ☃.printStackTrace();
         }
       }
-      if (this.a != null) {
-        this.a.a();
+      if (a != null) {
+        a.a();
       }
     }
     finally

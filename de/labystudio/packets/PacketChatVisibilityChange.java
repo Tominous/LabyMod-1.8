@@ -9,12 +9,12 @@ public class PacketChatVisibilityChange
   
   public void read(PacketBuf buf)
   {
-    this.visible = buf.readBoolean();
+    visible = buf.readBoolean();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeBoolean(this.visible);
+    buf.writeBoolean(visible);
   }
   
   public void handle(PacketHandler packetHandler)
@@ -24,6 +24,6 @@ public class PacketChatVisibilityChange
   
   public boolean isVisible()
   {
-    return this.visible;
+    return visible;
   }
 }

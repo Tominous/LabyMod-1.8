@@ -9,9 +9,9 @@ public class GuiAnimationSettingsOF
   
   public GuiAnimationSettingsOF(axu guiscreen, avh gamesettings)
   {
-    this.title = "Animation Settings";
-    this.prevScreen = guiscreen;
-    this.settings = gamesettings;
+    title = "Animation Settings";
+    prevScreen = guiscreen;
+    settings = gamesettings;
   }
   
   public void b()
@@ -23,43 +23,43 @@ public class GuiAnimationSettingsOF
     {
       avh.a enumoptions = aenumoptions[k];
       
-      int x = this.l / 2 - 155 + i % 2 * 160;
-      int y = this.m / 6 + 21 * (i / 2) - 12;
+      int x = l / 2 - 155 + i % 2 * 160;
+      int y = m / 6 + 21 * (i / 2) - 12;
       if (!enumoptions.a()) {
-        this.n.add(new awe(enumoptions.c(), x, y, enumoptions, this.settings.c(enumoptions)));
+        n.add(new awe(enumoptions.c(), x, y, enumoptions, settings.c(enumoptions)));
       } else {
-        this.n.add(new awj(enumoptions.c(), x, y, enumoptions));
+        n.add(new awj(enumoptions.c(), x, y, enumoptions));
       }
       i++;
     }
-    this.n.add(new avs(210, this.l / 2 - 155, this.m / 6 + 168 + 11, 70, 20, "All ON"));
-    this.n.add(new avs(211, this.l / 2 - 155 + 80, this.m / 6 + 168 + 11, 70, 20, "All OFF"));
+    n.add(new avs(210, l / 2 - 155, m / 6 + 168 + 11, 70, 20, "All ON"));
+    n.add(new avs(211, l / 2 - 155 + 80, m / 6 + 168 + 11, 70, 20, "All OFF"));
     
-    this.n.add(new awe(200, this.l / 2 + 5, this.m / 6 + 168 + 11, bnq.a("gui.done", new Object[0])));
+    n.add(new awe(200, l / 2 + 5, m / 6 + 168 + 11, bnq.a("gui.done", new Object[0])));
   }
   
   protected void a(avs guibutton)
   {
-    if (!guibutton.l) {
+    if (!l) {
       return;
     }
-    if ((guibutton.k < 200) && ((guibutton instanceof awe)))
+    if ((k < 200) && ((guibutton instanceof awe)))
     {
-      this.settings.a(((awe)guibutton).c(), 1);
-      guibutton.j = this.settings.c(avh.a.a(guibutton.k));
+      settings.a(((awe)guibutton).c(), 1);
+      j = settings.c(avh.a.a(k));
     }
-    if (guibutton.k == 200)
+    if (k == 200)
     {
-      this.j.t.b();
-      this.j.a(this.prevScreen);
+      jt.b();
+      this.j.a(prevScreen);
     }
-    if (guibutton.k == 210) {
-      this.j.t.setAllAnimations(true);
+    if (k == 210) {
+      jt.setAllAnimations(true);
     }
-    if (guibutton.k == 211) {
-      this.j.t.setAllAnimations(false);
+    if (k == 211) {
+      jt.setAllAnimations(false);
     }
-    if (guibutton.k != avh.a.CLOUD_HEIGHT.ordinal())
+    if (k != avh.a.CLOUD_HEIGHT.ordinal())
     {
       avr scaledresolution = new avr(this.j);
       int i = scaledresolution.a();
@@ -71,7 +71,7 @@ public class GuiAnimationSettingsOF
   public void a(int i, int j, float f)
   {
     c();
-    a(this.q, this.title, this.l / 2, 15, 16777215);
+    a(q, title, l / 2, 15, 16777215);
     super.a(i, j, f);
   }
   

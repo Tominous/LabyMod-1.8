@@ -17,10 +17,10 @@ public class qd
   
   public qd(UUID ☃, String ☃, double ☃, int ☃)
   {
-    this.d = ☃;
-    this.c = ☃;
-    this.a = ☃;
-    this.b = ☃;
+    d = ☃;
+    c = ☃;
+    a = ☃;
+    b = ☃;
     
     Validate.notEmpty(☃, "Modifier name cannot be empty", new Object[0]);
     Validate.inclusiveBetween(0L, 2L, ☃, "Invalid operation");
@@ -28,32 +28,32 @@ public class qd
   
   public UUID a()
   {
-    return this.d;
+    return d;
   }
   
   public String b()
   {
-    return this.c;
+    return c;
   }
   
   public int c()
   {
-    return this.b;
+    return b;
   }
   
   public double d()
   {
-    return this.a;
+    return a;
   }
   
   public boolean e()
   {
-    return this.e;
+    return e;
   }
   
   public qd a(boolean ☃)
   {
-    this.e = ☃;
+    e = ☃;
     return this;
   }
   
@@ -66,7 +66,7 @@ public class qd
       return false;
     }
     qd ☃ = (qd)☃;
-    if (this.d != null ? !this.d.equals(☃.d) : ☃.d != null) {
+    if (d != null ? !d.equals(d) : d != null) {
       return false;
     }
     return true;
@@ -74,11 +74,11 @@ public class qd
   
   public int hashCode()
   {
-    return this.d != null ? this.d.hashCode() : 0;
+    return d != null ? d.hashCode() : 0;
   }
   
   public String toString()
   {
-    return "AttributeModifier{amount=" + this.a + ", operation=" + this.b + ", name='" + this.c + '\'' + ", id=" + this.d + ", serialize=" + this.e + '}';
+    return "AttributeModifier{amount=" + a + ", operation=" + b + ", name='" + c + '\'' + ", id=" + d + ", serialize=" + e + '}';
   }
 }

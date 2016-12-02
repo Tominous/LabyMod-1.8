@@ -22,10 +22,10 @@ public class Yytoken
   public String toString()
   {
     StringBuffer sb = new StringBuffer();
-    switch (this.type)
+    switch (type)
     {
     case 0: 
-      sb.append("VALUE(").append(this.value).append(")");
+      sb.append("VALUE(").append(value).append(")");
       break;
     case 1: 
       sb.append("LEFT BRACE({)");

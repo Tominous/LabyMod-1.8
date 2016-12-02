@@ -7,6 +7,6 @@ class bhp$1
   
   public void run()
   {
-    this.a.cancel(false);
+    a.cancel(false);
   }
 }

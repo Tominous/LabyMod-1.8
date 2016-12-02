@@ -11,6 +11,6 @@ class bfk$3
   public String a()
     throws Exception
   {
-    return String.format("Scaled: (%d, %d). Absolute: (%d, %d)", new Object[] { Integer.valueOf(this.val$var20), Integer.valueOf(this.val$var21), Integer.valueOf(Mouse.getX()), Integer.valueOf(Mouse.getY()) });
+    return String.format("Scaled: (%d, %d). Absolute: (%d, %d)", new Object[] { Integer.valueOf(val$var20), Integer.valueOf(val$var21), Integer.valueOf(Mouse.getX()), Integer.valueOf(Mouse.getY()) });
   }
 }

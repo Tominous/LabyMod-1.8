@@ -10,59 +10,59 @@ public class rm
   
   public rm(py ☃)
   {
-    this.a = ☃;
+    a = ☃;
     a(1);
   }
   
   public boolean a()
   {
-    cj ☃ = new cj(this.a);
-    if (((this.a.o.w()) && ((!this.a.o.S()) || (this.a.o.b(☃).e()))) || (this.a.o.t.o())) {
+    cj ☃ = new cj(a);
+    if (((a.o.w()) && ((!a.o.S()) || (a.o.b(☃).e()))) || (a.o.t.o())) {
       return false;
     }
-    if (this.a.bc().nextInt(50) != 0) {
+    if (a.bc().nextInt(50) != 0) {
       return false;
     }
-    if ((this.c != -1) && (this.a.e(this.c, this.a.t, this.d) < 4.0D)) {
+    if ((c != -1) && (a.e(c, a.t, d) < 4.0D)) {
       return false;
     }
-    tf ☃ = this.a.o.ae().a(☃, 14);
+    tf ☃ = a.o.ae().a(☃, 14);
     if (☃ == null) {
       return false;
     }
-    this.b = ☃.c(☃);
-    return this.b != null;
+    b = ☃.c(☃);
+    return b != null;
   }
   
   public boolean b()
   {
-    return !this.a.s().m();
+    return !a.s().m();
   }
   
   public void c()
   {
-    this.c = -1;
-    cj ☃ = this.b.e();
+    c = -1;
+    cj ☃ = b.e();
     int ☃ = ☃.n();
     int ☃ = ☃.o();
     int ☃ = ☃.p();
-    if (this.a.b(☃) > 256.0D)
+    if (a.b(☃) > 256.0D)
     {
-      aui ☃ = tc.a(this.a, 14, 3, new aui(☃ + 0.5D, ☃, ☃ + 0.5D));
+      aui ☃ = tc.a(a, 14, 3, new aui(☃ + 0.5D, ☃, ☃ + 0.5D));
       if (☃ != null) {
-        this.a.s().a(☃.a, ☃.b, ☃.c, 1.0D);
+        a.s().a(a, b, c, 1.0D);
       }
     }
     else
     {
-      this.a.s().a(☃ + 0.5D, ☃, ☃ + 0.5D, 1.0D);
+      a.s().a(☃ + 0.5D, ☃, ☃ + 0.5D, 1.0D);
     }
   }
   
   public void d()
   {
-    this.c = this.b.e().n();
-    this.d = this.b.e().p();
-    this.b = null;
+    c = b.e().n();
+    d = b.e().p();
+    b = null;
   }
 }

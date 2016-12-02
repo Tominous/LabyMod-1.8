@@ -9,26 +9,26 @@ public class sl
   public sl(ty ☃)
   {
     super(☃, false, true);
-    this.a = ☃;
+    a = ☃;
     a(1);
   }
   
   public boolean a()
   {
-    tf ☃ = this.a.n();
+    tf ☃ = a.n();
     if (☃ == null) {
       return false;
     }
-    this.b = ☃.b(this.a);
-    if ((this.b instanceof vn)) {
+    b = ☃.b(a);
+    if ((b instanceof vn)) {
       return false;
     }
-    if (!a(this.b, false))
+    if (!a(b, false))
     {
-      if (this.e.bc().nextInt(20) == 0)
+      if (e.bc().nextInt(20) == 0)
       {
-        this.b = ☃.c(this.a);
-        return a(this.b, false);
+        b = ☃.c(a);
+        return a(b, false);
       }
       return false;
     }
@@ -37,7 +37,7 @@ public class sl
   
   public void c()
   {
-    this.a.d(this.b);
+    a.d(b);
     super.c();
   }
 }

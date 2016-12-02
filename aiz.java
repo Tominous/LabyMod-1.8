@@ -8,7 +8,7 @@ public class aiz
   public aiz()
   {
     super(arm.e, ajh.a.b.c());
-    j(this.M.b().a(a, aiz.a.a));
+    j(M.b().a(a, aiz.a.a));
     a(yz.b);
   }
   
@@ -57,19 +57,19 @@ public class aiz
     
     private a(int ☃, String ☃, String ☃)
     {
-      this.e = ☃;
-      this.f = ☃;
-      this.g = ☃;
+      e = ☃;
+      f = ☃;
+      g = ☃;
     }
     
     public int a()
     {
-      return this.e;
+      return e;
     }
     
     public String toString()
     {
-      return this.f;
+      return f;
     }
     
     public static a a(int ☃)
@@ -82,12 +82,12 @@ public class aiz
     
     public String l()
     {
-      return this.f;
+      return f;
     }
     
     public String c()
     {
-      return this.g;
+      return g;
     }
   }
 }

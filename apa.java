@@ -8,8 +8,8 @@ public class apa
   
   public apa(int ☃)
   {
-    this.a = afi.cB;
-    this.b = ☃;
+    a = afi.cB;
+    b = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
@@ -20,7 +20,7 @@ public class apa
     if (☃.p(☃).c() != afi.aJ) {
       return false;
     }
-    int ☃ = ☃.nextInt(this.b - 2) + 2;
+    int ☃ = ☃.nextInt(b - 2) + 2;
     int ☃ = 1;
     for (int ☃ = ☃.n() - ☃; ☃ <= ☃.n() + ☃; ☃++) {
       for (int ☃ = ☃.p() - ☃; ☃ <= ☃.p() + ☃; ☃++)
@@ -33,7 +33,7 @@ public class apa
             cj ☃ = new cj(☃, ☃, ☃);
             afh ☃ = ☃.p(☃).c();
             if ((☃ == afi.d) || (☃ == afi.aJ) || (☃ == afi.aI)) {
-              ☃.a(☃, this.a.Q(), 2);
+              ☃.a(☃, a.Q(), 2);
             }
           }
         }

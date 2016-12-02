@@ -25,7 +25,7 @@ public class act
   
   public boolean a(aci ☃)
   {
-    return (super.a(☃)) && (☃.B != u.B);
+    return (super.a(☃)) && (B != uB);
   }
   
   public boolean a(zx ☃)

@@ -11,30 +11,30 @@ public class avi
   
   public avi(ave ☃)
   {
-    this.b = ☃;
-    this.f = new avr(☃);
-    this.g = new bfw(☃.d, ☃.e, false);
-    this.g.a(9728);
+    b = ☃;
+    f = new avr(☃);
+    g = new bfw(d, e, false);
+    g.a(9728);
   }
   
   public void b(String ☃)
   {
-    this.e = false;
+    e = false;
     d(☃);
   }
   
   public void a(String ☃)
   {
-    this.e = true;
+    e = true;
     d(☃);
   }
   
   private void d(String ☃)
   {
-    this.c = ☃;
-    if (!this.b.B)
+    c = ☃;
+    if (!b.B)
     {
-      if (this.e) {
+      if (e) {
         return;
       }
       throw new avk();
@@ -44,12 +44,12 @@ public class avi
     bfl.D();
     if (bqs.i())
     {
-      int ☃ = this.f.e();
-      bfl.a(0.0D, this.f.a() * ☃, this.f.b() * ☃, 0.0D, 100.0D, 300.0D);
+      int ☃ = f.e();
+      bfl.a(0.0D, f.a() * ☃, f.b() * ☃, 0.0D, 100.0D, 300.0D);
     }
     else
     {
-      avr ☃ = new avr(this.b);
+      avr ☃ = new avr(b);
       bfl.a(0.0D, ☃.c(), ☃.d(), 0.0D, 100.0D, 300.0D);
     }
     bfl.n(5888);
@@ -59,44 +59,44 @@ public class avi
   
   public void c(String ☃)
   {
-    if (!this.b.B)
+    if (!b.B)
     {
-      if (this.e) {
+      if (e) {
         return;
       }
       throw new avk();
     }
-    this.d = 0L;
-    this.a = ☃;
+    d = 0L;
+    a = ☃;
     a(-1);
-    this.d = 0L;
+    d = 0L;
   }
   
   public void a(int ☃)
   {
-    if (!this.b.B)
+    if (!b.B)
     {
-      if (this.e) {
+      if (e) {
         return;
       }
       throw new avk();
     }
     long ☃ = ave.J();
-    if (☃ - this.d < 100L) {
+    if (☃ - d < 100L) {
       return;
     }
-    this.d = ☃;
+    d = ☃;
     
-    avr ☃ = new avr(this.b);
+    avr ☃ = new avr(b);
     int ☃ = ☃.e();
     int ☃ = ☃.a();
     int ☃ = ☃.b();
     if (bqs.i()) {
-      this.g.f();
+      g.f();
     } else {
       bfl.m(256);
     }
-    this.g.a(false);
+    g.a(false);
     bfl.n(5889);
     bfl.D();
     bfl.a(0.0D, ☃.c(), ☃.d(), 0.0D, 100.0D, 300.0D);
@@ -108,7 +108,7 @@ public class avi
     }
     bfx ☃ = bfx.a();
     bfd ☃ = ☃.c();
-    this.b.P().a(avp.b);
+    b.P().a(avp.b);
     float ☃ = 32.0F;
     ☃.a(7, bms.i);
     ☃.b(0.0D, ☃, 0.0D).a(0.0D, ☃ / ☃).b(64, 64, 64, 255).d();
@@ -139,13 +139,13 @@ public class avi
     }
     bfl.l();
     bfl.a(770, 771, 1, 0);
-    this.b.k.a(this.c, (☃ - this.b.k.a(this.c)) / 2, ☃ / 2 - 4 - 16, 16777215);
-    this.b.k.a(this.a, (☃ - this.b.k.a(this.a)) / 2, ☃ / 2 - 4 + 8, 16777215);
-    this.g.e();
+    b.k.a(c, (☃ - b.k.a(c)) / 2, ☃ / 2 - 4 - 16, 16777215);
+    b.k.a(a, (☃ - b.k.a(a)) / 2, ☃ / 2 - 4 + 8, 16777215);
+    g.e();
     if (bqs.i()) {
-      this.g.c(☃ * ☃, ☃ * ☃);
+      g.c(☃ * ☃, ☃ * ☃);
     }
-    this.b.h();
+    b.h();
     try
     {
       Thread.yield();

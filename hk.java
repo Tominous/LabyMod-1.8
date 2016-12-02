@@ -11,26 +11,26 @@ public class hk
   
   public hk(int ☃, pz ☃, boolean ☃)
   {
-    this.a = ☃;
+    a = ☃;
     if (☃) {
-      this.b = ☃.c();
+      b = ☃.c();
     } else {
-      this.b = ☃.b();
+      b = ☃.b();
     }
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.e();
-    this.b = pz.b(☃);
+    a = ☃.e();
+    b = pz.b(☃);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(this.a);
-    pz.a(this.b, ☃);
+    ☃.b(a);
+    pz.a(b, ☃);
   }
   
   public void a(fj ☃)
@@ -40,11 +40,11 @@ public class hk
   
   public List<pz.a> a()
   {
-    return this.b;
+    return b;
   }
   
   public int b()
   {
-    return this.a;
+    return a;
   }
 }

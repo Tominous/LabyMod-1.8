@@ -17,7 +17,7 @@ public class auo
   
   public auk b(String ☃)
   {
-    return (auk)this.a.get(☃);
+    return (auk)a.get(☃);
   }
   
   public auk a(String ☃, auu ☃)
@@ -31,14 +31,14 @@ public class auo
     }
     ☃ = new auk(this, ☃, ☃);
     
-    List<auk> ☃ = (List)this.b.get(☃);
+    List<auk> ☃ = (List)b.get(☃);
     if (☃ == null)
     {
       ☃ = Lists.newArrayList();
-      this.b.put(☃, ☃);
+      b.put(☃, ☃);
     }
     ☃.add(☃);
-    this.a.put(☃, ☃);
+    a.put(☃, ☃);
     a(☃);
     
     return ☃;
@@ -46,14 +46,14 @@ public class auo
   
   public Collection<auk> a(auu ☃)
   {
-    Collection<auk> ☃ = (Collection)this.b.get(☃);
+    Collection<auk> ☃ = (Collection)b.get(☃);
     
     return ☃ == null ? Lists.newArrayList() : Lists.newArrayList(☃);
   }
   
   public boolean b(String ☃, auk ☃)
   {
-    Map<auk, aum> ☃ = (Map)this.c.get(☃);
+    Map<auk, aum> ☃ = (Map)c.get(☃);
     if (☃ == null) {
       return false;
     }
@@ -69,11 +69,11 @@ public class auo
     if (☃.length() > 40) {
       throw new IllegalArgumentException("The player name '" + ☃ + "' is too long!");
     }
-    Map<auk, aum> ☃ = (Map)this.c.get(☃);
+    Map<auk, aum> ☃ = (Map)c.get(☃);
     if (☃ == null)
     {
       ☃ = Maps.newHashMap();
-      this.c.put(☃, ☃);
+      c.put(☃, ☃);
     }
     aum ☃ = (aum)☃.get(☃);
     if (☃ == null)
@@ -87,7 +87,7 @@ public class auo
   public Collection<aum> i(auk ☃)
   {
     List<aum> ☃ = Lists.newArrayList();
-    for (Map<auk, aum> ☃ : this.c.values())
+    for (Map<auk, aum> ☃ : c.values())
     {
       aum ☃ = (aum)☃.get(☃);
       if (☃ != null) {
@@ -101,32 +101,32 @@ public class auo
   
   public Collection<auk> c()
   {
-    return this.a.values();
+    return a.values();
   }
   
   public Collection<String> d()
   {
-    return this.c.keySet();
+    return c.keySet();
   }
   
   public void d(String ☃, auk ☃)
   {
     if (☃ == null)
     {
-      Map<auk, aum> ☃ = (Map)this.c.remove(☃);
+      Map<auk, aum> ☃ = (Map)c.remove(☃);
       if (☃ != null) {
         a(☃);
       }
     }
     else
     {
-      Map<auk, aum> ☃ = (Map)this.c.get(☃);
+      Map<auk, aum> ☃ = (Map)c.get(☃);
       if (☃ != null)
       {
         aum ☃ = (aum)☃.remove(☃);
         if (☃.size() < 1)
         {
-          Map<auk, aum> ☃ = (Map)this.c.remove(☃);
+          Map<auk, aum> ☃ = (Map)c.remove(☃);
           if (☃ != null) {
             a(☃);
           }
@@ -141,7 +141,7 @@ public class auo
   
   public Collection<aum> e()
   {
-    Collection<Map<auk, aum>> ☃ = this.c.values();
+    Collection<Map<auk, aum>> ☃ = c.values();
     List<aum> ☃ = Lists.newArrayList();
     for (Map<auk, aum> ☃ : ☃) {
       ☃.addAll(☃.values());
@@ -151,7 +151,7 @@ public class auo
   
   public Map<auk, aum> c(String ☃)
   {
-    Map<auk, aum> ☃ = (Map)this.c.get(☃);
+    Map<auk, aum> ☃ = (Map)c.get(☃);
     if (☃ == null) {
       ☃ = Maps.newHashMap();
     }
@@ -160,17 +160,17 @@ public class auo
   
   public void k(auk ☃)
   {
-    this.a.remove(☃.b());
+    a.remove(☃.b());
     for (int ☃ = 0; ☃ < 19; ☃++) {
       if (a(☃) == ☃) {
         a(☃, null);
       }
     }
-    List<auk> ☃ = (List)this.b.get(☃.c());
+    List<auk> ☃ = (List)b.get(☃.c());
     if (☃ != null) {
       ☃.remove(☃);
     }
-    for (Map<auk, aum> ☃ : this.c.values()) {
+    for (Map<auk, aum> ☃ : c.values()) {
       ☃.remove(☃);
     }
     c(☃);
@@ -178,17 +178,17 @@ public class auo
   
   public void a(int ☃, auk ☃)
   {
-    this.d[☃] = ☃;
+    d[☃] = ☃;
   }
   
   public auk a(int ☃)
   {
-    return this.d[☃];
+    return d[☃];
   }
   
   public aul d(String ☃)
   {
-    return (aul)this.e.get(☃);
+    return (aul)e.get(☃);
   }
   
   public aul e(String ☃)
@@ -201,7 +201,7 @@ public class auo
       throw new IllegalArgumentException("A team with the name '" + ☃ + "' already exists!");
     }
     ☃ = new aul(this, ☃);
-    this.e.put(☃, ☃);
+    e.put(☃, ☃);
     a(☃);
     
     return ☃;
@@ -209,9 +209,9 @@ public class auo
   
   public void d(aul ☃)
   {
-    this.e.remove(☃.b());
+    e.remove(☃.b());
     for (String ☃ : ☃.d()) {
-      this.f.remove(☃);
+      f.remove(☃);
     }
     c(☃);
   }
@@ -221,14 +221,14 @@ public class auo
     if (☃.length() > 40) {
       throw new IllegalArgumentException("The player name '" + ☃ + "' is too long!");
     }
-    if (!this.e.containsKey(☃)) {
+    if (!e.containsKey(☃)) {
       return false;
     }
     aul ☃ = d(☃);
     if (h(☃) != null) {
       f(☃);
     }
-    this.f.put(☃, ☃);
+    f.put(☃, ☃);
     ☃.d().add(☃);
     return true;
   }
@@ -249,23 +249,23 @@ public class auo
     if (h(☃) != ☃) {
       throw new IllegalStateException("Player is either on another team or not on any team. Cannot remove from team '" + ☃.b() + "'.");
     }
-    this.f.remove(☃);
+    f.remove(☃);
     ☃.d().remove(☃);
   }
   
   public Collection<String> f()
   {
-    return this.e.keySet();
+    return e.keySet();
   }
   
   public Collection<aul> g()
   {
-    return this.e.values();
+    return e.values();
   }
   
   public aul h(String ☃)
   {
-    return (aul)this.f.get(☃);
+    return (aul)f.get(☃);
   }
   
   public void a(auk ☃) {}

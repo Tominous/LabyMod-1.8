@@ -12,17 +12,17 @@ public class ef
   
   protected ef(Cipher ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   private byte[] a(ByteBuf ☃)
   {
     int ☃ = ☃.readableBytes();
-    if (this.b.length < ☃) {
-      this.b = new byte[☃];
+    if (b.length < ☃) {
+      b = new byte[☃];
     }
-    ☃.readBytes(this.b, 0, ☃);
-    return this.b;
+    ☃.readBytes(b, 0, ☃);
+    return b;
   }
   
   protected ByteBuf a(ChannelHandlerContext ☃, ByteBuf ☃)
@@ -31,8 +31,8 @@ public class ef
     int ☃ = ☃.readableBytes();
     byte[] ☃ = a(☃);
     
-    ByteBuf ☃ = ☃.alloc().heapBuffer(this.a.getOutputSize(☃));
-    ☃.writerIndex(this.a.update(☃, 0, ☃, ☃.array(), ☃.arrayOffset()));
+    ByteBuf ☃ = ☃.alloc().heapBuffer(a.getOutputSize(☃));
+    ☃.writerIndex(a.update(☃, 0, ☃, ☃.array(), ☃.arrayOffset()));
     
     return ☃;
   }
@@ -43,10 +43,10 @@ public class ef
     int ☃ = ☃.readableBytes();
     byte[] ☃ = a(☃);
     
-    int ☃ = this.a.getOutputSize(☃);
-    if (this.c.length < ☃) {
-      this.c = new byte[☃];
+    int ☃ = a.getOutputSize(☃);
+    if (c.length < ☃) {
+      c = new byte[☃];
     }
-    ☃.writeBytes(this.c, 0, this.a.update(☃, 0, ☃, this.c));
+    ☃.writeBytes(c, 0, a.update(☃, 0, ☃, c));
   }
 }

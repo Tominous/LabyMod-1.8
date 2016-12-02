@@ -10,18 +10,18 @@ public enum bpg
   
   private bpg(String ☃, int ☃)
   {
-    this.l = ☃;
-    this.m = ☃;
+    l = ☃;
+    m = ☃;
   }
   
   public String a()
   {
-    return this.l;
+    return l;
   }
   
   public int b()
   {
-    return this.m;
+    return m;
   }
   
   static

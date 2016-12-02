@@ -8,7 +8,7 @@ public class ajt
   public ajt()
   {
     super(arm.s, false);
-    j(this.M.b().a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, Boolean.valueOf(false)).a(a, zd.a));
+    j(M.b().a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, Boolean.valueOf(false)).a(a, zd.a));
     a(yz.c);
   }
   
@@ -51,14 +51,14 @@ public class ajt
   
   public void c(adm ☃, cj ☃, alz ☃)
   {
-    if (!☃.D) {
+    if (!D) {
       aff.f(☃, ☃);
     }
   }
   
   public void b(adm ☃, cj ☃, alz ☃)
   {
-    if (!☃.D) {
+    if (!D) {
       aff.f(☃, ☃);
     }
   }

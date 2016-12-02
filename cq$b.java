@@ -7,17 +7,17 @@ public enum cq$b
   
   private cq$b(String p_i46014_1_, int p_i46014_2_, int offset, String description)
   {
-    this.c = offset;
-    this.d = description;
+    c = offset;
+    d = description;
   }
   
   public int a()
   {
-    return this.c;
+    return c;
   }
   
   public String toString()
   {
-    return this.d;
+    return d;
   }
 }

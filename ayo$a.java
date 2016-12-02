@@ -6,15 +6,15 @@ class ayo$a
   public ayo$a(int ☃, int ☃, int ☃, boolean ☃)
   {
     super(☃, ☃, ☃, 23, 13, "");
-    this.o = ☃;
+    o = ☃;
   }
   
   public void a(ave ☃, int ☃, int ☃)
   {
-    if (!this.m) {
+    if (!m) {
       return;
     }
-    boolean ☃ = (☃ >= this.h) && (☃ >= this.i) && (☃ < this.h + this.f) && (☃ < this.i + this.g);
+    boolean ☃ = (☃ >= h) && (☃ >= i) && (☃ < h + f) && (☃ < i + g);
     
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     ☃.P().a(ayo.a());
@@ -24,9 +24,9 @@ class ayo$a
     if (☃) {
       ☃ += 23;
     }
-    if (!this.o) {
+    if (!o) {
       ☃ += 13;
     }
-    b(this.h, this.i, ☃, ☃, 23, 13);
+    b(h, i, ☃, ☃, 23, 13);
   }
 }

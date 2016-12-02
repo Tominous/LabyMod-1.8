@@ -11,25 +11,25 @@ public class hl
   
   public hl(int ☃, pk ☃, pk ☃)
   {
-    this.a = ☃;
-    this.b = ☃.F();
-    this.c = (☃ != null ? ☃.F() : -1);
+    a = ☃;
+    b = ☃.F();
+    c = (☃ != null ? ☃.F() : -1);
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.b = ☃.readInt();
-    this.c = ☃.readInt();
-    this.a = ☃.readUnsignedByte();
+    b = ☃.readInt();
+    c = ☃.readInt();
+    a = ☃.readUnsignedByte();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeInt(this.b);
-    ☃.writeInt(this.c);
-    ☃.writeByte(this.a);
+    ☃.writeInt(b);
+    ☃.writeInt(c);
+    ☃.writeByte(a);
   }
   
   public void a(fj ☃)
@@ -39,16 +39,16 @@ public class hl
   
   public int a()
   {
-    return this.a;
+    return a;
   }
   
   public int b()
   {
-    return this.b;
+    return b;
   }
   
   public int c()
   {
-    return this.c;
+    return c;
   }
 }

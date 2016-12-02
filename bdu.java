@@ -13,39 +13,39 @@ public class bdu
   protected bdu(bmj ☃, adm ☃, double ☃, double ☃, double ☃, double ☃, double ☃, double ☃)
   {
     super(☃, ☃, ☃, ☃, 0.0D, 0.0D, 0.0D);
-    this.aC = ☃;
-    this.aB = (6 + this.V.nextInt(4));
-    this.ar = (this.as = this.at = this.V.nextFloat() * 0.6F + 0.4F);
-    this.aD = (1.0F - (float)☃ * 0.5F);
+    aC = ☃;
+    aB = (6 + V.nextInt(4));
+    ar = (as = at = V.nextFloat() * 0.6F + 0.4F);
+    aD = (1.0F - (float)☃ * 0.5F);
   }
   
   public void a(bfd ☃, pk ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
-    int ☃ = (int)((this.aA + ☃) * 15.0F / this.aB);
+    int ☃ = (int)((aA + ☃) * 15.0F / aB);
     if (☃ > 15) {
       return;
     }
-    this.aC.a(a);
+    aC.a(a);
     
     float ☃ = ☃ % 4 / 4.0F;
     float ☃ = ☃ + 0.24975F;
     float ☃ = ☃ / 4 / 4.0F;
     float ☃ = ☃ + 0.24975F;
     
-    float ☃ = 2.0F * this.aD;
+    float ☃ = 2.0F * aD;
     
-    float ☃ = (float)(this.p + (this.s - this.p) * ☃ - aw);
-    float ☃ = (float)(this.q + (this.t - this.q) * ☃ - ax);
-    float ☃ = (float)(this.r + (this.u - this.r) * ☃ - ay);
+    float ☃ = (float)(p + (s - p) * ☃ - aw);
+    float ☃ = (float)(q + (t - q) * ☃ - ax);
+    float ☃ = (float)(r + (u - r) * ☃ - ay);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     bfl.f();
     avc.a();
     
     ☃.a(7, az);
-    ☃.b(☃ - ☃ * ☃ - ☃ * ☃, ☃ - ☃ * ☃, ☃ - ☃ * ☃ - ☃ * ☃).a(☃, ☃).a(this.ar, this.as, this.at, 1.0F).a(0, 240).c(0.0F, 1.0F, 0.0F).d();
-    ☃.b(☃ - ☃ * ☃ + ☃ * ☃, ☃ + ☃ * ☃, ☃ - ☃ * ☃ + ☃ * ☃).a(☃, ☃).a(this.ar, this.as, this.at, 1.0F).a(0, 240).c(0.0F, 1.0F, 0.0F).d();
-    ☃.b(☃ + ☃ * ☃ + ☃ * ☃, ☃ + ☃ * ☃, ☃ + ☃ * ☃ + ☃ * ☃).a(☃, ☃).a(this.ar, this.as, this.at, 1.0F).a(0, 240).c(0.0F, 1.0F, 0.0F).d();
-    ☃.b(☃ + ☃ * ☃ - ☃ * ☃, ☃ - ☃ * ☃, ☃ + ☃ * ☃ - ☃ * ☃).a(☃, ☃).a(this.ar, this.as, this.at, 1.0F).a(0, 240).c(0.0F, 1.0F, 0.0F).d();
+    ☃.b(☃ - ☃ * ☃ - ☃ * ☃, ☃ - ☃ * ☃, ☃ - ☃ * ☃ - ☃ * ☃).a(☃, ☃).a(ar, as, at, 1.0F).a(0, 240).c(0.0F, 1.0F, 0.0F).d();
+    ☃.b(☃ - ☃ * ☃ + ☃ * ☃, ☃ + ☃ * ☃, ☃ - ☃ * ☃ + ☃ * ☃).a(☃, ☃).a(ar, as, at, 1.0F).a(0, 240).c(0.0F, 1.0F, 0.0F).d();
+    ☃.b(☃ + ☃ * ☃ + ☃ * ☃, ☃ + ☃ * ☃, ☃ + ☃ * ☃ + ☃ * ☃).a(☃, ☃).a(ar, as, at, 1.0F).a(0, 240).c(0.0F, 1.0F, 0.0F).d();
+    ☃.b(☃ + ☃ * ☃ - ☃ * ☃, ☃ - ☃ * ☃, ☃ + ☃ * ☃ - ☃ * ☃).a(☃, ☃).a(ar, as, at, 1.0F).a(0, 240).c(0.0F, 1.0F, 0.0F).d();
     bfx.a().b();
     
     bfl.e();
@@ -58,11 +58,11 @@ public class bdu
   
   public void t_()
   {
-    this.p = this.s;
-    this.q = this.t;
-    this.r = this.u;
-    this.aA += 1;
-    if (this.aA == this.aB) {
+    p = s;
+    q = t;
+    r = u;
+    aA += 1;
+    if (aA == aB) {
       J();
     }
   }

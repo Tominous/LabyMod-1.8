@@ -1,7 +1,9 @@
 package de.labystudio.modapi;
 
 import axu;
+import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
+import de.labystudio.labymod.ModSettings;
 import de.labystudio.utils.DrawUtils;
 import java.io.PrintStream;
 import java.lang.reflect.Field;
@@ -48,7 +50,7 @@ public class ModAPI
   
   public static boolean enabled()
   {
-    return registeredEvents != 0;
+    return (registeredEvents != 0) && (settingsapi);
   }
   
   public static void registerListener(Listener listener)
@@ -94,7 +96,7 @@ public class ModAPI
   
   public static DrawUtils getDrawUtils()
   {
-    return LabyMod.getInstance().draw;
+    return getInstancedraw;
   }
   
   public static axu getLastScreen()

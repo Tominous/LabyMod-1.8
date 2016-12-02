@@ -10,10 +10,10 @@ public class bep
   
   public bep(adm ☃, pk ☃, cy ☃)
   {
-    super(☃, ☃.s, ☃.aR().b + ☃.K / 2.0F, ☃.u, ☃.v, ☃.w, ☃.x);
-    this.a = ☃;
-    this.aA = 3;
-    this.aB = ☃;
+    super(☃, s, aRb + K / 2.0F, u, v, w, x);
+    a = ☃;
+    aA = 3;
+    aB = ☃;
     t_();
   }
   
@@ -23,19 +23,19 @@ public class bep
   {
     for (int ☃ = 0; ☃ < 16; ☃++)
     {
-      double ☃ = this.V.nextFloat() * 2.0F - 1.0F;
-      double ☃ = this.V.nextFloat() * 2.0F - 1.0F;
-      double ☃ = this.V.nextFloat() * 2.0F - 1.0F;
+      double ☃ = V.nextFloat() * 2.0F - 1.0F;
+      double ☃ = V.nextFloat() * 2.0F - 1.0F;
+      double ☃ = V.nextFloat() * 2.0F - 1.0F;
       if (☃ * ☃ + ☃ * ☃ + ☃ * ☃ <= 1.0D)
       {
-        double ☃ = this.a.s + ☃ * this.a.J / 4.0D;
-        double ☃ = this.a.aR().b + this.a.K / 2.0F + ☃ * this.a.K / 4.0D;
-        double ☃ = this.a.u + ☃ * this.a.J / 4.0D;
-        this.o.a(this.aB, false, ☃, ☃, ☃, ☃, ☃ + 0.2D, ☃, new int[0]);
+        double ☃ = a.s + ☃ * a.J / 4.0D;
+        double ☃ = a.aR().b + a.K / 2.0F + ☃ * a.K / 4.0D;
+        double ☃ = a.u + ☃ * a.J / 4.0D;
+        o.a(aB, false, ☃, ☃, ☃, ☃, ☃ + 0.2D, ☃, new int[0]);
       }
     }
-    this.az += 1;
-    if (this.az >= this.aA) {
+    az += 1;
+    if (az >= aA) {
       J();
     }
   }

@@ -8,12 +8,12 @@ public class xo
   
   public xo(og ☃, og ☃, wn ☃)
   {
-    this.a = ☃;
-    this.f = (☃.o_() / 9);
+    a = ☃;
+    f = (☃.o_() / 9);
     ☃.b(☃);
     
-    int ☃ = (this.f - 4) * 18;
-    for (int ☃ = 0; ☃ < this.f; ☃++) {
+    int ☃ = (f - 4) * 18;
+    for (int ☃ = 0; ☃ < f; ☃++) {
       for (int ☃ = 0; ☃ < 9; ☃++) {
         a(new yg(☃, ☃ + ☃ * 9, 8 + ☃ * 18, 18 + ☃ * 18));
       }
@@ -30,27 +30,27 @@ public class xo
   
   public boolean a(wn ☃)
   {
-    return this.a.a(☃);
+    return a.a(☃);
   }
   
   public zx b(wn ☃, int ☃)
   {
     zx ☃ = null;
-    yg ☃ = (yg)this.c.get(☃);
+    yg ☃ = (yg)c.get(☃);
     if ((☃ != null) && (☃.e()))
     {
       zx ☃ = ☃.d();
       ☃ = ☃.k();
-      if (☃ < this.f * 9)
+      if (☃ < f * 9)
       {
-        if (!a(☃, this.f * 9, this.c.size(), true)) {
+        if (!a(☃, f * 9, c.size(), true)) {
           return null;
         }
       }
-      else if (!a(☃, 0, this.f * 9, false)) {
+      else if (!a(☃, 0, f * 9, false)) {
         return null;
       }
-      if (☃.b == 0) {
+      if (b == 0) {
         ☃.d(null);
       } else {
         ☃.f();
@@ -62,11 +62,11 @@ public class xo
   public void b(wn ☃)
   {
     super.b(☃);
-    this.a.c(☃);
+    a.c(☃);
   }
   
   public og e()
   {
-    return this.a;
+    return a;
   }
 }

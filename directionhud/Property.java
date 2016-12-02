@@ -11,31 +11,31 @@ public class Property
   
   public void set(String newValue)
   {
-    this.value = newValue;
+    value = newValue;
   }
   
   public String getValue()
   {
-    return this.value;
+    return value;
   }
   
   public double getDouble()
   {
-    return Double.parseDouble(this.value);
+    return Double.parseDouble(value);
   }
   
   public int getInt()
   {
-    return Integer.parseInt(this.value);
+    return Integer.parseInt(value);
   }
   
   public boolean getBoolean()
   {
-    return Boolean.parseBoolean(this.value);
+    return Boolean.parseBoolean(value);
   }
   
   public String getString()
   {
-    return this.value;
+    return value;
   }
 }

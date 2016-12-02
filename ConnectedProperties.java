@@ -61,32 +61,32 @@ public class ConnectedProperties
   {
     ConnectedParser cp = new ConnectedParser("ConnectedTextures");
     
-    this.name = cp.parseName(path);
-    this.basePath = cp.parseBasePath(path);
+    name = cp.parseName(path);
+    basePath = cp.parseBasePath(path);
     
-    this.matchBlocks = cp.parseMatchBlocks(props.getProperty("matchBlocks"));
-    this.metadatas = cp.parseIntList(props.getProperty("metadata"));
+    matchBlocks = cp.parseMatchBlocks(props.getProperty("matchBlocks"));
+    metadatas = cp.parseIntList(props.getProperty("metadata"));
     
-    this.matchTiles = parseMatchTiles(props.getProperty("matchTiles"));
+    matchTiles = parseMatchTiles(props.getProperty("matchTiles"));
     
-    this.method = parseMethod(props.getProperty("method"));
-    this.tiles = parseTileNames(props.getProperty("tiles"));
-    this.connect = parseConnect(props.getProperty("connect"));
-    this.faces = parseFaces(props.getProperty("faces"));
+    method = parseMethod(props.getProperty("method"));
+    tiles = parseTileNames(props.getProperty("tiles"));
+    connect = parseConnect(props.getProperty("connect"));
+    faces = parseFaces(props.getProperty("faces"));
     
-    this.biomes = cp.parseBiomes(props.getProperty("biomes"));
-    this.minHeight = cp.parseInt(props.getProperty("minHeight"), -1);
-    this.maxHeight = cp.parseInt(props.getProperty("maxHeight"), 1024);
+    biomes = cp.parseBiomes(props.getProperty("biomes"));
+    minHeight = cp.parseInt(props.getProperty("minHeight"), -1);
+    maxHeight = cp.parseInt(props.getProperty("maxHeight"), 1024);
     
-    this.renderPass = cp.parseInt(props.getProperty("renderPass"));
+    renderPass = cp.parseInt(props.getProperty("renderPass"));
     
-    this.innerSeams = ConnectedParser.parseBoolean(props.getProperty("innerSeams"));
+    innerSeams = ConnectedParser.parseBoolean(props.getProperty("innerSeams"));
     
-    this.width = cp.parseInt(props.getProperty("width"));
-    this.height = cp.parseInt(props.getProperty("height"));
+    width = cp.parseInt(props.getProperty("width"));
+    height = cp.parseInt(props.getProperty("height"));
     
-    this.weights = cp.parseIntList(props.getProperty("weights"));
-    this.symmetry = parseSymmetry(props.getProperty("symmetry"));
+    weights = cp.parseIntList(props.getProperty("weights"));
+    symmetry = parseSymmetry(props.getProperty("symmetry"));
   }
   
   private String[] parseMatchTiles(String str)
@@ -101,7 +101,7 @@ public class ConnectedProperties
       if (iconName.endsWith(".png")) {
         iconName = iconName.substring(0, iconName.length() - 4);
       }
-      iconName = TextureUtils.fixResourcePath(iconName, this.basePath);
+      iconName = TextureUtils.fixResourcePath(iconName, basePath);
       
       names[i] = iconName;
     }
@@ -170,9 +170,9 @@ public class ConnectedProperties
     {
       String iconName = names[i];
       
-      iconName = TextureUtils.fixResourcePath(iconName, this.basePath);
-      if ((!iconName.startsWith(this.basePath)) && (!iconName.startsWith("textures/")) && (!iconName.startsWith("mcpatcher/"))) {
-        iconName = this.basePath + "/" + iconName;
+      iconName = TextureUtils.fixResourcePath(iconName, basePath);
+      if ((!iconName.startsWith(basePath)) && (!iconName.startsWith("textures/")) && (!iconName.startsWith("mcpatcher/"))) {
+        iconName = basePath + "/" + iconName;
       }
       if (iconName.endsWith(".png")) {
         iconName = iconName.substring(0, iconName.length() - 4);
@@ -324,63 +324,63 @@ public class ConnectedProperties
   
   public boolean isValid(String path)
   {
-    if ((this.name == null) || (this.name.length() <= 0))
+    if ((name == null) || (name.length() <= 0))
     {
       Config.warn("No name found: " + path);
       return false;
     }
-    if (this.basePath == null)
+    if (basePath == null)
     {
       Config.warn("No base path found: " + path);
       return false;
     }
-    if (this.matchBlocks == null) {
-      this.matchBlocks = detectMatchBlocks();
+    if (matchBlocks == null) {
+      matchBlocks = detectMatchBlocks();
     }
-    if (this.matchTiles == null) {
-      if (this.matchBlocks == null) {
-        this.matchTiles = detectMatchTiles();
+    if (matchTiles == null) {
+      if (matchBlocks == null) {
+        matchTiles = detectMatchTiles();
       }
     }
-    if ((this.matchBlocks == null) && (this.matchTiles == null))
+    if ((matchBlocks == null) && (matchTiles == null))
     {
       Config.warn("No matchBlocks or matchTiles specified: " + path);
       return false;
     }
-    if (this.method == 0)
+    if (method == 0)
     {
       Config.warn("No method: " + path);
       return false;
     }
-    if ((this.tiles == null) || (this.tiles.length <= 0))
+    if ((tiles == null) || (tiles.length <= 0))
     {
       Config.warn("No tiles specified: " + path);
       return false;
     }
-    if (this.connect == 0) {
-      this.connect = detectConnect();
+    if (connect == 0) {
+      connect = detectConnect();
     }
-    if (this.connect == 128)
+    if (connect == 128)
     {
       Config.warn("Invalid connect in: " + path);
       return false;
     }
-    if (this.renderPass > 0)
+    if (renderPass > 0)
     {
-      Config.warn("Render pass not supported: " + this.renderPass);
+      Config.warn("Render pass not supported: " + renderPass);
       return false;
     }
-    if ((this.faces & 0x80) != 0)
+    if ((faces & 0x80) != 0)
     {
       Config.warn("Invalid faces in: " + path);
       return false;
     }
-    if ((this.symmetry & 0x80) != 0)
+    if ((symmetry & 0x80) != 0)
     {
       Config.warn("Invalid symmetry in: " + path);
       return false;
     }
-    switch (this.method)
+    switch (method)
     {
     case 1: 
       return isValidCtm(path);
@@ -407,10 +407,10 @@ public class ConnectedProperties
   
   private int detectConnect()
   {
-    if (this.matchBlocks != null) {
+    if (matchBlocks != null) {
       return 1;
     }
-    if (this.matchTiles != null) {
+    if (matchTiles != null) {
       return 2;
     }
     return 128;
@@ -431,14 +431,14 @@ public class ConnectedProperties
   
   private int[] detectMatchBlockIds()
   {
-    if (!this.name.startsWith("block")) {
+    if (!name.startsWith("block")) {
       return null;
     }
     int startPos = "block".length();
     int pos = startPos;
-    while (pos < this.name.length())
+    while (pos < name.length())
     {
-      char ch = this.name.charAt(pos);
+      char ch = name.charAt(pos);
       if ((ch < '0') || (ch > '9')) {
         break;
       }
@@ -447,7 +447,7 @@ public class ConnectedProperties
     if (pos == startPos) {
       return null;
     }
-    String idStr = this.name.substring(startPos, pos);
+    String idStr = name.substring(startPos, pos);
     int id = Config.parseInt(idStr, -1);
     if (id < 0) {
       return null;
@@ -457,11 +457,11 @@ public class ConnectedProperties
   
   private String[] detectMatchTiles()
   {
-    bmi icon = getIcon(this.name);
+    bmi icon = getIcon(name);
     if (icon == null) {
       return null;
     }
-    return new String[] { this.name };
+    return new String[] { name };
   }
   
   private static bmi getIcon(String iconName)
@@ -478,10 +478,10 @@ public class ConnectedProperties
   
   private boolean isValidCtm(String path)
   {
-    if (this.tiles == null) {
-      this.tiles = parseTileNames("0-11 16-27 32-43 48-58");
+    if (tiles == null) {
+      tiles = parseTileNames("0-11 16-27 32-43 48-58");
     }
-    if (this.tiles.length < 47)
+    if (tiles.length < 47)
     {
       Config.warn("Invalid tiles, must be at least 47: " + path);
       return false;
@@ -491,10 +491,10 @@ public class ConnectedProperties
   
   private boolean isValidHorizontal(String path)
   {
-    if (this.tiles == null) {
-      this.tiles = parseTileNames("12-15");
+    if (tiles == null) {
+      tiles = parseTileNames("12-15");
     }
-    if (this.tiles.length != 4)
+    if (tiles.length != 4)
     {
       Config.warn("Invalid tiles, must be exactly 4: " + path);
       return false;
@@ -504,12 +504,12 @@ public class ConnectedProperties
   
   private boolean isValidVertical(String path)
   {
-    if (this.tiles == null)
+    if (tiles == null)
     {
       Config.warn("No tiles defined for vertical: " + path);
       return false;
     }
-    if (this.tiles.length != 4)
+    if (tiles.length != 4)
     {
       Config.warn("Invalid tiles, must be exactly 4: " + path);
       return false;
@@ -519,12 +519,12 @@ public class ConnectedProperties
   
   private boolean isValidHorizontalVertical(String path)
   {
-    if (this.tiles == null)
+    if (tiles == null)
     {
       Config.warn("No tiles defined for horizontal+vertical: " + path);
       return false;
     }
-    if (this.tiles.length != 7)
+    if (tiles.length != 7)
     {
       Config.warn("Invalid tiles, must be exactly 7: " + path);
       return false;
@@ -534,12 +534,12 @@ public class ConnectedProperties
   
   private boolean isValidVerticalHorizontal(String path)
   {
-    if (this.tiles == null)
+    if (tiles == null)
     {
       Config.warn("No tiles defined for vertical+horizontal: " + path);
       return false;
     }
-    if (this.tiles.length != 7)
+    if (tiles.length != 7)
     {
       Config.warn("Invalid tiles, must be exactly 7: " + path);
       return false;
@@ -549,43 +549,43 @@ public class ConnectedProperties
   
   private boolean isValidRandom(String path)
   {
-    if ((this.tiles == null) || (this.tiles.length <= 0))
+    if ((tiles == null) || (tiles.length <= 0))
     {
       Config.warn("Tiles not defined: " + path);
       return false;
     }
-    if (this.weights != null)
+    if (weights != null)
     {
-      if (this.weights.length > this.tiles.length)
+      if (weights.length > tiles.length)
       {
         Config.warn("More weights defined than tiles, trimming weights: " + path);
-        int[] weights2 = new int[this.tiles.length];
-        System.arraycopy(this.weights, 0, weights2, 0, weights2.length);
-        this.weights = weights2;
+        int[] weights2 = new int[tiles.length];
+        System.arraycopy(weights, 0, weights2, 0, weights2.length);
+        weights = weights2;
       }
-      if (this.weights.length < this.tiles.length)
+      if (weights.length < tiles.length)
       {
         Config.warn("Less weights defined than tiles, expanding weights: " + path);
-        int[] weights2 = new int[this.tiles.length];
-        System.arraycopy(this.weights, 0, weights2, 0, this.weights.length);
-        int avgWeight = MathUtils.getAverage(this.weights);
-        for (int i = this.weights.length; i < weights2.length; i++) {
+        int[] weights2 = new int[tiles.length];
+        System.arraycopy(weights, 0, weights2, 0, weights.length);
+        int avgWeight = MathUtils.getAverage(weights);
+        for (int i = weights.length; i < weights2.length; i++) {
           weights2[i] = avgWeight;
         }
-        this.weights = weights2;
+        weights = weights2;
       }
-      this.sumWeights = new int[this.weights.length];
+      sumWeights = new int[weights.length];
       int sum = 0;
-      for (int i = 0; i < this.weights.length; i++)
+      for (int i = 0; i < weights.length; i++)
       {
-        sum += this.weights[i];
-        this.sumWeights[i] = sum;
+        sum += weights[i];
+        sumWeights[i] = sum;
       }
-      this.sumAllWeights = sum;
-      if (this.sumAllWeights <= 0)
+      sumAllWeights = sum;
+      if (sumAllWeights <= 0)
       {
         Config.warn("Invalid sum of all weights: " + sum);
-        this.sumAllWeights = 1;
+        sumAllWeights = 1;
       }
     }
     return true;
@@ -593,22 +593,22 @@ public class ConnectedProperties
   
   private boolean isValidRepeat(String path)
   {
-    if (this.tiles == null)
+    if (tiles == null)
     {
       Config.warn("Tiles not defined: " + path);
       return false;
     }
-    if ((this.width <= 0) || (this.width > 16))
+    if ((width <= 0) || (width > 16))
     {
       Config.warn("Invalid width: " + path);
       return false;
     }
-    if ((this.height <= 0) || (this.height > 16))
+    if ((height <= 0) || (height > 16))
     {
       Config.warn("Invalid height: " + path);
       return false;
     }
-    if (this.tiles.length != this.width * this.height)
+    if (tiles.length != width * height)
     {
       Config.warn("Number of tiles does not equal width x height: " + path);
       return false;
@@ -618,12 +618,12 @@ public class ConnectedProperties
   
   private boolean isValidFixed(String path)
   {
-    if (this.tiles == null)
+    if (tiles == null)
     {
       Config.warn("Tiles not defined: " + path);
       return false;
     }
-    if (this.tiles.length != 1)
+    if (tiles.length != 1)
     {
       Config.warn("Number of tiles should be 1 for method: fixed.");
       return false;
@@ -633,10 +633,10 @@ public class ConnectedProperties
   
   private boolean isValidTop(String path)
   {
-    if (this.tiles == null) {
-      this.tiles = parseTileNames("66");
+    if (tiles == null) {
+      tiles = parseTileNames("66");
     }
-    if (this.tiles.length != 1)
+    if (tiles.length != 1)
     {
       Config.warn("Invalid tiles, must be exactly 1: " + path);
       return false;
@@ -646,11 +646,11 @@ public class ConnectedProperties
   
   public void updateIcons(bmh textureMap)
   {
-    if (this.matchTiles != null) {
-      this.matchTileIcons = registerIcons(this.matchTiles, textureMap);
+    if (matchTiles != null) {
+      matchTileIcons = registerIcons(matchTiles, textureMap);
     }
-    if (this.tiles != null) {
-      this.tileIcons = registerIcons(this.tiles, textureMap);
+    if (tiles != null) {
+      tileIcons = registerIcons(tiles, textureMap);
     }
   }
   
@@ -694,12 +694,12 @@ public class ConnectedProperties
   
   public boolean matchesBlock(aly blockState)
   {
-    if (this.matchBlocks != null)
+    if (matchBlocks != null)
     {
       boolean matchBlock = false;
-      for (int i = 0; i < this.matchBlocks.length; i++)
+      for (int i = 0; i < matchBlocks.length; i++)
       {
-        MatchBlock mb = this.matchBlocks[i];
+        MatchBlock mb = matchBlocks[i];
         if (mb.matches(blockState))
         {
           matchBlock = true;
@@ -710,13 +710,13 @@ public class ConnectedProperties
         return false;
       }
     }
-    if (this.metadatas != null)
+    if (metadatas != null)
     {
       boolean matchMetadata = false;
       int metadata = blockState.getMetadata();
-      for (int i = 0; i < this.metadatas.length; i++)
+      for (int i = 0; i < metadatas.length; i++)
       {
-        int md = this.metadatas[i];
+        int md = metadatas[i];
         if (md == metadata)
         {
           matchMetadata = true;
@@ -732,11 +732,11 @@ public class ConnectedProperties
   
   public boolean matchesIcon(bmi icon)
   {
-    if ((this.matchTileIcons == null) || (this.matchTileIcons.length <= 0)) {
+    if ((matchTileIcons == null) || (matchTileIcons.length <= 0)) {
       return true;
     }
-    for (int i = 0; i < this.matchTileIcons.length; i++) {
-      if (this.matchTileIcons[i] == icon) {
+    for (int i = 0; i < matchTileIcons.length; i++) {
+      if (matchTileIcons[i] == icon) {
         return true;
       }
     }
@@ -745,6 +745,6 @@ public class ConnectedProperties
   
   public String toString()
   {
-    return "CTM name: " + this.name + ", basePath: " + this.basePath + ", matchBlocks: " + Config.arrayToString(this.matchBlocks) + ", matchTiles: " + Config.arrayToString(this.matchTiles);
+    return "CTM name: " + name + ", basePath: " + basePath + ", matchBlocks: " + Config.arrayToString(matchBlocks) + ", matchTiles: " + Config.arrayToString(matchTiles);
   }
 }

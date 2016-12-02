@@ -10,6 +10,6 @@ class lo$1
   public void a(ChannelFuture ☃)
     throws Exception
   {
-    this.a.a.a(lo.a(this.a).aK());
+    a.a.a(lo.a(a).aK());
   }
 }

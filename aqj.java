@@ -33,10 +33,10 @@ public class aqj
     
     public n(Class<? extends aqj.m> ☃, int ☃, int ☃, boolean ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
-      this.d = ☃;
-      this.e = ☃;
+      a = ☃;
+      b = ☃;
+      d = ☃;
+      e = ☃;
     }
     
     public n(Class<? extends aqj.m> ☃, int ☃, int ☃)
@@ -46,12 +46,12 @@ public class aqj
     
     public boolean a(int ☃)
     {
-      return (this.d == 0) || (this.c < this.d);
+      return (d == 0) || (c < d);
     }
     
     public boolean a()
     {
-      return (this.d == 0) || (this.c < this.d);
+      return (d == 0) || (c < d);
     }
   }
   
@@ -60,7 +60,7 @@ public class aqj
   
   private static aqj.m b(aqj.n ☃, List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃, int ☃)
   {
-    Class<? extends aqj.m> ☃ = ☃.a;
+    Class<? extends aqj.m> ☃ = a;
     aqj.m ☃ = null;
     if (☃ == aqj.c.class) {
       ☃ = aqj.c.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
@@ -114,10 +114,10 @@ public class aqj
       int ☃ = 0;
       for (aqj.n ☃ : ☃)
       {
-        if ((☃.d > 0) && (☃.c < ☃.d)) {
+        if ((d > 0) && (c < d)) {
           ☃ = true;
         }
-        ☃ += ☃.b;
+        ☃ += b;
       }
       return ☃ ? ☃ : -1;
     }
@@ -136,17 +136,17 @@ public class aqj
         ☃ = ☃.nextInt(☃);
         for (aqj.n ☃ : ☃)
         {
-          ☃ -= ☃.b;
+          ☃ -= b;
           if (☃ < 0)
           {
-            if ((!☃.a(☃)) || ((☃ == ☃.b) && (!☃.e))) {
+            if ((!☃.a(☃)) || ((☃ == b) && (!e))) {
               break;
             }
             m ☃ = aqj.a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
             if (☃ != null)
             {
-              ☃.c += 1;
-              ☃.b = ☃;
+              c += 1;
+              b = ☃;
               if (!☃.a()) {
                 ☃.remove(☃);
               }
@@ -160,35 +160,35 @@ public class aqj
     
     private aqt a(aqj.q ☃, List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃, int ☃, boolean ☃)
     {
-      if ((Math.abs(☃ - ☃.c().a) > 112) || (Math.abs(☃ - ☃.c().c) > 112)) {
+      if ((Math.abs(☃ - ca) > 112) || (Math.abs(☃ - cc) > 112)) {
         return aqj.b.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
       }
-      List<aqj.n> ☃ = ☃.c;
+      List<aqj.n> ☃ = c;
       if (☃) {
-        ☃ = ☃.d;
+        ☃ = d;
       }
       aqt ☃ = a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃ + 1);
       if (☃ != null)
       {
         ☃.add(☃);
-        ☃.e.add(☃);
+        e.add(☃);
       }
       return ☃;
     }
     
     protected aqt a(aqj.q ☃, List<aqt> ☃, Random ☃, int ☃, int ☃, boolean ☃)
     {
-      if (this.m != null) {
-        switch (aqj.1.a[this.m.ordinal()])
+      if (m != null) {
+        switch (aqj.1.a[m.ordinal()])
         {
         case 1: 
-          return a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.c - 1, this.m, d(), ☃);
+          return a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.c - 1, m, d(), ☃);
         case 2: 
-          return a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.f + 1, this.m, d(), ☃);
+          return a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.f + 1, m, d(), ☃);
         case 3: 
-          return a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃, this.l.c + ☃, this.m, d(), ☃);
+          return a(☃, ☃, ☃, l.a - 1, l.b + ☃, l.c + ☃, m, d(), ☃);
         case 4: 
-          return a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃, this.l.c + ☃, this.m, d(), ☃);
+          return a(☃, ☃, ☃, l.d + 1, l.b + ☃, l.c + ☃, m, d(), ☃);
         }
       }
       return null;
@@ -196,17 +196,17 @@ public class aqj
     
     protected aqt b(aqj.q ☃, List<aqt> ☃, Random ☃, int ☃, int ☃, boolean ☃)
     {
-      if (this.m != null) {
-        switch (aqj.1.a[this.m.ordinal()])
+      if (m != null) {
+        switch (aqj.1.a[m.ordinal()])
         {
         case 1: 
-          return a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃, this.l.c + ☃, cq.e, d(), ☃);
+          return a(☃, ☃, ☃, l.a - 1, l.b + ☃, l.c + ☃, cq.e, d(), ☃);
         case 2: 
-          return a(☃, ☃, ☃, this.l.a - 1, this.l.b + ☃, this.l.c + ☃, cq.e, d(), ☃);
+          return a(☃, ☃, ☃, l.a - 1, l.b + ☃, l.c + ☃, cq.e, d(), ☃);
         case 3: 
-          return a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.c - 1, cq.c, d(), ☃);
+          return a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.c - 1, cq.c, d(), ☃);
         case 4: 
-          return a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.c - 1, cq.c, d(), ☃);
+          return a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.c - 1, cq.c, d(), ☃);
         }
       }
       return null;
@@ -214,17 +214,17 @@ public class aqj
     
     protected aqt c(aqj.q ☃, List<aqt> ☃, Random ☃, int ☃, int ☃, boolean ☃)
     {
-      if (this.m != null) {
-        switch (aqj.1.a[this.m.ordinal()])
+      if (m != null) {
+        switch (aqj.1.a[m.ordinal()])
         {
         case 1: 
-          return a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃, this.l.c + ☃, cq.f, d(), ☃);
+          return a(☃, ☃, ☃, l.d + 1, l.b + ☃, l.c + ☃, cq.f, d(), ☃);
         case 2: 
-          return a(☃, ☃, ☃, this.l.d + 1, this.l.b + ☃, this.l.c + ☃, cq.f, d(), ☃);
+          return a(☃, ☃, ☃, l.d + 1, l.b + ☃, l.c + ☃, cq.f, d(), ☃);
         case 3: 
-          return a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.f + 1, cq.d, d(), ☃);
+          return a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.f + 1, cq.d, d(), ☃);
         case 4: 
-          return a(☃, ☃, ☃, this.l.a + ☃, this.l.b + ☃, this.l.f + 1, cq.d, d(), ☃);
+          return a(☃, ☃, ☃, l.a + ☃, l.b + ☃, l.f + 1, cq.d, d(), ☃);
         }
       }
       return null;
@@ -232,7 +232,7 @@ public class aqj
     
     protected static boolean a(aqe ☃)
     {
-      return (☃ != null) && (☃.b > 10);
+      return (☃ != null) && (b > 10);
     }
   }
   
@@ -250,17 +250,17 @@ public class aqj
     {
       super(☃, ☃);
       
-      this.c = Lists.newArrayList();
+      c = Lists.newArrayList();
       for (aqj.n ☃ : aqj.b())
       {
-        ☃.c = 0;
-        this.c.add(☃);
+        c = 0;
+        c.add(☃);
       }
-      this.d = Lists.newArrayList();
+      d = Lists.newArrayList();
       for (aqj.n ☃ : aqj.c())
       {
-        ☃.c = 0;
-        this.d.add(☃);
+        c = 0;
+        d.add(☃);
       }
     }
     
@@ -284,8 +284,8 @@ public class aqj
     {
       super();
       
-      this.m = ☃;
-      this.l = ☃;
+      m = ☃;
+      l = ☃;
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -346,9 +346,9 @@ public class aqj
     {
       super();
       
-      this.m = ☃;
-      this.l = ☃;
-      this.b = ☃.nextInt();
+      m = ☃;
+      l = ☃;
+      b = ☃.nextInt();
     }
     
     public static b a(List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃, int ☃)
@@ -364,19 +364,19 @@ public class aqj
     {
       super.b(☃);
       
-      this.b = ☃.f("Seed");
+      b = ☃.f("Seed");
     }
     
     protected void a(dn ☃)
     {
       super.a(☃);
       
-      ☃.a("Seed", this.b);
+      ☃.a("Seed", b);
     }
     
     public boolean a(adm ☃, Random ☃, aqe ☃)
     {
-      Random ☃ = new Random(this.b);
+      Random ☃ = new Random(b);
       for (int ☃ = 0; ☃ <= 4; ☃++) {
         for (int ☃ = 3; ☃ <= 4; ☃++)
         {
@@ -414,23 +414,23 @@ public class aqj
     {
       super();
       
-      this.m = ☃;
-      this.l = ☃;
+      m = ☃;
+      l = ☃;
     }
     
     protected a(Random ☃, int ☃, int ☃)
     {
       super();
       
-      this.m = cq.c.a.a(☃);
-      switch (aqj.1.a[this.m.ordinal()])
+      m = cq.c.a.a(☃);
+      switch (aqj.1.a[m.ordinal()])
       {
       case 1: 
       case 2: 
-        this.l = new aqe(☃, 64, ☃, ☃ + 19 - 1, 73, ☃ + 19 - 1);
+        l = new aqe(☃, 64, ☃, ☃ + 19 - 1, 73, ☃ + 19 - 1);
         break;
       default: 
-        this.l = new aqe(☃, 64, ☃, ☃ + 19 - 1, 73, ☃ + 19 - 1);
+        l = new aqe(☃, 64, ☃, ☃ + 19 - 1, 73, ☃ + 19 - 1);
       }
     }
     
@@ -502,8 +502,8 @@ public class aqj
     {
       super();
       
-      this.m = ☃;
-      this.l = ☃;
+      m = ☃;
+      l = ☃;
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -563,8 +563,8 @@ public class aqj
     {
       super();
       
-      this.m = ☃;
-      this.l = ☃;
+      m = ☃;
+      l = ☃;
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -628,22 +628,22 @@ public class aqj
     {
       super();
       
-      this.m = ☃;
-      this.l = ☃;
+      m = ☃;
+      l = ☃;
     }
     
     protected void b(dn ☃)
     {
       super.b(☃);
       
-      this.b = ☃.n("Mob");
+      b = ☃.n("Mob");
     }
     
     protected void a(dn ☃)
     {
       super.a(☃);
       
-      ☃.a("Mob", this.b);
+      ☃.a("Mob", b);
     }
     
     public static l a(List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, int ☃, cq ☃)
@@ -678,12 +678,12 @@ public class aqj
       a(☃, ☃, 6, 6, 3, 6, 6, 8, afi.bz.Q(), afi.bz.Q(), false);
       a(☃, ☃, 1, 6, 8, 5, 7, 8, afi.bz.Q(), afi.bz.Q(), false);
       a(☃, ☃, 2, 8, 8, 4, 8, 8, afi.bz.Q(), afi.bz.Q(), false);
-      if (!this.b)
+      if (!b)
       {
         cj ☃ = new cj(a(3, 5), d(5), b(3, 5));
         if (☃.b(☃))
         {
-          this.b = true;
+          b = true;
           ☃.a(☃, afi.ac.Q(), 2);
           
           akw ☃ = ☃.s(☃);
@@ -710,8 +710,8 @@ public class aqj
     {
       super();
       
-      this.m = ☃;
-      this.l = ☃;
+      m = ☃;
+      l = ☃;
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -813,8 +813,8 @@ public class aqj
     {
       super();
       
-      this.m = ☃;
-      this.l = ☃;
+      m = ☃;
+      l = ☃;
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -951,8 +951,8 @@ public class aqj
     {
       super();
       
-      this.m = ☃;
-      this.l = ☃;
+      m = ☃;
+      l = ☃;
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -1001,8 +1001,8 @@ public class aqj
     {
       super();
       
-      this.m = ☃;
-      this.l = ☃;
+      m = ☃;
+      l = ☃;
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -1053,24 +1053,24 @@ public class aqj
     {
       super();
       
-      this.m = ☃;
-      this.l = ☃;
+      m = ☃;
+      l = ☃;
       
-      this.b = (☃.nextInt(3) == 0);
+      b = (☃.nextInt(3) == 0);
     }
     
     protected void b(dn ☃)
     {
       super.b(☃);
       
-      this.b = ☃.n("Chest");
+      b = ☃.n("Chest");
     }
     
     protected void a(dn ☃)
     {
       super.a(☃);
       
-      ☃.a("Chest", this.b);
+      ☃.a("Chest", b);
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -1102,10 +1102,10 @@ public class aqj
       a(☃, ☃, 1, 2, 4, 4, 5, 4, afi.by.Q(), afi.by.Q(), false);
       a(☃, ☃, 1, 3, 4, 1, 4, 4, afi.bz.Q(), afi.by.Q(), false);
       a(☃, ☃, 3, 3, 4, 3, 4, 4, afi.bz.Q(), afi.by.Q(), false);
-      if ((this.b) && 
+      if ((b) && 
         (☃.b(new cj(a(1, 3), d(2), b(1, 3)))))
       {
-        this.b = false;
+        b = false;
         a(☃, ☃, ☃, 1, 2, 3, a, 2 + ☃.nextInt(4));
       }
       a(☃, ☃, 0, 6, 0, 4, 6, 4, afi.by.Q(), afi.by.Q(), false);
@@ -1129,24 +1129,24 @@ public class aqj
     {
       super();
       
-      this.m = ☃;
-      this.l = ☃;
+      m = ☃;
+      l = ☃;
       
-      this.b = (☃.nextInt(3) == 0);
+      b = (☃.nextInt(3) == 0);
     }
     
     protected void b(dn ☃)
     {
       super.b(☃);
       
-      this.b = ☃.n("Chest");
+      b = ☃.n("Chest");
     }
     
     protected void a(dn ☃)
     {
       super.a(☃);
       
-      ☃.a("Chest", this.b);
+      ☃.a("Chest", b);
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -1178,10 +1178,10 @@ public class aqj
       a(☃, ☃, 0, 2, 4, 3, 5, 4, afi.by.Q(), afi.by.Q(), false);
       a(☃, ☃, 1, 3, 4, 1, 4, 4, afi.bz.Q(), afi.by.Q(), false);
       a(☃, ☃, 3, 3, 4, 3, 4, 4, afi.bz.Q(), afi.by.Q(), false);
-      if ((this.b) && 
+      if ((b) && 
         (☃.b(new cj(a(3, 3), d(2), b(3, 3)))))
       {
-        this.b = false;
+        b = false;
         a(☃, ☃, ☃, 3, 2, 3, a, 2 + ☃.nextInt(4));
       }
       a(☃, ☃, 0, 6, 0, 4, 6, 4, afi.by.Q(), afi.by.Q(), false);
@@ -1203,8 +1203,8 @@ public class aqj
     {
       super();
       
-      this.m = ☃;
-      this.l = ☃;
+      m = ☃;
+      l = ☃;
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -1265,14 +1265,14 @@ public class aqj
     {
       super();
       
-      this.m = ☃;
-      this.l = ☃;
+      m = ☃;
+      l = ☃;
     }
     
     public void a(aqt ☃, List<aqt> ☃, Random ☃)
     {
       int ☃ = 1;
-      if ((this.m == cq.e) || (this.m == cq.c)) {
+      if ((m == cq.e) || (m == cq.c)) {
         ☃ = 5;
       }
       b((aqj.q)☃, ☃, ☃, 0, ☃, ☃.nextInt(8) > 0);

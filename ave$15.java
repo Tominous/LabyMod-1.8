@@ -1,13 +1,12 @@
 import java.util.concurrent.Callable;
-import org.lwjgl.Sys;
 
 class ave$15
   implements Callable<String>
 {
-  ave$15(ave paramave) {}
+  ave$15(ave this$0) {}
   
   public String a()
   {
-    return Sys.getVersion();
+    return bqs.j();
   }
 }

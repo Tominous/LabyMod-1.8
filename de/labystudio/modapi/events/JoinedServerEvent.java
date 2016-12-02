@@ -22,12 +22,12 @@ public class JoinedServerEvent
   
   public String getIp()
   {
-    return this.ip;
+    return ip;
   }
   
   public int getPort()
   {
-    return this.port;
+    return port;
   }
   
   public Map<Listener, List<Method>> getListenerMethods()

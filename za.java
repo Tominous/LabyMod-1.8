@@ -11,18 +11,18 @@ public class za
   
   protected za(float ☃, zw.a ☃, Set<afh> ☃)
   {
-    this.b = ☃;
-    this.c = ☃;
-    this.h = 1;
+    b = ☃;
+    c = ☃;
+    h = 1;
     d(☃.a());
-    this.a = ☃.b();
-    this.d = (☃ + ☃.c());
+    a = ☃.b();
+    d = (☃ + ☃.c());
     a(yz.i);
   }
   
   public float a(zx ☃, afh ☃)
   {
-    return this.c.contains(☃) ? this.a : 1.0F;
+    return c.contains(☃) ? a : 1.0F;
   }
   
   public boolean a(zx ☃, pr ☃, pr ☃)
@@ -46,22 +46,22 @@ public class za
   
   public zw.a g()
   {
-    return this.b;
+    return b;
   }
   
   public int b()
   {
-    return this.b.e();
+    return b.e();
   }
   
   public String h()
   {
-    return this.b.toString();
+    return b.toString();
   }
   
   public boolean a(zx ☃, zx ☃)
   {
-    if (this.b.f() == ☃.b()) {
+    if (b.f() == ☃.b()) {
       return true;
     }
     return super.a(☃, ☃);
@@ -71,7 +71,7 @@ public class za
   {
     Multimap<String, qd> ☃ = super.i();
     
-    ☃.put(vy.e.a(), new qd(f, "Tool modifier", this.d, 0));
+    ☃.put(vy.e.a(), new qd(f, "Tool modifier", d, 0));
     
     return ☃;
   }

@@ -12,64 +12,64 @@ public class ats
   
   public ats(String ☃, String ☃, long ☃, long ☃, adp.a ☃, boolean ☃, boolean ☃, boolean ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
-    this.f = ☃;
-    this.e = ☃;
-    this.g = ☃;
-    this.h = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
+    f = ☃;
+    e = ☃;
+    g = ☃;
+    h = ☃;
   }
   
   public String a()
   {
-    return this.a;
+    return a;
   }
   
   public String b()
   {
-    return this.b;
+    return b;
   }
   
   public long c()
   {
-    return this.d;
+    return d;
   }
   
   public boolean d()
   {
-    return this.e;
+    return e;
   }
   
   public long e()
   {
-    return this.c;
+    return c;
   }
   
   public int a(ats ☃)
   {
-    if (this.c < ☃.c) {
+    if (c < c) {
       return 1;
     }
-    if (this.c > ☃.c) {
+    if (c > c) {
       return -1;
     }
-    return this.a.compareTo(☃.a);
+    return a.compareTo(a);
   }
   
   public adp.a f()
   {
-    return this.f;
+    return f;
   }
   
   public boolean g()
   {
-    return this.g;
+    return g;
   }
   
   public boolean h()
   {
-    return this.h;
+    return h;
   }
 }

@@ -23,13 +23,13 @@ public class aql$p
     
     a(☃, ☃, 1, 1, 0, 2, 3, 0, b, b, false);
     a(☃, ☃, 5, 1, 0, 6, 3, 0, b, b, false);
-    if (this.k.c[cq.c.a()] != 0) {
+    if (k.c[cq.c.a()] != 0) {
       a(☃, ☃, 3, 1, 7, 4, 2, 7, false);
     }
-    if (this.k.c[cq.e.a()] != 0) {
+    if (k.c[cq.e.a()] != 0) {
       a(☃, ☃, 0, 1, 3, 1, 2, 4, false);
     }
-    if (this.k.c[cq.f.a()] != 0) {
+    if (k.c[cq.f.a()] != 0) {
       a(☃, ☃, 6, 1, 3, 7, 2, 4, false);
     }
     return true;

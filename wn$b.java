@@ -6,13 +6,13 @@ public enum wn$b
   
   private wn$b(int id, String resourceKey)
   {
-    this.e = id;
-    this.f = resourceKey;
+    e = id;
+    f = resourceKey;
   }
   
   public int a()
   {
-    return this.e;
+    return e;
   }
   
   public static b a(int id)
@@ -22,14 +22,14 @@ public enum wn$b
   
   public String b()
   {
-    return this.f;
+    return f;
   }
   
   static
   {
     d = new b[values().length];
     for (b entityplayer$enumchatvisibility : values()) {
-      d[entityplayer$enumchatvisibility.e] = entityplayer$enumchatvisibility;
+      d[e] = entityplayer$enumchatvisibility;
     }
   }
 }

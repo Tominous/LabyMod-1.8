@@ -14,7 +14,6 @@ public class ServerFilter
   {
     serverFilter.put("playminity.com", FilterType.NO_RADAR);
     serverFilter.put("gommehd.net", FilterType.NO_PLAYER_RADAR);
-    serverFilter.put("rewinside.tv", FilterType.DISALLOWED);
     serverFilter.put("timolia.de", FilterType.DISALLOWED);
     serverFilter.put("mineplex.com", FilterType.DISALLOWED);
   }
@@ -22,10 +21,10 @@ public class ServerFilter
   public static FilterType getCurrentFilterType()
   {
     if ((ave.A().D() == null) || 
-      (ave.A().D().b == null)) {
+      (ADb == null)) {
       return FilterType.ALLOWED;
     }
-    String ip = ave.A().D().b;
+    String ip = ADb;
     return getFilterTypeForServer(ip);
   }
   

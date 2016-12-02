@@ -24,32 +24,32 @@ public enum bor
   
   private bor(String p_i46087_1_, int p_i46087_2_, int p_i46087_3_, int p_i46087_4_)
   {
-    this.r = b(p_i46087_3_, p_i46087_4_);
-    this.s = new org.lwjgl.util.vector.Matrix4f();
+    r = b(p_i46087_3_, p_i46087_4_);
+    s = new org.lwjgl.util.vector.Matrix4f();
     org.lwjgl.util.vector.Matrix4f var5 = new org.lwjgl.util.vector.Matrix4f();
     var5.setIdentity();
     org.lwjgl.util.vector.Matrix4f.rotate(-p_i46087_3_ * 0.017453292F, new Vector3f(1.0F, 0.0F, 0.0F), var5, var5);
-    this.t = ns.a(p_i46087_3_ / 90);
+    t = ns.a(p_i46087_3_ / 90);
     org.lwjgl.util.vector.Matrix4f var6 = new org.lwjgl.util.vector.Matrix4f();
     var6.setIdentity();
     org.lwjgl.util.vector.Matrix4f.rotate(-p_i46087_4_ * 0.017453292F, new Vector3f(0.0F, 1.0F, 0.0F), var6, var6);
-    this.u = ns.a(p_i46087_4_ / 90);
-    org.lwjgl.util.vector.Matrix4f.mul(var6, var5, this.s);
+    u = ns.a(p_i46087_4_ / 90);
+    org.lwjgl.util.vector.Matrix4f.mul(var6, var5, s);
   }
   
   public org.lwjgl.util.vector.Matrix4f a()
   {
-    return this.s;
+    return s;
   }
   
   public cq a(cq p_177523_1_)
   {
     cq var2 = p_177523_1_;
-    for (int var3 = 0; var3 < this.t; var3++) {
+    for (int var3 = 0; var3 < t; var3++) {
       var2 = var2.a(cq.a.a);
     }
     if (var2.k() != cq.a.b) {
-      for (var3 = 0; var3 < this.u; var3++) {
+      for (var3 = 0; var3 < u; var3++) {
         var2 = var2.a(cq.a.b);
       }
     }
@@ -60,14 +60,14 @@ public enum bor
   {
     int var3 = vertexIndex;
     if (facing.k() == cq.a.a) {
-      var3 = (vertexIndex + this.t) % 4;
+      var3 = (vertexIndex + t) % 4;
     }
     cq var4 = facing;
-    for (int var5 = 0; var5 < this.t; var5++) {
+    for (int var5 = 0; var5 < t; var5++) {
       var4 = var4.a(cq.a.a);
     }
     if (var4.k() == cq.a.b) {
-      var3 = (var3 + this.u) % 4;
+      var3 = (var3 + u) % 4;
     }
     return var3;
   }
@@ -88,7 +88,7 @@ public enum bor
     for (int var2 = 0; var2 < var1; var2++)
     {
       bor var3 = var0[var2];
-      q.put(Integer.valueOf(var3.r), var3);
+      q.put(Integer.valueOf(r), var3);
     }
   }
   

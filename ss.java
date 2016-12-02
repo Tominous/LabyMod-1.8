@@ -8,31 +8,31 @@ public class ss
   public ss(qa ☃)
   {
     super(☃, false);
-    this.a = ☃;
+    a = ☃;
     a(1);
   }
   
   public boolean a()
   {
-    if (!this.a.cl()) {
+    if (!a.cl()) {
       return false;
     }
-    pr ☃ = this.a.co();
+    pr ☃ = a.co();
     if (☃ == null) {
       return false;
     }
-    this.b = ☃.bf();
+    b = ☃.bf();
     int ☃ = ☃.bg();
-    return (☃ != this.c) && (a(this.b, false)) && (this.a.a(this.b, ☃));
+    return (☃ != c) && (a(b, false)) && (a.a(b, ☃));
   }
   
   public void c()
   {
-    this.e.d(this.b);
+    e.d(b);
     
-    pr ☃ = this.a.co();
+    pr ☃ = a.co();
     if (☃ != null) {
-      this.c = ☃.bg();
+      c = ☃.bg();
     }
     super.c();
   }

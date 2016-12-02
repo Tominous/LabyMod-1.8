@@ -5,7 +5,7 @@ class wb$c
   
   public wb$c(wb ☃)
   {
-    this.a = ☃;
+    a = ☃;
     a(5);
   }
   
@@ -16,6 +16,6 @@ class wb$c
   
   public void e()
   {
-    ((wb.d)this.a.q()).a(1.0D);
+    ((wb.d)a.q()).a(1.0D);
   }
 }

@@ -28,7 +28,7 @@ public class agr
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (!☃.D) {
+    if (!D) {
       f(☃, ☃);
     }
   }
@@ -51,7 +51,7 @@ public class agr
         ☃.a(☃.a(), Q());
       }
     }
-    else if (!☃.D)
+    else if (!D)
     {
       uy ☃ = new uy(☃, ☃.n() + 0.5D, ☃.o(), ☃.p() + 0.5D, ☃.p(☃));
       a(☃);
@@ -69,7 +69,7 @@ public class agr
   public static boolean e(adm ☃, cj ☃)
   {
     afh ☃ = ☃.p(☃).c();
-    arm ☃ = ☃.J;
+    arm ☃ = J;
     return (☃ == afi.ab) || (☃ == arm.a) || (☃ == arm.h) || (☃ == arm.i);
   }
   

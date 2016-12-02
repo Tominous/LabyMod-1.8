@@ -5,7 +5,7 @@ class bny$a<T extends bnw>
   
   private bny$a(bnx<T> arg1, Class<T> ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
 }

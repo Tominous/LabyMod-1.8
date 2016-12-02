@@ -21,7 +21,7 @@ public class JumpLeague
   
   public static void updatePlayMinity()
   {
-    isPlayMinity = (LabyMod.getInstance().ip.toLowerCase().contains("playminity.net")) || (LabyMod.getInstance().ip.toLowerCase().contains("playminity.com"));
+    isPlayMinity = (getInstanceip.toLowerCase().contains("playminity.net")) || (getInstanceip.toLowerCase().contains("playminity.com"));
   }
   
   public static boolean isPlayMinity()
@@ -50,9 +50,9 @@ public class JumpLeague
       return;
     }
     if (lastPos == null) {
-      lastPos = ave.A().h.c();
+      lastPos = Ah.c();
     }
-    if (ave.A().h.c().c(lastPos.n(), ave.A().h.c().o(), lastPos.p()) > 4.0D)
+    if (Ah.c().c(lastPos.n(), Ah.c().o(), lastPos.p()) > 4.0D)
     {
       if (!playminityServer_jl_lock)
       {
@@ -63,7 +63,7 @@ public class JumpLeague
     else {
       playminityServer_jl_lock = false;
     }
-    lastPos = ave.A().h.c();
+    lastPos = Ah.c();
   }
   
   public static void serverPlayMinityChat(String clean, String raw)
@@ -100,7 +100,7 @@ public class JumpLeague
   
   public static void drawPlayMinityGui()
   {
-    if (!ConfigManager.settings.gamePlayMinity.booleanValue()) {
+    if (!settingsgamePlayMinity) {
       return;
     }
     if (!playminityServer_jl) {

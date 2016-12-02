@@ -7,7 +7,7 @@ public class blj
   
   public blj(bkj ☃)
   {
-    this.b = ☃;
+    b = ☃;
   }
   
   public void a(uk ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
@@ -17,12 +17,12 @@ public class blj
     }
     bfl.a(!☃.ax());
     
-    this.b.a(a);
+    b.a(a);
     
     bfl.n(5890);
     bfl.D();
     
-    float ☃ = ☃.W + ☃;
+    float ☃ = W + ☃;
     float ☃ = ns.b(☃ * 0.02F) * 3.0F;
     float ☃ = ☃ * 0.01F;
     bfl.b(☃, ☃, 0.0F);
@@ -36,9 +36,9 @@ public class blj
     bfl.f();
     bfl.b(1, 1);
     
-    this.c.a(☃, ☃, ☃, ☃);
-    this.c.a(this.b.b());
-    this.c.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
+    c.a(☃, ☃, ☃, ☃);
+    c.a(b.b());
+    c.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
     
     bfl.n(5890);
     bfl.D();

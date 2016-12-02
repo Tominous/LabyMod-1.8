@@ -8,8 +8,8 @@ public class apo
   
   public apo(afh ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
@@ -17,7 +17,7 @@ public class apo
     if (☃.p(☃).c().t() != arm.h) {
       return false;
     }
-    int ☃ = ☃.nextInt(this.b - 2) + 2;
+    int ☃ = ☃.nextInt(b - 2) + 2;
     int ☃ = 2;
     for (int ☃ = ☃.n() - ☃; ☃ <= ☃.n() + ☃; ☃++) {
       for (int ☃ = ☃.p() - ☃; ☃ <= ☃.p() + ☃; ☃++)
@@ -30,7 +30,7 @@ public class apo
             cj ☃ = new cj(☃, ☃, ☃);
             afh ☃ = ☃.p(☃).c();
             if ((☃ == afi.d) || (☃ == afi.c)) {
-              ☃.a(☃, this.a.Q(), 2);
+              ☃.a(☃, a.Q(), 2);
             }
           }
         }

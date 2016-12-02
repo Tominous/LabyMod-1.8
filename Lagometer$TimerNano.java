@@ -8,8 +8,8 @@ public class Lagometer$TimerNano
     if (!Lagometer.active) {
       return;
     }
-    if (this.timeStartNano == 0L) {
-      this.timeStartNano = System.nanoTime();
+    if (timeStartNano == 0L) {
+      timeStartNano = System.nanoTime();
     }
   }
   
@@ -18,16 +18,16 @@ public class Lagometer$TimerNano
     if (!Lagometer.active) {
       return;
     }
-    if (this.timeStartNano != 0L)
+    if (timeStartNano != 0L)
     {
-      this.timeNano += System.nanoTime() - this.timeStartNano;
-      this.timeStartNano = 0L;
+      timeNano += System.nanoTime() - timeStartNano;
+      timeStartNano = 0L;
     }
   }
   
   private void reset()
   {
-    this.timeNano = 0L;
-    this.timeStartNano = 0L;
+    timeNano = 0L;
+    timeStartNano = 0L;
   }
 }

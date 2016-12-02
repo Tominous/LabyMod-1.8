@@ -14,73 +14,73 @@ public abstract class ro
   
   public ro(py ☃, double ☃, int ☃)
   {
-    this.c = ☃;
-    this.d = ☃;
-    this.h = ☃;
+    c = ☃;
+    d = ☃;
+    h = ☃;
     a(5);
   }
   
   public boolean a()
   {
-    if (this.a > 0)
+    if (a > 0)
     {
-      this.a -= 1;
+      a -= 1;
       return false;
     }
-    this.a = (200 + this.c.bc().nextInt(200));
+    a = (200 + c.bc().nextInt(200));
     return g();
   }
   
   public boolean b()
   {
-    return (this.e >= -this.f) && (this.e <= 1200) && (a(this.c.o, this.b));
+    return (e >= -f) && (e <= 1200) && (a(c.o, b));
   }
   
   public void c()
   {
-    this.c.s().a(this.b.n() + 0.5D, this.b.o() + 1, this.b.p() + 0.5D, this.d);
-    this.e = 0;
-    this.f = (this.c.bc().nextInt(this.c.bc().nextInt(1200) + 1200) + 1200);
+    c.s().a(b.n() + 0.5D, b.o() + 1, b.p() + 0.5D, d);
+    e = 0;
+    f = (c.bc().nextInt(c.bc().nextInt(1200) + 1200) + 1200);
   }
   
   public void d() {}
   
   public void e()
   {
-    if (this.c.c(this.b.a()) > 1.0D)
+    if (c.c(b.a()) > 1.0D)
     {
-      this.g = false;
-      this.e += 1;
-      if (this.e % 40 == 0) {
-        this.c.s().a(this.b.n() + 0.5D, this.b.o() + 1, this.b.p() + 0.5D, this.d);
+      g = false;
+      e += 1;
+      if (e % 40 == 0) {
+        c.s().a(b.n() + 0.5D, b.o() + 1, b.p() + 0.5D, d);
       }
     }
     else
     {
-      this.g = true;
-      this.e -= 1;
+      g = true;
+      e -= 1;
     }
   }
   
   protected boolean f()
   {
-    return this.g;
+    return g;
   }
   
   private boolean g()
   {
-    int ☃ = this.h;
+    int ☃ = h;
     int ☃ = 1;
-    cj ☃ = new cj(this.c);
+    cj ☃ = new cj(c);
     for (int ☃ = 0; ☃ <= 1; ☃ = ☃ > 0 ? -☃ : 1 - ☃) {
       for (int ☃ = 0; ☃ < ☃; ☃++) {
         for (int ☃ = 0; ☃ <= ☃; ☃ = ☃ > 0 ? -☃ : 1 - ☃) {
           for (int ☃ = (☃ < ☃) && (☃ > -☃) ? ☃ : 0; ☃ <= ☃; ☃ = ☃ > 0 ? -☃ : 1 - ☃)
           {
             cj ☃ = ☃.a(☃, ☃ - 1, ☃);
-            if ((this.c.e(☃)) && (a(this.c.o, ☃)))
+            if ((c.e(☃)) && (a(c.o, ☃)))
             {
-              this.b = ☃;
+              b = ☃;
               return true;
             }
           }

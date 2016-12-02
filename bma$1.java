@@ -18,15 +18,15 @@ class bma$1
   public void run()
   {
     HttpURLConnection var1 = null;
-    bma.f().debug("Downloading http texture from {} to {}", new Object[] { bma.a(this.this$0), bma.b(this.this$0) });
-    if (bma.access$300(this.this$0))
+    bma.f().debug("Downloading http texture from {} to {}", new Object[] { bma.a(this$0), bma.b(this$0) });
+    if (bma.access$300(this$0))
     {
-      bma.access$400(this.this$0);
+      bma.access$400(this$0);
       return;
     }
     try
     {
-      var1 = (HttpURLConnection)new URL(bma.a(this.this$0)).openConnection(ave.A().O());
+      var1 = (HttpURLConnection)new URL(bma.a(this$0)).openConnection(ave.A().O());
       var1.setDoInput(true);
       var1.setDoOutput(false);
       var1.connect();
@@ -34,19 +34,19 @@ class bma$1
       {
         BufferedImage var2;
         BufferedImage var2;
-        if (bma.b(this.this$0) != null)
+        if (bma.b(this$0) != null)
         {
-          FileUtils.copyInputStreamToFile(var1.getInputStream(), bma.b(this.this$0));
-          var2 = ImageIO.read(bma.b(this.this$0));
+          FileUtils.copyInputStreamToFile(var1.getInputStream(), bma.b(this$0));
+          var2 = ImageIO.read(bma.b(this$0));
         }
         else
         {
           var2 = bml.a(var1.getInputStream());
         }
-        if (bma.c(this.this$0) != null) {
-          var2 = bma.c(this.this$0).a(var2);
+        if (bma.c(this$0) != null) {
+          var2 = bma.c(this$0).a(var2);
         }
-        this.this$0.a(var2);
+        this$0.a(var2);
       }
       else if (var1.getErrorStream() != null)
       {
@@ -62,7 +62,7 @@ class bma$1
       if (var1 != null) {
         var1.disconnect();
       }
-      this.this$0.imageFound = Boolean.valueOf(bma.access$600(this.this$0) != null);
+      this$0.imageFound = Boolean.valueOf(bma.access$600(this$0) != null);
     }
   }
 }

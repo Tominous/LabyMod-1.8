@@ -10,11 +10,11 @@ public class awg$c
   public awg$c(int ☃, String ☃, boolean ☃, Predicate<String> ☃)
   {
     super(☃, ☃, ☃);
-    this.a = ((Predicate)Objects.firstNonNull(☃, Predicates.alwaysTrue()));
+    a = ((Predicate)Objects.firstNonNull(☃, Predicates.alwaysTrue()));
   }
   
   public Predicate<String> a()
   {
-    return this.a;
+    return a;
   }
 }

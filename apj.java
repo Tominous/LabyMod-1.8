@@ -15,30 +15,30 @@ public class apj
   
   public apj(alz ☃, int ☃, Predicate<alz> ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
   {
     float ☃ = ☃.nextFloat() * 3.1415927F;
     
-    double ☃ = ☃.n() + 8 + ns.a(☃) * this.b / 8.0F;
-    double ☃ = ☃.n() + 8 - ns.a(☃) * this.b / 8.0F;
-    double ☃ = ☃.p() + 8 + ns.b(☃) * this.b / 8.0F;
-    double ☃ = ☃.p() + 8 - ns.b(☃) * this.b / 8.0F;
+    double ☃ = ☃.n() + 8 + ns.a(☃) * b / 8.0F;
+    double ☃ = ☃.n() + 8 - ns.a(☃) * b / 8.0F;
+    double ☃ = ☃.p() + 8 + ns.b(☃) * b / 8.0F;
+    double ☃ = ☃.p() + 8 - ns.b(☃) * b / 8.0F;
     
     double ☃ = ☃.o() + ☃.nextInt(3) - 2;
     double ☃ = ☃.o() + ☃.nextInt(3) - 2;
-    for (int ☃ = 0; ☃ < this.b; ☃++)
+    for (int ☃ = 0; ☃ < b; ☃++)
     {
-      float ☃ = ☃ / this.b;
+      float ☃ = ☃ / b;
       double ☃ = ☃ + (☃ - ☃) * ☃;
       double ☃ = ☃ + (☃ - ☃) * ☃;
       double ☃ = ☃ + (☃ - ☃) * ☃;
       
-      double ☃ = ☃.nextDouble() * this.b / 16.0D;
+      double ☃ = ☃.nextDouble() * b / 16.0D;
       double ☃ = (ns.a(3.1415927F * ☃) + 1.0F) * ☃ + 1.0D;
       double ☃ = (ns.a(3.1415927F * ☃) + 1.0F) * ☃ + 1.0D;
       
@@ -63,8 +63,8 @@ public class apj
                 if (☃ * ☃ + ☃ * ☃ + ☃ * ☃ < 1.0D)
                 {
                   cj ☃ = new cj(☃, ☃, ☃);
-                  if (this.c.apply(☃.p(☃))) {
-                    ☃.a(☃, this.a, 2);
+                  if (c.apply(☃.p(☃))) {
+                    ☃.a(☃, a, 2);
                   }
                 }
               }

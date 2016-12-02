@@ -10,11 +10,11 @@ class ne$1
   
   public Iterator<S> iterator()
   {
-    List<T> ☃ = (List)ne.a(this.b).get(this.b.b(this.a));
+    List<T> ☃ = (List)ne.a(b).get(b.b(a));
     if (☃ == null) {
       return Iterators.emptyIterator();
     }
     Iterator<T> ☃ = ☃.iterator();
-    return Iterators.filter(☃, this.a);
+    return Iterators.filter(☃, a);
   }
 }

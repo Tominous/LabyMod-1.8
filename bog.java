@@ -7,11 +7,11 @@ public class bog
   
   public bog(Collection<bnr> ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public Collection<bnr> a()
   {
-    return this.a;
+    return a;
   }
 }

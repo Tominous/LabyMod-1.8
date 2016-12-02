@@ -5,22 +5,22 @@ public class ey
   
   public ey(String ☃)
   {
-    this.b = ☃;
+    b = ☃;
   }
   
   public String g()
   {
-    return this.b;
+    return b;
   }
   
   public String e()
   {
-    return this.b;
+    return b;
   }
   
   public ey h()
   {
-    ey ☃ = new ey(this.b);
+    ey ☃ = new ey(b);
     ☃.a(b().m());
     for (eu ☃ : a()) {
       ☃.a(☃.f());
@@ -36,13 +36,13 @@ public class ey
     if ((☃ instanceof ey))
     {
       ey ☃ = (ey)☃;
-      return (this.b.equals(☃.b)) && (super.equals(☃));
+      return (b.equals(b)) && (super.equals(☃));
     }
     return false;
   }
   
   public String toString()
   {
-    return "SelectorComponent{pattern='" + this.b + '\'' + ", siblings=" + this.a + ", style=" + b() + '}';
+    return "SelectorComponent{pattern='" + b + '\'' + ", siblings=" + a + ", style=" + b() + '}';
   }
 }

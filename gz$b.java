@@ -11,34 +11,34 @@ public class gz$b
   
   public gz$b(gz paramgz, GameProfile ☃, int ☃, adp.a ☃, eu ☃)
   {
-    this.d = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.e = ☃;
+    d = ☃;
+    b = ☃;
+    c = ☃;
+    e = ☃;
   }
   
   public GameProfile a()
   {
-    return this.d;
+    return d;
   }
   
   public int b()
   {
-    return this.b;
+    return b;
   }
   
   public adp.a c()
   {
-    return this.c;
+    return c;
   }
   
   public eu d()
   {
-    return this.e;
+    return e;
   }
   
   public String toString()
   {
-    return Objects.toStringHelper(this).add("latency", this.b).add("gameMode", this.c).add("profile", this.d).add("displayName", this.e == null ? null : eu.a.a(this.e)).toString();
+    return Objects.toStringHelper(this).add("latency", b).add("gameMode", c).add("profile", d).add("displayName", e == null ? null : eu.a.a(e)).toString();
   }
 }

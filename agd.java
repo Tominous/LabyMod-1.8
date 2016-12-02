@@ -8,7 +8,7 @@ public abstract class agd
   protected agd(boolean ☃)
   {
     super(arm.q);
-    this.N = ☃;
+    N = ☃;
     a(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
   }
   
@@ -41,11 +41,11 @@ public abstract class agd
       return;
     }
     boolean ☃ = e(☃, ☃, ☃);
-    if ((this.N) && (!☃))
+    if ((N) && (!☃))
     {
       ☃.a(☃, k(☃), 2);
     }
-    else if (!this.N)
+    else if (!N)
     {
       ☃.a(☃, e(☃), 2);
       if (!☃) {
@@ -61,7 +61,7 @@ public abstract class agd
   
   protected boolean l(alz ☃)
   {
-    return this.N;
+    return N;
   }
   
   public int b(adq ☃, cj ☃, alz ☃, cq ☃)
@@ -100,12 +100,12 @@ public abstract class agd
       return;
     }
     boolean ☃ = e(☃, ☃, ☃);
-    if (((this.N) && (!☃)) || ((!this.N) && (☃) && (!☃.a(☃, this))))
+    if (((N) && (!☃)) || ((!N) && (☃) && (!☃.a(☃, this))))
     {
       int ☃ = -1;
       if (i(☃, ☃, ☃)) {
         ☃ = -3;
-      } else if (this.N) {
+      } else if (N) {
         ☃ = -2;
       }
       ☃.a(☃, this, d(☃), ☃);
@@ -190,7 +190,7 @@ public abstract class agd
   
   public void d(adm ☃, cj ☃, alz ☃)
   {
-    if (this.N) {
+    if (N) {
       for (cq ☃ : cq.values()) {
         ☃.c(☃.a(☃), this);
       }

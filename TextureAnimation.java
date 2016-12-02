@@ -19,9 +19,9 @@ public class TextureAnimation
   
   public TextureAnimation(String texFrom, byte[] srcData, String texTo, jy locTexTo, int dstX, int dstY, int frameWidth, int frameHeight, Properties props, int durDef)
   {
-    this.srcTex = texFrom;
-    this.dstTex = texTo;
-    this.dstTexLoc = locTexTo;
+    srcTex = texFrom;
+    dstTex = texTo;
+    dstTexLoc = locTexTo;
     this.dstX = dstX;
     this.dstY = dstY;
     this.frameWidth = frameWidth;
@@ -42,106 +42,106 @@ public class TextureAnimation
     String durationDefStr = (String)props.get("duration");
     int durationDef = Config.parseInt(durationDefStr, durDef);
     
-    this.frames = new CustomAnimationFrame[numFrames];
-    for (int i = 0; i < this.frames.length; i++)
+    frames = new CustomAnimationFrame[numFrames];
+    for (int i = 0; i < frames.length; i++)
     {
       String indexStr = (String)props.get("tile." + i);
       int index = Config.parseInt(indexStr, i);
       String durationStr = (String)props.get("duration." + i);
       int duration = Config.parseInt(durationStr, durationDef);
       CustomAnimationFrame frm = new CustomAnimationFrame(index, duration);
-      this.frames[i] = frm;
+      frames[i] = frm;
     }
   }
   
   public boolean nextFrame()
   {
-    if (this.frames.length <= 0) {
+    if (frames.length <= 0) {
       return false;
     }
-    if (this.activeFrame >= this.frames.length) {
-      this.activeFrame = 0;
+    if (activeFrame >= frames.length) {
+      activeFrame = 0;
     }
-    CustomAnimationFrame frame = this.frames[this.activeFrame];
+    CustomAnimationFrame frame = frames[activeFrame];
     
-    frame.counter += 1;
-    if (frame.counter < frame.duration) {
+    counter += 1;
+    if (counter < duration) {
       return false;
     }
-    frame.counter = 0;
+    counter = 0;
     
-    this.activeFrame += 1;
-    if (this.activeFrame >= this.frames.length) {
-      this.activeFrame = 0;
+    activeFrame += 1;
+    if (activeFrame >= frames.length) {
+      activeFrame = 0;
     }
     return true;
   }
   
   public int getActiveFrameIndex()
   {
-    if (this.frames.length <= 0) {
+    if (frames.length <= 0) {
       return 0;
     }
-    if (this.activeFrame >= this.frames.length) {
-      this.activeFrame = 0;
+    if (activeFrame >= frames.length) {
+      activeFrame = 0;
     }
-    CustomAnimationFrame frame = this.frames[this.activeFrame];
+    CustomAnimationFrame frame = frames[activeFrame];
     
-    return frame.index;
+    return index;
   }
   
   public int getFrameCount()
   {
-    return this.frames.length;
+    return frames.length;
   }
   
   public boolean updateTexture()
   {
-    if (this.dstTextId < 0)
+    if (dstTextId < 0)
     {
-      bmk tex = TextureUtils.getTexture(this.dstTexLoc);
+      bmk tex = TextureUtils.getTexture(dstTexLoc);
       if (tex == null) {
         return false;
       }
-      this.dstTextId = tex.b();
+      dstTextId = tex.b();
     }
-    if (this.imageData == null)
+    if (imageData == null)
     {
-      this.imageData = avd.c(this.srcData.length);
-      this.imageData.put(this.srcData);
+      imageData = avd.c(srcData.length);
+      imageData.put(srcData);
       
-      this.srcData = null;
+      srcData = null;
     }
     if (!nextFrame()) {
       return false;
     }
-    int frameLen = this.frameWidth * this.frameHeight * 4;
+    int frameLen = frameWidth * frameHeight * 4;
     
     int imgNum = getActiveFrameIndex();
     int offset = frameLen * imgNum;
-    if (offset + frameLen > this.imageData.capacity()) {
+    if (offset + frameLen > imageData.capacity()) {
       return false;
     }
-    this.imageData.position(offset);
+    imageData.position(offset);
     
-    bfl.i(this.dstTextId);
-    GL11.glTexSubImage2D(3553, 0, this.dstX, this.dstY, this.frameWidth, this.frameHeight, 6408, 5121, this.imageData);
+    bfl.i(dstTextId);
+    GL11.glTexSubImage2D(3553, 0, dstX, dstY, frameWidth, frameHeight, 6408, 5121, imageData);
     
     return true;
   }
   
   public String getSrcTex()
   {
-    return this.srcTex;
+    return srcTex;
   }
   
   public String getDstTex()
   {
-    return this.dstTex;
+    return dstTex;
   }
   
   public jy getDstTexLoc()
   {
-    return this.dstTexLoc;
+    return dstTexLoc;
   }
 }

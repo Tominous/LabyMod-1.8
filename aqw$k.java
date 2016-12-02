@@ -18,17 +18,17 @@ public class aqw$k
   public aqw$k(aec ☃, int ☃, Random ☃, int ☃, int ☃, List<aqw.e> ☃, int ☃)
   {
     super(null, 0, ☃, ☃, ☃);
-    this.a = ☃;
-    this.e = ☃;
-    this.c = ☃;
+    a = ☃;
+    e = ☃;
+    c = ☃;
     
     ady ☃ = ☃.a(new cj(☃, 0, ☃), ady.ad);
-    this.b = ((☃ == ady.r) || (☃ == ady.G));
-    a(this.b);
+    b = ((☃ == ady.r) || (☃ == ady.G));
+    a(b);
   }
   
   public aec e()
   {
-    return this.a;
+    return a;
   }
 }

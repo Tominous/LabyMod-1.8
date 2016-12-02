@@ -8,7 +8,7 @@ public class afz
   
   protected afz()
   {
-    j(this.M.b().a(a, Integer.valueOf(0)));
+    j(M.b().a(a, Integer.valueOf(0)));
     a(true);
     float ☃ = 0.5F;
     a(0.5F - ☃, 0.0F, 0.5F - ☃, 0.5F + ☃, 0.25F, 0.5F + ☃);
@@ -41,7 +41,7 @@ public class afz
   
   public void g(adm ☃, cj ☃, alz ☃)
   {
-    int ☃ = ((Integer)☃.b(a)).intValue() + ns.a(☃.s, 2, 5);
+    int ☃ = ((Integer)☃.b(a)).intValue() + ns.a(s, 2, 5);
     if (☃ > 7) {
       ☃ = 7;
     }
@@ -111,7 +111,7 @@ public class afz
   public void a(adm ☃, cj ☃, alz ☃, float ☃, int ☃)
   {
     super.a(☃, ☃, ☃, ☃, 0);
-    if (☃.D) {
+    if (D) {
       return;
     }
     int ☃ = ((Integer)☃.b(a)).intValue();
@@ -119,7 +119,7 @@ public class afz
     {
       int ☃ = 3 + ☃;
       for (int ☃ = 0; ☃ < ☃; ☃++) {
-        if (☃.s.nextInt(15) <= ☃) {
+        if (s.nextInt(15) <= ☃) {
           a(☃, ☃, new zx(l(), 1, 0));
         }
       }

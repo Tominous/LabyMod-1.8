@@ -13,42 +13,42 @@ public class bgk
   
   public bgk(float[] ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public float a(int ☃)
   {
-    if (this.a == null) {
+    if (a == null) {
       throw new NullPointerException("uvs");
     }
     int ☃ = d(☃);
-    return (☃ == 0) || (☃ == 1) ? this.a[0] : this.a[2];
+    return (☃ == 0) || (☃ == 1) ? a[0] : a[2];
   }
   
   public float b(int ☃)
   {
-    if (this.a == null) {
+    if (a == null) {
       throw new NullPointerException("uvs");
     }
     int ☃ = d(☃);
-    return (☃ == 0) || (☃ == 3) ? this.a[1] : this.a[3];
+    return (☃ == 0) || (☃ == 3) ? a[1] : a[3];
   }
   
   private int d(int ☃)
   {
-    return (☃ + this.b / 90) % 4;
+    return (☃ + b / 90) % 4;
   }
   
   public int c(int ☃)
   {
-    return (☃ + (4 - this.b / 90)) % 4;
+    return (☃ + (4 - b / 90)) % 4;
   }
   
   public void a(float[] ☃)
   {
-    if (this.a == null) {
-      this.a = ☃;
+    if (a == null) {
+      a = ☃;
     }
   }
   

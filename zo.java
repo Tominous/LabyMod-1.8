@@ -6,12 +6,12 @@ public class zo
 {
   public boolean a(zx ☃, wn ☃, adm ☃, cj ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (!☃.D)
+    if (!D)
     {
       wt ☃ = new wt(☃, ☃.n() + ☃, ☃.o() + ☃, ☃.p() + ☃, ☃);
       ☃.d(☃);
-      if (!☃.bA.d) {
-        ☃.b -= 1;
+      if (!bA.d) {
+        b -= 1;
       }
       return true;
     }

@@ -31,38 +31,38 @@ public abstract class aql$r
   public aql$r(cq ☃, aqe ☃)
   {
     super(1);
-    this.m = ☃;
-    this.l = ☃;
+    m = ☃;
+    l = ☃;
   }
   
   protected aql$r(int ☃, cq ☃, aql.v ☃, int ☃, int ☃, int ☃)
   {
     super(☃);
-    this.m = ☃;
-    this.k = ☃;
+    m = ☃;
+    k = ☃;
     
-    int ☃ = ☃.a;
+    int ☃ = a;
     int ☃ = ☃ % 5;
     int ☃ = ☃ / 5 % 5;
     int ☃ = ☃ / 25;
     if ((☃ == cq.c) || (☃ == cq.d)) {
-      this.l = new aqe(0, 0, 0, ☃ * 8 - 1, ☃ * 4 - 1, ☃ * 8 - 1);
+      l = new aqe(0, 0, 0, ☃ * 8 - 1, ☃ * 4 - 1, ☃ * 8 - 1);
     } else {
-      this.l = new aqe(0, 0, 0, ☃ * 8 - 1, ☃ * 4 - 1, ☃ * 8 - 1);
+      l = new aqe(0, 0, 0, ☃ * 8 - 1, ☃ * 4 - 1, ☃ * 8 - 1);
     }
     switch (aql.1.a[☃.ordinal()])
     {
     case 1: 
-      this.l.a(☃ * 8, ☃ * 4, -(☃ + ☃) * 8 + 1);
+      l.a(☃ * 8, ☃ * 4, -(☃ + ☃) * 8 + 1);
       break;
     case 2: 
-      this.l.a(☃ * 8, ☃ * 4, ☃ * 8);
+      l.a(☃ * 8, ☃ * 4, ☃ * 8);
       break;
     case 3: 
-      this.l.a(-(☃ + ☃) * 8 + 1, ☃ * 4, ☃ * 8);
+      l.a(-(☃ + ☃) * 8 + 1, ☃ * 4, ☃ * 8);
       break;
     default: 
-      this.l.a(☃ * 8, ☃ * 4, ☃ * 8);
+      l.a(☃ * 8, ☃ * 4, ☃ * 8);
     }
   }
   

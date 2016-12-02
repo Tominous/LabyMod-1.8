@@ -1,7 +1,5 @@
 package de.labystudio.utils;
 
-import de.labystudio.labymod.Source;
-import de.labystudio.labymod.Timings;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -18,7 +16,6 @@ public class FilterLoader
   
   public static void loadFilters()
   {
-    Timings.start("Load Filter Config");
     if (!filters.isEmpty()) {
       return;
     }
@@ -27,25 +24,32 @@ public class FilterLoader
     create();
     try
     {
-      json = IOUtils.toString(new FileInputStream(Source.file_filters));
+      json = IOUtils.toString(new FileInputStream("LabyMod/filters.json"));
     }
     catch (FileNotFoundException localFileNotFoundException) {}catch (IOException localIOException) {}
-    filters = (ArrayList)Utils.ConvertJsonToObject.getFromJSON(json, ArrayList.class);
+    try
+    {
+      filters = (ArrayList)Utils.ConvertJsonToObject.getFromJSON(json, ArrayList.class);
+    }
+    catch (Exception error)
+    {
+      new File("LabyMod/filters.json").delete();
+      error.printStackTrace();
+    }
     if (filters == null) {
       filters = new ArrayList();
     }
-    Timings.stop("Load Filter Config");
   }
   
   public static void create()
   {
-    if (!new File(Source.file_filters).exists()) {
+    if (!new File("LabyMod/filters.json").exists()) {
       try
       {
-        if (!new File(Source.file_filters).getParentFile().exists()) {
-          new File(Source.file_filters).getParentFile().mkdirs();
+        if (!new File("LabyMod/filters.json").getParentFile().exists()) {
+          new File("LabyMod/filters.json").getParentFile().mkdirs();
         }
-        new File(Source.file_filters).createNewFile();
+        new File("LabyMod/filters.json").createNewFile();
       }
       catch (IOException localIOException) {}
     }
@@ -57,7 +61,7 @@ public class FilterLoader
     String json = Utils.ConvertJsonToObject.toJSON(filters);
     try
     {
-      PrintWriter w = new PrintWriter(new FileOutputStream(Source.file_filters));
+      PrintWriter w = new PrintWriter(new FileOutputStream("LabyMod/filters.json"));
       w.print(json);
       w.flush();
       w.close();

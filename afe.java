@@ -17,110 +17,110 @@ public abstract class afe
     
     public a(adm ☃, cj ☃, alz ☃)
     {
-      this.b = ☃;
-      this.c = ☃;
-      this.e = ☃;
-      this.d = ((afe)☃.c());
-      afe.b ☃ = (afe.b)☃.b(afe.this.n());
-      this.f = this.d.a;
+      b = ☃;
+      c = ☃;
+      e = ☃;
+      d = ((afe)☃.c());
+      afe.b ☃ = (afe.b)☃.b(n());
+      f = d.a;
       a(☃);
     }
     
     private void a(afe.b ☃)
     {
-      this.g.clear();
+      g.clear();
       switch (afe.1.a[☃.ordinal()])
       {
       case 1: 
-        this.g.add(this.c.c());
-        this.g.add(this.c.d());
+        g.add(c.c());
+        g.add(c.d());
         break;
       case 2: 
-        this.g.add(this.c.e());
-        this.g.add(this.c.f());
+        g.add(c.e());
+        g.add(c.f());
         break;
       case 3: 
-        this.g.add(this.c.e());
-        this.g.add(this.c.f().a());
+        g.add(c.e());
+        g.add(c.f().a());
         break;
       case 4: 
-        this.g.add(this.c.e().a());
-        this.g.add(this.c.f());
+        g.add(c.e().a());
+        g.add(c.f());
         break;
       case 5: 
-        this.g.add(this.c.c().a());
-        this.g.add(this.c.d());
+        g.add(c.c().a());
+        g.add(c.d());
         break;
       case 6: 
-        this.g.add(this.c.c());
-        this.g.add(this.c.d().a());
+        g.add(c.c());
+        g.add(c.d().a());
         break;
       case 7: 
-        this.g.add(this.c.f());
-        this.g.add(this.c.d());
+        g.add(c.f());
+        g.add(c.d());
         break;
       case 8: 
-        this.g.add(this.c.e());
-        this.g.add(this.c.d());
+        g.add(c.e());
+        g.add(c.d());
         break;
       case 9: 
-        this.g.add(this.c.e());
-        this.g.add(this.c.c());
+        g.add(c.e());
+        g.add(c.c());
         break;
       case 10: 
-        this.g.add(this.c.f());
-        this.g.add(this.c.c());
+        g.add(c.f());
+        g.add(c.c());
       }
     }
     
     private void c()
     {
-      for (int ☃ = 0; ☃ < this.g.size(); ☃++)
+      for (int ☃ = 0; ☃ < g.size(); ☃++)
       {
-        a ☃ = b((cj)this.g.get(☃));
+        a ☃ = b((cj)g.get(☃));
         if ((☃ == null) || (!☃.a(this))) {
-          this.g.remove(☃--);
+          g.remove(☃--);
         } else {
-          this.g.set(☃, ☃.c);
+          g.set(☃, c);
         }
       }
     }
     
     private boolean a(cj ☃)
     {
-      return (afe.e(this.b, ☃)) || (afe.e(this.b, ☃.a())) || (afe.e(this.b, ☃.b()));
+      return (afe.e(b, ☃)) || (afe.e(b, ☃.a())) || (afe.e(b, ☃.b()));
     }
     
     private a b(cj ☃)
     {
       cj ☃ = ☃;
-      alz ☃ = this.b.p(☃);
+      alz ☃ = b.p(☃);
       if (afe.d(☃)) {
-        return new a(afe.this, this.b, ☃, ☃);
+        return new a(afe.this, b, ☃, ☃);
       }
       ☃ = ☃.a();
-      ☃ = this.b.p(☃);
+      ☃ = b.p(☃);
       if (afe.d(☃)) {
-        return new a(afe.this, this.b, ☃, ☃);
+        return new a(afe.this, b, ☃, ☃);
       }
       ☃ = ☃.b();
-      ☃ = this.b.p(☃);
+      ☃ = b.p(☃);
       if (afe.d(☃)) {
-        return new a(afe.this, this.b, ☃, ☃);
+        return new a(afe.this, b, ☃, ☃);
       }
       return null;
     }
     
     private boolean a(a ☃)
     {
-      return c(☃.c);
+      return c(c);
     }
     
     private boolean c(cj ☃)
     {
-      for (int ☃ = 0; ☃ < this.g.size(); ☃++)
+      for (int ☃ = 0; ☃ < g.size(); ☃++)
       {
-        cj ☃ = (cj)this.g.get(☃);
+        cj ☃ = (cj)g.get(☃);
         if ((☃.n() == ☃.n()) && (☃.p() == ☃.p())) {
           return true;
         }
@@ -132,7 +132,7 @@ public abstract class afe
     {
       int ☃ = 0;
       for (cq ☃ : cq.c.a) {
-        if (a(this.c.a(☃))) {
+        if (a(c.a(☃))) {
           ☃++;
         }
       }
@@ -141,17 +141,17 @@ public abstract class afe
     
     private boolean b(a ☃)
     {
-      return (a(☃)) || (this.g.size() != 2);
+      return (a(☃)) || (g.size() != 2);
     }
     
     private void c(a ☃)
     {
-      this.g.add(☃.c);
+      g.add(c);
       
-      cj ☃ = this.c.c();
-      cj ☃ = this.c.d();
-      cj ☃ = this.c.e();
-      cj ☃ = this.c.f();
+      cj ☃ = c.c();
+      cj ☃ = c.d();
+      cj ☃ = c.e();
+      cj ☃ = c.f();
       
       boolean ☃ = c(☃);
       boolean ☃ = c(☃);
@@ -165,7 +165,7 @@ public abstract class afe
       if ((☃) || (☃)) {
         ☃ = afe.b.b;
       }
-      if (!this.f)
+      if (!f)
       {
         if ((☃) && (☃) && (!☃) && (!☃)) {
           ☃ = afe.b.g;
@@ -182,27 +182,27 @@ public abstract class afe
       }
       if (☃ == afe.b.a)
       {
-        if (afe.e(this.b, ☃.a())) {
+        if (afe.e(b, ☃.a())) {
           ☃ = afe.b.e;
         }
-        if (afe.e(this.b, ☃.a())) {
+        if (afe.e(b, ☃.a())) {
           ☃ = afe.b.f;
         }
       }
       if (☃ == afe.b.b)
       {
-        if (afe.e(this.b, ☃.a())) {
+        if (afe.e(b, ☃.a())) {
           ☃ = afe.b.c;
         }
-        if (afe.e(this.b, ☃.a())) {
+        if (afe.e(b, ☃.a())) {
           ☃ = afe.b.d;
         }
       }
       if (☃ == null) {
         ☃ = afe.b.a;
       }
-      this.e = this.e.a(this.d.n(), ☃);
-      this.b.a(this.c, this.e, 3);
+      e = e.a(d.n(), ☃);
+      b.a(c, e, 3);
     }
     
     private boolean d(cj ☃)
@@ -217,10 +217,10 @@ public abstract class afe
     
     public a a(boolean ☃, boolean ☃)
     {
-      cj ☃ = this.c.c();
-      cj ☃ = this.c.d();
-      cj ☃ = this.c.e();
-      cj ☃ = this.c.f();
+      cj ☃ = c.c();
+      cj ☃ = c.d();
+      cj ☃ = c.e();
+      cj ☃ = c.f();
       
       boolean ☃ = d(☃);
       boolean ☃ = d(☃);
@@ -234,7 +234,7 @@ public abstract class afe
       if (((☃) || (☃)) && (!☃) && (!☃)) {
         ☃ = afe.b.b;
       }
-      if (!this.f)
+      if (!f)
       {
         if ((☃) && (☃) && (!☃) && (!☃)) {
           ☃ = afe.b.g;
@@ -257,7 +257,7 @@ public abstract class afe
         if ((☃) || (☃)) {
           ☃ = afe.b.b;
         }
-        if (!this.f) {
+        if (!f) {
           if (☃)
           {
             if ((☃) && (☃)) {
@@ -292,19 +292,19 @@ public abstract class afe
       }
       if (☃ == afe.b.a)
       {
-        if (afe.e(this.b, ☃.a())) {
+        if (afe.e(b, ☃.a())) {
           ☃ = afe.b.e;
         }
-        if (afe.e(this.b, ☃.a())) {
+        if (afe.e(b, ☃.a())) {
           ☃ = afe.b.f;
         }
       }
       if (☃ == afe.b.b)
       {
-        if (afe.e(this.b, ☃.a())) {
+        if (afe.e(b, ☃.a())) {
           ☃ = afe.b.c;
         }
-        if (afe.e(this.b, ☃.a())) {
+        if (afe.e(b, ☃.a())) {
           ☃ = afe.b.d;
         }
       }
@@ -312,13 +312,13 @@ public abstract class afe
         ☃ = afe.b.a;
       }
       a(☃);
-      this.e = this.e.a(this.d.n(), ☃);
-      if ((☃) || (this.b.p(this.c) != this.e))
+      e = e.a(d.n(), ☃);
+      if ((☃) || (b.p(c) != e))
       {
-        this.b.a(this.c, this.e, 3);
-        for (int ☃ = 0; ☃ < this.g.size(); ☃++)
+        b.a(c, e, 3);
+        for (int ☃ = 0; ☃ < g.size(); ☃++)
         {
-          a ☃ = b((cj)this.g.get(☃));
+          a ☃ = b((cj)g.get(☃));
           if (☃ != null)
           {
             ☃.c();
@@ -333,7 +333,7 @@ public abstract class afe
     
     public alz b()
     {
-      return this.e;
+      return e;
     }
   }
   
@@ -351,7 +351,7 @@ public abstract class afe
   protected afe(boolean ☃)
   {
     super(arm.q);
-    this.a = ☃;
+    a = ☃;
     a(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
     a(yz.e);
   }
@@ -398,10 +398,10 @@ public abstract class afe
   
   public void c(adm ☃, cj ☃, alz ☃)
   {
-    if (!☃.D)
+    if (!D)
     {
       ☃ = a(☃, ☃, ☃, true);
-      if (this.a) {
+      if (a) {
         a(☃, ☃, ☃, this);
       }
     }
@@ -409,7 +409,7 @@ public abstract class afe
   
   public void a(adm ☃, cj ☃, alz ☃, afh ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     afe.b ☃ = (afe.b)☃.b(n());
@@ -441,7 +441,7 @@ public abstract class afe
   
   protected alz a(adm ☃, cj ☃, alz ☃, boolean ☃)
   {
-    if (☃.D) {
+    if (D) {
       return ☃;
     }
     return new afe.a(☃, ☃, ☃).a(☃.z(☃), ☃).b();
@@ -463,7 +463,7 @@ public abstract class afe
     if (((afe.b)☃.b(n())).c()) {
       ☃.c(☃.a(), this);
     }
-    if (this.a)
+    if (a)
     {
       ☃.c(☃, this);
       ☃.c(☃.b(), this);
@@ -489,18 +489,18 @@ public abstract class afe
     
     private b(int ☃, String ☃)
     {
-      this.l = ☃;
-      this.m = ☃;
+      l = ☃;
+      m = ☃;
     }
     
     public int a()
     {
-      return this.l;
+      return l;
     }
     
     public String toString()
     {
-      return this.m;
+      return m;
     }
     
     public boolean c()
@@ -518,7 +518,7 @@ public abstract class afe
     
     public String l()
     {
-      return this.m;
+      return m;
     }
   }
 }

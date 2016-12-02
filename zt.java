@@ -25,16 +25,16 @@ public class zt
   
   protected void c(zx ☃, adm ☃, wn ☃)
   {
-    if (!☃.D) {
-      ☃.c(new pf(pe.x.H, 2400, 0));
+    if (!D) {
+      ☃.c(new pf(xH, 2400, 0));
     }
     if (☃.i() > 0)
     {
-      if (!☃.D)
+      if (!D)
       {
-        ☃.c(new pf(pe.l.H, 600, 4));
-        ☃.c(new pf(pe.m.H, 6000, 0));
-        ☃.c(new pf(pe.n.H, 6000, 0));
+        ☃.c(new pf(lH, 600, 4));
+        ☃.c(new pf(mH, 6000, 0));
+        ☃.c(new pf(nH, 6000, 0));
       }
     }
     else {

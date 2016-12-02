@@ -73,10 +73,10 @@ public class Lagometer
     if (mc == null)
     {
       mc = ave.A();
-      gameSettings = mc.t;
-      profiler = mc.A;
+      gameSettings = mct;
+      profiler = mcA;
     }
-    if ((!gameSettings.aB) || (!gameSettings.ofLagometer))
+    if ((!gameSettingsaB) || (!gameSettingsofLagometer))
     {
       active = false;
       prevFrameTimeNano = -1L;
@@ -96,13 +96,13 @@ public class Lagometer
     boolean gc = updateMemoryAllocation();
     
     timesFrame[frameIndex] = (timeNowNano - prevFrameTimeNano - renderTimeNano);
-    timesTick[frameIndex] = timerTick.timeNano;
-    timesScheduledExecutables[frameIndex] = timerScheduledExecutables.timeNano;
-    timesChunkUpload[frameIndex] = timerChunkUpload.timeNano;
-    timesChunkUpdate[frameIndex] = timerChunkUpdate.timeNano;
-    timesVisibility[frameIndex] = timerVisibility.timeNano;
-    timesTerrain[frameIndex] = timerTerrain.timeNano;
-    timesServer[frameIndex] = timerServer.timeNano;
+    timesTick[frameIndex] = timerTicktimeNano;
+    timesScheduledExecutables[frameIndex] = timerScheduledExecutablestimeNano;
+    timesChunkUpload[frameIndex] = timerChunkUploadtimeNano;
+    timesChunkUpdate[frameIndex] = timerChunkUpdatetimeNano;
+    timesVisibility[frameIndex] = timerVisibilitytimeNano;
+    timesTerrain[frameIndex] = timerTerraintimeNano;
+    timesServer[frameIndex] = timerServertimeNano;
     gcs[frameIndex] = gc;
     
     timerTick.reset();
@@ -118,7 +118,7 @@ public class Lagometer
   
   public static void showLagometer(avr scaledResolution)
   {
-    if ((gameSettings == null) || (!gameSettings.ofLagometer)) {
+    if ((gameSettings == null) || (!gameSettingsofLagometer)) {
       return;
     }
     long timeRenderStartNano = System.nanoTime();
@@ -130,7 +130,7 @@ public class Lagometer
     
     bfl.g();
     bfl.D();
-    bfl.a(0.0D, mc.d, mc.e, 0.0D, 1000.0D, 3000.0D);
+    bfl.a(0.0D, mcd, mce, 0.0D, 1000.0D, 3000.0D);
     bfl.n(5888);
     
     bfl.E();
@@ -148,7 +148,7 @@ public class Lagometer
       int lum = (frameNum - numRecordedFrameTimes & timesFrame.length - 1) * 100 / timesFrame.length;
       lum += 155;
       
-      float baseHeight = mc.e;
+      float baseHeight = mce;
       
       long heightFrame = 0L;
       if (gcs[frameNum] != 0)
@@ -194,9 +194,9 @@ public class Lagometer
     int memColB = (int)(10.0F + lumMem * 10.0F);
     int colMem = memColR << 16 | memColG << 8 | memColB;
     int posX = 512 / scaledResolution.e() + 2;
-    int posY = mc.e / scaledResolution.e() - 8;
+    int posY = mce / scaledResolution.e() - 8;
     avo.a(posX - 1, posY - 1, posX + 50, posY + 10, -1605349296);
-    mc.k.a(" " + memMbSec + " MB/s", posX, posY, colMem);
+    mck.a(" " + memMbSec + " MB/s", posX, posY, colMem);
     
     renderTimeNano = System.nanoTime() - timeRenderStartNano;
   }
@@ -227,8 +227,8 @@ public class Lagometer
       if (!Lagometer.active) {
         return;
       }
-      if (this.timeStartNano == 0L) {
-        this.timeStartNano = System.nanoTime();
+      if (timeStartNano == 0L) {
+        timeStartNano = System.nanoTime();
       }
     }
     
@@ -237,17 +237,17 @@ public class Lagometer
       if (!Lagometer.active) {
         return;
       }
-      if (this.timeStartNano != 0L)
+      if (timeStartNano != 0L)
       {
-        this.timeNano += System.nanoTime() - this.timeStartNano;
-        this.timeStartNano = 0L;
+        timeNano += System.nanoTime() - timeStartNano;
+        timeStartNano = 0L;
       }
     }
     
     private void reset()
     {
-      this.timeNano = 0L;
-      this.timeStartNano = 0L;
+      timeNano = 0L;
+      timeStartNano = 0L;
     }
   }
 }

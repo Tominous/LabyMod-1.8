@@ -18,45 +18,45 @@ class ama$a
   
   private ama$a(afh ☃, ImmutableMap<amo, Comparable> ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public Collection<amo> a()
   {
-    return Collections.unmodifiableCollection(this.b.keySet());
+    return Collections.unmodifiableCollection(b.keySet());
   }
   
   public <T extends Comparable<T>> T b(amo<T> ☃)
   {
-    if (!this.b.containsKey(☃)) {
-      throw new IllegalArgumentException("Cannot get property " + ☃ + " as it does not exist in " + this.a.P());
+    if (!b.containsKey(☃)) {
+      throw new IllegalArgumentException("Cannot get property " + ☃ + " as it does not exist in " + a.P());
     }
-    return (Comparable)☃.b().cast(this.b.get(☃));
+    return (Comparable)☃.b().cast(b.get(☃));
   }
   
   public <T extends Comparable<T>, V extends T> alz a(amo<T> ☃, V ☃)
   {
-    if (!this.b.containsKey(☃)) {
-      throw new IllegalArgumentException("Cannot set property " + ☃ + " as it does not exist in " + this.a.P());
+    if (!b.containsKey(☃)) {
+      throw new IllegalArgumentException("Cannot set property " + ☃ + " as it does not exist in " + a.P());
     }
     if (!☃.c().contains(☃)) {
-      throw new IllegalArgumentException("Cannot set property " + ☃ + " to " + ☃ + " on block " + afh.c.c(this.a) + ", it is not an allowed value");
+      throw new IllegalArgumentException("Cannot set property " + ☃ + " to " + ☃ + " on block " + afh.c.c(a) + ", it is not an allowed value");
     }
-    if (this.b.get(☃) == ☃) {
+    if (b.get(☃) == ☃) {
       return this;
     }
-    return (alz)this.c.get(☃, ☃);
+    return (alz)c.get(☃, ☃);
   }
   
   public ImmutableMap<amo, Comparable> b()
   {
-    return this.b;
+    return b;
   }
   
   public afh c()
   {
-    return this.a;
+    return a;
   }
   
   public boolean equals(Object ☃)
@@ -66,31 +66,31 @@ class ama$a
   
   public int hashCode()
   {
-    return this.b.hashCode();
+    return b.hashCode();
   }
   
   public void a(Map<Map<amo, Comparable>, a> ☃)
   {
-    if (this.c != null) {
+    if (c != null) {
       throw new IllegalStateException();
     }
     Table<amo, Comparable, alz> ☃ = HashBasedTable.create();
-    for (Iterator ☃ = this.b.keySet().iterator(); ☃.hasNext();)
+    for (Iterator ☃ = b.keySet().iterator(); ☃.hasNext();)
     {
       ☃ = (amo)☃.next();
       for (Comparable ☃ : ☃.c()) {
-        if (☃ != this.b.get(☃)) {
+        if (☃ != b.get(☃)) {
           ☃.put(☃, ☃, ☃.get(b(☃, ☃)));
         }
       }
     }
     amo<? extends Comparable> ☃;
-    this.c = ImmutableTable.copyOf(☃);
+    c = ImmutableTable.copyOf(☃);
   }
   
   private Map<amo, Comparable> b(amo ☃, Comparable ☃)
   {
-    Map<amo, Comparable> ☃ = Maps.newHashMap(this.b);
+    Map<amo, Comparable> ☃ = Maps.newHashMap(b);
     ☃.put(☃, ☃);
     return ☃;
   }

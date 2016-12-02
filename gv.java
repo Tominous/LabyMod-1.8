@@ -18,43 +18,43 @@ public class gv
   {
     public b()
     {
-      this.h = true;
+      h = true;
     }
     
     public b(int ☃, byte ☃, byte ☃, byte ☃, byte ☃, byte ☃, boolean ☃)
     {
       super();
-      this.b = ☃;
-      this.c = ☃;
-      this.d = ☃;
-      this.e = ☃;
-      this.f = ☃;
-      this.g = ☃;
-      this.h = true;
+      b = ☃;
+      c = ☃;
+      d = ☃;
+      e = ☃;
+      f = ☃;
+      g = ☃;
+      h = true;
     }
     
     public void a(em ☃)
       throws IOException
     {
       super.a(☃);
-      this.b = ☃.readByte();
-      this.c = ☃.readByte();
-      this.d = ☃.readByte();
-      this.e = ☃.readByte();
-      this.f = ☃.readByte();
-      this.g = ☃.readBoolean();
+      b = ☃.readByte();
+      c = ☃.readByte();
+      d = ☃.readByte();
+      e = ☃.readByte();
+      f = ☃.readByte();
+      g = ☃.readBoolean();
     }
     
     public void b(em ☃)
       throws IOException
     {
       super.b(☃);
-      ☃.writeByte(this.b);
-      ☃.writeByte(this.c);
-      ☃.writeByte(this.d);
-      ☃.writeByte(this.e);
-      ☃.writeByte(this.f);
-      ☃.writeBoolean(this.g);
+      ☃.writeByte(b);
+      ☃.writeByte(c);
+      ☃.writeByte(d);
+      ☃.writeByte(e);
+      ☃.writeByte(f);
+      ☃.writeBoolean(g);
     }
   }
   
@@ -66,30 +66,30 @@ public class gv
     public a(int ☃, byte ☃, byte ☃, byte ☃, boolean ☃)
     {
       super();
-      this.b = ☃;
-      this.c = ☃;
-      this.d = ☃;
-      this.g = ☃;
+      b = ☃;
+      c = ☃;
+      d = ☃;
+      g = ☃;
     }
     
     public void a(em ☃)
       throws IOException
     {
       super.a(☃);
-      this.b = ☃.readByte();
-      this.c = ☃.readByte();
-      this.d = ☃.readByte();
-      this.g = ☃.readBoolean();
+      b = ☃.readByte();
+      c = ☃.readByte();
+      d = ☃.readByte();
+      g = ☃.readBoolean();
     }
     
     public void b(em ☃)
       throws IOException
     {
       super.b(☃);
-      ☃.writeByte(this.b);
-      ☃.writeByte(this.c);
-      ☃.writeByte(this.d);
-      ☃.writeBoolean(this.g);
+      ☃.writeByte(b);
+      ☃.writeByte(c);
+      ☃.writeByte(d);
+      ☃.writeBoolean(g);
     }
   }
   
@@ -98,52 +98,52 @@ public class gv
   {
     public c()
     {
-      this.h = true;
+      h = true;
     }
     
     public c(int ☃, byte ☃, byte ☃, boolean ☃)
     {
       super();
-      this.e = ☃;
-      this.f = ☃;
-      this.h = true;
-      this.g = ☃;
+      e = ☃;
+      f = ☃;
+      h = true;
+      g = ☃;
     }
     
     public void a(em ☃)
       throws IOException
     {
       super.a(☃);
-      this.e = ☃.readByte();
-      this.f = ☃.readByte();
-      this.g = ☃.readBoolean();
+      e = ☃.readByte();
+      f = ☃.readByte();
+      g = ☃.readBoolean();
     }
     
     public void b(em ☃)
       throws IOException
     {
       super.b(☃);
-      ☃.writeByte(this.e);
-      ☃.writeByte(this.f);
-      ☃.writeBoolean(this.g);
+      ☃.writeByte(e);
+      ☃.writeByte(f);
+      ☃.writeBoolean(g);
     }
   }
   
   public gv(int ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.e();
+    a = ☃.e();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(this.a);
+    ☃.b(a);
   }
   
   public void a(fj ☃)
@@ -158,41 +158,41 @@ public class gv
   
   public pk a(adm ☃)
   {
-    return ☃.a(this.a);
+    return ☃.a(a);
   }
   
   public byte a()
   {
-    return this.b;
+    return b;
   }
   
   public byte b()
   {
-    return this.c;
+    return c;
   }
   
   public byte c()
   {
-    return this.d;
+    return d;
   }
   
   public byte d()
   {
-    return this.e;
+    return e;
   }
   
   public byte e()
   {
-    return this.f;
+    return f;
   }
   
   public boolean f()
   {
-    return this.h;
+    return h;
   }
   
   public boolean g()
   {
-    return this.g;
+    return g;
   }
 }

@@ -22,31 +22,31 @@ public class NbtTagValue
   public NbtTagValue(String tag, String value)
   {
     String[] names = Config.tokenize(tag, ".");
-    this.parents = ((String[])Arrays.copyOfRange(names, 0, names.length - 1));
-    this.name = names[(names.length - 1)];
+    parents = ((String[])Arrays.copyOfRange(names, 0, names.length - 1));
+    name = names[(names.length - 1)];
     if (value.startsWith("pattern:"))
     {
-      this.type = 1;
+      type = 1;
       value = value.substring("pattern:".length());
     }
     else if (value.startsWith("ipattern:"))
     {
-      this.type = 2;
+      type = 2;
       value = value.substring("ipattern:".length()).toLowerCase();
     }
     else if (value.startsWith("regex:"))
     {
-      this.type = 3;
+      type = 3;
       value = value.substring("regex:".length());
     }
     else if (value.startsWith("iregex:"))
     {
-      this.type = 4;
+      type = 4;
       value = value.substring("iregex:".length()).toLowerCase();
     }
     else
     {
-      this.type = 0;
+      type = 0;
     }
     value = StringEscapeUtils.unescapeJava(value);
     
@@ -59,19 +59,19 @@ public class NbtTagValue
       return false;
     }
     eb tagBase = nbt;
-    for (int i = 0; i < this.parents.length; i++)
+    for (int i = 0; i < parents.length; i++)
     {
-      String tag = this.parents[i];
+      String tag = parents[i];
       
       tagBase = getChildTag(tagBase, tag);
       if (tagBase == null) {
         return false;
       }
     }
-    if (this.name.equals("*")) {
+    if (name.equals("*")) {
       return matchesAnyChild(tagBase);
     }
-    tagBase = getChildTag(tagBase, this.name);
+    tagBase = getChildTag(tagBase, name);
     if (tagBase == null) {
       return false;
     }
@@ -141,20 +141,20 @@ public class NbtTagValue
     if (nbtValue == null) {
       return false;
     }
-    switch (this.type)
+    switch (type)
     {
     case 0: 
-      return nbtValue.equals(this.value);
+      return nbtValue.equals(value);
     case 1: 
-      return matchesPattern(nbtValue, this.value);
+      return matchesPattern(nbtValue, value);
     case 2: 
-      return matchesPattern(nbtValue.toLowerCase(), this.value);
+      return matchesPattern(nbtValue.toLowerCase(), value);
     case 3: 
-      return matchesRegex(nbtValue, this.value);
+      return matchesRegex(nbtValue, value);
     case 4: 
-      return matchesRegex(nbtValue.toLowerCase(), this.value);
+      return matchesRegex(nbtValue.toLowerCase(), value);
     }
-    throw new IllegalArgumentException("Unknown NbtTagValue type: " + this.type);
+    throw new IllegalArgumentException("Unknown NbtTagValue type: " + type);
   }
   
   private boolean matchesPattern(String str, String pattern)
@@ -213,9 +213,9 @@ public class NbtTagValue
   public String toString()
   {
     StringBuffer sb = new StringBuffer();
-    for (int i = 0; i < this.parents.length; i++)
+    for (int i = 0; i < parents.length; i++)
     {
-      String parent = this.parents[i];
+      String parent = parents[i];
       if (i > 0) {
         sb.append(".");
       }
@@ -224,9 +224,9 @@ public class NbtTagValue
     if (sb.length() > 0) {
       sb.append(".");
     }
-    sb.append(this.name);
+    sb.append(name);
     sb.append(" = ");
-    sb.append(this.value);
+    sb.append(value);
     
     return sb.toString();
   }

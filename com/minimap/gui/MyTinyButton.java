@@ -16,17 +16,17 @@ public class MyTinyButton
   public MyTinyButton(int par1, int par2, int par3, int par4, int par5, String par6Str)
   {
     super(par1, par2, par3, par4, par5, par6Str);
-    this.modOptions = null;
+    modOptions = null;
   }
   
   public MyTinyButton(int par1, int par2, int par3, ModOptions par4EnumOptions, String par5Str)
   {
     super(par1, par2, par3, 75, 20, par5Str);
-    this.modOptions = par4EnumOptions;
+    modOptions = par4EnumOptions;
   }
   
   public ModOptions returnModOptions()
   {
-    return this.modOptions;
+    return modOptions;
   }
 }

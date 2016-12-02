@@ -13,12 +13,12 @@ public class rb
   
   public rb(qa ☃, double ☃, float ☃, float ☃)
   {
-    this.d = ☃;
-    this.a = ☃.o;
-    this.f = ☃;
-    this.g = ☃.s();
-    this.c = ☃;
-    this.b = ☃;
+    d = ☃;
+    a = o;
+    f = ☃;
+    g = ☃.s();
+    c = ☃;
+    b = ☃;
     a(3);
     if (!(☃.s() instanceof sv)) {
       throw new IllegalArgumentException("Unsupported mob type for FollowOwnerGoal");
@@ -27,45 +27,45 @@ public class rb
   
   public boolean a()
   {
-    pr ☃ = this.d.co();
+    pr ☃ = d.co();
     if (☃ == null) {
       return false;
     }
     if (((☃ instanceof wn)) && (((wn)☃).v())) {
       return false;
     }
-    if (this.d.cn()) {
+    if (d.cn()) {
       return false;
     }
-    if (this.d.h(☃) < this.c * this.c) {
+    if (d.h(☃) < c * c) {
       return false;
     }
-    this.e = ☃;
+    e = ☃;
     return true;
   }
   
   public boolean b()
   {
-    return (!this.g.m()) && (this.d.h(this.e) > this.b * this.b) && (!this.d.cn());
+    return (!g.m()) && (d.h(e) > b * b) && (!d.cn());
   }
   
   public void c()
   {
-    this.h = 0;
-    this.i = ((sv)this.d.s()).e();
-    ((sv)this.d.s()).a(false);
+    h = 0;
+    i = ((sv)d.s()).e();
+    ((sv)d.s()).a(false);
   }
   
   public void d()
   {
-    this.e = null;
-    this.g.n();
-    ((sv)this.d.s()).a(true);
+    e = null;
+    g.n();
+    ((sv)d.s()).a(true);
   }
   
   private boolean a(cj ☃)
   {
-    alz ☃ = this.a.p(☃);
+    alz ☃ = a.p(☃);
     afh ☃ = ☃.c();
     if (☃ == afi.a) {
       return true;
@@ -75,33 +75,33 @@ public class rb
   
   public void e()
   {
-    this.d.p().a(this.e, 10.0F, this.d.bQ());
-    if (this.d.cn()) {
+    d.p().a(e, 10.0F, d.bQ());
+    if (d.cn()) {
       return;
     }
-    if (--this.h > 0) {
+    if (--h > 0) {
       return;
     }
-    this.h = 10;
-    if (this.g.a(this.e, this.f)) {
+    h = 10;
+    if (g.a(e, f)) {
       return;
     }
-    if (this.d.cc()) {
+    if (d.cc()) {
       return;
     }
-    if (this.d.h(this.e) < 144.0D) {
+    if (d.h(e) < 144.0D) {
       return;
     }
-    int ☃ = ns.c(this.e.s) - 2;
-    int ☃ = ns.c(this.e.u) - 2;
-    int ☃ = ns.c(this.e.aR().b);
+    int ☃ = ns.c(e.s) - 2;
+    int ☃ = ns.c(e.u) - 2;
+    int ☃ = ns.c(e.aR().b);
     for (int ☃ = 0; ☃ <= 4; ☃++) {
       for (int ☃ = 0; ☃ <= 4; ☃++) {
         if ((☃ < 1) || (☃ < 1) || (☃ > 3) || (☃ > 3)) {
-          if ((adm.a(this.a, new cj(☃ + ☃, ☃ - 1, ☃ + ☃))) && (a(new cj(☃ + ☃, ☃, ☃ + ☃))) && (a(new cj(☃ + ☃, ☃ + 1, ☃ + ☃))))
+          if ((adm.a(a, new cj(☃ + ☃, ☃ - 1, ☃ + ☃))) && (a(new cj(☃ + ☃, ☃, ☃ + ☃))) && (a(new cj(☃ + ☃, ☃ + 1, ☃ + ☃))))
           {
-            this.d.b(☃ + ☃ + 0.5F, ☃, ☃ + ☃ + 0.5F, this.d.y, this.d.z);
-            this.g.n();
+            d.b(☃ + ☃ + 0.5F, ☃, ☃ + ☃ + 0.5F, d.y, d.z);
+            g.n();
             return;
           }
         }

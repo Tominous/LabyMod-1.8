@@ -7,8 +7,8 @@ public class afs
   protected afs(int ☃)
   {
     super(arm.d);
-    j(this.M.b().a(a, cq.c));
-    this.b = ☃;
+    j(M.b().a(a, cq.c));
+    b = ☃;
     a(yz.c);
     a(0.0625F, 0.0F, 0.0625F, 0.9375F, 0.875F, 0.9375F);
   }
@@ -63,7 +63,7 @@ public class afs
   
   public void a(adm ☃, cj ☃, alz ☃, pr ☃, zx ☃)
   {
-    cq ☃ = cq.b(ns.c(☃.y * 4.0F / 360.0F + 0.5D) & 0x3).d();
+    cq ☃ = cq.b(ns.c(y * 4.0F / 360.0F + 0.5D) & 0x3).d();
     ☃ = ☃.a(a, ☃);
     
     cj ☃ = ☃.c();
@@ -110,7 +110,7 @@ public class afs
   
   public alz e(adm ☃, cj ☃, alz ☃)
   {
-    if (☃.D) {
+    if (D) {
       return ☃;
     }
     alz ☃ = ☃.p(☃.c());
@@ -302,16 +302,16 @@ public class afs
   
   public boolean a(adm ☃, cj ☃, alz ☃, wn ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (☃.D) {
+    if (D) {
       return true;
     }
     oo ☃ = f(☃, ☃);
     if (☃ != null)
     {
       ☃.a(☃);
-      if (this.b == 0) {
+      if (b == 0) {
         ☃.b(na.aa);
-      } else if (this.b == 1) {
+      } else if (b == 1) {
         ☃.b(na.U);
       }
     }
@@ -357,7 +357,7 @@ public class afs
   
   public boolean i()
   {
-    return this.b == 1;
+    return b == 1;
   }
   
   public int a(adq ☃, cj ☃, alz ☃, cq ☃)
@@ -368,7 +368,7 @@ public class afs
     int ☃ = 0;
     akw ☃ = ☃.s(☃);
     if ((☃ instanceof aky)) {
-      ☃ = ((aky)☃).l;
+      ☃ = l;
     }
     return ns.a(☃, 0, 15);
   }

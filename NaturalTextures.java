@@ -104,13 +104,13 @@ public class NaturalTextures
     
     int rotate = 0;
     boolean flipU = false;
-    if (nps.rotation > 1) {
+    if (rotation > 1) {
       rotate = rand & 0x3;
     }
-    if (nps.rotation == 2) {
+    if (rotation == 2) {
       rotate = rotate / 2 * 2;
     }
-    if (nps.flip) {
+    if (flip) {
       flipU = (rand & 0x4) != 0;
     }
     return nps.getQuad(quad, rotate, flipU);

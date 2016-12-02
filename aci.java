@@ -60,9 +60,9 @@ public abstract class aci
   
   protected aci(int ☃, jy ☃, int ☃, acj ☃)
   {
-    this.B = ☃;
-    this.F = ☃;
-    this.C = ☃;
+    B = ☃;
+    F = ☃;
+    C = ☃;
     if (a[☃] != null) {
       throw new IllegalArgumentException("Duplicate enchantment id!");
     }
@@ -82,7 +82,7 @@ public abstract class aci
   
   public int d()
   {
-    return this.F;
+    return F;
   }
   
   public int e()
@@ -122,13 +122,13 @@ public abstract class aci
   
   public aci c(String ☃)
   {
-    this.D = ☃;
+    D = ☃;
     return this;
   }
   
   public String a()
   {
-    return "enchantment." + this.D;
+    return "enchantment." + D;
   }
   
   public String d(int ☃)
@@ -139,7 +139,7 @@ public abstract class aci
   
   public boolean a(zx ☃)
   {
-    return this.C.a(☃.b());
+    return C.a(☃.b());
   }
   
   public void a(pr ☃, pk ☃, int ☃) {}

@@ -8,12 +8,12 @@ public abstract class asw
   
   public void a(adq ☃, pk ☃)
   {
-    this.a = ☃;
-    this.b.c();
+    a = ☃;
+    b.c();
     
-    this.c = ns.d(☃.J + 1.0F);
-    this.d = ns.d(☃.K + 1.0F);
-    this.e = ns.d(☃.J + 1.0F);
+    c = ns.d(J + 1.0F);
+    d = ns.d(K + 1.0F);
+    e = ns.d(J + 1.0F);
   }
   
   public void a() {}
@@ -21,11 +21,11 @@ public abstract class asw
   protected asv a(int ☃, int ☃, int ☃)
   {
     int ☃ = asv.a(☃, ☃, ☃);
-    asv ☃ = (asv)this.b.a(☃);
+    asv ☃ = (asv)b.a(☃);
     if (☃ == null)
     {
       ☃ = new asv(☃, ☃, ☃);
-      this.b.a(☃, ☃);
+      b.a(☃, ☃);
     }
     return ☃;
   }

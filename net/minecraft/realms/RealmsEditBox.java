@@ -9,56 +9,56 @@ public class RealmsEditBox
   
   public RealmsEditBox(int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    this.editBox = new avw(☃, ave.A().k, ☃, ☃, ☃, ☃);
+    editBox = new avw(☃, Ak, ☃, ☃, ☃, ☃);
   }
   
   public String getValue()
   {
-    return this.editBox.b();
+    return editBox.b();
   }
   
   public void tick()
   {
-    this.editBox.a();
+    editBox.a();
   }
   
   public void setFocus(boolean ☃)
   {
-    this.editBox.b(☃);
+    editBox.b(☃);
   }
   
   public void setValue(String ☃)
   {
-    this.editBox.a(☃);
+    editBox.a(☃);
   }
   
   public void keyPressed(char ☃, int ☃)
   {
-    this.editBox.a(☃, ☃);
+    editBox.a(☃, ☃);
   }
   
   public boolean isFocused()
   {
-    return this.editBox.m();
+    return editBox.m();
   }
   
   public void mouseClicked(int ☃, int ☃, int ☃)
   {
-    this.editBox.a(☃, ☃, ☃);
+    editBox.a(☃, ☃, ☃);
   }
   
   public void render()
   {
-    this.editBox.g();
+    editBox.g();
   }
   
   public void setMaxLength(int ☃)
   {
-    this.editBox.f(☃);
+    editBox.f(☃);
   }
   
   public void setIsEditable(boolean ☃)
   {
-    this.editBox.c(☃);
+    editBox.c(☃);
   }
 }

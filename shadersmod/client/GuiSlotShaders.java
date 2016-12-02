@@ -14,11 +14,11 @@ class GuiSlotShaders
   public GuiSlotShaders(GuiShaders par1GuiShaders, int width, int height, int top, int bottom, int slotHeight)
   {
     super(par1GuiShaders.getMc(), width, height, top, bottom, slotHeight);
-    this.shadersGui = par1GuiShaders;
+    shadersGui = par1GuiShaders;
     updateList();
     
-    this.n = 0.0F;
-    int posYSelected = this.selectedIndex * slotHeight;
+    n = 0.0F;
+    int posYSelected = selectedIndex * slotHeight;
     int wMid = (bottom - top) / 2;
     if (posYSelected > wMid) {
       h(posYSelected - wMid);
@@ -27,18 +27,18 @@ class GuiSlotShaders
   
   public int c()
   {
-    return this.b - 20;
+    return b - 20;
   }
   
   public void updateList()
   {
-    this.shaderslist = Shaders.listofShaders();
-    this.selectedIndex = 0;
+    shaderslist = Shaders.listofShaders();
+    selectedIndex = 0;
     int i = 0;
-    for (int n = this.shaderslist.size(); i < n; i++) {
-      if (((String)this.shaderslist.get(i)).equals(Shaders.currentshadername))
+    for (int n = shaderslist.size(); i < n; i++) {
+      if (((String)shaderslist.get(i)).equals(Shaders.currentshadername))
       {
-        this.selectedIndex = i;
+        selectedIndex = i;
         break;
       }
     }
@@ -46,31 +46,31 @@ class GuiSlotShaders
   
   protected int b()
   {
-    return this.shaderslist.size();
+    return shaderslist.size();
   }
   
   protected void a(int index, boolean doubleClicked, int mouseX, int mouseY)
   {
-    if ((index == this.selectedIndex) && (this.p == this.lastClickedCached)) {
+    if ((index == selectedIndex) && (p == lastClickedCached)) {
       return;
     }
-    this.selectedIndex = index;
+    selectedIndex = index;
     
-    this.lastClickedCached = this.p;
-    Shaders.setShaderPack((String)this.shaderslist.get(index));
+    lastClickedCached = p;
+    Shaders.setShaderPack((String)shaderslist.get(index));
     Shaders.uninit();
     
-    this.shadersGui.updateButtons();
+    shadersGui.updateButtons();
   }
   
   protected boolean a(int index)
   {
-    return index == this.selectedIndex;
+    return index == selectedIndex;
   }
   
   protected int d()
   {
-    return this.b - 6;
+    return b - 6;
   }
   
   protected int k()
@@ -82,11 +82,11 @@ class GuiSlotShaders
   
   protected void a(int index, int posX, int posY, int contentY, int mouseX, int mouseY)
   {
-    this.shadersGui.drawCenteredString((String)this.shaderslist.get(index), this.b / 2, posY + 1, 16777215);
+    shadersGui.drawCenteredString((String)shaderslist.get(index), b / 2, posY + 1, 16777215);
   }
   
   public int getSelectedIndex()
   {
-    return this.selectedIndex;
+    return selectedIndex;
   }
 }

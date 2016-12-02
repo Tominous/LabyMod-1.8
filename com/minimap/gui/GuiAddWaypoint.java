@@ -67,67 +67,67 @@ public class GuiAddWaypoint
   
   public GuiAddWaypoint(axu par1GuiScreen, ModSettings par2ModSettings, Waypoint point)
   {
-    this.nameText = "";
-    this.initial = "";
-    this.yaw = "";
-    this.dropDowns = new ArrayList();
-    this.fromSet = null;
-    this.color = 0;
-    this.dropped = false;
-    this.parentGuiScreen = par1GuiScreen;
-    this.guiModSettings = par2ModSettings;
+    nameText = "";
+    initial = "";
+    yaw = "";
+    dropDowns = new ArrayList();
+    fromSet = null;
+    color = 0;
+    dropped = false;
+    parentGuiScreen = par1GuiScreen;
+    guiModSettings = par2ModSettings;
     this.point = point;
-    this.fromSet = Minimap.getCurrentWorld().current;
-    this.sets = new GuiWaypointSets(this.fromSet, Minimap.getCurrentWorldID(), false);
+    fromSet = getCurrentWorldcurrent;
+    sets = new GuiWaypointSets(fromSet, Minimap.getCurrentWorldID(), false);
   }
   
   public void b()
   {
     com.minimap.interfaces.InterfaceHandler.selectedId = -1;
     com.minimap.interfaces.InterfaceHandler.draggingId = -1;
-    this.n.clear();
-    this.n.add(new MySmallButton(200, this.l / 2 - 155, this.m / 6 + 168, bnq.a("gui.xaero_confirm", new Object[0])));
-    this.n.add(new MySmallButton(201, this.l / 2 + 5, this.m / 6 + 168, bnq.a("gui.xaero_cancel", new Object[0])));
-    this.nameTextField = new avw(0, this.q, this.l / 2 - 100, 82, 200, 20);
-    this.xTextField = new avw(0, this.q, this.l / 2 - 109, 112, 50, 20);
-    this.yTextField = new avw(0, this.q, this.l / 2 - 53, 112, 50, 20);
-    this.zTextField = new avw(0, this.q, this.l / 2 + 3, 112, 50, 20);
-    this.yawTextField = new avw(0, this.q, this.l / 2 + 59, 112, 50, 20);
-    this.charTextField = new avw(0, this.q, this.l / 2 - 25, 142, 50, 20);
-    if (this.point == null)
+    n.clear();
+    n.add(new MySmallButton(200, l / 2 - 155, m / 6 + 168, bnq.a("gui.xaero_confirm", new Object[0])));
+    n.add(new MySmallButton(201, l / 2 + 5, m / 6 + 168, bnq.a("gui.xaero_cancel", new Object[0])));
+    nameTextField = new avw(0, q, l / 2 - 100, 82, 200, 20);
+    xTextField = new avw(0, q, l / 2 - 109, 112, 50, 20);
+    yTextField = new avw(0, q, l / 2 - 53, 112, 50, 20);
+    zTextField = new avw(0, q, l / 2 + 3, 112, 50, 20);
+    yawTextField = new avw(0, q, l / 2 + 59, 112, 50, 20);
+    charTextField = new avw(0, q, l / 2 - 25, 142, 50, 20);
+    if (point == null)
     {
-      this.screenTitle = bnq.a("gui.xaero_new_waypoint", new Object[0]);
-      this.nameTextField.a(this.nameText);
-      this.xTextField.a("" + Minimap.myFloor(this.j.h.s));
-      this.yTextField.a("" + Minimap.myFloor(this.j.h.t));
-      this.zTextField.a("" + Minimap.myFloor(this.j.h.u));
-      this.yawTextField.a("§8" + bnq.a("gui.xaero_yaw", new Object[0]));
-      this.charTextField.a("§8" + bnq.a("gui.xaero_initial", new Object[0]));
-      this.color = ((int)(Math.random() * (ModSettings.ENCHANT_COLORS.length - 1)));
+      screenTitle = bnq.a("gui.xaero_new_waypoint", new Object[0]);
+      nameTextField.a(nameText);
+      xTextField.a("" + Minimap.myFloor(j.h.s));
+      yTextField.a("" + Minimap.myFloor(j.h.t));
+      zTextField.a("" + Minimap.myFloor(j.h.u));
+      yawTextField.a("§8" + bnq.a("gui.xaero_yaw", new Object[0]));
+      charTextField.a("§8" + bnq.a("gui.xaero_initial", new Object[0]));
+      color = ((int)(Math.random() * (ModSettings.ENCHANT_COLORS.length - 1)));
     }
     else
     {
-      this.screenTitle = bnq.a("gui.xaero_edit_waypoint", new Object[0]);
-      this.nameTextField.a(this.point.getName());
-      this.xTextField.a("" + this.point.x);
-      this.yTextField.a("" + this.point.y);
-      this.zTextField.a("" + this.point.z);
-      this.initial = this.point.symbol;
-      if (this.point.rotation) {
-        this.yaw = ("" + this.point.yaw);
+      screenTitle = bnq.a("gui.xaero_edit_waypoint", new Object[0]);
+      nameTextField.a(point.getName());
+      xTextField.a("" + point.x);
+      yTextField.a("" + point.y);
+      zTextField.a("" + point.z);
+      initial = point.symbol;
+      if (point.rotation) {
+        yaw = ("" + point.yaw);
       }
-      this.yawTextField.a(this.yaw);
-      this.charTextField.a(this.initial);
-      this.color = this.point.color;
+      yawTextField.a(yaw);
+      charTextField.a(initial);
+      color = point.color;
     }
-    if (!this.dropDowns.isEmpty()) {
-      this.color = ((GuiDropDown)this.dropDowns.get(0)).selected;
+    if (!dropDowns.isEmpty()) {
+      color = dropDowns.get(0)).selected;
     }
-    this.dropDowns.clear();
-    GuiDropDown colorSelect = new GuiDropDown(createColorOptions(), this.l / 2 - 60, 60, 120, Integer.valueOf(this.color));
-    this.dropDowns.add(colorSelect);
-    this.dropDowns.add(new GuiDropDown(this.sets.options, this.l / 2 - 101, 38, 201, Integer.valueOf(this.sets.currentSet)));
-    this.nameTextField.b(true);
+    dropDowns.clear();
+    GuiDropDown colorSelect = new GuiDropDown(createColorOptions(), l / 2 - 60, 60, 120, Integer.valueOf(color));
+    dropDowns.add(colorSelect);
+    dropDowns.add(new GuiDropDown(sets.options, l / 2 - 101, 38, 201, Integer.valueOf(sets.currentSet)));
+    nameTextField.b(true);
     Keyboard.enableRepeatEvents(true);
     updateConfirmButton();
   }
@@ -140,70 +140,70 @@ public class GuiAddWaypoint
   protected void a(char par1, int par2)
     throws IOException
   {
-    if (this.nameTextField.m())
+    if (nameTextField.m())
     {
       if (par2 == 15)
       {
-        this.nameTextField.b(false);
-        this.xTextField.b(true);
+        nameTextField.b(false);
+        xTextField.b(true);
       }
-      this.nameTextField.a(par1, par2);
-      if ((this.initial.length() == 0) && (this.nameTextField.b().length() > 0)) {
-        this.initial = this.nameTextField.b().substring(0, 1);
+      nameTextField.a(par1, par2);
+      if ((initial.length() == 0) && (nameTextField.b().length() > 0)) {
+        initial = nameTextField.b().substring(0, 1);
       }
     }
-    else if (this.xTextField.m())
+    else if (xTextField.m())
     {
       if (par2 == 15)
       {
-        this.xTextField.b(false);
-        this.yTextField.b(true);
+        xTextField.b(false);
+        yTextField.b(true);
       }
-      this.xTextField.a(par1, par2);
+      xTextField.a(par1, par2);
     }
-    else if (this.yTextField.m())
+    else if (yTextField.m())
     {
       if (par2 == 15)
       {
-        this.yTextField.b(false);
-        this.zTextField.b(true);
+        yTextField.b(false);
+        zTextField.b(true);
       }
-      this.yTextField.a(par1, par2);
+      yTextField.a(par1, par2);
     }
-    else if (this.zTextField.m())
+    else if (zTextField.m())
     {
       if (par2 == 15)
       {
-        this.zTextField.b(false);
-        this.yawTextField.b(true);
+        zTextField.b(false);
+        yawTextField.b(true);
       }
-      this.zTextField.a(par1, par2);
+      zTextField.a(par1, par2);
     }
-    else if (this.yawTextField.m())
+    else if (yawTextField.m())
     {
       if (par2 == 15)
       {
-        this.yawTextField.b(false);
-        this.charTextField.b(true);
+        yawTextField.b(false);
+        charTextField.b(true);
       }
-      this.yawTextField.a(par1, par2);
-      GuiMisc.checkField(this.yawTextField);
-      this.yaw = this.yawTextField.b();
+      yawTextField.a(par1, par2);
+      GuiMisc.checkField(yawTextField);
+      yaw = yawTextField.b();
     }
-    else if (this.charTextField.m())
+    else if (charTextField.m())
     {
       if (par2 == 15)
       {
-        this.charTextField.b(false);
-        this.nameTextField.b(true);
+        charTextField.b(false);
+        nameTextField.b(true);
       }
       if (par2 != 57) {
-        this.charTextField.a(par1, par2);
+        charTextField.a(par1, par2);
       }
-      this.initial = this.charTextField.b();
+      initial = charTextField.b();
     }
     if ((par2 == 28) || (par2 == 156)) {
-      a((avs)this.n.get(0));
+      a((avs)n.get(0));
     }
     checkFields();
     updateConfirmButton();
@@ -212,78 +212,78 @@ public class GuiAddWaypoint
   
   private void updateConfirmButton()
   {
-    ((avs)this.n.get(0)).l = ((this.nameTextField.b().length() > 0) && (this.initial.length() > 0) && (this.xTextField.b().length() > 0) && (this.yTextField.b().length() > 0) && (this.zTextField.b().length() > 0));
+    n.get(0)).l = ((nameTextField.b().length() > 0) && (initial.length() > 0) && (xTextField.b().length() > 0) && (yTextField.b().length() > 0) && (zTextField.b().length() > 0));
   }
   
   protected void checkFields()
   {
-    GuiMisc.checkField(this.xTextField);
-    GuiMisc.checkField(this.yTextField);
-    GuiMisc.checkField(this.zTextField);
-    this.initial = this.initial.toUpperCase();
-    if (this.initial.length() > 1) {
-      this.initial = this.initial.substring(0, 1);
+    GuiMisc.checkField(xTextField);
+    GuiMisc.checkField(yTextField);
+    GuiMisc.checkField(zTextField);
+    initial = initial.toUpperCase();
+    if (initial.length() > 1) {
+      initial = initial.substring(0, 1);
     }
   }
   
   protected void a(int par1, int par2, int par3)
     throws IOException
   {
-    for (GuiDropDown d : this.dropDowns)
+    for (GuiDropDown d : dropDowns)
     {
-      if ((!d.closed) && (d.onDropDown(par1, par2)))
+      if ((!closed) && (d.onDropDown(par1, par2)))
       {
         d.mouseClicked(par1, par2, par3);
         return;
       }
-      d.closed = true;
+      closed = true;
     }
-    for (GuiDropDown d : this.dropDowns)
+    for (GuiDropDown d : dropDowns)
     {
       if (d.onDropDown(par1, par2))
       {
         d.mouseClicked(par1, par2, par3);
         return;
       }
-      d.closed = true;
+      closed = true;
     }
     super.a(par1, par2, par3);
-    this.nameTextField.a(par1, par2, par3);
-    this.xTextField.a(par1, par2, par3);
-    this.yTextField.a(par1, par2, par3);
-    this.zTextField.a(par1, par2, par3);
-    this.yawTextField.a(par1, par2, par3);
-    this.charTextField.a(par1, par2, par3);
+    nameTextField.a(par1, par2, par3);
+    xTextField.a(par1, par2, par3);
+    yTextField.a(par1, par2, par3);
+    zTextField.a(par1, par2, par3);
+    yawTextField.a(par1, par2, par3);
+    charTextField.a(par1, par2, par3);
   }
   
   public void e()
   {
-    if (this.j.h == null)
+    if (j.h == null)
     {
-      this.j.a((axu)null);
+      j.a((axu)null);
       return;
     }
-    this.nameTextField.a();
-    this.xTextField.a();
-    this.yTextField.a();
-    this.zTextField.a();
-    this.yawTextField.a();
-    this.charTextField.a();
-    if ((this.yawTextField.m()) || (this.yaw.length() > 0)) {
-      this.yawTextField.a(this.yaw);
+    nameTextField.a();
+    xTextField.a();
+    yTextField.a();
+    zTextField.a();
+    yawTextField.a();
+    charTextField.a();
+    if ((yawTextField.m()) || (yaw.length() > 0)) {
+      yawTextField.a(yaw);
     } else {
-      this.yawTextField.a("§8" + bnq.a("gui.xaero_yaw", new Object[0]));
+      yawTextField.a("§8" + bnq.a("gui.xaero_yaw", new Object[0]));
     }
-    if ((this.charTextField.m()) || (this.initial.length() > 0)) {
-      this.charTextField.a(this.initial);
+    if ((charTextField.m()) || (initial.length() > 0)) {
+      charTextField.a(initial);
     } else {
-      this.charTextField.a("§8" + bnq.a("gui.xaero_initial", new Object[0]));
+      charTextField.a("§8" + bnq.a("gui.xaero_initial", new Object[0]));
     }
-    this.color = ((GuiDropDown)this.dropDowns.get(0)).selected;
-    if (this.sets.currentSet != ((GuiDropDown)this.dropDowns.get(1)).selected)
+    color = dropDowns.get(0)).selected;
+    if (sets.currentSet != dropDowns.get(1)).selected)
     {
-      this.sets.currentSet = ((GuiDropDown)this.dropDowns.get(1)).selected;
-      Minimap.getCurrentWorld().current = ((GuiDropDown)this.dropDowns.get(1)).getSelectedOption();
+      sets.currentSet = dropDowns.get(1)).selected;
+      getCurrentWorldcurrent = ((GuiDropDown)dropDowns.get(1)).getSelectedOption();
       Minimap.updateWaypoints();
       try
       {
@@ -298,36 +298,36 @@ public class GuiAddWaypoint
   
   protected void a(avs par1GuiButton)
   {
-    if (par1GuiButton.l)
+    if (l)
     {
-      int var2 = this.j.t.aK;
-      if ((par1GuiButton.k < 100) && ((par1GuiButton instanceof MySmallButton)))
+      int var2 = j.t.aK;
+      if ((k < 100) && ((par1GuiButton instanceof MySmallButton)))
       {
         try
         {
-          this.guiModSettings.setOptionValue(((MySmallButton)par1GuiButton).returnModOptions(), 1);
+          guiModSettings.setOptionValue(((MySmallButton)par1GuiButton).returnModOptions(), 1);
         }
         catch (IOException e)
         {
           e.printStackTrace();
         }
-        par1GuiButton.j = this.guiModSettings.getKeyBinding(ModOptions.getModOptions(par1GuiButton.k));
+        j = guiModSettings.getKeyBinding(ModOptions.getModOptions(k));
       }
-      if (par1GuiButton.k == 200)
+      if (k == 200)
       {
-        int x = Integer.parseInt(this.xTextField.b());
-        int y = Integer.parseInt(this.yTextField.b());
-        int z = Integer.parseInt(this.zTextField.b());
-        String name = this.nameTextField.b();
-        Waypoint created = new Waypoint(x, y, z, name, this.initial, this.color);
-        if (this.yaw.length() > 0)
+        int x = Integer.parseInt(xTextField.b());
+        int y = Integer.parseInt(yTextField.b());
+        int z = Integer.parseInt(zTextField.b());
+        String name = nameTextField.b();
+        Waypoint created = new Waypoint(x, y, z, name, initial, color);
+        if (yaw.length() > 0)
         {
-          created.rotation = true;
-          created.yaw = Integer.parseInt(this.yawTextField.b());
+          rotation = true;
+          yaw = Integer.parseInt(yawTextField.b());
         }
-        Minimap.waypoints.list.add(created);
-        if (this.point != null) {
-          ((WaypointSet)Minimap.getCurrentWorld().sets.get(this.fromSet)).list.remove(this.point);
+        waypointslist.add(created);
+        if (point != null) {
+          getCurrentWorldsets.get(fromSet)).list.remove(point);
         }
         try
         {
@@ -337,51 +337,51 @@ public class GuiAddWaypoint
         {
           e2.printStackTrace();
         }
-        this.j.a(this.parentGuiScreen);
+        j.a(parentGuiScreen);
       }
-      if (par1GuiButton.k == 201) {
-        this.j.a(this.parentGuiScreen);
+      if (k == 201) {
+        j.a(parentGuiScreen);
       }
-      if (par1GuiButton.k == 202) {
-        this.color = ((this.color + 1) % (ModSettings.ENCHANT_COLORS.length - 1));
+      if (k == 202) {
+        color = ((color + 1) % (ModSettings.ENCHANT_COLORS.length - 1));
       }
-      if (this.j.t.aK != var2)
+      if (j.t.aK != var2)
       {
-        avr res = new avr(this.j);
+        avr res = new avr(j);
         int var3 = res.a();
         int var4 = res.b();
-        a(this.j, var3, var4);
+        a(j, var3, var4);
       }
     }
   }
   
   public List getButtons()
   {
-    return this.n;
+    return n;
   }
   
   public void a(int par1, int par2, float par3)
   {
     c();
-    a(this.q, this.screenTitle, this.l / 2, 20, 16777215);
-    this.nameTextField.g();
-    this.xTextField.g();
-    this.yTextField.g();
-    this.zTextField.g();
-    this.yawTextField.g();
-    this.charTextField.g();
-    if (this.dropped) {
+    a(q, screenTitle, l / 2, 20, 16777215);
+    nameTextField.g();
+    xTextField.g();
+    yTextField.g();
+    zTextField.g();
+    yawTextField.g();
+    charTextField.g();
+    if (dropped) {
       super.a(0, 0, par3);
     } else {
       super.a(par1, par2, par3);
     }
-    this.dropped = false;
-    for (int k = 0; k < this.dropDowns.size(); k++)
+    dropped = false;
+    for (int k = 0; k < dropDowns.size(); k++)
     {
-      if (!((GuiDropDown)this.dropDowns.get(k)).closed) {
-        this.dropped = true;
+      if (!dropDowns.get(k)).closed) {
+        dropped = true;
       }
-      ((GuiDropDown)this.dropDowns.get(k)).drawButton(par1, par2);
+      ((GuiDropDown)dropDowns.get(k)).drawButton(par1, par2);
     }
   }
 }

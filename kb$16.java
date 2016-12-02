@@ -25,7 +25,7 @@ final class kb$16
       if ((arm.a.equals(☃)) && (arm.h.equals(☃.p(☃.b()).c().t()))) {
         ☃ = 0.0D;
       } else {
-        return this.b.a(☃, ☃);
+        return b.a(☃, ☃);
       }
     }
     double ☃;

@@ -9,19 +9,19 @@ class or$1
   
   public void run()
   {
-    if (!or.a(this.a).ad()) {
+    if (!or.a(a).ad()) {
       return;
     }
     Map<String, Object> ☃;
-    synchronized (or.b(this.a))
+    synchronized (or.b(a))
     {
-      ☃ = Maps.newHashMap(or.c(this.a));
-      if (or.d(this.a) == 0) {
-        ☃.putAll(or.e(this.a));
+      ☃ = Maps.newHashMap(or.c(a));
+      if (or.d(a) == 0) {
+        ☃.putAll(or.e(a));
       }
-      ☃.put("snooper_count", Integer.valueOf(or.f(this.a)));
-      ☃.put("snooper_token", or.g(this.a));
+      ☃.put("snooper_count", Integer.valueOf(or.f(a)));
+      ☃.put("snooper_token", or.g(a));
     }
-    nj.a(or.h(this.a), ☃, true);
+    nj.a(or.h(a), ☃, true);
   }
 }

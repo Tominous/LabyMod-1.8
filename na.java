@@ -201,7 +201,7 @@ public class na
   
   public static mw a(pm.a ☃)
   {
-    String ☃ = pm.b(☃.a);
+    String ☃ = pm.b(a);
     if (☃ == null) {
       return null;
     }
@@ -210,7 +210,7 @@ public class na
   
   public static mw b(pm.a ☃)
   {
-    String ☃ = pm.b(☃.a);
+    String ☃ = pm.b(a);
     if (☃ == null) {
       return null;
     }

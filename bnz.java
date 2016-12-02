@@ -10,22 +10,22 @@ public class bnz
   
   public bnz(int ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public boolean a()
   {
-    return this.b == -1;
+    return b == -1;
   }
   
   public int b()
   {
-    return this.b;
+    return b;
   }
   
   public int c()
   {
-    return this.a;
+    return a;
   }
 }

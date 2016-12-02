@@ -86,7 +86,7 @@ public class o
     if (h(☃)) {
       ☃.add(☃.e());
     } else {
-      Collections.addAll(☃, MinecraftServer.N().d);
+      Collections.addAll(☃, Nd);
     }
     return ☃;
   }
@@ -122,7 +122,7 @@ public class o
       {
         public boolean a(pk ☃)
         {
-          return pm.a(☃, this.a) != ☃;
+          return pm.a(☃, a) != ☃;
         }
       });
     } else if (☃) {
@@ -151,7 +151,7 @@ public class o
             return false;
           }
           lf ☃ = (lf)☃;
-          return ((this.a <= -1) || (☃.bB >= this.a)) && ((☃ <= -1) || (☃.bB <= ☃));
+          return ((a <= -1) || (bB >= a)) && ((☃ <= -1) || (bB <= ☃));
         }
       });
     }
@@ -171,7 +171,7 @@ public class o
             return false;
           }
           lf ☃ = (lf)☃;
-          return ☃.c.b().a() == this.a;
+          return c.b().a() == a;
         }
       });
     }
@@ -198,7 +198,7 @@ public class o
           pr ☃ = (pr)☃;
           auq ☃ = ☃.bO();
           String ☃ = ☃ == null ? "" : ☃.b();
-          return ☃.equals(this.a) != ☃;
+          return ☃.equals(a) != ☃;
         }
       });
     }
@@ -215,7 +215,7 @@ public class o
         public boolean a(pk ☃)
         {
           auo ☃ = MinecraftServer.N().a(0).Z();
-          for (Map.Entry<String, Integer> ☃ : this.a.entrySet())
+          for (Map.Entry<String, Integer> ☃ : a.entrySet())
           {
             String ☃ = (String)☃.getKey();
             boolean ☃ = false;
@@ -262,7 +262,7 @@ public class o
       {
         public boolean a(pk ☃)
         {
-          return ☃.e_().equals(this.a) != ☃;
+          return ☃.e_().equals(a) != ☃;
         }
       });
     }
@@ -283,7 +283,7 @@ public class o
       {
         public boolean a(pk ☃)
         {
-          int ☃ = (int)☃.c(this.a);
+          int ☃ = (int)☃.c(a);
           return ((☃ < 0) || (☃ >= ☃)) && ((☃ < 0) || (☃ <= ☃));
         }
       });
@@ -303,11 +303,11 @@ public class o
       {
         public boolean a(pk ☃)
         {
-          int ☃ = o.a((int)Math.floor(☃.y));
-          if (this.a > ☃) {
-            return (☃ >= this.a) || (☃ <= ☃);
+          int ☃ = o.a((int)Math.floor(y));
+          if (a > ☃) {
+            return (☃ >= a) || (☃ <= ☃);
           }
-          return (☃ >= this.a) && (☃ <= ☃);
+          return (☃ >= a) && (☃ <= ☃);
         }
       });
     }
@@ -320,11 +320,11 @@ public class o
       {
         public boolean a(pk ☃)
         {
-          int ☃ = o.a((int)Math.floor(☃.z));
-          if (this.a > ☃) {
-            return (☃ >= this.a) || (☃ <= ☃);
+          int ☃ = o.a((int)Math.floor(z));
+          if (a > ☃) {
+            return (☃ >= a) || (☃ <= ☃);
           }
-          return (☃ >= this.a) && (☃ <= ☃);
+          return (☃ >= a) && (☃ <= ☃);
         }
       });
     }
@@ -350,8 +350,8 @@ public class o
     Predicate<pk> ☃ = Predicates.and(po.a, ☃);
     if (☃ != null)
     {
-      int ☃ = ☃.j.size();
-      int ☃ = ☃.f.size();
+      int ☃ = j.size();
+      int ☃ = f.size();
       boolean ☃ = ☃ < ☃ / 16;
       if ((☃.containsKey("dx")) || (☃.containsKey("dy")) || (☃.containsKey("dz")))
       {
@@ -362,10 +362,10 @@ public class o
           {
             public boolean a(pk ☃)
             {
-              if ((☃.s < this.a.a) || (☃.t < this.a.b) || (☃.u < this.a.c)) {
+              if ((s < a.a) || (t < a.b) || (u < a.c)) {
                 return false;
               }
-              if ((☃.s >= this.a.d) || (☃.t >= this.a.e) || (☃.u >= this.a.f)) {
+              if ((s >= a.d) || (t >= a.e) || (u >= a.f)) {
                 return false;
               }
               return true;
@@ -425,7 +425,7 @@ public class o
         {
           public int a(pk ☃, pk ☃)
           {
-            return ComparisonChain.start().compare(☃.b(this.a), ☃.b(this.a)).result();
+            return ComparisonChain.start().compare(☃.b(a), ☃.b(a)).result();
           }
         });
       }

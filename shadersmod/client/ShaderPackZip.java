@@ -13,38 +13,38 @@ public class ShaderPackZip
   
   public ShaderPackZip(String name, File file)
   {
-    this.packFile = file;
-    this.packZipFile = null;
+    packFile = file;
+    packZipFile = null;
   }
   
   public void close()
   {
-    if (this.packZipFile != null)
+    if (packZipFile != null)
     {
       try
       {
-        this.packZipFile.close();
+        packZipFile.close();
       }
       catch (Exception excp) {}
-      this.packZipFile = null;
+      packZipFile = null;
     }
   }
   
   public InputStream getResourceAsStream(String resName)
   {
-    if (this.packZipFile == null) {
+    if (packZipFile == null) {
       try
       {
-        this.packZipFile = new ZipFile(this.packFile);
+        packZipFile = new ZipFile(packFile);
       }
       catch (Exception excp) {}
     }
-    if (this.packZipFile != null) {
+    if (packZipFile != null) {
       try
       {
-        ZipEntry entry = this.packZipFile.getEntry(resName.substring(1));
+        ZipEntry entry = packZipFile.getEntry(resName.substring(1));
         if (entry != null) {
-          return this.packZipFile.getInputStream(entry);
+          return packZipFile.getInputStream(entry);
         }
       }
       catch (Exception excp) {}
@@ -54,6 +54,6 @@ public class ShaderPackZip
   
   public String getName()
   {
-    return this.packFile.getName();
+    return packFile.getName();
   }
 }

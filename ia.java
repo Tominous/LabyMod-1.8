@@ -14,16 +14,16 @@ public class ia
   
   public ia(int ☃, Collection<qc> ☃)
   {
-    this.a = ☃;
+    a = ☃;
     for (qc ☃ : ☃) {
-      this.b.add(new ia.a(☃.a().a(), ☃.b(), ☃.c()));
+      b.add(new ia.a(☃.a().a(), ☃.b(), ☃.c()));
     }
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.e();
+    a = ☃.e();
     
     int ☃ = ☃.readInt();
     for (int ☃ = 0; ☃ < ☃; ☃++)
@@ -37,16 +37,16 @@ public class ia
         UUID ☃ = ☃.g();
         ☃.add(new qd(☃, "Unknown synced attribute modifier", ☃.readDouble(), ☃.readByte()));
       }
-      this.b.add(new ia.a(☃, ☃, ☃));
+      b.add(new ia.a(☃, ☃, ☃));
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(this.a);
-    ☃.writeInt(this.b.size());
-    for (ia.a ☃ : this.b)
+    ☃.b(a);
+    ☃.writeInt(b.size());
+    for (ia.a ☃ : b)
     {
       ☃.a(☃.a());
       ☃.writeDouble(☃.b());
@@ -67,12 +67,12 @@ public class ia
   
   public int a()
   {
-    return this.a;
+    return a;
   }
   
   public List<ia.a> b()
   {
-    return this.b;
+    return b;
   }
   
   public class a
@@ -83,24 +83,24 @@ public class ia
     
     public a(double ☃, Collection<qd> arg4)
     {
-      this.b = ☃;
-      this.c = ☃;
-      this.d = ☃;
+      b = ☃;
+      c = ☃;
+      d = ☃;
     }
     
     public String a()
     {
-      return this.b;
+      return b;
     }
     
     public double b()
     {
-      return this.c;
+      return c;
     }
     
     public Collection<qd> c()
     {
-      return this.d;
+      return d;
     }
   }
 }

@@ -15,7 +15,7 @@ public class ajq
   
   public void a(adm ☃, cj ☃, alz ☃, pk ☃)
   {
-    ☃.v *= 0.4D;
-    ☃.x *= 0.4D;
+    v *= 0.4D;
+    x *= 0.4D;
   }
 }

@@ -11,12 +11,12 @@ public class eg
   
   public eg(Cipher ☃)
   {
-    this.a = new ef(☃);
+    a = new ef(☃);
   }
   
   protected void a(ChannelHandlerContext ☃, ByteBuf ☃, List<Object> ☃)
     throws Exception
   {
-    ☃.add(this.a.a(☃, ☃));
+    ☃.add(a.a(☃, ☃));
   }
 }

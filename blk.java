@@ -7,21 +7,21 @@ public class blk
   
   public blk(bkl p_i46104_1_)
   {
-    this.b = p_i46104_1_;
+    b = p_i46104_1_;
   }
   
   public void a(ua p_177145_1_, float p_177145_2_, float p_177145_3_, float p_177145_4_, float p_177145_5_, float p_177145_6_, float p_177145_7_, float p_177145_8_)
   {
     if ((p_177145_1_.cl()) && (!p_177145_1_.ax()))
     {
-      this.b.a(a);
+      b.a(a);
       zd var9 = zd.b(p_177145_1_.cw().a());
       float[] var10 = tv.a(var9);
       if (Config.isCustomColors()) {
         var10 = CustomColorizer.getWolfCollarColors(var9, var10);
       }
       bfl.c(var10[0], var10[1], var10[2]);
-      this.b.b().a(p_177145_1_, p_177145_2_, p_177145_3_, p_177145_5_, p_177145_6_, p_177145_7_, p_177145_8_);
+      b.b().a(p_177145_1_, p_177145_2_, p_177145_3_, p_177145_5_, p_177145_6_, p_177145_7_, p_177145_8_);
     }
   }
   

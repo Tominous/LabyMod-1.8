@@ -4,14 +4,14 @@ public class RangeListInt
   
   public void addRange(RangeInt ri)
   {
-    this.ranges = ((RangeInt[])Config.addObjectToArray(this.ranges, ri));
+    ranges = ((RangeInt[])Config.addObjectToArray(ranges, ri));
   }
   
   public boolean isInRange(int val)
   {
-    for (int i = 0; i < this.ranges.length; i++)
+    for (int i = 0; i < ranges.length; i++)
     {
-      RangeInt ri = this.ranges[i];
+      RangeInt ri = ranges[i];
       if (ri.isInRange(val)) {
         return true;
       }
@@ -21,21 +21,21 @@ public class RangeListInt
   
   public int getCountRanges()
   {
-    return this.ranges.length;
+    return ranges.length;
   }
   
   public RangeInt getRange(int i)
   {
-    return this.ranges[i];
+    return ranges[i];
   }
   
   public String toString()
   {
     StringBuffer sb = new StringBuffer();
     sb.append("[");
-    for (int i = 0; i < this.ranges.length; i++)
+    for (int i = 0; i < ranges.length; i++)
     {
-      RangeInt ri = this.ranges[i];
+      RangeInt ri = ranges[i];
       if (i > 0) {
         sb.append(", ");
       }

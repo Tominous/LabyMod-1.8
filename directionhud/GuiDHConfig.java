@@ -24,47 +24,47 @@ public class GuiDHConfig
   
   public void b()
   {
-    this.n.clear();
+    n.clear();
     
-    this.headerPos = (this.m / 4 - 52);
-    this.footerPos = (this.m - 29);
+    headerPos = (m / 4 - 52);
+    footerPos = (m - 29);
     
-    this.btnEnable = new avs(1, this.l / 2 - 98, getRowPos(1), 60, 20, String.valueOf(DirectionHUD.optionEnable));
-    this.btnShowWhileChat = new avs(2, this.l / 2 + 102, getRowPos(1), 60, 20, String.valueOf(DirectionHUD.showWhileChat));
-    this.btnMarkerColor = new avs(3, this.l / 2 + 2, getRowPos(2), 60, 20, DirectionHUD.optionMarkerColor);
-    this.btnPositionMode = new avs(133, this.l / 2 + 2, getRowPos(3), 60, 20, DirectionHUD.optionPositionMode);
+    btnEnable = new avs(1, l / 2 - 98, getRowPos(1), 60, 20, String.valueOf(DirectionHUD.optionEnable));
+    btnShowWhileChat = new avs(2, l / 2 + 102, getRowPos(1), 60, 20, String.valueOf(DirectionHUD.showWhileChat));
+    btnMarkerColor = new avs(3, l / 2 + 2, getRowPos(2), 60, 20, DirectionHUD.optionMarkerColor);
+    btnPositionMode = new avs(133, l / 2 + 2, getRowPos(3), 60, 20, DirectionHUD.optionPositionMode);
     
-    this.sliderCustomX = new GuiSlideControl(50, this.l / 2 + 2, getRowPos(4), 150, 20, "X Pos: ", 1.0F, this.l - 25, DirectionHUD.optionCustomX, true);
-    this.sliderCustomY = new GuiSlideControl(60, this.l / 2 + 2, getRowPos(5), 150, 20, "Y Pos: ", 1.0F, this.m - 8, DirectionHUD.optionCustomY, true);
+    sliderCustomX = new GuiSlideControl(50, l / 2 + 2, getRowPos(4), 150, 20, "X Pos: ", 1.0F, l - 25, DirectionHUD.optionCustomX, true);
+    sliderCustomY = new GuiSlideControl(60, l / 2 + 2, getRowPos(5), 150, 20, "Y Pos: ", 1.0F, m - 8, DirectionHUD.optionCustomY, true);
     
-    this.btnSaveSettings = new avs(100, this.l / 2 - 30, this.footerPos, 60, 20, "Done");
+    btnSaveSettings = new avs(100, l / 2 - 30, footerPos, 60, 20, "Done");
     
-    this.n.add(this.btnEnable);
-    this.n.add(this.btnShowWhileChat);
-    this.n.add(this.btnMarkerColor);
-    this.n.add(this.btnPositionMode);
+    n.add(btnEnable);
+    n.add(btnShowWhileChat);
+    n.add(btnMarkerColor);
+    n.add(btnPositionMode);
     if (DirectionHUD.optionPositionMode.equals("CUSTOM"))
     {
-      this.n.add(this.sliderCustomX);
-      this.n.add(this.sliderCustomY);
+      n.add(sliderCustomX);
+      n.add(sliderCustomY);
     }
-    this.n.add(this.btnSaveSettings);
+    n.add(btnSaveSettings);
   }
   
   public int getRowPos(int rowNumber)
   {
-    return rowNumber > 3 ? this.m / 4 + 0 + (24 * (rowNumber - (DirectionHUD.optionPositionMode.equals("CUSTOM") ? 0 : 2)) - 24) + this.byte0 : this.m / 4 + 0 + (24 * rowNumber - 24) + this.byte0;
+    return rowNumber > 3 ? m / 4 + 0 + (24 * (rowNumber - (DirectionHUD.optionPositionMode.equals("CUSTOM") ? 0 : 2)) - 24) + byte0 : m / 4 + 0 + (24 * rowNumber - 24) + byte0;
   }
   
   protected void a(int mouseX, int mouseY, int mouseButton)
   {
     if (mouseButton == 0) {
-      for (int l = 0; l < this.n.size(); l++)
+      for (int l = 0; l < n.size(); l++)
       {
-        avs guibutton = (avs)this.n.get(l);
-        if (guibutton.c(this.j, mouseX, mouseY))
+        avs guibutton = (avs)n.get(l);
+        if (guibutton.c(j, mouseX, mouseY))
         {
-          this.lastPressed = guibutton;
+          lastPressed = guibutton;
           a(guibutton);
         }
       }
@@ -73,13 +73,13 @@ public class GuiDHConfig
   
   protected void b(int mouseX, int mouseY, int which)
   {
-    if ((this.lastPressed != null) && (which == 0))
+    if ((lastPressed != null) && (which == 0))
     {
-      this.lastPressed.a(mouseX, mouseY);
+      lastPressed.a(mouseX, mouseY);
       
-      actionPerformed_MouseUp(this.lastPressed);
+      actionPerformed_MouseUp(lastPressed);
       
-      this.lastPressed = null;
+      lastPressed = null;
     }
   }
   
@@ -92,34 +92,34 @@ public class GuiDHConfig
   
   protected void a(avs button)
   {
-    switch (button.k)
+    switch (k)
     {
     case 1: 
       DirectionHUD.optionEnable = !DirectionHUD.optionEnable;
-      this.btnEnable.j = String.valueOf(DirectionHUD.optionEnable);
+      btnEnable.j = String.valueOf(DirectionHUD.optionEnable);
       break;
     case 2: 
       DirectionHUD.showWhileChat = !DirectionHUD.showWhileChat;
-      this.btnShowWhileChat.j = String.valueOf(DirectionHUD.showWhileChat);
+      btnShowWhileChat.j = String.valueOf(DirectionHUD.showWhileChat);
       break;
     case 3: 
       DirectionHUD.optionMarkerColor = DirectionHUD.getNextColor(DirectionHUD.optionMarkerColor);
-      this.btnMarkerColor.j = DirectionHUD.optionMarkerColor;
+      btnMarkerColor.j = DirectionHUD.optionMarkerColor;
       break;
     case 133: 
       String nextMode = PositionMode.getNext(DirectionHUD.optionPositionMode).name();
       DirectionHUD.optionPositionMode = nextMode;
-      this.btnPositionMode.j = nextMode;
+      btnPositionMode.j = nextMode;
       b();
       break;
     case 50: 
-      DirectionHUD.optionCustomX = this.sliderCustomX.GetValueAsInt();
+      DirectionHUD.optionCustomX = sliderCustomX.GetValueAsInt();
       break;
     case 60: 
-      DirectionHUD.optionCustomY = this.sliderCustomY.GetValueAsInt();
+      DirectionHUD.optionCustomY = sliderCustomY.GetValueAsInt();
       break;
     case 100: 
-      this.j.a(ModAPI.getLastScreen());
+      j.a(ModAPI.getLastScreen());
     }
     saveAll();
   }
@@ -137,16 +137,16 @@ public class GuiDHConfig
     
     c();
     
-    a(this.q, "DirectionHUD Settings", this.l / 2, this.headerPos, 16777215);
+    a(q, "DirectionHUD Settings", l / 2, headerPos, 16777215);
     
-    c(this.q, lblEnable, this.l / 2 - 100 - this.q.a(lblEnable), getRowPos(1) + 6, 16777215);
-    c(this.q, lblShowInChat, this.l / 2 + 100 - this.q.a(lblShowInChat), getRowPos(1) + 6, 16777215);
-    c(this.q, lblMarkerColor, this.l / 2 - 3 - this.q.a(lblMarkerColor), getRowPos(2) + 6, 16777215);
-    c(this.q, lblPositionMode, this.l / 2 - 3 - this.q.a(lblPositionMode), getRowPos(3) + 6, 16777215);
+    c(q, lblEnable, l / 2 - 100 - q.a(lblEnable), getRowPos(1) + 6, 16777215);
+    c(q, lblShowInChat, l / 2 + 100 - q.a(lblShowInChat), getRowPos(1) + 6, 16777215);
+    c(q, lblMarkerColor, l / 2 - 3 - q.a(lblMarkerColor), getRowPos(2) + 6, 16777215);
+    c(q, lblPositionMode, l / 2 - 3 - q.a(lblPositionMode), getRowPos(3) + 6, 16777215);
     if (DirectionHUD.optionPositionMode.equals("CUSTOM"))
     {
-      c(this.q, lblCustomX, this.l / 2 - 3 - this.q.a(lblCustomX), getRowPos(4) + 6, 16777215);
-      c(this.q, lblCustomY, this.l / 2 - 3 - this.q.a(lblCustomY), getRowPos(5) + 6, 16777215);
+      c(q, lblCustomX, l / 2 - 3 - q.a(lblCustomX), getRowPos(4) + 6, 16777215);
+      c(q, lblCustomY, l / 2 - 3 - q.a(lblCustomY), getRowPos(5) + 6, 16777215);
     }
     super.a(mouseX, mouseY, partialTicks);
   }

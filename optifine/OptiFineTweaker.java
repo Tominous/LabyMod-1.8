@@ -38,7 +38,7 @@ public class OptiFineTweaker
   public String[] getLaunchArguments()
   {
     dbg("OptiFineTweaker: getLaunchArguments");
-    return (String[])this.args.toArray(new String[this.args.size()]);
+    return (String[])args.toArray(new String[args.size()]);
   }
   
   private static void dbg(String str)

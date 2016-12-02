@@ -9,11 +9,11 @@ class bfl$b
   
   private bfl$b()
   {
-    this.a = new bfl.c(3042);
-    this.b = 1;
-    this.c = 0;
-    this.d = 1;
-    this.e = 0;
+    a = new bfl.c(3042);
+    b = 1;
+    c = 0;
+    d = 1;
+    e = 0;
   }
   
   bfl$b(bfl.1 p_i46268_1_)

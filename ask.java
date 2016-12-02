@@ -7,32 +7,32 @@ public class ask
   public ask(long ☃, ase ☃, ase ☃)
   {
     super(☃);
-    this.c = ☃;
-    this.d = ☃;
+    c = ☃;
+    d = ☃;
   }
   
   public void a(long ☃)
   {
-    this.c.a(☃);
-    this.d.a(☃);
+    c.a(☃);
+    d.a(☃);
     super.a(☃);
   }
   
   public int[] a(int ☃, int ☃, int ☃, int ☃)
   {
-    int[] ☃ = this.c.a(☃, ☃, ☃, ☃);
-    int[] ☃ = this.d.a(☃, ☃, ☃, ☃);
+    int[] ☃ = c.a(☃, ☃, ☃, ☃);
+    int[] ☃ = d.a(☃, ☃, ☃, ☃);
     
     int[] ☃ = asc.a(☃ * ☃);
     for (int ☃ = 0; ☃ < ☃ * ☃; ☃++) {
-      if ((☃[☃] == ady.p.az) || (☃[☃] == ady.N.az)) {
+      if ((☃[☃] == paz) || (☃[☃] == Naz)) {
         ☃[☃] = ☃[☃];
-      } else if (☃[☃] == ady.w.az)
+      } else if (☃[☃] == waz)
       {
-        if (☃[☃] == ady.B.az) {
-          ☃[☃] = ady.A.az;
-        } else if ((☃[☃] == ady.D.az) || (☃[☃] == ady.E.az)) {
-          ☃[☃] = ady.E.az;
+        if (☃[☃] == Baz) {
+          ☃[☃] = Aaz;
+        } else if ((☃[☃] == Daz) || (☃[☃] == Eaz)) {
+          ☃[☃] = Eaz;
         } else {
           ☃[☃] &= 0xFF;
         }

@@ -35,16 +35,16 @@ public class xb
   
   protected void a(auh ☃)
   {
-    if (!this.o.D)
+    if (!o.D)
     {
-      this.o.b(2002, new cj(this), 0);
+      o.b(2002, new cj(this), 0);
       
-      int ☃ = 3 + this.o.s.nextInt(5) + this.o.s.nextInt(5);
+      int ☃ = 3 + o.s.nextInt(5) + o.s.nextInt(5);
       while (☃ > 0)
       {
         int ☃ = pp.a(☃);
         ☃ -= ☃;
-        this.o.d(new pp(this.o, this.s, this.t, this.u, ☃));
+        o.d(new pp(o, s, t, u, ☃));
       }
       J();
     }

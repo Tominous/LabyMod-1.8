@@ -8,7 +8,7 @@ class bfl$c
   
   public bfl$c(int p_i46267_1_)
   {
-    this.a = p_i46267_1_;
+    a = p_i46267_1_;
   }
   
   public void a()
@@ -23,13 +23,13 @@ class bfl$c
   
   public void a(boolean p_179199_1_)
   {
-    if (p_179199_1_ != this.b)
+    if (p_179199_1_ != b)
     {
-      this.b = p_179199_1_;
+      b = p_179199_1_;
       if (p_179199_1_) {
-        GL11.glEnable(this.a);
+        GL11.glEnable(a);
       } else {
-        GL11.glDisable(this.a);
+        GL11.glDisable(a);
       }
     }
   }

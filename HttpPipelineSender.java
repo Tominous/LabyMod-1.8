@@ -30,33 +30,33 @@ public class HttpPipelineSender
       connect();
       while (!Thread.interrupted())
       {
-        hpr = this.httpPipelineConnection.getNextRequestSend();
+        hpr = httpPipelineConnection.getNextRequestSend();
         
         HttpRequest req = hpr.getHttpRequest();
         
-        OutputStream out = this.httpPipelineConnection.getOutputStream();
+        OutputStream out = httpPipelineConnection.getOutputStream();
         writeRequest(req, out);
         
-        this.httpPipelineConnection.onRequestSent(hpr);
+        httpPipelineConnection.onRequestSent(hpr);
       }
     }
     catch (InterruptedException e) {}catch (Exception e)
     {
-      this.httpPipelineConnection.onExceptionSend(hpr, e);
+      httpPipelineConnection.onExceptionSend(hpr, e);
     }
   }
   
   private void connect()
     throws IOException
   {
-    String host = this.httpPipelineConnection.getHost();
-    int port = this.httpPipelineConnection.getPort();
+    String host = httpPipelineConnection.getHost();
+    int port = httpPipelineConnection.getPort();
     
-    Proxy proxy = this.httpPipelineConnection.getProxy();
+    Proxy proxy = httpPipelineConnection.getProxy();
     Socket socket = new Socket(proxy);
     socket.connect(new InetSocketAddress(host, port), 5000);
     
-    this.httpPipelineConnection.setSocket(socket);
+    httpPipelineConnection.setSocket(socket);
   }
   
   private void writeRequest(HttpRequest req, OutputStream out)

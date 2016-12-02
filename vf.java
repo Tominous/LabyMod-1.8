@@ -40,7 +40,7 @@ public class vf
   
   public boolean e(wn ☃)
   {
-    if (!this.o.D) {
+    if (!o.D) {
       ☃.a(this);
     }
     return true;
@@ -56,42 +56,42 @@ public class vf
   
   public boolean y()
   {
-    return this.a;
+    return a;
   }
   
   public void i(boolean ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public adm z()
   {
-    return this.o;
+    return o;
   }
   
   public double A()
   {
-    return this.s;
+    return s;
   }
   
   public double B()
   {
-    return this.t + 0.5D;
+    return t + 0.5D;
   }
   
   public double C()
   {
-    return this.u;
+    return u;
   }
   
   public void t_()
   {
     super.t_();
-    if ((!this.o.D) && (ai()) && (y()))
+    if ((!o.D) && (ai()) && (y()))
     {
       cj ☃ = new cj(this);
-      if (☃.equals(this.c)) {
-        this.b -= 1;
+      if (☃.equals(c)) {
+        b -= 1;
       } else {
         m(0);
       }
@@ -112,7 +112,7 @@ public class vf
     if (alj.a(this)) {
       return true;
     }
-    List<uz> ☃ = this.o.a(uz.class, aR().b(0.25D, 0.0D, 0.25D), po.a);
+    List<uz> ☃ = o.a(uz.class, aR().b(0.25D, 0.0D, 0.25D), po.a);
     if (☃.size() > 0) {
       alj.a(this, (uz)☃.get(0));
     }
@@ -122,7 +122,7 @@ public class vf
   public void a(ow ☃)
   {
     super.a(☃);
-    if (this.o.Q().b("doEntityDrops")) {
+    if (o.Q().b("doEntityDrops")) {
       a(zw.a(afi.cp), 1, 0.0F);
     }
   }
@@ -130,23 +130,23 @@ public class vf
   protected void b(dn ☃)
   {
     super.b(☃);
-    ☃.a("TransferCooldown", this.b);
+    ☃.a("TransferCooldown", b);
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
-    this.b = ☃.f("TransferCooldown");
+    b = ☃.f("TransferCooldown");
   }
   
   public void m(int ☃)
   {
-    this.b = ☃;
+    b = ☃;
   }
   
   public boolean E()
   {
-    return this.b > 0;
+    return b > 0;
   }
   
   public String k()

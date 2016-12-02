@@ -15,82 +15,82 @@ public class akx
   
   public String e_()
   {
-    return l_() ? this.k : "container.brewing";
+    return l_() ? k : "container.brewing";
   }
   
   public boolean l_()
   {
-    return (this.k != null) && (this.k.length() > 0);
+    return (k != null) && (k.length() > 0);
   }
   
   public void a(String ☃)
   {
-    this.k = ☃;
+    k = ☃;
   }
   
   public int o_()
   {
-    return this.g.length;
+    return g.length;
   }
   
   public void c()
   {
-    if (this.h > 0)
+    if (h > 0)
     {
-      this.h -= 1;
-      if (this.h == 0)
+      h -= 1;
+      if (h == 0)
       {
         o();
         p_();
       }
       else if (!n())
       {
-        this.h = 0;
+        h = 0;
         p_();
       }
-      else if (this.j != this.g[3].b())
+      else if (j != g[3].b())
       {
-        this.h = 0;
+        h = 0;
         p_();
       }
     }
     else if (n())
     {
-      this.h = 400;
-      this.j = this.g[3].b();
+      h = 400;
+      j = g[3].b();
     }
-    if (!this.b.D)
+    if (!b.D)
     {
       boolean[] ☃ = m();
-      if (!Arrays.equals(☃, this.i))
+      if (!Arrays.equals(☃, i))
       {
-        this.i = ☃;
-        alz ☃ = this.b.p(v());
+        i = ☃;
+        alz ☃ = b.p(v());
         if (!(☃.c() instanceof afl)) {
           return;
         }
         for (int ☃ = 0; ☃ < afl.a.length; ☃++) {
           ☃ = ☃.a(afl.a[☃], Boolean.valueOf(☃[☃]));
         }
-        this.b.a(this.c, ☃, 2);
+        b.a(c, ☃, 2);
       }
     }
   }
   
   private boolean n()
   {
-    if ((this.g[3] == null) || (this.g[3].b <= 0)) {
+    if ((g[3] == null) || (g[3].b <= 0)) {
       return false;
     }
-    zx ☃ = this.g[3];
+    zx ☃ = g[3];
     if (!☃.b().l(☃)) {
       return false;
     }
     boolean ☃ = false;
     for (int ☃ = 0; ☃ < 3; ☃++) {
-      if ((this.g[☃] != null) && (this.g[☃].b() == zy.bz))
+      if ((g[☃] != null) && (g[☃].b() == zy.bz))
       {
-        int ☃ = this.g[☃].i();
+        int ☃ = g[☃].i();
         int ☃ = c(☃, ☃);
         if ((!aai.f(☃)) && (aai.f(☃)))
         {
@@ -116,11 +116,11 @@ public class akx
     if (!n()) {
       return;
     }
-    zx ☃ = this.g[3];
+    zx ☃ = g[3];
     for (int ☃ = 0; ☃ < 3; ☃++) {
-      if ((this.g[☃] != null) && (this.g[☃].b() == zy.bz))
+      if ((g[☃] != null) && (g[☃].b() == zy.bz))
       {
-        int ☃ = this.g[☃].i();
+        int ☃ = g[☃].i();
         int ☃ = c(☃, ☃);
         
         List<pf> ☃ = zy.bz.e(☃);
@@ -128,23 +128,23 @@ public class akx
         if (((☃ > 0) && (☃ == ☃)) || ((☃ != null) && ((☃.equals(☃)) || (☃ == null))))
         {
           if ((!aai.f(☃)) && (aai.f(☃))) {
-            this.g[☃].b(☃);
+            g[☃].b(☃);
           }
         }
         else if (☃ != ☃) {
-          this.g[☃].b(☃);
+          g[☃].b(☃);
         }
       }
     }
     if (☃.b().r())
     {
-      this.g[3] = new zx(☃.b().q());
+      g[3] = new zx(☃.b().q());
     }
     else
     {
-      this.g[3].b -= 1;
-      if (this.g[3].b <= 0) {
-        this.g[3] = null;
+      g[3].b -= 1;
+      if (g[3].b <= 0) {
+        g[3] = null;
       }
     }
   }
@@ -165,18 +165,18 @@ public class akx
     super.a(☃);
     
     du ☃ = ☃.c("Items", 10);
-    this.g = new zx[o_()];
+    g = new zx[o_()];
     for (int ☃ = 0; ☃ < ☃.c(); ☃++)
     {
       dn ☃ = ☃.b(☃);
       int ☃ = ☃.d("Slot");
-      if ((☃ >= 0) && (☃ < this.g.length)) {
-        this.g[☃] = zx.a(☃);
+      if ((☃ >= 0) && (☃ < g.length)) {
+        g[☃] = zx.a(☃);
       }
     }
-    this.h = ☃.e("BrewTime");
+    h = ☃.e("BrewTime");
     if (☃.b("CustomName", 8)) {
-      this.k = ☃.j("CustomName");
+      k = ☃.j("CustomName");
     }
   }
   
@@ -184,37 +184,37 @@ public class akx
   {
     super.b(☃);
     
-    ☃.a("BrewTime", (short)this.h);
+    ☃.a("BrewTime", (short)h);
     du ☃ = new du();
-    for (int ☃ = 0; ☃ < this.g.length; ☃++) {
-      if (this.g[☃] != null)
+    for (int ☃ = 0; ☃ < g.length; ☃++) {
+      if (g[☃] != null)
       {
         dn ☃ = new dn();
         ☃.a("Slot", (byte)☃);
-        this.g[☃].b(☃);
+        g[☃].b(☃);
         ☃.a(☃);
       }
     }
     ☃.a("Items", ☃);
     if (l_()) {
-      ☃.a("CustomName", this.k);
+      ☃.a("CustomName", k);
     }
   }
   
   public zx a(int ☃)
   {
-    if ((☃ >= 0) && (☃ < this.g.length)) {
-      return this.g[☃];
+    if ((☃ >= 0) && (☃ < g.length)) {
+      return g[☃];
     }
     return null;
   }
   
   public zx a(int ☃, int ☃)
   {
-    if ((☃ >= 0) && (☃ < this.g.length))
+    if ((☃ >= 0) && (☃ < g.length))
     {
-      zx ☃ = this.g[☃];
-      this.g[☃] = null;
+      zx ☃ = g[☃];
+      g[☃] = null;
       return ☃;
     }
     return null;
@@ -222,10 +222,10 @@ public class akx
   
   public zx b(int ☃)
   {
-    if ((☃ >= 0) && (☃ < this.g.length))
+    if ((☃ >= 0) && (☃ < g.length))
     {
-      zx ☃ = this.g[☃];
-      this.g[☃] = null;
+      zx ☃ = g[☃];
+      g[☃] = null;
       return ☃;
     }
     return null;
@@ -233,8 +233,8 @@ public class akx
   
   public void a(int ☃, zx ☃)
   {
-    if ((☃ >= 0) && (☃ < this.g.length)) {
-      this.g[☃] = ☃;
+    if ((☃ >= 0) && (☃ < g.length)) {
+      g[☃] = ☃;
     }
   }
   
@@ -245,10 +245,10 @@ public class akx
   
   public boolean a(wn ☃)
   {
-    if (this.b.s(this.c) != this) {
+    if (b.s(c) != this) {
       return false;
     }
-    if (☃.e(this.c.n() + 0.5D, this.c.o() + 0.5D, this.c.p() + 0.5D) > 64.0D) {
+    if (☃.e(c.n() + 0.5D, c.o() + 0.5D, c.p() + 0.5D) > 64.0D) {
       return false;
     }
     return true;
@@ -270,7 +270,7 @@ public class akx
   {
     boolean[] ☃ = new boolean[3];
     for (int ☃ = 0; ☃ < 3; ☃++) {
-      if (this.g[☃] != null) {
+      if (g[☃] != null) {
         ☃[☃] = true;
       }
     }
@@ -310,7 +310,7 @@ public class akx
     switch (☃)
     {
     case 0: 
-      return this.h;
+      return h;
     }
     return 0;
   }
@@ -320,7 +320,7 @@ public class akx
     switch (☃)
     {
     case 0: 
-      this.h = ☃;
+      h = ☃;
     }
   }
   
@@ -331,8 +331,8 @@ public class akx
   
   public void l()
   {
-    for (int ☃ = 0; ☃ < this.g.length; ☃++) {
-      this.g[☃] = null;
+    for (int ☃ = 0; ☃ < g.length; ☃++) {
+      g[☃] = null;
     }
   }
 }

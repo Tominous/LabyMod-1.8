@@ -8,8 +8,8 @@ public class aan
   {
     super(☃, ☃, false);
     
-    this.b = ☃;
-    this.c = ☃;
+    b = ☃;
+    c = ☃;
   }
   
   public boolean a(zx ☃, wn ☃, adm ☃, cj ☃, cq ☃, float ☃, float ☃, float ☃)
@@ -20,10 +20,10 @@ public class aan
     if (!☃.a(☃.a(☃), ☃, ☃)) {
       return false;
     }
-    if ((☃.p(☃).c() == this.c) && (☃.d(☃.a())))
+    if ((☃.p(☃).c() == c) && (☃.d(☃.a())))
     {
-      ☃.a(☃.a(), this.b.Q());
-      ☃.b -= 1;
+      ☃.a(☃.a(), b.Q());
+      b -= 1;
       return true;
     }
     return false;

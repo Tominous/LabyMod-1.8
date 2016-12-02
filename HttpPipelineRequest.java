@@ -12,17 +12,17 @@ public class HttpPipelineRequest
   
   public HttpRequest getHttpRequest()
   {
-    return this.httpRequest;
+    return httpRequest;
   }
   
   public HttpListener getHttpListener()
   {
-    return this.httpListener;
+    return httpListener;
   }
   
   public boolean isClosed()
   {
-    return this.closed;
+    return closed;
   }
   
   public void setClosed(boolean closed)

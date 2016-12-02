@@ -9,52 +9,52 @@ public class bby
   
   public bby()
   {
-    this.a = new bct[7];
+    a = new bct[7];
     float ☃ = -3.5F;
-    for (int ☃ = 0; ☃ < this.a.length; ☃++)
+    for (int ☃ = 0; ☃ < a.length; ☃++)
     {
-      this.a[☃] = new bct(this, e[☃][0], e[☃][1]);
-      this.a[☃].a(d[☃][0] * -0.5F, 0.0F, d[☃][2] * -0.5F, d[☃][0], d[☃][1], d[☃][2]);
-      this.a[☃].a(0.0F, 24 - d[☃][1], ☃);
-      this.c[☃] = ☃;
-      if (☃ < this.a.length - 1) {
+      a[☃] = new bct(this, e[☃][0], e[☃][1]);
+      a[☃].a(d[☃][0] * -0.5F, 0.0F, d[☃][2] * -0.5F, d[☃][0], d[☃][1], d[☃][2]);
+      a[☃].a(0.0F, 24 - d[☃][1], ☃);
+      c[☃] = ☃;
+      if (☃ < a.length - 1) {
         ☃ += (d[☃][2] + d[(☃ + 1)][2]) * 0.5F;
       }
     }
-    this.b = new bct[3];
-    this.b[0] = new bct(this, 20, 0);
-    this.b[0].a(-5.0F, 0.0F, d[2][2] * -0.5F, 10, 8, d[2][2]);
-    this.b[0].a(0.0F, 16.0F, this.c[2]);
-    this.b[1] = new bct(this, 20, 11);
-    this.b[1].a(-3.0F, 0.0F, d[4][2] * -0.5F, 6, 4, d[4][2]);
-    this.b[1].a(0.0F, 20.0F, this.c[4]);
-    this.b[2] = new bct(this, 20, 18);
-    this.b[2].a(-3.0F, 0.0F, d[4][2] * -0.5F, 6, 5, d[1][2]);
-    this.b[2].a(0.0F, 19.0F, this.c[1]);
+    b = new bct[3];
+    b[0] = new bct(this, 20, 0);
+    b[0].a(-5.0F, 0.0F, d[2][2] * -0.5F, 10, 8, d[2][2]);
+    b[0].a(0.0F, 16.0F, c[2]);
+    b[1] = new bct(this, 20, 11);
+    b[1].a(-3.0F, 0.0F, d[4][2] * -0.5F, 6, 4, d[4][2]);
+    b[1].a(0.0F, 20.0F, c[4]);
+    b[2] = new bct(this, 20, 18);
+    b[2].a(-3.0F, 0.0F, d[4][2] * -0.5F, 6, 5, d[1][2]);
+    b[2].a(0.0F, 19.0F, c[1]);
   }
   
   public void a(pk ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
     a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
-    for (int ☃ = 0; ☃ < this.a.length; ☃++) {
-      this.a[☃].a(☃);
+    for (int ☃ = 0; ☃ < a.length; ☃++) {
+      a[☃].a(☃);
     }
-    for (int ☃ = 0; ☃ < this.b.length; ☃++) {
-      this.b[☃].a(☃);
+    for (int ☃ = 0; ☃ < b.length; ☃++) {
+      b[☃].a(☃);
     }
   }
   
   public void a(float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, pk ☃)
   {
-    for (int ☃ = 0; ☃ < this.a.length; ☃++)
+    for (int ☃ = 0; ☃ < a.length; ☃++)
     {
-      this.a[☃].g = (ns.b(☃ * 0.9F + ☃ * 0.15F * 3.1415927F) * 3.1415927F * 0.05F * (1 + Math.abs(☃ - 2)));
-      this.a[☃].c = (ns.a(☃ * 0.9F + ☃ * 0.15F * 3.1415927F) * 3.1415927F * 0.2F * Math.abs(☃ - 2));
+      a[☃].g = (ns.b(☃ * 0.9F + ☃ * 0.15F * 3.1415927F) * 3.1415927F * 0.05F * (1 + Math.abs(☃ - 2)));
+      a[☃].c = (ns.a(☃ * 0.9F + ☃ * 0.15F * 3.1415927F) * 3.1415927F * 0.2F * Math.abs(☃ - 2));
     }
-    this.b[0].g = this.a[2].g;
-    this.b[1].g = this.a[4].g;
-    this.b[1].c = this.a[4].c;
-    this.b[2].g = this.a[1].g;
-    this.b[2].c = this.a[1].c;
+    b[0].g = a[2].g;
+    b[1].g = a[4].g;
+    b[1].c = a[4].c;
+    b[2].g = a[1].g;
+    b[2].c = a[1].c;
   }
 }

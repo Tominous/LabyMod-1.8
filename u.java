@@ -48,7 +48,7 @@ public class u
     if ((☃.length >= 11) && (☃[10].equals("move"))) {
       ☃ = true;
     }
-    if ((☃.b < 0) || (☃.e >= 256) || (☃.b < 0) || (☃.e >= 256)) {
+    if ((b < 0) || (e >= 256) || (b < 0) || (e >= 256)) {
       throw new bz("commands.clone.outOfWorld", new Object[0]);
     }
     adm ☃ = ☃.e();
@@ -78,10 +78,10 @@ public class u
     List<u.a> ☃ = Lists.newArrayList();
     LinkedList<cj> ☃ = Lists.newLinkedList();
     
-    cj ☃ = new cj(☃.a - ☃.a, ☃.b - ☃.b, ☃.c - ☃.c);
-    for (int ☃ = ☃.c; ☃ <= ☃.f; ☃++) {
-      for (int ☃ = ☃.b; ☃ <= ☃.e; ☃++) {
-        for (int ☃ = ☃.a; ☃ <= ☃.d; ☃++)
+    cj ☃ = new cj(a - a, b - b, c - c);
+    for (int ☃ = c; ☃ <= f; ☃++) {
+      for (int ☃ = b; ☃ <= e; ☃++) {
+        for (int ☃ = a; ☃ <= d; ☃++)
         {
           cj ☃ = new cj(☃, ☃, ☃);
           cj ☃ = ☃.a(☃);
@@ -141,41 +141,41 @@ public class u
     List<u.a> ☃ = Lists.reverse(☃);
     for (u.a ☃ : ☃)
     {
-      akw ☃ = ☃.s(☃.a);
+      akw ☃ = ☃.s(a);
       if ((☃ instanceof og)) {
         ((og)☃).l();
       }
-      ☃.a(☃.a, afi.cv.Q(), 2);
+      ☃.a(a, afi.cv.Q(), 2);
     }
     ☃ = 0;
     for (u.a ☃ : ☃) {
-      if (☃.a(☃.a, ☃.b, 2)) {
+      if (☃.a(a, b, 2)) {
         ☃++;
       }
     }
     for (u.a ☃ : ☃)
     {
-      akw ☃ = ☃.s(☃.a);
-      if ((☃.c != null) && (☃ != null))
+      akw ☃ = ☃.s(a);
+      if ((c != null) && (☃ != null))
       {
-        ☃.c.a("x", ☃.a.n());
-        ☃.c.a("y", ☃.a.o());
-        ☃.c.a("z", ☃.a.p());
-        ☃.a(☃.c);
+        c.a("x", a.n());
+        c.a("y", a.o());
+        c.a("z", a.p());
+        ☃.a(c);
         ☃.p_();
       }
-      ☃.a(☃.a, ☃.b, 2);
+      ☃.a(a, b, 2);
     }
     for (u.a ☃ : ☃) {
-      ☃.b(☃.a, ☃.b.c());
+      ☃.b(a, b.c());
     }
     List<adw> ☃ = ☃.a(☃, false);
     if (☃ != null) {
       for (adw ☃ : ☃) {
-        if (☃.b(☃.a))
+        if (☃.b(a))
         {
-          cj ☃ = ☃.a.a(☃);
-          ☃.b(☃, ☃.a(), (int)(☃.b - ☃.P().f()), ☃.c);
+          cj ☃ = a.a(☃);
+          ☃.b(☃, ☃.a(), (int)(b - ☃.P().f()), c);
         }
       }
     }
@@ -217,9 +217,9 @@ public class u
     
     public a(cj ☃, alz ☃, dn ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
-      this.c = ☃;
+      a = ☃;
+      b = ☃;
+      c = ☃;
     }
   }
 }

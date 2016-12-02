@@ -14,24 +14,24 @@ public final class adt
     if ((!☃) && (!☃)) {
       return 0;
     }
-    this.b.clear();
+    b.clear();
     int ☃ = 0;
-    for (wn ☃ : ☃.j) {
+    for (wn ☃ : j) {
       if (!☃.v())
       {
-        int ☃ = ns.c(☃.s / 16.0D);
-        int ☃ = ns.c(☃.u / 16.0D);
+        int ☃ = ns.c(s / 16.0D);
+        int ☃ = ns.c(u / 16.0D);
         int ☃ = 8;
         for (int ☃ = -☃; ☃ <= ☃; ☃++) {
           for (int ☃ = -☃; ☃ <= ☃; ☃++)
           {
             boolean ☃ = (☃ == -☃) || (☃ == ☃) || (☃ == -☃) || (☃ == ☃);
             adg ☃ = new adg(☃ + ☃, ☃ + ☃);
-            if (!this.b.contains(☃))
+            if (!b.contains(☃))
             {
               ☃++;
               if ((!☃) && (☃.af().a(☃))) {
-                this.b.add(☃);
+                b.add(☃);
               }
             }
           }
@@ -51,9 +51,9 @@ public final class adt
             int ☃ = ☃.a(☃.a());
             int ☃ = ☃.b() * ☃ / a;
             if (☃ <= ☃) {
-              for (adg ☃ : this.b)
+              for (adg ☃ : b)
               {
-                cj ☃ = a(☃, ☃.a, ☃.b);
+                cj ☃ = a(☃, a, b);
                 int ☃ = ☃.n();
                 int ☃ = ☃.o();
                 int ☃ = ☃.p();
@@ -79,9 +79,9 @@ public final class adt
                       if (☃ >= 4) {
                         break label846;
                       }
-                      ☃ += ☃.s.nextInt(☃) - ☃.s.nextInt(☃);
-                      ☃ += ☃.s.nextInt(1) - ☃.s.nextInt(1);
-                      ☃ += ☃.s.nextInt(☃) - ☃.s.nextInt(☃);
+                      ☃ += s.nextInt(☃) - s.nextInt(☃);
+                      ☃ += s.nextInt(1) - s.nextInt(1);
+                      ☃ += s.nextInt(☃) - s.nextInt(☃);
                       cj ☃ = new cj(☃, ☃, ☃);
                       
                       float ☃ = ☃ + 0.5F;
@@ -97,19 +97,19 @@ public final class adt
                             }
                           }
                           if (☃.a(☃, ☃, ☃)) {
-                            if (a(pv.a(☃.b), ☃, ☃))
+                            if (a(pv.a(b), ☃, ☃))
                             {
                               ps ☃;
                               try
                               {
-                                ☃ = (ps)☃.b.getConstructor(new Class[] { adm.class }).newInstance(new Object[] { ☃ });
+                                ☃ = (ps)b.getConstructor(new Class[] { adm.class }).newInstance(new Object[] { ☃ });
                               }
                               catch (Exception ☃)
                               {
                                 ☃.printStackTrace();
                                 return ☃;
                               }
-                              ☃.b(☃, ☃, ☃, ☃.s.nextFloat() * 360.0F, 0.0F);
+                              ☃.b(☃, ☃, ☃, s.nextFloat() * 360.0F, 0.0F);
                               if ((☃.bR()) && (☃.bS()))
                               {
                                 ☃ = ☃.a(☃.E(new cj(☃)), ☃);
@@ -142,10 +142,10 @@ public final class adt
   protected static cj a(adm ☃, int ☃, int ☃)
   {
     amy ☃ = ☃.a(☃, ☃);
-    int ☃ = ☃ * 16 + ☃.s.nextInt(16);
-    int ☃ = ☃ * 16 + ☃.s.nextInt(16);
+    int ☃ = ☃ * 16 + s.nextInt(16);
+    int ☃ = ☃ * 16 + s.nextInt(16);
     int ☃ = ns.c(☃.f(new cj(☃, 0, ☃)) + 1, 16);
-    int ☃ = ☃.s.nextInt(☃ > 0 ? ☃ : ☃.g() + 16 - 1);
+    int ☃ = s.nextInt(☃ > 0 ? ☃ : ☃.g() + 16 - 1);
     
     return new cj(☃, ☃, ☃);
   }
@@ -177,8 +177,8 @@ public final class adt
     }
     while (☃.nextFloat() < ☃.g())
     {
-      ady.c ☃ = (ady.c)oa.a(☃.s, ☃);
-      int ☃ = ☃.c + ☃.nextInt(1 + ☃.d - ☃.c);
+      ady.c ☃ = (ady.c)oa.a(s, ☃);
+      int ☃ = c + ☃.nextInt(1 + d - c);
       pu ☃ = null;
       
       int ☃ = ☃ + ☃.nextInt(☃);
@@ -196,7 +196,7 @@ public final class adt
             ps ☃;
             try
             {
-              ☃ = (ps)☃.b.getConstructor(new Class[] { adm.class }).newInstance(new Object[] { ☃ });
+              ☃ = (ps)b.getConstructor(new Class[] { adm.class }).newInstance(new Object[] { ☃ });
             }
             catch (Exception ☃)
             {

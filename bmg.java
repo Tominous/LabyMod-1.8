@@ -6,6 +6,6 @@ public class bmg
   public bmg(bmf.a ☃, String ☃)
   {
     super(☃);
-    this.a = ☃;
+    a = ☃;
   }
 }

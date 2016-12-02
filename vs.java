@@ -4,7 +4,7 @@ public class vs
   public vs(adm ☃)
   {
     super(☃);
-    a(this.J * 6.0F, this.K * 6.0F);
+    a(J * 6.0F, K * 6.0F);
   }
   
   public float aS()
@@ -23,6 +23,6 @@ public class vs
   
   public float a(cj ☃)
   {
-    return this.o.o(☃) - 0.5F;
+    return o.o(☃) - 0.5F;
   }
 }

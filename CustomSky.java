@@ -52,7 +52,7 @@ public class CustomSky
           CustomSkyLayer sl = new CustomSkyLayer(props, defSource);
           if (sl.isValid(path))
           {
-            jy locSource = new jy(sl.source);
+            jy locSource = new jy(source);
             bmk tex = TextureUtils.getTexture(locSource);
             if (tex == null)
             {
@@ -60,7 +60,7 @@ public class CustomSky
             }
             else
             {
-              sl.textureId = tex.b();
+              textureId = tex.b();
               
               listSkyLayers.add(sl);
               
@@ -102,10 +102,10 @@ public class CustomSky
     if (worldSkyLayers == null) {
       return;
     }
-    if (Config.getGameSettings().c < 8) {
+    if (getGameSettingsc < 8) {
       return;
     }
-    int dimId = world.t.q();
+    int dimId = t.q();
     if ((dimId < 0) || (dimId >= worldSkyLayers.length)) {
       return;
     }
@@ -130,10 +130,10 @@ public class CustomSky
     if (worldSkyLayers == null) {
       return false;
     }
-    if (Config.getGameSettings().c < 8) {
+    if (getGameSettingsc < 8) {
       return false;
     }
-    int dimId = world.t.q();
+    int dimId = t.q();
     if ((dimId < 0) || (dimId >= worldSkyLayers.length)) {
       return false;
     }

@@ -15,61 +15,61 @@ public class axl
   
   public axl(axu ☃, avh ☃, bns ☃)
   {
-    this.a = ☃;
-    this.g = ☃;
-    this.h = ☃;
+    a = ☃;
+    g = ☃;
+    h = ☃;
   }
   
   public void b()
   {
-    this.n.add(this.i = new awe(100, this.l / 2 - 155, this.m - 38, avh.a.E, this.g.c(avh.a.E)));
-    this.n.add(this.r = new awe(6, this.l / 2 - 155 + 160, this.m - 38, bnq.a("gui.done", new Object[0])));
+    n.add(i = new awe(100, l / 2 - 155, m - 38, avh.a.E, g.c(avh.a.E)));
+    n.add(r = new awe(6, l / 2 - 155 + 160, m - 38, bnq.a("gui.done", new Object[0])));
     
-    this.f = new axl.a(this.j);
-    this.f.d(7, 8);
+    f = new axl.a(j);
+    f.d(7, 8);
   }
   
   public void k()
   {
     super.k();
-    this.f.p();
+    f.p();
   }
   
   protected void a(avs ☃)
   {
-    if (!☃.l) {
+    if (!l) {
       return;
     }
-    switch (☃.k)
+    switch (k)
     {
     case 100: 
       if ((☃ instanceof awe))
       {
-        this.g.a(((awe)☃).c(), 1);
-        ☃.j = this.g.c(avh.a.E);
+        g.a(((awe)☃).c(), 1);
+        j = g.c(avh.a.E);
         
-        avr ☃ = new avr(this.j);
+        avr ☃ = new avr(j);
         int ☃ = ☃.a();
         int ☃ = ☃.b();
-        a(this.j, ☃, ☃);
+        a(j, ☃, ☃);
       }
       break;
     case 5: 
       break;
     case 6: 
-      this.j.a(this.a);
+      j.a(a);
       break;
     default: 
-      this.f.a(☃);
+      f.a(☃);
     }
   }
   
   public void a(int ☃, int ☃, float ☃)
   {
-    this.f.a(☃, ☃, ☃);
+    f.a(☃, ☃, ☃);
     
-    a(this.q, bnq.a("options.language", new Object[0]), this.l / 2, 16, 16777215);
-    a(this.q, "(" + bnq.a("options.languageWarning", new Object[0]) + ")", this.l / 2, this.m - 56, 8421504);
+    a(q, bnq.a("options.language", new Object[0]), l / 2, 16, 16777215);
+    a(q, "(" + bnq.a("options.languageWarning", new Object[0]) + ")", l / 2, m - 56, 8421504);
     
     super.a(☃, ☃, ☃);
   }
@@ -82,39 +82,39 @@ public class axl
     
     public a(ave ☃)
     {
-      super(axl.this.l, axl.this.m, 32, axl.this.m - 65 + 4, 18);
+      super(l, m, 32, m - 65 + 4, 18);
       for (bnr ☃ : axl.a(axl.this).d())
       {
-        this.w.put(☃.a(), ☃);
-        this.v.add(☃.a());
+        w.put(☃.a(), ☃);
+        v.add(☃.a());
       }
     }
     
     protected int b()
     {
-      return this.v.size();
+      return v.size();
     }
     
     protected void a(int ☃, boolean ☃, int ☃, int ☃)
     {
-      bnr ☃ = (bnr)this.w.get(this.v.get(☃));
+      bnr ☃ = (bnr)w.get(v.get(☃));
       
       axl.a(axl.this).a(☃);
-      axl.b(axl.this).aM = ☃.a();
+      baM = ☃.a();
       
-      this.a.e();
+      a.e();
       
-      axl.this.q.a((axl.a(axl.this).a()) || (axl.b(axl.this).aN));
-      axl.this.q.b(axl.a(axl.this).b());
+      q.a((axl.a(axl.this).a()) || (baN));
+      q.b(axl.a(axl.this).b());
       
-      axl.c(axl.this).j = bnq.a("gui.done", new Object[0]);
-      axl.d(axl.this).j = axl.b(axl.this).c(avh.a.E);
+      cj = bnq.a("gui.done", new Object[0]);
+      dj = axl.b(axl.this).c(avh.a.E);
       axl.b(axl.this).b();
     }
     
     protected boolean a(int ☃)
     {
-      return ((String)this.v.get(☃)).equals(axl.a(axl.this).c().a());
+      return ((String)v.get(☃)).equals(axl.a(axl.this).c().a());
     }
     
     protected int k()
@@ -124,14 +124,14 @@ public class axl
     
     protected void a()
     {
-      axl.this.c();
+      c();
     }
     
     protected void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
     {
-      axl.this.q.b(true);
-      axl.this.a(axl.this.q, ((bnr)this.w.get(this.v.get(☃))).toString(), this.b / 2, ☃ + 1, 16777215);
-      axl.this.q.b(axl.a(axl.this).c().b());
+      q.b(true);
+      a(q, ((bnr)w.get(v.get(☃))).toString(), b / 2, ☃ + 1, 16777215);
+      q.b(axl.a(axl.this).c().b());
     }
   }
 }

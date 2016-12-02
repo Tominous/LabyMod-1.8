@@ -1,3 +1,5 @@
+import de.labystudio.utils.WebPanel;
+import java.io.IOException;
 import java.util.List;
 
 public class axh
@@ -9,45 +11,47 @@ public class axh
   private final axu h;
   private int i;
   
-  public axh(axu ☃, String ☃, eu ☃)
+  public axh(axu screen, String reasonLocalizationKey, eu chatComp)
   {
-    this.h = ☃;
-    this.a = bnq.a(☃, new Object[0]);
-    this.f = ☃;
+    h = screen;
+    a = bnq.a(reasonLocalizationKey, new Object[0]);
+    f = chatComp;
   }
   
-  protected void a(char ☃, int ☃) {}
+  protected void a(char typedChar, int keyCode)
+    throws IOException
+  {}
   
   public void b()
   {
-    this.n.clear();
-    this.g = this.q.c(this.f.d(), this.l - 50);
+    n.clear();
+    g = q.c(f.d(), l - 50);
+    i = (g.size() * q.a);
+    n.add(new avs(0, l / 2 - 100, m / 2 + i / 2 + q.a, bnq.a("gui.toMenu", new Object[0])));
     
-    this.i = (this.g.size() * this.q.a);
-    this.n.add(new avs(0, this.l / 2 - 100, this.m / 2 + this.i / 2 + this.q.a, bnq.a("gui.toMenu", new Object[0])));
+    WebPanel.open(f.e(), h);
   }
   
-  protected void a(avs ☃)
+  protected void a(avs button)
+    throws IOException
   {
-    if (☃.k == 0) {
-      this.j.a(this.h);
+    if (k == 0) {
+      j.a(h);
     }
   }
   
-  public void a(int ☃, int ☃, float ☃)
+  public void a(int mouseX, int mouseY, float partialTicks)
   {
     c();
-    
-    a(this.q, this.a, this.l / 2, this.m / 2 - this.i / 2 - this.q.a * 2, 11184810);
-    
-    int ☃ = this.m / 2 - this.i / 2;
-    if (this.g != null) {
-      for (String ☃ : this.g)
+    a(q, a, l / 2, m / 2 - this.i / 2 - q.a * 2, 11184810);
+    int i = m / 2 - this.i / 2;
+    if (g != null) {
+      for (String s : g)
       {
-        a(this.q, ☃, this.l / 2, ☃, 16777215);
-        ☃ += this.q.a;
+        a(q, s, l / 2, i, 16777215);
+        i += q.a;
       }
     }
-    super.a(☃, ☃, ☃);
+    super.a(mouseX, mouseY, partialTicks);
   }
 }

@@ -21,12 +21,12 @@ public class amn
     for (int ☃ = ☃; ☃ <= ☃; ☃++) {
       ☃.add(Integer.valueOf(☃));
     }
-    this.a = ImmutableSet.copyOf(☃);
+    a = ImmutableSet.copyOf(☃);
   }
   
   public Collection<Integer> c()
   {
-    return this.a;
+    return a;
   }
   
   public boolean equals(Object ☃)
@@ -41,13 +41,13 @@ public class amn
       return false;
     }
     amn ☃ = (amn)☃;
-    return this.a.equals(☃.a);
+    return a.equals(a);
   }
   
   public int hashCode()
   {
     int ☃ = super.hashCode();
-    ☃ = 31 * ☃ + this.a.hashCode();
+    ☃ = 31 * ☃ + a.hashCode();
     return ☃;
   }
   

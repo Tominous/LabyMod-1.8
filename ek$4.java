@@ -10,12 +10,12 @@ class ek$4
   
   public void run()
   {
-    if (this.a != this.b) {
-      this.e.a(this.a);
+    if (a != b) {
+      e.a(a);
     }
-    ChannelFuture ☃ = ek.a(this.e).writeAndFlush(this.c);
-    if (this.d != null) {
-      ☃.addListeners(this.d);
+    ChannelFuture ☃ = ek.a(e).writeAndFlush(c);
+    if (d != null) {
+      ☃.addListeners(d);
     }
     ☃.addListener(ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE);
   }

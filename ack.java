@@ -132,7 +132,7 @@ public class ack
     
     public void a(aci ☃, int ☃)
     {
-      this.a += ☃.a(☃, this.b);
+      a += ☃.a(☃, b);
     }
   }
   
@@ -140,16 +140,16 @@ public class ack
   
   public static int a(zx[] ☃, ow ☃)
   {
-    b.a = 0;
-    b.b = ☃;
+    ba = 0;
+    bb = ☃;
     
     a(b, ☃);
-    if (b.a > 25) {
-      b.a = 25;
-    } else if (b.a < 0) {
-      b.a = 0;
+    if (ba > 25) {
+      ba = 25;
+    } else if (ba < 0) {
+      ba = 0;
     }
-    return (b.a + 1 >> 1) + a.nextInt((b.a >> 1) + 1);
+    return (ba + 1 >> 1) + a.nextInt((ba >> 1) + 1);
   }
   
   static final class d
@@ -160,7 +160,7 @@ public class ack
     
     public void a(aci ☃, int ☃)
     {
-      this.a += ☃.a(☃, this.b);
+      a += ☃.a(☃, b);
     }
   }
   
@@ -168,12 +168,12 @@ public class ack
   
   public static float a(zx ☃, pw ☃)
   {
-    c.a = 0.0F;
-    c.b = ☃;
+    ca = 0.0F;
+    cb = ☃;
     
     a(c, ☃);
     
-    return c.a;
+    return ca;
   }
   
   static final class b
@@ -184,7 +184,7 @@ public class ack
     
     public void a(aci ☃, int ☃)
     {
-      ☃.b(this.a, this.b, ☃);
+      ☃.b(a, b, ☃);
     }
   }
   
@@ -192,8 +192,8 @@ public class ack
   
   public static void a(pr ☃, pk ☃)
   {
-    d.b = ☃;
-    d.a = ☃;
+    db = ☃;
+    da = ☃;
     if (☃ != null) {
       a(d, ☃.as());
     }
@@ -210,7 +210,7 @@ public class ack
     
     public void a(aci ☃, int ☃)
     {
-      ☃.a(this.a, this.b, ☃);
+      ☃.a(a, b, ☃);
     }
   }
   
@@ -218,8 +218,8 @@ public class ack
   
   public static void b(pr ☃, pk ☃)
   {
-    e.a = ☃;
-    e.b = ☃;
+    ea = ☃;
+    eb = ☃;
     if (☃ != null) {
       a(e, ☃.as());
     }
@@ -230,63 +230,63 @@ public class ack
   
   public static int a(pr ☃)
   {
-    return a(aci.o.B, ☃.bA());
+    return a(oB, ☃.bA());
   }
   
   public static int b(pr ☃)
   {
-    return a(aci.p.B, ☃.bA());
+    return a(pB, ☃.bA());
   }
   
   public static int a(pk ☃)
   {
-    return a(aci.h.B, ☃.as());
+    return a(hB, ☃.as());
   }
   
   public static int b(pk ☃)
   {
-    return a(aci.k.B, ☃.as());
+    return a(kB, ☃.as());
   }
   
   public static int c(pr ☃)
   {
-    return a(aci.r.B, ☃.bA());
+    return a(rB, ☃.bA());
   }
   
   public static boolean e(pr ☃)
   {
-    return a(aci.s.B, ☃.bA()) > 0;
+    return a(sB, ☃.bA()) > 0;
   }
   
   public static int f(pr ☃)
   {
-    return a(aci.u.B, ☃.bA());
+    return a(uB, ☃.bA());
   }
   
   public static int g(pr ☃)
   {
-    return a(aci.z.B, ☃.bA());
+    return a(zB, ☃.bA());
   }
   
   public static int h(pr ☃)
   {
-    return a(aci.A.B, ☃.bA());
+    return a(AB, ☃.bA());
   }
   
   public static int i(pr ☃)
   {
-    return a(aci.q.B, ☃.bA());
+    return a(qB, ☃.bA());
   }
   
   public static boolean j(pr ☃)
   {
-    return a(aci.i.B, ☃.as()) > 0;
+    return a(iB, ☃.as()) > 0;
   }
   
   public static zx a(aci ☃, pr ☃)
   {
     for (zx ☃ : ☃.as()) {
-      if ((☃ != null) && (a(☃.B, ☃) > 0)) {
+      if ((☃ != null) && (a(B, ☃) > 0)) {
         return ☃;
       }
     }
@@ -325,7 +325,7 @@ public class ack
         if (☃) {
           zy.cd.a(☃, ☃);
         } else {
-          ☃.a(☃.b, ☃.c);
+          ☃.a(b, c);
         }
       }
     }
@@ -369,7 +369,7 @@ public class ack
             Integer ☃ = (Integer)☃.next();
             boolean ☃ = true;
             for (acl ☃ : ☃) {
-              if (!☃.b.a(aci.c(☃.intValue())))
+              if (!b.a(aci.c(☃.intValue())))
               {
                 ☃ = false;
                 break;
@@ -398,14 +398,14 @@ public class ack
     boolean ☃ = ☃.b() == zy.aL;
     for (aci ☃ : aci.b) {
       if (☃ != null) {
-        if ((☃.C.a(☃)) || (☃)) {
+        if ((C.a(☃)) || (☃)) {
           for (int ☃ = ☃.e(); ☃ <= ☃.b(); ☃++) {
             if ((☃ >= ☃.a(☃)) && (☃ <= ☃.b(☃)))
             {
               if (☃ == null) {
                 ☃ = Maps.newHashMap();
               }
-              ☃.put(Integer.valueOf(☃.B), new acl(☃, ☃));
+              ☃.put(Integer.valueOf(B), new acl(☃, ☃));
             }
           }
         }

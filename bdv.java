@@ -9,7 +9,7 @@ public class bdv
   protected bdv(adm ☃, double ☃, double ☃, double ☃, double ☃, double ☃, double ☃)
   {
     super(☃, ☃, ☃, ☃, 0.0D, 0.0D, 0.0D);
-    this.az = 8;
+    az = 8;
   }
   
   public void a(bfd ☃, pk ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃) {}
@@ -18,13 +18,13 @@ public class bdv
   {
     for (int ☃ = 0; ☃ < 6; ☃++)
     {
-      double ☃ = this.s + (this.V.nextDouble() - this.V.nextDouble()) * 4.0D;
-      double ☃ = this.t + (this.V.nextDouble() - this.V.nextDouble()) * 4.0D;
-      double ☃ = this.u + (this.V.nextDouble() - this.V.nextDouble()) * 4.0D;
-      this.o.a(cy.b, ☃, ☃, ☃, this.a / this.az, 0.0D, 0.0D, new int[0]);
+      double ☃ = s + (V.nextDouble() - V.nextDouble()) * 4.0D;
+      double ☃ = t + (V.nextDouble() - V.nextDouble()) * 4.0D;
+      double ☃ = u + (V.nextDouble() - V.nextDouble()) * 4.0D;
+      o.a(cy.b, ☃, ☃, ☃, a / az, 0.0D, 0.0D, new int[0]);
     }
-    this.a += 1;
-    if (this.a == this.az) {
+    a += 1;
+    if (a == az) {
       J();
     }
   }

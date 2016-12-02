@@ -10,7 +10,7 @@ public class bis
   public bis(biu ☃)
   {
     super(☃, new bbd(0.0F), 0.5F);
-    this.e = ((bbd)this.f);
+    e = ((bbd)f);
     
     a(new bkw(this));
     a(new bkq(this));
@@ -18,13 +18,13 @@ public class bis
   
   public void a(vo ☃, double ☃, double ☃, double ☃, float ☃, float ☃)
   {
-    this.e.a = (☃.cm().c().t() != arm.a);
-    this.e.b = ☃.co();
+    e.a = (☃.cm().c().t() != arm.a);
+    e.b = ☃.co();
     if (☃.co())
     {
       double ☃ = 0.02D;
-      ☃ += this.j.nextGaussian() * ☃;
-      ☃ += this.j.nextGaussian() * ☃;
+      ☃ += j.nextGaussian() * ☃;
+      ☃ += j.nextGaussian() * ☃;
     }
     super.a(☃, ☃, ☃, ☃, ☃, ☃);
   }

@@ -11,6 +11,11 @@ import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.authlib.properties.Property;
 import com.mojang.authlib.properties.PropertyMap;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
+import de.labystudio.labymod.ClickCounter;
+import de.labystudio.labymod.ConfigManager;
+import de.labystudio.labymod.LabyMod;
+import de.labystudio.labymod.ModSettings;
+import de.labystudio.utils.Allowed;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -142,6 +147,7 @@ public class ave
   private bou aP;
   private bgd aQ;
   volatile boolean B = true;
+  public static boolean cancelShader = false;
   public String C = "";
   public boolean D = false;
   public boolean E = false;
@@ -149,180 +155,267 @@ public class ave
   public boolean G = true;
   long H = J();
   int I;
+  long J = -1L;
+  private String aR = "root";
   
-  public ave(bao ☃)
+  public ave(bao gameConfig)
   {
     S = this;
-    
-    this.v = ☃.c.a;
-    this.ak = ☃.c.c;
-    this.N = ☃.c.b;
-    this.al = ☃.d.b;
-    this.O = ☃.a.b;
-    this.P = ☃.a.c;
-    this.aB = new bna(new bmy(☃.c.c, ☃.c.d).a());
-    this.am = (☃.a.d == null ? Proxy.NO_PROXY : ☃.a.d);
-    this.aK = new YggdrasilAuthenticationService(☃.a.d, UUID.randomUUID().toString()).createMinecraftSessionService();
-    
-    this.ae = ☃.a.a;
-    
-    K.info("Setting user: " + this.ae.c());
-    K.info("(Session ID is " + this.ae.a() + ")");
-    
-    this.au = ☃.d.a;
-    this.d = (☃.b.a > 0 ? ☃.b.a : 1);
-    this.e = (☃.b.b > 0 ? ☃.b.b : 1);
-    this.ah = ☃.b.a;
-    this.ai = ☃.b.b;
-    this.T = ☃.b.c;
-    
-    this.at = as();
-    this.aj = new bpo(this);
-    if (☃.e.a != null)
+    v = c.a;
+    ak = c.c;
+    N = c.b;
+    al = d.b;
+    O = a.b;
+    P = a.c;
+    aB = new bna(new bmy(c.c, c.d).a());
+    am = (a.d == null ? Proxy.NO_PROXY : a.d);
+    aK = new YggdrasilAuthenticationService(a.d, UUID.randomUUID().toString()).createMinecraftSessionService();
+    ae = a.a;
+    K.info("Setting user: " + ae.c());
+    K.info("(Session ID is " + ae.a() + ")");
+    au = d.a;
+    d = (b.a > 0 ? b.a : 1);
+    e = (b.b > 0 ? b.b : 1);
+    ah = b.a;
+    ai = b.b;
+    T = b.c;
+    at = as();
+    aj = new bpo(this);
+    if (e.a != null)
     {
-      this.aq = ☃.e.a;
-      this.ar = ☃.e.b;
+      aq = e.a;
+      ar = e.b;
     }
     ImageIO.setUseCache(false);
-    
     kb.c();
   }
   
+  /* Error */
   public void a()
   {
-    this.B = true;
-    try
-    {
-      am();
-    }
-    catch (Throwable ☃)
-    {
-      b ☃ = b.a(☃, "Initializing game");
-      ☃.a("Initialization");
-      c(b(☃));
-      return;
-    }
-    try
-    {
-      while (this.B)
-      {
-        if ((this.V) && (this.W != null))
-        {
-          c(this.W); return;
-        }
-        try
-        {
-          av();
-        }
-        catch (OutOfMemoryError ☃)
-        {
-          l();
-          a(new axo());
-          System.gc();
-        }
-      }
-    }
-    catch (avk localavk) {}catch (e ☃)
-    {
-      b(☃.a());
-      l();
-      K.fatal("Reported exception thrown!", ☃);
-      c(☃.a());
-    }
-    catch (Throwable ☃)
-    {
-      b ☃ = b(new b("Unexpected error", ☃));
-      l();
-      K.fatal("Unreported exception thrown!", ☃);
-      c(☃);
-    }
-    finally
-    {
-      g();
-    }
+    // Byte code:
+    //   0: aload_0
+    //   1: iconst_1
+    //   2: putfield 333	ave:B	Z
+    //   5: aload_0
+    //   6: invokespecial 534	ave:am	()V
+    //   9: goto +30 -> 39
+    //   12: astore_1
+    //   13: aload_1
+    //   14: ldc_w 536
+    //   17: invokestatic 540	b:a	(Ljava/lang/Throwable;Ljava/lang/String;)Lb;
+    //   20: astore_2
+    //   21: aload_2
+    //   22: ldc_w 542
+    //   25: invokevirtual 545	b:a	(Ljava/lang/String;)Lc;
+    //   28: pop
+    //   29: aload_0
+    //   30: aload_0
+    //   31: aload_2
+    //   32: invokevirtual 548	ave:b	(Lb;)Lb;
+    //   35: invokevirtual 551	ave:c	(Lb;)V
+    //   38: return
+    //   39: aload_0
+    //   40: getfield 333	ave:B	Z
+    //   43: ifeq +57 -> 100
+    //   46: aload_0
+    //   47: getfield 553	ave:V	Z
+    //   50: ifeq +10 -> 60
+    //   53: aload_0
+    //   54: getfield 555	ave:W	Lb;
+    //   57: ifnonnull +32 -> 89
+    //   60: aload_0
+    //   61: invokespecial 557	ave:av	()V
+    //   64: goto -25 -> 39
+    //   67: astore_1
+    //   68: aload_0
+    //   69: invokevirtual 559	ave:l	()V
+    //   72: aload_0
+    //   73: new 561	axo
+    //   76: dup
+    //   77: invokespecial 562	axo:<init>	()V
+    //   80: invokevirtual 565	ave:a	(Laxu;)V
+    //   83: invokestatic 568	java/lang/System:gc	()V
+    //   86: goto -47 -> 39
+    //   89: aload_0
+    //   90: aload_0
+    //   91: getfield 555	ave:W	Lb;
+    //   94: invokevirtual 551	ave:c	(Lb;)V
+    //   97: goto -58 -> 39
+    //   100: aload_0
+    //   101: invokevirtual 570	ave:g	()V
+    //   104: goto +104 -> 208
+    //   107: astore_1
+    //   108: aload_0
+    //   109: invokevirtual 570	ave:g	()V
+    //   112: goto +97 -> 209
+    //   115: astore_1
+    //   116: aload_0
+    //   117: aload_1
+    //   118: invokevirtual 573	e:a	()Lb;
+    //   121: invokevirtual 548	ave:b	(Lb;)Lb;
+    //   124: pop
+    //   125: aload_0
+    //   126: invokevirtual 559	ave:l	()V
+    //   129: getstatic 441	ave:K	Lorg/apache/logging/log4j/Logger;
+    //   132: ldc_w 575
+    //   135: aload_1
+    //   136: invokeinterface 579 3 0
+    //   141: aload_0
+    //   142: aload_1
+    //   143: invokevirtual 573	e:a	()Lb;
+    //   146: invokevirtual 551	ave:c	(Lb;)V
+    //   149: aload_0
+    //   150: invokevirtual 570	ave:g	()V
+    //   153: goto +56 -> 209
+    //   156: astore_1
+    //   157: aload_0
+    //   158: new 537	b
+    //   161: dup
+    //   162: ldc_w 581
+    //   165: aload_1
+    //   166: invokespecial 583	b:<init>	(Ljava/lang/String;Ljava/lang/Throwable;)V
+    //   169: invokevirtual 548	ave:b	(Lb;)Lb;
+    //   172: astore_2
+    //   173: aload_0
+    //   174: invokevirtual 559	ave:l	()V
+    //   177: getstatic 441	ave:K	Lorg/apache/logging/log4j/Logger;
+    //   180: ldc_w 585
+    //   183: aload_1
+    //   184: invokeinterface 579 3 0
+    //   189: aload_0
+    //   190: aload_2
+    //   191: invokevirtual 551	ave:c	(Lb;)V
+    //   194: aload_0
+    //   195: invokevirtual 570	ave:g	()V
+    //   198: goto +11 -> 209
+    //   201: astore_3
+    //   202: aload_0
+    //   203: invokevirtual 570	ave:g	()V
+    //   206: aload_3
+    //   207: athrow
+    //   208: return
+    //   209: return
+    // Line number table:
+    //   Java source line #404	-> byte code offset #0
+    //   Java source line #408	-> byte code offset #5
+    //   Java source line #416	-> byte code offset #9
+    //   Java source line #410	-> byte code offset #12
+    //   Java source line #412	-> byte code offset #13
+    //   Java source line #413	-> byte code offset #21
+    //   Java source line #414	-> byte code offset #29
+    //   Java source line #415	-> byte code offset #38
+    //   Java source line #422	-> byte code offset #39
+    //   Java source line #424	-> byte code offset #46
+    //   Java source line #428	-> byte code offset #60
+    //   Java source line #435	-> byte code offset #64
+    //   Java source line #430	-> byte code offset #67
+    //   Java source line #432	-> byte code offset #68
+    //   Java source line #433	-> byte code offset #72
+    //   Java source line #434	-> byte code offset #83
+    //   Java source line #435	-> byte code offset #86
+    //   Java source line #439	-> byte code offset #89
+    //   Java source line #465	-> byte code offset #100
+    //   Java source line #466	-> byte code offset #104
+    //   Java source line #443	-> byte code offset #107
+    //   Java source line #465	-> byte code offset #108
+    //   Java source line #447	-> byte code offset #115
+    //   Java source line #449	-> byte code offset #116
+    //   Java source line #450	-> byte code offset #125
+    //   Java source line #451	-> byte code offset #129
+    //   Java source line #452	-> byte code offset #141
+    //   Java source line #465	-> byte code offset #149
+    //   Java source line #455	-> byte code offset #156
+    //   Java source line #457	-> byte code offset #157
+    //   Java source line #458	-> byte code offset #173
+    //   Java source line #459	-> byte code offset #177
+    //   Java source line #460	-> byte code offset #189
+    //   Java source line #465	-> byte code offset #194
+    //   Java source line #468	-> byte code offset #208
+    //   Java source line #470	-> byte code offset #209
+    // Local variable table:
+    //   start	length	slot	name	signature
+    //   0	210	0	this	ave
+    //   12	2	1	throwable	Throwable
+    //   67	2	1	var10	OutOfMemoryError
+    //   107	2	1	var12	avk
+    //   115	28	1	reportedexception	e
+    //   156	28	1	throwable1	Throwable
+    //   20	12	2	crashreport	b
+    //   172	19	2	crashreport1	b
+    //   201	6	3	localObject	Object
+    // Exception table:
+    //   from	to	target	type
+    //   5	9	12	java/lang/Throwable
+    //   60	64	67	java/lang/OutOfMemoryError
+    //   39	100	107	avk
+    //   39	100	115	e
+    //   39	100	156	java/lang/Throwable
+    //   39	100	201	finally
+    //   115	149	201	finally
+    //   156	194	201	finally
   }
   
   private void am()
     throws LWJGLException, IOException
   {
-    this.t = new avh(this, this.v);
-    
-    this.aA.add(this.aB);
-    
+    t = new avh(this, v);
+    aA.add(aB);
     at();
-    if ((this.t.C > 0) && (this.t.B > 0))
+    if ((t.C > 0) && (t.B > 0))
     {
-      this.d = this.t.B;
-      this.e = this.t.C;
+      d = t.B;
+      e = t.C;
     }
     K.info("LWJGL Version: " + Sys.getVersion());
     ar();
     aq();
     ap();
-    
     bqs.a();
-    
-    this.aF = new bfw(this.d, this.e, true);
-    this.aF.a(0.0F, 0.0F, 0.0F, 0.0F);
-    
+    aF = new bfw(d, e, true);
+    aF.a(0.0F, 0.0F, 0.0F, 0.0F);
     an();
-    
-    this.aC = new bnm(this.N, new File(this.v, "server-resource-packs"), this.aB, this.az, this.t);
-    this.ay = new bnn(this.az);
-    
-    this.aD = new bns(this.az, this.t.aM);
-    this.ay.a(this.aD);
-    
+    aC = new bnm(N, new File(v, "server-resource-packs"), aB, az, t);
+    ay = new bnn(az);
+    aD = new bns(az, t.aM);
+    ay.a(aD);
     e();
-    
-    this.R = new bmj(this.ay);
-    this.ay.a(this.R);
-    
-    a(this.R);
-    
+    R = new bmj(ay);
+    ay.a(R);
+    a(R);
     ao();
-    
-    this.aL = new bnp(this.R, new File(this.ak, "skins"), this.aK);
-    
-    this.an = new atk(new File(this.v, "saves"));
-    
-    this.aH = new bpz(this.ay, this.t);
-    this.ay.a(this.aH);
-    
-    this.aI = new bpv(this);
-    
-    this.k = new avn(this.t, new jy("textures/font/ascii.png"), this.R, false);
-    if (this.t.aM != null)
+    aL = new bnp(R, new File(ak, "skins"), aK);
+    an = new atk(new File(v, "saves"));
+    aH = new bpz(ay, t);
+    ay.a(aH);
+    aI = new bpv(this);
+    k = new avn(t, new jy("textures/font/ascii.png"), R, false);
+    if (t.aM != null)
     {
-      this.k.a(d());
-      this.k.b(this.aD.b());
+      k.a(d());
+      k.b(aD.b());
     }
-    this.l = new avn(this.t, new jy("textures/font/ascii_sga.png"), this.R, false);
-    
-    this.ay.a(this.k);
-    this.ay.a(this.l);
-    
-    this.ay.a(new bnf());
-    this.ay.a(new bne());
-    
+    l = new avn(t, new jy("textures/font/ascii_sga.png"), R, false);
+    ay.a(k);
+    ay.a(l);
+    ay.a(new bnf());
+    ay.a(new bne());
     mr.f.a(new ms()
     {
-      public String a(String ☃)
+      public String a(String p_74535_1_)
       {
         try
         {
-          return String.format(☃, new Object[] { avh.c(ave.this.t.ae.i()) });
+          return String.format(p_74535_1_, new Object[] { avh.c(t.ae.i()) });
         }
-        catch (Exception ☃)
+        catch (Exception exception)
         {
-          return "Error: " + ☃.getLocalizedMessage();
+          return "Error: " + exception.getLocalizedMessage();
         }
       }
     });
-    this.u = new avf();
-    
+    u = new avf();
     b("Pre startup");
-    
     bfl.w();
     bfl.j(7425);
     bfl.a(1.0D);
@@ -331,85 +424,73 @@ public class ave
     bfl.d();
     bfl.a(516, 0.1F);
     bfl.e(1029);
-    
     bfl.n(5889);
     bfl.D();
     bfl.n(5888);
     b("Startup");
-    
-    this.aG = new bmh("textures");
-    this.aG.a(this.t.J);
-    this.R.a(bmh.g, this.aG);
-    this.R.a(bmh.g);
-    this.aG.a(false, this.t.J > 0);
-    
-    this.aP = new bou(this.aG);
-    this.ay.a(this.aP);
-    
-    this.ab = new bjh(this.R, this.aP);
-    this.aa = new biu(this.R, this.ab);
-    this.ac = new bfn(this);
-    this.ay.a(this.ab);
-    
-    this.o = new bfk(this, this.ay);
-    this.ay.a(this.o);
-    
-    this.aQ = new bgd(this.aP.c(), this.t);
-    this.ay.a(this.aQ);
-    
-    this.g = new bfr(this);
-    this.ay.a(this.g);
-    
-    this.p = new ayd(this);
-    
-    bfl.b(0, 0, this.d, this.e);
-    
-    this.j = new bec(this.f, this.R);
-    
+    aG = new bmh("textures");
+    aG.a(t.J);
+    R.a(bmh.g, aG);
+    R.a(bmh.g);
+    aG.a(false, t.J > 0);
+    aP = new bou(aG);
+    ay.a(aP);
+    ab = new bjh(R, aP);
+    aa = new biu(R, ab);
+    ac = new bfn(this);
+    ay.a(ab);
+    o = new bfk(this, ay);
+    ay.a(o);
+    aQ = new bgd(aP.c(), t);
+    ay.a(aQ);
+    g = new bfr(this);
+    ay.a(g);
+    p = new ayd(this);
+    bfl.b(0, 0, d, e);
+    j = new bec(f, R);
     b("Post startup");
-    this.q = new avo(this);
-    if (this.aq != null) {
-      a(new awz(new aya(), this, this.aq, this.ar));
+    q = new avo(this);
+    if (aq != null) {
+      a(new awz(new aya(), this, aq, ar));
     } else {
       a(new aya());
     }
-    this.R.c(this.aJ);
-    this.aJ = null;
-    
-    this.n = new avi(this);
-    if ((this.t.s) && (!this.T)) {
+    R.c(aJ);
+    aJ = null;
+    n = new avi(this);
+    if ((t.s) && (!T)) {
       q();
     }
     try
     {
-      Display.setVSyncEnabled(this.t.t);
+      Display.setVSyncEnabled(t.t);
     }
-    catch (OpenGLException ☃)
+    catch (OpenGLException var2)
     {
-      this.t.t = false;
-      this.t.b();
+      t.t = false;
+      t.b();
     }
-    this.g.b();
+    g.b();
   }
   
   private void an()
   {
-    this.az.a(new boo(), bon.class);
-    this.az.a(new boe(), bod.class);
-    this.az.a(new bob(), boa.class);
-    this.az.a(new bok(), boj.class);
-    this.az.a(new boh(), bog.class);
+    az.a(new boo(), bon.class);
+    az.a(new boe(), bod.class);
+    az.a(new bob(), boa.class);
+    az.a(new bok(), boj.class);
+    az.a(new boh(), bog.class);
   }
   
   private void ao()
   {
     try
     {
-      this.aE = new bqn(this, (Property)Iterables.getFirst(this.O.get("twitch_access_token"), null));
+      aE = new bqn(this, (Property)Iterables.getFirst(O.get("twitch_access_token"), null));
     }
-    catch (Throwable ☃)
+    catch (Throwable throwable)
     {
-      this.aE = new bqo(☃);
+      aE = new bqo(throwable);
       K.error("Couldn't initialize twitch stream");
     }
   }
@@ -423,15 +504,15 @@ public class ave
     {
       Display.create(new PixelFormat().withDepthBits(24));
     }
-    catch (LWJGLException ☃)
+    catch (LWJGLException lwjglexception)
     {
-      K.error("Couldn't set pixel format", ☃);
+      K.error("Couldn't set pixel format", lwjglexception);
       try
       {
         Thread.sleep(1000L);
       }
       catch (InterruptedException localInterruptedException) {}
-      if (this.T) {
+      if (T) {
         au();
       }
       Display.create();
@@ -441,54 +522,53 @@ public class ave
   private void aq()
     throws LWJGLException
   {
-    if (this.T)
+    if (T)
     {
       Display.setFullscreen(true);
-      DisplayMode ☃ = Display.getDisplayMode();
-      this.d = Math.max(1, ☃.getWidth());
-      this.e = Math.max(1, ☃.getHeight());
+      DisplayMode displaymode = Display.getDisplayMode();
+      d = Math.max(1, displaymode.getWidth());
+      e = Math.max(1, displaymode.getHeight());
     }
     else
     {
-      Display.setDisplayMode(new DisplayMode(this.d, this.e));
+      Display.setDisplayMode(new DisplayMode(d, e));
     }
   }
   
   private void ar()
   {
-    g.a ☃ = g.a();
-    if (☃ != g.a.d)
+    g.a util$enumos = g.a();
+    if (util$enumos != g.a.d)
     {
-      InputStream ☃ = null;
-      InputStream ☃ = null;
+      InputStream inputstream = null;
+      InputStream inputstream1 = null;
       try
       {
-        ☃ = this.aB.c(new jy("icons/icon_16x16.png"));
-        ☃ = this.aB.c(new jy("icons/icon_32x32.png"));
-        if ((☃ != null) && (☃ != null)) {
-          Display.setIcon(new ByteBuffer[] { a(☃), a(☃) });
+        inputstream = aB.c(new jy("icons/icon_16x16.png"));
+        inputstream1 = aB.c(new jy("icons/icon_32x32.png"));
+        if ((inputstream != null) && (inputstream1 != null)) {
+          Display.setIcon(new ByteBuffer[] { a(inputstream), a(inputstream1) });
         }
       }
-      catch (IOException ☃)
+      catch (IOException ioexception)
       {
-        K.error("Couldn't set icon", ☃);
+        K.error("Couldn't set icon", ioexception);
       }
       finally
       {
-        IOUtils.closeQuietly(☃);
-        IOUtils.closeQuietly(☃);
+        IOUtils.closeQuietly(inputstream);
+        IOUtils.closeQuietly(inputstream1);
       }
     }
   }
   
   private static boolean as()
   {
-    String[] ☃ = { "sun.arch.data.model", "com.ibm.vm.bitmode", "os.arch" };
-    for (String ☃ : ☃)
+    String[] astring = { "sun.arch.data.model", "com.ibm.vm.bitmode", "os.arch" };
+    for (String s : astring)
     {
-      String ☃ = System.getProperty(☃);
-      if ((☃ != null) && 
-        (☃.contains("64"))) {
+      String s1 = System.getProperty(s);
+      if ((s1 != null) && (s1.contains("64"))) {
         return true;
       }
     }
@@ -497,21 +577,21 @@ public class ave
   
   public bfw b()
   {
-    return this.aF;
+    return aF;
   }
   
   public String c()
   {
-    return this.al;
+    return al;
   }
   
   private void at()
   {
-    Thread ☃ = new Thread("Timer hack thread")
+    Thread thread = new Thread("Timer hack thread")
     {
       public void run()
       {
-        while (ave.this.B) {
+        while (B) {
           try
           {
             Thread.sleep(2147483647L);
@@ -520,30 +600,29 @@ public class ave
         }
       }
     };
-    ☃.setDaemon(true);
-    ☃.start();
+    thread.setDaemon(true);
+    thread.start();
   }
   
-  public void a(b ☃)
+  public void a(b crash)
   {
-    this.V = true;
-    this.W = ☃;
+    V = true;
+    W = crash;
   }
   
-  public void c(b ☃)
+  public void c(b crashReportIn)
   {
-    File ☃ = new File(A().v, "crash-reports");
-    File ☃ = new File(☃, "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-client.txt");
-    
-    kb.a(☃.e());
-    if (☃.f() != null)
+    File file1 = new File(Av, "crash-reports");
+    File file2 = new File(file1, "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-client.txt");
+    kb.a(crashReportIn.e());
+    if (crashReportIn.f() != null)
     {
-      kb.a("#@!@# Game crashed! Crash report saved to: #@!@# " + ☃.f());
+      kb.a("#@!@# Game crashed! Crash report saved to: #@!@# " + crashReportIn.f());
       System.exit(-1);
     }
-    else if (☃.a(☃))
+    else if (crashReportIn.a(file2))
     {
-      kb.a("#@!@# Game crashed! Crash report saved to: #@!@# " + ☃.getAbsolutePath());
+      kb.a("#@!@# Game crashed! Crash report saved to: #@!@# " + file2.getAbsolutePath());
       System.exit(-1);
     }
     else
@@ -555,408 +634,424 @@ public class ave
   
   public boolean d()
   {
-    return (this.aD.a()) || (this.t.aN);
+    return (aD.a()) || (t.aN);
   }
   
   public void e()
   {
-    List<bnk> ☃ = Lists.newArrayList(this.aA);
-    for (bnm.a ☃ : this.aC.c()) {
-      ☃.add(☃.c());
+    List<bnk> list = Lists.newArrayList(aA);
+    for (bnm.a resourcepackrepository$entry : aC.c()) {
+      list.add(resourcepackrepository$entry.c());
     }
-    if (this.aC.e() != null) {
-      ☃.add(this.aC.e());
+    if (aC.e() != null) {
+      list.add(aC.e());
     }
     try
     {
-      this.ay.a(☃);
+      ay.a(list);
     }
-    catch (RuntimeException ☃)
+    catch (RuntimeException runtimeexception)
     {
-      K.info("Caught error stitching, removing all assigned resourcepacks", ☃);
-      
-      ☃.clear();
-      ☃.addAll(this.aA);
-      this.aC.a(Collections.emptyList());
-      
-      this.ay.a(☃);
-      
-      this.t.k.clear();
-      this.t.l.clear();
-      this.t.b();
+      K.info("Caught error stitching, removing all assigned resourcepacks", runtimeexception);
+      list.clear();
+      list.addAll(aA);
+      aC.a(Collections.emptyList());
+      ay.a(list);
+      t.k.clear();
+      t.l.clear();
+      t.b();
     }
-    this.aD.a(☃);
-    if (this.g != null) {
-      this.g.a();
+    aD.a(list);
+    if (g != null) {
+      g.a();
     }
   }
   
-  private ByteBuffer a(InputStream ☃)
+  private ByteBuffer a(InputStream imageStream)
     throws IOException
   {
-    BufferedImage ☃ = ImageIO.read(☃);
-    int[] ☃ = ☃.getRGB(0, 0, ☃.getWidth(), ☃.getHeight(), null, 0, ☃.getWidth());
-    
-    ByteBuffer ☃ = ByteBuffer.allocate(4 * ☃.length);
-    for (int ☃ : ☃) {
-      ☃.putInt(☃ << 8 | ☃ >> 24 & 0xFF);
+    BufferedImage bufferedimage = ImageIO.read(imageStream);
+    int[] aint = bufferedimage.getRGB(0, 0, bufferedimage.getWidth(), bufferedimage.getHeight(), (int[])null, 0, bufferedimage.getWidth());
+    ByteBuffer bytebuffer = ByteBuffer.allocate(4 * aint.length);
+    for (int i : aint) {
+      bytebuffer.putInt(i << 8 | i >> 24 & 0xFF);
     }
-    ☃.flip();
-    return ☃;
+    bytebuffer.flip();
+    return bytebuffer;
   }
   
   private void au()
     throws LWJGLException
   {
-    Set<DisplayMode> ☃ = Sets.newHashSet();
-    Collections.addAll(☃, Display.getAvailableDisplayModes());
-    
-    DisplayMode ☃ = Display.getDesktopDisplayMode();
-    Iterator ☃;
-    if (!☃.contains(☃)) {
-      if (g.a() == g.a.d) {
-        for (☃ = M.iterator(); ☃.hasNext();)
+    Set<DisplayMode> set = Sets.newHashSet();
+    Collections.addAll(set, Display.getAvailableDisplayModes());
+    DisplayMode displaymode = Display.getDesktopDisplayMode();
+    if ((!set.contains(displaymode)) && (g.a() == g.a.d))
+    {
+      Iterator localIterator1 = M.iterator();
+      for (;;)
+      {
+        if (!localIterator1.hasNext()) {
+          break label229;
+        }
+        DisplayMode displaymode1 = (DisplayMode)localIterator1.next();
+        
+        boolean flag = true;
+        for (DisplayMode displaymode2 : set) {
+          if ((displaymode2.getBitsPerPixel() == 32) && (displaymode2.getWidth() == displaymode1.getWidth()) && (displaymode2.getHeight() == displaymode1.getHeight()))
+          {
+            flag = false;
+            break;
+          }
+        }
+        if (!flag)
         {
-          ☃ = (DisplayMode)☃.next();
-          
-          boolean ☃ = true;
-          for (DisplayMode ☃ : ☃) {
-            if ((☃.getBitsPerPixel() == 32) && (☃.getWidth() == ☃.getWidth()) && (☃.getHeight() == ☃.getHeight()))
-            {
-              ☃ = false;
+          Iterator iterator = set.iterator();
+          if (iterator.hasNext())
+          {
+            DisplayMode displaymode3 = (DisplayMode)iterator.next();
+            if ((displaymode3.getBitsPerPixel() != 32) || (displaymode3.getWidth() != displaymode1.getWidth() / 2) || (displaymode3.getHeight() != displaymode1.getHeight() / 2)) {
               break;
             }
-          }
-          if (!☃) {
-            for (DisplayMode ☃ : ☃) {
-              if ((☃.getBitsPerPixel() == 32) && (☃.getWidth() == ☃.getWidth() / 2) && (☃.getHeight() == ☃.getHeight() / 2))
-              {
-                ☃ = ☃;
-                break;
-              }
-            }
+            displaymode = displaymode3;
           }
         }
       }
     }
-    DisplayMode ☃;
-    Display.setDisplayMode(☃);
-    this.d = ☃.getWidth();
-    this.e = ☃.getHeight();
+    label229:
+    Display.setDisplayMode(displaymode);
+    d = displaymode.getWidth();
+    e = displaymode.getHeight();
   }
   
-  private void a(bmj ☃)
+  private void a(bmj textureManagerInstance)
     throws LWJGLException
   {
-    avr ☃ = new avr(this);
-    int ☃ = ☃.e();
-    bfw ☃ = new bfw(☃.a() * ☃, ☃.b() * ☃, true);
-    ☃.a(false);
-    
+    avr scaledresolution = new avr(this);
+    int i = scaledresolution.e();
+    bfw framebuffer = new bfw(scaledresolution.a() * i, scaledresolution.b() * i, true);
+    framebuffer.a(false);
     bfl.n(5889);
     bfl.D();
-    bfl.a(0.0D, ☃.a(), ☃.b(), 0.0D, 1000.0D, 3000.0D);
+    bfl.a(0.0D, scaledresolution.a(), scaledresolution.b(), 0.0D, 1000.0D, 3000.0D);
     bfl.n(5888);
     bfl.D();
     bfl.b(0.0F, 0.0F, -2000.0F);
-    
     bfl.f();
     bfl.n();
     bfl.i();
-    
     bfl.w();
-    
-    InputStream ☃ = null;
+    InputStream inputstream = null;
     try
     {
-      ☃ = this.aB.a(L);
-      this.aJ = ☃.a("logo", new blz(ImageIO.read(☃)));
-      ☃.a(this.aJ);
+      inputstream = aB.a(L);
+      aJ = textureManagerInstance.a("logo", new blz(ImageIO.read(inputstream)));
+      textureManagerInstance.a(aJ);
     }
-    catch (IOException ☃)
+    catch (IOException ioexception)
     {
-      K.error("Unable to load logo: " + L, ☃);
+      K.error("Unable to load logo: " + L, ioexception);
     }
     finally
     {
-      IOUtils.closeQuietly(☃);
+      IOUtils.closeQuietly(inputstream);
     }
-    bfx ☃ = bfx.a();
-    bfd ☃ = ☃.c();
-    ☃.a(7, bms.i);
-    ☃.b(0.0D, this.e, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
-    ☃.b(this.d, this.e, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
-    ☃.b(this.d, 0.0D, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
-    ☃.b(0.0D, 0.0D, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
-    ☃.b();
-    
+    bfx tessellator = bfx.a();
+    bfd worldrenderer = tessellator.c();
+    worldrenderer.a(7, bms.i);
+    worldrenderer.b(0.0D, e, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
+    worldrenderer.b(d, e, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
+    worldrenderer.b(d, 0.0D, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
+    worldrenderer.b(0.0D, 0.0D, 0.0D).a(0.0D, 0.0D).b(255, 255, 255, 255).d();
+    tessellator.b();
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    
-    int ☃ = 256;
-    int ☃ = 256;
-    a((☃.a() - ☃) / 2, (☃.b() - ☃) / 2, 0, 0, ☃, ☃, 255, 255, 255, 255);
-    
+    int j = 256;
+    int k = 256;
+    a((scaledresolution.a() - j) / 2, (scaledresolution.b() - k) / 2, 0, 0, j, k, 255, 255, 255, 255);
     bfl.f();
     bfl.n();
-    
-    ☃.e();
-    ☃.c(☃.a() * ☃, ☃.b() * ☃);
-    
+    framebuffer.e();
+    framebuffer.c(scaledresolution.a() * i, scaledresolution.b() * i);
     bfl.d();
     bfl.a(516, 0.1F);
-    
     h();
   }
   
-  public void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
+  public void a(int p_181536_1_, int p_181536_2_, int p_181536_3_, int p_181536_4_, int p_181536_5_, int p_181536_6_, int p_181536_7_, int p_181536_8_, int p_181536_9_, int p_181536_10_)
   {
-    float ☃ = 0.00390625F;
-    float ☃ = 0.00390625F;
-    bfd ☃ = bfx.a().c();
-    ☃.a(7, bms.i);
-    ☃.b(☃, ☃ + ☃, 0.0D).a(☃ * ☃, (☃ + ☃) * ☃).b(☃, ☃, ☃, ☃).d();
-    ☃.b(☃ + ☃, ☃ + ☃, 0.0D).a((☃ + ☃) * ☃, (☃ + ☃) * ☃).b(☃, ☃, ☃, ☃).d();
-    ☃.b(☃ + ☃, ☃, 0.0D).a((☃ + ☃) * ☃, ☃ * ☃).b(☃, ☃, ☃, ☃).d();
-    ☃.b(☃, ☃, 0.0D).a(☃ * ☃, ☃ * ☃).b(☃, ☃, ☃, ☃).d();
+    float f = 0.00390625F;
+    float f1 = 0.00390625F;
+    bfd worldrenderer = bfx.a().c();
+    worldrenderer.a(7, bms.i);
+    worldrenderer.b(p_181536_1_, p_181536_2_ + p_181536_6_, 0.0D).a(p_181536_3_ * f, (p_181536_4_ + p_181536_6_) * f1).b(p_181536_7_, p_181536_8_, p_181536_9_, p_181536_10_).d();
+    worldrenderer.b(p_181536_1_ + p_181536_5_, p_181536_2_ + p_181536_6_, 0.0D).a((p_181536_3_ + p_181536_5_) * f, (p_181536_4_ + p_181536_6_) * f1).b(p_181536_7_, p_181536_8_, p_181536_9_, p_181536_10_).d();
+    worldrenderer.b(p_181536_1_ + p_181536_5_, p_181536_2_, 0.0D).a((p_181536_3_ + p_181536_5_) * f, p_181536_4_ * f1).b(p_181536_7_, p_181536_8_, p_181536_9_, p_181536_10_).d();
+    worldrenderer.b(p_181536_1_, p_181536_2_, 0.0D).a(p_181536_3_ * f, p_181536_4_ * f1).b(p_181536_7_, p_181536_8_, p_181536_9_, p_181536_10_).d();
     bfx.a().b();
   }
   
   public atr f()
   {
-    return this.an;
+    return an;
   }
   
-  public void a(axu ☃)
+  public void a(axu guiScreenIn)
   {
-    if (this.m != null) {
-      this.m.m();
+    if (m != null) {
+      m.m();
     }
-    if ((☃ == null) && (this.f == null)) {
-      ☃ = new aya();
-    } else if ((☃ == null) && (this.h.bn() <= 0.0F)) {
-      ☃ = new axe();
+    if ((guiScreenIn == null) && (f == null)) {
+      guiScreenIn = new aya();
+    } else if ((guiScreenIn == null) && (h.bn() <= 0.0F)) {
+      guiScreenIn = new axe();
     }
-    if ((☃ instanceof aya))
+    if ((guiScreenIn instanceof aya))
     {
-      this.t.aB = false;
-      this.q.d().a();
+      t.aB = false;
+      q.d().a();
     }
-    this.m = ☃;
-    if (☃ != null)
+    m = guiScreenIn;
+    if (guiScreenIn != null)
     {
       o();
-      avr ☃ = new avr(this);
-      int ☃ = ☃.a();
-      int ☃ = ☃.b();
-      ☃.a(this, ☃, ☃);
-      this.r = false;
+      avr scaledresolution = new avr(this);
+      int i = scaledresolution.a();
+      int j = scaledresolution.b();
+      guiScreenIn.a(this, i, j);
+      r = false;
     }
     else
     {
-      this.aH.e();
+      aH.e();
       n();
     }
   }
   
-  private void b(String ☃)
+  private void b(String message)
   {
-    if (!this.U) {
-      return;
-    }
-    int ☃ = GL11.glGetError();
-    if (☃ != 0)
+    if (U)
     {
-      String ☃ = GLU.gluErrorString(☃);
-      K.error("########## GL ERROR ##########");
-      K.error("@ " + ☃);
-      K.error(☃ + ": " + ☃);
+      int i = GL11.glGetError();
+      if (i != 0)
+      {
+        String s = GLU.gluErrorString(i);
+        K.error("########## GL ERROR ##########");
+        K.error("@ " + message);
+        K.error(i + ": " + s);
+      }
     }
   }
   
+  /* Error */
   public void g()
   {
-    try
-    {
-      this.aE.f();
-      
-      K.info("Stopping!");
-      try
-      {
-        a(null);
-      }
-      catch (Throwable localThrowable) {}
-      this.aH.d();
-    }
-    finally
-    {
-      Display.destroy();
-      if (!this.V) {
-        System.exit(0);
-      }
-    }
-    System.gc();
+    // Byte code:
+    //   0: aload_0
+    //   1: getfield 978	ave:aE	Lbqm;
+    //   4: invokeinterface 1465 1 0
+    //   9: getstatic 441	ave:K	Lorg/apache/logging/log4j/Logger;
+    //   12: ldc_w 1467
+    //   15: invokeinterface 461 2 0
+    //   20: aload_0
+    //   21: aconst_null
+    //   22: checkcast 1469	bdb
+    //   25: invokevirtual 1472	ave:a	(Lbdb;)V
+    //   28: goto +4 -> 32
+    //   31: astore_1
+    //   32: aload_0
+    //   33: getfield 718	ave:aH	Lbpz;
+    //   36: invokevirtual 1473	bpz:d	()V
+    //   39: invokestatic 1476	org/lwjgl/opengl/Display:destroy	()V
+    //   42: aload_0
+    //   43: getfield 553	ave:V	Z
+    //   46: ifne +27 -> 73
+    //   49: iconst_0
+    //   50: invokestatic 1166	java/lang/System:exit	(I)V
+    //   53: goto +20 -> 73
+    //   56: astore_2
+    //   57: invokestatic 1476	org/lwjgl/opengl/Display:destroy	()V
+    //   60: aload_0
+    //   61: getfield 553	ave:V	Z
+    //   64: ifne +7 -> 71
+    //   67: iconst_0
+    //   68: invokestatic 1166	java/lang/System:exit	(I)V
+    //   71: aload_2
+    //   72: athrow
+    //   73: invokestatic 568	java/lang/System:gc	()V
+    //   76: return
+    // Line number table:
+    //   Java source line #1041	-> byte code offset #0
+    //   Java source line #1042	-> byte code offset #9
+    //   Java source line #1046	-> byte code offset #20
+    //   Java source line #1051	-> byte code offset #28
+    //   Java source line #1048	-> byte code offset #31
+    //   Java source line #1053	-> byte code offset #32
+    //   Java source line #1057	-> byte code offset #39
+    //   Java source line #1059	-> byte code offset #42
+    //   Java source line #1061	-> byte code offset #49
+    //   Java source line #1057	-> byte code offset #56
+    //   Java source line #1059	-> byte code offset #60
+    //   Java source line #1061	-> byte code offset #67
+    //   Java source line #1065	-> byte code offset #73
+    //   Java source line #1066	-> byte code offset #76
+    // Local variable table:
+    //   start	length	slot	name	signature
+    //   0	77	0	this	ave
+    //   31	1	1	localThrowable	Throwable
+    //   56	16	2	localObject	Object
+    // Exception table:
+    //   from	to	target	type
+    //   20	28	31	java/lang/Throwable
+    //   0	39	56	finally
   }
   
   private void av()
+    throws IOException
   {
-    long ☃ = System.nanoTime();
-    
-    this.A.a("root");
+    long i = System.nanoTime();
+    A.a("root");
     if ((Display.isCreated()) && (Display.isCloseRequested())) {
       m();
     }
-    if ((this.af) && (this.f != null))
+    if ((af) && (this.f != null))
     {
-      float ☃ = this.Y.c;
-      this.Y.a();
-      this.Y.c = ☃;
+      float f = Y.c;
+      Y.a();
+      Y.c = f;
     }
     else
     {
-      this.Y.a();
+      Y.a();
     }
-    this.A.a("scheduledExecutables");
-    synchronized (this.aM)
+    LabyMod.getInstance().setPartialTicks(Y.c);
+    
+    A.a("scheduledExecutables");
+    synchronized (aM)
     {
-      while (!this.aM.isEmpty()) {
-        g.a((FutureTask)this.aM.poll(), K);
+      while (!aM.isEmpty()) {
+        g.a((FutureTask)aM.poll(), K);
       }
     }
-    this.A.b();
-    
-    long ☃ = System.nanoTime();
-    this.A.a("tick");
-    for (int ☃ = 0; ☃ < this.Y.b; ☃++) {
+    A.b();
+    long l = System.nanoTime();
+    A.a("tick");
+    for (int j = 0; j < Y.b; j++) {
       s();
     }
-    this.A.c("preRenderErrors");
-    long ☃ = System.nanoTime() - ☃;
+    A.c("preRenderErrors");
+    long i1 = System.nanoTime() - l;
     b("Pre render");
-    
-    this.A.c("sound");
-    this.aH.a(this.h, this.Y.c);
-    this.A.b();
-    
-    this.A.a("render");
-    
+    A.c("sound");
+    aH.a(h, Y.c);
+    A.b();
+    A.a("render");
     bfl.E();
     bfl.m(16640);
-    this.aF.a(true);
-    
-    this.A.a("display");
+    aF.a(true);
+    A.a("display");
     bfl.w();
-    if ((this.h != null) && (this.h.aj())) {
-      this.t.aA = 0;
+    if ((h != null) && (h.aj())) {
+      t.aA = 0;
     }
-    this.A.b();
-    if (!this.r)
+    A.b();
+    if (!r)
     {
-      this.A.c("gameRenderer");
-      this.o.a(this.Y.c, ☃);
-      this.A.b();
+      A.c("gameRenderer");
+      o.a(Y.c, i);
+      A.b();
     }
-    this.A.b();
-    if ((this.t.aB) && (this.t.aC) && (!this.t.az))
+    A.b();
+    if ((t.aB) && (t.aC) && (!t.az))
     {
-      if (!this.A.a) {
-        this.A.a();
+      if (!A.a) {
+        A.a();
       }
-      this.A.a = true;
-      a(☃);
+      A.a = true;
+      a(i1);
     }
     else
     {
-      this.A.a = false;
-      this.J = System.nanoTime();
+      A.a = false;
+      J = System.nanoTime();
     }
-    this.p.a();
-    
-    this.aF.e();
+    p.a();
+    aF.e();
     bfl.F();
     bfl.E();
-    this.aF.c(this.d, this.e);
+    aF.c(d, e);
     bfl.F();
     bfl.E();
-    this.o.b(this.Y.c);
+    o.b(Y.c);
     bfl.F();
-    this.A.a("root");
-    
+    A.a("root");
     h();
-    
     Thread.yield();
-    
-    this.A.a("stream");
-    this.A.a("update");
-    this.aE.g();
-    this.A.c("submit");
-    this.aE.h();
-    this.A.b();
-    this.A.b();
-    
+    A.a("stream");
+    A.a("update");
+    aE.g();
+    A.c("submit");
+    aE.h();
+    A.b();
+    A.b();
     b("Post render");
-    this.I += 1;
-    this.af = ((F()) && (this.m != null) && (this.m.d()) && (!this.aj.b()));
-    
-    long ☃ = System.nanoTime();
-    this.y.a(☃ - this.z);
-    this.z = ☃;
-    while (J() >= this.H + 1000L)
+    I += 1;
+    af = ((F()) && (m != null) && (m.d()) && (!aj.b()));
+    long k = System.nanoTime();
+    y.a(k - z);
+    z = k;
+    while (J() >= H + 1000L)
     {
-      ao = this.I;
-      this.C = String.format("%d fps (%d chunk update%s) T: %s%s%s%s%s", new Object[] { Integer.valueOf(ao), Integer.valueOf(bht.a), bht.a != 1 ? "s" : "", this.t.g == avh.a.i.f() ? "inf" : Integer.valueOf(this.t.g), this.t.t ? " vsync" : "", this.t.i ? "" : " fast", this.t.h == 1 ? " fast-clouds" : this.t.h == 0 ? "" : " fancy-clouds", bqs.f() ? " vbo" : "" });
-      
+      ao = I;
+      C = String.format("%d fps (%d chunk update%s) T: %s%s%s%s%s", new Object[] { Integer.valueOf(ao), Integer.valueOf(bht.a), bht.a != 1 ? "s" : "", t.g == avh.a.i.f() ? "inf" : Integer.valueOf(t.g), t.t ? " vsync" : "", t.i ? "" : " fast", t.h == 1 ? " fast-clouds" : t.h == 0 ? "" : " fancy-clouds", bqs.f() ? " vbo" : "" });
       bht.a = 0;
-      this.H += 1000L;
-      this.I = 0;
-      this.Z.b();
-      if (!this.Z.d()) {
-        this.Z.a();
+      H += 1000L;
+      I = 0;
+      Z.b();
+      if (!Z.d()) {
+        Z.a();
       }
     }
     if (k())
     {
-      this.A.a("fpslimit_wait");
+      A.a("fpslimit_wait");
       Display.sync(j());
-      this.A.b();
+      A.b();
     }
-    this.A.b();
+    A.b();
   }
   
   public void h()
   {
-    this.A.a("display_update");
+    A.a("display_update");
     Display.update();
-    this.A.b();
+    A.b();
     i();
   }
   
   protected void i()
   {
-    if ((!this.T) && (Display.wasResized()))
+    if ((!T) && (Display.wasResized()))
     {
-      int ☃ = this.d;
-      int ☃ = this.e;
-      this.d = Display.getWidth();
-      this.e = Display.getHeight();
-      if ((this.d != ☃) || (this.e != ☃))
+      int i = d;
+      int j = e;
+      d = Display.getWidth();
+      e = Display.getHeight();
+      if ((d != i) || (e != j))
       {
-        if (this.d <= 0) {
-          this.d = 1;
+        if (d <= 0) {
+          d = 1;
         }
-        if (this.e <= 0) {
-          this.e = 1;
+        if (e <= 0) {
+          e = 1;
         }
-        a(this.d, this.e);
+        a(d, e);
       }
     }
   }
   
   public int j()
   {
-    if ((this.f == null) && (this.m != null)) {
-      return 30;
-    }
-    return this.t.g;
+    return (f == null) && (m != null) ? 30 : t.g;
   }
   
   public boolean k()
@@ -969,294 +1064,280 @@ public class ave
     try
     {
       b = new byte[0];
-      this.g.k();
+      g.k();
     }
     catch (Throwable localThrowable) {}
     try
     {
       System.gc();
-      a(null);
+      a((bdb)null);
     }
     catch (Throwable localThrowable1) {}
     System.gc();
   }
   
-  long J = -1L;
-  private String aR = "root";
-  
-  private void b(int ☃)
+  private void b(int keyCount)
   {
-    List<nt.a> ☃ = this.A.b(this.aR);
-    if ((☃ == null) || (☃.isEmpty())) {
-      return;
-    }
-    nt.a ☃ = (nt.a)☃.remove(0);
-    if (☃ == 0)
+    List<nt.a> list = A.b(aR);
+    if ((list != null) && (!list.isEmpty()))
     {
-      if (☃.c.length() > 0)
+      nt.a profiler$result = (nt.a)list.remove(0);
+      if (keyCount == 0)
       {
-        int ☃ = this.aR.lastIndexOf(".");
-        if (☃ >= 0) {
-          this.aR = this.aR.substring(0, ☃);
+        if (c.length() > 0)
+        {
+          int i = aR.lastIndexOf(".");
+          if (i >= 0) {
+            aR = aR.substring(0, i);
+          }
         }
       }
-    }
-    else
-    {
-      ☃--;
-      if ((☃ < ☃.size()) && (!((nt.a)☃.get(☃)).c.equals("unspecified")))
+      else
       {
-        if (this.aR.length() > 0) {
-          this.aR += ".";
+        keyCount--;
+        if ((keyCount < list.size()) && (!getc.equals("unspecified")))
+        {
+          if (aR.length() > 0) {
+            aR += ".";
+          }
+          aR += getc;
         }
-        this.aR += ((nt.a)☃.get(☃)).c;
       }
     }
   }
   
-  private void a(long ☃)
+  private void a(long elapsedTicksTime)
   {
-    if (!this.A.a) {
-      return;
-    }
-    List<nt.a> ☃ = this.A.b(this.aR);
-    nt.a ☃ = (nt.a)☃.remove(0);
-    
-    bfl.m(256);
-    bfl.n(5889);
-    bfl.g();
-    bfl.D();
-    bfl.a(0.0D, this.d, this.e, 0.0D, 1000.0D, 3000.0D);
-    bfl.n(5888);
-    bfl.D();
-    bfl.b(0.0F, 0.0F, -2000.0F);
-    
-    GL11.glLineWidth(1.0F);
-    bfl.x();
-    bfx ☃ = bfx.a();
-    bfd ☃ = ☃.c();
-    
-    int ☃ = 160;
-    int ☃ = this.d - ☃ - 10;
-    int ☃ = this.e - ☃ * 2;
-    bfl.l();
-    ☃.a(7, bms.f);
-    ☃.b(☃ - ☃ * 1.1F, ☃ - ☃ * 0.6F - 16.0F, 0.0D).b(200, 0, 0, 0).d();
-    ☃.b(☃ - ☃ * 1.1F, ☃ + ☃ * 2, 0.0D).b(200, 0, 0, 0).d();
-    ☃.b(☃ + ☃ * 1.1F, ☃ + ☃ * 2, 0.0D).b(200, 0, 0, 0).d();
-    ☃.b(☃ + ☃ * 1.1F, ☃ - ☃ * 0.6F - 16.0F, 0.0D).b(200, 0, 0, 0).d();
-    ☃.b();
-    bfl.k();
-    
-    double ☃ = 0.0D;
-    for (int ☃ = 0; ☃ < ☃.size(); ☃++)
+    if (A.a)
     {
-      nt.a ☃ = (nt.a)☃.get(☃);
-      
-      int ☃ = ns.c(☃.a / 4.0D) + 1;
-      
-      ☃.a(6, bms.f);
-      int ☃ = ☃.a();
-      int ☃ = ☃ >> 16 & 0xFF;
-      int ☃ = ☃ >> 8 & 0xFF;
-      int ☃ = ☃ & 0xFF;
-      ☃.b(☃, ☃, 0.0D).b(☃, ☃, ☃, 255).d();
-      for (int ☃ = ☃; ☃ >= 0; ☃--)
+      List<nt.a> list = A.b(aR);
+      nt.a profiler$result = (nt.a)list.remove(0);
+      bfl.m(256);
+      bfl.n(5889);
+      bfl.g();
+      bfl.D();
+      bfl.a(0.0D, d, e, 0.0D, 1000.0D, 3000.0D);
+      bfl.n(5888);
+      bfl.D();
+      bfl.b(0.0F, 0.0F, -2000.0F);
+      GL11.glLineWidth(1.0F);
+      bfl.x();
+      bfx tessellator = bfx.a();
+      bfd worldrenderer = tessellator.c();
+      int i = 160;
+      int j = d - i - 10;
+      int k = e - i * 2;
+      bfl.l();
+      worldrenderer.a(7, bms.f);
+      worldrenderer.b(j - i * 1.1F, k - i * 0.6F - 16.0F, 0.0D).b(200, 0, 0, 0).d();
+      worldrenderer.b(j - i * 1.1F, k + i * 2, 0.0D).b(200, 0, 0, 0).d();
+      worldrenderer.b(j + i * 1.1F, k + i * 2, 0.0D).b(200, 0, 0, 0).d();
+      worldrenderer.b(j + i * 1.1F, k - i * 0.6F - 16.0F, 0.0D).b(200, 0, 0, 0).d();
+      tessellator.b();
+      bfl.k();
+      double d0 = 0.0D;
+      for (int l = 0; l < list.size(); l++)
       {
-        float ☃ = (float)((☃ + ☃.a * ☃ / ☃) * 3.1415927410125732D * 2.0D / 100.0D);
-        float ☃ = ns.a(☃) * ☃;
-        float ☃ = ns.b(☃) * ☃ * 0.5F;
-        ☃.b(☃ + ☃, ☃ - ☃, 0.0D).b(☃, ☃, ☃, 255).d();
+        nt.a profiler$result1 = (nt.a)list.get(l);
+        int i1 = ns.c(a / 4.0D) + 1;
+        worldrenderer.a(6, bms.f);
+        int j1 = profiler$result1.a();
+        int k1 = j1 >> 16 & 0xFF;
+        int l1 = j1 >> 8 & 0xFF;
+        int i2 = j1 & 0xFF;
+        worldrenderer.b(j, k, 0.0D).b(k1, l1, i2, 255).d();
+        for (int j2 = i1; j2 >= 0; j2--)
+        {
+          float f = (float)((d0 + a * j2 / i1) * 3.141592653589793D * 2.0D / 100.0D);
+          float f1 = ns.a(f) * i;
+          float f2 = ns.b(f) * i * 0.5F;
+          worldrenderer.b(j + f1, k - f2, 0.0D).b(k1, l1, i2, 255).d();
+        }
+        tessellator.b();
+        worldrenderer.a(5, bms.f);
+        for (int i3 = i1; i3 >= 0; i3--)
+        {
+          float f3 = (float)((d0 + a * i3 / i1) * 3.141592653589793D * 2.0D / 100.0D);
+          float f4 = ns.a(f3) * i;
+          float f5 = ns.b(f3) * i * 0.5F;
+          worldrenderer.b(j + f4, k - f5, 0.0D).b(k1 >> 1, l1 >> 1, i2 >> 1, 255).d();
+          worldrenderer.b(j + f4, k - f5 + 10.0F, 0.0D).b(k1 >> 1, l1 >> 1, i2 >> 1, 255).d();
+        }
+        tessellator.b();
+        d0 += a;
       }
-      ☃.b();
-      
-      ☃.a(5, bms.f);
-      for (int ☃ = ☃; ☃ >= 0; ☃--)
-      {
-        float ☃ = (float)((☃ + ☃.a * ☃ / ☃) * 3.1415927410125732D * 2.0D / 100.0D);
-        float ☃ = ns.a(☃) * ☃;
-        float ☃ = ns.b(☃) * ☃ * 0.5F;
-        ☃.b(☃ + ☃, ☃ - ☃, 0.0D).b(☃ >> 1, ☃ >> 1, ☃ >> 1, 255).d();
-        ☃.b(☃ + ☃, ☃ - ☃ + 10.0F, 0.0D).b(☃ >> 1, ☃ >> 1, ☃ >> 1, 255).d();
+      DecimalFormat decimalformat = new DecimalFormat("##0.00");
+      bfl.w();
+      String s = "";
+      if (!c.equals("unspecified")) {
+        s = s + "[0] ";
       }
-      ☃.b();
-      
-      ☃ += ☃.a;
-    }
-    DecimalFormat ☃ = new DecimalFormat("##0.00");
-    
-    bfl.w();
-    
-    String ☃ = "";
-    if (!☃.c.equals("unspecified")) {
-      ☃ = ☃ + "[0] ";
-    }
-    if (☃.c.length() == 0) {
-      ☃ = ☃ + "ROOT ";
-    } else {
-      ☃ = ☃ + ☃.c + " ";
-    }
-    int ☃ = 16777215;
-    this.k.a(☃, ☃ - ☃, ☃ - ☃ / 2 - 16, ☃);
-    this.k.a(☃ = ☃.format(☃.b) + "%", ☃ + ☃ - this.k.a(☃), ☃ - ☃ / 2 - 16, ☃);
-    for (int ☃ = 0; ☃ < ☃.size(); ☃++)
-    {
-      nt.a ☃ = (nt.a)☃.get(☃);
-      String ☃ = "";
-      if (☃.c.equals("unspecified")) {
-        ☃ = ☃ + "[?] ";
+      if (c.length() == 0) {
+        s = s + "ROOT ";
       } else {
-        ☃ = ☃ + "[" + (☃ + 1) + "] ";
+        s = s + c + " ";
       }
-      ☃ = ☃ + ☃.c;
-      this.k.a(☃, ☃ - ☃, ☃ + ☃ / 2 + ☃ * 8 + 20, ☃.a());
-      this.k.a(☃ = ☃.format(☃.a) + "%", ☃ + ☃ - 50 - this.k.a(☃), ☃ + ☃ / 2 + ☃ * 8 + 20, ☃.a());
-      this.k.a(☃ = ☃.format(☃.b) + "%", ☃ + ☃ - this.k.a(☃), ☃ + ☃ / 2 + ☃ * 8 + 20, ☃.a());
+      int l2 = 16777215;
+      this.k.a(s, j - i, k - i / 2 - 16, l2);
+      this.k.a(s = decimalformat.format(b) + "%", j + i - this.k.a(s), k - i / 2 - 16, l2);
+      for (int k2 = 0; k2 < list.size(); k2++)
+      {
+        nt.a profiler$result2 = (nt.a)list.get(k2);
+        String s1 = "";
+        if (c.equals("unspecified")) {
+          s1 = s1 + "[?] ";
+        } else {
+          s1 = s1 + "[" + (k2 + 1) + "] ";
+        }
+        s1 = s1 + c;
+        this.k.a(s1, j - i, k + i / 2 + k2 * 8 + 20, profiler$result2.a());
+        this.k.a(s1 = decimalformat.format(a) + "%", j + i - 50 - this.k.a(s1), k + i / 2 + k2 * 8 + 20, profiler$result2.a());
+        this.k.a(s1 = decimalformat.format(b) + "%", j + i - this.k.a(s1), k + i / 2 + k2 * 8 + 20, profiler$result2.a());
+      }
     }
   }
   
   public void m()
   {
-    this.B = false;
+    B = false;
   }
   
   public void n()
   {
-    if (!Display.isActive()) {
-      return;
+    if (Display.isActive()) {
+      if (!w)
+      {
+        w = true;
+        u.a();
+        a((axu)null);
+        ag = 10000;
+      }
     }
-    if (this.w) {
-      return;
-    }
-    this.w = true;
-    this.u.a();
-    a(null);
-    this.ag = 10000;
   }
   
   public void o()
   {
-    if (!this.w) {
-      return;
+    if (w)
+    {
+      avb.a();
+      w = false;
+      u.b();
     }
-    avb.a();
-    this.w = false;
-    this.u.b();
   }
   
   public void p()
   {
-    if (this.m != null) {
-      return;
-    }
-    a(new axp());
-    if ((F()) && (!this.aj.b())) {
-      this.aH.a();
+    if (m == null)
+    {
+      a(new axp());
+      if ((F()) && (!aj.b())) {
+        aH.a();
+      }
     }
   }
   
-  private void b(boolean ☃)
+  private void b(boolean leftClick)
   {
-    if (!☃) {
-      this.ag = 0;
+    if (!leftClick) {
+      ag = 0;
     }
-    if ((this.ag > 0) || (this.h.bS())) {
-      return;
-    }
-    if ((☃) && (this.s != null) && (this.s.a == auh.a.b))
-    {
-      cj ☃ = this.s.a();
-      if ((this.f.p(☃).c().t() != arm.a) && 
-        (this.c.c(☃, this.s.b)))
+    if ((ag <= 0) && ((!h.bS()) || ((settingsoldBlockBuild) && (Allowed.blockBuild())))) {
+      if ((leftClick) && (s != null) && (s.a == auh.a.b))
       {
-        this.j.a(☃, this.s.b);
-        this.h.bw();
+        cj blockpos = s.a();
+        if ((f.p(blockpos).c().t() != arm.a) && (c.c(blockpos, s.b)))
+        {
+          j.a(blockpos, s.b);
+          h.bw();
+        }
       }
-      return;
+      else
+      {
+        c.c();
+      }
     }
-    this.c.c();
   }
   
   private void aw()
   {
-    if (this.ag > 0) {
-      return;
-    }
-    this.h.bw();
-    if (this.s == null)
+    if (ag <= 0)
     {
-      K.error("Null returned as 'hitResult', this shouldn't happen!");
-      if (this.c.g()) {
-        this.ag = 10;
+      h.bw();
+      if (s == null)
+      {
+        K.error("Null returned as 'hitResult', this shouldn't happen!");
+        if (c.g()) {
+          ag = 10;
+        }
       }
-      return;
-    }
-    switch (ave.10.a[this.s.a.ordinal()])
-    {
-    case 1: 
-      this.c.a(this.h, this.s.d);
-      break;
-    case 2: 
-      cj ☃ = this.s.a();
-      if (this.f.p(☃).c().t() != arm.a) {
-        this.c.b(☃, this.s.b);
+      else
+      {
+        switch (s.a)
+        {
+        case c: 
+          c.a(h, s.d);
+          break;
+        case b: 
+          cj blockpos = s.a();
+          if (f.p(blockpos).c().t() != arm.a) {
+            c.b(blockpos, s.b);
+          }
+          break;
+        }
+        if (c.g()) {
+          ag = 10;
+        }
       }
-      break;
-    }
-    if (this.c.g()) {
-      this.ag = 10;
     }
   }
   
   private void ax()
   {
-    if (this.c.m()) {
-      return;
-    }
-    this.ap = 4;
-    boolean ☃ = true;
-    
-    zx ☃ = this.h.bi.h();
-    if (this.s == null) {
-      K.warn("Null returned as 'hitResult', this shouldn't happen!");
-    } else {
-      switch (ave.10.a[this.s.a.ordinal()])
-      {
-      case 1: 
-        if (this.c.a(this.h, this.s.d, this.s)) {
-          ☃ = false;
-        } else if (this.c.b(this.h, this.s.d)) {
-          ☃ = false;
-        }
-        break;
-      case 2: 
-        cj ☃ = this.s.a();
-        if (this.f.p(☃).c().t() != arm.a)
-        {
-          int ☃ = ☃ != null ? ☃.b : 0;
-          if (this.c.a(this.h, this.f, ☃, ☃, this.s.b, this.s.c))
-          {
-            ☃ = false;
-            this.h.bw();
-          }
-          if (☃ == null) {
-            return;
-          }
-          if (☃.b == 0) {
-            this.h.bi.a[this.h.bi.c] = null;
-          } else if ((☃.b != ☃) || (this.c.h())) {
-            this.o.c.b();
-          }
-        }
-        break;
-      }
-    }
-    if (☃)
+    if (!c.m())
     {
-      zx ☃ = this.h.bi.h();
-      if ((☃ != null) && 
-        (this.c.a(this.h, this.f, ☃))) {
-        this.o.c.c();
+      ap = 4;
+      boolean flag = true;
+      zx itemstack = h.bi.h();
+      if (s == null) {
+        K.warn("Null returned as 'hitResult', this shouldn't happen!");
+      } else {
+        switch (s.a)
+        {
+        case c: 
+          if (c.a(h, s.d, s)) {
+            flag = false;
+          } else if (c.b(h, s.d)) {
+            flag = false;
+          }
+          break;
+        case b: 
+          cj blockpos = s.a();
+          if (f.p(blockpos).c().t() != arm.a)
+          {
+            int i = itemstack != null ? b : 0;
+            if (c.a(h, f, itemstack, blockpos, s.b, s.c))
+            {
+              flag = false;
+              h.bw();
+            }
+            if (itemstack == null) {
+              return;
+            }
+            if (b == 0) {
+              h.bi.a[h.bi.c] = null;
+            } else if ((b != i) || (c.h())) {
+              o.c.b();
+            }
+          }
+          break;
+        }
+      }
+      if (flag)
+      {
+        zx itemstack1 = h.bi.h();
+        if ((itemstack1 != null) && (c.a(h, f, itemstack1))) {
+          o.c.c();
+        }
       }
     }
   }
@@ -1265,391 +1346,398 @@ public class ave
   {
     try
     {
-      this.T = (!this.T);
-      this.t.s = this.T;
-      if (this.T)
+      T = (!T);
+      t.s = T;
+      if (T)
       {
         au();
-        this.d = Display.getDisplayMode().getWidth();
-        this.e = Display.getDisplayMode().getHeight();
-        if (this.d <= 0) {
-          this.d = 1;
+        d = Display.getDisplayMode().getWidth();
+        e = Display.getDisplayMode().getHeight();
+        if (d <= 0) {
+          d = 1;
         }
-        if (this.e <= 0) {
-          this.e = 1;
+        if (e <= 0) {
+          e = 1;
         }
       }
       else
       {
-        Display.setDisplayMode(new DisplayMode(this.ah, this.ai));
-        this.d = this.ah;
-        this.e = this.ai;
-        if (this.d <= 0) {
-          this.d = 1;
+        Display.setDisplayMode(new DisplayMode(ah, ai));
+        d = ah;
+        e = ai;
+        if (d <= 0) {
+          d = 1;
         }
-        if (this.e <= 0) {
-          this.e = 1;
+        if (e <= 0) {
+          e = 1;
         }
       }
-      if (this.m != null) {
-        a(this.d, this.e);
+      if (m != null) {
+        a(d, e);
       } else {
         ay();
       }
-      Display.setFullscreen(this.T);
-      Display.setVSyncEnabled(this.t.t);
+      Display.setFullscreen(T);
+      Display.setVSyncEnabled(t.t);
       h();
     }
-    catch (Exception ☃)
+    catch (Exception exception)
     {
-      K.error("Couldn't toggle fullscreen", ☃);
+      K.error("Couldn't toggle fullscreen", exception);
     }
   }
   
-  private void a(int ☃, int ☃)
+  private void a(int width, int height)
   {
-    this.d = Math.max(1, ☃);
-    this.e = Math.max(1, ☃);
-    if (this.m != null)
+    d = Math.max(1, width);
+    e = Math.max(1, height);
+    if (m != null)
     {
-      avr ☃ = new avr(this);
-      this.m.b(this, ☃.a(), ☃.b());
+      avr scaledresolution = new avr(this);
+      m.b(this, scaledresolution.a(), scaledresolution.b());
     }
-    this.n = new avi(this);
+    n = new avi(this);
     ay();
   }
   
   private void ay()
   {
-    this.aF.a(this.d, this.e);
-    if (this.o != null) {
-      this.o.a(this.d, this.e);
+    aF.a(d, e);
+    if (o != null) {
+      o.a(d, e);
     }
   }
   
   public bpv r()
   {
-    return this.aI;
+    return aI;
   }
   
   public void s()
+    throws IOException
   {
-    if (this.ap > 0) {
-      this.ap -= 1;
+    if (ap > 0) {
+      ap -= 1;
     }
-    this.A.a("gui");
-    if (!this.af) {
-      this.q.c();
+    A.a("gui");
+    if (!af) {
+      q.c();
     }
-    this.A.b();
-    this.o.a(1.0F);
+    LabyMod.getInstance().gameTick();
     
-    this.A.a("gameMode");
-    if ((!this.af) && (this.f != null)) {
-      this.c.e();
+    A.b();
+    o.a(1.0F);
+    A.a("gameMode");
+    if ((!af) && (this.f != null)) {
+      c.e();
     }
-    this.A.c("textures");
-    if (!this.af) {
-      this.R.e();
+    A.c("textures");
+    if (!af) {
+      R.e();
     }
-    if ((this.m == null) && (this.h != null))
+    if ((m == null) && (h != null))
     {
-      if (this.h.bn() <= 0.0F) {
-        a(null);
-      } else if ((this.h.bJ()) && (this.f != null)) {
+      if (h.bn() <= 0.0F) {
+        a((axu)null);
+      } else if ((h.bJ()) && (this.f != null)) {
         a(new axk());
       }
     }
-    else if ((this.m != null) && ((this.m instanceof axk)) && (!this.h.bJ())) {
-      a(null);
+    else if ((m != null) && ((m instanceof axk)) && (!h.bJ())) {
+      a((axu)null);
     }
-    if (this.m != null) {
-      this.ag = 10000;
+    if (m != null) {
+      ag = 10000;
     }
-    if (this.m != null)
+    if (m != null)
     {
       try
       {
-        this.m.p();
+        m.p();
       }
-      catch (Throwable ☃)
+      catch (Throwable throwable1)
       {
-        b ☃ = b.a(☃, "Updating screen events");
-        c ☃ = ☃.a("Affected screen");
-        ☃.a("Screen name", new Callable()
+        b crashreport = b.a(throwable1, "Updating screen events");
+        c crashreportcategory = crashreport.a("Affected screen");
+        crashreportcategory.a("Screen name", new Callable()
         {
           public String a()
             throws Exception
           {
-            return ave.this.m.getClass().getCanonicalName();
+            return m.getClass().getCanonicalName();
           }
         });
-        throw new e(☃);
+        throw new e(crashreport);
       }
-      if (this.m != null) {
+      if (m != null) {
         try
         {
-          this.m.e();
+          m.e();
         }
-        catch (Throwable ☃)
+        catch (Throwable throwable)
         {
-          b ☃ = b.a(☃, "Ticking screen");
-          c ☃ = ☃.a("Affected screen");
-          ☃.a("Screen name", new Callable()
+          b crashreport1 = b.a(throwable, "Ticking screen");
+          c crashreportcategory1 = crashreport1.a("Affected screen");
+          crashreportcategory1.a("Screen name", new Callable()
           {
             public String a()
               throws Exception
             {
-              return ave.this.m.getClass().getCanonicalName();
+              return m.getClass().getCanonicalName();
             }
           });
-          throw new e(☃);
+          throw new e(crashreport1);
         }
       }
     }
-    if ((this.m == null) || (this.m.p))
+    if ((m == null) || (m.p))
     {
-      this.A.c("mouse");
+      A.c("mouse");
       while (Mouse.next())
       {
-        int ☃ = Mouse.getEventButton();
-        
-        avb.a(☃ - 100, Mouse.getEventButtonState());
+        int i = Mouse.getEventButton();
+        avb.a(i - 100, Mouse.getEventButtonState());
         if (Mouse.getEventButtonState()) {
-          if ((this.h.v()) && (☃ == 2)) {
-            this.q.g().b();
+          if ((h.v()) && (i == 2)) {
+            q.g().b();
           } else {
-            avb.a(☃ - 100);
+            avb.a(i - 100);
           }
         }
-        long ☃ = J() - this.x;
-        if (☃ <= 200L)
+        long i1 = J() - x;
+        if (i1 <= 200L)
         {
-          int ☃ = Mouse.getEventDWheel();
-          if (☃ != 0) {
-            if (this.h.v())
+          int j = Mouse.getEventDWheel();
+          if (j != 0) {
+            if (h.v())
             {
-              ☃ = ☃ < 0 ? -1 : 1;
-              if (this.q.g().a())
+              j = j < 0 ? -1 : 1;
+              if (q.g().a())
               {
-                this.q.g().b(-☃);
+                q.g().b(-j);
               }
               else
               {
-                float ☃ = ns.a(this.h.bA.a() + ☃ * 0.005F, 0.0F, 0.2F);
-                this.h.bA.a(☃);
+                float f = ns.a(h.bA.a() + j * 0.005F, 0.0F, 0.2F);
+                h.bA.a(f);
               }
             }
             else
             {
-              this.h.bi.d(☃);
+              h.bi.d(j);
             }
           }
-          if (this.m == null)
+          if (m == null)
           {
-            if ((!this.w) && (Mouse.getEventButtonState())) {
+            if ((!w) && (Mouse.getEventButtonState())) {
               n();
             }
           }
-          else if (this.m != null) {
-            this.m.k();
+          else if (m != null) {
+            m.k();
           }
         }
       }
-      if (this.ag > 0) {
-        this.ag -= 1;
+      if (ag > 0) {
+        ag -= 1;
       }
-      this.A.c("keyboard");
+      A.c("keyboard");
       while (Keyboard.next())
       {
-        int ☃ = Keyboard.getEventKey() == 0 ? Keyboard.getEventCharacter() + 'Ā' : Keyboard.getEventKey();
-        avb.a(☃, Keyboard.getEventKeyState());
+        int k = Keyboard.getEventKey() == 0 ? Keyboard.getEventCharacter() + 'Ā' : Keyboard.getEventKey();
+        avb.a(k, Keyboard.getEventKeyState());
         if (Keyboard.getEventKeyState()) {
-          avb.a(☃);
+          avb.a(k);
         }
-        if (this.ax > 0L)
+        if (ax > 0L)
         {
-          if (J() - this.ax >= 6000L) {
+          if (J() - ax >= 6000L) {
             throw new e(new b("Manually triggered debug crash", new Throwable()));
           }
           if ((!Keyboard.isKeyDown(46)) || (!Keyboard.isKeyDown(61))) {
-            this.ax = -1L;
+            ax = -1L;
           }
         }
         else if ((Keyboard.isKeyDown(46)) && (Keyboard.isKeyDown(61)))
         {
-          this.ax = J();
+          ax = J();
         }
         Z();
         if (Keyboard.getEventKeyState())
         {
-          if ((☃ == 62) && 
-            (this.o != null)) {
-            this.o.c();
+          if ((k == 62) && (o != null)) {
+            if (!cancelShader) {
+              o.c();
+            }
           }
-          if (this.m != null)
+          if (m != null)
           {
-            this.m.l();
+            m.l();
           }
           else
           {
-            if (☃ == 1) {
+            if (k == 1) {
               p();
             }
-            if ((☃ == 32) && (Keyboard.isKeyDown(61)) && 
-              (this.q != null)) {
-              this.q.d().a();
+            if ((k == 32) && (Keyboard.isKeyDown(61)) && (q != null)) {
+              q.d().a();
             }
-            if ((☃ == 31) && (Keyboard.isKeyDown(61))) {
+            if ((k == 31) && (Keyboard.isKeyDown(61))) {
               e();
             }
-            if (((☃ != 17) || (!Keyboard.isKeyDown(61))) || (
+            if (((k != 17) || (!Keyboard.isKeyDown(61))) || (
             
-              ((☃ != 18) || (!Keyboard.isKeyDown(61))) || (
+              ((k != 18) || (!Keyboard.isKeyDown(61))) || (
               
-              ((☃ != 47) || (!Keyboard.isKeyDown(61))) || (
+              ((k != 47) || (!Keyboard.isKeyDown(61))) || (
               
-              ((☃ != 38) || (!Keyboard.isKeyDown(61))) || (
+              ((k != 38) || (!Keyboard.isKeyDown(61))) || (
               
-              ((☃ != 22) || (!Keyboard.isKeyDown(61))) || (
+              ((k != 22) || (!Keyboard.isKeyDown(61))) || (
               
-              (☃ == 20) && (Keyboard.isKeyDown(61)))))))) {
+              (k == 20) && (Keyboard.isKeyDown(61)))))))) {
               e();
             }
-            if ((☃ == 33) && (Keyboard.isKeyDown(61))) {
-              this.t.a(avh.a.f, axu.r() ? -1 : 1);
+            if ((k == 33) && (Keyboard.isKeyDown(61))) {
+              t.a(avh.a.f, axu.r() ? -1 : 1);
             }
-            if ((☃ == 30) && (Keyboard.isKeyDown(61))) {
-              this.g.a();
+            if ((k == 30) && (Keyboard.isKeyDown(61))) {
+              g.a();
             }
-            if ((☃ == 35) && (Keyboard.isKeyDown(61)))
+            if ((k == 35) && (Keyboard.isKeyDown(61)))
             {
-              this.t.y = (!this.t.y);
-              this.t.b();
+              t.y = (!t.y);
+              t.b();
             }
-            if ((☃ == 48) && (Keyboard.isKeyDown(61))) {
-              this.aa.b(!this.aa.b());
+            if ((k == 48) && (Keyboard.isKeyDown(61))) {
+              aa.b(!aa.b());
             }
-            if ((☃ == 25) && (Keyboard.isKeyDown(61)))
+            if ((k == 25) && (Keyboard.isKeyDown(61)))
             {
-              this.t.z = (!this.t.z);
-              this.t.b();
+              t.z = (!t.z);
+              t.b();
             }
-            if (☃ == 59) {
-              this.t.az = (!this.t.az);
+            if (k == 59) {
+              t.az = (!t.az);
             }
-            if (☃ == 61)
+            if (k == 61)
             {
-              this.t.aB = (!this.t.aB);
-              this.t.aC = axu.r();
-              this.t.aD = axu.s();
+              t.aB = (!t.aB);
+              t.aC = axu.r();
+              t.aD = axu.s();
             }
-            if (this.t.an.f())
+            if (t.an.f())
             {
-              this.t.aA += 1;
-              if (this.t.aA > 2) {
-                this.t.aA = 0;
+              t.aA += 1;
+              if (t.aA > 2) {
+                t.aA = 0;
               }
-              if (this.t.aA == 0) {
-                this.o.a(ac());
-              } else if (this.t.aA == 1) {
-                this.o.a(null);
+              if (!cancelShader) {
+                if (t.aA == 0) {
+                  o.a(ac());
+                } else if (t.aA == 1) {
+                  o.a((pk)null);
+                }
               }
-              this.g.m();
+              g.m();
             }
-            if (this.t.ao.f()) {
-              this.t.aF = (!this.t.aF);
+            if (t.ao.f()) {
+              t.aF = (!t.aF);
             }
           }
-          if ((this.t.aB) && (this.t.aC))
+          if ((t.aB) && (t.aC))
           {
-            if (☃ == 11) {
+            if (k == 11) {
               b(0);
             }
-            for (int ☃ = 0; ☃ < 9; ☃++) {
-              if (☃ == 2 + ☃) {
-                b(☃ + 1);
+            for (int j1 = 0; j1 < 9; j1++) {
+              if (k == 2 + j1) {
+                b(j1 + 1);
               }
             }
           }
         }
       }
-      for (int ☃ = 0; ☃ < 9; ☃++) {
-        if (this.t.av[☃].f()) {
-          if (this.h.v()) {
-            this.q.g().a(☃);
+      for (int l = 0; l < 9; l++) {
+        if (t.av[l].f()) {
+          if (h.v()) {
+            q.g().a(l);
           } else {
-            this.h.bi.c = ☃;
+            h.bi.c = l;
           }
         }
       }
-      boolean ☃ = this.t.m != wn.b.c;
-      while (this.t.ae.f()) {
-        if (this.c.j())
+      boolean flag = t.m != wn.b.c;
+      while (t.ae.f()) {
+        if (c.j())
         {
-          this.h.u();
+          h.u();
         }
         else
         {
           u().a(new ig(ig.a.c));
-          a(new azc(this.h));
+          a(new azc(h));
         }
       }
-      while (this.t.ag.f()) {
-        if (!this.h.v()) {
-          this.h.a(axu.q());
+      while (t.ag.f()) {
+        if (!h.v()) {
+          h.a(axu.q());
         }
       }
-      while ((this.t.aj.f()) && (☃)) {
+      while ((t.aj.f()) && (flag)) {
         a(new awv());
       }
-      if ((this.m == null) && (this.t.al.f()) && (☃)) {
+      if ((m == null) && (t.al.f()) && (flag)) {
         a(new awv("/"));
       }
-      if (this.h.bS())
+      if (h.bS())
       {
-        if (!this.t.af.d()) {
-          this.c.c(this.h);
+        if (!t.af.d()) {
+          c.c(h);
         }
-        while (this.t.ah.f()) {}
-        while (this.t.af.f()) {}
-        while (this.t.ai.f()) {}
+        while (t.ah.f()) {}
+        while (t.af.f()) {}
+        while (t.ai.f()) {}
       }
-      while (this.t.ah.f()) {
+      while (t.ah.f())
+      {
         aw();
+        ClickCounter.click();
       }
-      while (this.t.af.f()) {
+      while (t.af.f())
+      {
         ax();
+        ClickCounter.click();
       }
-      while (this.t.ai.f()) {
+      while (t.ai.f()) {
         az();
       }
-      if ((this.t.af.d()) && (this.ap == 0) && (!this.h.bS())) {
+      if ((t.af.d()) && (ap == 0) && (!h.bS())) {
         ax();
       }
-      b((this.m == null) && (this.t.ah.d()) && (this.w));
+      b((m == null) && (t.ah.d()) && (w));
     }
     if (this.f != null)
     {
-      if (this.h != null)
+      if (h != null)
       {
-        this.as += 1;
-        if (this.as == 30)
+        as += 1;
+        if (as == 30)
         {
-          this.as = 0;
-          this.f.h(this.h);
+          as = 0;
+          this.f.h(h);
         }
       }
-      this.A.c("gameRenderer");
-      if (!this.af) {
-        this.o.e();
+      A.c("gameRenderer");
+      if (!af) {
+        o.e();
       }
-      this.A.c("levelRenderer");
-      if (!this.af) {
-        this.g.j();
+      A.c("levelRenderer");
+      if (!af) {
+        g.j();
       }
-      this.A.c("level");
-      if (!this.af)
+      A.c("level");
+      if (!af)
       {
         if (this.f.ac() > 0) {
           this.f.d(this.f.ac() - 1);
@@ -1657,97 +1745,93 @@ public class ave
         this.f.i();
       }
     }
-    else if (this.o.a())
+    else if (o.a())
     {
-      this.o.b();
+      o.b();
     }
-    if (!this.af)
+    if (!af)
     {
-      this.aI.c();
-      this.aH.c();
+      aI.c();
+      aH.c();
     }
     if (this.f != null)
     {
-      if (!this.af)
+      if (!af)
       {
         this.f.a(this.f.aa() != oj.a, true);
         try
         {
           this.f.c();
         }
-        catch (Throwable ☃)
+        catch (Throwable throwable2)
         {
-          b ☃ = b.a(☃, "Exception in world tick");
+          b crashreport2 = b.a(throwable2, "Exception in world tick");
           if (this.f == null)
           {
-            c ☃ = ☃.a("Affected level");
-            ☃.a("Problem", "Level is null!");
+            c crashreportcategory2 = crashreport2.a("Affected level");
+            crashreportcategory2.a("Problem", "Level is null!");
           }
           else
           {
-            this.f.a(☃);
+            this.f.a(crashreport2);
           }
-          throw new e(☃);
+          throw new e(crashreport2);
         }
       }
-      this.A.c("animateTick");
-      if ((!this.af) && (this.f != null)) {
-        this.f.b(ns.c(this.h.s), ns.c(this.h.t), ns.c(this.h.u));
+      A.c("animateTick");
+      if ((!af) && (this.f != null)) {
+        this.f.b(ns.c(h.s), ns.c(h.t), ns.c(h.u));
       }
-      this.A.c("particles");
-      if (!this.af) {
+      A.c("particles");
+      if (!af) {
         this.j.a();
       }
     }
-    else if (this.av != null)
+    else if (av != null)
     {
-      this.A.c("pendingConnection");
-      this.av.a();
+      A.c("pendingConnection");
+      av.a();
     }
-    this.A.b();
-    
-    this.x = J();
+    A.b();
+    x = J();
   }
   
-  public void a(String ☃, String ☃, adp ☃)
+  public void a(String folderName, String worldName, adp worldSettingsIn)
   {
-    a(null);
+    a((bdb)null);
     System.gc();
-    
-    atp ☃ = this.an.a(☃, false);
-    ato ☃ = ☃.d();
-    if ((☃ == null) && (☃ != null))
+    atp isavehandler = an.a(folderName, false);
+    ato worldinfo = isavehandler.d();
+    if ((worldinfo == null) && (worldSettingsIn != null))
     {
-      ☃ = new ato(☃, ☃);
-      ☃.a(☃);
+      worldinfo = new ato(worldSettingsIn, folderName);
+      isavehandler.a(worldinfo);
     }
-    if (☃ == null) {
-      ☃ = new adp(☃);
+    if (worldSettingsIn == null) {
+      worldSettingsIn = new adp(worldinfo);
     }
     try
     {
-      this.aj = new bpo(this, ☃, ☃, ☃);
-      this.aj.D();
-      this.aw = true;
+      aj = new bpo(this, folderName, worldName, worldSettingsIn);
+      aj.D();
+      aw = true;
     }
-    catch (Throwable ☃)
+    catch (Throwable throwable)
     {
-      b ☃ = b.a(☃, "Starting integrated server");
-      c ☃ = ☃.a("Starting integrated server");
-      
-      ☃.a("Level ID", ☃);
-      ☃.a("Level Name", ☃);
-      
-      throw new e(☃);
+      b crashreport = b.a(throwable, "Starting integrated server");
+      c crashreportcategory = crashreport.a("Starting integrated server");
+      crashreportcategory.a("Level ID", folderName);
+      crashreportcategory.a("Level Name", worldName);
+      throw new e(crashreport);
     }
-    this.n.a(bnq.a("menu.loadingLevel", new Object[0]));
-    while (!this.aj.ar())
+    n.a(bnq.a("menu.loadingLevel", new Object[0]));
+    while (!aj.ar())
     {
-      String ☃ = this.aj.j();
-      if (☃ != null) {
-        this.n.c(bnq.a(☃, new Object[0]));
+      String s = aj.j();
+      if (s != null) {
+        n.c(bnq.a(s, new Object[0]));
       } else {
-        this.n.c("");
+        n.c("");
       }
       try
       {
@@ -1755,382 +1839,372 @@ public class ave
       }
       catch (InterruptedException localInterruptedException) {}
     }
-    a(null);
-    
-    SocketAddress ☃ = this.aj.aq().a();
-    ek ☃ = ek.a(☃);
-    ☃.a(new bcx(☃, this, null));
-    ☃.a(new jc(47, ☃.toString(), 0, el.d));
-    ☃.a(new jl(L().e()));
-    this.av = ☃;
+    a((axu)null);
+    SocketAddress socketaddress = aj.aq().a();
+    ek networkmanager = ek.a(socketaddress);
+    networkmanager.a(new bcx(networkmanager, this, (axu)null));
+    networkmanager.a(new jc(47, socketaddress.toString(), 0, el.d));
+    networkmanager.a(new jl(L().e()));
+    av = networkmanager;
   }
   
-  public void a(bdb ☃)
+  public void a(bdb worldClientIn)
   {
-    a(☃, "");
+    a(worldClientIn, "");
   }
   
-  public void a(bdb ☃, String ☃)
+  public void a(bdb worldClientIn, String loadingMessage)
   {
-    if (☃ == null)
+    if (worldClientIn == null)
     {
-      bcy ☃ = u();
-      if (☃ != null) {
-        ☃.b();
+      bcy nethandlerplayclient = u();
+      if (nethandlerplayclient != null) {
+        nethandlerplayclient.b();
       }
-      if ((this.aj != null) && (this.aj.O()))
+      if ((aj != null) && (aj.O()))
       {
-        this.aj.w();
-        this.aj.a();
+        aj.w();
+        aj.a();
       }
-      this.aj = null;
-      this.p.b();
-      
-      this.o.k().a();
+      aj = null;
+      p.b();
+      o.k().a();
     }
-    this.ad = null;
-    this.av = null;
-    if (this.n != null)
+    ad = null;
+    av = null;
+    if (n != null)
     {
-      this.n.b(☃);
-      this.n.c("");
+      n.b(loadingMessage);
+      n.c("");
     }
-    if ((☃ == null) && (this.f != null))
+    if ((worldClientIn == null) && (f != null))
     {
-      this.aC.f();
-      this.q.i();
-      a(null);
-      this.aw = false;
+      aC.f();
+      q.i();
+      a((bde)null);
+      aw = false;
     }
-    this.aH.b();
-    
-    this.f = ☃;
-    if (☃ != null)
+    aH.b();
+    f = worldClientIn;
+    if (worldClientIn != null)
     {
-      if (this.g != null) {
-        this.g.a(☃);
+      if (g != null) {
+        g.a(worldClientIn);
       }
-      if (this.j != null) {
-        this.j.a(☃);
+      if (j != null) {
+        j.a(worldClientIn);
       }
-      if (this.h == null)
+      if (h == null)
       {
-        this.h = this.c.a(☃, new nb());
-        this.c.b(this.h);
+        h = c.a(worldClientIn, new nb());
+        c.b(h);
       }
-      this.h.I();
-      ☃.d(this.h);
-      
-      this.h.b = new bev(this.t);
-      
-      this.c.a(this.h);
-      this.ad = this.h;
+      h.I();
+      worldClientIn.d(h);
+      h.b = new bev(t);
+      c.a(h);
+      ad = h;
     }
     else
     {
-      this.an.d();
-      this.h = null;
+      an.d();
+      h = null;
     }
     System.gc();
-    this.x = 0L;
+    x = 0L;
   }
   
-  public void a(int ☃)
+  public void a(int dimension)
   {
-    this.f.g();
-    this.f.a();
-    
-    int ☃ = 0;
-    String ☃ = null;
-    if (this.h != null)
+    f.g();
+    f.a();
+    int i = 0;
+    String s = null;
+    if (h != null)
     {
-      ☃ = this.h.F();
-      this.f.e(this.h);
-      ☃ = this.h.w();
+      i = h.F();
+      f.e(h);
+      s = h.w();
     }
-    this.ad = null;
-    bew ☃ = this.h;
-    this.h = this.c.a(this.f, this.h == null ? new nb() : this.h.x());
-    this.h.H().a(☃.H().c());
-    this.h.am = ☃;
-    this.ad = this.h;
-    this.h.I();
-    this.h.f(☃);
-    this.f.d(this.h);
-    this.c.b(this.h);
-    
-    this.h.b = new bev(this.t);
-    this.h.d(☃);
-    this.c.a(this.h);
-    this.h.k(☃.cq());
-    if ((this.m instanceof axe)) {
-      a(null);
+    ad = null;
+    bew entityplayersp = h;
+    h = c.a(f, h == null ? new nb() : h.x());
+    h.H().a(entityplayersp.H().c());
+    h.am = dimension;
+    ad = h;
+    h.I();
+    h.f(s);
+    f.d(h);
+    c.b(h);
+    h.b = new bev(t);
+    h.d(i);
+    c.a(h);
+    h.k(entityplayersp.cq());
+    if ((m instanceof axe)) {
+      a((axu)null);
     }
   }
   
   public final boolean t()
   {
-    return this.au;
+    return au;
   }
   
   public bcy u()
   {
-    if (this.h != null) {
-      return this.h.a;
-    }
-    return null;
+    return h != null ? h.a : null;
   }
   
   public static boolean v()
   {
-    return (S == null) || (!S.t.az);
+    return (S == null) || (!St.az);
   }
   
   public static boolean w()
   {
-    return (S != null) && (S.t.i);
+    return (S != null) && (St.i);
   }
   
   public static boolean x()
   {
-    return (S != null) && (S.t.j != 0);
+    return (S != null) && (St.j != 0);
   }
   
   private void az()
   {
-    if (this.s == null) {
-      return;
-    }
-    boolean ☃ = this.h.bA.d;
-    
-    int ☃ = 0;
-    boolean ☃ = false;
-    akw ☃ = null;
-    if (this.s.a == auh.a.b)
+    if (s != null)
     {
-      cj ☃ = this.s.a();
-      
-      afh ☃ = this.f.p(☃).c();
-      if (☃.t() == arm.a) {
-        return;
-      }
-      zw ☃ = ☃.c(this.f, ☃);
-      if (☃ == null) {
-        return;
-      }
-      if ((☃) && (axu.q())) {
-        ☃ = this.f.s(☃);
-      }
-      afh ☃ = ((☃ instanceof yo)) && (!☃.M()) ? afh.a(☃) : ☃;
-      ☃ = ☃.j(this.f, ☃);
-      ☃ = ☃.k();
-    }
-    else if ((this.s.a == auh.a.c) && (this.s.d != null) && (☃))
-    {
-      zw ☃;
-      if ((this.s.d instanceof uq))
+      boolean flag = h.bA.d;
+      int i = 0;
+      boolean flag1 = false;
+      akw tileentity = null;
+      zw item;
+      if (s.a == auh.a.b)
       {
-        ☃ = zy.an;
+        cj blockpos = s.a();
+        afh block = f.p(blockpos).c();
+        if (block.t() == arm.a) {
+          return;
+        }
+        zw item = block.c(f, blockpos);
+        if (item == null) {
+          return;
+        }
+        if ((flag) && (axu.q())) {
+          tileentity = f.s(blockpos);
+        }
+        afh block1 = ((item instanceof yo)) && (!block.M()) ? afh.a(item) : block;
+        i = block1.j(f, blockpos);
+        flag1 = item.k();
       }
       else
       {
-        zw ☃;
-        if ((this.s.d instanceof up))
-        {
-          ☃ = zy.cn;
+        if ((s.a != auh.a.c) || (s.d == null) || (!flag)) {
+          return;
         }
-        else if ((this.s.d instanceof uo))
+        zw item;
+        if ((s.d instanceof uq))
         {
-          uo ☃ = (uo)this.s.d;
-          zx ☃ = ☃.o();
-          zw ☃;
-          if (☃ == null)
-          {
-            ☃ = zy.bP;
-          }
-          else
-          {
-            zw ☃ = ☃.b();
-            ☃ = ☃.i();
-            ☃ = true;
-          }
-        }
-        else if ((this.s.d instanceof va))
-        {
-          va ☃ = (va)this.s.d;
-          zw ☃;
-          switch (ave.10.b[☃.s().ordinal()])
-          {
-          case 1: 
-            ☃ = zy.aO;
-            break;
-          case 2: 
-            ☃ = zy.aN;
-            break;
-          case 3: 
-            ☃ = zy.ch;
-            break;
-          case 4: 
-            ☃ = zy.ci;
-            break;
-          case 5: 
-            ☃ = zy.cp;
-            break;
-          default: 
-            ☃ = zy.az;
-          }
+          item = zy.an;
         }
         else
         {
-          zw ☃;
-          if ((this.s.d instanceof ux))
+          zw item;
+          if ((s.d instanceof up))
           {
-            ☃ = zy.aE;
+            item = zy.cn;
           }
-          else
+          else if ((s.d instanceof uo))
           {
-            zw ☃;
-            if ((this.s.d instanceof um))
+            uo entityitemframe = (uo)s.d;
+            zx itemstack = entityitemframe.o();
+            zw item;
+            if (itemstack == null)
             {
-              ☃ = zy.cj;
+              item = zy.bP;
             }
             else
             {
-              zw ☃ = zy.bJ;
-              ☃ = pm.a(this.s.d);
-              ☃ = true;
-              if (pm.a.containsKey(Integer.valueOf(☃))) {}
+              zw item = itemstack.b();
+              i = itemstack.i();
+              flag1 = true;
+            }
+          }
+          else
+          {
+            zw item;
+            if ((s.d instanceof va))
+            {
+              va entityminecart = (va)s.d;
+              zw item;
+              zw item;
+              zw item;
+              zw item;
+              zw item;
+              switch (entityminecart.s())
+              {
+              case c: 
+                item = zy.aO;
+                break;
+              case b: 
+                item = zy.aN;
+                break;
+              case d: 
+                item = zy.ch;
+                break;
+              case f: 
+                item = zy.ci;
+                break;
+              case g: 
+                item = zy.cp;
+                break;
+              default: 
+                item = zy.az;
+              }
+            }
+            else
+            {
+              zw item;
+              if ((s.d instanceof ux))
+              {
+                item = zy.aE;
+              }
+              else
+              {
+                zw item;
+                if ((s.d instanceof um))
+                {
+                  item = zy.cj;
+                }
+                else
+                {
+                  item = zy.bJ;
+                  i = pm.a(s.d);
+                  flag1 = true;
+                  if (!pm.a.containsKey(Integer.valueOf(i))) {
+                    return;
+                  }
+                }
+              }
             }
           }
         }
       }
-    }
-    else
-    {
-      return;
-    }
-    zw ☃;
-    wm ☃ = this.h.bi;
-    if (☃ == null)
-    {
-      ☃.a(☃, ☃, ☃, ☃);
-    }
-    else
-    {
-      zx ☃ = a(☃, ☃, ☃);
-      ☃.a(☃.c, ☃);
-    }
-    if (☃)
-    {
-      int ☃ = this.h.bj.c.size() - 9 + ☃.c;
-      this.c.a(☃.a(☃.c), ☃);
+      wm inventoryplayer = h.bi;
+      if (tileentity == null)
+      {
+        inventoryplayer.a(item, i, flag1, flag);
+      }
+      else
+      {
+        zx itemstack1 = a(item, i, tileentity);
+        inventoryplayer.a(c, itemstack1);
+      }
+      if (flag)
+      {
+        int j = h.bj.c.size() - 9 + c;
+        c.a(inventoryplayer.a(c), j);
+      }
     }
   }
   
-  private zx a(zw ☃, int ☃, akw ☃)
+  private zx a(zw p_181036_1_, int p_181036_2_, akw p_181036_3_)
   {
-    zx ☃ = new zx(☃, 1, ☃);
-    dn ☃ = new dn();
-    ☃.b(☃);
-    if ((☃ == zy.bX) && (☃.c("Owner")))
+    zx itemstack = new zx(p_181036_1_, 1, p_181036_2_);
+    dn nbttagcompound = new dn();
+    p_181036_3_.b(nbttagcompound);
+    if ((p_181036_1_ == zy.bX) && (nbttagcompound.c("Owner")))
     {
-      dn ☃ = ☃.m("Owner");
-      dn ☃ = new dn();
-      ☃.a("SkullOwner", ☃);
-      ☃.d(☃);
-      return ☃;
+      dn nbttagcompound2 = nbttagcompound.m("Owner");
+      dn nbttagcompound3 = new dn();
+      nbttagcompound3.a("SkullOwner", nbttagcompound2);
+      itemstack.d(nbttagcompound3);
+      return itemstack;
     }
-    ☃.a("BlockEntityTag", ☃);
-    dn ☃ = new dn();
-    
-    du ☃ = new du();
-    ☃.a(new ea("(+NBT)"));
-    ☃.a("Lore", ☃);
-    ☃.a("display", ☃);
-    
-    return ☃;
+    itemstack.a("BlockEntityTag", nbttagcompound);
+    dn nbttagcompound1 = new dn();
+    du nbttaglist = new du();
+    nbttaglist.a(new ea("(+NBT)"));
+    nbttagcompound1.a("Lore", nbttaglist);
+    itemstack.a("display", nbttagcompound1);
+    return itemstack;
   }
   
-  public b b(b ☃)
+  public b b(b theCrash)
   {
-    ☃.g().a("Launched Version", new Callable()
+    theCrash.g().a("Launched Version", new Callable()
     {
       public String a()
+        throws Exception
       {
         return ave.a(ave.this);
       }
     });
-    ☃.g().a("LWJGL", new Callable()
+    theCrash.g().a("LWJGL", new Callable()
     {
       public String a()
       {
         return Sys.getVersion();
       }
     });
-    ☃.g().a("OpenGL", new Callable()
+    theCrash.g().a("OpenGL", new Callable()
     {
       public String a()
       {
         return GL11.glGetString(7937) + " GL version " + GL11.glGetString(7938) + ", " + GL11.glGetString(7936);
       }
     });
-    ☃.g().a("GL Caps", new Callable()
+    theCrash.g().a("GL Caps", new Callable()
     {
-      public String a()
+      public String call()
       {
         return bqs.c();
       }
     });
-    ☃.g().a("Using VBOs", new Callable()
+    theCrash.g().a("Using VBOs", new Callable()
     {
-      public String a()
+      public String call()
       {
-        return ave.this.t.u ? "Yes" : "No";
+        return t.u ? "Yes" : "No";
       }
     });
-    ☃.g().a("Is Modded", new Callable()
+    theCrash.g().a("Is Modded", new Callable()
     {
-      public String a()
+      public String call()
         throws Exception
       {
-        String ☃ = ClientBrandRetriever.getClientModName();
-        if (!☃.equals("vanilla")) {
-          return "Definitely; Client brand changed to '" + ☃ + "'";
-        }
-        if (ave.class.getSigners() == null) {
-          return "Very likely; Jar signature invalidated";
-        }
-        return "Probably not. Jar signature remains and client brand is untouched.";
+        String s = ClientBrandRetriever.getClientModName();
+        return ave.class.getSigners() == null ? "Very likely; Jar signature invalidated" : !s.equals("vanilla") ? "Definitely; Client brand changed to '" + s + "'" : "Probably not. Jar signature remains and client brand is untouched.";
       }
     });
-    ☃.g().a("Type", new Callable()
+    theCrash.g().a("Type", new Callable()
     {
-      public String a()
+      public String call()
         throws Exception
       {
         return "Client (map_client.txt)";
       }
     });
-    ☃.g().a("Resource Packs", new Callable()
+    theCrash.g().a("Resource Packs", new Callable()
     {
       public String a()
         throws Exception
       {
-        StringBuilder ☃ = new StringBuilder();
-        for (String ☃ : ave.this.t.k)
+        StringBuilder stringbuilder = new StringBuilder();
+        for (String s : t.k)
         {
-          if (☃.length() > 0) {
-            ☃.append(", ");
+          if (stringbuilder.length() > 0) {
+            stringbuilder.append(", ");
           }
-          ☃.append(☃);
-          if (ave.this.t.l.contains(☃)) {
-            ☃.append(" (incompatible)");
+          stringbuilder.append(s);
+          if (t.l.contains(s)) {
+            stringbuilder.append(" (incompatible)");
           }
         }
-        return ☃.toString();
+        return stringbuilder.toString();
       }
     });
-    ☃.g().a("Current Language", new Callable()
+    theCrash.g().a("Current Language", new Callable()
     {
       public String a()
         throws Exception
@@ -2138,25 +2212,25 @@ public class ave
         return ave.b(ave.this).c().toString();
       }
     });
-    ☃.g().a("Profiler Position", new Callable()
+    theCrash.g().a("Profiler Position", new Callable()
     {
       public String a()
         throws Exception
       {
-        return ave.this.A.a ? ave.this.A.c() : "N/A (disabled)";
+        return A.a ? A.c() : "N/A (disabled)";
       }
     });
-    ☃.g().a("CPU", new Callable()
+    theCrash.g().a("CPU", new Callable()
     {
       public String a()
       {
         return bqs.j();
       }
     });
-    if (this.f != null) {
-      this.f.a(☃);
+    if (f != null) {
+      f.a(theCrash);
     }
-    return ☃;
+    return theCrash;
   }
   
   public static ave A()
@@ -2170,177 +2244,157 @@ public class ave
     {
       public void run()
       {
-        ave.this.e();
+        e();
       }
     });
   }
   
-  public void a(or ☃)
+  public void a(or playerSnooper)
   {
-    ☃.a("fps", Integer.valueOf(ao));
-    ☃.a("vsync_enabled", Boolean.valueOf(this.t.t));
-    ☃.a("display_frequency", Integer.valueOf(Display.getDisplayMode().getFrequency()));
-    ☃.a("display_type", this.T ? "fullscreen" : "windowed");
-    ☃.a("run_time", Long.valueOf((MinecraftServer.az() - ☃.g()) / 60L * 1000L));
-    ☃.a("current_action", aA());
-    
-    String ☃ = ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? "little" : "big";
-    ☃.a("endianness", ☃);
-    
-    ☃.a("resource_packs", Integer.valueOf(this.aC.c().size()));
-    int ☃ = 0;
-    for (bnm.a ☃ : this.aC.c()) {
-      ☃.a("resource_pack[" + ☃++ + "]", ☃.d());
+    playerSnooper.a("fps", Integer.valueOf(ao));
+    playerSnooper.a("vsync_enabled", Boolean.valueOf(t.t));
+    playerSnooper.a("display_frequency", Integer.valueOf(Display.getDisplayMode().getFrequency()));
+    playerSnooper.a("display_type", T ? "fullscreen" : "windowed");
+    playerSnooper.a("run_time", Long.valueOf((MinecraftServer.az() - playerSnooper.g()) / 60L * 1000L));
+    playerSnooper.a("current_action", aA());
+    String s = ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? "little" : "big";
+    playerSnooper.a("endianness", s);
+    playerSnooper.a("resource_packs", Integer.valueOf(aC.c().size()));
+    int i = 0;
+    for (bnm.a resourcepackrepository$entry : aC.c()) {
+      playerSnooper.a("resource_pack[" + i++ + "]", resourcepackrepository$entry.d());
     }
-    if ((this.aj != null) && (this.aj.av() != null)) {
-      ☃.a("snooper_partner", this.aj.av().f());
+    if ((aj != null) && (aj.av() != null)) {
+      playerSnooper.a("snooper_partner", aj.av().f());
     }
   }
   
   private String aA()
   {
-    if (this.aj != null)
-    {
-      if (this.aj.b()) {
-        return "hosting_lan";
-      }
-      return "singleplayer";
-    }
-    if (this.Q != null)
-    {
-      if (this.Q.d()) {
-        return "playing_lan";
-      }
-      return "multiplayer";
-    }
-    return "out_of_game";
+    return Q != null ? "multiplayer" : Q.d() ? "playing_lan" : aj != null ? "singleplayer" : aj.b() ? "hosting_lan" : "out_of_game";
   }
   
-  public void b(or ☃)
+  public void b(or playerSnooper)
   {
-    ☃.b("opengl_version", GL11.glGetString(7938));
-    ☃.b("opengl_vendor", GL11.glGetString(7936));
-    ☃.b("client_brand", ClientBrandRetriever.getClientModName());
-    ☃.b("launched_version", this.al);
-    
-    ContextCapabilities ☃ = GLContext.getCapabilities();
-    ☃.b("gl_caps[ARB_arrays_of_arrays]", Boolean.valueOf(☃.GL_ARB_arrays_of_arrays));
-    ☃.b("gl_caps[ARB_base_instance]", Boolean.valueOf(☃.GL_ARB_base_instance));
-    ☃.b("gl_caps[ARB_blend_func_extended]", Boolean.valueOf(☃.GL_ARB_blend_func_extended));
-    ☃.b("gl_caps[ARB_clear_buffer_object]", Boolean.valueOf(☃.GL_ARB_clear_buffer_object));
-    ☃.b("gl_caps[ARB_color_buffer_float]", Boolean.valueOf(☃.GL_ARB_color_buffer_float));
-    ☃.b("gl_caps[ARB_compatibility]", Boolean.valueOf(☃.GL_ARB_compatibility));
-    ☃.b("gl_caps[ARB_compressed_texture_pixel_storage]", Boolean.valueOf(☃.GL_ARB_compressed_texture_pixel_storage));
-    ☃.b("gl_caps[ARB_compute_shader]", Boolean.valueOf(☃.GL_ARB_compute_shader));
-    ☃.b("gl_caps[ARB_copy_buffer]", Boolean.valueOf(☃.GL_ARB_copy_buffer));
-    ☃.b("gl_caps[ARB_copy_image]", Boolean.valueOf(☃.GL_ARB_copy_image));
-    ☃.b("gl_caps[ARB_depth_buffer_float]", Boolean.valueOf(☃.GL_ARB_depth_buffer_float));
-    ☃.b("gl_caps[ARB_compute_shader]", Boolean.valueOf(☃.GL_ARB_compute_shader));
-    ☃.b("gl_caps[ARB_copy_buffer]", Boolean.valueOf(☃.GL_ARB_copy_buffer));
-    ☃.b("gl_caps[ARB_copy_image]", Boolean.valueOf(☃.GL_ARB_copy_image));
-    ☃.b("gl_caps[ARB_depth_buffer_float]", Boolean.valueOf(☃.GL_ARB_depth_buffer_float));
-    ☃.b("gl_caps[ARB_depth_clamp]", Boolean.valueOf(☃.GL_ARB_depth_clamp));
-    ☃.b("gl_caps[ARB_depth_texture]", Boolean.valueOf(☃.GL_ARB_depth_texture));
-    ☃.b("gl_caps[ARB_draw_buffers]", Boolean.valueOf(☃.GL_ARB_draw_buffers));
-    ☃.b("gl_caps[ARB_draw_buffers_blend]", Boolean.valueOf(☃.GL_ARB_draw_buffers_blend));
-    ☃.b("gl_caps[ARB_draw_elements_base_vertex]", Boolean.valueOf(☃.GL_ARB_draw_elements_base_vertex));
-    ☃.b("gl_caps[ARB_draw_indirect]", Boolean.valueOf(☃.GL_ARB_draw_indirect));
-    ☃.b("gl_caps[ARB_draw_instanced]", Boolean.valueOf(☃.GL_ARB_draw_instanced));
-    ☃.b("gl_caps[ARB_explicit_attrib_location]", Boolean.valueOf(☃.GL_ARB_explicit_attrib_location));
-    ☃.b("gl_caps[ARB_explicit_uniform_location]", Boolean.valueOf(☃.GL_ARB_explicit_uniform_location));
-    ☃.b("gl_caps[ARB_fragment_layer_viewport]", Boolean.valueOf(☃.GL_ARB_fragment_layer_viewport));
-    ☃.b("gl_caps[ARB_fragment_program]", Boolean.valueOf(☃.GL_ARB_fragment_program));
-    ☃.b("gl_caps[ARB_fragment_shader]", Boolean.valueOf(☃.GL_ARB_fragment_shader));
-    ☃.b("gl_caps[ARB_fragment_program_shadow]", Boolean.valueOf(☃.GL_ARB_fragment_program_shadow));
-    ☃.b("gl_caps[ARB_framebuffer_object]", Boolean.valueOf(☃.GL_ARB_framebuffer_object));
-    ☃.b("gl_caps[ARB_framebuffer_sRGB]", Boolean.valueOf(☃.GL_ARB_framebuffer_sRGB));
-    ☃.b("gl_caps[ARB_geometry_shader4]", Boolean.valueOf(☃.GL_ARB_geometry_shader4));
-    ☃.b("gl_caps[ARB_gpu_shader5]", Boolean.valueOf(☃.GL_ARB_gpu_shader5));
-    ☃.b("gl_caps[ARB_half_float_pixel]", Boolean.valueOf(☃.GL_ARB_half_float_pixel));
-    ☃.b("gl_caps[ARB_half_float_vertex]", Boolean.valueOf(☃.GL_ARB_half_float_vertex));
-    ☃.b("gl_caps[ARB_instanced_arrays]", Boolean.valueOf(☃.GL_ARB_instanced_arrays));
-    ☃.b("gl_caps[ARB_map_buffer_alignment]", Boolean.valueOf(☃.GL_ARB_map_buffer_alignment));
-    ☃.b("gl_caps[ARB_map_buffer_range]", Boolean.valueOf(☃.GL_ARB_map_buffer_range));
-    ☃.b("gl_caps[ARB_multisample]", Boolean.valueOf(☃.GL_ARB_multisample));
-    ☃.b("gl_caps[ARB_multitexture]", Boolean.valueOf(☃.GL_ARB_multitexture));
-    ☃.b("gl_caps[ARB_occlusion_query2]", Boolean.valueOf(☃.GL_ARB_occlusion_query2));
-    ☃.b("gl_caps[ARB_pixel_buffer_object]", Boolean.valueOf(☃.GL_ARB_pixel_buffer_object));
-    ☃.b("gl_caps[ARB_seamless_cube_map]", Boolean.valueOf(☃.GL_ARB_seamless_cube_map));
-    ☃.b("gl_caps[ARB_shader_objects]", Boolean.valueOf(☃.GL_ARB_shader_objects));
-    ☃.b("gl_caps[ARB_shader_stencil_export]", Boolean.valueOf(☃.GL_ARB_shader_stencil_export));
-    ☃.b("gl_caps[ARB_shader_texture_lod]", Boolean.valueOf(☃.GL_ARB_shader_texture_lod));
-    ☃.b("gl_caps[ARB_shadow]", Boolean.valueOf(☃.GL_ARB_shadow));
-    ☃.b("gl_caps[ARB_shadow_ambient]", Boolean.valueOf(☃.GL_ARB_shadow_ambient));
-    ☃.b("gl_caps[ARB_stencil_texturing]", Boolean.valueOf(☃.GL_ARB_stencil_texturing));
-    ☃.b("gl_caps[ARB_sync]", Boolean.valueOf(☃.GL_ARB_sync));
-    ☃.b("gl_caps[ARB_tessellation_shader]", Boolean.valueOf(☃.GL_ARB_tessellation_shader));
-    ☃.b("gl_caps[ARB_texture_border_clamp]", Boolean.valueOf(☃.GL_ARB_texture_border_clamp));
-    ☃.b("gl_caps[ARB_texture_buffer_object]", Boolean.valueOf(☃.GL_ARB_texture_buffer_object));
-    ☃.b("gl_caps[ARB_texture_cube_map]", Boolean.valueOf(☃.GL_ARB_texture_cube_map));
-    ☃.b("gl_caps[ARB_texture_cube_map_array]", Boolean.valueOf(☃.GL_ARB_texture_cube_map_array));
-    ☃.b("gl_caps[ARB_texture_non_power_of_two]", Boolean.valueOf(☃.GL_ARB_texture_non_power_of_two));
-    ☃.b("gl_caps[ARB_uniform_buffer_object]", Boolean.valueOf(☃.GL_ARB_uniform_buffer_object));
-    ☃.b("gl_caps[ARB_vertex_blend]", Boolean.valueOf(☃.GL_ARB_vertex_blend));
-    ☃.b("gl_caps[ARB_vertex_buffer_object]", Boolean.valueOf(☃.GL_ARB_vertex_buffer_object));
-    ☃.b("gl_caps[ARB_vertex_program]", Boolean.valueOf(☃.GL_ARB_vertex_program));
-    ☃.b("gl_caps[ARB_vertex_shader]", Boolean.valueOf(☃.GL_ARB_vertex_shader));
-    
-    ☃.b("gl_caps[EXT_bindable_uniform]", Boolean.valueOf(☃.GL_EXT_bindable_uniform));
-    ☃.b("gl_caps[EXT_blend_equation_separate]", Boolean.valueOf(☃.GL_EXT_blend_equation_separate));
-    ☃.b("gl_caps[EXT_blend_func_separate]", Boolean.valueOf(☃.GL_EXT_blend_func_separate));
-    ☃.b("gl_caps[EXT_blend_minmax]", Boolean.valueOf(☃.GL_EXT_blend_minmax));
-    ☃.b("gl_caps[EXT_blend_subtract]", Boolean.valueOf(☃.GL_EXT_blend_subtract));
-    ☃.b("gl_caps[EXT_draw_instanced]", Boolean.valueOf(☃.GL_EXT_draw_instanced));
-    ☃.b("gl_caps[EXT_framebuffer_multisample]", Boolean.valueOf(☃.GL_EXT_framebuffer_multisample));
-    ☃.b("gl_caps[EXT_framebuffer_object]", Boolean.valueOf(☃.GL_EXT_framebuffer_object));
-    ☃.b("gl_caps[EXT_framebuffer_sRGB]", Boolean.valueOf(☃.GL_EXT_framebuffer_sRGB));
-    ☃.b("gl_caps[EXT_geometry_shader4]", Boolean.valueOf(☃.GL_EXT_geometry_shader4));
-    ☃.b("gl_caps[EXT_gpu_program_parameters]", Boolean.valueOf(☃.GL_EXT_gpu_program_parameters));
-    ☃.b("gl_caps[EXT_gpu_shader4]", Boolean.valueOf(☃.GL_EXT_gpu_shader4));
-    ☃.b("gl_caps[EXT_multi_draw_arrays]", Boolean.valueOf(☃.GL_EXT_multi_draw_arrays));
-    ☃.b("gl_caps[EXT_packed_depth_stencil]", Boolean.valueOf(☃.GL_EXT_packed_depth_stencil));
-    ☃.b("gl_caps[EXT_paletted_texture]", Boolean.valueOf(☃.GL_EXT_paletted_texture));
-    ☃.b("gl_caps[EXT_rescale_normal]", Boolean.valueOf(☃.GL_EXT_rescale_normal));
-    ☃.b("gl_caps[EXT_separate_shader_objects]", Boolean.valueOf(☃.GL_EXT_separate_shader_objects));
-    ☃.b("gl_caps[EXT_shader_image_load_store]", Boolean.valueOf(☃.GL_EXT_shader_image_load_store));
-    ☃.b("gl_caps[EXT_shadow_funcs]", Boolean.valueOf(☃.GL_EXT_shadow_funcs));
-    ☃.b("gl_caps[EXT_shared_texture_palette]", Boolean.valueOf(☃.GL_EXT_shared_texture_palette));
-    ☃.b("gl_caps[EXT_stencil_clear_tag]", Boolean.valueOf(☃.GL_EXT_stencil_clear_tag));
-    ☃.b("gl_caps[EXT_stencil_two_side]", Boolean.valueOf(☃.GL_EXT_stencil_two_side));
-    ☃.b("gl_caps[EXT_stencil_wrap]", Boolean.valueOf(☃.GL_EXT_stencil_wrap));
-    ☃.b("gl_caps[EXT_texture_3d]", Boolean.valueOf(☃.GL_EXT_texture_3d));
-    ☃.b("gl_caps[EXT_texture_array]", Boolean.valueOf(☃.GL_EXT_texture_array));
-    ☃.b("gl_caps[EXT_texture_buffer_object]", Boolean.valueOf(☃.GL_EXT_texture_buffer_object));
-    ☃.b("gl_caps[EXT_texture_integer]", Boolean.valueOf(☃.GL_EXT_texture_integer));
-    ☃.b("gl_caps[EXT_texture_lod_bias]", Boolean.valueOf(☃.GL_EXT_texture_lod_bias));
-    ☃.b("gl_caps[EXT_texture_sRGB]", Boolean.valueOf(☃.GL_EXT_texture_sRGB));
-    ☃.b("gl_caps[EXT_vertex_shader]", Boolean.valueOf(☃.GL_EXT_vertex_shader));
-    ☃.b("gl_caps[EXT_vertex_weighting]", Boolean.valueOf(☃.GL_EXT_vertex_weighting));
-    
-    ☃.b("gl_caps[gl_max_vertex_uniforms]", Integer.valueOf(GL11.glGetInteger(35658)));
+    playerSnooper.b("opengl_version", GL11.glGetString(7938));
+    playerSnooper.b("opengl_vendor", GL11.glGetString(7936));
+    playerSnooper.b("client_brand", ClientBrandRetriever.getClientModName());
+    playerSnooper.b("launched_version", al);
+    ContextCapabilities contextcapabilities = GLContext.getCapabilities();
+    playerSnooper.b("gl_caps[ARB_arrays_of_arrays]", Boolean.valueOf(GL_ARB_arrays_of_arrays));
+    playerSnooper.b("gl_caps[ARB_base_instance]", Boolean.valueOf(GL_ARB_base_instance));
+    playerSnooper.b("gl_caps[ARB_blend_func_extended]", Boolean.valueOf(GL_ARB_blend_func_extended));
+    playerSnooper.b("gl_caps[ARB_clear_buffer_object]", Boolean.valueOf(GL_ARB_clear_buffer_object));
+    playerSnooper.b("gl_caps[ARB_color_buffer_float]", Boolean.valueOf(GL_ARB_color_buffer_float));
+    playerSnooper.b("gl_caps[ARB_compatibility]", Boolean.valueOf(GL_ARB_compatibility));
+    playerSnooper.b("gl_caps[ARB_compressed_texture_pixel_storage]", Boolean.valueOf(GL_ARB_compressed_texture_pixel_storage));
+    playerSnooper.b("gl_caps[ARB_compute_shader]", Boolean.valueOf(GL_ARB_compute_shader));
+    playerSnooper.b("gl_caps[ARB_copy_buffer]", Boolean.valueOf(GL_ARB_copy_buffer));
+    playerSnooper.b("gl_caps[ARB_copy_image]", Boolean.valueOf(GL_ARB_copy_image));
+    playerSnooper.b("gl_caps[ARB_depth_buffer_float]", Boolean.valueOf(GL_ARB_depth_buffer_float));
+    playerSnooper.b("gl_caps[ARB_compute_shader]", Boolean.valueOf(GL_ARB_compute_shader));
+    playerSnooper.b("gl_caps[ARB_copy_buffer]", Boolean.valueOf(GL_ARB_copy_buffer));
+    playerSnooper.b("gl_caps[ARB_copy_image]", Boolean.valueOf(GL_ARB_copy_image));
+    playerSnooper.b("gl_caps[ARB_depth_buffer_float]", Boolean.valueOf(GL_ARB_depth_buffer_float));
+    playerSnooper.b("gl_caps[ARB_depth_clamp]", Boolean.valueOf(GL_ARB_depth_clamp));
+    playerSnooper.b("gl_caps[ARB_depth_texture]", Boolean.valueOf(GL_ARB_depth_texture));
+    playerSnooper.b("gl_caps[ARB_draw_buffers]", Boolean.valueOf(GL_ARB_draw_buffers));
+    playerSnooper.b("gl_caps[ARB_draw_buffers_blend]", Boolean.valueOf(GL_ARB_draw_buffers_blend));
+    playerSnooper.b("gl_caps[ARB_draw_elements_base_vertex]", Boolean.valueOf(GL_ARB_draw_elements_base_vertex));
+    playerSnooper.b("gl_caps[ARB_draw_indirect]", Boolean.valueOf(GL_ARB_draw_indirect));
+    playerSnooper.b("gl_caps[ARB_draw_instanced]", Boolean.valueOf(GL_ARB_draw_instanced));
+    playerSnooper.b("gl_caps[ARB_explicit_attrib_location]", Boolean.valueOf(GL_ARB_explicit_attrib_location));
+    playerSnooper.b("gl_caps[ARB_explicit_uniform_location]", Boolean.valueOf(GL_ARB_explicit_uniform_location));
+    playerSnooper.b("gl_caps[ARB_fragment_layer_viewport]", Boolean.valueOf(GL_ARB_fragment_layer_viewport));
+    playerSnooper.b("gl_caps[ARB_fragment_program]", Boolean.valueOf(GL_ARB_fragment_program));
+    playerSnooper.b("gl_caps[ARB_fragment_shader]", Boolean.valueOf(GL_ARB_fragment_shader));
+    playerSnooper.b("gl_caps[ARB_fragment_program_shadow]", Boolean.valueOf(GL_ARB_fragment_program_shadow));
+    playerSnooper.b("gl_caps[ARB_framebuffer_object]", Boolean.valueOf(GL_ARB_framebuffer_object));
+    playerSnooper.b("gl_caps[ARB_framebuffer_sRGB]", Boolean.valueOf(GL_ARB_framebuffer_sRGB));
+    playerSnooper.b("gl_caps[ARB_geometry_shader4]", Boolean.valueOf(GL_ARB_geometry_shader4));
+    playerSnooper.b("gl_caps[ARB_gpu_shader5]", Boolean.valueOf(GL_ARB_gpu_shader5));
+    playerSnooper.b("gl_caps[ARB_half_float_pixel]", Boolean.valueOf(GL_ARB_half_float_pixel));
+    playerSnooper.b("gl_caps[ARB_half_float_vertex]", Boolean.valueOf(GL_ARB_half_float_vertex));
+    playerSnooper.b("gl_caps[ARB_instanced_arrays]", Boolean.valueOf(GL_ARB_instanced_arrays));
+    playerSnooper.b("gl_caps[ARB_map_buffer_alignment]", Boolean.valueOf(GL_ARB_map_buffer_alignment));
+    playerSnooper.b("gl_caps[ARB_map_buffer_range]", Boolean.valueOf(GL_ARB_map_buffer_range));
+    playerSnooper.b("gl_caps[ARB_multisample]", Boolean.valueOf(GL_ARB_multisample));
+    playerSnooper.b("gl_caps[ARB_multitexture]", Boolean.valueOf(GL_ARB_multitexture));
+    playerSnooper.b("gl_caps[ARB_occlusion_query2]", Boolean.valueOf(GL_ARB_occlusion_query2));
+    playerSnooper.b("gl_caps[ARB_pixel_buffer_object]", Boolean.valueOf(GL_ARB_pixel_buffer_object));
+    playerSnooper.b("gl_caps[ARB_seamless_cube_map]", Boolean.valueOf(GL_ARB_seamless_cube_map));
+    playerSnooper.b("gl_caps[ARB_shader_objects]", Boolean.valueOf(GL_ARB_shader_objects));
+    playerSnooper.b("gl_caps[ARB_shader_stencil_export]", Boolean.valueOf(GL_ARB_shader_stencil_export));
+    playerSnooper.b("gl_caps[ARB_shader_texture_lod]", Boolean.valueOf(GL_ARB_shader_texture_lod));
+    playerSnooper.b("gl_caps[ARB_shadow]", Boolean.valueOf(GL_ARB_shadow));
+    playerSnooper.b("gl_caps[ARB_shadow_ambient]", Boolean.valueOf(GL_ARB_shadow_ambient));
+    playerSnooper.b("gl_caps[ARB_stencil_texturing]", Boolean.valueOf(GL_ARB_stencil_texturing));
+    playerSnooper.b("gl_caps[ARB_sync]", Boolean.valueOf(GL_ARB_sync));
+    playerSnooper.b("gl_caps[ARB_tessellation_shader]", Boolean.valueOf(GL_ARB_tessellation_shader));
+    playerSnooper.b("gl_caps[ARB_texture_border_clamp]", Boolean.valueOf(GL_ARB_texture_border_clamp));
+    playerSnooper.b("gl_caps[ARB_texture_buffer_object]", Boolean.valueOf(GL_ARB_texture_buffer_object));
+    playerSnooper.b("gl_caps[ARB_texture_cube_map]", Boolean.valueOf(GL_ARB_texture_cube_map));
+    playerSnooper.b("gl_caps[ARB_texture_cube_map_array]", Boolean.valueOf(GL_ARB_texture_cube_map_array));
+    playerSnooper.b("gl_caps[ARB_texture_non_power_of_two]", Boolean.valueOf(GL_ARB_texture_non_power_of_two));
+    playerSnooper.b("gl_caps[ARB_uniform_buffer_object]", Boolean.valueOf(GL_ARB_uniform_buffer_object));
+    playerSnooper.b("gl_caps[ARB_vertex_blend]", Boolean.valueOf(GL_ARB_vertex_blend));
+    playerSnooper.b("gl_caps[ARB_vertex_buffer_object]", Boolean.valueOf(GL_ARB_vertex_buffer_object));
+    playerSnooper.b("gl_caps[ARB_vertex_program]", Boolean.valueOf(GL_ARB_vertex_program));
+    playerSnooper.b("gl_caps[ARB_vertex_shader]", Boolean.valueOf(GL_ARB_vertex_shader));
+    playerSnooper.b("gl_caps[EXT_bindable_uniform]", Boolean.valueOf(GL_EXT_bindable_uniform));
+    playerSnooper.b("gl_caps[EXT_blend_equation_separate]", Boolean.valueOf(GL_EXT_blend_equation_separate));
+    playerSnooper.b("gl_caps[EXT_blend_func_separate]", Boolean.valueOf(GL_EXT_blend_func_separate));
+    playerSnooper.b("gl_caps[EXT_blend_minmax]", Boolean.valueOf(GL_EXT_blend_minmax));
+    playerSnooper.b("gl_caps[EXT_blend_subtract]", Boolean.valueOf(GL_EXT_blend_subtract));
+    playerSnooper.b("gl_caps[EXT_draw_instanced]", Boolean.valueOf(GL_EXT_draw_instanced));
+    playerSnooper.b("gl_caps[EXT_framebuffer_multisample]", Boolean.valueOf(GL_EXT_framebuffer_multisample));
+    playerSnooper.b("gl_caps[EXT_framebuffer_object]", Boolean.valueOf(GL_EXT_framebuffer_object));
+    playerSnooper.b("gl_caps[EXT_framebuffer_sRGB]", Boolean.valueOf(GL_EXT_framebuffer_sRGB));
+    playerSnooper.b("gl_caps[EXT_geometry_shader4]", Boolean.valueOf(GL_EXT_geometry_shader4));
+    playerSnooper.b("gl_caps[EXT_gpu_program_parameters]", Boolean.valueOf(GL_EXT_gpu_program_parameters));
+    playerSnooper.b("gl_caps[EXT_gpu_shader4]", Boolean.valueOf(GL_EXT_gpu_shader4));
+    playerSnooper.b("gl_caps[EXT_multi_draw_arrays]", Boolean.valueOf(GL_EXT_multi_draw_arrays));
+    playerSnooper.b("gl_caps[EXT_packed_depth_stencil]", Boolean.valueOf(GL_EXT_packed_depth_stencil));
+    playerSnooper.b("gl_caps[EXT_paletted_texture]", Boolean.valueOf(GL_EXT_paletted_texture));
+    playerSnooper.b("gl_caps[EXT_rescale_normal]", Boolean.valueOf(GL_EXT_rescale_normal));
+    playerSnooper.b("gl_caps[EXT_separate_shader_objects]", Boolean.valueOf(GL_EXT_separate_shader_objects));
+    playerSnooper.b("gl_caps[EXT_shader_image_load_store]", Boolean.valueOf(GL_EXT_shader_image_load_store));
+    playerSnooper.b("gl_caps[EXT_shadow_funcs]", Boolean.valueOf(GL_EXT_shadow_funcs));
+    playerSnooper.b("gl_caps[EXT_shared_texture_palette]", Boolean.valueOf(GL_EXT_shared_texture_palette));
+    playerSnooper.b("gl_caps[EXT_stencil_clear_tag]", Boolean.valueOf(GL_EXT_stencil_clear_tag));
+    playerSnooper.b("gl_caps[EXT_stencil_two_side]", Boolean.valueOf(GL_EXT_stencil_two_side));
+    playerSnooper.b("gl_caps[EXT_stencil_wrap]", Boolean.valueOf(GL_EXT_stencil_wrap));
+    playerSnooper.b("gl_caps[EXT_texture_3d]", Boolean.valueOf(GL_EXT_texture_3d));
+    playerSnooper.b("gl_caps[EXT_texture_array]", Boolean.valueOf(GL_EXT_texture_array));
+    playerSnooper.b("gl_caps[EXT_texture_buffer_object]", Boolean.valueOf(GL_EXT_texture_buffer_object));
+    playerSnooper.b("gl_caps[EXT_texture_integer]", Boolean.valueOf(GL_EXT_texture_integer));
+    playerSnooper.b("gl_caps[EXT_texture_lod_bias]", Boolean.valueOf(GL_EXT_texture_lod_bias));
+    playerSnooper.b("gl_caps[EXT_texture_sRGB]", Boolean.valueOf(GL_EXT_texture_sRGB));
+    playerSnooper.b("gl_caps[EXT_vertex_shader]", Boolean.valueOf(GL_EXT_vertex_shader));
+    playerSnooper.b("gl_caps[EXT_vertex_weighting]", Boolean.valueOf(GL_EXT_vertex_weighting));
+    playerSnooper.b("gl_caps[gl_max_vertex_uniforms]", Integer.valueOf(GL11.glGetInteger(35658)));
     GL11.glGetError();
-    ☃.b("gl_caps[gl_max_fragment_uniforms]", Integer.valueOf(GL11.glGetInteger(35657)));
+    playerSnooper.b("gl_caps[gl_max_fragment_uniforms]", Integer.valueOf(GL11.glGetInteger(35657)));
     GL11.glGetError();
-    ☃.b("gl_caps[gl_max_vertex_attribs]", Integer.valueOf(GL11.glGetInteger(34921)));
+    playerSnooper.b("gl_caps[gl_max_vertex_attribs]", Integer.valueOf(GL11.glGetInteger(34921)));
     GL11.glGetError();
-    ☃.b("gl_caps[gl_max_vertex_texture_image_units]", Integer.valueOf(GL11.glGetInteger(35660)));
+    playerSnooper.b("gl_caps[gl_max_vertex_texture_image_units]", Integer.valueOf(GL11.glGetInteger(35660)));
     GL11.glGetError();
-    ☃.b("gl_caps[gl_max_texture_image_units]", Integer.valueOf(GL11.glGetInteger(34930)));
+    playerSnooper.b("gl_caps[gl_max_texture_image_units]", Integer.valueOf(GL11.glGetInteger(34930)));
     GL11.glGetError();
-    ☃.b("gl_caps[gl_max_texture_image_units]", Integer.valueOf(GL11.glGetInteger(35071)));
+    playerSnooper.b("gl_caps[gl_max_texture_image_units]", Integer.valueOf(GL11.glGetInteger(35071)));
     GL11.glGetError();
-    
-    ☃.b("gl_max_texture_size", Integer.valueOf(C()));
+    playerSnooper.b("gl_max_texture_size", Integer.valueOf(C()));
   }
   
   public static int C()
   {
-    for (int ☃ = 16384; ☃ > 0; ☃ >>= 1)
+    for (int i = 16384; i > 0; i >>= 1)
     {
-      GL11.glTexImage2D(32868, 0, 6408, ☃, ☃, 0, 6408, 5121, (ByteBuffer)null);
-      int ☃ = GL11.glGetTexLevelParameteri(32868, 0, 4096);
-      if (☃ != 0) {
-        return ☃;
+      GL11.glTexImage2D(32868, 0, 6408, i, i, 0, 6408, 5121, (ByteBuffer)null);
+      int j = GL11.glGetTexLevelParameteri(32868, 0, 4096);
+      if (j != 0) {
+        return i;
       }
     }
     return -1;
@@ -2348,48 +2402,48 @@ public class ave
   
   public boolean ad()
   {
-    return this.t.r;
+    return t.r;
   }
   
-  public void a(bde ☃)
+  public void a(bde serverDataIn)
   {
-    this.Q = ☃;
+    Q = serverDataIn;
   }
   
   public bde D()
   {
-    return this.Q;
+    return Q;
   }
   
   public boolean E()
   {
-    return this.aw;
+    return aw;
   }
   
   public boolean F()
   {
-    return (this.aw) && (this.aj != null);
+    return (aw) && (aj != null);
   }
   
   public bpo G()
   {
-    return this.aj;
+    return aj;
   }
   
   public static void H()
   {
-    if (S == null) {
-      return;
-    }
-    bpo ☃ = S.G();
-    if (☃ != null) {
-      ☃.t();
+    if (S != null)
+    {
+      bpo integratedserver = S.G();
+      if (integratedserver != null) {
+        integratedserver.t();
+      }
     }
   }
   
   public or I()
   {
-    return this.Z;
+    return Z;
   }
   
   public static long J()
@@ -2399,235 +2453,222 @@ public class ave
   
   public boolean K()
   {
-    return this.T;
+    return T;
   }
   
   public avm L()
   {
-    return this.ae;
+    return ae;
   }
   
   public PropertyMap M()
   {
-    return this.O;
+    return O;
   }
   
   public PropertyMap N()
   {
-    if (this.P.isEmpty())
+    if (P.isEmpty())
     {
-      GameProfile ☃ = aa().fillProfileProperties(this.ae.e(), false);
-      this.P.putAll(☃.getProperties());
+      GameProfile gameprofile = aa().fillProfileProperties(ae.e(), false);
+      P.putAll(gameprofile.getProperties());
     }
-    return this.P;
+    return P;
   }
   
   public Proxy O()
   {
-    return this.am;
+    return am;
   }
   
   public bmj P()
   {
-    return this.R;
+    return R;
   }
   
   public bni Q()
   {
-    return this.ay;
+    return ay;
   }
   
   public bnm R()
   {
-    return this.aC;
+    return aC;
   }
   
   public bns S()
   {
-    return this.aD;
+    return aD;
   }
   
   public bmh T()
   {
-    return this.aG;
+    return aG;
   }
   
   public boolean U()
   {
-    return this.at;
+    return at;
   }
   
   public boolean V()
   {
-    return this.af;
+    return af;
   }
   
   public bpz W()
   {
-    return this.aH;
+    return aH;
   }
   
   public bpv.a X()
   {
-    if (this.h != null)
-    {
-      if ((this.h.o.t instanceof ann)) {
-        return bpv.a.e;
-      }
-      if ((this.h.o.t instanceof anp))
-      {
-        if ((bfc.c != null) && (bfc.b > 0)) {
-          return bpv.a.f;
-        }
-        return bpv.a.g;
-      }
-      if ((this.h.bA.d) && (this.h.bA.c)) {
-        return bpv.a.c;
-      }
-      return bpv.a.b;
-    }
-    return bpv.a.a;
+    return h != null ? bpv.a.b : (h.bA.d) && (h.bA.c) ? bpv.a.c : (h.o.t instanceof anp) ? bpv.a.g : (bfc.c != null) && (bfc.b > 0) ? bpv.a.f : (h.o.t instanceof ann) ? bpv.a.e : bpv.a.a;
   }
   
   public bqm Y()
   {
-    return this.aE;
+    return aE;
   }
   
   public void Z()
   {
-    int ☃ = Keyboard.getEventKey() == 0 ? Keyboard.getEventCharacter() : Keyboard.getEventKey();
-    if ((☃ == 0) || (Keyboard.isRepeatEvent())) {
-      return;
+    int i = Keyboard.getEventKey() == 0 ? Keyboard.getEventCharacter() : Keyboard.getEventKey();
+    if ((i == 60) && (Keyboard.getEventKey() == 0)) {
+      i = 0;
     }
-    if (((this.m instanceof ayj)) && (((ayj)this.m).g > J() - 20L)) {
-      return;
-    }
-    if (Keyboard.getEventKeyState())
-    {
-      if (☃ == this.t.ar.i())
-      {
-        if (Y().k()) {
-          Y().r();
-        } else if (Y().j()) {
-          a(new awy(new awx()
+    if ((i != 0) && (!Keyboard.isRepeatEvent())) {
+      if ((!(m instanceof ayj)) || (m).g <= J() - 20L)) {
+        if (Keyboard.getEventKeyState())
+        {
+          if (i == t.ar.i())
           {
-            public void a(boolean ☃, int ☃)
+            if (Y().k()) {
+              Y().r();
+            } else if (Y().j()) {
+              a(new awy(new awx()
+              {
+                public void a(boolean result, int id)
+                {
+                  if (result) {
+                    Y().q();
+                  }
+                  a((axu)null);
+                }
+              }, bnq.a("stream.confirm_start", new Object[0]), "", 0));
+            } else if ((Y().A()) && (Y().i()))
             {
-              if (☃) {
-                ave.this.Y().q();
+              if (f != null) {
+                q.d().a(new fa("Not ready to start streaming yet!"));
               }
-              ave.this.a(null);
             }
-          }, bnq.a("stream.confirm_start", new Object[0]), "", 0));
-        } else if ((!Y().A()) || (!Y().i())) {
-          baa.a(this.m);
-        } else if (this.f != null) {
-          this.q.d().a(new fa("Not ready to start streaming yet!"));
-        }
-      }
-      else if (☃ == this.t.as.i())
-      {
-        if (Y().k()) {
-          if (Y().l()) {
-            Y().o();
-          } else {
-            Y().n();
+            else {
+              baa.a(m);
+            }
+          }
+          else if (i == t.as.i())
+          {
+            if (Y().k()) {
+              if (Y().l()) {
+                Y().o();
+              } else {
+                Y().n();
+              }
+            }
+          }
+          else if (i == t.at.i())
+          {
+            if (Y().k()) {
+              Y().m();
+            }
+          }
+          else if (i == t.au.i()) {
+            aE.a(true);
+          } else if (i == t.ap.i()) {
+            q();
+          } else if (i == t.am.i()) {
+            q.d().a(avj.a(v, d, e, aF));
           }
         }
-      }
-      else if (☃ == this.t.at.i())
-      {
-        if (Y().k()) {
-          Y().m();
+        else if (i == t.au.i()) {
+          aE.a(false);
         }
       }
-      else if (☃ == this.t.au.i()) {
-        this.aE.a(true);
-      } else if (☃ == this.t.ap.i()) {
-        q();
-      } else if (☃ == this.t.am.i()) {
-        this.q.d().a(avj.a(this.v, this.d, this.e, this.aF));
-      }
-    }
-    else if (☃ == this.t.au.i()) {
-      this.aE.a(false);
     }
   }
   
   public MinecraftSessionService aa()
   {
-    return this.aK;
+    return aK;
   }
   
   public bnp ab()
   {
-    return this.aL;
+    return aL;
   }
   
   public pk ac()
   {
-    return this.ad;
+    return ad;
   }
   
-  public void a(pk ☃)
+  public void a(pk viewingEntity)
   {
-    this.ad = ☃;
-    this.o.a(☃);
+    ad = viewingEntity;
+    o.a(viewingEntity);
   }
   
-  public <V> ListenableFuture<V> a(Callable<V> ☃)
+  public <V> ListenableFuture<V> a(Callable<V> callableToSchedule)
   {
-    Validate.notNull(☃);
+    Validate.notNull(callableToSchedule);
     if (!aJ())
     {
-      ListenableFutureTask<V> ☃ = ListenableFutureTask.create(☃);
-      synchronized (this.aM)
+      ListenableFutureTask<V> listenablefuturetask = ListenableFutureTask.create(callableToSchedule);
+      synchronized (aM)
       {
-        this.aM.add(☃);
+        aM.add(listenablefuturetask);
+        return listenablefuturetask;
       }
-      return ☃;
     }
     try
     {
-      return Futures.immediateFuture(☃.call());
+      return Futures.immediateFuture(callableToSchedule.call());
     }
-    catch (Exception ☃)
+    catch (Exception exception)
     {
-      return Futures.immediateFailedCheckedFuture(☃);
+      return Futures.immediateFailedCheckedFuture(exception);
     }
   }
   
-  public ListenableFuture<Object> a(Runnable ☃)
+  public ListenableFuture<Object> a(Runnable runnableToSchedule)
   {
-    Validate.notNull(☃);
-    
-    return a(Executors.callable(☃));
+    Validate.notNull(runnableToSchedule);
+    return a(Executors.callable(runnableToSchedule));
   }
   
   public boolean aJ()
   {
-    return Thread.currentThread() == this.aO;
+    return Thread.currentThread() == aO;
   }
   
   public bgd ae()
   {
-    return this.aQ;
+    return aQ;
   }
   
   public biu af()
   {
-    return this.aa;
+    return aa;
   }
   
   public bjh ag()
   {
-    return this.ab;
+    return ab;
   }
   
   public bfn ah()
   {
-    return this.ac;
+    return ac;
   }
   
   public static int ai()
@@ -2637,25 +2678,25 @@ public class ave
   
   public nh aj()
   {
-    return this.y;
+    return y;
   }
   
   public static Map<String, String> ak()
   {
-    Map<String, String> ☃ = Maps.newHashMap();
-    ☃.put("X-Minecraft-Username", A().L().c());
-    ☃.put("X-Minecraft-UUID", A().L().b());
-    ☃.put("X-Minecraft-Version", "1.8.8");
-    return ☃;
+    Map<String, String> map = Maps.newHashMap();
+    map.put("X-Minecraft-Username", A().L().c());
+    map.put("X-Minecraft-UUID", A().L().b());
+    map.put("X-Minecraft-Version", "1.8.8");
+    return map;
   }
   
   public boolean al()
   {
-    return this.X;
+    return X;
   }
   
-  public void a(boolean ☃)
+  public void a(boolean p_181537_1_)
   {
-    this.X = ☃;
+    X = p_181537_1_;
   }
 }

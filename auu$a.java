@@ -16,12 +16,12 @@ public enum auu$a
   
   private auu$a(String ☃)
   {
-    this.d = ☃;
+    d = ☃;
   }
   
   public String a()
   {
-    return this.d;
+    return d;
   }
   
   public static a a(String ☃)

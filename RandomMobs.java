@@ -45,11 +45,11 @@ public class RandomMobs
     
     int id = (int)(uuidLow & 0x7FFFFFFF);
     
-    el.randomMobsId = id;
+    randomMobsId = id;
     
-    el.spawnPosition = el.c();
+    spawnPosition = el.c();
     
-    el.spawnBiome = ws.b(el.spawnPosition);
+    spawnBiome = ws.b(spawnPosition);
   }
   
   public static void worldChanged(adm oldWorld, adm newWorld)
@@ -79,7 +79,7 @@ public class RandomMobs
       if (renderGlobal == null) {
         return loc;
       }
-      pk entity = renderGlobal.renderedEntity;
+      pk entity = renderGlobalrenderedEntity;
       if (!(entity instanceof ps)) {
         return loc;
       }

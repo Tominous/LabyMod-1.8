@@ -33,7 +33,7 @@ public class y
       for (lf ☃ : MinecraftServer.N().ap().v())
       {
         ☃.a(☃);
-        ☃.O = 0.0F;
+        O = 0.0F;
       }
     }
   }

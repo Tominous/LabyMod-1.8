@@ -10,12 +10,12 @@ public class xq
   
   public xq(wm ☃, adm ☃, cj ☃)
   {
-    this.g = ☃;
-    this.h = ☃;
-    a(new yf(☃.d, this.a, this.f, 0, 124, 35));
+    g = ☃;
+    h = ☃;
+    a(new yf(d, a, f, 0, 124, 35));
     for (int ☃ = 0; ☃ < 3; ☃++) {
       for (int ☃ = 0; ☃ < 3; ☃++) {
-        a(new yg(this.a, ☃ + ☃ * 3, 30 + ☃ * 18, 17 + ☃ * 18));
+        a(new yg(a, ☃ + ☃ * 3, 30 + ☃ * 18, 17 + ☃ * 18));
       }
     }
     for (int ☃ = 0; ☃ < 3; ☃++) {
@@ -26,23 +26,23 @@ public class xq
     for (int ☃ = 0; ☃ < 9; ☃++) {
       a(new yg(☃, ☃, 8 + ☃ * 18, 142));
     }
-    a(this.a);
+    a(a);
   }
   
   public void a(og ☃)
   {
-    this.f.a(0, abt.a().a(this.a, this.g));
+    f.a(0, abt.a().a(a, g));
   }
   
   public void b(wn ☃)
   {
     super.b(☃);
-    if (this.g.D) {
+    if (g.D) {
       return;
     }
     for (int ☃ = 0; ☃ < 9; ☃++)
     {
-      zx ☃ = this.a.b(☃);
+      zx ☃ = a.b(☃);
       if (☃ != null) {
         ☃.a(☃, false);
       }
@@ -51,10 +51,10 @@ public class xq
   
   public boolean a(wn ☃)
   {
-    if (this.g.p(this.h).c() != afi.ai) {
+    if (g.p(h).c() != afi.ai) {
       return false;
     }
-    if (☃.e(this.h.n() + 0.5D, this.h.o() + 0.5D, this.h.p() + 0.5D) > 64.0D) {
+    if (☃.e(h.n() + 0.5D, h.o() + 0.5D, h.p() + 0.5D) > 64.0D) {
       return false;
     }
     return true;
@@ -63,7 +63,7 @@ public class xq
   public zx b(wn ☃, int ☃)
   {
     zx ☃ = null;
-    yg ☃ = (yg)this.c.get(☃);
+    yg ☃ = (yg)c.get(☃);
     if ((☃ != null) && (☃.e()))
     {
       zx ☃ = ☃.d();
@@ -91,12 +91,12 @@ public class xq
       {
         return null;
       }
-      if (☃.b == 0) {
+      if (b == 0) {
         ☃.d(null);
       } else {
         ☃.f();
       }
-      if (☃.b == ☃.b) {
+      if (b == b) {
         return null;
       }
       ☃.a(☃, ☃);
@@ -106,6 +106,6 @@ public class xq
   
   public boolean a(zx ☃, yg ☃)
   {
-    return (☃.d != this.f) && (super.a(☃, ☃));
+    return (d != f) && (super.a(☃, ☃));
   }
 }

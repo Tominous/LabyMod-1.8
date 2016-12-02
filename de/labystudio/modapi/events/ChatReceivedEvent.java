@@ -2,6 +2,7 @@ package de.labystudio.modapi.events;
 
 import de.labystudio.modapi.Event;
 import de.labystudio.modapi.Listener;
+import eu;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
@@ -11,13 +12,12 @@ public class ChatReceivedEvent
   extends Event
 {
   public static final Map<Listener, List<Method>> listenerMethods = new HashMap();
-  private String msg;
-  private String cleanMsg;
+  private boolean cancelled;
+  private eu component;
   
-  public ChatReceivedEvent(String msg, String cleanMsg)
+  public ChatReceivedEvent(eu component)
   {
-    this.msg = msg;
-    this.cleanMsg = cleanMsg;
+    this.component = component;
   }
   
   public Map<Listener, List<Method>> getListenerMethods()
@@ -25,13 +25,28 @@ public class ChatReceivedEvent
     return listenerMethods;
   }
   
-  public String getMsg()
+  public boolean isCancelled()
   {
-    return this.msg;
+    return cancelled;
+  }
+  
+  public void setCancelled(boolean cancelled)
+  {
+    this.cancelled = cancelled;
+  }
+  
+  public eu getComponent()
+  {
+    return component;
   }
   
   public String getCleanMsg()
   {
-    return this.cleanMsg;
+    return component.c();
+  }
+  
+  public String getMsg()
+  {
+    return component.d();
   }
 }

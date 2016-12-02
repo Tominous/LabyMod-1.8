@@ -12,7 +12,7 @@ final class o$9
   public boolean a(pk ☃)
   {
     auo ☃ = MinecraftServer.N().a(0).Z();
-    for (Map.Entry<String, Integer> ☃ : this.a.entrySet())
+    for (Map.Entry<String, Integer> ☃ : a.entrySet())
     {
       String ☃ = (String)☃.getKey();
       boolean ☃ = false;

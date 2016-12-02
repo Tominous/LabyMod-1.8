@@ -14,8 +14,8 @@ public class aqw$j
   {
     super(☃, ☃);
     
-    this.m = ☃;
-    this.l = ☃;
+    m = ☃;
+    l = ☃;
   }
   
   public static j a(aqw.k ☃, List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃, int ☃)
@@ -30,24 +30,24 @@ public class aqw$j
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("Chest", this.b);
+    ☃.a("Chest", b);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    this.b = ☃.n("Chest");
+    b = ☃.n("Chest");
   }
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
   {
-    if (this.h < 0)
+    if (h < 0)
     {
-      this.h = b(☃, ☃);
-      if (this.h < 0) {
+      h = b(☃, ☃);
+      if (h < 0) {
         return true;
       }
-      this.l.a(0, this.h - this.l.e + 6 - 1, 0);
+      l.a(0, h - l.e + 6 - 1, 0);
     }
     a(☃, ☃, 0, 1, 0, 9, 4, 6, afi.a.Q(), afi.a.Q(), false);
     
@@ -91,10 +91,10 @@ public class aqw$j
     a(☃, afi.f.Q(), 1, 1, 5, ☃);
     a(☃, afi.ad.a(a(afi.ad, 3)), 2, 1, 5, ☃);
     a(☃, afi.ad.a(a(afi.ad, 1)), 1, 1, 4, ☃);
-    if ((!this.b) && 
+    if ((!b) && 
       (☃.b(new cj(a(5, 5), d(1), b(5, 5)))))
     {
-      this.b = true;
+      b = true;
       a(☃, ☃, ☃, 5, 1, 5, a, 3 + ☃.nextInt(6));
     }
     for (int ☃ = 6; ☃ <= 8; ☃++) {

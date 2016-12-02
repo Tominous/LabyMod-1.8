@@ -23,33 +23,33 @@ public enum cq
   
   private cq(String p_i46016_1_, int p_i46016_2_, int indexIn, int oppositeIn, int horizontalIndexIn, String nameIn, cq.b axisDirectionIn, cq.a axisIn, df directionVecIn)
   {
-    this.g = indexIn;
-    this.i = horizontalIndexIn;
-    this.h = oppositeIn;
-    this.j = nameIn;
-    this.k = axisIn;
-    this.l = axisDirectionIn;
-    this.m = directionVecIn;
+    g = indexIn;
+    i = horizontalIndexIn;
+    h = oppositeIn;
+    j = nameIn;
+    k = axisIn;
+    l = axisDirectionIn;
+    m = directionVecIn;
   }
   
   public int a()
   {
-    return this.g;
+    return g;
   }
   
   public int b()
   {
-    return this.i;
+    return i;
   }
   
   public cq.b c()
   {
-    return this.l;
+    return l;
   }
   
   public cq d()
   {
-    return n[this.h];
+    return n[h];
   }
   
   public cq a(cq.a axis)
@@ -144,27 +144,27 @@ public enum cq
   
   public int g()
   {
-    return this.k == cq.a.a ? this.l.a() : 0;
+    return k == cq.a.a ? l.a() : 0;
   }
   
   public int h()
   {
-    return this.k == cq.a.b ? this.l.a() : 0;
+    return k == cq.a.b ? l.a() : 0;
   }
   
   public int i()
   {
-    return this.k == cq.a.c ? this.l.a() : 0;
+    return k == cq.a.c ? l.a() : 0;
   }
   
   public String j()
   {
-    return this.j;
+    return j;
   }
   
   public cq.a k()
   {
-    return this.k;
+    return k;
   }
   
   public static cq a(String name)
@@ -201,7 +201,7 @@ public enum cq
     for (int var7 = 0; var7 < var6; var7++)
     {
       cq var8 = var5[var7];
-      float var9 = p_176737_0_ * var8.m.n() + p_176737_1_ * var8.m.o() + p_176737_2_ * var8.m.p();
+      float var9 = p_176737_0_ * m.n() + p_176737_1_ * m.o() + p_176737_2_ * m.p();
       if (var9 > var4)
       {
         var4 = var9;
@@ -213,12 +213,12 @@ public enum cq
   
   public String toString()
   {
-    return this.j;
+    return j;
   }
   
   public String l()
   {
-    return this.j;
+    return j;
   }
   
   public static cq a(cq.b p_500005_0_, cq.a p_500005_1_)
@@ -237,7 +237,7 @@ public enum cq
   
   public df m()
   {
-    return this.m;
+    return m;
   }
   
   static
@@ -254,9 +254,9 @@ public enum cq
     for (int var2 = 0; var2 < var1; var2++)
     {
       cq var3 = var0[var2];
-      n[var3.g] = var3;
+      n[g] = var3;
       if (var3.k().c()) {
-        o[var3.i] = var3;
+        o[i] = var3;
       }
       p.put(var3.j().toLowerCase(), var3);
     }
@@ -273,8 +273,8 @@ public enum cq
     
     private a(String p_i46015_1_, int p_i46015_2_, String name, cq.c plane)
     {
-      this.e = name;
-      this.f = plane;
+      e = name;
+      f = plane;
     }
     
     public static a a(String name)
@@ -284,22 +284,22 @@ public enum cq
     
     public String a()
     {
-      return this.e;
+      return e;
     }
     
     public boolean b()
     {
-      return this.f == cq.c.b;
+      return f == cq.c.b;
     }
     
     public boolean c()
     {
-      return this.f == cq.c.a;
+      return f == cq.c.a;
     }
     
     public String toString()
     {
-      return this.e;
+      return e;
     }
     
     public boolean a(cq facing)
@@ -309,12 +309,12 @@ public enum cq
     
     public cq.c d()
     {
-      return this.f;
+      return f;
     }
     
     public String l()
     {
-      return this.e;
+      return e;
     }
     
     public boolean apply(Object p_apply_1_)
@@ -347,18 +347,18 @@ public enum cq
     
     private b(String p_i46014_1_, int p_i46014_2_, int offset, String description)
     {
-      this.c = offset;
-      this.d = description;
+      c = offset;
+      d = description;
     }
     
     public int a()
     {
-      return this.c;
+      return c;
     }
     
     public String toString()
     {
-      return this.d;
+      return d;
     }
   }
   

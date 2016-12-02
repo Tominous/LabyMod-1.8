@@ -1,21 +1,18 @@
-import java.util.concurrent.Callable;
-import net.minecraft.client.ClientBrandRetriever;
-
 class ave$2
-  implements Callable<String>
+  extends Thread
 {
-  ave$2(ave paramave) {}
-  
-  public String a()
-    throws Exception
+  ave$2(ave this$0, String x0)
   {
-    String ☃ = ClientBrandRetriever.getClientModName();
-    if (!☃.equals("vanilla")) {
-      return "Definitely; Client brand changed to '" + ☃ + "'";
+    super(x0);
+  }
+  
+  public void run()
+  {
+      try
+      {
+        Thread.sleep(2147483647L);
+      }
+      catch (InterruptedException localInterruptedException) {}
     }
-    if (ave.class.getSigners() == null) {
-      return "Very likely; Jar signature invalidated";
-    }
-    return "Probably not. Jar signature remains and client brand is untouched.";
   }
 }

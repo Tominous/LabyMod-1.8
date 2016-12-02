@@ -13,51 +13,51 @@ public abstract class bpa
   
   protected bpa(jy ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public jy a()
   {
-    return this.a;
+    return a;
   }
   
   public boolean b()
   {
-    return this.g;
+    return g;
   }
   
   public int d()
   {
-    return this.h;
+    return h;
   }
   
   public float e()
   {
-    return this.b;
+    return b;
   }
   
   public float f()
   {
-    return this.c;
+    return c;
   }
   
   public float g()
   {
-    return this.d;
+    return d;
   }
   
   public float h()
   {
-    return this.e;
+    return e;
   }
   
   public float i()
   {
-    return this.f;
+    return f;
   }
   
   public bpj.a j()
   {
-    return this.i;
+    return i;
   }
 }

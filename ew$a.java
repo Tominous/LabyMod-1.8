@@ -9,18 +9,18 @@ public enum ew$a
   
   private ew$a(String ☃, boolean ☃)
   {
-    this.g = ☃;
-    this.f = ☃;
+    g = ☃;
+    f = ☃;
   }
   
   public boolean a()
   {
-    return this.f;
+    return f;
   }
   
   public String b()
   {
-    return this.g;
+    return g;
   }
   
   static

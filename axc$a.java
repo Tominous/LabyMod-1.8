@@ -6,8 +6,8 @@ class axc$a
   
   public axc$a(String ☃, jy ☃, ant.a ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
   }
 }

@@ -20,31 +20,31 @@ public class PacketEncryptionRequest
   
   public byte[] getPublicKey()
   {
-    return this.publicKey;
+    return publicKey;
   }
   
   public String getServerId()
   {
-    return this.serverId;
+    return serverId;
   }
   
   public byte[] getVerifyToken()
   {
-    return this.verifyToken;
+    return verifyToken;
   }
   
   public void read(PacketBuf buf)
   {
-    this.serverId = buf.readString();
-    this.publicKey = buf.readByteArray();
-    this.verifyToken = buf.readByteArray();
+    serverId = buf.readString();
+    publicKey = buf.readByteArray();
+    verifyToken = buf.readByteArray();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeString(this.serverId);
-    buf.writeByteArray(this.publicKey);
-    buf.writeByteArray(this.verifyToken);
+    buf.writeString(serverId);
+    buf.writeByteArray(publicKey);
+    buf.writeByteArray(verifyToken);
   }
   
   public void handle(PacketHandler packetHandler)

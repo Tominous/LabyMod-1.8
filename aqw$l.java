@@ -12,21 +12,21 @@ public class aqw$l
   {
     super(☃, ☃);
     
-    this.m = ☃;
-    this.l = ☃;
-    this.a = Math.max(☃.c(), ☃.e());
+    m = ☃;
+    l = ☃;
+    a = Math.max(☃.c(), ☃.e());
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("Length", this.a);
+    ☃.a("Length", a);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    this.a = ☃.f("Length");
+    a = ☃.f("Length");
   }
   
   public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -34,57 +34,57 @@ public class aqw$l
     boolean ☃ = false;
     
     int ☃ = ☃.nextInt(5);
-    while (☃ < this.a - 8)
+    while (☃ < a - 8)
     {
       aqt ☃ = a((aqw.k)☃, ☃, ☃, 0, ☃);
       if (☃ != null)
       {
-        ☃ += Math.max(☃.l.c(), ☃.l.e());
+        ☃ += Math.max(l.c(), l.e());
         ☃ = true;
       }
       ☃ += 2 + ☃.nextInt(5);
     }
     ☃ = ☃.nextInt(5);
-    while (☃ < this.a - 8)
+    while (☃ < a - 8)
     {
       aqt ☃ = b((aqw.k)☃, ☃, ☃, 0, ☃);
       if (☃ != null)
       {
-        ☃ += Math.max(☃.l.c(), ☃.l.e());
+        ☃ += Math.max(l.c(), l.e());
         ☃ = true;
       }
       ☃ += 2 + ☃.nextInt(5);
     }
-    if ((☃) && (☃.nextInt(3) > 0) && (this.m != null)) {
-      switch (aqw.1.a[this.m.ordinal()])
+    if ((☃) && (☃.nextInt(3) > 0) && (m != null)) {
+      switch (aqw.1.a[m.ordinal()])
       {
       case 1: 
-        aqw.b((aqw.k)☃, ☃, ☃, this.l.a - 1, this.l.b, this.l.c, cq.e, d());
+        aqw.b((aqw.k)☃, ☃, ☃, l.a - 1, l.b, l.c, cq.e, d());
         break;
       case 2: 
-        aqw.b((aqw.k)☃, ☃, ☃, this.l.a - 1, this.l.b, this.l.f - 2, cq.e, d());
+        aqw.b((aqw.k)☃, ☃, ☃, l.a - 1, l.b, l.f - 2, cq.e, d());
         break;
       case 4: 
-        aqw.b((aqw.k)☃, ☃, ☃, this.l.d - 2, this.l.b, this.l.c - 1, cq.c, d());
+        aqw.b((aqw.k)☃, ☃, ☃, l.d - 2, l.b, l.c - 1, cq.c, d());
         break;
       case 3: 
-        aqw.b((aqw.k)☃, ☃, ☃, this.l.a, this.l.b, this.l.c - 1, cq.c, d());
+        aqw.b((aqw.k)☃, ☃, ☃, l.a, l.b, l.c - 1, cq.c, d());
       }
     }
-    if ((☃) && (☃.nextInt(3) > 0) && (this.m != null)) {
-      switch (aqw.1.a[this.m.ordinal()])
+    if ((☃) && (☃.nextInt(3) > 0) && (m != null)) {
+      switch (aqw.1.a[m.ordinal()])
       {
       case 1: 
-        aqw.b((aqw.k)☃, ☃, ☃, this.l.d + 1, this.l.b, this.l.c, cq.f, d());
+        aqw.b((aqw.k)☃, ☃, ☃, l.d + 1, l.b, l.c, cq.f, d());
         break;
       case 2: 
-        aqw.b((aqw.k)☃, ☃, ☃, this.l.d + 1, this.l.b, this.l.f - 2, cq.f, d());
+        aqw.b((aqw.k)☃, ☃, ☃, l.d + 1, l.b, l.f - 2, cq.f, d());
         break;
       case 4: 
-        aqw.b((aqw.k)☃, ☃, ☃, this.l.d - 2, this.l.b, this.l.f + 1, cq.d, d());
+        aqw.b((aqw.k)☃, ☃, ☃, l.d - 2, l.b, l.f + 1, cq.d, d());
         break;
       case 3: 
-        aqw.b((aqw.k)☃, ☃, ☃, this.l.a, this.l.b, this.l.f + 1, cq.d, d());
+        aqw.b((aqw.k)☃, ☃, ☃, l.a, l.b, l.f + 1, cq.d, d());
       }
     }
   }
@@ -107,8 +107,8 @@ public class aqw$l
   {
     alz ☃ = a(afi.n.Q());
     alz ☃ = a(afi.e.Q());
-    for (int ☃ = this.l.a; ☃ <= this.l.d; ☃++) {
-      for (int ☃ = this.l.c; ☃ <= this.l.f; ☃++)
+    for (int ☃ = l.a; ☃ <= l.d; ☃++) {
+      for (int ☃ = l.c; ☃ <= l.f; ☃++)
       {
         cj ☃ = new cj(☃, 64, ☃);
         if (☃.b(☃))

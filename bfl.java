@@ -36,20 +36,20 @@ public class bfl
   
   public static void c()
   {
-    a.a.a();
+    aa.a();
   }
   
   public static void d()
   {
-    a.a.b();
+    aa.b();
   }
   
   public static void a(int p_179092_0_, float p_179092_1_)
   {
-    if ((p_179092_0_ != a.b) || (p_179092_1_ != a.c))
+    if ((p_179092_0_ != ab) || (p_179092_1_ != ac))
     {
-      a.b = p_179092_0_;
-      a.c = p_179092_1_;
+      ab = p_179092_0_;
+      ac = p_179092_1_;
       GL11.glAlphaFunc(p_179092_0_, p_179092_1_);
     }
   }
@@ -76,211 +76,211 @@ public class bfl
   
   public static void g()
   {
-    d.a.b();
+    da.b();
   }
   
   public static void h()
   {
-    d.a.a();
+    da.a();
   }
   
   public static void a(int p_179104_0_, int p_179104_1_)
   {
-    if ((p_179104_0_ != d.b) || (p_179104_1_ != d.c))
+    if ((p_179104_0_ != db) || (p_179104_1_ != dc))
     {
-      d.b = p_179104_0_;
-      d.c = p_179104_1_;
+      db = p_179104_0_;
+      dc = p_179104_1_;
       GL11.glColorMaterial(p_179104_0_, p_179104_1_);
     }
   }
   
   public static void i()
   {
-    f.a.a();
+    fa.a();
   }
   
   public static void j()
   {
-    f.a.b();
+    fa.b();
   }
   
   public static void c(int p_179143_0_)
   {
-    if (p_179143_0_ != f.c)
+    if (p_179143_0_ != fc)
     {
-      f.c = p_179143_0_;
+      fc = p_179143_0_;
       GL11.glDepthFunc(p_179143_0_);
     }
   }
   
   public static void a(boolean p_179132_0_)
   {
-    if (p_179132_0_ != f.b)
+    if (p_179132_0_ != fb)
     {
-      f.b = p_179132_0_;
+      fb = p_179132_0_;
       GL11.glDepthMask(p_179132_0_);
     }
   }
   
   public static void k()
   {
-    e.a.a();
+    ea.a();
   }
   
   public static void l()
   {
-    e.a.b();
+    ea.b();
   }
   
   public static void b(int p_179112_0_, int p_179112_1_)
   {
-    if ((p_179112_0_ != e.b) || (p_179112_1_ != e.c))
+    if ((p_179112_0_ != eb) || (p_179112_1_ != ec))
     {
-      e.b = p_179112_0_;
-      e.c = p_179112_1_;
+      eb = p_179112_0_;
+      ec = p_179112_1_;
       GL11.glBlendFunc(p_179112_0_, p_179112_1_);
     }
   }
   
   public static void a(int p_179120_0_, int p_179120_1_, int p_179120_2_, int p_179120_3_)
   {
-    if ((p_179120_0_ != e.b) || (p_179120_1_ != e.c) || (p_179120_2_ != e.d) || (p_179120_3_ != e.e))
+    if ((p_179120_0_ != eb) || (p_179120_1_ != ec) || (p_179120_2_ != ed) || (p_179120_3_ != ee))
     {
-      e.b = p_179120_0_;
-      e.c = p_179120_1_;
-      e.d = p_179120_2_;
-      e.e = p_179120_3_;
+      eb = p_179120_0_;
+      ec = p_179120_1_;
+      ed = p_179120_2_;
+      ee = p_179120_3_;
       bqs.c(p_179120_0_, p_179120_1_, p_179120_2_, p_179120_3_);
     }
   }
   
   public static void m()
   {
-    g.a.b();
+    ga.b();
   }
   
   public static void n()
   {
-    g.a.a();
+    ga.a();
   }
   
   public static void d(int p_179093_0_)
   {
-    if (p_179093_0_ != g.b)
+    if (p_179093_0_ != gb)
     {
-      g.b = p_179093_0_;
+      gb = p_179093_0_;
       GL11.glFogi(2917, p_179093_0_);
     }
   }
   
   public static void a(float p_179095_0_)
   {
-    if (p_179095_0_ != g.c)
+    if (p_179095_0_ != gc)
     {
-      g.c = p_179095_0_;
+      gc = p_179095_0_;
       GL11.glFogf(2914, p_179095_0_);
     }
   }
   
   public static void b(float p_179102_0_)
   {
-    if (p_179102_0_ != g.d)
+    if (p_179102_0_ != gd)
     {
-      g.d = p_179102_0_;
+      gd = p_179102_0_;
       GL11.glFogf(2915, p_179102_0_);
     }
   }
   
   public static void c(float p_179153_0_)
   {
-    if (p_179153_0_ != g.e)
+    if (p_179153_0_ != ge)
     {
-      g.e = p_179153_0_;
+      ge = p_179153_0_;
       GL11.glFogf(2916, p_179153_0_);
     }
   }
   
   public static void o()
   {
-    h.a.b();
+    ha.b();
   }
   
   public static void p()
   {
-    h.a.a();
+    ha.a();
   }
   
   public static void e(int p_179107_0_)
   {
-    if (p_179107_0_ != h.b)
+    if (p_179107_0_ != hb)
     {
-      h.b = p_179107_0_;
+      hb = p_179107_0_;
       GL11.glCullFace(p_179107_0_);
     }
   }
   
   public static void q()
   {
-    i.a.b();
+    ia.b();
   }
   
   public static void r()
   {
-    i.a.a();
+    ia.a();
   }
   
   public static void a(float p_179136_0_, float p_179136_1_)
   {
-    if ((p_179136_0_ != i.c) || (p_179136_1_ != i.d))
+    if ((p_179136_0_ != ic) || (p_179136_1_ != id))
     {
-      i.c = p_179136_0_;
-      i.d = p_179136_1_;
+      ic = p_179136_0_;
+      id = p_179136_1_;
       GL11.glPolygonOffset(p_179136_0_, p_179136_1_);
     }
   }
   
   public static void u()
   {
-    j.a.b();
+    ja.b();
   }
   
   public static void v()
   {
-    j.a.a();
+    ja.a();
   }
   
   public static void f(int p_179116_0_)
   {
-    if (p_179116_0_ != j.b)
+    if (p_179116_0_ != jb)
     {
-      j.b = p_179116_0_;
+      jb = p_179116_0_;
       GL11.glLogicOp(p_179116_0_);
     }
   }
   
   public static void a(bfl.o p_179087_0_)
   {
-    c(p_179087_0_).a.b();
+    ca.b();
   }
   
   public static void b(bfl.o p_179100_0_)
   {
-    c(p_179100_0_).a.a();
+    ca.a();
   }
   
   public static void a(bfl.o p_179149_0_, int p_179149_1_)
   {
     bfl.p var2 = c(p_179149_0_);
-    if (p_179149_1_ != var2.c)
+    if (p_179149_1_ != c)
     {
-      var2.c = p_179149_1_;
-      GL11.glTexGeni(var2.b, 9472, p_179149_1_);
+      c = p_179149_1_;
+      GL11.glTexGeni(b, 9472, p_179149_1_);
     }
   }
   
   public static void a(bfl.o p_179105_0_, int p_179105_1_, FloatBuffer p_179105_2_)
   {
-    GL11.glTexGen(c(p_179105_0_).b, p_179105_1_, p_179105_2_);
+    GL11.glTexGen(cb, p_179105_1_, p_179105_2_);
   }
   
   private static bfl.p c(bfl.o p_179125_0_)
@@ -288,15 +288,15 @@ public class bfl
     switch (bfl.1.a[p_179125_0_.ordinal()])
     {
     case 1: 
-      return k.a;
+      return ka;
     case 2: 
-      return k.b;
+      return kb;
     case 3: 
-      return k.c;
+      return kc;
     case 4: 
-      return k.d;
+      return kd;
     }
-    return k.a;
+    return ka;
   }
   
   public static void g(int p_179138_0_)
@@ -310,12 +310,12 @@ public class bfl
   
   public static void w()
   {
-    p[o].a.b();
+    poa.b();
   }
   
   public static void x()
   {
-    p[o].a.a();
+    poa.a();
   }
   
   public static int y()
@@ -334,24 +334,24 @@ public class bfl
     for (int var3 = 0; var3 < var2; var3++)
     {
       bfl.r var4 = var1[var3];
-      if (var4.b == p_179150_0_) {
-        var4.b = 0;
+      if (b == p_179150_0_) {
+        b = 0;
       }
     }
   }
   
   public static void i(int p_179144_0_)
   {
-    if (p_179144_0_ != p[o].b)
+    if (p_179144_0_ != pob)
     {
-      p[o].b = p_179144_0_;
+      pob = p_179144_0_;
       GL11.glBindTexture(3553, p_179144_0_);
     }
   }
   
   public static void bindCurrentTexture()
   {
-    GL11.glBindTexture(3553, p[o].b);
+    GL11.glBindTexture(3553, pob);
   }
   
   public static void z()
@@ -390,33 +390,33 @@ public class bfl
   
   public static void a(boolean p_179135_0_, boolean p_179135_1_, boolean p_179135_2_, boolean p_179135_3_)
   {
-    if ((p_179135_0_ != s.a) || (p_179135_1_ != s.b) || (p_179135_2_ != s.c) || (p_179135_3_ != s.d))
+    if ((p_179135_0_ != sa) || (p_179135_1_ != sb) || (p_179135_2_ != sc) || (p_179135_3_ != sd))
     {
-      s.a = p_179135_0_;
-      s.b = p_179135_1_;
-      s.c = p_179135_2_;
-      s.d = p_179135_3_;
+      sa = p_179135_0_;
+      sb = p_179135_1_;
+      sc = p_179135_2_;
+      sd = p_179135_3_;
       GL11.glColorMask(p_179135_0_, p_179135_1_, p_179135_2_, p_179135_3_);
     }
   }
   
   public static void a(double p_179151_0_)
   {
-    if (p_179151_0_ != l.a)
+    if (p_179151_0_ != la)
     {
-      l.a = p_179151_0_;
+      la = p_179151_0_;
       GL11.glClearDepth(p_179151_0_);
     }
   }
   
   public static void a(float p_179082_0_, float p_179082_1_, float p_179082_2_, float p_179082_3_)
   {
-    if ((p_179082_0_ != l.b.a) || (p_179082_1_ != l.b.b) || (p_179082_2_ != l.b.c) || (p_179082_3_ != l.b.d))
+    if ((p_179082_0_ != lb.a) || (p_179082_1_ != lb.b) || (p_179082_2_ != lb.c) || (p_179082_3_ != lb.d))
     {
-      l.b.a = p_179082_0_;
-      l.b.b = p_179082_1_;
-      l.b.c = p_179082_2_;
-      l.b.d = p_179082_3_;
+      lb.a = p_179082_0_;
+      lb.b = p_179082_1_;
+      lb.c = p_179082_2_;
+      lb.d = p_179082_3_;
       GL11.glClearColor(p_179082_0_, p_179082_1_, p_179082_2_, p_179082_3_);
     }
   }
@@ -482,12 +482,12 @@ public class bfl
   
   public static void c(float p_179131_0_, float p_179131_1_, float p_179131_2_, float p_179131_3_)
   {
-    if ((p_179131_0_ != t.a) || (p_179131_1_ != t.b) || (p_179131_2_ != t.c) || (p_179131_3_ != t.d))
+    if ((p_179131_0_ != ta) || (p_179131_1_ != tb) || (p_179131_2_ != tc) || (p_179131_3_ != td))
     {
-      t.a = p_179131_0_;
-      t.b = p_179131_1_;
-      t.c = p_179131_2_;
-      t.d = p_179131_3_;
+      ta = p_179131_0_;
+      tb = p_179131_1_;
+      tc = p_179131_2_;
+      td = p_179131_3_;
       GL11.glColor4f(p_179131_0_, p_179131_1_, p_179131_2_, p_179131_3_);
     }
   }
@@ -499,7 +499,7 @@ public class bfl
   
   public static void G()
   {
-    t.a = (t.b = t.c = t.d = -1.0F);
+    ta = (tb = tc = td = -1.0F);
   }
   
   public static void o(int p_179148_0_)
@@ -514,7 +514,7 @@ public class bfl
   
   public static int getBoundTexture()
   {
-    return p[o].b;
+    return pob;
   }
   
   public static void checkBoundTexture()
@@ -564,9 +564,9 @@ public class bfl
     
     private a()
     {
-      this.a = new bfl.c(3008);
-      this.b = 519;
-      this.c = -1.0F;
+      a = new bfl.c(3008);
+      b = 519;
+      c = -1.0F;
     }
     
     a(bfl.1 p_i46269_1_)
@@ -586,11 +586,11 @@ public class bfl
     
     private b()
     {
-      this.a = new bfl.c(3042);
-      this.b = 1;
-      this.c = 0;
-      this.d = 1;
-      this.e = 0;
+      a = new bfl.c(3042);
+      b = 1;
+      c = 0;
+      d = 1;
+      e = 0;
     }
     
     b(bfl.1 p_i46268_1_)
@@ -607,7 +607,7 @@ public class bfl
     
     public c(int p_i46267_1_)
     {
-      this.a = p_i46267_1_;
+      a = p_i46267_1_;
     }
     
     public void a()
@@ -622,13 +622,13 @@ public class bfl
     
     public void a(boolean p_179199_1_)
     {
-      if (p_179199_1_ != this.b)
+      if (p_179199_1_ != b)
       {
-        this.b = p_179199_1_;
+        b = p_179199_1_;
         if (p_179199_1_) {
-          GL11.glEnable(this.a);
+          GL11.glEnable(a);
         } else {
-          GL11.glDisable(this.a);
+          GL11.glDisable(a);
         }
       }
     }
@@ -643,9 +643,9 @@ public class bfl
     
     private d()
     {
-      this.a = 1.0D;
-      this.b = new bfl.e(0.0F, 0.0F, 0.0F, 0.0F);
-      this.c = 0;
+      a = 1.0D;
+      b = new bfl.e(0.0F, 0.0F, 0.0F, 0.0F);
+      c = 0;
     }
     
     d(bfl.1 p_i46266_1_)
@@ -666,10 +666,10 @@ public class bfl
     
     public e(float p_i46265_1_, float p_i46265_2_, float p_i46265_3_, float p_i46265_4_)
     {
-      this.a = p_i46265_1_;
-      this.b = p_i46265_2_;
-      this.c = p_i46265_3_;
-      this.d = p_i46265_4_;
+      a = p_i46265_1_;
+      b = p_i46265_2_;
+      c = p_i46265_3_;
+      d = p_i46265_4_;
     }
   }
   
@@ -681,8 +681,8 @@ public class bfl
     
     private f()
     {
-      this.a = new bfl.c(3058);
-      this.b = 5379;
+      a = new bfl.c(3058);
+      b = 5379;
     }
     
     f(bfl.1 p_i46264_1_)
@@ -701,10 +701,10 @@ public class bfl
     
     private g()
     {
-      this.a = true;
-      this.b = true;
-      this.c = true;
-      this.d = true;
+      a = true;
+      b = true;
+      c = true;
+      d = true;
     }
     
     g(bfl.1 p_i46263_1_)
@@ -722,9 +722,9 @@ public class bfl
     
     private h()
     {
-      this.a = new bfl.c(2903);
-      this.b = 1032;
-      this.c = 5634;
+      a = new bfl.c(2903);
+      b = 1032;
+      c = 5634;
     }
     
     h(bfl.1 p_i46262_1_)
@@ -741,8 +741,8 @@ public class bfl
     
     private i()
     {
-      this.a = new bfl.c(2884);
-      this.b = 1029;
+      a = new bfl.c(2884);
+      b = 1029;
     }
     
     i(bfl.1 p_i46261_1_)
@@ -760,9 +760,9 @@ public class bfl
     
     private j()
     {
-      this.a = new bfl.c(2929);
-      this.b = true;
-      this.c = 513;
+      a = new bfl.c(2929);
+      b = true;
+      c = 513;
     }
     
     j(bfl.1 p_i46260_1_)
@@ -782,11 +782,11 @@ public class bfl
     
     private k()
     {
-      this.a = new bfl.c(2912);
-      this.b = 2048;
-      this.c = 1.0F;
-      this.d = 0.0F;
-      this.e = 1.0F;
+      a = new bfl.c(2912);
+      b = 2048;
+      c = 1.0F;
+      d = 0.0F;
+      e = 1.0F;
     }
     
     k(bfl.1 p_i46259_1_)
@@ -805,10 +805,10 @@ public class bfl
     
     private l()
     {
-      this.a = new bfl.c(32823);
-      this.b = new bfl.c(10754);
-      this.c = 0.0F;
-      this.d = 0.0F;
+      a = new bfl.c(32823);
+      b = new bfl.c(10754);
+      c = 0.0F;
+      d = 0.0F;
     }
     
     l(bfl.1 p_i46258_1_)
@@ -826,9 +826,9 @@ public class bfl
     
     private m()
     {
-      this.a = 519;
-      this.b = 0;
-      this.c = -1;
+      a = 519;
+      b = 0;
+      c = -1;
     }
     
     m(bfl.1 p_i46257_1_)
@@ -848,11 +848,11 @@ public class bfl
     
     private n()
     {
-      this.a = new bfl.m((bfl.1)null);
-      this.b = -1;
-      this.c = 7680;
-      this.d = 7680;
-      this.e = 7680;
+      a = new bfl.m((bfl.1)null);
+      b = -1;
+      c = 7680;
+      d = 7680;
+      e = 7680;
     }
     
     n(bfl.1 p_i46256_1_)
@@ -876,8 +876,8 @@ public class bfl
     
     public p(int p_i46254_1_, int p_i46254_2_)
     {
-      this.b = p_i46254_1_;
-      this.a = new bfl.c(p_i46254_2_);
+      b = p_i46254_1_;
+      a = new bfl.c(p_i46254_2_);
     }
   }
   
@@ -891,10 +891,10 @@ public class bfl
     
     private q()
     {
-      this.a = new bfl.p(8192, 3168);
-      this.b = new bfl.p(8193, 3169);
-      this.c = new bfl.p(8194, 3170);
-      this.d = new bfl.p(8195, 3171);
+      a = new bfl.p(8192, 3168);
+      b = new bfl.p(8193, 3169);
+      c = new bfl.p(8194, 3170);
+      d = new bfl.p(8195, 3171);
     }
     
     q(bfl.1 p_i46253_1_)
@@ -911,8 +911,8 @@ public class bfl
     
     private r()
     {
-      this.a = new bfl.c(3553);
-      this.b = 0;
+      a = new bfl.c(3553);
+      b = 0;
     }
     
     r(bfl.1 p_i46252_1_)

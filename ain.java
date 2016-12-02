@@ -6,7 +6,7 @@ public class ain
   public ain()
   {
     super(arm.x);
-    this.L = 0.98F;
+    L = 0.98F;
     a(yz.b);
   }
   

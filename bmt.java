@@ -9,13 +9,13 @@ public class bmt
   
   public bmt(bmu ☃)
   {
-    this.b = ☃;
-    this.a = bqs.e();
+    b = ☃;
+    a = bqs.e();
   }
   
   public void a()
   {
-    bqs.g(bqs.R, this.a);
+    bqs.g(bqs.R, a);
   }
   
   public void a(ByteBuffer ☃)
@@ -23,12 +23,12 @@ public class bmt
     a();
     bqs.a(bqs.R, ☃, 35044);
     b();
-    this.c = (☃.limit() / this.b.g());
+    c = (☃.limit() / b.g());
   }
   
   public void a(int ☃)
   {
-    GL11.glDrawArrays(☃, 0, this.c);
+    GL11.glDrawArrays(☃, 0, c);
   }
   
   public void b()
@@ -38,10 +38,10 @@ public class bmt
   
   public void c()
   {
-    if (this.a >= 0)
+    if (a >= 0)
     {
-      bqs.g(this.a);
-      this.a = -1;
+      bqs.g(a);
+      a = -1;
     }
   }
 }

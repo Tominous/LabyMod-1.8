@@ -8,8 +8,8 @@ public class qj
   public qj(qb ☃, String ☃, double ☃, double ☃, double ☃)
   {
     super(☃, ☃, ☃);
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
     if (☃ > ☃) {
       throw new IllegalArgumentException("Minimum value cannot be bigger than maximum value!");
     }
@@ -23,18 +23,18 @@ public class qj
   
   public qj a(String ☃)
   {
-    this.c = ☃;
+    c = ☃;
     return this;
   }
   
   public String g()
   {
-    return this.c;
+    return c;
   }
   
   public double a(double ☃)
   {
-    ☃ = ns.a(☃, this.a, this.b);
+    ☃ = ns.a(☃, a, b);
     
     return ☃;
   }

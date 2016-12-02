@@ -24,12 +24,12 @@ public class InitScreenEvent
   
   public axu getScreen()
   {
-    return this.screen;
+    return screen;
   }
   
   public List<avs> getButtonList()
   {
-    return this.buttonList;
+    return buttonList;
   }
   
   public Map<Listener, List<Method>> getListenerMethods()

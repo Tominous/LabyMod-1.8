@@ -17,7 +17,7 @@ public class atn
     if (!☃.exists()) {
       ☃.mkdirs();
     }
-    this.a = ☃;
+    a = ☃;
   }
   
   public String a()
@@ -45,7 +45,7 @@ public class atn
   
   public ato c(String ☃)
   {
-    File ☃ = new File(this.a, ☃);
+    File ☃ = new File(a, ☃);
     if (!☃.exists()) {
       return null;
     }
@@ -80,7 +80,7 @@ public class atn
   
   public void a(String ☃, String ☃)
   {
-    File ☃ = new File(this.a, ☃);
+    File ☃ = new File(a, ☃);
     if (!☃.exists()) {
       return;
     }
@@ -103,7 +103,7 @@ public class atn
   
   public boolean d(String ☃)
   {
-    File ☃ = new File(this.a, ☃);
+    File ☃ = new File(a, ☃);
     if (☃.exists()) {
       return false;
     }
@@ -122,7 +122,7 @@ public class atn
   
   public boolean e(String ☃)
   {
-    File ☃ = new File(this.a, ☃);
+    File ☃ = new File(a, ☃);
     if (!☃.exists()) {
       return true;
     }
@@ -168,7 +168,7 @@ public class atn
   
   public atp a(String ☃, boolean ☃)
   {
-    return new atm(this.a, ☃, ☃);
+    return new atm(a, ☃, ☃);
   }
   
   public boolean a(String ☃)
@@ -188,7 +188,7 @@ public class atn
   
   public boolean f(String ☃)
   {
-    File ☃ = new File(this.a, ☃);
+    File ☃ = new File(a, ☃);
     return ☃.isDirectory();
   }
 }

@@ -7,58 +7,58 @@ public enum aku$a
   
   private aku$a(String ☃, String ☃)
   {
-    this.N = ☃;
-    this.O = ☃;
+    N = ☃;
+    O = ☃;
   }
   
   private aku$a(String ☃, String ☃, zx ☃)
   {
     this(☃, ☃);
-    this.Q = ☃;
+    Q = ☃;
   }
   
   private aku$a(String ☃, String ☃, String ☃, String ☃, String ☃)
   {
     this(☃, ☃);
-    this.P[0] = ☃;
-    this.P[1] = ☃;
-    this.P[2] = ☃;
+    P[0] = ☃;
+    P[1] = ☃;
+    P[2] = ☃;
   }
   
   public String a()
   {
-    return this.N;
+    return N;
   }
   
   public String b()
   {
-    return this.O;
+    return O;
   }
   
   public String[] c()
   {
-    return this.P;
+    return P;
   }
   
   public boolean d()
   {
-    return (this.Q != null) || (this.P[0] != null);
+    return (Q != null) || (P[0] != null);
   }
   
   public boolean e()
   {
-    return this.Q != null;
+    return Q != null;
   }
   
   public zx f()
   {
-    return this.Q;
+    return Q;
   }
   
   public static a a(String ☃)
   {
     for (a ☃ : ) {
-      if (☃.O.equals(☃)) {
+      if (O.equals(☃)) {
         return ☃;
       }
     }

@@ -5,7 +5,7 @@ public class ClearWater
     if (settings != null)
     {
       int opacity = 3;
-      if (settings.ofClearWater) {
+      if (ofClearWater) {
         opacity = 1;
       }
       BlockUtils.setLightOpacity(afi.j, opacity);
@@ -22,8 +22,8 @@ public class ClearWater
     if (rve == null) {
       return;
     }
-    int cViewX = (int)rve.s / 16;
-    int cViewZ = (int)rve.u / 16;
+    int cViewX = (int)s / 16;
+    int cViewZ = (int)u / 16;
     
     int cXMin = cViewX - 512;
     int cXMax = cViewX + 512;

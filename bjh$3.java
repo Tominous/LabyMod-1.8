@@ -10,6 +10,6 @@ class bjh$3
   public String a()
     throws Exception
   {
-    return String.valueOf(this.val$p_180450_1_.o());
+    return String.valueOf(val$p_180450_1_.o());
   }
 }

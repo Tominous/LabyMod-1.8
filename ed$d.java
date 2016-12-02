@@ -18,8 +18,8 @@ class ed$d
   
   public ed$d(String ☃, String ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public eb a()
@@ -27,39 +27,39 @@ class ed$d
   {
     try
     {
-      if (c.matcher(this.b).matches()) {
-        return new dp(Double.parseDouble(this.b.substring(0, this.b.length() - 1)));
+      if (c.matcher(b).matches()) {
+        return new dp(Double.parseDouble(b.substring(0, b.length() - 1)));
       }
-      if (d.matcher(this.b).matches()) {
-        return new dr(Float.parseFloat(this.b.substring(0, this.b.length() - 1)));
+      if (d.matcher(b).matches()) {
+        return new dr(Float.parseFloat(b.substring(0, b.length() - 1)));
       }
-      if (e.matcher(this.b).matches()) {
-        return new dm(Byte.parseByte(this.b.substring(0, this.b.length() - 1)));
+      if (e.matcher(b).matches()) {
+        return new dm(Byte.parseByte(b.substring(0, b.length() - 1)));
       }
-      if (f.matcher(this.b).matches()) {
-        return new dv(Long.parseLong(this.b.substring(0, this.b.length() - 1)));
+      if (f.matcher(b).matches()) {
+        return new dv(Long.parseLong(b.substring(0, b.length() - 1)));
       }
-      if (g.matcher(this.b).matches()) {
-        return new dz(Short.parseShort(this.b.substring(0, this.b.length() - 1)));
+      if (g.matcher(b).matches()) {
+        return new dz(Short.parseShort(b.substring(0, b.length() - 1)));
       }
-      if (h.matcher(this.b).matches()) {
-        return new dt(Integer.parseInt(this.b));
+      if (h.matcher(b).matches()) {
+        return new dt(Integer.parseInt(b));
       }
-      if (i.matcher(this.b).matches()) {
-        return new dp(Double.parseDouble(this.b));
+      if (i.matcher(b).matches()) {
+        return new dp(Double.parseDouble(b));
       }
-      if ((this.b.equalsIgnoreCase("true")) || (this.b.equalsIgnoreCase("false"))) {
-        return new dm((byte)(Boolean.parseBoolean(this.b) ? 1 : 0));
+      if ((b.equalsIgnoreCase("true")) || (b.equalsIgnoreCase("false"))) {
+        return new dm((byte)(Boolean.parseBoolean(b) ? 1 : 0));
       }
     }
     catch (NumberFormatException ☃)
     {
-      this.b = this.b.replaceAll("\\\\\"", "\"");
-      return new ea(this.b);
+      b = b.replaceAll("\\\\\"", "\"");
+      return new ea(b);
     }
-    if ((this.b.startsWith("[")) && (this.b.endsWith("]")))
+    if ((b.startsWith("[")) && (b.endsWith("]")))
     {
-      String ☃ = this.b.substring(1, this.b.length() - 1);
+      String ☃ = b.substring(1, b.length() - 1);
       
       String[] ☃ = (String[])Iterables.toArray(j.split(☃), String.class);
       try
@@ -72,24 +72,24 @@ class ed$d
       }
       catch (NumberFormatException ☃)
       {
-        return new ea(this.b);
+        return new ea(b);
       }
     }
-    if ((this.b.startsWith("\"")) && (this.b.endsWith("\""))) {
-      this.b = this.b.substring(1, this.b.length() - 1);
+    if ((b.startsWith("\"")) && (b.endsWith("\""))) {
+      b = b.substring(1, b.length() - 1);
     }
-    this.b = this.b.replaceAll("\\\\\"", "\"");
+    b = b.replaceAll("\\\\\"", "\"");
     
     StringBuilder ☃ = new StringBuilder();
-    for (int ☃ = 0; ☃ < this.b.length(); ☃++) {
-      if ((☃ < this.b.length() - 1) && (this.b.charAt(☃) == '\\') && (this.b.charAt(☃ + 1) == '\\'))
+    for (int ☃ = 0; ☃ < b.length(); ☃++) {
+      if ((☃ < b.length() - 1) && (b.charAt(☃) == '\\') && (b.charAt(☃ + 1) == '\\'))
       {
         ☃.append('\\');
         ☃++;
       }
       else
       {
-        ☃.append(this.b.charAt(☃));
+        ☃.append(b.charAt(☃));
       }
     }
     return new ea(☃.toString());

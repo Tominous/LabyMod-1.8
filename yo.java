@@ -8,7 +8,7 @@ public class yo
   
   public yo(afh ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public yo b(String ☃)
@@ -24,26 +24,26 @@ public class yo
     if (!☃.a(☃, ☃)) {
       ☃ = ☃.a(☃);
     }
-    if (☃.b == 0) {
+    if (b == 0) {
       return false;
     }
     if (!☃.a(☃, ☃, ☃)) {
       return false;
     }
-    if (☃.a(this.a, ☃, false, ☃, null, ☃))
+    if (☃.a(a, ☃, false, ☃, null, ☃))
     {
       int ☃ = a(☃.i());
-      alz ☃ = this.a.a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
+      alz ☃ = a.a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
       if (☃.a(☃, ☃, 3))
       {
         ☃ = ☃.p(☃);
-        if (☃.c() == this.a)
+        if (☃.c() == a)
         {
           a(☃, ☃, ☃, ☃);
-          this.a.a(☃, ☃, ☃, ☃, ☃);
+          a.a(☃, ☃, ☃, ☃, ☃);
         }
-        ☃.a(☃.n() + 0.5F, ☃.o() + 0.5F, ☃.p() + 0.5F, this.a.H.b(), (this.a.H.d() + 1.0F) / 2.0F, this.a.H.e() * 0.8F);
-        ☃.b -= 1;
+        ☃.a(☃.n() + 0.5F, ☃.o() + 0.5F, ☃.p() + 0.5F, a.H.b(), (a.H.d() + 1.0F) / 2.0F, a.H.e() * 0.8F);
+        b -= 1;
       }
       return true;
     }
@@ -61,7 +61,7 @@ public class yo
       akw ☃ = ☃.s(☃);
       if (☃ != null)
       {
-        if ((!☃.D) && (☃.F()) && (!☃.ap().h(☃.cd()))) {
+        if ((!D) && (☃.F()) && (!☃.ap().h(☃.cd()))) {
           return false;
         }
         dn ☃ = new dn();
@@ -92,31 +92,31 @@ public class yo
     } else if (!☃.a(☃, ☃)) {
       ☃ = ☃.a(☃);
     }
-    return ☃.a(this.a, ☃, false, ☃, null, ☃);
+    return ☃.a(a, ☃, false, ☃, null, ☃);
   }
   
   public String e_(zx ☃)
   {
-    return this.a.a();
+    return a.a();
   }
   
   public String a()
   {
-    return this.a.a();
+    return a.a();
   }
   
   public yz c()
   {
-    return this.a.L();
+    return a.L();
   }
   
   public void a(zw ☃, yz ☃, List<zx> ☃)
   {
-    this.a.a(☃, ☃, ☃);
+    a.a(☃, ☃, ☃);
   }
   
   public afh d()
   {
-    return this.a;
+    return a;
   }
 }

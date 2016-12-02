@@ -12,7 +12,7 @@ public class bki
   
   public void a(wd ☃, double ☃, double ☃, double ☃, float ☃, float ☃)
   {
-    ((bck)this.f).g = (☃.bA() != null);
+    f).g = (☃.bA() != null);
     
     super.a(☃, ☃, ☃, ☃, ☃, ☃);
   }

@@ -3,14 +3,14 @@ public class anp
 {
   public void b()
   {
-    this.c = new aef(ady.y, 0.0F);
-    this.g = 1;
-    this.e = true;
+    c = new aef(ady.y, 0.0F);
+    g = 1;
+    e = true;
   }
   
   public amv c()
   {
-    return new aob(this.b, this.b.J());
+    return new aob(b, b.J());
   }
   
   public float a(long ☃, float ☃)
@@ -61,7 +61,7 @@ public class anp
   
   public boolean a(int ☃, int ☃)
   {
-    return this.b.c(new cj(☃, 0, ☃)).t().c();
+    return b.c(new cj(☃, 0, ☃)).t().c();
   }
   
   public cj h()

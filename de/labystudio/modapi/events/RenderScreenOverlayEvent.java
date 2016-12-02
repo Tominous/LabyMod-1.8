@@ -25,17 +25,17 @@ public class RenderScreenOverlayEvent
   
   public axu getScreen()
   {
-    return this.screen;
+    return screen;
   }
   
   public int getMouseX()
   {
-    return this.mouseX;
+    return mouseX;
   }
   
   public int getMouseY()
   {
-    return this.mouseY;
+    return mouseY;
   }
   
   public Map<Listener, List<Method>> getListenerMethods()

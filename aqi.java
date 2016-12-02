@@ -10,10 +10,10 @@ public class aqi
   
   public aqi()
   {
-    this.d.add(new ady.c(vl.class, 10, 2, 3));
-    this.d.add(new ady.c(vw.class, 5, 4, 4));
-    this.d.add(new ady.c(wa.class, 10, 4, 4));
-    this.d.add(new ady.c(vu.class, 3, 4, 4));
+    d.add(new ady.c(vl.class, 10, 2, 3));
+    d.add(new ady.c(vw.class, 5, 4, 4));
+    d.add(new ady.c(wa.class, 10, 4, 4));
+    d.add(new ady.c(vu.class, 3, 4, 4));
   }
   
   public String a()
@@ -23,7 +23,7 @@ public class aqi
   
   public List<ady.c> b()
   {
-    return this.d;
+    return d;
   }
   
   protected boolean a(int ☃, int ☃)
@@ -31,15 +31,15 @@ public class aqi
     int ☃ = ☃ >> 4;
     int ☃ = ☃ >> 4;
     
-    this.b.setSeed(☃ ^ ☃ << 4 ^ this.c.J());
-    this.b.nextInt();
-    if (this.b.nextInt(3) != 0) {
+    b.setSeed(☃ ^ ☃ << 4 ^ c.J());
+    b.nextInt();
+    if (b.nextInt(3) != 0) {
       return false;
     }
-    if (☃ != (☃ << 4) + 4 + this.b.nextInt(8)) {
+    if (☃ != (☃ << 4) + 4 + b.nextInt(8)) {
       return false;
     }
-    if (☃ != (☃ << 4) + 4 + this.b.nextInt(8)) {
+    if (☃ != (☃ << 4) + 4 + b.nextInt(8)) {
       return false;
     }
     return true;
@@ -47,7 +47,7 @@ public class aqi
   
   protected aqu b(int ☃, int ☃)
   {
-    return new aqi.a(this.c, this.b, ☃, ☃);
+    return new aqi.a(c, b, ☃, ☃);
   }
   
   public static class a
@@ -60,15 +60,15 @@ public class aqi
       super(☃);
       
       aqj.q ☃ = new aqj.q(☃, (☃ << 4) + 2, (☃ << 4) + 2);
-      this.a.add(☃);
-      ☃.a(☃, this.a, ☃);
+      a.add(☃);
+      ☃.a(☃, a, ☃);
       
-      List<aqt> ☃ = ☃.e;
+      List<aqt> ☃ = e;
       while (!☃.isEmpty())
       {
         int ☃ = ☃.nextInt(☃.size());
         aqt ☃ = (aqt)☃.remove(☃);
-        ☃.a(☃, this.a, ☃);
+        ☃.a(☃, a, ☃);
       }
       c();
       a(☃, ☃, 48, 70);

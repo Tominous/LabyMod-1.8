@@ -7,7 +7,7 @@ final class o$11
   
   public boolean a(pk ☃)
   {
-    int ☃ = (int)☃.c(this.a);
-    return ((this.b < 0) || (☃ >= this.c)) && ((this.d < 0) || (☃ <= this.e));
+    int ☃ = (int)☃.c(a);
+    return ((b < 0) || (☃ >= c)) && ((d < 0) || (☃ <= e));
   }
 }

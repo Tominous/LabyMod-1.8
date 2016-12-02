@@ -20,7 +20,7 @@ public abstract class bkn
   
   public bkn(bjl p_i46125_1_)
   {
-    this.a = p_i46125_1_;
+    a = p_i46125_1_;
     a();
   }
   
@@ -44,7 +44,7 @@ public abstract class bkn
     {
       yj var11 = (yj)var10.b();
       bbo var12 = a(p_177182_9_);
-      var12.a(this.a.b());
+      var12.a(a.b());
       var12.a(p_177182_1_, p_177182_2_, p_177182_3_, p_177182_4_);
       if (Reflector.ForgeHooksClient.exists()) {
         var12 = getArmorModelHook(p_177182_1_, var10, p_177182_9_, var12);
@@ -59,22 +59,22 @@ public abstract class bkn
           float var15 = (var14 >> 16 & 0xFF) / 255.0F;
           float var16 = (var14 >> 8 & 0xFF) / 255.0F;
           float var17 = (var14 & 0xFF) / 255.0F;
-          bfl.c(this.f * var15, this.g * var16, this.h * var17, this.e);
+          bfl.c(f * var15, g * var16, h * var17, e);
           var12.a(p_177182_1_, p_177182_2_, p_177182_3_, p_177182_5_, p_177182_6_, p_177182_7_, p_177182_8_);
           if (Config.isCustomItems())
           {
             if (CustomItems.bindCustomArmorTexture(var10, var13 ? 2 : 1, "overlay")) {}
           }
           else {
-            this.a.a(getArmorResource(p_177182_1_, var10, var13 ? 2 : 1, "overlay"));
+            a.a(getArmorResource(p_177182_1_, var10, var13 ? 2 : 1, "overlay"));
           }
         }
         else
         {
-          bfl.c(this.f, this.g, this.h, this.e);
+          bfl.c(f, g, h, e);
           var12.a(p_177182_1_, p_177182_2_, p_177182_3_, p_177182_5_, p_177182_6_, p_177182_7_, p_177182_8_);
         }
-        if ((!this.i) && (var10.w())) {
+        if ((!i) && (var10.w())) {
           if ((!Config.isCustomItems()) || (!CustomItems.renderCustomArmorEffect(p_177182_1_, var10, var12, p_177182_2_, p_177182_3_, p_177182_4_, p_177182_5_, p_177182_6_, p_177182_7_, p_177182_8_))) {
             a(p_177182_1_, var12, p_177182_2_, p_177182_3_, p_177182_4_, p_177182_5_, p_177182_6_, p_177182_7_, p_177182_8_);
           }
@@ -86,7 +86,7 @@ public abstract class bkn
         if (CustomItems.bindCustomArmorTexture(var10, var13 ? 2 : 1, null)) {}
       }
       else {
-        this.a.a(a(var11, var13));
+        a.a(a(var11, var13));
       }
       switch (bkn.1.a[var11.x_().ordinal()])
       {
@@ -95,23 +95,23 @@ public abstract class bkn
         float var15 = (var14 >> 16 & 0xFF) / 255.0F;
         float var16 = (var14 >> 8 & 0xFF) / 255.0F;
         float var17 = (var14 & 0xFF) / 255.0F;
-        bfl.c(this.f * var15, this.g * var16, this.h * var17, this.e);
+        bfl.c(f * var15, g * var16, h * var17, e);
         var12.a(p_177182_1_, p_177182_2_, p_177182_3_, p_177182_5_, p_177182_6_, p_177182_7_, p_177182_8_);
         if (Config.isCustomItems()) {
           if (CustomItems.bindCustomArmorTexture(var10, var13 ? 2 : 1, "overlay")) {
             break;
           }
         } else {
-          this.a.a(a(var11, var13, "overlay"));
+          a.a(a(var11, var13, "overlay"));
         }
       case 2: 
       case 3: 
       case 4: 
       case 5: 
-        bfl.c(this.f, this.g, this.h, this.e);
+        bfl.c(f, g, h, e);
         var12.a(p_177182_1_, p_177182_2_, p_177182_3_, p_177182_5_, p_177182_6_, p_177182_7_, p_177182_8_);
       }
-      if ((!this.i) && (var10.w())) {
+      if ((!i) && (var10.w())) {
         if ((!Config.isCustomItems()) || (!CustomItems.renderCustomArmorEffect(p_177182_1_, var10, var12, p_177182_2_, p_177182_3_, p_177182_4_, p_177182_5_, p_177182_6_, p_177182_7_, p_177182_8_))) {
           a(p_177182_1_, var12, p_177182_2_, p_177182_3_, p_177182_4_, p_177182_5_, p_177182_6_, p_177182_7_, p_177182_8_);
         }
@@ -126,7 +126,7 @@ public abstract class bkn
   
   public bbo a(int p_177175_1_)
   {
-    return b(p_177175_1_) ? this.c : this.d;
+    return b(p_177175_1_) ? c : d;
   }
   
   private boolean b(int p_177180_1_)
@@ -143,8 +143,8 @@ public abstract class bkn
       }
       ShadersRender.layerArmorBaseDrawEnchantedGlintBegin();
     }
-    float var10 = p_177183_1_.W + p_177183_5_;
-    this.a.a(b);
+    float var10 = W + p_177183_5_;
+    a.a(b);
     bfl.l();
     bfl.c(514);
     bfl.a(false);

@@ -15,23 +15,23 @@ public class alc
   
   public zx a(int ☃)
   {
-    return this.g[☃];
+    return g[☃];
   }
   
   public zx a(int ☃, int ☃)
   {
-    if (this.g[☃] != null)
+    if (g[☃] != null)
     {
-      if (this.g[☃].b <= ☃)
+      if (g[☃].b <= ☃)
       {
-        zx ☃ = this.g[☃];
-        this.g[☃] = null;
+        zx ☃ = g[☃];
+        g[☃] = null;
         p_();
         return ☃;
       }
-      zx ☃ = this.g[☃].a(☃);
-      if (this.g[☃].b == 0) {
-        this.g[☃] = null;
+      zx ☃ = g[☃].a(☃);
+      if (g[☃].b == 0) {
+        g[☃] = null;
       }
       p_();
       return ☃;
@@ -41,10 +41,10 @@ public class alc
   
   public zx b(int ☃)
   {
-    if (this.g[☃] != null)
+    if (g[☃] != null)
     {
-      zx ☃ = this.g[☃];
-      this.g[☃] = null;
+      zx ☃ = g[☃];
+      g[☃] = null;
       return ☃;
     }
     return null;
@@ -54,8 +54,8 @@ public class alc
   {
     int ☃ = -1;
     int ☃ = 1;
-    for (int ☃ = 0; ☃ < this.g.length; ☃++) {
-      if ((this.g[☃] != null) && (f.nextInt(☃++) == 0)) {
+    for (int ☃ = 0; ☃ < g.length; ☃++) {
+      if ((g[☃] != null) && (f.nextInt(☃++) == 0)) {
         ☃ = ☃;
       }
     }
@@ -64,17 +64,17 @@ public class alc
   
   public void a(int ☃, zx ☃)
   {
-    this.g[☃] = ☃;
-    if ((☃ != null) && (☃.b > q_())) {
-      ☃.b = q_();
+    g[☃] = ☃;
+    if ((☃ != null) && (b > q_())) {
+      b = q_();
     }
     p_();
   }
   
   public int a(zx ☃)
   {
-    for (int ☃ = 0; ☃ < this.g.length; ☃++) {
-      if ((this.g[☃] == null) || (this.g[☃].b() == null))
+    for (int ☃ = 0; ☃ < g.length; ☃++) {
+      if ((g[☃] == null) || (g[☃].b() == null))
       {
         a(☃, ☃);
         return ☃;
@@ -85,34 +85,34 @@ public class alc
   
   public String e_()
   {
-    return l_() ? this.a : "container.dispenser";
+    return l_() ? a : "container.dispenser";
   }
   
   public void a(String ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public boolean l_()
   {
-    return this.a != null;
+    return a != null;
   }
   
   public void a(dn ☃)
   {
     super.a(☃);
     du ☃ = ☃.c("Items", 10);
-    this.g = new zx[o_()];
+    g = new zx[o_()];
     for (int ☃ = 0; ☃ < ☃.c(); ☃++)
     {
       dn ☃ = ☃.b(☃);
       int ☃ = ☃.d("Slot") & 0xFF;
-      if ((☃ >= 0) && (☃ < this.g.length)) {
-        this.g[☃] = zx.a(☃);
+      if ((☃ >= 0) && (☃ < g.length)) {
+        g[☃] = zx.a(☃);
       }
     }
     if (☃.b("CustomName", 8)) {
-      this.a = ☃.j("CustomName");
+      a = ☃.j("CustomName");
     }
   }
   
@@ -120,18 +120,18 @@ public class alc
   {
     super.b(☃);
     du ☃ = new du();
-    for (int ☃ = 0; ☃ < this.g.length; ☃++) {
-      if (this.g[☃] != null)
+    for (int ☃ = 0; ☃ < g.length; ☃++) {
+      if (g[☃] != null)
       {
         dn ☃ = new dn();
         ☃.a("Slot", (byte)☃);
-        this.g[☃].b(☃);
+        g[☃].b(☃);
         ☃.a(☃);
       }
     }
     ☃.a("Items", ☃);
     if (l_()) {
-      ☃.a("CustomName", this.a);
+      ☃.a("CustomName", a);
     }
   }
   
@@ -142,10 +142,10 @@ public class alc
   
   public boolean a(wn ☃)
   {
-    if (this.b.s(this.c) != this) {
+    if (b.s(c) != this) {
       return false;
     }
-    if (☃.e(this.c.n() + 0.5D, this.c.o() + 0.5D, this.c.p() + 0.5D) > 64.0D) {
+    if (☃.e(c.n() + 0.5D, c.o() + 0.5D, c.p() + 0.5D) > 64.0D) {
       return false;
     }
     return true;
@@ -184,8 +184,8 @@ public class alc
   
   public void l()
   {
-    for (int ☃ = 0; ☃ < this.g.length; ☃++) {
-      this.g[☃] = null;
+    for (int ☃ = 0; ☃ < g.length; ☃++) {
+      g[☃] = null;
     }
   }
 }

@@ -11,63 +11,63 @@ public class sg
   
   public sg(wi ☃)
   {
-    this.a = ☃;
+    a = ☃;
     a(3);
   }
   
   public boolean a()
   {
-    if (this.a.l() >= 0) {
+    if (a.l() >= 0) {
       return false;
     }
-    if (!this.a.o.w()) {
+    if (!a.o.w()) {
       return false;
     }
-    List<ty> ☃ = this.a.o.a(ty.class, this.a.aR().b(6.0D, 2.0D, 6.0D));
+    List<ty> ☃ = a.o.a(ty.class, a.aR().b(6.0D, 2.0D, 6.0D));
     if (☃.isEmpty()) {
       return false;
     }
     for (ty ☃ : ☃) {
       if (☃.cm() > 0)
       {
-        this.b = ☃;
+        b = ☃;
         break;
       }
     }
-    return this.b != null;
+    return b != null;
   }
   
   public boolean b()
   {
-    return this.b.cm() > 0;
+    return b.cm() > 0;
   }
   
   public void c()
   {
-    this.c = this.a.bc().nextInt(320);
-    this.d = false;
-    this.b.s().n();
+    c = a.bc().nextInt(320);
+    d = false;
+    b.s().n();
   }
   
   public void d()
   {
-    this.b = null;
-    this.a.s().n();
+    b = null;
+    a.s().n();
   }
   
   public void e()
   {
-    this.a.p().a(this.b, 30.0F, 30.0F);
-    if (this.b.cm() == this.c)
+    a.p().a(b, 30.0F, 30.0F);
+    if (b.cm() == c)
     {
-      this.a.s().a(this.b, 0.5D);
-      this.d = true;
+      a.s().a(b, 0.5D);
+      d = true;
     }
-    if ((this.d) && 
-      (this.a.h(this.b) < 4.0D))
+    if ((d) && 
+      (a.h(b) < 4.0D))
     {
-      this.b.a(false);
-      this.a.s().n();
+      b.a(false);
+      a.s().n();
     }
   }
 }

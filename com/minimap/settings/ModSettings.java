@@ -36,45 +36,45 @@ public class ModSettings
   
   public ModSettings()
   {
-    this.minimap = true;
-    this.zoom = 2;
-    this.zooms = new float[] { 1.0F, 2.0F, 3.0F, 4.0F, 5.0F };
-    this.entityAmount = 1;
-    this.showPlayers = true;
-    this.showMobs = true;
-    this.showHostile = true;
-    this.showItems = true;
-    this.showOther = true;
-    this.caveMaps = true;
-    this.showOtherTeam = true;
-    this.showWaypoints = true;
-    this.deathpoints = true;
-    this.oldDeathpoints = true;
-    this.chunkGrid = false;
-    this.slimeChunks = false;
-    this.serverSlimeSeed = 0L;
-    this.showIngameWaypoints = true;
-    this.showCoords = true;
-    this.lockNorth = false;
-    this.antiAliasing = true;
-    this.displayRedstone = true;
-    this.mapSafeMode = false;
-    this.distance = 1;
-    this.blockColours = 0;
-    this.lighting = true;
-    this.compassOverWaypoints = false;
-    this.mapSize = -1;
-    this.playersColor = 15;
-    this.mobsColor = 14;
-    this.hostileColor = 14;
-    this.itemsColor = 12;
-    this.otherColor = 5;
-    this.minimapOpacity = 100.0F;
-    this.waypointsScale = 1.0F;
-    this.dotsScale = 1.0F;
-    this.showBiome = false;
-    this.showEntityHeight = true;
-    this.showFlowers = true;
+    minimap = true;
+    zoom = 2;
+    zooms = new float[] { 1.0F, 2.0F, 3.0F, 4.0F, 5.0F };
+    entityAmount = 1;
+    showPlayers = true;
+    showMobs = true;
+    showHostile = true;
+    showItems = true;
+    showOther = true;
+    caveMaps = true;
+    showOtherTeam = true;
+    showWaypoints = true;
+    deathpoints = true;
+    oldDeathpoints = true;
+    chunkGrid = false;
+    slimeChunks = false;
+    serverSlimeSeed = 0L;
+    showIngameWaypoints = true;
+    showCoords = true;
+    lockNorth = false;
+    antiAliasing = true;
+    displayRedstone = true;
+    mapSafeMode = false;
+    distance = 1;
+    blockColours = 0;
+    lighting = true;
+    compassOverWaypoints = false;
+    mapSize = -1;
+    playersColor = 15;
+    mobsColor = 14;
+    hostileColor = 14;
+    itemsColor = 12;
+    otherColor = 5;
+    minimapOpacity = 100.0F;
+    waypointsScale = 1.0F;
+    dotsScale = 1.0F;
+    showBiome = false;
+    showEntityHeight = true;
+    showFlowers = true;
     if (!keysLoaded)
     {
       XaeroMinimap.ch = new ControlsHandler();
@@ -89,101 +89,101 @@ public class ModSettings
   
   public boolean getMinimap()
   {
-    return (this.minimap) && (!minimapDisabled());
+    return (minimap) && (!minimapDisabled());
   }
   
   public boolean getShowPlayers()
   {
-    return (ServerFilter.getCurrentFilterType() != ServerFilter.FilterType.NO_RADAR) && (ServerFilter.getCurrentFilterType() != ServerFilter.FilterType.NO_PLAYER_RADAR) && (this.showPlayers) && (!minimapDisplayPlayersDisabled());
+    return (ServerFilter.getCurrentFilterType() != ServerFilter.FilterType.NO_RADAR) && (XaeroMinimap.allowPlayerRadar) && (ServerFilter.getCurrentFilterType() != ServerFilter.FilterType.NO_PLAYER_RADAR) && (showPlayers) && (!minimapDisplayPlayersDisabled());
   }
   
   public boolean getShowMobs()
   {
-    return (ServerFilter.getCurrentFilterType() != ServerFilter.FilterType.NO_RADAR) && (this.showMobs) && (!minimapDisplayMobsDisabled());
+    return (ServerFilter.getCurrentFilterType() != ServerFilter.FilterType.NO_RADAR) && (XaeroMinimap.allowRadar) && (showMobs) && (!minimapDisplayMobsDisabled());
   }
   
   public boolean getShowHostile()
   {
-    return (ServerFilter.getCurrentFilterType() != ServerFilter.FilterType.NO_RADAR) && (this.showHostile) && (!minimapDisplayMobsDisabled());
+    return (ServerFilter.getCurrentFilterType() != ServerFilter.FilterType.NO_RADAR) && (XaeroMinimap.allowRadar) && (showHostile) && (!minimapDisplayMobsDisabled());
   }
   
   public boolean getShowItems()
   {
-    return (ServerFilter.getCurrentFilterType() != ServerFilter.FilterType.NO_RADAR) && (this.showItems) && (!minimapDisplayItemsDisabled());
+    return (ServerFilter.getCurrentFilterType() != ServerFilter.FilterType.NO_RADAR) && (XaeroMinimap.allowRadar) && (showItems) && (!minimapDisplayItemsDisabled());
   }
   
   public boolean getShowOther()
   {
-    return (ServerFilter.getCurrentFilterType() != ServerFilter.FilterType.NO_RADAR) && (this.showOther) && (!minimapDisplayOtherDisabled());
+    return (ServerFilter.getCurrentFilterType() != ServerFilter.FilterType.NO_RADAR) && (XaeroMinimap.allowRadar) && (showOther) && (!minimapDisplayOtherDisabled());
   }
   
   public boolean getCaveMaps()
   {
-    return (this.caveMaps) && (!caveMapsDisabled());
+    return (caveMaps) && (!caveMapsDisabled());
   }
   
   public boolean getShowOtherTeam()
   {
-    return (this.showOtherTeam) && (!showOtherTeamDisabled());
+    return (showOtherTeam) && (!showOtherTeamDisabled());
   }
   
   public boolean getShowWaypoints()
   {
-    return (this.showWaypoints) && (!showWaypointsDisabled());
+    return (showWaypoints) && (!showWaypointsDisabled());
   }
   
   public boolean getDeathpoints()
   {
-    return (this.deathpoints) && (!deathpointsDisabled());
+    return (deathpoints) && (!deathpointsDisabled());
   }
   
   public boolean getOldDeathpoints()
   {
-    return this.oldDeathpoints;
+    return oldDeathpoints;
   }
   
   public boolean getChunkGrid()
   {
-    return this.chunkGrid;
+    return chunkGrid;
   }
   
   public boolean customSlimeSeedNeeded()
   {
-    return (!(ave.A().m instanceof GuiSlimeSeed)) && (ave.A().G() == null) && (ave.A().f != null);
+    return (!(Am instanceof GuiSlimeSeed)) && (ave.A().G() == null) && (Af != null);
   }
   
   public boolean getSlimeChunks()
   {
-    return (this.slimeChunks) && ((this.serverSlimeSeed != -1L) || (ave.A().G() != null));
+    return (slimeChunks) && ((serverSlimeSeed != -1L) || (ave.A().G() != null));
   }
   
   public boolean getShowIngameWaypoints()
   {
-    return (this.showIngameWaypoints) && (!showWaypointsDisabled());
+    return (showIngameWaypoints) && (!showWaypointsDisabled());
   }
   
   public boolean getShowCoords()
   {
-    return this.showCoords;
+    return showCoords;
   }
   
   public boolean getLockNorth()
   {
-    return this.lockNorth;
+    return lockNorth;
   }
   
   public boolean getAntiAliasing()
   {
-    return (!Minimap.triedFBO) || ((this.antiAliasing) && (Minimap.usingFBO()));
+    return (!Minimap.triedFBO) || ((antiAliasing) && (Minimap.usingFBO()));
   }
   
   public int getMinimapSize()
   {
-    if (this.mapSize > -1) {
-      return this.mapSize;
+    if (mapSize > -1) {
+      return mapSize;
     }
-    int height = ave.A().e;
-    int width = ave.A().d;
+    int height = Ae;
+    int width = Ad;
     int size = height <= width ? height : width;
     if (size <= 480) {
       return 0;
@@ -208,14 +208,14 @@ public class ModSettings
       {
         String worldID = (String)entry.getKey();
         WaypointWorld world = (WaypointWorld)entry.getValue();
-        Object[] keys = world.sets.keySet().toArray();
+        Object[] keys = sets.keySet().toArray();
         if (keys.length > 1)
         {
-          writer.print("world:" + worldID + ":" + world.current);
+          writer.print("world:" + worldID + ":" + current);
           for (int i = 0; i < keys.length; i++)
           {
             String name = (String)keys[i];
-            if (!name.equals(world.current)) {
+            if (!name.equals(current)) {
               writer.print(":" + (String)keys[i]);
             }
           }
@@ -225,10 +225,10 @@ public class ModSettings
         for (int i = 0; i < keys.length; i++)
         {
           name = (String)keys[i];
-          WaypointSet set = (WaypointSet)world.sets.get(name);
+          WaypointSet set = (WaypointSet)sets.get(name);
           if (set != null) {
-            for (Waypoint w : set.list) {
-              writer.println("waypoint:" + worldID + ":" + w.name + ":" + w.symbol + ":" + w.x + ":" + w.y + ":" + w.z + ":" + w.color + ":" + w.disabled + ":" + w.type + ":" + name + ":" + w.rotation + ":" + w.yaw);
+            for (Waypoint w : list) {
+              writer.println("waypoint:" + worldID + ":" + name + ":" + symbol + ":" + x + ":" + y + ":" + z + ":" + color + ":" + disabled + ":" + type + ":" + name + ":" + rotation + ":" + yaw);
             }
           }
         }
@@ -259,9 +259,9 @@ public class ModSettings
           }
           Minimap.addWorld(args[1]);
           WaypointWorld map = (WaypointWorld)Minimap.waypointMap.get(args[1]);
-          map.current = args[2];
+          current = args[2];
           for (int i = 2; i < args.length; i++) {
-            map.sets.put(args[i], new WaypointSet(map));
+            sets.put(args[i], new WaypointSet(map));
           }
         }
         else
@@ -279,24 +279,24 @@ public class ModSettings
             setName = args[10];
           }
           WaypointWorld map2 = (WaypointWorld)Minimap.waypointMap.get(args[1]);
-          WaypointSet waypoints = (WaypointSet)map2.sets.get(setName);
+          WaypointSet waypoints = (WaypointSet)sets.get(setName);
           if (waypoints == null) {
-            map2.sets.put(setName, waypoints = new WaypointSet(map2));
+            sets.put(setName, waypoints = new WaypointSet(map2));
           }
           Waypoint loadWaypoint = new Waypoint(Integer.parseInt(args[4]), Integer.parseInt(args[5]), Integer.parseInt(args[6]), args[2], args[3], Integer.parseInt(args[7]));
           if (args.length > 8) {
-            loadWaypoint.disabled = args[8].equals("true");
+            disabled = args[8].equals("true");
           }
           if (args.length > 9) {
-            loadWaypoint.type = Integer.parseInt(args[9]);
+            type = Integer.parseInt(args[9]);
           }
           if (args.length > 11) {
-            loadWaypoint.rotation = args[11].equals("true");
+            rotation = args[11].equals("true");
           }
           if (args.length > 12) {
-            loadWaypoint.yaw = Integer.parseInt(args[12]);
+            yaw = Integer.parseInt(args[12]);
           }
-          waypoints.list.add(loadWaypoint);
+          list.add(loadWaypoint);
         }
       }
       catch (Exception e)
@@ -314,45 +314,45 @@ public class ModSettings
     writer.println("ignoreUpdate:" + ignoreUpdate);
     writer.println("updateNotification:" + updateNotification);
     writer.println("settingsButton:" + settingsButton);
-    writer.println("minimap:" + this.minimap);
-    writer.println("caveMaps:" + this.caveMaps);
-    writer.println("showPlayers:" + this.showPlayers);
-    writer.println("showHostile:" + this.showHostile);
-    writer.println("showMobs:" + this.showMobs);
-    writer.println("showItems:" + this.showItems);
-    writer.println("showOther:" + this.showOther);
-    writer.println("showOtherTeam:" + this.showOtherTeam);
-    writer.println("showWaypoints:" + this.showWaypoints);
-    writer.println("showIngameWaypoints:" + this.showIngameWaypoints);
-    writer.println("displayRedstone:" + this.displayRedstone);
-    writer.println("deathpoints:" + this.deathpoints);
-    writer.println("oldDeathpoints:" + this.oldDeathpoints);
-    writer.println("distance:" + this.distance);
-    writer.println("showCoords:" + this.showCoords);
-    writer.println("lockNorth:" + this.lockNorth);
-    writer.println("zoom:" + this.zoom);
-    writer.println("mapSize:" + this.mapSize);
-    writer.println("entityAmount:" + this.entityAmount);
-    writer.println("chunkGrid:" + this.chunkGrid);
-    writer.println("slimeChunks:" + this.slimeChunks);
-    writer.println("playersColor:" + this.playersColor);
-    writer.println("mobsColor:" + this.mobsColor);
-    writer.println("hostileColor:" + this.hostileColor);
-    writer.println("itemsColor:" + this.itemsColor);
-    writer.println("otherColor:" + this.otherColor);
-    writer.println("mapSafeMode:" + this.mapSafeMode);
-    writer.println("minimapOpacity:" + this.minimapOpacity);
-    writer.println("waypointsScale:" + this.waypointsScale);
-    writer.println("antiAliasing:" + this.antiAliasing);
-    writer.println("blockColours:" + this.blockColours);
-    writer.println("lighting:" + this.lighting);
-    writer.println("dotsScale:" + this.waypointsScale);
-    writer.println("compassOverWaypoints:" + this.compassOverWaypoints);
-    writer.println("showBiome:" + this.showBiome);
-    writer.println("showEntityHeight:" + this.showEntityHeight);
-    writer.println("showFlowers:" + this.showFlowers);
+    writer.println("minimap:" + minimap);
+    writer.println("caveMaps:" + caveMaps);
+    writer.println("showPlayers:" + showPlayers);
+    writer.println("showHostile:" + showHostile);
+    writer.println("showMobs:" + showMobs);
+    writer.println("showItems:" + showItems);
+    writer.println("showOther:" + showOther);
+    writer.println("showOtherTeam:" + showOtherTeam);
+    writer.println("showWaypoints:" + showWaypoints);
+    writer.println("showIngameWaypoints:" + showIngameWaypoints);
+    writer.println("displayRedstone:" + displayRedstone);
+    writer.println("deathpoints:" + deathpoints);
+    writer.println("oldDeathpoints:" + oldDeathpoints);
+    writer.println("distance:" + distance);
+    writer.println("showCoords:" + showCoords);
+    writer.println("lockNorth:" + lockNorth);
+    writer.println("zoom:" + zoom);
+    writer.println("mapSize:" + mapSize);
+    writer.println("entityAmount:" + entityAmount);
+    writer.println("chunkGrid:" + chunkGrid);
+    writer.println("slimeChunks:" + slimeChunks);
+    writer.println("playersColor:" + playersColor);
+    writer.println("mobsColor:" + mobsColor);
+    writer.println("hostileColor:" + hostileColor);
+    writer.println("itemsColor:" + itemsColor);
+    writer.println("otherColor:" + otherColor);
+    writer.println("mapSafeMode:" + mapSafeMode);
+    writer.println("minimapOpacity:" + minimapOpacity);
+    writer.println("waypointsScale:" + waypointsScale);
+    writer.println("antiAliasing:" + antiAliasing);
+    writer.println("blockColours:" + blockColours);
+    writer.println("lighting:" + lighting);
+    writer.println("dotsScale:" + waypointsScale);
+    writer.println("compassOverWaypoints:" + compassOverWaypoints);
+    writer.println("showBiome:" + showBiome);
+    writer.println("showEntityHeight:" + showEntityHeight);
+    writer.println("showFlowers:" + showFlowers);
     for (Interface l : InterfaceHandler.list) {
-      writer.println("interface:" + l.iname + ":" + l.actualx + ":" + l.actualy + ":" + l.centered + ":" + l.flipped + ":" + l.fromRight);
+      writer.println("interface:" + iname + ":" + actualx + ":" + actualy + ":" + centered + ":" + flipped + ":" + fromRight);
     }
     writer.println("#WAYPOINTS HAVE BEEN MOVED TO xaerowaypoints.txt!");
     for (int i = 0; i < ControlsHandler.toAdd.length; i++)
@@ -393,190 +393,190 @@ public class ModSettings
         }
         else if (args[0].equalsIgnoreCase("minimap"))
         {
-          this.minimap = args[1].equals("true");
+          minimap = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("caveMaps"))
         {
-          this.caveMaps = args[1].equals("true");
+          caveMaps = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("showPlayers"))
         {
-          this.showPlayers = args[1].equals("true");
+          showPlayers = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("showHostile"))
         {
-          this.showHostile = args[1].equals("true");
+          showHostile = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("showMobs"))
         {
-          this.showMobs = args[1].equals("true");
+          showMobs = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("showItems"))
         {
-          this.showItems = args[1].equals("true");
+          showItems = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("showOther"))
         {
-          this.showOther = args[1].equals("true");
+          showOther = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("showOtherTeam"))
         {
-          this.showOtherTeam = args[1].equals("true");
+          showOtherTeam = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("showWaypoints"))
         {
-          this.showWaypoints = args[1].equals("true");
+          showWaypoints = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("deathpoints"))
         {
-          this.deathpoints = args[1].equals("true");
+          deathpoints = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("oldDeathpoints"))
         {
-          this.oldDeathpoints = args[1].equals("true");
+          oldDeathpoints = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("showIngameWaypoints"))
         {
-          this.showIngameWaypoints = args[1].equals("true");
+          showIngameWaypoints = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("displayRedstone"))
         {
-          this.displayRedstone = args[1].equals("true");
+          displayRedstone = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("distance"))
         {
-          this.distance = Integer.parseInt(args[1]);
+          distance = Integer.parseInt(args[1]);
         }
         else if (args[0].equalsIgnoreCase("showCoords"))
         {
-          this.showCoords = args[1].equals("true");
+          showCoords = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("lockNorth"))
         {
-          this.lockNorth = args[1].equals("true");
+          lockNorth = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("zoom"))
         {
-          this.zoom = Integer.parseInt(args[1]);
-          if (this.zoom < this.zooms.length) {
+          zoom = Integer.parseInt(args[1]);
+          if (zoom < zooms.length) {
             continue;
           }
-          this.zoom = (this.zooms.length - 1);
+          zoom = (zooms.length - 1);
         }
         else if (args[0].equalsIgnoreCase("mapSize"))
         {
-          this.mapSize = Integer.parseInt(args[1]);
+          mapSize = Integer.parseInt(args[1]);
         }
         else if (args[0].equalsIgnoreCase("entityAmount"))
         {
-          this.entityAmount = Integer.parseInt(args[1]);
+          entityAmount = Integer.parseInt(args[1]);
         }
         else if (args[0].equalsIgnoreCase("chunkGrid"))
         {
-          this.chunkGrid = args[1].equals("true");
+          chunkGrid = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("slimeChunks"))
         {
-          this.slimeChunks = args[1].equals("true");
+          slimeChunks = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("playersColor"))
         {
-          this.playersColor = Integer.parseInt(args[1]);
+          playersColor = Integer.parseInt(args[1]);
         }
         else if (args[0].equalsIgnoreCase("mobsColor"))
         {
-          this.mobsColor = Integer.parseInt(args[1]);
+          mobsColor = Integer.parseInt(args[1]);
         }
         else if (args[0].equalsIgnoreCase("hostileColor"))
         {
-          this.hostileColor = Integer.parseInt(args[1]);
+          hostileColor = Integer.parseInt(args[1]);
         }
         else if (args[0].equalsIgnoreCase("itemsColor"))
         {
-          this.itemsColor = Integer.parseInt(args[1]);
+          itemsColor = Integer.parseInt(args[1]);
         }
         else if (args[0].equalsIgnoreCase("otherColor"))
         {
-          this.otherColor = Integer.parseInt(args[1]);
+          otherColor = Integer.parseInt(args[1]);
         }
         else if (args[0].equalsIgnoreCase("mapSafeMode"))
         {
-          this.mapSafeMode = args[1].equals("true");
+          mapSafeMode = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("minimapOpacity"))
         {
-          this.minimapOpacity = Float.valueOf(args[1]).floatValue();
+          minimapOpacity = Float.valueOf(args[1]).floatValue();
         }
         else if (args[0].equalsIgnoreCase("waypointsScale"))
         {
-          this.waypointsScale = Float.valueOf(args[1]).floatValue();
+          waypointsScale = Float.valueOf(args[1]).floatValue();
         }
         else if (args[0].equalsIgnoreCase("antiAliasing"))
         {
-          this.antiAliasing = args[1].equals("true");
+          antiAliasing = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("blockColours"))
         {
-          this.blockColours = Integer.parseInt(args[1]);
+          blockColours = Integer.parseInt(args[1]);
         }
         else if (args[0].equalsIgnoreCase("lighting"))
         {
-          this.lighting = args[1].equals("true");
+          lighting = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("dotsScale"))
         {
-          this.dotsScale = Float.valueOf(args[1]).floatValue();
+          dotsScale = Float.valueOf(args[1]).floatValue();
         }
         else if (args[0].equalsIgnoreCase("compassOverWaypoints"))
         {
-          this.compassOverWaypoints = args[1].equals("true");
+          compassOverWaypoints = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("showBiome"))
         {
-          this.showBiome = args[1].equals("true");
+          showBiome = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("showEntityHeight"))
         {
-          this.showEntityHeight = args[1].equals("true");
+          showEntityHeight = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("showFlowers"))
         {
-          this.showFlowers = args[1].equals("true");
+          showFlowers = args[1].equals("true");
         }
         else if (args[0].equalsIgnoreCase("interface"))
         {
           for (Interface l : InterfaceHandler.list) {
-            if (args[1].equals(l.iname))
+            if (args[1].equals(iname))
             {
               Interface interface1 = l;
               Interface interface2 = l;
               Interface interface3 = l;
               int int1 = Integer.parseInt(args[2]);
-              interface3.x = int1;
-              interface2.actualx = int1;
-              interface1.bx = int1;
+              x = int1;
+              actualx = int1;
+              bx = int1;
               Interface interface4 = l;
               Interface interface5 = l;
               Interface interface6 = l;
               int int2 = Integer.parseInt(args[3]);
-              interface6.y = int2;
-              interface5.actualy = int2;
-              interface4.by = int2;
+              y = int2;
+              actualy = int2;
+              by = int2;
               Interface interface7 = l;
               Interface interface8 = l;
               boolean equals = args[4].equals("true");
-              interface8.centered = equals;
-              interface7.bcentered = equals;
+              centered = equals;
+              bcentered = equals;
               Interface interface9 = l;
               Interface interface10 = l;
               boolean equals2 = args[5].equals("true");
-              interface10.flipped = equals2;
-              interface9.bflipped = equals2;
+              flipped = equals2;
+              bflipped = equals2;
               Interface interface11 = l;
               Interface interface12 = l;
               boolean equals3 = args[6].equals("true");
-              interface12.fromRight = equals3;
-              interface11.bfromRight = equals3;
+              fromRight = equals3;
+              bfromRight = equals3;
             }
           }
         }
@@ -632,15 +632,15 @@ public class ModSettings
     }
     else if (par1EnumOptions == ModOptions.ZOOM)
     {
-      s = s + this.zooms[this.zoom] + "x";
+      s = s + zooms[zoom] + "x";
     }
     else if (par1EnumOptions == ModOptions.COLOURS)
     {
-      s = s + bnq.a(blockColourTypes[this.blockColours], new Object[0]);
+      s = s + bnq.a(blockColourTypes[blockColours], new Object[0]);
     }
     else if (par1EnumOptions == ModOptions.DISTANCE)
     {
-      s = s + bnq.a(distanceTypes[this.distance], new Object[0]);
+      s = s + bnq.a(distanceTypes[distance], new Object[0]);
     }
     else if ((par1EnumOptions == ModOptions.SLIME_CHUNKS) && (customSlimeSeedNeeded()))
     {
@@ -648,11 +648,11 @@ public class ModSettings
     }
     else if (par1EnumOptions == ModOptions.SIZE)
     {
-      s = s + bnq.a(this.mapSize > -1 ? MINIMAP_SIZE[this.mapSize] : "gui.xaero_auto_map_size", new Object[0]);
+      s = s + bnq.a(mapSize > -1 ? MINIMAP_SIZE[mapSize] : "gui.xaero_auto_map_size", new Object[0]);
     }
     else if (par1EnumOptions == ModOptions.EAMOUNT)
     {
-      s = s + 100 * this.entityAmount;
+      s = s + 100 * entityAmount;
     }
     else
     {
@@ -722,75 +722,75 @@ public class ModSettings
   public boolean getClientBooleanValue(ModOptions o)
   {
     if (o == ModOptions.MINIMAP) {
-      return this.minimap;
+      return minimap;
     }
     if (o == ModOptions.CAVE_MAPS) {
-      return this.caveMaps;
+      return caveMaps;
     }
     if (o == ModOptions.DISPLAY_OTHER_TEAM) {
-      return this.showOtherTeam;
+      return showOtherTeam;
     }
     if (o == ModOptions.WAYPOINTS) {
-      return this.showWaypoints;
+      return showWaypoints;
     }
     if (o == ModOptions.DEATHPOINTS) {
-      return this.deathpoints;
+      return deathpoints;
     }
     if (o == ModOptions.OLD_DEATHPOINTS) {
-      return this.oldDeathpoints;
+      return oldDeathpoints;
     }
     if (o == ModOptions.INGAME_WAYPOINTS) {
-      return this.showIngameWaypoints;
+      return showIngameWaypoints;
     }
     if (o == ModOptions.REDSTONE) {
-      return this.displayRedstone;
+      return displayRedstone;
     }
     if (o == ModOptions.COORDS) {
-      return this.showCoords;
+      return showCoords;
     }
     if (o == ModOptions.NORTH) {
-      return this.lockNorth;
+      return lockNorth;
     }
     if (o == ModOptions.PLAYERS) {
-      return this.showPlayers;
+      return showPlayers;
     }
     if (o == ModOptions.HOSTILE) {
-      return this.showHostile;
+      return showHostile;
     }
     if (o == ModOptions.MOBS) {
-      return this.showMobs;
+      return showMobs;
     }
     if (o == ModOptions.ITEMS) {
-      return this.showItems;
+      return showItems;
     }
     if (o == ModOptions.ENTITIES) {
-      return this.showOther;
+      return showOther;
     }
     if (o == ModOptions.CHUNK_GRID) {
-      return this.chunkGrid;
+      return chunkGrid;
     }
     if (o == ModOptions.SLIME_CHUNKS) {
-      return this.slimeChunks;
+      return slimeChunks;
     }
     if (o == ModOptions.SAFE_MAP) {
-      return this.mapSafeMode;
+      return mapSafeMode;
     }
     if (o == ModOptions.AA) {
-      return this.antiAliasing;
+      return antiAliasing;
     }
     if (o == ModOptions.LIGHT) {
-      return this.lighting;
+      return lighting;
     }
     if (o == ModOptions.COMPASS) {
-      return this.compassOverWaypoints;
+      return compassOverWaypoints;
     }
     if (o == ModOptions.BIOME) {
-      return this.showBiome;
+      return showBiome;
     }
     if (o == ModOptions.ENTITY_HEIGHT) {
-      return this.showEntityHeight;
+      return showEntityHeight;
     }
-    return (o == ModOptions.FLOWERS) && (this.showFlowers);
+    return (o == ModOptions.FLOWERS) && (showFlowers);
   }
   
   private static String getTranslation(boolean o)
@@ -803,87 +803,87 @@ public class ModSettings
   {
     if (par1EnumOptions == ModOptions.ZOOM)
     {
-      this.zoom = ((this.zoom + 1) % this.zooms.length);
+      zoom = ((zoom + 1) % zooms.length);
     }
     else if (par1EnumOptions == ModOptions.SIZE)
     {
-      if (this.mapSize == 3) {
-        this.mapSize = -1;
+      if (mapSize == 3) {
+        mapSize = -1;
       } else {
-        this.mapSize = ((this.mapSize + 1) % 4);
+        mapSize = ((mapSize + 1) % 4);
       }
     }
     else if (par1EnumOptions == ModOptions.EAMOUNT)
     {
-      this.entityAmount = ((this.entityAmount + 1) % 11);
+      entityAmount = ((entityAmount + 1) % 11);
     }
     else if (par1EnumOptions == ModOptions.MINIMAP)
     {
-      this.minimap = (!this.minimap);
+      minimap = (!minimap);
     }
     else if (par1EnumOptions == ModOptions.CAVE_MAPS)
     {
-      this.caveMaps = (!this.caveMaps);
+      caveMaps = (!caveMaps);
     }
     else if (par1EnumOptions == ModOptions.DISPLAY_OTHER_TEAM)
     {
-      this.showOtherTeam = (!this.showOtherTeam);
+      showOtherTeam = (!showOtherTeam);
     }
     else if (par1EnumOptions == ModOptions.WAYPOINTS)
     {
-      this.showWaypoints = (!this.showWaypoints);
+      showWaypoints = (!showWaypoints);
     }
     else if (par1EnumOptions == ModOptions.DEATHPOINTS)
     {
-      this.deathpoints = (!this.deathpoints);
+      deathpoints = (!deathpoints);
     }
     else if (par1EnumOptions == ModOptions.OLD_DEATHPOINTS)
     {
-      this.oldDeathpoints = (!this.oldDeathpoints);
+      oldDeathpoints = (!oldDeathpoints);
     }
     else if (par1EnumOptions == ModOptions.INGAME_WAYPOINTS)
     {
-      this.showIngameWaypoints = (!this.showIngameWaypoints);
+      showIngameWaypoints = (!showIngameWaypoints);
     }
     else if (par1EnumOptions == ModOptions.REDSTONE)
     {
-      this.displayRedstone = (!this.displayRedstone);
+      displayRedstone = (!displayRedstone);
     }
     else if (par1EnumOptions == ModOptions.DISTANCE)
     {
-      this.distance = ((this.distance + 1) % distanceTypes.length);
+      distance = ((distance + 1) % distanceTypes.length);
     }
     else if (par1EnumOptions == ModOptions.COORDS)
     {
-      this.showCoords = (!this.showCoords);
+      showCoords = (!showCoords);
     }
     else if (par1EnumOptions == ModOptions.NORTH)
     {
-      this.lockNorth = (!this.lockNorth);
+      lockNorth = (!lockNorth);
     }
     else if (par1EnumOptions == ModOptions.PLAYERS)
     {
-      this.showPlayers = (!this.showPlayers);
+      showPlayers = (!showPlayers);
     }
     else if (par1EnumOptions == ModOptions.HOSTILE)
     {
-      this.showHostile = (!this.showHostile);
+      showHostile = (!showHostile);
     }
     else if (par1EnumOptions == ModOptions.MOBS)
     {
-      this.showMobs = (!this.showMobs);
+      showMobs = (!showMobs);
     }
     else if (par1EnumOptions == ModOptions.ITEMS)
     {
-      this.showItems = (!this.showItems);
+      showItems = (!showItems);
     }
     else if (par1EnumOptions == ModOptions.ENTITIES)
     {
-      this.showOther = (!this.showOther);
+      showOther = (!showOther);
     }
     else if (par1EnumOptions == ModOptions.CHUNK_GRID)
     {
-      this.chunkGrid = (!this.chunkGrid);
+      chunkGrid = (!chunkGrid);
       Minimap.frameUpdateNeeded = Minimap.usingFBO();
     }
     else if (par1EnumOptions == ModOptions.SLIME_CHUNKS)
@@ -893,46 +893,46 @@ public class ModSettings
         ave.A().a(new GuiSlimeSeed());
         return;
       }
-      this.slimeChunks = (!this.slimeChunks);
+      slimeChunks = (!slimeChunks);
       Minimap.frameUpdateNeeded = Minimap.usingFBO();
     }
     else if (par1EnumOptions == ModOptions.SAFE_MAP)
     {
-      this.mapSafeMode = (!this.mapSafeMode);
+      mapSafeMode = (!mapSafeMode);
       Minimap.resetImage();
       Minimap.frameUpdateNeeded = Minimap.usingFBO();
     }
     else if (par1EnumOptions == ModOptions.AA)
     {
-      this.antiAliasing = (!this.antiAliasing);
+      antiAliasing = (!antiAliasing);
     }
     else if (par1EnumOptions == ModOptions.COLOURS)
     {
-      this.blockColours = ((this.blockColours + 1) % blockColourTypes.length);
+      blockColours = ((blockColours + 1) % blockColourTypes.length);
     }
     else if (par1EnumOptions == ModOptions.LIGHT)
     {
-      this.lighting = (!this.lighting);
+      lighting = (!lighting);
     }
     else if (par1EnumOptions == ModOptions.COMPASS)
     {
-      this.compassOverWaypoints = (!this.compassOverWaypoints);
+      compassOverWaypoints = (!compassOverWaypoints);
     }
     else if (par1EnumOptions == ModOptions.BIOME)
     {
-      this.showBiome = (!this.showBiome);
+      showBiome = (!showBiome);
     }
     else if (par1EnumOptions == ModOptions.ENTITY_HEIGHT)
     {
-      this.showEntityHeight = (!this.showEntityHeight);
+      showEntityHeight = (!showEntityHeight);
     }
     else if (par1EnumOptions == ModOptions.FLOWERS)
     {
-      this.showFlowers = (!this.showFlowers);
+      showFlowers = (!showFlowers);
     }
     saveSettings();
-    if (ave.A().m != null) {
-      ave.A().m.b();
+    if (Am != null) {
+      Am.b();
     }
   }
   
@@ -940,13 +940,13 @@ public class ModSettings
     throws IOException
   {
     if (options == ModOptions.OPACITY) {
-      this.minimapOpacity = f;
+      minimapOpacity = f;
     }
     if (options == ModOptions.WAYPOINTS_SCALE) {
-      this.waypointsScale = f;
+      waypointsScale = f;
     }
     if (options == ModOptions.DOTS_SCALE) {
-      this.dotsScale = f;
+      dotsScale = f;
     }
     saveSettings();
   }
@@ -954,13 +954,13 @@ public class ModSettings
   public float getOptionFloatValue(ModOptions options)
   {
     if (options == ModOptions.OPACITY) {
-      return this.minimapOpacity;
+      return minimapOpacity;
     }
     if (options == ModOptions.WAYPOINTS_SCALE) {
-      return this.waypointsScale;
+      return waypointsScale;
     }
     if (options == ModOptions.DOTS_SCALE) {
-      return this.dotsScale;
+      return dotsScale;
     }
     return 1.0F;
   }

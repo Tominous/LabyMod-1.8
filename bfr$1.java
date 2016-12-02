@@ -10,6 +10,6 @@ class bfr$1
   public String a()
     throws Exception
   {
-    return c.a(this.val$p_180442_3_, this.val$p_180442_5_, this.val$p_180442_7_);
+    return c.a(val$p_180442_3_, val$p_180442_5_, val$p_180442_7_);
   }
 }

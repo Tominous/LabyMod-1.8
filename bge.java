@@ -12,17 +12,17 @@ public class bge
   protected void a()
   {
     bmh var1 = ave.A().T();
-    this.a[0] = var1.a("minecraft:blocks/lava_still");
-    this.a[1] = var1.a("minecraft:blocks/lava_flow");
-    this.b[0] = var1.a("minecraft:blocks/water_still");
-    this.b[1] = var1.a("minecraft:blocks/water_flow");
+    a[0] = var1.a("minecraft:blocks/lava_still");
+    a[1] = var1.a("minecraft:blocks/lava_flow");
+    b[0] = var1.a("minecraft:blocks/water_still");
+    b[1] = var1.a("minecraft:blocks/water_flow");
   }
   
   public boolean a(adq p_178270_1_, alz p_178270_2_, cj p_178270_3_, bfd p_178270_4_)
   {
     ahv var5 = (ahv)p_178270_2_.c();
     var5.a(p_178270_1_, p_178270_3_);
-    bmi[] var6 = var5.t() == arm.i ? this.a : this.b;
+    bmi[] var6 = var5.t() == arm.i ? a : b;
     
     int var7 = CustomColorizer.getFluidColor(var5, p_178270_1_, p_178270_3_);
     

@@ -22,14 +22,14 @@ public class ajw
   
   private void f(adm ☃, cj ☃, alz ☃)
   {
-    agl ☃ = a(this.J);
+    agl ☃ = a(J);
     ☃.a(☃, ☃.Q().a(b, ☃.b(b)), 2);
     ☃.a(☃, ☃, a(☃));
   }
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (this.J != arm.i) {
+    if (J != arm.i) {
       return;
     }
     if (!☃.Q().b("doFireTick")) {
@@ -43,13 +43,13 @@ public class ajw
       {
         ☃ = ☃.a(☃.nextInt(3) - 1, 1, ☃.nextInt(3) - 1);
         afh ☃ = ☃.p(☃).c();
-        if (☃.J == arm.a)
+        if (J == arm.a)
         {
           if (f(☃, ☃)) {
             ☃.a(☃, afi.ab.Q());
           }
         }
-        else if (☃.J.c()) {
+        else if (J.c()) {
           return;
         }
       }

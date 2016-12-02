@@ -89,16 +89,16 @@ public class br
   
   protected void a(m ☃, int ☃)
   {
-    for (int ☃ = 0; ☃ < MinecraftServer.N().d.length; ☃++) {
-      MinecraftServer.N().d[☃].b(☃);
+    for (int ☃ = 0; ☃ < Nd.length; ☃++) {
+      Nd[☃].b(☃);
     }
   }
   
   protected void b(m ☃, int ☃)
   {
-    for (int ☃ = 0; ☃ < MinecraftServer.N().d.length; ☃++)
+    for (int ☃ = 0; ☃ < Nd.length; ☃++)
     {
-      le ☃ = MinecraftServer.N().d[☃];
+      le ☃ = Nd[☃];
       ☃.b(☃.L() + ☃);
     }
   }

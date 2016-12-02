@@ -9,45 +9,45 @@ public class ServiceStatus
   
   public ServiceStatus(String color)
   {
-    this.status = color;
-    this.created = System.currentTimeMillis();
+    status = color;
+    created = System.currentTimeMillis();
     this.color = color;
     if (color.equals("red"))
     {
-      this.chatColor = "c";
-      this.status = "Offline";
+      chatColor = "c";
+      status = "Offline";
     }
     float b = 0.3F;
     if (color.equals("green"))
     {
-      this.chatColor = "a";
-      this.status = "Online";
+      chatColor = "a";
+      status = "Online";
     }
     float c = 0.3F;
     if (color.equals("yellow"))
     {
-      this.chatColor = "e";
-      this.status = "Slowly";
+      chatColor = "e";
+      status = "Slowly";
     }
   }
   
   public long getCreated()
   {
-    return this.created;
+    return created;
   }
   
   public String getStatus()
   {
-    return this.status;
+    return status;
   }
   
   public String getColor()
   {
-    return this.color;
+    return color;
   }
   
   public String getChatColor()
   {
-    return this.chatColor;
+    return chatColor;
   }
 }

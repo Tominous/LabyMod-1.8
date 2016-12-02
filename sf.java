@@ -6,44 +6,44 @@ public class sf
   
   public sf(vn ☃)
   {
-    this.a = ☃;
+    a = ☃;
     a(1);
   }
   
   public boolean a()
   {
-    pr ☃ = this.a.u();
-    return (this.a.cm() > 0) || ((☃ != null) && (this.a.h(☃) < 9.0D));
+    pr ☃ = a.u();
+    return (a.cm() > 0) || ((☃ != null) && (a.h(☃) < 9.0D));
   }
   
   public void c()
   {
-    this.a.s().n();
-    this.b = this.a.u();
+    a.s().n();
+    b = a.u();
   }
   
   public void d()
   {
-    this.b = null;
+    b = null;
   }
   
   public void e()
   {
-    if (this.b == null)
+    if (b == null)
     {
-      this.a.a(-1);
+      a.a(-1);
       return;
     }
-    if (this.a.h(this.b) > 49.0D)
+    if (a.h(b) > 49.0D)
     {
-      this.a.a(-1);
+      a.a(-1);
       return;
     }
-    if (!this.a.t().a(this.b))
+    if (!a.t().a(b))
     {
-      this.a.a(-1);
+      a.a(-1);
       return;
     }
-    this.a.a(1);
+    a.a(1);
   }
 }

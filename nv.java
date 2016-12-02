@@ -6,22 +6,22 @@ public class nv
   
   public float a(float ☃, float ☃)
   {
-    this.a += ☃;
+    a += ☃;
     
-    ☃ = (this.a - this.b) * ☃;
-    this.c += (☃ - this.c) * 0.5F;
-    if (((☃ > 0.0F) && (☃ > this.c)) || ((☃ < 0.0F) && (☃ < this.c))) {
-      ☃ = this.c;
+    ☃ = (a - b) * ☃;
+    c += (☃ - c) * 0.5F;
+    if (((☃ > 0.0F) && (☃ > c)) || ((☃ < 0.0F) && (☃ < c))) {
+      ☃ = c;
     }
-    this.b += ☃;
+    b += ☃;
     
     return ☃;
   }
   
   public void a()
   {
-    this.a = 0.0F;
-    this.b = 0.0F;
-    this.c = 0.0F;
+    a = 0.0F;
+    b = 0.0F;
+    c = 0.0F;
   }
 }

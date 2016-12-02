@@ -21,7 +21,7 @@ public enum a
     w = Maps.newHashMap();
     x = Pattern.compile("(?i)" + String.valueOf('§') + "[0-9A-FK-OR]");
     for (a ☃ : values()) {
-      w.put(c(☃.y), ☃);
+      w.put(c(y), ☃);
     }
   }
   
@@ -42,27 +42,27 @@ public enum a
   
   private a(String ☃, char ☃, boolean ☃, int ☃)
   {
-    this.y = ☃;
-    this.z = ☃;
-    this.A = ☃;
-    this.C = ☃;
+    y = ☃;
+    z = ☃;
+    A = ☃;
+    C = ☃;
     
-    this.B = ("§" + ☃);
+    B = ("§" + ☃);
   }
   
   public int b()
   {
-    return this.C;
+    return C;
   }
   
   public boolean c()
   {
-    return this.A;
+    return A;
   }
   
   public boolean d()
   {
-    return (!this.A) && (this != v);
+    return (!A) && (this != v);
   }
   
   public String e()
@@ -72,7 +72,7 @@ public enum a
   
   public String toString()
   {
-    return this.B;
+    return B;
   }
   
   public static String a(String ☃)

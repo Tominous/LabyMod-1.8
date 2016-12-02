@@ -5,9 +5,9 @@ public class GuiPerformanceSettingsOF
 {
   public GuiPerformanceSettingsOF(axu guiscreen, avh gamesettings)
   {
-    this.title = "Performance Settings";
-    this.prevScreen = guiscreen;
-    this.settings = gamesettings;
+    title = "Performance Settings";
+    prevScreen = guiscreen;
+    settings = gamesettings;
   }
   
   public void b()
@@ -19,34 +19,34 @@ public class GuiPerformanceSettingsOF
     {
       avh.a enumoptions = aenumoptions[k];
       
-      int x = this.l / 2 - 155 + i % 2 * 160;
-      int y = this.m / 6 + 21 * (i / 2) - 12;
+      int x = l / 2 - 155 + i % 2 * 160;
+      int y = m / 6 + 21 * (i / 2) - 12;
       if (!enumoptions.a()) {
-        this.n.add(new awe(enumoptions.c(), x, y, enumoptions, this.settings.c(enumoptions)));
+        n.add(new awe(enumoptions.c(), x, y, enumoptions, settings.c(enumoptions)));
       } else {
-        this.n.add(new awj(enumoptions.c(), x, y, enumoptions));
+        n.add(new awj(enumoptions.c(), x, y, enumoptions));
       }
       i++;
     }
-    this.n.add(new avs(200, this.l / 2 - 100, this.m / 6 + 168 + 11, bnq.a("gui.done", new Object[0])));
+    n.add(new avs(200, l / 2 - 100, m / 6 + 168 + 11, bnq.a("gui.done", new Object[0])));
   }
   
   protected void a(avs guibutton)
   {
-    if (!guibutton.l) {
+    if (!l) {
       return;
     }
-    if ((guibutton.k < 200) && ((guibutton instanceof awe)))
+    if ((k < 200) && ((guibutton instanceof awe)))
     {
-      this.settings.a(((awe)guibutton).c(), 1);
-      guibutton.j = this.settings.c(avh.a.a(guibutton.k));
+      settings.a(((awe)guibutton).c(), 1);
+      j = settings.c(avh.a.a(k));
     }
-    if (guibutton.k == 200)
+    if (k == 200)
     {
-      this.j.t.b();
-      this.j.a(this.prevScreen);
+      jt.b();
+      this.j.a(prevScreen);
     }
-    if (guibutton.k != avh.a.CLOUD_HEIGHT.ordinal())
+    if (k != avh.a.CLOUD_HEIGHT.ordinal())
     {
       avr scaledresolution = new avr(this.j);
       int i = scaledresolution.a();
@@ -58,21 +58,21 @@ public class GuiPerformanceSettingsOF
   public void a(int x, int y, float f)
   {
     c();
-    a(this.q, this.title, this.l / 2, 15, 16777215);
+    a(q, title, l / 2, 15, 16777215);
     super.a(x, y, f);
-    if ((Math.abs(x - this.lastMouseX) > 5) || (Math.abs(y - this.lastMouseY) > 5))
+    if ((Math.abs(x - lastMouseX) > 5) || (Math.abs(y - lastMouseY) > 5))
     {
-      this.lastMouseX = x;
-      this.lastMouseY = y;
-      this.mouseStillTime = System.currentTimeMillis();
+      lastMouseX = x;
+      lastMouseY = y;
+      mouseStillTime = System.currentTimeMillis();
       return;
     }
     int activateDelay = 700;
-    if (System.currentTimeMillis() < this.mouseStillTime + activateDelay) {
+    if (System.currentTimeMillis() < mouseStillTime + activateDelay) {
       return;
     }
-    int x1 = this.l / 2 - 150;
-    int y1 = this.m / 6 - 7;
+    int x1 = l / 2 - 150;
+    int y1 = m / 6 - 7;
     if (y <= y1 + 98) {
       y1 += 105;
     }
@@ -82,7 +82,7 @@ public class GuiPerformanceSettingsOF
     avs btn = getSelectedButton(x, y);
     if (btn != null)
     {
-      String s = getButtonName(btn.j);
+      String s = getButtonName(j);
       String[] lines = getTooltipLines(s);
       if (lines == null) {
         return;
@@ -91,7 +91,7 @@ public class GuiPerformanceSettingsOF
       for (int i = 0; i < lines.length; i++)
       {
         String line = lines[i];
-        this.q.a(line, x1 + 5, y1 + 5 + i * 11, 14540253);
+        q.a(line, x1 + 5, y1 + 5 + i * 11, 14540253);
       }
     }
   }
@@ -139,12 +139,12 @@ public class GuiPerformanceSettingsOF
   
   private avs getSelectedButton(int i, int j)
   {
-    for (int k = 0; k < this.n.size(); k++)
+    for (int k = 0; k < n.size(); k++)
     {
-      avs btn = (avs)this.n.get(k);
+      avs btn = (avs)n.get(k);
       int btnWidth = ayb.getButtonWidth(btn);
       int btnHeight = ayb.getButtonHeight(btn);
-      boolean flag = (i >= btn.h) && (j >= btn.i) && (i < btn.h + btnWidth) && (j < btn.i + btnHeight);
+      boolean flag = (i >= h) && (j >= i) && (i < h + btnWidth) && (j < i + btnHeight);
       if (flag) {
         return btn;
       }

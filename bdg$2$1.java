@@ -12,66 +12,69 @@ import io.netty.channel.SimpleChannelInboundHandler;
 class bdg$2$1
   extends SimpleChannelInboundHandler<ByteBuf>
 {
-  bdg$2$1(bdg.2 this$1) {}
+  bdg$2$1(bdg.2 param2) {}
   
-  public void channelActive(ChannelHandlerContext p_channelActive_1_)
+  public void channelActive(ChannelHandlerContext ☃)
     throws Exception
   {
-    super.channelActive(p_channelActive_1_);
-    ByteBuf bytebuf = Unpooled.buffer();
+    super.channelActive(☃);
+    ByteBuf ☃ = Unpooled.buffer();
     try
     {
-      bytebuf.writeByte(254);
-      bytebuf.writeByte(1);
-      bytebuf.writeByte(250);
-      char[] achar = "MC|PingHost".toCharArray();
-      bytebuf.writeShort(achar.length);
-      for (char c0 : achar) {
-        bytebuf.writeChar(c0);
+      ☃.writeByte(254);
+      ☃.writeByte(1);
+      ☃.writeByte(250);
+      
+      char[] ☃ = "MC|PingHost".toCharArray();
+      ☃.writeShort(☃.length);
+      for (char ☃ : ☃) {
+        ☃.writeChar(☃);
       }
-      bytebuf.writeShort(7 + 2 * this.this$1.val$serveraddress.a().length());
-      bytebuf.writeByte(127);
-      achar = this.this$1.val$serveraddress.a().toCharArray();
-      bytebuf.writeShort(achar.length);
-      for (char c1 : achar) {
-        bytebuf.writeChar(c1);
+      ☃.writeShort(7 + 2 * a.a.a().length());
+      ☃.writeByte(127);
+      ☃ = a.a.a().toCharArray();
+      ☃.writeShort(☃.length);
+      for (char ☃ : ☃) {
+        ☃.writeChar(☃);
       }
-      bytebuf.writeInt(this.this$1.val$serveraddress.b());
-      p_channelActive_1_.channel().writeAndFlush(bytebuf).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
+      ☃.writeInt(a.a.b());
+      
+      ☃.channel().writeAndFlush(☃).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
     }
     finally
     {
-      bytebuf.release();
+      ☃.release();
     }
   }
   
-  protected void a(ChannelHandlerContext p_channelRead0_1_, ByteBuf p_channelRead0_2_)
+  protected void a(ChannelHandlerContext ☃, ByteBuf ☃)
     throws Exception
   {
-    short short1 = p_channelRead0_2_.readUnsignedByte();
-    if (short1 == 255)
+    short ☃ = ☃.readUnsignedByte();
+    if (☃ == 255)
     {
-      String s = new String(p_channelRead0_2_.readBytes(p_channelRead0_2_.readShort() * 2).array(), Charsets.UTF_16BE);
-      String[] astring = (String[])Iterables.toArray(bdg.d().split(s), String.class);
-      if ("§1".equals(astring[0]))
+      String ☃ = new String(☃.readBytes(☃.readShort() * 2).array(), Charsets.UTF_16BE);
+      String[] ☃ = (String[])Iterables.toArray(bdg.d().split(☃), String.class);
+      if ("§1".equals(☃[0]))
       {
-        int i = ns.a(astring[1], 0);
-        String s1 = astring[2];
-        String s2 = astring[3];
-        int j = ns.a(astring[4], -1);
-        int k = ns.a(astring[5], -1);
-        this.this$1.val$server.f = -1;
-        this.this$1.val$server.g = s1;
-        this.this$1.val$server.d = s2;
-        this.this$1.val$server.c = (a.h + "" + j + "" + a.i + "/" + a.h + k);
+        int ☃ = ns.a(☃[1], 0);
+        String ☃ = ☃[2];
+        String ☃ = ☃[3];
+        int ☃ = ns.a(☃[4], -1);
+        int ☃ = ns.a(☃[5], -1);
+        
+        a.b.f = -1;
+        a.b.g = ☃;
+        a.b.d = ☃;
+        a.b.c = (a.h + "" + ☃ + "" + a.i + "/" + a.h + ☃);
       }
     }
-    p_channelRead0_1_.close();
+    ☃.close();
   }
   
-  public void exceptionCaught(ChannelHandlerContext p_exceptionCaught_1_, Throwable p_exceptionCaught_2_)
+  public void exceptionCaught(ChannelHandlerContext ☃, Throwable ☃)
     throws Exception
   {
-    p_exceptionCaught_1_.close();
+    ☃.close();
   }
 }

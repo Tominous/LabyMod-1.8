@@ -8,6 +8,6 @@ class adm$3
   
   public String a()
   {
-    return this.a.j.size() + " total; " + this.a.j.toString();
+    return a.j.size() + " total; " + a.j.toString();
   }
 }

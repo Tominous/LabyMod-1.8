@@ -84,7 +84,7 @@ public class NextTickHashSet
     if (entry == null) {
       return null;
     }
-    cj pos = entry.a;
+    cj pos = a;
     int cx = pos.n() >> 4;
     int cz = pos.p() >> 4;
     return getSubSet(cx, cz, autoCreate);
@@ -93,27 +93,27 @@ public class NextTickHashSet
   private Set getSubSet(int cx, int cz, boolean autoCreate)
   {
     long key = adg.a(cx, cz);
-    HashSet set = (HashSet)this.longHashMap.a(key);
+    HashSet set = (HashSet)longHashMap.a(key);
     if ((set == null) && (autoCreate))
     {
       set = new HashSet();
-      this.longHashMap.a(key, set);
+      longHashMap.a(key, set);
     }
     return set;
   }
   
   public Iterator iterator()
   {
-    if (this.minX == Integer.MIN_VALUE) {
+    if (minX == Integer.MIN_VALUE) {
       return super.iterator();
     }
     if (size() <= 0) {
       return Iterators.emptyIterator();
     }
-    int cMinX = this.minX >> 4;
-    int cMinZ = this.minZ >> 4;
-    int cMaxX = this.maxX >> 4;
-    int cMaxZ = this.maxZ >> 4;
+    int cMinX = minX >> 4;
+    int cMinZ = minZ >> 4;
+    int cMaxX = maxX >> 4;
+    int cMaxZ = maxZ >> 4;
     
     List listIterators = new ArrayList();
     for (int x = cMinX; x <= cMaxX; x++) {
@@ -144,9 +144,9 @@ public class NextTickHashSet
   
   public void clearIteratorLimits()
   {
-    this.minX = Integer.MIN_VALUE;
-    this.minZ = Integer.MIN_VALUE;
-    this.maxX = Integer.MIN_VALUE;
-    this.maxZ = Integer.MIN_VALUE;
+    minX = Integer.MIN_VALUE;
+    minZ = Integer.MIN_VALUE;
+    maxX = Integer.MIN_VALUE;
+    maxZ = Integer.MIN_VALUE;
   }
 }

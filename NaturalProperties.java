@@ -11,29 +11,29 @@ public class NaturalProperties
   {
     if (type.equals("4"))
     {
-      this.rotation = 4;
+      rotation = 4;
       return;
     }
     if (type.equals("2"))
     {
-      this.rotation = 2;
+      rotation = 2;
       return;
     }
     if (type.equals("F"))
     {
-      this.flip = true;
+      flip = true;
       return;
     }
     if (type.equals("4F"))
     {
-      this.rotation = 4;
-      this.flip = true;
+      rotation = 4;
+      flip = true;
       return;
     }
     if (type.equals("2F"))
     {
-      this.rotation = 2;
-      this.flip = true;
+      rotation = 2;
+      flip = true;
       return;
     }
     Config.warn("NaturalTextures: Unknown type: " + type);
@@ -41,10 +41,10 @@ public class NaturalProperties
   
   public boolean isValid()
   {
-    if ((this.rotation == 2) || (this.rotation == 4)) {
+    if ((rotation == 2) || (rotation == 4)) {
       return true;
     }
-    if (this.flip) {
+    if (flip) {
       return true;
     }
     return false;
@@ -56,14 +56,14 @@ public class NaturalProperties
     if (flipU) {
       index |= 0x4;
     }
-    if ((index <= 0) || (index >= this.quadMaps.length)) {
+    if ((index <= 0) || (index >= quadMaps.length)) {
       return quadIn;
     }
-    Map map = this.quadMaps[index];
+    Map map = quadMaps[index];
     if (map == null)
     {
       map = new IdentityHashMap(1);
-      this.quadMaps[index] = map;
+      quadMaps[index] = map;
     }
     bgg quad = (bgg)map.get(quadIn);
     if (quad == null)

@@ -8,7 +8,7 @@ public class Rewinside
   
   public static void updateRewinside()
   {
-    isRewinside = LabyMod.getInstance().ip.toLowerCase().contains("rewinside.tv");
+    isRewinside = getInstanceip.toLowerCase().contains("rewinside.tv");
   }
   
   public static boolean isRewinside()

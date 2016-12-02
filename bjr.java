@@ -16,11 +16,11 @@ public class bjr
     bfl.B();
     
     c(☃);
-    uq.a ☃ = ☃.c;
+    uq.a ☃ = c;
     
     float ☃ = 0.0625F;
     bfl.a(☃, ☃, ☃);
-    a(☃, ☃.C, ☃.D, ☃.E, ☃.F);
+    a(☃, C, D, E, F);
     bfl.C();
     bfl.F();
     
@@ -108,24 +108,24 @@ public class bjr
   
   private void a(uq ☃, float ☃, float ☃)
   {
-    int ☃ = ns.c(☃.s);
-    int ☃ = ns.c(☃.t + ☃ / 16.0F);
-    int ☃ = ns.c(☃.u);
+    int ☃ = ns.c(s);
+    int ☃ = ns.c(t + ☃ / 16.0F);
+    int ☃ = ns.c(u);
     
-    cq ☃ = ☃.b;
+    cq ☃ = b;
     if (☃ == cq.c) {
-      ☃ = ns.c(☃.s + ☃ / 16.0F);
+      ☃ = ns.c(s + ☃ / 16.0F);
     }
     if (☃ == cq.e) {
-      ☃ = ns.c(☃.u - ☃ / 16.0F);
+      ☃ = ns.c(u - ☃ / 16.0F);
     }
     if (☃ == cq.d) {
-      ☃ = ns.c(☃.s - ☃ / 16.0F);
+      ☃ = ns.c(s - ☃ / 16.0F);
     }
     if (☃ == cq.f) {
-      ☃ = ns.c(☃.u + ☃ / 16.0F);
+      ☃ = ns.c(u + ☃ / 16.0F);
     }
-    int ☃ = this.b.b.b(new cj(☃, ☃, ☃), 0);
+    int ☃ = b.b.b(new cj(☃, ☃, ☃), 0);
     int ☃ = ☃ % 65536;
     int ☃ = ☃ / 65536;
     bqs.a(bqs.r, ☃, ☃);

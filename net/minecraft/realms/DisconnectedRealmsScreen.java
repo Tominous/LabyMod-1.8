@@ -14,9 +14,9 @@ public class DisconnectedRealmsScreen
   
   public DisconnectedRealmsScreen(RealmsScreen ☃, String ☃, eu ☃)
   {
-    this.parent = ☃;
-    this.title = getLocalizedString(☃);
-    this.reason = ☃;
+    parent = ☃;
+    title = getLocalizedString(☃);
+    reason = ☃;
   }
   
   public void init()
@@ -25,23 +25,23 @@ public class DisconnectedRealmsScreen
     
     buttonsClear();
     
-    this.lines = fontSplit(this.reason.d(), width() - 50);
-    this.textHeight = (this.lines.size() * fontLineHeight());
+    lines = fontSplit(reason.d(), width() - 50);
+    textHeight = (lines.size() * fontLineHeight());
     
-    buttonsAdd(newButton(0, width() / 2 - 100, height() / 2 + this.textHeight / 2 + fontLineHeight(), getLocalizedString("gui.back")));
+    buttonsAdd(newButton(0, width() / 2 - 100, height() / 2 + textHeight / 2 + fontLineHeight(), getLocalizedString("gui.back")));
   }
   
   public void keyPressed(char ☃, int ☃)
   {
     if (☃ == 1) {
-      Realms.setScreen(this.parent);
+      Realms.setScreen(parent);
     }
   }
   
   public void buttonClicked(RealmsButton ☃)
   {
     if (☃.id() == 0) {
-      Realms.setScreen(this.parent);
+      Realms.setScreen(parent);
     }
   }
   
@@ -49,11 +49,11 @@ public class DisconnectedRealmsScreen
   {
     renderBackground();
     
-    drawCenteredString(this.title, width() / 2, height() / 2 - this.textHeight / 2 - fontLineHeight() * 2, 11184810);
+    drawCenteredString(title, width() / 2, height() / 2 - textHeight / 2 - fontLineHeight() * 2, 11184810);
     
-    int ☃ = height() / 2 - this.textHeight / 2;
-    if (this.lines != null) {
-      for (String ☃ : this.lines)
+    int ☃ = height() / 2 - textHeight / 2;
+    if (lines != null) {
+      for (String ☃ : lines)
       {
         drawCenteredString(☃, width() / 2, ☃, 16777215);
         ☃ += fontLineHeight();

@@ -31,14 +31,14 @@ public class b
   
   public b(String descriptionIn, Throwable causeThrowable)
   {
-    this.b = descriptionIn;
-    this.c = causeThrowable;
+    b = descriptionIn;
+    c = causeThrowable;
     h();
   }
   
   private void h()
   {
-    this.d.a("Minecraft Version", new Callable()
+    d.a("Minecraft Version", new Callable()
     {
       private static final String __OBFID = "CL_00001197";
       
@@ -47,7 +47,7 @@ public class b
         return "1.8.8";
       }
     });
-    this.d.a("Operating System", new Callable()
+    d.a("Operating System", new Callable()
     {
       private static final String __OBFID = "CL_00001222";
       
@@ -56,8 +56,8 @@ public class b
         return System.getProperty("os.name") + " (" + System.getProperty("os.arch") + ") version " + System.getProperty("os.version");
       }
     });
-    this.d.a("CPU", new b.3(this));
-    this.d.a("Java Version", new Callable()
+    d.a("CPU", new b.3(this));
+    d.a("Java Version", new Callable()
     {
       private static final String __OBFID = "CL_00001248";
       
@@ -66,7 +66,7 @@ public class b
         return System.getProperty("java.version") + ", " + System.getProperty("java.vendor");
       }
     });
-    this.d.a("Java VM Version", new Callable()
+    d.a("Java VM Version", new Callable()
     {
       private static final String __OBFID = "CL_00001275";
       
@@ -75,7 +75,7 @@ public class b
         return System.getProperty("java.vm.name") + " (" + System.getProperty("java.vm.info") + "), " + System.getProperty("java.vm.vendor");
       }
     });
-    this.d.a("Memory", new Callable()
+    d.a("Memory", new Callable()
     {
       private static final String __OBFID = "CL_00001302";
       
@@ -91,7 +91,7 @@ public class b
         return var6 + " bytes (" + var12 + " MB) / " + var4 + " bytes (" + var10 + " MB) up to " + var2 + " bytes (" + var8 + " MB)";
       }
     });
-    this.d.a("JVM Flags", new Callable()
+    d.a("JVM Flags", new Callable()
     {
       private static final String __OBFID = "CL_00001329";
       
@@ -116,7 +116,7 @@ public class b
         return String.format("%d total; %s", new Object[] { Integer.valueOf(var3), var4.toString() });
       }
     });
-    this.d.a("IntCache", new Callable()
+    d.a("IntCache", new Callable()
     {
       private static final String __OBFID = "CL_00001355";
       
@@ -129,30 +129,30 @@ public class b
     if (Reflector.FMLCommonHandler_enhanceCrashReport.exists())
     {
       Object instance = Reflector.call(Reflector.FMLCommonHandler_instance, new Object[0]);
-      Reflector.callString(instance, Reflector.FMLCommonHandler_enhanceCrashReport, new Object[] { this, this.d });
+      Reflector.callString(instance, Reflector.FMLCommonHandler_enhanceCrashReport, new Object[] { this, d });
     }
   }
   
   public String a()
   {
-    return this.b;
+    return b;
   }
   
   public Throwable b()
   {
-    return this.c;
+    return c;
   }
   
   public void a(StringBuilder builder)
   {
-    if (((this.h == null) || (this.h.length <= 0)) && (this.e.size() > 0)) {
-      this.h = ((StackTraceElement[])ArrayUtils.subarray(((c)this.e.get(0)).a(), 0, 1));
+    if (((h == null) || (h.length <= 0)) && (e.size() > 0)) {
+      h = ((StackTraceElement[])ArrayUtils.subarray(((c)e.get(0)).a(), 0, 1));
     }
-    if ((this.h != null) && (this.h.length > 0))
+    if ((h != null) && (h.length > 0))
     {
       builder.append("-- Head --\n");
       builder.append("Stacktrace:\n");
-      StackTraceElement[] var2 = this.h;
+      StackTraceElement[] var2 = h;
       int var3 = var2.length;
       for (int var4 = 0; var4 < var3; var4++)
       {
@@ -162,31 +162,31 @@ public class b
       }
       builder.append("\n");
     }
-    Iterator var6 = this.e.iterator();
+    Iterator var6 = e.iterator();
     while (var6.hasNext())
     {
       c var7 = (c)var6.next();
       var7.a(builder);
       builder.append("\n\n");
     }
-    this.d.a(builder);
+    d.a(builder);
   }
   
   public String d()
   {
     StringWriter var1 = null;
     PrintWriter var2 = null;
-    Object var3 = this.c;
+    Object var3 = c;
     if (((Throwable)var3).getMessage() == null)
     {
       if ((var3 instanceof NullPointerException)) {
-        var3 = new NullPointerException(this.b);
+        var3 = new NullPointerException(b);
       } else if ((var3 instanceof StackOverflowError)) {
-        var3 = new StackOverflowError(this.b);
+        var3 = new StackOverflowError(b);
       } else if ((var3 instanceof OutOfMemoryError)) {
-        var3 = new OutOfMemoryError(this.b);
+        var3 = new OutOfMemoryError(b);
       }
-      ((Throwable)var3).setStackTrace(this.c.getStackTrace());
+      ((Throwable)var3).setStackTrace(c.getStackTrace());
     }
     String var4 = ((Throwable)var3).toString();
     try
@@ -206,9 +206,9 @@ public class b
   
   public String e()
   {
-    if (!this.reported)
+    if (!reported)
     {
-      this.reported = true;
+      reported = true;
       CrashReporter.onCrashReport(this);
     }
     StringBuilder var1 = new StringBuilder();
@@ -224,7 +224,7 @@ public class b
     var1.append(new SimpleDateFormat().format(new Date()));
     var1.append("\n");
     var1.append("Description: ");
-    var1.append(this.b);
+    var1.append(b);
     var1.append("\n\n");
     var1.append(d());
     var1.append("\n\nA detailed walkthrough of the error, its code path and all known details is as follows:\n");
@@ -238,12 +238,12 @@ public class b
   
   public File f()
   {
-    return this.f;
+    return f;
   }
   
   public boolean a(File toFile)
   {
-    if (this.f != null) {
+    if (f != null) {
       return false;
     }
     if (toFile.getParentFile() != null) {
@@ -254,7 +254,7 @@ public class b
       FileWriter var2 = new FileWriter(toFile);
       var2.write(e());
       var2.close();
-      this.f = toFile;
+      f = toFile;
       return true;
     }
     catch (Throwable var3)
@@ -266,7 +266,7 @@ public class b
   
   public c g()
   {
-    return this.d;
+    return d;
   }
   
   public c a(String name)
@@ -277,10 +277,10 @@ public class b
   public c a(String categoryName, int stacktraceLength)
   {
     c var3 = new c(this, categoryName);
-    if (this.g)
+    if (g)
     {
       int var4 = var3.a(stacktraceLength);
-      StackTraceElement[] var5 = this.c.getStackTrace();
+      StackTraceElement[] var5 = c.getStackTrace();
       StackTraceElement var6 = null;
       StackTraceElement var7 = null;
       int var8 = var5.length - var4;
@@ -294,23 +294,23 @@ public class b
           var7 = var5[(var5.length + 1 - var4)];
         }
       }
-      this.g = var3.a(var6, var7);
-      if ((var4 > 0) && (!this.e.isEmpty()))
+      g = var3.a(var6, var7);
+      if ((var4 > 0) && (!e.isEmpty()))
       {
-        c var9 = (c)this.e.get(this.e.size() - 1);
+        c var9 = (c)e.get(e.size() - 1);
         var9.b(var4);
       }
       else if ((var5 != null) && (var5.length >= var4) && (0 <= var8) && (var8 < var5.length))
       {
-        this.h = new StackTraceElement[var8];
-        System.arraycopy(var5, 0, this.h, 0, this.h.length);
+        h = new StackTraceElement[var8];
+        System.arraycopy(var5, 0, h, 0, h.length);
       }
       else
       {
-        this.g = false;
+        g = false;
       }
     }
-    this.e.add(var3);
+    e.add(var3);
     return var3;
   }
   

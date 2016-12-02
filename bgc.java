@@ -10,77 +10,77 @@ public class bgc
   
   public bgc(bou ☃)
   {
-    this.c = ☃;
+    c = ☃;
     
     d();
   }
   
   public bgv a()
   {
-    return this.b;
+    return b;
   }
   
   public bmi a(alz ☃)
   {
     afh ☃ = ☃.c();
     boq ☃ = b(☃);
-    if ((☃ == null) || (☃ == this.c.a()))
+    if ((☃ == null) || (☃ == c.a()))
     {
       if ((☃ == afi.ax) || (☃ == afi.an) || (☃ == afi.ae) || (☃ == afi.cg) || (☃ == afi.cK) || (☃ == afi.cL)) {
-        return this.c.b().a("minecraft:blocks/planks_oak");
+        return c.b().a("minecraft:blocks/planks_oak");
       }
       if (☃ == afi.bQ) {
-        return this.c.b().a("minecraft:blocks/obsidian");
+        return c.b().a("minecraft:blocks/obsidian");
       }
       if ((☃ == afi.k) || (☃ == afi.l)) {
-        return this.c.b().a("minecraft:blocks/lava_still");
+        return c.b().a("minecraft:blocks/lava_still");
       }
       if ((☃ == afi.i) || (☃ == afi.j)) {
-        return this.c.b().a("minecraft:blocks/water_still");
+        return c.b().a("minecraft:blocks/water_still");
       }
       if (☃ == afi.ce) {
-        return this.c.b().a("minecraft:blocks/soul_sand");
+        return c.b().a("minecraft:blocks/soul_sand");
       }
       if (☃ == afi.cv) {
-        return this.c.b().a("minecraft:items/barrier");
+        return c.b().a("minecraft:items/barrier");
       }
     }
     if (☃ == null) {
-      ☃ = this.c.a();
+      ☃ = c.a();
     }
     return ☃.e();
   }
   
   public boq b(alz ☃)
   {
-    boq ☃ = (boq)this.a.get(☃);
+    boq ☃ = (boq)a.get(☃);
     if (☃ == null) {
-      ☃ = this.c.a();
+      ☃ = c.a();
     }
     return ☃;
   }
   
   public bou b()
   {
-    return this.c;
+    return c;
   }
   
   public void c()
   {
-    this.a.clear();
-    for (Map.Entry<alz, bov> ☃ : this.b.a().entrySet()) {
-      this.a.put(☃.getKey(), this.c.a((bov)☃.getValue()));
+    a.clear();
+    for (Map.Entry<alz, bov> ☃ : b.a().entrySet()) {
+      a.put(☃.getKey(), c.a((bov)☃.getValue()));
     }
   }
   
   public void a(afh ☃, bgy ☃)
   {
-    this.b.a(☃, ☃);
+    b.a(☃, ☃);
   }
   
   public void a(afh... ☃)
   {
-    this.b.a(☃);
+    b.a(☃);
   }
   
   private void d()

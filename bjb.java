@@ -8,15 +8,15 @@ public class bjb
   {
     super(☃, ☃, ☃ * ☃);
     
-    this.e = ☃;
+    e = ☃;
     
     a(new bky(this));
     a(new bkx(this)
     {
       protected void a()
       {
-        this.c = new bcn(0.5F, true);
-        this.d = new bcn(1.0F, true);
+        c = new bcn(0.5F, true);
+        d = new bcn(1.0F, true);
       }
     });
   }
@@ -28,7 +28,7 @@ public class bjb
   
   protected void a(vs ☃, float ☃)
   {
-    bfl.a(this.e, this.e, this.e);
+    bfl.a(e, e, e);
   }
   
   protected jy a(vs ☃)

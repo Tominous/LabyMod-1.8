@@ -12,19 +12,19 @@ public class ie
     if (☃.length() > 100) {
       ☃ = ☃.substring(0, 100);
     }
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.c(100);
+    a = ☃.c(100);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(this.a);
+    ☃.a(a);
   }
   
   public void a(ic ☃)
@@ -34,6 +34,6 @@ public class ie
   
   public String a()
   {
-    return this.a;
+    return a;
   }
 }

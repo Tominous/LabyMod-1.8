@@ -16,31 +16,31 @@ public class aek
   public aek(int ☃, boolean ☃, boolean ☃)
   {
     super(☃);
-    this.aI = ☃;
-    this.aJ = ☃;
+    aI = ☃;
+    aJ = ☃;
     
     b();
     a(2.0F, 0.0F);
     
-    this.au.clear();
-    this.ak = afi.m.Q().a(ajh.a, ajh.a.b);
-    this.al = afi.cu.Q();
+    au.clear();
+    ak = afi.m.Q().a(ajh.a, ajh.a.b);
+    al = afi.cu.Q();
     
-    this.as.A = 64537;
-    this.as.D = 20;
-    this.as.F = 3;
-    this.as.G = 5;
-    this.as.B = 0;
+    as.A = 64537;
+    as.D = 20;
+    as.F = 3;
+    as.G = 5;
+    as.B = 0;
     
-    this.au.clear();
+    au.clear();
     if (☃) {
-      this.as.A = 5;
+      as.A = 5;
     }
   }
   
   public aoh a(Random ☃)
   {
-    return this.aA;
+    return aA;
   }
   
   public int c(cj ☃)
@@ -60,28 +60,28 @@ public class aek
   
   public void a(adm ☃, Random ☃, ans ☃, int ☃, int ☃, double ☃)
   {
-    if ((this.aD == null) || (this.aE != ☃.J())) {
+    if ((aD == null) || (aE != ☃.J())) {
       a(☃.J());
     }
-    if ((this.aF == null) || (this.aG == null) || (this.aE != ☃.J()))
+    if ((aF == null) || (aG == null) || (aE != ☃.J()))
     {
-      Random ☃ = new Random(this.aE);
-      this.aF = new ard(☃, 4);
-      this.aG = new ard(☃, 1);
+      Random ☃ = new Random(aE);
+      aF = new ard(☃, 4);
+      aG = new ard(☃, 1);
     }
-    this.aE = ☃.J();
+    aE = ☃.J();
     
     double ☃ = 0.0D;
-    if (this.aI)
+    if (aI)
     {
       int ☃ = (☃ & 0xFFFFFFF0) + (☃ & 0xF);
       int ☃ = (☃ & 0xFFFFFFF0) + (☃ & 0xF);
       
-      double ☃ = Math.min(Math.abs(☃), this.aF.a(☃ * 0.25D, ☃ * 0.25D));
+      double ☃ = Math.min(Math.abs(☃), aF.a(☃ * 0.25D, ☃ * 0.25D));
       if (☃ > 0.0D)
       {
         double ☃ = 0.001953125D;
-        double ☃ = Math.abs(this.aG.a(☃ * ☃, ☃ * ☃));
+        double ☃ = Math.abs(aG.a(☃ * ☃, ☃ * ☃));
         ☃ = ☃ * ☃ * 2.5D;
         double ☃ = Math.ceil(☃ * 50.0D) + 14.0D;
         if (☃ > ☃) {
@@ -96,7 +96,7 @@ public class aek
     int ☃ = ☃.F();
     
     alz ☃ = afi.cu.Q();
-    alz ☃ = this.al;
+    alz ☃ = al;
     
     int ☃ = (int)(☃ / 3.0D + 3.0D + ☃.nextDouble() * 0.25D);
     boolean ☃ = Math.cos(☃ / 3.0D * 3.141592653589793D) > 0.0D;
@@ -128,7 +128,7 @@ public class aek
             else if ((☃ >= ☃ - 4) && (☃ <= ☃ + 1))
             {
               ☃ = afi.cu.Q();
-              ☃ = this.al;
+              ☃ = al;
             }
             if ((☃ < ☃) && ((☃ == null) || (☃.c().t() == arm.a))) {
               ☃ = afi.j.Q();
@@ -136,7 +136,7 @@ public class aek
             ☃ = ☃ + Math.max(0, ☃ - ☃);
             if (☃ >= ☃ - 1)
             {
-              if ((this.aJ) && (☃ > 86 + ☃ * 2))
+              if ((aJ) && (☃ > 86 + ☃ * 2))
               {
                 if (☃) {
                   ☃.a(☃, ☃, ☃, afi.d.Q().a(agf.a, agf.a.b));
@@ -165,7 +165,7 @@ public class aek
               }
               else
               {
-                ☃.a(☃, ☃, ☃, this.ak);
+                ☃.a(☃, ☃, ☃, ak);
                 ☃ = true;
               }
             }
@@ -197,16 +197,16 @@ public class aek
   
   private void a(long ☃)
   {
-    this.aD = new alz[64];
-    Arrays.fill(this.aD, afi.cz.Q());
+    aD = new alz[64];
+    Arrays.fill(aD, afi.cz.Q());
     
     Random ☃ = new Random(☃);
-    this.aH = new ard(☃, 1);
+    aH = new ard(☃, 1);
     for (int ☃ = 0; ☃ < 64; ☃++)
     {
       ☃ += ☃.nextInt(5) + 1;
       if (☃ < 64) {
-        this.aD[☃] = afi.cu.Q().a(afv.a, zd.b);
+        aD[☃] = afi.cu.Q().a(afv.a, zd.b);
       }
     }
     int ☃ = ☃.nextInt(4) + 2;
@@ -215,7 +215,7 @@ public class aek
       int ☃ = ☃.nextInt(3) + 1;
       int ☃ = ☃.nextInt(64);
       for (int ☃ = 0; (☃ + ☃ < 64) && (☃ < ☃); ☃++) {
-        this.aD[(☃ + ☃)] = afi.cu.Q().a(afv.a, zd.e);
+        aD[(☃ + ☃)] = afi.cu.Q().a(afv.a, zd.e);
       }
     }
     int ☃ = ☃.nextInt(4) + 2;
@@ -224,7 +224,7 @@ public class aek
       int ☃ = ☃.nextInt(3) + 2;
       int ☃ = ☃.nextInt(64);
       for (int ☃ = 0; (☃ + ☃ < 64) && (☃ < ☃); ☃++) {
-        this.aD[(☃ + ☃)] = afi.cu.Q().a(afv.a, zd.m);
+        aD[(☃ + ☃)] = afi.cu.Q().a(afv.a, zd.m);
       }
     }
     int ☃ = ☃.nextInt(4) + 2;
@@ -233,7 +233,7 @@ public class aek
       int ☃ = ☃.nextInt(3) + 1;
       int ☃ = ☃.nextInt(64);
       for (int ☃ = 0; (☃ + ☃ < 64) && (☃ < ☃); ☃++) {
-        this.aD[(☃ + ☃)] = afi.cu.Q().a(afv.a, zd.o);
+        aD[(☃ + ☃)] = afi.cu.Q().a(afv.a, zd.o);
       }
     }
     int ☃ = ☃.nextInt(3) + 3;
@@ -244,12 +244,12 @@ public class aek
       ☃ += ☃.nextInt(16) + 4;
       for (int ☃ = 0; (☃ + ☃ < 64) && (☃ < ☃); ☃++)
       {
-        this.aD[(☃ + ☃)] = afi.cu.Q().a(afv.a, zd.a);
+        aD[(☃ + ☃)] = afi.cu.Q().a(afv.a, zd.a);
         if ((☃ + ☃ > 1) && (☃.nextBoolean())) {
-          this.aD[(☃ + ☃ - 1)] = afi.cu.Q().a(afv.a, zd.i);
+          aD[(☃ + ☃ - 1)] = afi.cu.Q().a(afv.a, zd.i);
         }
         if ((☃ + ☃ < 63) && (☃.nextBoolean())) {
-          this.aD[(☃ + ☃ + 1)] = afi.cu.Q().a(afv.a, zd.i);
+          aD[(☃ + ☃ + 1)] = afi.cu.Q().a(afv.a, zd.i);
         }
       }
     }
@@ -257,25 +257,25 @@ public class aek
   
   private alz a(int ☃, int ☃, int ☃)
   {
-    int ☃ = (int)Math.round(this.aH.a(☃ * 1.0D / 512.0D, ☃ * 1.0D / 512.0D) * 2.0D);
-    return this.aD[((☃ + ☃ + 64) % 64)];
+    int ☃ = (int)Math.round(aH.a(☃ * 1.0D / 512.0D, ☃ * 1.0D / 512.0D) * 2.0D);
+    return aD[((☃ + ☃ + 64) % 64)];
   }
   
   protected ady d(int ☃)
   {
-    boolean ☃ = this.az == ady.aa.az;
+    boolean ☃ = az == aaaz;
     
-    aek ☃ = new aek(☃, ☃, this.aJ);
+    aek ☃ = new aek(☃, ☃, aJ);
     if (!☃)
     {
       ☃.a(g);
-      ☃.a(this.ah + " M");
+      ☃.a(ah + " M");
     }
     else
     {
-      ☃.a(this.ah + " (Bryce)");
+      ☃.a(ah + " (Bryce)");
     }
-    ☃.a(this.ai, true);
+    ☃.a(ai, true);
     
     return ☃;
   }

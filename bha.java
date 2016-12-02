@@ -14,7 +14,7 @@ public class bha
   
   public bha()
   {
-    this.e = new bau();
+    e = new bau();
   }
   
   public void a(aku ☃, double ☃, double ☃, double ☃, float ☃, int ☃)
@@ -31,7 +31,7 @@ public class bha
       bfl.b((float)☃ + 0.5F, (float)☃ + 0.75F * ☃, (float)☃ + 0.5F);
       float ☃ = ☃ * 360 / 16.0F;
       bfl.b(-☃, 0.0F, 1.0F, 0.0F);
-      this.e.b.j = true;
+      e.b.j = true;
     }
     else
     {
@@ -50,11 +50,11 @@ public class bha
       bfl.b(-☃, 0.0F, 1.0F, 0.0F);
       bfl.b(0.0F, -0.3125F, -0.4375F);
       
-      this.e.b.j = false;
+      e.b.j = false;
     }
     cj ☃ = ☃.v();
     float ☃ = ☃.n() * 7 + ☃.o() * 9 + ☃.p() * 13 + (float)☃ + ☃;
-    this.e.a.f = ((-0.0125F + 0.01F * ns.b(☃ * 3.1415927F * 0.02F)) * 3.1415927F);
+    e.a.f = ((-0.0125F + 0.01F * ns.b(☃ * 3.1415927F * 0.02F)) * 3.1415927F);
     
     bfl.B();
     jy ☃ = a(☃);
@@ -64,7 +64,7 @@ public class bha
       
       bfl.E();
       bfl.a(☃, -☃, -☃);
-      this.e.a();
+      e.a();
       bfl.F();
     }
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
@@ -88,9 +88,9 @@ public class bha
         {
           String ☃ = (String)☃.next();
           bha.a ☃ = (bha.a)c.get(☃);
-          if (☃ - ☃.a > 60000L)
+          if (☃ - a > 60000L)
           {
-            ave.A().P().c(☃.b);
+            ave.A().P().c(b);
             ☃.remove();
           }
         }
@@ -106,12 +106,12 @@ public class bha
         ☃.add("textures/entity/banner/" + ☃.a() + ".png");
       }
       ☃ = new bha.a(null);
-      ☃.b = new jy(☃);
-      ave.A().P().a(☃.b, new bmc(d, ☃, ☃));
+      b = new jy(☃);
+      ave.A().P().a(b, new bmc(d, ☃, ☃));
       c.put(☃, ☃);
     }
-    ☃.a = System.currentTimeMillis();
-    return ☃.b;
+    a = System.currentTimeMillis();
+    return b;
   }
   
   static class a

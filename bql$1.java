@@ -37,34 +37,34 @@ class bql$1
   
   public void startCallback(ErrorCode ☃)
   {
-    this.a.y = false;
+    a.y = false;
     if (ErrorCode.succeeded(☃))
     {
-      this.a.x = true;
-      this.a.k = System.currentTimeMillis();
+      a.x = true;
+      a.k = System.currentTimeMillis();
       
-      this.a.a(bql.b.c);
+      a.a(bql.b.c);
     }
     else
     {
-      this.a.m = false;
-      this.a.a(bql.b.e);
+      a.m = false;
+      a.a(bql.b.e);
     }
   }
   
   public void stopCallback(ErrorCode ☃)
   {
     if (ErrorCode.failed(☃)) {
-      System.out.println("IngestTester.stopCallback failed to stop - " + this.a.p.serverName + ": " + ☃.toString());
+      System.out.println("IngestTester.stopCallback failed to stop - " + a.p.serverName + ": " + ☃.toString());
     }
-    this.a.z = false;
-    this.a.x = false;
+    a.z = false;
+    a.x = false;
     
-    this.a.a(bql.b.e);
+    a.a(bql.b.e);
     
-    this.a.p = null;
-    if (this.a.q) {
-      this.a.a(bql.b.g);
+    a.p = null;
+    if (a.q) {
+      a.a(bql.b.g);
     }
   }
   

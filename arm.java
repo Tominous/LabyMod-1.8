@@ -51,7 +51,7 @@ public class arm
   
   public arm(arn ☃)
   {
-    this.M = ☃;
+    M = ☃;
   }
   
   public boolean d()
@@ -76,41 +76,41 @@ public class arm
   
   private arm s()
   {
-    this.L = true;
+    L = true;
     return this;
   }
   
   protected arm f()
   {
-    this.N = false;
+    N = false;
     return this;
   }
   
   protected arm g()
   {
-    this.J = true;
+    J = true;
     return this;
   }
   
   public boolean h()
   {
-    return this.J;
+    return J;
   }
   
   public arm i()
   {
-    this.K = true;
+    K = true;
     return this;
   }
   
   public boolean j()
   {
-    return this.K;
+    return K;
   }
   
   public boolean k()
   {
-    if (this.L) {
+    if (L) {
       return false;
     }
     return c();
@@ -118,34 +118,34 @@ public class arm
   
   public boolean l()
   {
-    return this.N;
+    return N;
   }
   
   public int m()
   {
-    return this.O;
+    return O;
   }
   
   protected arm n()
   {
-    this.O = 1;
+    O = 1;
     return this;
   }
   
   protected arm o()
   {
-    this.O = 2;
+    O = 2;
     return this;
   }
   
   protected arm p()
   {
-    this.P = true;
+    P = true;
     return this;
   }
   
   public arn r()
   {
-    return this.M;
+    return M;
   }
 }

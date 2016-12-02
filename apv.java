@@ -18,15 +18,15 @@ public class apv
   public apv(boolean ☃, int ☃, alz ☃, alz ☃, boolean ☃)
   {
     super(☃);
-    this.c = ☃;
-    this.e = ☃;
-    this.f = ☃;
-    this.d = ☃;
+    c = ☃;
+    e = ☃;
+    f = ☃;
+    d = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
   {
-    int ☃ = ☃.nextInt(3) + this.c;
+    int ☃ = ☃.nextInt(3) + c;
     
     boolean ☃ = true;
     if ((☃.o() < 1) || (☃.o() + ☃ + 1 > 256)) {
@@ -82,7 +82,7 @@ public class apv
             cj ☃ = new cj(☃, ☃, ☃);
             afh ☃ = ☃.p(☃).c();
             if ((☃.t() == arm.a) || (☃.t() == arm.j) || (☃.t() == arm.l)) {
-              a(☃, ☃, this.f);
+              a(☃, ☃, f);
             }
           }
         }
@@ -93,8 +93,8 @@ public class apv
       afh ☃ = ☃.p(☃.b(☃)).c();
       if ((☃.t() == arm.a) || (☃.t() == arm.j) || (☃.t() == arm.l))
       {
-        a(☃, ☃.b(☃), this.e);
-        if ((this.d) && (☃ > 0))
+        a(☃, ☃.b(☃), e);
+        if ((d) && (☃ > 0))
         {
           if ((☃.nextInt(3) > 0) && (☃.d(☃.a(-1, ☃, 0)))) {
             a(☃, ☃.a(-1, ☃, 0), akk.N);
@@ -111,7 +111,7 @@ public class apv
         }
       }
     }
-    if (this.d)
+    if (d)
     {
       for (int ☃ = ☃.o() - 3 + ☃; ☃ <= ☃.o() + ☃; ☃++)
       {

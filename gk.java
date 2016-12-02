@@ -18,58 +18,58 @@ public class gk
   
   public gk(double ☃, double ☃, double ☃, float ☃, List<cj> ☃, aui ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
-    this.e = Lists.newArrayList(☃);
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
+    e = Lists.newArrayList(☃);
     if (☃ != null)
     {
-      this.f = ((float)☃.a);
-      this.g = ((float)☃.b);
-      this.h = ((float)☃.c);
+      f = ((float)a);
+      g = ((float)b);
+      h = ((float)c);
     }
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.readFloat();
-    this.b = ☃.readFloat();
-    this.c = ☃.readFloat();
-    this.d = ☃.readFloat();
+    a = ☃.readFloat();
+    b = ☃.readFloat();
+    c = ☃.readFloat();
+    d = ☃.readFloat();
     int ☃ = ☃.readInt();
     
-    this.e = Lists.newArrayListWithCapacity(☃);
+    e = Lists.newArrayListWithCapacity(☃);
     
-    int ☃ = (int)this.a;
-    int ☃ = (int)this.b;
-    int ☃ = (int)this.c;
+    int ☃ = (int)a;
+    int ☃ = (int)b;
+    int ☃ = (int)c;
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
       int ☃ = ☃.readByte() + ☃;
       int ☃ = ☃.readByte() + ☃;
       int ☃ = ☃.readByte() + ☃;
-      this.e.add(new cj(☃, ☃, ☃));
+      e.add(new cj(☃, ☃, ☃));
     }
-    this.f = ☃.readFloat();
-    this.g = ☃.readFloat();
-    this.h = ☃.readFloat();
+    f = ☃.readFloat();
+    g = ☃.readFloat();
+    h = ☃.readFloat();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeFloat((float)this.a);
-    ☃.writeFloat((float)this.b);
-    ☃.writeFloat((float)this.c);
-    ☃.writeFloat(this.d);
-    ☃.writeInt(this.e.size());
+    ☃.writeFloat((float)a);
+    ☃.writeFloat((float)b);
+    ☃.writeFloat((float)c);
+    ☃.writeFloat(d);
+    ☃.writeInt(e.size());
     
-    int ☃ = (int)this.a;
-    int ☃ = (int)this.b;
-    int ☃ = (int)this.c;
-    for (cj ☃ : this.e)
+    int ☃ = (int)a;
+    int ☃ = (int)b;
+    int ☃ = (int)c;
+    for (cj ☃ : e)
     {
       int ☃ = ☃.n() - ☃;
       int ☃ = ☃.o() - ☃;
@@ -78,9 +78,9 @@ public class gk
       ☃.writeByte(☃);
       ☃.writeByte(☃);
     }
-    ☃.writeFloat(this.f);
-    ☃.writeFloat(this.g);
-    ☃.writeFloat(this.h);
+    ☃.writeFloat(f);
+    ☃.writeFloat(g);
+    ☃.writeFloat(h);
   }
   
   public void a(fj ☃)
@@ -90,41 +90,41 @@ public class gk
   
   public float a()
   {
-    return this.f;
+    return f;
   }
   
   public float b()
   {
-    return this.g;
+    return g;
   }
   
   public float c()
   {
-    return this.h;
+    return h;
   }
   
   public double d()
   {
-    return this.a;
+    return a;
   }
   
   public double e()
   {
-    return this.b;
+    return b;
   }
   
   public double f()
   {
-    return this.c;
+    return c;
   }
   
   public float g()
   {
-    return this.d;
+    return d;
   }
   
   public List<cj> h()
   {
-    return this.e;
+    return e;
   }
 }

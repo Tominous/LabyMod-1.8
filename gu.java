@@ -18,18 +18,18 @@ public class gu
   
   public gu(int ☃, byte ☃, Collection<atf> ☃, byte[] ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ((atf[])☃.toArray(new atf[☃.size()]));
-    this.d = ☃;
-    this.e = ☃;
-    this.f = ☃;
-    this.g = ☃;
+    a = ☃;
+    b = ☃;
+    c = ((atf[])☃.toArray(new atf[☃.size()]));
+    d = ☃;
+    e = ☃;
+    f = ☃;
+    g = ☃;
     
-    this.h = new byte[☃ * ☃];
+    h = new byte[☃ * ☃];
     for (int ☃ = 0; ☃ < ☃; ☃++) {
       for (int ☃ = 0; ☃ < ☃; ☃++) {
-        this.h[(☃ + ☃ * ☃)] = ☃[(☃ + ☃ + (☃ + ☃) * 128)];
+        h[(☃ + ☃ * ☃)] = ☃[(☃ + ☃ + (☃ + ☃) * 128)];
       }
     }
   }
@@ -37,43 +37,43 @@ public class gu
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.e();
-    this.b = ☃.readByte();
-    this.c = new atf[☃.e()];
-    for (int ☃ = 0; ☃ < this.c.length; ☃++)
+    a = ☃.e();
+    b = ☃.readByte();
+    c = new atf[☃.e()];
+    for (int ☃ = 0; ☃ < c.length; ☃++)
     {
       short ☃ = (short)☃.readByte();
-      this.c[☃] = new atf((byte)(☃ >> 4 & 0xF), ☃.readByte(), ☃.readByte(), (byte)(☃ & 0xF));
+      c[☃] = new atf((byte)(☃ >> 4 & 0xF), ☃.readByte(), ☃.readByte(), (byte)(☃ & 0xF));
     }
-    this.f = ☃.readUnsignedByte();
-    if (this.f > 0)
+    f = ☃.readUnsignedByte();
+    if (f > 0)
     {
-      this.g = ☃.readUnsignedByte();
-      this.d = ☃.readUnsignedByte();
-      this.e = ☃.readUnsignedByte();
-      this.h = ☃.a();
+      g = ☃.readUnsignedByte();
+      d = ☃.readUnsignedByte();
+      e = ☃.readUnsignedByte();
+      h = ☃.a();
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(this.a);
-    ☃.writeByte(this.b);
-    ☃.b(this.c.length);
-    for (atf ☃ : this.c)
+    ☃.b(a);
+    ☃.writeByte(b);
+    ☃.b(c.length);
+    for (atf ☃ : c)
     {
       ☃.writeByte((☃.a() & 0xF) << 4 | ☃.d() & 0xF);
       ☃.writeByte(☃.b());
       ☃.writeByte(☃.c());
     }
-    ☃.writeByte(this.f);
-    if (this.f > 0)
+    ☃.writeByte(f);
+    if (f > 0)
     {
-      ☃.writeByte(this.g);
-      ☃.writeByte(this.d);
-      ☃.writeByte(this.e);
-      ☃.a(this.h);
+      ☃.writeByte(g);
+      ☃.writeByte(d);
+      ☃.writeByte(e);
+      ☃.a(h);
     }
   }
   
@@ -84,21 +84,21 @@ public class gu
   
   public int a()
   {
-    return this.a;
+    return a;
   }
   
   public void a(atg ☃)
   {
-    ☃.e = this.b;
-    ☃.h.clear();
-    for (int ☃ = 0; ☃ < this.c.length; ☃++)
+    e = b;
+    h.clear();
+    for (int ☃ = 0; ☃ < c.length; ☃++)
     {
-      atf ☃ = this.c[☃];
-      ☃.h.put("icon-" + ☃, ☃);
+      atf ☃ = c[☃];
+      h.put("icon-" + ☃, ☃);
     }
-    for (int ☃ = 0; ☃ < this.f; ☃++) {
-      for (int ☃ = 0; ☃ < this.g; ☃++) {
-        ☃.f[(this.d + ☃ + (this.e + ☃) * 128)] = this.h[(☃ + ☃ * this.f)];
+    for (int ☃ = 0; ☃ < f; ☃++) {
+      for (int ☃ = 0; ☃ < g; ☃++) {
+        f[(d + ☃ + (e + ☃) * 128)] = h[(☃ + ☃ * f)];
       }
     }
   }

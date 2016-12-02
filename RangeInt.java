@@ -11,10 +11,10 @@ public class RangeInt
   
   public boolean isInRange(int val)
   {
-    if (val < this.min) {
+    if (val < min) {
       return false;
     }
-    if (val > this.max) {
+    if (val > max) {
       return false;
     }
     return true;
@@ -22,16 +22,16 @@ public class RangeInt
   
   public int getMin()
   {
-    return this.min;
+    return min;
   }
   
   public int getMax()
   {
-    return this.max;
+    return max;
   }
   
   public String toString()
   {
-    return "min: " + this.min + ", max: " + this.max;
+    return "min: " + min + ", max: " + max;
   }
 }

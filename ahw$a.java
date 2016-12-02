@@ -5,12 +5,12 @@ public enum ahw$a
   
   private ahw$a(String ☃)
   {
-    this.e = ☃;
+    e = ☃;
   }
   
   public String toString()
   {
-    return this.e;
+    return e;
   }
   
   public static a a(cq.a ☃)
@@ -29,6 +29,6 @@ public enum ahw$a
   
   public String l()
   {
-    return this.e;
+    return e;
   }
 }

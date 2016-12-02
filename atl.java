@@ -5,97 +5,97 @@ public class atl
   
   public atl(ato ☃)
   {
-    this.b = ☃;
+    b = ☃;
   }
   
   public dn a()
   {
-    return this.b.a();
+    return b.a();
   }
   
   public dn a(dn ☃)
   {
-    return this.b.a(☃);
+    return b.a(☃);
   }
   
   public long b()
   {
-    return this.b.b();
+    return b.b();
   }
   
   public int c()
   {
-    return this.b.c();
+    return b.c();
   }
   
   public int d()
   {
-    return this.b.d();
+    return b.d();
   }
   
   public int e()
   {
-    return this.b.e();
+    return b.e();
   }
   
   public long f()
   {
-    return this.b.f();
+    return b.f();
   }
   
   public long g()
   {
-    return this.b.g();
+    return b.g();
   }
   
   public long h()
   {
-    return this.b.h();
+    return b.h();
   }
   
   public dn i()
   {
-    return this.b.i();
+    return b.i();
   }
   
   public String k()
   {
-    return this.b.k();
+    return b.k();
   }
   
   public int l()
   {
-    return this.b.l();
+    return b.l();
   }
   
   public long m()
   {
-    return this.b.m();
+    return b.m();
   }
   
   public boolean n()
   {
-    return this.b.n();
+    return b.n();
   }
   
   public int o()
   {
-    return this.b.o();
+    return b.o();
   }
   
   public boolean p()
   {
-    return this.b.p();
+    return b.p();
   }
   
   public int q()
   {
-    return this.b.q();
+    return b.q();
   }
   
   public adp.a r()
   {
-    return this.b.r();
+    return b.r();
   }
   
   public void a(int ☃) {}
@@ -124,50 +124,50 @@ public class atl
   
   public boolean s()
   {
-    return this.b.s();
+    return b.s();
   }
   
   public boolean t()
   {
-    return this.b.t();
+    return b.t();
   }
   
   public adr u()
   {
-    return this.b.u();
+    return b.u();
   }
   
   public void a(adr ☃) {}
   
   public boolean v()
   {
-    return this.b.v();
+    return b.v();
   }
   
   public void c(boolean ☃) {}
   
   public boolean w()
   {
-    return this.b.w();
+    return b.w();
   }
   
   public void d(boolean ☃) {}
   
   public adk x()
   {
-    return this.b.x();
+    return b.x();
   }
   
   public oj y()
   {
-    return this.b.y();
+    return b.y();
   }
   
   public void a(oj ☃) {}
   
   public boolean z()
   {
-    return this.b.z();
+    return b.z();
   }
   
   public void e(boolean ☃) {}

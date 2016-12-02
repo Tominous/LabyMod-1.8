@@ -11,7 +11,7 @@ public class ResourceUtils
     if (directAccessValid) {
       try
       {
-        return arp.a;
+        return a;
       }
       catch (IllegalAccessError e)
       {

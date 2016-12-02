@@ -19,19 +19,19 @@ public class bmu
     for (int ☃ = 0; ☃ < ☃.i(); ☃++) {
       a(☃.c(☃));
     }
-    this.d = ☃.g();
+    d = ☃.g();
   }
   
   public bmu() {}
   
   public void a()
   {
-    this.b.clear();
-    this.c.clear();
-    this.e = -1;
-    this.f.clear();
-    this.g = -1;
-    this.d = 0;
+    b.clear();
+    c.clear();
+    e = -1;
+    f.clear();
+    g = -1;
+    d = 0;
   }
   
   public bmu a(bmv ☃)
@@ -41,62 +41,62 @@ public class bmu
       a.warn("VertexFormat error: Trying to add a position VertexFormatElement when one already exists, ignoring.");
       return this;
     }
-    this.b.add(☃);
-    this.c.add(Integer.valueOf(this.d));
+    b.add(☃);
+    c.add(Integer.valueOf(d));
     switch (bmu.1.a[☃.b().ordinal()])
     {
     case 1: 
-      this.g = this.d;
+      g = d;
       break;
     case 2: 
-      this.e = this.d;
+      e = d;
       break;
     case 3: 
-      this.f.add(☃.d(), Integer.valueOf(this.d));
+      f.add(☃.d(), Integer.valueOf(d));
       break;
     }
-    this.d += ☃.e();
+    d += ☃.e();
     
     return this;
   }
   
   public boolean b()
   {
-    return this.g >= 0;
+    return g >= 0;
   }
   
   public int c()
   {
-    return this.g;
+    return g;
   }
   
   public boolean d()
   {
-    return this.e >= 0;
+    return e >= 0;
   }
   
   public int e()
   {
-    return this.e;
+    return e;
   }
   
   public boolean a(int ☃)
   {
-    return this.f.size() - 1 >= ☃;
+    return f.size() - 1 >= ☃;
   }
   
   public int b(int ☃)
   {
-    return ((Integer)this.f.get(☃)).intValue();
+    return ((Integer)f.get(☃)).intValue();
   }
   
   public String toString()
   {
-    String ☃ = "format: " + this.b.size() + " elements: ";
-    for (int ☃ = 0; ☃ < this.b.size(); ☃++)
+    String ☃ = "format: " + b.size() + " elements: ";
+    for (int ☃ = 0; ☃ < b.size(); ☃++)
     {
-      ☃ = ☃ + ((bmv)this.b.get(☃)).toString();
-      if (☃ != this.b.size() - 1) {
+      ☃ = ☃ + ((bmv)b.get(☃)).toString();
+      if (☃ != b.size() - 1) {
         ☃ = ☃ + " ";
       }
     }
@@ -106,9 +106,9 @@ public class bmu
   private boolean j()
   {
     int ☃ = 0;
-    for (int ☃ = this.b.size(); ☃ < ☃; ☃++)
+    for (int ☃ = b.size(); ☃ < ☃; ☃++)
     {
-      bmv ☃ = (bmv)this.b.get(☃);
+      bmv ☃ = (bmv)b.get(☃);
       if (☃.f()) {
         return true;
       }
@@ -123,27 +123,27 @@ public class bmu
   
   public int g()
   {
-    return this.d;
+    return d;
   }
   
   public List<bmv> h()
   {
-    return this.b;
+    return b;
   }
   
   public int i()
   {
-    return this.b.size();
+    return b.size();
   }
   
   public bmv c(int ☃)
   {
-    return (bmv)this.b.get(☃);
+    return (bmv)b.get(☃);
   }
   
   public int d(int ☃)
   {
-    return ((Integer)this.c.get(☃)).intValue();
+    return ((Integer)c.get(☃)).intValue();
   }
   
   public boolean equals(Object ☃)
@@ -155,13 +155,13 @@ public class bmu
       return false;
     }
     bmu ☃ = (bmu)☃;
-    if (this.d != ☃.d) {
+    if (d != d) {
       return false;
     }
-    if (!this.b.equals(☃.b)) {
+    if (!b.equals(b)) {
       return false;
     }
-    if (!this.c.equals(☃.c)) {
+    if (!c.equals(c)) {
       return false;
     }
     return true;
@@ -169,9 +169,9 @@ public class bmu
   
   public int hashCode()
   {
-    int ☃ = this.b.hashCode();
-    ☃ = 31 * ☃ + this.c.hashCode();
-    ☃ = 31 * ☃ + this.d;
+    int ☃ = b.hashCode();
+    ☃ = 31 * ☃ + c.hashCode();
+    ☃ = 31 * ☃ + d;
     return ☃;
   }
 }

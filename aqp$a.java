@@ -14,21 +14,21 @@ public class aqp$a
   {
     super(☃);
     
-    this.m = ☃;
-    this.d = a(☃);
-    this.l = ☃;
+    m = ☃;
+    d = a(☃);
+    l = ☃;
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("Chest", this.b);
+    ☃.a("Chest", b);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    this.b = ☃.n("Chest");
+    b = ☃.n("Chest");
   }
   
   public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -52,7 +52,7 @@ public class aqp$a
     }
     a(☃, ☃, 0, 0, 0, 4, 4, 6, true, ☃, aqp.c());
     
-    a(☃, ☃, ☃, this.d, 1, 1, 0);
+    a(☃, ☃, ☃, d, 1, 1, 0);
     
     a(☃, ☃, ☃, aqp.p.a.a, 1, 1, 6);
     
@@ -64,10 +64,10 @@ public class aqp$a
     for (int ☃ = 2; ☃ <= 4; ☃++) {
       a(☃, afi.U.a(akb.a.f.a()), 2, 1, ☃, ☃);
     }
-    if ((!this.b) && 
+    if ((!b) && 
       (☃.b(new cj(a(3, 3), d(2), b(3, 3)))))
     {
-      this.b = true;
+      b = true;
       a(☃, ☃, ☃, 3, 2, 3, ob.a(a, new ob[] { zy.cd.b(☃) }), 2 + ☃.nextInt(2));
     }
     return true;

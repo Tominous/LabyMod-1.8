@@ -7,13 +7,13 @@ public class kw
   
   public kw(int ☃, cj ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public cj b()
   {
-    return this.b;
+    return b;
   }
   
   public void a(int ☃)
@@ -21,21 +21,21 @@ public class kw
     if (☃ > 10) {
       ☃ = 10;
     }
-    this.c = ☃;
+    c = ☃;
   }
   
   public int c()
   {
-    return this.c;
+    return c;
   }
   
   public void b(int ☃)
   {
-    this.d = ☃;
+    d = ☃;
   }
   
   public int d()
   {
-    return this.d;
+    return d;
   }
 }

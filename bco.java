@@ -17,8 +17,8 @@ public class bco
   
   public bco(float ☃)
   {
-    this.t = 256;
-    this.u = 256;
+    t = 256;
+    u = 256;
     
     a("body.body", 0, 0);
     a("wing.skin", -56, 88);
@@ -41,78 +41,78 @@ public class bco
     a("head.nostril", 112, 0);
     
     float ☃ = -16.0F;
-    this.a = new bct(this, "head");
-    this.a.a("upperlip", -6.0F, -1.0F, -8.0F + ☃, 12, 5, 16);
-    this.a.a("upperhead", -8.0F, -8.0F, 6.0F + ☃, 16, 16, 16);
-    this.a.i = true;
-    this.a.a("scale", -5.0F, -12.0F, 12.0F + ☃, 2, 4, 6);
-    this.a.a("nostril", -5.0F, -3.0F, -6.0F + ☃, 2, 2, 4);
-    this.a.i = false;
-    this.a.a("scale", 3.0F, -12.0F, 12.0F + ☃, 2, 4, 6);
-    this.a.a("nostril", 3.0F, -3.0F, -6.0F + ☃, 2, 2, 4);
+    a = new bct(this, "head");
+    a.a("upperlip", -6.0F, -1.0F, -8.0F + ☃, 12, 5, 16);
+    a.a("upperhead", -8.0F, -8.0F, 6.0F + ☃, 16, 16, 16);
+    a.i = true;
+    a.a("scale", -5.0F, -12.0F, 12.0F + ☃, 2, 4, 6);
+    a.a("nostril", -5.0F, -3.0F, -6.0F + ☃, 2, 2, 4);
+    a.i = false;
+    a.a("scale", 3.0F, -12.0F, 12.0F + ☃, 2, 4, 6);
+    a.a("nostril", 3.0F, -3.0F, -6.0F + ☃, 2, 2, 4);
     
-    this.c = new bct(this, "jaw");
-    this.c.a(0.0F, 4.0F, 8.0F + ☃);
-    this.c.a("jaw", -6.0F, 0.0F, -16.0F, 12, 4, 16);
-    this.a.a(this.c);
+    c = new bct(this, "jaw");
+    c.a(0.0F, 4.0F, 8.0F + ☃);
+    c.a("jaw", -6.0F, 0.0F, -16.0F, 12, 4, 16);
+    a.a(c);
     
-    this.b = new bct(this, "neck");
-    this.b.a("box", -5.0F, -5.0F, -5.0F, 10, 10, 10);
-    this.b.a("scale", -1.0F, -9.0F, -3.0F, 2, 4, 6);
+    b = new bct(this, "neck");
+    b.a("box", -5.0F, -5.0F, -5.0F, 10, 10, 10);
+    b.a("scale", -1.0F, -9.0F, -3.0F, 2, 4, 6);
     
-    this.d = new bct(this, "body");
-    this.d.a(0.0F, 4.0F, 8.0F);
-    this.d.a("body", -12.0F, 0.0F, -16.0F, 24, 24, 64);
-    this.d.a("scale", -1.0F, -6.0F, -10.0F, 2, 6, 12);
-    this.d.a("scale", -1.0F, -6.0F, 10.0F, 2, 6, 12);
-    this.d.a("scale", -1.0F, -6.0F, 30.0F, 2, 6, 12);
+    d = new bct(this, "body");
+    d.a(0.0F, 4.0F, 8.0F);
+    d.a("body", -12.0F, 0.0F, -16.0F, 24, 24, 64);
+    d.a("scale", -1.0F, -6.0F, -10.0F, 2, 6, 12);
+    d.a("scale", -1.0F, -6.0F, 10.0F, 2, 6, 12);
+    d.a("scale", -1.0F, -6.0F, 30.0F, 2, 6, 12);
     
-    this.k = new bct(this, "wing");
-    this.k.a(-12.0F, 5.0F, 2.0F);
-    this.k.a("bone", -56.0F, -4.0F, -4.0F, 56, 8, 8);
-    this.k.a("skin", -56.0F, 0.0F, 2.0F, 56, 0, 56);
-    this.l = new bct(this, "wingtip");
-    this.l.a(-56.0F, 0.0F, 0.0F);
-    this.l.a("bone", -56.0F, -2.0F, -2.0F, 56, 4, 4);
-    this.l.a("skin", -56.0F, 0.0F, 2.0F, 56, 0, 56);
-    this.k.a(this.l);
+    k = new bct(this, "wing");
+    k.a(-12.0F, 5.0F, 2.0F);
+    k.a("bone", -56.0F, -4.0F, -4.0F, 56, 8, 8);
+    k.a("skin", -56.0F, 0.0F, 2.0F, 56, 0, 56);
+    l = new bct(this, "wingtip");
+    l.a(-56.0F, 0.0F, 0.0F);
+    l.a("bone", -56.0F, -2.0F, -2.0F, 56, 4, 4);
+    l.a("skin", -56.0F, 0.0F, 2.0F, 56, 0, 56);
+    k.a(l);
     
-    this.f = new bct(this, "frontleg");
-    this.f.a(-12.0F, 20.0F, 2.0F);
-    this.f.a("main", -4.0F, -4.0F, -4.0F, 8, 24, 8);
-    this.h = new bct(this, "frontlegtip");
-    this.h.a(0.0F, 20.0F, -1.0F);
-    this.h.a("main", -3.0F, -1.0F, -3.0F, 6, 24, 6);
-    this.f.a(this.h);
-    this.j = new bct(this, "frontfoot");
-    this.j.a(0.0F, 23.0F, 0.0F);
-    this.j.a("main", -4.0F, 0.0F, -12.0F, 8, 4, 16);
-    this.h.a(this.j);
+    f = new bct(this, "frontleg");
+    f.a(-12.0F, 20.0F, 2.0F);
+    f.a("main", -4.0F, -4.0F, -4.0F, 8, 24, 8);
+    h = new bct(this, "frontlegtip");
+    h.a(0.0F, 20.0F, -1.0F);
+    h.a("main", -3.0F, -1.0F, -3.0F, 6, 24, 6);
+    f.a(h);
+    j = new bct(this, "frontfoot");
+    j.a(0.0F, 23.0F, 0.0F);
+    j.a("main", -4.0F, 0.0F, -12.0F, 8, 4, 16);
+    h.a(j);
     
-    this.e = new bct(this, "rearleg");
-    this.e.a(-16.0F, 16.0F, 42.0F);
-    this.e.a("main", -8.0F, -4.0F, -8.0F, 16, 32, 16);
-    this.g = new bct(this, "rearlegtip");
-    this.g.a(0.0F, 32.0F, -4.0F);
-    this.g.a("main", -6.0F, -2.0F, 0.0F, 12, 32, 12);
-    this.e.a(this.g);
-    this.i = new bct(this, "rearfoot");
-    this.i.a(0.0F, 31.0F, 4.0F);
-    this.i.a("main", -9.0F, 0.0F, -20.0F, 18, 6, 24);
-    this.g.a(this.i);
+    e = new bct(this, "rearleg");
+    e.a(-16.0F, 16.0F, 42.0F);
+    e.a("main", -8.0F, -4.0F, -8.0F, 16, 32, 16);
+    g = new bct(this, "rearlegtip");
+    g.a(0.0F, 32.0F, -4.0F);
+    g.a("main", -6.0F, -2.0F, 0.0F, 12, 32, 12);
+    e.a(g);
+    i = new bct(this, "rearfoot");
+    i.a(0.0F, 31.0F, 4.0F);
+    i.a("main", -9.0F, 0.0F, -20.0F, 18, 6, 24);
+    g.a(i);
   }
   
   public void a(pr ☃, float ☃, float ☃, float ☃)
   {
-    this.m = ☃;
+    m = ☃;
   }
   
   public void a(pk ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
     bfl.E();
     ug ☃ = (ug)☃;
-    float ☃ = ☃.bu + (☃.bv - ☃.bu) * this.m;
-    this.c.f = ((float)(Math.sin(☃ * 3.1415927F * 2.0F) + 1.0D) * 0.2F);
+    float ☃ = bu + (bv - bu) * m;
+    c.f = ((float)(Math.sin(☃ * 3.1415927F * 2.0F) + 1.0D) * 0.2F);
     
     float ☃ = (float)(Math.sin(☃ * 3.1415927F * 2.0F - 1.0F) + 1.0D);
     ☃ = (☃ * ☃ * 1.0F + ☃ * 2.0F) * 0.05F;
@@ -126,10 +126,10 @@ public class bco
     
     float ☃ = 1.5F;
     
-    double[] ☃ = ☃.b(6, this.m);
+    double[] ☃ = ☃.b(6, m);
     
-    float ☃ = a(☃.b(5, this.m)[0] - ☃.b(10, this.m)[0]);
-    float ☃ = a(☃.b(5, this.m)[0] + ☃ / 2.0F);
+    float ☃ = a(☃.b(5, m)[0] - ☃.b(10, m)[0]);
+    float ☃ = a(☃.b(5, m)[0] + ☃ / 2.0F);
     
     ☃ += 2.0F;
     
@@ -138,52 +138,52 @@ public class bco
     float ☃ = -12.0F;
     for (int ☃ = 0; ☃ < 5; ☃++)
     {
-      double[] ☃ = ☃.b(5 - ☃, this.m);
+      double[] ☃ = ☃.b(5 - ☃, m);
       float ☃ = (float)Math.cos(☃ * 0.45F + ☃) * 0.15F;
-      this.b.g = (a(☃[0] - ☃[0]) * 3.1415927F / 180.0F * ☃);
-      this.b.f = (☃ + (float)(☃[1] - ☃[1]) * 3.1415927F / 180.0F * ☃ * 5.0F);
-      this.b.h = (-a(☃[0] - ☃) * 3.1415927F / 180.0F * ☃);
+      b.g = (a(☃[0] - ☃[0]) * 3.1415927F / 180.0F * ☃);
+      b.f = (☃ + (float)(☃[1] - ☃[1]) * 3.1415927F / 180.0F * ☃ * 5.0F);
+      b.h = (-a(☃[0] - ☃) * 3.1415927F / 180.0F * ☃);
       
-      this.b.d = ☃;
-      this.b.e = ☃;
-      this.b.c = ☃;
-      ☃ = (float)(☃ + Math.sin(this.b.f) * 10.0D);
-      ☃ = (float)(☃ - Math.cos(this.b.g) * Math.cos(this.b.f) * 10.0D);
-      ☃ = (float)(☃ - Math.sin(this.b.g) * Math.cos(this.b.f) * 10.0D);
-      this.b.a(☃);
+      b.d = ☃;
+      b.e = ☃;
+      b.c = ☃;
+      ☃ = (float)(☃ + Math.sin(b.f) * 10.0D);
+      ☃ = (float)(☃ - Math.cos(b.g) * Math.cos(b.f) * 10.0D);
+      ☃ = (float)(☃ - Math.sin(b.g) * Math.cos(b.f) * 10.0D);
+      b.a(☃);
     }
-    this.a.d = ☃;
-    this.a.e = ☃;
-    this.a.c = ☃;
-    double[] ☃ = ☃.b(0, this.m);
-    this.a.g = (a(☃[0] - ☃[0]) * 3.1415927F / 180.0F * 1.0F);
-    this.a.h = (-a(☃[0] - ☃) * 3.1415927F / 180.0F * 1.0F);
-    this.a.a(☃);
+    a.d = ☃;
+    a.e = ☃;
+    a.c = ☃;
+    double[] ☃ = ☃.b(0, m);
+    a.g = (a(☃[0] - ☃[0]) * 3.1415927F / 180.0F * 1.0F);
+    a.h = (-a(☃[0] - ☃) * 3.1415927F / 180.0F * 1.0F);
+    a.a(☃);
     bfl.E();
     bfl.b(0.0F, 1.0F, 0.0F);
     bfl.b(-☃ * ☃ * 1.0F, 0.0F, 0.0F, 1.0F);
     bfl.b(0.0F, -1.0F, 0.0F);
-    this.d.h = 0.0F;
-    this.d.a(☃);
+    d.h = 0.0F;
+    d.a(☃);
     for (int ☃ = 0; ☃ < 2; ☃++)
     {
       bfl.o();
       float ☃ = ☃ * 3.1415927F * 2.0F;
-      this.k.f = (0.125F - (float)Math.cos(☃) * 0.2F);
-      this.k.g = 0.25F;
-      this.k.h = ((float)(Math.sin(☃) + 0.125D) * 0.8F);
-      this.l.h = (-(float)(Math.sin(☃ + 2.0F) + 0.5D) * 0.75F);
+      k.f = (0.125F - (float)Math.cos(☃) * 0.2F);
+      k.g = 0.25F;
+      k.h = ((float)(Math.sin(☃) + 0.125D) * 0.8F);
+      l.h = (-(float)(Math.sin(☃ + 2.0F) + 0.5D) * 0.75F);
       
-      this.e.f = (1.0F + ☃ * 0.1F);
-      this.g.f = (0.5F + ☃ * 0.1F);
-      this.i.f = (0.75F + ☃ * 0.1F);
+      e.f = (1.0F + ☃ * 0.1F);
+      g.f = (0.5F + ☃ * 0.1F);
+      i.f = (0.75F + ☃ * 0.1F);
       
-      this.f.f = (1.3F + ☃ * 0.1F);
-      this.h.f = (-0.5F - ☃ * 0.1F);
-      this.j.f = (0.75F + ☃ * 0.1F);
-      this.k.a(☃);
-      this.f.a(☃);
-      this.e.a(☃);
+      f.f = (1.3F + ☃ * 0.1F);
+      h.f = (-0.5F - ☃ * 0.1F);
+      j.f = (0.75F + ☃ * 0.1F);
+      k.a(☃);
+      f.a(☃);
+      e.a(☃);
       bfl.a(-1.0F, 1.0F, 1.0F);
       if (☃ == 0) {
         bfl.e(1028);
@@ -198,21 +198,21 @@ public class bco
     ☃ = 10.0F;
     ☃ = 60.0F;
     ☃ = 0.0F;
-    ☃ = ☃.b(11, this.m);
+    ☃ = ☃.b(11, m);
     for (int ☃ = 0; ☃ < 12; ☃++)
     {
-      ☃ = ☃.b(12 + ☃, this.m);
+      ☃ = ☃.b(12 + ☃, m);
       ☃ = (float)(☃ + Math.sin(☃ * 0.45F + ☃) * 0.05000000074505806D);
-      this.b.g = ((a(☃[0] - ☃[0]) * ☃ + 180.0F) * 3.1415927F / 180.0F);
-      this.b.f = (☃ + (float)(☃[1] - ☃[1]) * 3.1415927F / 180.0F * ☃ * 5.0F);
-      this.b.h = (a(☃[0] - ☃) * 3.1415927F / 180.0F * ☃);
-      this.b.d = ☃;
-      this.b.e = ☃;
-      this.b.c = ☃;
-      ☃ = (float)(☃ + Math.sin(this.b.f) * 10.0D);
-      ☃ = (float)(☃ - Math.cos(this.b.g) * Math.cos(this.b.f) * 10.0D);
-      ☃ = (float)(☃ - Math.sin(this.b.g) * Math.cos(this.b.f) * 10.0D);
-      this.b.a(☃);
+      b.g = ((a(☃[0] - ☃[0]) * ☃ + 180.0F) * 3.1415927F / 180.0F);
+      b.f = (☃ + (float)(☃[1] - ☃[1]) * 3.1415927F / 180.0F * ☃ * 5.0F);
+      b.h = (a(☃[0] - ☃) * 3.1415927F / 180.0F * ☃);
+      b.d = ☃;
+      b.e = ☃;
+      b.c = ☃;
+      ☃ = (float)(☃ + Math.sin(b.f) * 10.0D);
+      ☃ = (float)(☃ - Math.cos(b.g) * Math.cos(b.f) * 10.0D);
+      ☃ = (float)(☃ - Math.sin(b.g) * Math.cos(b.f) * 10.0D);
+      b.a(☃);
     }
     bfl.F();
   }

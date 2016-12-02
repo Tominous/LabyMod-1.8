@@ -5,17 +5,17 @@
   
   private awc$a(int ☃, int ☃)
   {
-    this.g = ☃;
-    this.h = ☃;
+    g = ☃;
+    h = ☃;
   }
   
   public int a()
   {
-    return this.g;
+    return g;
   }
   
   public int b()
   {
-    return this.h;
+    return h;
   }
 }

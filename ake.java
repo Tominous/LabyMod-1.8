@@ -8,7 +8,7 @@ public class ake
   public ake()
   {
     super(arm.u);
-    j(this.M.b().a(a, Boolean.valueOf(false)));
+    j(M.b().a(a, Boolean.valueOf(false)));
     a(yz.d);
   }
   
@@ -33,11 +33,11 @@ public class ake
   
   public void a(adm ☃, cj ☃, adi ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     vj ☃ = new vj(☃, ☃.n() + 0.5F, ☃.o(), ☃.p() + 0.5F, ☃.c());
-    ☃.a = (☃.s.nextInt(☃.a / 4) + ☃.a / 8);
+    a = (s.nextInt(a / 4) + a / 8);
     ☃.d(☃);
   }
   
@@ -48,7 +48,7 @@ public class ake
   
   public void a(adm ☃, cj ☃, alz ☃, pr ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     if (((Boolean)☃.b(a)).booleanValue())
@@ -70,8 +70,8 @@ public class ake
         ☃.g(☃);
         if (☃ == zy.d) {
           ☃.bZ().a(1, ☃);
-        } else if (!☃.bA.d) {
-          ☃.bZ().b -= 1;
+        } else if (!bA.d) {
+          bZb -= 1;
         }
         return true;
       }
@@ -81,12 +81,12 @@ public class ake
   
   public void a(adm ☃, cj ☃, alz ☃, pk ☃)
   {
-    if ((!☃.D) && ((☃ instanceof wq)))
+    if ((!D) && ((☃ instanceof wq)))
     {
       wq ☃ = (wq)☃;
       if (☃.at())
       {
-        a(☃, ☃, ☃.p(☃).a(a, Boolean.valueOf(true)), (☃.c instanceof pr) ? (pr)☃.c : null);
+        a(☃, ☃, ☃.p(☃).a(a, Boolean.valueOf(true)), (c instanceof pr) ? (pr)c : null);
         ☃.g(☃);
       }
     }

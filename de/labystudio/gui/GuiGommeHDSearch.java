@@ -7,6 +7,7 @@ import axp;
 import axu;
 import aya;
 import azh;
+import de.labystudio.gommehd.GommeHDSign;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.utils.Color;
 import de.labystudio.utils.DrawUtils;
@@ -24,44 +25,48 @@ public class GuiGommeHDSearch
   avs gommeSeachAllowedButton;
   avs gommeAutoJoinButton;
   avs gommeSoundButton;
+  avs gommeNightMode;
   avs buttonClear;
   
   public void b()
   {
     Keyboard.enableRepeatEvents(true);
-    this.draw = LabyMod.getInstance().draw;
-    this.n.clear();
+    draw = getInstancedraw;
+    n.clear();
     boolean var2 = true;
     
-    this.buttonClear = new avs(0, this.l / 2 + 81, this.m / 2 - 53, 20, 20, Color.c + "4" + "X");
-    this.n.add(this.buttonClear);
+    buttonClear = new avs(0, l / 2 + 81, m / 2 - 53, 20, 20, Color.c + "4" + "X");
+    n.add(buttonClear);
     
-    this.field_146302_g = new avw(2, this.draw.fontRenderer, this.l / 2 - 99, this.m / 2 - 53, 178, 20);
-    this.field_146302_g.b(true);
-    this.field_146302_g.a(LabyMod.getInstance().gommeHDSearch);
-    this.field_146302_g.f(400);
-    this.buttonClear.l = ((this.field_146302_g.b().length() > 0) && (this.field_146302_g.b().split(":").length > 0));
+    field_146302_g = new avw(2, draw.fontRenderer, l / 2 - 99, m / 2 - 53, 178, 20);
+    field_146302_g.b(true);
+    field_146302_g.a(GommeHDSign.search);
+    field_146302_g.f(400);
+    buttonClear.l = ((field_146302_g.b().length() > 0) && (field_146302_g.b().split(":").length > 0));
     
-    this.field_146302_g2 = new avw(2, this.draw.fontRenderer, this.l / 2 + 10, this.m / 2 - 12, 90, 20);
-    this.field_146302_g2.a(LabyMod.getInstance().gommeHDSeachPartySize + "");
-    this.field_146302_g2.f(2);
+    field_146302_g2 = new avw(2, draw.fontRenderer, l / 2 + 10, m / 2 - 12, 90, 20);
+    field_146302_g2.a(GommeHDSign.partySize + "");
+    field_146302_g2.f(2);
     
-    this.field_146302_g3 = new avw(8, this.draw.fontRenderer, this.l / 2 + 10, this.m / 2 + 29, 90, 20);
-    this.field_146302_g3.a(LabyMod.getInstance().gommeHDSearchBlacklist + "");
-    this.field_146302_g3.f(400);
+    field_146302_g3 = new avw(8, draw.fontRenderer, l / 2 + 10, m / 2 + 29, 90, 20);
+    field_146302_g3.a(GommeHDSign.blacklist + "");
+    field_146302_g3.f(400);
     
-    this.gommeSeachAllowedButton = new avs(1, this.l / 2 - 100, this.m / 2 - 12, 90, 20, getSymbol(LabyMod.getInstance().gommeHDSeachAllowed));
-    this.n.add(this.gommeSeachAllowedButton);
+    gommeSeachAllowedButton = new avs(1, l / 2 - 100, m / 2 - 12, 90, 20, getSymbol(GommeHDSign.allowed));
+    n.add(gommeSeachAllowedButton);
     
-    this.gommeAutoJoinButton = new avs(2, this.l / 2 - 100, this.m / 2 + 28, 90, 20, getSymbol(LabyMod.getInstance().gommeHDAutoJoin));
-    this.n.add(this.gommeAutoJoinButton);
+    gommeAutoJoinButton = new avs(2, l / 2 - 100, m / 2 + 28, 90, 20, getSymbol(GommeHDSign.autoJoin));
+    n.add(gommeAutoJoinButton);
     
-    this.gommeSoundButton = new avs(3, this.l / 2 - 100, this.m / 2 + 65, 90, 20, getSymbol(LabyMod.getInstance().gommeHDSound));
-    this.n.add(this.gommeSoundButton);
+    gommeSoundButton = new avs(3, l / 2 - 100, m / 2 + 65, 90, 20, getSymbol(GommeHDSign.sound));
+    n.add(gommeSoundButton);
     
-    avs b = new avs(-1, this.l - 53, this.m - 23, 50, 20, "Search");
-    b.l = false;
-    this.n.add(b);
+    gommeNightMode = new avs(4, l / 2 + 9, m / 2 + 65, 93, 20, getSymbol(GommeHDSign.nightMode));
+    n.add(gommeNightMode);
+    
+    avs b = new avs(-1, l - 53, m - 23, 50, 20, "Search");
+    l = false;
+    n.add(b);
   }
   
   public String getSymbol(boolean b)
@@ -74,32 +79,36 @@ public class GuiGommeHDSearch
   
   protected void a(avs button)
   {
-    switch (button.k)
+    switch (k)
     {
     case 0: 
-      this.field_146302_g.a("");
-      this.buttonClear.l = false;
+      field_146302_g.a("");
+      buttonClear.l = false;
       break;
     case 1: 
-      LabyMod.getInstance().gommeHDSeachAllowed = (!LabyMod.getInstance().gommeHDSeachAllowed);
-      if (!LabyMod.getInstance().gommeHDSeachAllowed)
+      GommeHDSign.allowed = !GommeHDSign.allowed;
+      if (!GommeHDSign.allowed)
       {
-        LabyMod.getInstance().gommeHDAutoJoin = false;
-        LabyMod.getInstance().gommeHDSound = false;
+        GommeHDSign.autoJoin = false;
+        GommeHDSign.sound = false;
       }
-      button.j = getSymbol(LabyMod.getInstance().gommeHDSeachAllowed);
-      this.gommeAutoJoinButton.j = getSymbol(LabyMod.getInstance().gommeHDAutoJoin);
+      j = getSymbol(GommeHDSign.allowed);
+      gommeAutoJoinButton.j = getSymbol(GommeHDSign.autoJoin);
       
-      button.j = getSymbol(LabyMod.getInstance().gommeHDSeachAllowed);
-      this.gommeSoundButton.j = getSymbol(LabyMod.getInstance().gommeHDSound);
+      j = getSymbol(GommeHDSign.allowed);
+      gommeSoundButton.j = getSymbol(GommeHDSign.sound);
       break;
     case 2: 
-      LabyMod.getInstance().gommeHDAutoJoin = (!LabyMod.getInstance().gommeHDAutoJoin);
-      button.j = getSymbol(LabyMod.getInstance().gommeHDAutoJoin);
+      GommeHDSign.autoJoin = !GommeHDSign.autoJoin;
+      j = getSymbol(GommeHDSign.autoJoin);
       break;
     case 3: 
-      LabyMod.getInstance().gommeHDSound = (!LabyMod.getInstance().gommeHDSound);
-      button.j = getSymbol(LabyMod.getInstance().gommeHDSound);
+      GommeHDSign.sound = !GommeHDSign.sound;
+      j = getSymbol(GommeHDSign.sound);
+      break;
+    case 4: 
+      GommeHDSign.nightMode = !GommeHDSign.nightMode;
+      j = getSymbol(GommeHDSign.nightMode);
     }
     save();
   }
@@ -108,26 +117,26 @@ public class GuiGommeHDSearch
   {
     save();
     if (LabyMod.getInstance().isInGame()) {
-      this.j.a(new axp());
+      j.a(new axp());
     } else {
-      this.j.a(new azh(new aya()));
+      j.a(new azh(new aya()));
     }
   }
   
   public void save()
   {
-    LabyMod.getInstance().gommeHDSearch = this.field_146302_g.b();
-    LabyMod.getInstance().gommeHDSearchBlacklist = this.field_146302_g3.b();
-    if (!this.field_146302_g2.b().isEmpty())
+    GommeHDSign.search = field_146302_g.b();
+    GommeHDSign.blacklist = field_146302_g3.b();
+    if (!field_146302_g2.b().isEmpty())
     {
-      if (isNumeric(this.field_146302_g2.b())) {
-        LabyMod.getInstance().gommeHDSeachPartySize = Integer.parseInt(this.field_146302_g2.b());
+      if (isNumeric(field_146302_g2.b())) {
+        GommeHDSign.partySize = Integer.parseInt(field_146302_g2.b());
       } else {
-        this.field_146302_g2.a("0");
+        field_146302_g2.a("0");
       }
     }
     else {
-      LabyMod.getInstance().gommeHDSeachPartySize = 0;
+      GommeHDSign.partySize = 0;
     }
   }
   
@@ -143,22 +152,22 @@ public class GuiGommeHDSearch
   
   protected void a(char typedChar, int keyCode)
   {
-    if (this.field_146302_g.a(typedChar, keyCode))
+    if (field_146302_g.a(typedChar, keyCode))
     {
-      this.buttonClear.l = ((this.field_146302_g.b().length() > 0) && (this.field_146302_g.b().split(":").length > 0));
+      buttonClear.l = ((field_146302_g.b().length() > 0) && (field_146302_g.b().split(":").length > 0));
       save();
     }
-    if (this.field_146302_g3.a(typedChar, keyCode)) {
+    if (field_146302_g3.a(typedChar, keyCode)) {
       save();
     }
     if ((isNumeric(typedChar + "")) || (keyCode == 14))
     {
-      if (this.field_146302_g2.a(typedChar, keyCode)) {
+      if (field_146302_g2.a(typedChar, keyCode)) {
         save();
       }
     }
     else if (keyCode == 1) {
-      this.j.a(null);
+      j.a(null);
     }
   }
   
@@ -166,40 +175,42 @@ public class GuiGommeHDSearch
     throws IOException
   {
     super.a(mouseX, mouseY, mouseButton);
-    this.field_146302_g.a(mouseX, mouseY, mouseButton);
-    this.field_146302_g2.a(mouseX, mouseY, mouseButton);
-    this.field_146302_g3.a(mouseX, mouseY, mouseButton);
+    field_146302_g.a(mouseX, mouseY, mouseButton);
+    field_146302_g2.a(mouseX, mouseY, mouseButton);
+    field_146302_g3.a(mouseX, mouseY, mouseButton);
   }
   
   public void a(int mouseX, int mouseY, float partialTicks)
   {
     c();
     
-    this.gommeAutoJoinButton.l = LabyMod.getInstance().gommeHDSeachAllowed;
-    this.gommeSoundButton.l = LabyMod.getInstance().gommeHDSeachAllowed;
+    gommeAutoJoinButton.l = GommeHDSign.allowed;
+    gommeSoundButton.l = GommeHDSign.allowed;
     
-    this.draw.drawCenteredString("" + Color.c + "fGommeHD Map Search", this.l / 2, this.m / 2 - 70);
-    this.draw.drawString("" + Color.c + "fColored Signs:", this.l / 2 - 99, this.m / 2 - 24);
-    this.draw.drawString("" + Color.c + "fParty size:", this.l / 2 + 10, this.m / 2 - 24);
+    draw.drawCenteredString("" + Color.c + "fGommeHD Map Search", l / 2, m / 2 - 70);
+    draw.drawString("" + Color.c + "fColored Signs:", l / 2 - 99, m / 2 - 24);
+    draw.drawString("" + Color.c + "fParty size:", l / 2 + 10, m / 2 - 24);
     
-    this.draw.drawString("" + Color.c + "fAutojoin:", this.l / 2 - 99, this.m / 2 + 17);
-    this.draw.drawString("" + Color.c + "fBlacklist:", this.l / 2 + 10, this.m / 2 + 17);
+    draw.drawString("" + Color.c + "fAutojoin:", l / 2 - 99, m / 2 + 17);
+    draw.drawString("" + Color.c + "fBlacklist:", l / 2 + 10, m / 2 + 17);
     
-    this.draw.drawString("" + Color.c + "fSounds:", this.l / 2 - 99, this.m / 2 + 55);
+    draw.drawString("" + Color.c + "fSounds:", l / 2 - 99, m / 2 + 55);
     
-    this.draw.drawBox(this.l / 2 + 80, this.m / 2 - 54, this.l / 2 - 99 + 201, this.m / 2 - 53 + 21);
+    draw.drawString("" + Color.c + "fNightmode:", l / 2 + 10, m / 2 + 55);
     
-    this.field_146302_g.g();
-    this.field_146302_g2.g();
-    this.field_146302_g3.g();
-    if ((!LabyMod.getInstance().gommeHDSearch.isEmpty()) && 
-      (LabyMod.getInstance().gommeHDSearch.toLowerCase().contains(LabyMod.getInstance().gommeHDSearchBlacklist.toLowerCase())))
+    draw.drawBox(l / 2 + 80, m / 2 - 54, l / 2 - 99 + 201, m / 2 - 53 + 21);
+    
+    field_146302_g.g();
+    field_146302_g2.g();
+    field_146302_g3.g();
+    if ((!GommeHDSign.search.isEmpty()) && 
+      (GommeHDSign.search.toLowerCase().contains(GommeHDSign.blacklist.toLowerCase())))
     {
-      if (LabyMod.getInstance().gommeHDSearchBlacklist.length() < 13) {
-        this.draw.drawString(Color.c + "c" + LabyMod.getInstance().gommeHDSearchBlacklist, this.l / 2 + 14, this.m / 2 + 35);
+      if (GommeHDSign.blacklist.length() < 13) {
+        draw.drawString(Color.c + "c" + GommeHDSign.blacklist, l / 2 + 14, m / 2 + 35);
       }
-      if (LabyMod.getInstance().gommeHDSearch.length() < 22) {
-        this.draw.drawString(LabyMod.getInstance().gommeHDSearch.replace(LabyMod.getInstance().gommeHDSearchBlacklist, Color.c + "c" + LabyMod.getInstance().gommeHDSearchBlacklist + Color.c + "f"), this.l / 2 - 95, this.m / 2 - 47);
+      if (GommeHDSign.search.length() < 22) {
+        draw.drawString(GommeHDSign.search.replace(GommeHDSign.blacklist, Color.c + "c" + GommeHDSign.blacklist + Color.c + "f"), l / 2 - 95, m / 2 - 47);
       }
     }
     super.a(mouseX, mouseY, partialTicks);

@@ -12,49 +12,49 @@ public class box
   
   public box(List<box.b> ☃)
   {
-    this.b = ☃;
-    this.a = oa.a(☃);
-    this.c = ((box.b)☃.get(0)).b;
+    b = ☃;
+    a = oa.a(☃);
+    c = get0b;
   }
   
   public List<bgg> a(cq ☃)
   {
-    return this.c.a(☃);
+    return c.a(☃);
   }
   
   public List<bgg> a()
   {
-    return this.c.a();
+    return c.a();
   }
   
   public boolean b()
   {
-    return this.c.b();
+    return c.b();
   }
   
   public boolean c()
   {
-    return this.c.c();
+    return c.c();
   }
   
   public boolean d()
   {
-    return this.c.d();
+    return c.d();
   }
   
   public bmi e()
   {
-    return this.c.e();
+    return c.e();
   }
   
   public bgr f()
   {
-    return this.c.f();
+    return c.f();
   }
   
   public boq a(long ☃)
   {
-    return ((box.b)oa.a(this.b, Math.abs((int)☃ >> 16) % this.a)).b;
+    return ab, Math.abs((int)☃ >> 16) % a)).b;
   }
   
   public static class a
@@ -63,20 +63,20 @@ public class box
     
     public a a(boq ☃, int ☃)
     {
-      this.a.add(new box.b(☃, ☃));
+      a.add(new box.b(☃, ☃));
       
       return this;
     }
     
     public box a()
     {
-      Collections.sort(this.a);
-      return new box(this.a);
+      Collections.sort(a);
+      return new box(a);
     }
     
     public boq b()
     {
-      return ((box.b)this.a.get(0)).b;
+      return a.get(0)).b;
     }
   }
   
@@ -89,26 +89,26 @@ public class box
     public b(boq ☃, int ☃)
     {
       super();
-      this.b = ☃;
+      b = ☃;
     }
     
     public int a(b ☃)
     {
-      return ComparisonChain.start().compare(☃.a, this.a).compare(a(), ☃.a()).result();
+      return ComparisonChain.start().compare(a, a).compare(a(), ☃.a()).result();
     }
     
     protected int a()
     {
-      int ☃ = this.b.a().size();
+      int ☃ = b.a().size();
       for (cq ☃ : cq.values()) {
-        ☃ += this.b.a(☃).size();
+        ☃ += b.a(☃).size();
       }
       return ☃;
     }
     
     public String toString()
     {
-      return "MyWeighedRandomItem{weight=" + this.a + ", model=" + this.b + '}';
+      return "MyWeighedRandomItem{weight=" + a + ", model=" + b + '}';
     }
   }
 }

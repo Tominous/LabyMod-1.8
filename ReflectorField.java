@@ -17,25 +17,25 @@ public class ReflectorField
   
   public Field getTargetField()
   {
-    if (this.checked) {
-      return this.targetField;
+    if (checked) {
+      return targetField;
     }
-    this.checked = true;
+    checked = true;
     
-    Class cls = this.reflectorClass.getTargetClass();
+    Class cls = reflectorClass.getTargetClass();
     if (cls == null) {
       return null;
     }
     try
     {
-      this.targetField = cls.getDeclaredField(this.targetFieldName);
-      if (!this.targetField.isAccessible()) {
-        this.targetField.setAccessible(true);
+      targetField = cls.getDeclaredField(targetFieldName);
+      if (!targetField.isAccessible()) {
+        targetField.setAccessible(true);
       }
     }
     catch (NoSuchFieldException e)
     {
-      Config.log("(Reflector) Field not present: " + cls.getName() + "." + this.targetFieldName);
+      Config.log("(Reflector) Field not present: " + cls.getName() + "." + targetFieldName);
     }
     catch (SecurityException e)
     {
@@ -45,7 +45,7 @@ public class ReflectorField
     {
       e.printStackTrace();
     }
-    return this.targetField;
+    return targetField;
   }
   
   public Object getValue()
@@ -60,8 +60,8 @@ public class ReflectorField
   
   public boolean exists()
   {
-    if (this.checked) {
-      return this.targetField != null;
+    if (checked) {
+      return targetField != null;
     }
     return getTargetField() != null;
   }

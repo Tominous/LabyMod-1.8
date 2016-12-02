@@ -15,7 +15,7 @@ public class bmd
   
   public bmd(String... ☃)
   {
-    this.f = Lists.newArrayList(☃);
+    f = Lists.newArrayList(☃);
   }
   
   public void a(bni ☃)
@@ -26,7 +26,7 @@ public class bmd
     BufferedImage ☃ = null;
     try
     {
-      for (String ☃ : this.f) {
+      for (String ☃ : f) {
         if (☃ != null)
         {
           InputStream ☃ = ☃.a(new jy(☃)).b();

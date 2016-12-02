@@ -13,13 +13,13 @@ public class vg
   
   public boolean e(wn ☃)
   {
-    if ((this.l != null) && ((this.l instanceof wn)) && (this.l != ☃)) {
+    if ((l != null) && ((l instanceof wn)) && (l != ☃)) {
       return true;
     }
-    if ((this.l != null) && (this.l != ☃)) {
+    if ((l != null) && (l != ☃)) {
       return false;
     }
-    if (!this.o.D) {
+    if (!o.D) {
       ☃.a(this);
     }
     return true;
@@ -29,8 +29,8 @@ public class vg
   {
     if (☃)
     {
-      if (this.l != null) {
-        this.l.a(null);
+      if (l != null) {
+        l.a(null);
       }
       if (q() == 0)
       {

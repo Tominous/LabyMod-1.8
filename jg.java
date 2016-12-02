@@ -11,7 +11,7 @@ public class jg
   
   public jg(GameProfile ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(em ☃)
@@ -20,15 +20,15 @@ public class jg
     String ☃ = ☃.c(36);
     String ☃ = ☃.c(16);
     UUID ☃ = UUID.fromString(☃);
-    this.a = new GameProfile(☃, ☃);
+    a = new GameProfile(☃, ☃);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    UUID ☃ = this.a.getId();
+    UUID ☃ = a.getId();
     ☃.a(☃ == null ? "" : ☃.toString());
-    ☃.a(this.a.getName());
+    ☃.a(a.getName());
   }
   
   public void a(jf ☃)
@@ -38,6 +38,6 @@ public class jg
   
   public GameProfile a()
   {
-    return this.a;
+    return a;
   }
 }

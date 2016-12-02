@@ -10,25 +10,25 @@ class box$b
   public box$b(boq ☃, int ☃)
   {
     super(☃);
-    this.b = ☃;
+    b = ☃;
   }
   
   public int a(b ☃)
   {
-    return ComparisonChain.start().compare(☃.a, this.a).compare(a(), ☃.a()).result();
+    return ComparisonChain.start().compare(a, a).compare(a(), ☃.a()).result();
   }
   
   protected int a()
   {
-    int ☃ = this.b.a().size();
+    int ☃ = b.a().size();
     for (cq ☃ : cq.values()) {
-      ☃ += this.b.a(☃).size();
+      ☃ += b.a(☃).size();
     }
     return ☃;
   }
   
   public String toString()
   {
-    return "MyWeighedRandomItem{weight=" + this.a + ", model=" + this.b + '}';
+    return "MyWeighedRandomItem{weight=" + a + ", model=" + b + '}';
   }
 }

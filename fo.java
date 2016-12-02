@@ -12,28 +12,28 @@ public class fo
   
   public fo(uq ☃)
   {
-    this.a = ☃.F();
-    this.b = ☃.n();
-    this.c = ☃.b;
-    this.d = ☃.c.B;
+    a = ☃.F();
+    b = ☃.n();
+    c = b;
+    d = c.B;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.e();
-    this.d = ☃.c(uq.a.A);
-    this.b = ☃.c();
-    this.c = cq.b(☃.readUnsignedByte());
+    a = ☃.e();
+    d = ☃.c(uq.a.A);
+    b = ☃.c();
+    c = cq.b(☃.readUnsignedByte());
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(this.a);
-    ☃.a(this.d);
-    ☃.a(this.b);
-    ☃.writeByte(this.c.b());
+    ☃.b(a);
+    ☃.a(d);
+    ☃.a(b);
+    ☃.writeByte(c.b());
   }
   
   public void a(fj ☃)
@@ -43,21 +43,21 @@ public class fo
   
   public int a()
   {
-    return this.a;
+    return a;
   }
   
   public cj b()
   {
-    return this.b;
+    return b;
   }
   
   public cq c()
   {
-    return this.c;
+    return c;
   }
   
   public String d()
   {
-    return this.d;
+    return d;
   }
 }

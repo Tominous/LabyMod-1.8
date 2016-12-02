@@ -17,96 +17,96 @@ public class azd
   public azd(wm ☃, acy ☃, adm ☃)
   {
     super(new yb(☃, ☃, ☃));
-    this.w = ☃;
-    this.A = ☃.f_();
+    w = ☃;
+    A = ☃.f_();
   }
   
   public void b()
   {
     super.b();
     
-    int ☃ = (this.l - this.f) / 2;
-    int ☃ = (this.m - this.g) / 2;
+    int ☃ = (l - f) / 2;
+    int ☃ = (m - g) / 2;
     
-    this.n.add(this.x = new azd.a(1, ☃ + 120 + 27, ☃ + 24 - 1, true));
-    this.n.add(this.y = new azd.a(2, ☃ + 36 - 19, ☃ + 24 - 1, false));
+    n.add(x = new azd.a(1, ☃ + 120 + 27, ☃ + 24 - 1, true));
+    n.add(y = new azd.a(2, ☃ + 36 - 19, ☃ + 24 - 1, false));
     
-    this.x.l = false;
-    this.y.l = false;
+    x.l = false;
+    y.l = false;
   }
   
   protected void b(int ☃, int ☃)
   {
-    String ☃ = this.A.c();
-    this.q.a(☃, this.f / 2 - this.q.a(☃) / 2, 6, 4210752);
-    this.q.a(bnq.a("container.inventory", new Object[0]), 8, this.g - 96 + 2, 4210752);
+    String ☃ = A.c();
+    q.a(☃, f / 2 - q.a(☃) / 2, 6, 4210752);
+    q.a(bnq.a("container.inventory", new Object[0]), 8, g - 96 + 2, 4210752);
   }
   
   public void e()
   {
     super.e();
     
-    ada ☃ = this.w.b_(this.j.h);
+    ada ☃ = w.b_(j.h);
     if (☃ != null)
     {
-      this.x.l = (this.z < ☃.size() - 1);
-      this.y.l = (this.z > 0);
+      x.l = (z < ☃.size() - 1);
+      y.l = (z > 0);
     }
   }
   
   protected void a(avs ☃)
   {
     boolean ☃ = false;
-    if (☃ == this.x)
+    if (☃ == x)
     {
-      this.z += 1;
-      ada ☃ = this.w.b_(this.j.h);
-      if ((☃ != null) && (this.z >= ☃.size())) {
-        this.z = (☃.size() - 1);
+      z += 1;
+      ada ☃ = w.b_(j.h);
+      if ((☃ != null) && (z >= ☃.size())) {
+        z = (☃.size() - 1);
       }
       ☃ = true;
     }
-    else if (☃ == this.y)
+    else if (☃ == y)
     {
-      this.z -= 1;
-      if (this.z < 0) {
-        this.z = 0;
+      z -= 1;
+      if (z < 0) {
+        z = 0;
       }
       ☃ = true;
     }
     if (☃)
     {
-      ((yb)this.h).d(this.z);
+      ((yb)h).d(z);
       
       em ☃ = new em(Unpooled.buffer());
-      ☃.writeInt(this.z);
-      this.j.u().a(new im("MC|TrSel", ☃));
+      ☃.writeInt(z);
+      j.u().a(new im("MC|TrSel", ☃));
     }
   }
   
   protected void a(float ☃, int ☃, int ☃)
   {
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    this.j.P().a(v);
-    int ☃ = (this.l - this.f) / 2;
-    int ☃ = (this.m - this.g) / 2;
-    b(☃, ☃, 0, 0, this.f, this.g);
+    j.P().a(v);
+    int ☃ = (l - f) / 2;
+    int ☃ = (m - g) / 2;
+    b(☃, ☃, 0, 0, f, g);
     
-    ada ☃ = this.w.b_(this.j.h);
+    ada ☃ = w.b_(j.h);
     if ((☃ != null) && (!☃.isEmpty()))
     {
-      int ☃ = this.z;
+      int ☃ = z;
       if ((☃ < 0) || (☃ >= ☃.size())) {
         return;
       }
       acz ☃ = (acz)☃.get(☃);
       if (☃.h())
       {
-        this.j.P().a(v);
+        j.P().a(v);
         bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
         bfl.f();
-        b(this.i + 83, this.r + 21, 212, 0, 28, 21);
-        b(this.i + 83, this.r + 51, 212, 0, 28, 21);
+        b(i + 83, r + 21, 212, 0, 28, 21);
+        b(i + 83, r + 51, 212, 0, 28, 21);
       }
     }
   }
@@ -115,13 +115,13 @@ public class azd
   {
     super.a(☃, ☃, ☃);
     
-    ada ☃ = this.w.b_(this.j.h);
+    ada ☃ = w.b_(j.h);
     if ((☃ != null) && (!☃.isEmpty()))
     {
-      int ☃ = (this.l - this.f) / 2;
-      int ☃ = (this.m - this.g) / 2;
+      int ☃ = (l - f) / 2;
+      int ☃ = (m - g) / 2;
       
-      int ☃ = this.z;
+      int ☃ = z;
       acz ☃ = (acz)☃.get(☃);
       
       zx ☃ = ☃.a();
@@ -136,17 +136,17 @@ public class azd
       bfl.g();
       bfl.e();
       
-      this.k.a = 100.0F;
-      this.k.b(☃, ☃ + 36, ☃ + 24);
-      this.k.a(this.q, ☃, ☃ + 36, ☃ + 24);
+      k.a = 100.0F;
+      k.b(☃, ☃ + 36, ☃ + 24);
+      k.a(q, ☃, ☃ + 36, ☃ + 24);
       if (☃ != null)
       {
-        this.k.b(☃, ☃ + 62, ☃ + 24);
-        this.k.a(this.q, ☃, ☃ + 62, ☃ + 24);
+        k.b(☃, ☃ + 62, ☃ + 24);
+        k.a(q, ☃, ☃ + 62, ☃ + 24);
       }
-      this.k.b(☃, ☃ + 120, ☃ + 24);
-      this.k.a(this.q, ☃, ☃ + 120, ☃ + 24);
-      this.k.a = 0.0F;
+      k.b(☃, ☃ + 120, ☃ + 24);
+      k.a(q, ☃, ☃ + 120, ☃ + 24);
+      k.a = 0.0F;
       
       bfl.f();
       if ((c(36, 24, 16, 16, ☃, ☃)) && (☃ != null)) {
@@ -168,7 +168,7 @@ public class azd
   
   public acy a()
   {
-    return this.w;
+    return w;
   }
   
   static class a
@@ -179,29 +179,29 @@ public class azd
     public a(int ☃, int ☃, int ☃, boolean ☃)
     {
       super(☃, ☃, 12, 19, "");
-      this.o = ☃;
+      o = ☃;
     }
     
     public void a(ave ☃, int ☃, int ☃)
     {
-      if (!this.m) {
+      if (!m) {
         return;
       }
       ☃.P().a(azd.f());
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
       
-      boolean ☃ = (☃ >= this.h) && (☃ >= this.i) && (☃ < this.h + this.f) && (☃ < this.i + this.g);
+      boolean ☃ = (☃ >= h) && (☃ >= i) && (☃ < h + f) && (☃ < i + g);
       int ☃ = 0;
       int ☃ = 176;
-      if (!this.l) {
-        ☃ += this.f * 2;
+      if (!l) {
+        ☃ += f * 2;
       } else if (☃) {
-        ☃ += this.f;
+        ☃ += f;
       }
-      if (!this.o) {
-        ☃ += this.g;
+      if (!o) {
+        ☃ += g;
       }
-      b(this.h, this.i, ☃, ☃, this.f, this.g);
+      b(h, i, ☃, ☃, f, g);
     }
   }
 }

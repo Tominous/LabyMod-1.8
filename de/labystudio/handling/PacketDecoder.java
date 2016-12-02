@@ -1,6 +1,5 @@
 package de.labystudio.handling;
 
-import de.labystudio.chat.Logger;
 import de.labystudio.packets.Packet;
 import de.labystudio.packets.PacketBuf;
 import de.labystudio.packets.Protocol;
@@ -25,9 +24,7 @@ public class PacketDecoder
     
     Packet packet = Protocol.getProtocol().getPacket(id);
     if ((id != 62) && (id != 63)) {
-      if (Debug.chat()) {
-        Logger.getLogger().info("[IN] " + id + " " + packet.getClass().getSimpleName());
-      }
+      Debug.debug("[IN] " + id + " " + packet.getClass().getSimpleName());
     }
     packet.read(packetBuffer);
     if (packetBuffer.readableBytes() > 0) {

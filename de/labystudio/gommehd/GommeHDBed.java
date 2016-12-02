@@ -26,7 +26,7 @@ public class GommeHDBed
   private static boolean contains(int x, int y, int z)
   {
     for (BedLocation bed : ) {
-      if ((bed.x == x) && (bed.y == y) && (bed.z == z)) {
+      if ((x == x) && (y == y) && (z == z)) {
         return true;
       }
     }
@@ -169,7 +169,7 @@ public class GommeHDBed
     ArrayList<Hologram> rem = new ArrayList();
     list.addAll(Manager.holograms);
     for (Hologram g : list) {
-      if ((g.memory instanceof EnumBWTeam)) {
+      if ((memory instanceof EnumBWTeam)) {
         rem.add(g);
       }
     }
@@ -205,7 +205,7 @@ public class GommeHDBed
   public static void renderPlayerTag(pr entity, double x, double y, double z)
   {
     Hologram g;
-    if ((!GommeHD.gommeHDServer_BW) || (!ConfigManager.settings.showBWTeams.booleanValue()) || (!GommeHD.isGommeHD()))
+    if ((!GommeHD.gommeHDServer_BW) || (!settingsshowBWTeams) || (!GommeHD.isGommeHD()))
     {
       if ((!Manager.holograms.isEmpty()) || (!respawn.isEmpty()))
       {
@@ -213,7 +213,7 @@ public class GommeHDBed
         ArrayList<Hologram> rem = new ArrayList();
         list.addAll(Manager.holograms);
         for (Hologram g : list) {
-          if ((g.memory instanceof EnumBWTeam)) {
+          if ((memory instanceof EnumBWTeam)) {
             rem.add(g);
           }
         }
@@ -226,7 +226,7 @@ public class GommeHDBed
       }
       return;
     }
-    if ((respawn.contains(entity.aK())) && (!entity.I)) {
+    if ((respawn.contains(entity.aK())) && (!I)) {
       try
       {
         respawn.remove(entity.aK());
@@ -263,7 +263,7 @@ public class GommeHDBed
         {
           boolean contains = false;
           for (Hologram holo : Manager.getHolograms()) {
-            if (((holo.memory instanceof EnumBWTeam)) && ((EnumBWTeam)holo.memory == team)) {
+            if (((memory instanceof EnumBWTeam)) && ((EnumBWTeam)memory == team)) {
               contains = true;
             }
           }
@@ -273,13 +273,13 @@ public class GommeHDBed
             y = entity.c().o();
             z = entity.c().p();
             Hologram hl = new Hologram(Utils.normalizeString(team.name()) + getBedStatus(team), (int)x, (int)y + 20, (int)z, bindColor(team));
-            hl.memory = team;
+            memory = team;
             Manager.holograms.add(hl);
           }
         }
       }
       catch (Exception localException) {}
-    } else if (entity.I) {
+    } else if (I) {
       respawn.add(entity.aK());
     }
   }
@@ -287,11 +287,11 @@ public class GommeHDBed
   public static void updateHolograms()
   {
     for (Hologram holo : Manager.holograms) {
-      if ((holo.memory instanceof EnumBWTeam))
+      if ((memory instanceof EnumBWTeam))
       {
-        EnumBWTeam team = (EnumBWTeam)holo.memory;
+        EnumBWTeam team = (EnumBWTeam)memory;
         if (holo != null) {
-          holo.text = (Utils.normalizeString(team.name()) + getBedStatus(team));
+          text = (Utils.normalizeString(team.name()) + getBedStatus(team));
         }
       }
     }

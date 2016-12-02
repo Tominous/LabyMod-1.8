@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
 
 public class ConfigManager
 {
-  public static File configFile = new File(Source.file_Config);
+  public static File configFile = new File("LabyMod/LabyMod.json");
   public static ModSettings settings;
   public static boolean loaded = false;
   
@@ -37,13 +37,12 @@ public class ConfigManager
       }
       catch (FileNotFoundException localFileNotFoundException) {}
     } else {
-      LabyMod.getInstance().logger.info("Settings could not be saved.");
+      getInstancelogger.info("Settings could not be saved.");
     }
   }
   
   public static void loadProperties(boolean loop)
   {
-    Timings.start("Load Config");
     try
     {
       loaded = true;
@@ -90,12 +89,11 @@ public class ConfigManager
       }
       return;
     }
-    Timings.stop("Load Config");
   }
   
   private static void delete()
   {
-    LabyMod.getInstance().logger.info("Settings could not be loaded.");
+    getInstancelogger.info("Settings could not be loaded.");
     if (configFile.exists())
     {
       System.out.println("Delete broken config file..");

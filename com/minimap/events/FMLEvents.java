@@ -18,14 +18,14 @@ public class FMLEvents
   
   public FMLEvents()
   {
-    this.keyEvents = new ArrayList();
-    this.oldKeyEvents = new ArrayList();
+    keyEvents = new ArrayList();
+    oldKeyEvents = new ArrayList();
   }
   
   private boolean eventExists(avb kb)
   {
-    for (KeyEvent o : this.keyEvents) {
-      if (o.kb == kb) {
+    for (KeyEvent o : keyEvents) {
+      if (kb == kb) {
         return true;
       }
     }
@@ -34,8 +34,8 @@ public class FMLEvents
   
   private boolean oldEventExists(avb kb)
   {
-    for (KeyEvent o : this.oldKeyEvents) {
-      if (o.kb == kb) {
+    for (KeyEvent o : oldKeyEvents) {
+      if (kb == kb) {
         return true;
       }
     }
@@ -51,34 +51,34 @@ public class FMLEvents
       Minimap.waypoints = null;
     }
     ave mc = XaeroMinimap.mc;
-    for (int i = 0; i < this.keyEvents.size(); i++)
+    for (int i = 0; i < keyEvents.size(); i++)
     {
-      KeyEvent ke = (KeyEvent)this.keyEvents.get(i);
-      if (mc.m == null) {
-        XaeroMinimap.ch.keyDown(ke.kb, ke.tickEnd, ke.isRepeat);
+      KeyEvent ke = (KeyEvent)keyEvents.get(i);
+      if (m == null) {
+        XaeroMinimap.ch.keyDown(kb, tickEnd, isRepeat);
       }
-      if (!ke.isRepeat)
+      if (!isRepeat)
       {
-        if (!oldEventExists(ke.kb)) {
-          this.oldKeyEvents.add(ke);
+        if (!oldEventExists(kb)) {
+          oldKeyEvents.add(ke);
         }
-        this.keyEvents.remove(i);
+        keyEvents.remove(i);
         i--;
       }
-      else if (!ControlsHandler.isDown(ke.kb))
+      else if (!ControlsHandler.isDown(kb))
       {
-        XaeroMinimap.ch.keyUp(ke.kb, ke.tickEnd);
-        this.keyEvents.remove(i);
+        XaeroMinimap.ch.keyUp(kb, tickEnd);
+        keyEvents.remove(i);
         i--;
       }
     }
-    for (int i = 0; i < this.oldKeyEvents.size(); i++)
+    for (int i = 0; i < oldKeyEvents.size(); i++)
     {
-      KeyEvent ke = (KeyEvent)this.oldKeyEvents.get(i);
-      if (!ControlsHandler.isDown(ke.kb))
+      KeyEvent ke = (KeyEvent)oldKeyEvents.get(i);
+      if (!ControlsHandler.isDown(kb))
       {
-        XaeroMinimap.ch.keyUp(ke.kb, ke.tickEnd);
-        this.oldKeyEvents.remove(i);
+        XaeroMinimap.ch.keyUp(kb, tickEnd);
+        oldKeyEvents.remove(i);
         i--;
       }
     }

@@ -14,7 +14,7 @@ public class aig
   
   public aig()
   {
-    j(this.M.b().a(b, aio.a.e).a(a, ahw.a.b));
+    j(M.b().a(b, aio.a.e).a(a, ahw.a.b));
   }
   
   public arn g(alz ☃)

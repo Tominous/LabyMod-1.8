@@ -7,52 +7,52 @@ class ad$1
   
   public String e_()
   {
-    return this.a.e_();
+    return a.e_();
   }
   
   public eu f_()
   {
-    return this.a.f_();
+    return a.f_();
   }
   
   public void a(eu ☃)
   {
-    this.b.a(☃);
+    b.a(☃);
   }
   
   public boolean a(int ☃, String ☃)
   {
-    return this.b.a(☃, ☃);
+    return b.a(☃, ☃);
   }
   
   public cj c()
   {
-    return this.c;
+    return c;
   }
   
   public aui d()
   {
-    return new aui(this.d, this.e, this.f);
+    return new aui(d, e, f);
   }
   
   public adm e()
   {
-    return this.a.o;
+    return a.o;
   }
   
   public pk f()
   {
-    return this.a;
+    return a;
   }
   
   public boolean u_()
   {
     MinecraftServer ☃ = MinecraftServer.N();
-    return (☃ == null) || (☃.d[0].Q().b("commandBlockOutput"));
+    return (☃ == null) || (d[0].Q().b("commandBlockOutput"));
   }
   
   public void a(n.a ☃, int ☃)
   {
-    this.a.a(☃, ☃);
+    a.a(☃, ☃);
   }
 }

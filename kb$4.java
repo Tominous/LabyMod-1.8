@@ -11,8 +11,8 @@ final class kb$4
     if (☃.d(☃))
     {
       ☃.a(☃, afi.ab.Q());
-      if (☃.a(1, ☃.s)) {
-        ☃.b = 0;
+      if (☃.a(1, s)) {
+        b = 0;
       }
     }
     else if (☃.p(☃).c() == afi.W)
@@ -22,14 +22,14 @@ final class kb$4
     }
     else
     {
-      this.b = false;
+      b = false;
     }
     return ☃;
   }
   
   protected void a(ck ☃)
   {
-    if (this.b) {
+    if (b) {
       ☃.i().b(1000, ☃.d(), 0);
     } else {
       ☃.i().b(1001, ☃.d(), 0);

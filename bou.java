@@ -8,39 +8,39 @@ public class bou
   
   public bou(bmh ☃)
   {
-    this.b = ☃;
-    this.c = new bgc(this);
+    b = ☃;
+    c = new bgc(this);
   }
   
   public void a(bni ☃)
   {
-    bot ☃ = new bot(☃, this.b, this.c);
-    this.a = ☃.a();
-    this.d = ((boq)this.a.a(bot.a));
-    this.c.c();
+    bot ☃ = new bot(☃, b, c);
+    a = ☃.a();
+    d = ((boq)a.a(bot.a));
+    c.c();
   }
   
   public boq a(bov ☃)
   {
     if (☃ == null) {
-      return this.d;
+      return d;
     }
-    boq ☃ = (boq)this.a.a(☃);
-    return ☃ == null ? this.d : ☃;
+    boq ☃ = (boq)a.a(☃);
+    return ☃ == null ? d : ☃;
   }
   
   public boq a()
   {
-    return this.d;
+    return d;
   }
   
   public bmh b()
   {
-    return this.b;
+    return b;
   }
   
   public bgc c()
   {
-    return this.c;
+    return c;
   }
 }

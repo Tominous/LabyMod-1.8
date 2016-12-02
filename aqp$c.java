@@ -15,54 +15,54 @@ public class aqp$c
   {
     super(☃);
     
-    this.m = ☃;
-    this.d = a(☃);
-    this.l = ☃;
+    m = ☃;
+    d = a(☃);
+    l = ☃;
     
-    this.a = ☃.nextBoolean();
-    this.b = ☃.nextBoolean();
-    this.c = ☃.nextBoolean();
-    this.e = (☃.nextInt(3) > 0);
+    a = ☃.nextBoolean();
+    b = ☃.nextBoolean();
+    c = ☃.nextBoolean();
+    e = (☃.nextInt(3) > 0);
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("leftLow", this.a);
-    ☃.a("leftHigh", this.b);
-    ☃.a("rightLow", this.c);
-    ☃.a("rightHigh", this.e);
+    ☃.a("leftLow", a);
+    ☃.a("leftHigh", b);
+    ☃.a("rightLow", c);
+    ☃.a("rightHigh", e);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    this.a = ☃.n("leftLow");
-    this.b = ☃.n("leftHigh");
-    this.c = ☃.n("rightLow");
-    this.e = ☃.n("rightHigh");
+    a = ☃.n("leftLow");
+    b = ☃.n("leftHigh");
+    c = ☃.n("rightLow");
+    e = ☃.n("rightHigh");
   }
   
   public void a(aqt ☃, List<aqt> ☃, Random ☃)
   {
     int ☃ = 3;
     int ☃ = 5;
-    if ((this.m == cq.e) || (this.m == cq.c))
+    if ((m == cq.e) || (m == cq.c))
     {
       ☃ = 8 - ☃;
       ☃ = 8 - ☃;
     }
     a((aqp.m)☃, ☃, ☃, 5, 1);
-    if (this.a) {
+    if (a) {
       b((aqp.m)☃, ☃, ☃, ☃, 1);
     }
-    if (this.b) {
+    if (b) {
       b((aqp.m)☃, ☃, ☃, ☃, 7);
     }
-    if (this.c) {
+    if (c) {
       c((aqp.m)☃, ☃, ☃, ☃, 1);
     }
-    if (this.e) {
+    if (e) {
       c((aqp.m)☃, ☃, ☃, ☃, 7);
     }
   }
@@ -83,17 +83,17 @@ public class aqp$c
     }
     a(☃, ☃, 0, 0, 0, 9, 8, 10, true, ☃, aqp.c());
     
-    a(☃, ☃, ☃, this.d, 4, 3, 0);
-    if (this.a) {
+    a(☃, ☃, ☃, d, 4, 3, 0);
+    if (a) {
       a(☃, ☃, 0, 3, 1, 0, 5, 3, afi.a.Q(), afi.a.Q(), false);
     }
-    if (this.c) {
+    if (c) {
       a(☃, ☃, 9, 3, 1, 9, 5, 3, afi.a.Q(), afi.a.Q(), false);
     }
-    if (this.b) {
+    if (b) {
       a(☃, ☃, 0, 5, 7, 0, 7, 9, afi.a.Q(), afi.a.Q(), false);
     }
-    if (this.e) {
+    if (e) {
       a(☃, ☃, 9, 5, 7, 9, 7, 9, afi.a.Q(), afi.a.Q(), false);
     }
     a(☃, ☃, 5, 1, 10, 7, 3, 10, afi.a.Q(), afi.a.Q(), false);

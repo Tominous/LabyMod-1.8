@@ -10,7 +10,7 @@ public class ajj
   
   protected ajj()
   {
-    j(this.M.b().a(a, aio.a.a).a(b, Integer.valueOf(0)));
+    j(M.b().a(a, aio.a.a).a(b, Integer.valueOf(0)));
     float ☃ = 0.4F;
     a(0.5F - ☃, 0.0F, 0.5F - ☃, 0.5F + ☃, ☃ * 2.0F, 0.5F + ☃);
     a(yz.c);
@@ -23,7 +23,7 @@ public class ajj
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     super.b(☃, ☃, ☃, ☃);
@@ -170,7 +170,7 @@ public class ajj
   
   public boolean a(adm ☃, Random ☃, cj ☃, alz ☃)
   {
-    return ☃.s.nextFloat() < 0.45D;
+    return s.nextFloat() < 0.45D;
   }
   
   public void b(adm ☃, Random ☃, cj ☃, alz ☃)

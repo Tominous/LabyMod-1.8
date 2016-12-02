@@ -6,7 +6,7 @@ public class bld
   
   public bld(bjy ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(wb ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
@@ -19,8 +19,8 @@ public class bld
     bfl.l();
     bfl.b(770, 771);
     
-    this.b.a(this.a.b());
-    this.b.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
+    b.a(a.b());
+    b.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
     
     bfl.k();
     bfl.A();

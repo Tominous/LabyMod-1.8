@@ -13,31 +13,31 @@ public class fl
   
   public fl(pp ☃)
   {
-    this.a = ☃.F();
-    this.b = ns.c(☃.s * 32.0D);
-    this.c = ns.c(☃.t * 32.0D);
-    this.d = ns.c(☃.u * 32.0D);
-    this.e = ☃.j();
+    a = ☃.F();
+    b = ns.c(s * 32.0D);
+    c = ns.c(t * 32.0D);
+    d = ns.c(u * 32.0D);
+    e = ☃.j();
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.e();
-    this.b = ☃.readInt();
-    this.c = ☃.readInt();
-    this.d = ☃.readInt();
-    this.e = ☃.readShort();
+    a = ☃.e();
+    b = ☃.readInt();
+    c = ☃.readInt();
+    d = ☃.readInt();
+    e = ☃.readShort();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.b(this.a);
-    ☃.writeInt(this.b);
-    ☃.writeInt(this.c);
-    ☃.writeInt(this.d);
-    ☃.writeShort(this.e);
+    ☃.b(a);
+    ☃.writeInt(b);
+    ☃.writeInt(c);
+    ☃.writeInt(d);
+    ☃.writeShort(e);
   }
   
   public void a(fj ☃)
@@ -47,26 +47,26 @@ public class fl
   
   public int a()
   {
-    return this.a;
+    return a;
   }
   
   public int b()
   {
-    return this.b;
+    return b;
   }
   
   public int c()
   {
-    return this.c;
+    return c;
   }
   
   public int d()
   {
-    return this.d;
+    return d;
   }
   
   public int e()
   {
-    return this.e;
+    return e;
   }
 }

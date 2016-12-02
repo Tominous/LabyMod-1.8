@@ -105,29 +105,29 @@ public class bfr
   
   public bfr(ave mcIn)
   {
-    this.cloudRenderer = new CloudRenderer(mcIn);
+    cloudRenderer = new CloudRenderer(mcIn);
     
-    this.h = mcIn;
-    this.j = mcIn.af();
-    this.i = mcIn.P();
-    this.i.a(g);
+    h = mcIn;
+    j = mcIn.af();
+    i = mcIn.P();
+    i.a(g);
     GL11.glTexParameteri(3553, 10242, 10497);
     GL11.glTexParameteri(3553, 10243, 10497);
     bfl.i(0);
     n();
-    this.Y = bqs.f();
-    if (this.Y)
+    Y = bqs.f();
+    if (Y)
     {
-      this.O = new bfy();
-      this.a = new bhv();
+      O = new bfy();
+      a = new bhv();
     }
     else
     {
-      this.O = new bft();
-      this.a = new bhr();
+      O = new bft();
+      a = new bhr();
     }
-    this.s = new bmu();
-    this.s.a(new bmv(0, bmv.a.a, bmv.b.a, 3));
+    s = new bmu();
+    s.a(new bmv(0, bmv.a.a, bmv.b.a, 3));
     q();
     p();
     o();
@@ -140,9 +140,9 @@ public class bfr
   
   private void n()
   {
-    bmh var1 = this.h.T();
-    for (int var2 = 0; var2 < this.z.length; var2++) {
-      this.z[var2] = var1.a("minecraft:blocks/destroy_stage_" + var2);
+    bmh var1 = h.T();
+    for (int var2 = 0; var2 < z.length; var2++) {
+      z[var2] = var1.a("minecraft:blocks/destroy_stage_" + var2);
     }
   }
   
@@ -156,27 +156,27 @@ public class bfr
       jy var1 = new jy("shaders/post/entity_outline.json");
       try
       {
-        this.B = new blr(this.h.P(), this.h.Q(), this.h.b(), var1);
-        this.B.a(this.h.d, this.h.e);
-        this.A = this.B.a("final");
+        B = new blr(h.P(), h.Q(), h.b(), var1);
+        B.a(h.d, h.e);
+        A = B.a("final");
       }
       catch (IOException var3)
       {
         b.warn("Failed to load shader: " + var1, var3);
-        this.B = null;
-        this.A = null;
+        B = null;
+        A = null;
       }
       catch (JsonSyntaxException var4)
       {
         b.warn("Failed to load shader: " + var1, var4);
-        this.B = null;
-        this.A = null;
+        B = null;
+        A = null;
       }
     }
     else
     {
-      this.B = null;
-      this.A = null;
+      B = null;
+      A = null;
     }
   }
   
@@ -186,40 +186,40 @@ public class bfr
     {
       bfl.l();
       bfl.a(770, 771, 0, 1);
-      this.A.a(this.h.d, this.h.e, false);
+      A.a(h.d, h.e, false);
       bfl.k();
     }
   }
   
   protected boolean d()
   {
-    return (this.A != null) && (this.B != null) && (this.h.h != null) && (this.h.h.v()) && (this.h.t.aq.d());
+    return (A != null) && (B != null) && (h.h != null) && (h.h.v()) && (h.t.aq.d());
   }
   
   private void o()
   {
     bfx var1 = bfx.a();
     bfd var2 = var1.c();
-    if (this.v != null) {
-      this.v.c();
+    if (v != null) {
+      v.c();
     }
-    if (this.r >= 0)
+    if (r >= 0)
     {
-      avd.b(this.r);
-      this.r = -1;
+      avd.b(r);
+      r = -1;
     }
-    if (this.Y)
+    if (Y)
     {
-      this.v = new bmt(this.s);
+      v = new bmt(s);
       a(var2, -16.0F, true);
       var2.e();
       var2.b();
-      this.v.a(var2.f());
+      v.a(var2.f());
     }
     else
     {
-      this.r = avd.a(1);
-      GL11.glNewList(this.r, 4864);
+      r = avd.a(1);
+      GL11.glNewList(r, 4864);
       a(var2, -16.0F, true);
       var1.b();
       GL11.glEndList();
@@ -230,26 +230,26 @@ public class bfr
   {
     bfx var1 = bfx.a();
     bfd var2 = var1.c();
-    if (this.u != null) {
-      this.u.c();
+    if (u != null) {
+      u.c();
     }
-    if (this.q >= 0)
+    if (q >= 0)
     {
-      avd.b(this.q);
-      this.q = -1;
+      avd.b(q);
+      q = -1;
     }
-    if (this.Y)
+    if (Y)
     {
-      this.u = new bmt(this.s);
+      u = new bmt(s);
       a(var2, 16.0F, false);
       var2.e();
       var2.b();
-      this.u.a(var2.f());
+      u.a(var2.f());
     }
     else
     {
-      this.q = avd.a(1);
-      GL11.glNewList(this.q, 4864);
+      q = avd.a(1);
+      GL11.glNewList(q, 4864);
       a(var2, 16.0F, false);
       var1.b();
       GL11.glEndList();
@@ -283,27 +283,27 @@ public class bfr
   {
     bfx var1 = bfx.a();
     bfd var2 = var1.c();
-    if (this.t != null) {
-      this.t.c();
+    if (t != null) {
+      t.c();
     }
-    if (this.p >= 0)
+    if (p >= 0)
     {
-      avd.b(this.p);
-      this.p = -1;
+      avd.b(p);
+      p = -1;
     }
-    if (this.Y)
+    if (Y)
     {
-      this.t = new bmt(this.s);
+      t = new bmt(s);
       a(var2);
       var2.e();
       var2.b();
-      this.t.a(var2.f());
+      t.a(var2.f());
     }
     else
     {
-      this.p = avd.a(1);
+      p = avd.a(1);
       bfl.E();
-      GL11.glNewList(this.p, 4864);
+      GL11.glNewList(p, 4864);
       a(var2);
       var1.b();
       GL11.glEndList();
@@ -360,17 +360,17 @@ public class bfr
   
   public void a(bdb worldClientIn)
   {
-    if (this.k != null) {
-      this.k.b(this);
+    if (k != null) {
+      k.b(this);
     }
-    this.C = Double.MIN_VALUE;
-    this.D = Double.MIN_VALUE;
-    this.E = Double.MIN_VALUE;
-    this.F = Integer.MIN_VALUE;
-    this.G = Integer.MIN_VALUE;
-    this.H = Integer.MIN_VALUE;
-    this.j.a(worldClientIn);
-    this.k = worldClientIn;
+    C = Double.MIN_VALUE;
+    D = Double.MIN_VALUE;
+    E = Double.MIN_VALUE;
+    F = Integer.MIN_VALUE;
+    G = Integer.MIN_VALUE;
+    H = Integer.MIN_VALUE;
+    j.a(worldClientIn);
+    k = worldClientIn;
     if (worldClientIn != null)
     {
       worldClientIn.a(this);
@@ -380,70 +380,70 @@ public class bfr
   
   public void a()
   {
-    if (this.k != null)
+    if (k != null)
     {
-      this.ac = true;
+      ac = true;
       
       afi.t.b(Config.isTreesFancy());
       afi.u.b(Config.isTreesFancy());
       
       bgf.updateAoLightValue();
       
-      this.P = this.h.t.c;
+      P = h.t.c;
       
-      this.renderDistance = (this.P * 16);
-      this.renderDistanceSq = (this.renderDistance * this.renderDistance);
+      renderDistance = (P * 16);
+      renderDistanceSq = (renderDistance * renderDistance);
       
-      boolean var1 = this.Y;
-      this.Y = bqs.f();
-      if ((var1) && (!this.Y))
+      boolean var1 = Y;
+      Y = bqs.f();
+      if ((var1) && (!Y))
       {
-        this.O = new bft();
-        this.a = new bhr();
+        O = new bft();
+        a = new bhr();
       }
-      else if ((!var1) && (this.Y))
+      else if ((!var1) && (Y))
       {
-        this.O = new bfy();
-        this.a = new bhv();
+        O = new bfy();
+        a = new bhv();
       }
-      if (var1 != this.Y)
+      if (var1 != Y)
       {
         q();
         p();
         o();
       }
-      if (this.o != null) {
-        this.o.a();
+      if (o != null) {
+        o.a();
       }
       e();
-      Set var2 = this.n;
-      synchronized (this.n)
+      Set var2 = n;
+      synchronized (n)
       {
-        this.n.clear();
+        n.clear();
       }
-      this.o = new bga(this.k, this.h.t.c, this, this.a);
-      if (this.k != null)
+      o = new bga(k, h.t.c, this, a);
+      if (k != null)
       {
-        pk var5 = this.h.ac();
+        pk var5 = h.ac();
         if (var5 != null) {
-          this.o.a(var5.s, var5.u);
+          o.a(s, u);
         }
       }
-      this.Q = 2;
+      Q = 2;
     }
   }
   
   protected void e()
   {
-    this.l.clear();
-    this.N.b();
+    l.clear();
+    N.b();
   }
   
   public void a(int p_72720_1_, int p_72720_2_)
   {
     if (bqs.O) {
-      if (this.B != null) {
-        this.B.a(p_72720_1_, p_72720_2_);
+      if (B != null) {
+        B.a(p_72720_1_, p_72720_2_);
       }
     }
   }
@@ -454,60 +454,60 @@ public class bfr
     if (Reflector.MinecraftForgeClient_getRenderPass.exists()) {
       pass = Reflector.callInt(Reflector.MinecraftForgeClient_getRenderPass, new Object[0]);
     }
-    if (this.Q > 0)
+    if (Q > 0)
     {
       if (pass > 0) {
         return;
       }
-      this.Q -= 1;
+      Q -= 1;
     }
     else
     {
-      double var4 = p_180446_1_.p + (p_180446_1_.s - p_180446_1_.p) * partialTicks;
-      double var6 = p_180446_1_.q + (p_180446_1_.t - p_180446_1_.q) * partialTicks;
-      double var8 = p_180446_1_.r + (p_180446_1_.u - p_180446_1_.r) * partialTicks;
-      this.k.B.a("prepare");
-      bhc.a.a(this.k, this.h.P(), this.h.k, this.h.ac(), partialTicks);
-      this.j.a(this.k, this.h.k, this.h.ac(), this.h.i, this.h.t, partialTicks);
+      double var4 = p + (s - p) * partialTicks;
+      double var6 = q + (t - q) * partialTicks;
+      double var8 = r + (u - r) * partialTicks;
+      k.B.a("prepare");
+      bhc.a.a(k, h.P(), h.k, h.ac(), partialTicks);
+      j.a(k, h.k, h.ac(), h.i, h.t, partialTicks);
       if (pass == 0)
       {
-        this.R = 0;
-        this.S = 0;
-        this.T = 0;
+        R = 0;
+        S = 0;
+        T = 0;
         
-        this.countTileEntitiesRendered = 0;
+        countTileEntitiesRendered = 0;
       }
-      pk var10 = this.h.ac();
-      double var11 = var10.P + (var10.s - var10.P) * partialTicks;
-      double var13 = var10.Q + (var10.t - var10.Q) * partialTicks;
-      double var15 = var10.R + (var10.u - var10.R) * partialTicks;
+      pk var10 = h.ac();
+      double var11 = P + (s - P) * partialTicks;
+      double var13 = Q + (t - Q) * partialTicks;
+      double var15 = R + (u - R) * partialTicks;
       bhc.b = var11;
       bhc.c = var13;
       bhc.d = var15;
-      this.j.a(var11, var13, var15);
-      this.h.o.i();
-      this.k.B.c("global");
-      List var17 = this.k.E();
+      j.a(var11, var13, var15);
+      h.o.i();
+      k.B.c("global");
+      List var17 = k.E();
       if (pass == 0) {
-        this.R = var17.size();
+        R = var17.size();
       }
-      if ((Config.isFogOff()) && (this.h.o.fogStandard)) {
+      if ((Config.isFogOff()) && (h.o.fogStandard)) {
         bfl.n();
       }
       boolean forgeEntityPass = Reflector.ForgeEntity_shouldRenderInPass.exists();
       boolean forgeTileEntityPass = Reflector.ForgeTileEntity_shouldRenderInPass.exists();
-      for (int var18 = 0; var18 < this.k.k.size(); var18++)
+      for (int var18 = 0; var18 < k.k.size(); var18++)
       {
-        pk var19 = (pk)this.k.k.get(var18);
+        pk var19 = (pk)k.k.get(var18);
         if (forgeEntityPass)
         {
           if (!Reflector.callBoolean(var19, Reflector.ForgeEntity_shouldRenderInPass, new Object[] { Integer.valueOf(pass) })) {}
         }
         else
         {
-          this.S += 1;
+          S += 1;
           if (var19.h(var4, var6, var8)) {
-            this.j.a(var19, partialTicks);
+            j.a(var19, partialTicks);
           }
         }
       }
@@ -515,11 +515,11 @@ public class bfr
       {
         bfl.c(519);
         bfl.n();
-        this.A.f();
-        this.A.a(false);
-        this.k.B.c("entityOutlines");
+        A.f();
+        A.a(false);
+        k.B.c("entityOutlines");
         avc.a();
-        this.j.c(true);
+        j.c(true);
         for (var18 = 0; var18 < var17.size(); var18++)
         {
           pk var19 = (pk)var17.get(var18);
@@ -529,20 +529,20 @@ public class bfr
           }
           else
           {
-            boolean var20 = ((this.h.ac() instanceof pr)) && (((pr)this.h.ac()).bJ());
-            boolean var21 = (var19.h(var4, var6, var8)) && ((var19.ah) || (p_180446_2_.a(var19.aR())) || (var19.l == this.h.h)) && ((var19 instanceof wn));
-            if (((var19 != this.h.ac()) || (this.h.t.aA != 0) || (var20)) && (var21)) {
-              this.j.a(var19, partialTicks);
+            boolean var20 = ((h.ac() instanceof pr)) && (((pr)h.ac()).bJ());
+            boolean var21 = (var19.h(var4, var6, var8)) && ((ah) || (p_180446_2_.a(var19.aR())) || (l == h.h)) && ((var19 instanceof wn));
+            if (((var19 != h.ac()) || (h.t.aA != 0) || (var20)) && (var21)) {
+              j.a(var19, partialTicks);
             }
           }
         }
-        this.j.c(false);
+        j.c(false);
         avc.b();
         bfl.a(false);
-        this.B.a(partialTicks);
+        B.a(partialTicks);
         bfl.e();
         bfl.a(true);
-        this.h.b().a(false);
+        h.b().a(false);
         bfl.m();
         bfl.l();
         bfl.g();
@@ -550,21 +550,21 @@ public class bfr
         bfl.j();
         bfl.d();
       }
-      this.k.B.c("entities");
+      k.B.c("entities");
       
       boolean isShaders = Config.isShaders();
       if (isShaders) {
         Shaders.beginEntities();
       }
-      Iterator var28 = this.renderInfosEntities.iterator();
+      Iterator var28 = renderInfosEntities.iterator();
       
-      boolean oldFancyGraphics = this.h.t.i;
-      this.h.t.i = Config.isDroppedItemsFancy();
+      boolean oldFancyGraphics = h.t.i;
+      h.t.i = Config.isDroppedItemsFancy();
       while (var28.hasNext())
       {
         bfr.a var30 = (bfr.a)var28.next();
-        amy var33 = this.k.f(var30.a.j());
-        ne var37 = var33.s()[(var30.a.j().o() / 16)];
+        amy var33 = k.f(a.j());
+        ne var37 = var33.s()[(a.j().o() / 16)];
         if (!var37.isEmpty())
         {
           Iterator var22 = var37.iterator();
@@ -577,23 +577,23 @@ public class bfr
             }
             else
             {
-              boolean var24 = (this.j.a(var23, p_180446_2_, var4, var6, var8)) || (var23.l == this.h.h);
+              boolean var24 = (j.a(var23, p_180446_2_, var4, var6, var8)) || (l == h.h);
               if (var24)
               {
-                boolean var25 = (this.h.ac() instanceof pr) ? ((pr)this.h.ac()).bJ() : false;
-                if (((var23 != this.h.ac()) || (this.h.t.aA != 0) || (var25)) && ((var23.t < 0.0D) || (var23.t >= 256.0D) || (this.k.e(new cj(var23)))))
+                boolean var25 = (h.ac() instanceof pr) ? ((pr)h.ac()).bJ() : false;
+                if (((var23 != h.ac()) || (h.t.aA != 0) || (var25)) && ((t < 0.0D) || (t >= 256.0D) || (k.e(new cj(var23)))))
                 {
-                  this.S += 1;
+                  S += 1;
                   if (var23.getClass() == uo.class) {
-                    var23.j = 0.06D;
+                    j = 0.06D;
                   }
-                  this.renderedEntity = var23;
+                  renderedEntity = var23;
                   if (isShaders) {
                     Shaders.nextEntity();
                   }
-                  this.j.a(var23, partialTicks);
+                  j.a(var23, partialTicks);
                   
-                  this.renderedEntity = null;
+                  renderedEntity = null;
                 }
               }
               else if ((!var24) && ((var23 instanceof xd)))
@@ -601,13 +601,13 @@ public class bfr
                 if (isShaders) {
                   Shaders.nextEntity();
                 }
-                this.h.af().b(var23, partialTicks);
+                h.af().b(var23, partialTicks);
               }
             }
           }
         }
       }
-      this.h.t.i = oldFancyGraphics;
+      h.t.i = oldFancyGraphics;
       
       avn fontRenderer = bhc.a.a();
       if (isShaders)
@@ -615,14 +615,14 @@ public class bfr
         Shaders.endEntities();
         Shaders.beginBlockEntities();
       }
-      this.k.B.c("blockentities");
+      k.B.c("blockentities");
       avc.b();
       
-      var28 = this.renderInfosTileEntities.iterator();
+      var28 = renderInfosTileEntities.iterator();
       while (var28.hasNext())
       {
         bfr.a var30 = (bfr.a)var28.next();
-        List var34 = var30.a.g().b();
+        List var34 = a.g().b();
         if (!var34.isEmpty())
         {
           Iterator var38 = var34.iterator();
@@ -647,26 +647,26 @@ public class bfr
               if (teClass == aln.class) {
                 if (!Config.zoomMode)
                 {
-                  wn pl = this.h.h;
-                  double distSq = te.a(pl.s, pl.t, pl.u);
+                  wn pl = h.h;
+                  double distSq = te.a(s, t, u);
                   if (distSq > 256.0D) {
-                    fontRenderer.enabled = false;
+                    enabled = false;
                   }
                 }
               }
               bhc.a.a(var40, partialTicks, -1);
               
-              this.countTileEntitiesRendered += 1;
+              countTileEntitiesRendered += 1;
               
-              fontRenderer.enabled = true;
+              enabled = true;
             }
           }
         }
       }
-      Set var29 = this.n;
-      synchronized (this.n)
+      Set var29 = n;
+      synchronized (n)
       {
-        Iterator var31 = this.n.iterator();
+        Iterator var31 = n.iterator();
         while (var31.hasNext())
         {
           akw var35 = (akw)var31.next();
@@ -688,44 +688,44 @@ public class bfr
             if (teClass == aln.class) {
               if (!Config.zoomMode)
               {
-                wn pl = this.h.h;
-                double distSq = te.a(pl.s, pl.t, pl.u);
+                wn pl = h.h;
+                double distSq = te.a(s, t, u);
                 if (distSq > 256.0D) {
-                  fontRenderer.enabled = false;
+                  enabled = false;
                 }
               }
             }
             bhc.a.a(var35, partialTicks, -1);
             
-            fontRenderer.enabled = true;
+            enabled = true;
           }
         }
       }
       s();
-      var28 = this.x.values().iterator();
+      var28 = x.values().iterator();
       while (var28.hasNext())
       {
         kw var32 = (kw)var28.next();
         cj var36 = var32.b();
-        akw var39 = this.k.s(var36);
+        akw var39 = k.s(var36);
         if (isShaders) {
           Shaders.nextBlockEntity();
         }
         if ((var39 instanceof aky))
         {
           aky var41 = (aky)var39;
-          if (var41.h != null)
+          if (h != null)
           {
             var36 = var36.a(cq.e);
-            var39 = this.k.s(var36);
+            var39 = k.s(var36);
           }
-          else if (var41.f != null)
+          else if (f != null)
           {
             var36 = var36.a(cq.c);
-            var39 = this.k.s(var36);
+            var39 = k.s(var36);
           }
         }
-        afh var42 = this.k.p(var36).c();
+        afh var42 = k.p(var36).c();
         boolean shouldRender;
         if (forgeTileEntityPass)
         {
@@ -750,113 +750,113 @@ public class bfr
         }
       }
       t();
-      this.h.o.h();
-      this.h.A.b();
+      h.o.h();
+      h.A.b();
     }
   }
   
   public String f()
   {
-    int var1 = this.o.f.length;
+    int var1 = o.f.length;
     int var2 = 0;
-    Iterator var3 = this.m.iterator();
+    Iterator var3 = m.iterator();
     while (var3.hasNext())
     {
       bfr.a var4 = (bfr.a)var3.next();
-      bhq var5 = var4.a.b;
+      bhq var5 = a.b;
       if ((var5 != bhq.a) && (!var5.a())) {
         var2++;
       }
     }
-    return String.format("C: %d/%d %sD: %d, %s", new Object[] { Integer.valueOf(var2), Integer.valueOf(var1), this.h.G ? "(s) " : "", Integer.valueOf(this.P), this.N.a() });
+    return String.format("C: %d/%d %sD: %d, %s", new Object[] { Integer.valueOf(var2), Integer.valueOf(var1), h.G ? "(s) " : "", Integer.valueOf(P), N.a() });
   }
   
   public String g()
   {
-    return "E: " + this.S + "/" + this.R + ", B: " + this.T + ", I: " + (this.R - this.T - this.S) + ", " + Config.getVersionShaders();
+    return "E: " + S + "/" + R + ", B: " + T + ", I: " + (R - T - S) + ", " + Config.getVersionShaders();
   }
   
   public void a(pk viewEntity, double partialTicks, bia camera, int frameCount, boolean playerSpectator)
   {
-    if (this.h.t.c != this.P) {
+    if (h.t.c != P) {
       a();
     }
-    this.k.B.a("camera");
-    double var7 = viewEntity.s - this.C;
-    double var9 = viewEntity.t - this.D;
-    double var11 = viewEntity.u - this.E;
-    if ((this.F != viewEntity.ae) || (this.G != viewEntity.af) || (this.H != viewEntity.ag) || (var7 * var7 + var9 * var9 + var11 * var11 > 16.0D))
+    k.B.a("camera");
+    double var7 = s - C;
+    double var9 = t - D;
+    double var11 = u - E;
+    if ((F != ae) || (G != af) || (H != ag) || (var7 * var7 + var9 * var9 + var11 * var11 > 16.0D))
     {
-      this.C = viewEntity.s;
-      this.D = viewEntity.t;
-      this.E = viewEntity.u;
-      this.F = viewEntity.ae;
-      this.G = viewEntity.af;
-      this.H = viewEntity.ag;
-      this.o.a(viewEntity.s, viewEntity.u);
+      C = s;
+      D = t;
+      E = u;
+      F = ae;
+      G = af;
+      H = ag;
+      o.a(s, u);
     }
-    this.k.B.c("renderlistcamera");
-    double var13 = viewEntity.P + (viewEntity.s - viewEntity.P) * partialTicks;
-    double var15 = viewEntity.Q + (viewEntity.t - viewEntity.Q) * partialTicks;
-    double var17 = viewEntity.R + (viewEntity.u - viewEntity.R) * partialTicks;
-    this.O.a(var13, var15, var17);
-    this.k.B.c("cull");
-    if (this.V != null)
+    k.B.c("renderlistcamera");
+    double var13 = P + (s - P) * partialTicks;
+    double var15 = Q + (t - Q) * partialTicks;
+    double var17 = R + (u - R) * partialTicks;
+    O.a(var13, var15, var17);
+    k.B.c("cull");
+    if (V != null)
     {
-      bic var19 = new bic(this.V);
-      var19.a(this.X.a, this.X.b, this.X.c);
+      bic var19 = new bic(V);
+      var19.a(X.a, X.b, X.c);
       camera = var19;
     }
-    this.h.A.c("culling");
+    h.A.c("culling");
     cj var35 = new cj(var13, var15 + viewEntity.aS(), var17);
-    bht var20 = this.o.a(var35);
+    bht var20 = o.a(var35);
     cj var21 = new cj(ns.c(var13 / 16.0D) * 16, ns.c(var15 / 16.0D) * 16, ns.c(var17 / 16.0D) * 16);
-    this.ac = ((this.ac) || (!this.l.isEmpty()) || (viewEntity.s != this.I) || (viewEntity.t != this.J) || (viewEntity.u != this.K) || (viewEntity.z != this.L) || (viewEntity.y != this.M));
-    this.I = viewEntity.s;
-    this.J = viewEntity.t;
-    this.K = viewEntity.u;
-    this.L = viewEntity.z;
-    this.M = viewEntity.y;
-    boolean var22 = this.V != null;
+    ac = ((ac) || (!l.isEmpty()) || (s != I) || (t != J) || (u != K) || (z != L) || (y != M));
+    I = s;
+    J = t;
+    K = u;
+    L = z;
+    M = y;
+    boolean var22 = V != null;
     
     Lagometer.timerVisibility.start();
     if (Shaders.isShadowPass)
     {
-      this.m = this.renderInfosShadow;
-      this.renderInfosEntities = this.renderInfosEntitiesShadow;
-      this.renderInfosTileEntities = this.renderInfosTileEntitiesShadow;
-      if ((!var22) && (this.ac))
+      m = renderInfosShadow;
+      renderInfosEntities = renderInfosEntitiesShadow;
+      renderInfosTileEntities = renderInfosTileEntitiesShadow;
+      if ((!var22) && (ac))
       {
-        this.m.clear();
-        this.renderInfosEntities.clear();
-        this.renderInfosTileEntities.clear();
-        for (int i = 0; i < this.o.f.length; i++)
+        m.clear();
+        renderInfosEntities.clear();
+        renderInfosTileEntities.clear();
+        for (int i = 0; i < o.f.length; i++)
         {
-          bht chunk = this.o.f[i];
-          if (camera.a(chunk.c))
+          bht chunk = o.f[i];
+          if (camera.a(c))
           {
             bfr.a info = new bfr.a(chunk, null, 0, null);
             cj pos = chunk.j();
-            if ((!chunk.b.a()) || (chunk.l()))
+            if ((!b.a()) || (chunk.l()))
             {
               if (info == null) {
                 info = new bfr.a(chunk, null, 0, null);
               }
-              this.m.add(info);
+              m.add(info);
             }
-            if (ChunkUtils.hasEntities(this.k.f(pos)))
+            if (ChunkUtils.hasEntities(k.f(pos)))
             {
               if (info == null) {
                 info = new bfr.a(chunk, null, 0, null);
               }
-              this.renderInfosEntities.add(info);
+              renderInfosEntities.add(info);
             }
             if (chunk.g().b().size() > 0)
             {
               if (info == null) {
                 info = new bfr.a(chunk, null, 0, null);
               }
-              this.renderInfosTileEntities.add(info);
+              renderInfosTileEntities.add(info);
             }
           }
         }
@@ -864,31 +864,31 @@ public class bfr
     }
     else
     {
-      this.m = this.renderInfosNormal;
-      this.renderInfosEntities = this.renderInfosEntitiesNormal;
-      this.renderInfosTileEntities = this.renderInfosTileEntitiesNormal;
+      m = renderInfosNormal;
+      renderInfosEntities = renderInfosEntitiesNormal;
+      renderInfosTileEntities = renderInfosTileEntitiesNormal;
     }
-    if ((!var22) && (this.ac) && (!Shaders.isShadowPass))
+    if ((!var22) && (ac) && (!Shaders.isShadowPass))
     {
-      this.ac = false;
+      ac = false;
       
-      this.m.clear();
+      m.clear();
       
-      this.renderInfosEntities.clear();
-      this.renderInfosTileEntities.clear();
+      renderInfosEntities.clear();
+      renderInfosTileEntities.clear();
       
-      this.visibilityDeque.clear();
-      Deque var23 = this.visibilityDeque;
+      visibilityDeque.clear();
+      Deque var23 = visibilityDeque;
       
-      boolean var24 = this.h.G;
+      boolean var24 = h.G;
       if (var20 == null)
       {
         int var25 = var35.o() > 0 ? 248 : 8;
-        for (int var26 = -this.P; var26 <= this.P; var26++) {
-          for (int var27 = -this.P; var27 <= this.P; var27++)
+        for (int var26 = -P; var26 <= P; var26++) {
+          for (int var27 = -P; var27 <= P; var27++)
           {
-            bht var28 = this.o.a(new cj((var26 << 4) + 8, var25, (var27 << 4) + 8));
-            if ((var28 != null) && (camera.a(var28.c)))
+            bht var28 = o.a(new cj((var26 << 4) + 8, var25, (var27 << 4) + 8));
+            if ((var28 != null) && (camera.a(c)))
             {
               var28.a(frameCount);
               var23.add(new bfr.a(var28, (cq)null, 0, null));
@@ -905,7 +905,7 @@ public class bfr
         if (var42.size() == 1)
         {
           Vector3f var44 = a(viewEntity, partialTicks);
-          cq var29 = cq.a(var44.x, var44.y, var44.z).d();
+          cq var29 = cq.a(x, y, z).d();
           var42.remove(var29);
         }
         if (var42.isEmpty()) {
@@ -913,11 +913,11 @@ public class bfr
         }
         if ((var38) && (!playerSpectator))
         {
-          this.m.add(var40);
+          m.add(var40);
         }
         else
         {
-          if ((playerSpectator) && (this.k.p(var35).c().c())) {
+          if ((playerSpectator) && (k.p(var35).c().c())) {
             var24 = false;
           }
           var20.a(frameCount);
@@ -929,39 +929,39 @@ public class bfr
       while (!var23.isEmpty())
       {
         bfr.a var39 = (bfr.a)var23.poll();
-        bht var41 = var39.a;
-        cq var43 = var39.b;
+        bht var41 = a;
+        cq var43 = b;
         cj var45 = var41.j();
-        if ((!var41.b.a()) || (var41.l())) {
-          this.m.add(var39);
+        if ((!b.a()) || (var41.l())) {
+          m.add(var39);
         }
-        if (ChunkUtils.hasEntities(this.k.f(var45))) {
-          this.renderInfosEntities.add(var39);
+        if (ChunkUtils.hasEntities(k.f(var45))) {
+          renderInfosEntities.add(var39);
         }
         if (var41.g().b().size() > 0) {
-          this.renderInfosTileEntities.add(var39);
+          renderInfosTileEntities.add(var39);
         }
         for (int var31 = 0; var31 < var30; var31++)
         {
           cq var32 = var46[var31];
-          if (((!var24) || (!var39.c.contains(var32.d()))) && ((!var24) || (var43 == null) || (var41.g().a(var43.d(), var32))))
+          if (((!var24) || (!c.contains(var32.d()))) && ((!var24) || (var43 == null) || (var41.g().a(var43.d(), var32))))
           {
             bht var33 = a(var35, var41, var32);
-            if ((var33 != null) && (var33.a(frameCount)) && (camera.a(var33.c)))
+            if ((var33 != null) && (var33.a(frameCount)) && (camera.a(c)))
             {
-              bfr.a var34 = new bfr.a(var33, var32, var39.d + 1, null);
-              var34.c.addAll(var39.c);
-              var34.c.add(var32);
+              bfr.a var34 = new bfr.a(var33, var32, d + 1, null);
+              c.addAll(c);
+              c.add(var32);
               var23.add(var34);
             }
           }
         }
       }
     }
-    if (this.U)
+    if (U)
     {
       a(var13, var15, var17);
-      this.U = false;
+      U = false;
     }
     Lagometer.timerVisibility.end();
     if (Shaders.isShadowPass)
@@ -969,42 +969,42 @@ public class bfr
       Shaders.mcProfilerEndSection();
       return;
     }
-    this.N.e();
-    Set var36 = this.l;
-    this.l = Sets.newLinkedHashSet();
-    Iterator var37 = this.m.iterator();
+    N.e();
+    Set var36 = l;
+    l = Sets.newLinkedHashSet();
+    Iterator var37 = m.iterator();
     
     Lagometer.timerChunkUpdate.start();
     while (var37.hasNext())
     {
       bfr.a var39 = (bfr.a)var37.next();
-      bht var41 = var39.a;
+      bht var41 = a;
       if ((var41.l()) || (var36.contains(var41)))
       {
-        this.ac = true;
-        if (a(var21, var39.a))
+        ac = true;
+        if (a(var21, a))
         {
           if (!Config.isActing())
           {
-            this.chunksToUpdateForced.add(var41);
+            chunksToUpdateForced.add(var41);
           }
           else
           {
-            this.h.A.a("build near");
-            this.N.b(var41);
+            h.A.a("build near");
+            N.b(var41);
             var41.a(false);
-            this.h.A.b();
+            h.A.b();
           }
         }
         else {
-          this.l.add(var41);
+          l.add(var41);
         }
       }
     }
     Lagometer.timerChunkUpdate.end();
     
-    this.l.addAll(var36);
-    this.h.A.b();
+    l.addAll(var36);
+    h.A.b();
   }
   
   private boolean a(cj p_174983_1_, bht p_174983_2_)
@@ -1017,7 +1017,7 @@ public class bfr
   {
     bhw var2 = new bhw();
     cj var3 = new cj(p_174978_1_.n() >> 4 << 4, p_174978_1_.o() >> 4 << 4, p_174978_1_.p() >> 4 << 4);
-    amy var4 = this.k.f(var3);
+    amy var4 = k.f(var3);
     Iterator var5 = cj.b(var3, var3.a(15, 15, 15)).iterator();
     while (var5.hasNext())
     {
@@ -1039,57 +1039,57 @@ public class bfr
     int dz = ns.a(p_174973_1_.p() - var4.p());
     if (Config.isFogOff())
     {
-      if ((dx > this.renderDistance) || (dz > this.renderDistance)) {
+      if ((dx > renderDistance) || (dz > renderDistance)) {
         return null;
       }
     }
     else
     {
       int distSq = dx * dx + dz * dz;
-      if (distSq > this.renderDistanceSq) {
+      if (distSq > renderDistanceSq) {
         return null;
       }
     }
-    return this.o.a(var4);
+    return o.a(var4);
   }
   
   private void a(double p_174984_1_, double p_174984_3_, double p_174984_5_)
   {
-    this.V = new bib();
-    ((bib)this.V).b();
-    bqq var7 = new bqq(this.V.c);
+    V = new bib();
+    ((bib)V).b();
+    bqq var7 = new bqq(V.c);
     var7.transpose();
-    bqq var8 = new bqq(this.V.b);
+    bqq var8 = new bqq(V.b);
     var8.transpose();
     bqq var9 = new bqq();
     bqq.mul(var8, var7, var9);
     var9.invert();
-    this.X.a = p_174984_1_;
-    this.X.b = p_174984_3_;
-    this.X.c = p_174984_5_;
-    this.W[0] = new Vector4f(-1.0F, -1.0F, -1.0F, 1.0F);
-    this.W[1] = new Vector4f(1.0F, -1.0F, -1.0F, 1.0F);
-    this.W[2] = new Vector4f(1.0F, 1.0F, -1.0F, 1.0F);
-    this.W[3] = new Vector4f(-1.0F, 1.0F, -1.0F, 1.0F);
-    this.W[4] = new Vector4f(-1.0F, -1.0F, 1.0F, 1.0F);
-    this.W[5] = new Vector4f(1.0F, -1.0F, 1.0F, 1.0F);
-    this.W[6] = new Vector4f(1.0F, 1.0F, 1.0F, 1.0F);
-    this.W[7] = new Vector4f(-1.0F, 1.0F, 1.0F, 1.0F);
+    X.a = p_174984_1_;
+    X.b = p_174984_3_;
+    X.c = p_174984_5_;
+    W[0] = new Vector4f(-1.0F, -1.0F, -1.0F, 1.0F);
+    W[1] = new Vector4f(1.0F, -1.0F, -1.0F, 1.0F);
+    W[2] = new Vector4f(1.0F, 1.0F, -1.0F, 1.0F);
+    W[3] = new Vector4f(-1.0F, 1.0F, -1.0F, 1.0F);
+    W[4] = new Vector4f(-1.0F, -1.0F, 1.0F, 1.0F);
+    W[5] = new Vector4f(1.0F, -1.0F, 1.0F, 1.0F);
+    W[6] = new Vector4f(1.0F, 1.0F, 1.0F, 1.0F);
+    W[7] = new Vector4f(-1.0F, 1.0F, 1.0F, 1.0F);
     for (int var10 = 0; var10 < 8; var10++)
     {
-      bqq.transform(var9, this.W[var10], this.W[var10]);
-      this.W[var10].x /= this.W[var10].w;
-      this.W[var10].y /= this.W[var10].w;
-      this.W[var10].z /= this.W[var10].w;
-      this.W[var10].w = 1.0F;
+      bqq.transform(var9, W[var10], W[var10]);
+      W[var10].x /= W[var10].w;
+      W[var10].y /= W[var10].w;
+      W[var10].z /= W[var10].w;
+      W[var10].w = 1.0F;
     }
   }
   
   protected Vector3f a(pk p_500145_1_, double p_500145_2_)
   {
-    float var4 = (float)(p_500145_1_.B + (p_500145_1_.z - p_500145_1_.B) * p_500145_2_);
-    float var5 = (float)(p_500145_1_.A + (p_500145_1_.y - p_500145_1_.A) * p_500145_2_);
-    if (ave.A().t.aA == 2) {
+    float var4 = (float)(B + (z - B) * p_500145_2_);
+    float var5 = (float)(A + (y - A) * p_500145_2_);
+    if (At.aA == 2) {
       var4 += 180.0F;
     }
     float var6 = ns.b(-var5 * 0.017453292F - 3.1415927F);
@@ -1104,61 +1104,61 @@ public class bfr
     
     if (blockLayerIn == adf.d)
     {
-      this.h.A.a("translucent_sort");
-      double var6 = entityIn.s - this.Z;
-      double var8 = entityIn.t - this.aa;
-      double var10 = entityIn.u - this.ab;
+      h.A.a("translucent_sort");
+      double var6 = s - Z;
+      double var8 = t - aa;
+      double var10 = u - ab;
       if (var6 * var6 + var8 * var8 + var10 * var10 > 1.0D)
       {
-        this.Z = entityIn.s;
-        this.aa = entityIn.t;
-        this.ab = entityIn.u;
+        Z = s;
+        aa = t;
+        ab = u;
         int var12 = 0;
-        Iterator var13 = this.m.iterator();
+        Iterator var13 = m.iterator();
         
-        this.chunksToResortTransparency.clear();
+        chunksToResortTransparency.clear();
         while (var13.hasNext())
         {
           bfr.a var14 = (bfr.a)var13.next();
-          if ((var14.a.b.d(blockLayerIn)) && (var12++ < 15)) {
-            this.chunksToResortTransparency.add(var14.a);
+          if ((a.b.d(blockLayerIn)) && (var12++ < 15)) {
+            chunksToResortTransparency.add(a);
           }
         }
       }
-      this.h.A.b();
+      h.A.b();
     }
-    this.h.A.a("filterempty");
+    h.A.a("filterempty");
     int var15 = 0;
     boolean var7 = blockLayerIn == adf.d;
-    int var16 = var7 ? this.m.size() - 1 : 0;
-    int var9 = var7 ? -1 : this.m.size();
+    int var16 = var7 ? m.size() - 1 : 0;
+    int var9 = var7 ? -1 : m.size();
     int var17 = var7 ? -1 : 1;
     for (int var11 = var16; var11 != var9; var11 += var17)
     {
-      bht var18 = ((bfr.a)this.m.get(var11)).a;
+      bht var18 = m.get(var11)).a;
       if (!var18.g().b(blockLayerIn))
       {
         var15++;
-        this.O.a(var18, blockLayerIn);
+        O.a(var18, blockLayerIn);
       }
     }
     if (var15 == 0)
     {
-      this.h.A.b();
+      h.A.b();
       return var15;
     }
-    if ((Config.isFogOff()) && (this.h.o.fogStandard)) {
+    if ((Config.isFogOff()) && (h.o.fogStandard)) {
       bfl.n();
     }
-    this.h.A.c("render_" + blockLayerIn);
+    h.A.c("render_" + blockLayerIn);
     a(blockLayerIn);
-    this.h.A.b();
+    h.A.b();
     return var15;
   }
   
   private void a(adf blockLayerIn)
   {
-    this.h.o.i();
+    h.o.i();
     if (bqs.f())
     {
       GL11.glEnableClientState(32884);
@@ -1172,7 +1172,7 @@ public class bfr
     if (Config.isShaders()) {
       ShadersRender.preRenderChunkLayer();
     }
-    this.O.a(blockLayerIn);
+    O.a(blockLayerIn);
     if (Config.isShaders()) {
       ShadersRender.postRenderChunkLayer();
     }
@@ -1201,7 +1201,7 @@ public class bfr
         }
       }
     }
-    this.h.o.h();
+    h.o.h();
   }
   
   private void a(Iterator p_174965_1_)
@@ -1210,7 +1210,7 @@ public class bfr
     {
       kw var2 = (kw)p_174965_1_.next();
       int var3 = var2.d();
-      if (this.w - var3 > 400) {
+      if (w - var3 > 400) {
         p_174965_1_.remove();
       }
     }
@@ -1218,9 +1218,9 @@ public class bfr
   
   public void j()
   {
-    this.w += 1;
-    if (this.w % 20 == 0) {
-      a(this.x.values().iterator());
+    w += 1;
+    if (w % 20 == 0) {
+      a(x.values().iterator());
     }
   }
   
@@ -1235,7 +1235,7 @@ public class bfr
     bfl.a(770, 771, 1, 0);
     avc.a();
     bfl.a(false);
-    this.i.a(f);
+    i.a(f);
     bfx var1 = bfx.a();
     bfd var2 = var1.c();
     for (int var3 = 0; var3 < 6; var3++)
@@ -1273,19 +1273,19 @@ public class bfr
   {
     if (Reflector.ForgeWorldProvider_getSkyRenderer.exists())
     {
-      anm wp = this.h.f.t;
+      anm wp = h.f.t;
       Object skyRenderer = Reflector.call(wp, Reflector.ForgeWorldProvider_getSkyRenderer, new Object[0]);
       if (skyRenderer != null)
       {
-        Reflector.callVoid(skyRenderer, Reflector.IRenderHandler_render, new Object[] { Float.valueOf(partialTicks), this.k, this.h });
+        Reflector.callVoid(skyRenderer, Reflector.IRenderHandler_render, new Object[] { Float.valueOf(partialTicks), k, h });
         return;
       }
     }
-    if (this.h.f.t.q() == 1)
+    if (h.f.t.q() == 1)
     {
       r();
     }
-    else if (this.h.f.t.d())
+    else if (h.f.t.d())
     {
       bfl.x();
       
@@ -1293,15 +1293,15 @@ public class bfr
       if (isShaders) {
         Shaders.disableTexture2D();
       }
-      aui var3 = this.k.a(this.h.ac(), partialTicks);
+      aui var3 = k.a(h.ac(), partialTicks);
       
-      var3 = CustomColorizer.getSkyColor(var3, this.h.f, this.h.ac().s, this.h.ac().t + 1.0D, this.h.ac().u);
+      var3 = CustomColorizer.getSkyColor(var3, h.f, h.ac().s, h.ac().t + 1.0D, h.ac().u);
       if (isShaders) {
         Shaders.setSkyColor(var3);
       }
-      float var4 = (float)var3.a;
-      float var5 = (float)var3.b;
-      float var6 = (float)var3.c;
+      float var4 = (float)a;
+      float var5 = (float)b;
+      float var6 = (float)c;
       if (pass != 2)
       {
         float var7 = (var4 * 30.0F + var5 * 59.0F + var6 * 11.0F) / 100.0F;
@@ -1324,18 +1324,18 @@ public class bfr
         Shaders.preSkyList();
       }
       if (Config.isSkyEnabled()) {
-        if (this.Y)
+        if (Y)
         {
-          this.u.a();
+          u.a();
           GL11.glEnableClientState(32884);
           GL11.glVertexPointer(3, 5126, 12, 0L);
-          this.u.a(7);
-          this.u.b();
+          u.a(7);
+          u.b();
           GL11.glDisableClientState(32884);
         }
         else
         {
-          bfl.o(this.q);
+          bfl.o(q);
         }
       }
       bfl.n();
@@ -1347,7 +1347,7 @@ public class bfr
       bfl.a(770, 771, 1, 0);
       avc.a();
       
-      float[] var22 = this.k.t.a(this.k.c(partialTicks), partialTicks);
+      float[] var22 = k.t.a(k.c(partialTicks), partialTicks);
       if ((var22 != null) && (Config.isSunMoonEnabled()))
       {
         bfl.x();
@@ -1357,7 +1357,7 @@ public class bfr
         bfl.j(7425);
         bfl.E();
         bfl.b(90.0F, 1.0F, 0.0F, 0.0F);
-        bfl.b(ns.a(this.k.d(partialTicks)) < 0.0F ? 180.0F : 0.0F, 0.0F, 0.0F, 1.0F);
+        bfl.b(ns.a(k.d(partialTicks)) < 0.0F ? 180.0F : 0.0F, 0.0F, 0.0F, 1.0F);
         bfl.b(90.0F, 0.0F, 0.0F, 1.0F);
         float var10 = var22[0];
         float var11 = var22[1];
@@ -1391,15 +1391,15 @@ public class bfr
       }
       bfl.a(770, 1, 1, 0);
       bfl.E();
-      float var10 = 1.0F - this.k.j(partialTicks);
+      float var10 = 1.0F - k.j(partialTicks);
       bfl.c(1.0F, 1.0F, 1.0F, var10);
       bfl.b(-90.0F, 0.0F, 1.0F, 0.0F);
       
-      CustomSky.renderSky(this.k, this.i, this.k.c(partialTicks), var10);
+      CustomSky.renderSky(k, i, k.c(partialTicks), var10);
       if (isShaders) {
         Shaders.preCelestialRotate();
       }
-      bfl.b(this.k.c(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
+      bfl.b(k.c(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
       if (isShaders) {
         Shaders.postCelestialRotate();
       }
@@ -1407,7 +1407,7 @@ public class bfr
       {
         float var11 = 30.0F;
         
-        this.i.a(d);
+        i.a(d);
         var21.a(7, bms.g);
         var21.b(-var11, 100.0D, -var11).a(0.0D, 0.0D).d();
         var21.b(var11, 100.0D, -var11).a(1.0D, 0.0D).d();
@@ -1417,8 +1417,8 @@ public class bfr
         
         var11 = 20.0F;
         
-        this.i.a(c);
-        int var24 = this.k.x();
+        i.a(c);
+        int var24 = k.x();
         int var26 = var24 % 4;
         int var27 = var24 / 4 % 2;
         float var15 = (var26 + 0) / 4.0F;
@@ -1436,22 +1436,22 @@ public class bfr
       if (isShaders) {
         Shaders.disableTexture2D();
       }
-      float var19 = this.k.g(partialTicks) * var10;
-      if ((var19 > 0.0F) && (Config.isStarsEnabled()) && (!CustomSky.hasSkyLayers(this.k)))
+      float var19 = k.g(partialTicks) * var10;
+      if ((var19 > 0.0F) && (Config.isStarsEnabled()) && (!CustomSky.hasSkyLayers(k)))
       {
         bfl.c(var19, var19, var19, var19);
-        if (this.Y)
+        if (Y)
         {
-          this.t.a();
+          t.a();
           GL11.glEnableClientState(32884);
           GL11.glVertexPointer(3, 5126, 12, 0L);
-          this.t.a(7);
-          this.t.b();
+          t.a(7);
+          t.b();
           GL11.glDisableClientState(32884);
         }
         else
         {
-          bfl.o(this.p);
+          bfl.o(p);
         }
       }
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
@@ -1467,23 +1467,23 @@ public class bfr
         Shaders.disableTexture2D();
       }
       bfl.c(0.0F, 0.0F, 0.0F);
-      double var23 = this.h.h.e(partialTicks).b - this.k.X();
+      double var23 = h.h.e(partialTicks).b - k.X();
       if (var23 < 0.0D)
       {
         bfl.E();
         bfl.b(0.0F, 12.0F, 0.0F);
-        if (this.Y)
+        if (Y)
         {
-          this.v.a();
+          v.a();
           GL11.glEnableClientState(32884);
           GL11.glVertexPointer(3, 5126, 12, 0L);
-          this.v.a(7);
-          this.v.b();
+          v.a(7);
+          v.b();
           GL11.glDisableClientState(32884);
         }
         else
         {
-          bfl.o(this.r);
+          bfl.o(r);
         }
         bfl.F();
         float var12 = 1.0F;
@@ -1512,18 +1512,18 @@ public class bfr
         var21.b(1.0D, -1.0D, -1.0D).b(0, 0, 0, 255).d();
         var20.b();
       }
-      if (this.k.t.g()) {
+      if (k.t.g()) {
         bfl.c(var4 * 0.2F + 0.04F, var5 * 0.2F + 0.04F, var6 * 0.6F + 0.1F);
       } else {
         bfl.c(var4, var5, var6);
       }
-      if (this.h.t.c <= 4) {
-        bfl.c(this.h.o.Q, this.h.o.R, this.h.o.S);
+      if (h.t.c <= 4) {
+        bfl.c(h.o.Q, h.o.R, h.o.S);
       }
       bfl.E();
       bfl.b(0.0F, -(float)(var23 - 16.0D), 0.0F);
       if (Config.isSkyEnabled()) {
-        bfl.o(this.r);
+        bfl.o(r);
       }
       bfl.F();
       bfl.w();
@@ -1541,16 +1541,16 @@ public class bfr
     }
     if (Reflector.ForgeWorldProvider_getCloudRenderer.exists())
     {
-      anm wp = this.h.f.t;
+      anm wp = h.f.t;
       
       Object cloudRenderer = Reflector.call(wp, Reflector.ForgeWorldProvider_getCloudRenderer, new Object[0]);
       if (cloudRenderer != null)
       {
-        Reflector.callVoid(cloudRenderer, Reflector.IRenderHandler_render, new Object[] { Float.valueOf(p_180447_1_), this.k, this.h });
+        Reflector.callVoid(cloudRenderer, Reflector.IRenderHandler_render, new Object[] { Float.valueOf(p_180447_1_), k, h });
         return;
       }
     }
-    if (this.h.f.t.d()) {
+    if (h.f.t.d()) {
       if (Config.isCloudsFancy())
       {
         c(p_180447_1_, p_180447_2_);
@@ -1558,27 +1558,27 @@ public class bfr
       else
       {
         float partialTicks = p_180447_1_;
-        this.cloudRenderer.prepareToRender(false, this.w, partialTicks);
+        this.cloudRenderer.prepareToRender(false, w, partialTicks);
         
         p_180447_1_ = 0.0F;
         
         bfl.p();
-        float var3 = (float)(this.h.ac().Q + (this.h.ac().t - this.h.ac().Q) * p_180447_1_);
+        float var3 = (float)(h.ac().Q + (h.ac().t - h.ac().Q) * p_180447_1_);
         boolean var4 = true;
         boolean var5 = true;
         bfx var6 = bfx.a();
         bfd var7 = var6.c();
-        this.i.a(e);
+        i.a(e);
         bfl.l();
         bfl.a(770, 771, 1, 0);
         if (this.cloudRenderer.shouldUpdateGlList())
         {
           this.cloudRenderer.startUpdateGlList();
           
-          aui var8 = this.k.e(p_180447_1_);
-          float var9 = (float)var8.a;
-          float var10 = (float)var8.b;
-          float var11 = (float)var8.c;
+          aui var8 = k.e(p_180447_1_);
+          float var9 = (float)a;
+          float var10 = (float)b;
+          float var11 = (float)c;
           if (p_180447_2_ != 2)
           {
             float var12 = (var9 * 30.0F + var10 * 59.0F + var11 * 11.0F) / 100.0F;
@@ -1589,16 +1589,16 @@ public class bfr
             var11 = var14;
           }
           float var12 = 4.8828125E-4F;
-          double var26 = this.w + p_180447_1_;
-          double var15 = this.h.ac().p + (this.h.ac().s - this.h.ac().p) * p_180447_1_ + var26 * 0.029999999329447746D;
-          double var17 = this.h.ac().r + (this.h.ac().u - this.h.ac().r) * p_180447_1_;
+          double var26 = w + p_180447_1_;
+          double var15 = h.ac().p + (h.ac().s - h.ac().p) * p_180447_1_ + var26 * 0.029999999329447746D;
+          double var17 = h.ac().r + (h.ac().u - h.ac().r) * p_180447_1_;
           int var19 = ns.c(var15 / 2048.0D);
           int var20 = ns.c(var17 / 2048.0D);
           var15 -= var19 * 2048;
           var17 -= var20 * 2048;
-          float var21 = this.k.t.f() - var3 + 0.33F;
+          float var21 = k.t.f() - var3 + 0.33F;
           
-          var21 += this.h.t.ofCloudsHeight * 128.0F;
+          var21 += h.t.ofCloudsHeight * 128.0F;
           
           float var22 = (float)(var15 * 4.8828125E-4D);
           float var23 = (float)(var17 * 4.8828125E-4D);
@@ -1633,34 +1633,34 @@ public class bfr
   private void c(float p_180445_1_, int p_180445_2_)
   {
     float partialTicks = p_180445_1_;
-    this.cloudRenderer.prepareToRender(true, this.w, partialTicks);
+    cloudRenderer.prepareToRender(true, w, partialTicks);
     
     p_180445_1_ = 0.0F;
     
     bfl.p();
-    float var3 = (float)(this.h.ac().Q + (this.h.ac().t - this.h.ac().Q) * p_180445_1_);
+    float var3 = (float)(h.ac().Q + (h.ac().t - h.ac().Q) * p_180445_1_);
     bfx var4 = bfx.a();
     bfd var5 = var4.c();
     float var6 = 12.0F;
     float var7 = 4.0F;
-    double var8 = this.w + p_180445_1_;
-    double var10 = (this.h.ac().p + (this.h.ac().s - this.h.ac().p) * p_180445_1_ + var8 * 0.029999999329447746D) / 12.0D;
-    double var12 = (this.h.ac().r + (this.h.ac().u - this.h.ac().r) * p_180445_1_) / 12.0D + 0.33000001311302185D;
-    float var14 = this.k.t.f() - var3 + 0.33F;
+    double var8 = w + p_180445_1_;
+    double var10 = (h.ac().p + (h.ac().s - h.ac().p) * p_180445_1_ + var8 * 0.029999999329447746D) / 12.0D;
+    double var12 = (h.ac().r + (h.ac().u - h.ac().r) * p_180445_1_) / 12.0D + 0.33000001311302185D;
+    float var14 = k.t.f() - var3 + 0.33F;
     
-    var14 += this.h.t.ofCloudsHeight * 128.0F;
+    var14 += h.t.ofCloudsHeight * 128.0F;
     
     int var15 = ns.c(var10 / 2048.0D);
     int var16 = ns.c(var12 / 2048.0D);
     var10 -= var15 * 2048;
     var12 -= var16 * 2048;
-    this.i.a(e);
+    i.a(e);
     bfl.l();
     bfl.a(770, 771, 1, 0);
-    aui var17 = this.k.e(p_180445_1_);
-    float var18 = (float)var17.a;
-    float var19 = (float)var17.b;
-    float var20 = (float)var17.c;
+    aui var17 = k.e(p_180445_1_);
+    float var18 = (float)a;
+    float var19 = (float)b;
+    float var20 = (float)c;
     if (p_180445_2_ != 2)
     {
       float var21 = (var18 * 30.0F + var19 * 59.0F + var20 * 11.0F) / 100.0F;
@@ -1705,11 +1705,11 @@ public class bfr
           bfl.a(true, true, true, true);
         }
       }
-      this.cloudRenderer.renderGlList();
+      cloudRenderer.renderGlList();
     }
-    if (this.cloudRenderer.shouldUpdateGlList())
+    if (cloudRenderer.shouldUpdateGlList())
     {
-      this.cloudRenderer.startUpdateGlList();
+      cloudRenderer.startUpdateGlList();
       for (int var39 = -3; var39 <= 4; var39++) {
         for (int var40 = -3; var40 <= 4; var40++)
         {
@@ -1771,7 +1771,7 @@ public class bfr
           var4.b();
         }
       }
-      this.cloudRenderer.endUpdateGlList();
+      cloudRenderer.endUpdateGlList();
     }
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     bfl.k();
@@ -1780,29 +1780,29 @@ public class bfr
   
   public void a(long p_174967_1_)
   {
-    this.ac |= this.N.a(p_174967_1_);
-    if (this.chunksToUpdateForced.size() > 0)
+    ac |= N.a(p_174967_1_);
+    if (chunksToUpdateForced.size() > 0)
     {
-      Iterator itForced = this.chunksToUpdateForced.iterator();
+      Iterator itForced = chunksToUpdateForced.iterator();
       while (itForced.hasNext())
       {
         bht rc = (bht)itForced.next();
-        if (!this.N.a(rc)) {
+        if (!N.a(rc)) {
           break;
         }
         rc.a(false);
         itForced.remove();
-        this.l.remove(rc);
-        this.chunksToResortTransparency.remove(rc);
+        l.remove(rc);
+        chunksToResortTransparency.remove(rc);
       }
     }
-    if (this.chunksToResortTransparency.size() > 0)
+    if (chunksToResortTransparency.size() > 0)
     {
-      Iterator itTransparency = this.chunksToResortTransparency.iterator();
+      Iterator itTransparency = chunksToResortTransparency.iterator();
       if (itTransparency.hasNext())
       {
         bht renderChunk = (bht)itTransparency.next();
-        if (this.N.c(renderChunk)) {
+        if (N.c(renderChunk)) {
           itTransparency.remove();
         }
       }
@@ -1811,11 +1811,11 @@ public class bfr
     int updatesPerFrame = Config.getUpdatesPerFrame();
     int maxUpdatesPerFrame = updatesPerFrame * 2;
     
-    Iterator var3 = this.l.iterator();
+    Iterator var3 = l.iterator();
     while (var3.hasNext())
     {
       bht var4 = (bht)var3.next();
-      if (!this.N.a(var4)) {
+      if (!N.a(var4)) {
         break;
       }
       var4.a(false);
@@ -1834,18 +1834,18 @@ public class bfr
   {
     bfx var3 = bfx.a();
     bfd var4 = var3.c();
-    ams var5 = this.k.af();
-    double var6 = this.h.t.c * 16;
-    if ((p_180449_1_.s >= var5.d() - var6) || (p_180449_1_.s <= var5.b() + var6) || (p_180449_1_.u >= var5.e() - var6) || (p_180449_1_.u <= var5.c() + var6))
+    ams var5 = k.af();
+    double var6 = h.t.c * 16;
+    if ((s >= var5.d() - var6) || (s <= var5.b() + var6) || (u >= var5.e() - var6) || (u <= var5.c() + var6))
     {
       double var8 = 1.0D - var5.a(p_180449_1_) / var6;
       var8 = Math.pow(var8, 4.0D);
-      double var10 = p_180449_1_.P + (p_180449_1_.s - p_180449_1_.P) * p_180449_2_;
-      double var12 = p_180449_1_.Q + (p_180449_1_.t - p_180449_1_.Q) * p_180449_2_;
-      double var14 = p_180449_1_.R + (p_180449_1_.u - p_180449_1_.R) * p_180449_2_;
+      double var10 = P + (s - P) * p_180449_2_;
+      double var12 = Q + (t - Q) * p_180449_2_;
+      double var14 = R + (u - R) * p_180449_2_;
       bfl.l();
       bfl.a(770, 1, 1, 0);
-      this.i.a(g);
+      i.a(g);
       bfl.a(false);
       bfl.E();
       int var16 = var5.a().a();
@@ -1967,17 +1967,17 @@ public class bfr
   
   public void a(bfx p_174981_1_, bfd p_174981_2_, pk p_174981_3_, float p_174981_4_)
   {
-    double var5 = p_174981_3_.P + (p_174981_3_.s - p_174981_3_.P) * p_174981_4_;
-    double var7 = p_174981_3_.Q + (p_174981_3_.t - p_174981_3_.Q) * p_174981_4_;
-    double var9 = p_174981_3_.R + (p_174981_3_.u - p_174981_3_.R) * p_174981_4_;
-    if (!this.x.isEmpty())
+    double var5 = P + (s - P) * p_174981_4_;
+    double var7 = Q + (t - Q) * p_174981_4_;
+    double var9 = R + (u - R) * p_174981_4_;
+    if (!x.isEmpty())
     {
-      this.i.a(bmh.g);
+      i.a(bmh.g);
       s();
       p_174981_2_.a(7, bms.a);
       p_174981_2_.c(-var5, -var7, -var9);
       p_174981_2_.c();
-      Iterator var11 = this.x.values().iterator();
+      Iterator var11 = x.values().iterator();
       while (var11.hasNext())
       {
         kw var12 = (kw)var11.next();
@@ -1985,7 +1985,7 @@ public class bfr
         double var14 = var13.n() - var5;
         double var16 = var13.o() - var7;
         double var18 = var13.p() - var9;
-        afh var20 = this.k.p(var13).c();
+        afh var20 = k.p(var13).c();
         boolean renderBreaking;
         boolean renderBreaking;
         if (Reflector.ForgeTileEntity_canRenderBreaking.exists())
@@ -1994,7 +1994,7 @@ public class bfr
           boolean tileEntityRenderBreaking = ((block instanceof afs)) || ((block instanceof agp)) || ((block instanceof ajl)) || ((block instanceof ajm));
           if (!tileEntityRenderBreaking)
           {
-            akw te = this.k.s(var13);
+            akw te = k.s(var13);
             if (te != null) {
               tileEntityRenderBreaking = Reflector.callBoolean(te, Reflector.ForgeTileEntity_canRenderBreaking, new Object[0]);
             }
@@ -2012,13 +2012,13 @@ public class bfr
           }
           else
           {
-            alz var21 = this.k.p(var13);
+            alz var21 = k.p(var13);
             if (var21.c().t() != arm.a)
             {
               int var22 = var12.c();
-              bmi var23 = this.z[var22];
-              bgd var24 = this.h.ae();
-              var24.a(var21, var13, var23, this.k);
+              bmi var23 = z[var22];
+              bgd var24 = h.ae();
+              var24.a(var21, var13, var23, k);
             }
           }
         }
@@ -2031,7 +2031,7 @@ public class bfr
   
   public void a(wn p_72731_1_, auh p_72731_2_, int p_72731_3_, float p_72731_4_)
   {
-    if ((p_72731_3_ == 0) && (p_72731_2_.a == auh.a.b))
+    if ((p_72731_3_ == 0) && (a == auh.a.b))
     {
       bfl.l();
       bfl.a(770, 771, 1, 0);
@@ -2044,14 +2044,14 @@ public class bfr
       bfl.a(false);
       float var5 = 0.002F;
       cj var6 = p_72731_2_.a();
-      afh var7 = this.k.p(var6).c();
-      if ((var7.t() != arm.a) && (this.k.af().a(var6)))
+      afh var7 = k.p(var6).c();
+      if ((var7.t() != arm.a) && (k.af().a(var6)))
       {
-        var7.a(this.k, var6);
-        double var8 = p_72731_1_.P + (p_72731_1_.s - p_72731_1_.P) * p_72731_4_;
-        double var10 = p_72731_1_.Q + (p_72731_1_.t - p_72731_1_.Q) * p_72731_4_;
-        double var12 = p_72731_1_.R + (p_72731_1_.u - p_72731_1_.R) * p_72731_4_;
-        a(var7.b(this.k, var6).b(0.0020000000949949026D, 0.0020000000949949026D, 0.0020000000949949026D).c(-var8, -var10, -var12));
+        var7.a(k, var6);
+        double var8 = P + (s - P) * p_72731_4_;
+        double var10 = Q + (t - Q) * p_72731_4_;
+        double var12 = R + (u - R) * p_72731_4_;
+        a(var7.b(k, var6).b(0.0020000000949949026D, 0.0020000000949949026D, 0.0020000000949949026D).c(-var8, -var10, -var12));
       }
       bfl.a(true);
       bfl.w();
@@ -2067,28 +2067,28 @@ public class bfr
     bfx var1 = bfx.a();
     bfd var2 = var1.c();
     var2.a(3, bms.e);
-    var2.b(p_500146_0_.a, p_500146_0_.b, p_500146_0_.c).d();
-    var2.b(p_500146_0_.d, p_500146_0_.b, p_500146_0_.c).d();
-    var2.b(p_500146_0_.d, p_500146_0_.b, p_500146_0_.f).d();
-    var2.b(p_500146_0_.a, p_500146_0_.b, p_500146_0_.f).d();
-    var2.b(p_500146_0_.a, p_500146_0_.b, p_500146_0_.c).d();
+    var2.b(a, b, c).d();
+    var2.b(d, b, c).d();
+    var2.b(d, b, f).d();
+    var2.b(a, b, f).d();
+    var2.b(a, b, c).d();
     var1.b();
     var2.a(3, bms.e);
-    var2.b(p_500146_0_.a, p_500146_0_.e, p_500146_0_.c).d();
-    var2.b(p_500146_0_.d, p_500146_0_.e, p_500146_0_.c).d();
-    var2.b(p_500146_0_.d, p_500146_0_.e, p_500146_0_.f).d();
-    var2.b(p_500146_0_.a, p_500146_0_.e, p_500146_0_.f).d();
-    var2.b(p_500146_0_.a, p_500146_0_.e, p_500146_0_.c).d();
+    var2.b(a, e, c).d();
+    var2.b(d, e, c).d();
+    var2.b(d, e, f).d();
+    var2.b(a, e, f).d();
+    var2.b(a, e, c).d();
     var1.b();
     var2.a(1, bms.e);
-    var2.b(p_500146_0_.a, p_500146_0_.b, p_500146_0_.c).d();
-    var2.b(p_500146_0_.a, p_500146_0_.e, p_500146_0_.c).d();
-    var2.b(p_500146_0_.d, p_500146_0_.b, p_500146_0_.c).d();
-    var2.b(p_500146_0_.d, p_500146_0_.e, p_500146_0_.c).d();
-    var2.b(p_500146_0_.d, p_500146_0_.b, p_500146_0_.f).d();
-    var2.b(p_500146_0_.d, p_500146_0_.e, p_500146_0_.f).d();
-    var2.b(p_500146_0_.a, p_500146_0_.b, p_500146_0_.f).d();
-    var2.b(p_500146_0_.a, p_500146_0_.e, p_500146_0_.f).d();
+    var2.b(a, b, c).d();
+    var2.b(a, e, c).d();
+    var2.b(d, b, c).d();
+    var2.b(d, e, c).d();
+    var2.b(d, b, f).d();
+    var2.b(d, e, f).d();
+    var2.b(a, b, f).d();
+    var2.b(a, e, f).d();
     var1.b();
   }
   
@@ -2097,34 +2097,34 @@ public class bfr
     bfx var5 = bfx.a();
     bfd var6 = var5.c();
     var6.a(3, bms.f);
-    var6.b(p_500147_0_.a, p_500147_0_.b, p_500147_0_.c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.d, p_500147_0_.b, p_500147_0_.c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.d, p_500147_0_.b, p_500147_0_.f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.a, p_500147_0_.b, p_500147_0_.f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.a, p_500147_0_.b, p_500147_0_.c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(a, b, c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(d, b, c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(d, b, f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(a, b, f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(a, b, c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
     var5.b();
     var6.a(3, bms.f);
-    var6.b(p_500147_0_.a, p_500147_0_.e, p_500147_0_.c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.d, p_500147_0_.e, p_500147_0_.c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.d, p_500147_0_.e, p_500147_0_.f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.a, p_500147_0_.e, p_500147_0_.f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.a, p_500147_0_.e, p_500147_0_.c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(a, e, c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(d, e, c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(d, e, f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(a, e, f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(a, e, c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
     var5.b();
     var6.a(1, bms.f);
-    var6.b(p_500147_0_.a, p_500147_0_.b, p_500147_0_.c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.a, p_500147_0_.e, p_500147_0_.c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.d, p_500147_0_.b, p_500147_0_.c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.d, p_500147_0_.e, p_500147_0_.c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.d, p_500147_0_.b, p_500147_0_.f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.d, p_500147_0_.e, p_500147_0_.f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.a, p_500147_0_.b, p_500147_0_.f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
-    var6.b(p_500147_0_.a, p_500147_0_.e, p_500147_0_.f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(a, b, c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(a, e, c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(d, b, c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(d, e, c).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(d, b, f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(d, e, f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(a, b, f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
+    var6.b(a, e, f).b(p_500147_1_, p_500147_2_, p_500147_3_, p_500147_4_).d();
     var5.b();
   }
   
   private void b(int p_72725_1_, int p_72725_2_, int p_72725_3_, int p_72725_4_, int p_72725_5_, int p_72725_6_)
   {
-    this.o.a(p_72725_1_, p_72725_2_, p_72725_3_, p_72725_4_, p_72725_5_, p_72725_6_);
+    o.a(p_72725_1_, p_72725_2_, p_72725_3_, p_72725_4_, p_72725_5_, p_72725_6_);
   }
   
   public void a(cj pos)
@@ -2150,17 +2150,17 @@ public class bfr
   
   public void a(String p_174961_1_, cj p_174961_2_)
   {
-    bpj var3 = (bpj)this.y.get(p_174961_2_);
+    bpj var3 = (bpj)y.get(p_174961_2_);
     if (var3 != null)
     {
-      this.h.W().b(var3);
-      this.y.remove(p_174961_2_);
+      h.W().b(var3);
+      y.remove(p_174961_2_);
     }
     if (p_174961_1_ != null)
     {
       aak var4 = aak.b(p_174961_1_);
       if (var4 != null) {
-        this.h.q.a(var4.g());
+        h.q.a(var4.g());
       }
       jy resource = null;
       if ((Reflector.ForgeItemRecord_getRecordResource.exists()) && (var4 != null)) {
@@ -2171,8 +2171,8 @@ public class bfr
       }
       bpf var5 = bpf.a(resource, p_174961_2_.n(), p_174961_2_.o(), p_174961_2_.p());
       
-      this.y.put(p_174961_2_, var5);
-      this.h.W().a(var5);
+      y.put(p_174961_2_, var5);
+      h.W().a(var5);
     }
   }
   
@@ -2201,7 +2201,7 @@ public class bfr
         public String a()
           throws Exception
         {
-          return c.a(p_180442_3_, p_180442_7_, this.val$p_180442_7_);
+          return c.a(p_180442_3_, p_180442_7_, val$p_180442_7_);
         }
       });
       throw new e(var17);
@@ -2215,15 +2215,15 @@ public class bfr
   
   private beb b(int p_174974_1_, boolean p_174974_2_, double p_174974_3_, double p_174974_5_, double p_174974_7_, double p_174974_9_, double p_174974_11_, double p_174974_13_, int... p_174974_15_)
   {
-    if ((this.h != null) && (this.h.ac() != null) && (this.h.j != null))
+    if ((h != null) && (h.ac() != null) && (h.j != null))
     {
-      int var16 = this.h.t.aL;
-      if ((var16 == 1) && (this.k.s.nextInt(3) == 0)) {
+      int var16 = h.t.aL;
+      if ((var16 == 1) && (k.s.nextInt(3) == 0)) {
         var16 = 2;
       }
-      double var17 = this.h.ac().s - p_174974_3_;
-      double var19 = this.h.ac().t - p_174974_5_;
-      double var21 = this.h.ac().u - p_174974_7_;
+      double var17 = h.ac().s - p_174974_3_;
+      double var19 = h.ac().t - p_174974_5_;
+      double var21 = h.ac().u - p_174974_7_;
       
       int id = p_174974_1_;
       if ((id == cy.c.c()) && (!Config.isAnimatedExplosion())) {
@@ -2281,7 +2281,7 @@ public class bfr
         return null;
       }
       if (p_174974_2_) {
-        return this.h.j.a(p_174974_1_, p_174974_3_, p_174974_5_, p_174974_7_, p_174974_9_, p_174974_11_, p_174974_13_, p_174974_15_);
+        return h.j.a(p_174974_1_, p_174974_3_, p_174974_5_, p_174974_7_, p_174974_9_, p_174974_11_, p_174974_13_, p_174974_15_);
       }
       double var23 = 16.0D;
       
@@ -2295,15 +2295,15 @@ public class bfr
       if (var16 > 1) {
         return null;
       }
-      beb entityFx = this.h.j.a(p_174974_1_, p_174974_3_, p_174974_5_, p_174974_7_, p_174974_9_, p_174974_11_, p_174974_13_, p_174974_15_);
+      beb entityFx = h.j.a(p_174974_1_, p_174974_3_, p_174974_5_, p_174974_7_, p_174974_9_, p_174974_11_, p_174974_13_, p_174974_15_);
       if (id == cy.e.c()) {
-        CustomColorizer.updateWaterFX(entityFx, this.k, p_174974_3_, p_174974_5_, p_174974_7_);
+        CustomColorizer.updateWaterFX(entityFx, k, p_174974_3_, p_174974_5_, p_174974_7_);
       }
       if (id == cy.f.c()) {
-        CustomColorizer.updateWaterFX(entityFx, this.k, p_174974_3_, p_174974_5_, p_174974_7_);
+        CustomColorizer.updateWaterFX(entityFx, k, p_174974_3_, p_174974_5_, p_174974_7_);
       }
       if (id == cy.N.c()) {
-        CustomColorizer.updateWaterFX(entityFx, this.k, p_174974_3_, p_174974_5_, p_174974_7_);
+        CustomColorizer.updateWaterFX(entityFx, k, p_174974_3_, p_174974_5_, p_174974_7_);
       }
       if (id == cy.w.c()) {
         CustomColorizer.updateMyceliumFX(entityFx);
@@ -2312,7 +2312,7 @@ public class bfr
         CustomColorizer.updatePortalFX(entityFx);
       }
       if (id == cy.E.c()) {
-        CustomColorizer.updateReddustFX(entityFx, this.k, p_174974_3_, p_174974_5_, p_174974_7_);
+        CustomColorizer.updateReddustFX(entityFx, k, p_174974_3_, p_174974_5_, p_174974_7_);
       }
       return entityFx;
     }
@@ -2334,15 +2334,15 @@ public class bfr
     {
     case 1013: 
     case 1018: 
-      if (this.h.ac() != null)
+      if (h.ac() != null)
       {
-        double var4 = p_180440_2_.n() - this.h.ac().s;
-        double var6 = p_180440_2_.o() - this.h.ac().t;
-        double var8 = p_180440_2_.p() - this.h.ac().u;
+        double var4 = p_180440_2_.n() - h.ac().s;
+        double var6 = p_180440_2_.o() - h.ac().t;
+        double var8 = p_180440_2_.p() - h.ac().u;
         double var10 = Math.sqrt(var4 * var4 + var6 * var6 + var8 * var8);
-        double var12 = this.h.ac().s;
-        double var14 = this.h.ac().t;
-        double var16 = this.h.ac().u;
+        double var12 = h.ac().s;
+        double var14 = h.ac().t;
+        double var16 = h.ac().u;
         if (var10 > 0.0D)
         {
           var12 += var4 / var10 * 2.0D;
@@ -2350,9 +2350,9 @@ public class bfr
           var16 += var8 / var10 * 2.0D;
         }
         if (p_180440_1_ == 1013) {
-          this.k.a(var12, var14, var16, "mob.wither.spawn", 1.0F, 1.0F, false);
+          k.a(var12, var14, var16, "mob.wither.spawn", 1.0F, 1.0F, false);
         } else {
-          this.k.a(var12, var14, var16, "mob.enderdragon.end", 5.0F, 1.0F, false);
+          k.a(var12, var14, var16, "mob.enderdragon.end", 5.0F, 1.0F, false);
         }
       }
       break;
@@ -2361,7 +2361,7 @@ public class bfr
   
   public void a(wn p_180439_1_, int p_180439_2_, cj p_180439_3_, int p_180439_4_)
   {
-    Random var5 = this.k.s;
+    Random var5 = k.s;
     double var9;
     double var11;
     double var32;
@@ -2371,68 +2371,68 @@ public class bfr
     switch (p_180439_2_)
     {
     case 1000: 
-      this.k.a(p_180439_3_, "random.click", 1.0F, 1.0F, false);
+      k.a(p_180439_3_, "random.click", 1.0F, 1.0F, false);
       break;
     case 1001: 
-      this.k.a(p_180439_3_, "random.click", 1.0F, 1.2F, false);
+      k.a(p_180439_3_, "random.click", 1.0F, 1.2F, false);
       break;
     case 1002: 
-      this.k.a(p_180439_3_, "random.bow", 1.0F, 1.2F, false);
+      k.a(p_180439_3_, "random.bow", 1.0F, 1.2F, false);
       break;
     case 1003: 
-      this.k.a(p_180439_3_, "random.door_open", 1.0F, this.k.s.nextFloat() * 0.1F + 0.9F, false);
+      k.a(p_180439_3_, "random.door_open", 1.0F, k.s.nextFloat() * 0.1F + 0.9F, false);
       break;
     case 1004: 
-      this.k.a(p_180439_3_, "random.fizz", 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
+      k.a(p_180439_3_, "random.fizz", 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
       break;
     case 1005: 
       if ((zw.b(p_180439_4_) instanceof aak)) {
-        this.k.a(p_180439_3_, "records." + ((aak)zw.b(p_180439_4_)).a);
+        k.a(p_180439_3_, "records." + ba);
       } else {
-        this.k.a(p_180439_3_, (String)null);
+        k.a(p_180439_3_, (String)null);
       }
       break;
     case 1006: 
-      this.k.a(p_180439_3_, "random.door_close", 1.0F, this.k.s.nextFloat() * 0.1F + 0.9F, false);
+      k.a(p_180439_3_, "random.door_close", 1.0F, k.s.nextFloat() * 0.1F + 0.9F, false);
       break;
     case 1007: 
-      this.k.a(p_180439_3_, "mob.ghast.charge", 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+      k.a(p_180439_3_, "mob.ghast.charge", 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
       break;
     case 1008: 
-      this.k.a(p_180439_3_, "mob.ghast.fireball", 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+      k.a(p_180439_3_, "mob.ghast.fireball", 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
       break;
     case 1009: 
-      this.k.a(p_180439_3_, "mob.ghast.fireball", 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+      k.a(p_180439_3_, "mob.ghast.fireball", 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
       break;
     case 1010: 
-      this.k.a(p_180439_3_, "mob.zombie.wood", 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+      k.a(p_180439_3_, "mob.zombie.wood", 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
       break;
     case 1011: 
-      this.k.a(p_180439_3_, "mob.zombie.metal", 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+      k.a(p_180439_3_, "mob.zombie.metal", 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
       break;
     case 1012: 
-      this.k.a(p_180439_3_, "mob.zombie.woodbreak", 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+      k.a(p_180439_3_, "mob.zombie.woodbreak", 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
       break;
     case 1014: 
-      this.k.a(p_180439_3_, "mob.wither.shoot", 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+      k.a(p_180439_3_, "mob.wither.shoot", 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
       break;
     case 1015: 
-      this.k.a(p_180439_3_, "mob.bat.takeoff", 0.05F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+      k.a(p_180439_3_, "mob.bat.takeoff", 0.05F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
       break;
     case 1016: 
-      this.k.a(p_180439_3_, "mob.zombie.infect", 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+      k.a(p_180439_3_, "mob.zombie.infect", 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
       break;
     case 1017: 
-      this.k.a(p_180439_3_, "mob.zombie.unfect", 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+      k.a(p_180439_3_, "mob.zombie.unfect", 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
       break;
     case 1020: 
-      this.k.a(p_180439_3_, "random.anvil_break", 1.0F, this.k.s.nextFloat() * 0.1F + 0.9F, false);
+      k.a(p_180439_3_, "random.anvil_break", 1.0F, k.s.nextFloat() * 0.1F + 0.9F, false);
       break;
     case 1021: 
-      this.k.a(p_180439_3_, "random.anvil_use", 1.0F, this.k.s.nextFloat() * 0.1F + 0.9F, false);
+      k.a(p_180439_3_, "random.anvil_use", 1.0F, k.s.nextFloat() * 0.1F + 0.9F, false);
       break;
     case 1022: 
-      this.k.a(p_180439_3_, "random.anvil_land", 0.3F, this.k.s.nextFloat() * 0.1F + 0.9F, false);
+      k.a(p_180439_3_, "random.anvil_land", 0.3F, k.s.nextFloat() * 0.1F + 0.9F, false);
       break;
     case 2000: 
       int var31 = p_180439_4_ % 3 - 1;
@@ -2455,9 +2455,9 @@ public class bfr
     case 2001: 
       afh var6 = afh.c(p_180439_4_ & 0xFFF);
       if (var6.t() != arm.a) {
-        this.h.W().a(new bpf(new jy(var6.H.a()), (var6.H.d() + 1.0F) / 2.0F, var6.H.e() * 0.8F, p_180439_3_.n() + 0.5F, p_180439_3_.o() + 0.5F, p_180439_3_.p() + 0.5F));
+        h.W().a(new bpf(new jy(H.a()), (H.d() + 1.0F) / 2.0F, H.e() * 0.8F, p_180439_3_.n() + 0.5F, p_180439_3_.o() + 0.5F, p_180439_3_.p() + 0.5F));
       }
-      this.h.j.a(p_180439_3_, var6.a(p_180439_4_ >> 12 & 0xFF));
+      h.j.a(p_180439_3_, var6.a(p_180439_4_ >> 12 & 0xFF));
       break;
     case 2002: 
       var7 = p_180439_3_.n();
@@ -2489,7 +2489,7 @@ public class bfr
           var29.a((float)var19);
         }
       }
-      this.k.a(p_180439_3_, "game.potion.smash", 1.0F, this.k.s.nextFloat() * 0.1F + 0.9F, false);
+      k.a(p_180439_3_, "game.potion.smash", 1.0F, k.s.nextFloat() * 0.1F + 0.9F, false);
       break;
     case 2003: 
       var7 = p_180439_3_.n() + 0.5D;
@@ -2507,15 +2507,15 @@ public class bfr
     case 2004: 
       for (var18 = 0; var18 < 20; var18++)
       {
-        double var19 = p_180439_3_.n() + 0.5D + (this.k.s.nextFloat() - 0.5D) * 2.0D;
-        double var21 = p_180439_3_.o() + 0.5D + (this.k.s.nextFloat() - 0.5D) * 2.0D;
-        double var23 = p_180439_3_.p() + 0.5D + (this.k.s.nextFloat() - 0.5D) * 2.0D;
-        this.k.a(cy.l, var19, var21, var23, 0.0D, 0.0D, 0.0D, new int[0]);
-        this.k.a(cy.A, var19, var21, var23, 0.0D, 0.0D, 0.0D, new int[0]);
+        double var19 = p_180439_3_.n() + 0.5D + (k.s.nextFloat() - 0.5D) * 2.0D;
+        double var21 = p_180439_3_.o() + 0.5D + (k.s.nextFloat() - 0.5D) * 2.0D;
+        double var23 = p_180439_3_.p() + 0.5D + (k.s.nextFloat() - 0.5D) * 2.0D;
+        k.a(cy.l, var19, var21, var23, 0.0D, 0.0D, 0.0D, new int[0]);
+        k.a(cy.A, var19, var21, var23, 0.0D, 0.0D, 0.0D, new int[0]);
       }
       return;
     case 2005: 
-      ze.a(this.k, p_180439_3_, p_180439_4_);
+      ze.a(k, p_180439_3_, p_180439_4_);
     }
   }
   
@@ -2523,58 +2523,58 @@ public class bfr
   {
     if ((progress >= 0) && (progress < 10))
     {
-      kw var4 = (kw)this.x.get(Integer.valueOf(breakerId));
+      kw var4 = (kw)x.get(Integer.valueOf(breakerId));
       if ((var4 == null) || (var4.b().n() != pos.n()) || (var4.b().o() != pos.o()) || (var4.b().p() != pos.p()))
       {
         var4 = new kw(breakerId, pos);
-        this.x.put(Integer.valueOf(breakerId), var4);
+        x.put(Integer.valueOf(breakerId), var4);
       }
       var4.a(progress);
-      var4.b(this.w);
+      var4.b(w);
     }
     else
     {
-      this.x.remove(Integer.valueOf(breakerId));
+      x.remove(Integer.valueOf(breakerId));
     }
   }
   
   public void m()
   {
-    this.ac = true;
+    ac = true;
   }
   
   public void resetClouds()
   {
-    this.cloudRenderer.reset();
+    cloudRenderer.reset();
   }
   
   public int getCountRenderers()
   {
-    return this.o.f.length;
+    return o.f.length;
   }
   
   public int getCountActiveRenderers()
   {
-    return this.m.size();
+    return m.size();
   }
   
   public int getCountEntitiesRendered()
   {
-    return this.S;
+    return S;
   }
   
   public int getCountTileEntitiesRendered()
   {
-    return this.countTileEntitiesRendered;
+    return countTileEntitiesRendered;
   }
   
   public void a(Collection p_500148_1_, Collection p_500148_2_)
   {
-    Set var3 = this.n;
-    synchronized (this.n)
+    Set var3 = n;
+    synchronized (n)
     {
-      this.n.removeAll(p_500148_1_);
-      this.n.addAll(p_500148_2_);
+      n.removeAll(p_500148_1_);
+      n.addAll(p_500148_2_);
     }
   }
   
@@ -2588,10 +2588,10 @@ public class bfr
     
     private a(bht p_i46248_2_, cq p_i46248_3_, int p_i46248_4_)
     {
-      this.c = EnumSet.noneOf(cq.class);
-      this.a = p_i46248_2_;
-      this.b = p_i46248_3_;
-      this.d = p_i46248_4_;
+      c = EnumSet.noneOf(cq.class);
+      a = p_i46248_2_;
+      b = p_i46248_3_;
+      d = p_i46248_4_;
     }
     
     a(bht p_i46249_2_, cq p_i46249_3_, int p_i46249_4_, Object p_i46249_5_)

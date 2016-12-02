@@ -19,12 +19,12 @@ final class yj$1
       int ☃ = (☃ instanceof wn) ? 1 : 0;
       int ☃ = ps.c(☃);
       zx ☃ = ☃.k();
-      ☃.b = 1;
+      b = 1;
       ☃.c(☃ - ☃, ☃);
       if ((☃ instanceof ps)) {
         ((ps)☃).a(☃, 2.0F);
       }
-      ☃.b -= 1;
+      b -= 1;
       return ☃;
     }
     return super.b(☃, ☃);

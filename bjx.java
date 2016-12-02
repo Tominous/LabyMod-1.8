@@ -13,8 +13,8 @@ public class bjx
     {
       protected void a()
       {
-        this.c = new bca(0.5F, true);
-        this.d = new bca(1.0F, true);
+        c = new bca(0.5F, true);
+        d = new bca(1.0F, true);
       }
     });
   }

@@ -8,25 +8,25 @@ public class awg$d
   
   public awg$d(avp ☃, avp ☃)
   {
-    this.a = ave.A();
-    this.b = ☃;
-    this.c = ☃;
+    a = ave.A();
+    b = ☃;
+    c = ☃;
   }
   
   public avp a()
   {
-    return this.b;
+    return b;
   }
   
   public avp b()
   {
-    return this.c;
+    return c;
   }
   
   public void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, boolean ☃)
   {
-    a(this.b, ☃, ☃, ☃, false);
-    a(this.c, ☃, ☃, ☃, false);
+    a(b, ☃, ☃, ☃, false);
+    a(c, ☃, ☃, ☃, false);
   }
   
   private void a(avp ☃, int ☃, int ☃, int ☃, boolean ☃)
@@ -45,15 +45,15 @@ public class awg$d
   
   private void a(avs ☃, int ☃, int ☃, int ☃, boolean ☃)
   {
-    ☃.i = ☃;
+    i = ☃;
     if (!☃) {
-      ☃.a(this.a, ☃, ☃);
+      ☃.a(a, ☃, ☃);
     }
   }
   
   private void a(avw ☃, int ☃, boolean ☃)
   {
-    ☃.f = ☃;
+    f = ☃;
     if (!☃) {
       ☃.g();
     }
@@ -61,22 +61,22 @@ public class awg$d
   
   private void a(avy ☃, int ☃, int ☃, int ☃, boolean ☃)
   {
-    ☃.h = ☃;
+    h = ☃;
     if (!☃) {
-      ☃.a(this.a, ☃, ☃);
+      ☃.a(a, ☃, ☃);
     }
   }
   
   public void a(int ☃, int ☃, int ☃)
   {
-    a(this.b, ☃, 0, 0, true);
-    a(this.c, ☃, 0, 0, true);
+    a(b, ☃, 0, 0, true);
+    a(c, ☃, 0, 0, true);
   }
   
   public boolean a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    boolean ☃ = a(this.b, ☃, ☃, ☃);
-    boolean ☃ = a(this.c, ☃, ☃, ☃);
+    boolean ☃ = a(b, ☃, ☃, ☃);
+    boolean ☃ = a(c, ☃, ☃, ☃);
     return (☃) || (☃);
   }
   
@@ -96,9 +96,9 @@ public class awg$d
   
   private boolean a(avs ☃, int ☃, int ☃, int ☃)
   {
-    boolean ☃ = ☃.c(this.a, ☃, ☃);
+    boolean ☃ = ☃.c(a, ☃, ☃);
     if (☃) {
-      this.d = ☃;
+      d = ☃;
     }
     return ☃;
   }
@@ -107,14 +107,14 @@ public class awg$d
   {
     ☃.a(☃, ☃, ☃);
     if (☃.m()) {
-      this.d = ☃;
+      d = ☃;
     }
   }
   
   public void b(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    b(this.b, ☃, ☃, ☃);
-    b(this.c, ☃, ☃, ☃);
+    b(b, ☃, ☃, ☃);
+    b(c, ☃, ☃, ☃);
   }
   
   private void b(avp ☃, int ☃, int ☃, int ☃)

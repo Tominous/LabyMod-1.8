@@ -19,7 +19,7 @@ public class aal
     }
     if (afi.af.d(☃, ☃))
     {
-      ☃.b -= 1;
+      b -= 1;
       ☃.a(☃, afi.af.Q());
       return true;
     }

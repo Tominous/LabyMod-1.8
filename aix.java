@@ -6,7 +6,7 @@ public class aix
   protected aix()
   {
     super(false);
-    j(this.M.b().a(b, afe.b.a));
+    j(M.b().a(b, afe.b.a));
   }
   
   protected void b(adm ☃, cj ☃, alz ☃, afh ☃)

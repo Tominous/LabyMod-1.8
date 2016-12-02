@@ -21,17 +21,17 @@ public abstract class aqq
   protected final void a(adm worldIn, final int p_180701_2_, final int p_180701_3_, int p_180701_4_, int p_180701_5_, ans p_180701_6_)
   {
     a(worldIn);
-    if (!this.structureLongMap.b(adg.a(p_180701_2_, p_180701_3_)))
+    if (!structureLongMap.b(adg.a(p_180701_2_, p_180701_3_)))
     {
-      this.b.nextInt();
+      b.nextInt();
       try
       {
         if (a(p_180701_2_, p_180701_3_))
         {
           aqu var7 = b(p_180701_2_, p_180701_3_);
-          this.e.put(Long.valueOf(adg.a(p_180701_2_, p_180701_3_)), var7);
+          e.put(Long.valueOf(adg.a(p_180701_2_, p_180701_3_)), var7);
           
-          this.structureLongMap.a(adg.a(p_180701_2_, p_180701_3_), var7);
+          structureLongMap.a(adg.a(p_180701_2_, p_180701_3_), var7);
           
           a(p_180701_2_, p_180701_3_, var7);
         }
@@ -47,7 +47,7 @@ public abstract class aqq
           public String a()
             throws Exception
           {
-            return aqq.this.a(p_180701_2_, p_180701_3_) ? "True" : "False";
+            return a(p_180701_2_, p_180701_3_) ? "True" : "False";
           }
         });
         var9.a("Chunk location", String.format("%d,%d", new Object[] { Integer.valueOf(p_180701_2_), Integer.valueOf(p_180701_3_) }));
@@ -68,7 +68,7 @@ public abstract class aqq
           public String a()
             throws Exception
           {
-            return aqq.this.getClass().getCanonicalName();
+            return getClass().getCanonicalName();
           }
         });
         throw new e(var8);
@@ -79,10 +79,10 @@ public abstract class aqq
   public boolean a(adm worldIn, Random p_175794_2_, adg p_175794_3_)
   {
     a(worldIn);
-    int var4 = (p_175794_3_.a << 4) + 8;
-    int var5 = (p_175794_3_.b << 4) + 8;
+    int var4 = (a << 4) + 8;
+    int var5 = (b << 4) + 8;
     boolean var6 = false;
-    Iterator var7 = this.e.values().iterator();
+    Iterator var7 = e.values().iterator();
     while (var7.hasNext())
     {
       aqu var8 = (aqu)var7.next();
@@ -99,13 +99,13 @@ public abstract class aqq
   
   public boolean b(cj p_175795_1_)
   {
-    a(this.c);
+    a(c);
     return c(p_175795_1_) != null;
   }
   
   protected aqu c(cj p_175797_1_)
   {
-    Iterator var2 = this.e.values().iterator();
+    Iterator var2 = e.values().iterator();
     while (var2.hasNext())
     {
       aqu var3 = (aqu)var2.next();
@@ -127,7 +127,7 @@ public abstract class aqq
   public boolean a(adm worldIn, cj p_175796_2_)
   {
     a(worldIn);
-    Iterator var3 = this.e.values().iterator();
+    Iterator var3 = e.values().iterator();
     aqu var4;
     do
     {
@@ -141,18 +141,18 @@ public abstract class aqq
   
   public cj b(adm worldIn, cj p_180706_2_)
   {
-    this.c = worldIn;
+    c = worldIn;
     a(worldIn);
-    this.b.setSeed(worldIn.J());
-    long var3 = this.b.nextLong();
-    long var5 = this.b.nextLong();
+    b.setSeed(worldIn.J());
+    long var3 = b.nextLong();
+    long var5 = b.nextLong();
     long var7 = (p_180706_2_.n() >> 4) * var3;
     long var9 = (p_180706_2_.p() >> 4) * var5;
-    this.b.setSeed(var7 ^ var9 ^ worldIn.J());
+    b.setSeed(var7 ^ var9 ^ worldIn.J());
     a(worldIn, p_180706_2_.n() >> 4, p_180706_2_.p() >> 4, 0, 0, (ans)null);
     double var11 = Double.MAX_VALUE;
     cj var13 = null;
-    Iterator var14 = this.e.values().iterator();
+    Iterator var14 = e.values().iterator();
     while (var14.hasNext())
     {
       aqu var15 = (aqu)var14.next();
@@ -198,33 +198,33 @@ public abstract class aqq
   
   private void a(adm worldIn)
   {
-    if (this.d == null)
+    if (d == null)
     {
       if (Reflector.ForgeWorld_getPerWorldStorage.exists())
       {
         aua mapStorage = (aua)Reflector.call(worldIn, Reflector.ForgeWorld_getPerWorldStorage, new Object[0]);
-        this.d = ((aqs)mapStorage.a(aqs.class, a()));
+        d = ((aqs)mapStorage.a(aqs.class, a()));
       }
       else
       {
-        this.d = ((aqs)worldIn.a(aqs.class, a()));
+        d = ((aqs)worldIn.a(aqs.class, a()));
       }
-      if (this.d == null)
+      if (d == null)
       {
-        this.d = new aqs(a());
+        d = new aqs(a());
         if (Reflector.ForgeWorld_getPerWorldStorage.exists())
         {
           aua mapStorage = (aua)Reflector.call(worldIn, Reflector.ForgeWorld_getPerWorldStorage, new Object[0]);
-          mapStorage.a(a(), this.d);
+          mapStorage.a(a(), d);
         }
         else
         {
-          worldIn.a(a(), this.d);
+          worldIn.a(a(), d);
         }
       }
       else
       {
-        dn var2 = this.d.a();
+        dn var2 = d.a();
         Iterator var3 = var2.c().iterator();
         while (var3.hasNext())
         {
@@ -240,9 +240,9 @@ public abstract class aqq
               aqu var9 = aqr.a(var6, worldIn);
               if (var9 != null)
               {
-                this.e.put(Long.valueOf(adg.a(var7, var8)), var9);
+                e.put(Long.valueOf(adg.a(var7, var8)), var9);
                 
-                this.structureLongMap.a(adg.a(var7, var8), var9);
+                structureLongMap.a(adg.a(var7, var8), var9);
               }
             }
           }
@@ -253,8 +253,8 @@ public abstract class aqq
   
   private void a(int p_143026_1_, int p_143026_2_, aqu p_143026_3_)
   {
-    this.d.a(p_143026_3_.a(p_143026_1_, p_143026_2_), p_143026_1_, p_143026_2_);
-    this.d.c();
+    d.a(p_143026_3_.a(p_143026_1_, p_143026_2_), p_143026_1_, p_143026_2_);
+    d.c();
   }
   
   protected abstract boolean a(int paramInt1, int paramInt2);

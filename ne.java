@@ -19,9 +19,9 @@ public class ne<T>
   
   public ne(Class<T> ☃)
   {
-    this.d = ☃;
-    this.c.add(☃);
-    this.b.put(☃, this.e);
+    d = ☃;
+    c.add(☃);
+    b.put(☃, e);
     for (Class<?> ☃ : a) {
       a(☃);
     }
@@ -30,19 +30,19 @@ public class ne<T>
   protected void a(Class<?> ☃)
   {
     a.add(☃);
-    for (T ☃ : this.e) {
+    for (T ☃ : e) {
       if (☃.isAssignableFrom(☃.getClass())) {
         a(☃, ☃);
       }
     }
-    this.c.add(☃);
+    c.add(☃);
   }
   
   protected Class<?> b(Class<?> ☃)
   {
-    if (this.d.isAssignableFrom(☃))
+    if (d.isAssignableFrom(☃))
     {
-      if (!this.c.contains(☃)) {
+      if (!c.contains(☃)) {
         a(☃);
       }
       return ☃;
@@ -52,7 +52,7 @@ public class ne<T>
   
   public boolean add(T ☃)
   {
-    for (Class<?> ☃ : this.c) {
+    for (Class<?> ☃ : c) {
       if (☃.isAssignableFrom(☃.getClass())) {
         a(☃, ☃);
       }
@@ -62,9 +62,9 @@ public class ne<T>
   
   private void a(T ☃, Class<?> ☃)
   {
-    List<T> ☃ = (List)this.b.get(☃);
+    List<T> ☃ = (List)b.get(☃);
     if (☃ == null) {
-      this.b.put(☃, Lists.newArrayList(new Object[] { ☃ }));
+      b.put(☃, Lists.newArrayList(new Object[] { ☃ }));
     } else {
       ☃.add(☃);
     }
@@ -74,10 +74,10 @@ public class ne<T>
   {
     T ☃ = (T)☃;
     boolean ☃ = false;
-    for (Class<?> ☃ : this.c) {
+    for (Class<?> ☃ : c) {
       if (☃.isAssignableFrom(☃.getClass()))
       {
-        List<T> ☃ = (List)this.b.get(☃);
+        List<T> ☃ = (List)b.get(☃);
         if ((☃ != null) && (☃.remove(☃))) {
           ☃ = true;
         }
@@ -97,7 +97,7 @@ public class ne<T>
     {
       public Iterator<S> iterator()
       {
-        List<T> ☃ = (List)ne.a(ne.this).get(ne.this.b(☃));
+        List<T> ☃ = (List)ne.a(ne.this).get(b(☃));
         if (☃ == null) {
           return Iterators.emptyIterator();
         }
@@ -109,14 +109,14 @@ public class ne<T>
   
   public Iterator<T> iterator()
   {
-    if (this.e.isEmpty()) {
+    if (e.isEmpty()) {
       return Iterators.emptyIterator();
     }
-    return Iterators.unmodifiableIterator(this.e.iterator());
+    return Iterators.unmodifiableIterator(e.iterator());
   }
   
   public int size()
   {
-    return this.e.size();
+    return e.size();
   }
 }

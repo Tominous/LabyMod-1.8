@@ -8,6 +8,6 @@ class ato$2
   public String a()
     throws Exception
   {
-    return String.format("ID %02d - %s, ver %d. Features enabled: %b", new Object[] { Integer.valueOf(ato.a(this.a).g()), ato.a(this.a).a(), Integer.valueOf(ato.a(this.a).d()), Boolean.valueOf(ato.b(this.a)) });
+    return String.format("ID %02d - %s, ver %d. Features enabled: %b", new Object[] { Integer.valueOf(ato.a(a).g()), ato.a(a).a(), Integer.valueOf(ato.a(a).d()), Boolean.valueOf(ato.b(a)) });
   }
 }

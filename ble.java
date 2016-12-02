@@ -5,7 +5,7 @@ public class ble
   
   public ble(bjz ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(tw ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
@@ -14,7 +14,7 @@ public class ble
       return;
     }
     bfl.E();
-    this.a.g().c.c(0.0625F);
+    a.g().c.c(0.0625F);
     
     float ☃ = 0.625F;
     bfl.b(0.0F, -0.34375F, 0.0F);

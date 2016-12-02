@@ -47,25 +47,25 @@ public class axc
   
   public axc(axd ☃)
   {
-    this.r = ☃;
+    r = ☃;
   }
   
   public void b()
   {
-    this.n.clear();
+    n.clear();
     Keyboard.enableRepeatEvents(true);
     
-    this.a = bnq.a("createWorld.customize.custom.presets.title", new Object[0]);
-    this.s = bnq.a("createWorld.customize.presets.share", new Object[0]);
-    this.t = bnq.a("createWorld.customize.presets.list", new Object[0]);
-    this.i = new avw(2, this.q, 50, 40, this.l - 100, 20);
-    this.g = new axc.b();
+    a = bnq.a("createWorld.customize.custom.presets.title", new Object[0]);
+    s = bnq.a("createWorld.customize.presets.share", new Object[0]);
+    t = bnq.a("createWorld.customize.presets.list", new Object[0]);
+    i = new avw(2, q, 50, 40, l - 100, 20);
+    g = new axc.b();
     
-    this.i.f(2000);
-    this.i.a(this.r.a());
+    i.f(2000);
+    i.a(r.a());
     
-    this.n.add(this.h = new avs(0, this.l / 2 - 102, this.m - 27, 100, 20, bnq.a("createWorld.customize.presets.select", new Object[0])));
-    this.n.add(new avs(1, this.l / 2 + 3, this.m - 27, 100, 20, bnq.a("gui.cancel", new Object[0])));
+    n.add(h = new avs(0, l / 2 - 102, m - 27, 100, 20, bnq.a("createWorld.customize.presets.select", new Object[0])));
+    n.add(new avs(1, l / 2 + 3, m - 27, 100, 20, bnq.a("gui.cancel", new Object[0])));
     
     a();
   }
@@ -73,7 +73,7 @@ public class axc
   public void k()
   {
     super.k();
-    this.g.p();
+    g.p();
   }
   
   public void m()
@@ -83,27 +83,27 @@ public class axc
   
   protected void a(int ☃, int ☃, int ☃)
   {
-    this.i.a(☃, ☃, ☃);
+    i.a(☃, ☃, ☃);
     super.a(☃, ☃, ☃);
   }
   
   protected void a(char ☃, int ☃)
   {
-    if (!this.i.a(☃, ☃)) {
+    if (!i.a(☃, ☃)) {
       super.a(☃, ☃);
     }
   }
   
   protected void a(avs ☃)
   {
-    switch (☃.k)
+    switch (k)
     {
     case 0: 
-      this.r.a(this.i.b());
-      this.j.a(this.r);
+      r.a(i.b());
+      j.a(r);
       break;
     case 1: 
-      this.j.a(this.r);
+      j.a(r);
     }
   }
   
@@ -111,29 +111,29 @@ public class axc
   {
     c();
     
-    this.g.a(☃, ☃, ☃);
-    a(this.q, this.a, this.l / 2, 8, 16777215);
-    c(this.q, this.s, 50, 30, 10526880);
-    c(this.q, this.t, 50, 70, 10526880);
+    g.a(☃, ☃, ☃);
+    a(q, a, l / 2, 8, 16777215);
+    c(q, s, 50, 30, 10526880);
+    c(q, t, 50, 70, 10526880);
     
-    this.i.g();
+    i.g();
     super.a(☃, ☃, ☃);
   }
   
   public void e()
   {
-    this.i.a();
+    i.a();
     super.e();
   }
   
   public void a()
   {
-    this.h.l = g();
+    h.l = g();
   }
   
   private boolean g()
   {
-    return ((this.g.u > -1) && (this.g.u < f.size())) || (this.i.b().length() > 1);
+    return ((g.u > -1) && (g.u < f.size())) || (i.b().length() > 1);
   }
   
   class b
@@ -143,7 +143,7 @@ public class axc
     
     public b()
     {
-      super(axc.this.l, axc.this.m, 80, axc.this.m - 32, 38);
+      super(l, m, 80, m - 32, 38);
     }
     
     protected int b()
@@ -153,14 +153,14 @@ public class axc
     
     protected void a(int ☃, boolean ☃, int ☃, int ☃)
     {
-      this.u = ☃;
+      u = ☃;
       axc.this.a();
-      axc.b(axc.this).a(((axc.a)axc.f().get(axc.a(axc.this).u)).c.toString());
+      axc.b(axc.this).a(fgetau)).c.toString());
     }
     
     protected boolean a(int ☃)
     {
-      return ☃ == this.u;
+      return ☃ == u;
     }
     
     protected void a() {}
@@ -175,7 +175,7 @@ public class axc
       axc.d(axc.this, ☃ + 32, ☃ - 1, ☃ + 32, -6250336);
       
       bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-      this.a.P().a(☃);
+      a.P().a(☃);
       
       int ☃ = 32;
       int ☃ = 32;
@@ -192,8 +192,8 @@ public class axc
     protected void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
     {
       axc.a ☃ = (axc.a)axc.f().get(☃);
-      a(☃, ☃, ☃.b);
-      axc.this.q.a(☃.a, ☃ + 32 + 10, ☃ + 14, 16777215);
+      a(☃, ☃, b);
+      q.a(a, ☃ + 32 + 10, ☃ + 14, 16777215);
     }
   }
   
@@ -205,9 +205,9 @@ public class axc
     
     public a(String ☃, jy ☃, ant.a ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
-      this.c = ☃;
+      a = ☃;
+      b = ☃;
+      c = ☃;
     }
   }
 }

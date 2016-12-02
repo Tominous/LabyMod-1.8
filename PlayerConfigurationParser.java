@@ -23,7 +23,7 @@ public class PlayerConfigurationParser
   public PlayerConfiguration parsePlayerConfiguration(JsonElement je)
   {
     if (je == null) {
-      throw new JsonParseException("JSON object is null, player: " + this.player);
+      throw new JsonParseException("JSON object is null, player: " + player);
     }
     JsonObject jo = (JsonObject)je;
     
@@ -40,7 +40,7 @@ public class PlayerConfigurationParser
           String type = Json.getString(item, "type");
           if (type == null)
           {
-            Config.warn("Item type is null, player: " + this.player);
+            Config.warn("Item type is null, player: " + player);
           }
           else
           {
@@ -54,7 +54,7 @@ public class PlayerConfigurationParser
               {
                 String texturePath = Json.getString(item, "texture");
                 if (texturePath == null) {
-                  texturePath = "items/" + type + "/users/" + this.player + ".png";
+                  texturePath = "items/" + type + "/users/" + player + ".png";
                 }
                 BufferedImage image = downloadTextureImage(texturePath);
                 if (image != null)

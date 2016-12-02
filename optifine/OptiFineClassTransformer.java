@@ -31,7 +31,7 @@ public class OptiFineClassTransformer
         ZipFile zipFile = getOptiFineZipFile(url);
         if (zipFile != null)
         {
-          this.ofZipFile = zipFile;
+          ofZipFile = zipFile;
           dbg("OptiFine ClassTransformer");
           dbg("OptiFine URL: " + url);
           dbg("OptiFine ZIP file: " + zipFile);
@@ -43,7 +43,7 @@ public class OptiFineClassTransformer
     {
       e.printStackTrace();
     }
-    if (this.ofZipFile == null)
+    if (ofZipFile == null)
     {
       dbg("*** Can not find the OptiFine JAR in the classpath ***");
       dbg("*** OptiFine will not be loaded! ***");
@@ -81,17 +81,17 @@ public class OptiFineClassTransformer
   
   private byte[] getOptiFineClass(String name)
   {
-    if (this.ofZipFile == null) {
+    if (ofZipFile == null) {
       return null;
     }
     String fullName = name + ".class";
-    ZipEntry ze = this.ofZipFile.getEntry(fullName);
+    ZipEntry ze = ofZipFile.getEntry(fullName);
     if (ze == null) {
       return null;
     }
     try
     {
-      InputStream in = this.ofZipFile.getInputStream(ze);
+      InputStream in = ofZipFile.getInputStream(ze);
       byte[] bytes = readAll(in);
       if (bytes.length != ze.getSize())
       {

@@ -16,8 +16,8 @@ public abstract class qa
   protected void h()
   {
     super.h();
-    this.ac.a(16, Byte.valueOf((byte)0));
-    this.ac.a(17, "");
+    ac.a(16, Byte.valueOf((byte)0));
+    ac.a(17, "");
   }
   
   public void b(dn ☃)
@@ -49,7 +49,7 @@ public abstract class qa
       b(☃);
       m(true);
     }
-    this.bm.a(☃.n("Sitting"));
+    bm.a(☃.n("Sitting"));
     n(☃.n("Sitting"));
   }
   
@@ -61,10 +61,10 @@ public abstract class qa
     }
     for (int ☃ = 0; ☃ < 7; ☃++)
     {
-      double ☃ = this.V.nextGaussian() * 0.02D;
-      double ☃ = this.V.nextGaussian() * 0.02D;
-      double ☃ = this.V.nextGaussian() * 0.02D;
-      this.o.a(☃, this.s + this.V.nextFloat() * this.J * 2.0F - this.J, this.t + 0.5D + this.V.nextFloat() * this.K, this.u + this.V.nextFloat() * this.J * 2.0F - this.J, ☃, ☃, ☃, new int[0]);
+      double ☃ = V.nextGaussian() * 0.02D;
+      double ☃ = V.nextGaussian() * 0.02D;
+      double ☃ = V.nextGaussian() * 0.02D;
+      o.a(☃, s + V.nextFloat() * J * 2.0F - J, t + 0.5D + V.nextFloat() * K, u + V.nextFloat() * J * 2.0F - J, ☃, ☃, ☃, new int[0]);
     }
   }
   
@@ -81,16 +81,16 @@ public abstract class qa
   
   public boolean cl()
   {
-    return (this.ac.a(16) & 0x4) != 0;
+    return (ac.a(16) & 0x4) != 0;
   }
   
   public void m(boolean ☃)
   {
-    byte ☃ = this.ac.a(16);
+    byte ☃ = ac.a(16);
     if (☃) {
-      this.ac.b(16, Byte.valueOf((byte)(☃ | 0x4)));
+      ac.b(16, Byte.valueOf((byte)(☃ | 0x4)));
     } else {
-      this.ac.b(16, Byte.valueOf((byte)(☃ & 0xFFFFFFFB)));
+      ac.b(16, Byte.valueOf((byte)(☃ & 0xFFFFFFFB)));
     }
     cm();
   }
@@ -99,27 +99,27 @@ public abstract class qa
   
   public boolean cn()
   {
-    return (this.ac.a(16) & 0x1) != 0;
+    return (ac.a(16) & 0x1) != 0;
   }
   
   public void n(boolean ☃)
   {
-    byte ☃ = this.ac.a(16);
+    byte ☃ = ac.a(16);
     if (☃) {
-      this.ac.b(16, Byte.valueOf((byte)(☃ | 0x1)));
+      ac.b(16, Byte.valueOf((byte)(☃ | 0x1)));
     } else {
-      this.ac.b(16, Byte.valueOf((byte)(☃ & 0xFFFFFFFE)));
+      ac.b(16, Byte.valueOf((byte)(☃ & 0xFFFFFFFE)));
     }
   }
   
   public String b()
   {
-    return this.ac.e(17);
+    return ac.e(17);
   }
   
   public void b(String ☃)
   {
-    this.ac.b(17, ☃);
+    ac.b(17, ☃);
   }
   
   public pr co()
@@ -130,7 +130,7 @@ public abstract class qa
       if (☃ == null) {
         return null;
       }
-      return this.o.b(☃);
+      return o.b(☃);
     }
     catch (IllegalArgumentException ☃) {}
     return null;
@@ -143,7 +143,7 @@ public abstract class qa
   
   public se cp()
   {
-    return this.bm;
+    return bm;
   }
   
   public boolean a(pr ☃, pr ☃)
@@ -180,7 +180,7 @@ public abstract class qa
   
   public void a(ow ☃)
   {
-    if ((!this.o.D) && (this.o.Q().b("showDeathMessages")) && (l_()) && 
+    if ((!o.D) && (o.Q().b("showDeathMessages")) && (l_()) && 
       ((co() instanceof lf))) {
       ((lf)co()).a(bs().b());
     }

@@ -16,7 +16,7 @@ public class ServerManager
   {
     ServerData remove = null;
     for (ServerData d : getPendingServers()) {
-      if ((d != null) && (data != null) && (d.serverName != null) && (data.serverName != null) && (d.serverName == data.serverName)) {
+      if ((d != null) && (data != null) && (serverName != null) && (serverName != null) && (serverName == serverName)) {
         remove = d;
       }
     }
@@ -29,7 +29,7 @@ public class ServerManager
   public static boolean contains(String ip)
   {
     for (ServerData d : ) {
-      if ((d != null) && (d.serverName != null) && (d.serverName.equals(ip))) {
+      if ((d != null) && (serverName != null) && (serverName.equals(ip))) {
         return true;
       }
     }
@@ -39,7 +39,7 @@ public class ServerManager
   public static ServerData get(String ip)
   {
     for (ServerData d : ) {
-      if ((d != null) && (d.serverName != null) && (d.serverName.equals(ip))) {
+      if ((d != null) && (serverName != null) && (serverName.equals(ip))) {
         return d;
       }
     }
@@ -50,7 +50,7 @@ public class ServerManager
   {
     ServerData rem = null;
     for (ServerData d : getPendingServers()) {
-      if ((d != null) && (d.serverName == ip)) {
+      if ((d != null) && (serverName == ip)) {
         rem = d;
       }
     }

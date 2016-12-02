@@ -8,22 +8,22 @@ public class blc
   
   public blc(bjv p_i46112_1_)
   {
-    this.b = p_i46112_1_;
+    b = p_i46112_1_;
   }
   
   public void a(tv p_177162_1_, float p_177162_2_, float p_177162_3_, float p_177162_4_, float p_177162_5_, float p_177162_6_, float p_177162_7_, float p_177162_8_)
   {
     if ((!p_177162_1_.cm()) && (!p_177162_1_.ax()))
     {
-      this.b.a(a);
+      b.a(a);
       if ((p_177162_1_.l_()) && ("jeb_".equals(p_177162_1_.aM())))
       {
         boolean var17 = true;
-        int var10 = p_177162_1_.W / 25 + p_177162_1_.F();
+        int var10 = W / 25 + p_177162_1_.F();
         int var11 = zd.values().length;
         int var12 = var10 % var11;
         int var13 = (var10 + 1) % var11;
-        float var14 = (p_177162_1_.W % 25 + p_177162_4_) / 25.0F;
+        float var14 = (W % 25 + p_177162_4_) / 25.0F;
         float[] var15 = tv.a(zd.b(var12));
         float[] var16 = tv.a(zd.b(var13));
         if (Config.isCustomColors())
@@ -41,9 +41,9 @@ public class blc
         }
         bfl.c(var9[0], var9[1], var9[2]);
       }
-      this.c.a(this.b.b());
-      this.c.a(p_177162_1_, p_177162_2_, p_177162_3_, p_177162_4_);
-      this.c.a(p_177162_1_, p_177162_2_, p_177162_3_, p_177162_5_, p_177162_6_, p_177162_7_, p_177162_8_);
+      c.a(b.b());
+      c.a(p_177162_1_, p_177162_2_, p_177162_3_, p_177162_4_);
+      c.a(p_177162_1_, p_177162_2_, p_177162_3_, p_177162_5_, p_177162_6_, p_177162_7_, p_177162_8_);
     }
   }
   

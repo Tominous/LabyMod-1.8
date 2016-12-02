@@ -33,52 +33,52 @@ public class bht
   
   public bht(adm worldIn, bfr renderGlobalIn, cj blockPosIn, int indexIn)
   {
-    this.b = bhq.a;
-    this.g = new ReentrantLock();
-    this.h = new ReentrantLock();
-    this.i = null;
-    this.j = Sets.newHashSet();
-    this.l = avd.h(16);
-    this.m = new bmt[adf.values().length];
-    this.n = -1;
-    this.o = true;
+    b = bhq.a;
+    g = new ReentrantLock();
+    h = new ReentrantLock();
+    i = null;
+    j = Sets.newHashSet();
+    l = avd.h(16);
+    m = new bmt[adf.values().length];
+    n = -1;
+    o = true;
     
-    this.d = worldIn;
-    this.e = renderGlobalIn;
-    this.k = indexIn;
+    d = worldIn;
+    e = renderGlobalIn;
+    k = indexIn;
     if (!blockPosIn.equals(j())) {
       a(blockPosIn);
     }
     if (bqs.f()) {
       for (int var5 = 0; var5 < adf.values().length; var5++) {
-        this.m[var5] = new bmt(bms.a);
+        m[var5] = new bmt(bms.a);
       }
     }
   }
   
   public boolean a(int frameIndexIn)
   {
-    if (this.n == frameIndexIn) {
+    if (n == frameIndexIn) {
       return false;
     }
-    this.n = frameIndexIn;
+    n = frameIndexIn;
     return true;
   }
   
   public bmt b(int p_178565_1_)
   {
-    return this.m[p_178565_1_];
+    return m[p_178565_1_];
   }
   
   public void a(cj p_178576_1_)
   {
     h();
-    this.f = p_178576_1_;
-    this.c = new aug(p_178576_1_, p_178576_1_.a(16, 16, 16));
+    f = p_178576_1_;
+    c = new aug(p_178576_1_, p_178576_1_.a(16, 16, 16));
     
     m();
-    for (int i = 0; i < this.positionOffsets16.length; i++) {
-      this.positionOffsets16[i] = null;
+    for (int i = 0; i < positionOffsets16.length; i++) {
+      positionOffsets16[i] = null;
     }
   }
   
@@ -89,7 +89,7 @@ public class bht
     {
       bfd worldRenderer = p_178570_4_.d().a(adf.d);
       
-      a(worldRenderer, this.f);
+      a(worldRenderer, f);
       
       worldRenderer.a(var5.c());
       
@@ -101,7 +101,7 @@ public class bht
   {
     bhq var5 = new bhq();
     boolean var6 = true;
-    cj var7 = this.f;
+    cj var7 = f;
     cj var8 = var7.a(15, 15, 15);
     p_178581_4_.f().lock();
     bff var9;
@@ -110,10 +110,10 @@ public class bht
       if (p_178581_4_.a() != bhn.a.b) {
         return;
       }
-      if (this.d == null) {
+      if (d == null) {
         return;
       }
-      var9 = createRegionRenderCache(this.d, var7.a(-1, -1, -1), var8.a(1, 1, 1), 1);
+      var9 = createRegionRenderCache(d, var7.a(-1, -1, -1), var8.a(1, 1, 1), 1);
       p_178581_4_.a(var5);
     }
     finally
@@ -168,7 +168,7 @@ public class bht
         }
         else
         {
-          blockLayers = this.blockLayersSingle;
+          blockLayers = blockLayersSingle;
           blockLayers[0] = var17.m();
         }
         for (int i = 0; i < blockLayers.length; i++)
@@ -219,85 +219,85 @@ public class bht
       }
     }
     var5.a(var10.a());
-    this.g.lock();
+    g.lock();
     try
     {
       HashSet var28 = Sets.newHashSet(var11);
-      HashSet var29 = Sets.newHashSet(this.j);
-      var28.removeAll(this.j);
+      HashSet var29 = Sets.newHashSet(j);
+      var28.removeAll(j);
       var29.removeAll(var11);
-      this.j.clear();
-      this.j.addAll(var11);
-      this.e.a(var29, var28);
+      j.clear();
+      j.addAll(var11);
+      e.a(var29, var28);
     }
     finally
     {
-      this.g.unlock();
+      g.unlock();
     }
   }
   
   protected void b()
   {
-    this.g.lock();
+    g.lock();
     try
     {
-      if ((this.i != null) && (this.i.a() != bhn.a.d))
+      if ((i != null) && (i.a() != bhn.a.d))
       {
-        this.i.e();
-        this.i = null;
+        i.e();
+        i = null;
       }
     }
     finally
     {
-      this.g.unlock();
+      g.unlock();
     }
   }
   
   public ReentrantLock c()
   {
-    return this.g;
+    return g;
   }
   
   public bhn d()
   {
-    this.g.lock();
+    g.lock();
     bhn var1;
     try
     {
       b();
-      this.i = new bhn(this, bhn.b.a);
-      var1 = this.i;
+      i = new bhn(this, bhn.b.a);
+      var1 = i;
     }
     finally
     {
-      this.g.unlock();
+      g.unlock();
     }
     return var1;
   }
   
   public bhn e()
   {
-    this.g.lock();
+    g.lock();
     bhn var1;
     try
     {
-      if ((this.i == null) || (this.i.a() != bhn.a.a))
+      if ((i == null) || (i.a() != bhn.a.a))
       {
-        if ((this.i != null) && (this.i.a() != bhn.a.d))
+        if ((i != null) && (i.a() != bhn.a.d))
         {
-          this.i.e();
-          this.i = null;
+          i.e();
+          i = null;
         }
-        this.i = new bhn(this, bhn.b.b);
-        this.i.a(this.b);
-        bhn var1 = this.i;
+        i = new bhn(this, bhn.b.b);
+        i.a(b);
+        bhn var1 = i;
         return var1;
       }
       var1 = null;
     }
     finally
     {
-      this.g.unlock();
+      g.unlock();
     }
     return var1;
   }
@@ -326,63 +326,63 @@ public class bht
     bfl.b(-8.0F, -8.0F, -8.0F);
     bfl.a(var1, var1, var1);
     bfl.b(8.0F, 8.0F, 8.0F);
-    bfl.a(2982, this.l);
+    bfl.a(2982, l);
     bfl.F();
   }
   
   public void f()
   {
-    bfl.a(this.l);
+    bfl.a(l);
   }
   
   public bhq g()
   {
-    return this.b;
+    return b;
   }
   
   public void a(bhq p_178580_1_)
   {
-    this.h.lock();
+    h.lock();
     try
     {
-      this.b = p_178580_1_;
+      b = p_178580_1_;
     }
     finally
     {
-      this.h.unlock();
+      h.unlock();
     }
   }
   
   public void h()
   {
     b();
-    this.b = bhq.a;
+    b = bhq.a;
   }
   
   public void a()
   {
     h();
-    this.d = null;
+    d = null;
     for (int var1 = 0; var1 < adf.values().length; var1++) {
-      if (this.m[var1] != null) {
-        this.m[var1].c();
+      if (m[var1] != null) {
+        m[var1].c();
       }
     }
   }
   
   public cj j()
   {
-    return this.f;
+    return f;
   }
   
   public void a(boolean p_178575_1_)
   {
-    this.o = p_178575_1_;
+    o = p_178575_1_;
   }
   
   public boolean l()
   {
-    return this.o;
+    return o;
   }
   
   public cj a(cq p_500163_1_)
@@ -393,11 +393,11 @@ public class bht
   public cj getPositionOffset16(cq facing)
   {
     int index = facing.a();
-    cj posOffset = this.positionOffsets16[index];
+    cj posOffset = positionOffsets16[index];
     if (posOffset == null)
     {
       posOffset = j().a(facing, 16);
-      this.positionOffsets16[index] = posOffset;
+      positionOffsets16[index] = posOffset;
     }
     return posOffset;
   }
@@ -409,7 +409,7 @@ public class bht
   
   private adf fixBlockLayer(afh block, adf layer)
   {
-    if (!this.fixBlockLayer) {
+    if (!fixBlockLayer) {
       return layer;
     }
     if (layer == adf.c)

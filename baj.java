@@ -9,21 +9,21 @@ public class baj
   
   public baj(bag ☃, List<bah> ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
   }
   
   public bah a(int ☃)
   {
-    if ((☃ < 0) || (☃ >= this.b.size())) {
+    if ((☃ < 0) || (☃ >= b.size())) {
       return baf.a;
     }
-    return (bah)Objects.firstNonNull(this.b.get(☃), baf.a);
+    return (bah)Objects.firstNonNull(b.get(☃), baf.a);
   }
   
   public int b()
   {
-    return this.c;
+    return c;
   }
 }

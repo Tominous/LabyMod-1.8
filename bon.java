@@ -10,23 +10,23 @@ public class bon
   
   public bon(boolean ☃, boolean ☃, List<Integer> ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
   }
   
   public boolean a()
   {
-    return this.a;
+    return a;
   }
   
   public boolean b()
   {
-    return this.b;
+    return b;
   }
   
   public List<Integer> c()
   {
-    return Collections.unmodifiableList(this.c);
+    return Collections.unmodifiableList(c);
   }
 }

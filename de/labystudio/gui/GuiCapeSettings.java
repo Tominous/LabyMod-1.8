@@ -1,28 +1,24 @@
 package de.labystudio.gui;
 
-import avc;
 import ave;
 import avh;
-import avm;
 import avs;
 import axu;
-import bfl;
-import biu;
+import bet;
 import bnq;
-import bqs;
-import com.mojang.authlib.GameProfile;
+import de.labystudio.capes.CapeCallback;
 import de.labystudio.capes.CapeManager;
 import de.labystudio.capes.CapeMover;
 import de.labystudio.capes.CapeUploader;
-import de.labystudio.capes.MoveCallback;
+import de.labystudio.capes.EnumCapePriority;
 import de.labystudio.cosmetic.CosmeticManager;
 import de.labystudio.downloader.ModInfoDownloader;
-import de.labystudio.downloader.UserCapeDownloader;
+import de.labystudio.downloader.UserCapesDownloader;
+import de.labystudio.downloader.UserCosmeticsDownloader;
 import de.labystudio.gui.extras.ModGuiTextField;
 import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
-import de.labystudio.labymod.Source;
 import de.labystudio.utils.Color;
 import de.labystudio.utils.DrawUtils;
 import java.io.IOException;
@@ -30,18 +26,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import org.lwjgl.input.Keyboard;
-import pr;
 import wo;
 
 public class GuiCapeSettings
   extends axu
 {
   private axu lastScreen;
+  String error = "";
   private static long cdPriority = 0L;
   private static long cdRefresh = 0L;
   boolean hasCape = false;
   boolean moveCape = false;
   boolean accept = false;
+  EnumCapePriority capeType;
   avs a;
   avs b;
   avs c;
@@ -50,6 +47,7 @@ public class GuiCapeSettings
   avs f;
   avs g;
   avs h;
+  avs j;
   
   public GuiCapeSettings(axu lastScreen)
   {
@@ -60,57 +58,69 @@ public class GuiCapeSettings
   
   public void checkCape()
   {
-    this.hasCape = LabyMod.getInstance().getCapeManager().hasLabyModCape(ave.A().L().e().getId());
+    hasCape = ((ave.A() != null) && (Ah != null) && ((Ah instanceof bet)) && (Ah.capeType != null));
+    if (hasCape) {
+      capeType = Ah.capeType;
+    }
   }
   
   public void b()
   {
-    this.accept = false;
-    this.moveCape = false;
-    this.n.clear();
+    accept = false;
+    moveCape = false;
+    n.clear();
     
-    this.n.add(this.a = new avs(1, this.l / 2 - 110, this.m / 2 - 28 - 20, 80, 20, ""));
-    this.n.add(this.b = new avs(2, this.l / 2 - 110, this.m / 2 + 11 - 20, 80, 20, ""));
-    this.n.add(this.c = new avs(3, this.l / 2 - 110, this.m / 2 + 35 - 20, 80, 20, ""));
-    this.n.add(this.d = new avs(4, this.l / 2 - 110, this.m / 2 + 59 - 20, 80, 20, ""));
-    this.n.add(this.h = new avs(7, this.l / 2 - 110, this.m / 2 + 82 - 20, 80, 20, ""));
-    this.e = new ModGuiTextField(0, this.j.k, this.l / 2 - 100, this.m / 4 - 30, 200, 20);
-    this.e.setBlacklistWord(" ");
-    this.n.add(this.f = new avs(5, this.l / 2 - 100, this.m / 4 - 5, 200, 20, ""));
-    this.n.add(this.g = new avs(6, 2, 2, 40, 20, ""));
+    n.add(a = new avs(1, l / 2 - 110, m / 2 - 28 - 20, 80, 20, ""));
+    n.add(b = new avs(2, l / 2 - 110, m / 2 + 11 - 20, 80, 20, ""));
+    n.add(c = new avs(3, l / 2 - 110, m / 2 + 35 - 20, 80, 20, ""));
+    n.add(d = new avs(4, l / 2 - 110, m / 2 + 59 - 20, 80, 20, ""));
+    n.add(h = new avs(7, 2, m - 22, 60, 20, ""));
+    e = new ModGuiTextField(0, jdField_j_of_type_Ave.k, l / 2 - 100, m / 4 - 30, 200, 20);
+    e.setBlacklistWord(" ");
+    n.add(f = new avs(5, l / 2 - 100, m / 4 - 5, 200, 20, ""));
+    n.add(g = new avs(6, 2, 2, 40, 20, ""));
+    
+    n.add(jdField_j_of_type_Avs = new avs(9, l / 2 - 110, m / 2 + 82 - 20, 80, 20, ""));
+    n.add(new avs(200, l / 2 - 100, m / 2 + 90, bnq.a("gui.done", new Object[0])));
+    
     refreshButtons();
-    
-    this.n.add(new avs(200, this.l / 2 - 100, this.m / 2 + 90, bnq.a("gui.done", new Object[0])));
   }
   
   public void refreshButtons()
   {
-    if (ConfigManager.settings.capePriority.equals("of")) {
-      this.a.j = "OptiFine";
+    if (settingscapePriority.equals("of")) {
+      a.j = "OptiFine";
+    } else if (settingscapePriority.equals("original")) {
+      a.j = "Original";
     } else {
-      this.a.j = "LabyMod";
+      a.j = "LabyMod";
     }
-    this.b.j = getStatus("Cape", wo.a);
-    this.d.j = "Move";
-    if (this.accept) {
-      this.f.j = (Color.cl("c") + Color.cl("l") + "Press again to accept");
+    b.j = getStatus("Cape", wo.a);
+    d.j = "Move";
+    if (accept) {
+      f.j = (Color.cl("c") + Color.cl("l") + "Press again to accept");
     } else {
-      this.f.j = "Move";
+      f.j = "Move";
     }
-    this.g.j = (Color.cl("6") + "Donate");
-    this.h.j = "Refresh";
+    g.j = (Color.cl("6") + "Donate");
+    h.j = "Refresh";
+    if (settingscapes) {
+      jdField_j_of_type_Avs.j = ("Capes: " + Color.cl("a") + "ON");
+    } else {
+      jdField_j_of_type_Avs.j = ("Capes: " + Color.cl("c") + "OFF");
+    }
   }
   
   public String getStatus(String name, wo part)
   {
     String var2;
     String var2;
-    if (this.j.t.d().contains(part)) {
+    if (jdField_j_of_type_Ave.t.d().contains(part)) {
       var2 = Color.cl("a") + "SHOWN";
     } else {
       var2 = Color.cl("C") + "HIDDEN";
     }
-    if (!this.hasCape) {
+    if (!hasCape) {
       var2 = "NO CAPE";
     }
     return var2 + Color.cl("f") + "";
@@ -119,77 +129,99 @@ public class GuiCapeSettings
   protected void a(avs button)
     throws IOException
   {
-    if (button.l) {
-      if (button.k == 1)
+    if (l) {
+      if (k == 1)
       {
-        if (ConfigManager.settings.capePriority.equals("of")) {
-          ConfigManager.settings.capePriority = "labymod";
+        if (settingscapePriority.equals("of")) {
+          settingscapePriority = "labymod";
+        } else if (settingscapePriority.equals("labymod")) {
+          settingscapePriority = "original";
         } else {
-          ConfigManager.settings.capePriority = "of";
+          settingscapePriority = "of";
         }
         cdPriority = System.currentTimeMillis();
         LabyMod.getInstance().getCapeManager().refresh();
         refreshButtons();
         ConfigManager.save();
       }
-      else if (button.k == 2)
+      else if (k == 2)
       {
-        this.j.t.a(wo.a);
+        jdField_j_of_type_Ave.t.a(wo.a);
         refreshButtons();
       }
-      else if (button.k == 3)
+      else if (k == 3)
       {
-        new CapeUploader().start();
-      }
-      else if (button.k == 4)
-      {
-        this.moveCape = true;
-        refreshButtons();
-      }
-      else if (button.k == 5)
-      {
-        if ((!this.accept) && (this.e.b().length() != 0))
+        new CapeUploader(new CapeCallback()
         {
-          this.accept = true;
+          public void failed(String error)
+          {
+            GuiCapeSettings.this.error = error;
+          }
+          
+          public void done()
+          {
+            error = (Color.cl("a") + "Cape uploaded!");
+          }
+        })
+        
+          .start();
+      }
+      else if (k == 4)
+      {
+        moveCape = true;
+        refreshButtons();
+      }
+      else if (k == 5)
+      {
+        if ((!accept) && (e.b().length() != 0))
+        {
+          accept = true;
           refreshButtons();
         }
         else
         {
-          button.l = false;
-          new CapeMover(this.e.b(), new MoveCallback()
+          l = false;
+          new CapeMover(e.b(), new CapeCallback()
           {
             public void done()
             {
               LabyMod.getInstance().getCapeManager().refresh();
-              GuiCapeSettings.this.checkCape();
-              GuiCapeSettings.this.b();
+              checkCape();
+              b();
             }
             
-            public void failed()
+            public void failed(String error)
             {
-              GuiCapeSettings.this.b();
+              b();
+              GuiCapeSettings.this.error = error;
             }
           })
           
             .start();
         }
       }
-      else if (button.k == 6)
+      else if (k == 6)
       {
-        LabyMod.getInstance().openWebpage(Source.url_donate);
+        LabyMod.getInstance().openWebpage("https://LabyMod.net/donate");
       }
-      else if (button.k == 200)
+      else if (k == 200)
       {
-        this.j.t.b();
-        this.j.a(this.lastScreen);
+        jdField_j_of_type_Ave.t.b();
+        jdField_j_of_type_Ave.a(lastScreen);
       }
-      else if (button.k == 7)
+      else if (k == 7)
       {
         cdRefresh = System.currentTimeMillis();
         LabyMod.getInstance().getCapeManager().refresh();
-        LabyMod.getInstance().getCosmeticManager().getCosmetics().clear();
-        new UserCapeDownloader();
+        LabyMod.getInstance().getCosmeticManager().getOfflineCosmetics().clear();
         new ModInfoDownloader();
+        new UserCosmeticsDownloader();
+        new UserCapesDownloader();
+        refreshButtons();
+      }
+      else if (k == 9)
+      {
+        settingscapes = (!settingscapes);
         refreshButtons();
       }
     }
@@ -200,13 +232,13 @@ public class GuiCapeSettings
   {
     if (keyCode == 1)
     {
-      this.j.t.b();
-      this.j.a(this.lastScreen);
+      jdField_j_of_type_Ave.t.b();
+      jdField_j_of_type_Ave.a(lastScreen);
     }
-    if ((this.moveCape) && 
-      (this.e.a(typedChar, keyCode)) && 
-      (this.e.b().length() > 16)) {
-      this.e.a(this.e.b().substring(0, 16));
+    if ((moveCape) && 
+      (e.a(typedChar, keyCode)) && 
+      (e.b().length() > 16)) {
+      e.a(e.b().substring(0, 16));
     }
     super.a(typedChar, keyCode);
   }
@@ -214,110 +246,137 @@ public class GuiCapeSettings
   protected void a(int mouseX, int mouseY, int mouseButton)
     throws IOException
   {
-    if (this.moveCape) {
-      this.e.a(mouseX, mouseY, mouseButton);
+    if (moveCape) {
+      e.a(mouseX, mouseY, mouseButton);
     }
     super.a(mouseX, mouseY, mouseButton);
   }
   
   public void a(int mouseX, int mouseY, float partialTicks)
   {
+    if (!LabyMod.getInstance().isInGame())
+    {
+      jdField_j_of_type_Ave.a(lastScreen);
+      return;
+    }
     c();
-    a(this.q, "Cape Settings", this.l / 2, 20, 16777215);
-    
-    boolean z = this.a.l;
-    this.a.l = (cdPriority + 2000L < System.currentTimeMillis());
-    if ((this.a.l != z) && (this.a.l)) {
+    a(q, "Cape Settings", this.l / 2, 20, 16777215);
+    if (!error.isEmpty())
+    {
+      int l = getInstancedraw.getStringWidth(error) / 2 + 20;
+      LabyMod.getInstance();LabyMod.a(this.l / 2 - l, 2, this.l / 2 + l, 16, Integer.MIN_VALUE);
+      if (error.contains("Cape uploaded")) {
+        getInstancedraw.drawCenteredString(Color.cl("a") + error, this.l / 2, 5);
+      } else {
+        getInstancedraw.drawCenteredString(Color.cl("4") + "Error: " + Color.cl("c") + error, this.l / 2, 5);
+      }
+    }
+    boolean z = a.l;
+    a.l = (cdPriority + 2000L < System.currentTimeMillis());
+    if ((a.l != z) && (a.l)) {
       refreshButtons();
     }
-    if (!this.a.l) {
-      this.a.j = ("Switch.. " + getLoading());
+    if (!a.l) {
+      a.j = ("Switch.. " + getLoading());
     }
-    boolean t = this.h.l;
-    this.h.l = (cdRefresh + 10000L < System.currentTimeMillis());
-    if ((this.h.l != t) && (this.h.l)) {
+    boolean t = h.l;
+    h.l = (cdRefresh + 10000L < System.currentTimeMillis());
+    if ((h.l != t) && (h.l)) {
       refreshButtons();
     }
-    if (!this.h.l) {
-      this.h.j = ("Refresh.. " + getLoading());
+    if (!h.l) {
+      h.j = ("Refresh.. " + getLoading());
     }
-    this.c.l = ((!CapeUploader.openUpload) && (!CapeUploader.upload));
+    c.l = ((!CapeUploader.openUpload) && (!CapeUploader.upload));
     if (CapeUploader.upload) {
-      this.c.j = ("Upload.. " + getLoading());
+      c.j = ("Upload.. " + getLoading());
     } else {
-      this.c.j = "Upload..";
+      c.j = "Upload..";
     }
     if (CapeMover.moving) {
-      this.f.j = ("Moving.. " + getLoading());
+      f.j = ("Moving.. " + getLoading());
     }
-    if (this.j.h == null)
+    if (jdField_j_of_type_Ave.h == null)
     {
-      DrawUtils.a(this.l / 2 - 20, this.m / 2 - 30, this.l / 2 + 100, this.m / 2 + 78, 1129010000);
-      LabyMod.getInstance().draw.drawCenteredString("Preview not available.", this.l / 2 + 40, this.m / 2 + 17);
-      LabyMod.getInstance().draw.drawCenteredString(Color.cl("c") + "You are not ingame!", this.l / 2 + 40, this.m / 2 + 27);
+      DrawUtils.a(this.l / 2 - 20, m / 2 - 30, this.l / 2 + 100, m / 2 + 78, 1129010000);
+      getInstancedraw.drawCenteredString("Preview not available.", this.l / 2 + 40, m / 2 + 17);
+      getInstancedraw.drawCenteredString(Color.cl("c") + "You are not ingame!", this.l / 2 + 40, m / 2 + 27);
     }
-    this.d.l = ((!this.moveCape) && (!CapeMover.moving));
-    this.f.l = ((!this.e.b().isEmpty()) && (!CapeMover.moving));
-    this.f.m = this.moveCape;
-    if (!this.hasCape)
+    d.l = ((!moveCape) && (!CapeMover.moving));
+    f.l = ((!e.b().isEmpty()) && (!CapeMover.moving));
+    f.m = moveCape;
+    
+    boolean old = hasCape;
+    checkCape();
+    if (old != hasCape) {
+      b.j = getStatus("Cape", wo.a);
+    }
+    if (!hasCape)
     {
-      this.b.l = false;
-      this.c.l = false;
-      this.d.l = false;
-      this.moveCape = false;
+      b.l = false;
+      c.l = false;
+      d.l = false;
+      moveCape = false;
+    }
+    else if ((capeType != null) && (capeType != EnumCapePriority.LABYMOD))
+    {
+      c.l = false;
+      d.l = false;
+      moveCape = false;
     }
     else
     {
-      LabyMod.getInstance().draw.drawString(Color.cl("6") + "Donator " + Color.cl("a") + "✔", 2.0D, 2.0D);
+      c.l = true;
+      d.l = true;
     }
-    this.g.m = (!this.hasCape);
+    g.m = (!hasCape);
     
-    boolean info = (this.e.b().isEmpty()) && (!this.e.m());
-    if (this.moveCape)
+    boolean info = (e.b().isEmpty()) && (!e.m());
+    if (moveCape)
     {
-      this.e.g();
+      e.g();
       if (info)
       {
-        LabyMod.getInstance().draw.drawString(Color.cl("7") + "Enter the name of the new owner..", this.e.a + 5, this.e.f + 6);
+        getInstancedraw.drawString(Color.cl("7") + "Enter the name of the new owner..", e.a + 5, e.f + 6);
       }
       else
       {
         for (int i = 0; i <= 2; i++)
         {
-          LabyMod.getInstance();LabyMod.a(this.l / 2 - 120, this.m / 4 + 20, this.l / 2 + 120, this.m / 2 + 85, Integer.MIN_VALUE);
+          LabyMod.getInstance();LabyMod.a(this.l / 2 - 120, m / 4 + 20, this.l / 2 + 120, m / 2 + 85, Integer.MIN_VALUE);
         }
         int i = 25;
-        LabyMod.getInstance().draw.drawCenteredString(Color.cl("4") + "Caution!", this.l / 2, this.m / 4 + i);i += 10;
-        LabyMod.getInstance().draw.drawCenteredString(Color.cl("c") + "Yow won't be the owner of your cape", this.l / 2, this.m / 4 + i);i += 10;
-        LabyMod.getInstance().draw.drawCenteredString(Color.cl("c") + "after moving it to another account.", this.l / 2, this.m / 4 + i);i += 20;
-        if (this.e.b().isEmpty())
+        getInstancedraw.drawCenteredString(Color.cl("4") + "Caution!", this.l / 2, m / 4 + i);i += 10;
+        getInstancedraw.drawCenteredString(Color.cl("c") + "Yow won't be the owner of your cape", this.l / 2, m / 4 + i);i += 10;
+        getInstancedraw.drawCenteredString(Color.cl("c") + "after moving it to another account.", this.l / 2, m / 4 + i);i += 20;
+        if (e.b().isEmpty())
         {
-          LabyMod.getInstance().draw.drawString("-> The new owner of the cape will", this.l / 2 - 110, this.m / 4 + i);i += 10;
-          LabyMod.getInstance().draw.drawString("then be changed", this.l / 2 - 95, this.m / 4 + i);i += 20;
-          LabyMod.getInstance().draw.drawString("-> That cannot be undone unless ", this.l / 2 - 110, this.m / 4 + i);i += 10;
-          LabyMod.getInstance().draw.drawString("the new owner moves their", this.l / 2 - 95, this.m / 4 + i);i += 10;
-          LabyMod.getInstance().draw.drawString("cape back to your account.", this.l / 2 - 95, this.m / 4 + i);i += 10;
+          getInstancedraw.drawString("-> The new owner of the cape will", this.l / 2 - 110, m / 4 + i);i += 10;
+          getInstancedraw.drawString("then be changed", this.l / 2 - 95, m / 4 + i);i += 20;
+          getInstancedraw.drawString("-> That cannot be undone unless ", this.l / 2 - 110, m / 4 + i);i += 10;
+          getInstancedraw.drawString("the new owner moves their", this.l / 2 - 95, m / 4 + i);i += 10;
+          getInstancedraw.drawString("cape back to your account.", this.l / 2 - 95, m / 4 + i);i += 10;
         }
         else
         {
-          LabyMod.getInstance().draw.drawString("-> The new owner of the cape will", this.l / 2 - 110, this.m / 4 + i);i += 10;
-          LabyMod.getInstance().draw.drawString("then be " + Color.cl("e") + this.e.b(), this.l / 2 - 95, this.m / 4 + i);i += 20;
-          LabyMod.getInstance().draw.drawString("-> That cannot be undone unless ", this.l / 2 - 110, this.m / 4 + i);i += 10;
-          LabyMod.getInstance().draw.drawString("" + Color.cl("e") + this.e.b() + Color.cl("f") + " moves their", this.l / 2 - 95, this.m / 4 + i);i += 10;
-          LabyMod.getInstance().draw.drawString("cape back to your account.", this.l / 2 - 95, this.m / 4 + i);i += 10;
+          getInstancedraw.drawString("-> The new owner of the cape will", this.l / 2 - 110, m / 4 + i);i += 10;
+          getInstancedraw.drawString("then be " + Color.cl("e") + e.b(), this.l / 2 - 95, m / 4 + i);i += 20;
+          getInstancedraw.drawString("-> That cannot be undone unless ", this.l / 2 - 110, m / 4 + i);i += 10;
+          getInstancedraw.drawString("" + Color.cl("e") + e.b() + Color.cl("f") + " moves their", this.l / 2 - 95, m / 4 + i);i += 10;
+          getInstancedraw.drawString("cape back to your account.", this.l / 2 - 95, m / 4 + i);i += 10;
         }
       }
     }
-    this.a.m = info;
-    this.b.m = info;
-    this.c.m = info;
-    this.d.m = info;
+    a.m = info;
+    b.m = info;
+    c.m = info;
+    d.m = info;
     if (info)
     {
-      LabyMod.getInstance().draw.drawString("Priority:", this.l / 2 - 110, this.m / 2 - 40 - 20);
-      LabyMod.getInstance().draw.drawString("My cape:", this.l / 2 - 110, this.m / 2 + 0 - 20);
-      if (this.j.h != null) {
-        drawEntityOnScreen(this.l / 2 + 40, this.m / 2 + 80, 30, (this.l / 2 + 35 - mouseX) * -1.0F, this.m / 2 - 20 - mouseY, this.j.h);
+      getInstancedraw.drawString("Priority:", this.l / 2 - 110, m / 2 - 40 - 20);
+      getInstancedraw.drawString("My cape:", this.l / 2 - 110, m / 2 + 0 - 20);
+      if (jdField_j_of_type_Ave.h != null) {
+        DrawUtils.drawEntityOnScreen(this.l / 2 + 40, m / 2 + 80, 30, (this.l / 2 + 35 - mouseX) * -1.0F, m / 2 - 20 - mouseY, 180, jdField_j_of_type_Ave.h);
       }
     }
     super.a(mouseX, mouseY, partialTicks);
@@ -343,45 +402,5 @@ public class GuiCapeSettings
       m = "|";
     }
     return m;
-  }
-  
-  public static void drawEntityOnScreen(int p_147046_0_, int p_147046_1_, int p_147046_2_, float p_147046_3_, float p_147046_4_, pr p_147046_5_)
-  {
-    bfl.g();
-    bfl.E();
-    bfl.b(p_147046_0_, p_147046_1_, 50.0F);
-    bfl.a(-p_147046_2_ - 30.0F, p_147046_2_ + 30.0F, p_147046_2_);
-    bfl.b(180.0F, 0.0F, 0.0F, 1.0F);
-    float var6 = p_147046_5_.aI;
-    float var7 = p_147046_5_.y;
-    float var8 = p_147046_5_.z;
-    float var9 = p_147046_5_.aL;
-    float var10 = p_147046_5_.aK;
-    bfl.b(135.0F, 0.0F, 1.0F, 0.0F);
-    avc.b();
-    bfl.b(45.0F, 0.0F, 1.0F, 0.0F);
-    bfl.b(-(float)Math.atan(p_147046_4_ / 40.0F) * 20.0F, 1.0F, 0.0F, 0.0F);
-    p_147046_5_.aI = ((float)Math.atan(p_147046_3_ / 40.0F) * 20.0F);
-    p_147046_5_.y = ((float)Math.atan(p_147046_3_ / 40.0F) * 40.0F);
-    p_147046_5_.z = (-(float)Math.atan(p_147046_4_ / 40.0F) * 20.0F);
-    p_147046_5_.aK = p_147046_5_.y;
-    p_147046_5_.aL = p_147046_5_.y;
-    bfl.b(0.0F, 0.0F, 0.0F);
-    biu var11 = ave.A().af();
-    var11.a(180.0F);
-    var11.a(false);
-    var11.a(p_147046_5_, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F);
-    var11.a(true);
-    p_147046_5_.aI = var6;
-    p_147046_5_.y = var7;
-    p_147046_5_.z = var8;
-    p_147046_5_.aL = var9;
-    p_147046_5_.aK = var10;
-    bfl.F();
-    avc.a();
-    bfl.C();
-    bfl.g(bqs.r);
-    bfl.x();
-    bfl.g(bqs.q);
   }
 }

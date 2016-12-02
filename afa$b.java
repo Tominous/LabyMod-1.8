@@ -3,7 +3,7 @@ public class afa$b
 {
   public afa$b()
   {
-    j(this.M.b().a(a, cq.c));
+    j(M.b().a(a, cq.c));
   }
   
   public void a(adq ☃, cj ☃)

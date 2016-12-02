@@ -278,7 +278,7 @@ public class TextureAnimations
         int red = ai[l] >> 16 & 0xFF;
         int green = ai[l] >> 8 & 0xFF;
         int blue = ai[l] & 0xFF;
-        if ((options != null) && (options.e))
+        if ((options != null) && (e))
         {
           int j3 = (red * 30 + green * 59 + blue * 11) / 100;
           int l3 = (red * 30 + green * 70) / 100;

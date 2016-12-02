@@ -33,15 +33,15 @@ public class yk
     if (☃.size() > 0) {
       return false;
     }
-    if (!☃.D)
+    if (!D)
     {
       ☃.g(☃);
       ☃.g(☃);
       
       um ☃ = new um(☃, ☃ + 0.5D, ☃, ☃ + 0.5D);
-      float ☃ = ns.d((ns.g(☃.y - 180.0F) + 22.5F) / 45.0F) * 45.0F;
+      float ☃ = ns.d((ns.g(y - 180.0F) + 22.5F) / 45.0F) * 45.0F;
       ☃.b(☃ + 0.5D, ☃, ☃ + 0.5D, ☃, 0.0F);
-      a(☃, ☃.s);
+      a(☃, s);
       dn ☃ = ☃.o();
       if ((☃ != null) && (☃.b("EntityTag", 10)))
       {
@@ -52,7 +52,7 @@ public class yk
       }
       ☃.d(☃);
     }
-    ☃.b -= 1;
+    b -= 1;
     return true;
   }
   

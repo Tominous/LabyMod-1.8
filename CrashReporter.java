@@ -12,7 +12,7 @@ public class CrashReporter
       if (settings == null) {
         return;
       }
-      if (!settings.r) {
+      if (!r) {
         return;
       }
       Throwable cause = crashReport.b();

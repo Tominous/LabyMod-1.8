@@ -10,7 +10,7 @@ public abstract class ahh
   {
     super(☃);
     if (l()) {
-      this.r = true;
+      r = true;
     } else {
       a(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
     }
@@ -143,17 +143,17 @@ public abstract class ahh
     
     private a(String ☃)
     {
-      this.c = ☃;
+      c = ☃;
     }
     
     public String toString()
     {
-      return this.c;
+      return c;
     }
     
     public String l()
     {
-      return this.c;
+      return c;
     }
   }
 }

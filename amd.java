@@ -14,54 +14,54 @@ public class amd
   
   public amd(Predicate<amc>[][][] ☃)
   {
-    this.a = ☃;
+    a = ☃;
     
-    this.b = ☃.length;
-    if (this.b > 0)
+    b = ☃.length;
+    if (b > 0)
     {
-      this.c = ☃[0].length;
-      if (this.c > 0) {
-        this.d = ☃[0][0].length;
+      c = ☃[0].length;
+      if (c > 0) {
+        d = ☃[0][0].length;
       } else {
-        this.d = 0;
+        d = 0;
       }
     }
     else
     {
-      this.c = 0;
-      this.d = 0;
+      c = 0;
+      d = 0;
     }
   }
   
   public int b()
   {
-    return this.c;
+    return c;
   }
   
   public int c()
   {
-    return this.d;
+    return d;
   }
   
   private amd.b a(cj ☃, cq ☃, cq ☃, LoadingCache<cj, amc> ☃)
   {
-    for (int ☃ = 0; ☃ < this.d; ☃++) {
-      for (int ☃ = 0; ☃ < this.c; ☃++) {
-        for (int ☃ = 0; ☃ < this.b; ☃++) {
-          if (!this.a[☃][☃][☃].apply(☃.getUnchecked(a(☃, ☃, ☃, ☃, ☃, ☃)))) {
+    for (int ☃ = 0; ☃ < d; ☃++) {
+      for (int ☃ = 0; ☃ < c; ☃++) {
+        for (int ☃ = 0; ☃ < b; ☃++) {
+          if (!a[☃][☃][☃].apply(☃.getUnchecked(a(☃, ☃, ☃, ☃, ☃, ☃)))) {
             return null;
           }
         }
       }
     }
-    return new amd.b(☃, ☃, ☃, ☃, this.d, this.c, this.b);
+    return new amd.b(☃, ☃, ☃, ☃, d, c, b);
   }
   
   public amd.b a(adm ☃, cj ☃)
   {
     LoadingCache<cj, amc> ☃ = a(☃, false);
     
-    int ☃ = Math.max(Math.max(this.d, this.c), this.b);
+    int ☃ = Math.max(Math.max(d, c), b);
     for (cj ☃ : cj.a(☃, ☃.a(☃ - 1, ☃ - 1, ☃ - 1))) {
       for (cq ☃ : cq.values()) {
         for (cq ☃ : cq.values()) {
@@ -103,14 +103,14 @@ public class amd
     
     public a(adm ☃, boolean ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
+      a = ☃;
+      b = ☃;
     }
     
     public amc a(cj ☃)
       throws Exception
     {
-      return new amc(this.a, ☃, this.b);
+      return new amc(a, ☃, b);
     }
   }
   
@@ -126,48 +126,48 @@ public class amd
     
     public b(cj ☃, cq ☃, cq ☃, LoadingCache<cj, amc> ☃, int ☃, int ☃, int ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
-      this.c = ☃;
-      this.d = ☃;
-      this.e = ☃;
-      this.f = ☃;
-      this.g = ☃;
+      a = ☃;
+      b = ☃;
+      c = ☃;
+      d = ☃;
+      e = ☃;
+      f = ☃;
+      g = ☃;
     }
     
     public cj a()
     {
-      return this.a;
+      return a;
     }
     
     public cq b()
     {
-      return this.b;
+      return b;
     }
     
     public cq c()
     {
-      return this.c;
+      return c;
     }
     
     public int d()
     {
-      return this.e;
+      return e;
     }
     
     public int e()
     {
-      return this.f;
+      return f;
     }
     
     public amc a(int ☃, int ☃, int ☃)
     {
-      return (amc)this.d.getUnchecked(amd.a(this.a, b(), c(), ☃, ☃, ☃));
+      return (amc)d.getUnchecked(amd.a(a, b(), c(), ☃, ☃, ☃));
     }
     
     public String toString()
     {
-      return Objects.toStringHelper(this).add("up", this.c).add("forwards", this.b).add("frontTopLeft", this.a).toString();
+      return Objects.toStringHelper(this).add("up", c).add("forwards", b).add("frontTopLeft", a).toString();
     }
   }
 }

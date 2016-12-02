@@ -10,13 +10,13 @@ public class aef
   
   public aef(ady ☃, float ☃)
   {
-    this.b = ☃;
-    this.c = ☃;
+    b = ☃;
+    c = ☃;
   }
   
   public ady a(cj ☃)
   {
-    return this.b;
+    return b;
   }
   
   public ady[] a(ady[] ☃, int ☃, int ☃, int ☃, int ☃)
@@ -24,7 +24,7 @@ public class aef
     if ((☃ == null) || (☃.length < ☃ * ☃)) {
       ☃ = new ady[☃ * ☃];
     }
-    Arrays.fill(☃, 0, ☃ * ☃, this.b);
+    Arrays.fill(☃, 0, ☃ * ☃, b);
     
     return ☃;
   }
@@ -34,7 +34,7 @@ public class aef
     if ((☃ == null) || (☃.length < ☃ * ☃)) {
       ☃ = new float[☃ * ☃];
     }
-    Arrays.fill(☃, 0, ☃ * ☃, this.c);
+    Arrays.fill(☃, 0, ☃ * ☃, c);
     
     return ☃;
   }
@@ -44,7 +44,7 @@ public class aef
     if ((☃ == null) || (☃.length < ☃ * ☃)) {
       ☃ = new ady[☃ * ☃];
     }
-    Arrays.fill(☃, 0, ☃ * ☃, this.b);
+    Arrays.fill(☃, 0, ☃ * ☃, b);
     
     return ☃;
   }
@@ -56,7 +56,7 @@ public class aef
   
   public cj a(int ☃, int ☃, int ☃, List<ady> ☃, Random ☃)
   {
-    if (☃.contains(this.b)) {
+    if (☃.contains(b)) {
       return new cj(☃ - ☃ + ☃.nextInt(☃ * 2 + 1), 0, ☃ - ☃ + ☃.nextInt(☃ * 2 + 1));
     }
     return null;
@@ -64,6 +64,6 @@ public class aef
   
   public boolean a(int ☃, int ☃, int ☃, List<ady> ☃)
   {
-    return ☃.contains(this.b);
+    return ☃.contains(b);
   }
 }

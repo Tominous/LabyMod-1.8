@@ -5,19 +5,19 @@ public class PlayerConfiguration
   
   public void renderPlayerItems(bbj modelBiped, bet player, float scale, float partialTicks)
   {
-    if (!this.initialized) {
+    if (!initialized) {
       return;
     }
-    for (int i = 0; i < this.playerItemModels.length; i++)
+    for (int i = 0; i < playerItemModels.length; i++)
     {
-      PlayerItemModel model = this.playerItemModels[i];
+      PlayerItemModel model = playerItemModels[i];
       model.render(modelBiped, player, scale, partialTicks);
     }
   }
   
   public boolean isInitialized()
   {
-    return this.initialized;
+    return initialized;
   }
   
   public void setInitialized(boolean initialized)
@@ -27,11 +27,11 @@ public class PlayerConfiguration
   
   public PlayerItemModel[] getPlayerItemModels()
   {
-    return this.playerItemModels;
+    return playerItemModels;
   }
   
   public void addPlayerItemModel(PlayerItemModel playerItemModel)
   {
-    this.playerItemModels = ((PlayerItemModel[])Config.addObjectToArray(this.playerItemModels, playerItemModel));
+    playerItemModels = ((PlayerItemModel[])Config.addObjectToArray(playerItemModels, playerItemModel));
   }
 }

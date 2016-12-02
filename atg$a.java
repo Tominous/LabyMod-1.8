@@ -13,38 +13,38 @@ public class atg$a
   
   public atg$a(atg paramatg, wn ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public ff a(zx ☃)
   {
-    if (this.d)
+    if (d)
     {
-      this.d = false;
-      return new gu(☃.i(), this.c.e, this.c.h.values(), this.c.f, this.e, this.f, this.g + 1 - this.e, this.h + 1 - this.f);
+      d = false;
+      return new gu(☃.i(), c.e, c.h.values(), c.f, e, f, g + 1 - e, h + 1 - f);
     }
-    if (this.i++ % 5 == 0) {
-      return new gu(☃.i(), this.c.e, this.c.h.values(), this.c.f, 0, 0, 0, 0);
+    if (i++ % 5 == 0) {
+      return new gu(☃.i(), c.e, c.h.values(), c.f, 0, 0, 0, 0);
     }
     return null;
   }
   
   public void a(int ☃, int ☃)
   {
-    if (this.d)
+    if (d)
     {
-      this.e = Math.min(this.e, ☃);
-      this.f = Math.min(this.f, ☃);
-      this.g = Math.max(this.g, ☃);
-      this.h = Math.max(this.h, ☃);
+      e = Math.min(e, ☃);
+      f = Math.min(f, ☃);
+      g = Math.max(g, ☃);
+      h = Math.max(h, ☃);
     }
     else
     {
-      this.d = true;
-      this.e = ☃;
-      this.f = ☃;
-      this.g = ☃;
-      this.h = ☃;
+      d = true;
+      e = ☃;
+      f = ☃;
+      g = ☃;
+      h = ☃;
     }
   }
 }

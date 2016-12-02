@@ -4,12 +4,12 @@ public class amw
   
   public amw()
   {
-    this.a = new byte['ࠀ'];
+    a = new byte['ࠀ'];
   }
   
   public amw(byte[] ☃)
   {
-    this.a = ☃;
+    a = ☃;
     if (☃.length != 2048) {
       throw new IllegalArgumentException("ChunkNibbleArrays should be 2048 bytes not: " + ☃.length);
     }
@@ -34,18 +34,18 @@ public class amw
   {
     int ☃ = c(☃);
     if (b(☃)) {
-      return this.a[☃] & 0xF;
+      return a[☃] & 0xF;
     }
-    return this.a[☃] >> 4 & 0xF;
+    return a[☃] >> 4 & 0xF;
   }
   
   public void a(int ☃, int ☃)
   {
     int ☃ = c(☃);
     if (b(☃)) {
-      this.a[☃] = ((byte)(this.a[☃] & 0xF0 | ☃ & 0xF));
+      a[☃] = ((byte)(a[☃] & 0xF0 | ☃ & 0xF));
     } else {
-      this.a[☃] = ((byte)(this.a[☃] & 0xF | (☃ & 0xF) << 4));
+      a[☃] = ((byte)(a[☃] & 0xF | (☃ & 0xF) << 4));
     }
   }
   
@@ -61,6 +61,6 @@ public class amw
   
   public byte[] a()
   {
-    return this.a;
+    return a;
   }
 }

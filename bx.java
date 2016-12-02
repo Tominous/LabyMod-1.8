@@ -148,7 +148,7 @@ public class bx
   
   protected ams d()
   {
-    return net.minecraft.server.MinecraftServer.N().d[0].af();
+    return Nd[0].af();
   }
   
   public List<String> a(m ☃, String[] ☃, cj ☃)

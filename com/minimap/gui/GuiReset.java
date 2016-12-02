@@ -19,19 +19,19 @@ public class GuiReset
   public GuiReset(axu p)
   {
     super((awx)null, bnq.a("gui.xaero_reset_message", new Object[0]), bnq.a("gui.xaero_reset_message2", new Object[0]), 0);
-    this.parent = p;
+    parent = p;
   }
   
   protected void a(avs button)
     throws IOException
   {
-    switch (button.k)
+    switch (k)
     {
     case 0: 
       Minimap.resetImage();
       XaeroMinimap.settings = new ModSettings();
     case 1: 
-      this.j.a(new GuiMinimap3(XaeroMinimap.getSettings()));
+      j.a(new GuiMinimap3(XaeroMinimap.getSettings()));
     }
   }
 }

@@ -32,20 +32,20 @@ public class CustomColormap
   {
     ConnectedParser cp = new ConnectedParser("Colormap");
     
-    this.name = cp.parseName(path);
-    this.basePath = cp.parseBasePath(path);
+    name = cp.parseName(path);
+    basePath = cp.parseBasePath(path);
     
-    this.format = parseFormet(props.getProperty("format"));
+    format = parseFormet(props.getProperty("format"));
     
-    this.matchBlocks = cp.parseMatchBlocks(props.getProperty("blocks"));
+    matchBlocks = cp.parseMatchBlocks(props.getProperty("blocks"));
     
-    this.source = parseTexture(props.getProperty("source"), path, this.basePath);
+    source = parseTexture(props.getProperty("source"), path, basePath);
     
-    this.color = ConnectedParser.parseColor(props.getProperty("color"), -1);
+    color = ConnectedParser.parseColor(props.getProperty("color"), -1);
     
-    this.yVariance = cp.parseInt(props.getProperty("yVariance"), 0);
+    yVariance = cp.parseInt(props.getProperty("yVariance"), 0);
     
-    this.yOffset = cp.parseInt(props.getProperty("yOffset"), 0);
+    yOffset = cp.parseInt(props.getProperty("yOffset"), 0);
     
     this.width = width;
     this.height = height;
@@ -71,21 +71,21 @@ public class CustomColormap
   
   public boolean isValid(String path)
   {
-    if ((this.format == 0) || (this.format == 1))
+    if ((format == 0) || (format == 1))
     {
-      if (this.source == null)
+      if (source == null)
       {
         warn("Source not defined: " + path);
         return false;
       }
       readColors();
-      if (this.colors == null) {
+      if (colors == null) {
         return false;
       }
     }
-    else if (this.format == 2)
+    else if (format == 2)
     {
-      if (this.color < 0)
+      if (color < 0)
       {
         warn("Color not defined: " + path);
         return false;
@@ -102,32 +102,32 @@ public class CustomColormap
   {
     try
     {
-      this.colors = null;
-      if (this.source == null) {
+      colors = null;
+      if (source == null) {
         return;
       }
-      String imagePath = this.source + ".png";
+      String imagePath = source + ".png";
       jy loc = new jy(imagePath);
       
       BufferedImage img = bml.a(Config.getResourceStream(loc));
       int imgWidth = img.getWidth();
       int imgHeight = img.getHeight();
       
-      boolean widthOk = (this.width < 0) || (this.width == imgWidth);
-      boolean heightOk = (this.height < 0) || (this.height == imgHeight);
+      boolean widthOk = (width < 0) || (width == imgWidth);
+      boolean heightOk = (height < 0) || (height == imgHeight);
       if ((!widthOk) || (!heightOk))
       {
-        warn("Invalid palette size: " + imgWidth + "x" + imgHeight + ", should be: " + this.width + "x" + this.height + ", path: " + imagePath);
+        warn("Invalid palette size: " + imgWidth + "x" + imgHeight + ", should be: " + width + "x" + height + ", path: " + imagePath);
         return;
       }
-      if (this.width < 0) {
-        this.width = imgWidth;
+      if (width < 0) {
+        width = imgWidth;
       }
-      if (this.height < 0) {
-        this.height = imgHeight;
+      if (height < 0) {
+        height = imgHeight;
       }
-      this.colors = new int[imgWidth * imgHeight];
-      img.getRGB(0, 0, imgWidth, imgHeight, this.colors, 0, imgWidth);
+      colors = new int[imgWidth * imgHeight];
+      img.getRGB(0, 0, imgWidth, imgHeight, colors, 0, imgWidth);
     }
     catch (IOException e)
     {
@@ -193,12 +193,12 @@ public class CustomColormap
   
   public boolean matchesBlock(aly blockState)
   {
-    if (this.matchBlocks == null) {
+    if (matchBlocks == null) {
       return true;
     }
-    for (int i = 0; i < this.matchBlocks.length; i++)
+    for (int i = 0; i < matchBlocks.length; i++)
     {
-      MatchBlock mb = this.matchBlocks[i];
+      MatchBlock mb = matchBlocks[i];
       if (mb.matches(blockState)) {
         return true;
       }
@@ -208,52 +208,52 @@ public class CustomColormap
   
   public int getColorRandom()
   {
-    if (this.format == 2) {
-      return this.color;
+    if (format == 2) {
+      return color;
     }
-    int index = CustomColorizer.random.nextInt(this.colors.length);
+    int index = CustomColorizer.random.nextInt(colors.length);
     
-    return this.colors[index];
+    return colors[index];
   }
   
   public int getColor(int index)
   {
-    index = Config.limit(index, 0, this.colors.length);
+    index = Config.limit(index, 0, colors.length);
     
-    return this.colors[index] & 0xFFFFFF;
+    return colors[index] & 0xFFFFFF;
   }
   
   public int getColor(int cx, int cy)
   {
-    cx = Config.limit(cx, 0, this.width);
-    cy = Config.limit(cy, 0, this.height);
+    cx = Config.limit(cx, 0, width);
+    cy = Config.limit(cy, 0, height);
     
-    return this.colors[(cy * this.width + cx)] & 0xFFFFFF;
+    return colors[(cy * width + cx)] & 0xFFFFFF;
   }
   
   public float[][] getColorsRgb()
   {
-    if (this.colorsRgb == null) {
-      this.colorsRgb = toRgb(this.colors);
+    if (colorsRgb == null) {
+      colorsRgb = toRgb(colors);
     }
-    return this.colorsRgb;
+    return colorsRgb;
   }
   
   public int getColor(adq blockAccess, cj blockPos)
   {
-    if (this.format == 0) {
+    if (format == 0) {
       return getColorVanilla(blockAccess, blockPos);
     }
-    if (this.format == 1) {
+    if (format == 1) {
       return getColorGrid(blockAccess, blockPos);
     }
-    return this.color;
+    return color;
   }
   
   public int getColorSmooth(adq blockAccess, double x, double y, double z, int samples, int step)
   {
-    if (this.format == 2) {
-      return this.color;
+    if (format == 2) {
+      return color;
     }
     int x0 = ns.c(x);
     int y0 = ns.c(y);
@@ -289,8 +289,8 @@ public class CustomColormap
     double rainfall = ns.a(bgb.i(), 0.0F, 1.0F);
     
     rainfall *= temperature;
-    int cx = (int)((1.0D - temperature) * (this.width - 1));
-    int cy = (int)((1.0D - rainfall) * (this.height - 1));
+    int cx = (int)((1.0D - temperature) * (width - 1));
+    int cy = (int)((1.0D - rainfall) * (height - 1));
     return getColor(cx, cy);
   }
   
@@ -298,16 +298,16 @@ public class CustomColormap
   {
     ady bgb = blockAccess.b(blockPos);
     
-    int cx = bgb.az;
-    int cy = blockPos.o() - this.yOffset;
-    if (this.yVariance > 0)
+    int cx = az;
+    int cy = blockPos.o() - yOffset;
+    if (yVariance > 0)
     {
       int seed = blockPos.n() << 16 + blockPos.p();
       int rand = Config.intHash(seed);
       
-      int range = this.yVariance * 2 + 1;
+      int range = yVariance * 2 + 1;
       
-      int diff = (rand & 0xFF) % range - this.yVariance;
+      int diff = (rand & 0xFF) % range - yVariance;
       
       cy += diff;
     }
@@ -316,20 +316,20 @@ public class CustomColormap
   
   public int getLength()
   {
-    if (this.format == 2) {
+    if (format == 2) {
       return 1;
     }
-    return this.colors.length;
+    return colors.length;
   }
   
   public int getWidth()
   {
-    return this.width;
+    return width;
   }
   
   public int getHeight()
   {
-    return this.height;
+    return height;
   }
   
   private static float[][] toRgb(int[] cols)

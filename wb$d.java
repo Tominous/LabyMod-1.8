@@ -11,55 +11,55 @@ class wb$d
   public wb$d(wb ☃)
   {
     super(☃);
-    this.i = ☃;
+    i = ☃;
   }
   
   public void a(float ☃, boolean ☃)
   {
-    this.g = ☃;
-    this.j = ☃;
+    g = ☃;
+    j = ☃;
   }
   
   public void a(double ☃)
   {
-    this.e = ☃;
-    this.f = true;
+    e = ☃;
+    f = true;
   }
   
   public void c()
   {
-    this.a.y = a(this.a.y, this.g, 30.0F);
-    this.a.aK = this.a.y;
-    this.a.aI = this.a.y;
-    if (!this.f)
+    a.y = a(a.y, g, 30.0F);
+    a.aK = a.y;
+    a.aI = a.y;
+    if (!f)
     {
-      this.a.n(0.0F);
+      a.n(0.0F);
       return;
     }
-    this.f = false;
-    if (this.a.C)
+    f = false;
+    if (a.C)
     {
-      this.a.k((float)(this.e * this.a.a(vy.d).e()));
-      if (this.h-- <= 0)
+      a.k((float)(e * a.a(vy.d).e()));
+      if (h-- <= 0)
       {
-        this.h = this.i.cg();
-        if (this.j) {
-          this.h /= 3;
+        h = i.cg();
+        if (j) {
+          h /= 3;
         }
-        this.i.r().a();
-        if (this.i.cn()) {
-          this.i.a(this.i.ck(), this.i.bB(), ((this.i.bc().nextFloat() - this.i.bc().nextFloat()) * 0.2F + 1.0F) * 0.8F);
+        i.r().a();
+        if (i.cn()) {
+          i.a(i.ck(), i.bB(), ((i.bc().nextFloat() - i.bc().nextFloat()) * 0.2F + 1.0F) * 0.8F);
         }
       }
       else
       {
-        this.i.aZ = (this.i.ba = 0.0F);
-        this.a.k(0.0F);
+        i.aZ = (i.ba = 0.0F);
+        a.k(0.0F);
       }
     }
     else
     {
-      this.a.k((float)(this.e * this.a.a(vy.d).e()));
+      a.k((float)(e * a.a(vy.d).e()));
     }
   }
 }

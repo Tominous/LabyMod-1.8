@@ -10,13 +10,13 @@ public class hu
   
   public hu(long ☃, long ☃, boolean ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
     if (!☃)
     {
-      this.b = (-this.b);
-      if (this.b == 0L) {
-        this.b = -1L;
+      b = (-b);
+      if (b == 0L) {
+        b = -1L;
       }
     }
   }
@@ -24,15 +24,15 @@ public class hu
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.readLong();
-    this.b = ☃.readLong();
+    a = ☃.readLong();
+    b = ☃.readLong();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeLong(this.a);
-    ☃.writeLong(this.b);
+    ☃.writeLong(a);
+    ☃.writeLong(b);
   }
   
   public void a(fj ☃)
@@ -42,11 +42,11 @@ public class hu
   
   public long a()
   {
-    return this.a;
+    return a;
   }
   
   public long b()
   {
-    return this.b;
+    return b;
   }
 }

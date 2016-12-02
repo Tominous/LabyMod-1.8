@@ -6,23 +6,23 @@ public enum bmv$a
   
   private bmv$a(int ☃, String ☃, int ☃)
   {
-    this.h = ☃;
-    this.i = ☃;
-    this.j = ☃;
+    h = ☃;
+    i = ☃;
+    j = ☃;
   }
   
   public int a()
   {
-    return this.h;
+    return h;
   }
   
   public String b()
   {
-    return this.i;
+    return i;
   }
   
   public int c()
   {
-    return this.j;
+    return j;
   }
 }

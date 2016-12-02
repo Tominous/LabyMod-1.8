@@ -48,7 +48,7 @@ public class bs
         throw new cf("commands.title.usage", new Object[0]);
       }
       hv ☃ = new hv(☃, null);
-      ☃.a.a(☃);
+      a.a(☃);
       a(☃, this, "commands.title.success", new Object[0]);
       return;
     }
@@ -61,7 +61,7 @@ public class bs
       int ☃ = a(☃[3]);
       int ☃ = a(☃[4]);
       hv ☃ = new hv(☃, ☃, ☃);
-      ☃.a.a(☃);
+      a.a(☃);
       a(☃, this, "commands.title.success", new Object[0]);
       return;
     }
@@ -80,7 +80,7 @@ public class bs
       throw new cc("commands.tellraw.jsonException", new Object[] { ☃ == null ? "" : ☃.getMessage() });
     }
     hv ☃ = new hv(☃, ev.a(☃, ☃, ☃));
-    ☃.a.a(☃);
+    a.a(☃);
     a(☃, this, "commands.title.success", new Object[0]);
   }
   

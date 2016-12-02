@@ -22,7 +22,7 @@ public abstract class bmx
   
   public bmx(File ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   private static String c(jy ☃)
@@ -53,7 +53,7 @@ public abstract class bmx
   
   protected void c(String ☃)
   {
-    b.warn("ResourcePack: ignored non-lowercase namespace: %s in %s", new Object[] { ☃, this.a });
+    b.warn("ResourcePack: ignored non-lowercase namespace: %s in %s", new Object[] { ☃, a });
   }
   
   public <T extends bnw> T a(bny ☃, String ☃)
@@ -90,6 +90,6 @@ public abstract class bmx
   
   public String b()
   {
-    return this.a.getName();
+    return a.getName();
   }
 }

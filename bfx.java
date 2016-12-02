@@ -11,17 +11,17 @@ public class bfx
   
   public bfx(int ☃)
   {
-    this.a = new bfd(☃);
+    a = new bfd(☃);
   }
   
   public void b()
   {
-    this.a.e();
-    this.b.a(this.a);
+    a.e();
+    b.a(a);
   }
   
   public bfd c()
   {
-    return this.a;
+    return a;
   }
 }

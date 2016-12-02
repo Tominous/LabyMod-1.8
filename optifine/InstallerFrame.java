@@ -137,139 +137,139 @@ public class InstallerFrame
   
   private JLabel getLabelOfVersion()
   {
-    if (this.ivjLabelOfVersion == null) {
+    if (ivjLabelOfVersion == null) {
       try
       {
-        this.ivjLabelOfVersion = new JLabel();
-        this.ivjLabelOfVersion.setName("LabelOfVersion");
-        this.ivjLabelOfVersion.setBounds(2, 5, 385, 42);
-        this.ivjLabelOfVersion.setFont(new Font("Dialog", 1, 18));
-        this.ivjLabelOfVersion.setHorizontalAlignment(0);
-        this.ivjLabelOfVersion.setPreferredSize(new Dimension(385, 42));
-        this.ivjLabelOfVersion.setText("OptiFine ...");
+        ivjLabelOfVersion = new JLabel();
+        ivjLabelOfVersion.setName("LabelOfVersion");
+        ivjLabelOfVersion.setBounds(2, 5, 385, 42);
+        ivjLabelOfVersion.setFont(new Font("Dialog", 1, 18));
+        ivjLabelOfVersion.setHorizontalAlignment(0);
+        ivjLabelOfVersion.setPreferredSize(new Dimension(385, 42));
+        ivjLabelOfVersion.setText("OptiFine ...");
       }
       catch (Throwable ivjExc)
       {
         handleException(ivjExc);
       }
     }
-    return this.ivjLabelOfVersion;
+    return ivjLabelOfVersion;
   }
   
   private JLabel getLabelMcVersion()
   {
-    if (this.ivjLabelMcVersion == null) {
+    if (ivjLabelMcVersion == null) {
       try
       {
-        this.ivjLabelMcVersion = new JLabel();
-        this.ivjLabelMcVersion.setName("LabelMcVersion");
-        this.ivjLabelMcVersion.setBounds(2, 38, 385, 25);
-        this.ivjLabelMcVersion.setFont(new Font("Dialog", 1, 14));
-        this.ivjLabelMcVersion.setHorizontalAlignment(0);
-        this.ivjLabelMcVersion.setPreferredSize(new Dimension(385, 25));
-        this.ivjLabelMcVersion.setText("for Minecraft ...");
+        ivjLabelMcVersion = new JLabel();
+        ivjLabelMcVersion.setName("LabelMcVersion");
+        ivjLabelMcVersion.setBounds(2, 38, 385, 25);
+        ivjLabelMcVersion.setFont(new Font("Dialog", 1, 14));
+        ivjLabelMcVersion.setHorizontalAlignment(0);
+        ivjLabelMcVersion.setPreferredSize(new Dimension(385, 25));
+        ivjLabelMcVersion.setText("for Minecraft ...");
       }
       catch (Throwable ivjExc)
       {
         handleException(ivjExc);
       }
     }
-    return this.ivjLabelMcVersion;
+    return ivjLabelMcVersion;
   }
   
   private JPanel getPanelCenter()
   {
-    if (this.ivjPanelCenter == null) {
+    if (ivjPanelCenter == null) {
       try
       {
-        this.ivjPanelCenter = new JPanel();
-        this.ivjPanelCenter.setName("PanelCenter");
-        this.ivjPanelCenter.setLayout(null);
-        this.ivjPanelCenter.add(getLabelOfVersion(), getLabelOfVersion().getName());
-        this.ivjPanelCenter.add(getLabelMcVersion(), getLabelMcVersion().getName());
-        this.ivjPanelCenter.add(getTextArea(), getTextArea().getName());
+        ivjPanelCenter = new JPanel();
+        ivjPanelCenter.setName("PanelCenter");
+        ivjPanelCenter.setLayout(null);
+        ivjPanelCenter.add(getLabelOfVersion(), getLabelOfVersion().getName());
+        ivjPanelCenter.add(getLabelMcVersion(), getLabelMcVersion().getName());
+        ivjPanelCenter.add(getTextArea(), getTextArea().getName());
       }
       catch (Throwable ivjExc)
       {
         handleException(ivjExc);
       }
     }
-    return this.ivjPanelCenter;
+    return ivjPanelCenter;
   }
   
   private JButton getButtonInstall()
   {
-    if (this.ivjButtonInstall == null) {
+    if (ivjButtonInstall == null) {
       try
       {
-        this.ivjButtonInstall = new JButton();
-        this.ivjButtonInstall.setName("ButtonInstall");
-        this.ivjButtonInstall.setPreferredSize(new Dimension(100, 26));
-        this.ivjButtonInstall.setText("Install");
+        ivjButtonInstall = new JButton();
+        ivjButtonInstall.setName("ButtonInstall");
+        ivjButtonInstall.setPreferredSize(new Dimension(100, 26));
+        ivjButtonInstall.setText("Install");
       }
       catch (Throwable ivjExc)
       {
         handleException(ivjExc);
       }
     }
-    return this.ivjButtonInstall;
+    return ivjButtonInstall;
   }
   
   private JButton getButtonClose()
   {
-    if (this.ivjButtonClose == null) {
+    if (ivjButtonClose == null) {
       try
       {
-        this.ivjButtonClose = new JButton();
-        this.ivjButtonClose.setName("ButtonClose");
-        this.ivjButtonClose.setPreferredSize(new Dimension(100, 26));
-        this.ivjButtonClose.setText("Cancel");
+        ivjButtonClose = new JButton();
+        ivjButtonClose.setName("ButtonClose");
+        ivjButtonClose.setPreferredSize(new Dimension(100, 26));
+        ivjButtonClose.setText("Cancel");
       }
       catch (Throwable ivjExc)
       {
         handleException(ivjExc);
       }
     }
-    return this.ivjButtonClose;
+    return ivjButtonClose;
   }
   
   private JPanel getPanelBottom()
   {
-    if (this.ivjPanelBottom == null) {
+    if (ivjPanelBottom == null) {
       try
       {
-        this.ivjPanelBottom = new JPanel();
-        this.ivjPanelBottom.setName("PanelBottom");
-        this.ivjPanelBottom.setLayout(new FlowLayout(1, 15, 10));
-        this.ivjPanelBottom.setPreferredSize(new Dimension(390, 55));
-        this.ivjPanelBottom.add(getButtonInstall(), getButtonInstall().getName());
-        this.ivjPanelBottom.add(getButtonClose(), getButtonClose().getName());
+        ivjPanelBottom = new JPanel();
+        ivjPanelBottom.setName("PanelBottom");
+        ivjPanelBottom.setLayout(new FlowLayout(1, 15, 10));
+        ivjPanelBottom.setPreferredSize(new Dimension(390, 55));
+        ivjPanelBottom.add(getButtonInstall(), getButtonInstall().getName());
+        ivjPanelBottom.add(getButtonClose(), getButtonClose().getName());
       }
       catch (Throwable ivjExc)
       {
         handleException(ivjExc);
       }
     }
-    return this.ivjPanelBottom;
+    return ivjPanelBottom;
   }
   
   private JPanel getPanelContentPane()
   {
-    if (this.ivjPanelContentPane == null) {
+    if (ivjPanelContentPane == null) {
       try
       {
-        this.ivjPanelContentPane = new JPanel();
-        this.ivjPanelContentPane.setName("PanelContentPane");
-        this.ivjPanelContentPane.setLayout(new BorderLayout(5, 5));
-        this.ivjPanelContentPane.add(getPanelCenter(), "Center");
-        this.ivjPanelContentPane.add(getPanelBottom(), "South");
+        ivjPanelContentPane = new JPanel();
+        ivjPanelContentPane.setName("PanelContentPane");
+        ivjPanelContentPane.setLayout(new BorderLayout(5, 5));
+        ivjPanelContentPane.add(getPanelCenter(), "Center");
+        ivjPanelContentPane.add(getPanelBottom(), "South");
       }
       catch (Throwable ivjExc)
       {
         handleException(ivjExc);
       }
     }
-    return this.ivjPanelContentPane;
+    return ivjPanelContentPane;
   }
   
   private void initialize()
@@ -338,32 +338,32 @@ public class InstallerFrame
   private void initConnections()
     throws Exception
   {
-    getButtonInstall().addActionListener(this.ivjEventHandler);
-    getButtonClose().addActionListener(this.ivjEventHandler);
+    getButtonInstall().addActionListener(ivjEventHandler);
+    getButtonClose().addActionListener(ivjEventHandler);
   }
   
   private JTextArea getTextArea()
   {
-    if (this.ivjTextArea == null) {
+    if (ivjTextArea == null) {
       try
       {
-        this.ivjTextArea = new JTextArea();
-        this.ivjTextArea.setName("TextArea");
-        this.ivjTextArea.setBounds(15, 66, 365, 44);
-        this.ivjTextArea.setEditable(false);
-        this.ivjTextArea.setEnabled(true);
-        this.ivjTextArea.setFont(new Font("Dialog", 0, 12));
-        this.ivjTextArea.setLineWrap(true);
-        this.ivjTextArea.setOpaque(false);
-        this.ivjTextArea.setPreferredSize(new Dimension(365, 44));
-        this.ivjTextArea.setText("This installer will install OptiFine in the official Minecraft launcher and will create a new profile \"OptiFine\" for it.");
-        this.ivjTextArea.setWrapStyleWord(true);
+        ivjTextArea = new JTextArea();
+        ivjTextArea.setName("TextArea");
+        ivjTextArea.setBounds(15, 66, 365, 44);
+        ivjTextArea.setEditable(false);
+        ivjTextArea.setEnabled(true);
+        ivjTextArea.setFont(new Font("Dialog", 0, 12));
+        ivjTextArea.setLineWrap(true);
+        ivjTextArea.setOpaque(false);
+        ivjTextArea.setPreferredSize(new Dimension(365, 44));
+        ivjTextArea.setText("This installer will install OptiFine in the official Minecraft launcher and will create a new profile \"OptiFine\" for it.");
+        ivjTextArea.setWrapStyleWord(true);
       }
       catch (Throwable ivjExc)
       {
         handleException(ivjExc);
       }
     }
-    return this.ivjTextArea;
+    return ivjTextArea;
   }
 }

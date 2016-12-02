@@ -7,8 +7,8 @@ public class aau
   public aau(afh ☃, ahh ☃, ahh ☃)
   {
     super(☃);
-    this.b = ☃;
-    this.c = ☃;
+    b = ☃;
+    c = ☃;
     
     d(0);
     a(true);
@@ -21,31 +21,31 @@ public class aau
   
   public String e_(zx ☃)
   {
-    return this.b.b(☃.i());
+    return b.b(☃.i());
   }
   
   public boolean a(zx ☃, wn ☃, adm ☃, cj ☃, cq ☃, float ☃, float ☃, float ☃)
   {
-    if (☃.b == 0) {
+    if (b == 0) {
       return false;
     }
     if (!☃.a(☃.a(☃), ☃, ☃)) {
       return false;
     }
-    Object ☃ = this.b.a(☃);
+    Object ☃ = b.a(☃);
     alz ☃ = ☃.p(☃);
-    if (☃.c() == this.b)
+    if (☃.c() == b)
     {
-      amo ☃ = this.b.n();
+      amo ☃ = b.n();
       Comparable ☃ = ☃.b(☃);
       ahh.a ☃ = (ahh.a)☃.b(ahh.a);
       if (((☃ == cq.b) && (☃ == ahh.a.b)) || ((☃ == cq.a) && (☃ == ahh.a.a) && (☃ == ☃)))
       {
-        alz ☃ = this.c.Q().a(☃, ☃);
-        if ((☃.b(this.c.a(☃, ☃, ☃))) && (☃.a(☃, ☃, 3)))
+        alz ☃ = c.Q().a(☃, ☃);
+        if ((☃.b(c.a(☃, ☃, ☃))) && (☃.a(☃, ☃, 3)))
         {
-          ☃.a(☃.n() + 0.5F, ☃.o() + 0.5F, ☃.p() + 0.5F, this.c.H.b(), (this.c.H.d() + 1.0F) / 2.0F, this.c.H.e() * 0.8F);
-          ☃.b -= 1;
+          ☃.a(☃.n() + 0.5F, ☃.o() + 0.5F, ☃.p() + 0.5F, c.H.b(), (c.H.d() + 1.0F) / 2.0F, c.H.e() * 0.8F);
+          b -= 1;
         }
         return true;
       }
@@ -60,11 +60,11 @@ public class aau
   {
     cj ☃ = ☃;
     
-    amo ☃ = this.b.n();
-    Object ☃ = this.b.a(☃);
+    amo ☃ = b.n();
+    Object ☃ = b.a(☃);
     
     alz ☃ = ☃.p(☃);
-    if (☃.c() == this.b)
+    if (☃.c() == b)
     {
       boolean ☃ = ☃.b(ahh.a) == ahh.a.a;
       if (((☃ == cq.b) && (!☃)) || ((☃ == cq.a) && (☃) && (☃ == ☃.b(☃)))) {
@@ -73,7 +73,7 @@ public class aau
     }
     ☃ = ☃.a(☃);
     alz ☃ = ☃.p(☃);
-    if ((☃.c() == this.b) && (☃ == ☃.b(☃))) {
+    if ((☃.c() == b) && (☃ == ☃.b(☃))) {
       return true;
     }
     return super.a(☃, ☃, ☃, ☃, ☃);
@@ -82,16 +82,16 @@ public class aau
   private boolean a(zx ☃, adm ☃, cj ☃, Object ☃)
   {
     alz ☃ = ☃.p(☃);
-    if (☃.c() == this.b)
+    if (☃.c() == b)
     {
-      Comparable ☃ = ☃.b(this.b.n());
+      Comparable ☃ = ☃.b(b.n());
       if (☃ == ☃)
       {
-        alz ☃ = this.c.Q().a(this.b.n(), ☃);
-        if ((☃.b(this.c.a(☃, ☃, ☃))) && (☃.a(☃, ☃, 3)))
+        alz ☃ = c.Q().a(b.n(), ☃);
+        if ((☃.b(c.a(☃, ☃, ☃))) && (☃.a(☃, ☃, 3)))
         {
-          ☃.a(☃.n() + 0.5F, ☃.o() + 0.5F, ☃.p() + 0.5F, this.c.H.b(), (this.c.H.d() + 1.0F) / 2.0F, this.c.H.e() * 0.8F);
-          ☃.b -= 1;
+          ☃.a(☃.n() + 0.5F, ☃.o() + 0.5F, ☃.p() + 0.5F, c.H.b(), (c.H.d() + 1.0F) / 2.0F, c.H.e() * 0.8F);
+          b -= 1;
         }
         return true;
       }

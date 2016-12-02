@@ -20,60 +20,60 @@ public class GuiChoosePreset
   
   public GuiChoosePreset(axu par1GuiScreen, ModSettings par2ModSettings)
   {
-    this.screenTitle = "Customization";
-    this.parentGuiScreen = par1GuiScreen;
+    screenTitle = "Customization";
+    parentGuiScreen = par1GuiScreen;
   }
   
   public void b()
   {
-    this.screenTitle = bnq.a("gui.xaero_choose_a_preset", new Object[0]);
+    screenTitle = bnq.a("gui.xaero_choose_a_preset", new Object[0]);
     InterfaceHandler.selectedId = -1;
     InterfaceHandler.draggingId = -1;
-    this.n.clear();
-    this.n.add(new avs(200, this.l / 2 - 100, this.m / 6 + 168, bnq.a("gui.xaero_cancel", new Object[0])));
+    n.clear();
+    n.add(new avs(200, l / 2 - 100, m / 6 + 168, bnq.a("gui.xaero_cancel", new Object[0])));
     int var8 = 0;
     ArrayList<Preset> var2 = InterfaceHandler.presets;
     int var3 = var2.size();
     for (int var4 = 0; var4 < var3; var4++)
     {
       Preset var5 = (Preset)var2.get(var4);
-      this.n.add(new MySmallButton(var4, this.l / 2 - 155 + var8 % 2 * 160, this.m / 7 + 24 * (var8 >> 1), var5.getName()));
+      n.add(new MySmallButton(var4, l / 2 - 155 + var8 % 2 * 160, m / 7 + 24 * (var8 >> 1), var5.getName()));
       var8++;
     }
   }
   
   protected void a(avs par1GuiButton)
   {
-    if (par1GuiButton.l)
+    if (l)
     {
-      int var2 = this.j.t.aK;
-      if ((par1GuiButton.k < 100) && ((par1GuiButton instanceof MySmallButton)))
+      int var2 = j.t.aK;
+      if ((k < 100) && ((par1GuiButton instanceof MySmallButton)))
       {
-        InterfaceHandler.applyPreset(par1GuiButton.k);
-        this.j.a(this.parentGuiScreen);
+        InterfaceHandler.applyPreset(k);
+        j.a(parentGuiScreen);
       }
-      if (par1GuiButton.k == 200) {
-        this.j.a(this.parentGuiScreen);
+      if (k == 200) {
+        j.a(parentGuiScreen);
       }
-      if (this.j.t.aK != var2)
+      if (j.t.aK != var2)
       {
-        avr res = new avr(this.j);
+        avr res = new avr(j);
         int var3 = res.a();
         int var4 = res.b();
-        a(this.j, var3, var4);
+        a(j, var3, var4);
       }
     }
   }
   
   public List getButtons()
   {
-    return this.n;
+    return n;
   }
   
   public void a(int par1, int par2, float par3)
   {
     c();
-    a(this.q, this.screenTitle, this.l / 2, 20, 16777215);
+    a(q, screenTitle, l / 2, 20, 16777215);
     super.a(par1, par2, par3);
   }
 }

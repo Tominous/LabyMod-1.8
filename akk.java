@@ -13,7 +13,7 @@ public class akk
   public akk()
   {
     super(arm.l);
-    j(this.M.b().a(a, Boolean.valueOf(false)).a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, Boolean.valueOf(false)));
+    j(M.b().a(a, Boolean.valueOf(false)).a(b, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, Boolean.valueOf(false)));
     a(true);
     a(yz.c);
   }
@@ -125,7 +125,7 @@ public class akk
   
   private boolean c(afh ☃)
   {
-    return (☃.d()) && (☃.J.c());
+    return (☃.d()) && (J.c());
   }
   
   private boolean e(adm ☃, cj ☃, alz ☃)
@@ -169,7 +169,7 @@ public class akk
   
   public void a(adm ☃, cj ☃, alz ☃, afh ☃)
   {
-    if ((!☃.D) && (!e(☃, ☃, ☃)))
+    if ((!D) && (!e(☃, ☃, ☃)))
     {
       b(☃, ☃, ☃, 0);
       ☃.g(☃);
@@ -178,10 +178,10 @@ public class akk
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
-    if (☃.s.nextInt(4) != 0) {
+    if (s.nextInt(4) != 0) {
       return;
     }
     int ☃ = 4;
@@ -229,7 +229,7 @@ public class akk
       cj ☃ = ☃.a(☃);
       
       afh ☃ = ☃.p(☃).c();
-      if (☃.J == arm.a)
+      if (J == arm.a)
       {
         cq ☃ = ☃.e();
         cq ☃ = ☃.f();
@@ -251,7 +251,7 @@ public class akk
           ☃.a(☃, Q(), 2);
         }
       }
-      else if ((☃.J.k()) && (☃.d()))
+      else if ((J.k()) && (☃.d()))
       {
         ☃.a(☃, ☃.a(a(☃), Boolean.valueOf(true)), 2);
       }
@@ -262,7 +262,7 @@ public class akk
       cj ☃ = ☃.b();
       alz ☃ = ☃.p(☃);
       afh ☃ = ☃.c();
-      if (☃.J == arm.a)
+      if (J == arm.a)
       {
         alz ☃ = ☃;
         for (cq ☃ : cq.c.a) {
@@ -312,7 +312,7 @@ public class akk
   
   public void a(adm ☃, wn ☃, cj ☃, alz ☃, akw ☃)
   {
-    if ((!☃.D) && (☃.bZ() != null) && (☃.bZ().b() == zy.be))
+    if ((!D) && (☃.bZ() != null) && (☃.bZ().b() == zy.be))
     {
       ☃.b(na.ab[afh.a(this)]);
       

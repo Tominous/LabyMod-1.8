@@ -35,7 +35,7 @@ public class Settings
         w.flush();
         w.close();
       }
-      catch (FileNotFoundException e) {}
+      catch (FileNotFoundException localFileNotFoundException) {}
     } else {
       System.out.print("DMI Settings could not be saved.");
     }
@@ -61,7 +61,7 @@ public class Settings
           text = text.replace("" + Color.c + "l", "" + Color.c + "f").replace("" + Color.c + "k", "" + Color.c + "f").replace("" + Color.c + "m", "" + Color.c + "f").replace("" + Color.c + "n", "" + Color.c + "f").replace("" + Color.c + "r", "" + Color.c + "f").replace("Â", "");
         }
       }
-      catch (IOException e) {}
+      catch (IOException localIOException) {}
       if ((DMISettings)new Gson().fromJson(text, DMISettings.class) == null) {
         text = new Gson().toJson(new DMISettings());
       }

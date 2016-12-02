@@ -27,7 +27,7 @@ public class j
     
     ☃ = a(☃);
     
-    k ☃ = (k)this.b.get(☃);
+    k ☃ = (k)b.get(☃);
     int ☃ = a(☃, ☃);
     int ☃ = 0;
     if (☃ == null)
@@ -101,13 +101,13 @@ public class j
   
   public k a(k ☃)
   {
-    this.b.put(☃.c(), ☃);
-    this.c.add(☃);
+    b.put(☃.c(), ☃);
+    c.add(☃);
     for (String ☃ : ☃.b())
     {
-      k ☃ = (k)this.b.get(☃);
+      k ☃ = (k)b.get(☃);
       if ((☃ == null) || (!☃.c().equals(☃))) {
-        this.b.put(☃, ☃);
+        b.put(☃, ☃);
       }
     }
     return ☃;
@@ -127,7 +127,7 @@ public class j
     if (☃.length == 1)
     {
       List<String> ☃ = Lists.newArrayList();
-      for (Map.Entry<String, k> ☃ : this.b.entrySet()) {
+      for (Map.Entry<String, k> ☃ : b.entrySet()) {
         if ((i.a(☃, (String)☃.getKey())) && (((k)☃.getValue()).a(☃))) {
           ☃.add(☃.getKey());
         }
@@ -136,7 +136,7 @@ public class j
     }
     if (☃.length > 1)
     {
-      k ☃ = (k)this.b.get(☃);
+      k ☃ = (k)b.get(☃);
       if ((☃ != null) && (☃.a(☃))) {
         return ☃.a(☃, a(☃), ☃);
       }
@@ -147,7 +147,7 @@ public class j
   public List<k> a(m ☃)
   {
     List<k> ☃ = Lists.newArrayList();
-    for (k ☃ : this.c) {
+    for (k ☃ : c) {
       if (☃.a(☃)) {
         ☃.add(☃);
       }
@@ -157,7 +157,7 @@ public class j
   
   public Map<String, k> a()
   {
-    return this.b;
+    return b;
   }
   
   private int a(k ☃, String[] ☃)

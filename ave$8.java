@@ -1,10 +1,12 @@
+import java.util.concurrent.Callable;
+
 class ave$8
-  implements Runnable
+  implements Callable<String>
 {
-  ave$8(ave paramave) {}
+  ave$8(ave this$0) {}
   
-  public void run()
+  public String call()
   {
-    this.a.e();
+    return bqs.c();
   }
 }

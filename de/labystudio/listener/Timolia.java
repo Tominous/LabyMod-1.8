@@ -19,7 +19,7 @@ public class Timolia
   
   public static void updateTimolia()
   {
-    isTimolia = LabyMod.getInstance().ip.toLowerCase().contains("timolia.de");
+    isTimolia = getInstanceip.toLowerCase().contains("timolia.de");
   }
   
   public static boolean isTimolia()
@@ -71,15 +71,15 @@ public class Timolia
     if (!isTimolia()) {
       return;
     }
-    if ((clean.contains(" hat dich mit dem Kit '")) && (clean.contains("' zu einem Kampf herausgefordert (1vs1)!"))) {
+    if ((raw.startsWith(Color.cl("r") + Color.cl("7") + Color.cl("1"))) && (clean.contains(" hat dich mit dem Kit ")) && (clean.contains("herausgefordert."))) {
       try
       {
-        String[] split = clean.replace("' zu einem Kampf herausgefordert (1vs1)!", "").split(" hat dich mit dem Kit '");
+        String[] split = raw.split(Color.cl("7") + " " + Color.cl("r") + Color.cl("7"))[1].split(" hat dich mit dem Kit " + Color.cl("6"));
         String player = split[0];
         if (player != null) {
           timoliaRequestPlayer = player;
         }
-        String kit = split[1];
+        String kit = split[1].split(" ")[0];
         if (kit != null) {
           timoliaRequestKit = kit;
         }
@@ -90,40 +90,34 @@ public class Timolia
         timoliaRequestPlayer = "";
       }
     }
-    if ((clean.startsWith("Du hast ")) && (clean.contains(" zu einem Kampf herausgefordert (1vs1)!")))
+    if ((raw.startsWith(Color.cl("r") + Color.cl("1"))) && (clean.contains(" Du hast ")) && (clean.contains("herausgefordert.")))
     {
-      String player = clean.replace(" zu einem Kampf herausgefordert (1vs1)!", "").replace("Du hast ", "");
-      timoliaRequestPlayer = player;
+      String[] split = clean.split(" Du hast ")[1].split(" mit dem Kit ");
+      timoliaRequestPlayer = split[0];
+      timoliaRequestKit = split[1].split(" herausgefordert.")[0];
+    }
+    if ((raw.startsWith(Color.cl("r") + Color.cl("1"))) && (clean.contains(" Der Kampf gegen ")) && (clean.contains(" beginnt."))) {
+      timoliaRequestPlayer = clean.split(" Der Kampf gegen ")[1].split(" beginnt.")[0];
+    }
+    if ((raw.startsWith(Color.cl("r") + Color.cl("1"))) && (raw.contains(Color.cl("7") + "Kit: " + Color.cl("6"))) && (raw.contains(" " + Color.cl("8") + "- " + Color.cl("7") + "Einstellungen:"))) {
+      timoliaRequestKit = raw.split(Color.cl("7") + "Kit: " + Color.cl("6"))[1].split(" " + Color.cl("8") + "- " + Color.cl("7") + "Einstellungen:")[0];
+    }
+    if ((raw.startsWith(Color.cl("r") + Color.cl("1"))) && (clean.contains(" Du wurdest zur Warteschlange hinzugefügt.")))
+    {
+      timoliaRequestPlayer = "[Warteschlange]";
       timoliaRequestKit = "?";
     }
-    if (clean.startsWith("Du wurdest zur Warteschlange hinzugefügt!"))
+    if ((raw.startsWith(Color.cl("r") + Color.cl("1"))) && (clean.contains(" Du wurdest aus der Warteschlange entfernt")))
     {
       timoliaRequestPlayer = "?";
       timoliaRequestKit = "?";
     }
-    if ((clean.startsWith("Kit: ")) && (clean.contains(" | Einstellungen: ")) && 
-      (!clean.contains(" | Einstellungen: -")))
+    if ((raw.startsWith(Color.cl("r") + Color.cl("1"))) && (clean.contains(" hat seine Herausforderung zurückgezogen.")))
     {
-      String settings = "";
-      if ((!clean.contains(timoliaRequestKit)) || (!timoliaRequestKit.isEmpty()) || (timoliaRequestKit.equals("?"))) {
-        try
-        {
-          String[] msg = clean.split("Einstellungen");
-          timoliaRequestKit = msg[0].replace("Kit: ", "").replace(" | ", "");
-          settings = msg[1].replace(": ", "");
-        }
-        catch (Exception error)
-        {
-          settings = "";
-        }
-      }
+      timoliaRequestPlayer = "?";
+      timoliaRequestKit = "?";
     }
-    if (clean.startsWith(timoliaRequestPlayer + " hat seine Herausforderung zurückgezogen!"))
-    {
-      timoliaRequestPlayer = "";
-      timoliaRequestKit = "";
-    }
-    if ((clean.startsWith("Du hast den Kampf gegen ")) || (clean.startsWith("Dein Team hat den Kampf gegen das Team von ")))
+    if ((raw.startsWith(Color.cl("r") + Color.cl("7") + Color.cl("1"))) && ((clean.contains("hast den Kampf gegen")) || (clean.contains("habt den Kampf gegen "))))
     {
       if (clean.contains("gewonnen"))
       {
@@ -142,10 +136,10 @@ public class Timolia
   
   public static void drawTimoliaGui()
   {
-    if (!ConfigManager.settings.gameTimolia.booleanValue()) {
+    if (!settingsgameTimolia) {
       return;
     }
-    if ((LabyMod.getInstance().ip.isEmpty()) || (!LabyMod.getInstance().ip.toLowerCase().contains("timolia.de"))) {
+    if (!isTimolia()) {
       return;
     }
     listenToTablist();

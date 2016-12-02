@@ -22,30 +22,30 @@ public class ww
   
   protected void a(auh ☃)
   {
-    if (!this.o.D)
+    if (!o.D)
     {
-      if (☃.d != null)
+      if (d != null)
       {
-        boolean ☃ = ☃.d.a(ow.a(this, this.a), 5.0F);
+        boolean ☃ = d.a(ow.a(this, a), 5.0F);
         if (☃)
         {
-          a(this.a, ☃.d);
-          if (!☃.d.T()) {
-            ☃.d.e(5);
+          a(a, d);
+          if (!d.T()) {
+            d.e(5);
           }
         }
       }
       else
       {
         boolean ☃ = true;
-        if ((this.a != null) && ((this.a instanceof ps))) {
-          ☃ = this.o.Q().b("mobGriefing");
+        if ((a != null) && ((a instanceof ps))) {
+          ☃ = o.Q().b("mobGriefing");
         }
         if (☃)
         {
-          cj ☃ = ☃.a().a(☃.b);
-          if (this.o.d(☃)) {
-            this.o.a(☃, afi.ab.Q());
+          cj ☃ = ☃.a().a(b);
+          if (o.d(☃)) {
+            o.a(☃, afi.ab.Q());
           }
         }
       }

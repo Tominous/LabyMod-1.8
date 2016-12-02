@@ -5,41 +5,41 @@ public class ip$b
 {
   public ip$b()
   {
-    this.g = true;
-    this.h = true;
+    g = true;
+    h = true;
   }
   
   public ip$b(double ☃, double ☃, double ☃, float ☃, float ☃, boolean ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
-    this.e = ☃;
-    this.f = ☃;
-    this.h = true;
-    this.g = true;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
+    e = ☃;
+    f = ☃;
+    h = true;
+    g = true;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.readDouble();
-    this.b = ☃.readDouble();
-    this.c = ☃.readDouble();
-    this.d = ☃.readFloat();
-    this.e = ☃.readFloat();
+    a = ☃.readDouble();
+    b = ☃.readDouble();
+    c = ☃.readDouble();
+    d = ☃.readFloat();
+    e = ☃.readFloat();
     super.a(☃);
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeDouble(this.a);
-    ☃.writeDouble(this.b);
-    ☃.writeDouble(this.c);
-    ☃.writeFloat(this.d);
-    ☃.writeFloat(this.e);
+    ☃.writeDouble(a);
+    ☃.writeDouble(b);
+    ☃.writeDouble(c);
+    ☃.writeFloat(d);
+    ☃.writeFloat(e);
     super.b(☃);
   }
 }

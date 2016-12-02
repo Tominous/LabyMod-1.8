@@ -8,26 +8,26 @@ public class bpe
   {
     super(new jy("minecraft:minecart.inside"));
     
-    this.k = ☃;
-    this.l = ☃;
+    k = ☃;
+    l = ☃;
     
-    this.i = bpj.a.a;
-    this.g = true;
-    this.h = 0;
+    i = bpj.a.a;
+    g = true;
+    h = 0;
   }
   
   public void c()
   {
-    if ((this.l.I) || (!this.k.au()) || (this.k.m != this.l))
+    if ((l.I) || (!k.au()) || (k.m != l))
     {
-      this.j = true;
+      j = true;
       return;
     }
-    float ☃ = ns.a(this.l.v * this.l.v + this.l.x * this.l.x);
+    float ☃ = ns.a(l.v * l.v + l.x * l.x);
     if (☃ >= 0.01D) {
-      this.b = (0.0F + ns.a(☃, 0.0F, 1.0F) * 0.75F);
+      b = (0.0F + ns.a(☃, 0.0F, 1.0F) * 0.75F);
     } else {
-      this.b = 0.0F;
+      b = 0.0F;
     }
   }
 }

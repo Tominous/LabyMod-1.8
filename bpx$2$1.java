@@ -18,6 +18,6 @@ class bpx$2$1
   public InputStream getInputStream()
     throws IOException
   {
-    return ave.A().Q().a(this.a.a).b();
+    return ave.A().Q().a(a.a).b();
   }
 }

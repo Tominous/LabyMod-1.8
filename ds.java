@@ -12,15 +12,15 @@ public class ds
   
   public ds(int[] ☃)
   {
-    this.b = ☃;
+    b = ☃;
   }
   
   void a(DataOutput ☃)
     throws IOException
   {
-    ☃.writeInt(this.b.length);
-    for (int ☃ = 0; ☃ < this.b.length; ☃++) {
-      ☃.writeInt(this.b[☃]);
+    ☃.writeInt(b.length);
+    for (int ☃ = 0; ☃ < b.length; ☃++) {
+      ☃.writeInt(b[☃]);
     }
   }
   
@@ -31,9 +31,9 @@ public class ds
     
     int ☃ = ☃.readInt();
     ☃.a(32 * ☃);
-    this.b = new int[☃];
+    b = new int[☃];
     for (int ☃ = 0; ☃ < ☃; ☃++) {
-      this.b[☃] = ☃.readInt();
+      b[☃] = ☃.readInt();
     }
   }
   
@@ -45,7 +45,7 @@ public class ds
   public String toString()
   {
     String ☃ = "[";
-    for (int ☃ : this.b) {
+    for (int ☃ : b) {
       ☃ = ☃ + ☃ + ",";
     }
     return ☃ + "]";
@@ -53,26 +53,26 @@ public class ds
   
   public eb b()
   {
-    int[] ☃ = new int[this.b.length];
-    System.arraycopy(this.b, 0, ☃, 0, this.b.length);
+    int[] ☃ = new int[b.length];
+    System.arraycopy(b, 0, ☃, 0, b.length);
     return new ds(☃);
   }
   
   public boolean equals(Object ☃)
   {
     if (super.equals(☃)) {
-      return Arrays.equals(this.b, ((ds)☃).b);
+      return Arrays.equals(b, b);
     }
     return false;
   }
   
   public int hashCode()
   {
-    return super.hashCode() ^ Arrays.hashCode(this.b);
+    return super.hashCode() ^ Arrays.hashCode(b);
   }
   
   public int[] c()
   {
-    return this.b;
+    return b;
   }
 }

@@ -45,11 +45,11 @@ public final class zx
   
   public zx(zw ☃, int ☃, int ☃)
   {
-    this.d = ☃;
-    this.b = ☃;
-    this.f = ☃;
-    if (this.f < 0) {
-      this.f = 0;
+    d = ☃;
+    b = ☃;
+    f = ☃;
+    if (f < 0) {
+      f = 0;
     }
   }
   
@@ -64,24 +64,24 @@ public final class zx
   
   public zx a(int ☃)
   {
-    zx ☃ = new zx(this.d, ☃, this.f);
-    if (this.e != null) {
-      ☃.e = ((dn)this.e.b());
+    zx ☃ = new zx(d, ☃, f);
+    if (e != null) {
+      e = ((dn)e.b());
     }
-    this.b -= ☃;
+    b -= ☃;
     return ☃;
   }
   
   public zw b()
   {
-    return this.d;
+    return d;
   }
   
   public boolean a(wn ☃, adm ☃, cj ☃, cq ☃, float ☃, float ☃, float ☃)
   {
     boolean ☃ = b().a(this, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
     if (☃) {
-      ☃.b(na.ad[zw.b(this.d)]);
+      ☃.b(na.ad[zw.b(d)]);
     }
     return ☃;
   }
@@ -103,12 +103,12 @@ public final class zx
   
   public dn b(dn ☃)
   {
-    jy ☃ = (jy)zw.e.c(this.d);
+    jy ☃ = (jy)zw.e.c(d);
     ☃.a("id", ☃ == null ? "minecraft:air" : ☃.toString());
-    ☃.a("Count", (byte)this.b);
-    ☃.a("Damage", (short)this.f);
-    if (this.e != null) {
-      ☃.a("tag", this.e);
+    ☃.a("Count", (byte)b);
+    ☃.a("Damage", (short)f);
+    if (e != null) {
+      ☃.a("tag", e);
     }
     return ☃;
   }
@@ -116,20 +116,20 @@ public final class zx
   public void c(dn ☃)
   {
     if (☃.b("id", 8)) {
-      this.d = zw.d(☃.j("id"));
+      d = zw.d(☃.j("id"));
     } else {
-      this.d = zw.b(☃.e("id"));
+      d = zw.b(☃.e("id"));
     }
-    this.b = ☃.d("Count");
-    this.f = ☃.e("Damage");
-    if (this.f < 0) {
-      this.f = 0;
+    b = ☃.d("Count");
+    f = ☃.e("Damage");
+    if (f < 0) {
+      f = 0;
     }
     if (☃.b("tag", 10))
     {
-      this.e = ☃.m("tag");
-      if (this.d != null) {
-        this.d.a(this.e);
+      e = ☃.m("tag");
+      if (d != null) {
+        d.a(e);
       }
     }
   }
@@ -146,10 +146,10 @@ public final class zx
   
   public boolean e()
   {
-    if (this.d == null) {
+    if (d == null) {
       return false;
     }
-    if (this.d.l() <= 0) {
+    if (d.l() <= 0) {
       return false;
     }
     if ((n()) && (o().n("Unbreakable"))) {
@@ -160,35 +160,35 @@ public final class zx
   
   public boolean f()
   {
-    return this.d.k();
+    return d.k();
   }
   
   public boolean g()
   {
-    return (e()) && (this.f > 0);
+    return (e()) && (f > 0);
   }
   
   public int h()
   {
-    return this.f;
+    return f;
   }
   
   public int i()
   {
-    return this.f;
+    return f;
   }
   
   public void b(int ☃)
   {
-    this.f = ☃;
-    if (this.f < 0) {
-      this.f = 0;
+    f = ☃;
+    if (f < 0) {
+      f = 0;
     }
   }
   
   public int j()
   {
-    return this.d.l();
+    return d.l();
   }
   
   public boolean a(int ☃, Random ☃)
@@ -198,7 +198,7 @@ public final class zx
     }
     if (☃ > 0)
     {
-      int ☃ = ack.a(aci.t.B, this);
+      int ☃ = ack.a(tB, this);
       
       int ☃ = 0;
       for (int ☃ = 0; (☃ > 0) && (☃ < ☃); ☃++) {
@@ -211,14 +211,14 @@ public final class zx
         return false;
       }
     }
-    this.f += ☃;
+    f += ☃;
     
-    return this.f > j();
+    return f > j();
   }
   
   public void a(int ☃, pr ☃)
   {
-    if (((☃ instanceof wn)) && (((wn)☃).bA.d)) {
+    if (((☃ instanceof wn)) && (bA.d)) {
       return;
     }
     if (!e()) {
@@ -228,53 +228,53 @@ public final class zx
     {
       ☃.b(this);
       
-      this.b -= 1;
+      b -= 1;
       if ((☃ instanceof wn))
       {
         wn ☃ = (wn)☃;
-        ☃.b(na.ae[zw.b(this.d)]);
-        if ((this.b == 0) && ((b() instanceof yt))) {
+        ☃.b(na.ae[zw.b(d)]);
+        if ((b == 0) && ((b() instanceof yt))) {
           ☃.ca();
         }
       }
-      if (this.b < 0) {
-        this.b = 0;
+      if (b < 0) {
+        b = 0;
       }
-      this.f = 0;
+      f = 0;
     }
   }
   
   public void a(pr ☃, wn ☃)
   {
-    boolean ☃ = this.d.a(this, ☃, ☃);
+    boolean ☃ = d.a(this, ☃, ☃);
     if (☃) {
-      ☃.b(na.ad[zw.b(this.d)]);
+      ☃.b(na.ad[zw.b(d)]);
     }
   }
   
   public void a(adm ☃, afh ☃, cj ☃, wn ☃)
   {
-    boolean ☃ = this.d.a(this, ☃, ☃, ☃, ☃);
+    boolean ☃ = d.a(this, ☃, ☃, ☃, ☃);
     if (☃) {
-      ☃.b(na.ad[zw.b(this.d)]);
+      ☃.b(na.ad[zw.b(d)]);
     }
   }
   
   public boolean b(afh ☃)
   {
-    return this.d.b(☃);
+    return d.b(☃);
   }
   
   public boolean a(wn ☃, pr ☃)
   {
-    return this.d.a(this, ☃, ☃);
+    return d.a(this, ☃, ☃);
   }
   
   public zx k()
   {
-    zx ☃ = new zx(this.d, this.b, this.f);
-    if (this.e != null) {
-      ☃.e = ((dn)this.e.b());
+    zx ☃ = new zx(d, b, f);
+    if (e != null) {
+      e = ((dn)e.b());
     }
     return ☃;
   }
@@ -287,10 +287,10 @@ public final class zx
     if ((☃ == null) || (☃ == null)) {
       return false;
     }
-    if ((☃.e == null) && (☃.e != null)) {
+    if ((e == null) && (e != null)) {
       return false;
     }
-    if ((☃.e != null) && (!☃.e.equals(☃.e))) {
+    if ((e != null) && (!e.equals(e))) {
       return false;
     }
     return true;
@@ -309,19 +309,19 @@ public final class zx
   
   private boolean d(zx ☃)
   {
-    if (this.b != ☃.b) {
+    if (b != b) {
       return false;
     }
-    if (this.d != ☃.d) {
+    if (d != d) {
       return false;
     }
-    if (this.f != ☃.f) {
+    if (f != f) {
       return false;
     }
-    if ((this.e == null) && (☃.e != null)) {
+    if ((e == null) && (e != null)) {
       return false;
     }
-    if ((this.e != null) && (!this.e.equals(☃.e))) {
+    if ((e != null) && (!e.equals(e))) {
       return false;
     }
     return true;
@@ -340,12 +340,12 @@ public final class zx
   
   public boolean a(zx ☃)
   {
-    return (☃ != null) && (this.d == ☃.d) && (this.f == ☃.f);
+    return (☃ != null) && (d == d) && (f == f);
   }
   
   public String a()
   {
-    return this.d.e_(this);
+    return d.e_(this);
   }
   
   public static zx b(zx ☃)
@@ -355,21 +355,21 @@ public final class zx
   
   public String toString()
   {
-    return this.b + "x" + this.d.a() + "@" + this.f;
+    return b + "x" + d.a() + "@" + f;
   }
   
   public void a(adm ☃, pk ☃, int ☃, boolean ☃)
   {
-    if (this.c > 0) {
-      this.c -= 1;
+    if (c > 0) {
+      c -= 1;
     }
-    this.d.a(this, ☃, ☃, ☃, ☃);
+    d.a(this, ☃, ☃, ☃, ☃);
   }
   
   public void a(adm ☃, wn ☃, int ☃)
   {
-    ☃.a(na.ac[zw.b(this.d)], ☃);
-    this.d.d(this, ☃, ☃);
+    ☃.a(na.ac[zw.b(d)], ☃);
+    d.d(this, ☃, ☃);
   }
   
   public boolean c(zx ☃)
@@ -394,17 +394,17 @@ public final class zx
   
   public boolean n()
   {
-    return this.e != null;
+    return e != null;
   }
   
   public dn o()
   {
-    return this.e;
+    return e;
   }
   
   public dn a(String ☃, boolean ☃)
   {
-    if ((this.e == null) || (!this.e.b(☃, 10)))
+    if ((e == null) || (!e.b(☃, 10)))
     {
       if (☃)
       {
@@ -414,28 +414,28 @@ public final class zx
       }
       return null;
     }
-    return this.e.m(☃);
+    return e.m(☃);
   }
   
   public du p()
   {
-    if (this.e == null) {
+    if (e == null) {
       return null;
     }
-    return this.e.c("ench", 10);
+    return e.c("ench", 10);
   }
   
   public void d(dn ☃)
   {
-    this.e = ☃;
+    e = ☃;
   }
   
   public String q()
   {
     String ☃ = b().a(this);
-    if ((this.e != null) && (this.e.b("display", 10)))
+    if ((e != null) && (e.b("display", 10)))
     {
-      dn ☃ = this.e.m("display");
+      dn ☃ = e.m("display");
       if (☃.b("Name", 8)) {
         ☃ = ☃.j("Name");
       }
@@ -445,30 +445,30 @@ public final class zx
   
   public zx c(String ☃)
   {
-    if (this.e == null) {
-      this.e = new dn();
+    if (e == null) {
+      e = new dn();
     }
-    if (!this.e.b("display", 10)) {
-      this.e.a("display", new dn());
+    if (!e.b("display", 10)) {
+      e.a("display", new dn());
     }
-    this.e.m("display").a("Name", ☃);
+    e.m("display").a("Name", ☃);
     return this;
   }
   
   public void r()
   {
-    if (this.e == null) {
+    if (e == null) {
       return;
     }
-    if (!this.e.b("display", 10)) {
+    if (!e.b("display", 10)) {
       return;
     }
-    dn ☃ = this.e.m("display");
+    dn ☃ = e.m("display");
     ☃.o("Name");
     if (☃.c_())
     {
-      this.e.o("display");
-      if (this.e.c_()) {
+      e.o("display");
+      if (e.c_()) {
         d(null);
       }
     }
@@ -476,13 +476,13 @@ public final class zx
   
   public boolean s()
   {
-    if (this.e == null) {
+    if (e == null) {
       return false;
     }
-    if (!this.e.b("display", 10)) {
+    if (!e.b("display", 10)) {
       return false;
     }
-    return this.e.m("display").b("Name", 8);
+    return e.m("display").b("Name", 8);
   }
   
   public List<String> a(wn ☃, boolean ☃)
@@ -502,27 +502,27 @@ public final class zx
         ☃ = ☃ + " (";
         ☃ = ")";
       }
-      int ☃ = zw.b(this.d);
+      int ☃ = zw.b(d);
       if (f()) {
-        ☃ = ☃ + String.format("#%04d/%d%s", new Object[] { Integer.valueOf(☃), Integer.valueOf(this.f), ☃ });
+        ☃ = ☃ + String.format("#%04d/%d%s", new Object[] { Integer.valueOf(☃), Integer.valueOf(f), ☃ });
       } else {
         ☃ = ☃ + String.format("#%04d%s", new Object[] { Integer.valueOf(☃), ☃ });
       }
     }
     else if ((!s()) && 
-      (this.d == zy.bd))
+      (d == zy.bd))
     {
-      ☃ = ☃ + " #" + this.f;
+      ☃ = ☃ + " #" + f;
     }
     ☃.add(☃);
     
     int ☃ = 0;
     if ((n()) && 
-      (this.e.b("HideFlags", 99))) {
-      ☃ = this.e.f("HideFlags");
+      (e.b("HideFlags", 99))) {
+      ☃ = e.f("HideFlags");
     }
     if ((☃ & 0x20) == 0) {
-      this.d.a(this, ☃, ☃, ☃);
+      d.a(this, ☃, ☃, ☃);
     }
     if (n())
     {
@@ -540,9 +540,9 @@ public final class zx
           }
         }
       }
-      if (this.e.b("display", 10))
+      if (e.b("display", 10))
       {
-        dn ☃ = this.e.m("display");
+        dn ☃ = e.m("display");
         if (☃.b("color", 3)) {
           if (☃) {
             ☃.add("Color: #" + Integer.toHexString(☃.f("color")).toUpperCase());
@@ -593,9 +593,9 @@ public final class zx
     if ((n()) && (o().n("Unbreakable")) && ((☃ & 0x4) == 0)) {
       ☃.add(a.j + di.a("item.unbreakable"));
     }
-    if ((n()) && (this.e.b("CanDestroy", 9)) && ((☃ & 0x8) == 0))
+    if ((n()) && (e.b("CanDestroy", 9)) && ((☃ & 0x8) == 0))
     {
-      du ☃ = this.e.c("CanDestroy", 8);
+      du ☃ = e.c("CanDestroy", 8);
       if (☃.c() > 0)
       {
         ☃.add("");
@@ -611,9 +611,9 @@ public final class zx
         }
       }
     }
-    if ((n()) && (this.e.b("CanPlaceOn", 9)) && ((☃ & 0x10) == 0))
+    if ((n()) && (e.b("CanPlaceOn", 9)) && ((☃ & 0x10) == 0))
     {
-      du ☃ = this.e.c("CanPlaceOn", 8);
+      du ☃ = e.c("CanPlaceOn", 8);
       if (☃.c() > 0)
       {
         ☃.add("");
@@ -634,7 +634,7 @@ public final class zx
       if (g()) {
         ☃.add("Durability: " + (j() - h()) + " / " + j());
       }
-      ☃.add(a.i + ((jy)zw.e.c(this.d)).toString());
+      ☃.add(a.i + ((jy)zw.e.c(d)).toString());
       if (n()) {
         ☃.add(a.i + "NBT: " + o().c().size() + " tag(s)");
       }
@@ -665,22 +665,22 @@ public final class zx
   
   public void a(aci ☃, int ☃)
   {
-    if (this.e == null) {
+    if (e == null) {
       d(new dn());
     }
-    if (!this.e.b("ench", 9)) {
-      this.e.a("ench", new du());
+    if (!e.b("ench", 9)) {
+      e.a("ench", new du());
     }
-    du ☃ = this.e.c("ench", 10);
+    du ☃ = e.c("ench", 10);
     dn ☃ = new dn();
-    ☃.a("id", (short)☃.B);
+    ☃.a("id", (short)B);
     ☃.a("lvl", (short)(byte)☃);
     ☃.a(☃);
   }
   
   public boolean w()
   {
-    if ((this.e != null) && (this.e.b("ench", 9))) {
+    if ((e != null) && (e.b("ench", 9))) {
       return true;
     }
     return false;
@@ -688,10 +688,10 @@ public final class zx
   
   public void a(String ☃, eb ☃)
   {
-    if (this.e == null) {
+    if (e == null) {
       d(new dn());
     }
-    this.e.a(☃, ☃);
+    e.a(☃, ☃);
   }
   
   public boolean x()
@@ -701,23 +701,23 @@ public final class zx
   
   public boolean y()
   {
-    return this.g != null;
+    return g != null;
   }
   
   public void a(uo ☃)
   {
-    this.g = ☃;
+    g = ☃;
   }
   
   public uo z()
   {
-    return this.g;
+    return g;
   }
   
   public int A()
   {
-    if ((n()) && (this.e.b("RepairCost", 3))) {
-      return this.e.f("RepairCost");
+    if ((n()) && (e.b("RepairCost", 3))) {
+      return e.f("RepairCost");
     }
     return 0;
   }
@@ -725,18 +725,18 @@ public final class zx
   public void c(int ☃)
   {
     if (!n()) {
-      this.e = new dn();
+      e = new dn();
     }
-    this.e.a("RepairCost", ☃);
+    e.a("RepairCost", ☃);
   }
   
   public Multimap<String, qd> B()
   {
     Multimap<String, qd> ☃;
-    if ((n()) && (this.e.b("AttributeModifiers", 9)))
+    if ((n()) && (e.b("AttributeModifiers", 9)))
     {
       Multimap<String, qd> ☃ = HashMultimap.create();
-      du ☃ = this.e.c("AttributeModifiers", 10);
+      du ☃ = e.c("AttributeModifiers", 10);
       for (int ☃ = 0; ☃ < ☃.c(); ☃++)
       {
         dn ☃ = ☃.b(☃);
@@ -757,7 +757,7 @@ public final class zx
   
   public void a(zw ☃)
   {
-    this.d = ☃;
+    d = ☃;
   }
   
   public eu C()
@@ -767,13 +767,13 @@ public final class zx
       ☃.b().b(Boolean.valueOf(true));
     }
     eu ☃ = new fa("[").a(☃).a("]");
-    if (this.d != null)
+    if (d != null)
     {
       dn ☃ = new dn();
       b(☃);
       
       ☃.b().a(new ew(ew.a.c, new fa(☃.toString())));
-      ☃.b().a(u().e);
+      ☃.b().a(ue);
     }
     return ☃;
   }
@@ -783,24 +783,24 @@ public final class zx
   
   public boolean c(afh ☃)
   {
-    if (☃ == this.h) {
-      return this.i;
+    if (☃ == h) {
+      return i;
     }
-    this.h = ☃;
-    if ((n()) && (this.e.b("CanDestroy", 9)))
+    h = ☃;
+    if ((n()) && (e.b("CanDestroy", 9)))
     {
-      du ☃ = this.e.c("CanDestroy", 8);
+      du ☃ = e.c("CanDestroy", 8);
       for (int ☃ = 0; ☃ < ☃.c(); ☃++)
       {
         afh ☃ = afh.b(☃.f(☃));
         if (☃ == ☃)
         {
-          this.i = true;
+          i = true;
           return true;
         }
       }
     }
-    this.i = false;
+    i = false;
     return false;
   }
   
@@ -809,24 +809,24 @@ public final class zx
   
   public boolean d(afh ☃)
   {
-    if (☃ == this.j) {
-      return this.k;
+    if (☃ == j) {
+      return k;
     }
-    this.j = ☃;
-    if ((n()) && (this.e.b("CanPlaceOn", 9)))
+    j = ☃;
+    if ((n()) && (e.b("CanPlaceOn", 9)))
     {
-      du ☃ = this.e.c("CanPlaceOn", 8);
+      du ☃ = e.c("CanPlaceOn", 8);
       for (int ☃ = 0; ☃ < ☃.c(); ☃++)
       {
         afh ☃ = afh.b(☃.f(☃));
         if (☃ == ☃)
         {
-          this.k = true;
+          k = true;
           return true;
         }
       }
     }
-    this.k = false;
+    k = false;
     return false;
   }
 }

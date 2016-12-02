@@ -12,17 +12,17 @@ public class amz
   
   public amz(int y, boolean storeSkylight)
   {
-    this.a = y;
-    this.d = new char['က'];
-    this.e = new amw();
+    a = y;
+    d = new char['က'];
+    e = new amw();
     if (storeSkylight) {
-      this.f = new amw();
+      f = new amw();
     }
   }
   
   public alz a(int x, int y, int z)
   {
-    alz var4 = (alz)afh.d.a(this.d[(y << 8 | z << 4 | x)]);
+    alz var4 = (alz)afh.d.a(d[(y << 8 | z << 4 | x)]);
     return var4 != null ? var4 : afi.a.Q();
   }
   
@@ -36,19 +36,19 @@ public class amz
     afh var7 = state.c();
     if (var6 != afi.a)
     {
-      this.b -= 1;
+      b -= 1;
       if (var6.y()) {
-        this.c -= 1;
+        c -= 1;
       }
     }
     if (var7 != afi.a)
     {
-      this.b += 1;
+      b += 1;
       if (var7.y()) {
-        this.c += 1;
+        c += 1;
       }
     }
-    this.d[(y << 8 | z << 4 | x)] = ((char)afh.d.b(state));
+    d[(y << 8 | z << 4 | x)] = ((char)afh.d.b(state));
   }
   
   public afh b(int x, int y, int z)
@@ -64,37 +64,37 @@ public class amz
   
   public boolean a()
   {
-    return this.b == 0;
+    return b == 0;
   }
   
   public boolean b()
   {
-    return this.c > 0;
+    return c > 0;
   }
   
   public int d()
   {
-    return this.a;
+    return a;
   }
   
   public void a(int x, int y, int z, int value)
   {
-    this.f.a(x, y, z, value);
+    f.a(x, y, z, value);
   }
   
   public int d(int x, int y, int z)
   {
-    return this.f.a(x, y, z);
+    return f.a(x, y, z);
   }
   
   public void b(int x, int y, int z, int value)
   {
-    this.e.a(x, y, z, value);
+    e.a(x, y, z, value);
   }
   
   public int e(int x, int y, int z)
   {
-    return this.e.a(x, y, z);
+    return e.a(x, y, z);
   }
   
   public void e()
@@ -112,7 +112,7 @@ public class amz
         int byz = by | z << 4;
         for (int x = 0; x < 16; x++)
         {
-          int stateId = this.d[(byz | x)];
+          int stateId = d[(byz | x)];
           if (stateId > 0)
           {
             localBlockRefCount++;
@@ -131,37 +131,37 @@ public class amz
         }
       }
     }
-    this.b = localBlockRefCount;
-    this.c = localTickRefCount;
+    b = localBlockRefCount;
+    c = localTickRefCount;
   }
   
   public char[] g()
   {
-    return this.d;
+    return d;
   }
   
   public void a(char[] dataArray)
   {
-    this.d = dataArray;
+    d = dataArray;
   }
   
   public amw h()
   {
-    return this.e;
+    return e;
   }
   
   public amw i()
   {
-    return this.f;
+    return f;
   }
   
   public void a(amw newBlocklightArray)
   {
-    this.e = newBlocklightArray;
+    e = newBlocklightArray;
   }
   
   public void b(amw newSkylightArray)
   {
-    this.f = newSkylightArray;
+    f = newSkylightArray;
   }
 }

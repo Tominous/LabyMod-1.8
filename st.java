@@ -18,38 +18,38 @@ public abstract class st
   
   public st(py ☃, boolean ☃, boolean ☃)
   {
-    this.e = ☃;
-    this.f = ☃;
-    this.a = ☃;
+    e = ☃;
+    f = ☃;
+    a = ☃;
   }
   
   public boolean b()
   {
-    pr ☃ = this.e.u();
+    pr ☃ = e.u();
     if (☃ == null) {
       return false;
     }
     if (!☃.ai()) {
       return false;
     }
-    auq ☃ = this.e.bO();
+    auq ☃ = e.bO();
     auq ☃ = ☃.bO();
     if ((☃ != null) && (☃ == ☃)) {
       return false;
     }
     double ☃ = f();
-    if (this.e.h(☃) > ☃ * ☃) {
+    if (e.h(☃) > ☃ * ☃) {
       return false;
     }
-    if (this.f) {
-      if (this.e.t().a(☃)) {
-        this.d = 0;
-      } else if (++this.d > 60) {
+    if (f) {
+      if (e.t().a(☃)) {
+        d = 0;
+      } else if (++d > 60) {
         return false;
       }
     }
     if (((☃ instanceof wn)) && 
-      (((wn)☃).bA.a)) {
+      (bA.a)) {
       return false;
     }
     return true;
@@ -57,20 +57,20 @@ public abstract class st
   
   protected double f()
   {
-    qc ☃ = this.e.a(vy.b);
+    qc ☃ = e.a(vy.b);
     return ☃ == null ? 16.0D : ☃.e();
   }
   
   public void c()
   {
-    this.b = 0;
-    this.c = 0;
-    this.d = 0;
+    b = 0;
+    c = 0;
+    d = 0;
   }
   
   public void d()
   {
-    this.e.d(null);
+    e.d(null);
   }
   
   public static boolean a(ps ☃, pr ☃, boolean ☃, boolean ☃)
@@ -102,7 +102,7 @@ public abstract class st
       }
     }
     else if (((☃ instanceof wn)) && 
-      (!☃) && (((wn)☃).bA.a))
+      (!☃) && (bA.a))
     {
       return false;
     }
@@ -114,21 +114,21 @@ public abstract class st
   
   protected boolean a(pr ☃, boolean ☃)
   {
-    if (!a(this.e, ☃, ☃, this.f)) {
+    if (!a(e, ☃, ☃, f)) {
       return false;
     }
-    if (!this.e.e(new cj(☃))) {
+    if (!e.e(new cj(☃))) {
       return false;
     }
-    if (this.a)
+    if (a)
     {
-      if (--this.c <= 0) {
-        this.b = 0;
+      if (--c <= 0) {
+        b = 0;
       }
-      if (this.b == 0) {
-        this.b = (a(☃) ? 1 : 2);
+      if (b == 0) {
+        b = (a(☃) ? 1 : 2);
       }
-      if (this.b == 2) {
+      if (b == 2) {
         return false;
       }
     }
@@ -137,8 +137,8 @@ public abstract class st
   
   private boolean a(pr ☃)
   {
-    this.c = (10 + this.e.bc().nextInt(5));
-    asx ☃ = this.e.s().a(☃);
+    c = (10 + e.bc().nextInt(5));
+    asx ☃ = e.s().a(☃);
     if (☃ == null) {
       return false;
     }
@@ -146,8 +146,8 @@ public abstract class st
     if (☃ == null) {
       return false;
     }
-    int ☃ = ☃.a - ns.c(☃.s);
-    int ☃ = ☃.c - ns.c(☃.u);
+    int ☃ = a - ns.c(s);
+    int ☃ = c - ns.c(u);
     return ☃ * ☃ + ☃ * ☃ <= 2.25D;
   }
 }

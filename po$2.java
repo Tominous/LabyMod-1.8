@@ -5,6 +5,6 @@ final class po$2
 {
   public boolean a(pk ☃)
   {
-    return (☃.ai()) && (☃.l == null) && (☃.m == null);
+    return (☃.ai()) && (l == null) && (m == null);
   }
 }

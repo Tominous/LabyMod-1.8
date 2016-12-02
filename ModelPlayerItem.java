@@ -3,6 +3,6 @@ public class ModelPlayerItem
 {
   public ModelPlayerItem()
   {
-    this.r = false;
+    r = false;
   }
 }

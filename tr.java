@@ -5,41 +5,41 @@ public class tr
   {
     super(☃);
     a(0.9F, 1.3F);
-    this.bn = afi.bw;
+    bn = afi.bw;
   }
   
   public boolean a(wn ☃)
   {
-    zx ☃ = ☃.bi.h();
+    zx ☃ = bi.h();
     if ((☃ != null) && (☃.b() == zy.z) && (l() >= 0))
     {
-      if (☃.b == 1)
+      if (b == 1)
       {
-        ☃.bi.a(☃.bi.c, new zx(zy.A));
+        bi.a(bi.c, new zx(zy.A));
         return true;
       }
-      if ((☃.bi.a(new zx(zy.A))) && (!☃.bA.d))
+      if ((bi.a(new zx(zy.A))) && (!bA.d))
       {
-        ☃.bi.a(☃.bi.c, 1);
+        bi.a(bi.c, 1);
         return true;
       }
     }
     if ((☃ != null) && (☃.b() == zy.be) && (l() >= 0))
     {
       J();
-      this.o.a(cy.b, this.s, this.t + this.K / 2.0F, this.u, 0.0D, 0.0D, 0.0D, new int[0]);
-      if (!this.o.D)
+      o.a(cy.b, s, t + K / 2.0F, u, 0.0D, 0.0D, 0.0D, new int[0]);
+      if (!o.D)
       {
-        to ☃ = new to(this.o);
-        ☃.b(this.s, this.t, this.u, this.y, this.z);
+        to ☃ = new to(o);
+        ☃.b(s, t, u, y, z);
         ☃.i(bn());
-        ☃.aI = this.aI;
+        aI = aI;
         if (l_()) {
           ☃.a(aM());
         }
-        this.o.d(☃);
+        o.d(☃);
         for (int ☃ = 0; ☃ < 5; ☃++) {
-          this.o.d(new uz(this.o, this.s, this.t + this.K, this.u, new zx(afi.Q)));
+          o.d(new uz(o, s, t + K, u, new zx(afi.Q)));
         }
         ☃.a(1, ☃);
         a("mob.sheep.shear", 1.0F, 1.0F);
@@ -51,6 +51,6 @@ public class tr
   
   public tr c(ph ☃)
   {
-    return new tr(this.o);
+    return new tr(o);
   }
 }

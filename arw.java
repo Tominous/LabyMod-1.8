@@ -10,26 +10,26 @@ public class arw
   public arw(long ☃, ase ☃, adr ☃, String ☃)
   {
     super(☃);
-    this.a = ☃;
+    a = ☃;
     if (☃ == adr.h)
     {
-      this.c = new ady[] { ady.r, ady.t, ady.s, ady.v, ady.q, ady.u };
+      c = new ady[] { ady.r, ady.t, ady.s, ady.v, ady.q, ady.u };
       
-      this.g = null;
+      g = null;
     }
     else if (☃ == adr.f)
     {
-      this.g = ant.a.a(☃).b();
+      g = ant.a.a(☃).b();
     }
     else
     {
-      this.g = null;
+      g = null;
     }
   }
   
   public int[] a(int ☃, int ☃, int ☃, int ☃)
   {
-    int[] ☃ = this.a.a(☃, ☃, ☃, ☃);
+    int[] ☃ = a.a(☃, ☃, ☃, ☃);
     
     int[] ☃ = asc.a(☃ * ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
@@ -39,46 +39,46 @@ public class arw
         int ☃ = ☃[(☃ + ☃ * ☃)];
         int ☃ = (☃ & 0xF00) >> 8;
         ☃ &= 0xF0FF;
-        if ((this.g != null) && (this.g.F >= 0)) {
-          ☃[(☃ + ☃ * ☃)] = this.g.F;
+        if ((g != null) && (g.F >= 0)) {
+          ☃[(☃ + ☃ * ☃)] = g.F;
         } else if (b(☃)) {
           ☃[(☃ + ☃ * ☃)] = ☃;
-        } else if (☃ == ady.D.az) {
+        } else if (☃ == Daz) {
           ☃[(☃ + ☃ * ☃)] = ☃;
         } else if (☃ == 1)
         {
           if (☃ > 0)
           {
             if (a(3) == 0) {
-              ☃[(☃ + ☃ * ☃)] = ady.ac.az;
+              ☃[(☃ + ☃ * ☃)] = acaz;
             } else {
-              ☃[(☃ + ☃ * ☃)] = ady.ab.az;
+              ☃[(☃ + ☃ * ☃)] = abaz;
             }
           }
           else {
-            ☃[(☃ + ☃ * ☃)] = this.c[a(this.c.length)].az;
+            ☃[(☃ + ☃ * ☃)] = c[a(c.length)].az;
           }
         }
         else if (☃ == 2)
         {
           if (☃ > 0) {
-            ☃[(☃ + ☃ * ☃)] = ady.K.az;
+            ☃[(☃ + ☃ * ☃)] = Kaz;
           } else {
-            ☃[(☃ + ☃ * ☃)] = this.d[a(this.d.length)].az;
+            ☃[(☃ + ☃ * ☃)] = d[a(d.length)].az;
           }
         }
         else if (☃ == 3)
         {
           if (☃ > 0) {
-            ☃[(☃ + ☃ * ☃)] = ady.V.az;
+            ☃[(☃ + ☃ * ☃)] = Vaz;
           } else {
-            ☃[(☃ + ☃ * ☃)] = this.e[a(this.e.length)].az;
+            ☃[(☃ + ☃ * ☃)] = e[a(e.length)].az;
           }
         }
         else if (☃ == 4) {
-          ☃[(☃ + ☃ * ☃)] = this.f[a(this.f.length)].az;
+          ☃[(☃ + ☃ * ☃)] = f[a(f.length)].az;
         } else {
-          ☃[(☃ + ☃ * ☃)] = ady.D.az;
+          ☃[(☃ + ☃ * ☃)] = Daz;
         }
       }
     }

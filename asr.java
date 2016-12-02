@@ -4,7 +4,7 @@ public class asr
   public asr(long ☃, ase ☃)
   {
     super(☃);
-    this.a = ☃;
+    a = ☃;
   }
   
   public int[] a(int ☃, int ☃, int ☃, int ☃)
@@ -13,7 +13,7 @@ public class asr
     int ☃ = ☃ >> 1;
     int ☃ = (☃ >> 1) + 2;
     int ☃ = (☃ >> 1) + 2;
-    int[] ☃ = this.a.a(☃, ☃, ☃, ☃);
+    int[] ☃ = a.a(☃, ☃, ☃, ☃);
     
     int ☃ = ☃ - 1 << 1;
     int ☃ = ☃ - 1 << 1;

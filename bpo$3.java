@@ -11,12 +11,12 @@ class bpo$3
   
   public void run()
   {
-    ArrayList var1 = Lists.newArrayList(this.this$0.ap().v());
+    ArrayList var1 = Lists.newArrayList(this$0.ap().v());
     Iterator var2 = var1.iterator();
     while (var2.hasNext())
     {
       lf var3 = (lf)var2.next();
-      this.this$0.ap().e(var3);
+      this$0.ap().e(var3);
     }
   }
 }

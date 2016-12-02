@@ -10,7 +10,7 @@ public class bir
   {
     super(☃, new bco(0.0F), 0.5F);
     
-    this.a = ((bco)this.f);
+    a = ((bco)f);
     
     a(new bkv(this));
     a(new bku());
@@ -23,9 +23,9 @@ public class bir
     bfl.b(-☃, 0.0F, 1.0F, 0.0F);
     bfl.b(☃ * 10.0F, 1.0F, 0.0F, 0.0F);
     bfl.b(0.0F, 0.0F, 1.0F);
-    if (☃.ax > 0)
+    if (ax > 0)
     {
-      float ☃ = (☃.ax + ☃ - 1.0F) / 20.0F * 1.6F;
+      float ☃ = (ax + ☃ - 1.0F) / 20.0F * 1.6F;
       ☃ = ns.c(☃);
       if (☃ > 1.0F) {
         ☃ = 1.0F;
@@ -36,28 +36,28 @@ public class bir
   
   protected void a(ug ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
-    if (☃.by > 0)
+    if (by > 0)
     {
-      float ☃ = ☃.by / 200.0F;
+      float ☃ = by / 200.0F;
       bfl.c(515);
       bfl.d();
       bfl.a(516, ☃);
       a(j);
-      this.f.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
+      f.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
       bfl.a(516, 0.1F);
       
       bfl.c(514);
     }
     c(☃);
-    this.f.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
-    if (☃.au > 0)
+    f.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
+    if (au > 0)
     {
       bfl.c(514);
       bfl.x();
       bfl.l();
       bfl.b(770, 771);
       bfl.c(1.0F, 0.0F, 0.0F, 0.5F);
-      this.f.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
+      f.a(☃, ☃, ☃, ☃, ☃, ☃, ☃);
       bfl.w();
       bfl.k();
       bfl.c(515);
@@ -68,20 +68,20 @@ public class bir
   {
     bfc.a(☃, false);
     super.a(☃, ☃, ☃, ☃, ☃, ☃);
-    if (☃.bz != null) {
+    if (bz != null) {
       a(☃, ☃, ☃, ☃, ☃);
     }
   }
   
   protected void a(ug ☃, double ☃, double ☃, double ☃, float ☃)
   {
-    float ☃ = ☃.bz.a + ☃;
+    float ☃ = bz.a + ☃;
     float ☃ = ns.a(☃ * 0.2F) / 2.0F + 0.5F;
     ☃ = (☃ * ☃ + ☃) * 0.2F;
     
-    float ☃ = (float)(☃.bz.s - ☃.s - (☃.p - ☃.s) * (1.0F - ☃));
-    float ☃ = (float)(☃ + ☃.bz.t - 1.0D - ☃.t - (☃.q - ☃.t) * (1.0F - ☃));
-    float ☃ = (float)(☃.bz.u - ☃.u - (☃.r - ☃.u) * (1.0F - ☃));
+    float ☃ = (float)(bz.s - s - (p - s) * (1.0F - ☃));
+    float ☃ = (float)(☃ + bz.t - 1.0D - t - (q - t) * (1.0F - ☃));
+    float ☃ = (float)(bz.u - u - (r - u) * (1.0F - ☃));
     
     float ☃ = ns.c(☃ * ☃ + ☃ * ☃);
     float ☃ = ns.c(☃ * ☃ + ☃ * ☃ + ☃ * ☃);
@@ -101,8 +101,8 @@ public class bir
     
     bfl.j(7425);
     
-    float ☃ = 0.0F - (☃.W + ☃) * 0.01F;
-    float ☃ = ns.c(☃ * ☃ + ☃ * ☃ + ☃ * ☃) / 32.0F - (☃.W + ☃) * 0.01F;
+    float ☃ = 0.0F - (W + ☃) * 0.01F;
+    float ☃ = ns.c(☃ * ☃ + ☃ * ☃ + ☃ * ☃) / 32.0F - (W + ☃) * 0.01F;
     
     ☃.a(5, bms.i);
     

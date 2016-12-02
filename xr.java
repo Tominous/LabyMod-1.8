@@ -7,7 +7,7 @@ public class xr
   
   public xr(og ☃, og ☃)
   {
-    this.a = ☃;
+    a = ☃;
     for (int ☃ = 0; ☃ < 3; ☃++) {
       for (int ☃ = 0; ☃ < 3; ☃++) {
         a(new yg(☃, ☃ + ☃ * 3, 62 + ☃ * 18, 17 + ☃ * 18));
@@ -25,13 +25,13 @@ public class xr
   
   public boolean a(wn ☃)
   {
-    return this.a.a(☃);
+    return a.a(☃);
   }
   
   public zx b(wn ☃, int ☃)
   {
     zx ☃ = null;
-    yg ☃ = (yg)this.c.get(☃);
+    yg ☃ = (yg)c.get(☃);
     if ((☃ != null) && (☃.e()))
     {
       zx ☃ = ☃.d();
@@ -45,12 +45,12 @@ public class xr
       else if (!a(☃, 0, 9, false)) {
         return null;
       }
-      if (☃.b == 0) {
+      if (b == 0) {
         ☃.d(null);
       } else {
         ☃.f();
       }
-      if (☃.b == ☃.b) {
+      if (b == b) {
         return null;
       }
       ☃.a(☃, ☃);

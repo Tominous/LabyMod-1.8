@@ -7,8 +7,8 @@ public class bkc<T extends pk>
   public bkc(biu ☃, zw ☃, bjh ☃)
   {
     super(☃);
-    this.a = ☃;
-    this.e = ☃;
+    a = ☃;
+    e = ☃;
   }
   
   public void a(T ☃, double ☃, double ☃, double ☃, float ☃, float ☃)
@@ -19,11 +19,11 @@ public class bkc<T extends pk>
     bfl.B();
     bfl.a(0.5F, 0.5F, 0.5F);
     
-    bfl.b(-this.b.e, 0.0F, 1.0F, 0.0F);
-    bfl.b(this.b.f, 1.0F, 0.0F, 0.0F);
+    bfl.b(-b.e, 0.0F, 1.0F, 0.0F);
+    bfl.b(b.f, 1.0F, 0.0F, 0.0F);
     
     a(bmh.g);
-    this.e.a(d(☃), bgr.b.f);
+    e.a(d(☃), bgr.b.f);
     
     bfl.C();
     bfl.F();
@@ -33,7 +33,7 @@ public class bkc<T extends pk>
   
   public zx d(T ☃)
   {
-    return new zx(this.a, 1, 0);
+    return new zx(a, 1, 0);
   }
   
   protected jy a(pk ☃)

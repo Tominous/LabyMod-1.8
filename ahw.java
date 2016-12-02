@@ -40,12 +40,12 @@ public abstract class ahw
     
     private a(String ☃)
     {
-      this.e = ☃;
+      e = ☃;
     }
     
     public String toString()
     {
-      return this.e;
+      return e;
     }
     
     public static a a(cq.a ☃)
@@ -64,7 +64,7 @@ public abstract class ahw
     
     public String l()
     {
-      return this.e;
+      return e;
     }
   }
 }

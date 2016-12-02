@@ -5,7 +5,7 @@ public class zu
   
   public zu(Class<? extends un> ☃)
   {
-    this.a = ☃;
+    a = ☃;
     a(yz.c);
   }
   
@@ -24,20 +24,20 @@ public class zu
     un ☃ = a(☃, ☃, ☃);
     if ((☃ != null) && (☃.j()))
     {
-      if (!☃.D) {
+      if (!D) {
         ☃.d(☃);
       }
-      ☃.b -= 1;
+      b -= 1;
     }
     return true;
   }
   
   private un a(adm ☃, cj ☃, cq ☃)
   {
-    if (this.a == uq.class) {
+    if (a == uq.class) {
       return new uq(☃, ☃, ☃);
     }
-    if (this.a == uo.class) {
+    if (a == uo.class) {
       return new uo(☃, ☃, ☃);
     }
     return null;

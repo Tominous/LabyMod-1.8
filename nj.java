@@ -124,10 +124,10 @@ public class nj
         HttpURLConnection ☃ = null;
         InputStream ☃ = null;
         OutputStream ☃ = null;
-        if (this.a != null)
+        if (a != null)
         {
-          this.a.b("Downloading Resource Pack");
-          this.a.c("Making Request...");
+          a.b("Downloading Resource Pack");
+          a.c("Making Request...");
         }
         try
         {
@@ -139,23 +139,23 @@ public class nj
           for (Map.Entry<String, String> ☃ : ☃.entrySet())
           {
             ☃.setRequestProperty((String)☃.getKey(), (String)☃.getValue());
-            if (this.a != null) {
-              this.a.a((int)(++☃ / ☃ * 100.0F));
+            if (a != null) {
+              a.a((int)(++☃ / ☃ * 100.0F));
             }
           }
           ☃ = ☃.getInputStream();
           ☃ = ☃.getContentLength();
           int ☃ = ☃.getContentLength();
-          if (this.a != null) {
-            this.a.c(String.format("Downloading file (%.2f MB)...", new Object[] { Float.valueOf(☃ / 1000.0F / 1000.0F) }));
+          if (a != null) {
+            a.c(String.format("Downloading file (%.2f MB)...", new Object[] { Float.valueOf(☃ / 1000.0F / 1000.0F) }));
           }
           if (☃.exists())
           {
             long ☃ = ☃.length();
             if (☃ == ☃)
             {
-              if (this.a != null) {
-                this.a.a();
+              if (a != null) {
+                a.a();
               }
               return;
             }
@@ -169,8 +169,8 @@ public class nj
           ☃ = new DataOutputStream(new FileOutputStream(☃));
           if ((☃ > 0) && (☃ > ☃))
           {
-            if (this.a != null) {
-              this.a.a();
+            if (a != null) {
+              a.a();
             }
             throw new IOException("Filesize is bigger than maximum allowed (file is " + ☃ + ", limit is " + ☃ + ")");
           }
@@ -178,28 +178,28 @@ public class nj
           while ((☃ = ☃.read(☃)) >= 0)
           {
             ☃ += ☃;
-            if (this.a != null) {
-              this.a.a((int)(☃ / ☃ * 100.0F));
+            if (a != null) {
+              a.a((int)(☃ / ☃ * 100.0F));
             }
             if ((☃ > 0) && (☃ > ☃))
             {
-              if (this.a != null) {
-                this.a.a();
+              if (a != null) {
+                a.a();
               }
               throw new IOException("Filesize was bigger than maximum allowed (got >= " + ☃ + ", limit was " + ☃ + ")");
             }
             if (Thread.interrupted())
             {
               nj.b().error("INTERRUPTED");
-              if (this.a != null) {
-                this.a.a();
+              if (a != null) {
+                a.a();
               }
               return;
             }
             ☃.write(☃, 0, ☃);
           }
-          if (this.a != null) {
-            this.a.a();
+          if (a != null) {
+            a.a();
           }
         }
         catch (Throwable ☃)
@@ -217,8 +217,8 @@ public class nj
               ☃.printStackTrace();
             }
           }
-          if (this.a != null) {
-            this.a.a();
+          if (a != null) {
+            a.a();
           }
         }
         finally

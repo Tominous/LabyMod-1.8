@@ -6,29 +6,29 @@ public class IntArray
   
   public IntArray(int size)
   {
-    this.array = new int[size];
+    array = new int[size];
   }
   
   public void put(int x)
   {
-    this.array[this.position] = x;
-    this.position += 1;
-    if (this.limit < this.position) {
-      this.limit = this.position;
+    array[position] = x;
+    position += 1;
+    if (limit < position) {
+      limit = position;
     }
   }
   
   public void put(int pos, int x)
   {
-    this.array[pos] = x;
-    if (this.limit < pos) {
-      this.limit = pos;
+    array[pos] = x;
+    if (limit < pos) {
+      limit = pos;
     }
   }
   
   public void position(int pos)
   {
-    this.position = pos;
+    position = pos;
   }
   
   public void put(int[] ints)
@@ -36,37 +36,37 @@ public class IntArray
     int len = ints.length;
     for (int i = 0; i < len; i++)
     {
-      this.array[this.position] = ints[i];
-      this.position += 1;
+      array[position] = ints[i];
+      position += 1;
     }
-    if (this.limit < this.position) {
-      this.limit = this.position;
+    if (limit < position) {
+      limit = position;
     }
   }
   
   public int get(int pos)
   {
-    return this.array[pos];
+    return array[pos];
   }
   
   public int[] getArray()
   {
-    return this.array;
+    return array;
   }
   
   public void clear()
   {
-    this.position = 0;
-    this.limit = 0;
+    position = 0;
+    limit = 0;
   }
   
   public int getLimit()
   {
-    return this.limit;
+    return limit;
   }
   
   public int getPosition()
   {
-    return this.position;
+    return position;
   }
 }

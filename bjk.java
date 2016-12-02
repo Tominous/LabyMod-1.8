@@ -23,7 +23,7 @@ public class bjk
     double ☃ = 0.0D;
     double ☃ = 0.0D;
     
-    Random ☃ = new Random(☃.a);
+    Random ☃ = new Random(a);
     for (int ☃ = 7; ☃ >= 0; ☃--)
     {
       ☃[☃] = ☃;
@@ -33,7 +33,7 @@ public class bjk
     }
     for (int ☃ = 0; ☃ < 4; ☃++)
     {
-      Random ☃ = new Random(☃.a);
+      Random ☃ = new Random(a);
       for (int ☃ = 0; ☃ < 3; ☃++)
       {
         int ☃ = 7;

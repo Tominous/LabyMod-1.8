@@ -8,10 +8,10 @@ class bfl$g
   
   private bfl$g()
   {
-    this.a = true;
-    this.b = true;
-    this.c = true;
-    this.d = true;
+    a = true;
+    b = true;
+    c = true;
+    d = true;
   }
   
   bfl$g(bfl.1 p_i46263_1_)

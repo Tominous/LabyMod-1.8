@@ -11,7 +11,7 @@ public class oi
   
   public static void a(adm ☃, pk ☃, og ☃)
   {
-    a(☃, ☃.s, ☃.t, ☃.u, ☃);
+    a(☃, s, t, u, ☃);
   }
   
   private static void a(adm ☃, double ☃, double ☃, double ☃, og ☃)
@@ -30,22 +30,22 @@ public class oi
     float ☃ = a.nextFloat() * 0.8F + 0.1F;
     float ☃ = a.nextFloat() * 0.8F + 0.1F;
     float ☃ = a.nextFloat() * 0.8F + 0.1F;
-    while (☃.b > 0)
+    while (b > 0)
     {
       int ☃ = a.nextInt(21) + 10;
-      if (☃ > ☃.b) {
-        ☃ = ☃.b;
+      if (☃ > b) {
+        ☃ = b;
       }
-      ☃.b -= ☃;
+      b -= ☃;
       
       uz ☃ = new uz(☃, ☃ + ☃, ☃ + ☃, ☃ + ☃, new zx(☃.b(), ☃, ☃.i()));
       if (☃.n()) {
         ☃.l().d((dn)☃.o().b());
       }
       float ☃ = 0.05F;
-      ☃.v = (a.nextGaussian() * ☃);
-      ☃.w = (a.nextGaussian() * ☃ + 0.20000000298023224D);
-      ☃.x = (a.nextGaussian() * ☃);
+      v = (a.nextGaussian() * ☃);
+      w = (a.nextGaussian() * ☃ + 0.20000000298023224D);
+      x = (a.nextGaussian() * ☃);
       
       ☃.d(☃);
     }

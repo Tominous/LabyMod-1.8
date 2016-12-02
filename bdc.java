@@ -2,9 +2,6 @@ import com.google.common.base.Objects;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
-import de.labystudio.capes.CapeManager;
-import de.labystudio.labymod.LabyMod;
-import java.util.HashMap;
 
 public class bdc
 {
@@ -16,113 +13,106 @@ public class bdc
   private jy f;
   private String g;
   private eu h;
-  
-  public void setLocationCape(jy locationCape)
-  {
-    this.f = locationCape;
-  }
-  
   private int i = 0;
   private int j = 0;
   private long k = 0L;
   private long l = 0L;
   private long m = 0L;
   
-  public bdc(GameProfile p_i46294_1_)
+  public bdc(GameProfile ☃)
   {
-    this.a = p_i46294_1_;
+    a = ☃;
   }
   
-  public bdc(gz.b p_i46295_1_)
+  public bdc(gz.b ☃)
   {
-    this.a = p_i46295_1_.a();
-    this.b = p_i46295_1_.c();
-    this.c = p_i46295_1_.b();
-    this.h = p_i46295_1_.d();
+    a = ☃.a();
+    b = ☃.c();
+    c = ☃.b();
+    h = ☃.d();
   }
   
   public GameProfile a()
   {
-    return this.a;
+    return a;
   }
   
   public adp.a b()
   {
-    return this.b;
+    return b;
   }
   
   public int c()
   {
-    return this.c;
+    return c;
   }
   
-  protected void a(adp.a p_178839_1_)
+  protected void a(adp.a ☃)
   {
-    this.b = p_178839_1_;
+    b = ☃;
   }
   
-  protected void a(int p_178838_1_)
+  protected void a(int ☃)
   {
-    this.c = p_178838_1_;
+    c = ☃;
   }
   
   public boolean e()
   {
-    return this.e != null;
+    return e != null;
   }
   
   public String f()
   {
-    return this.g == null ? bmz.b(this.a.getId()) : this.g;
+    if (g == null) {
+      return bmz.b(a.getId());
+    }
+    return g;
   }
   
   public jy g()
   {
-    if (this.e == null) {
+    if (e == null) {
       j();
     }
-    return (jy)Objects.firstNonNull(this.e, bmz.a(this.a.getId()));
+    return (jy)Objects.firstNonNull(e, bmz.a(a.getId()));
   }
   
   public jy h()
   {
-    if ((this.a != null) && 
-      (LabyMod.getInstance().getCapeManager().getLocationCape().containsKey(this.a.getId()))) {
-      this.f = ((jy)LabyMod.getInstance().getCapeManager().getLocationCape().get(this.a.getId()));
-    }
-    if (this.f == null) {
+    if (f == null) {
       j();
     }
-    return this.f;
+    return f;
   }
   
   public aul i()
   {
-    return ave.A().f.Z().h(a().getName());
+    return Af.Z().h(a().getName());
   }
   
   protected void j()
   {
     synchronized (this)
     {
-      if (!this.d)
+      if (!d)
       {
-        this.d = true;
-        ave.A().ab().a(this.a, new bnp.a()
+        d = true;
+        ave.A().ab().a(a, new bnp.a()
         {
-          public void a(MinecraftProfileTexture.Type p_180521_1_, jy location, MinecraftProfileTexture profileTexture)
+          public void a(MinecraftProfileTexture.Type ☃, jy ☃, MinecraftProfileTexture ☃)
           {
-            switch (bdc.2.$SwitchMap$com$mojang$authlib$minecraft$MinecraftProfileTexture$Type[p_180521_1_.ordinal()])
+            switch (bdc.2.a[☃.ordinal()])
             {
             case 1: 
-              bdc.a(bdc.this, location);
-              bdc.a(bdc.this, profileTexture.getMetadata("model"));
+              bdc.a(bdc.this, ☃);
+              bdc.a(bdc.this, ☃.getMetadata("model"));
               if (bdc.a(bdc.this) == null) {
                 bdc.a(bdc.this, "default");
               }
               break;
             case 2: 
-              bdc.b(bdc.this, location);
+              bdc.b(bdc.this, ☃);
             }
           }
         }, true);
@@ -130,63 +120,63 @@ public class bdc
     }
   }
   
-  public void a(eu displayNameIn)
+  public void a(eu ☃)
   {
-    this.h = displayNameIn;
+    h = ☃;
   }
   
   public eu k()
   {
-    return this.h;
+    return h;
   }
   
   public int l()
   {
-    return this.i;
+    return i;
   }
   
-  public void b(int p_178836_1_)
+  public void b(int ☃)
   {
-    this.i = p_178836_1_;
+    i = ☃;
   }
   
   public int m()
   {
-    return this.j;
+    return j;
   }
   
-  public void c(int p_178857_1_)
+  public void c(int ☃)
   {
-    this.j = p_178857_1_;
+    j = ☃;
   }
   
   public long n()
   {
-    return this.k;
+    return k;
   }
   
-  public void a(long p_178846_1_)
+  public void a(long ☃)
   {
-    this.k = p_178846_1_;
+    k = ☃;
   }
   
   public long o()
   {
-    return this.l;
+    return l;
   }
   
-  public void b(long p_178844_1_)
+  public void b(long ☃)
   {
-    this.l = p_178844_1_;
+    l = ☃;
   }
   
   public long p()
   {
-    return this.m;
+    return m;
   }
   
-  public void c(long p_178843_1_)
+  public void c(long ☃)
   {
-    this.m = p_178843_1_;
+    m = ☃;
   }
 }

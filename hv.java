@@ -23,40 +23,40 @@ public class hv
   
   public hv(hv.a ☃, eu ☃, int ☃, int ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
-    this.e = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
+    e = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ((hv.a)☃.a(hv.a.class));
-    if ((this.a == hv.a.a) || (this.a == hv.a.b)) {
-      this.b = ☃.d();
+    a = ((hv.a)☃.a(hv.a.class));
+    if ((a == hv.a.a) || (a == hv.a.b)) {
+      b = ☃.d();
     }
-    if (this.a == hv.a.c)
+    if (a == hv.a.c)
     {
-      this.c = ☃.readInt();
-      this.d = ☃.readInt();
-      this.e = ☃.readInt();
+      c = ☃.readInt();
+      d = ☃.readInt();
+      e = ☃.readInt();
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(this.a);
-    if ((this.a == hv.a.a) || (this.a == hv.a.b)) {
-      ☃.a(this.b);
+    ☃.a(a);
+    if ((a == hv.a.a) || (a == hv.a.b)) {
+      ☃.a(b);
     }
-    if (this.a == hv.a.c)
+    if (a == hv.a.c)
     {
-      ☃.writeInt(this.c);
-      ☃.writeInt(this.d);
-      ☃.writeInt(this.e);
+      ☃.writeInt(c);
+      ☃.writeInt(d);
+      ☃.writeInt(e);
     }
   }
   
@@ -67,27 +67,27 @@ public class hv
   
   public hv.a a()
   {
-    return this.a;
+    return a;
   }
   
   public eu b()
   {
-    return this.b;
+    return b;
   }
   
   public int c()
   {
-    return this.c;
+    return c;
   }
   
   public int d()
   {
-    return this.d;
+    return d;
   }
   
   public int e()
   {
-    return this.e;
+    return e;
   }
   
   public static enum a

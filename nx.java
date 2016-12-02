@@ -6,21 +6,24 @@ public class nx
 {
   private static final Pattern a = Pattern.compile("(?i)\\u00A7[0-9A-FK-OR]");
   
-  public static String a(int ticks)
+  public static String a(int ☃)
   {
-    int i = ticks / 20;
-    int j = i / 60;
-    i %= 60;
-    return j + ":" + i;
+    int ☃ = ☃ / 20;
+    int ☃ = ☃ / 60;
+    ☃ %= 60;
+    if (☃ < 10) {
+      return ☃ + ":0" + ☃;
+    }
+    return ☃ + ":" + ☃;
   }
   
-  public static String a(String p_76338_0_)
+  public static String a(String ☃)
   {
-    return a.matcher(p_76338_0_).replaceAll("");
+    return a.matcher(☃).replaceAll("");
   }
   
-  public static boolean b(String string)
+  public static boolean b(String ☃)
   {
-    return StringUtils.isEmpty(string);
+    return StringUtils.isEmpty(☃);
   }
 }

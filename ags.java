@@ -8,7 +8,7 @@ public class ags
   protected ags()
   {
     super(arm.c);
-    j(this.M.b().a(a, Integer.valueOf(0)));
+    j(M.b().a(a, Integer.valueOf(0)));
     a(true);
     a(0.0F, 0.0F, 0.0F, 1.0F, 0.9375F, 1.0F);
     e(255);
@@ -50,7 +50,7 @@ public class ags
     if (!(☃ instanceof pr)) {
       return;
     }
-    if ((!☃.D) && (☃.s.nextFloat() < ☃ - 0.5F))
+    if ((!D) && (s.nextFloat() < ☃ - 0.5F))
     {
       if ((!(☃ instanceof wn)) && (!☃.Q().b("mobGriefing"))) {
         return;

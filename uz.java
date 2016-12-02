@@ -19,11 +19,11 @@ public class uz
     a(0.25F, 0.25F);
     b(☃, ☃, ☃);
     
-    this.y = ((float)(Math.random() * 360.0D));
+    y = ((float)(Math.random() * 360.0D));
     
-    this.v = ((float)(Math.random() * 0.20000000298023224D - 0.10000000149011612D));
-    this.w = 0.20000000298023224D;
-    this.x = ((float)(Math.random() * 0.20000000298023224D - 0.10000000149011612D));
+    v = ((float)(Math.random() * 0.20000000298023224D - 0.10000000149011612D));
+    w = 0.20000000298023224D;
+    x = ((float)(Math.random() * 0.20000000298023224D - 0.10000000149011612D));
   }
   
   public uz(adm ☃, double ☃, double ☃, double ☃, zx ☃)
@@ -57,53 +57,53 @@ public class uz
       return;
     }
     super.t_();
-    if ((this.d > 0) && (this.d != 32767)) {
-      this.d -= 1;
+    if ((d > 0) && (d != 32767)) {
+      d -= 1;
     }
-    this.p = this.s;
-    this.q = this.t;
-    this.r = this.u;
+    p = s;
+    q = t;
+    r = u;
     
-    this.w -= 0.03999999910593033D;
-    this.T = j(this.s, (aR().b + aR().e) / 2.0D, this.u);
-    d(this.v, this.w, this.x);
+    w -= 0.03999999910593033D;
+    T = j(s, (aRb + aRe) / 2.0D, u);
+    d(v, w, x);
     
-    boolean ☃ = ((int)this.p != (int)this.s) || ((int)this.q != (int)this.t) || ((int)this.r != (int)this.u);
-    if ((☃) || (this.W % 25 == 0))
+    boolean ☃ = ((int)p != (int)s) || ((int)q != (int)t) || ((int)r != (int)u);
+    if ((☃) || (W % 25 == 0))
     {
-      if (this.o.p(new cj(this)).c().t() == arm.i)
+      if (o.p(new cj(this)).c().t() == arm.i)
       {
-        this.w = 0.20000000298023224D;
-        this.v = ((this.V.nextFloat() - this.V.nextFloat()) * 0.2F);
-        this.x = ((this.V.nextFloat() - this.V.nextFloat()) * 0.2F);
-        a("random.fizz", 0.4F, 2.0F + this.V.nextFloat() * 0.4F);
+        w = 0.20000000298023224D;
+        v = ((V.nextFloat() - V.nextFloat()) * 0.2F);
+        x = ((V.nextFloat() - V.nextFloat()) * 0.2F);
+        a("random.fizz", 0.4F, 2.0F + V.nextFloat() * 0.4F);
       }
-      if (!this.o.D) {
+      if (!o.D) {
         w();
       }
     }
     float ☃ = 0.98F;
-    if (this.C) {
-      ☃ = this.o.p(new cj(ns.c(this.s), ns.c(aR().b) - 1, ns.c(this.u))).c().L * 0.98F;
+    if (C) {
+      ☃ = o.p(new cj(ns.c(s), ns.c(aRb) - 1, ns.c(u))).c().L * 0.98F;
     }
-    this.v *= ☃;
-    this.w *= 0.9800000190734863D;
-    this.x *= ☃;
-    if (this.C) {
-      this.w *= -0.5D;
+    v *= ☃;
+    w *= 0.9800000190734863D;
+    x *= ☃;
+    if (C) {
+      w *= -0.5D;
     }
-    if (this.c != 32768) {
-      this.c += 1;
+    if (c != 32768) {
+      c += 1;
     }
     W();
-    if ((!this.o.D) && (this.c >= 6000)) {
+    if ((!o.D) && (c >= 6000)) {
       J();
     }
   }
   
   private void w()
   {
-    for (uz ☃ : this.o.a(uz.class, aR().b(0.5D, 0.0D, 0.5D))) {
+    for (uz ☃ : o.a(uz.class, aR().b(0.5D, 0.0D, 0.5D))) {
       a(☃);
     }
   }
@@ -118,10 +118,10 @@ public class uz
     }
     zx ☃ = l();
     zx ☃ = ☃.l();
-    if ((this.d == 32767) || (☃.d == 32767)) {
+    if ((d == 32767) || (d == 32767)) {
       return false;
     }
-    if ((this.c == 32768) || (☃.c == 32768)) {
+    if ((c == 32768) || (c == 32768)) {
       return false;
     }
     if (☃.b() != ☃.b()) {
@@ -139,15 +139,15 @@ public class uz
     if ((☃.b().k()) && (☃.i() != ☃.i())) {
       return false;
     }
-    if (☃.b < ☃.b) {
+    if (b < b) {
       return ☃.a(this);
     }
-    if (☃.b + ☃.b > ☃.c()) {
+    if (b + b > ☃.c()) {
       return false;
     }
-    ☃.b += ☃.b;
-    ☃.d = Math.max(☃.d, this.d);
-    ☃.c = Math.min(☃.c, this.c);
+    b += b;
+    d = Math.max(d, d);
+    c = Math.min(c, c);
     ☃.a(☃);
     J();
     
@@ -156,23 +156,23 @@ public class uz
   
   public void j()
   {
-    this.c = 4800;
+    c = 4800;
   }
   
   public boolean W()
   {
-    if (this.o.a(aR(), arm.h, this))
+    if (o.a(aR(), arm.h, this))
     {
-      if ((!this.Y) && (!this.aa)) {
+      if ((!Y) && (!aa)) {
         X();
       }
-      this.Y = true;
+      Y = true;
     }
     else
     {
-      this.Y = false;
+      Y = false;
     }
-    return this.Y;
+    return Y;
   }
   
   protected void f(int ☃)
@@ -189,8 +189,8 @@ public class uz
       return false;
     }
     ac();
-    this.e = ((int)(this.e - ☃));
-    if (this.e <= 0) {
+    e = ((int)(e - ☃));
+    if (e <= 0) {
       J();
     }
     return false;
@@ -198,14 +198,14 @@ public class uz
   
   public void b(dn ☃)
   {
-    ☃.a("Health", (short)(byte)this.e);
-    ☃.a("Age", (short)this.c);
-    ☃.a("PickupDelay", (short)this.d);
+    ☃.a("Health", (short)(byte)e);
+    ☃.a("Age", (short)c);
+    ☃.a("PickupDelay", (short)d);
     if (n() != null) {
-      ☃.a("Thrower", this.f);
+      ☃.a("Thrower", f);
     }
     if (m() != null) {
-      ☃.a("Owner", this.g);
+      ☃.a("Owner", g);
     }
     if (l() != null) {
       ☃.a("Item", l().b(new dn()));
@@ -214,16 +214,16 @@ public class uz
   
   public void a(dn ☃)
   {
-    this.e = (☃.e("Health") & 0xFF);
-    this.c = ☃.e("Age");
+    e = (☃.e("Health") & 0xFF);
+    c = ☃.e("Age");
     if (☃.c("PickupDelay")) {
-      this.d = ☃.e("PickupDelay");
+      d = ☃.e("PickupDelay");
     }
     if (☃.c("Owner")) {
-      this.g = ☃.j("Owner");
+      g = ☃.j("Owner");
     }
     if (☃.c("Thrower")) {
-      this.f = ☃.j("Thrower");
+      f = ☃.j("Thrower");
     }
     dn ☃ = ☃.m("Item");
     a(zx.a(☃));
@@ -234,12 +234,12 @@ public class uz
   
   public void d(wn ☃)
   {
-    if (this.o.D) {
+    if (o.D) {
       return;
     }
     zx ☃ = l();
-    int ☃ = ☃.b;
-    if ((this.d == 0) && ((this.g == null) || (6000 - this.c <= 200) || (this.g.equals(☃.e_()))) && (☃.bi.a(☃)))
+    int ☃ = b;
+    if ((d == 0) && ((g == null) || (6000 - c <= 200) || (g.equals(☃.e_()))) && (bi.a(☃)))
     {
       if (☃.b() == zw.a(afi.r)) {
         ☃.b(mr.g);
@@ -258,16 +258,16 @@ public class uz
       }
       if ((☃.b() == zy.i) && (n() != null))
       {
-        wn ☃ = this.o.a(n());
+        wn ☃ = o.a(n());
         if ((☃ != null) && (☃ != ☃)) {
           ☃.b(mr.x);
         }
       }
       if (!R()) {
-        this.o.a(☃, "random.pop", 0.2F, ((this.V.nextFloat() - this.V.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+        o.a(☃, "random.pop", 0.2F, ((V.nextFloat() - V.nextFloat()) * 0.7F + 1.0F) * 2.0F);
       }
       ☃.a(this, ☃);
-      if (☃.b <= 0) {
+      if (b <= 0) {
         J();
       }
     }
@@ -289,7 +289,7 @@ public class uz
   public void c(int ☃)
   {
     super.c(☃);
-    if (!this.o.D) {
+    if (!o.D) {
       w();
     }
   }
@@ -299,7 +299,7 @@ public class uz
     zx ☃ = H().f(10);
     if (☃ == null)
     {
-      if (this.o != null) {
+      if (o != null) {
         b.error("Item entity " + F() + " has no item?!");
       }
       return new zx(afi.b);
@@ -315,62 +315,62 @@ public class uz
   
   public String m()
   {
-    return this.g;
+    return g;
   }
   
   public void b(String ☃)
   {
-    this.g = ☃;
+    g = ☃;
   }
   
   public String n()
   {
-    return this.f;
+    return f;
   }
   
   public void c(String ☃)
   {
-    this.f = ☃;
+    f = ☃;
   }
   
   public int o()
   {
-    return this.c;
+    return c;
   }
   
   public void p()
   {
-    this.d = 10;
+    d = 10;
   }
   
   public void q()
   {
-    this.d = 0;
+    d = 0;
   }
   
   public void r()
   {
-    this.d = 32767;
+    d = 32767;
   }
   
   public void a(int ☃)
   {
-    this.d = ☃;
+    d = ☃;
   }
   
   public boolean s()
   {
-    return this.d > 0;
+    return d > 0;
   }
   
   public void u()
   {
-    this.c = 59536;
+    c = 59536;
   }
   
   public void v()
   {
     r();
-    this.c = 5999;
+    c = 5999;
   }
 }

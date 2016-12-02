@@ -12,17 +12,17 @@ class ayf$c$1
     
     mw ☃ = null;
     mw ☃ = null;
-    if (this.b.y == 0)
+    if (b.y == 0)
     {
       ☃ = na.ae[☃];
       ☃ = na.ae[☃];
     }
-    else if (this.b.y == 1)
+    else if (b.y == 1)
     {
       ☃ = na.ac[☃];
       ☃ = na.ac[☃];
     }
-    else if (this.b.y == 2)
+    else if (b.y == 2)
     {
       ☃ = na.ad[☃];
       ☃ = na.ad[☃];
@@ -35,10 +35,10 @@ class ayf$c$1
       if (☃ == null) {
         return -1;
       }
-      int ☃ = ayf.b(this.b.u).a(☃);
-      int ☃ = ayf.b(this.b.u).a(☃);
+      int ☃ = ayf.b(b.u).a(☃);
+      int ☃ = ayf.b(b.u).a(☃);
       if (☃ != ☃) {
-        return (☃ - ☃) * this.b.z;
+        return (☃ - ☃) * b.z;
       }
     }
     return ☃ - ☃;

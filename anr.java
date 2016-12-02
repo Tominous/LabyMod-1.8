@@ -16,7 +16,7 @@ public class anr
     float ☃ = 0.0F;
     if (☃ <= 0)
     {
-      int ☃ = this.a * 16 - 16;
+      int ☃ = a * 16 - 16;
       ☃ = ☃ - ☃.nextInt(☃ / 4);
     }
     boolean ☃ = false;
@@ -31,7 +31,7 @@ public class anr
       if ((☃ == 0) || (☃.nextInt(3) == 0)) {
         ☃ = 1.0F + ☃.nextFloat() * ☃.nextFloat() * 1.0F;
       }
-      this.d[☃] = (☃ * ☃);
+      d[☃] = (☃ * ☃);
     }
     for (; ☃ < ☃; ☃++)
     {
@@ -124,7 +124,7 @@ public class anr
                   for (int ☃ = ☃; ☃ > ☃; ☃--)
                   {
                     double ☃ = (☃ - 1 + 0.5D - ☃) / ☃;
-                    if ((☃ * ☃ + ☃ * ☃) * this.d[(☃ - 1)] + ☃ * ☃ / 6.0D < 1.0D)
+                    if ((☃ * ☃ + ☃ * ☃) * d[(☃ - 1)] + ☃ * ☃ / 6.0D < 1.0D)
                     {
                       alz ☃ = ☃.a(☃, ☃, ☃);
                       if (☃.c() == afi.c) {
@@ -141,7 +141,7 @@ public class anr
                           if ((☃) && (☃.a(☃, ☃ - 1, ☃).c() == afi.d))
                           {
                             ☃.c(☃ + ☃ * 16, 0, ☃ + ☃ * 16);
-                            ☃.a(☃, ☃ - 1, ☃, this.c.b(☃).ak);
+                            ☃.a(☃, ☃ - 1, ☃, c.b(☃).ak);
                           }
                         }
                       }
@@ -161,21 +161,21 @@ public class anr
   
   protected void a(adm ☃, int ☃, int ☃, int ☃, int ☃, ans ☃)
   {
-    if (this.b.nextInt(50) != 0) {
+    if (b.nextInt(50) != 0) {
       return;
     }
-    double ☃ = ☃ * 16 + this.b.nextInt(16);
-    double ☃ = this.b.nextInt(this.b.nextInt(40) + 8) + 20;
-    double ☃ = ☃ * 16 + this.b.nextInt(16);
+    double ☃ = ☃ * 16 + b.nextInt(16);
+    double ☃ = b.nextInt(b.nextInt(40) + 8) + 20;
+    double ☃ = ☃ * 16 + b.nextInt(16);
     
     int ☃ = 1;
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
-      float ☃ = this.b.nextFloat() * 3.1415927F * 2.0F;
-      float ☃ = (this.b.nextFloat() - 0.5F) * 2.0F / 8.0F;
-      float ☃ = (this.b.nextFloat() * 2.0F + this.b.nextFloat()) * 2.0F;
+      float ☃ = b.nextFloat() * 3.1415927F * 2.0F;
+      float ☃ = (b.nextFloat() - 0.5F) * 2.0F / 8.0F;
+      float ☃ = (b.nextFloat() * 2.0F + b.nextFloat()) * 2.0F;
       
-      a(this.b.nextLong(), ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, 0, 0, 3.0D);
+      a(b.nextLong(), ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, 0, 0, 3.0D);
     }
   }
 }

@@ -20,29 +20,29 @@ public class wz
   
   protected void a(auh ☃)
   {
-    if (☃.d != null) {
-      ☃.d.a(ow.a(this, n()), 0.0F);
+    if (d != null) {
+      d.a(ow.a(this, n()), 0.0F);
     }
-    if ((!this.o.D) && (this.V.nextInt(8) == 0))
+    if ((!o.D) && (V.nextInt(8) == 0))
     {
       int ☃ = 1;
-      if (this.V.nextInt(32) == 0) {
+      if (V.nextInt(32) == 0) {
         ☃ = 4;
       }
       for (int ☃ = 0; ☃ < ☃; ☃++)
       {
-        tn ☃ = new tn(this.o);
+        tn ☃ = new tn(o);
         ☃.b(41536);
         
-        ☃.b(this.s, this.t, this.u, this.y, 0.0F);
-        this.o.d(☃);
+        ☃.b(s, t, u, y, 0.0F);
+        o.d(☃);
       }
     }
     double ☃ = 0.08D;
     for (int ☃ = 0; ☃ < 8; ☃++) {
-      this.o.a(cy.K, this.s, this.t, this.u, (this.V.nextFloat() - 0.5D) * 0.08D, (this.V.nextFloat() - 0.5D) * 0.08D, (this.V.nextFloat() - 0.5D) * 0.08D, new int[] { zw.b(zy.aP) });
+      o.a(cy.K, s, t, u, (V.nextFloat() - 0.5D) * 0.08D, (V.nextFloat() - 0.5D) * 0.08D, (V.nextFloat() - 0.5D) * 0.08D, new int[] { zw.b(zy.aP) });
     }
-    if (!this.o.D) {
+    if (!o.D) {
       J();
     }
   }

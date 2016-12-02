@@ -64,7 +64,7 @@ class lt$b
       {
         return null;
       }
-      lt.a ☃ = new lt.a(this.a, new GameProfile(☃, ☃), ☃, null);
+      lt.a ☃ = new lt.a(a, new GameProfile(☃, ☃), ☃, null);
       return ☃;
     }
     return null;

@@ -8,7 +8,7 @@ public class aio
   public aio()
   {
     super(arm.d);
-    j(this.M.b().a(a, aio.a.a));
+    j(M.b().a(a, aio.a.a));
     a(yz.b);
   }
   
@@ -68,25 +68,25 @@ public class aio
     
     private a(int ☃, String ☃, String ☃, arn ☃)
     {
-      this.h = ☃;
-      this.i = ☃;
-      this.j = ☃;
-      this.k = ☃;
+      h = ☃;
+      i = ☃;
+      j = ☃;
+      k = ☃;
     }
     
     public int a()
     {
-      return this.h;
+      return h;
     }
     
     public arn c()
     {
-      return this.k;
+      return k;
     }
     
     public String toString()
     {
-      return this.i;
+      return i;
     }
     
     public static a a(int ☃)
@@ -99,12 +99,12 @@ public class aio
     
     public String l()
     {
-      return this.i;
+      return i;
     }
     
     public String d()
     {
-      return this.j;
+      return j;
     }
   }
 }

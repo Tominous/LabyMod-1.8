@@ -23,7 +23,7 @@ public class GuiDeleteSet
   public GuiDeleteSet(String setName, String key, String name, axu parent)
   {
     super((awx)null, bnq.a("gui.xaero_delete_set_message", new Object[0]) + ": " + setName + "?", bnq.a("gui.xaero_delete_set_message2", new Object[0]), 0);
-    this.parentScreen = parent;
+    parentScreen = parent;
     this.key = key;
     this.name = name;
   }
@@ -31,17 +31,17 @@ public class GuiDeleteSet
   protected void a(avs button)
     throws IOException
   {
-    switch (button.k)
+    switch (k)
     {
     case 0: 
-      ((WaypointWorld)Minimap.waypointMap.get(this.key)).sets.remove(this.name);
-      ((WaypointWorld)Minimap.waypointMap.get(this.key)).current = "gui.xaero_default";
+      waypointMapgetkey)).sets.remove(name);
+      waypointMapgetkey)).current = "gui.xaero_default";
       Minimap.updateWaypoints();
       XaeroMinimap.getSettings().saveWaypoints();
-      this.j.a(new GuiWaypoints(((GuiWaypoints)this.parentScreen).parentScreen));
+      j.a(new GuiWaypoints(parentScreen).parentScreen));
       break;
     case 1: 
-      this.j.a(this.parentScreen);
+      j.a(parentScreen);
     }
   }
 }

@@ -9,25 +9,25 @@ public class axe
   
   public void b()
   {
-    this.n.clear();
-    if (this.j.f.P().t())
+    n.clear();
+    if (j.f.P().t())
     {
-      if (this.j.E()) {
-        this.n.add(new avs(1, this.l / 2 - 100, this.m / 4 + 96, bnq.a("deathScreen.deleteWorld", new Object[0])));
+      if (j.E()) {
+        n.add(new avs(1, l / 2 - 100, m / 4 + 96, bnq.a("deathScreen.deleteWorld", new Object[0])));
       } else {
-        this.n.add(new avs(1, this.l / 2 - 100, this.m / 4 + 96, bnq.a("deathScreen.leaveServer", new Object[0])));
+        n.add(new avs(1, l / 2 - 100, m / 4 + 96, bnq.a("deathScreen.leaveServer", new Object[0])));
       }
     }
     else
     {
-      this.n.add(new avs(0, this.l / 2 - 100, this.m / 4 + 72, bnq.a("deathScreen.respawn", new Object[0])));
-      this.n.add(new avs(1, this.l / 2 - 100, this.m / 4 + 96, bnq.a("deathScreen.titleScreen", new Object[0])));
-      if (this.j.L() == null) {
-        ((avs)this.n.get(1)).l = false;
+      n.add(new avs(0, l / 2 - 100, m / 4 + 72, bnq.a("deathScreen.respawn", new Object[0])));
+      n.add(new avs(1, l / 2 - 100, m / 4 + 96, bnq.a("deathScreen.titleScreen", new Object[0])));
+      if (j.L() == null) {
+        n.get(1)).l = false;
       }
     }
-    for (avs ☃ : this.n) {
-      ☃.l = false;
+    for (avs ☃ : n) {
+      l = false;
     }
   }
   
@@ -35,21 +35,21 @@ public class axe
   
   protected void a(avs ☃)
   {
-    switch (☃.k)
+    switch (k)
     {
     case 0: 
-      this.j.h.cb();
-      this.j.a(null);
+      j.h.cb();
+      j.a(null);
       break;
     case 1: 
-      if (this.j.f.P().t())
+      if (j.f.P().t())
       {
-        this.j.a(new aya());
+        j.a(new aya());
       }
       else
       {
         awy ☃ = new awy(this, bnq.a("deathScreen.quit.confirm", new Object[0]), "", bnq.a("deathScreen.titleScreen", new Object[0]), bnq.a("deathScreen.respawn", new Object[0]), 0);
-        this.j.a(☃);
+        j.a(☃);
         ☃.b(20);
       }
       break;
@@ -60,34 +60,34 @@ public class axe
   {
     if (☃)
     {
-      this.j.f.H();
-      this.j.a(null);
-      this.j.a(new aya());
+      j.f.H();
+      j.a(null);
+      j.a(new aya());
     }
     else
     {
-      this.j.h.cb();
-      this.j.a(null);
+      j.h.cb();
+      j.a(null);
     }
   }
   
   public void a(int ☃, int ☃, float ☃)
   {
-    a(0, 0, this.l, this.m, 1615855616, -1602211792);
+    a(0, 0, l, m, 1615855616, -1602211792);
     
     bfl.E();
     bfl.a(2.0F, 2.0F, 2.0F);
     
-    boolean ☃ = this.j.f.P().t();
+    boolean ☃ = j.f.P().t();
     
     String ☃ = ☃ ? bnq.a("deathScreen.title.hardcore", new Object[0]) : bnq.a("deathScreen.title", new Object[0]);
-    a(this.q, ☃, this.l / 2 / 2, 30, 16777215);
+    a(q, ☃, l / 2 / 2, 30, 16777215);
     
     bfl.F();
     if (☃) {
-      a(this.q, bnq.a("deathScreen.hardcoreInfo", new Object[0]), this.l / 2, 144, 16777215);
+      a(q, bnq.a("deathScreen.hardcoreInfo", new Object[0]), l / 2, 144, 16777215);
     }
-    a(this.q, bnq.a("deathScreen.score", new Object[0]) + ": " + a.o + this.j.h.bX(), this.l / 2, 100, 16777215);
+    a(q, bnq.a("deathScreen.score", new Object[0]) + ": " + a.o + j.h.bX(), l / 2, 100, 16777215);
     
     super.a(☃, ☃, ☃);
   }
@@ -101,10 +101,10 @@ public class axe
   {
     super.e();
     
-    this.a += 1;
-    if (this.a == 20) {
-      for (avs ☃ : this.n) {
-        ☃.l = true;
+    a += 1;
+    if (a == 20) {
+      for (avs ☃ : n) {
+        l = true;
       }
     }
   }

@@ -7,36 +7,36 @@ public class bdl
   {
     super(☃, ☃, ☃, ☃, ☃, ☃, ☃);
     
-    this.ar = 1.0F;
-    this.as = 1.0F;
-    this.at = 1.0F;
+    ar = 1.0F;
+    as = 1.0F;
+    at = 1.0F;
     k(32);
     a(0.02F, 0.02F);
     
-    this.h *= (this.V.nextFloat() * 0.6F + 0.2F);
+    h *= (V.nextFloat() * 0.6F + 0.2F);
     
-    this.v = (☃ * 0.20000000298023224D + (Math.random() * 2.0D - 1.0D) * 0.019999999552965164D);
-    this.w = (☃ * 0.20000000298023224D + (Math.random() * 2.0D - 1.0D) * 0.019999999552965164D);
-    this.x = (☃ * 0.20000000298023224D + (Math.random() * 2.0D - 1.0D) * 0.019999999552965164D);
+    v = (☃ * 0.20000000298023224D + (Math.random() * 2.0D - 1.0D) * 0.019999999552965164D);
+    w = (☃ * 0.20000000298023224D + (Math.random() * 2.0D - 1.0D) * 0.019999999552965164D);
+    x = (☃ * 0.20000000298023224D + (Math.random() * 2.0D - 1.0D) * 0.019999999552965164D);
     
-    this.g = ((int)(8.0D / (Math.random() * 0.8D + 0.2D)));
+    g = ((int)(8.0D / (Math.random() * 0.8D + 0.2D)));
   }
   
   public void t_()
   {
-    this.p = this.s;
-    this.q = this.t;
-    this.r = this.u;
+    p = s;
+    q = t;
+    r = u;
     
-    this.w += 0.002D;
-    d(this.v, this.w, this.x);
-    this.v *= 0.8500000238418579D;
-    this.w *= 0.8500000238418579D;
-    this.x *= 0.8500000238418579D;
-    if (this.o.p(new cj(this)).c().t() != arm.h) {
+    w += 0.002D;
+    d(v, w, x);
+    v *= 0.8500000238418579D;
+    w *= 0.8500000238418579D;
+    x *= 0.8500000238418579D;
+    if (o.p(new cj(this)).c().t() != arm.h) {
       J();
     }
-    if (this.g-- <= 0) {
+    if (g-- <= 0) {
       J();
     }
   }

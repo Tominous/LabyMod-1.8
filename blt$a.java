@@ -10,28 +10,28 @@ public enum blt$a
   
   private blt$a(String ☃, String ☃, int ☃)
   {
-    this.c = ☃;
-    this.d = ☃;
-    this.e = ☃;
+    c = ☃;
+    d = ☃;
+    e = ☃;
   }
   
   public String a()
   {
-    return this.c;
+    return c;
   }
   
   protected String b()
   {
-    return this.d;
+    return d;
   }
   
   protected int c()
   {
-    return this.e;
+    return e;
   }
   
   protected Map<String, blt> d()
   {
-    return this.f;
+    return f;
   }
 }

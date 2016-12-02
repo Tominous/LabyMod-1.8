@@ -10,17 +10,17 @@ public enum baa$a
   
   private baa$a(eu ☃, eu ☃)
   {
-    this.m = ☃;
-    this.n = ☃;
+    m = ☃;
+    n = ☃;
   }
   
   public eu a()
   {
-    return this.m;
+    return m;
   }
   
   public eu b()
   {
-    return this.n;
+    return n;
   }
 }

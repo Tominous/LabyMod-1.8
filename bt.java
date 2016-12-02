@@ -25,7 +25,7 @@ public class bt
   
   protected void d()
   {
-    ato ☃ = net.minecraft.server.MinecraftServer.N().d[0].P();
+    ato ☃ = Nd[0].P();
     
     ☃.b(!☃.p());
   }

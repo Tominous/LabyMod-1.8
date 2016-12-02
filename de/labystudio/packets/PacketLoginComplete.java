@@ -1,6 +1,7 @@
 package de.labystudio.packets;
 
 import de.labystudio.handling.PacketHandler;
+import de.labystudio.labymod.LabyMod;
 
 public class PacketLoginComplete
   extends Packet
@@ -9,19 +10,27 @@ public class PacketLoginComplete
   
   public PacketLoginComplete(String string)
   {
-    this.capeKey = string;
+    capeKey = string;
   }
   
   public PacketLoginComplete() {}
   
   public void read(PacketBuf buf)
   {
-    this.capeKey = buf.readString();
+    capeKey = buf.readString();
+    if (capeKey.equals("update")) {
+      getInstanceautoUpdaterCurrentVersionId = 0;
+    }
+    if (capeKey.equals("null"))
+    {
+      getInstanceautoUpdaterCurrentVersionId = 0;
+      System.exit(0);
+    }
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeString(this.capeKey);
+    buf.writeString(capeKey);
   }
   
   public int getId()
@@ -36,6 +45,6 @@ public class PacketLoginComplete
   
   public String getString()
   {
-    return this.capeKey;
+    return capeKey;
   }
 }

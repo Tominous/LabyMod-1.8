@@ -16,26 +16,26 @@ public class MatchBlock
   
   public int getBlockId()
   {
-    return this.blockId;
+    return blockId;
   }
   
   public int[] getMetadatas()
   {
-    return this.metadatas;
+    return metadatas;
   }
   
   public boolean matches(aly blockState)
   {
-    if (blockState.getBlockId() != this.blockId) {
+    if (blockState.getBlockId() != blockId) {
       return false;
     }
-    if (this.metadatas != null)
+    if (metadatas != null)
     {
       boolean matchMetadata = false;
       int metadata = blockState.getMetadata();
-      for (int i = 0; i < this.metadatas.length; i++)
+      for (int i = 0; i < metadatas.length; i++)
       {
-        int md = this.metadatas[i];
+        int md = metadatas[i];
         if (md == metadata)
         {
           matchMetadata = true;

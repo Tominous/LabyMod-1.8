@@ -7,31 +7,31 @@ public class ru
   public ru(ps ☃, boolean ☃)
   {
     super(☃);
-    this.a = ☃;
-    this.g = ☃;
+    a = ☃;
+    g = ☃;
   }
   
   public boolean b()
   {
-    return (this.g) && (this.h > 0) && (super.b());
+    return (g) && (h > 0) && (super.b());
   }
   
   public void c()
   {
-    this.h = 20;
-    this.c.a(this.a.o, this.b, true);
+    h = 20;
+    c.a(a.o, b, true);
   }
   
   public void d()
   {
-    if (this.g) {
-      this.c.a(this.a.o, this.b, false);
+    if (g) {
+      c.a(a.o, b, false);
     }
   }
   
   public void e()
   {
-    this.h -= 1;
+    h -= 1;
     super.e();
   }
 }

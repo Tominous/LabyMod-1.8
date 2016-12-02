@@ -13,8 +13,8 @@ public class bqh
   
   public bqh(String ☃, String ☃)
   {
-    this.b = ☃;
-    this.c = ☃;
+    b = ☃;
+    c = ☃;
   }
   
   public bqh(String ☃)
@@ -24,20 +24,20 @@ public class bqh
   
   public void a(String ☃)
   {
-    this.c = ☃;
+    c = ☃;
   }
   
   public String a()
   {
-    return this.c == null ? this.b : this.c;
+    return c == null ? b : c;
   }
   
   public void a(String ☃, String ☃)
   {
-    if (this.d == null) {
-      this.d = Maps.newHashMap();
+    if (d == null) {
+      d = Maps.newHashMap();
     }
-    if (this.d.size() > 50) {
+    if (d.size() > 50) {
       throw new IllegalArgumentException("Metadata payload is full, cannot add more to it!");
     }
     if (☃ == null) {
@@ -52,24 +52,24 @@ public class bqh
     if (☃.length() > 255) {
       throw new IllegalArgumentException("Metadata payload value is too long!");
     }
-    this.d.put(☃, ☃);
+    d.put(☃, ☃);
   }
   
   public String b()
   {
-    if ((this.d == null) || (this.d.isEmpty())) {
+    if ((d == null) || (d.isEmpty())) {
       return null;
     }
-    return a.toJson(this.d);
+    return a.toJson(d);
   }
   
   public String c()
   {
-    return this.b;
+    return b;
   }
   
   public String toString()
   {
-    return Objects.toStringHelper(this).add("name", this.b).add("description", this.c).add("data", b()).toString();
+    return Objects.toStringHelper(this).add("name", b).add("description", c).add("data", b()).toString();
   }
 }

@@ -24,7 +24,7 @@ public abstract class SMCLog
     
     SMCFormatter()
     {
-      this.tzOffset = Calendar.getInstance().getTimeZone().getRawOffset();
+      tzOffset = Calendar.getInstance().getTimeZone().getRawOffset();
     }
     
     public String format(LogRecord record)

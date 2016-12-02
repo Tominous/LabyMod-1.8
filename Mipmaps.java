@@ -23,11 +23,11 @@ public class Mipmaps
     this.data = data;
     this.direct = direct;
     
-    this.mipmapDimensions = makeMipmapDimensions(width, height, iconName);
+    mipmapDimensions = makeMipmapDimensions(width, height, iconName);
     
-    this.mipmapDatas = generateMipMapData(data, width, height, this.mipmapDimensions);
+    mipmapDatas = generateMipMapData(data, width, height, mipmapDimensions);
     if (direct) {
-      this.mipmapBuffers = makeMipmapBuffers(this.mipmapDimensions, this.mipmapDatas);
+      mipmapBuffers = makeMipmapBuffers(mipmapDimensions, mipmapDatas);
     }
   }
   
@@ -75,8 +75,8 @@ public class Mipmaps
     for (int i = 0; i < mipmapDimensions.length; i++)
     {
       Dimension dim = mipmapDimensions[i];
-      int mipWidth = dim.width;
-      int mipHeight = dim.height;
+      int mipWidth = width;
+      int mipHeight = height;
       
       int[] mipData = new int[mipWidth * mipHeight];
       mipmapDatas[i] = mipData;
@@ -167,7 +167,7 @@ public class Mipmaps
     for (int i = 0; i < mipmapDimensions.length; i++)
     {
       Dimension dim = mipmapDimensions[i];
-      int bufLen = dim.width * dim.height;
+      int bufLen = width * height;
       IntBuffer buf = avd.f(bufLen);
       
       int[] data = mipmapDatas[i];
@@ -186,8 +186,8 @@ public class Mipmaps
     for (int i = 0; i < dims.length; i++)
     {
       Dimension dim = dims[i];
-      int mipWidth = dim.width;
-      int mipHeight = dim.height;
+      int mipWidth = width;
+      int mipHeight = height;
       int level = i + 1;
       
       GL11.glTexImage2D(3553, level, 6408, mipWidth, mipHeight, 0, 32993, 33639, (IntBuffer)null);

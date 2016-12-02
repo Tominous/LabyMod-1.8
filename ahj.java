@@ -11,7 +11,7 @@ public class ahj
   protected ahj(arm ☃, boolean ☃, arn ☃)
   {
     super(☃, ☃);
-    this.a = ☃;
+    a = ☃;
   }
   
   public boolean c()
@@ -32,7 +32,7 @@ public class ahj
         return false;
       }
     }
-    if ((!this.a) && (☃ == this)) {
+    if ((!a) && (☃ == this)) {
       return false;
     }
     return super.a(☃, ☃, ☃);

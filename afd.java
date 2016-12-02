@@ -84,7 +84,7 @@ public abstract class afd
   
   public void b(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     int ☃ = e(☃);
@@ -95,7 +95,7 @@ public abstract class afd
   
   public void a(adm ☃, cj ☃, alz ☃, pk ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     int ☃ = e(☃);

@@ -14,10 +14,10 @@ public class iq
   
   public iq(wl ☃)
   {
-    a(☃.a);
-    b(☃.b);
-    c(☃.c);
-    d(☃.d);
+    a(a);
+    b(b);
+    c(c);
+    d(d);
     a(☃.a());
     b(☃.b());
   }
@@ -52,8 +52,8 @@ public class iq
       ☃ = (byte)(☃ | 0x8);
     }
     ☃.writeByte(☃);
-    ☃.writeFloat(this.e);
-    ☃.writeFloat(this.f);
+    ☃.writeFloat(e);
+    ☃.writeFloat(f);
   }
   
   public void a(ic ☃)
@@ -63,51 +63,51 @@ public class iq
   
   public boolean a()
   {
-    return this.a;
+    return a;
   }
   
   public void a(boolean ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public boolean b()
   {
-    return this.b;
+    return b;
   }
   
   public void b(boolean ☃)
   {
-    this.b = ☃;
+    b = ☃;
   }
   
   public boolean c()
   {
-    return this.c;
+    return c;
   }
   
   public void c(boolean ☃)
   {
-    this.c = ☃;
+    c = ☃;
   }
   
   public boolean d()
   {
-    return this.d;
+    return d;
   }
   
   public void d(boolean ☃)
   {
-    this.d = ☃;
+    d = ☃;
   }
   
   public void a(float ☃)
   {
-    this.e = ☃;
+    e = ☃;
   }
   
   public void b(float ☃)
   {
-    this.f = ☃;
+    f = ☃;
   }
 }

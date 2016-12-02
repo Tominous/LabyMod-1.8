@@ -5,12 +5,12 @@ public abstract class no<T>
   
   public T c()
   {
-    if (!this.b)
+    if (!b)
     {
-      this.b = true;
-      this.a = b();
+      b = true;
+      a = b();
     }
-    return (T)this.a;
+    return (T)a;
   }
   
   protected abstract T b();

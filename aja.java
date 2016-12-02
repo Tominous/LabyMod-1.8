@@ -11,7 +11,7 @@ public class aja
     if (☃) {
       a(true);
     }
-    this.a = ☃;
+    a = ☃;
   }
   
   public int a(adm ☃)
@@ -70,23 +70,23 @@ public class aja
   public void a(adm ☃, cj ☃, alz ☃, float ☃, int ☃)
   {
     super.a(☃, ☃, ☃, ☃, ☃);
-    if (a(☃, ☃.s, ☃) != zw.a(this))
+    if (a(☃, s, ☃) != zw.a(this))
     {
-      int ☃ = 1 + ☃.s.nextInt(5);
+      int ☃ = 1 + s.nextInt(5);
       b(☃, ☃, ☃);
     }
   }
   
   public void c(adm ☃, cj ☃, alz ☃, Random ☃)
   {
-    if (this.a) {
+    if (a) {
       f(☃, ☃);
     }
   }
   
   private void f(adm ☃, cj ☃)
   {
-    Random ☃ = ☃.s;
+    Random ☃ = s;
     double ☃ = 0.0625D;
     for (int ☃ = 0; ☃ < 6; ☃++)
     {

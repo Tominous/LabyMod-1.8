@@ -14,24 +14,24 @@ public class ov
   
   public ov(pr ☃)
   {
-    this.b = ☃;
+    b = ☃;
   }
   
   public void a()
   {
     j();
-    if (this.b.k_())
+    if (b.k_())
     {
-      afh ☃ = this.b.o.p(new cj(this.b.s, this.b.aR().b, this.b.u)).c();
+      afh ☃ = b.o.p(new cj(b.s, b.aR().b, b.u)).c();
       if (☃ == afi.au) {
-        this.h = "ladder";
+        h = "ladder";
       } else if (☃ == afi.bn) {
-        this.h = "vines";
+        h = "vines";
       }
     }
-    else if (this.b.V())
+    else if (b.V())
     {
-      this.h = "water";
+      h = "water";
     }
   }
   
@@ -40,27 +40,27 @@ public class ov
     g();
     a();
     
-    ou ☃ = new ou(☃, this.b.W, ☃, ☃, this.h, this.b.O);
+    ou ☃ = new ou(☃, b.W, ☃, ☃, h, b.O);
     
-    this.a.add(☃);
-    this.c = this.b.W;
-    this.g = true;
-    if ((☃.f()) && (!this.f) && (this.b.ai()))
+    a.add(☃);
+    c = b.W;
+    g = true;
+    if ((☃.f()) && (!f) && (b.ai()))
     {
-      this.f = true;
-      this.d = this.b.W;
-      this.e = this.d;
-      this.b.h_();
+      f = true;
+      d = b.W;
+      e = d;
+      b.h_();
     }
   }
   
   public eu b()
   {
-    if (this.a.size() == 0) {
-      return new fb("death.attack.generic", new Object[] { this.b.f_() });
+    if (a.size() == 0) {
+      return new fb("death.attack.generic", new Object[] { b.f_() });
     }
     ou ☃ = i();
-    ou ☃ = (ou)this.a.get(this.a.size() - 1);
+    ou ☃ = (ou)a.get(a.size() - 1);
     
     eu ☃ = ☃.h();
     pk ☃ = ☃.a().j();
@@ -72,7 +72,7 @@ public class ov
       eu ☃;
       if ((☃.a() == ow.i) || (☃.a() == ow.j))
       {
-        ☃ = new fb("death.fell.accident." + a(☃), new Object[] { this.b.f_() });
+        ☃ = new fb("death.fell.accident." + a(☃), new Object[] { b.f_() });
       }
       else
       {
@@ -83,9 +83,9 @@ public class ov
           zx ☃ = (☃ instanceof pr) ? ((pr)☃).bA() : null;
           eu ☃;
           if ((☃ != null) && (☃.s())) {
-            ☃ = new fb("death.fell.assist.item", new Object[] { this.b.f_(), ☃, ☃.C() });
+            ☃ = new fb("death.fell.assist.item", new Object[] { b.f_(), ☃, ☃.C() });
           } else {
-            ☃ = new fb("death.fell.assist", new Object[] { this.b.f_(), ☃ });
+            ☃ = new fb("death.fell.assist", new Object[] { b.f_(), ☃ });
           }
         }
         else
@@ -96,21 +96,21 @@ public class ov
             zx ☃ = (☃ instanceof pr) ? ((pr)☃).bA() : null;
             eu ☃;
             if ((☃ != null) && (☃.s())) {
-              ☃ = new fb("death.fell.finish.item", new Object[] { this.b.f_(), ☃, ☃.C() });
+              ☃ = new fb("death.fell.finish.item", new Object[] { b.f_(), ☃, ☃.C() });
             } else {
-              ☃ = new fb("death.fell.finish", new Object[] { this.b.f_(), ☃ });
+              ☃ = new fb("death.fell.finish", new Object[] { b.f_(), ☃ });
             }
           }
           else
           {
-            ☃ = new fb("death.fell.killer", new Object[] { this.b.f_() });
+            ☃ = new fb("death.fell.killer", new Object[] { b.f_() });
           }
         }
       }
     }
     else
     {
-      ☃ = ☃.a().b(this.b);
+      ☃ = ☃.a().b(b);
     }
     return ☃;
   }
@@ -121,7 +121,7 @@ public class ov
     wn ☃ = null;
     float ☃ = 0.0F;
     float ☃ = 0.0F;
-    for (ou ☃ : this.a)
+    for (ou ☃ : a)
     {
       if (((☃.a().j() instanceof wn)) && ((☃ == null) || (☃.c() > ☃)))
       {
@@ -146,10 +146,10 @@ public class ov
     ou ☃ = null;
     int ☃ = 0;
     float ☃ = 0.0F;
-    for (int ☃ = 0; ☃ < this.a.size(); ☃++)
+    for (int ☃ = 0; ☃ < a.size(); ☃++)
     {
-      ou ☃ = (ou)this.a.get(☃);
-      ou ☃ = ☃ > 0 ? (ou)this.a.get(☃ - 1) : null;
+      ou ☃ = (ou)a.get(☃);
+      ou ☃ = ☃ > 0 ? (ou)a.get(☃ - 1) : null;
       if (((☃.a() == ow.i) || (☃.a() == ow.j)) && (☃.i() > 0.0F) && ((☃ == null) || (☃.i() > ☃)))
       {
         if (☃ > 0) {
@@ -179,35 +179,35 @@ public class ov
   
   public int f()
   {
-    if (this.f) {
-      return this.b.W - this.d;
+    if (f) {
+      return b.W - d;
     }
-    return this.e - this.d;
+    return e - d;
   }
   
   private void j()
   {
-    this.h = null;
+    h = null;
   }
   
   public void g()
   {
-    int ☃ = this.f ? 300 : 100;
-    if ((this.g) && ((!this.b.ai()) || (this.b.W - this.c > ☃)))
+    int ☃ = f ? 300 : 100;
+    if ((g) && ((!b.ai()) || (b.W - c > ☃)))
     {
-      boolean ☃ = this.f;
-      this.g = false;
-      this.f = false;
-      this.e = this.b.W;
+      boolean ☃ = f;
+      g = false;
+      f = false;
+      e = b.W;
       if (☃) {
-        this.b.j();
+        b.j();
       }
-      this.a.clear();
+      a.clear();
     }
   }
   
   public pr h()
   {
-    return this.b;
+    return b;
   }
 }

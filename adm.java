@@ -48,7 +48,7 @@ public abstract class adm
   protected auo C = new auo();
   public final boolean D;
   protected Set<adg> E = Sets.newHashSet();
-  private int L = this.s.nextInt(12000);
+  private int L = s.nextInt(12000);
   protected boolean F = true;
   protected boolean G = true;
   private boolean M;
@@ -56,12 +56,12 @@ public abstract class adm
   
   protected adm(atp ☃, ato ☃, anm ☃, nt ☃, boolean ☃)
   {
-    this.w = ☃;
-    this.B = ☃;
-    this.x = ☃;
-    this.t = ☃;
-    this.D = ☃;
-    this.N = ☃.r();
+    w = ☃;
+    B = ☃;
+    x = ☃;
+    t = ☃;
+    D = ☃;
+    N = ☃.r();
   }
   
   public adm b()
@@ -76,7 +76,7 @@ public abstract class adm
       amy ☃ = f(☃);
       try
       {
-        return ☃.a(☃, this.t.m());
+        return ☃.a(☃, t.m());
       }
       catch (Throwable ☃)
       {
@@ -94,19 +94,19 @@ public abstract class adm
         throw new e(☃);
       }
     }
-    return this.t.m().a(☃, ady.q);
+    return t.m().a(☃, ady.q);
   }
   
   public aec v()
   {
-    return this.t.m();
+    return t.m();
   }
   
   protected abstract amv k();
   
   public void a(adp ☃)
   {
-    this.x.d(true);
+    x.d(true);
   }
   
   public void g()
@@ -173,7 +173,7 @@ public abstract class adm
   
   public boolean b(aqe ☃, boolean ☃)
   {
-    return a(☃.a, ☃.b, ☃.c, ☃.d, ☃.e, ☃.f, ☃);
+    return a(a, b, c, d, e, f, ☃);
   }
   
   private boolean a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, boolean ☃)
@@ -197,7 +197,7 @@ public abstract class adm
   
   protected boolean a(int ☃, int ☃, boolean ☃)
   {
-    return (this.v.a(☃, ☃)) && ((☃) || (!this.v.d(☃, ☃).f()));
+    return (v.a(☃, ☃)) && ((☃) || (!v.d(☃, ☃).f()));
   }
   
   public amy f(cj ☃)
@@ -207,7 +207,7 @@ public abstract class adm
   
   public amy a(int ☃, int ☃)
   {
-    return this.v.d(☃, ☃);
+    return v.d(☃, ☃);
   }
   
   public boolean a(cj ☃, alz ☃, int ☃)
@@ -215,7 +215,7 @@ public abstract class adm
     if (!a(☃)) {
       return false;
     }
-    if ((!this.D) && (this.x.u() == adr.g)) {
+    if ((!D) && (x.u() == adr.g)) {
       return false;
     }
     amy ☃ = f(☃);
@@ -226,14 +226,14 @@ public abstract class adm
       afh ☃ = ☃.c();
       if ((☃.p() != ☃.p()) || (☃.r() != ☃.r()))
       {
-        this.B.a("checkLight");
+        B.a("checkLight");
         x(☃);
-        this.B.b();
+        B.b();
       }
-      if (((☃ & 0x2) != 0) && ((!this.D) || ((☃ & 0x4) == 0)) && (☃.i())) {
+      if (((☃ & 0x2) != 0) && ((!D) || ((☃ & 0x4) == 0)) && (☃.i())) {
         h(☃);
       }
-      if ((!this.D) && ((☃ & 0x1) != 0))
+      if ((!D) && ((☃ & 0x1) != 0))
       {
         b(☃, ☃.c());
         if (☃.O()) {
@@ -271,14 +271,14 @@ public abstract class adm
   
   public void h(cj ☃)
   {
-    for (int ☃ = 0; ☃ < this.u.size(); ☃++) {
-      ((ado)this.u.get(☃)).a(☃);
+    for (int ☃ = 0; ☃ < u.size(); ☃++) {
+      ((ado)u.get(☃)).a(☃);
     }
   }
   
   public void b(cj ☃, afh ☃)
   {
-    if (this.x.u() != adr.g) {
+    if (x.u() != adr.g) {
       c(☃, ☃);
     }
   }
@@ -291,7 +291,7 @@ public abstract class adm
       ☃ = ☃;
       ☃ = ☃;
     }
-    if (!this.t.o()) {
+    if (!t.o()) {
       for (int ☃ = ☃; ☃ <= ☃; ☃++) {
         c(ads.a, new cj(☃, ☃, ☃));
       }
@@ -306,8 +306,8 @@ public abstract class adm
   
   public void b(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    for (int ☃ = 0; ☃ < this.u.size(); ☃++) {
-      ((ado)this.u.get(☃)).a(☃, ☃, ☃, ☃, ☃, ☃);
+    for (int ☃ = 0; ☃ < u.size(); ☃++) {
+      ((ado)u.get(☃)).a(☃, ☃, ☃, ☃, ☃, ☃);
     }
   }
   
@@ -345,7 +345,7 @@ public abstract class adm
   
   public void d(cj ☃, final afh ☃)
   {
-    if (this.D) {
+    if (D) {
       return;
     }
     alz ☃ = p(☃);
@@ -458,7 +458,7 @@ public abstract class adm
       ☃ = new cj(☃.n(), 255, ☃.p());
     }
     amy ☃ = f(☃);
-    return ☃.a(☃, this.I);
+    return ☃.a(☃, I);
   }
   
   public cj m(cj ☃)
@@ -495,17 +495,17 @@ public abstract class adm
   
   public int a(ads ☃, cj ☃)
   {
-    if ((this.t.o()) && (☃ == ads.a)) {
+    if ((t.o()) && (☃ == ads.a)) {
       return 0;
     }
     if (☃.o() < 0) {
       ☃ = new cj(☃.n(), 0, ☃.p());
     }
     if (!a(☃)) {
-      return ☃.c;
+      return c;
     }
     if (!e(☃)) {
-      return ☃.c;
+      return c;
     }
     if (p(☃).c().s())
     {
@@ -538,10 +538,10 @@ public abstract class adm
       ☃ = new cj(☃.n(), 0, ☃.p());
     }
     if (!a(☃)) {
-      return ☃.c;
+      return c;
     }
     if (!e(☃)) {
-      return ☃.c;
+      return c;
     }
     amy ☃ = f(☃);
     return ☃.a(☃, ☃);
@@ -562,8 +562,8 @@ public abstract class adm
   
   public void n(cj ☃)
   {
-    for (int ☃ = 0; ☃ < this.u.size(); ☃++) {
-      ((ado)this.u.get(☃)).b(☃);
+    for (int ☃ = 0; ☃ < u.size(); ☃++) {
+      ((ado)u.get(☃)).b(☃);
     }
   }
   
@@ -579,7 +579,7 @@ public abstract class adm
   
   public float o(cj ☃)
   {
-    return this.t.p()[l(☃)];
+    return t.p()[l(☃)];
   }
   
   public alz p(cj ☃)
@@ -593,7 +593,7 @@ public abstract class adm
   
   public boolean w()
   {
-    return this.I < 4;
+    return I < 4;
   }
   
   public auh a(aui ☃, aui ☃)
@@ -608,19 +608,19 @@ public abstract class adm
   
   public auh a(aui ☃, aui ☃, boolean ☃, boolean ☃, boolean ☃)
   {
-    if ((Double.isNaN(☃.a)) || (Double.isNaN(☃.b)) || (Double.isNaN(☃.c))) {
+    if ((Double.isNaN(a)) || (Double.isNaN(b)) || (Double.isNaN(c))) {
       return null;
     }
-    if ((Double.isNaN(☃.a)) || (Double.isNaN(☃.b)) || (Double.isNaN(☃.c))) {
+    if ((Double.isNaN(a)) || (Double.isNaN(b)) || (Double.isNaN(c))) {
       return null;
     }
-    int ☃ = ns.c(☃.a);
-    int ☃ = ns.c(☃.b);
-    int ☃ = ns.c(☃.c);
+    int ☃ = ns.c(a);
+    int ☃ = ns.c(b);
+    int ☃ = ns.c(c);
     
-    int ☃ = ns.c(☃.a);
-    int ☃ = ns.c(☃.b);
-    int ☃ = ns.c(☃.c);
+    int ☃ = ns.c(a);
+    int ☃ = ns.c(b);
+    int ☃ = ns.c(c);
     
     cj ☃ = new cj(☃, ☃, ☃);
     
@@ -640,7 +640,7 @@ public abstract class adm
     int ☃ = 200;
     while (☃-- >= 0)
     {
-      if ((Double.isNaN(☃.a)) || (Double.isNaN(☃.b)) || (Double.isNaN(☃.c))) {
+      if ((Double.isNaN(a)) || (Double.isNaN(b)) || (Double.isNaN(c))) {
         return null;
       }
       if ((☃ == ☃) && (☃ == ☃) && (☃ == ☃)) {
@@ -678,17 +678,17 @@ public abstract class adm
       double ☃ = 999.0D;
       double ☃ = 999.0D;
       
-      double ☃ = ☃.a - ☃.a;
-      double ☃ = ☃.b - ☃.b;
-      double ☃ = ☃.c - ☃.c;
+      double ☃ = a - a;
+      double ☃ = b - b;
+      double ☃ = c - c;
       if (☃) {
-        ☃ = (☃ - ☃.a) / ☃;
+        ☃ = (☃ - a) / ☃;
       }
       if (☃) {
-        ☃ = (☃ - ☃.b) / ☃;
+        ☃ = (☃ - b) / ☃;
       }
       if (☃) {
-        ☃ = (☃ - ☃.c) / ☃;
+        ☃ = (☃ - c) / ☃;
       }
       if (☃ == -0.0D) {
         ☃ = -1.0E-4D;
@@ -703,21 +703,21 @@ public abstract class adm
       if ((☃ < ☃) && (☃ < ☃))
       {
         cq ☃ = ☃ > ☃ ? cq.e : cq.f;
-        ☃ = new aui(☃, ☃.b + ☃ * ☃, ☃.c + ☃ * ☃);
+        ☃ = new aui(☃, b + ☃ * ☃, c + ☃ * ☃);
       }
       else if (☃ < ☃)
       {
         cq ☃ = ☃ > ☃ ? cq.a : cq.b;
-        ☃ = new aui(☃.a + ☃ * ☃, ☃, ☃.c + ☃ * ☃);
+        ☃ = new aui(a + ☃ * ☃, ☃, c + ☃ * ☃);
       }
       else
       {
         ☃ = ☃ > ☃ ? cq.c : cq.d;
-        ☃ = new aui(☃.a + ☃ * ☃, ☃.b + ☃ * ☃, ☃);
+        ☃ = new aui(a + ☃ * ☃, b + ☃ * ☃, ☃);
       }
-      ☃ = ns.c(☃.a) - (☃ == cq.f ? 1 : 0);
-      ☃ = ns.c(☃.b) - (☃ == cq.b ? 1 : 0);
-      ☃ = ns.c(☃.c) - (☃ == cq.d ? 1 : 0);
+      ☃ = ns.c(a) - (☃ == cq.f ? 1 : 0);
+      ☃ = ns.c(b) - (☃ == cq.b ? 1 : 0);
+      ☃ = ns.c(c) - (☃ == cq.d ? 1 : 0);
       
       ☃ = new cj(☃, ☃, ☃);
       alz ☃ = p(☃);
@@ -741,22 +741,22 @@ public abstract class adm
   
   public void a(pk ☃, String ☃, float ☃, float ☃)
   {
-    for (int ☃ = 0; ☃ < this.u.size(); ☃++) {
-      ((ado)this.u.get(☃)).a(☃, ☃.s, ☃.t, ☃.u, ☃, ☃);
+    for (int ☃ = 0; ☃ < u.size(); ☃++) {
+      ((ado)u.get(☃)).a(☃, s, t, u, ☃, ☃);
     }
   }
   
   public void a(wn ☃, String ☃, float ☃, float ☃)
   {
-    for (int ☃ = 0; ☃ < this.u.size(); ☃++) {
-      ((ado)this.u.get(☃)).a(☃, ☃, ☃.s, ☃.t, ☃.u, ☃, ☃);
+    for (int ☃ = 0; ☃ < u.size(); ☃++) {
+      ((ado)u.get(☃)).a(☃, ☃, s, t, u, ☃, ☃);
     }
   }
   
   public void a(double ☃, double ☃, double ☃, String ☃, float ☃, float ☃)
   {
-    for (int ☃ = 0; ☃ < this.u.size(); ☃++) {
-      ((ado)this.u.get(☃)).a(☃, ☃, ☃, ☃, ☃, ☃);
+    for (int ☃ = 0; ☃ < u.size(); ☃++) {
+      ((ado)u.get(☃)).a(☃, ☃, ☃, ☃, ☃, ☃);
     }
   }
   
@@ -764,8 +764,8 @@ public abstract class adm
   
   public void a(cj ☃, String ☃)
   {
-    for (int ☃ = 0; ☃ < this.u.size(); ☃++) {
-      ((ado)this.u.get(☃)).a(☃, ☃);
+    for (int ☃ = 0; ☃ < u.size(); ☃++) {
+      ((ado)u.get(☃)).a(☃, ☃);
     }
   }
   
@@ -781,23 +781,23 @@ public abstract class adm
   
   private void a(int ☃, boolean ☃, double ☃, double ☃, double ☃, double ☃, double ☃, double ☃, int... ☃)
   {
-    for (int ☃ = 0; ☃ < this.u.size(); ☃++) {
-      ((ado)this.u.get(☃)).a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
+    for (int ☃ = 0; ☃ < u.size(); ☃++) {
+      ((ado)u.get(☃)).a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
     }
   }
   
   public boolean c(pk ☃)
   {
-    this.k.add(☃);
+    k.add(☃);
     return true;
   }
   
   public boolean d(pk ☃)
   {
-    int ☃ = ns.c(☃.s / 16.0D);
-    int ☃ = ns.c(☃.u / 16.0D);
+    int ☃ = ns.c(s / 16.0D);
+    int ☃ = ns.c(u / 16.0D);
     
-    boolean ☃ = ☃.n;
+    boolean ☃ = n;
     if ((☃ instanceof wn)) {
       ☃ = true;
     }
@@ -806,11 +806,11 @@ public abstract class adm
       if ((☃ instanceof wn))
       {
         wn ☃ = (wn)☃;
-        this.j.add(☃);
+        j.add(☃);
         d();
       }
       a(☃, ☃).a(☃);
-      this.f.add(☃);
+      f.add(☃);
       a(☃);
       return true;
     }
@@ -819,30 +819,30 @@ public abstract class adm
   
   protected void a(pk ☃)
   {
-    for (int ☃ = 0; ☃ < this.u.size(); ☃++) {
-      ((ado)this.u.get(☃)).a(☃);
+    for (int ☃ = 0; ☃ < u.size(); ☃++) {
+      ((ado)u.get(☃)).a(☃);
     }
   }
   
   protected void b(pk ☃)
   {
-    for (int ☃ = 0; ☃ < this.u.size(); ☃++) {
-      ((ado)this.u.get(☃)).b(☃);
+    for (int ☃ = 0; ☃ < u.size(); ☃++) {
+      ((ado)u.get(☃)).b(☃);
     }
   }
   
   public void e(pk ☃)
   {
-    if (☃.l != null) {
-      ☃.l.a(null);
+    if (l != null) {
+      l.a(null);
     }
-    if (☃.m != null) {
+    if (m != null) {
       ☃.a(null);
     }
     ☃.J();
     if ((☃ instanceof wn))
     {
-      this.j.remove(☃);
+      j.remove(☃);
       d();
       b(☃);
     }
@@ -853,37 +853,37 @@ public abstract class adm
     ☃.J();
     if ((☃ instanceof wn))
     {
-      this.j.remove(☃);
+      j.remove(☃);
       d();
     }
-    int ☃ = ☃.ae;
-    int ☃ = ☃.ag;
-    if ((☃.ad) && (a(☃, ☃, true))) {
+    int ☃ = ae;
+    int ☃ = ag;
+    if ((ad) && (a(☃, ☃, true))) {
       a(☃, ☃).b(☃);
     }
-    this.f.remove(☃);
+    f.remove(☃);
     b(☃);
   }
   
   public void a(ado ☃)
   {
-    this.u.add(☃);
+    u.add(☃);
   }
   
   public void b(ado ☃)
   {
-    this.u.remove(☃);
+    u.remove(☃);
   }
   
   public List<aug> a(pk ☃, aug ☃)
   {
     List<aug> ☃ = Lists.newArrayList();
-    int ☃ = ns.c(☃.a);
-    int ☃ = ns.c(☃.d + 1.0D);
-    int ☃ = ns.c(☃.b);
-    int ☃ = ns.c(☃.e + 1.0D);
-    int ☃ = ns.c(☃.c);
-    int ☃ = ns.c(☃.f + 1.0D);
+    int ☃ = ns.c(a);
+    int ☃ = ns.c(d + 1.0D);
+    int ☃ = ns.c(b);
+    int ☃ = ns.c(e + 1.0D);
+    int ☃ = ns.c(c);
+    int ☃ = ns.c(f + 1.0D);
     
     ams ☃ = af();
     boolean ☃ = ☃.aT();
@@ -915,7 +915,7 @@ public abstract class adm
     double ☃ = 0.25D;
     List<pk> ☃ = b(☃, ☃.b(☃, ☃, ☃));
     for (int ☃ = 0; ☃ < ☃.size(); ☃++) {
-      if ((☃.l != ☃) && (☃.m != ☃))
+      if ((l != ☃) && (m != ☃))
       {
         aug ☃ = ((pk)☃.get(☃)).S();
         if ((☃ != null) && (☃.b(☃))) {
@@ -950,18 +950,18 @@ public abstract class adm
       ☃ += 1.0D;
       ☃ += 1.0D;
     }
-    return (☃.s > ☃) && (☃.s < ☃) && (☃.u > ☃) && (☃.u < ☃);
+    return (s > ☃) && (s < ☃) && (u > ☃) && (u < ☃);
   }
   
   public List<aug> a(aug ☃)
   {
     List<aug> ☃ = Lists.newArrayList();
-    int ☃ = ns.c(☃.a);
-    int ☃ = ns.c(☃.d + 1.0D);
-    int ☃ = ns.c(☃.b);
-    int ☃ = ns.c(☃.e + 1.0D);
-    int ☃ = ns.c(☃.c);
-    int ☃ = ns.c(☃.f + 1.0D);
+    int ☃ = ns.c(a);
+    int ☃ = ns.c(d + 1.0D);
+    int ☃ = ns.c(b);
+    int ☃ = ns.c(e + 1.0D);
+    int ☃ = ns.c(c);
+    int ☃ = ns.c(f + 1.0D);
     
     cj.a ☃ = new cj.a();
     for (int ☃ = ☃; ☃ < ☃; ☃++) {
@@ -1019,9 +1019,9 @@ public abstract class adm
     float ☃ = ns.b(☃ * 3.1415927F * 2.0F) * 2.0F + 0.5F;
     ☃ = ns.a(☃, 0.0F, 1.0F);
     
-    int ☃ = ns.c(☃.s);
-    int ☃ = ns.c(☃.t);
-    int ☃ = ns.c(☃.u);
+    int ☃ = ns.c(s);
+    int ☃ = ns.c(t);
+    int ☃ = ns.c(u);
     cj ☃ = new cj(☃, ☃, ☃);
     ady ☃ = b(☃);
     float ☃ = ☃.a(☃);
@@ -1054,9 +1054,9 @@ public abstract class adm
       ☃ = ☃ * ☃ + ☃ * (1.0F - ☃);
       ☃ = ☃ * ☃ + ☃ * (1.0F - ☃);
     }
-    if (this.J > 0)
+    if (J > 0)
     {
-      float ☃ = this.J - ☃;
+      float ☃ = J - ☃;
       if (☃ > 1.0F) {
         ☃ = 1.0F;
       }
@@ -1070,17 +1070,17 @@ public abstract class adm
   
   public float c(float ☃)
   {
-    return this.t.a(this.x.g(), ☃);
+    return t.a(x.g(), ☃);
   }
   
   public int x()
   {
-    return this.t.a(this.x.g());
+    return t.a(x.g());
   }
   
   public float y()
   {
-    return anm.a[this.t.a(this.x.g())];
+    return anm.a[t.a(x.g())];
   }
   
   public float d(float ☃)
@@ -1096,9 +1096,9 @@ public abstract class adm
     float ☃ = ns.b(☃ * 3.1415927F * 2.0F) * 2.0F + 0.5F;
     ☃ = ns.a(☃, 0.0F, 1.0F);
     
-    float ☃ = (float)(this.d >> 16 & 0xFF) / 255.0F;
-    float ☃ = (float)(this.d >> 8 & 0xFF) / 255.0F;
-    float ☃ = (float)(this.d & 0xFF) / 255.0F;
+    float ☃ = (float)(d >> 16 & 0xFF) / 255.0F;
+    float ☃ = (float)(d >> 8 & 0xFF) / 255.0F;
+    float ☃ = (float)(d & 0xFF) / 255.0F;
     
     float ☃ = j(☃);
     if (☃ > 0.0F)
@@ -1130,7 +1130,7 @@ public abstract class adm
   public aui f(float ☃)
   {
     float ☃ = c(☃);
-    return this.t.b(☃, ☃);
+    return t.b(☃, ☃);
   }
   
   public cj q(cj ☃)
@@ -1173,14 +1173,14 @@ public abstract class adm
   
   public void i()
   {
-    this.B.a("entities");
-    this.B.a("global");
-    for (int ☃ = 0; ☃ < this.k.size(); ☃++)
+    B.a("entities");
+    B.a("global");
+    for (int ☃ = 0; ☃ < k.size(); ☃++)
     {
-      pk ☃ = (pk)this.k.get(☃);
+      pk ☃ = (pk)k.get(☃);
       try
       {
-        ☃.W += 1;
+        W += 1;
         ☃.t_();
       }
       catch (Throwable ☃)
@@ -1194,42 +1194,42 @@ public abstract class adm
         }
         throw new e(☃);
       }
-      if (☃.I) {
-        this.k.remove(☃--);
+      if (I) {
+        k.remove(☃--);
       }
     }
-    this.B.c("remove");
-    this.f.removeAll(this.g);
-    for (int ☃ = 0; ☃ < this.g.size(); ☃++)
+    B.c("remove");
+    f.removeAll(g);
+    for (int ☃ = 0; ☃ < g.size(); ☃++)
     {
-      pk ☃ = (pk)this.g.get(☃);
-      int ☃ = ☃.ae;
-      int ☃ = ☃.ag;
-      if ((☃.ad) && (a(☃, ☃, true))) {
+      pk ☃ = (pk)g.get(☃);
+      int ☃ = ae;
+      int ☃ = ag;
+      if ((ad) && (a(☃, ☃, true))) {
         a(☃, ☃).b(☃);
       }
     }
-    for (int ☃ = 0; ☃ < this.g.size(); ☃++) {
-      b((pk)this.g.get(☃));
+    for (int ☃ = 0; ☃ < g.size(); ☃++) {
+      b((pk)g.get(☃));
     }
-    this.g.clear();
+    g.clear();
     
-    this.B.c("regular");
-    for (int ☃ = 0; ☃ < this.f.size(); ☃++)
+    B.c("regular");
+    for (int ☃ = 0; ☃ < f.size(); ☃++)
     {
-      pk ☃ = (pk)this.f.get(☃);
-      if (☃.m != null)
+      pk ☃ = (pk)f.get(☃);
+      if (m != null)
       {
-        if ((☃.m.I) || (☃.m.l != ☃))
+        if ((m.I) || (m.l != ☃))
         {
-          ☃.m.l = null;
-          ☃.m = null;
+          m.l = null;
+          m = null;
         }
       }
       else
       {
-        this.B.a("tick");
-        if (!☃.I) {
+        B.a("tick");
+        if (!I) {
           try
           {
             g(☃);
@@ -1244,32 +1244,32 @@ public abstract class adm
             throw new e(☃);
           }
         }
-        this.B.b();
+        B.b();
         
-        this.B.a("remove");
-        if (☃.I)
+        B.a("remove");
+        if (I)
         {
-          int ☃ = ☃.ae;
-          int ☃ = ☃.ag;
-          if ((☃.ad) && (a(☃, ☃, true))) {
+          int ☃ = ae;
+          int ☃ = ag;
+          if ((ad) && (a(☃, ☃, true))) {
             a(☃, ☃).b(☃);
           }
-          this.f.remove(☃--);
+          f.remove(☃--);
           b(☃);
         }
-        this.B.b();
+        B.b();
       }
     }
-    this.B.c("blockEntities");
-    this.M = true;
-    Iterator<akw> ☃ = this.i.iterator();
+    B.c("blockEntities");
+    M = true;
+    Iterator<akw> ☃ = i.iterator();
     while (☃.hasNext())
     {
       akw ☃ = (akw)☃.next();
       if ((!☃.x()) && (☃.t()))
       {
         cj ☃ = ☃.v();
-        if ((e(☃)) && (this.N.a(☃))) {
+        if ((e(☃)) && (N.a(☃))) {
           try
           {
             ((km)☃).c();
@@ -1288,28 +1288,28 @@ public abstract class adm
       if (☃.x())
       {
         ☃.remove();
-        this.h.remove(☃);
+        h.remove(☃);
         if (e(☃.v())) {
           f(☃.v()).e(☃.v());
         }
       }
     }
-    this.M = false;
-    if (!this.c.isEmpty())
+    M = false;
+    if (!c.isEmpty())
     {
-      this.i.removeAll(this.c);
-      this.h.removeAll(this.c);
-      this.c.clear();
+      i.removeAll(c);
+      h.removeAll(c);
+      c.clear();
     }
-    this.B.c("pendingBlockEntities");
-    if (!this.b.isEmpty())
+    B.c("pendingBlockEntities");
+    if (!b.isEmpty())
     {
-      for (int ☃ = 0; ☃ < this.b.size(); ☃++)
+      for (int ☃ = 0; ☃ < b.size(); ☃++)
       {
-        akw ☃ = (akw)this.b.get(☃);
+        akw ☃ = (akw)b.get(☃);
         if (!☃.x())
         {
-          if (!this.h.contains(☃)) {
+          if (!h.contains(☃)) {
             a(☃);
           }
           if (e(☃.v())) {
@@ -1318,31 +1318,31 @@ public abstract class adm
           h(☃.v());
         }
       }
-      this.b.clear();
+      b.clear();
     }
-    this.B.b();
-    this.B.b();
+    B.b();
+    B.b();
   }
   
   public boolean a(akw ☃)
   {
-    boolean ☃ = this.h.add(☃);
+    boolean ☃ = h.add(☃);
     if ((☃) && ((☃ instanceof km))) {
-      this.i.add(☃);
+      i.add(☃);
     }
     return ☃;
   }
   
   public void a(Collection<akw> ☃)
   {
-    if (this.M) {
-      this.b.addAll(☃);
+    if (M) {
+      b.addAll(☃);
     } else {
       for (akw ☃ : ☃)
       {
-        this.h.add(☃);
+        h.add(☃);
         if ((☃ instanceof km)) {
-          this.i.add(☃);
+          i.add(☃);
         }
       }
     }
@@ -1355,71 +1355,71 @@ public abstract class adm
   
   public void a(pk ☃, boolean ☃)
   {
-    int ☃ = ns.c(☃.s);
-    int ☃ = ns.c(☃.u);
+    int ☃ = ns.c(s);
+    int ☃ = ns.c(u);
     int ☃ = 32;
     if ((☃) && (!a(☃ - ☃, 0, ☃ - ☃, ☃ + ☃, 0, ☃ + ☃, true))) {
       return;
     }
-    ☃.P = ☃.s;
-    ☃.Q = ☃.t;
-    ☃.R = ☃.u;
-    ☃.A = ☃.y;
-    ☃.B = ☃.z;
-    if ((☃) && (☃.ad))
+    P = s;
+    Q = t;
+    R = u;
+    A = y;
+    B = z;
+    if ((☃) && (ad))
     {
-      ☃.W += 1;
-      if (☃.m != null) {
+      W += 1;
+      if (m != null) {
         ☃.ak();
       } else {
         ☃.t_();
       }
     }
-    this.B.a("chunkCheck");
-    if ((Double.isNaN(☃.s)) || (Double.isInfinite(☃.s))) {
-      ☃.s = ☃.P;
+    B.a("chunkCheck");
+    if ((Double.isNaN(s)) || (Double.isInfinite(s))) {
+      s = P;
     }
-    if ((Double.isNaN(☃.t)) || (Double.isInfinite(☃.t))) {
-      ☃.t = ☃.Q;
+    if ((Double.isNaN(t)) || (Double.isInfinite(t))) {
+      t = Q;
     }
-    if ((Double.isNaN(☃.u)) || (Double.isInfinite(☃.u))) {
-      ☃.u = ☃.R;
+    if ((Double.isNaN(u)) || (Double.isInfinite(u))) {
+      u = R;
     }
-    if ((Double.isNaN(☃.z)) || (Double.isInfinite(☃.z))) {
-      ☃.z = ☃.B;
+    if ((Double.isNaN(z)) || (Double.isInfinite(z))) {
+      z = B;
     }
-    if ((Double.isNaN(☃.y)) || (Double.isInfinite(☃.y))) {
-      ☃.y = ☃.A;
+    if ((Double.isNaN(y)) || (Double.isInfinite(y))) {
+      y = A;
     }
-    int ☃ = ns.c(☃.s / 16.0D);
-    int ☃ = ns.c(☃.t / 16.0D);
-    int ☃ = ns.c(☃.u / 16.0D);
-    if ((!☃.ad) || (☃.ae != ☃) || (☃.af != ☃) || (☃.ag != ☃))
+    int ☃ = ns.c(s / 16.0D);
+    int ☃ = ns.c(t / 16.0D);
+    int ☃ = ns.c(u / 16.0D);
+    if ((!ad) || (ae != ☃) || (af != ☃) || (ag != ☃))
     {
-      if ((☃.ad) && (a(☃.ae, ☃.ag, true))) {
-        a(☃.ae, ☃.ag).a(☃, ☃.af);
+      if ((ad) && (a(ae, ag, true))) {
+        a(ae, ag).a(☃, af);
       }
       if (a(☃, ☃, true))
       {
-        ☃.ad = true;
+        ad = true;
         a(☃, ☃).a(☃);
       }
       else
       {
-        ☃.ad = false;
+        ad = false;
       }
     }
-    this.B.b();
-    if ((☃) && (☃.ad) && 
-      (☃.l != null)) {
-      if ((☃.l.I) || (☃.l.m != ☃))
+    B.b();
+    if ((☃) && (ad) && 
+      (l != null)) {
+      if ((l.I) || (l.m != ☃))
       {
-        ☃.l.m = null;
-        ☃.l = null;
+        l.m = null;
+        l = null;
       }
       else
       {
-        g(☃.l);
+        g(l);
       }
     }
   }
@@ -1435,7 +1435,7 @@ public abstract class adm
     for (int ☃ = 0; ☃ < ☃.size(); ☃++)
     {
       pk ☃ = (pk)☃.get(☃);
-      if ((!☃.I) && (☃.k) && (☃ != ☃) && ((☃ == null) || ((☃.m != ☃) && (☃.l != ☃)))) {
+      if ((!I) && (k) && (☃ != ☃) && ((☃ == null) || ((m != ☃) && (l != ☃)))) {
         return false;
       }
     }
@@ -1444,12 +1444,12 @@ public abstract class adm
   
   public boolean c(aug ☃)
   {
-    int ☃ = ns.c(☃.a);
-    int ☃ = ns.c(☃.d);
-    int ☃ = ns.c(☃.b);
-    int ☃ = ns.c(☃.e);
-    int ☃ = ns.c(☃.c);
-    int ☃ = ns.c(☃.f);
+    int ☃ = ns.c(a);
+    int ☃ = ns.c(d);
+    int ☃ = ns.c(b);
+    int ☃ = ns.c(e);
+    int ☃ = ns.c(c);
+    int ☃ = ns.c(f);
     
     cj.a ☃ = new cj.a();
     for (int ☃ = ☃; ☃ <= ☃; ☃++) {
@@ -1468,12 +1468,12 @@ public abstract class adm
   
   public boolean d(aug ☃)
   {
-    int ☃ = ns.c(☃.a);
-    int ☃ = ns.c(☃.d);
-    int ☃ = ns.c(☃.b);
-    int ☃ = ns.c(☃.e);
-    int ☃ = ns.c(☃.c);
-    int ☃ = ns.c(☃.f);
+    int ☃ = ns.c(a);
+    int ☃ = ns.c(d);
+    int ☃ = ns.c(b);
+    int ☃ = ns.c(e);
+    int ☃ = ns.c(c);
+    int ☃ = ns.c(f);
     
     cj.a ☃ = new cj.a();
     for (int ☃ = ☃; ☃ <= ☃; ☃++) {
@@ -1492,12 +1492,12 @@ public abstract class adm
   
   public boolean e(aug ☃)
   {
-    int ☃ = ns.c(☃.a);
-    int ☃ = ns.c(☃.d + 1.0D);
-    int ☃ = ns.c(☃.b);
-    int ☃ = ns.c(☃.e + 1.0D);
-    int ☃ = ns.c(☃.c);
-    int ☃ = ns.c(☃.f + 1.0D);
+    int ☃ = ns.c(a);
+    int ☃ = ns.c(d + 1.0D);
+    int ☃ = ns.c(b);
+    int ☃ = ns.c(e + 1.0D);
+    int ☃ = ns.c(c);
+    int ☃ = ns.c(f + 1.0D);
     if (a(☃, ☃, ☃, ☃, ☃, ☃, true))
     {
       cj.a ☃ = new cj.a();
@@ -1518,14 +1518,14 @@ public abstract class adm
   
   public boolean a(aug ☃, arm ☃, pk ☃)
   {
-    int ☃ = ns.c(☃.a);
-    int ☃ = ns.c(☃.d + 1.0D);
+    int ☃ = ns.c(a);
+    int ☃ = ns.c(d + 1.0D);
     
-    int ☃ = ns.c(☃.b);
-    int ☃ = ns.c(☃.e + 1.0D);
+    int ☃ = ns.c(b);
+    int ☃ = ns.c(e + 1.0D);
     
-    int ☃ = ns.c(☃.c);
-    int ☃ = ns.c(☃.f + 1.0D);
+    int ☃ = ns.c(c);
+    int ☃ = ns.c(f + 1.0D);
     if (!a(☃, ☃, ☃, ☃, ☃, ☃, true)) {
       return false;
     }
@@ -1555,21 +1555,21 @@ public abstract class adm
     {
       ☃ = ☃.a();
       double ☃ = 0.014D;
-      ☃.v += ☃.a * ☃;
-      ☃.w += ☃.b * ☃;
-      ☃.x += ☃.c * ☃;
+      v += a * ☃;
+      w += b * ☃;
+      x += c * ☃;
     }
     return ☃;
   }
   
   public boolean a(aug ☃, arm ☃)
   {
-    int ☃ = ns.c(☃.a);
-    int ☃ = ns.c(☃.d + 1.0D);
-    int ☃ = ns.c(☃.b);
-    int ☃ = ns.c(☃.e + 1.0D);
-    int ☃ = ns.c(☃.c);
-    int ☃ = ns.c(☃.f + 1.0D);
+    int ☃ = ns.c(a);
+    int ☃ = ns.c(d + 1.0D);
+    int ☃ = ns.c(b);
+    int ☃ = ns.c(e + 1.0D);
+    int ☃ = ns.c(c);
+    int ☃ = ns.c(f + 1.0D);
     
     cj.a ☃ = new cj.a();
     for (int ☃ = ☃; ☃ < ☃; ☃++) {
@@ -1586,12 +1586,12 @@ public abstract class adm
   
   public boolean b(aug ☃, arm ☃)
   {
-    int ☃ = ns.c(☃.a);
-    int ☃ = ns.c(☃.d + 1.0D);
-    int ☃ = ns.c(☃.b);
-    int ☃ = ns.c(☃.e + 1.0D);
-    int ☃ = ns.c(☃.c);
-    int ☃ = ns.c(☃.f + 1.0D);
+    int ☃ = ns.c(a);
+    int ☃ = ns.c(d + 1.0D);
+    int ☃ = ns.c(b);
+    int ☃ = ns.c(e + 1.0D);
+    int ☃ = ns.c(c);
+    int ☃ = ns.c(f + 1.0D);
     
     cj.a ☃ = new cj.a();
     for (int ☃ = ☃; ☃ < ☃; ☃++) {
@@ -1607,7 +1607,7 @@ public abstract class adm
             if (☃ < 8) {
               ☃ = ☃ + 1 - ☃ / 8.0D;
             }
-            if (☃ >= ☃.b) {
+            if (☃ >= b) {
               return true;
             }
           }
@@ -1632,9 +1632,9 @@ public abstract class adm
   
   public float a(aui ☃, aug ☃)
   {
-    double ☃ = 1.0D / ((☃.d - ☃.a) * 2.0D + 1.0D);
-    double ☃ = 1.0D / ((☃.e - ☃.b) * 2.0D + 1.0D);
-    double ☃ = 1.0D / ((☃.f - ☃.c) * 2.0D + 1.0D);
+    double ☃ = 1.0D / ((d - a) * 2.0D + 1.0D);
+    double ☃ = 1.0D / ((e - b) * 2.0D + 1.0D);
+    double ☃ = 1.0D / ((f - c) * 2.0D + 1.0D);
     
     double ☃ = (1.0D - Math.floor(1.0D / ☃) * ☃) / 2.0D;
     double ☃ = (1.0D - Math.floor(1.0D / ☃) * ☃) / 2.0D;
@@ -1647,9 +1647,9 @@ public abstract class adm
       for (float ☃ = 0.0F; ☃ <= 1.0F; ☃ = (float)(☃ + ☃)) {
         for (float ☃ = 0.0F; ☃ <= 1.0F; ☃ = (float)(☃ + ☃))
         {
-          double ☃ = ☃.a + (☃.d - ☃.a) * ☃;
-          double ☃ = ☃.b + (☃.e - ☃.b) * ☃;
-          double ☃ = ☃.c + (☃.f - ☃.c) * ☃;
+          double ☃ = a + (d - a) * ☃;
+          double ☃ = b + (e - b) * ☃;
+          double ☃ = c + (f - c) * ☃;
           if (a(new aui(☃ + ☃, ☃, ☃ + ☃), ☃) == null) {
             ☃++;
           }
@@ -1674,12 +1674,12 @@ public abstract class adm
   
   public String z()
   {
-    return "All: " + this.f.size();
+    return "All: " + f.size();
   }
   
   public String A()
   {
-    return this.v.f();
+    return v.f();
   }
   
   public akw s(cj ☃)
@@ -1688,10 +1688,10 @@ public abstract class adm
       return null;
     }
     akw ☃ = null;
-    if (this.M) {
-      for (int ☃ = 0; ☃ < this.b.size(); ☃++)
+    if (M) {
+      for (int ☃ = 0; ☃ < b.size(); ☃++)
       {
-        akw ☃ = (akw)this.b.get(☃);
+        akw ☃ = (akw)b.get(☃);
         if ((!☃.x()) && (☃.v().equals(☃)))
         {
           ☃ = ☃;
@@ -1703,9 +1703,9 @@ public abstract class adm
       ☃ = f(☃).a(☃, amy.a.a);
     }
     if (☃ == null) {
-      for (int ☃ = 0; ☃ < this.b.size(); ☃++)
+      for (int ☃ = 0; ☃ < b.size(); ☃++)
       {
-        akw ☃ = (akw)this.b.get(☃);
+        akw ☃ = (akw)b.get(☃);
         if ((!☃.x()) && (☃.v().equals(☃)))
         {
           ☃ = ☃;
@@ -1719,11 +1719,11 @@ public abstract class adm
   public void a(cj ☃, akw ☃)
   {
     if ((☃ != null) && (!☃.x())) {
-      if (this.M)
+      if (M)
       {
         ☃.a(☃);
         
-        Iterator<akw> ☃ = this.b.iterator();
+        Iterator<akw> ☃ = b.iterator();
         while (☃.hasNext())
         {
           akw ☃ = (akw)☃.next();
@@ -1733,7 +1733,7 @@ public abstract class adm
             ☃.remove();
           }
         }
-        this.b.add(☃);
+        b.add(☃);
       }
       else
       {
@@ -1747,18 +1747,18 @@ public abstract class adm
   public void t(cj ☃)
   {
     akw ☃ = s(☃);
-    if ((☃ != null) && (this.M))
+    if ((☃ != null) && (M))
     {
       ☃.y();
-      this.b.remove(☃);
+      b.remove(☃);
     }
     else
     {
       if (☃ != null)
       {
-        this.b.remove(☃);
-        this.h.remove(☃);
-        this.i.remove(☃);
+        b.remove(☃);
+        h.remove(☃);
+        i.remove(☃);
       }
       f(☃).e(☃);
     }
@@ -1766,7 +1766,7 @@ public abstract class adm
   
   public void b(akw ☃)
   {
-    this.c.add(☃);
+    c.add(☃);
   }
   
   public boolean u(cj ☃)
@@ -1803,7 +1803,7 @@ public abstract class adm
     if (!a(☃)) {
       return ☃;
     }
-    amy ☃ = this.v.a(☃);
+    amy ☃ = v.a(☃);
     if (☃.f()) {
       return ☃;
     }
@@ -1814,15 +1814,15 @@ public abstract class adm
   public void B()
   {
     int ☃ = a(1.0F);
-    if (☃ != this.I) {
-      this.I = ☃;
+    if (☃ != I) {
+      I = ☃;
     }
   }
   
   public void a(boolean ☃, boolean ☃)
   {
-    this.F = ☃;
-    this.G = ☃;
+    F = ☃;
+    G = ☃;
   }
   
   public void c()
@@ -1832,126 +1832,126 @@ public abstract class adm
   
   protected void C()
   {
-    if (this.x.p())
+    if (x.p())
     {
-      this.p = 1.0F;
-      if (this.x.n()) {
-        this.r = 1.0F;
+      p = 1.0F;
+      if (x.n()) {
+        r = 1.0F;
       }
     }
   }
   
   protected void p()
   {
-    if (this.t.o()) {
+    if (t.o()) {
       return;
     }
-    if (this.D) {
+    if (D) {
       return;
     }
-    int ☃ = this.x.A();
+    int ☃ = x.A();
     if (☃ > 0)
     {
       ☃--;
-      this.x.i(☃);
-      this.x.f(this.x.n() ? 1 : 2);
-      this.x.g(this.x.p() ? 1 : 2);
+      x.i(☃);
+      x.f(x.n() ? 1 : 2);
+      x.g(x.p() ? 1 : 2);
     }
-    int ☃ = this.x.o();
+    int ☃ = x.o();
     if (☃ <= 0)
     {
-      if (this.x.n()) {
-        this.x.f(this.s.nextInt(12000) + 3600);
+      if (x.n()) {
+        x.f(s.nextInt(12000) + 3600);
       } else {
-        this.x.f(this.s.nextInt(168000) + 12000);
+        x.f(s.nextInt(168000) + 12000);
       }
     }
     else
     {
       ☃--;
-      this.x.f(☃);
+      x.f(☃);
       if (☃ <= 0) {
-        this.x.a(!this.x.n());
+        x.a(!x.n());
       }
     }
-    this.q = this.r;
-    if (this.x.n()) {
-      this.r = ((float)(this.r + 0.01D));
+    q = r;
+    if (x.n()) {
+      r = ((float)(r + 0.01D));
     } else {
-      this.r = ((float)(this.r - 0.01D));
+      r = ((float)(r - 0.01D));
     }
-    this.r = ns.a(this.r, 0.0F, 1.0F);
+    r = ns.a(r, 0.0F, 1.0F);
     
-    int ☃ = this.x.q();
+    int ☃ = x.q();
     if (☃ <= 0)
     {
-      if (this.x.p()) {
-        this.x.g(this.s.nextInt(12000) + 12000);
+      if (x.p()) {
+        x.g(s.nextInt(12000) + 12000);
       } else {
-        this.x.g(this.s.nextInt(168000) + 12000);
+        x.g(s.nextInt(168000) + 12000);
       }
     }
     else
     {
       ☃--;
-      this.x.g(☃);
+      x.g(☃);
       if (☃ <= 0) {
-        this.x.b(!this.x.p());
+        x.b(!x.p());
       }
     }
-    this.o = this.p;
-    if (this.x.p()) {
-      this.p = ((float)(this.p + 0.01D));
+    o = p;
+    if (x.p()) {
+      p = ((float)(p + 0.01D));
     } else {
-      this.p = ((float)(this.p - 0.01D));
+      p = ((float)(p - 0.01D));
     }
-    this.p = ns.a(this.p, 0.0F, 1.0F);
+    p = ns.a(p, 0.0F, 1.0F);
   }
   
   protected void D()
   {
-    this.E.clear();
+    E.clear();
     
-    this.B.a("buildList");
-    for (int ☃ = 0; ☃ < this.j.size(); ☃++)
+    B.a("buildList");
+    for (int ☃ = 0; ☃ < j.size(); ☃++)
     {
-      wn ☃ = (wn)this.j.get(☃);
-      int ☃ = ns.c(☃.s / 16.0D);
-      int ☃ = ns.c(☃.u / 16.0D);
+      wn ☃ = (wn)j.get(☃);
+      int ☃ = ns.c(s / 16.0D);
+      int ☃ = ns.c(u / 16.0D);
       
       int ☃ = q();
       for (int ☃ = -☃; ☃ <= ☃; ☃++) {
         for (int ☃ = -☃; ☃ <= ☃; ☃++) {
-          this.E.add(new adg(☃ + ☃, ☃ + ☃));
+          E.add(new adg(☃ + ☃, ☃ + ☃));
         }
       }
     }
-    this.B.b();
-    if (this.L > 0) {
-      this.L -= 1;
+    B.b();
+    if (L > 0) {
+      L -= 1;
     }
-    this.B.a("playerCheckLight");
-    if (!this.j.isEmpty())
+    B.a("playerCheckLight");
+    if (!j.isEmpty())
     {
-      int ☃ = this.s.nextInt(this.j.size());
-      wn ☃ = (wn)this.j.get(☃);
-      int ☃ = ns.c(☃.s) + this.s.nextInt(11) - 5;
-      int ☃ = ns.c(☃.t) + this.s.nextInt(11) - 5;
-      int ☃ = ns.c(☃.u) + this.s.nextInt(11) - 5;
+      int ☃ = s.nextInt(j.size());
+      wn ☃ = (wn)j.get(☃);
+      int ☃ = ns.c(s) + s.nextInt(11) - 5;
+      int ☃ = ns.c(t) + s.nextInt(11) - 5;
+      int ☃ = ns.c(u) + s.nextInt(11) - 5;
       x(new cj(☃, ☃, ☃));
     }
-    this.B.b();
+    B.b();
   }
   
   protected abstract int q();
   
   protected void a(int ☃, int ☃, amy ☃)
   {
-    this.B.c("moodSound");
-    if ((this.L == 0) && (!this.D))
+    B.c("moodSound");
+    if ((L == 0) && (!D))
     {
-      this.m = (this.m * 3 + 1013904223);
-      int ☃ = this.m >> 2;
+      m = (m * 3 + 1013904223);
+      int ☃ = m >> 2;
       int ☃ = ☃ & 0xF;
       int ☃ = ☃ >> 8 & 0xF;
       int ☃ = ☃ >> 16 & 0xFF;
@@ -1960,17 +1960,17 @@ public abstract class adm
       afh ☃ = ☃.a(☃);
       ☃ += ☃;
       ☃ += ☃;
-      if ((☃.t() == arm.a) && (k(☃) <= this.s.nextInt(8)) && (b(ads.a, ☃) <= 0))
+      if ((☃.t() == arm.a) && (k(☃) <= s.nextInt(8)) && (b(ads.a, ☃) <= 0))
       {
         wn ☃ = a(☃ + 0.5D, ☃ + 0.5D, ☃ + 0.5D, 8.0D);
         if ((☃ != null) && (☃.e(☃ + 0.5D, ☃ + 0.5D, ☃ + 0.5D) > 4.0D))
         {
-          a(☃ + 0.5D, ☃ + 0.5D, ☃ + 0.5D, "ambient.cave.cave", 0.7F, 0.8F + this.s.nextFloat() * 0.2F);
-          this.L = (this.s.nextInt(12000) + 6000);
+          a(☃ + 0.5D, ☃ + 0.5D, ☃ + 0.5D, "ambient.cave.cave", 0.7F, 0.8F + s.nextFloat() * 0.2F);
+          L = (s.nextInt(12000) + 6000);
         }
       }
     }
-    this.B.c("checkLight");
+    B.c("checkLight");
     ☃.m();
   }
   
@@ -1981,9 +1981,9 @@ public abstract class adm
   
   public void a(afh ☃, cj ☃, Random ☃)
   {
-    this.e = true;
+    e = true;
     ☃.b(this, ☃, p(☃), ☃);
-    this.e = false;
+    e = false;
   }
   
   public boolean v(cj ☃)
@@ -2049,7 +2049,7 @@ public abstract class adm
   public boolean x(cj ☃)
   {
     boolean ☃ = false;
-    if (!this.t.o()) {
+    if (!t.o()) {
       ☃ |= c(ads.a, ☃);
     }
     ☃ |= c(ads.b, ☃);
@@ -2100,7 +2100,7 @@ public abstract class adm
     int ☃ = 0;
     int ☃ = 0;
     
-    this.B.a("getBrightness");
+    B.a("getBrightness");
     int ☃ = b(☃, ☃);
     int ☃ = a(☃, ☃);
     int ☃ = ☃.n();
@@ -2108,14 +2108,14 @@ public abstract class adm
     int ☃ = ☃.p();
     if (☃ > ☃)
     {
-      this.H[(☃++)] = 133152;
+      H[(☃++)] = 133152;
     }
     else if (☃ < ☃)
     {
-      this.H[(☃++)] = (0x20820 | ☃ << 18);
+      H[(☃++)] = (0x20820 | ☃ << 18);
       while (☃ < ☃)
       {
-        int ☃ = this.H[(☃++)];
+        int ☃ = H[(☃++)];
         int ☃ = (☃ & 0x3F) - 32 + ☃;
         int ☃ = (☃ >> 6 & 0x3F) - 32 + ☃;
         int ☃ = (☃ >> 12 & 0x3F) - 32 + ☃;
@@ -2142,8 +2142,8 @@ public abstract class adm
                 int ☃ = Math.max(1, p(☃).c().p());
                 
                 ☃ = b(☃, ☃);
-                if ((☃ == ☃ - ☃) && (☃ < this.H.length)) {
-                  this.H[(☃++)] = (☃ - ☃ + 32 | ☃ - ☃ + 32 << 6 | ☃ - ☃ + 32 << 12 | ☃ - ☃ << 18);
+                if ((☃ == ☃ - ☃) && (☃ < H.length)) {
+                  H[(☃++)] = (☃ - ☃ + 32 | ☃ - ☃ + 32 << 6 | ☃ - ☃ + 32 << 12 | ☃ - ☃ << 18);
                 }
               }
             }
@@ -2152,12 +2152,12 @@ public abstract class adm
       }
       ☃ = 0;
     }
-    this.B.b();
+    B.b();
     
-    this.B.a("checkedPosition < toCheckCount");
+    B.a("checkedPosition < toCheckCount");
     while (☃ < ☃)
     {
-      int ☃ = this.H[(☃++)];
+      int ☃ = H[(☃++)];
       int ☃ = (☃ & 0x3F) - 32 + ☃;
       int ☃ = (☃ >> 6 & 0x3F) - 32 + ☃;
       int ☃ = (☃ >> 12 & 0x3F) - 32 + ☃;
@@ -2173,32 +2173,32 @@ public abstract class adm
           int ☃ = Math.abs(☃ - ☃);
           int ☃ = Math.abs(☃ - ☃);
           int ☃ = Math.abs(☃ - ☃);
-          boolean ☃ = ☃ < this.H.length - 6;
+          boolean ☃ = ☃ < H.length - 6;
           if ((☃ + ☃ + ☃ < 17) && (☃))
           {
             if (b(☃, ☃.e()) < ☃) {
-              this.H[(☃++)] = (☃ - 1 - ☃ + 32 + (☃ - ☃ + 32 << 6) + (☃ - ☃ + 32 << 12));
+              H[(☃++)] = (☃ - 1 - ☃ + 32 + (☃ - ☃ + 32 << 6) + (☃ - ☃ + 32 << 12));
             }
             if (b(☃, ☃.f()) < ☃) {
-              this.H[(☃++)] = (☃ + 1 - ☃ + 32 + (☃ - ☃ + 32 << 6) + (☃ - ☃ + 32 << 12));
+              H[(☃++)] = (☃ + 1 - ☃ + 32 + (☃ - ☃ + 32 << 6) + (☃ - ☃ + 32 << 12));
             }
             if (b(☃, ☃.b()) < ☃) {
-              this.H[(☃++)] = (☃ - ☃ + 32 + (☃ - 1 - ☃ + 32 << 6) + (☃ - ☃ + 32 << 12));
+              H[(☃++)] = (☃ - ☃ + 32 + (☃ - 1 - ☃ + 32 << 6) + (☃ - ☃ + 32 << 12));
             }
             if (b(☃, ☃.a()) < ☃) {
-              this.H[(☃++)] = (☃ - ☃ + 32 + (☃ + 1 - ☃ + 32 << 6) + (☃ - ☃ + 32 << 12));
+              H[(☃++)] = (☃ - ☃ + 32 + (☃ + 1 - ☃ + 32 << 6) + (☃ - ☃ + 32 << 12));
             }
             if (b(☃, ☃.c()) < ☃) {
-              this.H[(☃++)] = (☃ - ☃ + 32 + (☃ - ☃ + 32 << 6) + (☃ - 1 - ☃ + 32 << 12));
+              H[(☃++)] = (☃ - ☃ + 32 + (☃ - ☃ + 32 << 6) + (☃ - 1 - ☃ + 32 << 12));
             }
             if (b(☃, ☃.d()) < ☃) {
-              this.H[(☃++)] = (☃ - ☃ + 32 + (☃ - ☃ + 32 << 6) + (☃ + 1 - ☃ + 32 << 12));
+              H[(☃++)] = (☃ - ☃ + 32 + (☃ - ☃ + 32 << 6) + (☃ + 1 - ☃ + 32 << 12));
             }
           }
         }
       }
     }
-    this.B.b();
+    B.b();
     
     return true;
   }
@@ -2226,10 +2226,10 @@ public abstract class adm
   public List<pk> a(pk ☃, aug ☃, Predicate<? super pk> ☃)
   {
     List<pk> ☃ = Lists.newArrayList();
-    int ☃ = ns.c((☃.a - 2.0D) / 16.0D);
-    int ☃ = ns.c((☃.d + 2.0D) / 16.0D);
-    int ☃ = ns.c((☃.c - 2.0D) / 16.0D);
-    int ☃ = ns.c((☃.f + 2.0D) / 16.0D);
+    int ☃ = ns.c((a - 2.0D) / 16.0D);
+    int ☃ = ns.c((d + 2.0D) / 16.0D);
+    int ☃ = ns.c((c - 2.0D) / 16.0D);
+    int ☃ = ns.c((f + 2.0D) / 16.0D);
     for (int ☃ = ☃; ☃ <= ☃; ☃++) {
       for (int ☃ = ☃; ☃ <= ☃; ☃++) {
         if (a(☃, ☃, true)) {
@@ -2243,7 +2243,7 @@ public abstract class adm
   public <T extends pk> List<T> a(Class<? extends T> ☃, Predicate<? super T> ☃)
   {
     List<T> ☃ = Lists.newArrayList();
-    for (pk ☃ : this.f) {
+    for (pk ☃ : f) {
       if ((☃.isAssignableFrom(☃.getClass())) && (☃.apply(☃))) {
         ☃.add(☃);
       }
@@ -2254,7 +2254,7 @@ public abstract class adm
   public <T extends pk> List<T> b(Class<? extends T> ☃, Predicate<? super T> ☃)
   {
     List<T> ☃ = Lists.newArrayList();
-    for (pk ☃ : this.j) {
+    for (pk ☃ : j) {
       if ((☃.isAssignableFrom(☃.getClass())) && (☃.apply(☃))) {
         ☃.add(☃);
       }
@@ -2269,10 +2269,10 @@ public abstract class adm
   
   public <T extends pk> List<T> a(Class<? extends T> ☃, aug ☃, Predicate<? super T> ☃)
   {
-    int ☃ = ns.c((☃.a - 2.0D) / 16.0D);
-    int ☃ = ns.c((☃.d + 2.0D) / 16.0D);
-    int ☃ = ns.c((☃.c - 2.0D) / 16.0D);
-    int ☃ = ns.c((☃.f + 2.0D) / 16.0D);
+    int ☃ = ns.c((a - 2.0D) / 16.0D);
+    int ☃ = ns.c((d + 2.0D) / 16.0D);
+    int ☃ = ns.c((c - 2.0D) / 16.0D);
+    int ☃ = ns.c((f + 2.0D) / 16.0D);
     List<T> ☃ = Lists.newArrayList();
     for (int ☃ = ☃; ☃ <= ☃; ☃++) {
       for (int ☃ = ☃; ☃ <= ☃; ☃++) {
@@ -2309,12 +2309,12 @@ public abstract class adm
   
   public pk a(int ☃)
   {
-    return (pk)this.l.a(☃);
+    return (pk)l.a(☃);
   }
   
   public List<pk> E()
   {
-    return this.f;
+    return f;
   }
   
   public void b(cj ☃, akw ☃)
@@ -2327,7 +2327,7 @@ public abstract class adm
   public int a(Class<?> ☃)
   {
     int ☃ = 0;
-    for (pk ☃ : this.f) {
+    for (pk ☃ : f) {
       if ((!(☃ instanceof ps)) || (!((ps)☃).bZ())) {
         if (☃.isAssignableFrom(☃.getClass())) {
           ☃++;
@@ -2339,7 +2339,7 @@ public abstract class adm
   
   public void b(Collection<pk> ☃)
   {
-    this.f.addAll(☃);
+    f.addAll(☃);
     for (pk ☃ : ☃) {
       a(☃);
     }
@@ -2347,7 +2347,7 @@ public abstract class adm
   
   public void c(Collection<pk> ☃)
   {
-    this.g.addAll(☃);
+    g.addAll(☃);
   }
   
   public boolean a(afh ☃, cj ☃, boolean ☃, cq ☃, pk ☃, zx ☃)
@@ -2366,12 +2366,12 @@ public abstract class adm
   
   public int F()
   {
-    return this.a;
+    return a;
   }
   
   public void b(int ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public int a(cj ☃, cq ☃)
@@ -2382,7 +2382,7 @@ public abstract class adm
   
   public adr G()
   {
-    return this.x.u();
+    return x.u();
   }
   
   public int y(cj ☃)
@@ -2471,16 +2471,16 @@ public abstract class adm
   
   public wn a(pk ☃, double ☃)
   {
-    return a(☃.s, ☃.t, ☃.u, ☃);
+    return a(s, t, u, ☃);
   }
   
   public wn a(double ☃, double ☃, double ☃, double ☃)
   {
     double ☃ = -1.0D;
     wn ☃ = null;
-    for (int ☃ = 0; ☃ < this.j.size(); ☃++)
+    for (int ☃ = 0; ☃ < j.size(); ☃++)
     {
-      wn ☃ = (wn)this.j.get(☃);
+      wn ☃ = (wn)j.get(☃);
       if (po.d.apply(☃))
       {
         double ☃ = ☃.e(☃, ☃, ☃);
@@ -2496,9 +2496,9 @@ public abstract class adm
   
   public boolean b(double ☃, double ☃, double ☃, double ☃)
   {
-    for (int ☃ = 0; ☃ < this.j.size(); ☃++)
+    for (int ☃ = 0; ☃ < j.size(); ☃++)
     {
-      wn ☃ = (wn)this.j.get(☃);
+      wn ☃ = (wn)j.get(☃);
       if (po.d.apply(☃))
       {
         double ☃ = ☃.e(☃, ☃, ☃);
@@ -2512,9 +2512,9 @@ public abstract class adm
   
   public wn a(String ☃)
   {
-    for (int ☃ = 0; ☃ < this.j.size(); ☃++)
+    for (int ☃ = 0; ☃ < j.size(); ☃++)
     {
-      wn ☃ = (wn)this.j.get(☃);
+      wn ☃ = (wn)j.get(☃);
       if (☃.equals(☃.e_())) {
         return ☃;
       }
@@ -2524,9 +2524,9 @@ public abstract class adm
   
   public wn b(UUID ☃)
   {
-    for (int ☃ = 0; ☃ < this.j.size(); ☃++)
+    for (int ☃ = 0; ☃ < j.size(); ☃++)
     {
-      wn ☃ = (wn)this.j.get(☃);
+      wn ☃ = (wn)j.get(☃);
       if (☃.equals(☃.aK())) {
         return ☃;
       }
@@ -2539,37 +2539,37 @@ public abstract class adm
   public void I()
     throws adn
   {
-    this.w.c();
+    w.c();
   }
   
   public void a(long ☃)
   {
-    this.x.b(☃);
+    x.b(☃);
   }
   
   public long J()
   {
-    return this.x.b();
+    return x.b();
   }
   
   public long K()
   {
-    return this.x.f();
+    return x.f();
   }
   
   public long L()
   {
-    return this.x.g();
+    return x.g();
   }
   
   public void b(long ☃)
   {
-    this.x.c(☃);
+    x.c(☃);
   }
   
   public cj M()
   {
-    cj ☃ = new cj(this.x.c(), this.x.d(), this.x.e());
+    cj ☃ = new cj(x.c(), x.d(), x.e());
     if (!af().a(☃)) {
       ☃ = m(new cj(af().f(), 0.0D, af().g()));
     }
@@ -2578,21 +2578,21 @@ public abstract class adm
   
   public void B(cj ☃)
   {
-    this.x.a(☃);
+    x.a(☃);
   }
   
   public void h(pk ☃)
   {
-    int ☃ = ns.c(☃.s / 16.0D);
-    int ☃ = ns.c(☃.u / 16.0D);
+    int ☃ = ns.c(s / 16.0D);
+    int ☃ = ns.c(u / 16.0D);
     int ☃ = 2;
     for (int ☃ = ☃ - ☃; ☃ <= ☃ + ☃; ☃++) {
       for (int ☃ = ☃ - ☃; ☃ <= ☃ + ☃; ☃++) {
         a(☃, ☃);
       }
     }
-    if (!this.f.contains(☃)) {
-      this.f.add(☃);
+    if (!f.contains(☃)) {
+      f.add(☃);
     }
   }
   
@@ -2605,7 +2605,7 @@ public abstract class adm
   
   public amv N()
   {
-    return this.v;
+    return v;
   }
   
   public void c(cj ☃, afh ☃, int ☃, int ☃)
@@ -2615,41 +2615,41 @@ public abstract class adm
   
   public atp O()
   {
-    return this.w;
+    return w;
   }
   
   public ato P()
   {
-    return this.x;
+    return x;
   }
   
   public adk Q()
   {
-    return this.x.x();
+    return x.x();
   }
   
   public void d() {}
   
   public float h(float ☃)
   {
-    return (this.q + (this.r - this.q) * ☃) * j(☃);
+    return (q + (r - q) * ☃) * j(☃);
   }
   
   public void i(float ☃)
   {
-    this.q = ☃;
-    this.r = ☃;
+    q = ☃;
+    r = ☃;
   }
   
   public float j(float ☃)
   {
-    return this.o + (this.p - this.o) * ☃;
+    return o + (p - o) * ☃;
   }
   
   public void k(float ☃)
   {
-    this.o = ☃;
-    this.p = ☃;
+    o = ☃;
+    p = ☃;
   }
   
   public boolean R()
@@ -2691,28 +2691,28 @@ public abstract class adm
   
   public aua T()
   {
-    return this.z;
+    return z;
   }
   
   public void a(String ☃, ate ☃)
   {
-    this.z.a(☃, ☃);
+    z.a(☃, ☃);
   }
   
   public ate a(Class<? extends ate> ☃, String ☃)
   {
-    return this.z.a(☃, ☃);
+    return z.a(☃, ☃);
   }
   
   public int b(String ☃)
   {
-    return this.z.a(☃);
+    return z.a(☃);
   }
   
   public void a(int ☃, cj ☃, int ☃)
   {
-    for (int ☃ = 0; ☃ < this.u.size(); ☃++) {
-      ((ado)this.u.get(☃)).a(☃, ☃, ☃);
+    for (int ☃ = 0; ☃ < u.size(); ☃++) {
+      ((ado)u.get(☃)).a(☃, ☃, ☃);
     }
   }
   
@@ -2725,8 +2725,8 @@ public abstract class adm
   {
     try
     {
-      for (int ☃ = 0; ☃ < this.u.size(); ☃++) {
-        ((ado)this.u.get(☃)).a(☃, ☃, ☃, ☃);
+      for (int ☃ = 0; ☃ < u.size(); ☃++) {
+        ((ado)u.get(☃)).a(☃, ☃, ☃, ☃);
       }
     }
     catch (Throwable ☃)
@@ -2750,14 +2750,14 @@ public abstract class adm
   
   public int V()
   {
-    return this.t.o() ? 128 : 256;
+    return t.o() ? 128 : 256;
   }
   
   public Random a(int ☃, int ☃, int ☃)
   {
     long ☃ = ☃ * 341873128712L + ☃ * 132897987541L + P().b() + ☃;
-    this.s.setSeed(☃);
-    return this.s;
+    s.setSeed(☃);
+    return s;
   }
   
   public cj a(String ☃, cj ☃)
@@ -2772,7 +2772,7 @@ public abstract class adm
   
   public double X()
   {
-    if (this.x.u() == adr.c) {
+    if (x.u() == adr.c) {
       return 0.0D;
     }
     return 63.0D;
@@ -2782,25 +2782,25 @@ public abstract class adm
   {
     c ☃ = ☃.a("Affected level", 1);
     
-    ☃.a("Level name", this.x == null ? "????" : this.x.k());
+    ☃.a("Level name", x == null ? "????" : x.k());
     
     ☃.a("All players", new Callable()
     {
       public String a()
       {
-        return adm.this.j.size() + " total; " + adm.this.j.toString();
+        return j.size() + " total; " + j.toString();
       }
     });
     ☃.a("Chunk stats", new Callable()
     {
       public String a()
       {
-        return adm.this.v.f();
+        return v.f();
       }
     });
     try
     {
-      this.x.a(☃);
+      x.a(☃);
     }
     catch (Throwable ☃)
     {
@@ -2811,9 +2811,9 @@ public abstract class adm
   
   public void c(int ☃, cj ☃, int ☃)
   {
-    for (int ☃ = 0; ☃ < this.u.size(); ☃++)
+    for (int ☃ = 0; ☃ < u.size(); ☃++)
     {
-      ado ☃ = (ado)this.u.get(☃);
+      ado ☃ = (ado)u.get(☃);
       ☃.b(☃, ☃, ☃);
     }
   }
@@ -2821,16 +2821,16 @@ public abstract class adm
   public Calendar Y()
   {
     if (K() % 600L == 0L) {
-      this.K.setTimeInMillis(MinecraftServer.az());
+      K.setTimeInMillis(MinecraftServer.az());
     }
-    return this.K;
+    return K;
   }
   
   public void a(double ☃, double ☃, double ☃, double ☃, double ☃, double ☃, dn ☃) {}
   
   public auo Z()
   {
-    return this.C;
+    return C;
   }
   
   public void e(cj ☃, afh ☃)
@@ -2876,37 +2876,37 @@ public abstract class adm
   
   public int ab()
   {
-    return this.I;
+    return I;
   }
   
   public void c(int ☃)
   {
-    this.I = ☃;
+    I = ☃;
   }
   
   public int ac()
   {
-    return this.J;
+    return J;
   }
   
   public void d(int ☃)
   {
-    this.J = ☃;
+    J = ☃;
   }
   
   public boolean ad()
   {
-    return this.y;
+    return y;
   }
   
   public th ae()
   {
-    return this.A;
+    return A;
   }
   
   public ams af()
   {
-    return this.N;
+    return N;
   }
   
   public boolean c(int ☃, int ☃)

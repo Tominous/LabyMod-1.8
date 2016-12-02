@@ -20,7 +20,7 @@ public class bgo
     int[] var10 = makeQuadVertexData(face, sprite, facing, a(posFrom, posTo), modelRotationIn, partRotation, uvLocked, shade);
     cq var11 = a(var10);
     if (uvLocked) {
-      a(var10, var11, face.e, sprite);
+      a(var10, var11, e, sprite);
     }
     if (partRotation == null) {
       a(var10, var11);
@@ -28,7 +28,7 @@ public class bgo
     if (Reflector.ForgeHooksClient_fillNormal.exists()) {
       Reflector.callVoid(Reflector.ForgeHooksClient_fillNormal, new Object[] { var10, var11 });
     }
-    return new bgg(var10, face.c, var11, sprite);
+    return new bgg(var10, c, var11, sprite);
   }
   
   private int[] makeQuadVertexData(bgi p_178405_1_, bmi p_178405_2_, cq p_178405_3_, float[] p_178405_4_, ITransformation p_178405_5_, bgj p_178405_6_, boolean p_178405_7_, boolean shade)
@@ -81,12 +81,12 @@ public class bgo
   private float[] a(Vector3f pos1, Vector3f pos2)
   {
     float[] var3 = new float[cq.values().length];
-    var3[bfj.a.f] = (pos1.x / 16.0F);
-    var3[bfj.a.e] = (pos1.y / 16.0F);
-    var3[bfj.a.d] = (pos1.z / 16.0F);
-    var3[bfj.a.c] = (pos2.x / 16.0F);
-    var3[bfj.a.b] = (pos2.y / 16.0F);
-    var3[bfj.a.a] = (pos2.z / 16.0F);
+    var3[bfj.a.f] = (x / 16.0F);
+    var3[bfj.a.e] = (y / 16.0F);
+    var3[bfj.a.d] = (z / 16.0F);
+    var3[bfj.a.c] = (x / 16.0F);
+    var3[bfj.a.b] = (y / 16.0F);
+    var3[bfj.a.a] = (z / 16.0F);
     return var3;
   }
   
@@ -96,19 +96,19 @@ public class bgo
     
     int var12 = shade ? a(var11) : -1;
     bfj.b var13 = bfj.a(facing).a(vertexIndex);
-    Vector3f var14 = new Vector3f(p_178402_5_[var13.a], p_178402_5_[var13.b], p_178402_5_[var13.c]);
+    Vector3f var14 = new Vector3f(p_178402_5_[a], p_178402_5_[b], p_178402_5_[c]);
     a(var14, partRotation);
     int var15 = rotateVertex(var14, facing, vertexIndex, modelRotationIn, uvLocked);
-    a(faceData, var15, vertexIndex, var14, var12, sprite, partFace.e);
+    a(faceData, var15, vertexIndex, var14, var12, sprite, e);
   }
   
   private void a(int[] faceData, int storeIndex, int vertexIndex, Vector3f position, int shadeColor, bmi sprite, bgk faceUV)
   {
     int step = faceData.length / 4;
     int var8 = storeIndex * step;
-    faceData[var8] = Float.floatToRawIntBits(position.x);
-    faceData[(var8 + 1)] = Float.floatToRawIntBits(position.y);
-    faceData[(var8 + 2)] = Float.floatToRawIntBits(position.z);
+    faceData[var8] = Float.floatToRawIntBits(x);
+    faceData[(var8 + 1)] = Float.floatToRawIntBits(y);
+    faceData[(var8 + 2)] = Float.floatToRawIntBits(z);
     faceData[(var8 + 3)] = shadeColor;
     faceData[(var8 + 4)] = Float.floatToRawIntBits(sprite.a(faceUV.a(vertexIndex)));
     faceData[(var8 + 4 + 1)] = Float.floatToRawIntBits(sprite.b(faceUV.b(vertexIndex)));
@@ -120,23 +120,23 @@ public class bgo
     {
       Matrix4f var3 = a();
       Vector3f var4 = new Vector3f(0.0F, 0.0F, 0.0F);
-      switch (bgo.1.b[p_178407_2_.b.ordinal()])
+      switch (bgo.1.b[b.ordinal()])
       {
       case 1: 
-        Matrix4f.rotate(p_178407_2_.c * 0.017453292F, new Vector3f(1.0F, 0.0F, 0.0F), var3, var3);
+        Matrix4f.rotate(c * 0.017453292F, new Vector3f(1.0F, 0.0F, 0.0F), var3, var3);
         var4.set(0.0F, 1.0F, 1.0F);
         break;
       case 2: 
-        Matrix4f.rotate(p_178407_2_.c * 0.017453292F, new Vector3f(0.0F, 1.0F, 0.0F), var3, var3);
+        Matrix4f.rotate(c * 0.017453292F, new Vector3f(0.0F, 1.0F, 0.0F), var3, var3);
         var4.set(1.0F, 0.0F, 1.0F);
         break;
       case 3: 
-        Matrix4f.rotate(p_178407_2_.c * 0.017453292F, new Vector3f(0.0F, 0.0F, 1.0F), var3, var3);
+        Matrix4f.rotate(c * 0.017453292F, new Vector3f(0.0F, 0.0F, 1.0F), var3, var3);
         var4.set(1.0F, 1.0F, 0.0F);
       }
-      if (p_178407_2_.d)
+      if (d)
       {
-        if (Math.abs(p_178407_2_.c) == 22.5F) {
+        if (Math.abs(c) == 22.5F) {
           var4.scale(a);
         } else {
           var4.scale(b);
@@ -147,7 +147,7 @@ public class bgo
       {
         var4.set(1.0F, 1.0F, 1.0F);
       }
-      a(p_178407_1_, new Vector3f(p_178407_2_.a), var3, var4);
+      a(p_178407_1_, new Vector3f(a), var3, var4);
     }
   }
   
@@ -171,12 +171,12 @@ public class bgo
   
   private void a(Vector3f position, Vector3f rotationOrigin, Matrix4f rotationMatrix, Vector3f scale)
   {
-    Vector4f var5 = new Vector4f(position.x - rotationOrigin.x, position.y - rotationOrigin.y, position.z - rotationOrigin.z, 1.0F);
+    Vector4f var5 = new Vector4f(x - x, y - y, z - z, 1.0F);
     Matrix4f.transform(rotationMatrix, var5, var5);
-    var5.x *= scale.x;
-    var5.y *= scale.y;
-    var5.z *= scale.z;
-    position.set(var5.x + rotationOrigin.x, var5.y + rotationOrigin.y, var5.z + rotationOrigin.z);
+    x *= x;
+    y *= y;
+    z *= z;
+    position.set(x + x, y + y, z + z);
   }
   
   private Matrix4f a()
@@ -200,10 +200,10 @@ public class bgo
     Vector3f.sub(var1, var2, var4);
     Vector3f.sub(var3, var2, var5);
     Vector3f.cross(var5, var4, var6);
-    float var7 = (float)Math.sqrt(var6.x * var6.x + var6.y * var6.y + var6.z * var6.z);
-    var6.x /= var7;
-    var6.y /= var7;
-    var6.z /= var7;
+    float var7 = (float)Math.sqrt(x * x + y * y + z * z);
+    x /= var7;
+    y /= var7;
+    z /= var7;
     cq var8 = null;
     float var9 = 0.0F;
     cq[] var10 = cq.values();
@@ -283,9 +283,9 @@ public class bgo
     {
       int var18 = step * var6;
       bfj.b var19 = var17.a(var6);
-      float var9 = var4[var19.a];
-      float var10 = var4[var19.b];
-      float var11 = var4[var19.c];
+      float var9 = var4[a];
+      float var10 = var4[b];
+      float var11 = var4[c];
       p_178408_1_[var18] = Float.floatToRawIntBits(var9);
       p_178408_1_[(var18 + 1)] = Float.floatToRawIntBits(var10);
       p_178408_1_[(var18 + 2)] = Float.floatToRawIntBits(var11);

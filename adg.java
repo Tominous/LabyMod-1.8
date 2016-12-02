@@ -7,8 +7,8 @@ public class adg
   
   public adg(int x, int z)
   {
-    this.a = x;
-    this.b = z;
+    a = x;
+    b = z;
   }
   
   public static long a(int x, int z)
@@ -18,13 +18,13 @@ public class adg
   
   public int hashCode()
   {
-    if (this.cachedHashCode == 0)
+    if (cachedHashCode == 0)
     {
-      int var1 = 1664525 * this.a + 1013904223;
-      int var2 = 1664525 * (this.b ^ 0xDEADBEEF) + 1013904223;
-      this.cachedHashCode = (var1 ^ var2);
+      int var1 = 1664525 * a + 1013904223;
+      int var2 = 1664525 * (b ^ 0xDEADBEEF) + 1013904223;
+      cachedHashCode = (var1 ^ var2);
     }
-    return this.cachedHashCode;
+    return cachedHashCode;
   }
   
   public boolean equals(Object p_equals_1_)
@@ -36,42 +36,42 @@ public class adg
       return false;
     }
     adg var2 = (adg)p_equals_1_;
-    return (this.a == var2.a) && (this.b == var2.b);
+    return (a == a) && (b == b);
   }
   
   public int a()
   {
-    return (this.a << 4) + 8;
+    return (a << 4) + 8;
   }
   
   public int b()
   {
-    return (this.b << 4) + 8;
+    return (b << 4) + 8;
   }
   
   public int c()
   {
-    return this.a << 4;
+    return a << 4;
   }
   
   public int d()
   {
-    return this.b << 4;
+    return b << 4;
   }
   
   public int e()
   {
-    return (this.a << 4) + 15;
+    return (a << 4) + 15;
   }
   
   public int f()
   {
-    return (this.b << 4) + 15;
+    return (b << 4) + 15;
   }
   
   public cj a(int x, int y, int z)
   {
-    return new cj((this.a << 4) + x, y, (this.b << 4) + z);
+    return new cj((a << 4) + x, y, (b << 4) + z);
   }
   
   public cj a(int y)
@@ -81,6 +81,6 @@ public class adg
   
   public String toString()
   {
-    return "[" + this.a + ", " + this.b + "]";
+    return "[" + a + ", " + b + "]";
   }
 }

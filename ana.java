@@ -6,19 +6,19 @@ public class ana
   
   public ana(byte[] ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = (☃ + 4);
+    a = ☃;
+    b = ☃;
+    c = (☃ + 4);
   }
   
   public int a(int ☃, int ☃, int ☃)
   {
-    int ☃ = ☃ << this.c | ☃ << this.b | ☃;
+    int ☃ = ☃ << c | ☃ << b | ☃;
     int ☃ = ☃ >> 1;
     int ☃ = ☃ & 0x1;
     if (☃ == 0) {
-      return this.a[☃] & 0xF;
+      return a[☃] & 0xF;
     }
-    return this.a[☃] >> 4 & 0xF;
+    return a[☃] >> 4 & 0xF;
   }
 }

@@ -38,7 +38,7 @@ public class ab
       if (☃ == null) {
         throw ☃;
       }
-      ☃ = ☃.B;
+      ☃ = B;
     }
     int ☃ = 1;
     

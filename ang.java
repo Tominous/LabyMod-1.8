@@ -6,37 +6,37 @@ public class ang
     int ☃ = ☃.f("zPos");
     
     ang.a ☃ = new ang.a(☃, ☃);
-    ☃.g = ☃.k("Blocks");
-    ☃.f = new ana(☃.k("Data"), 7);
-    ☃.e = new ana(☃.k("SkyLight"), 7);
-    ☃.d = new ana(☃.k("BlockLight"), 7);
-    ☃.c = ☃.k("HeightMap");
-    ☃.b = ☃.n("TerrainPopulated");
-    ☃.h = ☃.c("Entities", 10);
-    ☃.i = ☃.c("TileEntities", 10);
-    ☃.j = ☃.c("TileTicks", 10);
+    g = ☃.k("Blocks");
+    f = new ana(☃.k("Data"), 7);
+    e = new ana(☃.k("SkyLight"), 7);
+    d = new ana(☃.k("BlockLight"), 7);
+    c = ☃.k("HeightMap");
+    b = ☃.n("TerrainPopulated");
+    h = ☃.c("Entities", 10);
+    i = ☃.c("TileEntities", 10);
+    j = ☃.c("TileTicks", 10);
     try
     {
-      ☃.a = ☃.g("LastUpdate");
+      a = ☃.g("LastUpdate");
     }
     catch (ClassCastException ☃)
     {
-      ☃.a = ☃.f("LastUpdate");
+      a = ☃.f("LastUpdate");
     }
     return ☃;
   }
   
   public static void a(ang.a ☃, dn ☃, aec ☃)
   {
-    ☃.a("xPos", ☃.k);
-    ☃.a("zPos", ☃.l);
-    ☃.a("LastUpdate", ☃.a);
-    int[] ☃ = new int[☃.c.length];
-    for (int ☃ = 0; ☃ < ☃.c.length; ☃++) {
-      ☃[☃] = ☃.c[☃];
+    ☃.a("xPos", k);
+    ☃.a("zPos", l);
+    ☃.a("LastUpdate", a);
+    int[] ☃ = new int[c.length];
+    for (int ☃ = 0; ☃ < c.length; ☃++) {
+      ☃[☃] = c[☃];
     }
     ☃.a("HeightMap", ☃);
-    ☃.a("TerrainPopulated", ☃.b);
+    ☃.a("TerrainPopulated", b);
     
     du ☃ = new du();
     for (int ☃ = 0; ☃ < 8; ☃++)
@@ -47,7 +47,7 @@ public class ang
           for (int ☃ = 0; ☃ < 16; ☃++)
           {
             int ☃ = ☃ << 11 | ☃ << 7 | ☃ + (☃ << 4);
-            int ☃ = ☃.g[☃];
+            int ☃ = g[☃];
             if (☃ != 0)
             {
               ☃ = false;
@@ -67,12 +67,12 @@ public class ang
             for (int ☃ = 0; ☃ < 16; ☃++)
             {
               int ☃ = ☃ << 11 | ☃ << 7 | ☃ + (☃ << 4);
-              int ☃ = ☃.g[☃];
+              int ☃ = g[☃];
               
               ☃[(☃ << 8 | ☃ << 4 | ☃)] = ((byte)(☃ & 0xFF));
-              ☃.a(☃, ☃, ☃, ☃.f.a(☃, ☃ + (☃ << 4), ☃));
-              ☃.a(☃, ☃, ☃, ☃.e.a(☃, ☃ + (☃ << 4), ☃));
-              ☃.a(☃, ☃, ☃, ☃.d.a(☃, ☃ + (☃ << 4), ☃));
+              ☃.a(☃, ☃, ☃, f.a(☃, ☃ + (☃ << 4), ☃));
+              ☃.a(☃, ☃, ☃, e.a(☃, ☃ + (☃ << 4), ☃));
+              ☃.a(☃, ☃, ☃, d.a(☃, ☃ + (☃ << 4), ☃));
             }
           }
         }
@@ -94,15 +94,15 @@ public class ang
     for (int ☃ = 0; ☃ < 16; ☃++) {
       for (int ☃ = 0; ☃ < 16; ☃++)
       {
-        ☃.c(☃.k << 4 | ☃, 0, ☃.l << 4 | ☃);
-        ☃[(☃ << 4 | ☃)] = ((byte)(☃.a(☃, ady.ad).az & 0xFF));
+        ☃.c(k << 4 | ☃, 0, l << 4 | ☃);
+        ☃[(☃ << 4 | ☃)] = ((byte)(aadaz & 0xFF));
       }
     }
     ☃.a("Biomes", ☃);
-    ☃.a("Entities", ☃.h);
-    ☃.a("TileEntities", ☃.i);
-    if (☃.j != null) {
-      ☃.a("TileTicks", ☃.j);
+    ☃.a("Entities", h);
+    ☃.a("TileEntities", i);
+    if (j != null) {
+      ☃.a("TileTicks", j);
     }
   }
   
@@ -123,8 +123,8 @@ public class ang
     
     public a(int ☃, int ☃)
     {
-      this.k = ☃;
-      this.l = ☃;
+      k = ☃;
+      l = ☃;
     }
   }
 }

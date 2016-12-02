@@ -1,4 +1,5 @@
 import java.util.Random;
+import mods.itemphysic.ClientPhysic;
 import org.lwjgl.util.vector.Vector3f;
 
 public class bjf
@@ -7,123 +8,64 @@ public class bjf
   private final bjh a;
   private Random e = new Random();
   
-  public bjf(biu ☃, bjh ☃)
+  public bjf(biu renderManagerIn, bjh p_i46167_2_)
   {
-    super(☃);
-    this.a = ☃;
-    
-    this.c = 0.15F;
-    this.d = 0.75F;
+    super(renderManagerIn);
+    a = p_i46167_2_;
+    c = 0.15F;
+    d = 0.75F;
   }
   
-  private int a(uz ☃, double ☃, double ☃, double ☃, float ☃, boq ☃)
+  private int a(uz itemIn, double p_177077_2_, double p_177077_4_, double p_177077_6_, float p_177077_8_, boq p_177077_9_)
   {
-    zx ☃ = ☃.l();
-    zw ☃ = ☃.b();
-    if (☃ == null) {
+    zx itemstack = itemIn.l();
+    zw item = itemstack.b();
+    if (item == null) {
       return 0;
     }
-    boolean ☃ = ☃.c();
-    int ☃ = a(☃);
-    
-    float ☃ = 0.25F;
-    float ☃ = ns.a((☃.o() + ☃) / 10.0F + ☃.a) * 0.1F + 0.1F;
-    float ☃ = ☃.f().b(bgr.b.f).d.y;
-    bfl.b((float)☃, (float)☃ + ☃ + 0.25F * ☃, (float)☃);
-    if ((☃) || (this.b.g != null))
+    boolean flag = p_177077_9_.c();
+    int i = a(itemstack);
+    float f = 0.25F;
+    float f1 = ns.a((itemIn.o() + p_177077_8_) / 10.0F + a) * 0.1F + 0.1F;
+    float f2 = fbfd.y;
+    bfl.b((float)p_177077_2_, (float)p_177077_4_ + f1 + 0.25F * f2, (float)p_177077_6_);
+    if ((flag) || (b.g != null))
     {
-      float ☃ = ((☃.o() + ☃) / 20.0F + ☃.a) * 57.295776F;
-      bfl.b(☃, 0.0F, 1.0F, 0.0F);
+      float f3 = ((itemIn.o() + p_177077_8_) / 20.0F + a) * 57.295776F;
+      bfl.b(f3, 0.0F, 1.0F, 0.0F);
     }
-    if (!☃)
+    if (!flag)
     {
-      float ☃ = -0.0F * (☃ - 1) * 0.5F;
-      float ☃ = -0.0F * (☃ - 1) * 0.5F;
-      float ☃ = -0.046875F * (☃ - 1) * 0.5F;
-      bfl.b(☃, ☃, ☃);
+      float f6 = -0.0F * (i - 1) * 0.5F;
+      float f4 = -0.0F * (i - 1) * 0.5F;
+      float f5 = -0.046875F * (i - 1) * 0.5F;
+      bfl.b(f6, f4, f5);
     }
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    
-    return ☃;
+    return i;
   }
   
-  private int a(zx ☃)
+  private int a(zx stack)
   {
-    int ☃ = 1;
-    if (☃.b > 48) {
-      ☃ = 5;
-    } else if (☃.b > 32) {
-      ☃ = 4;
-    } else if (☃.b > 16) {
-      ☃ = 3;
-    } else if (☃.b > 1) {
-      ☃ = 2;
+    int i = 1;
+    if (b > 48) {
+      i = 5;
+    } else if (b > 32) {
+      i = 4;
+    } else if (b > 16) {
+      i = 3;
+    } else if (b > 1) {
+      i = 2;
     }
-    return ☃;
+    return i;
   }
   
-  public void a(uz ☃, double ☃, double ☃, double ☃, float ☃, float ☃)
+  public void a(uz entity, double x, double y, double z, float entityYaw, float partialTicks)
   {
-    zx ☃ = ☃.l();
-    
-    this.e.setSeed(187L);
-    
-    boolean ☃ = false;
-    if (c(☃))
-    {
-      this.b.a.b(a(☃)).b(false, false);
-      ☃ = true;
-    }
-    bfl.B();
-    bfl.a(516, 0.1F);
-    bfl.l();
-    bfl.a(770, 771, 1, 0);
-    
-    bfl.E();
-    
-    boq ☃ = this.a.a().a(☃);
-    int ☃ = a(☃, ☃, ☃, ☃, ☃, ☃);
-    for (int ☃ = 0; ☃ < ☃; ☃++) {
-      if (☃.c())
-      {
-        bfl.E();
-        if (☃ > 0)
-        {
-          float ☃ = (this.e.nextFloat() * 2.0F - 1.0F) * 0.15F;
-          float ☃ = (this.e.nextFloat() * 2.0F - 1.0F) * 0.15F;
-          float ☃ = (this.e.nextFloat() * 2.0F - 1.0F) * 0.15F;
-          bfl.b(☃, ☃, ☃);
-        }
-        bfl.a(0.5F, 0.5F, 0.5F);
-        ☃.f().a(bgr.b.f);
-        this.a.a(☃, ☃);
-        
-        bfl.F();
-      }
-      else
-      {
-        bfl.E();
-        ☃.f().a(bgr.b.f);
-        this.a.a(☃, ☃);
-        bfl.F();
-        float ☃ = ☃.f().o.d.x;
-        float ☃ = ☃.f().o.d.y;
-        float ☃ = ☃.f().o.d.z;
-        bfl.b(0.0F * ☃, 0.0F * ☃, 0.046875F * ☃);
-      }
-    }
-    bfl.F();
-    
-    bfl.C();
-    bfl.k();
-    c(☃);
-    if (☃) {
-      this.b.a.b(a(☃)).a();
-    }
-    super.a(☃, ☃, ☃, ☃, ☃, ☃);
+    ClientPhysic.doRender(entity, x, y, z, entityYaw, partialTicks);
   }
   
-  protected jy a(uz ☃)
+  protected jy a(uz entity)
   {
     return bmh.g;
   }

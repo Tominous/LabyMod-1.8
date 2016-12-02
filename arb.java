@@ -15,20 +15,20 @@ public class arb
   
   public arb(Random ☃)
   {
-    this.a = (☃.nextDouble() * 256.0D);
-    this.b = (☃.nextDouble() * 256.0D);
-    this.c = (☃.nextDouble() * 256.0D);
+    a = (☃.nextDouble() * 256.0D);
+    b = (☃.nextDouble() * 256.0D);
+    c = (☃.nextDouble() * 256.0D);
     for (int ☃ = 0; ☃ < 256; ☃++) {
-      this.d[☃] = ☃;
+      d[☃] = ☃;
     }
     for (int ☃ = 0; ☃ < 256; ☃++)
     {
       int ☃ = ☃.nextInt(256 - ☃) + ☃;
-      int ☃ = this.d[☃];
-      this.d[☃] = this.d[☃];
-      this.d[☃] = ☃;
+      int ☃ = d[☃];
+      d[☃] = d[☃];
+      d[☃] = ☃;
       
-      this.d[(☃ + 256)] = this.d[☃];
+      d[(☃ + 256)] = d[☃];
     }
   }
   
@@ -65,7 +65,7 @@ public class arb
       double ☃ = 1.0D / ☃;
       for (int ☃ = 0; ☃ < ☃; ☃++)
       {
-        double ☃ = ☃ + ☃ * ☃ + this.a;
+        double ☃ = ☃ + ☃ * ☃ + a;
         int ☃ = (int)☃;
         if (☃ < ☃) {
           ☃--;
@@ -75,7 +75,7 @@ public class arb
         double ☃ = ☃ * ☃ * ☃ * (☃ * (☃ * 6.0D - 15.0D) + 10.0D);
         for (int ☃ = 0; ☃ < ☃; ☃++)
         {
-          double ☃ = ☃ + ☃ * ☃ + this.c;
+          double ☃ = ☃ + ☃ * ☃ + c;
           int ☃ = (int)☃;
           if (☃ < ☃) {
             ☃--;
@@ -84,12 +84,12 @@ public class arb
           ☃ -= ☃;
           double ☃ = ☃ * ☃ * ☃ * (☃ * (☃ * 6.0D - 15.0D) + 10.0D);
           
-          ☃ = this.d[☃] + 0;
-          ☃ = this.d[☃] + ☃;
-          ☃ = this.d[(☃ + 1)] + 0;
-          ☃ = this.d[☃] + ☃;
-          ☃ = b(☃, a(this.d[☃], ☃, ☃), a(this.d[☃], ☃ - 1.0D, 0.0D, ☃));
-          ☃ = b(☃, a(this.d[(☃ + 1)], ☃, 0.0D, ☃ - 1.0D), a(this.d[(☃ + 1)], ☃ - 1.0D, 0.0D, ☃ - 1.0D));
+          ☃ = d[☃] + 0;
+          ☃ = d[☃] + ☃;
+          ☃ = d[(☃ + 1)] + 0;
+          ☃ = d[☃] + ☃;
+          ☃ = b(☃, a(d[☃], ☃, ☃), a(d[☃], ☃ - 1.0D, 0.0D, ☃));
+          ☃ = b(☃, a(d[(☃ + 1)], ☃, 0.0D, ☃ - 1.0D), a(d[(☃ + 1)], ☃ - 1.0D, 0.0D, ☃ - 1.0D));
           
           double ☃ = b(☃, ☃, ☃);
           
@@ -105,7 +105,7 @@ public class arb
     double ☃ = 0.0D;double ☃ = 0.0D;double ☃ = 0.0D;double ☃ = 0.0D;
     for (int ☃ = 0; ☃ < ☃; ☃++)
     {
-      double ☃ = ☃ + ☃ * ☃ + this.a;
+      double ☃ = ☃ + ☃ * ☃ + a;
       int ☃ = (int)☃;
       if (☃ < ☃) {
         ☃--;
@@ -115,7 +115,7 @@ public class arb
       double ☃ = ☃ * ☃ * ☃ * (☃ * (☃ * 6.0D - 15.0D) + 10.0D);
       for (int ☃ = 0; ☃ < ☃; ☃++)
       {
-        double ☃ = ☃ + ☃ * ☃ + this.c;
+        double ☃ = ☃ + ☃ * ☃ + c;
         int ☃ = (int)☃;
         if (☃ < ☃) {
           ☃--;
@@ -125,7 +125,7 @@ public class arb
         double ☃ = ☃ * ☃ * ☃ * (☃ * (☃ * 6.0D - 15.0D) + 10.0D);
         for (int ☃ = 0; ☃ < ☃; ☃++)
         {
-          double ☃ = ☃ + ☃ * ☃ + this.b;
+          double ☃ = ☃ + ☃ * ☃ + b;
           int ☃ = (int)☃;
           if (☃ < ☃) {
             ☃--;
@@ -136,16 +136,16 @@ public class arb
           if ((☃ == 0) || (☃ != ☃))
           {
             ☃ = ☃;
-            ☃ = this.d[☃] + ☃;
-            ☃ = this.d[☃] + ☃;
-            ☃ = this.d[(☃ + 1)] + ☃;
-            ☃ = this.d[(☃ + 1)] + ☃;
-            ☃ = this.d[☃] + ☃;
-            ☃ = this.d[(☃ + 1)] + ☃;
-            ☃ = b(☃, a(this.d[☃], ☃, ☃, ☃), a(this.d[☃], ☃ - 1.0D, ☃, ☃));
-            ☃ = b(☃, a(this.d[☃], ☃, ☃ - 1.0D, ☃), a(this.d[☃], ☃ - 1.0D, ☃ - 1.0D, ☃));
-            ☃ = b(☃, a(this.d[(☃ + 1)], ☃, ☃, ☃ - 1.0D), a(this.d[(☃ + 1)], ☃ - 1.0D, ☃, ☃ - 1.0D));
-            ☃ = b(☃, a(this.d[(☃ + 1)], ☃, ☃ - 1.0D, ☃ - 1.0D), a(this.d[(☃ + 1)], ☃ - 1.0D, ☃ - 1.0D, ☃ - 1.0D));
+            ☃ = d[☃] + ☃;
+            ☃ = d[☃] + ☃;
+            ☃ = d[(☃ + 1)] + ☃;
+            ☃ = d[(☃ + 1)] + ☃;
+            ☃ = d[☃] + ☃;
+            ☃ = d[(☃ + 1)] + ☃;
+            ☃ = b(☃, a(d[☃], ☃, ☃, ☃), a(d[☃], ☃ - 1.0D, ☃, ☃));
+            ☃ = b(☃, a(d[☃], ☃, ☃ - 1.0D, ☃), a(d[☃], ☃ - 1.0D, ☃ - 1.0D, ☃));
+            ☃ = b(☃, a(d[(☃ + 1)], ☃, ☃, ☃ - 1.0D), a(d[(☃ + 1)], ☃ - 1.0D, ☃, ☃ - 1.0D));
+            ☃ = b(☃, a(d[(☃ + 1)], ☃, ☃ - 1.0D, ☃ - 1.0D), a(d[(☃ + 1)], ☃ - 1.0D, ☃ - 1.0D, ☃ - 1.0D));
           }
           double ☃ = b(☃, ☃, ☃);
           double ☃ = b(☃, ☃, ☃);

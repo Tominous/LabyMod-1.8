@@ -14,16 +14,16 @@ public class bpy
   
   public bpy(jy ☃, double ☃, double ☃, bpg ☃)
   {
-    this.c = ☃;
-    this.f = ☃;
-    this.e = ☃;
-    this.d = ☃;
+    c = ☃;
+    f = ☃;
+    e = ☃;
+    d = ☃;
   }
   
   public int a()
   {
     int ☃ = 0;
-    for (bqb<bpw> ☃ : this.a) {
+    for (bqb<bpw> ☃ : a) {
       ☃ += ☃.a();
     }
     return ☃;
@@ -32,19 +32,19 @@ public class bpy
   public bpw b()
   {
     int ☃ = a();
-    if ((this.a.isEmpty()) || (☃ == 0)) {
+    if ((a.isEmpty()) || (☃ == 0)) {
       return bpz.a;
     }
-    int ☃ = this.b.nextInt(☃);
-    for (bqb<bpw> ☃ : this.a)
+    int ☃ = b.nextInt(☃);
+    for (bqb<bpw> ☃ : a)
     {
       ☃ -= ☃.a();
       if (☃ < 0)
       {
         bpw ☃ = (bpw)☃.g();
         
-        ☃.a(☃.b() * this.e);
-        ☃.b(☃.c() * this.f);
+        ☃.a(☃.b() * e);
+        ☃.b(☃.c() * f);
         
         return ☃;
       }
@@ -54,16 +54,16 @@ public class bpy
   
   public void a(bqb<bpw> ☃)
   {
-    this.a.add(☃);
+    a.add(☃);
   }
   
   public jy c()
   {
-    return this.c;
+    return c;
   }
   
   public bpg d()
   {
-    return this.d;
+    return d;
   }
 }

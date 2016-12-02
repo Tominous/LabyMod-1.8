@@ -10,8 +10,8 @@ public class aae
   {
     super(☃);
     
-    this.b = ☃;
-    this.c = ☃;
+    b = ☃;
+    c = ☃;
     
     d(0);
     a(true);
@@ -39,6 +39,6 @@ public class aae
   
   public String e_(zx ☃)
   {
-    return super.a() + "." + (String)this.c.apply(☃);
+    return super.a() + "." + (String)c.apply(☃);
   }
 }

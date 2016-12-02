@@ -5,22 +5,22 @@ public class fa
   
   public fa(String ☃)
   {
-    this.b = ☃;
+    b = ☃;
   }
   
   public String g()
   {
-    return this.b;
+    return b;
   }
   
   public String e()
   {
-    return this.b;
+    return b;
   }
   
   public fa h()
   {
-    fa ☃ = new fa(this.b);
+    fa ☃ = new fa(b);
     ☃.a(b().m());
     for (eu ☃ : a()) {
       ☃.a(☃.f());
@@ -36,13 +36,13 @@ public class fa
     if ((☃ instanceof fa))
     {
       fa ☃ = (fa)☃;
-      return (this.b.equals(☃.g())) && (super.equals(☃));
+      return (b.equals(☃.g())) && (super.equals(☃));
     }
     return false;
   }
   
   public String toString()
   {
-    return "TextComponent{text='" + this.b + '\'' + ", siblings=" + this.a + ", style=" + b() + '}';
+    return "TextComponent{text='" + b + '\'' + ", siblings=" + a + ", style=" + b() + '}';
   }
 }

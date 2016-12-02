@@ -40,15 +40,15 @@ public class bmi
   
   private bmi(bmi parent)
   {
-    this.j = parent.j;
-    this.isSpriteSingle = true;
+    j = j;
+    isSpriteSingle = true;
   }
   
   protected bmi(String p_i1282_1_)
   {
-    this.j = p_i1282_1_;
+    j = p_i1282_1_;
     if (Config.isMultiTexture()) {
-      this.spriteSingle = new bmi(this);
+      spriteSingle = new bmi(this);
     }
   }
   
@@ -70,118 +70,118 @@ public class bmi
   
   public void a(int p_110971_1_, int p_110971_2_, int p_110971_3_, int p_110971_4_, boolean p_110971_5_)
   {
-    this.d = p_110971_3_;
-    this.e = p_110971_4_;
-    this.c = p_110971_5_;
+    d = p_110971_3_;
+    e = p_110971_4_;
+    c = p_110971_5_;
     float var6 = (float)(0.009999999776482582D / p_110971_1_);
     float var7 = (float)(0.009999999776482582D / p_110971_2_);
-    this.l = (p_110971_3_ / (float)p_110971_1_ + var6);
-    this.m = ((p_110971_3_ + this.f) / (float)p_110971_1_ - var6);
-    this.n = (p_110971_4_ / p_110971_2_ + var7);
-    this.o = ((p_110971_4_ + this.g) / p_110971_2_ - var7);
+    l = (p_110971_3_ / (float)p_110971_1_ + var6);
+    m = ((p_110971_3_ + f) / (float)p_110971_1_ - var6);
+    n = (p_110971_4_ / p_110971_2_ + var7);
+    o = ((p_110971_4_ + g) / p_110971_2_ - var7);
     
-    this.baseU = Math.min(this.l, this.m);
-    this.baseV = Math.min(this.n, this.o);
-    if (this.spriteSingle != null) {
-      this.spriteSingle.a(this.f, this.g, 0, 0, false);
+    baseU = Math.min(l, m);
+    baseV = Math.min(n, o);
+    if (spriteSingle != null) {
+      spriteSingle.a(f, g, 0, 0, false);
     }
   }
   
   public void a(bmi p_94217_1_)
   {
-    this.d = p_94217_1_.d;
-    this.e = p_94217_1_.e;
-    this.f = p_94217_1_.f;
-    this.g = p_94217_1_.g;
-    this.c = p_94217_1_.c;
-    this.l = p_94217_1_.l;
-    this.m = p_94217_1_.m;
-    this.n = p_94217_1_.n;
-    this.o = p_94217_1_.o;
-    if (this.spriteSingle != null) {
-      this.spriteSingle.a(this.f, this.g, 0, 0, false);
+    d = d;
+    e = e;
+    f = f;
+    g = g;
+    c = c;
+    l = l;
+    m = m;
+    n = n;
+    o = o;
+    if (spriteSingle != null) {
+      spriteSingle.a(f, g, 0, 0, false);
     }
   }
   
   public int a()
   {
-    return this.d;
+    return d;
   }
   
   public int b()
   {
-    return this.e;
+    return e;
   }
   
   public int c()
   {
-    return this.f;
+    return f;
   }
   
   public int d()
   {
-    return this.g;
+    return g;
   }
   
   public float e()
   {
-    return this.l;
+    return l;
   }
   
   public float f()
   {
-    return this.m;
+    return m;
   }
   
   public float a(double p_94214_1_)
   {
-    float var3 = this.m - this.l;
-    return this.l + var3 * (float)p_94214_1_ / 16.0F;
+    float var3 = m - l;
+    return l + var3 * (float)p_94214_1_ / 16.0F;
   }
   
   public float g()
   {
-    return this.n;
+    return n;
   }
   
   public float h()
   {
-    return this.o;
+    return o;
   }
   
   public float b(double p_94207_1_)
   {
-    float var3 = this.o - this.n;
-    return this.n + var3 * ((float)p_94207_1_ / 16.0F);
+    float var3 = o - n;
+    return n + var3 * ((float)p_94207_1_ / 16.0F);
   }
   
   public String i()
   {
-    return this.j;
+    return j;
   }
   
   public void j()
   {
-    this.i += 1;
-    if (this.i >= this.k.a(this.h))
+    i += 1;
+    if (i >= k.a(h))
     {
-      int var1 = this.k.c(this.h);
-      int var2 = this.k.c() == 0 ? this.a.size() : this.k.c();
-      this.h = ((this.h + 1) % var2);
-      this.i = 0;
-      int var3 = this.k.c(this.h);
+      int var1 = k.c(h);
+      int var2 = k.c() == 0 ? a.size() : k.c();
+      h = ((h + 1) % var2);
+      i = 0;
+      int var3 = k.c(h);
       
       boolean texBlur = false;
-      boolean texClamp = this.isSpriteSingle;
-      if ((var1 != var3) && (var3 >= 0) && (var3 < this.a.size())) {
+      boolean texClamp = isSpriteSingle;
+      if ((var1 != var3) && (var3 >= 0) && (var3 < a.size())) {
         if (Config.isShaders()) {
-          ShadersTex.uploadTexSub((int[][])this.a.get(var3), this.f, this.g, this.d, this.e, texBlur, texClamp);
+          ShadersTex.uploadTexSub((int[][])a.get(var3), f, g, d, e, texBlur, texClamp);
         } else {
-          bml.a((int[][])this.a.get(var3), this.f, this.g, this.d, this.e, texBlur, texClamp);
+          bml.a((int[][])a.get(var3), f, g, d, e, texBlur, texClamp);
         }
       }
     }
-    else if (this.k.e())
+    else if (k.e())
     {
       n();
     }
@@ -189,21 +189,21 @@ public class bmi
   
   private void n()
   {
-    double var1 = 1.0D - this.i / this.k.a(this.h);
-    int var3 = this.k.c(this.h);
-    int var4 = this.k.c() == 0 ? this.a.size() : this.k.c();
-    int var5 = this.k.c((this.h + 1) % var4);
-    if ((var3 != var5) && (var5 >= 0) && (var5 < this.a.size()))
+    double var1 = 1.0D - i / k.a(h);
+    int var3 = k.c(h);
+    int var4 = k.c() == 0 ? a.size() : k.c();
+    int var5 = k.c((h + 1) % var4);
+    if ((var3 != var5) && (var5 >= 0) && (var5 < a.size()))
     {
-      int[][] var6 = (int[][])this.a.get(var3);
-      int[][] var7 = (int[][])this.a.get(var5);
-      if ((this.b == null) || (this.b.length != var6.length)) {
-        this.b = new int[var6.length][];
+      int[][] var6 = (int[][])a.get(var3);
+      int[][] var7 = (int[][])a.get(var5);
+      if ((b == null) || (b.length != var6.length)) {
+        b = new int[var6.length][];
       }
       for (int var8 = 0; var8 < var6.length; var8++)
       {
-        if (this.b[var8] == null) {
-          this.b[var8] = new int[var6[var8].length];
+        if (b[var8] == null) {
+          b[var8] = new int[var6[var8].length];
         }
         if ((var8 < var7.length) && (var7[var8].length == var6[var8].length)) {
           for (int var9 = 0; var9 < var6[var8].length; var9++)
@@ -213,37 +213,37 @@ public class bmi
             int var12 = (int)(((var10 & 0xFF0000) >> 16) * var1 + ((var11 & 0xFF0000) >> 16) * (1.0D - var1));
             int var13 = (int)(((var10 & 0xFF00) >> 8) * var1 + ((var11 & 0xFF00) >> 8) * (1.0D - var1));
             int var14 = (int)((var10 & 0xFF) * var1 + (var11 & 0xFF) * (1.0D - var1));
-            this.b[var8][var9] = (var10 & 0xFF000000 | var12 << 16 | var13 << 8 | var14);
+            b[var8][var9] = (var10 & 0xFF000000 | var12 << 16 | var13 << 8 | var14);
           }
         }
       }
-      bml.a(this.b, this.f, this.g, this.d, this.e, false, false);
+      bml.a(b, f, g, d, e, false, false);
     }
   }
   
   public int[][] a(int p_147965_1_)
   {
-    return (int[][])this.a.get(p_147965_1_);
+    return (int[][])a.get(p_147965_1_);
   }
   
   public int k()
   {
-    return this.a.size();
+    return a.size();
   }
   
   public void b(int p_110966_1_)
   {
-    this.f = p_110966_1_;
-    if (this.spriteSingle != null) {
-      this.spriteSingle.b(this.f);
+    f = p_110966_1_;
+    if (spriteSingle != null) {
+      spriteSingle.b(f);
     }
   }
   
   public void c(int p_110969_1_)
   {
-    this.g = p_110969_1_;
-    if (this.spriteSingle != null) {
-      this.spriteSingle.c(this.g);
+    g = p_110969_1_;
+    if (spriteSingle != null) {
+      spriteSingle.c(g);
     }
   }
   
@@ -253,8 +253,8 @@ public class bmi
     o();
     int var3 = p_180598_1_[0].getWidth();
     int var4 = p_180598_1_[0].getHeight();
-    this.f = var3;
-    this.g = var4;
+    f = var3;
+    g = var4;
     int[][] var5 = new int[p_180598_1_.length][];
     for (int var6 = 0; var6 < p_180598_1_.length; var6++)
     {
@@ -273,14 +273,14 @@ public class bmi
       if (var4 != var3) {
         throw new RuntimeException("broken aspect ratio and not an animation");
       }
-      this.a.add(var5);
+      a.add(var5);
     }
     else
     {
       var6 = var4 / var3;
       int var11 = var3;
       int var8 = var3;
-      this.g = this.f;
+      g = f;
       if (p_180598_2_.c() > 0)
       {
         Iterator var9 = p_180598_2_.f().iterator();
@@ -291,26 +291,26 @@ public class bmi
             throw new RuntimeException("invalid frameindex " + var10);
           }
           e(var10);
-          this.a.set(var10, a(var5, var11, var8, var10));
+          a.set(var10, a(var5, var11, var8, var10));
         }
-        this.k = p_180598_2_;
+        k = p_180598_2_;
       }
       else
       {
         ArrayList var12 = Lists.newArrayList();
         for (int var10 = 0; var10 < var6; var10++)
         {
-          this.a.add(a(var5, var11, var8, var10));
+          a.add(a(var5, var11, var8, var10));
           var12.add(new bnz(var10, -1));
         }
-        this.k = new boa(var12, this.f, this.g, p_180598_2_.d(), p_180598_2_.e());
+        k = new boa(var12, f, g, p_180598_2_.d(), p_180598_2_.e());
       }
     }
-    for (int i = 0; i < this.a.size(); i++)
+    for (int i = 0; i < a.size(); i++)
     {
-      int[][] datas = (int[][])this.a.get(i);
+      int[][] datas = (int[][])a.get(i);
       if (datas != null) {
-        if (!this.j.startsWith("minecraft:blocks/leaves_")) {
+        if (!j.startsWith("minecraft:blocks/leaves_")) {
           for (int di = 0; di < datas.length; di++)
           {
             int[] data = datas[di];
@@ -319,21 +319,21 @@ public class bmi
         }
       }
     }
-    if (this.spriteSingle != null) {
-      this.spriteSingle.a(p_180598_1_, p_180598_2_);
+    if (spriteSingle != null) {
+      spriteSingle.a(p_180598_1_, p_180598_2_);
     }
   }
   
   public void d(int p_147963_1_)
   {
     ArrayList var2 = Lists.newArrayList();
-    for (int var3 = 0; var3 < this.a.size(); var3++)
+    for (int var3 = 0; var3 < a.size(); var3++)
     {
-      final int[][] var4 = (int[][])this.a.get(var3);
+      final int[][] var4 = (int[][])a.get(var3);
       if (var4 != null) {
         try
         {
-          var2.add(bml.a(p_147963_1_, this.f, var4));
+          var2.add(bml.a(p_147963_1_, f, var4));
         }
         catch (Throwable var8)
         {
@@ -366,20 +366,20 @@ public class bmi
       }
     }
     a(var2);
-    if (this.spriteSingle != null) {
-      this.spriteSingle.d(p_147963_1_);
+    if (spriteSingle != null) {
+      spriteSingle.d(p_147963_1_);
     }
   }
   
   private void e(int p_130099_1_)
   {
-    if (this.a.size() <= p_130099_1_) {
-      for (int var2 = this.a.size(); var2 <= p_130099_1_; var2++) {
-        this.a.add((Object)null);
+    if (a.size() <= p_130099_1_) {
+      for (int var2 = a.size(); var2 <= p_130099_1_; var2++) {
+        a.add((Object)null);
       }
     }
-    if (this.spriteSingle != null) {
-      this.spriteSingle.e(p_130099_1_);
+    if (spriteSingle != null) {
+      spriteSingle.e(p_130099_1_);
     }
   }
   
@@ -400,39 +400,39 @@ public class bmi
   
   public void l()
   {
-    this.a.clear();
-    if (this.spriteSingle != null) {
-      this.spriteSingle.l();
+    a.clear();
+    if (spriteSingle != null) {
+      spriteSingle.l();
     }
   }
   
   public boolean m()
   {
-    return this.k != null;
+    return k != null;
   }
   
   public void a(List p_110968_1_)
   {
-    this.a = p_110968_1_;
-    if (this.spriteSingle != null) {
-      this.spriteSingle.a(p_110968_1_);
+    a = p_110968_1_;
+    if (spriteSingle != null) {
+      spriteSingle.a(p_110968_1_);
     }
   }
   
   private void o()
   {
-    this.k = null;
+    k = null;
     a(Lists.newArrayList());
-    this.h = 0;
-    this.i = 0;
-    if (this.spriteSingle != null) {
-      this.spriteSingle.o();
+    h = 0;
+    i = 0;
+    if (spriteSingle != null) {
+      spriteSingle.o();
     }
   }
   
   public String toString()
   {
-    return "TextureAtlasSprite{name='" + this.j + '\'' + ", frameCount=" + this.a.size() + ", rotated=" + this.c + ", x=" + this.d + ", y=" + this.e + ", height=" + this.g + ", width=" + this.f + ", u0=" + this.l + ", u1=" + this.m + ", v0=" + this.n + ", v1=" + this.o + '}';
+    return "TextureAtlasSprite{name='" + j + '\'' + ", frameCount=" + a.size() + ", rotated=" + c + ", x=" + d + ", y=" + e + ", height=" + g + ", width=" + f + ", u0=" + l + ", u1=" + m + ", v0=" + n + ", v1=" + o + '}';
   }
   
   public boolean hasCustomLoader(bni manager, jy location)
@@ -447,7 +447,7 @@ public class bmi
   
   public int getIndexInMap()
   {
-    return this.indexInMap;
+    return indexInMap;
   }
   
   public void setIndexInMap(int indexInMap)
@@ -500,44 +500,44 @@ public class bmi
   
   public double getSpriteU16(float atlasU)
   {
-    float dU = this.m - this.l;
-    return (atlasU - this.l) / dU * 16.0F;
+    float dU = m - l;
+    return (atlasU - l) / dU * 16.0F;
   }
   
   public double getSpriteV16(float atlasV)
   {
-    float dV = this.o - this.n;
-    return (atlasV - this.n) / dV * 16.0F;
+    float dV = o - n;
+    return (atlasV - n) / dV * 16.0F;
   }
   
   public void bindSpriteTexture()
   {
-    if (this.glSpriteTextureId < 0)
+    if (glSpriteTextureId < 0)
     {
-      this.glSpriteTextureId = bml.a();
+      glSpriteTextureId = bml.a();
       
-      bml.a(this.glSpriteTextureId, this.mipmapLevels, this.f, this.g);
+      bml.a(glSpriteTextureId, mipmapLevels, f, g);
       
       TextureUtils.applyAnisotropicLevel();
     }
-    TextureUtils.bindTexture(this.glSpriteTextureId);
+    TextureUtils.bindTexture(glSpriteTextureId);
   }
   
   public void deleteSpriteTexture()
   {
-    if (this.glSpriteTextureId < 0) {
+    if (glSpriteTextureId < 0) {
       return;
     }
-    bml.a(this.glSpriteTextureId);
+    bml.a(glSpriteTextureId);
     
-    this.glSpriteTextureId = -1;
+    glSpriteTextureId = -1;
   }
   
   public float toSingleU(float u)
   {
-    u -= this.baseU;
+    u -= baseU;
     
-    float ku = this.sheetWidth / this.f;
+    float ku = sheetWidth / f;
     
     u *= ku;
     
@@ -546,9 +546,9 @@ public class bmi
   
   public float toSingleV(float v)
   {
-    v -= this.baseV;
+    v -= baseV;
     
-    float kv = this.sheetHeight / this.g;
+    float kv = sheetHeight / g;
     
     v *= kv;
     

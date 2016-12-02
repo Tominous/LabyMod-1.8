@@ -18,8 +18,8 @@ public class ProgressBarUpdater
   public ProgressBarUpdater(JProgressBar progressBar, JTextArea title, JTextArea subTitle)
   {
     this.progressBar = progressBar;
-    this.titleArea = title;
-    this.subTitleArea = subTitle;
+    titleArea = title;
+    subTitleArea = subTitle;
     start();
   }
   
@@ -38,12 +38,12 @@ public class ProgressBarUpdater
   {
     for (;;)
     {
-      this.progressBar.setValue(value);
-      this.titleArea.setText(title);
-      this.subTitleArea.setText(subTitle);
+      progressBar.setValue(value);
+      titleArea.setText(title);
+      subTitleArea.setText(subTitle);
       if (value == 100)
       {
-        this.progressBar.setValue(100);
+        progressBar.setValue(100);
         break;
       }
       try

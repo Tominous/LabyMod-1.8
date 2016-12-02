@@ -19,8 +19,8 @@ public class fb
   
   public fb(String ☃, Object... ☃)
   {
-    this.d = ☃;
-    this.e = ☃;
+    d = ☃;
+    e = ☃;
     for (Object ☃ : ☃) {
       if ((☃ instanceof eu)) {
         ((eu)☃).b().a(b());
@@ -30,25 +30,25 @@ public class fb
   
   synchronized void g()
   {
-    synchronized (this.f)
+    synchronized (f)
     {
       long ☃ = di.a();
-      if (☃ == this.g) {
+      if (☃ == g) {
         return;
       }
-      this.g = ☃;
-      this.b.clear();
+      g = ☃;
+      b.clear();
     }
     try
     {
-      b(di.a(this.d));
+      b(di.a(d));
     }
     catch (fc ☃)
     {
-      this.b.clear();
+      b.clear();
       try
       {
-        b(di.b(this.d));
+        b(di.b(d));
       }
       catch (fc ☃)
       {
@@ -74,7 +74,7 @@ public class fb
         {
           fa ☃ = new fa(String.format(☃.substring(☃, ☃), new Object[0]));
           ☃.b().a(b());
-          this.b.add(☃);
+          b.add(☃);
         }
         String ☃ = ☃.group(2);
         String ☃ = ☃.substring(☃, ☃);
@@ -82,14 +82,14 @@ public class fb
         {
           fa ☃ = new fa("%");
           ☃.b().a(b());
-          this.b.add(☃);
+          b.add(☃);
         }
         else if ("s".equals(☃))
         {
           String ☃ = ☃.group(1);
           int ☃ = ☃ != null ? Integer.parseInt(☃) - 1 : ☃++;
-          if (☃ < this.e.length) {
-            this.b.add(a(☃));
+          if (☃ < e.length) {
+            b.add(a(☃));
           }
         }
         else
@@ -102,7 +102,7 @@ public class fb
       {
         fa ☃ = new fa(String.format(☃.substring(☃), new Object[0]));
         ☃.b().a(b());
-        this.b.add(☃);
+        b.add(☃);
       }
     }
     catch (IllegalFormatException ☃)
@@ -113,10 +113,10 @@ public class fb
   
   private eu a(int ☃)
   {
-    if (☃ >= this.e.length) {
+    if (☃ >= e.length) {
       throw new fc(this, ☃);
     }
-    Object ☃ = this.e[☃];
+    Object ☃ = e[☃];
     eu ☃;
     eu ☃;
     if ((☃ instanceof eu))
@@ -134,13 +134,13 @@ public class fb
   public eu a(ez ☃)
   {
     super.a(☃);
-    for (Object ☃ : this.e) {
+    for (Object ☃ : e) {
       if ((☃ instanceof eu)) {
         ((eu)☃).b().a(b());
       }
     }
-    if (this.g > -1L) {
-      for (eu ☃ : this.b) {
+    if (g > -1L) {
+      for (eu ☃ : b) {
         ☃.b().a(☃);
       }
     }
@@ -151,7 +151,7 @@ public class fb
   {
     g();
     
-    return Iterators.concat(a(this.b), a(this.a));
+    return Iterators.concat(a(b), a(a));
   }
   
   public String e()
@@ -159,7 +159,7 @@ public class fb
     g();
     
     StringBuilder ☃ = new StringBuilder();
-    for (eu ☃ : this.b) {
+    for (eu ☃ : b) {
       ☃.append(☃.e());
     }
     return ☃.toString();
@@ -167,15 +167,15 @@ public class fb
   
   public fb h()
   {
-    Object[] ☃ = new Object[this.e.length];
-    for (int ☃ = 0; ☃ < this.e.length; ☃++) {
-      if ((this.e[☃] instanceof eu)) {
-        ☃[☃] = ((eu)this.e[☃]).f();
+    Object[] ☃ = new Object[e.length];
+    for (int ☃ = 0; ☃ < e.length; ☃++) {
+      if ((e[☃] instanceof eu)) {
+        ☃[☃] = ((eu)e[☃]).f();
       } else {
-        ☃[☃] = this.e[☃];
+        ☃[☃] = e[☃];
       }
     }
-    fb ☃ = new fb(this.d, ☃);
+    fb ☃ = new fb(d, ☃);
     ☃.a(b().m());
     for (eu ☃ : a()) {
       ☃.a(☃.f());
@@ -191,7 +191,7 @@ public class fb
     if ((☃ instanceof fb))
     {
       fb ☃ = (fb)☃;
-      return (Arrays.equals(this.e, ☃.e)) && (this.d.equals(☃.d)) && (super.equals(☃));
+      return (Arrays.equals(e, e)) && (d.equals(d)) && (super.equals(☃));
     }
     return false;
   }
@@ -199,23 +199,23 @@ public class fb
   public int hashCode()
   {
     int ☃ = super.hashCode();
-    ☃ = 31 * ☃ + this.d.hashCode();
-    ☃ = 31 * ☃ + Arrays.hashCode(this.e);
+    ☃ = 31 * ☃ + d.hashCode();
+    ☃ = 31 * ☃ + Arrays.hashCode(e);
     return ☃;
   }
   
   public String toString()
   {
-    return "TranslatableComponent{key='" + this.d + '\'' + ", args=" + Arrays.toString(this.e) + ", siblings=" + this.a + ", style=" + b() + '}';
+    return "TranslatableComponent{key='" + d + '\'' + ", args=" + Arrays.toString(e) + ", siblings=" + a + ", style=" + b() + '}';
   }
   
   public String i()
   {
-    return this.d;
+    return d;
   }
   
   public Object[] j()
   {
-    return this.e;
+    return e;
   }
 }

@@ -9,11 +9,11 @@ class bet$1
   
   public BufferedImage a(BufferedImage var1)
   {
-    return bet.access$000(this.this$0, var1);
+    return bet.access$000(this$0, var1);
   }
   
   public void a()
   {
-    bet.access$102(this.this$0, this.val$rl);
+    bet.access$102(this$0, val$rl);
   }
 }

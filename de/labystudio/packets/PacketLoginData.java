@@ -21,20 +21,20 @@ public class PacketLoginData
   
   public void read(PacketBuf buf)
   {
-    this.id = UUID.fromString(buf.readString());
-    this.name = buf.readString();
-    this.motd = buf.readString();
+    id = UUID.fromString(buf.readString());
+    name = buf.readString();
+    motd = buf.readString();
   }
   
   public void write(PacketBuf buf)
   {
-    if (this.id == null) {
+    if (id == null) {
       buf.writeString(UUID.randomUUID().toString());
     } else {
-      buf.writeString(this.id.toString());
+      buf.writeString(id.toString());
     }
-    buf.writeString(this.name);
-    buf.writeString(this.motd);
+    buf.writeString(name);
+    buf.writeString(motd);
   }
   
   public int getId()
@@ -44,12 +44,12 @@ public class PacketLoginData
   
   public UUID getUUID()
   {
-    return this.id;
+    return id;
   }
   
   public String getName()
   {
-    return this.name;
+    return name;
   }
   
   public void handle(PacketHandler packetHandler)
@@ -59,6 +59,6 @@ public class PacketLoginData
   
   public String getMotd()
   {
-    return this.motd;
+    return motd;
   }
 }

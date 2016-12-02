@@ -13,13 +13,13 @@ public abstract class es
   public eu a(eu ☃)
   {
     ☃.b().a(b());
-    this.a.add(☃);
+    a.add(☃);
     return this;
   }
   
   public List<eu> a()
   {
-    return this.a;
+    return a;
   }
   
   public eu a(String ☃)
@@ -29,8 +29,8 @@ public abstract class es
   
   public eu a(ez ☃)
   {
-    this.b = ☃;
-    for (eu ☃ : this.a) {
+    b = ☃;
+    for (eu ☃ : a) {
       ☃.b().a(b());
     }
     return this;
@@ -38,19 +38,19 @@ public abstract class es
   
   public ez b()
   {
-    if (this.b == null)
+    if (b == null)
     {
-      this.b = new ez();
-      for (eu ☃ : this.a) {
-        ☃.b().a(this.b);
+      b = new ez();
+      for (eu ☃ : a) {
+        ☃.b().a(b);
       }
     }
-    return this.b;
+    return b;
   }
   
   public Iterator<eu> iterator()
   {
-    return Iterators.concat(Iterators.forArray(new es[] { this }), a(this.a));
+    return Iterators.concat(Iterators.forArray(new es[] { this }), a(a));
   }
   
   public final String c()
@@ -103,18 +103,18 @@ public abstract class es
     if ((☃ instanceof es))
     {
       es ☃ = (es)☃;
-      return (this.a.equals(☃.a)) && (b().equals(☃.b()));
+      return (a.equals(a)) && (b().equals(☃.b()));
     }
     return false;
   }
   
   public int hashCode()
   {
-    return 31 * this.b.hashCode() + this.a.hashCode();
+    return 31 * b.hashCode() + a.hashCode();
   }
   
   public String toString()
   {
-    return "BaseComponent{style=" + this.b + ", siblings=" + this.a + '}';
+    return "BaseComponent{style=" + b + ", siblings=" + a + '}';
   }
 }

@@ -7,6 +7,6 @@ final class o$1
   
   public boolean a(pk ☃)
   {
-    return pm.a(☃, this.a) != this.b;
+    return pm.a(☃, a) != b;
   }
 }

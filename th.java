@@ -18,46 +18,46 @@ public class th
   
   public th(adm ☃)
   {
-    super(a(☃.t));
-    this.b = ☃;
+    super(a(t));
+    b = ☃;
     c();
   }
   
   public void a(adm ☃)
   {
-    this.b = ☃;
-    for (tf ☃ : this.e) {
+    b = ☃;
+    for (tf ☃ : e) {
       ☃.a(☃);
     }
   }
   
   public void a(cj ☃)
   {
-    if (this.c.size() > 64) {
+    if (c.size() > 64) {
       return;
     }
     if (!e(☃)) {
-      this.c.add(☃);
+      c.add(☃);
     }
   }
   
   public void a()
   {
-    this.f += 1;
-    for (tf ☃ : this.e) {
-      ☃.a(this.f);
+    f += 1;
+    for (tf ☃ : e) {
+      ☃.a(f);
     }
     e();
     f();
     g();
-    if (this.f % 400 == 0) {
+    if (f % 400 == 0) {
       c();
     }
   }
   
   private void e()
   {
-    for (Iterator<tf> ☃ = this.e.iterator(); ☃.hasNext();)
+    for (Iterator<tf> ☃ = e.iterator(); ☃.hasNext();)
     {
       tf ☃ = (tf)☃.next();
       if (☃.g())
@@ -70,14 +70,14 @@ public class th
   
   public List<tf> b()
   {
-    return this.e;
+    return e;
   }
   
   public tf a(cj ☃, int ☃)
   {
     tf ☃ = null;
     double ☃ = 3.4028234663852886E38D;
-    for (tf ☃ : this.e)
+    for (tf ☃ : e)
     {
       double ☃ = ☃.a().i(☃);
       if (☃ < ☃)
@@ -95,27 +95,27 @@ public class th
   
   private void f()
   {
-    if (this.c.isEmpty()) {
+    if (c.isEmpty()) {
       return;
     }
-    b((cj)this.c.remove(0));
+    b((cj)c.remove(0));
   }
   
   private void g()
   {
-    for (int ☃ = 0; ☃ < this.d.size(); ☃++)
+    for (int ☃ = 0; ☃ < d.size(); ☃++)
     {
-      te ☃ = (te)this.d.get(☃);
+      te ☃ = (te)d.get(☃);
       tf ☃ = a(☃.d(), 32);
       if (☃ == null)
       {
-        ☃ = new tf(this.b);
-        this.e.add(☃);
+        ☃ = new tf(b);
+        e.add(☃);
         c();
       }
       ☃.a(☃);
     }
-    this.d.clear();
+    d.clear();
   }
   
   private void b(cj ☃)
@@ -132,7 +132,7 @@ public class th
             if (☃ == null) {
               d(☃);
             } else {
-              ☃.a(this.f);
+              ☃.a(f);
             }
           }
         }
@@ -142,12 +142,12 @@ public class th
   
   private te c(cj ☃)
   {
-    for (te ☃ : this.d) {
+    for (te ☃ : d) {
       if ((☃.d().n() == ☃.n()) && (☃.d().p() == ☃.p()) && (Math.abs(☃.d().o() - ☃.o()) <= 1)) {
         return ☃;
       }
     }
-    for (tf ☃ : this.e)
+    for (tf ☃ : e)
     {
       te ☃ = ☃.e(☃);
       if (☃ != null) {
@@ -159,13 +159,13 @@ public class th
   
   private void d(cj ☃)
   {
-    cq ☃ = agh.h(this.b, ☃);
+    cq ☃ = agh.h(b, ☃);
     cq ☃ = ☃.d();
     
     int ☃ = a(☃, ☃, 5);
     int ☃ = a(☃, ☃, ☃ + 1);
     if (☃ != ☃) {
-      this.d.add(new te(☃, ☃ < ☃ ? ☃ : ☃, this.f));
+      d.add(new te(☃, ☃ < ☃ ? ☃ : ☃, f));
     }
   }
   
@@ -173,7 +173,7 @@ public class th
   {
     int ☃ = 0;
     for (int ☃ = 1; ☃ <= 5; ☃++) {
-      if (this.b.i(☃.a(☃, ☃)))
+      if (b.i(☃.a(☃, ☃)))
       {
         ☃++;
         if (☃ >= ☃) {
@@ -186,7 +186,7 @@ public class th
   
   private boolean e(cj ☃)
   {
-    for (cj ☃ : this.c) {
+    for (cj ☃ : c) {
       if (☃.equals(☃)) {
         return true;
       }
@@ -196,7 +196,7 @@ public class th
   
   private boolean f(cj ☃)
   {
-    afh ☃ = this.b.p(☃).c();
+    afh ☃ = b.p(☃).c();
     if ((☃ instanceof agh)) {
       return ☃.t() == arm.d;
     }
@@ -205,22 +205,22 @@ public class th
   
   public void a(dn ☃)
   {
-    this.f = ☃.f("Tick");
+    f = ☃.f("Tick");
     du ☃ = ☃.c("Villages", 10);
     for (int ☃ = 0; ☃ < ☃.c(); ☃++)
     {
       dn ☃ = ☃.b(☃);
       tf ☃ = new tf();
       ☃.a(☃);
-      this.e.add(☃);
+      e.add(☃);
     }
   }
   
   public void b(dn ☃)
   {
-    ☃.a("Tick", this.f);
+    ☃.a("Tick", f);
     du ☃ = new du();
-    for (tf ☃ : this.e)
+    for (tf ☃ : e)
     {
       dn ☃ = new dn();
       ☃.b(☃);

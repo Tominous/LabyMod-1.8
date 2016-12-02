@@ -8,10 +8,10 @@ public class jy
   
   protected jy(int ☃, String... ☃)
   {
-    this.a = (StringUtils.isEmpty(☃[0]) ? "minecraft" : ☃[0].toLowerCase());
-    this.b = ☃[1];
+    a = (StringUtils.isEmpty(☃[0]) ? "minecraft" : ☃[0].toLowerCase());
+    b = ☃[1];
     
-    Validate.notNull(this.b);
+    Validate.notNull(b);
   }
   
   public jy(String ☃)
@@ -40,17 +40,17 @@ public class jy
   
   public String a()
   {
-    return this.b;
+    return b;
   }
   
   public String b()
   {
-    return this.a;
+    return a;
   }
   
   public String toString()
   {
-    return this.a + ':' + this.b;
+    return a + ':' + b;
   }
   
   public boolean equals(Object ☃)
@@ -62,13 +62,13 @@ public class jy
     {
       jy ☃ = (jy)☃;
       
-      return (this.a.equals(☃.a)) && (this.b.equals(☃.b));
+      return (a.equals(a)) && (b.equals(b));
     }
     return false;
   }
   
   public int hashCode()
   {
-    return 31 * this.a.hashCode() + this.b.hashCode();
+    return 31 * a.hashCode() + b.hashCode();
   }
 }

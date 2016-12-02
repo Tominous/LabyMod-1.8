@@ -18,8 +18,8 @@ public class Protocol
   
   public Protocol()
   {
-    this.protocol = new HashMap();
-    this.packets = new HashMap();
+    protocol = new HashMap();
+    packets = new HashMap();
     
     register(0, PacketHelloPing.class, EnumConnectionState.HELLO);
     register(1, PacketHelloPong.class, EnumConnectionState.HELLO);
@@ -54,13 +54,13 @@ public class Protocol
     register(63, PacketPong.class, EnumConnectionState.ALL);
     register(64, PacketServerMessage.class, EnumConnectionState.ALL);
     register(65, PacketMessage.class, EnumConnectionState.ALL);
-    register(66, PacketBanned.class, EnumConnectionState.ALL);
+    register(66, PacketMessages.class, EnumConnectionState.ALL);
     register(67, PacketChatVisibilityChange.class, EnumConnectionState.ALL);
   }
   
   public Map<Integer, Class<? extends Packet>> getPackets()
   {
-    return this.packets;
+    return packets;
   }
   
   private final void register(int id, Class<? extends Packet> clazz, EnumConnectionState state)
@@ -68,8 +68,8 @@ public class Protocol
     try
     {
       clazz.newInstance();
-      this.packets.put(Integer.valueOf(id), clazz);
-      this.protocol.put(clazz, state);
+      packets.put(Integer.valueOf(id), clazz);
+      protocol.put(clazz, state);
     }
     catch (Exception e)
     {
@@ -80,15 +80,15 @@ public class Protocol
   public Packet getPacket(int id)
     throws IllegalAccessException, InstantiationException
   {
-    if (!this.packets.containsKey(Integer.valueOf(id))) {
+    if (!packets.containsKey(Integer.valueOf(id))) {
       throw new RuntimeException("Packet with id " + id + " is not registered.");
     }
-    return (Packet)((Class)this.packets.get(Integer.valueOf(id))).newInstance();
+    return (Packet)((Class)packets.get(Integer.valueOf(id))).newInstance();
   }
   
   public int getPacketId(Packet packet)
   {
-    for (Map.Entry<Integer, Class<? extends Packet>> entry : this.packets.entrySet())
+    for (Map.Entry<Integer, Class<? extends Packet>> entry : packets.entrySet())
     {
       Class<? extends Packet> clazz = (Class)entry.getValue();
       if (clazz.isInstance(packet)) {

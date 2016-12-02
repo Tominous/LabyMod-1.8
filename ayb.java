@@ -16,16 +16,16 @@ public class ayb
   
   public ayb(axu par1GuiScreen, avh par2GameSettings)
   {
-    this.f = par1GuiScreen;
-    this.g = par2GameSettings;
+    f = par1GuiScreen;
+    g = par2GameSettings;
   }
   
   public void b()
   {
-    this.a = bnq.a("options.videoTitle", new Object[0]);
-    this.n.clear();
+    a = bnq.a("options.videoTitle", new Object[0]);
+    n.clear();
     
-    this.is64bit = false;
+    is64bit = false;
     String[] var1 = { "sun.arch.data.model", "com.ibm.vm.bitmode", "os.arch" };
     String[] var2 = var1;
     int var3 = var1.length;
@@ -35,12 +35,12 @@ public class ayb
       String var6 = System.getProperty(var5);
       if ((var6 != null) && (var6.contains("64")))
       {
-        this.is64bit = true;
+        is64bit = true;
         break;
       }
     }
     int var8 = 0;
-    var3 = this.is64bit ? 0 : -15;
+    var3 = is64bit ? 0 : -15;
     avh.a[] var9 = i;
     int var10 = var9.length;
     
@@ -50,98 +50,98 @@ public class ayb
       avh.a var7 = var9[var11];
       if (var7 != null)
       {
-        int x = this.l / 2 - 155 + var11 % 2 * 160;
-        int y = this.m / 6 + 21 * (var11 / 2) - 12;
+        int x = l / 2 - 155 + var11 % 2 * 160;
+        int y = m / 6 + 21 * (var11 / 2) - 12;
         if (var7.a()) {
-          this.n.add(new awj(var7.c(), x, y, var7));
+          n.add(new awj(var7.c(), x, y, var7));
         } else {
-          this.n.add(new awe(var7.c(), x, y, var7, this.g.c(var7)));
+          n.add(new awe(var7.c(), x, y, var7, g.c(var7)));
         }
       }
     }
-    int y = this.m / 6 + 21 * (var11 / 2) - 12;
+    int y = m / 6 + 21 * (var11 / 2) - 12;
     int x = 0;
     
-    x = this.l / 2 - 155 + 0;
-    this.n.add(new awe(231, x, y, "Shaders..."));
+    x = l / 2 - 155 + 0;
+    n.add(new awe(231, x, y, "Shaders..."));
     
-    x = this.l / 2 - 155 + 160;
-    this.n.add(new awe(202, x, y, "Quality..."));
-    
-    y += 21;
-    
-    x = this.l / 2 - 155 + 0;
-    this.n.add(new awe(201, x, y, "Details..."));
-    
-    x = this.l / 2 - 155 + 160;
-    this.n.add(new awe(212, x, y, "Performance..."));
+    x = l / 2 - 155 + 160;
+    n.add(new awe(202, x, y, "Quality..."));
     
     y += 21;
     
-    x = this.l / 2 - 155 + 0;
-    this.n.add(new awe(211, x, y, "Animations..."));
+    x = l / 2 - 155 + 0;
+    n.add(new awe(201, x, y, "Details..."));
     
-    x = this.l / 2 - 155 + 160;
-    this.n.add(new awe(222, x, y, "Other..."));
+    x = l / 2 - 155 + 160;
+    n.add(new awe(212, x, y, "Performance..."));
     
     y += 21;
     
-    this.n.add(new avs(200, this.l / 2 - 100, this.m / 6 + 168 + 11, bnq.a("gui.done", new Object[0])));
+    x = l / 2 - 155 + 0;
+    n.add(new awe(211, x, y, "Animations..."));
+    
+    x = l / 2 - 155 + 160;
+    n.add(new awe(222, x, y, "Other..."));
+    
+    y += 21;
+    
+    n.add(new avs(200, l / 2 - 100, m / 6 + 168 + 11, bnq.a("gui.done", new Object[0])));
   }
   
   protected void a(avs par1GuiButton)
   {
-    if (par1GuiButton.l)
+    if (l)
     {
-      int var2 = this.g.aK;
-      if ((par1GuiButton.k < 200) && ((par1GuiButton instanceof awe)))
+      int var2 = g.aK;
+      if ((k < 200) && ((par1GuiButton instanceof awe)))
       {
-        this.g.a(((awe)par1GuiButton).c(), 1);
-        par1GuiButton.j = this.g.c(avh.a.a(par1GuiButton.k));
+        g.a(((awe)par1GuiButton).c(), 1);
+        j = g.c(avh.a.a(k));
       }
-      if (par1GuiButton.k == 200)
+      if (k == 200)
       {
-        this.j.t.b();
-        this.j.a(this.f);
+        j.t.b();
+        j.a(f);
       }
-      if (this.g.aK != var2)
+      if (g.aK != var2)
       {
-        avr var3 = new avr(this.j);
+        avr var3 = new avr(j);
         int var4 = var3.a();
         int var5 = var3.b();
-        a(this.j, var4, var5);
+        a(j, var4, var5);
       }
-      if (par1GuiButton.k == 201)
+      if (k == 201)
       {
-        this.j.t.b();
-        GuiDetailSettingsOF scr = new GuiDetailSettingsOF(this, this.g);
-        this.j.a(scr);
+        j.t.b();
+        GuiDetailSettingsOF scr = new GuiDetailSettingsOF(this, g);
+        j.a(scr);
       }
-      if (par1GuiButton.k == 202)
+      if (k == 202)
       {
-        this.j.t.b();
-        GuiQualitySettingsOF scr = new GuiQualitySettingsOF(this, this.g);
-        this.j.a(scr);
+        j.t.b();
+        GuiQualitySettingsOF scr = new GuiQualitySettingsOF(this, g);
+        j.a(scr);
       }
-      if (par1GuiButton.k == 211)
+      if (k == 211)
       {
-        this.j.t.b();
-        GuiAnimationSettingsOF scr = new GuiAnimationSettingsOF(this, this.g);
-        this.j.a(scr);
+        j.t.b();
+        GuiAnimationSettingsOF scr = new GuiAnimationSettingsOF(this, g);
+        j.a(scr);
       }
-      if (par1GuiButton.k == 212)
+      if (k == 212)
       {
-        this.j.t.b();
-        GuiPerformanceSettingsOF scr = new GuiPerformanceSettingsOF(this, this.g);
-        this.j.a(scr);
+        j.t.b();
+        GuiPerformanceSettingsOF scr = new GuiPerformanceSettingsOF(this, g);
+        j.a(scr);
       }
-      if (par1GuiButton.k == 222)
+      if (k == 222)
       {
-        this.j.t.b();
-        GuiOtherSettingsOF scr = new GuiOtherSettingsOF(this, this.g);
-        this.j.a(scr);
+        j.t.b();
+        GuiOtherSettingsOF scr = new GuiOtherSettingsOF(this, g);
+        j.a(scr);
       }
-      if (par1GuiButton.k == 231)
+      if (k == 231)
       {
         if ((Config.isAntialiasing()) || (Config.isAntialiasingConfigured()))
         {
@@ -158,18 +158,18 @@ public class ayb
           Config.showGuiMessage("Shaders are not compatible with Fast Render.", "Please set Performance -> Fast Render to OFF.");
           return;
         }
-        this.j.t.b();
-        GuiShaders scr = new GuiShaders(this, this.g);
-        this.j.a(scr);
+        j.t.b();
+        GuiShaders scr = new GuiShaders(this, g);
+        j.a(scr);
       }
-      if (par1GuiButton.k == avh.a.AO_LEVEL.ordinal()) {}
+      if (k == avh.a.AO_LEVEL.ordinal()) {}
     }
   }
   
   public void a(int x, int y, float z)
   {
     c();
-    a(this.q, this.a, this.l / 2, 15, 16777215);
+    a(q, a, l / 2, 15, 16777215);
     
     String ver = Config.getVersion();
     String ed = "HD_U";
@@ -182,26 +182,26 @@ public class ayb
     if (ed.equals("L")) {
       ver = "OptiFine G7 Light";
     }
-    c(this.q, ver, 2, this.m - 10, 8421504);
+    c(q, ver, 2, m - 10, 8421504);
     
     String verMc = "Minecraft 1.8.8";
-    int lenMc = this.q.a(verMc);
-    c(this.q, verMc, this.l - lenMc - 2, this.m - 10, 8421504);
-    if ((!this.is64bit) && (this.g.c > 8)) {}
+    int lenMc = q.a(verMc);
+    c(q, verMc, l - lenMc - 2, m - 10, 8421504);
+    if ((!is64bit) && (g.c > 8)) {}
     super.a(x, y, z);
-    if ((Math.abs(x - this.lastMouseX) > 5) || (Math.abs(y - this.lastMouseY) > 5))
+    if ((Math.abs(x - lastMouseX) > 5) || (Math.abs(y - lastMouseY) > 5))
     {
-      this.lastMouseX = x;
-      this.lastMouseY = y;
-      this.mouseStillTime = System.currentTimeMillis();
+      lastMouseX = x;
+      lastMouseY = y;
+      mouseStillTime = System.currentTimeMillis();
       return;
     }
     int activateDelay = 700;
-    if (System.currentTimeMillis() < this.mouseStillTime + activateDelay) {
+    if (System.currentTimeMillis() < mouseStillTime + activateDelay) {
       return;
     }
-    int x1 = this.l / 2 - 150;
-    int y1 = this.m / 6 - 7;
+    int x1 = l / 2 - 150;
+    int y1 = m / 6 - 7;
     if (y <= y1 + 98) {
       y1 += 105;
     }
@@ -211,7 +211,7 @@ public class ayb
     avs btn = getSelectedButton(x, y);
     if (btn != null)
     {
-      String s = getButtonName(btn.j);
+      String s = getButtonName(j);
       String[] lines = getTooltipLines(s);
       if (lines == null) {
         return;
@@ -220,7 +220,7 @@ public class ayb
       for (int i = 0; i < lines.length; i++)
       {
         String line = lines[i];
-        this.q.a(line, x1 + 5, y1 + 5 + i * 11, 14540253);
+        q.a(line, x1 + 5, y1 + 5 + i * 11, 14540253);
       }
     }
   }
@@ -289,10 +289,10 @@ public class ayb
   
   private avs getSelectedButton(int i, int j)
   {
-    for (int k = 0; k < this.n.size(); k++)
+    for (int k = 0; k < n.size(); k++)
     {
-      avs btn = (avs)this.n.get(k);
-      boolean flag = (i >= btn.h) && (j >= btn.i) && (i < btn.h + btn.f) && (j < btn.i + btn.g);
+      avs btn = (avs)n.get(k);
+      boolean flag = (i >= h) && (j >= i) && (i < h + f) && (j < i + g);
       if (flag) {
         return btn;
       }
@@ -302,11 +302,11 @@ public class ayb
   
   public static int getButtonWidth(avs btn)
   {
-    return btn.f;
+    return f;
   }
   
   public static int getButtonHeight(avs btn)
   {
-    return btn.g;
+    return g;
   }
 }

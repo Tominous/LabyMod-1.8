@@ -12,22 +12,22 @@ public class aqj$l
   {
     super(☃);
     
-    this.m = ☃;
-    this.l = ☃;
+    m = ☃;
+    l = ☃;
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
     
-    this.b = ☃.n("Mob");
+    b = ☃.n("Mob");
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
     
-    ☃.a("Mob", this.b);
+    ☃.a("Mob", b);
   }
   
   public static l a(List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, int ☃, cq ☃)
@@ -62,12 +62,12 @@ public class aqj$l
     a(☃, ☃, 6, 6, 3, 6, 6, 8, afi.bz.Q(), afi.bz.Q(), false);
     a(☃, ☃, 1, 6, 8, 5, 7, 8, afi.bz.Q(), afi.bz.Q(), false);
     a(☃, ☃, 2, 8, 8, 4, 8, 8, afi.bz.Q(), afi.bz.Q(), false);
-    if (!this.b)
+    if (!b)
     {
       cj ☃ = new cj(a(3, 5), d(5), b(3, 5));
       if (☃.b(☃))
       {
-        this.b = true;
+        b = true;
         ☃.a(☃, afi.ac.Q(), 2);
         
         akw ☃ = ☃.s(☃);

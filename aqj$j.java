@@ -12,24 +12,24 @@ public class aqj$j
   {
     super(☃);
     
-    this.m = ☃;
-    this.l = ☃;
+    m = ☃;
+    l = ☃;
     
-    this.b = (☃.nextInt(3) == 0);
+    b = (☃.nextInt(3) == 0);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
     
-    this.b = ☃.n("Chest");
+    b = ☃.n("Chest");
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
     
-    ☃.a("Chest", this.b);
+    ☃.a("Chest", b);
   }
   
   public void a(aqt ☃, List<aqt> ☃, Random ☃)
@@ -61,10 +61,10 @@ public class aqj$j
     a(☃, ☃, 1, 2, 4, 4, 5, 4, afi.by.Q(), afi.by.Q(), false);
     a(☃, ☃, 1, 3, 4, 1, 4, 4, afi.bz.Q(), afi.by.Q(), false);
     a(☃, ☃, 3, 3, 4, 3, 4, 4, afi.bz.Q(), afi.by.Q(), false);
-    if ((this.b) && 
+    if ((b) && 
       (☃.b(new cj(a(1, 3), d(2), b(1, 3)))))
     {
-      this.b = false;
+      b = false;
       a(☃, ☃, ☃, 1, 2, 3, a, 2 + ☃.nextInt(4));
     }
     a(☃, ☃, 0, 6, 0, 4, 6, 4, afi.by.Q(), afi.by.Q(), false);

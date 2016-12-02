@@ -11,9 +11,9 @@ public class df
   
   public df(int ☃, int ☃, int ☃)
   {
-    this.a = ☃;
-    this.c = ☃;
-    this.d = ☃;
+    a = ☃;
+    c = ☃;
+    d = ☃;
   }
   
   public df(double ☃, double ☃, double ☃)
@@ -61,17 +61,17 @@ public class df
   
   public int n()
   {
-    return this.a;
+    return a;
   }
   
   public int o()
   {
-    return this.c;
+    return c;
   }
   
   public int p()
   {
-    return this.d;
+    return d;
   }
   
   public df d(df ☃)

@@ -10,34 +10,34 @@ public class sm
   public sm(py ☃, boolean ☃, Class... ☃)
   {
     super(☃, false);
-    this.a = ☃;
-    this.c = ☃;
+    a = ☃;
+    c = ☃;
     a(1);
   }
   
   public boolean a()
   {
-    int ☃ = this.e.be();
-    return (☃ != this.b) && (a(this.e.bd(), false));
+    int ☃ = e.be();
+    return (☃ != b) && (a(e.bd(), false));
   }
   
   public void c()
   {
-    this.e.d(this.e.bd());
-    this.b = this.e.be();
-    if (this.a)
+    e.d(e.bd());
+    b = e.be();
+    if (a)
     {
       double ☃ = f();
-      List<py> ☃ = this.e.o.a(this.e.getClass(), new aug(this.e.s, this.e.t, this.e.u, this.e.s + 1.0D, this.e.t + 1.0D, this.e.u + 1.0D).b(☃, 10.0D, ☃));
+      List<py> ☃ = e.o.a(e.getClass(), new aug(e.s, e.t, e.u, e.s + 1.0D, e.t + 1.0D, e.u + 1.0D).b(☃, 10.0D, ☃));
       for (py ☃ : ☃) {
-        if ((this.e != ☃) && 
+        if ((e != ☃) && 
         
           (☃.u() == null) && 
           
-          (!☃.c(this.e.bd())))
+          (!☃.c(e.bd())))
         {
           boolean ☃ = false;
-          for (Class ☃ : this.c) {
+          for (Class ☃ : c) {
             if (☃.getClass() == ☃)
             {
               ☃ = true;
@@ -45,7 +45,7 @@ public class sm
             }
           }
           if (!☃) {
-            a(☃, this.e.bd());
+            a(☃, e.bd());
           }
         }
       }

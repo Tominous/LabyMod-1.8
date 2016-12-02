@@ -22,6 +22,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
+import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,12 +32,12 @@ public class bnm
   private static final Logger c = ;
   private static final FileFilter d = new FileFilter()
   {
-    public boolean accept(File ☃)
+    public boolean accept(File p_accept_1_)
     {
-      boolean ☃ = (☃.isFile()) && (☃.getName().endsWith(".zip"));
-      boolean ☃ = (☃.isDirectory()) && (new File(☃, "pack.mcmeta").isFile());
-      
-      return (☃) || (☃);
+      boolean flag = (p_accept_1_.isFile()) && (p_accept_1_.getName().endsWith(".zip"));
+      boolean flag1 = (p_accept_1_.isDirectory()) && (new File(p_accept_1_, "pack.mcmeta").isFile());
+      boolean flag2 = (p_accept_1_.isDirectory()) && (p_accept_1_.getName().startsWith("dir_"));
+      return (flag) || (flag1) || (flag2);
     }
   };
   private final File e;
@@ -49,221 +50,273 @@ public class bnm
   private List<bnm.a> j = Lists.newArrayList();
   private List<bnm.a> k = Lists.newArrayList();
   
-  public bnm(File ☃, File ☃, bnk ☃, bny ☃, avh ☃)
+  public bnm(File dirResourcepacksIn, File dirServerResourcepacksIn, bnk rprDefaultResourcePackIn, bny rprMetadataSerializerIn, avh settings)
   {
-    this.e = ☃;
-    this.f = ☃;
-    this.a = ☃;
-    this.b = ☃;
-    
+    e = dirResourcepacksIn;
+    f = dirServerResourcepacksIn;
+    a = rprDefaultResourcePackIn;
+    b = rprMetadataSerializerIn;
     g();
-    
     a();
-    for (Iterator<String> ☃ = ☃.k.iterator(); ☃.hasNext();)
+    Iterator<String> iterator = k.iterator();
+    String s;
+    while (iterator.hasNext())
     {
-      ☃ = (String)☃.next();
-      for (bnm.a ☃ : this.j) {
-        if (☃.d().equals(☃))
+      s = (String)iterator.next();
+      for (bnm.a resourcepackrepository$entry : j) {
+        if (resourcepackrepository$entry.d().equals(s))
         {
-          if ((☃.f() == 1) || (☃.l.contains(☃.d())))
+          if ((resourcepackrepository$entry.f() == 1) || (l.contains(resourcepackrepository$entry.d())))
           {
-            this.k.add(☃);
+            k.add(resourcepackrepository$entry);
             break;
           }
-          ☃.remove();
-          c.warn("Removed selected resource pack {} because it's no longer compatible", new Object[] { ☃.d() });
+          iterator.remove();
+          c.warn("Removed selected resource pack {} because it's no longer compatible", new Object[] { resourcepackrepository$entry.d() });
         }
       }
     }
-    String ☃;
   }
   
   private void g()
   {
-    if (this.e.exists())
+    if (e.exists())
     {
-      if ((!this.e.isDirectory()) && ((!this.e.delete()) || (!this.e.mkdirs()))) {
-        c.warn("Unable to recreate resourcepack folder, it exists but is not a directory: " + this.e);
+      if ((!e.isDirectory()) && ((!e.delete()) || (!e.mkdirs()))) {
+        c.warn("Unable to recreate resourcepack folder, it exists but is not a directory: " + e);
       }
     }
-    else if (!this.e.mkdirs()) {
-      c.warn("Unable to create resourcepack folder: " + this.e);
+    else if (!e.mkdirs()) {
+      c.warn("Unable to create resourcepack folder: " + e);
     }
   }
   
   private List<File> h()
   {
-    if (this.e.isDirectory()) {
-      return Arrays.asList(this.e.listFiles(d));
-    }
-    return Collections.emptyList();
+    return e.isDirectory() ? Arrays.asList(e.listFiles(d)) : Collections.emptyList();
   }
   
   public void a()
   {
-    List<bnm.a> ☃ = Lists.newArrayList();
-    for (File ☃ : h())
+    List<bnm.a> list = Lists.newArrayList();
+    
+    readAllAndFill(list, h(), "");
+    
+    j.removeAll(list);
+    for (bnm.a resourcepackrepository$entry1 : j) {
+      resourcepackrepository$entry1.b();
+    }
+    j = list;
+  }
+  
+  private void readAllAndFill(List<bnm.a> list, List<File> files, String path)
+  {
+    for (File file1 : files)
     {
-      bnm.a ☃ = new bnm.a(☃, null);
-      if (!this.j.contains(☃))
+      if ((file1.isDirectory()) && (file1.getName().startsWith("dir_")) && (path.isEmpty()))
       {
-        try
-        {
-          ☃.a();
-          ☃.add(☃);
-        }
-        catch (Exception ☃)
-        {
-          ☃.remove(☃);
+        File[] dirFiles = file1.listFiles();
+        if ((dirFiles != null) && (dirFiles.length != 0)) {
+          readAllAndFill(list, Arrays.asList(dirFiles), file1.getName());
         }
       }
-      else
+      if ((!file1.isDirectory()) || (!file1.getName().startsWith("dir_")))
       {
-        int ☃ = this.j.indexOf(☃);
-        if ((☃ > -1) && (☃ < this.j.size())) {
-          ☃.add(this.j.get(☃));
+        bnm.a resourcepackrepository$entry = new bnm.a(file1, null);
+        if (!j.contains(resourcepackrepository$entry))
+        {
+          try
+          {
+            resourcepackrepository$entry.a();
+            list.add(resourcepackrepository$entry);
+          }
+          catch (Exception var6)
+          {
+            list.remove(resourcepackrepository$entry);
+          }
         }
+        else
+        {
+          int i = j.indexOf(resourcepackrepository$entry);
+          if ((i > -1) && (i < j.size())) {
+            list.add(j.get(i));
+          }
+        }
+        resourcepackrepository$entry.setDirPath(path.replaceFirst("dir_", ""));
       }
     }
-    this.j.removeAll(☃);
-    for (bnm.a ☃ : this.j) {
-      ☃.b();
-    }
-    this.j = ☃;
   }
   
   public List<bnm.a> b()
   {
-    return ImmutableList.copyOf(this.j);
+    return ImmutableList.copyOf(j);
   }
   
   public List<bnm.a> c()
   {
-    return ImmutableList.copyOf(this.k);
+    return ImmutableList.copyOf(k);
   }
   
-  public void a(List<bnm.a> ☃)
+  public void a(List<bnm.a> p_148527_1_)
   {
-    this.k.clear();
-    this.k.addAll(☃);
+    k.clear();
+    k.addAll(p_148527_1_);
   }
   
   public File d()
   {
-    return this.e;
+    return e;
   }
   
-  public ListenableFuture<Object> a(String ☃, String ☃)
+  public ListenableFuture<Object> a(String url, String hash)
   {
-    String ☃;
-    String ☃;
-    if (☃.matches("^[a-f0-9]{40}$")) {
-      ☃ = ☃;
+    String s;
+    String s;
+    if (hash.matches("^[a-f0-9]{40}$")) {
+      s = hash;
     } else {
-      ☃ = "legacy";
+      s = "legacy";
     }
-    final File ☃ = new File(this.f, ☃);
-    
-    this.h.lock();
+    final File file1 = new File(f, s);
+    h.lock();
     try
     {
       f();
-      if ((☃.exists()) && (☃.length() == 40)) {
+      if ((file1.exists()) && (hash.length() == 40)) {
         try
         {
-          String ☃ = Hashing.sha1().hashBytes(Files.toByteArray(☃)).toString();
-          if (☃.equals(☃)) {
-            return a(☃);
+          String s1 = Hashing.sha1().hashBytes(Files.toByteArray(file1)).toString();
+          if (s1.equals(hash))
+          {
+            ListenableFuture listenablefuture1 = a(file1);
+            return listenablefuture1;
           }
-          c.warn("File " + ☃ + " had wrong hash (expected " + ☃ + ", found " + ☃ + "). Deleting it.");
-          FileUtils.deleteQuietly(☃);
+          c.warn("File " + file1 + " had wrong hash (expected " + hash + ", found " + s1 + "). Deleting it.");
+          FileUtils.deleteQuietly(file1);
         }
-        catch (IOException ☃)
+        catch (IOException ioexception)
         {
-          c.warn("File " + ☃ + " couldn't be hashed. Deleting it.", ☃);
-          FileUtils.deleteQuietly(☃);
+          c.warn("File " + file1 + " couldn't be hashed. Deleting it.", ioexception);
+          FileUtils.deleteQuietly(file1);
         }
       }
       i();
-      
-      final axr ☃ = new axr();
-      Object ☃ = ave.ak();
-      
-      final ave ☃ = ave.A();
-      Futures.getUnchecked(☃.a(new Runnable()
+      final axr guiscreenworking = new axr();
+      Map<String, String> map = ave.ak();
+      final ave minecraft = ave.A();
+      Futures.getUnchecked(minecraft.a(new Runnable()
       {
         public void run()
         {
-          ☃.a(☃);
+          minecraft.a(guiscreenworking);
         }
       }));
-      final SettableFuture<Object> ☃ = SettableFuture.create();
-      this.i = nj.a(☃, ☃, (Map)☃, 52428800, ☃, ☃.O());
-      Futures.addCallback(this.i, new FutureCallback()
+      final SettableFuture<Object> settablefuture = SettableFuture.create();
+      i = nj.a(file1, url, map, 52428800, guiscreenworking, minecraft.O());
+      Futures.addCallback(i, new FutureCallback()
       {
-        public void onSuccess(Object ☃)
+        public void onSuccess(Object p_onSuccess_1_)
         {
-          bnm.this.a(☃);
-          ☃.set(null);
+          a(file1);
+          settablefuture.set(null);
         }
         
-        public void onFailure(Throwable ☃)
+        public void onFailure(Throwable p_onFailure_1_)
         {
-          ☃.setException(☃);
+          settablefuture.setException(p_onFailure_1_);
         }
       });
-      return this.i;
+      ListenableFuture listenablefuture = i;
+      return listenablefuture;
     }
     finally
     {
-      this.h.unlock();
+      h.unlock();
     }
   }
   
   private void i()
   {
-    List<File> ☃ = Lists.newArrayList(FileUtils.listFiles(this.f, TrueFileFilter.TRUE, null));
-    Collections.sort(☃, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
-    int ☃ = 0;
-    for (File ☃ : ☃) {
-      if (☃++ >= 10)
+    List<File> list = Lists.newArrayList(FileUtils.listFiles(f, TrueFileFilter.TRUE, (IOFileFilter)null));
+    Collections.sort(list, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
+    int i = 0;
+    for (File file1 : list) {
+      if (i++ >= 10)
       {
-        c.info("Deleting old server resource pack " + ☃.getName());
-        FileUtils.deleteQuietly(☃);
+        c.info("Deleting old server resource pack " + file1.getName());
+        FileUtils.deleteQuietly(file1);
       }
     }
   }
   
-  public ListenableFuture<Object> a(File ☃)
+  public ListenableFuture<Object> a(File p_177319_1_)
   {
-    this.g = new bnc(☃);
+    g = new bnc(p_177319_1_);
     return ave.A().B();
   }
   
   public bnk e()
   {
-    return this.g;
+    return g;
   }
   
+  /* Error */
   public void f()
   {
-    this.h.lock();
-    try
-    {
-      if (this.i != null) {
-        this.i.cancel(true);
-      }
-      this.i = null;
-      if (this.g != null)
-      {
-        this.g = null;
-        ave.A().B();
-      }
-    }
-    finally
-    {
-      this.h.unlock();
-    }
+    // Byte code:
+    //   0: aload_0
+    //   1: getfield 44	bnm:h	Ljava/util/concurrent/locks/ReentrantLock;
+    //   4: invokevirtual 286	java/util/concurrent/locks/ReentrantLock:lock	()V
+    //   7: aload_0
+    //   8: getfield 382	bnm:i	Lcom/google/common/util/concurrent/ListenableFuture;
+    //   11: ifnull +14 -> 25
+    //   14: aload_0
+    //   15: getfield 382	bnm:i	Lcom/google/common/util/concurrent/ListenableFuture;
+    //   18: iconst_1
+    //   19: invokeinterface 456 2 0
+    //   24: pop
+    //   25: aload_0
+    //   26: aconst_null
+    //   27: putfield 382	bnm:i	Lcom/google/common/util/concurrent/ListenableFuture;
+    //   30: aload_0
+    //   31: getfield 444	bnm:g	Lbnk;
+    //   34: ifnull +15 -> 49
+    //   37: aload_0
+    //   38: aconst_null
+    //   39: putfield 444	bnm:g	Lbnk;
+    //   42: invokestatic 352	ave:A	()Lave;
+    //   45: invokevirtual 448	ave:B	()Lcom/google/common/util/concurrent/ListenableFuture;
+    //   48: pop
+    //   49: aload_0
+    //   50: getfield 44	bnm:h	Ljava/util/concurrent/locks/ReentrantLock;
+    //   53: invokevirtual 318	java/util/concurrent/locks/ReentrantLock:unlock	()V
+    //   56: goto +13 -> 69
+    //   59: astore_1
+    //   60: aload_0
+    //   61: getfield 44	bnm:h	Ljava/util/concurrent/locks/ReentrantLock;
+    //   64: invokevirtual 318	java/util/concurrent/locks/ReentrantLock:unlock	()V
+    //   67: aload_1
+    //   68: athrow
+    //   69: return
+    // Line number table:
+    //   Java source line #304	-> byte code offset #0
+    //   Java source line #308	-> byte code offset #7
+    //   Java source line #310	-> byte code offset #14
+    //   Java source line #313	-> byte code offset #25
+    //   Java source line #315	-> byte code offset #30
+    //   Java source line #317	-> byte code offset #37
+    //   Java source line #318	-> byte code offset #42
+    //   Java source line #323	-> byte code offset #49
+    //   Java source line #324	-> byte code offset #56
+    //   Java source line #323	-> byte code offset #59
+    //   Java source line #325	-> byte code offset #69
+    // Local variable table:
+    //   start	length	slot	name	signature
+    //   0	70	0	this	bnm
+    //   59	9	1	localObject	Object
+    // Exception table:
+    //   from	to	target	type
+    //   7	49	59	finally
   }
   
   public class a
@@ -273,73 +326,82 @@ public class bnm
     private boj d;
     private BufferedImage e;
     private jy f;
+    private String dirPath = "";
     
-    private a(File ☃)
+    private a(File resourcePackFileIn)
     {
-      this.b = ☃;
+      b = resourcePackFileIn;
+    }
+    
+    public void setDirPath(String path)
+    {
+      dirPath = path;
+    }
+    
+    public String getDirPath()
+    {
+      return dirPath;
+    }
+    
+    public File getResourcePackFile()
+    {
+      return b;
     }
     
     public void a()
       throws IOException
     {
-      this.c = (this.b.isDirectory() ? new bnd(this.b) : new bnc(this.b));
-      
-      this.d = ((boj)this.c.a(bnm.this.b, "pack"));
+      c = (b.isDirectory() ? new bnd(b) : new bnc(b));
+      d = ((boj)c.a(b, "pack"));
       try
       {
-        this.e = this.c.a();
+        e = c.a();
       }
       catch (IOException localIOException) {}
-      if (this.e == null) {
-        this.e = bnm.this.a.a();
+      if (e == null) {
+        e = a.a();
       }
       b();
     }
     
-    public void a(bmj ☃)
+    public void a(bmj textureManagerIn)
     {
-      if (this.f == null) {
-        this.f = ☃.a("texturepackicon", new blz(this.e));
+      if (f == null) {
+        f = textureManagerIn.a("texturepackicon", new blz(e));
       }
-      ☃.a(this.f);
+      textureManagerIn.a(f);
     }
     
     public void b()
     {
-      if ((this.c instanceof Closeable)) {
-        IOUtils.closeQuietly((Closeable)this.c);
+      if ((c instanceof Closeable)) {
+        IOUtils.closeQuietly((Closeable)c);
       }
     }
     
     public bnk c()
     {
-      return this.c;
+      return c;
     }
     
     public String d()
     {
-      return this.c.b();
+      return c.b();
     }
     
     public String e()
     {
-      return this.d == null ? a.m + "Invalid pack.mcmeta (or missing 'pack' section)" : this.d.a().d();
+      return d == null ? a.m + "Invalid pack.mcmeta (or missing 'pack' section)" : d.a().d();
     }
     
     public int f()
     {
-      return this.d.b();
+      return d.b();
     }
     
-    public boolean equals(Object ☃)
+    public boolean equals(Object p_equals_1_)
     {
-      if (this == ☃) {
-        return true;
-      }
-      if ((☃ instanceof a)) {
-        return toString().equals(☃.toString());
-      }
-      return false;
+      return this == p_equals_1_;
     }
     
     public int hashCode()
@@ -349,7 +411,7 @@ public class bnm
     
     public String toString()
     {
-      return String.format("%s:%s:%d", new Object[] { this.b.getName(), this.b.isDirectory() ? "folder" : "zip", Long.valueOf(this.b.lastModified()) });
+      return String.format("%s:%s:%d", new Object[] { b.getName(), b.isDirectory() ? "folder" : "zip", Long.valueOf(b.lastModified()) });
     }
   }
 }

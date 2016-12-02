@@ -9,23 +9,23 @@ public abstract class amj<T extends Comparable<T>>
   
   protected amj(String ☃, Class<T> ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public String a()
   {
-    return this.b;
+    return b;
   }
   
   public Class<T> b()
   {
-    return this.a;
+    return a;
   }
   
   public String toString()
   {
-    return Objects.toStringHelper(this).add("name", this.b).add("clazz", this.a).add("values", c()).toString();
+    return Objects.toStringHelper(this).add("name", b).add("clazz", a).add("values", c()).toString();
   }
   
   public boolean equals(Object ☃)
@@ -37,11 +37,11 @@ public abstract class amj<T extends Comparable<T>>
       return false;
     }
     amj ☃ = (amj)☃;
-    return (this.a.equals(☃.a)) && (this.b.equals(☃.b));
+    return (a.equals(a)) && (b.equals(b));
   }
   
   public int hashCode()
   {
-    return 31 * this.a.hashCode() + this.b.hashCode();
+    return 31 * a.hashCode() + b.hashCode();
   }
 }

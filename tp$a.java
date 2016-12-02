@@ -6,7 +6,7 @@ public class tp$a
   
   public tp$a(int ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
 }

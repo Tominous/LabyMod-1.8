@@ -38,14 +38,14 @@ public class Configuration
   {
     try
     {
-      BufferedReader reader = new BufferedReader(new FileReader(this.configFile));
+      BufferedReader reader = new BufferedReader(new FileReader(configFile));
       
       String line = null;
       while ((line = reader.readLine()) != null) {
         if (!line.equals(""))
         {
           String[] optionSplit = line.split(":");
-          this.configValues.put(optionSplit[0], new Property(optionSplit[1]));
+          configValues.put(optionSplit[0], new Property(optionSplit[1]));
         }
       }
       reader.close();
@@ -62,18 +62,18 @@ public class Configuration
   
   public Property get(String key, Object defaultValue)
   {
-    if (!this.configValues.containsKey(key)) {
-      this.configValues.put(key, new Property(defaultValue.toString()));
+    if (!configValues.containsKey(key)) {
+      configValues.put(key, new Property(defaultValue.toString()));
     }
-    return (Property)this.configValues.get(key);
+    return (Property)configValues.get(key);
   }
   
   public void save()
   {
-    this.configFile.delete();
+    configFile.delete();
     try
     {
-      this.configFile.createNewFile();
+      configFile.createNewFile();
     }
     catch (IOException e)
     {
@@ -81,8 +81,8 @@ public class Configuration
     }
     try
     {
-      PrintWriter writer = new PrintWriter(this.configFile);
-      for (Map.Entry<String, Property> values : this.configValues.entrySet()) {
+      PrintWriter writer = new PrintWriter(configFile);
+      for (Map.Entry<String, Property> values : configValues.entrySet()) {
         writer.println((String)values.getKey() + ":" + ((Property)values.getValue()).getValue());
       }
       writer.close();

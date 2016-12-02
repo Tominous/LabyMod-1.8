@@ -10,9 +10,9 @@ class bfl$e
   
   public bfl$e(float p_i46265_1_, float p_i46265_2_, float p_i46265_3_, float p_i46265_4_)
   {
-    this.a = p_i46265_1_;
-    this.b = p_i46265_2_;
-    this.c = p_i46265_3_;
-    this.d = p_i46265_4_;
+    a = p_i46265_1_;
+    b = p_i46265_2_;
+    c = p_i46265_3_;
+    d = p_i46265_4_;
   }
 }

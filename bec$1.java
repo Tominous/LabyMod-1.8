@@ -10,6 +10,6 @@ class bec$1
   public String a()
     throws Exception
   {
-    return this.val$p_178923_1_.toString();
+    return val$p_178923_1_.toString();
   }
 }

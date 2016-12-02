@@ -7,7 +7,7 @@ public class axk
   {
     super.b();
     
-    this.n.add(new avs(1, this.l / 2 - 100, this.m - 40, bnq.a("multiplayer.stopSleeping", new Object[0])));
+    n.add(new avs(1, l / 2 - 100, m - 40, bnq.a("multiplayer.stopSleeping", new Object[0])));
   }
   
   protected void a(char ☃, int ☃)
@@ -18,12 +18,12 @@ public class axk
     }
     else if ((☃ == 28) || (☃ == 156))
     {
-      String ☃ = this.a.b().trim();
+      String ☃ = a.b().trim();
       if (!☃.isEmpty()) {
-        this.j.h.e(☃);
+        j.h.e(☃);
       }
-      this.a.a("");
-      this.j.q.d().d();
+      a.a("");
+      j.q.d().d();
     }
     else
     {
@@ -33,7 +33,7 @@ public class axk
   
   protected void a(avs ☃)
   {
-    if (☃.k == 1) {
+    if (k == 1) {
       f();
     } else {
       super.a(☃);
@@ -42,7 +42,7 @@ public class axk
   
   private void f()
   {
-    bcy ☃ = this.j.h.a;
-    ☃.a(new is(this.j.h, is.a.c));
+    bcy ☃ = j.h.a;
+    ☃.a(new is(j.h, is.a.c));
   }
 }

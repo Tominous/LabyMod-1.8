@@ -26,14 +26,14 @@ public class bpo
   
   public bpo(ave mcIn)
   {
-    super(mcIn.O(), new File(mcIn.v, a.getName()));
-    this.l = mcIn;
-    this.m = null;
+    super(mcIn.O(), new File(v, a.getName()));
+    l = mcIn;
+    m = null;
   }
   
   public bpo(ave mcIn, String folderName, String worldName, adp settings)
   {
-    super(new File(mcIn.v, "saves"), mcIn.O(), new File(mcIn.v, a.getName()));
+    super(new File(v, "saves"), mcIn.O(), new File(v, a.getName()));
     i(mcIn.L().c());
     j(folderName);
     k(worldName);
@@ -41,8 +41,8 @@ public class bpo
     c(settings.c());
     c(256);
     a(new bpn(this));
-    this.l = mcIn;
-    this.m = (X() ? kx.a : settings);
+    l = mcIn;
+    m = (X() ? kx.a : settings);
   }
   
   protected bd h()
@@ -58,9 +58,9 @@ public class bpo
     ato var8 = var7.d();
     if (Reflector.DimensionManager.exists())
     {
-      le overWorld = X() ? (le)new kx(this, var7, var8, 0, this.c).b() : (le)new WorldServerOF(this, var7, var8, 0, this.c).b();
+      le overWorld = X() ? (le)new kx(this, var7, var8, 0, c).b() : (le)new WorldServerOF(this, var7, var8, 0, c).b();
       
-      overWorld.a(this.m);
+      overWorld.a(m);
       
       Integer[] dimIds = (Integer[])Reflector.call(Reflector.DimensionManager_getStaticDimensionIDs, new Object[0]);
       Integer[] arr$ = dimIds;int len$ = arr$.length;
@@ -68,7 +68,7 @@ public class bpo
       {
         int dim = arr$[i$].intValue();
         
-        le world = dim == 0 ? overWorld : (le)new kz(this, var7, dim, overWorld, this.c).b();
+        le world = dim == 0 ? overWorld : (le)new kz(this, var7, dim, overWorld, c).b();
         
         world.a(new lb(this, world));
         if (!T()) {
@@ -80,21 +80,21 @@ public class bpo
       }
       ap().a(new le[] { overWorld });
       if (overWorld.P().y() == null) {
-        a(this.l.t.ay);
+        a(l.t.ay);
       }
     }
     else
     {
-      this.d = new le[3];
-      this.i = new long[this.d.length][100];
+      d = new le[3];
+      i = new long[d.length][100];
       
       a(U(), var7);
       if (var8 == null) {
-        var8 = new ato(this.m, p_71247_2_);
+        var8 = new ato(m, p_71247_2_);
       } else {
         var8.a(p_71247_2_);
       }
-      for (int var9 = 0; var9 < this.d.length; var9++)
+      for (int var9 = 0; var9 < d.length; var9++)
       {
         byte var10 = 0;
         if (var9 == 1) {
@@ -106,21 +106,21 @@ public class bpo
         if (var9 == 0)
         {
           if (X()) {
-            this.d[var9] = ((le)new kx(this, var7, var8, var10, this.c).b());
+            d[var9] = ((le)new kx(this, var7, var8, var10, c).b());
           } else {
-            this.d[var9] = ((le)new WorldServerOF(this, var7, var8, var10, this.c).b());
+            d[var9] = ((le)new WorldServerOF(this, var7, var8, var10, c).b());
           }
-          this.d[var9].a(this.m);
+          d[var9].a(m);
         }
         else
         {
-          this.d[var9] = ((le)new kz(this, var7, var10, this.d[0], this.c).b());
+          d[var9] = ((le)new kz(this, var7, var10, d[0], c).b());
         }
-        this.d[var9].a(new lb(this, this.d[var9]));
+        d[var9].a(new lb(this, d[var9]));
       }
-      ap().a(this.d);
-      if (this.d[0].P().y() == null) {
-        a(this.l.t.ay);
+      ap().a(d);
+      if (d[0].P().y() == null) {
+        a(l.t.ay);
       }
     }
     k();
@@ -144,8 +144,8 @@ public class bpo
         return false;
       }
     }
-    a(U(), V(), this.m.d(), this.m.h(), this.m.j());
-    l(S() + " - " + this.d[0].P().k());
+    a(U(), V(), m.d(), m.h(), m.j());
+    l(S() + " - " + d[0].P().k());
     if (Reflector.FMLCommonHandler_handleServerStarting.exists())
     {
       Object inst = Reflector.call(Reflector.FMLCommonHandler_instance, new Object[0]);
@@ -159,36 +159,36 @@ public class bpo
   
   public void A()
   {
-    boolean var1 = this.n;
-    this.n = ((ave.A().u() != null) && (ave.A().V()));
-    if ((!var1) && (this.n))
+    boolean var1 = n;
+    n = ((ave.A().u() != null) && (ave.A().V()));
+    if ((!var1) && (n))
     {
       k.info("Saving and pausing game...");
       ap().j();
       a(false);
     }
-    if (this.n)
+    if (n)
     {
-      Queue var2 = this.j;
-      synchronized (this.j)
+      Queue var2 = j;
+      synchronized (j)
       {
-        while (!this.j.isEmpty()) {
-          g.a((FutureTask)this.j.poll(), k);
+        while (!j.isEmpty()) {
+          g.a((FutureTask)j.poll(), k);
         }
       }
     }
     else
     {
       super.A();
-      if (this.l.t.c != ap().s())
+      if (l.t.c != ap().s())
       {
-        k.info("Changing view distance to {}, from {}", new Object[] { Integer.valueOf(this.l.t.c), Integer.valueOf(ap().s()) });
-        ap().a(this.l.t.c);
+        k.info("Changing view distance to {}, from {}", new Object[] { Integer.valueOf(l.t.c), Integer.valueOf(ap().s()) });
+        ap().a(l.t.c);
       }
-      if (this.l.f != null)
+      if (l.f != null)
       {
-        ato var9 = this.d[0].P();
-        ato var3 = this.l.f.P();
+        ato var9 = d[0].P();
+        ato var3 = l.f.P();
         if ((!var9.z()) && (var3.y() != var9.y()))
         {
           k.info("Changing difficulty to {}, from {}", new Object[] { var3.y(), var9.y() });
@@ -197,7 +197,7 @@ public class bpo
         else if ((var3.z()) && (!var9.z()))
         {
           k.info("Locking difficulty to {}", new Object[] { var3.y() });
-          le[] var4 = this.d;
+          le[] var4 = d;
           int var5 = var4.length;
           for (int var6 = 0; var6 < var5; var6++)
           {
@@ -218,20 +218,20 @@ public class bpo
   
   public adp.a m()
   {
-    return this.m.e();
+    return m.e();
   }
   
   public oj n()
   {
-    if (this.l.f == null) {
-      return this.l.t.ay;
+    if (l.f == null) {
+      return l.t.ay;
     }
-    return this.l.f.P().y();
+    return l.f.P().y();
   }
   
   public boolean o()
   {
-    return this.m.f();
+    return m.f();
   }
   
   public boolean q()
@@ -246,7 +246,7 @@ public class bpo
   
   public File y()
   {
-    return this.l.v;
+    return l.v;
   }
   
   public boolean ai()
@@ -261,7 +261,7 @@ public class bpo
   
   protected void a(b report)
   {
-    this.l.a(report);
+    l.a(report);
   }
   
   public b b(b report)
@@ -288,7 +288,7 @@ public class bpo
         if (!var1.equals("vanilla")) {
           return "Definitely; Client brand changed to '" + var1 + "'";
         }
-        var1 = bpo.this.getServerModName();
+        var1 = getServerModName();
         return ave.class.getSigners() == null ? "Very likely; Jar signature invalidated" : !var1.equals("vanilla") ? "Definitely; Server brand changed to '" + var1 + "'" : "Probably not. Jar signature remains and both client + server brands are untouched.";
       }
     });
@@ -298,15 +298,15 @@ public class bpo
   public void a(oj difficulty)
   {
     super.a(difficulty);
-    if (this.l.f != null) {
-      this.l.f.P().a(difficulty);
+    if (l.f != null) {
+      l.f.P().a(difficulty);
     }
   }
   
   public void a(or playerSnooper)
   {
     super.a(playerSnooper);
-    playerSnooper.a("snooper_partner", this.l.I().f());
+    playerSnooper.a("snooper_partner", l.I().f());
   }
   
   public boolean ad()
@@ -329,9 +329,9 @@ public class bpo
       }
       aq().a((InetAddress)null, var3);
       k.info("Started on " + var3);
-      this.o = true;
-      this.p = new bpr(am(), var3 + "");
-      this.p.start();
+      o = true;
+      p = new bpr(am(), var3 + "");
+      p.start();
       ap().a(type);
       ap().c(allowCheats);
       return var3 + "";
@@ -343,10 +343,10 @@ public class bpo
   public void t()
   {
     super.t();
-    if (this.p != null)
+    if (p != null)
     {
-      this.p.interrupt();
-      this.p = null;
+      p.interrupt();
+      p = null;
     }
   }
   
@@ -358,20 +358,20 @@ public class bpo
       
       public void run()
       {
-        ArrayList var1 = Lists.newArrayList(bpo.this.ap().v());
+        ArrayList var1 = Lists.newArrayList(ap().v());
         Iterator var2 = var1.iterator();
         while (var2.hasNext())
         {
           lf var3 = (lf)var2.next();
-          bpo.this.ap().e(var3);
+          ap().e(var3);
         }
       }
     }));
     super.w();
-    if (this.p != null)
+    if (p != null)
     {
-      this.p.interrupt();
-      this.p = null;
+      p.interrupt();
+      p = null;
     }
   }
   
@@ -382,7 +382,7 @@ public class bpo
   
   public boolean b()
   {
-    return this.o;
+    return o;
   }
   
   public void a(adp.a gameMode)

@@ -27,26 +27,26 @@ public class SVertexBuilder
   
   public SVertexBuilder()
   {
-    this.entityData = new long[10];
-    this.entityDataIndex = 0;
-    this.entityData[this.entityDataIndex] = 0L;
+    entityData = new long[10];
+    entityDataIndex = 0;
+    entityData[entityDataIndex] = 0L;
   }
   
   public static void initVertexBuilder(bfd wrr)
   {
-    wrr.sVertexBuilder = new SVertexBuilder();
+    sVertexBuilder = new SVertexBuilder();
   }
   
   public void pushEntity(long data)
   {
-    this.entityDataIndex += 1;
-    this.entityData[this.entityDataIndex] = data;
+    entityDataIndex += 1;
+    entityData[entityDataIndex] = data;
   }
   
   public void popEntity()
   {
-    this.entityData[this.entityDataIndex] = 0L;
-    this.entityDataIndex -= 1;
+    entityData[entityDataIndex] = 0L;
+    entityDataIndex -= 1;
   }
   
   public static void pushEntity(alz blockState, cj blockPos, adq blockAccess, bfd wrr)
@@ -58,65 +58,65 @@ public class SVertexBuilder
     
     int dataLo = ((renderType & 0xFFFF) << 16) + (blockID & 0xFFFF);
     int dataHi = meta & 0xFFFF;
-    wrr.sVertexBuilder.pushEntity((dataHi << 32) + dataLo);
+    sVertexBuilder.pushEntity((dataHi << 32) + dataLo);
   }
   
   public static void popEntity(bfd wrr)
   {
-    wrr.sVertexBuilder.popEntity();
+    sVertexBuilder.popEntity();
   }
   
   public static boolean popEntity(boolean value, bfd wrr)
   {
-    wrr.sVertexBuilder.popEntity();
+    sVertexBuilder.popEntity();
     
     return value;
   }
   
   public static void endSetVertexFormat(bfd wrr)
   {
-    SVertexBuilder svb = wrr.sVertexBuilder;
+    SVertexBuilder svb = sVertexBuilder;
     bmu vf = wrr.g();
-    svb.vertexSize = (vf.g() / 4);
-    svb.hasNormal = vf.b();
-    svb.hasTangent = svb.hasNormal;
-    svb.hasUV = vf.a(0);
-    svb.offsetNormal = (svb.hasNormal ? vf.c() / 4 : 0);
-    svb.offsetUV = (svb.hasUV ? vf.b(0) / 4 : 0);
-    svb.offsetUVCenter = 8;
+    vertexSize = (vf.g() / 4);
+    hasNormal = vf.b();
+    hasTangent = hasNormal;
+    hasUV = vf.a(0);
+    offsetNormal = (hasNormal ? vf.c() / 4 : 0);
+    offsetUV = (hasUV ? vf.b(0) / 4 : 0);
+    offsetUVCenter = 8;
   }
   
   public static void beginAddVertex(bfd wrr)
   {
-    if (wrr.e == 0) {
+    if (e == 0) {
       endSetVertexFormat(wrr);
     }
   }
   
   public static void endAddVertex(bfd wrr)
   {
-    SVertexBuilder svb = wrr.sVertexBuilder;
-    if (svb.vertexSize == 14)
+    SVertexBuilder svb = sVertexBuilder;
+    if (vertexSize == 14)
     {
-      if ((wrr.i == 7) && (wrr.e % 4 == 0)) {
-        svb.calcNormal(wrr, wrr.j() - 4 * svb.vertexSize);
+      if ((i == 7) && (e % 4 == 0)) {
+        svb.calcNormal(wrr, wrr.j() - 4 * vertexSize);
       }
-      long eData = svb.entityData[svb.entityDataIndex];
+      long eData = entityData[entityDataIndex];
       int pos = wrr.j() - 14 + 12;
-      wrr.b.put(pos, (int)eData);
-      wrr.b.put(pos + 1, (int)(eData >> 32));
+      b.put(pos, (int)eData);
+      b.put(pos + 1, (int)(eData >> 32));
     }
   }
   
   public static void beginAddVertexData(bfd wrr, int[] data)
   {
-    if (wrr.e == 0) {
+    if (e == 0) {
       endSetVertexFormat(wrr);
     }
-    SVertexBuilder svb = wrr.sVertexBuilder;
-    if (svb.vertexSize == 14)
+    SVertexBuilder svb = sVertexBuilder;
+    if (vertexSize == 14)
     {
-      long eData = svb.entityData[svb.entityDataIndex];
+      long eData = entityData[entityDataIndex];
       for (int pos = 12; pos + 1 < data.length; pos += 14)
       {
         data[pos] = ((int)eData);
@@ -127,10 +127,10 @@ public class SVertexBuilder
   
   public static void endAddVertexData(bfd wrr)
   {
-    SVertexBuilder svb = wrr.sVertexBuilder;
-    if (svb.vertexSize == 14) {
-      if ((wrr.i == 7) && (wrr.e % 4 == 0)) {
-        svb.calcNormal(wrr, wrr.j() - 4 * svb.vertexSize);
+    SVertexBuilder svb = sVertexBuilder;
+    if (vertexSize == 14) {
+      if ((i == 7) && (e % 4 == 0)) {
+        svb.calcNormal(wrr, wrr.j() - 4 * vertexSize);
       }
     }
   }
@@ -138,30 +138,30 @@ public class SVertexBuilder
   public void calcNormal(bfd wrr, int baseIndex)
   {
     SVertexBuilder svb = this;
-    FloatBuffer floatBuffer = wrr.d;
-    IntBuffer intBuffer = wrr.b;
+    FloatBuffer floatBuffer = d;
+    IntBuffer intBuffer = b;
     int rbi = wrr.j();
     
-    float v0x = floatBuffer.get(baseIndex + 0 * this.vertexSize);
-    float v0y = floatBuffer.get(baseIndex + 0 * this.vertexSize + 1);
-    float v0z = floatBuffer.get(baseIndex + 0 * this.vertexSize + 2);
-    float v0u = floatBuffer.get(baseIndex + 0 * this.vertexSize + this.offsetUV);
-    float v0v = floatBuffer.get(baseIndex + 0 * this.vertexSize + this.offsetUV + 1);
-    float v1x = floatBuffer.get(baseIndex + 1 * this.vertexSize);
-    float v1y = floatBuffer.get(baseIndex + 1 * this.vertexSize + 1);
-    float v1z = floatBuffer.get(baseIndex + 1 * this.vertexSize + 2);
-    float v1u = floatBuffer.get(baseIndex + 1 * this.vertexSize + this.offsetUV);
-    float v1v = floatBuffer.get(baseIndex + 1 * this.vertexSize + this.offsetUV + 1);
-    float v2x = floatBuffer.get(baseIndex + 2 * this.vertexSize);
-    float v2y = floatBuffer.get(baseIndex + 2 * this.vertexSize + 1);
-    float v2z = floatBuffer.get(baseIndex + 2 * this.vertexSize + 2);
-    float v2u = floatBuffer.get(baseIndex + 2 * this.vertexSize + this.offsetUV);
-    float v2v = floatBuffer.get(baseIndex + 2 * this.vertexSize + this.offsetUV + 1);
-    float v3x = floatBuffer.get(baseIndex + 3 * this.vertexSize);
-    float v3y = floatBuffer.get(baseIndex + 3 * this.vertexSize + 1);
-    float v3z = floatBuffer.get(baseIndex + 3 * this.vertexSize + 2);
-    float v3u = floatBuffer.get(baseIndex + 3 * this.vertexSize + this.offsetUV);
-    float v3v = floatBuffer.get(baseIndex + 3 * this.vertexSize + this.offsetUV + 1);
+    float v0x = floatBuffer.get(baseIndex + 0 * vertexSize);
+    float v0y = floatBuffer.get(baseIndex + 0 * vertexSize + 1);
+    float v0z = floatBuffer.get(baseIndex + 0 * vertexSize + 2);
+    float v0u = floatBuffer.get(baseIndex + 0 * vertexSize + offsetUV);
+    float v0v = floatBuffer.get(baseIndex + 0 * vertexSize + offsetUV + 1);
+    float v1x = floatBuffer.get(baseIndex + 1 * vertexSize);
+    float v1y = floatBuffer.get(baseIndex + 1 * vertexSize + 1);
+    float v1z = floatBuffer.get(baseIndex + 1 * vertexSize + 2);
+    float v1u = floatBuffer.get(baseIndex + 1 * vertexSize + offsetUV);
+    float v1v = floatBuffer.get(baseIndex + 1 * vertexSize + offsetUV + 1);
+    float v2x = floatBuffer.get(baseIndex + 2 * vertexSize);
+    float v2y = floatBuffer.get(baseIndex + 2 * vertexSize + 1);
+    float v2z = floatBuffer.get(baseIndex + 2 * vertexSize + 2);
+    float v2u = floatBuffer.get(baseIndex + 2 * vertexSize + offsetUV);
+    float v2v = floatBuffer.get(baseIndex + 2 * vertexSize + offsetUV + 1);
+    float v3x = floatBuffer.get(baseIndex + 3 * vertexSize);
+    float v3y = floatBuffer.get(baseIndex + 3 * vertexSize + 1);
+    float v3z = floatBuffer.get(baseIndex + 3 * vertexSize + 2);
+    float v3u = floatBuffer.get(baseIndex + 3 * vertexSize + offsetUV);
+    float v3v = floatBuffer.get(baseIndex + 3 * vertexSize + offsetUV + 1);
     
     float x1 = v2x - v0x;
     float y1 = v2y - v0y;
@@ -215,43 +215,43 @@ public class SVertexBuilder
     int bny = (int)(vny * 127.0F) & 0xFF;
     int bnz = (int)(vnz * 127.0F) & 0xFF;
     int packedNormal = (bnz << 16) + (bny << 8) + bnx;
-    intBuffer.put(baseIndex + 0 * this.vertexSize + this.offsetNormal, packedNormal);
-    intBuffer.put(baseIndex + 1 * this.vertexSize + this.offsetNormal, packedNormal);
-    intBuffer.put(baseIndex + 2 * this.vertexSize + this.offsetNormal, packedNormal);
-    intBuffer.put(baseIndex + 3 * this.vertexSize + this.offsetNormal, packedNormal);
+    intBuffer.put(baseIndex + 0 * vertexSize + offsetNormal, packedNormal);
+    intBuffer.put(baseIndex + 1 * vertexSize + offsetNormal, packedNormal);
+    intBuffer.put(baseIndex + 2 * vertexSize + offsetNormal, packedNormal);
+    intBuffer.put(baseIndex + 3 * vertexSize + offsetNormal, packedNormal);
     
     int packedTan1xy = ((int)(tan1x * 32767.0F) & 0xFFFF) + (((int)(tan1y * 32767.0F) & 0xFFFF) << 16);
     int packedTan1zw = ((int)(tan1z * 32767.0F) & 0xFFFF) + (((int)(tan1w * 32767.0F) & 0xFFFF) << 16);
-    intBuffer.put(baseIndex + 0 * this.vertexSize + 10, packedTan1xy);
-    intBuffer.put(baseIndex + 0 * this.vertexSize + 10 + 1, packedTan1zw);
-    intBuffer.put(baseIndex + 1 * this.vertexSize + 10, packedTan1xy);
-    intBuffer.put(baseIndex + 1 * this.vertexSize + 10 + 1, packedTan1zw);
-    intBuffer.put(baseIndex + 2 * this.vertexSize + 10, packedTan1xy);
-    intBuffer.put(baseIndex + 2 * this.vertexSize + 10 + 1, packedTan1zw);
-    intBuffer.put(baseIndex + 3 * this.vertexSize + 10, packedTan1xy);
-    intBuffer.put(baseIndex + 3 * this.vertexSize + 10 + 1, packedTan1zw);
+    intBuffer.put(baseIndex + 0 * vertexSize + 10, packedTan1xy);
+    intBuffer.put(baseIndex + 0 * vertexSize + 10 + 1, packedTan1zw);
+    intBuffer.put(baseIndex + 1 * vertexSize + 10, packedTan1xy);
+    intBuffer.put(baseIndex + 1 * vertexSize + 10 + 1, packedTan1zw);
+    intBuffer.put(baseIndex + 2 * vertexSize + 10, packedTan1xy);
+    intBuffer.put(baseIndex + 2 * vertexSize + 10 + 1, packedTan1zw);
+    intBuffer.put(baseIndex + 3 * vertexSize + 10, packedTan1xy);
+    intBuffer.put(baseIndex + 3 * vertexSize + 10 + 1, packedTan1zw);
     
     float midU = (v0u + v1u + v2u + v3u) / 4.0F;
     float midV = (v0v + v1v + v2v + v3v) / 4.0F;
-    floatBuffer.put(baseIndex + 0 * this.vertexSize + 8, midU);
-    floatBuffer.put(baseIndex + 0 * this.vertexSize + 8 + 1, midV);
-    floatBuffer.put(baseIndex + 1 * this.vertexSize + 8, midU);
-    floatBuffer.put(baseIndex + 1 * this.vertexSize + 8 + 1, midV);
-    floatBuffer.put(baseIndex + 2 * this.vertexSize + 8, midU);
-    floatBuffer.put(baseIndex + 2 * this.vertexSize + 8 + 1, midV);
-    floatBuffer.put(baseIndex + 3 * this.vertexSize + 8, midU);
-    floatBuffer.put(baseIndex + 3 * this.vertexSize + 8 + 1, midV);
+    floatBuffer.put(baseIndex + 0 * vertexSize + 8, midU);
+    floatBuffer.put(baseIndex + 0 * vertexSize + 8 + 1, midV);
+    floatBuffer.put(baseIndex + 1 * vertexSize + 8, midU);
+    floatBuffer.put(baseIndex + 1 * vertexSize + 8 + 1, midV);
+    floatBuffer.put(baseIndex + 2 * vertexSize + 8, midU);
+    floatBuffer.put(baseIndex + 2 * vertexSize + 8 + 1, midV);
+    floatBuffer.put(baseIndex + 3 * vertexSize + 8, midU);
+    floatBuffer.put(baseIndex + 3 * vertexSize + 8 + 1, midV);
   }
   
   public static void calcNormalChunkLayer(bfd wrr)
   {
     if (wrr.g().b()) {
-      if ((wrr.i == 7) && (wrr.e % 4 == 0))
+      if ((i == 7) && (e % 4 == 0))
       {
-        SVertexBuilder svb = wrr.sVertexBuilder;
+        SVertexBuilder svb = sVertexBuilder;
         endSetVertexFormat(wrr);
-        int indexEnd = wrr.e * svb.vertexSize;
-        for (int index = 0; index < indexEnd; index += svb.vertexSize * 4) {
+        int indexEnd = e * vertexSize;
+        for (int index = 0; index < indexEnd; index += vertexSize * 4) {
           svb.calcNormal(wrr, index);
         }
       }

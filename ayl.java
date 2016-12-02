@@ -37,24 +37,24 @@ public abstract class ayl
   
   public ayl(xi ☃)
   {
-    this.h = ☃;
-    this.H = true;
+    h = ☃;
+    H = true;
   }
   
   public void b()
   {
     super.b();
-    this.j.h.bk = this.h;
+    j.h.bk = h;
     
-    this.i = ((this.l - this.f) / 2);
-    this.r = ((this.m - this.g) / 2);
+    i = ((l - f) / 2);
+    r = ((m - g) / 2);
   }
   
   public void a(int ☃, int ☃, float ☃)
   {
     c();
-    int ☃ = this.i;
-    int ☃ = this.r;
+    int ☃ = i;
+    int ☃ = r;
     
     a(☃, ☃, ☃);
     
@@ -73,26 +73,26 @@ public abstract class ayl
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
     bfl.B();
     
-    this.u = null;
+    u = null;
     
     int ☃ = 240;
     int ☃ = 240;
     bqs.a(bqs.r, ☃ / 1.0F, ☃ / 1.0F);
     bfl.c(1.0F, 1.0F, 1.0F, 1.0F);
-    for (int ☃ = 0; ☃ < this.h.c.size(); ☃++)
+    for (int ☃ = 0; ☃ < h.c.size(); ☃++)
     {
-      yg ☃ = (yg)this.h.c.get(☃);
+      yg ☃ = (yg)h.c.get(☃);
       
       a(☃);
       if ((a(☃, ☃, ☃)) && (☃.b()))
       {
-        this.u = ☃;
+        u = ☃;
         
         bfl.f();
         bfl.i();
         
-        int ☃ = ☃.f;
-        int ☃ = ☃.g;
+        int ☃ = f;
+        int ☃ = g;
         bfl.a(true, true, true, false);
         a(☃, ☃, ☃ + 16, ☃ + 16, -2130706433, -2130706433);
         bfl.a(true, true, true, true);
@@ -104,47 +104,47 @@ public abstract class ayl
     b(☃, ☃);
     avc.c();
     
-    wm ☃ = this.j.h.bi;
-    zx ☃ = this.x == null ? ☃.p() : this.x;
+    wm ☃ = j.h.bi;
+    zx ☃ = x == null ? ☃.p() : x;
     if (☃ != null)
     {
       int ☃ = 8;
-      int ☃ = this.x == null ? 8 : 16;
+      int ☃ = x == null ? 8 : 16;
       String ☃ = null;
-      if ((this.x != null) && (this.w))
+      if ((x != null) && (w))
       {
         ☃ = ☃.k();
-        ☃.b = ns.f(☃.b / 2.0F);
+        b = ns.f(b / 2.0F);
       }
-      else if ((this.t) && (this.s.size() > 1))
+      else if ((t) && (s.size() > 1))
       {
         ☃ = ☃.k();
-        ☃.b = this.I;
-        if (☃.b == 0) {
+        b = I;
+        if (b == 0) {
           ☃ = "" + a.o + "0";
         }
       }
       a(☃, ☃ - ☃ - ☃, ☃ - ☃ - ☃, ☃);
     }
-    if (this.C != null)
+    if (C != null)
     {
-      float ☃ = (float)(ave.J() - this.B) / 100.0F;
+      float ☃ = (float)(ave.J() - B) / 100.0F;
       if (☃ >= 1.0F)
       {
         ☃ = 1.0F;
-        this.C = null;
+        C = null;
       }
-      int ☃ = this.A.f - this.y;
-      int ☃ = this.A.g - this.z;
-      int ☃ = this.y + (int)(☃ * ☃);
-      int ☃ = this.z + (int)(☃ * ☃);
+      int ☃ = A.f - y;
+      int ☃ = A.g - z;
+      int ☃ = y + (int)(☃ * ☃);
+      int ☃ = z + (int)(☃ * ☃);
       
-      a(this.C, ☃, ☃, null);
+      a(C, ☃, ☃, null);
     }
     bfl.F();
-    if ((☃.p() == null) && (this.u != null) && (this.u.e()))
+    if ((☃.p() == null) && (u != null) && (u.e()))
     {
-      zx ☃ = this.u.d();
+      zx ☃ = u.d();
       a(☃, ☃, ☃);
     }
     bfl.e();
@@ -155,13 +155,13 @@ public abstract class ayl
   private void a(zx ☃, int ☃, int ☃, String ☃)
   {
     bfl.b(0.0F, 0.0F, 32.0F);
-    this.e = 200.0F;
-    this.k.a = 200.0F;
+    e = 200.0F;
+    k.a = 200.0F;
     
-    this.k.b(☃, ☃, ☃);
-    this.k.a(this.q, ☃, ☃, ☃ - (this.x == null ? 0 : 8), ☃);
-    this.e = 0.0F;
-    this.k.a = 0.0F;
+    k.b(☃, ☃, ☃);
+    k.a(q, ☃, ☃, ☃ - (x == null ? 0 : 8), ☃);
+    e = 0.0F;
+    k.a = 0.0F;
   }
   
   protected void b(int ☃, int ☃) {}
@@ -170,56 +170,56 @@ public abstract class ayl
   
   private void a(yg ☃)
   {
-    int ☃ = ☃.f;
-    int ☃ = ☃.g;
+    int ☃ = f;
+    int ☃ = g;
     zx ☃ = ☃.d();
     boolean ☃ = false;
-    boolean ☃ = (☃ == this.v) && (this.x != null) && (!this.w);
-    zx ☃ = this.j.h.bi.p();
+    boolean ☃ = (☃ == v) && (x != null) && (!w);
+    zx ☃ = j.h.bi.p();
     String ☃ = null;
-    if ((☃ == this.v) && (this.x != null) && (this.w) && (☃ != null))
+    if ((☃ == v) && (x != null) && (w) && (☃ != null))
     {
       ☃ = ☃.k();
-      ☃.b /= 2;
+      b /= 2;
     }
-    else if ((this.t) && (this.s.contains(☃)) && (☃ != null))
+    else if ((t) && (s.contains(☃)) && (☃ != null))
     {
-      if (this.s.size() == 1) {
+      if (s.size() == 1) {
         return;
       }
-      if ((xi.a(☃, ☃, true)) && (this.h.b(☃)))
+      if ((xi.a(☃, ☃, true)) && (h.b(☃)))
       {
         ☃ = ☃.k();
         ☃ = true;
         
-        xi.a(this.s, this.F, ☃, ☃.d() == null ? 0 : ☃.d().b);
-        if (☃.b > ☃.c())
+        xi.a(s, F, ☃, ☃.d() == null ? 0 : db);
+        if (b > ☃.c())
         {
           ☃ = a.o + "" + ☃.c();
-          ☃.b = ☃.c();
+          b = ☃.c();
         }
-        if (☃.b > ☃.b(☃))
+        if (b > ☃.b(☃))
         {
           ☃ = a.o + "" + ☃.b(☃);
-          ☃.b = ☃.b(☃);
+          b = ☃.b(☃);
         }
       }
       else
       {
-        this.s.remove(☃);
+        s.remove(☃);
         a();
       }
     }
-    this.e = 100.0F;
-    this.k.a = 100.0F;
+    e = 100.0F;
+    k.a = 100.0F;
     if (☃ == null)
     {
       String ☃ = ☃.c();
       if (☃ != null)
       {
-        bmi ☃ = this.j.T().a(☃);
+        bmi ☃ = j.T().a(☃);
         bfl.f();
-        this.j.P().a(bmh.g);
+        j.P().a(bmh.g);
         a(☃, ☃, ☃, 16, 16);
         bfl.e();
         ☃ = true;
@@ -231,40 +231,40 @@ public abstract class ayl
         a(☃, ☃, ☃ + 16, ☃ + 16, -2130706433);
       }
       bfl.j();
-      this.k.b(☃, ☃, ☃);
-      this.k.a(this.q, ☃, ☃, ☃, ☃);
+      k.b(☃, ☃, ☃);
+      k.a(q, ☃, ☃, ☃, ☃);
     }
-    this.k.a = 0.0F;
-    this.e = 0.0F;
+    k.a = 0.0F;
+    e = 0.0F;
   }
   
   private void a()
   {
-    zx ☃ = this.j.h.bi.p();
-    if ((☃ == null) || (!this.t)) {
+    zx ☃ = j.h.bi.p();
+    if ((☃ == null) || (!t)) {
       return;
     }
-    this.I = ☃.b;
-    for (yg ☃ : this.s)
+    I = b;
+    for (yg ☃ : s)
     {
       zx ☃ = ☃.k();
-      int ☃ = ☃.d() == null ? 0 : ☃.d().b;
-      xi.a(this.s, this.F, ☃, ☃);
-      if (☃.b > ☃.c()) {
-        ☃.b = ☃.c();
+      int ☃ = ☃.d() == null ? 0 : db;
+      xi.a(s, F, ☃, ☃);
+      if (b > ☃.c()) {
+        b = ☃.c();
       }
-      if (☃.b > ☃.b(☃)) {
-        ☃.b = ☃.b(☃);
+      if (b > ☃.b(☃)) {
+        b = ☃.b(☃);
       }
-      this.I -= ☃.b - ☃;
+      I -= b - ☃;
     }
   }
   
   private yg c(int ☃, int ☃)
   {
-    for (int ☃ = 0; ☃ < this.h.c.size(); ☃++)
+    for (int ☃ = 0; ☃ < h.c.size(); ☃++)
     {
-      yg ☃ = (yg)this.h.c.get(☃);
+      yg ☃ = (yg)h.c.get(☃);
       if (a(☃, ☃, ☃)) {
         return ☃;
       }
@@ -275,47 +275,47 @@ public abstract class ayl
   protected void a(int ☃, int ☃, int ☃)
   {
     super.a(☃, ☃, ☃);
-    boolean ☃ = ☃ == this.j.t.ai.i() + 100;
+    boolean ☃ = ☃ == j.t.ai.i() + 100;
     yg ☃ = c(☃, ☃);
     long ☃ = ave.J();
-    this.M = ((this.K == ☃) && (☃ - this.J < 250L) && (this.L == ☃));
-    this.H = false;
+    M = ((K == ☃) && (☃ - J < 250L) && (L == ☃));
+    H = false;
     if ((☃ == 0) || (☃ == 1) || (☃))
     {
-      int ☃ = this.i;
-      int ☃ = this.r;
-      boolean ☃ = (☃ < ☃) || (☃ < ☃) || (☃ >= ☃ + this.f) || (☃ >= ☃ + this.g);
+      int ☃ = i;
+      int ☃ = r;
+      boolean ☃ = (☃ < ☃) || (☃ < ☃) || (☃ >= ☃ + f) || (☃ >= ☃ + g);
       
       int ☃ = -1;
       if (☃ != null) {
-        ☃ = ☃.e;
+        ☃ = e;
       }
       if (☃) {
         ☃ = 64537;
       }
-      if ((this.j.t.A) && (☃) && (this.j.h.bi.p() == null))
+      if ((j.t.A) && (☃) && (j.h.bi.p() == null))
       {
-        this.j.a(null);
+        j.a(null);
         return;
       }
       if (☃ != -1) {
-        if (this.j.t.A)
+        if (j.t.A)
         {
           if ((☃ != null) && (☃.e()))
           {
-            this.v = ☃;
-            this.x = null;
-            this.w = (☃ == 1);
+            v = ☃;
+            x = null;
+            w = (☃ == 1);
           }
           else
           {
-            this.v = null;
+            v = null;
           }
         }
-        else if (!this.t) {
-          if (this.j.h.bi.p() == null)
+        else if (!t) {
+          if (j.h.bi.p() == null)
           {
-            if (☃ == this.j.t.ai.i() + 100)
+            if (☃ == j.t.ai.i() + 100)
             {
               a(☃, ☃, ☃, 3);
             }
@@ -325,7 +325,7 @@ public abstract class ayl
               int ☃ = 0;
               if (☃)
               {
-                this.N = ((☃ != null) && (☃.e()) ? ☃.d() : null);
+                N = ((☃ != null) && (☃.e()) ? ☃.d() : null);
                 ☃ = 1;
               }
               else if (☃ == 64537)
@@ -334,67 +334,67 @@ public abstract class ayl
               }
               a(☃, ☃, ☃, ☃);
             }
-            this.H = true;
+            H = true;
           }
           else
           {
-            this.t = true;
-            this.G = ☃;
-            this.s.clear();
+            t = true;
+            G = ☃;
+            s.clear();
             if (☃ == 0) {
-              this.F = 0;
+              F = 0;
             } else if (☃ == 1) {
-              this.F = 1;
-            } else if (☃ == this.j.t.ai.i() + 100) {
-              this.F = 2;
+              F = 1;
+            } else if (☃ == j.t.ai.i() + 100) {
+              F = 2;
             }
           }
         }
       }
     }
-    this.K = ☃;
-    this.J = ☃;
-    this.L = ☃;
+    K = ☃;
+    J = ☃;
+    L = ☃;
   }
   
   protected void a(int ☃, int ☃, int ☃, long ☃)
   {
     yg ☃ = c(☃, ☃);
-    zx ☃ = this.j.h.bi.p();
-    if ((this.v != null) && (this.j.t.A))
+    zx ☃ = j.h.bi.p();
+    if ((v != null) && (j.t.A))
     {
       if ((☃ == 0) || (☃ == 1)) {
-        if (this.x == null)
+        if (x == null)
         {
-          if ((☃ != this.v) && (this.v.d() != null)) {
-            this.x = this.v.d().k();
+          if ((☃ != v) && (v.d() != null)) {
+            x = v.d().k();
           }
         }
-        else if ((this.x.b > 1) && (☃ != null) && (xi.a(☃, this.x, false)))
+        else if ((x.b > 1) && (☃ != null) && (xi.a(☃, x, false)))
         {
           long ☃ = ave.J();
-          if (this.D == ☃)
+          if (D == ☃)
           {
-            if (☃ - this.E > 500L)
+            if (☃ - E > 500L)
             {
-              a(this.v, this.v.e, 0, 0);
-              a(☃, ☃.e, 1, 0);
-              a(this.v, this.v.e, 0, 0);
-              this.E = (☃ + 750L);
-              this.x.b -= 1;
+              a(v, v.e, 0, 0);
+              a(☃, e, 1, 0);
+              a(v, v.e, 0, 0);
+              E = (☃ + 750L);
+              x.b -= 1;
             }
           }
           else
           {
-            this.D = ☃;
-            this.E = ☃;
+            D = ☃;
+            E = ☃;
           }
         }
       }
     }
-    else if ((this.t) && (☃ != null) && (☃ != null) && (☃.b > this.s.size()) && (xi.a(☃, ☃, true)) && (☃.a(☃)) && (this.h.b(☃)))
+    else if ((t) && (☃ != null) && (☃ != null) && (b > s.size()) && (xi.a(☃, ☃, true)) && (☃.a(☃)) && (h.b(☃)))
     {
-      this.s.add(☃);
+      s.add(☃);
       a();
     }
   }
@@ -402,25 +402,25 @@ public abstract class ayl
   protected void b(int ☃, int ☃, int ☃)
   {
     yg ☃ = c(☃, ☃);
-    int ☃ = this.i;
-    int ☃ = this.r;
-    boolean ☃ = (☃ < ☃) || (☃ < ☃) || (☃ >= ☃ + this.f) || (☃ >= ☃ + this.g);
+    int ☃ = i;
+    int ☃ = r;
+    boolean ☃ = (☃ < ☃) || (☃ < ☃) || (☃ >= ☃ + f) || (☃ >= ☃ + g);
     
     int ☃ = -1;
     if (☃ != null) {
-      ☃ = ☃.e;
+      ☃ = e;
     }
     if (☃) {
       ☃ = 64537;
     }
-    if ((this.M) && (☃ != null) && (☃ == 0) && (this.h.a(null, ☃)))
+    if ((M) && (☃ != null) && (☃ == 0) && (h.a(null, ☃)))
     {
       if (r())
       {
-        if ((☃ != null) && (☃.d != null) && (this.N != null)) {
-          for (yg ☃ : this.h.c) {
-            if ((☃ != null) && (☃.a(this.j.h)) && (☃.e()) && (☃.d == ☃.d) && (xi.a(☃, this.N, true))) {
-              a(☃, ☃.e, ☃, 1);
+        if ((☃ != null) && (d != null) && (N != null)) {
+          for (yg ☃ : h.c) {
+            if ((☃ != null) && (☃.a(j.h)) && (☃.e()) && (d == d) && (xi.a(☃, N, true))) {
+              a(☃, e, ☃, 1);
             }
           }
         }
@@ -428,72 +428,72 @@ public abstract class ayl
       else {
         a(☃, ☃, ☃, 6);
       }
-      this.M = false;
-      this.J = 0L;
+      M = false;
+      J = 0L;
     }
     else
     {
-      if ((this.t) && (this.G != ☃))
+      if ((t) && (G != ☃))
       {
-        this.t = false;
-        this.s.clear();
-        this.H = true;
+        t = false;
+        s.clear();
+        H = true;
         return;
       }
-      if (this.H)
+      if (H)
       {
-        this.H = false;
+        H = false;
         return;
       }
-      if ((this.v != null) && (this.j.t.A))
+      if ((v != null) && (j.t.A))
       {
         if ((☃ == 0) || (☃ == 1))
         {
-          if ((this.x == null) && (☃ != this.v)) {
-            this.x = this.v.d();
+          if ((x == null) && (☃ != v)) {
+            x = v.d();
           }
-          boolean ☃ = xi.a(☃, this.x, false);
-          if ((☃ != -1) && (this.x != null) && (☃))
+          boolean ☃ = xi.a(☃, x, false);
+          if ((☃ != -1) && (x != null) && (☃))
           {
-            a(this.v, this.v.e, ☃, 0);
+            a(v, v.e, ☃, 0);
             a(☃, ☃, 0, 0);
-            if (this.j.h.bi.p() != null)
+            if (j.h.bi.p() != null)
             {
-              a(this.v, this.v.e, ☃, 0);
-              this.y = (☃ - ☃);
-              this.z = (☃ - ☃);
-              this.A = this.v;
-              this.C = this.x;
-              this.B = ave.J();
+              a(v, v.e, ☃, 0);
+              y = (☃ - ☃);
+              z = (☃ - ☃);
+              A = v;
+              C = x;
+              B = ave.J();
             }
             else
             {
-              this.C = null;
+              C = null;
             }
           }
-          else if (this.x != null)
+          else if (x != null)
           {
-            this.y = (☃ - ☃);
-            this.z = (☃ - ☃);
-            this.A = this.v;
-            this.C = this.x;
-            this.B = ave.J();
+            y = (☃ - ☃);
+            z = (☃ - ☃);
+            A = v;
+            C = x;
+            B = ave.J();
           }
-          this.x = null;
-          this.v = null;
+          x = null;
+          v = null;
         }
       }
-      else if ((this.t) && (!this.s.isEmpty()))
+      else if ((t) && (!s.isEmpty()))
       {
-        a(null, 64537, xi.d(0, this.F), 5);
-        for (yg ☃ : this.s) {
-          a(☃, ☃.e, xi.d(1, this.F), 5);
+        a(null, 64537, xi.d(0, F), 5);
+        for (yg ☃ : s) {
+          a(☃, e, xi.d(1, F), 5);
         }
-        a(null, 64537, xi.d(2, this.F), 5);
+        a(null, 64537, xi.d(2, F), 5);
       }
-      else if (this.j.h.bi.p() != null)
+      else if (j.h.bi.p() != null)
       {
-        if (☃ == this.j.t.ai.i() + 100)
+        if (☃ == j.t.ai.i() + 100)
         {
           a(☃, ☃, ☃, 3);
         }
@@ -501,27 +501,27 @@ public abstract class ayl
         {
           boolean ☃ = (☃ != 64537) && ((Keyboard.isKeyDown(42)) || (Keyboard.isKeyDown(54)));
           if (☃) {
-            this.N = ((☃ != null) && (☃.e()) ? ☃.d() : null);
+            N = ((☃ != null) && (☃.e()) ? ☃.d() : null);
           }
           a(☃, ☃, ☃, ☃ ? 1 : 0);
         }
       }
     }
-    if (this.j.h.bi.p() == null) {
-      this.J = 0L;
+    if (j.h.bi.p() == null) {
+      J = 0L;
     }
-    this.t = false;
+    t = false;
   }
   
   private boolean a(yg ☃, int ☃, int ☃)
   {
-    return c(☃.f, ☃.g, 16, 16, ☃, ☃);
+    return c(f, g, 16, 16, ☃, ☃);
   }
   
   protected boolean c(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
   {
-    int ☃ = this.i;
-    int ☃ = this.r;
+    int ☃ = i;
+    int ☃ = r;
     ☃ -= ☃;
     ☃ -= ☃;
     
@@ -531,33 +531,33 @@ public abstract class ayl
   protected void a(yg ☃, int ☃, int ☃, int ☃)
   {
     if (☃ != null) {
-      ☃ = ☃.e;
+      ☃ = e;
     }
-    this.j.c.a(this.h.d, ☃, ☃, ☃, this.j.h);
+    j.c.a(h.d, ☃, ☃, ☃, j.h);
   }
   
   protected void a(char ☃, int ☃)
   {
-    if ((☃ == 1) || (☃ == this.j.t.ae.i())) {
-      this.j.h.n();
+    if ((☃ == 1) || (☃ == j.t.ae.i())) {
+      j.h.n();
     }
     b(☃);
-    if ((this.u != null) && (this.u.e())) {
-      if (☃ == this.j.t.ai.i()) {
-        a(this.u, this.u.e, 0, 3);
-      } else if (☃ == this.j.t.ag.i()) {
-        a(this.u, this.u.e, q() ? 1 : 0, 4);
+    if ((u != null) && (u.e())) {
+      if (☃ == j.t.ai.i()) {
+        a(u, u.e, 0, 3);
+      } else if (☃ == j.t.ag.i()) {
+        a(u, u.e, q() ? 1 : 0, 4);
       }
     }
   }
   
   protected boolean b(int ☃)
   {
-    if ((this.j.h.bi.p() == null) && (this.u != null)) {
+    if ((j.h.bi.p() == null) && (u != null)) {
       for (int ☃ = 0; ☃ < 9; ☃++) {
-        if (☃ == this.j.t.av[☃].i())
+        if (☃ == j.t.av[☃].i())
         {
-          a(this.u, this.u.e, ☃, 2);
+          a(u, u.e, ☃, 2);
           return true;
         }
       }
@@ -567,10 +567,10 @@ public abstract class ayl
   
   public void m()
   {
-    if (this.j.h == null) {
+    if (j.h == null) {
       return;
     }
-    this.h.b(this.j.h);
+    h.b(j.h);
   }
   
   public boolean d()
@@ -581,8 +581,8 @@ public abstract class ayl
   public void e()
   {
     super.e();
-    if ((!this.j.h.ai()) || (this.j.h.I)) {
-      this.j.h.n();
+    if ((!j.h.ai()) || (j.h.I)) {
+      j.h.n();
     }
   }
 }

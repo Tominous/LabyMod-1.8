@@ -44,7 +44,7 @@ public class JSONWriter
       writeJsonArray(jArr);
       return;
     }
-    this.writer.write(JSONValue.toJSONString(obj));
+    writer.write(JSONValue.toJSONString(obj));
   }
   
   private void writeJsonArray(JSONArray jArr)
@@ -68,7 +68,7 @@ public class JSONWriter
     }
     indentRemove();
     writeIndent();
-    this.writer.write("]");
+    writer.write("]");
   }
   
   private void writeJsonObject(JSONObject jObj)
@@ -86,8 +86,8 @@ public class JSONWriter
       Object val = jObj.get(key);
       
       writeIndent();
-      this.writer.write(JSONValue.toJSONString(key));
-      this.writer.write(": ");
+      writer.write(JSONValue.toJSONString(key));
+      writer.write(": ");
       
       writeObject(val);
       
@@ -100,38 +100,38 @@ public class JSONWriter
     }
     indentRemove();
     writeIndent();
-    this.writer.write("}");
+    writer.write("}");
   }
   
   private void writeLine(String str)
     throws IOException
   {
-    this.writer.write(str);
+    writer.write(str);
     
-    this.writer.write("\n");
+    writer.write("\n");
   }
   
   private void write(String str)
     throws IOException
   {
-    this.writer.write(str);
+    writer.write(str);
   }
   
   private void writeIndent()
     throws IOException
   {
-    for (int i = 0; i < this.indent; i++) {
-      this.writer.write(32);
+    for (int i = 0; i < indent; i++) {
+      writer.write(32);
     }
   }
   
   private void indentAdd()
   {
-    this.indent += this.indentStep;
+    indent += indentStep;
   }
   
   private void indentRemove()
   {
-    this.indent -= this.indentStep;
+    indent -= indentStep;
   }
 }

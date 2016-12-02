@@ -13,25 +13,25 @@ public class aqw$c
   {
     super(☃, ☃);
     
-    this.m = ☃;
-    this.l = ☃;
+    m = ☃;
+    l = ☃;
     
-    this.a = a(☃);
-    this.b = a(☃);
+    a = a(☃);
+    b = a(☃);
   }
   
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("CA", afh.c.b(this.a));
-    ☃.a("CB", afh.c.b(this.b));
+    ☃.a("CA", afh.c.b(a));
+    ☃.a("CB", afh.c.b(b));
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    this.a = afh.c(☃.f("CA"));
-    this.b = afh.c(☃.f("CB"));
+    a = afh.c(☃.f("CA"));
+    b = afh.c(☃.f("CB"));
   }
   
   private afh a(Random ☃)
@@ -57,13 +57,13 @@ public class aqw$c
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
   {
-    if (this.h < 0)
+    if (h < 0)
     {
-      this.h = b(☃, ☃);
-      if (this.h < 0) {
+      h = b(☃, ☃);
+      if (h < 0) {
         return true;
       }
-      this.l.a(0, this.h - this.l.e + 4 - 1, 0);
+      l.a(0, h - l.e + 4 - 1, 0);
     }
     a(☃, ☃, 0, 1, 0, 6, 4, 8, afi.a.Q(), afi.a.Q(), false);
     
@@ -78,10 +78,10 @@ public class aqw$c
     a(☃, ☃, 3, 0, 1, 3, 0, 7, afi.j.Q(), afi.j.Q(), false);
     for (int ☃ = 1; ☃ <= 7; ☃++)
     {
-      a(☃, this.a.a(ns.a(☃, 2, 7)), 1, 1, ☃, ☃);
-      a(☃, this.a.a(ns.a(☃, 2, 7)), 2, 1, ☃, ☃);
-      a(☃, this.b.a(ns.a(☃, 2, 7)), 4, 1, ☃, ☃);
-      a(☃, this.b.a(ns.a(☃, 2, 7)), 5, 1, ☃, ☃);
+      a(☃, a.a(ns.a(☃, 2, 7)), 1, 1, ☃, ☃);
+      a(☃, a.a(ns.a(☃, 2, 7)), 2, 1, ☃, ☃);
+      a(☃, b.a(ns.a(☃, 2, 7)), 4, 1, ☃, ☃);
+      a(☃, b.a(ns.a(☃, 2, 7)), 5, 1, ☃, ☃);
     }
     for (int ☃ = 0; ☃ < 9; ☃++) {
       for (int ☃ = 0; ☃ < 7; ☃++)

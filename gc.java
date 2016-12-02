@@ -18,16 +18,16 @@ public class gc
   
   public gc(int ☃, String ☃, eu ☃, int ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
   }
   
   public gc(int ☃, String ☃, eu ☃, int ☃, int ☃)
   {
     this(☃, ☃, ☃, ☃);
-    this.e = ☃;
+    e = ☃;
   }
   
   public void a(fj ☃)
@@ -38,54 +38,54 @@ public class gc
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.readUnsignedByte();
-    this.b = ☃.c(32);
-    this.c = ☃.d();
-    this.d = ☃.readUnsignedByte();
-    if (this.b.equals("EntityHorse")) {
-      this.e = ☃.readInt();
+    a = ☃.readUnsignedByte();
+    b = ☃.c(32);
+    c = ☃.d();
+    d = ☃.readUnsignedByte();
+    if (b.equals("EntityHorse")) {
+      e = ☃.readInt();
     }
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeByte(this.a);
-    ☃.a(this.b);
-    ☃.a(this.c);
-    ☃.writeByte(this.d);
-    if (this.b.equals("EntityHorse")) {
-      ☃.writeInt(this.e);
+    ☃.writeByte(a);
+    ☃.a(b);
+    ☃.a(c);
+    ☃.writeByte(d);
+    if (b.equals("EntityHorse")) {
+      ☃.writeInt(e);
     }
   }
   
   public int a()
   {
-    return this.a;
+    return a;
   }
   
   public String b()
   {
-    return this.b;
+    return b;
   }
   
   public eu c()
   {
-    return this.c;
+    return c;
   }
   
   public int d()
   {
-    return this.d;
+    return d;
   }
   
   public int e()
   {
-    return this.e;
+    return e;
   }
   
   public boolean f()
   {
-    return this.d > 0;
+    return d > 0;
   }
 }

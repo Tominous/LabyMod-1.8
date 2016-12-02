@@ -44,27 +44,27 @@ public class TeamSpeakServerGroup
   
   public int getSgid()
   {
-    return this.sgid;
+    return sgid;
   }
   
   public String getGroupName()
   {
-    return this.groupName;
+    return groupName;
   }
   
   public int getType()
   {
-    return this.type;
+    return type;
   }
   
   public int getIconId()
   {
-    return this.iconId;
+    return iconId;
   }
   
   public int getSavebd()
   {
-    return this.savebd;
+    return savebd;
   }
   
   public static void addGroup(TeamSpeakServerGroup group)

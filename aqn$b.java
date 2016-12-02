@@ -22,19 +22,19 @@ public class aqn$b
   protected void a(dn ☃)
   {
     super.a(☃);
-    ☃.a("placedMainChest", this.e);
-    ☃.a("placedHiddenChest", this.f);
-    ☃.a("placedTrap1", this.g);
-    ☃.a("placedTrap2", this.h);
+    ☃.a("placedMainChest", e);
+    ☃.a("placedHiddenChest", f);
+    ☃.a("placedTrap1", g);
+    ☃.a("placedTrap2", h);
   }
   
   protected void b(dn ☃)
   {
     super.b(☃);
-    this.e = ☃.n("placedMainChest");
-    this.f = ☃.n("placedHiddenChest");
-    this.g = ☃.n("placedTrap1");
-    this.h = ☃.n("placedTrap2");
+    e = ☃.n("placedMainChest");
+    f = ☃.n("placedHiddenChest");
+    g = ☃.n("placedTrap1");
+    h = ☃.n("placedTrap2");
   }
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
@@ -47,7 +47,7 @@ public class aqn$b
     int ☃ = a(afi.aw, 0);
     int ☃ = a(afi.aw, 1);
     
-    a(☃, ☃, 0, -4, 0, this.a - 1, 0, this.c - 1, false, ☃, k);
+    a(☃, ☃, 0, -4, 0, a - 1, 0, c - 1, false, ☃, k);
     
     a(☃, ☃, 2, 1, 2, 9, 2, 2, false, ☃, k);
     a(☃, ☃, 2, 1, 12, 9, 2, 12, false, ☃, k);
@@ -159,8 +159,8 @@ public class aqn$b
     a(☃, afi.af.Q(), 5, -3, 1, ☃);
     a(☃, afi.af.Q(), 4, -3, 1, ☃);
     a(☃, afi.Y.Q(), 3, -3, 1, ☃);
-    if (!this.g) {
-      this.g = a(☃, ☃, ☃, 3, -2, 1, cq.c.a(), j, 2);
+    if (!g) {
+      g = a(☃, ☃, ☃, 3, -2, 1, cq.c.a(), j, 2);
     }
     a(☃, afi.bn.a(15), 3, -2, 2, ☃);
     
@@ -174,13 +174,13 @@ public class aqn$b
     a(☃, afi.af.Q(), 9, -3, 5, ☃);
     a(☃, afi.Y.Q(), 9, -3, 4, ☃);
     a(☃, afi.af.Q(), 9, -2, 4, ☃);
-    if (!this.h) {
-      this.h = a(☃, ☃, ☃, 9, -2, 3, cq.e.a(), j, 2);
+    if (!h) {
+      h = a(☃, ☃, ☃, 9, -2, 3, cq.e.a(), j, 2);
     }
     a(☃, afi.bn.a(15), 8, -1, 3, ☃);
     a(☃, afi.bn.a(15), 8, -2, 3, ☃);
-    if (!this.e) {
-      this.e = a(☃, ☃, ☃, 8, -3, 3, ob.a(i, new ob[] { zy.cd.b(☃) }), 2 + ☃.nextInt(5));
+    if (!e) {
+      e = a(☃, ☃, ☃, 8, -3, 3, ob.a(i, new ob[] { zy.cd.b(☃) }), 2 + ☃.nextInt(5));
     }
     a(☃, afi.Y.Q(), 9, -3, 2, ☃);
     a(☃, afi.Y.Q(), 8, -3, 1, ☃);
@@ -210,8 +210,8 @@ public class aqn$b
     a(☃, afi.F.a(a(afi.F, cq.e.a())), 10, -2, 8, ☃);
     a(☃, afi.F.a(a(afi.F, cq.e.a())), 10, -1, 8, ☃);
     a(☃, afi.bb.a(a(afi.bb, cq.c.b())), 10, -2, 10, ☃);
-    if (!this.f) {
-      this.f = a(☃, ☃, ☃, 9, -3, 10, ob.a(i, new ob[] { zy.cd.b(☃) }), 2 + ☃.nextInt(5));
+    if (!f) {
+      f = a(☃, ☃, ☃, 9, -3, 10, ob.a(i, new ob[] { zy.cd.b(☃) }), 2 + ☃.nextInt(5));
     }
     return true;
   }
@@ -222,9 +222,9 @@ public class aqn$b
     public void a(Random ☃, int ☃, int ☃, int ☃, boolean ☃)
     {
       if (☃.nextFloat() < 0.4F) {
-        this.a = afi.e.Q();
+        a = afi.e.Q();
       } else {
-        this.a = afi.Y.Q();
+        a = afi.Y.Q();
       }
     }
   }

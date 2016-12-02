@@ -20,27 +20,27 @@ public class RandomMobsRule
   
   public boolean isValid(String path)
   {
-    this.resourceLocations = new jy[this.skins.length];
+    resourceLocations = new jy[skins.length];
     
-    jy locMcp = RandomMobs.getMcpatcherLocation(this.baseResLoc);
+    jy locMcp = RandomMobs.getMcpatcherLocation(baseResLoc);
     if (locMcp == null)
     {
-      Config.warn("Invalid path: " + this.baseResLoc.a());
+      Config.warn("Invalid path: " + baseResLoc.a());
       return false;
     }
-    for (int i = 0; i < this.resourceLocations.length; i++)
+    for (int i = 0; i < resourceLocations.length; i++)
     {
-      int index = this.skins[i];
+      int index = skins[i];
       if (index <= 1)
       {
-        this.resourceLocations[i] = this.baseResLoc;
+        resourceLocations[i] = baseResLoc;
       }
       else
       {
         jy locNew = RandomMobs.getLocationIndexed(locMcp, index);
         if (locNew == null)
         {
-          Config.warn("Invalid path: " + this.baseResLoc.a());
+          Config.warn("Invalid path: " + baseResLoc.a());
           return false;
         }
         if (!Config.hasResource(locNew))
@@ -48,46 +48,46 @@ public class RandomMobsRule
           Config.warn("Texture not found: " + locNew.a());
           return false;
         }
-        this.resourceLocations[i] = locNew;
+        resourceLocations[i] = locNew;
       }
     }
-    if (this.weights != null)
+    if (weights != null)
     {
-      if (this.weights.length > this.resourceLocations.length)
+      if (weights.length > resourceLocations.length)
       {
         Config.warn("More weights defined than skins, trimming weights: " + path);
-        int[] weights2 = new int[this.resourceLocations.length];
-        System.arraycopy(this.weights, 0, weights2, 0, weights2.length);
-        this.weights = weights2;
+        int[] weights2 = new int[resourceLocations.length];
+        System.arraycopy(weights, 0, weights2, 0, weights2.length);
+        weights = weights2;
       }
-      if (this.weights.length < this.resourceLocations.length)
+      if (weights.length < resourceLocations.length)
       {
         Config.warn("Less weights defined than skins, expanding weights: " + path);
-        int[] weights2 = new int[this.resourceLocations.length];
-        System.arraycopy(this.weights, 0, weights2, 0, this.weights.length);
-        int avgWeight = MathUtils.getAverage(this.weights);
-        for (int i = this.weights.length; i < weights2.length; i++) {
+        int[] weights2 = new int[resourceLocations.length];
+        System.arraycopy(weights, 0, weights2, 0, weights.length);
+        int avgWeight = MathUtils.getAverage(weights);
+        for (int i = weights.length; i < weights2.length; i++) {
           weights2[i] = avgWeight;
         }
-        this.weights = weights2;
+        weights = weights2;
       }
-      this.sumWeights = new int[this.weights.length];
+      sumWeights = new int[weights.length];
       int sum = 0;
-      for (int i = 0; i < this.weights.length; i++)
+      for (int i = 0; i < weights.length; i++)
       {
-        if (this.weights[i] < 0)
+        if (weights[i] < 0)
         {
-          Config.warn("Invalid weight: " + this.weights[i]);
+          Config.warn("Invalid weight: " + weights[i]);
           return false;
         }
-        sum += this.weights[i];
-        this.sumWeights[i] = sum;
+        sum += weights[i];
+        sumWeights[i] = sum;
       }
-      this.sumAllWeights = sum;
-      if (this.sumAllWeights <= 0)
+      sumAllWeights = sum;
+      if (sumAllWeights <= 0)
       {
         Config.warn("Invalid sum of all weights: " + sum);
-        this.sumAllWeights = 1;
+        sumAllWeights = 1;
       }
     }
     return true;
@@ -95,13 +95,13 @@ public class RandomMobsRule
   
   public boolean matches(ps el)
   {
-    if (this.biomes != null)
+    if (biomes != null)
     {
-      ady spawnBiome = el.spawnBiome;
+      ady spawnBiome = spawnBiome;
       boolean matchBiome = false;
-      for (int i = 0; i < this.biomes.length; i++)
+      for (int i = 0; i < biomes.length; i++)
       {
-        ady biome = this.biomes[i];
+        ady biome = biomes[i];
         if (biome == spawnBiome)
         {
           matchBiome = true;
@@ -112,8 +112,8 @@ public class RandomMobsRule
         return false;
       }
     }
-    if ((this.heights != null) && (el.spawnPosition != null)) {
-      return this.heights.isInRange(el.spawnPosition.o());
+    if ((heights != null) && (spawnPosition != null)) {
+      return heights.isInRange(spawnPosition.o());
     }
     return true;
   }
@@ -121,21 +121,21 @@ public class RandomMobsRule
   public jy getTextureLocation(jy loc, int randomId)
   {
     int index = 0;
-    if (this.weights == null)
+    if (weights == null)
     {
-      index = randomId % this.resourceLocations.length;
+      index = randomId % resourceLocations.length;
     }
     else
     {
-      int randWeight = randomId % this.sumAllWeights;
-      for (int i = 0; i < this.sumWeights.length; i++) {
-        if (this.sumWeights[i] > randWeight)
+      int randWeight = randomId % sumAllWeights;
+      for (int i = 0; i < sumWeights.length; i++) {
+        if (sumWeights[i] > randWeight)
         {
           index = i;
           break;
         }
       }
     }
-    return this.resourceLocations[index];
+    return resourceLocations[index];
   }
 }

@@ -6,31 +6,31 @@ public class azr
   public azr(azo ☃, bnm.a ☃)
   {
     super(☃);
-    this.c = ☃;
+    c = ☃;
   }
   
   protected void d()
   {
-    this.c.a(this.a.P());
+    c.a(a.P());
   }
   
   protected int a()
   {
-    return this.c.f();
+    return c.f();
   }
   
   protected String b()
   {
-    return this.c.e();
+    return c.e();
   }
   
   protected String c()
   {
-    return this.c.d();
+    return c.d();
   }
   
   public bnm.a j()
   {
-    return this.c;
+    return c;
   }
 }

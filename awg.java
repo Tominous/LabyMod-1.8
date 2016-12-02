@@ -18,9 +18,9 @@ public class awg
   public awg(ave ☃, int ☃, int ☃, int ☃, int ☃, int ☃, awg.b ☃, awg.f[]... ☃)
   {
     super(☃, ☃, ☃, ☃, ☃, ☃);
-    this.z = ☃;
-    this.x = ☃;
-    this.k = false;
+    z = ☃;
+    x = ☃;
+    k = false;
     
     s();
     t();
@@ -28,7 +28,7 @@ public class awg
   
   private void s()
   {
-    for (awg.f[] ☃ : this.x) {
+    for (awg.f[] ☃ : x) {
       for (int ☃ = 0; ☃ < ☃.length; ☃ += 2)
       {
         awg.f ☃ = ☃[☃];
@@ -36,19 +36,19 @@ public class awg
         avp ☃ = a(☃, 0, ☃ == null);
         avp ☃ = a(☃, 160, ☃ == null);
         awg.d ☃ = new awg.d(☃, ☃);
-        this.u.add(☃);
+        u.add(☃);
         if ((☃ != null) && (☃ != null))
         {
-          this.v.a(☃.b(), ☃);
+          v.a(☃.b(), ☃);
           if ((☃ instanceof avw)) {
-            this.w.add((avw)☃);
+            w.add((avw)☃);
           }
         }
         if ((☃ != null) && (☃ != null))
         {
-          this.v.a(☃.b(), ☃);
+          v.a(☃.b(), ☃);
           if ((☃ instanceof avw)) {
-            this.w.add((avw)☃);
+            w.add((avw)☃);
           }
         }
       }
@@ -57,74 +57,74 @@ public class awg
   
   private void t()
   {
-    this.u.clear();
-    for (int ☃ = 0; ☃ < this.x[this.y].length; ☃ += 2)
+    u.clear();
+    for (int ☃ = 0; ☃ < x[y].length; ☃ += 2)
     {
-      awg.f ☃ = this.x[this.y][☃];
-      awg.f ☃ = ☃ < this.x[this.y].length - 1 ? this.x[this.y][(☃ + 1)] : null;
-      avp ☃ = (avp)this.v.a(☃.b());
-      avp ☃ = ☃ != null ? (avp)this.v.a(☃.b()) : null;
+      awg.f ☃ = x[y][☃];
+      awg.f ☃ = ☃ < x[y].length - 1 ? x[y][(☃ + 1)] : null;
+      avp ☃ = (avp)v.a(☃.b());
+      avp ☃ = ☃ != null ? (avp)v.a(☃.b()) : null;
       awg.d ☃ = new awg.d(☃, ☃);
-      this.u.add(☃);
+      u.add(☃);
     }
   }
   
   public void c(int ☃)
   {
-    if (☃ == this.y) {
+    if (☃ == y) {
       return;
     }
-    int ☃ = this.y;
-    this.y = ☃;
+    int ☃ = y;
+    y = ☃;
     t();
     e(☃, ☃);
-    this.n = 0.0F;
+    n = 0.0F;
   }
   
   public int e()
   {
-    return this.y;
+    return y;
   }
   
   public int f()
   {
-    return this.x.length;
+    return x.length;
   }
   
   public avp g()
   {
-    return this.A;
+    return A;
   }
   
   public void h()
   {
-    if (this.y > 0) {
-      c(this.y - 1);
+    if (y > 0) {
+      c(y - 1);
     }
   }
   
   public void i()
   {
-    if (this.y < this.x.length - 1) {
-      c(this.y + 1);
+    if (y < x.length - 1) {
+      c(y + 1);
     }
   }
   
   public avp d(int ☃)
   {
-    return (avp)this.v.a(☃);
+    return (avp)v.a(☃);
   }
   
   private void e(int ☃, int ☃)
   {
-    for (awg.f ☃ : this.x[☃]) {
+    for (awg.f ☃ : x[☃]) {
       if (☃ != null) {
-        a((avp)this.v.a(☃.b()), false);
+        a((avp)v.a(☃.b()), false);
       }
     }
-    for (awg.f ☃ : this.x[☃]) {
+    for (awg.f ☃ : x[☃]) {
       if (☃ != null) {
-        a((avp)this.v.a(☃.b()), true);
+        a((avp)v.a(☃.b()), true);
       }
     }
   }
@@ -132,40 +132,40 @@ public class awg
   private void a(avp ☃, boolean ☃)
   {
     if ((☃ instanceof avs)) {
-      ((avs)☃).m = ☃;
+      m = ☃;
     } else if ((☃ instanceof avw)) {
       ((avw)☃).e(☃);
     } else if ((☃ instanceof avy)) {
-      ((avy)☃).j = ☃;
+      j = ☃;
     }
   }
   
   private avp a(awg.f ☃, int ☃, boolean ☃)
   {
     if ((☃ instanceof awg.g)) {
-      return a(this.b / 2 - 155 + ☃, 0, (awg.g)☃);
+      return a(b / 2 - 155 + ☃, 0, (awg.g)☃);
     }
     if ((☃ instanceof awg.a)) {
-      return a(this.b / 2 - 155 + ☃, 0, (awg.a)☃);
+      return a(b / 2 - 155 + ☃, 0, (awg.a)☃);
     }
     if ((☃ instanceof awg.c)) {
-      return a(this.b / 2 - 155 + ☃, 0, (awg.c)☃);
+      return a(b / 2 - 155 + ☃, 0, (awg.c)☃);
     }
     if ((☃ instanceof awg.e)) {
-      return a(this.b / 2 - 155 + ☃, 0, (awg.e)☃, ☃);
+      return a(b / 2 - 155 + ☃, 0, (awg.e)☃, ☃);
     }
     return null;
   }
   
   public void a(boolean ☃)
   {
-    for (awg.d ☃ : this.u)
+    for (awg.d ☃ : u)
     {
       if ((awg.d.a(☃) instanceof avs)) {
-        ((avs)awg.d.a(☃)).l = ☃;
+        al = ☃;
       }
       if ((awg.d.b(☃) instanceof avs)) {
-        ((avs)awg.d.b(☃)).l = ☃;
+        bl = ☃;
       }
     }
   }
@@ -177,33 +177,33 @@ public class awg
     if (☃ >= 0)
     {
       awg.d ☃ = e(☃);
-      if ((this.A != awg.d.c(☃)) && (this.A != null) && ((this.A instanceof avw))) {
-        ((avw)this.A).b(false);
+      if ((A != awg.d.c(☃)) && (A != null) && ((A instanceof avw))) {
+        ((avw)A).b(false);
       }
-      this.A = awg.d.c(☃);
+      A = awg.d.c(☃);
     }
     return ☃;
   }
   
   private avx a(int ☃, int ☃, awg.g ☃)
   {
-    avx ☃ = new avx(this.z, ☃.b(), ☃, ☃, ☃.c(), ☃.e(), ☃.f(), ☃.g(), ☃.a());
-    ☃.m = ☃.d();
+    avx ☃ = new avx(z, ☃.b(), ☃, ☃, ☃.c(), ☃.e(), ☃.f(), ☃.g(), ☃.a());
+    m = ☃.d();
     return ☃;
   }
   
   private awb a(int ☃, int ☃, awg.a ☃)
   {
-    awb ☃ = new awb(this.z, ☃.b(), ☃, ☃, ☃.c(), ☃.a());
-    ☃.m = ☃.d();
+    awb ☃ = new awb(z, ☃.b(), ☃, ☃, ☃.c(), ☃.a());
+    m = ☃.d();
     return ☃;
   }
   
   private avw a(int ☃, int ☃, awg.c ☃)
   {
-    avw ☃ = new avw(☃.b(), this.a.k, ☃, ☃, 150, 20);
+    avw ☃ = new avw(☃.b(), a.k, ☃, ☃, 150, 20);
     ☃.a(☃.c());
-    ☃.a(this.z);
+    ☃.a(z);
     ☃.e(☃.d());
     ☃.a(☃.a());
     return ☃;
@@ -214,11 +214,11 @@ public class awg
     avy ☃;
     avy ☃;
     if (☃) {
-      ☃ = new avy(this.a.k, ☃.b(), ☃, ☃, this.b - ☃ * 2, 20, -1);
+      ☃ = new avy(a.k, ☃.b(), ☃, ☃, b - ☃ * 2, 20, -1);
     } else {
-      ☃ = new avy(this.a.k, ☃.b(), ☃, ☃, 150, 20, -1);
+      ☃ = new avy(a.k, ☃.b(), ☃, ☃, 150, 20, -1);
     }
-    ☃.j = ☃.d();
+    j = ☃.d();
     ☃.a(☃.c());
     ☃.a();
     return ☃;
@@ -226,20 +226,20 @@ public class awg
   
   public void a(char ☃, int ☃)
   {
-    if (!(this.A instanceof avw)) {
+    if (!(A instanceof avw)) {
       return;
     }
-    avw ☃ = (avw)this.A;
+    avw ☃ = (avw)A;
     if (axu.e(☃))
     {
       String ☃ = axu.o();
       String[] ☃ = ☃.split(";");
-      int ☃ = this.w.indexOf(this.A);
+      int ☃ = w.indexOf(A);
       int ☃ = ☃;
       for (String ☃ : ☃)
       {
-        ((avw)this.w.get(☃)).a(☃);
-        if (☃ == this.w.size() - 1) {
+        ((avw)w.get(☃)).a(☃);
+        if (☃ == w.size() - 1) {
           ☃ = 0;
         } else {
           ☃++;
@@ -253,29 +253,29 @@ public class awg
     if (☃ == 15)
     {
       ☃.b(false);
-      int ☃ = this.w.indexOf(this.A);
+      int ☃ = w.indexOf(A);
       if (axu.r())
       {
         if (☃ == 0) {
-          ☃ = this.w.size() - 1;
+          ☃ = w.size() - 1;
         } else {
           ☃--;
         }
       }
-      else if (☃ == this.w.size() - 1) {
+      else if (☃ == w.size() - 1) {
         ☃ = 0;
       } else {
         ☃++;
       }
-      this.A = ((avp)this.w.get(☃));
-      ☃ = (avw)this.A;
+      A = ((avp)w.get(☃));
+      ☃ = (avw)A;
       ☃.b(true);
-      int ☃ = ☃.f + this.h;
-      int ☃ = ☃.f;
-      if (☃ > this.e) {
-        this.n += ☃ - this.e;
-      } else if (☃ < this.d) {
-        this.n = ☃;
+      int ☃ = f + h;
+      int ☃ = f;
+      if (☃ > e) {
+        n += ☃ - e;
+      } else if (☃ < d) {
+        n = ☃;
       }
     }
     else
@@ -286,12 +286,12 @@ public class awg
   
   public awg.d e(int ☃)
   {
-    return (awg.d)this.u.get(☃);
+    return (awg.d)u.get(☃);
   }
   
   public int b()
   {
-    return this.u.size();
+    return u.size();
   }
   
   public int c()
@@ -314,25 +314,25 @@ public class awg
     
     public d(avp ☃, avp ☃)
     {
-      this.a = ave.A();
-      this.b = ☃;
-      this.c = ☃;
+      a = ave.A();
+      b = ☃;
+      c = ☃;
     }
     
     public avp a()
     {
-      return this.b;
+      return b;
     }
     
     public avp b()
     {
-      return this.c;
+      return c;
     }
     
     public void a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, boolean ☃)
     {
-      a(this.b, ☃, ☃, ☃, false);
-      a(this.c, ☃, ☃, ☃, false);
+      a(b, ☃, ☃, ☃, false);
+      a(c, ☃, ☃, ☃, false);
     }
     
     private void a(avp ☃, int ☃, int ☃, int ☃, boolean ☃)
@@ -351,15 +351,15 @@ public class awg
     
     private void a(avs ☃, int ☃, int ☃, int ☃, boolean ☃)
     {
-      ☃.i = ☃;
+      i = ☃;
       if (!☃) {
-        ☃.a(this.a, ☃, ☃);
+        ☃.a(a, ☃, ☃);
       }
     }
     
     private void a(avw ☃, int ☃, boolean ☃)
     {
-      ☃.f = ☃;
+      f = ☃;
       if (!☃) {
         ☃.g();
       }
@@ -367,22 +367,22 @@ public class awg
     
     private void a(avy ☃, int ☃, int ☃, int ☃, boolean ☃)
     {
-      ☃.h = ☃;
+      h = ☃;
       if (!☃) {
-        ☃.a(this.a, ☃, ☃);
+        ☃.a(a, ☃, ☃);
       }
     }
     
     public void a(int ☃, int ☃, int ☃)
     {
-      a(this.b, ☃, 0, 0, true);
-      a(this.c, ☃, 0, 0, true);
+      a(b, ☃, 0, 0, true);
+      a(c, ☃, 0, 0, true);
     }
     
     public boolean a(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
     {
-      boolean ☃ = a(this.b, ☃, ☃, ☃);
-      boolean ☃ = a(this.c, ☃, ☃, ☃);
+      boolean ☃ = a(b, ☃, ☃, ☃);
+      boolean ☃ = a(c, ☃, ☃, ☃);
       return (☃) || (☃);
     }
     
@@ -402,9 +402,9 @@ public class awg
     
     private boolean a(avs ☃, int ☃, int ☃, int ☃)
     {
-      boolean ☃ = ☃.c(this.a, ☃, ☃);
+      boolean ☃ = ☃.c(a, ☃, ☃);
       if (☃) {
-        this.d = ☃;
+        d = ☃;
       }
       return ☃;
     }
@@ -413,14 +413,14 @@ public class awg
     {
       ☃.a(☃, ☃, ☃);
       if (☃.m()) {
-        this.d = ☃;
+        d = ☃;
       }
     }
     
     public void b(int ☃, int ☃, int ☃, int ☃, int ☃, int ☃)
     {
-      b(this.b, ☃, ☃, ☃);
-      b(this.c, ☃, ☃, ☃);
+      b(b, ☃, ☃, ☃);
+      b(c, ☃, ☃, ☃);
     }
     
     private void b(avp ☃, int ☃, int ☃, int ☃)
@@ -447,24 +447,24 @@ public class awg
     
     public f(int ☃, String ☃, boolean ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
-      this.c = ☃;
+      a = ☃;
+      b = ☃;
+      c = ☃;
     }
     
     public int b()
     {
-      return this.a;
+      return a;
     }
     
     public String c()
     {
-      return this.b;
+      return b;
     }
     
     public boolean d()
     {
-      return this.c;
+      return c;
     }
   }
   
@@ -479,30 +479,30 @@ public class awg
     public g(int ☃, String ☃, boolean ☃, avx.a ☃, float ☃, float ☃, float ☃)
     {
       super(☃, ☃);
-      this.a = ☃;
-      this.b = ☃;
-      this.c = ☃;
-      this.d = ☃;
+      a = ☃;
+      b = ☃;
+      c = ☃;
+      d = ☃;
     }
     
     public avx.a a()
     {
-      return this.a;
+      return a;
     }
     
     public float e()
     {
-      return this.b;
+      return b;
     }
     
     public float f()
     {
-      return this.c;
+      return c;
     }
     
     public float g()
     {
-      return this.d;
+      return d;
     }
   }
   
@@ -514,12 +514,12 @@ public class awg
     public a(int ☃, String ☃, boolean ☃, boolean ☃)
     {
       super(☃, ☃);
-      this.a = ☃;
+      a = ☃;
     }
     
     public boolean a()
     {
-      return this.a;
+      return a;
     }
   }
   
@@ -531,12 +531,12 @@ public class awg
     public c(int ☃, String ☃, boolean ☃, Predicate<String> ☃)
     {
       super(☃, ☃);
-      this.a = ((Predicate)Objects.firstNonNull(☃, Predicates.alwaysTrue()));
+      a = ((Predicate)Objects.firstNonNull(☃, Predicates.alwaysTrue()));
     }
     
     public Predicate<String> a()
     {
-      return this.a;
+      return a;
     }
   }
   

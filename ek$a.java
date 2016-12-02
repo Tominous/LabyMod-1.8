@@ -8,7 +8,7 @@ class ek$a
   
   public ek$a(ff ☃, GenericFutureListener<? extends Future<? super Void>>... ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
 }

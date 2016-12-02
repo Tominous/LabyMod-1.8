@@ -8,8 +8,8 @@ public class xx
   
   public xx(og ☃, og ☃, final tp ☃, wn ☃)
   {
-    this.a = ☃;
-    this.f = ☃;
+    a = ☃;
+    f = ☃;
     int ☃ = 3;
     ☃.b(☃);
     
@@ -53,20 +53,20 @@ public class xx
   
   public boolean a(wn ☃)
   {
-    return (this.a.a(☃)) && (this.f.ai()) && (this.f.g(☃) < 8.0F);
+    return (a.a(☃)) && (f.ai()) && (f.g(☃) < 8.0F);
   }
   
   public zx b(wn ☃, int ☃)
   {
     zx ☃ = null;
-    yg ☃ = (yg)this.c.get(☃);
+    yg ☃ = (yg)c.get(☃);
     if ((☃ != null) && (☃.e()))
     {
       zx ☃ = ☃.d();
       ☃ = ☃.k();
-      if (☃ < this.a.o_())
+      if (☃ < a.o_())
       {
-        if (!a(☃, this.a.o_(), this.c.size(), true)) {
+        if (!a(☃, a.o_(), c.size(), true)) {
           return null;
         }
       }
@@ -82,10 +82,10 @@ public class xx
           return null;
         }
       }
-      else if ((this.a.o_() <= 2) || (!a(☃, 2, this.a.o_(), false))) {
+      else if ((a.o_() <= 2) || (!a(☃, 2, a.o_(), false))) {
         return null;
       }
-      if (☃.b == 0) {
+      if (b == 0) {
         ☃.d(null);
       } else {
         ☃.f();
@@ -97,6 +97,6 @@ public class xx
   public void b(wn ☃)
   {
     super.b(☃);
-    this.a.c(☃);
+    a.c(☃);
   }
 }

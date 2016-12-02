@@ -29,58 +29,58 @@ public class bhq
   
   public boolean a()
   {
-    return this.d;
+    return d;
   }
   
   protected void a(adf ☃)
   {
-    this.d = false;
+    d = false;
     
-    this.b[☃.ordinal()] = true;
+    b[☃.ordinal()] = true;
   }
   
   public boolean b(adf ☃)
   {
-    return this.b[☃.ordinal()] == 0;
+    return b[☃.ordinal()] == 0;
   }
   
   public void c(adf ☃)
   {
-    this.c[☃.ordinal()] = true;
+    c[☃.ordinal()] = true;
   }
   
   public boolean d(adf ☃)
   {
-    return this.c[☃.ordinal()];
+    return c[☃.ordinal()];
   }
   
   public List<akw> b()
   {
-    return this.e;
+    return e;
   }
   
   public void a(akw ☃)
   {
-    this.e.add(☃);
+    e.add(☃);
   }
   
   public boolean a(cq ☃, cq ☃)
   {
-    return this.f.a(☃, ☃);
+    return f.a(☃, ☃);
   }
   
   public void a(bhx ☃)
   {
-    this.f = ☃;
+    f = ☃;
   }
   
   public bfd.a c()
   {
-    return this.g;
+    return g;
   }
   
   public void a(bfd.a ☃)
   {
-    this.g = ☃;
+    g = ☃;
   }
 }

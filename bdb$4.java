@@ -10,6 +10,6 @@ class bdb$4
   public String a()
     throws Exception
   {
-    return bdb.c(this.this$0).G() == null ? "Non-integrated multiplayer server" : "Integrated singleplayer server";
+    return bdb.c(this$0).G() == null ? "Non-integrated multiplayer server" : "Integrated singleplayer server";
   }
 }

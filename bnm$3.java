@@ -5,16 +5,16 @@ import java.io.File;
 class bnm$3
   implements FutureCallback<Object>
 {
-  bnm$3(bnm parambnm, File paramFile, SettableFuture paramSettableFuture) {}
+  bnm$3(bnm this$0, File paramFile, SettableFuture paramSettableFuture) {}
   
-  public void onSuccess(Object ☃)
+  public void onSuccess(Object p_onSuccess_1_)
   {
-    this.c.a(this.a);
-    this.b.set(null);
+    this$0.a(val$file1);
+    val$settablefuture.set(null);
   }
   
-  public void onFailure(Throwable ☃)
+  public void onFailure(Throwable p_onFailure_1_)
   {
-    this.b.setException(☃);
+    val$settablefuture.setException(p_onFailure_1_);
   }
 }

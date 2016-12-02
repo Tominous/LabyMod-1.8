@@ -9,7 +9,7 @@ public class agf
   protected agf()
   {
     super(arm.c);
-    j(this.M.b().a(a, agf.a.a).a(b, Boolean.valueOf(false)));
+    j(M.b().a(a, agf.a.a).a(b, Boolean.valueOf(false)));
     a(yz.b);
   }
   
@@ -92,30 +92,30 @@ public class agf
     
     private a(int ☃, String ☃, String ☃, arn ☃)
     {
-      this.e = ☃;
-      this.f = ☃;
-      this.g = ☃;
-      this.h = ☃;
+      e = ☃;
+      f = ☃;
+      g = ☃;
+      h = ☃;
     }
     
     public int a()
     {
-      return this.e;
+      return e;
     }
     
     public String c()
     {
-      return this.g;
+      return g;
     }
     
     public arn d()
     {
-      return this.h;
+      return h;
     }
     
     public String toString()
     {
-      return this.f;
+      return f;
     }
     
     public static a a(int ☃)
@@ -128,7 +128,7 @@ public class agf
     
     public String l()
     {
-      return this.f;
+      return f;
     }
   }
 }

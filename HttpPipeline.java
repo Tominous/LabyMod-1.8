@@ -131,19 +131,19 @@ public class HttpPipeline
     {
       public void finished(HttpRequest req, HttpResponse resp)
       {
-        synchronized (this.val$map)
+        synchronized (val$map)
         {
-          this.val$map.put("Response", resp);
-          this.val$map.notifyAll();
+          val$map.put("Response", resp);
+          val$map.notifyAll();
         }
       }
       
       public void failed(HttpRequest req, Exception e)
       {
-        synchronized (this.val$map)
+        synchronized (val$map)
         {
-          this.val$map.put("Exception", e);
-          this.val$map.notifyAll();
+          val$map.put("Exception", e);
+          val$map.notifyAll();
         }
       }
     };

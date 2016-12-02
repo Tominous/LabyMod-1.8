@@ -23,32 +23,32 @@ public enum zd
   
   private zd(int ☃, int ☃, String ☃, String ☃, arn ☃, a ☃)
   {
-    this.s = ☃;
-    this.t = ☃;
-    this.u = ☃;
-    this.v = ☃;
-    this.w = ☃;
-    this.x = ☃;
+    s = ☃;
+    t = ☃;
+    u = ☃;
+    v = ☃;
+    w = ☃;
+    x = ☃;
   }
   
   public int a()
   {
-    return this.s;
+    return s;
   }
   
   public int b()
   {
-    return this.t;
+    return t;
   }
   
   public String d()
   {
-    return this.v;
+    return v;
   }
   
   public arn e()
   {
-    return this.w;
+    return w;
   }
   
   public static zd a(int ☃)
@@ -69,11 +69,11 @@ public enum zd
   
   public String toString()
   {
-    return this.v;
+    return v;
   }
   
   public String l()
   {
-    return this.u;
+    return u;
   }
 }

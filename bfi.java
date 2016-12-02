@@ -13,8 +13,8 @@ public class bfi
   {
     if (☃.b() == zy.cE)
     {
-      this.e.a(☃);
-      bhc.a.a(this.e, 0.0D, 0.0D, 0.0D, 0.0F);
+      e.a(☃);
+      bhc.a.a(e, 0.0D, 0.0D, 0.0D, 0.0F);
     }
     else if (☃.b() == zy.bX)
     {
@@ -49,11 +49,11 @@ public class bfi
     {
       afh ☃ = afh.a(☃.b());
       if (☃ == afi.bQ) {
-        bhc.a.a(this.d, 0.0D, 0.0D, 0.0D, 0.0F);
+        bhc.a.a(d, 0.0D, 0.0D, 0.0D, 0.0F);
       } else if (☃ == afi.cg) {
-        bhc.a.a(this.c, 0.0D, 0.0D, 0.0D, 0.0F);
+        bhc.a.a(c, 0.0D, 0.0D, 0.0D, 0.0F);
       } else {
-        bhc.a.a(this.b, 0.0D, 0.0D, 0.0D, 0.0F);
+        bhc.a.a(b, 0.0D, 0.0D, 0.0D, 0.0F);
       }
     }
   }

@@ -28,11 +28,11 @@ public class PluginMessageReceivedEvent
   
   public String getChannel()
   {
-    return this.channel;
+    return channel;
   }
   
   public em getData()
   {
-    return this.data;
+    return data;
   }
 }

@@ -6,44 +6,44 @@ public class se
   
   public se(qa ☃)
   {
-    this.a = ☃;
+    a = ☃;
     a(5);
   }
   
   public boolean a()
   {
-    if (!this.a.cl()) {
+    if (!a.cl()) {
       return false;
     }
-    if (this.a.V()) {
+    if (a.V()) {
       return false;
     }
-    if (!this.a.C) {
+    if (!a.C) {
       return false;
     }
-    pr ☃ = this.a.co();
+    pr ☃ = a.co();
     if (☃ == null) {
       return true;
     }
-    if ((this.a.h(☃) < 144.0D) && (☃.bd() != null)) {
+    if ((a.h(☃) < 144.0D) && (☃.bd() != null)) {
       return false;
     }
-    return this.b;
+    return b;
   }
   
   public void c()
   {
-    this.a.s().n();
-    this.a.n(true);
+    a.s().n();
+    a.n(true);
   }
   
   public void d()
   {
-    this.a.n(false);
+    a.n(false);
   }
   
   public void a(boolean ☃)
   {
-    this.b = ☃;
+    b = ☃;
   }
 }

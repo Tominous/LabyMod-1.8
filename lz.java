@@ -12,25 +12,25 @@ public class lz
   public lz(GameProfile ☃, int ☃, boolean ☃)
   {
     super(☃);
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public lz(JsonObject ☃)
   {
     super(b(☃), ☃);
-    this.a = (☃.has("level") ? ☃.get("level").getAsInt() : 0);
-    this.b = ((☃.has("bypassesPlayerLimit")) && (☃.get("bypassesPlayerLimit").getAsBoolean()));
+    a = (☃.has("level") ? ☃.get("level").getAsInt() : 0);
+    b = ((☃.has("bypassesPlayerLimit")) && (☃.get("bypassesPlayerLimit").getAsBoolean()));
   }
   
   public int a()
   {
-    return this.a;
+    return a;
   }
   
   public boolean b()
   {
-    return this.b;
+    return b;
   }
   
   protected void a(JsonObject ☃)
@@ -41,8 +41,8 @@ public class lz
     ☃.addProperty("uuid", ((GameProfile)f()).getId() == null ? "" : ((GameProfile)f()).getId().toString());
     ☃.addProperty("name", ((GameProfile)f()).getName());
     super.a(☃);
-    ☃.addProperty("level", Integer.valueOf(this.a));
-    ☃.addProperty("bypassesPlayerLimit", Boolean.valueOf(this.b));
+    ☃.addProperty("level", Integer.valueOf(a));
+    ☃.addProperty("bypassesPlayerLimit", Boolean.valueOf(b));
   }
   
   private static GameProfile b(JsonObject ☃)

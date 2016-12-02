@@ -10,9 +10,9 @@ public class bfy
   
   public void a(adf p_178001_1_)
   {
-    if (this.b)
+    if (b)
     {
-      Iterator var2 = this.a.iterator();
+      Iterator var2 = a.iterator();
       while (var2.hasNext())
       {
         bht var3 = (bht)var2.next();
@@ -27,7 +27,7 @@ public class bfy
       }
       bqs.g(bqs.R, 0);
       bfl.G();
-      this.a.clear();
+      a.clear();
     }
   }
   

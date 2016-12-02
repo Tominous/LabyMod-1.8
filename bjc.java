@@ -12,7 +12,7 @@ public class bjc
   {
     super(☃, new bbg(), 0.5F);
     
-    this.a = ((bbg)this.f).a();
+    a = ((bbg)f).a();
   }
   
   public boolean a(vt ☃, bia ☃, double ☃, double ☃, double ☃)
@@ -25,9 +25,9 @@ public class bjc
       pr ☃ = ☃.cq();
       if (☃ != null)
       {
-        aui ☃ = a(☃, ☃.K * 0.5D, 1.0F);
+        aui ☃ = a(☃, K * 0.5D, 1.0F);
         aui ☃ = a(☃, ☃.aS(), 1.0F);
-        if (☃.a(aug.a(☃.a, ☃.b, ☃.c, ☃.a, ☃.b, ☃.c))) {
+        if (☃.a(aug.a(a, b, c, a, b, c))) {
           return true;
         }
       }
@@ -37,18 +37,18 @@ public class bjc
   
   private aui a(pr ☃, double ☃, float ☃)
   {
-    double ☃ = ☃.P + (☃.s - ☃.P) * ☃;
-    double ☃ = ☃ + ☃.Q + (☃.t - ☃.Q) * ☃;
-    double ☃ = ☃.R + (☃.u - ☃.R) * ☃;
+    double ☃ = P + (s - P) * ☃;
+    double ☃ = ☃ + Q + (t - Q) * ☃;
+    double ☃ = R + (u - R) * ☃;
     return new aui(☃, ☃, ☃);
   }
   
   public void a(vt ☃, double ☃, double ☃, double ☃, float ☃, float ☃)
   {
-    if (this.a != ((bbg)this.f).a())
+    if (a != ((bbg)f).a())
     {
-      this.f = new bbg();
-      this.a = ((bbg)this.f).a();
+      f = new bbg();
+      a = ((bbg)f).a();
     }
     super.a(☃, ☃, ☃, ☃, ☃, ☃);
     
@@ -71,22 +71,22 @@ public class bjc
       bqs.a(bqs.r, ☃, ☃);
       bfl.a(770, 1, 1, 0);
       
-      float ☃ = (float)☃.o.K() + ☃;
+      float ☃ = (float)o.K() + ☃;
       float ☃ = ☃ * 0.5F % 1.0F;
       float ☃ = ☃.aS();
       
       bfl.E();
       bfl.b((float)☃, (float)☃ + ☃, (float)☃);
       
-      aui ☃ = a(☃, ☃.K * 0.5D, ☃);
+      aui ☃ = a(☃, K * 0.5D, ☃);
       aui ☃ = a(☃, ☃, ☃);
       
       aui ☃ = ☃.d(☃);
       double ☃ = ☃.b() + 1.0D;
       ☃ = ☃.a();
       
-      float ☃ = (float)Math.acos(☃.b);
-      float ☃ = (float)Math.atan2(☃.c, ☃.a);
+      float ☃ = (float)Math.acos(b);
+      float ☃ = (float)Math.atan2(c, a);
       bfl.b((1.5707964F + -☃) * 57.295776F, 0.0F, 1.0F, 0.0F);
       bfl.b(☃ * 57.295776F, 1.0F, 0.0F, 0.0F);
       
@@ -141,7 +141,7 @@ public class bjc
       ☃.b(☃, ☃, ☃).a(0.0D, ☃).b(☃, ☃, ☃, 255).d();
       
       double ☃ = 0.0D;
-      if (☃.W % 2 == 0) {
+      if (W % 2 == 0) {
         ☃ = 0.5D;
       }
       ☃.b(☃, ☃, ☃).a(0.5D, ☃ + 0.5D).b(☃, ☃, ☃, 255).d();

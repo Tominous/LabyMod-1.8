@@ -10,7 +10,7 @@ public class bjn
   {
     super.a(☃, ☃, ☃);
     if (☃.c() == afi.ac) {
-      bhh.a(☃.j(), ☃.s, ☃.t, ☃.u, ☃);
+      bhh.a(☃.j(), s, t, u, ☃);
     }
   }
 }

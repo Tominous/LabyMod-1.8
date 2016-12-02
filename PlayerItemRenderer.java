@@ -13,15 +13,15 @@ public class PlayerItemRenderer
   
   public bct getModelRenderer()
   {
-    return this.modelRenderer;
+    return modelRenderer;
   }
   
   public void render(bbj modelBiped, float scale)
   {
-    bct attachModel = PlayerItemModel.getAttachModel(modelBiped, this.attachTo);
+    bct attachModel = PlayerItemModel.getAttachModel(modelBiped, attachTo);
     if (attachModel != null) {
       attachModel.c(scale);
     }
-    this.modelRenderer.a(scale * this.scaleFactor);
+    modelRenderer.a(scale * scaleFactor);
   }
 }

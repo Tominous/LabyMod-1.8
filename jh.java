@@ -12,25 +12,25 @@ public class jh
   
   public jh(String ☃, PublicKey ☃, byte[] ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.c(20);
-    this.b = ng.a(☃.a());
-    this.c = ☃.a();
+    a = ☃.c(20);
+    b = ng.a(☃.a());
+    c = ☃.a();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(this.a);
-    ☃.a(this.b.getEncoded());
-    ☃.a(this.c);
+    ☃.a(a);
+    ☃.a(b.getEncoded());
+    ☃.a(c);
   }
   
   public void a(jf ☃)
@@ -40,16 +40,16 @@ public class jh
   
   public String a()
   {
-    return this.a;
+    return a;
   }
   
   public PublicKey b()
   {
-    return this.b;
+    return b;
   }
   
   public byte[] c()
   {
-    return this.c;
+    return c;
   }
 }

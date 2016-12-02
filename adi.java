@@ -28,19 +28,19 @@ public class adi
   public adi(adm ☃, pk ☃, double ☃, double ☃, double ☃, float ☃, boolean ☃, boolean ☃, List<cj> ☃)
   {
     this(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
-    this.j.addAll(☃);
+    j.addAll(☃);
   }
   
   public adi(adm ☃, pk ☃, double ☃, double ☃, double ☃, float ☃, boolean ☃, boolean ☃)
   {
-    this.d = ☃;
-    this.h = ☃;
-    this.i = ☃;
-    this.e = ☃;
-    this.f = ☃;
-    this.g = ☃;
-    this.a = ☃;
-    this.b = ☃;
+    d = ☃;
+    h = ☃;
+    i = ☃;
+    e = ☃;
+    f = ☃;
+    g = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public void a()
@@ -62,22 +62,22 @@ public class adi
             ☃ /= ☃;
             ☃ /= ☃;
             
-            float ☃ = this.i * (0.7F + this.d.s.nextFloat() * 0.6F);
-            double ☃ = this.e;
-            double ☃ = this.f;
-            double ☃ = this.g;
+            float ☃ = i * (0.7F + d.s.nextFloat() * 0.6F);
+            double ☃ = e;
+            double ☃ = f;
+            double ☃ = g;
             
             float ☃ = 0.3F;
             while (☃ > 0.0F)
             {
               cj ☃ = new cj(☃, ☃, ☃);
-              alz ☃ = this.d.p(☃);
+              alz ☃ = d.p(☃);
               if (☃.c().t() != arm.a)
               {
-                float ☃ = this.h != null ? this.h.a(this, this.d, ☃, ☃) : ☃.c().a(null);
+                float ☃ = h != null ? h.a(this, d, ☃, ☃) : ☃.c().a(null);
                 ☃ -= (☃ + 0.3F) * 0.3F;
               }
-              if ((☃ > 0.0F) && ((this.h == null) || (this.h.a(this, this.d, ☃, ☃, ☃)))) {
+              if ((☃ > 0.0F) && ((h == null) || (h.a(this, d, ☃, ☃, ☃)))) {
                 ☃.add(☃);
               }
               ☃ += ☃ * 0.30000001192092896D;
@@ -89,29 +89,29 @@ public class adi
         }
       }
     }
-    this.j.addAll(☃);
+    j.addAll(☃);
     
-    float ☃ = this.i * 2.0F;
+    float ☃ = i * 2.0F;
     
-    int ☃ = ns.c(this.e - ☃ - 1.0D);
-    int ☃ = ns.c(this.e + ☃ + 1.0D);
-    int ☃ = ns.c(this.f - ☃ - 1.0D);
-    int ☃ = ns.c(this.f + ☃ + 1.0D);
-    int ☃ = ns.c(this.g - ☃ - 1.0D);
-    int ☃ = ns.c(this.g + ☃ + 1.0D);
-    List<pk> ☃ = this.d.b(this.h, new aug(☃, ☃, ☃, ☃, ☃, ☃));
-    aui ☃ = new aui(this.e, this.f, this.g);
+    int ☃ = ns.c(e - ☃ - 1.0D);
+    int ☃ = ns.c(e + ☃ + 1.0D);
+    int ☃ = ns.c(f - ☃ - 1.0D);
+    int ☃ = ns.c(f + ☃ + 1.0D);
+    int ☃ = ns.c(g - ☃ - 1.0D);
+    int ☃ = ns.c(g + ☃ + 1.0D);
+    List<pk> ☃ = d.b(h, new aug(☃, ☃, ☃, ☃, ☃, ☃));
+    aui ☃ = new aui(e, f, g);
     for (int ☃ = 0; ☃ < ☃.size(); ☃++)
     {
       pk ☃ = (pk)☃.get(☃);
       if (!☃.aW())
       {
-        double ☃ = ☃.f(this.e, this.f, this.g) / ☃;
+        double ☃ = ☃.f(e, f, g) / ☃;
         if (☃ <= 1.0D)
         {
-          double ☃ = ☃.s - this.e;
-          double ☃ = ☃.t + ☃.aS() - this.f;
-          double ☃ = ☃.u - this.g;
+          double ☃ = s - e;
+          double ☃ = t + ☃.aS() - f;
+          double ☃ = u - g;
           
           double ☃ = ns.a(☃ * ☃ + ☃ * ☃ + ☃ * ☃);
           if (☃ != 0.0D)
@@ -120,16 +120,16 @@ public class adi
             ☃ /= ☃;
             ☃ /= ☃;
             
-            double ☃ = this.d.a(☃, ☃.aR());
+            double ☃ = d.a(☃, ☃.aR());
             double ☃ = (1.0D - ☃) * ☃;
             ☃.a(ow.a(this), (int)((☃ * ☃ + ☃) / 2.0D * 8.0D * ☃ + 1.0D));
             
             double ☃ = acr.a(☃, ☃);
-            ☃.v += ☃ * ☃;
-            ☃.w += ☃ * ☃;
-            ☃.x += ☃ * ☃;
-            if (((☃ instanceof wn)) && (!((wn)☃).bA.a)) {
-              this.k.put((wn)☃, new aui(☃ * ☃, ☃ * ☃, ☃ * ☃));
+            v += ☃ * ☃;
+            w += ☃ * ☃;
+            x += ☃ * ☃;
+            if (((☃ instanceof wn)) && (!bA.a)) {
+              k.put((wn)☃, new aui(☃ * ☃, ☃ * ☃, ☃ * ☃));
             }
           }
         }
@@ -139,25 +139,25 @@ public class adi
   
   public void a(boolean ☃)
   {
-    this.d.a(this.e, this.f, this.g, "random.explode", 4.0F, (1.0F + (this.d.s.nextFloat() - this.d.s.nextFloat()) * 0.2F) * 0.7F);
-    if ((this.i < 2.0F) || (!this.b)) {
-      this.d.a(cy.b, this.e, this.f, this.g, 1.0D, 0.0D, 0.0D, new int[0]);
+    d.a(e, f, g, "random.explode", 4.0F, (1.0F + (d.s.nextFloat() - d.s.nextFloat()) * 0.2F) * 0.7F);
+    if ((i < 2.0F) || (!b)) {
+      d.a(cy.b, e, f, g, 1.0D, 0.0D, 0.0D, new int[0]);
     } else {
-      this.d.a(cy.c, this.e, this.f, this.g, 1.0D, 0.0D, 0.0D, new int[0]);
+      d.a(cy.c, e, f, g, 1.0D, 0.0D, 0.0D, new int[0]);
     }
-    if (this.b) {
-      for (cj ☃ : this.j)
+    if (b) {
+      for (cj ☃ : j)
       {
-        afh ☃ = this.d.p(☃).c();
+        afh ☃ = d.p(☃).c();
         if (☃)
         {
-          double ☃ = ☃.n() + this.d.s.nextFloat();
-          double ☃ = ☃.o() + this.d.s.nextFloat();
-          double ☃ = ☃.p() + this.d.s.nextFloat();
+          double ☃ = ☃.n() + d.s.nextFloat();
+          double ☃ = ☃.o() + d.s.nextFloat();
+          double ☃ = ☃.p() + d.s.nextFloat();
           
-          double ☃ = ☃ - this.e;
-          double ☃ = ☃ - this.f;
-          double ☃ = ☃ - this.g;
+          double ☃ = ☃ - e;
+          double ☃ = ☃ - f;
+          double ☃ = ☃ - g;
           
           double ☃ = ns.a(☃ * ☃ + ☃ * ☃ + ☃ * ☃);
           
@@ -165,29 +165,29 @@ public class adi
           ☃ /= ☃;
           ☃ /= ☃;
           
-          double ☃ = 0.5D / (☃ / this.i + 0.1D);
-          ☃ *= (this.d.s.nextFloat() * this.d.s.nextFloat() + 0.3F);
+          double ☃ = 0.5D / (☃ / i + 0.1D);
+          ☃ *= (d.s.nextFloat() * d.s.nextFloat() + 0.3F);
           ☃ *= ☃;
           ☃ *= ☃;
           ☃ *= ☃;
           
-          this.d.a(cy.a, (☃ + this.e * 1.0D) / 2.0D, (☃ + this.f * 1.0D) / 2.0D, (☃ + this.g * 1.0D) / 2.0D, ☃, ☃, ☃, new int[0]);
-          this.d.a(cy.l, ☃, ☃, ☃, ☃, ☃, ☃, new int[0]);
+          d.a(cy.a, (☃ + e * 1.0D) / 2.0D, (☃ + f * 1.0D) / 2.0D, (☃ + g * 1.0D) / 2.0D, ☃, ☃, ☃, new int[0]);
+          d.a(cy.l, ☃, ☃, ☃, ☃, ☃, ☃, new int[0]);
         }
         if (☃.t() != arm.a)
         {
           if (☃.a(this)) {
-            ☃.a(this.d, ☃, this.d.p(☃), 1.0F / this.i, 0);
+            ☃.a(d, ☃, d.p(☃), 1.0F / i, 0);
           }
-          this.d.a(☃, afi.a.Q(), 3);
-          ☃.a(this.d, ☃, this);
+          d.a(☃, afi.a.Q(), 3);
+          ☃.a(d, ☃, this);
         }
       }
     }
-    if (this.a) {
-      for (cj ☃ : this.j) {
-        if ((this.d.p(☃).c().t() == arm.a) && (this.d.p(☃.b()).c().o()) && (this.c.nextInt(3) == 0)) {
-          this.d.a(☃, afi.ab.Q());
+    if (a) {
+      for (cj ☃ : j) {
+        if ((d.p(☃).c().t() == arm.a) && (d.p(☃.b()).c().o()) && (c.nextInt(3) == 0)) {
+          d.a(☃, afi.ab.Q());
         }
       }
     }
@@ -195,30 +195,30 @@ public class adi
   
   public Map<wn, aui> b()
   {
-    return this.k;
+    return k;
   }
   
   public pr c()
   {
-    if (this.h == null) {
+    if (h == null) {
       return null;
     }
-    if ((this.h instanceof vj)) {
-      return ((vj)this.h).j();
+    if ((h instanceof vj)) {
+      return ((vj)h).j();
     }
-    if ((this.h instanceof pr)) {
-      return (pr)this.h;
+    if ((h instanceof pr)) {
+      return (pr)h;
     }
     return null;
   }
   
   public void d()
   {
-    this.j.clear();
+    j.clear();
   }
   
   public List<cj> e()
   {
-    return this.j;
+    return j;
   }
 }

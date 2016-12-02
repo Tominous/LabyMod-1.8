@@ -6,24 +6,24 @@ public class all
   {
     public void a(int ☃)
     {
-      all.this.b.c(all.this.c, afi.ac, ☃, 0);
+      b.c(c, afi.ac, ☃, 0);
     }
     
     public adm a()
     {
-      return all.this.b;
+      return b;
     }
     
     public cj b()
     {
-      return all.this.c;
+      return c;
     }
     
     public void a(add.a ☃)
     {
       super.a(☃);
       if (a() != null) {
-        a().h(all.this.c);
+        a().h(c);
       }
     }
   };
@@ -31,18 +31,18 @@ public class all
   public void a(dn ☃)
   {
     super.a(☃);
-    this.a.a(☃);
+    a.a(☃);
   }
   
   public void b(dn ☃)
   {
     super.b(☃);
-    this.a.b(☃);
+    a.b(☃);
   }
   
   public void c()
   {
-    this.a.c();
+    a.c();
   }
   
   public ff y_()
@@ -50,12 +50,12 @@ public class all
     dn ☃ = new dn();
     b(☃);
     ☃.o("SpawnPotentials");
-    return new ft(this.c, 1, ☃);
+    return new ft(c, 1, ☃);
   }
   
   public boolean c(int ☃, int ☃)
   {
-    if (this.a.b(☃)) {
+    if (a.b(☃)) {
       return true;
     }
     return super.c(☃, ☃);
@@ -68,6 +68,6 @@ public class all
   
   public add b()
   {
-    return this.a;
+    return a;
   }
 }

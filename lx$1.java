@@ -5,27 +5,27 @@ class lx$1
   
   public void a(ams ☃, double ☃)
   {
-    this.a.a(new hg(☃, hg.a.a));
+    a.a(new hg(☃, hg.a.a));
   }
   
   public void a(ams ☃, double ☃, double ☃, long ☃)
   {
-    this.a.a(new hg(☃, hg.a.b));
+    a.a(new hg(☃, hg.a.b));
   }
   
   public void a(ams ☃, double ☃, double ☃)
   {
-    this.a.a(new hg(☃, hg.a.c));
+    a.a(new hg(☃, hg.a.c));
   }
   
   public void a(ams ☃, int ☃)
   {
-    this.a.a(new hg(☃, hg.a.e));
+    a.a(new hg(☃, hg.a.e));
   }
   
   public void b(ams ☃, int ☃)
   {
-    this.a.a(new hg(☃, hg.a.f));
+    a.a(new hg(☃, hg.a.f));
   }
   
   public void b(ams ☃, double ☃) {}

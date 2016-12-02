@@ -5,7 +5,7 @@ class kb$12$1
   
   protected wv a(adm ☃, cz ☃)
   {
-    return new xc(☃, ☃.a(), ☃.b(), ☃.c(), this.b.k());
+    return new xc(☃, ☃.a(), ☃.b(), ☃.c(), b.k());
   }
   
   protected float a()

@@ -19,7 +19,7 @@ public class qi
   {
     qc ☃ = super.a(☃);
     if (☃ == null) {
-      ☃ = (qc)this.d.get(☃);
+      ☃ = (qc)d.get(☃);
     }
     return (qh)☃;
   }
@@ -28,7 +28,7 @@ public class qi
   {
     qc ☃ = super.b(☃);
     if (((☃ instanceof qj)) && (((qj)☃).g() != null)) {
-      this.d.put(((qj)☃).g(), ☃);
+      d.put(((qj)☃).g(), ☃);
     }
     return ☃;
   }
@@ -41,9 +41,9 @@ public class qi
   public void a(qc ☃)
   {
     if (☃.a().c()) {
-      this.e.add(☃);
+      e.add(☃);
     }
-    for (qb ☃ : this.c.get(☃.a()))
+    for (qb ☃ : c.get(☃.a()))
     {
       qh ☃ = e(☃);
       if (☃ != null) {
@@ -54,7 +54,7 @@ public class qi
   
   public Set<qc> b()
   {
-    return this.e;
+    return e;
   }
   
   public Collection<qc> c()

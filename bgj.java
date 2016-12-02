@@ -9,9 +9,9 @@ public class bgj
   
   public bgj(Vector3f ☃, cq.a ☃, float ☃, boolean ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
   }
 }

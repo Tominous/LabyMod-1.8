@@ -8,30 +8,30 @@ public enum pt
   
   private pt(Class<? extends pi> ☃, int ☃, arm ☃, boolean ☃, boolean ☃)
   {
-    this.e = ☃;
-    this.f = ☃;
-    this.g = ☃;
-    this.h = ☃;
-    this.i = ☃;
+    e = ☃;
+    f = ☃;
+    g = ☃;
+    h = ☃;
+    i = ☃;
   }
   
   public Class<? extends pi> a()
   {
-    return this.e;
+    return e;
   }
   
   public int b()
   {
-    return this.f;
+    return f;
   }
   
   public boolean d()
   {
-    return this.h;
+    return h;
   }
   
   public boolean e()
   {
-    return this.i;
+    return i;
   }
 }

@@ -9,19 +9,19 @@ public class ht
   
   public ht(cj ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.c();
+    a = ☃.c();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(this.a);
+    ☃.a(a);
   }
   
   public void a(fj ☃)
@@ -31,6 +31,6 @@ public class ht
   
   public cj a()
   {
-    return this.a;
+    return a;
   }
 }

@@ -14,15 +14,15 @@ public class aqo$a
     aqp.b();
     
     aqp.m ☃ = new aqp.m(0, ☃, (☃ << 4) + 2, (☃ << 4) + 2);
-    this.a.add(☃);
-    ☃.a(☃, this.a, ☃);
+    a.add(☃);
+    ☃.a(☃, a, ☃);
     
-    List<aqt> ☃ = ☃.c;
+    List<aqt> ☃ = c;
     while (!☃.isEmpty())
     {
       int ☃ = ☃.nextInt(☃.size());
       aqt ☃ = (aqt)☃.remove(☃);
-      ☃.a(☃, this.a, ☃);
+      ☃.a(☃, a, ☃);
     }
     c();
     a(☃, ☃, 10);

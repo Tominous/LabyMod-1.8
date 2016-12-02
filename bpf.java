@@ -24,13 +24,13 @@ public class bpf
   private bpf(jy ☃, float ☃, float ☃, boolean ☃, int ☃, bpj.a ☃, float ☃, float ☃, float ☃)
   {
     super(☃);
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
-    this.e = ☃;
-    this.f = ☃;
-    this.g = ☃;
-    this.h = ☃;
-    this.i = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
+    e = ☃;
+    f = ☃;
+    g = ☃;
+    h = ☃;
+    i = ☃;
   }
 }

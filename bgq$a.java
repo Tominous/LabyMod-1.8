@@ -23,14 +23,14 @@ class bgq$a
     
     Vector3f ☃ = a(☃, "translation", b);
     ☃.scale(0.0625F);
-    ☃.x = ns.a(☃.x, -1.5F, 1.5F);
-    ☃.y = ns.a(☃.y, -1.5F, 1.5F);
-    ☃.z = ns.a(☃.z, -1.5F, 1.5F);
+    x = ns.a(x, -1.5F, 1.5F);
+    y = ns.a(y, -1.5F, 1.5F);
+    z = ns.a(z, -1.5F, 1.5F);
     
     Vector3f ☃ = a(☃, "scale", c);
-    ☃.x = ns.a(☃.x, -4.0F, 4.0F);
-    ☃.y = ns.a(☃.y, -4.0F, 4.0F);
-    ☃.z = ns.a(☃.z, -4.0F, 4.0F);
+    x = ns.a(x, -4.0F, 4.0F);
+    y = ns.a(y, -4.0F, 4.0F);
+    z = ns.a(z, -4.0F, 4.0F);
     
     return new bgq(☃, ☃, ☃);
   }

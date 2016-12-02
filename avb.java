@@ -23,7 +23,7 @@ public class avb
     }
     avb ☃ = (avb)b.a(☃);
     if (☃ != null) {
-      ☃.i += 1;
+      i += 1;
     }
   }
   
@@ -34,7 +34,7 @@ public class avb
     }
     avb ☃ = (avb)b.a(☃);
     if (☃ != null) {
-      ☃.h = ☃;
+      h = ☃;
     }
   }
   
@@ -49,7 +49,7 @@ public class avb
   {
     b.c();
     for (avb ☃ : a) {
-      b.a(☃.g, ☃);
+      b.a(g, ☃);
     }
   }
   
@@ -60,10 +60,10 @@ public class avb
   
   public avb(String ☃, int ☃, String ☃)
   {
-    this.d = ☃;
-    this.g = ☃;
-    this.e = ☃;
-    this.f = ☃;
+    d = ☃;
+    g = ☃;
+    e = ☃;
+    f = ☃;
     
     a.add(this);
     b.a(☃, this);
@@ -72,54 +72,54 @@ public class avb
   
   public boolean d()
   {
-    return this.h;
+    return h;
   }
   
   public String e()
   {
-    return this.f;
+    return f;
   }
   
   public boolean f()
   {
-    if (this.i == 0) {
+    if (i == 0) {
       return false;
     }
-    this.i -= 1;
+    i -= 1;
     return true;
   }
   
   private void j()
   {
-    this.i = 0;
-    this.h = false;
+    i = 0;
+    h = false;
   }
   
   public String g()
   {
-    return this.d;
+    return d;
   }
   
   public int h()
   {
-    return this.e;
+    return e;
   }
   
   public int i()
   {
-    return this.g;
+    return g;
   }
   
   public void b(int ☃)
   {
-    this.g = ☃;
+    g = ☃;
   }
   
   public int a(avb ☃)
   {
-    int ☃ = bnq.a(this.f, new Object[0]).compareTo(bnq.a(☃.f, new Object[0]));
+    int ☃ = bnq.a(f, new Object[0]).compareTo(bnq.a(f, new Object[0]));
     if (☃ == 0) {
-      ☃ = bnq.a(this.d, new Object[0]).compareTo(bnq.a(☃.d, new Object[0]));
+      ☃ = bnq.a(d, new Object[0]).compareTo(bnq.a(d, new Object[0]));
     }
     return ☃;
   }

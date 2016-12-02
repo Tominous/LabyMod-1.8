@@ -10,41 +10,41 @@ public class ata
   public void a(adq ☃, pk ☃)
   {
     super.a(☃, ☃);
-    this.j = this.h;
+    j = h;
   }
   
   public void a()
   {
     super.a();
-    this.h = this.j;
+    h = j;
   }
   
   public asv a(pk ☃)
   {
     int ☃;
-    if ((this.i) && (☃.V()))
+    if ((i) && (☃.V()))
     {
-      int ☃ = (int)☃.aR().b;
-      cj.a ☃ = new cj.a(ns.c(☃.s), ☃, ns.c(☃.u));
-      afh ☃ = this.a.p(☃).c();
+      int ☃ = (int)aRb;
+      cj.a ☃ = new cj.a(ns.c(s), ☃, ns.c(u));
+      afh ☃ = a.p(☃).c();
       while ((☃ == afi.i) || (☃ == afi.j))
       {
         ☃++;
-        ☃.c(ns.c(☃.s), ☃, ns.c(☃.u));
-        ☃ = this.a.p(☃).c();
+        ☃.c(ns.c(s), ☃, ns.c(u));
+        ☃ = a.p(☃).c();
       }
-      this.h = false;
+      h = false;
     }
     else
     {
-      ☃ = ns.c(☃.aR().b + 0.5D);
+      ☃ = ns.c(aRb + 0.5D);
     }
-    return a(ns.c(☃.aR().a), ☃, ns.c(☃.aR().c));
+    return a(ns.c(aRa), ☃, ns.c(aRc));
   }
   
   public asv a(pk ☃, double ☃, double ☃, double ☃)
   {
-    return a(ns.c(☃ - ☃.J / 2.0F), ns.c(☃), ns.c(☃ - ☃.J / 2.0F));
+    return a(ns.c(☃ - J / 2.0F), ns.c(☃), ns.c(☃ - J / 2.0F));
   }
   
   public int a(asv[] ☃, pk ☃, asv ☃, asv ☃, float ☃)
@@ -52,23 +52,23 @@ public class ata
     int ☃ = 0;
     
     int ☃ = 0;
-    if (a(☃, ☃.a, ☃.b + 1, ☃.c) == 1) {
+    if (a(☃, a, b + 1, c) == 1) {
       ☃ = 1;
     }
-    asv ☃ = a(☃, ☃.a, ☃.b, ☃.c + 1, ☃);
-    asv ☃ = a(☃, ☃.a - 1, ☃.b, ☃.c, ☃);
-    asv ☃ = a(☃, ☃.a + 1, ☃.b, ☃.c, ☃);
-    asv ☃ = a(☃, ☃.a, ☃.b, ☃.c - 1, ☃);
-    if ((☃ != null) && (!☃.i) && (☃.a(☃) < ☃)) {
+    asv ☃ = a(☃, a, b, c + 1, ☃);
+    asv ☃ = a(☃, a - 1, b, c, ☃);
+    asv ☃ = a(☃, a + 1, b, c, ☃);
+    asv ☃ = a(☃, a, b, c - 1, ☃);
+    if ((☃ != null) && (!i) && (☃.a(☃) < ☃)) {
       ☃[(☃++)] = ☃;
     }
-    if ((☃ != null) && (!☃.i) && (☃.a(☃) < ☃)) {
+    if ((☃ != null) && (!i) && (☃.a(☃) < ☃)) {
       ☃[(☃++)] = ☃;
     }
-    if ((☃ != null) && (!☃.i) && (☃.a(☃) < ☃)) {
+    if ((☃ != null) && (!i) && (☃.a(☃) < ☃)) {
       ☃[(☃++)] = ☃;
     }
-    if ((☃ != null) && (!☃.i) && (☃.a(☃) < ☃)) {
+    if ((☃ != null) && (!i) && (☃.a(☃) < ☃)) {
       ☃[(☃++)] = ☃;
     }
     return ☃;
@@ -96,7 +96,7 @@ public class ata
       while (☃ > 0)
       {
         ☃ = a(☃, ☃, ☃ - 1, ☃);
-        if ((this.h) && (☃ == -1)) {
+        if ((h) && (☃ == -1)) {
           return null;
         }
         if (☃ == 1)
@@ -121,7 +121,7 @@ public class ata
   
   private int a(pk ☃, int ☃, int ☃, int ☃)
   {
-    return a(this.a, ☃, ☃, ☃, ☃, this.c, this.d, this.e, this.h, this.g, this.f);
+    return a(a, ☃, ☃, ☃, ☃, c, d, e, h, g, f);
   }
   
   public static int a(adq ☃, pk ☃, int ☃, int ☃, int ☃, int ☃, int ☃, int ☃, boolean ☃, boolean ☃, boolean ☃)
@@ -153,9 +153,9 @@ public class ata
             {
               return 0;
             }
-            if ((☃.o.p(☃).c() instanceof afe))
+            if ((o.p(☃).c() instanceof afe))
             {
-              if ((!(☃.o.p(☃).c() instanceof afe)) && (!(☃.o.p(☃.b()).c() instanceof afe))) {
+              if ((!(o.p(☃).c() instanceof afe)) && (!(o.p(☃.b()).c() instanceof afe))) {
                 return -3;
               }
             }
@@ -189,36 +189,36 @@ public class ata
   
   public void a(boolean ☃)
   {
-    this.f = ☃;
+    f = ☃;
   }
   
   public void b(boolean ☃)
   {
-    this.g = ☃;
+    g = ☃;
   }
   
   public void c(boolean ☃)
   {
-    this.h = ☃;
+    h = ☃;
   }
   
   public void d(boolean ☃)
   {
-    this.i = ☃;
+    i = ☃;
   }
   
   public boolean b()
   {
-    return this.f;
+    return f;
   }
   
   public boolean d()
   {
-    return this.i;
+    return i;
   }
   
   public boolean e()
   {
-    return this.h;
+    return h;
   }
 }

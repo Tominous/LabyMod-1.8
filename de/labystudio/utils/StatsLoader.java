@@ -1,7 +1,5 @@
 package de.labystudio.utils;
 
-import de.labystudio.labymod.Source;
-import de.labystudio.labymod.Timings;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -18,7 +16,6 @@ public class StatsLoader
   
   public static void loadstats()
   {
-    Timings.start("Load Game stats config");
     if (!stats.isEmpty()) {
       return;
     }
@@ -27,25 +24,32 @@ public class StatsLoader
     create();
     try
     {
-      json = IOUtils.toString(new FileInputStream(Source.file_stats));
+      json = IOUtils.toString(new FileInputStream("LabyMod/minigames_stats.json"));
     }
     catch (FileNotFoundException localFileNotFoundException) {}catch (IOException localIOException) {}
-    stats = (HashMap)Utils.ConvertJsonToObject.getFromJSON(json, HashMap.class);
+    try
+    {
+      stats = (HashMap)Utils.ConvertJsonToObject.getFromJSON(json, HashMap.class);
+    }
+    catch (Exception error)
+    {
+      new File("LabyMod/minigames_stats.json").delete();
+      error.printStackTrace();
+    }
     if (stats == null) {
       stats = new HashMap();
     }
-    Timings.stop("Load Game stats config");
   }
   
   public static void create()
   {
-    if (!new File(Source.file_stats).exists()) {
+    if (!new File("LabyMod/minigames_stats.json").exists()) {
       try
       {
-        if (!new File(Source.file_stats).getParentFile().exists()) {
-          new File(Source.file_stats).getParentFile().mkdirs();
+        if (!new File("LabyMod/minigames_stats.json").getParentFile().exists()) {
+          new File("LabyMod/minigames_stats.json").getParentFile().mkdirs();
         }
-        new File(Source.file_stats).createNewFile();
+        new File("LabyMod/minigames_stats.json").createNewFile();
       }
       catch (IOException localIOException) {}
     }
@@ -57,7 +61,7 @@ public class StatsLoader
     String json = Utils.ConvertJsonToObject.toJSON(stats);
     try
     {
-      PrintWriter w = new PrintWriter(new FileOutputStream(Source.file_stats));
+      PrintWriter w = new PrintWriter(new FileOutputStream("LabyMod/minigames_stats.json"));
       w.print(json);
       w.flush();
       w.close();

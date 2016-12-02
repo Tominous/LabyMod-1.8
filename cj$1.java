@@ -14,34 +14,34 @@ final class cj$1
       
       protected cj a()
       {
-        if (this.b == null)
+        if (b == null)
         {
-          this.b = cj.1.this.a;
-          return this.b;
+          b = a;
+          return b;
         }
-        if (this.b.equals(cj.1.this.b)) {
+        if (b.equals(b)) {
           return (cj)endOfData();
         }
-        int ☃ = this.b.n();
-        int ☃ = this.b.o();
-        int ☃ = this.b.p();
-        if (☃ < cj.1.this.b.n())
+        int ☃ = b.n();
+        int ☃ = b.o();
+        int ☃ = b.p();
+        if (☃ < b.n())
         {
           ☃++;
         }
-        else if (☃ < cj.1.this.b.o())
+        else if (☃ < b.o())
         {
-          ☃ = cj.1.this.a.n();
+          ☃ = a.n();
           ☃++;
         }
-        else if (☃ < cj.1.this.b.p())
+        else if (☃ < b.p())
         {
-          ☃ = cj.1.this.a.n();
-          ☃ = cj.1.this.a.o();
+          ☃ = a.n();
+          ☃ = a.o();
           ☃++;
         }
-        this.b = new cj(☃, ☃, ☃);
-        return this.b;
+        b = new cj(☃, ☃, ☃);
+        return b;
       }
     };
   }

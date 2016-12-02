@@ -18,18 +18,18 @@ public class bnd
   protected InputStream a(String ☃)
     throws IOException
   {
-    return new BufferedInputStream(new FileInputStream(new File(this.a, ☃)));
+    return new BufferedInputStream(new FileInputStream(new File(a, ☃)));
   }
   
   protected boolean b(String ☃)
   {
-    return new File(this.a, ☃).isFile();
+    return new File(a, ☃).isFile();
   }
   
   public Set<String> c()
   {
     Set<String> ☃ = Sets.newHashSet();
-    File ☃ = new File(this.a, "assets/");
+    File ☃ = new File(a, "assets/");
     if (☃.isDirectory()) {
       for (File ☃ : ☃.listFiles(DirectoryFileFilter.DIRECTORY))
       {

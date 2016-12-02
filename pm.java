@@ -258,11 +258,11 @@ public class pm
     
     public a(int ☃, int ☃, int ☃)
     {
-      this.a = ☃;
-      this.b = ☃;
-      this.c = ☃;
-      this.d = na.a(this);
-      this.e = na.b(this);
+      a = ☃;
+      b = ☃;
+      c = ☃;
+      d = na.a(this);
+      e = na.b(this);
     }
   }
 }

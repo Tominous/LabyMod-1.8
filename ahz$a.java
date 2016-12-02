@@ -21,19 +21,19 @@ public enum ahz$a
   
   private ahz$a(int ☃, String ☃, String ☃)
   {
-    this.h = ☃;
-    this.i = ☃;
-    this.j = ☃;
+    h = ☃;
+    i = ☃;
+    j = ☃;
   }
   
   public int a()
   {
-    return this.h;
+    return h;
   }
   
   public String toString()
   {
-    return this.i;
+    return i;
   }
   
   public static a a(int ☃)
@@ -46,12 +46,12 @@ public enum ahz$a
   
   public String l()
   {
-    return this.i;
+    return i;
   }
   
   public String c()
   {
-    return this.j;
+    return j;
   }
   
   public static a a(alz ☃)

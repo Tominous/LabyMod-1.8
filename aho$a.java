@@ -15,18 +15,18 @@ public enum aho$a
   
   private aho$a(int ☃, String ☃)
   {
-    this.o = ☃;
-    this.p = ☃;
+    o = ☃;
+    p = ☃;
   }
   
   public int a()
   {
-    return this.o;
+    return o;
   }
   
   public String toString()
   {
-    return this.p;
+    return p;
   }
   
   public static a a(int ☃)
@@ -40,6 +40,6 @@ public enum aho$a
   
   public String l()
   {
-    return this.p;
+    return p;
   }
 }

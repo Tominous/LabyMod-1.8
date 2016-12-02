@@ -10,8 +10,8 @@ public class aqw$a
   {
     super(☃, ☃);
     
-    this.m = ☃;
-    this.l = ☃;
+    m = ☃;
+    l = ☃;
   }
   
   public static a a(aqw.k ☃, List<aqt> ☃, Random ☃, int ☃, int ☃, int ☃, cq ☃, int ☃)
@@ -25,13 +25,13 @@ public class aqw$a
   
   public boolean a(adm ☃, Random ☃, aqe ☃)
   {
-    if (this.h < 0)
+    if (h < 0)
     {
-      this.h = b(☃, ☃);
-      if (this.h < 0) {
+      h = b(☃, ☃);
+      if (h < 0) {
         return true;
       }
-      this.l.a(0, this.h - this.l.e + 9 - 1, 0);
+      l.a(0, h - l.e + 9 - 1, 0);
     }
     a(☃, ☃, 1, 1, 1, 7, 5, 4, afi.a.Q(), afi.a.Q(), false);
     

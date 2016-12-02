@@ -29,15 +29,15 @@ public class aab
   {
     String ☃ = "map_" + ☃.i();
     atg ☃ = (atg)☃.a(atg.class, ☃);
-    if ((☃ == null) && (!☃.D))
+    if ((☃ == null) && (!D))
     {
       ☃.b(☃.b("map"));
       ☃ = "map_" + ☃.i();
       ☃ = new atg(☃);
       
-      ☃.e = 3;
-      ☃.a(☃.P().c(), ☃.P().e(), ☃.e);
-      ☃.d = ((byte)☃.t.q());
+      e = 3;
+      ☃.a(☃.P().c(), ☃.P().e(), e);
+      d = ((byte)t.q());
       
       ☃.c();
       
@@ -48,25 +48,25 @@ public class aab
   
   public void a(adm ☃, pk ☃, atg ☃)
   {
-    if ((☃.t.q() != ☃.d) || (!(☃ instanceof wn))) {
+    if ((t.q() != d) || (!(☃ instanceof wn))) {
       return;
     }
-    int ☃ = 1 << ☃.e;
-    int ☃ = ☃.b;
-    int ☃ = ☃.c;
+    int ☃ = 1 << e;
+    int ☃ = b;
+    int ☃ = c;
     
-    int ☃ = ns.c(☃.s - ☃) / ☃ + 64;
-    int ☃ = ns.c(☃.u - ☃) / ☃ + 64;
+    int ☃ = ns.c(s - ☃) / ☃ + 64;
+    int ☃ = ns.c(u - ☃) / ☃ + 64;
     int ☃ = 128 / ☃;
-    if (☃.t.o()) {
+    if (t.o()) {
       ☃ /= 2;
     }
     atg.a ☃ = ☃.a((wn)☃);
-    ☃.b += 1;
+    b += 1;
     
     boolean ☃ = false;
     for (int ☃ = ☃ - ☃ + 1; ☃ < ☃ + ☃; ☃++) {
-      if (((☃ & 0xF) == (☃.b & 0xF)) || (☃))
+      if (((☃ & 0xF) == (b & 0xF)) || (☃))
       {
         ☃ = false;
         double ☃ = 0.0D;
@@ -91,7 +91,7 @@ public class aab
               int ☃ = 0;
               
               double ☃ = 0.0D;
-              if (☃.t.o())
+              if (t.o())
               {
                 int ☃ = ☃ + ☃ * 231871;
                 ☃ = ☃ * ☃ * 31287121 + ☃ * 11;
@@ -161,11 +161,11 @@ public class aab
                 if (☃ * ☃ + ☃ * ☃ < ☃ * ☃) {
                   if ((!☃) || ((☃ + ☃ & 0x1) != 0))
                   {
-                    byte ☃ = ☃.f[(☃ + ☃ * 128)];
-                    byte ☃ = (byte)(☃.M * 4 + ☃);
+                    byte ☃ = f[(☃ + ☃ * 128)];
+                    byte ☃ = (byte)(M * 4 + ☃);
                     if (☃ != ☃)
                     {
-                      ☃.f[(☃ + ☃ * 128)] = ☃;
+                      f[(☃ + ☃ * 128)] = ☃;
                       ☃.a(☃, ☃);
                       ☃ = true;
                     }
@@ -181,7 +181,7 @@ public class aab
   
   public void a(zx ☃, adm ☃, pk ☃, int ☃, boolean ☃)
   {
-    if (☃.D) {
+    if (D) {
       return;
     }
     atg ☃ = a(☃, ☃);
@@ -208,12 +208,12 @@ public class aab
       ☃.b(☃.b("map"));
       atg ☃ = new atg("map_" + ☃.i());
       
-      ☃.e = ((byte)(☃.e + 1));
-      if (☃.e > 4) {
-        ☃.e = 4;
+      e = ((byte)(e + 1));
+      if (e > 4) {
+        e = 4;
       }
-      ☃.a(☃.b, ☃.c, ☃.e);
-      ☃.d = ☃.d;
+      ☃.a(b, c, e);
+      d = d;
       ☃.c();
       ☃.a("map_" + ☃.i(), ☃);
     }
@@ -221,7 +221,7 @@ public class aab
   
   public void a(zx ☃, wn ☃, List<String> ☃, boolean ☃)
   {
-    atg ☃ = a(☃, ☃.o);
+    atg ☃ = a(☃, o);
     if (☃) {
       if (☃ == null)
       {
@@ -229,8 +229,8 @@ public class aab
       }
       else
       {
-        ☃.add("Scaling at 1:" + (1 << ☃.e));
-        ☃.add("(Level " + ☃.e + "/" + 4 + ")");
+        ☃.add("Scaling at 1:" + (1 << e));
+        ☃.add("(Level " + e + "/" + 4 + ")");
       }
     }
   }

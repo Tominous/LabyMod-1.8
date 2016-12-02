@@ -7,12 +7,12 @@ public enum fi$a
   
   private fi$a(int ☃)
   {
-    this.f = ☃;
+    f = ☃;
   }
   
   private int a()
   {
-    return 1 << this.f;
+    return 1 << f;
   }
   
   private boolean b(int ☃)

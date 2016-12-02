@@ -11,23 +11,23 @@ public class PacketLoginVersion
   
   public PacketLoginVersion(int internalVersion, String externalVersion)
   {
-    this.versionId = internalVersion;
-    this.versionName = externalVersion;
+    versionId = internalVersion;
+    versionName = externalVersion;
   }
   
   public PacketLoginVersion() {}
   
   public void read(PacketBuf buf)
   {
-    this.versionId = buf.readInt();
-    this.versionName = buf.readString();
-    this.updateLink = buf.readString();
+    versionId = buf.readInt();
+    versionName = buf.readString();
+    updateLink = buf.readString();
   }
   
   public void write(PacketBuf buf)
   {
-    buf.writeInt(this.versionId);
-    buf.writeString(this.versionName);
+    buf.writeInt(versionId);
+    buf.writeString(versionName);
     buf.writeString("");
   }
   
@@ -38,16 +38,16 @@ public class PacketLoginVersion
   
   public String getVersionName()
   {
-    return this.versionName;
+    return versionName;
   }
   
   public int getVersionID()
   {
-    return this.versionId;
+    return versionId;
   }
   
   public String getUpdateLink()
   {
-    return this.updateLink;
+    return updateLink;
   }
 }

@@ -16,51 +16,51 @@ public class aqv$a
     List<aqw.e> ☃ = aqw.a(☃, ☃);
     
     aqw.k ☃ = new aqw.k(☃.v(), 0, ☃, (☃ << 4) + 2, (☃ << 4) + 2, ☃, ☃);
-    this.a.add(☃);
-    ☃.a(☃, this.a, ☃);
+    a.add(☃);
+    ☃.a(☃, a, ☃);
     
-    List<aqt> ☃ = ☃.g;
-    List<aqt> ☃ = ☃.f;
+    List<aqt> ☃ = g;
+    List<aqt> ☃ = f;
     while ((!☃.isEmpty()) || (!☃.isEmpty())) {
       if (☃.isEmpty())
       {
         int ☃ = ☃.nextInt(☃.size());
         aqt ☃ = (aqt)☃.remove(☃);
-        ☃.a(☃, this.a, ☃);
+        ☃.a(☃, a, ☃);
       }
       else
       {
         int ☃ = ☃.nextInt(☃.size());
         aqt ☃ = (aqt)☃.remove(☃);
-        ☃.a(☃, this.a, ☃);
+        ☃.a(☃, a, ☃);
       }
     }
     c();
     
     int ☃ = 0;
-    for (aqt ☃ : this.a) {
+    for (aqt ☃ : a) {
       if (!(☃ instanceof aqw.o)) {
         ☃++;
       }
     }
-    this.c = (☃ > 2);
+    c = (☃ > 2);
   }
   
   public boolean d()
   {
-    return this.c;
+    return c;
   }
   
   public void a(dn ☃)
   {
     super.a(☃);
     
-    ☃.a("Valid", this.c);
+    ☃.a("Valid", c);
   }
   
   public void b(dn ☃)
   {
     super.b(☃);
-    this.c = ☃.n("Valid");
+    c = ☃.n("Valid");
   }
 }

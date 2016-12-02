@@ -9,7 +9,7 @@ public abstract class akr
   public akr()
   {
     super(arm.d);
-    alz ☃ = this.M.b();
+    alz ☃ = M.b();
     if (!l()) {
       ☃ = ☃.a(a, ahh.a.b);
     }

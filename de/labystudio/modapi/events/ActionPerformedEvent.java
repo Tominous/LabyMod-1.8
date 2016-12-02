@@ -24,12 +24,12 @@ public class ActionPerformedEvent
   
   public axu getScreen()
   {
-    return this.screen;
+    return screen;
   }
   
   public avs getButton()
   {
-    return this.button;
+    return button;
   }
   
   public Map<Listener, List<Method>> getListenerMethods()

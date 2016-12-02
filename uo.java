@@ -35,7 +35,7 @@ public class uo
     }
     if ((!☃.c()) && (o() != null))
     {
-      if (!this.o.D)
+      if (!o.D)
       {
         a(☃.j(), false);
         a(null);
@@ -58,7 +58,7 @@ public class uo
   public boolean a(double ☃)
   {
     double ☃ = 16.0D;
-    ☃ *= 64.0D * this.j;
+    ☃ *= 64.0D * j;
     return ☃ < ☃ * ☃;
   }
   
@@ -69,14 +69,14 @@ public class uo
   
   public void a(pk ☃, boolean ☃)
   {
-    if (!this.o.Q().b("doEntityDrops")) {
+    if (!o.Q().b("doEntityDrops")) {
       return;
     }
     zx ☃ = o();
     if ((☃ instanceof wn))
     {
       wn ☃ = (wn)☃;
-      if (☃.bA.d)
+      if (bA.d)
       {
         b(☃);
         return;
@@ -85,7 +85,7 @@ public class uo
     if (☃) {
       a(new zx(zy.bP), 0.0F);
     }
-    if ((☃ != null) && (this.V.nextFloat() < this.c))
+    if ((☃ != null) && (V.nextFloat() < c))
     {
       ☃ = ☃.k();
       b(☃);
@@ -100,8 +100,8 @@ public class uo
     }
     if (☃.b() == zy.bd)
     {
-      atg ☃ = ((aab)☃.b()).a(☃, this.o);
-      ☃.h.remove("frame-" + F());
+      atg ☃ = ((aab)☃.b()).a(☃, o);
+      h.remove("frame-" + F());
     }
     ☃.a(null);
   }
@@ -121,13 +121,13 @@ public class uo
     if (☃ != null)
     {
       ☃ = ☃.k();
-      ☃.b = 1;
+      b = 1;
       ☃.a(this);
     }
     H().b(8, ☃);
     H().i(8);
-    if ((☃) && (this.a != null)) {
-      this.o.e(this.a, afi.a);
+    if ((☃) && (a != null)) {
+      o.e(a, afi.a);
     }
   }
   
@@ -144,8 +144,8 @@ public class uo
   private void a(int ☃, boolean ☃)
   {
     H().b(9, Byte.valueOf((byte)(☃ % 8)));
-    if ((☃) && (this.a != null)) {
-      this.o.e(this.a, afi.a);
+    if ((☃) && (a != null)) {
+      o.e(a, afi.a);
     }
   }
   
@@ -155,7 +155,7 @@ public class uo
     {
       ☃.a("Item", o().b(new dn()));
       ☃.a("ItemRotation", (byte)p());
-      ☃.a("ItemDropChance", this.c);
+      ☃.a("ItemDropChance", c);
     }
     super.b(☃);
   }
@@ -168,7 +168,7 @@ public class uo
       a(zx.a(☃), false);
       a(☃.d("ItemRotation"), false);
       if (☃.b("ItemDropChance", 99)) {
-        this.c = ☃.h("ItemDropChance");
+        c = ☃.h("ItemDropChance");
       }
       if (☃.c("Direction")) {
         a(p() * 2, false);
@@ -183,17 +183,17 @@ public class uo
     {
       zx ☃ = ☃.bA();
       if ((☃ != null) && 
-        (!this.o.D))
+        (!o.D))
       {
         a(☃);
-        if (!☃.bA.d) {
-          if (--☃.b <= 0) {
-            ☃.bi.a(☃.bi.c, null);
+        if (!bA.d) {
+          if (--b <= 0) {
+            bi.a(bi.c, null);
           }
         }
       }
     }
-    else if (!this.o.D)
+    else if (!o.D)
     {
       a(p() + 1);
     }

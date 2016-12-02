@@ -1,11 +1,10 @@
 package de.labystudio.utils;
 
 import ave;
+import avh;
 import de.labystudio.labymod.ConfigManager;
 import de.labystudio.labymod.LabyMod;
 import de.labystudio.labymod.ModSettings;
-import de.labystudio.labymod.Source;
-import de.labystudio.labymod.Timings;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -28,7 +27,6 @@ public class AutoTextLoader
   
   public static void load()
   {
-    Timings.start("Load AutoText Config");
     if (!autoText.isEmpty()) {
       return;
     }
@@ -37,25 +35,32 @@ public class AutoTextLoader
     create();
     try
     {
-      json = IOUtils.toString(new FileInputStream(Source.file_autoText));
+      json = IOUtils.toString(new FileInputStream("LabyMod/friend_autotext.json"));
     }
     catch (FileNotFoundException localFileNotFoundException) {}catch (IOException localIOException) {}
-    autoText = (HashMap)Utils.ConvertJsonToObject.getFromJSON(json, HashMap.class);
+    try
+    {
+      autoText = (HashMap)Utils.ConvertJsonToObject.getFromJSON(json, HashMap.class);
+    }
+    catch (Exception error)
+    {
+      new File("LabyMod/friend_autotext.json").delete();
+      error.printStackTrace();
+    }
     if (autoText == null) {
       autoText = new HashMap();
     }
-    Timings.stop("Load AutoText Config");
   }
   
   public static void create()
   {
-    if (!new File(Source.file_autoText).exists()) {
+    if (!new File("LabyMod/friend_autotext.json").exists()) {
       try
       {
-        if (!new File(Source.file_autoText).getParentFile().exists()) {
-          new File(Source.file_autoText).getParentFile().mkdirs();
+        if (!new File("LabyMod/friend_autotext.json").getParentFile().exists()) {
+          new File("LabyMod/friend_autotext.json").getParentFile().mkdirs();
         }
-        new File(Source.file_autoText).createNewFile();
+        new File("LabyMod/friend_autotext.json").createNewFile();
       }
       catch (IOException localIOException) {}
     }
@@ -67,7 +72,7 @@ public class AutoTextLoader
     String json = Utils.ConvertJsonToObject.toJSON(autoText);
     try
     {
-      PrintWriter w = new PrintWriter(new FileOutputStream(Source.file_autoText));
+      PrintWriter w = new PrintWriter(new FileOutputStream("LabyMod/friend_autotext.json"));
       w.print(json);
       w.flush();
       w.close();
@@ -100,7 +105,7 @@ public class AutoTextLoader
       repeat = false;
       return;
     }
-    if ((LabyMod.getInstance().mc.m == null) && (ConfigManager.settings.autoText) && (enabled) && (!repeat)) {
+    if ((getInstancemc.m == null) && (settingsautoText) && (enabled) && (!repeat) && (Allowed.chat())) {
       for (String set : autoText.keySet()) {
         try
         {
@@ -114,10 +119,26 @@ public class AutoTextLoader
               continue;
             }
             repeat = true;
-            LabyMod.getInstance().sendChatMessage((String)autoText.get(set));
+            String text = (String)autoText.get(set);
+            if (text.contains("%togglelayer%")) {
+              try
+              {
+                int layer = Integer.parseInt(text.split("%togglelayer%")[1]);
+                At.a(wo.values()[layer]);
+              }
+              catch (Exception error)
+              {
+                error.printStackTrace();
+              }
+            } else {
+              LabyMod.getInstance().sendChatMessage(text);
+            }
           }
         }
-        catch (Exception localException) {}
+        catch (Exception error)
+        {
+          error.printStackTrace();
+        }
       }
     }
   }
@@ -141,7 +162,7 @@ public class AutoTextLoader
   {
     try
     {
-      return Integer.parseInt(hotKeyCode.replace("#SHIFT", "").replace("#ALT", "").replace("#CTRL", ""));
+      return Integer.parseInt(hotKeyCode.replace("#SHIFT", "").replace("#ALT", "").replace("#CTRL", "").replace(";", ""));
     }
     catch (Exception error) {}
     return -1;

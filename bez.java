@@ -11,25 +11,25 @@ public class bez
   public bez(String ☃, eu ☃, int ☃)
   {
     super(☃, ☃);
-    this.a = ☃;
+    a = ☃;
   }
   
   public int a_(int ☃)
   {
-    if (this.b.containsKey(Integer.valueOf(☃))) {
-      return ((Integer)this.b.get(Integer.valueOf(☃))).intValue();
+    if (b.containsKey(Integer.valueOf(☃))) {
+      return ((Integer)b.get(Integer.valueOf(☃))).intValue();
     }
     return 0;
   }
   
   public void b(int ☃, int ☃)
   {
-    this.b.put(Integer.valueOf(☃), Integer.valueOf(☃));
+    b.put(Integer.valueOf(☃), Integer.valueOf(☃));
   }
   
   public int g()
   {
-    return this.b.size();
+    return b.size();
   }
   
   public boolean r_()
@@ -46,7 +46,7 @@ public class bez
   
   public String k()
   {
-    return this.a;
+    return a;
   }
   
   public xi a(wm ☃, wn ☃)

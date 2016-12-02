@@ -18,51 +18,51 @@ public class rl
   public rl(py ☃, Class<? extends pk> ☃, double ☃, boolean ☃)
   {
     this(☃, ☃, ☃);
-    this.g = ☃;
+    g = ☃;
   }
   
   public rl(py ☃, double ☃, boolean ☃)
   {
-    this.b = ☃;
-    this.a = ☃.o;
-    this.d = ☃;
-    this.e = ☃;
+    b = ☃;
+    a = o;
+    d = ☃;
+    e = ☃;
     a(3);
   }
   
   public boolean a()
   {
-    pr ☃ = this.b.u();
+    pr ☃ = b.u();
     if (☃ == null) {
       return false;
     }
     if (!☃.ai()) {
       return false;
     }
-    if ((this.g != null) && (!this.g.isAssignableFrom(☃.getClass()))) {
+    if ((g != null) && (!g.isAssignableFrom(☃.getClass()))) {
       return false;
     }
-    this.f = this.b.s().a(☃);
-    return this.f != null;
+    f = b.s().a(☃);
+    return f != null;
   }
   
   public boolean b()
   {
-    pr ☃ = this.b.u();
+    pr ☃ = b.u();
     if (☃ == null) {
       return false;
     }
     if (!☃.ai()) {
       return false;
     }
-    if (!this.e)
+    if (!e)
     {
-      if (this.b.s().m()) {
+      if (b.s().m()) {
         return false;
       }
       return true;
     }
-    if (!this.b.e(new cj(☃))) {
+    if (!b.e(new cj(☃))) {
       return false;
     }
     return true;
@@ -70,52 +70,52 @@ public class rl
   
   public void c()
   {
-    this.b.s().a(this.f, this.d);
-    this.h = 0;
+    b.s().a(f, d);
+    h = 0;
   }
   
   public void d()
   {
-    this.b.s().n();
+    b.s().n();
   }
   
   public void e()
   {
-    pr ☃ = this.b.u();
-    this.b.p().a(☃, 30.0F, 30.0F);
-    double ☃ = this.b.e(☃.s, ☃.aR().b, ☃.u);
+    pr ☃ = b.u();
+    b.p().a(☃, 30.0F, 30.0F);
+    double ☃ = b.e(s, aRb, u);
     double ☃ = a(☃);
-    this.h -= 1;
-    if (((this.e) || (this.b.t().a(☃))) && 
-      (this.h <= 0) && (
-      ((this.i == 0.0D) && (this.j == 0.0D) && (this.k == 0.0D)) || (☃.e(this.i, this.j, this.k) >= 1.0D) || (this.b.bc().nextFloat() < 0.05F)))
+    h -= 1;
+    if (((e) || (b.t().a(☃))) && 
+      (h <= 0) && (
+      ((i == 0.0D) && (j == 0.0D) && (k == 0.0D)) || (☃.e(i, j, k) >= 1.0D) || (b.bc().nextFloat() < 0.05F)))
     {
-      this.i = ☃.s;
-      this.j = ☃.aR().b;
-      this.k = ☃.u;
-      this.h = (4 + this.b.bc().nextInt(7));
+      i = s;
+      j = aRb;
+      k = u;
+      h = (4 + b.bc().nextInt(7));
       if (☃ > 1024.0D) {
-        this.h += 10;
+        h += 10;
       } else if (☃ > 256.0D) {
-        this.h += 5;
+        h += 5;
       }
-      if (!this.b.s().a(☃, this.d)) {
-        this.h += 15;
+      if (!b.s().a(☃, d)) {
+        h += 15;
       }
     }
-    this.c = Math.max(this.c - 1, 0);
-    if ((☃ <= ☃) && (this.c <= 0))
+    c = Math.max(c - 1, 0);
+    if ((☃ <= ☃) && (c <= 0))
     {
-      this.c = 20;
-      if (this.b.bA() != null) {
-        this.b.bw();
+      c = 20;
+      if (b.bA() != null) {
+        b.bw();
       }
-      this.b.r(☃);
+      b.r(☃);
     }
   }
   
   protected double a(pr ☃)
   {
-    return this.b.J * 2.0F * (this.b.J * 2.0F) + ☃.J;
+    return b.J * 2.0F * (b.J * 2.0F) + J;
   }
 }

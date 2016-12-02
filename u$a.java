@@ -6,8 +6,8 @@ class u$a
   
   public u$a(cj ☃, alz ☃, dn ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
   }
 }

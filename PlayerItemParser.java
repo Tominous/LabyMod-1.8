@@ -167,8 +167,8 @@ public class PlayerItemParser
     float scale = Json.getFloat(elem, "scale", 1.0F);
     
     bbo modelBase = new ModelPlayerItem();
-    modelBase.t = textureDim.width;
-    modelBase.u = textureDim.height;
+    t = width;
+    u = height;
     
     bct mr = parseModelRenderer(elem, modelBase);
     
@@ -211,18 +211,18 @@ public class PlayerItemParser
     }
     mr.a(translate[0], translate[1], translate[2]);
     
-    mr.f = rotateAngles[0];
-    mr.g = rotateAngles[1];
-    mr.h = rotateAngles[2];
+    f = rotateAngles[0];
+    g = rotateAngles[1];
+    h = rotateAngles[2];
     
     String mirrorTexture = Json.getString(elem, "mirrorTexture", "").toLowerCase();
     boolean invertU = mirrorTexture.contains("u");
     boolean invertV = mirrorTexture.contains("v");
     if (invertU) {
-      mr.i = true;
+      i = true;
     }
     if (invertV) {
-      mr.mirrorV = true;
+      mirrorV = true;
     }
     JsonArray boxes = elem.getAsJsonArray("boxes");
     if (boxes != null) {

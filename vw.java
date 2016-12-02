@@ -14,21 +14,21 @@ public class vw
   public vw(adm ☃)
   {
     super(☃);
-    this.ab = true;
+    ab = true;
   }
   
   public void b(pr ☃)
   {
     super.b(☃);
     if (☃ != null) {
-      this.bo = ☃.aK();
+      bo = ☃.aK();
     }
   }
   
   protected void n()
   {
-    this.bi.a(1, new vw.b(this));
-    this.bi.a(2, new vw.a(this));
+    bi.a(1, new vw.b(this));
+    bi.a(2, new vw.a(this));
   }
   
   protected void aX()
@@ -53,43 +53,43 @@ public class vw
       if ((!j_()) && (!☃.a(c))) {
         ☃.b(c);
       }
-      this.bm -= 1;
+      bm -= 1;
     }
     else if (☃.a(c))
     {
       ☃.c(c);
     }
-    if ((this.bn > 0) && 
-      (--this.bn == 0)) {
-      a("mob.zombiepig.zpigangry", bB() * 2.0F, ((this.V.nextFloat() - this.V.nextFloat()) * 0.2F + 1.0F) * 1.8F);
+    if ((bn > 0) && 
+      (--bn == 0)) {
+      a("mob.zombiepig.zpigangry", bB() * 2.0F, ((V.nextFloat() - V.nextFloat()) * 0.2F + 1.0F) * 1.8F);
     }
-    if ((this.bm > 0) && 
-      (this.bo != null) && (bd() == null))
+    if ((bm > 0) && 
+      (bo != null) && (bd() == null))
     {
-      wn ☃ = this.o.b(this.bo);
+      wn ☃ = o.b(bo);
       b(☃);
-      this.aN = ☃;
-      this.aO = be();
+      aN = ☃;
+      aO = be();
     }
     super.E();
   }
   
   public boolean bR()
   {
-    return this.o.aa() != oj.a;
+    return o.aa() != oj.a;
   }
   
   public boolean bS()
   {
-    return (this.o.a(aR(), this)) && (this.o.a(this, aR()).isEmpty()) && (!this.o.d(aR()));
+    return (o.a(aR(), this)) && (o.a(this, aR()).isEmpty()) && (!o.d(aR()));
   }
   
   public void b(dn ☃)
   {
     super.b(☃);
-    ☃.a("Anger", (short)this.bm);
-    if (this.bo != null) {
-      ☃.a("HurtBy", this.bo.toString());
+    ☃.a("Anger", (short)bm);
+    if (bo != null) {
+      ☃.a("HurtBy", bo.toString());
     } else {
       ☃.a("HurtBy", "");
     }
@@ -98,18 +98,18 @@ public class vw
   public void a(dn ☃)
   {
     super.a(☃);
-    this.bm = ☃.e("Anger");
+    bm = ☃.e("Anger");
     String ☃ = ☃.j("HurtBy");
     if (☃.length() > 0)
     {
-      this.bo = UUID.fromString(☃);
+      bo = UUID.fromString(☃);
       
-      wn ☃ = this.o.b(this.bo);
+      wn ☃ = o.b(bo);
       b(☃);
       if (☃ != null)
       {
-        this.aN = ☃;
-        this.aO = be();
+        aN = ☃;
+        aO = be();
       }
     }
   }
@@ -128,8 +128,8 @@ public class vw
   
   private void b(pk ☃)
   {
-    this.bm = (400 + this.V.nextInt(400));
-    this.bn = this.V.nextInt(40);
+    bm = (400 + V.nextInt(400));
+    bn = V.nextInt(40);
     if ((☃ instanceof pr)) {
       b((pr)☃);
     }
@@ -137,7 +137,7 @@ public class vw
   
   public boolean cm()
   {
-    return this.bm > 0;
+    return bm > 0;
   }
   
   protected String z()
@@ -157,11 +157,11 @@ public class vw
   
   protected void b(boolean ☃, int ☃)
   {
-    int ☃ = this.V.nextInt(2 + ☃);
+    int ☃ = V.nextInt(2 + ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
       a(zy.bt, 1);
     }
-    ☃ = this.V.nextInt(2 + ☃);
+    ☃ = V.nextInt(2 + ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
       a(zy.bx, 1);
     }
@@ -216,7 +216,7 @@ public class vw
     
     public boolean a()
     {
-      return (((vw)this.e).cm()) && (super.a());
+      return (((vw)e).cm()) && (super.a());
     }
   }
 }

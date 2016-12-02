@@ -8,7 +8,7 @@ public class blg
   
   protected void a()
   {
-    this.c = new bcj(0.5F, 0.0F, true);
-    this.d = new bcj(1.0F, 0.0F, true);
+    c = new bcj(0.5F, 0.0F, true);
+    d = new bcj(1.0F, 0.0F, true);
   }
 }

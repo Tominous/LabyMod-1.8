@@ -10,8 +10,8 @@ public class adw
   
   public adw(cj ☃, afh ☃)
   {
-    this.a = ☃;
-    this.e = ☃;
+    a = ☃;
+    e = ☃;
   }
   
   public boolean equals(Object ☃)
@@ -19,42 +19,42 @@ public class adw
     if ((☃ instanceof adw))
     {
       adw ☃ = (adw)☃;
-      return (this.a.equals(☃.a)) && (afh.a(this.e, ☃.e));
+      return (a.equals(a)) && (afh.a(e, e));
     }
     return false;
   }
   
   public int hashCode()
   {
-    return this.a.hashCode();
+    return a.hashCode();
   }
   
   public adw a(long ☃)
   {
-    this.b = ☃;
+    b = ☃;
     return this;
   }
   
   public void a(int ☃)
   {
-    this.c = ☃;
+    c = ☃;
   }
   
   public int a(adw ☃)
   {
-    if (this.b < ☃.b) {
+    if (b < b) {
       return -1;
     }
-    if (this.b > ☃.b) {
+    if (b > b) {
       return 1;
     }
-    if (this.c != ☃.c) {
-      return this.c - ☃.c;
+    if (c != c) {
+      return c - c;
     }
-    if (this.f < ☃.f) {
+    if (f < f) {
       return -1;
     }
-    if (this.f > ☃.f) {
+    if (f > f) {
       return 1;
     }
     return 0;
@@ -62,11 +62,11 @@ public class adw
   
   public String toString()
   {
-    return afh.a(this.e) + ": " + this.a + ", " + this.b + ", " + this.c + ", " + this.f;
+    return afh.a(e) + ": " + a + ", " + b + ", " + c + ", " + f;
   }
   
   public afh a()
   {
-    return this.e;
+    return e;
   }
 }

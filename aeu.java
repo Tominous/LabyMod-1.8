@@ -14,29 +14,29 @@ public class aeu
   public aeu(int ☃, int ☃)
   {
     super(☃);
-    this.aI = ☃;
+    aI = ☃;
     
-    this.au.add(new ady.c(ua.class, 8, 4, 4));
+    au.add(new ady.c(ua.class, 8, 4, 4));
     
-    this.as.A = 10;
+    as.A = 10;
     if ((☃ == 1) || (☃ == 2))
     {
-      this.as.C = 7;
-      this.as.D = 1;
-      this.as.E = 3;
+      as.C = 7;
+      as.D = 1;
+      as.E = 3;
     }
     else
     {
-      this.as.C = 1;
-      this.as.E = 1;
+      as.C = 1;
+      as.E = 1;
     }
   }
   
   public aoh a(Random ☃)
   {
-    if (((this.aI == 1) || (this.aI == 2)) && (☃.nextInt(3) == 0))
+    if (((aI == 1) || (aI == 2)) && (☃.nextInt(3) == 0))
     {
-      if ((this.aI == 2) || (☃.nextInt(13) == 0)) {
+      if ((aI == 2) || (☃.nextInt(13) == 0)) {
         return aG;
       }
       return aF;
@@ -57,7 +57,7 @@ public class aeu
   
   public void a(adm ☃, Random ☃, cj ☃)
   {
-    if ((this.aI == 1) || (this.aI == 2))
+    if ((aI == 1) || (aI == 2))
     {
       int ☃ = ☃.nextInt(3);
       for (int ☃ = 0; ☃ < ☃; ☃++)
@@ -81,14 +81,14 @@ public class aeu
   
   public void a(adm ☃, Random ☃, ans ☃, int ☃, int ☃, double ☃)
   {
-    if ((this.aI == 1) || (this.aI == 2))
+    if ((aI == 1) || (aI == 2))
     {
-      this.ak = afi.c.Q();
-      this.al = afi.d.Q();
+      ak = afi.c.Q();
+      al = afi.d.Q();
       if (☃ > 1.75D) {
-        this.ak = afi.d.Q().a(agf.a, agf.a.b);
+        ak = afi.d.Q().a(agf.a, agf.a.b);
       } else if (☃ > -0.95D) {
-        this.ak = afi.d.Q().a(agf.a, agf.a.c);
+        ak = afi.d.Q().a(agf.a, agf.a.c);
       }
     }
     b(☃, ☃, ☃, ☃, ☃, ☃);
@@ -96,8 +96,8 @@ public class aeu
   
   protected ady d(int ☃)
   {
-    if (this.az == ady.V.az) {
-      return new aeu(☃, 2).a(5858897, true).a("Mega Spruce Taiga").a(5159473).a(0.25F, 0.8F).a(new ady.a(this.an, this.ao));
+    if (az == Vaz) {
+      return new aeu(☃, 2).a(5858897, true).a("Mega Spruce Taiga").a(5159473).a(0.25F, 0.8F).a(new ady.a(an, ao));
     }
     return super.d(☃);
   }

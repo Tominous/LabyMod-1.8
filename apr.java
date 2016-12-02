@@ -7,7 +7,7 @@ public class apr
   
   public apr(afh ☃)
   {
-    this.a = ☃;
+    a = ☃;
   }
   
   public boolean b(adm ☃, Random ☃, cj ☃)
@@ -49,8 +49,8 @@ public class apr
     }
     if ((☃ == 3) && (☃ == 1))
     {
-      ☃.a(☃, this.a.Q(), 2);
-      ☃.a(this.a, ☃, ☃);
+      ☃.a(☃, a.Q(), 2);
+      ☃.a(a, ☃, ☃);
     }
     return true;
   }

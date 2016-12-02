@@ -23,7 +23,7 @@ public class bjj
     bfl.d();
     
     c(☃);
-    this.e.a(☃, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, ☃);
+    e.a(☃, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, ☃);
     
     bfl.F();
     

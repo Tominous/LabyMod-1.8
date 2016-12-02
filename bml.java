@@ -222,7 +222,7 @@ public class bml
   private static void b(int[] p_110994_0_, int p_110994_1_, int p_110994_2_)
   {
     int[] var3 = p_110994_0_;
-    if (ave.A().t.e) {
+    if (At.e) {
       var3 = a(p_110994_0_);
     }
     d.clear();

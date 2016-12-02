@@ -11,21 +11,21 @@ public class bdm
   protected bdm(adm ☃, double ☃, double ☃, double ☃, double ☃, double ☃, double ☃, float ☃)
   {
     super(☃, ☃, ☃, ☃, 0.0D, 0.0D, 0.0D);
-    this.v *= 0.10000000149011612D;
-    this.w *= 0.10000000149011612D;
-    this.x *= 0.10000000149011612D;
-    this.v += ☃ * 0.4D;
-    this.w += ☃ * 0.4D;
-    this.x += ☃ * 0.4D;
+    v *= 0.10000000149011612D;
+    w *= 0.10000000149011612D;
+    x *= 0.10000000149011612D;
+    v += ☃ * 0.4D;
+    w += ☃ * 0.4D;
+    x += ☃ * 0.4D;
     
-    this.ar = (this.as = this.at = (float)(Math.random() * 0.30000001192092896D + 0.6000000238418579D));
-    this.h *= 0.75F;
-    this.h *= ☃;
-    this.a = this.h;
+    ar = (as = at = (float)(Math.random() * 0.30000001192092896D + 0.6000000238418579D));
+    h *= 0.75F;
+    h *= ☃;
+    a = h;
     
-    this.g = ((int)(6.0D / (Math.random() * 0.8D + 0.6D)));
-    this.g = ((int)(this.g * ☃));
-    this.T = false;
+    g = ((int)(6.0D / (Math.random() * 0.8D + 0.6D)));
+    g = ((int)(g * ☃));
+    T = false;
     
     k(65);
     t_();
@@ -33,33 +33,33 @@ public class bdm
   
   public void a(bfd ☃, pk ☃, float ☃, float ☃, float ☃, float ☃, float ☃, float ☃)
   {
-    float ☃ = (this.f + ☃) / this.g * 32.0F;
+    float ☃ = (f + ☃) / g * 32.0F;
     ☃ = ns.a(☃, 0.0F, 1.0F);
     
-    this.h = (this.a * ☃);
+    h = (a * ☃);
     super.a(☃, ☃, ☃, ☃, ☃, ☃, ☃, ☃);
   }
   
   public void t_()
   {
-    this.p = this.s;
-    this.q = this.t;
-    this.r = this.u;
-    if (this.f++ >= this.g) {
+    p = s;
+    q = t;
+    r = u;
+    if (f++ >= g) {
       J();
     }
-    d(this.v, this.w, this.x);
-    this.as = ((float)(this.as * 0.96D));
-    this.at = ((float)(this.at * 0.9D));
+    d(v, w, x);
+    as = ((float)(as * 0.96D));
+    at = ((float)(at * 0.9D));
     
-    this.v *= 0.699999988079071D;
-    this.w *= 0.699999988079071D;
-    this.x *= 0.699999988079071D;
-    this.w -= 0.019999999552965164D;
-    if (this.C)
+    v *= 0.699999988079071D;
+    w *= 0.699999988079071D;
+    x *= 0.699999988079071D;
+    w -= 0.019999999552965164D;
+    if (C)
     {
-      this.v *= 0.699999988079071D;
-      this.x *= 0.699999988079071D;
+      v *= 0.699999988079071D;
+      x *= 0.699999988079071D;
     }
   }
   

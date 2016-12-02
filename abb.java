@@ -12,13 +12,13 @@ public class abb
     if (☃ == null) {
       return ☃;
     }
-    if (☃.a == auh.a.b)
+    if (a == auh.a.b)
     {
       cj ☃ = ☃.a();
       if (!☃.a(☃, ☃)) {
         return ☃;
       }
-      if (!☃.a(☃.a(☃.b), ☃.b, ☃)) {
+      if (!☃.a(☃.a(b), b, ☃)) {
         return ☃;
       }
       cj ☃ = ☃.a();
@@ -26,8 +26,8 @@ public class abb
       if ((☃.c().t() == arm.h) && (((Integer)☃.b(ahv.b)).intValue() == 0) && (☃.d(☃)))
       {
         ☃.a(☃, afi.bx.Q());
-        if (!☃.bA.d) {
-          ☃.b -= 1;
+        if (!bA.d) {
+          b -= 1;
         }
         ☃.b(na.ad[zw.b(this)]);
       }

@@ -28,26 +28,26 @@ public class PlayerItemModel
   public void render(bbj modelBiped, bet player, float scale, float partialTicks)
   {
     bmj textureManager = Config.getTextureManager();
-    if (this.usePlayerTexture)
+    if (usePlayerTexture)
     {
       textureManager.a(player.i());
     }
-    else if (this.textureLocation != null)
+    else if (textureLocation != null)
     {
-      if ((this.texture == null) && (this.textureImage != null))
+      if ((texture == null) && (textureImage != null))
       {
-        this.texture = new blz(this.textureImage);
-        ave.A().P().a(this.textureLocation, this.texture);
+        texture = new blz(textureImage);
+        ave.A().P().a(textureLocation, texture);
       }
-      textureManager.a(this.textureLocation);
+      textureManager.a(textureLocation);
     }
     else
     {
-      textureManager.a(this.locationMissing);
+      textureManager.a(locationMissing);
     }
-    for (int i = 0; i < this.modelRenderers.length; i++)
+    for (int i = 0; i < modelRenderers.length; i++)
     {
-      PlayerItemRenderer pir = this.modelRenderers[i];
+      PlayerItemRenderer pir = modelRenderers[i];
       bfl.E();
       if (player.av()) {
         bfl.b(0.0F, 0.2F, 0.0F);
@@ -63,24 +63,24 @@ public class PlayerItemModel
     switch (attachTo)
     {
     case 0: 
-      return modelBiped.g;
+      return g;
     case 1: 
-      return modelBiped.e;
+      return e;
     case 2: 
-      return modelBiped.i;
+      return i;
     case 3: 
-      return modelBiped.h;
+      return h;
     case 4: 
-      return modelBiped.k;
+      return k;
     case 5: 
-      return modelBiped.j;
+      return j;
     }
     return null;
   }
   
   public BufferedImage getTextureImage()
   {
-    return this.textureImage;
+    return textureImage;
   }
   
   public void setTextureImage(BufferedImage textureImage)
@@ -90,12 +90,12 @@ public class PlayerItemModel
   
   public blz getTexture()
   {
-    return this.texture;
+    return texture;
   }
   
   public jy getTextureLocation()
   {
-    return this.textureLocation;
+    return textureLocation;
   }
   
   public void setTextureLocation(jy textureLocation)
@@ -105,6 +105,6 @@ public class PlayerItemModel
   
   public boolean isUsePlayerTexture()
   {
-    return this.usePlayerTexture;
+    return usePlayerTexture;
   }
 }

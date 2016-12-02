@@ -12,28 +12,28 @@ public class gq
   
   public gq(int ☃, cj ☃, int ☃, boolean ☃)
   {
-    this.a = ☃;
-    this.b = ☃;
-    this.c = ☃;
-    this.d = ☃;
+    a = ☃;
+    b = ☃;
+    c = ☃;
+    d = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.readInt();
-    this.b = ☃.c();
-    this.c = ☃.readInt();
-    this.d = ☃.readBoolean();
+    a = ☃.readInt();
+    b = ☃.c();
+    c = ☃.readInt();
+    d = ☃.readBoolean();
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.writeInt(this.a);
-    ☃.a(this.b);
-    ☃.writeInt(this.c);
-    ☃.writeBoolean(this.d);
+    ☃.writeInt(a);
+    ☃.a(b);
+    ☃.writeInt(c);
+    ☃.writeBoolean(d);
   }
   
   public void a(fj ☃)
@@ -43,21 +43,21 @@ public class gq
   
   public boolean a()
   {
-    return this.d;
+    return d;
   }
   
   public int b()
   {
-    return this.a;
+    return a;
   }
   
   public int c()
   {
-    return this.c;
+    return c;
   }
   
   public cj d()
   {
-    return this.b;
+    return b;
   }
 }

@@ -138,16 +138,16 @@ public class CustomItems
       {
         CustomItemProperties cip1 = (CustomItemProperties)o1;
         CustomItemProperties cip2 = (CustomItemProperties)o2;
-        if (cip1.layer != cip2.layer) {
-          return cip1.layer - cip2.layer;
+        if (layer != layer) {
+          return layer - layer;
         }
-        if (cip1.weight != cip2.weight) {
-          return cip2.weight - cip1.weight;
+        if (weight != weight) {
+          return weight - weight;
         }
-        if (!cip1.basePath.equals(cip2.basePath)) {
-          return cip1.basePath.compareTo(cip2.basePath);
+        if (!basePath.equals(basePath)) {
+          return basePath.compareTo(basePath);
         }
-        return cip1.name.compareTo(cip2.name);
+        return name.compareTo(name);
       }
     };
     return comp;
@@ -166,7 +166,7 @@ public class CustomItems
         {
           CustomItemProperties cip = cips[c];
           if (cip != null) {
-            if (cip.type == 1)
+            if (type == 1)
             {
               bmh textureMap = ave.A().T();
               cip.updateModel(textureMap, itemModelGenerator);
@@ -362,12 +362,12 @@ public class CustomItems
   
   private static void addToItemList(CustomItemProperties cp, List itemList)
   {
-    if (cp.items == null) {
+    if (items == null) {
       return;
     }
-    for (int i = 0; i < cp.items.length; i++)
+    for (int i = 0; i < items.length; i++)
     {
-      int itemId = cp.items[i];
+      int itemId = items[i];
       if (itemId <= 0) {
         Config.warn("Invalid item ID: " + itemId);
       } else {
@@ -378,16 +378,16 @@ public class CustomItems
   
   private static void addToEnchantmentList(CustomItemProperties cp, List enchantmentList)
   {
-    if (cp.type != 2) {
+    if (type != 2) {
       return;
     }
-    if (cp.enchantmentIds == null) {
+    if (enchantmentIds == null) {
       return;
     }
     for (int i = 0; i < 256; i++)
     {
       int id = i;
-      if (cp.enchantmentIds.isInRange(id)) {
+      if (enchantmentIds.isInRange(id)) {
         addToList(cp, enchantmentList, id);
       }
     }
@@ -448,7 +448,7 @@ public class CustomItems
     if (props == null) {
       return null;
     }
-    if (props.mapTextureLocations == null) {
+    if (mapTextureLocations == null) {
       return null;
     }
     zw item = itemStack.b();
@@ -469,7 +469,7 @@ public class CustomItems
       sb.append(overlay);
     }
     String key = sb.toString();
-    jy loc = (jy)props.mapTextureLocations.get(key);
+    jy loc = (jy)mapTextureLocations.get(key);
     
     return loc;
   }
@@ -486,7 +486,7 @@ public class CustomItems
         for (int i = 0; i < cips.length; i++)
         {
           CustomItemProperties cip = cips[i];
-          if (cip.type == type) {
+          if (type == type) {
             if (matchesProperties(cip, itemStack, (int[][])null)) {
               return cip;
             }
@@ -503,10 +503,10 @@ public class CustomItems
     if (cip.damage != null)
     {
       int damage = itemStack.h();
-      if (cip.damageMask != 0) {
-        damage &= cip.damageMask;
+      if (damageMask != 0) {
+        damage &= damageMask;
       }
-      if (cip.damagePercent)
+      if (damagePercent)
       {
         int damageMax = item.l();
         damage = (int)(damage * 100 / damageMax);
@@ -515,13 +515,13 @@ public class CustomItems
         return false;
       }
     }
-    if (cip.stackSize != null) {
-      if (!cip.stackSize.isInRange(itemStack.b)) {
+    if (stackSize != null) {
+      if (!stackSize.isInRange(b)) {
         return false;
       }
     }
     int[][] idLevels = enchantmentIdLevels;
-    if (cip.enchantmentIds != null)
+    if (enchantmentIds != null)
     {
       if (idLevels == null) {
         idLevels = getEnchantmentIdLevels(itemStack);
@@ -530,7 +530,7 @@ public class CustomItems
       for (int i = 0; i < idLevels.length; i++)
       {
         int id = idLevels[i][0];
-        if (cip.enchantmentIds.isInRange(id))
+        if (enchantmentIds.isInRange(id))
         {
           idMatch = true;
           break;
@@ -540,7 +540,7 @@ public class CustomItems
         return false;
       }
     }
-    if (cip.enchantmentLevels != null)
+    if (enchantmentLevels != null)
     {
       if (idLevels == null) {
         idLevels = getEnchantmentIdLevels(itemStack);
@@ -549,7 +549,7 @@ public class CustomItems
       for (int i = 0; i < idLevels.length; i++)
       {
         int level = idLevels[i][1];
-        if (cip.enchantmentLevels.isInRange(level))
+        if (enchantmentLevels.isInRange(level))
         {
           levelMatch = true;
           break;
@@ -559,12 +559,12 @@ public class CustomItems
         return false;
       }
     }
-    if (cip.nbtTagValues != null)
+    if (nbtTagValues != null)
     {
       dn nbt = itemStack.o();
-      for (int i = 0; i < cip.nbtTagValues.length; i++)
+      for (int i = 0; i < nbtTagValues.length; i++)
       {
-        NbtTagValue ntv = cip.nbtTagValues[i];
+        NbtTagValue ntv = nbtTagValues[i];
         if (!ntv.matches(nbt)) {
           return false;
         }
@@ -623,9 +623,9 @@ public class CustomItems
             }
             if (layersRendered.add(Integer.valueOf(id))) {
               if (matchesProperties(cip, itemStack, idLevels)) {
-                if (cip.textureLocation != null)
+                if (textureLocation != null)
                 {
-                  textureManager.a(cip.textureLocation);
+                  textureManager.a(textureLocation);
                   float width = cip.getTextureWidth(textureManager);
                   if (!rendered)
                   {
@@ -636,13 +636,13 @@ public class CustomItems
                     bfl.f();
                     bfl.n(5890);
                   }
-                  Blender.setupBlend(cip.blend, 1.0F);
+                  Blender.setupBlend(blend, 1.0F);
                   
                   bfl.E();
                   bfl.a(width / 2.0F, width / 2.0F, width / 2.0F);
-                  float offset = cip.speed * (float)(ave.J() % 3000L) / 3000.0F / 8.0F;
+                  float offset = speed * (float)(ave.J() % 3000L) / 3000.0F / 8.0F;
                   bfl.b(offset, 0.0F, 0.0F);
-                  bfl.b(cip.rotation, 0.0F, 0.0F, 1.0F);
+                  bfl.b(rotation, 0.0F, 0.0F, 1.0F);
                   renderItem.a(model, -1);
                   bfl.F();
                 }
@@ -704,9 +704,9 @@ public class CustomItems
             }
             if (layersRendered.add(Integer.valueOf(id))) {
               if (matchesProperties(cip, itemStack, idLevels)) {
-                if (cip.textureLocation != null)
+                if (textureLocation != null)
                 {
-                  textureManager.a(cip.textureLocation);
+                  textureManager.a(textureLocation);
                   float width = cip.getTextureWidth(textureManager);
                   if (!rendered)
                   {
@@ -718,15 +718,15 @@ public class CustomItems
                     bfl.c(514);
                     bfl.a(false);
                   }
-                  Blender.setupBlend(cip.blend, 1.0F);
+                  Blender.setupBlend(blend, 1.0F);
                   
                   bfl.f();
                   bfl.n(5890);
                   bfl.D();
-                  bfl.b(cip.rotation, 0.0F, 0.0F, 1.0F);
+                  bfl.b(rotation, 0.0F, 0.0F, 1.0F);
                   float texScale = width / 8.0F;
                   bfl.a(texScale, texScale / 2.0F, texScale);
-                  float offset = cip.speed * (float)(ave.J() % 3000L) / 3000.0F / 8.0F;
+                  float offset = speed * (float)(ave.J() % 3000L) / 3000.0F / 8.0F;
                   bfl.b(0.0F, offset, 0.0F);
                   bfl.n(5888);
                   model.a(entity, limbSwing, prevLimbSwing, timeLimbSwing, yaw, pitch, scale);

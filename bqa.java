@@ -8,8 +8,8 @@ public class bqa
   
   protected Map<jy, bpy> b()
   {
-    this.a = Maps.newHashMap();
-    return this.a;
+    a = Maps.newHashMap();
+    return a;
   }
   
   public void a(bpy ☃)
@@ -19,6 +19,6 @@ public class bqa
   
   public void a()
   {
-    this.a.clear();
+    a.clear();
   }
 }

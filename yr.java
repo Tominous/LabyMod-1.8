@@ -3,7 +3,7 @@ public class yr
 {
   public boolean f_(zx ☃)
   {
-    return ☃.b == 1;
+    return b == 1;
   }
   
   public int b()

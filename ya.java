@@ -9,42 +9,42 @@ public class ya
   
   public ya(wn ☃, acy ☃)
   {
-    this.c = ☃;
-    this.a = ☃;
+    c = ☃;
+    a = ☃;
   }
   
   public int o_()
   {
-    return this.b.length;
+    return b.length;
   }
   
   public zx a(int ☃)
   {
-    return this.b[☃];
+    return b[☃];
   }
   
   public zx a(int ☃, int ☃)
   {
-    if (this.b[☃] != null)
+    if (b[☃] != null)
     {
       if (☃ == 2)
       {
-        zx ☃ = this.b[☃];
-        this.b[☃] = null;
+        zx ☃ = b[☃];
+        b[☃] = null;
         return ☃;
       }
-      if (this.b[☃].b <= ☃)
+      if (b[☃].b <= ☃)
       {
-        zx ☃ = this.b[☃];
-        this.b[☃] = null;
+        zx ☃ = b[☃];
+        b[☃] = null;
         if (e(☃)) {
           h();
         }
         return ☃;
       }
-      zx ☃ = this.b[☃].a(☃);
-      if (this.b[☃].b == 0) {
-        this.b[☃] = null;
+      zx ☃ = b[☃].a(☃);
+      if (b[☃].b == 0) {
+        b[☃] = null;
       }
       if (e(☃)) {
         h();
@@ -61,10 +61,10 @@ public class ya
   
   public zx b(int ☃)
   {
-    if (this.b[☃] != null)
+    if (b[☃] != null)
     {
-      zx ☃ = this.b[☃];
-      this.b[☃] = null;
+      zx ☃ = b[☃];
+      b[☃] = null;
       return ☃;
     }
     return null;
@@ -72,9 +72,9 @@ public class ya
   
   public void a(int ☃, zx ☃)
   {
-    this.b[☃] = ☃;
-    if ((☃ != null) && (☃.b > q_())) {
-      ☃.b = q_();
+    b[☃] = ☃;
+    if ((☃ != null) && (b > q_())) {
+      b = q_();
     }
     if (e(☃)) {
       h();
@@ -106,7 +106,7 @@ public class ya
   
   public boolean a(wn ☃)
   {
-    return this.a.v_() == ☃;
+    return a.v_() == ☃;
   }
   
   public void b(wn ☃) {}
@@ -125,10 +125,10 @@ public class ya
   
   public void h()
   {
-    this.d = null;
+    d = null;
     
-    zx ☃ = this.b[0];
-    zx ☃ = this.b[1];
+    zx ☃ = b[0];
+    zx ☃ = b[1];
     if (☃ == null)
     {
       ☃ = ☃;
@@ -140,21 +140,21 @@ public class ya
     }
     else
     {
-      ada ☃ = this.a.b_(this.c);
+      ada ☃ = a.b_(c);
       if (☃ != null)
       {
-        acz ☃ = ☃.a(☃, ☃, this.e);
+        acz ☃ = ☃.a(☃, ☃, e);
         if ((☃ != null) && (!☃.h()))
         {
-          this.d = ☃;
+          d = ☃;
           a(2, ☃.d().k());
         }
         else if (☃ != null)
         {
-          ☃ = ☃.a(☃, ☃, this.e);
+          ☃ = ☃.a(☃, ☃, e);
           if ((☃ != null) && (!☃.h()))
           {
-            this.d = ☃;
+            d = ☃;
             a(2, ☃.d().k());
           }
           else
@@ -168,17 +168,17 @@ public class ya
         }
       }
     }
-    this.a.a_(a(2));
+    a.a_(a(2));
   }
   
   public acz i()
   {
-    return this.d;
+    return d;
   }
   
   public void d(int ☃)
   {
-    this.e = ☃;
+    e = ☃;
     h();
   }
   
@@ -196,8 +196,8 @@ public class ya
   
   public void l()
   {
-    for (int ☃ = 0; ☃ < this.b.length; ☃++) {
-      this.b[☃] = null;
+    for (int ☃ = 0; ☃ < b.length; ☃++) {
+      b[☃] = null;
     }
   }
 }

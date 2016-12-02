@@ -18,26 +18,26 @@ public class HttpResponse
   
   public int getStatus()
   {
-    return this.status;
+    return status;
   }
   
   public String getStatusLine()
   {
-    return this.statusLine;
+    return statusLine;
   }
   
   public Map getHeaders()
   {
-    return this.headers;
+    return headers;
   }
   
   public String getHeader(String key)
   {
-    return (String)this.headers.get(key);
+    return (String)headers.get(key);
   }
   
   public byte[] getBody()
   {
-    return this.body;
+    return body;
   }
 }

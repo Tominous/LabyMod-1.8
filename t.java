@@ -41,9 +41,9 @@ public class t
     if ((☃.length >= 2) && (☃ == null)) {
       throw new bz("commands.clear.failure", new Object[] { ☃.e_() });
     }
-    int ☃ = ☃.bi.a(☃, ☃, ☃, ☃);
-    ☃.bj.b();
-    if (!☃.bA.d) {
+    int ☃ = bi.a(☃, ☃, ☃, ☃);
+    bj.b();
+    if (!bA.d) {
       ☃.o();
     }
     ☃.a(n.a.d, ☃);

@@ -7,9 +7,9 @@ class bfl$m
   
   private bfl$m()
   {
-    this.a = 519;
-    this.b = 0;
-    this.c = -1;
+    a = 519;
+    b = 0;
+    c = -1;
   }
   
   bfl$m(bfl.1 p_i46257_1_)

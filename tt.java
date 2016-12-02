@@ -11,16 +11,16 @@ public class tt
     a(0.9F, 0.9F);
     
     ((sv)s()).a(true);
-    this.i.a(0, new ra(this));
-    this.i.a(1, new rv(this, 1.25D));
-    this.i.a(2, this.bm = new qw(this, 0.3F));
-    this.i.a(3, new qv(this, 1.0D));
-    this.i.a(4, new sh(this, 1.2D, zy.bY, false));
-    this.i.a(4, new sh(this, 1.2D, zy.bR, false));
-    this.i.a(5, new rc(this, 1.1D));
-    this.i.a(6, new rz(this, 1.0D));
-    this.i.a(7, new ri(this, wn.class, 6.0F));
-    this.i.a(8, new ry(this));
+    i.a(0, new ra(this));
+    i.a(1, new rv(this, 1.25D));
+    i.a(2, bm = new qw(this, 0.3F));
+    i.a(3, new qv(this, 1.0D));
+    i.a(4, new sh(this, 1.2D, zy.bY, false));
+    i.a(4, new sh(this, 1.2D, zy.bR, false));
+    i.a(5, new rc(this, 1.1D));
+    i.a(6, new rz(this, 1.0D));
+    i.a(7, new ri(this, wn.class, 6.0F));
+    i.a(8, new ry(this));
   }
   
   protected void aX()
@@ -33,7 +33,7 @@ public class tt
   
   public boolean bW()
   {
-    zx ☃ = ((wn)this.l).bA();
+    zx ☃ = ((wn)l).bA();
     
     return (☃ != null) && (☃.b() == zy.bY);
   }
@@ -41,7 +41,7 @@ public class tt
   protected void h()
   {
     super.h();
-    this.ac.a(16, Byte.valueOf((byte)0));
+    ac.a(16, Byte.valueOf((byte)0));
   }
   
   public void b(dn ☃)
@@ -80,7 +80,7 @@ public class tt
   {
     if (!super.a(☃))
     {
-      if ((cl()) && (!this.o.D) && ((this.l == null) || (this.l == ☃)))
+      if ((cl()) && (!o.D) && ((l == null) || (l == ☃)))
       {
         ☃.a(this);
         return true;
@@ -100,7 +100,7 @@ public class tt
   
   protected void b(boolean ☃, int ☃)
   {
-    int ☃ = this.V.nextInt(3) + 1 + this.V.nextInt(1 + ☃);
+    int ☃ = V.nextInt(3) + 1 + V.nextInt(1 + ☃);
     for (int ☃ = 0; ☃ < ☃; ☃++) {
       if (at()) {
         a(zy.am, 1);
@@ -115,47 +115,47 @@ public class tt
   
   public boolean cl()
   {
-    return (this.ac.a(16) & 0x1) != 0;
+    return (ac.a(16) & 0x1) != 0;
   }
   
   public void l(boolean ☃)
   {
     if (☃) {
-      this.ac.b(16, Byte.valueOf((byte)1));
+      ac.b(16, Byte.valueOf((byte)1));
     } else {
-      this.ac.b(16, Byte.valueOf((byte)0));
+      ac.b(16, Byte.valueOf((byte)0));
     }
   }
   
   public void a(uv ☃)
   {
-    if ((this.o.D) || (this.I)) {
+    if ((o.D) || (I)) {
       return;
     }
-    vw ☃ = new vw(this.o);
+    vw ☃ = new vw(o);
     ☃.c(0, new zx(zy.B));
-    ☃.b(this.s, this.t, this.u, this.y, this.z);
+    ☃.b(s, t, u, y, z);
     ☃.k(ce());
     if (l_())
     {
       ☃.a(aM());
       ☃.g(aN());
     }
-    this.o.d(☃);
+    o.d(☃);
     J();
   }
   
   public void e(float ☃, float ☃)
   {
     super.e(☃, ☃);
-    if ((☃ > 5.0F) && ((this.l instanceof wn))) {
-      ((wn)this.l).b(mr.u);
+    if ((☃ > 5.0F) && ((l instanceof wn))) {
+      ((wn)l).b(mr.u);
     }
   }
   
   public tt b(ph ☃)
   {
-    return new tt(this.o);
+    return new tt(o);
   }
   
   public boolean d(zx ☃)
@@ -165,6 +165,6 @@ public class tt
   
   public qw cm()
   {
-    return this.bm;
+    return bm;
   }
 }

@@ -10,6 +10,6 @@ class bdb$3
   public String a()
     throws Exception
   {
-    return bdb.c(this.this$0).h.w();
+    return cthis$0).h.w();
   }
 }

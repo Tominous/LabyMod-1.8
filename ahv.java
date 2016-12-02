@@ -8,19 +8,19 @@ public abstract class ahv
   protected ahv(arm ☃)
   {
     super(☃);
-    j(this.M.b().a(b, Integer.valueOf(0)));
+    j(M.b().a(b, Integer.valueOf(0)));
     a(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
     a(true);
   }
   
   public boolean b(adq ☃, cj ☃)
   {
-    return this.J != arm.i;
+    return J != arm.i;
   }
   
   public int a(adq ☃, cj ☃, int ☃)
   {
-    if (this.J == arm.h) {
+    if (J == arm.h) {
       return aea.c(☃, ☃);
     }
     return 16777215;
@@ -36,7 +36,7 @@ public abstract class ahv
   
   protected int e(adq ☃, cj ☃)
   {
-    if (☃.p(☃).c().t() == this.J) {
+    if (☃.p(☃).c().t() == J) {
       return ((Integer)☃.p(☃).b(b)).intValue();
     }
     return -1;
@@ -67,7 +67,7 @@ public abstract class ahv
   public boolean b(adq ☃, cj ☃, cq ☃)
   {
     arm ☃ = ☃.p(☃).c().t();
-    if (☃ == this.J) {
+    if (☃ == J) {
       return false;
     }
     if (☃ == cq.b) {
@@ -81,7 +81,7 @@ public abstract class ahv
   
   public boolean a(adq ☃, cj ☃, cq ☃)
   {
-    if (☃.p(☃).c().t() == this.J) {
+    if (☃.p(☃).c().t() == J) {
       return false;
     }
     if (☃ == cq.b) {
@@ -98,7 +98,7 @@ public abstract class ahv
         alz ☃ = ☃.p(☃.a(☃, 0, ☃));
         afh ☃ = ☃.c();
         arm ☃ = ☃.t();
-        if ((☃ != this.J) && (!☃.o())) {
+        if ((☃ != J) && (!☃.o())) {
           return true;
         }
       }
@@ -174,11 +174,11 @@ public abstract class ahv
   
   public int a(adm ☃)
   {
-    if (this.J == arm.h) {
+    if (J == arm.h) {
       return 5;
     }
-    if (this.J == arm.i) {
-      return ☃.t.o() ? 10 : 30;
+    if (J == arm.i) {
+      return t.o() ? 10 : 30;
     }
     return 0;
   }
@@ -198,7 +198,7 @@ public abstract class ahv
   
   public adf m()
   {
-    return this.J == arm.h ? adf.d : adf.a;
+    return J == arm.h ? adf.d : adf.a;
   }
   
   public void c(adm ☃, cj ☃, alz ☃, Random ☃)
@@ -206,7 +206,7 @@ public abstract class ahv
     double ☃ = ☃.n();
     double ☃ = ☃.o();
     double ☃ = ☃.p();
-    if (this.J == arm.h)
+    if (J == arm.h)
     {
       int ☃ = ((Integer)☃.b(b)).intValue();
       if ((☃ > 0) && (☃ < 8))
@@ -219,13 +219,13 @@ public abstract class ahv
         ☃.a(cy.h, ☃ + ☃.nextFloat(), ☃ + ☃.nextFloat(), ☃ + ☃.nextFloat(), 0.0D, 0.0D, 0.0D, new int[0]);
       }
     }
-    if ((this.J == arm.i) && 
+    if ((J == arm.i) && 
       (☃.p(☃.a()).c().t() == arm.a) && (!☃.p(☃.a()).c().c()))
     {
       if (☃.nextInt(100) == 0)
       {
         double ☃ = ☃ + ☃.nextFloat();
-        double ☃ = ☃ + this.F;
+        double ☃ = ☃ + F;
         double ☃ = ☃ + ☃.nextFloat();
         ☃.a(cy.B, ☃, ☃, ☃, 0.0D, 0.0D, 0.0D, new int[0]);
         ☃.a(☃, ☃, ☃, "liquid.lavapop", 0.2F + ☃.nextFloat() * 0.2F, 0.9F + ☃.nextFloat() * 0.15F, false);
@@ -242,7 +242,7 @@ public abstract class ahv
         double ☃ = ☃ + ☃.nextFloat();
         double ☃ = ☃ - 1.05D;
         double ☃ = ☃ + ☃.nextFloat();
-        if (this.J == arm.h) {
+        if (J == arm.h) {
           ☃.a(cy.s, ☃, ☃, ☃, 0.0D, 0.0D, 0.0D, new int[0]);
         } else {
           ☃.a(cy.t, ☃, ☃, ☃, 0.0D, 0.0D, 0.0D, new int[0]);
@@ -254,10 +254,10 @@ public abstract class ahv
   public static double a(adq ☃, cj ☃, arm ☃)
   {
     aui ☃ = a(☃).h(☃, ☃);
-    if ((☃.a == 0.0D) && (☃.c == 0.0D)) {
+    if ((a == 0.0D) && (c == 0.0D)) {
       return -1000.0D;
     }
-    return ns.b(☃.c, ☃.a) - 1.5707963267948966D;
+    return ns.b(c, a) - 1.5707963267948966D;
   }
   
   public void c(adm ☃, cj ☃, alz ☃)
@@ -272,7 +272,7 @@ public abstract class ahv
   
   public boolean e(adm ☃, cj ☃, alz ☃)
   {
-    if (this.J == arm.i)
+    if (J == arm.i)
     {
       boolean ☃ = false;
       for (cq ☃ : cq.values()) {
@@ -308,7 +308,7 @@ public abstract class ahv
     double ☃ = ☃.o();
     double ☃ = ☃.p();
     
-    ☃.a(☃ + 0.5D, ☃ + 0.5D, ☃ + 0.5D, "random.fizz", 0.5F, 2.6F + (☃.s.nextFloat() - ☃.s.nextFloat()) * 0.8F);
+    ☃.a(☃ + 0.5D, ☃ + 0.5D, ☃ + 0.5D, "random.fizz", 0.5F, 2.6F + (s.nextFloat() - s.nextFloat()) * 0.8F);
     for (int ☃ = 0; ☃ < 8; ☃++) {
       ☃.a(cy.m, ☃ + Math.random(), ☃ + 1.2D, ☃ + Math.random(), 0.0D, 0.0D, 0.0D, new int[0]);
     }

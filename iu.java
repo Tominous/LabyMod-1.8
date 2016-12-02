@@ -13,22 +13,22 @@ public class iu
     if (☃.length() > 40) {
       ☃ = ☃.substring(0, 40);
     }
-    this.a = ☃;
-    this.b = ☃;
+    a = ☃;
+    b = ☃;
   }
   
   public void a(em ☃)
     throws IOException
   {
-    this.a = ☃.c(40);
-    this.b = ((iu.a)☃.a(iu.a.class));
+    a = ☃.c(40);
+    b = ((iu.a)☃.a(iu.a.class));
   }
   
   public void b(em ☃)
     throws IOException
   {
-    ☃.a(this.a);
-    ☃.a(this.b);
+    ☃.a(a);
+    ☃.a(b);
   }
   
   public void a(ic ☃)

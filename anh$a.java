@@ -9,12 +9,12 @@ class anh$a
   public anh$a(anh paramanh, int ☃, int ☃)
   {
     super(8096);
-    this.b = ☃;
-    this.c = ☃;
+    b = ☃;
+    c = ☃;
   }
   
   public void close()
   {
-    this.a.a(this.b, this.c, this.buf, this.count);
+    a.a(b, c, buf, count);
   }
 }

@@ -316,7 +316,7 @@ public class TextureUtils
   
   public static void applyAnisotropicLevel()
   {
-    if (GLContext.getCapabilities().GL_EXT_texture_filter_anisotropic)
+    if (getCapabilitiesGL_EXT_texture_filter_anisotropic)
     {
       float maxLevel = GL11.glGetFloat(34047);
       float level = Config.getAnisotropicFilterLevel();

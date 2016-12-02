@@ -71,7 +71,7 @@ public class abj
           if (aku.c(☃) > 0)
           {
             zx ☃ = ☃.k();
-            ☃.b = 1;
+            b = 1;
             return ☃;
           }
         }
@@ -104,7 +104,7 @@ public class abj
             (aku.c(☃) > 0))
           {
             ☃[☃] = ☃.k();
-            ☃[☃].b = 1;
+            b = 1;
           }
         }
       }
@@ -148,7 +148,7 @@ public class abj
           if (☃.b() == zy.cE)
           {
             ☃ = ☃.k();
-            ☃.b = 1;
+            b = 1;
             break;
           }
         }

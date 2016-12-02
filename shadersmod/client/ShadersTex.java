@@ -158,13 +158,13 @@ public class ShadersTex
     if (multiTex != null)
     {
       atex.multiTex = null;
-      multiTexMap.remove(Integer.valueOf(multiTex.base));
-      bfl.h(multiTex.norm);
-      bfl.h(multiTex.spec);
-      if (multiTex.base != texid)
+      multiTexMap.remove(Integer.valueOf(base));
+      bfl.h(norm);
+      bfl.h(spec);
+      if (base != texid)
       {
-        SMCLog.warning("Error : MultiTexID.base mismatch: " + multiTex.base + ", texid: " + texid);
-        bfl.h(multiTex.base);
+        SMCLog.warning("Error : MultiTexID.base mismatch: " + base + ", texid: " + texid);
+        bfl.h(base);
       }
     }
   }
@@ -183,7 +183,7 @@ public class ShadersTex
   
   public static void bindNSTextures(MultiTexID multiTex)
   {
-    bindNSTextures(multiTex.norm, multiTex.spec);
+    bindNSTextures(norm, spec);
   }
   
   public static void bindTextures(int baseTex, int normTex, int specTex)
@@ -207,16 +207,16 @@ public class ShadersTex
       if (Shaders.configNormalMap)
       {
         bfl.g(33986);
-        bfl.i(multiTex.norm);
+        bfl.i(norm);
       }
       if (Shaders.configSpecularMap)
       {
         bfl.g(33987);
-        bfl.i(multiTex.spec);
+        bfl.i(spec);
       }
       bfl.g(33984);
     }
-    bfl.i(multiTex.base);
+    bfl.i(base);
   }
   
   public static void bindTexture(bmk tex)
@@ -224,8 +224,8 @@ public class ShadersTex
     int texId = tex.b();
     if ((tex instanceof bmh))
     {
-      Shaders.atlasSizeX = ((bmh)tex).atlasWidth;
-      Shaders.atlasSizeY = ((bmh)tex).atlasHeight;
+      Shaders.atlasSizeX = atlasWidth;
+      Shaders.atlasSizeY = atlasHeight;
       bindTextures(tex.getMultiTexID());
     }
     else
@@ -239,8 +239,8 @@ public class ShadersTex
   public static void bindTextureMapForUpdateAndRender(bmj tm, jy resLoc)
   {
     bmh tex = (bmh)tm.b(resLoc);
-    Shaders.atlasSizeX = tex.atlasWidth;
-    Shaders.atlasSizeY = tex.atlasHeight;
+    Shaders.atlasSizeX = atlasWidth;
+    Shaders.atlasSizeY = atlasHeight;
     bindTextures(updatingTex = tex.getMultiTexID());
   }
   
@@ -259,35 +259,35 @@ public class ShadersTex
     Arrays.fill(aint, size, size * 2, -8421377);
     Arrays.fill(aint, size * 2, size * 3, 0);
     
-    bml.a(multiTex.base, width, height);
+    bml.a(base, width, height);
     bml.a(false, false);
     bml.a(false);
     
-    bml.a(multiTex.norm, width, height);
+    bml.a(norm, width, height);
     bml.a(false, false);
     bml.a(false);
     
-    bml.a(multiTex.spec, width, height);
+    bml.a(spec, width, height);
     bml.a(false, false);
     bml.a(false);
     
-    bfl.i(multiTex.base);
+    bfl.i(base);
   }
   
   public static void updateDynamicTexture(int texID, int[] src, int width, int height, blz tex)
   {
     MultiTexID multiTex = tex.getMultiTexID();
     
-    bfl.i(multiTex.base);
+    bfl.i(base);
     updateDynTexSubImage1(src, width, height, 0, 0, 0);
     
-    bfl.i(multiTex.norm);
+    bfl.i(norm);
     updateDynTexSubImage1(src, width, height, 0, 0, 1);
     
-    bfl.i(multiTex.spec);
+    bfl.i(spec);
     updateDynTexSubImage1(src, width, height, 0, 0, 2);
     
-    bfl.i(multiTex.base);
+    bfl.i(base);
   }
   
   public static void updateDynTexSubImage1(int[] src, int width, int height, int posX, int posY, int page)
@@ -319,16 +319,16 @@ public class ShadersTex
   {
     SMCLog.info("allocateTextureMap " + mipmapLevels + " " + width + " " + height + " ");
     updatingTextureMap = tex;
-    tex.atlasWidth = width;
-    tex.atlasHeight = height;
+    atlasWidth = width;
+    atlasHeight = height;
     MultiTexID multiTex = getMultiTexID(tex);
     updatingTex = multiTex;
-    bml.a(multiTex.base, mipmapLevels, width, height);
+    bml.a(base, mipmapLevels, width, height);
     if (Shaders.configNormalMap) {
-      bml.a(multiTex.norm, mipmapLevels, width, height);
+      bml.a(norm, mipmapLevels, width, height);
     }
     if (Shaders.configSpecularMap) {
-      bml.a(multiTex.spec, mipmapLevels, width, height);
+      bml.a(spec, mipmapLevels, width, height);
     }
     bfl.i(texID);
   }
@@ -350,16 +350,16 @@ public class ShadersTex
     if (Shaders.configNormalMap)
     {
       int[][] aaint = readImageAndMipmaps(iconName + "_n", width, height, data.length, border, -8421377);
-      bfl.i(updatingTex.norm);
+      bfl.i(updatingTexnorm);
       bml.a(aaint, width, height, xoffset, yoffset, linear, clamp);
     }
     if (Shaders.configSpecularMap)
     {
       int[][] aaint = readImageAndMipmaps(iconName + "_s", width, height, data.length, border, 0);
-      bfl.i(updatingTex.spec);
+      bfl.i(updatingTexspec);
       bml.a(aaint, width, height, xoffset, yoffset, linear, clamp);
     }
-    bfl.i(updatingTex.base);
+    bfl.i(updatingTexbase);
   }
   
   public static int[][] readImageAndMipmaps(String name, int width, int height, int numLevels, boolean border, int defColor)
@@ -382,7 +382,7 @@ public class ShadersTex
     if (!goodImage) {
       Arrays.fill(aint, defColor);
     }
-    bfl.i(updatingTex.spec);
+    bfl.i(updatingTexspec);
     aaint = genMipmapsSimple(aaint.length - 1, width, aaint);
     return aaint;
   }
@@ -437,15 +437,15 @@ public class ShadersTex
     {
       if (Shaders.configNormalMap)
       {
-        bfl.i(updatingTex.norm);
+        bfl.i(updatingTexnorm);
         uploadTexSub1(data, width, height, xoffset, yoffset, 1);
       }
       if (Shaders.configSpecularMap)
       {
-        bfl.i(updatingTex.spec);
+        bfl.i(updatingTexspec);
         uploadTexSub1(data, width, height, xoffset, yoffset, 2);
       }
-      bfl.i(updatingTex.base);
+      bfl.i(updatingTexbase);
     }
   }
   
@@ -642,7 +642,7 @@ public class ShadersTex
     
     intBuf.clear();
     intBuf.put(src, 0, size).position(0).limit(size);
-    bfl.i(multiTex.base);
+    bfl.i(base);
     GL11.glTexImage2D(3553, 0, 6408, width, height, 0, 32993, 33639, intBuf);
     GL11.glTexParameteri(3553, 10241, mmfilter);
     GL11.glTexParameteri(3553, 10240, mmfilter);
@@ -650,7 +650,7 @@ public class ShadersTex
     GL11.glTexParameteri(3553, 10243, wraptype);
     
     intBuf.put(src, size, size).position(0).limit(size);
-    bfl.i(multiTex.norm);
+    bfl.i(norm);
     GL11.glTexImage2D(3553, 0, 6408, width, height, 0, 32993, 33639, intBuf);
     GL11.glTexParameteri(3553, 10241, mmfilter);
     GL11.glTexParameteri(3553, 10240, mmfilter);
@@ -658,14 +658,14 @@ public class ShadersTex
     GL11.glTexParameteri(3553, 10243, wraptype);
     
     intBuf.put(src, size * 2, size).position(0).limit(size);
-    bfl.i(multiTex.spec);
+    bfl.i(spec);
     GL11.glTexImage2D(3553, 0, 6408, width, height, 0, 32993, 33639, intBuf);
     GL11.glTexParameteri(3553, 10241, mmfilter);
     GL11.glTexParameteri(3553, 10240, mmfilter);
     GL11.glTexParameteri(3553, 10242, wraptype);
     GL11.glTexParameteri(3553, 10243, wraptype);
     
-    bfl.i(multiTex.base);
+    bfl.i(base);
   }
   
   public static void updateSubImage(MultiTexID multiTex, int[] src, int width, int height, int posX, int posY, boolean linear, boolean clamp)
@@ -676,7 +676,7 @@ public class ShadersTex
     intBuf.clear();
     intBuf.put(src, 0, size);
     intBuf.position(0).limit(size);
-    bfl.i(multiTex.base);
+    bfl.i(base);
     GL11.glTexParameteri(3553, 10241, 9728);
     GL11.glTexParameteri(3553, 10240, 9728);
     GL11.glTexParameteri(3553, 10242, 10497);
@@ -688,7 +688,7 @@ public class ShadersTex
       intBuf.put(src, size, size).position(0);
       intBuf.position(0).limit(size);
     }
-    bfl.i(multiTex.norm);
+    bfl.i(norm);
     GL11.glTexParameteri(3553, 10241, 9728);
     GL11.glTexParameteri(3553, 10240, 9728);
     GL11.glTexParameteri(3553, 10242, 10497);
@@ -700,7 +700,7 @@ public class ShadersTex
       intBuf.put(src, size * 2, size);
       intBuf.position(0).limit(size);
     }
-    bfl.i(multiTex.spec);
+    bfl.i(spec);
     GL11.glTexParameteri(3553, 10241, 9728);
     GL11.glTexParameteri(3553, 10240, 9728);
     GL11.glTexParameteri(3553, 10242, 10497);
@@ -816,15 +816,15 @@ public class ShadersTex
     {
       MultiTexID multiTex = texObj.getMultiTexID();
       
-      bfl.i(multiTex.base);
+      bfl.i(base);
       GL11.glTexParameteri(3553, 10241, Shaders.texMinFilValue[Shaders.configTexMinFilB]);
       GL11.glTexParameteri(3553, 10240, Shaders.texMagFilValue[Shaders.configTexMagFilB]);
       
-      bfl.i(multiTex.norm);
+      bfl.i(norm);
       GL11.glTexParameteri(3553, 10241, Shaders.texMinFilValue[Shaders.configTexMinFilN]);
       GL11.glTexParameteri(3553, 10240, Shaders.texMagFilValue[Shaders.configTexMagFilN]);
       
-      bfl.i(multiTex.spec);
+      bfl.i(spec);
       GL11.glTexParameteri(3553, 10241, Shaders.texMinFilValue[Shaders.configTexMinFilS]);
       GL11.glTexParameteri(3553, 10240, Shaders.texMagFilValue[Shaders.configTexMagFilS]);
       
