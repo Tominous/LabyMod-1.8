@@ -8,5 +8,6 @@ class ave$13
   public String a()
     throws Exception
   {
+    return ave.b(this$0).c().toString();
   }
 }

@@ -17,13 +17,16 @@ public class KeystrokesRenderer
   
   public KeystrokesRenderer()
   {
+    mc = ave.A();
   }
   
   @EventHandler
   public void onRender(RenderOverlayEvent event)
   {
+    if ((mc.m != null) || (mc.t.aB)) {
       return;
     }
+    avr resolution = new avr(mc);
     
     int x = 5;
     int y = 5;
@@ -46,7 +49,9 @@ public class KeystrokesRenderer
     }
     for (Key key : KeystrokesMod.keys)
     {
+      int textWidth = mc.k.a(key.getName());
       avp.a(x + key.getX(), y + key.getY(), x + key.getX() + key.getWidth(), y + key.getY() + key.getHeight(), key.isPressed() ? 1728053247 : 1711276032);
+      mc.k.a(key.getName(), x + key.getX() + key.getWidth() / 2 - textWidth / 2, y + key.getY() + key.getHeight() / 2 - 4, key.isPressed() ? -16777216 : -1);
     }
   }
 }

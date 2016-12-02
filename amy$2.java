@@ -8,5 +8,6 @@ class amy$2
   public String a()
     throws Exception
   {
+    return c.a(a);
   }
 }

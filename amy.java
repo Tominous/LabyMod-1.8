@@ -13,17 +13,17 @@ import org.apache.logging.log4j.Logger;
 public class amy
 {
   private static final Logger c = ;
-  private final amz[] d;
-  private final byte[] e;
-  private final int[] f;
-  private final boolean[] g;
+  private final amz[] d = new amz[16];
+  private final byte[] e = new byte['Ā'];
+  private final int[] f = new int['Ā'];
+  private final boolean[] g = new boolean['Ā'];
   private boolean h;
   private final adm i;
   private final int[] j;
   public final int a;
   public final int b;
   private boolean k;
-  private final Map<cj, akw> l;
+  private final Map<cj, akw> l = Maps.newHashMap();
   private final ne<pk>[] m;
   private boolean n;
   private boolean o;
@@ -33,74 +33,68 @@ public class amy
   private long s;
   private int t;
   private long u;
-  private int v;
-  private ConcurrentLinkedQueue<cj> w;
+  private int v = 4096;
+  private ConcurrentLinkedQueue<cj> w = Queues.newConcurrentLinkedQueue();
   
-  public amy(adm worldIn, int x, int z)
+  public amy(adm ☃, int ☃, int ☃)
   {
-    this.d = new amz[16];
-    this.e = new byte['Ā'];
-    this.f = new int['Ā'];
-    this.g = new boolean['Ā'];
-    this.l = Maps.newHashMap();
-    this.v = 4096;
-    this.w = Queues.newConcurrentLinkedQueue();
-    this.m = ((ne[])new ne[16]);
-    this.i = worldIn;
-    this.a = x;
-    this.b = z;
-    this.j = new int['Ā'];
-    for (int i = 0; i < this.m.length; i++) {
-      this.m[i] = new ne(pk.class);
+    m = ((ne[])new ne[16]);
+    i = ☃;
+    a = ☃;
+    b = ☃;
+    j = new int['Ā'];
+    for (int ☃ = 0; ☃ < m.length; ☃++) {
+      m[☃] = new ne(pk.class);
     }
-    Arrays.fill((int[])this.f, 64537);
-    Arrays.fill(this.e, (byte)-1);
+    Arrays.fill(f, 64537);
+    Arrays.fill(e, (byte)-1);
   }
   
-  public amy(adm worldIn, ans primer, int x, int z)
+  public amy(adm ☃, ans ☃, int ☃, int ☃)
   {
-    this(worldIn, x, z);
-    int i = 256;
-    boolean flag = !worldIn.t.o();
-    for (int j = 0; j < 16; j++) {
-      for (int k = 0; k < 16; k++) {
-        for (int l = 0; l < i; l++)
+    this(☃, ☃, ☃);
+    
+    int ☃ = 256;
+    boolean ☃ = !t.o();
+    for (int ☃ = 0; ☃ < 16; ☃++) {
+      for (int ☃ = 0; ☃ < 16; ☃++) {
+        for (int ☃ = 0; ☃ < ☃; ☃++)
         {
-          int i1 = j * i * 16 | k * i | l;
-          alz iblockstate = primer.a(i1);
-          if (iblockstate.c().t() != arm.a)
+          int ☃ = ☃ * ☃ * 16 | ☃ * ☃ | ☃;
+          alz ☃ = ☃.a(☃);
+          if (☃.c().t() != arm.a)
           {
-            int j1 = l >> 4;
-            if (this.d[j1] == null) {
-              this.d[j1] = new amz(j1 << 4, flag);
+            int ☃ = ☃ >> 4;
+            if (d[☃] == null) {
+              d[☃] = new amz(☃ << 4, ☃);
             }
-            this.d[j1].a(j, l & 0xF, k, iblockstate);
+            d[☃].a(☃, ☃ & 0xF, ☃, ☃);
           }
         }
       }
     }
   }
   
-  public boolean a(int x, int z)
+  public boolean a(int ☃, int ☃)
   {
-    return (x == this.a) && (z == this.b);
+    return (☃ == a) && (☃ == b);
   }
   
-  public int f(cj pos)
+  public int f(cj ☃)
   {
-    return b(pos.n() & 0xF, pos.p() & 0xF);
+    return b(☃.n() & 0xF, ☃.p() & 0xF);
   }
   
-  public int b(int x, int z)
+  public int b(int ☃, int ☃)
   {
-    return this.j[(z << 4 | x)];
+    return j[(☃ << 4 | ☃)];
   }
   
   public int g()
   {
-    for (int i = this.d.length - 1; i >= 0; i--) {
-      if (this.d[i] != null) {
-        return this.d[i].d();
+    for (int ☃ = d.length - 1; ☃ >= 0; ☃--) {
+      if (d[☃] != null) {
+        return d[☃].d();
       }
     }
     return 0;
@@ -108,648 +102,686 @@ public class amy
   
   public amz[] h()
   {
-    return this.d;
+    return d;
   }
   
   protected void a()
   {
-    int i = g();
-    this.t = Integer.MAX_VALUE;
-    for (int j = 0; j < 16; j++) {
-      for (int k = 0; k < 16; k++)
+    int ☃ = g();
+    t = Integer.MAX_VALUE;
+    for (int ☃ = 0; ☃ < 16; ☃++) {
+      for (int ☃ = 0; ☃ < 16; ☃++)
       {
-        this.f[(j + (k << 4))] = 64537;
-        for (int l = i + 16; l > 0; l--)
+        f[(☃ + (☃ << 4))] = 64537;
+        for (int ☃ = ☃ + 16; ☃ > 0; ☃--)
         {
-          afh block = f(j, l - 1, k);
-          if (block.p() != 0)
+          afh ☃ = f(☃, ☃ - 1, ☃);
+          if (☃.p() != 0)
           {
-            this.j[(k << 4 | j)] = l;
-            if (l >= this.t) {
+            j[(☃ << 4 | ☃)] = ☃;
+            if (☃ >= t) {
               break;
             }
-            this.t = l; break;
+            t = ☃; break;
           }
         }
       }
     }
-    this.q = true;
+    q = true;
   }
   
   public void b()
   {
-    int i = g();
-    this.t = Integer.MAX_VALUE;
-    for (int j = 0; j < 16; j++) {
-      for (int k = 0; k < 16; k++)
+    int ☃ = g();
+    t = Integer.MAX_VALUE;
+    for (int ☃ = 0; ☃ < 16; ☃++) {
+      for (int ☃ = 0; ☃ < 16; ☃++)
       {
-        this.f[(j + (k << 4))] = 64537;
-        for (int l = i + 16; l > 0; l--) {
-          if (e(j, l - 1, k) != 0)
+        f[(☃ + (☃ << 4))] = 64537;
+        for (int ☃ = ☃ + 16; ☃ > 0; ☃--) {
+          if (e(☃, ☃ - 1, ☃) != 0)
           {
-            this.j[(k << 4 | j)] = l;
-            if (l >= this.t) {
+            j[(☃ << 4 | ☃)] = ☃;
+            if (☃ >= t) {
               break;
             }
-            this.t = l; break;
+            t = ☃; break;
           }
         }
-        if (!this.i.t.o())
+        if (!i.t.o())
         {
-          int k1 = 15;
-          int i1 = i + 16 - 1;
-          for (;;)
+          int ☃ = 15;
+          int ☃ = ☃ + 16 - 1;
+          do
           {
-            int j1 = e(j, i1, k);
-            if ((j1 == 0) && (k1 != 15)) {
-              j1 = 1;
+            int ☃ = e(☃, ☃, ☃);
+            if ((☃ == 0) && (☃ != 15)) {
+              ☃ = 1;
             }
-            k1 -= j1;
-            if (k1 > 0)
+            ☃ -= ☃;
+            if (☃ > 0)
             {
-              amz extendedblockstorage = this.d[(i1 >> 4)];
-              if (extendedblockstorage != null)
+              amz ☃ = d[(☃ >> 4)];
+              if (☃ != null)
               {
-                extendedblockstorage.a(j, i1 & 0xF, k, k1);
-                this.i.n(new cj((this.a << 4) + j, i1, (this.b << 4) + k));
+                ☃.a(☃, ☃ & 0xF, ☃, ☃);
+                i.n(new cj((a << 4) + ☃, ☃, (b << 4) + ☃));
               }
             }
-            i1--;
-            if ((i1 <= 0) || (k1 <= 0)) {
-              break;
-            }
-          }
+            ☃--;
+          } while ((☃ > 0) && (☃ > 0));
         }
       }
     }
-    this.q = true;
+    q = true;
   }
   
-  private void d(int x, int z)
+  private void d(int ☃, int ☃)
   {
-    this.g[(x + z * 16)] = true;
-    this.k = true;
+    g[(☃ + ☃ * 16)] = true;
+    k = true;
   }
   
-  private void h(boolean p_150803_1_)
+  private void h(boolean ☃)
   {
-    this.i.B.a("recheckGaps");
-    if (this.i.a(new cj(this.a * 16 + 8, 0, this.b * 16 + 8), 16))
+    i.B.a("recheckGaps");
+    if (i.a(new cj(a * 16 + 8, 0, b * 16 + 8), 16))
     {
-      for (int i = 0; i < 16; i++) {
-        for (int j = 0; j < 16; j++) {
-          if (this.g[(i + j * 16)] != 0)
+      for (int ☃ = 0; ☃ < 16; ☃++) {
+        for (int ☃ = 0; ☃ < 16; ☃++) {
+          if (g[(☃ + ☃ * 16)] != 0)
           {
-            this.g[(i + j * 16)] = false;
-            int k = b(i, j);
-            int l = this.a * 16 + i;
-            int i1 = this.b * 16 + j;
-            int j1 = Integer.MAX_VALUE;
-            for (cq enumfacing : cq.c.a) {
-              j1 = Math.min(j1, this.i.b(l + enumfacing.g(), i1 + enumfacing.i()));
+            g[(☃ + ☃ * 16)] = false;
+            int ☃ = b(☃, ☃);
+            int ☃ = a * 16 + ☃;
+            int ☃ = b * 16 + ☃;
+            
+            int ☃ = Integer.MAX_VALUE;
+            for (cq ☃ : cq.c.a) {
+              ☃ = Math.min(☃, i.b(☃ + ☃.g(), ☃ + ☃.i()));
             }
-            c(l, i1, j1);
-            for (cq enumfacing1 : cq.c.a) {
-              c(l + enumfacing1.g(), i1 + enumfacing1.i(), k);
+            c(☃, ☃, ☃);
+            for (cq ☃ : cq.c.a) {
+              c(☃ + ☃.g(), ☃ + ☃.i(), ☃);
             }
-            if (p_150803_1_)
+            if (☃)
             {
-              this.i.B.b();
+              i.B.b();
               return;
             }
           }
         }
       }
-      this.k = false;
+      k = false;
     }
-    this.i.B.b();
+    i.B.b();
   }
   
-  private void c(int x, int z, int maxValue)
+  private void c(int ☃, int ☃, int ☃)
   {
-    int i = this.i.m(new cj(x, 0, z)).o();
-    if (i > maxValue) {
-      a(x, z, maxValue, i + 1);
-    } else if (i < maxValue) {
-      a(x, z, i, maxValue + 1);
+    int ☃ = i.m(new cj(☃, 0, ☃)).o();
+    if (☃ > ☃) {
+      a(☃, ☃, ☃, ☃ + 1);
+    } else if (☃ < ☃) {
+      a(☃, ☃, ☃, ☃ + 1);
     }
   }
   
-  private void a(int x, int z, int startY, int endY)
+  private void a(int ☃, int ☃, int ☃, int ☃)
   {
-    if ((endY > startY) && (this.i.a(new cj(x, 0, z), 16)))
+    if ((☃ > ☃) && 
+      (i.a(new cj(☃, 0, ☃), 16)))
     {
-      for (int i = startY; i < endY; i++) {
-        this.i.c(ads.a, new cj(x, i, z));
+      for (int ☃ = ☃; ☃ < ☃; ☃++) {
+        i.c(ads.a, new cj(☃, ☃, ☃));
       }
-      this.q = true;
+      q = true;
     }
   }
   
-  private void d(int x, int y, int z)
+  private void d(int ☃, int ☃, int ☃)
   {
-    int i = this.j[(z << 4 | x)] & 0xFF;
-    int j = i;
-    if (y > i) {
-      j = y;
+    int ☃ = j[(☃ << 4 | ☃)] & 0xFF;
+    int ☃ = ☃;
+    if (☃ > ☃) {
+      ☃ = ☃;
     }
-    while ((j > 0) && (e(x, j - 1, z) == 0)) {
-      j--;
+    while ((☃ > 0) && (e(☃, ☃ - 1, ☃) == 0)) {
+      ☃--;
     }
-    if (j != i)
+    if (☃ == ☃) {
+      return;
+    }
+    i.a(☃ + a * 16, ☃ + b * 16, ☃, ☃);
+    j[(☃ << 4 | ☃)] = ☃;
+    
+    int ☃ = a * 16 + ☃;
+    int ☃ = b * 16 + ☃;
+    if (!i.t.o())
     {
-      this.i.a(x + this.a * 16, z + this.b * 16, j, i);
-      this.j[(z << 4 | x)] = j;
-      int k = this.a * 16 + x;
-      int l = this.b * 16 + z;
-      if (!this.i.t.o())
-      {
-        if (j < i) {
-          for (int j1 = j; j1 < i; j1++)
-          {
-            amz extendedblockstorage2 = this.d[(j1 >> 4)];
-            if (extendedblockstorage2 != null)
-            {
-              extendedblockstorage2.a(x, j1 & 0xF, z, 15);
-              this.i.n(new cj((this.a << 4) + x, j1, (this.b << 4) + z));
-            }
-          }
-        } else {
-          for (int i1 = i; i1 < j; i1++)
-          {
-            amz extendedblockstorage = this.d[(i1 >> 4)];
-            if (extendedblockstorage != null)
-            {
-              extendedblockstorage.a(x, i1 & 0xF, z, 0);
-              this.i.n(new cj((this.a << 4) + x, i1, (this.b << 4) + z));
-            }
-          }
-        }
-        int k1 = 15;
-        while ((j > 0) && (k1 > 0))
+      if (☃ < ☃) {
+        for (int ☃ = ☃; ☃ < ☃; ☃++)
         {
-          j--;
-          int i2 = e(x, j, z);
-          if (i2 == 0) {
-            i2 = 1;
+          amz ☃ = d[(☃ >> 4)];
+          if (☃ != null)
+          {
+            ☃.a(☃, ☃ & 0xF, ☃, 15);
+            i.n(new cj((a << 4) + ☃, ☃, (b << 4) + ☃));
           }
-          k1 -= i2;
-          if (k1 < 0) {
-            k1 = 0;
-          }
-          amz extendedblockstorage1 = this.d[(j >> 4)];
-          if (extendedblockstorage1 != null) {
-            extendedblockstorage1.a(x, j & 0xF, z, k1);
+        }
+      } else {
+        for (int ☃ = ☃; ☃ < ☃; ☃++)
+        {
+          amz ☃ = d[(☃ >> 4)];
+          if (☃ != null)
+          {
+            ☃.a(☃, ☃ & 0xF, ☃, 0);
+            i.n(new cj((a << 4) + ☃, ☃, (b << 4) + ☃));
           }
         }
       }
-      int l1 = this.j[(z << 4 | x)];
-      int j2 = i;
-      int k2 = l1;
-      if (l1 < i)
+      int ☃ = 15;
+      while ((☃ > 0) && (☃ > 0))
       {
-        j2 = l1;
-        k2 = i;
-      }
-      if (l1 < this.t) {
-        this.t = l1;
-      }
-      if (!this.i.t.o())
-      {
-        for (cq enumfacing : cq.c.a) {
-          a(k + enumfacing.g(), l + enumfacing.i(), j2, k2);
+        ☃--;
+        int ☃ = e(☃, ☃, ☃);
+        if (☃ == 0) {
+          ☃ = 1;
         }
-        a(k, l, j2, k2);
+        ☃ -= ☃;
+        if (☃ < 0) {
+          ☃ = 0;
+        }
+        amz ☃ = d[(☃ >> 4)];
+        if (☃ != null) {
+          ☃.a(☃, ☃ & 0xF, ☃, ☃);
+        }
       }
-      this.q = true;
     }
-  }
-  
-  public int b(cj pos)
-  {
-    return a(pos).p();
-  }
-  
-  private int e(int x, int y, int z)
-  {
-    return f(x, y, z).p();
-  }
-  
-  private afh f(int x, int y, int z)
-  {
-    afh block = afi.a;
-    if ((y >= 0) && (y >> 4 < this.d.length))
+    int ☃ = j[(☃ << 4 | ☃)];
+    int ☃ = ☃;
+    int ☃ = ☃;
+    if (☃ < ☃)
     {
-      amz extendedblockstorage = this.d[(y >> 4)];
-      if (extendedblockstorage != null) {
+      int ☃ = ☃;
+      ☃ = ☃;
+      ☃ = ☃;
+    }
+    if (☃ < t) {
+      t = ☃;
+    }
+    if (!i.t.o())
+    {
+      for (cq ☃ : cq.c.a) {
+        a(☃ + ☃.g(), ☃ + ☃.i(), ☃, ☃);
+      }
+      a(☃, ☃, ☃, ☃);
+    }
+    q = true;
+  }
+  
+  public int b(cj ☃)
+  {
+    return a(☃).p();
+  }
+  
+  private int e(int ☃, int ☃, int ☃)
+  {
+    return f(☃, ☃, ☃).p();
+  }
+  
+  private afh f(int ☃, int ☃, int ☃)
+  {
+    afh ☃ = afi.a;
+    if ((☃ >= 0) && (☃ >> 4 < d.length))
+    {
+      amz ☃ = d[(☃ >> 4)];
+      if (☃ != null) {
         try
         {
-          block = extendedblockstorage.b(x, y & 0xF, z);
+          ☃ = ☃.b(☃, ☃ & 0xF, ☃);
         }
-        catch (Throwable throwable)
+        catch (Throwable ☃)
         {
-          b crashreport = b.a(throwable, "Getting block");
-          throw new e(crashreport);
+          b ☃ = b.a(☃, "Getting block");
+          
+          throw new e(☃);
         }
       }
     }
-    return block;
+    return ☃;
   }
   
-  public afh a(final int x, final int y, final int z)
+  public afh a(final int ☃, final int ☃, final int ☃)
   {
     try
     {
-      return f(x & 0xF, y, z & 0xF);
+      return f(☃ & 0xF, ☃, ☃ & 0xF);
     }
-    catch (e reportedexception)
+    catch (e ☃)
     {
-      c crashreportcategory = reportedexception.a().a("Block being got");
-      crashreportcategory.a("Location", new Callable()
+      c ☃ = ☃.a().a("Block being got");
+      ☃.a("Location", new Callable()
       {
         public String a()
           throws Exception
         {
-          return c.a(new cj(amy.this.a * 16 + x, y, amy.this.b * 16 + z));
+          return c.a(new cj(☃ * 16 + ☃, ☃, ☃ * 16 + ☃));
         }
       });
-      throw reportedexception;
+      throw ☃;
     }
   }
   
-  public afh a(final cj pos)
+  public afh a(final cj ☃)
   {
     try
     {
-      return f(pos.n() & 0xF, pos.o(), pos.p() & 0xF);
+      return f(☃.n() & 0xF, ☃.o(), ☃.p() & 0xF);
     }
-    catch (e reportedexception)
+    catch (e ☃)
     {
-      c crashreportcategory = reportedexception.a().a("Block being got");
-      crashreportcategory.a("Location", new Callable()
+      c ☃ = ☃.a().a("Block being got");
+      ☃.a("Location", new Callable()
       {
         public String a()
           throws Exception
         {
-          return c.a(pos);
+          return c.a(☃);
         }
       });
-      throw reportedexception;
+      throw ☃;
     }
   }
   
-  public alz g(final cj pos)
+  public alz g(final cj ☃)
   {
-    if (this.i.G() == adr.g)
+    if (i.G() == adr.g)
     {
-      alz iblockstate = null;
-      if (pos.o() == 60) {
-        iblockstate = afi.cv.Q();
+      alz ☃ = null;
+      if (☃.o() == 60) {
+        ☃ = afi.cv.Q();
       }
-      if (pos.o() == 70) {
-        iblockstate = anu.b(pos.n(), pos.p());
+      if (☃.o() == 70) {
+        ☃ = anu.b(☃.n(), ☃.p());
       }
-      return iblockstate == null ? afi.a.Q() : iblockstate;
+      return ☃ == null ? afi.a.Q() : ☃;
     }
     try
     {
-      if ((pos.o() >= 0) && (pos.o() >> 4 < this.d.length))
+      if ((☃.o() >= 0) && (☃.o() >> 4 < d.length))
       {
-        amz extendedblockstorage = this.d[(pos.o() >> 4)];
-        if (extendedblockstorage != null)
+        amz ☃ = d[(☃.o() >> 4)];
+        if (☃ != null)
         {
-          int j = pos.n() & 0xF;
-          int k = pos.o() & 0xF;
-          int i = pos.p() & 0xF;
-          return extendedblockstorage.a(j, k, i);
+          int ☃ = ☃.n() & 0xF;
+          int ☃ = ☃.o() & 0xF;
+          int ☃ = ☃.p() & 0xF;
+          return ☃.a(☃, ☃, ☃);
         }
       }
       return afi.a.Q();
     }
-    catch (Throwable throwable)
+    catch (Throwable ☃)
     {
-      b crashreport = b.a(throwable, "Getting block state");
-      c crashreportcategory = crashreport.a("Block being got");
-      crashreportcategory.a("Location", new Callable()
+      b ☃ = b.a(☃, "Getting block state");
+      c ☃ = ☃.a("Block being got");
+      ☃.a("Location", new Callable()
       {
         public String a()
           throws Exception
         {
-          return c.a(pos);
+          return c.a(☃);
         }
       });
-      throw new e(crashreport);
+      throw new e(☃);
     }
   }
   
-  private int g(int x, int y, int z)
+  private int g(int ☃, int ☃, int ☃)
   {
-    if (y >> 4 >= this.d.length) {
+    if (☃ >> 4 >= d.length) {
       return 0;
     }
-    amz extendedblockstorage = this.d[(y >> 4)];
-    return extendedblockstorage != null ? extendedblockstorage.c(x, y & 0xF, z) : 0;
-  }
-  
-  public int c(cj pos)
-  {
-    return g(pos.n() & 0xF, pos.o(), pos.p() & 0xF);
-  }
-  
-  public alz a(cj pos, alz state)
-  {
-    int i = pos.n() & 0xF;
-    int j = pos.o();
-    int k = pos.p() & 0xF;
-    int l = k << 4 | i;
-    if (j >= this.f[l] - 1) {
-      this.f[l] = 64537;
+    amz ☃ = d[(☃ >> 4)];
+    if (☃ != null) {
+      return ☃.c(☃, ☃ & 0xF, ☃);
     }
-    int i1 = this.j[l];
-    alz iblockstate = g(pos);
-    if (iblockstate == state) {
+    return 0;
+  }
+  
+  public int c(cj ☃)
+  {
+    return g(☃.n() & 0xF, ☃.o(), ☃.p() & 0xF);
+  }
+  
+  public alz a(cj ☃, alz ☃)
+  {
+    int ☃ = ☃.n() & 0xF;
+    int ☃ = ☃.o();
+    int ☃ = ☃.p() & 0xF;
+    
+    int ☃ = ☃ << 4 | ☃;
+    if (☃ >= f[☃] - 1) {
+      f[☃] = 64537;
+    }
+    int ☃ = j[☃];
+    
+    alz ☃ = g(☃);
+    if (☃ == ☃) {
       return null;
     }
-    afh block = state.c();
-    afh block1 = iblockstate.c();
-    amz extendedblockstorage = this.d[(j >> 4)];
-    boolean flag = false;
-    if (extendedblockstorage == null)
+    afh ☃ = ☃.c();
+    afh ☃ = ☃.c();
+    
+    amz ☃ = d[(☃ >> 4)];
+    boolean ☃ = false;
+    if (☃ == null)
     {
-      if (block == afi.a) {
+      if (☃ == afi.a) {
         return null;
       }
-      extendedblockstorage = this.d[(j >> 4)] = new amz(j >> 4 << 4, !this.i.t.o());
-      flag = j >= i1;
+      ☃ = d[(☃ >> 4)] = new amz(☃ >> 4 << 4, !i.t.o());
+      ☃ = ☃ >= ☃;
     }
-    extendedblockstorage.a(i, j & 0xF, k, state);
-    if (block1 != block) {
-      if (!this.i.D) {
-        block1.b(this.i, pos, iblockstate);
-      } else if ((block1 instanceof agq)) {
-        this.i.t(pos);
+    ☃.a(☃, ☃ & 0xF, ☃, ☃);
+    if (☃ != ☃) {
+      if (!i.D) {
+        ☃.b(i, ☃, ☃);
+      } else if ((☃ instanceof agq)) {
+        i.t(☃);
       }
     }
-    if (extendedblockstorage.b(i, j & 0xF, k) != block) {
+    if (☃.b(☃, ☃ & 0xF, ☃) != ☃) {
       return null;
     }
-    if (flag)
+    if (☃)
     {
       b();
     }
     else
     {
-      int j1 = block.p();
-      int k1 = block1.p();
-      if (j1 > 0)
+      int ☃ = ☃.p();
+      int ☃ = ☃.p();
+      if (☃ > 0)
       {
-        if (j >= i1) {
-          d(i, j + 1, k);
+        if (☃ >= ☃) {
+          d(☃, ☃ + 1, ☃);
         }
       }
-      else if (j == i1 - 1) {
-        d(i, j, k);
+      else if (☃ == ☃ - 1) {
+        d(☃, ☃, ☃);
       }
-      if ((j1 != k1) && ((j1 < k1) || (a(ads.a, pos) > 0) || (a(ads.b, pos) > 0))) {
-        d(i, k);
+      if (☃ != ☃) {
+        if ((☃ < ☃) || (a(ads.a, ☃) > 0) || (a(ads.b, ☃) > 0)) {
+          d(☃, ☃);
+        }
       }
     }
-    if ((block1 instanceof agq))
+    if ((☃ instanceof agq))
     {
-      akw tileentity = a(pos, amy.a.c);
-      if (tileentity != null) {
-        tileentity.E();
+      akw ☃ = a(☃, amy.a.c);
+      if (☃ != null) {
+        ☃.E();
       }
     }
-    if ((!this.i.D) && (block1 != block)) {
-      block.c(this.i, pos, state);
+    if ((!i.D) && (☃ != ☃)) {
+      ☃.c(i, ☃, ☃);
     }
-    if ((block instanceof agq))
+    if ((☃ instanceof agq))
     {
-      akw tileentity1 = a(pos, amy.a.c);
-      if (tileentity1 == null)
+      akw ☃ = a(☃, amy.a.c);
+      if (☃ == null)
       {
-        tileentity1 = ((agq)block).a(this.i, block.c(state));
-        this.i.a(pos, tileentity1);
+        ☃ = ((agq)☃).a(i, ☃.c(☃));
+        i.a(☃, ☃);
       }
-      if (tileentity1 != null) {
-        tileentity1.E();
+      if (☃ != null) {
+        ☃.E();
       }
     }
-    this.q = true;
-    return iblockstate;
+    q = true;
+    return ☃;
   }
   
-  public int a(ads p_177413_1_, cj pos)
+  public int a(ads ☃, cj ☃)
   {
-    int i = pos.n() & 0xF;
-    int j = pos.o();
-    int k = pos.p() & 0xF;
-    amz extendedblockstorage = this.d[(j >> 4)];
-    return p_177413_1_ == ads.b ? extendedblockstorage.e(i, j & 0xF, k) : p_177413_1_ == ads.a ? extendedblockstorage.d(i, j & 0xF, k) : this.i.t.o() ? 0 : extendedblockstorage == null ? 0 : d(pos) ? p_177413_1_.c : p_177413_1_.c;
-  }
-  
-  public void a(ads p_177431_1_, cj pos, int value)
-  {
-    int i = pos.n() & 0xF;
-    int j = pos.o();
-    int k = pos.p() & 0xF;
-    amz extendedblockstorage = this.d[(j >> 4)];
-    if (extendedblockstorage == null)
+    int ☃ = ☃.n() & 0xF;
+    int ☃ = ☃.o();
+    int ☃ = ☃.p() & 0xF;
+    
+    amz ☃ = d[(☃ >> 4)];
+    if (☃ == null)
     {
-      extendedblockstorage = this.d[(j >> 4)] = new amz(j >> 4 << 4, !this.i.t.o());
+      if (d(☃)) {
+        return c;
+      }
+      return 0;
+    }
+    if (☃ == ads.a)
+    {
+      if (i.t.o()) {
+        return 0;
+      }
+      return ☃.d(☃, ☃ & 0xF, ☃);
+    }
+    if (☃ == ads.b) {
+      return ☃.e(☃, ☃ & 0xF, ☃);
+    }
+    return c;
+  }
+  
+  public void a(ads ☃, cj ☃, int ☃)
+  {
+    int ☃ = ☃.n() & 0xF;
+    int ☃ = ☃.o();
+    int ☃ = ☃.p() & 0xF;
+    
+    amz ☃ = d[(☃ >> 4)];
+    if (☃ == null)
+    {
+      ☃ = d[(☃ >> 4)] = new amz(☃ >> 4 << 4, !i.t.o());
       b();
     }
-    this.q = true;
-    if (p_177431_1_ == ads.a)
+    q = true;
+    if (☃ == ads.a)
     {
-      if (!this.i.t.o()) {
-        extendedblockstorage.a(i, j & 0xF, k, value);
+      if (!i.t.o()) {
+        ☃.a(☃, ☃ & 0xF, ☃, ☃);
       }
     }
-    else if (p_177431_1_ == ads.b) {
-      extendedblockstorage.b(i, j & 0xF, k, value);
+    else if (☃ == ads.b) {
+      ☃.b(☃, ☃ & 0xF, ☃, ☃);
     }
   }
   
-  public int a(cj pos, int amount)
+  public int a(cj ☃, int ☃)
   {
-    int i = pos.n() & 0xF;
-    int j = pos.o();
-    int k = pos.p() & 0xF;
-    amz extendedblockstorage = this.d[(j >> 4)];
-    if (extendedblockstorage == null) {
-      return (!this.i.t.o()) && (amount < ads.a.c) ? ads.a.c - amount : 0;
-    }
-    int l = this.i.t.o() ? 0 : extendedblockstorage.d(i, j & 0xF, k);
-    l -= amount;
-    int i1 = extendedblockstorage.e(i, j & 0xF, k);
-    if (i1 > l) {
-      l = i1;
-    }
-    return l;
-  }
-  
-  public void a(pk entityIn)
-  {
-    this.r = true;
-    int i = ns.c(entityIn.s / 16.0D);
-    int j = ns.c(entityIn.u / 16.0D);
-    if ((i != this.a) || (j != this.b))
+    int ☃ = ☃.n() & 0xF;
+    int ☃ = ☃.o();
+    int ☃ = ☃.p() & 0xF;
+    amz ☃ = d[(☃ >> 4)];
+    if (☃ == null)
     {
-      c.warn("Wrong location! (" + i + ", " + j + ") should be (" + this.a + ", " + this.b + "), " + entityIn, new Object[] { entityIn });
-      entityIn.J();
-    }
-    int k = ns.c(entityIn.t / 16.0D);
-    if (k < 0) {
-      k = 0;
-    }
-    if (k >= this.m.length) {
-      k = this.m.length - 1;
-    }
-    entityIn.ad = true;
-    entityIn.ae = this.a;
-    entityIn.af = k;
-    entityIn.ag = this.b;
-    this.m[k].add(entityIn);
-  }
-  
-  public void b(pk entityIn)
-  {
-    a(entityIn, entityIn.af);
-  }
-  
-  public void a(pk entityIn, int p_76608_2_)
-  {
-    if (p_76608_2_ < 0) {
-      p_76608_2_ = 0;
-    }
-    if (p_76608_2_ >= this.m.length) {
-      p_76608_2_ = this.m.length - 1;
-    }
-    this.m[p_76608_2_].remove(entityIn);
-  }
-  
-  public boolean d(cj pos)
-  {
-    int i = pos.n() & 0xF;
-    int j = pos.o();
-    int k = pos.p() & 0xF;
-    return j >= this.j[(k << 4 | i)];
-  }
-  
-  private akw i(cj pos)
-  {
-    afh block = a(pos);
-    return !block.z() ? null : ((agq)block).a(this.i, c(pos));
-  }
-  
-  public akw a(cj pos, amy.a p_177424_2_)
-  {
-    akw tileentity = (akw)this.l.get(pos);
-    if (tileentity == null)
-    {
-      if (p_177424_2_ == amy.a.a)
-      {
-        tileentity = i(pos);
-        this.i.a(pos, tileentity);
+      if ((!i.t.o()) && (☃ < ac)) {
+        return ac - ☃;
       }
-      else if (p_177424_2_ == amy.a.b)
-      {
-        this.w.add(pos);
-      }
+      return 0;
     }
-    else if (tileentity.x())
+    int ☃ = i.t.o() ? 0 : ☃.d(☃, ☃ & 0xF, ☃);
+    ☃ -= ☃;
+    int ☃ = ☃.e(☃, ☃ & 0xF, ☃);
+    if (☃ > ☃) {
+      ☃ = ☃;
+    }
+    return ☃;
+  }
+  
+  public void a(pk ☃)
+  {
+    r = true;
+    
+    int ☃ = ns.c(s / 16.0D);
+    int ☃ = ns.c(u / 16.0D);
+    if ((☃ != a) || (☃ != b))
     {
-      this.l.remove(pos);
+      c.warn("Wrong location! (" + ☃ + ", " + ☃ + ") should be (" + a + ", " + b + "), " + ☃, new Object[] { ☃ });
+      
+      ☃.J();
+    }
+    int ☃ = ns.c(t / 16.0D);
+    if (☃ < 0) {
+      ☃ = 0;
+    }
+    if (☃ >= m.length) {
+      ☃ = m.length - 1;
+    }
+    ad = true;
+    ae = a;
+    af = ☃;
+    ag = b;
+    m[☃].add(☃);
+  }
+  
+  public void b(pk ☃)
+  {
+    a(☃, af);
+  }
+  
+  public void a(pk ☃, int ☃)
+  {
+    if (☃ < 0) {
+      ☃ = 0;
+    }
+    if (☃ >= m.length) {
+      ☃ = m.length - 1;
+    }
+    m[☃].remove(☃);
+  }
+  
+  public boolean d(cj ☃)
+  {
+    int ☃ = ☃.n() & 0xF;
+    int ☃ = ☃.o();
+    int ☃ = ☃.p() & 0xF;
+    return ☃ >= j[(☃ << 4 | ☃)];
+  }
+  
+  private akw i(cj ☃)
+  {
+    afh ☃ = a(☃);
+    if (!☃.z()) {
       return null;
     }
-    return tileentity;
+    return ((agq)☃).a(i, c(☃));
   }
   
-  public void a(akw tileEntityIn)
+  public akw a(cj ☃, amy.a ☃)
   {
-    a(tileEntityIn.v(), tileEntityIn);
-    if (this.h) {
-      this.i.a(tileEntityIn);
-    }
-  }
-  
-  public void a(cj pos, akw tileEntityIn)
-  {
-    tileEntityIn.a(this.i);
-    tileEntityIn.a(pos);
-    if ((a(pos) instanceof agq))
+    akw ☃ = (akw)l.get(☃);
+    if (☃ == null)
     {
-      if (this.l.containsKey(pos)) {
-        ((akw)this.l.get(pos)).y();
+      if (☃ == amy.a.a)
+      {
+        ☃ = i(☃);
+        i.a(☃, ☃);
       }
-      tileEntityIn.D();
-      this.l.put(pos, tileEntityIn);
+      else if (☃ == amy.a.b)
+      {
+        w.add(☃);
+      }
+    }
+    else if (☃.x())
+    {
+      l.remove(☃);
+      return null;
+    }
+    return ☃;
+  }
+  
+  public void a(akw ☃)
+  {
+    a(☃.v(), ☃);
+    if (h) {
+      i.a(☃);
     }
   }
   
-  public void e(cj pos)
+  public void a(cj ☃, akw ☃)
   {
-    if (this.h)
+    ☃.a(i);
+    ☃.a(☃);
+    if (!(a(☃) instanceof agq)) {
+      return;
+    }
+    if (l.containsKey(☃)) {
+      ((akw)l.get(☃)).y();
+    }
+    ☃.D();
+    l.put(☃, ☃);
+  }
+  
+  public void e(cj ☃)
+  {
+    if (h)
     {
-      akw tileentity = (akw)this.l.remove(pos);
-      if (tileentity != null) {
-        tileentity.y();
+      akw ☃ = (akw)l.remove(☃);
+      if (☃ != null) {
+        ☃.y();
       }
     }
   }
   
   public void c()
   {
-    this.h = true;
-    this.i.a(this.l.values());
-    for (int i = 0; i < this.m.length; i++)
+    h = true;
+    i.a(l.values());
+    for (int ☃ = 0; ☃ < m.length; ☃++)
     {
-      for (pk entity : this.m[i]) {
-        entity.ah();
+      for (pk ☃ : m[☃]) {
+        ☃.ah();
       }
-      this.i.b(this.m[i]);
+      i.b(m[☃]);
     }
   }
   
   public void d()
   {
-    this.h = false;
-    for (akw tileentity : this.l.values()) {
-      this.i.b(tileentity);
+    h = false;
+    for (akw ☃ : l.values()) {
+      i.b(☃);
     }
-    for (int i = 0; i < this.m.length; i++) {
-      this.i.c(this.m[i]);
+    for (int ☃ = 0; ☃ < m.length; ☃++) {
+      i.c(m[☃]);
     }
   }
   
   public void e()
   {
-    this.q = true;
+    q = true;
   }
   
-  public void a(pk entityIn, aug aabb, List<pk> listToFill, Predicate<? super pk> p_177414_4_)
+  public void a(pk ☃, aug ☃, List<pk> ☃, Predicate<? super pk> ☃)
   {
-    int i = ns.c((aabb.b - 2.0D) / 16.0D);
-    int j = ns.c((aabb.e + 2.0D) / 16.0D);
-    i = ns.a(i, 0, this.m.length - 1);
-    j = ns.a(j, 0, this.m.length - 1);
-    for (int k = i; k <= j; k++) {
-      if (!this.m[k].isEmpty()) {
-        for (pk entity : this.m[k]) {
-          if ((entity.aR().b(aabb)) && (entity != entityIn))
+    int ☃ = ns.c((b - 2.0D) / 16.0D);
+    int ☃ = ns.c((e + 2.0D) / 16.0D);
+    ☃ = ns.a(☃, 0, m.length - 1);
+    ☃ = ns.a(☃, 0, m.length - 1);
+    for (int ☃ = ☃; ☃ <= ☃; ☃++) {
+      if (!m[☃].isEmpty()) {
+        for (pk ☃ : m[☃]) {
+          if ((☃.aR().b(☃)) && (☃ != ☃))
           {
-            if ((p_177414_4_ == null) || (p_177414_4_.apply(entity))) {
-              listToFill.add(entity);
+            if ((☃ == null) || (☃.apply(☃))) {
+              ☃.add(☃);
             }
-            pk[] aentity = entity.aB();
-            if (aentity != null) {
-              for (int l = 0; l < aentity.length; l++)
+            pk[] ☃ = ☃.aB();
+            if (☃ != null) {
+              for (int ☃ = 0; ☃ < ☃.length; ☃++)
               {
-                entity = aentity[l];
-                if ((entity != entityIn) && (entity.aR().b(aabb)) && ((p_177414_4_ == null) || (p_177414_4_.apply(entity)))) {
-                  listToFill.add(entity);
+                ☃ = ☃[☃];
+                if ((☃ != ☃) && (☃.aR().b(☃)) && ((☃ == null) || (☃.apply(☃)))) {
+                  ☃.add(☃);
                 }
               }
             }
@@ -759,38 +791,39 @@ public class amy
     }
   }
   
-  public <T extends pk> void a(Class<? extends T> entityClass, aug aabb, List<T> listToFill, Predicate<? super T> p_177430_4_)
+  public <T extends pk> void a(Class<? extends T> ☃, aug ☃, List<T> ☃, Predicate<? super T> ☃)
   {
-    int i = ns.c((aabb.b - 2.0D) / 16.0D);
-    int j = ns.c((aabb.e + 2.0D) / 16.0D);
-    i = ns.a(i, 0, this.m.length - 1);
-    j = ns.a(j, 0, this.m.length - 1);
-    for (int k = i; k <= j; k++) {
-      for (T t : this.m[k].c(entityClass)) {
-        if ((t.aR().b(aabb)) && ((p_177430_4_ == null) || (p_177430_4_.apply(t)))) {
-          listToFill.add(t);
+    int ☃ = ns.c((b - 2.0D) / 16.0D);
+    int ☃ = ns.c((e + 2.0D) / 16.0D);
+    ☃ = ns.a(☃, 0, m.length - 1);
+    ☃ = ns.a(☃, 0, m.length - 1);
+    for (int ☃ = ☃; ☃ <= ☃; ☃++) {
+      for (T ☃ : m[☃].c(☃)) {
+        if ((☃.aR().b(☃)) && (
+          (☃ == null) || (☃.apply(☃)))) {
+          ☃.add(☃);
         }
       }
     }
   }
   
-  public boolean a(boolean p_76601_1_)
+  public boolean a(boolean ☃)
   {
-    if (p_76601_1_)
+    if (☃)
     {
-      if (((this.r) && (this.i.K() != this.s)) || (this.q)) {
+      if (((r) && (i.K() != s)) || (q)) {
         return true;
       }
     }
-    else if ((this.r) && (this.i.K() >= this.s + 600L)) {
+    else if ((r) && (i.K() >= s + 600L)) {
       return true;
     }
-    return this.q;
+    return q;
   }
   
-  public Random a(long seed)
+  public Random a(long ☃)
   {
-    return new Random(this.i.J() + this.a * this.a * 4987142 + this.a * 5947611 + this.b * this.b * 4392871L + this.b * 389711 ^ seed);
+    return new Random(i.J() + a * a * 4987142 + a * 5947611 + b * b * 4392871L + b * 389711 ^ ☃);
   }
   
   public boolean f()
@@ -798,259 +831,267 @@ public class amy
     return false;
   }
   
-  public void a(amv p_76624_1_, amv p_76624_2_, int p_76624_3_, int p_76624_4_)
+  public void a(amv ☃, amv ☃, int ☃, int ☃)
   {
-    boolean flag = p_76624_1_.a(p_76624_3_, p_76624_4_ - 1);
-    boolean flag1 = p_76624_1_.a(p_76624_3_ + 1, p_76624_4_);
-    boolean flag2 = p_76624_1_.a(p_76624_3_, p_76624_4_ + 1);
-    boolean flag3 = p_76624_1_.a(p_76624_3_ - 1, p_76624_4_);
-    boolean flag4 = p_76624_1_.a(p_76624_3_ - 1, p_76624_4_ - 1);
-    boolean flag5 = p_76624_1_.a(p_76624_3_ + 1, p_76624_4_ + 1);
-    boolean flag6 = p_76624_1_.a(p_76624_3_ - 1, p_76624_4_ + 1);
-    boolean flag7 = p_76624_1_.a(p_76624_3_ + 1, p_76624_4_ - 1);
-    if ((flag1) && (flag2) && (flag5)) {
-      if (!this.n) {
-        p_76624_1_.a(p_76624_2_, p_76624_3_, p_76624_4_);
+    boolean ☃ = ☃.a(☃, ☃ - 1);
+    boolean ☃ = ☃.a(☃ + 1, ☃);
+    boolean ☃ = ☃.a(☃, ☃ + 1);
+    boolean ☃ = ☃.a(☃ - 1, ☃);
+    boolean ☃ = ☃.a(☃ - 1, ☃ - 1);
+    boolean ☃ = ☃.a(☃ + 1, ☃ + 1);
+    boolean ☃ = ☃.a(☃ - 1, ☃ + 1);
+    boolean ☃ = ☃.a(☃ + 1, ☃ - 1);
+    if ((☃) && (☃) && (☃)) {
+      if (!n) {
+        ☃.a(☃, ☃, ☃);
       } else {
-        p_76624_1_.a(p_76624_2_, this, p_76624_3_, p_76624_4_);
+        ☃.a(☃, this, ☃, ☃);
       }
     }
-    if ((flag3) && (flag2) && (flag6))
+    if ((☃) && (☃) && (☃))
     {
-      amy chunk = p_76624_1_.d(p_76624_3_ - 1, p_76624_4_);
-      if (!chunk.n) {
-        p_76624_1_.a(p_76624_2_, p_76624_3_ - 1, p_76624_4_);
+      amy ☃ = ☃.d(☃ - 1, ☃);
+      if (!n) {
+        ☃.a(☃, ☃ - 1, ☃);
       } else {
-        p_76624_1_.a(p_76624_2_, chunk, p_76624_3_ - 1, p_76624_4_);
+        ☃.a(☃, ☃, ☃ - 1, ☃);
       }
     }
-    if ((flag) && (flag1) && (flag7))
+    if ((☃) && (☃) && (☃))
     {
-      amy chunk1 = p_76624_1_.d(p_76624_3_, p_76624_4_ - 1);
-      if (!chunk1.n) {
-        p_76624_1_.a(p_76624_2_, p_76624_3_, p_76624_4_ - 1);
+      amy ☃ = ☃.d(☃, ☃ - 1);
+      if (!n) {
+        ☃.a(☃, ☃, ☃ - 1);
       } else {
-        p_76624_1_.a(p_76624_2_, chunk1, p_76624_3_, p_76624_4_ - 1);
+        ☃.a(☃, ☃, ☃, ☃ - 1);
       }
     }
-    if ((flag4) && (flag) && (flag3))
+    if ((☃) && (☃) && (☃))
     {
-      amy chunk2 = p_76624_1_.d(p_76624_3_ - 1, p_76624_4_ - 1);
-      if (!chunk2.n) {
-        p_76624_1_.a(p_76624_2_, p_76624_3_ - 1, p_76624_4_ - 1);
+      amy ☃ = ☃.d(☃ - 1, ☃ - 1);
+      if (!n) {
+        ☃.a(☃, ☃ - 1, ☃ - 1);
       } else {
-        p_76624_1_.a(p_76624_2_, chunk2, p_76624_3_ - 1, p_76624_4_ - 1);
+        ☃.a(☃, ☃, ☃ - 1, ☃ - 1);
       }
     }
   }
   
-  public cj h(cj pos)
+  public cj h(cj ☃)
   {
-    int i = pos.n() & 0xF;
-    int j = pos.p() & 0xF;
-    int k = i | j << 4;
-    cj blockpos = new cj(pos.n(), this.f[k], pos.p());
-    if (blockpos.o() == 64537)
+    int ☃ = ☃.n() & 0xF;
+    int ☃ = ☃.p() & 0xF;
+    int ☃ = ☃ | ☃ << 4;
+    
+    cj ☃ = new cj(☃.n(), f[☃], ☃.p());
+    if (☃.o() == 64537)
     {
-      int l = g() + 15;
-      blockpos = new cj(pos.n(), l, pos.p());
-      int i1 = -1;
-      while ((blockpos.o() > 0) && (i1 == -1))
+      int ☃ = g() + 15;
+      ☃ = new cj(☃.n(), ☃, ☃.p());
+      
+      int ☃ = -1;
+      while ((☃.o() > 0) && (☃ == -1))
       {
-        afh block = a(blockpos);
-        arm material = block.t();
-        if ((!material.c()) && (!material.d())) {
-          blockpos = blockpos.b();
+        afh ☃ = a(☃);
+        arm ☃ = ☃.t();
+        if ((!☃.c()) && (!☃.d())) {
+          ☃ = ☃.b();
         } else {
-          i1 = blockpos.o() + 1;
+          ☃ = ☃.o() + 1;
         }
       }
-      this.f[k] = i1;
+      f[☃] = ☃;
     }
-    return new cj(pos.n(), this.f[k], pos.p());
+    return new cj(☃.n(), f[☃], ☃.p());
   }
   
-  public void b(boolean p_150804_1_)
+  public void b(boolean ☃)
   {
-    if ((this.k) && (!this.i.t.o()) && (!p_150804_1_)) {
-      h(this.i.D);
+    if ((k) && (!i.t.o()) && (!☃)) {
+      h(i.D);
     }
-    this.p = true;
-    if ((!this.o) && (this.n)) {
+    p = true;
+    if ((!o) && (n)) {
       n();
     }
-    while (!this.w.isEmpty())
+    while (!w.isEmpty())
     {
-      cj blockpos = (cj)this.w.poll();
-      if ((a(blockpos, amy.a.c) == null) && (a(blockpos).z()))
+      cj ☃ = (cj)w.poll();
+      if ((a(☃, amy.a.c) == null) && (a(☃).z()))
       {
-        akw tileentity = i(blockpos);
-        this.i.a(blockpos, tileentity);
-        this.i.b(blockpos, blockpos);
+        akw ☃ = i(☃);
+        i.a(☃, ☃);
+        i.b(☃, ☃);
       }
     }
   }
   
   public boolean i()
   {
-    return (this.p) && (this.n) && (this.o);
+    return (p) && (n) && (o);
   }
   
   public adg j()
   {
-    return new adg(this.a, this.b);
+    return new adg(a, b);
   }
   
-  public boolean c(int startY, int endY)
+  public boolean c(int ☃, int ☃)
   {
-    if (startY < 0) {
-      startY = 0;
+    if (☃ < 0) {
+      ☃ = 0;
     }
-    if (endY >= 256) {
-      endY = 255;
+    if (☃ >= 256) {
+      ☃ = 255;
     }
-    for (int i = startY; i <= endY; i += 16)
+    for (int ☃ = ☃; ☃ <= ☃; ☃ += 16)
     {
-      amz extendedblockstorage = this.d[(i >> 4)];
-      if ((extendedblockstorage != null) && (!extendedblockstorage.a())) {
+      amz ☃ = d[(☃ >> 4)];
+      if ((☃ != null) && (!☃.a())) {
         return false;
       }
     }
     return true;
   }
   
-  public void a(amz[] newStorageArrays)
+  public void a(amz[] ☃)
   {
-    if (this.d.length != newStorageArrays.length) {
-      c.warn("Could not set level chunk sections, array length is " + newStorageArrays.length + " instead of " + this.d.length);
-    } else {
-      for (int i = 0; i < this.d.length; i++) {
-        this.d[i] = newStorageArrays[i];
-      }
+    if (d.length != ☃.length)
+    {
+      c.warn("Could not set level chunk sections, array length is " + ☃.length + " instead of " + d.length);
+      return;
+    }
+    for (int ☃ = 0; ☃ < d.length; ☃++) {
+      d[☃] = ☃[☃];
     }
   }
   
-  public void a(byte[] p_177439_1_, int p_177439_2_, boolean p_177439_3_)
+  public void a(byte[] ☃, int ☃, boolean ☃)
   {
-    int i = 0;
-    boolean flag = !this.i.t.o();
-    for (int j = 0; j < this.d.length; j++) {
-      if ((p_177439_2_ & 1 << j) != 0)
+    int ☃ = 0;
+    
+    boolean ☃ = !i.t.o();
+    for (int ☃ = 0; ☃ < d.length; ☃++) {
+      if ((☃ & 1 << ☃) != 0)
       {
-        if (this.d[j] == null) {
-          this.d[j] = new amz(j << 4, flag);
+        if (d[☃] == null) {
+          d[☃] = new amz(☃ << 4, ☃);
         }
-        char[] achar = this.d[j].g();
-        for (int k = 0; k < achar.length; k++)
+        char[] ☃ = d[☃].g();
+        for (int ☃ = 0; ☃ < ☃.length; ☃++)
         {
-          achar[k] = ((char)((p_177439_1_[(i + 1)] & 0xFF) << 8 | p_177439_1_[i] & 0xFF));
-          i += 2;
+          ☃[☃] = ((char)((☃[(☃ + 1)] & 0xFF) << 8 | ☃[☃] & 0xFF));
+          ☃ += 2;
         }
       }
-      else if ((p_177439_3_) && (this.d[j] != null))
+      else if ((☃) && (d[☃] != null))
       {
-        this.d[j] = null;
+        d[☃] = null;
       }
     }
-    for (int l = 0; l < this.d.length; l++) {
-      if (((p_177439_2_ & 1 << l) != 0) && (this.d[l] != null))
+    for (int ☃ = 0; ☃ < d.length; ☃++) {
+      if (((☃ & 1 << ☃) != 0) && (d[☃] != null))
       {
-        amw nibblearray = this.d[l].h();
-        System.arraycopy(p_177439_1_, i, nibblearray.a(), 0, nibblearray.a().length);
-        i += nibblearray.a().length;
+        amw ☃ = d[☃].h();
+        System.arraycopy(☃, ☃, ☃.a(), 0, ☃.a().length);
+        ☃ += ☃.a().length;
       }
     }
-    int i1;
-    if (flag) {
-      for (i1 = 0; i1 < this.d.length; i1++) {
-        if (((p_177439_2_ & 1 << i1) != 0) && (this.d[i1] != null))
+    if (☃) {
+      for (int ☃ = 0; ☃ < d.length; ☃++) {
+        if (((☃ & 1 << ☃) != 0) && (d[☃] != null))
         {
-          amw nibblearray1 = this.d[i1].i();
-          System.arraycopy(p_177439_1_, i, nibblearray1.a(), 0, nibblearray1.a().length);
-          i += nibblearray1.a().length;
+          amw ☃ = d[☃].i();
+          System.arraycopy(☃, ☃, ☃.a(), 0, ☃.a().length);
+          ☃ += ☃.a().length;
         }
       }
     }
-    if (p_177439_3_)
+    if (☃)
     {
-      System.arraycopy(p_177439_1_, i, this.e, 0, this.e.length);
-      i1 = i + this.e.length;
+      System.arraycopy(☃, ☃, e, 0, e.length);
+      ☃ += e.length;
     }
-    for (int j1 = 0; j1 < this.d.length; j1++) {
-      if ((this.d[j1] != null) && ((p_177439_2_ & 1 << j1) != 0)) {
-        this.d[j1].e();
+    for (int ☃ = 0; ☃ < d.length; ☃++) {
+      if ((d[☃] != null) && ((☃ & 1 << ☃) != 0)) {
+        d[☃].e();
       }
     }
-    this.o = true;
-    this.n = true;
+    o = true;
+    n = true;
     a();
-    for (akw tileentity : this.l.values()) {
-      tileentity.E();
+    for (akw ☃ : l.values()) {
+      ☃.E();
     }
   }
   
-  public ady a(cj pos, aec chunkManager)
+  public ady a(cj ☃, aec ☃)
   {
-    int i = pos.n() & 0xF;
-    int j = pos.p() & 0xF;
-    int k = this.e[(j << 4 | i)] & 0xFF;
-    if (k == 255)
+    int ☃ = ☃.n() & 0xF;
+    int ☃ = ☃.p() & 0xF;
+    
+    int ☃ = e[(☃ << 4 | ☃)] & 0xFF;
+    if (☃ == 255)
     {
-      ady biomegenbase = chunkManager.a(pos, ady.q);
-      k = biomegenbase.az;
-      this.e[(j << 4 | i)] = ((byte)(k & 0xFF));
+      ady ☃ = ☃.a(☃, ady.q);
+      ☃ = az;
+      e[(☃ << 4 | ☃)] = ((byte)(☃ & 0xFF));
     }
-    ady biomegenbase1 = ady.e(k);
-    return biomegenbase1 == null ? ady.q : biomegenbase1;
+    ady ☃ = ady.e(☃);
+    if (☃ == null) {
+      return ady.q;
+    }
+    return ☃;
   }
   
   public byte[] k()
   {
-    return this.e;
+    return e;
   }
   
-  public void a(byte[] biomeArray)
+  public void a(byte[] ☃)
   {
-    if (this.e.length != biomeArray.length) {
-      c.warn("Could not set level chunk biomes, array length is " + biomeArray.length + " instead of " + this.e.length);
-    } else {
-      for (int i = 0; i < this.e.length; i++) {
-        this.e[i] = biomeArray[i];
-      }
+    if (e.length != ☃.length)
+    {
+      c.warn("Could not set level chunk biomes, array length is " + ☃.length + " instead of " + e.length);
+      return;
+    }
+    for (int ☃ = 0; ☃ < e.length; ☃++) {
+      e[☃] = ☃[☃];
     }
   }
   
   public void l()
   {
-    this.v = 0;
+    v = 0;
   }
   
   public void m()
   {
-    cj blockpos = new cj(this.a << 4, 0, this.b << 4);
-    for (int i = 0; i < 8; i++)
+    cj ☃ = new cj(a << 4, 0, b << 4);
+    for (int ☃ = 0; ☃ < 8; ☃++)
     {
-      if (this.v >= 4096) {
+      if (v >= 4096) {
         return;
       }
-      int j = this.v % 16;
-      int k = this.v / 16 % 16;
-      int l = this.v / 256;
-      this.v += 1;
-      for (int i1 = 0; i1 < 16; i1++)
+      int ☃ = v % 16;
+      int ☃ = v / 16 % 16;
+      int ☃ = v / 256;
+      v += 1;
+      for (int ☃ = 0; ☃ < 16; ☃++)
       {
-        cj blockpos1 = blockpos.a(k, (j << 4) + i1, l);
-        boolean flag = (i1 == 0) || (i1 == 15) || (k == 0) || (k == 15) || (l == 0) || (l == 15);
-        if (((this.d[j] == null) && (flag)) || ((this.d[j] != null) && (this.d[j].b(k, i1, l).t() == arm.a)))
+        cj ☃ = ☃.a(☃, (☃ << 4) + ☃, ☃);
+        boolean ☃ = (☃ == 0) || (☃ == 15) || (☃ == 0) || (☃ == 15) || (☃ == 0) || (☃ == 15);
+        if (((d[☃] == null) && (☃)) || ((d[☃] != null) && (d[☃].b(☃, ☃, ☃).t() == arm.a)))
         {
-          for (cq enumfacing : cq.values())
+          for (cq ☃ : cq.values())
           {
-            cj blockpos2 = blockpos1.a(enumfacing);
-            if (this.i.p(blockpos2).c().r() > 0) {
-              this.i.x(blockpos2);
+            cj ☃ = ☃.a(☃);
+            if (i.p(☃).c().r() > 0) {
+              i.x(☃);
             }
           }
-          this.i.x(blockpos1);
+          i.x(☃);
         }
       }
     }
@@ -1058,94 +1099,97 @@ public class amy
   
   public void n()
   {
-    this.n = true;
-    this.o = true;
-    cj blockpos = new cj(this.a << 4, 0, this.b << 4);
-    if (!this.i.t.o()) {
-      if (this.i.a(blockpos.a(-1, 0, -1), blockpos.a(16, this.i.F(), 16)))
+    n = true;
+    o = true;
+    
+    cj ☃ = new cj(a << 4, 0, b << 4);
+    if (!i.t.o()) {
+      if (i.a(☃.a(-1, 0, -1), ☃.a(16, i.F(), 16)))
       {
-        for (int i = 0; i < 16; i++) {
-          for (int j = 0; j < 16; j++) {
-            if (!e(i, j))
+        for (int ☃ = 0; ☃ < 16; ☃++) {
+          for (int ☃ = 0; ☃ < 16; ☃++) {
+            if (!e(☃, ☃))
             {
-              this.o = false;
+              o = false;
               break label121;
             }
           }
         }
         label121:
-        if (this.o)
+        if (o)
         {
-          for (cq enumfacing : cq.c.a)
+          for (cq ☃ : cq.c.a)
           {
-            int k = enumfacing.c() == cq.b.a ? 16 : 1;
-            this.i.f(blockpos.a(enumfacing, k)).a(enumfacing.d());
+            int ☃ = ☃.c() == cq.b.a ? 16 : 1;
+            i.f(☃.a(☃, ☃)).a(☃.d());
           }
           y();
         }
       }
       else
       {
-        this.o = false;
+        o = false;
       }
     }
   }
   
   private void y()
   {
-    for (int i = 0; i < this.g.length; i++) {
-      this.g[i] = true;
+    for (int ☃ = 0; ☃ < g.length; ☃++) {
+      g[☃] = true;
     }
     h(false);
   }
   
-  private void a(cq p_180700_1_)
+  private void a(cq ☃)
   {
-    if (this.n) {
-      if (p_180700_1_ == cq.f) {
-        for (int i = 0; i < 16; i++) {
-          e(15, i);
-        }
-      } else if (p_180700_1_ == cq.e) {
-        for (int j = 0; j < 16; j++) {
-          e(0, j);
-        }
-      } else if (p_180700_1_ == cq.d) {
-        for (int k = 0; k < 16; k++) {
-          e(k, 15);
-        }
-      } else if (p_180700_1_ == cq.c) {
-        for (int l = 0; l < 16; l++) {
-          e(l, 0);
-        }
+    if (!n) {
+      return;
+    }
+    if (☃ == cq.f) {
+      for (int ☃ = 0; ☃ < 16; ☃++) {
+        e(15, ☃);
+      }
+    } else if (☃ == cq.e) {
+      for (int ☃ = 0; ☃ < 16; ☃++) {
+        e(0, ☃);
+      }
+    } else if (☃ == cq.d) {
+      for (int ☃ = 0; ☃ < 16; ☃++) {
+        e(☃, 15);
+      }
+    } else if (☃ == cq.c) {
+      for (int ☃ = 0; ☃ < 16; ☃++) {
+        e(☃, 0);
       }
     }
   }
   
-  private boolean e(int x, int z)
+  private boolean e(int ☃, int ☃)
   {
-    int i = g();
-    boolean flag = false;
-    boolean flag1 = false;
-    cj.a blockpos$mutableblockpos = new cj.a((this.a << 4) + x, 0, (this.b << 4) + z);
-    for (int j = i + 16 - 1; (j > this.i.F()) || ((j > 0) && (!flag1)); j--)
+    int ☃ = g();
+    boolean ☃ = false;
+    boolean ☃ = false;
+    cj.a ☃ = new cj.a((a << 4) + ☃, 0, (b << 4) + ☃);
+    for (int ☃ = ☃ + 16 - 1; (☃ > i.F()) || ((☃ > 0) && (!☃)); ☃--)
     {
-      blockpos$mutableblockpos.c(blockpos$mutableblockpos.n(), j, blockpos$mutableblockpos.p());
-      int k = b(blockpos$mutableblockpos);
-      if ((k == 255) && (blockpos$mutableblockpos.o() < this.i.F())) {
-        flag1 = true;
+      ☃.c(☃.n(), ☃, ☃.p());
+      int ☃ = b(☃);
+      if ((☃ == 255) && (☃.o() < i.F())) {
+        ☃ = true;
       }
-      if ((!flag) && (k > 0)) {
-        flag = true;
-      } else if ((flag) && (k == 0) && (!this.i.x(blockpos$mutableblockpos))) {
+      if ((!☃) && (☃ > 0)) {
+        ☃ = true;
+      } else if ((☃) && (☃ == 0) && 
+        (!i.x(☃))) {
         return false;
       }
     }
-    for (int l = blockpos$mutableblockpos.o(); l > 0; l--)
+    for (int ☃ = ☃.o(); ☃ > 0; ☃--)
     {
-      blockpos$mutableblockpos.c(blockpos$mutableblockpos.n(), l, blockpos$mutableblockpos.p());
-      if (a(blockpos$mutableblockpos).r() > 0) {
-        this.i.x(blockpos$mutableblockpos);
+      ☃.c(☃.n(), ☃, ☃.p());
+      if (a(☃).r() > 0) {
+        i.x(☃);
       }
     }
     return true;
@@ -1153,93 +1197,94 @@ public class amy
   
   public boolean o()
   {
-    return this.h;
+    return h;
   }
   
-  public void c(boolean loaded)
+  public void c(boolean ☃)
   {
-    this.h = loaded;
+    h = ☃;
   }
   
   public adm p()
   {
-    return this.i;
+    return i;
   }
   
   public int[] q()
   {
-    return this.j;
+    return j;
   }
   
-  public void a(int[] newHeightMap)
+  public void a(int[] ☃)
   {
-    if (this.j.length != newHeightMap.length) {
-      c.warn("Could not set level chunk heightmap, array length is " + newHeightMap.length + " instead of " + this.j.length);
-    } else {
-      for (int i = 0; i < this.j.length; i++) {
-        this.j[i] = newHeightMap[i];
-      }
+    if (j.length != ☃.length)
+    {
+      c.warn("Could not set level chunk heightmap, array length is " + ☃.length + " instead of " + j.length);
+      return;
+    }
+    for (int ☃ = 0; ☃ < j.length; ☃++) {
+      j[☃] = ☃[☃];
     }
   }
   
   public Map<cj, akw> r()
   {
-    return this.l;
+    return l;
   }
   
   public ne<pk>[] s()
   {
-    return this.m;
+    return m;
   }
   
   public boolean t()
   {
-    return this.n;
+    return n;
   }
   
-  public void d(boolean terrainPopulated)
+  public void d(boolean ☃)
   {
-    this.n = terrainPopulated;
+    n = ☃;
   }
   
   public boolean u()
   {
-    return this.o;
+    return o;
   }
   
-  public void e(boolean lightPopulated)
+  public void e(boolean ☃)
   {
-    this.o = lightPopulated;
+    o = ☃;
   }
   
-  public void f(boolean modified)
+  public void f(boolean ☃)
   {
-    this.q = modified;
+    q = ☃;
   }
   
-  public void g(boolean hasEntitiesIn)
+  public void g(boolean ☃)
   {
-    this.r = hasEntitiesIn;
+    r = ☃;
   }
   
-  public void b(long saveTime)
+  public void b(long ☃)
   {
-    this.s = saveTime;
+    s = ☃;
   }
   
   public int v()
   {
-    return this.t;
+    return t;
   }
   
   public long w()
   {
-    return this.u;
+    return u;
   }
   
-  public void c(long newInhabitedTime)
+  public void c(long ☃)
   {
-    this.u = newInhabitedTime;
+    u = ☃;
   }
   
   public static enum a

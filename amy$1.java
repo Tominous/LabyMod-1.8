@@ -8,5 +8,6 @@ class amy$1
   public String a()
     throws Exception
   {
+    return c.a(new cj(d.a * 16 + a, b, d.b * 16 + c));
   }
 }
